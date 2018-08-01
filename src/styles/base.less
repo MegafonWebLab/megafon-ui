@@ -1,0 +1,159 @@
+// COLORS new
+@green: #00B956;
+@greenDark: #028941;
+@purple: #731982;
+@clearWhite: #FFFFFF;
+@spbSky1: #EDEDED;
+@spbSky2: #D8D8D8;
+@soggyAsphalt: #333333;
+@fullBlack: #000000;
+
+@fury: #F62434;
+@mandarin: #FFA717;
+@blue: #34AAF2;
+@greenHover: #00EE6F;
+@purpleHover: #B808D4;
+@down: #404D46;
+
+// COLORS old
+@greenActive: #0c9d47;
+@green10: #E5F5EE;
+@purpleActive: #561362;
+@white: #FFFFFF;
+@red: #E96980;
+@redBright: #da3b2f;
+@redLight: #FBF5F7;
+@blueHover: #007FE6;
+@black100: #000000;
+@black90: #212724;
+@black80: #333333;
+@black70: #3f4d46;
+@black60: #666666;
+@black40: #999999;
+@black30: #B2B2B2;
+@black20: #cfd4d8;
+@black15: #D9D9D9;
+@black10: #E5E5E5;
+@black5: #F2F2F2;
+@black2: #FAFAFA;
+
+// BREAKPOINTS
+@mobileSmallEnd:      479px;
+@mobileMiddleStart:   480px;
+@mobileMiddleEnd:     767px;
+@mobileBigStart:      768px;
+@mobileBigEnd:        1023px;
+@desktopSmallStart:   1024px;
+@desktopSmallEnd:     1279px;
+@desktopMiddleStart:  1280px;
+@desktopMiddleEnd:    1439px;
+@desktopBigStart:     1440px;
+
+@mobile:          ~'screen and (max-width: @{mobileBigEnd})';                                            // ∞ - 1023
+@mobileS:         ~'screen and (max-width: @{mobileSmallEnd})';                                          // ∞ - 479
+@mobileM:         ~'screen and (min-width: @{mobileMiddleStart}) and (max-width: @{mobileMiddleEnd})';   // 480 - 767
+@mobileB:         ~'screen and (min-width: @{mobileBigStart}) and (max-width: @{mobileBigEnd})';         // 768 - 1023
+@mobileSM:        ~'screen and (max-width: @{mobileMiddleEnd})';                                         // ∞ - 767
+@mobileMB:        ~'screen and (min-width: @{mobileMiddleStart}) and (max-width: @{mobileBigEnd})';      // 480 - 1023
+@mobileMU:        ~'screen and (min-width: @{mobileMiddleStart})';                                       // 480 - ∞
+@mobileBU:        ~'screen and (min-width: @{mobileBigStart})';                                          // 768 - ∞
+@desktop:         ~'screen and (min-width: @{desktopSmallStart})';                                       // 1024 - ∞
+@desktopS:        ~'screen and (min-width: @{desktopSmallStart}) and (max-width: @{desktopSmallEnd})';   // 1024 - 1279
+@desktopM:        ~'screen and (min-width: @{desktopMiddleStart}) and (max-width: @{desktopMiddleEnd})'; // 1280 - 1439
+@desktopB:        ~'screen and (min-width: @{desktopBigStart})';                                         // 1440 - ∞
+@desktopSM:       ~'screen and (min-width: @{desktopSmallStart}) and (max-width: @{desktopMiddleEnd})';  // 1024 - 1439
+@desktopMU:       ~'screen and (min-width: @{desktopMiddleStart})';                                      // 1280 - ∞
+
+@retina: ~'screen and (-webkit-min-device-pixel-ratio: 2),'
+~'screen and (min--moz-device-pixel-ratio: 2),'
+~'screen and (-o-min-device-pixel-ratio: 2/1),'
+~'screen and (min-device-pixel-ratio: 2),'
+~'screen and (min-resolution: 192dpi),'
+~'screen and (min-resolution: 2dppx)';
+@mobileRetina: @mobile ~'and (-webkit-min-device-pixel-ratio: 2),'
+@mobile ~'and (min--moz-device-pixel-ratio: 2),'
+@mobile ~'and (-o-min-device-pixel-ratio: 2/1),'
+@mobile ~'and (min-device-pixel-ratio: 2),'
+@mobile ~'and (min-resolution: 192dpi),'
+@mobile ~'and (min-resolution: 2dppx)';
+
+@hoverNone: ~'screen and (hover:none)';
+
+// MIXINS
+.Graphik() {
+    font-family: Graphik, Arial, sans-serif;
+}
+
+.h2() {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    @media @mobileB {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    @media @desktop {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    @media @desktopMU {
+        font-size: 32px;
+        line-height: 40px;
+    }
+}
+
+.h3() {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    @media @desktopMU {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+.h5() {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.p() {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.small() {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.p-indents() {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.small() {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.round(@bgColor: @mandarin, @color: @white, @fs: 30px, @w: 65px, @h: 65px) {
+    width: @w;
+    height: @h;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: @fs;
+    color: @color;
+    background-color: @bgColor;
+    border-radius: 50%;
+}
