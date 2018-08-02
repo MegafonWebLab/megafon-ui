@@ -1,3 +1,8 @@
 .idea
 *.iml
 node_modules
+
+src/**/*.css
+src/components/**/*.d.ts
+src/**/*.jsx
+dist
