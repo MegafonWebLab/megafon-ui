@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Link renders children 1`] = `
+<a
+  href="#"
+  target="_blank"
+>
+  <h3>
+    some text
+  </h3>
+</a>
+`;
+
 exports[`Link renders with default props 1`] = `
 <a
   href="#"
