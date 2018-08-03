@@ -1,17 +1,18 @@
-import { Component, SyntheticEvent } from 'react';
+import * as React from 'react';
 
 interface Props {
     href?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     target?: '_self' | '_blank' | '_parent' | '_top';
     className?: string;
-    onClick?(e: SyntheticEvent<EventTarget>): void;
+    onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-class Link extends Component<Props, {}> {
+class Link extends React.Component<Props, {}> {
 
     static defaultProps = {
         href: '#',
+        target: '_blank'
     };
 
     render() {

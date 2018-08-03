@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import * as React from 'react';
 import './Logo.less';
 import { cnCreate } from 'utils/cn';
 import greenHorizontalImg from './i/green-horizontal.svg';
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const cn = cnCreate('logo');
-class Logo extends Component<Props, {}> {
+class Logo extends React.Component<Props, {}> {
 
     static defaultProps = {
         color: 'green',

@@ -12,31 +12,77 @@
   "scripts": {
     "setup": "yarn install --pure-lock",
     "build": "gulp build",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.ts*'",
-    "lint": "npm run lint:ts"
+    "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
+    "lint": "npm run lint:ts",
+    "test:unit": "jest",
+    "test": "npm run test:unit"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "babelConfig": {
+          "presets": [
+            "@babel/env",
+            "@babel/react"
+          ]
+        }
+      }
+    },
+    "testURL": "http://localhost/",
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/lib/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/scripts/setupEnzyme.ts"
   },
   "peerDependencies": {
     "react": ">=16.4.1",
     "react-dom": ">=16.4.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.55",
+    "@babel/preset-env": "^7.0.0-beta.55",
+    "@babel/preset-react": "^7.0.0-beta.55",
     "@types/classnames": "^2.2.6",
+    "@types/enzyme": "^3.1.12",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/jest": "^23.3.1",
+    "@types/jsdom": "^11.0.6",
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "del": "^3.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "gulp": "^4.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-less": "^4.0.1",
     "gulp-typescript": "^5.0.0-alpha.3",
     "jest": "^23.4.2",
+    "jsdom": "^11.12.0",
     "less-plugin-autoprefix": "^2.0.0",
     "merge2": "^1.2.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "ts-jest": "^23.1.1",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.0.1"
