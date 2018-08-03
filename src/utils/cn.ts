@@ -19,7 +19,7 @@ export const cnCreate = (str: string) => (...args: Array<any>) => {
         return classnames(`${str}${prefix ? '__' + prefix : ''}`, customClassName);
     }
 
-    const classParams:ClassSet = {};
+    const classParams: ClassSet = {};
     let prefixKey, withoutPrefix;
 
     for (const key in params) {

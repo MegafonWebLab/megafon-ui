@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import Link from 'components/Link/Link';
 import './Logo.less';
 import { cnCreate } from 'utils/cn';
 import greenHorizontalImg from './i/green-horizontal.svg';
 import greenVerticalImg from './i/green-vertical.svg';
+import Link from '../Link/Link';
 
 interface Props {
     color?: string;
@@ -32,7 +32,7 @@ class Logo extends Component<Props, {}> {
 
         return (
             <Link {...props} className={cn({ view })}>
-                <div className={cn('img')} style={{backgroundImage}} />
+                <div className={cn('img')} style={{ backgroundImage }} />
             </Link>
         );
 
