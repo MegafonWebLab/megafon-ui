@@ -10,12 +10,12 @@
   "license": "MIT",
   "typings": "./typings/index.d.ts",
   "scripts": {
-    "setup": "yarn install --pure-lock",
     "build": "gulp build",
-    "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
     "lint": "npm run lint:ts",
-    "test:unit": "jest",
-    "test": "npm run test:unit"
+    "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
+    "setup": "yarn install --pure-lock",
+    "test": "npm run test:unit",
+    "test:unit": "jest"
   },
   "jest": {
     "globals": {

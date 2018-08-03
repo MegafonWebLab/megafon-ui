@@ -12,7 +12,7 @@ class Link extends React.Component<Props, {}> {
 
     static defaultProps = {
         href: '#',
-        target: '_blank'
+        target: '_blank',
     };
 
     render() {
