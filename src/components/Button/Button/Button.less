@@ -1,0 +1,186 @@
+@import 'styles/base.less';
+
+@b: e('.button');
+
+@{b} {
+    font-family: inherit;
+    font-weight: 500;
+    vertical-align: top;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: @clearWhite;
+    border-radius: 30px;
+    font-size: 15px;
+    line-height: 24px;
+    padding-top: 0;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:disabled {
+        cursor: default !important;
+    }
+
+    &__inner {
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    &__content_icon {
+        padding-left: 20px;
+    }
+
+    &__icon {
+        fill: @white;
+    }
+
+    &__spinner {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    .generateSize(all);
+
+    @media @desktopMU {
+        .generateSize(wide);
+    }
+    @media @desktop {
+        .generateSize(desktop);
+    }
+    @media @mobileB {
+        .generateSize(tablet);
+    }
+    @media @mobileSM {
+        .generateSize(mobile);
+    }
+
+    &_passive-color_green {
+        background-color: @green;
+    }
+    &_passive-color_purple {
+        background-color: @purple;
+    }
+    &_passive-color_transparent {
+        box-shadow: inset 0 0 0 1px @clearWhite;
+        background-color: transparent;
+    }
+    &_passive-color_white {
+        background-color: @clearWhite;
+        color: @soggyAsphalt;
+    }
+    &_passive-color_transparent-green {
+        box-shadow: inset 0 0 0 1px @green;
+        color: @green;
+        background-color: transparent;
+    }
+
+    &_hover-color_green {
+        .no-touchevents &:not(@{b}_loading):hover {
+            box-shadow: inset 0 0 0 1px @greenHover;
+            color: @clearWhite;
+            background-color: @greenHover;
+        }
+    }
+    &_hover-color_purple {
+        .no-touchevents &:not(@{b}_loading):hover {
+            box-shadow: inset 0 0 0 1px @purpleHover;
+            background-color: @purpleHover;
+        }
+    }
+
+    &_down-color_dark {
+        .no-touchevents &:not(@{b}_loading):active {
+            box-shadow: inset 0 0 0 1px @down;
+            background-color: @down;
+        }
+    }
+    &_down-color_transparent {
+        .no-touchevents &:not(@{b}_loading):active {
+            box-shadow: inset 0 0 0 1px @clearWhite;
+            background-color: transparent;
+        }
+    }
+
+    &_disabled-color_gray {
+        &:disabled {
+            box-shadow: inset 0 0 0 1px @spbSky2 !important;
+            background-color: @spbSky2 !important;
+        }
+    }
+    &_disabled-color_white {
+        &:disabled {
+            box-shadow: inset 0 0 0 1px @spbSky1 !important;
+            color: fade(@soggyAsphalt, 50%) !important;
+            background-color: @spbSky1 !important;
+        }
+    }
+    &_disabled-color_transparent {
+        &:disabled {
+            box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
+            color: fade(@soggyAsphalt, 50%) !important;
+            background-color: transparent !important;
+        }
+    }
+
+
+    &_margin {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    &_padding {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    &_width_full {
+        display: block;
+        width: 100%;
+    }
+
+    &_custom-view_arrow-back {
+        color: @soggyAsphalt;
+        @{b}__icon {
+            display: block;
+            fill: @soggyAsphalt;
+            width: 38px;
+            height: 20px;
+        }
+    }
+    &_custom-view_two-lines {
+        color: @black80;
+        font-weight: 400;
+        span {
+            display: inline-block;
+            width: 100%;
+            color: @blue;
+        }
+        &:hover span {
+            text-decoration: underline;
+        }
+    }
+}
+
+.generateSize(@resolution) {
+    &_size-@{resolution}_small &__inner {
+        height: 32px;
+    }
+    &_size-@{resolution}_medium &__inner {
+        height: 48px;
+    }
+    &_size-@{resolution}_large &__inner {
+        height: 60px;
+    }
+}
