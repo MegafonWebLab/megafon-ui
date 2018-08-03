@@ -17,5 +17,5 @@ test('Link calls onClick handler', () => {
     const link = shallow(<Link onClick={fn}>some text</Link>);
 
     link.simulate('click');
-    expect(fn).toHaveBeenCalledTimes(1)
+    expect(fn).toHaveBeenCalledTimes(1);
 });
