@@ -1,6 +1,5 @@
 import { css } from 'docz-plugin-css';
-
-const path = require('path');
+import { resolve } from 'path';
 
 module.exports = {
     title: 'MegaFon UI',
@@ -11,12 +10,7 @@ module.exports = {
     },
     typescript: true,
     protocol: 'http',
-    modifyBundlerConfig(config, dev, args) {
-        config.resolve.modules = config.resolve.modules || [];
-        config.resolve.modules.push(path.resolve(__dirname, 'src'));
-
-        return config;
-    },
+    src: resolve(__dirname, 'src'),
     plugins: [
         css({
             preprocessor: 'less',
