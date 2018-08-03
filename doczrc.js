@@ -19,7 +19,7 @@ module.exports = {
     plugins: [
         css({
             preprocessor: 'less',
-            cssmodules: true
+            cssmodules: false
         })
     ]
 };

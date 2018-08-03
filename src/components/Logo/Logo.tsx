@@ -32,7 +32,7 @@ class Logo extends React.Component<Props, {}> {
 
         return (
             <Link {...props} className={`logo logo_view_${view}`}>
-                <img className={cn('img')} style={{ backgroundImage }} />
+                <div className={cn('img')} style={{ backgroundImage }} />
             </Link>
         );
 
