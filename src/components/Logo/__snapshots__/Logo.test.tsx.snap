@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders with default props 1`] = `
+<Link
+  className="logo"
+  href="/"
+  target="_blank"
+>
+  <div
+    className="logo__img"
+    style={
+      Object {
+        "backgroundImage": "url(test-file-stub)",
+      }
+    }
+  />
+</Link>
+`;
