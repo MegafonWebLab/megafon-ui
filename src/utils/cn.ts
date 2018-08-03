@@ -4,7 +4,7 @@ interface ClassSet {
     [key: string]: boolean;
 }
 
-export const cnCreate = (str: string) => (...args: Array<any>) => {
+export const cnCreate = (str: string) => (...args: any[]) => {
     let prefix, params, customClassName = '';
     prefix = args[0];
 

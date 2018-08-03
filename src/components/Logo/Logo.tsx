@@ -19,14 +19,14 @@ class Logo extends Component<Props, {}> {
         color: 'green',
         view: 'horizontal',
         target: '_blank',
-        href: '/'
+        href: '/',
     };
 
     render() {
         const { color, view, ...props } = this.props;
         const images = {
             'green-horizontal': greenHorizontalImg,
-            'green-vertical': greenVerticalImg
+            'green-vertical': greenVerticalImg,
         };
         const backgroundImage = `url(${images[`${color}-${view}`]})`;
 
