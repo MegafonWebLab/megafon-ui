@@ -7,3 +7,4 @@ src/components/**/*.d.ts
 dist
 yarn-error.log
 coverage
+.docz
