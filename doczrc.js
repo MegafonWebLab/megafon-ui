@@ -10,6 +10,7 @@ module.exports = {
         }
     },
     typescript: true,
+    protocol: 'http',
     modifyBundlerConfig(config, dev, args) {
         config.resolve.modules = config.resolve.modules || [];
         config.resolve.modules.push(path.resolve(__dirname, 'src'));
