@@ -11,11 +11,13 @@
   "typings": "./typings/index.d.ts",
   "scripts": {
     "build": "gulp build",
+    "coverage": "npm run coverage:unit",
+    "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "lint": "npm run lint:ts",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
     "setup": "yarn install --pure-lock",
     "test": "npm run test:unit",
-    "test:unit": "jest"
+    "test:unit": "jest --ci"
   },
   "jest": {
     "globals": {
@@ -28,6 +30,7 @@
         }
       }
     },
+    "coverageDirectory": "coverage",
     "testURL": "http://localhost/",
     "roots": [
       "<rootDir>/src"
