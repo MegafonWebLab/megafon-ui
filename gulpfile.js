@@ -62,12 +62,7 @@ gulp.task('ts', () => {
             .pipe(tranformLess())
             .pipe(gulp.dest(esPath))
             .pipe(babel({
-                presets: [
-                    '@babel/env'
-                ],
-                plugins: [
-                    require.resolve('babel-plugin-add-module-exports')
-                ]
+                presets: ['@babel/env']
             }))
 
             .pipe(gulp.dest(libPath))
