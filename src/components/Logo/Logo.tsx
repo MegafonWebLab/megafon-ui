@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Logo.less';
-import { cnCreate } from '../../utils/cn';
+import { cnCreate } from 'utils/cn';
 import greenHorizontalImg from './i/green-horizontal.svg';
 import greenVerticalImg from './i/green-vertical.svg';
 import Link from '../Link/Link';
@@ -31,7 +31,7 @@ class Logo extends React.Component<Props, {}> {
         const backgroundImage = `url(${images[`${color}-${view}`]})`;
 
         return (
-            <Link {...props} className={`logo logo_view_${view}`}>
+            <Link {...props} className={cn('', { view })}>
                 <div className={cn('img')} style={{ backgroundImage }} />
             </Link>
         );
