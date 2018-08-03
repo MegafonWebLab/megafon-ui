@@ -2,7 +2,7 @@
 
 exports[`Logo renders with default props 1`] = `
 <Link
-  className="logo"
+  className="logo logo_view_horizontal"
   href="/"
   target="_blank"
 >

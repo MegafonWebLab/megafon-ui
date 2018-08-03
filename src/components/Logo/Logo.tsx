@@ -31,7 +31,7 @@ class Logo extends React.Component<Props, {}> {
         const backgroundImage = `url(${images[`${color}-${view}`]})`;
 
         return (
-            <Link {...props} className={cn('')}>
+            <Link {...props} className={cn('', { view })}>
                 <div className={cn('img')} style={{ backgroundImage }} />
             </Link>
         );

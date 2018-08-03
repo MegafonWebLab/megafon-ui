@@ -13,6 +13,8 @@
     "build": "gulp build",
     "coverage": "npm run coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
     "lint": "npm run lint:ts",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
     "setup": "yarn install --pure-lock",
@@ -34,7 +36,10 @@
       "\\.(css|less)$": "<rootDir>/scripts/styleMock.ts",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/fileMock.ts"
     },
-    "moduleDirectories": ["node_modules", "src"],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "coverageDirectory": "coverage",
     "testURL": "http://localhost/",
     "roots": [
@@ -83,6 +88,9 @@
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
     "del": "^3.0.0",
+    "docz": "^0.9.2",
+    "docz-plugin-css": "^0.9.2",
+    "docz-theme-default": "^0.9.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",

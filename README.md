@@ -5,6 +5,12 @@
 
 ### Сборка проекта
 
+```bash
+$ npm run build
 ```
-npm run build
+
+### Интерактивное демо
+
+```bash
+$ npm run docz:dev
 ```
