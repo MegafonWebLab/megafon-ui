@@ -5,7 +5,8 @@ module.exports = {
     title: 'MegaFon UI',
     themeConfig: {
         colors: {
-            primary: '#00b956'
+            primary: '#00b956',
+            link: '#00b956'
         }
     },
     typescript: true,
