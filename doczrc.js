@@ -28,8 +28,8 @@ module.exports = {
             use: {
                 loader: '@svgr/webpack',
             },
-        }
+        };
 
-        return config
+        return config;
     },
 };
