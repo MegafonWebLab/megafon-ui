@@ -1,7 +1,11 @@
 {
   "name": "megafon-ui",
   "version": "1.0.0",
-  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dalee/megafon-ui.git"
