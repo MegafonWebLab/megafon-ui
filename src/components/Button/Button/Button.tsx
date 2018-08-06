@@ -2,12 +2,12 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { cnCreate } from 'utils/cn';
 import './Button.less';
-import SvgIcon from 'shared/ui/components/SvgIcon/SvgIcon';
-import spinnerGif from './i/spinner.gif';
+import Spinner from './i/spinner.svg';
+import ArrowBack from './i/arrow-back.svg';
 
 interface Props {
     customView?: 'arrow-back' | 'two-lines';
-    iconId?: string;
+    hasArrowBack?: boolean;
     href?: string | null;
     target?: '_self' | '_blank' | '_parent' | '_top';
     type?: 'button' | 'reset' | 'submit';
@@ -38,7 +38,7 @@ class Button extends React.Component<Props, {}> {
         /** Кастомный внешний вид */
         customView: PropTypes.oneOf(['arrow-back', 'two-lines']),
         /** ID svg иконки из спрайта */
-        iconId: PropTypes.string,
+        hasArrowBack: PropTypes.bool,
         /** Адрес ссылки */
         href: PropTypes.string,
         target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
@@ -111,17 +111,17 @@ class Button extends React.Component<Props, {}> {
         showSpinner: false,
     };
 
-    renderIconElem() {
+    renderArrowBack() {
         return (
             <div className={cn('icon-box')}>
-                <SvgIcon className={cn('icon')} iconId={this.props.iconId} />
+                <ArrowBack className={cn('icon')} />
             </div>
         );
     }
 
     renderChildrenElem() {
         return (
-            <div className={cn('content', { icon: !!this.props.iconId })}>
+            <div className={cn('content', { icon: !!this.props.hasArrowBack })}>
                 {this.props.children}
             </div>
         );
@@ -129,7 +129,9 @@ class Button extends React.Component<Props, {}> {
 
     renderSpinner() {
         return (
-            <img className={cn('spinner')} src={spinnerGif} alt="" />
+            <div className={cn('spinner')}>
+                <Spinner />
+            </div>
         );
     }
 
@@ -160,7 +162,7 @@ class Button extends React.Component<Props, {}> {
                 onClick={this.props.onClick}
                 disabled={this.props.disabled}>
                 <div className={cn('inner')}>
-                    {!this.props.showSpinner && this.props.iconId && this.renderIconElem()}
+                    {!this.props.showSpinner && this.props.hasArrowBack && this.renderArrowBack()}
                     {!this.props.showSpinner && this.props.children && this.renderChildrenElem()}
                     {this.props.showSpinner && this.renderSpinner()}
                 </div>

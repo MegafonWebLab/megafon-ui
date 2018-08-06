@@ -28,11 +28,13 @@ class Logo extends React.Component<Props, {}> {
             'green-horizontal': greenHorizontalImg,
             'green-vertical': greenVerticalImg,
         };
-        const backgroundImage = `url(${images[`${color}-${view}`]})`;
+        const BackgroundImage = images[`${color}-${view}`];
 
         return (
             <Link {...props} className={cn('', { view })}>
-                <div className={cn('img')} style={{ backgroundImage }} />
+                <div className={cn('img')}>
+                    <BackgroundImage />
+                </div>
             </Link>
         );
 

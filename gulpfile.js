@@ -57,6 +57,7 @@ gulp.task('ts', () => {
                     require.resolve('@babel/plugin-transform-runtime'),
                     require.resolve('@babel/plugin-transform-classes'),
                     require.resolve('@babel/plugin-transform-block-scoping'),
+                    require.resolve('babel-plugin-inline-react-svg'),
                 ]
             }))
             .pipe(tranformLess())
@@ -67,12 +68,6 @@ gulp.task('ts', () => {
 
             .pipe(gulp.dest(libPath))
     );
-});
-
-gulp.task('pic', () => {
-    return gulp.src('src/**/*.{png,svg}')
-        .pipe(gulp.dest(esPath))
-        .pipe(gulp.dest(libPath));
 });
 
 gulp.task('build', gulp.series(

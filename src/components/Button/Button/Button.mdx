@@ -1,0 +1,35 @@
+---
+name: Button
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Button from './Button';
+
+# Button
+
+## Properties
+
+<PropsTable of={Button} />
+
+## Basic usage
+
+<Playground>
+  <Button>Кнопка</Button>
+</Playground>
+
+## Spinner usage
+
+<Playground>
+  <Button showSpinner={true}>Кнопка</Button>
+</Playground>
+
+## Arrow back usage
+
+<Playground>
+  <Button
+    hasArrowBack={true}
+    customView="arrow-back"
+    sizeAll="large"
+    padding={false}>Кнопка</Button>
+</Playground>
