@@ -28,38 +28,6 @@ exports[`<Button /> it renders children 1`] = `
 </button>
 `;
 
-exports[`<Button /> it renders icon 1`] = `
-<Button
-  disabledColor="gray"
-  downColor="dark"
-  hasArrowBack={true}
-  hoverColor="green"
-  padding={true}
-  passiveColor="green"
-  showSpinner={false}
-  sizeAll="medium"
-  type="button"
-  width="auto"
->
-  <button
-    className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
-    type="button"
-  >
-    <div
-      className="button__inner"
-    >
-      <div
-        className="button__icon-box"
-      >
-        <test-file-stub
-          className="button__icon"
-        />
-      </div>
-    </div>
-  </button>
-</Button>
-`;
-
 exports[`<Button /> it renders spinner 1`] = `
 <Button
   disabledColor="gray"

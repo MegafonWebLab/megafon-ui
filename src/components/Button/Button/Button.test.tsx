@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import Button from './Button';
-import ArrowBack from 'icons/arrow-back.svg';
 
 describe('<Button />', () => {
     it('it renders Button', () => {
@@ -11,11 +10,6 @@ describe('<Button />', () => {
 
     it('it renders children', () => {
         const wrapper = shallow(<Button>button</Button>);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('it renders icon', () => {
-        const wrapper = mount(<Button svgIcon={<ArrowBack />} />);
         expect(wrapper).toMatchSnapshot();
     });
 

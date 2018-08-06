@@ -42,8 +42,6 @@ interface Props {
     /** Show spinner */
     showSpinner?: boolean;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    /** Svg icon */
-    svgIcon?: JSX.Element;
     /** Click event handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
@@ -112,8 +110,6 @@ class Button extends React.Component<Props, {}> {
          * @param {SyntheticEvent} event - синтетическое React событие.
          */
         onClick: PropTypes.func,
-        /** Svgicon */
-        svgIcon: PropTypes.element,
         /** Дочерние элементы */
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
@@ -135,19 +131,9 @@ class Button extends React.Component<Props, {}> {
         showSpinner: false,
     };
 
-    renderSvgIcon() {
-        return (
-            <div className={cn('icon-box')}>
-                <div className={cn('icon')}>
-                    {this.props.svgIcon}
-                </div>
-            </div>
-        );
-    }
-
     renderChildrenElem() {
         return (
-            <div className={cn('content', { icon: !!this.props.svgIcon })}>
+            <div className={cn('content')}>
                 {this.props.children}
             </div>
         );
@@ -188,7 +174,6 @@ class Button extends React.Component<Props, {}> {
                 onClick={this.props.onClick}
                 disabled={this.props.disabled}>
                 <div className={cn('inner')}>
-                    {!this.props.showSpinner && this.props.svgIcon && this.renderSvgIcon()}
                     {!this.props.showSpinner && this.props.children && this.renderChildrenElem()}
                     {this.props.showSpinner && this.renderSpinner()}
                 </div>
