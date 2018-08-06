@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import Button from './Button';
-// import * as ICON from 'shared/constants/icons';
+import ArrowBack from 'icons/arrow-back.svg';
 
 describe('<Button />', () => {
     it('it renders Button', () => {
@@ -15,7 +15,7 @@ describe('<Button />', () => {
     });
 
     it('it renders icon', () => {
-        const wrapper = mount(<Button hasArrowBack={true} />);
+        const wrapper = mount(<Button svgIcon={<ArrowBack />} />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -33,6 +33,6 @@ describe('<Button />', () => {
         const onClick = jest.fn();
         const wrapper = mount(<Button href="http://moscow.megafon.ru/" onClick={onClick} />);
         wrapper.simulate('click');
-        expect(onClick.mock.calls).toHaveLength(1);
+        expect(onClick).toHaveBeenCalledTimes(1);
     });
 });

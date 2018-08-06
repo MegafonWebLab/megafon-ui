@@ -8,6 +8,7 @@ const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 const merge = require('merge2');
 const del = require('del');
 const through = require('through2');
+const svgr = require('@svgr/core').default;
 
 const dist = path.join(__dirname, 'dist');
 const esPath = path.join(dist, 'es');
@@ -15,6 +16,13 @@ const libPath = path.join(dist, 'lib');
 
 gulp.task('clean', () => {
     return del('dist');
+});
+
+gulp.task('svg', () => {
+    return gulp.src('src/**/*.svg')
+        .pipe(svgToReact())
+        .pipe(gulp.dest(esPath))
+        .pipe(gulp.dest(libPath));
 });
 
 gulp.task('less', () => {
@@ -75,7 +83,7 @@ gulp.task('ts', () => {
 
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('less', 'ts')
+    gulp.parallel('ts', 'less', 'svg')
 ));
 
 function tranformLess() {
@@ -93,5 +101,22 @@ function importLessGulp() {
         file.contents = Buffer.from(content.replace(/\~styles/g, 'styles'));
         this.push(file);
         next();
+    });
+}
+
+function svgToReact() {
+    return through.obj(function (file, encoding, next) {
+        const content = file.contents.toString(encoding);
+        const name = path.basename(file.path, '.svg')
+            .split('-')
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+            .join('');
+
+        svgr(content, { icon: true }, { componentName: `${name}Svg` }).then(jsCode => {
+            file.contents = Buffer.from(jsCode);
+            file.path = file.path.replace(/.svg/, '.js');
+            this.push(file);
+            next();
+        });
     });
 }

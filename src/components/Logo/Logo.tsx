@@ -18,35 +18,37 @@ interface Props {
 }
 
 const cn = cnCreate('logo');
-const Logo: React.StatelessComponent<Props> = props => {
-    const { color, view, ...args } = props;
-    const images = {
-        'green-horizontal': greenHorizontalImg,
-        'green-vertical': greenVerticalImg,
+class Logo extends React.Component<Props, {}> {
+    static propTypes = {
+        color: PropTypes.string,
+        view: PropTypes.oneOf(['horizontal', 'vertical']),
+        target: PropTypes.string,
+        href: PropTypes.string,
     };
-    const BackgroundImage = images[`${color}-${view}`];
 
-    return (
-        <Link {...args} className={cn('', { view })}>
-            <div className={cn('img')}>
-                <BackgroundImage />
-            </div>
-        </Link>
-    );
-};
+    static defaultProps = {
+        color: 'green',
+        view: 'horizontal',
+        target: '_blank',
+        href: '/',
+    };
 
-Logo.propTypes = {
-    color: PropTypes.string,
-    view: PropTypes.oneOf(['horizontal', 'vertical']),
-    target: PropTypes.string,
-    href: PropTypes.string,
-};
+    render() {
+        const { color, view, ...props } = this.props;
+        const images = {
+            'green-horizontal': greenHorizontalImg,
+            'green-vertical': greenVerticalImg,
+        };
+        const BackgroundImage = images[`${color}-${view}`];
 
-Logo.defaultProps = {
-    color: 'green',
-    view: 'horizontal',
-    target: '_blank',
-    href: '/',
-};
+        return (
+            <Link {...props} className={cn('', { view })}>
+                <div className={cn('img')}>
+                    <BackgroundImage />
+                </div>
+            </Link>
+        );
+    }
+}
 
 export default Logo;

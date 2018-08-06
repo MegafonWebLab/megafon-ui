@@ -3,13 +3,10 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from 'utils/cn';
 import './Button.less';
 import Spinner from 'icons/spinner.svg';
-import ArrowBack from 'icons/arrow-back.svg';
 
 interface Props {
     /** Spicial view */
     customView?: 'arrow-back' | 'two-lines';
-    /** Show back icon */
-    hasArrowBack?: boolean;
     /** Link */
     href?: string | null;
     /** target - property tag <a> */
@@ -45,6 +42,8 @@ interface Props {
     /** Show spinner */
     showSpinner?: boolean;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    /** Svg icon */
+    svgIcon?: JSX.Element;
     /** Click event handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
@@ -57,8 +56,6 @@ class Button extends React.Component<Props, {}> {
     static propTypes = {
         /** Кастомный внешний вид */
         customView: PropTypes.oneOf(['arrow-back', 'two-lines']),
-        /** ID svg иконки из спрайта */
-        hasArrowBack: PropTypes.bool,
         /** Адрес ссылки */
         href: PropTypes.string,
         target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
@@ -115,8 +112,15 @@ class Button extends React.Component<Props, {}> {
          * @param {SyntheticEvent} event - синтетическое React событие.
          */
         onClick: PropTypes.func,
+        /** Svgicon */
+        svgIcon: PropTypes.element,
         /** Дочерние элементы */
-        children: PropTypes.node,
+        children: PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.element),
+            PropTypes.element,
+            PropTypes.string,
+            PropTypes.node,
+        ]),
     };
 
     static defaultProps = {
@@ -131,17 +135,19 @@ class Button extends React.Component<Props, {}> {
         showSpinner: false,
     };
 
-    renderArrowBack() {
+    renderSvgIcon() {
         return (
             <div className={cn('icon-box')}>
-                <ArrowBack className={cn('icon')} />
+                <div className={cn('icon')}>
+                    {this.props.svgIcon}
+                </div>
             </div>
         );
     }
 
     renderChildrenElem() {
         return (
-            <div className={cn('content', { icon: !!this.props.hasArrowBack })}>
+            <div className={cn('content', { icon: !!this.props.svgIcon })}>
                 {this.props.children}
             </div>
         );
@@ -182,7 +188,7 @@ class Button extends React.Component<Props, {}> {
                 onClick={this.props.onClick}
                 disabled={this.props.disabled}>
                 <div className={cn('inner')}>
-                    {!this.props.showSpinner && this.props.hasArrowBack && this.renderArrowBack()}
+                    {!this.props.showSpinner && this.props.svgIcon && this.renderSvgIcon()}
                     {!this.props.showSpinner && this.props.children && this.renderChildrenElem()}
                     {this.props.showSpinner && this.renderSpinner()}
                 </div>

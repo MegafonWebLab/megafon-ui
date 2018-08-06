@@ -13,32 +13,34 @@ interface Props {
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-const Link: React.StatelessComponent<Props> = props => {
-    const { target, children, ...rest } = props;
+class Link extends React.Component<Props, {}> {
+    static propTypes = {
+        href: PropTypes.string,
+        children: PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.element),
+            PropTypes.element,
+            PropTypes.string,
+            PropTypes.node,
+        ]),
+        target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+        className: PropTypes.string,
+        onClick: PropTypes.func,
+    };
 
-    return (
-        <a target={target} {...rest}>
-            {children}
-        </a>
-    );
-};
+    static defaultProps = {
+        href: '#',
+        target: '_blank',
+    };
 
-Link.propTypes = {
-    href: PropTypes.string,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element,
-        PropTypes.string,
-        PropTypes.node,
-    ]),
-    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
-    className: PropTypes.string,
-    onClick: PropTypes.func,
-};
+    render() {
+        const { target, children, ...rest } = this.props;
 
-Link.defaultProps = {
-    href: '#',
-    target: '_blank',
-};
+        return (
+            <a target={target} {...rest}>
+                {children}
+            </a>
+        );
+    }
+}
 
 export default Link;

@@ -81,6 +81,8 @@
     "@babel/plugin-transform-runtime": "^7.0.0-beta.55",
     "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/preset-react": "^7.0.0-beta.55",
+    "@svgr/cli": "^2.1.1",
+    "@svgr/core": "^2.1.1",
     "@svgr/webpack": "^2.1.1",
     "@types/classnames": "^2.2.6",
     "@types/enzyme": "^3.1.12",
