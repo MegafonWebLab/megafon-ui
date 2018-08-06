@@ -6,7 +6,7 @@ import Spinner from 'icons/spinner.svg';
 
 interface Props {
     /** Spicial view */
-    customView?: 'arrow-back' | 'two-lines';
+    customView?: 'two-lines';
     /** Link */
     href?: string | null;
     /** target - property tag <a> */
@@ -53,7 +53,7 @@ const cn = cnCreate('button');
 class Button extends React.Component<Props, {}> {
     static propTypes = {
         /** Кастомный внешний вид */
-        customView: PropTypes.oneOf(['arrow-back', 'two-lines']),
+        customView: PropTypes.oneOf(['two-lines']),
         /** Адрес ссылки */
         href: PropTypes.string,
         target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
