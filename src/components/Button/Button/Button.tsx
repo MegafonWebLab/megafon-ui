@@ -1,51 +1,51 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 import { cnCreate } from 'utils/cn';
 import './Button.less';
-import Spinner from './i/spinner.svg';
-import ArrowBack from './i/arrow-back.svg';
+import Spinner from 'icons/spinner.svg';
+import ArrowBack from 'icons/arrow-back.svg';
 
 interface Props {
-    /** Специальные отображения */
+    /** Spicial view */
     customView?: 'arrow-back' | 'two-lines';
-    /** Показать кнопку назад */
+    /** Show back icon */
     hasArrowBack?: boolean;
-    /** Ссылка */
+    /** Link */
     href?: string | null;
-    /** target - свойство тега <a> */
+    /** target - property tag <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Функционал кнопки */
+    /** Functional */
     type?: 'button' | 'reset' | 'submit';
-    /** Размер для всех */
+    /** Size for all devices */
     sizeAll?: 'small' | 'medium' | 'large';
-    /** Размер для широкоформатных экранов */
+    /** Size for wide devices */
     sizeWide?: 'small' | 'medium' | 'large';
-    /** Размер для декстопов */
+    /** Size for desktop */
     sizeDesktop?: 'small' | 'medium' | 'large';
-    /** Размер для планшетов */
+    /** Size for tablet */
     sizeTablet?: 'small' | 'medium' | 'large';
-    /** Размер для смартфонов */
+    /** Size for mobile */
     sizeMobile?: 'small' | 'medium' | 'large';
-    /** Текущий цвет */
+    /** Current color */
     passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
-    /** Цвет при наведении */
+    /** Hover color */
     hoverColor?: 'green' | 'purple' | 'transparent';
-    /** Цвет при нажатии */
+    /** Click/press color */
     downColor?: 'dark' | 'transparent';
-    /** Цвет когда запрещено нажимать */
+    /** Disabled color */
     disabledColor?: 'gray' | 'white' | 'transparent';
-    /** Длина */
+    /** Width */
     width?: 'full' | 'auto';
-    /** Внешний отступ */
+    /** margin(outer indentation) */
     margin?: boolean;
-    /** Запрет на нажатие */
+    /** Disabled */
     disabled?: boolean;
-    /** Внутренний оступ */
+    /** Padding(inner indentation) */
     padding?: boolean;
-    /** Показывать спиннер */
+    /** Show spinner */
     showSpinner?: boolean;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    /** Обработчик события клика */
+    /** Click event handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 

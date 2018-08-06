@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> it renders Button 1`] = `
+<button
+  className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
+  type="button"
+>
+  <div
+    className="button__inner"
+  />
+</button>
+`;
+
+exports[`<Button /> it renders children 1`] = `
+<button
+  className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
+  type="button"
+>
+  <div
+    className="button__inner"
+  >
+    <div
+      className="button__content"
+    >
+      button
+    </div>
+  </div>
+</button>
+`;
+
+exports[`<Button /> it renders icon 1`] = `
+<Button
+  disabledColor="gray"
+  downColor="dark"
+  hasArrowBack={true}
+  hoverColor="green"
+  padding={true}
+  passiveColor="green"
+  showSpinner={false}
+  sizeAll="medium"
+  type="button"
+  width="auto"
+>
+  <button
+    className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
+    type="button"
+  >
+    <div
+      className="button__inner"
+    >
+      <div
+        className="button__icon-box"
+      >
+        <test-file-stub
+          className="button__icon"
+        />
+      </div>
+    </div>
+  </button>
+</Button>
+`;
+
+exports[`<Button /> it renders tag a 1`] = `
+<Button
+  disabledColor="gray"
+  downColor="dark"
+  hoverColor="green"
+  href="http://moscow.megafon.ru/"
+  padding={true}
+  passiveColor="green"
+  showSpinner={false}
+  sizeAll="medium"
+  type="button"
+  width="auto"
+>
+  <a
+    className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
+    href="http://moscow.megafon.ru/"
+    type=""
+  >
+    <div
+      className="button__inner"
+    />
+  </a>
+</Button>
+`;

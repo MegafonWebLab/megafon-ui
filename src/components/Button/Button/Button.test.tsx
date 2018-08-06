@@ -14,10 +14,10 @@ describe('<Button />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    // it('it renders icon', () => {
-    //     const wrapper = mount(<Button iconId={ICON.ICON_MAIN_PAGE_LOGIN_32}/>);
-    //     expect(wrapper).toMatchSnapshot();
-    // });
+    it('it renders icon', () => {
+        const wrapper = mount(<Button hasArrowBack={true} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 
     it('it renders tag a', () => {
         const wrapper = mount(<Button href="http://moscow.megafon.ru/" />);
