@@ -9,6 +9,3 @@ declare module '*.svg' {
     export default content;
 }
 
-declare interface Test {
-    className: string;
-}
