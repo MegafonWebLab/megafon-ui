@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
 interface Props {
     /** Link */
@@ -20,6 +21,19 @@ const Link: React.StatelessComponent<Props> = props => {
             {children}
         </a>
     );
+};
+
+Link.propTypes = {
+    href: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element),
+        PropTypes.element,
+        PropTypes.string,
+        PropTypes.node,
+    ]),
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    className: PropTypes.string,
+    onClick: PropTypes.func,
 };
 
 Link.defaultProps = {

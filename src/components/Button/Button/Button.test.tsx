@@ -19,6 +19,11 @@ describe('<Button />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('it renders spinner', () => {
+        const wrapper = mount(<Button showSpinner={true} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('it renders tag a', () => {
         const wrapper = mount(<Button href="http://moscow.megafon.ru/" />);
         expect(wrapper).toMatchSnapshot();

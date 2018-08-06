@@ -19,6 +19,7 @@ gulp.task('clean', () => {
 
 gulp.task('less', () => {
     return gulp.src('src/**/*.less')
+        .pipe(importLessGulp())
         .pipe(gulpLess({
             paths: [path.join(__dirname, 'src')],
             plugins: [autoprefix]
@@ -28,7 +29,7 @@ gulp.task('less', () => {
 });
 
 gulp.task('ts', () => {
-    const result = gulp.src(['src/**/*.{tsx,ts}', './typings/*.d.ts'])
+    const result = gulp.src(['src/**/*.{tsx,ts}', '!src/**/*.test.{tsx,ts}', './typings/*.d.ts'])
         .pipe(ts({
             rootDir: './src',
             noUnusedParameters: true,
@@ -57,6 +58,9 @@ gulp.task('ts', () => {
                     require.resolve('@babel/plugin-transform-runtime'),
                     require.resolve('@babel/plugin-transform-classes'),
                     require.resolve('@babel/plugin-transform-block-scoping'),
+                    ['module-resolver', {
+                        root: './src'
+                    }],
                     require.resolve('babel-plugin-inline-react-svg'),
                 ]
             }))
@@ -65,20 +69,28 @@ gulp.task('ts', () => {
             .pipe(babel({
                 presets: ['@babel/env']
             }))
-
             .pipe(gulp.dest(libPath))
     );
 });
 
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('less', 'ts', 'pic')
+    gulp.parallel('less', 'ts')
 ));
 
 function tranformLess() {
     return through.obj(function (file, encoding, next) {
         const content = file.contents.toString(encoding);
         file.contents = Buffer.from(content.replace(/\.less/g, '.css'));
+        this.push(file);
+        next();
+    });
+}
+
+function importLessGulp() {
+    return through.obj(function (file, encoding, next) {
+        const content = file.contents.toString(encoding);
+        file.contents = Buffer.from(content.replace(/\~styles/g, 'styles'));
         this.push(file);
         next();
     });

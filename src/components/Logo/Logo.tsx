@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import './Logo.less';
 import { cnCreate } from 'utils/cn';
 import greenHorizontalImg from 'icons/green-horizontal.svg';
@@ -6,9 +7,13 @@ import greenVerticalImg from 'icons/green-vertical.svg';
 import Link from '../Link/Link';
 
 interface Props {
+    /** Color */
     color?: string;
-    view?: string;
+    /** View */
+    view?: 'horizontal' | 'vertical';
+    /** Link */
     href?: string;
+    /** target - property tag <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
 }
 
@@ -28,6 +33,13 @@ const Logo: React.StatelessComponent<Props> = props => {
             </div>
         </Link>
     );
+};
+
+Logo.propTypes = {
+    color: PropTypes.string,
+    view: PropTypes.oneOf(['horizontal', 'vertical']),
+    target: PropTypes.string,
+    href: PropTypes.string,
 };
 
 Logo.defaultProps = {
