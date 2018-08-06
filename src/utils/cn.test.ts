@@ -1,6 +1,11 @@
-import { cnCreate } from '../cn';
+import { cnCreate } from './cn';
 
-const cn = cnCreate('test');
+let cn;
+
+beforeEach(() => {
+    cn = cnCreate('test');
+});
+
 it('get modificator', () => {
     const selector = cn('make');
     expect(selector).toBe('test__make');
