@@ -8,23 +8,19 @@ interface Props {
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-class Link extends React.Component<Props, {}> {
+const Link: React.StatelessComponent<Props> = props => {
+    const { target, children, ...rest } = props;
 
-    static defaultProps = {
-        href: '#',
-        target: '_blank',
-    };
+    return (
+        <a target={target} {...rest}>
+            {children}
+        </a>
+    );
+};
 
-    render() {
-        const { target, children, ...rest } = this.props;
-
-        return (
-            <a target={target} {...rest}>
-                {children}
-            </a>
-        );
-    }
-
-}
+Link.defaultProps = {
+    href: '#',
+    target: '_blank',
+};
 
 export default Link;
