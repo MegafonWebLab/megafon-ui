@@ -6,26 +6,46 @@ import Spinner from './i/spinner.svg';
 import ArrowBack from './i/arrow-back.svg';
 
 interface Props {
+    /** Специальные отображения */
     customView?: 'arrow-back' | 'two-lines';
+    /** Показать кнопку назад */
     hasArrowBack?: boolean;
+    /** Ссылка */
     href?: string | null;
+    /** target - свойство тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
+    /** Функционал кнопки */
     type?: 'button' | 'reset' | 'submit';
+    /** Размер для всех */
     sizeAll?: 'small' | 'medium' | 'large';
+    /** Размер для широкоформатных экранов */
     sizeWide?: 'small' | 'medium' | 'large';
+    /** Размер для декстопов */
     sizeDesktop?: 'small' | 'medium' | 'large';
+    /** Размер для планшетов */
     sizeTablet?: 'small' | 'medium' | 'large';
+    /** Размер для смартфонов */
     sizeMobile?: 'small' | 'medium' | 'large';
+    /** Текущий цвет */
     passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
+    /** Цвет при наведении */
     hoverColor?: 'green' | 'purple' | 'transparent';
+    /** Цвет при нажатии */
     downColor?: 'dark' | 'transparent';
+    /** Цвет когда запрещено нажимать */
     disabledColor?: 'gray' | 'white' | 'transparent';
-    width?: 'full' | 'auto',
+    /** Длина */
+    width?: 'full' | 'auto';
+    /** Внешний отступ */
     margin?: boolean;
+    /** Запрет на нажатие */
     disabled?: boolean;
+    /** Внутренний оступ */
     padding?: boolean;
+    /** Показывать спиннер */
     showSpinner?: boolean;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    /** Обработчик события клика */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 

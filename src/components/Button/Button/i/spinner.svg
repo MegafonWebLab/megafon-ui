@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
 	<style type="text/css">
-		.st0{opacity:0;fill:#E2E2E2;}
-		.st1{fill:#009F44;}
-		.st2{opacity:0.8;fill:#009F44;}
-		.st3{opacity:0.6;fill:#009F44;}
-		.st4{opacity:0.45;fill:#009F44;}
+		.st0{opacity:0;fill:#FFFFFF;}
+		.st1{fill:#FFFFFF;}
+		.st2{opacity:0.8;fill:#FFFFFF;}
+		.st3{opacity:0.6;fill:#FFFFFF;}
+		.st4{opacity:0.45;fill:#FFFFFF;}
 	</style>
 	<g>
 		<circle class="st0" cx="24" cy="24" r="24"/>
