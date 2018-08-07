@@ -8,6 +8,7 @@ const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 const merge = require('merge2');
 const del = require('del');
 const through = require('through2');
+const svgr = require('@svgr/core').default;
 
 const dist = path.join(__dirname, 'dist');
 const esPath = path.join(dist, 'es');
@@ -17,8 +18,16 @@ gulp.task('clean', () => {
     return del('dist');
 });
 
+gulp.task('svg', () => {
+    return gulp.src('src/**/*.svg')
+        .pipe(svgToReact())
+        .pipe(gulp.dest(esPath))
+        .pipe(gulp.dest(libPath));
+});
+
 gulp.task('less', () => {
     return gulp.src('src/**/*.less')
+        .pipe(importLessGulp())
         .pipe(gulpLess({
             paths: [path.join(__dirname, 'src')],
             plugins: [autoprefix]
@@ -28,7 +37,7 @@ gulp.task('less', () => {
 });
 
 gulp.task('ts', () => {
-    const result = gulp.src(['src/**/*.{tsx,ts}', './typings/*.d.ts'])
+    const result = gulp.src(['src/**/*.{tsx,ts}', '!src/**/*.test.{tsx,ts}', './typings/*.d.ts'])
         .pipe(ts({
             rootDir: './src',
             noUnusedParameters: true,
@@ -57,6 +66,10 @@ gulp.task('ts', () => {
                     require.resolve('@babel/plugin-transform-runtime'),
                     require.resolve('@babel/plugin-transform-classes'),
                     require.resolve('@babel/plugin-transform-block-scoping'),
+                    ['module-resolver', {
+                        root: './src'
+                    }],
+                    require.resolve('babel-plugin-inline-react-svg'),
                 ]
             }))
             .pipe(tranformLess())
@@ -64,20 +77,13 @@ gulp.task('ts', () => {
             .pipe(babel({
                 presets: ['@babel/env']
             }))
-
             .pipe(gulp.dest(libPath))
     );
 });
 
-gulp.task('pic', () => {
-    return gulp.src('src/**/*.{png,svg}')
-        .pipe(gulp.dest(esPath))
-        .pipe(gulp.dest(libPath));
-});
-
 gulp.task('build', gulp.series(
     'clean',
-    gulp.parallel('less', 'ts', 'pic')
+    gulp.parallel('ts', 'less', 'svg')
 ));
 
 function tranformLess() {
@@ -86,5 +92,31 @@ function tranformLess() {
         file.contents = Buffer.from(content.replace(/\.less/g, '.css'));
         this.push(file);
         next();
+    });
+}
+
+function importLessGulp() {
+    return through.obj(function (file, encoding, next) {
+        const content = file.contents.toString(encoding);
+        file.contents = Buffer.from(content.replace(/\~styles/g, 'styles'));
+        this.push(file);
+        next();
+    });
+}
+
+function svgToReact() {
+    return through.obj(function (file, encoding, next) {
+        const content = file.contents.toString(encoding);
+        const name = path.basename(file.path, '.svg')
+            .split('-')
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+            .join('');
+
+        svgr(content, { icon: true }, { componentName: `${name}Svg` }).then(jsCode => {
+            file.contents = Buffer.from(jsCode);
+            file.path = file.path.replace(/.svg/, '.js');
+            this.push(file);
+            next();
+        });
     });
 }

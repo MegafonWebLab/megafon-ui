@@ -17,5 +17,19 @@ module.exports = {
             preprocessor: 'less',
             cssmodules: false
         })
-    ]
+    ],
+    modifyBundlerConfig: config => {
+        const idx = config.module.rules.findIndex(
+            r => r.test.toString() === '/\\.(svg)(\\?.*)?$/'
+        )
+
+        config.module.rules[idx] = {
+            test: /\.svg$/,
+            use: {
+                loader: '@svgr/webpack',
+            },
+        };
+
+        return config;
+    },
 };

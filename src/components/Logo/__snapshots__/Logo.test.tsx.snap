@@ -8,11 +8,8 @@ exports[`Logo renders with default props 1`] = `
 >
   <div
     className="logo__img"
-    style={
-      Object {
-        "backgroundImage": "url(test-file-stub)",
-      }
-    }
-  />
+  >
+    <test-file-stub />
+  </div>
 </Link>
 `;
