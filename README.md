@@ -6,13 +6,13 @@
 ### Установка
 
 ```bash
-# npm install --save @dalee/megafon-ui
+$ npm install --save @dalee/megafon-ui
 ```
 
 или
 
 ```bash
-# yarn add @dalee/megafon-ui
+$ yarn add @dalee/megafon-ui
 ```
 
 ### Сборка проекта
