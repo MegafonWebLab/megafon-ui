@@ -1,4 +1,4 @@
-import * as classnames from 'classnames';
+import classnames from 'classnames';
 
 interface ClassSet {
     [key: string]: boolean;

@@ -82,7 +82,11 @@ gulp.task('ts', () => {
             .pipe(gulp.dest(esPath))
             .pipe(removeCss())
             .pipe(babel({
-                presets: ['@babel/env']
+                presets: [
+                    ["@babel/env", {
+                        "useBuiltIns": "entry"
+                    }]
+                ]
             }))
             .pipe(gulp.dest(libPath))
     );
