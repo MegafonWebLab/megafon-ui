@@ -12,7 +12,7 @@
 или
 
 ```bash
-yarn add @dalee/megafon-ui
+# yarn add @dalee/megafon-ui
 ```
 
 ### Сборка проекта
