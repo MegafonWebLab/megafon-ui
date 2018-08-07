@@ -5,23 +5,23 @@ import './Button.less';
 import Spinner from 'icons/spinner.svg';
 
 interface Props {
-    /** Spicial view */
+    /** Special view */
     customView?: 'two-lines';
     /** Link */
     href?: string | null;
-    /** target - property tag <a> */
+    /** Target - property tag <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Functional */
+    /** Functional for form */
     type?: 'button' | 'reset' | 'submit';
     /** Size for all devices */
     sizeAll?: 'small' | 'medium' | 'large';
-    /** Size for wide devices */
+    /** Size for wide devices 1280+ */
     sizeWide?: 'small' | 'medium' | 'large';
-    /** Size for desktop */
+    /** Size for desktop 1020+ */
     sizeDesktop?: 'small' | 'medium' | 'large';
-    /** Size for tablet */
+    /** Size for tablet 730-1020 */
     sizeTablet?: 'small' | 'medium' | 'large';
-    /** Size for mobile */
+    /** Size for mobile 320-730 */
     sizeMobile?: 'small' | 'medium' | 'large';
     /** Current color */
     passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
@@ -33,7 +33,7 @@ interface Props {
     disabledColor?: 'gray' | 'white' | 'transparent';
     /** Width */
     width?: 'full' | 'auto';
-    /** margin(outer indentation) */
+    /** Margin(outer indentation) */
     margin?: boolean;
     /** Disabled */
     disabled?: boolean;
@@ -52,26 +52,16 @@ interface Props {
 const cn = cnCreate('button');
 class Button extends React.Component<Props, {}> {
     static propTypes = {
-        /** Кастомный внешний вид */
         customView: PropTypes.oneOf(['two-lines']),
-        /** Адрес ссылки */
         href: PropTypes.string,
         target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
-        /** Тип */
         type: PropTypes.oneOf(['button', 'reset', 'submit']),
-        /** Заблокировать кнопку */
         disabled: PropTypes.bool,
-        /** Размер кнопки на всех разрешениях */
         sizeAll: PropTypes.oneOf(['small', 'medium', 'large']),
-        /** Размер кнопки на разрешении 1280+ */
         sizeWide: PropTypes.oneOf(['small', 'medium', 'large']),
-        /** Размер кнопки на разрешении 1020+ */
         sizeDesktop: PropTypes.oneOf(['small', 'medium', 'large']),
-        /** Размер кнопки на разрешении 730-1020 */
         sizeTablet: PropTypes.oneOf(['small', 'medium', 'large']),
-        /** Размер кнопки на разрешении 320-730 */
         sizeMobile: PropTypes.oneOf(['small', 'medium', 'large']),
-        /** Цвет кнопки в пасивном состоянии */
         passiveColor: PropTypes.oneOf([
             'green',
             'purple',
@@ -79,38 +69,25 @@ class Button extends React.Component<Props, {}> {
             'transparent-green',
             'white',
         ]),
-        /** Цвет кнопки в наведенном состоянии */
         hoverColor: PropTypes.oneOf([
             'green',
             'purple',
             'transparent',
         ]),
-        /** Цвет кнопки в нажатом состоянии */
         downColor: PropTypes.oneOf([
             'dark',
             'transparent',
         ]),
-        /** Цвет кнопки в отключенном состоянии */
         disabledColor: PropTypes.oneOf([
             'gray',
             'white',
             'transparent',
         ]),
-        /** Использовать внешний правый и нижний отступы */
         margin: PropTypes.bool,
-        /** Использовать внутренний правый и левый отступы */
         padding: PropTypes.bool,
-        /** Растянуть на всю ширину */
         width: PropTypes.oneOf(['full', 'auto']),
-        /** Показать спиннер */
         showSpinner: PropTypes.bool,
-        /**
-         * Обработчик события onClick
-         *
-         * @param {SyntheticEvent} event - синтетическое React событие.
-         */
         onClick: PropTypes.func,
-        /** Дочерние элементы */
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
