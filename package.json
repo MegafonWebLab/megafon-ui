@@ -25,6 +25,9 @@
     "test": "npm run test:unit",
     "test:unit": "jest"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "jest": {
     "globals": {
       "ts-jest": {

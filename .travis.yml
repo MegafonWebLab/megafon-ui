@@ -18,5 +18,13 @@ script:
   - npm run lint
   - npm run coverage
 
+deploy:
+  provider: npm
+  email: "$NPM_EMAIL"
+  api_key: "$NPM_TOKEN"
+  skip_cleanup: true
+  on:
+    tags: true
+
 after_script:
   - codecov
