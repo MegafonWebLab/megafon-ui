@@ -1,4 +1,6 @@
 const gulp = require('gulp');
+const glob = require('glob');
+const fs = require('fs');
 const path = require('path');
 const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
@@ -16,6 +18,10 @@ const libPath = path.join(dist, 'lib');
 
 gulp.task('clean', () => {
     return del('dist');
+});
+
+gulp.task('clean:index', () => {
+    return del('src/index.ts');
 });
 
 gulp.task('svg', () => {
@@ -74,17 +80,55 @@ gulp.task('ts', () => {
             }))
             .pipe(tranformLess())
             .pipe(gulp.dest(esPath))
+            .pipe(removeCss())
             .pipe(babel({
-                presets: ['@babel/env']
+                presets: [
+                    ["@babel/env", {
+                        "useBuiltIns": "entry"
+                    }]
+                ]
             }))
             .pipe(gulp.dest(libPath))
     );
 });
 
+gulp.task('main', done => {
+    const files = glob.sync('src/components/**/*.{tsx,ts}', {
+        ignore: 'src/**/*.test.{tsx,ts}'
+    });
+
+    fs.writeFile(path.join(__dirname, 'src', 'index.ts'), generateIndex(files), err => {
+        if (err) {
+            throw err;
+        }
+
+        done();
+    });
+});
+
 gulp.task('build', gulp.series(
-    'clean',
-    gulp.parallel('ts', 'less', 'svg')
+    gulp.parallel('clean', 'clean:index'),
+    'main',
+    gulp.parallel('ts', 'less', 'svg'),
+    'clean:index'
 ));
+
+function generateIndex(files) {
+    const ext = '.tsx';
+    const components = files.map(file => {
+        return {
+            path: file.replace('src/', './'),
+            name: path.basename(file, ext)
+        }
+    });
+    const collator = new Intl.Collator();
+    const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
+    const imports = sorted.map(component => {
+        return `export { default as ${component.name} } from '${component.path.replace(ext, '')}';`;
+    });
+
+    return `${imports.join('\n')}`;
+}
 
 function tranformLess() {
     return through.obj(function (file, encoding, next) {
@@ -118,5 +162,16 @@ function svgToReact() {
             this.push(file);
             next();
         });
+    });
+}
+
+function removeCss() {
+    return through.obj(function (file, encoding, next) {
+        const content = file.contents.toString(encoding);
+        file.contents = Buffer.from(
+            content.split('\n').filter(c => c.search('.css') === -1).join('\n')
+        );
+        this.push(file);
+        next();
     });
 }
