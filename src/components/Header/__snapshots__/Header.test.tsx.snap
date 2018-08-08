@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> it renders with addition 1`] = `
+<h1
+  className="header header_color_black header_level_h1"
+>
+  <div
+    className="header__addition"
+  >
+    <div />
+  </div>
+</h1>
+`;
+
+exports[`<Header /> it renders with children 1`] = `
+<h1
+  className="header header_color_black header_level_h1"
+>
+  <section />
+</h1>
+`;
+
+exports[`<Header /> it renders with white color class 1`] = `
+<h1
+  className="header header_color_white header_level_h1"
+/>
+`;
+
+exports[`<Header /> it renders without class margin 1`] = `
+<h1
+  className="header header_color_black header_level_h1"
+/>
+`;
