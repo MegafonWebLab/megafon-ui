@@ -1,0 +1,112 @@
+@import '~styles/base.less';
+
+@b: e('.textarea');
+
+@{b} {
+    color: @soggyAsphalt;
+    font-size: 15px;
+    line-height: 20px;
+
+    &__field {
+        font-family: inherit;
+        position: relative;
+        z-index: 1;
+        font-size: 15px;
+        height: 48px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+        cursor: pointer;
+        padding: 13px 20px 13px 20px;
+        line-height: 20px;
+        background-color: transparent;
+        opacity: 1;
+        border-radius: 0;
+        -webkit-appearance: none;
+        box-shadow: none;
+    }
+    &__field-wrapper {
+        position: relative;
+        flex: 1 0 100px;
+        background: @clearWhite;
+    }
+    &__field_textarea {
+        resize: none;
+        height: 152px;
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 4px;
+    }
+}
+
+//mod color:
+@{b} {
+    &_color_default & {
+        &__field {
+            color: @soggyAsphalt;
+            border: 1px solid @spbSky2;
+            background-color: transparent;
+        }
+        .no-touchevents &__field-wrapper:hover @{b}__field,
+        &__field:focus {
+            border-color: @soggyAsphalt;
+        }
+    }
+    &_color_default&_valid & {
+        .no-touchevents &__field-wrapper:hover @{b}__field,
+        &__field {
+            border-color: @green;
+        }
+    }
+    &_color_default&_error & {
+        &__field-wrapper:hover @{b}__field,
+        &__field {
+            border-color: @fury;
+        }
+        &__text_error {
+            color: @fury;
+        }
+    }
+
+    &_color_white & {
+        &__field {
+            color: @soggyAsphalt;
+            border: 1px solid @clearWhite;
+        }
+        &__field-wrapper:hover @{b}__field,
+        &__field:focus {
+            border-color: @soggyAsphalt;
+        }
+    }
+    &_color_white&_error & {
+        &__field-wrapper:hover @{b}__field,
+        &__field {
+            border-color: @fury;
+        }
+        &__text_error {
+            color: @fury;
+        }
+    }
+    &__text_success {
+        color: @green;
+    }
+
+}
+
+//mod disabled
+@{b} {
+    &_disabled & {
+        &__field-wrapper {
+            background-color: @spbSky1 !important;
+        }
+        &__field {
+            border-color: @spbSky1 !important;
+            cursor: default !important;
+            color: @soggyAsphalt !important;
+            -webkit-text-fill-color: @soggyAsphalt !important;
+        }
+    }
+}

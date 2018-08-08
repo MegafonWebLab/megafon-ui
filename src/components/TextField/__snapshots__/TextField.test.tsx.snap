@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> is checked shouldComponentUpdate 1`] = `
+<div
+  className="text-field text-field_error text-field_icon text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+    <div
+      className="text-field__icon-box"
+    >
+      <test-file-stub
+        className="text-field__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="text-field__text text-field__text_error"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextField /> is checked shouldComponentUpdate with new props 1`] = `
+<div
+  className="text-field text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders TextField 1`] = `
+<div
+  className="text-field text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders custom icon 1`] = `
+<div
+  className="text-field text-field_icon text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+    <div
+      className="text-field__icon-box text-field__icon-box_custom"
+    >
+      <img />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders error icon 1`] = `
+<div
+  className="text-field text-field_error text-field_icon text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+    <div
+      className="text-field__icon-box"
+    >
+      <test-file-stub
+        className="text-field__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="text-field__text text-field__text_error"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders mask input 1`] = `
+<div
+  className="text-field text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <InputElement
+        autoComplete="off"
+        className="text-field__field"
+        inputRef={[Function]}
+        mask="(999) 999-99-99"
+        maskChar=" "
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders texts 1`] = `
+<div
+  className="text-field text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="text-field__text text-field__text_comment"
+  >
+    text
+  </div>
+  <div
+    className="text-field__text text-field__text_success"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders valid icon 1`] = `
+<div
+  className="text-field text-field_valid text-field_icon text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+    <div
+      className="text-field__icon-box"
+    >
+      <test-file-stub
+        className="text-field__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="text-field__text text-field__text_error"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders without error icon 1`] = `
+<div
+  className="text-field text-field_error text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> it renders without valid icon 1`] = `
+<div
+  className="text-field text-field_valid text-field_color_default"
+>
+  <div
+    className="text-field__field-wrapper"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="text-field__field"
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
