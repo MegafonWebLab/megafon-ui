@@ -1,0 +1,82 @@
+---
+name: Select
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Select from './Select';
+
+export const items = [{
+    id: '1',
+    value: 'eat',
+    title: 'Eat',
+}, {
+    id: '2',
+    value: 'sleep',
+    title: 'Sleep',
+}, {
+    id: '3',
+    value: 'traing',
+    title: 'Traing',
+}];
+
+export const Wrapper = ({ children }) => {
+    return (
+        <div style={{ height: '200px' }}>
+            {children}
+        </div>
+    );
+}
+
+# Select
+
+## Properties
+<PropsTable of={Select} />
+
+``` javascript
+const items = [{
+    id: 1,
+    value: 'eat',
+    title: 'Eat',
+}, {
+    id: 2,
+    value: 'sleep',
+    title: 'Sleep',
+}, {
+    id: 3,
+    value: 'traing',
+    title: 'Traing',
+}];
+```
+
+export class SelectWrapper extends React.Component {
+    
+}
+## Basic usage
+
+<Playground wrapper={Wrapper}>
+    <Select
+        placeholder="Choose your step"
+        items={items}
+    />
+</Playground>
+
+## Selected title prop usage
+
+<Playground wrapper={Wrapper}>
+    <Select
+        selectedTitle="Drink"
+        placeholder="Choose your step"
+        items={items}
+    />
+</Playground>
+
+## Search usage
+
+<Playground wrapper={Wrapper}>
+    <Select
+        placeholder="Choose your step"
+        items={items}
+        isSearch={true}
+    />
+</Playground>

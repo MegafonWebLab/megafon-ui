@@ -1,0 +1,36 @@
+---
+name: List
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import List from './List';
+import ListItem from './ListItem';
+
+# List
+
+## Properties
+
+<PropsTable of={List} />
+
+## Basic usage
+
+<Playground>
+    <List>
+        <ListItem>Eat</ListItem>
+        <ListItem>Sleep</ListItem>
+        <ListItem>Traing</ListItem>
+        <ListItem>Repeat</ListItem>
+    </List>
+</Playground>
+
+## Centered usage
+
+<Playground>
+    <List hAlign="center" as="ol">
+        <ListItem>Eat</ListItem>
+        <ListItem>Sleep</ListItem>
+        <ListItem>Traing</ListItem>
+        <ListItem>Repeat</ListItem>
+    </List>
+</Playground>

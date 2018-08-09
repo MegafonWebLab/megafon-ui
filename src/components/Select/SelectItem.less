@@ -1,0 +1,56 @@
+@import '~styles/base.less';
+@b: e('.select-item');
+
+@{b} {
+    padding: 8px 32px;
+    cursor: pointer;
+    background-color: @white;
+
+    &_active {
+        background-color: @spbSky1;
+    }
+
+    &__title {
+        overflow: hidden;
+        white-space: nowrap;
+        flex-grow: 1;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @clearWhite);
+        }
+    }
+    &_active &__title{
+        &:after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky1);
+        }
+    }
+
+    &__left-icon-box {
+        margin-right: 16px;
+    }
+
+    &__right-icon-box {
+        margin-left: 16px;
+    }
+
+    &_left-icon {
+        display: flex;
+        align-items: center;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    &_right-icon {
+        display: flex;
+        align-items: center;
+        padding-right: 22px;
+    }
+}
+
+

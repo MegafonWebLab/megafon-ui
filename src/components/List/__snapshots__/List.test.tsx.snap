@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<List /> it renders List 1`] = `
+<ul
+  className="list list_color_black list_weight_regular"
+>
+  <ListItem />
+</ul>
+`;

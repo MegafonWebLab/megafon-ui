@@ -42,7 +42,7 @@ class Header extends React.Component<Props, {}> {
     }
 
     render() {
-        const ElementType = this.props.as;
+        const ElementType = this.props.as as string;
         const { color, margin, as: level, onClick } = this.props;
 
         return (
