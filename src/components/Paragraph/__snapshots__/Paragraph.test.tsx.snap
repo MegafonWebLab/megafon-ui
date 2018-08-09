@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paragraph /> it renders Paragraph 1`] = `
+<p
+  className="paragraph paragraph_size-all_medium paragraph_margin-all_medium paragraph_color_black paragraph_weight_regular"
+>
+  Text
+</p>
+`;

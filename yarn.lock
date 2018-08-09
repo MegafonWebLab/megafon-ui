@@ -4194,7 +4194,7 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
 
-deep-equal@~1.0.1:
+deep-equal@^1.0.1, deep-equal@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
@@ -9672,6 +9672,13 @@ react-imported-component@^4.6.2:
     detect-node "^2.0.3"
     prop-types "15.6.2"
     scan-directory "^1.0.0"
+
+react-input-mask@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-input-mask/-/react-input-mask-2.0.3.tgz#bbc84c14d745dc49134ba47a4c8e97e7470ceb1e"
+  dependencies:
+    invariant "^2.2.4"
+    warning "^3.0.0"
 
 react-is@^16.4.2:
   version "16.4.2"

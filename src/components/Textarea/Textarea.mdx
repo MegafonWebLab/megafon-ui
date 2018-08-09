@@ -1,0 +1,56 @@
+---
+name: Textarea
+menu: Components
+---
+import { Playground, PropsTable } from 'docz';
+import Textarea from './Textarea';
+
+export const wrapper = (width = 200) => ({ children }) => {
+    return (
+        <div style={{width: `${width}px`}}>
+            {children}
+        </div>
+    )
+}
+
+# Textarea
+
+## Properties
+
+<PropsTable of={Textarea} />
+
+## Basic usage
+
+<Playground wrapper={wrapper()}>
+    <Textarea name="name"/>
+</Playground>
+
+## Error usage
+
+<Playground wrapper={wrapper(150)}>
+    <Textarea error={true} noticeText="Name is required" />
+</Playground>
+
+## Valid usage
+
+<Playground wrapper={wrapper(150)}>
+    <Textarea valid={true} />
+</Playground>
+
+## Comment usage
+
+<Playground wrapper={wrapper(150)}>
+    <Textarea commentText="Comemnt" />
+</Playground>
+
+## Success text usage
+
+<Playground wrapper={wrapper(150)}>
+    <Textarea successText="Form successfully submitted" />
+</Playground>
+
+## Disable usage
+
+<Playground wrapper={wrapper(150)}>
+    <Textarea disabled={true} />
+</Playground>

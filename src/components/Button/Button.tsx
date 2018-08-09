@@ -46,9 +46,6 @@ interface Props {
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-/**
- * Компонент кнопки
- */
 const cn = cnCreate('button');
 class Button extends React.Component<Props, {}> {
     static propTypes = {
