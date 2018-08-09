@@ -64,9 +64,6 @@ interface Props {
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-/**
- * Компонент текстового поля
- */
 const cn = cnCreate('text-field');
 class TextField extends React.Component<Props, {}> {
     static propTypes = {

@@ -33,9 +33,6 @@ interface Props {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
-/**
- * Компонент параграфа
- */
 const cn = cnCreate('paragraph');
 class Paragraph extends React.Component<Props, {}> {
     static propTypes = {

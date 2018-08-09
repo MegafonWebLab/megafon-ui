@@ -47,9 +47,6 @@ interface Props {
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-/**
- * Компонент текстового поля
- */
 const cn = cnCreate('textarea');
 class Textarea extends React.Component<Props, {}> {
     static propTypes = {
