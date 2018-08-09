@@ -18,6 +18,13 @@ script:
   - npm run lint
   - npm run coverage
 
+before_deploy:
+  - >
+    if ! [ "$BEFORE_DEPLOY_RUN" ]; then
+      export BEFORE_DEPLOY_RUN=1;
+      npm run docz:build
+    fi
+
 deploy:
   - provider: npm
     email: "$NPM_EMAIL"
