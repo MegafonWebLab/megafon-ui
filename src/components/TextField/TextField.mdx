@@ -1,0 +1,76 @@
+---
+name: TextField
+menu: Components
+---
+import { Playground, PropsTable } from 'docz';
+import TextField from './TextField';
+
+export const Block = ({ children, width = 200}) => {
+    return (
+        <div style={{width: `${width}px`}}>
+            {children}
+        </div>
+    )
+}
+
+# TextField
+
+## Properties
+
+<PropsTable of={TextField} />
+
+## Basic usage
+
+<Playground>
+    <Block>
+        <TextField name="fio"/>
+    </Block>
+</Playground>
+
+## Mask usage
+
+<Playground>
+    <Block width="150">
+        <TextField mask="(999) 999-99-99" maskChar=" " />
+    </Block>
+</Playground>
+
+## Error usage
+
+<Playground>
+    <Block width="150">
+        <TextField error={true} noticeText="Неправильно заполнено поле" />
+    </Block>
+</Playground>
+
+## Valid usage
+
+<Playground>
+    <Block width="150">
+        <TextField valid={true} />
+    </Block>
+</Playground>
+
+## Comment usage
+
+<Playground>
+    <Block width="150">
+        <TextField commentText="Комментарий" />
+    </Block>
+</Playground>
+
+## Success text usage
+
+<Playground>
+    <Block width="150">
+        <TextField successText="Заявка успешно отправлена" />
+    </Block>
+</Playground>
+
+## Disable usage
+
+<Playground>
+    <Block width="150">
+        <TextField disabled={true} />
+    </Block>
+</Playground>

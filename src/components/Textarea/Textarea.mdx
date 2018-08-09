@@ -1,0 +1,68 @@
+---
+name: Textarea
+menu: Components
+---
+import { Playground, PropsTable } from 'docz';
+import Textarea from './Textarea';
+
+export const Block = ({ children, width = 200}) => {
+    return (
+        <div style={{width: `${width}px`}}>
+            {children}
+        </div>
+    )
+}
+
+# Textarea
+
+## Properties
+
+<PropsTable of={Textarea} />
+
+## Basic usage
+
+<Playground>
+    <Block>
+        <Textarea name="fio"/>
+    </Block>
+</Playground>
+
+## Error usage
+
+<Playground>
+    <Block width="150">
+        <Textarea error={true} noticeText="Неправильно заполнено поле" />
+    </Block>
+</Playground>
+
+## Valid usage
+
+<Playground>
+    <Block width="150">
+        <Textarea valid={true} />
+    </Block>
+</Playground>
+
+## Comment usage
+
+<Playground>
+    <Block width="150">
+        <Textarea commentText="Комментарий" />
+    </Block>
+</Playground>
+
+## Success text usage
+
+<Playground>
+    <Block width="150">
+        <Textarea successText="Заявка успешно отправлена" />
+    </Block>
+</Playground>
+
+## Disable usage
+
+<Playground>
+    <Block width="150">
+        <Textarea disabled={true} />
+    </Block>
+</Playground>

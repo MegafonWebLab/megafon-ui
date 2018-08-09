@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './TextField.less';
+import './Textarea.less';
 import { cnCreate } from '../../utils/cn';
 import * as equal from 'deep-equal';
 
