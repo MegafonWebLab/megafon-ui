@@ -19,13 +19,22 @@ script:
   - npm run coverage
 
 deploy:
-  provider: npm
-  email: "$NPM_EMAIL"
-  api_key: "$NPM_TOKEN"
-  skip_cleanup: true
-  on:
-    tags: true
-    node_js: "8"
+  - provider: npm
+    email: "$NPM_EMAIL"
+    api_key: "$NPM_TOKEN"
+    skip_cleanup: true
+    on:
+      tags: true
+      node_js: "8"
+
+  - provider: pages
+    github-token: "$GITHUB_TOKEN"
+    skip-cleanup: true
+    local-dir: "docs"
+    keep-history: true
+    on:
+      branch: master
+      node_js: "8"
 
 after_script:
   - codecov
