@@ -29,4 +29,4 @@ $ npm run build
 $ npm run docz:dev
 ```
 
-The demo will be available at [`http://localhost:3000/megafon-ui/`](`http://localhost:3000/megafon-ui/`).
+The demo will be available at [http://localhost:3000/megafon-ui/](http://localhost:3000/megafon-ui/).
