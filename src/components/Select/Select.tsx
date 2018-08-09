@@ -367,7 +367,7 @@ class Select extends React.Component<Props, State> {
                         <SelectItem
                             title={rest.title}
                             leftIcon={rest.leftIcon}
-                            rightIcon={rest.leftIcon}
+                            rightIcon={rest.rightIcon}
                             key={id}
                             index={i}
                             current={this.state.currentIndex === i}

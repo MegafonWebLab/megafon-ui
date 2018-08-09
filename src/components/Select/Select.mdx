@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz';
 import Select from './Select';
+import CheckedIcon from 'icons/checked_24.svg';
 
 export const items = [{
     id: '1',
@@ -50,33 +51,98 @@ const items = [{
 ```
 
 export class SelectWrapper extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedTitle: '',
+            searchValue: '',
+        }
+    }
+    onSelectItem = (e, data) => {
+        this.setState({ selectedTitle: data.title})
+    }
+    onChangeSearch = value => {
+        console.log(value);
+        this.setState({ searchValue: value });
+    }
+    render() {
+        return this.props.children({
+            onSelectItem: this.onSelectItem,
+            onChangeSearch: this.onChangeSearch,
+            selectedTitle: this.state.selectedTitle,
+            searchValue: this.state.searchValue
+        })
+    }
 }
+
 ## Basic usage
 
 <Playground wrapper={Wrapper}>
-    <Select
-        placeholder="Choose your step"
-        items={items}
-    />
-</Playground>
-
-## Selected title prop usage
-
-<Playground wrapper={Wrapper}>
-    <Select
-        selectedTitle="Drink"
-        placeholder="Choose your step"
-        items={items}
-    />
+    <SelectWrapper>
+        {({ onSelectItem, selectedTitle }) =>
+                <Select
+                    selectedTitle={selectedTitle}
+                    onSelectItem={onSelectItem}
+                    placeholder="Choose your step"
+                    items={items}
+                />
+        }
+    </SelectWrapper>
 </Playground>
 
 ## Search usage
 
 <Playground wrapper={Wrapper}>
+    <SelectWrapper>
+        {({ onChangeSearch, searchValue }) =>
+                <Select
+                    placeholder="Choose your step"
+                    items={items.filter(({ title }) => title.toLowerCase().search(searchValue.toLowerCase()) !== -1 )}
+                    onChangeSearch={onChangeSearch}
+                    searchValue={searchValue}
+                    icon={<CheckedIcon style={{ width: '24px', height: '24px'}}/>}
+                />
+        }
+    </SelectWrapper>
+</Playground>
+
+## Select item icon left usage
+
+<Playground wrapper={Wrapper}>
     <Select
         placeholder="Choose your step"
-        items={items}
-        isSearch={true}
+        items={items.map(item => ({
+            title: item.title,
+            value: item.value,
+            id: item.id,
+            leftIcon: <CheckedIcon style={{ width: '24px', height: '24px'}}/>
+        })
+        )}
     />
 </Playground>
+
+## Select item right left usage
+
+<Playground wrapper={Wrapper}>
+    <Select
+        placeholder="Choose your step"
+        items={items.map(item => ({
+            title: item.title,
+            value: item.value,
+            id: item.id,
+            rightIcon: <CheckedIcon style={{ width: '24px', height: '24px'}}/>
+        })
+        )}
+    />
+</Playground>
+
+## Zero items usage
+
+<Playground wrapper={Wrapper}>
+    <Select
+        placeholder="Choose your step"
+        items={[]}
+        notFoundText="Nothing found"
+    />
+</Playground>
+
