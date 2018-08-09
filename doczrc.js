@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 module.exports = {
     title: 'MegaFon UI',
+    description: 'Megafon React UI Kit',
     themeConfig: {
         colors: {
             primary: '#00b956',

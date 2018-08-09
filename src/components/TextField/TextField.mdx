@@ -5,7 +5,7 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import TextField from './TextField';
 
-export const wrapper = (width = 200) => ({ children }) => {
+export const wrapper = (width = 250) => ({ children }) => {
     return (
         <div style={{width: `${width}px`}}>
             {children}
@@ -27,36 +27,36 @@ export const wrapper = (width = 200) => ({ children }) => {
 
 ## Mask usage
 
-<Playground wrapper={wrapper(150)}>
+<Playground wrapper={wrapper()}>
     <TextField mask="(999) 999-99-99" maskChar=" " />
 </Playground>
 
 ## Error usage
 
-<Playground wrapper={wrapper(150)}>
+<Playground wrapper={wrapper()}>
     <TextField error={true} noticeText="Name is required" />
 </Playground>
 
 ## Valid usage
 
-<Playground wrapper={wrapper(150)}>
+<Playground wrapper={wrapper()}>
         <TextField valid={true} />
 </Playground>
 
 ## Comment usage
 
-<Playground wrapper={wrapper(150)}>
-    <TextField commentText="Comemnt" />
+<Playground wrapper={wrapper()}>
+    <TextField commentText="Comment" />
 </Playground>
 
 ## Success text usage
 
-<Playground wrapper={wrapper(150)}>
-    <TextField successText="Form successfully submitted" />
+<Playground wrapper={wrapper()}>
+    <TextField successText="Field is correct" />
 </Playground>
 
 ## Disable usage
 
-<Playground wrapper={wrapper(150)}>
+<Playground wrapper={wrapper()}>
     <TextField disabled={true} />
 </Playground>
