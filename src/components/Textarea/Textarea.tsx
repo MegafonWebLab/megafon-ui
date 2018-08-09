@@ -105,7 +105,7 @@ class Textarea extends React.Component<Props, {}> {
             value: this.props.value,
             required: this.props.required,
             autoComplete: this.props.autocomplete,
-            className: cn('field', { textarea: true }),
+            className: cn('field'),
         };
 
         return <textarea ref={this.inputNode} {...params} />;
