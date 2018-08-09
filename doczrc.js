@@ -9,6 +9,8 @@ module.exports = {
             link: '#00b956'
         }
     },
+    base: '/megafon-ui/',
+    dest: 'docs',
     typescript: true,
     protocol: 'http',
     src: resolve(__dirname, 'src'),
@@ -21,7 +23,7 @@ module.exports = {
     modifyBundlerConfig: config => {
         const idx = config.module.rules.findIndex(
             r => r.test.toString() === '/\\.(svg)(\\?.*)?$/'
-        )
+        );
 
         config.module.rules[idx] = {
             test: /\.svg$/,
