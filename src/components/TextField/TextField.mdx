@@ -5,7 +5,7 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import TextField from './TextField';
 
-export const Block = ({ children, width = 200}) => {
+export const wrapper = (width = 200) => ({ children }) => {
     return (
         <div style={{width: `${width}px`}}>
             {children}
@@ -21,56 +21,42 @@ export const Block = ({ children, width = 200}) => {
 
 ## Basic usage
 
-<Playground>
-    <Block>
-        <TextField name="fio"/>
-    </Block>
+<Playground wrapper={wrapper()}>
+    <TextField name="name"/>
 </Playground>
 
 ## Mask usage
 
-<Playground>
-    <Block width="150">
-        <TextField mask="(999) 999-99-99" maskChar=" " />
-    </Block>
+<Playground wrapper={wrapper(150)}>
+    <TextField mask="(999) 999-99-99" maskChar=" " />
 </Playground>
 
 ## Error usage
 
-<Playground>
-    <Block width="150">
-        <TextField error={true} noticeText="Неправильно заполнено поле" />
-    </Block>
+<Playground wrapper={wrapper(150)}>
+    <TextField error={true} noticeText="Name is required" />
 </Playground>
 
 ## Valid usage
 
-<Playground>
-    <Block width="150">
+<Playground wrapper={wrapper(150)}>
         <TextField valid={true} />
-    </Block>
 </Playground>
 
 ## Comment usage
 
-<Playground>
-    <Block width="150">
-        <TextField commentText="Комментарий" />
-    </Block>
+<Playground wrapper={wrapper(150)}>
+    <TextField commentText="Comemnt" />
 </Playground>
 
 ## Success text usage
 
-<Playground>
-    <Block width="150">
-        <TextField successText="Заявка успешно отправлена" />
-    </Block>
+<Playground wrapper={wrapper(150)}>
+    <TextField successText="Form successfully submitted" />
 </Playground>
 
 ## Disable usage
 
-<Playground>
-    <Block width="150">
-        <TextField disabled={true} />
-    </Block>
+<Playground wrapper={wrapper(150)}>
+    <TextField disabled={true} />
 </Playground>
