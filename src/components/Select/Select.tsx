@@ -170,6 +170,7 @@ class Select extends React.Component<Props, State> {
     }
 
     handleClickItem = (e, index: number) => {
+        const { onSelectItem } = this.props;
         const { title, value, data } = this.props.items[index];
 
         this.setState({
@@ -177,22 +178,17 @@ class Select extends React.Component<Props, State> {
             currentIndex: index,
         });
 
-        if (this.props.onSelectItem) {
-            this.props.onSelectItem(e, { title, value, index, data });
-        }
+        onSelectItem && onSelectItem(e, { title, value, index, data });
     }
 
     handleClickSearch = e => {
-        if (!this.state.isOpen) {
-            e.target.select();
-        }
+        !this.state.isOpen && e.target.select();
         this.setState({ isOpen: true });
     }
 
     handleChangeSearch = e => {
-        if (this.props.onChangeSearch) {
-            this.props.onChangeSearch(e.target.value);
-        }
+        const { onChangeSearch } = this.props;
+        onChangeSearch && onChangeSearch(e.target.value);
 
         this.setState({
             activeIndex: 0,
@@ -202,9 +198,9 @@ class Select extends React.Component<Props, State> {
     }
 
     handleFocusSearch = e => {
-        if (this.props.onFocusSearch) {
-            this.props.onFocusSearch(e.target.value);
-        }
+        const { onFocusSearch } = this.props;
+
+        onFocusSearch && onFocusSearch(e.target.value);
     }
 
     handleKeyDown = e => {

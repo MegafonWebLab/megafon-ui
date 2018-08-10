@@ -55,7 +55,10 @@ describe('<Select />', () => {
     });
 
     it('it handles keydown with arrow down', () => {
-        const wrapper = mount(<Select {...props} />);
+        const wrapper = mount(<Select {...props} placeholder="test" />);
+        const instance = wrapper.instance() as Select;
+
+        instance.itemWrapperNode.scrollTop = -1;
         wrapper.find(controlSelector).simulate('keydown', {
             keyCode: 40,
         });
@@ -64,6 +67,9 @@ describe('<Select />', () => {
 
     it('it handles keydown with arrow top', () => {
         const wrapper = mount(<Select {...props} />);
+        const instance = wrapper.instance() as Select;
+
+        instance.itemWrapperNode.scrollTop = 1;
         wrapper.setState({ activeIndex: 1 });
         wrapper.find(controlSelector).simulate('keydown', {
             keyCode: 38,
@@ -95,6 +101,15 @@ describe('<Select />', () => {
             keyCode: 9,
         });
         expect(wrapper.state('isOpen')).toBe(false);
+    });
+
+    it('it handles keydown with no register keyCode', () => {
+        const wrapper = mount(<Select {...props} keyNavigation={true} />);
+        wrapper.setState({ isOpen: true });
+        wrapper.find(controlSelector).simulate('keydown', {
+            keyCode: 2,
+        });
+        expect(wrapper.state('isOpen')).toBe(true);
     });
 
     it('it handles blur', () => {
