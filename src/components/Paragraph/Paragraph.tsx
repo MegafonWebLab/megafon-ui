@@ -6,7 +6,7 @@ import { cnCreate } from '../../utils/cn';
 interface Props {
     /** Align text horizontally */
     hAlign?: 'center' | 'right';
-    /** Text weigth */
+    /** Text weight */
     weight?: 'light' | 'regular' | 'medium' | 'bold';
     /** Font size at all resolutions */
     sizeAll?: 'smallest' | 'small' | 'medium' | 'large';
