@@ -48,7 +48,7 @@ interface Props {
     canOpen?: boolean;
     /** Text in the absence of search results */
     notFoundText?: string;
-    /** Массив объектов с данными для вывода пунктов */
+    /** Array of objects to be used for options rendering */
     items: Array<{
         /** Id */
         id?: string;
