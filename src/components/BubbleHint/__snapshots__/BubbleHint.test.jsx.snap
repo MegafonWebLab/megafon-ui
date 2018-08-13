@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BubbleHint /> it renders BubbleHint 1`] = `
+<Manager
+  className="bubble-hint"
+  tag="div"
+>
+  <div
+    className="bubble-hint__container"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <Target
+      className="bubble-hint__target"
+    >
+      <div
+        className="bubble-hint__trigger"
+      />
+    </Target>
+    <Popper
+      className="bubble-hint__popup bubble-hint__popup_width_normal"
+      component="div"
+      eventsEnabled={false}
+      modifiers={
+        Object {
+          "flip": Object {
+            "behavior": Array [
+              "right",
+              "left",
+              "bottom",
+              "top",
+            ],
+          },
+        }
+      }
+      placement="left"
+    >
+      <div
+        className="bubble-hint__popup-inner bubble-hint__popup-inner_padding_normal bubble-hint__popup-inner_align_left"
+      >
+        <div
+          className="bubble-hint__content"
+        />
+        <Arrow
+          className="bubble-hint__arrow"
+        />
+      </div>
+    </Popper>
+  </div>
+</Manager>
+`;
+
+exports[`<BubbleHint /> it renders with click 1`] = `
+<Manager
+  className="bubble-hint"
+  tag="div"
+>
+  <div
+    className="bubble-hint__container"
+    onClick={[Function]}
+  >
+    <Target
+      className="bubble-hint__target"
+    >
+      <div
+        className="bubble-hint__trigger"
+      />
+    </Target>
+    <Popper
+      className="bubble-hint__popup bubble-hint__popup_width_normal"
+      component="div"
+      eventsEnabled={false}
+      modifiers={
+        Object {
+          "flip": Object {
+            "behavior": Array [
+              "right",
+              "left",
+              "bottom",
+              "top",
+            ],
+          },
+        }
+      }
+      placement="left"
+    >
+      <div
+        className="bubble-hint__popup-inner bubble-hint__popup-inner_padding_normal bubble-hint__popup-inner_align_left"
+      >
+        <div
+          className="bubble-hint__content"
+        />
+        <Arrow
+          className="bubble-hint__arrow"
+        />
+      </div>
+    </Popper>
+  </div>
+</Manager>
+`;
