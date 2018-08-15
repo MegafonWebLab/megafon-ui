@@ -4,7 +4,7 @@ import { cnCreate } from '../../utils/cn';
 import './Button.less';
 import Spinner from 'icons/spinner.svg';
 
-interface Props {
+interface IButtonProps {
     /** Special view */
     customView?: 'two-lines';
     /** Link */
@@ -47,7 +47,7 @@ interface Props {
 }
 
 const cn = cnCreate('button');
-class Button extends React.Component<Props, {}> {
+class Button extends React.Component<IButtonProps, {}> {
     static propTypes = {
         customView: PropTypes.oneOf(['two-lines']),
         href: PropTypes.string,
@@ -93,7 +93,7 @@ class Button extends React.Component<Props, {}> {
         ]),
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<IButtonProps> = {
         passiveColor: 'green',
         hoverColor: 'green',
         downColor: 'dark',

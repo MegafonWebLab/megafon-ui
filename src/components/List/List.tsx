@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './List.less';
 import { cnCreate } from '../../utils/cn';
 
-interface Props {
+interface IListProps {
     /** List type */
     as?: 'ul' | 'ol';
     /** Align the list horizontally */
@@ -16,7 +16,7 @@ interface Props {
 }
 
 const cn = cnCreate('list');
-class List extends React.Component<Props, {}> {
+class List extends React.Component<IListProps, {}> {
     static propTypes = {
         as: PropTypes.oneOf(['ul', 'ol']),
         hAlign: PropTypes.oneOf(['center', 'right']),
@@ -28,7 +28,7 @@ class List extends React.Component<Props, {}> {
         ]).isRequired,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<IListProps> = {
         as: 'ul',
         color: 'black',
         weight: 'regular',

@@ -5,21 +5,7 @@ import SelectItem from './SelectItem';
 import * as equal from 'deep-equal';
 import { cnCreate } from '../../utils/cn';
 
-export interface Item {
-    /** Id */
-    id?: string;
-    /** Header */
-    title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    /** Value */
-    value?: string;
-    data?: {};
-    /** Left icon */
-    leftIcon?: JSX.Element;
-    /** Right icon */
-    rightIcon?: JSX.Element;
-}
-
-interface Props {
+interface ISelectProps {
     /** Header with the selected value */
     selectedTitle?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Selected value */
@@ -77,7 +63,7 @@ interface Props {
     onClickIcon?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-interface State {
+interface ISelectState {
     isOpen: boolean;
     focus: boolean;
     activeIndex: number;
@@ -85,7 +71,7 @@ interface State {
 }
 
 const cn = cnCreate('select');
-class Select extends React.Component<Props, State> {
+class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
         selectedTitle: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
@@ -128,7 +114,7 @@ class Select extends React.Component<Props, State> {
         onClickIcon: PropTypes.func,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<ISelectProps> = {
         keyNavigation: true,
         canOpen: true,
         notFoundText: 'Ничего не нашлось',
@@ -140,7 +126,7 @@ class Select extends React.Component<Props, State> {
     selectNode: any = null;
     search: any = null;
 
-    constructor(props: Props) {
+    constructor(props: ISelectProps) {
         super(props);
 
         this.state = {
@@ -155,7 +141,7 @@ class Select extends React.Component<Props, State> {
         document.addEventListener('click', this.onClickOutside);
     }
 
-    shouldComponentUpdate(nextProps: Props, nextState: State) {
+    shouldComponentUpdate(nextProps: ISelectProps, nextState: ISelectState) {
         return !(equal({ ...this.props, items: this.props.items.length },
             { ...nextProps, items: nextProps.items.length })
             && equal(this.state, nextState));

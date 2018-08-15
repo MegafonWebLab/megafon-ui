@@ -3,12 +3,12 @@ import * as PropTypes from 'prop-types';
 import './ListItem.less';
 import { cnCreate } from '../../utils/cn';
 
-interface Props {
+interface IListItemProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
 const cn = cnCreate('list-item');
-class ListItem extends React.Component<Props, {}> {
+class ListItem extends React.Component<IListItemProps, {}> {
     static propTypes = {
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),

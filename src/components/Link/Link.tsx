@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
-interface Props {
+interface ILinkProps {
     /** Link */
     href?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
@@ -13,7 +13,7 @@ interface Props {
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-class Link extends React.Component<Props, {}> {
+class Link extends React.Component<ILinkProps, {}> {
     static propTypes = {
         href: PropTypes.string,
         children: PropTypes.oneOfType([
@@ -27,7 +27,7 @@ class Link extends React.Component<Props, {}> {
         onClick: PropTypes.func,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<ILinkProps> = {
         href: '#',
         target: '_blank',
     };

@@ -6,7 +6,7 @@ import greenHorizontalImg from 'icons/green-horizontal.svg';
 import greenVerticalImg from 'icons/green-vertical.svg';
 import Link from '../Link/Link';
 
-interface Props {
+interface ILogoProps {
     /** Color */
     color?: string;
     /** View */
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const cn = cnCreate('logo');
-class Logo extends React.Component<Props, {}> {
+class Logo extends React.Component<ILogoProps, {}> {
     static propTypes = {
         color: PropTypes.string,
         view: PropTypes.oneOf(['horizontal', 'vertical']),
@@ -26,7 +26,7 @@ class Logo extends React.Component<Props, {}> {
         href: PropTypes.string,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<ILogoProps> = {
         color: 'green',
         view: 'horizontal',
         target: '_blank',

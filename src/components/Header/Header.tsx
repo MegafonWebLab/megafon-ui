@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Header.less';
 import { cnCreate } from '../../utils/cn';
 
-interface Props {
+interface IHeaderProps {
     /** Tag */
     as?: 'h1' | 'h2' | 'h3' | 'h5' | 'h6';
     /** Color */
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const cn = cnCreate('header');
-class Header extends React.Component<Props, {}> {
+class Header extends React.Component<IHeaderProps, {}> {
     static propTypes = {
         as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5', 'h6']),
         color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
@@ -28,7 +28,7 @@ class Header extends React.Component<Props, {}> {
         children: PropTypes.node,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<IHeaderProps> = {
         as: 'h1',
         color: 'black',
     };
