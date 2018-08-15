@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainTileFeatures /> it renders MainTileFeatures 1`] = `
+<div
+  className="main-tile-features"
+>
+  <MainTileInternet
+    className="main-tile-features__internet"
+    params={
+      Array [
+        Object {
+          "caption": "на видео, соц-сети и мессенджеры",
+          "title": "Безлимитный интернет",
+          "value": "test",
+        },
+      ]
+    }
+    socialIcons={Array []}
+  />
+  <MainTileFree
+    className="main-tile-features__free"
+    key="0"
+    params={
+      Array [
+        Object {
+          "title": "Youtube, Rutube, Vimeo",
+        },
+      ]
+    }
+  />
+  <MainTileFree
+    className="main-tile-features__free"
+    key="1"
+    params={
+      Array [
+        Object {
+          "title": "WhatsApp, Viber, Facebook Messanger, Snapchat, eMotion",
+        },
+      ]
+    }
+  />
+  <MainTileFree
+    className="main-tile-features__free"
+    key="2"
+    params={
+      Array [
+        Object {
+          "title": "Вконтакте, Одноклассники, Facebook, Instagram, Twitter",
+        },
+      ]
+    }
+  />
+</div>
+`;

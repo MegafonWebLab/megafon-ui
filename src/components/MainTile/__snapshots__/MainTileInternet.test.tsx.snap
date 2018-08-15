@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MainTariffTileInternet /> it renders MainTariffTileInternet 1`] = `
+exports[`<MainTileInternet /> it renders MainTileInternet 1`] = `
 <div
-  className="main-tariff-tile-internet"
+  className="main-tile-internet"
 >
   <div
-    className="main-tariff-tile-internet__inner"
+    className="main-tile-internet__inner"
     key="test0"
   >
     <Header
       as="h3"
-      className="main-tariff-tile-internet__title"
+      className="main-tile-internet__title"
       color="black"
       margin={false}
     >
       test
     </Header>
     <div
-      className="main-tariff-tile-internet__text"
+      className="main-tile-internet__text"
     >
       test
     </div>

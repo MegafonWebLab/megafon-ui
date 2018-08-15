@@ -4,223 +4,15 @@ menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
-import MainTile from './MainTile';
 import MainTileWrapper from './MainTileWrapper';
 import MainTileInfo from './MainTileInfo';
 import MainTileFeatures from './MainTileFeatures';
 import MainTileTotal from './MainTileTotal';
 import Checked from 'icons/checked_24.svg';
 
-export const mainProps = {
-    recommended: true,
-    plan: {
-        id: 1408,
-        title: 'Включайся! Пиши',
-        shop_id: 96856,
-        shopTag: 'write',
-        badges: [],
-        description: 'Амедиатека',
-        groups: [14],
-        icon: 'icon-tariffs-megaicons-288',
-        descriptionIcon: <Checked style={{ width: '40px', height: '40px'}}/>,
-        socialIcons: [
-            {
-                svgIcon: <Checked />,
-                code: 'vk',
-                title: 'Vkontakte',
-            }, {
-                svgIcon: <Checked />,
-                code: 'instagram',
-                title: 'Instagram',
-            },
-        ],
-        link: '/tariffs/vklyuchaysya/pishi.html',
-        details: {
-            additional_params: [
-                {
-                    param: 'minute_pack',
-                    value: '300',
-                    unit: 'минут',
-                    footnote: '',
-                    title: 'Звонки на все номера России',
-                    children: false,
-                    weight: '100',
-                    caption: '',
-                    unitValue: 'минут',
-                    unitExtra: '',
-                    valueIcon: '',
-                    is_delim: false,
-                }, {
-                    param: 'sms_pack',
-                    value: '300',
-                    unit: 'SMS',
-                    footnote: '',
-                    title: 'SMS на номера Домашнего региона',
-                    children: false,
-                    weight: '200',
-                    caption: '',
-                    unitValue: 'SMS',
-                    unitExtra: '',
-                    valueIcon: '',
-                    is_delim: false,
-                }, {
-                    param: 'traffic_pack_tariff',
-                    value: '4',
-                    unit: 'ГБ',
-                    footnote: '',
-                    title: 'На любые сервисы',
-                    children: false,
-                    weight: '700',
-                    caption: '',
-                    unitValue: 'ГБ',
-                    unitExtra: '',
-                    valueIcon: '',
-                    is_delim: false,
-                },
-            ],
-            payment: {
-                param: 'week_payment',
-                value: '299',
-                unit: '₽ в неделю',
-                footnote: '',
-                title: 'Абонентская плата (неделя)',
-                children: false,
-                weight: '800',
-                caption: '',
-                unitValue: '₽',
-                unitExtra: 'в неделю',
-                valueIcon: '',
-                is_delim: false,
-            },
-            showcase_params: [
-                {
-                    param: 'int_mess_new',
-                    value: '',
-                    unit: '',
-                    footnote: '',
-                    title: 'Безлимитный интернет на мессенджеры',
-                    children: [
-                        {
-                            param: 'unlim_internet',
-                            value: '',
-                            unit: '',
-                            footnote: '',
-                            title: 'Безлимитный интернет',
-                            children: false,
-                            weight: '400',
-                            caption: 'на мессенджеры',
-                            unitValue: '',
-                            unitExtra: '',
-                            valueIcon: '',
-                            is_delim: false,
-                        },
-                        {
-                            param: 'unlim_internet',
-                            value: '',
-                            unit: '',
-                            footnote: '',
-                            title: 'Безлимитный интернет',
-                            children: false,
-                            weight: '400',
-                            caption: 'на мессенджеры',
-                            unitValue: '',
-                            unitExtra: '',
-                            valueIcon: '',
-                            is_delim: false,
-                        },
-                        {
-                            param: 'unlim_internet',
-                            value: '',
-                            unit: '',
-                            footnote: '',
-                            title: 'Безлимитный интернет',
-                            children: false,
-                            weight: '400',
-                            caption: 'на мессенджеры',
-                            unitValue: '',
-                            unitExtra: '',
-                            valueIcon: '',
-                            is_delim: false,
-                        },
-                        {
-                            param: 'unlim_internet',
-                            value: '',
-                            unit: '',
-                            footnote: '',
-                            title: 'Безлимитный интернет',
-                            children: false,
-                            weight: '400',
-                            caption: 'на мессенджеры',
-                            unitValue: '',
-                            unitExtra: '',
-                            valueIcon: '',
-                            is_delim: false,
-                        },
-                    ],
-                    weight: '300',
-                    caption: '',
-                    unitValue: '',
-                    unitExtra: '',
-                    valueIcon: '',
-                    is_delim: false,
-                }, {
-                    param: 'antivirus',
-                    value: 'Бесплатно',
-                    unit: '',
-                    footnote: '',
-                    title: 'Антивирус ESET NOD32',
-                    children: [
-                        {
-                            param: 'eset',
-                            value: 'Бесплатно',
-                            unit: '',
-                            footnote: '',
-                            title: 'ESET NOD32',
-                            children: false,
-                            weight: '600',
-                            svgIcon: <Checked style={{
-                                    position: 'absolute',
-                                    top: '0',
-                                    left: '0',
-                                    width: '32px',
-                                    height: '32px',
-                                    fill: '#00b956',
-                                    pointerEvents: 'none',
-                            }}/>,
-                            caption: 'Антивирус с функцией «Антивор»',
-                            unitValue: '',
-                            unitExtra: '',
-                            valueIcon: '',
-                            is_delim: false,
-                        },
-                    ],
-                    weight: '500',
-                    svgIcon: <Checked />,
-                    caption: '',
-                    unitValue: '',
-                    unitExtra: '',
-                    valueIcon: '',
-                    is_delim: false,
-                },
-            ],
-        },
-    },
-}
-
 export const Wrapper = ({children}) => <div style={{ padding: '20px'}}>{children}</div>
 
 # MainTile
-
-## Properties MainTile
-<PropsTable of={MainTileInfo} />
-
-## MainTile usage
-
-<Playground>
-    <MainTile {...mainProps} />
- </Playground>
-
-# MainTile multi usage
 
 ## Properties MainTileWrapper
 <PropsTable of={MainTileWrapper} />
@@ -234,12 +26,12 @@ export const Wrapper = ({children}) => <div style={{ padding: '20px'}}>{children
 ## Properties MainTileTotal
 <PropsTable of={MainTileTotal} />
 
-## Basic multi usage
+## Basic usage
 
 export const infoProps = {
-    title: "Включайся!",
-    link: "https://www.google.com/",
-    description: "Амедиатека",
+    title: 'Включайся!',
+    link: 'https://www.google.com/',
+    description: 'Амедиатека',
     descriptionIcon: <Checked style={{ width: '40px', height: '40px'}}/>,
     additionalParams: [
         {
@@ -285,6 +77,59 @@ export const featuresProps = {
     }],
 };
 
+export const featuresIconsProps = {
+    showcaseParams: [{
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [{
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+        }],
+    },
+    {
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [
+        {
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+            svgIcon: <Checked style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '32px',
+                height: '32px',
+                fill: '#00b956',
+                pointerEvents: 'none',
+            }}/>,
+        }],
+    }],
+    socialIcons: [{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Youtube',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'VK',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Mail',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Google',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Yandex',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Snapchat',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'WhatsApp',
+    }]
+};
+
 export const totalProps = {
     payment: {
         value: '600 ₽',
@@ -314,4 +159,135 @@ export const oldTotalProps = {
         <MainTileFeatures {...featuresProps}/>
         <MainTileTotal {...oldTotalProps} />
     </MainTileWrapper>
+    <MainTileWrapper>
+        <MainTileInfo {...infoProps} />
+        <MainTileFeatures {...featuresIconsProps}/>
+        <MainTileTotal {...totalProps} handleSubmit={() => ({})}/>
+    </MainTileWrapper>
+    <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
+        <MainTileInfo {...infoProps} />
+        <MainTileFeatures {...featuresProps}/>
+        <MainTileTotal {...oldTotalProps} handleSubmit={() => ({})}/>
+    </MainTileWrapper>
 </Playground>
+
+## Included props
+
+``` javascript
+export const infoProps = {
+    title: 'Включайся!',
+    link: 'https://www.google.com/',
+    description: 'Амедиатека',
+    descriptionIcon: <Checked style={{ width: '40px', height: '40px'}}/>,
+    additionalParams: [
+        {
+            value: '300',
+            unit: 'минут',
+            title: 'Звонки на все номера России',
+        }, {
+            value: '300',
+            unit: 'SMS',
+            title: 'SMS на номера Домашнего региона',
+        }, {
+            value: '4',
+            unit: 'ГБ',
+            title: 'На любые сервисы',
+        },
+    ]
+};
+
+export const featuresProps = {
+    showcaseParams: [{
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [{
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+        }],
+    },
+    {
+        children: [{
+            title: 'Youtube, Rutube, Vimeo',
+        }],
+    },
+    {
+        children: [{
+            title: 'WhatsApp, Viber, Facebook Messanger, Snapchat, eMotion',
+        }],
+    },
+    {
+        children: [{
+            title: 'Вконтакте, Одноклассники, Facebook, Instagram, Twitter'
+        }],
+    }],
+};
+
+const featuresIconsProps = {
+    showcaseParams: [{
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [{
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+        }],
+    },
+    {
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [
+        {
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+            svgIcon: <Checked style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '32px',
+                height: '32px',
+                fill: '#00b956',
+                pointerEvents: 'none',
+            }}/>,
+        }],
+    }],
+    socialIcons: [{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Youtube',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'VK',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Mail',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Google',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Yandex',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Snapchat',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'WhatsApp',
+    }]
+};
+
+export const totalProps = {
+    payment: {
+        value: '600 ₽',
+        unit: 'в месяц'
+    }
+};
+
+export const oldTotalProps = {
+    payment: {
+        value: '600 ₽',
+        oldValue: '750 ₽',
+        unit: 'в месяц'
+    }
+};
+```

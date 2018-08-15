@@ -32,7 +32,7 @@ class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
         IsBorderRight: true,
     };
 
-    handleClick = e => e.target.tagName !== 'A';
+    handleClick = (e: React.SyntheticEvent<EventTarget>): boolean => (e.target as HTMLElement).tagName !== 'A';
 
     renderHintLabel() {
         return (
@@ -47,10 +47,7 @@ class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
 
         return (
             <div
-                className={cn('', {
-                    hint: !!hint ? hint.color : false,
-                    'br-no': !IsBorderRight,
-                })}
+                className={cn('', { hint: !!hint ? hint.color : false, 'br-no': !IsBorderRight })}
                 onClick={this.handleClick}
             >
                 <div className={cn('inner')}>

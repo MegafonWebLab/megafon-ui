@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainTileWrapper /> it renders MainTileWrapper 1`] = `
+<div
+  className="main-tile-wrapper main-tile-wrapper_hint_green"
+  onClick={[Function]}
+>
+  <div
+    className="main-tile-wrapper__inner"
+  >
+    <div
+      className="main-tile-wrapper__hint-box"
+    >
+      <div
+        className="main-tile-wrapper__hint-text"
+      >
+        Рекоммендуем
+      </div>
+    </div>
+    <div
+      className="main-tile-wrapper__container"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MainTileWrapper /> it renders without hint 1`] = `
+<div
+  className="main-tile-wrapper main-tile-wrapper_br-no"
+  onClick={[Function]}
+>
+  <div
+    className="main-tile-wrapper__inner"
+  >
+    <div
+      className="main-tile-wrapper__container"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;

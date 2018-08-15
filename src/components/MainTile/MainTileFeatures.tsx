@@ -18,8 +18,8 @@ export interface IShowcaseChildren {
 }
 
 interface IShowcaseParams {
-    title: string;
-    value: string;
+    title?: string;
+    value?: string;
     children: Array<Partial<IShowcaseChildren>>;
 }
 
@@ -39,14 +39,16 @@ class MainTileFeatures extends React.Component<IMainTileFeaturesProps, {}> {
     static propTypes = {
         showcaseParams: PropTypes.arrayOf(
             PropTypes.shape({
-                title: PropTypes.string.isRequired,
-                value: PropTypes.string.isRequired,
-                children: PropTypes.arrayOf({
-                    svgIcon: PropTypes.element,
-                    title: PropTypes.string,
-                    caption: PropTypes.string,
-                    value: PropTypes.string,
-                }),
+                title: PropTypes.string,
+                value: PropTypes.string,
+                children: PropTypes.arrayOf(
+                    PropTypes.shape({
+                        svgIcon: PropTypes.element,
+                        title: PropTypes.string,
+                        caption: PropTypes.string,
+                        value: PropTypes.string,
+                    })
+                ),
             })
         ),
         socialIcons: PropTypes.arrayOf(
@@ -78,7 +80,7 @@ class MainTileFeatures extends React.Component<IMainTileFeaturesProps, {}> {
                         className={cn('free')}
                         params={param.children}
                         title={param.value}
-                        key={param.title + index}
+                        key={index}
                     />
                 )}
             </div>

@@ -1,35 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MainTariffTileFree /> it renders MainTariffTileFree 1`] = `
+exports[`<MainTileFree /> it renders MainTileFree 1`] = `
 <div
-  className="main-tariff-tile-free"
+  className="main-tile-free"
 >
   <Header
     as="h3"
-    className="main-tariff-tile-free__title"
+    className="main-tile-free__title"
     color="black"
     margin={false}
   >
     test
   </Header>
   <ul
-    className="main-tariff-tile-free__list"
+    className="main-tile-free__list"
   >
     <li
-      className="main-tariff-tile-free__item main-tariff-tile-free__item_icon"
+      className="main-tile-free__item main-tile-free__item_icon"
       key="test"
     >
       <test-file-stub />
       <Header
         as="h5"
-        className="main-tariff-tile-free__item-title"
+        className="main-tile-free__item-title"
         color="black"
         margin={false}
       >
         test
       </Header>
       <Paragraph
-        className="main-tariff-tile-free__item-text"
+        className="main-tile-free__item-text"
         color="black"
         marginAll="none"
         sizeAll="small"

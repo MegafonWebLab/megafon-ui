@@ -42,23 +42,23 @@ interface IMainTileInfoProps {
 const cn = cnCreate('main-tile-info');
 class MainTileInfo extends React.Component<IMainTileInfoProps, {}> {
     static propTypes = {
-        title: PropTypes.string.isRequred,
-        link: PropTypes.string.isRequred,
+        title: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
         linkText: PropTypes.string,
         description: PropTypes.string,
         descriptionIcon: PropTypes.element,
         badges: PropTypes.arrayOf(
             PropTypes.shape({
-                title: PropTypes.string.isRequred,
-                code: PropTypes.string.isRequred,
+                title: PropTypes.string.isRequired,
+                code: PropTypes.string.isRequired,
                 hint: PropTypes.string,
             })
         ),
         additionalParams: PropTypes.arrayOf(
             PropTypes.shape({
-                title: PropTypes.string.isRequred,
-                value: PropTypes.string.isRequred,
-                unit: PropTypes.string.isRequred,
+                title: PropTypes.string.isRequired,
+                value: PropTypes.string.isRequired,
+                unit: PropTypes.string.isRequired,
             })
         ),
     };
