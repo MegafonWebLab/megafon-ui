@@ -9,6 +9,8 @@ interface IMainTileWrapperProps {
         title: string;
         color: 'green' | 'orange' | 'black';
     };
+    /** Show right border */
+    IsBorderRight?: boolean;
     children: JSX.Element[] | Element[] | JSX.Element | Element;
 }
 
@@ -17,13 +19,17 @@ class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
     static propTypes = {
         hint: PropTypes.shape({
             title: PropTypes.string.isRequired,
-            color: PropTypes.oneOf([['green', 'orange', 'black']]).isRequired,
+            color: PropTypes.oneOf(['green', 'orange', 'black']).isRequired,
         }),
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
             PropTypes.node,
         ]),
+    };
+
+    static defaultProps: Partial<IMainTileWrapperProps> = {
+        IsBorderRight: true,
     };
 
     handleClick = e => e.target.tagName !== 'A';
@@ -37,11 +43,14 @@ class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
     }
 
     render() {
-        const { hint } = this.props;
+        const { hint, IsBorderRight } = this.props;
 
         return (
             <div
-                className={cn('', { hint: !!hint ? hint.color : false })}
+                className={cn('', {
+                    hint: !!hint ? hint.color : false,
+                    'br-no': !IsBorderRight,
+                })}
                 onClick={this.handleClick}
             >
                 <div className={cn('inner')}>

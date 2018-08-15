@@ -15,10 +15,12 @@ interface IMainTileTotalProps {
     };
     /** Info - any object  */
     info?: {};
+    /** Submit text */
+    submitText?: string;
     /** Submit hander
      * Show button if included
      */
-    handleSubmit?(e: React.SyntheticEvent<EventTarget>, info: {});
+    handleSubmit?(e: React.SyntheticEvent<EventTarget>, info: {}): void;
 }
 
 const cn = cnCreate('main-tile-total');
@@ -33,37 +35,43 @@ class MainTileTotal extends React.Component<IMainTileTotalProps, {}> {
         handleSubmit: PropTypes.func,
     };
 
-    handleSubmit = (e: React.SyntheticEvent<EventTarget>) => {
+    static defaultProps: Partial<IMainTileTotalProps> = {
+        submitText: 'Выбрать',
+    };
+
+    handleSubmit = (e: React.SyntheticEvent<EventTarget>): void => {
         const { handleSubmit, info } = this.props;
 
         handleSubmit && handleSubmit(e, info!);
     }
 
     render() {
-        const { payment } = this.props;
+        const { payment, handleSubmit, submitText } = this.props;
 
         return (
             <div className={cn('')}>
-                <div className={cn('total-wrap')}>
-                    <div className={cn('total-cost')}>
-                        <span className={cn('total-price')}>{payment.value}</span>&nbsp;
+                <div className={cn('wrap')}>
+                    <div className={cn('cost', { 'old-value': !!payment.oldValue })}>
+                        <span className={cn('price')}>{payment.value}</span>&nbsp;
                         {payment.oldValue &&
                             <React.Fragment>
-                                <span className={cn('total-old-price')}>{payment.oldValue}</span>
+                                <span className={cn('old-price')}>{payment.oldValue}</span>
                                 <br />
                             </React.Fragment>
                         }
-                        <span className={cn('total-unit')}>{payment.unit}</span>
+                        <span className={cn('unit')}>{payment.unit}</span>
                     </div>
-                    <div className={cn('total-buttons')}>
-                        <Button
-                            className={cn('total-button')}
-                            onClick={this.handleSubmit}
-                            width="full"
-                        >
-                            Выбрать
-                        </Button>
-                    </div>
+                    {handleSubmit &&
+                        <div className={cn('buttons')}>
+                            <Button
+                                className={cn('button')}
+                                onClick={this.handleSubmit}
+                                width="full"
+                            >
+                                {submitText}
+                            </Button>
+                        </div>
+                    }
                 </div>
             </div>
         );

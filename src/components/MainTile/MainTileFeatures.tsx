@@ -61,6 +61,7 @@ class MainTileFeatures extends React.Component<IMainTileFeaturesProps, {}> {
         const params = this.props.showcaseParams!.filter(
             param => param.children!.length
         );
+
         const [first, ...rest] = params;
 
         return (

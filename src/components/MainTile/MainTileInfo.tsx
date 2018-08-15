@@ -47,7 +47,7 @@ class MainTileInfo extends React.Component<IMainTileInfoProps, {}> {
         linkText: PropTypes.string,
         description: PropTypes.string,
         descriptionIcon: PropTypes.element,
-        badges: PropTypes.arraOf(
+        badges: PropTypes.arrayOf(
             PropTypes.shape({
                 title: PropTypes.string.isRequred,
                 code: PropTypes.string.isRequred,
@@ -61,6 +61,10 @@ class MainTileInfo extends React.Component<IMainTileInfoProps, {}> {
                 unit: PropTypes.string.isRequred,
             })
         ),
+    };
+
+    static defaultProps: Partial<IMainTileInfoProps> = {
+        linkText: 'Подробнее',
     };
 
     renderBadges() {
@@ -113,13 +117,13 @@ class MainTileInfo extends React.Component<IMainTileInfoProps, {}> {
                         href={this.props.link}
                         target="_blank"
                     >
-                        {this.props.linkText || `Подробнее`}
+                        {this.props.linkText}
                     </TextLink>
                 </div>
                 <div className={cn('params')}>
                     <ul className={cn('params-list')}>
-                        {this.props.additionalParams!.map((param: IAdditionalParams): React.ReactNode =>
-                            <li key={param.title} className={cn('params-item')}>
+                        {this.props.additionalParams!.map((param: IAdditionalParams, key: number): React.ReactNode =>
+                            <li key={param.title + key} className={cn('params-item')}>
                                 <span data-amount={param.value}>{param.value}</span> {param.unit}
                             </li>
                         )}

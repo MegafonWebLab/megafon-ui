@@ -1,0 +1,77 @@
+@import '~styles/base.less';
+
+@b: e('.main-tile-total');
+
+@{b} {
+    flex-shrink: 0;
+    width: 200px;
+    @media @mobileS {
+        margin: 0 auto;
+    }
+    @media @mobileB {
+        width: 165px;
+    }
+    @media @desktop {
+        width: 196px;
+    }
+    @media @desktopMU {
+        width: 268px;
+    }
+    &__wrap {
+        text-align: center;
+        @media @desktopMU {
+            width: 200px;
+        }
+    }
+    &__cost {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+
+        @media @desktopMU {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        &_old-value {
+            @{b}__price {
+                font-size: 28px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__old-price {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 10px;
+            border-bottom: 2px solid @fury;
+        }
+    }
+
+    &__buttons {
+        .b-link {
+            width: 100% !important;
+            margin-bottom: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        .b-link + .b-link {
+            margin-top: 12px;
+        }
+        .b-link_view_with-subtitle {
+            padding-top: 0;
+            .b-link__title {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+

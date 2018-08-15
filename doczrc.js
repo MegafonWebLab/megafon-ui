@@ -8,6 +8,11 @@ module.exports = {
         colors: {
             primary: '#00b956',
             link: '#00b956'
+        },
+        styles: {
+            container: {
+                width: '100%',
+            }
         }
     },
     base: '/megafon-ui/',

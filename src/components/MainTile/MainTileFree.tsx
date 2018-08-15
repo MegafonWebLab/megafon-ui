@@ -32,7 +32,7 @@ class MainTileFree extends React.Component<IMainTileFreeProps, {}> {
 
         return (
             <div className={cn('', {}, className)}>
-                <Header className={cn('title')} as="h3" margin={false}>{title}</Header>
+                {title && <Header className={cn('title')} as="h3" margin={false}>{title}</Header>}
                 <ul className={cn('list')}>
                     {params.map((param: IShowcaseChildren): React.ReactNode =>
                         <li className={cn('item', { icon: !!param.svgIcon })} key={param.title}>
