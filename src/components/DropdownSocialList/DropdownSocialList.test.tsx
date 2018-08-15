@@ -22,5 +22,4 @@ describe('<DropdownSocialList />', () => {
         const wrapper = shallow(<DropdownSocialList {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
-
 });
