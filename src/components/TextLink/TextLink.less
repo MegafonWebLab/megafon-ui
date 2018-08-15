@@ -1,0 +1,51 @@
+@import '~styles/base.less';
+@b: e('.text-link');
+
+@{b} {
+    cursor: pointer;
+    font-size: inherit;
+    line-height: inherit;
+
+    &_underline-visibility_hover&_underline-style_solid {
+        text-decoration: none;
+    }
+    &_underline-visibility_hover:hover&_underline-style_solid {
+        text-decoration: underline;
+    }
+
+    &_underline-visibility_always&_underline-style_solid {
+        text-decoration: underline;
+    }
+
+    &_underline-style_dashed {
+        border-bottom: 1px dashed;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &_underline-style_border {
+        border-bottom: 1px solid;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &_color_white {
+        color: @clearWhite;
+    }
+    &_color_blue {
+        color: @blue;
+    }
+    &_color_green {
+        color: @green;
+    }
+    &_color_black {
+        color: @black80;
+    }
+    &_color_gray {
+        color: @black40;
+    }
+    &_color_inherit {
+        color: inherit;
+    }
+}

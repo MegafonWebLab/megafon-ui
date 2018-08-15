@@ -12,6 +12,8 @@ interface Props {
     margin?: boolean;
     /** Additional element */
     addition?: JSX.Element;
+    /** Custom class name */
+    className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
@@ -42,11 +44,11 @@ class Header extends React.Component<Props, {}> {
     }
 
     render() {
-        const ElementType = this.props.as;
+        const ElementType = this.props.as as string;
         const { color, margin, as: level, onClick } = this.props;
 
         return (
-            <ElementType className={cn('', { color, margin, level })} onClick={onClick}>
+            <ElementType className={cn('', { color, margin, level }, this.props.className)} onClick={onClick}>
                 {this.props.children}
                 {this.props.addition && this.renderAddition()}
             </ElementType>

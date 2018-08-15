@@ -7,8 +7,7 @@ exports[`<BubbleHint /> it renders BubbleHint 1`] = `
 >
   <div
     className="bubble-hint__container"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    onClick={[Function]}
   >
     <Target
       className="bubble-hint__target"
@@ -33,7 +32,8 @@ exports[`<BubbleHint /> it renders BubbleHint 1`] = `
           },
         }
       }
-      placement="left"
+      placement="top"
+      positionFixed={false}
     >
       <div
         className="bubble-hint__popup-inner bubble-hint__popup-inner_padding_normal bubble-hint__popup-inner_align_left"
@@ -82,7 +82,8 @@ exports[`<BubbleHint /> it renders with click 1`] = `
           },
         }
       }
-      placement="left"
+      placement="top"
+      positionFixed={false}
     >
       <div
         className="bubble-hint__popup-inner bubble-hint__popup-inner_padding_normal bubble-hint__popup-inner_align_left"

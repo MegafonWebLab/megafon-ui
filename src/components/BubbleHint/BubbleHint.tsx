@@ -1,11 +1,13 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './BubbleHint.less';
-import { Manager, Popper, Target, Arrow } from 'react-popper';
+import { Manager, Popper, Target, Arrow, IPopperProps } from 'react-popper';
 import modernizr from '../../utils/modernizr';
 import { cnCreate } from '../../utils/cn';
 
 interface IBubbleHintProps {
+    /** Custom class name */
+    className?: string;
     /** Padding in popup */
     popupPadding: 'normal' | 'bottom-small' | 'none';
     /** Align in popup */
@@ -91,7 +93,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         this.props.onMouseLeave && this.props.onMouseLeave(e);
     }
 
-    handleClick = (e: React.SyntheticEvent<EventTarget>): void => {
+    handleClick = (e: React.SyntheticEvent<EventTarget>): void | boolean => {
         if (this.trigger.contains(e.target as HTMLElement)) {
             this.setState({ show: !this.state.show });
             this.props.onClick && this.props.onClick(e);
@@ -100,7 +102,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         return false;
     }
 
-    handleClickOutside = (e: React.SyntheticEvent<EventTarget>): void | boolean => {
+    handleClickOutside = (e: React.SyntheticEvent<EventTarget> | Event): void | boolean => {
         if ((this.container && this.container.contains(e.target as HTMLElement)) || !this.state.show) {
             return;
         }
@@ -144,7 +146,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         };
 
         return (
-            <Manager className={cn('', { 'margin-left': this.props.marginLeft })}>
+            <Manager className={cn('', { 'margin-left': this.props.marginLeft }, this.props.className)}>
                 <div className={cn('container')}
                     {...this.getHandlers()}
                     ref={this.getContainer}>
@@ -156,7 +158,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
                     </Target>
                     <Popper eventsEnabled={false}
                         className={cn('popup', popupClasses)}
-                        modifiers={popupOptions}
+                        modifiers={popupOptions as IPopperProps}
                         placement={this.props.placement}>
                         <div
                             className={cn('popup-inner', {

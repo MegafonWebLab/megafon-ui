@@ -1,0 +1,216 @@
+---
+name: MainTile
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import MainTile from './MainTile';
+import Checked from 'icons/checked_24.svg';
+
+export const mainProps = {
+    recommended: true,
+    plan: {
+        id: 1408,
+        title: 'Включайся! Пиши',
+        shop_id: 96856,
+        shopTag: 'write',
+        badges: [],
+        description: 'Амедиатека',
+        groups: [14],
+        icon: 'icon-tariffs-megaicons-288',
+        descriptionIcon: <Checked style={{ width: '40px', height: '40px'}}/>,
+        socialIcons: [
+            {
+                svgIcon: <Checked />,
+                code: 'vk',
+                title: 'Vkontakte',
+            }, {
+                svgIcon: <Checked />,
+                code: 'instagram',
+                title: 'Instagram',
+            },
+        ],
+        link: '/tariffs/vklyuchaysya/pishi.html',
+        details: {
+            additional_params: [
+                {
+                    param: 'minute_pack',
+                    value: '300',
+                    unit: 'минут',
+                    footnote: '',
+                    title: 'Звонки на все номера России',
+                    children: false,
+                    weight: '100',
+                    caption: '',
+                    unitValue: 'минут',
+                    unitExtra: '',
+                    valueIcon: '',
+                    is_delim: false,
+                }, {
+                    param: 'sms_pack',
+                    value: '300',
+                    unit: 'SMS',
+                    footnote: '',
+                    title: 'SMS на номера Домашнего региона',
+                    children: false,
+                    weight: '200',
+                    caption: '',
+                    unitValue: 'SMS',
+                    unitExtra: '',
+                    valueIcon: '',
+                    is_delim: false,
+                }, {
+                    param: 'traffic_pack_tariff',
+                    value: '4',
+                    unit: 'ГБ',
+                    footnote: '',
+                    title: 'На любые сервисы',
+                    children: false,
+                    weight: '700',
+                    caption: '',
+                    unitValue: 'ГБ',
+                    unitExtra: '',
+                    valueIcon: '',
+                    is_delim: false,
+                },
+            ],
+            payment: {
+                param: 'week_payment',
+                value: '299',
+                unit: '₽ в неделю',
+                footnote: '',
+                title: 'Абонентская плата (неделя)',
+                children: false,
+                weight: '800',
+                caption: '',
+                unitValue: '₽',
+                unitExtra: 'в неделю',
+                valueIcon: '',
+                is_delim: false,
+            },
+            showcase_params: [
+                {
+                    param: 'int_mess_new',
+                    value: '',
+                    unit: '',
+                    footnote: '',
+                    title: 'Безлимитный интернет на мессенджеры',
+                    children: [
+                        {
+                            param: 'unlim_internet',
+                            value: '',
+                            unit: '',
+                            footnote: '',
+                            title: 'Безлимитный интернет',
+                            children: false,
+                            weight: '400',
+                            caption: 'на мессенджеры',
+                            unitValue: '',
+                            unitExtra: '',
+                            valueIcon: '',
+                            is_delim: false,
+                        },
+                        {
+                            param: 'unlim_internet',
+                            value: '',
+                            unit: '',
+                            footnote: '',
+                            title: 'Безлимитный интернет',
+                            children: false,
+                            weight: '400',
+                            caption: 'на мессенджеры',
+                            unitValue: '',
+                            unitExtra: '',
+                            valueIcon: '',
+                            is_delim: false,
+                        },
+                        {
+                            param: 'unlim_internet',
+                            value: '',
+                            unit: '',
+                            footnote: '',
+                            title: 'Безлимитный интернет',
+                            children: false,
+                            weight: '400',
+                            caption: 'на мессенджеры',
+                            unitValue: '',
+                            unitExtra: '',
+                            valueIcon: '',
+                            is_delim: false,
+                        },
+                        {
+                            param: 'unlim_internet',
+                            value: '',
+                            unit: '',
+                            footnote: '',
+                            title: 'Безлимитный интернет',
+                            children: false,
+                            weight: '400',
+                            caption: 'на мессенджеры',
+                            unitValue: '',
+                            unitExtra: '',
+                            valueIcon: '',
+                            is_delim: false,
+                        },
+                    ],
+                    weight: '300',
+                    caption: '',
+                    unitValue: '',
+                    unitExtra: '',
+                    valueIcon: '',
+                    is_delim: false,
+                }, {
+                    param: 'antivirus',
+                    value: 'Бесплатно',
+                    unit: '',
+                    footnote: '',
+                    title: 'Антивирус ESET NOD32',
+                    children: [
+                        {
+                            param: 'eset',
+                            value: 'Бесплатно',
+                            unit: '',
+                            footnote: '',
+                            title: 'ESET NOD32',
+                            children: false,
+                            weight: '600',
+                            svgIcon: <Checked style={{
+                                    position: 'absolute',
+                                    top: '0',
+                                    left: '0',
+                                    width: '32px',
+                                    height: '32px',
+                                    fill: '#00b956',
+                                    pointerEvents: 'none',
+                            }}/>,
+                            caption: 'Антивирус с функцией «Антивор»',
+                            unitValue: '',
+                            unitExtra: '',
+                            valueIcon: '',
+                            is_delim: false,
+                        },
+                    ],
+                    weight: '500',
+                    svgIcon: <Checked />,
+                    caption: '',
+                    unitValue: '',
+                    unitExtra: '',
+                    valueIcon: '',
+                    is_delim: false,
+                },
+            ],
+        },
+    },
+}
+
+# MainTile
+
+## Properties
+
+<PropsTable of={MainTile} />
+
+## Basic usage
+
+<Playground>
+    <MainTile {...mainProps} />
+</Playground>

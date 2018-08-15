@@ -1,0 +1,25 @@
+@import '~styles/base.less';
+
+@b: e('.main-tile-features');
+
+@{b} {
+    @media @mobileBU {
+        box-sizing: border-box;
+        flex-grow: 1;
+        padding-right: 16px;
+    }
+    @media @mobileB {
+        padding-right: 8px;
+    }
+
+    &__internet {
+        margin-bottom: 28px;
+    }
+
+    &__free {
+        @media @mobileSM {
+            margin-bottom: 32px;
+        }
+    }
+}
+

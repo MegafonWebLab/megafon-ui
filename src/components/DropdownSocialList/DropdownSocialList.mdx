@@ -1,0 +1,43 @@
+---
+name: DropdownSocialList
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import DropdownSocialList from './DropdownSocialList';
+import Checked from 'icons/checked_24.svg';
+import Error from 'icons/error_24.svg';
+
+# DropdownSocialList
+
+export const DropdownSocialListWrapper = ({ children }) => {
+    return (
+        <div style={{ height: '200px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
+            {children}
+        </div>
+    )
+}
+
+export const iconStyles = { width: '24px', height: '24px' };
+
+## Properties
+
+<PropsTable of={DropdownSocialList} />
+
+## Basic usage
+
+<Playground wrapper={DropdownSocialListWrapper}>
+    <DropdownSocialList
+        icons={[{
+            svgIcon: <Checked style={iconStyles}/>,
+            title: 'ok',
+        }, {
+            svgIcon: <Error style={iconStyles}/>,
+            title: 'error'
+        }, {
+            svgIcon: <Checked style={iconStyles}/>,
+            title: 'error'
+        }]}
+        maxIconNumber={2}
+    />
+</Playground>
