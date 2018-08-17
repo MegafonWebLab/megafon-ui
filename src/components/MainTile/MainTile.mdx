@@ -1,0 +1,293 @@
+---
+name: MainTile
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import MainTileWrapper from './MainTileWrapper';
+import MainTileInfo from './MainTileInfo';
+import MainTileFeatures from './MainTileFeatures';
+import MainTileTotal from './MainTileTotal';
+import Checked from 'icons/checked_24.svg';
+
+export const Wrapper = ({children}) => <div style={{ padding: '20px'}}>{children}</div>
+
+# MainTile
+
+## Properties MainTileWrapper
+<PropsTable of={MainTileWrapper} />
+
+## Properties MainTileInfo
+<PropsTable of={MainTileInfo} />
+
+## Properties MainTileFeatures
+<PropsTable of={MainTileFeatures} />
+
+## Properties MainTileTotal
+<PropsTable of={MainTileTotal} />
+
+## Basic usage
+
+export const infoProps = {
+    title: 'Включайся!',
+    link: 'https://www.google.com/',
+    description: 'Амедиатека',
+    descriptionIcon: <Checked style={{ width: '40px', height: '40px'}}/>,
+    additionalParams: [
+        {
+            value: '300',
+            unit: 'минут',
+            title: 'Звонки на все номера России',
+        }, {
+            value: '300',
+            unit: 'SMS',
+            title: 'SMS на номера Домашнего региона',
+        }, {
+            value: '4',
+            unit: 'ГБ',
+            title: 'На любые сервисы',
+        },
+    ]
+};
+
+export const featuresProps = {
+    showcaseParams: [{
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [{
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+        }],
+    },
+    {
+        children: [{
+            title: 'Youtube, Rutube, Vimeo',
+        }],
+    },
+    {
+        children: [{
+            title: 'WhatsApp, Viber, Facebook Messanger, Snapchat, eMotion',
+        }],
+    },
+    {
+        children: [{
+            title: 'Вконтакте, Одноклассники, Facebook, Instagram, Twitter'
+        }],
+    }],
+};
+
+export const featuresIconsProps = {
+    showcaseParams: [{
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [{
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+        }],
+    },
+    {
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [
+        {
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+            svgIcon: <Checked style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '32px',
+                height: '32px',
+                fill: '#00b956',
+                pointerEvents: 'none',
+            }}/>,
+        }],
+    }],
+    socialIcons: [{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Youtube',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'VK',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Mail',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Google',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Yandex',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Snapchat',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'WhatsApp',
+    }]
+};
+
+export const totalProps = {
+    payment: {
+        value: '600 ₽',
+        unit: 'в месяц'
+    }
+};
+
+export const oldTotalProps = {
+    payment: {
+        value: '600 ₽',
+        oldValue: '750 ₽',
+        unit: 'в месяц'
+    }
+};
+
+<Playground wrapper={Wrapper}>
+    <MainTileWrapper hint={{ title: 'Рекоммендуем', color: 'green'}}>
+        <MainTileInfo {...infoProps} />
+        <MainTileTotal {...totalProps} />
+    </MainTileWrapper>
+    <MainTileWrapper hint={{ title: 'Желаемый', color: 'orange'}}>
+        <MainTileInfo {...infoProps} />
+        <MainTileTotal {...totalProps} />
+    </MainTileWrapper>
+    <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
+        <MainTileInfo {...infoProps} />
+        <MainTileFeatures {...featuresProps}/>
+        <MainTileTotal {...oldTotalProps} />
+    </MainTileWrapper>
+    <MainTileWrapper>
+        <MainTileInfo {...infoProps} />
+        <MainTileFeatures {...featuresIconsProps}/>
+        <MainTileTotal {...totalProps} handleSubmit={() => ({})}/>
+    </MainTileWrapper>
+    <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
+        <MainTileInfo {...infoProps} />
+        <MainTileFeatures {...featuresProps}/>
+        <MainTileTotal {...oldTotalProps} handleSubmit={() => ({})}/>
+    </MainTileWrapper>
+</Playground>
+
+## Included props
+
+``` javascript
+export const infoProps = {
+    title: 'Включайся!',
+    link: 'https://www.google.com/',
+    description: 'Амедиатека',
+    descriptionIcon: <Checked style={{ width: '40px', height: '40px'}}/>,
+    additionalParams: [
+        {
+            value: '300',
+            unit: 'минут',
+            title: 'Звонки на все номера России',
+        }, {
+            value: '300',
+            unit: 'SMS',
+            title: 'SMS на номера Домашнего региона',
+        }, {
+            value: '4',
+            unit: 'ГБ',
+            title: 'На любые сервисы',
+        },
+    ]
+};
+
+export const featuresProps = {
+    showcaseParams: [{
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [{
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+        }],
+    },
+    {
+        children: [{
+            title: 'Youtube, Rutube, Vimeo',
+        }],
+    },
+    {
+        children: [{
+            title: 'WhatsApp, Viber, Facebook Messanger, Snapchat, eMotion',
+        }],
+    },
+    {
+        children: [{
+            title: 'Вконтакте, Одноклассники, Facebook, Instagram, Twitter'
+        }],
+    }],
+};
+
+const featuresIconsProps = {
+    showcaseParams: [{
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [{
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+        }],
+    },
+    {
+        title: 'Безлимитный интернет',
+        value: 'на мессенджеры',
+        children: [
+        {
+            title: 'Безлимитный интернет',
+            caption: 'на видео, соц-сети и мессенджеры',
+            value: 'test',
+            svgIcon: <Checked style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '32px',
+                height: '32px',
+                fill: '#00b956',
+                pointerEvents: 'none',
+            }}/>,
+        }],
+    }],
+    socialIcons: [{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Youtube',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'VK',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Mail',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Google',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Yandex',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'Snapchat',
+    },{
+        svgIcon: <Checked style={{ width: '24px', height: '24px'}}/>,
+        title: 'WhatsApp',
+    }]
+};
+
+export const totalProps = {
+    payment: {
+        value: '600 ₽',
+        unit: 'в месяц'
+    }
+};
+
+export const oldTotalProps = {
+    payment: {
+        value: '600 ₽',
+        oldValue: '750 ₽',
+        unit: 'в месяц'
+    }
+};
+```

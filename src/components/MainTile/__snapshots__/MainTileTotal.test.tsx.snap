@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainTileTotal /> it renders MainTileTotal 1`] = `
+<div
+  className="main-tile-total"
+>
+  <div
+    className="main-tile-total__wrap"
+  >
+    <div
+      className="main-tile-total__cost main-tile-total__cost_old-value"
+    >
+      <span
+        className="main-tile-total__price"
+      >
+        600 ₽
+      </span>
+       
+      <React.Fragment>
+        <span
+          className="main-tile-total__old-price"
+        >
+          750 ₽
+        </span>
+        <br />
+      </React.Fragment>
+      <span
+        className="main-tile-total__unit"
+      >
+        в месяц
+      </span>
+    </div>
+  </div>
+</div>
+`;

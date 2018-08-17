@@ -47,6 +47,10 @@
       "node_modules",
       "src"
     ],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/utils/modernizr.ts"
+    ],
     "coverageDirectory": "coverage",
     "testURL": "http://localhost/",
     "roots": [
@@ -58,7 +62,8 @@
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/lib/"
+      "/lib/",
+      "/src/utils/modernizr.ts"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -120,6 +125,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-input-mask": "^2.0.3",
+    "react-popper": "0.10.4",
     "through2": "^2.0.3",
     "ts-jest": "^23.1.1",
     "tslint": "^5.11.0",

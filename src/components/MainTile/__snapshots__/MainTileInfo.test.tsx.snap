@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
+<div
+  className="main-tile-info"
+>
+  <div
+    className="main-tile-info__description"
+  >
+    <Header
+      as="h2"
+      className="main-tile-info__description-title"
+      color="black"
+      margin={false}
+    >
+      Включайся!
+    </Header>
+    <div
+      className="main-tile-info__badges"
+    >
+      <div
+        className="main-tile-info__badge main-tile-info__badge_type_code"
+        key="title0"
+      >
+        <BubbleHint
+          placement="right"
+          popupAlign="left"
+          popupPadding="normal"
+          popupWidth="small"
+          trigger={
+            <div
+              className="main-tile-info__badge-title"
+            >
+              title
+            </div>
+          }
+        >
+          <div
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "hint",
+              }
+            }
+          />
+        </BubbleHint>
+      </div>
+      <div
+        className="main-tile-info__badge main-tile-info__badge_type_code"
+        key="title1"
+      >
+        <div
+          className="main-tile-info__badge-title"
+        >
+          title
+        </div>
+      </div>
+    </div>
+    <div
+      className="main-tile-info__description-wrap"
+    >
+      <test-file-stub
+        style={
+          Object {
+            "height": "40px",
+            "width": "40px",
+          }
+        }
+      />
+      <div
+        className="main-tile-info__description-text"
+      >
+        Амедиатека
+      </div>
+    </div>
+    <TextLink
+      className="main-tile-info__description-more"
+      color="blue"
+      href="https://www.google.com/"
+      target="_blank"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      Подробнее
+    </TextLink>
+  </div>
+  <div
+    className="main-tile-info__params"
+  >
+    <ul
+      className="main-tile-info__params-list"
+    >
+      <li
+        className="main-tile-info__params-item"
+        key="Звонки на все номера России0"
+      >
+        <span
+          data-amount="300"
+        >
+          300
+        </span>
+         
+        минут
+      </li>
+      <li
+        className="main-tile-info__params-item"
+        key="SMS на номера Домашнего региона1"
+      >
+        <span
+          data-amount="300"
+        >
+          300
+        </span>
+         
+        SMS
+      </li>
+      <li
+        className="main-tile-info__params-item"
+        key="На любые сервисы2"
+      >
+        <span
+          data-amount="4"
+        >
+          4
+        </span>
+         
+        ГБ
+      </li>
+    </ul>
+  </div>
+</div>
+`;

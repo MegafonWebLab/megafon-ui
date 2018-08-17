@@ -33,6 +33,8 @@ interface IButtonProps {
     disabledColor?: 'gray' | 'white' | 'transparent';
     /** Width */
     width?: 'full' | 'auto';
+    /** Custom class name */
+    className?: string;
     /** Margin(outer indentation) */
     margin?: boolean;
     /** Disabled */
@@ -141,7 +143,7 @@ class Button extends React.Component<IButtonProps, {}> {
                     width: this.props.width,
                     margin: this.props.margin,
                     loading: this.props.showSpinner,
-                })}
+                }, this.props.className)}
                 href={this.props.href}
                 target={this.props.target}
                 type={this.props.href ? '' : this.props.type}

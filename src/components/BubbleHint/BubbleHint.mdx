@@ -1,0 +1,71 @@
+---
+name: BubbleHint
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import BubbleHint from './BubbleHint';
+import Paragraph from '../Paragraph/Paragraph';
+import Button from '../Button/Button';
+
+# BubbleHint
+
+export const BubbleHintWrapper = ({ children }) => {
+    return (
+        <div style={{ height: '400px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
+            {children}
+        </div>
+    )
+}
+
+## Properties
+
+<PropsTable of={BubbleHint} />
+
+## Basic usage
+
+<Playground wrapper={BubbleHintWrapper}>
+    <BubbleHint
+        placement="top"
+        trigger={<Button>BubbleHint</Button>}
+    >
+        <Paragraph hAlign="center" sizeAll="small">
+            Please be careful when filling out the forms
+        </Paragraph>
+    </BubbleHint>
+</Playground>
+
+<Playground wrapper={BubbleHintWrapper}>
+    <BubbleHint
+        popupAlign="left"
+        placement="right"
+        trigger={<Button>BubbleHint</Button>}
+    >
+        <Paragraph hAlign="center" sizeAll="small">
+            Please be careful when filling out the forms
+        </Paragraph>
+    </BubbleHint>
+</Playground>
+
+<Playground wrapper={BubbleHintWrapper}>
+    <BubbleHint
+        placement="bottom"
+        trigger={<Button>BubbleHint</Button>}
+    >
+        <Paragraph hAlign="center" sizeAll="small">
+            Please be careful when filling out the forms
+        </Paragraph>
+    </BubbleHint>
+</Playground>
+
+<Playground wrapper={BubbleHintWrapper}>
+    <BubbleHint
+        placement="left"
+        trigger={<Button>BubbleHint</Button>}
+        onClick={() => alert('Clicked!')}
+    >
+        <Paragraph hAlign="center" sizeAll="small">
+            Please be careful when filling out the forms
+        </Paragraph>
+    </BubbleHint>
+</Playground>

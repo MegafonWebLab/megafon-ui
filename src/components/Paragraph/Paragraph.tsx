@@ -30,6 +30,8 @@ interface IParagraphProps {
     marginMobile?: 'none' | 'small' | 'medium' | 'large' | 'largest';
     /** Text color */
     color?: 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
+    /** Custom className */
+    className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
@@ -82,7 +84,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
                     'h-align': this.props.hAlign,
                     color: this.props.color,
                     weight: this.props.weight,
-                })}>
+                }, this.props.className)}>
                 {this.props.children}
             </p>
         );
