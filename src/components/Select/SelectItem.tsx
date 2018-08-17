@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './SelectItem.less';
 import { cnCreate } from '../../utils/cn';
 
-interface Props {
+interface ISelectItemProps {
     /** Icon right */
     rightIcon?: JSX.Element;
     /** Icon left */
@@ -23,7 +23,7 @@ interface Props {
 }
 
 const cn = cnCreate('select-item');
-class SelectItem extends React.Component<Props, {}> {
+class SelectItem extends React.Component<ISelectItemProps, {}> {
     static propTypes = {
         rightIcon: PropTypes.element,
         leftIcon: PropTypes.element,
@@ -43,7 +43,7 @@ class SelectItem extends React.Component<Props, {}> {
 
     itemNode: any = null;
 
-    shouldComponentUpdate(nextProps: Props) {
+    shouldComponentUpdate(nextProps: ISelectItemProps) {
         const active = this.props.active !== nextProps.active;
         const current = this.props.current !== nextProps.current;
         const title = this.props.title !== nextProps.title;

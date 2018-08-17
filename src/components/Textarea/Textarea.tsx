@@ -4,7 +4,7 @@ import './Textarea.less';
 import { cnCreate } from '../../utils/cn';
 import * as equal from 'deep-equal';
 
-interface Props {
+interface ITextareaProps {
     /** Field color scheme */
     color?: 'default' | 'white';
     /** Error/Notice text */
@@ -48,7 +48,7 @@ interface Props {
 }
 
 const cn = cnCreate('textarea');
-class Textarea extends React.Component<Props, {}> {
+class Textarea extends React.Component<ITextareaProps, {}> {
     static propTypes = {
         noticeText: PropTypes.string,
         commentText: PropTypes.string,
@@ -71,14 +71,14 @@ class Textarea extends React.Component<Props, {}> {
         onKeyUp: PropTypes.func,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<ITextareaProps> = {
         autocomplete: 'off',
         color: 'default',
     };
 
     inputNode: any = React.createRef();
 
-    shouldComponentUpdate(nextProps: Props) {
+    shouldComponentUpdate(nextProps: ITextareaProps) {
         return !equal(this.props, nextProps);
     }
 

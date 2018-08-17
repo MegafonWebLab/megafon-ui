@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Paragraph.less';
 import { cnCreate } from '../../utils/cn';
 
-interface Props {
+interface IParagraphProps {
     /** Align text horizontally */
     hAlign?: 'center' | 'right';
     /** Text weight */
@@ -34,7 +34,7 @@ interface Props {
 }
 
 const cn = cnCreate('paragraph');
-class Paragraph extends React.Component<Props, {}> {
+class Paragraph extends React.Component<IParagraphProps, {}> {
     static propTypes = {
         hAlign: PropTypes.oneOf(['center', 'right']),
         weight: PropTypes.oneOf(['light', 'regular', 'medium', 'bold']),
@@ -58,7 +58,7 @@ class Paragraph extends React.Component<Props, {}> {
         ]),
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<IParagraphProps> = {
         marginAll: 'medium',
         sizeAll: 'medium',
         color: 'black',

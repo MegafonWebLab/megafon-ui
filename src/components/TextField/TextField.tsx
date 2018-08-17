@@ -7,7 +7,7 @@ import * as equal from 'deep-equal';
 import CheckedIcon from 'icons/checked_24.svg';
 import ErrorIcon from 'icons/error_24.svg';
 
-interface Props {
+interface ITextFieldProps {
     /** Field color scheme */
     color?: 'default' | 'white';
     /** Field size */
@@ -65,7 +65,7 @@ interface Props {
 }
 
 const cn = cnCreate('text-field');
-class TextField extends React.Component<Props, {}> {
+class TextField extends React.Component<ITextFieldProps, {}> {
     static propTypes = {
         color: PropTypes.oneOf(['default', 'white']),
         size: PropTypes.oneOf(['large']),
@@ -96,7 +96,7 @@ class TextField extends React.Component<Props, {}> {
         onKeyUp: PropTypes.func,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<ITextFieldProps> = {
         autocomplete: 'off',
         type: 'text',
         color: 'default',
@@ -105,7 +105,7 @@ class TextField extends React.Component<Props, {}> {
 
     inputNode: any;
 
-    shouldComponentUpdate(nextProps: Props) {
+    shouldComponentUpdate(nextProps: ITextFieldProps) {
         return !equal(this.props, nextProps);
     }
 
