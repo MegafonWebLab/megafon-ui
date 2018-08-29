@@ -36,7 +36,7 @@ class Link extends React.Component<ILinkProps, {}> {
         const { target, children, ...rest } = this.props;
 
         return (
-            <a target={target} {...rest}>
+            <a className="link" target={target} {...rest}>
                 {children}
             </a>
         );

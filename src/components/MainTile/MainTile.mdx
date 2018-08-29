@@ -1,5 +1,6 @@
 ---
 name: MainTile
+route: /main-tile
 menu: Components
 ---
 
@@ -146,29 +147,31 @@ export const oldTotalProps = {
 };
 
 <Playground wrapper={Wrapper}>
-    <MainTileWrapper hint={{ title: 'Рекоммендуем', color: 'green'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileTotal {...totalProps} />
-    </MainTileWrapper>
-    <MainTileWrapper hint={{ title: 'Желаемый', color: 'orange'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileTotal {...totalProps} />
-    </MainTileWrapper>
-    <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileFeatures {...featuresProps}/>
-        <MainTileTotal {...oldTotalProps} />
-    </MainTileWrapper>
-    <MainTileWrapper>
-        <MainTileInfo {...infoProps} />
-        <MainTileFeatures {...featuresIconsProps}/>
-        <MainTileTotal {...totalProps} handleSubmit={() => ({})}/>
-    </MainTileWrapper>
-    <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileFeatures {...featuresProps}/>
-        <MainTileTotal {...oldTotalProps} handleSubmit={() => ({})}/>
-    </MainTileWrapper>
+    <div className="main-tile">
+        <MainTileWrapper hint={{ title: 'Рекоммендуем', color: 'green'}}>
+            <MainTileInfo {...infoProps} />
+            <MainTileTotal {...totalProps} />
+        </MainTileWrapper>
+        <MainTileWrapper hint={{ title: 'Желаемый', color: 'orange'}}>
+            <MainTileInfo {...infoProps} />
+            <MainTileTotal {...totalProps} />
+        </MainTileWrapper>
+        <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
+            <MainTileInfo {...infoProps} />
+            <MainTileFeatures {...featuresProps}/>
+            <MainTileTotal {...oldTotalProps} />
+        </MainTileWrapper>
+        <MainTileWrapper>
+            <MainTileInfo {...infoProps} />
+            <MainTileFeatures {...featuresIconsProps}/>
+            <MainTileTotal {...totalProps} handleSubmit={() => ({})}/>
+        </MainTileWrapper>
+        <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
+            <MainTileInfo {...infoProps} />
+            <MainTileFeatures {...featuresProps}/>
+            <MainTileTotal {...oldTotalProps} handleSubmit={() => ({})}/>
+        </MainTileWrapper>
+    </div>
 </Playground>
 
 ## Included props
