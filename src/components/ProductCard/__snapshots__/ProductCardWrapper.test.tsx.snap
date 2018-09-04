@@ -28,7 +28,7 @@ exports[`<ProductCardWrapper /> it renders ProductCardWrapper 1`] = `
 
 exports[`<ProductCardWrapper /> it renders without hint 1`] = `
 <div
-  className="product-card-wrapper product-card-wrapper_bl-yes product-card-wrapper_br-yes"
+  className="product-card-wrapper"
   onClick={[Function]}
 >
   <div

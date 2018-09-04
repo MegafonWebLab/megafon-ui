@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './ProductCardInternet.less';
+import './ProductCardFeaturesTop.less';
 import Header from '../Header/Header';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 import { cnCreate } from '../../utils/cn';
 import { ISocialIcon, IShowcaseChildren } from './ProductCardFeatures';
 
-interface IProductCardInternetProps {
+interface IProductCardFeaturesBottomProps {
     /** Custom class name */
     className?: string;
     /** Social icons list */
@@ -15,21 +15,21 @@ interface IProductCardInternetProps {
     params?: Array<Partial<IShowcaseChildren>>;
 }
 
-const cn = cnCreate('product-card-internet');
-class ProductCardInternet extends React.Component<IProductCardInternetProps, {}> {
+const cn = cnCreate('product-card-features-top');
+class ProductCardFeaturesTop extends React.Component<IProductCardFeaturesBottomProps, {}> {
     static propTypes = {
         className: PropTypes.string,
         params: PropTypes.array,
         socialIcons: PropTypes.array,
     };
 
-    static defaultProps: IProductCardInternetProps = {
+    static defaultProps: IProductCardFeaturesBottomProps = {
         params: [],
         socialIcons: [],
     };
 
     render() {
-        const { params, socialIcons }: IProductCardInternetProps = this.props;
+        const { params, socialIcons }: IProductCardFeaturesBottomProps = this.props;
 
         return (
             <div className={cn('', {}, this.props.className)} >
@@ -53,4 +53,4 @@ class ProductCardInternet extends React.Component<IProductCardInternetProps, {}>
     }
 }
 
-export default ProductCardInternet;
+export default ProductCardFeaturesTop;

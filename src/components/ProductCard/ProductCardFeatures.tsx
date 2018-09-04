@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './ProductCardFeatures.less';
-import ProductCardInternet from './ProductCardInternet';
-import ProductCardFree from './ProductCardFree';
+import ProductCardFeaturesTop from './ProductCardFeaturesTop';
+import ProductCardFeaturesBottom from './ProductCardFeaturesBottom';
 
 export interface ISocialIcon {
     svgIcon: JSX.Element;
@@ -70,15 +70,15 @@ class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}>
         return (
             <div className={cn('')}>
                 {first &&
-                    <ProductCardInternet
-                        className={cn('internet')}
+                    <ProductCardFeaturesTop
+                        className={cn('top')}
                         params={first.children}
                         socialIcons={this.props.socialIcons}
                     />
                 }
                 {rest.map((param: IShowcaseParams, index: number) =>
-                    <ProductCardFree
-                        className={cn('free')}
+                    <ProductCardFeaturesBottom
+                        className={cn('bottom')}
                         params={param.children}
                         title={param.value}
                         key={index}

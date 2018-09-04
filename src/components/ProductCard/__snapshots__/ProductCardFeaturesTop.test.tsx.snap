@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductCardInternet /> it renders ProductCardInternet 1`] = `
+exports[`<ProductCardFeaturesTop /> it renders ProductCardFeaturesTop 1`] = `
 <div
-  className="product-card-internet"
+  className="product-card-features-top"
 >
   <div
-    className="product-card-internet__inner"
+    className="product-card-features-top__inner"
     key="test0"
   >
     <Header
       as="h3"
-      className="product-card-internet__title"
+      className="product-card-features-top__title"
       color="black"
       margin={false}
     >
       test
     </Header>
     <div
-      className="product-card-internet__text"
+      className="product-card-features-top__text"
     >
       test
     </div>
