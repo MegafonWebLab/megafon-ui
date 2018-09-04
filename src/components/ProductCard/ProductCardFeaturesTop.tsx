@@ -6,7 +6,7 @@ import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 import { cnCreate } from '../../utils/cn';
 import { ISocialIcon, IShowcaseChildren } from './ProductCardFeatures';
 
-interface IProductCardFeaturesBottomProps {
+interface IProductCardFeaturesTopProps {
     /** Custom class name */
     className?: string;
     /** Social icons list */
@@ -16,20 +16,20 @@ interface IProductCardFeaturesBottomProps {
 }
 
 const cn = cnCreate('product-card-features-top');
-class ProductCardFeaturesTop extends React.Component<IProductCardFeaturesBottomProps, {}> {
+class ProductCardFeaturesTop extends React.Component<IProductCardFeaturesTopProps, {}> {
     static propTypes = {
         className: PropTypes.string,
         params: PropTypes.array,
         socialIcons: PropTypes.array,
     };
 
-    static defaultProps: IProductCardFeaturesBottomProps = {
+    static defaultProps: IProductCardFeaturesTopProps = {
         params: [],
         socialIcons: [],
     };
 
     render() {
-        const { params, socialIcons }: IProductCardFeaturesBottomProps = this.props;
+        const { params, socialIcons }: IProductCardFeaturesTopProps = this.props;
 
         return (
             <div className={cn('', {}, this.props.className)} >
