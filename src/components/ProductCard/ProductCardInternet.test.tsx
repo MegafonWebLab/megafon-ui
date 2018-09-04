@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import MainTileInternet from './MainTileInternet';
+import ProductCardInternet from './ProductCardInternet';
 import Checked from 'icons/checked_24.svg';
 
 const props = {
@@ -19,9 +19,9 @@ const props = {
     }],
 };
 
-describe('<MainTileInternet />', () => {
-    it('it renders MainTileInternet', () => {
-        const wrapper = shallow(<MainTileInternet {...props} />);
+describe('<ProductCardInternet />', () => {
+    it('it renders ProductCardInternet', () => {
+        const wrapper = shallow(<ProductCardInternet {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 });

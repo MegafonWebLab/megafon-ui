@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
+exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
 <div
-  className="main-tile-info"
+  className="product-card-info"
 >
   <div
-    className="main-tile-info__description"
+    className="product-card-info__description"
   >
     <Header
       as="h2"
-      className="main-tile-info__description-title"
+      className="product-card-info__description-title"
       color="black"
       margin={false}
     >
       Включайся!
     </Header>
     <div
-      className="main-tile-info__badges"
+      className="product-card-info__badges"
     >
       <div
-        className="main-tile-info__badge main-tile-info__badge_type_code"
+        className="product-card-info__badge product-card-info__badge_type_code"
         key="title0"
       >
         <BubbleHint
@@ -29,7 +29,7 @@ exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
           popupWidth="small"
           trigger={
             <div
-              className="main-tile-info__badge-title"
+              className="product-card-info__badge-title"
             >
               title
             </div>
@@ -45,18 +45,18 @@ exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
         </BubbleHint>
       </div>
       <div
-        className="main-tile-info__badge main-tile-info__badge_type_code"
+        className="product-card-info__badge product-card-info__badge_type_code"
         key="title1"
       >
         <div
-          className="main-tile-info__badge-title"
+          className="product-card-info__badge-title"
         >
           title
         </div>
       </div>
     </div>
     <div
-      className="main-tile-info__description-wrap"
+      className="product-card-info__description-wrap"
     >
       <test-file-stub
         style={
@@ -67,13 +67,13 @@ exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
         }
       />
       <div
-        className="main-tile-info__description-text"
+        className="product-card-info__description-text"
       >
         Амедиатека
       </div>
     </div>
     <TextLink
-      className="main-tile-info__description-more"
+      className="product-card-info__description-more"
       color="blue"
       href="https://www.google.com/"
       target="_blank"
@@ -84,13 +84,13 @@ exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
     </TextLink>
   </div>
   <div
-    className="main-tile-info__params"
+    className="product-card-info__params"
   >
     <ul
-      className="main-tile-info__params-list"
+      className="product-card-info__params-list"
     >
       <li
-        className="main-tile-info__params-item"
+        className="product-card-info__params-item"
         key="Звонки на все номера России0"
       >
         <span
@@ -102,7 +102,7 @@ exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
         минут
       </li>
       <li
-        className="main-tile-info__params-item"
+        className="product-card-info__params-item"
         key="SMS на номера Домашнего региона1"
       >
         <span
@@ -114,7 +114,7 @@ exports[`<MainTileInfo /> it renders MainTileInfo 1`] = `
         SMS
       </li>
       <li
-        className="main-tile-info__params-item"
+        className="product-card-info__params-item"
         key="На любые сервисы2"
       >
         <span

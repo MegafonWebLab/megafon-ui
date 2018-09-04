@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
-import './MainTileTotal.less';
+import './ProductCardTotal.less';
 import Button from '../Button/Button';
 
-interface IMainTileTotalProps {
+interface IProductCardTotalProps {
     /** Payment
      * Object with args: value: string(required), unit: string(required), oldValue: string
      */
@@ -23,8 +23,8 @@ interface IMainTileTotalProps {
     handleSubmit?(e: React.SyntheticEvent<EventTarget>, info: {}): void;
 }
 
-const cn = cnCreate('main-tile-total');
-class MainTileTotal extends React.Component<IMainTileTotalProps, {}> {
+const cn = cnCreate('product-card-total');
+class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
     static propTypes = {
         payment: PropTypes.shape({
             value: PropTypes.string.isRequired,
@@ -35,7 +35,7 @@ class MainTileTotal extends React.Component<IMainTileTotalProps, {}> {
         handleSubmit: PropTypes.func,
     };
 
-    static defaultProps: Partial<IMainTileTotalProps> = {
+    static defaultProps: Partial<IProductCardTotalProps> = {
         submitText: 'Выбрать',
     };
 
@@ -78,4 +78,4 @@ class MainTileTotal extends React.Component<IMainTileTotalProps, {}> {
     }
 }
 
-export default MainTileTotal;
+export default ProductCardTotal;

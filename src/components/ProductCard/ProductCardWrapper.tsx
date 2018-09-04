@@ -1,21 +1,26 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
-import './MainTileWrapper.less';
+import './ProductCardWrapper.less';
 
-interface IMainTileWrapperProps {
+interface IProductCardWrapperProps {
     /** Hint from left */
     hint?: {
         title: string;
         color: 'green' | 'orange' | 'black';
     };
     /** Show right border */
-    IsBorderRight?: boolean;
+    border?: Partial<{
+        top: boolean;
+        right: boolean;
+        bottom: boolean;
+        left: boolean;
+    }>;
     children: JSX.Element[] | Element[] | JSX.Element | Element;
 }
 
-const cn = cnCreate('main-tile-wrapper');
-class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
+const cn = cnCreate('product-card-wrapper');
+class ProductCardWrapper extends React.Component<IProductCardWrapperProps, {}> {
     static propTypes = {
         hint: PropTypes.shape({
             title: PropTypes.string.isRequired,
@@ -28,8 +33,11 @@ class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
         ]),
     };
 
-    static defaultProps: Partial<IMainTileWrapperProps> = {
-        IsBorderRight: true,
+    static defaultProps: Partial<IProductCardWrapperProps> = {
+        border: {
+            right: true,
+            left: true,
+        },
     };
 
     handleClick = (e: React.SyntheticEvent<EventTarget>): boolean => (e.target as HTMLElement).tagName !== 'A';
@@ -43,11 +51,17 @@ class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
     }
 
     render() {
-        const { hint, IsBorderRight } = this.props;
+        const { hint, border } = this.props;
 
         return (
             <div
-                className={cn('', { hint: !!hint ? hint.color : false, 'br-no': !IsBorderRight })}
+                className={cn('', {
+                    hint: !!hint ? hint.color : false,
+                    'bl-yes': border!.left,
+                    'br-yes': border!.right,
+                    'bt-yes': border!.top,
+                    'bb-yes': border!.bottom,
+                })}
                 onClick={this.handleClick}
             >
                 <div className={cn('inner')}>
@@ -61,4 +75,4 @@ class MainTileWrapper extends React.Component<IMainTileWrapperProps, {}> {
     }
 }
 
-export default MainTileWrapper;
+export default ProductCardWrapper;

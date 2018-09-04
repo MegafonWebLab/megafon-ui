@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './MainTileFree.less';
+import './ProductCardFree.less';
 import Header from '../Header/Header';
 import Paragraph from '../Paragraph/Paragraph';
 import { cnCreate } from '../../utils/cn';
-import { IShowcaseChildren } from './MainTileFeatures';
+import { IShowcaseChildren } from './ProductCardFeatures';
 
-interface IMainTileFreeProps {
+interface IProductCardFreeProps {
     /** Custom class name */
     className?: string;
     /** Title */
@@ -15,20 +15,20 @@ interface IMainTileFreeProps {
     params: Array<Partial<IShowcaseChildren>>;
 }
 
-const cn = cnCreate('main-tile-free');
-class MainTileFree extends React.Component<IMainTileFreeProps, {}> {
+const cn = cnCreate('product-card-free');
+class ProductCardFree extends React.Component<IProductCardFreeProps, {}> {
     static propTypes = {
         className: PropTypes.string,
         params: PropTypes.array.isRequired,
         title: PropTypes.string,
     };
 
-    static defaultProps: IMainTileFreeProps = {
+    static defaultProps: IProductCardFreeProps = {
         params: [],
     };
 
     render() {
-        const { params, title, className }: IMainTileFreeProps = this.props;
+        const { params, title, className }: IProductCardFreeProps = this.props;
 
         return (
             <div className={cn('', {}, className)}>
@@ -54,4 +54,4 @@ class MainTileFree extends React.Component<IMainTileFreeProps, {}> {
     }
 }
 
-export default MainTileFree;
+export default ProductCardFree;

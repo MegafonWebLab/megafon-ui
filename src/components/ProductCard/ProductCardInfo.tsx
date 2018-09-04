@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
-import './MainTileInfo.less';
+import './ProductCardInfo.less';
 import BubbleHint from '../BubbleHint/BubbleHint';
 import TextLink from '../TextLink/TextLink';
 import Header from '../Header/Header';
@@ -18,7 +18,7 @@ interface IAdditionalParams {
     unit: string;
 }
 
-interface IMainTileInfoProps {
+interface IProductCardInfoProps {
     /** Title */
     title: string;
     /** Link */
@@ -39,8 +39,8 @@ interface IMainTileInfoProps {
     additionalParams?: IAdditionalParams[];
 }
 
-const cn = cnCreate('main-tile-info');
-class MainTileInfo extends React.Component<IMainTileInfoProps, {}> {
+const cn = cnCreate('product-card-info');
+class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
     static propTypes = {
         title: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
@@ -63,7 +63,7 @@ class MainTileInfo extends React.Component<IMainTileInfoProps, {}> {
         ),
     };
 
-    static defaultProps: Partial<IMainTileInfoProps> = {
+    static defaultProps: Partial<IProductCardInfoProps> = {
         linkText: 'Подробнее',
     };
 
@@ -134,4 +134,4 @@ class MainTileInfo extends React.Component<IMainTileInfoProps, {}> {
     }
 }
 
-export default MainTileInfo;
+export default ProductCardInfo;

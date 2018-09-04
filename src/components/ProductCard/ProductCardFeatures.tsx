@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
-import './MainTileFeatures.less';
-import MainTileInternet from './MainTileInternet';
-import MainTileFree from './MainTileFree';
+import './ProductCardFeatures.less';
+import ProductCardInternet from './ProductCardInternet';
+import ProductCardFree from './ProductCardFree';
 
 export interface ISocialIcon {
     svgIcon: JSX.Element;
@@ -23,9 +23,10 @@ interface IShowcaseParams {
     children: Array<Partial<IShowcaseChildren>>;
 }
 
-interface IMainTileFeaturesProps {
+interface IProductCardFeaturesProps {
     /** Showcase
-     * List with args: title: title: string(requred), value: string(requred), children: list
+     * List with args: title: title: string(requred), value: string(requred), children: list of
+     * svgIcon: JSX.Element, title: string, caption: string, value: string
      */
     showcaseParams?: IShowcaseParams[];
     /** Social icons
@@ -34,8 +35,8 @@ interface IMainTileFeaturesProps {
     socialIcons?: Array<Partial<ISocialIcon>>;
 }
 
-const cn = cnCreate('main-tile-features');
-class MainTileFeatures extends React.Component<IMainTileFeaturesProps, {}> {
+const cn = cnCreate('product-card-features');
+class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}> {
     static propTypes = {
         showcaseParams: PropTypes.arrayOf(
             PropTypes.shape({
@@ -69,14 +70,14 @@ class MainTileFeatures extends React.Component<IMainTileFeaturesProps, {}> {
         return (
             <div className={cn('')}>
                 {first &&
-                    <MainTileInternet
+                    <ProductCardInternet
                         className={cn('internet')}
                         params={first.children}
                         socialIcons={this.props.socialIcons}
                     />
                 }
                 {rest.map((param: IShowcaseParams, index: number) =>
-                    <MainTileFree
+                    <ProductCardFree
                         className={cn('free')}
                         params={param.children}
                         title={param.value}
@@ -88,4 +89,4 @@ class MainTileFeatures extends React.Component<IMainTileFeaturesProps, {}> {
     }
 }
 
-export default MainTileFeatures;
+export default ProductCardFeatures;
