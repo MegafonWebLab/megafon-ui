@@ -230,6 +230,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleHoverItem = (e, index: number) => {
+        e.preventDefault();
         this.setState({ activeIndex: index });
     }
 
