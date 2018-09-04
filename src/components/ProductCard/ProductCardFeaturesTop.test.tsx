@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import ProductCardFree from './ProductCardFree';
+import ProductCardFeaturesTop from './ProductCardFeaturesTop';
 import Checked from 'icons/checked_24.svg';
 
 const props = {
@@ -13,11 +13,15 @@ const props = {
             value: 'test',
         },
     ],
+    socialIcons: [{
+        svgIcon: <Checked />,
+        title: 'test',
+    }],
 };
 
-describe('<ProductCardFree />', () => {
-    it('it renders ProductCardFree', () => {
-        const wrapper = shallow(<ProductCardFree {...props} />);
+describe('<ProductCardFeaturesTop />', () => {
+    it('it renders ProductCardFeaturesTop', () => {
+        const wrapper = shallow(<ProductCardFeaturesTop {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 });

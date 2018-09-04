@@ -18,12 +18,12 @@ describe('<ProductCardWrapper />', () => {
     });
 
     it('it renders without hint', () => {
-        const wrapper = shallow(<ProductCardWrapper IsBorderRight={false}><div /></ProductCardWrapper>);
+        const wrapper = shallow(<ProductCardWrapper border={{ right: false }}><div /></ProductCardWrapper>);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it click on wrapper', () => {
-        const wrapper = shallow(<ProductCardWrapper IsBorderRight={false}><div /></ProductCardWrapper>);
+        const wrapper = shallow(<ProductCardWrapper border={{ right: false }}><div /></ProductCardWrapper>);
         const instance = wrapper.instance() as ProductCardWrapper;
         const result = instance.handleClick({ target: {} } as React.SyntheticEvent<EventTarget>);
         expect(result).toBe(true);

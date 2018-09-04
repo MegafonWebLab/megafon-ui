@@ -1,35 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductCardFree /> it renders ProductCardFree 1`] = `
+exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] = `
 <div
-  className="product-card-free"
+  className="product-card-features-bottom"
 >
   <Header
     as="h3"
-    className="product-card-free__title"
+    className="product-card-features-bottom__title"
     color="black"
     margin={false}
   >
     test
   </Header>
   <ul
-    className="product-card-free__list"
+    className="product-card-features-bottom__list"
   >
     <li
-      className="product-card-free__item product-card-free__item_icon"
+      className="product-card-features-bottom__item product-card-features-bottom__item_icon"
       key="test"
     >
       <test-file-stub />
       <Header
         as="h5"
-        className="product-card-free__item-title"
+        className="product-card-features-bottom__item-title"
         color="black"
         margin={false}
       >
         test
       </Header>
       <Paragraph
-        className="product-card-free__item-text"
+        className="product-card-features-bottom__item-text"
         color="black"
         marginAll="none"
         sizeAll="small"

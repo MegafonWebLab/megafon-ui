@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './ProductCardFree.less';
+import './ProductCardFeaturesBottom.less';
 import Header from '../Header/Header';
 import Paragraph from '../Paragraph/Paragraph';
 import { cnCreate } from '../../utils/cn';
 import { IShowcaseChildren } from './ProductCardFeatures';
 
-interface IProductCardFreeProps {
+interface IProductCardFeaturesBottomProps {
     /** Custom class name */
     className?: string;
     /** Title */
@@ -15,20 +15,20 @@ interface IProductCardFreeProps {
     params: Array<Partial<IShowcaseChildren>>;
 }
 
-const cn = cnCreate('product-card-free');
-class ProductCardFree extends React.Component<IProductCardFreeProps, {}> {
+const cn = cnCreate('product-card-features-bottom');
+class ProductCardFeaturesBottom extends React.Component<IProductCardFeaturesBottomProps, {}> {
     static propTypes = {
         className: PropTypes.string,
         params: PropTypes.array.isRequired,
         title: PropTypes.string,
     };
 
-    static defaultProps: IProductCardFreeProps = {
+    static defaultProps: IProductCardFeaturesBottomProps = {
         params: [],
     };
 
     render() {
-        const { params, title, className }: IProductCardFreeProps = this.props;
+        const { params, title, className }: IProductCardFeaturesBottomProps = this.props;
 
         return (
             <div className={cn('', {}, className)}>
@@ -54,4 +54,4 @@ class ProductCardFree extends React.Component<IProductCardFreeProps, {}> {
     }
 }
 
-export default ProductCardFree;
+export default ProductCardFeaturesBottom;
