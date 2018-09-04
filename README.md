@@ -1,19 +1,19 @@
 # megafon-ui
 
-[![npm (scoped)](https://img.shields.io/npm/v/@dalee/megafon-ui.svg)](https://www.npmjs.com/package/@dalee/megafon-ui)
+[![npm (scoped)](https://img.shields.io/npm/v/@megafon/megafon-ui.svg)](https://www.npmjs.com/package/@megafon/megafon-ui)
 [![Build Status](https://travis-ci.org/MegafonWebLab/megafon-ui.svg?branch=master)](https://travis-ci.org/MegafonWebLab/megafon-ui)
 [![codecov](https://codecov.io/gh/MegafonWebLab/megafon-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/MegafonWebLab/megafon-ui)
 
 ## Getting started
 
 ```bash
-$ npm install --save @dalee/megafon-ui
+$ npm install --save @megafon/megafon-ui
 ```
 
 or for `yarn`:
 
 ```bash
-$ yarn add @dalee/megafon-ui
+$ yarn add @megafon/megafon-ui
 ```
 
 ## Development notes
