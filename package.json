@@ -1,5 +1,5 @@
 {
-  "name": "@dalee/megafon-ui",
+  "name": "@megafon/megafon-ui",
   "version": "1.0.3",
   "files": [
     "dist"
@@ -8,9 +8,9 @@
   "module": "dist/es/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dalee/megafon-ui.git"
+    "url": "git+https://github.com/MegafonWebLab/megafon-ui.git"
   },
-  "author": "Dalee IA <hello@dalee.ru>",
+  "author": "MegaFon",
   "license": "MIT",
   "typings": "./typings/index.d.ts",
   "scripts": {
