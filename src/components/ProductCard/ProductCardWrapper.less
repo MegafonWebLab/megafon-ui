@@ -1,14 +1,23 @@
 @import '~styles/base.less';
 
-@b: e('.main-tile-wrapper');
+@b: e('.product-card-wrapper');
 
 @{b} {
     //.p_v2();
     box-sizing: border-box;
     position: relative;
     border-bottom: 1px solid @spbSky2;
-    &:not(&_br-no) {
+    &_bt-yes {
+        border-top: 1px solid @spbSky2;
+    }
+    &_bl-yes {
+        border-left: 1px solid @spbSky2;
+    }
+    &_br-yes {
         border-right: 1px solid @spbSky2;
+    }
+    &_bb-yes {
+        border-bottom: 1px solid @spbSky2;
     }
     @media @mobileSM {
         border-left: 1px solid @spbSky2;

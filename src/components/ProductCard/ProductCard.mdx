@@ -1,30 +1,30 @@
 ---
-name: MainTile
+name: ProductCard
 menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
-import MainTileWrapper from './MainTileWrapper';
-import MainTileInfo from './MainTileInfo';
-import MainTileFeatures from './MainTileFeatures';
-import MainTileTotal from './MainTileTotal';
+import ProductCardWrapper from './ProductCardWrapper';
+import ProductCardInfo from './ProductCardInfo';
+import ProductCardFeatures from './ProductCardFeatures';
+import ProductCardTotal from './ProductCardTotal';
 import Checked from 'icons/checked_24.svg';
 
 export const Wrapper = ({children}) => <div style={{ padding: '20px'}}>{children}</div>
 
-# MainTile
+# ProductCard
 
-## Properties MainTileWrapper
-<PropsTable of={MainTileWrapper} />
+## Properties ProductCardWrapper
+<PropsTable of={ProductCardWrapper} />
 
-## Properties MainTileInfo
-<PropsTable of={MainTileInfo} />
+## Properties ProductCardInfo
+<PropsTable of={ProductCardInfo} />
 
-## Properties MainTileFeatures
-<PropsTable of={MainTileFeatures} />
+## Properties ProductCardFeatures
+<PropsTable of={ProductCardFeatures} />
 
-## Properties MainTileTotal
-<PropsTable of={MainTileTotal} />
+## Properties ProductCardTotal
+<PropsTable of={ProductCardTotal} />
 
 ## Basic usage
 
@@ -146,29 +146,29 @@ export const oldTotalProps = {
 };
 
 <Playground wrapper={Wrapper}>
-    <MainTileWrapper hint={{ title: 'Рекоммендуем', color: 'green'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileTotal {...totalProps} />
-    </MainTileWrapper>
-    <MainTileWrapper hint={{ title: 'Желаемый', color: 'orange'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileTotal {...totalProps} />
-    </MainTileWrapper>
-    <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileFeatures {...featuresProps}/>
-        <MainTileTotal {...oldTotalProps} />
-    </MainTileWrapper>
-    <MainTileWrapper>
-        <MainTileInfo {...infoProps} />
-        <MainTileFeatures {...featuresIconsProps}/>
-        <MainTileTotal {...totalProps} handleSubmit={() => ({})}/>
-    </MainTileWrapper>
-    <MainTileWrapper hint={{ title: 'Текущий', color: 'black'}}>
-        <MainTileInfo {...infoProps} />
-        <MainTileFeatures {...featuresProps}/>
-        <MainTileTotal {...oldTotalProps} handleSubmit={() => ({})}/>
-    </MainTileWrapper>
+    <ProductCardWrapper hint={{ title: 'Рекоммендуем', color: 'green'}}>
+        <ProductCardInfo {...infoProps} />
+        <ProductCardTotal {...totalProps} />
+    </ProductCardWrapper>
+    <ProductCardWrapper hint={{ title: 'Желаемый', color: 'orange'}}>
+        <ProductCardInfo {...infoProps} />
+        <ProductCardTotal {...totalProps} />
+    </ProductCardWrapper>
+    <ProductCardWrapper hint={{ title: 'Текущий', color: 'black'}}>
+        <ProductCardInfo {...infoProps} />
+        <ProductCardFeatures {...featuresProps}/>
+        <ProductCardTotal {...oldTotalProps} />
+    </ProductCardWrapper>
+    <ProductCardWrapper>
+        <ProductCardInfo {...infoProps} />
+        <ProductCardFeatures {...featuresIconsProps}/>
+        <ProductCardTotal {...totalProps} handleSubmit={() => ({})}/>
+    </ProductCardWrapper>
+    <ProductCardWrapper hint={{ title: 'Текущий', color: 'black'}}>
+        <ProductCardInfo {...infoProps} />
+        <ProductCardFeatures {...featuresProps}/>
+        <ProductCardTotal {...oldTotalProps} handleSubmit={() => ({})}/>
+    </ProductCardWrapper>
 </Playground>
 
 ## Included props

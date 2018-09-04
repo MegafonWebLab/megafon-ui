@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import MainTileFeatures from './MainTileFeatures';
+import ProductCardFeatures from './ProductCardFeatures';
 
 const props = {
     showcaseParams: [{
@@ -29,9 +29,9 @@ const props = {
     }],
 };
 
-describe('<MainTileFeatures />', () => {
-    it('it renders MainTileFeatures', () => {
-        const wrapper = shallow(<MainTileFeatures {...props} />);
+describe('<ProductCardFeatures />', () => {
+    it('it renders ProductCardFeatures', () => {
+        const wrapper = shallow(<ProductCardFeatures {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 });

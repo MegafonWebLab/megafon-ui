@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MainTileFeatures /> it renders MainTileFeatures 1`] = `
+exports[`<ProductCardFeatures /> it renders ProductCardFeatures 1`] = `
 <div
-  className="main-tile-features"
+  className="product-card-features"
 >
-  <MainTileInternet
-    className="main-tile-features__internet"
+  <ProductCardInternet
+    className="product-card-features__internet"
     params={
       Array [
         Object {
@@ -17,8 +17,8 @@ exports[`<MainTileFeatures /> it renders MainTileFeatures 1`] = `
     }
     socialIcons={Array []}
   />
-  <MainTileFree
-    className="main-tile-features__free"
+  <ProductCardFree
+    className="product-card-features__free"
     key="0"
     params={
       Array [
@@ -28,8 +28,8 @@ exports[`<MainTileFeatures /> it renders MainTileFeatures 1`] = `
       ]
     }
   />
-  <MainTileFree
-    className="main-tile-features__free"
+  <ProductCardFree
+    className="product-card-features__free"
     key="1"
     params={
       Array [
@@ -39,8 +39,8 @@ exports[`<MainTileFeatures /> it renders MainTileFeatures 1`] = `
       ]
     }
   />
-  <MainTileFree
-    className="main-tile-features__free"
+  <ProductCardFree
+    className="product-card-features__free"
     key="2"
     params={
       Array [

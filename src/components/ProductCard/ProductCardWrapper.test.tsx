@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import MainTileWrapper from './MainTileWrapper';
+import ProductCardWrapper from './ProductCardWrapper';
 
 const props: {
     hint: {
@@ -11,20 +11,20 @@ const props: {
     hint: { title: 'Рекоммендуем', color: 'green' },
 };
 
-describe('<MainTileWrapper />', () => {
-    it('it renders MainTileWrapper', () => {
-        const wrapper = shallow(<MainTileWrapper {...props}><div /></MainTileWrapper>);
+describe('<ProductCardWrapper />', () => {
+    it('it renders ProductCardWrapper', () => {
+        const wrapper = shallow(<ProductCardWrapper {...props}><div /></ProductCardWrapper>);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders without hint', () => {
-        const wrapper = shallow(<MainTileWrapper IsBorderRight={false}><div /></MainTileWrapper>);
+        const wrapper = shallow(<ProductCardWrapper IsBorderRight={false}><div /></ProductCardWrapper>);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it click on wrapper', () => {
-        const wrapper = shallow(<MainTileWrapper IsBorderRight={false}><div /></MainTileWrapper>);
-        const instance = wrapper.instance() as MainTileWrapper;
+        const wrapper = shallow(<ProductCardWrapper IsBorderRight={false}><div /></ProductCardWrapper>);
+        const instance = wrapper.instance() as ProductCardWrapper;
         const result = instance.handleClick({ target: {} } as React.SyntheticEvent<EventTarget>);
         expect(result).toBe(true);
     });

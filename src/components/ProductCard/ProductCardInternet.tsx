@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './MainTileInternet.less';
+import './ProductCardInternet.less';
 import Header from '../Header/Header';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 import { cnCreate } from '../../utils/cn';
-import { ISocialIcon, IShowcaseChildren } from './MainTileFeatures';
+import { ISocialIcon, IShowcaseChildren } from './ProductCardFeatures';
 
-interface IMainTileInternetProps {
+interface IProductCardInternetProps {
     /** Custom class name */
     className?: string;
     /** Social icons list */
@@ -15,21 +15,21 @@ interface IMainTileInternetProps {
     params?: Array<Partial<IShowcaseChildren>>;
 }
 
-const cn = cnCreate('main-tile-internet');
-class MainTileInternet extends React.Component<IMainTileInternetProps, {}> {
+const cn = cnCreate('product-card-internet');
+class ProductCardInternet extends React.Component<IProductCardInternetProps, {}> {
     static propTypes = {
         className: PropTypes.string,
         params: PropTypes.array,
         socialIcons: PropTypes.array,
     };
 
-    static defaultProps: IMainTileInternetProps = {
+    static defaultProps: IProductCardInternetProps = {
         params: [],
         socialIcons: [],
     };
 
     render() {
-        const { params, socialIcons }: IMainTileInternetProps = this.props;
+        const { params, socialIcons }: IProductCardInternetProps = this.props;
 
         return (
             <div className={cn('', {}, this.props.className)} >
@@ -53,4 +53,4 @@ class MainTileInternet extends React.Component<IMainTileInternetProps, {}> {
     }
 }
 
-export default MainTileInternet;
+export default ProductCardInternet;
