@@ -23,6 +23,7 @@
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
     "setup": "yarn install --pure-lock",
+    "prepublishOnly": "yarn setup && yarn build",
     "test": "npm run test:unit",
     "test:unit": "jest"
   },
