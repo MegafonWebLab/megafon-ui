@@ -157,8 +157,10 @@ function svgToReact() {
             .join('');
 
         svgr(content, { icon: true }, { componentName: `${name}Svg` }).then(jsCode => {
-            file.contents = Buffer.from(jsCode);
-            file.path = file.path.replace(/.svg/, '.js');
+            var jsFile = file.clone();
+            jsFile.contents = Buffer.from(jsCode);
+            jsFile.path = file.path.replace(/.svg/, '.js');
+            this.push(jsFile);
             this.push(file);
             next();
         });
