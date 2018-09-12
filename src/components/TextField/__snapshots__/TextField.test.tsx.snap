@@ -126,7 +126,16 @@ exports[`<TextField /> it renders mask input 1`] = `
   <div
     className="text-field__field-wrapper"
   >
-    <div />
+    <div>
+      <Component
+        autoComplete="off"
+        className="text-field__field"
+        inputRef={[Function]}
+        mask="(999) 999-99-99"
+        maskChar=" "
+        type="text"
+      />
+    </div>
   </div>
 </div>
 `;

@@ -16,14 +16,12 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
         600 ₽
       </span>
        
-      <React.Fragment>
-        <span
-          className="product-card-total__old-price"
-        >
-          750 ₽
-        </span>
-        <br />
-      </React.Fragment>
+      <span
+        className="product-card-total__old-price"
+      >
+        750 ₽
+      </span>
+      <br />
       <span
         className="product-card-total__unit"
       >
