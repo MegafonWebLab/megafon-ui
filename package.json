@@ -6,13 +6,13 @@
   ],
   "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
+  "typings": "dist/lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MegafonWebLab/megafon-ui.git"
   },
   "author": "MegaFon",
   "license": "MIT",
-  "typings": "./typings/index.d.ts",
   "scripts": {
     "build": "gulp build",
     "coverage": "npm run coverage:unit",
