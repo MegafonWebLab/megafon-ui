@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './DropdownSocialList.less';
 import BubbleHint from '../BubbleHint/BubbleHint';
+import './DropdownSocialList.less';
 import { cnCreate } from '../../utils/cn';
 
 export interface Icon {

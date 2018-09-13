@@ -2,6 +2,12 @@ import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import TextField from './TextField';
 
+jest.mock('react-input-mask', () => {
+    return {
+        default() {},
+    };
+});
+
 describe('<TextField />', () => {
     it('it renders TextField', () => {
         const wrapper = shallow(<TextField />);
