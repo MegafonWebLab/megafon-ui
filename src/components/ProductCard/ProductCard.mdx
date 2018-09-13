@@ -134,7 +134,8 @@ export const totalProps = {
     payment: {
         value: '600 ₽',
         unit: 'в месяц'
-    }
+    },
+    onSubmit() {}
 };
 
 export const oldTotalProps = {
@@ -142,29 +143,31 @@ export const oldTotalProps = {
         value: '600 ₽',
         oldValue: '750 ₽',
         unit: 'в месяц'
-    }
+    },
+    onClickMore() {},
+    onClickConnect() {}
 };
 
 <Playground wrapper={Wrapper}>
-    <ProductCardWrapper hint={{ title: 'Рекоммендуем', color: 'green'}}>
+    <ProductCardWrapper theme="default" hint={{ title: 'Рекоммендуем', color: 'green'}}>
         <ProductCardInfo {...infoProps} />
         <ProductCardTotal {...totalProps} />
     </ProductCardWrapper>
-    <ProductCardWrapper hint={{ title: 'Желаемый', color: 'orange'}}>
+    <ProductCardWrapper theme="default" hint={{ title: 'Желаемый', color: 'orange'}}>
         <ProductCardInfo {...infoProps} />
         <ProductCardTotal {...totalProps} />
     </ProductCardWrapper>
-    <ProductCardWrapper hint={{ title: 'Текущий', color: 'black'}}>
+    <ProductCardWrapper theme="default" hint={{ title: 'Текущий', color: 'black'}}>
         <ProductCardInfo {...infoProps} />
         <ProductCardFeatures {...featuresProps}/>
         <ProductCardTotal {...oldTotalProps} />
     </ProductCardWrapper>
-    <ProductCardWrapper>
+    <ProductCardWrapper theme="default">
         <ProductCardInfo {...infoProps} />
         <ProductCardFeatures {...featuresIconsProps}/>
         <ProductCardTotal {...totalProps} handleSubmit={() => ({})}/>
     </ProductCardWrapper>
-    <ProductCardWrapper hint={{ title: 'Текущий', color: 'black'}}>
+    <ProductCardWrapper theme="default" hint={{ title: 'Текущий', color: 'black'}}>
         <ProductCardInfo {...infoProps} />
         <ProductCardFeatures {...featuresProps}/>
         <ProductCardTotal {...oldTotalProps} handleSubmit={() => ({})}/>
@@ -280,7 +283,8 @@ export const totalProps = {
     payment: {
         value: '600 ₽',
         unit: 'в месяц'
-    }
+    },
+    onSubmit() {}
 };
 
 export const oldTotalProps = {
@@ -288,6 +292,8 @@ export const oldTotalProps = {
         value: '600 ₽',
         oldValue: '750 ₽',
         unit: 'в месяц'
-    }
+    },
+    onClickMore() {},
+    onClickConnect() {}
 };
 ```

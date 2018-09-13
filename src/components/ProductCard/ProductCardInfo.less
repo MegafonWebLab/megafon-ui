@@ -54,6 +54,25 @@
             .p();
         }
     }
+
+    &__description-icon {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+        margin-left: -4px;
+
+        fill: @green;
+        flex-shrink: 0;
+        @media @mobileSM {
+            margin-top: 2px;
+        }
+        @media @desktopMU {
+            margin-top: 2px;
+        }
+        pointer-events: none;
+    }
+
     &__badge {
         font-size: 12px;
         line-height: 16px;
@@ -86,7 +105,6 @@
 
     &__description-wrap {
         display: flex;
-        align-items: center;
         margin-bottom: 12px;
         max-width: 270px;
         @media @mobileS {

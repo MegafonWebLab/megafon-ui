@@ -20,7 +20,7 @@ describe('<ProductCardTotal />', () => {
 describe('<ProductCardTotal />', () => {
     it('it handle handleSubmit prop', () => {
         const handleSubmit = jest.fn();
-        const wrapper = shallow(<ProductCardTotal {...props} handleSubmit={handleSubmit} />);
+        const wrapper = shallow(<ProductCardTotal {...props} onSubmit={handleSubmit} />);
 
         wrapper.find('.product-card-total__button').simulate('click', {} as React.SyntheticEvent);
         expect(handleSubmit).toHaveBeenCalledTimes(1);

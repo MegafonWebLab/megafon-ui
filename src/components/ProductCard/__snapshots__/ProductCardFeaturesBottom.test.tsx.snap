@@ -19,7 +19,9 @@ exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] 
       className="product-card-features-bottom__item product-card-features-bottom__item_icon"
       key="test"
     >
-      <test-file-stub />
+      <test-file-stub
+        className="product-card-features-bottom__item-icon"
+      />
       <Header
         as="h5"
         className="product-card-features-bottom__item-title"

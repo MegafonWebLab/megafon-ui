@@ -44,7 +44,7 @@ class Logo extends React.Component<ILogoProps, {}> {
         return (
             <Link {...props} className={cn('', { view })}>
                 <div className={cn('img')}>
-                    <BackgroundImage />
+                    <BackgroundImage className={cn('svg')} />
                 </div>
             </Link>
         );

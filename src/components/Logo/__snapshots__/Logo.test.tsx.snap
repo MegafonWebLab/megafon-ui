@@ -9,7 +9,9 @@ exports[`Logo renders with default props 1`] = `
   <div
     className="logo__img"
   >
-    <test-file-stub />
+    <test-file-stub
+      className="logo__svg"
+    />
   </div>
 </Link>
 `;
