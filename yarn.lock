@@ -1577,12 +1577,6 @@
   version "10.9.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.4.tgz#0f4cb2dc7c1de6096055357f70179043c33e9897"
 
-"@types/prop-types@*":
-  version "15.5.5"
-  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.5.tgz#17038dd322c2325f5da650a94d5f9974943625e3"
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-dom@^16.0.6":
   version "16.0.7"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.7.tgz#54d0f867a76b90597e8432030d297982f25c20ba"
@@ -1590,11 +1584,10 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.4.7":
-  version "16.4.14"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.14.tgz#47c604c8e46ed674bbdf4aabf82b34b9041c6a04"
+"@types/react@*", "@types/react@16.4.7":
+  version "16.4.7"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.7.tgz#f33f6d759a7e1833befa15224d68942d178a5a3f"
   dependencies:
-    "@types/prop-types" "*"
     csstype "^2.2.0"
 
 "@types/semver@^5.4.0":
@@ -3692,8 +3685,8 @@ cssstyle@^1.0.0:
     cssom "0.3.x"
 
 csstype@^2.2.0, csstype@^2.5.2:
-  version "2.5.6"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.6.tgz#2ae1db2319642d8b80a668d2d025c6196071e788"
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.7.tgz#bf9235d5872141eccfb2d16d82993c6b149179ff"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -4233,8 +4226,8 @@ ejs@^2.6.1:
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
 
 electron-to-chromium@^1.3.47, electron-to-chromium@^1.3.62:
-  version "1.3.66"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.66.tgz#1410d8f8768a14dcd09d96222990f43c969af270"
+  version "1.3.67"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.67.tgz#5e8f3ffac89b4b0402c7e1a565be06f3a109abbc"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -6862,8 +6855,8 @@ just-debounce@^1.0.0:
   resolved "https://registry.yarnpkg.com/just-debounce/-/just-debounce-1.0.0.tgz#87fccfaeffc0b68cd19d55f6722943f929ea35ea"
 
 keygrip@~1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.2.tgz#ad3297c557069dea8bcfe7a4fa491b75c5ddeb91"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.3.tgz#399d709f0aed2bab0a059e0cdd3a5023a053e1dc"
 
 killable@^1.0.0:
   version "1.0.1"
@@ -7253,8 +7246,8 @@ lodash.uniq@^4.3.0, lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
 "lodash@>=3.5 <5", lodash@^4.0.0, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.3.0, lodash@~4.17.10:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
 log-symbols@^2.0.0, log-symbols@^2.1.0:
   version "2.2.0"
@@ -9494,7 +9487,7 @@ react-test-renderer@^16.0.0-0:
     react-is "^16.5.0"
     schedule "^0.3.0"
 
-react@^16.3.2, react@^16.4.1, react@^16.4.2:
+react@^16.3.2, react@^16.4.2:
   version "16.5.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.5.0.tgz#f2c1e754bf9751a549d9c6d9aca41905beb56575"
   dependencies:
@@ -10942,7 +10935,7 @@ table@^4.0.1, table@^4.0.3:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-tapable@^1.0.0:
+tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.0.tgz#0d076a172e3d9ba088fd2272b2668fb8d194b78c"
 
@@ -11919,8 +11912,8 @@ webpack-sources@^1.1.0, webpack-sources@^1.2.0:
     source-map "~0.6.1"
 
 webpack@^4.16.3:
-  version "4.18.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.18.0.tgz#7dafaaf309c12e63080d3960fba7ed94afdcbe84"
+  version "4.18.1"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.18.1.tgz#029042c815443fce23424de1548d9317cfca148a"
   dependencies:
     "@webassemblyjs/ast" "1.7.6"
     "@webassemblyjs/helper-module-context" "1.7.6"
@@ -11942,7 +11935,7 @@ webpack@^4.16.3:
     neo-async "^2.5.0"
     node-libs-browser "^2.0.0"
     schema-utils "^0.4.4"
-    tapable "^1.0.0"
+    tapable "^1.1.0"
     uglifyjs-webpack-plugin "^1.2.4"
     watchpack "^1.5.0"
     webpack-sources "^1.2.0"
