@@ -127,7 +127,7 @@ exports[`<TextField /> it renders mask input 1`] = `
     className="text-field__field-wrapper"
   >
     <div>
-      <Component
+      <_default
         autoComplete="off"
         className="text-field__field"
         inputRef={[Function]}
