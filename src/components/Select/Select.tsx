@@ -168,7 +168,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleClickSearch = e => {
-        !this.state.isOpen && e.target.select();
+        if (!this.state.isOpen && this.props.searchValue) {
+            e.target.select();
+        }
+
         this.setState({ isOpen: true });
     }
 
