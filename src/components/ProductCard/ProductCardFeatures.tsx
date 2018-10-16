@@ -33,6 +33,9 @@ interface IProductCardFeaturesProps {
      * List with args: svgIcon: JSX.Element, title: string
      */
     socialIcons?: Array<Partial<ISocialIcon>>;
+    className?: string;
+    classNameTop?: string;
+    classNameBottom?: string;
 }
 
 const cn = cnCreate('product-card-features');
@@ -58,9 +61,13 @@ class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}>
                 title: PropTypes.string.isRequired,
             })
         ),
+        className: PropTypes.string,
+        classNameTop: PropTypes.string,
+        classNameBottom: PropTypes.string,
     };
 
     render() {
+        const { className, classNameTop, classNameBottom } = this.props;
         const params = this.props.showcaseParams!.filter(
             param => param.children!.length
         );
@@ -68,17 +75,17 @@ class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}>
         const [first, ...rest] = params;
 
         return (
-            <div className={cn('')}>
+            <div className={cn('', {}, className)}>
                 {first &&
                     <ProductCardFeaturesTop
-                        className={cn('top')}
+                        className={cn('top', {}, classNameTop)}
                         params={first.children}
                         socialIcons={this.props.socialIcons}
                     />
                 }
                 {rest.map((param: IShowcaseParams, index: number) =>
                     <ProductCardFeaturesBottom
-                        className={cn('bottom')}
+                        className={cn('bottom', {}, classNameBottom)}
                         params={param.children}
                         title={param.value}
                         key={index}

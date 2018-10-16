@@ -28,6 +28,9 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
         в месяц
       </span>
     </div>
+    <div
+      className="product-card-total__buttons"
+    />
   </div>
 </div>
 `;

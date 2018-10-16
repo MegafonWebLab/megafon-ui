@@ -36,7 +36,9 @@ class ProductCardFeaturesBottom extends React.Component<IProductCardFeaturesBott
                 <ul className={cn('list')}>
                     {params.map((param: IShowcaseChildren): React.ReactNode =>
                         <li className={cn('item', { icon: !!param.svgIcon })} key={param.title}>
-                            {param.svgIcon}
+                            {param.svgIcon && React.cloneElement(param.svgIcon, {
+                                className: cn('item-icon'),
+                            })}
                             <Header className={cn('item-title')} as="h5" margin={false}>
                                 {param.title}
                             </Header>

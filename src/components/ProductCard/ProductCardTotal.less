@@ -1,28 +1,15 @@
 @import '~styles/base.less';
 
 @b: e('.product-card-total');
+@default_theme: e('.product-card-wrapper_theme_default');
 
 @{b} {
     flex-shrink: 0;
-    width: 200px;
-    @media @mobileS {
-        margin: 0 auto;
-    }
-    @media @mobileB {
-        width: 165px;
-    }
-    @media @desktop {
-        width: 196px;
-    }
-    @media @desktopMU {
-        width: 268px;
-    }
+
     &__wrap {
         text-align: center;
-        @media @desktopMU {
-            width: 200px;
-        }
     }
+
     &__cost {
         font-size: 18px;
         line-height: 24px;
@@ -73,5 +60,41 @@
             }
         }
     }
+    &__connect-button {
+        cursor: pointer;
+        height: 48px;
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        vertical-align: top;
+
+        span {
+            display: inline-block;
+            width: 100%;
+            color: @blue;
+        }
+    }
 }
 
+@{default_theme} @{b} {
+    width: 200px;
+    @media @mobileS {
+        margin: 0 auto;
+    }
+    @media @mobileB {
+        width: 165px;
+    }
+    @media @desktop {
+        width: 196px;
+    }
+    @media @desktopMU {
+        width: 268px;
+    }
+}
+@{default_theme} @{b}__wrap {
+    @media @desktopMU {
+        width: 200px;
+    }
+}

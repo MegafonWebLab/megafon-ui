@@ -2,7 +2,7 @@
 
 exports[`<ProductCardWrapper /> it renders ProductCardWrapper 1`] = `
 <div
-  className="product-card-wrapper product-card-wrapper_hint_green product-card-wrapper_bl-yes product-card-wrapper_br-yes"
+  className="product-card-wrapper product-card-wrapper_hint product-card-wrapper_hint_green product-card-wrapper_bl product-card-wrapper_br"
   onClick={[Function]}
 >
   <div

@@ -59,6 +59,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
       className="product-card-info__description-wrap"
     >
       <test-file-stub
+        className="product-card-info__description-icon"
         style={
           Object {
             "height": "40px",
@@ -68,14 +69,18 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
       />
       <div
         className="product-card-info__description-text"
-      >
-        Амедиатека
-      </div>
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "Амедиатека",
+          }
+        }
+      />
     </div>
     <TextLink
       className="product-card-info__description-more"
       color="blue"
       href="https://www.google.com/"
+      onClick={[Function]}
       target="_blank"
       underlineStyle="solid"
       underlineVisibility="hover"

@@ -14,8 +14,8 @@ interface IBadge {
 
 interface IAdditionalParams {
     title: string;
-    value: string;
-    unit: string;
+    value: string | number;
+    unit: string | JSX.Element;
 }
 
 interface IProductCardInfoProps {
@@ -25,8 +25,10 @@ interface IProductCardInfoProps {
     link: string;
     /** Link text */
     linkText?: string;
-    /** Description */
-    description?: string;
+    /** Description
+     * string or JSX.element with custom styles
+     */
+    description?: string | JSX.Element;
     /** Description Svg */
     descriptionIcon?: JSX.Element;
     /** Badges
@@ -37,6 +39,12 @@ interface IProductCardInfoProps {
      * list of params with args: title(required), value(required), unit(required)
      */
     additionalParams?: IAdditionalParams[];
+    className?: string;
+    classNameDescription?: string;
+    classNameDescriptionText?: string;
+    classNameParams?: string;
+    classNameParamsItem?: string;
+    onClickMoreInfo?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
 const cn = cnCreate('product-card-info');
@@ -45,7 +53,7 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         title: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
         linkText: PropTypes.string,
-        description: PropTypes.string,
+        description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
         descriptionIcon: PropTypes.element,
         badges: PropTypes.arrayOf(
             PropTypes.shape({
@@ -57,14 +65,21 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         additionalParams: PropTypes.arrayOf(
             PropTypes.shape({
                 title: PropTypes.string.isRequired,
-                value: PropTypes.string.isRequired,
-                unit: PropTypes.string.isRequired,
+                value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+                unit: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
             })
         ),
+        className: PropTypes.string,
+        classNameDescription: PropTypes.string,
+        classNameDescriptionText: PropTypes.string,
+        classNameParams: PropTypes.string,
+        classNameParamsItem: PropTypes.string,
+        onClickMoreInfo: PropTypes.func,
     };
 
     static defaultProps: Partial<IProductCardInfoProps> = {
         linkText: 'Подробнее',
+        additionalParams: [],
     };
 
     renderBadges() {
@@ -96,34 +111,57 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         );
     }
 
+    handleClickMoreInfo = (e: React.SyntheticEvent<EventTarget>): void => {
+        const { onClickMoreInfo } = this.props;
+
+        onClickMoreInfo && onClickMoreInfo(e);
+    }
+
     render() {
+        const {
+            badges, description, descriptionIcon,
+            link, linkText, title, additionalParams,
+            className, classNameDescription, classNameDescriptionText,
+            classNameParams, classNameParamsItem,
+        } = this.props;
+
         return (
-            <div className={cn('')}>
-                <div className={cn('description')}>
+            <div className={cn('', {}, className)}>
+                <div className={cn('description', {}, classNameDescription)}>
                     <Header className={cn('description-title')} as="h2" margin={false}>
-                        {this.props.title}
+                        {title}
                     </Header>
-                    {this.props.badges && this.renderBadges()}
-                    {this.props.description &&
+                    {badges && this.renderBadges()}
+                    {description &&
                         <div className={cn('description-wrap')}>
-                            {this.props.descriptionIcon}
-                            <div className={cn('description-text')}>
-                                {this.props.description}
-                            </div>
+                            {descriptionIcon && React.cloneElement(descriptionIcon, {
+                                className: cn('description-icon'),
+                            })}
+                            {typeof description === 'string'
+                                ? <div
+                                    className={cn('description-text', {}, classNameDescriptionText)}
+                                    dangerouslySetInnerHTML={{ __html: description }}
+                                />
+                                : <div
+                                    className={cn('description-text', {}, classNameDescriptionText)}
+                                >{description}</div>
+                            }
+
                         </div>
                     }
                     <TextLink
                         className={cn('description-more')}
-                        href={this.props.link}
+                        href={link}
                         target="_blank"
+                        onClick={this.handleClickMoreInfo}
                     >
-                        {this.props.linkText}
+                        {linkText}
                     </TextLink>
                 </div>
-                <div className={cn('params')}>
+                <div className={cn('params', {}, classNameParams)}>
                     <ul className={cn('params-list')}>
-                        {this.props.additionalParams!.map((param: IAdditionalParams, key: number): React.ReactNode =>
-                            <li key={param.title + key} className={cn('params-item')}>
+                        {additionalParams!.map((param: IAdditionalParams, key: number): React.ReactNode =>
+                            <li key={param.title + key} className={cn('params-item', {}, classNameParamsItem)}>
                                 <span data-amount={param.value}>{param.value}</span> {param.unit}
                             </li>
                         )}
