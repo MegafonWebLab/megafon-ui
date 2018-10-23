@@ -24,9 +24,12 @@ exports[`<TextField /> is checked shouldComponentUpdate 1`] = `
   </div>
   <div
     className="text-field__text text-field__text_error"
-  >
-    text
-  </div>
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "text",
+      }
+    }
+  />
 </div>
 `;
 
@@ -113,9 +116,12 @@ exports[`<TextField /> it renders error icon 1`] = `
   </div>
   <div
     className="text-field__text text-field__text_error"
-  >
-    text
-  </div>
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "text",
+      }
+    }
+  />
 </div>
 `;
 
@@ -192,9 +198,12 @@ exports[`<TextField /> it renders valid icon 1`] = `
   </div>
   <div
     className="text-field__text text-field__text_error"
-  >
-    text
-  </div>
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "text",
+      }
+    }
+  />
 </div>
 `;
 

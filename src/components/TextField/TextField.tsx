@@ -210,7 +210,7 @@ class TextField extends React.Component<ITextFieldProps, {}> {
                     {isStatusIcon && error && this.renderErrorIcon()}
                 </div>
                 {(error || valid) && noticeText &&
-                    <div className={cn('text', { error: true })}>{noticeText}</div>}
+                    <div className={cn('text', { error: true })} dangerouslySetInnerHTML={{ __html: noticeText }} />}
                 {commentText &&
                     <div className={cn('text', { comment: true })}>{commentText}</div>}
                 {successText &&
