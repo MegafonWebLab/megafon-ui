@@ -1,5 +1,5 @@
 import { css } from 'docz-plugin-css';
-import { resolve } from 'path';
+import { resolve, basename } from 'path';
 
 module.exports = {
     title: 'MegaFon UI',
@@ -33,11 +33,26 @@ module.exports = {
 
         config.module.rules[idx] = {
             test: /\.svg$/,
-            use: {
-                loader: '@svgr/webpack',
-            },
+            use: [
+                ({ resource }) => ({
+                    loader: '@svgr/webpack',
+                    options: {
+                        svgoConfig: {
+                            plugins: [
+                                {
+                                    cleanupIDs: {
+                                        prefix: `svg-${basename(resource, '.svg')}`,
+                                    }
+                                },
+                                {
+                                    inlineStyles: { onlyMatchedOnce: false }
+                                }
+                            ],
+                        }
+                    },
+                }),
+            ],
         };
-
         return config;
-    },
+    }
 };

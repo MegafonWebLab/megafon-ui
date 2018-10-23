@@ -11,3 +11,4 @@ coverage
 .docz
 docs
 .vscode
+.DS_Store

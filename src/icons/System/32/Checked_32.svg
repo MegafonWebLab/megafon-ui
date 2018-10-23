@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Source/System Icons/32/Checked_32</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M26.1703497,13 L18.3928223,22.4422607 L14.7693827,18.7272943 L13,20.4810154 C16.5700485,24.1603385 18.4110737,26 18.5230758,26 C18.6560065,25.9945693 21.8149813,22.2230015 28,14.6852967 L26.1703497,13 Z" id="path-1"></path>
+    </defs>
+    <g id="Source/System-Icons/32/Checked_32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="40" height="40"></rect>
+        </g>
+    </g>
+</svg>

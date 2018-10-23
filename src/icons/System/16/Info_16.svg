@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Source/System Icons/16/info_16</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10,2 C14.4130982,2 18,5.58690176 18,10 C18,14.4130982 14.4130982,18 10,18 C5.58690176,18 2,14.4130982 2,10 C2,5.58690176 5.58690176,2 10,2 Z M10,7 C10.5522847,7 11,6.55228475 11,6 C11,5.44771525 10.5522847,5 10,5 C9.44771525,5 9,5.44771525 9,6 C9,6.55228475 9.44771525,7 10,7 Z M11,15 L11,9 L9,9 L9,15 L11,15 Z" id="path-1"></path>
+    </defs>
+    <g id="Source/System-Icons/16/info_16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+    </g>
+</svg>

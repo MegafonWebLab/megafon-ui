@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Source/System Icons/16/Checked_16</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="8.83180619 11.5475581 6.61878825 9.33454013 5.20485603 10.7484724 7.66629098 13.2102638 9.11183166 14.6560107 15.0440295 6.16962959 13.4057254 5.02247672"></polygon>
+    </defs>
+    <g id="Source/System-Icons/16/Checked_16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Combined-Shape"></g>
+        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+        </g>
+    </g>
+</svg>

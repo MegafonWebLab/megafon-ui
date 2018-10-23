@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Source/System Icons/24/Checked_24</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M22.1703497,9 L14.3928223,18.4422607 L10.7693827,14.7272943 L9,16.4810154 C12.5700485,20.1603385 14.4110737,22 14.5230758,22 C14.6560065,21.9945693 17.8149813,18.2230015 24,10.6852967 L22.1703497,9 Z" id="path-1"></path>
+    </defs>
+    <g id="Source/System-Icons/24/Checked_24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g id="Mask" fill-rule="nonzero"></g>
+        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="32" height="32"></rect>
+        </g>
+    </g>
+</svg>
