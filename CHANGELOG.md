@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 ### Changed
+- **Select:**
+    - optimize ref callback
+
+### Added
 - **DropdownSocialList:**
     - `className` support for custom class
 - **ListItem:**
@@ -17,8 +21,11 @@
     - `noticeText` render html string
 - **Select:**
     - `className` support for custom class
+
+## Release 1.0.11
+### Changed
+- **Select:**
     - click on search field - fixed bug in ios
-    - optimize ref callback
 - **ProductCardInfo:**
     - add styles to svg icon
     - `description` - can be `string` or `JSX.Element`
