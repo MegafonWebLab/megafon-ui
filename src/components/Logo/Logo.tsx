@@ -15,6 +15,8 @@ interface ILogoProps {
     href?: string;
     /** target - property tag <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
+    /** Custom classname */
+    className?: string;
 }
 
 const cn = cnCreate('logo');
@@ -24,6 +26,7 @@ class Logo extends React.Component<ILogoProps, {}> {
         view: PropTypes.oneOf(['horizontal', 'vertical']),
         target: PropTypes.string,
         href: PropTypes.string,
+        className: PropTypes.string,
     };
 
     static defaultProps: Partial<ILogoProps> = {
@@ -34,7 +37,7 @@ class Logo extends React.Component<ILogoProps, {}> {
     };
 
     render() {
-        const { color, view, ...props } = this.props;
+        const { color, view, className, ...props } = this.props;
         const images = {
             'green-horizontal': greenHorizontalImg,
             'green-vertical': greenVerticalImg,
@@ -42,7 +45,7 @@ class Logo extends React.Component<ILogoProps, {}> {
         const BackgroundImage = images[`${color}-${view}`];
 
         return (
-            <Link {...props} className={cn('', { view })}>
+            <Link {...props} className={cn('', { view }, className)}>
                 <div className={cn('img')}>
                     <BackgroundImage className={cn('svg')} />
                 </div>

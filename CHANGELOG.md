@@ -2,10 +2,23 @@
 
 ## [Unreleased]
 ### Changed
+- **DropdownSocialList:**
+    - `className` support for custom class
+- **ListItem:**
+    - `className` support for custom class
+- **List:**
+    - `className` support for custom class
+- **Logo:**
+    - `className` support for custom class
+- **Textarea:**
+    - `className` support for custom class
 - **TextField:**
+    - `className` support for custom class
     - `noticeText` render html string
 - **Select:**
+    - `className` support for custom class
     - click on search field - fixed bug in ios
+    - optimize ref callback
 - **ProductCardInfo:**
     - add styles to svg icon
     - `description` - can be `string` or `JSX.Element`

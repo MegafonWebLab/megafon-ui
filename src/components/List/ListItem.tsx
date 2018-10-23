@@ -4,12 +4,15 @@ import './ListItem.less';
 import { cnCreate } from '../../utils/cn';
 
 interface IListItemProps {
+    /** Custom classname */
+    className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
 const cn = cnCreate('list-item');
 class ListItem extends React.Component<IListItemProps, {}> {
     static propTypes = {
+        className: PropTypes.string,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.arrayOf(PropTypes.node),
@@ -21,7 +24,7 @@ class ListItem extends React.Component<IListItemProps, {}> {
 
     render() {
         return (
-            <li className={cn('')}>
+            <li className={cn('', {}, this.props.className)}>
                 {this.props.children}
             </li>
         );

@@ -12,6 +12,8 @@ interface IListProps {
     weight?: 'light' | 'regular' | 'bold';
     /** Color */
     color?: 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
+    /** Custom classname */
+    className?: string;
     children: JSX.Element[] | Element[] | JSX.Element | Element;
 }
 
@@ -22,6 +24,7 @@ class List extends React.Component<IListProps, {}> {
         hAlign: PropTypes.oneOf(['center', 'right']),
         weight: PropTypes.oneOf(['light', 'regular', 'bold']),
         color: PropTypes.oneOf(['black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
+        className: PropTypes.string,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
@@ -36,15 +39,15 @@ class List extends React.Component<IListProps, {}> {
 
     render() {
         const ElementType = this.props.as as string;
+        const { hAlign, color, weight, className, children } = this.props;
 
         return (
             <ElementType
                 className={cn('', {
-                    'h-align': this.props.hAlign,
-                    color: this.props.color,
-                    weight: this.props.weight,
-                })}>
-                {this.props.children}
+                    'h-align': hAlign,
+                    color, weight,
+                }, className)}>
+                {children}
             </ElementType>
         );
     }

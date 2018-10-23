@@ -14,6 +14,8 @@ export interface IDropdownSocialListProps {
     icons: Array<Partial<Icon>>;
     /** Max icon */
     maxIconNumber?: number;
+    /** Custom class name */
+    className?: string;
 }
 
 const cn = cnCreate('dropdown-social-list');
@@ -26,6 +28,7 @@ class DropdownSocialList extends React.Component<IDropdownSocialListProps, {}> {
             })
         ),
         maxIconNumber: PropTypes.number,
+        className: PropTypes.string,
     };
 
     static defaultProps: Partial<IDropdownSocialListProps> = {
@@ -62,10 +65,10 @@ class DropdownSocialList extends React.Component<IDropdownSocialListProps, {}> {
     }
 
     render() {
-        const { icons, maxIconNumber }: IDropdownSocialListProps = this.props;
+        const { icons, maxIconNumber, className }: IDropdownSocialListProps = this.props;
 
         return (
-            <div className={cn('')}>
+            <div className={cn('', {}, className)}>
                 <div className={cn('list')}>
                     {icons.slice(0, maxIconNumber).map((icon: Icon, index): React.ReactNode =>
                         <div className={cn('item')} title={icon.title} key={icon.title + index}>
