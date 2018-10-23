@@ -54,6 +54,8 @@ interface ITextFieldProps {
     maskChar?: string;
     /** Increase size of space in the text box */
     bigSpace?: boolean;
+    /** Custom classname */
+    className?: string;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
@@ -90,6 +92,7 @@ class TextField extends React.Component<ITextFieldProps, {}> {
         mask: PropTypes.string,
         maskChar: PropTypes.string,
         bigSpace: PropTypes.bool,
+        className: PropTypes.string,
         onChange: PropTypes.func,
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
@@ -187,7 +190,7 @@ class TextField extends React.Component<ITextFieldProps, {}> {
     render() {
         const {
             isHideIcon, customIcon, error, color,
-            valid, disabled, size,
+            valid, disabled, size, className,
             commentText, successText, noticeText,
         } = this.props;
         const isAnyIcon = !isHideIcon && (!!customIcon || error || valid);
@@ -202,7 +205,7 @@ class TextField extends React.Component<ITextFieldProps, {}> {
                     disabled,
                     color,
                     size,
-                })}>
+                }, className)}>
                 <div className={cn('field-wrapper')}>
                     <div>{this.renderInputElem()}</div>
                     {customIcon && this.renderCustomIcon()}

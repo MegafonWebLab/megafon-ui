@@ -48,6 +48,8 @@ interface ISelectProps {
         /** Right icon */
         rightIcon?: JSX.Element;
     }>;
+    /** Custom classname */
+    className?: string;
     /** Change handler */
     onChangeSearch?(value: string): void;
     /** Focus handler */
@@ -92,6 +94,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         placeholder: PropTypes.string,
         canOpen: PropTypes.bool,
         notFoundText: PropTypes.string,
+        className: PropTypes.string,
         items: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.string,
@@ -370,20 +373,27 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     render() {
+        const {
+            size, color, error, valid,
+            onChangeSearch, canOpen, className,
+            name, icon,
+        } = this.props;
+        const { focus, isOpen } = this.state;
+
         return (
             <div
                 className={cn('', {
-                    open: this.state.isOpen && this.props.canOpen,
-                    size: this.props.size,
-                    color: this.props.color,
-                    valid: this.props.valid,
-                    error: this.props.error,
-                    focus: this.state.focus,
-                    search: !!this.props.onChangeSearch,
-                })}
-                ref={node => this.getSelectNode(node)}
+                    open: isOpen && canOpen,
+                    size: size,
+                    color: color,
+                    valid: valid,
+                    error: error,
+                    focus: focus,
+                    search: !!onChangeSearch,
+                }, className)}
+                ref={this.getSelectNode}
             >
-                {!this.props.onChangeSearch && this.props.name && this.renderHiddenInput()}
+                {!onChangeSearch && name && this.renderHiddenInput()}
                 <div
                     className={cn('control')}
                     onKeyDown={this.handleKeyDown}
@@ -391,10 +401,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     onBlur={this.handleBlurControl}
                     onClick={this.handleClickControl}
                 >
-                    {!this.props.onChangeSearch && this.renderTitle()}
-                    {this.props.onChangeSearch && this.renderSearchField()}
-                    {!this.props.icon && this.renderArrow()}
-                    {this.props.icon && this.renderIcon()}
+                    {!onChangeSearch && this.renderTitle()}
+                    {onChangeSearch && this.renderSearchField()}
+                    {!icon && this.renderArrow()}
+                    {icon && this.renderIcon()}
                 </div>
                 {this.renderChildren()}
             </div>

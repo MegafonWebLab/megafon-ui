@@ -37,6 +37,8 @@ interface ITextareaProps {
     maxLength?: number;
     /** Default value */
     defaultValue?: string;
+    /** Custom classname */
+    className?: string;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
@@ -65,6 +67,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
         value: PropTypes.string,
         maxLength: PropTypes.number,
         defaultValue: PropTypes.string,
+        className: PropTypes.string,
         onChange: PropTypes.func,
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
@@ -114,7 +117,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
     render() {
         const {
             error, color,
-            valid, disabled,
+            valid, disabled, className,
             commentText, successText, noticeText,
         } = this.props;
 
@@ -125,7 +128,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
                     error: error,
                     disabled,
                     color,
-                })}>
+                }, className)}>
                 <div className={cn('field-wrapper')}>
                     <div>{this.renderElem()}</div>
                 </div>
