@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 ### Changed
+- **TextField:**
+    - `noticeText` render html string
 - **Select:**
     - click on search field - fixed bug in ios
 - **ProductCardInfo:**
