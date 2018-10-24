@@ -27,11 +27,6 @@ class Link extends React.Component<ILinkProps, {}> {
         onClick: PropTypes.func,
     };
 
-    static defaultProps: Partial<ILinkProps> = {
-        href: '#',
-        target: '_blank',
-    };
-
     render() {
         const { target, children, ...rest } = this.props;
 

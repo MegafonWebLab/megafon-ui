@@ -3,7 +3,5 @@
 exports[`<TextLink /> it renders TextLink 1`] = `
 <Link
   className="text-link text-link_underline-visibility_hover text-link_underline-style_solid text-link_color_blue"
-  href="#"
-  target="_blank"
 />
 `;
