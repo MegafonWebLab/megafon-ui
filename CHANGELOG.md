@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+### Changed
+- **Link:**
+    - remove default props
+
 ## Release 1.0.12
 ### Changed
 - **Select:**
