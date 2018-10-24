@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## Release 1.0.12
 ### Changed
 - **Select:**
     - optimize ref callback
