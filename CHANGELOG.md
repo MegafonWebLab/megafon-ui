@@ -1,6 +1,6 @@
 # Changelog
 
-## UNRELEASE
+## Release 1.0.14
 ### Changed
 - **gulpfile:**
     - use babel-env for es files
