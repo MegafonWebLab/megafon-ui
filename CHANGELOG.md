@@ -1,5 +1,10 @@
 # Changelog
 
+## UNRELEASE
+### Changed
+- **gulpfile:**
+    - use babel-env for es files
+
 ## Release 1.0.13
 ### Changed
 - **Link:**

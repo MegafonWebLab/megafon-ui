@@ -63,7 +63,11 @@ gulp.task('ts', () => {
         result.js
             .pipe(babel({
                 presets: [
-                    '@babel/react'
+                    '@babel/react',
+                    ['@babel/env', {
+                        modules: false,
+                        'useBuiltIns': 'entry'
+                    }]
                 ],
                 plugins: [
                     require.resolve('@babel/plugin-transform-object-assign'),
@@ -83,8 +87,8 @@ gulp.task('ts', () => {
             .pipe(removeCss())
             .pipe(babel({
                 presets: [
-                    ["@babel/env", {
-                        "useBuiltIns": "entry"
+                    ['@babel/env', {
+                        'useBuiltIns': 'entry'
                     }]
                 ]
             }))
