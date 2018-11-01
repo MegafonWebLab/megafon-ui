@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+### Changed
+- **Select:**
+    - added prop to hide/show select arrow
+    - added class property for controls block
+- **Button:**
+    - added class property for button text
+
 ## Release 1.0.14
 ### Changed
 - **gulpfile:**

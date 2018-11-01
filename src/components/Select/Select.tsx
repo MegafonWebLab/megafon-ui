@@ -16,6 +16,8 @@ interface ISelectProps {
     name?: string;
     /** Icon */
     icon?: JSX.Element;
+    /** Arrow display */
+    arrow?: boolean;
     /** Validation passed */
     valid?: boolean;
     /** Validation error */
@@ -50,6 +52,8 @@ interface ISelectProps {
     }>;
     /** Custom classname */
     className?: string;
+    /** Custom classname for controls block */
+    classNameControl?: string;
     /** Change handler */
     onChangeSearch?(value: string): void;
     /** Focus handler */
@@ -85,6 +89,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         searchValue: PropTypes.string,
         name: PropTypes.string,
         icon: PropTypes.element,
+        arrow: PropTypes.bool,
         valid: PropTypes.bool,
         error: PropTypes.bool,
         size: PropTypes.oneOf(['large']),
@@ -95,6 +100,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         canOpen: PropTypes.bool,
         notFoundText: PropTypes.string,
         className: PropTypes.string,
+        classNameControl: PropTypes.string,
         items: PropTypes.arrayOf(
             PropTypes.shape({
                 id: PropTypes.string,
@@ -122,6 +128,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         canOpen: true,
         notFoundText: 'Ничего не нашлось',
         items: [],
+        arrow: true,
     };
 
     itemWrapperNode: any = null;
@@ -376,7 +383,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const {
             size, color, error, valid,
             onChangeSearch, canOpen, className,
-            name, icon,
+            name, icon, arrow, classNameControl,
         } = this.props;
         const { focus, isOpen } = this.state;
 
@@ -395,7 +402,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             >
                 {!onChangeSearch && name && this.renderHiddenInput()}
                 <div
-                    className={cn('control')}
+                    className={cn('control', {}, classNameControl)}
                     onKeyDown={this.handleKeyDown}
                     onFocus={this.handleFocusControl}
                     onBlur={this.handleBlurControl}
@@ -403,7 +410,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 >
                     {!onChangeSearch && this.renderTitle()}
                     {onChangeSearch && this.renderSearchField()}
-                    {!icon && this.renderArrow()}
+                    {!icon && arrow && this.renderArrow()}
                     {icon && this.renderIcon()}
                 </div>
                 {this.renderChildren()}
