@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## Release 1.0.15
 ### Changed
 - **Select:**
     - added prop to hide/show select arrow
