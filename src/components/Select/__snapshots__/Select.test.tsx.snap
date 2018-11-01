@@ -2,6 +2,7 @@
 
 exports[`<Select /> it renders Select 1`] = `
 <Select
+  arrow={true}
   canOpen={true}
   items={
     Array [
@@ -162,6 +163,7 @@ exports[`<Select /> it renders hidden input 1`] = `
 
 exports[`<Select /> it renders search 1`] = `
 <Select
+  arrow={true}
   canOpen={true}
   items={
     Array [

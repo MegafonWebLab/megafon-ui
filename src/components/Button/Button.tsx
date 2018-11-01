@@ -35,6 +35,8 @@ interface IButtonProps {
     width?: 'full' | 'auto';
     /** Custom class name */
     className?: string;
+    /** Custom class name for button text-area */
+    classNameContent?: string;
     /** Margin(outer indentation) */
     margin?: boolean;
     /** Disabled */
@@ -87,6 +89,7 @@ class Button extends React.Component<IButtonProps, {}> {
         width: PropTypes.oneOf(['full', 'auto']),
         showSpinner: PropTypes.bool,
         onClick: PropTypes.func,
+        classNameContent: PropTypes.string,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
@@ -109,7 +112,7 @@ class Button extends React.Component<IButtonProps, {}> {
 
     renderChildrenElem() {
         return (
-            <div className={cn('content')}>
+            <div className={cn('content', {}, this.props.classNameContent)}>
                 {this.props.children}
             </div>
         );
@@ -124,34 +127,41 @@ class Button extends React.Component<IButtonProps, {}> {
     }
 
     render() {
+        const {
+            sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
+            customView, passiveColor, hoverColor, downColor, disabledColor,
+            padding, width, margin, showSpinner, className, href, type,
+            onClick, disabled, target, children,
+        } = this.props;
         const ElementType = this.props.href ? 'a' : 'button';
 
         return (
             <ElementType
                 className={cn('', {
-                    'size-all': this.props.sizeAll,
-                    'size-wide': this.props.sizeWide,
-                    'size-desktop': this.props.sizeDesktop,
-                    'size-tablet': this.props.sizeTablet,
-                    'size-mobile': this.props.sizeMobile,
-                    'custom-view': this.props.customView,
-                    'passive-color': !this.props.customView && this.props.passiveColor,
-                    'hover-color': !this.props.customView && this.props.hoverColor,
-                    'down-color': !this.props.customView && this.props.downColor,
-                    'disabled-color': !this.props.customView && this.props.disabledColor,
-                    padding: this.props.padding,
-                    width: this.props.width,
-                    margin: this.props.margin,
-                    loading: this.props.showSpinner,
-                }, this.props.className)}
-                href={this.props.href}
-                target={this.props.target}
-                type={this.props.href ? '' : this.props.type}
-                onClick={this.props.onClick}
-                disabled={this.props.disabled}>
+                    'size-all': sizeAll,
+                    'size-wide': sizeWide,
+                    'size-desktop': sizeDesktop,
+                    'size-tablet': sizeTablet,
+                    'size-mobile': sizeMobile,
+                    'custom-view': customView,
+                    'passive-color': !customView && passiveColor,
+                    'hover-color': !customView && hoverColor,
+                    'down-color': !customView && downColor,
+                    'disabled-color': !customView && disabledColor,
+                    padding,
+                    width,
+                    margin,
+                    loading: showSpinner,
+                }, className)}
+                href={href}
+                target={target}
+                type={href ? '' : type}
+                onClick={onClick}
+                disabled={disabled}
+            >
                 <div className={cn('inner')}>
-                    {!this.props.showSpinner && this.props.children && this.renderChildrenElem()}
-                    {this.props.showSpinner && this.renderSpinner()}
+                    {!showSpinner && children && this.renderChildrenElem()}
+                    {showSpinner && this.renderSpinner()}
                 </div>
             </ElementType>
         );
