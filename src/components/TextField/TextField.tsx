@@ -4,8 +4,8 @@ import './TextField.less';
 import InputMask from 'react-input-mask';
 import { cnCreate } from '../../utils/cn';
 import * as equal from 'deep-equal';
-import CheckedIcon from 'icons/checked_24.svg';
-import ErrorIcon from 'icons/error_24.svg';
+import CheckedIcon from 'icons/System/24/Checked_24.svg';
+import ErrorIcon from 'icons/System/24/Cancel_24.svg';
 
 interface ITextFieldProps {
     /** Field color scheme */

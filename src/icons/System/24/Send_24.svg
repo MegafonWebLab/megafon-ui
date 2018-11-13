@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Source/System Icons/24/Send_24</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M23.5564853,9.80695572 L7.35648533,11.5069557 L12.5564853,16.1069557 L23.5564853,9.80695572 Z M23.9564853,10.8069557 L13.1564853,17.0069557 L14.5564853,23.9069557 L23.9564853,10.8069557 Z M11.1564853,17.5069557 L4.35648533,11.5069557 C3.65648533,10.9069557 4.05648533,9.80695572 4.95648533,9.80695572 L26.7564853,7.50695572 C27.6564853,7.40695572 28.1564853,8.40695572 27.6564853,9.10695572 L14.8564853,26.9069557 C14.3564853,27.6069557 13.2564853,27.4069557 13.0564853,26.5069557 L11.1564853,17.5069557 Z" id="path-1"></path>
+    </defs>
+    <g id="Source/System-Icons/24/Send_24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="32" height="32"></rect>
+        </g>
+    </g>
+</svg>

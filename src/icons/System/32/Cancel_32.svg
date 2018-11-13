@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Source/System Icons/32/Cancel_32</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="20 18.5857864 26.363961 12.2218254 27.7781746 13.636039 21.4142136 20 27.7781746 26.363961 26.363961 27.7781746 20 21.4142136 13.636039 27.7781746 12.2218254 26.363961 18.5857864 20 12.2218254 13.636039 13.636039 12.2218254"></polygon>
+    </defs>
+    <g id="Source/System-Icons/32/Cancel_32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#000000" xlink:href="#path-1"></use>
+        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="40" height="40"></rect>
+        </g>
+    </g>
+</svg>

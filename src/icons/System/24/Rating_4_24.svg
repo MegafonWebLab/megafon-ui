@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Source/System Icons/24/Rating_4_24</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16,28 C9.4,28 4,22.6 4,16 C4,9.4 9.4,4 16,4 C22.6,4 28,9.4 28,16 C28,22.6 22.6,28 16,28 Z M16,26 C21.5,26 26,21.5 26,16 C26,10.5 21.5,6 16,6 C10.5,6 6,10.5 6,16 C6,21.5 10.5,26 16,26 Z M19.3,18.3 L20.7,19.7 C19.2,21.2 17.9,22 16,22 C15.6,22 15.1,22 14.7,21.9 C15.1,20.1 14.8,21.5 15.2,19.9 C15.5,20 15.7,20 16,20 C17.2,20 18.1,19.5 19.3,18.3 Z M12.5,15 C11.7,15 11,14.3 11,13.5 C11,12.7 11.7,12 12.5,12 C13.3,12 14,12.7 14,13.5 C14,14.3 13.3,15 12.5,15 Z M19.5,15 C18.7,15 18,14.3 18,13.5 C18,12.7 18.7,12 19.5,12 C20.3,12 21,12.7 21,13.5 C21,14.3 20.3,15 19.5,15 Z" id="path-1"></path>
+    </defs>
+    <g id="Source/System-Icons/24/Rating_4_24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
+            <rect id="Rectangle" x="0" y="0" width="32" height="32"></rect>
+        </g>
+    </g>
+</svg>
