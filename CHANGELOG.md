@@ -1,5 +1,14 @@
 # Changelog
 
+## Unrelease
+### Changed
+- **gulpfile:**
+    - refactor
+### Added
+- **Icons:**
+    - icons to project
+    - view all icons in docz
+
 ## Release 1.0.15
 ### Changed
 - **Select:**
