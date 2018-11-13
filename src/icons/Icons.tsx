@@ -49,23 +49,32 @@ class Icons extends React.Component<{}, IIconsState> {
         };
     }
 
+    static getDerivedStateFromProps(props: {}, state: IIconsState) {
+        const { activeElement: { svgList }, activeIcon } = state;
+
+        if (svgList && !svgList[activeIcon]) {
+            return { ...state, activeIcon: 0 };
+        }
+    }
+
     componentDidMount() {
         const sections = reqSvgs.keys().reduce((sectDictionary, item) => {
             const pathList = item.split('/').slice(1);
             const [sectionName, svgSize] = pathList;
             const [svgIcon] = pathList.reverse();
             const svgName = svgIcon.replace('.svg', '').replace(/_[0-9]{2}/, '');
+            const sectionCamelCase = sectionName.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
 
-            if (sectionName.search('.svg') !== -1) {
+            if (sectionCamelCase.search('.svg') !== -1) {
                 return sectDictionary;
             }
 
-            if (!sectDictionary[sectionName]) {
-                sectDictionary[sectionName] = {};
+            if (!sectDictionary[sectionCamelCase]) {
+                sectDictionary[sectionCamelCase] = {};
             }
 
-            if (!sectDictionary[sectionName][svgName]) {
-                sectDictionary[sectionName][svgName] = [];
+            if (!sectDictionary[sectionCamelCase][svgName]) {
+                sectDictionary[sectionCamelCase][svgName] = [];
             }
 
             const importPath = item
@@ -75,7 +84,7 @@ class Icons extends React.Component<{}, IIconsState> {
                 .replace(new RegExp('/', 'g'), '-')
                 .replace(/[^a-z0-9-]+/g, '_');
 
-            sectDictionary[sectionName][svgName] = sectDictionary[sectionName][svgName].concat({
+            sectDictionary[sectionCamelCase][svgName] = sectDictionary[sectionCamelCase][svgName].concat({
                 size: svgSize, path: item, importPath,
             });
 
@@ -111,7 +120,7 @@ class Icons extends React.Component<{}, IIconsState> {
     }
 
     handleClickInfoIcon = (index: number) => () => {
-        this.setState({ activeIcon: index });
+        this.setState({ activeIcon: index, copyIndex: copyBoard.NO });
     }
 
     renderIcons(entries: Entries) {

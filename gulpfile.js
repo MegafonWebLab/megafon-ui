@@ -88,7 +88,6 @@ gulp.task('clean:index', () => del('src/index.ts'));
 
 gulp.task('svg', () => {
     return gulp.src('src/**/*.svg')
-        // .pipe(svgmin(svgoStylesToAttr))
         .pipe(svgmin(file => getSvgrConfig(file.path).svgoConfig))
         .pipe(svgToReact())
         .pipe(dest(dist));
@@ -234,12 +233,6 @@ const getSvgrConfig = filePath => ({
             inlineStyles: { onlyMatchedOnce: false }
         }]
     }
-});
-
-const svgoStylesToAttr = () => ({
-    plugins: [{
-        inlineStyles: { onlyMatchedOnce: false },
-    }]
 });
 
 const getComponentName = filePath => {
