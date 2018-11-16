@@ -1,6 +1,6 @@
 # Changelog
 
-## Unrelease
+## Release 1.1.0
 ### Changed
 - **gulpfile:**
     - refactor
