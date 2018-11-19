@@ -1,5 +1,10 @@
 # Changelog
 
+
+## UNRELEASED
+### Changed
+- **Icons:**
+    - import string
 ## Release 1.1.0
 ### Changed
 - **gulpfile:**
