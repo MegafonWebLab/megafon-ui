@@ -5,6 +5,8 @@
 ### Changed
 - **Icons:**
     - import string
+- **gulpfile:**
+    - JSX icons support custom id
 ## Release 1.1.0
 ### Changed
 - **gulpfile:**
