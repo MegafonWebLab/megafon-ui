@@ -1,7 +1,7 @@
 # Changelog
 
 
-## UNRELEASED
+## Release 1.1.1
 ### Changed
 - **Icons:**
     - import string
