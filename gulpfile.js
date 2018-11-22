@@ -184,7 +184,8 @@ const svgToReact = () => changePipe(async function (file, encoding) {
 const generateEs6js = async (file, encoding, name) => {
     const jsFile = file.clone();
     const content = file.contents.toString(encoding);
-    const svgrAttrs = [content, getSvgrConfig(file.path), { componentName: `Svg${getComponentName(file.path)}` }];
+    const componentName = `Svg${getComponentName(file.path)}`
+    const svgrAttrs = [content, getSvgrConfig(file.path, componentName)];
     const jsCode = await svgr(...svgrAttrs);
 
     jsFile.contents = Buffer.from(jsCode);
@@ -223,11 +224,29 @@ const removeCss = () => changePipe(function (file, encoding) {
     this.push(file);
 });
 
-const getSvgrConfig = filePath => ({
+const getSvgrConfig = (filePath, name) => ({
+    template: code => {
+
+        const modCode = code.match(/".*?"/g).reduce(
+            (outCode, regStr) => {
+                return outCode.replace(regStr, `{\`${regStr.replace(/"/g, '')}\`}`);
+            }, code
+        );
+
+        return `import React from 'react'
+
+        const ${name} = ({id, ...props}) => ${modCode};
+
+        ${name}.defaultProps = {
+            id: '${name.toLowerCase()}'
+        };
+
+        export default ${name}`;
+    },
     icon: true,
     svgoConfig: {
         plugins: [{
-            cleanupIDs: { prefix: `svg-${path.basename(filePath, '.svg')}` },
+            cleanupIDs: { prefix: name ? '${id}' : `svg-${path.basename(filePath, '.svg')}` },
         },
         {
             inlineStyles: { onlyMatchedOnce: false }
