@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Logo.less';
 import { cnCreate } from '../../utils/cn';
-import greenHorizontalImg from 'icons/green-horizontal.svg';
-import greenVerticalImg from 'icons/green-vertical.svg';
+import greenHorizontalImg from 'docIcons/green-horizontal.svg';
+import greenVerticalImg from 'docIcons/green-vertical.svg';
 import Link from '../Link/Link';
 
 interface ILogoProps {

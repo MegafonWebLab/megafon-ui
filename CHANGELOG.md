@@ -1,6 +1,15 @@
 # Changelog
 
-
+## UNRELEASE
+### Changed
+- **icons/Basic/24/Hide_24.svg**
+    - remove clipPath tags
+- **Icons:**
+    - move not guide icons to folder docIcons
+- **gulpfile:**
+    - remove masks in svg icons
+- **README:**
+    - add info about svg's modified
 ## Release 1.1.1
 ### Changed
 - **Icons:**

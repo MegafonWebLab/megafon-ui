@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './Button.less';
-import Spinner from 'icons/spinner.svg';
+import Spinner from 'docIcons/spinner.svg';
 
 interface IButtonProps {
     /** Special view */
