@@ -1,6 +1,6 @@
 # Changelog
 
-## UNRELEASE
+## Release 1.1.2
 ### Changed
 - **icons/Basic/24/Hide_24.svg**
     - remove clipPath tags
