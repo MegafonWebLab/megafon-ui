@@ -210,7 +210,7 @@ const generateModulejs = (jsFile, encoding, name) => {
 
 const generatePackageJson = (file, name) => {
     const packageJson = file.clone();
-    packageJson.contents = Buffer.from(JSON.stringify({ main: './index.es6.js', module: './index.module.js' }));
+    packageJson.contents = Buffer.from(JSON.stringify({ main: './index.module.js', module: './index.es6.js' }));
     packageJson.path = `${getIconFolder(name)}package.json`;
 
     return packageJson;
