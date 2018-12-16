@@ -19,33 +19,10 @@ exports[`<ProductCardFeatures /> it renders ProductCardFeatures 1`] = `
   />
   <ProductCardFeaturesBottom
     className="product-card-features__bottom"
-    key="0"
     params={
       Array [
         Object {
           "title": "Youtube, Rutube, Vimeo",
-        },
-      ]
-    }
-  />
-  <ProductCardFeaturesBottom
-    className="product-card-features__bottom"
-    key="1"
-    params={
-      Array [
-        Object {
-          "title": "WhatsApp, Viber, Facebook Messanger, Snapchat, eMotion",
-        },
-      ]
-    }
-  />
-  <ProductCardFeaturesBottom
-    className="product-card-features__bottom"
-    key="2"
-    params={
-      Array [
-        Object {
-          "title": "Вконтакте, Одноклассники, Facebook, Instagram, Twitter",
         },
       ]
     }
