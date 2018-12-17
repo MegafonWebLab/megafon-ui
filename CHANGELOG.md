@@ -6,6 +6,10 @@
     - devide showcaseParams prop into firstParam and secondParam
 - **package.json**
     - add script jest updateSnapshot
+### Fixed
+- **ProductCardFeatures**
+    - remove text overflow in IE10
+
 ## Release 1.1.2
 ### Changed
 - **icons/Basic/24/Hide_24.svg**
