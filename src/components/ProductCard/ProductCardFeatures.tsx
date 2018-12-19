@@ -24,12 +24,12 @@ interface IShowcaseParam {
 }
 
 interface IProductCardFeaturesProps {
-    /** Showcase
+    /** Showcase first param
      * Param with args: title: title: string(requred), value: string(requred), children: list of
      * svgIcon: JSX.Element, title: string, caption: string, value: string
      */
     firstParam?: IShowcaseParam;
-    /** Showcase
+    /** Showcase second param
      * Param with args: title: title: string(requred), value: string(requred), children: list of
      * svgIcon: JSX.Element, title: string, caption: string, value: string
      */
