@@ -17,18 +17,23 @@ export interface IShowcaseChildren {
     value: string;
 }
 
-interface IShowcaseParams {
+interface IShowcaseParam {
     title?: string;
     value?: string;
     children: Array<Partial<IShowcaseChildren>>;
 }
 
 interface IProductCardFeaturesProps {
-    /** Showcase
-     * List with args: title: title: string(requred), value: string(requred), children: list of
+    /** Showcase first param
+     * Param with args: title: title: string(requred), value: string(requred), children: list of
      * svgIcon: JSX.Element, title: string, caption: string, value: string
      */
-    showcaseParams?: IShowcaseParams[];
+    firstParam?: IShowcaseParam;
+    /** Showcase second param
+     * Param with args: title: title: string(requred), value: string(requred), children: list of
+     * svgIcon: JSX.Element, title: string, caption: string, value: string
+     */
+    secondParam?: IShowcaseParam;
     /** Social icons
      * List with args: svgIcon: JSX.Element, title: string
      */
@@ -41,20 +46,30 @@ interface IProductCardFeaturesProps {
 const cn = cnCreate('product-card-features');
 class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}> {
     static propTypes = {
-        showcaseParams: PropTypes.arrayOf(
-            PropTypes.shape({
-                title: PropTypes.string,
-                value: PropTypes.string,
-                children: PropTypes.arrayOf(
-                    PropTypes.shape({
-                        svgIcon: PropTypes.element,
-                        title: PropTypes.string,
-                        caption: PropTypes.string,
-                        value: PropTypes.string,
-                    })
-                ),
-            })
-        ),
+        firstParam: PropTypes.shape({
+            title: PropTypes.string,
+            value: PropTypes.string,
+            children: PropTypes.arrayOf(
+                PropTypes.shape({
+                    svgIcon: PropTypes.element,
+                    title: PropTypes.string,
+                    caption: PropTypes.string,
+                    value: PropTypes.string,
+                })
+            ),
+        }),
+        secondParam: PropTypes.shape({
+            title: PropTypes.string,
+            value: PropTypes.string,
+            children: PropTypes.arrayOf(
+                PropTypes.shape({
+                    svgIcon: PropTypes.element,
+                    title: PropTypes.string,
+                    caption: PropTypes.string,
+                    value: PropTypes.string,
+                })
+            ),
+        }),
         socialIcons: PropTypes.arrayOf(
             PropTypes.shape({
                 svgIcon: PropTypes.element.isRequired,
@@ -67,30 +82,24 @@ class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}>
     };
 
     render() {
-        const { className, classNameTop, classNameBottom } = this.props;
-        const params = this.props.showcaseParams!.filter(
-            param => param.children!.length
-        );
-
-        const [first, ...rest] = params;
+        const { firstParam, secondParam, className, classNameTop, classNameBottom } = this.props;
 
         return (
             <div className={cn('', {}, className)}>
-                {first &&
+                {firstParam &&
                     <ProductCardFeaturesTop
                         className={cn('top', {}, classNameTop)}
-                        params={first.children}
+                        params={firstParam.children}
                         socialIcons={this.props.socialIcons}
                     />
                 }
-                {rest.map((param: IShowcaseParams, index: number) =>
+                {secondParam &&
                     <ProductCardFeaturesBottom
                         className={cn('bottom', {}, classNameBottom)}
-                        params={param.children}
-                        title={param.value}
-                        key={index}
+                        params={secondParam.children}
+                        title={secondParam.value}
                     />
-                )}
+                }
             </div>
         );
     }

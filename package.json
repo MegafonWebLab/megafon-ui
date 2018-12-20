@@ -25,7 +25,8 @@
     "setup": "yarn install --pure-lock",
     "prepublishOnly": "yarn setup && yarn build",
     "test": "npm run test:unit",
-    "test:unit": "jest"
+    "test:unit": "jest",
+    "testu": "jest --updateSnapshot"
   },
   "publishConfig": {
     "access": "public"

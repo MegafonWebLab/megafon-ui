@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import ProductCardFeatures from './ProductCardFeatures';
 
 const props = {
-    showcaseParams: [{
+    firstParam: {
         title: 'Безлимитный интернет',
         value: 'на мессенджеры',
         children: [{
@@ -12,21 +12,11 @@ const props = {
             value: 'test',
         }],
     },
-    {
+    secondParam: {
         children: [{
             title: 'Youtube, Rutube, Vimeo',
         }],
     },
-    {
-        children: [{
-            title: 'WhatsApp, Viber, Facebook Messanger, Snapchat, eMotion',
-        }],
-    },
-    {
-        children: [{
-            title: 'Вконтакте, Одноклассники, Facebook, Instagram, Twitter',
-        }],
-    }],
 };
 
 describe('<ProductCardFeatures />', () => {
