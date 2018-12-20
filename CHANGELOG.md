@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.1.5
+### Changed
+- **gulpfile**
+    - rewrite paths in css to dist icon
+- **ProductCardInfo**
+    - change svg icon path
+
 ## Release 1.1.4
 ### Changed
 - **ProductCardFeatures**

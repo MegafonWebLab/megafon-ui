@@ -98,6 +98,13 @@ gulp.task('svg', () => {
 gulp.task('less', () => {
     return gulp.src('src/**/*.less')
         .pipe(replaceContent(/\~styles/g, 'styles'))
+        .pipe(replaceContent(/icons\/\w+\/\d+\/.*\.svg/g, function (match) {
+            const newPath = match.toLowerCase()
+                .replace(/icons\//g, '')
+                .replace(/\//g, '-');
+
+            return `../icons/${newPath}`;
+        }))
         .pipe(gulpLess(lessConfig))
         .pipe(dest(esPath))
         .pipe(dest(libPath));
@@ -105,7 +112,7 @@ gulp.task('less', () => {
 
 gulp.task('ts', () => {
     const result = gulp.src(['src/**/*.{tsx,ts}', `!${testsReg}`, `!${iconsReg}`, './typings/*.d.ts'])
-        .pipe(ts(tsConfig))
+        .pipe(ts(tsConfig));
 
     return merge(
         result.dts
@@ -186,7 +193,7 @@ const svgToReact = () => changePipe(async function (file, encoding) {
 const generateEs6js = async (file, encoding, name) => {
     const jsFile = file.clone();
     const content = file.contents.toString(encoding);
-    const componentName = `Svg${getComponentName(file.path)}`
+    const componentName = `Svg${getComponentName(file.path)}`;
     const svgrAttrs = [content, getSvgrConfig(file.path, componentName)];
     const jsCode = await svgr(...svgrAttrs);
 
