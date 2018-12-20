@@ -3,7 +3,9 @@
 ## Unrelease 1.1.3
 ### Changed
 - **ProductCardFeatures**
-    - change component props for updated pk api
+    - devide showcaseParams prop into firstParam and secondParam
+- **package.json**
+    - add script jest updateSnapshot
 ## Release 1.1.2
 ### Changed
 - **icons/Basic/24/Hide_24.svg**
