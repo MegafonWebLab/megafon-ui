@@ -1,9 +1,9 @@
 # Changelog
 
-## Unrelease 1.1.3
+## Release 1.1.4
 ### Changed
 - **ProductCardFeatures**
-    - devide showcaseParams prop into firstParam and secondParam
+    - divide showcaseParams prop into firstParam and secondParam
 - **package.json**
     - add script jest updateSnapshot
 ### Fixed
