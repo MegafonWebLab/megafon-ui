@@ -1,5 +1,10 @@
 # Changelog
 
+## Unrelease 1.2.0
+### Changed
+- **icons**
+    - major update
+
 ## Release 1.1.5
 ### Changed
 - **gulpfile**
