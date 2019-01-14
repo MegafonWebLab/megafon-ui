@@ -15,7 +15,7 @@ exports[`<ProductCardFeatures /> it renders ProductCardFeatures 1`] = `
         },
       ]
     }
-    socialIcons={Array []}
+    title="Безлимитный интернет"
   />
   <ProductCardFeaturesBottom
     className="product-card-features__bottom"

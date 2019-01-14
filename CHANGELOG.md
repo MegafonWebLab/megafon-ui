@@ -4,6 +4,11 @@
 ### Changed
 - **icons**
     - major update
+- **ProductCardFeatures**
+    - remove socialIcons prop
+    - add icons output from firstParam.children prop
+    - replace prop firstParam.value with firstParam.title
+    - remove value from secondParam prop
 
 ## Release 1.1.5
 ### Changed
