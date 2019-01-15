@@ -4,11 +4,11 @@
     <title>Source/System Icons/16/Cancel_16</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <polygon id="path-145" points="10 8.5 5.5 4 4 5.5 8.5 10 4 14.5 5.5 16 10 11.5 14.5 16 16 14.5 11.5 10 16 5.5 14.5 4"></polygon>
+        <polygon id="path-1" points="10 8.5 5.5 4 4 5.5 8.5 10 4 14.5 5.5 16 10 11.5 14.5 16 16 14.5 11.5 10 16 5.5 14.5 4"></polygon>
     </defs>
     <g id="Source/System-Icons/16/Cancel_16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <mask id="mask-2" fill="white">
-            <use xlink:href="#path-145"></use>
+            <use xlink:href="#path-1"></use>
         </mask>
         <g id="Mask"></g>
         <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">

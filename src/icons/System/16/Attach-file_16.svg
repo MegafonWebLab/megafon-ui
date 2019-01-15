@@ -7,11 +7,11 @@
         <polygon id="path-1" points="11 9 18 9 18 11 11 11 11 18 9 18 9 11 2 11 2 9 9 9 9 2 11 2"></polygon>
     </defs>
     <g id="Source/System-Icons/16/Attach-file_16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-234" fill="white">
+        <mask id="mask-2" fill="white">
             <use xlink:href="#path-1"></use>
         </mask>
         <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
-        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-234)" fill="#000000">
+        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
             <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
         </g>
     </g>
