@@ -5,29 +5,39 @@ import './ProductCardFeatures.less';
 import ProductCardFeaturesTop from './ProductCardFeaturesTop';
 import ProductCardFeaturesBottom from './ProductCardFeaturesBottom';
 
-export interface IShowcaseChildren {
+interface IFirstParam {
+    title: string;
+    caption?: string;
+    children?: Array<Partial<IFirstParamChildren>>;
+}
+
+interface ISecondParam {
+    title?: string;
+    children: Array<Partial<ISecondParamChildren>>;
+}
+
+export interface IFirstParamChildren {
+    title: string;
+    svgIcon: JSX.Element;
+}
+
+export interface ISecondParamChildren {
     title: string;
     caption?: string;
     svgIcon: JSX.Element;
 }
 
-interface IShowcaseParam {
-    title?: string;
-    caption?: string;
-    children: Array<Partial<IShowcaseChildren>>;
-}
-
 interface IProductCardFeaturesProps {
     /** Showcase first param
-     * Param with args: title: string(requred), caption: string(requred), children: list of
-     * svgIcon: JSX.Element, title: string
+     * Param with args: title: string(requred), caption: string,
+     * children: [JSX.Element(requred), title: string(requred)]
      */
-    firstParam?: IShowcaseParam;
+    firstParam?: IFirstParam;
     /** Showcase second param
-     * Param with args: title: string, children: list of
-     * svgIcon: JSX.Element, title: string, caption: string
+     * Param with args: title: string,
+     * children: [JSX.Element(requred), title: string(requred), caption: string](requred)
      */
-    secondParam?: IShowcaseParam;
+    secondParam?: ISecondParam;
     className?: string;
     classNameTop?: string;
     classNameBottom?: string;
@@ -37,12 +47,12 @@ const cn = cnCreate('product-card-features');
 class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}> {
     static propTypes = {
         firstParam: PropTypes.shape({
-            title: PropTypes.string,
+            title: PropTypes.string.isRequired,
             caption: PropTypes.string,
             children: PropTypes.arrayOf(
                 PropTypes.shape({
-                    title: PropTypes.string,
-                    svgIcon: PropTypes.element,
+                    title: PropTypes.string.isRequired,
+                    svgIcon: PropTypes.element.isRequired,
                 })
             ),
         }),
@@ -50,11 +60,11 @@ class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}>
             title: PropTypes.string,
             children: PropTypes.arrayOf(
                 PropTypes.shape({
-                    title: PropTypes.string,
+                    title: PropTypes.string.isRequired,
                     caption: PropTypes.string,
-                    svgIcon: PropTypes.element,
+                    svgIcon: PropTypes.element.isRequired,
                 })
-            ),
+            ).isRequired,
         }),
         className: PropTypes.string,
         classNameTop: PropTypes.string,

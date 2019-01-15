@@ -4,7 +4,7 @@ import './ProductCardFeaturesTop.less';
 import Header from '../Header/Header';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 import { cnCreate } from '../../utils/cn';
-import { IShowcaseChildren } from './ProductCardFeatures';
+import { IFirstParamChildren } from './ProductCardFeatures';
 
 interface IProductCardFeaturesTopProps {
     /** Custom class name */
@@ -14,7 +14,7 @@ interface IProductCardFeaturesTopProps {
     /** Caption */
     caption?: string;
     /** Showcase params childrens list */
-    params?: Array<Partial<IShowcaseChildren>>;
+    params?: Array<Partial<IFirstParamChildren>>;
 }
 
 const cn = cnCreate('product-card-features-top');
