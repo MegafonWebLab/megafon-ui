@@ -1,6 +1,6 @@
 # Changelog
 
-## Unrelease 1.2.0
+## Release 1.2.0
 ### Changed
 - **icons**
     - major update
