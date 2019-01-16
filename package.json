@@ -22,8 +22,7 @@
     "lint": "npm run lint:ts && npm run lint:less",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
-    "setup": "yarn install --pure-lock",
-    "prepublishOnly": "yarn setup && yarn build",
+    "prepublishOnly": "npm install && npm run build",
     "test": "npm run test:unit",
     "test:unit": "jest",
     "testu": "jest --updateSnapshot"

@@ -9,6 +9,20 @@
     - add icons output from firstParam.children prop
     - replace prop firstParam.value with firstParam.title
     - remove value from secondParam prop
+- **.travis.yml**
+    - remove yarn from cache settings
+- **README.md**
+    - remove yarn from instructions
+- **package.json**
+    - replace yarn scripts with npm
+- **index.mdx**
+    - remove yarn from instructions
+- **package-lock.json**
+    - synchronize with package.json
+- **.gitignore**
+    - remove -yarn-error.log
+### Removed
+- **yarn.lock**
 
 ## Release 1.1.5
 ### Changed

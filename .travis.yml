@@ -6,13 +6,12 @@ node_js:
   - 10
 
 cache:
-  yarn: true
   directories:
   - node_modules
 
 before_script:
   - npm install -g codecov
-  - npm run setup
+  - npm install
 
 script:
   - npm run lint
