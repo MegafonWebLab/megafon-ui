@@ -10,12 +10,6 @@
 $ npm install --save @megafon/megafon-ui
 ```
 
-or for `yarn`:
-
-```bash
-$ yarn add @megafon/megafon-ui
-```
-
 ## Development notes
 
 ### Build

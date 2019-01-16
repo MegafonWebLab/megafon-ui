@@ -5,39 +5,39 @@ import './ProductCardFeatures.less';
 import ProductCardFeaturesTop from './ProductCardFeaturesTop';
 import ProductCardFeaturesBottom from './ProductCardFeaturesBottom';
 
-export interface ISocialIcon {
-    svgIcon: JSX.Element;
+interface IFirstParam {
     title: string;
+    caption?: string;
+    children?: Array<Partial<IFirstParamChildren>>;
 }
 
-export interface IShowcaseChildren {
-    svgIcon: JSX.Element;
-    title: string;
-    caption: string;
-    value: string;
-}
-
-interface IShowcaseParam {
+interface ISecondParam {
     title?: string;
-    value?: string;
-    children: Array<Partial<IShowcaseChildren>>;
+    children: Array<Partial<ISecondParamChildren>>;
+}
+
+export interface IFirstParamChildren {
+    title: string;
+    svgIcon: JSX.Element;
+}
+
+export interface ISecondParamChildren {
+    title: string;
+    caption?: string;
+    svgIcon: JSX.Element;
 }
 
 interface IProductCardFeaturesProps {
     /** Showcase first param
-     * Param with args: title: title: string(requred), value: string(requred), children: list of
-     * svgIcon: JSX.Element, title: string, caption: string, value: string
+     * Param with args: title: string(requred), caption: string,
+     * children: [JSX.Element(requred), title: string(requred)]
      */
-    firstParam?: IShowcaseParam;
+    firstParam?: IFirstParam;
     /** Showcase second param
-     * Param with args: title: title: string(requred), value: string(requred), children: list of
-     * svgIcon: JSX.Element, title: string, caption: string, value: string
+     * Param with args: title: string,
+     * children: [JSX.Element(requred), title: string(requred), caption: string](requred)
      */
-    secondParam?: IShowcaseParam;
-    /** Social icons
-     * List with args: svgIcon: JSX.Element, title: string
-     */
-    socialIcons?: Array<Partial<ISocialIcon>>;
+    secondParam?: ISecondParam;
     className?: string;
     classNameTop?: string;
     classNameBottom?: string;
@@ -47,35 +47,25 @@ const cn = cnCreate('product-card-features');
 class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}> {
     static propTypes = {
         firstParam: PropTypes.shape({
-            title: PropTypes.string,
-            value: PropTypes.string,
+            title: PropTypes.string.isRequired,
+            caption: PropTypes.string,
             children: PropTypes.arrayOf(
                 PropTypes.shape({
-                    svgIcon: PropTypes.element,
-                    title: PropTypes.string,
-                    caption: PropTypes.string,
-                    value: PropTypes.string,
+                    title: PropTypes.string.isRequired,
+                    svgIcon: PropTypes.element.isRequired,
                 })
             ),
         }),
         secondParam: PropTypes.shape({
             title: PropTypes.string,
-            value: PropTypes.string,
             children: PropTypes.arrayOf(
                 PropTypes.shape({
-                    svgIcon: PropTypes.element,
-                    title: PropTypes.string,
+                    title: PropTypes.string.isRequired,
                     caption: PropTypes.string,
-                    value: PropTypes.string,
+                    svgIcon: PropTypes.element.isRequired,
                 })
-            ),
+            ).isRequired,
         }),
-        socialIcons: PropTypes.arrayOf(
-            PropTypes.shape({
-                svgIcon: PropTypes.element.isRequired,
-                title: PropTypes.string.isRequired,
-            })
-        ),
         className: PropTypes.string,
         classNameTop: PropTypes.string,
         classNameBottom: PropTypes.string,
@@ -89,15 +79,16 @@ class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}>
                 {firstParam &&
                     <ProductCardFeaturesTop
                         className={cn('top', {}, classNameTop)}
+                        title={firstParam.title}
+                        caption={firstParam.caption}
                         params={firstParam.children}
-                        socialIcons={this.props.socialIcons}
                     />
                 }
                 {secondParam &&
                     <ProductCardFeaturesBottom
                         className={cn('bottom', {}, classNameBottom)}
+                        title={secondParam.title}
                         params={secondParam.children}
-                        title={secondParam.value}
                     />
                 }
             </div>

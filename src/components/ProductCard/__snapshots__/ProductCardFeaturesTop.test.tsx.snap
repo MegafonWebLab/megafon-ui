@@ -6,7 +6,6 @@ exports[`<ProductCardFeaturesTop /> it renders ProductCardFeaturesTop 1`] = `
 >
   <div
     className="product-card-features-top__inner"
-    key="test0"
   >
     <Header
       as="h3"
@@ -18,15 +17,15 @@ exports[`<ProductCardFeaturesTop /> it renders ProductCardFeaturesTop 1`] = `
     </Header>
     <div
       className="product-card-features-top__text"
-    >
-      test
-    </div>
+    />
     <DropdownSocialList
       icons={
         Array [
           Object {
+            "caption": "test",
             "svgIcon": <test-file-stub />,
             "title": "test",
+            "value": "test",
           },
         ]
       }
