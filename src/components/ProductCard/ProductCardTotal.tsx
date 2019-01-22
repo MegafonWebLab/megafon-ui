@@ -157,8 +157,8 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                                 className={cn('connect-button', {}, classNameConnect)}
                                 onClick={this.handleClickConnect}
                             >
-                                <div>
-                                    <span>{connectText}</span>
+                                <div className={cn('connect-text-block')}>
+                                    <span className={cn('connect-text-words')}>{connectText}</span>
                                     абонентам МегаФона
                                 </div>
                             </div>
