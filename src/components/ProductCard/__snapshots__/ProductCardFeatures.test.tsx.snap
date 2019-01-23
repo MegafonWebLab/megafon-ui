@@ -5,13 +5,13 @@ exports[`<ProductCardFeatures /> it renders ProductCardFeatures 1`] = `
   className="product-card-features"
 >
   <ProductCardFeaturesTop
+    caption="на мессенджеры"
     className="product-card-features__top"
     params={
       Array [
         Object {
-          "caption": "на видео, соц-сети и мессенджеры",
+          "svgIcon": <test-file-stub />,
           "title": "Безлимитный интернет",
-          "value": "test",
         },
       ]
     }
@@ -22,10 +22,13 @@ exports[`<ProductCardFeatures /> it renders ProductCardFeatures 1`] = `
     params={
       Array [
         Object {
+          "caption": "на видео, соц-сети и мессенджеры",
+          "svgIcon": <test-file-stub />,
           "title": "Youtube, Rutube, Vimeo",
         },
       ]
     }
+    title="Test"
   />
 </div>
 `;

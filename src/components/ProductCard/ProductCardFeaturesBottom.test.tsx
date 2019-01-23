@@ -7,10 +7,9 @@ const props = {
     title: 'test',
     params: [
         {
-            svgIcon: <Checked />,
             title: 'test',
             caption: 'test',
-            value: 'test',
+            svgIcon: <Checked />,
         },
     ],
 };
