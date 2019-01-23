@@ -15,6 +15,12 @@ describe('<ProductCardTotal />', () => {
         const wrapper = shallow(<ProductCardTotal {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('it renders connect button', () => {
+        const onClick = jest.fn();
+        const wrapper = shallow(<ProductCardTotal {...props} onClickConnect={onClick} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
 
 describe('<ProductCardTotal />', () => {
