@@ -3,6 +3,9 @@
 ### Fixed
 - **ProductCardTotal**
     - remove text overflow in IE10
+- **ProductCardInfo**
+    - remove text overflow in IE10
+
 
 ## Release 1.2.0
 ### Changed
