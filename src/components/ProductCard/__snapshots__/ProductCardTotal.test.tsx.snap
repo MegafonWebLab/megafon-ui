@@ -30,6 +30,41 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
     </div>
     <div
       className="product-card-total__buttons"
+    />
+  </div>
+</div>
+`;
+
+exports[`<ProductCardTotal /> it renders connect button 1`] = `
+<div
+  className="product-card-total"
+>
+  <div
+    className="product-card-total__wrap"
+  >
+    <div
+      className="product-card-total__cost product-card-total__cost_old-value"
+    >
+      <span
+        className="product-card-total__price"
+      >
+        600 ₽
+      </span>
+       
+      <span
+        className="product-card-total__old-price"
+      >
+        750 ₽
+      </span>
+      <br />
+      <span
+        className="product-card-total__unit"
+      >
+        в месяц
+      </span>
+    </div>
+    <div
+      className="product-card-total__buttons"
     >
       <div
         className="product-card-total__connect-button"

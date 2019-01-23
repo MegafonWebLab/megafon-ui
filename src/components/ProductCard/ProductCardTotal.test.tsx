@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import ProductCardTotal from './ProductCardTotal';
 
 const props = {
-    onClickConnect: () => { },
     payment: {
         value: '600 ₽',
         oldValue: '750 ₽',
@@ -14,6 +13,12 @@ const props = {
 describe('<ProductCardTotal />', () => {
     it('it renders ProductCardTotal', () => {
         const wrapper = shallow(<ProductCardTotal {...props} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders connect button', () => {
+        const onClick = jest.fn();
+        const wrapper = shallow(<ProductCardTotal {...props} onClickConnect={onClick} />);
         expect(wrapper).toMatchSnapshot();
     });
 });
