@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import ProductCardTotal from './ProductCardTotal';
 
 const props = {
+    onClickConnect: () => { },
     payment: {
         value: '600 ₽',
         oldValue: '750 ₽',

@@ -30,7 +30,23 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
     </div>
     <div
       className="product-card-total__buttons"
-    />
+    >
+      <div
+        className="product-card-total__connect-button"
+        onClick={[Function]}
+      >
+        <div
+          className="product-card-total__connect-text-block"
+        >
+          <span
+            className="product-card-total__connect-text-words"
+          >
+            Подключить
+          </span>
+          абонентам МегаФона
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
