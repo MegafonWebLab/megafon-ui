@@ -1,6 +1,6 @@
 # Changelog
 
-## Unrelease 1.2.1
+## Release 1.2.1
 ### Fixed
 - **ProductCardTotal**
     - remove text overflow in IE10
