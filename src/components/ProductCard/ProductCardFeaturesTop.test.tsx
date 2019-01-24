@@ -5,18 +5,13 @@ import Checked from 'icons/checked_24.svg';
 
 const props = {
     title: 'test',
+    caption: 'test',
     params: [
         {
-            svgIcon: <Checked />,
             title: 'test',
-            caption: 'test',
-            value: 'test',
+            svgIcon: <Checked />,
         },
     ],
-    socialIcons: [{
-        svgIcon: <Checked />,
-        title: 'test',
-    }],
 };
 
 describe('<ProductCardFeaturesTop />', () => {

@@ -2,13 +2,13 @@
 
 exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
 <div
-  className="product-card-total"
+  className="product-card-total className"
 >
   <div
-    className="product-card-total__wrap"
+    className="product-card-total__wrap classNameWrap"
   >
     <div
-      className="product-card-total__cost product-card-total__cost_old-value"
+      className="product-card-total__cost product-card-total__cost_old-value classNameCost"
     >
       <span
         className="product-card-total__price"
@@ -29,45 +29,27 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
       </span>
     </div>
     <div
-      className="product-card-total__buttons"
-    />
-  </div>
-</div>
-`;
-
-exports[`<ProductCardTotal /> it renders connect button 1`] = `
-<div
-  className="product-card-total"
->
-  <div
-    className="product-card-total__wrap"
-  >
-    <div
-      className="product-card-total__cost product-card-total__cost_old-value"
+      className="product-card-total__buttons classNameButtons"
     >
-      <span
-        className="product-card-total__price"
+      <Button
+        className="product-card-total__description-more classNameMore"
+        disabledColor="gray"
+        downColor="dark"
+        hoverColor="green"
+        href="moreLink"
+        onClick={[Function]}
+        padding={true}
+        passiveColor="transparent-green"
+        showSpinner={false}
+        sizeAll="medium"
+        target="_blank"
+        type="button"
+        width="full"
       >
-        600 ₽
-      </span>
-       
-      <span
-        className="product-card-total__old-price"
-      >
-        750 ₽
-      </span>
-      <br />
-      <span
-        className="product-card-total__unit"
-      >
-        в месяц
-      </span>
-    </div>
-    <div
-      className="product-card-total__buttons"
-    >
+        moreText
+      </Button>
       <div
-        className="product-card-total__connect-button"
+        className="product-card-total__connect-button classNameConnect"
         onClick={[Function]}
       >
         <div
@@ -76,7 +58,74 @@ exports[`<ProductCardTotal /> it renders connect button 1`] = `
           <span
             className="product-card-total__connect-text-words"
           >
-            Подключить
+            connectText
+          </span>
+          абонентам МегаФона
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<ProductCardTotal /> it renders submit button 1`] = `
+<div
+  className="product-card-total className"
+>
+  <div
+    className="product-card-total__wrap classNameWrap"
+  >
+    <div
+      className="product-card-total__cost product-card-total__cost_old-value classNameCost"
+    >
+      <span
+        className="product-card-total__price"
+      >
+        600 ₽
+      </span>
+       
+      <span
+        className="product-card-total__old-price"
+      >
+        750 ₽
+      </span>
+      <br />
+      <span
+        className="product-card-total__unit"
+      >
+        в месяц
+      </span>
+    </div>
+    <div
+      className="product-card-total__buttons classNameButtons"
+    >
+      <Button
+        className="product-card-total__button classNameSubmit"
+        disabledColor="gray"
+        downColor="dark"
+        hoverColor="green"
+        href="submitLink"
+        onClick={[Function]}
+        padding={true}
+        passiveColor="green"
+        showSpinner={false}
+        sizeAll="medium"
+        type="button"
+        width="full"
+      >
+        submitText
+      </Button>
+      <div
+        className="product-card-total__connect-button classNameConnect"
+        onClick={[Function]}
+      >
+        <div
+          className="product-card-total__connect-text-block"
+        >
+          <span
+            className="product-card-total__connect-text-words"
+          >
+            connectText
           </span>
           абонентам МегаФона
         </div>

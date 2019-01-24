@@ -8,6 +8,20 @@ const props = {
         oldValue: '750 ₽',
         unit: 'в месяц',
     },
+    info: {},
+    submitText: 'submitText',
+    moreText: 'moreText',
+    moreLink: 'moreLink',
+    connectText: 'connectText',
+    className: 'className',
+    classNameWrap: 'classNameWrap',
+    classNameCost: 'classNameCost',
+    classNameButtons: 'classNameButtons',
+    classNameSubmit: 'classNameSubmit',
+    classNameMore: 'classNameMore',
+    classNameConnect: 'classNameConnect',
+    onClickConnect: jest.fn(),
+    onClickMore: jest.fn(),
 };
 
 describe('<ProductCardTotal />', () => {
@@ -16,19 +30,33 @@ describe('<ProductCardTotal />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('it renders connect button', () => {
-        const onClick = jest.fn();
-        const wrapper = shallow(<ProductCardTotal {...props} onClickConnect={onClick} />);
+    it('it renders submit button', () => {
+        const onSubmit = jest.fn();
+        const wrapper = shallow(<ProductCardTotal {...props} onSubmit={onSubmit} submitLink="submitLink" />);
         expect(wrapper).toMatchSnapshot();
     });
-});
 
-describe('<ProductCardTotal />', () => {
     it('it handle handleSubmit prop', () => {
         const handleSubmit = jest.fn();
-        const wrapper = shallow(<ProductCardTotal {...props} onSubmit={handleSubmit} />);
+        const wrapper = shallow(<ProductCardTotal onSubmit={handleSubmit} />);
 
         wrapper.find('.product-card-total__button').simulate('click', {} as React.SyntheticEvent);
         expect(handleSubmit).toHaveBeenCalledTimes(1);
+    });
+
+    it('it handle click more button', () => {
+        const handleClick = jest.fn();
+        const wrapper = shallow(<ProductCardTotal onClickMore={handleClick} />);
+
+        wrapper.find('.product-card-total__description-more').simulate('click', {} as React.SyntheticEvent);
+        expect(handleClick).toHaveBeenCalledTimes(1);
+    });
+
+    it('it handle click connect button', () => {
+        const handleClick = jest.fn();
+        const wrapper = shallow(<ProductCardTotal onClickConnect={handleClick} />);
+
+        wrapper.find('.product-card-total__connect-button').simulate('click', {} as React.SyntheticEvent);
+        expect(handleClick).toHaveBeenCalledTimes(1);
     });
 });

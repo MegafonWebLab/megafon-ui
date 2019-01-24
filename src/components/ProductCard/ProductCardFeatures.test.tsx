@@ -1,20 +1,23 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import ProductCardFeatures from './ProductCardFeatures';
+import Checked from 'icons/System/24/Checked_24.svg';
 
 const props = {
     firstParam: {
         title: 'Безлимитный интернет',
-        value: 'на мессенджеры',
+        caption: 'на мессенджеры',
         children: [{
             title: 'Безлимитный интернет',
-            caption: 'на видео, соц-сети и мессенджеры',
-            value: 'test',
+            svgIcon: <Checked />,
         }],
     },
     secondParam: {
+        title: 'Test',
         children: [{
             title: 'Youtube, Rutube, Vimeo',
+            caption: 'на видео, соц-сети и мессенджеры',
+            svgIcon: <Checked />,
         }],
     },
 };

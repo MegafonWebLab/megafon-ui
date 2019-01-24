@@ -1,11 +1,22 @@
 # Changelog
-## Release 1.2.1
+
+## Unrelease 1.2.1
 ### Fixed
 - **ProductCardTotal**
     - remove text overflow in IE10
 - **ProductCardInfo**
     - remove text overflow in IE10
-
+### Changed
+- **ProductCardFeatures**
+    - fix tests
+- **ProductCardFeaturesTop**
+    - fix tests
+- **ProductCardFeaturesBottom**
+    - fix tests
+- **ProductCardTotal**
+    - fix tests
+- **package.json**
+    - add jest run to pre-commit
 
 ## Release 1.2.0
 ### Changed
