@@ -100,7 +100,7 @@ export class SelectWrapper extends React.Component {
                     items={items.filter(({ title }) => title.toLowerCase().search(searchValue.toLowerCase()) !== -1 )}
                     onChangeSearch={onChangeSearch}
                     searchValue={searchValue}
-                    icon={<CheckedIcon style={{ width: '24px', height: '24px'}}/>}
+                    icon={<Checked style={{ width: '24px', height: '24px'}}/>}
                 />
         }
     </SelectWrapper>
@@ -115,7 +115,7 @@ export class SelectWrapper extends React.Component {
             title: item.title,
             value: item.value,
             id: item.id,
-            leftIcon: <CheckedIcon style={{ width: '24px', height: '24px'}}/>
+            leftIcon: <Checked style={{ width: '24px', height: '24px'}}/>
         })
         )}
     />
@@ -130,7 +130,7 @@ export class SelectWrapper extends React.Component {
             title: item.title,
             value: item.value,
             id: item.id,
-            rightIcon: <CheckedIcon style={{ width: '24px', height: '24px'}}/>
+            rightIcon: <Checked style={{ width: '24px', height: '24px'}}/>
         })
         )}
     />
