@@ -22,7 +22,7 @@ interface ISelectItemProps {
     onHover(e: React.SyntheticEvent<EventTarget>, index: number): void;
 }
 
-const cn = cnCreate('select-item');
+const cn = cnCreate('mfui-select-item');
 class SelectItem extends React.Component<ISelectItemProps, {}> {
     static propTypes = {
         rightIcon: PropTypes.element,

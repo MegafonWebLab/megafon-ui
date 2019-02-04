@@ -2,21 +2,21 @@
 
 exports[`<ProductCardFeaturesTop /> it renders ProductCardFeaturesTop 1`] = `
 <div
-  className="product-card-features-top"
+  className="mfui-product-card-features-top"
 >
   <div
-    className="product-card-features-top__inner"
+    className="mfui-product-card-features-top__inner"
   >
     <Header
       as="h3"
-      className="product-card-features-top__title"
+      className="mfui-product-card-features-top__title"
       color="black"
       margin={false}
     >
       test
     </Header>
     <div
-      className="product-card-features-top__text"
+      className="mfui-product-card-features-top__text"
     >
       test
     </div>

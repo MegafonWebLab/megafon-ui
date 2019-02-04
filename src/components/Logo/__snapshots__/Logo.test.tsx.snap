@@ -2,15 +2,15 @@
 
 exports[`Logo renders with default props 1`] = `
 <Link
-  className="logo logo_view_horizontal"
+  className="mfui-logo mfui-logo_view_horizontal"
   href="/"
   target="_blank"
 >
   <div
-    className="logo__img"
+    className="mfui-logo__img"
   >
     <test-file-stub
-      className="logo__svg"
+      className="mfui-logo__svg"
     />
   </div>
 </Link>

@@ -43,7 +43,7 @@ interface IProductCardFeaturesProps {
     classNameBottom?: string;
 }
 
-const cn = cnCreate('product-card-features');
+const cn = cnCreate('mfui-product-card-features');
 class ProductCardFeatures extends React.Component<IProductCardFeaturesProps, {}> {
     static propTypes = {
         firstParam: PropTypes.shape({

@@ -2,7 +2,7 @@
 
 exports[`<ListItem /> it renders ListItem 1`] = `
 <li
-  className="list-item"
+  className="mfui-list-item"
 >
   item
 </li>

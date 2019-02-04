@@ -50,7 +50,7 @@ interface IButtonProps {
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-const cn = cnCreate('button');
+const cn = cnCreate('mfui-button');
 class Button extends React.Component<IButtonProps, {}> {
     static propTypes = {
         customView: PropTypes.oneOf(['two-lines']),

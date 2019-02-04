@@ -2,20 +2,20 @@
 
 exports[`<Textarea /> is checked shouldComponentUpdate 1`] = `
 <div
-  className="textarea textarea_error textarea_color_default"
+  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>
   <div
-    className="textarea__text textarea__text_error"
+    className="mfui-textarea__text mfui-textarea__text_error"
   >
     text
   </div>
@@ -24,15 +24,15 @@ exports[`<Textarea /> is checked shouldComponentUpdate 1`] = `
 
 exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
 <div
-  className="textarea textarea_color_default"
+  className="mfui-textarea mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>
@@ -41,15 +41,15 @@ exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
 
 exports[`<Textarea /> it renders Textarea 1`] = `
 <div
-  className="textarea textarea_color_default"
+  className="mfui-textarea mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>
@@ -58,20 +58,20 @@ exports[`<Textarea /> it renders Textarea 1`] = `
 
 exports[`<Textarea /> it renders error icon 1`] = `
 <div
-  className="textarea textarea_error textarea_color_default"
+  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>
   <div
-    className="textarea__text textarea__text_error"
+    className="mfui-textarea__text mfui-textarea__text_error"
   >
     text
   </div>
@@ -80,25 +80,25 @@ exports[`<Textarea /> it renders error icon 1`] = `
 
 exports[`<Textarea /> it renders texts 1`] = `
 <div
-  className="textarea textarea_color_default"
+  className="mfui-textarea mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>
   <div
-    className="textarea__text textarea__text_comment"
+    className="mfui-textarea__text mfui-textarea__text_comment"
   >
     text
   </div>
   <div
-    className="textarea__text textarea__text_success"
+    className="mfui-textarea__text mfui-textarea__text_success"
   >
     text
   </div>
@@ -107,20 +107,20 @@ exports[`<Textarea /> it renders texts 1`] = `
 
 exports[`<Textarea /> it renders valid icon 1`] = `
 <div
-  className="textarea textarea_valid textarea_color_default"
+  className="mfui-textarea mfui-textarea_valid mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>
   <div
-    className="textarea__text textarea__text_error"
+    className="mfui-textarea__text mfui-textarea__text_error"
   >
     text
   </div>
@@ -129,15 +129,15 @@ exports[`<Textarea /> it renders valid icon 1`] = `
 
 exports[`<Textarea /> it renders without error icon 1`] = `
 <div
-  className="textarea textarea_error textarea_color_default"
+  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>
@@ -146,15 +146,15 @@ exports[`<Textarea /> it renders without error icon 1`] = `
 
 exports[`<Textarea /> it renders without valid icon 1`] = `
 <div
-  className="textarea textarea_valid textarea_color_default"
+  className="mfui-textarea mfui-textarea_valid mfui-textarea_color_default"
 >
   <div
-    className="textarea__field-wrapper"
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="textarea__field"
+        className="mfui-textarea__field"
       />
     </div>
   </div>

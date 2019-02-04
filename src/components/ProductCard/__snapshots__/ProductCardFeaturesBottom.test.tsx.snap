@@ -2,36 +2,36 @@
 
 exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] = `
 <div
-  className="product-card-features-bottom"
+  className="mfui-product-card-features-bottom"
 >
   <Header
     as="h3"
-    className="product-card-features-bottom__title"
+    className="mfui-product-card-features-bottom__title"
     color="black"
     margin={false}
   >
     test
   </Header>
   <ul
-    className="product-card-features-bottom__list"
+    className="mfui-product-card-features-bottom__list"
   >
     <li
-      className="product-card-features-bottom__item product-card-features-bottom__item_icon"
+      className="mfui-product-card-features-bottom__item mfui-product-card-features-bottom__item_icon"
       key="test"
     >
       <test-file-stub
-        className="product-card-features-bottom__item-icon"
+        className="mfui-product-card-features-bottom__item-icon"
       />
       <Header
         as="h5"
-        className="product-card-features-bottom__item-title"
+        className="mfui-product-card-features-bottom__item-title"
         color="black"
         margin={false}
       >
         test
       </Header>
       <Paragraph
-        className="product-card-features-bottom__item-text"
+        className="mfui-product-card-features-bottom__item-text"
         color="black"
         marginAll="none"
         sizeAll="small"

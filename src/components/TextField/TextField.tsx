@@ -66,7 +66,7 @@ interface ITextFieldProps {
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-const cn = cnCreate('text-field');
+const cn = cnCreate('mfui-text-field');
 class TextField extends React.Component<ITextFieldProps, {}> {
     static propTypes = {
         color: PropTypes.oneOf(['default', 'white']),

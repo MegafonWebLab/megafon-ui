@@ -49,7 +49,7 @@ interface ITextareaProps {
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-const cn = cnCreate('textarea');
+const cn = cnCreate('mfui-textarea');
 class Textarea extends React.Component<ITextareaProps, {}> {
     static propTypes = {
         noticeText: PropTypes.string,
