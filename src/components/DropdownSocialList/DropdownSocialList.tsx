@@ -18,7 +18,7 @@ export interface IDropdownSocialListProps {
     className?: string;
 }
 
-const cn = cnCreate('dropdown-social-list');
+const cn = cnCreate('mfui-dropdown-social-list');
 class DropdownSocialList extends React.Component<IDropdownSocialListProps, {}> {
     static propTypes = {
         icons: PropTypes.arrayOf(

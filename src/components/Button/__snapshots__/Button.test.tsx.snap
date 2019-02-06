@@ -2,25 +2,25 @@
 
 exports[`<Button /> it renders Button 1`] = `
 <button
-  className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
   type="button"
 >
   <div
-    className="button__inner"
+    className="mfui-button__inner"
   />
 </button>
 `;
 
 exports[`<Button /> it renders children 1`] = `
 <button
-  className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
   type="button"
 >
   <div
-    className="button__inner"
+    className="mfui-button__inner"
   >
     <div
-      className="button__content"
+      className="mfui-button__content"
     >
       button
     </div>
@@ -41,14 +41,14 @@ exports[`<Button /> it renders spinner 1`] = `
   width="auto"
 >
   <button
-    className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto button_loading"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_loading"
     type="button"
   >
     <div
-      className="button__inner"
+      className="mfui-button__inner"
     >
       <div
-        className="button__spinner"
+        className="mfui-button__spinner"
       >
         <test-file-stub />
       </div>
@@ -71,12 +71,12 @@ exports[`<Button /> it renders tag a 1`] = `
   width="auto"
 >
   <a
-    className="button button_size-all_medium button_passive-color_green button_hover-color_green button_down-color_dark button_disabled-color_gray button_padding button_width_auto"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
     href="http://moscow.megafon.ru/"
     type=""
   >
     <div
-      className="button__inner"
+      className="mfui-button__inner"
     />
   </a>
 </Button>

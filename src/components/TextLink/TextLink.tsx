@@ -22,7 +22,7 @@ interface ITextLinkProps {
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-const cn = cnCreate('text-link');
+const cn = cnCreate('mfui-text-link');
 class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
     static propTypes = {
         color: PropTypes.oneOf(['white', 'black', 'gray', 'blue', 'green', 'inherit']),

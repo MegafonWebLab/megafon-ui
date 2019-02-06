@@ -50,7 +50,7 @@ interface IProductCardTotalProps {
     onClickMore?(e: React.SyntheticEvent<EventTarget>, info: {}): void;
 }
 
-const cn = cnCreate('product-card-total');
+const cn = cnCreate('mfui-product-card-total');
 class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
     static propTypes = {
         payment: PropTypes.shape({

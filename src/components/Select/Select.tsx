@@ -76,7 +76,7 @@ interface ISelectState {
     currentIndex: number;
 }
 
-const cn = cnCreate('select');
+const cn = cnCreate('mfui-select');
 class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
         selectedTitle: PropTypes.oneOfType([

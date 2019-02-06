@@ -17,7 +17,7 @@ const props = {
     ],
 };
 
-const controlSelector = '.select__control';
+const controlSelector = '.mfui-select__control';
 describe('<Select />', () => {
     it('it renders Select', () => {
         const wrapper = mount(<Select {...props} />);
@@ -156,21 +156,21 @@ describe('<Select />', () => {
         const noop = () => { };
         const onFocusSearch = jest.fn();
         const wrapper = mount(<Select {...props} onChangeSearch={noop} onFocusSearch={onFocusSearch} />);
-        wrapper.find('.select__search-field').simulate('focus');
+        wrapper.find('.mfui-select__search-field').simulate('focus');
         expect(onFocusSearch.mock.calls).toHaveLength(1);
     });
 
     it('it handles search change', () => {
         const onChangeSearch = jest.fn();
         const wrapper = mount(<Select {...props} onChangeSearch={onChangeSearch} />);
-        wrapper.find('.select__search-field').simulate('change');
+        wrapper.find('.mfui-select__search-field').simulate('change');
         expect(onChangeSearch.mock.calls).toHaveLength(1);
     });
 
     it('it handles search click', () => {
         const noop = () => { };
         const wrapper = mount(<Select {...props} onChangeSearch={noop} />);
-        wrapper.find('.select__search-field').simulate('click');
+        wrapper.find('.mfui-select__search-field').simulate('click');
         expect(wrapper.state('isOpen')).toBe(true);
     });
 
@@ -184,7 +184,7 @@ describe('<Select />', () => {
     it('it handles click title', () => {
         const wrapper = mount(<Select {...props} />);
         wrapper.setState({ isOpen: false });
-        wrapper.find('.select__title').simulate('click');
+        wrapper.find('.mfui-select__title').simulate('click');
         expect(wrapper.state('isOpen')).not.toBe(false);
     });
 

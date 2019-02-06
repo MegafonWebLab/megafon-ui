@@ -17,7 +17,7 @@ interface IProductCardFeaturesTopProps {
     params?: Array<Partial<IFirstParamChildren>>;
 }
 
-const cn = cnCreate('product-card-features-top');
+const cn = cnCreate('mfui-product-card-features-top');
 class ProductCardFeaturesTop extends React.Component<IProductCardFeaturesTopProps, {}> {
     static propTypes = {
         className: PropTypes.string,

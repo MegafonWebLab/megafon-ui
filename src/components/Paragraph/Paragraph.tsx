@@ -35,7 +35,7 @@ interface IParagraphProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
-const cn = cnCreate('paragraph');
+const cn = cnCreate('mfui-paragraph');
 class Paragraph extends React.Component<IParagraphProps, {}> {
     static propTypes = {
         hAlign: PropTypes.oneOf(['center', 'right']),

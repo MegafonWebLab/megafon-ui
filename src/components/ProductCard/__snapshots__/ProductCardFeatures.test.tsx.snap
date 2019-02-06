@@ -2,11 +2,11 @@
 
 exports[`<ProductCardFeatures /> it renders ProductCardFeatures 1`] = `
 <div
-  className="product-card-features"
+  className="mfui-product-card-features"
 >
   <ProductCardFeaturesTop
     caption="на мессенджеры"
-    className="product-card-features__top"
+    className="mfui-product-card-features__top"
     params={
       Array [
         Object {
@@ -18,7 +18,7 @@ exports[`<ProductCardFeatures /> it renders ProductCardFeatures 1`] = `
     title="Безлимитный интернет"
   />
   <ProductCardFeaturesBottom
-    className="product-card-features__bottom"
+    className="mfui-product-card-features__bottom"
     params={
       Array [
         Object {

@@ -20,37 +20,37 @@ exports[`<Select /> it renders Select 1`] = `
   notFoundText="Ничего не нашлось"
 >
   <div
-    className="select"
+    className="mfui-select"
   >
     <div
-      className="select__control"
+      className="mfui-select__control"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
     >
       <div
-        className="select__title"
+        className="mfui-select__title"
         onClick={[Function]}
         tabIndex={0}
       >
         <div
-          className="select__title-inner"
+          className="mfui-select__title-inner"
         />
       </div>
       <span
-        className="select__arrow"
+        className="mfui-select__arrow"
       >
         <span
-          className="select__arrow-inner"
+          className="mfui-select__arrow-inner"
         />
       </span>
     </div>
     <div
-      className="select__list"
+      className="mfui-select__list"
     >
       <div
-        className="select__list-inner"
+        className="mfui-select__list-inner"
       >
         <SelectItem
           active={true}
@@ -62,12 +62,12 @@ exports[`<Select /> it renders Select 1`] = `
           title="test1"
         >
           <div
-            className="select-item select-item_current select-item_active"
+            className="mfui-select-item mfui-select-item_current mfui-select-item_active"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="select-item__title"
+              className="mfui-select-item__title"
             >
               test1
             </div>
@@ -83,12 +83,12 @@ exports[`<Select /> it renders Select 1`] = `
           title="test2"
         >
           <div
-            className="select-item"
+            className="mfui-select-item"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="select-item__title"
+              className="mfui-select-item__title"
             >
               test2
             </div>
@@ -102,41 +102,41 @@ exports[`<Select /> it renders Select 1`] = `
 
 exports[`<Select /> it renders hidden input 1`] = `
 <div
-  className="select"
+  className="mfui-select"
 >
   <input
     name="test"
     type="hidden"
   />
   <div
-    className="select__control"
+    className="mfui-select__control"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
-      className="select__title"
+      className="mfui-select__title"
       onClick={[Function]}
       tabIndex={0}
     >
       <div
-        className="select__title-inner"
+        className="mfui-select__title-inner"
       />
     </div>
     <span
-      className="select__arrow"
+      className="mfui-select__arrow"
     >
       <span
-        className="select__arrow-inner"
+        className="mfui-select__arrow-inner"
       />
     </span>
   </div>
   <div
-    className="select__list"
+    className="mfui-select__list"
   >
     <div
-      className="select__list-inner"
+      className="mfui-select__list-inner"
     >
       <SelectItem
         active={true}
@@ -182,10 +182,10 @@ exports[`<Select /> it renders search 1`] = `
   onChangeSearch={[Function]}
 >
   <div
-    className="select select_search"
+    className="mfui-select mfui-select_search"
   >
     <div
-      className="select__control"
+      className="mfui-select__control"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -193,7 +193,7 @@ exports[`<Select /> it renders search 1`] = `
     >
       <input
         autoComplete="off"
-        className="select__search-field"
+        className="mfui-select__search-field"
         maxLength={60}
         onChange={[Function]}
         onClick={[Function]}
@@ -201,18 +201,18 @@ exports[`<Select /> it renders search 1`] = `
         type="text"
       />
       <span
-        className="select__arrow"
+        className="mfui-select__arrow"
       >
         <span
-          className="select__arrow-inner"
+          className="mfui-select__arrow-inner"
         />
       </span>
     </div>
     <div
-      className="select__list"
+      className="mfui-select__list"
     >
       <div
-        className="select__list-inner"
+        className="mfui-select__list-inner"
       >
         <SelectItem
           active={true}
@@ -224,12 +224,12 @@ exports[`<Select /> it renders search 1`] = `
           title="test1"
         >
           <div
-            className="select-item select-item_current select-item_active"
+            className="mfui-select-item mfui-select-item_current mfui-select-item_active"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="select-item__title"
+              className="mfui-select-item__title"
             >
               test1
             </div>
@@ -245,12 +245,12 @@ exports[`<Select /> it renders search 1`] = `
           title="test2"
         >
           <div
-            className="select-item"
+            className="mfui-select-item"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="select-item__title"
+              className="mfui-select-item__title"
             >
               test2
             </div>
@@ -264,40 +264,40 @@ exports[`<Select /> it renders search 1`] = `
 
 exports[`<Select /> it renders witout icon 1`] = `
 <div
-  className="select"
+  className="mfui-select"
 >
   <div
-    className="select__control"
+    className="mfui-select__control"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
-      className="select__title"
+      className="mfui-select__title"
       onClick={[Function]}
       tabIndex={0}
     >
       <div
-        className="select__title-inner"
+        className="mfui-select__title-inner"
       />
     </div>
     <span
-      className="select__arrow"
+      className="mfui-select__arrow"
     >
       <span
-        className="select__arrow-inner"
+        className="mfui-select__arrow-inner"
       />
     </span>
   </div>
   <div
-    className="select__list"
+    className="mfui-select__list"
   >
     <div
-      className="select__list-inner"
+      className="mfui-select__list-inner"
     >
       <div
-        className="select__not-found"
+        className="mfui-select__not-found"
       >
         Ничего не нашлось
       </div>
@@ -308,38 +308,38 @@ exports[`<Select /> it renders witout icon 1`] = `
 
 exports[`<Select /> it renders witout icon 2`] = `
 <div
-  className="select"
+  className="mfui-select"
 >
   <div
-    className="select__control"
+    className="mfui-select__control"
     onBlur={[Function]}
     onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
   >
     <div
-      className="select__title"
+      className="mfui-select__title"
       onClick={[Function]}
       tabIndex={0}
     >
       <div
-        className="select__title-inner"
+        className="mfui-select__title-inner"
       />
     </div>
     <div
-      className="select__icon-box"
+      className="mfui-select__icon-box"
     >
       <test-file-stub />
     </div>
   </div>
   <div
-    className="select__list"
+    className="mfui-select__list"
   >
     <div
-      className="select__list-inner"
+      className="mfui-select__list-inner"
     >
       <div
-        className="select__not-found"
+        className="mfui-select__not-found"
       >
         Ничего не нашлось
       </div>

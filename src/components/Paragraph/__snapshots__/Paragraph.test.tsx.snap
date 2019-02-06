@@ -2,7 +2,7 @@
 
 exports[`<Paragraph /> it renders Paragraph 1`] = `
 <p
-  className="paragraph paragraph_size-all_medium paragraph_margin-all_medium paragraph_color_black paragraph_weight_regular"
+  className="mfui-paragraph mfui-paragraph_size-all_medium mfui-paragraph_margin-all_medium mfui-paragraph_color_black mfui-paragraph_weight_regular"
 >
   Text
 </p>

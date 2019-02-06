@@ -2,28 +2,28 @@
 
 exports[`<TextField /> is checked shouldComponentUpdate 1`] = `
 <div
-  className="text-field text-field_error text-field_icon text-field_color_default"
+  className="mfui-text-field mfui-text-field_error mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
     <div
-      className="text-field__icon-box"
+      className="mfui-text-field__icon-box"
     >
       <test-file-stub
-        className="text-field__icon"
+        className="mfui-text-field__icon"
       />
     </div>
   </div>
   <div
-    className="text-field__text text-field__text_error"
+    className="mfui-text-field__text mfui-text-field__text_error"
     dangerouslySetInnerHTML={
       Object {
         "__html": "text",
@@ -35,15 +35,15 @@ exports[`<TextField /> is checked shouldComponentUpdate 1`] = `
 
 exports[`<TextField /> is checked shouldComponentUpdate with new props 1`] = `
 <div
-  className="text-field text-field_color_default"
+  className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
@@ -53,15 +53,15 @@ exports[`<TextField /> is checked shouldComponentUpdate with new props 1`] = `
 
 exports[`<TextField /> it renders TextField 1`] = `
 <div
-  className="text-field text-field_color_default"
+  className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
@@ -71,20 +71,20 @@ exports[`<TextField /> it renders TextField 1`] = `
 
 exports[`<TextField /> it renders custom icon 1`] = `
 <div
-  className="text-field text-field_icon text-field_color_default"
+  className="mfui-text-field mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
     <div
-      className="text-field__icon-box text-field__icon-box_custom"
+      className="mfui-text-field__icon-box mfui-text-field__icon-box_custom"
     >
       <img />
     </div>
@@ -94,28 +94,28 @@ exports[`<TextField /> it renders custom icon 1`] = `
 
 exports[`<TextField /> it renders error icon 1`] = `
 <div
-  className="text-field text-field_error text-field_icon text-field_color_default"
+  className="mfui-text-field mfui-text-field_error mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
     <div
-      className="text-field__icon-box"
+      className="mfui-text-field__icon-box"
     >
       <test-file-stub
-        className="text-field__icon"
+        className="mfui-text-field__icon"
       />
     </div>
   </div>
   <div
-    className="text-field__text text-field__text_error"
+    className="mfui-text-field__text mfui-text-field__text_error"
     dangerouslySetInnerHTML={
       Object {
         "__html": "text",
@@ -127,15 +127,15 @@ exports[`<TextField /> it renders error icon 1`] = `
 
 exports[`<TextField /> it renders mask input 1`] = `
 <div
-  className="text-field text-field_color_default"
+  className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <_default
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         inputRef={[Function]}
         mask="(999) 999-99-99"
         maskChar=" "
@@ -148,26 +148,26 @@ exports[`<TextField /> it renders mask input 1`] = `
 
 exports[`<TextField /> it renders texts 1`] = `
 <div
-  className="text-field text-field_color_default"
+  className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
   </div>
   <div
-    className="text-field__text text-field__text_comment"
+    className="mfui-text-field__text mfui-text-field__text_comment"
   >
     text
   </div>
   <div
-    className="text-field__text text-field__text_success"
+    className="mfui-text-field__text mfui-text-field__text_success"
   >
     text
   </div>
@@ -176,28 +176,28 @@ exports[`<TextField /> it renders texts 1`] = `
 
 exports[`<TextField /> it renders valid icon 1`] = `
 <div
-  className="text-field text-field_valid text-field_icon text-field_color_default"
+  className="mfui-text-field mfui-text-field_valid mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
     <div
-      className="text-field__icon-box"
+      className="mfui-text-field__icon-box"
     >
       <test-file-stub
-        className="text-field__icon"
+        className="mfui-text-field__icon"
       />
     </div>
   </div>
   <div
-    className="text-field__text text-field__text_error"
+    className="mfui-text-field__text mfui-text-field__text_error"
     dangerouslySetInnerHTML={
       Object {
         "__html": "text",
@@ -209,15 +209,15 @@ exports[`<TextField /> it renders valid icon 1`] = `
 
 exports[`<TextField /> it renders without error icon 1`] = `
 <div
-  className="text-field text-field_error text-field_color_default"
+  className="mfui-text-field mfui-text-field_error mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
@@ -227,15 +227,15 @@ exports[`<TextField /> it renders without error icon 1`] = `
 
 exports[`<TextField /> it renders without valid icon 1`] = `
 <div
-  className="text-field text-field_valid text-field_color_default"
+  className="mfui-text-field mfui-text-field_valid mfui-text-field_color_default"
 >
   <div
-    className="text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper"
   >
     <div>
       <input
         autoComplete="off"
-        className="text-field__field"
+        className="mfui-text-field__field"
         type="text"
       />
     </div>
