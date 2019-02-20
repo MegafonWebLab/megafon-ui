@@ -1,11 +1,13 @@
 # Changelog
 
-## Unrelease 1.2.2
+## Unrelease 1.2.3
 ### Changed
 - **components**
     - add prefix 'mfui' to class name of all components
 - **Select.mdx**
     - fix variable name
+- **icons**
+    - update several icons
 
 ## Release 1.2.1
 ### Fixed
