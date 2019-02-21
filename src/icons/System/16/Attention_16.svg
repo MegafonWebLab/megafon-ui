@@ -1,18 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>Source/System Icons/16/Attention_16</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M10,2 C14.4130982,2 18,5.58690176 18,10 C18,14.4130982 14.4130982,18 10,18 C5.58690176,18 2,14.4130982 2,10 C2,5.58690176 5.58690176,2 10,2 Z M10.0277778,15 C10.3055556,15 10.5555556,14.9189189 10.6944444,14.7027027 C10.8888889,14.5135135 11,14.2702703 11,14 C11,13.7297297 10.9166667,13.4864865 10.6944444,13.2972973 C10.5,13.1081081 10.25,13 10,13 C9.75,13 9.52777778,13.1081081 9.30555556,13.2972973 C9.11111111,13.4864865 9,13.7297297 9,14 C9,14.2702703 9.11111111,14.5135135 9.30555556,14.7027027 C9.5,14.8918919 9.75,15 10.0277778,15 Z M9,5 L9,11 L11,11 L11,5 L9,5 Z" id="path-1"></path>
-    </defs>
-    <g id="Source/System-Icons/16/Attention_16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <use id="Combined-Shape" fill="#333333" fill-rule="nonzero" xlink:href="#path-1"></use>
-        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
-            <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<title>Source/System Icons/16/Attention_16</title>
+<desc>Created with Sketch.</desc>
+<path d="M10,2c4.4,0,8,3.6,8,8s-3.6,8-8,8s-8-3.6-8-8S5.6,2,10,2z M10,15c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.3-0.7
+	s-0.1-0.5-0.3-0.7C10.5,13.1,10.2,13,10,13s-0.5,0.1-0.7,0.3C9.1,13.5,9,13.7,9,14s0.1,0.5,0.3,0.7S9.8,15,10,15z M9,5v6h2V5H9z"/>
 </svg>

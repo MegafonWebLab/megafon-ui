@@ -6,6 +6,8 @@
     - add prefix 'mfui' to class name of all components
 - **Select.mdx**
     - fix variable name
+- **icons**
+    - update several icons
 
 ## Release 1.2.1
 ### Fixed

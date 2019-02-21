@@ -1,18 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>Source/System Icons/16/Sended_16</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M12.9,5 L14,6 L7.1,14.3 L6.5,15 C6.1,14.7 6,14.5 6,14.5 C6,14.5 4.7,13 2,10 L3.1,9 L6.5,12.8 L12.9,5 Z M17.9,5 L19,6 L12.1,14.3 L11.5,15 C11.2,14.7 11,14.5 11,14.5 C11,14.5 10.5,13.9 9.4,12.7 L10.4,11.5 L11.6,12.8 L17.9,5 Z" id="path-1"></path>
-    </defs>
-    <g id="Source/System-Icons/16/Sended_16" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <use id="Combined-Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
-        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
-            <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<title>Source/System Icons/16/Sended_16</title>
+<desc>Created with Sketch.</desc>
+<path d="M12.9,5L14,6l-6.9,8.3L6.5,15C6.1,14.7,6,14.5,6,14.5S4.7,13,2,10l1.1-1l3.4,3.8L12.9,5z M17.9,5L19,6l-6.9,8.3L11.5,15
+	c-0.3-0.3-0.5-0.5-0.5-0.5s-0.5-0.6-1.6-1.8l1-1.2l1.2,1.3L17.9,5z"/>
 </svg>
