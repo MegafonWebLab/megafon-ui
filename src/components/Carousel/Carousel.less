@@ -1,0 +1,85 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-carousel');
+@s: e('.slick');
+
+@{b} {
+    padding: 50px 10px;
+    overflow: hidden;
+}
+
+@{s} {
+    &-slider {
+        position: relative;
+    }
+
+    &-list {
+        @media @mobileS {
+            width: 228px;
+        }
+    }
+
+    &-track {
+        align-items: stretch;
+        display: flex;
+    }
+
+    &-arrow {
+        position: absolute;
+        cursor: pointer;
+        top: -44px;
+        right: 0;
+        @media @mobileSM {
+            display: none !important;
+        }
+    }
+
+    &-dots {
+        display: flex !important;
+        justify-content: center;
+        margin-top: 32px;
+
+        & > li {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+
+            & > button {
+                background-color: @spbSky1;
+                border: none;
+                border-radius: 50%;
+                height: 12px;
+                text-indent: -9999px;
+                width: 12px;
+            }
+        }
+
+        @{s}-active > button {
+            background-color: @green;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &-disabled {
+        &@{s}-arrow {
+            cursor: default;
+        }
+    }
+
+    &-prev {
+        right: 60px;
+        transform: rotate(180deg);
+    }
+
+    &-slide {
+        flex: 1 1 auto;
+    }
+    &-slide > div {
+        height: 100%;
+        min-height: 100%;
+    }
+
+}

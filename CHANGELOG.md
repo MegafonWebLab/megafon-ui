@@ -1,5 +1,10 @@
 # Changelog
 
+## Unrelease 1.3-beta
+### Added
+- **components**
+    - add new components: ProductTile, ProductTileRest, ProductSwitcher, Carousel
+
 ## Release 1.2.2
 ### Changed
 - **components**

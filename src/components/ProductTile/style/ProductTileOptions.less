@@ -1,0 +1,75 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-product-tile-options');
+
+@{b} {
+    margin-left: 11px;
+    margin-top: 16px;
+
+    &__option {
+        margin-top: 16px;
+        display: flex;
+    }
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+
+    &__head {
+        margin-bottom: 8px;
+    }
+
+    &__icon {
+        margin-right: 8px;
+        svg,
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__title {
+        .h5();
+    }
+
+    &__description {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &__cashback-hint {
+        margin-top: -5px;
+    }
+
+    &__hint-text {
+        font-weight: 300;
+        p {
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        a {
+            border-bottom: 1px dashed;
+            margin-right: 4px;
+
+            &:hover {
+                text-decoration: none;
+                border: none;
+            }
+        }
+    }
+
+    &__bubble-trigger {
+        display: inline-block;
+        font-size: 12px;
+        line-height: 16px;
+        color: @blue;
+        border-bottom: 1px dashed;
+        font-weight: 400;
+        margin: 0 4px 1px 2px;
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+}

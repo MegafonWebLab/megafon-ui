@@ -1,0 +1,151 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-product-tile-rest');
+
+@{b} {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 208px;
+    padding: 24px 8px 16px;
+    border-radius: 9px;
+    background-color: @clearWhite;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    height: 100%;
+    &:hover {
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    @media @mobileSM {
+        width: 212px;
+    }
+
+    @media @desktopMU {
+        width: 265px;
+        padding: 32px 16px 16px;
+    }
+
+    &:not(:last-child) {
+        margin-right: 20px;
+
+        @media @mobileSM {
+            margin-right: 16px;
+        }
+    }
+
+    &__info,
+    &__buy {
+        text-align: center;
+    }
+
+    &__header {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        letter-spacing: 0.5px;
+
+        @media @desktopMU {
+            font-size: 20px;
+            line-height: 28px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__detail-link {
+        margin-bottom: 16px;
+        display: block;
+    }
+
+    &__options {
+        margin-bottom: 12px;
+
+        @media @mobileSM {
+            margin-bottom: 24px;
+        }
+
+        @media @desktopMU {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__option {
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__option-title {
+        line-height: 24px;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    &__option-description {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &__description {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 25px;
+    }
+
+    &__pack {
+        margin-bottom: 8px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    &__messangers {
+        margin-bottom: 24px;
+    }
+
+    &__messangers-list {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__messangers-description {
+        font-size: 12px;
+        letter-spacing: 0.33px;
+        line-height: 16px;
+    }
+
+    &__reward-icon {
+        svg,
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__buy-button {
+        margin-bottom: 11px;
+        width: 159px;
+    }
+
+    &__price {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+        margin-bottom: 26px;
+
+        @media @mobileSM {
+            margin-bottom: 18px;
+        }
+
+        @media @desktopMU {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__payment-period {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+}

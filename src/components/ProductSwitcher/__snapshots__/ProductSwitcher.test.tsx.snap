@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductSwitcher /> it renders ProductSwitcher 1`] = `
+<div
+  className="mfui-product-switcher mfui-product-switcher_theme_tariff-showcase sdfsdf"
+>
+  <div
+    className="mfui-product-switcher__row"
+  >
+    <div
+      className="mfui-product-switcher__item mfui-product-switcher__item_active"
+      key="titlevalue"
+      onClick={[Function]}
+    >
+      <div
+        className="mfui-product-switcher__label"
+      >
+        title
+      </div>
+    </div>
+  </div>
+  <div
+    className="mfui-product-switcher__pointer"
+  />
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTileHint /> it renders ProductTileHint 1`] = `
+<div
+  className="mfui-product-tile-hint"
+>
+  <div
+    className="mfui-product-tile-hint__text"
+  >
+    <span
+      className="mfui-product-tile-hint__description"
+    >
+      sdfsdf
+    </span>
+  </div>
+  <div
+    className="mfui-product-tile-hint__border"
+  />
+</div>
+`;

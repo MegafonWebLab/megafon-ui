@@ -1,0 +1,36 @@
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import { cnCreate } from '../../utils/cn';
+import './style/ProductTileCashback.less';
+
+interface IProductTileCashbackProps {
+    /** title */
+    title?: string;
+    /** value */
+    value?: number;
+    /** unit */
+    unit?: string;
+}
+
+const cn = cnCreate('mfui-product-tile-cashback');
+class ProductTileCashback extends React.Component<IProductTileCashbackProps> {
+    static propTypes = {
+        title: PropTypes.string,
+        value: PropTypes.number,
+        unit: PropTypes.string,
+    };
+
+    render() {
+        const { title, value, unit } = this.props;
+
+        return (
+            <div className={cn('')}>
+                <span className={cn('text')}>
+                    {title} {value} {unit}
+                </span>
+            </div>
+        );
+    }
+}
+
+export default ProductTileCashback;

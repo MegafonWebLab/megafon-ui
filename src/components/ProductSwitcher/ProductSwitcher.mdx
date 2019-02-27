@@ -1,0 +1,45 @@
+---
+name: ProductSwitcher
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import ProductSwitcher from './ProductSwitcher';
+
+export const Wrapper = ({children}) => <div>{children}</div>;
+
+export const items = [
+    { title: '10', value: '10' },
+    { title: '20', value: '20' },
+    { title: '30', value: '30' }
+];
+
+# Carousel
+
+## Properties ProductSwitcher
+<PropsTable of={ProductSwitcher} />
+
+## Basic usage
+
+<Playground wrapper={Wrapper}>
+    <ProductSwitcher items={items} onChange={() => {return true}}/>
+</Playground>
+
+## Included props
+
+``` javascript
+const items = [
+    {
+        title: '10',
+        value: '10'
+    },
+    {
+        title: '20',
+        value: '20'
+    },
+
+        title: '30',
+        value: '30'
+    }
+];
+```

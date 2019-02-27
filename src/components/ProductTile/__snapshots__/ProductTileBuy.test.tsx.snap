@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
+<div
+  className="mfui-product-tile-buy sdfsdf"
+>
+  <Button
+    className="mfui-product-tile-buy__button"
+    disabledColor="gray"
+    downColor="dark"
+    hoverColor="green"
+    href="#"
+    padding={true}
+    passiveColor="green"
+    showSpinner={false}
+    sizeAll="medium"
+    type="button"
+    width="auto"
+  >
+    sdf
+  </Button>
+  <TextLink
+    className="mfui-product-tile-buy__detail-link"
+    color="blue"
+    underlineStyle="solid"
+    underlineVisibility="hover"
+  >
+    werwer
+  </TextLink>
+</div>
+`;
