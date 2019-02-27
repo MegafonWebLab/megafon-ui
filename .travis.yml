@@ -30,7 +30,7 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
-      node_js: "8"
+      node_js: "10"
 
   - provider: pages
     github-token: "$GITHUB_TOKEN"
@@ -39,7 +39,7 @@ deploy:
     keep-history: true
     on:
       branch: master
-      node_js: "8"
+      node_js: "10"
 
 after_script:
   - codecov
