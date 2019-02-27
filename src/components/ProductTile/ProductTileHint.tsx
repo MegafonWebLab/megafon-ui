@@ -8,7 +8,7 @@ interface IProductTileHintProps {
 }
 
 const cn = cnCreate('mfui-product-tile-hint');
-class ProductTileHint extends React.Component<IProductTileHintProps, {}> {
+class ProductTileHint extends React.Component<IProductTileHintProps> {
     render() {
         const { title } = this.props;
 

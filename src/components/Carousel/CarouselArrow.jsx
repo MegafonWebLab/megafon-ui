@@ -22,7 +22,7 @@ class CarouselArrow extends React.Component {
         const { className } = this.props;
 
         return (
-            <div className={className} onClick={this.handleClick}>
+            <div className={cn('', {}, className)} onClick={this.handleClick}>
                 <div className={cn('arrow-icon')}><Arrow /></div>
             </div>
         );

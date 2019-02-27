@@ -8,6 +8,7 @@ import Slider from "react-slick";
 const cn = cnCreate('mfui-carousel');
 class Carousel extends React.Component {
     static propTypes = {
+        className: PropTypes.string,
         options: PropTypes.objectOf(
             PropTypes.oneOfType([
                 PropTypes.bool,
@@ -32,10 +33,10 @@ class Carousel extends React.Component {
     };
 
     render() {
-        const { options, children } = this.props;
+        const { className, options, children } = this.props;
 
         return (
-            <div className={cn('')}>
+            <div className={cn('', {}, className)}>
                 <Slider
                     {...options}
                     nextArrow={<CarouselArrow {...options} onClickArrow={this.handleClickNext} />}

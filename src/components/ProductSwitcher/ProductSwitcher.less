@@ -2,6 +2,10 @@
 
 @b: e('.mfui-product-switcher');
 
+@sizeDesktop: 64px;
+@sizeMobileB: 56px;
+@sizeMobileSM: 48px;
+
 @{b} {
     display: inline-block;
     vertical-align: top;
@@ -13,6 +17,7 @@
         position: relative;
         z-index: 1;
         display: flex;
+        flex-grow: 1;
     }
     &__item {
         width: 69px;
@@ -85,10 +90,6 @@
     &__item_active &__label {
         color: @green;
     }
-
-    @sizeDesktop: 64px;
-    @sizeMobileB: 56px;
-    @sizeMobileSM: 48px;
 
     &&_theme_tariff-showcase {
         width: 100%;

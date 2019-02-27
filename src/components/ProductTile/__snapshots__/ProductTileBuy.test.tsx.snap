@@ -2,7 +2,7 @@
 
 exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
 <div
-  className="mfui-product-tile-buy"
+  className="mfui-product-tile-buy sdfsdf"
 >
   <Button
     className="mfui-product-tile-buy__button"

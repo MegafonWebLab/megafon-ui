@@ -11,13 +11,13 @@ interface IProductTileDynamicProps {
     /** Switcher */
     switcher: ISwitcher;
     /** Change calls */
-    onChangeCalls(e: React.SyntheticEvent<EventTarget>, value: string): false | void;
+    onChangeCalls(e: React.SyntheticEvent<EventTarget>, value: string): boolean;
     /** Change Traffic */
-    onChangeTraffic(e: React.SyntheticEvent<EventTarget>, value: string): false | void;
+    onChangeTraffic(e: React.SyntheticEvent<EventTarget>, value: string): boolean;
 }
 
 const cn = cnCreate('mfui-product-tile-dynamic');
-class ProductTileDynamic extends React.Component<IProductTileDynamicProps, {}> {
+class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
     static propTypes = {
         currentPack: PropTypes.shape({
             calls: PropTypes.shape({
@@ -48,13 +48,13 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps, {}> {
                 <ProductSwitcher
                     className={cn('constructor-range')}
                     theme="tariff-showcase"
-                    items={switcher.calls.map(value => ({ title: value, value }))}
+                    items={switcher.calls.map((value: string) => ({ title: value, value }))}
                     onChange={onChangeCalls}
                 />
                 <ProductSwitcher
                     className={cn('constructor-range')}
                     theme="tariff-showcase"
-                    items={switcher.traffic.map(value => ({ title: value, value }))}
+                    items={switcher.traffic.map((value: string) => ({ title: value, value }))}
                     onChange={onChangeTraffic}
                 />
                 <div className={cn('constructor-pack')}>

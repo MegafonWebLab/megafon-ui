@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import ProductTileBuy from './ProductTileBuy';
 
 const props = {
+    className: 'sdfsdf',
     href: '#',
     buyText: 'sdf',
     connectText: 'werwer',

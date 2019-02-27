@@ -6,6 +6,8 @@ import Button from '../Button/Button';
 import TextLink from '../TextLink/TextLink';
 
 interface IProductTileBuyProps {
+    /** Class name */
+    className?: string;
     /** Buy button href */
     href: string;
     /** Buy button text */
@@ -19,7 +21,7 @@ interface IProductTileBuyProps {
 }
 
 const cn = cnCreate('mfui-product-tile-buy');
-class ProductTileBuy extends React.Component<IProductTileBuyProps, {}> {
+class ProductTileBuy extends React.Component<IProductTileBuyProps> {
     static propTypes = {
         href: PropTypes.string,
         buyText: PropTypes.string,
@@ -29,10 +31,10 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps, {}> {
     };
 
     render() {
-        const { href, buyText, connectText, onClickConnect, onClickBuy } = this.props;
+        const { className, href, buyText, connectText, onClickConnect, onClickBuy } = this.props;
 
         return (
-            <div className={cn('')}>
+            <div className={cn('', {}, className)}>
                 <Button
                     className={cn('button')}
                     passiveColor="green"

@@ -9,13 +9,13 @@ interface IProductTileOptionsProps {
     /** Has head */
     head?: boolean;
     /** Options */
-    options: Array<Partial<IOption>>;
+    options: IOption[];
     /** Handle bubble */
     onClickBubble?(): void;
 }
 
 const cn = cnCreate('mfui-product-tile-options');
-class ProductTileOptions extends React.Component<IProductTileOptionsProps, {}> {
+class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
     static propTypes = {
         head: PropTypes.bool,
         options: PropTypes.arrayOf(PropTypes.shape({
@@ -58,7 +58,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps, {}> {
                     {title}
                 </div>
                 <div className={cn('description')}>
-                    {caption ? caption : `${value} ${unit}`}
+                    {caption || `${value} ${unit}`}
                 </div>
             </div>
         );
@@ -85,7 +85,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps, {}> {
                                 {this.renderIcon(svgIcon!)}
                                 {footnote
                                     ? this.renderFootnote(title!, footnote)
-                                    : this.renderContent(title!, caption!, value!, unit!)
+                                    : this.renderContent(title, caption!, value!, unit!)
                                 }
                             </div>
                         );

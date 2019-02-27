@@ -3,12 +3,14 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './ProductSwitcher.less';
 
+interface IItem {
+    title: string;
+    value: string;
+}
+
 interface IProductSwitcherProps {
     /** Class name */
-    items: Array<{
-        title: string;
-        value: string;
-    }>;
+    items: IItem[];
     /** Start index */
     startIndex?: number;
     /** Theme */
@@ -16,7 +18,7 @@ interface IProductSwitcherProps {
     /** Custom class name */
     className: string;
     /** Change handler */
-    onChange(e: React.SyntheticEvent<EventTarget>, value: string): void | false;
+    onChange(e: React.SyntheticEvent<EventTarget>, value: string): boolean;
 }
 
 interface IProductSwitcherState {
@@ -33,7 +35,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         theme: PropTypes.oneOf(['tariff-showcase']),
     };
 
-    static defaultProps = {
+    static defaultProps: Pick<IProductSwitcherProps, 'startIndex'> = {
         startIndex: 0,
     };
 
@@ -94,25 +96,37 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
     }
 
+    getRootNode = (node: HTMLElement | null) => {
+        this.rootNode = node;
+    }
+
+    getLabelNodes = (item: IItem) => (node: HTMLElement | null) =>  {
+        this.labelNodes[item.value] = node;
+    }
+
+    getPointerNode = (node: HTMLElement | null) => {
+        this.pointerNode = node;
+    }
+
     render() {
-        const { theme, className } = this.props;
+        const { items, theme, className } = this.props;
 
         return (
-            <div className={cn('', { theme }, className)} ref={node => { this.rootNode = node; }}>
+            <div className={cn('', { theme }, className)} ref={this.getRootNode}>
                 <div className={cn('row')}>
-                    {this.props.items.map(item =>
+                    {items.map(item =>
                         <div
                             className={cn('item', { active: item.value === this.state.currentValue })}
                             key={item.title + item.value}
                             onClick={this.handleClickItem(item.value)}
                         >
-                            <div className={cn('label')} ref={node => { this.labelNodes[item.value] = node; }}>
+                            <div className={cn('label')} ref={this.getLabelNodes(item)}>
                                 {item.title}
                             </div>
                         </div>
                     )}
                 </div>
-                <div className={cn('pointer')} ref={node => { this.pointerNode = node; }} />
+                <div className={cn('pointer')} ref={this.getPointerNode} />
             </div>
         );
     }

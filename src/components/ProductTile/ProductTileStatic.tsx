@@ -10,7 +10,7 @@ interface IProductTileStaticProps {
 }
 
 const cn = cnCreate('mfui-product-tile-static');
-class ProductTileStatic extends React.Component<IProductTileStaticProps, {}> {
+class ProductTileStatic extends React.Component<IProductTileStaticProps> {
     static propTypes = {
         packs: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
@@ -23,7 +23,7 @@ class ProductTileStatic extends React.Component<IProductTileStaticProps, {}> {
 
         return (
             <div className={cn('')}>
-                {packs.map(item =>
+                {packs.map((item: IPack) =>
                     <div className={cn('constructor-pack')} key={item.value! + item.unit!}>
                         {`${item.value} ${item.unit}`}
                     </div>

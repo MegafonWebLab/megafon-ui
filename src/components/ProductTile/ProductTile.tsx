@@ -14,10 +14,10 @@ import Options from './ProductTileOptions';
 export interface IOption {
     title: string;
     caption?: string;
-    value: number;
-    unit: string;
-    footnote: string;
-    svgIcon: JSX.Element;
+    value?: number;
+    unit?: string;
+    footnote?: string;
+    svgIcon?: JSX.Element;
 }
 
 export interface IPayment {
@@ -53,12 +53,8 @@ export interface ICashback {
     unit: string;
 }
 
-interface IFirstParam {
-    items: Array<{
-        title: string;
-        caption: string;
-        svgIcon: JSX.Element;
-    }>;
+export interface IFirstParam {
+    items: IOption[];
 }
 
 export interface ISwitcher {
@@ -181,7 +177,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickConnect: PropTypes.func,
     };
 
-    static defaultProps = {
+    static defaultProps: Pick<IProductTileProps, 'servicePacks'> = {
         servicePacks: [],
     };
 
@@ -237,9 +233,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickBubble && onClickBubble({ ...info! });
     }
 
-    handleChangeCalls = (e: React.SyntheticEvent<EventTarget>, value: string): false | void => {
+    handleChangeCalls = (e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
-        const { buyLink } = this.props;
         const { trafficValue } = this.state;
         const currentPack = this.getCurrentPack(currentValue, trafficValue);
 
@@ -248,17 +243,16 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         }
 
         this.setState({
+            ...this.getRestState(currentPack),
             callsValue: currentValue,
-            currentPack,
-            payment: currentPack.payment!,
-            options: currentPack.options!,
-            buyLink: buyLink + currentPack.buyLink!,
         });
+
+        return true;
     }
 
-    handleChangeTraffic = (e: React.SyntheticEvent<EventTarget>, value: string): false | void => {
+    handleChangeTraffic = (e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
-        const { buyLink } = this.props;
+
         const { callsValue } = this.state;
         const currentPack = this.getCurrentPack(callsValue, currentValue);
 
@@ -267,12 +261,22 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         }
 
         this.setState({
+            ...this.getRestState(currentPack),
             trafficValue: currentValue,
+        });
+
+        return true;
+    }
+
+    getRestState(currentPack: Partial<IServicePack>): object {
+        const { buyLink } = this.props;
+
+        return {
             currentPack,
             payment: currentPack.payment!,
             options: currentPack.options!,
             buyLink: buyLink + currentPack.buyLink!,
-        });
+        };
     }
 
     getCurrentPack(callsValue: number, trafficValue: number): Partial<IServicePack> {
@@ -362,7 +366,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     <Price {...payment}/>
                     <div className={cn('constructor')}>
                         {isServicePacks ? this.renderDynamic() : this.renderStatic()}
-                        <Options options={firstParams!.items!} />
+                        <Options options={firstParams.items} />
                     </div>
                     <Options options={options} head onClickBubble={this.handleClickBubble}/>
                 </div>
