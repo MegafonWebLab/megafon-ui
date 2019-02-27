@@ -1,0 +1,84 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-product-tile-hint');
+
+@{b} {
+    position: absolute;
+    top: -21px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    width: 86%;
+
+    @media @mobileB {
+        width: 72%;
+        top: -30px;
+    }
+
+    @media @desktopMU {
+        width: 77.5%;
+    }
+
+    &__text {
+        position: relative;
+        padding: 9px 11px;
+        box-sizing: border-box;
+        background-color: @clearWhite;
+        font-weight: 500;
+        color: @greenLight;
+        text-align: center;
+        z-index: 1;
+
+        @media @mobileB {
+            padding: 9px 0;
+        }
+    }
+
+    &__border {
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            width: 30px;
+            height: 30px;
+            transform: rotate(45deg);
+            background-color: white;
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+
+            @media @mobileB {
+                width: 46px;
+                height: 46px;
+                top: 10px;
+            }
+        }
+
+        &:after {
+            right: -15px;
+            border-top-right-radius: 10px;
+
+            @media @mobileB {
+                right: -24px;
+            }
+        }
+
+        &:before {
+            left: -15px;
+            border-bottom-left-radius: 10px;
+
+            @media @mobileB {
+                left: -24px;
+            }
+        }
+    }
+
+    &__description {
+        display: inline-block;
+
+        @media @mobileB {
+            max-width: 190px;
+        }
+    }
+}

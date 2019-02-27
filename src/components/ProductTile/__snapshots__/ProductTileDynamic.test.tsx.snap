@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
+<div
+  className="mfui-product-tile-dynamic"
+>
+  <div
+    className="mfui-product-tile-dynamic__constructor-pack"
+  >
+    23423 unit
+  </div>
+  <ProductSwitcher
+    className="mfui-product-tile-dynamic__constructor-range"
+    items={
+      Array [
+        Object {
+          "title": "344",
+          "value": "344",
+        },
+        Object {
+          "title": "2323",
+          "value": "2323",
+        },
+      ]
+    }
+    onChange={[MockFunction]}
+    startIndex={0}
+    theme="tariff-showcase"
+  />
+  <ProductSwitcher
+    className="mfui-product-tile-dynamic__constructor-range"
+    items={
+      Array [
+        Object {
+          "title": "3",
+          "value": "3",
+        },
+        Object {
+          "title": "2",
+          "value": "2",
+        },
+      ]
+    }
+    onChange={[MockFunction]}
+    startIndex={0}
+    theme="tariff-showcase"
+  />
+  <div
+    className="mfui-product-tile-dynamic__constructor-pack"
+  >
+     234234 unit
+  </div>
+</div>
+`;

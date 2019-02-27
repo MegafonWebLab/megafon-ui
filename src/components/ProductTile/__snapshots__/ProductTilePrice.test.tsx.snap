@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTilePrice /> it renders ProductTilePrice 1`] = `
+<div
+  className="mfui-product-tile-price"
+>
+  <div
+    className="mfui-product-tile-price__discount-condition"
+  >
+    При покупке новой SIM–карты
+  </div>
+  <span
+    className="mfui-product-tile-price__old-price"
+  >
+    <span
+      className="mfui-product-tile-price__old-price-value"
+    >
+      23423
+       
+      uniteValue
+    </span>
+  </span>
+  <span
+    className="mfui-product-tile-price__actual-price"
+  >
+    23423
+     
+    uniteValue
+     
+    <span
+      className="mfui-product-tile-price__payment-period"
+    >
+      uniteExtra
+    </span>
+  </span>
+</div>
+`;

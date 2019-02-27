@@ -1,0 +1,25 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-carousel-arrow');
+@s: e('.slick');
+
+@{b} {
+    &__arrow-icon {
+        svg {
+            display: block;
+            width: 40px;
+            height: 20px;
+            fill: @soggyAsphalt;
+        }
+    }
+};
+
+@{s} {
+    &-disabled {
+        @{b}__arrow-icon {
+            svg {
+                fill: @black10;
+            }
+        }
+    }
+}

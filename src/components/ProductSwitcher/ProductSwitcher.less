@@ -1,0 +1,133 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-product-switcher');
+
+@{b} {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    background-color: @greenDark;
+    border-radius: 50px;
+
+    &__row {
+        position: relative;
+        z-index: 1;
+        display: flex;
+    }
+    &__item {
+        width: 69px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        cursor: pointer;
+
+        @media @mobileSM {
+            width: 54px;
+        }
+        @media @mobileB {
+            width: 61px;
+        }
+
+        &:first-child {
+            justify-content: flex-start;
+        }
+        &:last-child {
+            justify-content: flex-end;
+        }
+    }
+    &__label {
+        .h2();
+        width: @sizeDesktop;
+        height: @sizeDesktop;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: @white;
+        transition: color 0.2s ease-in-out 0.05s;
+
+        @media @mobileSM {
+            width: @sizeMobileSM;
+            height: @sizeMobileSM;
+        }
+        @media @mobileB {
+            width: @sizeMobileB;
+            height: @sizeMobileB;
+        }
+        @media @desktopS {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    &__pointer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: @sizeDesktop;
+        height: @sizeDesktop;
+        border-radius: 50%;
+        background-color: @white;
+        transition: transform 0.2s ease-in-out;
+
+        @media @mobileSM {
+            width: @sizeMobileSM;
+            height: @sizeMobileSM;
+        }
+        @media @mobileB {
+            width: @sizeMobileB;
+            height: @sizeMobileB;
+        }
+    }
+
+    &__item_active {
+        cursor: default;
+    }
+    &__item_active &__label {
+        color: @green;
+    }
+
+    @sizeDesktop: 64px;
+    @sizeMobileB: 56px;
+    @sizeMobileSM: 48px;
+
+    &&_theme_tariff-showcase {
+        width: 100%;
+        background-color: @clearWhite;
+        box-shadow: 0 0 0 1px @spbSky1;
+    }
+
+    &&_theme_tariff-showcase & {
+        &__row {
+            justify-content: space-between;
+        }
+        &__label {
+            font-size: 12px;
+            font-weight: normal;
+            line-height: 44px;
+            color: @fullBlack;
+            width: 44px;
+            height: 44px;
+            @media @desktopMU {
+                width: 52px;
+                height: 52px;
+            }
+        }
+        &__item_active @{b}__label {
+            color: @clearWhite;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        &__pointer {
+            border: 2px solid @clearWhite;
+            box-sizing: border-box;
+            background-color: @green;
+            width: 44px;
+            height: 44px;
+            @media @desktopMU {
+                width: 52px;
+                height: 52px;
+            }
+        }
+    }
+}
+

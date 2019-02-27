@@ -1,0 +1,26 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-product-tile-dynamic');
+
+@{b} {
+    &__constructor-range {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 29px;
+        background-color: @clearWhite;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    &__constructor-pack {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        text-align: center;
+
+        @media @desktopMU {
+            font-size: 20px;
+        }
+    }
+}

@@ -1,0 +1,168 @@
+---
+name: ProductTileRest
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import ProductTileRest from './ProductTileRest';
+import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
+
+export const Wrapper = ({children}) => <div style={{ padding: '20px' }}>{children}</div>
+
+# ProductTile
+
+## Properties ProductTileRest
+<PropsTable of={ProductTileRest} />
+
+## Basic usage
+
+export const tariff = {
+    buyButtonText: 'Купить',
+    connectButtonText: 'Перейти на тариф',
+    "title": "Включайся! Смотри",
+    "description": "Описание",
+    "link": "/tariffs/vklyuchaysya/smotri.html",
+    "buyLink": "/zakaz/?tariff=look",
+    "payment": {
+        "value": 1000,
+        "unitExtra": "за 30 дней",
+        "unitValue": "₽",
+        "unit": "₽ за 30 дней",
+        "discount": 0
+    },
+    "packs": [
+        {
+            "value": 1500,
+            "unit": "минут"
+        },
+        {
+            "value": 100,
+            "unit": "смс"
+        },
+        {
+            "value": 3,
+            "unit": "ГБ"
+        }
+    ],
+    "firstParams": {
+        "title": "Параметры",
+        "caption": "",
+        "items": [
+            {
+                "title": "VIP-тариф",
+                "caption": "Привилегии обслуживания и другое",
+                "svgIcon": <MegafonTv />
+            },
+            {
+                "title": "МегаФон ТВ",
+                "caption": "Безлимитный трафик и пакеты кино, сериалов и ТВ-каналов на любой вкус",
+                "svgIcon": <MegafonTv />
+            }
+        ]
+    },
+    "secondParams": [{
+        "title": "Опция",
+        "value": 300,
+        "unit": "минут"
+    }],
+    "cashback": {
+        "title": "Кэшбэк",
+        "value": 20,
+        "unit": "%"
+    },
+    "info": {
+        "billingIds": ['sdf', 'sdf'],
+        "sms": "05007897",
+        "smsText": "ДА",
+        "smsSite": null,
+        "ivr": "05007897",
+        "ussd": "<span class=\"c-number-call\"><b class=\"asterisk\">*</b><b class=\"num\">789</b><span class=\"c-number-call\"><b class=\"asterisk\">*</b><b class=\"num\">7</b><b class=\"dash\">#</b><b class=\"pipe\"></b></span>",
+        "lkLink": "https://lk.megafon.ru/tariffs/",
+        "title": "Включайся! Смотри",
+        "id": 1598
+    }
+};
+
+<Playground wrapper={Wrapper}>
+    <ProductTileRest {...tariff} />
+</Playground>
+
+## Included props
+
+``` javascript
+export const tariff = {
+    "title": "Включайся! Смотри",
+    "link": "#",
+    "buyLink": "/zakaz/?tariff=look",
+    "topBadgeTitle": "Тариф–конструктор от 250 ₽",
+    "payment": {
+        "value": 1000,
+        "unitExtra": "за 30 дней",
+        "unitValue": "₽",
+        "unit": "₽ за 30 дней",
+        "discount": 0
+    },
+    "packs": [
+        {
+            "value": 1500,
+            "unit": "минут"
+        },
+        {
+            "value": 100,
+            "unit": "смс"
+        },
+        {
+            "value": 3,
+            "unit": "ГБ"
+        }
+    ],
+    "firstParams": {
+        "title": "Параметры",
+        "caption": "",
+        "items": [
+            {
+                "title": "VIP-тариф",
+                "caption": "Привилегии обслуживания и другое",
+                "svgIcon": <MegafonTv />
+            },
+            {
+                "title": "МегаФон ТВ",
+                "caption": "Безлимитный трафик и пакеты кино, сериалов и ТВ-каналов на любой вкус",
+                "svgIcon": <MegafonTv />
+            }
+        ]
+    },
+    "secondParams": [
+        {
+            "title": "Кэшбэк 20%",
+            "footnote": "Участвуйте в программе и тратьте кэшбэк на сервисы и покупки в салонах и интернет-магазине МегаФона",
+            "value": 0,
+            "unit": "",
+            "svgIcon": <MegafonTv />
+        },
+        {
+            "title": "Безлимитные SMS",
+            "footnote": "",
+            "value": 55,
+            "unit": "₽ за 30 дней",
+            "svgIcon": <MegafonTv />
+        }
+    ],
+    "cashback": {
+        "title": "Кэшбэк",
+        "value": 20,
+        "unit": "%"
+    },
+    "info": {
+        "billingIds": [],
+        "sms": "05007897",
+        "smsText": "ДА",
+        "smsSite": null,
+        "ivr": "05007897",
+        "ussd": "<span class=\"c-number-call\"><b class=\"asterisk\">*</b><b class=\"num\">789</b><span class=\"c-number-call\"><b class=\"asterisk\">*</b><b class=\"num\">7</b><b class=\"dash\">#</b><b class=\"pipe\"></b></span>",
+        "lkLink": "https://lk.megafon.ru/tariffs/",
+        "title": "Включайся! Смотри",
+        "id": 1598
+    }
+};
+```

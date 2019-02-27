@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTileCashback /> it renders ProductTileCashback 1`] = `
+<div
+  className="mfui-product-tile-cashback"
+>
+  <span
+    className="mfui-product-tile-cashback__text"
+  >
+    title
+     
+    23
+     
+    unit
+  </span>
+</div>
+`;
