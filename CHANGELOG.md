@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.1
+### Fixed
+- **docz**
+    - fix build ignoring import order warnings
+
 ## Release 1.3.0-beta.0
 ### Added
 - **components**
