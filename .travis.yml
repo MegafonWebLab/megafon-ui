@@ -15,27 +15,5 @@ before_script:
 script:
   - npm run lint
   - npm run coverage
+  - npm run docs:build
 
-before_deploy:
-  - npm run docz:build
-
-deploy:
-  - provider: npm
-    email: "$NPM_EMAIL"
-    api_key: "$NPM_TOKEN"
-    skip_cleanup: true
-    on:
-      tags: true
-      node_js: "10"
-
-  - provider: pages
-    github-token: "$GITHUB_TOKEN"
-    skip-cleanup: true
-    local-dir: "docs"
-    keep-history: true
-    on:
-      branch: master
-      node_js: "10"
-
-after_script:
-  - codecov
