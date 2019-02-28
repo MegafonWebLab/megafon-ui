@@ -1,6 +1,6 @@
 # Changelog
 
-## Unrelease 1.3.0-beta.3
+## Release 1.3.0-beta.3
 ### Changed
 - **Carousel**
     - change file resolution from jsx to tsx
