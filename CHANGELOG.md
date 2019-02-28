@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.2
+### Fixed
+- **ProductTile**
+    - fix ts errors "is declared but its value is never read"
+
 ## Release 1.3.0-beta.1
 ### Fixed
 - **docz**
