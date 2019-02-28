@@ -233,7 +233,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickBubble && onClickBubble({ ...info! });
     }
 
-    handleChangeCalls = (e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
+    handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
         const { trafficValue } = this.state;
         const currentPack = this.getCurrentPack(currentValue, trafficValue);
@@ -250,7 +250,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         return true;
     }
 
-    handleChangeTraffic = (e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
+    handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
 
         const { callsValue } = this.state;
