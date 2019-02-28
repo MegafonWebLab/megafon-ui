@@ -1,5 +1,6 @@
 import { css } from 'docz-plugin-css';
 import { resolve, basename } from 'path';
+import FilterWarningsPlugin from 'webpack-filter-warnings-plugin';
 
 module.exports = {
     title: 'MegaFon UI',
@@ -53,6 +54,13 @@ module.exports = {
                 }),
             ],
         };
+
+        config.plugins.push(
+            new FilterWarningsPlugin({
+                exclude: /mini-css-extract-plugin[^]*Conflicting order between:/
+            })
+        );
+
         return config;
     }
 };
