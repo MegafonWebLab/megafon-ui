@@ -23,6 +23,9 @@ export const items = [
 
 <Playground wrapper={Wrapper}>
     <ProductSwitcher items={items} onChange={() => {return true}}/>
+    <div style={{ width: '300px', margin: '20px 0 0 0' }}>
+        <ProductSwitcher items={items} theme="tariff-showcase" onChange={() => {return true}}/>
+    </div>
 </Playground>
 
 ## Included props

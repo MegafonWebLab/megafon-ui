@@ -4,12 +4,18 @@ import { cnCreate } from '../../utils/cn';
 import './CarouselArrow.less';
 import Arrow from 'icons/System/16/Arrow_forward_16.svg';
 
+interface ICarouselArrowProps {
+    className: string;
+    onClickArrow: any;
+    onClick: any;
+}
+
 const cn = cnCreate('mfui-carousel-arrow');
-class CarouselArrow extends React.Component {
+class CarouselArrow extends React.Component<ICarouselArrowProps> {
     static propTypes = {
         className: PropTypes.string,
         onClickArrow: PropTypes.func,
-        onClick: PropTypes.func
+        onClick: PropTypes.func,
     };
 
     handleClick = () => {

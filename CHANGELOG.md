@@ -1,5 +1,16 @@
 # Changelog
 
+## Unrelease 1.3.0-beta.3
+### Changed
+- **Carousel**
+    - change file resolution from jsx to tsx
+- **CarouselArrow**
+    - change file resolution from jsx to tsx
+- **ProductTileRest**
+    - change file resolution from jsx to tsx
+- **ProductSwitcher**
+    - fix range style
+
 ## Release 1.3.0-beta.2
 ### Fixed
 - **ProductTile**

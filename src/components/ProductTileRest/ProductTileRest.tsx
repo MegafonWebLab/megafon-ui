@@ -6,8 +6,23 @@ import Header from '../Header/Header';
 import TextLink from '../TextLink/TextLink';
 import Button from '../Button/Button';
 
+interface IProductTileRestProps {
+    title: string;
+    link: string;
+    description: string;
+    buyLink: string;
+    payment: any;
+    packs: any;
+    firstParams: any;
+    secondParams: any;
+    info: any;
+    onClickConnect: any;
+    onClickBuy: any;
+    onClickMore: any;
+}
+
 const cn = cnCreate('mfui-product-tile-rest');
-class ProductTileRest extends React.Component {
+class ProductTileRest extends React.Component<IProductTileRestProps> {
     static propTypes = {
         title: PropTypes.string,
         link: PropTypes.string,
@@ -15,24 +30,24 @@ class ProductTileRest extends React.Component {
         buyLink: PropTypes.string,
         payment: PropTypes.shape({
             value: PropTypes.number,
-            unit: PropTypes.string
+            unit: PropTypes.string,
         }),
         packs: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
-            unit: PropTypes.string
+            unit: PropTypes.string,
         })),
         firstParams: PropTypes.shape({
             title: PropTypes.string,
             caption: PropTypes.string,
             icons: PropTypes.arrayOf(PropTypes.shape({
                 title: PropTypes.string,
-                svgIcon: PropTypes.element
+                svgIcon: PropTypes.element,
             })),
         }),
         secondParams: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string,
             value: PropTypes.number,
-            unit: PropTypes.string
+            unit: PropTypes.string,
         })),
         info: PropTypes.object,
         onClickConnect: PropTypes.func,
@@ -44,13 +59,13 @@ class ProductTileRest extends React.Component {
         const { info, onClickConnect } = this.props;
 
         onClickConnect && onClickConnect(info);
-    };
+    }
 
     handleClickBuy = () => {
         const { info, onClickBuy } = this.props;
 
         onClickBuy && onClickBuy(info);
-    };
+    }
 
     handleClickMore = () => {
         const { info, onClickMore } = this.props;
@@ -66,12 +81,12 @@ class ProductTileRest extends React.Component {
                 {!!items.length &&
                     <div className={cn('messangers-list')}>
                         {items.map((icon, index) => {
-                            const { title, svgIcon } = icon;
+                            const { iconTitle, svgIcon } = icon;
 
                             return (
                                 <div
                                     className={cn('reward-icon')}
-                                    key={title + svgIcon + index}
+                                    key={iconTitle + svgIcon + index}
                                 >
                                     {svgIcon}
                                 </div>
@@ -114,16 +129,16 @@ class ProductTileRest extends React.Component {
     renderShowcase() {
         const {
             payment: { value, unit },
-            packs
+            packs,
         } =  this.props;
 
         return (
             <React.Fragment>
                 {(value || value === 0) && <div className={cn('price')}>{`${value} ${unit}`}</div>}
                 {packs.map((param, index) => {
-                    const { value, unit } = param;
+                    const { paramValue, paramUnit } = param;
 
-                    return <div className={cn('pack')} key={value + unit + index}>{`${value} ${unit}`}</div>;
+                    return <div className={cn('pack')} key={paramValue + paramUnit + index}>{`${value} ${unit}`}</div>;
                 })}
             </React.Fragment>
         );
@@ -139,9 +154,9 @@ class ProductTileRest extends React.Component {
                     <TextLink className={cn('detail-link')} href={link} onClick={this.handleClickMore}>
                         Подробнее
                     </TextLink>
-                    {this.renderShowcase(cn)}
-                    {this.renderIcons(cn)}
-                    {this.renderOptions(cn)}
+                    {this.renderShowcase()}
+                    {this.renderIcons()}
+                    {this.renderOptions()}
                     {description && <div className={cn('description')}>{description}</div>}
                 </div>
                 <div className={cn('buy')}>
@@ -162,6 +177,6 @@ class ProductTileRest extends React.Component {
             </div>
         );
     }
-};
+}
 
 export default ProductTileRest;
