@@ -6,6 +6,7 @@ import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 const tariff = {
     buyButtonText: 'sdfsdf',
     connectButtonText: 'sdfsdf',
+    secondParamsHead: 'sdfsdf',
     'title': 'Включайся! Смотри',
     'topBadgeTitle': 'sdfsdf',
     'link': '/tariffs/vklyuchaysya/smotri.html',

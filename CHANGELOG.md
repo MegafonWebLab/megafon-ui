@@ -8,6 +8,7 @@
 - **ProductTile**
     - fix align gray area
     - fix cashback display
+    - add secondParamsHead props
 - **ProductTileRest**
     - fix width
 
