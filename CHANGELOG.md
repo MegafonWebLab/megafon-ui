@@ -1,6 +1,6 @@
 # Changelog
 
-## Unrelease 1.3.0-beta.4
+## Release 1.3.0-beta.4
 ### Changed
 - **Carousel**
     - fix items width on mobile
