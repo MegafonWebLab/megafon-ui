@@ -11,6 +11,8 @@
     - add secondParamsHead props
 - **ProductTileRest**
     - fix width
+- **ProductTilePrice**
+    - fix align gray area
 
 ## Release 1.3.0-beta.3
 ### Changed
