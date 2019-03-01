@@ -22,6 +22,7 @@
     }
 
     &__old-price {
+        visibility: hidden;
         position: relative;
         font-size: 15px;
         margin-right: 6px;
@@ -56,6 +57,10 @@
         }
     }
 
+    &_discount &__old-price {
+        visibility: visible;
+    }
+
     &__old-price-value {
         opacity: 0.5;
     }
@@ -72,5 +77,10 @@
         font-size: 12px;
         font-weight: normal;
         line-height: 16px;
+        visibility: hidden;
+    }
+
+    &_discount &__discount-condition {
+        visibility: visible;
     }
 }

@@ -1,5 +1,19 @@
 # Changelog
 
+## Unrelease 1.3.0-beta.4
+### Changed
+- **Carousel**
+    - fix items width on mobile
+    - add responsive props
+- **ProductTile**
+    - fix align gray area
+    - fix cashback display
+    - add secondParamsHead props
+- **ProductTileRest**
+    - fix width
+- **ProductTilePrice**
+    - fix align gray area
+
 ## Release 1.3.0-beta.3
 ### Changed
 - **Carousel**

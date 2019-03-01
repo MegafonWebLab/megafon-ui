@@ -7,7 +7,7 @@ import { IOption } from './ProductTile';
 
 interface IProductTileOptionsProps {
     /** Has head */
-    head?: boolean;
+    head?: string;
     /** Options */
     options: IOption[];
     /** Handle bubble */
@@ -17,7 +17,7 @@ interface IProductTileOptionsProps {
 const cn = cnCreate('mfui-product-tile-options');
 class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
     static propTypes = {
-        head: PropTypes.bool,
+        head: PropTypes.string,
         options: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string,
             caption: PropTypes.stirng,
@@ -75,7 +75,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
 
         return (
             <div className={cn('')}>
-                {head && <div className={cn('head')}>Доступные опции:</div>}
+                {!!head && <div className={cn('head')}>{head}</div>}
                 <div className={cn('wrapper')}>
                     {options.map((option, index) => {
                         const { title, caption, value, unit, svgIcon, footnote } = option;

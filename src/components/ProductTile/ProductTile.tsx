@@ -69,6 +69,8 @@ interface IProductTileProps {
     title: string;
     /** Top badge title */
     topBadgeTitle?: string;
+    /** Second params head */
+    secondParamsHead?: string;
     /** Link */
     link: string;
     /** Buy link */
@@ -116,6 +118,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     static propTypes = {
         title: PropTypes.string.isRequired,
         topBadgeTitle: PropTypes.string,
+        secondParamsHead: PropTypes.string,
         link: PropTypes.string.isRequired,
         buyLink: PropTypes.string.isRequired,
         payment: PropTypes.shape({
@@ -352,6 +355,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             buyButtonText,
             connectButtonText,
             topBadgeTitle,
+            secondParamsHead,
         } = this.props;
         const { payment, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
@@ -362,13 +366,13 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                 <div className={cn('content')}>
                     <h2 className={cn('title')}>{title}</h2>
                     {this.renderLink()}
-                    {!!cashback && <Cashback {...cashback} />}
+                    <Cashback {...cashback} />
                     <Price {...payment}/>
                     <div className={cn('constructor')}>
                         {isServicePacks ? this.renderDynamic() : this.renderStatic()}
                         <Options options={firstParams.items} />
                     </div>
-                    <Options options={options} head onClickBubble={this.handleClickBubble}/>
+                    <Options options={options} head={secondParamsHead} onClickBubble={this.handleClickBubble}/>
                 </div>
                 <Buy
                     href={buyLink}

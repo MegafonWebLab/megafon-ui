@@ -7,7 +7,7 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
   <div
     className="mfui-product-tile-options__head"
   >
-    Доступные опции:
+    sdfsdfsdf
   </div>
   <div
     className="mfui-product-tile-options__wrapper"

@@ -110,7 +110,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
       />
     </div>
     <ProductTileOptions
-      head={true}
+      head="sdfsdf"
       onClickBubble={[Function]}
       options={
         Array [

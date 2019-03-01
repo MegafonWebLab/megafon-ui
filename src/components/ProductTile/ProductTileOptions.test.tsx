@@ -4,7 +4,7 @@ import ProductTileOptions from './ProductTileOptions';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 
 const props = {
-    head: true,
+    head: 'sdfsdfsdf',
     options: [{
         title: 'title',
         caption: 'caption',

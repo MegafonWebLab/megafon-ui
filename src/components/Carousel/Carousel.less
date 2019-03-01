@@ -75,11 +75,24 @@
     }
 
     &-slide {
-        flex: 1 1 auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+        display: flex;
+        flex-basis: 100px;
+        padding-right: 20px;
     }
     &-slide > div {
-        height: 100%;
-        min-height: 100%;
-    }
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 208px;
 
+        @media @mobileSM {
+            min-width: 212px;
+        }
+
+        @media @desktopMU {
+            min-width: 265px;
+        }
+    }
 }
