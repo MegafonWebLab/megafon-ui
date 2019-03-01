@@ -2,7 +2,7 @@
 
 exports[`<ProductTilePrice /> it renders ProductTilePrice 1`] = `
 <div
-  className="mfui-product-tile-price"
+  className="mfui-product-tile-price mfui-product-tile-price_discount"
 >
   <div
     className="mfui-product-tile-price__discount-condition"

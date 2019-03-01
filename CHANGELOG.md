@@ -1,5 +1,15 @@
 # Changelog
 
+## Unrelease 1.3.0-beta.4
+### Changed
+- **Carousel**
+    - fix items width on mobile
+    - add responsive props
+- **ProductTile**
+    - fix align gray area
+- **ProductTileRest**
+    - fix width
+
 ## Release 1.3.0-beta.3
 ### Changed
 - **Carousel**
