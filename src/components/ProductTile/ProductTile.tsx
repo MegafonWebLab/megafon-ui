@@ -362,7 +362,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                 <div className={cn('content')}>
                     <h2 className={cn('title')}>{title}</h2>
                     {this.renderLink()}
-                    {!!cashback && <Cashback {...cashback} />}
+                    <Cashback {...cashback} />
                     <Price {...payment}/>
                     <div className={cn('constructor')}>
                         {isServicePacks ? this.renderDynamic() : this.renderStatic()}

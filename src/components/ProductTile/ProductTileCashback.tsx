@@ -23,6 +23,10 @@ class ProductTileCashback extends React.Component<IProductTileCashbackProps> {
     render() {
         const { title, value, unit } = this.props;
 
+        if (!title && !value && !unit) {
+            return null;
+        }
+
         return (
             <div className={cn('')}>
                 <span className={cn('text')}>

@@ -7,6 +7,7 @@
     - add responsive props
 - **ProductTile**
     - fix align gray area
+    - fix cashback display
 - **ProductTileRest**
     - fix width
 
