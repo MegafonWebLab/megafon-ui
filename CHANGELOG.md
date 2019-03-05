@@ -17,6 +17,16 @@
 ### Changed
 - **Carousel**
     - remove responsive props
+    - edit styles for pagination
+- **ProductTileHint**
+    - add border for hint
+- **ProductTile**
+    - add shadow for hover
+### Fixed
+- **ProductTileBuy**
+    - remove text overflow in IE10
+- **ProductTileOptions**
+    - remove text overflow in IE10
 
 ## Release 1.3.0-beta.4
 ### Changed
