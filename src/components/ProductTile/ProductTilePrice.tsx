@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './style/ProductTilePrice.less';
+import AnimationValue from './ProductTileValue';
 
 interface IProductTilePriceProps {
     /** value */
@@ -25,6 +26,8 @@ class ProductTilePrice extends React.Component<IProductTilePriceProps> {
 
     render() {
         const { value, unitExtra, unitValue, discount } = this.props;
+        const valueElem = <AnimationValue value={`${String(value)} ${unitValue}`} />;
+        const unitElem = <span className={cn('payment-period')}>{unitExtra}</span>;
 
         return (
             <div className={cn('', { discount: !!discount })}>
@@ -33,7 +36,7 @@ class ProductTilePrice extends React.Component<IProductTilePriceProps> {
                     <span className={cn('old-price-value')}>{discount} {unitValue}</span>
                 </span>
                 <span className={cn('actual-price')}>
-                    {value} {unitValue} <span className={cn('payment-period')}>{unitExtra}</span>
+                    {valueElem} {unitElem}
                 </span>
             </div>
         );

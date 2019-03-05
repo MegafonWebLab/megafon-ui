@@ -23,9 +23,9 @@ exports[`<ProductTilePrice /> it renders ProductTilePrice 1`] = `
   <span
     className="mfui-product-tile-price__actual-price"
   >
-    23423
-     
-    uniteValue
+    <ProductTileValue
+      value="23423 uniteValue"
+    />
      
     <span
       className="mfui-product-tile-price__payment-period"

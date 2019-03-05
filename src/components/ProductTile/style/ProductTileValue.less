@@ -1,0 +1,33 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-product-tile-value');
+
+@{b} {
+    position: relative;
+    white-space: nowrap;
+
+    &__prev {
+        opacity: 1;
+        transition: none;
+    }
+    &__prev_hide {
+        opacity: 0;
+        transition: opacity 0.5s;
+        position: absolute;
+        left: 0;
+    }
+    &_h-align_center &__prev_hide {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__current {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+    &__current_hide {
+        opacity: 0;
+        transition: none;
+        position: absolute;
+    }
+}

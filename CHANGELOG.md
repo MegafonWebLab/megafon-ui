@@ -1,5 +1,15 @@
 # Changelog
 
+## Unrelease 1.3.0-beta.7
+### Added
+- **ProductTileValue**
+    - component to animate values
+### Changed
+- **ProductTileDynamic**
+    - use ProductTileValue component for traffic and calls values
+- **ProductTilePrice**
+    - use ProductTileValue component for price value
+
 ## Release 1.3.0-beta.6
 ### Changed
 - **Carousel**

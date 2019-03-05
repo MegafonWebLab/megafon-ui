@@ -7,7 +7,10 @@ exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
   <div
     className="mfui-product-tile-dynamic__constructor-pack"
   >
-    23423 unit
+    <ProductTileValue
+      hAlign="center"
+      value="23423 unit"
+    />
   </div>
   <ProductSwitcher
     className="mfui-product-tile-dynamic__constructor-range"
@@ -48,7 +51,10 @@ exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
   <div
     className="mfui-product-tile-dynamic__constructor-pack"
   >
-     234234 unit
+    <ProductTileValue
+      hAlign="center"
+      value="234234 unit"
+    />
   </div>
 </div>
 `;

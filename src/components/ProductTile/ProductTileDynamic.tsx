@@ -4,6 +4,7 @@ import { cnCreate } from '../../utils/cn';
 import './style/ProductTileDynamic.less';
 import ProductSwitcher from '../ProductSwitcher/ProductSwitcher';
 import { IServicePack, ISwitcher } from './ProductTile';
+import AnimationValue from './ProductTileValue';
 
 interface IProductTileDynamicProps {
     /** Current pack */
@@ -43,7 +44,10 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
         return (
             <div className={cn('')}>
                 <div className={cn('constructor-pack')}>
-                    {`${currentPack.calls!.value} ${currentPack.calls!.unit}`}
+                    <AnimationValue
+                        hAlign="center"
+                        value={`${currentPack.calls!.value} ${currentPack.calls!.unit}`}
+                    />
                 </div>
                 <ProductSwitcher
                     className={cn('constructor-range')}
@@ -58,7 +62,10 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
                     onChange={onChangeTraffic}
                 />
                 <div className={cn('constructor-pack')}>
-                    {` ${currentPack.traffic!.value} ${currentPack.traffic!.unit}`}
+                    <AnimationValue
+                        hAlign="center"
+                        value={`${currentPack.traffic!.value} ${currentPack.traffic!.unit}`}
+                    />
                 </div>
             </div>
         );
