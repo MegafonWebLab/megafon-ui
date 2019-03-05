@@ -13,6 +13,10 @@
     background-color: @clearWhite;
     padding: 32px 8px 16px;
 
+    &:hover {
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
     @media @mobileSM {
         &:not(:last-child) {
             margin-bottom: 24px;
@@ -38,6 +42,19 @@
     &__constructor {
         background-color: rgba(237, 237, 237, 0.5);
         padding: 24px 16px 16px;
+        margin-top: 10px;
+        position: relative;
+
+        &:before {
+            background-color: rgba(237, 237, 237, 0.5);
+            content: '';
+            height: 15px;
+            left: 50%;
+            position: absolute;
+            top: -5px;
+            transform: translateX(-50%) rotate(45deg);
+            width: 15px;
+        }
 
         @media @mobileB {
             padding: 16px 8px;

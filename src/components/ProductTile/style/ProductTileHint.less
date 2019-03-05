@@ -8,7 +8,8 @@
     margin: auto;
     left: 0;
     right: 0;
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    border-top: 2px solid @green;
+    border-bottom: 2px solid @green;
     width: 86%;
 
     @media @mobileB {
@@ -41,16 +42,17 @@
         &:before {
             content: '';
             position: absolute;
+            border-radius: 1px;
             top: 6px;
             width: 30px;
             height: 30px;
             transform: rotate(45deg);
             background-color: white;
-            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0px 0px 2px #00B956;
 
             @media @mobileB {
                 width: 46px;
-                height: 46px;
+                height: 48px;
                 top: 10px;
             }
         }
@@ -60,7 +62,7 @@
             border-top-right-radius: 10px;
 
             @media @mobileB {
-                right: -24px;
+                right: -23px;
             }
         }
 
@@ -69,7 +71,7 @@
             border-bottom-left-radius: 10px;
 
             @media @mobileB {
-                left: -24px;
+                left: -23px;
             }
         }
     }
