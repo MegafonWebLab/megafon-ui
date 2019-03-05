@@ -1,5 +1,10 @@
 # Changelog
 
+## Unrelease 1.3.0-beta.5
+### Changed
+- **Carousel**
+    - remove responsive props
+
 ## Release 1.3.0-beta.4
 ### Changed
 - **Carousel**

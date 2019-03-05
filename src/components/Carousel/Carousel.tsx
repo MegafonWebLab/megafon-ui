@@ -8,7 +8,6 @@ import Slider from 'react-slick';
 interface ICarouselProps {
     className: string;
     options: any;
-    responsive: boolean;
     children: any;
     onClickNext: any;
     onClickPrev: any;
@@ -26,7 +25,6 @@ class Carousel extends React.Component<ICarouselProps> {
                 PropTypes.array,
             ])
         ),
-        responsive: PropTypes.bool,
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
@@ -47,7 +45,7 @@ class Carousel extends React.Component<ICarouselProps> {
     }
 
     render() {
-        const { className, options, responsive, children } = this.props;
+        const { className, options, children } = this.props;
 
         return (
             <div className={cn('', {}, className)}>
@@ -55,7 +53,6 @@ class Carousel extends React.Component<ICarouselProps> {
                     {...options}
                     nextArrow={<CarouselArrow {...options} onClickArrow={this.handleClickNext} />}
                     prevArrow={<CarouselArrow {...options} onClickArrow={this.handleClickPrev} />}
-                    responsive={responsive}
                 >
                     {children}
                 </Slider>
