@@ -6,6 +6,14 @@
 @{b} {
     padding: 50px 10px;
     overflow: hidden;
+    &_dots-color_white {
+        @{s}-dots li button {
+            background-color: @clearWhite;
+        }
+        @{s}-dots @{s}-active > button {
+            background-color: @green;
+        }
+    }
 }
 
 @{s} {
@@ -38,6 +46,8 @@
         display: flex !important;
         justify-content: center;
         margin-top: 32px;
+        list-style: none;
+        padding-left: 0;
 
         & > li {
             &:not(:last-child) {

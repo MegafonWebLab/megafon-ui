@@ -1,8 +1,13 @@
 # Changelog
 
-## Unrelease 1.3.0-beta.6
+## Release 1.3.0-beta.6
 ### Changed
+- **Carousel**
+    - edit styles for pagination
+- **ProductTileHint**
+    - add border for hint
 - **ProductTile**
+    - add shadow for hover
     - fix servicePacks buyLink
     - change secondParams value type
     - add link to title
@@ -12,6 +17,11 @@
     - change options value type
 - **TextLink**
     - add underline style
+### Fixed
+- **ProductTileBuy**
+    - remove text overflow in IE10
+- **ProductTileOptions**
+    - remove text overflow in IE10
 
 ## Release 1.3.0-beta.5
 ### Changed
