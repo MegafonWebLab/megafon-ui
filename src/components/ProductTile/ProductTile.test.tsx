@@ -52,14 +52,14 @@ const tariff = {
         {
             'title': 'Кэшбэк 20%',
             'footnote': 'Участвуйте в программе и тратьте кэшбэк',
-            'value': 0,
+            'value': '0',
             'unit': '',
             'svgIcon': <MegafonTv />,
         },
         {
             'title': 'Безлимитные SMS',
             'footnote': '',
-            'value': 55,
+            'value': '55',
             'unit': '₽ за 30 дней',
             'svgIcon': <MegafonTv />,
         },
@@ -102,14 +102,14 @@ const servicePacks = [
         'options': [
             {
                 'title': 'Безлимитные SMS',
-                'value': 55,
+                'value': '55',
                 'unit': '₽ за 30 дней',
                 'footnote': '',
                 'svgIcon': <MegafonTv />,
             },
             {
                 'title': 'Кэшбэк 20%',
-                'value': 0,
+                'value': '0',
                 'unit': '',
                 'footnote': 'Участвуйте в программе и тратьте кэшбэк ',
                 'svgIcon': <MegafonTv />,

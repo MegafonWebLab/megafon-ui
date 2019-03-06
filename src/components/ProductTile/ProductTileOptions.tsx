@@ -21,7 +21,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         options: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string,
             caption: PropTypes.stirng,
-            value: PropTypes.number,
+            value: PropTypes.string,
             unit: PropTypes.string,
             footnote: PropTypes.string,
             svgIcon: PropTypes.element,
@@ -51,7 +51,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         );
     }
 
-    renderContent(title: string, caption: string, value: number, unit: string): JSX.Element {
+    renderContent(title: string, caption: string, value: string, unit: string): JSX.Element {
         return (
             <div className={cn('content')}>
                 <div className={cn('title')}>

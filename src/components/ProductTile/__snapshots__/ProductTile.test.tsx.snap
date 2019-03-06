@@ -13,7 +13,16 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
     <h2
       className="mfui-product-tile__title"
     >
-      Включайся! Смотри
+      <TextLink
+        className="mfui-product-tile__title-link"
+        color="black"
+        href="/tariffs/vklyuchaysya/smotri.html"
+        onClick={[Function]}
+        underlineStyle="none"
+        underlineVisibility="hover"
+      >
+        Включайся! Смотри
+      </TextLink>
     </h2>
     <div
       className="mfui-product-tile__link-wrapper"
@@ -57,14 +66,14 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
                 "svgIcon": <test-file-stub />,
                 "title": "Безлимитные SMS",
                 "unit": "₽ за 30 дней",
-                "value": 55,
+                "value": "55",
               },
               Object {
                 "footnote": "Участвуйте в программе и тратьте кэшбэк ",
                 "svgIcon": <test-file-stub />,
                 "title": "Кэшбэк 20%",
                 "unit": "",
-                "value": 0,
+                "value": "0",
               },
             ],
             "payment": Object {
@@ -119,14 +128,14 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
             "svgIcon": <test-file-stub />,
             "title": "Безлимитные SMS",
             "unit": "₽ за 30 дней",
-            "value": 55,
+            "value": "55",
           },
           Object {
             "footnote": "Участвуйте в программе и тратьте кэшбэк ",
             "svgIcon": <test-file-stub />,
             "title": "Кэшбэк 20%",
             "unit": "",
-            "value": 0,
+            "value": "0",
           },
         ]
       }
@@ -135,7 +144,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
   <ProductTileBuy
     buyText="sdfsdf"
     connectText="sdfsdf"
-    href="/zakaz/?tariff=look&options=null"
+    href="&options=null"
     onClickBuy={[Function]}
     onClickConnect={[Function]}
   />

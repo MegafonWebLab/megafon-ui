@@ -10,7 +10,7 @@ interface ITextLinkProps {
     /** Underline visibility */
     underlineVisibility: 'hover' | 'always';
     /** Underline style */
-    underlineStyle: 'solid' | 'dashed' | 'border';
+    underlineStyle: 'solid' | 'dashed' | 'border' | 'none';
     /** Target - property tag <a> */
     target: '_self' | '_blank' | '_parent' | '_top';
     /** Link */
@@ -27,7 +27,7 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
     static propTypes = {
         color: PropTypes.oneOf(['white', 'black', 'gray', 'blue', 'green', 'inherit']),
         underlineVisibility: PropTypes.oneOf(['hover', 'always']),
-        underlineStyle: PropTypes.oneOf(['solid', 'dashed', 'border']),
+        underlineStyle: PropTypes.oneOf(['solid', 'dashed', 'border', 'none']),
         href: PropTypes.string,
         target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
         children: PropTypes.oneOfType([
