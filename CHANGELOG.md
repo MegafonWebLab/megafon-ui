@@ -1,5 +1,13 @@
 # Changelog
 
+## Unrelease 1.3.0-beta.6
+### Changed
+- **ProductTile**
+    - fix servicePacks buyLink
+    - change secondParams value type
+- **ProductTileOptions**
+    - change options value type
+
 ## Release 1.3.0-beta.5
 ### Changed
 - **Carousel**

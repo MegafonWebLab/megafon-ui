@@ -14,7 +14,7 @@ import Options from './ProductTileOptions';
 export interface IOption {
     title: string;
     caption?: string;
-    value?: number;
+    value?: string;
     unit?: string;
     footnote?: string;
     svgIcon?: JSX.Element;
@@ -135,7 +135,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         secondParams: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string,
             footnote: PropTypes.string,
-            value: PropTypes.number,
+            value: PropTypes.string,
             unit: PropTypes.string,
             svgIcon: PropTypes.element,
         })).isRequired,
@@ -164,7 +164,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             options: PropTypes.arrayOf(PropTypes.shape({
                 title: PropTypes.string,
                 caption: PropTypes.stirng,
-                value: PropTypes.number,
+                value: PropTypes.string,
                 unit: PropTypes.string,
                 footnote: PropTypes.string,
                 svgIcon: PropTypes.element,
@@ -202,7 +202,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             trafficValue: firstTrafficValueNum,
             payment: isServicePacks ? currentPack.payment! : props.payment,
             options: isServicePacks ? currentPack.options! : props.secondParams,
-            buyLink: isServicePacks ? props.buyLink + currentPack.buyLink! : props.buyLink,
+            buyLink: isServicePacks ? currentPack.buyLink! : props.buyLink,
         };
     }
 
@@ -272,13 +272,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     getRestState(currentPack: Partial<IServicePack>): object {
-        const { buyLink } = this.props;
-
         return {
             currentPack,
             payment: currentPack.payment!,
             options: currentPack.options!,
-            buyLink: buyLink + currentPack.buyLink!,
+            buyLink: currentPack.buyLink!,
         };
     }
 

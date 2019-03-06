@@ -8,7 +8,7 @@ const props = {
     options: [{
         title: 'title',
         caption: 'caption',
-        value: 234,
+        value: '234',
         unit: 'unit',
         footnote: 'footnote',
         svgIcon: <MegafonTv />,
