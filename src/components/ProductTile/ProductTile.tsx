@@ -121,6 +121,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         secondParamsHead: PropTypes.string,
         link: PropTypes.string.isRequired,
         buyLink: PropTypes.string.isRequired,
+        buyButtonText: PropTypes.string.isRequired,
+        connectButtonText: PropTypes.string.isRequired,
         payment: PropTypes.shape({
             value: PropTypes.number,
             unitExtra: PropTypes.string,
@@ -178,6 +180,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         })),
         info: PropTypes.object,
         onClickConnect: PropTypes.func,
+        onClickBuy: PropTypes.func,
+        onClickMore: PropTypes.func,
+        onClickBubble: PropTypes.func,
     };
 
     static defaultProps: Pick<IProductTileProps, 'servicePacks'> = {

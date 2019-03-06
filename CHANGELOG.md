@@ -5,10 +5,17 @@
 - **ProductTileValue**
     - component to animate values
 ### Changed
+- **ProductTile**
+    - add propTypes for handlers
 - **ProductTileDynamic**
     - use ProductTileValue component for traffic and calls values
 - **ProductTilePrice**
     - use ProductTileValue component for price value
+- **ProductTileBuy**
+    - hide button when href is missing
+- **ProductTileRest**
+    - fix packs variable names
+
 
 ## Release 1.3.0-beta.6
 ### Changed

@@ -8,8 +8,6 @@ interface IProductTileValueProps {
     value: string;
     /** hAlign */
     hAlign?: 'center';
-    /** Client */
-    isServer?: boolean;
 }
 
 interface IProductTileValueState {
@@ -23,7 +21,6 @@ class ProductTileValue extends React.PureComponent<IProductTileValueProps, IProd
     static propTypes = {
         value: PropTypes.string.isRequired,
         hAlign: PropTypes.oneOf(['center']),
-        isServer: PropTypes.bool,
     };
 
     constructor(props: IProductTileValueProps) {
@@ -46,10 +43,8 @@ class ProductTileValue extends React.PureComponent<IProductTileValueProps, IProd
         };
     }
 
-    componentDidUpdate(_prevProps: IProductTileValueProps) {
-        const { isServer } = this.props;
-
-        if (isServer) {
+    componentDidUpdate() {
+        if (typeof window === undefined) {
             return;
         }
 

@@ -35,16 +35,18 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
 
         return (
             <div className={cn('', {}, className)}>
-                <Button
-                    className={cn('button')}
-                    passiveColor="green"
-                    hoverColor="green"
-                    sizeAll="medium"
-                    href={href}
-                    onClick={onClickBuy}
-                >
-                    {buyText}
-                </Button>
+                {href &&
+                    <Button
+                        className={cn('button')}
+                        passiveColor="green"
+                        hoverColor="green"
+                        sizeAll="medium"
+                        href={href}
+                        onClick={onClickBuy}
+                    >
+                        {buyText}
+                    </Button>
+                }
                 <TextLink className={cn('detail-link')} onClick={onClickConnect}>
                     {connectText}
                 </TextLink>

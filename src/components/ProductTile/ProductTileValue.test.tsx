@@ -4,7 +4,6 @@ import ProductTileValue from './ProductTileValue';
 
 const props = {
     value: 'werwer',
-    isServer: false,
 };
 
 describe('<ProductTileValue />', () => {
