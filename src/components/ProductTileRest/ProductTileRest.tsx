@@ -46,7 +46,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         }),
         secondParams: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string,
-            value: PropTypes.number,
+            value: PropTypes.string,
             unit: PropTypes.string,
         })),
         info: PropTypes.object,

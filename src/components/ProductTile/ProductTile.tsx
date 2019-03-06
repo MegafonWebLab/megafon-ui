@@ -331,6 +331,24 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         );
     }
 
+    renderTitle() {
+        const { title, link } = this.props;
+
+        return (
+            <h2 className={cn('title')}>
+                <TextLink
+                    className={cn('title-link')}
+                    href={link}
+                    underlineStyle="none"
+                    color="black"
+                    onClick={this.handleClickMore}
+                >
+                    {title}
+                </TextLink>
+            </h2>
+        );
+    }
+
     renderLink() {
         const { link } = this.props;
 
@@ -346,7 +364,6 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     render() {
         const {
             servicePacks,
-            title,
             cashback,
             firstParams,
             className,
@@ -362,7 +379,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             <div className={cn('', { constructor: isServicePacks }, className)}>
                 {isServicePacks && !!topBadgeTitle && <Hint title={topBadgeTitle}/>}
                 <div className={cn('content')}>
-                    <h2 className={cn('title')}>{title}</h2>
+                    {this.renderTitle()}
                     {this.renderLink()}
                     <Cashback {...cashback} />
                     <Price {...payment}/>

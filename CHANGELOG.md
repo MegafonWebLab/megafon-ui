@@ -5,8 +5,13 @@
 - **ProductTile**
     - fix servicePacks buyLink
     - change secondParams value type
+    - add link to title
+- **ProductTileRest**
+    - change secondParams value type
 - **ProductTileOptions**
     - change options value type
+- **TextLink**
+    - add underline style
 
 ## Release 1.3.0-beta.5
 ### Changed
