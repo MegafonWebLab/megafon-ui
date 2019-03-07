@@ -44,10 +44,10 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
       value={20}
     />
     <ProductTilePrice
-      discount={0}
+      discount="0"
       unitExtra="за 30 дней"
       unitValue="₽"
-      value={450}
+      value="450"
     />
     <div
       className="mfui-product-tile__constructor"
@@ -77,10 +77,10 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
               },
             ],
             "payment": Object {
-              "discount": 0,
+              "discount": "0",
               "unitExtra": "за 30 дней",
               "unitValue": "₽",
-              "value": 450,
+              "value": "450",
             },
             "traffic": Object {
               "unit": "ГБ",
@@ -147,6 +147,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
     href="&options=null"
     onClickBuy={[Function]}
     onClickConnect={[Function]}
+    showConnectButton={true}
   />
 </div>
 `;

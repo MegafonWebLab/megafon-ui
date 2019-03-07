@@ -13,6 +13,7 @@ interface IProductTileBuyProps {
     /** Buy button text */
     buyText: string;
     /** Connect button text */
+    showConnectButton?: boolean;
     connectText: string;
     /** Connect hander */
     onClickConnect?(): void;
@@ -31,7 +32,15 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
     };
 
     render() {
-        const { className, href, buyText, connectText, onClickConnect, onClickBuy } = this.props;
+        const {
+            className,
+            href,
+            buyText,
+            connectText,
+            onClickConnect,
+            onClickBuy,
+            showConnectButton,
+        } = this.props;
 
         return (
             <div className={cn('', {}, className)}>
@@ -47,9 +56,11 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
                         {buyText}
                     </Button>
                 }
-                <TextLink className={cn('detail-link')} onClick={onClickConnect}>
-                    {connectText}
-                </TextLink>
+                {showConnectButton &&
+                    <TextLink className={cn('detail-link')} onClick={onClickConnect}>
+                        {connectText}
+                    </TextLink>
+                }
             </div>
         );
     }

@@ -24,6 +24,7 @@
     &__old-price {
         visibility: hidden;
         position: relative;
+        display: inline-block;
         font-size: 15px;
         margin-right: 6px;
         line-height: 24px;
@@ -67,8 +68,7 @@
 
     &__actual-price {
         @media @mobileB {
-            display: inline-block;
-            width: 100%;
+            display: block;
             text-align: center;
         }
     }

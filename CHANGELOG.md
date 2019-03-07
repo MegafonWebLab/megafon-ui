@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.0-beta.10
+### Changed
+- **ProductTile**
+    - add showConnectButton props
+- **ProductTilePrice**
+    - change output discount
+
 ## Release 1.3.0-beta.9
 ### Fixed
 - **ProductTile**
@@ -16,7 +23,7 @@
 ### Added
 - **ProductTileValue**
     - component to animate values
-### Changed
+### Changedq
 - **ProductTile**
     - add propTypes for handlers
 - **ProductTileDynamic**

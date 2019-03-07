@@ -15,9 +15,7 @@ exports[`<ProductTilePrice /> it renders ProductTilePrice 1`] = `
     <span
       className="mfui-product-tile-price__old-price-value"
     >
-      23423
-       
-      uniteValue
+      23423 uniteValue
     </span>
   </span>
   <span
