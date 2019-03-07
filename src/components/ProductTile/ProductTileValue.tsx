@@ -44,7 +44,7 @@ class ProductTileValue extends React.PureComponent<IProductTileValueProps, IProd
     }
 
     componentDidUpdate() {
-        if (typeof window === undefined) {
+        if (typeof window === 'undefined') {
             return;
         }
 
