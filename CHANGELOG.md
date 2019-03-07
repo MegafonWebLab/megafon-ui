@@ -3,7 +3,7 @@
 ## Unreleased 1.3.0-beta.8
 ### Changed
 - **ProductTileRest**
-    -replaced icons output into DropdownSocialList component
+    - replaced icons output into DropdownSocialList component
 
 ## Release 1.3.0-beta.7
 ### Added
