@@ -19,13 +19,5 @@ exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
   >
     sdf
   </Button>
-  <TextLink
-    className="mfui-product-tile-buy__detail-link"
-    color="blue"
-    underlineStyle="solid"
-    underlineVisibility="hover"
-  >
-    werwer
-  </TextLink>
 </div>
 `;

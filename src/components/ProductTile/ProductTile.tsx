@@ -21,11 +21,10 @@ export interface IOption {
 }
 
 export interface IPayment {
-    value: number;
+    value: string;
     unitExtra: string;
     unitValue: string;
-    unit?: string;
-    discount: number;
+    discount?: string;
 }
 
 export interface IServicePack {
@@ -79,6 +78,8 @@ interface IProductTileProps {
     buyButtonText: string;
     /** Connect button text */
     connectButtonText: string;
+    /** Connect button text */
+    showConnectButton?: boolean;
     /** Payment */
     payment: IPayment;
     /** Packs */
@@ -92,7 +93,7 @@ interface IProductTileProps {
     /** Service packs */
     servicePacks?: Array<Partial<IServicePack>>;
     /** Info - object type - return with onClickConnect, onClickBuy */
-    info?: {};
+    info: {};
     /** Connect handler */
     onClickConnect?(info: {}): void;
     /** Buy handler */
@@ -123,12 +124,12 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         buyLink: PropTypes.string.isRequired,
         buyButtonText: PropTypes.string.isRequired,
         connectButtonText: PropTypes.string.isRequired,
+        showConnectButton: PropTypes.bool,
         payment: PropTypes.shape({
-            value: PropTypes.number,
+            value: PropTypes.string.isRequired,
             unitExtra: PropTypes.string,
             unitValue: PropTypes.string,
-            unit: PropTypes.string,
-            discount: PropTypes.number,
+            discount: PropTypes.string,
         }).isRequired,
         packs: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
@@ -172,10 +173,10 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                 svgIcon: PropTypes.element,
             })),
             payment: PropTypes.shape({
-                value: PropTypes.number,
+                value: PropTypes.string.isRequired,
                 unitExtra: PropTypes.string,
                 unitValue: PropTypes.string,
-                discount: PropTypes.number,
+                discount: PropTypes.string,
             }),
         })),
         info: PropTypes.object,
@@ -185,8 +186,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickBubble: PropTypes.func,
     };
 
-    static defaultProps: Pick<IProductTileProps, 'servicePacks'> = {
+    static defaultProps: Partial<IProductTileProps> = {
         servicePacks: [],
+        info: {},
     };
 
     constructor(props: IProductTileProps) {
@@ -217,7 +219,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const callsValue = calls ? calls.value : 0;
         const trafficValue = traffic ? traffic.value : 0;
 
-        onClickConnect && onClickConnect({ ...info!, callsValue, trafficValue });
+        onClickConnect && onClickConnect({ ...info, callsValue, trafficValue });
     }
 
     handleClickBuy = () => {
@@ -226,19 +228,19 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const callsValue = calls ? calls.value : 0;
         const trafficValue = traffic ? traffic.value : 0;
 
-        onClickBuy && onClickBuy({ ...info!, callsValue, trafficValue });
+        onClickBuy && onClickBuy({ ...info, callsValue, trafficValue });
     }
 
     handleClickMore = () => {
         const { onClickMore, info } = this.props;
 
-        onClickMore && onClickMore({ ...info! });
+        onClickMore && onClickMore({ ...info });
     }
 
     handleClickBubble = () => {
         const { onClickBubble, info } = this.props;
 
-        onClickBubble && onClickBubble({ ...info! });
+        onClickBubble && onClickBubble({ ...info });
     }
 
     handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
@@ -376,6 +378,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             connectButtonText,
             topBadgeTitle,
             secondParamsHead,
+            showConnectButton,
         } = this.props;
         const { payment, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
@@ -398,6 +401,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     href={buyLink}
                     buyText={buyButtonText}
                     connectText={connectButtonText}
+                    showConnectButton={showConnectButton}
                     onClickBuy={this.handleClickBuy}
                     onClickConnect={this.handleClickConnect}
                 />

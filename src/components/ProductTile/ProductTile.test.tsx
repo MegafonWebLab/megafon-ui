@@ -7,16 +7,17 @@ const tariff = {
     buyButtonText: 'sdfsdf',
     connectButtonText: 'sdfsdf',
     secondParamsHead: 'sdfsdf',
+    showConnectButton: true,
     'title': 'Включайся! Смотри',
     'topBadgeTitle': 'sdfsdf',
     'link': '/tariffs/vklyuchaysya/smotri.html',
     'buyLink': '/zakaz/?tariff=look',
     'payment': {
-        'value': 1000,
+        'value': '1000',
         'unitExtra': 'за 30 дней',
         'unitValue': '₽',
         'unit': '₽ за 30 дней',
-        'discount': 0,
+        'discount': '0',
     },
     'packs': [
         {
@@ -94,10 +95,10 @@ const servicePacks = [
             'unit': 'ГБ',
         },
         'payment': {
-            'value': 450,
+            'value': '450',
             'unitExtra': 'за 30 дней',
             'unitValue': '₽',
-            'discount': 0,
+            'discount': '0',
         },
         'options': [
             {
