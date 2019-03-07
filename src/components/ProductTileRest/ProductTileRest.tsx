@@ -136,9 +136,16 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             <React.Fragment>
                 {(value || value === 0) && <div className={cn('price')}>{`${value} ${unit}`}</div>}
                 {packs.map((param, index) => {
-                    const { paramValue, paramUnit } = param;
+                    const { value: paramValue, unit: paramUnit } = param;
 
-                    return <div className={cn('pack')} key={paramValue + paramUnit + index}>{`${value} ${unit}`}</div>;
+                    return (
+                        <div
+                            className={cn('pack')}
+                            key={paramValue + paramUnit + index}
+                        >
+                            {`${paramValue} ${paramUnit}`}
+                        </div>
+                    );
                 })}
             </React.Fragment>
         );

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTileValue /> it renders ProductTileValue 1`] = `
+<span
+  className="mfui-product-tile-value mfui-product-tile-value_h-align_center"
+>
+  <span
+    className="mfui-product-tile-value__prev mfui-product-tile-value__prev_hide"
+  />
+  <span
+    className="mfui-product-tile-value__current"
+  >
+    werwer
+  </span>
+</span>
+`;

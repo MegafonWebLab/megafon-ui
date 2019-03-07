@@ -62,7 +62,7 @@ export const tariff = {
     },
     "secondParams": [{
         "title": "Опция",
-        "value": 300,
+        "value": '300',
         "unit": "минут"
     }],
     "cashback": {
@@ -84,7 +84,9 @@ export const tariff = {
 };
 
 <Playground wrapper={Wrapper}>
-    <ProductTileRest {...tariff} />
+    <div style={{ width: '300px' }}>
+        <ProductTileRest {...tariff} />
+    </div>
 </Playground>
 
 ## Included props
@@ -136,14 +138,14 @@ export const tariff = {
         {
             "title": "Кэшбэк 20%",
             "footnote": "Участвуйте в программе и тратьте кэшбэк на сервисы и покупки в салонах и интернет-магазине МегаФона",
-            "value": 0,
+            "value": '0',
             "unit": "",
             "svgIcon": <MegafonTv />
         },
         {
             "title": "Безлимитные SMS",
             "footnote": "",
-            "value": 55,
+            "value": '55',
             "unit": "₽ за 30 дней",
             "svgIcon": <MegafonTv />
         }
