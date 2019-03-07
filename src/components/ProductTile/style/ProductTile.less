@@ -40,20 +40,23 @@
     }
 
     &__constructor {
-        background-color: rgba(237, 237, 237, 0.5);
+        background-color: lighten(@spbSky1, 0.5);
         padding: 24px 16px 16px;
         margin-top: 10px;
         position: relative;
 
         &:before {
-            background-color: rgba(237, 237, 237, 0.5);
+            border-top-color: lighten(@spbSky1, 0.5);
+            border-left-color: lighten(@spbSky1, 0.5);
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-width: 5px;
+            border-style: solid;
             content: '';
-            height: 15px;
             left: 50%;
             position: absolute;
-            top: -5px;
+            top: -4px;
             transform: translateX(-50%) rotate(45deg);
-            width: 15px;
         }
 
         @media @mobileB {
