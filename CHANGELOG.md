@@ -16,7 +16,6 @@
 - **ProductTileRest**
     - fix packs variable names
 
-
 ## Release 1.3.0-beta.6
 ### Changed
 - **Carousel**
