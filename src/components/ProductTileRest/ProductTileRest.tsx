@@ -5,6 +5,7 @@ import './ProductTileRest.less';
 import Header from '../Header/Header';
 import TextLink from '../TextLink/TextLink';
 import Button from '../Button/Button';
+import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
 interface IProductTileRestProps {
     title: string;
@@ -80,18 +81,11 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             <div className={cn('messangers')}>
                 {!!items.length &&
                     <div className={cn('messangers-list')}>
-                        {items.map((icon, index) => {
-                            const { iconTitle, svgIcon } = icon;
-
-                            return (
-                                <div
-                                    className={cn('reward-icon')}
-                                    key={iconTitle + svgIcon + index}
-                                >
-                                    {svgIcon}
-                                </div>
-                            );
-                        })}
+                        <DropdownSocialList
+                            icons={items}
+                            maxIconNumber={4}
+                            className={cn('options-list')}
+                        />
                     </div>
                 }
                 {title &&
