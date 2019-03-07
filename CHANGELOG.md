@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.0-beta.9
+### Fixed
+- **ProductTile**
+    - edit styles for gray area
+- **Carousel**
+    - edit top padding in carousel
+
 ## Release 1.3.0-beta.8
 ### Changed
 - **ProductTileRest**
