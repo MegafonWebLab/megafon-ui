@@ -1,6 +1,6 @@
 # Changelog
 
-## Unrelease 1.3.0-beta.7
+## Release 1.3.0-beta.7
 ### Added
 - **ProductTileValue**
     - component to animate values
