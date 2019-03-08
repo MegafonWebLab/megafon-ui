@@ -1,5 +1,13 @@
 # Changelog
 
+## Release 1.3.0-beta.11
+### Changed
+- **ProductTileValue**
+    - fix animation delay
+- **ProductTileRest**
+    - add showConnectButton props
+    - add discount
+
 ## Release 1.3.0-beta.10
 ### Changed
 - **ProductTile**

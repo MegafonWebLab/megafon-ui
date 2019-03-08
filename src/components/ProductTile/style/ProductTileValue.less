@@ -5,6 +5,8 @@
 @{b} {
     position: relative;
     white-space: nowrap;
+    display: inline-block;
+    text-align: center;
 
     &__prev {
         opacity: 1;
@@ -14,9 +16,6 @@
         opacity: 0;
         transition: opacity 0.5s;
         position: absolute;
-        left: 0;
-    }
-    &_h-align_center &__prev_hide {
         left: 50%;
         transform: translateX(-50%);
     }
@@ -24,6 +23,7 @@
     &__current {
         opacity: 1;
         transition: opacity 0.5s;
+        display: inline-block;
     }
     &__current_hide {
         opacity: 0;

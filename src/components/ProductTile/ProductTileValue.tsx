@@ -44,13 +44,15 @@ class ProductTileValue extends React.PureComponent<IProductTileValueProps, IProd
     }
 
     componentDidUpdate() {
+        const ANIMATION_DELAY = 50;
+
         if (typeof window === 'undefined') {
             return;
         }
 
         window.setTimeout(() => {
             this.setState({ isAnimating: false });
-        }, 0);
+        }, ANIMATION_DELAY);
     }
 
     renderPrevPrice() {

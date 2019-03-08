@@ -12,6 +12,7 @@ interface IProductTileRestProps {
     link: string;
     description: string;
     buyLink: string;
+    showConnectButton: boolean;
     payment: any;
     packs: any;
     firstParams: any;
@@ -29,9 +30,12 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         link: PropTypes.string,
         description: PropTypes.string,
         buyLink: PropTypes.string,
+        showConnectButton: PropTypes.bool,
         payment: PropTypes.shape({
-            value: PropTypes.number,
-            unit: PropTypes.string,
+            value: PropTypes.string.isRequired,
+            unitExtra: PropTypes.string,
+            unitValue: PropTypes.string,
+            discount: PropTypes.string,
         }),
         packs: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
@@ -122,13 +126,19 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
 
     renderShowcase() {
         const {
-            payment: { value, unit },
+            payment: { value, unitExtra, unitValue, discount },
             packs,
         } =  this.props;
 
         return (
             <React.Fragment>
-                {(value || value === 0) && <div className={cn('price')}>{`${value} ${unit}`}</div>}
+                <div className={cn('price', { discount: !!discount })}>
+                    <div className={cn('discount-condition')}>При покупке новой SIM–карты</div>
+                    <div className={cn('old-price-wrapper')}>
+                        <div className={cn('old-price')}>{`${value} ${unitValue}`}</div>
+                    </div>
+                    <div className={cn('actual-price')}>{`${discount || value} ${unitValue} ${unitExtra}`}</div>
+                </div>
                 {packs.map((param, index) => {
                     const { value: paramValue, unit: paramUnit } = param;
 
@@ -146,7 +156,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
     }
 
     render() {
-        const { title, link, buyLink, description } = this.props;
+        const { title, link, buyLink, description, showConnectButton } = this.props;
 
         return (
             <div className={cn('')}>
@@ -171,9 +181,11 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                     >
                         Купить
                     </Button>
-                    <TextLink className={cn('detail-link')} onClick={this.handleClickConnect}>
-                        Перейти на тариф
-                    </TextLink>
+                    {showConnectButton &&
+                        <TextLink className={cn('detail-link')} onClick={this.handleClickConnect}>
+                            Перейти на тариф
+                        </TextLink>
+                    }
                 </div>
             </div>
         );
