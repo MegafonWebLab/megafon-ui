@@ -1,5 +1,13 @@
 # Changelog
 
+## Release 1.3.0-beta.12
+### Changed
+- **Carousel**
+    - changed slide wrapper flex grow to 0
+    - replaced right slide padding into margin
+- **ProductTileRest**
+    - changed default width to 100%
+
 ## Release 1.3.0-beta.11
 ### Changed
 - **ProductTileValue**
