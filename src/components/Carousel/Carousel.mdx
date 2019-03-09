@@ -14,29 +14,15 @@ export const carouselParams = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
     slidesToScroll: 1,
+    variableWidth: true,
     responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-            }
-        },
         {
             breakpoint: 720,
             settings: {
-            slidesToShow: 2,
                 dots: true,
             }
-        },
-        {
-            breakpoint: 479,
-            settings: {
-                slidesToShow: 1,
-                dots: true,
-            }
-        },
+        }
     ]
 };
 
@@ -210,15 +196,33 @@ export const tariff2 = {
 
 <Playground wrapper={Wrapper}>
     <Carousel options={carouselParams} onClickNext={() => {}}>
-        <ProductTileRest {...tariff} />
-        <ProductTileRest {...tariff2} />
-        <ProductTileRest {...tariff} />
-        <ProductTileRest {...tariff} />
-        <ProductTileRest {...tariff} />
-        <ProductTileRest {...tariff} />
-        <ProductTileRest {...tariff} />
-        <ProductTileRest {...tariff} />
-        <ProductTileRest {...tariff} />
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff2} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
+        <div style={{ width: 260 }}>
+            <ProductTileRest {...tariff} />
+        </div>
     </Carousel>
 </Playground>
 

@@ -37,6 +37,7 @@
         cursor: pointer;
         top: -44px;
         right: 0;
+        z-index: 2;
         @media @mobileSM {
             display: none !important;
         }
@@ -85,11 +86,11 @@
     }
 
     &-slide {
-        flex-grow: 1;
+        flex-grow: 0;
         flex-shrink: 1;
         display: flex;
         flex-basis: 100px;
-        padding-right: 20px;
+        margin-right: 20px;
     }
     &-slide > div {
         display: flex;
