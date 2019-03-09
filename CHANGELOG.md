@@ -1,5 +1,14 @@
 # Changelog
 
+## Release 1.3.0-beta.13
+### Changed
+- **ProductTileHint**
+    - changed top position of hint on tablet resolution
+- **ProductTileBuy**
+    - added no margin mod for buy button
+- **ProductTile**
+    - added minimal height of title on different resolutions
+
 ## Release 1.3.0-beta.12
 ### Changed
 - **Carousel**

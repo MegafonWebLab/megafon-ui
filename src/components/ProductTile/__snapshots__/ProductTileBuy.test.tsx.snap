@@ -5,7 +5,7 @@ exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
   className="mfui-product-tile-buy sdfsdf"
 >
   <Button
-    className="mfui-product-tile-buy__button"
+    className="mfui-product-tile-buy__button mfui-product-tile-buy__button_without-margin"
     disabledColor="gray"
     downColor="dark"
     hoverColor="green"
