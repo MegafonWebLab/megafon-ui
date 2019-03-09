@@ -5,6 +5,7 @@
 - **Carousel**
     - changed slide wrapper flex grow to 0
     - replaced right slide padding into margin
+    - increased arrows z-index
 - **ProductTileRest**
     - changed default width to 100%
 
