@@ -1,5 +1,15 @@
 # Changelog
 
+## Release 1.3.0-beta.14
+### Changed
+- **Carousel**
+    - changed slide flex basis to auto
+    - removed outline on focus of all div containers in slide
+- **ProductTileRest**
+    - added fixed width to image in messengers list
+- **ProductTile**
+    -  added flex parameters to tile
+
 ## Release 1.3.0-beta.13
 ### Changed
 - **ProductTileHint**

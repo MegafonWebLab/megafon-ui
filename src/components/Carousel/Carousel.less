@@ -89,7 +89,7 @@
         flex-grow: 0;
         flex-shrink: 1;
         display: flex;
-        flex-basis: 100px;
+        flex-basis: auto;
         margin-right: 20px;
     }
     &-slide > div {
@@ -104,6 +104,11 @@
 
         @media @desktopMU {
             min-width: 265px;
+        }
+    }
+    &-slide div {
+        &:focus {
+            outline: none;
         }
     }
 }
