@@ -371,6 +371,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     href={link}
                     underlineStyle="none"
                     color="black"
+                    target="_blank"
                     onClick={this.handleClickMore}
                 >
                     {title}
@@ -388,7 +389,12 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
         return (
             <div className={cn('link-wrapper')}>
-                <TextLink className={cn('detail-link')} href={link} onClick={this.handleClickMore}>
+                <TextLink
+                    className={cn('detail-link')}
+                    href={link}
+                    target="_blank"
+                    onClick={this.handleClickMore}
+                >
                     {moreLinkText}
                 </TextLink>
             </div>
