@@ -17,12 +17,17 @@ export const Wrapper = ({children}) => <div style={{ padding: '20px', display: '
 ## Basic usage
 
 export const tariff = {
-    buyButtonText: 'Купить',
-    connectButtonText: 'Перейти на тариф',
+    link: '/tariffs/vklyuchaysya/smotri.html',
+    moreLinkText: 'Подробнее о тарифе',
+    showMoreLink: true,
+    buyLink: '/zakaz/?tariff=look',
+    buyButtonText: 'Выбрать',
+    showBuyButton: true,
+    connectLink: '#',
+    connectButtonText: 'Перейти',
+    showConnectButton: true,
     "title": "Включайся! Смотри",
     "description": "Описание",
-    "link": "/tariffs/vklyuchaysya/smotri.html",
-    "buyLink": "/zakaz/?tariff=look",
     "payment": {
         "value": '1000',
         "unitExtra": "за 30 дней",
@@ -104,12 +109,12 @@ export const tariff = {
 };
 
 export const tariff2 = {
-    buyButtonText: 'Купить',
-    connectButtonText: 'Перейти на тариф',
+    link: '/tariffs/vklyuchaysya/smotri.html',
+    buyLink: '/zakaz/?tariff=look',
+    connectLink: '#',
+    shopTag: 'tag',
     "title": "Включайся! Смотри",
     "description": "Описание",
-    "link": "/tariffs/vklyuchaysya/smotri.html",
-    "buyLink": "/zakaz/?tariff=look",
     "payment": {
         "value": '1000',
         "unitExtra": "за 30 дней",
@@ -133,7 +138,7 @@ export const tariff2 = {
     ],
     "firstParams": {
         "title": "Параметры",
-        "caption": "",
+        "caption": "Параметры",
         "items": [
             {
                 "title": "VIP-тариф",
@@ -190,12 +195,17 @@ export const tariff2 = {
     }
 };
 
+export const test = (info, e) => {
+    e.preventDefault();
+    console.log(info)
+}
+
 <Playground wrapper={Wrapper}>
     <div style={{ width: '300px', margin: '0 20px 0 0' }}>
         <ProductTileRest {...tariff} />
     </div>
     <div style={{ width: '300px' }}>
-        <ProductTileRest {...tariff2} />
+        <ProductTileRest {...tariff2} onClickConnect={test}/>
     </div>
 </Playground>
 

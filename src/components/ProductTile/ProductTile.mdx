@@ -19,11 +19,17 @@ export const Wrapper = ({children}) => <div style={{ padding: '20px', display: '
 export const tariff = {
     buyButtonText: 'Купить',
     topBadgeTitle: 'Тариф–конструктор от 250 ₽',
-    connectButtonText: 'Перейти на тариф',
+    link: "/tariffs/vklyuchaysya/smotri.html",
+    morelinkText: 'Подробнее о тарифе',
+    showMorelink: true,
+    buyLink: '#',
+    buyButtonText: "Выбрать",
+    showBuyButton: true,
+    connectLink: '#',
+    connectButtonText: 'Подключить',
     showConnectButton: true,
+    shopTag: 'tag',
     "title": "Включайся! Смотри",
-    "link": "/tariffs/vklyuchaysya/smotri.html",
-    "buyLink": "/zakaz/?tariff=look",
     "secondParamsHead": "Дополнительные возможности",
     "payment": {
         "value": '1000',
@@ -99,6 +105,7 @@ export const tariff = {
 export const servicePacks = [
     {
         "buyLink": "&options=null",
+        "shopTag": "tag1",
         "calls": {
             "value": 300,
             "unit": "минут"
@@ -132,6 +139,7 @@ export const servicePacks = [
     },
     {
         "buyLink": "&options=null",
+        "shopTag": "tag2",
         "calls": {
             "value": 650,
             "unit": "минут"
@@ -165,6 +173,7 @@ export const servicePacks = [
     },
     {
         "buyLink": "&options=null",
+        "shopTag": "tag3",
         "calls": {
             "value": 300,
             "unit": "минут"
@@ -198,6 +207,7 @@ export const servicePacks = [
     },
     {
         "buyLink": "&options=null",
+        "shopTag": "tag4",
         "calls": {
             "value": 650,
             "unit": "минут"
@@ -238,6 +248,7 @@ export const servicePacks = [
     },
     {
         "buyLink": "&options=null",
+        "shopTag": "tag5",
         "calls": {
             "value": 900,
             "unit": "минут"
@@ -278,6 +289,7 @@ export const servicePacks = [
     },
     {
         "buyLink": "&options=null",
+        "shopTag": "tag6",
         "calls": {
             "value": 300,
             "unit": "минут"
@@ -311,6 +323,7 @@ export const servicePacks = [
     },
     {
         "buyLink": "&options=null",
+        "shopTag": "tag7",
         "calls": {
             "value": 300,
             "unit": "минут"
@@ -704,17 +717,24 @@ export const servicePacks = [
 ``` javascript
 export const tariff = {
     buyButtonText: 'Купить',
-    connectButtonText: 'Перейти на тариф',
+    topBadgeTitle: 'Тариф–конструктор от 250 ₽',
+    link: "/tariffs/vklyuchaysya/smotri.html",
+    morelinkText: 'Подробнее о тарифе',
+    showMorelink: true,
+    buyLink: '#',
+    buyButtonText: "Выбрать",
+    showBuyButton: true,
+    connectLink: '#',
+    connectButtonText: 'Подключить',
+    showConnectButton: true,
     "title": "Включайся! Смотри",
-    "link": "/tariffs/vklyuchaysya/smotri.html",
-    "buyLink": "/zakaz/?tariff=look",
-    "secondParamsHead": "Доп возможности",
+    "secondParamsHead": "Дополнительные возможности",
     "payment": {
         "value": '1000',
         "unitExtra": "за 30 дней",
         "unitValue": "₽",
         "unit": "₽ за 30 дней",
-        "discount": 1000
+        "discount": '600'
     },
     "packs": [
         {
@@ -795,7 +815,7 @@ export const servicePacks = [
             "value": '450',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -828,7 +848,7 @@ export const servicePacks = [
             "value": '590',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -861,7 +881,7 @@ export const servicePacks = [
             "value": '590',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -894,7 +914,7 @@ export const servicePacks = [
             "value": '650',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -934,7 +954,7 @@ export const servicePacks = [
             "value": '840',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -974,7 +994,7 @@ export const servicePacks = [
             "value": '640',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1007,7 +1027,7 @@ export const servicePacks = [
             "value": '690',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1080,7 +1100,7 @@ export const servicePacks = [
             "value": '700',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1120,7 +1140,7 @@ export const servicePacks = [
             "value": '670',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1153,7 +1173,7 @@ export const servicePacks = [
             "value": '720',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1193,7 +1213,7 @@ export const servicePacks = [
             "value": '770',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1233,7 +1253,7 @@ export const servicePacks = [
             "value": '820',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1273,7 +1293,7 @@ export const servicePacks = [
             "value": '770',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1306,7 +1326,7 @@ export const servicePacks = [
             "value": '790',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {
@@ -1346,7 +1366,7 @@ export const servicePacks = [
             "value": '900',
             "unitExtra": "за 30 дней",
             "unitValue": "₽",
-            "discount": null
+            "discount": ''
         },
         "options": [
             {

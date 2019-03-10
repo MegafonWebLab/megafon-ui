@@ -5,11 +5,10 @@ exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
   className="mfui-product-tile-buy sdfsdf"
 >
   <Button
-    className="mfui-product-tile-buy__button mfui-product-tile-buy__button_without-margin"
+    className="mfui-product-tile-buy__button"
     disabledColor="gray"
     downColor="dark"
     hoverColor="green"
-    href="#"
     padding={true}
     passiveColor="green"
     showSpinner={false}
@@ -17,7 +16,15 @@ exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
     type="button"
     width="auto"
   >
-    sdf
+    Купить
   </Button>
+  <TextLink
+    className="mfui-product-tile-buy__detail-link"
+    color="blue"
+    underlineStyle="solid"
+    underlineVisibility="hover"
+  >
+    Перейти на тариф
+  </TextLink>
 </div>
 `;

@@ -29,6 +29,7 @@ export interface IPayment {
 
 export interface IServicePack {
     buyLink: string;
+    shopTag: string;
     calls: {
         value: number;
         unit: string;
@@ -70,16 +71,30 @@ interface IProductTileProps {
     topBadgeTitle?: string;
     /** Second params head */
     secondParamsHead?: string;
-    /** Link */
-    link: string;
+    /** Shop tag */
+    shopTag?: string;
+
+    /** More link */
+    link?: string;
+    /** More link text */
+    moreLinkText?: string;
+    /** Show more link */
+    showMoreLink?: boolean;
+
     /** Buy link */
-    buyLink: string;
+    buyLink?: string;
     /** Buy button text */
-    buyButtonText: string;
+    buyButtonText?: string;
+    /** Show buy button */
+    showBuyButton?: boolean;
+
+    /** Connect link */
+    connectLink?: string;
     /** Connect button text */
-    connectButtonText: string;
-    /** Connect button text */
+    connectButtonText?: string;
+    /** Show connect button */
     showConnectButton?: boolean;
+
     /** Payment */
     payment: IPayment;
     /** Packs */
@@ -95,11 +110,11 @@ interface IProductTileProps {
     /** Info - object type - return with onClickConnect, onClickBuy */
     info: {};
     /** Connect handler */
-    onClickConnect?(info: {}): void;
+    onClickConnect?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Buy handler */
-    onClickBuy?(info: {}): void;
+    onClickBuy?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** More handler */
-    onClickMore?(info: {}): void;
+    onClickMore?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Bubble handler */
     onClickBubble?(info: {}): void;
 }
@@ -120,10 +135,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         title: PropTypes.string.isRequired,
         topBadgeTitle: PropTypes.string,
         secondParamsHead: PropTypes.string,
-        link: PropTypes.string.isRequired,
-        buyLink: PropTypes.string.isRequired,
-        buyButtonText: PropTypes.string.isRequired,
-        connectButtonText: PropTypes.string.isRequired,
+        shopTag: PropTypes.string,
+        link: PropTypes.string,
+        moreLinkText: PropTypes.string,
+        showMoreLink: PropTypes.bool,
+        buyLink: PropTypes.string,
+        buyButtonText: PropTypes.string,
+        showBuyButton: PropTypes.bool,
+        connectLink: PropTypes.string,
+        connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
         payment: PropTypes.shape({
             value: PropTypes.string.isRequired,
@@ -187,6 +207,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     };
 
     static defaultProps: Partial<IProductTileProps> = {
+        moreLinkText: 'Подробнее',
+        showMoreLink: true,
         servicePacks: [],
         info: {},
     };
@@ -209,32 +231,33 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             trafficValue: firstTrafficValueNum,
             payment: isServicePacks ? currentPack.payment! : props.payment,
             options: isServicePacks ? currentPack.options! : props.secondParams,
-            buyLink: isServicePacks ? currentPack.buyLink! : props.buyLink,
+            buyLink: isServicePacks ? currentPack.buyLink! : props.buyLink!,
         };
     }
 
-    handleClickConnect = () => {
+    handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
         const { onClickConnect, info } = this.props;
         const { currentPack: { calls, traffic } } = this.state;
         const callsValue = calls ? calls.value : 0;
         const trafficValue = traffic ? traffic.value : 0;
 
-        onClickConnect && onClickConnect({ ...info, callsValue, trafficValue });
+        onClickConnect && onClickConnect({ ...info, callsValue, trafficValue }, e);
     }
 
-    handleClickBuy = () => {
-        const { onClickBuy, info } = this.props;
-        const { currentPack: { calls, traffic } } = this.state;
+    handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
+        const { onClickBuy, info, shopTag } = this.props;
+        const { currentPack: { calls, traffic, shopTag: packShopTag } } = this.state;
         const callsValue = calls ? calls.value : 0;
         const trafficValue = traffic ? traffic.value : 0;
+        const currentShopTag = packShopTag || shopTag || '';
 
-        onClickBuy && onClickBuy({ ...info, callsValue, trafficValue });
+        onClickBuy && onClickBuy({ ...info, callsValue, trafficValue, shopTag: currentShopTag }, e);
     }
 
-    handleClickMore = () => {
+    handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
         const { onClickMore, info } = this.props;
 
-        onClickMore && onClickMore({ ...info });
+        onClickMore && onClickMore({ ...info }, e);
     }
 
     handleClickBubble = () => {
@@ -357,12 +380,16 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     renderLink() {
-        const { link } = this.props;
+        const { link, showMoreLink, moreLinkText } = this.props;
+
+        if (!showMoreLink || !moreLinkText) {
+            return null;
+        }
 
         return (
             <div className={cn('link-wrapper')}>
                 <TextLink className={cn('detail-link')} href={link} onClick={this.handleClickMore}>
-                    Подробнее
+                    {moreLinkText}
                 </TextLink>
             </div>
         );
@@ -379,6 +406,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             topBadgeTitle,
             secondParamsHead,
             showConnectButton,
+            showBuyButton,
+            connectLink,
         } = this.props;
         const { payment, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
@@ -398,9 +427,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     <Options options={options} head={secondParamsHead} onClickBubble={this.handleClickBubble}/>
                 </div>
                 <Buy
-                    href={buyLink}
-                    buyText={buyButtonText}
-                    connectText={connectButtonText}
+                    buyLink={buyLink}
+                    connectLink={connectLink}
+                    buyButtonText={buyButtonText}
+                    connectButtonText={connectButtonText}
+                    showBuyButton={showBuyButton}
                     showConnectButton={showConnectButton}
                     onClickBuy={this.handleClickBuy}
                     onClickConnect={this.handleClickConnect}

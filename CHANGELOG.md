@@ -1,5 +1,14 @@
 # Changelog
 
+## Release 1.3.0-beta.15
+### Changed
+- **ProductTile**
+    - rework moreLink, buyButton and connectButton
+- **ProductTileBuy**
+    - rework buyButton and connectButton
+- **ProductTileRest**
+    - rework moreLink, buyButton and connectButton
+
 ## Release 1.3.0-beta.14
 ### Changed
 - **Carousel**
@@ -8,7 +17,7 @@
 - **ProductTileRest**
     - added fixed width to image in messengers list
 - **ProductTile**
-    -  added flex parameters to tile
+    - added flex parameters to tile
 
 ## Release 1.3.0-beta.13
 ### Changed
