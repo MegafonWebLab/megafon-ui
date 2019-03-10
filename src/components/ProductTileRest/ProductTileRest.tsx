@@ -203,7 +203,12 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                 <div className={cn('info')}>
                     <Header className={cn('header')} as="h3">{title}</Header>
                     {showMoreLink &&
-                        <TextLink className={cn('detail-link')} href={link} onClick={this.handleClickMore}>
+                        <TextLink
+                            className={cn('detail-link')}
+                            href={link}
+                            target="_blank"
+                            onClick={this.handleClickMore}
+                        >
                             {moreLinkText}
                         </TextLink>
                     }
@@ -230,6 +235,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                             className={cn('detail-link')}
                             href={connectLink}
                             onClick={this.handleClickConnect}
+                            target="_blank"
                         >
                             {connectButtonText}
                         </TextLink>

@@ -1,5 +1,14 @@
 # Changelog
 
+## Release 1.3.0-beta.16
+### Changed
+- **ProductTile**
+    - add target blank for links
+- **ProductTileBuy**
+    - add target blank for links
+- **ProductTileRest**
+    - add target blank for links
+
 ## Release 1.3.0-beta.15
 ### Changed
 - **ProductTile**
