@@ -9,10 +9,21 @@ import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
 interface IProductTileRestProps {
     title: string;
-    link: string;
     description: string;
+    shopTag: string;
+
+    link: string;
+    moreLinkText: string;
+    showMoreLink: boolean;
+
     buyLink: string;
+    buyButtonText: string;
+    showBuyButton: boolean;
+
+    connectLink: string;
+    connectButtonText: string;
     showConnectButton: boolean;
+
     payment: any;
     packs: any;
     firstParams: any;
@@ -27,9 +38,16 @@ const cn = cnCreate('mfui-product-tile-rest');
 class ProductTileRest extends React.Component<IProductTileRestProps> {
     static propTypes = {
         title: PropTypes.string,
-        link: PropTypes.string,
         description: PropTypes.string,
+        shopTag: PropTypes.string,
+        link: PropTypes.string,
+        moreLinkText: PropTypes.string,
+        showMoreLink: PropTypes.bool,
         buyLink: PropTypes.string,
+        buyButtonText: PropTypes.string,
+        showBuyButton: PropTypes.bool,
+        connectLink: PropTypes.string,
+        connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
         payment: PropTypes.shape({
             value: PropTypes.string.isRequired,
@@ -60,26 +78,36 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         onClickMore: PropTypes.func,
     };
 
-    handleClickConnect = () => {
-        const { info, onClickConnect } = this.props;
+    static defaultProps = {
+        moreLinkText: 'Подробнее',
+        showMoreLink: true,
+        buyButtonText: 'Купить',
+        showBuyButton: true,
+        connectButtonText: 'Перейти на тариф',
+        showConnectButton: true,
+        shopTag: '',
+    };
 
-        onClickConnect && onClickConnect(info);
+    handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
+        const { info, shopTag, onClickConnect } = this.props;
+
+        onClickConnect && onClickConnect({ ...info, shopTag }, e);
     }
 
-    handleClickBuy = () => {
-        const { info, onClickBuy } = this.props;
+    handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
+        const { info, shopTag, onClickBuy } = this.props;
 
-        onClickBuy && onClickBuy(info);
+        onClickBuy && onClickBuy({ ...info, shopTag }, e);
     }
 
-    handleClickMore = () => {
-        const { info, onClickMore } = this.props;
+    handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
+        const { info, shopTag, onClickMore } = this.props;
 
-        onClickMore && onClickMore(info);
+        onClickMore && onClickMore({ ...info, shopTag }, e);
     }
 
     renderIcons() {
-        const { firstParams: { title, items } } = this.props;
+        const { firstParams: { title, caption, items } } = this.props;
 
         return (
             <div className={cn('messangers')}>
@@ -94,7 +122,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                 }
                 {title &&
                     <div className={cn('messangers-description')}>
-                        {title}
+                        {title}<br /> {caption}
                     </div>
                 }
             </div>
@@ -156,34 +184,54 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
     }
 
     render() {
-        const { title, link, buyLink, description, showConnectButton } = this.props;
+        const {
+            title,
+            description,
+            link,
+            showMoreLink,
+            moreLinkText,
+            connectLink,
+            connectButtonText,
+            showConnectButton,
+            buyLink,
+            showBuyButton,
+            buyButtonText,
+        } = this.props;
 
         return (
             <div className={cn('')}>
                 <div className={cn('info')}>
                     <Header className={cn('header')} as="h3">{title}</Header>
-                    <TextLink className={cn('detail-link')} href={link} onClick={this.handleClickMore}>
-                        Подробнее
-                    </TextLink>
+                    {showMoreLink &&
+                        <TextLink className={cn('detail-link')} href={link} onClick={this.handleClickMore}>
+                            {moreLinkText}
+                        </TextLink>
+                    }
                     {this.renderShowcase()}
                     {this.renderIcons()}
                     {this.renderOptions()}
                     {description && <div className={cn('description')}>{description}</div>}
                 </div>
                 <div className={cn('buy')}>
-                    <Button
-                        className={cn('buy-button')}
-                        passiveColor="green"
-                        hoverColor="green"
-                        sizeAll="medium"
-                        href={buyLink}
-                        onClick={this.handleClickBuy}
-                    >
-                        Купить
-                    </Button>
+                    {showBuyButton &&
+                        <Button
+                            className={cn('buy-button')}
+                            passiveColor="green"
+                            hoverColor="green"
+                            sizeAll="medium"
+                            href={buyLink}
+                            onClick={this.handleClickBuy}
+                        >
+                            {buyButtonText}
+                        </Button>
+                    }
                     {showConnectButton &&
-                        <TextLink className={cn('detail-link')} onClick={this.handleClickConnect}>
-                            Перейти на тариф
+                        <TextLink
+                            className={cn('detail-link')}
+                            href={connectLink}
+                            onClick={this.handleClickConnect}
+                        >
+                            {connectButtonText}
                         </TextLink>
                     }
                 </div>

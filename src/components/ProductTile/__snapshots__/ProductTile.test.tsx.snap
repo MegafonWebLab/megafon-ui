@@ -142,11 +142,12 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
     />
   </div>
   <ProductTileBuy
-    buyText="sdfsdf"
-    connectText="sdfsdf"
-    href="&options=null"
+    buyButtonText="sdfsdf"
+    buyLink="&options=null"
+    connectButtonText="sdfsdf"
     onClickBuy={[Function]}
     onClickConnect={[Function]}
+    showBuyButton={true}
     showConnectButton={true}
   />
 </div>
