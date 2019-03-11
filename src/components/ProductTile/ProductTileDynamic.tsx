@@ -11,6 +11,10 @@ interface IProductTileDynamicProps {
     currentPack: Partial<IServicePack>;
     /** Switcher */
     switcher: ISwitcher;
+    /** Start calls index */
+    startCallsIndex: number;
+    /** Start traffic index */
+    startTrafficIndex: number;
     /** Change calls */
     onChangeCalls(e: React.SyntheticEvent<EventTarget>, value: string): boolean;
     /** Change Traffic */
@@ -34,12 +38,21 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
             calls: PropTypes.arrayOf(PropTypes.string),
             traffic: PropTypes.arrayOf(PropTypes.string),
         }),
+        startCallsIndex: PropTypes.number,
+        startTrafficIndex: PropTypes.number,
         onChangeCalls: PropTypes.func,
         onChangeTraffic: PropTypes.func,
     };
 
     render() {
-        const { currentPack, switcher, onChangeTraffic, onChangeCalls } = this.props;
+        const {
+            currentPack,
+            switcher,
+            startCallsIndex,
+            startTrafficIndex,
+            onChangeTraffic,
+            onChangeCalls,
+        } = this.props;
 
         return (
             <div className={cn('')}>
@@ -51,12 +64,14 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
                 </div>
                 <ProductSwitcher
                     className={cn('constructor-range')}
+                    startIndex={startCallsIndex}
                     theme="tariff-showcase"
                     items={switcher.calls.map((value: string) => ({ title: value, value }))}
                     onChange={onChangeCalls}
                 />
                 <ProductSwitcher
                     className={cn('constructor-range')}
+                    startIndex={startTrafficIndex}
                     theme="tariff-showcase"
                     items={switcher.traffic.map((value: string) => ({ title: value, value }))}
                     onChange={onChangeTraffic}

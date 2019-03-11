@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.0-beta.18
+### Changed
+- **ProductTile**
+    - add default switcher position
+- **ProductTileDynamic**
+    - add default switcher position
+
 ## Release 1.3.0-beta.17
 ### Changed
 - **ProductTile**

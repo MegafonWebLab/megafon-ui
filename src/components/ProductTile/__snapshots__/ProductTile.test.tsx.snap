@@ -92,6 +92,8 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
         }
         onChangeCalls={[Function]}
         onChangeTraffic={[Function]}
+        startCallsIndex={0}
+        startTrafficIndex={0}
         switcher={
           Object {
             "calls": Array [
