@@ -15,6 +15,8 @@ class ProductTileStatic extends React.Component<IProductTileStaticProps> {
         packs: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
             unit: PropTypes.string,
+            title: PropTypes.string,
+            isDelim: PropTypes.bool,
         })),
     };
 
@@ -25,7 +27,7 @@ class ProductTileStatic extends React.Component<IProductTileStaticProps> {
             <div className={cn('')}>
                 {packs.map((item: IPack) =>
                     <div className={cn('constructor-pack')} key={item.value! + item.unit!}>
-                        {`${item.value} ${item.unit}`}
+                        {item.isDelim ? item.title : `${item.value} ${item.unit}`}
                     </div>
                 )}
             </div>

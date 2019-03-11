@@ -50,6 +50,8 @@ export interface IServicePackPayment {
 export interface IPack {
     value: number;
     unit: string;
+    title: string;
+    isDelim: boolean;
 }
 
 export interface ICashback {
@@ -78,6 +80,10 @@ interface IProductTileProps {
     secondParamsHead?: string;
     /** Shop tag */
     shopTag?: string;
+    /** Start calls index */
+    startCallsIndex?: number;
+    /** Start traffic index */
+    startTrafficIndex?: number;
 
     /** More link */
     link?: string;
@@ -142,6 +148,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         topBadgeTitle: PropTypes.string,
         secondParamsHead: PropTypes.string,
         shopTag: PropTypes.string,
+        startCallsIndex: PropTypes.number,
+        startTrafficIndex: PropTypes.number,
         link: PropTypes.string,
         moreLinkText: PropTypes.string,
         showMoreLink: PropTypes.bool,
@@ -215,24 +223,24 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         showMoreLink: true,
         servicePacks: [],
         info: {},
+        startCallsIndex: 0,
+        startTrafficIndex: 0,
     };
 
     constructor(props: IProductTileProps) {
         super(props);
 
         const switcher = this.getSwitcherValues();
-        const [ firstCallsValue ] = switcher.calls;
-        const [ firstTrafficValue ] = switcher.traffic;
-        const firstCallsValueNum = Number(firstCallsValue);
-        const firstTrafficValueNum = Number(firstTrafficValue);
-        const currentPack = this.getCurrentPack(firstCallsValueNum, firstTrafficValueNum);
+        const defaultCallsValue = Number(switcher.calls[props.startCallsIndex!]);
+        const defaultTrafficValue = Number(switcher.traffic[props.startCallsIndex!]);
+        const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
         const { payment, options, buyLink } = currentPack;
 
         this.state = {
             switcher,
             currentPack,
-            callsValue: firstCallsValueNum,
-            trafficValue: firstTrafficValueNum,
+            callsValue: defaultCallsValue,
+            trafficValue: defaultTrafficValue,
             price: payment ? payment.value : props.payment.value,
             discount: payment ? payment.discount || '' : props.payment.discount || '',
             options: options || props.secondParams,
@@ -356,9 +364,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             switcher,
             currentPack,
         } = this.state;
+        const {
+            startCallsIndex,
+            startTrafficIndex,
+        } = this.props;
 
         return (
             <Dynamic
+                startCallsIndex={startCallsIndex!}
+                startTrafficIndex={startTrafficIndex!}
                 currentPack={currentPack}
                 switcher={switcher}
                 onChangeCalls={this.handleChangeCalls}

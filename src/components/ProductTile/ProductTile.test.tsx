@@ -23,14 +23,20 @@ const tariff = {
         {
             'value': 1500,
             'unit': 'минут',
+            'title': 'title',
+            'isDelim': true,
         },
         {
             'value': 100,
             'unit': 'смс',
+            'title': 'title',
+            'isDelim': true,
         },
         {
             'value': 3,
             'unit': 'ГБ',
+            'title': 'title',
+            'isDelim': false,
         },
     ],
     'firstParams': {

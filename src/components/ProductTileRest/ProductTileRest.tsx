@@ -58,6 +58,8 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         packs: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
             unit: PropTypes.string,
+            title: PropTypes.string,
+            isDelim: PropTypes.bool,
         })),
         firstParams: PropTypes.shape({
             title: PropTypes.string,
@@ -168,14 +170,19 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                     <div className={cn('actual-price')}>{`${discount || value} ${unitValue} ${unitExtra}`}</div>
                 </div>
                 {packs.map((param, index) => {
-                    const { value: paramValue, unit: paramUnit } = param;
+                    const {
+                        value: paramValue,
+                        unit: paramUnit,
+                        title: paramTitle,
+                        isDelim,
+                    } = param;
 
                     return (
                         <div
                             className={cn('pack')}
                             key={paramValue + paramUnit + index}
                         >
-                            {`${paramValue} ${paramUnit}`}
+                            {isDelim ? paramTitle : `${paramValue} ${paramUnit}`}
                         </div>
                     );
                 })}

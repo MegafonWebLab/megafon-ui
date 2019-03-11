@@ -1,5 +1,17 @@
 # Changelog
 
+## Release 1.3.0-beta.18
+### Changed
+- **ProductTile**
+    - add default switcher position
+    - add title to packs
+- **ProductTileStatic**
+    - add title to packs
+- **ProductTileRest**
+    - add title to packs
+- **ProductTileDynamic**
+    - add default switcher position
+
 ## Release 1.3.0-beta.17
 ### Changed
 - **ProductTile**
