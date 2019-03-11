@@ -4,6 +4,11 @@
 ### Changed
 - **ProductTile**
     - add default switcher position
+    - add title to packs
+- **ProductTileStatic**
+    - add title to packs
+- **ProductTileRest**
+    - add title to packs
 - **ProductTileDynamic**
     - add default switcher position
 

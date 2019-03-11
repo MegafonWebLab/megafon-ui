@@ -50,6 +50,8 @@ export interface IServicePackPayment {
 export interface IPack {
     value: number;
     unit: string;
+    title: string;
+    isDelim: boolean;
 }
 
 export interface ICashback {
