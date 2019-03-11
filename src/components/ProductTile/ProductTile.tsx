@@ -39,7 +39,12 @@ export interface IServicePack {
         unit: string;
     };
     options: IOption[];
-    payment: IPayment;
+    payment: IServicePackPayment;
+}
+
+export interface IServicePackPayment {
+    value: string;
+    discount?: string;
 }
 
 export interface IPack {
@@ -124,7 +129,8 @@ interface IProductTileState {
     currentPack: Partial<IServicePack>;
     callsValue: number;
     trafficValue: number;
-    payment: IPayment;
+    price: string;
+    discount: string;
     options: IOption[];
     buyLink: string;
 }
@@ -194,8 +200,6 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             })),
             payment: PropTypes.shape({
                 value: PropTypes.string.isRequired,
-                unitExtra: PropTypes.string,
-                unitValue: PropTypes.string,
                 discount: PropTypes.string,
             }),
         })),
@@ -222,16 +226,17 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const firstCallsValueNum = Number(firstCallsValue);
         const firstTrafficValueNum = Number(firstTrafficValue);
         const currentPack = this.getCurrentPack(firstCallsValueNum, firstTrafficValueNum);
-        const isServicePacks = !!props.servicePacks!.length;
+        const { payment, options, buyLink } = currentPack;
 
         this.state = {
             switcher,
             currentPack,
             callsValue: firstCallsValueNum,
             trafficValue: firstTrafficValueNum,
-            payment: isServicePacks ? currentPack.payment! : props.payment,
-            options: isServicePacks ? currentPack.options! : props.secondParams,
-            buyLink: isServicePacks ? currentPack.buyLink! : props.buyLink!,
+            price: payment ? payment.value : props.payment.value,
+            discount: payment ? payment.discount || '' : props.payment.discount || '',
+            options: options || props.secondParams,
+            buyLink: buyLink || props.buyLink || '',
         };
     }
 
@@ -304,7 +309,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     getRestState(currentPack: Partial<IServicePack>): object {
         return {
             currentPack,
-            payment: currentPack.payment!,
+            price: currentPack.payment!.value,
+            discount: currentPack.payment!.discount,
             options: currentPack.options!,
             buyLink: currentPack.buyLink!,
         };
@@ -414,8 +420,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             showConnectButton,
             showBuyButton,
             connectLink,
+            payment: { unitExtra, unitValue },
         } = this.props;
-        const { payment, options, buyLink } = this.state;
+        const { price, discount, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
 
         return (
@@ -425,7 +432,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     {this.renderTitle()}
                     {this.renderLink()}
                     <Cashback {...cashback} />
-                    <Price {...payment}/>
+                    <Price value={price} discount={discount} unitExtra={unitExtra} unitValue={unitValue} />
                     <div className={cn('constructor')}>
                         {isServicePacks ? this.renderDynamic() : this.renderStatic()}
                         <Options options={firstParams.items} />

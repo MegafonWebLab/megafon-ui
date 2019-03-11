@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 1.3.0-beta.17
+### Changed
+- **ProductTile**
+    - fix service pack unit
+    - state refactor
+
 ## Release 1.3.0-beta.16
 ### Changed
 - **ProductTile**
