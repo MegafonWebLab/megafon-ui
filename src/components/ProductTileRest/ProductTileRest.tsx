@@ -23,6 +23,7 @@ interface IProductTileRestProps {
     connectLink: string;
     connectButtonText: string;
     showConnectButton: boolean;
+    isBuyable: boolean;
 
     payment: any;
     packs: any;
@@ -43,6 +44,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         link: PropTypes.string,
         moreLinkText: PropTypes.string,
         showMoreLink: PropTypes.bool,
+        isBuyable: PropTypes.bool,
         buyLink: PropTypes.string,
         buyButtonText: PropTypes.string,
         showBuyButton: PropTypes.bool,
@@ -203,7 +205,9 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             buyLink,
             showBuyButton,
             buyButtonText,
+            isBuyable,
         } = this.props;
+        const buyButtonColor = isBuyable ? 'green' : 'transparent-green';
 
         return (
             <div className={cn('')}>
@@ -228,7 +232,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                     {showBuyButton &&
                         <Button
                             className={cn('buy-button')}
-                            passiveColor="green"
+                            passiveColor={buyButtonColor}
                             hoverColor="green"
                             sizeAll="medium"
                             href={buyLink}

@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.19
+### Changed
+- **ProductTileRest**
+    - added validation for buyable prop and button color depending on it
+
 ## Release 1.3.0-beta.18
 ### Changed
 - **ProductTile**
