@@ -425,10 +425,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     formHashLink(link: string) {
         const { currentPack: { shopTag } } = this.state;
-        if (!shopTag) {
-            return link;
-        }
-        return `${link}#${shopTag}`;
+        return !shopTag ? link : `${link}#${shopTag}`;
     }
 
     render() {
