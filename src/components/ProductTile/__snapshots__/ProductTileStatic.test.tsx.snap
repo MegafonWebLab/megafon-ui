@@ -6,7 +6,7 @@ exports[`<ProductTileStatic /> it renders ProductTileStatic 1`] = `
 >
   <div
     className="mfui-product-tile-static__constructor-pack"
-    key="2342unit"
+    key="title2342unit"
   >
     2342 unit
   </div>

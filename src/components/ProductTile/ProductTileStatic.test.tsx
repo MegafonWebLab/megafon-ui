@@ -6,6 +6,7 @@ const props = {
     packs: [{
         value: 2342,
         unit: 'unit',
+        title: 'title',
     }],
 };
 

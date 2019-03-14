@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.0-beta.19
+### Changed
+- **ProductTile**
+    - add hashtag to description link
+- **ProductTileStatic**
+    - add title value to key attribute
+
 ## Release 1.3.0-beta.18
 ### Changed
 - **ProductTile**
