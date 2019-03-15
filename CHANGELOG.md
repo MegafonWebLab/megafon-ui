@@ -1,9 +1,16 @@
 # Changelog
 
-## Release 1.3.0-beta.19
+## Release 1.3.0-beta.20
 ### Changed
 - **ProductTileRest**
     - added validation for buyable prop and button color depending on it
+
+## Release 1.3.0-beta.19
+### Changed
+- **ProductTile**
+    - add hashtag to description link
+- **ProductTileStatic**
+    - add title value to key attribute
 
 ## Release 1.3.0-beta.18
 ### Changed

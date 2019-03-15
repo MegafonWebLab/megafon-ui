@@ -401,17 +401,19 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     renderLink() {
-        const { link, showMoreLink, moreLinkText } = this.props;
+        const { link = '', showMoreLink, moreLinkText } = this.props;
 
         if (!showMoreLink || !moreLinkText) {
             return null;
         }
 
+        const linkWithHash = this.formHashLink(link);
+
         return (
             <div className={cn('link-wrapper')}>
                 <TextLink
                     className={cn('detail-link')}
-                    href={link}
+                    href={linkWithHash}
                     target="_blank"
                     onClick={this.handleClickMore}
                 >
@@ -419,6 +421,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                 </TextLink>
             </div>
         );
+    }
+
+    formHashLink(link: string) {
+        const { currentPack: { shopTag } } = this.state;
+        return !shopTag ? link : `${link}#${shopTag}`;
     }
 
     render() {
