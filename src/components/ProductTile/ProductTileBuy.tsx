@@ -75,7 +75,7 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
             <div className={cn('', {}, className)}>
                 {showBuyButton &&
                     <Button
-                        className={cn('button', { 'without-margin': !showConnectButton })}
+                        className={cn('button', { 'single-button': !showConnectButton })}
                         passiveColor={buttonPassiveColor}
                         hoverColor="green"
                         sizeAll="medium"

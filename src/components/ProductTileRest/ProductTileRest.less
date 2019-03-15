@@ -96,10 +96,14 @@
         flex-wrap: wrap;
 
         svg,
-        img 
+        img
         {
             width: 32px;
             height: 32px;
+        }
+
+        svg {
+            pointer-events: none;
         }
     }
 
@@ -115,11 +119,23 @@
             width: 32px;
             height: 32px;
         }
+
+        svg {
+            pointer-events: none;
+        }
     }
 
     &__buy-button {
         margin-bottom: 11px;
         width: 159px;
+
+        &_additional-margin {
+            margin-bottom: 48px;
+
+            @media @mobileSM {
+                margin-bottom: 11px;
+            }
+        }
     }
 
     &__actual-price {

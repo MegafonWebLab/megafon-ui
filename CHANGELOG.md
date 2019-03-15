@@ -1,5 +1,18 @@
 # Changelog
 
+## Release 1.3.0-beta.24
+### Changed
+- **ProductSwitcher**
+    - add value hover for tarrifs mod
+- **ProductTileRest**
+    - add pointer events none for svg so correct title displays on hover
+    - add additional margin mod for buy button if there is no connect button
+    - add validation for buyable prop and button color depending on it
+- **ProductTile**
+    - add minimum title height on small tablet resolution
+- **ProductTileBuy**
+    - replaced buy button no margin mode into single mod with additional bottom margins on tablet
+
 ## Release 1.3.0-beta.23
 ### Changed
 - **Carousel**
@@ -43,7 +56,6 @@
     - add default switcher position
     - add title to packs
 - **ProductTileStatic**
-    - add title to packs
 - **ProductTileRest**
     - add title to packs
 - **ProductTileDynamic**

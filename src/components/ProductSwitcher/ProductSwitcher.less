@@ -120,9 +120,14 @@
             @media @desktopS {
                 width: 63px;
             }
+            &:hover {
+                @{b}__label {
+                    color: @greenHover;
+                }
+            }
         }
         &__item_active @{b}__label {
-            color: @clearWhite;
+            color: @clearWhite !important;
             font-size: 15px;
             font-weight: 500;
         }

@@ -29,6 +29,7 @@ interface IProductTileRestProps {
     connectLink: string;
     connectButtonText: string;
     showConnectButton: boolean;
+    isBuyable: boolean;
 
     payment: any;
     packs: any;
@@ -49,6 +50,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         link: PropTypes.string,
         moreLinkText: PropTypes.string,
         showMoreLink: PropTypes.bool,
+        isBuyable: PropTypes.bool,
         buyLink: PropTypes.string,
         buyButtonText: PropTypes.string,
         showBuyButton: PropTypes.bool,
@@ -212,10 +214,15 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             buyLink,
             showBuyButton,
             buyButtonText,
+<<<<<<< HEAD
             buttonBorder,
             buttonFontColor,
             buttonPassiveColor,
+=======
+            isBuyable,
+>>>>>>> 5583 fixed a lot of bugs of showcase
         } = this.props;
+        const buyButtonColor = isBuyable ? 'green' : 'transparent-green';
 
         return (
             <div className={cn('')}>
@@ -239,7 +246,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                 <div className={cn('buy')}>
                     {showBuyButton &&
                         <Button
-                            className={cn('buy-button')}
+                            className={cn('buy-button', { 'additional-margin': !showConnectButton })}
                             passiveColor={buttonPassiveColor}
                             border={buttonBorder}
                             fontColor={buttonFontColor}
