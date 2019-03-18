@@ -1,5 +1,13 @@
 # Changelog
 
+## Release 1.3.0-beta.20
+### Fixed
+- **Base**
+    - add new variable for color
+### Changed
+- **Carousel**
+    - delete props of another color for pagination
+
 ## Release 1.3.0-beta.19
 ### Changed
 - **ProductTile**

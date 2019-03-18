@@ -6,14 +6,6 @@
 @{b} {
     padding: 8px 10px;
     overflow: hidden;
-    &_dots-color_white {
-        @{s}-dots li button {
-            background-color: @clearWhite;
-        }
-        @{s}-dots @{s}-active > button {
-            background-color: @green;
-        }
-    }
 }
 
 @{s} {
@@ -56,10 +48,11 @@
             }
 
             & > button {
-                background-color: @spbSky1;
+                background-color: @newPaginGray;
                 border: none;
                 border-radius: 50%;
                 height: 12px;
+                padding: 0;
                 text-indent: -9999px;
                 width: 12px;
             }

@@ -11,7 +11,6 @@ interface ICarouselProps {
     children: any;
     onClickNext: any;
     onClickPrev: any;
-    dotsColor: any;
 }
 
 const cn = cnCreate('mfui-carousel');
@@ -29,7 +28,6 @@ class Carousel extends React.Component<ICarouselProps> {
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
-        dotsColor: PropTypes.oneOf(['white']),
     };
 
     static defaultProps = {
@@ -47,10 +45,10 @@ class Carousel extends React.Component<ICarouselProps> {
     }
 
     render() {
-        const { className, options, children, dotsColor } = this.props;
+        const { className, options, children } = this.props;
 
         return (
-            <div className={cn('', { 'dots-color': dotsColor }, className)}>
+            <div className={cn('', className)}>
                 <Slider
                     {...options}
                     nextArrow={<CarouselArrow {...options} onClickArrow={this.handleClickNext} />}
