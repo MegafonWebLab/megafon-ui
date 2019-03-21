@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.21
+### Changed
+- **ProductTile**
+    - add usePackBuyLink props
+
 ## Release 1.3.0-beta.20
 ### Fixed
 - **Base**

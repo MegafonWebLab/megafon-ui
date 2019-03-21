@@ -94,6 +94,8 @@ interface IProductTileProps {
 
     /** Buy link */
     buyLink?: string;
+    /** Use pack buy link */
+    usePackBuyLink?: boolean;
     /** Buy button text */
     buyButtonText?: string;
     /** Show buy button */
@@ -154,6 +156,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         moreLinkText: PropTypes.string,
         showMoreLink: PropTypes.bool,
         buyLink: PropTypes.string,
+        usePackBuyLink: PropTypes.bool,
         buyButtonText: PropTypes.string,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
@@ -225,6 +228,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         info: {},
         startCallsIndex: 0,
         startTrafficIndex: 0,
+        usePackBuyLink: true,
     };
 
     constructor(props: IProductTileProps) {
@@ -241,10 +245,10 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             currentPack,
             callsValue: defaultCallsValue,
             trafficValue: defaultTrafficValue,
-            price: payment ? payment.value : props.payment.value,
-            discount: payment ? payment.discount || '' : props.payment.discount || '',
+            price: payment && payment.value || props.payment.value,
+            discount: payment && payment.discount || props.payment.discount || '',
             options: options || props.secondParams,
-            buyLink: buyLink || props.buyLink || '',
+            buyLink: props.usePackBuyLink && buyLink || props.buyLink || '',
         };
     }
 
@@ -315,12 +319,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     getRestState(currentPack: Partial<IServicePack>): object {
+        const { buyLink, usePackBuyLink } = this.props;
+
         return {
             currentPack,
-            price: currentPack.payment!.value,
-            discount: currentPack.payment!.discount,
-            options: currentPack.options!,
-            buyLink: currentPack.buyLink!,
+            price: currentPack.payment && currentPack.payment.value || '',
+            discount: currentPack.payment && currentPack.payment.discount || '',
+            options: currentPack.options || [],
+            buyLink: usePackBuyLink && currentPack.buyLink || buyLink || '',
         };
     }
 
