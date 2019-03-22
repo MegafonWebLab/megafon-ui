@@ -100,6 +100,12 @@ interface IProductTileProps {
     buyButtonText?: string;
     /** Show buy button */
     showBuyButton?: boolean;
+    /** button border */
+    buttonBorder?: 'green' | 'transparent';
+    /** button font color */
+    buttonFontColor?: 'green' | 'white';
+    /** button background color */
+    buttonPassiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
 
     /** Connect link */
     connectLink?: string;
@@ -158,6 +164,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         buyLink: PropTypes.string,
         usePackBuyLink: PropTypes.bool,
         buyButtonText: PropTypes.string,
+        buttonBorder: PropTypes.oneOf(['green', 'transparent']),
+        buttonFontColor: PropTypes.oneOf(['green', 'white']),
+        buttonPassiveColor: PropTypes.oneOf([
+            'green',
+            'purple',
+            'transparent',
+            'transparent-green',
+            'white',
+        ]),
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,
@@ -446,6 +461,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             secondParamsHead,
             showConnectButton,
             showBuyButton,
+            buttonBorder,
+            buttonFontColor,
+            buttonPassiveColor,
             connectLink,
             payment: { unitExtra, unitValue },
         } = this.props;
@@ -473,6 +491,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     connectButtonText={connectButtonText}
                     showBuyButton={showBuyButton}
                     showConnectButton={showConnectButton}
+                    buttonBorder={buttonBorder}
+                    buttonFontColor={buttonFontColor}
+                    buttonPassiveColor={buttonPassiveColor}
                     onClickBuy={this.handleClickBuy}
                     onClickConnect={this.handleClickConnect}
                 />

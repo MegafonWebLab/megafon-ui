@@ -19,6 +19,12 @@ interface IProductTileRestProps {
     buyLink: string;
     buyButtonText: string;
     showBuyButton: boolean;
+    /** button border */
+    buttonBorder?: 'green' | 'transparent';
+    /** button font color */
+    buttonFontColor?: 'green' | 'white';
+    /** button background color */
+    buttonPassiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
 
     connectLink: string;
     connectButtonText: string;
@@ -49,6 +55,15 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
+        buttonBorder: PropTypes.oneOf(['green', 'transparent']),
+        buttonFontColor: PropTypes.oneOf(['green', 'white']),
+        buttonPassiveColor: PropTypes.oneOf([
+            'green',
+            'purple',
+            'transparent',
+            'transparent-green',
+            'white',
+        ]),
         payment: PropTypes.shape({
             value: PropTypes.string.isRequired,
             unitExtra: PropTypes.string,
@@ -203,6 +218,9 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             buyLink,
             showBuyButton,
             buyButtonText,
+            buttonBorder,
+            buttonFontColor,
+            buttonPassiveColor,
         } = this.props;
 
         return (
@@ -228,7 +246,9 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                     {showBuyButton &&
                         <Button
                             className={cn('buy-button')}
-                            passiveColor="green"
+                            passiveColor={buttonPassiveColor}
+                            border={buttonBorder}
+                            fontColor={buttonFontColor}
                             hoverColor="green"
                             sizeAll="medium"
                             href={buyLink}

@@ -1,5 +1,17 @@
 # Changelog
 
+## Release 1.3.0-beta.22
+### Changed
+- **Button**
+    - add 'border' and 'fontColor' props
+    - add styles for 'border' and 'fontColor' props
+- **ProductTile**
+    - add 'buttonBorder', 'buttonFontColor', 'buttonPassiveColor' props
+- **ProductTileBuy**
+    - add 'buttonBorder', 'buttonFontColor', 'buttonPassiveColor' props
+- **ProductTileRest**
+    - add 'buttonBorder', 'buttonFontColor', 'buttonPassiveColor' props
+
 ## Release 1.3.0-beta.21
 ### Changed
 - **ProductTile**

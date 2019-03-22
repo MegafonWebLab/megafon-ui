@@ -20,6 +20,12 @@ interface IProductTileBuyProps {
     connectButtonText?: string;
     /** Show connect button */
     showConnectButton?: boolean;
+    /** button border */
+    buttonBorder?: 'green' | 'transparent';
+    /** button font color */
+    buttonFontColor?: 'green' | 'white';
+    /** button background color */
+    buttonPassiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
     /** Connect hander */
     onClickConnect?(e: React.SyntheticEvent<EventTarget>): void;
     /** Buy hander */
@@ -35,6 +41,15 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
+        buttonBorder: PropTypes.oneOf(['green', 'transparent']),
+        buttonFontColor: PropTypes.oneOf(['green', 'white']),
+        buttonPassiveColor: PropTypes.oneOf([
+            'green',
+            'purple',
+            'transparent',
+            'transparent-green',
+            'white',
+        ]),
         onClickBuy: PropTypes.func,
         onClickConnect: PropTypes.func,
     };
@@ -55,6 +70,9 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
             connectLink,
             connectButtonText,
             showConnectButton,
+            buttonBorder,
+            buttonFontColor,
+            buttonPassiveColor,
             onClickBuy,
             onClickConnect,
         } = this.props;
@@ -64,10 +82,12 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
                 {showBuyButton &&
                     <Button
                         className={cn('button', { 'without-margin': !showConnectButton })}
-                        passiveColor="green"
+                        passiveColor={buttonPassiveColor}
                         hoverColor="green"
                         sizeAll="medium"
                         href={buyLink}
+                        border={buttonBorder}
+                        fontColor={buttonFontColor}
                         onClick={onClickBuy}
                     >
                         {buyButtonText}
