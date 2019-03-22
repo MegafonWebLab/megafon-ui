@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './style/ProductTileBuy.less';
 import Button from '../Button/Button';
+import { IButtonProps } from '../Button/Button';
 import TextLink from '../TextLink/TextLink';
 
 export interface IProductTileBuyProps {
@@ -21,11 +22,11 @@ export interface IProductTileBuyProps {
     /** Show connect button */
     showConnectButton?: boolean;
     /** button border */
-    buttonBorder?: 'green' | 'transparent';
+    buttonBorder?: IButtonProps['border'];
     /** button font color */
-    buttonFontColor?: 'green' | 'white';
+    buttonFontColor?: IButtonProps['fontColor'];
     /** button background color */
-    buttonPassiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
+    buttonPassiveColor?: IButtonProps['passiveColor'];
     /** Connect hander */
     onClickConnect?(e: React.SyntheticEvent<EventTarget>): void;
     /** Buy hander */
@@ -41,15 +42,9 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
-        buttonBorder: PropTypes.oneOf(['green', 'transparent']),
-        buttonFontColor: PropTypes.oneOf(['green', 'white']),
-        buttonPassiveColor: PropTypes.oneOf([
-            'green',
-            'purple',
-            'transparent',
-            'transparent-green',
-            'white',
-        ]),
+        buttonBorder: Button.propTypes.border,
+        buttonFontColor: Button.propTypes.fontColor,
+        buttonPassiveColor: Button.propTypes.passiveColor,
         onClickBuy: PropTypes.func,
         onClickConnect: PropTypes.func,
     };

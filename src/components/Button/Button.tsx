@@ -4,7 +4,7 @@ import { cnCreate } from '../../utils/cn';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
 
-interface IButtonProps {
+export interface IButtonProps {
     /** Special view */
     customView?: 'two-lines';
     /** Link */

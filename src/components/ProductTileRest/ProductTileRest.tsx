@@ -5,6 +5,7 @@ import './ProductTileRest.less';
 import Header from '../Header/Header';
 import TextLink from '../TextLink/TextLink';
 import Button from '../Button/Button';
+import { IButtonProps } from '../Button/Button';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
 interface IProductTileRestProps {
@@ -20,11 +21,11 @@ interface IProductTileRestProps {
     buyButtonText: string;
     showBuyButton: boolean;
     /** button border */
-    buttonBorder?: 'green' | 'transparent';
+    buttonBorder?: IButtonProps['border'];
     /** button font color */
-    buttonFontColor?: 'green' | 'white';
+    buttonFontColor?: IButtonProps['fontColor'];
     /** button background color */
-    buttonPassiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
+    buttonPassiveColor?: IButtonProps['passiveColor'];
 
     connectLink: string;
     connectButtonText: string;
@@ -55,15 +56,9 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
-        buttonBorder: PropTypes.oneOf(['green', 'transparent']),
-        buttonFontColor: PropTypes.oneOf(['green', 'white']),
-        buttonPassiveColor: PropTypes.oneOf([
-            'green',
-            'purple',
-            'transparent',
-            'transparent-green',
-            'white',
-        ]),
+        buttonBorder: Button.propTypes.border,
+        buttonFontColor: Button.propTypes.fontColor,
+        buttonPassiveColor: Button.propTypes.passiveColor,
         payment: PropTypes.shape({
             value: PropTypes.string.isRequired,
             unitExtra: PropTypes.string,
