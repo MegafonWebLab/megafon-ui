@@ -10,6 +10,7 @@ import Static from './ProductTileStatic';
 import Dynamic from './ProductTileDynamic';
 import Price from './ProductTilePrice';
 import Options from './ProductTileOptions';
+import { IProductTileBuyProps } from './ProductTileBuy';
 
 export interface IOption {
     title: string;
@@ -69,7 +70,7 @@ export interface ISwitcher {
     traffic: string[];
 }
 
-interface IProductTileProps {
+export interface IProductTileProps {
     /** Class name */
     className?: string;
     /** Tile */
@@ -101,11 +102,11 @@ interface IProductTileProps {
     /** Show buy button */
     showBuyButton?: boolean;
     /** button border */
-    buttonBorder?: 'green' | 'transparent';
+    buttonBorder?: IProductTileBuyProps['buttonBorder'];
     /** button font color */
-    buttonFontColor?: 'green' | 'white';
+    buttonFontColor?: IProductTileBuyProps['buttonFontColor'];
     /** button background color */
-    buttonPassiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
+    buttonPassiveColor?: IProductTileBuyProps['buttonPassiveColor'];
 
     /** Connect link */
     connectLink?: string;
@@ -164,15 +165,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         buyLink: PropTypes.string,
         usePackBuyLink: PropTypes.bool,
         buyButtonText: PropTypes.string,
-        buttonBorder: PropTypes.oneOf(['green', 'transparent']),
-        buttonFontColor: PropTypes.oneOf(['green', 'white']),
-        buttonPassiveColor: PropTypes.oneOf([
-            'green',
-            'purple',
-            'transparent',
-            'transparent-green',
-            'white',
-        ]),
+        buttonBorder: Buy.propTypes.buttonBorder,
+        buttonFontColor: Buy.propTypes.buttonFontColor,
+        buttonPassiveColor: Buy.propTypes.buttonPassiveColor,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,

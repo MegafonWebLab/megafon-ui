@@ -5,7 +5,7 @@ import './style/ProductTileBuy.less';
 import Button from '../Button/Button';
 import TextLink from '../TextLink/TextLink';
 
-interface IProductTileBuyProps {
+export interface IProductTileBuyProps {
     /** Class name */
     className?: string;
     /** Buy link */
