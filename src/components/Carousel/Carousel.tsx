@@ -34,6 +34,10 @@ class Carousel extends React.Component<ICarouselProps> {
         responsive: true,
     };
 
+    firstClientX: number;
+    clientX: number;
+    noPassiveOption: any = { passive: false };
+
     handleClickNext = () => {
         const { onClickNext } = this.props;
         onClickNext && onClickNext();
@@ -42,6 +46,33 @@ class Carousel extends React.Component<ICarouselProps> {
     handleClickPrev = () => {
         const { onClickPrev } = this.props;
         onClickPrev && onClickPrev();
+    }
+
+    componentDidMount() {
+        window.addEventListener('touchstart', this.touchStart);
+        window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('touchstart', this.touchStart);
+        window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+    }
+
+    touchStart(e: object) {
+        this.firstClientX = e.touches[0].clientX;
+    }
+
+    preventTouch(e: object) {
+        const minValue = 5; // threshold
+
+        this.clientX = e.touches[0].clientX - this.firstClientX;
+
+        // Vertical scrolling does not work when you start swiping horizontally.
+        if (Math.abs(this.clientX) > minValue) {
+            e.preventDefault();
+            e.returnValue = false;
+            return false;
+        }
     }
 
     render() {

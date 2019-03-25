@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.23
+### Changed
+- **Carousel**
+    - prevent vertical scroll while scrolling horizontally
+
 ## Release 1.3.0-beta.22
 ### Changed
 - **Button**
