@@ -4,8 +4,7 @@ import { cnCreate } from '../../utils/cn';
 import './ProductTileRest.less';
 import Header from '../Header/Header';
 import TextLink from '../TextLink/TextLink';
-import Button from '../Button/Button';
-import { IButtonProps } from '../Button/Button';
+import Button, { IButtonProps } from '../Button/Button';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
 interface IProductTileRestProps {

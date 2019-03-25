@@ -2,8 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './style/ProductTileBuy.less';
-import Button from '../Button/Button';
-import { IButtonProps } from '../Button/Button';
+import Button, { IButtonProps } from '../Button/Button';
 import TextLink from '../TextLink/TextLink';
 
 export interface IProductTileBuyProps {

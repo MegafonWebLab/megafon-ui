@@ -4,13 +4,12 @@ import { cnCreate } from '../../utils/cn';
 import './style/ProductTile.less';
 import TextLink from '../TextLink/TextLink';
 import Hint from './ProductTileHint';
-import Buy from './ProductTileBuy';
 import Cashback from './ProductTileCashback';
 import Static from './ProductTileStatic';
 import Dynamic from './ProductTileDynamic';
 import Price from './ProductTilePrice';
 import Options from './ProductTileOptions';
-import { IProductTileBuyProps } from './ProductTileBuy';
+import Buy, { IProductTileBuyProps } from './ProductTileBuy';
 
 export interface IOption {
     title: string;
