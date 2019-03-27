@@ -2,10 +2,10 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './style/ProductTileBuy.less';
-import Button from '../Button/Button';
+import Button, { IButtonProps } from '../Button/Button';
 import TextLink from '../TextLink/TextLink';
 
-interface IProductTileBuyProps {
+export interface IProductTileBuyProps {
     /** Class name */
     className?: string;
     /** Buy link */
@@ -20,6 +20,12 @@ interface IProductTileBuyProps {
     connectButtonText?: string;
     /** Show connect button */
     showConnectButton?: boolean;
+    /** button border */
+    buttonBorder?: IButtonProps['border'];
+    /** button font color */
+    buttonFontColor?: IButtonProps['fontColor'];
+    /** button background color */
+    buttonPassiveColor?: IButtonProps['passiveColor'];
     /** Connect hander */
     onClickConnect?(e: React.SyntheticEvent<EventTarget>): void;
     /** Buy hander */
@@ -35,6 +41,9 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
+        buttonBorder: Button.propTypes.border,
+        buttonFontColor: Button.propTypes.fontColor,
+        buttonPassiveColor: Button.propTypes.passiveColor,
         onClickBuy: PropTypes.func,
         onClickConnect: PropTypes.func,
     };
@@ -55,6 +64,9 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
             connectLink,
             connectButtonText,
             showConnectButton,
+            buttonBorder,
+            buttonFontColor,
+            buttonPassiveColor,
             onClickBuy,
             onClickConnect,
         } = this.props;
@@ -64,10 +76,12 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
                 {showBuyButton &&
                     <Button
                         className={cn('button', { 'without-margin': !showConnectButton })}
-                        passiveColor="green"
+                        passiveColor={buttonPassiveColor}
                         hoverColor="green"
                         sizeAll="medium"
                         href={buyLink}
+                        border={buttonBorder}
+                        fontColor={buttonFontColor}
                         onClick={onClickBuy}
                     >
                         {buyButtonText}

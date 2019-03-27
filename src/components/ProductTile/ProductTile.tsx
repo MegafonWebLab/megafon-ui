@@ -4,12 +4,12 @@ import { cnCreate } from '../../utils/cn';
 import './style/ProductTile.less';
 import TextLink from '../TextLink/TextLink';
 import Hint from './ProductTileHint';
-import Buy from './ProductTileBuy';
 import Cashback from './ProductTileCashback';
 import Static from './ProductTileStatic';
 import Dynamic from './ProductTileDynamic';
 import Price from './ProductTilePrice';
 import Options from './ProductTileOptions';
+import Buy, { IProductTileBuyProps } from './ProductTileBuy';
 
 export interface IOption {
     title: string;
@@ -69,7 +69,7 @@ export interface ISwitcher {
     traffic: string[];
 }
 
-interface IProductTileProps {
+export interface IProductTileProps {
     /** Class name */
     className?: string;
     /** Tile */
@@ -100,6 +100,12 @@ interface IProductTileProps {
     buyButtonText?: string;
     /** Show buy button */
     showBuyButton?: boolean;
+    /** button border */
+    buttonBorder?: IProductTileBuyProps['buttonBorder'];
+    /** button font color */
+    buttonFontColor?: IProductTileBuyProps['buttonFontColor'];
+    /** button background color */
+    buttonPassiveColor?: IProductTileBuyProps['buttonPassiveColor'];
 
     /** Connect link */
     connectLink?: string;
@@ -158,6 +164,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         buyLink: PropTypes.string,
         usePackBuyLink: PropTypes.bool,
         buyButtonText: PropTypes.string,
+        buttonBorder: Buy.propTypes.buttonBorder,
+        buttonFontColor: Buy.propTypes.buttonFontColor,
+        buttonPassiveColor: Buy.propTypes.buttonPassiveColor,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
         connectButtonText: PropTypes.string,
@@ -446,6 +455,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             secondParamsHead,
             showConnectButton,
             showBuyButton,
+            buttonBorder,
+            buttonFontColor,
+            buttonPassiveColor,
             connectLink,
             payment: { unitExtra, unitValue },
         } = this.props;
@@ -473,6 +485,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     connectButtonText={connectButtonText}
                     showBuyButton={showBuyButton}
                     showConnectButton={showConnectButton}
+                    buttonBorder={buttonBorder}
+                    buttonFontColor={buttonFontColor}
+                    buttonPassiveColor={buttonPassiveColor}
                     onClickBuy={this.handleClickBuy}
                     onClickConnect={this.handleClickConnect}
                 />

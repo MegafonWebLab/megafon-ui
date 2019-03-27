@@ -29,4 +29,16 @@ describe('<Button />', () => {
         wrapper.simulate('click');
         expect(onClick).toHaveBeenCalledTimes(1);
     });
+
+    it('it passes props to mods', () => {
+        const wrapper = shallow(<Button passiveColor={'white'} border={'green'} fontColor={'green'}/>);
+        expect(wrapper.find('.mfui-button').hasClass('mfui-button_border_green')).toEqual(true);
+        expect(wrapper.find('.mfui-button').hasClass('mfui-button_passive-color_white')).toEqual(true);
+        expect(wrapper.find('.mfui-button').hasClass('mfui-button_font-color_green')).toEqual(true);
+    });
+
+    it('it renders white styled button', () => {
+        const wrapper = mount(<Button passiveColor={'white'} border={'green'} fontColor={'green'}/>);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
