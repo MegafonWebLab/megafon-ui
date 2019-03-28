@@ -257,7 +257,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             price: payment && payment.value || props.payment.value,
             discount: payment && payment.discount || props.payment.discount || '',
             options: options || props.secondParams,
-            buyLink: props.usePackBuyLink && buyLink || this.formHashLink(props.buyLink, shopTag) || '',
+            buyLink: props.usePackBuyLink && buyLink || this.formHashLink(props.buyLink || '', shopTag) || '',
         };
     }
 
@@ -439,7 +439,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         );
     }
 
-    formHashLink(link: any, shopTag: string) {
+    formHashLink(link: string, shopTag: string) {
         return !shopTag ? link : `${link}#${shopTag}`;
     }
 
