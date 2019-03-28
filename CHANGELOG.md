@@ -9,7 +9,6 @@
 
 ## Release 1.3.0-beta.24
 ### Changed
-<<<<<<< HEAD
 - **ProductSwitcher**
     - add value hover for tarrifs mod
 - **ProductTileRest**
