@@ -7,7 +7,6 @@
 - **ProductTileRest**
     - add pointer events none for svg so correct title displays on hover
     - add additional margin mod for buy button if there is no connect button
-    - add validation for buyable prop and button color depending on it
 - **ProductTile**
     - add minimum title height on small tablet resolution
 - **ProductTileBuy**
