@@ -239,7 +239,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                 <div className={cn('buy')}>
                     {showBuyButton &&
                         <Button
-                            className={cn('buy-button')}
+                            className={cn('buy-button', { 'additional-margin': !showConnectButton })}
                             passiveColor={buttonPassiveColor}
                             border={buttonBorder}
                             fontColor={buttonFontColor}
