@@ -247,7 +247,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const defaultCallsValue = Number(switcher.calls[props.startCallsIndex!]);
         const defaultTrafficValue = Number(switcher.traffic[props.startCallsIndex!]);
         const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
-        const { payment, options, buyLink } = currentPack;
+        const { payment, options, buyLink, shopTag = '' } = currentPack;
 
         this.state = {
             switcher,
@@ -257,7 +257,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             price: payment && payment.value || props.payment.value,
             discount: payment && payment.discount || props.payment.discount || '',
             options: options || props.secondParams,
-            buyLink: props.usePackBuyLink && buyLink || props.buyLink || '',
+            buyLink: props.usePackBuyLink && buyLink || this.formHashLink(props.buyLink || '', shopTag) || '',
         };
     }
 
@@ -328,14 +328,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     getRestState(currentPack: Partial<IServicePack>): object {
-        const { buyLink, usePackBuyLink } = this.props;
+        const { buyLink = '', usePackBuyLink } = this.props;
+        const { shopTag = '' } = currentPack;
 
         return {
             currentPack,
             price: currentPack.payment && currentPack.payment.value || '',
             discount: currentPack.payment && currentPack.payment.discount || '',
             options: currentPack.options || [],
-            buyLink: usePackBuyLink && currentPack.buyLink || buyLink || '',
+            buyLink: usePackBuyLink && currentPack.buyLink || this.formHashLink(buyLink, shopTag) || '',
         };
     }
 
@@ -421,8 +422,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         if (!showMoreLink || !moreLinkText) {
             return null;
         }
-
-        const linkWithHash = this.formHashLink(link);
+        const { currentPack: { shopTag = '' } } = this.state;
+        const linkWithHash = this.formHashLink(link, shopTag);
 
         return (
             <div className={cn('link-wrapper')}>
@@ -438,8 +439,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         );
     }
 
-    formHashLink(link: string) {
-        const { currentPack: { shopTag } } = this.state;
+    formHashLink(link: string, shopTag: string) {
         return !shopTag ? link : `${link}#${shopTag}`;
     }
 

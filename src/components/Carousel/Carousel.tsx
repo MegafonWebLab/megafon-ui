@@ -58,11 +58,11 @@ class Carousel extends React.Component<ICarouselProps> {
         window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
     }
 
-    touchStart(e: object) {
+    touchStart(e: TouchEvent): void {
         this.firstClientX = e.touches[0].clientX;
     }
 
-    preventTouch(e: object) {
+    preventTouch(e: TouchEvent): void | boolean {
         const minValue = 5; // threshold
 
         this.clientX = e.touches[0].clientX - this.firstClientX;

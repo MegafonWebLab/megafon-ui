@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.0-beta.25
+### Changed
+- **Carousel**
+    - modify event object type
+- **ProductTile**
+    - add hashtag to buy button
+
 ## Release 1.3.0-beta.24
 ### Changed
 - **ProductSwitcher**
