@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.26
+### Changed
+- **ProductTile**
+    - add price property to buy button callback
+
 ## Release 1.3.0-beta.25
 ### Changed
 - **Carousel**

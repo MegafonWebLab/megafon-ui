@@ -272,12 +272,13 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
         const { onClickBuy, info, shopTag } = this.props;
-        const { currentPack: { calls, traffic, shopTag: packShopTag } } = this.state;
+        const { currentPack: { calls, traffic, shopTag: packShopTag }, price, discount } = this.state;
         const callsValue = calls ? calls.value : 0;
         const trafficValue = traffic ? traffic.value : 0;
         const currentShopTag = packShopTag || shopTag || '';
+        const priceValue = discount ? discount : price;
 
-        onClickBuy && onClickBuy({ ...info, callsValue, trafficValue, shopTag: currentShopTag }, e);
+        onClickBuy && onClickBuy({ ...info, callsValue, trafficValue, shopTag: currentShopTag, price: priceValue }, e);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
