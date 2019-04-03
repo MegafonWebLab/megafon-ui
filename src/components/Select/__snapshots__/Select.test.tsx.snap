@@ -18,9 +18,10 @@ exports[`<Select /> it renders Select 1`] = `
   }
   keyNavigation={true}
   notFoundText="Ничего не нашлось"
+  resultSize="medium"
 >
   <div
-    className="mfui-select"
+    className="mfui-select mfui-select_result-size_medium"
   >
     <div
       className="mfui-select__control"
@@ -102,7 +103,7 @@ exports[`<Select /> it renders Select 1`] = `
 
 exports[`<Select /> it renders hidden input 1`] = `
 <div
-  className="mfui-select"
+  className="mfui-select mfui-select_result-size_medium"
 >
   <input
     name="test"
@@ -180,9 +181,10 @@ exports[`<Select /> it renders search 1`] = `
   keyNavigation={true}
   notFoundText="Ничего не нашлось"
   onChangeSearch={[Function]}
+  resultSize="medium"
 >
   <div
-    className="mfui-select mfui-select_search"
+    className="mfui-select mfui-select_search mfui-select_result-size_medium"
   >
     <div
       className="mfui-select__control"
@@ -264,7 +266,7 @@ exports[`<Select /> it renders search 1`] = `
 
 exports[`<Select /> it renders witout icon 1`] = `
 <div
-  className="mfui-select"
+  className="mfui-select mfui-select_result-size_medium"
 >
   <div
     className="mfui-select__control"
@@ -308,7 +310,7 @@ exports[`<Select /> it renders witout icon 1`] = `
 
 exports[`<Select /> it renders witout icon 2`] = `
 <div
-  className="mfui-select"
+  className="mfui-select mfui-select_result-size_medium"
 >
   <div
     className="mfui-select__control"

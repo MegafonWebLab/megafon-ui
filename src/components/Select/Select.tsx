@@ -26,6 +26,8 @@ interface ISelectProps {
     size?: 'large';
     /** Color */
     color?: 'light';
+    /** Size of search results */
+    resultSize?: 'small' | 'medium';
     /** Required */
     required?: boolean;
     /** Navigation from the keyboard */
@@ -94,6 +96,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         error: PropTypes.bool,
         size: PropTypes.oneOf(['large']),
         color: PropTypes.oneOf(['light']),
+        resultSize: PropTypes.oneOf(['small', 'medium']),
         required: PropTypes.bool,
         keyNavigation: PropTypes.bool,
         placeholder: PropTypes.string,
@@ -129,6 +132,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         notFoundText: 'Ничего не нашлось',
         items: [],
         arrow: true,
+        resultSize: 'medium',
     };
 
     itemWrapperNode: any = null;
@@ -384,6 +388,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             size, color, error, valid,
             onChangeSearch, canOpen, className,
             name, icon, arrow, classNameControl,
+            resultSize,
         } = this.props;
         const { focus, isOpen } = this.state;
 
@@ -397,6 +402,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     error: error,
                     focus: focus,
                     search: !!onChangeSearch,
+                    'result-size': resultSize,
                 }, className)}
                 ref={this.getSelectNode}
             >

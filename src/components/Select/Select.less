@@ -107,7 +107,6 @@
     }
     &__list-inner {
         overflow: auto;
-        max-height: 265px;
         padding: 12px 0;
         box-sizing: border-box;
     }
@@ -217,5 +216,16 @@
         @media @desktop {
             padding: 0 55px 0 25px;
         }
+    }
+}
+
+//mod result size
+@{b}_result-size {
+    &_small @{b}__list-inner {
+        max-height: 172px;
+    }
+
+    &_medium @{b}__list-inner {
+        max-height: 265px;
     }
 }

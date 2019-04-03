@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.27
+### Changed
+- **Select**
+    - add mod form result list height
+
 ## Release 1.3.0-beta.26
 ### Changed
 - **ProductTile**
