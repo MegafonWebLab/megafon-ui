@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.0-beta.27
+### Changed
+- **Carousel**
+    - fixed cn declaration so className prop would work on it correctly
+
 ## Release 1.3.0-beta.26
 ### Changed
 - **ProductTile**

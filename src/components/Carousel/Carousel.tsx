@@ -79,7 +79,7 @@ class Carousel extends React.Component<ICarouselProps> {
         const { className, options, children } = this.props;
 
         return (
-            <div className={cn('', className)}>
+            <div className={cn('', {}, className)}>
                 <Slider
                     {...options}
                     nextArrow={<CarouselArrow {...options} onClickArrow={this.handleClickNext} />}
