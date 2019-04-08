@@ -4,6 +4,8 @@ exports[`<Select /> it renders Select 1`] = `
 <Select
   arrow={true}
   canOpen={true}
+  fontColor="black"
+  fontSize="medium"
   items={
     Array [
       Object {
@@ -20,7 +22,7 @@ exports[`<Select /> it renders Select 1`] = `
   notFoundText="Ничего не нашлось"
 >
   <div
-    className="mfui-select"
+    className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
   >
     <div
       className="mfui-select__control"
@@ -102,7 +104,7 @@ exports[`<Select /> it renders Select 1`] = `
 
 exports[`<Select /> it renders hidden input 1`] = `
 <div
-  className="mfui-select"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
 >
   <input
     name="test"
@@ -165,6 +167,8 @@ exports[`<Select /> it renders search 1`] = `
 <Select
   arrow={true}
   canOpen={true}
+  fontColor="black"
+  fontSize="medium"
   items={
     Array [
       Object {
@@ -182,7 +186,7 @@ exports[`<Select /> it renders search 1`] = `
   onChangeSearch={[Function]}
 >
   <div
-    className="mfui-select mfui-select_search"
+    className="mfui-select mfui-select_search mfui-select_font-size_medium mfui-select_font-color_black"
   >
     <div
       className="mfui-select__control"
@@ -264,7 +268,7 @@ exports[`<Select /> it renders search 1`] = `
 
 exports[`<Select /> it renders witout icon 1`] = `
 <div
-  className="mfui-select"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
 >
   <div
     className="mfui-select__control"
@@ -308,7 +312,7 @@ exports[`<Select /> it renders witout icon 1`] = `
 
 exports[`<Select /> it renders witout icon 2`] = `
 <div
-  className="mfui-select"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
 >
   <div
     className="mfui-select__control"
