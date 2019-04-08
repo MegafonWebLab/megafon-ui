@@ -64,9 +64,7 @@
     &__search-field {
         box-sizing: border-box;
         font-family: inherit;
-        font-size: 15px;
         line-height: 25px;
-        color: @soggyAsphalt;
         position: relative;
         z-index: 1;
         background-color: transparent;
@@ -216,6 +214,36 @@
         padding: 0 55px 0 20px;
         @media @desktop {
             padding: 0 55px 0 25px;
+        }
+    }
+}
+
+//mod font-size
+@{b} {
+    &_font-size_medium {
+        @{b}__search-field {
+            font-size: 15px;
+        }
+    }
+
+    &_font-size_large {
+        @{b}__search-field {
+            font-size: 20px;
+        }
+    }
+}
+
+//mod font-color
+@{b} {
+    &_font-color_black {
+        @{b}__search-field {
+            color: @soggyAsphalt;
+        }
+    }
+
+    &_font-color_blue {
+        @{b}__search-field {
+            color: @blue;
         }
     }
 }

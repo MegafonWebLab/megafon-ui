@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 1.3.0-beta.28
+### Changed
+- **Select**
+    - added font size mod with default value as medium
+    - added font color mod with default value as black
+
 ## Release 1.3.0-beta.27
 ### Changed
 - **Carousel**
