@@ -5,7 +5,32 @@
 
 @{b} {
     padding: 8px 10px;
+    padding-top: 45px;
     overflow: hidden;
+    position: relative;
+
+    &__arrow {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        transition: opacity 0.3s;
+
+        @media @mobileSM {
+            display: none !important;
+        }
+
+        &_arrow-prev {
+            right: 60px;
+            transform: rotate(180deg);
+        }
+
+        &_disabled {
+            cursor: default;
+            opacity: 0.2;
+        }
+    }
 }
 
 @{s} {
@@ -22,17 +47,6 @@
     &-track {
         align-items: stretch;
         display: flex;
-    }
-
-    &-arrow {
-        position: absolute;
-        cursor: pointer;
-        top: -44px;
-        right: 0;
-        z-index: 2;
-        @media @mobileSM {
-            display: none !important;
-        }
     }
 
     &-dots {
@@ -65,17 +79,6 @@
                 outline: none;
             }
         }
-    }
-
-    &-disabled {
-        &@{s}-arrow {
-            cursor: default;
-        }
-    }
-
-    &-prev {
-        right: 60px;
-        transform: rotate(180deg);
     }
 
     &-slide {

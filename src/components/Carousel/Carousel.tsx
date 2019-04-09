@@ -13,8 +13,13 @@ interface ICarouselProps {
     onClickPrev: any;
 }
 
+interface ICarouselState {
+    isPrevActive: boolean;
+    isNextActive: boolean;
+}
+
 const cn = cnCreate('mfui-carousel');
-class Carousel extends React.Component<ICarouselProps> {
+class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> {
     static propTypes = {
         className: PropTypes.string,
         options: PropTypes.objectOf(
@@ -37,6 +42,38 @@ class Carousel extends React.Component<ICarouselProps> {
     firstClientX: number;
     clientX: number;
     noPassiveOption: any = { passive: false };
+    slider: any;
+
+    constructor(props: ICarouselProps) {
+        super(props);
+
+        this.state = {
+            isPrevActive: false,
+            isNextActive: true,
+        };
+    }
+
+    componentDidMount() {
+        const { initialSlide } = this.props.options;
+        const isNextActive = initialSlide !== this.props.children.length - 1;
+
+        window.addEventListener('touchstart', this.touchStart);
+        window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+
+        this.setState({
+            isPrevActive: !!initialSlide,
+            isNextActive,
+        });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('touchstart', this.touchStart);
+        window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+    }
+
+    getSlider = (slider: any): void => {
+        this.slider = slider;
+    }
 
     handleClickNext = () => {
         const { onClickNext } = this.props;
@@ -48,14 +85,21 @@ class Carousel extends React.Component<ICarouselProps> {
         onClickPrev && onClickPrev();
     }
 
-    componentDidMount() {
-        window.addEventListener('touchstart', this.touchStart);
-        window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+    handleCarouselNext = () => {
+        this.slider.slickNext();
     }
 
-    componentWillUnmount() {
-        window.removeEventListener('touchstart', this.touchStart);
-        window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+    handleCarouselPrev = () => {
+        this.slider.slickPrev();
+    }
+
+    handleChange = slideIndex => {
+        const isNextActive = slideIndex !== this.props.children.length - 1;
+
+        this.setState({
+            isPrevActive: !!slideIndex,
+            isNextActive,
+        });
     }
 
     touchStart(e: TouchEvent): void {
@@ -75,15 +119,35 @@ class Carousel extends React.Component<ICarouselProps> {
         }
     }
 
+    renderArrows() {
+        const { isPrevActive, isNextActive } = this.state;
+
+        return (
+            <div className={cn('arrows')}>
+                <CarouselArrow
+                    className={cn('arrow', { 'arrow-prev': true, disabled: !isPrevActive })}
+                    onClickArrow={this.handleClickPrev}
+                    onClick={this.handleCarouselPrev}
+                />
+                <CarouselArrow
+                    className={cn('arrow', { 'arrow-next': true, disabled: !isNextActive })}
+                    onClickArrow={this.handleClickNext}
+                    onClick={this.handleCarouselNext}
+                />
+            </div>
+        );
+    }
+
     render() {
         const { className, options, children } = this.props;
 
         return (
             <div className={cn('', {}, className)}>
+                {this.renderArrows()}
                 <Slider
                     {...options}
-                    nextArrow={<CarouselArrow {...options} onClickArrow={this.handleClickNext} />}
-                    prevArrow={<CarouselArrow {...options} onClickArrow={this.handleClickPrev} />}
+                    ref={this.getSlider}
+                    afterChange={this.handleChange}
                 >
                     {children}
                 </Slider>
