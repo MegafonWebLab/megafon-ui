@@ -6,7 +6,6 @@ import Arrow from 'icons/System/16/Arrow_forward_16.svg';
 
 interface ICarouselArrowProps {
     className: string;
-    onClickArrow: any;
     onClick: any;
 }
 
@@ -14,21 +13,14 @@ const cn = cnCreate('mfui-carousel-arrow');
 class CarouselArrow extends React.Component<ICarouselArrowProps> {
     static propTypes = {
         className: PropTypes.string,
-        onClickArrow: PropTypes.func,
         onClick: PropTypes.func,
     };
 
-    handleClick = () => {
-        const { onClickArrow, onClick } = this.props;
-        onClickArrow && onClickArrow();
-        onClick && onClick();
-    }
-
     render() {
-        const { className } = this.props;
+        const { className, onClick } = this.props;
 
         return (
-            <div className={cn('', {}, className)} onClick={this.handleClick}>
+            <div className={cn('', {}, className)} onClick={onClick}>
                 <div className={cn('arrow-icon')}><Arrow /></div>
             </div>
         );

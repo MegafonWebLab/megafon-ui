@@ -16,6 +16,7 @@ interface ICarouselProps {
 interface ICarouselState {
     isPrevActive: boolean;
     isNextActive: boolean;
+    isArrows: boolean;
 }
 
 const cn = cnCreate('mfui-carousel');
@@ -50,6 +51,7 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
         this.state = {
             isPrevActive: false,
             isNextActive: true,
+            isArrows: false,
         };
     }
 
@@ -57,8 +59,10 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
         const { initialSlide } = this.props.options;
         const isNextActive = initialSlide !== this.props.children.length - 1;
 
+        this.handleArrowsShow();
         window.addEventListener('touchstart', this.touchStart);
         window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+        window.addEventListener('resize', this.handleArrowsShow);
 
         this.setState({
             isPrevActive: !!initialSlide,
@@ -69,6 +73,7 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
     componentWillUnmount() {
         window.removeEventListener('touchstart', this.touchStart);
         window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
+        window.removeEventListener('resize', this.handleArrowsShow);
     }
 
     getSlider = (slider: any): void => {
@@ -78,18 +83,12 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
     handleClickNext = () => {
         const { onClickNext } = this.props;
         onClickNext && onClickNext();
+        this.slider.slickNext();
     }
 
     handleClickPrev = () => {
         const { onClickPrev } = this.props;
         onClickPrev && onClickPrev();
-    }
-
-    handleCarouselNext = () => {
-        this.slider.slickNext();
-    }
-
-    handleCarouselPrev = () => {
         this.slider.slickPrev();
     }
 
@@ -119,6 +118,47 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
         }
     }
 
+    handleResponciveArrowsShow = (breakpoints, desktopArrows, desktopSlides, childsAmount) => {
+        const windowWidth = window.outerWidth;
+        let isResponciveArrows;
+
+        breakpoints.map((gap, index) => {
+            const {
+                breakpoint,
+                settings: { slidesToShow, arrows },
+            } = gap;
+            const isThisResolution = breakpoint >= windowWidth;
+            const isNextBreakpoint = !!breakpoints[index + 1] &&
+                windowWidth > breakpoints[index + 1].breakpoint;
+            const slidesToShowValue = slidesToShow ? slidesToShow : desktopSlides;
+            const isShowArrows = isThisResolution &&
+                gap.settings.hasOwnProperty('arrows') ? arrows : desktopArrows;
+            const isArrows = isShowArrows && slidesToShowValue < childsAmount;
+            const isLast = index + 1 === breakpoints.length;
+
+            if ((isNextBreakpoint && isThisResolution) || (isThisResolution && isLast)) {
+                isResponciveArrows = isArrows;
+            }
+        });
+
+        return isResponciveArrows;
+    }
+
+    handleArrowsShow = () => {
+        const {
+            children,
+            options: { slidesToShow, responsive, arrows },
+        } = this.props;
+        const childsAmount = children.length;
+        const responsiveArrows = !!responsive.length &&
+            this.handleResponciveArrowsShow(responsive, arrows, slidesToShow, childsAmount);
+        const isArrows = responsiveArrows !== undefined ?
+            responsiveArrows :
+            arrows && slidesToShow < childsAmount;
+
+        this.setState({ isArrows });
+    }
+
     renderArrows() {
         const { isPrevActive, isNextActive } = this.state;
 
@@ -126,13 +166,11 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
             <div className={cn('arrows')}>
                 <CarouselArrow
                     className={cn('arrow', { 'arrow-prev': true, disabled: !isPrevActive })}
-                    onClickArrow={this.handleClickPrev}
-                    onClick={this.handleCarouselPrev}
+                    onClick={this.handleClickPrev}
                 />
                 <CarouselArrow
                     className={cn('arrow', { 'arrow-next': true, disabled: !isNextActive })}
-                    onClickArrow={this.handleClickNext}
-                    onClick={this.handleCarouselNext}
+                    onClick={this.handleClickNext}
                 />
             </div>
         );
@@ -140,12 +178,15 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
 
     render() {
         const { className, options, children } = this.props;
+        const { isArrows } = this.state;
+        const { arrows, ...carouselOptions } = options;
 
         return (
             <div className={cn('', {}, className)}>
-                {this.renderArrows()}
+                {isArrows && this.renderArrows()}
                 <Slider
-                    {...options}
+                    {...carouselOptions}
+                    arrows={false}
                     ref={this.getSlider}
                     afterChange={this.handleChange}
                 >
