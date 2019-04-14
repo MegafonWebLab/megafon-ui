@@ -4,6 +4,7 @@
 ### Changed
 - **Select**
     - add mod form result list height
+    - add test with small result size mod
 
 ## Release 1.3.0-beta.28
 ### Changed
