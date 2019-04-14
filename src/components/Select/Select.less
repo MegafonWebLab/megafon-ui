@@ -105,7 +105,6 @@
     }
     &__list-inner {
         overflow: auto;
-        max-height: 265px;
         padding: 12px 0;
         box-sizing: border-box;
     }
@@ -245,5 +244,16 @@
         @{b}__search-field {
             color: @blue;
         }
+    }
+}
+
+//mod result size
+@{b}_result-size {
+    &_small @{b}__list-inner {
+        max-height: 184px;
+    }
+
+    &_medium @{b}__list-inner {
+        max-height: 265px;
     }
 }

@@ -20,9 +20,10 @@ exports[`<Select /> it renders Select 1`] = `
   }
   keyNavigation={true}
   notFoundText="Ничего не нашлось"
+  resultSize="medium"
 >
   <div
-    className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
+    className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
   >
     <div
       className="mfui-select__control"
@@ -104,7 +105,7 @@ exports[`<Select /> it renders Select 1`] = `
 
 exports[`<Select /> it renders hidden input 1`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
 >
   <input
     name="test"
@@ -184,9 +185,10 @@ exports[`<Select /> it renders search 1`] = `
   keyNavigation={true}
   notFoundText="Ничего не нашлось"
   onChangeSearch={[Function]}
+  resultSize="medium"
 >
   <div
-    className="mfui-select mfui-select_search mfui-select_font-size_medium mfui-select_font-color_black"
+    className="mfui-select mfui-select_search mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
   >
     <div
       className="mfui-select__control"
@@ -266,9 +268,70 @@ exports[`<Select /> it renders search 1`] = `
 </Select>
 `;
 
+exports[`<Select /> it renders with result size small 1`] = `
+<div
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_small"
+>
+  <input
+    name="test"
+    type="hidden"
+  />
+  <div
+    className="mfui-select__control"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+  >
+    <div
+      className="mfui-select__title"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className="mfui-select__title-inner"
+      />
+    </div>
+    <span
+      className="mfui-select__arrow"
+    >
+      <span
+        className="mfui-select__arrow-inner"
+      />
+    </span>
+  </div>
+  <div
+    className="mfui-select__list"
+  >
+    <div
+      className="mfui-select__list-inner"
+    >
+      <SelectItem
+        active={true}
+        current={true}
+        index={0}
+        key="1"
+        onHover={[Function]}
+        onSelect={[Function]}
+        title="test1"
+      />
+      <SelectItem
+        active={false}
+        current={false}
+        index={1}
+        key="2"
+        onHover={[Function]}
+        onSelect={[Function]}
+        title="test2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Select /> it renders witout icon 1`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
 >
   <div
     className="mfui-select__control"
@@ -312,7 +375,7 @@ exports[`<Select /> it renders witout icon 1`] = `
 
 exports[`<Select /> it renders witout icon 2`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
 >
   <div
     className="mfui-select__control"

@@ -46,6 +46,11 @@ describe('<Select />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('it renders with result size small', () => {
+        const wrapper = shallow(<Select {...props} name="test" resultSize="small" />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('it handles keydown with argument keyNavigation is false', () => {
         const wrapper = mount(<Select {...props} keyNavigation={false} />);
         wrapper.find(controlSelector).simulate('keydown', {
