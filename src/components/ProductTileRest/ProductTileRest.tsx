@@ -101,14 +101,14 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
 
     handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
         const { info, shopTag, onClickConnect } = this.props;
-
         onClickConnect && onClickConnect({ ...info, shopTag }, e);
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const { info, shopTag, onClickBuy } = this.props;
+        const { info, shopTag, onClickBuy, payment: { value, discount, unitValue, unitExtra } } = this.props;
+        const priceValue: string = discount ? discount : value;
 
-        onClickBuy && onClickBuy({ ...info, shopTag }, e);
+        onClickBuy && onClickBuy({ ...info, shopTag, price: priceValue, unitValue, unitExtra }, e);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
