@@ -4,19 +4,26 @@ import { cnCreate } from '../../utils/cn';
 import './Carousel.less';
 import CarouselArrow from './CarouselArrow';
 import Slider from 'react-slick';
+import throttle from 'lodash.throttle';
 
 interface ICarouselProps {
     className: string;
     options: any;
     children: any;
-    onClickNext: any;
-    onClickPrev: any;
+    onClickNext: () => void;
+    onClickPrev: () => void;
 }
 
 interface ICarouselState {
     isPrevActive: boolean;
     isNextActive: boolean;
     isArrows: boolean;
+    showSlides: number;
+}
+
+interface IResponsiveData {
+    hasResponsiveArrows?: boolean;
+    currentSlides?: number;
 }
 
 const cn = cnCreate('mfui-carousel');
@@ -51,18 +58,19 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
         this.state = {
             isPrevActive: false,
             isNextActive: true,
-            isArrows: false,
+            isArrows: true,
+            showSlides: 0,
         };
     }
 
     componentDidMount() {
         const { initialSlide } = this.props.options;
-        const isNextActive = initialSlide !== this.props.children.length - 1;
+        const isNextActive = initialSlide !== this.props.children.length - 1 - this.state.showSlides;
 
-        this.handleArrowsShow();
+        this.handleCarouselParams();
         window.addEventListener('touchstart', this.touchStart);
         window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
-        window.addEventListener('resize', this.handleArrowsShow);
+        window.addEventListener('resize', throttle(this.handleCarouselParams, 20));
 
         this.setState({
             isPrevActive: !!initialSlide,
@@ -73,7 +81,7 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
     componentWillUnmount() {
         window.removeEventListener('touchstart', this.touchStart);
         window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
-        window.removeEventListener('resize', this.handleArrowsShow);
+        window.removeEventListener('resize', this.handleCarouselParams);
     }
 
     getSlider = (slider: any): void => {
@@ -82,18 +90,20 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
 
     handleClickNext = () => {
         const { onClickNext } = this.props;
+
         onClickNext && onClickNext();
         this.slider.slickNext();
     }
 
     handleClickPrev = () => {
         const { onClickPrev } = this.props;
+
         onClickPrev && onClickPrev();
         this.slider.slickPrev();
     }
 
-    handleChange = slideIndex => {
-        const isNextActive = slideIndex !== this.props.children.length - 1;
+    handleChange = (slideIndex: number) => {
+        const isNextActive = slideIndex !== this.props.children.length - this.state.showSlides;
 
         this.setState({
             isPrevActive: !!slideIndex,
@@ -118,11 +128,11 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
         }
     }
 
-    handleResponciveArrowsShow = (breakpoints, desktopArrows, desktopSlides, childsAmount) => {
+    getResponsiveData = (breakpoints, desktopArrows: boolean, desktopSlides: number, childsAmount: number) => {
         const windowWidth = window.outerWidth;
-        let isResponciveArrows;
+        let responsiveData: IResponsiveData = {};
 
-        breakpoints.map((gap, index) => {
+        breakpoints.forEach((gap, index) => {
             const {
                 breakpoint,
                 settings: { slidesToShow, arrows },
@@ -137,26 +147,31 @@ class Carousel extends React.Component<Partial<ICarouselProps>, ICarouselState> 
             const isLast = index + 1 === breakpoints.length;
 
             if ((isNextBreakpoint && isThisResolution) || (isThisResolution && isLast)) {
-                isResponciveArrows = isArrows;
+                responsiveData = { hasResponsiveArrows: isArrows, currentSlides: slidesToShowValue };
             }
         });
 
-        return isResponciveArrows;
+        return responsiveData;
     }
 
-    handleArrowsShow = () => {
+    handleCarouselParams = () => {
         const {
             children,
-            options: { slidesToShow, responsive, arrows },
+            options: { slidesToShow, responsive, arrows = true },
         } = this.props;
         const childsAmount = children.length;
-        const responsiveArrows = !!responsive.length &&
-            this.handleResponciveArrowsShow(responsive, arrows, slidesToShow, childsAmount);
-        const isArrows = responsiveArrows !== undefined ?
-            responsiveArrows :
+        const { hasResponsiveArrows, currentSlides } = this.getResponsiveData(
+            responsive,
+            arrows,
+            slidesToShow,
+            childsAmount
+        );
+        const isArrows = hasResponsiveArrows !== undefined ?
+            hasResponsiveArrows :
             arrows && slidesToShow < childsAmount;
+        const showSlides = currentSlides !== undefined ? currentSlides : slidesToShow;
 
-        this.setState({ isArrows });
+        this.setState({ isArrows, showSlides });
     }
 
     renderArrows() {
