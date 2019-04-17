@@ -1,6 +1,6 @@
 # Changelog
 
-## Release 1.3.0-beta.29
+## Release 1.3.1
 ### Changed
 - **Select**
     - add mod form result list height
