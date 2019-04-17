@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.2
+### Changed
+- **ProductTileRest**
+    - add additional returned data in onClickBuy callback
+
 ## Release 1.3.1
 ### Changed
 - **Select**

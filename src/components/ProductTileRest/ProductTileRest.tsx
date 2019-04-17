@@ -63,7 +63,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             unitExtra: PropTypes.string,
             unitValue: PropTypes.string,
             discount: PropTypes.string,
-        }),
+        }).isRequired,
         packs: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
             unit: PropTypes.string,
@@ -106,9 +106,10 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const { info, shopTag, onClickBuy } = this.props;
+        const { info, shopTag, onClickBuy, payment: { value, discount, unitValue, unitExtra } } = this.props;
+        const priceValue: string = discount || value;
 
-        onClickBuy && onClickBuy({ ...info, shopTag }, e);
+        onClickBuy && onClickBuy({ ...info, shopTag, price: priceValue, unitValue, unitExtra }, e);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
