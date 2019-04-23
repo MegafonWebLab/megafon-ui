@@ -21,6 +21,7 @@ export interface IOption {
 }
 
 export interface IPayment {
+    title?: string;
     value: string;
     unitExtra: string;
     unitValue: string;
@@ -172,6 +173,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
         payment: PropTypes.shape({
+            title: PropTypes.string,
             value: PropTypes.string.isRequired,
             unitExtra: PropTypes.string,
             unitValue: PropTypes.string,
@@ -469,7 +471,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             buttonFontColor,
             buttonPassiveColor,
             connectLink,
-            payment: { unitExtra, unitValue },
+            payment: { title, unitExtra, unitValue },
         } = this.props;
         const { price, discount, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
@@ -481,7 +483,13 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     {this.renderTitle()}
                     {this.renderLink()}
                     <Cashback {...cashback} />
-                    <Price value={price} discount={discount} unitExtra={unitExtra} unitValue={unitValue} />
+                    <Price
+                        title={title}
+                        value={price}
+                        discount={discount}
+                        unitExtra={unitExtra}
+                        unitValue={unitValue}
+                    />
                     <div className={cn('constructor')}>
                         {isServicePacks ? this.renderDynamic() : this.renderStatic()}
                         <Options options={firstParams.items} />

@@ -1,13 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductTilePrice /> it renders ProductTilePrice 1`] = `
+exports[`<ProductTilePrice /> renders ProductTilePrice 1`] = `
+<div
+  className="mfui-product-tile-price"
+>
+  <div
+    className="mfui-product-tile-price__discount-condition"
+  >
+    title
+  </div>
+  <span
+    className="mfui-product-tile-price__old-price"
+  >
+    <span
+      className="mfui-product-tile-price__old-price-value"
+    >
+       
+    </span>
+  </span>
+  <span
+    className="mfui-product-tile-price__actual-price"
+  >
+    <ProductTileValue
+      value="23423 uniteValue"
+    />
+     
+    <span
+      className="mfui-product-tile-price__payment-period"
+    >
+      uniteExtra
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<ProductTilePrice /> renders ProductTilePrice with discount 1`] = `
 <div
   className="mfui-product-tile-price mfui-product-tile-price_discount"
 >
   <div
     className="mfui-product-tile-price__discount-condition"
   >
-    При покупке новой SIM–карты
+    title
   </div>
   <span
     className="mfui-product-tile-price__old-price"
@@ -22,7 +56,7 @@ exports[`<ProductTilePrice /> it renders ProductTilePrice 1`] = `
     className="mfui-product-tile-price__actual-price"
   >
     <ProductTileValue
-      value="23423 uniteValue"
+      value="100 uniteValue"
     />
      
     <span

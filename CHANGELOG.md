@@ -1,5 +1,14 @@
 # Changelog
 
+## Unrelease 1.3.3
+### Changed
+- **ProductTile**
+    - add payment title props
+- **ProductTilePrice**
+    - add payment title props
+- **ProductTileRest**
+    - add payment title props
+
 ## Release 1.3.2
 ### Changed
 - **ProductTileRest**

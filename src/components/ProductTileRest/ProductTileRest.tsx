@@ -59,6 +59,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         buttonFontColor: Button.propTypes.fontColor,
         buttonPassiveColor: Button.propTypes.passiveColor,
         payment: PropTypes.shape({
+            title: PropTypes.string,
             value: PropTypes.string.isRequired,
             unitExtra: PropTypes.string,
             unitValue: PropTypes.string,
@@ -166,14 +167,14 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
 
     renderShowcase() {
         const {
-            payment: { value, unitExtra, unitValue, discount },
+            payment: { title, value, unitExtra, unitValue, discount },
             packs,
         } =  this.props;
 
         return (
             <React.Fragment>
                 <div className={cn('price', { discount: !!discount })}>
-                    <div className={cn('discount-condition')}>При покупке новой SIM–карты</div>
+                    <div className={cn('discount-condition')}>{title}</div>
                     <div className={cn('old-price-wrapper')}>
                         <div className={cn('old-price')}>{`${value} ${unitValue}`}</div>
                     </div>
