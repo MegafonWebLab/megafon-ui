@@ -1,5 +1,9 @@
 # Changelog
 
+### Fixed
+- **ProductTileBuy**
+    - remove bug with flex-basis in IE10, IE11
+
 ## Unrelease 1.3.3
 ### Changed
 - **ProductTile**
