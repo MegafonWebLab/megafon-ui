@@ -34,8 +34,10 @@ interface ISelectProps {
     fontColor?: 'black' | 'blue';
     /** Controls padding */
     controlsPadding?: 'none';
-    /** Input size */
+    /** Input padding */
     inputPadding?: 'small';
+    /** Dropdown item padding */
+    itemPadding?: 'small';
     /** Required */
     required?: boolean;
     /** Navigation from the keyboard */
@@ -109,6 +111,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         fontColor: PropTypes.oneOf(['black', 'blue']),
         controlsPadding: PropTypes.oneOf(['none']),
         inputPadding: PropTypes.oneOf(['small']),
+        itemPadding: PropTypes.oneOf(['small']),
         required: PropTypes.bool,
         keyNavigation: PropTypes.bool,
         placeholder: PropTypes.string,
@@ -374,6 +377,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     getSelectNode = node => this.selectNode = node;
 
     renderChildren() {
+        const { itemPadding } = this.props;
         this.itemsNodeList = [];
 
         return (
@@ -391,6 +395,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                             onHover={this.handleHoverItem}
                             onSelect={this.handleClickItem}
                             ref={node => { node && this.itemsNodeList.push(node.itemNode); }}
+                            padding={itemPadding}
                         />
                     )}
                     {!this.props.items.length && <div className={cn('not-found')}>{this.props.notFoundText}</div>}
