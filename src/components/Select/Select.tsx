@@ -32,6 +32,10 @@ interface ISelectProps {
     fontSize?: 'medium' | 'large';
     /** Font color */
     fontColor?: 'black' | 'blue';
+    /** Controls padding */
+    controlsPadding?: 'none';
+    /** Input size */
+    inputPadding?: 'small';
     /** Required */
     required?: boolean;
     /** Navigation from the keyboard */
@@ -103,6 +107,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         resultSize: PropTypes.oneOf(['small', 'medium']),
         fontSize: PropTypes.oneOf(['medium', 'large']),
         fontColor: PropTypes.oneOf(['black', 'blue']),
+        controlsPadding: PropTypes.oneOf(['none']),
+        inputPadding: PropTypes.oneOf(['small']),
         required: PropTypes.bool,
         keyNavigation: PropTypes.bool,
         placeholder: PropTypes.string,
@@ -328,9 +334,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     renderSearchField() {
+        const { inputPadding } = this.props;
+
         return (
             <input
-                className={cn('search-field')}
+                className={cn('search-field', { padding: inputPadding })}
                 onClick={this.handleClickSearch}
                 onChange={this.handleChangeSearch}
                 onFocus={this.handleFocusSearch}
@@ -397,6 +405,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             onChangeSearch, canOpen, className,
             name, icon, arrow, classNameControl,
             fontSize, fontColor, resultSize,
+            inputPadding, controlsPadding,
         } = this.props;
         const { focus, isOpen } = this.state;
 
@@ -418,7 +427,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             >
                 {!onChangeSearch && name && this.renderHiddenInput()}
                 <div
-                    className={cn('control', {}, classNameControl)}
+                    className={cn('control', { padding: controlsPadding }, classNameControl)}
                     onKeyDown={this.handleKeyDown}
                     onFocus={this.handleFocusControl}
                     onBlur={this.handleBlurControl}

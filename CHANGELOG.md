@@ -1,6 +1,12 @@
 # Changelog
 
-## Unrelease 1.3.3
+## Release 1.3.4
+### Changed
+- **Select**
+    - add mod for controls inner padding
+    - add mod for input inner padding
+
+## Release 1.3.3
 ### Changed
 - **ProductTile**
     - add payment title props
