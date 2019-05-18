@@ -405,7 +405,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             onChangeSearch, canOpen, className,
             name, icon, arrow, classNameControl,
             fontSize, fontColor, resultSize,
-            inputPadding, controlsPadding,
+            controlsPadding,
         } = this.props;
         const { focus, isOpen } = this.state;
 
