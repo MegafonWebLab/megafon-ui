@@ -16,6 +16,8 @@ interface ISelectItemProps {
     active?: boolean;
     /** Current item */
     current?: boolean;
+    /** Item padding */
+    padding?: 'small';
     /** Select item handler */
     onSelect(e: React.SyntheticEvent<EventTarget>, index: number): void;
     /** Hover item handler */
@@ -39,6 +41,7 @@ class SelectItem extends React.Component<ISelectItemProps, {}> {
         current: PropTypes.bool,
         onSelect: PropTypes.func.isRequired,
         onHover: PropTypes.func.isRequired,
+        padding: PropTypes.oneOf(['small']),
     };
 
     itemNode: any = null;
@@ -76,13 +79,22 @@ class SelectItem extends React.Component<ISelectItemProps, {}> {
     }
 
     render() {
+        const {
+            leftIcon,
+            rightIcon,
+            current,
+            active,
+            padding,
+        } = this.props;
+
         return (
             <div
                 className={cn('', {
-                    'left-icon': !!this.props.leftIcon,
-                    'right-icon': !!this.props.rightIcon,
-                    current: this.props.current,
-                    active: this.props.active,
+                    'left-icon': !!leftIcon,
+                    'right-icon': !!rightIcon,
+                    current: current,
+                    active: active,
+                    padding: padding,
                 })}
                 onClick={this.handleClick}
                 onMouseEnter={this.handleMouseEnter}

@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.5
+### Changed
+- **Select**
+    - add mod for dropdown item padding
+- **SelectItem**
+    - add mod for inner padding
+
 ## Release 1.3.4
 ### Changed
 - **Select**
