@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.6
+### Changed
+- **Button**
+    - change spinner icon class names
+- **Select**
+    - replace input class into input tag for ie10 and ie 11 placeholder support
+
 ## Release 1.3.5
 ### Changed
 - **Select**
