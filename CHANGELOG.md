@@ -1,5 +1,12 @@
 # Changelog
 
+## Release 1.3.7
+### Changed
+- **ProductTileDynamic**
+    - limited maximal height and added overflow hidden of value to prevent tile shivering in IE
+- **ProductTileValue**
+    - limited maximal height and added overflow hidden of value to prevent tile shivering in IE
+
 ## Release 1.3.6
 ### Changed
 - **Button**
