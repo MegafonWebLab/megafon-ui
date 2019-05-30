@@ -7,6 +7,21 @@
     white-space: nowrap;
     display: inline-block;
     text-align: center;
+    overflow: hidden;
+    vertical-align: bottom;
+    max-height: 28px;
+
+    @media @mobileB {
+        max-height: 32px;
+    }
+
+    @media @desktopS {
+        max-height: 36px;
+    }
+
+    @media @desktopMU {
+        max-height: 40px;
+    }
 
     &__prev {
         opacity: 1;
