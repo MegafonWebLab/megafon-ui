@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.11
+### Changed
+- **ProductTileRest**
+    - add html tags render to option title element
+
 ## Release 1.3.10
 ### Changed
 - **Paragraph**

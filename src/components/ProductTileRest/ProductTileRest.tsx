@@ -156,7 +156,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
 
                     return (
                         <div className={cn('option')} key={title + index}>
-                            <div className={cn('option-title')}>{title}</div>
+                            <div className={cn('option-title')} dangerouslySetInnerHTML={{ __html: title }} />
                             <div className={cn('option-description')}>{`${value} ${unit}`}</div>
                         </div>
                     );
