@@ -54,9 +54,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
     renderContent(title: string, caption: string, value: string, unit: string): JSX.Element {
         return (
             <div className={cn('content')}>
-                <div className={cn('title')}>
-                    {title}
-                </div>
+                <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
                 <div className={cn('description')}>
                     {caption || `${value} ${unit}`}
                 </div>
