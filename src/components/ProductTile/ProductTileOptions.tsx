@@ -33,8 +33,8 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         const { onClickBubble } = this.props;
 
         return (
-            <div className={cn('title')}>
-                {title}
+            <div className={cn('content')}>
+                <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
                 <BubbleHint
                     className={cn('cashback-c')}
                     popupWidth="small"
