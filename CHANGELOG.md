@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.9
+### Changed
+- **ProductTileOptions**
+    - add html tags render to second title element
+
 ## Release 1.3.8
 ### Changed
 - **ProductTileOptions**
