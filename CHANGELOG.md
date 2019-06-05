@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.10
+### Changed
+- **Paragraph**
+    - add optional prop to display wrapper tag as div
+
 ## Release 1.3.9
 ### Changed
 - **ProductTileOptions**

@@ -30,6 +30,8 @@ interface IParagraphProps {
     marginMobile?: 'none' | 'small' | 'medium' | 'large' | 'largest';
     /** Text color */
     color?: 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
+    /** Parent tag */
+    as?: 'p' | 'div';
     /** Custom className */
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
@@ -51,6 +53,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         marginTablet: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest']),
         marginMobile: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest']),
         color: PropTypes.oneOf(['black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
+        as: PropTypes.oneOf(['p', 'div']),
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.arrayOf(PropTypes.node),
@@ -65,11 +68,14 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         sizeAll: 'medium',
         color: 'black',
         weight: 'regular',
+        as: 'p',
     };
 
     render() {
+        const TagName = this.props.as as string;
+
         return (
-            <p
+            <TagName
                 className={cn('', {
                     'size-all': this.props.sizeAll,
                     'size-wide': this.props.sizeWide,
@@ -86,7 +92,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
                     weight: this.props.weight,
                 }, this.props.className)}>
                 {this.props.children}
-            </p>
+            </TagName>
         );
     }
 }
