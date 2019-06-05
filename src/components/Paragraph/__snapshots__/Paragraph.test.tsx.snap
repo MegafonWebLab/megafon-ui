@@ -7,3 +7,11 @@ exports[`<Paragraph /> it renders Paragraph 1`] = `
   Text
 </p>
 `;
+
+exports[`<Paragraph /> it renders Paragraph with div element as wrapper 1`] = `
+<div
+  className="mfui-paragraph mfui-paragraph_size-all_medium mfui-paragraph_margin-all_medium mfui-paragraph_color_black mfui-paragraph_weight_regular"
+>
+  Text
+</div>
+`;

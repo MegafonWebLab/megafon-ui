@@ -31,6 +31,7 @@ exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] 
         test
       </Header>
       <Paragraph
+        as="p"
         className="mfui-product-card-features-bottom__item-text"
         color="black"
         marginAll="none"
