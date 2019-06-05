@@ -22,9 +22,16 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
         <test-file-stub />
       </div>
       <div
-        className="mfui-product-tile-options__title"
+        className="mfui-product-tile-options__content"
       >
-        title
+        <div
+          className="mfui-product-tile-options__title"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "title",
+            }
+          }
+        />
         <BubbleHint
           className="mfui-product-tile-options__cashback-c"
           click={true}

@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.8
+### Changed
+- **ProductTileOptions**
+    - add html tags render to title element
+
 ## Release 1.3.7
 ### Changed
 - **ProductTileDynamic**

@@ -3,9 +3,6 @@
 @b: e('.mfui-product-tile-options');
 
 @{b} {
-    margin-left: 11px;
-    margin-top: 16px;
-
     &__option {
         margin-top: 16px;
         display: flex;
@@ -33,6 +30,11 @@
 
     &__title {
         .h5();
+
+        a {
+            .default-link();
+            word-break: break-word;
+        }
     }
 
     &__description {
