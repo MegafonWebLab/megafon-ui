@@ -1,5 +1,10 @@
 # Changelog
 
+## Release 1.3.12
+### Changed
+- **ProductTileOptions**
+    - fix wrapper margins
+
 ## Release 1.3.11
 ### Changed
 - **ProductTileRest**
