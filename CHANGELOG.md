@@ -3,7 +3,7 @@
 ## Release 1.3.14
 ### Changed
 - **ProductSwitcher**
-    - add new mod for display with vale units
+    - add new mod for display with value units
 
 ## Release 1.3.13
 ### Changed
