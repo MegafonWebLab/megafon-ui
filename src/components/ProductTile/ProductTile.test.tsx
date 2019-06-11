@@ -123,11 +123,84 @@ const servicePacks = [
             },
         ],
     },
+    {
+        'buyLink': '&options=null',
+        'calls': {
+            'value': 600,
+            'unit': 'минут',
+        },
+        'traffic': {
+            'value': 18,
+            'unit': 'ГБ',
+        },
+        'payment': {
+            'value': '600',
+            'unitExtra': 'за 30 дней',
+            'unitValue': '₽',
+            'discount': '0',
+        },
+        'options': [
+            {
+                'title': 'Безлимитные SMS',
+                'value': '55',
+                'unit': '₽ за 30 дней',
+                'footnote': '',
+                'svgIcon': <MegafonTv />,
+            },
+            {
+                'title': 'Кэшбэк 20%',
+                'value': '0',
+                'unit': '',
+                'footnote': 'Участвуйте в программе и тратьте кэшбэк ',
+                'svgIcon': <MegafonTv />,
+            },
+        ],
+    },
+    {
+        'buyLink': '&options=null',
+        'calls': {
+            'value': 750,
+            'unit': 'минут',
+        },
+        'traffic': {
+            'value': 18,
+            'unit': 'ГБ',
+        },
+        'payment': {
+            'value': '750',
+            'unitExtra': 'за 30 дней',
+            'unitValue': '₽',
+            'discount': '0',
+        },
+        'options': [
+            {
+                'title': 'Безлимитные SMS',
+                'value': '55',
+                'unit': '₽ за 30 дней',
+                'footnote': '',
+                'svgIcon': <MegafonTv />,
+            },
+            {
+                'title': 'Кэшбэк 20%',
+                'value': '0',
+                'unit': '',
+                'footnote': 'Участвуйте в программе и тратьте кэшбэк ',
+                'svgIcon': <MegafonTv />,
+            },
+        ],
+    },
 ];
 
 describe('<ProductTile />', () => {
     it('it renders ProductTile', () => {
-        const wrapper = shallow(<ProductTile {...tariff} servicePacks={servicePacks} />);
+        const wrapper = shallow(
+            <ProductTile
+                {...tariff}
+                servicePacks={servicePacks}
+                startCallsIndex={2}
+                startTrafficIndex={1}
+            />
+        );
         expect(wrapper).toMatchSnapshot();
     });
 });

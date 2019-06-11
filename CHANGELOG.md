@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 1.3.13
+### Changed
+- **ProductTile**
+    - fixed error that prevented passing startTrafficIndex from outside
+    - correct syntax in props
+
 ## Release 1.3.12
 ### Changed
 - **ProductTileOptions**

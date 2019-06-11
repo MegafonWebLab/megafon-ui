@@ -49,7 +49,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
       discount="0"
       unitExtra="за 30 дней"
       unitValue="₽"
-      value="450"
+      value="750"
     />
     <div
       className="mfui-product-tile__constructor"
@@ -60,7 +60,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
             "buyLink": "&options=null",
             "calls": Object {
               "unit": "минут",
-              "value": 300,
+              "value": 750,
             },
             "options": Array [
               Object {
@@ -82,25 +82,28 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
               "discount": "0",
               "unitExtra": "за 30 дней",
               "unitValue": "₽",
-              "value": "450",
+              "value": "750",
             },
             "traffic": Object {
               "unit": "ГБ",
-              "value": 6,
+              "value": 18,
             },
           }
         }
         onChangeCalls={[Function]}
         onChangeTraffic={[Function]}
-        startCallsIndex={0}
-        startTrafficIndex={0}
+        startCallsIndex={2}
+        startTrafficIndex={1}
         switcher={
           Object {
             "calls": Array [
               "300",
+              "600",
+              "750",
             ],
             "traffic": Array [
               "6",
+              "18",
             ],
           }
         }

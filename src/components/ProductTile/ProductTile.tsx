@@ -214,7 +214,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             }),
             options: PropTypes.arrayOf(PropTypes.shape({
                 title: PropTypes.string,
-                caption: PropTypes.stirng,
+                caption: PropTypes.string,
                 value: PropTypes.string,
                 unit: PropTypes.string,
                 footnote: PropTypes.string,
@@ -247,7 +247,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
         const switcher = this.getSwitcherValues();
         const defaultCallsValue = Number(switcher.calls[props.startCallsIndex!]);
-        const defaultTrafficValue = Number(switcher.traffic[props.startCallsIndex!]);
+        const defaultTrafficValue = Number(switcher.traffic[props.startTrafficIndex!]);
         const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
         const { payment, options, buyLink, shopTag = '' } = currentPack;
 
