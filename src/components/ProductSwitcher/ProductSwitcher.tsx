@@ -14,7 +14,7 @@ interface IProductSwitcherProps {
     /** Start index */
     startIndex?: number;
     /** Theme */
-    theme?: 'tariff-showcase';
+    theme?: 'tariff-showcase' | 'with-unit-values';
     /** Custom class name */
     className: string;
     /** Change handler */
@@ -32,7 +32,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         items: PropTypes.array.isRequired,
         startIndex: PropTypes.number,
         onChange: PropTypes.func,
-        theme: PropTypes.oneOf(['tariff-showcase']),
+        theme: PropTypes.oneOf(['tariff-showcase', 'with-unit-values']),
     };
 
     static defaultProps: Pick<IProductSwitcherProps, 'startIndex'> = {
