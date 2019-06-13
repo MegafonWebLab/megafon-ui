@@ -141,5 +141,65 @@
             }
         }
     }
+
+    &&_theme_with-unit-values {
+        border-radius: 35px;
+    }
+
+    &&_theme_with-unit-values & {
+        &__item {
+            width: 95px;
+
+            @media @mobileB {
+                width: 106px;
+            }
+
+            @media @desktopS {
+                width: 112px;
+            }
+
+            @media @desktopMU {
+                width: 131px;
+            }
+        }
+
+        &__label {
+            width: 95px;
+
+            @media @mobileB {
+                width: 106px;
+            }
+
+            @media @desktopS {
+                width: 112px;
+            }
+
+            @media @desktopMU {
+                width: 131px;
+            }
+        }
+
+        &__pointer {
+            border-radius: 24px;
+            width: 95px;
+
+            @media @mobileB {
+                width: 106px;
+                border-radius: 26px;
+            }
+
+            @media @desktop {
+                border-radius: 32px;
+            }
+
+            @media @desktopS {
+                width: 112px;
+            }
+
+            @media @desktopMU {
+                width: 131px;
+            }
+        }
+    }
 }
 

@@ -14,6 +14,12 @@ export const items = [
     { title: '30', value: '30' }
 ];
 
+export const valuedItems = [
+    { title: '10 ГБ', value: '10 ГБ' },
+    { title: '20 ГБ', value: '20 ГБ' },
+    { title: '30 ГБ', value: '30 ГБ' }
+];
+
 # Carousel
 
 ## Properties ProductSwitcher
@@ -43,6 +49,31 @@ const items = [
 
         title: '30',
         value: '30'
+    }
+];
+```
+
+## Usage with value units
+
+<Playground wrapper={Wrapper}>
+    <ProductSwitcher items={valuedItems} onChange={() => {return true}} theme="with-unit-values" />
+</Playground>
+
+## Included props
+
+``` javascript
+const items = [
+    {
+        title: '10 ГБ',
+        value: '10 ГБ'
+    },
+    {
+        title: '20 ГБ',
+        value: '20 ГБ'
+    },
+
+        title: '30 ГБ',
+        value: '30 ГБ'
     }
 ];
 ```
