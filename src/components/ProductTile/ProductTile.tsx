@@ -70,6 +70,13 @@ export interface ISwitcher {
     traffic: string[];
 }
 
+export interface IDefaultInfo {
+    defaultCallsValue: number;
+    defaultTrafficValue: number;
+    defaultPayment?: IServicePackPayment;
+    defaultBuyLink: string;
+}
+
 export interface IProductTileProps {
     /** Class name */
     className?: string;
@@ -242,6 +249,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         usePackBuyLink: true,
     };
 
+    defaultInfo: IDefaultInfo;
+
     constructor(props: IProductTileProps) {
         super(props);
 
@@ -249,8 +258,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const defaultCallsValue = Number(switcher.calls[props.startCallsIndex!]);
         const defaultTrafficValue = Number(switcher.traffic[props.startTrafficIndex!]);
         const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
-        const { payment, options, buyLink, shopTag = '' } = currentPack;
+        const { payment, options, buyLink = '', shopTag = '' } = currentPack;
 
+        this.defaultInfo = {
+            defaultCallsValue,
+            defaultTrafficValue,
+            defaultPayment: payment,
+            defaultBuyLink: buyLink,
+        };
         this.state = {
             switcher,
             currentPack,
@@ -263,23 +278,23 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         };
     }
 
-    handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
-        const { onClickConnect, info } = this.props;
-        const { currentPack: { calls, traffic } } = this.state;
-        const callsValue = calls ? calls.value : 0;
-        const trafficValue = traffic ? traffic.value : 0;
-
-        onClickConnect && onClickConnect({ ...info, callsValue, trafficValue }, e);
-    }
-
-    handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const { onClickBuy, info, shopTag, payment: { unitValue, unitExtra } } = this.props;
-        const { currentPack: { calls, traffic, shopTag: packShopTag }, price, discount } = this.state;
+    getTariffInfo = () => {
+        const {
+            info,
+            shopTag,
+            payment: { unitValue, unitExtra },
+        } = this.props;
+        const {
+            currentPack: { calls, traffic, shopTag: packShopTag},
+            price,
+            discount,
+        } = this.state;
         const callsValue = calls ? calls.value : 0;
         const trafficValue = traffic ? traffic.value : 0;
         const currentShopTag = packShopTag || shopTag || '';
         const priceValue = discount ? discount : price;
-        const tariffProps = {
+
+        return {
             ...info,
             callsValue,
             trafficValue,
@@ -287,21 +302,32 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             price: priceValue,
             unitValue,
             unitExtra,
+            ...this.defaultInfo,
         };
+    }
 
-        onClickBuy && onClickBuy(tariffProps, e);
+    handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
+        const { onClickConnect } = this.props;
+
+        onClickConnect && onClickConnect(this.getTariffInfo(), e);
+    }
+
+    handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
+        const { onClickBuy } = this.props;
+
+        onClickBuy && onClickBuy(this.getTariffInfo(), e);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
-        const { onClickMore, info } = this.props;
+        const { onClickMore } = this.props;
 
-        onClickMore && onClickMore({ ...info }, e);
+        onClickMore && onClickMore(this.getTariffInfo(), e);
     }
 
     handleClickBubble = () => {
-        const { onClickBubble, info } = this.props;
+        const { onClickBubble } = this.props;
 
-        onClickBubble && onClickBubble({ ...info });
+        onClickBubble && onClickBubble(this.getTariffInfo());
     }
 
     handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
