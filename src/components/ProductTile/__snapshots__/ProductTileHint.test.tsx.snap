@@ -5,16 +5,20 @@ exports[`<ProductTileHint /> it renders ProductTileHint 1`] = `
   className="mfui-product-tile-hint"
 >
   <div
-    className="mfui-product-tile-hint__text"
+    target=""
   >
-    <span
-      className="mfui-product-tile-hint__description"
+    <div
+      className="mfui-product-tile-hint__text"
     >
-      sdfsdf
-    </span>
+      <span
+        className="mfui-product-tile-hint__description"
+      >
+        sdfsdf
+      </span>
+    </div>
+    <div
+      className="mfui-product-tile-hint__border"
+    />
   </div>
-  <div
-    className="mfui-product-tile-hint__border"
-  />
 </div>
 `;
