@@ -1,8 +1,10 @@
 # Changelog
 ## Release 1.3.15
 ### Changed
-- **Select**
-    - change zero result's text
+- **ProductTileHint**
+    - add link on request
+- **ProductTile**
+    - add props for link in hint
 
 ## Release 1.3.15
 ### Changed

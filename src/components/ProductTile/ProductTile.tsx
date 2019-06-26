@@ -510,14 +510,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             buttonFontColor,
             buttonPassiveColor,
             connectLink,
-            payment: { title, unitExtra, unitValue }
+            payment: { title, unitExtra, unitValue },
         } = this.props;
         const { price, discount, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
 
         return (
             <div className={cn('', { constructor: isServicePacks }, className)}>
-                {isServicePacks && !!topBadgeTitle && <Hint linkHref={topBadgeLink} title={topBadgeTitle} />}
+                {isServicePacks && !!topBadgeTitle && <Hint title={topBadgeTitle} linkHref={topBadgeLink} />}
                 <div className={cn('content')}>
                     {this.renderTitle()}
                     {this.renderLink()}

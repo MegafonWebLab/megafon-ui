@@ -4,9 +4,7 @@ exports[`<ProductTileHint /> it renders ProductTileHint 1`] = `
 <div
   className="mfui-product-tile-hint"
 >
-  <div
-    target=""
-  >
+  <div>
     <div
       className="mfui-product-tile-hint__text"
     >

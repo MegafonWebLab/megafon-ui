@@ -144,7 +144,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     static defaultProps: Partial<ISelectProps> = {
         keyNavigation: true,
         canOpen: true,
-        notFoundText: 'Не найдено',
+        notFoundText: 'Ничего не нашлось',
         items: [],
         arrow: true,
         fontSize: 'medium',

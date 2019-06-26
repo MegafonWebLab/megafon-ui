@@ -19,7 +19,7 @@ exports[`<Select /> it renders Select 1`] = `
     ]
   }
   keyNavigation={true}
-  notFoundText="Не найдено"
+  notFoundText="Ничего не нашлось"
   resultSize="medium"
 >
   <div
@@ -183,7 +183,7 @@ exports[`<Select /> it renders search 1`] = `
     ]
   }
   keyNavigation={true}
-  notFoundText="Не найдено"
+  notFoundText="Ничего не нашлось"
   onChangeSearch={[Function]}
   resultSize="medium"
 >
@@ -366,7 +366,7 @@ exports[`<Select /> it renders witout icon 1`] = `
       <div
         className="mfui-select__not-found"
       >
-        Не найдено
+        Ничего не нашлось
       </div>
     </div>
   </div>
@@ -408,7 +408,7 @@ exports[`<Select /> it renders witout icon 2`] = `
       <div
         className="mfui-select__not-found"
       >
-        Не найдено
+        Ничего не нашлось
       </div>
     </div>
   </div>
