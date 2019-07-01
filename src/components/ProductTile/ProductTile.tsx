@@ -249,7 +249,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         usePackBuyLink: true,
     };
 
-    defaultInfo: IDefaultInfo;
+    defaultInfo: IDefaultInfo | object;
 
     constructor(props: IProductTileProps) {
         super(props);
@@ -259,13 +259,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const defaultTrafficValue = Number(switcher.traffic[props.startTrafficIndex!]);
         const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
         const { payment, options, buyLink = '', shopTag = '' } = currentPack;
-
-        this.defaultInfo = {
+        const defaultValues = {
             defaultCallsValue,
             defaultTrafficValue,
             defaultPayment: payment,
             defaultBuyLink: buyLink,
         };
+
+        this.defaultInfo = switcher.calls.length ? defaultValues : {};
         this.state = {
             switcher,
             currentPack,
