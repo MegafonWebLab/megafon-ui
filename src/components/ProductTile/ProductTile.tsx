@@ -133,7 +133,7 @@ export interface IProductTileProps {
     /** First params */
     firstParams: IFirstParam;
     /** Service packs */
-    servicePacks?: Array<Partial<IServicePack>>;
+    servicePacks: Array<Partial<IServicePack>>;
     /** Info - object type - return with onClickConnect, onClickBuy */
     info: {};
     /** Connect handler */
@@ -254,6 +254,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     constructor(props: IProductTileProps) {
         super(props);
 
+        const {
+            usePackBuyLink,
+            servicePacks,
+            payment: { value, discount },
+            buyLink: defaultBuyLink,
+            secondParams,
+        } = props;
+
         const switcher = this.getSwitcherValues();
         const defaultCallsValue = Number(switcher.calls[props.startCallsIndex!]);
         const defaultTrafficValue = Number(switcher.traffic[props.startTrafficIndex!]);
@@ -266,16 +274,16 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             defaultBuyLink: buyLink,
         };
 
-        this.defaultInfo = switcher.calls.length ? defaultValues : {};
+        this.defaultInfo = servicePacks.length ? defaultValues : {};
         this.state = {
             switcher,
             currentPack,
             callsValue: defaultCallsValue,
             trafficValue: defaultTrafficValue,
-            price: payment && payment.value || props.payment.value,
-            discount: payment && payment.discount || props.payment.discount || '',
-            options: options || props.secondParams,
-            buyLink: props.usePackBuyLink && buyLink || this.formHashLink(props.buyLink || '', shopTag) || '',
+            price: payment && payment.value || value,
+            discount: payment && payment.discount || discount || '',
+            options: options || secondParams,
+            buyLink: usePackBuyLink && buyLink || this.formHashLink(defaultBuyLink || '', shopTag) || '',
         };
     }
 
