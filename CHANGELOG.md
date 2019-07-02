@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 1.3.15
+### Changed
+- **ProductTile**
+    - add object with default tariff props
+    - add function which returns tile info
+
 ## Release 1.3.14
 ### Changed
 - **ProductSwitcher**
