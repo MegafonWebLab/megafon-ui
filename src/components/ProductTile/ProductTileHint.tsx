@@ -19,14 +19,13 @@ interface IElementAtributes {
 
 const cn = cnCreate('mfui-product-tile-hint');
 class ProductTileHint extends React.Component<IProductTileHintProps> {
-    static Props = {
+    static PropTypes = {
         linkHref: PropTypes.string,
         title: PropTypes.string,
     };
 
     render() {
         const { title, linkHref } = this.props;
-
         const ElementType = linkHref ? 'a' : 'div';
         const attributes: IElementAtributes = linkHref ? { href: linkHref, target: '_blank' } : {};
 
