@@ -21,18 +21,14 @@ const cn = cnCreate('mfui-product-tile-hint');
 class ProductTileHint extends React.Component<IProductTileHintProps> {
     static Props = {
         linkHref: PropTypes.string,
+        title: PropTypes.string,
     };
 
     render() {
         const { title, linkHref } = this.props;
+
         const ElementType = linkHref ? 'a' : 'div';
-
-        const attributes: IElementAtributes = {};
-
-        if (linkHref) {
-            attributes.href = linkHref;
-            attributes.target = '_blank';
-        }
+        const attributes: IElementAtributes = linkHref ? { href: linkHref, target: '_blank' } : {};
 
         return (
             <div className={cn('')}>
