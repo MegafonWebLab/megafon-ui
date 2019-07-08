@@ -1,5 +1,5 @@
 # Changelog
-## Release 1.3.15
+## Release 1.3.16
 ### Changed
 - **ProductTileHint**
     - add link on request
