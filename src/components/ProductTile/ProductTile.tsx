@@ -84,6 +84,8 @@ export interface IProductTileProps {
     title: string;
     /** Top badge title */
     topBadgeTitle?: string;
+    /** Top badge link href */
+    topBadgeLink?: string;
     /** Second params head */
     secondParamsHead?: string;
     /** Shop tag */
@@ -162,6 +164,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     static propTypes = {
         title: PropTypes.string.isRequired,
         topBadgeTitle: PropTypes.string,
+        topBadgeLink: PropTypes.string,
         secondParamsHead: PropTypes.string,
         shopTag: PropTypes.string,
         startCallsIndex: PropTypes.number,
@@ -389,7 +392,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     getCurrentPack(callsValue: number, trafficValue: number): Partial<IServicePack> {
         const { servicePacks } = this.props;
-        const [ currentPack = {} ] = servicePacks!.filter(pack => (
+        const [currentPack = {}] = servicePacks!.filter(pack => (
             pack.calls!.value === callsValue && pack.traffic!.value === trafficValue
         ));
 
@@ -499,6 +502,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             buyButtonText,
             connectButtonText,
             topBadgeTitle,
+            topBadgeLink,
             secondParamsHead,
             showConnectButton,
             showBuyButton,
@@ -513,7 +517,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
         return (
             <div className={cn('', { constructor: isServicePacks }, className)}>
-                {isServicePacks && !!topBadgeTitle && <Hint title={topBadgeTitle}/>}
+                {isServicePacks && !!topBadgeTitle && <Hint title={topBadgeTitle} linkHref={topBadgeLink} />}
                 <div className={cn('content')}>
                     {this.renderTitle()}
                     {this.renderLink()}
@@ -529,7 +533,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                         {isServicePacks ? this.renderDynamic() : this.renderStatic()}
                         <Options options={firstParams.items} />
                     </div>
-                    <Options options={options} head={secondParamsHead} onClickBubble={this.handleClickBubble}/>
+                    <Options options={options} head={secondParamsHead} onClickBubble={this.handleClickBubble} />
                 </div>
                 <Buy
                     buyLink={buyLink}

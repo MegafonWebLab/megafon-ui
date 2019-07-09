@@ -1,4 +1,10 @@
 # Changelog
+## Release 1.3.16
+### Changed
+- **ProductTileHint**
+    - add link on request
+- **ProductTile**
+    - add props for link in hint
 
 ## Release 1.3.15
 ### Changed
