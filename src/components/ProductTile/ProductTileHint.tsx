@@ -19,7 +19,7 @@ interface IElementAtributes {
 
 const cn = cnCreate('mfui-product-tile-hint');
 class ProductTileHint extends React.Component<IProductTileHintProps> {
-    static PropTypes = {
+    static propTypes = {
         linkHref: PropTypes.string,
         title: PropTypes.string,
     };
