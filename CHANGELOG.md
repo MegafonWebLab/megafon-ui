@@ -1,4 +1,10 @@
 # Changelog
+## Release 1.3.17
+### Changed
+- **ProductTileHint**
+    - fixed syntax error
+
+# Changelog
 ## Release 1.3.16
 ### Changed
 - **ProductTileHint**
