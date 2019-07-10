@@ -1,4 +1,10 @@
 # Changelog
+## Release 1.3.18
+### Changed
+- **ProductTile**
+    - fixed typescript error
+
+# Changelog
 ## Release 1.3.17
 ### Changed
 - **ProductTileHint**

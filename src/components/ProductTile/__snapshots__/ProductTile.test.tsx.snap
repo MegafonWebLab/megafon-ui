@@ -4,6 +4,9 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
 <div
   className="mfui-product-tile mfui-product-tile_constructor"
 >
+  <ProductTileHint
+    title="sdfsdf"
+  />
   <div
     className="mfui-product-tile__content"
   >

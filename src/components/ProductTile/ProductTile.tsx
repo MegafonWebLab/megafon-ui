@@ -85,7 +85,7 @@ export interface IProductTileProps {
     /** Top badge title */
     topBadgeTitle?: string;
     /** Top badge link href */
-    topBadgeLink?: string | undefined;
+    topBadgeLink?: string;
     /** Second params head */
     secondParamsHead?: string;
     /** Shop tag */
@@ -517,7 +517,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
         return (
             <div className={cn('', { constructor: isServicePacks }, className)}>
-                {isServicePacks && !!topBadgeTitle && topBadgeLink &&
+                {isServicePacks && !!topBadgeTitle &&
                     <Hint title={topBadgeTitle} linkHref={topBadgeLink} />
                 }
                 <div className={cn('content')}>
