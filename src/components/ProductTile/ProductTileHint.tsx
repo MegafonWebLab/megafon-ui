@@ -7,7 +7,7 @@ interface IProductTileHintProps {
     /** Title */
     title: string;
     /** Link href */
-    linkHref: string;
+    linkHref?: string;
 }
 
 interface IElementAtributes {
