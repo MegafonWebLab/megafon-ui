@@ -1,4 +1,14 @@
 # Changelog
+## Release 1.3.19
+### Changed
+- **ProductTile**
+    - add callback function returning switcher current positions
+- **ProductTileDynamic**
+    - changed component interface for onchange functions
+- **ProductSwitcher**
+    - add chosen item index into callback function
+
+# Changelog
 ## Release 1.3.18
 ### Changed
 - **ProductTile**

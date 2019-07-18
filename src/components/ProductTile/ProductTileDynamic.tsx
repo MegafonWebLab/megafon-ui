@@ -16,9 +16,9 @@ interface IProductTileDynamicProps {
     /** Start traffic index */
     startTrafficIndex: number;
     /** Change calls */
-    onChangeCalls(e: React.SyntheticEvent<EventTarget>, value: string): boolean;
+    onChangeCalls(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
     /** Change Traffic */
-    onChangeTraffic(e: React.SyntheticEvent<EventTarget>, value: string): boolean;
+    onChangeTraffic(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
 }
 
 const cn = cnCreate('mfui-product-tile-dynamic');

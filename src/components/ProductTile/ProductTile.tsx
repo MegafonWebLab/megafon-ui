@@ -146,13 +146,17 @@ export interface IProductTileProps {
     onClickMore?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Bubble handler */
     onClickBubble?(info: {}): void;
+    /** Switcher handler */
+    onSwitcherChange(info: {}): void;
 }
 
 interface IProductTileState {
     switcher: ISwitcher;
     currentPack: Partial<IServicePack>;
     callsValue: number;
+    callsIndex: number;
     trafficValue: number;
+    trafficIndex: number;
     price: string;
     discount: string;
     options: IOption[];
@@ -240,6 +244,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
         onClickBubble: PropTypes.func,
+        onSwitcherChange: PropTypes.func,
     };
 
     static defaultProps: Partial<IProductTileProps> = {
@@ -263,11 +268,13 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             payment: { value, discount },
             buyLink: defaultBuyLink,
             secondParams,
+            startCallsIndex,
+            startTrafficIndex,
         } = props;
 
         const switcher = this.getSwitcherValues();
-        const defaultCallsValue = Number(switcher.calls[props.startCallsIndex!]);
-        const defaultTrafficValue = Number(switcher.traffic[props.startTrafficIndex!]);
+        const defaultCallsValue = Number(switcher.calls[startCallsIndex!]);
+        const defaultTrafficValue = Number(switcher.traffic[startTrafficIndex!]);
         const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
         const { payment, options, buyLink = '', shopTag = '' } = currentPack;
         const defaultValues = {
@@ -282,7 +289,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             switcher,
             currentPack,
             callsValue: defaultCallsValue,
+            callsIndex: startCallsIndex || 0,
             trafficValue: defaultTrafficValue,
+            trafficIndex: startTrafficIndex || 0,
             price: payment && payment.value || value,
             discount: payment && payment.discount || discount || '',
             options: options || secondParams,
@@ -342,7 +351,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickBubble && onClickBubble(this.getTariffInfo());
     }
 
-    handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
+    handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean => {
         const currentValue = Number(value);
         const { trafficValue } = this.state;
         const currentPack = this.getCurrentPack(currentValue, trafficValue);
@@ -351,17 +360,22 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             return false;
         }
 
-        this.setState({
-            ...this.getRestState(currentPack),
-            callsValue: currentValue,
-        });
+        this.setState(
+            {
+                ...this.getRestState(currentPack),
+                callsValue: currentValue,
+                callsIndex: index,
+            },
+            (): void => {
+                this.handleSwitcherChange();
+            }
+        );
 
         return true;
     }
 
-    handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
+    handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean => {
         const currentValue = Number(value);
-
         const { callsValue } = this.state;
         const currentPack = this.getCurrentPack(callsValue, currentValue);
 
@@ -369,12 +383,25 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             return false;
         }
 
-        this.setState({
-            ...this.getRestState(currentPack),
-            trafficValue: currentValue,
-        });
+        this.setState(
+            {
+                ...this.getRestState(currentPack),
+                trafficValue: currentValue,
+                trafficIndex: index,
+            },
+            (): void => {
+                this.handleSwitcherChange();
+            }
+        );
 
         return true;
+    }
+
+    handleSwitcherChange = (): void => {
+        const { callsIndex, trafficIndex } = this.state;
+        const { onSwitcherChange } = this.props;
+
+        onSwitcherChange && onSwitcherChange({ calls: callsIndex, traffic: trafficIndex });
     }
 
     getRestState(currentPack: Partial<IServicePack>): object {

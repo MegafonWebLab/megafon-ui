@@ -18,7 +18,7 @@ interface IProductSwitcherProps {
     /** Custom class name */
     className: string;
     /** Change handler */
-    onChange(e: React.SyntheticEvent<EventTarget>, value: string): boolean;
+    onChange(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
 }
 
 interface IProductSwitcherState {
@@ -72,12 +72,12 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }, 300);
     }
 
-    handleClickItem = (value: string) => (e: React.SyntheticEvent<EventTarget>) => {
+    handleClickItem = (value: string, index: number) => (e: React.SyntheticEvent<EventTarget>) => {
         const { onChange } = this.props;
         const { currentValue } = this.state;
         e.preventDefault();
 
-        if (!onChange || value === currentValue || onChange(e, value) === false) {
+        if (!onChange || value === currentValue || onChange(e, value, index) === false) {
             return;
         }
 
@@ -114,11 +114,11 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         return (
             <div className={cn('', { theme }, className)} ref={this.getRootNode}>
                 <div className={cn('row')}>
-                    {items.map(item =>
+                    {items.map((item, index) =>
                         <div
                             className={cn('item', { active: item.value === this.state.currentValue })}
                             key={item.title + item.value}
-                            onClick={this.handleClickItem(item.value)}
+                            onClick={this.handleClickItem(item.value, index)}
                         >
                             <div className={cn('label')} ref={this.getLabelNodes(item)}>
                                 {item.title}
