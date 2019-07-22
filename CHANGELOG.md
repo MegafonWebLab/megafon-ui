@@ -1,4 +1,11 @@
 # Changelog
+## Release 1.3.19
+### Changed
+-   **ProductTile**
+    - add handle for status toggling
+-   **ProductTileRest**
+    - add handle for status toggling
+# Changelog
 ## Release 1.3.18
 ### Changed
 - **ProductTile**
