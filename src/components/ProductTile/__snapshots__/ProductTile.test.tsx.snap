@@ -18,7 +18,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
         color="black"
         href="/tariffs/vklyuchaysya/smotri.html"
         onClick={[Function]}
-        target="_blank"
+        target="_self"
         underlineStyle="none"
         underlineVisibility="hover"
       >
@@ -33,7 +33,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
         color="blue"
         href="/tariffs/vklyuchaysya/smotri.html"
         onClick={[Function]}
-        target="_blank"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
