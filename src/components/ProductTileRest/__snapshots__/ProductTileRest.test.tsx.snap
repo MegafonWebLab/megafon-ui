@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Product > should render 1`] = `
+<div
+  className="mfui-product-tile-rest"
+>
+  <div
+    className="mfui-product-tile-rest__info"
+  >
+    <Header
+      as="h3"
+      className="mfui-product-tile-rest__header"
+      color="black"
+    >
+      Включайся! Смотри
+    </Header>
+    <div
+      className="mfui-product-tile-rest__price mfui-product-tile-rest__price_discount"
+    >
+      <div
+        className="mfui-product-tile-rest__discount-condition"
+      />
+      <div
+        className="mfui-product-tile-rest__old-price-wrapper"
+      >
+        <div
+          className="mfui-product-tile-rest__old-price"
+        >
+          1000 ₽
+        </div>
+      </div>
+      <div
+        className="mfui-product-tile-rest__actual-price"
+      >
+        0 ₽ за 30 дней
+      </div>
+    </div>
+    <div
+      className="mfui-product-tile-rest__pack"
+      key="1500минут0"
+    >
+      title
+    </div>
+    <div
+      className="mfui-product-tile-rest__pack"
+      key="100смс1"
+    >
+      title
+    </div>
+    <div
+      className="mfui-product-tile-rest__pack"
+      key="3ГБ2"
+    >
+      3 ГБ
+    </div>
+    <div
+      className="mfui-product-tile-rest__messangers"
+    >
+      <div
+        className="mfui-product-tile-rest__messangers-list"
+      >
+        <DropdownSocialList
+          className="mfui-product-tile-rest__options-list"
+          icons={
+            Array [
+              Object {
+                "caption": "Привилегии обслуживания и другое",
+                "svgIcon": <test-file-stub />,
+                "title": "VIP-тариф",
+              },
+              Object {
+                "caption": "Безлимитный трафик и пакеты кино, сериалов и ТВ-каналов на любой вкус",
+                "svgIcon": <test-file-stub />,
+                "title": "МегаФон ТВ",
+              },
+            ]
+          }
+          maxIconNumber={4}
+        />
+      </div>
+      <div
+        className="mfui-product-tile-rest__messangers-description"
+      >
+        Параметры
+        <br />
+         
+      </div>
+    </div>
+    <div
+      className="mfui-product-tile-rest__options"
+    >
+      <div
+        className="mfui-product-tile-rest__option"
+        key="Кэшбэк 20%0"
+      >
+        <div
+          className="mfui-product-tile-rest__option-title"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Кэшбэк 20%",
+            }
+          }
+        />
+        <div
+          className="mfui-product-tile-rest__option-description"
+        >
+          0 
+        </div>
+      </div>
+      <div
+        className="mfui-product-tile-rest__option"
+        key="Безлимитные SMS1"
+      >
+        <div
+          className="mfui-product-tile-rest__option-title"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Безлимитные SMS",
+            }
+          }
+        />
+        <div
+          className="mfui-product-tile-rest__option-description"
+        >
+          55 ₽ за 30 дней
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-product-tile-rest__description"
+    >
+      asdasdasd
+    </div>
+  </div>
+  <div
+    className="mfui-product-tile-rest__buy"
+  >
+    <Button
+      className="mfui-product-tile-rest__buy-button mfui-product-tile-rest__buy-button_additional-margin"
+      disabledColor="gray"
+      downColor="dark"
+      hoverColor="green"
+      href="/zakaz/?tariff=look"
+      onClick={[Function]}
+      padding={true}
+      passiveColor="green"
+      showSpinner={false}
+      sizeAll="medium"
+      type="button"
+      width="auto"
+    >
+      Купить
+    </Button>
+  </div>
+</div>
+`;

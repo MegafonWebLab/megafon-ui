@@ -2,6 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import ProductTile from './ProductTile';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
+import {Component} from 'react';
 
 const tariff = {
     buyButtonText: 'sdfsdf',
@@ -195,6 +196,7 @@ describe('<ProductTile />', () => {
     it('it renders ProductTile', () => {
         const wrapper = shallow(
             <ProductTile
+                isActive={false}
                 {...tariff}
                 servicePacks={servicePacks}
                 startCallsIndex={2}
@@ -202,5 +204,29 @@ describe('<ProductTile />', () => {
             />
         );
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should call onClickChoose when onClickBuy fired', () => {
+        const clickChooseHandler  = jest.fn();
+        const clickBuyHandler  = jest.fn();
+        const wrapper = shallow<Component>(
+            <ProductTile
+                isActive={false}
+                {...tariff}
+                servicePacks={servicePacks}
+                startCallsIndex={2}
+                startTrafficIndex={1}
+                onClickBuy={clickBuyHandler}
+                onClickChoose={clickChooseHandler}
+            />
+        );
+        const instance = wrapper.instance() as any;
+
+        instance.handleClickBuy = jest.spyOn(instance, 'handleClickBuy');
+        instance.forceUpdate();
+        instance.handleClickBuy();
+
+        expect(clickBuyHandler).toBeCalled();
+        expect(clickChooseHandler).toBeCalled();
     });
 });

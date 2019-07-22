@@ -46,6 +46,7 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         buttonPassiveColor: Button.propTypes.passiveColor,
         onClickBuy: PropTypes.func,
         onClickConnect: PropTypes.func,
+        onClickChoose: PropTypes.func,
     };
 
     static defaultProps: Partial<IProductTileBuyProps> = {

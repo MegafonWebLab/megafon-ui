@@ -1,20 +1,20 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate } from '../../utils/cn';
+import {cnCreate} from '../../utils/cn';
 import './ProductTileRest.less';
 import Header from '../Header/Header';
 import TextLink from '../TextLink/TextLink';
-import Button, { IButtonProps } from '../Button/Button';
+import Button, {IButtonProps} from '../Button/Button';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
 interface IProductTileRestProps {
-    title: string;
-    description: string;
-    shopTag: string;
+    title?: string;
+    description?: string;
+    shopTag?: string;
 
     link: string;
-    moreLinkText: string;
-    showMoreLink: boolean;
+    moreLinkText?: string;
+    showMoreLink?: boolean;
 
     buyLink: string;
     buyButtonText: string;
@@ -35,13 +35,22 @@ interface IProductTileRestProps {
     firstParams: any;
     secondParams: any;
     info: any;
-    onClickConnect: any;
-    onClickBuy: any;
-    onClickMore: any;
+
+    isActive?: boolean;
+
+    onClickConnect?: any;
+    onClickBuy?: any;
+    onClickMore?: any;
+    onClickChoose?: any;
+}
+
+interface IProductTileRestState {
+    isActive?: boolean;
 }
 
 const cn = cnCreate('mfui-product-tile-rest');
-class ProductTileRest extends React.Component<IProductTileRestProps> {
+
+class ProductTileRest extends React.Component<IProductTileRestProps, IProductTileRestState> {
     static propTypes = {
         title: PropTypes.string,
         description: PropTypes.string,
@@ -88,9 +97,11 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         onClickConnect: PropTypes.func,
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
+        onClickChoose: PropTypes.func,
+        isActive: PropTypes.bool,
     };
 
-    static defaultProps = {
+    static defaultProps: Partial<IProductTileRestProps> = {
         moreLinkText: 'Подробнее',
         showMoreLink: true,
         buyButtonText: 'Купить',
@@ -100,50 +111,59 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         shopTag: '',
     };
 
-    handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
-        const { info, shopTag, onClickConnect } = this.props;
+    constructor(props: IProductTileRestProps) {
+        super(props);
 
-        onClickConnect && onClickConnect({ ...info, shopTag }, e);
+        this.state = {
+            isActive: this.props.isActive,
+        };
+    }
+
+    handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
+        const {info, shopTag, onClickConnect} = this.props;
+
+        onClickConnect && onClickConnect({...info, shopTag}, e);
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const { info, shopTag, onClickBuy, payment: { value, discount, unitValue, unitExtra } } = this.props;
+        const {info, shopTag, onClickBuy, payment: {value, discount, unitValue, unitExtra}, onClickChoose} = this.props;
         const priceValue: string = discount || value;
 
-        onClickBuy && onClickBuy({ ...info, shopTag, price: priceValue, unitValue, unitExtra }, e);
+        onClickBuy && onClickBuy({...info, shopTag, price: priceValue, unitValue, unitExtra}, e);
+        onClickChoose && onClickChoose();
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
-        const { info, shopTag, onClickMore } = this.props;
+        const {info, shopTag, onClickMore} = this.props;
 
-        onClickMore && onClickMore({ ...info, shopTag }, e);
+        onClickMore && onClickMore({...info, shopTag}, e);
     }
 
     renderIcons() {
-        const { firstParams: { title, caption, items } } = this.props;
+        const {firstParams: {title, caption, items}} = this.props;
 
         return (
             <div className={cn('messangers')}>
                 {!!items.length &&
-                    <div className={cn('messangers-list')}>
-                        <DropdownSocialList
-                            icons={items}
-                            maxIconNumber={4}
-                            className={cn('options-list')}
-                        />
-                    </div>
+                <div className={cn('messangers-list')}>
+                    <DropdownSocialList
+                        icons={items}
+                        maxIconNumber={4}
+                        className={cn('options-list')}
+                    />
+                </div>
                 }
                 {title &&
-                    <div className={cn('messangers-description')}>
-                        {title}<br /> {caption}
-                    </div>
+                <div className={cn('messangers-description')}>
+                    {title}<br/> {caption}
+                </div>
                 }
             </div>
         );
     }
 
     renderOptions() {
-        const { secondParams } = this.props;
+        const {secondParams} = this.props;
 
         if (!secondParams.length) {
             return null;
@@ -152,11 +172,11 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         return (
             <div className={cn('options')}>
                 {secondParams.map((param, index) => {
-                    const { title, value, unit } = param;
+                    const {title, value, unit} = param;
 
                     return (
                         <div className={cn('option')} key={title + index}>
-                            <div className={cn('option-title')} dangerouslySetInnerHTML={{ __html: title }} />
+                            <div className={cn('option-title')} dangerouslySetInnerHTML={{__html: title}}/>
                             <div className={cn('option-description')}>{`${value} ${unit}`}</div>
                         </div>
                     );
@@ -167,13 +187,13 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
 
     renderShowcase() {
         const {
-            payment: { title, value, unitExtra, unitValue, discount },
+            payment: {title, value, unitExtra, unitValue, discount},
             packs,
-        } =  this.props;
+        } = this.props;
 
         return (
             <React.Fragment>
-                <div className={cn('price', { discount: !!discount })}>
+                <div className={cn('price', {discount: !!discount})}>
                     <div className={cn('discount-condition')}>{title}</div>
                     <div className={cn('old-price-wrapper')}>
                         <div className={cn('old-price')}>{`${value} ${unitValue}`}</div>
@@ -202,6 +222,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
     }
 
     render() {
+        const {isActive} = this.state;
         const {
             title,
             description,
@@ -220,18 +241,18 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         } = this.props;
 
         return (
-            <div className={cn('')}>
+            <div className={cn('', {active: isActive})}>
                 <div className={cn('info')}>
                     <Header className={cn('header')} as="h3">{title}</Header>
                     {showMoreLink &&
-                        <TextLink
-                            className={cn('detail-link')}
-                            href={link}
-                            target="_blank"
-                            onClick={this.handleClickMore}
-                        >
-                            {moreLinkText}
-                        </TextLink>
+                    <TextLink
+                        className={cn('detail-link')}
+                        href={link}
+                        target="_blank"
+                        onClick={this.handleClickMore}
+                    >
+                        {moreLinkText}
+                    </TextLink>
                     }
                     {this.renderShowcase()}
                     {this.renderIcons()}
@@ -240,28 +261,28 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                 </div>
                 <div className={cn('buy')}>
                     {showBuyButton &&
-                        <Button
-                            className={cn('buy-button', { 'additional-margin': !showConnectButton })}
-                            passiveColor={buttonPassiveColor}
-                            border={buttonBorder}
-                            fontColor={buttonFontColor}
-                            hoverColor="green"
-                            sizeAll="medium"
-                            href={buyLink}
-                            onClick={this.handleClickBuy}
-                        >
-                            {buyButtonText}
-                        </Button>
+                    <Button
+                        className={cn('buy-button', {'additional-margin': !showConnectButton})}
+                        passiveColor={buttonPassiveColor}
+                        border={buttonBorder}
+                        fontColor={buttonFontColor}
+                        hoverColor="green"
+                        sizeAll="medium"
+                        href={buyLink}
+                        onClick={this.handleClickBuy}
+                    >
+                        {buyButtonText}
+                    </Button>
                     }
                     {showConnectButton &&
-                        <TextLink
-                            className={cn('detail-link')}
-                            href={connectLink}
-                            onClick={this.handleClickConnect}
-                            target="_blank"
-                        >
-                            {connectButtonText}
-                        </TextLink>
+                    <TextLink
+                        className={cn('detail-link')}
+                        href={connectLink}
+                        onClick={this.handleClickConnect}
+                        target="_blank"
+                    >
+                        {connectButtonText}
+                    </TextLink>
                     }
                 </div>
             </div>

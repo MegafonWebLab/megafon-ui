@@ -138,6 +138,9 @@ export interface IProductTileProps {
     servicePacks: Array<Partial<IServicePack>>;
     /** Info - object type - return with onClickConnect, onClickBuy */
     info: {};
+
+    /** Active status */
+    isActive: boolean;
     /** Connect handler */
     onClickConnect?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Buy handler */
@@ -146,6 +149,8 @@ export interface IProductTileProps {
     onClickMore?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Bubble handler */
     onClickBubble?(info: {}): void;
+    /** Choose handler */
+    onClickChoose?(): void;
 }
 
 interface IProductTileState {
@@ -157,6 +162,7 @@ interface IProductTileState {
     discount: string;
     options: IOption[];
     buyLink: string;
+    isActive: boolean;
 }
 
 const cn = cnCreate('mfui-product-tile');
@@ -236,10 +242,12 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             }),
         })),
         info: PropTypes.object,
+        isActive: PropTypes.bool,
         onClickConnect: PropTypes.func,
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
         onClickBubble: PropTypes.func,
+        onClickChoose: PropTypes.func,
     };
 
     static defaultProps: Partial<IProductTileProps> = {
@@ -263,6 +271,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             payment: { value, discount },
             buyLink: defaultBuyLink,
             secondParams,
+            isActive,
         } = props;
 
         const switcher = this.getSwitcherValues();
@@ -287,6 +296,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             discount: payment && payment.discount || discount || '',
             options: options || secondParams,
             buyLink: usePackBuyLink && buyLink || this.formHashLink(defaultBuyLink || '', shopTag) || '',
+            isActive: isActive,
         };
     }
 
@@ -325,9 +335,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const { onClickBuy } = this.props;
+        const { onClickBuy, onClickChoose } = this.props;
 
         onClickBuy && onClickBuy(this.getTariffInfo(), e);
+
+        onClickChoose && onClickChoose();
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
@@ -354,6 +366,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         this.setState({
             ...this.getRestState(currentPack),
             callsValue: currentValue,
+            isActive: false,
         });
 
         return true;
@@ -372,6 +385,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         this.setState({
             ...this.getRestState(currentPack),
             trafficValue: currentValue,
+            isActive: false,
         });
 
         return true;
@@ -512,11 +526,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             connectLink,
             payment: { title, unitExtra, unitValue },
         } = this.props;
-        const { price, discount, options, buyLink } = this.state;
+        const { price, discount, options, buyLink, isActive } = this.state;
         const isServicePacks = !!servicePacks!.length;
 
         return (
-            <div className={cn('', { constructor: isServicePacks }, className)}>
+            <div className={cn('', { constructor: isServicePacks, active: isActive}, className)}>
                 {isServicePacks && !!topBadgeTitle &&
                     <Hint title={topBadgeTitle} linkHref={topBadgeLink} />
                 }
