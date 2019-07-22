@@ -1,4 +1,9 @@
 # Changelog
+## Release 1.3.19
+### Changed
+- ProductTile:
+    - changed tile links behavior to open in same window
+
 ## Release 1.3.18
 ### Changed
 - **ProductTile**
