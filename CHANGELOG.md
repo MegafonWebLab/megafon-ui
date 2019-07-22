@@ -2,11 +2,15 @@
 ## Release 1.3.19
 ### Changed
 - **ProductTile**
-    - add callback function returning switcher current positions
+    - add current index depending on start and session indexes
+    - add function setting session traffic and calls indexes
 - **ProductTileDynamic**
     - changed component interface for onchange functions
 - **ProductSwitcher**
     - add chosen item index into callback function
+### Added
+- **sessionStorage**
+    - functions to set/get sessionStorage values
 
 # Changelog
 ## Release 1.3.18

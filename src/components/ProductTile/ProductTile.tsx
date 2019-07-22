@@ -10,6 +10,8 @@ import Dynamic from './ProductTileDynamic';
 import Price from './ProductTilePrice';
 import Options from './ProductTileOptions';
 import Buy, { IProductTileBuyProps } from './ProductTileBuy';
+import { setSessionValue } from '../../utils/sessionStorage';
+import storageKeys from '../../constants/sessionStorage';
 
 export interface IOption {
     title: string;
@@ -92,8 +94,12 @@ export interface IProductTileProps {
     shopTag?: string;
     /** Start calls index */
     startCallsIndex?: number;
+    /** Session calls index */
+    sessionCallsIndex?: number;
     /** Start traffic index */
     startTrafficIndex?: number;
+    /** Session traffic index */
+    sessionTrafficIndex?: number;
 
     /** More link */
     link?: string;
@@ -172,7 +178,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         secondParamsHead: PropTypes.string,
         shopTag: PropTypes.string,
         startCallsIndex: PropTypes.number,
+        sessionCallsIndex: PropTypes.number,
         startTrafficIndex: PropTypes.number,
+        sessionTrafficIndex: PropTypes.number,
         link: PropTypes.string,
         moreLinkText: PropTypes.string,
         showMoreLink: PropTypes.bool,
@@ -269,13 +277,25 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             buyLink: defaultBuyLink,
             secondParams,
             startCallsIndex,
+            sessionCallsIndex,
             startTrafficIndex,
+            sessionTrafficIndex,
         } = props;
 
         const switcher = this.getSwitcherValues();
+        const callsIndex: number = typeof sessionCallsIndex === 'number'
+            ? sessionCallsIndex!
+            : startCallsIndex!;
+        const trafficIndex: number = typeof sessionTrafficIndex === 'number'
+            ? sessionTrafficIndex!
+            : startTrafficIndex!;
         const defaultCallsValue = Number(switcher.calls[startCallsIndex!]);
         const defaultTrafficValue = Number(switcher.traffic[startTrafficIndex!]);
-        const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
+        const currentCallsValue = Number(switcher.calls[sessionCallsIndex!])
+            || Number(switcher.calls[startCallsIndex!]);
+        const currentTrafficValue = Number(switcher.traffic[sessionTrafficIndex!])
+            || Number(switcher.traffic[startTrafficIndex!]);
+        const currentPack = this.getCurrentPack(currentCallsValue, currentTrafficValue);
         const { payment, options, buyLink = '', shopTag = '' } = currentPack;
         const defaultValues = {
             defaultCallsValue,
@@ -288,10 +308,10 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         this.state = {
             switcher,
             currentPack,
-            callsValue: defaultCallsValue,
-            callsIndex: startCallsIndex || 0,
-            trafficValue: defaultTrafficValue,
-            trafficIndex: startTrafficIndex || 0,
+            callsValue: currentCallsValue,
+            callsIndex,
+            trafficValue: currentTrafficValue,
+            trafficIndex,
             price: payment && payment.value || value,
             discount: payment && payment.discount || discount || '',
             options: options || secondParams,
@@ -399,9 +419,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleSwitcherChange = (): void => {
         const { callsIndex, trafficIndex } = this.state;
-        const { onSwitcherChange } = this.props;
+        const constructorChoise = { callsIndex, trafficIndex };
 
-        onSwitcherChange && onSwitcherChange({ calls: callsIndex, traffic: trafficIndex });
+        setSessionValue(constructorChoise, storageKeys.SWITCHER);
     }
 
     getRestState(currentPack: Partial<IServicePack>): object {
@@ -456,16 +476,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const {
             switcher,
             currentPack,
+            callsIndex,
+            trafficIndex,
         } = this.state;
-        const {
-            startCallsIndex,
-            startTrafficIndex,
-        } = this.props;
 
         return (
             <Dynamic
-                startCallsIndex={startCallsIndex!}
-                startTrafficIndex={startTrafficIndex!}
+                startCallsIndex={callsIndex!}
+                startTrafficIndex={trafficIndex!}
                 currentPack={currentPack}
                 switcher={switcher}
                 onChangeCalls={this.handleChangeCalls}
