@@ -35,8 +35,12 @@ exports[`<Carousel /> render tests should render component with all props 1`] = 
     }
     slidesToShow={4}
   >
-    <Link />
-    <Link />
+    <Link
+      key="1"
+    />
+    <Link
+      key="2"
+    />
   </Slider>
 </div>
 `;
@@ -76,8 +80,12 @@ exports[`<Carousel /> render tests should render component with prev arrow activ
     }
     slidesToShow={4}
   >
-    <Link />
-    <Link />
+    <Link
+      key="1"
+    />
+    <Link
+      key="2"
+    />
   </Slider>
 </div>
 `;

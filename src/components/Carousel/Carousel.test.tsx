@@ -34,12 +34,12 @@ const props: ICarouselProps = {
         ],
     },
     children: [
-        <Link />,
-        <Link />,
+        <Link key={1} />,
+        <Link key={2} />,
     ],
     onClickNext: jest.fn(),
     onClickPrev: jest.fn(),
-}
+};
 
 describe('<Carousel />', () => {
     describe('render tests', () => {

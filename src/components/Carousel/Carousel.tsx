@@ -188,7 +188,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             responsive,
             arrows,
             slidesToShow,
-            childsAmount,
+            childsAmount
         );
         const isArrows = hasResponsiveArrows !== undefined ?
             hasResponsiveArrows :
