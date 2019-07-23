@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Carousel /> render tests should render component with all props 1`] = `
+<div
+  className="mfui-carousel some-class"
+>
+  <Slider
+    afterChange={[Function]}
+    arrows={false}
+    initialSlide={0}
+    responsive={
+      Array [
+        Object {
+          "breakpoint": 1000,
+          "settings": Object {
+            "arrows": false,
+            "slidesToShow": 3,
+          },
+        },
+        Object {
+          "breakpoint": 900,
+          "settings": Object {
+            "arrows": true,
+            "slidesToShow": 2,
+          },
+        },
+        Object {
+          "breakpoint": 860,
+          "settings": Object {
+            "arrows": false,
+            "slidesToShow": 1,
+          },
+        },
+      ]
+    }
+    slidesToShow={4}
+  >
+    <Link />
+    <Link />
+  </Slider>
+</div>
+`;
+
+exports[`<Carousel /> render tests should render component with prev arrow active and next disabled 1`] = `
+<div
+  className="mfui-carousel some-class"
+>
+  <Slider
+    afterChange={[Function]}
+    arrows={false}
+    initialSlide={0}
+    responsive={
+      Array [
+        Object {
+          "breakpoint": 1000,
+          "settings": Object {
+            "arrows": false,
+            "slidesToShow": 3,
+          },
+        },
+        Object {
+          "breakpoint": 900,
+          "settings": Object {
+            "arrows": true,
+            "slidesToShow": 2,
+          },
+        },
+        Object {
+          "breakpoint": 860,
+          "settings": Object {
+            "arrows": false,
+            "slidesToShow": 1,
+          },
+        },
+      ]
+    }
+    slidesToShow={4}
+  >
+    <Link />
+    <Link />
+  </Slider>
+</div>
+`;
+
+exports[`<Carousel /> render tests should render component with required props 1`] = `
+<div
+  className="mfui-carousel"
+>
+  <Slider
+    afterChange={[Function]}
+    arrows={false}
+    responsive={Array []}
+    slidesToShow={2}
+  />
+</div>
+`;

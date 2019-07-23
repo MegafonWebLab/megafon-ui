@@ -4,7 +4,7 @@ import { cnCreate } from '../../utils/cn';
 import './Carousel.less';
 import CarouselArrow from './CarouselArrow';
 import Slider from 'react-slick';
-import throttle from 'lodash.throttle';
+import * as throttle from 'lodash.throttle';
 
 interface ICarouselOptions {
   slidesToShow: number;
@@ -15,10 +15,10 @@ interface ICarouselOptions {
 
 interface ICarouselOptionsResponsive {
   breakpoint: number;
-  setting: Pick<ICarouselOptions, 'slidesToShow' | 'arrows'>;
+  settings: Pick<ICarouselOptions, 'slidesToShow' | 'arrows'>;
 }
 
-interface ICarouselProps {
+export interface ICarouselProps {
     className?: string;
     options: ICarouselOptions;
     children: any;
@@ -76,10 +76,16 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     componentDidMount() {
-        const { initialSlide } = this.props.options;
-        const isNextActive = initialSlide !== this.props.children.length - 1 - this.state.showSlides;
+        const {
+            options: { initialSlide },
+            children,
+        } = this.props;
+        const { showSlides } = this.state;
 
-        this.throttledHandleCarouselParams();
+        const slidesShown: number = (children.length - 1) - showSlides;
+        const isNextActive: boolean = initialSlide !== slidesShown;
+
+        this.handleCarouselParams();
         window.addEventListener('touchstart', this.touchStart);
         window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
         window.addEventListener('resize', this.throttledHandleCarouselParams);
@@ -100,14 +106,14 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         this.slider = slider;
     }
 
-    handleClickNext = () => {
+    handleClickNext = (): void => {
         const { onClickNext } = this.props;
 
         onClickNext && onClickNext();
         this.slider.slickNext();
     }
 
-    handleClickPrev = () => {
+    handleClickPrev = (): void => {
         const { onClickPrev } = this.props;
 
         onClickPrev && onClickPrev();
@@ -115,7 +121,10 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     handleChange = (slideIndex: number) => {
-        const isNextActive = slideIndex !== this.props.children.length - this.state.showSlides;
+        const { children } = this.props;
+        const { showSlides } = this.state;
+
+        const isNextActive = slideIndex !== children.length - showSlides;
 
         this.setState({
             isPrevActive: !!slideIndex,
@@ -179,7 +188,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             responsive,
             arrows,
             slidesToShow,
-            childsAmount
+            childsAmount,
         );
         const isArrows = hasResponsiveArrows !== undefined ?
             hasResponsiveArrows :
@@ -189,7 +198,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         this.setState({ isArrows, showSlides });
     }
 
-    throttledHandleCarouselParams = () => throttle(this.handleCarouselParams, 20);
+    throttledHandleCarouselParams = (): void => throttle(this.handleCarouselParams, 20);
 
     renderArrows() {
         const { isPrevActive, isNextActive } = this.state;
