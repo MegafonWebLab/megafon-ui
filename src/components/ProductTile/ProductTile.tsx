@@ -141,6 +141,8 @@ export interface IProductTileProps {
 
     /** Active status */
     isActive: boolean;
+    /** Tile index */
+    index: number;
     /** Connect handler */
     onClickConnect?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Buy handler */
@@ -150,7 +152,7 @@ export interface IProductTileProps {
     /** Bubble handler */
     onClickBubble?(info: {}): void;
     /** Choose handler */
-    onClickChoose?(): void;
+    onClickChoose?(index: number): void;
 }
 
 interface IProductTileState {
@@ -242,6 +244,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             }),
         })),
         info: PropTypes.object,
+        index: PropTypes.number,
         isActive: PropTypes.bool,
         onClickConnect: PropTypes.func,
         onClickBuy: PropTypes.func,
@@ -300,6 +303,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         };
     }
 
+    componentDidUpdate(prevProps: Readonly<IProductTileProps>): void {
+        if (prevProps !== this.props) {
+            this.setState({
+                isActive: this.props.isActive,
+            });
+        }
+    }
+
     getTariffInfo = () => {
         const {
             info,
@@ -335,11 +346,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const { onClickBuy, onClickChoose } = this.props;
+        const { onClickBuy, onClickChoose, index } = this.props;
 
         onClickBuy && onClickBuy(this.getTariffInfo(), e);
 
-        onClickChoose && onClickChoose();
+        onClickChoose && onClickChoose(index);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {

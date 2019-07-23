@@ -36,6 +36,7 @@ interface IProductTileRestProps {
     secondParams: any;
     info: any;
 
+    index?: number;
     isActive?: boolean;
 
     onClickConnect?: any;
@@ -99,6 +100,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
         onClickMore: PropTypes.func,
         onClickChoose: PropTypes.func,
         isActive: PropTypes.bool,
+        index: PropTypes.number,
     };
 
     static defaultProps: Partial<IProductTileRestProps> = {
@@ -119,6 +121,14 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
         };
     }
 
+    componentDidUpdate(prevProps: Readonly<IProductTileRestProps>): void {
+        if (prevProps.isActive !== this.props.isActive) {
+            this.setState({
+                isActive: this.props.isActive,
+            });
+        }
+    }
+
     handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
         const {info, shopTag, onClickConnect} = this.props;
 
@@ -126,11 +136,21 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const {info, shopTag, onClickBuy, payment: {value, discount, unitValue, unitExtra}, onClickChoose} = this.props;
+        const {
+            info,
+            shopTag,
+            onClickBuy,
+            payment: {
+                value,
+                discount,
+                unitValue,
+                unitExtra,
+            }, onClickChoose, index,
+        } = this.props;
         const priceValue: string = discount || value;
 
         onClickBuy && onClickBuy({...info, shopTag, price: priceValue, unitValue, unitExtra}, e);
-        onClickChoose && onClickChoose();
+        onClickChoose && onClickChoose(index);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
