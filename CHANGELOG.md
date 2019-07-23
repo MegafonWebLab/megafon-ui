@@ -1,16 +1,21 @@
 # Changelog
+## Release 1.3.19
+### Changed
+- **Carousel**
+    - changed carousel arrows to custom
+- **CarouselArrow**
+    - removed onClickArrow callback
+
 ## Release 1.3.18
 ### Changed
 - **ProductTile**
     - fixed typescript error
 
-# Changelog
 ## Release 1.3.17
 ### Changed
 - **ProductTileHint**
     - fixed syntax error
 
-# Changelog
 ## Release 1.3.16
 ### Changed
 - **ProductTileHint**
