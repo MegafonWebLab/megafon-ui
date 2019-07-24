@@ -159,16 +159,16 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 breakpoint,
                 settings: { slidesToShow, arrows },
             } = gap;
-            const currentIndex = index + 1;
+            const nextIndex = index + 1;
             const isThisResolution = breakpoint >= windowWidth;
-            const isNextBreakpoint = !!breakpoints[currentIndex] &&
-                windowWidth > breakpoints[currentIndex].breakpoint;
+            const isNextBreakpoint = !!breakpoints[nextIndex] &&
+                windowWidth > breakpoints[nextIndex].breakpoint;
 
-            const slidesToShowValue = slidesToShow ? slidesToShow : desktopSlides;
+            const slidesToShowValue = slidesToShow || desktopSlides;
             const isShowArrows = isThisResolution &&
                 gap.settings.hasOwnProperty('arrows') ? arrows : desktopArrows;
             const isArrows = isShowArrows && slidesToShowValue < childsAmount;
-            const isLast = currentIndex === breakpointsLength;
+            const isLast = nextIndex === breakpointsLength;
 
             if ((isNextBreakpoint && isThisResolution) || (isThisResolution && isLast)) {
                 responsiveData = { hasResponsiveArrows: isArrows, currentSlides: slidesToShowValue };

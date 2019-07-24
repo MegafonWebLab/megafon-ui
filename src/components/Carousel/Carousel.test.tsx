@@ -84,6 +84,8 @@ describe('<Carousel />', () => {
             expect(addEventListener).toBeCalledWith('touchstart', instance.touchStart);
             expect(addEventListener).toBeCalledWith('touchmove', instance.preventTouch, instance.noPassiveOption);
             expect(addEventListener).toBeCalledWith('resize', instance.throttledHandleCarouselParams);
+
+            addEventListener.mockRestore();
         });
 
         it('should set isNextActive as true and isPrevActive as false', () => {
