@@ -1,20 +1,20 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import {cnCreate} from '../../utils/cn';
+import { cnCreate } from '../../utils/cn';
 import './ProductTileRest.less';
 import Header from '../Header/Header';
 import TextLink from '../TextLink/TextLink';
-import Button, {IButtonProps} from '../Button/Button';
+import Button, { IButtonProps } from '../Button/Button';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
-interface IProductTileRestProps {
-    title?: string;
-    description?: string;
-    shopTag?: string;
+export interface IProductTileRestProps {
+    title: string;
+    description: string;
+    shopTag: string;
 
     link: string;
-    moreLinkText?: string;
-    showMoreLink?: boolean;
+    moreLinkText: string;
+    showMoreLink: boolean;
 
     buyLink: string;
     buyButtonText: string;
@@ -36,22 +36,14 @@ interface IProductTileRestProps {
     secondParams: any;
     info: any;
 
-    index?: number;
-    isActive?: boolean;
-
-    onClickConnect?: any;
-    onClickBuy?: any;
-    onClickMore?: any;
-    onClickChoose?: any;
-}
-
-interface IProductTileRestState {
-    isActive?: boolean;
+    onClickConnect: any;
+    onClickBuy: any;
+    onClickMore: any;
 }
 
 const cn = cnCreate('mfui-product-tile-rest');
 
-class ProductTileRest extends React.Component<IProductTileRestProps, IProductTileRestState> {
+class ProductTileRest extends React.Component<IProductTileRestProps> {
     static propTypes = {
         title: PropTypes.string,
         description: PropTypes.string,
@@ -98,9 +90,6 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
         onClickConnect: PropTypes.func,
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
-        onClickChoose: PropTypes.func,
-        isActive: PropTypes.bool,
-        index: PropTypes.number,
     };
 
     static defaultProps: Partial<IProductTileRestProps> = {
@@ -113,26 +102,10 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
         shopTag: '',
     };
 
-    constructor(props: IProductTileRestProps) {
-        super(props);
-
-        this.state = {
-            isActive: this.props.isActive,
-        };
-    }
-
-    componentDidUpdate(prevProps: Readonly<IProductTileRestProps>): void {
-        if (prevProps.isActive !== this.props.isActive) {
-            this.setState({
-                isActive: this.props.isActive,
-            });
-        }
-    }
-
     handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
-        const {info, shopTag, onClickConnect} = this.props;
+        const { info, shopTag, onClickConnect } = this.props;
 
-        onClickConnect && onClickConnect({...info, shopTag}, e);
+        onClickConnect && onClickConnect({ ...info, shopTag }, e);
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
@@ -145,22 +118,21 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
                 discount,
                 unitValue,
                 unitExtra,
-            }, onClickChoose, index,
+            },
         } = this.props;
         const priceValue: string = discount || value;
 
-        onClickBuy && onClickBuy({...info, shopTag, price: priceValue, unitValue, unitExtra}, e);
-        onClickChoose && onClickChoose(index);
+        onClickBuy && onClickBuy({ ...info, shopTag, price: priceValue, unitValue, unitExtra }, e);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
-        const {info, shopTag, onClickMore} = this.props;
+        const { info, shopTag, onClickMore } = this.props;
 
-        onClickMore && onClickMore({...info, shopTag}, e);
+        onClickMore && onClickMore({ ...info, shopTag }, e);
     }
 
     renderIcons() {
-        const {firstParams: {title, caption, items}} = this.props;
+        const { firstParams: { title, caption, items } } = this.props;
 
         return (
             <div className={cn('messangers')}>
@@ -183,7 +155,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
     }
 
     renderOptions() {
-        const {secondParams} = this.props;
+        const { secondParams } = this.props;
 
         if (!secondParams.length) {
             return null;
@@ -192,11 +164,11 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
         return (
             <div className={cn('options')}>
                 {secondParams.map((param, index) => {
-                    const {title, value, unit} = param;
+                    const { title, value, unit } = param;
 
                     return (
                         <div className={cn('option')} key={title + index}>
-                            <div className={cn('option-title')} dangerouslySetInnerHTML={{__html: title}}/>
+                            <div className={cn('option-title')} dangerouslySetInnerHTML={{ __html: title }}/>
                             <div className={cn('option-description')}>{`${value} ${unit}`}</div>
                         </div>
                     );
@@ -207,13 +179,13 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
 
     renderShowcase() {
         const {
-            payment: {title, value, unitExtra, unitValue, discount},
+            payment: { title, value, unitExtra, unitValue, discount },
             packs,
         } = this.props;
 
         return (
             <React.Fragment>
-                <div className={cn('price', {discount: !!discount})}>
+                <div className={cn('price', { discount: !!discount })}>
                     <div className={cn('discount-condition')}>{title}</div>
                     <div className={cn('old-price-wrapper')}>
                         <div className={cn('old-price')}>{`${value} ${unitValue}`}</div>
@@ -242,7 +214,6 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
     }
 
     render() {
-        const {isActive} = this.state;
         const {
             title,
             description,
@@ -261,7 +232,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
         } = this.props;
 
         return (
-            <div className={cn('', {active: isActive})}>
+            <div className={cn('')}>
                 <div className={cn('info')}>
                     <Header className={cn('header')} as="h3">{title}</Header>
                     {showMoreLink &&
@@ -282,7 +253,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps, IProductTil
                 <div className={cn('buy')}>
                     {showBuyButton &&
                     <Button
-                        className={cn('buy-button', {'additional-margin': !showConnectButton})}
+                        className={cn('buy-button', { 'additional-margin': !showConnectButton })}
                         passiveColor={buttonPassiveColor}
                         border={buttonBorder}
                         fontColor={buttonFontColor}
