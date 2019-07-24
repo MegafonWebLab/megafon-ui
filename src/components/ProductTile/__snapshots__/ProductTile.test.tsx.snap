@@ -49,47 +49,13 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
       discount="0"
       unitExtra="за 30 дней"
       unitValue="₽"
-      value="750"
+      value="1000"
     />
     <div
       className="mfui-product-tile__constructor"
     >
       <ProductTileDynamic
-        currentPack={
-          Object {
-            "buyLink": "&options=null",
-            "calls": Object {
-              "unit": "минут",
-              "value": 750,
-            },
-            "options": Array [
-              Object {
-                "footnote": "",
-                "svgIcon": <test-file-stub />,
-                "title": "Безлимитные SMS",
-                "unit": "₽ за 30 дней",
-                "value": "55",
-              },
-              Object {
-                "footnote": "Участвуйте в программе и тратьте кэшбэк ",
-                "svgIcon": <test-file-stub />,
-                "title": "Кэшбэк 20%",
-                "unit": "",
-                "value": "0",
-              },
-            ],
-            "payment": Object {
-              "discount": "0",
-              "unitExtra": "за 30 дней",
-              "unitValue": "₽",
-              "value": "750",
-            },
-            "traffic": Object {
-              "unit": "ГБ",
-              "value": 18,
-            },
-          }
-        }
+        currentPack={Object {}}
         onChangeCalls={[Function]}
         onChangeTraffic={[Function]}
         startCallsIndex={2}
@@ -98,8 +64,9 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
           Object {
             "calls": Array [
               "300",
-              "600",
+              "650",
               "750",
+              "900",
             ],
             "traffic": Array [
               "6",
@@ -131,18 +98,18 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
       options={
         Array [
           Object {
+            "footnote": "Участвуйте в программе и тратьте кэшбэк",
+            "svgIcon": <test-file-stub />,
+            "title": "Кэшбэк 20%",
+            "unit": "",
+            "value": "0",
+          },
+          Object {
             "footnote": "",
             "svgIcon": <test-file-stub />,
             "title": "Безлимитные SMS",
             "unit": "₽ за 30 дней",
             "value": "55",
-          },
-          Object {
-            "footnote": "Участвуйте в программе и тратьте кэшбэк ",
-            "svgIcon": <test-file-stub />,
-            "title": "Кэшбэк 20%",
-            "unit": "",
-            "value": "0",
           },
         ]
       }
@@ -150,7 +117,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
   </div>
   <ProductTileBuy
     buyButtonText="sdfsdf"
-    buyLink="&options=null"
+    buyLink="/zakaz/?tariff=look"
     connectButtonText="sdfsdf"
     onClickBuy={[Function]}
     onClickConnect={[Function]}

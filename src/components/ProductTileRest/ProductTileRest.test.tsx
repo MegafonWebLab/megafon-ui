@@ -2,20 +2,19 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import ProductTileRest from './ProductTileRest';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
-import { Component } from 'react';
+import { IProductTileRestProps } from './ProductTileRest';
 
-const tariff = {
+const tariff: Partial<IProductTileRestProps> = {
     showMoreLink: false,
     buyButtonText: 'Купить',
     showBuyButton: true,
     connectLink: '123123',
     connectButtonText: 'Подключиться',
     showConnectButton: false,
-    'title': 'Включайся! Смотри',
+    title: 'Включайся! Смотри',
     'moreLinkText': 'more link',
     'description': 'asdasdasd',
     'shopTag': '123',
-    'topBadgeTitle': 'sdfsdf',
     'link': '/tariffs/vklyuchaysya/smotri.html',
     'buyLink': '/zakaz/?tariff=look',
     'payment': {
@@ -77,11 +76,6 @@ const tariff = {
             'svgIcon': <MegafonTv />,
         },
     ],
-    'cashback': {
-        'title': 'Кэшбэк',
-        'value': 20,
-        'unit': '%',
-    },
     'info': {
         'billingIds': [],
         'sms': '05007897',
@@ -97,28 +91,10 @@ const tariff = {
 
 describe('<Product >', () => {
     it('should render', () => {
-        const wrapper = shallow<Component>(
+        const wrapper = shallow(
             <ProductTileRest {...tariff}/>
             );
 
         expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should call onClickChoose when onClickBuy fired', () => {
-        const clickChooseHandler  = jest.fn();
-        const clickBuyHandler  = jest.fn();
-        const wrapper = shallow<Component>(
-            <ProductTileRest {...tariff}
-            onClickBuy={clickBuyHandler}
-            onClickChoose={clickChooseHandler}/>
-        );
-        const instance = wrapper.instance() as any;
-
-        instance.handleClickBuy = jest.spyOn(instance, 'handleClickBuy');
-        instance.forceUpdate();
-        instance.handleClickBuy();
-
-        expect(clickBuyHandler).toBeCalled();
-        expect(clickChooseHandler).toBeCalled();
     });
 });

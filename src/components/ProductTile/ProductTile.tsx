@@ -139,10 +139,6 @@ export interface IProductTileProps {
     /** Info - object type - return with onClickConnect, onClickBuy */
     info: {};
 
-    /** Active status */
-    isActive: boolean;
-    /** Tile index */
-    index: number;
     /** Connect handler */
     onClickConnect?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Buy handler */
@@ -151,8 +147,10 @@ export interface IProductTileProps {
     onClickMore?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Bubble handler */
     onClickBubble?(info: {}): void;
-    /** Choose handler */
-    onClickChoose?(index: number): void;
+    /** Calls change callback  */
+    onCallsChange?(): void;
+    /** Traffic change callback */
+    onTrafficChange?(): void;
 }
 
 interface IProductTileState {
@@ -164,7 +162,6 @@ interface IProductTileState {
     discount: string;
     options: IOption[];
     buyLink: string;
-    isActive: boolean;
 }
 
 const cn = cnCreate('mfui-product-tile');
@@ -244,13 +241,12 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             }),
         })),
         info: PropTypes.object,
-        index: PropTypes.number,
-        isActive: PropTypes.bool,
         onClickConnect: PropTypes.func,
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
         onClickBubble: PropTypes.func,
-        onClickChoose: PropTypes.func,
+        onCallsChange: PropTypes.func,
+        onTrafficChange: PropTypes.func,
     };
 
     static defaultProps: Partial<IProductTileProps> = {
@@ -274,7 +270,6 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             payment: { value, discount },
             buyLink: defaultBuyLink,
             secondParams,
-            isActive,
         } = props;
 
         const switcher = this.getSwitcherValues();
@@ -299,16 +294,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             discount: payment && payment.discount || discount || '',
             options: options || secondParams,
             buyLink: usePackBuyLink && buyLink || this.formHashLink(defaultBuyLink || '', shopTag) || '',
-            isActive: isActive,
         };
-    }
-
-    componentDidUpdate(prevProps: Readonly<IProductTileProps>): void {
-        if (prevProps !== this.props) {
-            this.setState({
-                isActive: this.props.isActive,
-            });
-        }
     }
 
     getTariffInfo = () => {
@@ -346,11 +332,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     handleClickBuy = (e: React.SyntheticEvent<EventTarget>) => {
-        const { onClickBuy, onClickChoose, index } = this.props;
+        const { onClickBuy } = this.props;
 
         onClickBuy && onClickBuy(this.getTariffInfo(), e);
-
-        onClickChoose && onClickChoose(index);
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>) => {
@@ -367,6 +351,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
+        const { onCallsChange } = this.props;
         const { trafficValue } = this.state;
         const currentPack = this.getCurrentPack(currentValue, trafficValue);
 
@@ -374,10 +359,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             return false;
         }
 
+        onCallsChange && onCallsChange();
+
         this.setState({
             ...this.getRestState(currentPack),
             callsValue: currentValue,
-            isActive: false,
         });
 
         return true;
@@ -385,7 +371,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
-
+        const { onTrafficChange } = this.props;
         const { callsValue } = this.state;
         const currentPack = this.getCurrentPack(callsValue, currentValue);
 
@@ -393,10 +379,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             return false;
         }
 
+        onTrafficChange && onTrafficChange();
+
         this.setState({
             ...this.getRestState(currentPack),
             trafficValue: currentValue,
-            isActive: false,
         });
 
         return true;
@@ -537,11 +524,11 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             connectLink,
             payment: { title, unitExtra, unitValue },
         } = this.props;
-        const { price, discount, options, buyLink, isActive } = this.state;
+        const { price, discount, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
 
         return (
-            <div className={cn('', { constructor: isServicePacks, active: isActive}, className)}>
+            <div className={cn('', { constructor: isServicePacks }, className)}>
                 {isServicePacks && !!topBadgeTitle &&
                     <Hint title={topBadgeTitle} linkHref={topBadgeLink} />
                 }
