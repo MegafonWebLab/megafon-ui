@@ -5,7 +5,32 @@
 
 @{b} {
     padding: 8px 10px;
+    padding-top: 45px;
     overflow: hidden;
+    position: relative;
+
+    &__arrow {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        transition: opacity 0.3s;
+
+        @media @mobileSM {
+            display: none !important;
+        }
+
+        &_arrow-prev {
+            right: 60px;
+            transform: rotate(180deg);
+        }
+
+        &_disabled {
+            cursor: default;
+            opacity: 0.2;
+        }
+    }
 }
 
 @{s} {
@@ -22,17 +47,6 @@
     &-track {
         align-items: stretch;
         display: flex;
-    }
-
-    &-arrow {
-        position: absolute;
-        cursor: pointer;
-        top: -44px;
-        right: 0;
-        z-index: 2;
-        @media @mobileSM {
-            display: none !important;
-        }
     }
 
     &-dots {
@@ -67,17 +81,6 @@
         }
     }
 
-    &-disabled {
-        &@{s}-arrow {
-            cursor: default;
-        }
-    }
-
-    &-prev {
-        right: 60px;
-        transform: rotate(180deg);
-    }
-
     &-slide {
         flex-grow: 0;
         flex-shrink: 1;
@@ -85,6 +88,7 @@
         flex-basis: auto;
         margin-right: 20px;
     }
+
     &-slide > div {
         display: flex;
         flex-grow: 1;
@@ -99,9 +103,14 @@
             min-width: 265px;
         }
     }
+
     &-slide div {
         &:focus {
             outline: none;
         }
+    }
+
+    &-arrow {
+        display: none !important;
     }
 }
