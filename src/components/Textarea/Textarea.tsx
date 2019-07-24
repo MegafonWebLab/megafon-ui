@@ -39,6 +39,8 @@ interface ITextareaProps {
     defaultValue?: string;
     /** Custom classname */
     className?: string;
+    /** Input height */
+    inputHeight?: string;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
@@ -72,11 +74,13 @@ class Textarea extends React.Component<ITextareaProps, {}> {
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
         onKeyUp: PropTypes.func,
+        inputHeight: PropTypes.oneOf(['sm', 'md']),
     };
 
     static defaultProps: Partial<ITextareaProps> = {
         autocomplete: 'off',
         color: 'default',
+        inputHeight: 'md',
     };
 
     inputNode: any = React.createRef();
@@ -108,10 +112,10 @@ class Textarea extends React.Component<ITextareaProps, {}> {
             value: this.props.value,
             required: this.props.required,
             autoComplete: this.props.autocomplete,
-            className: cn('field'),
         };
+        const { inputHeight } = this.props;
 
-        return <textarea ref={this.inputNode} {...params} />;
+        return <textarea className={cn('field', {'height': inputHeight})} ref={this.inputNode} {...params} />;
     }
 
     render() {

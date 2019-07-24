@@ -10,7 +10,7 @@ exports[`<Textarea /> is checked shouldComponentUpdate 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
@@ -32,7 +32,7 @@ exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
@@ -49,7 +49,7 @@ exports[`<Textarea /> it renders Textarea 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
@@ -66,7 +66,7 @@ exports[`<Textarea /> it renders error icon 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
@@ -88,7 +88,7 @@ exports[`<Textarea /> it renders texts 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
@@ -115,7 +115,7 @@ exports[`<Textarea /> it renders valid icon 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
@@ -137,7 +137,7 @@ exports[`<Textarea /> it renders without error icon 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
@@ -154,7 +154,7 @@ exports[`<Textarea /> it renders without valid icon 1`] = `
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea__field mfui-textarea__field_height_md"
       />
     </div>
   </div>
