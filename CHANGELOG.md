@@ -1,4 +1,5 @@
 # Changelog
+### Changed
 ## Release 1.3.20
 -   **ProductTile**
     - secondary handlers for onTrafficChange & onCallsChange
