@@ -12,8 +12,8 @@
     &__arrow {
         position: absolute;
         cursor: pointer;
-        top: 0;
         right: 0;
+        top: 3px;
         z-index: 2;
         transition: opacity 0.3s;
 
@@ -21,9 +21,34 @@
             display: none !important;
         }
 
+        @media @mobileB {
+            right: 55px;
+        }
+
+        @media @desktopS {
+            right: 64px;
+        }
+
+        @media @desktopMU {
+            right: 80px;
+            top: 12px;
+        }
+
         &_arrow-prev {
             right: 60px;
             transform: rotate(180deg);
+
+            @media @mobileB {
+                right: 115px;
+            }
+
+            @media @desktopS {
+                right: 124px;
+            }
+
+            @media @desktopMU {
+                right: 140px;
+            }
         }
 
         &_disabled {
