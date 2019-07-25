@@ -21,7 +21,6 @@ exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
   <TextLink
     className="mfui-product-tile-buy__detail-link"
     color="blue"
-    target="_blank"
     underlineStyle="solid"
     underlineVisibility="hover"
   >

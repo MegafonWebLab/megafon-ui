@@ -91,7 +91,6 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
                     <TextLink
                         className={cn('detail-link')}
                         href={connectLink}
-                        target="_blank"
                         onClick={onClickConnect}
                     >
                         {connectButtonText}

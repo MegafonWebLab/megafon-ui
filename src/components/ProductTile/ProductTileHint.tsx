@@ -27,7 +27,7 @@ class ProductTileHint extends React.Component<IProductTileHintProps> {
     render() {
         const { title, linkHref } = this.props;
         const ElementType = linkHref ? 'a' : 'div';
-        const attributes: IElementAtributes = linkHref ? { href: linkHref, target: '_blank' } : {};
+        const attributes: IElementAtributes = linkHref ? { href: linkHref } : {};
 
         return (
             <div className={cn('')}>
