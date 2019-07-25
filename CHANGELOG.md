@@ -1,4 +1,8 @@
 # Changelog
+## Release 1.3.20
+-   **ProductTile**
+    - secondary handlers for onTrafficChange & onCallsChange
+
 ## Release 1.3.19
 ### Changed
 - **Carousel**
