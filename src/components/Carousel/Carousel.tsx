@@ -150,7 +150,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     getResponsiveData = (breakpoints, desktopArrows: boolean, desktopSlides: number, childsAmount: number) => {
-        const windowWidth = window.outerWidth;
+        const windowWidth = window.innerWidth;
         const breakpointsLength = breakpoints.length;
         let responsiveData: IResponsiveData = {};
 

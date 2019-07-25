@@ -1,4 +1,10 @@
 # Changelog
+## Release 1.3.20
+### Changed
+- **Carousel**
+    - changed styles according to showcase display
+    - changed window.outerWidth into window.innerWidth for ipad support
+
 ## Release 1.3.19
 ### Changed
 - **Carousel**
