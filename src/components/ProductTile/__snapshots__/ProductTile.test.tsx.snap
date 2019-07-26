@@ -5,6 +5,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
   className="mfui-product-tile mfui-product-tile_constructor"
 >
   <ProductTileHint
+    linkTarget="_blank"
     title="sdfsdf"
   />
   <div
@@ -18,6 +19,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
         color="black"
         href="/tariffs/vklyuchaysya/smotri.html"
         onClick={[Function]}
+        target="_blank"
         underlineStyle="none"
         underlineVisibility="hover"
       >
@@ -32,6 +34,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
         color="blue"
         href="/tariffs/vklyuchaysya/smotri.html"
         onClick={[Function]}
+        target="_blank"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -149,7 +152,9 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
   <ProductTileBuy
     buyButtonText="sdfsdf"
     buyLink="&options=null"
+    buyLinkTarget="_blank"
     connectButtonText="sdfsdf"
+    connectLinkTarget="_blank"
     onClickBuy={[Function]}
     onClickConnect={[Function]}
     showBuyButton={true}

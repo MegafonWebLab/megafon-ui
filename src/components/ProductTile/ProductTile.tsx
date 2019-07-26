@@ -11,6 +11,9 @@ import Price from './ProductTilePrice';
 import Options from './ProductTileOptions';
 import Buy, { IProductTileBuyProps } from './ProductTileBuy';
 
+const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
+export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
+
 export interface IOption {
     title: string;
     caption?: string;
@@ -86,6 +89,8 @@ export interface IProductTileProps {
     topBadgeTitle?: string;
     /** Top badge link href */
     topBadgeLink?: string;
+    /** Top badge link target */
+    topBadgeLinkTarget?: TLinkTargetType;
     /** Second params head */
     secondParamsHead?: string;
     /** Shop tag */
@@ -97,6 +102,8 @@ export interface IProductTileProps {
 
     /** More link */
     link?: string;
+    /** link target */
+    linkTarget?: TLinkTargetType;
     /** More link text */
     moreLinkText?: string;
     /** Show more link */
@@ -104,6 +111,8 @@ export interface IProductTileProps {
 
     /** Buy link */
     buyLink?: string;
+    /** Buy link target */
+    buyLinkTarget?: TLinkTargetType;
     /** Use pack buy link */
     usePackBuyLink?: boolean;
     /** Buy button text */
@@ -119,6 +128,8 @@ export interface IProductTileProps {
 
     /** Connect link */
     connectLink?: string;
+    /** Connect link target */
+    connectLinkTarget?: TLinkTargetType;
     /** Connect button text */
     connectButtonText?: string;
     /** Show connect button */
@@ -165,14 +176,17 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         title: PropTypes.string.isRequired,
         topBadgeTitle: PropTypes.string,
         topBadgeLink: PropTypes.string,
+        topBadgeLinkTarget: LinkTargetType,
         secondParamsHead: PropTypes.string,
         shopTag: PropTypes.string,
         startCallsIndex: PropTypes.number,
         startTrafficIndex: PropTypes.number,
         link: PropTypes.string,
+        linkTarget: LinkTargetType,
         moreLinkText: PropTypes.string,
         showMoreLink: PropTypes.bool,
         buyLink: PropTypes.string,
+        buyLinkTarget: LinkTargetType,
         usePackBuyLink: PropTypes.bool,
         buyButtonText: PropTypes.string,
         buttonBorder: Buy.propTypes.buttonBorder,
@@ -180,6 +194,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         buttonPassiveColor: Buy.propTypes.buttonPassiveColor,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
+        connectLinkTarget: LinkTargetType,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
         payment: PropTypes.shape({
@@ -250,6 +265,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         startCallsIndex: 0,
         startTrafficIndex: 0,
         usePackBuyLink: true,
+        linkTarget: '_blank',
     };
 
     defaultInfo: IDefaultInfo | object;
@@ -448,13 +464,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     renderTitle() {
-        const { title, link } = this.props;
+        const { title, link, linkTarget } = this.props;
 
         return (
             <h2 className={cn('title')}>
                 <TextLink
                     className={cn('title-link')}
                     href={link}
+                    target={linkTarget}
                     underlineStyle="none"
                     color="black"
                     onClick={this.handleClickMore}
@@ -466,7 +483,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
     }
 
     renderLink() {
-        const { link = '', showMoreLink, moreLinkText } = this.props;
+        const { link = '', showMoreLink, moreLinkText, linkTarget } = this.props;
 
         if (!showMoreLink || !moreLinkText) {
             return null;
@@ -479,6 +496,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                 <TextLink
                     className={cn('detail-link')}
                     href={linkWithHash}
+                    target={linkTarget}
                     onClick={this.handleClickMore}
                 >
                     {moreLinkText}
@@ -508,6 +526,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             buttonFontColor,
             buttonPassiveColor,
             connectLink,
+            topBadgeLinkTarget,
+            buyLinkTarget,
+            connectLinkTarget,
             payment: { title, unitExtra, unitValue },
         } = this.props;
         const { price, discount, options, buyLink } = this.state;
@@ -516,7 +537,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         return (
             <div className={cn('', { constructor: isServicePacks }, className)}>
                 {isServicePacks && !!topBadgeTitle &&
-                    <Hint title={topBadgeTitle} linkHref={topBadgeLink} />
+                    <Hint title={topBadgeTitle} linkHref={topBadgeLink} linkTarget={topBadgeLinkTarget} />
                 }
                 <div className={cn('content')}>
                     {this.renderTitle()}
@@ -537,7 +558,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                 </div>
                 <Buy
                     buyLink={buyLink}
+                    buyLinkTarget={buyLinkTarget}
                     connectLink={connectLink}
+                    connectLinkTarget={connectLinkTarget}
                     buyButtonText={buyButtonText}
                     connectButtonText={connectButtonText}
                     showBuyButton={showBuyButton}
