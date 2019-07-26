@@ -40,7 +40,7 @@ interface ITextareaProps {
     /** Custom classname */
     className?: string;
     /** Input height */
-    inputHeight?: string;
+    inputHeight?: 'sm' | 'md';
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
