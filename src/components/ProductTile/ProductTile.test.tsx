@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import ProductTile from './ProductTile';
+import ProductTile, {IProductTileProps , IServicePack } from './ProductTile';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 
-const tariff = {
+const tariff: Partial<IProductTileProps> = {
     buyButtonText: 'sdfsdf',
     connectButtonText: 'sdfsdf',
     secondParamsHead: 'sdfsdf',
     showConnectButton: true,
-    'title': 'Включайся! Смотри',
+    title: 'Включайся! Смотри',
     'topBadgeTitle': 'sdfsdf',
     'link': '/tariffs/vklyuchaysya/smotri.html',
     'buyLink': '/zakaz/?tariff=look',
@@ -16,7 +16,6 @@ const tariff = {
         'value': '1000',
         'unitExtra': 'за 30 дней',
         'unitValue': '₽',
-        'unit': '₽ за 30 дней',
         'discount': '0',
     },
     'packs': [
@@ -40,18 +39,16 @@ const tariff = {
         },
     ],
     'firstParams': {
-        'title': 'Параметры',
-        'caption': '',
         'items': [
             {
                 'title': 'VIP-тариф',
                 'caption': 'Привилегии обслуживания и другое',
-                'svgIcon': <MegafonTv />,
+                'svgIcon': <MegafonTv/>,
             },
             {
                 'title': 'МегаФон ТВ',
                 'caption': 'Безлимитный трафик и пакеты кино, сериалов и ТВ-каналов на любой вкус',
-                'svgIcon': <MegafonTv />,
+                'svgIcon': <MegafonTv/>,
             },
         ],
     },
@@ -61,14 +58,14 @@ const tariff = {
             'footnote': 'Участвуйте в программе и тратьте кэшбэк',
             'value': '0',
             'unit': '',
-            'svgIcon': <MegafonTv />,
+            'svgIcon': <MegafonTv/>,
         },
         {
             'title': 'Безлимитные SMS',
             'footnote': '',
             'value': '55',
             'unit': '₽ за 30 дней',
-            'svgIcon': <MegafonTv />,
+            'svgIcon': <MegafonTv/>,
         },
     ],
     'cashback': {
@@ -89,9 +86,10 @@ const tariff = {
     },
 };
 
-const servicePacks = [
+const servicePacks: Array<Partial<IServicePack>> = [
     {
         'buyLink': '&options=null',
+        'shopTag': 'tag1',
         'calls': {
             'value': 300,
             'unit': 'минут',
@@ -101,10 +99,8 @@ const servicePacks = [
             'unit': 'ГБ',
         },
         'payment': {
-            'value': '450',
-            'unitExtra': 'за 30 дней',
-            'unitValue': '₽',
-            'discount': '0',
+            'value': '400',
+            'discount': '200',
         },
         'options': [
             {
@@ -118,15 +114,48 @@ const servicePacks = [
                 'title': 'Кэшбэк 20%',
                 'value': '0',
                 'unit': '',
-                'footnote': 'Участвуйте в программе и тратьте кэшбэк ',
+                'footnote': 'Участвуйте в программе и трпки в салонах и интернет-магазине МегаФона',
                 'svgIcon': <MegafonTv />,
             },
         ],
     },
     {
         'buyLink': '&options=null',
+        'shopTag': 'tag2',
         'calls': {
-            'value': 600,
+            'value': 650,
+            'unit': 'минут',
+        },
+        'traffic': {
+            'value': 6,
+            'unit': 'ГБ',
+        },
+        'payment': {
+            'value': '590',
+            'discount': '300',
+        },
+        'options': [
+            {
+                'title': 'Безлимитные SMS',
+                'value': '55',
+                'unit': '₽ за 30 дней',
+                'footnote': '',
+                'svgIcon': <MegafonTv />,
+            },
+            {
+                'title': 'Кэшбэк 20%',
+                'value': '0',
+                'unit': '',
+                'footnote': 'Участвуйте тратьте кэшбэк на сервисы и покупки в салонах и магазине МегаФона',
+                'svgIcon': <MegafonTv />,
+            },
+        ],
+    },
+    {
+        'buyLink': '&options=null',
+        'shopTag': 'tag3',
+        'calls': {
+            'value': 300,
             'unit': 'минут',
         },
         'traffic': {
@@ -134,10 +163,8 @@ const servicePacks = [
             'unit': 'ГБ',
         },
         'payment': {
-            'value': '600',
-            'unitExtra': 'за 30 дней',
-            'unitValue': '₽',
-            'discount': '0',
+            'value': '590',
+            'discount': '',
         },
         'options': [
             {
@@ -151,7 +178,7 @@ const servicePacks = [
                 'title': 'Кэшбэк 20%',
                 'value': '0',
                 'unit': '',
-                'footnote': 'Участвуйте в программе и тратьте кэшбэк ',
+                'footnote': 'Участвуйте в купки в салонах и интернет-магазине МегаФона',
                 'svgIcon': <MegafonTv />,
             },
         ],
@@ -163,14 +190,12 @@ const servicePacks = [
             'unit': 'минут',
         },
         'traffic': {
-            'value': 18,
+            'value': 6,
             'unit': 'ГБ',
         },
         'payment': {
-            'value': '750',
-            'unitExtra': 'за 30 дней',
-            'unitValue': '₽',
-            'discount': '0',
+            'value': '670',
+            'discount': '',
         },
         'options': [
             {
@@ -184,7 +209,38 @@ const servicePacks = [
                 'title': 'Кэшбэк 20%',
                 'value': '0',
                 'unit': '',
-                'footnote': 'Участвуйте в программе и тратьте кэшбэк ',
+                'footnote': 'Укупки в салонах и интернет-магазине МегаФона',
+                'svgIcon': <MegafonTv />,
+            },
+        ],
+    },
+    {
+        'buyLink': '&options=null',
+        'calls': {
+            'value': 900,
+            'unit': 'минут',
+        },
+        'traffic': {
+            'value': 6,
+            'unit': 'ГБ',
+        },
+        'payment': {
+            'value': '770',
+            'discount': '',
+        },
+        'options': [
+            {
+                'title': 'Безлимитные SMS',
+                'value': '55',
+                'unit': '₽ за 30 дней',
+                'footnote': '',
+                'svgIcon': <MegafonTv />,
+            },
+            {
+                'title': 'Кэшбэк 20%',
+                'value': '0',
+                'unit': '',
+                'footnote': 'Участвуки в салонах и интернет-магазине МегаФона',
                 'svgIcon': <MegafonTv />,
             },
         ],
@@ -202,5 +258,39 @@ describe('<ProductTile />', () => {
             />
         );
         expect(wrapper).toMatchSnapshot();
+    });
+
+    describe('should call pased callback when click on range buttons', () => {
+        it('should call onCallsChange when handleChangeCalls fired', () => {
+            const onCallsChange = jest.fn();
+            const wrapper = shallow<ProductTile>(
+                <ProductTile
+                    {...tariff}
+                    servicePacks={servicePacks}
+                    startCallsIndex={2}
+                    startTrafficIndex={1}
+                    onCallsChange={onCallsChange}
+                />
+            );
+
+            wrapper.instance().handleChangeCalls({ target: {} } as React.SyntheticEvent<EventTarget>, '300' );
+            expect(onCallsChange).toBeCalled();
+        });
+
+        it('should call onCallsChange when handleChangeCalls fired', () => {
+            const onTrafficChange = jest.fn();
+            const wrapper = shallow<ProductTile>(
+                <ProductTile
+                    {...tariff}
+                    servicePacks={servicePacks}
+                    startCallsIndex={2}
+                    startTrafficIndex={1}
+                    onTrafficChange={onTrafficChange}
+                />
+            );
+
+            wrapper.instance().handleChangeTraffic({ target: {} } as React.SyntheticEvent<EventTarget>, '6' );
+            expect(onTrafficChange).toBeCalled();
+        });
     });
 });

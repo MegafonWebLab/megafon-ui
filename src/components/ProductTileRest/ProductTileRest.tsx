@@ -8,6 +8,7 @@ import Button, { IButtonProps } from '../Button/Button';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
 interface IProductTileRestProps {
+    className?: string;
     title: string;
     description: string;
     shopTag: string;
@@ -35,6 +36,7 @@ interface IProductTileRestProps {
     firstParams: any;
     secondParams: any;
     info: any;
+    isActive?: boolean;
     onClickConnect: any;
     onClickBuy: any;
     onClickMore: any;
@@ -85,6 +87,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             unit: PropTypes.string,
         })),
         info: PropTypes.object,
+        isActive: PropTypes.bool,
         onClickConnect: PropTypes.func,
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
@@ -217,10 +220,12 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             buttonBorder,
             buttonFontColor,
             buttonPassiveColor,
+            isActive,
+            className,
         } = this.props;
 
         return (
-            <div className={cn('')}>
+            <div className={cn('', {active: isActive}, className)}>
                 <div className={cn('info')}>
                     <Header className={cn('header')} as="h3">{title}</Header>
                     {showMoreLink &&
