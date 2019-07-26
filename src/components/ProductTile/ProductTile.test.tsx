@@ -251,8 +251,6 @@ describe('<ProductTile />', () => {
     it('it renders ProductTile', () => {
         const wrapper = shallow(
             <ProductTile
-                index={1}
-                isActive={false}
                 {...tariff}
                 servicePacks={servicePacks}
                 startCallsIndex={2}
@@ -267,8 +265,6 @@ describe('<ProductTile />', () => {
             const onCallsChange = jest.fn();
             const wrapper = shallow<ProductTile>(
                 <ProductTile
-                    index={1}
-                    isActive={false}
                     {...tariff}
                     servicePacks={servicePacks}
                     startCallsIndex={2}
@@ -285,8 +281,6 @@ describe('<ProductTile />', () => {
             const onTrafficChange = jest.fn();
             const wrapper = shallow<ProductTile>(
                 <ProductTile
-                    index={1}
-                    isActive={false}
                     {...tariff}
                     servicePacks={servicePacks}
                     startCallsIndex={2}
