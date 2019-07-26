@@ -2,6 +2,9 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import Carousel, { ICarouselProps } from './Carousel';
 import Link from '../Link/Link';
+import throttle from 'lodash.throttle';
+
+const originalThrottle = throttle;
 
 const props: ICarouselProps = {
     className: 'some-class',
@@ -42,6 +45,16 @@ const props: ICarouselProps = {
 };
 
 describe('<Carousel />', () => {
+    beforeEach(() => {
+        // @ts-ignore
+        throttle = jest.fn();
+    });
+
+    afterEach(() => {
+        // @ts-ignore
+        throttle = originalThrottle;
+    });
+
     describe('render tests', () => {
         it('should render component with required props', () => {
             const wrapper = shallow(

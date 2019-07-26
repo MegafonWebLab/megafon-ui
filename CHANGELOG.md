@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - moved throttle to constructor and changed throttle import
+    - add arrows activity check on resize
 
 ## Release 1.3.20
 ### Changed
