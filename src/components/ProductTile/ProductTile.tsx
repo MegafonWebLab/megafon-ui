@@ -138,6 +138,7 @@ export interface IProductTileProps {
     servicePacks: Array<Partial<IServicePack>>;
     /** Info - object type - return with onClickConnect, onClickBuy */
     info: {};
+
     /** Connect handler */
     onClickConnect?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Buy handler */
@@ -146,6 +147,10 @@ export interface IProductTileProps {
     onClickMore?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Bubble handler */
     onClickBubble?(info: {}): void;
+    /** Calls change callback  */
+    onCallsChange?(): void;
+    /** Traffic change callback */
+    onTrafficChange?(): void;
 }
 
 interface IProductTileState {
@@ -240,6 +245,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
         onClickBubble: PropTypes.func,
+        onCallsChange: PropTypes.func,
+        onTrafficChange: PropTypes.func,
     };
 
     static defaultProps: Partial<IProductTileProps> = {
@@ -344,12 +351,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
+        const { onCallsChange } = this.props;
         const { trafficValue } = this.state;
         const currentPack = this.getCurrentPack(currentValue, trafficValue);
 
         if (Object.keys(currentPack).length === 0) {
             return false;
         }
+
+        onCallsChange && onCallsChange();
 
         this.setState({
             ...this.getRestState(currentPack),
@@ -361,13 +371,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
-
+        const { onTrafficChange } = this.props;
         const { callsValue } = this.state;
         const currentPack = this.getCurrentPack(callsValue, currentValue);
 
         if (Object.keys(currentPack).length === 0) {
             return false;
         }
+
+        onTrafficChange && onTrafficChange();
 
         this.setState({
             ...this.getRestState(currentPack),

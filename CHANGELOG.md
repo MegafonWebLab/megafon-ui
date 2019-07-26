@@ -1,7 +1,12 @@
 # Changelog
 
 ## Unreleased
-
+## Release 1.3.20
+### Changed
+- **ProductTile**
+    - add styles for active tile
+    - add secondaty handlers for onChangeCalls and onChangeTraffic
+ 
 ## Release 1.3.20
 ### Changed
 - **Carousel**
