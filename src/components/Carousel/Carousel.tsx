@@ -4,7 +4,7 @@ import { cnCreate } from '../../utils/cn';
 import './Carousel.less';
 import CarouselArrow from './CarouselArrow';
 import Slider from 'react-slick';
-import * as throttle from 'lodash.throttle';
+import throttle from 'lodash.throttle';
 
 interface ICarouselOptions {
   slidesToShow: number;
@@ -63,10 +63,12 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     clientX: number;
     noPassiveOption: any = { passive: false };
     slider: any;
+    throttledHandleCarouselParams: () => void;
 
     constructor(props: ICarouselProps) {
         super(props);
 
+        this.throttledHandleCarouselParams = throttle(this.handleCarouselParams, 20);
         this.state = {
             isPrevActive: false,
             isNextActive: true,
@@ -183,6 +185,8 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             children,
             options: { slidesToShow, responsive, arrows = true },
         } = this.props;
+        const slider = this.slider || { innerSlider: { state: {} } };
+        const { innerSlider: { state: { currentSlide } } } = slider;
         const childsAmount = children.length;
         const { hasResponsiveArrows, currentSlides } = this.getResponsiveData(
             responsive,
@@ -195,10 +199,13 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             arrows && slidesToShow < childsAmount;
         const showSlides = currentSlides || slidesToShow;
 
-        this.setState({ isArrows, showSlides });
+        this.setState(
+            { isArrows, showSlides },
+            (): void => {
+                this.handleChange(currentSlide);
+            }
+        );
     }
-
-    throttledHandleCarouselParams = (): void => throttle(this.handleCarouselParams, 20);
 
     renderArrows() {
         const { isPrevActive, isNextActive } = this.state;
