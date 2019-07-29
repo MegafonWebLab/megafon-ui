@@ -265,7 +265,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         startCallsIndex: 0,
         startTrafficIndex: 0,
         usePackBuyLink: true,
-        linkTarget: '_blank',
+        linkTarget: '_self',
     };
 
     defaultInfo: IDefaultInfo | object;
