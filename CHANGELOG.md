@@ -1,8 +1,6 @@
 # Changelog
 
 ## Unreleased
-
-## Release 1.3.23
 ### Changed
 - **ProductTile**
     - add styles for active tile

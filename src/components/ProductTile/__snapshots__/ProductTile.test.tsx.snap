@@ -65,6 +65,7 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
           Object {
             "calls": Array [
               "300",
+              "600",
               "650",
               "750",
               "900",

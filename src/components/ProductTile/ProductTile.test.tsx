@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import ProductTile, {IProductTileProps , IServicePack } from './ProductTile';
+import ProductTile, { IProductTileProps, IServicePack } from './ProductTile';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 
 const tariff: Partial<IProductTileProps> = {
@@ -9,153 +9,122 @@ const tariff: Partial<IProductTileProps> = {
     secondParamsHead: 'sdfsdf',
     showConnectButton: true,
     title: 'Включайся! Смотри',
-    'topBadgeTitle': 'sdfsdf',
-    'link': '/tariffs/vklyuchaysya/smotri.html',
-    'buyLink': '/zakaz/?tariff=look',
-    'payment': {
-        'value': '1000',
-        'unitExtra': 'за 30 дней',
-        'unitValue': '₽',
-        'discount': '0',
+    topBadgeTitle: 'sdfsdf',
+    link: '/tariffs/vklyuchaysya/smotri.html',
+    buyLink: '/zakaz/?tariff=look',
+    payment: {
+        value: '1000',
+        unitExtra: 'за 30 дней',
+        unitValue: '₽',
+        discount: '0',
     },
-    'packs': [
+    packs: [
         {
-            'value': 1500,
-            'unit': 'минут',
-            'title': 'title',
-            'isDelim': true,
+            value: 1500,
+            unit: 'минут',
+            title: 'title',
+            isDelim: true,
         },
         {
-            'value': 100,
-            'unit': 'смс',
-            'title': 'title',
-            'isDelim': true,
+            value: 100,
+            unit: 'смс',
+            title: 'title',
+            isDelim: true,
         },
         {
-            'value': 3,
-            'unit': 'ГБ',
-            'title': 'title',
-            'isDelim': false,
+            value: 3,
+            unit: 'ГБ',
+            title: 'title',
+            isDelim: false,
         },
     ],
-    'firstParams': {
-        'items': [
+    firstParams: {
+        items: [
             {
-                'title': 'VIP-тариф',
-                'caption': 'Привилегии обслуживания и другое',
-                'svgIcon': <MegafonTv/>,
+                title: 'VIP-тариф',
+                caption: 'Привилегии обслуживания и другое',
+                svgIcon: <MegafonTv />,
             },
             {
-                'title': 'МегаФон ТВ',
-                'caption': 'Безлимитный трафик и пакеты кино, сериалов и ТВ-каналов на любой вкус',
-                'svgIcon': <MegafonTv/>,
+                title: 'МегаФон ТВ',
+                caption:
+                    'Безлимитный трафик и пакеты кино, сериалов и ТВ-каналов на любой вкус',
+                svgIcon: <MegafonTv />,
             },
         ],
     },
-    'secondParams': [
+    secondParams: [
         {
-            'title': 'Кэшбэк 20%',
-            'footnote': 'Участвуйте в программе и тратьте кэшбэк',
-            'value': '0',
-            'unit': '',
-            'svgIcon': <MegafonTv/>,
+            title: 'Кэшбэк 20%',
+            footnote: 'Участвуйте в программе и тратьте кэшбэк',
+            value: '0',
+            unit: '',
+            svgIcon: <MegafonTv />,
         },
         {
-            'title': 'Безлимитные SMS',
-            'footnote': '',
-            'value': '55',
-            'unit': '₽ за 30 дней',
-            'svgIcon': <MegafonTv/>,
+            title: 'Безлимитные SMS',
+            footnote: '',
+            value: '55',
+            unit: '₽ за 30 дней',
+            svgIcon: <MegafonTv />,
         },
     ],
-    'cashback': {
-        'title': 'Кэшбэк',
-        'value': 20,
-        'unit': '%',
+    cashback: {
+        title: 'Кэшбэк',
+        value: 20,
+        unit: '%',
     },
-    'info': {
-        'billingIds': [],
-        'sms': '05007897',
-        'smsText': 'ДА',
-        'smsSite': null,
-        'ivr': '05007897',
-        'ussd': '<span class=\'c-number-call\'>sdfsdf</span>',
-        'lkLink': 'https://lk.megafon.ru/tariffs/',
-        'title': 'Включайся! Смотри',
-        'id': 1598,
+    info: {
+        billingIds: [],
+        sms: '05007897',
+        smsText: 'ДА',
+        smsSite: null,
+        ivr: '05007897',
+        ussd: '<span class="c-number-call">sdfsdf</span>',
+        lkLink: 'https://lk.megafon.ru/tariffs/',
+        title: 'Включайся! Смотри',
+        id: 1598,
     },
 };
 
 const servicePacks: Array<Partial<IServicePack>> = [
     {
-        'buyLink': '&options=null',
-        'shopTag': 'tag1',
-        'calls': {
-            'value': 300,
-            'unit': 'минут',
+        buyLink: '&options=null',
+        shopTag: 'tag1',
+        calls: {
+            value: 300,
+            unit: 'минут',
         },
-        'traffic': {
-            'value': 6,
-            'unit': 'ГБ',
+        traffic: {
+            value: 6,
+            unit: 'ГБ',
         },
-        'payment': {
-            'value': '400',
-            'discount': '200',
+        payment: {
+            value: '400',
+            discount: '200',
         },
-        'options': [
+        options: [
             {
-                'title': 'Безлимитные SMS',
-                'value': '55',
-                'unit': '₽ за 30 дней',
-                'footnote': '',
-                'svgIcon': <MegafonTv />,
+                title: 'Безлимитные SMS',
+                value: '55',
+                unit: '₽ за 30 дней',
+                footnote: '',
+                svgIcon: <MegafonTv />,
             },
             {
-                'title': 'Кэшбэк 20%',
-                'value': '0',
-                'unit': '',
-                'footnote': 'Участвуйте в программе и трпки в салонах и интернет-магазине МегаФона',
-                'svgIcon': <MegafonTv />,
-            },
-        ],
-    },
-    {
-        'buyLink': '&options=null',
-        'shopTag': 'tag2',
-        'calls': {
-            'value': 650,
-            'unit': 'минут',
-        },
-        'traffic': {
-            'value': 6,
-            'unit': 'ГБ',
-        },
-        'payment': {
-            'value': '590',
-            'discount': '300',
-        },
-        'options': [
-            {
-                'title': 'Безлимитные SMS',
-                'value': '55',
-                'unit': '₽ за 30 дней',
-                'footnote': '',
-                'svgIcon': <MegafonTv />,
-            },
-            {
-                'title': 'Кэшбэк 20%',
-                'value': '0',
-                'unit': '',
-                'footnote': 'Участвуйте тратьте кэшбэк на сервисы и покупки в салонах и магазине МегаФона',
-                'svgIcon': <MegafonTv />,
+                title: 'Кэшбэк 20%',
+                value: '0',
+                unit: '',
+                footnote:
+                    'Участвуйте в программе и трпки в салонах и интернет-магазине МегаФона',
+                svgIcon: <MegafonTv />,
             },
         ],
     },
     {
         'buyLink': '&options=null',
-        'shopTag': 'tag3',
         'calls': {
-            'value': 300,
+            'value': 600,
             'unit': 'минут',
         },
         'traffic': {
@@ -163,14 +132,14 @@ const servicePacks: Array<Partial<IServicePack>> = [
             'unit': 'ГБ',
         },
         'payment': {
-            'value': '590',
-            'discount': '',
+            'value': '600',
+            'discount': '0',
         },
         'options': [
             {
                 'title': 'Безлимитные SMS',
                 'value': '55',
-                'unit': '₽ за 30 дней',
+                'unit': '₽ за 30 дней',
                 'footnote': '',
                 'svgIcon': <MegafonTv />,
             },
@@ -178,74 +147,144 @@ const servicePacks: Array<Partial<IServicePack>> = [
                 'title': 'Кэшбэк 20%',
                 'value': '0',
                 'unit': '',
-                'footnote': 'Участвуйте в купки в салонах и интернет-магазине МегаФона',
+                'footnote': 'Участвуйте в программе и тратьте кэшбэк ',
                 'svgIcon': <MegafonTv />,
             },
         ],
     },
     {
-        'buyLink': '&options=null',
-        'calls': {
-            'value': 750,
-            'unit': 'минут',
+        buyLink: '&options=null',
+        shopTag: 'tag2',
+        calls: {
+            value: 650,
+            unit: 'минут',
         },
-        'traffic': {
-            'value': 6,
-            'unit': 'ГБ',
+        traffic: {
+            value: 6,
+            unit: 'ГБ',
         },
-        'payment': {
-            'value': '670',
-            'discount': '',
+        payment: {
+            value: '590',
+            discount: '300',
         },
-        'options': [
+        options: [
             {
-                'title': 'Безлимитные SMS',
-                'value': '55',
-                'unit': '₽ за 30 дней',
-                'footnote': '',
-                'svgIcon': <MegafonTv />,
+                title: 'Безлимитные SMS',
+                value: '55',
+                unit: '₽ за 30 дней',
+                footnote: '',
+                svgIcon: <MegafonTv />,
             },
             {
-                'title': 'Кэшбэк 20%',
-                'value': '0',
-                'unit': '',
-                'footnote': 'Укупки в салонах и интернет-магазине МегаФона',
-                'svgIcon': <MegafonTv />,
+                title: 'Кэшбэк 20%',
+                value: '0',
+                unit: '',
+                footnote:
+                    'Участвуйте тратьте кэшбэк на сервисы и покупки в салонах и магазине МегаФона',
+                svgIcon: <MegafonTv />,
             },
         ],
     },
     {
-        'buyLink': '&options=null',
-        'calls': {
-            'value': 900,
-            'unit': 'минут',
+        buyLink: '&options=null',
+        shopTag: 'tag3',
+        calls: {
+            value: 300,
+            unit: 'минут',
         },
-        'traffic': {
-            'value': 6,
-            'unit': 'ГБ',
+        traffic: {
+            value: 18,
+            unit: 'ГБ',
         },
-        'payment': {
-            'value': '770',
-            'discount': '',
+        payment: {
+            value: '590',
+            discount: '',
         },
-        'options': [
+        options: [
             {
-                'title': 'Безлимитные SMS',
-                'value': '55',
-                'unit': '₽ за 30 дней',
-                'footnote': '',
-                'svgIcon': <MegafonTv />,
+                title: 'Безлимитные SMS',
+                value: '55',
+                unit: '₽ за 30 дней',
+                footnote: '',
+                svgIcon: <MegafonTv />,
             },
             {
-                'title': 'Кэшбэк 20%',
-                'value': '0',
-                'unit': '',
-                'footnote': 'Участвуки в салонах и интернет-магазине МегаФона',
-                'svgIcon': <MegafonTv />,
+                title: 'Кэшбэк 20%',
+                value: '0',
+                unit: '',
+                footnote:
+                    'Участвуйте в купки в салонах и интернет-магазине МегаФона',
+                svgIcon: <MegafonTv />,
+            },
+        ],
+    },
+    {
+        buyLink: '&options=null',
+        calls: {
+            value: 750,
+            unit: 'минут',
+        },
+        traffic: {
+            value: 6,
+            unit: 'ГБ',
+        },
+        payment: {
+            value: '670',
+            discount: '',
+        },
+        options: [
+            {
+                title: 'Безлимитные SMS',
+                value: '55',
+                unit: '₽ за 30 дней',
+                footnote: '',
+                svgIcon: <MegafonTv />,
+            },
+            {
+                title: 'Кэшбэк 20%',
+                value: '0',
+                unit: '',
+                footnote: 'Укупки в салонах и интернет-магазине МегаФона',
+                svgIcon: <MegafonTv />,
+            },
+        ],
+    },
+    {
+        buyLink: '&options=null',
+        calls: {
+            value: 900,
+            unit: 'минут',
+        },
+        traffic: {
+            value: 6,
+            unit: 'ГБ',
+        },
+        payment: {
+            value: '770',
+            discount: '',
+        },
+        options: [
+            {
+                title: 'Безлимитные SMS',
+                value: '55',
+                unit: '₽ за 30 дней',
+                footnote: '',
+                svgIcon: <MegafonTv />,
+            },
+            {
+                title: 'Кэшбэк 20%',
+                value: '0',
+                unit: '',
+                footnote: 'Участвуки в салонах и интернет-магазине МегаФона',
+                svgIcon: <MegafonTv />,
             },
         ],
     },
 ];
+
+const target = {
+    target: {},
+} as React.SyntheticEvent<EventTarget>
 
 describe('<ProductTile />', () => {
     it('it renders ProductTile', () => {
@@ -260,7 +299,7 @@ describe('<ProductTile />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    describe('should call pased callback when click on range buttons', () => {
+    describe('onCallsChange tests', () => {
         it('should call onCallsChange when handleChangeCalls fired', () => {
             const onCallsChange = jest.fn();
             const wrapper = shallow<ProductTile>(
@@ -273,11 +312,11 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeCalls({ target: {} } as React.SyntheticEvent<EventTarget>, '300' );
+            wrapper.instance().handleChangeCalls(target, servicePacks[0].calls.value.toString());
             expect(onCallsChange).toBeCalled();
         });
 
-        it('should call onCallsChange when handleChangeCalls fired', () => {
+        it('shouldn\'t call onCallsChange when handleChangeCalls return false', () => {
             const onTrafficChange = jest.fn();
             const wrapper = shallow<ProductTile>(
                 <ProductTile
@@ -289,8 +328,42 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeTraffic({ target: {} } as React.SyntheticEvent<EventTarget>, '6' );
+            wrapper.instance().handleChangeTraffic(target, servicePacks[1].calls.value.toString());
+            expect(onTrafficChange).not.toBeCalled();
+        });
+    });
+
+    describe('onTrafficChange tests', () => {
+        it('should call onTrafficChange when handleChangeTraffic fired', () => {
+            const onTrafficChange = jest.fn();
+            const wrapper = shallow<ProductTile>(
+                <ProductTile
+                    {...tariff}
+                    servicePacks={servicePacks}
+                    startCallsIndex={2}
+                    startTrafficIndex={1}
+                    onTrafficChange={onTrafficChange}
+                />
+            );
+
+            wrapper.instance().handleChangeTraffic(target, servicePacks[0].traffic.value.toString());
             expect(onTrafficChange).toBeCalled();
+        });
+
+        it('shouldn\'t call onTrafficChange when handleChangeTraffic return false', () => {
+            const onTrafficChange = jest.fn();
+            const wrapper = shallow<ProductTile>(
+                <ProductTile
+                    {...tariff}
+                    servicePacks={servicePacks}
+                    startCallsIndex={2}
+                    startTrafficIndex={1}
+                    onTrafficChange={onTrafficChange}
+                />
+            );
+
+            wrapper.instance().handleChangeTraffic(target, servicePacks[1].traffic.value.toString());
+            expect(onTrafficChange).not.toBeCalled();
         });
     });
 });
