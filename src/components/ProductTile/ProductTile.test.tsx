@@ -284,7 +284,7 @@ const servicePacks: Array<Partial<IServicePack>> = [
 
 const target = {
     target: {},
-} as React.SyntheticEvent<EventTarget>
+} as React.SyntheticEvent<EventTarget>;
 
 describe('<ProductTile />', () => {
     it('it renders ProductTile', () => {
