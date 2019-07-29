@@ -2,12 +2,15 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './style/ProductTileHint.less';
+import { TLinkTargetType } from './ProductTile';
 
 interface IProductTileHintProps {
     /** Title */
     title: string;
     /** Link href */
     linkHref?: string;
+    /** Link target */
+    linkTarget?: TLinkTargetType;
 }
 
 interface IElementAtributes {
@@ -22,12 +25,17 @@ class ProductTileHint extends React.Component<IProductTileHintProps> {
     static propTypes = {
         linkHref: PropTypes.string,
         title: PropTypes.string,
+        linkTarget: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    };
+
+    static defaultProps = {
+        linkTarget: '_blank',
     };
 
     render() {
-        const { title, linkHref } = this.props;
+        const { title, linkHref, linkTarget } = this.props;
         const ElementType = linkHref ? 'a' : 'div';
-        const attributes: IElementAtributes = linkHref ? { href: linkHref, target: '_blank' } : {};
+        const attributes: IElementAtributes = linkHref ? { href: linkHref, target: linkTarget } : {};
 
         return (
             <div className={cn('')}>

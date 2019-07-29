@@ -4,18 +4,23 @@ import { cnCreate } from '../../utils/cn';
 import './style/ProductTileBuy.less';
 import Button, { IButtonProps } from '../Button/Button';
 import TextLink from '../TextLink/TextLink';
+import { TLinkTargetType } from './ProductTile';
 
 export interface IProductTileBuyProps {
     /** Class name */
     className?: string;
     /** Buy link */
     buyLink?: string;
+    /** Buy Link target */
+    buyLinkTarget?: TLinkTargetType;
     /** Buy button text */
     buyButtonText?: string;
     /** Show buy button */
     showBuyButton?: boolean;
     /** Connect link */
     connectLink?: string;
+    /** Connect Link target */
+    connectLinkTarget?: TLinkTargetType;
     /** Connect button text */
     connectButtonText?: string;
     /** Show connect button */
@@ -36,9 +41,11 @@ const cn = cnCreate('mfui-product-tile-buy');
 class ProductTileBuy extends React.Component<IProductTileBuyProps> {
     static propTypes = {
         buyLink: PropTypes.string,
+        buyLinkTarget: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
         buyButtonText: PropTypes.string,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
+        connectLinkTarget: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
         buttonBorder: Button.propTypes.border,
@@ -53,6 +60,8 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         showBuyButton: true,
         connectButtonText: 'Перейти на тариф',
         showConnectButton: true,
+        buyLinkTarget: '_blank',
+        connectLinkTarget: '_blank',
     };
 
     render() {
@@ -69,6 +78,8 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
             buttonPassiveColor,
             onClickBuy,
             onClickConnect,
+            buyLinkTarget,
+            connectLinkTarget,
         } = this.props;
 
         return (
@@ -80,6 +91,7 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
                         hoverColor="green"
                         sizeAll="medium"
                         href={buyLink}
+                        target={buyLinkTarget}
                         border={buttonBorder}
                         fontColor={buttonFontColor}
                         onClick={onClickBuy}
@@ -91,7 +103,7 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
                     <TextLink
                         className={cn('detail-link')}
                         href={connectLink}
-                        target="_blank"
+                        target={connectLinkTarget}
                         onClick={onClickConnect}
                     >
                         {connectButtonText}

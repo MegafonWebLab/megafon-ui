@@ -1,6 +1,14 @@
 # Changelog
 
-## Unreleased
+## Unrelease
+
+### Changed
+- **ProductTile**
+    - delete target _blank
+- **ProductTileBuy**
+    - delete target _blank
+- **ProductTileHint**
+    - delete target _blank
 
 ## Release 1.3.21
 ### Changed
