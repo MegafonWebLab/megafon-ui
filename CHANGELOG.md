@@ -2,7 +2,6 @@
 
 ## Unrelease
 
-## Release 1.3.22
 ### Changed
 - **ProductTile**
     - delete target _blank
