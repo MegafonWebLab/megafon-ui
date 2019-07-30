@@ -149,6 +149,9 @@ export interface IProductTileProps {
     servicePacks: Array<Partial<IServicePack>>;
     /** Info - object type - return with onClickConnect, onClickBuy */
     info: {};
+    /** isAtive */
+    isActive?: boolean;
+
     /** Connect handler */
     onClickConnect?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Buy handler */
@@ -157,6 +160,10 @@ export interface IProductTileProps {
     onClickMore?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
     /** Bubble handler */
     onClickBubble?(info: {}): void;
+    /** Calls change callback  */
+    onCallsChange?(): void;
+    /** Traffic change callback */
+    onTrafficChange?(): void;
 }
 
 interface IProductTileState {
@@ -251,10 +258,13 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             }),
         })),
         info: PropTypes.object,
+        isActive: PropTypes.bool,
         onClickConnect: PropTypes.func,
         onClickBuy: PropTypes.func,
         onClickMore: PropTypes.func,
         onClickBubble: PropTypes.func,
+        onCallsChange: PropTypes.func,
+        onTrafficChange: PropTypes.func,
     };
 
     static defaultProps: Partial<IProductTileProps> = {
@@ -360,12 +370,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
+        const { onCallsChange } = this.props;
         const { trafficValue } = this.state;
         const currentPack = this.getCurrentPack(currentValue, trafficValue);
 
         if (Object.keys(currentPack).length === 0) {
             return false;
         }
+
+        onCallsChange && onCallsChange();
 
         this.setState({
             ...this.getRestState(currentPack),
@@ -377,13 +390,15 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
     handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
         const currentValue = Number(value);
-
+        const { onTrafficChange } = this.props;
         const { callsValue } = this.state;
         const currentPack = this.getCurrentPack(callsValue, currentValue);
 
         if (Object.keys(currentPack).length === 0) {
             return false;
         }
+
+        onTrafficChange && onTrafficChange();
 
         this.setState({
             ...this.getRestState(currentPack),
@@ -529,13 +544,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             topBadgeLinkTarget,
             buyLinkTarget,
             connectLinkTarget,
+            isActive,
             payment: { title, unitExtra, unitValue },
         } = this.props;
         const { price, discount, options, buyLink } = this.state;
         const isServicePacks = !!servicePacks!.length;
 
         return (
-            <div className={cn('', { constructor: isServicePacks }, className)}>
+            <div className={cn('', { constructor: isServicePacks, active: isActive }, className)}>
                 {isServicePacks && !!topBadgeTitle &&
                     <Hint title={topBadgeTitle} linkHref={topBadgeLink} linkTarget={topBadgeLinkTarget} />
                 }
