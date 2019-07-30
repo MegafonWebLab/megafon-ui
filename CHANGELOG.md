@@ -11,7 +11,6 @@
     - add styles for active tile
     - add secondaty handlers for onChangeCalls and onChangeTraffic
     - add isActive property
-
 - **ProductTileRest**
     - add styles for active tile
     - add className property
