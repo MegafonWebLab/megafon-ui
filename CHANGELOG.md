@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - change carousel arrows position on desktop
+    - change next arrow activity definition
 
 ## Release 1.3.23
 ### Changed

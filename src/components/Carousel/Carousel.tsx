@@ -126,7 +126,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         const { children } = this.props;
         const { showSlides } = this.state;
 
-        const isNextActive = slideIndex !== children.length - showSlides;
+        const isNextActive = slideIndex + showSlides < children.length ;
 
         this.setState({
             isPrevActive: !!slideIndex,
