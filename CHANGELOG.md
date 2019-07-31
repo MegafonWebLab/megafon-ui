@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - change carousel arrows position on desktop
+    - change next arrow activity definition
 
 ## Release 1.3.23
 ### Changed
@@ -8,7 +11,6 @@
     - add styles for active tile
     - add secondaty handlers for onChangeCalls and onChangeTraffic
     - add isActive property
-
 - **ProductTileRest**
     - add styles for active tile
     - add className property
