@@ -1,6 +1,15 @@
 # Changelog
 
 ## Unreleased
+- **ProductTileRest**
+    - add props for target
+- **ProductTile**
+    - change default target
+- **ProductTileBuy**
+    - change default target
+- **ProductTileHint**
+    - change default target
+
 - **Carousel**
     - change carousel arrows position on desktop
     - change next arrow activity definition

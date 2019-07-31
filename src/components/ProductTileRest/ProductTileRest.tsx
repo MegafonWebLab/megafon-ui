@@ -7,6 +7,9 @@ import TextLink from '../TextLink/TextLink';
 import Button, { IButtonProps } from '../Button/Button';
 import DropdownSocialList from '../DropdownSocialList/DropdownSocialList';
 
+const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
+export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
+
 interface IProductTileRestProps {
     className?: string;
     title: string;
@@ -14,10 +17,12 @@ interface IProductTileRestProps {
     shopTag: string;
 
     link: string;
+    linkTarget?: TLinkTargetType;
     moreLinkText: string;
     showMoreLink: boolean;
 
     buyLink: string;
+    buyLinkTarget?: TLinkTargetType;
     buyButtonText: string;
     showBuyButton: boolean;
     /** button border */
@@ -28,6 +33,7 @@ interface IProductTileRestProps {
     buttonPassiveColor?: IButtonProps['passiveColor'];
 
     connectLink: string;
+    connectLinkTarget?: TLinkTargetType;
     connectButtonText: string;
     showConnectButton: boolean;
 
@@ -49,12 +55,15 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         description: PropTypes.string,
         shopTag: PropTypes.string,
         link: PropTypes.string,
+        linkTarget: LinkTargetType,
         moreLinkText: PropTypes.string,
         showMoreLink: PropTypes.bool,
         buyLink: PropTypes.string,
+        buyLinkTarget: LinkTargetType,
         buyButtonText: PropTypes.string,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
+        connectLinkTarget: LinkTargetType,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
         buttonBorder: Button.propTypes.border,
@@ -101,6 +110,9 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         connectButtonText: 'Перейти на тариф',
         showConnectButton: true,
         shopTag: '',
+        linkTarget: '_self',
+        buyLinkTarget: '_self',
+        connectLinkTarget: '_self',
     };
 
     handleClickConnect = (e: React.SyntheticEvent<EventTarget>) => {
@@ -222,6 +234,9 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             buttonPassiveColor,
             isActive,
             className,
+            linkTarget,
+            buyLinkTarget,
+            connectLinkTarget,
         } = this.props;
 
         return (
@@ -232,7 +247,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                         <TextLink
                             className={cn('detail-link')}
                             href={link}
-                            target="_blank"
+                            target={linkTarget}
                             onClick={this.handleClickMore}
                         >
                             {moreLinkText}
@@ -253,6 +268,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                             hoverColor="green"
                             sizeAll="medium"
                             href={buyLink}
+                            target={buyLinkTarget}
                             onClick={this.handleClickBuy}
                         >
                             {buyButtonText}
@@ -263,7 +279,7 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                             className={cn('detail-link')}
                             href={connectLink}
                             onClick={this.handleClickConnect}
-                            target="_blank"
+                            target={connectLinkTarget}
                         >
                             {connectButtonText}
                         </TextLink>
