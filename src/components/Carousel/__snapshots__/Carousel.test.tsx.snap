@@ -4,6 +4,18 @@ exports[`<Carousel /> render tests should render component with all props 1`] = 
 <div
   className="mfui-carousel some-class"
 >
+  <div
+    className="mfui-carousel__arrows"
+  >
+    <CarouselArrow
+      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-prev mfui-carousel__arrow_disabled"
+      onClick={[Function]}
+    />
+    <CarouselArrow
+      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-next"
+      onClick={[Function]}
+    />
+  </div>
   <Slider
     afterChange={[Function]}
     arrows={false}
@@ -40,6 +52,15 @@ exports[`<Carousel /> render tests should render component with all props 1`] = 
     />
     <Link
       key="2"
+    />
+    <Link
+      key="3"
+    />
+    <Link
+      key="4"
+    />
+    <Link
+      key="5"
     />
   </Slider>
 </div>
@@ -49,6 +70,18 @@ exports[`<Carousel /> render tests should render component with prev arrow activ
 <div
   className="mfui-carousel some-class"
 >
+  <div
+    className="mfui-carousel__arrows"
+  >
+    <CarouselArrow
+      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-prev"
+      onClick={[Function]}
+    />
+    <CarouselArrow
+      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-next mfui-carousel__arrow_disabled"
+      onClick={[Function]}
+    />
+  </div>
   <Slider
     afterChange={[Function]}
     arrows={false}
@@ -85,6 +118,15 @@ exports[`<Carousel /> render tests should render component with prev arrow activ
     />
     <Link
       key="2"
+    />
+    <Link
+      key="3"
+    />
+    <Link
+      key="4"
+    />
+    <Link
+      key="5"
     />
   </Slider>
 </div>
