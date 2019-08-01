@@ -29,7 +29,7 @@ class ProductTileHint extends React.Component<IProductTileHintProps> {
     };
 
     static defaultProps = {
-        linkTarget: '_blank',
+        linkTarget: '_self',
     };
 
     render() {

@@ -60,8 +60,8 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         showBuyButton: true,
         connectButtonText: 'Перейти на тариф',
         showConnectButton: true,
-        buyLinkTarget: '_blank',
-        connectLinkTarget: '_blank',
+        buyLinkTarget: '_self',
+        connectLinkTarget: '_self',
     };
 
     render() {
