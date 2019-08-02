@@ -1,6 +1,13 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **ProductTile**
+    - add current index depending on start and cookie indexes
+- **ProductTileDynamic**
+    - changed component interface for onchange functions
+- **ProductSwitcher**
+    - add chosen item index into callback function
 
 ## Release 1.3.24
 ### Changed
