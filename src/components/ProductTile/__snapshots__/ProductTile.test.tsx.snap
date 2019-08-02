@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ProductTile /> it renders ProductTile 1`] = `
+exports[`<ProductTile /> snapshots should render ProductTile 1`] = `
 <div
   className="mfui-product-tile mfui-product-tile_constructor"
 >
@@ -120,6 +120,170 @@ exports[`<ProductTile /> it renders ProductTile 1`] = `
   <ProductTileBuy
     buyButtonText="sdfsdf"
     buyLink="/zakaz/?tariff=look"
+    buyLinkTarget="_self"
+    connectButtonText="sdfsdf"
+    connectLinkTarget="_self"
+    onClickBuy={[Function]}
+    onClickConnect={[Function]}
+    showBuyButton={true}
+    showConnectButton={true}
+  />
+</div>
+`;
+
+exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = `
+<div
+  className="mfui-product-tile mfui-product-tile_constructor"
+>
+  <ProductTileHint
+    linkTarget="_self"
+    title="sdfsdf"
+  />
+  <div
+    className="mfui-product-tile__content"
+  >
+    <h2
+      className="mfui-product-tile__title"
+    >
+      <TextLink
+        className="mfui-product-tile__title-link"
+        color="black"
+        href="/tariffs/vklyuchaysya/smotri.html"
+        onClick={[Function]}
+        target="_self"
+        underlineStyle="none"
+        underlineVisibility="hover"
+      >
+        Включайся! Смотри
+      </TextLink>
+    </h2>
+    <div
+      className="mfui-product-tile__link-wrapper"
+    >
+      <TextLink
+        className="mfui-product-tile__detail-link"
+        color="blue"
+        href="/tariffs/vklyuchaysya/smotri.html#tag3"
+        onClick={[Function]}
+        target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
+      >
+        Подробнее
+      </TextLink>
+    </div>
+    <ProductTileCashback
+      title="Кэшбэк"
+      unit="%"
+      value={20}
+    />
+    <ProductTilePrice
+      discount="0"
+      unitExtra="за 30 дней"
+      unitValue="₽"
+      value="590"
+    />
+    <div
+      className="mfui-product-tile__constructor"
+    >
+      <ProductTileDynamic
+        currentPack={
+          Object {
+            "buyLink": "&options=null",
+            "calls": Object {
+              "unit": "минут",
+              "value": 300,
+            },
+            "options": Array [
+              Object {
+                "footnote": "",
+                "svgIcon": <test-file-stub />,
+                "title": "Безлимитные SMS",
+                "unit": "₽ за 30 дней",
+                "value": "55",
+              },
+              Object {
+                "footnote": "Участвуйте в купки в салонах и интернет-магазине МегаФона",
+                "svgIcon": <test-file-stub />,
+                "title": "Кэшбэк 20%",
+                "unit": "",
+                "value": "0",
+              },
+            ],
+            "payment": Object {
+              "discount": "",
+              "value": "590",
+            },
+            "shopTag": "tag3",
+            "traffic": Object {
+              "unit": "ГБ",
+              "value": 18,
+            },
+          }
+        }
+        onChangeCalls={[Function]}
+        onChangeTraffic={[Function]}
+        startCallsIndex={0}
+        startTrafficIndex={3}
+        switcher={
+          Object {
+            "calls": Array [
+              "300",
+              "600",
+              "650",
+              "750",
+              "900",
+            ],
+            "traffic": Array [
+              "6",
+              "18",
+            ],
+          }
+        }
+      />
+      <ProductTileOptions
+        options={
+          Array [
+            Object {
+              "caption": "Привилегии обслуживания и другое",
+              "svgIcon": <test-file-stub />,
+              "title": "VIP-тариф",
+            },
+            Object {
+              "caption": "Безлимитный трафик и пакеты кино, сериалов и ТВ-каналов на любой вкус",
+              "svgIcon": <test-file-stub />,
+              "title": "МегаФон ТВ",
+            },
+          ]
+        }
+      />
+    </div>
+    <ProductTileOptions
+      head="sdfsdf"
+      onClickBubble={[Function]}
+      options={
+        Array [
+          Object {
+            "footnote": "",
+            "svgIcon": <test-file-stub />,
+            "title": "Безлимитные SMS",
+            "unit": "₽ за 30 дней",
+            "value": "55",
+          },
+          Object {
+            "footnote": "Участвуйте в купки в салонах и интернет-магазине МегаФона",
+            "svgIcon": <test-file-stub />,
+            "title": "Кэшбэк 20%",
+            "unit": "",
+            "value": "0",
+          },
+        ]
+      }
+    />
+  </div>
+  <ProductTileBuy
+    buyButtonText="sdfsdf"
+    buyLink="&options=null"
     buyLinkTarget="_self"
     connectButtonText="sdfsdf"
     connectLinkTarget="_self"

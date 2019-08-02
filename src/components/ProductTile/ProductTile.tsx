@@ -99,6 +99,10 @@ export interface IProductTileProps {
     startCallsIndex?: number;
     /** Start traffic index */
     startTrafficIndex?: number;
+    /** Cookie calls index */
+    cookieCallsIndex?: number;
+    /** Cookie traffic index */
+    cookieTrafficIndex?: number;
 
     /** More link */
     link?: string;
@@ -161,9 +165,9 @@ export interface IProductTileProps {
     /** Bubble handler */
     onClickBubble?(info: {}): void;
     /** Calls change callback  */
-    onCallsChange?(): void;
+    onCallsChange?(index: number): void;
     /** Traffic change callback */
-    onTrafficChange?(): void;
+    onTrafficChange?(index: number): void;
 }
 
 interface IProductTileState {
@@ -171,6 +175,8 @@ interface IProductTileState {
     currentPack: Partial<IServicePack>;
     callsValue: number;
     trafficValue: number;
+    callsIndex: number;
+    trafficIndex: number;
     price: string;
     discount: string;
     options: IOption[];
@@ -188,6 +194,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         shopTag: PropTypes.string,
         startCallsIndex: PropTypes.number,
         startTrafficIndex: PropTypes.number,
+        cookieCallsIndex: PropTypes.number,
+        cookieTrafficIndex: PropTypes.number,
         link: PropTypes.string,
         linkTarget: LinkTargetType,
         moreLinkText: PropTypes.string,
@@ -289,12 +297,32 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             payment: { value, discount },
             buyLink: defaultBuyLink,
             secondParams,
+            startCallsIndex,
+            startTrafficIndex,
+            cookieCallsIndex,
+            cookieTrafficIndex,
         } = props;
 
         const switcher = this.getSwitcherValues();
-        const defaultCallsValue = Number(switcher.calls[props.startCallsIndex!]);
-        const defaultTrafficValue = Number(switcher.traffic[props.startTrafficIndex!]);
-        const currentPack = this.getCurrentPack(defaultCallsValue, defaultTrafficValue);
+
+        const callsIndex: number = typeof cookieCallsIndex === 'number'
+            ? cookieCallsIndex!
+            : startCallsIndex!;
+
+        const trafficIndex: number = typeof cookieTrafficIndex === 'number'
+            ? cookieTrafficIndex!
+            : startTrafficIndex!;
+
+        const defaultCallsValue = Number(switcher.calls[startCallsIndex!]);
+        const defaultTrafficValue = Number(switcher.traffic[startTrafficIndex!]);
+
+        const currentCallsValue = Number(switcher.calls[cookieCallsIndex!])
+            || Number(switcher.calls[startCallsIndex!]);
+        const currentTrafficValue = Number(switcher.traffic[cookieTrafficIndex!])
+            || Number(switcher.traffic[startTrafficIndex!]);
+
+        const currentPack = this.getCurrentPack(currentCallsValue, currentTrafficValue);
+
         const { payment, options, buyLink = '', shopTag = '' } = currentPack;
         const defaultValues = {
             defaultCallsValue,
@@ -307,8 +335,10 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         this.state = {
             switcher,
             currentPack,
-            callsValue: defaultCallsValue,
-            trafficValue: defaultTrafficValue,
+            callsValue: currentCallsValue,
+            callsIndex,
+            trafficValue: currentTrafficValue,
+            trafficIndex,
             price: payment && payment.value || value,
             discount: payment && payment.discount || discount || '',
             options: options || secondParams,
@@ -368,7 +398,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         onClickBubble && onClickBubble(this.getTariffInfo());
     }
 
-    handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
+    handleChangeCalls = (_e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean => {
         const currentValue = Number(value);
         const { onCallsChange } = this.props;
         const { trafficValue } = this.state;
@@ -378,17 +408,18 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             return false;
         }
 
-        onCallsChange && onCallsChange();
+        onCallsChange && onCallsChange(index);
 
         this.setState({
             ...this.getRestState(currentPack),
             callsValue: currentValue,
+            callsIndex: index,
         });
 
         return true;
     }
 
-    handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string): boolean => {
+    handleChangeTraffic = (_e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean => {
         const currentValue = Number(value);
         const { onTrafficChange } = this.props;
         const { callsValue } = this.state;
@@ -398,11 +429,12 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             return false;
         }
 
-        onTrafficChange && onTrafficChange();
+        onTrafficChange && onTrafficChange(index);
 
         this.setState({
             ...this.getRestState(currentPack),
             trafficValue: currentValue,
+            trafficIndex: index,
         });
 
         return true;
@@ -460,16 +492,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const {
             switcher,
             currentPack,
+            callsIndex,
+            trafficIndex,
         } = this.state;
-        const {
-            startCallsIndex,
-            startTrafficIndex,
-        } = this.props;
 
         return (
             <Dynamic
-                startCallsIndex={startCallsIndex!}
-                startTrafficIndex={startTrafficIndex!}
+                startCallsIndex={callsIndex!}
+                startTrafficIndex={trafficIndex!}
                 currentPack={currentPack}
                 switcher={switcher}
                 onChangeCalls={this.handleChangeCalls}
