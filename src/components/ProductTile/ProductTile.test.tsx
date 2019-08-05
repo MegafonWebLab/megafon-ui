@@ -256,7 +256,7 @@ const servicePacks: Array<Partial<IServicePack>> = [
             unit: 'минут',
         },
         traffic: {
-            value: 6,
+            value: 28,
             unit: 'ГБ',
         },
         payment: {
@@ -307,8 +307,8 @@ describe('<ProductTile />', () => {
                     servicePacks={servicePacks}
                     startCallsIndex={2}
                     startTrafficIndex={1}
-                    cookieCallsIndex={0}
-                    cookieTrafficIndex={3}
+                    cookieCallsIndex={4}
+                    cookieTrafficIndex={2}
                 />
             );
             expect(wrapper).toMatchSnapshot();
@@ -330,7 +330,7 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeCalls(target, pack.calls.value.toString(), positionIndex);
+            wrapper.instance().handleChangeCalls(target, pack.calls!.value.toString(), positionIndex);
             expect(onCallsChange).toBeCalledWith(positionIndex);
             expect(wrapper.state('callsIndex')).toBe(positionIndex);
         });
@@ -348,7 +348,7 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeTraffic(target, pack.calls.value.toString(), 2);
+            wrapper.instance().handleChangeTraffic(target, pack.calls!.value.toString(), 2);
             expect(onTrafficChange).not.toBeCalled();
         });
     });
@@ -368,7 +368,7 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeTraffic(target, pack.traffic.value.toString(), positionIndex);
+            wrapper.instance().handleChangeTraffic(target, pack.traffic!.value.toString(), positionIndex);
             expect(onTrafficChange).toBeCalledWith(positionIndex);
             expect(wrapper.state('trafficIndex')).toBe(positionIndex);
         });
@@ -386,7 +386,7 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeTraffic(target, pack.traffic.value.toString(), 2);
+            wrapper.instance().handleChangeTraffic(target, pack.traffic!.value.toString(), 2);
             expect(onTrafficChange).not.toBeCalled();
         });
     });

@@ -73,6 +73,7 @@ exports[`<ProductTile /> snapshots should render ProductTile 1`] = `
             "traffic": Array [
               "6",
               "18",
+              "28",
             ],
           }
         }
@@ -163,7 +164,7 @@ exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = 
       <TextLink
         className="mfui-product-tile__detail-link"
         color="blue"
-        href="/tariffs/vklyuchaysya/smotri.html#tag3"
+        href="/tariffs/vklyuchaysya/smotri.html"
         onClick={[Function]}
         target="_self"
         underlineStyle="solid"
@@ -181,7 +182,7 @@ exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = 
       discount="0"
       unitExtra="за 30 дней"
       unitValue="₽"
-      value="590"
+      value="770"
     />
     <div
       className="mfui-product-tile__constructor"
@@ -192,7 +193,7 @@ exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = 
             "buyLink": "&options=null",
             "calls": Object {
               "unit": "минут",
-              "value": 300,
+              "value": 900,
             },
             "options": Array [
               Object {
@@ -203,7 +204,7 @@ exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = 
                 "value": "55",
               },
               Object {
-                "footnote": "Участвуйте в купки в салонах и интернет-магазине МегаФона",
+                "footnote": "Участвуки в салонах и интернет-магазине МегаФона",
                 "svgIcon": <test-file-stub />,
                 "title": "Кэшбэк 20%",
                 "unit": "",
@@ -212,19 +213,18 @@ exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = 
             ],
             "payment": Object {
               "discount": "",
-              "value": "590",
+              "value": "770",
             },
-            "shopTag": "tag3",
             "traffic": Object {
               "unit": "ГБ",
-              "value": 18,
+              "value": 28,
             },
           }
         }
         onChangeCalls={[Function]}
         onChangeTraffic={[Function]}
-        startCallsIndex={0}
-        startTrafficIndex={3}
+        startCallsIndex={4}
+        startTrafficIndex={2}
         switcher={
           Object {
             "calls": Array [
@@ -237,6 +237,7 @@ exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = 
             "traffic": Array [
               "6",
               "18",
+              "28",
             ],
           }
         }
@@ -271,7 +272,7 @@ exports[`<ProductTile /> snapshots should render ProductTile with cookies 1`] = 
             "value": "55",
           },
           Object {
-            "footnote": "Участвуйте в купки в салонах и интернет-магазине МегаФона",
+            "footnote": "Участвуки в салонах и интернет-магазине МегаФона",
             "svgIcon": <test-file-stub />,
             "title": "Кэшбэк 20%",
             "unit": "",

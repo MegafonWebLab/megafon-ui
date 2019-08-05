@@ -305,21 +305,14 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
 
         const switcher = this.getSwitcherValues();
 
-        const callsIndex: number = typeof cookieCallsIndex === 'number'
-            ? cookieCallsIndex!
-            : startCallsIndex!;
-
-        const trafficIndex: number = typeof cookieTrafficIndex === 'number'
-            ? cookieTrafficIndex!
-            : startTrafficIndex!;
-
         const defaultCallsValue = Number(switcher.calls[startCallsIndex!]);
         const defaultTrafficValue = Number(switcher.traffic[startTrafficIndex!]);
 
-        const currentCallsValue = Number(switcher.calls[cookieCallsIndex!])
-            || Number(switcher.calls[startCallsIndex!]);
-        const currentTrafficValue = Number(switcher.traffic[cookieTrafficIndex!])
-            || Number(switcher.traffic[startTrafficIndex!]);
+        const currentCallsIndex = cookieCallsIndex || startCallsIndex;
+        const currentCallsValue = Number(switcher.calls[currentCallsIndex!]);
+
+        const currentTrafficIndex = cookieTrafficIndex || startTrafficIndex;
+        const currentTrafficValue = Number(switcher.traffic[currentTrafficIndex!]);
 
         const currentPack = this.getCurrentPack(currentCallsValue, currentTrafficValue);
 
@@ -336,9 +329,9 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             switcher,
             currentPack,
             callsValue: currentCallsValue,
-            callsIndex,
+            callsIndex: currentCallsIndex!,
             trafficValue: currentTrafficValue,
-            trafficIndex,
+            trafficIndex: currentTrafficIndex!,
             price: payment && payment.value || value,
             discount: payment && payment.discount || discount || '',
             options: options || secondParams,
