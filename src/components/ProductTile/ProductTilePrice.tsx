@@ -34,7 +34,6 @@ class ProductTilePrice extends React.Component<IProductTilePriceProps> {
 
         return (
             <div className={cn('', { discount: !!discount })}>
-                <div className={cn('discount-condition')}>{title}</div>
                 <span className={cn('old-price')}>
                     <span className={cn('old-price-value')}>
                         {discount ? `${value} ${unitValue}` : ' '}
@@ -43,6 +42,7 @@ class ProductTilePrice extends React.Component<IProductTilePriceProps> {
                 <span className={cn('actual-price')}>
                     {valueElem} {unitElem}
                 </span>
+                <div className={cn('discount-condition')}>{title}</div>
             </div>
         );
     }
