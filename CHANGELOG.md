@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.25
 ### Changed
 - **ProductTile**
     - add current index depending on start and cookie indexes
@@ -8,8 +10,6 @@
     - changed component interface for onchange functions
 - **ProductSwitcher**
     - add chosen item index into callback function
-
-### Changed
 - **ProductTilePrice**
     - replace tariff discount block
 
