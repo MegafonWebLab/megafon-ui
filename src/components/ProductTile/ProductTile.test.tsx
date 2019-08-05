@@ -256,7 +256,7 @@ const servicePacks: Array<Partial<IServicePack>> = [
             unit: 'минут',
         },
         traffic: {
-            value: 6,
+            value: 28,
             unit: 'ГБ',
         },
         payment: {
@@ -287,20 +287,38 @@ const target = {
 } as React.SyntheticEvent<EventTarget>;
 
 describe('<ProductTile />', () => {
-    it('it renders ProductTile', () => {
-        const wrapper = shallow(
-            <ProductTile
-                {...tariff}
-                servicePacks={servicePacks}
-                startCallsIndex={2}
-                startTrafficIndex={1}
-            />
-        );
-        expect(wrapper).toMatchSnapshot();
+    describe('snapshots', () => {
+        it('should render ProductTile', () => {
+            const wrapper = shallow(
+                <ProductTile
+                    {...tariff}
+                    servicePacks={servicePacks}
+                    startCallsIndex={2}
+                    startTrafficIndex={1}
+                />
+            );
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render ProductTile with cookies', () => {
+            const wrapper = shallow(
+                <ProductTile
+                    {...tariff}
+                    servicePacks={servicePacks}
+                    startCallsIndex={2}
+                    startTrafficIndex={1}
+                    cookieCallsIndex={4}
+                    cookieTrafficIndex={2}
+                />
+            );
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('onCallsChange tests', () => {
-        it('should call onCallsChange when handleChangeCalls fired', () => {
+        it('should call onCallsChange when handleChangeCalls fired and set state.callsIndex', () => {
+            const positionIndex = 2;
+            const [ pack ] = servicePacks;
             const onCallsChange = jest.fn();
             const wrapper = shallow<ProductTile>(
                 <ProductTile
@@ -312,11 +330,13 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeCalls(target, servicePacks[0].calls.value.toString());
-            expect(onCallsChange).toBeCalled();
+            wrapper.instance().handleChangeCalls(target, pack.calls!.value.toString(), positionIndex);
+            expect(onCallsChange).toBeCalledWith(positionIndex);
+            expect(wrapper.state('callsIndex')).toBe(positionIndex);
         });
 
         it('shouldn\'t call onCallsChange when handleChangeCalls return false', () => {
+            const [ , pack ] = servicePacks;
             const onTrafficChange = jest.fn();
             const wrapper = shallow<ProductTile>(
                 <ProductTile
@@ -328,13 +348,15 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeTraffic(target, servicePacks[1].calls.value.toString());
+            wrapper.instance().handleChangeTraffic(target, pack.calls!.value.toString(), 2);
             expect(onTrafficChange).not.toBeCalled();
         });
     });
 
     describe('onTrafficChange tests', () => {
-        it('should call onTrafficChange when handleChangeTraffic fired', () => {
+        it('should call onTrafficChange when handleChangeTraffic fired and set state.trafficIndex', () => {
+            const positionIndex = 2;
+            const [ pack ] = servicePacks;
             const onTrafficChange = jest.fn();
             const wrapper = shallow<ProductTile>(
                 <ProductTile
@@ -346,11 +368,13 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeTraffic(target, servicePacks[0].traffic.value.toString());
-            expect(onTrafficChange).toBeCalled();
+            wrapper.instance().handleChangeTraffic(target, pack.traffic!.value.toString(), positionIndex);
+            expect(onTrafficChange).toBeCalledWith(positionIndex);
+            expect(wrapper.state('trafficIndex')).toBe(positionIndex);
         });
 
         it('shouldn\'t call onTrafficChange when handleChangeTraffic return false', () => {
+            const [ , pack ] = servicePacks;
             const onTrafficChange = jest.fn();
             const wrapper = shallow<ProductTile>(
                 <ProductTile
@@ -362,7 +386,7 @@ describe('<ProductTile />', () => {
                 />
             );
 
-            wrapper.instance().handleChangeTraffic(target, servicePacks[1].traffic.value.toString());
+            wrapper.instance().handleChangeTraffic(target, pack.traffic!.value.toString(), 2);
             expect(onTrafficChange).not.toBeCalled();
         });
     });
