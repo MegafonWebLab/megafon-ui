@@ -9,6 +9,10 @@
 - **ProductSwitcher**
     - add chosen item index into callback function
 
+### Changed
+- **ProductTilePrice**
+    - replace tariff discount block
+
 ## Release 1.3.24
 ### Changed
 - **ProductTileRest**

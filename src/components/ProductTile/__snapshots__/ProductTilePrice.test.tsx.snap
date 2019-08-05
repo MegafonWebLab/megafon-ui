@@ -4,11 +4,6 @@ exports[`<ProductTilePrice /> renders ProductTilePrice 1`] = `
 <div
   className="mfui-product-tile-price"
 >
-  <div
-    className="mfui-product-tile-price__discount-condition"
-  >
-    title
-  </div>
   <span
     className="mfui-product-tile-price__old-price"
   >
@@ -31,6 +26,11 @@ exports[`<ProductTilePrice /> renders ProductTilePrice 1`] = `
       uniteExtra
     </span>
   </span>
+  <div
+    className="mfui-product-tile-price__discount-condition"
+  >
+    title
+  </div>
 </div>
 `;
 
@@ -38,11 +38,6 @@ exports[`<ProductTilePrice /> renders ProductTilePrice with discount 1`] = `
 <div
   className="mfui-product-tile-price mfui-product-tile-price_discount"
 >
-  <div
-    className="mfui-product-tile-price__discount-condition"
-  >
-    title
-  </div>
   <span
     className="mfui-product-tile-price__old-price"
   >
@@ -65,5 +60,10 @@ exports[`<ProductTilePrice /> renders ProductTilePrice with discount 1`] = `
       uniteExtra
     </span>
   </span>
+  <div
+    className="mfui-product-tile-price__discount-condition"
+  >
+    title
+  </div>
 </div>
 `;
