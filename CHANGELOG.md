@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **ProductTileRest**
+    - replace tariff discount block
+
 ## Release 1.3.25
 ### Changed
 - **ProductTile**
