@@ -308,12 +308,12 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         const defaultCallsValue = Number(switcher.calls[startCallsIndex!]);
         const defaultTrafficValue = Number(switcher.traffic[startTrafficIndex!]);
 
-        const currentCallsIndex = (typeof cookieCallsIndex !== 'undefined')
+        const currentCallsIndex = Number.isInteger(cookieCallsIndex!)
             ? cookieCallsIndex
             : startCallsIndex;
         const currentCallsValue = Number(switcher.calls[currentCallsIndex!]);
 
-        const currentTrafficIndex = (typeof cookieTrafficIndex !== 'undefined')
+        const currentTrafficIndex = Number.isInteger(cookieTrafficIndex!)
             ? cookieTrafficIndex
             : startTrafficIndex;
         const currentTrafficValue = Number(switcher.traffic[currentTrafficIndex!]);
