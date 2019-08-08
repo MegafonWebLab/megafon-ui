@@ -5,6 +5,9 @@
 - **ProductTile**
     - fixed 0 value for cookie indexes
 
+- **ProductTileRest**
+    - replace tariff discount block
+
 ## Release 1.3.25
 ### Changed
 - **ProductTile**

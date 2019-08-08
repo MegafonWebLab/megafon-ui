@@ -189,11 +189,11 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         return (
             <React.Fragment>
                 <div className={cn('price', { discount: !!discount })}>
-                    <div className={cn('discount-condition')}>{title}</div>
                     <div className={cn('old-price-wrapper')}>
                         <div className={cn('old-price')}>{`${value} ${unitValue}`}</div>
                     </div>
                     <div className={cn('actual-price')}>{`${discount || value} ${unitValue} ${unitExtra}`}</div>
+                    <div className={cn('discount-condition')}>{title}</div>
                 </div>
                 {packs.map((param, index) => {
                     const {
