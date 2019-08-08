@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **ProductTile**
+    - fixed 0 value for cookie indexes
 
 ## Release 1.3.25
 ### Changed
