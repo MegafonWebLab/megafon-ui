@@ -23,6 +23,8 @@ interface IProductCardInfoProps {
     title: string;
     /** Link */
     link: string;
+    /** Link target **/
+    linkTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Link text */
     linkText?: string;
     /** Description
@@ -52,6 +54,7 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
     static propTypes = {
         title: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
+        linkTarget: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
         linkText: PropTypes.string,
         description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
         descriptionIcon: PropTypes.element,
@@ -78,6 +81,7 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
     };
 
     static defaultProps: Partial<IProductCardInfoProps> = {
+        linkTarget: '_self',
         linkText: 'Подробнее',
         additionalParams: [],
     };
@@ -122,7 +126,7 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
             badges, description, descriptionIcon,
             link, linkText, title, additionalParams,
             className, classNameDescription, classNameDescriptionText,
-            classNameParams, classNameParamsItem,
+            classNameParams, classNameParamsItem, linkTarget,
         } = this.props;
 
         return (
@@ -152,7 +156,7 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
                     <TextLink
                         className={cn('description-more')}
                         href={link}
-                        target="_blank"
+                        target={linkTarget}
                         onClick={this.handleClickMoreInfo}
                     >
                         {linkText}

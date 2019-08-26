@@ -81,7 +81,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
       color="blue"
       href="https://www.google.com/"
       onClick={[Function]}
-      target="_blank"
+      target="_self"
       underlineStyle="solid"
       underlineVisibility="hover"
     >
