@@ -23,7 +23,7 @@ interface IProductCardInfoProps {
     title: string;
     /** Link */
     link: string;
-    /** Link target **/
+    /** Link target */
     linkTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Link text */
     linkText?: string;
