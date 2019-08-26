@@ -18,10 +18,12 @@ exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
       Array [
         Object {
           "title": "344",
+          "unit": "344",
           "value": "344",
         },
         Object {
           "title": "2323",
+          "unit": "2323",
           "value": "2323",
         },
       ]
@@ -36,10 +38,12 @@ exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
       Array [
         Object {
           "title": "3",
+          "unit": "3",
           "value": "3",
         },
         Object {
           "title": "2",
+          "unit": "2",
           "value": "2",
         },
       ]

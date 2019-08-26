@@ -62,6 +62,9 @@
             line-height: 40px;
         }
     }
+    &__label-unit {
+        display: none;
+    }
     &__pointer {
         position: absolute;
         top: 0;
@@ -88,6 +91,10 @@
     }
     &__item_active &__label {
         color: @green;
+    }
+
+    &__color-row {
+        display: none;
     }
 
     &&_theme_tariff-showcase {
@@ -200,5 +207,92 @@
             }
         }
     }
-}
 
+    &&_theme_with-color-row {
+        display: flex;
+        align-items: center;
+        width: 224px;
+        height: 66px;
+        background-color: transparent;
+        border-radius: 6px;
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+        @media @mobileSM {
+            width: 233px;
+        }
+        @media @mobileB {
+            width: 273px;
+        }
+        @media @desktopS {
+            width: 235px;
+        }
+    }
+
+    &&_theme_with-color-row & {
+        &__row {
+            height: 12px;
+            justify-content: space-between;
+            background-color: @spbSky1;
+            border-radius: 6px;
+            z-index: auto;
+
+        }
+        &__item {
+            width: 32px;
+            z-index: 3;
+        }
+
+        &__item_active {
+            @{b}__label {
+                font-size: 15px;
+                font-weight: 500;
+                height: 24px;
+                top: -34px;
+            }
+            @{b}__label-unit {
+                display: block;
+                margin-left: 4px;
+            }
+        }
+        &__item_disabled {
+            @{b}__label {
+                color: @spbSky2;
+            }
+        }
+
+        &__label {
+            width: auto;
+            position: absolute;
+            top: 17px;
+            color: @black100;
+            height: 12px;
+            font-size: 12px;
+            font-weight: 400;
+            transition: none;
+        }
+
+        &__pointer {
+            border-radius: 24px;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 21px;
+            left: 0;
+            z-index: 3;
+            box-shadow: 0 0 7px 0 rgba(32, 39, 48, 0.29), 0 0 3px 0 rgba(38, 41, 61, 0.06);
+        }
+        &__color-row {
+            display: block;
+            background-color: @green;
+            position: absolute;
+            top: 27px;
+            left: 0;
+            height: 12px;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            z-index: 2;
+            transition: width 0.2s ease-in-out;
+        }
+    }
+}
