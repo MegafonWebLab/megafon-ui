@@ -22,5 +22,8 @@ exports[`<ProductSwitcher /> it renders ProductSwitcher 1`] = `
   <div
     className="mfui-product-switcher__pointer"
   />
+  <div
+    className="mfui-product-switcher__color-row"
+  />
 </div>
 `;
