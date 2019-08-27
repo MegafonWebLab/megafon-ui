@@ -2,12 +2,5 @@
 *.iml
 node_modules
 
-src/**/*.css
-src/index.ts
-src/components/**/*.d.ts
-dist
-coverage
-.docz
-docs
 .vscode
 .DS_Store
