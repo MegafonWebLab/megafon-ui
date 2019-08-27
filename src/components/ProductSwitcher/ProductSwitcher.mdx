@@ -20,6 +20,12 @@ export const valuedItems = [
     { title: '30 ГБ', value: '30 ГБ' }
 ];
 
+export const colorLineItems = [
+    { title: '10', value: '10', unit: 'ГБ' },
+    { title: '20', value: '20', unit: 'ГБ' },
+    { title: '30', value: '30', unit: 'ГБ' }
+];
+
 # Carousel
 
 ## Properties ProductSwitcher
@@ -74,6 +80,35 @@ const items = [
 
         title: '30 ГБ',
         value: '30 ГБ'
+    }
+];
+```
+
+## Usage with green line
+
+<Playground wrapper={Wrapper}>
+    <ProductSwitcher items={colorLineItems} onChange={() => {return true}} theme="with-color-row" />
+</Playground>
+
+## Included props
+
+``` javascript
+const colorLineItems = [
+    {
+        title: '10',
+        value: '10',
+        unit: 'ГБ'
+    },
+    {
+        title: '20',
+        value: '20',
+        unit: 'ГБ'
+    },
+    {
+
+        title: '30',
+        value: '30',
+        unit: 'ГБ'
     }
 ];
 ```
