@@ -3,6 +3,8 @@
   "scripts": {
     "build-all": "lerna run build",
     "bootstrap-all": "lerna bootstrap",
-    "uninstall-all": "lerna clean"
+    "uninstall-all": "lerna clean",
+    "publish-all": "lerna publish",
+    "publish-core": "lerna publish --canary --force-publish @megafon/ui-core"
   }
 }
