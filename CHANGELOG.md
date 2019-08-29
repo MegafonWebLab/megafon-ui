@@ -2,10 +2,13 @@
 
 ## Unreleased
 
-## Release 1.3.27
+## Release 1.3.28
 ### Changed
 - **ProductCardTotal**
     - add props for target
+
+## Release 1.3.27
+### Changed
 - **ProductCardInfo**
     - add props for target
 
