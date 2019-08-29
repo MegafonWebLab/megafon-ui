@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+## Release 1.3.27
 ### Changed
 - **ProductCardInfo**
     - add props for target
