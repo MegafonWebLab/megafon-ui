@@ -4,6 +4,9 @@ import { cnCreate } from '../../utils/cn';
 import './ProductCardTotal.less';
 import Button from '../Button/Button';
 
+const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
+export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
+
 interface IProductCardTotalProps {
     /** Payment
      * Object with args: value: string(required), unit: string(required), oldValue: string
@@ -21,12 +24,16 @@ interface IProductCardTotalProps {
      * show button if included
      */
     submitLink?: string;
+     /** Submit link target */
+    submitLinkTarget?: TLinkTargetType;
     /** More text */
     moreText?: string;
     /** More link,
      *  show button if included
      */
     moreLink?: string;
+    /** More link target */
+    moreLinkTarget?: TLinkTargetType;
     /** Connect text */
     connectText?: string;
     className?: string;
@@ -61,8 +68,10 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
         info: PropTypes.object,
         submitText: PropTypes.string,
         submitLink: PropTypes.string,
+        submitLinkTarget: LinkTargetType,
         moreText: PropTypes.string,
         moreLink: PropTypes.string,
+        moreLinkTarget: LinkTargetType,
         connectText: PropTypes.string,
         className: PropTypes.string,
         classNameWrap: PropTypes.string,
@@ -80,6 +89,8 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
         submitText: 'Выбрать',
         moreText: 'Подробнее',
         connectText: 'Подключить',
+        moreLinkTarget: '_self',
+        submitLinkTarget: '_self',
     };
 
     handleSubmit = (e: React.SyntheticEvent<EventTarget>): void => {
@@ -107,7 +118,7 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
             onClickConnect, moreText, connectText,
             className, classNameCost, classNameButtons,
             classNameSubmit, classNameMore, classNameConnect,
-            classNameWrap,
+            classNameWrap, moreLinkTarget, submitLinkTarget,
         } = this.props;
         const isSubmit = onSubmit || submitLink;
         const isMore = onClickMore || moreLink;
@@ -135,6 +146,7 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                                 width="full"
                                 href={submitLink}
                                 onClick={this.handleSubmit}
+                                target={submitLinkTarget}
                             >
                                 {submitText}
                             </Button>
@@ -146,7 +158,7 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                                 passiveColor="transparent-green"
                                 hoverColor="green"
                                 href={moreLink}
-                                target="_blank"
+                                target={moreLinkTarget}
                                 onClick={this.handleClickMore}
                             >
                                 {moreText}

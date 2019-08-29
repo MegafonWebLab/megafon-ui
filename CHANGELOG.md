@@ -3,6 +3,8 @@
 ## Unreleased
 
 ### Changed
+- **ProductCardTotal**
+    - add props for target
 - **ProductCardInfo**
     - add props for target
 
