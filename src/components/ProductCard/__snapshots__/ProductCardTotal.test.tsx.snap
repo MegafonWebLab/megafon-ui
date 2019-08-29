@@ -42,7 +42,7 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
         passiveColor="transparent-green"
         showSpinner={false}
         sizeAll="medium"
-        target="_blank"
+        target="_self"
         type="button"
         width="full"
       >
@@ -110,6 +110,7 @@ exports[`<ProductCardTotal /> it renders submit button 1`] = `
         passiveColor="green"
         showSpinner={false}
         sizeAll="medium"
+        target="_self"
         type="button"
         width="full"
       >

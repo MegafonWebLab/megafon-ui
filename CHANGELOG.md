@@ -4,6 +4,8 @@
 
 ## Release 1.3.27
 ### Changed
+- **ProductCardTotal**
+    - add props for target
 - **ProductCardInfo**
     - add props for target
 
