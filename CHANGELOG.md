@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+- **ProductCardInfo**
+    - add props for target
+
 ## Release 1.3.26
 ### Changed
 - **ProductTile**
