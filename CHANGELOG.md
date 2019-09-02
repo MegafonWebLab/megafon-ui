@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.29
 - **ProductSwitcher**
     - added a new theme with a green line
 
