@@ -66,14 +66,14 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
                     className={cn('constructor-range')}
                     startIndex={startCallsIndex}
                     theme="tariff-showcase"
-                    items={switcher.calls.map((value: string) => ({ title: value, value }))}
+                    items={switcher.calls.map((value: string) => ({ title: value, value, unit: value }))}
                     onChange={onChangeCalls}
                 />
                 <ProductSwitcher
                     className={cn('constructor-range')}
                     startIndex={startTrafficIndex}
                     theme="tariff-showcase"
-                    items={switcher.traffic.map((value: string) => ({ title: value, value }))}
+                    items={switcher.traffic.map((value: string) => ({ title: value, value, unit: value }))}
                     onChange={onChangeTraffic}
                 />
                 <div className={cn('constructor-pack')}>

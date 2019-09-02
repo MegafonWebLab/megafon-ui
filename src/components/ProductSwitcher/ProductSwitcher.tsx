@@ -6,6 +6,7 @@ import './ProductSwitcher.less';
 interface IItem {
     title: string;
     value: string;
+    unit: string;
 }
 
 interface IProductSwitcherProps {
@@ -14,7 +15,7 @@ interface IProductSwitcherProps {
     /** Start index */
     startIndex?: number;
     /** Theme */
-    theme?: 'tariff-showcase' | 'with-unit-values';
+    theme?: 'tariff-showcase' | 'with-unit-values' | 'with-color-row';
     /** Custom class name */
     className: string;
     /** Change handler */
@@ -24,6 +25,7 @@ interface IProductSwitcherProps {
 interface IProductSwitcherState {
     /** Current value */
     currentValue: string;
+    currentIndex: number;
 }
 
 const cn = cnCreate('mfui-product-switcher');
@@ -32,16 +34,17 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         items: PropTypes.array.isRequired,
         startIndex: PropTypes.number,
         onChange: PropTypes.func,
-        theme: PropTypes.oneOf(['tariff-showcase', 'with-unit-values']),
+        theme: PropTypes.oneOf(['tariff-showcase', 'with-unit-values', 'with-color-row']),
     };
 
     static defaultProps: Pick<IProductSwitcherProps, 'startIndex'> = {
         startIndex: 0,
     };
 
-    labelNodes: object;
+    itemNodes: object;
     rootNode: HTMLElement | null;
     pointerNode: HTMLElement | null;
+    colorRowNode: HTMLElement | null;
     timer: number;
 
     constructor(props: IProductSwitcherProps) {
@@ -50,9 +53,9 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         const { items, startIndex = 0 } = props;
         const safeStartIndex = startIndex <= items.length - 1 ? startIndex : 0;
 
-        this.labelNodes = {};
+        this.itemNodes = {};
 
-        this.state = { currentValue: items[safeStartIndex].value };
+        this.state = { currentValue: items[safeStartIndex].value, currentIndex: safeStartIndex };
     }
 
     componentDidMount() {
@@ -81,18 +84,22 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return;
         }
 
-        this.setState({ currentValue: value });
+        this.setState({ currentValue: value, currentIndex: index });
         this.movePointer(value);
     }
 
     movePointer(value: string) {
         const rootOffsetLeft = this.rootNode ? this.rootNode.getBoundingClientRect().left : 0;
-        const hasLabelProp = Object.keys(this.labelNodes).length !== 0;
-        const targetLabelOffsetLeft = hasLabelProp ? this.labelNodes[value].getBoundingClientRect().left : 0;
+        const hasLabelProp = Object.keys(this.itemNodes).length !== 0;
+        const targetLabelOffsetLeft = hasLabelProp ? this.itemNodes[value].getBoundingClientRect().left : 0;
         const offsetValue = targetLabelOffsetLeft - rootOffsetLeft;
 
         if (this.pointerNode) {
             this.pointerNode.style.transform = `translateX(${offsetValue}px)`;
+        }
+
+        if (this.colorRowNode) {
+            this.colorRowNode.style.width = `${offsetValue}px`;
         }
     }
 
@@ -100,12 +107,16 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         this.rootNode = node;
     }
 
-    getLabelNodes = (item: IItem) => (node: HTMLElement | null) =>  {
-        this.labelNodes[item.value] = node;
+    getItemNodes = (item: IItem) => (node: HTMLElement | null) =>  {
+        this.itemNodes[item.value] = node;
     }
 
     getPointerNode = (node: HTMLElement | null) => {
         this.pointerNode = node;
+    }
+
+    getColorRowNode = (node: HTMLElement | null) => {
+        this.colorRowNode = node;
     }
 
     render() {
@@ -116,17 +127,23 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
                 <div className={cn('row')}>
                     {items.map((item, index) =>
                         <div
-                            className={cn('item', { active: item.value === this.state.currentValue })}
+                            className={cn('item', {
+                                active: item.value === this.state.currentValue,
+                                disabled: index < this.state.currentIndex,
+                            })}
                             key={item.title + item.value}
                             onClick={this.handleClickItem(item.value, index)}
+                            ref={this.getItemNodes(item)}
                         >
-                            <div className={cn('label')} ref={this.getLabelNodes(item)}>
+                            <div className={cn('label')}>
                                 {item.title}
+                                {item.unit && <span className={cn('label-unit')}>{item.unit}</span>}
                             </div>
                         </div>
                     )}
                 </div>
-                <div className={cn('pointer')} ref={this.getPointerNode} />
+                <div className={cn('pointer')} ref={this.getPointerNode}/>
+                <div className={cn('color-row')} ref={this.getColorRowNode}/>
             </div>
         );
     }
