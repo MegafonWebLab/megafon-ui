@@ -76,6 +76,7 @@
         border-radius: 50%;
         background-color: @white;
         transition: transform 0.2s ease-in-out;
+        cursor: pointer;
 
         @media @mobileSM {
             width: @sizeMobileSM;
@@ -216,6 +217,12 @@
         height: 66px;
         background-color: transparent;
         border-radius: 6px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         &:not(:first-child) {
             margin-top: 16px;
         }
@@ -282,6 +289,7 @@
             top: 21px;
             left: 0;
             z-index: 3;
+            transition: none;
             box-shadow: 0 0 7px 0 rgba(32, 39, 48, 0.29), 0 0 3px 0 rgba(38, 41, 61, 0.06);
         }
         &__color-row {
@@ -294,7 +302,7 @@
             border-top-left-radius: 6px;
             border-bottom-left-radius: 6px;
             z-index: 2;
-            transition: width 0.2s ease-in-out;
+            transition: none;
         }
     }
 }
