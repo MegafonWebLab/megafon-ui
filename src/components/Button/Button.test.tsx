@@ -31,14 +31,12 @@ describe('<Button />', () => {
     });
 
     it('it passes props to mods', () => {
-        const wrapper = shallow(<Button passiveColor={'white'} border={'green'} fontColor={'green'}/>);
-        expect(wrapper.find('.mfui-button').hasClass('mfui-button_border_green')).toEqual(true);
+        const wrapper = shallow(<Button passiveColor={'white'}/>);
         expect(wrapper.find('.mfui-button').hasClass('mfui-button_passive-color_white')).toEqual(true);
-        expect(wrapper.find('.mfui-button').hasClass('mfui-button_font-color_green')).toEqual(true);
     });
 
     it('it renders white styled button', () => {
-        const wrapper = mount(<Button passiveColor={'white'} border={'green'} fontColor={'green'}/>);
+        const wrapper = mount(<Button passiveColor={'white'}/>);
         expect(wrapper).toMatchSnapshot();
     });
 });

@@ -25,10 +25,6 @@ interface IProductTileRestProps {
     buyLinkTarget?: TLinkTargetType;
     buyButtonText: string;
     showBuyButton: boolean;
-    /** button border */
-    buttonBorder?: IButtonProps['border'];
-    /** button font color */
-    buttonFontColor?: IButtonProps['fontColor'];
     /** button background color */
     buttonPassiveColor?: IButtonProps['passiveColor'];
 
@@ -66,8 +62,6 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         connectLinkTarget: LinkTargetType,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
-        buttonBorder: Button.propTypes.border,
-        buttonFontColor: Button.propTypes.fontColor,
         buttonPassiveColor: Button.propTypes.passiveColor,
         payment: PropTypes.shape({
             title: PropTypes.string,
@@ -229,8 +223,6 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             buyLink,
             showBuyButton,
             buyButtonText,
-            buttonBorder,
-            buttonFontColor,
             buttonPassiveColor,
             isActive,
             className,
@@ -263,8 +255,6 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                         <Button
                             className={cn('buy-button', { 'additional-margin': !showConnectButton })}
                             passiveColor={buttonPassiveColor}
-                            border={buttonBorder}
-                            fontColor={buttonFontColor}
                             hoverColor="green"
                             sizeAll="medium"
                             href={buyLink}

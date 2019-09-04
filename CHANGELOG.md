@@ -1,16 +1,15 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Button**
+    - delete props border and hoverColor
 
 ## Release 1.3.29
 - **ProductSwitcher**
     - added a new theme with a green line
 
 ## Release 1.3.28
-### Changed
-- **Button**
-    - add hover style for border prop
-
 ### Changed
 - **ProductCardTotal**
     - add props for target

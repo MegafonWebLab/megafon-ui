@@ -25,10 +25,6 @@ export interface IProductTileBuyProps {
     connectButtonText?: string;
     /** Show connect button */
     showConnectButton?: boolean;
-    /** button border */
-    buttonBorder?: IButtonProps['border'];
-    /** button font color */
-    buttonFontColor?: IButtonProps['fontColor'];
     /** button background color */
     buttonPassiveColor?: IButtonProps['passiveColor'];
     /** Connect hander */
@@ -48,8 +44,6 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         connectLinkTarget: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
-        buttonBorder: Button.propTypes.border,
-        buttonFontColor: Button.propTypes.fontColor,
         buttonPassiveColor: Button.propTypes.passiveColor,
         onClickBuy: PropTypes.func,
         onClickConnect: PropTypes.func,
@@ -73,8 +67,6 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
             connectLink,
             connectButtonText,
             showConnectButton,
-            buttonBorder,
-            buttonFontColor,
             buttonPassiveColor,
             onClickBuy,
             onClickConnect,
@@ -92,8 +84,6 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
                         sizeAll="medium"
                         href={buyLink}
                         target={buyLinkTarget}
-                        border={buttonBorder}
-                        fontColor={buttonFontColor}
                         onClick={onClickBuy}
                     >
                         {buyButtonText}

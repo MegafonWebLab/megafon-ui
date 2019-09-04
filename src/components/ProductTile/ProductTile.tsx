@@ -123,10 +123,6 @@ export interface IProductTileProps {
     buyButtonText?: string;
     /** Show buy button */
     showBuyButton?: boolean;
-    /** button border */
-    buttonBorder?: IProductTileBuyProps['buttonBorder'];
-    /** button font color */
-    buttonFontColor?: IProductTileBuyProps['buttonFontColor'];
     /** button background color */
     buttonPassiveColor?: IProductTileBuyProps['buttonPassiveColor'];
 
@@ -204,8 +200,6 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         buyLinkTarget: LinkTargetType,
         usePackBuyLink: PropTypes.bool,
         buyButtonText: PropTypes.string,
-        buttonBorder: Buy.propTypes.buttonBorder,
-        buttonFontColor: Buy.propTypes.buttonFontColor,
         buttonPassiveColor: Buy.propTypes.buttonPassiveColor,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
@@ -564,8 +558,6 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             secondParamsHead,
             showConnectButton,
             showBuyButton,
-            buttonBorder,
-            buttonFontColor,
             buttonPassiveColor,
             connectLink,
             topBadgeLinkTarget,
@@ -608,8 +600,6 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     connectButtonText={connectButtonText}
                     showBuyButton={showBuyButton}
                     showConnectButton={showConnectButton}
-                    buttonBorder={buttonBorder}
-                    buttonFontColor={buttonFontColor}
                     buttonPassiveColor={buttonPassiveColor}
                     onClickBuy={this.handleClickBuy}
                     onClickConnect={this.handleClickConnect}

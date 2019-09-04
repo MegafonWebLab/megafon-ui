@@ -84,10 +84,8 @@ exports[`<Button /> it renders tag a 1`] = `
 
 exports[`<Button /> it renders white styled button 1`] = `
 <Button
-  border="green"
   disabledColor="gray"
   downColor="dark"
-  fontColor="green"
   hoverColor="green"
   padding={true}
   passiveColor="white"
@@ -97,7 +95,7 @@ exports[`<Button /> it renders white styled button 1`] = `
   width="auto"
 >
   <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_white mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_font-color_green mfui-button_border_green mfui-button_padding mfui-button_width_auto"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_white mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
     type="button"
   >
     <div
