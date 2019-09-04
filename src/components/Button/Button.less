@@ -93,6 +93,9 @@
 
     &_border_green {
         border: 1px solid @green;
+        .no-touchevents &:not(@{b}_loading):hover {
+            border-color: @greenHover;
+        }
     }
 
     &_font-color_green {

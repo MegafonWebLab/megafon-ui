@@ -8,6 +8,10 @@
 
 ## Release 1.3.28
 ### Changed
+- **Button**
+    - add hover style for border prop
+
+### Changed
 - **ProductCardTotal**
     - add props for target
 
