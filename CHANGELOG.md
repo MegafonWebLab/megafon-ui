@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - create new theme "showcase
 
 ## Release 1.3.26
 ### Changed
