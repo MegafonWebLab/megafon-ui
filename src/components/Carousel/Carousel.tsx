@@ -7,20 +7,24 @@ import Slider from 'react-slick';
 import throttle from 'lodash.throttle';
 
 interface ICarouselOptions {
-  slidesToShow: number;
-  responsive?: ICarouselOptionsResponsive[];
-  arrows?: boolean;
-  initialSlide?: number;
+    slidesToShow: number;
+    responsive?: ICarouselOptionsResponsive[];
+    arrows?: boolean;
+    initialSlide?: number;
+    theme?: string;
+    arrowColor?: string;
 }
 
 interface ICarouselOptionsResponsive {
-  breakpoint: number;
-  settings: Pick<ICarouselOptions, 'slidesToShow' | 'arrows'>;
+    breakpoint: number;
+    settings: Pick<ICarouselOptions, 'slidesToShow' | 'arrows'>;
 }
 
 export interface ICarouselProps {
     className?: string;
     options: ICarouselOptions;
+    theme?: string;
+    arrowColor?: string;
     children: any;
     onClickNext?: () => void;
     onClickPrev?: () => void;
@@ -50,6 +54,8 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 PropTypes.array,
             ])
         ),
+        theme: PropTypes.oneOf(['showcase']),
+        arrowColor: PropTypes.oneOf(['white']),
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
@@ -208,29 +214,32 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     renderArrows() {
+        const { theme, arrowColor } = this.props;
         const { isPrevActive, isNextActive } = this.state;
 
         return (
-            <div className={cn('arrows')}>
+            <div className={cn('arrows', { theme: theme })}>
                 <CarouselArrow
-                    className={cn('arrow', { 'arrow-prev': true, disabled: !isPrevActive })}
+                    className={cn('arrow', { 'arrow-prev': true, disabled: !isPrevActive, fill: arrowColor })}
                     onClick={this.handleClickPrev}
+                    theme={theme}
                 />
                 <CarouselArrow
-                    className={cn('arrow', { 'arrow-next': true, disabled: !isNextActive })}
+                    className={cn('arrow', { 'arrow-next': true, disabled: !isNextActive, fill: arrowColor })}
                     onClick={this.handleClickNext}
+                    theme={theme}
                 />
             </div>
         );
     }
 
     render() {
-        const { className, options, children } = this.props;
+        const { className, options, theme, children } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
 
         return (
-            <div className={cn('', {}, className)}>
+            <div className={cn('', {theme}, className)}>
                 {isArrows && this.renderArrows()}
                 <Slider
                     {...carouselOptions}
