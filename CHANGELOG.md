@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+<<<<<<< HEAD
 - **Carousel**
     - add priority for slick styles
 - **base.less**
@@ -21,6 +22,7 @@
     - add font mixin
 - **ProductSwitcher**
     - add font mixin
+    - modify currentIndex to be changeable via props
 - **ProductTile**
     - add font mixin
 - **Select**

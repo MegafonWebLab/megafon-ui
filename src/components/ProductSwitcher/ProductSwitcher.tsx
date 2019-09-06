@@ -51,7 +51,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         super(props);
 
         const { items, startIndex = 0 } = props;
-        const safeStartIndex = startIndex <= items.length - 1 ? startIndex : 0;
+        const safeStartIndex: number = this.getSafeStartIndex(startIndex, items);
 
         this.itemNodes = {};
 
@@ -65,6 +65,24 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleWindowSize, true);
+    }
+
+    componentDidUpdate(prevProps: IProductSwitcherProps) {
+        const { startIndex = 0, items } = this.props;
+
+        if (startIndex !== prevProps.startIndex) {
+            const newIndex: number = this.getSafeStartIndex(startIndex, items);
+            this.setState({
+                currentValue: items[newIndex].value,
+                currentIndex: newIndex,
+            }, () => {
+                this.movePointer(this.state.currentValue);
+            });
+        }
+    }
+
+    getSafeStartIndex(startIndex: number, items: IItem[]): number {
+        return startIndex <= items.length - 1 ? startIndex : 0;
     }
 
     handleWindowSize = () => {
