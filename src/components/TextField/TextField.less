@@ -3,6 +3,7 @@
 @b: e('.mfui-text-field');
 
 @{b} {
+    .fontFamily();
     color: @soggyAsphalt;
     font-size: 15px;
     line-height: 20px;
@@ -23,7 +24,9 @@
         opacity: 1;
         border-radius: 0;
         -webkit-appearance: none;
+        -moz-appearance: none;
         box-shadow: none;
+        overflow: auto;
 
         &[type='password'] {
             font: small-caption;

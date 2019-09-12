@@ -2,8 +2,8 @@
 @b: e('.mfui-select');
 
 @{b} {
-    font-size: 15px;
-    line-height: 24px;
+    .fontFamily();
+    .commonFont();
     position: relative;
     z-index: auto;
     color: @black80;
@@ -78,7 +78,9 @@
         opacity: 1;
         border-radius: 0;
         -webkit-appearance: none;
+        -moz-appearance: none;
         box-shadow: none;
+        overflow: auto;
     }
     input::-webkit-input-placeholder {
         color: lighten(@soggyAsphalt, 50%);

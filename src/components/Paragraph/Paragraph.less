@@ -1,6 +1,7 @@
 @import '~styles/base.less';
 
 .mfui-paragraph {
+    .fontFamily();
     &_h-align_center {
         text-align: center;
     }
@@ -80,8 +81,7 @@
             line-height: 16px;
         }
         &_size-@{resolution}_medium {
-            font-size: 15px;
-            line-height: 24px;
+            .commonFont();
         }
         &_size-@{resolution}_large {
             font-size: 16px;

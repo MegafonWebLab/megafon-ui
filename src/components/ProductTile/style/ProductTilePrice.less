@@ -3,6 +3,7 @@
 @b: e('.mfui-product-tile-price');
 
 @{b} {
+    .fontFamily();
     .h2();
     text-align: center;
 
@@ -16,8 +17,7 @@
 
     &__payment-period {
         font-weight: normal;
-        font-size: 15px;
-        line-height: 24px;
+        .commonFont();
         letter-spacing: 0;
     }
 
@@ -25,9 +25,8 @@
         visibility: hidden;
         position: relative;
         display: inline-block;
-        font-size: 15px;
+        .commonFont();
         margin-right: 6px;
-        line-height: 24px;
         font-weight: 500;
         letter-spacing: 0.5px;
 
