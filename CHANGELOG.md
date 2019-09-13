@@ -21,6 +21,7 @@
     - add font mixin
 - **ProductSwitcher**
     - add font mixin
+    - modify currentIndex to be changeable via props
 - **ProductTile**
     - add font mixin
 - **Select**
