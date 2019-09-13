@@ -147,24 +147,13 @@
     @{s} {
         &-list {
             overflow: hidden;
-            @media @mobileSM {
-                width: 265px;
-                box-shadow: 0 8px 20px 0 rgba(34, 34, 34, 0.2);
-            }
-            @media @mobileB {
-                width: 664px;
-            }
-            @media @desktopS {
-                width: 892px;
-            }
-            @media @desktopMU {
-                width: 1120px;
-            }
+            padding: 3px 2px;
+            margin: 0 -2px;
+            width: auto;
         }
         &-track {
             display: flex;
             align-items: stretch;
-            justify-content: space-between;
         }
         &-slide {
             display: flex;
@@ -176,17 +165,7 @@
                 margin-right: 0;
             }
             @media @mobileSM {
-                width: 265px;
                 margin-right: 16px;
-            }
-            @media @mobileB {
-                width: 322px;
-            }
-            @media @desktopS {
-                width: 284px;
-            }
-            @media @desktopMU {
-                width: 265px;
             }
         }
         &-dots {
@@ -195,7 +174,7 @@
             margin-top: 25px;
             list-style: none;
             padding-left: 0;
-            position: absolute;
+            position: relative;
             left: 50%;
             transform: translateX(-50%);
             @media @mobileSM {
