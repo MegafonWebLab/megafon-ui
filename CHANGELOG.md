@@ -1,7 +1,6 @@
 # Changelog
 
 ## Unreleased
-<<<<<<< HEAD
 - **Carousel**
     - add priority for slick styles
 - **base.less**

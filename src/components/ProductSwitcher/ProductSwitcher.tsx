@@ -72,12 +72,13 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
 
         if (startIndex !== prevProps.startIndex) {
             const newIndex: number = this.getSafeStartIndex(startIndex, items);
+            const newValue: string = items[newIndex].value;
+
             this.setState({
-                currentValue: items[newIndex].value,
+                currentValue: newValue,
                 currentIndex: newIndex,
-            }, () => {
-                this.movePointer(this.state.currentValue);
             });
+            this.movePointer(newValue);
         }
     }
 
