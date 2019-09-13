@@ -3,7 +3,8 @@
 @b: e('.mfui-button');
 
 @{b} {
-    font-family: inherit;
+    .fontFamily();
+    .commonFont();
     font-weight: 500;
     vertical-align: top;
     text-align: center;
@@ -16,9 +17,9 @@
     box-sizing: border-box;
     color: @clearWhite;
     border-radius: 30px;
-    font-size: 15px;
-    line-height: 24px;
-    padding-top: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
     &:hover {
         text-decoration: none;

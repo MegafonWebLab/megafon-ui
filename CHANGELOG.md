@@ -1,6 +1,38 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - add priority for slick styles
+- **base.less**
+    - add mixins for font
+- **BubbleHint**
+    - add font mixin
+- **Button**
+    - add reset for styles and font mixin
+- **DropdownSocialList**
+    - add font mixin
+- **Header**
+    - add reset for styles and font mixin
+- **List**
+    - add font mixin
+- **Paragraph**
+    - add font mixin
+- **ProductCard**
+    - add font mixin
+- **ProductSwitcher**
+    - add font mixin
+- **ProductTile**
+    - add font mixin
+- **Select**
+    - add reset for styles and font mixin
+- **SelectItem**
+    - add font mixin
+- **TextField**
+    - add reset for styles and font mixin
+- **TextLink**
+    - add reset font mixin
+- **Textarea**
+    - add reset for styles and font mixin
 
 ## Release 1.3.30
 ### Changed

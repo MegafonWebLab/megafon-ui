@@ -3,6 +3,7 @@
 @b: e('.mfui-product-tile-rest');
 
 @{b} {
+    .fontFamily();
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,9 +65,8 @@
     }
 
     &__option-title {
-        line-height: 24px;
+        .commonFont();
         font-weight: 500;
-        font-size: 15px;
 
         a {
             .default-link();
@@ -151,9 +151,8 @@
     }
 
     &__payment-period {
+        .commonFont();
         font-weight: normal;
-        font-size: 15px;
-        line-height: 24px;
         letter-spacing: 0;
     }
 

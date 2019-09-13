@@ -123,14 +123,12 @@
 }
 
 .h5() {
-    font-size: 15px;
-    line-height: 24px;
+    .commonFont();
     font-weight: 500;
 }
 
 .p() {
-    font-size: 15px;
-    line-height: 24px;
+    .commonFont();
     font-weight: 400;
 }
 
@@ -171,4 +169,12 @@
     color: @color;
     background-color: @bgColor;
     border-radius: 50%;
+}
+
+.fontFamily() {
+    font-family: inherit;
+}
+.commonFont() {
+    font-size: 15px;
+    line-height: 24px;
 }

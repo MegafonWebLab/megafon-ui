@@ -3,6 +3,7 @@
 @b: e('.mfui-textarea');
 
 @{b} {
+    .fontFamily();
     color: @soggyAsphalt;
     font-size: 15px;
     line-height: 20px;
@@ -24,7 +25,11 @@
         opacity: 1;
         border-radius: 0;
         -webkit-appearance: none;
+        -moz-appearance: none;
         box-shadow: none;
+        display: block;
+        overflow: auto;
+        margin: 0;
     }
     &__field-wrapper {
         position: relative;
