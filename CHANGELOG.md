@@ -4,6 +4,8 @@
 
 - **Header**
     - delete reset for header
+- **package.json**
+    - add "sideEffects" property
 
 ## Release 1.3.31
 ### Changed
@@ -40,8 +42,6 @@
     - add reset font mixin
 - **Textarea**
     - add reset for styles and font mixin
-- **package.json**
-    - add "sideEffects" property
 
 ## Release 1.3.30
 ### Changed
