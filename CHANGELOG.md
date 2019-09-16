@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - fix styles for the "showcase" theme carousel
 
 ## Release 1.3.35
 ### Changed
