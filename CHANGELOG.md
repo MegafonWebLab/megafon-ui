@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **Header**
+    - delete reset for header
+
 ## Release 1.3.31
 ### Changed
 - **Carousel**
