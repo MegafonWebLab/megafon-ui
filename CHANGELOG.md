@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.31
+### Changed
 - **Carousel**
     - add priority for slick styles
 - **base.less**
