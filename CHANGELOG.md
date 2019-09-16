@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - fix styles for the "showcase" theme carousel
 
 - **Header**
     - delete reset for header
