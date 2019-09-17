@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+- **ProductSwitcher**
+    - add swipe functionality
+
 ## Release 1.3.33
 ### Changed
 - **package.json**
