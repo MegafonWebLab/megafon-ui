@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+## Release 1.3.34
 ### Changed
 - **Carousel**
     - fix carousel styles
