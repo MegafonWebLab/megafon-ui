@@ -2,14 +2,17 @@
 
 ## Unreleased
 
+## Release 1.3.33
+### Changed
+- **package.json**
+    - add "sideEffects" property
+
 ## Release 1.3.32
 ### Changed
 - **Carousel**
     - fix styles for the "showcase" theme carousel
 - **Header**
     - delete reset for header
-- **package.json**
-    - add "sideEffects" property
 
 ## Release 1.3.31
 ### Changed
