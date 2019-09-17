@@ -103,25 +103,6 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         return startIndex <= items.length - 1 ? startIndex : 0;
     }
 
-    componentDidUpdate(prevProps: IProductSwitcherProps) {
-        const { startIndex = 0, items } = this.props;
-
-        if (startIndex !== prevProps.startIndex) {
-            const newIndex: number = this.getSafeStartIndex(startIndex, items);
-            const newValue: string = items[newIndex].value;
-
-            this.setState({
-                currentValue: newValue,
-                currentIndex: newIndex,
-            });
-            this.movePointer(newValue);
-        }
-    }
-
-    getSafeStartIndex(startIndex: number, items: IItem[]): number {
-        return startIndex <= items.length - 1 ? startIndex : 0;
-    }
-
     handleWindowSize = () => {
         this.rowItemsInfo = this.getRowItemsInfo();
 
