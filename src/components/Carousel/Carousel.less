@@ -146,10 +146,14 @@
     margin: 0 auto;
     @{s} {
         &-list {
+            box-sizing: border-box;
             overflow: hidden;
-            padding: 3px 2px;
-            margin: -3px -2px;
+            padding: 7px 2px;
+            margin: -7px -2px;
             width: auto;
+            @media @mobileS {
+                overflow: visible;
+            }
         }
         &-track {
             display: flex;
@@ -157,16 +161,23 @@
         }
         &-slide {
             display: flex;
-            flex-grow: 0;
+            flex-grow: 1;
             flex-shrink: 1;
             flex-basis: auto;
             margin-right: 20px;
             &:last-child {
-                margin-right: 0;
+                margin-right: 4px;
             }
             @media @mobileSM {
                 margin-right: 16px;
             }
+        }
+        &-slide > div {
+            display: flex;
+            flex-grow: 2;
+            flex-shrink: 0;
+            min-width: auto;
+            width: 100%;
         }
         &-dots {
             display: flex !important;
