@@ -28,6 +28,7 @@ interface IProductSwitcherState {
     currentValue: string;
     currentIndex: number;
     isPointerPressed: boolean;
+    isPressedPointerLeaveBlock: boolean;
 }
 
 interface INearPoint {
@@ -69,6 +70,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             currentValue: items[safeStartIndex].value,
             currentIndex: safeStartIndex,
             isPointerPressed: false,
+            isPressedPointerLeaveBlock: false,
         };
     }
 
@@ -163,8 +165,9 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
 
         pointerNode.addEventListener('mousedown', this.setPointerState);
         rootNode.addEventListener('mousemove', this.handleMouseMove);
-        rootNode.addEventListener('mouseleave', this.handleMouseLeaveOrUp);
-        rootNode.addEventListener('mouseup', this.handleMouseLeaveOrUp);
+        rootNode.addEventListener('mouseleave', this.handleMouseLeave);
+        rootNode.addEventListener('mouseup', this.handleMouseUp);
+        document.body.addEventListener('mouseup', this.handleBodyMouseUp);
     }
 
     removeHandlers = () => {
@@ -187,11 +190,14 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
 
         pointerNode.removeEventListener('mousedown', this.setPointerState);
         rootNode.removeEventListener('mousemove', this.handleMouseMove);
-        rootNode.removeEventListener('mouseleave', this.handleMouseLeaveOrUp);
-        rootNode.removeEventListener('mouseup', this.handleMouseLeaveOrUp);
+        rootNode.removeEventListener('mouseleave', this.handleMouseLeave);
+        rootNode.removeEventListener('mouseup', this.handleMouseUp);
+        document.body.removeEventListener('mouseup', this.handleMouseUp);
     }
 
-    setPointerState = () => {
+    setPointerState = (e: Event) => {
+        e.stopPropagation();
+
         this.setState(prevState => ({
             isPointerPressed: !prevState.isPointerPressed,
         }));
@@ -204,18 +210,13 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return;
         }
 
-        e.preventDefault();
+        e.stopPropagation();
 
-        const {
-            left: startPoint = 0,
-            right: endPoint = 0,
-            top,
-            bottom,
-        } = this.getRangeWrapperCoords(this.rootNode);
+        const { top, bottom } = this.getRangeWrapperCoords(this.rootNode);
         const eventXCoord = e.changedTouches[0].clientX;
         const eventYCoord = e.changedTouches[0].clientY;
 
-        if ((eventXCoord < startPoint || eventXCoord > endPoint) || (eventYCoord < top || eventYCoord > bottom)) {
+        if (eventYCoord < top || eventYCoord > bottom) {
             this.handleTouchEnd(e);
 
             return;
@@ -231,19 +232,66 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return;
         }
 
-        e.preventDefault();
+        e.stopPropagation();
 
         this.moveSwitcher(e.clientX);
     }
 
-    handleMouseLeaveOrUp = (e: MouseEvent) => {
+    handleMouseLeave = (e: MouseEvent) => {
         const { isPointerPressed } = this.state;
+
+        if (!isPointerPressed || !this.rootNode) {
+            return;
+        }
+
+        e.stopPropagation();
+
+        const {
+            left: startPoint = 0,
+            right: endPoint = 0,
+            top,
+            bottom,
+        } = this.getRangeWrapperCoords(this.rootNode);
+        const eventYCoord = e.clientY;
+        const eventXCoord = e.clientX;
+
+        if (eventYCoord < top || eventYCoord > bottom) {
+            this.handleMouseUp(e);
+
+            return;
+        }
+
+        if (eventXCoord < startPoint || eventXCoord > endPoint) {
+            this.setState({
+                isPressedPointerLeaveBlock: true,
+            });
+        }
+    }
+
+    handleMouseUp = (e: MouseEvent) => {
+        const { isPointerPressed, isPressedPointerLeaveBlock } = this.state;
 
         if (!isPointerPressed) {
             return;
         }
 
+        if (isPressedPointerLeaveBlock) {
+            this.setState({
+                isPressedPointerLeaveBlock: false,
+            });
+        }
+
         this.handleEndSwitchActions(e.clientX);
+    }
+
+    handleBodyMouseUp = (e: MouseEvent) => {
+        const { isPressedPointerLeaveBlock } = this.state;
+
+        if (!isPressedPointerLeaveBlock) {
+            return;
+        }
+
+        this.handleMouseUp(e);
     }
 
     handleTouchEnd = (e: TouchEvent) => {
@@ -271,15 +319,16 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         switch (true) {
             case eventXCoord < startPoint + pointHalfWidth:
                 this.pointerNode.style.transform = 'translateX(0px)';
+                this.colorRowNode.style.width = '0px';
                 break;
-            case eventXCoord > endPoint - pointHalfWidth:
-                this.pointerNode.style.transform = `translateX(${width - pointHalfWidth}px)`;
+            case eventXCoord >= endPoint - pointHalfWidth:
+                this.pointerNode.style.transform = `translateX(${width - pointHalfWidth * 2}px)`;
+                this.colorRowNode.style.width = `${width - pointHalfWidth}px`;
                 break;
             default:
                 this.pointerNode.style.transform = `translateX(${eventXCoord - startPoint - pointHalfWidth}px)`;
+                this.colorRowNode.style.width = `${eventXCoord - startPoint}px`;
         }
-
-        this.colorRowNode.style.width = `${eventXCoord - startPoint}px`;
     }
 
     handleEndSwitchActions = (eventXCoord: number) => {
@@ -351,7 +400,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return {
                 ...item,
                 item: index,
-                coord: (rowWidth / (itemsLength - 1)) * index,
+                coord: Math.floor((rowWidth / (itemsLength - 1)) * index),
             };
         });
     }
