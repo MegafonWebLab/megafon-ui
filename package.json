@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/MegafonWebLab/megafon-ui.git"
   },
+  "sideEffects": [
+    "*.css"
+  ],
   "author": "MegaFon",
   "license": "MIT",
   "scripts": {
