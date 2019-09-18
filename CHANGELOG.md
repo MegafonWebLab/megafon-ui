@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - fix style in less
+- **ProductSwitcher**
+    - fix style in less
 
 ## Release 1.3.35
 ### Changed
