@@ -173,7 +173,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         rootNode.removeEventListener('mousemove', this.handleMouseMove);
         rootNode.removeEventListener('mouseleave', this.handleMouseLeave);
         rootNode.removeEventListener('mouseup', this.handleMouseUp);
-        document.body.removeEventListener('mouseup', this.handleMouseUp);
+        document.body.removeEventListener('mouseup', this.handleBodyMouseUp);
     }
 
     setPointerState = (e: Event) => {
