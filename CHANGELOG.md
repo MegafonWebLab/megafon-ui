@@ -3,7 +3,9 @@
 ## Unreleased
 ### Changed
 - **Carousel**
-    - fix styles for the "showcase" theme carousel
+    - fix style in less
+- **ProductSwitcher**
+    - fix style in less
 
 ## Release 1.3.35
 ### Changed
