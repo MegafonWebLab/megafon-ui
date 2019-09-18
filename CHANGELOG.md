@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.36
 ### Changed
 - **Carousel**
     - fix style in less
