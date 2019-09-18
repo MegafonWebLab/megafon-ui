@@ -213,7 +213,7 @@
     &&_theme_with-color-row {
         display: flex;
         align-items: center;
-        width: 224px;
+        width: 100%;
         height: 66px;
         background-color: transparent;
         border-radius: 6px;
@@ -225,15 +225,6 @@
         user-select: none;
         &:not(:first-child) {
             margin-top: 16px;
-        }
-        @media @mobileSM {
-            width: 233px;
-        }
-        @media @mobileB {
-            width: 273px;
-        }
-        @media @desktopS {
-            width: 235px;
         }
     }
 
@@ -256,6 +247,7 @@
                 font-size: 15px;
                 font-weight: 500;
                 height: 24px;
+                line-height: 24px;
                 top: -34px;
             }
             @{b}__label-unit {
@@ -273,8 +265,9 @@
             width: auto;
             position: absolute;
             top: 17px;
-            color: @black100;
+            color: @soggyAsphalt;
             height: 12px;
+            line-height: 16px;
             font-size: 12px;
             font-weight: 400;
             transition: none;

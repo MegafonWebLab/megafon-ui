@@ -141,15 +141,15 @@
 }
 
 @{b}@{b}_theme_showcase {
-    padding: 0;
+    padding: 0 0 37px;
     overflow: unset;
     margin: 0 auto;
     @{s} {
         &-list {
             box-sizing: border-box;
-            overflow: hidden;
-            padding: 7px 2px;
-            margin: -7px -2px;
+            overflow-x: hidden;
+            padding: 22px 2px;
+            margin: -22px -2px;
             width: auto;
             @media @mobileS {
                 overflow: visible;
@@ -185,7 +185,7 @@
             margin-top: 25px;
             list-style: none;
             padding-left: 0;
-            position: relative;
+            position: absolute;
             left: 50%;
             transform: translateX(-50%);
             @media @mobileSM {
