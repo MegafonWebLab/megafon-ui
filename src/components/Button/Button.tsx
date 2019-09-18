@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
+import detectTouch from '../../utils/detectTouch';
 
 export interface IButtonProps {
     /** Special view */
@@ -54,8 +55,12 @@ export interface IButtonProps {
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
+interface IButtonState {
+    isTouch: boolean;
+}
+
 const cn = cnCreate('mfui-button');
-class Button extends React.Component<IButtonProps, {}> {
+class Button extends React.Component<IButtonProps, IButtonState> {
     static propTypes = {
         customView: PropTypes.oneOf(['two-lines']),
         href: PropTypes.string,
@@ -122,6 +127,18 @@ class Button extends React.Component<IButtonProps, {}> {
         showSpinner: false,
     };
 
+    constructor(props: IButtonProps) {
+        super(props);
+
+        this.state = {
+            isTouch: false,
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ isTouch: detectTouch() });
+    }
+
     renderChildrenElem() {
         return (
             <div className={cn('content', {}, this.props.classNameContent)}>
@@ -145,6 +162,7 @@ class Button extends React.Component<IButtonProps, {}> {
             disabledColor, padding, width, margin, showSpinner, className, href, type,
             onClick, disabled, target, children,
         } = this.props;
+        const { isTouch } = this.state;
         const ElementType = this.props.href ? 'a' : 'button';
 
         return (
@@ -166,6 +184,7 @@ class Button extends React.Component<IButtonProps, {}> {
                     width,
                     margin,
                     loading: showSpinner,
+                    'no-touch': !isTouch,
                 }, className)}
                 href={href}
                 target={target}
