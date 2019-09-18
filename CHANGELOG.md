@@ -1,14 +1,16 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.35
+### Changed
+- **ProductSwitcher**
+    - add swipe functionality
+
 ## Release 1.3.34
 ### Changed
 - **Carousel**
     - fix carousel styles
-
-### Changed
-- **ProductSwitcher**
-    - add swipe functionality
 
 ## Release 1.3.33
 ### Changed
