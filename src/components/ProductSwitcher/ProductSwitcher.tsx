@@ -20,7 +20,7 @@ interface IProductSwitcherProps {
     /** Custom class name */
     className: string;
     /** Change handler */
-    onChange(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
+    onChange(e: React.SyntheticEvent<EventTarget> | TouchEvent | MouseEvent, value: string, index: number): boolean;
 }
 
 interface IProductSwitcherState {
@@ -262,7 +262,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             });
         }
 
-        this.handleEndSwitchActions(e.clientX);
+        this.handleEndSwitchActions(e, e.clientX);
     }
 
     handleBodyMouseUp = (e: MouseEvent) => {
@@ -282,7 +282,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return;
         }
 
-        this.handleEndSwitchActions(e.changedTouches[0].clientX);
+        this.handleEndSwitchActions(e, e.changedTouches[0].clientX);
     }
 
     moveSwitcher = (eventXCoord: number) => {
@@ -312,14 +312,17 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
     }
 
-    handleEndSwitchActions = (eventXCoord: number) => {
+    handleEndSwitchActions = (e: React.SyntheticEvent<EventTarget> | TouchEvent | MouseEvent, eventXCoord: number) => {
         if (!this.rootNode) {
             return;
         }
 
+        const { onChange } = this.props;
         const { left: startPoint = 0 } = this.getRangeWrapperCoords(this.rootNode);
         const outRowPoint = eventXCoord - startPoint;
         const [nearPoint] = this.getNearPoint(outRowPoint);
+
+        onChange(e, nearPoint.value, nearPoint.item);
 
         this.setState(prevState => ({
             currentValue: nearPoint.value,
