@@ -1,6 +1,16 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Button**
+    - fix hover with touch events detector
+- **BubbleHint**
+    - replace modernizr with touch events detector
+- **ProductSwitcher**
+    - replace modernizr with touch events detector
+- **utils**
+    - remove modernizr
+    - add custom touch events detector
 
 ## Release 1.3.36
 ### Changed

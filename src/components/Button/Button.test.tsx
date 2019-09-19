@@ -3,8 +3,25 @@ import { shallow, mount } from 'enzyme';
 import Button from './Button';
 
 describe('<Button />', () => {
+    beforeEach(() => {
+        jest.resetModules();
+    });
+
     it('it renders Button', () => {
         const wrapper = shallow(<Button />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders Button on touch devices', () => {
+        jest.doMock('../../utils/detectTouch', () => {
+            return {
+                default: jest.fn(() => true),
+            };
+        });
+
+        const SomeButton = require('./Button').default;
+        const wrapper = shallow<Button>(<SomeButton />);
+
         expect(wrapper).toMatchSnapshot();
     });
 

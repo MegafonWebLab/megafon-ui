@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
-import modernizr from '../../utils/modernizr';
+import detectTouch from '../../utils/detectTouch';
 import './ProductSwitcher.less';
 
 interface IItem {
@@ -58,6 +58,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
     timer: number;
     rowItemsInfo: INearPoint[];
     switcherStep: number;
+    isTouch: boolean = detectTouch();
 
     constructor(props: IProductSwitcherProps) {
         super(props);
@@ -136,7 +137,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         const pointerNode = this.pointerNode;
         const rootNode = this.rootNode;
 
-        if (modernizr.touchevents) {
+        if (this.isTouch) {
             pointerNode.addEventListener('touchstart', this.setPointerState);
             rootNode.addEventListener('touchmove', this.handleTouchMove);
             rootNode.addEventListener('touchend', this.handleTouchEnd);
@@ -161,7 +162,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         const pointerNode = this.pointerNode;
         const rootNode = this.rootNode;
 
-        if (modernizr.touchevents) {
+        if (this.isTouch) {
             pointerNode.removeEventListener('touchstart', this.setPointerState);
             rootNode.removeEventListener('touchmove', this.handleTouchMove);
             rootNode.removeEventListener('touchend', this.handleTouchEnd);

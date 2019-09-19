@@ -16,11 +16,9 @@ describe('<BubbleHint />', () => {
     });
 
     it('it renders BubbleHint', () => {
-        jest.doMock('../../utils/modernizr', () => {
+        jest.doMock('../../utils/detectTouch', () => {
             return {
-                default: {
-                    touchevents: true,
-                },
+                default: jest.fn(() => true),
             };
         });
 

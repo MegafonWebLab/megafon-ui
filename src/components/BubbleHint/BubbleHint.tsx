@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './BubbleHint.less';
 import { Manager, Popper, Target, Arrow, IPopperProps } from 'react-popper';
-import modernizr from '../../utils/modernizr';
+import detectTouch from '../../utils/detectTouch';
 import { cnCreate } from '../../utils/cn';
 
 interface IBubbleHintProps {
@@ -68,7 +68,8 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
 
     container: HTMLElement;
     trigger: HTMLElement;
-    touchClick: string = modernizr.touchevents ? 'touchstart' : 'click';
+    touchClick: string = detectTouch() ? 'touchstart' : 'click';
+    isTouch: boolean = detectTouch();
 
     constructor(props: IBubbleHintProps) {
         super(props);
@@ -115,9 +116,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
     }
 
     getHandlers(): {} {
-        const touchEvent = modernizr.touchevents;
-
-        if (touchEvent || this.props.click) {
+        if (this.isTouch || this.props.click) {
             return {
                 onClick: this.handleClick,
             };

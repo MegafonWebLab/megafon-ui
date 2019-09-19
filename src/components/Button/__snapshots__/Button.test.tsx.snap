@@ -2,6 +2,17 @@
 
 exports[`<Button /> it renders Button 1`] = `
 <button
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  type="button"
+>
+  <div
+    className="mfui-button__inner"
+  />
+</button>
+`;
+
+exports[`<Button /> it renders Button on touch devices 1`] = `
+<button
   className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
   type="button"
 >
@@ -13,7 +24,7 @@ exports[`<Button /> it renders Button 1`] = `
 
 exports[`<Button /> it renders children 1`] = `
 <button
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
   type="button"
 >
   <div
@@ -41,7 +52,7 @@ exports[`<Button /> it renders spinner 1`] = `
   width="auto"
 >
   <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_loading"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_loading mfui-button_no-touch"
     type="button"
   >
     <div
@@ -71,7 +82,7 @@ exports[`<Button /> it renders tag a 1`] = `
   width="auto"
 >
   <a
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
     href="http://moscow.megafon.ru/"
     type=""
   >
@@ -97,7 +108,7 @@ exports[`<Button /> it renders white styled button 1`] = `
   width="auto"
 >
   <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_white mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_font-color_green mfui-button_border_green mfui-button_padding mfui-button_width_auto"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_white mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_font-color_green mfui-button_border_green mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
     type="button"
   >
     <div
