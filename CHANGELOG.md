@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## Release 1.3.39
+### Changed
+- **Carousel**
+    - add new theme "landing"
+
 ## Release 1.3.38
 ### Changed
 - **ProductSwitcher**
