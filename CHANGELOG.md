@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.40
 ### Changed
 - **Carousel**
     - add new theme "landing"
