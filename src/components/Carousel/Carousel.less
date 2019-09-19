@@ -285,3 +285,135 @@
         }
     }
 }
+
+@{b}@{b}_theme_landing {
+    padding: 0 0 37px;
+    overflow: unset;
+    margin: 0 auto;
+    @{s} {
+        &-list {
+            box-sizing: border-box;
+            overflow-x: hidden;
+            padding: 22px 10px;
+            margin: -22px -10px;
+            width: auto;
+            @media @mobileS {
+                overflow: visible;
+            }
+        }
+        &-track {
+            display: flex;
+            align-items: stretch;
+        }
+        &-slide {
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: auto;
+            margin-right: 20px;
+        }
+        &-slide > div {
+            display: flex;
+            flex-grow: 2;
+            flex-shrink: 0;
+            min-width: auto;
+            width: 100%;
+        }
+        &-dots {
+            display: flex !important;
+            justify-content: center;
+            margin-top: 32px;
+            list-style: none;
+            padding-left: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            @media @mobileSM {
+                margin-top: 20px;
+            }
+            & > li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 8px;
+                &:not(:last-child) {
+                    margin-right: 8px;
+                }
+                @media @mobileSM {
+                    height: 8px;
+                }
+                & > button {
+                    background-color: @newPaginGray;
+                    border: none;
+                    border-radius: 50%;
+                    height: 6px;
+                    width: 6px;
+                    padding: 0;
+                    text-indent: -9999px;
+                    cursor: pointer;
+                    outline: none;
+                }
+            }
+            @{s}-active > button {
+                background-color: @purple;
+                height: 8px;
+                width: 8px;
+            }
+        }
+        &-arrow {
+            display: block;
+        }
+    }
+
+    @{b}__arrow {
+        position: absolute;
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
+        left: unset;
+        right: unset;
+        z-index: 2;
+        transition: opacity 0.3s;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: @purple;
+        &_fill_white {
+            & svg {
+                width: 40px;
+                height: 40px;
+                fill: @white;
+            }
+        }
+        @media @mobileSM {
+            display: none !important;
+        }
+        @media @mobileB {
+            right: -44px;
+        }
+        @media @desktopS {
+            right: -52px;
+        }
+        @media @desktopMU {
+            right: -60px;
+        }
+
+        &_arrow-prev {
+            transform: translateY(-50%) rotate(180deg);
+            @media @mobileB {
+                left: -44px;
+            }
+            @media @desktopS {
+                left: -52px;
+            }
+            @media @desktopMU {
+                left: -60px;
+            }
+        }
+
+        &_disabled {
+            cursor: default;
+            opacity: 0.3;
+        }
+    }
+}

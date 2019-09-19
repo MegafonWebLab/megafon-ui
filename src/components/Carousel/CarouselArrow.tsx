@@ -22,7 +22,14 @@ class CarouselArrow extends React.Component<ICarouselArrowProps> {
     renderIcon() {
         const { theme } = this.props;
 
-        return theme === 'showcase' ? <ArrowLikeQuote /> : <Arrow />;
+        switch (theme) {
+            case 'showcase':
+                return <ArrowLikeQuote />;
+            case 'landing':
+                return <ArrowLikeQuote />;
+            default:
+                return <Arrow />;
+        }
     }
 
     render() {
