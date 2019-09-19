@@ -1,11 +1,14 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - add new theme "landing"
 
 ## Release 1.3.39
 ### Changed
 - **Carousel**
-    - add new theme "landing"
+    - fix block padding and arrow position
 
 ## Release 1.3.38
 ### Changed
