@@ -300,11 +300,13 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         const { onChange } = this.props;
         const pointOnRowCoord = eventXCoord - startPoint;
         const pointHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
-        const [passedPoint] = this.rowItemsInfo.filter((el: INearPoint) => (
-            el.coord === pointOnRowCoord
-                || el.coord === pointOnRowCoord - pointHalfWidth
-                || el.coord === pointOnRowCoord + pointHalfWidth
-        ));
+        const [passedPoint] = this.rowItemsInfo.filter((el: INearPoint) => {
+            const centerPoint = el.coord === pointOnRowCoord;
+            const firstPoint = el.coord === pointOnRowCoord - pointHalfWidth;
+            const lastPoint = el.coord === pointOnRowCoord + pointHalfWidth;
+
+            return centerPoint || firstPoint || lastPoint;
+        });
 
         switch (true) {
             case eventXCoord < startPoint + pointHalfWidth:
