@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+- **ProductSwitcher**
+    - change type of drag and drop swipe
+    - remove vertical scroll on mobile devices
+
 ## Release 1.3.37
 ### Changed
 - **Button**
