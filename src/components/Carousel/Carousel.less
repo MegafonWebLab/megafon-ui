@@ -148,10 +148,10 @@
         &-list {
             box-sizing: border-box;
             overflow-x: hidden;
-            padding: 22px 2px;
-            margin: -22px -2px;
+            padding: 49px 2px;
+            margin: -49px -2px;
             width: auto;
-            @media @mobileS {
+            @media @mobileSM {
                 overflow: visible;
             }
         }
@@ -236,7 +236,7 @@
     @{b}__arrow {
         position: absolute;
         cursor: pointer;
-        top: 50%;
+        top: calc(50% + 4px);
         transform: translateY(-50%);
         left: unset;
         right: unset;
