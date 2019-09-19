@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.39
 ### Changed
 - **Carousel**
     - fix block padding and arrow position
