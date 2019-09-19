@@ -298,39 +298,39 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             width = 0,
         } = this.getRangeWrapperCoords(this.rootNode);
         const { onChange } = this.props;
-        const pointOnRowCoord = eventXCoord - startPoint;
-        const pointHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
-        const [passedPoint] = this.rowItemsInfo.filter((el: INearPoint) => {
-            const centerPoint = el.coord === pointOnRowCoord;
-            const firstPoint = el.coord === pointOnRowCoord - pointHalfWidth;
-            const lastPoint = el.coord === pointOnRowCoord + pointHalfWidth;
+        const pointerPosition = eventXCoord - startPoint;
+        const pointerHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
+        const [chosenPoint] = this.rowItemsInfo.filter((el: INearPoint) => {
+            const isPointerCenterMatched = el.coord === pointerPosition;
+            const isPointerLeftBorderMatched = el.coord === pointerPosition - pointerHalfWidth;
+            const isPointerRightBorderMatched = el.coord === pointerPosition + pointerHalfWidth;
 
-            return centerPoint || firstPoint || lastPoint;
+            return isPointerCenterMatched || isPointerLeftBorderMatched || isPointerRightBorderMatched;
         });
 
         switch (true) {
-            case eventXCoord < startPoint + pointHalfWidth:
+            case eventXCoord < startPoint + pointerHalfWidth:
                 this.pointerNode.style.transform = 'translateX(0px)';
                 this.colorRowNode.style.width = '0px';
                 break;
-            case eventXCoord >= endPoint - pointHalfWidth:
-                this.pointerNode.style.transform = `translateX(${width - pointHalfWidth * 2}px)`;
-                this.colorRowNode.style.width = `${width - pointHalfWidth}px`;
+            case eventXCoord >= endPoint - pointerHalfWidth:
+                this.pointerNode.style.transform = `translateX(${width - pointerHalfWidth * 2}px)`;
+                this.colorRowNode.style.width = `${width - pointerHalfWidth}px`;
                 break;
             default:
-                this.pointerNode.style.transform = `translateX(${pointOnRowCoord - pointHalfWidth}px)`;
-                this.colorRowNode.style.width = `${pointOnRowCoord}px`;
+                this.pointerNode.style.transform = `translateX(${pointerPosition - pointerHalfWidth}px)`;
+                this.colorRowNode.style.width = `${pointerPosition}px`;
         }
 
-        if (!passedPoint) {
+        if (!chosenPoint) {
             return;
         }
 
-        onChange(e, passedPoint.value, passedPoint.item);
+        onChange(e, chosenPoint.value, chosenPoint.item);
 
         this.setState({
-            currentValue: passedPoint.value,
-            currentIndex: passedPoint.item,
+            currentValue: chosenPoint.value,
+            currentIndex: chosenPoint.item,
         });
     }
 
