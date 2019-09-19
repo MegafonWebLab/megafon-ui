@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.37
 ### Changed
 - **Button**
     - fix hover with touch events detector
