@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+## Release 1.3.38
 ### Changed
 - **ProductSwitcher**
     - change type of drag and drop swipe
