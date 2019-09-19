@@ -20,7 +20,7 @@ interface IProductSwitcherProps {
     /** Custom class name */
     className: string;
     /** Change handler */
-    onChange(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
+    onChange(e: React.SyntheticEvent<EventTarget> | TouchEvent | MouseEvent, value: string, index: number): boolean;
 }
 
 interface IProductSwitcherState {
@@ -193,6 +193,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
 
         e.stopPropagation();
+        e.preventDefault();
 
         const { top, bottom } = this.getRangeWrapperCoords(this.rootNode);
         const eventXCoord = e.changedTouches[0].clientX;
@@ -204,7 +205,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return;
         }
 
-        this.moveSwitcher(eventXCoord);
+        this.moveSwitcher(e, eventXCoord);
     }
 
     handleMouseMove = (e: MouseEvent) => {
@@ -216,7 +217,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
 
         e.stopPropagation();
 
-        this.moveSwitcher(e.clientX);
+        this.moveSwitcher(e, e.clientX);
     }
 
     handleMouseLeave = (e: MouseEvent) => {
@@ -263,7 +264,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             });
         }
 
-        this.handleEndSwitchActions(e.clientX);
+        this.handleEndSwitchActions(e, e.clientX);
     }
 
     handleBodyMouseUp = (e: MouseEvent) => {
@@ -283,10 +284,10 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return;
         }
 
-        this.handleEndSwitchActions(e.changedTouches[0].clientX);
+        this.handleEndSwitchActions(e, e.changedTouches[0].clientX);
     }
 
-    moveSwitcher = (eventXCoord: number) => {
+    moveSwitcher = (e: React.SyntheticEvent<EventTarget> | TouchEvent | MouseEvent, eventXCoord: number) => {
         if (!this.pointerNode || !this.colorRowNode || !this.rootNode) {
             return;
         }
@@ -296,31 +297,54 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             right: endPoint = 0,
             width = 0,
         } = this.getRangeWrapperCoords(this.rootNode);
-        const pointHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
+        const { onChange } = this.props;
+        const pointerPosition = eventXCoord - startPoint;
+        const pointerHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
+        const [chosenPoint] = this.rowItemsInfo.filter((el: INearPoint) => {
+            const isPointerCenterMatched = el.coord === pointerPosition;
+            const isPointerLeftBorderMatched = el.coord === pointerPosition - pointerHalfWidth;
+            const isPointerRightBorderMatched = el.coord === pointerPosition + pointerHalfWidth;
+
+            return isPointerCenterMatched || isPointerLeftBorderMatched || isPointerRightBorderMatched;
+        });
 
         switch (true) {
-            case eventXCoord < startPoint + pointHalfWidth:
+            case eventXCoord < startPoint + pointerHalfWidth:
                 this.pointerNode.style.transform = 'translateX(0px)';
                 this.colorRowNode.style.width = '0px';
                 break;
-            case eventXCoord >= endPoint - pointHalfWidth:
-                this.pointerNode.style.transform = `translateX(${width - pointHalfWidth * 2}px)`;
-                this.colorRowNode.style.width = `${width - pointHalfWidth}px`;
+            case eventXCoord >= endPoint - pointerHalfWidth:
+                this.pointerNode.style.transform = `translateX(${width - pointerHalfWidth * 2}px)`;
+                this.colorRowNode.style.width = `${width - pointerHalfWidth}px`;
                 break;
             default:
-                this.pointerNode.style.transform = `translateX(${eventXCoord - startPoint - pointHalfWidth}px)`;
-                this.colorRowNode.style.width = `${eventXCoord - startPoint}px`;
+                this.pointerNode.style.transform = `translateX(${pointerPosition - pointerHalfWidth}px)`;
+                this.colorRowNode.style.width = `${pointerPosition}px`;
         }
+
+        if (!chosenPoint) {
+            return;
+        }
+
+        onChange(e, chosenPoint.value, chosenPoint.item);
+
+        this.setState({
+            currentValue: chosenPoint.value,
+            currentIndex: chosenPoint.item,
+        });
     }
 
-    handleEndSwitchActions = (eventXCoord: number) => {
+    handleEndSwitchActions = (e: React.SyntheticEvent<EventTarget> | TouchEvent | MouseEvent, eventXCoord: number) => {
         if (!this.rootNode) {
             return;
         }
 
+        const { onChange } = this.props;
         const { left: startPoint = 0 } = this.getRangeWrapperCoords(this.rootNode);
         const outRowPoint = eventXCoord - startPoint;
         const [nearPoint] = this.getNearPoint(outRowPoint);
+
+        onChange(e, nearPoint.value, nearPoint.item);
 
         this.setState(prevState => ({
             currentValue: nearPoint.value,
