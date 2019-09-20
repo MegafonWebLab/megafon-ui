@@ -405,7 +405,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
     }
 
     getEntryPointsRange = (centralСoordinate: number) => {
-        return [centralСoordinate - 1, centralСoordinate,  + 1];
+        return [centralСoordinate - 1, centralСoordinate, centralСoordinate + 1];
     }
 
     getNearPoint = (outRowPoint: number) => {
