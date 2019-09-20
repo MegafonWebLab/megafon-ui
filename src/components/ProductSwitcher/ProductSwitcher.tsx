@@ -59,6 +59,8 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
     rowItemsInfo: INearPoint[];
     switcherStep: number;
     isTouch: boolean = detectTouch();
+    swipeRowWidth: number;
+    mutationObserver: MutationObserver;
 
     constructor(props: IProductSwitcherProps) {
         super(props);
@@ -86,7 +88,13 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
     }
 
     componentDidUpdate(prevProps: IProductSwitcherProps) {
+        if (!this.rootNode) {
+            return;
+        }
+
         const { startIndex = 0, items } = this.props;
+        const { width } = this.getRangeWrapperCoords(this.rootNode);
+        const isSwipeRowWidthChanged = this.swipeRowWidth !== Math.round(width);
 
         if (startIndex !== prevProps.startIndex) {
             const newIndex: number = this.getSafeStartIndex(startIndex, items);
@@ -98,6 +106,13 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             });
             this.movePointer(newValue);
         }
+
+        if (!isSwipeRowWidthChanged) {
+            return;
+        }
+
+        this.rowItemsInfo = this.getRowItemsInfo();
+        this.movePointer(this.state.currentValue);
     }
 
     getSafeStartIndex(startIndex: number, items: IItem[]): number {
@@ -130,17 +145,27 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
     setHandlers = () => {
         window.addEventListener('resize', this.handleWindowSize, true);
 
-        if (!this.pointerNode || !this.rootNode) {
+        if (!this.pointerNode || !this.rootNode || !this.colorRowNode) {
             return;
         }
 
         const pointerNode = this.pointerNode;
+        const colorRowNode = this.colorRowNode;
         const rootNode = this.rootNode;
 
         if (this.isTouch) {
             pointerNode.addEventListener('touchstart', this.setPointerState);
             rootNode.addEventListener('touchmove', this.handleTouchMove);
             rootNode.addEventListener('touchend', this.handleTouchEnd);
+
+            this.mutationObserver = new MutationObserver((mutations: []) => {
+                mutations.forEach((mutation: MutationRecord) => this.handleWidthChange(mutation));
+            });
+
+            this.mutationObserver.observe(colorRowNode, {
+                attributeOldValue: true,
+                attributes: true,
+            });
 
             return;
         }
@@ -163,6 +188,8 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         const rootNode = this.rootNode;
 
         if (this.isTouch) {
+            this.mutationObserver.disconnect();
+
             pointerNode.removeEventListener('touchstart', this.setPointerState);
             rootNode.removeEventListener('touchmove', this.handleTouchMove);
             rootNode.removeEventListener('touchend', this.handleTouchEnd);
@@ -183,6 +210,24 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         this.setState(prevState => ({
             isPointerPressed: !prevState.isPointerPressed,
         }));
+    }
+
+    handleWidthChange = (mutationObj: MutationRecord) => {
+        const { oldValue } = mutationObj;
+
+        if (!oldValue) {
+            return;
+        }
+
+        const { isPointerPressed } = this.state;
+        const checkedAttr = 'width';
+
+        if (oldValue.match(checkedAttr) && isPointerPressed) {
+            return;
+        }
+
+        this.rowItemsInfo = this.getRowItemsInfo();
+        this.movePointer(this.state.currentValue);
     }
 
     handleTouchMove = (e: TouchEvent) => {
@@ -298,14 +343,18 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             width = 0,
         } = this.getRangeWrapperCoords(this.rootNode);
         const { onChange } = this.props;
-        const pointerPosition = eventXCoord - startPoint;
+        const pointerPosition = Math.round(eventXCoord - startPoint);
         const pointerHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
         const [chosenPoint] = this.rowItemsInfo.filter((el: INearPoint) => {
-            const isPointerCenterMatched = el.coord === pointerPosition;
-            const isPointerLeftBorderMatched = el.coord === pointerPosition - pointerHalfWidth;
-            const isPointerRightBorderMatched = el.coord === pointerPosition + pointerHalfWidth;
+            const entryPointsRange = this.getEntryPointsRange(el.coord);
 
-            return isPointerCenterMatched || isPointerLeftBorderMatched || isPointerRightBorderMatched;
+            return entryPointsRange.some((point: number) => {
+                const isPointerCenterMatched = point === pointerPosition;
+                const isPointerLeftBorderMatched = point === pointerPosition - pointerHalfWidth;
+                const isPointerRightBorderMatched = point === pointerPosition + pointerHalfWidth;
+
+                return isPointerCenterMatched || isPointerLeftBorderMatched || isPointerRightBorderMatched;
+            });
         });
 
         switch (true) {
@@ -355,6 +404,10 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         this.movePointer(nearPoint.value);
     }
 
+    getEntryPointsRange = (centralСoordinate: number) => {
+        return [centralСoordinate - 1, centralСoordinate,  + 1];
+    }
+
     getNearPoint = (outRowPoint: number) => {
         return this.rowItemsInfo.filter((el: INearPoint, ind: number, arr: [INearPoint]) => {
             const prevEl = arr[ind - 1];
@@ -381,9 +434,12 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
 
         const { items } = this.props;
-        const { width: rowWidth = 0 } = this.getRangeWrapperCoords(this.rootNode);
         const itemsLength = items.length;
+        let { width: rowWidth = 0 } = this.getRangeWrapperCoords(this.rootNode);
 
+        rowWidth = Math.round(rowWidth);
+
+        this.swipeRowWidth = rowWidth;
         this.setSwitcherStep(rowWidth / (itemsLength - 1));
 
         return items.map((item: IItem, index: number) => {

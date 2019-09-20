@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+- **ProductSwitcher**
+    - fix swipe functionality
+
 ## Release 1.3.41
 ### Changed
 - **Carousel**
