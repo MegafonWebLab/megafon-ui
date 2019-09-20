@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.41
 ### Changed
 - **Carousel**
     - edit dots padding in landing theme"
