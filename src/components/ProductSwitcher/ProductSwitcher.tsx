@@ -194,23 +194,6 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }));
     }
 
-    handleWidthChange = (mutationObj: MutationRecord) => {
-        const { oldValue } = mutationObj;
-
-        if (!oldValue) {
-            return;
-        }
-
-        const { isPointerPressed } = this.state;
-        const checkedAttr = 'width';
-
-        if (oldValue.match(checkedAttr) && isPointerPressed) {
-            return;
-        }
-
-        this.movePointer(this.state.currentValue);
-    }
-
     handleTouchMove = (e: TouchEvent) => {
         const { isPointerPressed } = this.state;
 
