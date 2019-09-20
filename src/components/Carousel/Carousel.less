@@ -287,9 +287,12 @@
 }
 
 @{b}@{b}_theme_landing {
-    padding: 0 0 37px;
+    padding: 0 0 40px;
     overflow: unset;
     margin: 0 auto;
+    @media @mobileSM {
+        padding: 0 0 32px;
+    }
     @{s} {
         &-list {
             box-sizing: border-box;
@@ -329,7 +332,7 @@
             left: 50%;
             transform: translateX(-50%);
             @media @mobileSM {
-                margin-top: 20px;
+                margin-top: 24px;
             }
             & > li {
                 display: flex;
