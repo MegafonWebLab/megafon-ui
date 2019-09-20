@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+## Release 1.3.42
 ### Changed
 - **ProductSwitcher**
     - fix swipe functionality
