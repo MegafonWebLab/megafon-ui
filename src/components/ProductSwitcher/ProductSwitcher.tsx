@@ -373,12 +373,13 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
     }
 
     getNearPoint = (outRowPoint: number) => {
-        const rowItemsInfo = this.getRowItemsInfo();
         const switcherStep = this.getSwitcherStep();
 
         if (!switcherStep) {
             return [];
         }
+
+        const rowItemsInfo = this.getRowItemsInfo();
 
         return rowItemsInfo.filter((el: INearPoint, ind: number, arr: INearPoint[]) => {
             const prevEl = arr[ind - 1];
