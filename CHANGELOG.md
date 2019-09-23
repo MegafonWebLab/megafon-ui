@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - fix overflow in IE
 
 ## Release 1.3.43
 ### Changed
