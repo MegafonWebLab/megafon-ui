@@ -148,11 +148,13 @@
         &-list {
             box-sizing: border-box;
             overflow-x: hidden;
-            padding: 49px 2px;
-            margin: -49px -2px;
+            padding: 90px 2px;
+            margin: -90px -2px;
             width: auto;
             @media @mobileSM {
                 overflow: visible;
+                padding: 90px 0;
+                margin: -90px 0;
             }
         }
         &-track {
@@ -164,12 +166,10 @@
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: auto;
-            margin-right: 20px;
-            &:last-child {
-                margin-right: 4px;
-            }
+            padding-right: 20px;
+            margin-right: 0;
             @media @mobileSM {
-                margin-right: 16px;
+                padding-right: 16px;
             }
         }
         &-slide > div {
@@ -246,6 +246,9 @@
         height: 40px;
         border-radius: 50%;
         background-color: @purple;
+        &:hover {
+            background-color: @secondaryPurpleHover;
+        }
         &_fill_white {
             & svg {
                 width: 40px;
