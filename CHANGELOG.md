@@ -1,11 +1,11 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.43
 ### Changed
 - **Carousel**
     - fix paddings for showcase theme and add new color in base.less
-
-### Changed
 - **ProductSwitcher**
     - fix swipe send checked values
 
