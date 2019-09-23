@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+- **ProductSwitcher**
+    - fix swipe send checked values
+
 ## Release 1.3.42
 ### Changed
 - **ProductSwitcher**

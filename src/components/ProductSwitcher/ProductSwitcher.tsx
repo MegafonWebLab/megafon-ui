@@ -89,8 +89,6 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
 
         const { startIndex = 0, items } = this.props;
-        const { width } = this.getRangeWrapperCoords(this.rootNode);
-        const isSwipeRowWidthChanged = this.swipeRowWidth !== Math.round(width);
 
         if (startIndex !== prevProps.startIndex) {
             const newIndex: number = this.getSafeStartIndex(startIndex, items);
@@ -101,7 +99,12 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
                 currentIndex: newIndex,
             });
             this.movePointer(newValue);
+
+            return;
         }
+
+        const { width } = this.getRangeWrapperCoords(this.rootNode);
+        const isSwipeRowWidthChanged = this.swipeRowWidth !== width;
 
         if (!isSwipeRowWidthChanged) {
             return;
