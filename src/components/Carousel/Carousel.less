@@ -149,7 +149,9 @@
             box-sizing: border-box;
             overflow-x: hidden;
             padding: 90px 2px;
+            padding-right: 0;
             margin: -90px -2px;
+            margin-right: 0;
             width: auto;
             @media @mobileSM {
                 overflow: visible;
@@ -232,11 +234,18 @@
             display: block;
         }
     }
+    @{b}__arrows_theme_showcase {
+        @media @mobileBU {
+            height: 100%;
+            position: absolute;
+            width: calc(100% - 16px);
+        }
+    }
 
     @{b}__arrow {
         position: absolute;
         cursor: pointer;
-        top: calc(50% + 4px);
+        top: calc(50% + 25px);
         transform: translateY(-50%);
         left: unset;
         right: unset;
@@ -285,6 +294,9 @@
         &_disabled {
             cursor: default;
             opacity: 0.3;
+            &:hover {
+                background-color: @purple;
+            }
         }
     }
 }
