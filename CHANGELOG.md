@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.45
 ### Changed
 - **Carousel**
     - fix arrows position in less for showcase theme
