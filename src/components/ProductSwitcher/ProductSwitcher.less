@@ -240,6 +240,11 @@
         &__item {
             width: 24px;
             z-index: 3;
+            &:last-child {
+                @{b}__label {
+                    right: 0;
+                }
+            }
         }
 
         &__item_active {

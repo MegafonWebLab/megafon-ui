@@ -4,6 +4,8 @@
 ### Changed
 - **Carousel**
     - fix prev arrow position
+- **ProductSwitcher**
+    - fix bug with position in IE11
 
 ## Release 1.3.45
 ### Changed
