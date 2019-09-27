@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **ProductSwitcher**
+    - fix bug with ProductSwitcher label in IE11
 
 ## Release 1.3.46
 ### Changed
