@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - fix prev arrow position
 
 ## Release 1.3.45
 ### Changed
