@@ -28,6 +28,7 @@ export interface ICarouselProps {
     children: any;
     onClickNext?: () => void;
     onClickPrev?: () => void;
+    onAfterChange?: (index: number) => void;
 }
 
 interface ICarouselState {
@@ -59,6 +60,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
+        onAfterChange: PropTypes.func,
     };
 
     static defaultProps = {
@@ -129,6 +131,13 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     handleChange = (slideIndex: number) => {
+        const { onAfterChange } = this.props;
+
+        this.updateArrowsState(slideIndex);
+        onAfterChange && onAfterChange(slideIndex);
+    }
+
+    updateArrowsState(slideIndex: number) {
         const { children } = this.props;
         const { showSlides } = this.state;
 
@@ -208,7 +217,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         this.setState(
             { isArrows, showSlides },
             (): void => {
-                this.handleChange(currentSlide);
+                this.updateArrowsState(currentSlide);
             }
         );
     }
