@@ -248,12 +248,20 @@
         }
 
         &__item_active {
+            display: block;
+            &:last-child,
+            &:first-child {
+                @{b}__label {
+                    transform: none;
+                }
+            }
             @{b}__label {
                 font-size: 15px;
                 font-weight: 500;
                 height: 24px;
                 line-height: 24px;
                 top: -34px;
+                transform: translateX(-50%);
             }
             @{b}__label-unit {
                 display: block;
