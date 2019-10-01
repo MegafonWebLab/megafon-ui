@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - add onAfterChange callback
 
 ## Release 1.3.46
 ### Changed
