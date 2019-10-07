@@ -1,12 +1,18 @@
 # megafon-ui
 
-## install all packages
+## Getting Started
+
+```bash
+npm install -g lerna
+```
+
+## Install all packages
 
 ```bash
 npm run bootstrap-all
 ```
 
-## build all packages
+## Build all packages
 
 ```bash
 npm run build-all
