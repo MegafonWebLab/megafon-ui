@@ -310,6 +310,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             width = 0,
         } = this.getRangeWrapperCoords(this.rootNode);
         const { onChange } = this.props;
+        const { currentValue } = this.state;
         const pointerPosition = Math.round(eventXCoord - startPoint);
         const pointerHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
         const [chosenPoint] = this.getRowItemsInfo().filter((el: INearPoint) => {
@@ -338,7 +339,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
                 this.colorRowNode.style.width = `${pointerPosition}px`;
         }
 
-        if (!chosenPoint) {
+        if (!chosenPoint || chosenPoint.value === currentValue) {
             return;
         }
 
@@ -356,9 +357,18 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
 
         const { onChange } = this.props;
+        const { currentValue } = this.state;
         const { left: startPoint = 0 } = this.getRangeWrapperCoords(this.rootNode);
         const outRowPoint = eventXCoord - startPoint;
         const [nearPoint] = this.getNearPoint(outRowPoint);
+
+        if (currentValue === nearPoint.value) {
+            this.movePointer(currentValue);
+            this.setState(prevState => ({
+                isPointerPressed: !prevState.isPointerPressed,
+            }));
+            return;
+        }
 
         onChange(e, nearPoint.value, nearPoint.item);
 
