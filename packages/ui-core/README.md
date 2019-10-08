@@ -7,7 +7,7 @@
 ## Getting started
 
 ```bash
-$ npm install --save @megafon/megafon-ui
+$ npm install --save @megafon/ui-core
 ```
 
 ## Development notes
