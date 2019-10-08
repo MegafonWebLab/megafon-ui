@@ -11,3 +11,5 @@ coverage
 docs
 .vscode
 .DS_Store
+
+.npmrc
