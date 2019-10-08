@@ -25,7 +25,7 @@ script:
 
 before_deploy:
   - git config --global user.email ${NPM_EMAIL}
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc
   - lerna run docz:build
 
 deploy:
