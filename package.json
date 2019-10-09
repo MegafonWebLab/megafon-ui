@@ -1,5 +1,6 @@
 {
   "name": "@megafon/megafon-ui",
+  "private": true,
   "scripts": {
     "build-all": "lerna run build",
     "bootstrap-all": "lerna bootstrap",
