@@ -6,35 +6,47 @@ node_js:
 
 cache:
   directories:
-  - node_modules
+    - $(npm config get prefix)/usr/lerna
+    - $(npm config get prefix)/lib/node_modules
+    - ui-core/node_modules
+
+env:
+  - DOCS_DEPLOY_BRANCH=master
+
+before_install:
+  - npm install -g lerna
+
+install:
+  - lerna bootstrap
 
 before_script:
   - npm install -g codecov
-  - npm ci
 
 script:
-  - npm run lint
-  - npm run coverage
+  - lerna run lint
+  - lerna run coverage
 
 before_deploy:
-  - npm run docz:build
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc
+  - if [[ $TRAVIS_BRANCH = $DOCS_DEPLOY_BRANCH ]]; then
+      lerna run docz:build;
+    fi
 
 deploy:
-  - provider: npm
-    email: "$NPM_EMAIL"
-    api_key: "$NPM_TOKEN"
+  - provider: script
+    script: "npm run publish-all"
     skip_cleanup: true
     on:
+      node: "10"
       tags: true
-      node_js: "10"
 
   - provider: pages
     github-token: "$GITHUB_TOKEN"
     skip-cleanup: true
-    local-dir: "docs"
+    local-dir: "packages/ui-core/docs"
     keep-history: true
     on:
-      branch: master
+      branch: $DOCS_DEPLOY_BRANCH
       node_js: "10"
 
 after_script:

@@ -1,0 +1,15 @@
+{
+  "lerna": "3.16.4",
+  "version": "independent",
+  "packages": [
+    "packages/*"
+  ],
+  "npmClient": "npm",
+  "command": {
+    "ignoreChanges": [
+      "*.md",
+      "*.txt",
+      "*.test.*"
+    ]
+  }
+}
