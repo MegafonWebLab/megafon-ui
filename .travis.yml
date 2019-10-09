@@ -10,6 +10,9 @@ cache:
     - $(npm config get prefix)/lib/node_modules
     - ui-core/node_modules
 
+env:
+  - DOCS_DEPLOY_BRANCH=master
+
 before_install:
   - npm install -g lerna
 
@@ -25,7 +28,9 @@ script:
 
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc
-  - lerna run docz:build
+  - if [[ $TRAVIS_BRANCH = $DOCS_DEPLOY_BRANCH ]]; then
+      lerna run docz:build;
+    fi
 
 deploy:
   - provider: script
@@ -41,7 +46,7 @@ deploy:
     local-dir: "packages/ui-core/docs"
     keep-history: true
     on:
-      branch: master
+      branch: $DOCS_DEPLOY_BRANCH
       node_js: "10"
 
 after_script:
