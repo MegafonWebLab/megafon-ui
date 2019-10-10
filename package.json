@@ -6,5 +6,10 @@
     "bootstrap-all": "lerna bootstrap",
     "uninstall-all": "lerna clean",
     "publish-all": "lerna publish from-package --yes"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run lint && lerna run test"
+    }
   }
 }
