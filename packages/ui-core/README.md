@@ -1,8 +1,4 @@
-# ui-core
-
-[![npm (scoped)](https://img.shields.io/npm/v/@megafon/megafon-ui.svg)](https://www.npmjs.com/package/@megafon/megafon-ui)
-[![Build Status](https://travis-ci.org/MegafonWebLab/megafon-ui.svg?branch=master)](https://travis-ci.org/MegafonWebLab/megafon-ui)
-[![codecov](https://codecov.io/gh/MegafonWebLab/megafon-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/MegafonWebLab/megafon-ui)
+# @megafon/ui-core
 
 ## Getting started
 
