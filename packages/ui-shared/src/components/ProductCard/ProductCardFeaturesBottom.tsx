@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './ProductCardFeaturesBottom.less';
 import Header from '@megafon/ui-core/src/components/Header/Header';
 import Paragraph from '@megafon/ui-core/src/components/Paragraph/Paragraph';
-import { cnCreate } from '../../utils/cn';
+import { cnCreate } from '@megafon/ui-core/src/utils/cn';
 import { ISecondParamChildren } from './ProductCardFeatures';
 
 interface IProductCardFeaturesBottomProps {
