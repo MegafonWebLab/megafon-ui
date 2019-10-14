@@ -17,7 +17,7 @@ before_install:
   - npm install -g lerna
 
 install:
-  - lerna bootstrap
+  - yarn install
 
 before_script:
   - npm install -g codecov
@@ -25,6 +25,7 @@ before_script:
 script:
   - lerna run lint
   - lerna run coverage
+  - lerna run test
 
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc
@@ -34,7 +35,7 @@ before_deploy:
 
 deploy:
   - provider: script
-    script: "npm run publish-all"
+    script: "yarn run publish-all"
     skip_cleanup: true
     on:
       node: "10"
