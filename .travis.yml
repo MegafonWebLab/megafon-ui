@@ -8,7 +8,6 @@ cache:
   directories:
     - $(npm config get prefix)/usr/lerna
     - $(npm config get prefix)/lib/node_modules
-    - ui-core/node_modules
 
 env:
   - DOCS_DEPLOY_BRANCH=master
@@ -24,6 +23,7 @@ before_script:
 
 script:
   - lerna run lint
+  - lerna run build
   - lerna run coverage
   - lerna run test
 
@@ -35,7 +35,7 @@ before_deploy:
 
 deploy:
   - provider: script
-    script: "yarn run publish-all"
+    script: "yarn run ci:publish-all"
     skip_cleanup: true
     on:
       node: "10"
