@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate } from '@megafon/ui-core/src/utils/cn';
+import { cnCreate } from '../../utils/cn';
 import './style/ProductTileStatic.less';
 import { IPack } from './ProductTile';
 

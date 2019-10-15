@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate } from '@megafon/ui-core/src/utils/cn';
+import { cnCreate } from '../../utils/cn';
 import './style/ProductTile.less';
-import TextLink from '@megafon/ui-core/src/components/TextLink/TextLink';
+import { TextLink } from '@megafon/ui-core';
 import Hint from './ProductTileHint';
 import Cashback from './ProductTileCashback';
 import Static from './ProductTileStatic';
