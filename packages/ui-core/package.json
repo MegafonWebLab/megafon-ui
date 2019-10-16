@@ -25,7 +25,6 @@
     "lint": "npm run lint:ts && npm run lint:less",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
-    "prepublishOnly": "npm ci && npm run build",
     "test": "npm run test:unit",
     "test:unit": "jest",
     "testu": "jest --updateSnapshot"
@@ -148,10 +147,5 @@
     "react-input-mask": "^2.0.3",
     "react-popper": "0.10.4",
     "react-slick": "^0.23.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run test"
-    }
   }
 }

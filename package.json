@@ -1,10 +1,20 @@
 {
   "name": "@megafon/megafon-ui",
   "private": true,
+  "workspaces": [ "packages/*"],
   "scripts": {
-    "build-all": "lerna run build",
-    "bootstrap-all": "lerna bootstrap",
-    "uninstall-all": "lerna clean",
-    "publish-all": "lerna publish from-package --yes"
+    "build": "lerna run build",
+    "clean": "lerna clean --yes",
+    "publish-all": "lerna run build && lerna publish from-package --yes",
+    "ci:publish-all": "lerna publish from-package --yes",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "pre-commit": "lerna run lint && lerna run test",
+    "bump-version": "lerna version --no-push --no-git-tag-version && yarn install --frozen-lockfile"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run pre-commit"
+    }
   }
 }

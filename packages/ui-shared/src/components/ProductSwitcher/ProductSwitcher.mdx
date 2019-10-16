@@ -1,0 +1,114 @@
+---
+name: ProductSwitcher
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import ProductSwitcher from './ProductSwitcher';
+
+export const Wrapper = ({children}) => <div>{children}</div>;
+
+export const items = [
+    { title: '10', value: '10' },
+    { title: '20', value: '20' },
+    { title: '30', value: '30' }
+];
+
+export const valuedItems = [
+    { title: '10 ГБ', value: '10 ГБ' },
+    { title: '20 ГБ', value: '20 ГБ' },
+    { title: '30 ГБ', value: '30 ГБ' }
+];
+
+export const colorLineItems = [
+    { title: '10', value: '10', unit: 'ГБ' },
+    { title: '20', value: '20', unit: 'ГБ' },
+    { title: '30', value: '30', unit: 'ГБ' }
+];
+
+# ProductSwitcher
+
+## Properties ProductSwitcher
+<PropsTable of={ProductSwitcher} />
+
+## Basic usage
+
+<Playground wrapper={Wrapper}>
+    <ProductSwitcher items={items} onChange={() => {return true}}/>
+    <div style={{ width: '300px', margin: '20px 0 0 0' }}>
+        <ProductSwitcher items={items} theme="tariff-showcase" onChange={() => {return true}}/>
+    </div>
+</Playground>
+
+## Included props
+
+``` javascript
+const items = [
+    {
+        title: '10',
+        value: '10'
+    },
+    {
+        title: '20',
+        value: '20'
+    },
+
+        title: '30',
+        value: '30'
+    }
+];
+```
+
+## Usage with value units
+
+<Playground wrapper={Wrapper}>
+    <ProductSwitcher items={valuedItems} onChange={() => {return true}} theme="with-unit-values" />
+</Playground>
+
+## Included props
+
+``` javascript
+const items = [
+    {
+        title: '10 ГБ',
+        value: '10 ГБ'
+    },
+    {
+        title: '20 ГБ',
+        value: '20 ГБ'
+    },
+
+        title: '30 ГБ',
+        value: '30 ГБ'
+    }
+];
+```
+
+## Usage with green line
+
+<Playground wrapper={Wrapper}>
+    <ProductSwitcher items={colorLineItems} onChange={() => {return true}} theme="with-color-row" />
+</Playground>
+
+## Included props
+
+``` javascript
+const colorLineItems = [
+    {
+        title: '10',
+        value: '10',
+        unit: 'ГБ'
+    },
+    {
+        title: '20',
+        value: '20',
+        unit: 'ГБ'
+    },
+    {
+
+        title: '30',
+        value: '30',
+        unit: 'ГБ'
+    }
+];
+```

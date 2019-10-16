@@ -8,7 +8,6 @@ cache:
   directories:
     - $(npm config get prefix)/usr/lerna
     - $(npm config get prefix)/lib/node_modules
-    - ui-core/node_modules
 
 env:
   - DOCS_DEPLOY_BRANCH=master
@@ -17,14 +16,16 @@ before_install:
   - npm install -g lerna
 
 install:
-  - lerna bootstrap
+  - yarn install --frozen-lockfile
 
 before_script:
   - npm install -g codecov
 
 script:
   - lerna run lint
+  - lerna run build
   - lerna run coverage
+  - lerna run test
 
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc
@@ -34,7 +35,7 @@ before_deploy:
 
 deploy:
   - provider: script
-    script: "npm run publish-all"
+    script: "yarn run ci:publish-all"
     skip_cleanup: true
     on:
       node: "10"

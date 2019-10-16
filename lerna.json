@@ -1,10 +1,6 @@
 {
-  "lerna": "3.16.4",
   "version": "independent",
-  "packages": [
-    "packages/*"
-  ],
-  "npmClient": "npm",
+  "npmClient": "yarn",
   "command": {
     "ignoreChanges": [
       "*.md",
