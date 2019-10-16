@@ -10,7 +10,7 @@
     "lint": "lerna run lint",
     "test": "lerna run test",
     "pre-commit": "lerna run lint && lerna run test",
-    "bump-version": "lerna version --no-push --no-git-tag-version && yarn install"
+    "bump-version": "lerna version --no-push --no-git-tag-version && yarn install --frozen-lockfile"
   },
   "husky": {
     "hooks": {
