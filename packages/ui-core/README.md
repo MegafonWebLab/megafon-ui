@@ -1,9 +1,14 @@
 # @megafon/ui-core
 
+React UI components library.
+
 ## Getting started
 
 ```bash
 $ npm install --save @megafon/ui-core
+```
+```bash
+$ yarn add @megafon/ui-core
 ```
 
 ## Development notes
@@ -11,13 +16,13 @@ $ npm install --save @megafon/ui-core
 ### Build
 
 ```bash
-$ npm run build
+$ yarn run build
 ```
 
 ### Interactive demo
 
 ```bash
-$ npm run docz:dev
+$ yarn run docz:dev
 ```
 
 The demo will be available at [http://localhost:3000/megafon-ui/](http://localhost:3000/megafon-ui/).

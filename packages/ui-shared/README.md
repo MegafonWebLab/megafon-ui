@@ -1,9 +1,14 @@
 # @megafon/ui-shared
 
+React UI components library.
+
 ## Getting started
 
 ```bash
 $ npm install --save @megafon/ui-shared
+```
+```bash
+$ yarn add @megafon/ui-shared
 ```
 
 ## Development notes
@@ -11,7 +16,7 @@ $ npm install --save @megafon/ui-shared
 ### Build
 
 ```bash
-$ npm run build
+$ yarn run build
 ```
 
 ## How gulp modify svg
