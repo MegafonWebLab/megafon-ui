@@ -88,7 +88,7 @@ const babelLibConfig = {
 /**
  * Tasks
  */
-gulp.task('clean', () => del('dist'));
+gulp.task('clean', () => del(['dist', 'styles']));
 gulp.task('clean:index', () => del('src/index.ts'));
 
 gulp.task('svg', () => {

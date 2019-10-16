@@ -6,7 +6,7 @@ src/**/*.css
 src/index.ts
 src/components/**/*.d.ts
 dist
-styles/base.less
+styles
 coverage
 .docz
 docs
