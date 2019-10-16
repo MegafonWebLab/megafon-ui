@@ -26,7 +26,8 @@ const libStylesPath = path.join(libPath, 'styles');
 const srcPath = path.join(__dirname, 'src');
 const iconsPath = path.join(srcPath, 'icons');
 const indexTs = path.join(srcPath, 'index.ts');
-const baseLessPath = path.join(srcPath, 'styles', 'base.less');
+const baseLessSrc = path.join(srcPath, 'styles', 'base.less');
+const baseLessPackagePath = path.join(__dirname, 'styles');
 
 const testsReg = 'src/**/*.test.{tsx,ts}';
 const iconsReg = 'src/**/Icons.{tsx,ts}';
@@ -99,7 +100,7 @@ gulp.task('svg', () => {
 });
 
 gulp.task('less:compile', () => {
-    return gulp.src(['src/**/*.less', `!${baseLessPath}`])
+    return gulp.src(['src/**/*.less', `!${baseLessSrc}`])
         .pipe(replaceContent(/\~styles/g, 'styles'))
         .pipe(replaceContent(/icons\/\w+\/\d+\/.*\.svg/g, function (match) {
             const newPath = match.toLowerCase()
@@ -114,9 +115,8 @@ gulp.task('less:compile', () => {
 });
 
 gulp.task('less:copy-base', function() {
-    return gulp.src(baseLessPath)
-        .pipe(dest(esStylesPath))
-        .pipe(dest(libStylesPath));
+    return gulp.src(baseLessSrc)
+        .pipe(dest(baseLessPackagePath));
 });
 
 gulp.task('less', gulp.series('less:compile', 'less:copy-base'));
