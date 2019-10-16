@@ -3,7 +3,8 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from '../../utils/cn';
 import './ProductTileRest.less';
 import { Header, TextLink, Button, DropdownSocialList } from '@megafon/ui-core';
-import IButtonProps from '../../utils/IButtonProps';
+
+type IButtonProps = Button['props'];
 
 const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
 export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';

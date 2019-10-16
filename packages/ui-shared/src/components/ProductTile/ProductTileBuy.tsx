@@ -4,7 +4,8 @@ import { cnCreate } from '../../utils/cn';
 import './style/ProductTileBuy.less';
 import { Button, TextLink } from '@megafon/ui-core';
 import { TLinkTargetType } from './ProductTile';
-import IButtonProps from '../../utils/IButtonProps';
+
+type IButtonProps = Button['props'];
 
 export interface IProductTileBuyProps {
     /** Class name */
