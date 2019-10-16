@@ -16,7 +16,7 @@ before_install:
   - npm install -g lerna
 
 install:
-  - yarn install
+  - yarn install --frozen-lockfile
 
 before_script:
   - npm install -g codecov
