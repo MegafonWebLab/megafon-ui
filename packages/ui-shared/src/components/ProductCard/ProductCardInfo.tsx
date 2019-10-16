@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate } from '../../utils/cn';
+import { cnCreate } from '@megafon/ui-core/dist/lib/utils/cn';
 import './ProductCardInfo.less';
 import { Header, BubbleHint, TextLink } from '@megafon/ui-core';
 
