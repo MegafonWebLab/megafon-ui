@@ -45,7 +45,7 @@ Will make next steps:
 - ask for a new version of each changed package
 - update all cross-dependencies
 
-If you don't want to update some package, you can choose "custom version" and type current version.
+If you don't want to update all the packages, you can choose "custom version" and type current version.
 
 ## Release process
 
@@ -56,8 +56,8 @@ If you don't want to update some package, you can choose "custom version" and ty
     <details>
     <summary>Tag format</summary>
     
-    - For one updated package: "<package-name>@<new-version>", for ex. "ui-shared@1.0.1"
-    - For a few updated packages: "<package-name1>@<new-version1>/<package-name2>@<new-version2>", for ex. "ui-core@2.0.0/ui-shared@1.0.1"
+    - For one updated package: `<package-name>@<new-version>`, for ex. `ui-shared@1.0.1`
+    - For a few updated packages: `<package-name1>@<new-version1>/<package-name2>@<new-version2>`, for ex. `ui-core@2.0.0/ui-shared@1.0.1`
     
     </details>
 
