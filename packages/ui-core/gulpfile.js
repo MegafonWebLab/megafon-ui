@@ -73,7 +73,10 @@ const babelEsConfig = {
     plugins: [
         ...babelPlugins,
         ['module-resolver', {
-            root: './src'
+            root: ['./src'],
+            alias: {
+                utils: './src/utils'
+            }
         }],
         require.resolve('babel-plugin-inline-react-svg')
     ]
