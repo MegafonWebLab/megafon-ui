@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Logo.less';
-import { cnCreate } from '../../utils/cn';
+import cnCreate from '../../utils/cn';
 import greenHorizontalImg from 'docIcons/green-horizontal.svg';
 import greenVerticalImg from 'docIcons/green-vertical.svg';
 import Link from '../Link/Link';

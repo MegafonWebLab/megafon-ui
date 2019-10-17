@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate } from '@megafon/ui-core/dist/lib/utils/cn';
+import { cn as cnCreate } from '@megafon/ui-core';
 import './style/ProductTileOptions.less';
 import { BubbleHint } from '@megafon/ui-core';
 import { IOption } from './ProductTile';

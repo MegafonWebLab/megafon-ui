@@ -1,4 +1,4 @@
-import { cnCreate } from './cn';
+import cnCreate from './cn';
 
 let cn;
 
