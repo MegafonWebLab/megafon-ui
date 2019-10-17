@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate } from '../../utils/cn';
+import cnCreate from 'utils/cn';
 import './CarouselArrow.less';
 import Arrow from 'icons/System/16/Arrow_forward_16.svg';
 import ArrowLikeQuote from 'icons/System/16/Arrow_right_16.svg';

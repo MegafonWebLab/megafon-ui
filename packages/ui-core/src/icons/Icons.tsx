@@ -3,7 +3,7 @@ import './Icons.less';
 import Header from '../components/Header/Header';
 import Cancel from 'icons/System/32/Cancel_32.svg';
 import Copy from 'icons/Basic/24/Whats-left_24.svg';
-import { cnCreate } from '../utils/cn';
+import cnCreate from 'utils/cn';
 export const reqSvgs = require.context('icons', true, /\.svg$/);
 
 const cn = cnCreate('icons');

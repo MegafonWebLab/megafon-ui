@@ -1,7 +1,7 @@
 {
   "name": "@megafon/megafon-ui",
   "private": true,
-  "workspaces": [ "packages/*"],
+  "workspaces": [ "packages/*" ],
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna clean --yes",

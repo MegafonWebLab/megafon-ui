@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate } from '../../utils/cn';
+import { cn as cnCreate } from '@megafon/ui-core';
 import './ProductCardFeatures.less';
 import ProductCardFeaturesTop from './ProductCardFeaturesTop';
 import ProductCardFeaturesBottom from './ProductCardFeaturesBottom';

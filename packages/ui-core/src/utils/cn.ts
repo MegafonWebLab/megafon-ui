@@ -13,8 +13,8 @@ interface ClassSet {
  * @param {String} customClassNames - названия кастомных классов
  * @returns {String}
  */
-export const cnCreate = (blockName: string) =>
-    (elementName: string, modificatorsObject?: {}, customClassNames?: string) => {
+export default function cnCreate(blockName: string) {
+    return (elementName: string, modificatorsObject?: {}, customClassNames?: string) => {
         let params;
         const prefix = elementName;
         const className = customClassNames || '';
@@ -45,3 +45,4 @@ export const cnCreate = (blockName: string) =>
             ? classnames(blockName, classParams, className)
             : classnames(`${blockName}__${prefix}`, classParams, className);
     };
+}

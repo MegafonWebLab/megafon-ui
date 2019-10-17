@@ -6,6 +6,7 @@ src/**/*.css
 src/index.ts
 src/components/**/*.d.ts
 dist
+styles
 coverage
 .docz
 docs

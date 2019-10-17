@@ -20,10 +20,14 @@ const dest = gulp.dest;
 
 const dist = path.join(__dirname, 'dist');
 const esPath = path.join(dist, 'es');
+const esStylesPath = path.join(esPath, 'styles');
 const libPath = path.join(dist, 'lib');
+const libStylesPath = path.join(libPath, 'styles');
 const srcPath = path.join(__dirname, 'src');
 const iconsPath = path.join(srcPath, 'icons');
 const indexTs = path.join(srcPath, 'index.ts');
+const baseLessSrc = path.join(srcPath, 'styles', 'base.less');
+const baseLessPackagePath = path.join(__dirname, 'styles');
 
 const testsReg = 'src/**/*.test.{tsx,ts}';
 const iconsReg = 'src/**/Icons.{tsx,ts}';
@@ -34,6 +38,7 @@ const iconsReg = 'src/**/Icons.{tsx,ts}';
 const lessConfig = { paths: [srcPath], plugins: [autoprefix] };
 const tsConfig = {
     rootDir: './src',
+    baseUrl: './src',
     noUnusedParameters: true,
     noUnusedLocals: true,
     strictNullChecks: true,
@@ -68,7 +73,10 @@ const babelEsConfig = {
     plugins: [
         ...babelPlugins,
         ['module-resolver', {
-            root: './src'
+            root: ['./src'],
+            alias: {
+                utils: './src/utils'
+            }
         }],
         require.resolve('babel-plugin-inline-react-svg')
     ]
@@ -84,7 +92,7 @@ const babelLibConfig = {
 /**
  * Tasks
  */
-gulp.task('clean', () => del('dist'));
+gulp.task('clean', () => del(['dist', 'styles']));
 gulp.task('clean:index', () => del('src/index.ts'));
 
 gulp.task('svg', () => {
@@ -95,8 +103,8 @@ gulp.task('svg', () => {
         .pipe(dest(dist));
 });
 
-gulp.task('less', () => {
-    return gulp.src('src/**/*.less')
+gulp.task('less:compile', () => {
+    return gulp.src(['src/**/*.less', `!${baseLessSrc}`])
         .pipe(replaceContent(/\~styles/g, 'styles'))
         .pipe(replaceContent(/icons\/\w+\/\d+\/.*\.svg/g, function (match) {
             const newPath = match.toLowerCase()
@@ -109,6 +117,13 @@ gulp.task('less', () => {
         .pipe(dest(esPath))
         .pipe(dest(libPath));
 });
+
+gulp.task('less:copy-base', function() {
+    return gulp.src(baseLessSrc)
+        .pipe(dest(baseLessPackagePath));
+});
+
+gulp.task('less', gulp.series('less:compile', 'less:copy-base'));
 
 gulp.task('ts', () => {
     const result = gulp.src(['src/**/*.{tsx,ts}', `!${testsReg}`, `!${iconsReg}`, './typings/*.d.ts'])
@@ -129,8 +144,9 @@ gulp.task('ts', () => {
 });
 
 gulp.task('main', done => {
-    const files = glob.sync('src/components/**/*.{tsx,ts}', { ignore: testsReg });
-    fs.writeFile(indexTs, generateIndex(files), done);
+    const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: testsReg });
+    const utils = glob.sync('src/utils/*.ts', { ignore: testsReg });
+    fs.writeFile(indexTs, generateIndex([...components, ...utils]), done);
 });
 
 gulp.task('build', gulp.series(
@@ -144,15 +160,18 @@ gulp.task('build', gulp.series(
  * Helpers
  */
 const generateIndex = files => {
-    const ext = '.tsx';
-    const components = files.map(file => ({
-        path: file.replace('src/', './'),
-        name: path.basename(file, ext)
-    }));
+    const components = files.map(file => {
+        const parsed = path.parse(file);
+        return {
+            path: file.replace('src/', './'),
+            name: parsed.name,
+            ext: parsed.ext
+        }
+    });
     const collator = new Intl.Collator();
     const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
-    const imports = sorted.map(({ name, path: cPath }) => {
-        return `export { default as ${name} } from '${cPath.replace(ext, '')}';`;
+    const imports = sorted.map(({ name, path: cPath, ext: extension }) => {
+        return `export { default as ${name} } from '${cPath.replace(extension, '')}';`;
     });
 
     return `${imports.join('\n')}`;
