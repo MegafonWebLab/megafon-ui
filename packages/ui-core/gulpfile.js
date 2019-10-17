@@ -38,6 +38,7 @@ const iconsReg = 'src/**/Icons.{tsx,ts}';
 const lessConfig = { paths: [srcPath], plugins: [autoprefix] };
 const tsConfig = {
     rootDir: './src',
+    baseUrl: './src',
     noUnusedParameters: true,
     noUnusedLocals: true,
     strictNullChecks: true,
