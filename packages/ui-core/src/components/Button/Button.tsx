@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import cnCreate from '../../utils/cn';
+import cnCreate from 'utils/cn';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
-import detectTouch from '../../utils/detectTouch';
+import detectTouch from 'utils/detectTouch';
 
 export interface IButtonProps {
     /** Special view */

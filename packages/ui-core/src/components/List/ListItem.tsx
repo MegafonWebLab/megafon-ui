@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './ListItem.less';
-import cnCreate from '../../utils/cn';
+import cnCreate from 'utils/cn';
 
 interface IListItemProps {
     /** Custom classname */

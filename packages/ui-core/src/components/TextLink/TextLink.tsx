@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './TextLink.less';
 import Link from '../Link/Link';
-import cnCreate from '../../utils/cn';
+import cnCreate from 'utils/cn';
 
 interface ITextLinkProps {
     /** Color */
