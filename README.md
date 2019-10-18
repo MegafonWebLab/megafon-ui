@@ -35,32 +35,19 @@ yarn
 yarn run build
 ```
 
-## Update package versions
-
-```bash
-yarn run bump-version
-```
-
-Will make next steps:
-- ask for a new version of each changed package
-- update all cross-dependencies
-
-If you don't want to update all the packages, you can choose "custom version" and type current version.
-
 ## Release process
 
-1. [Update package versions.](#update-package-versions)
-2. Commit changes.
-3. Make git tag on commit with updated version.
+```bash
+yarn run release
+```
 
-    <details>
-    <summary>Tag format</summary>
-    
-    - For one updated package: `<package-name>@<new-version>`, for ex. `ui-shared@1.0.1`
-    - For a few updated packages: `<package-name1>@<new-version1>/<package-name2>@<new-version2>`, for ex. `ui-core@2.0.0/ui-shared@1.0.1`
-    
-    </details>
+This script prompts for a new version of each changed package. 
 
-4. Push commit and tags to the remote.
+After confirm script does the following:
+
+- updates cross-dependencies
+- makes commit with publish info
+- creates git tags for each updated package
+- pushes all of that to git
 
 TravisCI will publish packages to NPM after successful build. 
