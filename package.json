@@ -5,12 +5,10 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna clean --yes",
-    "publish-all": "lerna run build && lerna publish from-package --yes",
-    "ci:publish-all": "lerna publish from-package --yes",
     "lint": "lerna run lint",
     "test": "lerna run test",
     "pre-commit": "lerna run lint && lerna run test",
-    "bump-version": "lerna version --no-push --no-git-tag-version && yarn install --frozen-lockfile"
+    "release": "lerna version && yarn install --frozen-lockfile"
   },
   "husky": {
     "hooks": {

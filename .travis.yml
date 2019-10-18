@@ -10,7 +10,7 @@ cache:
     - $(npm config get prefix)/lib/node_modules
 
 env:
-  - DOCS_DEPLOY_BRANCH=master
+  - DOCS_DEPLOY_BRANCH=master PACKAGE_FROM_TAG=`echo $TRAVIS_TAG | cut -d '@' -f 2 | cut -d '/' -f 2`
 
 before_install:
   - npm install -g lerna
@@ -28,18 +28,20 @@ script:
   - lerna run test
 
 before_deploy:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc
   - if [[ $TRAVIS_BRANCH = $DOCS_DEPLOY_BRANCH ]]; then
       lerna run docz:build;
     fi
+  - echo $PACKAGE_FROM_TAG
+  - cd packages/$PACKAGE_FROM_TAG
 
 deploy:
-  - provider: script
-    script: "yarn run ci:publish-all"
+  - provider: npm
+    email: "$NPM_EMAIL"
+    api_key: "$NPM_TOKEN"
     skip_cleanup: true
     on:
-      node: "10"
       tags: true
+      node_js: "10"
 
   - provider: pages
     github-token: "$GITHUB_TOKEN"
