@@ -1,7 +1,9 @@
 {
   "name": "@megafon/megafon-ui",
   "private": true,
-  "workspaces": [ "packages/*" ],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna clean --yes",
@@ -14,5 +16,8 @@
     "hooks": {
       "pre-commit": "yarn run pre-commit"
     }
+  },
+  "devDependencies": {
+    "lerna": "^3.18.1"
   }
 }
