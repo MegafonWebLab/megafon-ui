@@ -31,8 +31,11 @@ before_deploy:
   - if [[ $TRAVIS_BRANCH = $DOCS_DEPLOY_BRANCH ]]; then
       lerna run docz:build;
     fi
-  - echo $PACKAGE_FROM_TAG
-  - cd packages/$PACKAGE_FROM_TAG
+  - if [[ $PACKAGE_FROM_TAG != "" ]]; then
+      echo $PACKAGE_FROM_TAG;
+      cd packages/$PACKAGE_FROM_TAG;
+    fi
+
 
 deploy:
   - provider: npm
