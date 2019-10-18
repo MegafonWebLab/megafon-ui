@@ -35,18 +35,6 @@ yarn
 yarn run build
 ```
 
-## Update package versions
-
-```bash
-yarn run bump-version
-```
-
-Will make next steps:
-- ask for a new version of each changed package
-- update all cross-dependencies
-
-If you don't want to update all the packages, you can choose "custom version" and type current version.
-
 ## Release process
 
 ```bash
@@ -54,7 +42,6 @@ yarn run release
 ```
 
 This script prompts for a new version of each changed package. 
-If you don't want to update all the packages, you can choose "custom version" and type current version.
 
 After confirm script does the following:
 
