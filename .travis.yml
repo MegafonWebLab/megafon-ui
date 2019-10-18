@@ -36,7 +36,6 @@ before_deploy:
       cd packages/$PACKAGE_FROM_TAG;
     fi
 
-
 deploy:
   - provider: npm
     email: "$NPM_EMAIL"
