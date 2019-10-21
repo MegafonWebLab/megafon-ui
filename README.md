@@ -1,6 +1,6 @@
 # megafon-ui
 
-React UI components library.
+Megafon React UI components library.
 
 [![codecov](https://codecov.io/gh/MegafonWebLab/megafon-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/MegafonWebLab/megafon-ui)
 [![Build Status](https://travis-ci.org/MegafonWebLab/megafon-ui.svg?branch=master)](https://travis-ci.org/MegafonWebLab/megafon-ui)
@@ -20,25 +20,25 @@ Includes:
 ## Getting Started
 
 ```bash
-npm install -g lerna
+$ npm install -g lerna
 ```
 
 ## Install all packages
 
 ```bash
-yarn
+$ yarn
 ```
 
 ## Build all packages
 
 ```bash
-yarn run build
+$ yarn run build
 ```
 
 ## Release process
 
 ```bash
-yarn run release
+$ yarn run release
 ```
 
 This script prompts for a new version of each changed package. 
