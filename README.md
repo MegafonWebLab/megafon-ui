@@ -15,18 +15,10 @@ Includes:
 
 ---
 
-## Development notes
-
 ## Getting Started
 
 ```bash
-$ npm install -g lerna
-```
-
-## Install all packages
-
-```bash
-$ yarn
+$ yarn install
 ```
 
 ## Build all packages
@@ -34,20 +26,3 @@ $ yarn
 ```bash
 $ yarn run build
 ```
-
-## Release process
-
-```bash
-$ yarn run release
-```
-
-This script prompts for a new version of each changed package. 
-
-After confirm script does the following:
-
-- updates cross-dependencies
-- makes commit with publish info
-- creates git tags for each updated package
-- pushes all of that to git
-
-TravisCI will publish packages to NPM after successful build. 

@@ -1,31 +1,48 @@
-Для внесения изменений в библиотеку нужно сделать fork главного репозитория и 
-вести разработку в нем. После внесения необходимых изменений нужно создать pull request в главный репозиторий. 
+# Architecture
 
-При разработке используется TypeScript.
+`megafon-ui` is a monorepository managed with [Lerna](https://github.com/lerna/lerna). 
 
-Каждый компонент должен включать:
+`packages` directory includes several library parts which are 
+the separated `npm` modules with independent versions.
 
-1. Файл ".tsx" с классом компонента
-2. Файл ".less" со стилями
-3. Файл ".test.tsx" с тестами. События должны тестироваться моками, визуальное отображение с помощью snapshot'ов.
-4. Файл ".mdx", который содержит документацию в формате [DOCZ](https://github.com/doczjs/docz). На текущий 
-момент такая документация доступна только для модуля `ui-core`.
+Root `package.json` defines scripts for proxying execution of commands in every package.
+For example, script `lerna run build` (or `yarn run build` in 
+root folder) runs `yarn run build` inside every directory in `packages` folder.
 
-Примеры компонентов можно найти [тут](https://github.com/MegafonWebLab/megafon-ui/tree/master/packages/ui-core/src).
+# Development 
 
-Компоненты основаны на классах. Каждый класс компонента должен 
-создавать переменную cn, которая содержит название компонента в БЭМ-формате. 
-Название компонента в стилях должно начинаться с префикса `mfui-`.
+For contributing to `megafon-ui` library you need to create your own fork of the main repository.
+After making some changes you should create pull request with appropriate description.
 
-Пример:
+We use TypeScript for development. All components are based on classes.
+
+Every component's directory should include:
+
+1. File `<Component name>.tsx` with component class.
+2. File `<Component name>.less` for styles.
+3. File `<Component name>.test.tsx` with tests. Events should be tested with mocks, 
+whereas snapshots should be used for visual representations. 
+4. File `<Component name>.mdx` for documentation in [Docz](https://github.com/doczjs/docz) format.
+Such documentation is available only for `ui-core` module for a now.
+
+Examples of components can be found [here](https://github.com/MegafonWebLab/megafon-ui/tree/master/packages/ui-core/src).
+
+Special function `cn` should be created before every component's class declaration.
+This function generates css-classes in BEM-format for component's elements.
+The name of component in css should be prefixed with `mfui-`. This name should be
+passed to the function for `cn` creation.
+
+For example:
 
 ```
 const cn = cnCreate('mfui-button');
 ```
 
-Если компонент принимает свойства или обладает состоянием, то рядом с классом компонента 
-должны быть определены интерфейсы, описывающие 
-свойства и состояние. Интерфейс свойств должен быть экспортирован.
+Interfaces `IComponentNameProps` and `IComponentNameState` should be declared before 
+component class in case component has incoming props or internal state. 
+Interface with props should be exported.
+
+For example:
 
 ```
 export interface IButtonProps {
@@ -40,6 +57,31 @@ interface IButtonState {
 }
 ```
 
-Для каждого компонента должно быть определен интерфейс `props`
+Tests and code linting checks can be executed with commands: 
 
-Перед коммитом изменений в репозиторий запустится скрипт проверки, который вызывает линтер и тесты.
+```bash
+$ yarn run lint
+```
+
+```bash
+$ yarn run test
+```
+
+# Release process
+
+To make a new release of all changed packages you need to run:
+
+```bash
+$ yarn run release
+```
+
+This script prompts for a new version of each changed package. 
+
+After confirm script does the following:
+
+- updates cross-dependencies
+- makes commit with publish info
+- creates git tags for each updated package
+- pushes all of that to git
+
+TravisCI will publish packages to NPM after successful build. 
