@@ -1,7 +1,9 @@
 # Changelog
 
 ## Unreleased
-
+### Changed
+- **Carousel**
+    - fix bottom padding in less
 ## Release 1.3.48
 ### Changed
 - **ProductSwitcher**
