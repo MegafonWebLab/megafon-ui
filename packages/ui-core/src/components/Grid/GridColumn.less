@@ -1,0 +1,45 @@
+@import '~styles/base.less';
+
+.grid-column {
+    &_grow {
+        flex-grow: 1;
+    }
+    &_align_right {
+        margin-left: auto;
+    }
+    &_align_left {
+        margin-right: auto;
+    }
+    &_align_center {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &_flex {
+        display: flex;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    .generateColumns(all);
+
+    @media @desktopMU {
+        .generateColumns(wide);
+    }
+    @media @desktopS {
+        .generateColumns(desktop);
+    }
+    @media @mobileB {
+        .generateColumns(tablet);
+    }
+    @media @mobileSM {
+        .generateColumns(mobile);
+    }
+}
+
+.generateColumns(@resolution, @columnCount: 12, @i: 1) when (@i <= @columnCount) {
+    &_@{resolution}_@{i} {
+        width: (100% / @columnCount) * @i;
+    }
+    .generateColumns(@resolution, @columnCount, (@i + 1));
+}

@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Grid**
+    - add new component
+- **GridColumn**
+    - add new component
 
 ## Release 1.0.2
 - **Carousel**
