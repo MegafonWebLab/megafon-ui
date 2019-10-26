@@ -4,6 +4,7 @@
   "command": {
     "ignoreChanges": [
       "*.md",
+      "*.mdx",
       "*.txt",
       "*.test.*"
     ]
