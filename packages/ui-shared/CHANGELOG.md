@@ -2,8 +2,10 @@
 
 ## Unreleased
 
+## Release 1.0.4
 - **ProductSwitcher**
     - deselect already selected value
+    - updated @megafon/ui-core package
 
 ## Release 1.0.3
 - **package.json**

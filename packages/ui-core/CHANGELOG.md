@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+## Release 1.0.4
 - **Carousel**
     - fix 'pointer-events' for disabled arrow
 
