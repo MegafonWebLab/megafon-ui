@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **GridColumn**
+    - fixed empty array for prop 'wide'
 
 ## Release 1.0.4
 - **Carousel**
