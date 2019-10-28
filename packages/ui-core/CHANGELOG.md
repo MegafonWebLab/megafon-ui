@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **Carousel**
+    - fix 'pointer-events' for disabled arrow
+
 ## Release 1.0.3
 - **Grid**
     - add new component

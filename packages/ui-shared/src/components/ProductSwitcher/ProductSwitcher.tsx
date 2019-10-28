@@ -131,9 +131,11 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         const { currentValue } = this.state;
         e.preventDefault();
 
-        if (!onChange || value === currentValue || onChange(e, value, index) === false) {
+        if (value === currentValue) {
             return;
         }
+
+        onChange(e, value, index);
 
         this.setState({ currentValue: value, currentIndex: index });
         this.movePointer(value);
@@ -310,6 +312,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             width = 0,
         } = this.getRangeWrapperCoords(this.rootNode);
         const { onChange } = this.props;
+        const { currentValue } = this.state;
         const pointerPosition = Math.round(eventXCoord - startPoint);
         const pointerHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
         const [chosenPoint] = this.getRowItemsInfo().filter((el: INearPoint) => {
@@ -338,7 +341,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
                 this.colorRowNode.style.width = `${pointerPosition}px`;
         }
 
-        if (!chosenPoint) {
+        if (!chosenPoint || chosenPoint.value === currentValue) {
             return;
         }
 
@@ -356,9 +359,20 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
 
         const { onChange } = this.props;
+        const { currentValue } = this.state;
         const { left: startPoint = 0 } = this.getRangeWrapperCoords(this.rootNode);
         const outRowPoint = eventXCoord - startPoint;
         const [nearPoint] = this.getNearPoint(outRowPoint);
+
+        this.movePointer(nearPoint.value);
+
+        if (nearPoint.value === currentValue) {
+            this.setState(prevState => ({
+                isPointerPressed: !prevState.isPointerPressed,
+            }));
+
+            return;
+        }
 
         onChange(e, nearPoint.value, nearPoint.item);
 
@@ -367,8 +381,6 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             currentIndex: nearPoint.item,
             isPointerPressed: !prevState.isPointerPressed,
         }));
-
-        this.movePointer(nearPoint.value);
     }
 
     getEntryPointsRange = (centralСoordinate: number) => {
