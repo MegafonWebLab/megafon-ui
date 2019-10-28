@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.3
 - **Grid**
     - add new component
     - add typescript
