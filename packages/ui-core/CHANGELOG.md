@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.5
 - **GridColumn**
     - fixed empty array for prop 'wide'
 
