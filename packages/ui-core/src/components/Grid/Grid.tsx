@@ -2,20 +2,34 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Grid.less';
 import cnCreate from 'utils/cn';
+import { IGridColumn } from './GridColumn';
+
+interface IProps {
+    /** Horizontal alignment */
+    hAlign?: 'right' | 'center' | 'between' | 'around';
+    /** Vertical alignment */
+    vAlign?: 'top' | 'bottom' | 'center' | 'baseline';
+    /** Gutters left */
+    guttersLeft?: 'large' | 'medium';
+    /** Gutters bottom */
+    guttersBottom?: 'large' | 'medium';
+    /** Multi row */
+    multiRow?: boolean;
+    /** Custom class name */
+    className?: string;
+    children: Array<React.ReactElement<IGridColumn>>;
+}
 
 const cn = cnCreate('mfui-grid');
-class Grid extends React.Component {
+class Grid extends React.Component<IProps, {}> {
     static propTypes = {
-        as: PropTypes.oneOf(['ul', 'ol']),
         hAlign: PropTypes.oneOf(['left', 'center', 'between', 'around']),
         vAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'baseline']),
         guttersLeft: PropTypes.oneOf(['large', 'medium']),
         guttersBottom: PropTypes.oneOf(['large', 'medium']),
+        multiRow: PropTypes.bool,
         className: PropTypes.string,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-        ]).isRequired,
+        children: PropTypes.node,
     };
 
     static defaultProps = {
@@ -23,10 +37,10 @@ class Grid extends React.Component {
     };
 
     render() {
-        const { guttersLeft, guttersBottom, multiRow, hAlign, vAlign } = this.props;
+        const { children, guttersLeft, guttersBottom, multiRow, hAlign, vAlign } = this.props;
 
         return (
-            <div className={cn()}>
+            <div className={cn('')}>
                 <div
                     className={cn('container', {
                         'multi-row': multiRow,
@@ -35,7 +49,7 @@ class Grid extends React.Component {
                         'gutters-left': guttersLeft,
                         'gutters-bottom': guttersBottom,
                     })}>
-                        {React.Children.map(children, child =>
+                        {React.Children.map(children, (child: React.ReactElement<IGridColumn>) =>
                             React.cloneElement(child, {
                                 className: cn(
                                     'column',

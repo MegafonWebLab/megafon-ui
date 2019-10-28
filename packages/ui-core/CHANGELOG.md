@@ -3,8 +3,10 @@
 ## Unreleased
 - **Grid**
     - add new component
+    - add typescript
 - **GridColumn**
     - add new component
+    - add typescript
 
 ## Release 1.0.2
 - **Carousel**
