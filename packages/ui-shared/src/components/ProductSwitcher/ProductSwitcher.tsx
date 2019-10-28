@@ -131,7 +131,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         const { currentValue } = this.state;
         e.preventDefault();
 
-        if (!onChange || value === currentValue) {
+        if (value === currentValue) {
             return;
         }
 
