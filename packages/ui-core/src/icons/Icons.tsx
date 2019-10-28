@@ -34,7 +34,7 @@ const sizeDictionary = {
     32: 'L',
 };
 
-const importIcon = 'import Icon from \'@megafon/megafon-ui/icons/';
+const importIcon = 'import Icon from \'@megafon/ui-core/dist/icons/';
 
 class Icons extends React.Component<{}, IIconsState> {
     copyToClipBoard: (str: string, copyIndex: copyBoard) => void;
