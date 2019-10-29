@@ -29,10 +29,10 @@ const cn = cnCreate('mfui-grid-column');
 class GridColumn extends React.Component<IGridColumn, {}> {
     static propTypes = {
         wide: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        desktop: PropTypes.oneOfType(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        tablet: PropTypes.oneOfType(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        mobile: PropTypes.oneOfType(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        all: PropTypes.oneOfType(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+        desktop: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+        tablet: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+        mobile: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+        all: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
         align: PropTypes.oneOf(['right', 'left', 'center']),
         grow: PropTypes.bool,
         flex: PropTypes.bool,
@@ -45,7 +45,7 @@ class GridColumn extends React.Component<IGridColumn, {}> {
     };
 
     static defaultProps = {
-        all: 12,
+        all: '12',
         flex: false,
         grow: false,
     };

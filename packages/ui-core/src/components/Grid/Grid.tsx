@@ -15,20 +15,17 @@ interface IProps {
     guttersBottom?: 'large' | 'medium';
     /** Multi row */
     multiRow?: boolean;
-    /** Custom class name */
-    className?: string;
     children: Array<React.ReactElement<IGridColumn>>;
 }
 
 const cn = cnCreate('mfui-grid');
 class Grid extends React.Component<IProps, {}> {
     static propTypes = {
-        hAlign: PropTypes.oneOf(['left', 'center', 'between', 'around']),
+        hAlign: PropTypes.oneOf(['right', 'center', 'between', 'around']),
         vAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'baseline']),
         guttersLeft: PropTypes.oneOf(['large', 'medium']),
         guttersBottom: PropTypes.oneOf(['large', 'medium']),
         multiRow: PropTypes.bool,
-        className: PropTypes.string,
         children: PropTypes.node,
     };
 

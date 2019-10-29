@@ -3,6 +3,11 @@
 ## Unreleased
 - **Grid**
     - add examples in .mdx
+    - fixed value for prop 'hAlign'
+    - added tests
+- **GridColumn**
+    - fixed types for props
+    - added tests
 
 ## Release 1.0.5
 - **GridColumn**
