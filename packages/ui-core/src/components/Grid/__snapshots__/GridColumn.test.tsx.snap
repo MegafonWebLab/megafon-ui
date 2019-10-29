@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GridColumn /> it renders GridColumn 1`] = `
+<div
+  className="mfui-grid-column mfui-grid-column_flex mfui-grid-column_grow mfui-grid-column_align_right mfui-grid-column_wide_8 mfui-grid-column_desktop_4 mfui-grid-column_tablet_3 mfui-grid-column_mobile_1"
+>
+  item
+</div>
+`;

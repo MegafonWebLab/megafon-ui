@@ -3,6 +3,9 @@
 ## Unreleased
 - **Grid**
     - add examples in .mdx
+    - fixed value for prop 'hAlign'
+- **GridColumn**
+    - fixed types for props
 
 ## Release 1.0.5
 - **GridColumn**
