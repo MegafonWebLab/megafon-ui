@@ -4,15 +4,15 @@ import './GridColumn.less';
 import cnCreate from 'utils/cn';
 
 export interface IGridColumn {
-    /** Number of columns on wide screens */
+    /** Size of columns on wide screens */
     wide?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Number of columns on desktop */
+    /** Size of columns on desktop */
     desktop?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Number of columns on tablet */
+    /** Size of columns on tablet */
     tablet?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Number of columns on mobile */
+    /** Size of columns on mobile */
     mobile?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Number of columns on all screens */
+    /** Size of columns on all screens */
     all?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
     /** Align columns */
     align?: 'right' | 'left' | 'center';

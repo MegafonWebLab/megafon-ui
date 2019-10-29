@@ -7,6 +7,13 @@ import { Playground, PropsTable } from 'docz';
 import Grid from './Grid';
 import GridColumn from './GridColumn';
 
+export const item1Color = {
+    backgroundColor: '#00B956',
+    color: '#fff',
+    textAlign: 'center',
+    padding: '5px 10px'
+};
+
 # Grid
 
 ## Properties
@@ -23,9 +30,45 @@ import GridColumn from './GridColumn';
 
 <Playground>
     <Grid>
-        <GridColumn>Item1</GridColumn>
-        <GridColumn>Item2</GridColumn>
-        <GridColumn>Item3</GridColumn>
-        <GridColumn>Item4</GridColumn>
+        <GridColumn><div style={item1Color}>Item1</div></GridColumn>
+        <GridColumn><div style={item1Color}>Item2</div></GridColumn>
+        <GridColumn><div style={item1Color}>Item3</div></GridColumn>
+        <GridColumn><div style={item1Color}>Item4</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Medium gutters and multirow with different item's width usage
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="5"><div style={item1Color}>Item1</div></GridColumn>
+        <GridColumn all="2"><div style={item1Color}>Item2</div></GridColumn>
+        <GridColumn all="1"><div style={item1Color}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={item1Color}>Item4</div></GridColumn>
+        <GridColumn all="12"><div style={item1Color}>Item7</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Large gutters and aligment usage
+
+<Playground>
+    <Grid guttersLeft="large" guttersBottom="large" hAlign="between">
+        <GridColumn all="6"><div style={item1Color}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={item1Color}>Item2</div></GridColumn>
+        <GridColumn all="4"><div style={item1Color}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={item1Color}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={item1Color}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Without multirow usage
+
+<Playground>
+    <Grid multiRow={false}>
+        <GridColumn all="6"><div style={item1Color}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={item1Color}>Item2</div></GridColumn>
+        <GridColumn all="4"><div style={item1Color}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={item1Color}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={item1Color}>Item5</div></GridColumn>
     </Grid>
 </Playground>
