@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.6
 - **Grid**
     - add examples in .mdx
     - fixed value for prop 'hAlign'

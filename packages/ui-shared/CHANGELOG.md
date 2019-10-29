@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.6
 - **package.json**
     - updated @megafon/ui-core package
 
