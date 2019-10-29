@@ -28,11 +28,6 @@
         box-shadow: none;
         overflow: auto;
         margin: 0;
-
-        &[type='password'] {
-            font: small-caption;
-            font-size: 19px;
-        }
     }
     input::-webkit-input-placeholder {
         color: lighten(@soggyAsphalt, 50%);
@@ -193,5 +188,16 @@
         @media @desktop {
             padding-right: 65px;
         }
+    }
+}
+
+//mod password
+@{b} {
+    &_password &__icon-box {
+        z-index: 3;
+    }
+    &__field {
+        font: small-caption;
+        font-size: 19px;
     }
 }

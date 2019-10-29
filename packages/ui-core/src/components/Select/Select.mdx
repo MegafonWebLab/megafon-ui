@@ -146,3 +146,18 @@ export class SelectWrapper extends React.Component {
     />
 </Playground>
 
+## Disabled usage
+
+<Playground wrapper={Wrapper}>
+    <SelectWrapper>
+        {({ onSelectItem, selectedTitle }) =>
+                <Select
+                    disabled
+                    selectedTitle={selectedTitle}
+                    onSelectItem={onSelectItem}
+                    placeholder="You have no choice"
+                    items={items}
+                />
+        }
+    </SelectWrapper>
+</Playground>
