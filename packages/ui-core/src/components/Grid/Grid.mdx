@@ -40,7 +40,7 @@ export const item1Color = {
 ## Medium gutters and multirow with different item's width usage
 
 <Playground>
-    <Grid guttersLeft="medium" guttersBottom="medium" multirow>
+    <Grid guttersLeft="medium" guttersBottom="medium">
         <GridColumn all="5"><div style={item1Color}>Item1</div></GridColumn>
         <GridColumn all="2"><div style={item1Color}>Item2</div></GridColumn>
         <GridColumn all="1"><div style={item1Color}>Item3</div></GridColumn>
@@ -52,7 +52,7 @@ export const item1Color = {
 ## Large gutters and aligment usage
 
 <Playground>
-    <Grid guttersLeft="large" guttersBottom="large" hAlign="between" multirow>
+    <Grid guttersLeft="large" guttersBottom="large" hAlign="between">
         <GridColumn all="6"><div style={item1Color}>Item1</div></GridColumn>
         <GridColumn all="5"><div style={item1Color}>Item2</div></GridColumn>
         <GridColumn all="4"><div style={item1Color}>Item3</div></GridColumn>
@@ -61,4 +61,14 @@ export const item1Color = {
     </Grid>
 </Playground>
 
+## Without multirow usage
 
+<Playground>
+    <Grid multiRow={false}>
+        <GridColumn all="6"><div style={item1Color}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={item1Color}>Item2</div></GridColumn>
+        <GridColumn all="4"><div style={item1Color}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={item1Color}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={item1Color}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
