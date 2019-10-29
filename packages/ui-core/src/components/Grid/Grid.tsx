@@ -15,8 +15,6 @@ interface IProps {
     guttersBottom?: 'large' | 'medium';
     /** Multi row */
     multiRow?: boolean;
-    /** Custom class name */
-    className?: string;
     children: Array<React.ReactElement<IGridColumn>>;
 }
 
@@ -28,7 +26,6 @@ class Grid extends React.Component<IProps, {}> {
         guttersLeft: PropTypes.oneOf(['large', 'medium']),
         guttersBottom: PropTypes.oneOf(['large', 'medium']),
         multiRow: PropTypes.bool,
-        className: PropTypes.string,
         children: PropTypes.node,
     };
 

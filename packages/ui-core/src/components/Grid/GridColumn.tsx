@@ -45,7 +45,7 @@ class GridColumn extends React.Component<IGridColumn, {}> {
     };
 
     static defaultProps = {
-        all: 12,
+        all: '12',
         flex: false,
         grow: false,
     };

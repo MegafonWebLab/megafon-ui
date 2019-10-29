@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Grid /> it renders Grid 1`] = `
+exports[`<Grid /> it renders Grid with props 1`] = `
 <div
   className="mfui-grid"
 >
   <div
-    className="mfui-grid__container mfui-grid__container_multi-row mfui-grid__container_h-align_right mfui-grid__container_v-align_top mfui-grid__container_gutters-left_large mfui-grid__container_gutters-bottom_medium"
+    className="mfui-grid__container mfui-grid__container_h-align_right mfui-grid__container_v-align_top mfui-grid__container_gutters-left_large mfui-grid__container_gutters-bottom_medium"
   >
     <GridColumn
-      all={12}
+      all="12"
       className="mfui-grid__column mfui-grid__column_gutter-left_large mfui-grid__column_gutter-bottom_medium"
       flex={false}
       grow={false}
@@ -17,8 +17,37 @@ exports[`<Grid /> it renders Grid 1`] = `
       child1
     </GridColumn>
     <GridColumn
-      all={12}
+      all="12"
       className="mfui-grid__column mfui-grid__column_gutter-left_large mfui-grid__column_gutter-bottom_medium"
+      flex={false}
+      grow={false}
+      key=".1"
+    >
+      child2
+    </GridColumn>
+  </div>
+</div>
+`;
+
+exports[`<Grid /> it renders Grid without props 1`] = `
+<div
+  className="mfui-grid"
+>
+  <div
+    className="mfui-grid__container mfui-grid__container_multi-row"
+  >
+    <GridColumn
+      all="12"
+      className="mfui-grid__column"
+      flex={false}
+      grow={false}
+      key=".0"
+    >
+      child1
+    </GridColumn>
+    <GridColumn
+      all="12"
+      className="mfui-grid__column"
       flex={false}
       grow={false}
       key=".1"
