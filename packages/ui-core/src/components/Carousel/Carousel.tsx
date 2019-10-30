@@ -71,12 +71,12 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     clientX: number;
     noPassiveOption: any = { passive: false };
     slider: any;
-    throttledHandleCarouselParams: () => void;
+    throttledResizeEvents: () => void;
 
     constructor(props: ICarouselProps) {
         super(props);
 
-        this.throttledHandleCarouselParams = throttle(this.handleCarouselParams, 20);
+        this.throttledResizeEvents = throttle(this.resizeEvents, 20);
         this.state = {
             isPrevActive: false,
             isNextActive: true,
@@ -98,7 +98,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         this.handleCarouselParams();
         window.addEventListener('touchstart', this.touchStart);
         window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
-        window.addEventListener('resize', this.throttledHandleCarouselParams);
+        window.addEventListener('resize', this.throttledResizeEvents);
 
         this.setState({
             isPrevActive: !!initialSlide,
@@ -109,7 +109,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     componentWillUnmount() {
         window.removeEventListener('touchstart', this.touchStart);
         window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
-        window.removeEventListener('resize', this.throttledHandleCarouselParams);
+        window.removeEventListener('resize', this.throttledResizeEvents);
     }
 
     getSlider = (slider: any): void => {
@@ -195,6 +195,18 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         return responsiveData;
     }
 
+    checkIfSlidePositionWasLost = (): void => {
+        const slider = this.slider || { innerSlider: { state: {} } };
+        const { innerSlider: { state: { currentSlide, slideCount } }, slickGoTo } = slider;
+        const { showSlides } = this.state;
+
+        const lastVisibleSlideIndex: number = currentSlide + (showSlides - 1);
+
+        if (lastVisibleSlideIndex >= slideCount) {
+            slickGoTo(slideCount - showSlides);
+        }
+    }
+
     handleCarouselParams = () => {
         const {
             children,
@@ -220,6 +232,11 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 this.updateArrowsState(currentSlide);
             }
         );
+    }
+
+    resizeEvents = (): void => {
+        this.handleCarouselParams();
+        this.checkIfSlidePositionWasLost();
     }
 
     renderArrows() {
