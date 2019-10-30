@@ -208,7 +208,7 @@ class TextField extends React.Component<ITextFieldProps, {}> {
         } = this.props;
         const isAnyIcon = !isHideIcon && (!!customIcon || error || valid);
         const isStatusIcon = !isHideIcon && !customIcon;
-        const isPasswordType = type === 'password' ? true : false;
+        const isPasswordType = type === 'password';
 
         return (
             <div
