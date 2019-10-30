@@ -7,7 +7,7 @@ import { Playground, PropsTable } from 'docz';
 import Grid from './Grid';
 import GridColumn from './GridColumn';
 
-export const item1Color = {
+export const itemView = {
     backgroundColor: '#00B956',
     color: '#fff',
     textAlign: 'center',
@@ -30,22 +30,22 @@ export const item1Color = {
 
 <Playground>
     <Grid>
-        <GridColumn><div style={item1Color}>Item1</div></GridColumn>
-        <GridColumn><div style={item1Color}>Item2</div></GridColumn>
-        <GridColumn><div style={item1Color}>Item3</div></GridColumn>
-        <GridColumn><div style={item1Color}>Item4</div></GridColumn>
+        <GridColumn><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn><div style={itemView}>Item4</div></GridColumn>
     </Grid>
 </Playground>
 
-## Medium gutters and multirow with different item's width usage
+## Medium gutters with different item's width on all screens usage
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="5"><div style={item1Color}>Item1</div></GridColumn>
-        <GridColumn all="2"><div style={item1Color}>Item2</div></GridColumn>
-        <GridColumn all="1"><div style={item1Color}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={item1Color}>Item4</div></GridColumn>
-        <GridColumn all="12"><div style={item1Color}>Item7</div></GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="1"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="12"><div style={itemView}>Item7</div></GridColumn>
     </Grid>
 </Playground>
 
@@ -53,22 +53,34 @@ export const item1Color = {
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="between">
-        <GridColumn all="6"><div style={item1Color}>Item1</div></GridColumn>
-        <GridColumn all="5"><div style={item1Color}>Item2</div></GridColumn>
-        <GridColumn all="4"><div style={item1Color}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={item1Color}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={item1Color}>Item5</div></GridColumn>
+        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
     </Grid>
 </Playground>
 
-## Without multirow usage
+## Without multiRow usage
 
 <Playground>
-    <Grid multiRow={false}>
-        <GridColumn all="6"><div style={item1Color}>Item1</div></GridColumn>
-        <GridColumn all="5"><div style={item1Color}>Item2</div></GridColumn>
-        <GridColumn all="4"><div style={item1Color}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={item1Color}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={item1Color}>Item5</div></GridColumn>
+    <Grid guttersLeft="medium" multiRow={false}>
+        <GridColumn all="12"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Different column's width on different screens usage
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="6" tablet="4" mobile="2"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5" wide="7" tablet="9" mobile="11"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="4" tablet="3" desktop="4"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3" wide="12"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
     </Grid>
 </Playground>

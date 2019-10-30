@@ -5,15 +5,15 @@ import cnCreate from 'utils/cn';
 import { IGridColumn } from './GridColumn';
 
 interface IProps {
-    /** Horizontal alignment */
+    /** Alignment of all columns by horizontal axis */
     hAlign?: 'right' | 'center' | 'between' | 'around';
-    /** Vertical alignment */
+    /** Alignment of all columns by vertical axis */
     vAlign?: 'top' | 'bottom' | 'center' | 'baseline';
-    /** Gutters left */
+    /** Margin area on the left side of column */
     guttersLeft?: 'large' | 'medium';
-    /** Gutters bottom */
+    /** Margin area on the bottom side of column */
     guttersBottom?: 'large' | 'medium';
-    /** Multi row */
+    /** Transfering of columns onto multiple lines */
     multiRow?: boolean;
     children: Array<React.ReactElement<IGridColumn>>;
 }

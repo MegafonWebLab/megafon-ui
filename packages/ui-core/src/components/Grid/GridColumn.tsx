@@ -6,15 +6,15 @@ import cnCreate from 'utils/cn';
 export interface IGridColumn {
     /** Size of columns on wide screens */
     wide?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Size of columns on desktop */
+    /** Size of columns on desktop screens */
     desktop?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Size of columns on tablet */
+    /** Size of columns on tablet screens */
     tablet?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Size of columns on mobile */
+    /** Size of columns on mobile screens */
     mobile?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
     /** Size of columns on all screens */
     all?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
-    /** Align columns */
+    /** Custom alignment of column */
     align?: 'right' | 'left' | 'center';
     /** Column flex grow */
     grow?: boolean;

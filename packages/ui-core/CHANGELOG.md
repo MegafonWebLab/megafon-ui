@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Grid**
+    - add examples and descriprion in .mdx
+- **GridColumn**
+    - change description for props
 
 ## Release 1.0.6
 - **Grid**
