@@ -121,10 +121,6 @@ class TextField extends React.Component<ITextFieldProps, {}> {
         return this.inputNode.focus();
     }
 
-    handleIconMouseEnter = () => this.inputNode.type = 'text';
-
-    handleIconMouseLeave = () => this.inputNode.type = 'password';
-
     renderValidIcon() {
         return (
             <div
@@ -161,8 +157,6 @@ class TextField extends React.Component<ITextFieldProps, {}> {
             >
                 <Hide
                     className={cn('icon')}
-                    onMouseEnter={this.handleIconMouseEnter}
-                    onMouseLeave={this.handleIconMouseLeave}
                 />
             </div>
         );
