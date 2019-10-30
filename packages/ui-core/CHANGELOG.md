@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - fixed bug with lost position
 
 ## Release 1.0.7
 - **Grid**
