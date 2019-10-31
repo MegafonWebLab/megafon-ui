@@ -23,6 +23,7 @@ interface IBubbleHintProps {
     /** Trigger */
     trigger: JSX.Element[] | Element[] | JSX.Element | string | Element;
     children: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    isNeedFilterHintBlockClick?: boolean;
     /** MouseEnter handler */
     onMouseEnter?(e: React.SyntheticEvent<EventTarget>): void;
     /** MouseLeave handler */
@@ -57,6 +58,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         onMouseEnter: PropTypes.func,
         onMouseLeave: PropTypes.func,
         onClick: PropTypes.func,
+        isNeedFilterHintBlockClick: PropTypes.bool,
     };
 
     static defaultProps = {
@@ -137,7 +139,19 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
     }
 
     render() {
-        const popupClasses = { show: this.state.show, width: this.props.popupWidth };
+        const {
+            trigger,
+            children,
+            placement,
+            className,
+            popupWidth,
+            popupAlign,
+            marginLeft,
+            popupPadding,
+            isNeedFilterHintBlockClick,
+        } = this.props;
+        const { show } = this.state;
+        const popupClasses = { show, width: popupWidth };
         const popupOptions = {
             flip: {
                 behavior: ['right', 'left', 'bottom', 'top'],
@@ -145,27 +159,31 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         };
 
         return (
-            <Manager className={cn('', { 'margin-left': this.props.marginLeft }, this.props.className)}>
+            <Manager className={cn('', { 'margin-left': marginLeft }, className)}>
                 <div className={cn('container')}
                     {...this.getHandlers()}
                     ref={this.getContainer}>
                     <Target className={cn('target')}>
                         <div className={cn('trigger')}
                             ref={this.getTrigger}>
-                            {this.props.trigger}
+                            {trigger}
                         </div>
                     </Target>
                     <Popper eventsEnabled={false}
                         className={cn('popup', popupClasses)}
                         modifiers={popupOptions as IPopperProps}
-                        placement={this.props.placement}>
+                        placement={placement}>
                         <div
                             className={cn('popup-inner', {
-                                padding: this.props.popupPadding,
-                                align: this.props.popupAlign,
-                            })}>
+                                padding: popupPadding,
+                                align: popupAlign,
+                            })}
+                            {...isNeedFilterHintBlockClick &&
+                                { 'data-filter-click': 'true' }
+                            }
+                        >
                             <div className={cn('content')}>
-                                {this.props.children}
+                                {children}
                             </div>
                             <Arrow className={cn('arrow')} />
                         </div>

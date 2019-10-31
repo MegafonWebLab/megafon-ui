@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **BubbleHint**
+    - add props 'isNeedFilterHintBlockClick' and attr 'data-filter-click' to intercept events on this block in ruu
 
 ## Release 1.0.7
 - **Grid**
