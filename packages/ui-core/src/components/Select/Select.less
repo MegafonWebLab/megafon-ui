@@ -208,6 +208,19 @@
     }
 }
 
+//mod disabled
+@{b} {
+    &_disabled &__control {
+        background-color: @spbSky1;
+        border-color: @spbSky1;
+        pointer-events: none;
+        user-select: none;
+    }
+    &_disabled &__title-inner:after {
+        display: none;
+    }
+}
+
 //mod search
 @{b} {
     &_search &__control {

@@ -6,6 +6,7 @@ import cnCreate from 'utils/cn';
 import * as equal from 'deep-equal';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
 import ErrorIcon from 'icons/System/24/Cancel_24.svg';
+import Hide from 'icons/Basic/24/Hide_24.svg';
 
 interface ITextFieldProps {
     /** Field color scheme */
@@ -149,6 +150,18 @@ class TextField extends React.Component<ITextFieldProps, {}> {
         );
     }
 
+    renderPasswordFieldIcon() {
+        return (
+            <div
+                className={cn('icon-box')}
+            >
+                <Hide
+                    className={cn('icon')}
+                />
+            </div>
+        );
+    }
+
     addInputNode = node => this.inputNode = node;
 
     renderInputElem() {
@@ -191,10 +204,11 @@ class TextField extends React.Component<ITextFieldProps, {}> {
         const {
             isHideIcon, customIcon, error, color,
             valid, disabled, size, className,
-            commentText, successText, noticeText,
+            commentText, successText, noticeText, type,
         } = this.props;
         const isAnyIcon = !isHideIcon && (!!customIcon || error || valid);
         const isStatusIcon = !isHideIcon && !customIcon;
+        const isPasswordType = type === 'password';
 
         return (
             <div
@@ -202,6 +216,7 @@ class TextField extends React.Component<ITextFieldProps, {}> {
                     valid: valid,
                     error: error,
                     icon: isAnyIcon,
+                    password: isPasswordType,
                     disabled,
                     color,
                     size,
@@ -211,6 +226,7 @@ class TextField extends React.Component<ITextFieldProps, {}> {
                     {customIcon && this.renderCustomIcon()}
                     {isStatusIcon && valid && this.renderValidIcon()}
                     {isStatusIcon && error && this.renderErrorIcon()}
+                    {isPasswordType && this.renderPasswordFieldIcon()}
                 </div>
                 {(error || valid) && noticeText &&
                     <div className={cn('text', { error: true })} dangerouslySetInnerHTML={{ __html: noticeText }} />}

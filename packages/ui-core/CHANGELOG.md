@@ -5,6 +5,12 @@
     - add examples and descriprion in .mdx
 - **GridColumn**
     - change description for props
+- **Select**
+    - add disabled mod
+- **TextField**
+    - add styles and icon for input type="password"
+- **BubbleHint**
+    - changed styles in accordance with the requirements of the guide
 
 ## Release 1.0.6
 - **Grid**

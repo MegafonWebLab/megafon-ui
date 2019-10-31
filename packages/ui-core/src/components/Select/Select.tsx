@@ -22,6 +22,8 @@ interface ISelectProps {
     valid?: boolean;
     /** Validation error */
     error?: boolean;
+    /** Disabled field */
+    disabled?: boolean;
     /** Size */
     size?: 'large';
     /** Color */
@@ -104,6 +106,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         arrow: PropTypes.bool,
         valid: PropTypes.bool,
         error: PropTypes.bool,
+        disabled: PropTypes.bool,
         size: PropTypes.oneOf(['large']),
         color: PropTypes.oneOf(['light']),
         resultSize: PropTypes.oneOf(['small', 'medium']),
@@ -406,7 +409,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     render() {
         const {
-            size, color, error, valid,
+            size, color, error, disabled, valid,
             onChangeSearch, canOpen, className,
             name, icon, arrow, classNameControl,
             fontSize, fontColor, resultSize,
@@ -422,6 +425,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     color: color,
                     valid: valid,
                     error: error,
+                    disabled: disabled,
                     focus: focus,
                     search: !!onChangeSearch,
                     'font-size': fontSize,
