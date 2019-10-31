@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.7
 - **Grid**
     - add examples and descriprion in .mdx
 - **GridColumn**
