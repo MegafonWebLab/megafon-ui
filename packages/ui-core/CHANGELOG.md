@@ -1,6 +1,37 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **BubbleHint**
+    - synchronized colors with guidebook
+- **Button**
+    - synchronized colors with guidebook
+- **Carousel**
+    - synchronized colors with guidebook
+- **CarouselArrow**
+    - synchronized colors with guidebook
+- **DropdownSocialList**
+    - synchronized colors with guidebook
+- **Header**
+    - synchronized colors with guidebook
+- **List**
+    - synchronized colors with guidebook
+- **Paragraph**
+    - synchronized colors with guidebook
+- **Select**
+    - synchronized colors with guidebook
+- **TextField**
+    - synchronized colors with guidebook
+- **TextLink**
+    - synchronized colors with guidebook
+- **Textarea**
+    - synchronized colors with guidebook
+- **ProductCard**
+    - synchronized colors with guidebook
+- **ProductSwitcher**
+    - synchronized colors with guidebook
+- **ProductTile**
+    - synchronized colors with guidebook
 
 ## Release 1.0.10
 - **ContentArea**
