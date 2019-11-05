@@ -27,10 +27,10 @@
 
     &_focus&_no-touch &__control,
     &_no-touch &__control:hover {
-        border-color: @soggyAsphalt;
+        border-color: @freshAsphalt;
     }
     &_open &__control {
-        border-color: @soggyAsphalt;
+        border-color: @freshAsphalt;
     }
     &__title {
         display: flex;
@@ -58,7 +58,7 @@
         }
     }
     &__title_placeholder {
-        color: lighten(@soggyAsphalt, 50%);
+        color: lighten(@freshAsphalt, 50%);
     }
 
     &__search-field {
@@ -83,16 +83,16 @@
         overflow: auto;
     }
     input::-webkit-input-placeholder {
-        color: lighten(@soggyAsphalt, 50%);
+        color: lighten(@freshAsphalt, 50%);
     }
     input::-moz-placeholder {
-        color: lighten(@soggyAsphalt, 50%);
+        color: lighten(@freshAsphalt, 50%);
     }
     input:-moz-placeholder {
-        color: lighten(@soggyAsphalt, 50%);
+        color: lighten(@freshAsphalt, 50%);
     }
     input:-ms-input-placeholder {
-        color: lighten(@soggyAsphalt, 50%);
+        color: lighten(@freshAsphalt, 50%);
     }
 
     &__list {
@@ -115,7 +115,7 @@
         border-color: @black80;
     }
     &__arrow {
-        color: @soggyAsphalt;
+        color: @freshAsphalt;
         position: absolute;
         z-index: 0;
         top: 50%;
@@ -158,7 +158,7 @@
     &_color_light&_open {
         @{b} {
             &__control {
-                border-color: @soggyAsphalt;
+                border-color: @freshAsphalt;
             }
         }
     }
@@ -251,13 +251,13 @@
 @{b} {
     &_font-color_black {
         @{b}__search-field {
-            color: @soggyAsphalt;
+            color: @freshAsphalt;
         }
     }
 
     &_font-color_blue {
         @{b}__search-field {
-            color: @blue;
+            color: @link;
         }
     }
 }
