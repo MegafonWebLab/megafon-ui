@@ -196,8 +196,10 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     checkIfSlidePositionWasLost = (): void => {
-        const slider = this.slider || { innerSlider: { state: {} } };
-        const { innerSlider: { state: { currentSlide, slideCount } }, slickGoTo } = slider;
+        if (!this.slider) {
+            return;
+        }
+        const { innerSlider: { state: { currentSlide, slideCount } }, slickGoTo } = this.slider;
         const { showSlides } = this.state;
 
         const lastVisibleSlideIndex: number = currentSlide + (showSlides - 1);
