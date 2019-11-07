@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **ContentArea**
+    - add new component
 
 ## Release 1.0.7
 - **Grid**

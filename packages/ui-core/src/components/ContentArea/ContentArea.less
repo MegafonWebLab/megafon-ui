@@ -1,0 +1,46 @@
+@import '~styles/base';
+
+.mfui-content-area {
+    // mod: color
+    &_color_white {
+        background-color: @white;
+    }
+    &_color_transparent {
+        background-color: transparent;
+    }
+
+    &__inner {
+        margin: 0 auto;
+        max-width: 1440px;
+    }
+
+    // mod: padding
+    &__inner_padding_none {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &__inner_padding_lg {
+        padding-left: 80px;
+        padding-right: 80px;
+        @media @mobileSM {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        @media @mobileB {
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        @media @desktopS {
+            padding-left: 64px;
+            padding-right: 64px;
+        }
+    }
+
+    // mod: color
+    &__inner_color_white {
+        background-color: @white;
+    }
+    &__inner_color_transparent {
+        background-color: transparent;
+    }
+}
