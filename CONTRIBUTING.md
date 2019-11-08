@@ -67,6 +67,16 @@ $ yarn run lint
 $ yarn run test
 ```
 
+Tests and code linting also run via git hooks before committing of any changes.
+`ui-shared` depends on `ui-core` and while `ui-core` hasn't been builded, you won't be able
+to run tests (and commit changes) in `ui-shared` package.
+
+To solve it, run
+```bash
+$ yarn run build
+```
+in the root of repository.
+
 # Release process
 
 Before starting release process you need to build project:
