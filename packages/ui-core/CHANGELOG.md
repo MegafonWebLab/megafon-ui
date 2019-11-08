@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.8
 - **Carousel**
     - fixed bug with lost position
 
