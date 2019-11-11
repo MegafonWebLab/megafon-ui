@@ -1,0 +1,51 @@
+---
+name: ContentArea
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import ContentArea from './ContentArea';
+
+export const playgroundStyle = {
+    backgroundColor: '#E5F5EE',
+    paddingLeft: '0',
+    paddingRight: '0',
+};
+
+# ContentArea
+
+## Properties
+
+<PropsTable of={ContentArea} />
+
+## Basic usage
+
+<Playground style={playgroundStyle}>
+    <ContentArea>
+        Some content
+    </ContentArea>
+</Playground>
+
+## Difference between screen background color and external container background color
+
+<Playground style={playgroundStyle}>
+    <ContentArea outerBackgroundColor="white">
+        In case of small screen use button 'maximize' on the right button corner to see the difference
+    </ContentArea>
+</Playground>
+
+## Difference between screen background color and internal container background color
+
+<Playground style={playgroundStyle}>
+    <ContentArea innerBackgroundColor="white">
+        In case of small screen use button 'maximize' on the right button corner to see the difference
+    </ContentArea>
+</Playground>
+
+## None-padding usage
+
+<Playground style={playgroundStyle}>
+    <ContentArea innerPadding="none" innerBackgroundColor="white">
+        Some content
+    </ContentArea>
+</Playground>
