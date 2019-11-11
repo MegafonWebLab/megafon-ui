@@ -2,7 +2,8 @@
 
 ## Unreleased
 - **ContentArea**
-    - add new component
+    - added new component
+    - added tests
 
 ## Release 1.0.7
 - **Grid**
