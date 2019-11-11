@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.9
 - **ContentArea**
     - added new component
     - added tests
