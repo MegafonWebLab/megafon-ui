@@ -3,12 +3,12 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 import cnCreate from 'utils/cn';
 
-interface IProps {
+export interface IProps {
     /** Background color of the external container */
     outerBackgroundColor?: 'white' | 'transparent';
     /** Background color of the internal container */
     innerBackgroundColor?: 'white' | 'transparent';
-    /** Side paddings of th internal container */
+    /** Side paddings of the internal container */
     innerPadding?: 'lg' | 'none';
     children: any;
 }
