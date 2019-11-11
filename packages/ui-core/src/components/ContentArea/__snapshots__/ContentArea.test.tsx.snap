@@ -6,7 +6,11 @@ exports[`<ContentArea /> renders correctly with custom props 1`] = `
 >
   <div
     className="mfui-content-area__inner mfui-content-area__inner_padding_none mfui-content-area__inner_color_white"
-  />
+  >
+    <span>
+      child
+    </span>
+  </div>
 </div>
 `;
 
@@ -16,6 +20,10 @@ exports[`<ContentArea /> renders correctly with default props 1`] = `
 >
   <div
     className="mfui-content-area__inner mfui-content-area__inner_padding_lg mfui-content-area__inner_color_transparent"
-  />
+  >
+    <span>
+      child
+    </span>
+  </div>
 </div>
 `;
