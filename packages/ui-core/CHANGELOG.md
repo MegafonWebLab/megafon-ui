@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Checkbox**
+    - add new component
+    - add examples and description in .mdx
+    - add tests
 - **detectTouch**
     - fixed return undefined
 - **Select**
