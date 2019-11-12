@@ -4,6 +4,7 @@ import './Select.less';
 import SelectItem from './SelectItem';
 import * as equal from 'deep-equal';
 import cnCreate from 'utils/cn';
+import detectTouch from 'utils/detectTouch';
 
 interface ISelectProps {
     /** Header with the selected value */
@@ -85,6 +86,7 @@ interface ISelectProps {
 
 interface ISelectState {
     isOpen: boolean;
+    isTouch: boolean;
     focus: boolean;
     activeIndex: number;
     currentIndex: number;
@@ -165,6 +167,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         this.state = {
             isOpen: false,
+            isTouch: false,
             focus: false,
             activeIndex: 0,
             currentIndex: props.placeholder ? -1 : 0,
@@ -172,6 +175,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     componentDidMount() {
+        this.setState({ isTouch: detectTouch() });
         document.addEventListener('click', this.onClickOutside);
     }
 
@@ -185,11 +189,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         document.removeEventListener('click', this.onClickOutside);
     }
 
-    handleClickTitle = () => {
+    handleClickTitle = (): void => {
         this.setState({ isOpen: !this.state.isOpen });
     }
 
-    handleClickItem = (e, index: number) => {
+    handleClickItem = (e: React.SyntheticEvent<EventTarget>, index: number): void => {
         const { onSelectItem } = this.props;
         const { title, value, data } = this.props.items[index];
 
@@ -201,7 +205,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         onSelectItem && onSelectItem(e, { title, value, index, data });
     }
 
-    handleClickSearch = e => {
+    handleClickSearch = (e: React.SyntheticEvent<HTMLInputElement>): void => {
+        if (!(e.target instanceof HTMLInputElement)) {
+            return;
+        }
+
         if (!this.state.isOpen && this.props.searchValue) {
             e.target.select();
         }
@@ -209,7 +217,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState({ isOpen: true });
     }
 
-    handleChangeSearch = e => {
+    handleChangeSearch = (e: React.SyntheticEvent<HTMLInputElement>): void => {
+        if (!(e.target instanceof HTMLInputElement)) {
+            return;
+        }
+
         const { onChangeSearch } = this.props;
         onChangeSearch && onChangeSearch(e.target.value);
 
@@ -220,13 +232,17 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         });
     }
 
-    handleFocusSearch = e => {
+    handleFocusSearch = (e: React.SyntheticEvent<HTMLInputElement>): void => {
+        if (!(e.target instanceof HTMLInputElement)) {
+            return;
+        }
+
         const { onFocusSearch } = this.props;
 
         onFocusSearch && onFocusSearch(e.target.value);
     }
 
-    handleKeyDown = e => {
+    handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
         if (!this.props.keyNavigation) {
             return false;
         }
@@ -264,35 +280,37 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             this.setState({ isOpen: false });
             return false;
         }
+
+        return true;
     }
 
-    handleHoverItem = (e, index: number) => {
+    handleHoverItem = (e: React.SyntheticEvent<EventTarget>, index: number): void => {
         e.preventDefault();
         this.setState({ activeIndex: index });
     }
 
-    onClickOutside = event => {
+    onClickOutside = (event: MouseEvent): void => {
         if (this.selectNode.contains(event.target) || !this.state.isOpen) {
             return;
         }
         this.setState({ isOpen: false });
     }
 
-    handleFocusControl = () => {
+    handleFocusControl = (): void => {
         this.setState({ focus: true });
     }
 
-    handleBlurControl = () => {
+    handleBlurControl = (): void => {
         this.setState({ focus: false });
     }
 
-    handleClickControl = () => {
+    handleClickControl = (): void => {
         if (this.search) {
             this.search.click();
         }
     }
 
-    scrollList(activeIndex: number) {
+    scrollList(activeIndex: number): void {
         const wrapper = this.itemWrapperNode;
         const wrapperScroll = wrapper.scrollTop;
         const wrapperHeight = wrapper.offsetHeight;
@@ -415,7 +433,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             fontSize, fontColor, resultSize,
             controlsPadding,
         } = this.props;
-        const { focus, isOpen } = this.state;
+        const { focus, isOpen, isTouch } = this.state;
 
         return (
             <div
@@ -431,6 +449,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     'font-size': fontSize,
                     'font-color': fontColor,
                     'result-size': resultSize,
+                    'no-touch': !isTouch,
                 }, className)}
                 ref={this.getSelectNode}
             >
