@@ -1,11 +1,13 @@
 # Changelog
 
 ## Unreleased
+- **ContentArea**
+    - fixed typing in test case file
 - **Select**
     - fixed examples
     - fix hover with touch events detector
-- **ContentArea**
-    - fixed typing in test case file
+- **Textarea**
+    - fix hover with touch events detector
 
 ## Release 1.0.9
 - **ContentArea**
