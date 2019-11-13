@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import cnCreate from 'utils/cn';
 import './Checkbox.less';
 import CheckedIcon from 'icons/System/16/Checked_16.svg';
+import detectTouch from 'utils/detectTouch';
 
 export interface ICheckboxProps {
     /** Color scheme */
@@ -10,7 +11,7 @@ export interface ICheckboxProps {
     /** Custom classname */
     className?: string;
     /** Font size */
-    size?: 'small';
+    fontSize?: 'small';
     /** Checkbox name */
     name?: string;
     /** Checkbox value */
@@ -28,11 +29,15 @@ export interface ICheckboxProps {
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
+interface ICheckboxState {
+    isTouch: boolean;
+}
+
 const cn = cnCreate('mfui-checkbox');
-class Checkbox extends React.Component<ICheckboxProps, {}> {
+class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
     static propTypes = {
         className: PropTypes.string,
-        size: PropTypes.oneOf(['small']),
+        fontSize: PropTypes.oneOf(['small']),
         color: PropTypes.oneOf(['dark', 'light']),
         name: PropTypes.string,
         value: PropTypes.string,
@@ -57,6 +62,18 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
         checked: false,
     };
 
+    constructor(props: ICheckboxProps) {
+        super(props);
+
+        this.state = {
+            isTouch: false,
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ isTouch: detectTouch() });
+    }
+
     handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
         const { onChange } = this.props;
         onChange && onChange(e);
@@ -65,7 +82,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
     render() {
         const {
             className,
-            size,
+            fontSize,
             name,
             color,
             value,
@@ -76,12 +93,14 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
             extraContent,
         } = this.props;
 
+        const { isTouch } = this.state;
+
         return (
             <div
                 className={cn(
                     '',
                     {
-                        size,
+                        'font-size': fontSize,
                         color,
                         checked,
                         disabled,
@@ -91,7 +110,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                 )}
             >
                 <div className={cn('inner')}>
-                    <label className={cn('label')}>
+                    <label className={cn('label', { 'no-touch': !isTouch })}>
                         <input
                             className={cn('input')}
                             type="checkbox"

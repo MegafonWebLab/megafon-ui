@@ -2,9 +2,11 @@
 
 ## Unreleased
 - **Checkbox**
-    - add new component
-    - add examples and description in .mdx
-    - add tests
+    - added new component
+    - added examples and description in .mdx
+    - added tests
+    - replaced property size with fontSize
+    - fix hover with touch events detector
 - **detectTouch**
     - fixed return undefined
 - **Select**

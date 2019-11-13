@@ -15,14 +15,6 @@ export const LightColorWrapper = ({ children }) => {
     );
 }
 
-export const DesktopWrapper = ({ children }) => {
-    return (
-        <div className="no-touchevents">
-            {children}
-        </div>
-    );
-}
-
 # Checkbox
 
 ## Properties
@@ -47,19 +39,7 @@ export class CheckboxWrapper extends React.Component {
     }
 }
 
-## Basic usage on desktop
-
-<Playground wrapper={DesktopWrapper}>
-    <CheckboxWrapper>
-        {({ checked, onChange }) =>
-            <Checkbox checked={checked} onChange={onChange}>
-                I agree
-            </Checkbox>
-        }
-    </CheckboxWrapper>
-</Playground>
-
-## Basic usage on mobile devices
+## Basic usage
 
 <Playground>
     <CheckboxWrapper>
@@ -73,7 +53,7 @@ export class CheckboxWrapper extends React.Component {
 
 ## Checkbox usage with error
 
-<Playground wrapper={DesktopWrapper}>
+<Playground>
     <CheckboxWrapper>
         {({ checked, onChange }) =>
             <Checkbox checked={checked} onChange={onChange} error>
@@ -92,7 +72,7 @@ export class CheckboxWrapper extends React.Component {
                 checked={checked}
                 onChange={onChange}
                 color="light"
-                size="small"
+                fontSize="small"
             >
                 I agree
             </Checkbox>
@@ -102,7 +82,7 @@ export class CheckboxWrapper extends React.Component {
 
 ## Checkbox with extraContent
 
-<Playground wrapper={DesktopWrapper}>
+<Playground>
     <CheckboxWrapper>
         {({ checked, onChange }) =>
             <Checkbox
@@ -122,7 +102,7 @@ export class CheckboxWrapper extends React.Component {
 
 ## Disabled unchecked checkbox
 
-<Playground wrapper={DesktopWrapper}>
+<Playground>
     <CheckboxWrapper>
         {() => <Checkbox disabled>I agree</Checkbox>}
     </CheckboxWrapper>
@@ -130,7 +110,7 @@ export class CheckboxWrapper extends React.Component {
 
 ## Disabled checked checkbox
 
-<Playground wrapper={DesktopWrapper}>
+<Playground>
     <CheckboxWrapper>
         {() => <Checkbox checked disabled>I agree</Checkbox>}
     </CheckboxWrapper>

@@ -8,7 +8,7 @@ exports[`<Checkbox /> layout renders Checkbox 1`] = `
     className="mfui-checkbox__inner"
   >
     <label
-      className="mfui-checkbox__label"
+      className="mfui-checkbox__label mfui-checkbox__label_no-touch"
     >
       <input
         checked={false}
@@ -31,13 +31,13 @@ exports[`<Checkbox /> layout renders Checkbox 1`] = `
 
 exports[`<Checkbox /> layout renders Checkbox with props 1`] = `
 <div
-  className="mfui-checkbox mfui-checkbox_size_small mfui-checkbox_color_light mfui-checkbox_checked mfui-checkbox_disabled mfui-checkbox_error testClassName"
+  className="mfui-checkbox mfui-checkbox_color_light mfui-checkbox_checked mfui-checkbox_disabled mfui-checkbox_error testClassName"
 >
   <div
     className="mfui-checkbox__inner"
   >
     <label
-      className="mfui-checkbox__label"
+      className="mfui-checkbox__label mfui-checkbox__label_no-touch"
     >
       <input
         checked={true}
