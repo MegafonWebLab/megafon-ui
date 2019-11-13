@@ -5,7 +5,7 @@ exports[`<TextField /> is checked shouldComponentUpdate 1`] = `
   className="mfui-text-field mfui-text-field_error mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -38,7 +38,7 @@ exports[`<TextField /> is checked shouldComponentUpdate with new props 1`] = `
   className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -56,7 +56,7 @@ exports[`<TextField /> it renders TextField 1`] = `
   className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -74,7 +74,7 @@ exports[`<TextField /> it renders custom icon 1`] = `
   className="mfui-text-field mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -97,7 +97,7 @@ exports[`<TextField /> it renders error icon 1`] = `
   className="mfui-text-field mfui-text-field_error mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -130,7 +130,7 @@ exports[`<TextField /> it renders mask input 1`] = `
   className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <_default
@@ -151,7 +151,7 @@ exports[`<TextField /> it renders texts 1`] = `
   className="mfui-text-field mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -179,7 +179,7 @@ exports[`<TextField /> it renders valid icon 1`] = `
   className="mfui-text-field mfui-text-field_valid mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -212,7 +212,7 @@ exports[`<TextField /> it renders without error icon 1`] = `
   className="mfui-text-field mfui-text-field_error mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -230,7 +230,7 @@ exports[`<TextField /> it renders without valid icon 1`] = `
   className="mfui-text-field mfui-text-field_valid mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input

@@ -41,6 +41,9 @@
     input:-ms-input-placeholder {
         color: lighten(@soggyAsphalt, 50%);
     }
+    input::-ms-clear, input::-ms-reveal {
+        display: none;
+    }
     &__field_big-space {
         word-spacing: 4px;
     }
@@ -64,9 +67,13 @@
         cursor: pointer;
         text-align: center;
     }
+    &__icon-box_password {
+        z-index: 3;
+    }
     &__icon-box_custom {
         z-index: 3;
     }
+
     &__icon {
         width: 32px;
         height: 32px;
@@ -106,13 +113,14 @@
             border: 1px solid @spbSky2;
             background-color: transparent;
         }
-        .no-touchevents &__field-wrapper:hover @{b}__field,
+        &__field-wrapper_no-touch:hover @{b}__field,
         &__field:focus {
             border-color: @soggyAsphalt;
         }
     }
+
     &_color_default&_valid & {
-        .no-touchevents &__field-wrapper:hover @{b}__field,
+        &__field-wrapper_no-touch:hover @{b}__field,
         &__field {
             border-color: @green;
         }
@@ -120,6 +128,7 @@
             fill: @green;
         }
     }
+
     &_color_default&_error & {
         &__field-wrapper:hover @{b}__field,
         &__field {

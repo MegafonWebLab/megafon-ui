@@ -7,6 +7,8 @@ import * as equal from 'deep-equal';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
 import ErrorIcon from 'icons/System/24/Cancel_24.svg';
 import Hide from 'icons/Basic/24/Hide_24.svg';
+import Show from 'icons/Basic/24/Show_24.svg';
+import detectTouch from 'utils/detectTouch';
 
 interface ITextFieldProps {
     /** Field color scheme */
@@ -53,7 +55,7 @@ interface ITextFieldProps {
     mask?: string;
     /** Split symbol for mask */
     maskChar?: string;
-    /** Increase size of space in the text box */
+    /** Increased size of space between words in the text box */
     bigSpace?: boolean;
     /** Custom classname */
     className?: string;
@@ -67,8 +69,13 @@ interface ITextFieldProps {
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
+interface ITextFieldState {
+    isTouch: boolean;
+    isPasswordHidden: boolean;
+}
+
 const cn = cnCreate('mfui-text-field');
-class TextField extends React.Component<ITextFieldProps, {}> {
+class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     static propTypes = {
         color: PropTypes.oneOf(['default', 'white']),
         size: PropTypes.oneOf(['large']),
@@ -109,8 +116,21 @@ class TextField extends React.Component<ITextFieldProps, {}> {
 
     inputNode: any;
 
-    shouldComponentUpdate(nextProps: ITextFieldProps) {
-        return !equal(this.props, nextProps);
+    constructor(props: ITextFieldProps) {
+        super(props);
+
+        this.state = {
+            isTouch: false,
+            isPasswordHidden: true,
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ isTouch: detectTouch() });
+    }
+
+    shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
+        return !equal(this.props, nextProps) || !equal(this.state, nextState);
     }
 
     blur = () => {
@@ -119,6 +139,14 @@ class TextField extends React.Component<ITextFieldProps, {}> {
 
     focus = () => {
         return this.inputNode.focus();
+    }
+
+    handleEyeToggle = () => {
+        this.setState(
+            (prevState: ITextFieldState) => {
+                return { isPasswordHidden: !prevState.isPasswordHidden };
+            }
+        );
     }
 
     renderValidIcon() {
@@ -151,39 +179,61 @@ class TextField extends React.Component<ITextFieldProps, {}> {
     }
 
     renderPasswordFieldIcon() {
+        const { isPasswordHidden } = this.state;
+
         return (
             <div
-                className={cn('icon-box')}
+                className={cn('icon-box', { 'password': true })}
+                onClick={this.handleEyeToggle}
             >
-                <Hide
-                    className={cn('icon')}
-                />
+                {isPasswordHidden
+                    ? <Hide className={cn('icon')} />
+                    : <Show className={cn('icon')} />
+                }
             </div>
         );
     }
 
-    addInputNode = node => this.inputNode = node;
+    addInputNode = (node: HTMLInputElement ) => this.inputNode = node;
 
-    renderInputElem() {
+    renderInputElem(isPasswordType: boolean) {
+        const { isPasswordHidden } = this.state;
+        const {
+            disabled,
+            name,
+            id,
+            placeholder,
+            autoFocus,
+            defaultValue,
+            maxLength,
+            value,
+            type,
+            required,
+            autocomplete,
+            bigSpace,
+            onChange,
+            onBlur,
+            onFocus,
+            onKeyUp,
+        } = this.props;
+
         const params = {
-            disabled: this.props.disabled,
-            name: this.props.name,
-            id: this.props.id,
-            placeholder: this.props.placeholder,
-            onChange: this.props.onChange,
-            onBlur: this.props.onBlur,
-            onFocus: this.props.onFocus,
-            onKeyUp: this.props.onKeyUp,
-            autoFocus: this.props.autoFocus,
-            defaultValue: this.props.defaultValue,
-            maxLength: this.props.maxLength,
-            value: this.props.value,
-            type: this.props.type,
-            required: this.props.required,
-            autoComplete: this.props.autocomplete,
-            className: cn('field', {
-                'big-space': this.props.bigSpace,
-            }),
+            disabled,
+            name,
+            id,
+            placeholder,
+            onChange,
+            onBlur,
+            onFocus,
+            onKeyUp,
+            autoFocus,
+            defaultValue,
+            maxLength,
+            value,
+            type: isPasswordType && !isPasswordHidden ? 'text' : type,
+            required,
+            autoComplete: autocomplete,
+            className: cn('field', { 'big-space': bigSpace }),
         };
 
         if (this.props.mask) {
@@ -206,6 +256,8 @@ class TextField extends React.Component<ITextFieldProps, {}> {
             valid, disabled, size, className,
             commentText, successText, noticeText, type,
         } = this.props;
+        const { isTouch } = this.state;
+
         const isAnyIcon = !isHideIcon && (!!customIcon || error || valid);
         const isStatusIcon = !isHideIcon && !customIcon;
         const isPasswordType = type === 'password';
@@ -220,9 +272,12 @@ class TextField extends React.Component<ITextFieldProps, {}> {
                     disabled,
                     color,
                     size,
-                }, className)}>
-                <div className={cn('field-wrapper')}>
-                    <div>{this.renderInputElem()}</div>
+                }, className)}
+            >
+                <div
+                    className={cn('field-wrapper', { 'no-touch': !isTouch })}
+                >
+                    <div>{this.renderInputElem(isPasswordType)}</div>
                     {customIcon && this.renderCustomIcon()}
                     {isStatusIcon && valid && this.renderValidIcon()}
                     {isStatusIcon && error && this.renderErrorIcon()}
