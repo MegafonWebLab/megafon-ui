@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - add new proptypes for button view
 
 ## Release 1.0.9
 - **ContentArea**
