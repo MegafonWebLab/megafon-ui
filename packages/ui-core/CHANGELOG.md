@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **List**
+    - add modificator for list-style
 
 ## Release 1.0.9
 - **ContentArea**

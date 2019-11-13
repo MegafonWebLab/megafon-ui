@@ -40,12 +40,21 @@ class List extends React.Component<IListProps, {}> {
     render() {
         const ElementType = this.props.as as string;
         const { hAlign, color, weight, className, children } = this.props;
+        let listStyleMod = '';
+
+        if (this.props.as === 'ul') {
+            listStyleMod = 'disc';
+        }
+        if (this.props.as === 'ol') {
+            listStyleMod = 'decimal';
+        }
 
         return (
             <ElementType
                 className={cn('', {
                     'h-align': hAlign,
                     color, weight,
+                    'style': listStyleMod,
                 }, className)}>
                 {children}
             </ElementType>
