@@ -23,7 +23,7 @@ exports[`<Select /> it renders Select 1`] = `
   resultSize="medium"
 >
   <div
-    className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
+    className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
   >
     <div
       className="mfui-select__control"
@@ -105,7 +105,7 @@ exports[`<Select /> it renders Select 1`] = `
 
 exports[`<Select /> it renders hidden input 1`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
 >
   <input
     name="test"
@@ -188,7 +188,7 @@ exports[`<Select /> it renders search 1`] = `
   resultSize="medium"
 >
   <div
-    className="mfui-select mfui-select_search mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
+    className="mfui-select mfui-select_search mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
   >
     <div
       className="mfui-select__control"
@@ -270,7 +270,7 @@ exports[`<Select /> it renders search 1`] = `
 
 exports[`<Select /> it renders with result size small 1`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_small"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_small mfui-select_no-touch"
 >
   <input
     name="test"
@@ -331,7 +331,7 @@ exports[`<Select /> it renders with result size small 1`] = `
 
 exports[`<Select /> it renders witout icon 1`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
 >
   <div
     className="mfui-select__control"
@@ -375,7 +375,7 @@ exports[`<Select /> it renders witout icon 1`] = `
 
 exports[`<Select /> it renders witout icon 2`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
 >
   <div
     className="mfui-select__control"

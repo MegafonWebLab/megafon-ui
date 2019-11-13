@@ -28,7 +28,11 @@ export const wrapper = (width = 250) => ({ children }) => {
 ## Mask usage
 
 <Playground wrapper={wrapper()}>
-    <TextField mask="(999) 999-99-99" maskChar=" " />
+    <TextField
+        placeholder="+7 (999) 999-99-99"
+        mask="+7 (999) 999-99-99"
+        maskChar="_"
+    />
 </Playground>
 
 ## Error usage
@@ -55,6 +59,12 @@ export const wrapper = (width = 250) => ({ children }) => {
     <TextField successText="Field is correct" />
 </Playground>
 
+## Max length text usage
+
+<Playground wrapper={wrapper()}>
+    <TextField maxLength={10} />
+</Playground>
+
 ## Disable usage
 
 <Playground wrapper={wrapper()}>
@@ -65,4 +75,9 @@ export const wrapper = (width = 250) => ({ children }) => {
 
 <Playground wrapper={wrapper()}>
     <TextField name="name" placeholder="password" type="password"/>
+</Playground>
+
+## Increased size of space between words usage
+<Playground wrapper={wrapper()}>
+    <TextField bigSpace={true} />
 </Playground>

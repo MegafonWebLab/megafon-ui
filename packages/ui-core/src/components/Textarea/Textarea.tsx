@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Textarea.less';
 import cnCreate from 'utils/cn';
 import * as equal from 'deep-equal';
+import detectTouch from 'utils/detectTouch';
 
 interface ITextareaProps {
     /** Field color scheme */
@@ -49,8 +50,12 @@ interface ITextareaProps {
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
+interface ITextareaState {
+    isTouch: boolean;
+}
+
 const cn = cnCreate('mfui-textarea');
-class Textarea extends React.Component<ITextareaProps, {}> {
+class Textarea extends React.Component<ITextareaProps, ITextareaState> {
     static propTypes = {
         noticeText: PropTypes.string,
         commentText: PropTypes.string,
@@ -80,6 +85,18 @@ class Textarea extends React.Component<ITextareaProps, {}> {
     };
 
     inputNode: any = React.createRef();
+
+    constructor(props: ITextareaProps) {
+        super(props);
+
+        this.state = {
+            isTouch: false,
+        };
+    }
+
+    componentDidMount() {
+        this.setState({ isTouch: detectTouch() });
+    }
 
     shouldComponentUpdate(nextProps: ITextareaProps) {
         return !equal(this.props, nextProps);
@@ -121,6 +138,8 @@ class Textarea extends React.Component<ITextareaProps, {}> {
             commentText, successText, noticeText,
         } = this.props;
 
+        const { isTouch } = this.state;
+
         return (
             <div
                 className={cn('', {
@@ -129,7 +148,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
                     disabled,
                     color,
                 }, className)}>
-                <div className={cn('field-wrapper')}>
+                <div className={cn('field-wrapper', { 'no-touch': !isTouch })}>
                     <div>{this.renderElem()}</div>
                 </div>
                 {(error || valid) && noticeText &&

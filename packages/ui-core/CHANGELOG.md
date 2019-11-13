@@ -1,6 +1,18 @@
 # Changelog
 
 ## Unreleased
+- **ContentArea**
+    - fixed typing in test case file
+- **Select**
+    - fix hover with touch events detector
+    - fixed examples
+- **Textarea**
+    - fix hover with touch events detector
+- **TextField**
+    - fix hover with touch events detector
+    - fixed and added examples
+    - fixed password type component
+    - removed clear and reveal icons for Edge
 
 ## Release 1.0.9
 - **ContentArea**

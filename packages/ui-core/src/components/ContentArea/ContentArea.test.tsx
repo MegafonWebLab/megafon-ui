@@ -9,7 +9,7 @@ const props: Partial<IProps> = {
 };
 
 describe('<ContentArea />', () => {
-    const getWrapper = (additionalProps: Partial<IProps>) => shallow(
+    const getWrapper = (additionalProps?: Partial<IProps>) => shallow(
         <ContentArea
             {...additionalProps}
         >

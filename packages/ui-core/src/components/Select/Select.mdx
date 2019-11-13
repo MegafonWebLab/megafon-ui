@@ -6,6 +6,8 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import Select from './Select';
 import Checked from 'icons/System/24/Checked_24.svg';
+import Metro from 'icons/System/24/Metro_24.svg';
+import Arrow from 'icons/System/24/Arrow_right_24.svg';
 
 export const items = [{
     id: '1',
@@ -56,21 +58,28 @@ export class SelectWrapper extends React.Component {
         this.state = {
             selectedTitle: '',
             searchValue: '',
+            canOpen: false,
         }
     }
     onSelectItem = (e, data) => {
-        this.setState({ selectedTitle: data.title})
+        this.setState({
+            selectedTitle: data.title,
+            searchValue: data.title,
+        })
     }
     onChangeSearch = value => {
-        console.log(value);
-        this.setState({ searchValue: value });
+        this.setState({
+            searchValue: value,
+            canOpen: !!value,
+        });
     }
     render() {
         return this.props.children({
             onSelectItem: this.onSelectItem,
             onChangeSearch: this.onChangeSearch,
             selectedTitle: this.state.selectedTitle,
-            searchValue: this.state.searchValue
+            searchValue: this.state.searchValue,
+            canOpen: this.state.canOpen,
         })
     }
 }
@@ -79,7 +88,7 @@ export class SelectWrapper extends React.Component {
 
 <Playground wrapper={Wrapper}>
     <SelectWrapper>
-        {({ onSelectItem, selectedTitle }) =>
+        {({ onSelectItem, selectedTitle, canOpen }) =>
                 <Select
                     selectedTitle={selectedTitle}
                     onSelectItem={onSelectItem}
@@ -94,13 +103,22 @@ export class SelectWrapper extends React.Component {
 
 <Playground wrapper={Wrapper}>
     <SelectWrapper>
-        {({ onChangeSearch, searchValue }) =>
+        {({ onSelectItem, onChangeSearch, searchValue, canOpen }) =>
                 <Select
                     placeholder="Choose your step"
-                    items={items.filter(({ title }) => title.toLowerCase().search(searchValue.toLowerCase()) !== -1 )}
-                    onChangeSearch={onChangeSearch}
                     searchValue={searchValue}
-                    icon={<Checked style={{ width: '24px', height: '24px'}}/>}
+                    items={
+                        searchValue
+                            ? items.filter(
+                                ({ title }) =>
+                                    title.toLowerCase().search(searchValue.toLowerCase()) !== -1,
+                                )
+                            : []
+                    }
+                    onSelectItem={onSelectItem}
+                    onChangeSearch={onChangeSearch}
+                    arrow={false}
+                    canOpen={canOpen}
                 />
         }
     </SelectWrapper>
@@ -109,31 +127,41 @@ export class SelectWrapper extends React.Component {
 ## Select item icon left usage
 
 <Playground wrapper={Wrapper}>
-    <Select
-        placeholder="Choose your step"
-        items={items.map(item => ({
-            title: item.title,
-            value: item.value,
-            id: item.id,
-            leftIcon: <Checked style={{ width: '24px', height: '24px'}}/>
-        })
-        )}
-    />
+    <SelectWrapper>
+        {({ onSelectItem, selectedTitle, canOpen }) =>
+            <Select
+                placeholder="Choose your step"
+                selectedTitle={selectedTitle}
+                items={items.map(item => ({
+                    title: item.title,
+                    value: item.value,
+                    id: item.id,
+                    leftIcon: <Metro style={{ width: '24px', height: '24px'}}/>
+                }))}
+                onSelectItem={onSelectItem}
+            />
+        }
+    </SelectWrapper>
 </Playground>
 
-## Select item right left usage
+## Select item right usage
 
 <Playground wrapper={Wrapper}>
-    <Select
-        placeholder="Choose your step"
-        items={items.map(item => ({
-            title: item.title,
-            value: item.value,
-            id: item.id,
-            rightIcon: <Checked style={{ width: '24px', height: '24px'}}/>
-        })
-        )}
-    />
+    <SelectWrapper>
+        {({ onSelectItem, selectedTitle, canOpen }) =>
+            <Select
+                placeholder="Choose your step"
+                selectedTitle={selectedTitle}
+                items={items.map(item => ({
+                    title: item.title,
+                    value: item.value,
+                    id: item.id,
+                    rightIcon: <Arrow style={{ width: '24px', height: '24px'}}/>
+                }))}
+                onSelectItem={onSelectItem}
+            />
+        }
+    </SelectWrapper>
 </Playground>
 
 ## Zero items usage
