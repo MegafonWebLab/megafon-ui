@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.10
 - **ContentArea**
     - fixed typing in test case file
 - **Select**
