@@ -2,7 +2,7 @@
 
 exports[`<Checkbox /> layout renders Checkbox 1`] = `
 <div
-  className="mfui-checkbox mfui-checkbox_color_dark"
+  className="mfui-checkbox mfui-checkbox_font-size_regular mfui-checkbox_color_dark"
 >
   <div
     className="mfui-checkbox__inner"
@@ -29,9 +29,38 @@ exports[`<Checkbox /> layout renders Checkbox 1`] = `
 </div>
 `;
 
+exports[`<Checkbox /> layout renders Checkbox on mobile resolution 1`] = `
+<div
+  className="mfui-checkbox mfui-checkbox_font-size_regular mfui-checkbox_color_dark"
+>
+  <div
+    className="mfui-checkbox__inner"
+  >
+    <label
+      className="mfui-checkbox__label"
+    >
+      <input
+        checked={false}
+        className="mfui-checkbox__input"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <div
+        className="mfui-checkbox__custom-input"
+      >
+        <test-file-stub
+          className="mfui-checkbox__icon"
+        />
+      </div>
+      Тестовая строка на мобильном разрешении
+    </label>
+  </div>
+</div>
+`;
+
 exports[`<Checkbox /> layout renders Checkbox with props 1`] = `
 <div
-  className="mfui-checkbox mfui-checkbox_color_light mfui-checkbox_checked mfui-checkbox_disabled mfui-checkbox_error testClassName"
+  className="mfui-checkbox mfui-checkbox_font-size_small mfui-checkbox_color_light mfui-checkbox_checked mfui-checkbox_disabled mfui-checkbox_error testClassName"
 >
   <div
     className="mfui-checkbox__inner"

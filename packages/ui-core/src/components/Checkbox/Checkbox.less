@@ -3,14 +3,11 @@
 @b: e('.mfui-checkbox');
 
 @{b} {
-    font-size: 15px;
-    line-height: 24px;
     margin: 0 5px 12px 5px;
 
     &__inner {
         position: relative;
         display: inline-block;
-        padding: 4px 15px 4px 35px;
     }
     &__label {
         display: inline;
@@ -28,7 +25,6 @@
     }
     &__custom-input {
         position: absolute;
-        top: 6px;
         left: 0;
         box-sizing: border-box;
         display: flex;
@@ -66,12 +62,26 @@
         }
     }
 
+    &_font-size_regular {
+        font-size: 15px;
+        line-height: 24px;
+
+        @{b} {
+            &__inner {
+                padding: 4px 15px 4px 35px;
+            }
+            &__custom-input {
+                top: 6px;
+            }
+        }
+    }
+
     &_font-size_small {
         font-size: 12px;
         line-height: 16px;
         @{b} {
             &__inner {
-                padding-top: 1px;
+                padding: 1px 15px 4px 35px;
             }
             &__custom-input {
                 top: 0;
@@ -117,7 +127,6 @@
         @{b} {
             &__custom-input,
             &__label:active @{b}__custom-input {
-                // background-color: @spbSky2 !important;
                 background-color: @spbSky2;
             }
         }

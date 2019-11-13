@@ -23,7 +23,7 @@ describe('<Checkbox />', () => {
             const wrapper = shallow(
                 <Checkbox
                     {...props}
-                    size="small"
+                    fontSize="small"
                     color="light"
                     onChange={jest.fn()}
                 >
@@ -32,10 +32,21 @@ describe('<Checkbox />', () => {
             );
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('renders Checkbox on mobile resolution', () => {
+            const onTouchStart = window.ontouchstart;
+            window.ontouchstart = jest.fn();
+
+            const wrapper = shallow(<Checkbox>Тестовая строка на мобильном разрешении</Checkbox>);
+            expect(wrapper).toMatchSnapshot();
+
+            window.ontouchstart = onTouchStart;
+        });
     });
 
     describe('handleChange', () => {
         it('calls onChange', () => {
+            console.log('window.ontouchstart', window.ontouchstart);
             const handleChange = jest.fn();
             const event = {
                 target: { value: 'test value' },

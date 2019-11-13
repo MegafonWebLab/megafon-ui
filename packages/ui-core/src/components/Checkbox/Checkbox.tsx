@@ -11,7 +11,7 @@ export interface ICheckboxProps {
     /** Custom classname */
     className?: string;
     /** Font size */
-    fontSize?: 'small';
+    fontSize?: 'regular' | 'small';
     /** Checkbox name */
     name?: string;
     /** Checkbox value */
@@ -37,7 +37,7 @@ const cn = cnCreate('mfui-checkbox');
 class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
     static propTypes = {
         className: PropTypes.string,
-        fontSize: PropTypes.oneOf(['small']),
+        fontSize: PropTypes.oneOf(['regular', 'small']),
         color: PropTypes.oneOf(['dark', 'light']),
         name: PropTypes.string,
         value: PropTypes.string,
@@ -59,6 +59,7 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
 
     static defaultProps: Partial<ICheckboxProps> = {
         color: 'dark',
+        fontSize: 'regular',
         checked: false,
     };
 
