@@ -198,42 +198,25 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
 
     renderInputElem(isPasswordType: boolean) {
         const { isPasswordHidden } = this.state;
-        const {
-            disabled,
-            name,
-            id,
-            placeholder,
-            autoFocus,
-            defaultValue,
-            maxLength,
-            value,
-            type,
-            required,
-            autocomplete,
-            bigSpace,
-            onChange,
-            onBlur,
-            onFocus,
-            onKeyUp,
-        } = this.props;
-
         const params = {
-            disabled,
-            name,
-            id,
-            placeholder,
-            onChange,
-            onBlur,
-            onFocus,
-            onKeyUp,
-            autoFocus,
-            defaultValue,
-            maxLength,
-            value,
-            type: isPasswordType && !isPasswordHidden ? 'text' : type,
-            required,
-            autoComplete: autocomplete,
-            className: cn('field', { 'big-space': bigSpace }),
+            disabled: this.props.disabled,
+            name: this.props.name,
+            id: this.props.id,
+            placeholder: this.props.placeholder,
+            onChange: this.props.onChange,
+            onBlur: this.props.onBlur,
+            onFocus: this.props.onFocus,
+            onKeyUp: this.props.onKeyUp,
+            autoFocus: this.props.autoFocus,
+            defaultValue: this.props.defaultValue,
+            maxLength: this.props.maxLength,
+            value: this.props.value,
+            type: isPasswordType && !isPasswordHidden ? 'text' : this.props.type,
+            required: this.props.required,
+            autoComplete: this.props.autocomplete,
+            className: cn('field', {
+                'big-space': this.props.bigSpace,
+            }),
         };
 
         if (this.props.mask) {
