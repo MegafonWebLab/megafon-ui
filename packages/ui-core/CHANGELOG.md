@@ -3,6 +3,7 @@
 ## Unreleased
 - **Paragraph**
     - edit styles according to guide
+    - add default value for prop marginAll
 - **Header**
     - edit styles according to guide
 
