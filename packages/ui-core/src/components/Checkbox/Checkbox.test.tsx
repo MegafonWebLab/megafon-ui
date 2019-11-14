@@ -46,7 +46,6 @@ describe('<Checkbox />', () => {
 
     describe('handleChange', () => {
         it('calls onChange', () => {
-            console.log('window.ontouchstart', window.ontouchstart);
             const handleChange = jest.fn();
             const event = {
                 target: { value: 'test value' },
