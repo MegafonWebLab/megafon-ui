@@ -20,7 +20,12 @@ interface IProductSwitcherProps {
     /** Custom class name */
     className: string;
     /** Change handler */
-    onChange(e: React.SyntheticEvent<EventTarget> | TouchEvent | MouseEvent, value: string, index: number): boolean;
+    onChange(
+        e: React.SyntheticEvent<EventTarget> | TouchEvent | MouseEvent,
+        value: string,
+        index: number,
+        isPointerPressed?: boolean
+    ): boolean;
 }
 
 interface IProductSwitcherState {
@@ -312,7 +317,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             width = 0,
         } = this.getRangeWrapperCoords(this.rootNode);
         const { onChange } = this.props;
-        const { currentValue } = this.state;
+        const { currentValue, isPointerPressed } = this.state;
         const pointerPosition = Math.round(eventXCoord - startPoint);
         const pointerHalfWidth = this.pointerNode.offsetWidth / 2 || 0;
         const [chosenPoint] = this.getRowItemsInfo().filter((el: INearPoint) => {
@@ -345,7 +350,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
             return;
         }
 
-        onChange(e, chosenPoint.value, chosenPoint.item);
+        onChange(e, chosenPoint.value, chosenPoint.item, isPointerPressed);
 
         this.setState({
             currentValue: chosenPoint.value,

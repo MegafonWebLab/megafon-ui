@@ -3,6 +3,8 @@
 ## Unreleased
 - **BubbleHint**
     - add props 'isNeedFilterHintBlockClick' and attr 'data-filter-click' to intercept events on this block in ruu
+- **ProductSwitcher**
+    - add attribute 'isPointerPressed' to 'onChange' function to send the correct analytics
 
 ## Release 1.0.7
 - **Grid**
