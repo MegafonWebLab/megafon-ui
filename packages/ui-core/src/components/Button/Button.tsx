@@ -24,7 +24,7 @@ export interface IButtonProps {
     sizeTablet?: 'small' | 'medium' | 'large';
     /** Size for mobile 320-730 */
     sizeMobile?: 'small' | 'medium' | 'large';
-    /** Current color */
+    /** Current color. WARNING!!! Values 'transparent', 'transparent-green' were depricated */
     passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white' | 'transparent-white';
     /** Hover color */
     hoverColor?: 'green' | 'purple' | 'transparent';
@@ -34,8 +34,8 @@ export interface IButtonProps {
     fontColor?: 'white' | 'green';
     /** Click/press color */
     downColor?: 'dark' | 'transparent';
-    /** Disabled color */
-    disabledColor?: 'gray' | 'transparent-white';
+    /** Disabled color. WARNING!!! Values 'transparent', 'white' were depricated */
+    disabledColor?: 'gray' | 'transparent-white' | 'transparent' | 'white';
     /** Width */
     width?: 'full' | 'auto';
     /** Custom class name */
@@ -99,6 +99,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
         ]),
         disabledColor: PropTypes.oneOf([
             'gray',
+            'white',
             'transparent',
             'transparent-white',
         ]),

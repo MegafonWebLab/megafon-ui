@@ -2,7 +2,8 @@
 
 ## Unreleased
 - **Button**
-    - add new proptypes for button view
+    - depricated few values of properties passiveColor and disabledColor
+    - add new values for propperties passiveColor and disabledColor
 
 ## Release 1.0.9
 - **ContentArea**
