@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Paragraph**
+    - edit styles according to guide
+- **Header**
+    - edit styles according to guide
 
 ## Release 1.0.10
 - **ContentArea**
