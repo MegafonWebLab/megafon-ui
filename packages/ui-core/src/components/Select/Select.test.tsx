@@ -3,6 +3,11 @@ import { shallow, mount } from 'enzyme';
 import Select from './Select';
 import SelectItem from './SelectItem';
 import CheckedIcon from 'icons/checked_24.svg';
+import detectTouch from 'utils/detectTouch';
+
+jest.mock('utils/detectTouch', () => ({
+    default: jest.fn().mockReturnValue(false),
+}));
 
 const props = {
     items: [
@@ -29,12 +34,12 @@ describe('<Select />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('it renders witout icon', () => {
+    it('it renders without icon', () => {
         const wrapper = shallow(<Select items={[]} />);
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('it renders witout icon', () => {
+    it('it renders with icon', () => {
         const wrapper = shallow(<Select items={[]} icon={<CheckedIcon />} />);
         expect(wrapper).toMatchSnapshot();
     });
@@ -53,6 +58,16 @@ describe('<Select />', () => {
 
     it('it renders with result size small', () => {
         const wrapper = shallow(<Select {...props} name="test" resultSize="small" />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders without no-touch mode', () => {
+        const typedDetectTouch = detectTouch as jest.Mock<() => boolean>;
+
+        typedDetectTouch.mockImplementation(() => true);
+
+        const wrapper = shallow(<Select {...props} />);
+
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -177,11 +192,27 @@ describe('<Select />', () => {
         expect(onChangeSearch.mock.calls).toHaveLength(1);
     });
 
+    it('it handles search change with wrong target', () => {
+        const onChangeSearch = jest.fn();
+        const wrapper = mount(<Select {...props} onChangeSearch={onChangeSearch} />);
+        wrapper.find('.mfui-select__search-field').simulate('change', { target: { tagName: 'A' } });
+        expect(onChangeSearch).not.toBeCalled();
+    });
+
     it('it handles search click', () => {
         const noop = () => { };
         const wrapper = mount(<Select {...props} onChangeSearch={noop} />);
         wrapper.find('.mfui-select__search-field').simulate('click');
         expect(wrapper.state('isOpen')).toBe(true);
+    });
+
+    it('it handles search click with wrong target', () => {
+        const noop = () => { };
+        const wrapper = mount(<Select {...props} onChangeSearch={noop} />);
+
+        expect(wrapper.state('isOpen')).toBeFalsy();
+        wrapper.find('.mfui-select__search-field').simulate('click', { target: { tagName: 'A' } });
+        expect(wrapper.state('isOpen')).toBeFalsy();
     });
 
     it('it handles select item', () => {

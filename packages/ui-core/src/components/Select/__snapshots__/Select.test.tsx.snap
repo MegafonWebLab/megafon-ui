@@ -378,7 +378,7 @@ exports[`<Select /> it renders with result size small 1`] = `
 </div>
 `;
 
-exports[`<Select /> it renders witout icon 1`] = `
+exports[`<Select /> it renders without icon 1`] = `
 <div
   className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
 >
@@ -422,9 +422,9 @@ exports[`<Select /> it renders witout icon 1`] = `
 </div>
 `;
 
-exports[`<Select /> it renders witout icon 2`] = `
+exports[`<Select /> renders Select on mobile resolution 1`] = `
 <div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium"
 >
   <div
     className="mfui-select__control"
@@ -442,11 +442,13 @@ exports[`<Select /> it renders witout icon 2`] = `
         className="mfui-select__title-inner"
       />
     </div>
-    <div
-      className="mfui-select__icon-box"
+    <span
+      className="mfui-select__arrow"
     >
-      <test-file-stub />
-    </div>
+      <span
+        className="mfui-select__arrow-inner"
+      />
+    </span>
   </div>
   <div
     className="mfui-select__list"
@@ -454,11 +456,24 @@ exports[`<Select /> it renders witout icon 2`] = `
     <div
       className="mfui-select__list-inner"
     >
-      <div
-        className="mfui-select__not-found"
-      >
-        Ничего не нашлось
-      </div>
+      <SelectItem
+        active={true}
+        current={true}
+        index={0}
+        key="1"
+        onHover={[Function]}
+        onSelect={[Function]}
+        title="test1"
+      />
+      <SelectItem
+        active={false}
+        current={false}
+        index={1}
+        key="2"
+        onHover={[Function]}
+        onSelect={[Function]}
+        title="test2"
+      />
     </div>
   </div>
 </div>

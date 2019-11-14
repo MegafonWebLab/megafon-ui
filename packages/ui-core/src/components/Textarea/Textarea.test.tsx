@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import Textarea from './Textarea';
+import detectTouch from 'utils/detectTouch';
+
+jest.mock('utils/detectTouch', () => ({
+    default: jest.fn().mockReturnValue(false),
+}));
 
 describe('<Textarea />', () => {
     it('it renders Textarea', () => {
@@ -38,10 +43,17 @@ describe('<Textarea />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('is checked shouldComponentUpdate', () => {
+    it('is checked shouldComponentUpdate with props', () => {
         const wrapper = shallow(<Textarea error={true} noticeText="text" />);
 
         wrapper.setProps({ error: true, noticeText: 'text' });
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('is checked shouldComponentUpdate with state', () => {
+        const wrapper = shallow(<Textarea error={true} noticeText="text" />);
+
+        wrapper.setState({ isTouch: false });
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -49,6 +61,23 @@ describe('<Textarea />', () => {
         const wrapper = shallow(<Textarea error={true} noticeText="text" />);
 
         wrapper.setProps({ error: false, noticeText: 'text' });
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('is checked shouldComponentUpdate with new state', () => {
+        const wrapper = shallow(<Textarea error={true} noticeText="text" />);
+
+        wrapper.setState({ isTouch: true });
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders without no-touch mode', () => {
+        const typedDetectTouch = detectTouch as jest.Mock<() => boolean>;
+
+        typedDetectTouch.mockImplementation(() => true);
+
+        const wrapper = shallow(<Textarea />);
+
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -64,5 +93,9 @@ describe('<Textarea />', () => {
         const instance = wrapper.instance() as Textarea;
 
         expect(() => instance.blur()).not.toThrow();
+    });
+
+    it('', () => {
+
     });
 });

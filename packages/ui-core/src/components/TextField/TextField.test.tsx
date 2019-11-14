@@ -135,6 +135,16 @@ describe('<TextField />', () => {
             const wrapper = shallow(<TextField type="password" mask="(999) 999-99-99" maskChar=" " />);
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('renders password TextField with password shown', () => {
+            const wrapper = shallow(<TextField type="password" />);
+
+            expect(wrapper.state('isPasswordHidden')).toBeTruthy();
+            wrapper.find('.mfui-text-field__icon-box').simulate('click');
+            expect(wrapper.state('isPasswordHidden')).toBeFalsy();
+
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     it('calls handlers on different inputs', () => {
@@ -151,14 +161,5 @@ describe('<TextField />', () => {
 
         simulateEvent('onKeyUp', 'keyup', {});
         simulateEvent('onKeyUp', 'keyup', maskParams);
-    });
-
-    it('calls handleEyeToggle', () => {
-        const wrapper = shallow<TextField>(<TextField />);
-
-        wrapper.setState({ isPasswordHidden: false });
-        wrapper.instance().handleEyeToggle();
-
-        expect(wrapper.state().isPasswordHidden).toBeTruthy();
     });
 });

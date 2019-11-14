@@ -1,6 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Textarea /> is checked shouldComponentUpdate 1`] = `
+exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
+<div
+  className="mfui-textarea mfui-textarea_color_default"
+>
+  <div
+    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea__field"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Textarea /> is checked shouldComponentUpdate with new state 1`] = `
+<div
+  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
+>
+  <div
+    className="mfui-textarea__field-wrapper"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea__field"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-textarea__text mfui-textarea__text_error"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<Textarea /> is checked shouldComponentUpdate with props 1`] = `
 <div
   className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
@@ -22,9 +61,9 @@ exports[`<Textarea /> is checked shouldComponentUpdate 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
+exports[`<Textarea /> is checked shouldComponentUpdate with state 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_color_default"
+  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
   <div
     className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
@@ -35,6 +74,11 @@ exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
         className="mfui-textarea__field"
       />
     </div>
+  </div>
+  <div
+    className="mfui-textarea__text mfui-textarea__text_error"
+  >
+    text
   </div>
 </div>
 `;
@@ -173,6 +217,23 @@ exports[`<Textarea /> it renders without valid icon 1`] = `
 >
   <div
     className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea__field"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Textarea /> renders Textarea on mobile resolution 1`] = `
+<div
+  className="mfui-textarea mfui-textarea_color_default"
+>
+  <div
+    className="mfui-textarea__field-wrapper"
   >
     <div>
       <textarea
