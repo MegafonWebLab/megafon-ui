@@ -178,7 +178,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 settings: {
                     slidesToShow,
                     slidesToScroll,
-                    arrows
+                    arrows,
                 },
             } = gap;
             const nextIndex = index + 1;
@@ -196,7 +196,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 responsiveData = {
                     slidesToScroll,
                     hasResponsiveArrows: isArrows,
-                    currentSlides: slidesToShowValue
+                    currentSlides: slidesToShowValue,
                 };
             }
         });
@@ -211,50 +211,28 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         const { innerSlider: { state: { currentSlide, slideCount } }, slickGoTo } = this.slider;
         const { showSlides = 0, scrollSlides = 0 } = this.state;
 
-        const numberOfSections = scrollSlides > 1
+        const numberOfSections: number = scrollSlides > 1
             ? Math.ceil(slideCount / scrollSlides)
             : Math.ceil(slideCount - (showSlides - scrollSlides));
 
+        const slidesIndexes: number[] = new Array(slideCount).fill().map((item, i) => i);
+        const sectionLength: number = Math.ceil(showSlides);
+        const sliderSections: void[][] = new Array(numberOfSections).fill(new Array(sectionLength));
 
-        const slidesIndexes = new Array(slideCount).fill().map((item, i) => i);
-        const sectionLength = Math.ceil(showSlides);
-        const sliderSections = new Array(numberOfSections).fill(new Array(sectionLength));
-
-        const sliderSectionsWithSlides = sliderSections.map((section, i) => {
+        const sliderSectionsWithSlides: number[][] = sliderSections.map((section, i) => {
             const startIndex = i * scrollSlides;
             return slidesIndexes.slice(startIndex, startIndex + sectionLength);
         });
 
-        console.log(sliderSectionsWithSlides);
+        const currentSection: number[] = sliderSectionsWithSlides
+            .reverse()
+            .find(section => section.find(slideIndex => slideIndex === currentSlide));
 
-        // let i = 0;
-        // const data = new Array(slideCount).fill().map(() => i++);
-        // const structureScheme = new Array(Math.ceil(numberOfSections)).fill(new Array(Math.ceil(showSlides)));
-        //
-        // const structureSchemeWithData = structureScheme.map((arr, i) => {
-        //     const startIndex = i * scrollSlides;
-        //     return data.slice(startIndex, startIndex + arr.length);
-        // });
-        //
-        // let section;
-        // for (let internalArr of structureSchemeWithData.reverse()) {
-        //     if (internalArr.includes(currentSlide)) {
-        //         section = internalArr;
-        //         break;
-        //     }
-        // }
-        //
-        // if (!section) {
-        //     return;
-        // }
-        //
-        // const rightSlide = section[0];
-        //
-        // if (currentSlide === rightSlide) {
-        //     return;
-        // }
-        //
-        // slickGoTo(rightSlide);
+        if (!currentSection || currentSection[0] === currentSlide) {
+            return;
+        }
+
+        slickGoTo(currentSection[0]);
     }
 
     handleCarouselParams = () => {
@@ -264,7 +242,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 slidesToShow,
                 slidesToScroll: nonResponsiveSlidesToScroll,
                 responsive,
-                arrows = true
+                arrows = true,
             },
         } = this.props;
         const slider = this.slider || { innerSlider: { state: {} } };
@@ -319,8 +297,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         const { className, options, theme, children } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
-        window.slider = this.slider;
-        this.slider && console.log(this.slider.innerSlider.state.currentSlide);
 
         return (
             <div className={cn('', {theme}, className)}>

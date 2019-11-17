@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - fixed logic: currentSlide is recounted now on every resize
 
 ## Release 1.0.10
 - **ContentArea**
