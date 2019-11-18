@@ -1,9 +1,11 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.11
 - **Button**
-    - depricated few values of properties passiveColor and disabledColor
-    - add new values for propperties passiveColor and disabledColor
+    - few values of properties `passiveColor` and `disabledColor` was deprecated 
+    - new values for properties `passiveColor` and `disabledColor` was added
 
 ## Release 1.0.10
 - **ContentArea**
