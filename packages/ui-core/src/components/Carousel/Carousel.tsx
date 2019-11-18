@@ -8,6 +8,7 @@ import throttle from 'lodash.throttle';
 
 interface ICarouselOptions {
     slidesToShow: number;
+    slidesToScroll: number;
     responsive?: ICarouselOptionsResponsive[];
     arrows?: boolean;
     initialSlide?: number;
@@ -36,11 +37,13 @@ interface ICarouselState {
     isNextActive: boolean;
     isArrows: boolean;
     showSlides: number;
+    scrollSlides: number;
 }
 
 interface IResponsiveData {
     hasResponsiveArrows?: boolean;
     currentSlides?: number;
+    slidesToScroll?: number;
 }
 
 const cn = cnCreate('mfui-carousel');
@@ -215,18 +218,24 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             ? Math.ceil(slideCount / scrollSlides)
             : Math.ceil(slideCount - (showSlides - scrollSlides));
 
-        const slidesIndexes: number[] = new Array(slideCount).fill().map((item, i) => i);
+        const slidesIndexes: number[] = new Array(slideCount).fill(null).map((_item, i) => i);
         const sectionLength: number = Math.ceil(showSlides);
         const sliderSections: void[][] = new Array(numberOfSections).fill(new Array(sectionLength));
 
-        const sliderSectionsWithSlides: number[][] = sliderSections.map((section, i) => {
+        const sliderSectionsWithSlides: number[][] = sliderSections.map((_section, i) => {
             const startIndex = i * scrollSlides;
             return slidesIndexes.slice(startIndex, startIndex + sectionLength);
         });
 
-        const currentSection: number[] = sliderSectionsWithSlides
+        let currentSection: number[] | undefined;
+
+        sliderSectionsWithSlides
             .reverse()
-            .find(section => section.find(slideIndex => slideIndex === currentSlide));
+            .forEach(section => {
+                if (section.indexOf(currentSlide) !== -1) {
+                    currentSection = section;
+                }
+            });
 
         if (!currentSection || currentSection[0] === currentSlide) {
             return;
