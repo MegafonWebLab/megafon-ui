@@ -71,19 +71,14 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         as: 'p',
     };
 
-    isModificator() {
-        const { marginAll } = this.props;
-
-        return marginAll === 'default' ? false : marginAll;
-    }
-
     render() {
         const TagName = this.props.as as string;
         const {
             sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
-            marginWide, marginDesktop, marginTablet, marginMobile,
-            hAlign, color, weight, className, children,
+            marginAll, marginWide, marginDesktop, marginTablet,
+            marginMobile, hAlign, color, weight, className, children,
         } = this.props;
+        const isMarginAll = marginAll === 'default' ? false : marginAll;
 
         return (
             <TagName
@@ -93,7 +88,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
                     'size-desktop': sizeDesktop,
                     'size-tablet': sizeTablet,
                     'size-mobile': sizeMobile,
-                    'margin-all': this.isModificator(),
+                    'margin-all': isMarginAll,
                     'margin-wide': marginWide,
                     'margin-desktop': marginDesktop,
                     'margin-tablet': marginTablet,
