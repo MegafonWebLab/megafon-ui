@@ -19,7 +19,7 @@ interface IParagraphProps {
     /** Font size on mobile resolution */
     sizeMobile?: 'smallest' | 'small' | 'medium' | 'large';
     /** Vertical margin on all resolutions */
-    marginAll?: 'none' | 'small' | 'medium' | 'large' | 'largest';
+    marginAll?: 'none' | 'small' | 'medium' | 'large' | 'largest' | 'default';
     /** Vertical margin on the wide */
     marginWide?: 'none' | 'small' | 'medium' | 'large' | 'largest';
     /** Vertical margin on desktop resolution */
@@ -47,7 +47,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         sizeDesktop: PropTypes.oneOf(['smallest', 'small', 'medium', 'large']),
         sizeTablet: PropTypes.oneOf(['smallest', 'small', 'medium', 'large']),
         sizeMobile: PropTypes.oneOf(['smallest', 'small', 'medium', 'large']),
-        marginAll: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest']),
+        marginAll: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest', 'default']),
         marginWide: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest']),
         marginDesktop: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest']),
         marginTablet: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest']),
@@ -73,25 +73,31 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
 
     render() {
         const TagName = this.props.as as string;
+        const {
+            sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
+            marginAll, marginWide, marginDesktop, marginTablet,
+            marginMobile, hAlign, color, weight, className, children,
+        } = this.props;
+        const isMarginAll = marginAll === 'default' ? false : marginAll;
 
         return (
             <TagName
                 className={cn('', {
-                    'size-all': this.props.sizeAll,
-                    'size-wide': this.props.sizeWide,
-                    'size-desktop': this.props.sizeDesktop,
-                    'size-tablet': this.props.sizeTablet,
-                    'size-mobile': this.props.sizeMobile,
-                    'margin-all': this.props.marginAll,
-                    'margin-wide': this.props.marginWide,
-                    'margin-desktop': this.props.marginDesktop,
-                    'margin-tablet': this.props.marginTablet,
-                    'margin-mobile': this.props.marginMobile,
-                    'h-align': this.props.hAlign,
-                    color: this.props.color,
-                    weight: this.props.weight,
-                }, this.props.className)}>
-                {this.props.children}
+                    'size-all': sizeAll,
+                    'size-wide': sizeWide,
+                    'size-desktop': sizeDesktop,
+                    'size-tablet': sizeTablet,
+                    'size-mobile': sizeMobile,
+                    'margin-all': isMarginAll,
+                    'margin-wide': marginWide,
+                    'margin-desktop': marginDesktop,
+                    'margin-tablet': marginTablet,
+                    'margin-mobile': marginMobile,
+                    'h-align': hAlign,
+                    color: color,
+                    weight: weight,
+                }, className )}>
+                {children}
             </TagName>
         );
     }
