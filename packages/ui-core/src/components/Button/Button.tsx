@@ -24,8 +24,8 @@ export interface IButtonProps {
     sizeTablet?: 'small' | 'medium' | 'large';
     /** Size for mobile 320-730 */
     sizeMobile?: 'small' | 'medium' | 'large';
-    /** Current color */
-    passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white';
+    /** Current color. WARNING!!! Values 'transparent', 'transparent-green' were deprecated */
+    passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white' | 'transparent-white';
     /** Hover color */
     hoverColor?: 'green' | 'purple' | 'transparent';
     /** Border color */
@@ -34,8 +34,8 @@ export interface IButtonProps {
     fontColor?: 'white' | 'green';
     /** Click/press color */
     downColor?: 'dark' | 'transparent';
-    /** Disabled color */
-    disabledColor?: 'gray' | 'white' | 'transparent';
+    /** Disabled color. WARNING!!! Values 'transparent', 'white' were deprecated */
+    disabledColor?: 'gray' | 'transparent-white' | 'transparent' | 'white';
     /** Width */
     width?: 'full' | 'auto';
     /** Custom class name */
@@ -78,6 +78,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
             'transparent',
             'transparent-green',
             'white',
+            'transparent-white',
         ]),
         hoverColor: PropTypes.oneOf([
             'green',
@@ -100,6 +101,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
             'gray',
             'white',
             'transparent',
+            'transparent-white',
         ]),
         margin: PropTypes.bool,
         padding: PropTypes.bool,
