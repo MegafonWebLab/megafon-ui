@@ -1,9 +1,11 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.12
 - **Paragraph**
     - edit styles according to guide
-    - add default value for prop marginAll
+    - add `default` value for `marginAll` prop
 - **Header**
     - edit styles according to guide
 
