@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - determine state of disabled only for type='button'
 
 ## Release 1.0.12
 - **Paragraph**
@@ -11,7 +13,7 @@
 
 ## Release 1.0.11
 - **Button**
-    - few values of properties `passiveColor` and `disabledColor` was deprecated 
+    - few values of properties `passiveColor` and `disabledColor` was deprecated
     - new values for properties `passiveColor` and `disabledColor` was added
 
 ## Release 1.0.10

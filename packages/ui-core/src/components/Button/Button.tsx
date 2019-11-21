@@ -192,7 +192,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
                 target={target}
                 type={href ? '' : type}
                 onClick={onClick}
-                disabled={disabled}
+                disabled={ElementType ? false : disabled}
             >
                 <div className={cn('inner')}>
                     {!showSpinner && children && this.renderChildrenElem()}
