@@ -35,6 +35,8 @@ interface IParagraphProps {
     /** Custom className */
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    /** Click event handler */
+    onClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
 const cn = cnCreate('mfui-paragraph');
@@ -61,6 +63,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
             PropTypes.string,
             PropTypes.node,
         ]),
+        onClick: PropTypes.func,
     };
 
     static defaultProps: Partial<IParagraphProps> = {
@@ -76,7 +79,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         const {
             sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
             marginAll, marginWide, marginDesktop, marginTablet,
-            marginMobile, hAlign, color, weight, className, children,
+            marginMobile, hAlign, color, weight, className, children, onClick,
         } = this.props;
         const isMarginAll = marginAll === 'default' ? false : marginAll;
 
@@ -96,7 +99,9 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
                     'h-align': hAlign,
                     color: color,
                     weight: weight,
-                }, className )}>
+                }, className )}
+                onClick={onClick}
+            >
                 {children}
             </TagName>
         );

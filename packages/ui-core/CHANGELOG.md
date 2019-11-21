@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **Paragraph**
+    - add onClick handler for analitycs
+
 ## Release 1.0.12
 - **Paragraph**
     - edit styles according to guide
