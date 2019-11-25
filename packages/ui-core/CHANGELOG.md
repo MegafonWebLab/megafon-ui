@@ -3,6 +3,7 @@
 ## Unreleased
 - **Button**
     - determine state of disabled only for type='button'
+    - add state of disabled for type='a'
 
 ## Release 1.0.12
 - **Paragraph**

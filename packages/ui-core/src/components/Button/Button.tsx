@@ -179,7 +179,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
                     'passive-color': !customView && passiveColor,
                     'hover-color': !customView && hoverColor,
                     'down-color': !customView && downColor,
-                    'disabled-color': !customView && disabledColor,
+                    'disabled-color': disabled && disabledColor,
                     'font-color': !customView && fontColor,
                     'border': !customView && border,
                     padding,
@@ -192,7 +192,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
                 target={target}
                 type={href ? '' : type}
                 onClick={onClick}
-                disabled={ElementType ? false : disabled}
+                disabled={ElementType === 'button' ? disabled : false}
             >
                 <div className={cn('inner')}>
                     {!showSpinner && children && this.renderChildrenElem()}

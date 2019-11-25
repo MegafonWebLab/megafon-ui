@@ -137,32 +137,28 @@
     }
 
     &_disabled-color_gray {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px @spbSky2 !important;
-            color: fade(@soggyAsphalt, 50%) !important;
-            background-color: @spbSky1 !important;
-        }
+        box-shadow: inset 0 0 0 1px @spbSky2 !important;
+        color: fade(@soggyAsphalt, 50%) !important;
+        background-color: @spbSky1 !important;
+        pointer-events: none;
     }
     &_disabled-color_white {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px @spbSky1 !important;
-            color: fade(@soggyAsphalt, 50%) !important;
-            background-color: @spbSky1 !important;
-        }
+        box-shadow: inset 0 0 0 1px @spbSky1 !important;
+        color: fade(@soggyAsphalt, 50%) !important;
+        background-color: @spbSky1 !important;
+        pointer-events: none;
     }
     &_disabled-color_transparent {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
-            color: fade(@soggyAsphalt, 50%) !important;
-            background-color: transparent !important;
-        }
+        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
+        color: fade(@soggyAsphalt, 50%) !important;
+        background-color: transparent !important;
+        pointer-events: none;
     }
     &_disabled-color_transparent-white {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px fade(@white, 50%) !important;
-            color: fade(@white, 50%) !important;
-            background-color: transparent !important;
-        }
+        box-shadow: inset 0 0 0 1px fade(@white, 50%) !important;
+        color: fade(@white, 50%) !important;
+        background-color: transparent !important;
+        pointer-events: none;
     }
 
     &_margin {
