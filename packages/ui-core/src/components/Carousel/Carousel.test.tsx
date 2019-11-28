@@ -12,12 +12,14 @@ const props: ICarouselProps = {
         arrows: true,
         initialSlide: 0,
         slidesToShow: 4,
+        slidesToScroll: 2,
         responsive: [
             {
                 breakpoint: 1000,
                 settings: {
                     arrows: false,
                     slidesToShow: 3,
+                    slidesToScroll: 1,
                 },
             },
             {
@@ -25,6 +27,7 @@ const props: ICarouselProps = {
                 settings: {
                     arrows: true,
                     slidesToShow: 2,
+                    slidesToScroll: 1,
                 },
             },
             {
@@ -32,6 +35,7 @@ const props: ICarouselProps = {
                 settings: {
                     arrows: false,
                     slidesToShow: 1,
+                    slidesToScroll: 1,
                 },
             },
         ],

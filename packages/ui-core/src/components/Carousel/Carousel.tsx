@@ -18,7 +18,7 @@ interface ICarouselOptions {
 
 interface ICarouselOptionsResponsive {
     breakpoint: number;
-    settings: Pick<ICarouselOptions, 'slidesToShow' | 'arrows'>;
+    settings: Pick<ICarouselOptions, 'slidesToShow' | 'arrows' | 'slidesToScroll'>;
 }
 
 export interface ICarouselProps {
@@ -84,6 +84,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             isPrevActive: false,
             isNextActive: true,
             isArrows: true,
+            isInfinite: false,
             showSlides: 0,
             scrollSlides: 0,
         };
@@ -170,7 +171,12 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         }
     }
 
-    getResponsiveData = (breakpoints, desktopArrows: boolean, desktopSlides: number, childsAmount: number) => {
+    getResponsiveData = (
+        breakpoints: ICarouselOptionsResponsive[],
+        desktopArrows: boolean,
+        desktopSlides: number,
+        childsAmount: number
+    ) => {
         const windowWidth = window.innerWidth;
         const breakpointsLength = breakpoints.length;
         let responsiveData: IResponsiveData = {};
@@ -182,6 +188,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                     slidesToShow,
                     slidesToScroll,
                     arrows,
+                    infinite,
                 },
             } = gap;
             const nextIndex = index + 1;
@@ -198,6 +205,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             if ((isNextBreakpoint && isThisResolution) || (isThisResolution && isLast)) {
                 responsiveData = {
                     slidesToScroll,
+                    infinite,
                     hasResponsiveArrows: isArrows,
                     currentSlides: slidesToShowValue,
                 };
@@ -212,11 +220,9 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             return;
         }
         const { innerSlider: { state: { currentSlide, slideCount } }, slickGoTo } = this.slider;
-        const { showSlides = 0, scrollSlides = 0 } = this.state;
+        const { showSlides = 0, scrollSlides = 0, isInfinite } = this.state;
 
-        const numberOfSections: number = scrollSlides > 1
-            ? Math.ceil(slideCount / scrollSlides)
-            : Math.ceil(slideCount - (showSlides - scrollSlides));
+        const numberOfSections: number = this.getSectionCount({ slideCount, scrollSlides, showSlides, isInfinite });
 
         const slidesIndexes: number[] = new Array(slideCount).fill(null).map((_item, i) => i);
         const sectionLength: number = Math.ceil(showSlides);
@@ -230,7 +236,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         let currentSection: number[] | undefined;
 
         sliderSectionsWithSlides
-            .reverse()
             .forEach(section => {
                 if (section.indexOf(currentSlide) !== -1) {
                     currentSection = section;
@@ -244,6 +249,16 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         slickGoTo(currentSection[0]);
     }
 
+    getSectionCount(settings) {
+        const { isInfinite, slideCount, scrollSlides, showSlides } = settings;
+
+        if (isInfinite) {
+            return Math.ceil(slideCount / scrollSlides);
+        } else {
+            return Math.ceil((slideCount - showSlides) / scrollSlides) + 1;
+        }
+    }
+
     handleCarouselParams = () => {
         const {
             children,
@@ -251,13 +266,19 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 slidesToShow,
                 slidesToScroll: nonResponsiveSlidesToScroll,
                 responsive,
+                infinite: nonResponsiveInfinite,
                 arrows = true,
             },
         } = this.props;
         const slider = this.slider || { innerSlider: { state: {} } };
         const { innerSlider: { state: { currentSlide } } } = slider;
         const childsAmount = children.length;
-        const { hasResponsiveArrows, currentSlides, slidesToScroll } = this.getResponsiveData(
+        const {
+            hasResponsiveArrows,
+            currentSlides,
+            slidesToScroll,
+            infinite,
+        } = this.getResponsiveData(
             responsive,
             arrows,
             slidesToShow,
@@ -268,9 +289,10 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             arrows && slidesToShow < childsAmount;
         const showSlides = currentSlides || slidesToShow;
         const scrollSlides = slidesToScroll || nonResponsiveSlidesToScroll;
+        const isInfinite = infinite || nonResponsiveInfinite;
 
         this.setState(
-            { isArrows, showSlides, scrollSlides },
+            { isArrows, showSlides, scrollSlides, isInfinite },
             (): void => {
                 this.updateArrowsState(currentSlide);
             }

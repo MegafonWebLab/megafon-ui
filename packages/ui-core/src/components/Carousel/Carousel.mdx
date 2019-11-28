@@ -9,38 +9,32 @@ import Logo from 'components/Logo/Logo';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 
 export const Wrapper = ({children}) => <div>{children}</div>;
+//    variableWidth: true,
 
 export const carouselParams = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    variableWidth: true,
-    responsive: [
-        {
-            breakpoint: 1000,
-            settings: {
-                arrows: false,
-                dots: true,
-                slidesToShow: 3,
-            },
-        },
-        {
-            breakpoint: 900,
-            settings: {
-                arrows: true,
-                dots: true,
-            },
-        },
-        {
-            breakpoint: 860,
-            settings: {
-                arrows: false,
-                dots: true,
-            },
-        },
-    ],
+      dots: true,
+      arrows: true,
+      infinite: false,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 2,
+      responsive: [
+          {
+              breakpoint: 1023,
+              settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  arrows: true
+              }
+          },
+          {
+              breakpoint: 767,
+              settings: {
+                  slidesToShow: 1.05,
+                  arrows: false
+              }
+          }
+      ]
 };
 
 # Carousel
@@ -53,31 +47,28 @@ export const carouselParams = {
 <Playground wrapper={Wrapper}>
     <Carousel options={carouselParams} onClickNext={() => {}}>
         <div style={{ width: 260 }}>
-            <Logo />
+            1<Logo />
         </div>
         <div style={{ width: 260 }}>
-            <Logo />
+            2<Logo />
         </div>
         <div style={{ width: 260 }}>
-            <Logo />
+            3<Logo />
         </div>
         <div style={{ width: 260 }}>
-            <Logo />
+            4<Logo />
         </div>
         <div style={{ width: 260 }}>
-            <Logo />
+            5<Logo />
         </div>
         <div style={{ width: 260 }}>
-            <Logo />
+            6<Logo />
         </div>
         <div style={{ width: 260 }}>
-            <Logo />
+            7<Logo />
         </div>
         <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
+            8<Logo />
         </div>
     </Carousel>
 </Playground>
