@@ -4,8 +4,11 @@ import './Textarea.less';
 import cnCreate from 'utils/cn';
 import * as equal from 'deep-equal';
 import detectTouch from 'utils/detectTouch';
+import InputLabel from 'components/InputLabel/InputLabel';
 
 interface ITextareaProps {
+    /** Field title */
+    label?: string;
     /** Field color scheme */
     color?: 'default' | 'white';
     /** Error/Notice text */
@@ -53,6 +56,7 @@ interface ITextareaProps {
 const cn = cnCreate('mfui-textarea');
 class Textarea extends React.Component<ITextareaProps, {}> {
     static propTypes = {
+        label: PropTypes.string,
         noticeText: PropTypes.string,
         commentText: PropTypes.string,
         successText: PropTypes.string,
@@ -118,9 +122,9 @@ class Textarea extends React.Component<ITextareaProps, {}> {
 
     render() {
         const {
-            error, color,
-            valid, disabled, className,
-            commentText, successText, noticeText,
+            error, color, valid, disabled,
+            className, commentText, successText,
+            noticeText, label, id,
         } = this.props;
 
         return (
@@ -130,7 +134,9 @@ class Textarea extends React.Component<ITextareaProps, {}> {
                     error: error,
                     disabled,
                     color,
-                }, className)}>
+                }, className)}
+            >
+                {label && <InputLabel label={label} id={id} />}
                 <div className={cn('field-wrapper', { 'no-touch': !this.isTouch })}>
                     <div>{this.renderElem()}</div>
                 </div>

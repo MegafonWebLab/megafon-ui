@@ -9,8 +9,11 @@ import ErrorIcon from 'icons/System/24/Cancel_24.svg';
 import Hide from 'icons/Basic/24/Hide_24.svg';
 import Show from 'icons/Basic/24/Show_24.svg';
 import detectTouch from 'utils/detectTouch';
+import InputLabel from 'components/InputLabel/InputLabel';
 
 interface ITextFieldProps {
+    /** Field title */
+    label?: string;
     /** Field color scheme */
     color?: 'default' | 'white';
     /** Field size */
@@ -76,6 +79,7 @@ interface ITextFieldState {
 const cn = cnCreate('mfui-text-field');
 class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     static propTypes = {
+        label: PropTypes.string,
         color: PropTypes.oneOf(['default', 'white']),
         size: PropTypes.oneOf(['large']),
         noticeText: PropTypes.string,
@@ -233,6 +237,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             isHideIcon, customIcon, error, color,
             valid, disabled, size, className,
             commentText, successText, noticeText, type,
+            label, id,
         } = this.props;
 
         const isAnyIcon = !isHideIcon && (!!customIcon || error || valid);
@@ -251,6 +256,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
                     size,
                 }, className)}
             >
+                {label && <InputLabel label={label} id={id} />}
                 <div
                     className={cn('field-wrapper', { 'no-touch': !this.isTouch })}
                 >
@@ -261,7 +267,11 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
                     {isPasswordType && this.renderPasswordFieldIcon()}
                 </div>
                 {(error || valid) && noticeText &&
-                    <div className={cn('text', { error: true })} dangerouslySetInnerHTML={{ __html: noticeText }} />}
+                    <div
+                        className={cn('text', { error: true })}
+                        dangerouslySetInnerHTML={{ __html: noticeText }}
+                    />
+                }
                 {commentText &&
                     <div className={cn('text', { comment: true })}>{commentText}</div>}
                 {successText &&
