@@ -5,8 +5,11 @@ import SelectItem from './SelectItem';
 import * as equal from 'deep-equal';
 import cnCreate from 'utils/cn';
 import detectTouch from 'utils/detectTouch';
+import InputLabel from 'components/InputLabel/InputLabel';
 
 interface ISelectProps {
+    /** Field title */
+    label?: string;
     /** Header with the selected value */
     selectedTitle?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Selected value */
@@ -94,6 +97,7 @@ interface ISelectState {
 const cn = cnCreate('mfui-select');
 class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
+        label: PropTypes.string,
         selectedTitle: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.string,
@@ -429,7 +433,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             onChangeSearch, canOpen, className,
             name, icon, arrow, classNameControl,
             fontSize, fontColor, resultSize,
-            controlsPadding,
+            controlsPadding, label,
         } = this.props;
         const { focus, isOpen } = this.state;
 
@@ -451,6 +455,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 }, className)}
                 ref={this.getSelectNode}
             >
+                {label && <InputLabel label={label} />}
                 {!onChangeSearch && name && this.renderHiddenInput()}
                 <div
                     className={cn('control', { padding: controlsPadding }, classNameControl)}
