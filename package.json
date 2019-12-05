@@ -19,8 +19,5 @@
   },
   "devDependencies": {
     "lerna": "^3.18.1"
-  },
-  "dependencies": {
-    "@megafon/ui-core": "^1.0.12"
   }
 }
