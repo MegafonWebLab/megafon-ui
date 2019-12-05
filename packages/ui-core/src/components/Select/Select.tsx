@@ -86,7 +86,6 @@ interface ISelectProps {
 
 interface ISelectState {
     isOpen: boolean;
-    isTouch: boolean;
     focus: boolean;
     activeIndex: number;
     currentIndex: number;
@@ -161,13 +160,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     itemsNodeList: any = null;
     selectNode: any = null;
     search: any = null;
+    isTouch: boolean = detectTouch();
 
     constructor(props: ISelectProps) {
         super(props);
 
         this.state = {
             isOpen: false,
-            isTouch: false,
             focus: false,
             activeIndex: 0,
             currentIndex: props.placeholder ? -1 : 0,
@@ -175,7 +174,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     componentDidMount() {
-        this.setState({ isTouch: detectTouch() });
         document.addEventListener('click', this.onClickOutside);
     }
 
@@ -433,7 +431,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             fontSize, fontColor, resultSize,
             controlsPadding,
         } = this.props;
-        const { focus, isOpen, isTouch } = this.state;
+        const { focus, isOpen } = this.state;
 
         return (
             <div
@@ -449,7 +447,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     'font-size': fontSize,
                     'font-color': fontColor,
                     'result-size': resultSize,
-                    'no-touch': !isTouch,
+                    'no-touch': !this.isTouch,
                 }, className)}
                 ref={this.getSelectNode}
             >

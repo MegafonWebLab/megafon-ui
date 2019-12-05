@@ -1,6 +1,16 @@
 # Changelog
 
 ## Unreleased
+- **detectTouch**
+    - fixed return undefined
+- **Select**
+    - fixed hover with touch events detector
+- **Textarea**
+    - fixed hover with touch events detector
+- **TextField**
+    - fixed hover with touch events detector
+- **package.json**
+    - updated deep-equal module
 
 ## Release 1.0.12
 - **Paragraph**
@@ -11,7 +21,7 @@
 
 ## Release 1.0.11
 - **Button**
-    - few values of properties `passiveColor` and `disabledColor` was deprecated 
+    - few values of properties `passiveColor` and `disabledColor` was deprecated
     - new values for properties `passiveColor` and `disabledColor` was added
 
 ## Release 1.0.10

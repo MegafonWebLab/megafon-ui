@@ -50,12 +50,8 @@ interface ITextareaProps {
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-interface ITextareaState {
-    isTouch: boolean;
-}
-
 const cn = cnCreate('mfui-textarea');
-class Textarea extends React.Component<ITextareaProps, ITextareaState> {
+class Textarea extends React.Component<ITextareaProps, {}> {
     static propTypes = {
         noticeText: PropTypes.string,
         commentText: PropTypes.string,
@@ -85,18 +81,7 @@ class Textarea extends React.Component<ITextareaProps, ITextareaState> {
     };
 
     inputNode: any = React.createRef();
-
-    constructor(props: ITextareaProps) {
-        super(props);
-
-        this.state = {
-            isTouch: false,
-        };
-    }
-
-    componentDidMount() {
-        this.setState({ isTouch: detectTouch() });
-    }
+    isTouch: boolean = detectTouch();
 
     shouldComponentUpdate(nextProps: ITextareaProps) {
         return !equal(this.props, nextProps);
@@ -138,8 +123,6 @@ class Textarea extends React.Component<ITextareaProps, ITextareaState> {
             commentText, successText, noticeText,
         } = this.props;
 
-        const { isTouch } = this.state;
-
         return (
             <div
                 className={cn('', {
@@ -148,7 +131,7 @@ class Textarea extends React.Component<ITextareaProps, ITextareaState> {
                     disabled,
                     color,
                 }, className)}>
-                <div className={cn('field-wrapper', { 'no-touch': !isTouch })}>
+                <div className={cn('field-wrapper', { 'no-touch': !this.isTouch })}>
                     <div>{this.renderElem()}</div>
                 </div>
                 {(error || valid) && noticeText &&

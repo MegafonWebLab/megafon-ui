@@ -6,7 +6,7 @@ export default function detectTouch(): boolean {
     const { DocumentTouch } = window;
     const prefixes: string[] = ' -webkit- -moz- -o- -ms- '.split(' ');
     const mq = (queryParam: string): boolean => {
-        return window.matchMedia(queryParam).matches;
+        return window.matchMedia(queryParam).matches || false;
     };
 
     if (('ontouchstart' in window) || DocumentTouch && document instanceof DocumentTouch) {
