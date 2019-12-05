@@ -29,12 +29,8 @@ export interface ICheckboxProps {
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-interface ICheckboxState {
-    isTouch: boolean;
-}
-
 const cn = cnCreate('mfui-checkbox');
-class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
+class Checkbox extends React.Component<ICheckboxProps, {}> {
     static propTypes = {
         className: PropTypes.string,
         fontSize: PropTypes.oneOf(['regular', 'small']),
