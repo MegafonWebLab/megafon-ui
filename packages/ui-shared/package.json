@@ -140,7 +140,6 @@
     "@babel/runtime": "^7.0.0",
     "@megafon/ui-core": "^1.0.12",
     "classnames": "^2.2.6",
-    "deep-equal": "^1.0.1",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.6.2",
     "react-input-mask": "^2.0.3",

@@ -70,7 +70,6 @@ interface ITextFieldProps {
 }
 
 interface ITextFieldState {
-    isTouch: boolean;
     isPasswordHidden: boolean;
 }
 
@@ -115,22 +114,18 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     };
 
     inputNode: any;
+    isTouch: boolean = detectTouch();
 
     constructor(props: ITextFieldProps) {
         super(props);
 
         this.state = {
-            isTouch: false,
             isPasswordHidden: true,
         };
     }
 
-    componentDidMount() {
-        this.setState({ isTouch: detectTouch() });
-    }
-
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
-        return !equal(this.props, nextProps) || !equal(this.state, nextState);
+        return !(equal(this.props, nextProps) && equal(this.state, nextState));
     }
 
     blur = () => {
@@ -239,7 +234,6 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             valid, disabled, size, className,
             commentText, successText, noticeText, type,
         } = this.props;
-        const { isTouch } = this.state;
 
         const isAnyIcon = !isHideIcon && (!!customIcon || error || valid);
         const isStatusIcon = !isHideIcon && !customIcon;
@@ -258,7 +252,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
                 }, className)}
             >
                 <div
-                    className={cn('field-wrapper', { 'no-touch': !isTouch })}
+                    className={cn('field-wrapper', { 'no-touch': !this.isTouch })}
                 >
                     <div>{this.renderInputElem(isPasswordType)}</div>
                     {customIcon && this.renderCustomIcon()}
