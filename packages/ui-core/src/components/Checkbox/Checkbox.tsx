@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import cnCreate from 'utils/cn';
 import './Checkbox.less';
 import CheckedIcon from 'icons/System/16/Checked_16.svg';
@@ -63,17 +63,7 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
         checked: false,
     };
 
-    constructor(props: ICheckboxProps) {
-        super(props);
-
-        this.state = {
-            isTouch: false,
-        };
-    }
-
-    componentDidMount() {
-        this.setState({ isTouch: detectTouch() });
-    }
+    isTouch: boolean = detectTouch();
 
     handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
         const { onChange } = this.props;
@@ -94,8 +84,6 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
             extraContent,
         } = this.props;
 
-        const { isTouch } = this.state;
-
         return (
             <div
                 className={cn(
@@ -111,7 +99,7 @@ class Checkbox extends React.Component<ICheckboxProps, ICheckboxState> {
                 )}
             >
                 <div className={cn('inner')}>
-                    <label className={cn('label', { 'no-touch': !isTouch })}>
+                    <label className={cn('label', { 'no-touch': !this.isTouch })}>
                         <input
                             className={cn('input')}
                             type="checkbox"
