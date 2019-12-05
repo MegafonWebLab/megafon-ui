@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- **Checkbox**
+    - added new component
+    - added examples and description in .mdx
+    - added tests
+    - replaced property size with fontSize
+    - fix hover with touch events detector
 - **detectTouch**
     - fixed return undefined
 - **Select**

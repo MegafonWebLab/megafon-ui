@@ -1,0 +1,117 @@
+---
+name: Checkbox
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Checkbox from './Checkbox';
+import Info from 'icons/System/16/Info_16.svg';
+
+export const LightColorWrapper = ({ children }) => {
+    return (
+        <div style={{ backgroundColor: '#00b956', padding: '20px 10px 8px 10px' }}>
+            {children}
+        </div>
+    );
+}
+
+# Checkbox
+
+## Properties
+
+<PropsTable of={Checkbox} />
+
+export class CheckboxWrapper extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            checked: false,
+        }
+    }
+    handleChange = () => {
+        this.setState(prevState => ({ checked: !prevState.checked }))
+    }
+    render() {
+        return this.props.children({
+            checked: this.state.checked,
+            onChange: this.handleChange
+        })
+    }
+}
+
+## Basic usage
+
+<Playground>
+    <CheckboxWrapper>
+        {({ checked, onChange }) =>
+            <Checkbox checked={checked} onChange={onChange}>
+                I agree
+            </Checkbox>
+        }
+    </CheckboxWrapper>
+</Playground>
+
+## Checkbox usage with error
+
+<Playground>
+    <CheckboxWrapper>
+        {({ checked, onChange }) =>
+            <Checkbox checked={checked} onChange={onChange} error>
+                I agree
+            </Checkbox>
+        }
+    </CheckboxWrapper>
+</Playground>
+
+## Checkbox usage for light color scheme and small size
+
+<Playground wrapper={LightColorWrapper}>
+    <CheckboxWrapper>
+        {({ checked, onChange }) =>
+            <Checkbox
+                checked={checked}
+                onChange={onChange}
+                color="light"
+                fontSize="small"
+            >
+                I agree
+            </Checkbox>
+        }
+    </CheckboxWrapper>
+</Playground>
+
+## Checkbox with extraContent
+
+<Playground>
+    <CheckboxWrapper>
+        {({ checked, onChange }) =>
+            <Checkbox
+                checked={checked}
+                onChange={onChange}
+                extraContent={
+                    <div style={{ backgroundColor: '#00B956', color: '#FFF', padding: '5px'}}>
+                        Some Extra Content
+                    </div>
+                }
+            >
+                I agree
+            </Checkbox>
+        }
+    </CheckboxWrapper>
+</Playground>
+
+## Disabled unchecked checkbox
+
+<Playground>
+    <CheckboxWrapper>
+        {() => <Checkbox disabled>I agree</Checkbox>}
+    </CheckboxWrapper>
+</Playground>
+
+## Disabled checked checkbox
+
+<Playground>
+    <CheckboxWrapper>
+        {() => <Checkbox checked disabled>I agree</Checkbox>}
+    </CheckboxWrapper>
+</Playground>

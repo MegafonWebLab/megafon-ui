@@ -1,0 +1,167 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-checkbox');
+
+@{b} {
+    margin: 0 5px 12px 5px;
+
+    &__inner {
+        position: relative;
+        display: inline-block;
+    }
+    &__label {
+        display: inline;
+        cursor: pointer;
+    }
+
+    &__input {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 0;
+        height: 0;
+    }
+    &__custom-input {
+        position: absolute;
+        left: 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border: 2px solid;
+        border-radius: 2px;
+    }
+    &__icon {
+        width: 32px;
+        height: 32px;
+        display: block;
+        user-select: none;
+        opacity: 0;
+    }
+    &__extra-content {
+        position: relative;
+        left: 8px;
+        margin-right: -20px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -2px;
+    }
+
+    &_checked {
+        @{b} {
+            &__custom-input {
+                border: none;
+            }
+            &__icon {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_font-size_regular {
+        font-size: 15px;
+        line-height: 24px;
+
+        @{b} {
+            &__inner {
+                padding: 4px 15px 4px 35px;
+            }
+            &__custom-input {
+                top: 6px;
+            }
+        }
+    }
+
+    &_font-size_small {
+        font-size: 12px;
+        line-height: 16px;
+        @{b} {
+            &__inner {
+                padding: 1px 15px 4px 35px;
+            }
+            &__custom-input {
+                top: 0;
+            }
+        }
+    }
+
+    &_color_dark {
+        @{b} {
+            &__custom-input {
+                border-color: @spbSky2;
+            }
+            &__label_no-touch:hover @{b}__custom-input {
+                border-color: @greenHover;
+            }
+            &__label:active @{b}__custom-input {
+                border-color: @down !important;
+                background-color: @down;
+            }
+            &__icon {
+                fill: @clearWhite;
+            }
+        }
+    }
+
+    &_color_dark&_checked {
+        @{b} {
+            &__custom-input {
+                border-color: @green;
+                background-color: @green;
+                color: @white;
+            }
+            &__label_no-touch:hover @{b}__custom-input {
+                background-color: @greenHover;
+            }
+            &__label:active @{b}__custom-input {
+                background-color: @down !important;
+            }
+        }
+    }
+
+    &_color_dark&_checked&_disabled {
+        @{b} {
+            &__custom-input,
+            &__label:active @{b}__custom-input {
+                background-color: @spbSky2;
+            }
+        }
+    }
+
+    &_color_dark&_disabled {
+        @{b} {
+            &__label {
+                cursor: default;
+                pointer-events: none;
+            }
+            &__custom-input,
+            &__label:active @{b}__custom-input {
+                border-color: @spbSky2 !important;
+                background-color: @spbSky1;
+            }
+        }
+    }
+
+    &_color_dark&_error {
+        @{b} {
+            &__custom-input {
+                border-color: @fury;
+            }
+        }
+    }
+
+    &_color_light {
+        color: @clearWhite;
+        @{b} {
+            &__custom-input {
+                color: @green;
+                border-color: @clearWhite;
+                background-color: @clearWhite;
+            }
+        }
+    }
+}
