@@ -9,7 +9,7 @@ import InputLabel from 'components/InputLabel/InputLabel';
 
 interface ISelectProps {
     /** Field title */
-    label?: string;
+    label?: React.ReactNode;
     /** Html id attribute */
     id?: string;
     /** Header with the selected value */

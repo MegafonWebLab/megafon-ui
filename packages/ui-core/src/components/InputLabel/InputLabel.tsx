@@ -7,12 +7,7 @@ import Paragraph from 'components/Paragraph/Paragraph';
 const cn = cnCreate('mfui-input-label');
 class InputLabel extends React.Component {
     static propTypes = {
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-            PropTypes.node,
-        ]),
+        children: PropTypes.node,
         id: PropTypes.string,
     };
 
