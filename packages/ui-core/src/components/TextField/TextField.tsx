@@ -13,7 +13,7 @@ import InputLabel from 'components/InputLabel/InputLabel';
 
 interface ITextFieldProps {
     /** Field title */
-    label?: string;
+    label?: React.ReactNode;
     /** Field color scheme */
     color?: 'default' | 'white';
     /** Field size */
@@ -79,7 +79,7 @@ interface ITextFieldState {
 const cn = cnCreate('mfui-text-field');
 class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     static propTypes = {
-        label: PropTypes.string,
+        label: PropTypes.node,
         color: PropTypes.oneOf(['default', 'white']),
         size: PropTypes.oneOf(['large']),
         noticeText: PropTypes.string,

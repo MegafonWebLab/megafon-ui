@@ -8,7 +8,7 @@ import InputLabel from 'components/InputLabel/InputLabel';
 
 interface ITextareaProps {
     /** Field title */
-    label?: string;
+    label?: React.ReactNode;
     /** Field color scheme */
     color?: 'default' | 'white';
     /** Error/Notice text */
