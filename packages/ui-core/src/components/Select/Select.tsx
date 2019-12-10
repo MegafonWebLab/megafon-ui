@@ -10,6 +10,8 @@ import InputLabel from 'components/InputLabel/InputLabel';
 interface ISelectProps {
     /** Field title */
     label?: string;
+    /** Html id attribute */
+    id?: string;
     /** Header with the selected value */
     selectedTitle?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Selected value */
@@ -98,6 +100,7 @@ const cn = cnCreate('mfui-select');
 class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
         label: PropTypes.string,
+        id: PropTypes.string,
         selectedTitle: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.string,
@@ -360,7 +363,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     renderSearchField() {
-        const { inputPadding } = this.props;
+        const { inputPadding, id } = this.props;
 
         return (
             <input
@@ -376,6 +379,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 placeholder={this.props.placeholder}
                 maxLength={60}
                 autoComplete="off"
+                id={id}
             />
         );
     }
@@ -433,7 +437,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             onChangeSearch, canOpen, className,
             name, icon, arrow, classNameControl,
             fontSize, fontColor, resultSize,
-            controlsPadding, label,
+            controlsPadding, label, id,
         } = this.props;
         const { focus, isOpen } = this.state;
 
@@ -455,7 +459,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 }, className)}
                 ref={this.getSelectNode}
             >
-                {label && <InputLabel label={label} />}
+                {label && <InputLabel id={id}>{label}</InputLabel>}
                 {!onChangeSearch && name && this.renderHiddenInput()}
                 <div
                     className={cn('control', { padding: controlsPadding }, classNameControl)}

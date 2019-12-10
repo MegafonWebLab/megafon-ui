@@ -256,7 +256,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
                     size,
                 }, className)}
             >
-                {label && <InputLabel label={label} id={id} />}
+                {label && <InputLabel id={id}>{label}</InputLabel>}
                 <div
                     className={cn('field-wrapper', { 'no-touch': !this.isTouch })}
                 >
