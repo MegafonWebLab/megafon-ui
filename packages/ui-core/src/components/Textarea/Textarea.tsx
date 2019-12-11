@@ -56,7 +56,7 @@ interface ITextareaProps {
 const cn = cnCreate('mfui-textarea');
 class Textarea extends React.Component<ITextareaProps, {}> {
     static propTypes = {
-        label: PropTypes.string,
+        label: PropTypes.node,
         noticeText: PropTypes.string,
         commentText: PropTypes.string,
         successText: PropTypes.string,

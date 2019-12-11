@@ -8,6 +8,11 @@ describe('<Textarea />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('it label and id', () => {
+        const wrapper = shallow(<Textarea label="label" id="id" />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('it renders texts', () => {
         const wrapper = shallow(<Textarea commentText="text" successText="text" />);
         expect(wrapper).toMatchSnapshot();

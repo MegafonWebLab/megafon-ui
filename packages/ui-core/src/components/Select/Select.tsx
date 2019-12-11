@@ -99,7 +99,7 @@ interface ISelectState {
 const cn = cnCreate('mfui-select');
 class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
-        label: PropTypes.string,
+        label: PropTypes.node,
         id: PropTypes.string,
         selectedTitle: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),

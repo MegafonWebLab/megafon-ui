@@ -4,8 +4,13 @@ import cnCreate from 'utils/cn';
 import './InputLabel.less';
 import Paragraph from 'components/Paragraph/Paragraph';
 
+interface IInputLabelProps {
+    id?: string;
+    children: React.ReactNode;
+}
+
 const cn = cnCreate('mfui-input-label');
-class InputLabel extends React.Component {
+class InputLabel extends React.Component<IInputLabelProps> {
     static propTypes = {
         children: PropTypes.node,
         id: PropTypes.string,

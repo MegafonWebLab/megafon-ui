@@ -39,6 +39,29 @@ exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
 </div>
 `;
 
+exports[`<Textarea /> it label and id 1`] = `
+<div
+  className="mfui-textarea mfui-textarea_color_default"
+>
+  <InputLabel
+    id="id"
+  >
+    label
+  </InputLabel>
+  <div
+    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea__field"
+        id="id"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Textarea /> it renders Textarea 1`] = `
 <div
   className="mfui-textarea mfui-textarea_color_default"
