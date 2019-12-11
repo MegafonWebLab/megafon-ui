@@ -7,9 +7,10 @@
   "scripts": {
     "build": "lerna run build",
     "clean": "lerna clean --yes",
+    "typecheck": "lerna run typecheck",
     "lint": "lerna run lint",
     "test": "lerna run test",
-    "pre-commit": "lerna run lint && lerna run test",
+    "pre-commit": "lerna run typecheck && lerna run lint && lerna run test",
     "release": "lerna version && yarn install --frozen-lockfile"
   },
   "husky": {

@@ -7,7 +7,7 @@ import './ProductSwitcher.less';
 interface IItem {
     title: string;
     value: string;
-    unit: string;
+    unit?: string;
 }
 
 interface IProductSwitcherProps {

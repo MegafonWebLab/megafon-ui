@@ -23,6 +23,7 @@ before_script:
 
 script:
   - lerna run lint
+  - lerna run typecheck
   - lerna run build
   - lerna run coverage
   - lerna run test
