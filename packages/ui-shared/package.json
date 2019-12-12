@@ -20,6 +20,7 @@
     "build": "gulp build",
     "coverage": "npm run coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
+    "typecheck": "tsc --noEmit -p .",
     "lint": "npm run lint:ts && npm run lint:less",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",

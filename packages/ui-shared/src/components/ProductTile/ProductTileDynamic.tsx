@@ -12,9 +12,9 @@ interface IProductTileDynamicProps {
     /** Switcher */
     switcher: ISwitcher;
     /** Start calls index */
-    startCallsIndex: number;
+    startCallsIndex?: number;
     /** Start traffic index */
-    startTrafficIndex: number;
+    startTrafficIndex?: number;
     /** Change calls */
     onChangeCalls(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
     /** Change Traffic */

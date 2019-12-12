@@ -150,7 +150,7 @@ export interface IProductTileProps {
     /** First params */
     firstParams: IFirstParam;
     /** Service packs */
-    servicePacks: Array<Partial<IServicePack>>;
+    servicePacks?: Array<Partial<IServicePack>>;
     /** Info - object type - return with onClickConnect, onClickBuy */
     info: {};
     /** isAtive */
@@ -328,7 +328,7 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             defaultBuyLink: buyLink,
         };
 
-        this.defaultInfo = servicePacks.length ? defaultValues : {};
+        this.defaultInfo = !servicePacks || servicePacks.length ? defaultValues : {};
         this.state = {
             switcher,
             currentPack,

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import ProductTile, { IProductTileProps, IServicePack } from './ProductTile';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 
-const tariff: Partial<IProductTileProps> = {
+const tariff: IProductTileProps = {
     buyButtonText: 'sdfsdf',
     connectButtonText: 'sdfsdf',
     secondParamsHead: 'sdfsdf',

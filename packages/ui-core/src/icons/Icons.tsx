@@ -49,6 +49,7 @@ class Icons extends React.Component<{}, IIconsState> {
         };
     }
 
+    // @ts-ignore unused props
     static getDerivedStateFromProps(props: {}, state: IIconsState) {
         const { activeElement: { svgList }, activeIcon } = state;
 

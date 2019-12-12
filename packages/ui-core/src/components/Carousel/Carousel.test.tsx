@@ -96,7 +96,7 @@ describe('<Carousel />', () => {
             expect(addEventListener).toHaveBeenCalledTimes(3);
             expect(addEventListener).toBeCalledWith('touchstart', instance.touchStart);
             expect(addEventListener).toBeCalledWith('touchmove', instance.preventTouch, instance.noPassiveOption);
-            expect(addEventListener).toBeCalledWith('resize', instance.throttledHandleCarouselParams);
+            expect(addEventListener).toBeCalledWith('resize', instance.throttledResizeEvents);
 
             addEventListener.mockRestore();
         });

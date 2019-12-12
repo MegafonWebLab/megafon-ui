@@ -137,7 +137,7 @@ describe('<Select />', () => {
 
         wrapper.setState({ isOpen: true });
         instance.getSelectNode({ contains() { return false; } });
-        instance.onClickOutside({ target: {} });
+        instance.onClickOutside({ target: {} } as MouseEvent);
         expect(wrapper.state('isOpen')).toBe(false);
     });
 
@@ -147,7 +147,7 @@ describe('<Select />', () => {
 
         wrapper.setState({ isOpen: true });
         instance.getSelectNode({ contains() { return true; } });
-        instance.onClickOutside({ target: {} });
+        instance.onClickOutside({ target: {} } as MouseEvent);
         expect(wrapper.state('isOpen')).toBe(true);
     });
 
