@@ -19,6 +19,33 @@ export const wrapper = (width = 250) => ({ children }) => {
 
 <PropsTable of={TextField} />
 
+## API
+
+Method  | Description
+------- | ---
+blur    | Trigger blur event on input field.
+focus   | Trigger focus event on input field.
+
+**Use TextField's 'ref' prop for API methods call:**
+
+```
+class SearchForm extends Component {
+    this.textField = undefined;
+
+    handleSubmit() {
+        textField.blur();
+    }
+
+    render() {
+        return (
+            <Form onSubmit={this.handleSubmit}>
+                <TextField ref={(instance) => { this.textField = instance; }} />
+            </Form>
+        );
+    }
+}
+```
+
 ## Basic usage
 
 <Playground wrapper={wrapper()}>
