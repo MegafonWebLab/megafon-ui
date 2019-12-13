@@ -18,13 +18,13 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp build",
-    "coverage": "npm run coverage:unit",
+    "coverage": "yarn coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "typecheck": "tsc --noEmit -p .",
-    "lint": "npm run lint:ts && npm run lint:less",
+    "lint": "yarn lint:ts && yarn lint:less",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
-    "test": "npm run test:unit",
+    "test": "yarn test:unit",
     "test:unit": "jest",
     "testu": "jest --updateSnapshot"
   },

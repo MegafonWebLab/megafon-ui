@@ -136,7 +136,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
                     color,
                 }, className)}
             >
-                {label && <InputLabel id={id}>{label}</InputLabel>}
+                {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
                 <div className={cn('field-wrapper', { 'no-touch': !this.isTouch })}>
                     <div>{this.renderElem()}</div>
                 </div>

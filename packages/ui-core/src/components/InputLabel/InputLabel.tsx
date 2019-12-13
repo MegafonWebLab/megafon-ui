@@ -5,7 +5,7 @@ import './InputLabel.less';
 import Paragraph from 'components/Paragraph/Paragraph';
 
 interface IInputLabelProps {
-    id?: string;
+    htmlFor?: string;
     children: React.ReactNode;
 }
 
@@ -13,14 +13,14 @@ const cn = cnCreate('mfui-input-label');
 class InputLabel extends React.Component<IInputLabelProps> {
     static propTypes = {
         children: PropTypes.node,
-        id: PropTypes.string,
+        htmlFor: PropTypes.string,
     };
 
     render() {
-        const { id, children } = this.props;
+        const { htmlFor, children } = this.props;
 
         return (
-            <label htmlFor={id} className={cn('')}>
+            <label htmlFor={htmlFor} className={cn('')}>
                 <Paragraph as="div" weight="medium">{children}</Paragraph>
             </label>
         );

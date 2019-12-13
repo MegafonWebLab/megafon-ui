@@ -44,7 +44,7 @@ exports[`<Textarea /> it label and id 1`] = `
   className="mfui-textarea mfui-textarea_color_default"
 >
   <InputLabel
-    id="id"
+    htmlFor="id"
   >
     label
   </InputLabel>

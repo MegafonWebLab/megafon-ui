@@ -2,6 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import TextField from './TextField';
 import detectTouch from 'utils/detectTouch';
+import { ITextFieldProps } from './TextField';
 
 jest.mock('utils/detectTouch', () => ({
     default: jest.fn().mockReturnValue(false),
@@ -15,18 +16,18 @@ jest.mock('react-input-mask', () => {
 
 const inputClassName = '.mfui-text-field__field';
 
-const props = {
+const props: ITextFieldProps = {
     label: <div>label</div>,
-    color: 'default' as const,
-    size: 'large' as const,
+    color: 'default',
+    size: 'large',
     noticeText: 'notice text',
     commentText: 'comment text',
     successText: 'success text',
     autoFocus: true,
-    autocomplete: 'on' as const,
+    autocomplete: 'on',
     disabled: true,
     required: true,
-    type: 'text' as const,
+    type: 'text',
     name: 'name',
     placeholder: 'placeholder',
     id: 'id',

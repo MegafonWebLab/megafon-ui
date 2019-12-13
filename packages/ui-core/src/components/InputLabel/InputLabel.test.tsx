@@ -9,7 +9,7 @@ describe('<InputLabel />', () => {
     });
 
     it('renders InputLabel with props', () => {
-        const wrapper = shallow(<InputLabel id="id">test</InputLabel>);
+        const wrapper = shallow(<InputLabel htmlFor="htmlFor">test</InputLabel>);
         expect(wrapper).toMatchSnapshot();
     });
 });

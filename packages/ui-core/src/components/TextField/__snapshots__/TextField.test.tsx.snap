@@ -153,7 +153,7 @@ exports[`<TextField /> renders with mask 1`] = `
   className="mfui-text-field mfui-text-field_icon mfui-text-field_disabled mfui-text-field_color_default mfui-text-field_size_large class name"
 >
   <InputLabel
-    id="id"
+    htmlFor="id"
   >
     <div>
       label
@@ -207,7 +207,7 @@ exports[`<TextField /> renders with props 1`] = `
   className="mfui-text-field mfui-text-field_icon mfui-text-field_disabled mfui-text-field_color_default mfui-text-field_size_large class name"
 >
   <InputLabel
-    id="id"
+    htmlFor="id"
   >
     <div>
       label

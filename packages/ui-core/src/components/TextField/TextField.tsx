@@ -11,7 +11,7 @@ import Show from 'icons/Basic/24/Show_24.svg';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
 
-interface ITextFieldProps {
+export interface ITextFieldProps {
     /** Field title */
     label?: React.ReactNode;
     /** Field color scheme */
@@ -256,7 +256,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
                     size,
                 }, className)}
             >
-                {label && <InputLabel id={id}>{label}</InputLabel>}
+                {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
                 <div
                     className={cn('field-wrapper', { 'no-touch': !this.isTouch })}
                 >

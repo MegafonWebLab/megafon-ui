@@ -3,7 +3,7 @@
 exports[`<InputLabel /> renders InputLabel with props 1`] = `
 <label
   className="mfui-input-label"
-  htmlFor="id"
+  htmlFor="htmlFor"
 >
   <Paragraph
     as="div"

@@ -459,7 +459,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 }, className)}
                 ref={this.getSelectNode}
             >
-                {label && <InputLabel id={id}>{label}</InputLabel>}
+                {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
                 {!onChangeSearch && name && this.renderHiddenInput()}
                 <div
                     className={cn('control', { padding: controlsPadding }, classNameControl)}

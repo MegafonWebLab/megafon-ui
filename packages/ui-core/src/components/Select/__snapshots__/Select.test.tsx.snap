@@ -273,7 +273,7 @@ exports[`<Select /> it renders with label and id 1`] = `
   className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
 >
   <InputLabel
-    id="id"
+    htmlFor="id"
   >
     label
   </InputLabel>
