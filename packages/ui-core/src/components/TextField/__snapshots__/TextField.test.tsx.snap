@@ -30,7 +30,7 @@ exports[`<TextField /> icon mod renders with mod when error is true 1`] = `
   className="mfui-text-field mfui-text-field_error mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -55,7 +55,7 @@ exports[`<TextField /> icon mod renders with mod when valid is true 1`] = `
   className="mfui-text-field mfui-text-field_valid mfui-text-field_icon mfui-text-field_color_default"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
       <input
@@ -87,6 +87,32 @@ exports[`<TextField /> icon mod renders without mod when isHideIcon is true 1`] 
         autoComplete="off"
         className="mfui-text-field__field"
         type="text"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> password type renders password TextField with password shown 1`] = `
+<div
+  className="mfui-text-field mfui-text-field_password mfui-text-field_color_default"
+>
+  <div
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+  >
+    <div>
+      <input
+        autoComplete="off"
+        className="mfui-text-field__field"
+        type="text"
+      />
+    </div>
+    <div
+      className="mfui-text-field__icon-box mfui-text-field__icon-box_password"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-text-field__icon"
       />
     </div>
   </div>
@@ -330,76 +356,6 @@ exports[`<TextField /> status icons renders when valid or error is true 1`] = `
     </div>
     <div
       className="mfui-text-field__icon-box"
-    >
-      <test-file-stub
-        className="mfui-text-field__icon"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<TextField /> renders TextField on mobile resolution 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_color_default"
->
-  <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <div>
-      <input
-        autoComplete="off"
-        className="mfui-text-field__field"
-        type="text"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<TextField /> renders password TextField with hidden password 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_password mfui-text-field_color_default"
->
-  <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <div>
-      <input
-        autoComplete="off"
-        className="mfui-text-field__field"
-        type="password"
-      />
-    </div>
-    <div
-      className="mfui-text-field__icon-box mfui-text-field__icon-box_password"
-      onClick={[Function]}
-    >
-      <test-file-stub
-        className="mfui-text-field__icon"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<TextField /> renders password TextField with password shown 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_password mfui-text-field_color_default"
->
-  <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <div>
-      <input
-        autoComplete="off"
-        className="mfui-text-field__field"
-        type="text"
-      />
-    </div>
-    <div
-      className="mfui-text-field__icon-box mfui-text-field__icon-box_password"
-      onClick={[Function]}
     >
       <test-file-stub
         className="mfui-text-field__icon"
