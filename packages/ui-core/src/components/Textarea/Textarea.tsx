@@ -87,8 +87,8 @@ class Textarea extends React.Component<ITextareaProps, {}> {
     inputNode: any = React.createRef();
     isTouch: boolean = detectTouch();
 
-    shouldComponentUpdate(nextProps: ITextareaProps, nextState: ITextareaState) {
-        return !equal(this.props, nextProps) || !equal(this.state, nextState);
+    shouldComponentUpdate(nextProps: ITextareaProps) {
+        return !equal(this.props, nextProps);
     }
 
     blur = () => {

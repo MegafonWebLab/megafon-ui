@@ -17,28 +17,6 @@ exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> is checked shouldComponentUpdate with new state 1`] = `
-<div
-  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
->
-  <div
-    className="mfui-textarea__field-wrapper"
-  >
-    <div>
-      <textarea
-        autoComplete="off"
-        className="mfui-textarea__field"
-      />
-    </div>
-  </div>
-  <div
-    className="mfui-textarea__text mfui-textarea__text_error"
-  >
-    text
-  </div>
-</div>
-`;
-
 exports[`<Textarea /> is checked shouldComponentUpdate with props 1`] = `
 <div
   className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
