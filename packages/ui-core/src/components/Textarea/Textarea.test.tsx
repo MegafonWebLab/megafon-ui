@@ -94,8 +94,4 @@ describe('<Textarea />', () => {
 
         expect(() => instance.blur()).not.toThrow();
     });
-
-    it('', () => {
-
-    });
 });
