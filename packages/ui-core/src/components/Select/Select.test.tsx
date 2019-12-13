@@ -24,6 +24,11 @@ describe('<Select />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('it renders with label and id', () => {
+        const wrapper = shallow(<Select items={[]} label="label" id="id" />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('it renders witout icon', () => {
         const wrapper = shallow(<Select items={[]} />);
         expect(wrapper).toMatchSnapshot();

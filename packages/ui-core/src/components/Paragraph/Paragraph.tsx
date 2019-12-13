@@ -34,7 +34,7 @@ interface IParagraphProps {
     as?: 'p' | 'div';
     /** Custom className */
     className?: string;
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    children?: React.ReactNode;
 }
 
 const cn = cnCreate('mfui-paragraph');
@@ -54,13 +54,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         marginMobile: PropTypes.oneOf(['none', 'small', 'medium', 'large', 'largest']),
         color: PropTypes.oneOf(['black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
         as: PropTypes.oneOf(['p', 'div']),
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.arrayOf(PropTypes.node),
-            PropTypes.element,
-            PropTypes.string,
-            PropTypes.node,
-        ]),
+        children: PropTypes.node,
     };
 
     static defaultProps: Partial<IParagraphProps> = {

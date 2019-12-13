@@ -268,6 +268,55 @@ exports[`<Select /> it renders search 1`] = `
 </Select>
 `;
 
+exports[`<Select /> it renders with label and id 1`] = `
+<div
+  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
+>
+  <InputLabel
+    htmlFor="id"
+  >
+    label
+  </InputLabel>
+  <div
+    className="mfui-select__control"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+  >
+    <div
+      className="mfui-select__title"
+      onClick={[Function]}
+      tabIndex={0}
+    >
+      <div
+        className="mfui-select__title-inner"
+      />
+    </div>
+    <span
+      className="mfui-select__arrow"
+    >
+      <span
+        className="mfui-select__arrow-inner"
+      />
+    </span>
+  </div>
+  <div
+    className="mfui-select__list"
+  >
+    <div
+      className="mfui-select__list-inner"
+    >
+      <div
+        className="mfui-select__not-found"
+      >
+        Ничего не нашлось
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Select /> it renders with result size small 1`] = `
 <div
   className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_small mfui-select_no-touch"

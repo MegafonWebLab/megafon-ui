@@ -13,12 +13,21 @@
     - fixed return undefined
 - **Select**
     - fixed hover with touch events detector
+    - add props label
+    - add test
 - **Textarea**
     - fixed hover with touch events detector
+    - add props label
+    - add test
 - **TextField**
     - fixed hover with touch events detector
+    - add props label
+    - add tests
 - **package.json**
     - updated deep-equal module
+- **InputLabel**
+    - add component for input label
+    - add types and tests
 
 ## Release 1.0.12
 - **Paragraph**

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InputLabel /> renders InputLabel with props 1`] = `
+<label
+  className="mfui-input-label"
+  htmlFor="htmlFor"
+>
+  <Paragraph
+    as="div"
+    color="black"
+    marginAll="medium"
+    sizeAll="medium"
+    weight="medium"
+  >
+    test
+  </Paragraph>
+</label>
+`;
+
+exports[`<InputLabel /> renders InputLabel without props 1`] = `
+<label
+  className="mfui-input-label"
+>
+  <Paragraph
+    as="div"
+    color="black"
+    marginAll="medium"
+    sizeAll="medium"
+    weight="medium"
+  >
+    test
+  </Paragraph>
+</label>
+`;
