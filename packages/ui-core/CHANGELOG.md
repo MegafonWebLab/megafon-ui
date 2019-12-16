@@ -1,7 +1,6 @@
 # Changelog
 
 ## Unreleased
-### Changed
 - **Carousel**
     - fix slick-track z-index
 
