@@ -161,4 +161,15 @@ describe('<TextField />', () => {
 
         expect(wrapper.state().isPasswordHidden).toBeTruthy();
     });
+
+    it('calls onCustomIconClick handler', () => {
+        const handler = jest.fn();
+        const wrapper = shallow<TextField>(
+            <TextField customIcon={<div>custom icon</div>} onCustomIconClick={handler} />
+        );
+
+        wrapper.find('.mfui-text-field__icon-box_custom').simulate('click');
+
+        expect(handler).toHaveBeenCalledTimes(1);
+    });
 });
