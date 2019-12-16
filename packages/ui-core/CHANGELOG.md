@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - add overflow:hidden for slick-list
 
 ## Release 1.0.13
 - **Checkbox**
