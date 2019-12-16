@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed
+- **Carousel**
+    - fix slick-track z-index
 
 ## Release 1.0.13
 - **Checkbox**
