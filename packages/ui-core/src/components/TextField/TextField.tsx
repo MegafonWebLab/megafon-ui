@@ -70,6 +70,8 @@ export interface ITextFieldProps {
     onFocus?(e: React.SyntheticEvent<EventTarget>): void;
     /** KeyUp handler */
     onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
+    /** Custom icon click handler */
+    onCustomIconClick?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
 interface ITextFieldState {
@@ -108,6 +110,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
         onKeyUp: PropTypes.func,
+        onCustomIconClick: PropTypes.func,
     };
 
     static defaultProps: Partial<ITextFieldProps> = {
@@ -132,10 +135,12 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         return !(equal(this.props, nextProps) && equal(this.state, nextState));
     }
 
+    /* Method for trigger blur event on input field. Use TextField's 'ref' prop for call. */
     blur = () => {
         return this.inputNode.blur();
     }
 
+    /* Method for trigger focus event on input field. Use TextField's 'ref' prop for call. */
     focus = () => {
         return this.inputNode.focus();
     }
@@ -169,10 +174,14 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     }
 
     renderCustomIcon() {
+        const { customIcon, onCustomIconClick } = this.props;
+
         return (
             <div
-                className={cn('icon-box', { custom: !!this.props.customIcon })}>
-                {this.props.customIcon}
+                className={cn('icon-box', { custom: !!customIcon })}
+                onClick={onCustomIconClick}
+            >
+                {customIcon}
             </div>
         );
     }
