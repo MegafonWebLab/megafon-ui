@@ -5,7 +5,7 @@ import SelectItem from './SelectItem';
 import * as equal from 'deep-equal';
 import cnCreate from 'utils/cn';
 import detectTouch from 'utils/detectTouch';
-import InputLabel from 'components/InputLabel/InputLabel';
+import InputLabel from '../InputLabel/InputLabel';
 
 interface ISelectProps {
     /** Field title */

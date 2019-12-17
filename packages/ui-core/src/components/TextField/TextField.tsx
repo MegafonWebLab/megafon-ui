@@ -9,7 +9,7 @@ import ErrorIcon from 'icons/System/24/Cancel_24.svg';
 import Hide from 'icons/Basic/24/Hide_24.svg';
 import Show from 'icons/Basic/24/Show_24.svg';
 import detectTouch from 'utils/detectTouch';
-import InputLabel from 'components/InputLabel/InputLabel';
+import InputLabel from '../InputLabel/InputLabel';
 
 export interface ITextFieldProps {
     /** Field title */

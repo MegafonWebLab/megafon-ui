@@ -4,7 +4,7 @@ import './Textarea.less';
 import cnCreate from 'utils/cn';
 import * as equal from 'deep-equal';
 import detectTouch from 'utils/detectTouch';
-import InputLabel from 'components/InputLabel/InputLabel';
+import InputLabel from '../InputLabel/InputLabel';
 
 interface ITextareaProps {
     /** Field title */

@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import cnCreate from 'utils/cn';
 import './InputLabel.less';
-import Paragraph from 'components/Paragraph/Paragraph';
+import Paragraph from '../Paragraph/Paragraph';
 
 interface IInputLabelProps {
     htmlFor?: string;
