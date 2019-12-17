@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## Release 1.0.14
+- **package.json**
+    - updated @megafon/ui-core package
+
 ## Release 1.0.13
 - **package.json**
     - deleted deep-equal module

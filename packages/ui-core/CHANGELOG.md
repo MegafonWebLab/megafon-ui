@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+Nothing yet.
+
+## Release 1.0.14
+- **Select**
+    - `label` and `onCustomIconClick` props added
+- **Textarea**
+    - `label` prop added
+- **TextField**
+    - `label` prop added
+- **InputLabel**
+    - component added
+
 ## Release 1.0.13
 - **Checkbox**
     - added new component
