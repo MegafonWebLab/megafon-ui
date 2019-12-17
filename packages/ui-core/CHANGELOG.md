@@ -2,9 +2,8 @@
 
 ## Unreleased
 - **Carousel**
-    - add overflow:hidden for slick-list
-
-Nothing yet.
+    - fix slick-track `z-index`
+    - `overflow: hidden` added for slick-list
 
 ## Release 1.0.14
 - **Select**
