@@ -1,6 +1,16 @@
 # Changelog
 
 ## Unreleased
+## Release 1.0.16
+- **Select**
+    - import fix
+- **Textarea**
+    - import fix
+- **TextField**
+    - import fix
+- **InputLabel**
+    - import fix
+
 ## Release 1.0.15
 - **Carousel**
     - fix slick-track `z-index`
