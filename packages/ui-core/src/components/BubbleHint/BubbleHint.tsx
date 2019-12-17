@@ -29,6 +29,8 @@ interface IBubbleHintProps {
     onMouseLeave?(e: React.SyntheticEvent<EventTarget>): void;
     /** Click handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    /** Click handler */
+    onPopupToggle?(isShown: boolean): void;
 }
 
 interface IBubbleHintState {
@@ -57,6 +59,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         onMouseEnter: PropTypes.func,
         onMouseLeave: PropTypes.func,
         onClick: PropTypes.func,
+        onPopupToggle: PropTypes.func,
     };
 
     static defaultProps = {
@@ -78,6 +81,16 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
 
     componentDidMount() {
         document.addEventListener(this.touchClick, this.handleClickOutside);
+    }
+
+    componentDidUpdate(_prevProps: Readonly<Partial<IBubbleHintProps>>, prevState: Readonly<IBubbleHintState>): void {
+        const { onPopupToggle } = this.props;
+        const { show } = this.state;
+        const { show: prevShow } = prevState;
+
+        if (show !== prevShow) {
+            onPopupToggle && onPopupToggle(show);
+        }
     }
 
     componentWillUnmount() {
