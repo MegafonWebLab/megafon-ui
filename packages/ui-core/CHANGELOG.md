@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - add overflow:hidden for slick-list
 
 Nothing yet.
 
