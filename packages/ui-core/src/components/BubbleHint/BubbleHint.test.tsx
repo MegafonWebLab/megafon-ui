@@ -15,6 +15,23 @@ describe('<BubbleHint />', () => {
         jest.resetModules();
     });
 
+    describe('onPopupToggle callback', () => {
+        it('is called with true on opening', () => {
+            const mock = jest.fn();
+            const wrapper = shallow(<BubbleHint {...props} onPopupToggle={mock} />);
+            wrapper.setState({ show: true });
+            expect(mock).toBeCalledWith(true);
+        });
+
+        it('is called with false on closing after opening', () => {
+            const mock = jest.fn();
+            const wrapper = shallow(<BubbleHint {...props} onPopupToggle={mock} />);
+            wrapper.setState({ show: true });
+            wrapper.setState({ show: false });
+            expect(mock).toBeCalledWith(false);
+        });
+    });
+
     it('it renders BubbleHint', () => {
         jest.doMock('../../utils/detectTouch', () => {
             return {

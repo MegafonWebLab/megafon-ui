@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- **BubbleHint**
+    - added event that is triggered on popup switching
+- **Paragraph**
+    - added onClick handler
+
+
 ## Release 1.0.16
 - **Select**
     - import fix

@@ -29,7 +29,7 @@ interface IBubbleHintProps {
     onMouseLeave?(e: React.SyntheticEvent<EventTarget>): void;
     /** Click handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
-    /** Click handler */
+    /** Popup toggle handler */
     onPopupToggle?(isShown: boolean): void;
 }
 
