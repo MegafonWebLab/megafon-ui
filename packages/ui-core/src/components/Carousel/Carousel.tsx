@@ -55,7 +55,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 PropTypes.array,
             ])
         ),
-        theme: PropTypes.oneOf(['default', 'landing', 'showcase']),
+        theme: PropTypes.oneOf(['default', 'landing', 'showcase', 'lk']),
         arrowColor: PropTypes.oneOf(['white']),
         children: PropTypes.node,
         onClickNext: PropTypes.func,
