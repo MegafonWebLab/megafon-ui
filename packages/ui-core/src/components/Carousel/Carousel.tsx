@@ -11,7 +11,7 @@ interface ICarouselOptions {
     responsive?: ICarouselOptionsResponsive[];
     arrows?: boolean;
     initialSlide?: number;
-    theme?: string;
+    theme?: 'default' | 'landing' | 'showcase' | 'lk';
     arrowColor?: string;
 }
 
