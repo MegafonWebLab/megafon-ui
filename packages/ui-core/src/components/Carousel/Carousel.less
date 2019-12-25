@@ -438,3 +438,26 @@
         }
     }
 }
+
+@{b}@{b}_theme_lk {
+    padding: 0;
+
+    @{s} {
+        &-slider {
+            width: 100%;
+        }
+
+        &-list {
+            @media @mobileS {
+                width: auto;
+            }
+        }
+
+        &-slide {
+            margin-right: 0;
+        }
+        &-slide > div {
+            min-width: initial;
+        }
+    }
+}
