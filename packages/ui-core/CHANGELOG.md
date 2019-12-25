@@ -1,8 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.17
 - **Carousel**
-    - create new theme `lk`
+    - new theme `lk` created
 
 ## Release 1.0.16
 - **Select**
