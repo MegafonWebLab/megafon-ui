@@ -3,17 +3,32 @@ import * as PropTypes from 'prop-types';
 import './GridColumn.less';
 import cnCreate from 'utils/cn';
 
+const GridColumnValues = PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);
+export type TGridColumnValues  = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+
 export interface IGridColumn {
     /** Size of columns on wide screens */
-    wide?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+    wide?: TGridColumnValues;
     /** Size of columns on desktop screens */
-    desktop?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+    desktop?: TGridColumnValues;
     /** Size of columns on tablet screens */
-    tablet?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+    tablet?: TGridColumnValues;
     /** Size of columns on mobile screens */
-    mobile?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+    mobile?: TGridColumnValues;
     /** Size of columns on all screens */
-    all?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+    all?: TGridColumnValues;
+
+    /** Size of offset on wide screens */
+    offsetWide?: TGridColumnValues;
+    /** Size of offset on desktop screens */
+    offsetDesktop?: TGridColumnValues;
+    /** Size of offset on tablet screens */
+    offsetTablet?: TGridColumnValues;
+    /** Size of offset on mobile screens */
+    offsetMobile?: TGridColumnValues;
+    /** Size of offset on all screens */
+    offsetAll?: TGridColumnValues;
+
     /** Custom alignment of column */
     align?: 'right' | 'left' | 'center';
     /** Column flex grow */
@@ -28,11 +43,18 @@ export interface IGridColumn {
 const cn = cnCreate('mfui-grid-column');
 class GridColumn extends React.Component<IGridColumn, {}> {
     static propTypes = {
-        wide: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        desktop: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        tablet: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        mobile: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
-        all: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+        wide: GridColumnValues,
+        desktop: GridColumnValues,
+        tablet: GridColumnValues,
+        mobile: GridColumnValues,
+        all: GridColumnValues,
+
+        offsetWide: GridColumnValues,
+        offsetDesktop: GridColumnValues,
+        offsetTablet: GridColumnValues,
+        offsetMobile: GridColumnValues,
+        offsetAll: GridColumnValues,
+
         align: PropTypes.oneOf(['right', 'left', 'center']),
         grow: PropTypes.bool,
         flex: PropTypes.bool,
@@ -51,7 +73,23 @@ class GridColumn extends React.Component<IGridColumn, {}> {
     };
 
     render() {
-        const { all, wide, desktop, tablet, className, flex, grow, align, children, mobile } = this.props;
+        const {
+            all,
+            wide,
+            desktop,
+            tablet,
+            mobile,
+            offsetAll,
+            offsetWide,
+            offsetDesktop,
+            offsetTablet,
+            offsetMobile,
+            className,
+            flex,
+            grow,
+            align,
+            children,
+        } = this.props;
 
         return (
             <div
@@ -66,6 +104,11 @@ class GridColumn extends React.Component<IGridColumn, {}> {
                         desktop,
                         tablet,
                         mobile,
+                        'offset-all': offsetAll,
+                        'offset-wide': offsetWide,
+                        'offset-desktop': offsetDesktop,
+                        'offset-tablet': offsetTablet,
+                        'offset-mobile': offsetMobile,
                     },
                     className
                 )}

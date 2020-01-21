@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - add font-color for hover buttom type
+- **GridColumn**
+    - add offset props
 
 ## Release 1.0.17
 - **Carousel**
