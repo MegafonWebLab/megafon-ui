@@ -6,6 +6,7 @@
     - fixed display target attribute for tag button
     - fixed display type attribute for tag a
     - added tests
+    - added usage example for disabled, href, target
 
 ## Release 1.0.17
 - **Carousel**
