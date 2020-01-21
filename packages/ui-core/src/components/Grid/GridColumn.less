@@ -23,23 +23,28 @@
     }
 
     .generateColumns(all);
+    .generateOffsets(all);
     .generateOrder(all-order);
 
     @media @desktopMU {
         .generateColumns(wide);
         .generateOrder(wide-order);
+        .generateOffsets(wide);
     }
     @media @desktopS {
         .generateColumns(desktop);
         .generateOrder(desktop-order);
+        .generateOffsets(desktop);
     }
     @media @mobileB {
         .generateColumns(tablet);
         .generateOrder(tablet-order);
+        .generateOffsets(tablet);
     }
     @media @mobileSM {
         .generateColumns(mobile);
         .generateOrder(mobile-order);
+        .generateOffsets(mobile);
     }
 }
 
@@ -55,4 +60,11 @@
         order: @z;
     }
     .generateOrder(@class, @maxOrder, (@z + 1));
+}
+
+.generateOffsets(@resolution, @columnCount: 12, @i: 1) when (@i <= @columnCount) {
+    &_offset-@{resolution}_@{i} {
+        margin-left: (100% / @columnCount) * @i;
+    }
+    .generateOffsets(@resolution, @columnCount, (@i + 1));
 }

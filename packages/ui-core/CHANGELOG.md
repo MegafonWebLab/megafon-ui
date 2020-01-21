@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - add font-color for hover buttom type
+- **GridColumn**
+    - add offset props
 - **ContentArea**
     - `mobileInnerPadding` and `className` properties added
 - **Paragraph**
