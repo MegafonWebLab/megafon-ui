@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.18
 - **Carousel**
     - fix slick-track height for "lk" theme
     - fix slick-list height for "lk" theme
