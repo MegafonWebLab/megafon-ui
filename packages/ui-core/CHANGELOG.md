@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+## Release 1.0.19
+
+- **package.json**
+    - updated version, publish patch fix
 
 ## Release 1.0.18
 - **Carousel**
