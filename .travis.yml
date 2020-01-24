@@ -42,6 +42,7 @@ deploy:
     email: "$NPM_EMAIL"
     api_key: "$NPM_TOKEN"
     skip_cleanup: true
+    edge: true
     on:
       tags: true
       node_js: "10"
@@ -51,6 +52,7 @@ deploy:
     skip-cleanup: true
     local-dir: "packages/ui-core/docs"
     keep-history: true
+    edge: true
     on:
       branch: $DOCS_DEPLOY_BRANCH
       node_js: "10"
