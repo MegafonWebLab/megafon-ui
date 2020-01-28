@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - new prop `onBeforeChange` added
 
 ## Release 1.0.21
 - **GridColumn**
