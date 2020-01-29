@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.20
 - **Icons**
     - update basic icons
 
