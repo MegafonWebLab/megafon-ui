@@ -1,8 +1,10 @@
 # Changelog
 
 ## Unreleased
-## Release 1.0.19
+- **Icons**
+    - update basic icons
 
+## Release 1.0.19
 - **package.json**
     - updated version, publish patch fix
 
