@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **GridColumn**
+    - add box-sizing: border-box in less
+    - fix gutters width and height for mobile devices
 
 ## Release 1.0.20
 - **Icons**
