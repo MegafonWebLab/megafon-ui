@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **GridColumn**
+    - add box-sizing: border-box in less
+    - fix gutters width and height for mobile devices
 - **Button**
     - fixed disabled state for tag a (block onClick calls, cancel following link, change color)
     - fixed display target attribute for tag button
