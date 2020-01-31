@@ -1,19 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> it renders Button 1`] = `
-<button
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
-  type="button"
->
-  <div
-    className="mfui-button__inner"
-  />
-</button>
-`;
-
 exports[`<Button /> it renders Button on touch devices 1`] = `
 <button
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto"
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto"
+  onClick={[Function]}
   type="button"
 >
   <div
@@ -24,7 +14,8 @@ exports[`<Button /> it renders Button on touch devices 1`] = `
 
 exports[`<Button /> it renders children 1`] = `
 <button
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  onClick={[Function]}
   type="button"
 >
   <div
@@ -52,7 +43,8 @@ exports[`<Button /> it renders spinner 1`] = `
   width="auto"
 >
   <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_loading mfui-button_no-touch"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_loading mfui-button_no-touch"
+    onClick={[Function]}
     type="button"
   >
     <div
@@ -65,31 +57,6 @@ exports[`<Button /> it renders spinner 1`] = `
       </div>
     </div>
   </button>
-</Button>
-`;
-
-exports[`<Button /> it renders tag a 1`] = `
-<Button
-  disabledColor="gray"
-  downColor="dark"
-  hoverColor="green"
-  href="http://moscow.megafon.ru/"
-  padding={true}
-  passiveColor="green"
-  showSpinner={false}
-  sizeAll="medium"
-  type="button"
-  width="auto"
->
-  <a
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
-    href="http://moscow.megafon.ru/"
-    type=""
-  >
-    <div
-      className="mfui-button__inner"
-    />
-  </a>
 </Button>
 `;
 
@@ -108,7 +75,114 @@ exports[`<Button /> it renders white styled button 1`] = `
   width="auto"
 >
   <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_white mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_font-color_green mfui-button_border_green mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_white mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_font-color_green mfui-button_border_green mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="mfui-button__inner"
+    />
+  </button>
+</Button>
+`;
+
+exports[`<Button /> renders Button with default props 1`] = `
+<button
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="mfui-button__inner"
+  />
+</button>
+`;
+
+exports[`<Button /> renders Button with props 1`] = `
+<a
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  disabled={false}
+  href="any"
+  onClick={[Function]}
+  target="_blank"
+>
+  <div
+    className="mfui-button__inner"
+  />
+</a>
+`;
+
+exports[`<Button /> with disabled state renders element with customView 1`] = `
+<Button
+  customView="two-lines"
+  disabled={true}
+  disabledColor="gray"
+  downColor="dark"
+  hoverColor="green"
+  padding={true}
+  passiveColor="green"
+  showSpinner={false}
+  sizeAll="medium"
+  type="button"
+  width="auto"
+>
+  <button
+    className="mfui-button mfui-button_size-all_medium mfui-button_custom-view_two-lines mfui-button_disabled mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="mfui-button__inner"
+    />
+  </button>
+</Button>
+`;
+
+exports[`<Button /> with disabled state renders tag a 1`] = `
+<Button
+  disabled={true}
+  disabledColor="gray"
+  downColor="dark"
+  hoverColor="green"
+  href="test"
+  padding={true}
+  passiveColor="green"
+  showSpinner={false}
+  sizeAll="medium"
+  type="button"
+  width="auto"
+>
+  <a
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_disabled mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+    disabled={false}
+    href="test"
+    onClick={[Function]}
+  >
+    <div
+      className="mfui-button__inner"
+    />
+  </a>
+</Button>
+`;
+
+exports[`<Button /> with disabled state renders tag button 1`] = `
+<Button
+  disabled={true}
+  disabledColor="gray"
+  downColor="dark"
+  hoverColor="green"
+  padding={true}
+  passiveColor="green"
+  showSpinner={false}
+  sizeAll="medium"
+  type="button"
+  width="auto"
+>
+  <button
+    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_disabled mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+    disabled={true}
+    onClick={[Function]}
     type="button"
   >
     <div

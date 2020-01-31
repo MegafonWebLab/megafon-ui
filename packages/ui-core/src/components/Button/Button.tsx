@@ -9,7 +9,7 @@ export interface IButtonProps {
     /** Special view */
     customView?: 'two-lines';
     /** Link */
-    href?: string | null;
+    href?: string;
     /** Target - property tag <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** Functional for form */
@@ -141,6 +141,18 @@ class Button extends React.Component<IButtonProps, IButtonState> {
         this.setState({ isTouch: detectTouch() });
     }
 
+    handleClick = (e: React.SyntheticEvent<EventTarget>) => {
+        const { disabled, onClick } = this.props;
+
+        if (disabled) {
+            e.preventDefault();
+
+            return;
+        }
+
+        onClick && onClick(e);
+    }
+
     renderChildrenElem() {
         return (
             <div className={cn('content', {}, this.props.classNameContent)}>
@@ -162,10 +174,10 @@ class Button extends React.Component<IButtonProps, IButtonState> {
             sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
             customView, passiveColor, hoverColor, downColor, border, fontColor,
             disabledColor, padding, width, margin, showSpinner, className, href, type,
-            onClick, disabled, target, children,
+            disabled, target, children,
         } = this.props;
         const { isTouch } = this.state;
-        const ElementType = this.props.href ? 'a' : 'button';
+        const ElementType = href ? 'a' : 'button';
 
         return (
             <ElementType
@@ -179,9 +191,10 @@ class Button extends React.Component<IButtonProps, IButtonState> {
                     'passive-color': !customView && passiveColor,
                     'hover-color': !customView && hoverColor,
                     'down-color': !customView && downColor,
-                    'disabled-color': !customView && disabledColor,
+                    'disabled-color': !customView && disabled && disabledColor,
                     'font-color': !customView && fontColor,
                     'border': !customView && border,
+                    disabled,
                     padding,
                     width,
                     margin,
@@ -189,10 +202,10 @@ class Button extends React.Component<IButtonProps, IButtonState> {
                     'no-touch': !isTouch,
                 }, className)}
                 href={href}
-                target={target}
-                type={href ? '' : type}
-                onClick={onClick}
-                disabled={disabled}
+                target={href ? target : undefined}
+                type={href ? undefined : type}
+                onClick={this.handleClick}
+                disabled={!href && disabled}
             >
                 <div className={cn('inner')}>
                     {!showSpinner && children && this.renderChildrenElem()}
