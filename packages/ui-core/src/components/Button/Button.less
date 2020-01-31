@@ -26,10 +26,6 @@
         text-decoration: none;
     }
 
-    &:disabled {
-        cursor: default !important;
-    }
-
     &__inner {
         box-sizing: border-box;
         display: inline-flex;
@@ -136,33 +132,29 @@
         }
     }
 
+    &_disabled {
+        cursor: default;
+    }
+
     &_disabled-color_gray {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px @spbSky2 !important;
-            color: fade(@soggyAsphalt, 50%) !important;
-            background-color: @spbSky1 !important;
-        }
+        box-shadow: inset 0 0 0 1px @spbSky2 !important;
+        color: fade(@soggyAsphalt, 50%) !important;
+        background-color: @spbSky1 !important;
     }
     &_disabled-color_white {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px @spbSky1 !important;
-            color: fade(@soggyAsphalt, 50%) !important;
-            background-color: @spbSky1 !important;
-        }
+        box-shadow: inset 0 0 0 1px @spbSky1 !important;
+        color: fade(@soggyAsphalt, 50%) !important;
+        background-color: @spbSky1 !important;
     }
     &_disabled-color_transparent {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
-            color: fade(@soggyAsphalt, 50%) !important;
-            background-color: transparent !important;
-        }
+        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
+        color: fade(@soggyAsphalt, 50%) !important;
+        background-color: transparent !important;
     }
     &_disabled-color_transparent-white {
-        &:disabled {
-            box-shadow: inset 0 0 0 1px fade(@white, 50%) !important;
-            color: fade(@white, 50%) !important;
-            background-color: transparent !important;
-        }
+        box-shadow: inset 0 0 0 1px fade(@white, 50%) !important;
+        color: fade(@white, 50%) !important;
+        background-color: transparent !important;
     }
 
     &_margin {

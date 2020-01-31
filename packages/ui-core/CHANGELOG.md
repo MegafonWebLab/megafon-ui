@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - fixed disabled state for tag a (block onClick calls, cancel following link, change color)
+    - fixed display target attribute for tag button
+    - fixed display type attribute for tag a
+    - added tests
+    - added usage example for disabled, href, target
 
 ## Release 1.0.20
 - **Icons**
