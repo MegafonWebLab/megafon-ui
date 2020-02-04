@@ -10,6 +10,7 @@ interface ICarouselOptions {
     slidesToShow: number;
     responsive?: ICarouselOptionsResponsive[];
     arrows?: boolean;
+    dots?: boolean;
     initialSlide?: number;
     theme?: 'default' | 'landing' | 'showcase' | 'lk';
     arrowColor?: string;

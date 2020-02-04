@@ -5,12 +5,10 @@ configure({ adapter: new EnzymeAdapter() });
 
 const globalTyped: any = global;
 
-const matchMediaPolyfill = () => (
-    () => ({
+const matchMediaPolyfill = () => ({
         matches: false,
         addListener: () => {},
         removeListener: () => {},
-    })
-);
+});
 
 globalTyped.matchMedia = globalTyped.matchMedia || matchMediaPolyfill;

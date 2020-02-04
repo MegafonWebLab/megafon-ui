@@ -7,6 +7,8 @@ exports[`<Carousel /> render tests should render component with all props 1`] = 
   <Slider
     afterChange={[Function]}
     arrows={false}
+    beforeChange={[MockFunction]}
+    dots={true}
     initialSlide={0}
     responsive={
       Array [
@@ -52,6 +54,8 @@ exports[`<Carousel /> render tests should render component with prev arrow activ
   <Slider
     afterChange={[Function]}
     arrows={false}
+    beforeChange={[MockFunction]}
+    dots={true}
     initialSlide={0}
     responsive={
       Array [
