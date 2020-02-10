@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Grid**
+    - updated Grid documentation
 
 ## Release 1.0.21
 - **package.json**
