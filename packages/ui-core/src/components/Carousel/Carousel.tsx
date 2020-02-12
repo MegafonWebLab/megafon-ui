@@ -10,6 +10,7 @@ interface ICarouselOptions {
     slidesToShow: number;
     responsive?: ICarouselOptionsResponsive[];
     arrows?: boolean;
+    dots?: boolean;
     initialSlide?: number;
     theme?: 'default' | 'landing' | 'showcase' | 'lk';
     arrowColor?: string;
@@ -29,6 +30,7 @@ export interface ICarouselProps {
     onClickNext?: () => void;
     onClickPrev?: () => void;
     onAfterChange?: (index: number) => void;
+    onBeforeChange?: (currentIndex: number, nextIndex: number) => void;
 }
 
 interface ICarouselState {
@@ -61,6 +63,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
         onAfterChange: PropTypes.func,
+        onBeforeChange: PropTypes.func,
     };
 
     static defaultProps = {
@@ -262,7 +265,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     render() {
-        const { className, options, theme, children } = this.props;
+        const { className, options, theme, children, onBeforeChange } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
 
@@ -274,6 +277,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                     arrows={false}
                     ref={this.getSlider}
                     afterChange={this.handleChange}
+                    beforeChange={onBeforeChange}
                 >
                     {children}
                 </Slider>

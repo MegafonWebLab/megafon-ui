@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Carousel, { ICarouselProps } from './Carousel';
 import Link from '../Link/Link';
 import throttle from 'lodash.throttle';
@@ -10,6 +10,7 @@ const props: ICarouselProps = {
     className: 'some-class',
     options: {
         arrows: true,
+        dots: true,
         initialSlide: 0,
         slidesToShow: 4,
         responsive: [
@@ -42,6 +43,8 @@ const props: ICarouselProps = {
     ],
     onClickNext: jest.fn(),
     onClickPrev: jest.fn(),
+    onAfterChange: jest.fn(),
+    onBeforeChange: jest.fn(),
 };
 
 describe('<Carousel />', () => {
@@ -53,6 +56,7 @@ describe('<Carousel />', () => {
     afterEach(() => {
         // @ts-ignore
         throttle = originalThrottle;
+        jest.resetAllMocks();
     });
 
     describe('render tests', () => {
@@ -83,10 +87,6 @@ describe('<Carousel />', () => {
     });
 
     describe('componentDidMount tests', () => {
-        afterEach(() => {
-            jest.resetAllMocks();
-        });
-
         it('should call three event listeners', () => {
             const addEventListener = jest.spyOn(window, 'addEventListener');
 
@@ -106,6 +106,24 @@ describe('<Carousel />', () => {
 
             expect(wrapper.state('isNextActive')).toBeTruthy();
             expect(wrapper.state('isPrevActive')).toBeFalsy();
+        });
+    });
+
+    describe('onBeforeChange', () => {
+        it('is called if slide is changed', () => {
+            const wrapper = mount(
+                <Carousel {...props} >
+                    <Link key={1} />
+                    <Link key={2} />
+                    <Link key={3} />
+                    <Link key={4} />
+                    <Link key={5} />
+                    <Link key={6} />
+                </Carousel>
+            );
+
+            wrapper.find('.slick-dots > li > button').last().simulate('click');
+            expect(props.onBeforeChange).toBeCalledWith(0, 5);
         });
     });
 });
