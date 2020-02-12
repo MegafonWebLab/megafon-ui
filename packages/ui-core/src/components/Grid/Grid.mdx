@@ -49,7 +49,19 @@ export const itemView = {
     </Grid>
 </Playground>
 
-## Large gutters and aligment usage
+## Large gutters with different item's width on all screens usage
+
+<Playground>
+    <Grid guttersLeft="large" guttersBottom="large">
+        <GridColumn all="5"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="1"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="12"><div style={itemView}>Item7</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Horizontal between alignment usage
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="between">
@@ -58,6 +70,82 @@ export const itemView = {
         <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
         <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
         <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Horizontal around alignment usage
+
+<Playground>
+    <Grid guttersLeft="large" guttersBottom="large" hAlign="around">
+        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Horizontal center alignment usage
+
+<Playground>
+    <Grid guttersLeft="large" guttersBottom="large" hAlign="center">
+        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Horizontal right alignment usage
+
+<Playground>
+    <Grid guttersLeft="large" guttersBottom="large" hAlign="right">
+        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Vertical top alignment usage
+
+<Playground>
+    <Grid guttersLeft="medium" hAlign="between" vAlign="top">
+        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
+    </Grid>
+</Playground>
+
+## Vertical bottom alignment usage
+
+<Playground>
+    <Grid guttersLeft="medium" hAlign="between" vAlign="bottom">
+        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
+    </Grid>
+</Playground>
+
+## Vertical center alignment usage
+
+<Playground>
+    <Grid guttersLeft="medium" hAlign="between" vAlign="center">
+        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
+    </Grid>
+</Playground>
+
+## Vertical baseline alignment usage
+
+<Playground>
+    <Grid guttersLeft="medium" hAlign="between" vAlign="baseline">
+        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
+        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
     </Grid>
 </Playground>
 
