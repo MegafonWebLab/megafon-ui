@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## Release 1.0.22
+## Release 1.1.0
 - **Carousel**
     - new prop `onBeforeChange` added
 
