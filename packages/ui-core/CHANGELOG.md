@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.0.22
 - **Carousel**
     - new prop `onBeforeChange` added
 
