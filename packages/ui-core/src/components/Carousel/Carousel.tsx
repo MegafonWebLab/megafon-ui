@@ -14,6 +14,7 @@ interface ICarouselOptions {
     initialSlide?: number;
     theme?: 'default' | 'landing' | 'showcase' | 'lk';
     arrowColor?: string;
+    slidePadding?: 'sm' | 'none';
 }
 
 interface ICarouselOptionsResponsive {
@@ -26,6 +27,8 @@ export interface ICarouselProps {
     options: ICarouselOptions;
     theme?: string;
     arrowColor?: string;
+    /** Padding between slides */
+    slidePadding?: 'sm' | 'none';
     children: any;
     onClickNext?: () => void;
     onClickPrev?: () => void;
@@ -59,6 +62,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         ),
         theme: PropTypes.oneOf(['default', 'landing', 'showcase', 'lk']),
         arrowColor: PropTypes.oneOf(['white']),
+        slidePadding: PropTypes.oneOf(['sm', 'none']),
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
@@ -265,12 +269,14 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     render() {
-        const { className, options, theme, children, onBeforeChange } = this.props;
+        const { className, options, theme, children, onBeforeChange, slidePadding } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
 
         return (
-            <div className={cn('', {theme}, className)}>
+            <div
+                className={cn('', { theme, 'slide-padding': slidePadding }, className)}
+            >
                 {isArrows && this.renderArrows()}
                 <Slider
                     {...carouselOptions}
