@@ -3,7 +3,6 @@
 ## Unreleased
 - **Carousel**
     - add zero padding for slides
-    - add sm padding for slides that make center position of slider
 
 ## Release 1.1.0
 - **Carousel**
