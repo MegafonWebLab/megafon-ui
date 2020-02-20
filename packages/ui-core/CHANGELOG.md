@@ -3,6 +3,7 @@
 ## Unreleased
 - **Carousel**
     - add zero padding for slides
+    - fix showcase slider padding
 
 ## Release 1.1.0
 - **Carousel**

@@ -151,14 +151,9 @@
         &-list {
             box-sizing: border-box;
             overflow: hidden;
-            padding: 90px 0 0;
-            margin: -90px 0 0 -10px;
-            width: calc(~'100% + 20px');
+            width: auto;
             @media @mobileSM {
                 overflow: visible;
-                padding: 90px 0 0 -8px;
-                margin: -90px 0 0;
-                width: calc(~'100% + 16px');
             }
         }
         &-track {
@@ -240,7 +235,7 @@
     }
     @{b}__arrows_theme_showcase {
         @media @mobileBU {
-            height: 100%;
+            height: calc(~'100% - 37px');
             position: absolute;
             width: 100%;
         }
@@ -249,7 +244,7 @@
     @{b}__arrow {
         position: absolute;
         cursor: pointer;
-        top: calc(50% + 25px);
+        top: 50%;
         transform: translateY(-50%);
         left: unset;
         right: unset;
