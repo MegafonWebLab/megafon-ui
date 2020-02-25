@@ -1,8 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.2.0
 - **Carousel**
-    - add zero padding for slides
+    - `hasPaddingBetweenSlides` property added (zero padding between slides)
     - fix showcase slider padding
 
 ## Release 1.1.0
