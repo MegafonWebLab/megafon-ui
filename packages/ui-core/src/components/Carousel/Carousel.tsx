@@ -14,7 +14,7 @@ interface ICarouselOptions {
     initialSlide?: number;
     theme?: 'default' | 'landing' | 'showcase' | 'lk';
     arrowColor?: string;
-    hasPaddingBetweenSlides?: boolean;
+    disablePaddingBetweenSlides?: boolean;
 }
 
 interface ICarouselOptionsResponsive {
@@ -28,7 +28,7 @@ export interface ICarouselProps {
     theme?: string;
     arrowColor?: string;
     /** Padding between slides */
-    hasPaddingBetweenSlides?: boolean;
+    disablePaddingBetweenSlides?: boolean;
     children: any;
     onClickNext?: () => void;
     onClickPrev?: () => void;
@@ -62,7 +62,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         ),
         theme: PropTypes.oneOf(['default', 'landing', 'showcase', 'lk']),
         arrowColor: PropTypes.oneOf(['white']),
-        hasPaddingBetweenSlides: PropTypes.bool,
+        disablePaddingBetweenSlides: PropTypes.bool,
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
@@ -72,7 +72,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
 
     static defaultProps = {
         responsive: true,
-        hasPaddingBetweenSlides: false,
+        disablePaddingBetweenSlides: false,
     };
 
     firstClientX: number;
@@ -270,13 +270,13 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     render() {
-        const { className, options, theme, children, onBeforeChange, hasPaddingBetweenSlides } = this.props;
+        const { className, options, theme, children, onBeforeChange, disablePaddingBetweenSlides } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
 
         return (
             <div
-                className={cn('', { theme, 'no-slide-padding': hasPaddingBetweenSlides }, className)}
+                className={cn('', { theme, 'no-padding-between-slides': disablePaddingBetweenSlides }, className)}
             >
                 {isArrows && this.renderArrows()}
                 <Slider
