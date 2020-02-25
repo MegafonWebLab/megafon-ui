@@ -14,7 +14,7 @@ interface ICarouselOptions {
     initialSlide?: number;
     theme?: 'default' | 'landing' | 'showcase' | 'lk';
     arrowColor?: string;
-    isNoSlidePadding?: boolean;
+    hasPaddingBetweenSlides?: boolean;
 }
 
 interface ICarouselOptionsResponsive {
@@ -28,7 +28,7 @@ export interface ICarouselProps {
     theme?: string;
     arrowColor?: string;
     /** Padding between slides */
-    isNoSlidePadding?: boolean;
+    hasPaddingBetweenSlides?: boolean;
     children: any;
     onClickNext?: () => void;
     onClickPrev?: () => void;
@@ -62,7 +62,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         ),
         theme: PropTypes.oneOf(['default', 'landing', 'showcase', 'lk']),
         arrowColor: PropTypes.oneOf(['white']),
-        isNoSlidePadding: PropTypes.bool,
+        hasPaddingBetweenSlides: PropTypes.bool,
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
@@ -72,6 +72,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
 
     static defaultProps = {
         responsive: true,
+        hasPaddingBetweenSlides: false,
     };
 
     firstClientX: number;
@@ -269,13 +270,13 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     render() {
-        const { className, options, theme, children, onBeforeChange, isNoSlidePadding } = this.props;
+        const { className, options, theme, children, onBeforeChange, hasPaddingBetweenSlides } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
 
         return (
             <div
-                className={cn('', { theme, 'no-slide-padding': isNoSlidePadding }, className)}
+                className={cn('', { theme, 'no-slide-padding': hasPaddingBetweenSlides }, className)}
             >
                 {isArrows && this.renderArrows()}
                 <Slider
