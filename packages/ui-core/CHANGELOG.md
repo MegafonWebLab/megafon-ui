@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - add zero padding for slides
 
 ## Release 1.1.0
 - **Carousel**

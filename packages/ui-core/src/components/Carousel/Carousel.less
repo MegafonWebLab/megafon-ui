@@ -113,7 +113,7 @@
             flex-shrink: 1;
             display: flex;
             flex-basis: auto;
-            margin-right: 20px;
+            padding-right: 20px;
         }
 
         &-slide > div {
@@ -151,15 +151,14 @@
         &-list {
             box-sizing: border-box;
             overflow: hidden;
-            padding: 90px 2px 2px;
-            padding-right: 0;
-            margin: -90px -2px -2px;
-            margin-right: 0;
-            width: auto;
+            padding: 90px 0 0;
+            margin: -90px 0 0 -10px;
+            width: calc(~'100% + 20px');
             @media @mobileSM {
                 overflow: visible;
-                padding: 90px 0 0;
+                padding: 90px 0 0 -8px;
                 margin: -90px 0 0;
+                width: calc(~'100% + 16px');
             }
         }
         &-track {
@@ -171,11 +170,13 @@
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: auto;
-            padding-right: 20px;
-            margin-right: 0;
+            padding-right: 10px;
+            padding-left: 10px;
             @media @mobileSM {
-                padding-right: 16px;
+                padding-right: 8px;
+                padding-left: 8px;
             }
+
         }
         &-slide > div {
             display: flex;
@@ -241,7 +242,7 @@
         @media @mobileBU {
             height: 100%;
             position: absolute;
-            width: calc(100% - 16px);
+            width: 100%;
         }
     }
 
@@ -463,6 +464,15 @@
         }
         &-slide > div {
             min-width: initial;
+        }
+    }
+}
+
+@{b}@{b}_no-slide-padding {
+    @{s} {
+        &-slide {
+            padding-right: 0;
+            padding-left: 0;
         }
     }
 }
