@@ -66,7 +66,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
     };
 
     render() {
-        const TagName = this.props.as as string;
+        const TagName = this.props.as as React.ElementType;
         const {
             sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
             marginAll, marginWide, marginDesktop, marginTablet,
