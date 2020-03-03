@@ -55,7 +55,7 @@ const babelPlugins = [
 ];
 const babelPresets = [
     '@babel/react',
-    ['@babel/env', {
+    ['@babel/preset-env', {
         useBuiltIns: 'entry',
         corejs: '3.6'
     }]
@@ -63,7 +63,7 @@ const babelPresets = [
 const babelEsConfig = {
     presets: [
         '@babel/react',
-        ['@babel/env', {
+        ['@babel/preset-env', {
             modules: false,
             'useBuiltIns': 'entry',
             corejs: '3.6'
@@ -82,7 +82,7 @@ const babelEsConfig = {
 };
 const babelLibConfig = {
     presets: [
-        ['@babel/env', {
+        ['@babel/preset-env', {
             useBuiltIns: 'entry',
             corejs: '3.6'
         }]

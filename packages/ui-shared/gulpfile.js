@@ -46,23 +46,22 @@ const tsConfig = {
 const babelPlugins = [
     require.resolve('@babel/plugin-transform-object-assign'),
     require.resolve('@babel/plugin-proposal-class-properties'),
-    require.resolve('@babel/plugin-proposal-object-rest-spread'),
     require.resolve('@babel/plugin-transform-runtime'),
-    require.resolve('@babel/plugin-transform-classes'),
-    require.resolve('@babel/plugin-transform-block-scoping')
 ];
 const babelPresets = [
     '@babel/react',
-    ['@babel/env', {
-        useBuiltIns: 'entry'
+    ['@babel/preset-env', {
+        useBuiltIns: 'entry',
+        corejs: '3.6'
     }]
 ];
 const babelEsConfig = {
     presets: [
         '@babel/react',
-        ['@babel/env', {
+        ['@babel/preset-env', {
             modules: false,
-            'useBuiltIns': 'entry'
+            'useBuiltIns': 'entry',
+            corejs: '3.6'
         }]
     ],
     plugins: [
@@ -75,8 +74,9 @@ const babelEsConfig = {
 };
 const babelLibConfig = {
     presets: [
-        ['@babel/env', {
-            useBuiltIns: 'entry'
+        ['@babel/preset-env', {
+            useBuiltIns: 'entry',
+            corejs: '3.6'
         }]
     ]
 };
