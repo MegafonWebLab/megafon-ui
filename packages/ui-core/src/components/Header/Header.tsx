@@ -44,7 +44,7 @@ class Header extends React.Component<IHeaderProps, {}> {
     }
 
     render() {
-        const ElementType = this.props.as as string;
+        const ElementType = this.props.as as React.ElementType;
         const { color, margin, as: level, onClick } = this.props;
 
         return (

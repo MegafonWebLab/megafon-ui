@@ -72,9 +72,9 @@ describe('<TextField />', () => {
     });
 
     it('renders without no-touch mode', () => {
-        const typedDetectTouch = detectTouch as jest.Mock<() => boolean>;
+        const typedDetectTouch = detectTouch as unknown as jest.Mock<() => boolean>;
 
-        typedDetectTouch.mockImplementation(() => true);
+        typedDetectTouch.mockImplementation(() => () => true);
 
         const wrapper = shallow(<TextField />);
 
