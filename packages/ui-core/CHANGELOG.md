@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **ContentArea**
+    - `mobileInnerPadding` and `className` properties added
+- **Paragraph**
+    - small font size fixed according to the guide
 
 ## Release 1.2.0
 - **Carousel**
