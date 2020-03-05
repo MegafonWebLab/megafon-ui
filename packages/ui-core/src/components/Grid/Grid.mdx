@@ -172,3 +172,13 @@ export const itemView = {
         <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
     </Grid>
 </Playground>
+
+## Order on different screens usage
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="2" mobile="6" orderTablet="3"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="8" mobile="12" orderMobile="3"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="2" mobile="6" orderMobile="2"><div style={itemView}>Item3</div></GridColumn>
+    </Grid>
+</Playground>

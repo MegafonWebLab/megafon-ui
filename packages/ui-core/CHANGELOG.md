@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **GridColumn**
+    - add order property for all screens
 
 ## Release 1.2.0
 - **Carousel**
