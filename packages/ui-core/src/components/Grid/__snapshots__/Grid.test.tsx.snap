@@ -13,11 +13,11 @@ exports[`<Grid /> it renders Grid with props 1`] = `
       flex={false}
       grow={false}
       key=".0"
-      orderAll={0}
-      orderDesktop={0}
-      orderMobile={0}
-      orderTablet={0}
-      orderWide={0}
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
     >
       child1
     </GridColumn>
@@ -27,11 +27,11 @@ exports[`<Grid /> it renders Grid with props 1`] = `
       flex={false}
       grow={false}
       key=".1"
-      orderAll={0}
-      orderDesktop={0}
-      orderMobile={0}
-      orderTablet={0}
-      orderWide={0}
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
     >
       child2
     </GridColumn>
@@ -52,11 +52,11 @@ exports[`<Grid /> it renders Grid without props 1`] = `
       flex={false}
       grow={false}
       key=".0"
-      orderAll={0}
-      orderDesktop={0}
-      orderMobile={0}
-      orderTablet={0}
-      orderWide={0}
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
     >
       child1
     </GridColumn>
@@ -66,11 +66,11 @@ exports[`<Grid /> it renders Grid without props 1`] = `
       flex={false}
       grow={false}
       key=".1"
-      orderAll={0}
-      orderDesktop={0}
-      orderMobile={0}
-      orderTablet={0}
-      orderWide={0}
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
     >
       child2
     </GridColumn>
