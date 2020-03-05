@@ -150,10 +150,16 @@
     @{s} {
         &-list {
             box-sizing: border-box;
+            padding: 30px 0;
+            margin-top: -30px;
             overflow: hidden;
-            width: auto;
+            position: relative;
+            left: -10px;
+            width: calc(~'100% + 20px');
             @media @mobileSM {
                 overflow: visible;
+                width: calc(~'100% + 16px');
+                left: -8px;
             }
         }
         &-track {
@@ -183,7 +189,7 @@
         &-dots {
             display: flex !important;
             justify-content: center;
-            margin-top: 25px;
+            margin-top: 5px;
             list-style: none;
             padding-left: 0;
             position: absolute;
@@ -468,6 +474,10 @@
         &-slide {
             padding-right: 0;
             padding-left: 0;
+        }
+        &-list {
+            width: 100%;
+            left: 0;
         }
     }
 }

@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - added top and bottom padding for overflow slide content
+
+## Release 1.3.0
 - **GridColumn**
     - add order property for all screens
 
