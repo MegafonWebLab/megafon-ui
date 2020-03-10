@@ -22,7 +22,7 @@ class ContentArea extends React.Component<IProps, {}> {
         outerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
         innerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
         innerPadding: PropTypes.oneOf(['lg', 'none']),
-        mobileInnerPadding: PropTypes.oneOf(['default', 'none' ]),
+        mobileInnerPadding: PropTypes.oneOf(['default', 'none']),
         children: PropTypes.node,
         className: PropTypes.string,
     };
