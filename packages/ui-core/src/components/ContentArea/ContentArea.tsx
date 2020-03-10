@@ -11,7 +11,7 @@ export interface IProps {
     /** Side paddings of the internal container */
     innerPadding?: 'lg' | 'none';
     /** Side paddings of the internal container on mobile screen */
-    mobileInnerPadding?: 'none';
+    mobileInnerPadding?: 'default' | 'none';
     children: any;
     className?: string;
 }
@@ -22,7 +22,7 @@ class ContentArea extends React.Component<IProps, {}> {
         outerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
         innerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
         innerPadding: PropTypes.oneOf(['lg', 'none']),
-        mobileInnerPadding: PropTypes.oneOf(['none' ]),
+        mobileInnerPadding: PropTypes.oneOf(['default', 'none' ]),
         children: PropTypes.node,
         className: PropTypes.string,
     };
@@ -31,6 +31,7 @@ class ContentArea extends React.Component<IProps, {}> {
         outerBackgroundColor: 'transparent',
         innerBackgroundColor: 'transparent',
         innerPadding: 'lg',
+        mobileInnerPadding: 'default',
     };
 
     render() {
