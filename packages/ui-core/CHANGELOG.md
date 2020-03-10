@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - extra padding-bottom deleted
 
 ## Release 1.3.0
 - **GridColumn**
