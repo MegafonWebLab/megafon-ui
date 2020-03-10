@@ -14,6 +14,16 @@ export interface IGridColumn {
     mobile?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
     /** Size of columns on all screens */
     all?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+    /** Order on all screens */
+    orderAll?: string;
+    /** Order on wide screens */
+    orderWide?: string;
+    /** Order on desktop screens */
+    orderDesktop?: string;
+    /** Order on tablet screens */
+    orderTablet?: string;
+    /** Order on mobile screens */
+    orderMobile?: string;
     /** Custom alignment of column */
     align?: 'right' | 'left' | 'center';
     /** Column flex grow */
@@ -33,6 +43,11 @@ class GridColumn extends React.Component<IGridColumn, {}> {
         tablet: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
         mobile: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
         all: PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']),
+        orderAll: PropTypes.string,
+        orderWide: PropTypes.string,
+        orderDesktop: PropTypes.string,
+        orderTablet: PropTypes.string,
+        orderMobile: PropTypes.string,
         align: PropTypes.oneOf(['right', 'left', 'center']),
         grow: PropTypes.bool,
         flex: PropTypes.bool,
@@ -48,10 +63,19 @@ class GridColumn extends React.Component<IGridColumn, {}> {
         all: '12',
         flex: false,
         grow: false,
+        orderWide: '0',
+        orderDesktop: '0',
+        orderTablet: '0',
+        orderMobile: '0',
+        orderAll: '0',
     };
 
     render() {
-        const { all, wide, desktop, tablet, className, flex, grow, align, children, mobile } = this.props;
+        const {
+            all, wide, desktop, tablet, mobile,
+            orderAll, orderWide, orderDesktop, orderTablet, orderMobile,
+            className, flex, grow, align, children,
+        } = this.props;
 
         return (
             <div
@@ -66,6 +90,11 @@ class GridColumn extends React.Component<IGridColumn, {}> {
                         desktop,
                         tablet,
                         mobile,
+                        'all-order': orderAll,
+                        'wide-order': orderWide,
+                        'desktop-order': orderDesktop,
+                        'tablet-order': orderTablet,
+                        'mobile-order': orderMobile,
                     },
                     className
                 )}
