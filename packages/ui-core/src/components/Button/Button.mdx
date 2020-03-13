@@ -3,15 +3,15 @@ name: Button
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz';
-import Button from './Button';
-import ArrowBack from 'icons/System/24/Arrow_back_24.svg';
+import { Playground, Props } from "docz";
+import Button from "./Button.tsx";
+import ArrowBack from "icons/System/24/Arrow_back_24.svg";
 
 # Button
 
 ## Properties
 
-<PropsTable of={Button} />
+<Props of={Button} />
 
 ## Basic usage
 
@@ -40,11 +40,15 @@ import ArrowBack from 'icons/System/24/Arrow_back_24.svg';
 ## Disabled link
 
 <Playground>
-    <Button href="#" disabled={true}>Link</Button>
+    <Button href="#" disabled={true}>
+        Link
+    </Button>
 </Playground>
 
 ## Link with target attribute
 
 <Playground>
-    <Button target="_blank" href="#">Link</Button>
+    <Button target="_blank" href="#">
+        Link
+    </Button>
 </Playground>

@@ -3,74 +3,81 @@ name: Select
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz';
-import Select from './Select';
-import Checked from 'icons/System/24/Checked_24.svg';
-import Metro from 'icons/System/24/Metro_24.svg';
-import Arrow from 'icons/System/24/Arrow_right_24.svg';
+import { Playground, Props } from "docz";
+import Select from "./Select.tsx";
+import Checked from "icons/System/24/Checked_24.svg";
+import Metro from "icons/System/24/Metro_24.svg";
+import Arrow from "icons/System/24/Arrow_right_24.svg";
 
-export const items = [{
-    id: '1',
-    value: 'eat',
-    title: 'Eat',
-}, {
-    id: '2',
-    value: 'sleep',
-    title: 'Sleep',
-}, {
-    id: '3',
-    value: 'traing',
-    title: 'Traing',
-}];
+export const items = [
+    {
+        id: "1",
+        value: "eat",
+        title: "Eat"
+    },
+    {
+        id: "2",
+        value: "sleep",
+        title: "Sleep"
+    },
+    {
+        id: "3",
+        value: "traing",
+        title: "Traing"
+    }
+];
 
 export const Wrapper = ({ children }) => {
-    return (
-        <div style={{ height: '200px' }}>
-            {children}
-        </div>
-    );
-}
+    return <div style={{ height: "200px" }}>{children}</div>;
+};
 
 # Select
 
 ## Properties
-<PropsTable of={Select} />
 
-``` javascript
-const items = [{
-    id: 1,
-    value: 'eat',
-    title: 'Eat',
-}, {
-    id: 2,
-    value: 'sleep',
-    title: 'Sleep',
-}, {
-    id: 3,
-    value: 'traing',
-    title: 'Traing',
-}];
+<Props of={Select} />
+
+```javascript
+const items = [
+    {
+        id: 1,
+        value: "eat",
+        title: "Eat"
+    },
+    {
+        id: 2,
+        value: "sleep",
+        title: "Sleep"
+    },
+    {
+        id: 3,
+        value: "traing",
+        title: "Traing"
+    }
+];
 ```
 
 export class SelectWrapper extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTitle: '',
-            searchValue: '',
-            canOpen: false,
-        }
+            selectedTitle: "",
+            searchValue: "",
+            canOpen: false
+        };
+        this.onSelectItem.bind(this);
+        this.onChangeSearch.bind(this);
     }
-    onSelectItem = (e, data) => {
+    onSelectItem(e, data) {
         this.setState({
             selectedTitle: data.title,
-            searchValue: data.title,
-        })
+            searchValue: data.title
+        });
     }
-    onChangeSearch = value => {
+    onChangeSearch(value) {
         this.setState({
             searchValue: value,
-            canOpen: !!value,
+            canOpen: !!value
         });
     }
     render() {
@@ -79,8 +86,8 @@ export class SelectWrapper extends React.Component {
             onChangeSearch: this.onChangeSearch,
             selectedTitle: this.state.selectedTitle,
             searchValue: this.state.searchValue,
-            canOpen: this.state.canOpen,
-        })
+            canOpen: this.state.canOpen
+        });
     }
 }
 
@@ -88,14 +95,14 @@ export class SelectWrapper extends React.Component {
 
 <Playground wrapper={Wrapper}>
     <SelectWrapper>
-        {({ onSelectItem, selectedTitle, canOpen }) =>
-                <Select
-                    selectedTitle={selectedTitle}
-                    onSelectItem={onSelectItem}
-                    placeholder="Choose your step"
-                    items={items}
-                />
-        }
+        {({ onSelectItem, selectedTitle, canOpen }) => (
+            <Select
+                selectedTitle={selectedTitle}
+                onSelectItem={onSelectItem}
+                placeholder="Choose your step"
+                items={items}
+            />
+        )}
     </SelectWrapper>
 </Playground>
 
@@ -103,26 +110,28 @@ export class SelectWrapper extends React.Component {
 
 <Playground wrapper={Wrapper}>
     <SelectWrapper>
-        {({ onSelectItem, onChangeSearch, searchValue, canOpen }) =>
-                <Select
-                    placeholder="Choose your step"
-                    searchValue={searchValue}
-                    items={
-                        searchValue
-                            ? items.filter(
-                                ({ title }) =>
-                                    title.toLowerCase().search(searchValue.toLowerCase()) !== -1,
-                                )
-                            : []
-                    }
-                    onSelectItem={onSelectItem}
-                    onChangeSearch={onChangeSearch}
-                    arrow={false}
-                    canOpen={canOpen}
-                    label="Search"
-                    id="333"
-                />
-        }
+        {({ onSelectItem, onChangeSearch, searchValue, canOpen }) => (
+            <Select
+                placeholder="Choose your step"
+                searchValue={searchValue}
+                items={
+                    searchValue
+                        ? items.filter(
+                              ({ title }) =>
+                                  title
+                                      .toLowerCase()
+                                      .search(searchValue.toLowerCase()) !== -1
+                          )
+                        : []
+                }
+                onSelectItem={onSelectItem}
+                onChangeSearch={onChangeSearch}
+                arrow={false}
+                canOpen={canOpen}
+                label="Search"
+                id="333"
+            />
+        )}
     </SelectWrapper>
 </Playground>
 
@@ -130,7 +139,7 @@ export class SelectWrapper extends React.Component {
 
 <Playground wrapper={Wrapper}>
     <SelectWrapper>
-        {({ onSelectItem, selectedTitle, canOpen }) =>
+        {({ onSelectItem, selectedTitle, canOpen }) => (
             <Select
                 placeholder="Choose your step"
                 selectedTitle={selectedTitle}
@@ -138,11 +147,13 @@ export class SelectWrapper extends React.Component {
                     title: item.title,
                     value: item.value,
                     id: item.id,
-                    leftIcon: <Metro style={{ width: '24px', height: '24px'}}/>
+                    leftIcon: (
+                        <Metro style={{ width: "24px", height: "24px" }} />
+                    )
                 }))}
                 onSelectItem={onSelectItem}
             />
-        }
+        )}
     </SelectWrapper>
 </Playground>
 
@@ -150,7 +161,7 @@ export class SelectWrapper extends React.Component {
 
 <Playground wrapper={Wrapper}>
     <SelectWrapper>
-        {({ onSelectItem, selectedTitle, canOpen }) =>
+        {({ onSelectItem, selectedTitle, canOpen }) => (
             <Select
                 placeholder="Choose your step"
                 selectedTitle={selectedTitle}
@@ -158,11 +169,13 @@ export class SelectWrapper extends React.Component {
                     title: item.title,
                     value: item.value,
                     id: item.id,
-                    rightIcon: <Arrow style={{ width: '24px', height: '24px'}}/>
+                    rightIcon: (
+                        <Arrow style={{ width: "24px", height: "24px" }} />
+                    )
                 }))}
                 onSelectItem={onSelectItem}
             />
-        }
+        )}
     </SelectWrapper>
 </Playground>
 
@@ -180,14 +193,14 @@ export class SelectWrapper extends React.Component {
 
 <Playground wrapper={Wrapper}>
     <SelectWrapper>
-        {({ onSelectItem, selectedTitle }) =>
-                <Select
-                    disabled
-                    selectedTitle={selectedTitle}
-                    onSelectItem={onSelectItem}
-                    placeholder="You have no choice"
-                    items={items}
-                />
-        }
+        {({ onSelectItem, selectedTitle }) => (
+            <Select
+                disabled
+                selectedTitle={selectedTitle}
+                onSelectItem={onSelectItem}
+                placeholder="You have no choice"
+                items={items}
+            />
+        )}
     </SelectWrapper>
 </Playground>

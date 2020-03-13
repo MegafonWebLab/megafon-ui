@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classnames from "classnames";
 
 interface ClassSet {
     [key: string]: boolean;
@@ -14,34 +14,49 @@ interface ClassSet {
  * @returns {String}
  */
 export default function cnCreate(blockName: string) {
-    return (elementName: string, modificatorsObject?: {}, customClassNames?: string) => {
+    return (
+        elementName: string,
+        modificatorsObject?: {},
+        customClassNames?: string
+    ) => {
         let params;
         const prefix = elementName;
-        const className = customClassNames || '';
+        const className = customClassNames || "";
 
         if (modificatorsObject) {
             params = modificatorsObject;
         }
 
-        if (!params || typeof params === 'object' && Object.keys(params).length === 0) {
-            return classnames(`${blockName}${prefix ? '__' + prefix : ''}`, className);
+        if (
+            !params ||
+            (typeof params === "object" && Object.keys(params).length === 0)
+        ) {
+            return classnames(
+                `${blockName}${prefix ? "__" + prefix : ""}`,
+                className
+            );
         }
 
         const classParams: ClassSet = {};
-        let prefixKey, withoutPrefix;
+        let prefixKey = "";
+        let withoutPrefix = "";
 
         for (const key in params) {
-            if (typeof params[key] === 'boolean' && params[key]) {
+            if (typeof params[key] === "boolean" && params[key]) {
                 prefixKey = `__${prefix}_${key}`;
-                classParams[`${blockName}${prefix ? prefixKey : '_' + key}`] = true;
-            } else if (typeof params[key] === 'string') {
+                classParams[
+                    `${blockName}${prefix ? prefixKey : "_" + key}`
+                ] = true;
+            } else if (typeof params[key] === "string") {
                 prefixKey = `__${prefix}_${key}_${params[key]}`;
                 withoutPrefix = `_${key}_${params[key]}`;
-                classParams[`${blockName}${prefix ? prefixKey : withoutPrefix}`] = true;
+                classParams[
+                    `${blockName}${prefix ? prefixKey : withoutPrefix}`
+                ] = true;
             }
         }
 
-        return prefix === ''
+        return prefix === ""
             ? classnames(blockName, classParams, className)
             : classnames(`${blockName}__${prefix}`, classParams, className);
     };

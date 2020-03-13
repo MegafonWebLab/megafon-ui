@@ -2,29 +2,26 @@
 name: TextField
 menu: Components
 ---
-import { Playground, PropsTable } from 'docz';
-import TextField from './TextField';
+
+import { Playground, Props } from "docz";
+import TextField from "./TextField.tsx";
 
 export const wrapper = (width = 250) => ({ children }) => {
-    return (
-        <div style={{width: `${width}px`}}>
-            {children}
-        </div>
-    )
-}
+    return <div style={{ width: `${width}px` }}>{children}</div>;
+};
 
 # TextField
 
 ## Properties
 
-<PropsTable of={TextField} />
+<Props of={TextField} />
 
 ## API
 
-Method  | Description
-------- | ---
-blur    | Trigger blur event on input field.
-focus   | Trigger focus event on input field.
+| Method | Description                         |
+| ------ | ----------------------------------- |
+| blur   | Trigger blur event on input field.  |
+| focus  | Trigger focus event on input field. |
 
 **Use TextField's 'ref' prop for API methods call:**
 
@@ -49,7 +46,7 @@ class SearchForm extends Component {
 ## Basic usage
 
 <Playground wrapper={wrapper()}>
-    <TextField name="name"/>
+    <TextField name="name" />
 </Playground>
 
 ## Mask usage
@@ -73,7 +70,7 @@ class SearchForm extends Component {
 ## Valid usage
 
 <Playground wrapper={wrapper()}>
-        <TextField valid={true} />
+    <TextField valid={true} />
 </Playground>
 
 ## Comment usage
@@ -103,10 +100,11 @@ class SearchForm extends Component {
 ## Password type usage
 
 <Playground wrapper={wrapper()}>
-    <TextField name="name" placeholder="password" type="password"/>
+    <TextField name="name" placeholder="password" type="password" />
 </Playground>
 
 ## Increased size of space between words usage
+
 <Playground wrapper={wrapper()}>
     <TextField bigSpace={true} />
 </Playground>

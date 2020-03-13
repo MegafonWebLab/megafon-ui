@@ -2,33 +2,35 @@
 name: Textarea
 menu: Components
 ---
-import { Playground, PropsTable } from 'docz';
-import Textarea from './Textarea';
+
+import { Playground, Props } from "docz";
+import Textarea from "./Textarea.tsx";
 
 export const wrapper = (width = 250) => ({ children }) => {
-    return (
-        <div style={{width: `${width}px`}}>
-            {children}
-        </div>
-    )
-}
+    return <div style={{ width: `${width}px` }}>{children}</div>;
+};
 
 # Textarea
 
 ## Properties
 
-<PropsTable of={Textarea} />
+<Props of={Textarea} />
 
 ## Basic usage
 
 <Playground wrapper={wrapper()}>
-    <Textarea name="name"/>
+    <Textarea name="name" />
 </Playground>
 
 ## Error usage
 
 <Playground wrapper={wrapper()}>
-    <Textarea label="Notice" id="1" error={true} noticeText="Name is required" />
+    <Textarea
+        label="Notice"
+        id="1"
+        error={true}
+        noticeText="Name is required"
+    />
 </Playground>
 
 ## Valid usage

@@ -3,37 +3,45 @@ name: Grid
 menu: Components
 ---
 
-import { Playground, PropsTable } from 'docz';
-import Grid from './Grid';
-import GridColumn from './GridColumn';
+import { Playground, Props } from "docz";
+import Grid from "./Grid.tsx";
+import GridColumn from "./GridColumn.tsx";
 
 export const itemView = {
-    backgroundColor: '#00B956',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '5px 10px'
+    backgroundColor: "#00B956",
+    color: "#fff",
+    textAlign: "center",
+    padding: "5px 10px"
 };
 
 # Grid
 
 ## Properties
 
-<PropsTable of={Grid} />
+<Props of={Grid} />
 
 # GridColumn
 
 ## Properties
 
-<PropsTable of={GridColumn} />
+<Props of={GridColumn} />
 
 ## Basic usage
 
 <Playground>
     <Grid>
-        <GridColumn><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn>
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn>
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn>
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn>
+            <div style={itemView}>Item4</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -41,11 +49,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="5"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="1"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="12"><div style={itemView}>Item7</div></GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="1">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="12">
+            <div style={itemView}>Item7</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -53,11 +71,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large">
-        <GridColumn all="5"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="1"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="12"><div style={itemView}>Item7</div></GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="1">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="12">
+            <div style={itemView}>Item7</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -65,11 +93,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="between">
-        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="6">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item5</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -77,11 +115,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="around">
-        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="6">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item5</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -89,11 +137,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="center">
-        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="6">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item5</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -101,11 +159,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="right">
-        <GridColumn all="6"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="6">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item5</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -113,9 +181,22 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="top">
-        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item2 <br />
+                <br />
+            </div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item3 <br />
+                <br />
+                <br />
+            </div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -123,9 +204,22 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="bottom">
-        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item2 <br />
+                <br />
+            </div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item3 <br />
+                <br />
+                <br />
+            </div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -133,9 +227,22 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="center">
-        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item2 <br />
+                <br />
+            </div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item3 <br />
+                <br />
+                <br />
+            </div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -143,9 +250,22 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="baseline">
-        <GridColumn all="4"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item2 <br/><br/></div></GridColumn>
-        <GridColumn all="4"><div style={itemView}>Item3 <br/><br/><br/></div></GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item2 <br />
+                <br />
+            </div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>
+                Item3 <br />
+                <br />
+                <br />
+            </div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -153,11 +273,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" multiRow={false}>
-        <GridColumn all="12"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="5"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="5"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="12">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item5</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -165,11 +295,21 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="6" tablet="4" mobile="2"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="5" wide="7" tablet="9" mobile="11"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="4" tablet="3" desktop="4"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="3" wide="12"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="2"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="6" tablet="4" mobile="2">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="5" wide="7" tablet="9" mobile="11">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="4" tablet="3" desktop="4">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
+        <GridColumn all="3" wide="12">
+            <div style={itemView}>Item4</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item5</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -177,9 +317,15 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="2" mobile="6"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="8" mobile="12" orderMobile="3"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="2" mobile="6" orderMobile="2"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="2" mobile="6">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="8" mobile="12" orderMobile="3">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="2" mobile="6" orderMobile="2">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -187,9 +333,15 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="2"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="8" mobile="12" orderTablet="3"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="2" mobile="6" orderTablet="2"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="8" mobile="12" orderTablet="3">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="2" mobile="6" orderTablet="2">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
     </Grid>
 </Playground>
 
@@ -197,8 +349,14 @@ export const itemView = {
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="2" mobile="6" orderWide="3"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="8" mobile="12" orderTablet="3" orderWide="2"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="2" mobile="6" orderTablet="2" orderWide="1"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="2" mobile="6" orderWide="3">
+            <div style={itemView}>Item1</div>
+        </GridColumn>
+        <GridColumn all="8" mobile="12" orderTablet="3" orderWide="2">
+            <div style={itemView}>Item2</div>
+        </GridColumn>
+        <GridColumn all="2" mobile="6" orderTablet="2" orderWide="1">
+            <div style={itemView}>Item3</div>
+        </GridColumn>
     </Grid>
 </Playground>
