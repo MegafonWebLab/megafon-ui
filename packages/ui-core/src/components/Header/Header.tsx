@@ -16,7 +16,7 @@ interface IHeaderProps {
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }
 
 const cn = cnCreate('mfui-header');
@@ -44,10 +44,11 @@ class Header extends React.Component<IHeaderProps, {}> {
     }
 
     render() {
-        const ElementType = this.props.as as React.ElementType;
+        const ElementType = this.props.as;
         const { color, margin, as: level, onClick } = this.props;
 
         return (
+            // @ts-ignores
             <ElementType className={cn('', { color, margin, level }, this.props.className)} onClick={onClick}>
                 {this.props.children}
                 {this.props.addition && this.renderAddition()}

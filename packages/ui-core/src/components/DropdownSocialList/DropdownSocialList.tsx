@@ -13,7 +13,7 @@ export interface IDropdownSocialListProps {
     /** Icons list */
     icons: Array<Partial<Icon>>;
     /** Max icon */
-    maxIconNumber?: number;
+    maxIconNumber: number;
     /** Custom class name */
     className?: string;
 }
@@ -47,12 +47,12 @@ class DropdownSocialList extends React.Component<IDropdownSocialListProps, {}> {
                     popupPadding="none"
                     trigger={
                         <span className={cn('dropdown-trigger')}>
-                            и еще {icons.length - maxIconNumber!}
+                            и еще {icons.length - maxIconNumber}
                         </span>}
                 >
                     <div className={cn('dropdown-popup')}>
                         <div className={cn('dropdown-list')}>
-                            {icons.slice(maxIconNumber).map((icon: Icon, index: number): React.ReactNode =>
+                            {icons.slice(maxIconNumber).map((icon: Icon, index: number): JSX.Element =>
                                 <span className={cn('dropdown-item')} key={icon.title + index}>
                                     {icon.title}
                                 </span>
@@ -70,13 +70,13 @@ class DropdownSocialList extends React.Component<IDropdownSocialListProps, {}> {
         return (
             <div className={cn('', {}, className)}>
                 <div className={cn('list')}>
-                    {icons.slice(0, maxIconNumber).map((icon: Icon, index): React.ReactNode =>
+                    {icons.slice(0, maxIconNumber).map((icon: Icon, index): JSX.Element =>
                         <div className={cn('item')} title={icon.title} key={icon.title + index}>
                             {icon.svgIcon}
                         </div>
                     )}
                 </div>
-                {icons.length > maxIconNumber! && this.renderDropdown()}
+                {icons.length > maxIconNumber && this.renderDropdown()}
             </div>
         );
     }

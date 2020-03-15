@@ -52,7 +52,7 @@ export interface IButtonProps {
     showSpinner?: boolean;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click event handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }
 
 interface IButtonState {

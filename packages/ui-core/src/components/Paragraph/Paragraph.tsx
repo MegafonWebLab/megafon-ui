@@ -66,7 +66,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
     };
 
     render() {
-        const TagName = this.props.as as React.ElementType;
+        const TagName = this.props.as;
         const {
             sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
             marginAll, marginWide, marginDesktop, marginTablet,
@@ -75,6 +75,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         const isMarginAll = marginAll === 'default' ? false : marginAll;
 
         return (
+            // @ts-ignore
             <TagName
                 className={cn('', {
                     'size-all': sizeAll,
@@ -90,7 +91,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
                     'h-align': hAlign,
                     color: color,
                     weight: weight,
-                }, className )}>
+                }, className)}>
                 {children}
             </TagName>
         );

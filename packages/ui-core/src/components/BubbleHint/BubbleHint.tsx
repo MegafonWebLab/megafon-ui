@@ -24,11 +24,11 @@ interface IBubbleHintProps {
     trigger: JSX.Element[] | Element[] | JSX.Element | string | Element;
     children: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** MouseEnter handler */
-    onMouseEnter?(e: React.SyntheticEvent<EventTarget>): void;
+    onMouseEnter(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** MouseLeave handler */
-    onMouseLeave?(e: React.SyntheticEvent<EventTarget>): void;
+    onMouseLeave(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** Click handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick(e: React.MouseEvent<HTMLElement>): void | undefined;
 }
 
 interface IBubbleHintState {
@@ -94,8 +94,9 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         this.props.onMouseLeave && this.props.onMouseLeave(e);
     }
 
-    handleClick = (e: React.SyntheticEvent<EventTarget>): void | boolean => {
-        if (this.trigger.contains(e.target as HTMLElement)) {
+    handleClick = (e: React.MouseEvent<HTMLElement>): void | boolean => {
+        // @ts-ignore
+        if (e.target && this.trigger.contains(e.target)) {
             this.setState({ show: !this.state.show });
             this.props.onClick && this.props.onClick(e);
         }
@@ -104,7 +105,8 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
     }
 
     handleClickOutside = (e: React.SyntheticEvent<EventTarget> | Event): void | boolean => {
-        if ((this.container && this.container.contains(e.target as HTMLElement)) || !this.state.show) {
+        // @ts-ignore
+        if ((this.container && this.container.contains(e.target)) || !this.state.show) {
             return;
         }
 
@@ -138,7 +140,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
 
     render() {
         const popupClasses = { show: this.state.show, width: this.props.popupWidth };
-        const popupOptions = {
+        const popupOptions: IPopperProps = {
             flip: {
                 behavior: ['right', 'left', 'bottom', 'top'],
             },
@@ -148,22 +150,27 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
             <Manager className={cn('', { 'margin-left': this.props.marginLeft }, this.props.className)}>
                 <div className={cn('container')}
                     {...this.getHandlers()}
-                    ref={this.getContainer}>
+                    ref={this.getContainer}
+                >
                     <Target className={cn('target')}>
-                        <div className={cn('trigger')}
-                            ref={this.getTrigger}>
+                        <div
+                            className={cn('trigger')}
+                            ref={this.getTrigger}
+                        >
                             {this.props.trigger}
                         </div>
                     </Target>
                     <Popper eventsEnabled={false}
                         className={cn('popup', popupClasses)}
-                        modifiers={popupOptions as IPopperProps}
-                        placement={this.props.placement}>
+                        modifiers={popupOptions}
+                        placement={this.props.placement}
+                    >
                         <div
                             className={cn('popup-inner', {
                                 padding: this.props.popupPadding,
                                 align: this.props.popupAlign,
-                            })}>
+                            })}
+                        >
                             <div className={cn('content')}>
                                 {this.props.children}
                             </div>

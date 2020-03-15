@@ -63,15 +63,15 @@ export interface ITextFieldProps {
     /** Custom classname */
     className?: string;
     /** Change handler */
-    onChange?(e: React.SyntheticEvent<EventTarget>): void;
+    onChange(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** Blur handler */
-    onBlur?(e: React.SyntheticEvent<EventTarget>): void;
+    onBlur(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** Focus handler */
-    onFocus?(e: React.SyntheticEvent<EventTarget>): void;
+    onFocus(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** KeyUp handler */
-    onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
+    onKeyUp(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** Custom icon click handler */
-    onCustomIconClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onCustomIconClick(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }
 
 interface ITextFieldState {
@@ -202,7 +202,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         );
     }
 
-    addInputNode = (node: HTMLInputElement ) => this.inputNode = node;
+    addInputNode = (node: HTMLInputElement) => this.inputNode = node;
 
     renderInputElem(isPasswordType: boolean) {
         const { isPasswordHidden } = this.state;

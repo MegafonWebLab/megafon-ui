@@ -16,7 +16,7 @@ interface IIconsState {
 
 type svgDataType = { size: string; path: string; importPath: string };
 
-type IconEntry = Array<string | svgDataType[]>;
+type IconEntry = [string, svgDataType[]];
 
 type Entries = IconEntry[];
 
@@ -129,7 +129,7 @@ class Icons extends React.Component<{}, IIconsState> {
 
         return entries.map((entry: IconEntry) => {
             const [name, svgList] = entry;
-            const [svg] = svgList as svgDataType[];
+            const [svg] = svgList;
             const Svg = reqSvgs(svg.path).default;
 
             return (

@@ -64,9 +64,9 @@
       "<rootDir>/src"
     ],
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\?$",
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/lib/",
@@ -99,6 +99,7 @@
     "@babel/plugin-transform-react-constant-elements": "^7.8.3",
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
     "@svgr/cli": "^2.4.1",
     "@svgr/core": "^2.4.1",
     "@svgr/webpack": "^2.4.1",
@@ -113,12 +114,14 @@
     "@types/webpack-env": "^1.15.1",
     "babel-plugin-inline-react-svg": "^0.5.4",
     "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-typescript": "^7.0.0-alpha.19",
     "del": "^3.0.0",
     "docz": "^2.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
     "gatsby-plugin-less": "^3.0.20",
+    "gatsby-plugin-typescript": "^2.2.2",
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0-beta.2",

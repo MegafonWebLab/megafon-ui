@@ -44,13 +44,13 @@ interface ITextareaProps {
     /** Custom classname */
     className?: string;
     /** Change handler */
-    onChange?(e: React.SyntheticEvent<EventTarget>): void;
+    onChange(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** Blur handler */
-    onBlur?(e: React.SyntheticEvent<EventTarget>): void;
+    onBlur(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** Focus handler */
-    onFocus?(e: React.SyntheticEvent<EventTarget>): void;
+    onFocus(e: React.SyntheticEvent<EventTarget>): void | undefined;
     /** KeyUp handler */
-    onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
+    onKeyUp(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }
 
 const cn = cnCreate('mfui-textarea');

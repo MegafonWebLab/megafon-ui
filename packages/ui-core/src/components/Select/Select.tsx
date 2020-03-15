@@ -75,18 +75,18 @@ interface ISelectProps {
     /** Custom classname for controls block */
     classNameControl?: string;
     /** Change handler */
-    onChangeSearch?(value: string): void;
+    onChangeSearch(value: string): void | undefined;
     /** Focus handler */
-    onFocusSearch?(value: string): void;
+    onFocusSearch(value: string): void | undefined;
     /** Click item handler */
-    onSelectItem?(e: React.SyntheticEvent<EventTarget>, data: {
+    onSelectItem(e: React.SyntheticEvent<EventTarget>, data: {
         title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
         value?: string;
         index: number;
         data?: {};
-    }): void;
+    }): void | undefined;
     /** Click icon handler */
-    onClickIcon?(e: React.SyntheticEvent<EventTarget>): void;
+    onClickIcon(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }
 
 interface ISelectState {

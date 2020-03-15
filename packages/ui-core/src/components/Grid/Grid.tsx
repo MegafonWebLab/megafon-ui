@@ -46,18 +46,18 @@ class Grid extends React.Component<IProps, {}> {
                         'gutters-left': guttersLeft,
                         'gutters-bottom': guttersBottom,
                     })}>
-                        {React.Children.map(children, (child: React.ReactElement<IGridColumn>) =>
-                            React.cloneElement(child, {
-                                className: cn(
-                                    'column',
-                                    {
-                                        'gutter-left': guttersLeft,
-                                        'gutter-bottom': guttersBottom,
-                                    },
-                                    child.props.className
-                                ),
-                            })
-                        )}
+                    {React.Children.map(children, (child) =>
+                        React.cloneElement(child, {
+                            className: cn(
+                                'column',
+                                {
+                                    'gutter-left': guttersLeft,
+                                    'gutter-bottom': guttersBottom,
+                                },
+                                child.props.className
+                            ),
+                        })
+                    )}
                 </div>
             </div>
         );

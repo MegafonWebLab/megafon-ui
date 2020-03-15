@@ -1,5 +1,6 @@
 module.exports = {
     plugins: [
+        "gatsby-plugin-less",
         {
             resolve: "gatsby-plugin-typescript",
             options: {
@@ -7,7 +8,6 @@ module.exports = {
                 jsxPragma: "jsx", // defaults to "React"
                 allExtensions: true // defaults to false
             }
-        },
-        "gatsby-plugin-less"
+        }
     ]
 };

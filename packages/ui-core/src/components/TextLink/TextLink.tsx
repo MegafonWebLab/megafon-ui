@@ -19,7 +19,7 @@ interface ITextLinkProps {
     className?: string;
     children: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }
 
 const cn = cnCreate('mfui-text-link');

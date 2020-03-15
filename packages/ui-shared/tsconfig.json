@@ -8,18 +8,8 @@
     "noUnusedLocals": true,
     "noImplicitAny": false,
     "target": "es5",
-    "lib": [
-      "es2015",
-      "es2017",
-      "dom"
-    ]
+    "lib": ["es2015", "es2017", "dom"]
   },
-  "include": [
-    "typings/**/*",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["typings/**/*", "src/**/*.ts", "src/**/*"],
+  "exclude": ["node_modules"]
 }

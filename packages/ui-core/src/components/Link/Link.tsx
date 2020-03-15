@@ -10,7 +10,7 @@ interface ILinkProps {
     /** Custom class name */
     className?: string;
     /** Click event handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }
 
 class Link extends React.Component<ILinkProps, {}> {

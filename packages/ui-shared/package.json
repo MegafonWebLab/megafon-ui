@@ -60,9 +60,9 @@
       "<rootDir>/src"
     ],
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\?$",
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/lib/",
