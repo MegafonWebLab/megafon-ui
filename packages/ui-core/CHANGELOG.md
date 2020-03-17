@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Grid**
+    - deleted minus bottom gutters
 
 ## Release 1.3.1
 - **Carousel**
