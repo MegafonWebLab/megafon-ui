@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
+import cnCreate from '@megafon/ui-core/dist/utils/cn';
 import './style/ProductTileCashback.less';
 
 interface IProductTileCashbackProps {

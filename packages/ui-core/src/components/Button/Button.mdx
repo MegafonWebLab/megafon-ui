@@ -6,6 +6,7 @@ menu: Components
 import { Playground, Props } from "docz";
 import Button from "./Button.tsx";
 import ArrowBack from "icons/System/24/Arrow_back_24.svg";
+import { ButtonWrapper } from "./Button.docz.tsx";
 
 # Button
 
@@ -16,39 +17,51 @@ import ArrowBack from "icons/System/24/Arrow_back_24.svg";
 ## Basic usage
 
 <Playground>
-    <Button>Submit</Button>
+    <ButtonWrapper>
+        <Button>Submit</Button>
+    </ButtonWrapper>
 </Playground>
 
 ## Spinner usage
 
 <Playground>
-    <Button showSpinner={true}>Submit</Button>
+    <ButtonWrapper>
+        <Button showSpinner={true}>Submit</Button>
+    </ButtonWrapper>
 </Playground>
 
 ## Disabled button
 
 <Playground>
-    <Button disabled={true}>Submit</Button>
+    <ButtonWrapper>
+        <Button disabled={true}>Submit</Button>
+    </ButtonWrapper>
 </Playground>
 
 ## Link
 
 <Playground>
-    <Button href="#">Link</Button>
+    <ButtonWrapper>
+        <Button href="#">Link</Button>
+    </ButtonWrapper>
 </Playground>
 
 ## Disabled link
 
 <Playground>
-    <Button href="#" disabled={true}>
-        Link
-    </Button>
+    <ButtonWrapper>
+        <Button href="#" disabled={true}>
+            Link
+        </Button>
+    </ButtonWrapper>
 </Playground>
 
 ## Link with target attribute
 
 <Playground>
-    <Button target="_blank" href="#">
-        Link
-    </Button>
+    <ButtonWrapper>
+        <Button target="_blank" href="#">
+            Link
+        </Button>
+    </ButtonWrapper>
 </Playground>

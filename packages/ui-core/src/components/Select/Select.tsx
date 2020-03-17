@@ -7,6 +7,13 @@ import cnCreate from 'utils/cn';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
+export interface ISelectItem {
+    title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    value?: string;
+    index: number;
+    data?: {};
+}
+
 interface ISelectProps {
     /** Field title */
     label?: React.ReactNode;
@@ -79,12 +86,7 @@ interface ISelectProps {
     /** Focus handler */
     onFocusSearch(value: string): void | undefined;
     /** Click item handler */
-    onSelectItem(e: React.SyntheticEvent<EventTarget>, data: {
-        title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-        value?: string;
-        index: number;
-        data?: {};
-    }): void | undefined;
+    onSelectItem(e: React.SyntheticEvent<EventTarget>, data: ISelectItem): void | undefined;
     /** Click icon handler */
     onClickIcon(e: React.SyntheticEvent<EventTarget>): void | undefined;
 }

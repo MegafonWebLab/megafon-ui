@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
+import cnCreate from '@megafon/ui-core/dist/utils/cn';
 import './style/ProductTileValue.less';
 
 interface IProductTileValueProps {
@@ -79,7 +79,7 @@ class ProductTileValue extends React.PureComponent<IProductTileValueProps, IProd
         const { hAlign } = this.props;
 
         return (
-            <span className={cn('', {'h-align': hAlign })}>
+            <span className={cn('', { 'h-align': hAlign })}>
                 {this.renderPrevPrice()}
                 {this.renderCurrentPrice()}
             </span>

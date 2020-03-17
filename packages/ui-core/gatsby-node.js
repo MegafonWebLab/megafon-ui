@@ -13,15 +13,30 @@ exports.onCreateWebpackConfig = args => {
     config.module.rules[idx] = rule;
     args.actions.replaceWebpackConfig(config);
 
+    config.module.rules = config.module.rules.filter(r => r.test.test(".ts"));
     args.actions.setWebpackConfig({
         resolve: {
-            modules: [path.resolve(__dirname, "../src"), "node_modules"],
+            modules: [
+                path.resolve(__dirname, "../src"),
+                path.resolve(__dirname, "../node_modules"),
+                path.resolve(__dirname, "../../../node_modules")
+            ],
             alias: {
-                utils: path.resolve(__dirname, "../src/utils/")
+                utils: path.resolve(__dirname, "../src/utils/"),
+                // "@megafon/ui-core/dist/icons": path.resolve(
+                //     __dirname,
+                //     "../src/icons"
+                // ),
+                "@megafon/ui-core/dist": path.resolve(__dirname, "../src"),
+                "@megafon/ui-core/styles": path.resolve(
+                    __dirname,
+                    "../src/styles"
+                )
             }
         },
         module: {
             rules: [
+                { test: /\.tsx?$/, loader: "ts-loader" },
                 {
                     test: /\.svg$/,
                     use: [

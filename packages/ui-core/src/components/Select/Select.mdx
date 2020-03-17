@@ -8,28 +8,7 @@ import Select from "./Select.tsx";
 import Checked from "icons/System/24/Checked_24.svg";
 import Metro from "icons/System/24/Metro_24.svg";
 import Arrow from "icons/System/24/Arrow_right_24.svg";
-
-export const items = [
-    {
-        id: "1",
-        value: "eat",
-        title: "Eat"
-    },
-    {
-        id: "2",
-        value: "sleep",
-        title: "Sleep"
-    },
-    {
-        id: "3",
-        value: "traing",
-        title: "Traing"
-    }
-];
-
-export const Wrapper = ({ children }) => {
-    return <div style={{ height: "200px" }}>{children}</div>;
-};
+import { SelectWrapper, items } from "./Select.docz.tsx";
 
 # Select
 
@@ -57,43 +36,9 @@ const items = [
 ];
 ```
 
-export class SelectWrapper extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedTitle: "",
-            searchValue: "",
-            canOpen: false
-        };
-        this.onSelectItem.bind(this);
-        this.onChangeSearch.bind(this);
-    }
-    onSelectItem(e, data) {
-        this.setState({
-            selectedTitle: data.title,
-            searchValue: data.title
-        });
-    }
-    onChangeSearch(value) {
-        this.setState({
-            searchValue: value,
-            canOpen: !!value
-        });
-    }
-    render() {
-        return this.props.children({
-            onSelectItem: this.onSelectItem,
-            onChangeSearch: this.onChangeSearch,
-            selectedTitle: this.state.selectedTitle,
-            searchValue: this.state.searchValue,
-            canOpen: this.state.canOpen
-        });
-    }
-}
-
 ## Basic usage
 
-<Playground wrapper={Wrapper}>
+<Playground>
     <SelectWrapper>
         {({ onSelectItem, selectedTitle, canOpen }) => (
             <Select
@@ -108,7 +53,7 @@ export class SelectWrapper extends React.Component {
 
 ## Search usage
 
-<Playground wrapper={Wrapper}>
+<Playground>
     <SelectWrapper>
         {({ onSelectItem, onChangeSearch, searchValue, canOpen }) => (
             <Select
@@ -137,7 +82,7 @@ export class SelectWrapper extends React.Component {
 
 ## Select item icon left usage
 
-<Playground wrapper={Wrapper}>
+<Playground>
     <SelectWrapper>
         {({ onSelectItem, selectedTitle, canOpen }) => (
             <Select
@@ -159,7 +104,7 @@ export class SelectWrapper extends React.Component {
 
 ## Select item right usage
 
-<Playground wrapper={Wrapper}>
+<Playground>
     <SelectWrapper>
         {({ onSelectItem, selectedTitle, canOpen }) => (
             <Select
@@ -181,7 +126,7 @@ export class SelectWrapper extends React.Component {
 
 ## Zero items usage
 
-<Playground wrapper={Wrapper}>
+<Playground>
     <Select
         placeholder="Choose your step"
         items={[]}
@@ -191,7 +136,7 @@ export class SelectWrapper extends React.Component {
 
 ## Disabled usage
 
-<Playground wrapper={Wrapper}>
+<Playground>
     <SelectWrapper>
         {({ onSelectItem, selectedTitle }) => (
             <Select

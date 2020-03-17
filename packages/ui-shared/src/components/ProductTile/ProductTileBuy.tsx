@@ -1,11 +1,10 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
+import cnCreate from '@megafon/ui-core/dist/utils/cn';
 import './style/ProductTileBuy.less';
-import { Button, TextLink } from '@megafon/ui-core';
+import Button, { IButtonProps } from '@megafon/ui-core/dist/components/Button/Button';
+import TextLink from '@megafon/ui-core/dist/components/TextLink/TextLink';
 import { TLinkTargetType } from './ProductTile';
-
-type IButtonProps = Button['props'];
 
 export interface IProductTileBuyProps {
     /** Class name */
@@ -26,11 +25,11 @@ export interface IProductTileBuyProps {
     connectButtonText?: string;
     /** Show connect button */
     showConnectButton?: boolean;
-    /** button border */
+    /** button border */ // @ts-ignore
     buttonBorder?: IButtonProps['border'];
-    /** button font color */
+    /** button font color */ // @ts-ignore
     buttonFontColor?: IButtonProps['fontColor'];
-    /** button background color */
+    /** button background color */ // @ts-ignore
     buttonPassiveColor?: IButtonProps['passiveColor'];
     /** Connect hander */
     onClickConnect?(e: React.SyntheticEvent<EventTarget>): void;

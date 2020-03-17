@@ -1,5 +1,8 @@
+const path = require("path");
+
 export default {
     title: "MegaFon UI",
     description: "Megafon React UI Kit",
-    typescript: true
+    typescript: true,
+    src: path.resolve(__dirname, "..", "..")
 };

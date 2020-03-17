@@ -1,8 +1,10 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
+import cnCreate from '@megafon/ui-core/dist/utils/cn';
 import './ProductCardInfo.less';
-import { Header, BubbleHint, TextLink } from '@megafon/ui-core';
+import Header from '@megafon/ui-core/dist/components/Header/Header';
+import BubbleHint from '@megafon/ui-core/dist/components/BubbleHint/BubbleHint';
+import TextLink from '@megafon/ui-core/dist/components/TextLink/TextLink';
 
 interface IBadge {
     title: string;
@@ -44,7 +46,7 @@ interface IProductCardInfoProps {
     classNameDescriptionText?: string;
     classNameParams?: string;
     classNameParamsItem?: string;
-    onClickMoreInfo?(e: React.SyntheticEvent<EventTarget>): void;
+    onClickMoreInfo?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-product-card-info');

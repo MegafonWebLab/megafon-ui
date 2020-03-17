@@ -7,7 +7,7 @@ import { Playground, Props } from 'docz';
 import Carousel from './Carousel.tsx';
 import Logo from 'components/Logo/Logo.tsx';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
-import { carouselParams, Wrapper } from './carouselParams.tsx';
+import { carouselParams, CarouselWrapper } from './Carousel.docz.tsx';
 
 # Carousel
 
@@ -16,36 +16,16 @@ import { carouselParams, Wrapper } from './carouselParams.tsx';
 
 ## Basic usage, default theme
 
-<Playground wrapper={Wrapper}>
-    <Carousel options={carouselParams} onClickNext={() => {}}>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-        <div style={{ width: 260 }}>
-            <Logo />
-        </div>
-    </Carousel>
+<Playground>
+    <CarouselWrapper>
+        <Carousel options={carouselParams} onClickNext={() => {}}>
+            {new Array(9).fill(undefined).map(() => (
+                <div style={{ width: 260 }}>
+                    <Logo />
+                </div>
+            ))}
+        </Carousel>
+    </CarouselWrapper>
 </Playground>
 
 ## Basic usage, theme landing, white arrows

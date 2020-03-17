@@ -6,39 +6,13 @@ menu: Components
 import { Playground, Props } from 'docz';
 import Checkbox from './Checkbox.tsx';
 import Info from 'icons/System/16/Info_16.svg';
-
-export let LightColorWrapper = ({ children }) => {
-    return (
-        <div style={{ backgroundColor: '#00b956', padding: '20px 10px 8px 10px' }}>
-            {children}
-        </div>
-    );
-}
+import { CheckboxWrapper, LightColorWrapper } from './Checkbox.docz.tsx';
 
 # Checkbox
 
 ## Properties
 
 <Props of={Checkbox} />
-
-export class CheckboxWrapper extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            checked: false,
-        };
-        this.handleChange.bind(this);
-    }
-    handleChange() {
-        this.setState(prevState => ({ checked: !prevState.checked }))
-    }
-    render() {
-        return this.props.children({
-            checked: this.state.checked,
-            onChange: this.handleChange
-        })
-    }
-}
 
 ## Basic usage
 
@@ -66,19 +40,21 @@ export class CheckboxWrapper extends React.Component {
 
 ## Checkbox usage for light color scheme and small size
 
-<Playground wrapper={LightColorWrapper}>
-    <CheckboxWrapper>
-        {({ checked, onChange }) =>
-            <Checkbox
-                checked={checked}
-                onChange={onChange}
-                color="light"
-                fontSize="small"
-            >
-                I agree
-            </Checkbox>
-        }
-    </CheckboxWrapper>
+<Playground>
+    <LightColorWrapper>
+        <CheckboxWrapper>
+            {({ checked, onChange }) =>
+                <Checkbox
+                    checked={checked}
+                    onChange={onChange}
+                    color="light"
+                    fontSize="small"
+                >
+                    I agree
+                </Checkbox>
+            }
+        </CheckboxWrapper>
+    </LightColorWrapper>
 </Playground>
 
 ## Checkbox with extraContent

@@ -1,8 +1,9 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './ProductCardFeaturesTop.less';
-import { Header, DropdownSocialList } from '@megafon/ui-core';
-import { cn as cnCreate } from '@megafon/ui-core';
+import Header from '@megafon/ui-core/dist/components/Header/Header';
+import DropdownSocialList from '@megafon/ui-core/dist/components/DropdownSocialList/DropdownSocialList';
+import cnCreate from '@megafon/ui-core/dist/utils/cn';
 import { IFirstParamChildren } from './ProductCardFeatures';
 
 interface IProductCardFeaturesTopProps {
@@ -13,7 +14,7 @@ interface IProductCardFeaturesTopProps {
     /** Caption */
     caption?: string;
     /** Showcase params childrens list */
-    params?: Array<Partial<IFirstParamChildren>>;
+    params: Array<Partial<IFirstParamChildren>>;
 }
 
 const cn = cnCreate('mfui-product-card-features-top');
@@ -45,7 +46,7 @@ class ProductCardFeaturesTop extends React.Component<IProductCardFeaturesTopProp
                     <div className={cn('text')}>
                         {caption}
                     </div>
-                    {!!params!.length && <DropdownSocialList icons={params!} />}
+                    {!!params.length && <DropdownSocialList icons={params} />}
                 </div>
             </div>
         );

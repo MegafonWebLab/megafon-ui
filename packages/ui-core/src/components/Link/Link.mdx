@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 import Link from './Link.tsx';
+import { LinkWrapper } from './Link.docz.tsx';
 
 # Link
 
@@ -15,5 +16,7 @@ import Link from './Link.tsx';
 ## Basic usage
 
 <Playground>
-  <Link href="https://google.com">Click me</Link>
+    <LinkWrapper>
+        <Link href="https://google.com">Click me</Link>
+    </LinkWrapper>
 </Playground>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const Wrapper = ({ children }) => <div>{children}</div>;
+export const CarouselWrapper = ({ children }) => <div style={{ padding: 32 }}>{children}</div>;
 
 export const carouselParams = {
     dots: false,

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
-import { detectTouch } from '@megafon/ui-core';
+import cnCreate from '@megafon/ui-core/dist/utils/cn';
+import detectTouch from '@megafon/ui-core/dist/utils/detectTouch';
 import './ProductSwitcher.less';
 
 interface IItem {
@@ -491,7 +491,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         }
 
         const rowItemsInfo = this.getRowItemsInfo();
-        const [checkedItem] = rowItemsInfo.filter((el: INearPoint ) => el.value === value);
+        const [checkedItem] = rowItemsInfo.filter((el: INearPoint) => el.value === value);
         let switchPointOffsetValue;
         let switchRowWidth;
 
@@ -517,7 +517,7 @@ class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwi
         this.rootNode = node;
     }
 
-    getLabelNodes = (value: string) => (node: HTMLElement | null) =>  {
+    getLabelNodes = (value: string) => (node: HTMLElement | null) => {
         this.labelNodes[value] = node;
     }
 

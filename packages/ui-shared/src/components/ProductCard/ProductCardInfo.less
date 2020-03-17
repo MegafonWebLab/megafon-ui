@@ -1,6 +1,6 @@
-@import '~@megafon/ui-core/styles/base.less';
+@import "~@megafon/ui-core/styles/base.less";
 
-@b: e('.mfui-product-card-info');
+@b: e(".mfui-product-card-info");
 
 @{b} {
     .fontFamily();
@@ -130,7 +130,7 @@
         @media @desktop {
             width: 43%;
         }
-        [data-amount='∞'] {
+        [data-amount="∞"] {
             position: relative;
             bottom: 2px;
             color: @white;
@@ -139,12 +139,15 @@
             vertical-align: middle;
             line-height: 18px;
             &:before {
-                content: '';
+                content: "";
                 display: inline-block;
                 vertical-align: bottom;
                 width: 38px;
                 height: 18px;
-                background: data-uri('~@megafon/ui-core/dist/icons/basic-32-infinity_32.svg') 0 50% no-repeat;
+                background: data-uri(
+                        "~@megafon/ui-core/dist/icons/Basic/32/Infinity_32.svg"
+                    )
+                    0 50% no-repeat;
                 background-size: 100% auto;
             }
         }
@@ -179,4 +182,3 @@
         }
     }
 }
-
