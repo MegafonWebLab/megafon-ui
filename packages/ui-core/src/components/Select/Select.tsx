@@ -412,11 +412,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         return (
             <div className={cn('list')}>
                 <div className={cn('list-inner')} ref={node => this.getItemWrapper(node)}>
-                    {this.props.items.map(({ id, ...rest }, i) =>
+                    {this.props.items.map(({ id, title, leftIcon, rightIcon }, i) =>
                         <SelectItem
-                            title={rest.title}
-                            leftIcon={rest.leftIcon}
-                            rightIcon={rest.rightIcon}
+                            title={title}
+                            leftIcon={leftIcon}
+                            rightIcon={rightIcon}
                             key={id}
                             index={i}
                             current={this.state.currentIndex === i}

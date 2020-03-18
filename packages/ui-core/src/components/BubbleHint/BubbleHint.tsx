@@ -66,8 +66,8 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
         placement: 'top',
     };
 
-    container: HTMLElement;
-    trigger: HTMLElement;
+    container: HTMLElement | null = null;
+    trigger: HTMLElement | null = null;
     touchClick: string = detectTouch() ? 'touchstart' : 'click';
     isTouch: boolean = detectTouch();
 
@@ -95,8 +95,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
     }
 
     handleClick = (e: React.MouseEvent<HTMLElement>): void | boolean => {
-        // @ts-ignore
-        if (e.target && this.trigger.contains(e.target)) {
+        if (this.trigger && e.target && this.trigger.contains(e.target as HTMLElement)) {
             this.setState({ show: !this.state.show });
             this.props.onClick && this.props.onClick(e);
         }
@@ -105,8 +104,7 @@ class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintS
     }
 
     handleClickOutside = (e: React.SyntheticEvent<EventTarget> | Event): void | boolean => {
-        // @ts-ignore
-        if ((this.container && this.container.contains(e.target)) || !this.state.show) {
+        if ((this.container && this.container.contains(e.target as HTMLElement)) || !this.state.show) {
             return;
         }
 

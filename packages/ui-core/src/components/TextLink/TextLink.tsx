@@ -14,12 +14,12 @@ interface ITextLinkProps {
     /** Target - property tag <a> */
     target: '_self' | '_blank' | '_parent' | '_top';
     /** Link */
-    href: string;
+    href?: string;
     /** Custom class name */
     className?: string;
-    children: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click handler */
-    onClick(e: React.SyntheticEvent<EventTarget>): void | undefined;
+    onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-text-link');
@@ -51,14 +51,23 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
             underlineStyle,
             color,
             className,
-            ...props
+            target,
+            href,
+            onClick,
+            children,
         } = this.props;
 
         return (
-            <Link {...props} className={cn('', {
-                'underline-visibility': underlineVisibility,
-                'underline-style': underlineStyle, color,
-            }, className)} />
+            <Link
+                target={target}
+                href={href}
+                onClick={onClick}
+                children={children}
+                className={cn('', {
+                    'underline-visibility': underlineVisibility,
+                    'underline-style': underlineStyle, color,
+                }, className)}
+            />
         );
     }
 }

@@ -11,9 +11,24 @@ exports.onCreateWebpackConfig = args => {
         resolve(__dirname, "../src/docIcons")
     ];
     config.module.rules[idx] = rule;
+
+    config.module.rules = config.module.rules.map(r =>
+        r.test instanceof RegExp ?
+            r.test.test(".ts") ? {
+                test: /\.tsx?$/,
+                use: {
+                    loader: "ts-loader",
+                    options: {
+                        configFile: path.resolve(__dirname, "../tsconfig.json"),
+                    }
+                },
+            }: r :
+            r
+        );
+
+    console.log(config.module.rules);
     args.actions.replaceWebpackConfig(config);
 
-    config.module.rules = config.module.rules.filter(r => r.test.test(".ts"));
     args.actions.setWebpackConfig({
         resolve: {
             modules: [
@@ -22,7 +37,9 @@ exports.onCreateWebpackConfig = args => {
                 path.resolve(__dirname, "../../../node_modules")
             ],
             alias: {
-                utils: path.resolve(__dirname, "../src/utils/"),
+                // docIcons: path.resolve(__dirname, "../src/docIcons"),
+                // icons: path.resolve(__dirname, "../src/icons"),
+                // utils: path.resolve(__dirname, "../src/utils"),
                 // "@megafon/ui-core/dist/icons": path.resolve(
                 //     __dirname,
                 //     "../src/icons"
@@ -36,7 +53,6 @@ exports.onCreateWebpackConfig = args => {
         },
         module: {
             rules: [
-                { test: /\.tsx?$/, loader: "ts-loader" },
                 {
                     test: /\.svg$/,
                     use: [

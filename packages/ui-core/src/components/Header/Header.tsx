@@ -44,11 +44,10 @@ class Header extends React.Component<IHeaderProps, {}> {
     }
 
     render() {
-        const ElementType = this.props.as;
+        const ElementType = this.props.as as React.ElementType;
         const { color, margin, as: level, onClick } = this.props;
 
         return (
-            // @ts-ignores
             <ElementType className={cn('', { color, margin, level }, this.props.className)} onClick={onClick}>
                 {this.props.children}
                 {this.props.addition && this.renderAddition()}
