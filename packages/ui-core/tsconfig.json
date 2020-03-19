@@ -2,16 +2,14 @@
   "compileOnSave": true,
   "compilerOptions": {
     "baseUrl": "./src",
-    // "strictNullChecks": true,
+    "strictNullChecks": true,
     "experimentalDecorators": true,
     "jsx": "react",
     "noUnusedParameters": true,
-    // "noUnusedLocals": true,
     "noImplicitAny": false,
     "target": "es5",
     "lib": ["esnext", "dom"],
     "moduleResolution": "node",
-    // "incremental": true,
     "types": [
       "react",
       "node",

@@ -13,3 +13,4 @@ docs
 .DS_Store
 
 .npmrc
+.yarn.lock

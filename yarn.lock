@@ -7328,7 +7328,7 @@ gatsby-plugin-root-import@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-root-import/-/gatsby-plugin-root-import-2.0.5.tgz#04e520dc661d67f49aa7950f11b7c780fd2fdbd3"
 
-gatsby-plugin-typescript@^2.1.6, gatsby-plugin-typescript@^2.2.2:
+gatsby-plugin-typescript@^2.1.6:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.2.2.tgz#37ab70aaf96b28e7c1cc5852fae26df55ea8a75a"
   dependencies:

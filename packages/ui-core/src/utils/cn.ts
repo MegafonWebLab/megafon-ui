@@ -23,17 +23,12 @@ export default function cnCreate(blockName: string) {
         modificatorsObject?: {},
         customClassNames?: string
     ) => {
-        let params: IParams;
+        const params: IParams | undefined = modificatorsObject || undefined;
         const prefix = elementName;
         const className = customClassNames || '';
 
-        if (modificatorsObject) {
-            params = modificatorsObject;
-        }
-
         if (
-            !params ||
-            (typeof params === 'object' && Object.keys(params).length === 0)
+            !params || (typeof params === 'object' && Object.keys(params).length === 0)
         ) {
             return classnames(
                 `${blockName}${prefix ? '__' + prefix : ''}`,

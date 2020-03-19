@@ -22,11 +22,11 @@ interface IProductTileRestProps {
     buyButtonText: string;
     showBuyButton: boolean;
 
-    // @ts-ignore
+    /** button border */
     buttonBorder?: IButtonProps['border'];
-    // @ts-ignore
+    /** button font color */
     buttonFontColor?: IButtonProps['fontColor'];
-    // @ts-ignore
+    /** button background color */
     buttonPassiveColor?: IButtonProps['passiveColor'];
 
     connectLink: string;

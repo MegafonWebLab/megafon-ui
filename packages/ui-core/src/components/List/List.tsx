@@ -38,11 +38,10 @@ class List extends React.Component<IListProps, {}> {
     };
 
     render() {
-        const ElementType = this.props.as;
+        const ElementType = this.props.as as React.ElementType;
         const { hAlign, color, weight, className, children } = this.props;
 
         return (
-            // @ts-ignore
             <ElementType
                 className={cn('', {
                     'h-align': hAlign,

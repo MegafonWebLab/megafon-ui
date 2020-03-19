@@ -25,11 +25,11 @@ export interface IProductTileBuyProps {
     connectButtonText?: string;
     /** Show connect button */
     showConnectButton?: boolean;
-    /** button border */ // @ts-ignore
+    /** button border */
     buttonBorder?: IButtonProps['border'];
-    /** button font color */ // @ts-ignore
+    /** button font color */
     buttonFontColor?: IButtonProps['fontColor'];
-    /** button background color */ // @ts-ignore
+    /** button background color */
     buttonPassiveColor?: IButtonProps['passiveColor'];
     /** Connect hander */
     onClickConnect?(e: React.SyntheticEvent<EventTarget>): void;
