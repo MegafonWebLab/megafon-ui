@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import cnCreate from '@megafon/ui-core/dist/utils/cn';
+import { cn as cnCreate } from '@megafon/ui-core';
 import './ProductCardWrapper.less';
 
 interface IProductCardWrapperProps {
@@ -62,7 +62,7 @@ class ProductCardWrapper extends React.Component<IProductCardWrapperProps, {}> {
     };
 
     handleClick = (e: React.MouseEvent<HTMLElement>): boolean =>
-        (e.target as HTMLElement).tagName !== 'A';
+        (e.target as HTMLElement).tagName !== 'A'
 
     renderHintLabel() {
         const { hint } = this.props;

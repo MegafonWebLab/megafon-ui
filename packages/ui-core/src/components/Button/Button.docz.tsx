@@ -5,5 +5,5 @@ export const ButtonWrapper = ({ children }) => {
         <div style={{ padding: 16 }}>
             {children}
         </div>
-    )
-}
+    );
+};

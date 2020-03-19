@@ -4,7 +4,8 @@ import cnCreate from 'utils/cn';
 import './Carousel.less';
 import CarouselArrow from './CarouselArrow';
 import Slider from 'react-slick';
-import throttle from 'lodash.throttle';
+
+const throttle = require('lodash.throttle');
 
 interface ICarouselOptions {
     slidesToShow: number;

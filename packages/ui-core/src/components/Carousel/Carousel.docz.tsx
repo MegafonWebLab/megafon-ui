@@ -15,22 +15,22 @@ export const carouselParams = {
             settings: {
                 arrows: false,
                 dots: true,
-                slidesToShow: 3
-            }
+                slidesToShow: 3,
+            },
         },
         {
             breakpoint: 900,
             settings: {
                 arrows: true,
-                dots: true
-            }
+                dots: true,
+            },
         },
         {
             breakpoint: 860,
             settings: {
                 arrows: false,
-                dots: true
-            }
-        }
-    ]
+                dots: true,
+            },
+        },
+    ],
 };

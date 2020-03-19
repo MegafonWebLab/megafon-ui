@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import cnCreate from '@megafon/ui-core/dist/utils/cn';
+import { cn as cnCreate } from '@megafon/ui-core';
 import './style/ProductTileCashback.less';
 
 interface IProductTileCashbackProps {
@@ -14,7 +14,7 @@ interface IProductTileCashbackProps {
 
 const cn = cnCreate('mfui-product-tile-cashback');
 class ProductTileCashback extends React.Component<IProductTileCashbackProps> {
-    static propTypes = {
+static propTypes = {
         title: PropTypes.string,
         value: PropTypes.number,
         unit: PropTypes.string,

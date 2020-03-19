@@ -24,11 +24,11 @@ interface IBubbleHintProps {
     trigger: JSX.Element[] | Element[] | JSX.Element | string | Element;
     children: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** MouseEnter handler */
-    onMouseEnter(e: React.SyntheticEvent<EventTarget>): void | undefined;
+    onMouseEnter?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** MouseLeave handler */
-    onMouseLeave(e: React.SyntheticEvent<EventTarget>): void | undefined;
+    onMouseLeave?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Click handler */
-    onClick(e: React.MouseEvent<HTMLElement>): void | undefined;
+    onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
 interface IBubbleHintState {

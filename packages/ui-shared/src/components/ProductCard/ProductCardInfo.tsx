@@ -1,10 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import cnCreate from '@megafon/ui-core/dist/utils/cn';
+import { cn as cnCreate, Header, BubbleHint, TextLink } from '@megafon/ui-core';
 import './ProductCardInfo.less';
-import Header from '@megafon/ui-core/dist/components/Header/Header';
-import BubbleHint from '@megafon/ui-core/dist/components/BubbleHint/BubbleHint';
-import TextLink from '@megafon/ui-core/dist/components/TextLink/TextLink';
 
 interface IBadge {
     title: string;

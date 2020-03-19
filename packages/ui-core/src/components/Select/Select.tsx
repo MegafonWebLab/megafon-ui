@@ -82,13 +82,13 @@ interface ISelectProps {
     /** Custom classname for controls block */
     classNameControl?: string;
     /** Change handler */
-    onChangeSearch(value: string): void | undefined;
+    onChangeSearch?: (value: string) => void;
     /** Focus handler */
-    onFocusSearch(value: string): void | undefined;
+    onFocusSearch?: (value: string) => void;
     /** Click item handler */
-    onSelectItem(e: React.SyntheticEvent<EventTarget>, data: ISelectItem): void | undefined;
+    onSelectItem?: (e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
     /** Click icon handler */
-    onClickIcon(e: React.SyntheticEvent<EventTarget>): void | undefined;
+    onClickIcon?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 interface ISelectState {

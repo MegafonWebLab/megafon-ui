@@ -25,7 +25,7 @@ describe('<ProductCardWrapper />', () => {
     it('it click on wrapper', () => {
         const wrapper = shallow(<ProductCardWrapper border={{ right: false }}><div /></ProductCardWrapper>);
         const instance = wrapper.instance() as ProductCardWrapper;
-        const result = instance.handleClick({ target: {} } as React.SyntheticEvent<EventTarget>);
+        const result = instance.handleClick({ target: {} } as React.MouseEvent<HTMLElement>);
         expect(result).toBe(true);
     });
 });

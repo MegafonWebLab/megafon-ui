@@ -24,6 +24,7 @@
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "docz:dev": "docz dev",
     "docz:build": "docz build",
+    "docz:serve": "docz serve",
     "typecheck": "tsc --noEmit -p .",
     "lint": "yarn lint:ts && yarn lint:less",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
@@ -63,10 +64,7 @@
     "roots": [
       "<rootDir>/src"
     ],
-    "transform": {
-      "^.+\\?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\?$",
+    "transform": {"\\.tsx?$": "ts-jest"},
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/lib/",
@@ -152,7 +150,7 @@
     "deep-equal": "^1.1.1",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.7.2",
-    "react-input-mask": "^2.0.3",
+    "react-input-mask": "^2.0.4",
     "react-popper": "0.10.4",
     "react-slick": "^0.23.2"
   }

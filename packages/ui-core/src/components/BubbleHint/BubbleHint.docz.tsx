@@ -5,5 +5,5 @@ export const BubbleHintWrapper = ({ children }) => {
         <div style={{ height: '400px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
             {children}
         </div>
-    )
-}
+    );
+};

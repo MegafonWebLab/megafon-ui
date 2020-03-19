@@ -14,54 +14,10 @@
     // "incremental": true,
     "types": [
       "react",
-      "node"
+      "node",
+      "jest"
     ]
   },
   "include": ["typings/**/*", "src/**/*.ts", "src/**/*"],
   "exclude": ["node_modules", "src/**/*.test.ts","src/**/*.test.tsx"]
 }
-
-// {
-//   "compileOnSave": true,
-//   "compilerOptions": {
-//     "baseUrl": "./src",
-//     "incremental": true,
-//     "tsBuildInfoFile": ".buildcache",
-//     "outDir": "./dist/",
-//     "rootDir": "./src",
-//     "module": "commonjs",
-//     "target": "es5",
-//     "jsx": "react",
-//     "moduleResolution": "node",
-//     "strict": true,
-//     "allowJs": false,
-//     "strictNullChecks": true,
-//     "experimentalDecorators": true,
-//     "allowSyntheticDefaultImports": true,
-//     "esModuleInterop": true,
-//     "noImplicitAny": false,
-//     // "noUnusedLocals": true,
-//     "noUnusedParameters": true,
-//     "strictFunctionTypes": false,
-//     "forceConsistentCasingInFileNames": true,
-//     "sourceMap": true,
-//     "types": [
-//       "node",
-//       "react",
-//       "jest"
-//     ],
-//     "lib": [
-//       "esnext",
-//       "dom"
-//     ],
-//   },
-//   "include": [
-//     "src/**/*.ts",
-//     "src/**/*.tsx",
-//     "typings/**/*"
-//   ],
-//   "exclude": [
-//     "node_modules",
-//     "**/*.test.tsx"
-//   ]
-// }

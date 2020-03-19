@@ -29,6 +29,7 @@ const indexTs = path.join(srcPath, 'index.ts');
 const baseLessSrc = path.join(srcPath, 'styles', 'base.less');
 const baseLessPackagePath = path.join(__dirname, 'styles');
 
+const doczReg = 'src/**/*.docz.{tsx,ts}';
 const testsReg = 'src/**/*.test.{tsx,ts}';
 const iconsReg = 'src/**/Icons.{tsx,ts}';
 
@@ -126,8 +127,13 @@ gulp.task('less:copy-base', function() {
 gulp.task('less', gulp.series('less:compile', 'less:copy-base'));
 
 gulp.task('ts', () => {
-    const result = gulp.src(['src/**/*.{tsx,ts}', `!${testsReg}`, `!${iconsReg}`, './typings/*.d.ts'])
-        .pipe(ts(tsConfig));
+    const result = gulp.src([
+        'src/**/*.{tsx,ts}',
+        `!${doczReg}`,
+        `!${testsReg}`,
+        `!${iconsReg}`,
+        './typings/*.d.ts'
+    ]).pipe(ts(tsConfig));
 
     return merge(
         result.dts
@@ -144,7 +150,7 @@ gulp.task('ts', () => {
 });
 
 gulp.task('main', done => {
-    const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: testsReg });
+    const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
     const utils = glob.sync('src/utils/*.ts', { ignore: testsReg });
     fs.writeFile(indexTs, generateIndex([...components, ...utils]), done);
 });

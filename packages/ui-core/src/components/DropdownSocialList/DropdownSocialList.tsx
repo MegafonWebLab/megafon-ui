@@ -4,14 +4,14 @@ import BubbleHint from '../BubbleHint/BubbleHint';
 import './DropdownSocialList.less';
 import cnCreate from 'utils/cn';
 
-export interface Icon {
+export interface IIcon {
     svgIcon: JSX.Element;
     title: string;
 }
 
 export interface IDropdownSocialListProps {
     /** Icons list */
-    icons: Array<Partial<Icon>>;
+    icons: Array<Partial<IIcon>>;
     /** Max icon */
     maxIconNumber: number;
     /** Custom class name */
@@ -52,7 +52,7 @@ class DropdownSocialList extends React.Component<IDropdownSocialListProps, {}> {
                 >
                     <div className={cn('dropdown-popup')}>
                         <div className={cn('dropdown-list')}>
-                            {icons.slice(maxIconNumber).map((icon: Icon, index: number): JSX.Element =>
+                            {icons.slice(maxIconNumber).map((icon: IIcon, index: number): JSX.Element =>
                                 <span className={cn('dropdown-item')} key={icon.title + index}>
                                     {icon.title}
                                 </span>
@@ -70,7 +70,7 @@ class DropdownSocialList extends React.Component<IDropdownSocialListProps, {}> {
         return (
             <div className={cn('', {}, className)}>
                 <div className={cn('list')}>
-                    {icons.slice(0, maxIconNumber).map((icon: Icon, index): JSX.Element =>
+                    {icons.slice(0, maxIconNumber).map((icon: IIcon, index): JSX.Element =>
                         <div className={cn('item')} title={icon.title} key={icon.title + index}>
                             {icon.svgIcon}
                         </div>

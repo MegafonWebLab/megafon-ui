@@ -25,6 +25,7 @@ const srcPath = path.join(__dirname, "src");
 const iconsPath = path.join(srcPath, "icons");
 const indexTs = path.join(srcPath, "index.ts");
 
+const doczReg = 'src/**/*.docz.{tsx,ts}';
 const testsReg = "src/**/*.test.{tsx,ts}";
 const iconsReg = "src/**/Icons.{tsx,ts}";
 
@@ -131,6 +132,7 @@ gulp.task("ts", () => {
     const result = gulp
         .src([
             "src/**/*.{tsx,ts}",
+            `!${doczReg}`,
             `!${testsReg}`,
             `!${iconsReg}`,
             "./typings/*.d.ts"
@@ -151,7 +153,7 @@ gulp.task("ts", () => {
 
 gulp.task("main", done => {
     const files = glob.sync("src/components/**/*.{tsx,ts}", {
-        ignore: testsReg
+        ignore: [testsReg, doczReg]
     });
     fs.writeFile(indexTs, generateIndex(files), done);
 });
@@ -170,14 +172,17 @@ gulp.task(
  * Helpers
  */
 const generateIndex = files => {
-    const ext = "";
-    const components = files.map(file => ({
-        path: file.replace("src/", "./"),
-        name: path.basename(file, ext)
-    }));
+    const components = files.map(file => {
+        const parsed = path.parse(file);
+        return {
+            path: file.replace('src/', './'),
+            name: parsed.name,
+            ext: parsed.ext
+        }
+    });
     const collator = new Intl.Collator();
     const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
-    const imports = sorted.map(({ name, path: cPath }) => {
+    const imports = sorted.map(({ name, path: cPath, ext }) => {
         return `export { default as ${name} } from '${cPath.replace(
             ext,
             ""
