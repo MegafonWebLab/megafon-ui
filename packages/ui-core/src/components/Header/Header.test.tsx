@@ -8,7 +8,7 @@ describe('<Header />', () => {
         expect(wrapper.type()).toEqual('h1');
     });
 
-    ['h1', 'h2', 'h3', 'h5', 'h6'].forEach(tag => {
+    ['h1', 'h2', 'h3', 'h5'].forEach(tag => {
         it(`it renders only with ${tag}`, () => {
             type AsValuesType = Header['props']['as'];
             const wrapper = shallow(<Header as={tag as AsValuesType} />);
