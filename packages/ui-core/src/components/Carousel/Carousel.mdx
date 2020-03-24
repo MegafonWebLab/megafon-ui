@@ -48,7 +48,7 @@ export const carouselParams = {
 ## Properties Carousel
 <PropsTable of={Carousel} />
 
-## Basic usage
+## Basic usage, default theme
 
 <Playground wrapper={Wrapper}>
     <Carousel options={carouselParams} onClickNext={() => {}}>
@@ -64,6 +64,50 @@ export const carouselParams = {
         <div style={{ width: 260 }}>
             <Logo />
         </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+    </Carousel>
+</Playground>
+
+## Basic usage, theme landing, white arrows
+
+<Playground wrapper={Wrapper}>
+    <Carousel options={carouselParams} onClickNext={() => {}} theme="landing" arrowColor="white">
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+        <div style={{ width: 260 }}>
+            <Logo />
+        </div>
+    </Carousel>
+</Playground>
+
+## Basic usage, theme landing, padding beetween slides disabled
+
+<Playground wrapper={Wrapper}>
+    <Carousel options={carouselParams} onClickNext={() => {}} theme="landing" arrowColor="white" disablePaddingBetweenSlides>
         <div style={{ width: 260 }}>
             <Logo />
         </div>
