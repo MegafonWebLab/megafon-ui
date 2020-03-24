@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## Release 1.3.2
 - **Carousel**
     - fix slick slide padding for lk themed carousel
 ## Release 1.3.1
