@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.2
 - **Carousel**
     - delete margin beetween slides in landign theme
 
