@@ -20,7 +20,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         head: PropTypes.string,
         options: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string,
-            caption: PropTypes.stirng,
+            caption: PropTypes.string,
             value: PropTypes.string,
             unit: PropTypes.string,
             footnote: PropTypes.string,

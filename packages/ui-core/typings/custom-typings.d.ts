@@ -4,8 +4,6 @@ declare namespace JSX {
 
 declare module 'classnames';
 
-declare module 'prop-types';
-
 declare module 'utils/cn';
 
 declare module '*.svg' {
