@@ -2,7 +2,7 @@
 
 ## Unreleased
 - **Carousel**
-    - replace margin on padding beetween slides in landign theme
+    - delete margin beetween slides in landign theme
 
 ## Release 1.3.2
 - **Carousel**
