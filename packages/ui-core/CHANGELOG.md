@@ -1,8 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.3
 - **Carousel**
-    - delete margin beetween slides in landign theme
+    - remove margin beetween slides in landing theme
 
 ## Release 1.3.2
 - **Carousel**
