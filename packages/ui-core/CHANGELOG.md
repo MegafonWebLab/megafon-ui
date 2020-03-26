@@ -1,8 +1,15 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - fix slick slide padding for lk themed carousel
+## Release 1.3.1
+- **Carousel**
+    - added top and bottom padding for overflow slide content
+
+## Release 1.3.0
 - **GridColumn**
-    - add order property for all screens
+    - add `order` property for all screens
 
 ## Release 1.2.0
 - **Carousel**
