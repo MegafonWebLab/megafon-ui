@@ -14,7 +14,7 @@ interface IProductTileCashbackProps {
 
 const cn = cnCreate('mfui-product-tile-cashback');
 class ProductTileCashback extends React.Component<IProductTileCashbackProps> {
-static propTypes = {
+    static propTypes = {
         title: PropTypes.string,
         value: PropTypes.number,
         unit: PropTypes.string,
