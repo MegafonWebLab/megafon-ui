@@ -18,6 +18,7 @@ describe('<GridColumn />', () => {
                 all="10"
                 align="right"
                 orderAll="2"
+                offsetAll="4"
                 grow
                 flex
             >
@@ -40,6 +41,10 @@ describe('<GridColumn />', () => {
                 orderDesktop="1"
                 orderTablet="3"
                 orderMobile="4"
+                offsetWide="8"
+                offsetDesktop="7"
+                offsetTablet="6"
+                offsetMobile="5"
                 grow
                 flex
             >
