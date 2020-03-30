@@ -1,24 +1,28 @@
 {
-  "name": "@megafon/megafon-ui",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "lerna run build",
-    "clean": "lerna clean --yes",
-    "typecheck": "lerna run typecheck",
-    "lint": "lerna run lint",
-    "test": "lerna run test",
-    "pre-commit": "lerna run typecheck && lerna run lint && lerna run test",
-    "release": "lerna version && yarn install --frozen-lockfile"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run pre-commit"
+    "name": "@megafon/megafon-ui",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "lerna run build",
+        "clean": "lerna clean --yes",
+        "typecheck": "lerna run typecheck",
+        "lint": "lerna run lint",
+        "test": "lerna run test",
+        "pre-commit": "lerna run typecheck && lerna run lint && lerna run test",
+        "release": "lerna version && yarn install --frozen-lockfile",
+        "demo": "docz dev",
+        "demo:build": "docz build",
+        "demo:serve": "docz serve"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn run pre-commit"
+        }
+    },
+    "devDependencies": {
+        "docz": "^2.2.0",
+        "lerna": "^3.18.1"
     }
-  },
-  "devDependencies": {
-    "lerna": "^3.18.1"
-  }
 }

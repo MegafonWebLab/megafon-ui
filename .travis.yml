@@ -30,7 +30,7 @@ script:
 
 before_deploy:
   - if [[ $TRAVIS_BRANCH = $DOCS_DEPLOY_BRANCH ]]; then
-      lerna run docz:build;
+      yarn run docz:build;
     fi
   - if [[ $PACKAGE_FROM_TAG != "" ]]; then
       echo $PACKAGE_FROM_TAG;
@@ -50,7 +50,7 @@ deploy:
   - provider: pages
     github-token: "$GITHUB_TOKEN"
     skip-cleanup: true
-    local-dir: "packages/ui-core/docs"
+    local-dir: "docs"
     keep-history: true
     edge: true
     on:
