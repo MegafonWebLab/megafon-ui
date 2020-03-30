@@ -5,7 +5,7 @@ exports[`<ContentArea /> renders correctly with custom props 1`] = `
   className="mfui-content-area mfui-content-area_color_white"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_padding_none mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_white"
+    className="mfui-content-area__inner mfui-content-area__inner_padding_none mfui-content-area__inner_mobile-padding_none mfui-content-area__inner_color_white"
   >
     <span>
       child

@@ -6,6 +6,7 @@ const props: Partial<IProps> = {
     outerBackgroundColor: 'white',
     innerBackgroundColor: 'white',
     innerPadding: 'none',
+    mobileInnerPadding: 'none',
 };
 
 describe('<ContentArea />', () => {
