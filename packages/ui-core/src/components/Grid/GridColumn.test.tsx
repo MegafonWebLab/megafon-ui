@@ -8,6 +8,13 @@ describe('<GridColumn />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('it renders GridColumn with className', () => {
+        const wrapper = shallow(
+            <GridColumn className="test-class">item</GridColumn>
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('it renders GridColumn with props on all screens', () => {
         const wrapper = shallow(
             <GridColumn

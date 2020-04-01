@@ -3,20 +3,20 @@ import * as PropTypes from 'prop-types';
 import './GridColumn.less';
 import cnCreate from 'utils/cn';
 
-const GridColumnValues = PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);
-export type TGridColumnValues  = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+const GridSizeValues = PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);
+export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
 
 export interface IGridColumn {
     /** Size of columns on wide screens */
-    wide?: TGridColumnValues;
+    wide?: TGridSizeValues;
     /** Size of columns on desktop screens */
-    desktop?: TGridColumnValues;
+    desktop?: TGridSizeValues;
     /** Size of columns on tablet screens */
-    tablet?: TGridColumnValues;
+    tablet?: TGridSizeValues;
     /** Size of columns on mobile screens */
-    mobile?: TGridColumnValues;
+    mobile?: TGridSizeValues;
     /** Size of columns on all screens */
-    all?: TGridColumnValues;
+    all?: TGridSizeValues;
 
     /** Order on all screens */
     orderAll?: string;
@@ -30,15 +30,15 @@ export interface IGridColumn {
     orderMobile?: string;
 
     /** Size of offset on wide screens */
-    offsetWide?: TGridColumnValues;
+    offsetWide?: TGridSizeValues;
     /** Size of offset on desktop screens */
-    offsetDesktop?: TGridColumnValues;
+    offsetDesktop?: TGridSizeValues;
     /** Size of offset on tablet screens */
-    offsetTablet?: TGridColumnValues;
+    offsetTablet?: TGridSizeValues;
     /** Size of offset on mobile screens */
-    offsetMobile?: TGridColumnValues;
+    offsetMobile?: TGridSizeValues;
     /** Size of offset on all screens */
-    offsetAll?: TGridColumnValues;
+    offsetAll?: TGridSizeValues;
 
     /** Custom alignment of column */
     align?: 'right' | 'left' | 'center';
@@ -54,11 +54,11 @@ export interface IGridColumn {
 const cn = cnCreate('mfui-grid-column');
 class GridColumn extends React.Component<IGridColumn, {}> {
     static propTypes = {
-        wide: GridColumnValues,
-        desktop: GridColumnValues,
-        tablet: GridColumnValues,
-        mobile: GridColumnValues,
-        all: GridColumnValues,
+        wide: GridSizeValues,
+        desktop: GridSizeValues,
+        tablet: GridSizeValues,
+        mobile: GridSizeValues,
+        all: GridSizeValues,
 
         orderAll: PropTypes.string,
         orderWide: PropTypes.string,
@@ -66,11 +66,11 @@ class GridColumn extends React.Component<IGridColumn, {}> {
         orderTablet: PropTypes.string,
         orderMobile: PropTypes.string,
 
-        offsetWide: GridColumnValues,
-        offsetDesktop: GridColumnValues,
-        offsetTablet: GridColumnValues,
-        offsetMobile: GridColumnValues,
-        offsetAll: GridColumnValues,
+        offsetWide: GridSizeValues,
+        offsetDesktop: GridSizeValues,
+        offsetTablet: GridSizeValues,
+        offsetMobile: GridSizeValues,
+        offsetAll: GridSizeValues,
 
         align: PropTypes.oneOf(['right', 'left', 'center']),
         grow: PropTypes.bool,
