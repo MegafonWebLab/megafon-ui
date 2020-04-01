@@ -4,7 +4,7 @@
 - **ContentArea**
     - `mobileInnerPadding` and `className` properties added
 - **Paragraph**
-    - small font size fixed according to the guide
+    - line-height in mixin for small font fixed according to the guide
 
 ## Release 1.2.0
 - **Carousel**
