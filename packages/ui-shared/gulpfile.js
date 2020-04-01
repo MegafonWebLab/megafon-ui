@@ -1,94 +1,91 @@
-const fs = require("fs");
-const glob = require("glob");
-const path = require("path");
-const gulp = require("gulp");
-const babel = require("gulp-babel");
-const ts = require("gulp-typescript");
-const gulpLess = require("gulp-less");
-const svgmin = require("gulp-svgmin");
-const LessAutoprefix = require("less-plugin-autoprefix");
-const autoprefix = new LessAutoprefix({ browsers: ["last 2 versions"] });
-const merge = require("merge2");
-const del = require("del");
-const through = require("through2");
-const svgr = require("@svgr/core").default;
-const babelCore = require("@babel/core");
-const cheerio = require("cheerio");
+const fs = require('fs');
+const glob = require('glob');
+const path = require('path');
+const gulp = require('gulp');
+const babel = require('gulp-babel');
+const ts = require('gulp-typescript');
+const gulpLess = require('gulp-less');
+const svgmin = require('gulp-svgmin');
+const LessAutoprefix = require('less-plugin-autoprefix');
+const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
+const merge = require('merge2');
+const del = require('del');
+const through = require('through2');
+const svgr = require('@svgr/core').default;
+const babelCore = require('@babel/core');
+const cheerio = require('cheerio');
 
 const sep = path.sep;
 const dest = gulp.dest;
 
-const dist = path.join(__dirname, "dist");
-const esPath = path.join(dist, "es");
-const libPath = path.join(dist, "lib");
-const srcPath = path.join(__dirname, "src");
-const iconsPath = path.join(srcPath, "icons");
-const indexTs = path.join(srcPath, "index.ts");
+const dist = path.join(__dirname, 'dist');
+const esPath = path.join(dist, 'es');
+const libPath = path.join(dist, 'lib');
+const srcPath = path.join(__dirname, 'src');
+const iconsPath = path.join(srcPath, 'icons');
+const indexTs = path.join(srcPath, 'index.ts');
 
 const doczReg = 'src/**/*.docz.{tsx,ts}';
-const testsReg = "src/**/*.test.{tsx,ts}";
-const iconsReg = "src/**/Icons.{tsx,ts}";
+const testsReg = 'src/**/*.test.{tsx,ts}';
+const iconsReg = 'src/**/Icons.{tsx,ts}';
 
 /**
  * CONFIG
  */
 const lessConfig = { paths: [srcPath], plugins: [autoprefix] };
 const tsConfig = {
-    rootDir: "./src",
+    rootDir: './src',
     noUnusedParameters: true,
     noUnusedLocals: true,
     strictNullChecks: true,
-    target: "es6",
-    jsx: "preserve",
-    moduleResolution: "node",
+    target: 'es6',
+    jsx: 'preserve',
+    moduleResolution: 'node',
     declaration: true,
     allowSyntheticDefaultImports: true
 };
 const babelPlugins = [
-    require.resolve("@babel/plugin-transform-object-assign"),
-    require.resolve("@babel/plugin-proposal-class-properties"),
-    require.resolve("@babel/plugin-transform-runtime")
+    require.resolve('@babel/plugin-transform-object-assign'),
+    require.resolve('@babel/plugin-proposal-class-properties'),
+    require.resolve('@babel/plugin-transform-runtime')
 ];
 const babelPresets = [
-    "@babel/react",
-    [
-        "@babel/preset-env",
+    '@babel/react', [
+        '@babel/preset-env',
         {
-            useBuiltIns: "entry",
-            corejs: "3.6"
+            useBuiltIns: 'entry',
+            corejs: '3.6'
         }
     ]
 ];
 const babelEsConfig = {
     presets: [
-        "@babel/react",
-        [
-            "@babel/preset-env",
+        '@babel/react', [
+            '@babel/preset-env',
             {
                 modules: false,
-                useBuiltIns: "entry",
-                corejs: "3.6"
+                useBuiltIns: 'entry',
+                corejs: '3.6'
             }
         ]
     ],
     plugins: [
-        ...babelPlugins,
-        [
-            "module-resolver",
+        ...babelPlugins, [
+            'module-resolver',
             {
-                root: "./src"
+                root: './src'
             }
         ],
-        require.resolve("babel-plugin-inline-react-svg")
+        require.resolve('babel-plugin-inline-react-svg')
     ]
 };
 const babelLibConfig = {
     presets: [
         [
-            "@babel/preset-env",
+            '@babel/preset-env',
             {
-                useBuiltIns: "entry",
-                corejs: "3.6"
+                useBuiltIns: 'entry',
+                corejs: '3.6'
             }
         ]
     ]
@@ -97,30 +94,30 @@ const babelLibConfig = {
 /**
  * Tasks
  */
-gulp.task("clean", () => del("dist"));
-gulp.task("clean:index", () => del("src/index.ts"));
+gulp.task('clean', () => del('dist'));
+gulp.task('clean:index', () => del('src/index.ts'));
 
-gulp.task("svg", () => {
+gulp.task('svg', () => {
     return gulp
-        .src("src/**/*.svg")
+        .src('src/**/*.svg')
         .pipe(svgmin(file => getSvgrConfig(file.path).svgoConfig))
         .pipe(removeSvgMasks())
         .pipe(svgToReact())
         .pipe(dest(dist));
 });
 
-gulp.task("less", () => {
+gulp.task('less', () => {
     return gulp
-        .src("src/**/*.less")
-        .pipe(replaceContent(/\~@megafon/g, "@megafon"))
+        .src('src/**/*.less')
+        .pipe(replaceContent(/\~@megafon/g, '@megafon'))
         .pipe(
             replaceContent(/icons\/\w+\/\d+\/.*\.svg/g, function(match) {
                 const newPath = match
                     .toLowerCase()
-                    .replace(/icons\//g, "")
-                    .replace(/\//g, "-");
+                    .replace(/icons\//g, '')
+                    .replace(/\//g, '-');
 
-                return `../icons/${newPath}`;
+                return `dist/icons/${newPath}`;
             })
         )
         .pipe(gulpLess(lessConfig))
@@ -128,43 +125,43 @@ gulp.task("less", () => {
         .pipe(dest(libPath));
 });
 
-gulp.task("ts", () => {
+gulp.task('ts', () => {
     const result = gulp
         .src([
-            "src/**/*.{tsx,ts}",
+            'src/**/*.{tsx,ts}',
             `!${doczReg}`,
             `!${testsReg}`,
             `!${iconsReg}`,
-            "./typings/*.d.ts"
+            './typings/*.d.ts'
         ])
         .pipe(ts(tsConfig));
 
     return merge(
         result.dts.pipe(dest(esPath)).pipe(dest(libPath)),
         result.js
-            .pipe(babel(babelEsConfig))
-            .pipe(replaceContent(/\.less/g, ".css"))
-            .pipe(dest(esPath))
-            .pipe(removeCss())
-            .pipe(babel(babelLibConfig))
-            .pipe(dest(libPath))
+        .pipe(babel(babelEsConfig))
+        .pipe(replaceContent(/\.less/g, '.css'))
+        .pipe(dest(esPath))
+        .pipe(removeCss())
+        .pipe(babel(babelLibConfig))
+        .pipe(dest(libPath))
     );
 });
 
-gulp.task("main", done => {
-    const files = glob.sync("src/components/**/*.{tsx,ts}", {
+gulp.task('main', done => {
+    const files = glob.sync('src/components/**/*.{tsx,ts}', {
         ignore: [testsReg, doczReg]
     });
     fs.writeFile(indexTs, generateIndex(files), done);
 });
 
 gulp.task(
-    "build",
+    'build',
     gulp.series(
-        gulp.parallel("clean", "clean:index"),
-        "main",
-        gulp.parallel("ts", "less", "svg"),
-        "clean:index"
+        gulp.parallel('clean', 'clean:index'),
+        'main',
+        gulp.parallel('ts', 'less', 'svg'),
+        'clean:index'
     )
 );
 
@@ -227,7 +224,7 @@ const svgToReact = () =>
         this.push(packageJson);
     });
 
-const generateEs6js = async (file, encoding, name) => {
+const generateEs6js = async(file, encoding, name) => {
     const jsFile = file.clone();
     const content = file.contents.toString(encoding);
     const componentName = `Svg${getComponentName(file.path)}`;
@@ -255,7 +252,7 @@ const generateModulejs = (jsFile, encoding, name) => {
 const generatePackageJson = (file, name) => {
     const packageJson = file.clone();
     packageJson.contents = Buffer.from(
-        JSON.stringify({ main: "./index.module.js", module: "./index.es6.js" })
+        JSON.stringify({ main: './index.module.js', module: './index.es6.js' })
     );
     packageJson.path = `${getIconFolder(name)}package.json`;
 
@@ -269,9 +266,9 @@ const removeCss = () =>
         const content = file.contents.toString(encoding);
         file.contents = Buffer.from(
             content
-                .split("\n")
-                .filter(c => c.search(".css") === -1)
-                .join("\n")
+            .split("\n")
+            .filter(c => c.search('.css') === -1)
+            .join("\n")
         );
         this.push(file);
     });
@@ -294,12 +291,10 @@ const getSvgrConfig = (filePath, name) => ({
     },
     icon: true,
     svgoConfig: {
-        plugins: [
-            {
+        plugins: [{
                 cleanupIDs: {
-                    prefix: name
-                        ? "${id}"
-                        : `svg-${path.basename(filePath, ".svg")}`
+                    prefix: name ?
+                        '${id}' : `svg-${path.basename(filePath, '.svg')}`
                 }
             },
             {
@@ -311,20 +306,20 @@ const getSvgrConfig = (filePath, name) => ({
 
 const getComponentName = filePath => {
     return path
-        .basename(filePath, ".svg")
-        .replace("+", "-")
-        .split("-")
+        .basename(filePath, '.svg')
+        .replace('+', '-')
+        .split('-')
         .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-        .join("");
+        .join('');
 };
 
 const removeSvgMasks = () =>
     changePipe(function(file, encoding) {
         const content = file.contents.toString(encoding);
         const $ = cheerio.load(content, { xmlMode: true });
-        const $svg = $("svg");
+        const $svg = $('svg');
 
-        const mask = $svg.find("[mask]");
+        const mask = $svg.find('[mask]');
 
         if (mask.length === 0) {
             this.push(file);
@@ -338,7 +333,7 @@ const removeSvgMasks = () =>
         this.push(file);
 
         function getMaskData(mask) {
-            const maskAttr = $(mask).attr("mask");
+            const maskAttr = $(mask).attr('mask');
             const maskId = getIdFromMaskAttr(maskAttr);
             const divs = [];
 
@@ -352,7 +347,7 @@ const removeSvgMasks = () =>
                 return;
             }
 
-            $(mask).html(divs.map(i => i.removeAttr("id")).join(""));
+            $(mask).html(divs.map(i => i.removeAttr('id')).join(''));
 
             $(mask).removeAttr("mask");
         }

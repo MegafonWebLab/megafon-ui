@@ -12,7 +12,7 @@ interface ITextLinkProps {
     /** Underline style */
     underlineStyle: 'solid' | 'dashed' | 'border' | 'none';
     /** Target - property tag <a> */
-    target: '_self' | '_blank' | '_parent' | '_top';
+    target?: '_self' | '_blank' | '_parent' | '_top';
     /** Link */
     href?: string;
     /** Custom class name */

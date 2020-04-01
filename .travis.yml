@@ -30,7 +30,7 @@ script:
 
 before_deploy:
   - if [[ $TRAVIS_BRANCH = $DOCS_DEPLOY_BRANCH ]]; then
-      yarn run docz:build;
+      yarn run demo:build;
     fi
   - if [[ $PACKAGE_FROM_TAG != "" ]]; then
       echo $PACKAGE_FROM_TAG;

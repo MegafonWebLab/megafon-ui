@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ISelectItem } from './Select';
+import { ISelectCallbackItem } from './Select';
 
 export const items = [
     {
@@ -26,7 +26,7 @@ interface ISelectChildrenProps {
     searchValue: TitleType;
     canOpen: boolean;
     onChangeSearch: (value: string) => void;
-    onSelectItem: (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
+    onSelectItem: (_e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => void;
 }
 
 interface ISelectWrapperProps {
@@ -38,7 +38,7 @@ export const SelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
     const [searchValue, setSearchValue] = React.useState<TitleType>('');
     const [canOpen, setCanOpen] = React.useState<boolean>(false);
 
-    const handleSelectItem = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+    const handleSelectItem = (_e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => {
         setSelectedTitle(data.title);
         setSearchValue(data.title);
     };

@@ -112,7 +112,7 @@ gulp.task('less:compile', () => {
                 .replace(/icons\//g, '')
                 .replace(/\//g, '-');
 
-            return `../icons/${newPath}`;
+            return `dist/icons/${newPath}`;
         }))
         .pipe(gulpLess(lessConfig))
         .pipe(dest(esPath))

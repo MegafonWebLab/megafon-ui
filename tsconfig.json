@@ -8,7 +8,10 @@
     "noUnusedParameters": true,
     "noImplicitAny": false,
     "target": "es5",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "moduleResolution": "node",
     "types": [
       "react",

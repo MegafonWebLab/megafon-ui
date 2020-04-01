@@ -1,21 +1,16 @@
 {
-  "compileOnSave": true,
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "strictNullChecks": true,
-    "experimentalDecorators": true,
-    "jsx": "react",
-    "noUnusedParameters": true,
-    "noImplicitAny": false,
-    "target": "es5",
-    "lib": ["esnext", "dom"],
-    "moduleResolution": "node",
-    "types": [
-      "react",
-      "node",
-      "jest"
-    ]
   },
-  "include": ["typings/**/*", "src/**/*.ts", "src/**/*"],
-  "exclude": ["node_modules", "src/**/*.test.ts","src/**/*.test.tsx"]
+  "include": [
+    "typings/**/*",
+    "src/**/*.ts",
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ]
 }

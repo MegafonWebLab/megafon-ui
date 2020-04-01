@@ -7,7 +7,7 @@ import cnCreate from 'utils/cn';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
-export interface ISelectItem {
+export interface ISelectCallbackItem {
     title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     value?: string;
     index: number;
@@ -86,7 +86,7 @@ interface ISelectProps {
     /** Focus handler */
     onFocusSearch?: (value: string) => void;
     /** Click item handler */
-    onSelectItem?: (e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
+    onSelectItem?: (e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => void;
     /** Click icon handler */
     onClickIcon?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -406,13 +406,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     getSelectNode = node => this.selectNode = node;
 
     renderChildren() {
-        const { itemPadding } = this.props;
+        const { itemPadding, items, notFoundText } = this.props;
         this.itemsNodeList = [];
 
         return (
             <div className={cn('list')}>
                 <div className={cn('list-inner')} ref={node => this.getItemWrapper(node)}>
-                    {this.props.items.map(({ id, title, leftIcon, rightIcon }, i) =>
+                    {items.map(({ id, title, leftIcon, rightIcon }, i) =>
                         <SelectItem
                             title={title}
                             leftIcon={leftIcon}
@@ -427,7 +427,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                             padding={itemPadding}
                         />
                     )}
-                    {!this.props.items.length && <div className={cn('not-found')}>{this.props.notFoundText}</div>}
+                    {!items.length && <div className={cn('not-found')}>{notFoundText}</div>}
                 </div>
             </div>
         );

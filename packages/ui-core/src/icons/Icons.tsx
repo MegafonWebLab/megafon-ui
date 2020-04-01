@@ -5,7 +5,7 @@ import Cancel from 'icons/System/32/Cancel_32.svg';
 import Copy from 'icons/Basic/24/Whats-left_24.svg';
 import cnCreate from 'utils/cn';
 
-// tslint:disable-next-line
+// tslint:disable-next-line:no-string-literal
 export const reqSvgs = require['context']('icons', true, /\.svg$/);
 
 const cn = cnCreate('icons');

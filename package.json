@@ -13,8 +13,7 @@
         "pre-commit": "lerna run typecheck && lerna run lint && lerna run test",
         "release": "lerna version && yarn install --frozen-lockfile",
         "demo": "docz dev",
-        "demo:build": "docz build",
-        "demo:serve": "docz serve"
+        "demo:build": "docz build"
     },
     "husky": {
         "hooks": {
@@ -23,6 +22,8 @@
     },
     "devDependencies": {
         "docz": "^2.2.0",
-        "lerna": "^3.18.1"
+        "gatsby-plugin-less": "^3.1.1",
+        "lerna": "^3.18.1",
+        "markdown-to-jsx": "^6.11.0"
     }
 }

@@ -1,15 +1,15 @@
 ---
 name: Select
-menu: Компоненты
+menu: Components
 route: components/select
 ---
 
-import { Playground, Props } from "docz";
-import Select from "./Select";
-import Checked from "icons/System/24/Checked_24.svg";
-import Metro from "icons/System/24/Metro_24.svg";
-import Arrow from "icons/System/24/Arrow_right_24.svg";
-import { SelectWrapper, items } from "./Select.docz";
+import { Playground, Props } from 'docz';
+import Select from './Select';
+import Checked from 'icons/System/24/Checked_24.svg';
+import Metro from 'icons/System/24/Metro_24.svg';
+import Arrow from 'icons/System/24/Arrow_right_24.svg';
+import { SelectWrapper, items } from './Select.docz';
 
 # Select
 
@@ -94,7 +94,7 @@ const items = [
                     value: item.value,
                     id: item.id,
                     leftIcon: (
-                        <Metro style={{ width: "24px", height: "24px" }} />
+                        <Metro style={{ width: '24px', height: '24px' }} />
                     )
                 }))}
                 onSelectItem={onSelectItem}
@@ -116,7 +116,7 @@ const items = [
                     value: item.value,
                     id: item.id,
                     rightIcon: (
-                        <Arrow style={{ width: "24px", height: "24px" }} />
+                        <Arrow style={{ width: '24px', height: '24px' }} />
                     )
                 }))}
                 onSelectItem={onSelectItem}

@@ -25,11 +25,26 @@ const generateIndex = files => {
     return `${imports.join('\n')}\n`;
 };
 
+const createReadmeMdx = () => {
+    const mdxFormatter = '---\nname: Beginning of work\nroute: /\n---\n\n';
+    return mdxFormatter + fs.readFileSync('../README.md')
+};
+
 exports.onPreInit = () => {
+    fs.writeFile('../index.mdx', createReadmeMdx(), err => { if (!err) { console.log('index.mdx created'); } });
+
     const components = glob.sync('../packages/ui-core/src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
     const utils = glob.sync('../packages/ui-core/src/utils/*.ts', { ignore: testsReg });
-    fs.writeFileSync(indexTs, generateIndex([...components, ...utils]));
+    fs.writeFile(indexTs, generateIndex([...components, ...utils]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
 }
+
+exports.onPostBuild = () => {
+    console.log('onPostBuild');
+};
+
+exports.onPostBootstrap = () => {
+    console.log('onPostBootstrap');
+};
 
 exports.onCreateWebpackConfig = args => {
     const config = args.getConfig();
@@ -63,7 +78,6 @@ exports.onCreateWebpackConfig = args => {
             modules: [
                 resolve(__dirname, "../packages/ui-core/src"),
                 resolve(__dirname, "../node_modules"),
-                // resolve(__dirname, "../packages/ui-core/node_modules")
             ],
             alias: {
                 "@megafon/ui-core": resolve(__dirname, "../packages/ui-core/src"),
@@ -71,6 +85,9 @@ exports.onCreateWebpackConfig = args => {
         },
         module: {
             rules: [{
+                test: /\.md$/,
+                use: ['babel-loader', '@mdx-js/loader']
+            }, {
                 test: /\.svg$/,
                 use: [
                     ({ resource }) => ({

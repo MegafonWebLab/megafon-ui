@@ -1,6 +1,6 @@
 export default {
-    title: "MegaFon UI",
-    description: "Megafon React UI Kit",
+    title: 'MegaFon UI',
+    description: 'Megafon React UI Kit',
     base: '/megafon-ui/',
     dest: 'docs',
     typescript: true,
@@ -13,9 +13,9 @@ export default {
         /.docz/
     ],
     menu: [
-        'Начало работы',
-        'Компоненты',
-        'Иконки'
+        'Beginning of work',
+        'Components',
+        'Icons'
     ],
     notUseSpecifiers: true,
     filterComponents: files =>
