@@ -37,7 +37,7 @@ class Logo extends React.Component<ILogoProps, {}> {
     };
 
     render() {
-        const { color, view, className, ...props } = this.props;
+        const { color, view, className, href, target } = this.props;
         const images = {
             'green-horizontal': greenHorizontalImg,
             'green-vertical': greenVerticalImg,
@@ -45,7 +45,7 @@ class Logo extends React.Component<ILogoProps, {}> {
         const BackgroundImage = images[`${color}-${view}`];
 
         return (
-            <Link {...props} className={cn('', { view }, className)}>
+            <Link href={href} target={target} className={cn('', { view }, className)}>
                 <div className={cn('img')}>
                     <BackgroundImage className={cn('svg')} />
                 </div>

@@ -59,7 +59,7 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
                 <div className={cn('constructor-pack')}>
                     <AnimationValue
                         hAlign="center"
-                        value={`${currentPack.calls!.value} ${currentPack.calls!.unit}`}
+                        value={`${(currentPack.calls || {}).value} ${(currentPack.calls || {}).unit}`}
                     />
                 </div>
                 <ProductSwitcher
@@ -79,7 +79,7 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
                 <div className={cn('constructor-pack')}>
                     <AnimationValue
                         hAlign="center"
-                        value={`${currentPack.traffic!.value} ${currentPack.traffic!.unit}`}
+                        value={`${(currentPack.traffic || {}).value} ${(currentPack.traffic || {}).unit}`}
                     />
                 </div>
             </div>

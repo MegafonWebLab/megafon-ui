@@ -79,7 +79,7 @@ class ProductTileValue extends React.PureComponent<IProductTileValueProps, IProd
         const { hAlign } = this.props;
 
         return (
-            <span className={cn('', {'h-align': hAlign })}>
+            <span className={cn('', { 'h-align': hAlign })}>
                 {this.renderPrevPrice()}
                 {this.renderCurrentPrice()}
             </span>

@@ -25,8 +25,8 @@ class ProductTileStatic extends React.Component<IProductTileStaticProps> {
 
         return (
             <div className={cn('')}>
-                {packs.map((item: IPack) =>
-                    <div className={cn('constructor-pack')} key={item.title! + item.value! + item.unit!}>
+                {packs.map((item) =>
+                    <div className={cn('constructor-pack')} key={`${item.title || ''}${item.value || ''}${item.unit || ''}`}>
                         {item.isDelim ? item.title : `${item.value} ${item.unit}`}
                     </div>
                 )}

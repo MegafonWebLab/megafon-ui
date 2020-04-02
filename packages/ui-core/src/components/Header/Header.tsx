@@ -16,7 +16,7 @@ interface IHeaderProps {
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-header');

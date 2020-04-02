@@ -90,7 +90,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
                     'h-align': hAlign,
                     color: color,
                     weight: weight,
-                }, className )}>
+                }, className)}>
                 {children}
             </TagName>
         );

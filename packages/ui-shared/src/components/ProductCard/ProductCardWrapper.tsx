@@ -61,12 +61,15 @@ class ProductCardWrapper extends React.Component<IProductCardWrapperProps, {}> {
         },
     };
 
-    handleClick = (e: React.SyntheticEvent<EventTarget>): boolean => (e.target as HTMLElement).tagName !== 'A';
+    handleClick = (e: React.MouseEvent<HTMLElement>): boolean =>
+        (e.target as HTMLElement).tagName !== 'A'
 
     renderHintLabel() {
+        const { hint } = this.props;
+
         return (
             <div className={cn('hint-box')}>
-                <div className={cn('hint-text')}>{this.props.hint!.title}</div>
+                <div className={cn('hint-text')}>{hint && hint.title}</div>
             </div>
         );
     }

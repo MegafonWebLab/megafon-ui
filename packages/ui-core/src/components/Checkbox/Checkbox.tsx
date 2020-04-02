@@ -26,7 +26,7 @@ export interface ICheckboxProps {
     extraContent?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
     /** onChange handler */
-    onChange?(e: React.SyntheticEvent<EventTarget>): void;
+    onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-checkbox');

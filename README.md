@@ -8,19 +8,33 @@ Megafon React UI components library.
 
 Interactive documentation is [here](https://megafonweblab.github.io/megafon-ui/).
 
-Includes:
+## How to use
+
+MegaFon component library is available as several npm packages:
 - ui-core
 [![npm (scoped)](https://img.shields.io/npm/v/@megafon/ui-core.svg)](https://www.npmjs.com/package/@megafon/ui-core)
 
 - ui-shared
 [![npm (scoped)](https://img.shields.io/npm/v/@megafon/ui-shared.svg)](https://www.npmjs.com/package/@megafon/ui-shared)
 
----
-
-## Getting Started
-
+To install, use the command:
 ```bash
-$ yarn install
+npm install @megafon/ui-core
+```
+```bash
+npm install @megafon/ui-shared
+```
+
+For local development you need:
+
+1. External system dependencies — node 12+ and yarn.
+2. Install dependencies.
+```bash
+yarn install
+```
+3. Run demo:
+```bash
+yarn run demo
 ```
 
 ## Build all packages
@@ -28,3 +42,7 @@ $ yarn install
 ```bash
 $ yarn run build
 ```
+
+## Github repository
+
+[https://github.com/MegafonWebLab/megafon-ui](https://github.com/MegafonWebLab/megafon-ui)
