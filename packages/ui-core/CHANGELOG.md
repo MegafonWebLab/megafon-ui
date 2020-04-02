@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.3.4
 - **Carousel**
     - add classes props for flexible styling of the component
 
