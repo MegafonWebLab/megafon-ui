@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.4.1
 - **Carousel**
     - update classes prop
 
