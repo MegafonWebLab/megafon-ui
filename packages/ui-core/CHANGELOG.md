@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **ContentArea**
+    - `mobileInnerPadding` and `className` properties added
+- **Paragraph**
+    - line-height in mixin for small font fixed according to the guide
 
 ## Release 1.3.4
 - **Carousel**
