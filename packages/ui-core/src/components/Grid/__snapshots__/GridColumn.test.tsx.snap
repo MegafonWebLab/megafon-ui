@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GridColumn /> it renders GridColumn with className 1`] = `
-<div
-  className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 test-class"
->
-  item
-</div>
-`;
-
 exports[`<GridColumn /> it renders GridColumn with props on all screens 1`] = `
 <div
   className="mfui-grid-column mfui-grid-column_flex mfui-grid-column_grow mfui-grid-column_align_right mfui-grid-column_all_10 mfui-grid-column_wide_8 mfui-grid-column_desktop_4 mfui-grid-column_tablet_3 mfui-grid-column_mobile_1 mfui-grid-column_all-order_2 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid-column_offset-all_4"
@@ -18,7 +10,7 @@ exports[`<GridColumn /> it renders GridColumn with props on all screens 1`] = `
 
 exports[`<GridColumn /> it renders GridColumn with props on different screens 1`] = `
 <div
-  className="mfui-grid-column mfui-grid-column_flex mfui-grid-column_grow mfui-grid-column_align_right mfui-grid-column_all_10 mfui-grid-column_wide_8 mfui-grid-column_desktop_4 mfui-grid-column_tablet_3 mfui-grid-column_mobile_1 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_2 mfui-grid-column_desktop-order_1 mfui-grid-column_tablet-order_3 mfui-grid-column_mobile-order_4 mfui-grid-column_offset-wide_8 mfui-grid-column_offset-desktop_7 mfui-grid-column_offset-tablet_6 mfui-grid-column_offset-mobile_5"
+  className="mfui-grid-column mfui-grid-column_flex mfui-grid-column_grow mfui-grid-column_align_right mfui-grid-column_all_10 mfui-grid-column_wide_8 mfui-grid-column_desktop_4 mfui-grid-column_tablet_3 mfui-grid-column_mobile_1 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_2 mfui-grid-column_desktop-order_1 mfui-grid-column_tablet-order_3 mfui-grid-column_mobile-order_4 mfui-grid-column_offset-wide_8 mfui-grid-column_offset-desktop_7 mfui-grid-column_offset-tablet_6 mfui-grid-column_offset-mobile_5 test-class"
 >
   item
 </div>
