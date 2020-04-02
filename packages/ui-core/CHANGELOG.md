@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - update classes prop
 
 ## Release 1.4.0
 - **Button**

@@ -97,6 +97,7 @@ describe('<Carousel />', () => {
                 ],
                 classes: {
                     root: 'root-string',
+                    slider: 'slider-cn',
                     leftArrow: 'left-arrow-string',
                     rightArrow: 'right-arrow-string',
                 },
