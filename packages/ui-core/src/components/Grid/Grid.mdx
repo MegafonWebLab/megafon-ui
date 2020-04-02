@@ -44,21 +44,11 @@ import { itemView } from './Grid.docz';
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="5">
-            <div style={itemView}>Item1</div>
-        </GridColumn>
-        <GridColumn all="2">
-            <div style={itemView}>Item2</div>
-        </GridColumn>
-        <GridColumn all="1">
-            <div style={itemView}>Item3</div>
-        </GridColumn>
-        <GridColumn all="3">
-            <div style={itemView}>Item4</div>
-        </GridColumn>
-        <GridColumn all="12">
-            <div style={itemView}>Item7</div>
-        </GridColumn>
+        <GridColumn all="5"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="2"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="3"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="12"><div style={itemView}>Item7</div></GridColumn>
     </Grid>
 </Playground>
 
@@ -353,5 +343,18 @@ import { itemView } from './Grid.docz';
         <GridColumn all="2" mobile="6" orderTablet="2" orderWide="1">
             <div style={itemView}>Item3</div>
         </GridColumn>
+    </Grid>
+</Playground>
+
+## Offset usage
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="2" offsetAll="3"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5" offsetAll="1"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="3" offsetAll="2"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="4" offsetAll="1"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="4" offsetAll="1"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="3" offsetAll="1"><div style={itemView}>Item5</div></GridColumn>
     </Grid>
 </Playground>

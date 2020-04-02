@@ -19,7 +19,9 @@ import { carouselParams, CarouselWrapper } from './Carousel.docz';
 
 <Playground>
     <CarouselWrapper>
-        <Carousel options={carouselParams} onClickNext={() => {}}>
+        <Carousel options={carouselParams} onClickNext={() => {}} classes={{
+            slider: 'slider-cn'
+        }}>
             {new Array(9).fill(undefined).map(() => (
                 <div style={{ width: 260 }}>
                     <Logo />

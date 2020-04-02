@@ -2,6 +2,20 @@
 
 ## Unreleased
 - **Carousel**
+    - update classes prop
+
+## Release 1.4.0
+- **Button**
+    - add font-color for hover button type
+- **GridColumn**
+    - add offset props
+- **ContentArea**
+    - `mobileInnerPadding` and `className` properties added
+- **Paragraph**
+    - line-height in mixin for small font fixed according to the guide
+
+## Release 1.3.4
+- **Carousel**
     - add classes props for flexible styling of the component
 
 ## Release 1.3.3
