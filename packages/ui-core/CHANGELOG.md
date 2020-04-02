@@ -1,8 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.4.0
 - **Button**
-    - add font-color for hover buttom type
+    - add font-color for hover button type
 - **GridColumn**
     - add offset props
 - **ContentArea**
