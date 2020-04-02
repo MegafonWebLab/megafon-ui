@@ -264,30 +264,18 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     renderArrows() {
         const { theme, arrowColor, classes = {} } = this.props;
         const { isPrevActive, isNextActive } = this.state;
+        const modPrevArrow = { 'arrow-prev': true, disabled: !isPrevActive, fill: arrowColor };
+        const modNextArrow = { 'arrow-next': true, disabled: !isNextActive, fill: arrowColor };
 
         return (
             <div className={cn('arrows', { theme: theme })}>
                 <CarouselArrow
-                    className={cn('arrow',
-                            {
-                                'arrow-prev': true, disabled: !isPrevActive,
-                                fill: arrowColor,
-                            },
-                            classes.leftArrow
-                        )
-                    }
+                    className={cn('arrow', modPrevArrow, classes.leftArrow)}
                     onClick={this.handleClickPrev}
                     theme={theme}
                 />
                 <CarouselArrow
-                    className={cn('arrow',
-                        {
-                            'arrow-next': true,
-                            disabled: !isNextActive,
-                            fill: arrowColor,
-                        },
-                        classes.rightArrow)
-                    }
+                    className={cn('arrow', modNextArrow, classes.rightArrow)}
                     onClick={this.handleClickNext}
                     theme={theme}
                 />
@@ -300,17 +288,11 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
         const { className = '', classes = { root: '' } } = this.props;
+        const modClasses = { theme, 'no-padding-between-slides': disablePaddingBetweenSlides };
+        const propsClassName = `${className} ${classes.root}`.trim();
 
         return (
-            <div
-                className={cn('',
-                    {
-                        theme,
-                        'no-padding-between-slides': disablePaddingBetweenSlides,
-                    },
-                    `${className} ${classes.root}`.trim())
-                }
-            >
+            <div className={cn('', modClasses, propsClassName)}>
                 {isArrows && this.renderArrows()}
                 <Slider
                     {...carouselOptions}
