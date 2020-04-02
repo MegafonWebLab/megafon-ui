@@ -4,7 +4,8 @@ import cnCreate from 'utils/cn';
 import './Carousel.less';
 import CarouselArrow from './CarouselArrow';
 import Slider from 'react-slick';
-import throttle from 'lodash.throttle';
+
+const throttle = require('lodash.throttle');
 
 interface ICarouselOptions {
     slidesToShow: number;
@@ -89,10 +90,10 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         disablePaddingBetweenSlides: false,
     };
 
-    firstClientX: number;
-    clientX: number;
+    firstClientX: number = 0;
+    clientX: number = 0;
     noPassiveOption: any = { passive: false };
-    slider: any;
+    slider: any = null;
     throttledResizeEvents: () => void;
 
     constructor(props: ICarouselProps) {
@@ -288,7 +289,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     render() {
         const { options, theme, children, onBeforeChange, disablePaddingBetweenSlides } = this.props;
         const { isArrows } = this.state;
-        const { arrows, ...carouselOptions } = options;
         const { className = '', classes = {} } = this.props;
         const modClasses = { theme, 'no-padding-between-slides': disablePaddingBetweenSlides };
         const propsClassName = `${className} ${classes.root || ''}`.trim();
@@ -297,7 +297,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             <div className={cn('', modClasses, propsClassName)}>
                 {isArrows && this.renderArrows()}
                 <Slider
-                    {...carouselOptions}
+                    {...options}
                     className={classes.slider}
                     arrows={false}
                     ref={this.getSlider}

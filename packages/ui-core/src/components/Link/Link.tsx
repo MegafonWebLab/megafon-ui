@@ -10,7 +10,7 @@ interface ILinkProps {
     /** Custom class name */
     className?: string;
     /** Click event handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick?: (e: React.MouseEvent<EventTarget>) => void;
 }
 
 class Link extends React.Component<ILinkProps, {}> {
@@ -28,12 +28,9 @@ class Link extends React.Component<ILinkProps, {}> {
     };
 
     render() {
-        const { target, children, ...rest } = this.props;
 
         return (
-            <a target={target} {...rest}>
-                {children}
-            </a>
+            <a {...this.props} />
         );
     }
 }

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
+import { cn as cnCreate, BubbleHint } from '@megafon/ui-core';
 import './style/ProductTileOptions.less';
-import { BubbleHint } from '@megafon/ui-core';
 import { IOption } from './ProductTile';
 
 interface IProductTileOptionsProps {
@@ -11,7 +10,7 @@ interface IProductTileOptionsProps {
     /** Options */
     options: IOption[];
     /** Handle bubble */
-    onClickBubble?(): void;
+    onClickBubble?: () => void;
 }
 
 const cn = cnCreate('mfui-product-tile-options');
@@ -20,7 +19,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         head: PropTypes.string,
         options: PropTypes.arrayOf(PropTypes.shape({
             title: PropTypes.string,
-            caption: PropTypes.stirng,
+            caption: PropTypes.string,
             value: PropTypes.string,
             unit: PropTypes.string,
             footnote: PropTypes.string,
@@ -51,7 +50,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         );
     }
 
-    renderContent(title: string, caption: string, value: string, unit: string): JSX.Element {
+    renderContent(title: string, caption: string = '', value: string = '', unit: string = ''): JSX.Element {
         return (
             <div className={cn('content')}>
                 <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
@@ -62,7 +61,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         );
     }
 
-    renderIcon(svgIcon: JSX.Element): JSX.Element {
+    renderIcon(svgIcon: JSX.Element | null = null): JSX.Element {
         return (
             <div className={cn('icon')}>{svgIcon}</div>
         );
@@ -79,11 +78,11 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
                         const { title, caption, value, unit, svgIcon, footnote } = option;
 
                         return (
-                            <div className={cn('option')} key={title! + index}>
-                                {this.renderIcon(svgIcon!)}
+                            <div className={cn('option')} key={title + index}>
+                                {this.renderIcon(svgIcon)}
                                 {footnote
-                                    ? this.renderFootnote(title!, footnote)
-                                    : this.renderContent(title, caption!, value!, unit!)
+                                    ? this.renderFootnote(title, footnote)
+                                    : this.renderContent(title, caption, value, unit)
                                 }
                             </div>
                         );

@@ -1,19 +1,23 @@
 ---
 name: Link
 menu: Components
+route: components/link
 ---
 
-import { Playground, PropsTable } from 'docz';
+import { Playground, Props } from 'docz';
 import Link from './Link';
+import { LinkWrapper } from './Link.docz';
 
 # Link
 
 ## Properties
 
-<PropsTable of={Link} />
+<Props of={Link} />
 
 ## Basic usage
 
 <Playground>
-  <Link href="https://google.com">Click me</Link>
+    <LinkWrapper>
+        <Link href="https://google.com">Click me</Link>
+    </LinkWrapper>
 </Playground>
