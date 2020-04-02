@@ -24,6 +24,7 @@ interface ICarouselOptionsResponsive {
 
 interface ICarouselClasses {
     root?: string;
+    slider?: string;
     leftArrow?: string;
     rightArrow?: string;
 }
@@ -69,6 +70,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         ),
         classes: PropTypes.shape({
             root: PropTypes.string,
+            slider: PropTypes.string,
             leftArrow: PropTypes.string,
             rightArrow: PropTypes.string,
         }),
@@ -287,15 +289,16 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         const { options, theme, children, onBeforeChange, disablePaddingBetweenSlides } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
-        const { className = '', classes = { root: '' } } = this.props;
+        const { className = '', classes = {} } = this.props;
         const modClasses = { theme, 'no-padding-between-slides': disablePaddingBetweenSlides };
-        const propsClassName = `${className} ${classes.root}`.trim();
+        const propsClassName = `${className} ${classes.root || ''}`.trim();
 
         return (
             <div className={cn('', modClasses, propsClassName)}>
                 {isArrows && this.renderArrows()}
                 <Slider
                     {...carouselOptions}
+                    className={classes.slider}
                     arrows={false}
                     ref={this.getSlider}
                     afterChange={this.handleChange}

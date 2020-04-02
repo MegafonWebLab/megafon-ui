@@ -51,7 +51,13 @@ export const carouselParams = {
 ## Basic usage, default theme
 
 <Playground wrapper={Wrapper}>
-    <Carousel options={carouselParams} onClickNext={() => {}}>
+    <Carousel 
+        options={carouselParams}
+        onClickNext={() => {}}
+        classes={{
+            slider: 'slider-cn'
+        }}
+    >
         <div style={{ width: 260 }}>
             <Logo />
         </div>

@@ -67,6 +67,7 @@ exports[`<Carousel /> render tests should render component with classes props 1`
     afterChange={[Function]}
     arrows={false}
     beforeChange={[MockFunction]}
+    className="slider-cn"
     dots={true}
     initialSlide={0}
     responsive={
