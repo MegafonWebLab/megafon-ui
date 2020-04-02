@@ -84,6 +84,27 @@ describe('<Carousel />', () => {
 
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('should render component with classes props', () => {
+            const classesProps = {
+                ...props,
+                children: [
+                    <Link key={1} />,
+                    <Link key={2} />,
+                    <Link key={3} />,
+                    <Link key={4} />,
+                    <Link key={5} />,
+                ],
+                classes: {
+                    root: 'root-string',
+                    leftArrow: 'left-arrow-string',
+                    rightArrow: 'right-arrow-string',
+                },
+            };
+            const wrapper = shallow(<Carousel {...classesProps} />);
+
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('componentDidMount tests', () => {
