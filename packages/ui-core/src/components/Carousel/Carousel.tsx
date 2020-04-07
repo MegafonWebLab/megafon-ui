@@ -13,6 +13,7 @@ interface ICarouselOptions {
     dots?: boolean;
     initialSlide?: number;
     theme?: 'default' | 'landing' | 'showcase' | 'lk';
+    isHelpingAnimation?: boolean;
     arrowColor?: string;
     disablePaddingBetweenSlides?: boolean;
 }
@@ -36,6 +37,7 @@ export interface ICarouselProps {
     arrowColor?: string;
     /** Padding between slides */
     disablePaddingBetweenSlides?: boolean;
+    isHelpingAnimation?: boolean;
     classes?: ICarouselClasses;
     children: any;
     onClickNext?: () => void;
@@ -77,6 +79,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         theme: PropTypes.oneOf(['default', 'landing', 'showcase', 'lk']),
         arrowColor: PropTypes.oneOf(['white']),
         disablePaddingBetweenSlides: PropTypes.bool,
+        isHelpingAnimation: PropTypes.bool,
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
@@ -87,6 +90,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     static defaultProps = {
         responsive: true,
         disablePaddingBetweenSlides: false,
+        isHelpingAnimation: false,
     };
 
     firstClientX: number;
@@ -264,9 +268,14 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     renderArrows() {
-        const { theme, arrowColor, classes = {} } = this.props;
+        const { theme, isHelpingAnimation, arrowColor, classes = {} } = this.props;
         const { isPrevActive, isNextActive } = this.state;
-        const modPrevArrow = { 'arrow-prev': true, disabled: !isPrevActive, fill: arrowColor };
+        const modPrevArrow = {
+            'arrow-prev': true,
+            'animation-scale': isHelpingAnimation,
+            disabled: !isPrevActive,
+            fill: arrowColor,
+        };
         const modNextArrow = { 'arrow-next': true, disabled: !isNextActive, fill: arrowColor };
 
         return (
@@ -286,11 +295,22 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     render() {
-        const { options, theme, children, onBeforeChange, disablePaddingBetweenSlides } = this.props;
+        const {
+            options,
+            theme,
+            children,
+            onBeforeChange,
+            disablePaddingBetweenSlides,
+            isHelpingAnimation,
+        } = this.props;
         const { isArrows } = this.state;
         const { arrows, ...carouselOptions } = options;
         const { className = '', classes = {} } = this.props;
-        const modClasses = { theme, 'no-padding-between-slides': disablePaddingBetweenSlides };
+        const modClasses = {
+            theme,
+            'no-padding-between-slides': disablePaddingBetweenSlides,
+            'animation-move': isHelpingAnimation,
+        };
         const propsClassName = `${className} ${classes.root || ''}`.trim();
 
         return (

@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - add helping animation
 
 ## Release 1.4.1
 - **Carousel**
