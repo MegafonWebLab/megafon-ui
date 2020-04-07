@@ -176,8 +176,9 @@ const generateIndex = files => {
     });
     const collator = new Intl.Collator();
     const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
+    const getCnCreate = name => name === 'cn' ? `${name}, default as cnCreate` : name;
     const imports = sorted.map(({ name, path: cPath, ext: extension }) => {
-        return `export { default as ${name} } from '${cPath.replace(extension, '')}';`;
+        return `export { default as ${getCnCreate(name)} } from '${cPath.replace(extension, '')}';`;
     });
 
     return `${imports.join('\n')}`;

@@ -1,12 +1,15 @@
 import classnames from 'classnames';
 
+interface IModificators {
+    [key: string]: boolean | string | undefined | null;
+}
+
 interface IClassSet {
     [key: string]: boolean;
 }
 
-interface IParams {
-    [key: string]: boolean | string;
-}
+type ElementNameType = string | IModificators | string[];
+type customClassName = string | string[];
 
 /**
  * Бэм генератор
@@ -18,27 +21,26 @@ interface IParams {
  * @returns {String}
  */
 export default function cnCreate(blockName: string) {
-    return (
-        elementName: string,
-        modificatorsObject?: {},
-        customClassNames?: string
-    ) => {
-        const params: IParams | undefined = modificatorsObject || undefined;
-        const prefix = elementName;
-        const className = customClassNames || '';
+    function getElement(
+        elementName: ElementNameType,
+        modificatorsObject?: ElementNameType,
+        customClassNames?: customClassName
+    ) {
+        const prefix = typeof elementName === 'string' ? elementName : '';
+        const className = getCustomClassName(elementName, modificatorsObject, customClassNames);
+        const secondMods = !Array.isArray(modificatorsObject) && typeof modificatorsObject !== 'string'
+            ? modificatorsObject
+            : undefined;
+        const params = typeof elementName !== 'string' && !Array.isArray(elementName)
+            ? elementName
+            : secondMods;
 
-        if (
-            !params || (typeof params === 'object' && Object.keys(params).length === 0)
-        ) {
-            return classnames(
-                `${blockName}${prefix ? '__' + prefix : ''}`,
-                className
-            );
+        if (!params || typeof params === 'object' && Object.keys(params).length === 0) {
+            return classnames(`${blockName}${prefix ? '__' + prefix : ''}`, className);
         }
 
         const classParams: IClassSet = {};
-        let prefixKey = '';
-        let withoutPrefix = '';
+        let prefixKey, withoutPrefix;
 
         for (const key in params) {
             if (typeof params[key] === 'boolean' && params[key]) {
@@ -58,5 +60,27 @@ export default function cnCreate(blockName: string) {
         return prefix === ''
             ? classnames(blockName, classParams, className)
             : classnames(`${blockName}__${prefix}`, classParams, className);
-    };
+    }
+
+    return getElement;
 }
+
+const getCustomClassName = (first: ElementNameType, second?: ElementNameType, third?: customClassName) => {
+    if (Array.isArray(first)) {
+        return first.filter(f => typeof f === 'string').join(' ');
+    }
+    if (Array.isArray(second)) {
+        return second.filter(f => typeof f === 'string').join(' ');
+    }
+    if (typeof second === 'string') {
+        return second;
+    }
+    if (Array.isArray(third)) {
+        return third.filter(f => typeof f === 'string').join(' ');
+    }
+    if (typeof third === 'string') {
+        return third;
+    }
+
+    return '';
+};

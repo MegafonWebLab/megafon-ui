@@ -3,6 +3,9 @@
 ## Unreleased
 - **Header**
     - correct header css for style guide, delete h6 props
+- **cn**
+    - add variability to add arguments
+    - add alias `cnCreate` to root
 
 ## Release 1.4.1
 - **Carousel**
