@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.5.0
 - **cn**
     - add variability to add arguments
     - add alias `cnCreate` to root
