@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **cn**
+    - add variability to add arguments
+    - add alias `cnCreate` to root
 
 ## Release 1.4.1
 - **Carousel**
