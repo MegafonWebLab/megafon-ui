@@ -8,8 +8,31 @@ interface IClassSet {
     [key: string]: boolean;
 }
 
-type ElementNameType = string | IModificators | string[];
-type customClassName = string | string[];
+type CustomClassNameType = string;
+type CustomClassNamesArrayType = string[];
+type CustomClassNamesType = CustomClassNameType | CustomClassNamesArrayType | undefined;
+
+type ElementNameType = string | IModificators | CustomClassNamesArrayType | CustomClassNamesType;
+
+const getCustomClassName = (first?: ElementNameType, second?: ElementNameType, third?: CustomClassNamesType) => {
+    if (Array.isArray(first)) {
+        return first.filter(f => typeof f === 'string').join(' ');
+    }
+    if (Array.isArray(second)) {
+        return second.filter(f => typeof f === 'string').join(' ');
+    }
+    if (typeof second === 'string') {
+        return second;
+    }
+    if (Array.isArray(third)) {
+        return third.filter(f => typeof f === 'string').join(' ');
+    }
+    if (typeof third === 'string') {
+        return third;
+    }
+
+    return '';
+};
 
 /**
  * Бэм генератор
@@ -20,12 +43,24 @@ type customClassName = string | string[];
  * @param {String} customClassNames - названия кастомных классов
  * @returns {String}
  */
-export default function cnCreate(blockName: string) {
+function cnCreate(blockName: string) {
+    function getElement(): string;
+    function getElement(elementName: ElementNameType): string;
+    function getElement(modificatorsObject: ElementNameType): string;
+    function getElement(customClassNames: CustomClassNamesArrayType): string;
+    function getElement(elementName: ElementNameType, modificatorsObject: ElementNameType): string;
+    function getElement(elementName: ElementNameType, customClassNames: CustomClassNamesType): string;
+    function getElement(modificatorsObject: ElementNameType, customClassNames: CustomClassNamesType): string;
     function getElement(
         elementName: ElementNameType,
+        modificatorsObject: ElementNameType,
+        customClassNames: CustomClassNamesType
+    ): string;
+    function getElement(
+        elementName?: ElementNameType,
         modificatorsObject?: ElementNameType,
-        customClassNames?: customClassName
-    ) {
+        customClassNames?: CustomClassNamesType
+    ): string {
         const prefix = typeof elementName === 'string' ? elementName : '';
         const className = getCustomClassName(elementName, modificatorsObject, customClassNames);
         const secondMods = !Array.isArray(modificatorsObject) && typeof modificatorsObject !== 'string'
@@ -61,22 +96,4 @@ export default function cnCreate(blockName: string) {
     return getElement;
 }
 
-const getCustomClassName = (first: ElementNameType, second?: ElementNameType, third?: customClassName) => {
-    if (Array.isArray(first)) {
-        return first.filter(f => typeof f === 'string').join(' ');
-    }
-    if (Array.isArray(second)) {
-        return second.filter(f => typeof f === 'string').join(' ');
-    }
-    if (typeof second === 'string') {
-        return second;
-    }
-    if (Array.isArray(third)) {
-        return third.filter(f => typeof f === 'string').join(' ');
-    }
-    if (typeof third === 'string') {
-        return third;
-    }
-
-    return '';
-};
+export default cnCreate;

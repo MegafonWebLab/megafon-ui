@@ -52,6 +52,11 @@ describe('cnCreate', () => {
             expect(selector).toBe('test custom-class');
         });
 
+        it('get without prefix', () => {
+            const selector = cn({}, 'custom-class');
+            expect(selector).toBe('test custom-class');
+        });
+
         it('get custom class name second arg str', () => {
             const selector = cn('make', 'test123');
             expect(selector).toBe('test__make test123');
@@ -75,6 +80,26 @@ describe('cnCreate', () => {
         it('get with empty prefix and with options string', () => {
             const selector = cn('', { start: 'check' }, 'custom-class');
             expect(selector).toBe('test test_start_check custom-class');
+        });
+
+        it('get with empty prefix, with options string and with array of custom classes', () => {
+            const selector = cn('', { start: 'check' }, ['custom-class1', 'custom-class2']);
+            expect(selector).toBe('test test_start_check custom-class1 custom-class2');
+        });
+
+        it('get without prefix and with options', () => {
+            const selector = cn({ start: true }, 'custom-class');
+            expect(selector).toBe('test test_start custom-class');
+        });
+
+        it('get without prefix and with options string', () => {
+            const selector = cn({ start: 'check' }, 'custom-class');
+            expect(selector).toBe('test test_start_check custom-class');
+        });
+
+        it('get without prefix, with options string and with array of custom classes', () => {
+            const selector = cn({ start: 'check' }, ['custom-class1', 'custom-class2']);
+            expect(selector).toBe('test test_start_check custom-class1 custom-class2');
         });
     });
 });
