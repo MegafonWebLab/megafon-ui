@@ -113,7 +113,7 @@
             flex-shrink: 1;
             display: flex;
             flex-basis: auto;
-            margin-right: 20px;
+            padding-right: 20px;
         }
 
         &-slide > div {
@@ -150,16 +150,17 @@
     @{s} {
         &-list {
             box-sizing: border-box;
+            padding: 30px 0;
+            margin-top: -30px;
+            margin-bottom: -30px;
             overflow: hidden;
-            padding: 90px 2px 2px;
-            padding-right: 0;
-            margin: -90px -2px -2px;
-            margin-right: 0;
-            width: auto;
+            position: relative;
+            left: -10px;
+            width: calc(~'100% + 20px');
             @media @mobileSM {
                 overflow: visible;
-                padding: 90px 0 0;
-                margin: -90px 0 0;
+                width: calc(~'100% + 16px');
+                left: -8px;
             }
         }
         &-track {
@@ -171,11 +172,13 @@
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: auto;
-            padding-right: 20px;
-            margin-right: 0;
+            padding-right: 10px;
+            padding-left: 10px;
             @media @mobileSM {
-                padding-right: 16px;
+                padding-right: 8px;
+                padding-left: 8px;
             }
+
         }
         &-slide > div {
             display: flex;
@@ -239,16 +242,16 @@
     }
     @{b}__arrows_theme_showcase {
         @media @mobileBU {
-            height: 100%;
+            height: calc(~'100% - 7px');
             position: absolute;
-            width: calc(100% - 16px);
+            width: 100%;
         }
     }
 
     @{b}__arrow {
         position: absolute;
         cursor: pointer;
-        top: calc(50% + 25px);
+        top: 50%;
         transform: translateY(-50%);
         left: unset;
         right: unset;
@@ -331,7 +334,6 @@
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: auto;
-            margin-right: 20px;
         }
         &-slide > div {
             display: flex;
@@ -459,10 +461,23 @@
         }
 
         &-slide {
-            margin-right: 0;
+            padding-right: 0;
         }
         &-slide > div {
             min-width: initial;
+        }
+    }
+}
+
+@{b}@{b}_no-padding-between-slides {
+    @{s} {
+        &-slide {
+            padding-right: 0;
+            padding-left: 0;
+        }
+        &-list {
+            width: 100%;
+            left: 0;
         }
     }
 }

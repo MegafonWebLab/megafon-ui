@@ -4,7 +4,8 @@ import cnCreate from 'utils/cn';
 import './Carousel.less';
 import CarouselArrow from './CarouselArrow';
 import Slider from 'react-slick';
-import throttle from 'lodash.throttle';
+
+const throttle = require('lodash.throttle');
 
 interface ICarouselOptions {
     slidesToShow: number;
@@ -14,6 +15,7 @@ interface ICarouselOptions {
     initialSlide?: number;
     theme?: 'default' | 'landing' | 'showcase' | 'lk';
     arrowColor?: string;
+    disablePaddingBetweenSlides?: boolean;
 }
 
 interface ICarouselOptionsResponsive {
@@ -21,11 +23,21 @@ interface ICarouselOptionsResponsive {
     settings: Pick<ICarouselOptions, 'slidesToShow' | 'arrows'>;
 }
 
+interface ICarouselClasses {
+    root?: string;
+    slider?: string;
+    leftArrow?: string;
+    rightArrow?: string;
+}
+
 export interface ICarouselProps {
     className?: string;
     options: ICarouselOptions;
     theme?: string;
     arrowColor?: string;
+    /** Padding between slides */
+    disablePaddingBetweenSlides?: boolean;
+    classes?: ICarouselClasses;
     children: any;
     onClickNext?: () => void;
     onClickPrev?: () => void;
@@ -57,8 +69,15 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                 PropTypes.array,
             ])
         ),
+        classes: PropTypes.shape({
+            root: PropTypes.string,
+            slider: PropTypes.string,
+            leftArrow: PropTypes.string,
+            rightArrow: PropTypes.string,
+        }),
         theme: PropTypes.oneOf(['default', 'landing', 'showcase', 'lk']),
         arrowColor: PropTypes.oneOf(['white']),
+        disablePaddingBetweenSlides: PropTypes.bool,
         children: PropTypes.node,
         onClickNext: PropTypes.func,
         onClickPrev: PropTypes.func,
@@ -68,12 +87,13 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
 
     static defaultProps = {
         responsive: true,
+        disablePaddingBetweenSlides: false,
     };
 
-    firstClientX: number;
-    clientX: number;
+    firstClientX: number = 0;
+    clientX: number = 0;
     noPassiveOption: any = { passive: false };
-    slider: any;
+    slider: any = null;
     throttledResizeEvents: () => void;
 
     constructor(props: ICarouselProps) {
@@ -245,18 +265,20 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     renderArrows() {
-        const { theme, arrowColor } = this.props;
+        const { theme, arrowColor, classes = {} } = this.props;
         const { isPrevActive, isNextActive } = this.state;
+        const modPrevArrow = { 'arrow-prev': true, disabled: !isPrevActive, fill: arrowColor };
+        const modNextArrow = { 'arrow-next': true, disabled: !isNextActive, fill: arrowColor };
 
         return (
             <div className={cn('arrows', { theme: theme })}>
                 <CarouselArrow
-                    className={cn('arrow', { 'arrow-prev': true, disabled: !isPrevActive, fill: arrowColor })}
+                    className={cn('arrow', modPrevArrow, classes.leftArrow)}
                     onClick={this.handleClickPrev}
                     theme={theme}
                 />
                 <CarouselArrow
-                    className={cn('arrow', { 'arrow-next': true, disabled: !isNextActive, fill: arrowColor })}
+                    className={cn('arrow', modNextArrow, classes.rightArrow)}
                     onClick={this.handleClickNext}
                     theme={theme}
                 />
@@ -265,15 +287,18 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     render() {
-        const { className, options, theme, children, onBeforeChange } = this.props;
+        const { options, theme, children, onBeforeChange, disablePaddingBetweenSlides } = this.props;
         const { isArrows } = this.state;
-        const { arrows, ...carouselOptions } = options;
+        const { className = '', classes = {} } = this.props;
+        const modClasses = { theme, 'no-padding-between-slides': disablePaddingBetweenSlides };
+        const propsClassName = `${className} ${classes.root || ''}`.trim();
 
         return (
-            <div className={cn('', {theme}, className)}>
+            <div className={cn('', modClasses, propsClassName)}>
                 {isArrows && this.renderArrows()}
                 <Slider
-                    {...carouselOptions}
+                    {...options}
+                    className={classes.slider}
                     arrows={false}
                     ref={this.getSlider}
                     afterChange={this.handleChange}

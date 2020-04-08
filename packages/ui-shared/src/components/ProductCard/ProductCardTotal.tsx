@@ -1,8 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
+import { cn as cnCreate, Button } from '@megafon/ui-core';
 import './ProductCardTotal.less';
-import { Button } from '@megafon/ui-core';
 
 const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
 export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
@@ -24,7 +23,7 @@ interface IProductCardTotalProps {
      * show button if included
      */
     submitLink?: string;
-     /** Submit link target */
+    /** Submit link target */
     submitLinkTarget?: TLinkTargetType;
     /** More text */
     moreText?: string;
@@ -46,15 +45,15 @@ interface IProductCardTotalProps {
     /** Submit hander,
      * show button if included
      */
-    onSubmit?(e: React.SyntheticEvent<EventTarget>, info: {}): void;
+    onSubmit?: (e: React.SyntheticEvent<EventTarget>, info: {}) => void;
     /** Connect hander,
      * show button if included
      */
-    onClickConnect?(e: React.SyntheticEvent<EventTarget>, info: {}): void;
+    onClickConnect?: (e: React.SyntheticEvent<EventTarget>, info: {}) => void;
     /** More hander,
      * show button if included
      */
-    onClickMore?(e: React.SyntheticEvent<EventTarget>, info: {}): void;
+    onClickMore?: (e: React.SyntheticEvent<EventTarget>, info: {}) => void;
 }
 
 const cn = cnCreate('mfui-product-card-total');
@@ -96,19 +95,19 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
     handleSubmit = (e: React.SyntheticEvent<EventTarget>): void => {
         const { onSubmit, info } = this.props;
 
-        onSubmit && onSubmit(e, info!);
+        onSubmit && onSubmit(e, info || {});
     }
 
     handleClickConnect = (e: React.SyntheticEvent<EventTarget>): void => {
         const { onClickConnect, info } = this.props;
 
-        onClickConnect && onClickConnect(e, info!);
+        onClickConnect && onClickConnect(e, info || {});
     }
 
     handleClickMore = (e: React.SyntheticEvent<EventTarget>): void => {
         const { onClickMore, info } = this.props;
 
-        onClickMore && onClickMore(e, info!);
+        onClickMore && onClickMore(e, info || {});
     }
 
     render() {

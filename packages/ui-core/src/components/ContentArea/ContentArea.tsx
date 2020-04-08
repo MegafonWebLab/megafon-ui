@@ -10,7 +10,10 @@ export interface IProps {
     innerBackgroundColor?: 'white' | 'transparent';
     /** Side paddings of the internal container */
     innerPadding?: 'lg' | 'none';
+    /** Side paddings of the internal container on mobile screen */
+    mobileInnerPadding?: 'default' | 'none';
     children: any;
+    className?: string;
 }
 
 const cn = cnCreate('mfui-content-area');
@@ -19,13 +22,16 @@ class ContentArea extends React.Component<IProps, {}> {
         outerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
         innerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
         innerPadding: PropTypes.oneOf(['lg', 'none']),
+        mobileInnerPadding: PropTypes.oneOf(['default', 'none']),
         children: PropTypes.node,
+        className: PropTypes.string,
     };
 
     static defaultProps = {
         outerBackgroundColor: 'transparent',
         innerBackgroundColor: 'transparent',
         innerPadding: 'lg',
+        mobileInnerPadding: 'default',
     };
 
     render() {
@@ -33,14 +39,17 @@ class ContentArea extends React.Component<IProps, {}> {
             outerBackgroundColor,
             innerBackgroundColor,
             innerPadding,
+            mobileInnerPadding,
             children,
+            className,
         } = this.props;
 
         return (
-            <div className={cn('', { color: outerBackgroundColor })}>
+            <div className={cn('', { color: outerBackgroundColor }, className)}>
                 <div
                     className={cn('inner', {
                         padding: innerPadding,
+                        'mobile-padding': mobileInnerPadding,
                         color: innerBackgroundColor,
                     })}
                 >

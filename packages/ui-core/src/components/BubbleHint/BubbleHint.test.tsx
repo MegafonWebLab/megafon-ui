@@ -71,7 +71,7 @@ describe('<BubbleHint />', () => {
         div.contains = () => { return true; };
 
         instance.getTrigger(div);
-        instance.handleClick({ target: {} } as React.SyntheticEvent<EventTarget>);
+        instance.handleClick({ target: {} } as React.MouseEvent<HTMLElement>);
         expect(onClick.mock.calls).toHaveLength(1);
     });
 
@@ -80,9 +80,8 @@ describe('<BubbleHint />', () => {
         const wrapper = shallow(<BubbleHint onClick={onClick} />);
         const instance = wrapper.instance() as BubbleHint;
 
-        // wrapper.instance().getTrigger({ contains() { return false; } });
         instance.getTrigger(div);
-        instance.handleClick({ target: {} } as React.SyntheticEvent<EventTarget>);
+        instance.handleClick({ target: {} } as React.MouseEvent<HTMLElement>);
         expect(onClick.mock.calls).toHaveLength(0);
     });
 

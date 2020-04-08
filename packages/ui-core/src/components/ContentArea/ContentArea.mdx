@@ -1,36 +1,31 @@
 ---
 name: ContentArea
 menu: Components
+route: components/content-area
 ---
 
-import { Playground, PropsTable } from 'docz';
+import { Playground, Props } from 'docz';
 import ContentArea from './ContentArea';
-
-export const playgroundStyle = {
-    backgroundColor: '#E5F5EE',
-    paddingLeft: '0',
-    paddingRight: '0',
-};
+import { playgroundStyle } from './ContentArea.docz';
 
 # ContentArea
 
 ## Properties
 
-<PropsTable of={ContentArea} />
+<Props of={ContentArea} />
 
 ## Basic usage
 
 <Playground style={playgroundStyle}>
-    <ContentArea>
-        Some content
-    </ContentArea>
+    <ContentArea>Some content</ContentArea>
 </Playground>
 
 ## Difference between screen background color and external container background color
 
 <Playground style={playgroundStyle}>
     <ContentArea outerBackgroundColor="white">
-        In case of small screen use button 'maximize' on the right button corner to see the difference
+        In case of small screen use button 'maximize' on the right button corner
+        to see the difference
     </ContentArea>
 </Playground>
 
@@ -38,7 +33,8 @@ export const playgroundStyle = {
 
 <Playground style={playgroundStyle}>
     <ContentArea innerBackgroundColor="white">
-        In case of small screen use button 'maximize' on the right button corner to see the difference
+        In case of small screen use button 'maximize' on the right button corner
+        to see the difference
     </ContentArea>
 </Playground>
 

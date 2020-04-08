@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './TextField.less';
-import InputMask from 'react-input-mask';
 import cnCreate from 'utils/cn';
 import * as equal from 'deep-equal';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
@@ -10,6 +9,7 @@ import Hide from 'icons/Basic/24/Hide_24.svg';
 import Show from 'icons/Basic/24/Show_24.svg';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
+const InputMask = require('react-input-mask');
 
 export interface ITextFieldProps {
     /** Field title */
@@ -63,15 +63,15 @@ export interface ITextFieldProps {
     /** Custom classname */
     className?: string;
     /** Change handler */
-    onChange?(e: React.SyntheticEvent<EventTarget>): void;
+    onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Blur handler */
-    onBlur?(e: React.SyntheticEvent<EventTarget>): void;
+    onBlur?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Focus handler */
-    onFocus?(e: React.SyntheticEvent<EventTarget>): void;
+    onFocus?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** KeyUp handler */
-    onKeyUp?(e: React.SyntheticEvent<EventTarget>): void;
+    onKeyUp?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Custom icon click handler */
-    onCustomIconClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onCustomIconClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 interface ITextFieldState {
@@ -202,7 +202,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         );
     }
 
-    addInputNode = (node: HTMLInputElement ) => this.inputNode = node;
+    addInputNode = (node: HTMLInputElement) => this.inputNode = node;
 
     renderInputElem(isPasswordType: boolean) {
         const { isPasswordHidden } = this.state;
