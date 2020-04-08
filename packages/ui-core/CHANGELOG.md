@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Header**
+    - correct header css for style guide
 
 ## Release 1.1.0
 - **Carousel**
