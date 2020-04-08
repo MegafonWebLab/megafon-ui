@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Header**
+    - correct header css for style guide, delete h6 props
 - **Carousel**
     - update classes prop
 

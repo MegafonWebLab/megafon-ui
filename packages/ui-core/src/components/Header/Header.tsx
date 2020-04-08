@@ -5,7 +5,7 @@ import cnCreate from 'utils/cn';
 
 interface IHeaderProps {
     /** Tag */
-    as?: 'h1' | 'h2' | 'h3' | 'h5' | 'h6';
+    as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Color */
     color?: 'black' | 'white' | 'green' | 'purple' | 'blue' | 'inherit';
     /** Turn on margin */
@@ -22,7 +22,7 @@ interface IHeaderProps {
 const cn = cnCreate('mfui-header');
 class Header extends React.Component<IHeaderProps, {}> {
     static propTypes = {
-        as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5', 'h6']),
+        as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),
         color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
         margin: PropTypes.bool,
         addition: PropTypes.element,
