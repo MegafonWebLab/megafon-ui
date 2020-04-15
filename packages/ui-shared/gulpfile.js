@@ -134,6 +134,17 @@ gulp.task('ts', () => {
             `!${iconsReg}`,
             './typings/*.d.ts'
         ])
+        .pipe(
+            replaceContent(/icons\/\w+\/\d+\/.*\.svg/g, function(match) {
+                const newPath = match
+                    .toLowerCase()
+                    .replace(/icons\//g, '')
+                    .replace(/\//g, '-')
+                    .replace('.svg', '');
+
+                return `@megafon/ui-core/dist/icons/${newPath}`;
+            })
+        )
         .pipe(ts(tsConfig));
 
     return merge(

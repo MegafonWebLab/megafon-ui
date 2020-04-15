@@ -2,12 +2,11 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './TextFieldDeprecated.less';
 import * as equal from 'deep-equal';
-import CheckedIcon from '@megafon/ui-core/dist/icons/system-24-checked_24.svg';
-import ErrorIcon from '@megafon/ui-core/dist/icons/system-24-cancel_24.svg';
-import Hide from '@megafon/ui-core/dist/icons/basic-24-hide_24.svg';
-import Show from '@megafon/ui-core/dist/icons/basic-24-show_24.svg';
-import detectTouch from './detectTouch';
-import { InputLabel, cn as cnCreate } from '@megafon/ui-core';
+import CheckedIcon from 'icons/System/24/Checked_24.svg';
+import ErrorIcon from 'icons/System/24/Cancel_24.svg';
+import Hide from 'icons/Basic/24/Hide_24.svg';
+import Show from 'icons/Basic/24/Show_24.svg';
+import { InputLabel, cn as cnCreate, detectTouch } from '@megafon/ui-core';
 
 const InputMask = require('react-input-mask');
 

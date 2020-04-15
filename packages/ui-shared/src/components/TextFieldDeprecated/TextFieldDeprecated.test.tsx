@@ -1,12 +1,17 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import TextFieldDeprecated from './TextFieldDeprecated';
-import detectTouch from './detectTouch';
+import { detectTouch } from '@megafon/ui-core';
 import { ITextFieldProps } from './TextFieldDeprecated';
 
-jest.mock('./detectTouch', () => ({
-    default: jest.fn().mockReturnValue(false),
-}));
+function mockFunctions() {
+    const original = require.requireActual('@megafon/ui-core');
+    return {
+        ...original,
+        detectTouch: jest.fn().mockReturnValue(false),
+    };
+}
+jest.mock('@megafon/ui-core', () => mockFunctions());
 
 jest.mock('react-input-mask', () => {
     return {
