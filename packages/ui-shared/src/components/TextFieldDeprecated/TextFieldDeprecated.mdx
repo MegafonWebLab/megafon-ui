@@ -1,18 +1,18 @@
 ---
-name: TextField
+name: TextFieldDeprecated
 menu: Components
 route: components/textfield
 ---
 
 import { Playground, Props } from 'docz';
-import TextField from './TextField';
-import { TextFieldWrapper } from './TextField.docz';
+import TextFieldDeprecated from './TextFieldDeprecated';
+import { TextFieldWrapper } from './TextFieldDeprecated.docz';
 
-# TextField
+# TextFieldDeprecated
 
 ## Properties
 
-<Props of={TextField} />
+<Props of={TextFieldDeprecated} />
 
 ## API
 
@@ -21,7 +21,7 @@ import { TextFieldWrapper } from './TextField.docz';
 | blur   | Trigger blur event on input field.  |
 | focus  | Trigger focus event on input field. |
 
-**Use TextField's 'ref' prop for API methods call:**
+**Use TextFieldDeprecated's 'ref' prop for API methods call:**
 
 ```
 class SearchForm extends Component {
@@ -34,7 +34,7 @@ class SearchForm extends Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <TextField ref={(instance) => { this.textField = instance; }} />
+                <TextFieldDeprecated ref={(instance) => { this.textField = instance; }} />
             </Form>
         );
     }
@@ -45,7 +45,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField name="name" />
+        <TextFieldDeprecated name="name" />
     </TextFieldWrapper>
 </Playground>
 
@@ -53,7 +53,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField
+        <TextFieldDeprecated
             placeholder="+7 (999) 999-99-99"
             mask="+7 (999) 999-99-99"
             maskChar="_"
@@ -67,7 +67,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField error={true} noticeText="Name is required" />
+        <TextFieldDeprecated error={true} noticeText="Name is required" />
     </TextFieldWrapper>
 </Playground>
 
@@ -75,7 +75,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField valid={true} />
+        <TextFieldDeprecated valid={true} />
     </TextFieldWrapper>
 </Playground>
 
@@ -83,7 +83,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField commentText="Comment" />
+        <TextFieldDeprecated commentText="Comment" />
     </TextFieldWrapper>
 </Playground>
 
@@ -91,7 +91,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField successText="Field is correct" />
+        <TextFieldDeprecated successText="Field is correct" />
     </TextFieldWrapper>
 </Playground>
 
@@ -99,7 +99,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField maxLength={10} />
+        <TextFieldDeprecated maxLength={10} />
     </TextFieldWrapper>
 </Playground>
 
@@ -107,7 +107,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField disabled={true} />
+        <TextFieldDeprecated disabled={true} />
     </TextFieldWrapper>
 </Playground>
 
@@ -115,7 +115,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField name="name" placeholder="password" type="password" />
+        <TextFieldDeprecated name="name" placeholder="password" type="password" />
     </TextFieldWrapper>
 </Playground>
 
@@ -123,6 +123,6 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField bigSpace={true} />
+        <TextFieldDeprecated bigSpace={true} />
     </TextFieldWrapper>
 </Playground>

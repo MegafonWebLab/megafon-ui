@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import TextField from './TextField';
-import detectTouch from 'utils/detectTouch';
-import { ITextFieldProps } from './TextField';
+import TextFieldDeprecated from './TextFieldDeprecated';
+import detectTouch from './detectTouch';
+import { ITextFieldProps } from './TextFieldDeprecated';
 
-jest.mock('utils/detectTouch', () => ({
+jest.mock('./detectTouch', () => ({
     default: jest.fn().mockReturnValue(false),
 }));
 
@@ -43,7 +43,7 @@ function simulateEvent(eventName: string, eventType: string, params: {}) {
     const data = 'data';
     const mock = jest.fn();
     const handler = { [eventName]: mock };
-    const wrapper = shallow(<TextField {...handler} {...params} />);
+    const wrapper = shallow(<TextFieldDeprecated {...handler} {...params} />);
 
     wrapper.find(inputClassName).simulate(eventType, data);
 
@@ -51,23 +51,23 @@ function simulateEvent(eventName: string, eventType: string, params: {}) {
     expect(mock).toBeCalledWith(data);
 }
 
-describe('<TextField />', () => {
+describe('<TextFieldDeprecated />', () => {
     beforeEach(() => {
         jest.resetAllMocks();
     });
 
     it('renders without props', () => {
-        const wrapper = shallow(<TextField />);
+        const wrapper = shallow(<TextFieldDeprecated />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('renders with props', () => {
-        const wrapper = shallow(<TextField {...props} />);
+        const wrapper = shallow(<TextFieldDeprecated {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('renders with mask', () => {
-        const wrapper = shallow(<TextField {...props} mask="(999) 999-99-99" maskChar=" " />);
+        const wrapper = shallow(<TextFieldDeprecated {...props} mask="(999) 999-99-99" maskChar=" " />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -76,7 +76,7 @@ describe('<TextField />', () => {
 
         typedDetectTouch.mockImplementation(() => () => true);
 
-        const wrapper = shallow(<TextField />);
+        const wrapper = shallow(<TextFieldDeprecated />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -84,27 +84,27 @@ describe('<TextField />', () => {
     describe('icon mod', () => {
         it('renders with mod when customIcon passed', () => {
             const wrapper = shallow(
-                <TextField isHideIcon={false} customIcon={<div>icon</div>} error={false} valid={false} />
+                <TextFieldDeprecated isHideIcon={false} customIcon={<div>icon</div>} error={false} valid={false} />
             );
             expect(wrapper).toMatchSnapshot();
         });
 
         it('renders with mod when error is true', () => {
             const wrapper = shallow(
-                <TextField isHideIcon={false} customIcon={undefined} error={true} valid={false} />
+                <TextFieldDeprecated isHideIcon={false} customIcon={undefined} error={true} valid={false} />
             );
             expect(wrapper).toMatchSnapshot();
         });
 
         it('renders with mod when valid is true', () => {
             const wrapper = shallow(
-                <TextField isHideIcon={false} customIcon={undefined} error={false} valid={true} />
+                <TextFieldDeprecated isHideIcon={false} customIcon={undefined} error={false} valid={true} />
             );
             expect(wrapper).toMatchSnapshot();
         });
 
         it('renders without mod when isHideIcon is true', () => {
-            const wrapper = shallow(<TextField isHideIcon={true} />);
+            const wrapper = shallow(<TextFieldDeprecated isHideIcon={true} />);
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -112,14 +112,14 @@ describe('<TextField />', () => {
     describe('status icons', () => {
         it('renders when valid or error is true', () => {
             const wrapper = shallow(
-                <TextField isHideIcon={false} customIcon={undefined} error={true} valid={true} />
+                <TextFieldDeprecated isHideIcon={false} customIcon={undefined} error={true} valid={true} />
             );
             expect(wrapper).toMatchSnapshot();
         });
 
         it('not renders when valid or error is false', () => {
             const wrapper = shallow(
-                <TextField isHideIcon={false} customIcon={undefined} error={false} valid={false} />
+                <TextFieldDeprecated isHideIcon={false} customIcon={undefined} error={false} valid={false} />
             );
             expect(wrapper).toMatchSnapshot();
         });
@@ -127,12 +127,12 @@ describe('<TextField />', () => {
 
     describe('password type', () => {
         it('renders with default input', () => {
-            const wrapper = shallow(<TextField type="password" />);
+            const wrapper = shallow(<TextFieldDeprecated type="password" />);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('renders with mask input', () => {
-            const wrapper = shallow(<TextField type="password" mask="(999) 999-99-99" maskChar=" " />);
+            const wrapper = shallow(<TextFieldDeprecated type="password" mask="(999) 999-99-99" maskChar=" " />);
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -154,7 +154,7 @@ describe('<TextField />', () => {
     });
 
     it('calls handleEyeToggle', () => {
-        const wrapper = shallow<TextField>(<TextField />);
+        const wrapper = shallow<TextFieldDeprecated>(<TextFieldDeprecated />);
 
         wrapper.setState({ isPasswordHidden: false });
         wrapper.instance().handleEyeToggle();
@@ -164,8 +164,8 @@ describe('<TextField />', () => {
 
     it('calls onCustomIconClick handler', () => {
         const handler = jest.fn();
-        const wrapper = shallow<TextField>(
-            <TextField customIcon={<div>custom icon</div>} onCustomIconClick={handler} />
+        const wrapper = shallow<TextFieldDeprecated>(
+            <TextFieldDeprecated customIcon={<div>custom icon</div>} onCustomIconClick={handler} />
         );
 
         wrapper.find('.mfui-text-field__icon-box_custom').simulate('click');

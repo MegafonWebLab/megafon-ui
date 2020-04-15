@@ -1,14 +1,14 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './TextField.less';
-import cnCreate from 'utils/cnCreate';
+import './TextFieldDeprecated.less';
 import * as equal from 'deep-equal';
-import CheckedIcon from 'icons/System/24/Checked_24.svg';
-import ErrorIcon from 'icons/System/24/Cancel_24.svg';
-import Hide from 'icons/Basic/24/Hide_24.svg';
-import Show from 'icons/Basic/24/Show_24.svg';
-import detectTouch from 'utils/detectTouch';
-import InputLabel from '../InputLabel/InputLabel';
+import CheckedIcon from '@megafon/ui-core/dist/icons/system-24-checked_24.svg';
+import ErrorIcon from '@megafon/ui-core/dist/icons/system-24-cancel_24.svg';
+import Hide from '@megafon/ui-core/dist/icons/basic-24-hide_24.svg';
+import Show from '@megafon/ui-core/dist/icons/basic-24-show_24.svg';
+import detectTouch from './detectTouch';
+import { InputLabel, cn as cnCreate } from '@megafon/ui-core';
+
 const InputMask = require('react-input-mask');
 
 export interface ITextFieldProps {
@@ -79,7 +79,7 @@ interface ITextFieldState {
 }
 
 const cn = cnCreate('mfui-text-field');
-class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
+class TextFieldDeprecated extends React.Component<ITextFieldProps, ITextFieldState> {
     static propTypes = {
         label: PropTypes.node,
         color: PropTypes.oneOf(['default', 'white']),
@@ -135,12 +135,12 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         return !(equal(this.props, nextProps) && equal(this.state, nextState));
     }
 
-    /* Method for trigger blur event on input field. Use TextField's 'ref' prop for call. */
+    /* Method for trigger blur event on input field. Use TextFieldDeprecated's 'ref' prop for call. */
     blur = () => {
         return this.inputNode.blur();
     }
 
-    /* Method for trigger focus event on input field. Use TextField's 'ref' prop for call. */
+    /* Method for trigger focus event on input field. Use TextFieldDeprecated's 'ref' prop for call. */
     focus = () => {
         return this.inputNode.focus();
     }
@@ -290,4 +290,4 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     }
 }
 
-export default TextField;
+export default TextFieldDeprecated;
