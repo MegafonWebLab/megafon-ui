@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './BubbleHint.less';
 import { Manager, Popper, Target, Arrow, IPopperProps } from 'react-popper';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 
 interface IBubbleHintProps {

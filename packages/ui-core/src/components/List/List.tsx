@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './List.less';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 
 interface IListProps {
     /** List type */

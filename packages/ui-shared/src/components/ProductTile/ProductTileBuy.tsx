@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate, Button, TextLink } from '@megafon/ui-core';
+import { cnCreate, Button, TextLink } from '@megafon/ui-core';
 import './style/ProductTileBuy.less';
 import { TLinkTargetType } from './ProductTile';
 

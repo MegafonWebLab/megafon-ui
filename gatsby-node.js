@@ -38,14 +38,6 @@ exports.onPreInit = () => {
     fs.writeFile(indexTs, generateIndex([...components, ...utils]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
 }
 
-exports.onPostBuild = () => {
-    console.log('onPostBuild');
-};
-
-exports.onPostBootstrap = () => {
-    console.log('onPostBootstrap');
-};
-
 exports.onCreateWebpackConfig = args => {
     const config = args.getConfig();
     const rule = config.module.rules.find(r => r.test.test(".svg"));

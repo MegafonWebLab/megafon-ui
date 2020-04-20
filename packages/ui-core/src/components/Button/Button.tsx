@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
 import detectTouch from 'utils/detectTouch';

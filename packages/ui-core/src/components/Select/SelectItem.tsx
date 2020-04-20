@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './SelectItem.less';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 
 interface ISelectItemProps {
     /** Icon right */

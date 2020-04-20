@@ -3,6 +3,11 @@
 ## Unreleased
 - **Header**
     - correct header css for style guide, delete h6 props
+- **cn**
+    - add variability to add arguments
+    - rename `cn` to `cnCreate`
+
+## Release 1.4.1
 - **Carousel**
     - update classes prop
 

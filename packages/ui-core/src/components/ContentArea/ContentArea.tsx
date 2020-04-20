@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './ContentArea.less';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 
 export interface IProps {
     /** Background color of the external container */

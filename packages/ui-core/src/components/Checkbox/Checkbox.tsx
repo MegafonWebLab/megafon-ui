@@ -1,6 +1,6 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import './Checkbox.less';
 import CheckedIcon from 'icons/System/16/Checked_16.svg';
 import detectTouch from 'utils/detectTouch';
