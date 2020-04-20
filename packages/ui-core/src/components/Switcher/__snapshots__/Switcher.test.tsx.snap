@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switcher /> layout should render checked switcher 1`] = `
+<div
+  className="mfui-switcher mfui-switcher_checked mfui-switcher_no-touch"
+  onClick={[Function]}
+>
+  <div
+    className="mfui-switcher__pointer"
+  />
+</div>
+`;
+
+exports[`<Switcher /> layout should render disabled switcher 1`] = `
+<div
+  className="mfui-switcher mfui-switcher_disabled mfui-switcher_no-touch"
+  onClick={[Function]}
+>
+  <div
+    className="mfui-switcher__pointer"
+  />
+</div>
+`;
+
+exports[`<Switcher /> layout should render switcher for mobile devices 1`] = `
+<div
+  className="mfui-switcher"
+  onClick={[Function]}
+>
+  <div
+    className="mfui-switcher__pointer"
+  />
+</div>
+`;
+
+exports[`<Switcher /> layout should render switcher with default props 1`] = `
+<div
+  className="mfui-switcher mfui-switcher_no-touch"
+  onClick={[Function]}
+>
+  <div
+    className="mfui-switcher__pointer"
+  />
+</div>
+`;

@@ -10,6 +10,10 @@
 ## Release 1.4.1
 - **Carousel**
     - update classes prop
+- **Switcher**
+    - added new component
+    - added examples and description in .mdx
+    - added tests
 
 ## Release 1.4.0
 - **Button**
