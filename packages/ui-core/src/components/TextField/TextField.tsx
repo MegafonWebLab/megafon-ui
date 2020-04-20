@@ -106,15 +106,16 @@ const TextField = (
         () => isPasswordType && !isPasswordHidden,
         [isPasswordHidden, isPasswordType]
     );
+    const isTouch: boolean = useMemo(() => detectTouch(), []);
+
     const togglePasswordHiding = useCallback(
         () => hidePassword(prevPassState => !prevPassState),
         [isPasswordHidden]
     );
-    const isTouch: boolean = useMemo(() => detectTouch(), []);
-    const onIconClick = e => {
+    const onIconClick = useCallback(e => {
         isPasswordType && togglePasswordHiding();
         onCustomIconClick && onCustomIconClick(e);
-    };
+    }, [isPasswordType, togglePasswordHiding, onCustomIconClick]);
 
     const inputParams = {
         className: cn('field', { 'big-space': bigSpace }),
@@ -129,6 +130,7 @@ const TextField = (
         onFocus,
         onKeyUp,
         placeholder,
+        required,
         type: isVisiblePassword ? 'text' : type,
         value,
     };
