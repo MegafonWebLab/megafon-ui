@@ -5,6 +5,10 @@
     - correct header css for style guide, delete h6 props
 - **Carousel**
     - update classes prop
+- **Switcher**
+    - added new component
+    - added examples and description in .mdx
+    - added tests
 
 ## Release 1.4.0
 - **Button**
