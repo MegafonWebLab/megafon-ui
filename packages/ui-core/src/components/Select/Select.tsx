@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Select.less';
 import SelectItem from './SelectItem';
 import * as equal from 'deep-equal';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 

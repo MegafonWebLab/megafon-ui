@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './TextField.less';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import * as equal from 'deep-equal';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
 import ErrorIcon from 'icons/System/24/Cancel_24.svg';

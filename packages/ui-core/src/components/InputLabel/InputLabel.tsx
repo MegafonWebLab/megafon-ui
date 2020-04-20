@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import './InputLabel.less';
 import Paragraph from '../Paragraph/Paragraph';
 

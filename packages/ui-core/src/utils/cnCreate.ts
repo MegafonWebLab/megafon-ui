@@ -75,7 +75,7 @@ function cnCreate(blockName: string) {
         }
 
         const classParams: IClassSet = {};
-        let prefixKey, withoutPrefix;
+        let prefixKey = '', withoutPrefix = '';
 
         for (const key in params) {
             if (typeof params[key] === 'boolean' && params[key]) {

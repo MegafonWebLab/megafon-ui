@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './ProductCardFeaturesTop.less';
-import { Header, cn as cnCreate, DropdownSocialList } from '@megafon/ui-core';
+import { Header, cnCreate, DropdownSocialList } from '@megafon/ui-core';
 import { IFirstParamChildren } from './ProductCardFeatures';
 
 interface IProductCardFeaturesTopProps {
