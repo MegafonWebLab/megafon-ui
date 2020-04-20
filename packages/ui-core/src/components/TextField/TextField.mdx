@@ -6,6 +6,7 @@ route: components/textfield
 
 import { Playground, Props } from 'docz';
 import TextField from './TextField';
+import { TextFieldWrapper } from './TextField.docz';
 
 # TextField
 
@@ -16,5 +17,101 @@ import TextField from './TextField';
 ## Basic usage
 
 <Playground>
-    <TextField />
+    <TextFieldWrapper>
+        <TextField name="name" />
+    </TextFieldWrapper>
+</Playground>
+
+## Required field
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" required label="Номер телефона" />
+    </TextFieldWrapper>
+</Playground>
+
+## Mask usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            placeholder="+7 (999) 999-99-99"
+            mask="+7 (999) 999-99-99"
+            maskChar="_"
+            label="Phone number"
+            id="2"
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Error usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField verification="error" verificationText="Name is required" />
+    </TextFieldWrapper>
+</Playground>
+
+## Valid usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField verification="valid" />
+    </TextFieldWrapper>
+</Playground>
+
+## Comment usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField commentText="Comment" />
+    </TextFieldWrapper>
+</Playground>
+
+## Success text usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField hideIcon={true} verification="valid" verificationText="Field is correct" />
+    </TextFieldWrapper>
+</Playground>
+
+## Max length text usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField maxLength={10} />
+    </TextFieldWrapper>
+</Playground>
+
+## Disable usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField disabled={true} />
+    </TextFieldWrapper>
+</Playground>
+
+## Password type usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" placeholder="password" type="password" />
+    </TextFieldWrapper>
+</Playground>
+
+## Increased size of space between words usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField bigSpace={true} />
+    </TextFieldWrapper>
+</Playground>
+
+## With externally set value
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField value='initial value' />
+    </TextFieldWrapper>
 </Playground>

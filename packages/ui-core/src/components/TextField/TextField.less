@@ -1,0 +1,204 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-text-field');
+
+@{b} {
+    .fontFamily();
+    color: @soggyAsphalt;
+    font-size: 15px;
+    line-height: 20px;
+
+    &__field {
+        font-family: inherit;
+        position: relative;
+        z-index: 1;
+        font-size: 15px;
+        height: 48px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none;
+        cursor: pointer;
+        padding: 13px 20px 13px 20px;
+        line-height: 20px;
+        background-color: transparent;
+        opacity: 1;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-shadow: none;
+        overflow: auto;
+        margin: 0;
+    }
+    input::-webkit-input-placeholder {
+        color: lighten(@soggyAsphalt, 50%);
+    }
+    input::-moz-placeholder {
+        color: lighten(@soggyAsphalt, 50%);
+    }
+    input:-moz-placeholder {
+        color: lighten(@soggyAsphalt, 50%);
+    }
+    input:-ms-input-placeholder {
+        color: lighten(@soggyAsphalt, 50%);
+    }
+    input::-ms-clear, input::-ms-reveal {
+        display: none;
+    }
+    &__field_big-space {
+        word-spacing: 4px;
+    }
+    &__field-wrapper {
+        position: relative;
+        flex: 1 0 100px;
+        background: @clearWhite;
+    }
+
+    &__icon-box {
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        padding-right: 16px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+    }
+    &__icon-box_password {
+        z-index: 3;
+    }
+    &__icon-box_custom {
+        z-index: 3;
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+        display: block;
+        user-select: none;
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 4px;
+    }
+
+    &__require-mark {
+        font-size: 20px;
+        color: @red;
+        margin-left: 1px;
+    }
+    &__require-circle {
+        width: 20px;
+        background: @black80;
+        height: 20px;
+        border-radius: 50%;
+    }
+}
+
+//mod theme:
+@{b} {
+    &_theme_default & {
+        &__field {
+            color: @soggyAsphalt;
+            border: 1px solid @spbSky2;
+            background-color: transparent;
+        }
+        &__field-wrapper_no-touch:hover @{b}__field,
+        &__field:focus {
+            border-color: @soggyAsphalt;
+        }
+    }
+
+    &_theme_default&_valid & {
+        &__field-wrapper_no-touch:hover @{b}__field,
+        &__field {
+            border-color: @green;
+        }
+        &__icon {
+            fill: @green;
+        }
+    }
+
+    &_theme_default&_error & {
+        &__field-wrapper:hover @{b}__field,
+        &__field {
+            border-color: @fury;
+        }
+        &__icon {
+            fill: @fury;
+        }
+        &__text_error {
+            color: @fury;
+        }
+    }
+
+    &_theme_white & {
+        &__field {
+            color: @soggyAsphalt;
+            border: 1px solid @clearWhite;
+        }
+        &__field-wrapper:hover @{b}__field,
+        &__field:focus {
+            border-color: @soggyAsphalt;
+        }
+    }
+    &_theme_white&_error & {
+        &__field-wrapper:hover @{b}__field,
+        &__field {
+            border-color: @fury;
+        }
+        &__icon {
+            fill: @fury;
+        }
+        &__text_error {
+            color: @fury;
+        }
+    }
+
+    &__text_success {
+        color: @green;
+    }
+}
+
+//mod disabled
+@{b} {
+    &_disabled & {
+        &__field-wrapper {
+            background-color: @spbSky1 !important;
+        }
+        &__field {
+            border-color: @spbSky1 !important;
+            cursor: default !important;
+            color: @soggyAsphalt !important;
+            -webkit-text-fill-color: @soggyAsphalt !important;
+        }
+        &__icon-box {
+            cursor: default !important;
+        }
+    }
+}
+
+//mod icon
+@{b} {
+    &_icon &__field {
+        padding-right: 55px;
+    }
+    &_icon&_size_large &__field {
+        @media @desktop {
+            padding-right: 65px;
+        }
+    }
+}
+
+//mod password
+@{b} {
+    &_password &__field {
+        font: small-caption;
+        font-size: 19px;
+    }
+}
