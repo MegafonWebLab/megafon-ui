@@ -4,6 +4,8 @@ import './Switcher.less';
 import detectTouch from 'utils/detectTouch';
 
 interface ISwitcherProps {
+    /** Custom classname */
+    className?: string;
     /** Checked */
     checked?: boolean;
     /** Disabled */
@@ -13,10 +15,17 @@ interface ISwitcherProps {
 }
 
 const cn = cnCreate('mfui-switcher');
-const Switcher: React.FC<ISwitcherProps> = ({ checked = false, disabled = false, onChange}) => {
+const Switcher: React.FC<ISwitcherProps> = props => {
+    const {
+        className,
+        checked = false,
+        disabled = false,
+        onChange,
+    } = props;
+
     const isTouch: boolean = detectTouch();
 
-    const handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
+    const handleChange = (e: React.MouseEvent<HTMLDivElement>): void => {
         if (disabled) {
             return;
         }
@@ -32,7 +41,8 @@ const Switcher: React.FC<ISwitcherProps> = ({ checked = false, disabled = false,
                     checked,
                     disabled,
                     'no-touch': !isTouch,
-                }
+                },
+                className
             )}
             onClick={handleChange}
         >
