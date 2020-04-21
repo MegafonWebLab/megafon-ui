@@ -11,7 +11,7 @@ interface ISwitcherProps {
     /** Disabled */
     disabled?: boolean;
     /** onChange handler */
-    onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onChange?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const cn = cnCreate('mfui-switcher');
