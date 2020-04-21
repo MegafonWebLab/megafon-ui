@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## Release 1.5.1
 - **Carousel**
     - add onSwipe callback
 
