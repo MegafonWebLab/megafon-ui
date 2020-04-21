@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import './Switcher.less';
 import detectTouch from 'utils/detectTouch';
 
@@ -36,7 +36,6 @@ const Switcher: React.FC<ISwitcherProps> = props => {
     return (
         <div
             className={cn(
-                '',
                 {
                     checked,
                     disabled,
