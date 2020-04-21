@@ -6,6 +6,8 @@
 - **cn**
     - add variability to add arguments
     - rename `cn` to `cnCreate`
+- **Carousel**
+    - add onSwipe callback
 
 ## Release 1.4.1
 - **Carousel**
