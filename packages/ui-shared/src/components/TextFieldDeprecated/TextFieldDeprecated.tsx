@@ -6,7 +6,7 @@ import CheckedIcon from 'icons/System/24/Checked_24.svg';
 import ErrorIcon from 'icons/System/24/Cancel_24.svg';
 import Hide from 'icons/Basic/24/Hide_24.svg';
 import Show from 'icons/Basic/24/Show_24.svg';
-import { InputLabel, cn as cnCreate, detectTouch } from '@megafon/ui-core';
+import { InputLabel, cnCreate, detectTouch } from '@megafon/ui-core';
 
 const InputMask = require('react-input-mask');
 

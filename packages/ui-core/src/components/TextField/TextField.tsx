@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useCallback, useState, useMemo } from 'react';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import * as equal from 'deep-equal';
 import detectTouch from 'utils/detectTouch';
 import './TextField.less';
