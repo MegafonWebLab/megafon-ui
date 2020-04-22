@@ -17,9 +17,7 @@ describe('<BubbleHint />', () => {
 
     it('it renders BubbleHint', () => {
         jest.doMock('../../utils/detectTouch', () => {
-            return {
-                default: jest.fn(() => true),
-            };
+            return jest.fn(() => true);
         });
 
         // tslint:disable-next-line:no-shadowed-variable

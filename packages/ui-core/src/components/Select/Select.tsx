@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Select.less';
 import SelectItem from './SelectItem';
-import * as equal from 'deep-equal';
+import equal from 'deep-equal';
 import cnCreate from 'utils/cn';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
