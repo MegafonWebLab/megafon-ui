@@ -5,6 +5,8 @@
     - correct header css for style guide, delete h6 props
 - **Carousel**
     - update classes prop
+- **Checkbox**
+    - checkbox with small label taken out as a separate example
 
 ## Release 1.4.0
 - **Button**
