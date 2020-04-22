@@ -43,6 +43,7 @@ export interface ICarouselProps {
     onClickPrev?: () => void;
     onAfterChange?: (index: number) => void;
     onBeforeChange?: (currentIndex: number, nextIndex: number) => void;
+    onSwipe?: (direction: string) => void;
 }
 
 interface ICarouselState {
@@ -259,6 +260,11 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         );
     }
 
+    handleSwipe = (direction: string): void => {
+        const { onSwipe } = this.props;
+        onSwipe && onSwipe(direction);
+    }
+
     resizeEvents = (): void => {
         this.handleCarouselParams();
         this.checkIfSlidePositionWasLost();
@@ -303,6 +309,7 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
                     ref={this.getSlider}
                     afterChange={this.handleChange}
                     beforeChange={onBeforeChange}
+                    onSwipe={this.handleSwipe}
                 >
                     {children}
                 </Slider>

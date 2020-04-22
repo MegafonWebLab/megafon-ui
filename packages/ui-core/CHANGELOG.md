@@ -10,6 +10,8 @@
     - added new component
     - added examples and description in .mdx
     - added tests
+- **Carousel**
+    - add onSwipe callback
 
 ## Release 1.4.1
 - **Carousel**
