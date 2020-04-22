@@ -6,6 +6,10 @@
 - **cn**
     - add variability to add arguments
     - rename `cn` to `cnCreate`
+- **Switcher**
+    - added new component
+    - added examples and description in .mdx
+    - added tests
 - **Carousel**
     - add onSwipe callback
 
