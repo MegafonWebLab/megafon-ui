@@ -1,33 +1,12 @@
 # Changelog
 
 ## Unreleased
+- **build**
+    - change typescript config for interoperability between CommonJS and ES modules
+    - fix deep-equal import
+    - fix enzyme adapter import
 - **package.json**
-    - remove babel config from jest config
-    - add tsconfig to jest config
-
-- **setupEnzyme.ts**
-    - fix es modules import
-
-- **tsconfig.json**
-    - fix settings
-
-- **TextField.tsx**
-    - fix deep-equal import
-
-- **Textarea.tsx**
-    - fix deep-equal import
-
-- **Select.tsx**
-    - fix deep-equal import
-
-- **BubbleHint.test.tsx**
-    - fix detectTouch mock
-
-- **Button/Button.test.tsx**
-    - fix detectTouch mock
-
-- **TextField.test.tsx**
-    - fix detectTouch mock
+    - replace babel config with tsconfig file in jest compile options
 
 ## Release 1.5.0
 - **cn**
