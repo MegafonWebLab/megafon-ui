@@ -4,9 +4,7 @@ import TextField from './TextField';
 import detectTouch from 'utils/detectTouch';
 import { ITextFieldProps } from './TextField';
 
-jest.mock('utils/detectTouch', () => ({
-    default: jest.fn().mockReturnValue(false),
-}));
+jest.mock('utils/detectTouch', () => jest.fn().mockReturnValue(false));
 
 jest.mock('react-input-mask', () => {
     return {

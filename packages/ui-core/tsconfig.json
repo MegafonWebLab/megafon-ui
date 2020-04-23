@@ -3,7 +3,6 @@
     "baseUrl": "./src",
     "strictNullChecks": true,
     "experimentalDecorators": true,
-    "jsx": "preserve",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noImplicitAny": false,
@@ -12,7 +11,11 @@
       "es2015",
       "es2017",
       "dom"
-    ]
+    ],
+    "jsx": "react",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "typings/**/*",

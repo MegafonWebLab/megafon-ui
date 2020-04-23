@@ -25,9 +25,7 @@ describe('<Button />', () => {
 
     it('it renders Button on touch devices', () => {
         jest.doMock('../../utils/detectTouch', () => {
-            return {
-                default: jest.fn(() => true),
-            };
+            return jest.fn(() => true);
         });
 
         const SomeButton = require('./Button').default;

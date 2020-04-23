@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- **build**
+    - change typescript config for interoperability between CommonJS and ES modules
+    - fix deep-equal import
+    - fix enzyme adapter import
+- **package.json**
+    - replace babel config with tsconfig file in jest compile options
 
 ## Release 1.5.1
 - **Carousel**
