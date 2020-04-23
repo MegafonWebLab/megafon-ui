@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+## Release 1.5.2
 - **build**
     - change typescript config for interoperability between CommonJS and ES modules
     - fix deep-equal import
