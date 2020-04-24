@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useCallback, useState, useMemo } from 'react';
+import * as PropTypes from 'prop-types';
+import { useCallback, useState, useMemo, useRef } from 'react';
 import cnCreate from 'utils/cnCreate';
-import * as equal from 'deep-equal';
 import detectTouch from 'utils/detectTouch';
 import './TextField.less';
 import InputLabel from '../InputLabel/InputLabel';
@@ -15,8 +15,6 @@ const InputMask = require('react-input-mask');
 export interface ITextFieldProps {
     /** Field title */
     label?: string;
-    /** verification text */
-    verificationText?: string;
     /** Comment text */
     commentText?: string;
     /** Type - property tag <input> */
@@ -27,6 +25,8 @@ export interface ITextFieldProps {
     hideIcon?: boolean;
     /** Validation passed */
     verification?: 'valid' | 'error';
+    /** verification text */
+    verificationText?: string;
     /** Disable field */
     disabled?: boolean;
     /** Required field */
@@ -52,26 +52,26 @@ export interface ITextFieldProps {
     /** Custom classname */
     className?: string;
     /** Change handler */
-    onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     /** Blur handler */
-    onBlur?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
     /** Focus handler */
-    onFocus?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
     /** KeyUp handler */
-    onKeyUp?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     /** Custom icon click handler */
-    onCustomIconClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const cn = cnCreate('mfui-text-field');
-const TextField = (
+const TextField: React.FC<ITextFieldProps> = (
     {
         bigSpace,
         commentText,
         className,
         customIcon,
         disabled,
-        hideIcon = false,
+        hideIcon,
         id,
         label,
         mask,
@@ -85,21 +85,21 @@ const TextField = (
         onCustomIconClick,
         onFocus,
         onKeyUp,
-        theme = 'default',
-        type = 'text',
+        theme,
+        type,
         value,
         verification,
         verificationText,
     }
-): React.FunctionComponentElement<ITextFieldProps> => {
-    let inputEl: HTMLInputElement | null = null;
-    const setRef = useCallback(input => inputEl = input, [inputEl]);
+) => {
+    const inputEl: React.MutableRefObject<HTMLInputElement | null> = useRef(null);
+    const setRef = useCallback(input => inputEl.current = input, [inputEl]);
     // @ts-ignore
-    const focus = useCallback(() => inputEl && inputEl.focus(), [inputEl]);
+    const handleFocus = useCallback(() => inputEl.current && inputEl.current.focus(), [inputEl]);
     // @ts-ignore
-    const blur = useCallback(() => inputEl && inputEl.blur(), [inputEl]);
+    const handleBlur = useCallback(() => inputEl.current && inputEl.current.blur(), [inputEl]);
 
-    const [isPasswordHidden, hidePassword] = useState(true);
+    const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
     const isVisiblePassword: boolean = useMemo(
@@ -109,10 +109,10 @@ const TextField = (
     const isTouch: boolean = useMemo(() => detectTouch(), []);
 
     const togglePasswordHiding = useCallback(
-        () => hidePassword(prevPassState => !prevPassState),
+        () => setPasswordHidden(prevPassState => !prevPassState),
         [isPasswordHidden]
     );
-    const onIconClick = useCallback(e => {
+    const handleIconClick = useCallback(e => {
         isPasswordType && togglePasswordHiding();
         onCustomIconClick && onCustomIconClick(e);
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick]);
@@ -135,39 +135,36 @@ const TextField = (
         value,
     };
 
-    const renderIcon = () => {
+    const renderIcon = (): React.ReactNode | null => {
+        switch (true) {
+            case !!customIcon:
+                return customIcon;
+            case verification === 'error':
+                return <ErrorIcon className={cn('icon')} />;
+            case verification === 'valid':
+                return <CheckedIcon className={cn('icon')} />;
+            case isPasswordType && isPasswordHidden:
+                return <Hide className={cn('icon')} />;
+            case isPasswordType && !isPasswordHidden:
+                return <Show className={cn('icon')} />;
+            case required:
+                return <div className={cn('require-circle')} />;
+        }
+        return null;
+    };
+
+    const renderIconBlock = () => {
         if (hideIcon) {
             return null;
         }
 
-        let icon: React.ReactNode | undefined;
-        switch (true) {
-            case !!customIcon:
-                icon = customIcon;
-                break;
-            case verification === 'error':
-                icon = <ErrorIcon className={cn('icon')} />;
-                break;
-            case verification === 'valid':
-                icon = <CheckedIcon className={cn('icon')} />;
-                break;
-            case isPasswordType && isPasswordHidden:
-                icon = <Hide className={cn('icon')} />;
-                break;
-            case isPasswordType && !isPasswordHidden:
-                icon = <Show className={cn('icon')} />;
-                break;
-            case required:
-                icon = <div className={cn('require-circle')} />;
-                break;
-            default:
-                break;
-        }
+        const icon: React.ReactNode | null = renderIcon();
+
         if (icon) {
             return (
                 <div
                     className={cn('icon-box', { password: isPasswordType, custom: !!customIcon })}
-                    onClick={onIconClick}
+                    onClick={handleIconClick}
                 >
                     {icon}
                 </div>
@@ -196,21 +193,53 @@ const TextField = (
                     ? <InputMask {...inputParams} inputRef={setRef} />
                     : <input {...inputParams} ref={setRef} />
                 }
-                {renderIcon()}
+                {renderIconBlock()}
             </div>
-            {verificationText && <div
-                    className={cn('text', { error: verification === 'error', success: verification === 'valid' })}
-                    dangerouslySetInnerHTML={{ __html: verificationText }}
-                />
+            {verificationText &&
+                <div className={cn('text', {
+                    error: verification === 'error',
+                    success: verification === 'valid',
+                })}>
+                    {verificationText}
+                </div>
             }
             {commentText && <div className={cn('text')}>{commentText}</div>}
         </div>
     );
 };
 
-const areEqual = (
-    prevProps: ITextFieldProps,
-    nextProps: ITextFieldProps
-): boolean => equal(prevProps, nextProps);
+// @ts-ignore
+TextField.defaultProps = {
+    theme: 'default',
+    type: 'text',
+    hideIcon: false,
+};
 
-export default React.memo<any>(TextField, areEqual);
+// @ts-ignore
+TextField.propTypes = {
+    label: PropTypes.string,
+    theme: PropTypes.oneOf(['default', 'white']),
+    commentText: PropTypes.string,
+    hideIcon: PropTypes.bool,
+    verification: PropTypes.oneOf(['valid', 'error']),
+    disabled: PropTypes.bool,
+    required: PropTypes.bool,
+    type: PropTypes.oneOf(['text', 'password', 'tel', 'email']),
+    name: PropTypes.string,
+    placeholder: PropTypes.string,
+    id: PropTypes.string,
+    value: PropTypes.string,
+    maxLength: PropTypes.number,
+    customIcon: PropTypes.element,
+    mask: PropTypes.string,
+    maskChar: PropTypes.string,
+    bigSpace: PropTypes.bool,
+    className: PropTypes.string,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
+    onKeyUp: PropTypes.func,
+    onCustomIconClick: PropTypes.func,
+};
+
+export default TextField;
