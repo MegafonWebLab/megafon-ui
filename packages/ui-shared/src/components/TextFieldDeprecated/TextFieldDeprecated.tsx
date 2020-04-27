@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './TextFieldDeprecated.less';
-import * as equal from 'deep-equal';
+import equal from 'deep-equal';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
 import ErrorIcon from 'icons/System/24/Cancel_24.svg';
 import Hide from 'icons/Basic/24/Hide_24.svg';
