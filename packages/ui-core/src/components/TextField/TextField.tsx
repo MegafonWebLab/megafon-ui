@@ -208,14 +208,12 @@ const TextField: React.FC<ITextFieldProps> = (
     );
 };
 
-// @ts-ignore
 TextField.defaultProps = {
     theme: 'default',
     type: 'text',
     hideIcon: false,
 };
 
-// @ts-ignore
 TextField.propTypes = {
     label: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'white']),
