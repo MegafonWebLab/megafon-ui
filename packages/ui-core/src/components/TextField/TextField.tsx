@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { useCallback, useState, useMemo, useRef } from 'react';
+import { useCallback, useState, useMemo, forwardRef } from 'react';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import './TextField.less';
@@ -31,6 +31,8 @@ export interface ITextFieldProps {
     disabled?: boolean;
     /** Required field */
     required?: boolean;
+    /** custom ref */
+    ref?: any;
     /** Field name */
     name?: string;
     /** Placeholder */
@@ -64,8 +66,8 @@ export interface ITextFieldProps {
 }
 
 const cn = cnCreate('mfui-text-field');
-const TextField: React.FC<ITextFieldProps> = (
-    {
+const TextField = forwardRef<HTMLInputElement, ITextFieldProps>(
+    ({
         bigSpace,
         commentText,
         className,
@@ -90,14 +92,17 @@ const TextField: React.FC<ITextFieldProps> = (
         value,
         verification,
         verificationText,
-    }
-) => {
-    const inputEl: React.MutableRefObject<HTMLInputElement | null> = useRef(null);
-    const setRef = useCallback(input => inputEl.current = input, [inputEl]);
-    // @ts-ignore
-    const handleFocus = useCallback(() => inputEl.current && inputEl.current.focus(), [inputEl]);
-    // @ts-ignore
-    const handleBlur = useCallback(() => inputEl.current && inputEl.current.blur(), [inputEl]);
+    },
+     ref
+    ) => {
+
+    const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
+        onFocus && onFocus(e);
+    }, [onFocus]);
+
+    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
+        onBlur && onBlur(e);
+    }, [onBlur]);
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
 
@@ -125,9 +130,9 @@ const TextField: React.FC<ITextFieldProps> = (
         maskChar,
         maxLength,
         name,
-        onBlur,
+        onBlur: handleBlur,
         onChange,
-        onFocus,
+        onFocus: handleFocus,
         onKeyUp,
         placeholder,
         required,
@@ -190,8 +195,8 @@ const TextField: React.FC<ITextFieldProps> = (
                 className={cn('field-wrapper', { 'no-touch': !isTouch })}
             >
                 {mask
-                    ? <InputMask {...inputParams} inputRef={setRef} />
-                    : <input {...inputParams} ref={setRef} />
+                    ? <InputMask {...inputParams} inputRef={ref} />
+                    : <input {...inputParams} ref={ref} />
                 }
                 {renderIconBlock()}
             </div>
@@ -206,7 +211,7 @@ const TextField: React.FC<ITextFieldProps> = (
             {commentText && <div className={cn('text')}>{commentText}</div>}
         </div>
     );
-};
+});
 
 TextField.defaultProps = {
     theme: 'default',
@@ -238,6 +243,7 @@ TextField.propTypes = {
     onFocus: PropTypes.func,
     onKeyUp: PropTypes.func,
     onCustomIconClick: PropTypes.func,
+    ref: PropTypes.any,
 };
 
 export default TextField;
