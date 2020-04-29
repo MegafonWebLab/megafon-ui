@@ -7,8 +7,8 @@ const indexTs = join(srcPath, 'index.ts');
 const doczReg = '../packages/**/*.docz.{tsx,ts}';
 const testsReg = '../packages/**/*.test.{tsx,ts}';
 
-const generateIndex = files => {
-    const components = files.map(file => {
+const generateIndex = (componentsFiles, utilsFiles) => {
+    const parseFiles = (files) => files.map(file => {
         const parsed = parse(file);
         return {
             path: file.replace('../packages/ui-core/src/', './'),
@@ -16,13 +16,25 @@ const generateIndex = files => {
             ext: parsed.ext
         }
     });
+
+    const components = parseFiles(componentsFiles);
+    const utils = parseFiles(utilsFiles);
+
     const collator = new Intl.Collator();
-    const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
-    const imports = sorted.map(({ name, path: cPath, ext: extension }) => {
+    const fileNameComparator = (a, b) => collator.compare(a.name, b.name);
+
+    const sortedComponents = components.sort(fileNameComparator);
+    const sortedUtils = utils.sort(fileNameComparator);
+
+    const componentsImports = sortedComponents.map(({ name, path: cPath, ext: extension }) => {
+        return `export { default as ${name}, I${name}Props } from '${cPath.replace(extension, '')}';`;
+    });
+
+    const utilsImports = sortedUtils.map(({ name, path: cPath, ext: extension }) => {
         return `export { default as ${name} } from '${cPath.replace(extension, '')}';`;
     });
 
-    return `${imports.join('\n')}\n`;
+    return `${[...componentsImports, ...utilsImports].join('\n')}`;
 };
 
 const createReadmeMdx = () => {
@@ -35,7 +47,7 @@ exports.onPreInit = () => {
 
     const components = glob.sync('../packages/ui-core/src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
     const utils = glob.sync('../packages/ui-core/src/utils/*.ts', { ignore: testsReg });
-    fs.writeFile(indexTs, generateIndex([...components, ...utils]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
+    fs.writeFile(indexTs, generateIndex(components, utils), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
 }
 
 exports.onCreateWebpackConfig = args => {

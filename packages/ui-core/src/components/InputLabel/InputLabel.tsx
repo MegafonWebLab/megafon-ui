@@ -4,7 +4,7 @@ import cnCreate from 'utils/cnCreate';
 import './InputLabel.less';
 import Paragraph from '../Paragraph/Paragraph';
 
-interface IInputLabelProps {
+export interface IInputLabelProps {
     htmlFor?: string;
     children: React.ReactNode;
 }

@@ -6,7 +6,7 @@ import cnCreate from 'utils/cnCreate';
 const GridSizeValues = PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);
 export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
 
-export interface IGridColumn {
+export interface IGridColumnProps {
     /** Size of columns on wide screens */
     wide?: TGridSizeValues;
     /** Size of columns on desktop screens */
@@ -52,7 +52,7 @@ export interface IGridColumn {
 }
 
 const cn = cnCreate('mfui-grid-column');
-class GridColumn extends React.Component<IGridColumn, {}> {
+class GridColumn extends React.Component<IGridColumnProps, {}> {
     static propTypes = {
         wide: GridSizeValues,
         desktop: GridSizeValues,

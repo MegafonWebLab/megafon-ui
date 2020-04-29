@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Grid.less';
 import cnCreate from 'utils/cnCreate';
-import { IGridColumn } from './GridColumn';
+import { IGridColumnProps } from './GridColumn';
 
-interface IGridProps {
+export interface IGridProps {
     /** Alignment of all columns by horizontal axis */
     hAlign?: 'right' | 'center' | 'between' | 'around';
     /** Alignment of all columns by vertical axis */
@@ -15,7 +15,7 @@ interface IGridProps {
     guttersBottom?: 'large' | 'medium';
     /** Transfering of columns onto multiple lines */
     multiRow?: boolean;
-    children: Array<React.ReactElement<IGridColumn>>;
+    children: Array<React.ReactElement<IGridColumnProps>>;
 }
 
 const cn = cnCreate('mfui-grid');

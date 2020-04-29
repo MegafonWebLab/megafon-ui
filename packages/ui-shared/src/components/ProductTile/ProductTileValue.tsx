@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTileValue.less';
 
-interface IProductTileValueProps {
+export interface IProductTileValueProps {
     /** Value */
     value: string;
     /** hAlign */

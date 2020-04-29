@@ -180,7 +180,7 @@ const generateIndex = files => {
     const collator = new Intl.Collator();
     const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
     const imports = sorted.map(({ name, path: cPath, ext }) => {
-        return `export { default as ${name} } from '${cPath.replace(
+        return `export { default as ${name}, I${name}Props } from '${cPath.replace(
             ext,
             ""
         )}';`;

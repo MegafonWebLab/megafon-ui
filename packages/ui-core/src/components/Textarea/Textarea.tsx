@@ -6,7 +6,7 @@ import * as equal from 'deep-equal';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
-interface ITextareaProps {
+export interface ITextareaProps {
     /** Field title */
     label?: React.ReactNode;
     /** Field color scheme */

@@ -1,10 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate, Button, TextLink } from '@megafon/ui-core';
+import { cnCreate, Button, IButtonProps, TextLink } from '@megafon/ui-core';
 import './style/ProductTileBuy.less';
 import { TLinkTargetType } from './ProductTile';
-
-type IButtonProps = Button['props'];
 
 export interface IProductTileBuyProps {
     /** Class name */

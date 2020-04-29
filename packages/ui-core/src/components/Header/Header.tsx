@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Header.less';
 import cnCreate from 'utils/cnCreate';
 
-interface IHeaderProps {
+export interface IHeaderProps {
     /** Tag */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Color */

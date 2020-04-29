@@ -14,7 +14,7 @@ export interface ISelectCallbackItem {
     data?: {};
 }
 
-interface ISelectProps {
+export interface ISelectProps {
     /** Field title */
     label?: React.ReactNode;
     /** Html id attribute */

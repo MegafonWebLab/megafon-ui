@@ -152,7 +152,7 @@ gulp.task('ts', () => {
 gulp.task('main', done => {
     const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
     const utils = glob.sync('src/utils/*.ts', { ignore: testsReg });
-    fs.writeFile(indexTs, generateIndex([...components, ...utils]), done);
+    fs.writeFile(indexTs, generateIndex(components, utils), done);
 });
 
 gulp.task('build', gulp.series(
@@ -165,8 +165,8 @@ gulp.task('build', gulp.series(
 /**
  * Helpers
  */
-const generateIndex = files => {
-    const components = files.map(file => {
+const generateIndex = (componentsFiles, utilsFiles) => {
+    const parseFiles = (files) => files.map(file => {
         const parsed = path.parse(file);
         return {
             path: file.replace('src/', './'),
@@ -174,13 +174,25 @@ const generateIndex = files => {
             ext: parsed.ext
         }
     });
+
+    const components = parseFiles(componentsFiles);
+    const utils = parseFiles(utilsFiles);
+
     const collator = new Intl.Collator();
-    const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
-    const imports = sorted.map(({ name, path: cPath, ext: extension }) => {
+    const fileNameComparator = (a, b) => collator.compare(a.name, b.name);
+
+    const sortedComponents = components.sort(fileNameComparator);
+    const sortedUtils = utils.sort(fileNameComparator);
+
+    const componentsImports = sortedComponents.map(({ name, path: cPath, ext: extension }) => {
+        return `export { default as ${name}, I${name}Props } from '${cPath.replace(extension, '')}';`;
+    });
+
+    const utilsImports = sortedUtils.map(({ name, path: cPath, ext: extension }) => {
         return `export { default as ${name} } from '${cPath.replace(extension, '')}';`;
     });
 
-    return `${imports.join('\n')}`;
+    return `${[...componentsImports, ...utilsImports].join('\n')}`;
 };
 
 const changePipe = fn => through.obj(async function (file, encoding, next) {

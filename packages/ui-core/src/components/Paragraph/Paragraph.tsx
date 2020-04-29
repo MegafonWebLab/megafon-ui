@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Paragraph.less';
 import cnCreate from 'utils/cnCreate';
 
-interface IParagraphProps {
+export interface IParagraphProps {
     /** Align text horizontally */
     hAlign?: 'center' | 'right';
     /** Text weight */

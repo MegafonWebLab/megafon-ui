@@ -15,7 +15,7 @@ interface IAdditionalParams {
     unit: string | JSX.Element;
 }
 
-interface IProductCardInfoProps {
+export interface IProductCardInfoProps {
     /** Title */
     title: string;
     /** Link */

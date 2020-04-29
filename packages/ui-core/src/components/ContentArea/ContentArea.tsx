@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 import cnCreate from 'utils/cnCreate';
 
-export interface IProps {
+export interface IContentAreaProps {
     /** Background color of the external container */
     outerBackgroundColor?: 'white' | 'transparent';
     /** Background color of the internal container */
@@ -17,7 +17,7 @@ export interface IProps {
 }
 
 const cn = cnCreate('mfui-content-area');
-class ContentArea extends React.Component<IProps, {}> {
+class ContentArea extends React.Component<IContentAreaProps, {}> {
     static propTypes = {
         outerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
         innerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),

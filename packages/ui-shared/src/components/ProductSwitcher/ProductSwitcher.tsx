@@ -9,7 +9,7 @@ interface IItem {
     unit?: string;
 }
 
-interface IProductSwitcherProps {
+export interface IProductSwitcherProps {
     /** Class name */
     items: IItem[];
     /** Start index */

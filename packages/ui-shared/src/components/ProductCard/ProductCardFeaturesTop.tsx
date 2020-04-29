@@ -4,7 +4,7 @@ import './ProductCardFeaturesTop.less';
 import { Header, cnCreate, DropdownSocialList } from '@megafon/ui-core';
 import { IFirstParamChildren } from './ProductCardFeatures';
 
-interface IProductCardFeaturesTopProps {
+export interface IProductCardFeaturesTopProps {
     /** Custom class name */
     className?: string;
     /** Title */

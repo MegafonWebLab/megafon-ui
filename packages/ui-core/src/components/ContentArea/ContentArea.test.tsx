@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import ContentArea, { IProps } from './ContentArea';
+import ContentArea, { IContentAreaProps } from './ContentArea';
 
-const props: Partial<IProps> = {
+const props: Partial<IContentAreaProps> = {
     outerBackgroundColor: 'white',
     innerBackgroundColor: 'white',
     innerPadding: 'none',
@@ -11,7 +11,7 @@ const props: Partial<IProps> = {
 };
 
 describe('<ContentArea />', () => {
-    const getWrapper = (additionalProps?: Partial<IProps>) => shallow(
+    const getWrapper = (additionalProps?: Partial<IContentAreaProps>) => shallow(
         <ContentArea
             {...additionalProps}
         >

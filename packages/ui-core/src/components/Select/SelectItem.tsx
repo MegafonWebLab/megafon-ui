@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './SelectItem.less';
 import cnCreate from 'utils/cnCreate';
 
-interface ISelectItemProps {
+export interface ISelectItemProps {
     /** Icon right */
     rightIcon?: JSX.Element;
     /** Icon left */
