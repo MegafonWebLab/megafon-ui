@@ -15,8 +15,6 @@ const InputMask = require('react-input-mask');
 export interface ITextFieldProps {
     /** Field title */
     label?: string;
-    /** Comment text */
-    commentText?: string;
     /** Type - property tag <input> */
     type?: 'text' | 'password' | 'tel' | 'email';
     /** Field color scheme */
@@ -25,8 +23,8 @@ export interface ITextFieldProps {
     hideIcon?: boolean;
     /** Validation passed */
     verification?: 'valid' | 'error';
-    /** verification text */
-    verificationText?: string;
+    /** notice text */
+    noticeText?: string;
     /** Disable field */
     disabled?: boolean;
     /** Required field */
@@ -68,7 +66,6 @@ export interface ITextFieldProps {
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
         bigSpace,
-        commentText,
         className,
         customIcon,
         disabled,
@@ -90,7 +87,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         type,
         value,
         verification,
-        verificationText,
+        noticeText,
         inputRef,
     }) => {
 
@@ -198,15 +195,14 @@ const TextField: React.FC<ITextFieldProps> = ({
                 }
                 {renderIconBlock()}
             </div>
-            {verificationText &&
+            {noticeText &&
                 <div className={cn('text', {
                     error: verification === 'error',
                     success: verification === 'valid',
                 })}>
-                    {verificationText}
+                    {noticeText}
                 </div>
             }
-            {commentText && <div className={cn('text')}>{commentText}</div>}
         </div>
     );
 };
@@ -220,7 +216,6 @@ TextField.defaultProps = {
 TextField.propTypes = {
     label: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'white']),
-    commentText: PropTypes.string,
     hideIcon: PropTypes.bool,
     verification: PropTypes.oneOf(['valid', 'error']),
     disabled: PropTypes.bool,
@@ -234,6 +229,7 @@ TextField.propTypes = {
     customIcon: PropTypes.element,
     mask: PropTypes.string,
     maskChar: PropTypes.string,
+    noticeText: PropTypes.string,
     bigSpace: PropTypes.bool,
     className: PropTypes.string,
     onChange: PropTypes.func,
@@ -243,7 +239,7 @@ TextField.propTypes = {
     onCustomIconClick: PropTypes.func,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.shape({ current: PropTypes.instanceOf(Element).isRequired }),
+        PropTypes.shape({ current: PropTypes.object.isRequired }),
     ]),
 };
 
