@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { useCallback, useState, useMemo, forwardRef } from 'react';
+import { useCallback, useState, useMemo } from 'react';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import './TextField.less';
@@ -32,7 +32,7 @@ export interface ITextFieldProps {
     /** Required field */
     required?: boolean;
     /** custom ref */
-    ref?: any;
+    inputRef: React.Ref<any>;
     /** Field name */
     name?: string;
     /** Placeholder */
@@ -66,8 +66,7 @@ export interface ITextFieldProps {
 }
 
 const cn = cnCreate('mfui-text-field');
-const TextField = forwardRef<HTMLInputElement, ITextFieldProps>(
-    ({
+const TextField: React.FC<ITextFieldProps> = ({
         bigSpace,
         commentText,
         className,
@@ -92,17 +91,8 @@ const TextField = forwardRef<HTMLInputElement, ITextFieldProps>(
         value,
         verification,
         verificationText,
-    },
-     ref
-    ) => {
-
-    const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
-        onFocus && onFocus(e);
-    }, [onFocus]);
-
-    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
-        onBlur && onBlur(e);
-    }, [onBlur]);
+        inputRef,
+    }) => {
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
 
@@ -121,6 +111,14 @@ const TextField = forwardRef<HTMLInputElement, ITextFieldProps>(
         isPasswordType && togglePasswordHiding();
         onCustomIconClick && onCustomIconClick(e);
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick]);
+
+    const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
+        onFocus && onFocus(e);
+    }, [onFocus]);
+
+    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
+        onBlur && onBlur(e);
+    }, [onBlur]);
 
     const inputParams = {
         className: cn('field', { 'big-space': bigSpace }),
@@ -179,7 +177,7 @@ const TextField = forwardRef<HTMLInputElement, ITextFieldProps>(
     };
 
     return (
-        <div className={cn('', {
+        <div className={cn({
             disabled,
             theme,
             valid: verification === 'valid',
@@ -195,8 +193,8 @@ const TextField = forwardRef<HTMLInputElement, ITextFieldProps>(
                 className={cn('field-wrapper', { 'no-touch': !isTouch })}
             >
                 {mask
-                    ? <InputMask {...inputParams} inputRef={ref} />
-                    : <input {...inputParams} ref={ref} />
+                    ? <InputMask {...inputParams} inputRef={inputRef} />
+                    : <input {...inputParams} ref={inputRef} />
                 }
                 {renderIconBlock()}
             </div>
@@ -211,7 +209,7 @@ const TextField = forwardRef<HTMLInputElement, ITextFieldProps>(
             {commentText && <div className={cn('text')}>{commentText}</div>}
         </div>
     );
-});
+};
 
 TextField.defaultProps = {
     theme: 'default',
@@ -243,7 +241,10 @@ TextField.propTypes = {
     onFocus: PropTypes.func,
     onKeyUp: PropTypes.func,
     onCustomIconClick: PropTypes.func,
-    ref: PropTypes.any,
+    inputRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.shape({ current: PropTypes.instanceOf(Element).isRequired }),
+    ]),
 };
 
 export default TextField;
