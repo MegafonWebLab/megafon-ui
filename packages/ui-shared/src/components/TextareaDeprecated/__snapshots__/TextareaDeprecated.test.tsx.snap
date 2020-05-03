@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Textarea /> is checked shouldComponentUpdate 1`] = `
+exports[`<TextareaDeprecated /> is checked shouldComponentUpdate 1`] = `
 <div
   className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
@@ -22,7 +22,7 @@ exports[`<Textarea /> is checked shouldComponentUpdate 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
+exports[`<TextareaDeprecated /> is checked shouldComponentUpdate with new props 1`] = `
 <div
   className="mfui-textarea mfui-textarea_color_default"
 >
@@ -39,7 +39,7 @@ exports[`<Textarea /> is checked shouldComponentUpdate with new props 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> it label and id 1`] = `
+exports[`<TextareaDeprecated /> it label and id 1`] = `
 <div
   className="mfui-textarea mfui-textarea_color_default"
 >
@@ -62,7 +62,7 @@ exports[`<Textarea /> it label and id 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> it renders Textarea 1`] = `
+exports[`<TextareaDeprecated /> it renders TextareaDeprecated 1`] = `
 <div
   className="mfui-textarea mfui-textarea_color_default"
 >
@@ -79,7 +79,7 @@ exports[`<Textarea /> it renders Textarea 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> it renders error icon 1`] = `
+exports[`<TextareaDeprecated /> it renders error icon 1`] = `
 <div
   className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
@@ -101,7 +101,7 @@ exports[`<Textarea /> it renders error icon 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> it renders texts 1`] = `
+exports[`<TextareaDeprecated /> it renders texts 1`] = `
 <div
   className="mfui-textarea mfui-textarea_color_default"
 >
@@ -128,7 +128,7 @@ exports[`<Textarea /> it renders texts 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> it renders valid icon 1`] = `
+exports[`<TextareaDeprecated /> it renders valid icon 1`] = `
 <div
   className="mfui-textarea mfui-textarea_valid mfui-textarea_color_default"
 >
@@ -150,7 +150,7 @@ exports[`<Textarea /> it renders valid icon 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> it renders without error icon 1`] = `
+exports[`<TextareaDeprecated /> it renders without error icon 1`] = `
 <div
   className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
 >
@@ -167,7 +167,7 @@ exports[`<Textarea /> it renders without error icon 1`] = `
 </div>
 `;
 
-exports[`<Textarea /> it renders without valid icon 1`] = `
+exports[`<TextareaDeprecated /> it renders without valid icon 1`] = `
 <div
   className="mfui-textarea mfui-textarea_valid mfui-textarea_color_default"
 >

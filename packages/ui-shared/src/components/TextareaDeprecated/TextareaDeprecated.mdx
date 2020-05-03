@@ -1,24 +1,24 @@
 ---
-name: Textarea
+name: TextareaDeprecated
 menu: Components
-route: components/textarea
+route: components/textareadeprecated
 ---
 
 import { Playground, Props } from 'docz';
-import Textarea from './Textarea';
-import { TextAreaWrapper } from './Textarea.docz';
+import TextareaDeprecated from './TextareaDeprecated';
+import { TextAreaWrapper } from './TextareaDeprecated.docz';
 
-# Textarea
+# TextareaDeprecated
 
 ## Properties
 
-<Props of={Textarea} />
+<Props of={TextareaDeprecated} />
 
 ## Basic usage
 
 <Playground>
     <TextAreaWrapper>
-        <Textarea name="name" />
+        <TextareaDeprecated name="name" />
     </TextAreaWrapper>
 </Playground>
 
@@ -26,7 +26,7 @@ import { TextAreaWrapper } from './Textarea.docz';
 
 <Playground>
     <TextAreaWrapper>
-        <Textarea
+        <TextareaDeprecated
             label="Notice"
             id="1"
             error={true}
@@ -39,7 +39,7 @@ import { TextAreaWrapper } from './Textarea.docz';
 
 <Playground>
     <TextAreaWrapper>
-        <Textarea valid={true} />
+        <TextareaDeprecated valid={true} />
     </TextAreaWrapper>
 </Playground>
 
@@ -47,7 +47,7 @@ import { TextAreaWrapper } from './Textarea.docz';
 
 <Playground>
     <TextAreaWrapper>
-        <Textarea commentText="Comment" />
+        <TextareaDeprecated commentText="Comment" />
     </TextAreaWrapper>
 </Playground>
 
@@ -55,7 +55,7 @@ import { TextAreaWrapper } from './Textarea.docz';
 
 <Playground>
     <TextAreaWrapper>
-        <Textarea successText="Field passed validation!" />
+        <TextareaDeprecated successText="Field passed validation!" />
     </TextAreaWrapper>
 </Playground>
 
@@ -63,6 +63,6 @@ import { TextAreaWrapper } from './Textarea.docz';
 
 <Playground>
     <TextAreaWrapper>
-        <Textarea disabled={true} />
+        <TextareaDeprecated disabled={true} />
     </TextAreaWrapper>
 </Playground>
