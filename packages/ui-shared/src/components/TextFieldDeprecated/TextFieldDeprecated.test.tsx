@@ -19,7 +19,7 @@ jest.mock('react-input-mask', () => {
     };
 });
 
-const inputClassName = '.mfui-text-field__field';
+const inputClassName = '.mfui-text-field-deprecated__field';
 
 const props: ITextFieldProps = {
     label: <div>label</div>,
@@ -173,7 +173,7 @@ describe('<TextFieldDeprecated />', () => {
             <TextFieldDeprecated customIcon={<div>custom icon</div>} onCustomIconClick={handler} />
         );
 
-        wrapper.find('.mfui-text-field__icon-box_custom').simulate('click');
+        wrapper.find('.mfui-text-field-deprecated__icon-box_custom').simulate('click');
 
         expect(handler).toHaveBeenCalledTimes(1);
     });

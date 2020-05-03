@@ -77,7 +77,7 @@ interface ITextFieldState {
     isPasswordHidden: boolean;
 }
 
-const cn = cnCreate('mfui-text-field');
+const cn = cnCreate('mfui-text-field-deprecated');
 class TextFieldDeprecated extends React.Component<ITextFieldProps, ITextFieldState> {
     static propTypes = {
         label: PropTypes.node,

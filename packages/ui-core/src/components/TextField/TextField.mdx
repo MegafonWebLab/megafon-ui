@@ -115,3 +115,85 @@ import { TextFieldWrapper } from './TextField.docz';
         <TextField value='initial value' />
     </TextFieldWrapper>
 </Playground>
+
+##
+# as === 'textarea'
+
+## Basic usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" as="textarea" />
+    </TextFieldWrapper>
+</Playground>
+
+## Required usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            label="Required field"
+            as="textarea"
+            required
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Error usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            label="Notice"
+            id="1"
+            verification="error"
+            noticeText="Name is required"
+            as="textarea"
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Valid usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            verification="valid"
+            as="textarea"
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Comment usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            noticeText="Comment"
+            as="textarea"
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Success text usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            verification="valid"
+            noticeText="Field passed validation"
+            as="textarea"
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Disable usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            disabled
+            as="textarea"
+        />
+    </TextFieldWrapper>
+</Playground>

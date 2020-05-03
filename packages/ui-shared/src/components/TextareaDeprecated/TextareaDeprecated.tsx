@@ -51,7 +51,7 @@ interface ITextareaProps {
     onKeyUp?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-textarea');
+const cn = cnCreate('mfui-textarea-deprecated');
 class TextareaDeprecated extends React.Component<ITextareaProps, {}> {
     static propTypes = {
         label: PropTypes.node,

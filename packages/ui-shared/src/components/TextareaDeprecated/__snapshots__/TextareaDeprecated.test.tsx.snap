@@ -2,20 +2,20 @@
 
 exports[`<TextareaDeprecated /> is checked shouldComponentUpdate 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_error mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>
   <div
-    className="mfui-textarea__text mfui-textarea__text_error"
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_error"
   >
     text
   </div>
@@ -24,15 +24,15 @@ exports[`<TextareaDeprecated /> is checked shouldComponentUpdate 1`] = `
 
 exports[`<TextareaDeprecated /> is checked shouldComponentUpdate with new props 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>
@@ -41,7 +41,7 @@ exports[`<TextareaDeprecated /> is checked shouldComponentUpdate with new props 
 
 exports[`<TextareaDeprecated /> it label and id 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
 >
   <InputLabel
     htmlFor="id"
@@ -49,12 +49,12 @@ exports[`<TextareaDeprecated /> it label and id 1`] = `
     label
   </InputLabel>
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
         id="id"
       />
     </div>
@@ -64,15 +64,15 @@ exports[`<TextareaDeprecated /> it label and id 1`] = `
 
 exports[`<TextareaDeprecated /> it renders TextareaDeprecated 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>
@@ -81,20 +81,20 @@ exports[`<TextareaDeprecated /> it renders TextareaDeprecated 1`] = `
 
 exports[`<TextareaDeprecated /> it renders error icon 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_error mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>
   <div
-    className="mfui-textarea__text mfui-textarea__text_error"
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_error"
   >
     text
   </div>
@@ -103,25 +103,25 @@ exports[`<TextareaDeprecated /> it renders error icon 1`] = `
 
 exports[`<TextareaDeprecated /> it renders texts 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>
   <div
-    className="mfui-textarea__text mfui-textarea__text_comment"
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_comment"
   >
     text
   </div>
   <div
-    className="mfui-textarea__text mfui-textarea__text_success"
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_success"
   >
     text
   </div>
@@ -130,20 +130,20 @@ exports[`<TextareaDeprecated /> it renders texts 1`] = `
 
 exports[`<TextareaDeprecated /> it renders valid icon 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_valid mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_valid mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>
   <div
-    className="mfui-textarea__text mfui-textarea__text_error"
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_error"
   >
     text
   </div>
@@ -152,15 +152,15 @@ exports[`<TextareaDeprecated /> it renders valid icon 1`] = `
 
 exports[`<TextareaDeprecated /> it renders without error icon 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_error mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_error mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>
@@ -169,15 +169,15 @@ exports[`<TextareaDeprecated /> it renders without error icon 1`] = `
 
 exports[`<TextareaDeprecated /> it renders without valid icon 1`] = `
 <div
-  className="mfui-textarea mfui-textarea_valid mfui-textarea_color_default"
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_valid mfui-textarea-deprecated_color_default"
 >
   <div
-    className="mfui-textarea__field-wrapper mfui-textarea__field-wrapper_no-touch"
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
   >
     <div>
       <textarea
         autoComplete="off"
-        className="mfui-textarea__field"
+        className="mfui-textarea-deprecated__field"
       />
     </div>
   </div>

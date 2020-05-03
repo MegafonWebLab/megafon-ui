@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { useCallback, useState, useMemo } from 'react';
+import { useCallback, useState, useMemo, Fragment } from 'react';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import './TextField.less';
@@ -13,6 +13,8 @@ import Show from 'icons/Basic/24/Show_24.svg';
 const InputMask = require('react-input-mask');
 
 export interface ITextFieldProps {
+    /** Field type */
+    as?: 'input' | 'textarea';
     /** Field title */
     label?: string;
     /** Type - property tag <input> */
@@ -52,19 +54,20 @@ export interface ITextFieldProps {
     /** Custom classname */
     className?: string;
     /** Change handler */
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Blur handler */
-    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    onBlur?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Focus handler */
-    onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    onFocus?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** KeyUp handler */
-    onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Custom icon click handler */
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
+        as,
         bigSpace,
         className,
         customIcon,
@@ -109,21 +112,17 @@ const TextField: React.FC<ITextFieldProps> = ({
         onCustomIconClick && onCustomIconClick(e);
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick]);
 
-    const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
+    const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         onFocus && onFocus(e);
     }, [onFocus]);
 
-    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement>) => {
+    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         onBlur && onBlur(e);
     }, [onBlur]);
 
-    const inputParams = {
-        className: cn('field', { 'big-space': bigSpace }),
+    const commonParams = {
         disabled,
         id,
-        mask,
-        maskChar,
-        maxLength,
         name,
         onBlur: handleBlur,
         onChange,
@@ -131,9 +130,45 @@ const TextField: React.FC<ITextFieldProps> = ({
         onKeyUp,
         placeholder,
         required,
-        type: isVisiblePassword ? 'text' : type,
         value,
     };
+
+    const inputParams = {
+        ...commonParams,
+        className: cn('field', { 'big-space': bigSpace, as }),
+        mask,
+        maskChar,
+        maxLength,
+        type: isVisiblePassword ? 'text' : type,
+    };
+
+    const textareaParams = {
+        ...commonParams,
+        className: cn('field', { as }),
+    };
+
+    const renderField = (): React.ReactNode => {
+        switch (as) {
+            case 'input':
+                return renderInput();
+            case 'textarea':
+                return renderTextarea();
+        }
+    };
+
+    const renderInput = (): React.ReactNode => {
+        return (
+            <Fragment>
+                {mask
+                    ? <InputMask {...inputParams} inputRef={inputRef} />
+                    : <input {...inputParams} ref={inputRef} />
+                }
+                {renderIconBlock()}
+            </Fragment>
+        );
+    };
+
+    const renderTextarea = (): React.ReactNode => <textarea {...textareaParams} ref={inputRef} />;
 
     const renderIcon = (): React.ReactNode | null => {
         switch (true) {
@@ -189,11 +224,7 @@ const TextField: React.FC<ITextFieldProps> = ({
             <div
                 className={cn('field-wrapper', { 'no-touch': !isTouch })}
             >
-                {mask
-                    ? <InputMask {...inputParams} inputRef={inputRef} />
-                    : <input {...inputParams} ref={inputRef} />
-                }
-                {renderIconBlock()}
+                {renderField()}
             </div>
             {noticeText &&
                 <div className={cn('text', {
@@ -208,12 +239,14 @@ const TextField: React.FC<ITextFieldProps> = ({
 };
 
 TextField.defaultProps = {
+    as: 'input',
     theme: 'default',
     type: 'text',
     hideIcon: false,
 };
 
 TextField.propTypes = {
+    as: PropTypes.oneOf(['input', 'textarea']),
     label: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'white']),
     hideIcon: PropTypes.bool,

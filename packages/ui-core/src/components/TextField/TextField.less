@@ -13,7 +13,6 @@
         position: relative;
         z-index: 1;
         font-size: 15px;
-        height: 48px;
         width: 100%;
         box-sizing: border-box;
         outline: none;
@@ -28,11 +27,18 @@
         box-shadow: none;
         overflow: auto;
         margin: 0;
+        &_as {
+            &_input {
+                height: 48px;
+            }
+            &_textarea {
+                display: block;
+                height: 152px;
+                resize: none;
+            }
+        }
     }
     input::-webkit-input-placeholder {
-        color: lighten(@soggyAsphalt, 50%);
-    }
-    input::-moz-placeholder {
         color: lighten(@soggyAsphalt, 50%);
     }
     input:-moz-placeholder {
