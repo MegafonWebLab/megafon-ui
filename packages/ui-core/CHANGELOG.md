@@ -21,6 +21,9 @@
     - changed the parameter name from `lg` in the `innerPadding` property to `default`
 - **Accordion**
     - add Accordion component
+- **Paragraph**
+    - update with a new guide
+    - update test
 
 ## Release 1.4.1
 - **Carousel**
