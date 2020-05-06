@@ -13,8 +13,8 @@ import Show from 'icons/Basic/24/Show_24.svg';
 const InputMask = require('react-input-mask');
 
 export interface ITextFieldProps {
-    /** Field type */
-    as?: 'input' | 'textarea';
+    /** Toggle to textarea */
+    multiline?: boolean;
     /** Field title */
     label?: string;
     /** Type - property tag <input> */
@@ -32,7 +32,7 @@ export interface ITextFieldProps {
     /** Required field */
     required?: boolean;
     /** custom ref */
-    inputRef: React.Ref<any>;
+    inputRef?: React.Ref<any>;
     /** Field name */
     name?: string;
     /** Placeholder */
@@ -67,7 +67,6 @@ export interface ITextFieldProps {
 
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
-        as,
         bigSpace,
         className,
         customIcon,
@@ -78,6 +77,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         mask,
         maskChar,
         maxLength,
+        multiline,
         name,
         placeholder,
         required,
@@ -135,7 +135,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const inputParams = {
         ...commonParams,
-        className: cn('field', { 'big-space': bigSpace, as }),
+        className: cn('field', { 'big-space': bigSpace }),
         mask,
         maskChar,
         maxLength,
@@ -144,16 +144,14 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const textareaParams = {
         ...commonParams,
-        className: cn('field', { as }),
+        className: cn('field', { multiline }),
     };
 
     const renderField = (): React.ReactNode => {
-        switch (as) {
-            case 'input':
-                return renderInput();
-            case 'textarea':
-                return renderTextarea();
+        if (multiline) {
+            return renderTextarea();
         }
+        return renderInput();
     };
 
     const renderInput = (): React.ReactNode => {
@@ -239,14 +237,14 @@ const TextField: React.FC<ITextFieldProps> = ({
 };
 
 TextField.defaultProps = {
-    as: 'input',
+    multiline: false,
     theme: 'default',
     type: 'text',
     hideIcon: false,
 };
 
 TextField.propTypes = {
-    as: PropTypes.oneOf(['input', 'textarea']),
+    multiline: PropTypes.bool,
     label: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'white']),
     hideIcon: PropTypes.bool,

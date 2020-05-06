@@ -117,13 +117,13 @@ import { TextFieldWrapper } from './TextField.docz';
 </Playground>
 
 ##
-# as === 'textarea'
+# multiline={true}
 
 ## Basic usage
 
 <Playground>
     <TextFieldWrapper>
-        <TextField name="name" as="textarea" />
+        <TextField name="name" multiline={true} />
     </TextFieldWrapper>
 </Playground>
 
@@ -133,7 +133,7 @@ import { TextFieldWrapper } from './TextField.docz';
     <TextFieldWrapper>
         <TextField
             label="Required field"
-            as="textarea"
+            multiline={true}
             required
         />
     </TextFieldWrapper>
@@ -148,7 +148,7 @@ import { TextFieldWrapper } from './TextField.docz';
             id="1"
             verification="error"
             noticeText="Name is required"
-            as="textarea"
+            multiline={true}
         />
     </TextFieldWrapper>
 </Playground>
@@ -159,7 +159,7 @@ import { TextFieldWrapper } from './TextField.docz';
     <TextFieldWrapper>
         <TextField
             verification="valid"
-            as="textarea"
+            multiline={true}
         />
     </TextFieldWrapper>
 </Playground>
@@ -170,7 +170,7 @@ import { TextFieldWrapper } from './TextField.docz';
     <TextFieldWrapper>
         <TextField
             noticeText="Comment"
-            as="textarea"
+            multiline={true}
         />
     </TextFieldWrapper>
 </Playground>
@@ -182,7 +182,7 @@ import { TextFieldWrapper } from './TextField.docz';
         <TextField
             verification="valid"
             noticeText="Field passed validation"
-            as="textarea"
+            multiline={true}
         />
     </TextFieldWrapper>
 </Playground>
@@ -193,7 +193,7 @@ import { TextFieldWrapper } from './TextField.docz';
     <TextFieldWrapper>
         <TextField
             disabled
-            as="textarea"
+            multiline={true}
         />
     </TextFieldWrapper>
 </Playground>
