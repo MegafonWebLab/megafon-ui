@@ -2,108 +2,57 @@
 
 .mfui-paragraph {
     .fontFamily();
-    &_h-align_center {
+
+    margin: 0;
+
+    &_align_left {
+        text-align: left;
+    }
+    &_align_center {
         text-align: center;
     }
-    &_h-align_right {
+    &_align_right {
         text-align: right;
     }
 
-    &_color_black {
-        color: @soggyAsphalt;
+    &_size_regular {
+        font-size: 15px;
+        line-height: 24px;
     }
-    &_color_white {
-        color: @clearWhite;
+    &_size_small {
+        font-size: 12px;
+        line-height: 16px;
     }
-    &_color_gray {
-        color: @spbSky2;
+
+    &_margin {
+        margin: 0 0 16px;
     }
+
     &_color_green {
         color: @green;
     }
     &_color_purple {
         color: @purple;
     }
-    &_color_red {
-        color: @fury;
+    &_color_clearWhite {
+        color: @clearWhite;
+    }
+    &_color_spbSky0 {
+        color: @spbSky0;
+    }
+    &_color_spbSky1 {
+        color: @spbSky1;
+    }
+    &_color_spbSky2 {
+        color: @spbSky2;
+    }
+    &_color_freshAsphalt {
+        color: @freshAsphalt;
+    }
+    &_color_fullBlack {
+        color: @fullBlack;
     }
     &_color_inherit {
         color: inherit;
-    }
-
-    &_weight_light {
-        font-weight: 300;
-    }
-    &_weight_regular {
-        font-weight: 400;
-    }
-    &_weight_medium {
-        font-weight: 500;
-    }
-    &_weight_bold {
-        font-weight: 600;
-    }
-
-    .generateSize(all);
-    .generateMargin(all);
-
-    @media @desktopMU {
-        .generateSize(wide);
-        .generateMargin(wide);
-    }
-    @media @desktop {
-        .generateSize(desktop);
-        .generateMargin(desktop);
-    }
-    @media @mobileB {
-        .generateSize(tablet);
-        .generateMargin(tablet);
-    }
-    @media @mobileSM {
-        .generateSize(mobile);
-        .generateMargin(mobile);
-    }
-
-    &:first-child {
-        margin-top: 0;
-    }
-    &:last-child {
-        margin-bottom: 0;
-    }
-
-    .generateSize(@resolution) {
-        &_size-@{resolution}_smallest {
-            font-size: 10px;
-            line-height: 14px;
-        }
-        &_size-@{resolution}_small {
-            font-size: 12px;
-            line-height: 16px;
-        }
-        &_size-@{resolution}_medium {
-            .commonFont();
-        }
-        &_size-@{resolution}_large {
-            font-size: 16px;
-            line-height: 26px;
-        }
-    }
-
-    .generateMargin(@resolution) {
-        &_margin-@{resolution}_none {
-            margin: 0;
-        }
-        &_margin-@{resolution}_small {
-            margin: 4px 0;
-        }
-        &_margin-@{resolution}_medium {
-            margin: 16px 0;
-        }
-        &_margin-@{resolution}_large {
-            margin: 18px 0;
-        }
-        &_margin-@{resolution}_largest {
-            margin: 20px 0;
-        }
     }
 }

@@ -12,6 +12,9 @@
     - added tests
 - **Carousel**
     - add onSwipe callback
+- **Paragraph**
+    - update with a new guide
+    - update test
 
 ## Release 1.4.1
 - **Carousel**

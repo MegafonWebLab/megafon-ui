@@ -24,10 +24,10 @@ import Paragraph from './Paragraph';
     </Paragraph>
 </Playground>
 
-## Usage with div wrapper element
+## Usage without margin
 
 <Playground>
-    <Paragraph as="div">
+    <Paragraph margin={false}>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore
         quam deserunt magni consequuntur veniam! Enim doloremque error expedita
         nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at
@@ -35,13 +35,59 @@ import Paragraph from './Paragraph';
     </Paragraph>
 </Playground>
 
-## Usage with p wrapper element and default browser styles
+## Align options
 
 <Playground>
-    <Paragraph as="p" marginAll="default">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore
-        quam deserunt magni consequuntur veniam! Enim doloremque error expedita
-        nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at
-        quis.
+    <Paragraph align='left'>
+        left - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph align='center'>
+        center - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph align='right'>
+        right - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+</Playground>
+
+## Size options
+
+<Playground>
+    <Paragraph>
+        15/24 - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph size={'small'}>
+        12/16 - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+</Playground>
+
+## Color options
+
+<Playground>
+    <Paragraph color='green'>
+        'green' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='purple'>
+        'purple' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='clearWhite'>
+        'clearWhite' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='spbSky0'>
+        'spbSky0' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='spbSky1'>
+        'spbSky1' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='spbSky2'>
+        'spbSky2' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='freshAsphalt'>
+        'freshAsphalt' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='fullBlack'>
+        'fullBlack' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    </Paragraph>
+    <Paragraph color='inherit'>
+        'inherit' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
     </Paragraph>
 </Playground>

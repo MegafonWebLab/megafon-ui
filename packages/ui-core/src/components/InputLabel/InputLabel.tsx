@@ -21,7 +21,7 @@ class InputLabel extends React.Component<IInputLabelProps> {
 
         return (
             <label htmlFor={htmlFor} className={cn('')}>
-                <Paragraph as="div" weight="medium">{children}</Paragraph>
+                <Paragraph>{children}</Paragraph>
             </label>
         );
     }

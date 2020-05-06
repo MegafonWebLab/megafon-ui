@@ -6,11 +6,9 @@ exports[`<InputLabel /> renders InputLabel with props 1`] = `
   htmlFor="htmlFor"
 >
   <Paragraph
-    as="div"
-    color="black"
-    marginAll="medium"
-    sizeAll="medium"
-    weight="medium"
+    color="freshAsphalt"
+    margin={true}
+    size="regular"
   >
     test
   </Paragraph>
@@ -22,11 +20,9 @@ exports[`<InputLabel /> renders InputLabel without props 1`] = `
   className="mfui-input-label"
 >
   <Paragraph
-    as="div"
-    color="black"
-    marginAll="medium"
-    sizeAll="medium"
-    weight="medium"
+    color="freshAsphalt"
+    margin={true}
+    size="regular"
   >
     test
   </Paragraph>
