@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Accordion /> it renders Accordion 1`] = `
+<Accordion
+  isOpened={false}
+  onClickAccordion={[MockFunction]}
+  theme="default"
+  title="Test"
+>
+  <div
+    className="mfui-accordion mfui-accordion_theme_default"
+  >
+    <div
+      className="mfui-accordion__title-wrap"
+      onClick={[Function]}
+    >
+      <h5
+        className="mfui-accordion__title"
+      >
+        Test
+      </h5>
+      <div
+        className="mfui-accordion__icon-box"
+      >
+        <test-file-stub />
+      </div>
+    </div>
+    <Collapse
+      animationDuration={300}
+      className="mfui-accordion__content mfui-accordion__content_theme_default"
+      classNameContainer="mfui-accordion__content-inner"
+      isOpened={false}
+    >
+      <div
+        className="mfui-accordion__content mfui-accordion__content_theme_default"
+        style={
+          Object {
+            "height": "0",
+            "overflow": "hidden",
+            "transition": "height 0.3s",
+          }
+        }
+      >
+        <div
+          className="mfui-accordion__content-inner"
+        >
+          <div />
+        </div>
+      </div>
+    </Collapse>
+  </div>
+</Accordion>
+`;
+
+exports[`<Accordion /> it renders opened Accordion 1`] = `
+<Accordion
+  isOpened={true}
+  onClickAccordion={[MockFunction]}
+  theme="default"
+  title="Test"
+>
+  <div
+    className="mfui-accordion mfui-accordion_theme_default mfui-accordion_open"
+  >
+    <div
+      className="mfui-accordion__title-wrap"
+      onClick={[Function]}
+    >
+      <h5
+        className="mfui-accordion__title"
+      >
+        Test
+      </h5>
+      <div
+        className="mfui-accordion__icon-box mfui-accordion__icon-box_open"
+      >
+        <test-file-stub />
+      </div>
+    </div>
+    <Collapse
+      animationDuration={300}
+      className="mfui-accordion__content mfui-accordion__content_theme_default"
+      classNameContainer="mfui-accordion__content-inner"
+      isOpened={true}
+    >
+      <div
+        className="mfui-accordion__content mfui-accordion__content_theme_default"
+        style={
+          Object {
+            "height": "0px",
+            "overflow": "hidden",
+            "transition": "height 0.3s",
+          }
+        }
+      >
+        <div
+          className="mfui-accordion__content-inner"
+        >
+          <div />
+        </div>
+      </div>
+    </Collapse>
+  </div>
+</Accordion>
+`;

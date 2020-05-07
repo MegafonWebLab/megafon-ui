@@ -1,0 +1,40 @@
+---
+name: Accordion
+menu: Components
+route: components/accordion
+---
+
+import { Playground, Props } from 'docz';
+import Accordion from './Accordion';
+import { AccordionWrapper } from './Accordion.docz';
+import Paragraph from 'components/Paragraph/Paragraph';
+
+# Accordion
+
+## Properties
+
+<Props of={Accordion} />
+
+## Basic usage
+
+<Playground>
+    <AccordionWrapper>
+        <Accordion
+            title="Заголовок аккордеона"
+        >
+            <Paragraph>
+                При подключении или переходе на тариф списывается половина ежемесячной абонентской платы и предоставляется полный объём трафика.
+                С 16-х суток списывается вторая половина абонентской платы. Далее списание абонентской платы и предоставление трафика производится
+                ежемесячно в полном объёме в дату подключения/перехода на тариф.
+            </Paragraph>
+        </Accordion>
+        <Accordion
+            title="Открытый аккордеон"
+            isOpened={true}
+        >
+            <Paragraph>
+                При подключении или переходе на тариф списывается половина ежемесячной абонентской платы и предоставляется полный объём трафика.
+            </Paragraph>
+        </Accordion>
+    </AccordionWrapper>
+</Playground>

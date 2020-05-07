@@ -1,0 +1,48 @@
+@import '~styles/base.less';
+@b: e('.mfui-accordion');
+
+@{b} {
+    &__title-wrap {
+        cursor: pointer;
+        position: relative;
+        padding: 24px 68px 24px 24px;
+    }
+    &__title {
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 500;
+        margin: 0;
+    }
+    &__icon-box {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        width: 32px;
+        height: 32px;
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+    &__content-inner {
+        padding: 24px 68px 24px 40px;
+    }
+    &__icon {
+        fill: @fullBlack;
+    }
+    &_theme_default {
+        border-top: 1px solid @spbSky2;
+    }
+    &_theme_default:last-child {
+        border-bottom: 1px solid @spbSky2;
+    }
+    &_theme_default &__title {
+        color: @soggyAsphalt;
+    }
+    &_theme_default:not(&_open) &__title-wrap:hover {
+        background: rgba(237, 237, 237, 0.5);
+    }
+    &_theme_default&_open &__title-wrap {
+        background: @spbSky1;
+        border-bottom: 1px solid @spbSky2;
+    }
+}
+
