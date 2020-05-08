@@ -5,11 +5,29 @@ import cnCreate from 'utils/cnCreate';
 
 export interface IProps {
     /** Background color of the external container */
-    outerBackgroundColor?: 'white' | 'transparent';
+    outerBackgroundColor?:
+        | 'white'
+        | 'transparent'
+        | 'green'
+        | 'purple'
+        | 'light-gray'
+        | 'gray'
+        | 'dark-gray'
+        | 'asphalt'
+        | 'black';
     /** Background color of the internal container */
-    innerBackgroundColor?: 'white' | 'transparent';
+    innerBackgroundColor?:
+        | 'white'
+        | 'transparent'
+        | 'green'
+        | 'purple'
+        | 'light-gray'
+        | 'gray'
+        | 'dark-gray'
+        | 'asphalt'
+        | 'black';
     /** Side paddings of the internal container */
-    innerPadding?: 'lg' | 'none';
+    innerPadding?: 'default' | 'none';
     /** Side paddings of the internal container on mobile screen */
     mobileInnerPadding?: 'default' | 'none';
     children: any;
@@ -19,9 +37,29 @@ export interface IProps {
 const cn = cnCreate('mfui-content-area');
 class ContentArea extends React.Component<IProps, {}> {
     static propTypes = {
-        outerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
-        innerBackgroundColor: PropTypes.oneOf(['white', 'transparent']),
-        innerPadding: PropTypes.oneOf(['lg', 'none']),
+        outerBackgroundColor: PropTypes.oneOf([
+            'white',
+            'transparent',
+            'green',
+            'purple',
+            'light-gray',
+            'gray',
+            'dark-gray',
+            'asphalt',
+            'black',
+        ]),
+        innerBackgroundColor: PropTypes.oneOf([
+            'white',
+            'transparent',
+            'green',
+            'purple',
+            'light-gray',
+            'gray',
+            'dark-gray',
+            'asphalt',
+            'black',
+        ]),
+        innerPadding: PropTypes.oneOf(['default', 'none']),
         mobileInnerPadding: PropTypes.oneOf(['default', 'none']),
         children: PropTypes.node,
         className: PropTypes.string,
@@ -30,7 +68,7 @@ class ContentArea extends React.Component<IProps, {}> {
     static defaultProps = {
         outerBackgroundColor: 'transparent',
         innerBackgroundColor: 'transparent',
-        innerPadding: 'lg',
+        innerPadding: 'default',
         mobileInnerPadding: 'default',
     };
 
