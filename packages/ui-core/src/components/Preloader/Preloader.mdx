@@ -1,0 +1,35 @@
+---
+name: Preloader
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Preloader from './Preloader';
+
+export const playgroundBg = {
+    backgroundColor: '#E5F5EE',
+}
+
+# Preloader
+
+## Properties
+
+<PropsTable of={Preloader} />
+
+## Basic usage
+
+<Playground>
+    <Preloader />
+</Playground>
+
+## Usage with white color
+
+<Playground style={playgroundBg}>
+    <Preloader color="white" />
+</Playground>
+
+## Usage with black color and small size
+
+<Playground>
+    <Preloader color="black" size="small" />
+</Playground>

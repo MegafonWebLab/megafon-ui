@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **Preloader**
+    - added new component
+
 ## Release 1.5.2
 - **build**
     - change typescript config for interoperability between CommonJS and ES modules
