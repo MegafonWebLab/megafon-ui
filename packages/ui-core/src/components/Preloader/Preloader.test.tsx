@@ -17,4 +17,14 @@ describe('<Preloader />', () => {
         const wrapper = shallow(<Preloader color="black" />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('it renders Preloader with white color', () => {
+        const wrapper = shallow(<Preloader color="white" />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders Preloader with custom className', () => {
+        const wrapper = shallow(<Preloader className="test-class" />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });

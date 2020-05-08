@@ -4,10 +4,11 @@ import './Preloader.less';
 import cnCreate from 'utils/cn';
 
 interface IPreloaderProps {
-    /** Color of loader's circles */
+    /** Color themes of preloader's circles */
     color?: 'default' | 'black' | 'white';
-    /** Size of preloader */
+    /** Sizes of preloader */
     size?: 'small' | 'medium';
+    /** Custom className */
     className?: string;
 }
 
@@ -16,6 +17,7 @@ class Preloader extends React.Component<IPreloaderProps, {}> {
     static propTypes = {
         color: PropTypes.oneOf(['default', 'black', 'white']),
         size: PropTypes.oneOf(['small', 'medium']),
+        className: PropTypes.string,
     };
 
     static defaultProps: Partial<IPreloaderProps> = {
@@ -27,7 +29,7 @@ class Preloader extends React.Component<IPreloaderProps, {}> {
         const { color, size, className } = this.props;
 
         return (
-            <div className={cn('', { color, size }, className)}>
+            <div className={cn({ color, size }, className)}>
                 <div className={cn('item', { first: true })} />
                 <div className={cn('item', { second: true })} />
                 <div className={cn('item', { third: true })} />
