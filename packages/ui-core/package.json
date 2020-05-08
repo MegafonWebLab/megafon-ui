@@ -112,7 +112,6 @@
     "babel-plugin-inline-react-svg": "^0.5.4",
     "babel-plugin-module-resolver": "^3.2.0",
     "del": "^3.0.0",
-    "docz": "2.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { useCallback, useState, useMemo, Fragment } from 'react';
+import { useCallback, useState, useMemo } from 'react';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import './TextField.less';
@@ -15,42 +15,41 @@ const InputMask = require('react-input-mask');
 export interface ITextFieldProps {
     /** Toggle to textarea */
     multiline?: boolean;
-    /** Field title */
+    /** Shows label */
     label?: string;
-    /** Type - property tag <input> */
+    /** HTML-attribute "type" of input element. Doesn't work with **multiline=true** */
     type?: 'text' | 'password' | 'tel' | 'email';
     /** Field color scheme */
     theme?: 'default' | 'white';
-    /** Not show icon of state */
+    /** Forcefully prohibits icon's render */
     hideIcon?: boolean;
-    /** Validation passed */
+    /** The result of external field's validation */
     verification?: 'valid' | 'error';
-    /** notice text */
+    /** Text message. Could be an error message or a simple hint to user */
     noticeText?: string;
-    /** Disable field */
+    /** Disables field. The value of this prop is also passed through to attribute with the same name */
     disabled?: boolean;
-    /** Required field */
+    /** Makes the field required. The value of this prop is also passed through to attribute with the same name */
     required?: boolean;
-    /** custom ref */
+    /** Custom ref-object or ref-callback. Note: if you use **mask**, you have to use ref-callback to get instance */
     inputRef?: React.Ref<any>;
-    /** Field name */
+    /** Field name. The value of this prop is also passed through to attribute with the same name */
     name?: string;
-    /** Placeholder */
+    /** Initial Placeholder */
     placeholder?: string;
-    /** Html id attribute */
+    /** Html id attribute, also automatically allows to focus on input while clicking on the label */
     id?: string;
-    /** Field value */
+    /** Externally set value */
     value?: string;
-    /** Max length  */
+    /** Max length of the text */
     maxLength?: number;
     /** Custom icon */
     customIcon?: JSX.Element;
-    /** Mask */
+    /** Mask for the input-field. Doesn't work with **multiline=true**. */
+    /** You may find additional info on https://github.com/sanniassin/react-input-mask */
     mask?: string;
-    /** Split symbol for mask */
+    /** Split symbol for a mask. Doesn't work with **multiline=true** */
     maskChar?: string;
-    /** Increased size of space between words in the text box */
-    bigSpace?: boolean;
     /** Custom classname */
     className?: string;
     /** Change handler */
@@ -67,7 +66,6 @@ export interface ITextFieldProps {
 
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
-        bigSpace,
         className,
         customIcon,
         disabled,
@@ -131,14 +129,14 @@ const TextField: React.FC<ITextFieldProps> = ({
         placeholder,
         required,
         value,
+        maxLength,
     };
 
     const inputParams = {
         ...commonParams,
-        className: cn('field', { 'big-space': bigSpace }),
+        className: cn('field'),
         mask,
         maskChar,
-        maxLength,
         type: isVisiblePassword ? 'text' : type,
     };
 
@@ -154,21 +152,19 @@ const TextField: React.FC<ITextFieldProps> = ({
         return renderInput();
     };
 
-    const renderInput = (): React.ReactNode => {
-        return (
-            <Fragment>
-                {mask
-                    ? <InputMask {...inputParams} inputRef={inputRef} />
-                    : <input {...inputParams} ref={inputRef} />
-                }
-                {renderIconBlock()}
-            </Fragment>
-        );
-    };
+    const renderInput = (): React.ReactNode => (
+        <>
+            {mask
+                ? <InputMask {...inputParams} inputRef={inputRef} />
+                : <input {...inputParams} ref={inputRef} />
+            }
+            {!hideIcon && renderIconBlock()}
+        </>
+    );
 
     const renderTextarea = (): React.ReactNode => <textarea {...textareaParams} ref={inputRef} />;
 
-    const renderIcon = (): React.ReactNode | null => {
+    const getIcon = (): React.ReactNode | null => {
         switch (true) {
             case !!customIcon:
                 return customIcon;
@@ -180,30 +176,21 @@ const TextField: React.FC<ITextFieldProps> = ({
                 return <Hide className={cn('icon')} />;
             case isPasswordType && !isPasswordHidden:
                 return <Show className={cn('icon')} />;
-            case required:
-                return <div className={cn('require-circle')} />;
         }
         return null;
     };
 
     const renderIconBlock = () => {
-        if (hideIcon) {
-            return null;
-        }
+        const icon: React.ReactNode | null = getIcon();
 
-        const icon: React.ReactNode | null = renderIcon();
-
-        if (icon) {
-            return (
-                <div
-                    className={cn('icon-box', { password: isPasswordType, custom: !!customIcon })}
-                    onClick={handleIconClick}
-                >
-                    {icon}
-                </div>
-            );
-        }
-        return null;
+        return icon && (
+            <div
+                className={cn('icon-box', { password: isPasswordType, custom: !!customIcon })}
+                onClick={handleIconClick}
+            >
+                {icon}
+            </div>
+        );
     };
 
     return (
@@ -261,7 +248,6 @@ TextField.propTypes = {
     mask: PropTypes.string,
     maskChar: PropTypes.string,
     noticeText: PropTypes.string,
-    bigSpace: PropTypes.bool,
     className: PropTypes.string,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
