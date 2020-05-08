@@ -12,6 +12,9 @@
     - added tests
 - **Carousel**
     - add onSwipe callback
+- **ContentArea**
+    - add basic colors for `outerBackgroundColor` and `innerBackgroundColor`
+    - changed the parameter name from `lg` in the `innerPadding` property to `default`
 
 ## Release 1.4.1
 - **Carousel**
