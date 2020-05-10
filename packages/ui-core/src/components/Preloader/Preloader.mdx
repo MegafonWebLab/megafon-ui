@@ -6,8 +6,15 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import Preloader from './Preloader';
 
-export const playgroundBackground = {
-    backgroundColor: '#00B956',
+export const playgroundBackgroundPosition = {
+    backgroundColor: '#E5F5EE',
+    display: 'flex',
+    justifyContent: 'space-around',
+}
+
+export const playgroundPosition = {
+    display: 'flex',
+    justifyContent: 'space-around',
 }
 
 # Preloader
@@ -18,30 +25,21 @@ export const playgroundBackground = {
 
 ## Basic usage
 
-<Playground>
+<Playground style={playgroundPosition}>
     <Preloader />
 </Playground>
 
 ## Color themes
 
-<Playground>
+<Playground style={playgroundBackgroundPosition}>
     <Preloader color="default" />
-</Playground>
-
-<Playground>
     <Preloader color="black" />
-</Playground>
-
-<Playground style={playgroundBackground}>
     <Preloader color="white" />
 </Playground>
 
 ## Sizes
 
-<Playground>
+<Playground style={playgroundPosition}>
     <Preloader size="small" />
-</Playground>
-
-<Playground>
     <Preloader size="medium" />
 </Playground>

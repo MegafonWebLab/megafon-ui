@@ -4,23 +4,23 @@ import './Preloader.less';
 import cnCreate from 'utils/cn';
 
 interface IPreloaderProps {
-    /** Color themes of preloader's circles */
+    /** Color theme of preloader's circles */
     color?: 'default' | 'black' | 'white';
-    /** Sizes of preloader */
+    /** Preloader size */
     size?: 'small' | 'medium';
-    /** Custom className */
+    /** Custom class name */
     className?: string;
 }
 
 const cn = cnCreate('mfui-preloader');
-class Preloader extends React.Component<IPreloaderProps, {}> {
+class Preloader extends React.Component<IPreloaderProps> {
     static propTypes = {
         color: PropTypes.oneOf(['default', 'black', 'white']),
         size: PropTypes.oneOf(['small', 'medium']),
         className: PropTypes.string,
     };
 
-    static defaultProps: Partial<IPreloaderProps> = {
+    static defaultProps = {
         color: 'default',
         size: 'medium',
     };
