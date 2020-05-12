@@ -20,7 +20,7 @@ class Preloader extends React.Component<IPreloaderProps> {
         className: PropTypes.string,
     };
 
-    static defaultProps = {
+    static defaultProps: IPreloaderProps = {
         color: 'default',
         size: 'medium',
     };
