@@ -1,0 +1,47 @@
+---
+name: Preloader
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Preloader from './Preloader';
+
+export const playgroundPosition = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+}
+
+export const sectionBackground = {
+    backgroundColor: '#00B956',
+    padding: '20px',
+}
+
+# Preloader
+
+## Properties
+
+<PropsTable of={Preloader} />
+
+## Basic usage
+
+<Playground style={playgroundPosition}>
+    <Preloader />
+</Playground>
+
+## Color themes
+
+<Playground style={playgroundPosition}>
+    <Preloader color="default" />
+    <Preloader color="black" />
+    <div style={sectionBackground}>
+        <Preloader color="white" />
+    </div>
+</Playground>
+
+## Sizes
+
+<Playground style={playgroundPosition}>
+    <Preloader size="small" />
+    <Preloader size="medium" />
+</Playground>
