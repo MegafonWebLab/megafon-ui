@@ -3,29 +3,21 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 import cnCreate from 'utils/cnCreate';
 
+type ContentAreaBGColor =
+| 'white'
+| 'transparent'
+| 'green'
+| 'purple'
+| 'spbSky0'
+| 'spbSky1'
+| 'spbSky2'
+| 'soggyAsphalt'
+| 'fullBlack';
 export interface IProps {
     /** Background color of the external container */
-    outerBackgroundColor?:
-        | 'white'
-        | 'transparent'
-        | 'green'
-        | 'purple'
-        | 'light-gray'
-        | 'gray'
-        | 'dark-gray'
-        | 'asphalt'
-        | 'black';
+    outerBackgroundColor?: ContentAreaBGColor;
     /** Background color of the internal container */
-    innerBackgroundColor?:
-        | 'white'
-        | 'transparent'
-        | 'green'
-        | 'purple'
-        | 'light-gray'
-        | 'gray'
-        | 'dark-gray'
-        | 'asphalt'
-        | 'black';
+    innerBackgroundColor?: ContentAreaBGColor;
     /** Side paddings of the internal container */
     innerPadding?: 'default' | 'none';
     /** Side paddings of the internal container on mobile screen */
@@ -34,31 +26,22 @@ export interface IProps {
     className?: string;
 }
 
+const backgroundColors = [
+    'white',
+    'transparent',
+    'green',
+    'purple',
+    'spbSky0',
+    'spbSky1',
+    'spbSky2',
+    'soggyAsphalt',
+    'fullBlack',
+];
 const cn = cnCreate('mfui-content-area');
 class ContentArea extends React.Component<IProps, {}> {
     static propTypes = {
-        outerBackgroundColor: PropTypes.oneOf([
-            'white',
-            'transparent',
-            'green',
-            'purple',
-            'light-gray',
-            'gray',
-            'dark-gray',
-            'asphalt',
-            'black',
-        ]),
-        innerBackgroundColor: PropTypes.oneOf([
-            'white',
-            'transparent',
-            'green',
-            'purple',
-            'light-gray',
-            'gray',
-            'dark-gray',
-            'asphalt',
-            'black',
-        ]),
+        outerBackgroundColor: PropTypes.oneOf(backgroundColors),
+        innerBackgroundColor: PropTypes.oneOf(backgroundColors),
         innerPadding: PropTypes.oneOf(['default', 'none']),
         mobileInnerPadding: PropTypes.oneOf(['default', 'none']),
         children: PropTypes.node,
