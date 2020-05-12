@@ -48,30 +48,37 @@ import { playgroundStyle } from './ContentArea.docz';
 
 ## You can choose the background color for an external or internal block
 
-### purple and green
+### green
 <Playground style={playgroundStyle}>
-    <ContentArea outerBackgroundColor="purple" innerBackgroundColor="green">
+    <ContentArea innerBackgroundColor="green">
         Some content
     </ContentArea>
 </Playground>
 
-### light-gray and white
+### purple
 <Playground style={playgroundStyle}>
-    <ContentArea outerBackgroundColor="light-gray" innerBackgroundColor="white">
+    <ContentArea innerBackgroundColor="purple">
         Some content
     </ContentArea>
 </Playground>
 
-### asphalt and gray
+### spbSky0
 <Playground style={playgroundStyle}>
-    <ContentArea outerBackgroundColor="asphalt" innerBackgroundColor="gray">
+    <ContentArea innerBackgroundColor="spbSky0">
         Some content
     </ContentArea>
 </Playground>
 
-### black and dark-gray
+### soggyAsphalt
 <Playground style={playgroundStyle}>
-    <ContentArea outerBackgroundColor="black" innerBackgroundColor="dark-gray">
-        Some content
+    <ContentArea innerBackgroundColor="soggyAsphalt">
+        <div style={{color: 'white'}}>Some content</div>
+    </ContentArea>
+</Playground>
+
+### fullBlack
+<Playground style={playgroundStyle}>
+    <ContentArea innerBackgroundColor="fullBlack">
+        <div style={{color: 'white'}}>Some content</div>
     </ContentArea>
 </Playground>
