@@ -27,6 +27,22 @@ import { CheckboxWrapper, LightColorWrapper } from './Checkbox.docz';
     </CheckboxWrapper>
 </Playground>
 
+## Checkbox with small label size
+
+<Playground>
+    <CheckboxWrapper>
+        {({ checked, onChange }) =>
+            <Checkbox
+                checked={checked}
+                onChange={onChange}
+                fontSize="small"
+            >
+                I agree
+            </Checkbox>
+        }
+    </CheckboxWrapper>
+</Playground>
+
 ## Checkbox usage with error
 
 <Playground>
@@ -39,7 +55,7 @@ import { CheckboxWrapper, LightColorWrapper } from './Checkbox.docz';
     </CheckboxWrapper>
 </Playground>
 
-## Checkbox usage for light color scheme and small size
+## Checkbox usage for light color scheme
 
 <Playground>
     <LightColorWrapper>
@@ -49,7 +65,6 @@ import { CheckboxWrapper, LightColorWrapper } from './Checkbox.docz';
                     checked={checked}
                     onChange={onChange}
                     color="light"
-                    fontSize="small"
                 >
                     I agree
                 </Checkbox>
