@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Preloader**
+    - added new component
 - **Header**
     - correct header css for style guide, delete h6 props
 - **cn**

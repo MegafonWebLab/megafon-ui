@@ -1,0 +1,47 @@
+---
+name: Preloader
+menu: Components
+route: components/preloader
+---
+
+import { Playground, Props } from 'docz';
+import Preloader from './Preloader';
+import {
+    PreloaderWrapper,
+    Flexbox,
+} from './Preloader.docz';
+
+# Preloader
+
+## Properties
+
+<Props of={Preloader} />
+
+## Basic usage
+
+<Playground>
+    <Flexbox>
+        <Preloader />
+    </Flexbox>
+</Playground>
+
+## Color themes
+
+<Playground>
+    <Flexbox>
+        <Preloader color="default" />
+        <Preloader color="black" />
+        <PreloaderWrapper>
+            <Preloader color="white" />
+        </PreloaderWrapper>
+    </Flexbox>
+</Playground>
+
+## Sizes
+
+<Playground>
+    <Flexbox>
+        <Preloader size="small" />
+        <Preloader size="medium" />
+    </Flexbox>
+</Playground>
