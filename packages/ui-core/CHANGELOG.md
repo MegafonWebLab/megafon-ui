@@ -1,11 +1,53 @@
 # Changelog
 
 ## Unreleased
+- **Header**
+    - correct header css for style guide, delete h6 props
+- **cn**
+    - add variability to add arguments
+    - rename `cn` to `cnCreate`
+- **Switcher**
+    - added new component
+    - added examples and description in .mdx
+    - added tests
+- **Carousel**
+    - add onSwipe callback
+
+## Release 1.4.1
+- **Carousel**
+    - update classes prop
+- **Checkbox**
+    - checkbox with small label taken out as a separate example
+
+## Release 1.4.0
+- **Button**
+    - add font-color for hover button type
+- **GridColumn**
+    - add offset props
+- **ContentArea**
+    - `mobileInnerPadding` and `className` properties added
+- **Paragraph**
+    - line-height in mixin for small font fixed according to the guide
+
+## Release 1.3.4
+- **Carousel**
+    - add classes props for flexible styling of the component
+
+## Release 1.3.3
+- **Carousel**
+    - remove margin beetween slides in landing theme
+
+## Release 1.3.2
+- **Carousel**
+    - fix slick slide padding for lk themed carousel
+
+## Release 1.3.1
 - **Carousel**
     - added top and bottom padding for overflow slide content
 
+## Release 1.3.0
 - **GridColumn**
-    - add order property for all screens
+    - add `order` property for all screens
 
 ## Release 1.2.0
 - **Carousel**

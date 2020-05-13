@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Header.less';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 
 interface IHeaderProps {
     /** Tag */
-    as?: 'h1' | 'h2' | 'h3' | 'h5' | 'h6';
+    as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Color */
     color?: 'black' | 'white' | 'green' | 'purple' | 'blue' | 'inherit';
     /** Turn on margin */
@@ -16,13 +16,13 @@ interface IHeaderProps {
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
+    onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-header');
 class Header extends React.Component<IHeaderProps, {}> {
     static propTypes = {
-        as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5', 'h6']),
+        as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),
         color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
         margin: PropTypes.bool,
         addition: PropTypes.element,

@@ -10,6 +10,7 @@ exports[`<Carousel /> render tests should render component with all props 1`] = 
     beforeChange={[MockFunction]}
     dots={true}
     initialSlide={0}
+    onSwipe={[Function]}
     responsive={
       Array [
         Object {
@@ -47,6 +48,76 @@ exports[`<Carousel /> render tests should render component with all props 1`] = 
 </div>
 `;
 
+exports[`<Carousel /> render tests should render component with classes props 1`] = `
+<div
+  className="mfui-carousel some-class root-string"
+>
+  <div
+    className="mfui-carousel__arrows"
+  >
+    <CarouselArrow
+      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-prev mfui-carousel__arrow_disabled left-arrow-string"
+      onClick={[Function]}
+    />
+    <CarouselArrow
+      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-next right-arrow-string"
+      onClick={[Function]}
+    />
+  </div>
+  <Slider
+    afterChange={[Function]}
+    arrows={false}
+    beforeChange={[MockFunction]}
+    className="slider-cn"
+    dots={true}
+    initialSlide={0}
+    onSwipe={[Function]}
+    responsive={
+      Array [
+        Object {
+          "breakpoint": 1000,
+          "settings": Object {
+            "arrows": false,
+            "slidesToShow": 3,
+          },
+        },
+        Object {
+          "breakpoint": 900,
+          "settings": Object {
+            "arrows": true,
+            "slidesToShow": 2,
+          },
+        },
+        Object {
+          "breakpoint": 860,
+          "settings": Object {
+            "arrows": false,
+            "slidesToShow": 1,
+          },
+        },
+      ]
+    }
+    slidesToShow={4}
+  >
+    <Link
+      key="1"
+    />
+    <Link
+      key="2"
+    />
+    <Link
+      key="3"
+    />
+    <Link
+      key="4"
+    />
+    <Link
+      key="5"
+    />
+  </Slider>
+</div>
+`;
+
 exports[`<Carousel /> render tests should render component with prev arrow active and next disabled 1`] = `
 <div
   className="mfui-carousel some-class"
@@ -57,6 +128,7 @@ exports[`<Carousel /> render tests should render component with prev arrow activ
     beforeChange={[MockFunction]}
     dots={true}
     initialSlide={0}
+    onSwipe={[Function]}
     responsive={
       Array [
         Object {
@@ -101,6 +173,7 @@ exports[`<Carousel /> render tests should render component with required props 1
   <Slider
     afterChange={[Function]}
     arrows={false}
+    onSwipe={[Function]}
     responsive={Array []}
     slidesToShow={2}
   />

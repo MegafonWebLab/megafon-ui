@@ -45,6 +45,7 @@ const props: ICarouselProps = {
     onClickPrev: jest.fn(),
     onAfterChange: jest.fn(),
     onBeforeChange: jest.fn(),
+    onSwipe: jest.fn(),
 };
 
 describe('<Carousel />', () => {
@@ -81,6 +82,28 @@ describe('<Carousel />', () => {
             const wrapper = shallow(<Carousel {...props} />);
 
             wrapper.setState({ isPrevActive: true, isNextActive: false });
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render component with classes props', () => {
+            const classesProps = {
+                ...props,
+                children: [
+                    <Link key={1} />,
+                    <Link key={2} />,
+                    <Link key={3} />,
+                    <Link key={4} />,
+                    <Link key={5} />,
+                ],
+                classes: {
+                    root: 'root-string',
+                    slider: 'slider-cn',
+                    leftArrow: 'left-arrow-string',
+                    rightArrow: 'right-arrow-string',
+                },
+            };
+            const wrapper = shallow(<Carousel {...classesProps} />);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -124,6 +147,32 @@ describe('<Carousel />', () => {
 
             wrapper.find('.slick-dots > li > button').last().simulate('click');
             expect(props.onBeforeChange).toBeCalledWith(0, 5);
+        });
+    });
+
+    describe('onSwipe', () => {
+        it('should call onSwipe callback on carousel swipe', () => {
+            const wrapper = mount(
+                <Carousel
+                    {...props}
+                    children={[
+                        <Link key={1} />,
+                        <Link key={2} />,
+                        <Link key={3} />,
+                        <Link key={4} />,
+                        <Link key={5} />,
+                        <Link key={6} />,
+                    ]}
+                />
+            );
+
+            const slider = wrapper.find('.slick-list');
+            slider.simulate('touchstart', { touches: [{ pageX: 100, pageY: 0 }]});
+            slider.simulate('touchmove', { touches: [{ pageX: 150, pageY: 0 }]});
+            slider.simulate('touchend', { touches: [{ pageX: 200, pageY: 0 }]});
+
+            const { onSwipe } = props;
+            expect(onSwipe).toHaveBeenCalledWith('right');
         });
     });
 });

@@ -7,3 +7,7 @@ lerna-debug.log
 .DS_Store
 
 .npmrc
+yarn-error.log
+.docz
+docs
+index.mdx

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cn as cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTileDynamic.less';
 import ProductSwitcher from '../ProductSwitcher/ProductSwitcher';
 import { IServicePack, ISwitcher } from './ProductTile';
@@ -59,7 +59,7 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
                 <div className={cn('constructor-pack')}>
                     <AnimationValue
                         hAlign="center"
-                        value={`${currentPack.calls!.value} ${currentPack.calls!.unit}`}
+                        value={`${(currentPack.calls || {}).value} ${(currentPack.calls || {}).unit}`}
                     />
                 </div>
                 <ProductSwitcher
@@ -79,7 +79,7 @@ class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
                 <div className={cn('constructor-pack')}>
                     <AnimationValue
                         hAlign="center"
-                        value={`${currentPack.traffic!.value} ${currentPack.traffic!.unit}`}
+                        value={`${(currentPack.traffic || {}).value} ${(currentPack.traffic || {}).unit}`}
                     />
                 </div>
             </div>

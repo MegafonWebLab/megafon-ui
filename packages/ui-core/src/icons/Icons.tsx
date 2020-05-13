@@ -3,8 +3,10 @@ import './Icons.less';
 import Header from '../components/Header/Header';
 import Cancel from 'icons/System/32/Cancel_32.svg';
 import Copy from 'icons/Basic/24/Whats-left_24.svg';
-import cnCreate from 'utils/cn';
-export const reqSvgs = require.context('icons', true, /\.svg$/);
+import cnCreate from 'utils/cnCreate';
+
+// tslint:disable-next-line:no-string-literal
+export const reqSvgs = require['context']('icons', true, /\.svg$/);
 
 const cn = cnCreate('icons');
 interface IIconsState {
@@ -16,7 +18,7 @@ interface IIconsState {
 
 type svgDataType = { size: string; path: string; importPath: string };
 
-type IconEntry = Array<string | svgDataType[]>;
+type IconEntry = [string, svgDataType[]];
 
 type Entries = IconEntry[];
 
@@ -37,7 +39,7 @@ const sizeDictionary = {
 const importIcon = 'import Icon from \'@megafon/ui-core/dist/icons/';
 
 class Icons extends React.Component<{}, IIconsState> {
-    copyToClipBoard: (str: string, copyIndex: copyBoard) => void;
+    copyToClipBoard?: (str: string, copyIndex: copyBoard) => void = undefined;
 
     constructor(props: {}) {
         super(props);
@@ -49,8 +51,7 @@ class Icons extends React.Component<{}, IIconsState> {
         };
     }
 
-    // @ts-ignore unused props
-    static getDerivedStateFromProps(props: {}, state: IIconsState) {
+    static getDerivedStateFromProps(_props: {}, state: IIconsState) {
         const { activeElement: { svgList }, activeIcon } = state;
 
         if (svgList && !svgList[activeIcon]) {
@@ -129,7 +130,7 @@ class Icons extends React.Component<{}, IIconsState> {
 
         return entries.map((entry: IconEntry) => {
             const [name, svgList] = entry;
-            const [svg] = svgList as svgDataType[];
+            const [svg] = svgList;
             const Svg = reqSvgs(svg.path).default;
 
             return (
@@ -160,7 +161,8 @@ class Icons extends React.Component<{}, IIconsState> {
                         <a title="copy to clipboard">
                             <Copy
                                 className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
-                                onClick={this.copyToClipBoard(`${importStr}.svg'`, copyBoard.SVG)}
+                                onClick={this.copyToClipBoard &&
+                                        this.copyToClipBoard(`${importStr}.svg'`, copyBoard.SVG)}
                             />
                         </a>
                     </div>
@@ -169,7 +171,8 @@ class Icons extends React.Component<{}, IIconsState> {
                         <a title="copy to clipboard">
                             <Copy
                                 className={cn('info-copy', { active: copyIndex === copyBoard.JSX })}
-                                onClick={this.copyToClipBoard(`${importStr}'`, copyBoard.JSX)}
+                                onClick={this.copyToClipBoard
+                                    && this.copyToClipBoard(`${importStr}'`, copyBoard.JSX)}
                             />
                         </a>
                     </div>

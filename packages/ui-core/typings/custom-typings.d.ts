@@ -4,7 +4,7 @@ declare namespace JSX {
 
 declare module 'classnames';
 
-declare module 'utils/cn';
+declare module 'utils/cnCreate';
 
 declare module '*.svg' {
     const content: any;

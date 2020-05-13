@@ -127,7 +127,7 @@ exports[`<TextField /> password type renders with mask input 1`] = `
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
-      <_default
+      <[object Object]
         autoComplete="off"
         className="mfui-text-field__field"
         inputRef={[Function]}
@@ -163,7 +163,7 @@ exports[`<TextField /> renders with mask 1`] = `
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <div>
-      <_default
+      <[object Object]
         autoComplete="on"
         autoFocus={true}
         className="mfui-text-field__field mfui-text-field__field_big-space"

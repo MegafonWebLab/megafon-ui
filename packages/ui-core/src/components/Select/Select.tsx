@@ -3,9 +3,16 @@ import * as PropTypes from 'prop-types';
 import './Select.less';
 import SelectItem from './SelectItem';
 import * as equal from 'deep-equal';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
+
+export interface ISelectCallbackItem {
+    title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    value?: string;
+    index: number;
+    data?: {};
+}
 
 interface ISelectProps {
     /** Field title */
@@ -75,18 +82,13 @@ interface ISelectProps {
     /** Custom classname for controls block */
     classNameControl?: string;
     /** Change handler */
-    onChangeSearch?(value: string): void;
+    onChangeSearch?: (value: string) => void;
     /** Focus handler */
-    onFocusSearch?(value: string): void;
+    onFocusSearch?: (value: string) => void;
     /** Click item handler */
-    onSelectItem?(e: React.SyntheticEvent<EventTarget>, data: {
-        title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-        value?: string;
-        index: number;
-        data?: {};
-    }): void;
+    onSelectItem?: (e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => void;
     /** Click icon handler */
-    onClickIcon?(e: React.SyntheticEvent<EventTarget>): void;
+    onClickIcon?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 interface ISelectState {
@@ -404,17 +406,17 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     getSelectNode = node => this.selectNode = node;
 
     renderChildren() {
-        const { itemPadding } = this.props;
+        const { itemPadding, items, notFoundText } = this.props;
         this.itemsNodeList = [];
 
         return (
             <div className={cn('list')}>
                 <div className={cn('list-inner')} ref={node => this.getItemWrapper(node)}>
-                    {this.props.items.map(({ id, ...rest }, i) =>
+                    {items.map(({ id, title, leftIcon, rightIcon }, i) =>
                         <SelectItem
-                            title={rest.title}
-                            leftIcon={rest.leftIcon}
-                            rightIcon={rest.rightIcon}
+                            title={title}
+                            leftIcon={leftIcon}
+                            rightIcon={rightIcon}
                             key={id}
                             index={i}
                             current={this.state.currentIndex === i}
@@ -425,7 +427,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                             padding={itemPadding}
                         />
                     )}
-                    {!this.props.items.length && <div className={cn('not-found')}>{this.props.notFoundText}</div>}
+                    {!items.length && <div className={cn('not-found')}>{notFoundText}</div>}
                 </div>
             </div>
         );

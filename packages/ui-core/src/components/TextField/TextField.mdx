@@ -1,30 +1,25 @@
 ---
 name: TextField
 menu: Components
+route: components/textfield
 ---
-import { Playground, PropsTable } from 'docz';
-import TextField from './TextField';
 
-export const wrapper = (width = 250) => ({ children }) => {
-    return (
-        <div style={{width: `${width}px`}}>
-            {children}
-        </div>
-    )
-}
+import { Playground, Props } from 'docz';
+import TextField from './TextField';
+import { TextFieldWrapper } from './TextField.docz';
 
 # TextField
 
 ## Properties
 
-<PropsTable of={TextField} />
+<Props of={TextField} />
 
 ## API
 
-Method  | Description
-------- | ---
-blur    | Trigger blur event on input field.
-focus   | Trigger focus event on input field.
+| Method | Description                         |
+| ------ | ----------------------------------- |
+| blur   | Trigger blur event on input field.  |
+| focus  | Trigger focus event on input field. |
 
 **Use TextField's 'ref' prop for API methods call:**
 
@@ -48,65 +43,86 @@ class SearchForm extends Component {
 
 ## Basic usage
 
-<Playground wrapper={wrapper()}>
-    <TextField name="name"/>
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" />
+    </TextFieldWrapper>
 </Playground>
 
 ## Mask usage
 
-<Playground wrapper={wrapper()}>
-    <TextField
-        placeholder="+7 (999) 999-99-99"
-        mask="+7 (999) 999-99-99"
-        maskChar="_"
-        label="Phone number"
-        id="2"
-    />
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            placeholder="+7 (999) 999-99-99"
+            mask="+7 (999) 999-99-99"
+            maskChar="_"
+            label="Phone number"
+            id="2"
+        />
+    </TextFieldWrapper>
 </Playground>
 
 ## Error usage
 
-<Playground wrapper={wrapper()}>
-    <TextField error={true} noticeText="Name is required" />
+<Playground>
+    <TextFieldWrapper>
+        <TextField error={true} noticeText="Name is required" />
+    </TextFieldWrapper>
 </Playground>
 
 ## Valid usage
 
-<Playground wrapper={wrapper()}>
+<Playground>
+    <TextFieldWrapper>
         <TextField valid={true} />
+    </TextFieldWrapper>
 </Playground>
 
 ## Comment usage
 
-<Playground wrapper={wrapper()}>
-    <TextField commentText="Comment" />
+<Playground>
+    <TextFieldWrapper>
+        <TextField commentText="Comment" />
+    </TextFieldWrapper>
 </Playground>
 
 ## Success text usage
 
-<Playground wrapper={wrapper()}>
-    <TextField successText="Field is correct" />
+<Playground>
+    <TextFieldWrapper>
+        <TextField successText="Field is correct" />
+    </TextFieldWrapper>
 </Playground>
 
 ## Max length text usage
 
-<Playground wrapper={wrapper()}>
-    <TextField maxLength={10} />
+<Playground>
+    <TextFieldWrapper>
+        <TextField maxLength={10} />
+    </TextFieldWrapper>
 </Playground>
 
 ## Disable usage
 
-<Playground wrapper={wrapper()}>
-    <TextField disabled={true} />
+<Playground>
+    <TextFieldWrapper>
+        <TextField disabled={true} />
+    </TextFieldWrapper>
 </Playground>
 
 ## Password type usage
 
-<Playground wrapper={wrapper()}>
-    <TextField name="name" placeholder="password" type="password"/>
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" placeholder="password" type="password" />
+    </TextFieldWrapper>
 </Playground>
 
 ## Increased size of space between words usage
-<Playground wrapper={wrapper()}>
-    <TextField bigSpace={true} />
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField bigSpace={true} />
+    </TextFieldWrapper>
 </Playground>

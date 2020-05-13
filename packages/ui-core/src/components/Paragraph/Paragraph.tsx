@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Paragraph.less';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 
 interface IParagraphProps {
     /** Align text horizontally */
@@ -90,7 +90,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
                     'h-align': hAlign,
                     color: color,
                     weight: weight,
-                }, className )}>
+                }, className)}>
                 {children}
             </TagName>
         );

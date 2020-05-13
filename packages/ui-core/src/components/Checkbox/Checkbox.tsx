@@ -1,6 +1,6 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import cnCreate from 'utils/cn';
+import cnCreate from 'utils/cnCreate';
 import './Checkbox.less';
 import CheckedIcon from 'icons/System/16/Checked_16.svg';
 import detectTouch from 'utils/detectTouch';
@@ -26,7 +26,7 @@ export interface ICheckboxProps {
     extraContent?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
     /** onChange handler */
-    onChange?(e: React.SyntheticEvent<EventTarget>): void;
+    onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-checkbox');

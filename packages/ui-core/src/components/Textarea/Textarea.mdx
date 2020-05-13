@@ -1,56 +1,68 @@
 ---
 name: Textarea
 menu: Components
+route: components/textarea
 ---
-import { Playground, PropsTable } from 'docz';
-import Textarea from './Textarea';
 
-export const wrapper = (width = 250) => ({ children }) => {
-    return (
-        <div style={{width: `${width}px`}}>
-            {children}
-        </div>
-    )
-}
+import { Playground, Props } from 'docz';
+import Textarea from './Textarea';
+import { TextAreaWrapper } from './Textarea.docz';
 
 # Textarea
 
 ## Properties
 
-<PropsTable of={Textarea} />
+<Props of={Textarea} />
 
 ## Basic usage
 
-<Playground wrapper={wrapper()}>
-    <Textarea name="name"/>
+<Playground>
+    <TextAreaWrapper>
+        <Textarea name="name" />
+    </TextAreaWrapper>
 </Playground>
 
 ## Error usage
 
-<Playground wrapper={wrapper()}>
-    <Textarea label="Notice" id="1" error={true} noticeText="Name is required" />
+<Playground>
+    <TextAreaWrapper>
+        <Textarea
+            label="Notice"
+            id="1"
+            error={true}
+            noticeText="Name is required"
+        />
+    </TextAreaWrapper>
 </Playground>
 
 ## Valid usage
 
-<Playground wrapper={wrapper()}>
-    <Textarea valid={true} />
+<Playground>
+    <TextAreaWrapper>
+        <Textarea valid={true} />
+    </TextAreaWrapper>
 </Playground>
 
 ## Comment usage
 
-<Playground wrapper={wrapper()}>
-    <Textarea commentText="Comment" />
+<Playground>
+    <TextAreaWrapper>
+        <Textarea commentText="Comment" />
+    </TextAreaWrapper>
 </Playground>
 
 ## Success text usage
 
-<Playground wrapper={wrapper()}>
-    <Textarea successText="Field passed validation!" />
+<Playground>
+    <TextAreaWrapper>
+        <Textarea successText="Field passed validation!" />
+    </TextAreaWrapper>
 </Playground>
 
 ## Disable usage
 
-<Playground wrapper={wrapper()}>
-    <Textarea disabled={true} />
+<Playground>
+    <TextAreaWrapper>
+        <Textarea disabled={true} />
+    </TextAreaWrapper>
 </Playground>
