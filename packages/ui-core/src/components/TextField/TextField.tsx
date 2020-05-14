@@ -15,7 +15,7 @@ const InputMask = require('react-input-mask');
 export interface ITextFieldProps {
     /** Toggle to textarea */
     multiline?: boolean;
-    /** Shows label */
+    /** Field label */
     label?: string;
     /** HTML-attribute "type" of input element. Doesn't work with **multiline=true** */
     type?: 'text' | 'password' | 'tel' | 'email';
@@ -25,7 +25,7 @@ export interface ITextFieldProps {
     hideIcon?: boolean;
     /** The result of external field's validation */
     verification?: 'valid' | 'error';
-    /** Text message. Could be an error message or a simple hint to user */
+    /** Text message. Could be a validation message or a simple hint to user */
     noticeText?: string;
     /** Disables field. The value of this prop is also passed through to attribute with the same name */
     disabled?: boolean;
@@ -33,7 +33,7 @@ export interface ITextFieldProps {
     required?: boolean;
     /** Custom ref-object or ref-callback. Note: if you use **mask**, you have to use ref-callback to get instance */
     inputRef?: React.Ref<any>;
-    /** Field name. The value of this prop is also passed through to attribute with the same name */
+    /** Field name. The value of this prop is passed through to attribute with the same name */
     name?: string;
     /** Initial Placeholder */
     placeholder?: string;
