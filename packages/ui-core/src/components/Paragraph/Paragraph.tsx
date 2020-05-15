@@ -11,7 +11,7 @@ interface IParagraphProps {
     /** Vertical margin */
     margin?: boolean;
     /** Text color */
-    color?: 'green' | 'purple' | 'clearWhite' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'freshAsphalt' | 'fullBlack' | 'inherit';
+    color?: 'green' | 'purple' | 'clearWhite' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'freshAsphalt' | 'fullBlack';
     /** Custom className */
     className?: string;
     children?: React.ReactNode;
@@ -23,7 +23,7 @@ class Paragraph extends React.Component<IParagraphProps, {}> {
         align: PropTypes.oneOf(['left', 'center', 'right']),
         size: PropTypes.oneOf(['regular', 'small']),
         margin: PropTypes.bool,
-        color: PropTypes.oneOf(['green', 'purple', 'clearWhite', 'spbSky0', 'spbSky1', 'spbSky2', 'freshAsphalt', 'fullBlack', 'inherit']),
+        color: PropTypes.oneOf(['green', 'purple', 'clearWhite', 'spbSky0', 'spbSky1', 'spbSky2', 'freshAsphalt', 'fullBlack']),
         children: PropTypes.node,
     };
 

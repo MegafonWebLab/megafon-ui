@@ -5,6 +5,7 @@ route: components/paragraph
 ---
 
 import { Playground, Props } from 'docz';
+import { DemoMarginWrapper, DemoBackgroundWrapper } from './Paragraph.docz';
 import Paragraph from './Paragraph';
 
 # Paragraph
@@ -16,78 +17,96 @@ import Paragraph from './Paragraph';
 ## Basic usage
 
 <Playground>
-    <Paragraph>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore
-        quam deserunt magni consequuntur veniam! Enim doloremque error expedita
-        nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at
-        quis.
-    </Paragraph>
+    <DemoMarginWrapper>
+        <Paragraph>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore
+            quam deserunt magni consequuntur veniam! Enim doloremque error expedita
+            nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at
+            quis.
+        </Paragraph>
+    </DemoMarginWrapper>
 </Playground>
 
 ## Usage without margin
 
 <Playground>
-    <Paragraph margin={false}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore
-        quam deserunt magni consequuntur veniam! Enim doloremque error expedita
-        nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at
-        quis.
-    </Paragraph>
+    <DemoMarginWrapper>
+        <Paragraph margin={false}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore
+            quam deserunt magni consequuntur veniam! Enim doloremque error expedita
+            nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at
+            quis.
+        </Paragraph>
+        <Paragraph margin={false}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore
+            quam deserunt magni consequuntur veniam! Enim doloremque error expedita
+            nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at
+            quis.
+        </Paragraph>
+    </DemoMarginWrapper>
 </Playground>
 
 ## Align options
 
 <Playground>
-    <Paragraph align='left'>
-        left - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph align='center'>
-        center - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph align='right'>
-        right - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
+    <DemoMarginWrapper>
+        <Paragraph align='left'>
+            left - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+        <Paragraph align='center'>
+            center - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+        <Paragraph align='right'>
+            right - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+    </DemoMarginWrapper>
 </Playground>
 
 ## Size options
 
 <Playground>
-    <Paragraph>
-        15/24 - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph size={'small'}>
-        12/16 - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
+    <DemoMarginWrapper>
+        <Paragraph>
+            15/24 - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+        <Paragraph size={'small'}>
+            12/16 - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+    </DemoMarginWrapper>
 </Playground>
 
 ## Color options
 
 <Playground>
-    <Paragraph color='green'>
-        'green' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='purple'>
-        'purple' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='clearWhite'>
-        'clearWhite' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='spbSky0'>
-        'spbSky0' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='spbSky1'>
-        'spbSky1' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='spbSky2'>
-        'spbSky2' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='freshAsphalt'>
-        'freshAsphalt' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='fullBlack'>
-        'fullBlack' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
-    <Paragraph color='inherit'>
-        'inherit' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </Paragraph>
+    <DemoMarginWrapper>
+        <DemoBackgroundWrapper>
+            <Paragraph color='clearWhite'>
+                'clearWhite' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </Paragraph>
+            <Paragraph color='spbSky0'>
+                'spbSky0' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </Paragraph>
+            <Paragraph color='spbSky1'>
+                'spbSky1' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </Paragraph>
+            <Paragraph color='spbSky2'>
+                'spbSky2' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </Paragraph>
+        </DemoBackgroundWrapper>
+        <Paragraph color='green'>
+            'green' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+        <Paragraph color='purple'>
+            'purple' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+        <Paragraph color='freshAsphalt'>
+            'freshAsphalt' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+        <Paragraph color='fullBlack'>
+            'fullBlack' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+        <Paragraph color='inherit'>
+            'inherit' - Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        </Paragraph>
+    </DemoMarginWrapper>
 </Playground>
