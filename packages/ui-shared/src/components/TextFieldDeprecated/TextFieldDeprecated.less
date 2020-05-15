@@ -1,6 +1,6 @@
-@import '~styles/base.less';
+@import '~@megafon/ui-core/styles/base.less';
 
-@b: e('.mfui-textarea');
+@b: e('.mfui-text-field-deprecated');
 
 @{b} {
     .fontFamily();
@@ -13,8 +13,7 @@
         position: relative;
         z-index: 1;
         font-size: 15px;
-        resize: none;
-        height: 152px;
+        height: 48px;
         width: 100%;
         box-sizing: border-box;
         outline: none;
@@ -27,9 +26,23 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         box-shadow: none;
-        display: block;
         overflow: auto;
         margin: 0;
+    }
+    input::-webkit-input-placeholder {
+        color: lighten(@soggyAsphalt, 50%);
+    }
+    input:-moz-placeholder {
+        color: lighten(@soggyAsphalt, 50%);
+    }
+    input:-ms-input-placeholder {
+        color: lighten(@soggyAsphalt, 50%);
+    }
+    input::-ms-clear, input::-ms-reveal {
+        display: none;
+    }
+    &__field_big-space {
+        word-spacing: 4px;
     }
     &__field-wrapper {
         position: relative;
@@ -37,10 +50,55 @@
         background: @clearWhite;
     }
 
+    &__icon-box {
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        padding-right: 16px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+    }
+    &__icon-box_password {
+        z-index: 3;
+    }
+    &__icon-box_custom {
+        z-index: 3;
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
+        display: block;
+        user-select: none;
+    }
+
     &__text {
         font-size: 12px;
         line-height: 16px;
         margin-top: 4px;
+    }
+}
+
+//mod size:
+@{b} {
+    &_size_large & {
+        &__field {
+            @media @desktop {
+                height: 60px;
+                padding: 19px 25px 19px 25px;
+            }
+        }
+        &__icon-box {
+            @media @desktop {
+                padding-right: 24px;
+            }
+        }
     }
 }
 
@@ -57,16 +115,24 @@
             border-color: @soggyAsphalt;
         }
     }
+
     &_color_default&_valid & {
         &__field-wrapper_no-touch:hover @{b}__field,
         &__field {
             border-color: @green;
         }
+        &__icon {
+            fill: @green;
+        }
     }
+
     &_color_default&_error & {
         &__field-wrapper:hover @{b}__field,
         &__field {
             border-color: @fury;
+        }
+        &__icon {
+            fill: @fury;
         }
         &__text_error {
             color: @fury;
@@ -87,6 +153,9 @@
         &__field-wrapper:hover @{b}__field,
         &__field {
             border-color: @fury;
+        }
+        &__icon {
+            fill: @fury;
         }
         &__text_error {
             color: @fury;
@@ -110,5 +179,28 @@
             color: @soggyAsphalt !important;
             -webkit-text-fill-color: @soggyAsphalt !important;
         }
+        &__icon-box {
+            cursor: default !important;
+        }
+    }
+}
+
+//mod icon
+@{b} {
+    &_icon &__field {
+        padding-right: 55px;
+    }
+    &_icon&_size_large &__field {
+        @media @desktop {
+            padding-right: 65px;
+        }
+    }
+}
+
+//mod password
+@{b} {
+    &_password &__field {
+        font: small-caption;
+        font-size: 19px;
     }
 }

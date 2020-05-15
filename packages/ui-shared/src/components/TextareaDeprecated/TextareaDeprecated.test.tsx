@@ -1,67 +1,67 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import Textarea from './Textarea';
+import TextareaDeprecated from './TextareaDeprecated';
 
-describe('<Textarea />', () => {
-    it('it renders Textarea', () => {
-        const wrapper = shallow(<Textarea />);
+describe('<TextareaDeprecated />', () => {
+    it('it renders TextareaDeprecated', () => {
+        const wrapper = shallow(<TextareaDeprecated />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it label and id', () => {
-        const wrapper = shallow(<Textarea label="label" id="id" />);
+        const wrapper = shallow(<TextareaDeprecated label="label" id="id" />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders texts', () => {
-        const wrapper = shallow(<Textarea commentText="text" successText="text" />);
+        const wrapper = shallow(<TextareaDeprecated commentText="text" successText="text" />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders without valid icon', () => {
-        const wrapper = shallow(<Textarea valid={true} />);
+        const wrapper = shallow(<TextareaDeprecated valid={true} />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders without error icon', () => {
-        const wrapper = shallow(<Textarea error={true} />);
+        const wrapper = shallow(<TextareaDeprecated error={true} />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders error icon', () => {
-        const wrapper = shallow(<Textarea error={true} noticeText="text" />);
+        const wrapper = shallow(<TextareaDeprecated error={true} noticeText="text" />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders valid icon', () => {
-        const wrapper = shallow(<Textarea valid={true} noticeText="text" />);
+        const wrapper = shallow(<TextareaDeprecated valid={true} noticeText="text" />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('is checked shouldComponentUpdate', () => {
-        const wrapper = shallow(<Textarea error={true} noticeText="text" />);
+        const wrapper = shallow(<TextareaDeprecated error={true} noticeText="text" />);
 
         wrapper.setProps({ error: true, noticeText: 'text' });
         expect(wrapper).toMatchSnapshot();
     });
 
     it('is checked shouldComponentUpdate with new props', () => {
-        const wrapper = shallow(<Textarea error={true} noticeText="text" />);
+        const wrapper = shallow(<TextareaDeprecated error={true} noticeText="text" />);
 
         wrapper.setProps({ error: false, noticeText: 'text' });
         expect(wrapper).toMatchSnapshot();
     });
 
     it('is checked focus method', () => {
-        const wrapper = mount(<Textarea />);
-        const instance = wrapper.instance() as Textarea;
+        const wrapper = mount(<TextareaDeprecated />);
+        const instance = wrapper.instance() as TextareaDeprecated;
 
         expect(() => instance.focus()).not.toThrow();
     });
 
     it('is checked blur method', () => {
-        const wrapper = mount(<Textarea />);
-        const instance = wrapper.instance() as Textarea;
+        const wrapper = mount(<TextareaDeprecated />);
+        const instance = wrapper.instance() as TextareaDeprecated;
 
         expect(() => instance.blur()).not.toThrow();
     });

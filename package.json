@@ -21,7 +21,7 @@
         }
     },
     "devDependencies": {
-        "docz": "^2.2.0",
+        "docz": "2.2.0",
         "gatsby-plugin-less": "^3.1.1",
         "lerna": "^3.18.1",
         "markdown-to-jsx": "^6.11.0"

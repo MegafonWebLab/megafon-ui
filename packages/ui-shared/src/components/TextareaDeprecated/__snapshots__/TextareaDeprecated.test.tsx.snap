@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextareaDeprecated /> is checked shouldComponentUpdate 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_error mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_error"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> is checked shouldComponentUpdate with new props 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> it label and id 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
+>
+  <InputLabel
+    htmlFor="id"
+  >
+    label
+  </InputLabel>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+        id="id"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> it renders TextareaDeprecated 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> it renders error icon 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_error mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_error"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> it renders texts 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_comment"
+  >
+    text
+  </div>
+  <div
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_success"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> it renders valid icon 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_valid mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-textarea-deprecated__text mfui-textarea-deprecated__text_error"
+  >
+    text
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> it renders without error icon 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_error mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextareaDeprecated /> it renders without valid icon 1`] = `
+<div
+  className="mfui-textarea-deprecated mfui-textarea-deprecated_valid mfui-textarea-deprecated_color_default"
+>
+  <div
+    className="mfui-textarea-deprecated__field-wrapper mfui-textarea-deprecated__field-wrapper_no-touch"
+  >
+    <div>
+      <textarea
+        autoComplete="off"
+        className="mfui-textarea-deprecated__field"
+      />
+    </div>
+  </div>
+</div>
+`;

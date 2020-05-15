@@ -14,38 +14,19 @@ import { TextFieldWrapper } from './TextField.docz';
 
 <Props of={TextField} />
 
-## API
-
-| Method | Description                         |
-| ------ | ----------------------------------- |
-| blur   | Trigger blur event on input field.  |
-| focus  | Trigger focus event on input field. |
-
-**Use TextField's 'ref' prop for API methods call:**
-
-```
-class SearchForm extends Component {
-    this.textField = undefined;
-
-    handleSubmit() {
-        textField.blur();
-    }
-
-    render() {
-        return (
-            <Form onSubmit={this.handleSubmit}>
-                <TextField ref={(instance) => { this.textField = instance; }} />
-            </Form>
-        );
-    }
-}
-```
-
 ## Basic usage
 
 <Playground>
     <TextFieldWrapper>
         <TextField name="name" />
+    </TextFieldWrapper>
+</Playground>
+
+## Required field
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" required label="Номер телефона" />
     </TextFieldWrapper>
 </Playground>
 
@@ -67,7 +48,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField error={true} noticeText="Name is required" />
+        <TextField verification="error" noticeText="Name is required" />
     </TextFieldWrapper>
 </Playground>
 
@@ -75,7 +56,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField valid={true} />
+        <TextField verification="valid" />
     </TextFieldWrapper>
 </Playground>
 
@@ -83,7 +64,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField commentText="Comment" />
+        <TextField noticeText="Comment" />
     </TextFieldWrapper>
 </Playground>
 
@@ -91,7 +72,7 @@ class SearchForm extends Component {
 
 <Playground>
     <TextFieldWrapper>
-        <TextField successText="Field is correct" />
+        <TextField hideIcon={true} verification="valid" noticeText="Field is correct" />
     </TextFieldWrapper>
 </Playground>
 
@@ -119,10 +100,93 @@ class SearchForm extends Component {
     </TextFieldWrapper>
 </Playground>
 
-## Increased size of space between words usage
+## With externally set value
 
 <Playground>
     <TextFieldWrapper>
-        <TextField bigSpace={true} />
+        <TextField value='initial value' />
+    </TextFieldWrapper>
+</Playground>
+
+##
+# Textarea view
+The **multiline** property set to **true** changes TextField to textarea-like view.
+
+## Basic usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" multiline={true} />
+    </TextFieldWrapper>
+</Playground>
+
+## Required usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            label="Required field"
+            multiline={true}
+            required
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Error usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            label="Notice"
+            id="1"
+            verification="error"
+            noticeText="Name is required"
+            multiline={true}
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Valid usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            verification="valid"
+            multiline={true}
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Comment usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            noticeText="Comment"
+            multiline={true}
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Success text usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            verification="valid"
+            noticeText="Field passed validation"
+            multiline={true}
+        />
+    </TextFieldWrapper>
+</Playground>
+
+## Disable usage
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            disabled
+            multiline={true}
+        />
     </TextFieldWrapper>
 </Playground>

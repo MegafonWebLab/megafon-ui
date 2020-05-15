@@ -1,10 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import './Textarea.less';
-import cnCreate from 'utils/cnCreate';
-import * as equal from 'deep-equal';
-import detectTouch from 'utils/detectTouch';
-import InputLabel from '../InputLabel/InputLabel';
+import './TextareaDeprecated.less';
+import equal from 'deep-equal';
+import { InputLabel, cnCreate, detectTouch } from '@megafon/ui-core';
 
 interface ITextareaProps {
     /** Field title */
@@ -53,8 +51,8 @@ interface ITextareaProps {
     onKeyUp?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-textarea');
-class Textarea extends React.Component<ITextareaProps, {}> {
+const cn = cnCreate('mfui-textarea-deprecated');
+class TextareaDeprecated extends React.Component<ITextareaProps, {}> {
     static propTypes = {
         label: PropTypes.node,
         noticeText: PropTypes.string,
@@ -151,4 +149,4 @@ class Textarea extends React.Component<ITextareaProps, {}> {
     }
 }
 
-export default Textarea;
+export default TextareaDeprecated;
