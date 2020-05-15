@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 interface ICollapseProps {
-    className: string;
-    classNameContainer: string;
+    className?: string;
+    classNameContainer?: string;
     isOpened: boolean;
     animationDuration: number;
-    children: JSX.Element | Element;
+    children: JSX.Element | Element | string | number;
 }
 
 interface ICollapseState {
@@ -18,7 +18,7 @@ class Collapse extends React.Component<ICollapseProps, ICollapseState> {
         className: PropTypes.string,
         classNameContainer: PropTypes.string,
         isOpened: PropTypes.bool.isRequired,
-        animationDuration: PropTypes.number,
+        animationDuration: PropTypes.number.isRequired,
         children: PropTypes.node.isRequired,
     };
 
@@ -32,7 +32,6 @@ class Collapse extends React.Component<ICollapseProps, ICollapseState> {
     constructor(props: ICollapseProps) {
         super(props);
         this.state = { height: '0' };
-        this.slideDownTimer;
     }
 
     componentDidMount() {

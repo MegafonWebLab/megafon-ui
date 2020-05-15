@@ -12,11 +12,14 @@ interface IAccordionClasses {
 }
 
 export interface IAccordionProps {
-    title: JSX.Element | string;
-    children: JSX.Element | Element;
+    /** Accordion title */
+    title: string;
+    children: JSX.Element | Element | string | number;
+    /** Accordion state */
     isOpened: boolean;
-    theme?: 'default';
+    /** Outer classes for Accordion and used components */
     classes?: IAccordionClasses;
+    /** Click handler */
     onClickAccordion?: (isOpened: boolean, title: JSX.Element | string) => void;
 }
 
@@ -30,7 +33,6 @@ class Accordion extends React.PureComponent<IAccordionProps, IAccordionState> {
         title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
         children: PropTypes.node.isRequired,
         isOpened: PropTypes.bool,
-        theme: PropTypes.oneOf(['default']),
         classes: PropTypes.shape({
             root: PropTypes.string,
             collapse: PropTypes.string,
@@ -40,7 +42,6 @@ class Accordion extends React.PureComponent<IAccordionProps, IAccordionState> {
 
     static defaultProps = {
         isOpened: false,
-        theme: 'default',
     };
 
     rootNode: React.RefObject<HTMLDivElement>;
@@ -80,7 +81,6 @@ class Accordion extends React.PureComponent<IAccordionProps, IAccordionState> {
     render() {
         const {
             title,
-            theme,
             children,
             classes: {
                 root: rootPropsClasses = '',
@@ -90,7 +90,7 @@ class Accordion extends React.PureComponent<IAccordionProps, IAccordionState> {
         const { isOpened } = this.state;
 
         return (
-            <div className={cn('', { theme, open: isOpened }, rootPropsClasses)} ref={this.rootNode}>
+            <div className={cn({ open: isOpened }, rootPropsClasses)} ref={this.rootNode}>
                 <div className={cn('title-wrap')} onClick={this.handleClickTitle}>
                     <h5 className={cn('title')}>{title}</h5>
                     <div className={cn('icon-box', { open: isOpened })}>
@@ -101,7 +101,7 @@ class Accordion extends React.PureComponent<IAccordionProps, IAccordionState> {
                     </div>
                 </div>
                 <Collapse
-                    className={cn('content', { theme }, collapsePropsClasses)}
+                    className={cn('content', collapsePropsClasses)}
                     classNameContainer={cn('content-inner')}
                     isOpened={isOpened}
                 >

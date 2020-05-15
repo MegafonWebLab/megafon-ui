@@ -2,6 +2,18 @@
 @b: e('.mfui-accordion');
 
 @{b} {
+    border-top: 1px solid @spbSky2;
+
+    &:last-child {
+        border-bottom: 1px solid @spbSky2;
+    }
+    &:not(&_open) &__title-wrap:hover {
+        background: rgba(237, 237, 237, 0.5);
+    }
+    &&_open &__title-wrap {
+        background: @spbSky1;
+        border-bottom: 1px solid @spbSky2;
+    }
     &__title-wrap {
         cursor: pointer;
         position: relative;
@@ -12,6 +24,7 @@
         line-height: 24px;
         font-weight: 500;
         margin: 0;
+        color: @soggyAsphalt;
     }
     &__icon-box {
         position: absolute;
@@ -27,22 +40,6 @@
     }
     &__icon {
         fill: @fullBlack;
-    }
-    &_theme_default {
-        border-top: 1px solid @spbSky2;
-    }
-    &_theme_default:last-child {
-        border-bottom: 1px solid @spbSky2;
-    }
-    &_theme_default &__title {
-        color: @soggyAsphalt;
-    }
-    &_theme_default:not(&_open) &__title-wrap:hover {
-        background: rgba(237, 237, 237, 0.5);
-    }
-    &_theme_default&_open &__title-wrap {
-        background: @spbSky1;
-        border-bottom: 1px solid @spbSky2;
     }
 }
 
