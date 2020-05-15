@@ -6,7 +6,7 @@ route: components/accordion
 
 import { Playground, Props } from 'docz';
 import Accordion from './Accordion';
-import { AccordionWrapper } from './Accordion.docz';
+import { DemoAccordionWrapper, DemoParagraphWrapper } from './Accordion.docz';
 import Paragraph from 'components/Paragraph/Paragraph';
 
 # Accordion
@@ -18,23 +18,45 @@ import Paragraph from 'components/Paragraph/Paragraph';
 ## Basic usage
 
 <Playground>
-    <AccordionWrapper>
+    <DemoAccordionWrapper>
         <Accordion
             title="Accordion title"
         >
-            <Paragraph>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
-                Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
-            </Paragraph>
+            <DemoParagraphWrapper>
+                <Paragraph>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
+                    Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+                </Paragraph>
+            </DemoParagraphWrapper>
         </Accordion>
         <Accordion
             title="Initially opened accordion"
             isOpened={true}
         >
-            <Paragraph>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
-                Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
-            </Paragraph>
+            <DemoParagraphWrapper>
+                <Paragraph>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
+                    Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+                </Paragraph>
+            </DemoParagraphWrapper>
         </Accordion>
-    </AccordionWrapper>
+    </DemoAccordionWrapper>
+</Playground>
+
+## Usage with classes
+
+<Playground>
+    <DemoAccordionWrapper>
+        <Accordion
+            title="Accordion title"
+            classes={{root: 'rootClass', collapse: 'collapseClass'}}
+        >
+            <DemoParagraphWrapper>
+                <Paragraph>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
+                    Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+                </Paragraph>
+            </DemoParagraphWrapper>
+        </Accordion>
+    </DemoAccordionWrapper>
 </Playground>

@@ -16,7 +16,7 @@ export interface IAccordionProps {
     title: string;
     children: JSX.Element | Element | string | number;
     /** Accordion state */
-    isOpened: boolean;
+    isOpened?: boolean;
     /** Outer classes for Accordion and used components */
     classes?: IAccordionClasses;
     /** Click handler */
@@ -50,15 +50,15 @@ class Accordion extends React.PureComponent<IAccordionProps, IAccordionState> {
         super(props);
 
         this.state = {
-            isOpened: this.props.isOpened,
+            isOpened: this.props.isOpened || false,
         };
         this.rootNode = React.createRef();
     }
 
     componentDidUpdate(prevProps: IAccordionProps) {
-        const { isOpened } = this.props;
+        const { isOpened }  = this.props;
 
-        if (prevProps.isOpened === isOpened) {
+        if (!isOpened || prevProps.isOpened === isOpened) {
             return;
         }
 
