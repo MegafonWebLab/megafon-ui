@@ -12,7 +12,7 @@ const wrapperStyles = {
     padding: '20px',
 }
 
-export const Flexbox: React.FC = ({ children }) => {
+export const DemoFlexboxWrapper: React.FC = ({ children }) => {
     return (
         <div style={flexboxStyles}>
             {children}
@@ -20,7 +20,7 @@ export const Flexbox: React.FC = ({ children }) => {
     );
 };
 
-export const PreloaderWrapper: React.FC = ({ children }) => {
+export const DemoPreloaderWrapper: React.FC = ({ children }) => {
     return (
         <div style={wrapperStyles}>
             {children}

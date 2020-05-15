@@ -7,8 +7,8 @@ route: components/preloader
 import { Playground, Props } from 'docz';
 import Preloader from './Preloader';
 import {
-    PreloaderWrapper,
-    Flexbox,
+    DemoPreloaderWrapper,
+    DemoFlexboxWrapper,
 } from './Preloader.docz';
 
 # Preloader
@@ -20,28 +20,28 @@ import {
 ## Basic usage
 
 <Playground>
-    <Flexbox>
+    <DemoFlexboxWrapper>
         <Preloader />
-    </Flexbox>
+    </DemoFlexboxWrapper>
 </Playground>
 
 ## Color themes
 
 <Playground>
-    <Flexbox>
+    <DemoFlexboxWrapper>
         <Preloader color="default" />
         <Preloader color="black" />
-        <PreloaderWrapper>
+        <DemoPreloaderWrapper>
             <Preloader color="white" />
-        </PreloaderWrapper>
-    </Flexbox>
+        </DemoPreloaderWrapper>
+    </DemoFlexboxWrapper>
 </Playground>
 
 ## Sizes
 
 <Playground>
-    <Flexbox>
+    <DemoFlexboxWrapper>
         <Preloader size="small" />
         <Preloader size="medium" />
-    </Flexbox>
+    </DemoFlexboxWrapper>
 </Playground>
