@@ -3,30 +3,31 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 import cnCreate from 'utils/cnCreate';
 
-type ContentAreaBGColor =
-| 'white'
-| 'transparent'
-| 'green'
-| 'purple'
-| 'spbSky0'
-| 'spbSky1'
-| 'spbSky2'
-| 'soggyAsphalt'
-| 'fullBlack';
+export type BackgroundColorType =
+    | 'white'
+    | 'transparent'
+    | 'green'
+    | 'purple'
+    | 'spbSky0'
+    | 'spbSky1'
+    | 'spbSky2'
+    | 'soggyAsphalt'
+    | 'fullBlack';
+
 export interface IProps {
     /** Background color of the external container */
-    outerBackgroundColor?: ContentAreaBGColor;
+    outerBackgroundColor?: BackgroundColorType;
     /** Background color of the internal container */
-    innerBackgroundColor?: ContentAreaBGColor;
+    innerBackgroundColor?: BackgroundColorType;
     /** Side paddings of the internal container */
     innerPadding?: 'default' | 'none';
     /** Side paddings of the internal container on mobile screen */
     mobileInnerPadding?: 'default' | 'none';
-    children: any;
+    /** Custom class name for an external content area block */
     className?: string;
 }
 
-const backgroundColors = [
+const BACKGROUND_COLORS = [
     'white',
     'transparent',
     'green',
@@ -37,11 +38,12 @@ const backgroundColors = [
     'soggyAsphalt',
     'fullBlack',
 ];
+
 const cn = cnCreate('mfui-content-area');
-class ContentArea extends React.Component<IProps, {}> {
+class ContentArea extends React.Component<IProps> {
     static propTypes = {
-        outerBackgroundColor: PropTypes.oneOf(backgroundColors),
-        innerBackgroundColor: PropTypes.oneOf(backgroundColors),
+        outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
+        innerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
         innerPadding: PropTypes.oneOf(['default', 'none']),
         mobileInnerPadding: PropTypes.oneOf(['default', 'none']),
         children: PropTypes.node,
@@ -66,7 +68,7 @@ class ContentArea extends React.Component<IProps, {}> {
         } = this.props;
 
         return (
-            <div className={cn('', { color: outerBackgroundColor }, className)}>
+            <div className={cn({ color: outerBackgroundColor }, className)}>
                 <div
                     className={cn('inner', {
                         padding: innerPadding,

@@ -6,7 +6,7 @@ route: components/content-area
 
 import { Playground, Props } from 'docz';
 import ContentArea from './ContentArea';
-import { playgroundStyle } from './ContentArea.docz';
+import { wrapperStyles } from './ContentArea.docz';
 
 # ContentArea
 
@@ -16,31 +16,22 @@ import { playgroundStyle } from './ContentArea.docz';
 
 ## Basic usage
 
-<Playground style={playgroundStyle}>
+<Playground>
     <ContentArea>Some content</ContentArea>
 </Playground>
 
-## Difference between screen background color and external container background color
+## Mobile inner padding
 
-<Playground style={playgroundStyle}>
-    <ContentArea outerBackgroundColor="white">
-        In case of small screen use button 'maximize' on the right button corner
-        to see the difference
-    </ContentArea>
-</Playground>
-
-## Difference between screen background color and internal container background color
-
-<Playground style={playgroundStyle}>
-    <ContentArea innerBackgroundColor="white">
-        In case of small screen use button 'maximize' on the right button corner
-        to see the difference
+<Playground>
+    <ContentArea outerBackgroundColor="spbSky0" mobileInnerPadding="none">
+        It disable paddings for internal block on viewport width smaller than 768px.
+        This can be seen on screens width less than 768 pixels.
     </ContentArea>
 </Playground>
 
 ## None-padding usage
 
-<Playground style={playgroundStyle}>
+<Playground>
     <ContentArea innerPadding="none" innerBackgroundColor="white">
         Some content
     </ContentArea>
@@ -48,37 +39,58 @@ import { playgroundStyle } from './ContentArea.docz';
 
 ## You can choose the background color for an external or internal block
 
-### green
-<Playground style={playgroundStyle}>
-    <ContentArea innerBackgroundColor="green">
-        Some content
-    </ContentArea>
-</Playground>
+<Playground>
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="green">
+            green
+        </ContentArea>
+    </div>
 
-### purple
-<Playground style={playgroundStyle}>
-    <ContentArea innerBackgroundColor="purple">
-        Some content
-    </ContentArea>
-</Playground>
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="purple">
+            <div style={{color: 'white'}}>purple</div>
+        </ContentArea>
+    </div>
 
-### spbSky0
-<Playground style={playgroundStyle}>
-    <ContentArea innerBackgroundColor="spbSky0">
-        Some content
-    </ContentArea>
-</Playground>
+        <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="transparent">
+            transparent
+        </ContentArea>
+    </div>
 
-### soggyAsphalt
-<Playground style={playgroundStyle}>
-    <ContentArea innerBackgroundColor="soggyAsphalt">
-        <div style={{color: 'white'}}>Some content</div>
-    </ContentArea>
-</Playground>
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="white">
+            white
+        </ContentArea>
+    </div>
 
-### fullBlack
-<Playground style={playgroundStyle}>
-    <ContentArea innerBackgroundColor="fullBlack">
-        <div style={{color: 'white'}}>Some content</div>
-    </ContentArea>
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="spbSky0">
+            spbSky0
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="spbSky1">
+            spbSky1
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="spbSky2">
+            spbSky2
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="soggyAsphalt">
+            <div style={{color: 'white'}}>soggyAsphalt</div>
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="fullBlack">
+            <div style={{color: 'white'}}>fullBlack</div>
+        </ContentArea>
+    </div>
 </Playground>
