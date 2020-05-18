@@ -14,7 +14,7 @@ export type BackgroundColorType =
     | 'soggyAsphalt'
     | 'fullBlack';
 
-export interface IProps {
+export interface IConrentAreaProps {
     /** Background color of the external container */
     outerBackgroundColor?: BackgroundColorType;
     /** Background color of the internal container */
@@ -40,7 +40,7 @@ const BACKGROUND_COLORS = [
 ];
 
 const cn = cnCreate('mfui-content-area');
-class ContentArea extends React.Component<IProps> {
+class ContentArea extends React.Component<IConrentAreaProps> {
     static propTypes = {
         outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
         innerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
