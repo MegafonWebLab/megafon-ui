@@ -42,7 +42,7 @@ class ProductCardFeaturesBottom extends React.Component<IProductCardFeaturesBott
                             </Header>
                             <Paragraph
                                 className={cn('item-text')}
-                                margin={false}
+                                hasMargin={false}
                                 size="small"
                             >
                                 {param.caption}

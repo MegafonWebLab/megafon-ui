@@ -33,7 +33,7 @@ exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] 
       <Paragraph
         className="mfui-product-card-features-bottom__item-text"
         color="freshAsphalt"
-        margin={false}
+        hasMargin={false}
         size="small"
       >
         test

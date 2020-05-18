@@ -1,9 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Paragraph /> it renders Paragraph 1`] = `
+exports[`<Paragraph /> it renders Paragraph with out props 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_freshAsphalt mfui-paragraph_margin"
+  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_freshAsphalt mfui-paragraph_has-margin"
 >
   Text
+</p>
+`;
+
+exports[`<Paragraph /> it renders Paragraph with props 1`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_purple test"
+>
+  Test paragraph text
 </p>
 `;

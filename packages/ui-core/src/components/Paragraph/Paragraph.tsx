@@ -3,13 +3,13 @@ import * as PropTypes from 'prop-types';
 import './Paragraph.less';
 import cnCreate from 'utils/cnCreate';
 
-interface IParagraphProps {
+export interface IParagraphProps {
     /** Align text horizontally */
     align?: 'left' | 'center' | 'right';
-    /** Font options */
+    /** Font size */
     size?: 'regular' | 'small';
-    /** Vertical margin */
-    margin?: boolean;
+    /** Vertical margin (enabled by default) */
+    hasMargin?: boolean;
     /** Text color */
     color?: 'green' | 'purple' | 'clearWhite' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'freshAsphalt' | 'fullBlack';
     /** Custom className */
@@ -18,43 +18,37 @@ interface IParagraphProps {
 }
 
 const cn = cnCreate('mfui-paragraph');
-class Paragraph extends React.Component<IParagraphProps, {}> {
-    static propTypes = {
-        align: PropTypes.oneOf(['left', 'center', 'right']),
-        size: PropTypes.oneOf(['regular', 'small']),
-        margin: PropTypes.bool,
-        color: PropTypes.oneOf(['green', 'purple', 'clearWhite', 'spbSky0', 'spbSky1', 'spbSky2', 'freshAsphalt', 'fullBlack']),
-        children: PropTypes.node,
-    };
-
-    static defaultProps: Partial<IParagraphProps> = {
-        margin: true,
-        size: 'regular',
-        color: 'freshAsphalt',
-    };
-
-    render() {
-        const {
+const Paragraph: React.FC<IParagraphProps> = ({
+        size,
+        align,
+        color,
+        children,
+        className,
+        hasMargin,
+    }: IParagraphProps) => (
+    <p
+        className={cn({
             size,
             align,
             color,
-            margin,
-            children,
-            className,
-        } = this.props;
+            'has-margin': hasMargin,
+        }, className)}>
+        {children}
+    </p>
+);
 
-        return (
-            <p
-                className={cn('', {
-                    size,
-                    align,
-                    color,
-                    margin,
-                }, className)}>
-                {children}
-            </p>
-        );
-    }
-}
+Paragraph.propTypes = {
+    align: PropTypes.oneOf(['left', 'center', 'right']),
+    size: PropTypes.oneOf(['regular', 'small']),
+    hasMargin: PropTypes.bool,
+    color: PropTypes.oneOf(['green', 'purple', 'clearWhite', 'spbSky0', 'spbSky1', 'spbSky2', 'freshAsphalt', 'fullBlack']),
+    children: PropTypes.node,
+};
+
+Paragraph.defaultProps = {
+    hasMargin: true,
+    size: 'regular',
+    color: 'freshAsphalt',
+};
 
 export default Paragraph;
