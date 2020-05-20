@@ -182,9 +182,10 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         this.clientX = e.touches[0].clientX - this.firstClientX;
 
         // Vertical scrolling does not work when you start swiping horizontally.
-        if (Math.abs(this.clientX) > minValue) {
+        if (e.cancelable && (Math.abs(this.clientX) > minValue)) {
             e.preventDefault();
             e.returnValue = false;
+
             return false;
         }
     }
