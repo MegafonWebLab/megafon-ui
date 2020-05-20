@@ -5,18 +5,16 @@ import './InputLabel.less';
 
 interface IInputLabelProps {
     htmlFor?: string;
-    children: React.ReactNode;
 }
 
 const cn = cnCreate('mfui-input-label');
-const InputLabel: React.FC<IInputLabelProps> = ({htmlFor, children}: IInputLabelProps) => (
+const InputLabel: React.FC<IInputLabelProps> = ({htmlFor, children}) => (
     <label htmlFor={htmlFor} className={cn('')}>
         {children}
     </label>
 );
 
 InputLabel.propTypes = {
-    children: PropTypes.node,
     htmlFor: PropTypes.string,
 };
 

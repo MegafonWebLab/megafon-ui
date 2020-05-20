@@ -14,18 +14,17 @@ export interface IParagraphProps {
     color?: 'green' | 'purple' | 'clearWhite' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'freshAsphalt' | 'fullBlack';
     /** Custom className */
     className?: string;
-    children?: React.ReactNode;
 }
 
 const cn = cnCreate('mfui-paragraph');
 const Paragraph: React.FC<IParagraphProps> = ({
-        size,
+        size = 'regular',
         align,
-        color,
-        children,
+        color = 'freshAsphalt',
         className,
-        hasMargin,
-    }: IParagraphProps) => (
+        hasMargin = true,
+        children,
+    }) => (
     <p
         className={cn({
             size,
@@ -42,13 +41,6 @@ Paragraph.propTypes = {
     size: PropTypes.oneOf(['regular', 'small']),
     hasMargin: PropTypes.bool,
     color: PropTypes.oneOf(['green', 'purple', 'clearWhite', 'spbSky0', 'spbSky1', 'spbSky2', 'freshAsphalt', 'fullBlack']),
-    children: PropTypes.node,
-};
-
-Paragraph.defaultProps = {
-    hasMargin: true,
-    size: 'regular',
-    color: 'freshAsphalt',
 };
 
 export default Paragraph;

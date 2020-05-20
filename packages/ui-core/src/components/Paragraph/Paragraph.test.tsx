@@ -8,17 +8,46 @@ const props: IParagraphProps = {
     hasMargin: false,
     color: 'purple',
     className: 'test',
-    children: 'Test paragraph text',
 };
 
 describe('<Paragraph />', () => {
-    it('it renders Paragraph with out props', () => {
-        const wrapper = shallow(<Paragraph>Text</Paragraph>);
+    it('default render', () => {
+        const wrapper = shallow(<Paragraph>Test paragraph text</Paragraph>);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders Paragraph with props', () => {
-        const wrapper = shallow(<Paragraph {...props} />);
+        const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('testing align props', () => {
+        const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
+
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({align: 'center'});
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({align: 'right'});
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('testing color props', () => {
+        const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
+
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({color: 'green'});
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({color: 'clearWhite'});
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({color: 'spbSky0'});
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({color: 'spbSky1'});
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({color: 'spbSky2'});
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({color: 'freshAsphalt'});
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({color: 'fullBlack'});
         expect(wrapper).toMatchSnapshot();
     });
 });
