@@ -14,102 +14,67 @@ interface IAccordionClasses {
 export interface IAccordionProps {
     /** Accordion title */
     title: string;
-    children: JSX.Element | Element | string | number;
-    /** Accordion state */
+    /** Accordion external state */
     isOpened?: boolean;
-    /** Outer classes for Accordion and used components */
+    /** Outer classes for Accordion and internal components */
     classes?: IAccordionClasses;
     /** Click handler */
-    onClickAccordion?: (isOpened: boolean, title: JSX.Element | string) => void;
-}
-
-export interface IAccordionState {
-    isOpened: boolean;
+    onClickAccordion?: (isOpened: boolean, title: string) => void;
 }
 
 const cn = cnCreate('mfui-accordion');
-class Accordion extends React.PureComponent<IAccordionProps, IAccordionState> {
-    static propTypes = {
-        title: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
-        children: PropTypes.node.isRequired,
-        isOpened: PropTypes.bool,
-        classes: PropTypes.shape({
-            root: PropTypes.string,
-            collapse: PropTypes.string,
-        }),
-        onClickAccordion: PropTypes.func,
+const Accordion: React.FC<IAccordionProps> = ({
+    title,
+    isOpened: isOpenedProps = false,
+    classes: {
+        root: rootPropsClasses = '',
+        collapse: collapsePropsClasses = '',
+    } = {},
+    onClickAccordion,
+    children,
+}) => {
+    const [isOpened, setIsOpened] = React.useState<boolean>(isOpenedProps);
+
+    React.useEffect(() => {
+        setIsOpened(isOpenedProps);
+    }, [isOpenedProps]);
+
+    const handleClickTitle = (): void => {
+        onClickAccordion && onClickAccordion(!isOpened, title);
+
+        setIsOpened(!isOpened);
     };
 
-    static defaultProps = {
-        isOpened: false,
-    };
-
-    rootNode: React.RefObject<HTMLDivElement>;
-
-    constructor(props: IAccordionProps) {
-        super(props);
-
-        this.state = {
-            isOpened: this.props.isOpened || false,
-        };
-        this.rootNode = React.createRef();
-    }
-
-    componentDidUpdate(prevProps: IAccordionProps) {
-        const { isOpened }  = this.props;
-
-        if (!isOpened || prevProps.isOpened === isOpened) {
-            return;
-        }
-
-        this.setState({ isOpened });
-    }
-
-    handleClickTitle = () => {
-        const { onClickAccordion, title } = this.props;
-
-        this.setState(
-            prevState => ({
-                isOpened: !prevState.isOpened,
-            }),
-            () => {
-                onClickAccordion && onClickAccordion(this.state.isOpened, title);
-            }
-        );
-    }
-
-    render() {
-        const {
-            title,
-            children,
-            classes: {
-                root: rootPropsClasses = '',
-                collapse: collapsePropsClasses = '',
-            } = {},
-        } = this.props;
-        const { isOpened } = this.state;
-
-        return (
-            <div className={cn({ open: isOpened }, rootPropsClasses)} ref={this.rootNode}>
-                <div className={cn('title-wrap')} onClick={this.handleClickTitle}>
-                    <h5 className={cn('title')}>{title}</h5>
-                    <div className={cn('icon-box', { open: isOpened })}>
-                        {isOpened
-                            ? (<ArrowUp />)
-                            : (<ArrowDown />)
-                        }
-                    </div>
+    return (
+        <div className={cn({ open: isOpened }, rootPropsClasses)}>
+            <div className={cn('title-wrap')} onClick={handleClickTitle}>
+                <h5 className={cn('title')}>{title}</h5>
+                <div className={cn('icon-box', { open: isOpened })}>
+                    {isOpened
+                        ? (<ArrowUp />)
+                        : (<ArrowDown />)
+                    }
                 </div>
-                <Collapse
-                    className={cn('content', collapsePropsClasses)}
-                    classNameContainer={cn('content-inner')}
-                    isOpened={isOpened}
-                >
-                    {children}
-                </Collapse>
             </div>
-        );
-    }
-}
+            <Collapse
+                className={cn('content', collapsePropsClasses)}
+                classNameContainer={cn('content-inner')}
+                isOpened={isOpened}
+            >
+                {children}
+            </Collapse>
+        </div>
+    );
+};
+
+Accordion.propTypes = {
+    title: PropTypes.string.isRequired,
+    isOpened: PropTypes.bool,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        collapse: PropTypes.string,
+    }),
+    onClickAccordion: PropTypes.func,
+};
 
 export default Accordion;

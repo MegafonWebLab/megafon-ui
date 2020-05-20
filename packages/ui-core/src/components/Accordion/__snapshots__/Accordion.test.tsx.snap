@@ -1,5 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Accordion /> it render Accordion with controlled state 1`] = `
+<Accordion
+  isOpened={true}
+  onClickAccordion={[MockFunction]}
+  title="Test"
+>
+  <div
+    className="mfui-accordion mfui-accordion_open"
+  >
+    <div
+      className="mfui-accordion__title-wrap"
+      onClick={[Function]}
+    >
+      <h5
+        className="mfui-accordion__title"
+      >
+        Test
+      </h5>
+      <div
+        className="mfui-accordion__icon-box mfui-accordion__icon-box_open"
+      >
+        <test-file-stub />
+      </div>
+    </div>
+    <Collapse
+      className="mfui-accordion__content"
+      classNameContainer="mfui-accordion__content-inner"
+      isOpened={true}
+    >
+      <div
+        className="mfui-accordion__content"
+        style={
+          Object {
+            "height": "auto",
+            "overflow": "hidden",
+            "transition": "height 0.3s",
+          }
+        }
+      >
+        <div
+          className="mfui-accordion__content-inner"
+        >
+          <div />
+        </div>
+      </div>
+    </Collapse>
+  </div>
+</Accordion>
+`;
+
 exports[`<Accordion /> it renders Accordion 1`] = `
 <Accordion
   isOpened={false}
@@ -25,61 +75,9 @@ exports[`<Accordion /> it renders Accordion 1`] = `
       </div>
     </div>
     <Collapse
-      animationDuration={300}
       className="mfui-accordion__content"
       classNameContainer="mfui-accordion__content-inner"
       isOpened={false}
-    >
-      <div
-        className="mfui-accordion__content"
-        style={
-          Object {
-            "height": "0",
-            "overflow": "hidden",
-            "transition": "height 0.3s",
-          }
-        }
-      >
-        <div
-          className="mfui-accordion__content-inner"
-        >
-          <div />
-        </div>
-      </div>
-    </Collapse>
-  </div>
-</Accordion>
-`;
-
-exports[`<Accordion /> it renders initially opened Accordion 1`] = `
-<Accordion
-  isOpened={true}
-  onClickAccordion={[MockFunction]}
-  title="Test"
->
-  <div
-    className="mfui-accordion mfui-accordion_open"
-  >
-    <div
-      className="mfui-accordion__title-wrap"
-      onClick={[Function]}
-    >
-      <h5
-        className="mfui-accordion__title"
-      >
-        Test
-      </h5>
-      <div
-        className="mfui-accordion__icon-box mfui-accordion__icon-box_open"
-      >
-        <test-file-stub />
-      </div>
-    </div>
-    <Collapse
-      animationDuration={300}
-      className="mfui-accordion__content"
-      classNameContainer="mfui-accordion__content-inner"
-      isOpened={true}
     >
       <div
         className="mfui-accordion__content"

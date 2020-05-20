@@ -15,6 +15,12 @@ import Paragraph from 'components/Paragraph/Paragraph';
 
 <Props of={Accordion} />
 
+### classes property keys
+field        | description
+-------------|----------
+*root*       |  class for root html element of the Accordion
+*collapse*   |  class for html element of inner Accordion content
+
 ## Basic usage
 
 <Playground>
@@ -30,7 +36,7 @@ import Paragraph from 'components/Paragraph/Paragraph';
             </DemoParagraphWrapper>
         </Accordion>
         <Accordion
-            title="Initially opened accordion"
+            title="Accordion with controlled state"
             isOpened={true}
         >
             <DemoParagraphWrapper>

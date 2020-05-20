@@ -1,111 +1,84 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
-interface ICollapseProps {
-    className?: string;
-    classNameContainer?: string;
+type DefaultProps = {
+    animation?: boolean;
+    animationDuration?: number;
+};
+
+type Props = DefaultProps & {
+    className: string;
+    classNameContainer: string;
     isOpened: boolean;
-    animationDuration: number;
-    children: JSX.Element | Element | string | number;
-}
+    children: React.ReactNode;
+};
 
-interface ICollapseState {
-    height: string;
-}
+const BROWSER_DELAY = 100;
 
-class Collapse extends React.Component<ICollapseProps, ICollapseState> {
-    static propTypes = {
-        className: PropTypes.string,
-        classNameContainer: PropTypes.string,
-        isOpened: PropTypes.bool.isRequired,
-        animationDuration: PropTypes.number.isRequired,
-        children: PropTypes.node.isRequired,
-    };
+const Collapse = (props: Props): React.FunctionComponentElement<Props> => {
+    const {
+        className,
+        classNameContainer,
+        animation = true,
+        animationDuration = 300,
+        children,
+        isOpened,
+    } = props;
+    const canUpdate = React.useRef(false);
+    const timer = React.useRef<number | undefined>(undefined);
+    const rootNode = React.useRef<HTMLInputElement>(null);
+    const [height, setHeight] = React.useState('0px');
+    const transition: string = animation ? `height ${animationDuration / 1000}s` : 'none';
+    const duration: number = animation ? animationDuration : 0;
 
-    static defaultProps = {
-        animationDuration: 300,
-    };
-
-    rootNode: HTMLDivElement | null;
-    slideDownTimer: number;
-
-    constructor(props: ICollapseProps) {
-        super(props);
-        this.state = { height: '0' };
-    }
-
-    componentDidMount() {
-        if (this.props.isOpened) {
-            this.slide('auto');
-        }
-    }
-
-    componentDidUpdate(prevProps: ICollapseProps) {
-        const { isOpened } = this.props;
-
-        if (isOpened === prevProps.isOpened) {
+    const animateSlide = (finalHeight: string, delay: number): void => {
+        if (!rootNode.current) {
             return;
         }
+        setHeight(`${rootNode.current.scrollHeight}px`);
+        timer.current = window.setTimeout(() => {
+            setHeight(finalHeight);
+        }, delay);
+    };
 
-        if (isOpened) {
-            this.slideDown();
-
-            return;
+    React.useEffect(() => {
+        switch (true) {
+            case !canUpdate.current && isOpened:
+                setHeight('auto');
+                break;
+            case !canUpdate.current && !isOpened:
+                setHeight('0px');
+                break;
+            case isOpened:
+                animateSlide('auto', duration);
+                break;
+            default:
+                animateSlide('0px', BROWSER_DELAY);
         }
 
-        this.slideUp();
-    }
+        canUpdate.current = true;
 
-    componentWillUnmount() {
-        clearTimeout(this.slideDownTimer);
-    }
+        return (): void => clearTimeout(timer.current);
+    }, [isOpened, duration]);
 
-    setScrollHeight = (fn: () => void) => {
-        this.rootNode &&
-            this.setState(
-                {
-                    height: `${this.rootNode.scrollHeight}px`,
-                },
-                fn
-            );
-    }
+    return (
+        <div
+            className={className}
+            style={{ overflow: 'hidden', height, transition }}
+            ref={rootNode}
+        >
+            <div className={classNameContainer}>{children}</div>
+        </div>
+    );
+};
 
-    slide = (height: string, duration = 0): void => {
-        this.setScrollHeight(() => {
-            this.slideDownTimer && clearTimeout(this.slideDownTimer);
-            this.slideDownTimer = window.setTimeout(() => {
-                this.setState({ height });
-            }, duration);
-        });
-    }
-
-    slideUp = (): void => {
-        this.slide('0');
-    }
-
-    slideDown = (): void => {
-        const { animationDuration } = this.props;
-
-        this.slide('auto', animationDuration);
-    }
-
-    render() {
-        const { className, classNameContainer, animationDuration, children } = this.props;
-        const { height } = this.state;
-        const transition = `height ${animationDuration / 1000}s`;
-
-        return (
-            <div
-                className={className}
-                style={{ overflow: 'hidden', height, transition }}
-                ref={node => {
-                    this.rootNode = node;
-                }}
-            >
-                <div className={classNameContainer}>{children}</div>
-            </div>
-        );
-    }
-}
+Collapse.propTypes = {
+    className: PropTypes.string,
+    classNameContainer: PropTypes.string,
+    isOpened: PropTypes.bool.isRequired,
+    animationDuration: PropTypes.number,
+    animation: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+};
 
 export default Collapse;
