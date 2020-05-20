@@ -5,12 +5,12 @@ const flexboxStyles = {
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: '16px',
-}
+};
 
 const wrapperStyles = {
     backgroundColor: '#00B956',
     padding: '20px',
-}
+};
 
 export const DemoFlexboxWrapper: React.FC = ({ children }) => {
     return (

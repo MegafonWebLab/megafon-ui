@@ -3,6 +3,7 @@
 ## Unreleased
 - **Preloader**
     - added new component
+    - fixed tslint errors
 - **Header**
     - correct header css for style guide, delete h6 props
 - **cn**
@@ -14,6 +15,7 @@
     - added tests
 - **Carousel**
     - add onSwipe callback
+    - fix touch events
 
 ## Release 1.4.1
 - **Carousel**
