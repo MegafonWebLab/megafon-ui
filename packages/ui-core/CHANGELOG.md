@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.6.0
 - **Preloader**
     - added new component
 - **Carousel**
