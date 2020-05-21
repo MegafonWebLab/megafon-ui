@@ -3,6 +3,8 @@
 ## Unreleased
 - **Preloader**
     - added new component
+- **Carousel**
+    - fix touch events
 
 ## Release 1.5.2
 - **build**
