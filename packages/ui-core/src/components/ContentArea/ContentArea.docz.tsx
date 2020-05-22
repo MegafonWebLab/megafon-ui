@@ -1,4 +1,5 @@
 export const wrapperStyles = {
-    backgroundColor: '#E5F5EE',
-    padding: '16px 0',
+    marginBottom: '8px',
+    border: '1px solid #2D3747',
+    borderRadius: '4px',
 };
