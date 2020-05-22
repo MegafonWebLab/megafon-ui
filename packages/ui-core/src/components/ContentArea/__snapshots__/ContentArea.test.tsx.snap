@@ -1,5 +1,221 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<ContentArea /> render component when innerBackgroundColor with fullBlack 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_fullBlack"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with green 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_green"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with purple 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_purple"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with soggyAsphalt 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_soggyAsphalt"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with spbSky0 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_spbSky0"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with spbSky1 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_spbSky1"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with spbSky2 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_spbSky2"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with transparent 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when innerBackgroundColor with white 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_white"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with fullBlack 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_fullBlack"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with green 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_green"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with purple 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_purple"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with soggyAsphalt 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_soggyAsphalt"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with spbSky0 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_spbSky0"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with spbSky1 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_spbSky1"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with spbSky2 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_spbSky2"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with transparent 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`<ContentArea /> render component when outerBackgroundColor with white 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_white"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
 exports[`<ContentArea /> renders correctly with custom props 1`] = `
 <div
   className="mfui-content-area mfui-content-area_color_white test-class"
@@ -19,7 +235,7 @@ exports[`<ContentArea /> renders correctly with default props 1`] = `
   className="mfui-content-area mfui-content-area_color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_padding_lg mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
   >
     <span>
       child

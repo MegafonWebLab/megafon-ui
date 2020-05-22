@@ -1,5 +1,5 @@
-export const playgroundStyle = {
-    backgroundColor: '#E5F5EE',
-    paddingLeft: '0',
-    paddingRight: '0',
+export const wrapperStyles = {
+    marginBottom: '8px',
+    border: '1px solid #2D3747',
+    borderRadius: '4px',
 };
