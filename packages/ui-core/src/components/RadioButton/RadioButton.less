@@ -1,0 +1,79 @@
+@import '~styles/base.less';
+@b: e('.mfui-radio-button');
+
+@{b} {
+    &__input {
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__label {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        outline: none;
+    }
+
+    &__label_disabled {
+        cursor: default;
+    }
+
+    &__custom-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        margin-right: 8px;
+
+        &:before {
+            content: '';
+            display: block;
+            box-sizing: border-box;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid @spbSky2;
+            background-color: @white;
+        }
+    }
+
+    &__label_checked &__custom-input {
+        &:before {
+            border: 6px solid @green;
+        }
+    }
+
+    &__label:hover &__custom-input {
+        &:before {
+            border-color: @greenHover;
+        }
+    }
+
+    &__label:active &__custom-input,
+    &__label:active &__custom-input{
+        &:before {
+            border-color: @down;
+        }
+    }
+
+    &__label_disabled &__custom-input {
+        &:before {
+            background-color: @spbSky1 !important;
+            border-color: @spbSky2 !important;
+        }
+    }
+
+    // mod: text size
+    &__text_size_medium {
+        .p();
+    }
+
+    &__text_size_small {
+        .small();
+    }
+}

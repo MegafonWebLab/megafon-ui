@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> snapshots renders RadioButton 1`] = `
+<div
+  className="mfui-radio-button"
+>
+  <label
+    className="mfui-radio-button__label"
+  >
+    <input
+      checked={false}
+      className="mfui-radio-button__input"
+      disabled={false}
+      name=""
+      onChange={[Function]}
+      type="radio"
+      value="value-text"
+    />
+    <div
+      className="mfui-radio-button__custom-input"
+    />
+    <div
+      className="mfui-radio-button__text mfui-radio-button__text_size_medium"
+    >
+      Тестовая строка
+    </div>
+  </label>
+</div>
+`;
+
+exports[`<RadioButton /> snapshots renders RadioButton with props 1`] = `
+<div
+  className="mfui-radio-button"
+>
+  <label
+    className="mfui-radio-button__label mfui-radio-button__label_disabled"
+  >
+    <input
+      checked={false}
+      className="mfui-radio-button__input"
+      disabled={true}
+      name="test-input-name"
+      onChange={[Function]}
+      type="radio"
+      value="test-input-value"
+    />
+    <div
+      className="mfui-radio-button__custom-input"
+    />
+    <div
+      className="mfui-radio-button__text mfui-radio-button__text_size_small"
+    >
+      Тестовая строка
+    </div>
+  </label>
+</div>
+`;

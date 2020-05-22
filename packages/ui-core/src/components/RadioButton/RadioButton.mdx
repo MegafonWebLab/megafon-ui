@@ -1,0 +1,66 @@
+---
+name: RadioButton
+menu: Components
+---
+
+import { Fragment } from 'react';
+import { Playground, PropsTable } from 'docz';
+import RadioButton from './RadioButton';
+
+export const playgroundPosition = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+}
+
+# RadioButton
+
+## Properties
+
+<PropsTable of={RadioButton} />
+
+export class RadioButtonWrapper extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedOption: '',
+        }
+    }
+    handleChange = value => {
+        this.setState({ selectedOption: value });
+    }
+    render() {
+        return this.props.children({
+            onChange: this.handleChange,
+            selectedOption: this.state.selectedOption,
+        })
+    }
+}
+
+## Different states of radio button
+
+<Playground style={playgroundPosition}>
+    <RadioButton name="group-1" value="case-1">btn-1</RadioButton>
+    <RadioButton name="group-1" value="case-1" selectedOption="case-1">btn-2</RadioButton>
+    <RadioButton name="group-1" value="case-1" isDisabled>btn-3</RadioButton>
+</Playground>
+
+## Working example of the radio button with state in wrapper
+
+<Playground>
+    <RadioButtonWrapper>
+        {({ onChange, selectedOption }) => (
+            <div style={playgroundPosition}>
+                <RadioButton value="value-1" selectedOption={selectedOption} onChange={onChange}>btn-1</RadioButton>
+                <RadioButton value="value-2" selectedOption={selectedOption} onChange={onChange}>btn-2</RadioButton>
+            </div>
+        )}
+    </RadioButtonWrapper>
+</Playground>
+
+## Label size
+
+<Playground style={playgroundPosition}>
+    <RadioButton name="group-1" value="case-1" textSize="small">btn-1</RadioButton>
+    <RadioButton name="group-1" value="case-1" textSize="medium">btn-1</RadioButton>
+</Playground>
