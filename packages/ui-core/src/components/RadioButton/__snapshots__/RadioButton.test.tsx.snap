@@ -8,7 +8,6 @@ exports[`<RadioButton /> snapshots renders RadioButton 1`] = `
     className="mfui-radio-button__label"
   >
     <input
-      checked={false}
       className="mfui-radio-button__input"
       disabled={false}
       name=""
@@ -36,7 +35,7 @@ exports[`<RadioButton /> snapshots renders RadioButton with props 1`] = `
     className="mfui-radio-button__label mfui-radio-button__label_disabled"
   >
     <input
-      checked={false}
+      checked={true}
       className="mfui-radio-button__input"
       disabled={true}
       name="test-input-name"

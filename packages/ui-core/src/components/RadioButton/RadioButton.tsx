@@ -13,7 +13,7 @@ export interface IRadioButtonProps {
     /** Disabled state of radio button */
     isDisabled?: boolean;
     /** Checked state of radio button */
-    selectedOption?: string;
+    isChecked?: boolean;
     /** Custom class name */
     className?: string;
     children?: React.ReactNode;
@@ -26,7 +26,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
     static propTypes = {
         textSize: PropTypes.oneOf(['small', 'medium']),
         isDisabled: PropTypes.bool,
-        selectedOption: PropTypes.string,
+        isChecked: PropTypes.bool,
         onChange: PropTypes.func,
         name: PropTypes.string,
         value: PropTypes.string.isRequired,
@@ -39,28 +39,11 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         isDisabled: false,
     };
 
-    radioButton: HTMLInputElement | null;
-
-    componentDidMount() {
-        const { selectedOption, value } = this.props;
-
-        if (!this.radioButton) {
-            return;
-        }
-
-        if (this.radioButton.checked !== (selectedOption === value)) {
-            this.radioButton.checked = (selectedOption === value);
-        }
-    }
-
     handleChange = () => {
         const { onChange, value } = this.props;
 
+        this.setState({ selectedButton: value });
         onChange && onChange(value);
-    }
-
-    getInputRef = (node: HTMLInputElement | null) => {
-        this.radioButton = node;
     }
 
     renderTextElem() {
@@ -70,25 +53,24 @@ class RadioButton extends React.Component<IRadioButtonProps> {
     }
 
     render() {
-        const { selectedOption, isDisabled, name, value, children } = this.props;
+        const { isChecked, isDisabled, name, value, children } = this.props;
+        const inputDynamicProps = isChecked !== undefined ? {checked: isChecked} : {};
 
         return (
             <div className={cn('')}>
                 <label
                     className={cn('label', {
-                        checked: selectedOption === value,
                         disabled: isDisabled,
                     })}
                 >
                     <input
+                        {...inputDynamicProps}
                         className={cn('input')}
                         type="radio"
                         name={name}
                         value={value}
-                        checked={selectedOption === value}
                         onChange={this.handleChange}
                         disabled={isDisabled}
-                        ref={this.getInputRef}
                     />
                     <div className={cn('custom-input')} />
                     {children && this.renderTextElem()}

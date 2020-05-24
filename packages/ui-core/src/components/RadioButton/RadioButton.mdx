@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 import { Playground, PropsTable } from 'docz';
 import RadioButton from './RadioButton';
 
-export const playgroundPosition = {
+export const flexStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -39,20 +39,39 @@ export class RadioButtonWrapper extends React.Component {
 
 ## Different states of radio button
 
-<Playground style={playgroundPosition}>
-    <RadioButton name="group-1" value="case-1">btn-1</RadioButton>
-    <RadioButton name="group-1" value="case-1" selectedOption="case-1">btn-2</RadioButton>
-    <RadioButton name="group-1" value="case-1" isDisabled>btn-3</RadioButton>
+<Playground>
+    <RadioButtonWrapper>
+        {({ onChange, selectedOption }) => (
+            <div style={flexStyle}>
+                <RadioButton value="value-1">btn-1</RadioButton>
+                <RadioButton value="value-2" isChecked>btn-2</RadioButton>
+                <RadioButton value="value-3" isDisabled>btn-3</RadioButton>
+            </div>
+        )}
+    </RadioButtonWrapper>
 </Playground>
 
-## Working example of the radio button with state in wrapper
+## Working example of the radio button with prop 'isChecked'
 
 <Playground>
     <RadioButtonWrapper>
         {({ onChange, selectedOption }) => (
-            <div style={playgroundPosition}>
-                <RadioButton value="value-1" selectedOption={selectedOption} onChange={onChange}>btn-1</RadioButton>
-                <RadioButton value="value-2" selectedOption={selectedOption} onChange={onChange}>btn-2</RadioButton>
+            <div style={flexStyle}>
+                <RadioButton value="value-1" isChecked={selectedOption === "value-1"} onChange={onChange}>btn-1</RadioButton>
+                <RadioButton value="value-2" isChecked={selectedOption === "value-2"} onChange={onChange}>btn-2</RadioButton>
+            </div>
+        )}
+    </RadioButtonWrapper>
+</Playground>
+
+## Working example of the radio button without prop 'isChecked'
+
+<Playground>
+    <RadioButtonWrapper>
+        {({ onChange }) => (
+            <div style={flexStyle}>
+                <RadioButton value="value-1" name="group-1" onChange={onChange}>btn-1</RadioButton>
+                <RadioButton value="value-2" name="group-1" onChange={onChange}>btn-2</RadioButton>
             </div>
         )}
     </RadioButtonWrapper>
@@ -60,7 +79,7 @@ export class RadioButtonWrapper extends React.Component {
 
 ## Label size
 
-<Playground style={playgroundPosition}>
-    <RadioButton name="group-1" value="case-1" textSize="small">btn-1</RadioButton>
-    <RadioButton name="group-1" value="case-1" textSize="medium">btn-1</RadioButton>
+<Playground style={flexStyle}>
+    <RadioButton name="group-2" value="value-1" textSize="small">btn-1</RadioButton>
+    <RadioButton name="group-2" value="value-2" textSize="medium">btn-1</RadioButton>
 </Playground>
