@@ -8,8 +8,8 @@ interface IInputLabelProps {
 }
 
 const cn = cnCreate('mfui-input-label');
-const InputLabel: React.FC<IInputLabelProps> = ({htmlFor, children}) => (
-    <label htmlFor={htmlFor} className={cn('')}>
+const InputLabel: React.FC<IInputLabelProps> = ({ htmlFor, children }) => (
+    <label htmlFor={htmlFor} className={cn()}>
         {children}
     </label>
 );

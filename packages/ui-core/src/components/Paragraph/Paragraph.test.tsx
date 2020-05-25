@@ -24,7 +24,6 @@ describe('<Paragraph />', () => {
     it('testing align props', () => {
         const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
 
-        expect(wrapper).toMatchSnapshot();
         wrapper.setProps({align: 'center'});
         expect(wrapper).toMatchSnapshot();
         wrapper.setProps({align: 'right'});
@@ -34,7 +33,6 @@ describe('<Paragraph />', () => {
     it('testing color props', () => {
         const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
 
-        expect(wrapper).toMatchSnapshot();
         wrapper.setProps({color: 'green'});
         expect(wrapper).toMatchSnapshot();
         wrapper.setProps({color: 'clearWhite'});
