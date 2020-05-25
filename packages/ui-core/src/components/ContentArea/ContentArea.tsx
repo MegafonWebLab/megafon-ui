@@ -11,7 +11,7 @@ export type BackgroundColorType =
     | 'spbSky0'
     | 'spbSky1'
     | 'spbSky2'
-    | 'soggyAsphalt'
+    | 'freshAsphalt'
     | 'fullBlack';
 
 export interface IConrentAreaProps {
@@ -35,7 +35,7 @@ const BACKGROUND_COLORS = [
     'spbSky0',
     'spbSky1',
     'spbSky2',
-    'soggyAsphalt',
+    'freshAsphalt',
     'fullBlack',
 ];
 

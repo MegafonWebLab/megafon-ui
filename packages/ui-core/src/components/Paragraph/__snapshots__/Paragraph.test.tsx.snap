@@ -1,17 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Paragraph /> it renders Paragraph 1`] = `
+exports[`<Paragraph /> default render 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size-all_medium mfui-paragraph_margin-all_medium mfui-paragraph_color_black mfui-paragraph_weight_regular"
+  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_freshAsphalt mfui-paragraph_has-margin"
 >
-  Text
+  Test paragraph text
 </p>
 `;
 
-exports[`<Paragraph /> it renders Paragraph with div element as wrapper 1`] = `
-<div
-  className="mfui-paragraph mfui-paragraph_size-all_medium mfui-paragraph_margin-all_medium mfui-paragraph_color_black mfui-paragraph_weight_regular"
+exports[`<Paragraph /> it renders Paragraph with props 1`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_purple test"
 >
-  Text
-</div>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing align props 1`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_center mfui-paragraph_color_purple test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing align props 2`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_purple test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing color props 1`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_green test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing color props 2`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_clearWhite test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing color props 3`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky0 test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing color props 4`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky1 test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing color props 5`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky2 test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing color props 6`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_freshAsphalt test"
+>
+  Test paragraph text
+</p>
+`;
+
+exports[`<Paragraph /> testing color props 7`] = `
+<p
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_fullBlack test"
+>
+  Test paragraph text
+</p>
 `;

@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<ContentArea /> render component when innerBackgroundColor with freshAsphalt 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_freshAsphalt"
+  >
+    some content
+  </div>
+</div>
+`;
+
 exports[`<ContentArea /> render component when innerBackgroundColor with fullBlack 1`] = `
 <div
   className="mfui-content-area mfui-content-area_color_transparent"
@@ -30,18 +42,6 @@ exports[`<ContentArea /> render component when innerBackgroundColor with purple 
 >
   <div
     className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_purple"
-  >
-    some content
-  </div>
-</div>
-`;
-
-exports[`<ContentArea /> render component when innerBackgroundColor with soggyAsphalt 1`] = `
-<div
-  className="mfui-content-area mfui-content-area_color_transparent"
->
-  <div
-    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_soggyAsphalt"
   >
     some content
   </div>
@@ -108,6 +108,18 @@ exports[`<ContentArea /> render component when innerBackgroundColor with white 1
 </div>
 `;
 
+exports[`<ContentArea /> render component when outerBackgroundColor with freshAsphalt 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_freshAsphalt"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
+  >
+    some content
+  </div>
+</div>
+`;
+
 exports[`<ContentArea /> render component when outerBackgroundColor with fullBlack 1`] = `
 <div
   className="mfui-content-area mfui-content-area_color_fullBlack"
@@ -135,18 +147,6 @@ exports[`<ContentArea /> render component when outerBackgroundColor with green 1
 exports[`<ContentArea /> render component when outerBackgroundColor with purple 1`] = `
 <div
   className="mfui-content-area mfui-content-area_color_purple"
->
-  <div
-    className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
-  >
-    some content
-  </div>
-</div>
-`;
-
-exports[`<ContentArea /> render component when outerBackgroundColor with soggyAsphalt 1`] = `
-<div
-  className="mfui-content-area mfui-content-area_color_soggyAsphalt"
 >
   <div
     className="mfui-content-area__inner mfui-content-area__inner_padding_default mfui-content-area__inner_mobile-padding_default mfui-content-area__inner_color_transparent"
