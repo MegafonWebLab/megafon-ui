@@ -37,17 +37,6 @@ describe('<Accordion />', () => {
         expect(onClickAccordion).toBeCalledWith(!isOpened, title);
     });
 
-    it('should not open Accordion when prev isOpened props matches next isOpened props', () => {
-        const wrapper = mount(
-            <Accordion {...props}><div /></Accordion>
-        );
-
-        expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(false);
-        wrapper.setProps({ isOpened: false });
-        wrapper.update();
-        expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(false);
-    });
-
     it('checking the opening/closing of the accordion on click', () => {
         const wrapper = mount(
             <Accordion {...props}><div /></Accordion>
