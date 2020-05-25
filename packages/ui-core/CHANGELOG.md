@@ -19,6 +19,8 @@
 - **ContentArea**
     - add basic colors for `outerBackgroundColor` and `innerBackgroundColor`
     - changed the parameter name from `lg` in the `innerPadding` property to `default`
+- **Accordion**
+    - add Accordion component
 
 ## Release 1.4.1
 - **Carousel**
