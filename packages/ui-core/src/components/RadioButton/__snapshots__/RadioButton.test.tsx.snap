@@ -10,7 +10,6 @@ exports[`<RadioButton /> snapshots renders RadioButton 1`] = `
     <input
       className="mfui-radio-button__input"
       disabled={false}
-      name=""
       onChange={[Function]}
       type="radio"
       value="value-text"

@@ -15,7 +15,7 @@ const props: IRadioButtonProps = {
 describe('<RadioButton />', () => {
     describe('snapshots', () => {
         it('renders RadioButton', () => {
-            const wrapper = shallow(<RadioButton name="" value="value-text">Тестовая строка</RadioButton>);
+            const wrapper = shallow(<RadioButton value="value-text">Тестовая строка</RadioButton>);
             expect(wrapper).toMatchSnapshot();
         });
 

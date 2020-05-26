@@ -30,10 +30,14 @@ export class RadioButtonWrapper extends React.Component {
         this.setState({ selectedOption: value });
     }
     render() {
-        return this.props.children({
-            onChange: this.handleChange,
-            selectedOption: this.state.selectedOption,
-        })
+        return (
+            <>
+                {this.props.children({
+                    onChange: this.handleChange,
+                    selectedOption: this.state.selectedOption,
+                })}
+            </>
+        )
     }
 }
 
@@ -41,37 +45,43 @@ export class RadioButtonWrapper extends React.Component {
 
 <Playground>
     <RadioButtonWrapper>
-        {({ onChange, selectedOption }) => (
-            <div style={flexStyle}>
-                <RadioButton value="value-1">btn-1</RadioButton>
-                <RadioButton value="value-2" isChecked>btn-2</RadioButton>
-                <RadioButton value="value-3" isDisabled>btn-3</RadioButton>
-            </div>
-        )}
-    </RadioButtonWrapper>
-</Playground>
-
-## Working example of the radio button with prop 'isChecked'
-
-<Playground>
-    <RadioButtonWrapper>
-        {({ onChange, selectedOption }) => (
-            <div style={flexStyle}>
-                <RadioButton value="value-1" isChecked={selectedOption === "value-1"} onChange={onChange}>btn-1</RadioButton>
-                <RadioButton value="value-2" isChecked={selectedOption === "value-2"} onChange={onChange}>btn-2</RadioButton>
-            </div>
-        )}
-    </RadioButtonWrapper>
-</Playground>
-
-## Working example of the radio button without prop 'isChecked'
-
-<Playground>
-    <RadioButtonWrapper>
         {({ onChange }) => (
             <div style={flexStyle}>
-                <RadioButton value="value-1" name="group-1" onChange={onChange}>btn-1</RadioButton>
-                <RadioButton value="value-2" name="group-1" onChange={onChange}>btn-2</RadioButton>
+                <RadioButton value="default-value" isChecked={false}>Default</RadioButton>
+                <RadioButton value="checked-value" isChecked>Checked</RadioButton>
+                <RadioButton value="disabled-value" isDisabled>Disabled</RadioButton>
+            </div>
+        )}
+    </RadioButtonWrapper>
+</Playground>
+
+## Radio buttons with controlled checked state
+
+<Playground>
+    <RadioButtonWrapper>
+        {({ onChange, selectedOption }) => (
+            <div>
+                <p align="center"><b>Value:</b> "{selectedOption || undefined}"</p><br />
+                <div style={flexStyle}>
+                    <RadioButton value="value-1" isChecked={selectedOption === "value-1"} onChange={onChange}>First radio button</RadioButton>
+                    <RadioButton value="value-2" isChecked={selectedOption === "value-2"} onChange={onChange}>Second radio button</RadioButton>
+                </div>
+            </div>
+        )}
+    </RadioButtonWrapper>
+</Playground>
+
+## Radio buttons with uncontrolled checked state
+
+<Playground>
+    <RadioButtonWrapper>
+        {({ onChange, selectedOption }) => (
+            <div>
+                <p align="center"><b>Value:</b> "{selectedOption || undefined}"</p><br />
+                <div style={flexStyle}>
+                    <RadioButton value="value-1" name="group-1" onChange={onChange}>First radio button</RadioButton>
+                    <RadioButton value="value-2" name="group-1" onChange={onChange}>Second radio button</RadioButton>
+                </div>
             </div>
         )}
     </RadioButtonWrapper>
@@ -80,6 +90,6 @@ export class RadioButtonWrapper extends React.Component {
 ## Label size
 
 <Playground style={flexStyle}>
-    <RadioButton name="group-2" value="value-1" textSize="small">btn-1</RadioButton>
-    <RadioButton name="group-2" value="value-2" textSize="medium">btn-1</RadioButton>
+    <RadioButton name="group-2" value="value-1" textSize="small">First radio button</RadioButton>
+    <RadioButton name="group-2" value="value-2" textSize="medium">Second radio button</RadioButton>
 </Playground>
