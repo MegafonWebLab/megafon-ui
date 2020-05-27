@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **RadioButton**
+    - added new component
 
 ## 1.6.0
 - **Preloader**
