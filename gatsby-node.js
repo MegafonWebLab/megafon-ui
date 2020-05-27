@@ -49,20 +49,6 @@ exports.onCreateWebpackConfig = args => {
     ];
     config.module.rules[idx] = rule;
 
-    config.module.rules = config.module.rules.map(r =>
-        r.test instanceof RegExp ?
-        r.test.test(".ts") ? {
-            test: /\.tsx?$/,
-            use: {
-                loader: "ts-loader",
-                options: {
-                    configFile: resolve(__dirname, "../packages/ui-core/tsconfig.json"),
-                },
-            },
-        } : r :
-        r
-    );
-
     args.actions.replaceWebpackConfig(config);
 
     args.actions.setWebpackConfig({
