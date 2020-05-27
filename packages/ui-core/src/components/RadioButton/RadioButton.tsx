@@ -18,20 +18,20 @@ export interface IRadioButtonProps {
     className?: string;
     children?: React.ReactNode;
     /** OnChange handler */
-    onChange?(value: string): void;
+    onChange?: (value: string) => void;
 }
 
 const cn = cnCreate('mfui-radio-button');
 class RadioButton extends React.Component<IRadioButtonProps> {
     static propTypes = {
+        value: PropTypes.string.isRequired,
+        name: PropTypes.string,
         textSize: PropTypes.oneOf(['small', 'medium']),
         isDisabled: PropTypes.bool,
         isChecked: PropTypes.bool,
-        onChange: PropTypes.func,
-        name: PropTypes.string,
-        value: PropTypes.string.isRequired,
-        children: PropTypes.node,
         className: PropTypes.string,
+        children: PropTypes.node,
+        onChange: PropTypes.func,
     };
 
     static defaultProps: Partial<IRadioButtonProps> = {
@@ -50,7 +50,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
 
         return (
-            <div className={cn('')}>
+            <div className={cn()}>
                 <label
                     className={cn('label', {
                         disabled: isDisabled,

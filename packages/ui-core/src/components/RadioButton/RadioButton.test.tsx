@@ -42,7 +42,7 @@ describe('<RadioButton />', () => {
             );
 
             wrapper.find('.mfui-radio-button__input').simulate('change');
-            expect(handleChange.mock.results[0].value).toEqual(value);
+            expect(handleChange).toHaveBeenCalledWith(value);
         });
     });
 });
