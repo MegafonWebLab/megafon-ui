@@ -47,7 +47,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
 
     render() {
         const { isChecked, isDisabled, name, value, textSize, children } = this.props;
-        const inputDynamicProps = isChecked !== undefined ? {checked: isChecked} : {};
+        const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
 
         return (
             <div className={cn('')}>
@@ -57,7 +57,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                     })}
                 >
                     <input
-                        {...inputDynamicProps}
+                        {...checkedProp}
                         className={cn('input')}
                         type="radio"
                         name={name}
@@ -66,7 +66,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                         disabled={isDisabled}
                     />
                     <div className={cn('custom-input')} />
-                    {children && <div className={cn('text', { 'size': textSize})}>{this.props.children}</div>}
+                    {children && <div className={cn('text', { 'size': textSize })}>{children}</div>}
                 </label>
             </div>
         );
