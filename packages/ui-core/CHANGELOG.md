@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **RadioButton**
+    - added new component
 - **Preloader**
     - added new component
     - fixed tslint errors
