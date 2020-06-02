@@ -14,31 +14,25 @@ import { flexStyle, DemoRadioButtonWrapper } from './RadioButton.docz';
 
 <Props of={RadioButton} />
 
-
-
 ``` javascript
-export class DemoRadioButtonWrapper extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedOption: '',
-        }
+export const DemoRadioButtonWrapper = ({ children }) => {
+    const [selectedOption, setSelectedOption] = React.useState('');
+
+    const handleChange = (value) => {
+        setSelectedOption(value);
     }
-    handleChange = value => {
-        this.setState({ selectedOption: value });
-    }
-    render() {
-        const { selectedOption } = this.state;
-        return (
-            <>
-                <p align="center"><b>Value:</b> "{selectedOption || undefined}"</p><br />
-                {this.props.children({
-                    onChange: this.handleChange,
-                    selectedOption: this.state.selectedOption,
+
+    return (
+        <>
+            <p style={{textAlign: 'center'}}><b>Value:</b> "{selectedOption || undefined}"</p>
+            <div style={flexStyle}>
+                {children({
+                    onChange: handleChange,
+                    selectedOption: selectedOption,
                 })}
-            </>
-        )
-    }
+            </div>
+        </>
+    );
 }
 ```
 
@@ -57,10 +51,10 @@ export class DemoRadioButtonWrapper extends React.Component {
 <Playground>
     <DemoRadioButtonWrapper>
         {({ onChange, selectedOption }) => (
-            <div style={flexStyle}>
+            <>
                 <RadioButton value="value-1" isChecked={selectedOption === "value-1"} onChange={onChange}>First radio button</RadioButton>
                 <RadioButton value="value-2" isChecked={selectedOption === "value-2"} onChange={onChange}>Second radio button</RadioButton>
-            </div>
+            </>
         )}
     </DemoRadioButtonWrapper>
 </Playground>
@@ -70,12 +64,10 @@ export class DemoRadioButtonWrapper extends React.Component {
 <Playground>
     <DemoRadioButtonWrapper>
         {({ onChange, selectedOption }) => (
-            <div>
-                <div style={flexStyle}>
-                    <RadioButton value="value-1" name="group-1" onChange={onChange}>First radio button</RadioButton>
-                    <RadioButton value="value-2" name="group-1" onChange={onChange}>Second radio button</RadioButton>
-                </div>
-            </div>
+            <>
+                <RadioButton value="value-1" name="group-1" onChange={onChange}>First radio button</RadioButton>
+                <RadioButton value="value-2" name="group-1" onChange={onChange}>Second radio button</RadioButton>
+            </>
         )}
     </DemoRadioButtonWrapper>
 </Playground>
