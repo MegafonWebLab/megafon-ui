@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Accordion**
+    - fixed title style, text padding, border-bottom in opened accordion
 - **Preloader**
     - added new component
     - fixed tslint errors

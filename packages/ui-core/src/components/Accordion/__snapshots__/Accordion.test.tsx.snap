@@ -13,11 +13,17 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
       className="mfui-accordion__title-wrap"
       onClick={[Function]}
     >
-      <h5
+      <Header
+        as="h5"
         className="mfui-accordion__title"
+        color="black"
       >
-        Test
-      </h5>
+        <h5
+          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-accordion__title"
+        >
+          Test
+        </h5>
+      </Header>
       <div
         className="mfui-accordion__icon-box mfui-accordion__icon-box_open"
       >
@@ -63,11 +69,17 @@ exports[`<Accordion /> it renders Accordion 1`] = `
       className="mfui-accordion__title-wrap"
       onClick={[Function]}
     >
-      <h5
+      <Header
+        as="h5"
         className="mfui-accordion__title"
+        color="black"
       >
-        Test
-      </h5>
+        <h5
+          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-accordion__title"
+        >
+          Test
+        </h5>
+      </Header>
       <div
         className="mfui-accordion__icon-box"
       >
