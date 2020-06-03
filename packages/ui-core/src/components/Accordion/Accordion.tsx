@@ -49,7 +49,7 @@ const Accordion: React.FC<IAccordionProps> = ({
     return (
         <div className={cn({ open: isOpened }, rootPropsClasses)}>
             <div className={cn('title-wrap')} onClick={handleClickTitle}>
-                <Header as="h5" className={cn('title')}>{title}</Header>
+                <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpened })}>
                     {isOpened
                         ? (<ArrowUp />)
