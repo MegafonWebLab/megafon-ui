@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Accordion.less';
 import cnCreate from 'utils/cnCreate';
+import Header from 'components/Header/Header';
 import Collapse from 'components/Collapse/Collapse';
 import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
 import ArrowDown from 'icons/System/24/Arrow_down_24.svg';
@@ -48,7 +49,7 @@ const Accordion: React.FC<IAccordionProps> = ({
     return (
         <div className={cn({ open: isOpened }, rootPropsClasses)}>
             <div className={cn('title-wrap')} onClick={handleClickTitle}>
-                <h5 className={cn('title')}>{title}</h5>
+                <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpened })}>
                     {isOpened
                         ? (<ArrowUp />)

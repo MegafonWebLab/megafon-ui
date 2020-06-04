@@ -23,6 +23,7 @@
     - changed the parameter name from `lg` in the `innerPadding` property to `default`
 - **Accordion**
     - add Accordion component
+    - fixed title style, text padding, border-bottom in opened accordion
 - **Paragraph**
     - update with a new guide
     - update test
