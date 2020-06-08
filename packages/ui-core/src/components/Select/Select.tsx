@@ -7,7 +7,7 @@ import cnCreate from 'utils/cn';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
-interface ISelectProps {
+interface ISelectProps<T> {
     /** Field title */
     label?: React.ReactNode;
     /** Html id attribute */
@@ -64,7 +64,7 @@ interface ISelectProps {
         title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
         /** Value */
         value?: string;
-        data?: {};
+        data?: T;
         /** Left icon */
         leftIcon?: JSX.Element;
         /** Right icon */
@@ -83,7 +83,7 @@ interface ISelectProps {
         title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
         value?: string;
         index: number;
-        data?: {};
+        data?: T;
     }): void;
     /** Click icon handler */
     onClickIcon?(e: React.SyntheticEvent<EventTarget>): void;
@@ -97,7 +97,7 @@ interface ISelectState {
 }
 
 const cn = cnCreate('mfui-select');
-class Select extends React.Component<ISelectProps, ISelectState> {
+class Select<T> extends React.Component<ISelectProps<T>, ISelectState> {
     static propTypes = {
         label: PropTypes.node,
         id: PropTypes.string,
@@ -152,7 +152,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         onClickIcon: PropTypes.func,
     };
 
-    static defaultProps: Partial<ISelectProps> = {
+    static defaultProps: Partial<ISelectProps<{}>> = {
         keyNavigation: true,
         canOpen: true,
         notFoundText: 'Ничего не нашлось',
@@ -169,7 +169,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     search: any = null;
     isTouch: boolean = detectTouch();
 
-    constructor(props: ISelectProps) {
+    constructor(props: ISelectProps<T>) {
         super(props);
 
         this.state = {
@@ -184,7 +184,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         document.addEventListener('click', this.onClickOutside);
     }
 
-    shouldComponentUpdate(nextProps: ISelectProps, nextState: ISelectState) {
+    shouldComponentUpdate(nextProps: ISelectProps<T>, nextState: ISelectState) {
         return !(equal({ ...this.props, items: this.props.items.length },
             { ...nextProps, items: nextProps.items.length })
             && equal(this.state, nextState));

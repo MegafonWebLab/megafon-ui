@@ -4,6 +4,11 @@ import Select from './Select';
 import SelectItem from './SelectItem';
 import CheckedIcon from 'icons/checked_24.svg';
 
+type ItemType = {
+    id: string;
+    title: string;
+};
+
 const props = {
     items: [
         {
@@ -66,7 +71,7 @@ describe('<Select />', () => {
 
     it('it handles keydown with arrow down', () => {
         const wrapper = mount(<Select {...props} placeholder="test" />);
-        const instance = wrapper.instance() as Select;
+        const instance = wrapper.instance() as Select<ItemType>;
 
         instance.itemWrapperNode.scrollTop = -1;
         wrapper.find(controlSelector).simulate('keydown', {
@@ -77,7 +82,7 @@ describe('<Select />', () => {
 
     it('it handles keydown with arrow top', () => {
         const wrapper = mount(<Select {...props} />);
-        const instance = wrapper.instance() as Select;
+        const instance = wrapper.instance() as Select<ItemType>;
 
         instance.itemWrapperNode.scrollTop = 1;
         wrapper.setState({ activeIndex: 1 });
@@ -138,7 +143,7 @@ describe('<Select />', () => {
 
     it('it handles click outside', () => {
         const wrapper = shallow(<Select {...props} />);
-        const instance = wrapper.instance() as Select;
+        const instance = wrapper.instance() as Select<ItemType>;
 
         wrapper.setState({ isOpen: true });
         instance.getSelectNode({ contains() { return false; } });
@@ -148,7 +153,7 @@ describe('<Select />', () => {
 
     it('it handles click outside in container', () => {
         const wrapper = shallow(<Select {...props} />);
-        const instance = wrapper.instance() as Select;
+        const instance = wrapper.instance() as Select<ItemType>;
 
         wrapper.setState({ isOpen: true });
         instance.getSelectNode({ contains() { return true; } });

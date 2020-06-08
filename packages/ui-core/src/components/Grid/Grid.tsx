@@ -15,7 +15,7 @@ interface IProps {
     guttersBottom?: 'large' | 'medium';
     /** Transfering of columns onto multiple lines */
     multiRow?: boolean;
-    children: Array<React.ReactElement<IGridColumn>>;
+    children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
 
 const cn = cnCreate('mfui-grid');

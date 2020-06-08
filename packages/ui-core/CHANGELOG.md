@@ -3,6 +3,10 @@
 ## Unreleased
 - **RadioButton**
     - added new component
+- **Select**
+    - fix items type
+- **Grid**
+    - fix children type
 
 ## 1.6.0
 - **Preloader**
