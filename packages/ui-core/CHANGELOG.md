@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.7.0
 - **RadioButton**
     - added new component
 - **Select**
