@@ -1,0 +1,67 @@
+---
+name: Counter
+menu: Components
+route: components/counter
+---
+
+import { Playground, Props } from 'docz';
+import Counter from './Counter';
+import { DemoCounterWrapper } from './Counter.docz';
+
+# Counter
+
+## Properties
+
+<Props of={Counter} />
+
+```javascript
+const initialNumber = 10;
+
+export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = (props) => {
+    const [amount, setAmount] = React.useState(initialNumber);
+
+    const handleChange = (amount) => {
+        setAmount(amount);
+    };
+
+    return (
+        <div>
+            <p>amount: {amount}</p>
+            {props.children({
+                onChange: handleChange,
+                initialNumber: initialNumber,
+                minLimitedAmount: 3,
+                maxLimitedAmount: 33,
+            })}
+        </div>
+    );
+};
+```
+
+## Basic usage
+
+<Playground>
+    <DemoCounterWrapper>
+        {({ onChange, initialNumber }) =>
+            <Counter
+                initialNumber={initialNumber}
+                onChange={onChange}
+            />
+        }
+    </DemoCounterWrapper>
+</Playground>
+
+## Counter with minimum and maximum value limit
+
+<Playground>
+    <DemoCounterWrapper>
+        {({ onChange, initialNumber, maxLimitedAmount, minLimitedAmount }) =>
+            <Counter
+                initialNumber={initialNumber}
+                onChange={onChange}
+                minLimitedAmount={minLimitedAmount}
+                maxLimitedAmount={maxLimitedAmount}
+            />
+        }
+    </DemoCounterWrapper>
+</Playground>
