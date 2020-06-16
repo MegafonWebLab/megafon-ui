@@ -1,0 +1,69 @@
+---
+name: Search
+menu: Components
+route: components/search
+---
+
+import { Playground, Props } from 'docz';
+import Search from './Search';
+import SearchContainer from './Search.docz';
+
+# Search
+
+## Properties
+
+<Props of={Search} />
+
+## Basic usage
+
+<Playground>
+    <Search
+        placeholder="Type here for search"
+        onSubmit={(searchQuery) => alert('submitting ' + searchQuery)}
+    />
+</Playground>
+
+## Usage with initial items
+
+<Playground>
+    <Search
+        placeholder="Type here for search"
+        onSubmit={(searchQuery) => alert('submitting ' + searchQuery)}
+        items={[
+            {
+                title: 'title',
+                value: 'value',
+            },
+            {
+                title: 'title2',
+                value: 'value2',
+            },
+        ]}
+    />
+</Playground>
+
+## Usage with initial value
+
+<Playground>
+    <Search
+        placeholder="Type here for search"
+        value="Previous request"
+        onSubmit={(searchQuery) => alert('submitting ' + searchQuery)}
+    />
+</Playground>
+
+## Usage with onChange callback
+
+<Playground>
+    <Search
+        placeholder="Type here for search"
+        onChange={(searchQuery) => alert('changing ' + searchQuery)}
+    />
+</Playground>
+
+## Usage with emulating incomingData
+
+<Playground>
+    <SearchContainer />
+</Playground>
+

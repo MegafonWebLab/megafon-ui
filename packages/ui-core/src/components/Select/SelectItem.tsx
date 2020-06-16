@@ -54,7 +54,7 @@ class SelectItem extends React.Component<ISelectItemProps, {}> {
         return active || current || title;
     }
 
-    handleClick = e => {
+    handleMouseDown = e => {
         this.props.onSelect(e, this.props.index);
     }
 
@@ -96,7 +96,7 @@ class SelectItem extends React.Component<ISelectItemProps, {}> {
                     active: active,
                     padding: padding,
                 })}
-                onClick={this.handleClick}
+                onMouseDown={this.handleMouseDown}
                 onMouseEnter={this.handleMouseEnter}
                 ref={node => { this.itemNode = node; }}
             >

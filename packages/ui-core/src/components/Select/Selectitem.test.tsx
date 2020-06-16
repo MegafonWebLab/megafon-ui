@@ -35,7 +35,7 @@ describe('<SelectItem />', () => {
     it('it calls select handler', () => {
         const onSelect = jest.fn();
         const wrapper = mount(<SelectItem {...props} onSelect={onSelect} />);
-        wrapper.simulate('click');
+        wrapper.simulate('mouseDown');
         expect(onSelect.mock.calls).toHaveLength(1);
     });
 
