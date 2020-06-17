@@ -23,7 +23,7 @@ export const DemoRadioButtonWrapper = ({ children }: IRadioButtonProps) => {
 
     return (
         <>
-            <p style={{textAlign: 'center'}}><b>Value:</b> "{selectedOption || undefined}"</p>
+            <p style={{textAlign: 'center', marginTop: 0}}><b>Value:</b> "{selectedOption || undefined}"</p>
             <div style={flexStyle}>
                 {children({
                     onChange: handleChange,

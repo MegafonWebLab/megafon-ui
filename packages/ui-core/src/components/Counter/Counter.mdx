@@ -6,7 +6,7 @@ route: components/counter
 
 import { Playground, Props } from 'docz';
 import Counter from './Counter';
-import { DemoCounterWrapper } from './Counter.docz';
+import { DemoCounterWrapper, flexStyle } from './Counter.docz';
 
 # Counter
 
@@ -15,23 +15,19 @@ import { DemoCounterWrapper } from './Counter.docz';
 <Props of={Counter} />
 
 ```javascript
-const initialNumber = 10;
+export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
+    const [value, setValue] = React.useState(initialValue);
 
-export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = (props) => {
-    const [amount, setAmount] = React.useState(initialNumber);
-
-    const handleChange = (amount) => {
-        setAmount(amount);
+    const handleChange = (value) => {
+        setValue(value);
     };
 
     return (
         <div>
-            <p>amount: {amount}</p>
-            {props.children({
+            <p style={{ marginTop: 0 }}>Value: {value}</p>
+            {children({
                 onChange: handleChange,
-                initialNumber: initialNumber,
-                minLimitedAmount: 3,
-                maxLimitedAmount: 33,
+                initialValue: initialValue,
             })}
         </div>
     );
@@ -41,27 +37,44 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = (props) =>
 ## Basic usage
 
 <Playground>
-    <DemoCounterWrapper>
-        {({ onChange, initialNumber }) =>
-            <Counter
-                initialNumber={initialNumber}
-                onChange={onChange}
-            />
-        }
-    </DemoCounterWrapper>
-</Playground>
-
-## Counter with minimum and maximum value limit
-
-<Playground>
-    <DemoCounterWrapper>
-        {({ onChange, initialNumber, maxLimitedAmount, minLimitedAmount }) =>
-            <Counter
-                initialNumber={initialNumber}
-                onChange={onChange}
-                minLimitedAmount={minLimitedAmount}
-                maxLimitedAmount={maxLimitedAmount}
-            />
-        }
-    </DemoCounterWrapper>
+    <div style={flexStyle}>
+        <DemoCounterWrapper initialValue={4}>
+            {({ onChange, initialValue }) =>
+                <Counter
+                    initialValue={initialValue}
+                    onChange={onChange}
+                    min={3}
+                    max={33}
+                />
+            }
+        </DemoCounterWrapper>
+        <DemoCounterWrapper initialValue={18}>
+            {({ onChange, initialValue }) =>
+                <Counter
+                    initialValue={initialValue}
+                    onChange={onChange}
+                    min={3}
+                    max={33}
+                />
+            }
+        </DemoCounterWrapper>
+        <DemoCounterWrapper initialValue={33}>
+            {({ onChange, initialValue }) =>
+                <Counter
+                    initialValue={initialValue}
+                    onChange={onChange}
+                    min={3}
+                    max={33}
+                />
+            }
+        </DemoCounterWrapper>
+        <DemoCounterWrapper>
+            {({ onChange }) =>
+                <Counter
+                    onChange={onChange}
+                    isDisabled
+                />
+            }
+        </DemoCounterWrapper>
+    </div>
 </Playground>

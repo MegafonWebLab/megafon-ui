@@ -4,9 +4,10 @@ import Counter from './Counter';
 
 const props = {
     className: 'test-class',
-    initialNumber: 10,
-    minLimitedAmount: 3,
-    maxLimitedAmount: 33,
+    initialValue: 10,
+    min: 3,
+    max: 33,
+    isDisabled: true,
 };
 
 describe('<Counter />', () => {
@@ -29,62 +30,80 @@ describe('<Counter />', () => {
     });
 
     describe('handlers', () => {
-        it.only('calls onClick for left button', () => {
-            const handleClick = jest.fn(counterValue => counterValue);
-
-            const amount = 9;
+        it('calls onClick for left button', () => {
+            const handleClick = jest.fn();
 
             const wrapper = shallow(
-                <Counter initialNumber={10} onChange={handleClick} />
+                <Counter initialValue={10} onChange={handleClick} />
             );
 
-            wrapper.find('.counter__btn_left').simulate('click', {target: {className: 'counter__minus'}});
-
-            expect(handleClick).toHaveBeenCalledWith(amount);
+            wrapper.find('button').first().simulate('click');
+            expect(handleClick).toHaveBeenCalledWith(9);
         });
     });
 
     describe('handlers', () => {
-        it.only('calls onClick for right button', () => {
-            const onClick = jest.fn(counterValue => counterValue);
-
-            const amount = 11;
+        it('calls onClick for right button', () => {
+            const handleClick = jest.fn();
 
             const wrapper = shallow(
-                <Counter initialNumber={10} onChange={onClick} />
+                <Counter initialValue={10} onChange={handleClick} />
             );
 
-            wrapper.find('.counter__btn_right').simulate('click', {target: {className: 'counter__plus'}});
-
-            expect(onClick).toHaveBeenCalledWith(amount);
+            wrapper.find('button').at(1).simulate('click');
+            expect(handleClick).toHaveBeenCalledWith(11);
         });
     });
 
     describe('handlers', () => {
-        it.only('calls onChange for input', () => {
-            const handleChange = jest.fn(counterValue => counterValue);
-
-            const amount = 22;
+        it('calls onChange for input', () => {
+            const handleChange = jest.fn();
 
             const wrapper = shallow(
-                <Counter initialNumber={10} onChange={handleChange} />
+                <Counter onChange={handleChange} />
             );
 
-            wrapper.find('.counter__input').simulate('change', {target: {className: 'counter__input', value: 22}});
-            expect(handleChange).toHaveBeenCalledWith(amount);
+            wrapper.find('input').simulate('change', { target: { value: 22 } });
+            expect(handleChange).toHaveBeenCalledWith(22);
         });
     });
 
     describe('handlers', () => {
-        it.only('calls onChange for input with wrong value', () => {
-            const handleChange = jest.fn(counterValue => counterValue);
+        it('calls onChange for input with wrong value', () => {
+            const handleChange = jest.fn();
 
             const wrapper = shallow(
-                <Counter initialNumber={10} onChange={handleChange} />
+                <Counter initialValue={10} onChange={handleChange} />
             );
 
-            wrapper.find('.counter__input').simulate('change', {target: {className: 'counter__input', value: 'hello'}});
+            wrapper.find('input').simulate('change', {target: { value: 'hello' } });
             expect(handleChange).not.toBeCalled();
+        });
+    });
+
+    describe('handlers', () => {
+        it('calls onClick for left button near min limit', () => {
+            const handleClick = jest.fn();
+
+            const wrapper = shallow(
+                <Counter initialValue={3} min={3} onChange={handleClick} />
+            );
+
+            wrapper.find('button').first().simulate('click');
+            expect(handleClick).not.toHaveBeenCalledWith(2);
+        });
+    });
+
+    describe('handlers', () => {
+        it('calls onClick for right button near max limit', () => {
+            const handleClick = jest.fn();
+
+            const wrapper = shallow(
+                <Counter initialValue={33} max={33} onChange={handleClick} />
+            );
+
+            wrapper.find('button').at(1).simulate('click');
+            expect(handleClick).not.toHaveBeenCalledWith(34);
         });
     });
 });

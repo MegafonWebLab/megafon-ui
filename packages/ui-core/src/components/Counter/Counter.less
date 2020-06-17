@@ -7,11 +7,11 @@
     display: flex;
     justify-content: space-between;
     height: 32px;
-    width: 114px;
+    width: 120px;
 
     &__btn {
         background-color: transparent;
-        border: 1px solid @black15;
+        border: 1px solid @spbSky2;
         box-sizing: border-box;
         cursor: pointer;
         display: flex;
@@ -28,30 +28,23 @@
         text-decoration: none;
         min-width: 33px;
 
-        &_left {
-            border-top-left-radius: 50px;
-            border-bottom-left-radius: 50px;
-        }
-        &_right {
-            border-top-right-radius: 50px;
-            border-bottom-right-radius: 50px;
-        }
-
         &:hover {
-            background-color: @green;
-            border-color: @green;
-            color: @clearWhite;
+            background-color: @spbSky0;
         }
 
         &:disabled {
             cursor: default;
-
-            &:hover {
-                background-color: inherit;
-                border-color: @black15;
-                color: rgba(16, 16, 16, 0.3);
-            }
+            color: @spbSky2;
+            background-color: @spbSky1;
         }
+    }
+    &__btn_left {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+    &__btn_right {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
     }
 
     &__minus {
@@ -64,8 +57,8 @@
     }
 
     &__input-box {
-        border-top: 1px solid @black15;
-        border-bottom: 1px solid @black15;
+        border-top: 1px solid @spbSky2;
+        border-bottom: 1px solid @spbSky2;
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -85,5 +78,18 @@
         margin: 0;
         text-align: center;
         width: 100%;
+    }
+
+    &_disabled {
+        @{b}__btn {
+            background-color: @spbSky1;
+            color: @spbSky2;
+            cursor: default;
+        }
+        @{b}__input {
+            background-color: @spbSky1;
+            color: rgba(51, 51, 51, 0.5);
+            cursor: default;
+        }
     }
 }

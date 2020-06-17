@@ -44,11 +44,11 @@ exports[`<Counter /> layout renders Counter 1`] = `
 
 exports[`<Counter /> layout renders Counter with props 1`] = `
 <div
-  className="counter__testClassName"
+  className="counter counter_disabled test-class"
 >
   <button
     className="counter__btn counter__btn_left"
-    disabled={false}
+    disabled={true}
     onClick={[Function]}
     type="button"
   >
@@ -63,6 +63,7 @@ exports[`<Counter /> layout renders Counter with props 1`] = `
   >
     <input
       className="counter__input"
+      disabled={true}
       max={33}
       min={3}
       onBlur={[Function]}
@@ -72,7 +73,7 @@ exports[`<Counter /> layout renders Counter with props 1`] = `
   </div>
   <button
     className="counter__btn counter__btn_right"
-    disabled={false}
+    disabled={true}
     onClick={[Function]}
     type="button"
   >

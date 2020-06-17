@@ -1,31 +1,33 @@
 import * as React from 'react';
 
+export const flexStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    textAlign: 'center',
+};
+
 interface IDemoCounterWrapperProps {
     children: (prop: {
-        onChange: (amount: number) => void;
-        initialNumber: number;
-        minLimitedAmount: number;
-        maxLimitedAmount: number;
+        onChange: (value: number) => void;
+        initialValue: number;
     }) => JSX.Element;
+    initialValue: number;
 }
 
-const initialNumber = 10;
+export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
+    const [value, setValue] = React.useState(initialValue);
 
-export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = (props) => {
-    const [amount, setAmount] = React.useState(initialNumber);
-
-    const handleChange = (value) => {
-        setAmount(value);
+    const handleChange = (currentValue) => {
+        setValue(currentValue);
     };
 
     return (
         <div>
-            <p>amount: {amount}</p>
-            {props.children({
+            <p style={{ marginTop: 0 }}>Value: {value}</p>
+            {children({
                 onChange: handleChange,
-                initialNumber: initialNumber,
-                minLimitedAmount: 3,
-                maxLimitedAmount: 33,
+                initialValue: initialValue,
             })}
         </div>
     );

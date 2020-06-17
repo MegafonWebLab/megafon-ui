@@ -1,89 +1,87 @@
 import * as React from 'react';
 import cnCreate from 'utils/cnCreate';
 import './Counter.less';
+import IconMinus from './i/Minus.svg';
+import IconPlus from './i/Plus.svg';
 
 type Props = {
     /** Custom class name */
     className?: string;
     /** Initial number in counter */
-    initialNumber?: number;
-    /** Minimal allowed amount */
-    minLimitedAmount?: number;
-    /** Maximum allowed amount */
-    maxLimitedAmount?: number;
+    initialValue?: number;
+    /** Minimal allowed value */
+    min?: number;
+    /** Maximum allowed value */
+    max?: number;
+    /** Disabled state of counter */
+    isDisabled?: boolean;
     /** onChange handler */
-    onChange?: (amount: number) => void;
+    onChange?: (value: number) => void;
 };
 
-const MIN_AMOUNT = 0;
+const MIN_VALUE = 0;
 
 const cn = cnCreate('counter');
-const Counter = (props: Props): React.ReactElement => {
-    const {
-        className,
-        maxLimitedAmount,
-        onChange,
-    } = props;
-    const minLimitedAmount = props.minLimitedAmount || MIN_AMOUNT;
-    const initialNumber = props.initialNumber || 0;
-    const [counter, setCounter] = React.useState(initialNumber);
+const Counter: React.FC<Props> = ({ className, initialValue, max, min = MIN_VALUE, isDisabled, onChange }) => {
+    const currentInitialValue = initialValue || min;
+    const [counter, setCounter] = React.useState(currentInitialValue);
+
+    React.useEffect(() => {
+        setCounter(currentInitialValue);
+    }, [currentInitialValue]);
 
     function handleValueChange(value: number) {
         setCounter(value);
-        onChange && onChange(value);
-    }
 
-    function handleChange(e: React.SyntheticEvent<EventTarget>): void {
-        switch ((e.target as Element).className ) {
-            case 'counter__minus':
-                handleValueChange(counter - 1);
-                break;
-            case 'counter__plus':
-                handleValueChange(counter + 1);
-                break;
-            case 'counter__input':
-                const pattern = /^[0-9\b]+$/;
-                const { value } = e.target as  HTMLInputElement;
-
-                if (value !== '' && !pattern.test(value)) {
-                    return;
-                }
-                handleValueChange(Number(value));
-                break;
-            default:
-                return;
+        if (Number(value) >= min && (max === undefined || Number(value) <= max)) {
+            onChange && onChange(value);
         }
     }
 
-    function handleBlur(e: React.SyntheticEvent<EventTarget>): void {
-        const { value } = e.target as  HTMLInputElement;
+    function handleMinusClick(): void {
+        handleValueChange(counter - 1);
+    }
 
-        if (maxLimitedAmount === undefined) {
+    function handlePlusClick(): void {
+        handleValueChange(counter + 1);
+    }
+
+    function handleInputChange(e: React.ChangeEvent<HTMLInputElement>): void {
+        const pattern = /^[0-9\b]+$/;
+        const { value } = e.target;
+
+        if (value !== '' && !pattern.test(value)) {
             return;
         }
-        if (Number(value) < minLimitedAmount) {
-            handleValueChange(minLimitedAmount);
+
+        handleValueChange(Number(value));
+    }
+
+    function handleInputBlur(e: React.FocusEvent<HTMLInputElement>): void {
+        const { value } = e.target;
+
+        if (Number(value) < min) {
+            handleValueChange(min);
 
             return;
         }
-        if (Number(value) > maxLimitedAmount) {
-            handleValueChange(maxLimitedAmount);
+        if (max === undefined) {
+            return;
+        }
+        if (Number(value) > max) {
+            handleValueChange(max);
 
             return;
         }
     }
-
-    React.useEffect(() => {
-        setCounter(initialNumber);
-    }, [initialNumber]);
 
     return (
-        <div className={cn(className)}>
+        <div className={cn('', { disabled: isDisabled }, className)}>
             <button
                 className={cn('btn', { left: true })}
                 type="button"
-                disabled={counter === minLimitedAmount}
-                onClick={handleChange}
+                disabled={isDisabled || counter === min}
+                onClick={handleMinusClick}
             >
                 <span className={cn('minus')}>–</span>
             </button>
@@ -91,17 +89,18 @@ const Counter = (props: Props): React.ReactElement => {
                 <input
                     className={cn('input')}
                     value={counter}
-                    min={minLimitedAmount}
-                    max={maxLimitedAmount}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
+                    min={min}
+                    max={max}
+                    onChange={handleInputChange}
+                    onBlur={handleInputBlur}
+                    disabled={isDisabled}
                 />
             </div>
             <button
                 className={cn('btn', { right: true })}
                 type="button"
-                disabled={counter === maxLimitedAmount}
-                onClick={handleChange}
+                disabled={isDisabled || counter === max}
+                onClick={handlePlusClick}
             >
                 <span className={cn('plus')}>+</span>
             </button>
