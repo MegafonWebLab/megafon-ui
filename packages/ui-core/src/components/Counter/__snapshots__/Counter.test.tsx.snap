@@ -21,7 +21,6 @@ exports[`<Counter /> layout renders Counter 1`] = `
   >
     <input
       className="counter__input"
-      min={0}
       onBlur={[Function]}
       onChange={[Function]}
       value={0}
@@ -64,8 +63,6 @@ exports[`<Counter /> layout renders Counter with props 1`] = `
     <input
       className="counter__input"
       disabled={true}
-      max={33}
-      min={3}
       onBlur={[Function]}
       onChange={[Function]}
       value={10}

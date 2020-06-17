@@ -1,8 +1,6 @@
 import * as React from 'react';
 import cnCreate from 'utils/cnCreate';
 import './Counter.less';
-import IconMinus from './i/Minus.svg';
-import IconPlus from './i/Plus.svg';
 
 type Props = {
     /** Custom class name */
@@ -19,10 +17,18 @@ type Props = {
     onChange?: (value: number) => void;
 };
 
-const MIN_VALUE = 0;
+const DEFAULT_MIN_VALUE = 0;
+const DEFAULT_MAX_VALUE = 9007199254740991;
 
 const cn = cnCreate('counter');
-const Counter: React.FC<Props> = ({ className, initialValue, max, min = MIN_VALUE, isDisabled, onChange }) => {
+const Counter: React.FC<Props> = ({
+    className,
+    initialValue,
+    max = DEFAULT_MAX_VALUE,
+    min = DEFAULT_MIN_VALUE,
+    isDisabled,
+    onChange,
+}) => {
     const currentInitialValue = initialValue || min;
     const [counter, setCounter] = React.useState(currentInitialValue);
 
@@ -33,7 +39,15 @@ const Counter: React.FC<Props> = ({ className, initialValue, max, min = MIN_VALU
     function handleValueChange(value: number) {
         setCounter(value);
 
-        if (Number(value) >= min && (max === undefined || Number(value) <= max)) {
+        if (value < min) {
+            onChange && onChange(min);
+        }
+
+        if (value > max) {
+            onChange && onChange(max);
+        }
+
+        if (value >= min && value <= max) {
             onChange && onChange(value);
         }
     }
@@ -59,16 +73,15 @@ const Counter: React.FC<Props> = ({ className, initialValue, max, min = MIN_VALU
 
     function handleInputBlur(e: React.FocusEvent<HTMLInputElement>): void {
         const { value } = e.target;
+        const numberValue = Number(value);
 
-        if (Number(value) < min) {
+        if (numberValue < min) {
             handleValueChange(min);
 
             return;
         }
-        if (max === undefined) {
-            return;
-        }
-        if (Number(value) > max) {
+
+        if (numberValue > max) {
             handleValueChange(max);
 
             return;
@@ -76,11 +89,11 @@ const Counter: React.FC<Props> = ({ className, initialValue, max, min = MIN_VALU
     }
 
     return (
-        <div className={cn('', { disabled: isDisabled }, className)}>
+        <div className={cn({ disabled: isDisabled }, className)}>
             <button
                 className={cn('btn', { left: true })}
                 type="button"
-                disabled={isDisabled || counter === min}
+                disabled={isDisabled || counter <= min}
                 onClick={handleMinusClick}
             >
                 <span className={cn('minus')}>–</span>
@@ -89,8 +102,6 @@ const Counter: React.FC<Props> = ({ className, initialValue, max, min = MIN_VALU
                 <input
                     className={cn('input')}
                     value={counter}
-                    min={min}
-                    max={max}
                     onChange={handleInputChange}
                     onBlur={handleInputBlur}
                     disabled={isDisabled}
@@ -99,7 +110,7 @@ const Counter: React.FC<Props> = ({ className, initialValue, max, min = MIN_VALU
             <button
                 className={cn('btn', { right: true })}
                 type="button"
-                disabled={isDisabled || counter === max}
+                disabled={isDisabled || counter >= max}
                 onClick={handlePlusClick}
             >
                 <span className={cn('plus')}>+</span>
