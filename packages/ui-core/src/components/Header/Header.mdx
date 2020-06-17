@@ -7,30 +7,69 @@ route: components/header
 import { Playground, Props } from 'docz';
 import Header from './Header';
 
+export const tableRowStyle = {
+    border: '1px solid #EDEDED',
+    display: 'flex',
+    alignItems: 'center',
+    minHeight: '50px',
+    padding: '15px',
+}
+
 # Header
 
 ## Properties
 
 <Props of={Header} />
 
-## Basic usage
+## Header's levels
 
 <Playground>
-    <Header color="green">Megafon lib</Header>
+    <div style={tableRowStyle}>
+        <Header as="h1">H1. Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h2">H2. Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h3">H3. Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h5">H5. Megafon lib</Header>
+    </div>
 </Playground>
 
-## Level h2, purple color
+## Header's color
 
 <Playground>
-    <Header color="purple" as="h2">
-        Megafon lib
-    </Header>
+    <div style={tableRowStyle}>
+        <Header color="purple" as="h2">Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header color="green" as="h2">Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header color="blue" as="h2">Megafon lib</Header>
+    </div>
 </Playground>
 
-## Level h3 with margin
+## Header's margin
 
 <Playground>
-    <Header as="h3" margin>
-        Megafon lib
-    </Header>
+    <div style={tableRowStyle}>
+        <Header as="h2" margin>Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h2">Megafon lib</Header>
+    </div>
+</Playground>
+
+## Header with additional text
+
+<Playground>
+    <div style={tableRowStyle}>
+        <Header as="h1" addition="Additional text">Megafon lib.</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h5" addition="Additional text">Megafon lib.</Header>
+    </div>
 </Playground>
