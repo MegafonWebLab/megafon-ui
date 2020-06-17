@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
+<div
+  className="mfui-search"
+>
+  <div
+    className="mfui-search__control"
+  >
+    <input
+      autoComplete="off"
+      className="mfui-search__search-field"
+      maxLength={60}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="type to search here"
+      type="text"
+      value="initial value"
+    />
+    <div
+      className="mfui-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-search__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-search__list"
+  >
+    <div
+      className="mfui-search__list-inner"
+    >
+      <SelectItem
+        active={false}
+        index={0}
+        key="item value0"
+        onHover={[Function]}
+        onSelect={[Function]}
+        title="item title"
+      />
+      <SelectItem
+        active={false}
+        index={1}
+        key="another value1"
+        onHover={[Function]}
+        onSelect={[Function]}
+        title="another title"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Search /> snapshots renders Search without props correctly 1`] = `
+<div
+  className="mfui-search"
+>
+  <div
+    className="mfui-search__control"
+  >
+    <input
+      autoComplete="off"
+      className="mfui-search__search-field"
+      maxLength={60}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      type="text"
+      value=""
+    />
+    <div
+      className="mfui-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-search__icon"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -11,7 +11,7 @@ type HandleSearchFieldSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
 type HandleSelectSubmit = (e: React.MouseEvent | null, index: number) => void;
 type HandleSelectSubmitWithEventOnly = (e: React.MouseEvent, index: number) => void;
 
-interface ISearchProps {
+export interface ISearchProps {
     /** Selected value. Should correlate with items.value */
     value?: string;
     /** Placeholder */
