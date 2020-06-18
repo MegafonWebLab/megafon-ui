@@ -22,7 +22,7 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initial
         <div>
             <p style={{ marginTop: 0 }}>Value: {value}</p>
             {children({
-                onChange: (currentValue) => setValue(currentValue),
+                onChange: setValue,
                 initialValue: initialValue,
             })}
         </div>
