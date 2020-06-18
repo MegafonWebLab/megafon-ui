@@ -18,7 +18,7 @@ type Props = {
 };
 
 const DEFAULT_MIN_VALUE = 0;
-const DEFAULT_MAX_VALUE = 9007199254740991;
+const DEFAULT_MAX_VALUE = 999999;
 
 const cn = cnCreate('counter');
 const Counter: React.FC<Props> = ({
