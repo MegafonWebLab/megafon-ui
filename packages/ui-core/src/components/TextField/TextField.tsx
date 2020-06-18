@@ -93,6 +93,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     }) => {
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
+    const [inputValue, setInputValue] = React.useState('');
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
     const isVisiblePassword: boolean = useMemo(
@@ -105,8 +106,18 @@ const TextField: React.FC<ITextFieldProps> = ({
         () => setPasswordHidden(prevPassState => !prevPassState),
         [isPasswordHidden]
     );
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        setInputValue(e.target.value);
+    };
+
     const handleIconClick = useCallback(e => {
         isPasswordType && togglePasswordHiding();
+
+        if (verification === 'error') {
+            setInputValue('');
+        }
+
         onCustomIconClick && onCustomIconClick(e);
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick]);
 
@@ -135,6 +146,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     const inputParams = {
         ...commonParams,
         className: cn('field'),
+        onChange,
         mask,
         maskChar,
         type: isVisiblePassword ? 'text' : type,
@@ -149,14 +161,15 @@ const TextField: React.FC<ITextFieldProps> = ({
         if (multiline) {
             return renderTextarea();
         }
+
         return renderInput();
     };
 
     const renderInput = (): React.ReactNode => (
         <>
             {mask
-                ? <InputMask {...inputParams} inputRef={inputRef} />
-                : <input {...inputParams} ref={inputRef} />
+                ? <InputMask {...inputParams} inputRef={inputRef} onChange={handleInputChange} value={inputValue} />
+                : <input {...inputParams} ref={inputRef} onChange={handleInputChange} value={inputValue} />
             }
             {!hideIcon && renderIconBlock()}
         </>
