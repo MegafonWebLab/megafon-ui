@@ -1,0 +1,96 @@
+@import '~styles/base';
+@b: e('.counter');
+
+@{b} {
+    background-color: @clearWhite;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+    width: 120px;
+
+    &__btn {
+        background-color: transparent;
+        border: 1px solid @spbSky2;
+        box-sizing: border-box;
+        cursor: pointer;
+        display: flex;
+        height: 100%;
+        font-size: 20px;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        outline: none;
+        padding: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        text-decoration: none;
+        min-width: 32px;
+
+        &:hover {
+            background-color: @spbSky0;
+        }
+
+        &:disabled {
+            cursor: default;
+            color: @spbSky2;
+            background-color: @spbSky1;
+        }
+    }
+    &__btn_left {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+    &__btn_right {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    &__minus {
+        position: relative;
+        top: -1px;
+    }
+    &__plus {
+        position: relative;
+        top: 1px;
+    }
+
+    &__input-box {
+        border-top: 1px solid @spbSky2;
+        border-bottom: 1px solid @spbSky2;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        height: 100%;
+    }
+    &__input {
+        border: none;
+        box-sizing: border-box;
+        cursor: text;
+        height: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-shadow: none;
+        overflow: auto;
+        outline: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    &_disabled {
+        @{b}__btn {
+            background-color: @spbSky1;
+            color: @spbSky2;
+            cursor: default;
+        }
+        @{b}__input {
+            background-color: @spbSky1;
+            color: rgba(51, 51, 51, 0.5);
+            cursor: default;
+        }
+    }
+}

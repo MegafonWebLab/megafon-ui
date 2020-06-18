@@ -3,6 +3,8 @@
 ## Unreleased
 - **RadioButton**
     - added new component
+- **Counter**
+    - added new component
 - **Preloader**
     - added new component
     - fixed tslint errors

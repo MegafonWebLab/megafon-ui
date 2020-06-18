@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Counter /> layout renders Counter 1`] = `
+<div
+  className="counter"
+>
+  <button
+    className="counter__btn counter__btn_left"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="counter__minus"
+    >
+      –
+    </span>
+  </button>
+  <div
+    className="counter__input-box"
+  >
+    <input
+      className="counter__input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      value={0}
+    />
+  </div>
+  <button
+    className="counter__btn counter__btn_right"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="counter__plus"
+    >
+      +
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<Counter /> layout renders Counter with props 1`] = `
+<div
+  className="counter counter_disabled test-class"
+>
+  <button
+    className="counter__btn counter__btn_left"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="counter__minus"
+    >
+      –
+    </span>
+  </button>
+  <div
+    className="counter__input-box"
+  >
+    <input
+      className="counter__input"
+      disabled={true}
+      onBlur={[Function]}
+      onChange={[Function]}
+      value={10}
+    />
+  </div>
+  <button
+    className="counter__btn counter__btn_right"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="counter__plus"
+    >
+      +
+    </span>
+  </button>
+</div>
+`;
