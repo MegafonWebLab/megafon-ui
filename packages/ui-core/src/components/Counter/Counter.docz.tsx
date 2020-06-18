@@ -18,15 +18,11 @@ interface IDemoCounterWrapperProps {
 export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
     const [value, setValue] = React.useState(initialValue);
 
-    const handleChange = (currentValue) => {
-        setValue(currentValue);
-    };
-
     return (
         <div>
             <p style={{ marginTop: 0 }}>Value: {value}</p>
             {children({
-                onChange: handleChange,
+                onChange: (currentValue) => setValue(currentValue),
                 initialValue: initialValue,
             })}
         </div>

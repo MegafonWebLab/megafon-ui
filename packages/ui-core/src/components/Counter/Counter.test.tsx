@@ -28,7 +28,7 @@ describe('<Counter />', () => {
     });
 
     describe('handlers', () => {
-        it('calls onClick for buttons', () => {
+        it('calls onChange for buttons', () => {
             const handleClick = jest.fn();
 
             const wrapper = shallow(
@@ -78,7 +78,7 @@ describe('<Counter />', () => {
             expect(handleChange).toHaveBeenCalledWith(33);
         });
 
-        it('calls onClick for left button near min limit', () => {
+        it('calls onChange for left button near min limit', () => {
             const handleClick = jest.fn();
 
             const wrapper = mount(
@@ -89,7 +89,7 @@ describe('<Counter />', () => {
             expect(handleClick).not.toHaveBeenCalled();
         });
 
-        it('calls onClick for right button near max limit', () => {
+        it('calls onChange for right button near max limit', () => {
             const handleClick = jest.fn();
 
             const wrapper = mount(
