@@ -52,6 +52,7 @@
     "function-url-quotes": "always",
     "function-whitespace-after": "always",
     "custom-property-empty-line-before": "never",
+    "declaration-empty-line-before": "never",
     "block-closing-brace-empty-line-before": "never"
   }
 }
