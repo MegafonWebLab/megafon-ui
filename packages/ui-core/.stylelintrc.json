@@ -8,6 +8,7 @@
     "function-linear-gradient-no-nonstandard-direction": true,
     "function-comma-space-after": "always",
     "function-comma-space-before": "never",
+    "function-parentheses-space-inside": "never",
     "number-leading-zero": "always",
     "number-no-trailing-zeros": true,
     "string-no-newline": true,
@@ -28,8 +29,19 @@
     "block-opening-brace-newline-after": "always",
     "block-closing-brace-newline-before": "always",
     "selector-attribute-brackets-space-inside": "never",
+    "selector-pseudo-class-no-unknown": true,
+    "selector-pseudo-element-no-unknown": true,
+    "selector-type-no-unknown": true,
+    "selector-max-class": 3,
+    "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
+    "selector-max-id": 0,
     "max-nesting-depth": 5,
     "indentation": 4,
-    "declaration-bang-space-before": "always"
+    "declaration-bang-space-before": "always",
+    "media-feature-name-no-unknown": true,
+    "at-rule-no-unknown": true,
+    "comment-no-empty": true,
+    "no-descending-specificity": true,
+    "no-duplicate-at-import-rules": true
   }
 }
