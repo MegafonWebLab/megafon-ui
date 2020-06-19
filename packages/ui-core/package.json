@@ -25,7 +25,7 @@
     "typecheck": "tsc --noEmit -p .",
     "lint": "yarn lint:ts && yarn lint:less",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
-    "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
+    "lint:ts": "tslint -c tslint.json {src,scripts}/**/*.ts?(x)",
     "test": "yarn test:unit",
     "test:unit": "jest",
     "testu": "jest --updateSnapshot"
