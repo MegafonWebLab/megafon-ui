@@ -1,9 +1,8 @@
 // COLORS new
 @class-prefix: 'mfui';
 
+// Basic Colors
 @green: #00B956;
-@greenDark: #028941;
-@greenLight: #44B759;
 @purple: #731982;
 @clearWhite: #FFFFFF;
 @spbSky0: #F6F6F6;
@@ -11,37 +10,19 @@
 @spbSky2: #D8D8D8;
 @freshAsphalt: #333333;
 @fullBlack: #000000;
-@newPaginGray: #DBDBDB;
 
-@fury: #F62434;
+// Secondary Colors
+@warmRedC: #EB5A40;
 @mandarin: #FFA717;
-@blue: #34AAF2;
-@greenHover: #00EE6F;
-@purpleHover: #B808D4;
-@secondaryPurpleHover: #A500BF;
-@down: #404D46;
+@311C: #5BD9E5;
+@reflexBlue: #444189;
 
-// COLORS old
-@greenActive: #0C9D47;
-@green10: #E5F5EE;
-@purpleActive: #561362;
-@white: #FFFFFF;
-@red: #E96980;
-@redBright: #DA3B2F;
-@redLight: #FBF5F7;
-@blueHover: #007FE6;
-@black100: #000000;
-@black90: #212724;
-@black80: #333333;
-@black70: #3F4D46;
-@black60: #666666;
-@black40: #999999;
-@black30: #B2B2B2;
-@black20: #CFD4D8;
-@black15: #D9D9D9;
-@black10: #E5E5E5;
-@black5: #F2F2F2;
-@black2: #FAFAFA;
+// System Colors
+@fury: #F62434;
+@link: #34AAF2;
+@buttonHoverGreen: #10E272;
+@buttonhoverPurple: #A500BF;
+@buttonDown: #404D46;
 
 // BREAKPOINTS
 @mobileSmallEnd:      479px;
@@ -153,7 +134,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .default-link() {
-    color: @blue;
+    color: @link;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -165,7 +146,7 @@ h1, h2, h3, h4, h5 {
     line-height: 16px;
 }
 
-.round(@bgColor: @mandarin, @color: @white, @fs: 30px, @w: 65px, @h: 65px) {
+.round(@bgColor: @mandarin, @color: @clearWhite, @fs: 30px, @w: 65px, @h: 65px) {
     width: @w;
     height: @h;
     display: flex;

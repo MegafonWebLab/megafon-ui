@@ -1,16 +1,58 @@
 # Changelog
 
 ## Unreleased
+- **Colors**
+    - added documentation for guide colors
+- **BubbleHint**
+    - synchronized colors according to the guide
+- **Button**
+    - synchronized colors according to the guide
+- **CarouselArrow**
+    - synchronized colors according to the guide
+- **Checkbox**
+    - synchronized colors according to the guide
+- **DropdownSocialList**
+    - synchronized colors according to the guide
+- **Select**
+    - synchronized colors according to the guide
+- **SelectItem**
+    - synchronized colors according to the guide
+- **TextField**
+    - synchronized colors according to the guide
+- **TextLink**
+    - synchronized colors according to the guide
+- **Icons**
+    - synchronized colors according to the guide
+- **ProductCardInfo**
+    - synchronized colors according to the guide
+- **ProductCardTotal**
+    - synchronized colors according to the guide
+- **ProductCardWrapper**
+    - synchronized colors according to the guide
+- **ProductCardSwitcher**
+    - synchronized colors according to the guide
+- **ProductCardTile**
+    - synchronized colors according to the guide
+- **ProductCardTileCashback**
+    - synchronized colors according to the guide
+- **ProductCardTileHint**
+    - synchronized colors according to the guide
+- **ProductCardTileOptions**
+    - synchronized colors according to the guide
+- **ProductCardTileRest**
+    - synchronized colors according to the guide
 - **RadioButton**
     - added new component
 - **Counter**
     - added new component
+    - synchronized colors according to the guide
 - **Preloader**
     - added new component
     - fixed tslint errors
 - **Header**
     - correct header css for style guide, delete h6 props
     - updated documentation
+    - synchronized colors according to the guide
 - **cn**
     - add variability to add arguments
     - rename `cn` to `cnCreate`
@@ -18,12 +60,15 @@
     - added new component
     - added examples and description in .mdx
     - added tests
+    - synchronized colors according to the guide
 - **Carousel**
     - add onSwipe callback
     - fix touch events
+    - synchronized colors according to the guide
 - **ContentArea**
     - add basic colors for `outerBackgroundColor` and `innerBackgroundColor`
     - changed the parameter name from `lg` in the `innerPadding` property to `default`
+    - synchronized colors according to the guide
 - **Accordion**
     - add Accordion component
     - fixed title style, text padding, border-bottom in opened accordion
@@ -149,10 +194,10 @@
 
 ## Release 1.0.12
 - **Paragraph**
-    - edit styles according to guide
+    - edit styles according to the guide
     - add `default` value for `marginAll` prop
 - **Header**
-    - edit styles according to guide
+    - edit styles according to the guide
 
 ## Release 1.0.11
 - **Button**
