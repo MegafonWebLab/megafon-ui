@@ -10,6 +10,7 @@
     - fixed tslint errors
 - **Header**
     - correct header css for style guide, delete h6 props
+    - updated documentation
 - **cn**
     - add variability to add arguments
     - rename `cn` to `cnCreate`
