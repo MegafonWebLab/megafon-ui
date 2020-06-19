@@ -63,15 +63,12 @@ export const tableRowStyle = {
     </div>
 </Playground>
 
-## Header with additional text
+## Header with additional component
 
 <Playground>
     <div style={tableRowStyle}>
-        <Header as="h1" addition="Additional text">Megafon lib.</Header>
-    </div>
-    <div style={tableRowStyle}>
         <Header as="h2" addition={
-            <Header as="h3">Megafon lib. Additional text</Header>
-        }>Header with additional сomponent</Header>
+            <Header as="h3">Additional component</Header>
+        }>Megafon lib</Header>
     </div>
 </Playground>
