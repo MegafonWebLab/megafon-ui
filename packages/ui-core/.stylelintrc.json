@@ -44,6 +44,13 @@
     "no-descending-specificity": true,
     "no-duplicate-at-import-rules": true,
     "no-duplicate-selectors": true,
-    "no-extra-semicolons": true
+    "no-empty-source": true,
+    "no-extra-semicolons": true,
+    "color-named": "never",
+    "declaration-block-single-line-max-declarations": 1,
+    "selector-max-empty-lines": 0,
+    "function-url-quotes": "always",
+    "function-whitespace-after": "always",
+    "custom-property-empty-line-before": "never"
   }
 }
