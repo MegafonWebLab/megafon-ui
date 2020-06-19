@@ -144,10 +144,8 @@
         padding: 8px 32px;
         opacity: 0.5;
     }
-}
 
-//mod color
-@{b} {
+    //mod color
     &_color_light {
         @{b} {
             &__control {
@@ -169,10 +167,8 @@
             }
         }
     }
-}
 
-//mod size
-@{b} {
+    //mod size
     &_size_large {
         @{b} {
             &__control {
@@ -192,24 +188,18 @@
             padding-right: 65px;
         }
     }
-}
 
-//mod valid
-@{b} {
+    //mod valid
     &_valid &__control {
         border-color: @green !important;
     }
-}
 
-//mod error
-@{b} {
+    //mod error
     &_error &__control {
         border-color: @fury !important;
     }
-}
 
-//mod disabled
-@{b} {
+    //mod disabled
     &_disabled &__control {
         background-color: @spbSky1;
         border-color: @spbSky1;
@@ -219,10 +209,8 @@
     &_disabled &__title-inner:after {
         display: none;
     }
-}
 
-//mod search
-@{b} {
+    //mod search
     &_search &__control {
         //fix for ios - Focus on input with padding (filled with text) pushes cursor out of bounds
         padding: 0 55px 0 20px;
@@ -230,10 +218,8 @@
             padding: 0 55px 0 25px;
         }
     }
-}
 
-//mod font-size
-@{b} {
+    //mod font-size
     &_font-size_medium {
         @{b}__search-field {
             font-size: 15px;
@@ -245,10 +231,8 @@
             font-size: 20px;
         }
     }
-}
 
-//mod font-color
-@{b} {
+    //mod font-color
     &_font-color_black {
         @{b}__search-field {
             color: @freshAsphalt;
@@ -260,30 +244,30 @@
             color: @link;
         }
     }
-}
 
-//mod result size
-@{b}_result-size {
-    &_small @{b}__list-inner {
-        max-height: 184px;
+    //mod result size
+    &_result-size {
+        &_small @{b}__list-inner {
+            max-height: 184px;
+        }
+
+        &_medium @{b}__list-inner {
+            max-height: 265px;
+        }
     }
 
-    &_medium @{b}__list-inner {
-        max-height: 265px;
+    //mod input padding
+    &__search-field_padding {
+        &_small {
+            padding-left: 20px;
+            padding-right: 15px;
+        }
     }
-}
 
-//mod input padding
-@{b}__search-field_padding {
-    &_small {
-        padding-left: 20px;
-        padding-right: 15px;
-    }
-}
-
-//mod input padding
-@{b} @{b}__control_padding {
-    &_none {
-        padding: 0;
+    //mod input padding
+    @{b}__control_padding {
+        &_none {
+            padding: 0;
+        }
     }
 }
