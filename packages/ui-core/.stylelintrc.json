@@ -2,6 +2,7 @@
   "rules": {
     "color-hex-case": "upper",
     "color-no-invalid-hex": true,
+    "color-hex-length": "long",
     "font-family-name-quotes": "always-where-recommended",
     "function-calc-no-unspaced-operator": true,
     "function-comma-space-after": "always",
