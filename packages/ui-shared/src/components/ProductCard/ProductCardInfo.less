@@ -4,12 +4,14 @@
 
 @{b} {
     .fontFamily();
+
     @media @mobileBU {
         box-sizing: border-box;
         flex-shrink: 0;
         width: 32.3%;
         padding-right: 16px;
     }
+
     @media @desktop {
         display: flex;
         align-items: baseline;
@@ -20,12 +22,15 @@
         flex-shrink: 0;
         box-sizing: border-box;
         margin-bottom: 32px;
+
         @media @mobileS {
             text-align: center;
         }
+
         @media @mobileB {
             margin-bottom: 24px;
         }
+
         @media @desktop {
             width: 59%;
             padding-right: 16px;
@@ -36,13 +41,16 @@
     &__description-title {
         margin: 0 0 12px 0;
         max-width: 180px;
+
         @media @mobileS {
             margin-left: auto;
             margin-right: auto;
         }
+
         @media @mobileBU {
             max-width: 200px;
         }
+
         @media @desktopMU {
             max-width: 250px;
         }
@@ -51,9 +59,11 @@
     &__description-text {
         .small();
         flex-shrink: 1;
+
         @media @mobileSM {
             .p();
         }
+
         @media @desktopMU {
             .p();
         }
@@ -67,9 +77,11 @@
         margin-left: -4px;
         fill: @green;
         flex-shrink: 0;
+
         @media @mobileSM {
             margin-top: 2px;
         }
+
         @media @desktopMU {
             margin-top: 2px;
         }
@@ -117,14 +129,17 @@
         display: flex;
         margin-bottom: 12px;
         max-width: 270px;
+
         @media @mobileS {
             text-align: left;
             margin-left: auto;
             margin-right: auto;
         }
+
         @media @mobileBU {
             max-width: 180px;
         }
+
         @media @desktop {
             max-width: 210px;
         }
@@ -132,9 +147,11 @@
 
     &__params {
         box-sizing: border-box;
+
         @media @mobileSM {
             margin-bottom: 28px;
         }
+
         @media @desktop {
             width: 43%;
         }
@@ -174,6 +191,7 @@
             display: flex;
             flex-wrap: wrap;
         }
+
         @media @desktopMU {
             font-size: 20px;
             line-height: 28px;
@@ -185,6 +203,7 @@
             margin-right: 14px;
             margin-bottom: 4px;
         }
+
         @media @mobileBU {
             & + & {
                 margin-top: 12px;
