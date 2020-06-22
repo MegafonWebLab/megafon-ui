@@ -20,6 +20,7 @@
         display: flex;
         flex-grow: 1;
     }
+
     &__item {
         align-items: center;
         justify-content: center;
@@ -36,10 +37,12 @@
         &:first-child {
             justify-content: flex-start;
         }
+
         &:last-child {
             justify-content: flex-end;
         }
     }
+
     &__label {
         .h2();
         width: @sizeDesktop;
@@ -63,9 +66,11 @@
             line-height: 40px;
         }
     }
+
     &__label-unit {
         display: none;
     }
+
     &__pointer {
         position: absolute;
         top: 0;
@@ -91,6 +96,7 @@
     &__item_active {
         cursor: default;
     }
+
     &__item_active &__label {
         color: @green;
     }
@@ -109,6 +115,7 @@
         &__row {
             justify-content: space-between;
         }
+
         &__label {
             font-size: 12px;
             font-weight: normal;
@@ -121,6 +128,7 @@
                 height: 52px;
             }
         }
+
         &__item {
             @media @mobileB {
                 width: 44px;
@@ -128,15 +136,18 @@
             @media @desktopS {
                 width: 63px;
             }
+
             &:hover @{b}__label {
                 color: @buttonHoverGreen;
             }
         }
+
         &__item_active @{b}__label {
             color: @clearWhite !important;
             font-size: 15px;
             font-weight: 500;
         }
+
         &__pointer {
             border: 2px solid @clearWhite;
             box-sizing: border-box;
@@ -223,6 +234,7 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+
         &:not(:first-child) {
             margin-top: 16px;
         }
@@ -236,6 +248,7 @@
             border-radius: 6px;
             z-index: auto;
         }
+
         &__item {
             width: 24px;
             z-index: 3;
@@ -247,6 +260,7 @@
 
         &__item_active {
             display: block;
+
             @{b}__label {
                 font-size: 15px;
                 font-weight: 500;
@@ -255,6 +269,7 @@
                 top: -34px;
                 transform: translateX(-50%);
             }
+
             @{b}__label-unit {
                 display: block;
                 margin-left: 4px;
@@ -298,6 +313,7 @@
             transition: none;
             box-shadow: 0 0 7px 0 rgba(32, 39, 48, 0.29), 0 0 3px 0 rgba(38, 41, 61, 0.06);
         }
+
         &__color-row {
             display: block;
             background-color: @green;

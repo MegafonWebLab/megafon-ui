@@ -87,12 +87,10 @@ h1, h2, h3, h4, h5 {
         font-size: 26px;
         line-height: 32px;
     }
-
     @media @desktop {
         font-size: 28px;
         line-height: 36px;
     }
-
     @media @desktopMU {
         font-size: 32px;
         line-height: 40px;
@@ -104,7 +102,6 @@ h1, h2, h3, h4, h5 {
     line-height: 24px;
     font-weight: 500;
     letter-spacing: 0.5px;
-
     @media @desktopMU {
         font-size: 20px;
         line-height: 28px;
@@ -138,36 +135,15 @@ h1, h2, h3, h4, h5 {
 .default-link() {
     color: @link;
     text-decoration: none;
-
     &:hover {
         text-decoration: underline;
     }
 }
 
-<<<<<<< HEAD
-.small() {
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.round(@bgColor: @mandarin, @color: @clearWhite, @fs: 30px, @w: 65px, @h: 65px) {
-=======
-.round(@bgColor: @mandarin, @color: @white, @fs: 30px, @w: 65px, @h: 65px) {
->>>>>>> MFRU-7771 ui-core add "no-duplicate-selectors"
-    width: @w;
-    height: @h;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: @fs;
-    color: @color;
-    background-color: @bgColor;
-    border-radius: 50%;
-}
-
 .fontFamily() {
     font-family: inherit;
 }
+
 .commonFont() {
     font-size: 15px;
     line-height: 24px;
