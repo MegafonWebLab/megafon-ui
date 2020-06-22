@@ -56,6 +56,7 @@
     "declaration-block-semicolon-newline-after": "always",
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after": "always",
+    "block-opening-brace-space-before": "always",
     "selector-attribute-operator-space-after": "never",
     "selector-attribute-operator-space-before": "never",
     "selector-attribute-quotes": "always",
