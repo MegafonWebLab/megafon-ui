@@ -3,11 +3,18 @@
 @b: e('.colors');
 
 @{b} {
-    display: flex;
-    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 835px;
 
-    @media @mobileSM {
-        flex-direction: column;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 88px;
+
+        @media @mobileSM {
+            flex-direction: column;
+            margin-top: 44px;
+        }
     }
 
     &__section:not(:first-child) {
@@ -22,6 +29,7 @@
 
     &__item {
         display: flex;
+        align-items: center;
 
         &:not(:last-child) {
             margin-bottom: 24px;
