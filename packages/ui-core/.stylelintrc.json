@@ -77,6 +77,16 @@
       {
         "except": ["first-nested"]
       }
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "blockless-after-same-name-blockless",
+          "first-nested"
+        ]
+      }
     ]
+
   }
 }
