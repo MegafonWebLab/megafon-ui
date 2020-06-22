@@ -240,21 +240,14 @@
         &__item {
             width: 24px;
             z-index: 3;
-            &:last-child {
-                @{b}__label {
-                    right: 0;
-                }
+
+            &:last-child @{b}__label {
+                right: 0;
             }
         }
 
         &__item_active {
             display: block;
-            &:last-child,
-            &:first-child {
-                @{b}__label {
-                    transform: none;
-                }
-            }
             @{b}__label {
                 font-size: 15px;
                 font-weight: 500;
@@ -268,6 +261,14 @@
                 margin-left: 4px;
             }
         }
+
+        &__item_active &:last-child,
+        &__item_active &:first-child {
+            @{b}__label {
+                transform: none;
+            }
+        }
+
         &__item_disabled {
             @{b}__label {
                 color: @spbSky2;
