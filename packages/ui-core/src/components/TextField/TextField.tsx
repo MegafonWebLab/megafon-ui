@@ -12,9 +12,9 @@ import Show from 'icons/Basic/24/Show_24.svg';
 
 const InputMask = require('react-input-mask');
 
-enum verificationValues {
-    valid = 'valid',
-    error = 'error',
+enum Verification {
+    VALID = 'VALID',
+    ERROR = 'ERROR',
 }
 
 export interface ITextFieldProps {
@@ -29,7 +29,7 @@ export interface ITextFieldProps {
     /** Forcefully prohibits icon's render */
     hideIcon?: boolean;
     /** The result of external field's validation */
-    verification?: verificationValues;
+    verification?: Verification;
     /** Text message. Could be a validation message or a simple hint to user */
     noticeText?: string;
     /** Disables field. The value of this prop is also passed through to attribute with the same name */
@@ -98,7 +98,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     }) => {
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
-    const [inputValue, setInputValue] = React.useState('');
+    const [inputValue, setInputValue] = React.useState(value);
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
     const isVisiblePassword: boolean = useMemo(
@@ -112,7 +112,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         [isPasswordHidden]
     );
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setInputValue(e.target.value);
 
         onChange && onChange(e);
@@ -121,12 +121,14 @@ const TextField: React.FC<ITextFieldProps> = ({
     const handleIconClick = useCallback(e => {
         isPasswordType && togglePasswordHiding();
 
-        if (!(onCustomIconClick) &&  verification === verificationValues.error) {
+        if (!onCustomIconClick && verification === Verification.ERROR) {
             setInputValue('');
-        } else if (onCustomIconClick) {
-            onCustomIconClick(e);
+
+            return;
         }
-    }, [isPasswordType, togglePasswordHiding, onCustomIconClick]);
+
+        onCustomIconClick && onCustomIconClick(e);
+    }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification]);
 
     const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         onFocus && onFocus(e);
@@ -154,7 +156,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         value: inputValue,
         mask,
         maskChar,
-        onChange: handleChange,
+        onChange: handleInputChange,
         type: isVisiblePassword ? 'text' : type,
     };
 
@@ -189,9 +191,9 @@ const TextField: React.FC<ITextFieldProps> = ({
         switch (true) {
             case !!customIcon:
                 return customIcon;
-            case verification === verificationValues.error:
+            case verification === Verification.ERROR:
                 return <ErrorIcon className={cn('icon')} />;
-            case verification === verificationValues.valid:
+            case verification === Verification.VALID:
                 return <CheckedIcon className={cn('icon')} />;
             case isPasswordType && isPasswordHidden:
                 return <Hide className={cn('icon')} />;
@@ -218,8 +220,8 @@ const TextField: React.FC<ITextFieldProps> = ({
         <div className={cn({
             disabled,
             theme,
-            valid: verification === verificationValues.valid,
-            error: verification === verificationValues.error,
+            valid: verification === Verification.VALID,
+            error: verification === Verification.ERROR,
             icon: !hideIcon && (!!verification || !!customIcon),
             password: isPasswordType,
         }, className)}>
@@ -234,8 +236,8 @@ const TextField: React.FC<ITextFieldProps> = ({
             </div>
             {noticeText &&
                 <div className={cn('text', {
-                    error: verification === verificationValues.error,
-                    success: verification === verificationValues.valid,
+                    error: verification === Verification.ERROR,
+                    success: verification === Verification.VALID,
                 })}>
                     {noticeText}
                 </div>
@@ -256,7 +258,7 @@ TextField.propTypes = {
     label: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'white']),
     hideIcon: PropTypes.bool,
-    verification: PropTypes.oneOf(Object.values(verificationValues)),
+    verification: PropTypes.oneOf(Object.values(Verification)),
     disabled: PropTypes.bool,
     required: PropTypes.bool,
     type: PropTypes.oneOf(['text', 'password', 'tel', 'email']),
