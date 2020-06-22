@@ -9,6 +9,7 @@
         position: relative;
         display: inline-block;
     }
+
     &__label {
         display: inline;
         cursor: pointer;
@@ -23,6 +24,7 @@
         width: 0;
         height: 0;
     }
+
     &__custom-input {
         position: absolute;
         left: 0;
@@ -35,6 +37,7 @@
         border: 2px solid;
         border-radius: 2px;
     }
+
     &__icon {
         width: 32px;
         height: 32px;
@@ -42,6 +45,7 @@
         user-select: none;
         opacity: 0;
     }
+
     &__extra-content {
         position: relative;
         left: 8px;
@@ -56,6 +60,7 @@
             &__custom-input {
                 border: none;
             }
+
             &__icon {
                 opacity: 1;
             }
@@ -70,6 +75,7 @@
             &__inner {
                 padding: 4px 15px 4px 35px;
             }
+
             &__custom-input {
                 top: 6px;
             }
@@ -79,10 +85,12 @@
     &_font-size_small {
         font-size: 12px;
         line-height: 16px;
+
         @{b} {
             &__inner {
                 padding: 1px 15px 4px 35px;
             }
+
             &__custom-input {
                 top: 0;
             }
@@ -94,13 +102,16 @@
             &__custom-input {
                 border-color: @spbSky2;
             }
+
             &__label_no-touch:hover @{b}__custom-input {
                 border-color: @buttonHoverGreen;
             }
+
             &__label:active @{b}__custom-input {
                 border-color: @buttonDown !important;
                 background-color: @buttonDown;
             }
+
             &__icon {
                 fill: @clearWhite;
             }
@@ -114,9 +125,11 @@
                 background-color: @green;
                 color: @clearWhite;
             }
+
             &__label_no-touch:hover @{b}__custom-input {
                 background-color: @buttonHoverGreen;
             }
+
             &__label:active @{b}__custom-input {
                 background-color: @buttonDown !important;
             }
@@ -138,6 +151,7 @@
                 cursor: default;
                 pointer-events: none;
             }
+
             &__custom-input,
             &__label:active @{b}__custom-input {
                 border-color: @spbSky2 !important;
@@ -156,6 +170,7 @@
 
     &_color_light {
         color: @clearWhite;
+
         @{b} {
             &__custom-input {
                 color: @green;

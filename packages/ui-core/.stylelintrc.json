@@ -71,6 +71,12 @@
     "max-empty-lines": 1,
     "no-eol-whitespace": true,
     "no-empty-first-line": true,
-    "declaration-colon-space-after": "always"
+    "declaration-colon-space-after": "always",
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"]
+      }
+    ]
   }
 }

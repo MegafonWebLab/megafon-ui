@@ -149,6 +149,7 @@
     padding: 0 0 37px;
     overflow: inherit;
     margin: 0 auto;
+
     @{s} {
         &-list {
             box-sizing: border-box;
@@ -165,10 +166,12 @@
                 left: -8px;
             }
         }
+
         &-track {
             display: flex;
             align-items: stretch;
         }
+
         &-slide {
             display: flex;
             flex-grow: 1;
@@ -181,6 +184,7 @@
                 padding-left: 8px;
             }
         }
+
         &-slide > div {
             display: flex;
             flex-grow: 2;
@@ -188,6 +192,7 @@
             min-width: auto;
             width: 100%;
         }
+
         &-dots {
             display: flex !important;
             justify-content: center;
@@ -200,17 +205,20 @@
             @media @mobileSM {
                 margin-top: 32px;
             }
+
             & > li {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 12px;
+
                 &:not(:last-child) {
                     margin-right: 6px;
                 }
                 @media @mobileSM {
                     height: 8px;
                 }
+
                 & > button {
                     background-color: fade(@freshAsphalt, 75%);
                     border: none;
@@ -227,6 +235,7 @@
                     }
                 }
             }
+
             @{s}-active > button {
                 background-color: @purple;
                 height: 12px;
@@ -237,10 +246,12 @@
                 }
             }
         }
+
         &-arrow {
             display: block;
         }
     }
+
     @{b}__arrows_theme_showcase {
         @media @mobileBU {
             height: calc(~'100% - 7px');
@@ -262,9 +273,11 @@
         height: 40px;
         border-radius: 50%;
         background-color: @purple;
+
         &:hover {
             background-color: @buttonhoverPurple;
         }
+
         &_fill_white {
             & svg {
                 width: 40px;
@@ -301,6 +314,7 @@
         &_disabled {
             cursor: default;
             opacity: 0.3;
+
             &:hover {
                 background-color: @purple;
             }
@@ -315,6 +329,7 @@
     @media @mobileSM {
         padding: 0 0 32px;
     }
+
     @{s} {
         &-list {
             box-sizing: border-box;
@@ -326,16 +341,19 @@
                 overflow: visible;
             }
         }
+
         &-track {
             display: flex;
             align-items: stretch;
         }
+
         &-slide {
             display: flex;
             flex-grow: 1;
             flex-shrink: 1;
             flex-basis: auto;
         }
+
         &-slide > div {
             display: flex;
             flex-grow: 2;
@@ -343,6 +361,7 @@
             min-width: auto;
             width: 100%;
         }
+
         &-dots {
             display: flex !important;
             justify-content: center;
@@ -355,17 +374,20 @@
             @media @mobileSM {
                 margin-top: 24px;
             }
+
             & > li {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 8px;
+
                 &:not(:last-child) {
                     margin-right: 8px;
                 }
                 @media @mobileSM {
                     height: 8px;
                 }
+
                 & > button {
                     background-color: fade(@freshAsphalt, 75%);
                     border: none;
@@ -378,12 +400,14 @@
                     outline: none;
                 }
             }
+
             @{s}-active > button {
                 background-color: @purple;
                 height: 8px;
                 width: 8px;
             }
         }
+
         &-arrow {
             display: block;
         }
@@ -402,6 +426,7 @@
         height: 40px;
         border-radius: 50%;
         background-color: @purple;
+
         &_fill_white {
             & svg {
                 width: 40px;
@@ -445,6 +470,7 @@
 @{b}@{b}_theme_lk {
     padding: 0;
     background-color: @spbSky1;
+
     @{s} {
         &-slider {
             width: 100%;
@@ -464,6 +490,7 @@
         &-slide {
             padding-right: 0;
         }
+
         &-slide > div {
             min-width: initial;
         }
@@ -476,6 +503,7 @@
             padding-right: 0;
             padding-left: 0;
         }
+
         &-list {
             width: 100%;
             left: 0;

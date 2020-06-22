@@ -16,6 +16,7 @@
         white-space: nowrap;
         flex-grow: 1;
         position: relative;
+
         &:after {
             content: '';
             position: absolute;
@@ -26,6 +27,7 @@
             background: linear-gradient(to right, rgba(255, 255, 255, 0), @clearWhite);
         }
     }
+
     &_active &__title {
         &:after {
             background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky1);
@@ -55,6 +57,7 @@
 }
 
 //mod padding
+
 @{b}_padding {
     &_small {
         padding-left: 20px;

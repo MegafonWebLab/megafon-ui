@@ -7,17 +7,21 @@
     &:last-child {
         border-bottom: 1px solid @spbSky2;
     }
+
     &:not(&_open) &__title-wrap:hover {
         background: rgba(237, 237, 237, 0.5);
     }
+
     &&_open &__title-wrap {
         background: @spbSky1;
     }
+
     &__title-wrap {
         cursor: pointer;
         position: relative;
         padding: 24px 68px 24px 24px;
     }
+
     &__icon-box {
         position: absolute;
         right: 20px;
@@ -27,9 +31,11 @@
         transform: translateY(-50%);
         opacity: 1;
     }
+
     &__content-inner {
         padding: 0 68px 0 40px;
     }
+
     &__icon {
         fill: @fullBlack;
     }
