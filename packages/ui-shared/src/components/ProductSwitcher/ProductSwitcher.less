@@ -11,7 +11,7 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-    background-color: @greenDark;
+    background-color: darken(@green, 10%);
     border-radius: 50px;
 
     &__row {
@@ -47,7 +47,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: @white;
+        color: @clearWhite;
         transition: color 0.2s ease-in-out 0.05s;
 
         @media @mobileSM {
@@ -74,7 +74,7 @@
         width: @sizeDesktop;
         height: @sizeDesktop;
         border-radius: 50%;
-        background-color: @white;
+        background-color: @clearWhite;
         transition: transform 0.2s ease-in-out;
         cursor: pointer;
 
@@ -129,7 +129,7 @@
                 width: 63px;
             }
             &:hover @{b}__label {
-                color: @greenHover;
+                color: @buttonHoverGreen;
             }
         }
         &__item_active @{b}__label {

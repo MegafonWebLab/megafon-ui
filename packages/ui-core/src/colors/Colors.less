@@ -1,0 +1,53 @@
+@import '~styles/base.less';
+
+@b: e('.colors');
+
+@{b} {
+    margin: 0 auto;
+    max-width: 835px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 88px;
+
+        @media @mobileSM {
+            flex-direction: column;
+            margin-top: 44px;
+        }
+    }
+
+    &__section:not(:first-child) {
+        @media @mobileSM {
+            margin-top: 44px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 44px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__color {
+        border: 1px solid #E5E5E5;
+        border-radius: 50%;
+        height: 48px;
+        width: 48px;
+    }
+
+    &__text-box {
+        margin-left: 12px;
+    }
+
+    &__hex-code {
+        opacity: 0.5;
+    }
+}

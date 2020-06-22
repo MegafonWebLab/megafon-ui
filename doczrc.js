@@ -15,7 +15,8 @@ export default {
     menu: [
         'Beginning of work',
         'Components',
-        'Icons'
+        'Icons',
+        'Colors'
     ],
     notUseSpecifiers: true,
     filterComponents: files =>
