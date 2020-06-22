@@ -65,6 +65,7 @@
     "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "single",
     "selector-type-case": "lower",
+    "max-empty-lines": 1,
     "no-eol-whitespace": true,
     "no-empty-first-line": true,
     "declaration-colon-space-after": "always"
