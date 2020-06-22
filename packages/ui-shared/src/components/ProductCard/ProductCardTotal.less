@@ -1,6 +1,7 @@
 @import '~@megafon/ui-core/styles/base.less';
 
 @b: e('.mfui-product-card-total');
+@s: e('.b-link');
 @default_theme: e('.product-card-wrapper_theme_default');
 
 @{b} {
@@ -45,7 +46,7 @@
     }
 
     &__buttons {
-        .b-link {
+        @{s} {
             width: 100% !important;
             margin-bottom: 0 !important;
             margin-right: 0 !important;
@@ -53,14 +54,14 @@
             padding-right: 0 !important;
         }
 
-        .b-link + .b-link {
+        @{s} + @{s} {
             margin-top: 12px;
         }
 
-        .b-link_view_with-subtitle {
+        @{s}_view_with-subtitle {
             padding-top: 0;
 
-            .b-link__title {
+            @{s}__title {
                 margin-bottom: 0;
             }
         }

@@ -1,6 +1,7 @@
 @import '~@megafon/ui-core/styles/base.less';
 
 @b: e('.mfui-product-card-wrapper');
+@s: e('.no-touchevents');
 
 @{b} {
     .fontFamily();
@@ -41,7 +42,7 @@
         }
     }
 
-    .no-touchevents &:hover {
+    @{s} &:hover {
         z-index: 3;
         box-shadow: 0 1px 5px 2px @spbSky2;
     }
