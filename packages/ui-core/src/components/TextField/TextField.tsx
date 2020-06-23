@@ -13,8 +13,8 @@ import Show from 'icons/Basic/24/Show_24.svg';
 const InputMask = require('react-input-mask');
 
 enum Verification {
-    VALID = 'VALID',
-    ERROR = 'ERROR',
+    VALID = 'valid',
+    ERROR = 'error',
 }
 
 export interface ITextFieldProps {
@@ -107,6 +107,10 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
 
+    React.useEffect(() => {
+        setInputValue(value);
+    }, [value]);
+
     const togglePasswordHiding = useCallback(
         () => setPasswordHidden(prevPassState => !prevPassState),
         [isPasswordHidden]
@@ -128,7 +132,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         }
 
         onCustomIconClick && onCustomIconClick(e);
-    }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification]);
+    }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
 
     const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         onFocus && onFocus(e);
