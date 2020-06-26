@@ -50,8 +50,7 @@
         animation-name: rotateLoader;
         animation-duration: 0.7s;
         animation-iteration-count: infinite;
-        animation-timing-function :cubic-bezier(0, 0, 1, 1);
-
+        animation-timing-function: cubic-bezier(0, 0, 1, 1);
     }
 
     .generateSize(all);
@@ -59,12 +58,15 @@
     @media @desktopMU {
         .generateSize(wide);
     }
+
     @media @desktop {
         .generateSize(desktop);
     }
+
     @media @mobileB {
         .generateSize(tablet);
     }
+
     @media @mobileSM {
         .generateSize(mobile);
     }
@@ -72,22 +74,27 @@
     &_passive-color_green {
         background-color: @green;
     }
+
     &_passive-color_purple {
         background-color: @purple;
     }
+
     &_passive-color_transparent {
         box-shadow: inset 0 0 0 1px @clearWhite;
         background-color: transparent;
     }
+
     &_passive-color_white {
         background-color: @clearWhite;
         color: @freshAsphalt;
     }
+
     &_passive-color_transparent-green {
         box-shadow: inset 0 0 0 1px @green;
         color: @green;
         background-color: transparent;
     }
+
     &_passive-color_transparent-white {
         box-shadow: inset 0 0 0 1px @clearWhite;
         color: @clearWhite;
@@ -101,6 +108,7 @@
     &_font-color_green {
         color: @green;
     }
+
     &_font-color_white {
         color: @clearWhite;
     }
@@ -112,6 +120,7 @@
             background-color: @buttonHoverGreen;
         }
     }
+
     &_no-touch&_hover-color_purple {
         &:not(@{b}_loading):hover {
             box-shadow: inset 0 0 0 1px @buttonhoverPurple;
@@ -126,6 +135,7 @@
             background-color: @buttonDown;
         }
     }
+
     &_no-touch&_down-color_transparent {
         &:not(@{b}_loading):active {
             box-shadow: inset 0 0 0 1px @clearWhite;
@@ -142,16 +152,19 @@
         color: fade(@freshAsphalt, 50%) !important;
         background-color: @spbSky1 !important;
     }
+
     &_disabled-color_white {
         box-shadow: inset 0 0 0 1px @spbSky1 !important;
         color: fade(@freshAsphalt, 50%) !important;
         background-color: @spbSky1 !important;
     }
+
     &_disabled-color_transparent {
         box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
         color: fade(@freshAsphalt, 50%) !important;
         background-color: transparent !important;
     }
+
     &_disabled-color_transparent-white {
         box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
         color: fade(@clearWhite, 50%) !important;
@@ -176,11 +189,13 @@
     &_custom-view_two-lines {
         color: @freshAsphalt;
         font-weight: 400;
+
         span {
             display: inline-block;
             width: 100%;
             color: @link;
         }
+
         &:hover span {
             text-decoration: underline;
         }
@@ -191,9 +206,11 @@
     &_size-@{resolution}_small &__inner {
         height: 32px;
     }
+
     &_size-@{resolution}_medium &__inner {
         height: 48px;
     }
+
     &_size-@{resolution}_large &__inner {
         height: 60px;
     }
@@ -203,6 +220,7 @@
     from {
         transform: rotate(0);
     }
+
     to {
         transform: rotate(360deg);
     }

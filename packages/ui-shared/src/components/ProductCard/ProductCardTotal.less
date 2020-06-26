@@ -1,6 +1,7 @@
 @import '~@megafon/ui-core/styles/base.less';
 
 @b: e('.mfui-product-card-total');
+@s: e('.b-link');
 @default_theme: e('.product-card-wrapper_theme_default');
 
 @{b} {
@@ -33,6 +34,7 @@
 
     &__old-price {
         position: relative;
+
         &:before {
             content: '';
             position: absolute;
@@ -44,23 +46,27 @@
     }
 
     &__buttons {
-        .b-link {
+        @{s} {
             width: 100% !important;
             margin-bottom: 0 !important;
             margin-right: 0 !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
         }
-        .b-link + .b-link {
+
+        @{s} + @{s} {
             margin-top: 12px;
         }
-        .b-link_view_with-subtitle {
+
+        @{s}_view_with-subtitle {
             padding-top: 0;
-            .b-link__title {
+
+            @{s}__title {
                 margin-bottom: 0;
             }
         }
     }
+
     &__connect-button {
         cursor: pointer;
         height: 48px;
@@ -71,6 +77,7 @@
         width: 100%;
         vertical-align: top;
     }
+
     &__connect-text-block {
         flex-shrink: 1;
     }
@@ -84,19 +91,24 @@
 
 @{default_theme} @{b} {
     width: 200px;
+
     @media @mobileS {
         margin: 0 auto;
     }
+
     @media @mobileB {
         width: 165px;
     }
+
     @media @desktop {
         width: 196px;
     }
+
     @media @desktopMU {
         width: 268px;
     }
 }
+
 @{default_theme} @{b}__wrap {
     @media @desktopMU {
         width: 200px;

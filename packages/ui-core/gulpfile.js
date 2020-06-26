@@ -201,7 +201,7 @@ const svgToReact = () => changePipe(async function (file, encoding) {
         .replace(iconsPath + sep, '')
         .toLowerCase()
         .replace('.svg', '')
-        .replace(new RegExp(sep, 'g'), '-')
+        .replace(new RegExp('\\' + sep, 'g'), '-')
         .replace(/[^a-z0-9-]+/g, '_');
 
     const jsFile = await generateEs6js(file, encoding, name);

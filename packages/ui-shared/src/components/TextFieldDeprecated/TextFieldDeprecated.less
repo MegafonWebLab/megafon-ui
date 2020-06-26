@@ -29,21 +29,27 @@
         overflow: auto;
         margin: 0;
     }
+
     input::-webkit-input-placeholder {
         color: lighten(@freshAsphalt, 50%);
     }
+
     input:-moz-placeholder {
         color: lighten(@freshAsphalt, 50%);
     }
+
     input:-ms-input-placeholder {
         color: lighten(@freshAsphalt, 50%);
     }
+
     input::-ms-clear, input::-ms-reveal {
         display: none;
     }
+
     &__field_big-space {
         word-spacing: 4px;
     }
+
     &__field-wrapper {
         position: relative;
         flex: 1 0 100px;
@@ -64,9 +70,11 @@
         cursor: pointer;
         text-align: center;
     }
+
     &__icon-box_password {
         z-index: 3;
     }
+
     &__icon-box_custom {
         z-index: 3;
     }
@@ -83,10 +91,9 @@
         line-height: 16px;
         margin-top: 4px;
     }
-}
 
-//mod size:
-@{b} {
+    //mod size:
+
     &_size_large & {
         &__field {
             @media @desktop {
@@ -94,22 +101,23 @@
                 padding: 19px 25px 19px 25px;
             }
         }
+
         &__icon-box {
             @media @desktop {
                 padding-right: 24px;
             }
         }
     }
-}
 
-//mod color:
-@{b} {
+    //mod color:
+
     &_color_default & {
         &__field {
             color: @freshAsphalt;
             border: 1px solid @spbSky2;
             background-color: transparent;
         }
+
         &__field-wrapper_no-touch:hover @{b}__field,
         &__field:focus {
             border-color: @freshAsphalt;
@@ -121,6 +129,7 @@
         &__field {
             border-color: @green;
         }
+
         &__icon {
             fill: @green;
         }
@@ -131,9 +140,11 @@
         &__field {
             border-color: @fury;
         }
+
         &__icon {
             fill: @fury;
         }
+
         &__text_error {
             color: @fury;
         }
@@ -144,61 +155,65 @@
             color: @freshAsphalt;
             border: 1px solid @clearWhite;
         }
+
         &__field-wrapper:hover @{b}__field,
         &__field:focus {
             border-color: @freshAsphalt;
         }
     }
+
     &_color_white&_error & {
         &__field-wrapper:hover @{b}__field,
         &__field {
             border-color: @fury;
         }
+
         &__icon {
             fill: @fury;
         }
+
         &__text_error {
             color: @fury;
         }
     }
+
     &__text_success {
         color: @green;
     }
 
-}
+    //mod disabled
 
-//mod disabled
-@{b} {
     &_disabled & {
         &__field-wrapper {
             background-color: @spbSky1 !important;
         }
+
         &__field {
             border-color: @spbSky1 !important;
             cursor: default !important;
             color: @freshAsphalt !important;
             -webkit-text-fill-color: @freshAsphalt !important;
         }
+
         &__icon-box {
             cursor: default !important;
         }
     }
-}
 
-//mod icon
-@{b} {
+    //mod icon
+
     &_icon &__field {
         padding-right: 55px;
     }
+
     &_icon&_size_large &__field {
         @media @desktop {
             padding-right: 65px;
         }
     }
-}
 
-//mod password
-@{b} {
+    //mod password
+
     &_password &__field {
         font: small-caption;
         font-size: 19px;

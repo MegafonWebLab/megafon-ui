@@ -4,25 +4,31 @@
 
 @{b} {
     .fontFamily();
+
     &__list {
         list-style: none;
         margin: 0;
         padding: 0;
     }
+
     &__title {
         margin: 0 0 8px 0;
     }
+
     &__item {
         position: relative;
         padding-left: 0;
+
         & + & {
             margin-top: 9px;
         }
+
         &_icon {
             padding-left: 41px;
             margin-left: -4px;
         }
     }
+
     &__item-icon {
         position: absolute;
         top: 0;
@@ -32,8 +38,8 @@
         fill: @green;
         pointer-events: none;
     }
+
     &__item-title {
         margin: 0;
     }
 }
-

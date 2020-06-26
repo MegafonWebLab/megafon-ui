@@ -12,16 +12,19 @@
         display: flex;
         margin-left: -4px;
     }
+
     &__item_mobile_hide {
         @media @mobile {
             display: none;
         }
     }
+
     &__item_desktop_hide {
         @media @desktop {
             display: none;
         }
     }
+
     &__icon {
         display: block;
         width: 32px;
@@ -29,9 +32,11 @@
         fill: @green;
         pointer-events: none;
     }
+
     &__dropdown {
         margin-left: 4px;
     }
+
     &__dropdown-trigger {
         display: inline-block;
         font-size: 12px;
@@ -40,13 +45,16 @@
         margin-bottom: 8px;
         border-bottom: 1px dashed;
     }
+
     &__dropdown-popup {
         padding: 28px;
     }
+
     &__dropdown-item {
         &:after {
             content: ', ';
         }
+
         &:last-child:after {
             display: none;
         }
