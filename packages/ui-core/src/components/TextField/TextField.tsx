@@ -125,10 +125,8 @@ const TextField: React.FC<ITextFieldProps> = ({
     const handleIconClick = useCallback(e => {
         isPasswordType && togglePasswordHiding();
 
-        if (!onCustomIconClick && verification === Verification.ERROR) {
+        if (!customIcon && verification === Verification.ERROR) {
             setInputValue('');
-
-            return;
         }
 
         onCustomIconClick && onCustomIconClick(e);
