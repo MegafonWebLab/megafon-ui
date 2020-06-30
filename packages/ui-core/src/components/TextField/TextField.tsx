@@ -122,10 +122,12 @@ const TextField: React.FC<ITextFieldProps> = ({
         onChange && onChange(e);
     };
 
+    const isClearFuncAvailable = () => !customIcon && !onCustomIconClick && verification === Verification.ERROR;
+
     const handleIconClick = useCallback(e => {
         isPasswordType && togglePasswordHiding();
 
-        if (!customIcon && !onCustomIconClick && verification === Verification.ERROR) {
+        if (isClearFuncAvailable()) {
             setInputValue('');
         }
 
