@@ -218,6 +218,8 @@ const TextField: React.FC<ITextFieldProps> = ({
         );
     };
 
+    const isPlaceholderShowed = () => isPasswordType && isPasswordHidden && !!inputValue;
+
     return (
         <div className={cn({
             disabled,
@@ -225,7 +227,7 @@ const TextField: React.FC<ITextFieldProps> = ({
             valid: verification === Verification.VALID,
             error: verification === Verification.ERROR,
             icon: !hideIcon && (!!verification || !!customIcon),
-            password: (isPasswordType && !isVisiblePassword && !!inputValue),
+            password: isPlaceholderShowed(),
         }, className)}>
             {label && <InputLabel htmlFor={id}>
                 {label}
