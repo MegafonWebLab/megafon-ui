@@ -45,12 +45,18 @@ import { TextFieldWrapper } from './TextField.docz';
 </Playground>
 
 ## Error usage
+1. On default settings clicking on the cross clears the field.
+2. Set a custom icon and/or custom click handler disables the field clearing function
 
 <Playground>
     <TextFieldWrapper>
-        <TextField verification="error" noticeText="Name is required" />
+        <TextField
+            verification="error"
+            noticeText="Name is required"
+        />
     </TextFieldWrapper>
 </Playground>
+
 
 ## Valid usage
 
