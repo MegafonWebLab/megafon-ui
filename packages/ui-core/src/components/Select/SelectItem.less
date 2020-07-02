@@ -8,10 +8,12 @@
     background-color: @clearWhite;
 
     &_active {
-        background-color: @spbSky1;
+        background-color: @spbSky0;
     }
 
     &__title {
+        display: flex;
+        align-items: center;
         overflow: hidden;
         white-space: nowrap;
         flex-grow: 1;
@@ -30,37 +32,7 @@
 
     &_active &__title {
         &:after {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky1);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky0);
         }
-    }
-
-    &__left-icon-box {
-        margin-right: 16px;
-    }
-
-    &__right-icon-box {
-        margin-left: 16px;
-    }
-
-    &_left-icon {
-        display: flex;
-        align-items: center;
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-
-    &_right-icon {
-        display: flex;
-        align-items: center;
-        padding-right: 22px;
-    }
-}
-
-//mod padding
-
-@{b}_padding {
-    &_small {
-        padding-left: 20px;
-        padding-right: 15px;
     }
 }

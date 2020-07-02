@@ -7,9 +7,8 @@ route: components/select
 import { Playground, Props } from 'docz';
 import Select from './Select';
 import Checked from 'icons/System/24/Checked_24.svg';
+import { SelectWrapper, items, flexStyle } from './Select.docz';
 import Metro from 'icons/System/24/Metro_24.svg';
-import Arrow from 'icons/System/24/Arrow_right_24.svg';
-import { SelectWrapper, items } from './Select.docz';
 
 # Select
 
@@ -20,133 +19,142 @@ import { SelectWrapper, items } from './Select.docz';
 ```javascript
 const items = [
     {
-        id: 1,
-        value: "eat",
-        title: "Eat"
+        value: 1,
+        view: 'Ватнайокюдль',
+        title: 'Ватнайокюдль',
     },
     {
-        id: 2,
-        value: "sleep",
-        title: "Sleep"
+        value: 2,
+        view: 'Хваннадальсхнукюр',
+        title: 'Хваннадальсхнукюр',
     },
     {
-        id: 3,
-        value: "traing",
-        title: "Traing"
-    }
+        value: 3,
+        view: 'Киркьюбайрклёйстюр',
+        title: 'Киркьюбайклёйстюр',
+    },
 ];
 ```
 
-## Basic usage
+```javascript
+const SelectWrapper = props => {
+    const [currentValue, setCurrentValue] = React.useStat(undefined);
+
+    const handleSelect = (_e, data) => {
+        setCurrentValue(data.value);
+    };
+
+    return (
+        <div style={selectWrapperStyle}>
+            {props.children({
+                onSelect: handleSelect,
+                currentValue: currentValue,
+            })}
+        </div>
+    );
+};
+```
+
+## Select options
 
 <Playground>
-    <SelectWrapper>
-        {({ onSelectItem, selectedTitle, canOpen }) => (
-            <Select
-                selectedTitle={selectedTitle}
-                onSelectItem={onSelectItem}
-                placeholder="Choose your step"
-                items={items}
-            />
-        )}
-    </SelectWrapper>
-</Playground>
-
-## Search usage
-
-<Playground>
-    <SelectWrapper>
-        {({ onSelectItem, onChangeSearch, searchValue, canOpen }) => (
-            <Select
-                placeholder="Choose your step"
-                searchValue={searchValue}
-                items={
-                    searchValue
-                        ? items.filter(
-                              ({ title }) =>
-                                  title
-                                      .toLowerCase()
-                                      .search(searchValue.toLowerCase()) !== -1
-                          )
-                        : []
-                }
-                onSelectItem={onSelectItem}
-                onChangeSearch={onChangeSearch}
-                arrow={false}
-                canOpen={canOpen}
-                label="Search"
-                id="333"
-            />
-        )}
-    </SelectWrapper>
-</Playground>
-
-## Select item icon left usage
-
-<Playground>
-    <SelectWrapper>
-        {({ onSelectItem, selectedTitle, canOpen }) => (
-            <Select
-                placeholder="Choose your step"
-                selectedTitle={selectedTitle}
-                items={items.map(item => ({
-                    title: item.title,
-                    value: item.value,
-                    id: item.id,
-                    leftIcon: (
-                        <Metro style={{ width: '24px', height: '24px' }} />
-                    )
-                }))}
-                onSelectItem={onSelectItem}
-            />
-        )}
-    </SelectWrapper>
-</Playground>
-
-## Select item right usage
-
-<Playground>
-    <SelectWrapper>
-        {({ onSelectItem, selectedTitle, canOpen }) => (
-            <Select
-                placeholder="Choose your step"
-                selectedTitle={selectedTitle}
-                items={items.map(item => ({
-                    title: item.title,
-                    value: item.value,
-                    id: item.id,
-                    rightIcon: (
-                        <Arrow style={{ width: '24px', height: '24px' }} />
-                    )
-                }))}
-                onSelectItem={onSelectItem}
-            />
-        )}
-    </SelectWrapper>
-</Playground>
-
-## Zero items usage
-
-<Playground>
-    <Select
-        placeholder="Choose your step"
-        items={[]}
-        notFoundText="Nothing found"
-    />
-</Playground>
-
-## Disabled usage
-
-<Playground>
-    <SelectWrapper>
-        {({ onSelectItem, selectedTitle }) => (
-            <Select
-                disabled
-                selectedTitle={selectedTitle}
-                onSelectItem={onSelectItem}
-                placeholder="You have no choice"
-                items={items}
-            />
-        )}
-    </SelectWrapper>
+    <div style={flexStyle}>
+        <SelectWrapper>
+            {({ onSelect, currentValue }) => (
+                <Select
+                    label="Classic (default) type"
+                    onSelect={onSelect}
+                    placeholder="Choose your step"
+                    items={items.map(item => ({
+                        title: item.title,
+                        value: item.value,
+                    }))}
+                    currentValue={currentValue}
+                />
+            )}
+        </SelectWrapper>
+        <SelectWrapper>
+            {({ onSelect, currentValue }) => (
+                <Select
+                    label="Combobox type"
+                    type="combobox"
+                    onSelect={onSelect}
+                    placeholder="Choose or type your step"
+                    items={items.map(item => ({
+                        title: item.title,
+                        value: item.value,
+                    }))}
+                    currentValue={currentValue}
+                />
+            )}
+        </SelectWrapper>
+        <SelectWrapper>
+            {({ onSelect, canOpen, currentValue }) => (
+                <Select
+                    label="Items with icon"
+                    placeholder="Choose your step"
+                    items={items.map(item => ({
+                        title: item.title,
+                        value: item.value,
+                        view: (
+                            <>
+                                <Metro style={{ width: '24px', height: '24px', marginRight: '16px' }} />
+                                {item.view}
+                            </>
+                        ),
+                    }))}
+                    onSelect={onSelect}
+                    currentValue={currentValue}
+                />
+            )}
+        </SelectWrapper>
+        <SelectWrapper>
+            {({ onSelect, canOpen, currentValue }) => (
+                <Select
+                    label="Zero items"
+                    placeholder="Choose your step"
+                    items={[]}
+                    notFoundText="Nothing found"
+                />
+            )}
+        </SelectWrapper>
+        <SelectWrapper>
+            {({ onSelect, currentValue }) => (
+                <Select
+                    label="Valid state"
+                    verification="valid"
+                    onSelect={onSelect}
+                    placeholder="Choose your step"
+                    items={items}
+                    currentValue={currentValue}
+                />
+            )}
+        </SelectWrapper>
+        <SelectWrapper>
+            {({ onSelect, currentValue }) => (
+                <Select
+                    label="Error state"
+                    required
+                    verification="error"
+                    noticeText="Please, make a choice"
+                    onSelect={onSelect}
+                    placeholder="Choose your step"
+                    items={items}
+                    currentValue={currentValue}
+                />
+            )}
+        </SelectWrapper>
+        <SelectWrapper>
+            {({ onSelect, currentValue }) => (
+                <Select
+                    label="Disabled state"
+                    isDisabled
+                    onSelect={onSelect}
+                    placeholder="You have no choice"
+                    items={items}
+                    currentValue={currentValue}
+                />
+            )}
+        </SelectWrapper>
+    </div>
 </Playground>

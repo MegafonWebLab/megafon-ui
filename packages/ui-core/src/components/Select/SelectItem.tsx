@@ -4,107 +4,77 @@ import './SelectItem.less';
 import cnCreate from 'utils/cnCreate';
 
 interface ISelectItemProps {
-    /** Icon right */
-    rightIcon?: JSX.Element;
-    /** Icon left */
-    leftIcon?: JSX.Element;
-    /** Content  */
-    title?: JSX.Element[] | Element[] | JSX.Element | Element | string;
+    /** Content */
+    content?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     /** Ordinal number of the item  */
-    index: number;
-    /** Active item */
-    active?: boolean;
+    value: number;
     /** Current item */
-    current?: boolean;
-    /** Item padding */
-    padding?: 'small';
+    isCurrent?: boolean;
+    /** Active item in dropdown list */
+    isActive?: boolean;
+    /** Item index */
+    index?: number;
     /** Select item handler */
-    onSelect(e: React.SyntheticEvent<EventTarget>, index: number): void;
+    onSelect?(e: React.SyntheticEvent<EventTarget>, value: number): void;
     /** Hover item handler */
-    onHover(e: React.SyntheticEvent<EventTarget>, index: number): void;
+    onHover?(e: React.SyntheticEvent<EventTarget>, value: number): void;
 }
 
 const cn = cnCreate('mfui-select-item');
 class SelectItem extends React.Component<ISelectItemProps, {}> {
     static propTypes = {
-        rightIcon: PropTypes.element,
-        leftIcon: PropTypes.element,
-        title: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.arrayOf(PropTypes.node),
-            PropTypes.element,
+        value: PropTypes.number.isRequired,
+        content: PropTypes.oneOfType([
             PropTypes.string,
-            PropTypes.node,
+            PropTypes.number,
+            PropTypes.element,
         ]),
-        index: PropTypes.number.isRequired,
-        active: PropTypes.bool,
-        current: PropTypes.bool,
+        isCurrent: PropTypes.bool,
+        isActive: PropTypes.bool,
+        index: PropTypes.number,
         onSelect: PropTypes.func.isRequired,
         onHover: PropTypes.func.isRequired,
-        padding: PropTypes.oneOf(['small']),
     };
 
     itemNode: any = null;
 
     shouldComponentUpdate(nextProps: ISelectItemProps) {
-        const active = this.props.active !== nextProps.active;
-        const current = this.props.current !== nextProps.current;
-        const title = this.props.title !== nextProps.title;
+        const { isActive, isCurrent, content } = this.props;
+        const active = isActive !== nextProps.isActive;
+        const current = isCurrent !== nextProps.isCurrent;
+        const contentItem = content !== nextProps.content;
 
-        return active || current || title;
+        return active || current || contentItem ;
     }
 
     handleClick = e => {
-        this.props.onSelect(e, this.props.index);
+        const { onSelect, value } = this.props;
+
+        onSelect && onSelect(e, value);
     }
 
     handleMouseEnter = e => {
-        this.props.onHover(e, this.props.index);
-    }
+        const { onHover, index } = this.props;
 
-    renderLeftIcon() {
-        return (
-            <div className={cn('left-icon-box')}>
-                {this.props.leftIcon}
-            </div>
-        );
-    }
-
-    renderRightIcon() {
-        return (
-            <div className={cn('right-icon-box')}>
-                {this.props.rightIcon}
-            </div>
-        );
+        index !== undefined && onHover && onHover(e, index);
     }
 
     render() {
-        const {
-            leftIcon,
-            rightIcon,
-            current,
-            active,
-            padding,
-        } = this.props;
+        const { isCurrent, isActive, content } = this.props;
 
         return (
             <div
                 className={cn('', {
-                    'left-icon': !!leftIcon,
-                    'right-icon': !!rightIcon,
-                    current: current,
-                    active: active,
-                    padding: padding,
+                    current: isCurrent,
+                    active: isActive,
                 })}
                 onClick={this.handleClick}
                 onMouseEnter={this.handleMouseEnter}
                 ref={node => { this.itemNode = node; }}
             >
-                {this.props.leftIcon && this.renderLeftIcon()}
                 <div className={cn('title')}>
-                    {this.props.title}
+                    {content}
                 </div>
-                {this.props.rightIcon && this.renderRightIcon()}
             </div>
         );
     }

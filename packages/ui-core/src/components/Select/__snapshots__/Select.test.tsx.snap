@@ -2,464 +2,104 @@
 
 exports[`<Select /> it renders Select 1`] = `
 <Select
-  arrow={true}
-  canOpen={true}
-  fontColor="black"
-  fontSize="medium"
   items={
     Array [
       Object {
-        "id": "1",
         "title": "test1",
+        "value": 1,
       },
       Object {
-        "id": "2",
         "title": "test2",
+        "value": 2,
       },
     ]
   }
-  keyNavigation={true}
   notFoundText="Ничего не нашлось"
-  resultSize="medium"
+  type="classic"
 >
   <div
-    className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
+    className="mfui-select mfui-select_no-touch"
   >
     <div
-      className="mfui-select__control"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
+      className="mfui-select__inner"
     >
       <div
-        className="mfui-select__title"
-        onClick={[Function]}
-        tabIndex={0}
-      >
-        <div
-          className="mfui-select__title-inner"
-        />
-      </div>
-      <span
-        className="mfui-select__arrow"
-      >
-        <span
-          className="mfui-select__arrow-inner"
-        />
-      </span>
-    </div>
-    <div
-      className="mfui-select__list"
-    >
-      <div
-        className="mfui-select__list-inner"
-      >
-        <SelectItem
-          active={true}
-          current={true}
-          index={0}
-          key="1"
-          onHover={[Function]}
-          onSelect={[Function]}
-          title="test1"
-        >
-          <div
-            className="mfui-select-item mfui-select-item_current mfui-select-item_active"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            <div
-              className="mfui-select-item__title"
-            >
-              test1
-            </div>
-          </div>
-        </SelectItem>
-        <SelectItem
-          active={false}
-          current={false}
-          index={1}
-          key="2"
-          onHover={[Function]}
-          onSelect={[Function]}
-          title="test2"
-        >
-          <div
-            className="mfui-select-item"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            <div
-              className="mfui-select-item__title"
-            >
-              test2
-            </div>
-          </div>
-        </SelectItem>
-      </div>
-    </div>
-  </div>
-</Select>
-`;
-
-exports[`<Select /> it renders hidden input 1`] = `
-<div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
->
-  <input
-    name="test"
-    type="hidden"
-  />
-  <div
-    className="mfui-select__control"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-  >
-    <div
-      className="mfui-select__title"
-      onClick={[Function]}
-      tabIndex={0}
-    >
-      <div
-        className="mfui-select__title-inner"
-      />
-    </div>
-    <span
-      className="mfui-select__arrow"
-    >
-      <span
-        className="mfui-select__arrow-inner"
-      />
-    </span>
-  </div>
-  <div
-    className="mfui-select__list"
-  >
-    <div
-      className="mfui-select__list-inner"
-    >
-      <SelectItem
-        active={true}
-        current={true}
-        index={0}
-        key="1"
-        onHover={[Function]}
-        onSelect={[Function]}
-        title="test1"
-      />
-      <SelectItem
-        active={false}
-        current={false}
-        index={1}
-        key="2"
-        onHover={[Function]}
-        onSelect={[Function]}
-        title="test2"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Select /> it renders search 1`] = `
-<Select
-  arrow={true}
-  canOpen={true}
-  fontColor="black"
-  fontSize="medium"
-  items={
-    Array [
-      Object {
-        "id": "1",
-        "title": "test1",
-      },
-      Object {
-        "id": "2",
-        "title": "test2",
-      },
-    ]
-  }
-  keyNavigation={true}
-  notFoundText="Ничего не нашлось"
-  onChangeSearch={[Function]}
-  resultSize="medium"
->
-  <div
-    className="mfui-select mfui-select_search mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
-  >
-    <div
-      className="mfui-select__control"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-    >
-      <input
-        autoComplete="off"
-        className="mfui-select__search-field"
-        maxLength={60}
-        onChange={[Function]}
+        className="mfui-select__control"
+        onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
-        type="text"
-      />
-      <span
-        className="mfui-select__arrow"
+        onKeyDown={[Function]}
       >
+        <div
+          className="mfui-select__title"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="mfui-select__title-inner"
+          />
+        </div>
         <span
-          className="mfui-select__arrow-inner"
-        />
-      </span>
-    </div>
-    <div
-      className="mfui-select__list"
-    >
+          className="mfui-select__arrow"
+        >
+          <span
+            className="mfui-select__arrow-inner"
+          />
+        </span>
+      </div>
       <div
-        className="mfui-select__list-inner"
+        className="mfui-select__list"
       >
-        <SelectItem
-          active={true}
-          current={true}
-          index={0}
-          key="1"
-          onHover={[Function]}
-          onSelect={[Function]}
-          title="test1"
+        <div
+          className="mfui-select__list-inner"
         >
-          <div
-            className="mfui-select-item mfui-select-item_current mfui-select-item_active"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
+          <SelectItem
+            content="test1"
+            index={0}
+            isActive={true}
+            isCurrent={false}
+            key="1"
+            onHover={[Function]}
+            onSelect={[Function]}
+            value={1}
           >
             <div
-              className="mfui-select-item__title"
+              className="mfui-select-item mfui-select-item_active"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              test1
+              <div
+                className="mfui-select-item__title"
+              >
+                test1
+              </div>
             </div>
-          </div>
-        </SelectItem>
-        <SelectItem
-          active={false}
-          current={false}
-          index={1}
-          key="2"
-          onHover={[Function]}
-          onSelect={[Function]}
-          title="test2"
-        >
-          <div
-            className="mfui-select-item"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
+          </SelectItem>
+          <SelectItem
+            content="test2"
+            index={1}
+            isActive={false}
+            isCurrent={false}
+            key="3"
+            onHover={[Function]}
+            onSelect={[Function]}
+            value={2}
           >
             <div
-              className="mfui-select-item__title"
+              className="mfui-select-item"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
             >
-              test2
+              <div
+                className="mfui-select-item__title"
+              >
+                test2
+              </div>
             </div>
-          </div>
-        </SelectItem>
+          </SelectItem>
+        </div>
       </div>
     </div>
   </div>
 </Select>
-`;
-
-exports[`<Select /> it renders with label and id 1`] = `
-<div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
->
-  <InputLabel
-    htmlFor="id"
-  >
-    label
-  </InputLabel>
-  <div
-    className="mfui-select__control"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-  >
-    <div
-      className="mfui-select__title"
-      onClick={[Function]}
-      tabIndex={0}
-    >
-      <div
-        className="mfui-select__title-inner"
-      />
-    </div>
-    <span
-      className="mfui-select__arrow"
-    >
-      <span
-        className="mfui-select__arrow-inner"
-      />
-    </span>
-  </div>
-  <div
-    className="mfui-select__list"
-  >
-    <div
-      className="mfui-select__list-inner"
-    >
-      <div
-        className="mfui-select__not-found"
-      >
-        Ничего не нашлось
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Select /> it renders with result size small 1`] = `
-<div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_small mfui-select_no-touch"
->
-  <input
-    name="test"
-    type="hidden"
-  />
-  <div
-    className="mfui-select__control"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-  >
-    <div
-      className="mfui-select__title"
-      onClick={[Function]}
-      tabIndex={0}
-    >
-      <div
-        className="mfui-select__title-inner"
-      />
-    </div>
-    <span
-      className="mfui-select__arrow"
-    >
-      <span
-        className="mfui-select__arrow-inner"
-      />
-    </span>
-  </div>
-  <div
-    className="mfui-select__list"
-  >
-    <div
-      className="mfui-select__list-inner"
-    >
-      <SelectItem
-        active={true}
-        current={true}
-        index={0}
-        key="1"
-        onHover={[Function]}
-        onSelect={[Function]}
-        title="test1"
-      />
-      <SelectItem
-        active={false}
-        current={false}
-        index={1}
-        key="2"
-        onHover={[Function]}
-        onSelect={[Function]}
-        title="test2"
-      />
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Select /> it renders witout icon 1`] = `
-<div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
->
-  <div
-    className="mfui-select__control"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-  >
-    <div
-      className="mfui-select__title"
-      onClick={[Function]}
-      tabIndex={0}
-    >
-      <div
-        className="mfui-select__title-inner"
-      />
-    </div>
-    <span
-      className="mfui-select__arrow"
-    >
-      <span
-        className="mfui-select__arrow-inner"
-      />
-    </span>
-  </div>
-  <div
-    className="mfui-select__list"
-  >
-    <div
-      className="mfui-select__list-inner"
-    >
-      <div
-        className="mfui-select__not-found"
-      >
-        Ничего не нашлось
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Select /> it renders witout icon 2`] = `
-<div
-  className="mfui-select mfui-select_font-size_medium mfui-select_font-color_black mfui-select_result-size_medium mfui-select_no-touch"
->
-  <div
-    className="mfui-select__control"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-  >
-    <div
-      className="mfui-select__title"
-      onClick={[Function]}
-      tabIndex={0}
-    >
-      <div
-        className="mfui-select__title-inner"
-      />
-    </div>
-    <div
-      className="mfui-select__icon-box"
-    >
-      <test-file-stub />
-    </div>
-  </div>
-  <div
-    className="mfui-select__list"
-  >
-    <div
-      className="mfui-select__list-inner"
-    >
-      <div
-        className="mfui-select__not-found"
-      >
-        Ничего не нашлось
-      </div>
-    </div>
-  </div>
-</div>
 `;
