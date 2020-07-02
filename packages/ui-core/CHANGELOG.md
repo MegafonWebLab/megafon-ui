@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.7.1
 - **Button**
     - add 'transparent-white' value to 'hoverColor' prop
     - add 'transparent-white' value to 'downColor' prop
