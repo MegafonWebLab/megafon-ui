@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - add 'transparent-white' value to 'hoverColor' prop
+    - add 'transparent-white' value to 'downColor' prop
 
 ## 1.7.0
 - **RadioButton**

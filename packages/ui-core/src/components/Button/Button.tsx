@@ -27,13 +27,13 @@ export interface IButtonProps {
     /** Current color. WARNING!!! Values 'transparent', 'transparent-green' were deprecated */
     passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white' | 'transparent-white';
     /** Hover color */
-    hoverColor?: 'green' | 'purple' | 'transparent';
+    hoverColor?: 'green' | 'purple' | 'transparent' | 'transparent-white';
     /** Border color */
     border?: 'green' | 'transparent';
     /** Font color */
     fontColor?: 'white' | 'green';
     /** Click/press color */
-    downColor?: 'dark' | 'transparent';
+    downColor?: 'dark' | 'transparent' | 'transparent-white';
     /** Disabled color. WARNING!!! Values 'transparent', 'white' were deprecated */
     disabledColor?: 'gray' | 'transparent-white' | 'transparent' | 'white';
     /** Width */
@@ -84,6 +84,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
             'green',
             'purple',
             'transparent',
+            'transparent-white',
         ]),
         border: PropTypes.oneOf([
             'green',
@@ -96,6 +97,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
         downColor: PropTypes.oneOf([
             'dark',
             'transparent',
+            'transparent-white',
         ]),
         disabledColor: PropTypes.oneOf([
             'gray',
