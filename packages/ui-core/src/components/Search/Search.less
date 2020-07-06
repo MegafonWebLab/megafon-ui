@@ -6,7 +6,7 @@
     .commonFont();
     position: relative;
     z-index: auto;
-    color: @black80;
+    color: @soggyAsphalt;
     min-height: 40px;
 
     &__control {
@@ -54,10 +54,10 @@
     &__list {
         display: none;
         position: absolute;
-        z-index: 0;
         top: 100%;
-        right: 0;
         left: 0;
+        right: 0;
+        z-index: 0;
         background-color: @clearWhite;
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
@@ -66,22 +66,9 @@
         padding: 12px 0;
         box-sizing: border-box;
     }
-    &__icon {
-        width: 24px;
-        fill: @black60;
-    }
-    &__icon-box {
-        width: 5%;
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        @media @mobileSM {
-            width: 10%;
-        }
-    }
     &_open &__list {
         display: block;
-        border-color: @black80;
+        border-color: @soggyAsphalt;
     }
     &_open {
         z-index: 12;

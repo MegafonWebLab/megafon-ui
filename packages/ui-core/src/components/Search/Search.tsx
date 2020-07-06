@@ -2,24 +2,19 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCallback, useState, useRef } from 'react';
 import debounce from 'lodash.debounce';
-import SearchIcon from 'icons/Basic/16/Search_16.svg';
 import SelectItem from '../Select/SelectItem';
 import cnCreate from 'utils/cnCreate';
 import './Search.less';
 
 type HandleSearchFieldSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
-type HandleSelectSubmit = (e: React.MouseEvent | null, index: number) => void;
-type HandleSelectSubmitWithEventOnly = (e: React.MouseEvent, index: number) => void;
+type HandleSelectSubmit = (e: React.MouseEvent, index: number) => void;
+type HandleSubmit = (index: number) => void;
 
 export interface ISearchProps {
     /** Selected value. Should correlate with items.value */
     value?: string;
     /** Placeholder */
     placeholder?: string;
-    /** Change handler */
-    onChange?: (value: string) => void;
-    /** Submit handler */
-    onSubmit?: (value: string) => void;
     /** Array of objects to be used for options rendering */
     items?: Array<{
         /** Header */
@@ -27,6 +22,10 @@ export interface ISearchProps {
         /** Value */
         value: string;
     }>;
+    /** Change handler */
+    onChange?: (value: string) => void;
+    /** Submit handler */
+    onSubmit?: (value: string) => void;
 }
 
 const cn = cnCreate('mfui-search');
@@ -59,12 +58,15 @@ const Search: React.FC<ISearchProps> = ({
              onSubmit && searchQuery && onSubmit(searchQuery);
         }, [searchQuery]);
 
+    const handleSubmit: HandleSubmit = useCallback((index: number) => {
+        const chosenValue = items[index].value;
+        onSubmit && onSubmit(chosenValue);
+    }, [onSubmit, items]);
+
     const handleSelectSubmit: HandleSelectSubmit =
         useCallback((_e, index) => {
-            const chosenValue = items[index].value;
-
-            onSubmit && onSubmit(chosenValue);
-        }, [onSubmit, items]);
+            handleSubmit(index);
+        }, [handleSubmit]);
 
     const handleFieldFocus: React.EventHandler<React.FocusEvent<HTMLInputElement>> =
         useCallback(() => {
@@ -87,20 +89,21 @@ const Search: React.FC<ISearchProps> = ({
                 setActiveIndex(index => index - 1);
                 e.preventDefault();
             } else if (e.key === 'Enter' && activeIndex > -1) {
-                handleSelectSubmit(null, activeIndex);
+                handleSubmit(activeIndex);
             } else if (e.key === 'Enter' && activeIndex === -1) {
                 handleSearchFieldSubmit();
             }
 
             return false;
-        }, [activeIndex, setActiveIndex, handleSelectSubmit, handleSearchFieldSubmit]);
+        }, [activeIndex, setActiveIndex, handleSearchFieldSubmit]);
 
     return (
-        <div className={cn('', { open: isFocused })}>
+        <div className={cn({ open: isFocused })}>
             <div
                 className={cn('control')}
             >
                 <input
+                    className={cn('search-field')}
                     placeholder={placeholder}
                     value={searchQuery}
                     onChange={handleChange}
@@ -111,27 +114,19 @@ const Search: React.FC<ISearchProps> = ({
                     type="text"
                     maxLength={60}
                     autoComplete="off"
-                    className={cn('search-field')}
                 />
-                <div
-                    className={cn('icon-box')}
-                    onClick={handleSearchFieldSubmit}
-                >
-                    <SearchIcon className={cn('icon')} />
-                </div>
             </div>
             {items && !!items.length &&
                 <div className={cn('list')}>
                     <div className={cn('list-inner')}>
-                        {/* tslint:disable-next-line:no-shadowed-variable */}
-                        {items.map(({ value, title }, i) =>
+                        {items.map(({ value: iValue, title }, i) =>
                             <SelectItem
                                 title={title}
-                                key={value + i}
+                                key={iValue + i}
                                 index={i}
                                 active={activeIndex === i}
                                 onHover={handleHoverItem}
-                                onSelect={handleSelectSubmit as HandleSelectSubmitWithEventOnly}
+                                onSelect={handleSelectSubmit}
                             />
                         )}
                     </div>
@@ -144,14 +139,14 @@ const Search: React.FC<ISearchProps> = ({
 Search.propTypes = {
     value: PropTypes.string,
     placeholder: PropTypes.string,
-    onChange: PropTypes.func,
-    onSubmit: PropTypes.func,
     items: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             value: PropTypes.string.isRequired,
         }).isRequired
     ),
+    onChange: PropTypes.func,
+    onSubmit: PropTypes.func,
 };
 
 export default Search;
