@@ -21,13 +21,16 @@
         background-color: @clearWhite;
         outline: none;
         padding: 0 55px 0 20px;
+
         @media @desktop {
             padding: 0 55px 0 25px;
         }
+
         @media @mobileSM {
             padding: 0 35px 0 20px;
         }
     }
+
     &__search-field {
         box-sizing: border-box;
         font-family: inherit;
@@ -47,10 +50,12 @@
         -moz-appearance: none;
         box-shadow: none;
         overflow: auto;
+
         @media @mobileSM {
             width: 90%;
         }
     }
+
     &__list {
         display: none;
         position: absolute;
@@ -61,15 +66,18 @@
         background-color: @clearWhite;
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
+
     &__list-inner {
         overflow: auto;
         padding: 12px 0;
         box-sizing: border-box;
     }
+
     &_open &__list {
         display: block;
         border-color: @soggyAsphalt;
     }
+
     &_open {
         z-index: 12;
     }
