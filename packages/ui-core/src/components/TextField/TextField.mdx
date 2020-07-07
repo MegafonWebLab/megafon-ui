@@ -46,7 +46,7 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 </Playground>
 
 ## Error usage
-1. On default settings clicking on the cross clears the field.
+1. Clicking on cross icon clears the field by default. This behavior won't work with defined custom icon or onCustomIconClick handler.
 2. Set a custom icon and/or custom click handler disables the field clearing function
 
 <Playground>
@@ -64,7 +64,7 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
         <TextField
             verification="error"
             noticeText="Error notice"
-            customIcon={ <CustomIcon className='mfui-text-field__icon' /> }
+            customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
             onCustomIconClick={ () => alert('Custom click handler') }
         />
      </TextFieldWrapper>

@@ -122,14 +122,11 @@ const TextField: React.FC<ITextFieldProps> = ({
         onChange && onChange(e);
     };
 
-    const isClearFuncAvailable = () => !customIcon && !onCustomIconClick && verification === Verification.ERROR;
-
     const handleIconClick = useCallback(e => {
         isPasswordType && togglePasswordHiding();
 
-        if (isClearFuncAvailable()) {
-            setInputValue('');
-        }
+        const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === Verification.ERROR;
+        isClearFuncAvailable && setInputValue('');
 
         onCustomIconClick && onCustomIconClick(e);
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
@@ -215,7 +212,6 @@ const TextField: React.FC<ITextFieldProps> = ({
                 className={cn('icon-box', {
                     error: verification === Verification.ERROR,
                     password: isPasswordType,
-                    custom: !!customIcon,
                     'no-handler': !!customIcon && !onCustomIconClick })}
                 onClick={handleIconClick}
             >
@@ -224,7 +220,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         );
     };
 
-    const isPlaceholderShowed = () => isPasswordType && isPasswordHidden && !!inputValue;
+    const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
 
     return (
         <div className={cn({
@@ -233,7 +229,7 @@ const TextField: React.FC<ITextFieldProps> = ({
             valid: verification === Verification.VALID,
             error: verification === Verification.ERROR,
             icon: !hideIcon && (!!verification || !!customIcon),
-            password: isPlaceholderShowed(),
+            password: isPlaceholderShowed,
         }, className)}>
             {label && <InputLabel htmlFor={id}>
                 {label}
