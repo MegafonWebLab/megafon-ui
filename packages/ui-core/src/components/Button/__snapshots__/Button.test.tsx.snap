@@ -104,6 +104,7 @@ exports[`<Button /> renders Button with props 1`] = `
   disabled={false}
   href="any"
   onClick={[Function]}
+  rel="noopener"
   target="_blank"
 >
   <div

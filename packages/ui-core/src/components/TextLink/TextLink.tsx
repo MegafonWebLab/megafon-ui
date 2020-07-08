@@ -4,7 +4,7 @@ import './TextLink.less';
 import Link from '../Link/Link';
 import cnCreate from 'utils/cn';
 
-interface ITextLinkProps {
+export interface ITextLinkProps {
     /** Color */
     color: 'white' | 'black' | 'gray' | 'blue' | 'green' | 'inherit';
     /** Underline visibility */
@@ -15,6 +15,8 @@ interface ITextLinkProps {
     target: '_self' | '_blank' | '_parent' | '_top';
     /** Link */
     href: string;
+    /** Rel attribute */
+    rel?: string;
     /** Custom class name */
     className?: string;
     children: JSX.Element[] | Element[] | JSX.Element | string | Element;
@@ -30,6 +32,7 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
         underlineStyle: PropTypes.oneOf(['solid', 'dashed', 'border', 'none']),
         href: PropTypes.string,
         target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+        rel: PropTypes.string,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,

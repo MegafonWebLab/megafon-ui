@@ -1,10 +1,21 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import TextLink from './TextLink';
+import TextLink, { ITextLinkProps } from './TextLink';
+
+const props: ITextLinkProps = {
+    color: 'white',
+    underlineVisibility: 'hover',
+    underlineStyle: 'solid',
+    target: '_self',
+    href: 'href',
+    rel: 'noopener',
+    className: 'class',
+    children: 'text',
+};
 
 describe('<TextLink />', () => {
     it('it renders TextLink', () => {
-        const wrapper = shallow(<TextLink />);
+        const wrapper = shallow(<TextLink {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 
