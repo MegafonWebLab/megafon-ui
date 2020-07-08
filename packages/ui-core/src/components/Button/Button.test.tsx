@@ -6,6 +6,7 @@ const props: IButtonProps = {
     type: 'reset',
     href: 'any',
     target: '_blank',
+    rel: 'noopener',
 };
 
 describe('<Button />', () => {

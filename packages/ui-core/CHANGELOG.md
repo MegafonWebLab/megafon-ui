@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - add rel attribute
+- **TextLink**
+    - add rel attribute
 
 ## 1.7.1
 - **Button**

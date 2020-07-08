@@ -2,6 +2,11 @@
 
 exports[`<TextLink /> it renders TextLink 1`] = `
 <Link
-  className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue"
-/>
+  className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_white class"
+  href="href"
+  rel="noopener"
+  target="_self"
+>
+  text
+</Link>
 `;

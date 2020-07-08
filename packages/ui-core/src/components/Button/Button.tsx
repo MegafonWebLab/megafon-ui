@@ -50,6 +50,8 @@ export interface IButtonProps {
     padding?: boolean;
     /** Show spinner */
     showSpinner?: boolean;
+    /** Rel attribute */
+    rel?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click event handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
@@ -111,6 +113,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
         showSpinner: PropTypes.bool,
         onClick: PropTypes.func,
         classNameContent: PropTypes.string,
+        rel: PropTypes.string,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
@@ -176,7 +179,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
             sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
             customView, passiveColor, hoverColor, downColor, border, fontColor,
             disabledColor, padding, width, margin, showSpinner, className, href, type,
-            disabled, target, children,
+            disabled, target, rel, children,
         } = this.props;
         const { isTouch } = this.state;
         const ElementType = href ? 'a' : 'button';
@@ -208,6 +211,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
                 type={href ? undefined : type}
                 onClick={this.handleClick}
                 disabled={!href && disabled}
+                rel={href ? rel : undefined}
             >
                 <div className={cn('inner')}>
                     {!showSpinner && children && this.renderChildrenElem()}
