@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+**List**
+    - added list-style rules
 
 ## 1.7.3
 - **Textarea**
