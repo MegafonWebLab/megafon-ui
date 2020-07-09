@@ -7,6 +7,7 @@ route: components/textfield
 import { Playground, Props } from 'docz';
 import TextField from './TextField';
 import { TextFieldWrapper } from './TextField.docz';
+import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 
 # TextField
 
@@ -26,7 +27,7 @@ import { TextFieldWrapper } from './TextField.docz';
 
 <Playground>
     <TextFieldWrapper>
-        <TextField name="name" required label="Номер телефона" />
+        <TextField name="name" required label="Phone number" />
     </TextFieldWrapper>
 </Playground>
 
@@ -45,18 +46,34 @@ import { TextFieldWrapper } from './TextField.docz';
 </Playground>
 
 ## Error usage
+Сlicking on cross icon clears the field by default. This behavior won't work with defined custom icon or onCustomIconClick handler.
 
 <Playground>
     <TextFieldWrapper>
-        <TextField verification="error" noticeText="Name is required" />
+        <TextField
+            verification="error"
+            noticeText="Name is required"
+        />
     </TextFieldWrapper>
+</Playground>
+
+## Custom icon and handler
+<Playground>
+    <TextFieldWrapper>
+        <TextField
+            verification="error"
+            noticeText="Error notice"
+            customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
+            onCustomIconClick={ () => alert('Custom click handler') }
+        />
+     </TextFieldWrapper>
 </Playground>
 
 ## Valid usage
 
 <Playground>
     <TextFieldWrapper>
-        <TextField verification="valid" />
+        <TextField verification="valid" noticeText="You can write that field value is correct"/>
     </TextFieldWrapper>
 </Playground>
 
@@ -65,14 +82,6 @@ import { TextFieldWrapper } from './TextField.docz';
 <Playground>
     <TextFieldWrapper>
         <TextField noticeText="Comment" />
-    </TextFieldWrapper>
-</Playground>
-
-## Success text usage
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField hideIcon={true} verification="valid" noticeText="Field is correct" />
     </TextFieldWrapper>
 </Playground>
 
@@ -116,7 +125,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
 
 <Playground>
     <TextFieldWrapper>
-        <TextField name="name" multiline={true} />
+        <TextField name="name" multiline />
     </TextFieldWrapper>
 </Playground>
 
@@ -126,7 +135,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     <TextFieldWrapper>
         <TextField
             label="Required field"
-            multiline={true}
+            multiline
             required
         />
     </TextFieldWrapper>
@@ -141,7 +150,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
             id="1"
             verification="error"
             noticeText="Name is required"
-            multiline={true}
+            multiline
         />
     </TextFieldWrapper>
 </Playground>
@@ -152,7 +161,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     <TextFieldWrapper>
         <TextField
             verification="valid"
-            multiline={true}
+            multiline
         />
     </TextFieldWrapper>
 </Playground>
@@ -163,7 +172,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     <TextFieldWrapper>
         <TextField
             noticeText="Comment"
-            multiline={true}
+            multiline
         />
     </TextFieldWrapper>
 </Playground>
@@ -175,7 +184,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
         <TextField
             verification="valid"
             noticeText="Field passed validation"
-            multiline={true}
+            multiline
         />
     </TextFieldWrapper>
 </Playground>
@@ -186,7 +195,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     <TextFieldWrapper>
         <TextField
             disabled
-            multiline={true}
+            multiline
         />
     </TextFieldWrapper>
 </Playground>

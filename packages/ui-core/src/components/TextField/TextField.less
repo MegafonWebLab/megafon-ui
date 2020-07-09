@@ -32,7 +32,7 @@
         &_multiline {
             display: block;
             height: 152px;
-            resize: none;
+            resize: vertical;
         }
     }
 
@@ -73,12 +73,13 @@
         text-align: center;
     }
 
+    &__icon-box_error,
     &__icon-box_password {
         z-index: 3;
     }
 
-    &__icon-box_custom {
-        z-index: 3;
+    &__icon-box_no-handler {
+        z-index: 0;
     }
 
     &__icon {
@@ -138,10 +139,6 @@
 
         &__text_error {
             color: @fury;
-        }
-
-        &__icon-box {
-            z-index: 3;
         }
     }
 
