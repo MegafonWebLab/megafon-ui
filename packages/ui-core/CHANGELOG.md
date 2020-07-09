@@ -19,6 +19,10 @@
     - synchronized colors according to the guide
 - **TextField**
     - synchronized colors according to the guide
+    - add focus in input after click on clear icon
+    - add vertical resize to textarea
+    - fix password placeholder
+    - update documentation
 - **TextLink**
     - synchronized colors according to the guide
 - **Icons**
@@ -75,8 +79,6 @@
 - **Paragraph**
     - update with a new guide
     - update test
-- **TextField**
-    - add focus in input after click on cancel icon
 
 ## Release 1.4.1
 - **Carousel**
