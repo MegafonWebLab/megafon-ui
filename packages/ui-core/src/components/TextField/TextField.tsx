@@ -36,8 +36,8 @@ export interface ITextFieldProps {
     disabled?: boolean;
     /** Makes the field required. The value of this prop is also passed through to attribute with the same name */
     required?: boolean;
-    /** Custom ref-object or ref-callback. Note: if you use **mask**, you have to use ref-callback to get instance */
-    inputRef?: React.Ref<any>;
+    /** Ref-callback */
+    inputRef?: (node: HTMLInputElement | HTMLTextAreaElement) => void;
     /** Field name. The value of this prop is passed through to attribute with the same name */
     name?: string;
     /** Initial Placeholder */
@@ -99,6 +99,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = React.useState(value);
+    const fieldNode = React.useRef<HTMLInputElement | HTMLTextAreaElement>();
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
     const isVisiblePassword: boolean = useMemo(
@@ -123,12 +124,13 @@ const TextField: React.FC<ITextFieldProps> = ({
     };
 
     const handleIconClick = useCallback(e => {
-        isPasswordType && togglePasswordHiding();
-
         const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === Verification.ERROR;
-        isClearFuncAvailable && setInputValue('');
+        const { current: field } = fieldNode;
 
+        isPasswordType && togglePasswordHiding();
         onCustomIconClick && onCustomIconClick(e);
+        isClearFuncAvailable && setInputValue('');
+        field && field.focus();
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
 
     const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -168,6 +170,15 @@ const TextField: React.FC<ITextFieldProps> = ({
         className: cn('field', { multiline }),
     };
 
+    const getFieldNode = (node: HTMLInputElement | HTMLTextAreaElement | null) => {
+        if (!node) {
+            return;
+        }
+
+        fieldNode.current = node;
+        inputRef && inputRef(node);
+    };
+
     const renderField = (): React.ReactNode => {
         if (multiline) {
             return renderTextarea();
@@ -179,14 +190,14 @@ const TextField: React.FC<ITextFieldProps> = ({
     const renderInput = (): React.ReactNode => (
         <>
             {mask
-                ? <InputMask {...inputParams} inputRef={inputRef} />
-                : <input {...inputParams} ref={inputRef} />
+                ? <InputMask {...inputParams} inputRef={getFieldNode} />
+                : <input {...inputParams} ref={getFieldNode} />
             }
             {!hideIcon && renderIconBlock()}
         </>
     );
 
-    const renderTextarea = (): React.ReactNode => <textarea {...textareaParams} ref={inputRef} />;
+    const renderTextarea = (): React.ReactNode => <textarea {...textareaParams} ref={getFieldNode} />;
 
     const getIcon = (): React.ReactNode | null => {
         switch (true) {
@@ -283,10 +294,7 @@ TextField.propTypes = {
     onFocus: PropTypes.func,
     onKeyUp: PropTypes.func,
     onCustomIconClick: PropTypes.func,
-    inputRef: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.shape({ current: PropTypes.object.isRequired }),
-    ]),
+    inputRef: PropTypes.func,
 };
 
 export default TextField;

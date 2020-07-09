@@ -19,6 +19,10 @@
     - synchronized colors according to the guide
 - **TextField**
     - synchronized colors according to the guide
+    - add focus in input after click on clear icon
+    - add vertical resize to textarea
+    - fix password placeholder
+    - update documentation
 - **TextLink**
     - synchronized colors according to the guide
 - **Icons**
