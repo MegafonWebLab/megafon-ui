@@ -75,6 +75,8 @@
 - **Paragraph**
     - update with a new guide
     - update test
+- **TextField**
+    - add focus in input after click on cancel icon
 
 ## Release 1.4.1
 - **Carousel**
