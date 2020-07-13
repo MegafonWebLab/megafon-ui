@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Constructor**
+    - create ButtonLinkBox component
 
 ## Release 1.0.30
 - **package.json**
