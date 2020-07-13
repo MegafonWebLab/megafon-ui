@@ -20,25 +20,25 @@ import Metro from 'icons/System/24/Metro_24.svg';
 const items = [
     {
         value: 1,
-        view: 'Ватнайокюдль',
-        title: 'Ватнайокюдль',
+        view: 'Uporovka village',
+        title: 'Uporovka village',
     },
     {
         value: 2,
-        view: 'Хваннадальсхнукюр',
-        title: 'Хваннадальсхнукюр',
+        view: 'Palevo village',
+        title: 'Palevo village',
     },
     {
         value: 3,
-        view: 'Киркьюбайрклёйстюр',
-        title: 'Киркьюбайклёйстюр',
+        view: 'Chuvaki village',
+        title: 'Chuvaki village',
     },
 ];
 ```
 
 ```javascript
 const SelectWrapper = props => {
-    const [currentValue, setCurrentValue] = React.useStat(undefined);
+    const [currentValue, setCurrentValue] = React.useState(undefined);
 
     const handleSelect = (_e, data) => {
         setCurrentValue(data.value);
@@ -55,7 +55,7 @@ const SelectWrapper = props => {
 };
 ```
 
-## Select options
+## Basic
 
 <Playground>
     <div style={flexStyle}>
@@ -74,24 +74,9 @@ const SelectWrapper = props => {
             )}
         </SelectWrapper>
         <SelectWrapper>
-            {({ onSelect, currentValue }) => (
-                <Select
-                    label="Combobox type"
-                    type="combobox"
-                    onSelect={onSelect}
-                    placeholder="Choose or type your step"
-                    items={items.map(item => ({
-                        title: item.title,
-                        value: item.value,
-                    }))}
-                    currentValue={currentValue}
-                />
-            )}
-        </SelectWrapper>
-        <SelectWrapper>
             {({ onSelect, canOpen, currentValue }) => (
                 <Select
-                    label="Items with icon"
+                    label="Icon components in the list"
                     placeholder="Choose your step"
                     items={items.map(item => ({
                         title: item.title,
@@ -118,6 +103,25 @@ const SelectWrapper = props => {
                 />
             )}
         </SelectWrapper>
+       <SelectWrapper>
+            {({ onSelect, currentValue }) => (
+                <Select
+                    label="Disabled state"
+                    isDisabled
+                    onSelect={onSelect}
+                    placeholder="You have no choice"
+                    items={items}
+                    currentValue={currentValue}
+                />
+            )}
+        </SelectWrapper>
+    </div>
+</Playground>
+
+# Validation
+
+<Playground>
+    <div style={flexStyle}>
         <SelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
@@ -144,14 +148,24 @@ const SelectWrapper = props => {
                 />
             )}
         </SelectWrapper>
+    </div>
+</Playground>
+
+# Combobox
+
+<Playground>
+    <div style={flexStyle}>
         <SelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
-                    label="Disabled state"
-                    isDisabled
+                    label="Combobox type"
+                    type="combobox"
                     onSelect={onSelect}
-                    placeholder="You have no choice"
-                    items={items}
+                    placeholder="Choose or type your step"
+                    items={items.map(item => ({
+                        title: item.title,
+                        value: item.value,
+                    }))}
                     currentValue={currentValue}
                 />
             )}

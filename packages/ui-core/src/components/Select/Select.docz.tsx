@@ -4,18 +4,18 @@ import { ISelectCallbackItem } from './Select';
 export const items = [
     {
         value: 1,
-        view: 'Ватнайокюдль',
-        title: 'Ватнайокюдль',
+        view: 'Uporovka village',
+        title: 'Uporovka village',
     },
     {
         value: 2,
-        view: 'Хваннадальсхнукюр',
-        title: 'Хваннадальсхнукюр',
+        view: 'Palevo village',
+        title: 'Palevo village',
     },
     {
         value: 3,
-        view: 'Киркьюбайрклёйстюр',
-        title: 'Киркьюбайклёйстюр',
+        view: 'Chuvaki village',
+        title: 'Chuvaki village',
     },
 ];
 

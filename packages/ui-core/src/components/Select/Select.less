@@ -16,7 +16,7 @@
         width: 100%;
         box-sizing: border-box;
         position: relative;
-        z-index: 1;
+        z-index: 11;
         height: 48px;
         cursor: pointer;
         border: 1px solid @spbSky2;
@@ -98,6 +98,7 @@
 
     &__require-mark {
         font-size: 20px;
+        line-height: 0;
         color: @fury;
         margin-left: 1px;
     }
@@ -133,6 +134,42 @@
         overflow: auto;
         padding: 12px 0;
         box-sizing: border-box;
+    }
+
+    &__list-item {
+        .fontFamily();
+        padding: 8px 32px;
+        cursor: pointer;
+        background-color: @clearWhite;
+
+        &_active {
+            background-color: @spbSky0;
+        }
+    }
+
+    &__item-title {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+        flex-grow: 1;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @clearWhite);
+        }
+    }
+
+    &__list-item_active &__item-title {
+        &:after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky0);
+        }
     }
 
     &__not-found {

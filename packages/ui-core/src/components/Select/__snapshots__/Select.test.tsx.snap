@@ -53,50 +53,30 @@ exports[`<Select /> it renders Select 1`] = `
         <div
           className="mfui-select__list-inner"
         >
-          <SelectItem
-            content="test1"
-            index={0}
-            isActive={true}
-            isCurrent={false}
+          <div
+            className="mfui-select__list-item mfui-select__list-item_active"
             key="1"
-            onHover={[Function]}
-            onSelect={[Function]}
-            value={1}
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <div
-              className="mfui-select-item mfui-select-item_active"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
+              className="mfui-select__item-title"
             >
-              <div
-                className="mfui-select-item__title"
-              >
-                test1
-              </div>
+              test1
             </div>
-          </SelectItem>
-          <SelectItem
-            content="test2"
-            index={1}
-            isActive={false}
-            isCurrent={false}
+          </div>
+          <div
+            className="mfui-select__list-item"
             key="3"
-            onHover={[Function]}
-            onSelect={[Function]}
-            value={2}
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <div
-              className="mfui-select-item"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
+              className="mfui-select__item-title"
             >
-              <div
-                className="mfui-select-item__title"
-              >
-                test2
-              </div>
+              test2
             </div>
-          </SelectItem>
+          </div>
         </div>
       </div>
     </div>
