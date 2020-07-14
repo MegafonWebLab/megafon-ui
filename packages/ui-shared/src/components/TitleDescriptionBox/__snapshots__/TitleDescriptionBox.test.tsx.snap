@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
+<div
+  className="mfui-title-description-box mfui-title-description-box_h-align_center mfui-title-description-box_text-color_white custom class"
+>
+  <Grid
+    hAlign="center"
+    multiRow={true}
+  >
+    <GridColumn
+      all="12"
+      desktop="10"
+      flex={false}
+      grow={false}
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      wide="8"
+    >
+      <Header
+        as="h2"
+        className="mfui-title-description-box__item"
+        color="inherit"
+      >
+        title
+      </Header>
+      <Paragraph
+        className="mfui-title-description-box__item"
+        color="inherit"
+        hasMargin={false}
+      >
+        description
+      </Paragraph>
+    </GridColumn>
+  </Grid>
+</div>
+`;

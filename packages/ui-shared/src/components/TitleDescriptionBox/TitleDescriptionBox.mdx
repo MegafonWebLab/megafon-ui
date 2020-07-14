@@ -1,0 +1,77 @@
+---
+name: TitleDescriptionBox
+menu: Constructor
+route: components/textlink
+---
+
+import { Playground, Props } from 'docz';
+import TitleDescriptionBox from './TitleDescriptionBox';
+import { BackgroundWrapper } from './TitleDescriptionBox.docz';
+
+# TitleDescriptionBox
+
+## Properties
+
+<Props of={TitleDescriptionBox} />
+
+## Basic usage
+
+<Playground>
+    <TitleDescriptionBox
+        title="Lorem ipsum"
+        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    />
+</Playground>
+
+## Title only usage
+
+<Playground>
+    <TitleDescriptionBox
+        title="Lorem ipsum"
+    />
+</Playground>
+
+## Description only usage
+
+<Playground>
+    <TitleDescriptionBox
+        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    />
+</Playground>
+
+## Multiple description usage
+
+<Playground>
+    <TitleDescriptionBox
+        title="Lorem ipsum"
+        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    />
+    <TitleDescriptionBox
+        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    />
+    <TitleDescriptionBox
+        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+    />
+</Playground>
+
+## Horizontal alignment usage
+
+<Playground>
+    <TitleDescriptionBox
+        title="Lorem ipsum"
+        description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+        hAlign="center"
+    />
+</Playground>
+
+## Text color usage
+
+<Playground>
+    <BackgroundWrapper>
+        <TitleDescriptionBox
+            title="Lorem ipsum"
+            description="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+            textColor="white"
+        />
+    </BackgroundWrapper>
+</Playground>
