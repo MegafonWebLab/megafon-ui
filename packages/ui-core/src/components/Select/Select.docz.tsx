@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ISelectCallbackItem } from './Select';
+import { ISelectItem } from './Select';
 
 export const items = [
     {
@@ -36,7 +36,7 @@ const selectWrapperStyle = {
 type CurrentValue = number | undefined;
 
 interface ISelectChildrenProps {
-    onSelect: (_e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => void;
+    onSelect: (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
     currentValue: number | undefined;
 }
 
@@ -44,10 +44,10 @@ interface ISelectWrapperProps {
     children: (data: ISelectChildrenProps) => JSX.Element;
 }
 
-export const SelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
+export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
     const [currentValue, setCurrentValue] = React.useState<CurrentValue>(undefined);
 
-    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => {
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
         setCurrentValue(data.value);
     };
 

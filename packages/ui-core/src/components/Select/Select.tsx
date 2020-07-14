@@ -6,7 +6,7 @@ import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
 import Paragraph from 'components/Paragraph/Paragraph';
 
-export interface ISelectCallbackItem {
+export interface ISelectItem {
     title: string;
     view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     value: number;
@@ -33,11 +33,11 @@ interface ISelectProps {
     /** Field title */
     label?: string;
     /** Html id attribute for label */
-    id?: string;
+    labelId?: string;
     /** Current selected item */
     currentValue?: number;
     /** Verification */
-    verification: Verification;
+    verification?: Verification;
     /** Notice text */
     noticeText?: string;
     /** isDisabled field */
@@ -49,22 +49,19 @@ interface ISelectProps {
     /** Text in the absence of search results */
     notFoundText?: string;
     /** Array of objects to be used for options rendering */
-    items: ISelectCallbackItem[];
+    items: ISelectItem[];
     /** Custom classname */
     className?: string;
     /** Object for the custom class */
     classes?: ISelectClasses;
-    /** Focus handler of combobox type */
-    onFocusCombobox?: (value: string) => void;
     /** Select item handler */
-    onSelect?: (e: React.SyntheticEvent<EventTarget>, dataItem: ISelectCallbackItem) => void;
+    onSelect?: (e: React.SyntheticEvent<EventTarget>, dataItem: ISelectItem) => void;
 }
 
 interface ISelectState {
     isOpen: boolean;
-    focus: boolean;
     activeIndex: number;
-    comboboxItems: ISelectCallbackItem[];
+    comboboxItems: ISelectItem[];
     inputValue: string;
 }
 
@@ -106,7 +103,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     itemWrapperNode: HTMLDivElement;
     itemsNodeList: HTMLDivElement[];
     selectNode: HTMLDivElement;
-    comboboxNode: HTMLInputElement;
+
     isTouch: boolean = detectTouch();
 
     constructor(props: ISelectProps) {
@@ -114,23 +111,43 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         this.state = {
             isOpen: false,
-            focus: false,
             activeIndex: 0,
             comboboxItems: props.items,
             inputValue: '',
         };
+        this.itemsNodeList = [];
     }
 
-    componentDidMount() {
-        document.addEventListener('click', this.onClickOutside);
+    onEventListener = () => {
+        const { isOpen } = this.state;
+
+        if (!isOpen) {
+            document.addEventListener('click', this.onClickOutside);
+        }
+        if (isOpen) {
+            document.removeEventListener('click', this.onClickOutside);
+        }
     }
 
-    componentWillUnmount() {
-        document.removeEventListener('click', this.onClickOutside);
+    onClickOutside = (e: MouseEvent): void => {
+        const { isOpen } = this.state;
+
+        if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpen) {
+            return;
+        }
+
+        this.setState({ isOpen: false });
     }
 
     handleClickTitle = (): void => {
         this.setState((state) => ({ isOpen: !state.isOpen }));
+
+        this.onEventListener();
+    }
+
+    handleArrowClick = (): void => {
+        this.setState((state) => ({ isOpen: !state.isOpen }));
+        this.onEventListener();
     }
 
     handleClickItem = (itemValue: number) => (e: React.SyntheticEvent<EventTarget>): void => {
@@ -141,14 +158,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return;
         }
 
-        const { value, title, view } = item;
+        const { title } = item;
 
         this.setState({
             isOpen: false,
             inputValue: title,
         });
 
-        onSelect && onSelect(e, { title, value, view });
+        document.removeEventListener('click', this.onClickOutside);
+
+        onSelect && onSelect(e, item);
     }
 
     handleHoverItem = (index: number) => (e: React.SyntheticEvent<EventTarget>): void => {
@@ -171,55 +190,27 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         }
 
         this.setState((state) => ({ isOpen: !state.isOpen }));
+        this.onEventListener();
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { items } = this.props;
+        const filterValue = e.target.value;
 
-        const currentItems = items.filter(item => {
-            if ( e.target.value.length <= item.title.length) {
-                return RegExp(e.target.value, 'ig').test(item.title);
+        const filteredItems = items.filter(({ title }) => {
+            if (filterValue.length <= title.length) {
+                return RegExp(filterValue, 'ig').test(title);
             }
 
-            return;
+            return false;
         });
 
         this.setState({
             activeIndex: 0,
             isOpen: true,
-            comboboxItems: currentItems,
-            inputValue: e.target.value,
+            comboboxItems: filteredItems,
+            inputValue: filterValue,
         });
-    }
-
-    handleFocusCombobox = (e: React.FocusEvent<HTMLInputElement>): void => {
-        const { onFocusCombobox } = this.props;
-
-        onFocusCombobox && onFocusCombobox(e.target.value);
-    }
-
-    onClickOutside = (e: MouseEvent): void => {
-        const { isOpen } = this.state;
-
-        if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpen) {
-            return;
-        }
-
-        this.setState({ isOpen: false });
-    }
-
-    handleFocusControl = (): void => {
-        this.setState({ focus: true });
-    }
-
-    handleBlurControl = (): void => {
-        this.setState({ focus: false });
-    }
-
-    handleClickControl = (): void => {
-        if (this.comboboxNode) {
-            this.comboboxNode.click();
-        }
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
@@ -227,7 +218,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const { items } = this.props;
 
         // key arrow down
-        if (e.keyCode === 40 && activeIndex < items.length - 1) {
+        if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
                 this.scrollList(activeIndex);
             });
@@ -236,8 +227,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         }
         // key arrow up
-        if (e.keyCode === 38 && activeIndex > 0) {
-            this.setState((currentState) => ({ activeIndex: currentState.activeIndex - 1 }), () => {
+        if (e.key === 'ArrowUp' && activeIndex > 0) {
+            this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
                 this.scrollList(activeIndex);
             });
             e.preventDefault();
@@ -245,18 +236,19 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         }
         // key enter
-        if (e.keyCode === 13 && isOpen) {
+        if (e.key === 'Enter' && isOpen) {
             this.itemsNodeList[activeIndex].click();
+
             return false;
         }
         // key enter
-        if (e.keyCode === 13 && !isOpen) {
+        if (e.key === 'Enter' && !isOpen) {
             this.setState({ isOpen: true });
 
             return false;
         }
         // key tab
-        if (e.keyCode === 9) {
+        if (e.key === 'Tab') {
             this.setState({ isOpen: false });
 
             return false;
@@ -321,7 +313,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     getItemWrapper = node => this.itemWrapperNode = node;
     getSelectNode = node => this.selectNode = node;
-    getComboboxNode = node => this.comboboxNode = node;
 
     renderTitle() {
         const { placeholder, items, currentValue } = this.props;
@@ -356,8 +347,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 className={cn('combobox')}
                 onClick={this.handleClickCombobox}
                 onChange={this.handleChangeCombobox}
-                onFocus={this.handleFocusCombobox}
-                ref={this.getComboboxNode}
                 type="text"
                 value={inputValue}
                 placeholder={placeholder}
@@ -366,9 +355,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     renderChildren() {
-        const { type, items, notFoundText, currentValue } = this.props;
+        const { type, items, notFoundText } = this.props;
         const { comboboxItems, activeIndex } = this.state;
-        this.itemsNodeList = [];
         const currentItems = type === 'combobox' ? comboboxItems : items;
 
         return (
@@ -377,7 +365,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     {currentItems.map(({ title, value, view }, i) =>
                         <div
                             className={cn('list-item', {
-                                current: currentValue === value,
                                 active: activeIndex === i,
                             })}
                             key={value + i}
@@ -397,42 +384,46 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     render() {
-        const { type, isDisabled, verification, noticeText, label, id, required } = this.props;
-        const { focus, isOpen } = this.state;
-        const { className = '', classes = {} } = this.props;
-        const propsClassName = `${className} ${classes.root || ''}`.trim();
+        const {
+            type,
+            isDisabled,
+            verification,
+            noticeText,
+            label,
+            labelId,
+            required,
+            className = '',
+            classes = {},
+        } = this.props;
+        const { isOpen } = this.state;
 
         return (
             <div
-                className={cn('', {
+                className={cn({
                     open: isOpen,
                     disabled: isDisabled,
-                    focus: focus,
                     'no-touch': !this.isTouch,
                     valid: verification === Verification.VALID,
                     error: verification === Verification.ERROR,
-                }, propsClassName)}
+                }, [className, classes.root])}
                 ref={this.getSelectNode}
             >
                 <div className={cn('inner')}>
                     {label && (
-                        <InputLabel htmlFor={id}>
+                        <InputLabel htmlFor={labelId}>
                             {label}
                             {required && <span className={cn('require-mark')}>*</span>}
                         </InputLabel>
                     )}
                     <div
-                        className={cn('control', {}, classes.control)}
+                        className={cn('control', classes.control)}
                         onKeyDown={this.handleKeyDown}
-                        onFocus={this.handleFocusControl}
-                        onBlur={this.handleBlurControl}
-                        onClick={this.handleClickControl}
                     >
                         {(type === Types.COMBOBOX) && this.renderCombobox()}
                         {(type === Types.CLASSIC) && this.renderTitle()}
-                        <span className={cn('arrow')}>
-                            <span className={cn('arrow-inner')} />
-                        </span>
+                        <div className={cn('arrow-wrap')} onClick={this.handleArrowClick}>
+                            <span className={cn('arrow')} />
+                        </div>
                     </div>
                     {this.renderChildren()}
                 </div>

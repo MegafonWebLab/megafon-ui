@@ -26,6 +26,7 @@
 
     &__combobox {
         box-sizing: border-box;
+        cursor: text;
         font-family: inherit;
         line-height: 25px;
         position: relative;
@@ -37,7 +38,6 @@
         //fix for ios - Focus on input with padding (filled with text) pushes cursor out of bounds
         padding: 0 45px 0 20px;
         outline: none;
-        cursor: pointer;
         opacity: 1;
         border-radius: 0;
         -webkit-appearance: none;
@@ -46,7 +46,6 @@
         overflow: auto;
     }
 
-    &_focus&_no-touch &__control,
     &_no-touch &__control:hover {
         border-color: @freshAsphalt;
     }
@@ -83,13 +82,21 @@
         }
     }
 
+    &__arrow-wrap {
+        cursor: pointer;
+        height: 100%;
+        width: 25px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 20px;
+        z-index: 1;
+    }
+
     &__arrow {
         color: @freshAsphalt;
-        position: absolute;
-        z-index: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 28px;
         border-bottom: none;
         border-top: 6px solid;
         border-left: 5px solid transparent;

@@ -7,7 +7,7 @@ route: components/select
 import { Playground, Props } from 'docz';
 import Select from './Select';
 import Checked from 'icons/System/24/Checked_24.svg';
-import { SelectWrapper, items, flexStyle } from './Select.docz';
+import { DemoSelectWrapper, items, flexStyle } from './Select.docz';
 import Metro from 'icons/System/24/Metro_24.svg';
 
 # Select
@@ -37,7 +37,7 @@ const items = [
 ```
 
 ```javascript
-const SelectWrapper = props => {
+const DemoSelectWrapper = props => {
     const [currentValue, setCurrentValue] = React.useState(undefined);
 
     const handleSelect = (_e, data) => {
@@ -45,7 +45,7 @@ const SelectWrapper = props => {
     };
 
     return (
-        <div style={selectWrapperStyle}>
+        <div style={DemoSelectWrapperStyle}>
             {props.children({
                 onSelect: handleSelect,
                 currentValue: currentValue,
@@ -59,7 +59,7 @@ const SelectWrapper = props => {
 
 <Playground>
     <div style={flexStyle}>
-        <SelectWrapper>
+        <DemoSelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Classic (default) type"
@@ -72,8 +72,8 @@ const SelectWrapper = props => {
                     currentValue={currentValue}
                 />
             )}
-        </SelectWrapper>
-        <SelectWrapper>
+        </DemoSelectWrapper>
+        <DemoSelectWrapper>
             {({ onSelect, canOpen, currentValue }) => (
                 <Select
                     label="Icon components in the list"
@@ -92,8 +92,8 @@ const SelectWrapper = props => {
                     currentValue={currentValue}
                 />
             )}
-        </SelectWrapper>
-        <SelectWrapper>
+        </DemoSelectWrapper>
+        <DemoSelectWrapper>
             {({ onSelect, canOpen, currentValue }) => (
                 <Select
                     label="Zero items"
@@ -102,8 +102,8 @@ const SelectWrapper = props => {
                     notFoundText="Nothing found"
                 />
             )}
-        </SelectWrapper>
-       <SelectWrapper>
+        </DemoSelectWrapper>
+       <DemoSelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Disabled state"
@@ -114,7 +114,7 @@ const SelectWrapper = props => {
                     currentValue={currentValue}
                 />
             )}
-        </SelectWrapper>
+        </DemoSelectWrapper>
     </div>
 </Playground>
 
@@ -122,32 +122,33 @@ const SelectWrapper = props => {
 
 <Playground>
     <div style={flexStyle}>
-        <SelectWrapper>
+        <DemoSelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Valid state"
                     verification="valid"
+                    noticeText="Success message"
                     onSelect={onSelect}
                     placeholder="Choose your step"
                     items={items}
                     currentValue={currentValue}
                 />
             )}
-        </SelectWrapper>
-        <SelectWrapper>
+        </DemoSelectWrapper>
+        <DemoSelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Error state"
                     required
                     verification="error"
-                    noticeText="Please, make a choice"
+                    noticeText="Error message"
                     onSelect={onSelect}
                     placeholder="Choose your step"
                     items={items}
                     currentValue={currentValue}
                 />
             )}
-        </SelectWrapper>
+        </DemoSelectWrapper>
     </div>
 </Playground>
 
@@ -155,7 +156,7 @@ const SelectWrapper = props => {
 
 <Playground>
     <div style={flexStyle}>
-        <SelectWrapper>
+        <DemoSelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Combobox type"
@@ -169,6 +170,6 @@ const SelectWrapper = props => {
                     currentValue={currentValue}
                 />
             )}
-        </SelectWrapper>
+        </DemoSelectWrapper>
     </div>
 </Playground>
