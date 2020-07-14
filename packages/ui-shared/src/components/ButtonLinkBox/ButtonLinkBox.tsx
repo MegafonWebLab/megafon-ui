@@ -22,30 +22,28 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     linkUrl,
     hAlign,
     className,
-}) => {
-    return (
-        <div className={cn({ 'h-align': hAlign }, className)}>
-            {buttonTitle && (
-                <div className={cn('row')}>
-                    <Button
-                        href={buttonUrl}
-                        passiveColor={buttonColor}
-                        hoverColor={buttonColor}
-                    >
-                        {buttonTitle}
-                    </Button>
-                </div>
-            )}
-            {linkTitle && (
-                <div className={cn('row')}>
-                    <TextLink href={linkUrl} underlineVisibility="always">
-                        {linkTitle}
-                    </TextLink>
-                </div>
-            )}
-        </div>
-    );
-};
+}) => (
+    <div className={cn({ 'h-align': hAlign }, className)}>
+        {buttonTitle && (
+            <div className={cn('row')}>
+                <Button
+                    href={buttonUrl}
+                    passiveColor={buttonColor}
+                    hoverColor={buttonColor}
+                >
+                    {buttonTitle}
+                </Button>
+            </div>
+        )}
+        {linkTitle && (
+            <div className={cn('row')}>
+                <TextLink href={linkUrl} underlineVisibility="always">
+                    {linkTitle}
+                </TextLink>
+            </div>
+        )}
+    </div>
+);
 
 ButtonLinkBox.propTypes = {
     className: PropTypes.string,
