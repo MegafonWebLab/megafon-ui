@@ -70,8 +70,12 @@
 }
 
 .generateOffsets(@resolution, @columnCount: 12, @i: 1) when (@i <= @columnCount) {
-    &_offset-@{resolution}_@{i} {
+    &_left-offset-@{resolution}_@{i} {
         margin-left: (100% / @columnCount) * @i;
+    }
+
+    &_right-offset-@{resolution}_@{i} {
+        margin-right: (100% / @columnCount) * @i;
     }
     .generateOffsets(@resolution, @columnCount, (@i + 1));
 }

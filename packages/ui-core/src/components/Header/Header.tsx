@@ -14,7 +14,7 @@ interface IHeaderProps {
     addition?: JSX.Element;
     /** Custom class name */
     className?: string;
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    children?: React.ReactNode;
     /** Click handler */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }

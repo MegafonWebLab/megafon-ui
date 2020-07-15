@@ -6,7 +6,7 @@ import { IGridColumn } from './GridColumn';
 
 interface IGridProps {
     /** Alignment of all columns by horizontal axis */
-    hAlign?: 'right' | 'center' | 'between' | 'around';
+    hAlign?: 'left' | 'right' | 'center' | 'between' | 'around';
     /** Alignment of all columns by vertical axis */
     vAlign?: 'top' | 'bottom' | 'center' | 'baseline';
     /** Margin area on the left side of column */
@@ -21,7 +21,7 @@ interface IGridProps {
 const cn = cnCreate('mfui-grid');
 class Grid extends React.Component<IGridProps> {
     static propTypes = {
-        hAlign: PropTypes.oneOf(['right', 'center', 'between', 'around']),
+        hAlign: PropTypes.oneOf(['left', 'right', 'center', 'between', 'around']),
         vAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'baseline']),
         guttersLeft: PropTypes.oneOf(['large', 'medium']),
         guttersBottom: PropTypes.oneOf(['large', 'medium']),

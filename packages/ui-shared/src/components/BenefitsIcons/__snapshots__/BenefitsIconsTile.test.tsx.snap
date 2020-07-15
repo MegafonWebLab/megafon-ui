@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
+<div
+  className="benefits-icons-tile benefits-icons-tile_icon-position_left-side"
+>
+  <div
+    className="benefits-icons-tile__svg-icon"
+  >
+    <test-file-stub />
+  </div>
+  <div
+    className="benefits-icons-tile__content-wrapper"
+  >
+    <Header
+      as="h5"
+      className="benefits-icons-tile__title"
+      color="black"
+    >
+      title
+    </Header>
+    <Paragraph
+      className="benefits-icons-tile__text"
+      hasMargin={false}
+    >
+      text
+    </Paragraph>
+  </div>
+</div>
+`;
+
+exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
+<div
+  className="benefits-icons-tile benefits-icons-tile_icon-position_left-side"
+>
+  <div
+    className="benefits-icons-tile__svg-icon"
+  >
+    <test-file-stub />
+  </div>
+  <div
+    className="benefits-icons-tile__content-wrapper"
+  >
+    <Header
+      as="h5"
+      className="benefits-icons-tile__title"
+      color="black"
+    >
+      title
+    </Header>
+  </div>
+</div>
+`;
+
+exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without title 1`] = `
+<div
+  className="benefits-icons-tile benefits-icons-tile_icon-position_left-side"
+>
+  <div
+    className="benefits-icons-tile__svg-icon"
+  >
+    <test-file-stub />
+  </div>
+  <div
+    className="benefits-icons-tile__content-wrapper"
+  >
+    <Paragraph
+      className="benefits-icons-tile__text"
+      hasMargin={false}
+    >
+      text
+    </Paragraph>
+  </div>
+</div>
+`;

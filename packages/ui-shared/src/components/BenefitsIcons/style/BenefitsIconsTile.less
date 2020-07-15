@@ -1,0 +1,45 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.benefits-icons-tile');
+
+@{b} {
+    margin-bottom: 48px;
+    padding: 0 16px;
+
+    @{b}__svg-icon {
+        margin-bottom: 10px;
+    }
+
+    &__title + &__text {
+        margin-top: 4px;
+    }
+
+    &__svg-icon {
+        width: 44px;
+        height: 44px;
+        overflow: hidden;
+    }
+
+    &_icon-position_left-side {
+        display: flex;
+
+        @{b}__content-wrapper {
+            padding-top: 10px;
+        }
+
+        @{b}__svg-icon {
+            flex-shrink: 0;
+            margin-right: 14px;
+            margin-bottom: 0;
+        }
+    }
+
+    &_icon-position_center-top {
+        text-align: center;
+
+        @{b}__svg-icon {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
