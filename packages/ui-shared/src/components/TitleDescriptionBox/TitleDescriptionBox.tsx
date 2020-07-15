@@ -24,39 +24,37 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     textColor,
     hAlign,
     className,
-}) => {
-    return (
-        <div
-            className={cn(
-                { 'h-align': hAlign, 'text-color': textColor },
-                className
-            )}
-        >
-            <Grid hAlign={hAlign}>
-                <GridColumn wide="8" desktop="10">
-                    {title && (
-                        <Header
-                            className={cn('item')}
-                            as="h2"
-                            color="inherit"
-                        >
-                            {title}
-                        </Header>
-                    )}
-                    {description && (
-                        <Paragraph
-                            className={cn('item')}
-                            hasMargin={false}
-                            color="inherit"
-                        >
-                            {description}
-                        </Paragraph>
-                    )}
-                </GridColumn>
-            </Grid>
-        </div>
-    );
-};
+}) => (
+    <div
+        className={cn(
+            { 'h-align': hAlign, 'text-color': textColor },
+            className
+        )}
+    >
+        <Grid hAlign={hAlign}>
+            <GridColumn wide="8" desktop="10">
+                {title && (
+                    <Header
+                        className={cn('item')}
+                        as="h2"
+                        color="inherit"
+                    >
+                        {title}
+                    </Header>
+                )}
+                {description && (
+                    <Paragraph
+                        className={cn('item')}
+                        hasMargin={false}
+                        color="inherit"
+                    >
+                        {description}
+                    </Paragraph>
+                )}
+            </GridColumn>
+        </Grid>
+    </div>
+);
 
 TitleDescriptionBox.propTypes = {
     className: PropTypes.string,
