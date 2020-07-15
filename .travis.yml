@@ -10,7 +10,7 @@ cache:
     - $(npm config get prefix)/lib/node_modules
 
 env:
-  - DOCS_DEPLOY_BRANCH=master PACKAGE_FROM_TAG=`echo $TRAVIS_TAG | cut -d '@' -f 2 | cut -d '/' -f 2`
+  - DOCS_DEPLOY_BRANCH=7684-select PACKAGE_FROM_TAG=`echo $TRAVIS_TAG | cut -d '@' -f 2 | cut -d '/' -f 2`
 
 before_install:
   - npm install -g lerna
@@ -25,8 +25,6 @@ script:
   - lerna run lint
   - lerna run build
   - lerna run typecheck
-  - lerna run coverage
-  - lerna run test
 
 before_deploy:
   - if [[ $TRAVIS_BRANCH = $DOCS_DEPLOY_BRANCH ]]; then
