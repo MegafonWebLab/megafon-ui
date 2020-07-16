@@ -62,6 +62,7 @@ export interface ITextFieldProps {
     bigSpace?: boolean;
     /** Custom classname */
     className?: string;
+    children?: React.ReactNode;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
@@ -106,6 +107,10 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         maskChar: PropTypes.string,
         bigSpace: PropTypes.bool,
         className: PropTypes.string,
+        children: PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.node),
+            PropTypes.node,
+        ]),
         onChange: PropTypes.func,
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
@@ -132,7 +137,10 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     }
 
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
-        return !(equal(this.props, nextProps) && equal(this.state, nextState));
+       const {children, ...otherProps} = this.props;
+       const {children: nextChildren, ...otherNextProps} = nextProps;
+
+       return !(equal(otherProps, otherNextProps) && equal(this.state, nextState));
     }
 
     /* Method for trigger blur event on input field. Use TextField's 'ref' prop for call. */
