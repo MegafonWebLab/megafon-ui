@@ -137,10 +137,10 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     }
 
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
-       const {children, ...otherProps} = this.props;
-       const {children: nextChildren, ...otherNextProps} = nextProps;
+        const { children, ...otherProps } = this.props;
+        const { children: nextChildren, ...otherNextProps } = nextProps;
 
-       return !(equal(otherProps, otherNextProps) && equal(this.state, nextState));
+        return !(equal(otherProps, otherNextProps) && equal(this.state, nextState));
     }
 
     /* Method for trigger blur event on input field. Use TextField's 'ref' prop for call. */
