@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.7.3
+- **Button**
+    - edit textarea class prop
+
 ## 1.7.2
 - **Button**
     - add rel attribute
