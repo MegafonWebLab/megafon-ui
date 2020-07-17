@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoBanner /> it renders VideoBanner with props 1`] = `
+<div
+  className="mfui-video-banner__test-class-name"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    innerPadding="default"
+    mobileInnerPadding="default"
+    outerBackgroundColor="white"
+  >
+    <div
+      className="mfui-video-banner__inner"
+    >
+      <Grid
+        hAlign="center"
+        multiRow={true}
+        vAlign="center"
+      >
+        <GridColumn
+          all="5"
+          flex={false}
+          grow={false}
+          key="1"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="2"
+          orderTablet="2"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-banner__content"
+          >
+            <Header
+              as="h3"
+              className="mfui-video-banner__header"
+              color="black"
+            >
+              Test title
+            </Header>
+            <Paragraph
+              className="mfui-video-banner__text"
+              hasMargin={false}
+              key="0Test description"
+            >
+              Test description
+            </Paragraph>
+            <Paragraph
+              className="mfui-video-banner__text"
+              hasMargin={false}
+              key="1Test description"
+            >
+              Test description
+            </Paragraph>
+            <Button
+              className="mfui-video-banner__button"
+              disabledColor="gray"
+              downColor="dark"
+              hoverColor="green"
+              href="#"
+              padding={true}
+              passiveColor="green"
+              showSpinner={false}
+              sizeAll="medium"
+              type="button"
+              width="auto"
+            >
+              Подробнее
+            </Button>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="7"
+          flex={false}
+          grow={false}
+          key="0"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-banner__video-wrapper"
+          >
+            <div
+              className="mfui-video-banner__video-inner"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-video-banner__video"
+                loop={true}
+                muted={true}
+              >
+                <source
+                  className="mfui-video-banner__source"
+                  src=""
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </ContentArea>
+</div>
+`;

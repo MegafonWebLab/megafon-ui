@@ -1,0 +1,45 @@
+---
+name: VideoBanner
+menu: Components
+route: components/video-banner
+---
+
+import { Playground, Props } from 'docz';
+import VideoBanner from './VideoBanner';
+import { content, videoSource } from './VideoBanner.docz';
+
+# VideoBanner
+
+## Properties
+
+<Props of={VideoBanner} />
+
+```javascript
+const content = {
+    title: 'Lorem ipsum',
+    description: [
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. '
+    ],
+    href: '#',
+}
+```
+
+## Video block with content
+
+<Playground>
+    <VideoBanner
+        content={content}
+        videoSource={videoSource}
+        className='demo-with-dump'
+    />
+</Playground>
+
+## Video block without content
+
+<Playground>
+    <VideoBanner
+        videoSource={videoSource}
+        className='demo-with-dump'
+    />
+</Playground>
