@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+## 1.7.3
 - **Textarea**
     - 'classes' prop added
 
