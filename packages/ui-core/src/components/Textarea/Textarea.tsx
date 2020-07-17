@@ -7,7 +7,6 @@ import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
 interface ITextareaClasses {
-    wrapper?: string;
     field?: string;
 }
 
@@ -46,6 +45,8 @@ interface ITextareaProps {
     maxLength?: number;
     /** Default value */
     defaultValue?: string;
+    /** Custom wrapper classname */
+    className?: string;
     /** Custom classnames */
     classes?: ITextareaClasses;
     /** Change handler */
@@ -132,7 +133,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
     render() {
         const {
             error, color, valid, disabled,
-            classes = {}, commentText, successText,
+            className, commentText, successText,
             noticeText, label, id,
         } = this.props;
 
@@ -143,7 +144,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
                     error: error,
                     disabled,
                     color,
-                }, classes.wrapper)}
+                }, className)}
             >
                 {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
                 <div className={cn('field-wrapper', { 'no-touch': !this.isTouch })}>
