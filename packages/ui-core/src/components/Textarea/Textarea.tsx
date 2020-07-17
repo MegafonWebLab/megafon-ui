@@ -6,6 +6,11 @@ import equal from 'deep-equal';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
+interface ITextareaClasses {
+    wrapper?: string;
+    field?: string;
+}
+
 interface ITextareaProps {
     /** Field title */
     label?: React.ReactNode;
@@ -41,8 +46,10 @@ interface ITextareaProps {
     maxLength?: number;
     /** Default value */
     defaultValue?: string;
-    /** Custom classname */
+    /** Custom wrapper classname */
     className?: string;
+    /** Custom classnames */
+    classes?: ITextareaClasses;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
@@ -73,6 +80,10 @@ class Textarea extends React.Component<ITextareaProps, {}> {
         maxLength: PropTypes.number,
         defaultValue: PropTypes.string,
         className: PropTypes.string,
+        classes: PropTypes.shape({
+            wrapper: PropTypes.string,
+            field: PropTypes.string,
+        }),
         onChange: PropTypes.func,
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
@@ -100,6 +111,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
     }
 
     renderElem() {
+        const classes = this.props.classes || {};
         const params = {
             disabled: this.props.disabled,
             name: this.props.name,
@@ -114,7 +126,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
             value: this.props.value,
             required: this.props.required,
             autoComplete: this.props.autocomplete,
-            className: cn('field'),
+            className: cn('field', classes.field),
         };
 
         return <textarea ref={this.inputNode} {...params} />;
@@ -124,7 +136,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
         const {
             error, color, valid, disabled,
             className, commentText, successText,
-            noticeText, label, id,
+            noticeText, label, id, classes = {},
         } = this.props;
 
         return (
@@ -134,7 +146,7 @@ class Textarea extends React.Component<ITextareaProps, {}> {
                     error: error,
                     disabled,
                     color,
-                }, className)}
+                }, [className, classes.wrapper])}
             >
                 {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
                 <div className={cn('field-wrapper', { 'no-touch': !this.isTouch })}>
