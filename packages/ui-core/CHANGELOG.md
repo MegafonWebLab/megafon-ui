@@ -3,7 +3,7 @@
 ## Unreleased
 
 - **Textarea**
-    - edit textarea class prop
+    - 'classes' prop added
 
 ## 1.7.2
 - **Button**
