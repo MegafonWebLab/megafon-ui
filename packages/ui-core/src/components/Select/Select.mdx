@@ -17,20 +17,38 @@ import Metro from 'icons/System/24/Metro_24.svg';
 <Props of={Select} />
 
 ```javascript
+export interface ISelectItem {
+    title: string;
+    value: number | string;
+    view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+}
+
+interface ISelectClasses {
+    control?: string;
+    root?: string;
+}
+
+enum Verification {
+    VALID = 'valid',
+    ERROR = 'error',
+}
+
+enum Types {
+    CLASSIC = 'classic',
+    COMBOBOX = 'combobox',
+}
+
 const items = [
     {
         value: 1,
-        view: 'Uporovka village',
         title: 'Uporovka village',
     },
     {
         value: 2,
-        view: 'Palevo village',
         title: 'Palevo village',
     },
     {
         value: 3,
-        view: 'Chuvaki village',
         title: 'Chuvaki village',
     },
 ];
@@ -65,10 +83,7 @@ const DemoSelectWrapper = props => {
                     label="Classic (default) type"
                     onSelect={onSelect}
                     placeholder="Choose your step"
-                    items={items.map(item => ({
-                        title: item.title,
-                        value: item.value,
-                    }))}
+                    items={items}
                     currentValue={currentValue}
                 />
             )}
@@ -84,7 +99,7 @@ const DemoSelectWrapper = props => {
                         view: (
                             <>
                                 <Metro style={{ width: '24px', height: '24px', marginRight: '16px' }} />
-                                {item.view}
+                                {item.title}
                             </>
                         ),
                     }))}
@@ -103,7 +118,7 @@ const DemoSelectWrapper = props => {
                 />
             )}
         </DemoSelectWrapper>
-       <DemoSelectWrapper>
+        <DemoSelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Disabled state"
@@ -126,6 +141,7 @@ const DemoSelectWrapper = props => {
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Valid state"
+                    required
                     verification="valid"
                     noticeText="Success message"
                     onSelect={onSelect}
@@ -163,10 +179,7 @@ const DemoSelectWrapper = props => {
                     type="combobox"
                     onSelect={onSelect}
                     placeholder="Choose or type your step"
-                    items={items.map(item => ({
-                        title: item.title,
-                        value: item.value,
-                    }))}
+                    items={items}
                     currentValue={currentValue}
                 />
             )}

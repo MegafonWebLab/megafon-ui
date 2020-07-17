@@ -1,85 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Select /> it renders Select 1`] = `
-<Select
-  items={
-    Array [
-      Object {
-        "title": "test1",
-        "value": 1,
-      },
-      Object {
-        "title": "test2",
-        "value": 2,
-      },
-    ]
-  }
-  notFoundText="Ничего не нашлось"
-  type="classic"
+exports[`<Select /> it renders with disabled state 1`] = `
+<div
+  className="mfui-select mfui-select_disabled mfui-select_no-touch"
 >
   <div
-    className="mfui-select mfui-select_no-touch"
+    className="mfui-select__inner"
   >
     <div
-      className="mfui-select__inner"
+      className="mfui-select__control"
+      onKeyDown={[Function]}
     >
       <div
-        className="mfui-select__control"
-        onBlur={[Function]}
+        className="mfui-select__title"
         onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
+        tabIndex={0}
       >
         <div
-          className="mfui-select__title"
-          onClick={[Function]}
-          tabIndex={0}
-        >
-          <div
-            className="mfui-select__title-inner"
-          />
-        </div>
-        <span
-          className="mfui-select__arrow"
-        >
-          <span
-            className="mfui-select__arrow-inner"
-          />
-        </span>
+          className="mfui-select__title-inner"
+        />
       </div>
       <div
-        className="mfui-select__list"
+        className="mfui-select__arrow-wrap"
+        onClick={[Function]}
+      >
+        <span
+          className="mfui-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-select__list"
+    >
+      <div
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-inner"
+          className="mfui-select__not-found"
         >
-          <div
-            className="mfui-select__list-item mfui-select__list-item_active"
-            key="1"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            <div
-              className="mfui-select__item-title"
-            >
-              test1
-            </div>
-          </div>
-          <div
-            className="mfui-select__list-item"
-            key="3"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            <div
-              className="mfui-select__item-title"
-            >
-              test2
-            </div>
-          </div>
+          Ничего не нашлось
         </div>
       </div>
     </div>
   </div>
-</Select>
+</div>
 `;
