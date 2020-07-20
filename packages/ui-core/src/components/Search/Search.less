@@ -6,7 +6,7 @@
     .commonFont();
     position: relative;
     z-index: auto;
-    color: @soggyAsphalt;
+    color: @freshAsphalt;
     min-height: 40px;
 
     &__control {
@@ -67,6 +67,22 @@
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
 
+    &__icon {
+        width: 24px;
+        fill: @freshAsphalt;
+    }
+
+    &__icon-box {
+        width: 5%;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+
+        @media @mobileSM {
+            width: 10%;
+        }
+    }
+
     &__list-inner {
         overflow: auto;
         padding: 12px 0;
@@ -75,7 +91,7 @@
 
     &_open &__list {
         display: block;
-        border-color: @soggyAsphalt;
+        border-color: @freshAsphalt;
     }
 
     &_open {

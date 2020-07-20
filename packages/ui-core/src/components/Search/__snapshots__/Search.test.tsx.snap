@@ -10,7 +10,6 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
     <input
       autoComplete="off"
       className="mfui-search__search-field"
-      maxLength={60}
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
@@ -20,6 +19,14 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
       type="text"
       value="initial value"
     />
+    <div
+      className="mfui-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-search__icon"
+      />
+    </div>
   </div>
   <div
     className="mfui-search__list"
@@ -58,7 +65,6 @@ exports[`<Search /> snapshots renders Search without props correctly 1`] = `
     <input
       autoComplete="off"
       className="mfui-search__search-field"
-      maxLength={60}
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
@@ -67,6 +73,14 @@ exports[`<Search /> snapshots renders Search without props correctly 1`] = `
       type="text"
       value=""
     />
+    <div
+      className="mfui-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-search__icon"
+      />
+    </div>
   </div>
 </div>
 `;

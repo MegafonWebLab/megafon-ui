@@ -6,7 +6,6 @@ route: components/search
 
 import { Playground, Props } from 'docz';
 import Search from './Search';
-import SearchContainer from './Search.docz';
 
 # Search
 
@@ -18,9 +17,15 @@ import SearchContainer from './Search.docz';
 
 <Playground>
     <Search
-        placeholder="Type here for search"
+        placeholder="Type here and press ENTER"
         onSubmit={(searchQuery) => alert('submitting ' + searchQuery)}
     />
+</Playground>
+
+## Usage without icon
+
+<Playground>
+    <Search hideIcon />
 </Playground>
 
 ## Usage with initial items
@@ -64,6 +69,25 @@ import SearchContainer from './Search.docz';
 ## Usage with emulating incomingData
 
 <Playground>
-    <SearchContainer />
+      {() => {
+        const [items, setItems] = React.useState([]);
+        const [chosenValue, setValue] = React.useState('');
+        const onChange = React.useCallback((query) => {
+                if (!query) {
+                    return;
+                }
+                setItems((oldItems) => [...oldItems, { title: query, value: query }]);
+            }, [items, setItems]);
+        const onSubmit = React.useCallback((value) => setValue(value), [chosenValue, setValue]);
+        return (
+            <Search
+                value={chosenValue}
+                items={items}
+                placeholder="Type and wait for results"
+                onChange={onChange}
+                onSubmit={onSubmit}
+            />
+        )
+      }}
 </Playground>
 

@@ -59,6 +59,12 @@ describe('<Search />', () => {
     });
 
     describe('submitting', () => {
+        it('calls onSubmit on icon click', () => {
+            const wrapper = shallow(<Search {...props} />);
+            wrapper.find(`.${cn('icon-box')}`).simulate('click');
+            expect(props.onSubmit).toBeCalledWith(props.value);
+        });
+
         it('calls onSubmit on press Enter with focus on input', () => {
             const wrapper = shallow(<Search {...props} />);
             wrapper.find(`.${cn('search-field')}`).simulate('keyDown', { key: 'Enter' });

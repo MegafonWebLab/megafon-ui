@@ -1,20 +1,23 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { useCallback, useState, useRef } from 'react';
+import {useCallback, useState, useRef, useEffect} from 'react';
+import SearchIcon from 'icons/Basic/16/Search_16.svg';
 import debounce from 'lodash.debounce';
 import SelectItem from '../Select/SelectItem';
 import cnCreate from 'utils/cnCreate';
 import './Search.less';
 
-type HandleSearchFieldSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
+type HandleSearchSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
 type HandleSelectSubmit = (e: React.MouseEvent, index: number) => void;
-type HandleSubmit = (index: number) => void;
+type HandleItemSubmit = (index: number) => void;
 
 export interface ISearchProps {
     /** Selected value. Should correlate with items.value */
     value?: string;
     /** Placeholder */
     placeholder?: string;
+    /** Forcefully prohibits icon's render */
+    hideIcon?: boolean;
     /** Array of objects to be used for options rendering */
     items?: Array<{
         /** Header */
@@ -32,18 +35,21 @@ const cn = cnCreate('mfui-search');
 const Search: React.FC<ISearchProps> = ({
         value = '',
         placeholder,
+        hideIcon,
+        items = [],
         onChange,
         onSubmit,
-        items = [],
 }) => {
     const [searchQuery, setSearchQuery] = useState(value);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [isFocused, setFocus] = useState(false);
     const debouncedOnChange = useRef(debounce((inputValue) => onChange && onChange(inputValue), 500));
 
+    useEffect(() => setSearchQuery(value), [value, setSearchQuery]);
+
     const handleChange: React.EventHandler<React.ChangeEvent<HTMLInputElement>> =
         useCallback((e): void => {
-            const { target: { value: inputValue = '' } = {} } = e;
+            const { target: { value: inputValue = '' } } = e;
 
             setSearchQuery(inputValue);
             setActiveIndex(-1);
@@ -54,19 +60,19 @@ const Search: React.FC<ISearchProps> = ({
         setActiveIndex(index);
     }, [activeIndex, setActiveIndex]);
 
-    const handleSearchFieldSubmit: HandleSearchFieldSubmit = useCallback(() => {
-             onSubmit && searchQuery && onSubmit(searchQuery);
-        }, [searchQuery]);
+    const handleSearchSubmit: HandleSearchSubmit = useCallback(() => {
+         onSubmit && searchQuery && onSubmit(searchQuery);
+    }, [searchQuery]);
 
-    const handleSubmit: HandleSubmit = useCallback((index: number) => {
+    const handleItemSubmit: HandleItemSubmit = useCallback((index: number) => {
         const chosenValue = items[index].value;
         onSubmit && onSubmit(chosenValue);
     }, [onSubmit, items]);
 
     const handleSelectSubmit: HandleSelectSubmit =
         useCallback((_e, index) => {
-            handleSubmit(index);
-        }, [handleSubmit]);
+            handleItemSubmit(index);
+        }, [handleItemSubmit]);
 
     const handleFieldFocus: React.EventHandler<React.FocusEvent<HTMLInputElement>> =
         useCallback(() => {
@@ -89,13 +95,13 @@ const Search: React.FC<ISearchProps> = ({
                 setActiveIndex(index => index - 1);
                 e.preventDefault();
             } else if (e.key === 'Enter' && activeIndex > -1) {
-                handleSubmit(activeIndex);
+                handleItemSubmit(activeIndex);
             } else if (e.key === 'Enter' && activeIndex === -1) {
-                handleSearchFieldSubmit();
+                handleSearchSubmit();
             }
 
             return false;
-        }, [activeIndex, setActiveIndex, handleSearchFieldSubmit]);
+        }, [activeIndex, setActiveIndex, handleSearchSubmit]);
 
     return (
         <div className={cn({ open: isFocused })}>
@@ -112,9 +118,14 @@ const Search: React.FC<ISearchProps> = ({
                     onKeyDown={handleKeyDown}
                     onClick={handleClick}
                     type="text"
-                    maxLength={60}
                     autoComplete="off"
                 />
+                {!hideIcon && <div
+                    className={cn('icon-box')}
+                    onClick={handleSearchSubmit}
+                >
+                    <SearchIcon className={cn('icon')} />
+                </div>}
             </div>
             {items && !!items.length &&
                 <div className={cn('list')}>
