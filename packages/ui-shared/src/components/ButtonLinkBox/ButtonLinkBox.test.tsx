@@ -17,4 +17,14 @@ describe('<ButtonLinkBox />', () => {
         const wrapper = shallow(<ButtonLinkBox {...props}/>);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('renders ButtonLinkBox without button', () => {
+        const wrapper = shallow(<ButtonLinkBox {...props} buttonTitle={undefined} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders ButtonLinkBox without link', () => {
+        const wrapper = shallow(<ButtonLinkBox {...props} linkTitle={undefined} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
