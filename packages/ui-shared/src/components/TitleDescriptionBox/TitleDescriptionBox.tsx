@@ -10,10 +10,15 @@ import {
 import './TitleDescriptionBox.less';
 
 export interface ITitleDescriptionBoxProps {
+    /** Custom className */
     className?: string;
+    /** Title */
     title?: string;
+    /** Description */
     description?: string;
+    /** Text color */
     textColor?: 'white';
+    /** Horizontal alignment */
     hAlign?: 'center';
 }
 

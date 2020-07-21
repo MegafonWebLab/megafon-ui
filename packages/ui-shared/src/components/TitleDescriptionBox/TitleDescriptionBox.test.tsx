@@ -15,4 +15,14 @@ describe('<TitleDescriptionBox />', () => {
         const wrapper = shallow(<TitleDescriptionBox {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('renders TitleDescriptionBox without title', () => {
+        const wrapper = shallow(<TitleDescriptionBox {...props} title={undefined} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders TitleDescriptionBox without description', () => {
+        const wrapper = shallow(<TitleDescriptionBox {...props} description={undefined} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
