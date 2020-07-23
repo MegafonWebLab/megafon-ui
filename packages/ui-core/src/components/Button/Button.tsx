@@ -1,11 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import cnCreate from 'utils/cn';
+import filterDataAttrs, { IDataAttrs } from 'utils/dataAttrs';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
 import detectTouch from 'utils/detectTouch';
 
-export interface IButtonProps {
+export interface IButtonProps extends IDataAttrs {
     /** Special view */
     customView?: 'two-lines';
     /** Link */
@@ -39,7 +40,7 @@ export interface IButtonProps {
     /** Width */
     width?: 'full' | 'auto';
     /** Custom class name */
-    className?: string;
+    className?: string | string[];
     /** Custom class name for button text-area */
     classNameContent?: string;
     /** Margin(outer indentation) */
@@ -114,6 +115,7 @@ class Button extends React.Component<IButtonProps, IButtonState> {
         onClick: PropTypes.func,
         classNameContent: PropTypes.string,
         rel: PropTypes.string,
+        dataAttrs: PropTypes.objectOf(PropTypes.string),
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
@@ -179,13 +181,14 @@ class Button extends React.Component<IButtonProps, IButtonState> {
             sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
             customView, passiveColor, hoverColor, downColor, border, fontColor,
             disabledColor, padding, width, margin, showSpinner, className, href, type,
-            disabled, target, rel, children,
+            disabled, target, rel, children, dataAttrs,
         } = this.props;
         const { isTouch } = this.state;
         const ElementType = href ? 'a' : 'button';
 
         return (
             <ElementType
+                {...filterDataAttrs(dataAttrs)}
                 className={cn('', {
                     'size-all': sizeAll,
                     'size-wide': sizeWide,

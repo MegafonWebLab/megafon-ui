@@ -86,6 +86,18 @@ exports[`<Button /> it renders white styled button 1`] = `
 </Button>
 `;
 
+exports[`<Button /> renders Button with classNames array 1`] = `
+<button
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch class1 class2"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="mfui-button__inner"
+  />
+</button>
+`;
+
 exports[`<Button /> renders Button with default props 1`] = `
 <button
   className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
@@ -100,7 +112,8 @@ exports[`<Button /> renders Button with default props 1`] = `
 
 exports[`<Button /> renders Button with props 1`] = `
 <a
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch class"
+  data-test="test"
   disabled={false}
   href="any"
   onClick={[Function]}

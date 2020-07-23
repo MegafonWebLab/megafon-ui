@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- **Button**
+    - add data attributes support
+    - add array support for className
+- **Header**
+    - add data attributes support
+    - add array support for className
 
 ## 1.7.10
 - **Carousel**

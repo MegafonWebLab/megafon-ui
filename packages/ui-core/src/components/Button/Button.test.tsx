@@ -7,6 +7,11 @@ const props: IButtonProps = {
     href: 'any',
     target: '_blank',
     rel: 'noopener',
+    className: 'class',
+    dataAttrs: {
+        'data-test': 'test',
+        'incorrect-attr': 'test',
+    },
 };
 
 describe('<Button />', () => {
@@ -21,6 +26,11 @@ describe('<Button />', () => {
 
     it('renders Button with props', () => {
         const wrapper = shallow(<Button {...props} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('renders Button with classNames array', () => {
+        const wrapper = shallow(<Button className={['class1', 'class2']} />);
         expect(wrapper).toMatchSnapshot();
     });
 
