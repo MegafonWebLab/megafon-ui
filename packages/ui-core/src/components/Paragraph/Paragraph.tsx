@@ -11,7 +11,7 @@ export interface IParagraphProps {
     /** Vertical margin (enabled by default) */
     hasMargin?: boolean;
     /** Text color */
-    color?: 'green' | 'purple' | 'clearWhite' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'freshAsphalt' | 'fullBlack';
+    color?: 'green' | 'purple' | 'clearWhite' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'freshAsphalt' | 'fullBlack' | 'inherit';
     /** Custom className */
     className?: string;
 }
@@ -40,7 +40,7 @@ Paragraph.propTypes = {
     align: PropTypes.oneOf(['left', 'center', 'right']),
     size: PropTypes.oneOf(['regular', 'small']),
     hasMargin: PropTypes.bool,
-    color: PropTypes.oneOf(['green', 'purple', 'clearWhite', 'spbSky0', 'spbSky1', 'spbSky2', 'freshAsphalt', 'fullBlack']),
+    color: PropTypes.oneOf(['green', 'purple', 'clearWhite', 'spbSky0', 'spbSky1', 'spbSky2', 'freshAsphalt', 'fullBlack', 'inherit']),
 };
 
 export default Paragraph;

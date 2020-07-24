@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Constructor**
+    - create TitleDescriptionBox component
 
 ## Release 1.0.30
 - **package.json**

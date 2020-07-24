@@ -79,6 +79,11 @@
 - **Paragraph**
     - update with a new guide
     - update test
+    - add inherit color
+- **Grid**
+    - fix children type
+- **GridColumn**
+    - fix children type
 
 ## Release 1.4.1
 - **Carousel**
