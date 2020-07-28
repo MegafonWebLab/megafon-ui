@@ -17,7 +17,7 @@ export interface IButtonLinkBoxProps {
     /** Link url */
     linkUrl?: string;
     /** Horizontal alignment */
-    hAlign?: 'center';
+    hAlign?: 'center' | 'left';
 }
 
 const cn = cnCreate('mfui-button-link-box');
@@ -60,10 +60,6 @@ ButtonLinkBox.propTypes = {
     linkTitle: PropTypes.string,
     linkUrl: PropTypes.string,
     hAlign: PropTypes.oneOf(['center']),
-};
-
-ButtonLinkBox.defaultProps = {
-    buttonColor: 'green',
 };
 
 export default ButtonLinkBox;
