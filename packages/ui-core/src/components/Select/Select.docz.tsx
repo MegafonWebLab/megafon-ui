@@ -14,30 +14,6 @@ export const items = [
         value: 3,
         title: 'Chuvaki village',
     },
-    {
-        value: 1,
-        title: 'Uporovka village1',
-    },
-    {
-        value: 2,
-        title: 'Palevo village1',
-    },
-    {
-        value: 3,
-        title: 'Chuvaki village1',
-    },
-    {
-        value: 1,
-        title: 'Uporovka village2',
-    },
-    {
-        value: 2,
-        title: 'Palevo village2',
-    },
-    {
-        value: 3,
-        title: 'Chuvaki village2',
-    },
 ];
 
 export const flexStyle = {

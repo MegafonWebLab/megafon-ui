@@ -5,6 +5,7 @@ import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
 import Paragraph from 'components/Paragraph/Paragraph';
+import debounce from 'lodash.debounce';
 
 export interface ISelectItem {
     title: string;
@@ -105,6 +106,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     selectNode: HTMLDivElement;
 
     isTouch: boolean = detectTouch();
+    debouncedComboboxChange = debounce((filteredItems) => this.setState({ filteredItems }), 500);
 
     constructor(props: ISelectProps) {
         super(props);
@@ -118,11 +120,15 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.itemsNodeList = [];
     }
 
-    componentDidMount() {
-        document.addEventListener('click', this.onClickOutside);
-    }
+    componentDidUpdate() {
+        const { isOpened } = this.state;
 
-    componentWillUnmount() {
+        if (isOpened) {
+            document.addEventListener('click', this.onClickOutside);
+
+            return;
+        }
+
         document.removeEventListener('click', this.onClickOutside);
     }
 
@@ -154,8 +160,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             isOpened: false,
             inputValue: title,
         });
-
-        document.removeEventListener('click', this.onClickOutside);
 
         onSelect && onSelect(e, item);
     }
@@ -196,9 +200,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         this.setState({
             isOpened: true,
-            filteredItems,
             inputValue: filterValue,
         });
+
+        this.debouncedComboboxChange(filteredItems);
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
@@ -345,6 +350,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const { type, items, notFoundText } = this.props;
         const { filteredItems, activeIndex } = this.state;
         const currentItems = type === Types.COMBOBOX ? filteredItems : items;
+
+        this.itemsNodeList = [];
 
         return (
             <div className={cn('list')}>
