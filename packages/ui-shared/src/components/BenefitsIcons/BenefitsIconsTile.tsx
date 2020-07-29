@@ -15,25 +15,23 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
     text,
     icon,
     iconPosition = IconPositionEnum.LEFT_TOP,
-}) => {
-    return (
-        <div className={cn('', { 'icon-position': iconPosition })}>
-            <div className={cn('svg-icon')}>{icon}</div>
-            <div className={cn('content-wrapper')}>
-                {title && (
-                    <Header className={cn('title')} as="h5">
-                        {convert(title)}
-                    </Header>
-                )}
-                {text && (
-                    <Paragraph className={cn('text')} hasMargin={false}>
-                        {convert(text)}
-                    </Paragraph>
-                )}
-            </div>
+}) => (
+    <div className={cn('', { 'icon-position': iconPosition })}>
+        <div className={cn('svg-icon')}>{icon}</div>
+        <div className={cn('content-wrapper')}>
+            {title && (
+                <Header className={cn('title')} as="h5">
+                    {convert(title)}
+                </Header>
+            )}
+            {text && (
+                <Paragraph className={cn('text')} hasMargin={false}>
+                    {convert(text)}
+                </Paragraph>
+            )}
         </div>
-    );
-};
+    </div>
+);
 
 BenefitsIconsTile.propTypes = {
     title: PropTypes.string,

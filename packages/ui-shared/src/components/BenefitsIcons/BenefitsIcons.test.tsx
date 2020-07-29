@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import BenefitsIcons, { IBenefitsIcons } from './BenefitsIcons';
-import { fiveItems, fourItems, threeItems, twoItems, twoItemsWithoutText, twoItemsWithoutTitle } from './BenefitsIcons.docz';
-import Checked from 'icons/System/24/Checked_24.svg';
+import { fiveItems, fourItems, threeItems, twoItems } from './BenefitsIcons.docz';
 import { IconPositionEnum } from './types';
 
 const props: IBenefitsIcons = {
