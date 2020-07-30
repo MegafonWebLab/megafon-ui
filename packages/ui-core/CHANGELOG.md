@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.7.4
 - **Select**
     - add onBlurSearch prop
 
