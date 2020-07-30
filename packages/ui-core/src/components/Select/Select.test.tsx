@@ -175,6 +175,14 @@ describe('<Select />', () => {
         expect(onFocusSearch.mock.calls).toHaveLength(1);
     });
 
+    it('it handles search blur', () => {
+        const noop = () => { };
+        const onBlurSearch = jest.fn();
+        const wrapper = mount(<Select {...props} onChangeSearch={noop} onBlurSearch={onBlurSearch} />);
+        wrapper.find('.mfui-select__search-field').simulate('blur');
+        expect(onBlurSearch.mock.calls).toHaveLength(1);
+    });
+
     it('it handles search change', () => {
         const onChangeSearch = jest.fn();
         const wrapper = mount(<Select {...props} onChangeSearch={onChangeSearch} />);
