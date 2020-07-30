@@ -201,6 +201,7 @@ exports[`<Select /> it renders search 1`] = `
         autoComplete="off"
         className="mfui-select__search-field"
         maxLength={60}
+        onBlur={[Function]}
         onChange={[Function]}
         onClick={[Function]}
         onFocus={[Function]}

@@ -168,11 +168,27 @@ describe('<Select />', () => {
     });
 
     it('it handles search focus', () => {
-        const noop = () => { };
+        const value = 'test';
+        const noop = jest.fn();
         const onFocusSearch = jest.fn();
-        const wrapper = mount(<Select {...props} onChangeSearch={noop} onFocusSearch={onFocusSearch} />);
+        const wrapper = mount(
+            <Select {...props} searchValue={value} onChangeSearch={noop} onFocusSearch={onFocusSearch} />
+        );
+
         wrapper.find('.mfui-select__search-field').simulate('focus');
-        expect(onFocusSearch.mock.calls).toHaveLength(1);
+        expect(onFocusSearch).toBeCalledWith(value);
+    });
+
+    it('it handles search blur', () => {
+        const value = 'test';
+        const noop = jest.fn();
+        const onBlurSearch = jest.fn();
+        const wrapper = mount(
+            <Select {...props} searchValue={value} onChangeSearch={noop} onBlurSearch={onBlurSearch} />
+        );
+
+        wrapper.find('.mfui-select__search-field').simulate('blur');
+        expect(onBlurSearch).toBeCalledWith(value);
     });
 
     it('it handles search change', () => {

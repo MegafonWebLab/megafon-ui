@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Select**
+    - add onBlurSearch prop
 
 ## 1.7.3
 - **Textarea**

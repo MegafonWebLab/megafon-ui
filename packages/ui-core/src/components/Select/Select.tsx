@@ -78,6 +78,8 @@ interface ISelectProps<T> {
     onChangeSearch?(value: string): void;
     /** Focus handler */
     onFocusSearch?(value: string): void;
+    /** Blur handler */
+    onBlurSearch?(value: string): void;
     /** Click item handler */
     onSelectItem?(e: React.SyntheticEvent<EventTarget>, data: {
         title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
@@ -148,6 +150,7 @@ class Select<T> extends React.Component<ISelectProps<T>, ISelectState> {
         ),
         onChangeSearch: PropTypes.func,
         onFocusSearch: PropTypes.func,
+        onBlurSearch: PropTypes.func,
         onSelectItem: PropTypes.func,
         onClickIcon: PropTypes.func,
     };
@@ -245,6 +248,16 @@ class Select<T> extends React.Component<ISelectProps<T>, ISelectState> {
         const { onFocusSearch } = this.props;
 
         onFocusSearch && onFocusSearch(e.target.value);
+    }
+
+    handleBlurSearch = (e: React.SyntheticEvent<HTMLInputElement>): void => {
+        if (!(e.target instanceof HTMLInputElement)) {
+            return;
+        }
+
+        const { onBlurSearch } = this.props;
+
+        onBlurSearch && onBlurSearch(e.target.value);
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
@@ -371,6 +384,7 @@ class Select<T> extends React.Component<ISelectProps<T>, ISelectState> {
                 onClick={this.handleClickSearch}
                 onChange={this.handleChangeSearch}
                 onFocus={this.handleFocusSearch}
+                onBlur={this.handleBlurSearch}
                 ref={node => { this.search = node; }}
                 type="text"
                 name={this.props.name}
