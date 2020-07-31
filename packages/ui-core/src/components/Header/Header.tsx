@@ -14,6 +14,9 @@ interface IHeaderProps {
     addition?: JSX.Element;
     /** Custom class name */
     className?: string;
+    /** Horizontal align */
+    hAlign?: 'left' | 'center' | 'right';
+    /** Children */
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** Click handler */
     onClick?(e: React.SyntheticEvent<EventTarget>): void;
@@ -28,11 +31,13 @@ class Header extends React.Component<IHeaderProps, {}> {
         addition: PropTypes.element,
         onClick: PropTypes.func,
         children: PropTypes.node,
+        hAlign: PropTypes.oneOf(['left', 'center', 'right']),
     };
 
     static defaultProps: Partial<IHeaderProps> = {
         as: 'h1',
         color: 'black',
+        hAlign: 'left',
     };
 
     renderAddition() {
@@ -45,10 +50,12 @@ class Header extends React.Component<IHeaderProps, {}> {
 
     render() {
         const ElementType = this.props.as as string;
-        const { color, margin, as: level, onClick } = this.props;
+        const { color, margin, as: level, hAlign, onClick } = this.props;
 
         return (
-            <ElementType className={cn('', { color, margin, level }, this.props.className)} onClick={onClick}>
+            <ElementType
+                    className={cn('', { color, margin, level, 'h-align': hAlign }, this.props.className)}
+                    onClick={onClick}>
                 {this.props.children}
                 {this.props.addition && this.renderAddition()}
             </ElementType>
