@@ -2,7 +2,7 @@
 
 exports[`<VideoBanner /> it renders VideoBanner with props 1`] = `
 <div
-  className="mfui-video-banner__test-class-name"
+  className="mfui-video-banner mfui-video-banner_demo test-class-name"
 >
   <ContentArea
     innerBackgroundColor="transparent"
@@ -94,7 +94,6 @@ exports[`<VideoBanner /> it renders VideoBanner with props 1`] = `
               <video
                 autoPlay={true}
                 className="mfui-video-banner__video"
-                loop={true}
                 muted={true}
               >
                 <source

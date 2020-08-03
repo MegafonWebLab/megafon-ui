@@ -70,17 +70,20 @@
         max-height: 100%;
         max-width: 100%;
     }
-}
 
-// For demo
+    &_demo {
+        @{b}__video {
+            background-image: url('./i/dump.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            height: 100%;
+            width: 100%;
+        }
+    }
 
-@{d} {
-    @{b}__video {
-        background-image: url('./i/dump.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        height: 100%;
+    &__youtube-wrapper {
         width: 100%;
+        height: 100%;
     }
 }

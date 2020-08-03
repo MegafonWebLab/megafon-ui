@@ -6,7 +6,7 @@ route: components/video-banner
 
 import { Playground, Props } from 'docz';
 import VideoBanner from './VideoBanner';
-import { content, videoSource } from './VideoBanner.docz';
+import { content, video } from './VideoBanner.docz';
 
 # VideoBanner
 
@@ -25,21 +25,19 @@ const content = {
 }
 ```
 
-## Video block with content
+## Video content
 
 <Playground>
     <VideoBanner
         content={content}
-        videoSource={videoSource}
-        className='demo-with-dump'
+        videoSource={video}
     />
 </Playground>
 
-## Video block without content
+## Video without content
 
 <Playground>
     <VideoBanner
-        videoSource={videoSource}
-        className='demo-with-dump'
+        videoSource={video}
     />
 </Playground>

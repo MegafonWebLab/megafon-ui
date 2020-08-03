@@ -8,10 +8,4 @@ export const content = {
     href: '#',
 };
 
-export const videoSource = {
-    desktopWide: '',
-    desktop: '',
-    desktopSmall: '',
-    tablet: '',
-    mobile: '',
-};
+export const video = '';

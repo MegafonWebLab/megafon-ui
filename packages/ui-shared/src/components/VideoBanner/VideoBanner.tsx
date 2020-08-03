@@ -1,11 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './VideoBanner.less';
-import throttle from 'lodash.throttle';
-import { resolution } from '@megafon/ui-core';
 import { Header, Button, Paragraph, ContentArea, Grid, GridColumn, cnCreate } from '@megafon/ui-core';
-
-type ScreenSizeTypes = 'desktopWide' | 'desktop' | 'desktopSmall' | 'tablet' | 'mobile';
 
 interface IContentData {
     title?: string;
@@ -14,19 +10,13 @@ interface IContentData {
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-interface IVideoSrc {
-    desktopWide: string;
-    desktop: string;
-    desktopSmall: string;
-    tablet: string;
-    mobile: string;
-}
-
 export interface Props {
     /** Content */
     content?: IContentData;
-    /** Video breakpoints */
-    videoSource: IVideoSrc;
+    /** Video type */
+    videoType?: 'youtube' | 'gif';
+    /** Video source */
+    videoSource: string;
     /** Custom className */
     className?: string;
 }
@@ -36,68 +26,33 @@ const BUTTON_TITLE = 'Подробнее';
 const cn = cnCreate('mfui-video-banner');
 const VideoBanner: React.FC<Props> = ({
     content,
+    videoType = 'video',
     videoSource,
     className,
 }) => {
-    const [screenSize, setScreenSize] = React.useState<ScreenSizeTypes>('desktop');
 
-    const video = React.useRef<HTMLVideoElement>(null);
-
-    const handleResize = (): void => {
-        const mobile: boolean = resolution.isMobileScreen();
-        const tablet: boolean = resolution.isTabletScreen();
-        const desktopSmall: boolean = resolution.isDesktopSmallScreen();
-        const desktop: boolean = resolution.isDesktopScreen();
-        const desktopWide: boolean = resolution.isDesktopWideScreen();
-
-        switch (true) {
-            case mobile: {
-                video.current && video.current.load();
-                setScreenSize('mobile');
-                break;
-            }
-            case tablet: {
-                video.current && video.current.load();
-                setScreenSize('tablet');
-                break;
-            }
-            case desktopSmall: {
-                video.current && video.current.load();
-                setScreenSize('desktopSmall');
-                break;
-            }
-            case desktop: {
-                video.current && video.current.load();
-                setScreenSize('desktop');
-                break;
-            }
-            case desktopWide: {
-                video.current && video.current.load();
-                setScreenSize('desktopWide');
-                break;
-            }
-            default: {
-                break;
-            }
+    const renderSource = (sourceType): JSX.Element => {
+        switch (sourceType) {
+            case 'youtube':
+                return (
+                    <iframe className={cn('youtube-wrapper')}
+                            src={videoSource}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen />
+                );
+            case 'gif':
+                return (
+                    <img src={videoSource} alt="gif"/>
+                );
+            default:
+                return (
+                    <video className={cn('video')} autoPlay muted>
+                        <source className={cn('source')} src={videoSource} type="video/mp4" />
+                    </video>
+            );
         }
     };
-
-    const handleSetThrottled = throttle(handleResize, 20);
-
-    React.useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleSetThrottled);
-
-        return (): void => {
-            window.removeEventListener('resize', handleSetThrottled);
-        };
-    }, [handleSetThrottled]);
-
-    const renderSource = (): JSX.Element => (
-        <video className={cn('video')} loop autoPlay muted ref={video}>
-            <source className={cn('source')} src={videoSource[screenSize]} type="video/mp4" />
-        </video>
-    );
 
     const renderContent = (contentData: IContentData): JSX.Element => {
         const { title, description, href, onButtonClick } = contentData;
@@ -127,7 +82,7 @@ const VideoBanner: React.FC<Props> = ({
             <GridColumn all={columnWidth} tablet="12" mobile="12" key={0}>
                 <div className={cn('video-wrapper')}>
                     <div className={cn('video-inner')}>
-                        {renderSource()}
+                        {renderSource(videoType)}
                     </div>
                 </div>
             </GridColumn>
@@ -145,7 +100,7 @@ const VideoBanner: React.FC<Props> = ({
     };
 
     return (
-        <div className={cn(className)}>
+        <div className={cn('', { 'demo': true }, className)}>
             <ContentArea outerBackgroundColor="white">
                 <div className={cn('inner')}>
                     <Grid vAlign="center" hAlign="center">
@@ -160,17 +115,12 @@ const VideoBanner: React.FC<Props> = ({
 VideoBanner.propTypes = {
     content: PropTypes.shape({
         title: PropTypes.string,
-        description: PropTypes.string,
+        description: PropTypes.array,
         href: PropTypes.string,
         onButtonClick: PropTypes.func,
     }),
-    videoSource: PropTypes.shape({
-        desktopWide: PropTypes.string.isRequired,
-        desktop: PropTypes.string.isRequired,
-        desktopSmall: PropTypes.string.isRequired,
-        tablet: PropTypes.string.isRequired,
-        mobile: PropTypes.string.isRequired,
-    }).isRequired,
+    videoType: PropTypes.oneOf(['youtube', 'gif']),
+    videoSource: PropTypes.string.isRequired,
     className: PropTypes.string,
 };
 

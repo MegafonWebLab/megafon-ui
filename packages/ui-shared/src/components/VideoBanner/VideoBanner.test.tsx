@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import VideoBanner, { Props } from './VideoBanner';
 
 const props: Props = {
@@ -11,13 +11,7 @@ const props: Props = {
         ],
         href: '#',
     },
-    videoSource: {
-        desktopWide: '',
-        desktop: '',
-        desktopSmall: '',
-        tablet: '',
-        mobile: '',
-    },
+    videoSource: '',
     className: 'test-class-name',
 };
 
