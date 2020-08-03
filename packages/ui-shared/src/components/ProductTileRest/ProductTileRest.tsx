@@ -22,12 +22,10 @@ interface IProductTileRestProps {
     buyButtonText: string;
     showBuyButton: boolean;
 
-    /** button border */
-    buttonBorder?: IButtonProps['border'];
-    /** button font color */
-    buttonFontColor?: IButtonProps['fontColor'];
-    /** button background color */
-    buttonPassiveColor?: IButtonProps['passiveColor'];
+    /** button theme */
+    buttonTheme?: IButtonProps['theme'];
+    /** button type */
+    buttonType?: IButtonProps['type'];
 
     connectLink: string;
     connectLinkTarget?: TLinkTargetType;
@@ -65,9 +63,8 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
         connectLinkTarget: LinkTargetType,
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
-        buttonBorder: Button.propTypes.border,
-        buttonFontColor: Button.propTypes.fontColor,
-        buttonPassiveColor: Button.propTypes.passiveColor,
+        buttonTheme: Button.propTypes?.theme,
+        buttonType: Button.propTypes?.type,
         payment: PropTypes.shape({
             title: PropTypes.string,
             value: PropTypes.string.isRequired,
@@ -228,9 +225,8 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
             buyLink,
             showBuyButton,
             buyButtonText,
-            buttonBorder,
-            buttonFontColor,
-            buttonPassiveColor,
+            buttonTheme,
+            buttonType,
             isActive,
             className,
             linkTarget,
@@ -260,11 +256,11 @@ class ProductTileRest extends React.Component<IProductTileRestProps> {
                 <div className={cn('buy')}>
                     {showBuyButton &&
                         <Button
-                            className={cn('buy-button', { 'additional-margin': !showConnectButton })}
-                            passiveColor={buttonPassiveColor}
-                            border={buttonBorder}
-                            fontColor={buttonFontColor}
-                            hoverColor="green"
+                            classes={{
+                                root: cn('buy-button', { 'additional-margin': !showConnectButton }),
+                            }}
+                            theme={buttonTheme}
+                            type={buttonType}
                             sizeAll="medium"
                             href={buyLink}
                             target={buyLinkTarget}

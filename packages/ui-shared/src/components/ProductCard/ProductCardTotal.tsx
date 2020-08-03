@@ -141,8 +141,10 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                     <div className={cn('buttons', {}, classNameButtons)}>
                         {isSubmit &&
                             <Button
-                                className={cn('button', {}, classNameSubmit)}
-                                width="full"
+                                classes={{
+                                    root: cn('button', {}, classNameSubmit),
+                                }}
+                                fullWidth
                                 href={submitLink}
                                 onClick={this.handleSubmit}
                                 target={submitLinkTarget}
@@ -152,10 +154,11 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                         }
                         {!isSubmit && isMore &&
                             <Button
-                                className={cn('description-more', {}, classNameMore)}
-                                width="full"
-                                passiveColor="transparent-green"
-                                hoverColor="green"
+                                classes={{
+                                    root: cn('description-more', {}, classNameMore),
+                                }}
+                                type="outline"
+                                fullWidth
                                 href={moreLink}
                                 target={moreLinkTarget}
                                 onClick={this.handleClickMore}

@@ -7,7 +7,7 @@ route: components/button
 import { Playground, Props } from 'docz';
 import Button from './Button';
 import ArrowBack from 'icons/System/24/Arrow_back_24.svg';
-import { ButtonWrapper } from './Button.docz';
+import { BlockWrapper, DarkBlockWrapper, ButtonWrapper } from './Button.docz';
 
 # Button
 
@@ -15,54 +15,136 @@ import { ButtonWrapper } from './Button.docz';
 
 <Props of={Button} />
 
-## Basic usage
-
+## Basic usage: type = primary, theme = green
 <Playground>
-    <ButtonWrapper>
-        <Button>Submit</Button>
-    </ButtonWrapper>
+    <BlockWrapper>
+        <ButtonWrapper>
+            <Button>active</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button disabled={true}>disabled</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button showSpinner={true}>with spinner</Button>
+        </ButtonWrapper>
+    </BlockWrapper>
 </Playground>
 
-## Spinner usage
-
+## Basic usage: type = primary, theme = purple
 <Playground>
-    <ButtonWrapper>
-        <Button showSpinner={true}>Submit</Button>
-    </ButtonWrapper>
+    <BlockWrapper>
+        <ButtonWrapper>
+            <Button theme="purple">active</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button theme="purple" disabled={true}>disabled</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button theme="purple" showSpinner={true}>with spinner</Button>
+        </ButtonWrapper>
+    </BlockWrapper>
 </Playground>
 
-## Disabled button
-
+## Basic usage: type = primary, theme = white
 <Playground>
-    <ButtonWrapper>
-        <Button disabled={true}>Submit</Button>
-    </ButtonWrapper>
+    <BlockWrapper>
+        <ButtonWrapper>
+            <Button theme="white">active</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button theme="white" disabled={true}>disabled</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button theme="white" showSpinner={true}>with spinner</Button>
+        </ButtonWrapper>
+    </BlockWrapper>
+</Playground>
+
+
+## Basic usage: type = outline, theme = green
+<Playground>
+    <BlockWrapper>
+        <ButtonWrapper>
+            <Button type="outline">active</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" disabled={true}>disabled</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" showSpinner={true}>with spinner</Button>
+        </ButtonWrapper>
+    </BlockWrapper>
+</Playground>
+
+## Basic usage: type = outline, theme = purple
+<Playground>
+    <BlockWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="purple">active</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="purple" disabled={true}>disabled</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="purple" showSpinner={true}>with spinner</Button>
+        </ButtonWrapper>
+    </BlockWrapper>
+</Playground>
+
+## Basic usage: type = outline, theme = white
+<Playground>
+    <BlockWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="white">active</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="white" disabled={true}>disabled</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="white" showSpinner={true}>with spinner</Button>
+        </ButtonWrapper>
+    </BlockWrapper>
+</Playground>
+
+## Basic usage: type = outline, theme = black
+<Playground>
+    <DarkBlockWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="black">active</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="black" disabled={true}>disabled</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+            <Button type="outline" theme="black" showSpinner={true}>with spinner</Button>
+        </ButtonWrapper>
+    </DarkBlockWrapper>
 </Playground>
 
 ## Link
 
 <Playground>
-    <ButtonWrapper>
+    <BlockWrapper>
         <Button href="#">Link</Button>
-    </ButtonWrapper>
+    </BlockWrapper>
 </Playground>
 
 ## Disabled link
 
 <Playground>
-    <ButtonWrapper>
+    <BlockWrapper>
         <Button href="#" disabled={true}>
             Link
         </Button>
-    </ButtonWrapper>
+    </BlockWrapper>
 </Playground>
 
 ## Link with target attribute
 
 <Playground>
-    <ButtonWrapper>
+    <BlockWrapper>
         <Button target="_blank" href="#">
             Link
         </Button>
-    </ButtonWrapper>
+    </BlockWrapper>
 </Playground>

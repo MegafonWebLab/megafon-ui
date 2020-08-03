@@ -3,7 +3,7 @@ import cnCreate from 'utils/cnCreate';
 import './Switcher.less';
 import detectTouch from 'utils/detectTouch';
 
-interface ISwitcherProps {
+export interface ISwitcherProps {
     /** Custom classname */
     className?: string;
     /** Checked */

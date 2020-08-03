@@ -4,7 +4,7 @@ import { cnCreate, Button, TextLink } from '@megafon/ui-core';
 import './style/ProductTileBuy.less';
 import { TLinkTargetType } from './ProductTile';
 
-type IButtonProps = Button['props'];
+type IButtonProps = React.ComponentProps<typeof Button>;
 
 export interface IProductTileBuyProps {
     /** Class name */
@@ -25,13 +25,11 @@ export interface IProductTileBuyProps {
     connectButtonText?: string;
     /** Show connect button */
     showConnectButton?: boolean;
-    /** button border */
-    buttonBorder?: IButtonProps['border'];
-    /** button font color */
-    buttonFontColor?: IButtonProps['fontColor'];
+    /** button theme */
+    buttonTheme?: IButtonProps['theme'];
+    /** button type */
+    buttonType?: IButtonProps['type'];
     /** button background color */
-    buttonPassiveColor?: IButtonProps['passiveColor'];
-    /** Connect hander */
     onClickConnect?(e: React.SyntheticEvent<EventTarget>): void;
     /** Buy hander */
     onClickBuy?(e: React.SyntheticEvent<EventTarget>): void;
@@ -48,9 +46,8 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
         connectLinkTarget: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
         connectButtonText: PropTypes.string,
         showConnectButton: PropTypes.bool,
-        buttonBorder: Button.propTypes.border,
-        buttonFontColor: Button.propTypes.fontColor,
-        buttonPassiveColor: Button.propTypes.passiveColor,
+        buttonTheme: Button.propTypes?.theme,
+        buttonType: Button.propTypes?.type,
         onClickBuy: PropTypes.func,
         onClickConnect: PropTypes.func,
     };
@@ -73,9 +70,8 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
             connectLink,
             connectButtonText,
             showConnectButton,
-            buttonBorder,
-            buttonFontColor,
-            buttonPassiveColor,
+            buttonTheme,
+            buttonType,
             onClickBuy,
             onClickConnect,
             buyLinkTarget,
@@ -86,14 +82,14 @@ class ProductTileBuy extends React.Component<IProductTileBuyProps> {
             <div className={cn('', {}, className)}>
                 {showBuyButton &&
                     <Button
-                        className={cn('button', { 'single-button': !showConnectButton })}
-                        passiveColor={buttonPassiveColor}
-                        hoverColor="green"
+                        classes={{
+                            root: cn('button', { 'single-button': !showConnectButton }),
+                        }}
+                        theme={buttonTheme}
+                        type={buttonType}
                         sizeAll="medium"
                         href={buyLink}
                         target={buyLinkTarget}
-                        border={buttonBorder}
-                        fontColor={buttonFontColor}
                         onClick={onClickBuy}
                     >
                         {buyButtonText}

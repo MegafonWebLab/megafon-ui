@@ -122,12 +122,10 @@ export interface IProductTileProps {
     buyButtonText?: string;
     /** Show buy button */
     showBuyButton?: boolean;
-    /** button border */
-    buttonBorder?: IProductTileBuyProps['buttonBorder'];
-    /** button font color */
-    buttonFontColor?: IProductTileBuyProps['buttonFontColor'];
-    /** button background color */
-    buttonPassiveColor?: IProductTileBuyProps['buttonPassiveColor'];
+    /** button theme */
+    buttonTheme?: IProductTileBuyProps['buttonTheme'];
+    /** button type */
+    buttonType?: IProductTileBuyProps['buttonType'];
 
     /** Connect link */
     connectLink?: string;
@@ -203,9 +201,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
         buyLinkTarget: LinkTargetType,
         usePackBuyLink: PropTypes.bool,
         buyButtonText: PropTypes.string,
-        buttonBorder: Buy.propTypes.buttonBorder,
-        buttonFontColor: Buy.propTypes.buttonFontColor,
-        buttonPassiveColor: Buy.propTypes.buttonPassiveColor,
+        buttonTheme: Buy.propTypes.buttonTheme,
+        buttonType: Buy.propTypes.buttonType,
         showBuyButton: PropTypes.bool,
         connectLink: PropTypes.string,
         connectLinkTarget: LinkTargetType,
@@ -563,9 +560,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
             secondParamsHead,
             showConnectButton,
             showBuyButton,
-            buttonBorder,
-            buttonFontColor,
-            buttonPassiveColor,
+            buttonTheme,
+            buttonType,
             connectLink,
             topBadgeLinkTarget,
             buyLinkTarget,
@@ -607,9 +603,8 @@ class ProductTile extends React.Component<IProductTileProps, IProductTileState> 
                     connectButtonText={connectButtonText}
                     showBuyButton={showBuyButton}
                     showConnectButton={showConnectButton}
-                    buttonBorder={buttonBorder}
-                    buttonFontColor={buttonFontColor}
-                    buttonPassiveColor={buttonPassiveColor}
+                    buttonTheme={buttonTheme}
+                    buttonType={buttonType}
                     onClickBuy={this.handleClickBuy}
                     onClickConnect={this.handleClickConnect}
                 />
