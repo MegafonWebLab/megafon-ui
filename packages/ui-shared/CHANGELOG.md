@@ -2,6 +2,7 @@
 
 ## Unreleased
 - **Constructor**
+    - create ButtonLinkBox component
     - create TitleDescriptionBox component
 
 ## Release 1.0.30

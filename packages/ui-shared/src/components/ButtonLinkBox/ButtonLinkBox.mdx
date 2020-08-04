@@ -1,0 +1,73 @@
+---
+name: ButtonLinkBox
+menu: Constructor
+submenu: Test
+route: components/button-link-box
+---
+
+import { Playground, Props } from 'docz';
+import ButtonLinkBox from './ButtonLinkBox';
+import { DemoBackgroundWrapper } from './ButtonLinkBox.docz';
+
+# ButtonLinkBox
+
+## Properties ButtonLinkBox
+<Props of={ButtonLinkBox} />
+
+## Basic usage
+
+<Playground>
+    <ButtonLinkBox
+        buttonTitle="Button"
+        buttonUrl="#"
+        linkTitle="Link"
+        linkUrl="#"
+        className="custom-class"
+    />
+</Playground>
+
+## Button only
+
+<Playground>
+    <ButtonLinkBox
+        buttonTitle="Button"
+        buttonUrl="#"
+    />
+</Playground>
+
+## Link only
+
+<Playground>
+    <ButtonLinkBox
+        linkTitle="Link"
+        linkUrl="#"
+    />
+</Playground>
+
+## Gorizontal alignment
+
+<Playground>
+    <ButtonLinkBox
+        buttonTitle="Button"
+        buttonUrl="#"
+        linkTitle="Link"
+        linkUrl="#"
+        hAlign="center"
+    />
+</Playground>
+
+## Terms of usage on a green background
+
+- it's forrbidden to use link
+- button has to be purple
+
+<Playground>
+    <DemoBackgroundWrapper>
+        <ButtonLinkBox
+            buttonTitle="Button"
+            buttonUrl="#"
+            buttonColor="purple"
+            hAlign="center"
+        />
+    </DemoBackgroundWrapper>
+</Playground>

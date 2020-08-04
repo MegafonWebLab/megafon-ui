@@ -15,6 +15,7 @@ export default {
     menu: [
         'Beginning of work',
         'Components',
+        'Constructor',
         'Icons',
         'Colors'
     ],
