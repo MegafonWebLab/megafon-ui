@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Header**
+    - add hAlign prop
 - **Colors**
     - added documentation for guide colors
     - deleted Mandarin color, added border only for white color
