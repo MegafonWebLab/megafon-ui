@@ -29,16 +29,27 @@ export interface IGridColumn {
     /** Order on mobile screens */
     orderMobile?: string;
 
-    /** Size of offset on wide screens */
-    offsetWide?: TGridSizeValues;
-    /** Size of offset on desktop screens */
-    offsetDesktop?: TGridSizeValues;
-    /** Size of offset on tablet screens */
-    offsetTablet?: TGridSizeValues;
-    /** Size of offset on mobile screens */
-    offsetMobile?: TGridSizeValues;
-    /** Size of offset on all screens */
-    offsetAll?: TGridSizeValues;
+    /** Size of left offset on wide screens */
+    leftOffsetWide?: TGridSizeValues;
+    /** Size of left offset on desktop screens */
+    leftOffsetDesktop?: TGridSizeValues;
+    /** Size of left offset on tablet screens */
+    leftOffsetTablet?: TGridSizeValues;
+    /** Size of left offset on mobile screens */
+    leftOffsetMobile?: TGridSizeValues;
+    /** Size of left offset on all screens */
+    leftOffsetAll?: TGridSizeValues;
+
+    /** Size of right offset on wide screens */
+    rightOffsetWide?: TGridSizeValues;
+    /** Size of right offset on desktop screens */
+    rightOffsetDesktop?: TGridSizeValues;
+    /** Size of right offset on tablet screens */
+    rightOffsetTablet?: TGridSizeValues;
+    /** Size of right offset on mobile screens */
+    rightOffsetMobile?: TGridSizeValues;
+    /** Size of right offset on all screens */
+    rightOffsetAll?: TGridSizeValues;
 
     /** Custom alignment of column */
     align?: 'right' | 'left' | 'center';
@@ -66,11 +77,11 @@ class GridColumn extends React.Component<IGridColumn, {}> {
         orderTablet: PropTypes.string,
         orderMobile: PropTypes.string,
 
-        offsetWide: GridSizeValues,
-        offsetDesktop: GridSizeValues,
-        offsetTablet: GridSizeValues,
-        offsetMobile: GridSizeValues,
-        offsetAll: GridSizeValues,
+        leftOffsetWide: GridSizeValues,
+        leftOffsetDesktop: GridSizeValues,
+        leftOffsetTablet: GridSizeValues,
+        leftOffsetMobile: GridSizeValues,
+        leftOffsetAll: GridSizeValues,
 
         align: PropTypes.oneOf(['right', 'left', 'center']),
         grow: PropTypes.bool,
@@ -106,11 +117,16 @@ class GridColumn extends React.Component<IGridColumn, {}> {
             orderDesktop,
             orderTablet,
             orderMobile,
-            offsetAll,
-            offsetWide,
-            offsetDesktop,
-            offsetTablet,
-            offsetMobile,
+            leftOffsetAll,
+            leftOffsetWide,
+            leftOffsetDesktop,
+            leftOffsetTablet,
+            leftOffsetMobile,
+            rightOffsetAll,
+            rightOffsetWide,
+            rightOffsetDesktop,
+            rightOffsetTablet,
+            rightOffsetMobile,
             className,
             flex,
             grow,
@@ -136,11 +152,16 @@ class GridColumn extends React.Component<IGridColumn, {}> {
                         'desktop-order': orderDesktop,
                         'tablet-order': orderTablet,
                         'mobile-order': orderMobile,
-                        'offset-all': offsetAll,
-                        'offset-wide': offsetWide,
-                        'offset-desktop': offsetDesktop,
-                        'offset-tablet': offsetTablet,
-                        'offset-mobile': offsetMobile,
+                        'left-offset-all': leftOffsetAll,
+                        'left-offset-wide': leftOffsetWide,
+                        'left-offset-desktop': leftOffsetDesktop,
+                        'left-offset-tablet': leftOffsetTablet,
+                        'left-offset-mobile': leftOffsetMobile,
+                        'right-offset-all': rightOffsetAll,
+                        'right-offset-wide': rightOffsetWide,
+                        'right-offset-desktop': rightOffsetDesktop,
+                        'right-offset-tablet': rightOffsetTablet,
+                        'right-offset-mobile': rightOffsetMobile,
                     },
                     className
                 )}

@@ -1,0 +1,188 @@
+---
+name: BenefitsIcons
+menu: Constructor
+route: components/benefits-icons
+---
+
+import { Playground, Props } from 'docz';
+import BenefitsIcons from './BenefitsIcons';
+import { fiveItems, fourItems, threeItems, twoItems, twoItemsWithoutText, twoItemsWithoutTitle } from './BenefitsIcons.docz.tsx';
+
+# BenefitsIcons
+
+## Properties
+<Props of={BenefitsIcons} />
+
+### iconPosition values
+value        | description
+-------------|----------
+*left-side*  | left-aligned column with left side icon
+*left-top*   | left-aligned column with left-aligned icon on top
+*center-top* | center-aligned column with center-aligned icon on top
+
+## Basic usage
+
+<Playground>
+    <BenefitsIcons
+        items={twoItems}
+    />
+</Playground>
+
+## Only title
+
+<Playground>
+    <BenefitsIcons
+        items={twoItemsWithoutText}
+        iconPosition="left-side"
+    />
+</Playground>
+
+## Only text
+
+<Playground>
+    <BenefitsIcons
+        items={twoItemsWithoutTitle}
+        iconPosition="left-side"
+    />
+</Playground>
+
+## Left-aligned column with left-aligned icon on top
+
+#### 2 items
+<Playground>
+    <BenefitsIcons
+        items={twoItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+#### 3 items
+<Playground>
+    <BenefitsIcons
+        items={threeItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+#### 4 items
+<Playground>
+    <BenefitsIcons
+        items={fourItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+#### 5 items
+<Playground>
+    <BenefitsIcons
+        items={fiveItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+## Left-aligned column with left side icon
+
+#### 2 items
+<Playground>
+    <BenefitsIcons
+        items={twoItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+#### 3 items
+<Playground>
+    <BenefitsIcons
+        items={threeItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+#### 4 items
+<Playground>
+    <BenefitsIcons
+        items={fourItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+#### 5 items
+<Playground>
+    <BenefitsIcons
+        items={fiveItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+## Center-aligned column with center-aligned icon on top
+
+#### 2 items
+<Playground>
+    <BenefitsIcons
+        items={twoItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+#### 3 items
+<Playground>
+    <BenefitsIcons
+        items={threeItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+#### 4 items
+<Playground>
+    <BenefitsIcons
+        items={fourItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+#### 5 items
+<Playground>
+    <BenefitsIcons
+        items={fiveItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+## Included props
+
+``` javascript
+const twoItemsWithoutText = [
+    {
+        title: 'Lorem ipsum',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        title: 'Lorem ipsum',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
+const twoItemsWithoutTitle = [
+    {
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
+const twoItems = [
+    {
+        title: 'Lorem ipsum',
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        title: 'Lorem ipsum',
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+```

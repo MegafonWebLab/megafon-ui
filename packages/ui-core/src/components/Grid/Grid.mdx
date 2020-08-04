@@ -346,15 +346,26 @@ import { itemView } from './Grid.docz';
     </Grid>
 </Playground>
 
-## Offset usage
+## Left offset usage
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="2" offsetAll="3"><div style={itemView}>Item1</div></GridColumn>
-        <GridColumn all="5" offsetAll="1"><div style={itemView}>Item2</div></GridColumn>
-        <GridColumn all="3" offsetAll="2"><div style={itemView}>Item3</div></GridColumn>
-        <GridColumn all="4" offsetAll="1"><div style={itemView}>Item4</div></GridColumn>
-        <GridColumn all="4" offsetAll="1"><div style={itemView}>Item5</div></GridColumn>
-        <GridColumn all="3" offsetAll="1"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="2" leftOffsetAll="3"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="5" leftOffsetAll="1"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="3" leftOffsetAll="2"><div style={itemView}>Item3</div></GridColumn>
+        <GridColumn all="4" leftOffsetAll="1"><div style={itemView}>Item4</div></GridColumn>
+        <GridColumn all="4" leftOffsetAll="1"><div style={itemView}>Item5</div></GridColumn>
+        <GridColumn all="3" leftOffsetAll="1"><div style={itemView}>Item5</div></GridColumn>
+    </Grid>
+</Playground>
+
+## Right offset usage
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium" hAlign="center">
+        <GridColumn all="3" leftOffsetAll="2"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="3" rightOffsetAll="2"><div style={itemView}>Item2</div></GridColumn>
+        <GridColumn all="3" leftOffsetAll="2"><div style={itemView}>Item1</div></GridColumn>
+        <GridColumn all="3" rightOffsetAll="2"><div style={itemView}>Item1</div></GridColumn>
     </Grid>
 </Playground>

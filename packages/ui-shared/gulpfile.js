@@ -28,6 +28,7 @@ const indexTs = path.join(srcPath, 'index.ts');
 const doczReg = 'src/**/*.docz.{tsx,ts}';
 const testsReg = 'src/**/*.test.{tsx,ts}';
 const iconsReg = 'src/**/Icons.{tsx,ts}';
+const typesReg = 'src/**/types.ts';
 
 /**
  * CONFIG
@@ -161,7 +162,7 @@ gulp.task('ts', () => {
 
 gulp.task('main', done => {
     const files = glob.sync('src/components/**/*.{tsx,ts}', {
-        ignore: [testsReg, doczReg]
+        ignore: [testsReg, doczReg, typesReg]
     });
     fs.writeFile(indexTs, generateIndex(files), done);
 });

@@ -57,6 +57,7 @@
     - correct header css for style guide, delete h6 props
     - updated documentation
     - synchronized colors according to the guide
+    - fix children type
 - **cn**
     - add variability to add arguments
     - rename `cn` to `cnCreate`
@@ -82,8 +83,11 @@
     - add inherit color
 - **Grid**
     - fix children type
+    - add left to hAlight prop
 - **GridColumn**
     - fix children type
+    - rename offset props to leftOffset
+    - add rightOffset props
 
 ## Release 1.4.1
 - **Carousel**
