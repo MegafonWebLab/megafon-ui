@@ -48,7 +48,7 @@ export interface IGridColumn {
     flex?: boolean;
     /** Custom class name */
     className?: string;
-    children: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    children: React.ReactNode;
 }
 
 const cn = cnCreate('mfui-grid-column');

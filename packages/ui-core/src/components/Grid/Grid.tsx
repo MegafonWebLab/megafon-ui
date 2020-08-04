@@ -15,7 +15,7 @@ interface IGridProps {
     guttersBottom?: 'large' | 'medium';
     /** Transfering of columns onto multiple lines */
     multiRow?: boolean;
-    children: Array<React.ReactElement<IGridColumn>>;
+    children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
 
 const cn = cnCreate('mfui-grid');
@@ -46,7 +46,7 @@ class Grid extends React.Component<IGridProps> {
                         'gutters-left': guttersLeft,
                         'gutters-bottom': guttersBottom,
                     })}>
-                    {React.Children.map(children, (child) =>
+                    {React.Children.map(children, (child: React.ReactElement<IGridColumn>) =>
                         React.cloneElement(child, {
                             className: cn(
                                 'column',
