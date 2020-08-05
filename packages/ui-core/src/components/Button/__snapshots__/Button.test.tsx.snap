@@ -31,7 +31,7 @@ exports[`<Button /> it renders spinner 1`] = `
       className="mfui-button__inner"
     >
       <div
-        className="mfui-button__spinner mfui-button__spinner_type_primary mfui-button__spinner_theme_green"
+        className="mfui-button__spinner"
       >
         <test-file-stub />
       </div>

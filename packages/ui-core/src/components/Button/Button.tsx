@@ -2,18 +2,17 @@ import * as React from 'react';
 import cnCreate from 'utils/cnCreate';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
+import Arrow from 'icons/System/24/Arrow_right_24.svg';
 import detectTouch from 'utils/detectTouch';
-
-interface IButtonClasses {
-    /** Button class */
-    root?: string;
-    /** Inner content class */
-    content?: string;
-}
 
 export interface IButtonProps {
     /** Custom classes for button and button text-area */
-    classes?: IButtonClasses;
+    classes?: {
+        /** Button class */
+        root?: string;
+        /** Inner content class */
+        content?: string;
+    };
     /** Theme */
     theme?: 'green' | 'purple' | 'white' | 'black';
     /** Type */
@@ -36,10 +35,14 @@ export interface IButtonProps {
     sizeMobile?: 'small' | 'medium' | 'large';
     /** Display full width button */
     fullWidth?: boolean;
-    /** Disabled */
-    disabled?: boolean;
     /** Show spinner */
     showSpinner?: boolean;
+    /** Show button with arrow */
+    showArrow?: boolean;
+    /** Icon to output with a text */
+    iconLeft?: JSX.Element;
+    /** Disabled */
+    disabled?: boolean;
     children?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     /** Click event handler */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
@@ -54,6 +57,9 @@ const Button: React.FC<IButtonProps> = props => {
         } = {},
         theme = 'green',
         type = 'primary',
+        href,
+        target,
+        actionType = 'button',
         sizeAll = 'medium',
         sizeWide,
         sizeDesktop,
@@ -61,16 +67,14 @@ const Button: React.FC<IButtonProps> = props => {
         sizeMobile,
         fullWidth = false,
         showSpinner = false,
-        href,
-        actionType = 'button',
+        showArrow = false,
+        iconLeft,
         disabled,
-        target,
         children,
         onClick,
     } = props;
 
     const isTouch: boolean = detectTouch();
-    // isTouch: boolean = true;
     const ElementType = href ? 'a' : 'button';
 
     const handleClick = React.useCallback((e: React.SyntheticEvent<EventTarget>): void => {
@@ -87,17 +91,17 @@ const Button: React.FC<IButtonProps> = props => {
         (type === 'primary') && (theme === 'black') ? 'green' : theme
     ), [theme]);
 
-    const renderChildrenElem: JSX.Element = React.useMemo(() => {
-        return (
-            <div className={cn('content', {}, contentClassName)}>
-                {children}
-            </div>
-        );
-    }, [contentClassName, children]);
+    const renderChildrenElem: JSX.Element = React.useMemo(() => (
+        <div className={cn('content', {}, contentClassName)}>
+            {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
+            {children}
+            {!iconLeft && showArrow && <Arrow className={cn('icon', { arrow: true })} />}
+        </div>
+    ), [contentClassName, showArrow, children]);
 
     const renderSpinner: JSX.Element = React.useMemo(() => {
         return (
-            <div className={cn('spinner', { type, theme })}>
+            <div className={cn('spinner')}>
                 <Spinner />
             </div>
         );
