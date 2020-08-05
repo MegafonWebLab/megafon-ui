@@ -23,6 +23,7 @@ exports[`<Select /> it renders with disabled state 1`] = `
       <div
         className="mfui-select__arrow-wrap"
         onClick={[Function]}
+        tabIndex={1}
       >
         <span
           className="mfui-select__arrow"

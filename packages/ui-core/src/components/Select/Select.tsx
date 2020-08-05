@@ -104,9 +104,12 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     itemWrapperNode: HTMLDivElement;
     itemsNodeList: HTMLDivElement[];
     selectNode: HTMLDivElement;
+    inputNode: HTMLInputElement;
 
     isTouch: boolean = detectTouch();
-    debouncedComboboxChange = debounce((filteredItems) => this.setState({ filteredItems }), 500);
+    debouncedComboboxChange = debounce((filteredItems, filterValue) => {
+        this.setState({ filteredItems, inputValue: filterValue, isOpened: true });
+    }, 250);
 
     constructor(props: ISelectProps) {
         super(props);
@@ -132,6 +135,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         document.removeEventListener('click', this.onClickOutside);
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('click', this.onClickOutside);
+    }
+
     onClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
@@ -147,7 +154,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleClickItem = (itemValue: number | string) => (e: React.SyntheticEvent<EventTarget>): void => {
-        const { onSelect, items } = this.props;
+        const { onSelect, items, type } = this.props;
         const item = items.find(elem => elem.value === itemValue);
 
         if (!item) {
@@ -156,10 +163,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         const { title } = item;
 
-        this.setState({
-            isOpened: false,
-            inputValue: title,
-        });
+        this.setState({isOpened: false });
+
+        if (type === Types.COMBOBOX) {
+            this.inputNode.value = title;
+        }
 
         onSelect && onSelect(e, item);
     }
@@ -198,12 +206,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         });
 
-        this.setState({
-            isOpened: true,
-            inputValue: filterValue,
-        });
-
-        this.debouncedComboboxChange(filteredItems);
+        this.debouncedComboboxChange(filteredItems, filterValue);
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
@@ -216,16 +219,18 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
-                this.scrollList(activeIndex);
+                this.scrollList(this.state.activeIndex);
             });
+
             e.preventDefault();
 
             return false;
         }
         if (e.key === 'ArrowUp' && activeIndex > 0) {
             this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
-                this.scrollList(activeIndex);
+                this.scrollList(this.state.activeIndex);
             });
+
             e.preventDefault();
 
             return false;
@@ -268,11 +273,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const itemHeight = item.offsetHeight;
 
         if (itemOffset + itemHeight > wrapperScroll + wrapperHeight) {
-            wrapper.scrollTop = wrapperScroll + itemOffset + itemHeight - wrapperScroll - wrapperHeight;
+            wrapper.scrollTop = itemOffset + itemHeight - wrapperHeight;
         }
 
         if (itemOffset < wrapperScroll) {
-            wrapper.scrollTop = wrapperScroll - wrapperScroll + itemOffset;
+            wrapper.scrollTop = itemOffset;
         }
     }
 
@@ -305,6 +310,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     getItemWrapper = node => this.itemWrapperNode = node;
     getSelectNode = node => this.selectNode = node;
+    getInputNode = node => this.inputNode = node;
 
     renderTitle() {
         const { placeholder, items, currentValue } = this.props;
@@ -332,7 +338,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     renderCombobox() {
         const { placeholder } = this.props;
-        const { inputValue } = this.state;
 
         return (
             <input
@@ -340,7 +345,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 onClick={this.handleClickCombobox}
                 onChange={this.handleChangeCombobox}
                 type="text"
-                value={inputValue}
+                ref={this.getInputNode}
                 placeholder={placeholder}
             />
         );
@@ -415,7 +420,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     >
                         {(type === Types.COMBOBOX) && this.renderCombobox()}
                         {(type === Types.CLASSIC) && this.renderTitle()}
-                        <div className={cn('arrow-wrap')} onClick={this.handleOpenDropdown}>
+                        <div className={cn('arrow-wrap')} tabIndex={1} onClick={this.handleOpenDropdown}>
                             <span className={cn('arrow')} />
                         </div>
                     </div>

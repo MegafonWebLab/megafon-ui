@@ -93,7 +93,8 @@
         align-items: center;
         top: 0;
         right: 20px;
-        z-index: 1;
+        z-index: 11;
+        outline: none;
     }
 
     &__arrow {
@@ -139,7 +140,6 @@
     }
 
     &__list-inner {
-        overflow: auto;
         padding: 12px 0;
         box-sizing: border-box;
         max-height: 368px;
@@ -248,5 +248,9 @@
 
     &_disabled &__title-inner:after {
         display: none;
+    }
+
+    &__test {
+        position: relative;
     }
 }
