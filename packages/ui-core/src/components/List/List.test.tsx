@@ -10,7 +10,7 @@ describe('<List />', () => {
     });
 
     it('it render with disable margin left', () => {
-        const wrapper = shallow(<List disableLeftMargin><ListItem disableLeftMargin /></List>);
+        const wrapper = shallow(<List disableLeftMargin><ListItem /></List>);
         expect(wrapper).toMatchSnapshot();
     });
 });

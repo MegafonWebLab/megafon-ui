@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<ListItem /> it render with disable margin left 1`] = `
+<li
+  className="mfui-list-item mfui-list-item_disable-left-margin"
+>
+  item
+</li>
+`;
+
 exports[`<ListItem /> it renders ListItem 1`] = `
 <li
   className="mfui-list-item"
