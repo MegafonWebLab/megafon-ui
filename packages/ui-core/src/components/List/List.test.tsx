@@ -8,4 +8,9 @@ describe('<List />', () => {
         const wrapper = shallow(<List><ListItem /></List>);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('it render with disable margin left', () => {
+        const wrapper = shallow(<List disableLeftMargin><ListItem /></List>);
+        expect(wrapper).toMatchSnapshot();
+    });
 });

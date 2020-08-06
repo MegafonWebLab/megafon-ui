@@ -14,6 +14,9 @@ interface IListProps {
     color?: 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
     /** Custom classname */
     className?: string;
+    /** Left margin */
+    disableLeftMargin?: boolean;
+    /** Children */
     children: JSX.Element[] | Element[] | JSX.Element | Element;
 }
 
@@ -25,6 +28,7 @@ class List extends React.Component<IListProps, {}> {
         weight: PropTypes.oneOf(['light', 'regular', 'bold']),
         color: PropTypes.oneOf(['black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
         className: PropTypes.string,
+        disableLeftMargin: PropTypes.bool,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.element,
@@ -35,16 +39,18 @@ class List extends React.Component<IListProps, {}> {
         as: 'ul',
         color: 'black',
         weight: 'regular',
+        disableLeftMargin: false,
     };
 
     render() {
         const ElementType = this.props.as as string;
-        const { as, hAlign, color, weight, className, children } = this.props;
+        const { as, hAlign, color, weight, className, disableLeftMargin, children } = this.props;
 
         return (
             <ElementType
                 className={cn('', {
                     'h-align': hAlign,
+                    'disable-left-margin': disableLeftMargin,
                     color, weight,
                     type: as,
                 }, className)}>
