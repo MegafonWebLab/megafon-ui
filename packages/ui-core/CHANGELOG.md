@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.7.5
 **List**
     - added list-style rules
 
