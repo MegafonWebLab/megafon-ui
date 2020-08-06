@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- **ListItem**
+    - add disableLeftMargin prop
+
+- **List**
+    - add disableLeftMargin prop
+
 ## 1.7.5
 **List**
     - added list-style rules

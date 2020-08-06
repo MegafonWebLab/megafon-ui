@@ -6,6 +6,9 @@ import cnCreate from 'utils/cn';
 interface IListItemProps {
     /** Custom classname */
     className?: string;
+    /** Left margin */
+    disableLeftMargin?: boolean;
+    /** Children */
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
@@ -13,6 +16,7 @@ const cn = cnCreate('mfui-list-item');
 class ListItem extends React.Component<IListItemProps, {}> {
     static propTypes = {
         className: PropTypes.string,
+        disableLeftMargin: PropTypes.boolean,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.arrayOf(PropTypes.node),
@@ -22,10 +26,16 @@ class ListItem extends React.Component<IListItemProps, {}> {
         ]),
     };
 
+    static defaultProps = {
+        disableLeftMargin: false,
+    };
+
     render() {
+        const {className, disableLeftMargin, children } = this.props;
+
         return (
-            <li className={cn('', {}, this.props.className)}>
-                {this.props.children}
+            <li className={cn('', {'disable-left-margin': disableLeftMargin}, className)}>
+                {children}
             </li>
         );
     }
