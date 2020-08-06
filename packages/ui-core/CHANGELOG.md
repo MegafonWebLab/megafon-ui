@@ -3,6 +3,7 @@
 ## Unreleased
 - **Colors**
     - added documentation for guide colors
+    - deleted Mandarin color, added border only for white color
 - **BubbleHint**
     - synchronized colors according to the guide
 - **Button**

@@ -66,10 +66,6 @@ export default [
                 value: '#F62434',
             },
             {
-                name: 'Mandarin',
-                value: '#FFA717',
-            },
-            {
                 name: 'Link',
                 value: '#34AAF2',
             },
