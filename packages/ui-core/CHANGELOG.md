@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **List**
+    - added list-style rules
 - **Colors**
     - added documentation for guide colors
     - deleted Mandarin color, added border only for white color
