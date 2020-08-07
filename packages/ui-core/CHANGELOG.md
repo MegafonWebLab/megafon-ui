@@ -1,8 +1,6 @@
 # Changelog
 
 ## Unreleased
-- **Header**
-    - add hAlign prop
 - **Colors**
     - added documentation for guide colors
     - deleted Mandarin color, added border only for white color
@@ -60,6 +58,7 @@
     - correct header css for style guide, delete h6 props
     - updated documentation
     - synchronized colors according to the guide
+    - add hAlign prop
     - fix children type
 - **cn**
     - add variability to add arguments

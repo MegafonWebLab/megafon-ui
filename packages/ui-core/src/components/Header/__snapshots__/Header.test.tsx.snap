@@ -20,12 +20,6 @@ exports[`<Header /> it renders with children 1`] = `
 </h1>
 `;
 
-exports[`<Header /> it renders with text align center 1`] = `
-<h1
-  className="mfui-header mfui-header_color_black mfui-header_level_h1 mfui-header_h-align_center"
-/>
-`;
-
 exports[`<Header /> it renders with white color class 1`] = `
 <h1
   className="mfui-header mfui-header_color_white mfui-header_level_h1 mfui-header_h-align_left"
@@ -35,5 +29,17 @@ exports[`<Header /> it renders with white color class 1`] = `
 exports[`<Header /> it renders without class margin 1`] = `
 <h1
   className="mfui-header mfui-header_color_black mfui-header_level_h1 mfui-header_h-align_left"
+/>
+`;
+
+exports[`<Header /> testing align props 1`] = `
+<h1
+  className="mfui-header mfui-header_color_black mfui-header_level_h1 mfui-header_h-align_left"
+/>
+`;
+
+exports[`<Header /> testing align props 2`] = `
+<h1
+  className="mfui-header mfui-header_color_black mfui-header_level_h1 mfui-header_h-align_right"
 />
 `;
