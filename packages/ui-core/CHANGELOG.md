@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- **Header**
+    - add hAlign prop
+
 ## 1.7.6
 - **ListItem**
     - add disableLeftMargin prop
