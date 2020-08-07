@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Header from './Header';
+import Header, { IHeaderProps } from './Header';
+
+const props: IHeaderProps = {
+    as: 'h1',
+    color: 'black',
+    hAlign: 'left',
+};
 
 describe('<Header />', () => {
     it('it renders with default h1 tag', () => {
@@ -33,6 +39,11 @@ describe('<Header />', () => {
 
     it('it renders with children', () => {
         const wrapper = shallow(<Header><section /></Header>);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders with text align center', () => {
+        const wrapper = shallow(<Header hAlign="center" />);
         expect(wrapper).toMatchSnapshot();
     });
 });

@@ -24,6 +24,7 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
         as="h2"
         className="mfui-title-description-box__item"
         color="inherit"
+        hAlign="left"
       >
         title
       </Header>
@@ -63,6 +64,7 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without description
         as="h2"
         className="mfui-title-description-box__item"
         color="inherit"
+        hAlign="left"
       >
         title
       </Header>

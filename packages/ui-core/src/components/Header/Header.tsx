@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Header.less';
 import cnCreate from 'utils/cnCreate';
 
-interface IHeaderProps {
+export interface IHeaderProps {
     /** Tag */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Color */
@@ -14,6 +14,9 @@ interface IHeaderProps {
     addition?: JSX.Element;
     /** Custom class name */
     className?: string;
+    /** Horizontal align */
+    hAlign?: 'left' | 'center' | 'right';
+    /** Children */
     children?: React.ReactNode;
     /** Click handler */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
@@ -26,6 +29,7 @@ class Header extends React.Component<IHeaderProps, {}> {
         color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
         margin: PropTypes.bool,
         addition: PropTypes.element,
+        hAlign: PropTypes.oneOf(['left', 'center', 'right']),
         onClick: PropTypes.func,
         children: PropTypes.node,
     };
@@ -33,6 +37,7 @@ class Header extends React.Component<IHeaderProps, {}> {
     static defaultProps: Partial<IHeaderProps> = {
         as: 'h1',
         color: 'black',
+        hAlign: 'left',
     };
 
     renderAddition() {
@@ -45,10 +50,12 @@ class Header extends React.Component<IHeaderProps, {}> {
 
     render() {
         const ElementType = this.props.as as React.ElementType;
-        const { color, margin, as: level, onClick } = this.props;
+        const { color, margin, as: level, hAlign, className, onClick } = this.props;
 
         return (
-            <ElementType className={cn('', { color, margin, level }, this.props.className)} onClick={onClick}>
+            <ElementType
+                    className={cn({ color, margin, level, 'h-align': hAlign }, className)}
+                    onClick={onClick}>
                 {this.props.children}
                 {this.props.addition && this.renderAddition()}
             </ElementType>

@@ -16,9 +16,10 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
       <Header
         as="h5"
         color="black"
+        hAlign="left"
       >
         <h5
-          className="mfui-header mfui-header_color_black mfui-header_level_h5"
+          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_left"
         >
           Test
         </h5>
@@ -71,9 +72,10 @@ exports[`<Accordion /> it renders Accordion 1`] = `
       <Header
         as="h5"
         color="black"
+        hAlign="left"
       >
         <h5
-          className="mfui-header mfui-header_color_black mfui-header_level_h5"
+          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_left"
         >
           Test
         </h5>
