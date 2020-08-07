@@ -63,6 +63,7 @@ interface ISelectState {
     isOpened: boolean;
     activeIndex: number;
     filteredItems: ISelectItem[];
+    comparableInputValue: string;
     inputValue: string;
 }
 
@@ -104,11 +105,21 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     itemWrapperNode: HTMLDivElement;
     itemsNodeList: HTMLDivElement[];
     selectNode: HTMLDivElement;
-    inputNode: HTMLInputElement;
 
     isTouch: boolean = detectTouch();
-    debouncedComboboxChange = debounce((filteredItems, filterValue) => {
-        this.setState({ filteredItems, inputValue: filterValue, isOpened: true });
+
+    debouncedComboboxChange = debounce((filterValue) => {
+        const { items } = this.props;
+
+        const filteredItems = items.filter(({ title }) => {
+            if (filterValue.length <= title.length) {
+                return RegExp(filterValue, 'ig').test(title);
+            }
+
+            return false;
+        });
+
+        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true });
     }, 250);
 
     constructor(props: ISelectProps) {
@@ -118,6 +129,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             isOpened: false,
             activeIndex: 0,
             filteredItems: props.items,
+            comparableInputValue: '',
             inputValue: '',
         };
         this.itemsNodeList = [];
@@ -154,7 +166,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleClickItem = (itemValue: number | string) => (e: React.SyntheticEvent<EventTarget>): void => {
-        const { onSelect, items, type } = this.props;
+        const { onSelect, items } = this.props;
         const item = items.find(elem => elem.value === itemValue);
 
         if (!item) {
@@ -163,11 +175,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         const { title } = item;
 
-        this.setState({isOpened: false });
-
-        if (type === Types.COMBOBOX) {
-            this.inputNode.value = title;
-        }
+        this.setState({isOpened: false, inputValue: title });
 
         onSelect && onSelect(e, item);
     }
@@ -195,18 +203,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        const { items } = this.props;
         const filterValue = e.target.value;
 
-        const filteredItems = items.filter(({ title }) => {
-            if (filterValue.length <= title.length) {
-                return RegExp(filterValue, 'ig').test(title);
-            }
+        this.setState({ inputValue: filterValue });
 
-            return false;
-        });
-
-        this.debouncedComboboxChange(filteredItems, filterValue);
+        this.debouncedComboboxChange(filterValue);
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
@@ -283,7 +284,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     highlightString = (title, view) => {
         const { type } = this.props;
-        const { inputValue } = this.state;
+        const { comparableInputValue } = this.state;
 
         if (type === Types.CLASSIC) {
             return view || title;
@@ -292,13 +293,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return view;
         }
 
-        const stringFragments = title.split(RegExp(`(${inputValue})`, 'ig'));
+        const stringFragments = title.split(RegExp(`(${comparableInputValue})`, 'ig'));
 
         return (
             <Paragraph hasMargin={false}>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
-                        {(fragment.toLowerCase() === inputValue.toLowerCase())
+                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase())
                             ? <span className={cn('highlighted-fragment')}>{fragment}</span>
                             : fragment
                         }
@@ -310,7 +311,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     getItemWrapper = node => this.itemWrapperNode = node;
     getSelectNode = node => this.selectNode = node;
-    getInputNode = node => this.inputNode = node;
 
     renderTitle() {
         const { placeholder, items, currentValue } = this.props;
@@ -338,6 +338,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     renderCombobox() {
         const { placeholder } = this.props;
+        const { inputValue } = this.state;
 
         return (
             <input
@@ -345,7 +346,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 onClick={this.handleClickCombobox}
                 onChange={this.handleChangeCombobox}
                 type="text"
-                ref={this.getInputNode}
+                value={inputValue}
                 placeholder={placeholder}
             />
         );
