@@ -42,12 +42,8 @@ describe('<Header />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('testing align props', () => {
-        const wrapper = shallow(<Header {...props} />);
-
-        wrapper.setProps({hALign: 'center'});
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({hAlign: 'right'});
+    it('it renders with text align center', () => {
+        const wrapper = shallow(<Header hAlign="center" />);
         expect(wrapper).toMatchSnapshot();
     });
 });
