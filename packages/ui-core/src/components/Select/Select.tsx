@@ -56,7 +56,7 @@ interface ISelectProps {
     /** Object for the custom class */
     classes?: ISelectClasses;
     /** Select item handler */
-    onSelect?: (e: React.SyntheticEvent<EventTarget>, dataItem: ISelectItem) => void;
+    onSelect?: (e: React.MouseEvent<HTMLDivElement>, dataItem: ISelectItem) => void;
 }
 
 interface ISelectState {
@@ -81,7 +81,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         placeholder: PropTypes.string,
         notFoundText: PropTypes.string,
         className: PropTypes.string,
-        classes: PropTypes.shape({ control: PropTypes.string }),
+        classes: PropTypes.shape({
+            control: PropTypes.string,
+            root: PropTypes.string,
+        }),
         items: PropTypes.arrayOf(
             PropTypes.shape({
                 view: PropTypes.oneOfType([
@@ -108,7 +111,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     isTouch: boolean = detectTouch();
 
-    debouncedComboboxChange = debounce((filterValue) => {
+    debouncedComboboxChange = debounce((filterValue: string) => {
         const { items } = this.props;
 
         const filteredItems = items.filter(({ title }) => {
@@ -139,19 +142,19 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const { isOpened } = this.state;
 
         if (isOpened) {
-            document.addEventListener('click', this.onClickOutside);
+            document.addEventListener('click', this.handleClickOutside);
 
             return;
         }
 
-        document.removeEventListener('click', this.onClickOutside);
+        document.removeEventListener('click', this.handleClickOutside);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('click', this.onClickOutside);
+        document.removeEventListener('click', this.handleClickOutside);
     }
 
-    onClickOutside = (e: MouseEvent): void => {
+    handleClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
         if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpened) {
@@ -165,7 +168,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
-    handleClickItem = (itemValue: number | string) => (e: React.SyntheticEvent<EventTarget>): void => {
+    handleClickItem = (itemValue: number | string) => (e: React.MouseEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
         const item = items.find(elem => elem.value === itemValue);
 
@@ -180,7 +183,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         onSelect && onSelect(e, item);
     }
 
-    handleHoverItem = (index: number) => (e: React.SyntheticEvent<EventTarget>): void => {
+    handleHoverItem = (index: number) => (e: React.MouseEvent<HTMLDivElement>): void => {
         e.preventDefault();
 
         this.setState({ activeIndex: index });
@@ -311,6 +314,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     getItemWrapper = node => this.itemWrapperNode = node;
     getSelectNode = node => this.selectNode = node;
+    getNodeList = node => this.itemsNodeList.push(node);
 
     renderTitle() {
         const { placeholder, items, currentValue } = this.props;
@@ -357,8 +361,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const { filteredItems, activeIndex } = this.state;
         const currentItems = type === Types.COMBOBOX ? filteredItems : items;
 
-        this.itemsNodeList = [];
-
         return (
             <div className={cn('list')}>
                 <div className={cn('list-inner')} ref={this.getItemWrapper}>
@@ -370,7 +372,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                             key={Number(value) + i}
                             onClick={this.handleClickItem(value)}
                             onMouseEnter={this.handleHoverItem(i)}
-                            ref={node => { node && this.itemsNodeList.push(node); }}
+                            ref={this.getNodeList}
                         >
                             <div className={cn('item-title')}>
                                 {this.highlightString(title, view)}

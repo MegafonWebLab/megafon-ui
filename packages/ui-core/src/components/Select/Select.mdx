@@ -17,17 +17,6 @@ import Metro from 'icons/System/24/Metro_24.svg';
 <Props of={Select} />
 
 ```javascript
-export interface ISelectItem {
-    title: string;
-    value: number | string;
-    view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-}
-
-interface ISelectClasses {
-    control?: string;
-    root?: string;
-}
-
 enum Verification {
     VALID = 'valid',
     ERROR = 'error',
@@ -40,18 +29,59 @@ enum Types {
 ```
 
 ```javascript
+export interface ISelectItem {
+    title: string;
+    value: number | string;
+    view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+}
+
+interface ISelectClasses {
+    control?: string;
+    root?: string;
+}
+```
+
+```javascript
 const items = [
     {
         value: 1,
-        title: 'Uporovka village',
+        title: 'Авиамоторная',
     },
     {
         value: 2,
-        title: 'Palevo village',
+        title: 'Академическая',
     },
     {
         value: 3,
-        title: 'Chuvaki village',
+        title: 'Бабушкинская',
+    },
+    {
+        value: 4,
+        title: 'Багратионовская',
+    },
+    {
+        value: 5,
+        title: 'ВДНХ',
+    },
+    {
+        value: 6,
+        title: 'Варшавская',
+    },
+    {
+        value: 7,
+        title: 'Деловой центр',
+    },
+    {
+        value: 8,
+        title: 'Дмитровская',
+    },
+    {
+        value: 9,
+        title: 'Калужская',
+    },
+    {
+        value: 10,
+        title: 'Кантемировская',
     },
 ];
 ```

@@ -4,15 +4,43 @@ import { ISelectItem } from './Select';
 export const items = [
     {
         value: 1,
-        title: 'Uporovka village',
+        title: 'Авиамоторная',
     },
     {
         value: 2,
-        title: 'Palevo village',
+        title: 'Академическая',
     },
     {
         value: 3,
-        title: 'Chuvaki village',
+        title: 'Бабушкинская',
+    },
+    {
+        value: 4,
+        title: 'Багратионовская',
+    },
+    {
+        value: 5,
+        title: 'ВДНХ',
+    },
+    {
+        value: 6,
+        title: 'Варшавская',
+    },
+    {
+        value: 7,
+        title: 'Деловой центр',
+    },
+    {
+        value: 8,
+        title: 'Дмитровская',
+    },
+    {
+        value: 9,
+        title: 'Калужская',
+    },
+    {
+        value: 10,
+        title: 'Кантемировская',
     },
 ];
 
@@ -33,8 +61,8 @@ const selectWrapperStyle = {
 type CurrentValue = number | undefined;
 
 interface ISelectChildrenProps {
-    onSelect: (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
     currentValue: number | undefined;
+    onSelect: (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
 }
 
 interface ISelectWrapperProps {
