@@ -91,9 +91,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         disablePaddingBetweenSlides: false,
     };
 
-    firstClientX: number = 0;
-    clientX: number = 0;
-    noPassiveOption: any = { passive: false };
     slider: any = null;
     throttledResizeEvents: () => void;
 
@@ -120,8 +117,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         const isNextActive: boolean = initialSlide !== slidesShown;
 
         this.handleCarouselParams();
-        window.addEventListener('touchstart', this.touchStart);
-        window.addEventListener('touchmove', this.preventTouch, this.noPassiveOption);
         window.addEventListener('resize', this.throttledResizeEvents);
 
         this.setState({
@@ -131,8 +126,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('touchstart', this.touchStart);
-        window.removeEventListener('touchmove', this.preventTouch, this.noPassiveOption);
         window.removeEventListener('resize', this.throttledResizeEvents);
     }
 
@@ -171,23 +164,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
             isPrevActive: !!slideIndex,
             isNextActive,
         });
-    }
-
-    touchStart(e: TouchEvent): void {
-        this.firstClientX = e.touches[0].clientX;
-    }
-
-    preventTouch(e: TouchEvent): void | boolean {
-        const minValue = 5; // threshold
-
-        this.clientX = e.touches[0].clientX - this.firstClientX;
-
-        // Vertical scrolling does not work when you start swiping horizontally.
-        if (e.cancelable && (Math.abs(this.clientX) > minValue)) {
-            e.preventDefault();
-            e.returnValue = false;
-            return false;
-        }
     }
 
     getResponsiveData = (breakpoints, desktopArrows: boolean, desktopSlides: number, childsAmount: number) => {

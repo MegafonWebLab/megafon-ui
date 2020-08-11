@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - removed touchStart and touchMove events
+    - removed touch-action for slick-list
+    - added pinch-zoom touch action for slick-track
 - **List**
     - added list-style rules
 - **Colors**

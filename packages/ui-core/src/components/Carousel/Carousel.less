@@ -64,8 +64,6 @@
         }
 
         &-list {
-            touch-action: pan-y;
-
             @media @mobileS {
                 width: 228px;
             }
@@ -76,7 +74,7 @@
             align-items: stretch;
             display: flex;
             z-index: 1;
-            touch-action: pan-y;
+            touch-action: pan-y pinch-zoom;
         }
 
         &-dots {
