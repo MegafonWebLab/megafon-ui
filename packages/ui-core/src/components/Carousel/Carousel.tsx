@@ -90,9 +90,6 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
         disablePaddingBetweenSlides: false,
     };
 
-    firstClientX: number;
-    clientX: number;
-    noPassiveOption: any = { passive: false };
     slider: any;
     throttledResizeEvents: () => void;
 
