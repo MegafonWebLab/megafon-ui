@@ -110,15 +110,12 @@ describe('<Carousel />', () => {
     });
 
     describe('componentDidMount tests', () => {
-        it('should call three event listeners', () => {
+        it('should call event listener', () => {
             const addEventListener = jest.spyOn(window, 'addEventListener');
 
             const wrapper = shallow(<Carousel {...props} />);
             const instance = wrapper.instance() as Carousel;
 
-            expect(addEventListener).toHaveBeenCalledTimes(3);
-            expect(addEventListener).toBeCalledWith('touchstart', instance.touchStart);
-            expect(addEventListener).toBeCalledWith('touchmove', instance.preventTouch, instance.noPassiveOption);
             expect(addEventListener).toBeCalledWith('resize', instance.throttledResizeEvents);
 
             addEventListener.mockRestore();
