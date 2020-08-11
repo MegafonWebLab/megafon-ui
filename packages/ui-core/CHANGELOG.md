@@ -4,6 +4,10 @@
 
 - **Header**
     - add hAlign prop
+- **Carousel**
+    - removed touchStart and touchMove events
+    - removed touch-action for slick-list
+    - added pinch-zoom touch action for slick-track
 
 ## 1.7.6
 - **ListItem**
