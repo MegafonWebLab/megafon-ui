@@ -9,7 +9,7 @@ interface IClassSet {
 }
 
 type CustomClassNameType = string;
-type CustomClassNamesArrayType = string[];
+type CustomClassNamesArrayType = Array<string | undefined>;
 type CustomClassNamesType = CustomClassNameType | CustomClassNamesArrayType | undefined;
 
 type ElementNameType = string | IModificators | CustomClassNamesArrayType | CustomClassNamesType;
@@ -25,7 +25,7 @@ const getCustomClassName = (first?: ElementNameType, second?: ElementNameType, t
         return second;
     }
     if (Array.isArray(third)) {
-        return third.filter(f => typeof f === 'string').join(' ');
+        return third.filter(f => typeof f === 'string' && f.length > 0).join(' ');
     }
     if (typeof third === 'string') {
         return third;
