@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+## 1.7.7
 - **Header**
     - add hAlign prop
 - **Carousel**
