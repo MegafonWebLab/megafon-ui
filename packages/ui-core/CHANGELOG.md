@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.7.8
+- **cn**
+    - allow use undefined in array of custom classes
+    - fix bug with extra space for empty string in array of custom classes
+
 ## 1.7.7
 - **Header**
     - add hAlign prop
