@@ -7,6 +7,16 @@ import InputLabel from 'components/InputLabel/InputLabel';
 import Paragraph from 'components/Paragraph/Paragraph';
 import debounce from 'lodash.debounce';
 
+enum Verification {
+    VALID = 'valid',
+    ERROR = 'error',
+}
+
+enum Types {
+    CLASSIC = 'classic',
+    COMBOBOX = 'combobox',
+}
+
 export interface ISelectItem {
     title: string;
     value: number | string;
@@ -16,16 +26,6 @@ export interface ISelectItem {
 interface ISelectClasses {
     control?: string;
     root?: string;
-}
-
-enum Verification {
-    VALID = 'valid',
-    ERROR = 'error',
-}
-
-enum Types {
-    CLASSIC = 'classic',
-    COMBOBOX = 'combobox',
 }
 
 interface ISelectProps {
