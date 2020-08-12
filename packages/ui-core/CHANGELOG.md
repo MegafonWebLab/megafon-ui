@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **cn**
+    - allow use undefined in array of custom classes
+    - fix bug with extra space for empty string in array of custom classes
 - **Header**
     - removed hAlign from defaultProps
 - **ListItem**
