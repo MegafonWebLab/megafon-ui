@@ -8,7 +8,6 @@ exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] 
     as="h3"
     className="mfui-product-card-features-bottom__title"
     color="black"
-    hAlign="left"
     margin={false}
   >
     test
@@ -27,7 +26,6 @@ exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] 
         as="h5"
         className="mfui-product-card-features-bottom__item-title"
         color="black"
-        hAlign="left"
         margin={false}
       >
         test
