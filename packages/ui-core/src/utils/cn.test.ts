@@ -52,9 +52,24 @@ describe('cnCreate', () => {
             expect(selector).toBe('test__make custom-class');
         });
 
+        it('get with undefined filled array of custom classes', () => {
+            const selector = cn('make', {}, [undefined, undefined]);
+            expect(selector).toBe('test__make');
+        });
+
         it('get with empty string in array of custom classes', () => {
             const selector = cn('make', {}, ['', 'custom-class']);
             expect(selector).toBe('test__make custom-class');
+        });
+
+        it('get with empty string filled array of custom classes', () => {
+            const selector = cn('make', {}, ['', '']);
+            expect(selector).toBe('test__make');
+        });
+
+        it('get with undefined and empty string in array of custom classes', () => {
+            const selector = cn('make', {}, [undefined, '']);
+            expect(selector).toBe('test__make');
         });
 
         it('get with empty prefix', () => {

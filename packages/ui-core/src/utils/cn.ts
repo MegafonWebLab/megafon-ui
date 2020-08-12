@@ -8,8 +8,8 @@ interface IClassSet {
     [key: string]: boolean;
 }
 
-type CustomClassNameType = string;
-type CustomClassNamesArrayType = Array<string | undefined>;
+type CustomClassNameType = string | undefined;
+type CustomClassNamesArrayType = CustomClassNameType[];
 type CustomClassNamesType = CustomClassNameType | CustomClassNamesArrayType | undefined;
 
 type ElementNameType = string | IModificators | CustomClassNamesArrayType | CustomClassNamesType;
