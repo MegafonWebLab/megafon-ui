@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Header.less';
 import cnCreate from 'utils/cnCreate';
 
-export interface IHeaderProps {
+interface IHeaderProps {
     /** Tag */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Color */
@@ -15,7 +15,7 @@ export interface IHeaderProps {
     /** Custom class name */
     className?: string;
     /** Horizontal align */
-    hAlign?: 'left' | 'center' | 'right';
+    hAlign?: 'inherit' | 'left' | 'center' | 'right';
     /** Children */
     children?: React.ReactNode;
     /** Click handler */
@@ -29,7 +29,7 @@ class Header extends React.Component<IHeaderProps, {}> {
         color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
         margin: PropTypes.bool,
         addition: PropTypes.element,
-        hAlign: PropTypes.oneOf(['left', 'center', 'right']),
+        hAlign: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
         onClick: PropTypes.func,
         children: PropTypes.node,
     };
@@ -37,7 +37,7 @@ class Header extends React.Component<IHeaderProps, {}> {
     static defaultProps: Partial<IHeaderProps> = {
         as: 'h1',
         color: 'black',
-        hAlign: 'left',
+        hAlign: 'inherit',
     };
 
     renderAddition() {

@@ -11,7 +11,7 @@ exports[`<ProductCardFeaturesTop /> it renders ProductCardFeaturesTop 1`] = `
       as="h3"
       className="mfui-product-card-features-top__title"
       color="black"
-      hAlign="left"
+      hAlign="inherit"
       margin={false}
     >
       test
