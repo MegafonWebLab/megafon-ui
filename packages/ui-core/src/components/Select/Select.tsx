@@ -1,433 +1,385 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Select.less';
-import SelectItem from './SelectItem';
-import equal from 'deep-equal';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
-import InputLabel from '../InputLabel/InputLabel';
+import InputLabel from 'components/InputLabel/InputLabel';
+import Paragraph from 'components/Paragraph/Paragraph';
+import debounce from 'lodash.debounce';
 
-export interface ISelectCallbackItem {
-    title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    value?: string;
-    index: number;
-    data?: {};
+enum Verification {
+    VALID = 'valid',
+    ERROR = 'error',
+}
+
+enum Types {
+    CLASSIC = 'classic',
+    COMBOBOX = 'combobox',
+}
+
+export interface ISelectItem {
+    title: string;
+    value: number | string;
+    view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+}
+
+interface ISelectClasses {
+    control?: string;
+    root?: string;
 }
 
 interface ISelectProps {
+    /** Select type */
+    type?: Types;
     /** Field title */
-    label?: React.ReactNode;
-    /** Html id attribute */
-    id?: string;
-    /** Header with the selected value */
-    selectedTitle?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    /** Selected value */
-    selectedValue?: string;
-    /** Search field value */
-    searchValue?: string;
-    /** Attribute name */
-    name?: string;
-    /** Icon */
-    icon?: JSX.Element;
-    /** Arrow display */
-    arrow?: boolean;
-    /** Validation passed */
-    valid?: boolean;
-    /** Validation error */
-    error?: boolean;
-    /** Disabled field */
-    disabled?: boolean;
-    /** Size */
-    size?: 'large';
-    /** Color */
-    color?: 'light';
-    /** Size of search results */
-    resultSize?: 'small' | 'medium';
-    /** Font size */
-    fontSize?: 'medium' | 'large';
-    /** Font color */
-    fontColor?: 'black' | 'blue';
-    /** Controls padding */
-    controlsPadding?: 'none';
-    /** Input padding */
-    inputPadding?: 'small';
-    /** Dropdown item padding */
-    itemPadding?: 'small';
-    /** Required */
+    label?: string;
+    /** Html id attribute for label */
+    labelId?: string;
+    /** Current selected item */
+    currentValue?: number;
+    /** Verification */
+    verification?: Verification;
+    /** Notice text */
+    noticeText?: string;
+    /** isDisabled field */
+    isDisabled?: boolean;
+    /** Makes the field required. */
     required?: boolean;
-    /** Navigation from the keyboard */
-    keyNavigation?: boolean;
     /** Placeholder */
     placeholder?: string;
-    /** Enable selector open */
-    canOpen?: boolean;
     /** Text in the absence of search results */
     notFoundText?: string;
     /** Array of objects to be used for options rendering */
-    items: Array<{
-        /** Id */
-        id?: string;
-        /** Header */
-        title?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-        /** Value */
-        value?: string;
-        data?: {};
-        /** Left icon */
-        leftIcon?: JSX.Element;
-        /** Right icon */
-        rightIcon?: JSX.Element;
-    }>;
+    items: ISelectItem[];
     /** Custom classname */
     className?: string;
-    /** Custom classname for controls block */
-    classNameControl?: string;
-    /** Change handler */
-    onChangeSearch?: (value: string) => void;
-    /** Focus handler */
-    onFocusSearch?: (value: string) => void;
-    /** Click item handler */
-    onSelectItem?: (e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => void;
-    /** Click icon handler */
-    onClickIcon?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Object for the custom class */
+    classes?: ISelectClasses;
+    /** Select item handler */
+    onSelect?: (e: React.MouseEvent<HTMLDivElement>, dataItem: ISelectItem) => void;
 }
 
 interface ISelectState {
-    isOpen: boolean;
-    focus: boolean;
+    isOpened: boolean;
     activeIndex: number;
-    currentIndex: number;
+    filteredItems: ISelectItem[];
+    comparableInputValue: string;
+    inputValue: string;
 }
 
 const cn = cnCreate('mfui-select');
 class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
-        label: PropTypes.node,
+        type: PropTypes.oneOf(Object.values(Types)),
+        label: PropTypes.string,
         id: PropTypes.string,
-        selectedTitle: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.string,
-            PropTypes.element,
-            PropTypes.node,
-        ]),
-        selectedValue: PropTypes.string,
-        searchValue: PropTypes.string,
-        name: PropTypes.string,
-        icon: PropTypes.element,
-        arrow: PropTypes.bool,
-        valid: PropTypes.bool,
-        error: PropTypes.bool,
-        disabled: PropTypes.bool,
-        size: PropTypes.oneOf(['large']),
-        color: PropTypes.oneOf(['light']),
-        resultSize: PropTypes.oneOf(['small', 'medium']),
-        fontSize: PropTypes.oneOf(['medium', 'large']),
-        fontColor: PropTypes.oneOf(['black', 'blue']),
-        controlsPadding: PropTypes.oneOf(['none']),
-        inputPadding: PropTypes.oneOf(['small']),
-        itemPadding: PropTypes.oneOf(['small']),
+        currentValue: PropTypes.number,
+        verification: PropTypes.oneOf(Object.values(Verification)),
+        noticeText: PropTypes.string,
+        isDisabled: PropTypes.bool,
         required: PropTypes.bool,
-        keyNavigation: PropTypes.bool,
         placeholder: PropTypes.string,
-        canOpen: PropTypes.bool,
         notFoundText: PropTypes.string,
         className: PropTypes.string,
-        classNameControl: PropTypes.string,
+        classes: PropTypes.shape({
+            control: PropTypes.string,
+            root: PropTypes.string,
+        }),
         items: PropTypes.arrayOf(
             PropTypes.shape({
-                id: PropTypes.string,
-                title: PropTypes.oneOfType([
-                    PropTypes.arrayOf(PropTypes.element),
-                    PropTypes.arrayOf(PropTypes.node),
-                    PropTypes.element,
+                view: PropTypes.oneOfType([
                     PropTypes.string,
-                    PropTypes.node,
+                    PropTypes.number,
+                    PropTypes.element,
                 ]),
-                value: PropTypes.string,
-                data: PropTypes.object,
-                leftIcon: PropTypes.element,
-                rightIcon: PropTypes.element,
+                title: PropTypes.node,
+                value: PropTypes.number,
             })
         ),
-        onChangeSearch: PropTypes.func,
-        onFocusSearch: PropTypes.func,
-        onSelectItem: PropTypes.func,
-        onClickIcon: PropTypes.func,
+        onSelect: PropTypes.func,
     };
 
     static defaultProps: Partial<ISelectProps> = {
-        keyNavigation: true,
-        canOpen: true,
+        type: Types.CLASSIC,
         notFoundText: 'Ничего не нашлось',
         items: [],
-        arrow: true,
-        fontSize: 'medium',
-        fontColor: 'black',
-        resultSize: 'medium',
     };
 
-    itemWrapperNode: any = null;
-    itemsNodeList: any = null;
-    selectNode: any = null;
-    search: any = null;
+    itemWrapperNode: HTMLDivElement;
+    itemsNodeList: HTMLDivElement[];
+    selectNode: HTMLDivElement;
+
     isTouch: boolean = detectTouch();
+
+    debouncedComboboxChange = debounce((filterValue: string) => {
+        const { items } = this.props;
+
+        const filteredItems = items.filter(({ title }) => {
+            if (filterValue.length <= title.length) {
+                return RegExp(filterValue, 'ig').test(title);
+            }
+
+            return false;
+        });
+
+        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true });
+    }, 250);
 
     constructor(props: ISelectProps) {
         super(props);
 
         this.state = {
-            isOpen: false,
-            focus: false,
+            isOpened: false,
             activeIndex: 0,
-            currentIndex: props.placeholder ? -1 : 0,
+            filteredItems: props.items,
+            comparableInputValue: '',
+            inputValue: '',
         };
+        this.itemsNodeList = [];
     }
 
-    componentDidMount() {
-        document.addEventListener('click', this.onClickOutside);
-    }
+    componentDidUpdate() {
+        const { isOpened } = this.state;
 
-    shouldComponentUpdate(nextProps: ISelectProps, nextState: ISelectState) {
-        return !(equal({ ...this.props, items: this.props.items.length },
-            { ...nextProps, items: nextProps.items.length })
-            && equal(this.state, nextState));
+        if (isOpened) {
+            document.addEventListener('click', this.handleClickOutside);
+
+            return;
+        }
+
+        document.removeEventListener('click', this.handleClickOutside);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('click', this.onClickOutside);
+        document.removeEventListener('click', this.handleClickOutside);
     }
 
-    handleClickTitle = (): void => {
-        this.setState({ isOpen: !this.state.isOpen });
+    handleClickOutside = (e: MouseEvent): void => {
+        const { isOpened } = this.state;
+
+        if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpened) {
+            return;
+        }
+
+        this.setState({ isOpened: false });
     }
 
-    handleClickItem = (e: React.SyntheticEvent<EventTarget>, index: number): void => {
-        const { onSelectItem } = this.props;
-        const { title, value, data } = this.props.items[index];
-
-        this.setState({
-            isOpen: false,
-            currentIndex: index,
-        });
-
-        onSelectItem && onSelectItem(e, { title, value, index, data });
+    handleOpenDropdown = (): void => {
+        this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
-    handleClickSearch = (e: React.SyntheticEvent<HTMLInputElement>): void => {
+    handleClickItem = (itemValue: number | string) => (e: React.MouseEvent<HTMLDivElement>): void => {
+        const { onSelect, items } = this.props;
+        const item = items.find(elem => elem.value === itemValue);
+
+        if (!item) {
+            return;
+        }
+
+        const { title } = item;
+
+        this.setState({isOpened: false, inputValue: title });
+
+        onSelect && onSelect(e, item);
+    }
+
+    handleHoverItem = (index: number) => (e: React.MouseEvent<HTMLDivElement>): void => {
+        e.preventDefault();
+
+        this.setState({ activeIndex: index });
+    }
+
+    handleClickCombobox = (e: React.FormEvent<EventTarget>): void => {
+        const { isOpened, filteredItems } = this.state;
+
+        e.stopPropagation();
+
         if (!(e.target instanceof HTMLInputElement)) {
             return;
         }
 
-        if (!this.state.isOpen && this.props.searchValue) {
+        if (!isOpened && filteredItems) {
             e.target.select();
         }
 
-        this.setState({ isOpen: true });
+        this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
-    handleChangeSearch = (e: React.SyntheticEvent<HTMLInputElement>): void => {
-        if (!(e.target instanceof HTMLInputElement)) {
-            return;
-        }
+    handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        const filterValue = e.target.value;
 
-        const { onChangeSearch } = this.props;
-        onChangeSearch && onChangeSearch(e.target.value);
+        this.setState({ inputValue: filterValue });
 
-        this.setState({
-            activeIndex: 0,
-            currentIndex: -1,
-            isOpen: true,
-        });
-    }
-
-    handleFocusSearch = (e: React.SyntheticEvent<HTMLInputElement>): void => {
-        if (!(e.target instanceof HTMLInputElement)) {
-            return;
-        }
-
-        const { onFocusSearch } = this.props;
-
-        onFocusSearch && onFocusSearch(e.target.value);
+        this.debouncedComboboxChange(filterValue);
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
-        if (!this.props.keyNavigation) {
-            return false;
+        const { activeIndex, isOpened } = this.state;
+        const { items } = this.props;
+
+        if (items.length === 0) {
+            return true;
         }
 
-        const { activeIndex } = this.state;
-
-        // key arrow down
-        if (e.keyCode === 40 && activeIndex < this.props.items.length - 1) {
+        if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
                 this.scrollList(this.state.activeIndex);
             });
+
             e.preventDefault();
+
             return false;
         }
-        // key arrow up
-        if (e.keyCode === 38 && activeIndex > 0) {
-            this.setState({ activeIndex: activeIndex - 1 }, () => {
+        if (e.key === 'ArrowUp' && activeIndex > 0) {
+            this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
                 this.scrollList(this.state.activeIndex);
             });
+
             e.preventDefault();
+
             return false;
         }
-        // key enter
-        if (e.keyCode === 13 && this.state.isOpen) {
-            this.itemsNodeList && this.itemsNodeList[this.state.activeIndex].click();
+        if (e.key === 'Enter' && isOpened) {
+            this.itemsNodeList[activeIndex].click();
+
             return false;
         }
-        // key enter
-        if (e.keyCode === 13 && !this.state.isOpen) {
-            this.setState({ isOpen: true });
+        if (e.key === 'Enter' && !isOpened) {
+            this.setState({ isOpened: true });
+
             return false;
         }
-        // key tab
-        if (e.keyCode === 9) {
-            this.setState({ isOpen: false });
+        if (e.key === 'Tab') {
+            this.setState({ isOpened: false });
+
             return false;
         }
 
         return true;
     }
 
-    handleHoverItem = (e: React.SyntheticEvent<EventTarget>, index: number): void => {
-        e.preventDefault();
-        this.setState({ activeIndex: index });
-    }
-
-    onClickOutside = (event: MouseEvent): void => {
-        if (this.selectNode.contains(event.target) || !this.state.isOpen) {
+    scrollList(activeIndex: number): void {
+        if (!this.itemsNodeList) {
             return;
         }
-        this.setState({ isOpen: false });
-    }
 
-    handleFocusControl = (): void => {
-        this.setState({ focus: true });
-    }
-
-    handleBlurControl = (): void => {
-        this.setState({ focus: false });
-    }
-
-    handleClickControl = (): void => {
-        if (this.search) {
-            this.search.click();
-        }
-    }
-
-    scrollList(activeIndex: number): void {
         const wrapper = this.itemWrapperNode;
         const wrapperScroll = wrapper.scrollTop;
         const wrapperHeight = wrapper.offsetHeight;
 
         const item = this.itemsNodeList[activeIndex];
+
+        if (!item) {
+            return;
+        }
+
         const itemOffset = item.offsetTop;
         const itemHeight = item.offsetHeight;
 
         if (itemOffset + itemHeight > wrapperScroll + wrapperHeight) {
-            wrapper.scrollTop = wrapperScroll + itemOffset + itemHeight - wrapperScroll - wrapperHeight;
+            wrapper.scrollTop = itemOffset + itemHeight - wrapperHeight;
         }
 
         if (itemOffset < wrapperScroll) {
-            wrapper.scrollTop = wrapperScroll - wrapperScroll + itemOffset;
+            wrapper.scrollTop = itemOffset;
         }
     }
 
-    renderHiddenInput() {
-        return (
-            <input
-                type="hidden"
-                required={this.props.required}
-                name={this.props.name}
-                value={this.props.selectedValue}
-            />
-        );
-    }
+    highlightString = (title, view) => {
+        const { type } = this.props;
+        const { comparableInputValue } = this.state;
 
-    renderTitle() {
-        const { placeholder, selectedTitle } = this.props;
+        if (type === Types.CLASSIC) {
+            return view || title;
+        }
+        if (type === Types.COMBOBOX && view) {
+            return view;
+        }
 
-        return (
-            <div
-                className={cn('title', {
-                    placeholder: !!placeholder && !selectedTitle,
-                })}
-                tabIndex={0}
-                onClick={this.handleClickTitle}
-            >
-                <div className={cn('title-inner')}>
-                    {selectedTitle || placeholder}
-                </div>
-            </div>
-        );
-    }
-
-    renderSearchField() {
-        const { inputPadding, id } = this.props;
+        const stringFragments = title.split(RegExp(`(${comparableInputValue})`, 'ig'));
 
         return (
-            <input
-                className={cn('search-field', { padding: inputPadding })}
-                onClick={this.handleClickSearch}
-                onChange={this.handleChangeSearch}
-                onFocus={this.handleFocusSearch}
-                ref={node => { this.search = node; }}
-                type="text"
-                name={this.props.name}
-                value={this.props.searchValue}
-                required={this.props.required}
-                placeholder={this.props.placeholder}
-                maxLength={60}
-                autoComplete="off"
-                id={id}
-            />
-        );
-    }
-
-    renderArrow() {
-        return (
-            <span className={cn('arrow')}>
-                <span className={cn('arrow-inner')} />
-            </span>
-        );
-    }
-
-    renderIcon() {
-        return (
-            <div className={cn('icon-box')} onClick={this.props.onClickIcon}>
-                {this.props.icon}
-            </div>
+            <Paragraph hasMargin={false}>
+                {stringFragments.map((fragment, i) => (
+                    <React.Fragment key={i}>
+                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase())
+                            ? <span className={cn('highlighted-fragment')}>{fragment}</span>
+                            : fragment
+                        }
+                    </React.Fragment>
+                ))}
+            </Paragraph>
         );
     }
 
     getItemWrapper = node => this.itemWrapperNode = node;
     getSelectNode = node => this.selectNode = node;
+    getNodeList = node => this.itemsNodeList.push(node);
+
+    renderTitle() {
+        const { placeholder, items, currentValue } = this.props;
+        const item = items.find(elem => elem.value === currentValue);
+        let inputTitle: string | undefined = placeholder;
+
+        if (item && item.title) {
+            inputTitle = item.title;
+        }
+
+        return (
+            <div
+                className={cn('title', {
+                    placeholder: !!placeholder && !currentValue,
+                })}
+                tabIndex={0}
+                onClick={this.handleOpenDropdown}
+            >
+                <div className={cn('title-inner')}>
+                    {inputTitle}
+                </div>
+            </div>
+        );
+    }
+
+    renderCombobox() {
+        const { placeholder } = this.props;
+        const { inputValue } = this.state;
+
+        return (
+            <input
+                className={cn('combobox')}
+                onClick={this.handleClickCombobox}
+                onChange={this.handleChangeCombobox}
+                type="text"
+                value={inputValue}
+                placeholder={placeholder}
+            />
+        );
+    }
 
     renderChildren() {
-        const { itemPadding, items, notFoundText } = this.props;
-        this.itemsNodeList = [];
+        const { type, items, notFoundText } = this.props;
+        const { filteredItems, activeIndex } = this.state;
+        const currentItems = type === Types.COMBOBOX ? filteredItems : items;
 
         return (
             <div className={cn('list')}>
-                <div className={cn('list-inner')} ref={node => this.getItemWrapper(node)}>
-                    {items.map(({ id, title, leftIcon, rightIcon }, i) =>
-                        <SelectItem
-                            title={title}
-                            leftIcon={leftIcon}
-                            rightIcon={rightIcon}
-                            key={id}
-                            index={i}
-                            current={this.state.currentIndex === i}
-                            active={this.state.activeIndex === i}
-                            onHover={this.handleHoverItem}
-                            onSelect={this.handleClickItem}
-                            ref={node => { node && this.itemsNodeList.push(node.itemNode); }}
-                            padding={itemPadding}
-                        />
-                    )}
-                    {!items.length && <div className={cn('not-found')}>{notFoundText}</div>}
+                <div className={cn('list-inner')} ref={this.getItemWrapper}>
+                    {currentItems.map(({ title, value, view }, i) => (
+                        <div
+                            className={cn('list-item', {
+                                active: activeIndex === i,
+                            })}
+                            key={Number(value) + i}
+                            onClick={this.handleClickItem(value)}
+                            onMouseEnter={this.handleHoverItem(i)}
+                            ref={this.getNodeList}
+                        >
+                            <div className={cn('item-title')}>
+                                {this.highlightString(title, view)}
+                            </div>
+                        </div>
+                    ))}
+                    {!currentItems.length && <div className={cn('not-found')}>{notFoundText}</div>}
                 </div>
             </div>
         );
@@ -435,47 +387,56 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     render() {
         const {
-            size, color, error, disabled, valid,
-            onChangeSearch, canOpen, className,
-            name, icon, arrow, classNameControl,
-            fontSize, fontColor, resultSize,
-            controlsPadding, label, id,
+            type,
+            isDisabled,
+            verification,
+            noticeText,
+            label,
+            labelId,
+            required,
+            className = '',
+            classes = {},
         } = this.props;
-        const { focus, isOpen } = this.state;
+        const { isOpened } = this.state;
 
         return (
             <div
-                className={cn('', {
-                    open: isOpen && canOpen,
-                    size: size,
-                    color: color,
-                    valid: valid,
-                    error: error,
-                    disabled: disabled,
-                    focus: focus,
-                    search: !!onChangeSearch,
-                    'font-size': fontSize,
-                    'font-color': fontColor,
-                    'result-size': resultSize,
+                className={cn({
+                    open: isOpened,
+                    disabled: isDisabled,
                     'no-touch': !this.isTouch,
-                }, className)}
+                    valid: verification === Verification.VALID,
+                    error: verification === Verification.ERROR,
+                }, [className, classes.root])}
                 ref={this.getSelectNode}
             >
-                {label && <InputLabel htmlFor={id}>{label}</InputLabel>}
-                {!onChangeSearch && name && this.renderHiddenInput()}
-                <div
-                    className={cn('control', { padding: controlsPadding }, classNameControl)}
-                    onKeyDown={this.handleKeyDown}
-                    onFocus={this.handleFocusControl}
-                    onBlur={this.handleBlurControl}
-                    onClick={this.handleClickControl}
-                >
-                    {!onChangeSearch && this.renderTitle()}
-                    {onChangeSearch && this.renderSearchField()}
-                    {!icon && arrow && this.renderArrow()}
-                    {icon && this.renderIcon()}
+                <div className={cn('inner')}>
+                    {label && (
+                        <InputLabel htmlFor={labelId}>
+                            {label}
+                            {required && <span className={cn('require-mark')}>*</span>}
+                        </InputLabel>
+                    )}
+                    <div
+                        className={cn('control', classes.control)}
+                        onKeyDown={this.handleKeyDown}
+                    >
+                        {(type === Types.COMBOBOX) && this.renderCombobox()}
+                        {(type === Types.CLASSIC) && this.renderTitle()}
+                        <div className={cn('arrow-wrap')} tabIndex={1} onClick={this.handleOpenDropdown}>
+                            <span className={cn('arrow')} />
+                        </div>
+                    </div>
+                    {this.renderChildren()}
                 </div>
-                {this.renderChildren()}
+                {noticeText &&
+                    <div className={cn('text', {
+                        error: verification === Verification.ERROR,
+                        success: verification === Verification.VALID,
+                    })}>
+                        {noticeText}
+                    </div>
+                }
             </div>
         );
     }

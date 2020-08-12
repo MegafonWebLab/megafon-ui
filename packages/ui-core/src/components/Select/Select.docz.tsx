@@ -1,61 +1,86 @@
 import * as React from 'react';
-import { ISelectCallbackItem } from './Select';
+import { ISelectItem } from './Select';
 
 export const items = [
     {
-        id: '1',
-        value: 'eat',
-        title: 'Eat',
+        value: 1,
+        title: 'Авиамоторная',
     },
     {
-        id: '2',
-        value: 'sleep',
-        title: 'Sleep',
+        value: 2,
+        title: 'Академическая',
     },
     {
-        id: '3',
-        value: 'traing',
-        title: 'Traing',
+        value: 3,
+        title: 'Бабушкинская',
+    },
+    {
+        value: 4,
+        title: 'Багратионовская',
+    },
+    {
+        value: 5,
+        title: 'ВДНХ',
+    },
+    {
+        value: 6,
+        title: 'Варшавская',
+    },
+    {
+        value: 7,
+        title: 'Деловой центр',
+    },
+    {
+        value: 8,
+        title: 'Дмитровская',
+    },
+    {
+        value: 9,
+        title: 'Калужская',
+    },
+    {
+        value: 10,
+        title: 'Кантемировская',
     },
 ];
 
-type TitleType = string | JSX.Element | JSX.Element[] | Element | Element[] | undefined;
+export const flexStyle = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    marginLeft: '-15px',
+};
+
+const selectWrapperStyle = {
+    height: '200px',
+    width: '50%',
+    paddingLeft: '15px',
+    boxSizing: 'border-box' as 'border-box',
+    minWidth: '300px',
+};
+
+type CurrentValue = number | undefined;
 
 interface ISelectChildrenProps {
-    selectedTitle: TitleType;
-    searchValue: TitleType;
-    canOpen: boolean;
-    onChangeSearch: (value: string) => void;
-    onSelectItem: (_e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => void;
+    currentValue: number | undefined;
+    onSelect: (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
 }
 
 interface ISelectWrapperProps {
     children: (data: ISelectChildrenProps) => JSX.Element;
 }
 
-export const SelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
-    const [selectedTitle, setSelectedTitle] = React.useState<TitleType>('');
-    const [searchValue, setSearchValue] = React.useState<TitleType>('');
-    const [canOpen, setCanOpen] = React.useState<boolean>(false);
+export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
+    const [currentValue, setCurrentValue] = React.useState<CurrentValue>(undefined);
 
-    const handleSelectItem = (_e: React.SyntheticEvent<EventTarget>, data: ISelectCallbackItem) => {
-        setSelectedTitle(data.title);
-        setSearchValue(data.title);
-    };
-
-    const handleChangeSearch = (value: string) => {
-        setSearchValue(value);
-        setCanOpen(!!value);
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+        setCurrentValue(Number(data.value));
     };
 
     return (
-        <div style={{ height: '200px' }}>
+        <div style={selectWrapperStyle}>
             {props.children({
-                onSelectItem: handleSelectItem,
-                onChangeSearch: handleChangeSearch,
-                selectedTitle,
-                searchValue,
-                canOpen,
+                onSelect: handleSelect,
+                currentValue: currentValue,
             })}
         </div>
     );

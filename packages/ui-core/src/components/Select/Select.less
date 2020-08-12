@@ -4,20 +4,20 @@
 @{b} {
     .fontFamily();
     .commonFont();
-    position: relative;
-    z-index: auto;
     color: @freshAsphalt;
     min-height: 40px;
+    position: relative;
+    z-index: 1;
 
-    &_open {
-        z-index: 2;
+    &__inner {
+        position: relative;
     }
 
     &__control {
         width: 100%;
         box-sizing: border-box;
         position: relative;
-        z-index: 1;
+        z-index: 11;
         height: 48px;
         cursor: pointer;
         border: 1px solid @spbSky2;
@@ -25,12 +25,29 @@
         outline: none;
     }
 
-    &_focus&_no-touch &__control,
-    &_no-touch &__control:hover {
-        border-color: @freshAsphalt;
+    &__combobox {
+        box-sizing: border-box;
+        cursor: text;
+        font-family: inherit;
+        line-height: 25px;
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 100%;
+        //fix for ios - Focus on input with padding (filled with text) pushes cursor out of bounds
+        padding: 0 45px 0 20px;
+        outline: none;
+        opacity: 1;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-shadow: none;
+        overflow: auto;
     }
 
-    &_open &__control {
+    &_no-touch &__control:hover {
         border-color: @freshAsphalt;
     }
 
@@ -42,6 +59,10 @@
         width: 100%;
         height: 100%;
         outline: none;
+    }
+
+    &__title_placeholder {
+        color: lighten(@freshAsphalt, 50%);
     }
 
     &__title-inner {
@@ -62,30 +83,33 @@
         }
     }
 
-    &__title_placeholder {
-        color: lighten(@freshAsphalt, 50%);
+    &__arrow-wrap {
+        cursor: pointer;
+        height: 100%;
+        width: 25px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 20px;
+        z-index: 11;
+        outline: none;
     }
 
-    &__search-field {
-        box-sizing: border-box;
-        font-family: inherit;
-        line-height: 25px;
-        position: relative;
-        z-index: 1;
-        background-color: transparent;
-        border: none;
-        width: 100%;
-        height: 100%;
-        //fix for ios - Focus on input with padding (filled with text) pushes cursor out of bounds
-        padding: 0;
-        outline: none;
-        cursor: pointer;
-        opacity: 1;
-        border-radius: 0;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        box-shadow: none;
-        overflow: auto;
+    &__arrow {
+        color: @freshAsphalt;
+        border-bottom: none;
+        border-top: 6px solid;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+
+    &__require-mark {
+        font-size: 20px;
+        line-height: 0;
+        color: @fury;
+        margin-left: 1px;
     }
 
     input::-webkit-input-placeholder {
@@ -107,7 +131,7 @@
     &__list {
         display: none;
         position: absolute;
-        z-index: 0;
+        z-index: 10;
         top: 100%;
         right: 0;
         left: 0;
@@ -116,41 +140,46 @@
     }
 
     &__list-inner {
-        overflow: auto;
         padding: 12px 0;
         box-sizing: border-box;
+        max-height: 368px;
+        overflow-y: auto;
     }
 
-    &_open &__list {
-        display: block;
-        border-color: @freshAsphalt;
+    &__list-item {
+        .fontFamily();
+        padding: 8px 32px;
+        cursor: pointer;
+        background-color: @clearWhite;
+
+        &_active {
+            background-color: @spbSky0;
+        }
     }
 
-    &__arrow {
-        color: @freshAsphalt;
-        position: absolute;
-        z-index: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 28px;
-        border-bottom: none;
-        border-top: 6px solid;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-    }
-
-    &_open &__arrow {
-        border-top: none;
-        border-bottom: 6px solid;
-    }
-
-    &__icon-box {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 16px;
+    &__item-title {
         display: flex;
         align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+        flex-grow: 1;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @clearWhite);
+        }
+    }
+
+    &__list-item_active &__item-title {
+        &:after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky0);
+        }
     }
 
     &__not-found {
@@ -158,69 +187,57 @@
         opacity: 0.5;
     }
 
-    //mod color
-
-    &_color_light {
-        @{b} {
-            &__control {
-                border-color: @clearWhite;
-            }
-        }
+    &__text {
+        font-size: 12px;
+        line-height: 16px;
+        margin-top: 4px;
     }
 
-    &_color_light&_open {
-        @{b} {
-            &__control {
-                border-color: @freshAsphalt;
-            }
-        }
+    &__highlighted-fragment {
+        font-weight: bold;
     }
 
-    &_color_light&_valid {
-        @{b} {
-            &__control {
-                border-color: @clearWhite !important;
-            }
-        }
+    // mod: open
+
+    &_open {
+        z-index: 2;
     }
 
-    //mod size
-
-    &_size_large {
-        @{b} {
-            &__control {
-                @media @desktop {
-                    height: 60px;
-                }
-            }
-
-            &__icon-box {
-                @media @desktop {
-                    right: 24px;
-                }
-            }
-        }
+    &_open &__arrow {
+        border-top: none;
+        border-bottom: 6px solid;
     }
 
-    &_size_large&_search &__control {
-        @media @desktop {
-            padding-right: 65px;
-        }
+    &_open &__list {
+        display: block;
+        border-color: @freshAsphalt;
     }
 
-    //mod valid
+    &_open &__control {
+        border-color: @freshAsphalt;
+    }
+
+    // mod: valid
 
     &_valid &__control {
         border-color: @green !important;
     }
 
-    //mod error
+    &_valid &__text {
+        color: @green;
+    }
+
+    // mod: error
 
     &_error &__control {
         border-color: @fury !important;
     }
 
-    //mod disabled
+    &_error &__text {
+        color: @fury;
+    }
+
+    // mod: disabled
 
     &_disabled &__control {
         background-color: @spbSky1;
@@ -231,73 +248,5 @@
 
     &_disabled &__title-inner:after {
         display: none;
-    }
-
-    //mod search
-
-    &_search &__control {
-        //fix for ios - Focus on input with padding (filled with text) pushes cursor out of bounds
-        padding: 0 55px 0 20px;
-
-        @media @desktop {
-            padding: 0 55px 0 25px;
-        }
-    }
-
-    //mod font-size
-
-    &_font-size_medium {
-        @{b}__search-field {
-            font-size: 15px;
-        }
-    }
-
-    &_font-size_large {
-        @{b}__search-field {
-            font-size: 20px;
-        }
-    }
-
-    //mod font-color
-
-    &_font-color_black {
-        @{b}__search-field {
-            color: @freshAsphalt;
-        }
-    }
-
-    &_font-color_blue {
-        @{b}__search-field {
-            color: @link;
-        }
-    }
-
-    //mod result size
-
-    &_result-size {
-        &_small @{b}__list-inner {
-            max-height: 184px;
-        }
-
-        &_medium @{b}__list-inner {
-            max-height: 265px;
-        }
-    }
-
-    //mod input padding
-
-    &__search-field_padding {
-        &_small {
-            padding-left: 20px;
-            padding-right: 15px;
-        }
-    }
-
-    //mod input padding
-
-    @{b}__control_padding {
-        &_none {
-            padding: 0;
-        }
     }
 }

@@ -142,6 +142,7 @@
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
     "deep-equal": "^1.1.1",
+    "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.7.2",
     "react-input-mask": "^2.0.4",

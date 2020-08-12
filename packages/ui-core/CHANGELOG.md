@@ -21,8 +21,10 @@
 - **DropdownSocialList**
     - synchronized colors according to the guide
 - **Select**
+    - added new functional
     - synchronized colors according to the guide
 - **SelectItem**
+    - added new functional
     - synchronized colors according to the guide
 - **TextField**
     - synchronized colors according to the guide
