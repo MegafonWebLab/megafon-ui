@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+- **Header**
+    - removed hAlign from defaultProps
+- **ListItem**
+    - fixed proptype for disableLeftMargin
 
 ## 1.7.7
 - **Header**

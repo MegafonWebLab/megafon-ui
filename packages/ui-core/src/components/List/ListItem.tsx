@@ -16,7 +16,7 @@ const cn = cnCreate('mfui-list-item');
 class ListItem extends React.Component<IListItemProps, {}> {
     static propTypes = {
         className: PropTypes.string,
-        disableLeftMargin: PropTypes.boolean,
+        disableLeftMargin: PropTypes.bool,
         children: PropTypes.oneOfType([
             PropTypes.arrayOf(PropTypes.element),
             PropTypes.arrayOf(PropTypes.node),
