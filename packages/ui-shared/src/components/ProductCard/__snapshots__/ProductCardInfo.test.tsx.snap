@@ -11,6 +11,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
       as="h2"
       className="mfui-product-card-info__description-title"
       color="black"
+      hAlign="left"
       margin={false}
     >
       Включайся!
