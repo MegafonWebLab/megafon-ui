@@ -37,7 +37,6 @@ class Header extends React.Component<IHeaderProps, {}> {
     static defaultProps: Partial<IHeaderProps> = {
         as: 'h1',
         color: 'black',
-        hAlign: 'left',
     };
 
     renderAddition() {
