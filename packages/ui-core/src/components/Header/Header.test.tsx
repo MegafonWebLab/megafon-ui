@@ -1,12 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Header, { IHeaderProps } from './Header';
-
-const props: IHeaderProps = {
-    as: 'h1',
-    color: 'black',
-    hAlign: 'left',
-};
+import Header from './Header';
 
 describe('<Header />', () => {
     it('it renders with default h1 tag', () => {

@@ -16,7 +16,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
       as="h5"
       className="benefits-icons-tile__title"
       color="black"
-      hAlign="left"
+      hAlign="inherit"
     >
       title
     </Header>
@@ -46,7 +46,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
       as="h5"
       className="benefits-icons-tile__title"
       color="black"
-      hAlign="left"
+      hAlign="inherit"
     >
       title
     </Header>
