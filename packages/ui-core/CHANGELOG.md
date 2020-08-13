@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **cn**
+    - allow use undefined in array of custom classes
+    - fix bug with extra space for empty string in array of custom classes
 - **Carousel**
     - removed touchStart and touchMove events
     - removed touch-action for slick-list
