@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 1.7.8
+## 1.7.9
 - **cn**
     - update allow use undefined in array of custom classes
     - fixed bug with extra space for empty string in array of custom classes
