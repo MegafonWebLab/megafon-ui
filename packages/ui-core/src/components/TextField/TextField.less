@@ -29,6 +29,17 @@
         overflow: auto;
         margin: 0;
     }
+    &__placeholder {
+        color: lighten(@soggyAsphalt, 25%);
+        padding-left: 20px;
+        font-weight: 400;
+        user-select: none;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
     input::-webkit-input-placeholder {
         color: lighten(@soggyAsphalt, 50%);
     }
@@ -202,7 +213,7 @@
 
 //mod password
 @{b} {
-    &_password &__field {
+    &_password &__field, &_password &__placeholder {
         font: small-caption;
         font-size: 19px;
     }
