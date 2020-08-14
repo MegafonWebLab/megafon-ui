@@ -80,6 +80,9 @@ interface ITextFieldState {
 
 /* Method for defining internet explorer */
 const detectIE11 = (): boolean => {
+    if (!window) {
+        return false;
+    }
     const userAgent: string = window.navigator.userAgent.toLowerCase();
     return userAgent.indexOf('trident/') !== -1;
 };
