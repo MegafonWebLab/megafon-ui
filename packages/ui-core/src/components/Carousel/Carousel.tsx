@@ -149,6 +149,11 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
 
     handleChange = (slideIndex: number) => {
         const { onAfterChange } = this.props;
+        // TODO: Remove after react-slick update
+        // https://github.com/akiran/react-slick/issues/1298
+        if (this.slider) {
+            this.slider.innerSlider.clickable = true;
+        }
 
         this.updateArrowsState(slideIndex);
         onAfterChange && onAfterChange(slideIndex);
