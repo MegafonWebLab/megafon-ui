@@ -59,8 +59,10 @@ const selectWrapperStyle = {
 };
 
 interface ISelectChildrenProps {
-    currentValue?: SelectItemValueType;
-    onSelect: (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
+    currentValue: SelectItemValueType;
+    onSelect: (
+        e: React.SyntheticEvent<EventTarget> | React.KeyboardEvent<HTMLDivElement>, data: ISelectItem
+    ) => void;
 }
 
 interface ISelectWrapperProps {
@@ -70,7 +72,10 @@ interface ISelectWrapperProps {
 export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
     const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>();
 
-    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+    const handleSelect = (
+        _e: React.SyntheticEvent<EventTarget> | React.KeyboardEvent<HTMLDivElement>,
+        data: ISelectItem
+    ) => {
         setCurrentValue(data.value);
     };
 

@@ -129,16 +129,6 @@ const DemoSelectWrapper = props => {
             )}
         </DemoSelectWrapper>
         <DemoSelectWrapper>
-            {({ onSelect, canOpen, currentValue }) => (
-                <Select
-                    label="Zero items"
-                    placeholder="Choose your step"
-                    items={[]}
-                    notFoundText="Nothing found"
-                />
-            )}
-        </DemoSelectWrapper>
-        <DemoSelectWrapper>
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Disabled state"
@@ -158,7 +148,7 @@ const DemoSelectWrapper = props => {
 <Playground>
     <div style={flexStyle}>
         <DemoSelectWrapper>
-            {({ onSelect, currentValue }) => (
+            {({ onSelect, currentValue = 3 }) => (
                 <Select
                     label="Valid state"
                     required
@@ -196,6 +186,18 @@ const DemoSelectWrapper = props => {
             {({ onSelect, currentValue }) => (
                 <Select
                     label="Combobox type"
+                    type="combobox"
+                    onSelect={onSelect}
+                    placeholder="Choose or type your step"
+                    items={items}
+                    currentValue={currentValue}
+                />
+            )}
+        </DemoSelectWrapper>
+        <DemoSelectWrapper>
+            {({ onSelect, currentValue = 6 }) => (
+                <Select
+                    label="Combobox type with checked value"
                     type="combobox"
                     onSelect={onSelect}
                     placeholder="Choose or type your step"

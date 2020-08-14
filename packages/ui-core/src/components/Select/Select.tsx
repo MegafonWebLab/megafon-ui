@@ -22,7 +22,7 @@ export const SelectTypes = {
 
 type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 
-export type SelectItemValueType = number | string;
+export type SelectItemValueType = number | string | undefined;
 
 export interface ISelectItem {
     title: string;
@@ -63,7 +63,9 @@ export interface ISelectProps extends IDataAttributes {
     /** Object for the custom class */
     classes?: ISelectClasses;
     /** Select item handler */
-    onSelect?: (e: React.MouseEvent<HTMLDivElement>, dataItem: ISelectItem) => void;
+    onSelect?: (
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
+    ) => void;
 }
 
 interface ISelectState {
@@ -146,6 +148,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.itemsNodeList = [];
     }
 
+    componentDidMount() {
+        this.getCurrentIndex();
+    }
+
     componentDidUpdate() {
         const { isOpened } = this.state;
 
@@ -170,15 +176,19 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         }
 
         this.setState({ isOpened: false });
+        this.getCurrentIndex();
     }
 
     handleOpenDropdown = (): void => {
         this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
-    handleClickItem = (itemValue: SelectItemValueType) => (e: React.MouseEvent<HTMLDivElement>): void => {
+    handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
-        const item = items.find(elem => elem.value === itemValue);
+        const { activeIndex } = this.state;
+        const currentItem = items[activeIndex].value;
+
+        const item = items.find(elem => elem.value === currentItem);
 
         if (!item) {
             return;
@@ -229,7 +239,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return true;
         }
 
-        if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
+        if (e.key === 'ArrowDown' && isOpened && activeIndex < items.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
                 this.scrollList(this.state.activeIndex);
             });
@@ -238,7 +248,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
             return false;
         }
-        if (e.key === 'ArrowUp' && activeIndex > 0) {
+        if (e.key === 'ArrowUp' && isOpened && activeIndex > 0) {
             this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
                 this.scrollList(this.state.activeIndex);
             });
@@ -248,7 +258,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         }
         if (e.key === 'Enter' && isOpened) {
-            this.itemsNodeList[activeIndex].click();
+            this.handleSelectItem(e);
 
             return false;
         }
@@ -324,6 +334,19 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     getSelectNode = node => this.selectNode = node;
     getNodeList = node => this.itemsNodeList.push(node);
 
+    getCurrentIndex = () => {
+        const { items, currentValue } = this.props;
+        const currentIndex = items.findIndex(elem => elem.value === currentValue);
+
+        if (currentIndex !== -1) {
+            this.setState({ activeIndex: currentIndex, inputValue: items[currentIndex].title });
+
+            return;
+        }
+
+        this.setState({ activeIndex: 0 });
+    }
+
     renderTitle() {
         const { placeholder, items, currentValue } = this.props;
         const item = items.find(elem => elem.value === currentValue);
@@ -378,7 +401,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                                 active: activeIndex === i,
                             })}
                             key={`${i}_${value}`}
-                            onClick={this.handleClickItem(value)}
+                            onClick={this.handleSelectItem}
                             onMouseEnter={this.handleHoverItem(i)}
                             ref={this.getNodeList}
                         >
@@ -387,7 +410,9 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                             </div>
                         </div>
                     ))}
-                    {!currentItems.length && <div className={cn('not-found')}>{notFoundText}</div>}
+                    {type === SelectTypes.COMBOBOX && !currentItems.length && (
+                        <div className={cn('not-found')}>{notFoundText}</div>
+                    )}
                 </div>
             </div>
         );
