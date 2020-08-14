@@ -78,6 +78,12 @@ interface ITextFieldState {
     isPasswordHidden: boolean;
 }
 
+/* Method for defining internet explorer */
+const detectIE11 = (): boolean => {
+    const userAgent: string = window.navigator.userAgent.toLowerCase();
+    return userAgent.indexOf('trident/') !== -1;
+};
+
 const cn = cnCreate('mfui-text-field');
 class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     static propTypes = {
@@ -122,6 +128,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
 
     inputNode: any;
     isTouch: boolean = detectTouch();
+    isIE11: boolean;
 
     constructor(props: ITextFieldProps) {
         super(props);
@@ -129,15 +136,11 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         this.state = {
             isPasswordHidden: true,
         };
+        this.isIE11 = detectIE11();
     }
 
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
         return !(equal(this.props, nextProps) && equal(this.state, nextState));
-    }
-    /* Method for defining internet explorer */
-    detectIE11 = (): boolean => {
-        const userAgent: string = window.navigator.userAgent.toLowerCase();
-        return userAgent.indexOf('trident/') !== -1;
     }
 
     /* Method for trigger blur event on input field. Use TextField's 'ref' prop for call. */
@@ -232,22 +235,32 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             }),
         };
 
-        if (!this.props.value && params.placeholder && this.detectIE11()) {
+        let placeholder: React.ReactNode = null;
+        if (!this.props.value && params.placeholder && this.isIE11) {
             params.placeholder = '';
+            placeholder = <span className={cn('placeholder')}>{this.props.placeholder}</span>;
         }
 
         if (this.props.mask) {
             return (
-                <InputMask
-                    {...params}
-                    inputRef={this.addInputNode}
-                    mask={this.props.mask}
-                    maskChar={this.props.maskChar}
-                />
+                <>
+                    {placeholder}
+                    <InputMask
+                        {...params}
+                        inputRef={this.addInputNode}
+                        mask={this.props.mask}
+                        maskChar={this.props.maskChar}
+                    />
+                </>
             );
         }
 
-        return <input ref={this.addInputNode} {...params} />;
+        return (
+            <>
+                {placeholder}
+                <input ref={this.addInputNode} {...params} />
+            </>
+        );
     }
 
     render() {
@@ -278,12 +291,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
                 <div
                     className={cn('field-wrapper', { 'no-touch': !this.isTouch })}
                 >
-                    <div>
-                        {!this.props.value &&
-                            this.props.placeholder && this.detectIE11() &&
-                                <span className={cn('placeholder')}>{this.props.placeholder}</span>}
-                        {this.renderInputElem(isPasswordType)}
-                    </div>
+                    <div>{this.renderInputElem(isPasswordType)}</div>
                     {customIcon && this.renderCustomIcon()}
                     {isStatusIcon && valid && this.renderValidIcon()}
                     {isStatusIcon && error && this.renderErrorIcon()}
