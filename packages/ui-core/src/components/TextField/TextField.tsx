@@ -134,6 +134,11 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
         return !(equal(this.props, nextProps) && equal(this.state, nextState));
     }
+    /* Method for defining internet explorer */
+    detectIE11 = (): boolean => {
+        const userAgent: string = window.navigator.userAgent.toLowerCase();
+        return userAgent.indexOf('trident/') !== -1;
+    }
 
     /* Method for trigger blur event on input field. Use TextField's 'ref' prop for call. */
     blur = () => {
@@ -227,6 +232,10 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             }),
         };
 
+        if (!this.props.value && params.placeholder && this.detectIE11()) {
+            params.placeholder = '';
+        }
+
         if (this.props.mask) {
             return (
                 <InputMask
@@ -269,7 +278,12 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
                 <div
                     className={cn('field-wrapper', { 'no-touch': !this.isTouch })}
                 >
-                    <div>{this.renderInputElem(isPasswordType)}</div>
+                    <div>
+                        {!this.props.value &&
+                            this.props.placeholder && this.detectIE11() &&
+                                <span className={cn('placeholder')}>{this.props.placeholder}</span>}
+                        {this.renderInputElem(isPasswordType)}
+                    </div>
                     {customIcon && this.renderCustomIcon()}
                     {isStatusIcon && valid && this.renderValidIcon()}
                     {isStatusIcon && error && this.renderErrorIcon()}
