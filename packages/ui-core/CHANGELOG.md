@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **Carousel**
+    - fixed bug with first click on 
+    item after swipe
 
 ## 1.7.9
 - **cn**
