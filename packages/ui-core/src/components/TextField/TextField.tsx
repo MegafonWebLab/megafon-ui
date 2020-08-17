@@ -199,7 +199,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const renderInput = (): React.ReactNode => {
         let placeholderHtml: React.ReactNode = null;
-        if (!inputValue && inputParams.placeholder && !isIE11) {
+        if (!inputValue && inputParams.placeholder && isIE11) {
             inputParams.placeholder = '';
             placeholderHtml = <span className={cn('placeholder')}>{placeholder}</span>;
         }
