@@ -117,7 +117,11 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
     const isIE11: boolean = useMemo(() => detectIE11(), []);
-    let placeholderHtml: React.ReactNode = null;
+
+    const placeholderHtml = (params, placeholderLocal): React.ReactNode => {
+        params.placeholder = '';
+        return <span className={cn('placeholder')}>{placeholderLocal}</span>;
+    };
 
     React.useEffect(() => {
         setInputValue(value);
@@ -198,22 +202,17 @@ const TextField: React.FC<ITextFieldProps> = ({
         return renderInput();
     };
 
-    const renderInput = (): React.ReactNode => {
-        if (!inputValue && inputParams.placeholder && isIE11) {
-            inputParams.placeholder = '';
-            placeholderHtml = <span className={cn('placeholder')}>{placeholder}</span>;
-        }
-        return (
-            <>
-                {placeholderHtml}
-                {mask
-                    ? <InputMask {...inputParams} inputRef={getFieldNode} />
-                    : <input {...inputParams} ref={getFieldNode} />
-                }
-                {!hideIcon && renderIconBlock()}
-            </>
-        );
-    };
+    const renderInput = (): React.ReactNode => (
+        <>
+            {!inputValue && isIE11
+                && placeholderHtml(inputParams, placeholder)}
+            {mask
+                ? <InputMask {...inputParams} inputRef={getFieldNode} />
+                : <input {...inputParams} ref={getFieldNode} />
+            }
+            {!hideIcon && renderIconBlock()}
+        </>
+    );
 
     const renderTextarea = (): React.ReactNode => <textarea {...textareaParams} ref={getFieldNode} />;
 

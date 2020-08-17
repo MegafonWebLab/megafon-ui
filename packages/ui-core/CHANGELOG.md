@@ -32,6 +32,7 @@
     - add vertical resize to textarea
     - fix password placeholder
     - update documentation
+    - fixed placeholder for ie11
 - **TextLink**
     - synchronized colors according to the guide
 - **Icons**
