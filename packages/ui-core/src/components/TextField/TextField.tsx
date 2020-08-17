@@ -117,6 +117,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
     const isIE11: boolean = useMemo(() => detectIE11(), []);
+    let placeholderHtml: React.ReactNode = null;
 
     React.useEffect(() => {
         setInputValue(value);
@@ -198,7 +199,6 @@ const TextField: React.FC<ITextFieldProps> = ({
     };
 
     const renderInput = (): React.ReactNode => {
-        let placeholderHtml: React.ReactNode = null;
         if (!inputValue && inputParams.placeholder && isIE11) {
             inputParams.placeholder = '';
             placeholderHtml = <span className={cn('placeholder')}>{placeholder}</span>;
