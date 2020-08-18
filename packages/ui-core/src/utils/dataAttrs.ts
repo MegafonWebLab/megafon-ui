@@ -1,12 +1,12 @@
-interface IAttrs {
+interface IAttributes {
     [key: string]: string;
 }
 
-export interface IDataAttrs {
-    dataAttrs?: IAttrs;
+export interface IDataAttributes {
+    dataAttrs?: IAttributes;
 }
 
-const filterDataAttrs = (attrs: IAttrs = {}): IAttrs | {} => {
+const filterDataAttrs = (attrs: IAttributes = {}): IAttributes | {} => {
     if (!attrs || typeof attrs !== 'object') {
         return {};
     }

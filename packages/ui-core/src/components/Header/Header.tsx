@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Header.less';
 import cnCreate from 'utils/cn';
-import filterDataAttrs, { IDataAttrs } from 'utils/dataAttrs';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
-interface IHeaderProps extends IDataAttrs {
+interface IHeaderProps extends IDataAttributes {
     /** Tag */
     as?: 'h1' | 'h2' | 'h3' | 'h5' | 'h6';
     /** Color */
@@ -53,15 +53,15 @@ class Header extends React.Component<IHeaderProps, {}> {
     }
 
     render() {
-        const ElementType = this.props.as as string;
-        const { color, margin, as: level, hAlign, onClick, dataAttrs } = this.props;
+        const { color, margin, as: level, hAlign, onClick, dataAttrs, className } = this.props;
+        const ElementType = level as string;
 
         return (
             <ElementType
                 {...filterDataAttrs(dataAttrs)}
                 className={cn(
                     { color, margin, level, 'h-align': hAlign },
-                    this.props.className
+                    className
                 )}
                 onClick={onClick}
             >

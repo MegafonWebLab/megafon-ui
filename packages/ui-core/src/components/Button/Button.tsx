@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import cnCreate from 'utils/cn';
-import filterDataAttrs, { IDataAttrs } from 'utils/dataAttrs';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
 import detectTouch from 'utils/detectTouch';
 
-export interface IButtonProps extends IDataAttrs {
+export interface IButtonProps extends IDataAttributes {
     /** Special view */
     customView?: 'two-lines';
     /** Link */
