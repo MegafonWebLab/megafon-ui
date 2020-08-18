@@ -7,30 +7,34 @@ import AttentionIcon from 'icons/System/24/Info_24.svg';
 import AttentionInvertIcon from 'icons/System/24/Info_invert_24.svg';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
 
+export enum Types {
+    SUCCESS = 'success',
+    WARNING = 'warning',
+    ERROR = 'eror',
+}
+
 export type Props = {
     /** Types of notification */
-    type?: 'success' | 'error' | 'warning';
+    type?: Types;
     /** Short size of notification */
     isShort?: boolean;
-    children: React.ReactNode;
 };
 
 const cn = cnCreate('mfui-notification');
 const Notification: React.FC<Props> = ({ type, isShort, children }) => {
-    function renderIcon(): JSX.Element {
-        if (type !== 'success' && isShort) {
-            return <AttentionInvertIcon className={cn('icon')} />;
-        }
-        if (type !== 'success' && !isShort) {
-            return <AttentionIcon className={cn('icon')} />;
+    const renderIcon = (): JSX.Element => {
+        if (type === Types.SUCCESS) {
+            return <CheckedIcon className={cn('icon')} />;
         }
 
-        return <CheckedIcon className={cn('icon')} />;
-    }
+        return isShort
+        ? <AttentionInvertIcon className={cn('icon')} />
+        : <AttentionIcon className={cn('icon')} />;
+    };
 
     return (
         <div
-            className={cn('', {
+            className={cn({
                 type,
                 short: isShort,
             })}
@@ -49,9 +53,13 @@ const Notification: React.FC<Props> = ({ type, isShort, children }) => {
 };
 
 Notification.propTypes = {
-    type: PropTypes.oneOf(['success', 'error', 'warning']),
+    type: PropTypes.oneOf(Object.values(Types)),
     isShort: PropTypes.bool,
-    children: PropTypes.node,
+};
+
+Notification.defaultProps = {
+    type: Types.SUCCESS,
+    isShort: false,
 };
 
 export default Notification;

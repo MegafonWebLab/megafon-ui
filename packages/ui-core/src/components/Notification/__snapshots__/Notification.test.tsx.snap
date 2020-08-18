@@ -22,7 +22,7 @@ exports[`<Notification /> it renders Notification with type 1`] = `
 
 exports[`<Notification /> it renders Notification without props 1`] = `
 <div
-  className="mfui-notification"
+  className="mfui-notification mfui-notification_type_success"
 >
   <div
     className="mfui-notification__container"
@@ -42,7 +42,7 @@ exports[`<Notification /> it renders Notification without props 1`] = `
 
 exports[`<Notification /> it renders short Notification 1`] = `
 <div
-  className="mfui-notification mfui-notification_short"
+  className="mfui-notification mfui-notification_type_success mfui-notification_short"
 >
   <div
     className="mfui-notification__container"

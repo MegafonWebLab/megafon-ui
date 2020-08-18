@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Notification from './Notification';
+import Notification, { Types } from './Notification';
 
 describe('<Notification />', () => {
     it('it renders Notification without props', () => {
@@ -12,7 +12,7 @@ describe('<Notification />', () => {
 
     it('it renders Notification with type', () => {
         const wrapper = shallow(
-            <Notification type="success">Some test text</Notification>
+            <Notification type={Types.SUCCESS}>Some test text</Notification>
         );
         expect(wrapper).toMatchSnapshot();
     });
