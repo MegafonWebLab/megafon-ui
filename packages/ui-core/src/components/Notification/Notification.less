@@ -1,0 +1,102 @@
+@import '~styles/base';
+
+@b: e('.mfui-notification');
+
+@{b} {
+    &__container {
+        position: relative;
+        max-width: 688px;
+        padding: 12px 24px 12px 16px;
+        border-width: 1px;
+        border-style: solid;
+        border-left-width: 8px;
+        display: flex;
+    }
+
+    &__icon {
+        height: 20px;
+        min-width: 20px;
+        width: 20px;
+        margin-right: 16px;
+        top: 2px;
+        position: relative;
+    }
+
+    &_type_success {
+        @{b} {
+            &__container {
+                border-color: @green;
+            }
+
+            &__icon {
+                fill: @green;
+            }
+        }
+    }
+
+    &_type_warning {
+        @{b} {
+            &__container {
+                border-color: @mandarin;
+            }
+
+            &__icon {
+                fill: @mandarin;
+            }
+        }
+    }
+
+    &_type_error {
+        @{b} {
+            &__container {
+                border-color: @fury;
+            }
+
+            &__icon {
+                fill: @fury;
+            }
+        }
+    }
+
+    &_short {
+        @{b}__container {
+            border: none;
+            max-width: 456px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-left: 24px;
+        }
+
+        @{b}__icon {
+            fill: @clearWhite;
+        }
+
+        @{b}__text {
+            color: @clearWhite;
+        }
+    }
+
+    &_short&_type_success {
+        @{b} {
+            &__container {
+                background-color: @green;
+            }
+        }
+    }
+
+    &_short&_type_warning {
+        @{b} {
+            &__container {
+                background-color: @mandarin;
+            }
+        }
+    }
+
+    &_short&_type_error {
+        @{b} {
+            &__container {
+                background-color: @fury;
+            }
+        }
+    }
+}

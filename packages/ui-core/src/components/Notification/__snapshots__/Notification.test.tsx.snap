@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Notification /> it renders Notification with type 1`] = `
+<div
+  className="mfui-notification mfui-notification_type_success"
+>
+  <div
+    className="mfui-notification__container"
+  >
+    <test-file-stub
+      className="mfui-notification__icon"
+    />
+    <Paragraph
+      className="mfui-notification__text"
+      hasMargin={false}
+    >
+      Some test text
+    </Paragraph>
+  </div>
+</div>
+`;
+
+exports[`<Notification /> it renders Notification without props 1`] = `
+<div
+  className="mfui-notification mfui-notification_type_success"
+>
+  <div
+    className="mfui-notification__container"
+  >
+    <test-file-stub
+      className="mfui-notification__icon"
+    />
+    <Paragraph
+      className="mfui-notification__text"
+      hasMargin={false}
+    >
+      Some test text
+    </Paragraph>
+  </div>
+</div>
+`;
+
+exports[`<Notification /> it renders short Notification 1`] = `
+<div
+  className="mfui-notification mfui-notification_type_success mfui-notification_short"
+>
+  <div
+    className="mfui-notification__container"
+  >
+    <test-file-stub
+      className="mfui-notification__icon"
+    />
+    <Paragraph
+      className="mfui-notification__text"
+      hasMargin={false}
+    >
+      Some test text
+    </Paragraph>
+  </div>
+</div>
+`;
