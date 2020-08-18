@@ -10,7 +10,7 @@ import CheckedIcon from 'icons/System/24/Checked_24.svg';
 export enum Types {
     SUCCESS = 'success',
     WARNING = 'warning',
-    ERROR = 'eror',
+    ERROR = 'error',
 }
 
 export type Props = {
@@ -21,7 +21,7 @@ export type Props = {
 };
 
 const cn = cnCreate('mfui-notification');
-const Notification: React.FC<Props> = ({ type, isShort, children }) => {
+const Notification: React.FC<Props> = ({ type = Types.SUCCESS, isShort = false, children }) => {
     const renderIcon = (): JSX.Element => {
         if (type === Types.SUCCESS) {
             return <CheckedIcon className={cn('icon')} />;
@@ -55,11 +55,6 @@ const Notification: React.FC<Props> = ({ type, isShort, children }) => {
 Notification.propTypes = {
     type: PropTypes.oneOf(Object.values(Types)),
     isShort: PropTypes.bool,
-};
-
-Notification.defaultProps = {
-    type: Types.SUCCESS,
-    isShort: false,
 };
 
 export default Notification;

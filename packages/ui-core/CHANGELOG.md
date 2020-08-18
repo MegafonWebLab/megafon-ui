@@ -1,11 +1,13 @@
 # Changelog
 
 ## Unreleased
+- **Notification**
+    - added new component
 - **Carousel**
     - removed touchStart and touchMove events
     - removed touch-action for slick-list
     - added pinch-zoom touch action for slick-track
-    - fixed bug with first click on 
+    - fixed bug with first click on
     item after swipe
 - **List**
     - added list-style rules
