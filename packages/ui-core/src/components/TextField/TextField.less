@@ -36,16 +36,23 @@
         }
     }
 
-    &__placeholder {
+    &__placeholder-input, &__placeholder-textarea {
         color: lighten(@freshAsphalt, 25%);
         padding-left: 20px;
         font-weight: 400;
         user-select: none;
         position: absolute;
         left: 0;
+        z-index: 0;
+    }
+
+    &__placeholder-input {
         top: 50%;
         transform: translateY(-50%);
-        z-index: 0;
+    }
+
+    &__placeholder-textarea {
+        top: 13px;
     }
 
     input::-webkit-input-placeholder {
