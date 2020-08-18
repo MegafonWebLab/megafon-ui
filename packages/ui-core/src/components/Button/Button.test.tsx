@@ -1,59 +1,95 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Button, { IButtonProps } from './Button';
+import detectTouch from '../../utils/detectTouch';
+import Balance from 'icons/Basic/24/Balance_24.svg';
+
+jest.mock('../../utils/detectTouch', () => jest.fn().mockReturnValue(false));
 
 const props: IButtonProps = {
-    actionType: 'reset',
+    classes: {
+        root: 'root-class',
+        content: 'content-class',
+    },
+    theme: 'purple',
+    type: 'primary',
     href: 'any',
     target: '_blank',
+    actionType: 'reset',
+    sizeAll: 'large',
 };
 
 describe('<Button />', () => {
-    beforeEach(() => {
-        jest.resetModules();
-    });
+    afterAll(() => jest.restoreAllMocks());
 
-    it('renders Button with default props', () => {
-        const wrapper = shallow(<Button />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('renders Button with props', () => {
-        const wrapper = shallow(<Button {...props} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    // it('it renders Button on touch devices', () => {
-    //     jest.doMock('../../utils/detectTouch', () => {
-    //         return jest.fn(() => true);
-    //     });
-
-    //     const SomeButton = require('./Button').default;
-    //     const wrapper = shallow(<SomeButton />);
-
-    //     expect(wrapper).toMatchSnapshot();
-    // });
-
-    it('it renders children', () => {
-        const wrapper = shallow(<Button>button</Button>);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('it renders spinner', () => {
-        const wrapper = mount(<Button showSpinner={true} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    describe('with disabled state', () => {
-        it('renders tag button', () => {
-            const wrapper = mount(<Button disabled href={undefined} />);
+    describe('layout', () => {
+        it('renders Button with default props', () => {
+            const wrapper = shallow(<Button />);
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('renders tag a', () => {
-            const wrapper = mount(<Button disabled href="test" />);
+        it('renders Button with props', () => {
+            const wrapper = shallow(<Button {...props} />);
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('it renders Button on touch devices', () => {
+            (detectTouch as jest.Mock).mockReturnValueOnce(true);
+
+            const SomeButton = require('./Button').default;
+            const wrapper = shallow(<SomeButton />);
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('it renders children', () => {
+            const wrapper = shallow(<Button {...props} >button</Button>);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with different width for resolutions', () => {
+            const wrapper = shallow(
+                <Button
+                    {...props}
+                    sizeWide="large"
+                    sizeDesktop="medium"
+                    sizeTablet="medium"
+                    sizeMobile="small"
+                />
+            );
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render full width button', () => {
+            const wrapper = shallow(<Button {...props} fullWidth />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('it renders spinner', () => {
+            const wrapper = shallow(<Button showSpinner />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with arrow', () => {
+            const wrapper = shallow(<Button showArrow>arrow</Button>);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with left icon', () => {
+            const wrapper = shallow(<Button showArrow iconLeft={<Balance />}>left icon</Button>);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render tag button with disabled state', () => {
+            const wrapper = shallow(<Button disabled href={undefined} />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render tag a with disabled state', () => {
+            const wrapper = shallow(<Button disabled href="test" />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
     });
 
     describe('handleClick', () => {
