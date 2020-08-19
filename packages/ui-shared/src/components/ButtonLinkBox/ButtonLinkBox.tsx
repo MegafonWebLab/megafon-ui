@@ -10,7 +10,7 @@ export interface IButtonLinkBoxProps {
     buttonTitle?: string;
     /** Button url */
     buttonUrl?: string;
-    /** Button color */
+    // /** Button color */
     buttonColor?: 'green' | 'purple';
     /** Link title */
     linkTitle?: string;
@@ -35,8 +35,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
             <div className={cn('row')}>
                 <Button
                     href={buttonUrl}
-                    passiveColor={buttonColor}
-                    hoverColor={buttonColor}
+                    theme={buttonColor}
                 >
                     {buttonTitle}
                 </Button>

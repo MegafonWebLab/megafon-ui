@@ -64,3 +64,67 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
   </div>
 </div>
 `;
+
+exports[`<ProductCardTotal /> it renders submit button 1`] = `
+<div
+  className="mfui-product-card-total className"
+>
+  <div
+    className="mfui-product-card-total__wrap classNameWrap"
+  >
+    <div
+      className="mfui-product-card-total__cost mfui-product-card-total__cost_old-value classNameCost"
+    >
+      <span
+        className="mfui-product-card-total__price"
+      >
+        600 ₽
+      </span>
+       
+      <span
+        className="mfui-product-card-total__old-price"
+      >
+        750 ₽
+      </span>
+      <br />
+      <span
+        className="mfui-product-card-total__unit"
+      >
+        в месяц
+      </span>
+    </div>
+    <div
+      className="mfui-product-card-total__buttons classNameButtons"
+    >
+      <Button
+        classes={
+          Object {
+            "root": "mfui-product-card-total__button classNameSubmit",
+          }
+        }
+        fullWidth={true}
+        href="submitLink"
+        onClick={[Function]}
+        target="_self"
+      >
+        submitText
+      </Button>
+      <div
+        className="mfui-product-card-total__connect-button classNameConnect"
+        onClick={[Function]}
+      >
+        <div
+          className="mfui-product-card-total__connect-text-block"
+        >
+          <span
+            className="mfui-product-card-total__connect-text-words"
+          >
+            connectText
+          </span>
+          абонентам МегаФона
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
