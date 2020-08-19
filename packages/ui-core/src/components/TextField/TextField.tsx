@@ -108,7 +108,6 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = React.useState(value);
-    const [textareaValue, setTextareaValue] = React.useState(value);
     const fieldNode = React.useRef<HTMLInputElement | HTMLTextAreaElement>();
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
@@ -119,8 +118,8 @@ const TextField: React.FC<ITextFieldProps> = ({
     const isTouch: boolean = useMemo(() => detectTouch(), []);
     const isIE11: boolean = useMemo(() => detectIE11(), []);
 
-    const renderPlaceholderForIe = (placeholderLocal, classes): React.ReactNode => {
-        return <span className={cn(classes)}>{placeholderLocal}</span>;
+    const renderPlaceholderForIe = (classes: string): React.ReactNode => {
+        return <span className={cn(classes)}>{placeholder}</span>;
     };
 
     React.useEffect(() => {
@@ -132,14 +131,8 @@ const TextField: React.FC<ITextFieldProps> = ({
         [isPasswordHidden]
     );
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         setInputValue(e.target.value);
-
-        onChange && onChange(e);
-    };
-
-    const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-        setTextareaValue(e.target.value);
 
         onChange && onChange(e);
     };
@@ -187,7 +180,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     const textareaParams = {
         ...commonParams,
         value,
-        onChange: handleTextareaChange,
+        onChange: handleInputChange,
         className: cn('field', { multiline }),
     };
 
@@ -214,7 +207,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         }
         return (
             <>
-                {!inputValue && placeholder && isIE11 && renderPlaceholderForIe(placeholder, 'placeholder-input')}
+                {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-input')}
                 {mask
                     ? <InputMask {...inputParams} inputRef={getFieldNode} />
                     : <input {...inputParams} ref={getFieldNode} />
@@ -225,12 +218,12 @@ const TextField: React.FC<ITextFieldProps> = ({
     };
 
     const renderTextarea = (): React.ReactNode => {
-        if (!textareaValue && textareaParams.placeholder && isIE11) {
+        if (!inputValue && textareaParams.placeholder && isIE11) {
             textareaParams.placeholder = '';
         }
         return (
             <>
-                {!textareaValue && placeholder && isIE11 && renderPlaceholderForIe(placeholder, 'placeholder-textarea')}
+                {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-textarea')}
                 <textarea {...textareaParams} ref={getFieldNode} />
             </>
         );
