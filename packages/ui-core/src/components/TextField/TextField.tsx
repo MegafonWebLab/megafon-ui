@@ -78,6 +78,15 @@ interface ITextFieldState {
     isPasswordHidden: boolean;
 }
 
+/* Method for defining internet explorer */
+const detectIE11 = (): boolean => {
+    if (!window) {
+        return false;
+    }
+    const userAgent: string = window.navigator.userAgent.toLowerCase();
+    return userAgent.indexOf('trident/') !== -1;
+};
+
 const cn = cnCreate('mfui-text-field');
 class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     static propTypes = {
@@ -122,6 +131,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
 
     inputNode: any;
     isTouch: boolean = detectTouch();
+    isIE11: boolean;
 
     constructor(props: ITextFieldProps) {
         super(props);
@@ -129,6 +139,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         this.state = {
             isPasswordHidden: true,
         };
+        this.isIE11 = detectIE11();
     }
 
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
@@ -227,18 +238,32 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             }),
         };
 
+        let placeholder: React.ReactNode = null;
+        if (!this.props.value && params.placeholder && this.isIE11) {
+            params.placeholder = '';
+            placeholder = <span className={cn('placeholder')}>{this.props.placeholder}</span>;
+        }
+
         if (this.props.mask) {
             return (
-                <InputMask
-                    {...params}
-                    inputRef={this.addInputNode}
-                    mask={this.props.mask}
-                    maskChar={this.props.maskChar}
-                />
+                <>
+                    {placeholder}
+                    <InputMask
+                        {...params}
+                        inputRef={this.addInputNode}
+                        mask={this.props.mask}
+                        maskChar={this.props.maskChar}
+                    />
+                </>
             );
         }
 
-        return <input ref={this.addInputNode} {...params} />;
+        return (
+            <>
+                {placeholder}
+                <input ref={this.addInputNode} {...params} />
+            </>
+        );
     }
 
     render() {
