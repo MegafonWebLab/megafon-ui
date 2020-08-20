@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.7.12
 - **Button**
     - add data attributes support
     - add array support for className
