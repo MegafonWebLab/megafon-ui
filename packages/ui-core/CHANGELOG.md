@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.7.11
+- **TextField**
+    - change placeholder for IE
+
 ## 1.7.10
 - **Carousel**
     - fixed bug with first click on item after swipe
