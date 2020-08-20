@@ -69,6 +69,15 @@ export interface ITextFieldProps {
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
+/* Method for defining internet explorer */
+const detectIE11 = (): boolean => {
+    if (!window) {
+        return false;
+    }
+    const userAgent: string = window.navigator.userAgent.toLowerCase();
+    return userAgent.indexOf('trident/') !== -1;
+};
+
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
         className,
@@ -107,6 +116,11 @@ const TextField: React.FC<ITextFieldProps> = ({
         [isPasswordHidden, isPasswordType]
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
+    const isIE11: boolean = useMemo(() => detectIE11(), []);
+
+    const renderPlaceholderForIe = (classes: string): React.ReactNode => {
+        return <span className={cn(classes)}>{placeholder}</span>;
+    };
 
     React.useEffect(() => {
         setInputValue(value);
@@ -117,7 +131,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         [isPasswordHidden]
     );
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         setInputValue(e.target.value);
 
         onChange && onChange(e);
@@ -166,7 +180,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     const textareaParams = {
         ...commonParams,
         value,
-        onChange,
+        onChange: handleInputChange,
         className: cn('field', { multiline }),
     };
 
@@ -187,17 +201,33 @@ const TextField: React.FC<ITextFieldProps> = ({
         return renderInput();
     };
 
-    const renderInput = (): React.ReactNode => (
-        <>
-            {mask
-                ? <InputMask {...inputParams} inputRef={getFieldNode} />
-                : <input {...inputParams} ref={getFieldNode} />
-            }
-            {!hideIcon && renderIconBlock()}
-        </>
-    );
+    const renderInput = (): React.ReactNode => {
+        if (!inputValue && inputParams.placeholder && isIE11) {
+            inputParams.placeholder = '';
+        }
+        return (
+            <>
+                {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-input')}
+                {mask
+                    ? <InputMask {...inputParams} inputRef={getFieldNode} />
+                    : <input {...inputParams} ref={getFieldNode} />
+                }
+                {!hideIcon && renderIconBlock()}
+            </>
+        );
+    };
 
-    const renderTextarea = (): React.ReactNode => <textarea {...textareaParams} ref={getFieldNode} />;
+    const renderTextarea = (): React.ReactNode => {
+        if (!inputValue && textareaParams.placeholder && isIE11) {
+            textareaParams.placeholder = '';
+        }
+        return (
+            <>
+                {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-textarea')}
+                <textarea {...textareaParams} ref={getFieldNode} />
+            </>
+        );
+    };
 
     const getIcon = (): React.ReactNode | null => {
         switch (true) {
