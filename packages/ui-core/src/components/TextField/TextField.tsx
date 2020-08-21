@@ -80,7 +80,7 @@ interface ITextFieldState {
 
 /* Method for defining internet explorer */
 const detectIE11 = (): boolean => {
-    if (!window) {
+    if (typeof window === 'undefined') {
         return false;
     }
     const userAgent: string = window.navigator.userAgent.toLowerCase();
@@ -131,7 +131,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
 
     inputNode: any;
     isTouch: boolean = detectTouch();
-    isIE11: boolean;
+    isIE11: boolean = detectIE11();
 
     constructor(props: ITextFieldProps) {
         super(props);
@@ -139,7 +139,6 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         this.state = {
             isPasswordHidden: true,
         };
-        this.isIE11 = detectIE11();
     }
 
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {

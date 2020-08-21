@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **TextField**
+    - fix window object usage
+
 
 ## 1.7.12
 - **Button**
