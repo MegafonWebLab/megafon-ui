@@ -130,7 +130,7 @@ exports[`<Button /> layout should render with arrow 1`] = `
     >
       arrow
       <test-file-stub
-        className="mfui-button__icon mfui-button__icon_arrow"
+        className="mfui-button__icon-arrow"
       />
     </div>
   </div>

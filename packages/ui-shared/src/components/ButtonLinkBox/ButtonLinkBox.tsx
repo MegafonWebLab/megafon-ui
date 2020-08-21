@@ -10,7 +10,7 @@ export interface IButtonLinkBoxProps {
     buttonTitle?: string;
     /** Button url */
     buttonUrl?: string;
-    // /** Button color */
+    /** Button color */
     buttonColor?: 'green' | 'purple';
     /** Link title */
     linkTitle?: string;

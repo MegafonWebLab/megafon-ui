@@ -2,7 +2,7 @@ import * as React from 'react';
 import cnCreate from 'utils/cnCreate';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
-import Arrow from 'icons/System/24/Arrow_right_24.svg';
+import Arrow from 'icons/System/32/Arrow_right_32.svg';
 import detectTouch from 'utils/detectTouch';
 
 export interface IButtonProps {
@@ -74,7 +74,7 @@ const Button: React.FC<IButtonProps> = props => {
         onClick,
     } = props;
 
-    const isTouch: boolean = detectTouch();
+    const isTouch: boolean = React.useMemo(() => detectTouch(), []);
     const ElementType = href ? 'a' : 'button';
 
     const handleClick = React.useCallback((e: React.SyntheticEvent<EventTarget>): void => {
@@ -92,10 +92,10 @@ const Button: React.FC<IButtonProps> = props => {
     ), [theme]);
 
     const renderChildrenElem: JSX.Element = React.useMemo(() => (
-        <div className={cn('content', {}, contentClassName)}>
+        <div className={cn('content', contentClassName)}>
             {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
             {children}
-            {!iconLeft && showArrow && <Arrow className={cn('icon', { arrow: true })} />}
+            {!iconLeft && showArrow && <Arrow className={cn('icon-arrow')} />}
         </div>
     ), [contentClassName, showArrow, children]);
 
@@ -109,7 +109,7 @@ const Button: React.FC<IButtonProps> = props => {
 
     return (
         <ElementType
-            className={cn('', {
+            className={cn({
                 type,
                 theme: currentTheme,
                 disabled,

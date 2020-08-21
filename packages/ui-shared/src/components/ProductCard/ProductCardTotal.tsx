@@ -138,11 +138,11 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                         </div>
                     }
 
-                    <div className={cn('buttons', {}, classNameButtons)}>
+                    <div className={cn('buttons', classNameButtons)}>
                         {isSubmit &&
                             <Button
                                 classes={{
-                                    root: cn('button', {}, classNameSubmit),
+                                    root: cn('button', classNameSubmit),
                                 }}
                                 fullWidth
                                 href={submitLink}
@@ -155,7 +155,7 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                         {!isSubmit && isMore &&
                             <Button
                                 classes={{
-                                    root: cn('description-more', {}, classNameMore),
+                                    root: cn('description-more', classNameMore),
                                 }}
                                 type="outline"
                                 fullWidth
@@ -168,7 +168,7 @@ class ProductCardTotal extends React.Component<IProductCardTotalProps, {}> {
                         }
                         {onClickConnect &&
                             <div
-                                className={cn('connect-button', {}, classNameConnect)}
+                                className={cn('connect-button', classNameConnect)}
                                 onClick={this.handleClickConnect}
                             >
                                 <div className={cn('connect-text-block')}>
