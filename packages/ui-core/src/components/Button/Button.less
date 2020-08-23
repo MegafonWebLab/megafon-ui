@@ -85,10 +85,12 @@
         .generateSize(mobile);
     }
 
-    &_size-all_small {
-        svg:not(@{b}__icon_arrow) {
-            display: none;
-        }
+    &_size-all_small &__icon {
+        display: none;
+    }
+
+    &_size-all_small &__spinner {
+        display: none;
     }
 
     // type = primary
