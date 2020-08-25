@@ -76,6 +76,7 @@ export interface ITextFieldProps {
 
 interface ITextFieldState {
     isPasswordHidden: boolean;
+    isIE11: boolean;
 }
 
 /* Method for defining internet explorer */
@@ -131,14 +132,20 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
 
     inputNode: any;
     isTouch: boolean = detectTouch();
-    isIE11: boolean = detectIE11();
 
     constructor(props: ITextFieldProps) {
         super(props);
 
         this.state = {
             isPasswordHidden: true,
+            isIE11: false,
         };
+    }
+
+    componentDidMount() {
+        if (detectIE11()) {
+            this.setState({isIE11: true});
+        }
     }
 
     shouldComponentUpdate(nextProps: ITextFieldProps, nextState: ITextFieldState) {
@@ -215,7 +222,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
     addInputNode = (node: HTMLInputElement ) => this.inputNode = node;
 
     renderInputElem(isPasswordType: boolean) {
-        const { isPasswordHidden } = this.state;
+        const { isPasswordHidden, isIE11 } = this.state;
         const params = {
             disabled: this.props.disabled,
             name: this.props.name,
@@ -238,7 +245,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         };
 
         let placeholder: React.ReactNode = null;
-        if (!this.props.value && params.placeholder && this.isIE11) {
+        if (!this.props.value && params.placeholder && isIE11) {
             params.placeholder = '';
             placeholder = <span className={cn('placeholder')}>{this.props.placeholder}</span>;
         }

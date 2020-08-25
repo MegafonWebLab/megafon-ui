@@ -2,10 +2,12 @@
 
 ## Unreleased
 
+- **TextField**
+    - fix placeholder in IE
+
 ## 1.7.13
 - **TextField**
     - fix window object usage
-
 
 ## 1.7.12
 - **Button**
