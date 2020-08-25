@@ -60,6 +60,8 @@ export interface ITextFieldProps {
     maskChar?: string;
     /** Increased size of space between words in the text box */
     bigSpace?: boolean;
+    /** Class that is passed to the input */
+    parentInput?: string;
     /** Custom classname */
     className?: string;
     /** Change handler */
@@ -115,6 +117,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         mask: PropTypes.string,
         maskChar: PropTypes.string,
         bigSpace: PropTypes.bool,
+        parentInput: PropTypes.string,
         className: PropTypes.string,
         onChange: PropTypes.func,
         onBlur: PropTypes.func,
@@ -241,7 +244,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             autoComplete: this.props.autocomplete,
             className: cn('field', {
                 'big-space': this.props.bigSpace,
-            }),
+            }, this.props.parentInput),
         };
 
         let placeholder: React.ReactNode = null;
