@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+## 1.7.14
 - **TextField**
     - fix placeholder in IE
 
