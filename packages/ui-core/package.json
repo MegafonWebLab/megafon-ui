@@ -136,7 +136,6 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/runtime": "^7.0.0",
-    "@megafon/ui-core": "^1.7.13",
     "classnames": "^2.2.6",
     "deep-equal": "^1.1.1",
     "lodash.throttle": "^4.1.1",
