@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
@@ -6,6 +7,8 @@ import Arrow from 'icons/System/32/Arrow_right_32.svg';
 import detectTouch from 'utils/detectTouch';
 
 export interface IButtonProps {
+    /* Custom root class name */
+    className?: string;
     /** Custom classes for button and button text-area */
     classes?: {
         /** Button class */
@@ -19,9 +22,9 @@ export interface IButtonProps {
     type?: 'primary' | 'outline';
     /** Link */
     href?: string;
-    /** Target - property tag <a> */
+    /** Target - property of <a> tag */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Functional for form */
+    /** Form action */
     actionType?: 'button' | 'reset' | 'submit';
     /** Size for all devices */
     sizeAll?: 'small' | 'medium' | 'large';
@@ -43,7 +46,6 @@ export interface IButtonProps {
     iconLeft?: JSX.Element;
     /** Disabled */
     disabled?: boolean;
-    children?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     /** Click event handler */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -55,6 +57,7 @@ const Button: React.FC<IButtonProps> = props => {
             root: rootClassName,
             content: contentClassName,
         } = {},
+        className = '',
         theme = 'green',
         type = 'primary',
         href,
@@ -91,7 +94,7 @@ const Button: React.FC<IButtonProps> = props => {
         (type === 'primary') && (theme === 'black') ? 'green' : theme
     ), [theme]);
 
-    const renderChildrenElem: JSX.Element = React.useMemo(() => (
+    const renderChildren: JSX.Element = React.useMemo(() => (
         <div className={cn('content', contentClassName)}>
             {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
             {children}
@@ -99,13 +102,11 @@ const Button: React.FC<IButtonProps> = props => {
         </div>
     ), [contentClassName, showArrow, children]);
 
-    const renderSpinner: JSX.Element = React.useMemo(() => {
-        return (
-            <div className={cn('spinner')}>
-                <Spinner />
-            </div>
-        );
-    }, []);
+    const renderSpinner: JSX.Element = React.useMemo(() => (
+        <div className={cn('spinner')}>
+            <Spinner />
+        </div>
+    ), []);
 
     return (
         <ElementType
@@ -118,10 +119,10 @@ const Button: React.FC<IButtonProps> = props => {
                 'size-desktop': sizeDesktop,
                 'size-tablet': sizeTablet,
                 'size-mobile': sizeMobile,
-                width: fullWidth && 'full',
+                'full-width': fullWidth,
                 loading: showSpinner,
                 'no-touch': !isTouch,
-            }, rootClassName)}
+            }, [className, rootClassName])}
             href={href}
             target={href ? target : undefined}
             type={href ? undefined : actionType}
@@ -129,11 +130,33 @@ const Button: React.FC<IButtonProps> = props => {
             disabled={!href && disabled}
         >
             <div className={cn('inner')}>
-                {!showSpinner && children && renderChildrenElem}
+                {!showSpinner && children && renderChildren}
                 {showSpinner && renderSpinner}
             </div>
         </ElementType>
     );
 };
 
+Button.propTypes = {
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        content: PropTypes.string,
+    }),
+    theme: PropTypes.oneOf(['green', 'purple', 'white', 'black']),
+    type: PropTypes.oneOf(['primary', 'outline']),
+    href: PropTypes.string,
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    actionType: PropTypes.oneOf(['button', 'reset', 'submit']),
+    sizeAll: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeWide: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeDesktop: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeTablet: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeMobile: PropTypes.oneOf(['small', 'medium', 'large']),
+    fullWidth: PropTypes.bool,
+    showSpinner: PropTypes.bool,
+    showArrow: PropTypes.bool,
+    iconLeft: PropTypes.element,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+};
 export default Button;

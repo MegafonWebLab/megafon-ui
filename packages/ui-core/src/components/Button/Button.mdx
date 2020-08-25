@@ -7,7 +7,7 @@ route: components/button
 import { Playground, Props } from 'docz';
 import Button from './Button';
 import Balance from 'icons/Basic/24/Balance_24.svg';
-import { BlockWrapper, ButtonWrapper } from './Button.docz';
+import { DemoBlockWrapper } from './Button.docz';
 
 # Button
 
@@ -15,204 +15,118 @@ import { BlockWrapper, ButtonWrapper } from './Button.docz';
 
 <Props of={Button} />
 
-## Basic usage: type = primary, theme = green
+## Basic usage: green theme
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button>active</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button disabled>disabled</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button showSpinner>with spinner</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button showArrow>with arrow</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button iconLeft=<Balance />>with icon</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button>active</Button>
+        <Button disabled>disabled</Button>
+        <Button showSpinner>with spinner</Button>
+        <Button showArrow>with arrow</Button>
+        <Button iconLeft=<Balance />>with icon</Button>
+    </DemoBlockWrapper>
 </Playground>
 
-## Basic usage: type = primary, theme = purple
+## Basic usage: purple theme
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button theme="purple">active</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="purple" disabled>disabled</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="purple" showSpinner>with spinner</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="purple" showArrow>with arrow</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="purple" iconLeft=<Balance />>with icon</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button theme="purple">active</Button>
+        <Button theme="purple" disabled>disabled</Button>
+        <Button theme="purple" showSpinner>with spinner</Button>
+        <Button theme="purple" showArrow>with arrow</Button>
+        <Button theme="purple" iconLeft=<Balance />>with icon</Button>
+    </DemoBlockWrapper>
 </Playground>
 
-## Basic usage: type = primary, theme = white
+## Basic usage: white theme
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button theme="white">active</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="white" disabled>disabled</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="white" showSpinner>with spinner</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="white" showArrow>with arrow</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button theme="white" iconLeft=<Balance />>with icon</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button theme="white">active</Button>
+        <Button theme="white" disabled>disabled</Button>
+        <Button theme="white" showSpinner>with spinner</Button>
+        <Button theme="white" showArrow>with arrow</Button>
+        <Button theme="white" iconLeft=<Balance />>with icon</Button>
+    </DemoBlockWrapper>
 </Playground>
 
 
-## Basic usage: type = outline, theme = green
+## Basic usage: green theme with outline
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button type="outline">active</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" disabled>disabled</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" showSpinner>with spinner</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" showArrow>with arrow</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" iconLeft=<Balance />>with icon</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button type="outline">active</Button>
+        <Button type="outline" disabled>disabled</Button>
+        <Button type="outline" showSpinner>with spinner</Button>
+        <Button type="outline" showArrow>with arrow</Button>
+        <Button type="outline" iconLeft=<Balance />>with icon</Button>
+    </DemoBlockWrapper>
 </Playground>
 
-## Basic usage: type = outline, theme = purple
+## Basic usage: purple theme with outline
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="purple">active</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="purple" disabled>disabled</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="purple" showSpinner>with spinner</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="purple" showArrow>with arrow</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="purple" iconLeft=<Balance />>with icon</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button type="outline" theme="purple">active</Button>
+        <Button type="outline" theme="purple" disabled>disabled</Button>
+        <Button type="outline" theme="purple" showSpinner>with spinner</Button>
+        <Button type="outline" theme="purple" showArrow>with arrow</Button>
+        <Button type="outline" theme="purple" iconLeft=<Balance />>with icon</Button>
+    </DemoBlockWrapper>
 </Playground>
 
-## Basic usage: type = outline, theme = white
+## Basic usage: white theme with outline
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="white">active</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="white" disabled>disabled</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="white" showSpinner>with spinner</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="white" showArrow>with arrow</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="white" iconLeft=<Balance />>with icon</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button type="outline" theme="white">active</Button>
+        <Button type="outline" theme="white" disabled>disabled</Button>
+        <Button type="outline" theme="white" showSpinner>with spinner</Button>
+        <Button type="outline" theme="white" showArrow>with arrow</Button>
+        <Button type="outline" theme="white" iconLeft=<Balance />>with icon</Button>
+    </DemoBlockWrapper>
 </Playground>
 
-## Basic usage: type = outline, theme = black
+## Basic usage: black theme with outline
 
 <Playground>
-    <BlockWrapper customStyles={{
+    <DemoBlockWrapper customStyles={{
         backgroundColor: '#333333'
     }}>
-        <ButtonWrapper>
-            <Button type="outline" theme="black">active</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="black" disabled>disabled</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="black" showSpinner>with spinner</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="black" showArrow>with arrow</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button type="outline" theme="black" iconLeft=<Balance />>with icon</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+        <Button type="outline" theme="black">active</Button>
+        <Button type="outline" theme="black" disabled>disabled</Button>
+        <Button type="outline" theme="black" showSpinner>with spinner</Button>
+        <Button type="outline" theme="black" showArrow>with arrow</Button>
+        <Button type="outline" theme="black" iconLeft=<Balance />>with icon</Button>
+    </DemoBlockWrapper>
 </Playground>
 
 ## Button size
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button sizeAll="small" showArrow>Small</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button sizeAll="medium" iconLeft=<Balance />>Medium</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button sizeAll="large">Large</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showArrow>Button</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button sizeAll="small" showArrow>Small</Button>
+        <Button sizeAll="medium" iconLeft=<Balance />>Medium</Button>
+        <Button sizeAll="large">Large</Button>
+        <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showArrow>Adaptive</Button>
+    </DemoBlockWrapper>
 </Playground>
 
 ## Full width button
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper customStyles={{ width: '100%' }}>
-            <Button fullWidth>Full Width Button</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper customStyles={{ gridTemplateColumns: '1fr' }}>
+        <Button fullWidth>Full Width Button</Button>
+    </DemoBlockWrapper>
 </Playground>
 
 ## Link button
 
 <Playground>
-    <BlockWrapper>
-        <ButtonWrapper>
-            <Button href="#">Link</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button href="#" disabled>Disabled Link</Button>
-        </ButtonWrapper>
-        <ButtonWrapper>
-            <Button href="#" target="_blank">Target Link</Button>
-        </ButtonWrapper>
-    </BlockWrapper>
+    <DemoBlockWrapper>
+        <Button href="#">Link</Button>
+        <Button href="#" disabled>Disabled Link</Button>
+        <Button href="#" target="_blank">Target Link</Button>
+    </DemoBlockWrapper>
 </Playground>

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Button, { IButtonProps } from './Button';
+import cnCreate from '../../utils/cnCreate';
 import detectTouch from '../../utils/detectTouch';
 import Balance from 'icons/Basic/24/Balance_24.svg';
 
@@ -18,6 +19,7 @@ const props: IButtonProps = {
     actionType: 'reset',
     sizeAll: 'large',
 };
+const cn = cnCreate('mfui-button');
 
 describe('<Button />', () => {
     afterAll(() => jest.restoreAllMocks());
@@ -36,14 +38,13 @@ describe('<Button />', () => {
         it('it renders Button on touch devices', () => {
             (detectTouch as jest.Mock).mockReturnValueOnce(true);
 
-            const SomeButton = require('./Button').default;
-            const wrapper = shallow(<SomeButton />);
+            const wrapper = shallow(<Button />);
 
             expect(wrapper).toMatchSnapshot();
         });
 
         it('it renders children', () => {
-            const wrapper = shallow(<Button {...props} >button</Button>);
+            const wrapper = shallow(<Button {...props}>button</Button>);
             expect(wrapper).toMatchSnapshot();
         });
 
@@ -76,8 +77,13 @@ describe('<Button />', () => {
         });
 
         it('should render with left icon', () => {
-            const wrapper = shallow(<Button showArrow iconLeft={<Balance />}>left icon</Button>);
+            const wrapper = shallow(<Button iconLeft={<Balance />}>left icon</Button>);
             expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with left icon and without right icon', () => {
+            const wrapper = shallow(<Button showArrow iconLeft={<Balance />}>left icon</Button>);
+            expect(wrapper.exists(`.${cn('icon-arrow')}`)).not.toBe(true);
         });
 
         it('should render tag button with disabled state', () => {
@@ -90,28 +96,18 @@ describe('<Button />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render green theme when type is "primary" and theme is "black"', () => {
+            const wrapper = shallow(<Button type="primary" theme="black" />);
+            expect(wrapper.exists(`.${cn()}_theme_green`)).toBe(true);
+        });
     });
 
-    describe('handleClick', () => {
-        it('calls when disabled is false', () => {
-            const onClick = jest.fn();
-            const preventDefault = jest.fn();
-            const wrapper = shallow(<Button onClick={onClick} />);
+    it('should call onClick props', () => {
+        const onClick = jest.fn();
+        const wrapper = shallow(<Button onClick={onClick} />);
 
-            wrapper.simulate('click', { preventDefault });
+        wrapper.simulate('click');
 
-            expect(onClick).toBeCalledWith({ preventDefault });
-            expect(preventDefault).not.toBeCalled();
-        });
-
-        it('calls when disabled is true', () => {
-            const onClick = jest.fn();
-            const preventDefault = jest.fn();
-            const wrapper = shallow(<Button disabled onClick={onClick} />);
-
-            wrapper.simulate('click', { preventDefault });
-            expect(onClick).not.toBeCalled();
-            expect(preventDefault).toBeCalled();
-        });
+        expect(onClick).toBeCalled();
     });
 });

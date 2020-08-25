@@ -14,7 +14,7 @@ exports[`<Button /> layout it renders Button on touch devices 1`] = `
 
 exports[`<Button /> layout it renders children 1`] = `
 <a
-  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch  root-class"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -64,7 +64,7 @@ exports[`<Button /> layout renders Button with default props 1`] = `
 
 exports[`<Button /> layout renders Button with props 1`] = `
 <a
-  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch  root-class"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -78,7 +78,7 @@ exports[`<Button /> layout renders Button with props 1`] = `
 
 exports[`<Button /> layout should render full width button 1`] = `
 <a
-  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_width_full mfui-button_no-touch root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_full-width mfui-button_no-touch  root-class"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -139,7 +139,7 @@ exports[`<Button /> layout should render with arrow 1`] = `
 
 exports[`<Button /> layout should render with different width for resolutions 1`] = `
 <a
-  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_size-wide_large mfui-button_size-desktop_medium mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_no-touch root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_size-wide_large mfui-button_size-desktop_medium mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_no-touch  root-class"
   disabled={false}
   href="any"
   onClick={[Function]}
