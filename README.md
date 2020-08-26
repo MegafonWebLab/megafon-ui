@@ -5,6 +5,7 @@ Megafon React UI components library.
 [![codecov](https://codecov.io/gh/MegafonWebLab/megafon-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/MegafonWebLab/megafon-ui)
 [![Build Status](https://travis-ci.com/MegafonWebLab/megafon-ui.svg?branch=beta)](https://travis-ci.com/MegafonWebLab/megafon-ui)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 Interactive documentation is [here](https://megafonweblab.github.io/megafon-ui/).
 
@@ -19,10 +20,10 @@ MegaFon component library is available as several npm packages:
 
 To install, use the command:
 ```bash
-npm install @megafon/ui-core
+npm install @megafon/ui-core@beta
 ```
 ```bash
-npm install @megafon/ui-shared
+npm install @megafon/ui-shared@beta
 ```
 
 For local development you need:
