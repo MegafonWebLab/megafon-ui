@@ -40,7 +40,7 @@ describe('<ProductCardTotal />', () => {
         const handleSubmit = jest.fn();
         const wrapper = shallow(<ProductCardTotal onSubmit={handleSubmit} />);
 
-        wrapper.find('.mfui-product-card-total__button').simulate('click', {} as React.SyntheticEvent);
+        wrapper.find('Button').simulate('click', {} as React.SyntheticEvent);
         expect(handleSubmit).toHaveBeenCalledTimes(1);
     });
 
@@ -48,7 +48,7 @@ describe('<ProductCardTotal />', () => {
         const handleClick = jest.fn();
         const wrapper = shallow(<ProductCardTotal onClickMore={handleClick} />);
 
-        wrapper.find('.mfui-product-card-total__description-more').simulate('click', {} as React.SyntheticEvent);
+        wrapper.find('Button').simulate('click', {} as React.SyntheticEvent);
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
 

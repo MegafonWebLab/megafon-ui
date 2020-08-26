@@ -5,17 +5,13 @@ exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
   className="mfui-product-tile-buy sdfsdf"
 >
   <Button
-    className="mfui-product-tile-buy__button"
-    disabledColor="gray"
-    downColor="dark"
-    hoverColor="green"
-    padding={true}
-    passiveColor="green"
-    showSpinner={false}
+    classes={
+      Object {
+        "root": "mfui-product-tile-buy__button",
+      }
+    }
     sizeAll="medium"
     target="_self"
-    type="button"
-    width="auto"
   >
     Купить
   </Button>

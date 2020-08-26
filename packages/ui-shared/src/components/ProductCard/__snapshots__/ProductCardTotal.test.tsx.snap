@@ -32,19 +32,16 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
       className="mfui-product-card-total__buttons classNameButtons"
     >
       <Button
-        className="mfui-product-card-total__description-more classNameMore"
-        disabledColor="gray"
-        downColor="dark"
-        hoverColor="green"
+        classes={
+          Object {
+            "root": "mfui-product-card-total__description-more classNameMore",
+          }
+        }
+        fullWidth={true}
         href="moreLink"
         onClick={[Function]}
-        padding={true}
-        passiveColor="transparent-green"
-        showSpinner={false}
-        sizeAll="medium"
         target="_self"
-        type="button"
-        width="full"
+        type="outline"
       >
         moreText
       </Button>
@@ -100,19 +97,15 @@ exports[`<ProductCardTotal /> it renders submit button 1`] = `
       className="mfui-product-card-total__buttons classNameButtons"
     >
       <Button
-        className="mfui-product-card-total__button classNameSubmit"
-        disabledColor="gray"
-        downColor="dark"
-        hoverColor="green"
+        classes={
+          Object {
+            "root": "mfui-product-card-total__button classNameSubmit",
+          }
+        }
+        fullWidth={true}
         href="submitLink"
         onClick={[Function]}
-        padding={true}
-        passiveColor="green"
-        showSpinner={false}
-        sizeAll="medium"
         target="_self"
-        type="button"
-        width="full"
       >
         submitText
       </Button>

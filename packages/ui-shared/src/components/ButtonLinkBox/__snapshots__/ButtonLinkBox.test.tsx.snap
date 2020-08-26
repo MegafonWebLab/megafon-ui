@@ -8,16 +8,8 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
     className="mfui-button-link-box__row"
   >
     <Button
-      disabledColor="gray"
-      downColor="dark"
-      hoverColor="purple"
       href="button-url"
-      padding={true}
-      passiveColor="purple"
-      showSpinner={false}
-      sizeAll="medium"
-      type="button"
-      width="auto"
+      theme="purple"
     >
       button title
     </Button>
@@ -64,16 +56,8 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox without link 1`] = `
     className="mfui-button-link-box__row"
   >
     <Button
-      disabledColor="gray"
-      downColor="dark"
-      hoverColor="purple"
       href="button-url"
-      padding={true}
-      passiveColor="purple"
-      showSpinner={false}
-      sizeAll="medium"
-      type="button"
-      width="auto"
+      theme="purple"
     >
       button title
     </Button>

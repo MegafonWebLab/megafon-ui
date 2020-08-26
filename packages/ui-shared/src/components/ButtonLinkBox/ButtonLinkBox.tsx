@@ -35,8 +35,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
             <div className={cn('row')}>
                 <Button
                     href={buttonUrl}
-                    passiveColor={buttonColor}
-                    hoverColor={buttonColor}
+                    theme={buttonColor}
                 >
                     {buttonTitle}
                 </Button>

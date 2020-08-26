@@ -1,19 +1,31 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
+import Arrow from 'icons/System/32/Arrow_right_32.svg';
 import detectTouch from 'utils/detectTouch';
 
 export interface IButtonProps {
-    /** Special view */
-    customView?: 'two-lines';
+    /* Custom root class name */
+    className?: string;
+    /** Custom classes for button and button content */
+    classes?: {
+        /** Button class */
+        root?: string;
+        /** Inner content class */
+        content?: string;
+    };
+    /** Theme */
+    theme?: 'green' | 'purple' | 'white' | 'black';
+    /** Type */
+    type?: 'primary' | 'outline';
     /** Link */
     href?: string;
-    /** Target - property tag <a> */
+    /** Target - property of <a> tag */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Functional for form */
-    type?: 'button' | 'reset' | 'submit';
+    /** Form action */
+    actionType?: 'button' | 'reset' | 'submit';
     /** Size for all devices */
     sizeAll?: 'small' | 'medium' | 'large';
     /** Size for wide devices 1280+ */
@@ -24,126 +36,51 @@ export interface IButtonProps {
     sizeTablet?: 'small' | 'medium' | 'large';
     /** Size for mobile 320-730 */
     sizeMobile?: 'small' | 'medium' | 'large';
-    /** Current color. WARNING!!! Values 'transparent', 'transparent-green' were deprecated */
-    passiveColor?: 'green' | 'purple' | 'transparent' | 'transparent-green' | 'white' | 'transparent-white';
-    /** Hover color */
-    hoverColor?: 'green' | 'purple' | 'transparent';
-    /** Border color */
-    border?: 'green' | 'transparent';
-    /** Font color */
-    fontColor?: 'white' | 'green';
-    /** Click/press color */
-    downColor?: 'dark' | 'transparent';
-    /** Disabled color. WARNING!!! Values 'transparent', 'white' were deprecated */
-    disabledColor?: 'gray' | 'transparent-white' | 'transparent' | 'white';
-    /** Width */
-    width?: 'full' | 'auto';
-    /** Custom class name */
-    className?: string;
-    /** Custom class name for button text-area */
-    classNameContent?: string;
-    /** Margin(outer indentation) */
-    margin?: boolean;
-    /** Disabled */
-    disabled?: boolean;
-    /** Padding(inner indentation) */
-    padding?: boolean;
+    /** Display full width button */
+    fullWidth?: boolean;
     /** Show spinner */
     showSpinner?: boolean;
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    /** Show button with arrow */
+    showArrow?: boolean;
+    /** Icon to output with a text */
+    iconLeft?: JSX.Element;
+    /** Disabled */
+    disabled?: boolean;
     /** Click event handler */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-interface IButtonState {
-    isTouch: boolean;
-}
-
 const cn = cnCreate('mfui-button');
-class Button extends React.Component<IButtonProps, IButtonState> {
-    static propTypes = {
-        customView: PropTypes.oneOf(['two-lines']),
-        href: PropTypes.string,
-        target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
-        type: PropTypes.oneOf(['button', 'reset', 'submit']),
-        disabled: PropTypes.bool,
-        sizeAll: PropTypes.oneOf(['small', 'medium', 'large']),
-        sizeWide: PropTypes.oneOf(['small', 'medium', 'large']),
-        sizeDesktop: PropTypes.oneOf(['small', 'medium', 'large']),
-        sizeTablet: PropTypes.oneOf(['small', 'medium', 'large']),
-        sizeMobile: PropTypes.oneOf(['small', 'medium', 'large']),
-        passiveColor: PropTypes.oneOf([
-            'green',
-            'purple',
-            'transparent',
-            'transparent-green',
-            'white',
-            'transparent-white',
-        ]),
-        hoverColor: PropTypes.oneOf([
-            'green',
-            'purple',
-            'transparent',
-        ]),
-        border: PropTypes.oneOf([
-            'green',
-            'transparent',
-        ]),
-        fontColor: PropTypes.oneOf([
-            'green',
-            'white',
-        ]),
-        downColor: PropTypes.oneOf([
-            'dark',
-            'transparent',
-        ]),
-        disabledColor: PropTypes.oneOf([
-            'gray',
-            'white',
-            'transparent',
-            'transparent-white',
-        ]),
-        margin: PropTypes.bool,
-        padding: PropTypes.bool,
-        width: PropTypes.oneOf(['full', 'auto']),
-        showSpinner: PropTypes.bool,
-        onClick: PropTypes.func,
-        classNameContent: PropTypes.string,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-            PropTypes.node,
-        ]),
-    };
+const Button: React.FC<IButtonProps> = props => {
+    const {
+        classes: {
+            root: rootClassName,
+            content: contentClassName,
+        } = {},
+        className = '',
+        theme = 'green',
+        type = 'primary',
+        href,
+        target,
+        actionType = 'button',
+        sizeAll = 'medium',
+        sizeWide,
+        sizeDesktop,
+        sizeTablet,
+        sizeMobile,
+        fullWidth = false,
+        showSpinner = false,
+        showArrow = false,
+        iconLeft,
+        disabled,
+        children,
+        onClick,
+    } = props;
 
-    static defaultProps: Partial<IButtonProps> = {
-        passiveColor: 'green',
-        hoverColor: 'green',
-        downColor: 'dark',
-        disabledColor: 'gray',
-        width: 'auto',
-        type: 'button',
-        sizeAll: 'medium',
-        padding: true,
-        showSpinner: false,
-    };
+    const isTouch: boolean = React.useMemo(() => detectTouch(), []);
+    const ElementType = href ? 'a' : 'button';
 
-    constructor(props: IButtonProps) {
-        super(props);
-
-        this.state = {
-            isTouch: false,
-        };
-    }
-
-    componentDidMount() {
-        this.setState({ isTouch: detectTouch() });
-    }
-
-    handleClick = (e: React.SyntheticEvent<EventTarget>) => {
-        const { disabled, onClick } = this.props;
-
+    const handleClick = React.useCallback((e: React.SyntheticEvent<EventTarget>): void => {
         if (disabled) {
             e.preventDefault();
 
@@ -151,69 +88,75 @@ class Button extends React.Component<IButtonProps, IButtonState> {
         }
 
         onClick && onClick(e);
-    }
+    }, [disabled, onClick]);
 
-    renderChildrenElem() {
-        return (
-            <div className={cn('content', {}, this.props.classNameContent)}>
-                {this.props.children}
+    const currentTheme: string = React.useMemo(() => (
+        (type === 'primary') && (theme === 'black') ? 'green' : theme
+    ), [theme]);
+
+    const renderChildren: JSX.Element = React.useMemo(() => (
+        <div className={cn('content', contentClassName)}>
+            {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
+            {children}
+            {!iconLeft && showArrow && <Arrow className={cn('icon-arrow')} />}
+        </div>
+    ), [contentClassName, showArrow, children]);
+
+    const renderSpinner: JSX.Element = React.useMemo(() => (
+        <div className={cn('spinner')}>
+            <Spinner />
+        </div>
+    ), []);
+
+    return (
+        <ElementType
+            className={cn({
+                type,
+                theme: currentTheme,
+                disabled,
+                'size-all': sizeAll,
+                'size-wide': sizeWide,
+                'size-desktop': sizeDesktop,
+                'size-tablet': sizeTablet,
+                'size-mobile': sizeMobile,
+                'full-width': fullWidth,
+                loading: showSpinner,
+                'no-touch': !isTouch,
+            }, [className, rootClassName])}
+            href={href}
+            target={href ? target : undefined}
+            type={href ? undefined : actionType}
+            onClick={handleClick}
+            disabled={!href && disabled}
+        >
+            <div className={cn('inner')}>
+                {!showSpinner && children && renderChildren}
+                {showSpinner && renderSpinner}
             </div>
-        );
-    }
+        </ElementType>
+    );
+};
 
-    renderSpinner() {
-        return (
-            <div className={cn('spinner')}>
-                <Spinner />
-            </div>
-        );
-    }
-
-    render() {
-        const {
-            sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile,
-            customView, passiveColor, hoverColor, downColor, border, fontColor,
-            disabledColor, padding, width, margin, showSpinner, className, href, type,
-            disabled, target, children,
-        } = this.props;
-        const { isTouch } = this.state;
-        const ElementType = href ? 'a' : 'button';
-
-        return (
-            <ElementType
-                className={cn('', {
-                    'size-all': sizeAll,
-                    'size-wide': sizeWide,
-                    'size-desktop': sizeDesktop,
-                    'size-tablet': sizeTablet,
-                    'size-mobile': sizeMobile,
-                    'custom-view': customView,
-                    'passive-color': !customView && passiveColor,
-                    'hover-color': !customView && hoverColor,
-                    'down-color': !customView && downColor,
-                    'disabled-color': !customView && disabled && disabledColor,
-                    'font-color': !customView && fontColor,
-                    'border': !customView && border,
-                    disabled,
-                    padding,
-                    width,
-                    margin,
-                    loading: showSpinner,
-                    'no-touch': !isTouch,
-                }, className)}
-                href={href}
-                target={href ? target : undefined}
-                type={href ? undefined : type}
-                onClick={this.handleClick}
-                disabled={!href && disabled}
-            >
-                <div className={cn('inner')}>
-                    {!showSpinner && children && this.renderChildrenElem()}
-                    {showSpinner && this.renderSpinner()}
-                </div>
-            </ElementType>
-        );
-    }
-}
-
+Button.propTypes = {
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        content: PropTypes.string,
+    }),
+    theme: PropTypes.oneOf(['green', 'purple', 'white', 'black']),
+    type: PropTypes.oneOf(['primary', 'outline']),
+    href: PropTypes.string,
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    actionType: PropTypes.oneOf(['button', 'reset', 'submit']),
+    sizeAll: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeWide: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeDesktop: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeTablet: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeMobile: PropTypes.oneOf(['small', 'medium', 'large']),
+    fullWidth: PropTypes.bool,
+    showSpinner: PropTypes.bool,
+    showArrow: PropTypes.bool,
+    iconLeft: PropTypes.element,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+};
 export default Button;

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
 	<style type="text/css">
-		.spinner0{opacity:0;fill:#FFFFFF;}
-		.spinner1{fill:#FFFFFF;}
-		.spinner2{opacity:0.8;fill:#FFFFFF;}
-		.spinner3{opacity:0.6;fill:#FFFFFF;}
-		.spinner4{opacity:0.45;fill:#FFFFFF;}
+		.spinner0{opacity:0;}
+		.spinner1{}
+		.spinner2{opacity:0.8;}
+		.spinner3{opacity:0.6;}
+		.spinner4{opacity:0.45;}
 	</style>
 	<g>
 		<circle class="spinner0" cx="24" cy="24" r="24"/>

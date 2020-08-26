@@ -17,13 +17,17 @@
     box-sizing: border-box;
     color: @clearWhite;
     border-radius: 30px;
-    padding: 0;
+    padding: 0 32px;
     -webkit-appearance: none;
     -moz-appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     &:hover {
         text-decoration: none;
+    }
+
+    &_disabled {
+        cursor: default;
     }
 
     &__inner {
@@ -35,12 +39,22 @@
         vertical-align: top;
     }
 
-    &__content_icon {
-        padding-left: 20px;
+    &__content {
+        display: flex;
+        align-items: center;
     }
 
     &__icon {
-        fill: @clearWhite;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+
+    &__icon-arrow {
+        width: 32px;
+        height: 32px;
+        margin-left: 4px;
+        margin-right: -8px;
     }
 
     &__spinner {
@@ -71,134 +85,225 @@
         .generateSize(mobile);
     }
 
-    &_passive-color_green {
+    &_size-all_small &__icon {
+        display: none;
+    }
+
+    &_size-all_small &__spinner {
+        display: none;
+    }
+
+    // type = primary
+    // theme = green
+
+    &_type_primary&_theme_green {
         background-color: @green;
-    }
-
-    &_passive-color_purple {
-        background-color: @purple;
-    }
-
-    &_passive-color_transparent {
-        box-shadow: inset 0 0 0 1px @clearWhite;
-        background-color: transparent;
-    }
-
-    &_passive-color_white {
-        background-color: @clearWhite;
-        color: @freshAsphalt;
-    }
-
-    &_passive-color_transparent-green {
-        box-shadow: inset 0 0 0 1px @green;
-        color: @green;
-        background-color: transparent;
-    }
-
-    &_passive-color_transparent-white {
-        box-shadow: inset 0 0 0 1px @clearWhite;
         color: @clearWhite;
-        background-color: transparent;
+
+        svg {
+            fill: @clearWhite;
+        }
     }
 
-    &_border_green {
-        border: 1px solid @green;
-    }
-
-    &_font-color_green {
-        color: @green;
-    }
-
-    &_font-color_white {
-        color: @clearWhite;
-    }
-
-    &_no-touch&_hover-color_green {
+    &_no-touch&_type_primary&_theme_green {
         &:not(@{b}_loading):hover {
             box-shadow: inset 0 0 0 1px @buttonHoverGreen;
-            color: @clearWhite;
             background-color: @buttonHoverGreen;
         }
-    }
 
-    &_no-touch&_hover-color_purple {
-        &:not(@{b}_loading):hover {
-            box-shadow: inset 0 0 0 1px @buttonhoverPurple;
-            color: @clearWhite;
-            background-color: @buttonhoverPurple;
-        }
-    }
-
-    &_no-touch&_down-color_dark {
         &:not(@{b}_loading):active {
             box-shadow: inset 0 0 0 1px @buttonDown;
             background-color: @buttonDown;
         }
     }
 
-    &_no-touch&_down-color_transparent {
-        &:not(@{b}_loading):active {
-            box-shadow: inset 0 0 0 1px @clearWhite;
-            background-color: transparent;
+    // type = primary
+    // theme = purple
+
+    &_type_primary&_theme_purple {
+        background-color: @purple;
+        color: @clearWhite;
+
+        svg {
+            fill: @clearWhite;
         }
     }
 
-    &_disabled {
-        cursor: default;
+    &_no-touch&_type_primary&_theme_purple {
+        &:not(@{b}_loading):hover {
+            box-shadow: inset 0 0 0 1px @buttonhoverPurple;
+            background-color: @buttonhoverPurple;
+        }
+
+        &:not(@{b}_loading):active {
+            box-shadow: inset 0 0 0 1px @buttonDown;
+            background-color: @buttonDown;
+        }
     }
 
-    &_disabled-color_gray {
-        box-shadow: inset 0 0 0 1px @spbSky2 !important;
-        color: fade(@freshAsphalt, 50%) !important;
-        background-color: @spbSky1 !important;
+    // type = primary
+    // theme = white
+
+    &_type_primary&_theme_white {
+        background-color: @clearWhite;
+        color: @freshAsphalt;
+
+        svg {
+            fill: @freshAsphalt;
+        }
     }
 
-    &_disabled-color_white {
-        box-shadow: inset 0 0 0 1px @spbSky1 !important;
-        color: fade(@freshAsphalt, 50%) !important;
-        background-color: @spbSky1 !important;
+    &_no-touch&_type_primary&_theme_white {
+        &:not(@{b}_loading):hover {
+            box-shadow: inset 0 0 0 1px @buttonHoverGreen;
+            color: @clearWhite;
+            background-color: @buttonHoverGreen;
+
+            svg {
+                fill: @clearWhite;
+            }
+        }
+
+        &:not(@{b}_loading):active {
+            box-shadow: inset 0 0 0 1px @buttonDown;
+            background-color: @buttonDown;
+        }
     }
 
-    &_disabled-color_transparent {
-        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
-        color: fade(@freshAsphalt, 50%) !important;
-        background-color: transparent !important;
+    &&_type_primary&_disabled,
+    &&_no-touch&_type_primary&_disabled,
+    &&_no-touch&_type_primary&_disabled:hover,
+    &&_no-touch&_type_primary&_disabled:active {
+        box-shadow: inset 0 0 0 1px @spbSky2;
+        color: fade(@freshAsphalt, 50%);
+        background-color: @spbSky1;
+
+        svg {
+            fill: fade(@freshAsphalt, 50%);
+        }
     }
 
-    &_disabled-color_transparent-white {
-        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%) !important;
-        color: fade(@clearWhite, 50%) !important;
-        background-color: transparent !important;
+    // type = outline
+    // theme = green
+
+    &_type_outline&_theme_green {
+        box-shadow: inset 0 0 0 1px @green;
+        color: @green;
+        background-color: transparent;
+
+        svg {
+            fill: @green;
+        }
     }
 
-    &_margin {
-        margin-right: 15px;
-        margin-bottom: 15px;
+    &_no-touch&_type_outline&_theme_green {
+        &:not(@{b}_loading):hover {
+            background-color: fade(@green, 7%);
+        }
+
+        &:not(@{b}_loading):active {
+            background-color: fade(@green, 14%);
+        }
     }
 
-    &_padding {
-        padding-left: 32px;
-        padding-right: 32px;
+    // type = outline
+    // theme = purple
+
+    &_type_outline&_theme_purple {
+        box-shadow: inset 0 0 0 1px @purple;
+        color: @purple;
+        background-color: transparent;
+
+        svg {
+            fill: @purple;
+        }
     }
 
-    &_width_full {
+    &_no-touch&_type_outline&_theme_purple {
+        &:not(@{b}_loading):hover {
+            background-color: fade(@purple, 7%);
+        }
+
+        &:not(@{b}_loading):active {
+            background-color: fade(@purple, 14%);
+        }
+    }
+
+    // type = outline
+    // theme = white
+
+    &_type_outline&_theme_white {
+        box-shadow: inset 0 0 0 1px @freshAsphalt;
+        color: @freshAsphalt;
+        background-color: transparent;
+
+        svg {
+            fill: @freshAsphalt;
+        }
+    }
+
+    &_no-touch&_type_outline&_theme_white {
+        &:not(@{b}_loading):hover {
+            background-color: fade(@freshAsphalt, 7%);
+        }
+
+        &:not(@{b}_loading):active {
+            background-color: fade(@freshAsphalt, 14%);
+        }
+    }
+
+    &&_type_outline&_disabled,
+    &&_no-touch&_type_outline&_disabled,
+    &&_no-touch&_type_outline&_disabled:hover,
+    &&_no-touch&_type_outline&_disabled:active {
+        box-shadow: inset 0 0 0 1px @spbSky2;
+        color: fade(@freshAsphalt, 50%);
+        background-color: transparent;
+
+        svg {
+            fill: fade(@freshAsphalt, 50%);
+        }
+    }
+
+    // type = outline
+    // theme = black
+
+    &_type_outline&_theme_black {
+        box-shadow: inset 0 0 0 1px @clearWhite;
+        color: @clearWhite;
+        background-color: transparent;
+
+        svg {
+            fill: @clearWhite;
+        }
+    }
+
+    &_no-touch&_type_outline&_theme_black {
+        &:not(@{b}_loading):hover {
+            background-color: fade(@clearWhite, 15%);
+        }
+
+        &:not(@{b}_loading):active {
+            background-color: fade(@clearWhite, 30%);
+        }
+    }
+
+    &&_type_outline&_theme_black&_disabled,
+    &&_no-touch&_type_outline&_theme_black&_disabled,
+    &&_no-touch&_type_outline&_theme_black&_disabled:hover,
+    &&_no-touch&_type_outline&_theme_black&_disabled:active {
+        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%);
+        color: fade(@clearWhite, 50%);
+        background-color: transparent;
+
+        svg {
+            fill: fade(@clearWhite, 50%);
+        }
+    }
+
+    &_full-width {
         display: block;
         width: 100%;
-    }
-
-    &_custom-view_two-lines {
-        color: @freshAsphalt;
-        font-weight: 400;
-
-        span {
-            display: inline-block;
-            width: 100%;
-            color: @link;
-        }
-
-        &:hover span {
-            text-decoration: underline;
-        }
     }
 }
 

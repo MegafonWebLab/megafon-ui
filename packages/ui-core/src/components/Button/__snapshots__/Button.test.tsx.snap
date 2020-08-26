@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> it renders Button on touch devices 1`] = `
+exports[`<Button /> layout it renders Button on touch devices 1`] = `
 <button
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium"
   onClick={[Function]}
   type="button"
 >
@@ -12,9 +12,29 @@ exports[`<Button /> it renders Button on touch devices 1`] = `
 </button>
 `;
 
-exports[`<Button /> it renders children 1`] = `
+exports[`<Button /> layout it renders children 1`] = `
+<a
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch className root-class"
+  disabled={false}
+  href="any"
+  onClick={[Function]}
+  target="_blank"
+>
+  <div
+    className="mfui-button__inner"
+  >
+    <div
+      className="mfui-button__content content-class"
+    >
+      button
+    </div>
+  </div>
+</a>
+`;
+
+exports[`<Button /> layout it renders spinner 1`] = `
 <button
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_loading mfui-button_no-touch"
   onClick={[Function]}
   type="button"
 >
@@ -22,73 +42,17 @@ exports[`<Button /> it renders children 1`] = `
     className="mfui-button__inner"
   >
     <div
-      className="mfui-button__content"
+      className="mfui-button__spinner"
     >
-      button
+      <test-file-stub />
     </div>
   </div>
 </button>
 `;
 
-exports[`<Button /> it renders spinner 1`] = `
-<Button
-  disabledColor="gray"
-  downColor="dark"
-  hoverColor="green"
-  padding={true}
-  passiveColor="green"
-  showSpinner={true}
-  sizeAll="medium"
-  type="button"
-  width="auto"
->
-  <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_loading mfui-button_no-touch"
-    onClick={[Function]}
-    type="button"
-  >
-    <div
-      className="mfui-button__inner"
-    >
-      <div
-        className="mfui-button__spinner"
-      >
-        <test-file-stub />
-      </div>
-    </div>
-  </button>
-</Button>
-`;
-
-exports[`<Button /> it renders white styled button 1`] = `
-<Button
-  border="green"
-  disabledColor="gray"
-  downColor="dark"
-  fontColor="green"
-  hoverColor="green"
-  padding={true}
-  passiveColor="white"
-  showSpinner={false}
-  sizeAll="medium"
-  type="button"
-  width="auto"
->
-  <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_white mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_font-color_green mfui-button_border_green mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
-    onClick={[Function]}
-    type="button"
-  >
-    <div
-      className="mfui-button__inner"
-    />
-  </button>
-</Button>
-`;
-
-exports[`<Button /> renders Button with default props 1`] = `
+exports[`<Button /> layout renders Button with default props 1`] = `
 <button
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch"
   onClick={[Function]}
   type="button"
 >
@@ -98,9 +62,9 @@ exports[`<Button /> renders Button with default props 1`] = `
 </button>
 `;
 
-exports[`<Button /> renders Button with props 1`] = `
+exports[`<Button /> layout renders Button with props 1`] = `
 <a
-  className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch className root-class"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -112,82 +76,100 @@ exports[`<Button /> renders Button with props 1`] = `
 </a>
 `;
 
-exports[`<Button /> with disabled state renders element with customView 1`] = `
-<Button
-  customView="two-lines"
-  disabled={true}
-  disabledColor="gray"
-  downColor="dark"
-  hoverColor="green"
-  padding={true}
-  passiveColor="green"
-  showSpinner={false}
-  sizeAll="medium"
-  type="button"
-  width="auto"
+exports[`<Button /> layout should render full width button 1`] = `
+<a
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_full-width mfui-button_no-touch className root-class"
+  disabled={false}
+  href="any"
+  onClick={[Function]}
+  target="_blank"
 >
-  <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_custom-view_two-lines mfui-button_disabled mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
-    disabled={true}
-    onClick={[Function]}
-    type="button"
-  >
-    <div
-      className="mfui-button__inner"
-    />
-  </button>
-</Button>
+  <div
+    className="mfui-button__inner"
+  />
+</a>
 `;
 
-exports[`<Button /> with disabled state renders tag a 1`] = `
-<Button
-  disabled={true}
-  disabledColor="gray"
-  downColor="dark"
-  hoverColor="green"
+exports[`<Button /> layout should render tag a with disabled state 1`] = `
+<a
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_disabled mfui-button_size-all_medium mfui-button_no-touch"
+  disabled={false}
   href="test"
-  padding={true}
-  passiveColor="green"
-  showSpinner={false}
-  sizeAll="medium"
-  type="button"
-  width="auto"
+  onClick={[Function]}
 >
-  <a
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_disabled mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
-    disabled={false}
-    href="test"
-    onClick={[Function]}
-  >
-    <div
-      className="mfui-button__inner"
-    />
-  </a>
-</Button>
+  <div
+    className="mfui-button__inner"
+  />
+</a>
 `;
 
-exports[`<Button /> with disabled state renders tag button 1`] = `
-<Button
+exports[`<Button /> layout should render tag button with disabled state 1`] = `
+<button
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_disabled mfui-button_size-all_medium mfui-button_no-touch"
   disabled={true}
-  disabledColor="gray"
-  downColor="dark"
-  hoverColor="green"
-  padding={true}
-  passiveColor="green"
-  showSpinner={false}
-  sizeAll="medium"
+  onClick={[Function]}
   type="button"
-  width="auto"
 >
-  <button
-    className="mfui-button mfui-button_size-all_medium mfui-button_passive-color_green mfui-button_hover-color_green mfui-button_down-color_dark mfui-button_disabled-color_gray mfui-button_disabled mfui-button_padding mfui-button_width_auto mfui-button_no-touch"
-    disabled={true}
-    onClick={[Function]}
-    type="button"
+  <div
+    className="mfui-button__inner"
+  />
+</button>
+`;
+
+exports[`<Button /> layout should render with arrow 1`] = `
+<button
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="mfui-button__inner"
   >
     <div
-      className="mfui-button__inner"
-    />
-  </button>
-</Button>
+      className="mfui-button__content"
+    >
+      arrow
+      <test-file-stub
+        className="mfui-button__icon-arrow"
+      />
+    </div>
+  </div>
+</button>
+`;
+
+exports[`<Button /> layout should render with different width for resolutions 1`] = `
+<a
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_size-wide_large mfui-button_size-desktop_medium mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_no-touch className root-class"
+  disabled={false}
+  href="any"
+  onClick={[Function]}
+  target="_blank"
+>
+  <div
+    className="mfui-button__inner"
+  />
+</a>
+`;
+
+exports[`<Button /> layout should render with left icon 1`] = `
+<button
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="mfui-button__inner"
+  >
+    <div
+      className="mfui-button__content"
+    >
+      <div
+        className="mfui-button__icon"
+      >
+        <test-file-stub />
+      </div>
+      left icon
+    </div>
+  </div>
+</button>
 `;
