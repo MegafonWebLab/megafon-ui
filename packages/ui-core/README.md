@@ -5,10 +5,10 @@ React UI components library.
 ## Getting started
 
 ```bash
-$ npm install --save @megafon/ui-core
+$ npm install --save @megafon/ui-core@beta
 ```
 ```bash
-$ yarn add @megafon/ui-core
+$ yarn add @megafon/ui-core@beta
 ```
 
 ## Development notes
@@ -18,14 +18,6 @@ $ yarn add @megafon/ui-core
 ```bash
 $ yarn run build
 ```
-
-### Interactive demo
-
-```bash
-$ yarn run docz:dev
-```
-
-The demo will be available at [http://localhost:3000/megafon-ui/](http://localhost:3000/megafon-ui/).
 
 ## How gulp modify svg
 Для модификации используется плагин gulp-svgmin(на основе svgo), который добавляет уникальный атрибут `id` для тегов и переводит тег `<style>` в инлайн стили.
