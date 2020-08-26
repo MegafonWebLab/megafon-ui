@@ -71,7 +71,7 @@ export interface ITextFieldProps {
 
 /* Method for defining internet explorer */
 const detectIE11 = (): boolean => {
-    if (!window) {
+    if (typeof window === 'undefined') {
         return false;
     }
     const userAgent: string = window.navigator.userAgent.toLowerCase();
