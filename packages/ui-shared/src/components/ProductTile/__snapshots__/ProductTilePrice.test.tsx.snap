@@ -10,7 +10,7 @@ exports[`<ProductTilePrice /> renders ProductTilePrice 1`] = `
     <span
       className="mfui-beta-product-tile-price__old-price-value"
     >
-
+       
     </span>
   </span>
   <span
@@ -19,7 +19,7 @@ exports[`<ProductTilePrice /> renders ProductTilePrice 1`] = `
     <ProductTileValue
       value="23423 uniteValue"
     />
-
+     
     <span
       className="mfui-beta-product-tile-price__payment-period"
     >
@@ -53,7 +53,7 @@ exports[`<ProductTilePrice /> renders ProductTilePrice with discount 1`] = `
     <ProductTileValue
       value="100 uniteValue"
     />
-
+     
     <span
       className="mfui-beta-product-tile-price__payment-period"
     >

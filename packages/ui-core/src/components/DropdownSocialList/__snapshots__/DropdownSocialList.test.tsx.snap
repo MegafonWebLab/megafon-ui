@@ -34,7 +34,7 @@ exports[`<DropdownSocialList /> it renders DropdownSocialList 1`] = `
         <span
           className="mfui-beta-dropdown-social-list__dropdown-trigger"
         >
-          и еще
+          и еще 
           1
         </span>
       }

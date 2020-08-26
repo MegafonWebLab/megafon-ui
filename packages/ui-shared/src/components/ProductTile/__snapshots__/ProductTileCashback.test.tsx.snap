@@ -8,9 +8,9 @@ exports[`<ProductTileCashback /> it renders ProductTileCashback 1`] = `
     className="mfui-beta-product-tile-cashback__text"
   >
     title
-
+     
     23
-
+     
     unit
   </span>
 </div>

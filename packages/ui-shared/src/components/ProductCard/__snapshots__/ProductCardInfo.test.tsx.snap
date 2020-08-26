@@ -104,7 +104,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         >
           300
         </span>
-
+         
         минут
       </li>
       <li
@@ -116,7 +116,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         >
           300
         </span>
-
+         
         SMS
       </li>
       <li
@@ -128,7 +128,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         >
           4
         </span>
-
+         
         ГБ
       </li>
     </ul>
