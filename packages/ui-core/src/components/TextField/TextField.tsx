@@ -65,7 +65,7 @@ export interface ITextFieldProps {
     bigSpace?: boolean;
     /** Custom classname */
     className?: string;
-    /** Outer classes for TextField */
+    /** Custom classes */
     classes?: ITextFieldClasses;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
@@ -126,7 +126,9 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         onFocus: PropTypes.func,
         onKeyUp: PropTypes.func,
         onCustomIconClick: PropTypes.func,
-        classes: PropTypes.object,
+        classes: PropTypes.shape({
+            input: PropTypes.string,
+        }),
     };
 
     static defaultProps: Partial<ITextFieldProps> = {
@@ -229,6 +231,8 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
 
     renderInputElem(isPasswordType: boolean) {
         const { isPasswordHidden, isIE11 } = this.state;
+        const { classes: { input = '' } = {}} = this.props;
+
         const params = {
             disabled: this.props.disabled,
             name: this.props.name,
@@ -247,7 +251,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             autoComplete: this.props.autocomplete,
             className: cn('field', {
                 'big-space': this.props.bigSpace,
-            }, this.props.classes && this.props.classes.input),
+            }, input),
         };
 
         let placeholder: React.ReactNode = null;

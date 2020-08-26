@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.7.15
+- **TextField**
+    - 'classes' prop added
+
 ## 1.7.14
 - **TextField**
     - fix placeholder in IE
