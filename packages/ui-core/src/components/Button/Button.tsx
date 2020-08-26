@@ -9,7 +9,7 @@ import detectTouch from 'utils/detectTouch';
 export interface IButtonProps {
     /* Custom root class name */
     className?: string;
-    /** Custom classes for button and button text-area */
+    /** Custom classes for button and button content */
     classes?: {
         /** Button class */
         root?: string;

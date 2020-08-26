@@ -8,6 +8,7 @@ import Balance from 'icons/Basic/24/Balance_24.svg';
 jest.mock('../../utils/detectTouch', () => jest.fn().mockReturnValue(false));
 
 const props: IButtonProps = {
+    className: 'className',
     classes: {
         root: 'root-class',
         content: 'content-class',
