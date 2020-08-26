@@ -1,3 +1,29 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [2.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@1.0.29...@megafon/ui-shared@2.0.0-beta.0) (2020-08-26)
+
+
+### Bug Fixes
+
+* **styles:** changed classname prefix for beta ([278ac85](https://github.com/MegafonWebLab/megafon-ui/commit/278ac8560711c829885a7d515dc69f58b640a82a))
+
+
+### Features
+
+* beta publish preparation for ui-shared ([96e7dfc](https://github.com/MegafonWebLab/megafon-ui/commit/96e7dfcc843a2cae9fa6d2a80755e0a2a68c466c))
+
+
+### BREAKING CHANGES
+
+* see changelog
+
+
+
+
+
 # Changelog
 
 ## [2.0.0-beta.0] BREAKING CHANGES
