@@ -2,16 +2,16 @@
 
 exports[`<Notification /> it renders Notification with type 1`] = `
 <div
-  className="mfui-notification mfui-notification_type_success"
+  className="mfui-beta-notification mfui-beta-notification_type_success"
 >
   <div
-    className="mfui-notification__container"
+    className="mfui-beta-notification__container"
   >
     <test-file-stub
-      className="mfui-notification__icon"
+      className="mfui-beta-notification__icon"
     />
     <Paragraph
-      className="mfui-notification__text"
+      className="mfui-beta-notification__text"
       hasMargin={false}
     >
       Some test text
@@ -22,16 +22,16 @@ exports[`<Notification /> it renders Notification with type 1`] = `
 
 exports[`<Notification /> it renders Notification without props 1`] = `
 <div
-  className="mfui-notification mfui-notification_type_success"
+  className="mfui-beta-notification mfui-beta-notification_type_success"
 >
   <div
-    className="mfui-notification__container"
+    className="mfui-beta-notification__container"
   >
     <test-file-stub
-      className="mfui-notification__icon"
+      className="mfui-beta-notification__icon"
     />
     <Paragraph
-      className="mfui-notification__text"
+      className="mfui-beta-notification__text"
       hasMargin={false}
     >
       Some test text
@@ -42,16 +42,16 @@ exports[`<Notification /> it renders Notification without props 1`] = `
 
 exports[`<Notification /> it renders short Notification 1`] = `
 <div
-  className="mfui-notification mfui-notification_type_success mfui-notification_short"
+  className="mfui-beta-notification mfui-beta-notification_type_success mfui-beta-notification_short"
 >
   <div
-    className="mfui-notification__container"
+    className="mfui-beta-notification__container"
   >
     <test-file-stub
-      className="mfui-notification__icon"
+      className="mfui-beta-notification__icon"
     />
     <Paragraph
-      className="mfui-notification__text"
+      className="mfui-beta-notification__text"
       hasMargin={false}
     >
       Some test text

@@ -2,7 +2,7 @@
 
 exports[`<InputLabel /> renders InputLabel with props 1`] = `
 <label
-  className="mfui-input-label"
+  className="mfui-beta-input-label"
   htmlFor="htmlFor"
 >
   test
@@ -11,7 +11,7 @@ exports[`<InputLabel /> renders InputLabel with props 1`] = `
 
 exports[`<InputLabel /> renders InputLabel without props 1`] = `
 <label
-  className="mfui-input-label"
+  className="mfui-beta-input-label"
 >
   test
 </label>

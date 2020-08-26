@@ -41,7 +41,7 @@ describe('<RadioButton />', () => {
                 <RadioButton name="group" value={value} onChange={handleChange}>Тестовая строка</RadioButton>
             );
 
-            wrapper.find('.mfui-radio-button__input').simulate('change');
+            wrapper.find('.mfui-beta-radio-button__input').simulate('change');
             expect(handleChange).toHaveBeenCalledWith(value);
         });
     });

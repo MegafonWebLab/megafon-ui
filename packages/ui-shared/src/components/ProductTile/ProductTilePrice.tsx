@@ -17,7 +17,7 @@ interface IProductTilePriceProps {
     discount?: string;
 }
 
-const cn = cnCreate('mfui-product-tile-price');
+const cn = cnCreate('mfui-beta-product-tile-price');
 class ProductTilePrice extends React.Component<IProductTilePriceProps> {
     static propTypes = {
         title: PropTypes.string,

@@ -58,7 +58,7 @@ interface IResponsiveData {
     currentSlides?: number;
 }
 
-const cn = cnCreate('mfui-carousel');
+const cn = cnCreate('mfui-beta-carousel');
 class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     static propTypes = {
         className: PropTypes.string,

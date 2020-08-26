@@ -2,23 +2,23 @@
 
 exports[`<ProductCardWrapper /> it renders ProductCardWrapper 1`] = `
 <div
-  className="mfui-product-card-wrapper mfui-product-card-wrapper_hint mfui-product-card-wrapper_hint_green mfui-product-card-wrapper_bl mfui-product-card-wrapper_br"
+  className="mfui-beta-product-card-wrapper mfui-beta-product-card-wrapper_hint mfui-beta-product-card-wrapper_hint_green mfui-beta-product-card-wrapper_bl mfui-beta-product-card-wrapper_br"
   onClick={[Function]}
 >
   <div
-    className="mfui-product-card-wrapper__inner"
+    className="mfui-beta-product-card-wrapper__inner"
   >
     <div
-      className="mfui-product-card-wrapper__hint-box"
+      className="mfui-beta-product-card-wrapper__hint-box"
     >
       <div
-        className="mfui-product-card-wrapper__hint-text"
+        className="mfui-beta-product-card-wrapper__hint-text"
       >
         Рекоммендуем
       </div>
     </div>
     <div
-      className="mfui-product-card-wrapper__container"
+      className="mfui-beta-product-card-wrapper__container"
     >
       <div />
     </div>
@@ -28,14 +28,14 @@ exports[`<ProductCardWrapper /> it renders ProductCardWrapper 1`] = `
 
 exports[`<ProductCardWrapper /> it renders without hint 1`] = `
 <div
-  className="mfui-product-card-wrapper"
+  className="mfui-beta-product-card-wrapper"
   onClick={[Function]}
 >
   <div
-    className="mfui-product-card-wrapper__inner"
+    className="mfui-beta-product-card-wrapper__inner"
   >
     <div
-      className="mfui-product-card-wrapper__container"
+      className="mfui-beta-product-card-wrapper__container"
     >
       <div />
     </div>

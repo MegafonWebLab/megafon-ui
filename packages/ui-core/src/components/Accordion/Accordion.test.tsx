@@ -33,7 +33,7 @@ describe('<Accordion />', () => {
             <Accordion {...props}><div /></Accordion>
         );
 
-        wrapper.find('.mfui-accordion__title-wrap').simulate('click');
+        wrapper.find('.mfui-beta-accordion__title-wrap').simulate('click');
         expect(onClickAccordion).toBeCalledWith(!isOpened, title);
     });
 
@@ -42,11 +42,11 @@ describe('<Accordion />', () => {
             <Accordion {...props}><div /></Accordion>
         );
 
-        wrapper.find('.mfui-accordion__title-wrap').simulate('click');
-        expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(true);
+        wrapper.find('.mfui-beta-accordion__title-wrap').simulate('click');
+        expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
 
-        wrapper.find('.mfui-accordion__title-wrap').simulate('click');
-        expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(false);
+        wrapper.find('.mfui-beta-accordion__title-wrap').simulate('click');
+        expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(false);
     });
 
     it('test Classes props', () => {
@@ -61,8 +61,8 @@ describe('<Accordion />', () => {
             <Accordion {...propsWithClasses}><div /></Accordion>
         );
 
-        expect(wrapper.find('.mfui-accordion').hasClass('testRootClass')).toEqual(true);
-        expect(wrapper.find('.mfui-accordion__content').hasClass('testCollapseClass')).toEqual(true);
+        expect(wrapper.find('.mfui-beta-accordion').hasClass('testRootClass')).toEqual(true);
+        expect(wrapper.find('.mfui-beta-accordion__content').hasClass('testCollapseClass')).toEqual(true);
     });
 
     describe('testing the behavior of the Accordion when changing the external props - isOpened', () => {
@@ -75,10 +75,10 @@ describe('<Accordion />', () => {
                 <Accordion {...isOpenedProps}><div /></Accordion>
             );
 
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(true);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
             wrapper.setProps({ isOpened: false });
             wrapper.update();
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(false);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(false);
         });
 
         it('first value of isOpened - false, then it changes to true', () => {
@@ -86,10 +86,10 @@ describe('<Accordion />', () => {
                 <Accordion {...props}><div /></Accordion>
             );
 
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(false);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(false);
             wrapper.setProps({ isOpened: true });
             wrapper.update();
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(true);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
         });
 
         it('first value of isOpened - false, then it changes to false', () => {
@@ -97,10 +97,10 @@ describe('<Accordion />', () => {
                 <Accordion {...props}><div /></Accordion>
             );
 
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(false);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(false);
             wrapper.setProps({ isOpened: false });
             wrapper.update();
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(false);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(false);
         });
 
         it('first value of isOpened - true, then it changes to true', () => {
@@ -112,10 +112,10 @@ describe('<Accordion />', () => {
                 <Accordion {...isOpenedProps}><div /></Accordion>
             );
 
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(true);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
             wrapper.setProps({ isOpened: true });
             wrapper.update();
-            expect(wrapper.find('.mfui-accordion').hasClass('mfui-accordion_open')).toEqual(true);
+            expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
         });
     });
 });

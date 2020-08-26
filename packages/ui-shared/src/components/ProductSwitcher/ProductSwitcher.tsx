@@ -37,7 +37,7 @@ interface INearPoint {
     title: string;
 }
 
-const cn = cnCreate('mfui-product-switcher');
+const cn = cnCreate('mfui-beta-product-switcher');
 class ProductSwitcher extends React.Component<IProductSwitcherProps, IProductSwitcherState> {
     static propTypes = {
         items: PropTypes.array.isRequired,

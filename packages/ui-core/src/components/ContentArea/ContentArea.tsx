@@ -39,7 +39,7 @@ const BACKGROUND_COLORS = [
     'fullBlack',
 ];
 
-const cn = cnCreate('mfui-content-area');
+const cn = cnCreate('mfui-beta-content-area');
 class ContentArea extends React.Component<IConrentAreaProps> {
     static propTypes = {
         outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),

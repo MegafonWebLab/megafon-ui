@@ -2,10 +2,10 @@
 
 exports[`<ProductTileStatic /> it renders ProductTileStatic 1`] = `
 <div
-  className="mfui-product-tile-static"
+  className="mfui-beta-product-tile-static"
 >
   <div
-    className="mfui-product-tile-static__constructor-pack"
+    className="mfui-beta-product-tile-static__constructor-pack"
     key="title2342unit"
   >
     2342 unit

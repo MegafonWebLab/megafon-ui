@@ -18,7 +18,7 @@ interface IGridProps {
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
 
-const cn = cnCreate('mfui-grid');
+const cn = cnCreate('mfui-beta-grid');
 class Grid extends React.Component<IGridProps> {
     static propTypes = {
         hAlign: PropTypes.oneOf(['left', 'right', 'center', 'between', 'around']),

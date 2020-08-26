@@ -2,10 +2,10 @@
 
 exports[`<ProductTileCashback /> it renders ProductTileCashback 1`] = `
 <div
-  className="mfui-product-tile-cashback"
+  className="mfui-beta-product-tile-cashback"
 >
   <span
-    className="mfui-product-tile-cashback__text"
+    className="mfui-beta-product-tile-cashback__text"
   >
     title
      

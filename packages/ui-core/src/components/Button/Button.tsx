@@ -50,7 +50,7 @@ export interface IButtonProps {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-button');
+const cn = cnCreate('mfui-beta-button');
 const Button: React.FC<IButtonProps> = props => {
     const {
         classes: {

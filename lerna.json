@@ -2,11 +2,23 @@
   "version": "independent",
   "npmClient": "yarn",
   "command": {
-    "ignoreChanges": [
-      "*.md",
-      "*.mdx",
-      "*.txt",
-      "*.test.*"
-    ]
+    "version": {
+      "createRelease": "github"
+    },
+    "publish": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "message": "chore(release): release",
+      "ignoreChanges": [
+        "*.md",
+        "*.mdx",
+        "*.txt",
+        "*.test.*",
+        "*.docz.*"
+      ],
+      "distTag": "beta",
+      "preid": "beta",
+      "conventionalPrerelease": "*"
+    }
   }
 }

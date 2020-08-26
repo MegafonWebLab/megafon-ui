@@ -67,7 +67,7 @@ interface ISelectState {
     inputValue: string;
 }
 
-const cn = cnCreate('mfui-select');
+const cn = cnCreate('mfui-beta-select');
 class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
         type: PropTypes.oneOf(Object.values(Types)),

@@ -35,7 +35,7 @@ export interface IProductTileBuyProps {
     onClickBuy?(e: React.SyntheticEvent<EventTarget>): void;
 }
 
-const cn = cnCreate('mfui-product-tile-buy');
+const cn = cnCreate('mfui-beta-product-tile-buy');
 class ProductTileBuy extends React.Component<IProductTileBuyProps> {
     static propTypes = {
         buyLink: PropTypes.string,

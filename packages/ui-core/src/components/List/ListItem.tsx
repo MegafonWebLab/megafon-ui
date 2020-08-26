@@ -9,7 +9,7 @@ interface IListItemProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
-const cn = cnCreate('mfui-list-item');
+const cn = cnCreate('mfui-beta-list-item');
 class ListItem extends React.Component<IListItemProps, {}> {
     static propTypes = {
         className: PropTypes.string,

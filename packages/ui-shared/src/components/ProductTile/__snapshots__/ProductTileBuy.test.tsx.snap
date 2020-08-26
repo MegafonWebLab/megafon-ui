@@ -2,12 +2,12 @@
 
 exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
 <div
-  className="mfui-product-tile-buy sdfsdf"
+  className="mfui-beta-product-tile-buy sdfsdf"
 >
   <Button
     classes={
       Object {
-        "root": "mfui-product-tile-buy__button",
+        "root": "mfui-beta-product-tile-buy__button",
       }
     }
     sizeAll="medium"
@@ -16,7 +16,7 @@ exports[`<ProductTileBuy /> it renders ProductTileBuy 1`] = `
     Купить
   </Button>
   <TextLink
-    className="mfui-product-tile-buy__detail-link"
+    className="mfui-beta-product-tile-buy__detail-link"
     color="blue"
     target="_self"
     underlineStyle="solid"

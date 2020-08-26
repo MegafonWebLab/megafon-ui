@@ -2,14 +2,14 @@
 
 exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
 <div
-  className="mfui-product-card-info"
+  className="mfui-beta-product-card-info"
 >
   <div
-    className="mfui-product-card-info__description"
+    className="mfui-beta-product-card-info__description"
   >
     <Header
       as="h2"
-      className="mfui-product-card-info__description-title"
+      className="mfui-beta-product-card-info__description-title"
       color="black"
       hAlign="inherit"
       margin={false}
@@ -17,10 +17,10 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
       Включайся!
     </Header>
     <div
-      className="mfui-product-card-info__badges"
+      className="mfui-beta-product-card-info__badges"
     >
       <div
-        className="mfui-product-card-info__badge mfui-product-card-info__badge_type_code"
+        className="mfui-beta-product-card-info__badge mfui-beta-product-card-info__badge_type_code"
         key="title0"
       >
         <BubbleHint
@@ -30,7 +30,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
           popupWidth="small"
           trigger={
             <div
-              className="mfui-product-card-info__badge-title"
+              className="mfui-beta-product-card-info__badge-title"
             >
               title
             </div>
@@ -46,21 +46,21 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         </BubbleHint>
       </div>
       <div
-        className="mfui-product-card-info__badge mfui-product-card-info__badge_type_code"
+        className="mfui-beta-product-card-info__badge mfui-beta-product-card-info__badge_type_code"
         key="title1"
       >
         <div
-          className="mfui-product-card-info__badge-title"
+          className="mfui-beta-product-card-info__badge-title"
         >
           title
         </div>
       </div>
     </div>
     <div
-      className="mfui-product-card-info__description-wrap"
+      className="mfui-beta-product-card-info__description-wrap"
     >
       <test-file-stub
-        className="mfui-product-card-info__description-icon"
+        className="mfui-beta-product-card-info__description-icon"
         style={
           Object {
             "height": "40px",
@@ -69,7 +69,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         }
       />
       <div
-        className="mfui-product-card-info__description-text"
+        className="mfui-beta-product-card-info__description-text"
         dangerouslySetInnerHTML={
           Object {
             "__html": "Амедиатека",
@@ -78,7 +78,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
       />
     </div>
     <TextLink
-      className="mfui-product-card-info__description-more"
+      className="mfui-beta-product-card-info__description-more"
       color="blue"
       href="https://www.google.com/"
       onClick={[Function]}
@@ -90,13 +90,13 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
     </TextLink>
   </div>
   <div
-    className="mfui-product-card-info__params"
+    className="mfui-beta-product-card-info__params"
   >
     <ul
-      className="mfui-product-card-info__params-list"
+      className="mfui-beta-product-card-info__params-list"
     >
       <li
-        className="mfui-product-card-info__params-item"
+        className="mfui-beta-product-card-info__params-item"
         key="Звонки на все номера России0"
       >
         <span
@@ -108,7 +108,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         минут
       </li>
       <li
-        className="mfui-product-card-info__params-item"
+        className="mfui-beta-product-card-info__params-item"
         key="SMS на номера Домашнего региона1"
       >
         <span
@@ -120,7 +120,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         SMS
       </li>
       <li
-        className="mfui-product-card-info__params-item"
+        className="mfui-beta-product-card-info__params-item"
         key="На любые сервисы2"
       >
         <span

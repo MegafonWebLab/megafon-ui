@@ -21,7 +21,7 @@ export interface IRadioButtonProps {
     onChange?: (value: string) => void;
 }
 
-const cn = cnCreate('mfui-radio-button');
+const cn = cnCreate('mfui-beta-radio-button');
 class RadioButton extends React.Component<IRadioButtonProps> {
     static propTypes = {
         value: PropTypes.string.isRequired,

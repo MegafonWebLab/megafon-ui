@@ -46,7 +46,7 @@ interface IProductCardInfoProps {
     onClickMoreInfo?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-product-card-info');
+const cn = cnCreate('mfui-beta-product-card-info');
 class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
     static propTypes = {
         title: PropTypes.string.isRequired,

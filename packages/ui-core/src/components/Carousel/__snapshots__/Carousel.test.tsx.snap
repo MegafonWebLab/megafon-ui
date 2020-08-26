@@ -2,7 +2,7 @@
 
 exports[`<Carousel /> render tests should render component with all props 1`] = `
 <div
-  className="mfui-carousel some-class"
+  className="mfui-beta-carousel some-class"
 >
   <Slider
     afterChange={[Function]}
@@ -50,17 +50,17 @@ exports[`<Carousel /> render tests should render component with all props 1`] = 
 
 exports[`<Carousel /> render tests should render component with classes props 1`] = `
 <div
-  className="mfui-carousel some-class root-string"
+  className="mfui-beta-carousel some-class root-string"
 >
   <div
-    className="mfui-carousel__arrows"
+    className="mfui-beta-carousel__arrows"
   >
     <CarouselArrow
-      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-prev mfui-carousel__arrow_disabled left-arrow-string"
+      className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_arrow-prev mfui-beta-carousel__arrow_disabled left-arrow-string"
       onClick={[Function]}
     />
     <CarouselArrow
-      className="mfui-carousel__arrow mfui-carousel__arrow_arrow-next right-arrow-string"
+      className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_arrow-next right-arrow-string"
       onClick={[Function]}
     />
   </div>
@@ -120,7 +120,7 @@ exports[`<Carousel /> render tests should render component with classes props 1`
 
 exports[`<Carousel /> render tests should render component with prev arrow active and next disabled 1`] = `
 <div
-  className="mfui-carousel some-class"
+  className="mfui-beta-carousel some-class"
 >
   <Slider
     afterChange={[Function]}
@@ -168,7 +168,7 @@ exports[`<Carousel /> render tests should render component with prev arrow activ
 
 exports[`<Carousel /> render tests should render component with required props 1`] = `
 <div
-  className="mfui-carousel"
+  className="mfui-beta-carousel"
 >
   <Slider
     afterChange={[Function]}

@@ -23,7 +23,7 @@ export interface IAccordionProps {
     onClickAccordion?: (isOpened: boolean, title: string) => void;
 }
 
-const cn = cnCreate('mfui-accordion');
+const cn = cnCreate('mfui-beta-accordion');
 const Accordion: React.FC<IAccordionProps> = ({
     title,
     isOpened: isOpenedProps = false,

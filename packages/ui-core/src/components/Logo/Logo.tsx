@@ -19,7 +19,7 @@ interface ILogoProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-logo');
+const cn = cnCreate('mfui-beta-logo');
 class Logo extends React.Component<ILogoProps, {}> {
     static propTypes = {
         color: PropTypes.string,

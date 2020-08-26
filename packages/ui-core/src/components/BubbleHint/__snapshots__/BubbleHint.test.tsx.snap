@@ -2,22 +2,22 @@
 
 exports[`<BubbleHint /> it renders BubbleHint 1`] = `
 <Manager
-  className="mfui-bubble-hint"
+  className="mfui-beta-bubble-hint"
   tag="div"
 >
   <div
-    className="mfui-bubble-hint__container"
+    className="mfui-beta-bubble-hint__container"
     onClick={[Function]}
   >
     <Target
-      className="mfui-bubble-hint__target"
+      className="mfui-beta-bubble-hint__target"
     >
       <div
-        className="mfui-bubble-hint__trigger"
+        className="mfui-beta-bubble-hint__trigger"
       />
     </Target>
     <Popper
-      className="mfui-bubble-hint__popup mfui-bubble-hint__popup_width_normal"
+      className="mfui-beta-bubble-hint__popup mfui-beta-bubble-hint__popup_width_normal"
       component="div"
       eventsEnabled={false}
       modifiers={
@@ -36,13 +36,13 @@ exports[`<BubbleHint /> it renders BubbleHint 1`] = `
       positionFixed={false}
     >
       <div
-        className="mfui-bubble-hint__popup-inner mfui-bubble-hint__popup-inner_padding_normal mfui-bubble-hint__popup-inner_align_left"
+        className="mfui-beta-bubble-hint__popup-inner mfui-beta-bubble-hint__popup-inner_padding_normal mfui-beta-bubble-hint__popup-inner_align_left"
       >
         <div
-          className="mfui-bubble-hint__content"
+          className="mfui-beta-bubble-hint__content"
         />
         <Arrow
-          className="mfui-bubble-hint__arrow"
+          className="mfui-beta-bubble-hint__arrow"
         />
       </div>
     </Popper>
@@ -52,22 +52,22 @@ exports[`<BubbleHint /> it renders BubbleHint 1`] = `
 
 exports[`<BubbleHint /> it renders with click 1`] = `
 <Manager
-  className="mfui-bubble-hint"
+  className="mfui-beta-bubble-hint"
   tag="div"
 >
   <div
-    className="mfui-bubble-hint__container"
+    className="mfui-beta-bubble-hint__container"
     onClick={[Function]}
   >
     <Target
-      className="mfui-bubble-hint__target"
+      className="mfui-beta-bubble-hint__target"
     >
       <div
-        className="mfui-bubble-hint__trigger"
+        className="mfui-beta-bubble-hint__trigger"
       />
     </Target>
     <Popper
-      className="mfui-bubble-hint__popup mfui-bubble-hint__popup_width_normal"
+      className="mfui-beta-bubble-hint__popup mfui-beta-bubble-hint__popup_width_normal"
       component="div"
       eventsEnabled={false}
       modifiers={
@@ -86,13 +86,13 @@ exports[`<BubbleHint /> it renders with click 1`] = `
       positionFixed={false}
     >
       <div
-        className="mfui-bubble-hint__popup-inner mfui-bubble-hint__popup-inner_padding_normal mfui-bubble-hint__popup-inner_align_left"
+        className="mfui-beta-bubble-hint__popup-inner mfui-beta-bubble-hint__popup-inner_padding_normal mfui-beta-bubble-hint__popup-inner_align_left"
       >
         <div
-          className="mfui-bubble-hint__content"
+          className="mfui-beta-bubble-hint__content"
         />
         <Arrow
-          className="mfui-bubble-hint__arrow"
+          className="mfui-beta-bubble-hint__arrow"
         />
       </div>
     </Popper>

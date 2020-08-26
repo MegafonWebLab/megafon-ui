@@ -29,7 +29,7 @@ export interface ICheckboxProps {
     onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-checkbox');
+const cn = cnCreate('mfui-beta-checkbox');
 class Checkbox extends React.Component<ICheckboxProps, {}> {
     static propTypes = {
         className: PropTypes.string,

@@ -2,11 +2,11 @@
 
 exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] = `
 <div
-  className="mfui-product-card-features-bottom"
+  className="mfui-beta-product-card-features-bottom"
 >
   <Header
     as="h3"
-    className="mfui-product-card-features-bottom__title"
+    className="mfui-beta-product-card-features-bottom__title"
     color="black"
     hAlign="inherit"
     margin={false}
@@ -14,18 +14,18 @@ exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] 
     test
   </Header>
   <ul
-    className="mfui-product-card-features-bottom__list"
+    className="mfui-beta-product-card-features-bottom__list"
   >
     <li
-      className="mfui-product-card-features-bottom__item mfui-product-card-features-bottom__item_icon"
+      className="mfui-beta-product-card-features-bottom__item mfui-beta-product-card-features-bottom__item_icon"
       key="test"
     >
       <test-file-stub
-        className="mfui-product-card-features-bottom__item-icon"
+        className="mfui-beta-product-card-features-bottom__item-icon"
       />
       <Header
         as="h5"
-        className="mfui-product-card-features-bottom__item-title"
+        className="mfui-beta-product-card-features-bottom__item-title"
         color="black"
         hAlign="inherit"
         margin={false}
@@ -33,7 +33,7 @@ exports[`<ProductCardFeaturesBottom /> it renders ProductCardFeaturesBottom 1`] 
         test
       </Header>
       <Paragraph
-        className="mfui-product-card-features-bottom__item-text"
+        className="mfui-beta-product-card-features-bottom__item-text"
         hasMargin={false}
         size="small"
       >

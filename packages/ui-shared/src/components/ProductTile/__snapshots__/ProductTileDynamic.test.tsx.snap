@@ -2,10 +2,10 @@
 
 exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
 <div
-  className="mfui-product-tile-dynamic"
+  className="mfui-beta-product-tile-dynamic"
 >
   <div
-    className="mfui-product-tile-dynamic__constructor-pack"
+    className="mfui-beta-product-tile-dynamic__constructor-pack"
   >
     <ProductTileValue
       hAlign="center"
@@ -13,7 +13,7 @@ exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
     />
   </div>
   <ProductSwitcher
-    className="mfui-product-tile-dynamic__constructor-range"
+    className="mfui-beta-product-tile-dynamic__constructor-range"
     items={
       Array [
         Object {
@@ -33,7 +33,7 @@ exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
     theme="tariff-showcase"
   />
   <ProductSwitcher
-    className="mfui-product-tile-dynamic__constructor-range"
+    className="mfui-beta-product-tile-dynamic__constructor-range"
     items={
       Array [
         Object {
@@ -53,7 +53,7 @@ exports[`<ProductTileDynamic /> it renders ProductTileDynamic 1`] = `
     theme="tariff-showcase"
   />
   <div
-    className="mfui-product-tile-dynamic__constructor-pack"
+    className="mfui-beta-product-tile-dynamic__constructor-pack"
   >
     <ProductTileValue
       hAlign="center"

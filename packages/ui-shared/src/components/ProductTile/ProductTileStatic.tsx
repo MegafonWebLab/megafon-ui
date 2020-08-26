@@ -9,7 +9,7 @@ interface IProductTileStaticProps {
     packs: Array<Partial<IPack>>;
 }
 
-const cn = cnCreate('mfui-product-tile-static');
+const cn = cnCreate('mfui-beta-product-tile-static');
 class ProductTileStatic extends React.Component<IProductTileStaticProps> {
     static propTypes = {
         packs: PropTypes.arrayOf(PropTypes.shape({

@@ -1,0 +1,110 @@
+name: megafon-ui CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  main:
+    env:
+      BASE_BRANCH: master
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Yarn cache
+        uses: actions/cache@v2
+        id: cache-yarn-ci
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Local Node.js modules cache
+        id: cache-node-modules-ci
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-nodemodules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-nodemodules-
+
+      - name: Define branch purpose
+        id: branch
+        run: |
+          if [ ${{ github.ref }} = refs/heads/${{ env.BASE_BRANCH }} ];
+          then
+            echo ::set-output name=is_base::true
+          else
+            echo ::set-output name=is_base::false
+          fi
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Linting commit messages
+        if: ${{ github.event_name == 'pull_request' }}
+        run: yarn exec commitlint -- --from=origin/${{ github.base_ref }} --to=HEAD
+
+      - name: Linting sources
+        run: yarn lint
+
+      - name: Build
+        run: yarn build
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Tests
+        run: yarn test
+
+      - name: Build documentation
+        if: steps.branch.outputs.is_base == 'true'
+        run: yarn demo:build
+
+      - name: Deploy documentation
+        if: steps.branch.outputs.is_base == 'true'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+
+      - name: Configure CI Git User
+        if: steps.branch.outputs.is_base == 'true'
+        run: |
+          git config --global user.name 'Megafon CI'
+          git config --global user.email 'megafon-ci@users.noreply.github.com'
+          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
+
+      - name: Authenticate with NPM Registry
+        if: steps.branch.outputs.is_base == 'true'
+        run: |
+          echo "registry=http://registry.npmjs.org/" >> .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+          npm whoami
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish
+        if: steps.branch.outputs.is_base == 'true'
+        run: yarn exec lerna publish -- --yes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

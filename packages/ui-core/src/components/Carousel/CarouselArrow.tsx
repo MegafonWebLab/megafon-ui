@@ -11,7 +11,7 @@ interface ICarouselArrowProps {
     theme?: string;
 }
 
-const cn = cnCreate('mfui-carousel-arrow');
+const cn = cnCreate('mfui-beta-carousel-arrow');
 class CarouselArrow extends React.Component<ICarouselArrowProps> {
     static propTypes = {
         className: PropTypes.string,
