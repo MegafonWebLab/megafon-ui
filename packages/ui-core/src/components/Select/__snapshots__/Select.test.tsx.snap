@@ -42,6 +42,655 @@ exports[`<Select /> it renders with data attributes 1`] = `
 </div>
 `;
 
+exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 1`] = `
+<div
+  className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+  data-test="test"
+>
+  <div
+    className="mfui-beta-select__inner"
+  >
+    <InputLabel
+      htmlFor="1"
+    >
+      test-label
+      <span
+        className="mfui-beta-select__require-mark"
+      >
+        *
+      </span>
+    </InputLabel>
+    <div
+      className="mfui-beta-select__control test-control-class"
+      onKeyDown={[Function]}
+    >
+      <input
+        className="mfui-beta-select__combobox"
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="test-placeholder"
+        type="text"
+        value=""
+      />
+      <div
+        className="mfui-beta-select__arrow-wrap"
+        onClick={[Function]}
+        tabIndex={1}
+      >
+        <span
+          className="mfui-beta-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__list"
+    >
+      <div
+        className="mfui-beta-select__list-inner"
+      >
+        <div
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          key="1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            <Paragraph
+              hasMargin={false}
+            >
+              t
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              e
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              s
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              t
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              -
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              n
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              a
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              m
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              e
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              -
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              1
+            </Paragraph>
+          </div>
+        </div>
+        <div
+          className="mfui-beta-select__list-item"
+          key="3"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            <Paragraph
+              hasMargin={false}
+            >
+              t
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              e
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              s
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              t
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              -
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              n
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              a
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              m
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              e
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              -
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              />
+              2
+            </Paragraph>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mfui-beta-select__text"
+  >
+    test-notice-text
+  </div>
+</div>
+`;
+
+exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 2`] = `
+<div
+  className="mfui-beta-select mfui-beta-select_open mfui-beta-select_no-touch test-class test-root-class"
+  data-test="test"
+>
+  <div
+    className="mfui-beta-select__inner"
+  >
+    <InputLabel
+      htmlFor="1"
+    >
+      test-label
+      <span
+        className="mfui-beta-select__require-mark"
+      >
+        *
+      </span>
+    </InputLabel>
+    <div
+      className="mfui-beta-select__control test-control-class"
+      onKeyDown={[Function]}
+    >
+      <input
+        className="mfui-beta-select__combobox"
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="test-placeholder"
+        type="text"
+        value="test-name-1"
+      />
+      <div
+        className="mfui-beta-select__arrow-wrap"
+        onClick={[Function]}
+        tabIndex={1}
+      >
+        <span
+          className="mfui-beta-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__list"
+    >
+      <div
+        className="mfui-beta-select__list-inner"
+      >
+        <div
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          key="1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            <Paragraph
+              hasMargin={false}
+            >
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              >
+                test-name-1
+              </span>
+            </Paragraph>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mfui-beta-select__text"
+  >
+    test-notice-text
+  </div>
+</div>
+`;
+
+exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 3`] = `
+<div
+  className="mfui-beta-select mfui-beta-select_open mfui-beta-select_no-touch test-class test-root-class"
+  data-test="test"
+>
+  <div
+    className="mfui-beta-select__inner"
+  >
+    <InputLabel
+      htmlFor="1"
+    >
+      test-label
+      <span
+        className="mfui-beta-select__require-mark"
+      >
+        *
+      </span>
+    </InputLabel>
+    <div
+      className="mfui-beta-select__control test-control-class"
+      onKeyDown={[Function]}
+    >
+      <input
+        className="mfui-beta-select__combobox"
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="test-placeholder"
+        type="text"
+        value="test-name-1"
+      />
+      <div
+        className="mfui-beta-select__arrow-wrap"
+        onClick={[Function]}
+        tabIndex={1}
+      >
+        <span
+          className="mfui-beta-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__list"
+    >
+      <div
+        className="mfui-beta-select__list-inner"
+      >
+        <div
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          key="1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            <Paragraph
+              hasMargin={false}
+            >
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              >
+                test-name-1
+              </span>
+            </Paragraph>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mfui-beta-select__text"
+  >
+    test-notice-text
+  </div>
+</div>
+`;
+
+exports[`<Select /> key typing handlers highlighted text 1`] = `
+<div
+  className="mfui-beta-select mfui-beta-select_open mfui-beta-select_no-touch test-class test-root-class"
+  data-test="test"
+>
+  <div
+    className="mfui-beta-select__inner"
+  >
+    <InputLabel
+      htmlFor="1"
+    >
+      test-label
+      <span
+        className="mfui-beta-select__require-mark"
+      >
+        *
+      </span>
+    </InputLabel>
+    <div
+      className="mfui-beta-select__control test-control-class"
+      onKeyDown={[Function]}
+    >
+      <input
+        className="mfui-beta-select__combobox"
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="test-placeholder"
+        type="text"
+        value="name-1"
+      />
+      <div
+        className="mfui-beta-select__arrow-wrap"
+        onClick={[Function]}
+        tabIndex={1}
+      >
+        <span
+          className="mfui-beta-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__list"
+    >
+      <div
+        className="mfui-beta-select__list-inner"
+      >
+        <div
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          key="1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            <Paragraph
+              hasMargin={false}
+            >
+              test-
+              <span
+                className="mfui-beta-select__highlighted-fragment"
+              >
+                name-1
+              </span>
+            </Paragraph>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mfui-beta-select__text"
+  >
+    test-notice-text
+  </div>
+</div>
+`;
+
+exports[`<Select /> keyboard actions handles Tab 1`] = `
+<Select
+  className="test-class"
+  classes={
+    Object {
+      "control": "test-control-class",
+      "root": "test-root-class",
+    }
+  }
+  dataAttrs={
+    Object {
+      "data-test": "test",
+      "incorrect-attr": "test",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "title": "test-name-1",
+        "value": 1,
+      },
+      Object {
+        "title": "test-name-2",
+        "value": 2,
+      },
+    ]
+  }
+  label="test-label"
+  labelId="1"
+  notFoundText="Ничего не нашлось"
+  noticeText="test-notice-text"
+  placeholder="test-placeholder"
+  required={true}
+  type="classic"
+>
+  <div
+    className="mfui-beta-select mfui-beta-select_open mfui-beta-select_no-touch test-class test-root-class"
+    data-test="test"
+  >
+    <div
+      className="mfui-beta-select__inner"
+    >
+      <InputLabel
+        htmlFor="1"
+      >
+        <label
+          className="mfui-beta-input-label"
+          htmlFor="1"
+        >
+          test-label
+          <span
+            className="mfui-beta-select__require-mark"
+          >
+            *
+          </span>
+        </label>
+      </InputLabel>
+      <div
+        className="mfui-beta-select__control test-control-class"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="mfui-beta-select__title mfui-beta-select__title_placeholder"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="mfui-beta-select__title-inner"
+          >
+            test-placeholder
+          </div>
+        </div>
+        <div
+          className="mfui-beta-select__arrow-wrap"
+          onClick={[Function]}
+          tabIndex={1}
+        >
+          <span
+            className="mfui-beta-select__arrow"
+          />
+        </div>
+      </div>
+      <div
+        className="mfui-beta-select__list"
+      >
+        <div
+          className="mfui-beta-select__list-inner"
+        >
+          <div
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            key="1"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              test-name-1
+            </div>
+          </div>
+          <div
+            className="mfui-beta-select__list-item"
+            key="3"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              test-name-2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__text"
+    >
+      test-notice-text
+    </div>
+  </div>
+</Select>
+`;
+
+exports[`<Select /> keyboard actions handles Tab 2`] = `
+<Select
+  className="test-class"
+  classes={
+    Object {
+      "control": "test-control-class",
+      "root": "test-root-class",
+    }
+  }
+  dataAttrs={
+    Object {
+      "data-test": "test",
+      "incorrect-attr": "test",
+    }
+  }
+  items={
+    Array [
+      Object {
+        "title": "test-name-1",
+        "value": 1,
+      },
+      Object {
+        "title": "test-name-2",
+        "value": 2,
+      },
+    ]
+  }
+  label="test-label"
+  labelId="1"
+  notFoundText="Ничего не нашлось"
+  noticeText="test-notice-text"
+  placeholder="test-placeholder"
+  required={true}
+  type="classic"
+>
+  <div
+    className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+    data-test="test"
+  >
+    <div
+      className="mfui-beta-select__inner"
+    >
+      <InputLabel
+        htmlFor="1"
+      >
+        <label
+          className="mfui-beta-input-label"
+          htmlFor="1"
+        >
+          test-label
+          <span
+            className="mfui-beta-select__require-mark"
+          >
+            *
+          </span>
+        </label>
+      </InputLabel>
+      <div
+        className="mfui-beta-select__control test-control-class"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="mfui-beta-select__title mfui-beta-select__title_placeholder"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="mfui-beta-select__title-inner"
+          >
+            test-placeholder
+          </div>
+        </div>
+        <div
+          className="mfui-beta-select__arrow-wrap"
+          onClick={[Function]}
+          tabIndex={1}
+        >
+          <span
+            className="mfui-beta-select__arrow"
+          />
+        </div>
+      </div>
+      <div
+        className="mfui-beta-select__list"
+      >
+        <div
+          className="mfui-beta-select__list-inner"
+        >
+          <div
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            key="1"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              test-name-1
+            </div>
+          </div>
+          <div
+            className="mfui-beta-select__list-item"
+            key="3"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              test-name-2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__text"
+    >
+      test-notice-text
+    </div>
+  </div>
+</Select>
+`;
+
 exports[`<Select /> snapshots it renders Select 1`] = `
 <Select
   items={
@@ -125,7 +774,7 @@ exports[`<Select /> snapshots it renders Select 1`] = `
 </Select>
 `;
 
-exports[`<Select /> snapshots it renders Select with props 1`] = `
+exports[`<Select /> snapshots it renders with props 1`] = `
 <Select
   className="test-class"
   classes={
@@ -328,6 +977,11 @@ exports[`<Select /> states of select it renders with error state 1`] = `
       />
     </div>
   </div>
+  <div
+    className="mfui-beta-select__text mfui-beta-select__text_error"
+  >
+    error
+  </div>
 </div>
 `;
 
@@ -369,83 +1023,10 @@ exports[`<Select /> states of select it renders with valid state 1`] = `
       />
     </div>
   </div>
-</div>
-`;
-
-exports[`<Select /> typing highlighted text 1`] = `
-<div
-  className="mfui-beta-select mfui-beta-select_open mfui-beta-select_no-touch test-class test-root-class"
-  data-test="test"
->
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-beta-select__text mfui-beta-select__text_success"
   >
-    <InputLabel
-      htmlFor="1"
-    >
-      test-label
-      <span
-        className="mfui-beta-select__require-mark"
-      >
-        *
-      </span>
-    </InputLabel>
-    <div
-      className="mfui-beta-select__control test-control-class"
-      onKeyDown={[Function]}
-    >
-      <input
-        className="mfui-beta-select__combobox"
-        onChange={[Function]}
-        onClick={[Function]}
-        placeholder="test-placeholder"
-        type="text"
-        value="name-1"
-      />
-      <div
-        className="mfui-beta-select__arrow-wrap"
-        onClick={[Function]}
-        tabIndex={1}
-      >
-        <span
-          className="mfui-beta-select__arrow"
-        />
-      </div>
-    </div>
-    <div
-      className="mfui-beta-select__list"
-    >
-      <div
-        className="mfui-beta-select__list-inner"
-      >
-        <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
-          key="1"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="mfui-beta-select__item-title"
-          >
-            <Paragraph
-              hasMargin={false}
-            >
-              test-
-              <span
-                className="mfui-beta-select__highlighted-fragment"
-              >
-                name-1
-              </span>
-            </Paragraph>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="mfui-beta-select__text"
-  >
-    test-notice-text
+    success
   </div>
 </div>
 `;

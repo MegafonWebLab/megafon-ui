@@ -45,7 +45,7 @@ describe('<Select />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('it renders Select with props', () => {
+        it('it renders with props', () => {
             const wrapper = mount(<Select {...props} />);
             expect(wrapper).toMatchSnapshot();
         });
@@ -54,7 +54,7 @@ describe('<Select />', () => {
     describe('states of select', () => {
         it('it renders with disabled state', () => {
             const handleClick = jest.fn();
-            const wrapper = shallow(<Select items={[]} isDisabled />);
+            const wrapper = shallow(<Select onSelect={handleClick} items={[]} isDisabled />);
 
             wrapper.find(`.${cn('control')}`).simulate('click');
 
@@ -63,12 +63,12 @@ describe('<Select />', () => {
         });
 
         it('it renders with valid state', () => {
-            const wrapper = shallow(<Select items={[]} verification={Verification.VALID} />);
+            const wrapper = shallow(<Select items={[]} verification={Verification.VALID} noticeText="success" />);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('it renders with error state', () => {
-            const wrapper = shallow(<Select items={[]} verification={Verification.ERROR} />);
+            const wrapper = shallow(<Select items={[]} verification={Verification.ERROR} noticeText="error" />);
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -78,7 +78,7 @@ describe('<Select />', () => {
             const handleSelectItem = jest.fn();
             const wrapper = shallow(<Select {...props} onSelect={handleSelectItem} />);
             const listItem = `.${cn('list-item')}`;
-            const listItemActive = 'mfui-beta-select__list-item_active';
+            const listItemActive = `${cn('list-item_active')}`;
 
             wrapper.find(`.${cn('title')}`).simulate('click');
             wrapper.find(listItem).at(1).simulate('click');
@@ -88,19 +88,39 @@ describe('<Select />', () => {
         });
     });
 
-    describe('typing', () => {
+    describe('key typing handlers', () => {
         it('calls onChange while typing in the field with debounce', () => {
-            const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX}  />);
+            jest.useFakeTimers();
+            const delay = 250;
+
+            const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} />);
+
+            expect(wrapper).toMatchSnapshot();
 
             wrapper.find(`.${cn('combobox')}`).simulate('change', {
                 target: {
-                    value: 'new value',
+                    value: 'test-name-1',
                 },
             });
 
-            expect(mockedDebounce).toBeCalledWith(expect.any(Function), 250);
-            expect(wrapper.state('inputValue')).toEqual('new value');
+            jest.advanceTimersByTime(100);
+            expect(wrapper).toMatchSnapshot();
+
+            jest.advanceTimersByTime(delay);
+            expect(wrapper).toMatchSnapshot();
         });
+        // it('calls onChange while typing in the field with debounce', () => {
+        //     const wrapper = shallow(<Select {...props} type={Types.COMBOBOX}  />);
+
+        //     wrapper.find(`.${cn('combobox')}`).simulate('change', {
+        //         target: {
+        //             value: 'new value',
+        //         },
+        //     });
+
+        //     expect(mockedDebounce).toBeCalledWith(expect.any(Function), 250);
+        //     expect(wrapper.state('inputValue')).toEqual('new value');
+        // });
 
         it('highlighted text', () => {
             const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX}  />);
@@ -121,7 +141,7 @@ describe('<Select />', () => {
             const title = wrapper.find(`.${cn('title')}`);
             const control = wrapper.find(`.${cn('control')}`);
             const listItem = `.${cn('list-item')}`;
-            const listItemActive = 'mfui-beta-select__list-item_active';
+            const listItemActive = `${cn('list-item_active')}`;
 
             title.simulate('click');
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
@@ -141,25 +161,10 @@ describe('<Select />', () => {
             const control = wrapper.find(`.${cn('control')}`);
 
             title.simulate('click');
+            expect(wrapper).toMatchSnapshot();
+
             control.simulate('keyDown', { key: 'Tab', preventDefault: () => {}});
-
-            expect(wrapper.state('isOpened')).toBeFalsy();
-        });
-
-        it('handles Enter to choose item', () => {
-            const handleSelectItem = jest.fn();
-            const wrapper = mount(<Select {...props} onSelect={handleSelectItem} />);
-            const control = wrapper.find(`.${cn('control')}`);
-            const title = wrapper.find(`.${cn('title')}`);
-            const listItem = `.${cn('list-item')}`;
-            const listItemActive = 'mfui-beta-select__list-item_active';
-
-            title.simulate('click');
-            control.simulate('keyDown', { key: 'Enter' });
-
-            expect(handleSelectItem).toHaveBeenCalled();
-            expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
-            expect(wrapper.state('inputValue')).toEqual(props.items[0].title);
+            expect(wrapper).toMatchSnapshot();
         });
 
         it('handles Enter with focus to open items list', () => {

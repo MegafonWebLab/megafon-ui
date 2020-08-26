@@ -171,22 +171,22 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     handleClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
-        if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpened) {
+        if (this.selectNode.contains(e.target as Node) || !isOpened) {
             return;
         }
 
         this.setState({ isOpened: false });
-        this.getCurrentIndex();
     }
 
     handleOpenDropdown = (): void => {
+        this.getCurrentIndex();
         this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
     handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
-        const { activeIndex } = this.state;
-        const currentItem = items[activeIndex].value;
+        const { activeIndex, filteredItems } = this.state;
+        const currentItem = filteredItems[activeIndex].value;
 
         const item = items.find(elem => elem.value === currentItem);
 
@@ -196,7 +196,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         const { title } = item;
 
-        this.setState({isOpened: false, inputValue: title });
+        this.setState({isOpened: false, inputValue: title, comparableInputValue: title, filteredItems: items });
 
         onSelect && onSelect(e, item);
     }
@@ -207,14 +207,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState({ activeIndex: index });
     }
 
-    handleClickCombobox = (e: React.FormEvent<EventTarget>): void => {
+    handleClickCombobox = (e: React.FocusEvent<HTMLInputElement>): void => {
         const { isOpened, filteredItems } = this.state;
 
         e.stopPropagation();
-
-        if (!(e.target instanceof HTMLInputElement)) {
-            return;
-        }
 
         if (!isOpened && filteredItems) {
             e.target.select();
@@ -335,16 +331,15 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     getNodeList = node => this.itemsNodeList.push(node);
 
     getCurrentIndex = () => {
-        const { items, currentValue } = this.props;
-        const currentIndex = items.findIndex(elem => elem.value === currentValue);
+        const { currentValue } = this.props;
+        const { filteredItems } = this.state;
+        const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
 
         if (currentIndex !== -1) {
-            this.setState({ activeIndex: currentIndex, inputValue: items[currentIndex].title });
+            this.setState({ activeIndex: currentIndex, inputValue: filteredItems[currentIndex].title });
 
             return;
         }
-
-        this.setState({ activeIndex: 0 });
     }
 
     renderTitle() {
@@ -378,7 +373,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         return (
             <input
                 className={cn('combobox')}
-                onClick={this.handleClickCombobox}
+                onFocus={this.handleClickCombobox}
                 onChange={this.handleChangeCombobox}
                 type="text"
                 value={inputValue}
