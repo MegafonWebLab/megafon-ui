@@ -2,8 +2,7 @@
 
 Megafon React UI components library.
 
-[![codecov](https://codecov.io/gh/MegafonWebLab/megafon-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/MegafonWebLab/megafon-ui)
-[![Build Status](https://travis-ci.com/MegafonWebLab/megafon-ui.svg?branch=beta)](https://travis-ci.com/MegafonWebLab/megafon-ui)
+[![Github Actions](https://github.com/MegafonWebLab/megafon-ui/workflows/megafon-ui%20CI/badge.svg?branch=beta)](https://github.com/MegafonWebLab/megafon-ui/actions)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
