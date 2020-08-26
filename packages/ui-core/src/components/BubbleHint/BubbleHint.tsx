@@ -35,7 +35,7 @@ interface IBubbleHintState {
     show: boolean;
 }
 
-const cn = cnCreate('mfui-bubble-hint');
+const cn = cnCreate('mfui-beta-bubble-hint');
 class BubbleHint extends React.Component<Partial<IBubbleHintProps>, IBubbleHintState> {
     static propTypes = {
         popupPadding: PropTypes.oneOf(['normal', 'bottom-small', 'none']),

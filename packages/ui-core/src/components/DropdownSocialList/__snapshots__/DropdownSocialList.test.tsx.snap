@@ -2,20 +2,20 @@
 
 exports[`<DropdownSocialList /> it renders DropdownSocialList 1`] = `
 <div
-  className="mfui-dropdown-social-list"
+  className="mfui-beta-dropdown-social-list"
 >
   <div
-    className="mfui-dropdown-social-list__list"
+    className="mfui-beta-dropdown-social-list__list"
   >
     <div
-      className="mfui-dropdown-social-list__item"
+      className="mfui-beta-dropdown-social-list__item"
       key="test0"
       title="test"
     >
       <test-file-stub />
     </div>
     <div
-      className="mfui-dropdown-social-list__item"
+      className="mfui-beta-dropdown-social-list__item"
       key="test1"
       title="test"
     >
@@ -24,7 +24,7 @@ exports[`<DropdownSocialList /> it renders DropdownSocialList 1`] = `
   </div>
   <div>
     <BubbleHint
-      className="mfui-dropdown-social-list__dropdown"
+      className="mfui-beta-dropdown-social-list__dropdown"
       click={true}
       placement="bottom"
       popupAlign="left"
@@ -32,21 +32,21 @@ exports[`<DropdownSocialList /> it renders DropdownSocialList 1`] = `
       popupWidth="normal"
       trigger={
         <span
-          className="mfui-dropdown-social-list__dropdown-trigger"
+          className="mfui-beta-dropdown-social-list__dropdown-trigger"
         >
-          и еще 
+          и еще
           1
         </span>
       }
     >
       <div
-        className="mfui-dropdown-social-list__dropdown-popup"
+        className="mfui-beta-dropdown-social-list__dropdown-popup"
       >
         <div
-          className="mfui-dropdown-social-list__dropdown-list"
+          className="mfui-beta-dropdown-social-list__dropdown-list"
         >
           <span
-            className="mfui-dropdown-social-list__dropdown-item"
+            className="mfui-beta-dropdown-social-list__dropdown-item"
             key="test0"
           >
             test

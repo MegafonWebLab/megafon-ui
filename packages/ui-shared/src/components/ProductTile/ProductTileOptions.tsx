@@ -13,7 +13,7 @@ interface IProductTileOptionsProps {
     onClickBubble?: () => void;
 }
 
-const cn = cnCreate('mfui-product-tile-options');
+const cn = cnCreate('mfui-beta-product-tile-options');
 class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
     static propTypes = {
         head: PropTypes.string,

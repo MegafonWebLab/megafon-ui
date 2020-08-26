@@ -78,7 +78,7 @@ const detectIE11 = (): boolean => {
     return userAgent.indexOf('trident/') !== -1;
 };
 
-const cn = cnCreate('mfui-text-field');
+const cn = cnCreate('mfui-beta-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
         className,
         customIcon,

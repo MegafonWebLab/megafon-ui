@@ -45,7 +45,7 @@ interface IProductTileRestProps {
 
 const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
 
-const cn = cnCreate('mfui-product-tile-rest');
+const cn = cnCreate('mfui-beta-product-tile-rest');
 class ProductTileRest extends React.Component<IProductTileRestProps> {
     static propTypes = {
         title: PropTypes.string,

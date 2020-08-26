@@ -12,7 +12,7 @@ interface IPreloaderProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-preloader');
+const cn = cnCreate('mfui-beta-preloader');
 class Preloader extends React.Component<IPreloaderProps> {
     static propTypes = {
         color: PropTypes.oneOf(['default', 'black', 'white']),

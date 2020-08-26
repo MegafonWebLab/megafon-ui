@@ -2,28 +2,28 @@
 
 exports[`<ProductSwitcher /> it renders ProductSwitcher 1`] = `
 <div
-  className="mfui-product-switcher mfui-product-switcher_theme_tariff-showcase sdfsdf"
+  className="mfui-beta-product-switcher mfui-beta-product-switcher_theme_tariff-showcase sdfsdf"
 >
   <div
-    className="mfui-product-switcher__row"
+    className="mfui-beta-product-switcher__row"
   >
     <div
-      className="mfui-product-switcher__item mfui-product-switcher__item_active"
+      className="mfui-beta-product-switcher__item mfui-beta-product-switcher__item_active"
       key="titlevalue"
       onClick={[Function]}
     >
       <div
-        className="mfui-product-switcher__label"
+        className="mfui-beta-product-switcher__label"
       >
         title
       </div>
     </div>
   </div>
   <div
-    className="mfui-product-switcher__pointer"
+    className="mfui-beta-product-switcher__pointer"
   />
   <div
-    className="mfui-product-switcher__color-row"
+    className="mfui-beta-product-switcher__color-row"
   />
 </div>
 `;

@@ -14,7 +14,7 @@ export interface ISwitcherProps {
     onChange?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const cn = cnCreate('mfui-switcher');
+const cn = cnCreate('mfui-beta-switcher');
 const Switcher: React.FC<ISwitcherProps> = props => {
     const {
         className,

@@ -2,39 +2,39 @@
 
 exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
 <div
-  className="mfui-product-card-total className"
+  className="mfui-beta-product-card-total className"
 >
   <div
-    className="mfui-product-card-total__wrap classNameWrap"
+    className="mfui-beta-product-card-total__wrap classNameWrap"
   >
     <div
-      className="mfui-product-card-total__cost mfui-product-card-total__cost_old-value classNameCost"
+      className="mfui-beta-product-card-total__cost mfui-beta-product-card-total__cost_old-value classNameCost"
     >
       <span
-        className="mfui-product-card-total__price"
+        className="mfui-beta-product-card-total__price"
       >
         600 ₽
       </span>
        
       <span
-        className="mfui-product-card-total__old-price"
+        className="mfui-beta-product-card-total__old-price"
       >
         750 ₽
       </span>
       <br />
       <span
-        className="mfui-product-card-total__unit"
+        className="mfui-beta-product-card-total__unit"
       >
         в месяц
       </span>
     </div>
     <div
-      className="mfui-product-card-total__buttons classNameButtons"
+      className="mfui-beta-product-card-total__buttons classNameButtons"
     >
       <Button
         classes={
           Object {
-            "root": "mfui-product-card-total__description-more classNameMore",
+            "root": "mfui-beta-product-card-total__description-more classNameMore",
           }
         }
         fullWidth={true}
@@ -46,14 +46,14 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
         moreText
       </Button>
       <div
-        className="mfui-product-card-total__connect-button classNameConnect"
+        className="mfui-beta-product-card-total__connect-button classNameConnect"
         onClick={[Function]}
       >
         <div
-          className="mfui-product-card-total__connect-text-block"
+          className="mfui-beta-product-card-total__connect-text-block"
         >
           <span
-            className="mfui-product-card-total__connect-text-words"
+            className="mfui-beta-product-card-total__connect-text-words"
           >
             connectText
           </span>
@@ -67,39 +67,39 @@ exports[`<ProductCardTotal /> it renders ProductCardTotal 1`] = `
 
 exports[`<ProductCardTotal /> it renders submit button 1`] = `
 <div
-  className="mfui-product-card-total className"
+  className="mfui-beta-product-card-total className"
 >
   <div
-    className="mfui-product-card-total__wrap classNameWrap"
+    className="mfui-beta-product-card-total__wrap classNameWrap"
   >
     <div
-      className="mfui-product-card-total__cost mfui-product-card-total__cost_old-value classNameCost"
+      className="mfui-beta-product-card-total__cost mfui-beta-product-card-total__cost_old-value classNameCost"
     >
       <span
-        className="mfui-product-card-total__price"
+        className="mfui-beta-product-card-total__price"
       >
         600 ₽
       </span>
        
       <span
-        className="mfui-product-card-total__old-price"
+        className="mfui-beta-product-card-total__old-price"
       >
         750 ₽
       </span>
       <br />
       <span
-        className="mfui-product-card-total__unit"
+        className="mfui-beta-product-card-total__unit"
       >
         в месяц
       </span>
     </div>
     <div
-      className="mfui-product-card-total__buttons classNameButtons"
+      className="mfui-beta-product-card-total__buttons classNameButtons"
     >
       <Button
         classes={
           Object {
-            "root": "mfui-product-card-total__button classNameSubmit",
+            "root": "mfui-beta-product-card-total__button classNameSubmit",
           }
         }
         fullWidth={true}
@@ -110,14 +110,14 @@ exports[`<ProductCardTotal /> it renders submit button 1`] = `
         submitText
       </Button>
       <div
-        className="mfui-product-card-total__connect-button classNameConnect"
+        className="mfui-beta-product-card-total__connect-button classNameConnect"
         onClick={[Function]}
       >
         <div
-          className="mfui-product-card-total__connect-text-block"
+          className="mfui-beta-product-card-total__connect-text-block"
         >
           <span
-            className="mfui-product-card-total__connect-text-words"
+            className="mfui-beta-product-card-total__connect-text-words"
           >
             connectText
           </span>

@@ -27,7 +27,7 @@ describe('<CarouselArrow />', () => {
                 />
             );
 
-            wrapper.find('.mfui-carousel-arrow').simulate('click');
+            wrapper.find('.mfui-beta-carousel-arrow').simulate('click');
 
             expect(onClick).toHaveBeenCalledTimes(1);
         });

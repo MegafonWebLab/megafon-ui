@@ -2,11 +2,11 @@
 
 exports[`<CarouselArrow /> render tests should render component with all props 1`] = `
 <div
-  className="mfui-carousel-arrow some-class"
+  className="mfui-beta-carousel-arrow some-class"
   onClick={[MockFunction]}
 >
   <div
-    className="mfui-carousel-arrow__arrow-icon"
+    className="mfui-beta-carousel-arrow__arrow-icon"
   >
     <test-file-stub />
   </div>

@@ -20,7 +20,7 @@ export type Props = {
     isShort?: boolean;
 };
 
-const cn = cnCreate('mfui-notification');
+const cn = cnCreate('mfui-beta-notification');
 const Notification: React.FC<Props> = ({ type = Types.SUCCESS, isShort = false, children }) => {
     const renderIcon = (): JSX.Element => {
         if (type === Types.SUCCESS) {

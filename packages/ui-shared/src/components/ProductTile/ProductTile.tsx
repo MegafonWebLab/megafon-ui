@@ -180,7 +180,7 @@ interface IProductTileState {
     buyLink: string;
 }
 
-const cn = cnCreate('mfui-product-tile');
+const cn = cnCreate('mfui-beta-product-tile');
 class ProductTile extends React.Component<IProductTileProps, IProductTileState> {
     static propTypes = {
         title: PropTypes.string.isRequired,

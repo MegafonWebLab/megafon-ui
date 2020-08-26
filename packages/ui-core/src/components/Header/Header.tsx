@@ -22,7 +22,7 @@ interface IHeaderProps {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-header');
+const cn = cnCreate('mfui-beta-header');
 class Header extends React.Component<IHeaderProps, {}> {
     static propTypes = {
         as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),

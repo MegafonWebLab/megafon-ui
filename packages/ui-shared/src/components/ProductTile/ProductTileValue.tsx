@@ -16,7 +16,7 @@ interface IProductTileValueState {
     isAnimating: boolean;
 }
 
-const cn = cnCreate('mfui-product-tile-value');
+const cn = cnCreate('mfui-beta-product-tile-value');
 class ProductTileValue extends React.PureComponent<IProductTileValueProps, IProductTileValueState> {
     static propTypes = {
         value: PropTypes.string.isRequired,

@@ -2,30 +2,30 @@
 
 exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
 <div
-  className="mfui-product-tile-options"
+  className="mfui-beta-product-tile-options"
 >
   <div
-    className="mfui-product-tile-options__head"
+    className="mfui-beta-product-tile-options__head"
   >
     sdfsdfsdf
   </div>
   <div
-    className="mfui-product-tile-options__wrapper"
+    className="mfui-beta-product-tile-options__wrapper"
   >
     <div
-      className="mfui-product-tile-options__option"
+      className="mfui-beta-product-tile-options__option"
       key="title0"
     >
       <div
-        className="mfui-product-tile-options__icon"
+        className="mfui-beta-product-tile-options__icon"
       >
         <test-file-stub />
       </div>
       <div
-        className="mfui-product-tile-options__content"
+        className="mfui-beta-product-tile-options__content"
       >
         <div
-          className="mfui-product-tile-options__title"
+          className="mfui-beta-product-tile-options__title"
           dangerouslySetInnerHTML={
             Object {
               "__html": "title",
@@ -33,7 +33,7 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
           }
         />
         <BubbleHint
-          className="mfui-product-tile-options__cashback-c"
+          className="mfui-beta-product-tile-options__cashback-c"
           click={true}
           placement="bottom"
           popupAlign="left"
@@ -41,14 +41,14 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
           popupWidth="small"
           trigger={
             <span
-              className="mfui-product-tile-options__bubble-trigger"
+              className="mfui-beta-product-tile-options__bubble-trigger"
             >
               Подробнее
             </span>
           }
         >
           <div
-            className="mfui-product-tile-options__hint-text"
+            className="mfui-beta-product-tile-options__hint-text"
             dangerouslySetInnerHTML={
               Object {
                 "__html": "footnote",

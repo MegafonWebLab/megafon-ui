@@ -22,7 +22,7 @@ export interface ITitleDescriptionBoxProps {
     hAlign?: 'center';
 }
 
-const cn = cnCreate('mfui-title-description-box');
+const cn = cnCreate('mfui-beta-title-description-box');
 const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     title,
     description,

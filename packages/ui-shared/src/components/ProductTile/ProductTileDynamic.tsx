@@ -21,7 +21,7 @@ interface IProductTileDynamicProps {
     onChangeTraffic(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
 }
 
-const cn = cnCreate('mfui-product-tile-dynamic');
+const cn = cnCreate('mfui-beta-product-tile-dynamic');
 class ProductTileDynamic extends React.Component<IProductTileDynamicProps> {
     static propTypes = {
         currentPack: PropTypes.shape({

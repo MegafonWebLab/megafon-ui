@@ -2,42 +2,42 @@
 
 exports[`<Select /> it renders with disabled state 1`] = `
 <div
-  className="mfui-select mfui-select_disabled mfui-select_no-touch"
+  className="mfui-beta-select mfui-beta-select_disabled mfui-beta-select_no-touch"
 >
   <div
-    className="mfui-select__inner"
+    className="mfui-beta-select__inner"
   >
     <div
-      className="mfui-select__control"
+      className="mfui-beta-select__control"
       onKeyDown={[Function]}
     >
       <div
-        className="mfui-select__title"
+        className="mfui-beta-select__title"
         onClick={[Function]}
         tabIndex={0}
       >
         <div
-          className="mfui-select__title-inner"
+          className="mfui-beta-select__title-inner"
         />
       </div>
       <div
-        className="mfui-select__arrow-wrap"
+        className="mfui-beta-select__arrow-wrap"
         onClick={[Function]}
         tabIndex={1}
       >
         <span
-          className="mfui-select__arrow"
+          className="mfui-beta-select__arrow"
         />
       </div>
     </div>
     <div
-      className="mfui-select__list"
+      className="mfui-beta-select__list"
     >
       <div
-        className="mfui-select__list-inner"
+        className="mfui-beta-select__list-inner"
       >
         <div
-          className="mfui-select__not-found"
+          className="mfui-beta-select__not-found"
         >
           Ничего не нашлось
         </div>

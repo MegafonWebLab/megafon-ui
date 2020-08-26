@@ -25,7 +25,7 @@ const props = {
     ],
 };
 
-const controlSelector = '.mfui-select__control';
+const controlSelector = '.mfui-beta-select__control';
 describe('<Select />', () => {
     it('it renders Select', () => {
         const wrapper = mount(<Select items={props.items} />);

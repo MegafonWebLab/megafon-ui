@@ -29,13 +29,13 @@ Examples of components can be found [here](https://github.com/MegafonWebLab/mega
 
 Special function `cn` should be created before every component's class declaration.
 This function generates css-classes in BEM-format for component's elements.
-The name of component in css should be prefixed with `mfui-`. This name should be
+The name of component in css should be prefixed with `mfui-beta-`. This name should be
 passed to the function for `cn` creation.
 
 For example:
 
 ```
-const cn = cnCreate('mfui-button');
+const cn = cnCreate('mfui-beta-button');
 ```
 
 Interfaces `IComponentNameProps` and `IComponentNameState` should be declared before

@@ -16,7 +16,7 @@ export interface IParagraphProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-paragraph');
+const cn = cnCreate('mfui-beta-paragraph');
 const Paragraph: React.FC<IParagraphProps> = ({
         size = 'regular',
         align,

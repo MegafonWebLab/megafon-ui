@@ -17,7 +17,7 @@ interface IListProps {
     children: JSX.Element[] | Element[] | JSX.Element | Element;
 }
 
-const cn = cnCreate('mfui-list');
+const cn = cnCreate('mfui-beta-list');
 class List extends React.Component<IListProps, {}> {
     static propTypes = {
         as: PropTypes.oneOf(['ul', 'ol']),

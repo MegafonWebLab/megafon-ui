@@ -13,7 +13,7 @@ interface IProductCardFeaturesBottomProps {
     params: Array<Partial<ISecondParamChildren>>;
 }
 
-const cn = cnCreate('mfui-product-card-features-bottom');
+const cn = cnCreate('mfui-beta-product-card-features-bottom');
 class ProductCardFeaturesBottom extends React.Component<IProductCardFeaturesBottomProps, {}> {
     static propTypes = {
         className: PropTypes.string,

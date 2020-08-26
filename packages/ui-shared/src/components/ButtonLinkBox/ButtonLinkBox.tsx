@@ -20,7 +20,7 @@ export interface IButtonLinkBoxProps {
     hAlign?: 'center' | 'left';
 }
 
-const cn = cnCreate('mfui-button-link-box');
+const cn = cnCreate('mfui-beta-button-link-box');
 const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     buttonTitle,
     buttonUrl,

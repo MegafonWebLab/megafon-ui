@@ -56,7 +56,7 @@ describe('<ProductCardTotal />', () => {
         const handleClick = jest.fn();
         const wrapper = shallow(<ProductCardTotal onClickConnect={handleClick} />);
 
-        wrapper.find('.mfui-product-card-total__connect-button').simulate('click', {} as React.SyntheticEvent);
+        wrapper.find('.mfui-beta-product-card-total__connect-button').simulate('click', {} as React.SyntheticEvent);
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
 });

@@ -2,7 +2,7 @@
 
 exports[`<Paragraph /> default render 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_freshAsphalt mfui-paragraph_has-margin"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-paragraph_has-margin"
 >
   Test paragraph text
 </p>
@@ -10,7 +10,7 @@ exports[`<Paragraph /> default render 1`] = `
 
 exports[`<Paragraph /> it renders Paragraph with props 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_purple test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_purple test"
 >
   Test paragraph text
 </p>
@@ -18,7 +18,7 @@ exports[`<Paragraph /> it renders Paragraph with props 1`] = `
 
 exports[`<Paragraph /> testing align props 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_center mfui-paragraph_color_purple test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_center mfui-beta-paragraph_color_purple test"
 >
   Test paragraph text
 </p>
@@ -26,7 +26,7 @@ exports[`<Paragraph /> testing align props 1`] = `
 
 exports[`<Paragraph /> testing align props 2`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_purple test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_purple test"
 >
   Test paragraph text
 </p>
@@ -34,7 +34,7 @@ exports[`<Paragraph /> testing align props 2`] = `
 
 exports[`<Paragraph /> testing color props 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_green test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_green test"
 >
   Test paragraph text
 </p>
@@ -42,7 +42,7 @@ exports[`<Paragraph /> testing color props 1`] = `
 
 exports[`<Paragraph /> testing color props 2`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_clearWhite test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_clearWhite test"
 >
   Test paragraph text
 </p>
@@ -50,7 +50,7 @@ exports[`<Paragraph /> testing color props 2`] = `
 
 exports[`<Paragraph /> testing color props 3`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky0 test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_spbSky0 test"
 >
   Test paragraph text
 </p>
@@ -58,7 +58,7 @@ exports[`<Paragraph /> testing color props 3`] = `
 
 exports[`<Paragraph /> testing color props 4`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky1 test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_spbSky1 test"
 >
   Test paragraph text
 </p>
@@ -66,7 +66,7 @@ exports[`<Paragraph /> testing color props 4`] = `
 
 exports[`<Paragraph /> testing color props 5`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky2 test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_spbSky2 test"
 >
   Test paragraph text
 </p>
@@ -74,7 +74,7 @@ exports[`<Paragraph /> testing color props 5`] = `
 
 exports[`<Paragraph /> testing color props 6`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_freshAsphalt test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_freshAsphalt test"
 >
   Test paragraph text
 </p>
@@ -82,7 +82,7 @@ exports[`<Paragraph /> testing color props 6`] = `
 
 exports[`<Paragraph /> testing color props 7`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_fullBlack test"
+  className="mfui-beta-paragraph mfui-beta-paragraph_size_small mfui-beta-paragraph_align_right mfui-beta-paragraph_color_fullBlack test"
 >
   Test paragraph text
 </p>

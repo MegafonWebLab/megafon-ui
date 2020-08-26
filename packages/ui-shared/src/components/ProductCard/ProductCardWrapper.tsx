@@ -30,7 +30,7 @@ interface IProductCardWrapperProps {
     classNameContainer?: string;
 }
 
-const cn = cnCreate('mfui-product-card-wrapper');
+const cn = cnCreate('mfui-beta-product-card-wrapper');
 class ProductCardWrapper extends React.Component<IProductCardWrapperProps, {}> {
     static propTypes = {
         theme: PropTypes.oneOf(['default']),

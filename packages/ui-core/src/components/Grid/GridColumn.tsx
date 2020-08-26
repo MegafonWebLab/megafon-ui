@@ -62,7 +62,7 @@ export interface IGridColumn {
     children: React.ReactNode;
 }
 
-const cn = cnCreate('mfui-grid-column');
+const cn = cnCreate('mfui-beta-grid-column');
 class GridColumn extends React.Component<IGridColumn, {}> {
     static propTypes = {
         wide: GridSizeValues,

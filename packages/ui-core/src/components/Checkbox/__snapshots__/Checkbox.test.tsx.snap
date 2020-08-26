@@ -2,25 +2,25 @@
 
 exports[`<Checkbox /> layout renders Checkbox 1`] = `
 <div
-  className="mfui-checkbox mfui-checkbox_font-size_regular mfui-checkbox_color_dark"
+  className="mfui-beta-checkbox mfui-beta-checkbox_font-size_regular mfui-beta-checkbox_color_dark"
 >
   <div
-    className="mfui-checkbox__inner"
+    className="mfui-beta-checkbox__inner"
   >
     <label
-      className="mfui-checkbox__label mfui-checkbox__label_no-touch"
+      className="mfui-beta-checkbox__label mfui-beta-checkbox__label_no-touch"
     >
       <input
         checked={false}
-        className="mfui-checkbox__input"
+        className="mfui-beta-checkbox__input"
         onChange={[Function]}
         type="checkbox"
       />
       <div
-        className="mfui-checkbox__custom-input"
+        className="mfui-beta-checkbox__custom-input"
       >
         <test-file-stub
-          className="mfui-checkbox__icon"
+          className="mfui-beta-checkbox__icon"
         />
       </div>
       Тестовая строка
@@ -31,25 +31,25 @@ exports[`<Checkbox /> layout renders Checkbox 1`] = `
 
 exports[`<Checkbox /> layout renders Checkbox on mobile resolution 1`] = `
 <div
-  className="mfui-checkbox mfui-checkbox_font-size_regular mfui-checkbox_color_dark"
+  className="mfui-beta-checkbox mfui-beta-checkbox_font-size_regular mfui-beta-checkbox_color_dark"
 >
   <div
-    className="mfui-checkbox__inner"
+    className="mfui-beta-checkbox__inner"
   >
     <label
-      className="mfui-checkbox__label"
+      className="mfui-beta-checkbox__label"
     >
       <input
         checked={false}
-        className="mfui-checkbox__input"
+        className="mfui-beta-checkbox__input"
         onChange={[Function]}
         type="checkbox"
       />
       <div
-        className="mfui-checkbox__custom-input"
+        className="mfui-beta-checkbox__custom-input"
       >
         <test-file-stub
-          className="mfui-checkbox__icon"
+          className="mfui-beta-checkbox__icon"
         />
       </div>
       Тестовая строка на мобильном разрешении
@@ -60,17 +60,17 @@ exports[`<Checkbox /> layout renders Checkbox on mobile resolution 1`] = `
 
 exports[`<Checkbox /> layout renders Checkbox with props 1`] = `
 <div
-  className="mfui-checkbox mfui-checkbox_font-size_small mfui-checkbox_color_light mfui-checkbox_checked mfui-checkbox_disabled mfui-checkbox_error testClassName"
+  className="mfui-beta-checkbox mfui-beta-checkbox_font-size_small mfui-beta-checkbox_color_light mfui-beta-checkbox_checked mfui-beta-checkbox_disabled mfui-beta-checkbox_error testClassName"
 >
   <div
-    className="mfui-checkbox__inner"
+    className="mfui-beta-checkbox__inner"
   >
     <label
-      className="mfui-checkbox__label mfui-checkbox__label_no-touch"
+      className="mfui-beta-checkbox__label mfui-beta-checkbox__label_no-touch"
     >
       <input
         checked={true}
-        className="mfui-checkbox__input"
+        className="mfui-beta-checkbox__input"
         disabled={true}
         name="testInputName"
         onChange={[Function]}
@@ -78,16 +78,16 @@ exports[`<Checkbox /> layout renders Checkbox with props 1`] = `
         value="testInputValue"
       />
       <div
-        className="mfui-checkbox__custom-input"
+        className="mfui-beta-checkbox__custom-input"
       >
         <test-file-stub
-          className="mfui-checkbox__icon"
+          className="mfui-beta-checkbox__icon"
         />
       </div>
       Тестовая строка
     </label>
     <span
-      className="mfui-checkbox__extra-content"
+      className="mfui-beta-checkbox__extra-content"
     >
       text
     </span>
