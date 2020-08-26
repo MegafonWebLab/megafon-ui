@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## [2.0.0-beta.0] BREAKING CHANGES
 - **Notification**
     - added new component
 - **Carousel**
