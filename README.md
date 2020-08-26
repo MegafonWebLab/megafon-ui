@@ -6,8 +6,6 @@ Megafon React UI components library.
 [![Build Status](https://travis-ci.org/MegafonWebLab/megafon-ui.svg?branch=master)](https://travis-ci.org/MegafonWebLab/megafon-ui)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-Interactive documentation is [here](https://megafonweblab.github.io/megafon-ui/).
-
 Includes:
 - ui-core
 [![npm (scoped)](https://img.shields.io/npm/v/@megafon/ui-core.svg)](https://www.npmjs.com/package/@megafon/ui-core)
