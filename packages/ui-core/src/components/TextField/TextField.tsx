@@ -11,6 +11,9 @@ import Show from 'icons/Basic/24/Show_24.svg';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
+interface ITextFieldClasses {
+    input?: string;
+}
 export interface ITextFieldProps {
     /** Field title */
     label?: React.ReactNode;
@@ -60,10 +63,10 @@ export interface ITextFieldProps {
     maskChar?: string;
     /** Increased size of space between words in the text box */
     bigSpace?: boolean;
-    /** Class that is passed to the input */
-    parentInput?: string;
     /** Custom classname */
     className?: string;
+    /** Outer classes for TextField */
+    classes?: ITextFieldClasses;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
@@ -117,13 +120,13 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         mask: PropTypes.string,
         maskChar: PropTypes.string,
         bigSpace: PropTypes.bool,
-        parentInput: PropTypes.string,
         className: PropTypes.string,
         onChange: PropTypes.func,
         onBlur: PropTypes.func,
         onFocus: PropTypes.func,
         onKeyUp: PropTypes.func,
         onCustomIconClick: PropTypes.func,
+        classes: PropTypes.object,
     };
 
     static defaultProps: Partial<ITextFieldProps> = {
@@ -244,7 +247,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             autoComplete: this.props.autocomplete,
             className: cn('field', {
                 'big-space': this.props.bigSpace,
-            }, this.props.parentInput),
+            }, this.props.classes && this.props.classes.input),
         };
 
         let placeholder: React.ReactNode = null;
