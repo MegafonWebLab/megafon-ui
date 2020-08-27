@@ -35,6 +35,7 @@ const props: ITextFieldProps = {
     customIcon: <div>custom icon</div>,
     bigSpace: true,
     className: 'class name',
+    classes: {input: 'parent__inputClass'},
 };
 
 function simulateEvent(eventName: string, eventType: string, params: {}) {

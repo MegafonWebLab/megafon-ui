@@ -19,6 +19,11 @@ export const wrapper = (width = 250) => ({ children }) => {
 
 <PropsTable of={TextField} />
 
+### Classes property keys
+field        | description
+-------------|----------
+*input*       |  Class that is passed to the input
+
 ## API
 
 Method  | Description
@@ -61,6 +66,7 @@ class SearchForm extends Component {
         maskChar="_"
         label="Phone number"
         id="2"
+        classes={{input: 'parent__inputClass'}}
     />
 </Playground>
 

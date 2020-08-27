@@ -166,7 +166,7 @@ exports[`<TextField /> renders with mask 1`] = `
       <[object Object]
         autoComplete="on"
         autoFocus={true}
-        className="mfui-text-field__field mfui-text-field__field_big-space"
+        className="mfui-text-field__field mfui-text-field__field_big-space parent__inputClass"
         defaultValue="default value"
         disabled={true}
         id="id"
@@ -220,7 +220,7 @@ exports[`<TextField /> renders with props 1`] = `
       <input
         autoComplete="on"
         autoFocus={true}
-        className="mfui-text-field__field mfui-text-field__field_big-space"
+        className="mfui-text-field__field mfui-text-field__field_big-space parent__inputClass"
         defaultValue="default value"
         disabled={true}
         id="id"

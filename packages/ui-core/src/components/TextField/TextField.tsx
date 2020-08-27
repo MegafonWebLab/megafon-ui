@@ -11,6 +11,9 @@ import Show from 'icons/Basic/24/Show_24.svg';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from '../InputLabel/InputLabel';
 
+interface ITextFieldClasses {
+    input?: string;
+}
 export interface ITextFieldProps {
     /** Field title */
     label?: React.ReactNode;
@@ -62,6 +65,8 @@ export interface ITextFieldProps {
     bigSpace?: boolean;
     /** Custom classname */
     className?: string;
+    /** Custom classes */
+    classes?: ITextFieldClasses;
     /** Change handler */
     onChange?(e: React.SyntheticEvent<EventTarget>): void;
     /** Blur handler */
@@ -121,6 +126,9 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
         onFocus: PropTypes.func,
         onKeyUp: PropTypes.func,
         onCustomIconClick: PropTypes.func,
+        classes: PropTypes.shape({
+            input: PropTypes.string,
+        }),
     };
 
     static defaultProps: Partial<ITextFieldProps> = {
@@ -223,6 +231,8 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
 
     renderInputElem(isPasswordType: boolean) {
         const { isPasswordHidden, isIE11 } = this.state;
+        const { classes: { input = '' } = {}} = this.props;
+
         const params = {
             disabled: this.props.disabled,
             name: this.props.name,
@@ -241,7 +251,7 @@ class TextField extends React.Component<ITextFieldProps, ITextFieldState> {
             autoComplete: this.props.autocomplete,
             className: cn('field', {
                 'big-space': this.props.bigSpace,
-            }),
+            }, input),
         };
 
         let placeholder: React.ReactNode = null;
