@@ -108,6 +108,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = React.useState(value);
+    const [isIE11, setIsIE11] = React.useState(false);
     const fieldNode = React.useRef<HTMLInputElement | HTMLTextAreaElement>();
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
@@ -116,7 +117,6 @@ const TextField: React.FC<ITextFieldProps> = ({
         [isPasswordHidden, isPasswordType]
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
-    const isIE11: boolean = useMemo(() => detectIE11(), []);
 
     const renderPlaceholderForIe = (classes: string): React.ReactNode => {
         return <span className={cn(classes)}>{placeholder}</span>;
@@ -125,6 +125,12 @@ const TextField: React.FC<ITextFieldProps> = ({
     React.useEffect(() => {
         setInputValue(value);
     }, [value]);
+
+    React.useEffect(() => {
+        if (detectIE11()) {
+            setIsIE11(true);
+        }
+    }, []);
 
     const togglePasswordHiding = useCallback(
         () => setPasswordHidden(prevPassState => !prevPassState),
