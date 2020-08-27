@@ -5,28 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@1.4.0...@megafon/ui-core@2.0.0-beta.0) (2020-08-26)
 
-
-### Bug Fixes
-
-* **styles:** changed classname prefix for beta ([278ac85](https://github.com/MegafonWebLab/megafon-ui/commit/278ac8560711c829885a7d515dc69f58b640a82a))
-
-
-### Features
-
-* beta publish preparation for ui-core ([58593f9](https://github.com/MegafonWebLab/megafon-ui/commit/58593f913b0c6fcc241a7bfd2829c081e61e411e))
-
-
 ### BREAKING CHANGES
 
-* see changelog
-
-
-
-
-
-# Changelog
-
-## [2.0.0-beta.0] BREAKING CHANGES
+- **styles:**
+    - changed classname prefix for beta
 - **Notification**
     - added new component
 - **Carousel**
