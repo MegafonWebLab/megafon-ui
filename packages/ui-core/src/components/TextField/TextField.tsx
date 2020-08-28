@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import { useCallback, useState, useMemo } from 'react';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
+import detectIE11 from 'utils/detectIE';
 import './TextField.less';
 import InputLabel from '../InputLabel/InputLabel';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
@@ -12,7 +13,7 @@ import Show from 'icons/Basic/24/Show_24.svg';
 
 const InputMask = require('react-input-mask');
 
-enum Verification {
+export enum Verification {
     VALID = 'valid',
     ERROR = 'error',
 }
@@ -68,15 +69,6 @@ export interface ITextFieldProps {
     /** Custom icon click handler */
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
-
-/* Method for defining internet explorer */
-const detectIE11 = (): boolean => {
-    if (typeof window === 'undefined') {
-        return false;
-    }
-    const userAgent: string = window.navigator.userAgent.toLowerCase();
-    return userAgent.indexOf('trident/') !== -1;
-};
 
 const cn = cnCreate('mfui-beta-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
@@ -179,7 +171,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const textareaParams = {
         ...commonParams,
-        value,
+        value: inputValue,
         onChange: handleInputChange,
         className: cn('field', { multiline }),
     };
@@ -241,8 +233,9 @@ const TextField: React.FC<ITextFieldProps> = ({
                 return <Hide className={cn('icon')} />;
             case isPasswordType && !isPasswordHidden:
                 return <Show className={cn('icon')} />;
+            default:
+                return null;
         }
-        return null;
     };
 
     const renderIconBlock = () => {
