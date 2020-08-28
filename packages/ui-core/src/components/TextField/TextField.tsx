@@ -12,7 +12,7 @@ import Show from 'icons/Basic/24/Show_24.svg';
 
 const InputMask = require('react-input-mask');
 
-enum Verification {
+export enum Verification {
     VALID = 'valid',
     ERROR = 'error',
 }
@@ -193,7 +193,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const textareaParams = {
         ...commonParams,
-        value,
+        value: inputValue,
         onChange: handleInputChange,
         className: cn('field', { multiline }, input),
     };
@@ -255,8 +255,9 @@ const TextField: React.FC<ITextFieldProps> = ({
                 return <Hide className={cn('icon')} />;
             case isPasswordType && !isPasswordHidden:
                 return <Show className={cn('icon')} />;
+            default:
+                return null;
         }
-        return null;
     };
 
     const renderIconBlock = () => {
