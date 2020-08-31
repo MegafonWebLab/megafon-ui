@@ -1,0 +1,119 @@
+---
+name: BenefitsPictures
+menu: Constructor
+route: components/benefits-pictures
+---
+
+import { Playground, Props } from 'docz';
+import BenefitsPictures from './BenefitsPictures';
+import { twoItems, threeItems, fourItems, twoItemsWithShortImg } from './BenefitsPictures.docz.tsx';
+import { Grid, GridColumn } from '@megafon/ui-core';
+
+# BenefitsPictures
+
+## Properties
+<Props of={BenefitsPictures} />
+
+## Basic usage
+
+### Left align, large grid gap
+<Playground>
+    <BenefitsPictures
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        items={fourItems}
+    />
+</Playground>
+
+### Left align, medium grid gap
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        items={fourItems}
+    />
+</Playground>
+
+### Center align, large grid gap
+
+<Playground>
+    <BenefitsPictures
+        hAlign="center"
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        hAlign="center"
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        hAlign="center"
+        items={fourItems}
+    />
+</Playground>
+
+### Center align, medium grid gap
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        hAlign="center"
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        hAlign="center"
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        hAlign="center"
+        items={fourItems}
+    />
+</Playground>
+
+### Centered image
+<Playground>
+    <BenefitsPictures
+        items={twoItemsWithShortImg}
+        hAlignImg="center"
+    />
+</Playground>
+
+
+
