@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.1...@megafon/ui-core@2.0.0-beta.2) (2020-08-31)
+
+
+### Bug Fixes
+
+* **textfield:** new prop classes ([d66340f](https://github.com/MegafonWebLab/megafon-ui/commit/d66340fbb4f1242b61e988c566efccc75ac066ca))
+
+
+
+
+
 # [2.0.0-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.0...@megafon/ui-core@2.0.0-beta.1) (2020-08-27)
 
 
