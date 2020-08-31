@@ -15,6 +15,11 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 
 <Props of={TextField} />
 
+### Classes property keys
+field        | description
+-------------|----------
+*input*       |  Class that is passed to the input
+
 ## Basic usage
 
 <Playground>
@@ -41,6 +46,7 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
             maskchar="_"
             label="Phone number"
             id="2"
+            classes={{input: 'parent__inputClass'}}
         />
     </TextFieldWrapper>
 </Playground>
@@ -137,6 +143,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
             label="Required field"
             multiline
             required
+            classes={{input: 'parent__inputClass'}}
         />
     </TextFieldWrapper>
 </Playground>

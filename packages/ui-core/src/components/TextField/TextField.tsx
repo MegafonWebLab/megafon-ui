@@ -16,6 +16,9 @@ enum Verification {
     VALID = 'valid',
     ERROR = 'error',
 }
+interface ITextFieldClasses {
+    input?: string | null;
+}
 
 export interface ITextFieldProps {
     /** Toggle to textarea */
@@ -57,6 +60,8 @@ export interface ITextFieldProps {
     maskChar?: string;
     /** Custom classname */
     className?: string;
+    /** Custom classes */
+    classes?: ITextFieldClasses;
     /** Change handler */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Blur handler */
@@ -104,6 +109,9 @@ const TextField: React.FC<ITextFieldProps> = ({
         verification,
         noticeText,
         inputRef,
+        classes: {
+            input,
+        } = {},
     }) => {
 
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
@@ -175,7 +183,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const inputParams = {
         ...commonParams,
-        className: cn('field'),
+        className: cn('field', input),
         value: inputValue,
         mask,
         maskChar,
@@ -187,7 +195,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         ...commonParams,
         value,
         onChange: handleInputChange,
-        className: cn('field', { multiline }),
+        className: cn('field', { multiline }, input),
     };
 
     const getFieldNode = (node: HTMLInputElement | HTMLTextAreaElement | null) => {
@@ -331,6 +339,9 @@ TextField.propTypes = {
     onKeyUp: PropTypes.func,
     onCustomIconClick: PropTypes.func,
     inputRef: PropTypes.func,
+    classes: PropTypes.shape({
+        input: PropTypes.string,
+    }),
 };
 
 export default TextField;
