@@ -25,6 +25,7 @@ const libPath = path.join(dist, 'lib');
 const libStylesPath = path.join(libPath, 'styles');
 const srcPath = path.join(__dirname, 'src');
 const iconsPath = path.join(srcPath, 'icons');
+const docIconsPath = path.join(srcPath, 'docIcons');
 const indexTs = path.join(srcPath, 'index.ts');
 const baseLessSrc = path.join(srcPath, 'styles', 'base.less');
 const baseLessPackagePath = path.join(__dirname, 'styles');
@@ -199,6 +200,7 @@ const replaceContent = (regExp, newStr) => changePipe(function (file, encoding) 
 const svgToReact = () => changePipe(async function (file, encoding) {
     const name = file.path
         .replace(iconsPath + sep, '')
+        .replace(docIconsPath + sep, '')
         .toLowerCase()
         .replace('.svg', '')
         .replace(new RegExp('\\' + sep, 'g'), '-')
