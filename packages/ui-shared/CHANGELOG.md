@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.2...@megafon/ui-shared@2.0.0-beta.3) (2020-09-01)
+
+
+### Bug Fixes
+
+* add data attributes prop ([8f38c20](https://github.com/MegafonWebLab/megafon-ui/commit/8f38c2045f9bf7c4829946edf2071be6fe6a07df))
+
+
+
+
+
 # [2.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.1...@megafon/ui-shared@2.0.0-beta.2) (2020-08-31)
 
 **Note:** Version bump only for package @megafon/ui-shared
