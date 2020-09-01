@@ -40,4 +40,19 @@ describe('<Header />', () => {
         const wrapper = shallow(<Header hAlign="center" />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('it renders with className', () => {
+        const wrapper = shallow(<Header className="class" />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders with classNames array', () => {
+        const wrapper = shallow(<Header className={['class1', 'class2']} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders with data attributes', () => {
+        const wrapper = shallow(<Header dataAttrs={{ 'data-test': 'test', 'incorrect-attr': 'test' }} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
