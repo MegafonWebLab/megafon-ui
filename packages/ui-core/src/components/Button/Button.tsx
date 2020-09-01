@@ -5,10 +5,11 @@ import './Button.less';
 import Spinner from 'docIcons/spinner.svg';
 import Arrow from 'icons/System/32/Arrow_right_32.svg';
 import detectTouch from 'utils/detectTouch';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
-export interface IButtonProps {
+export interface IButtonProps extends IDataAttributes {
     /* Custom root class name */
-    className?: string;
+    className?: string | string[];
     /** Custom classes for button and button content */
     classes?: {
         /** Button class */
@@ -75,6 +76,7 @@ const Button: React.FC<IButtonProps> = props => {
         disabled,
         children,
         onClick,
+        dataAttrs,
     } = props;
 
     const isTouch: boolean = React.useMemo(() => detectTouch(), []);
@@ -110,6 +112,7 @@ const Button: React.FC<IButtonProps> = props => {
 
     return (
         <ElementType
+            {...filterDataAttrs(dataAttrs)}
             className={cn({
                 type,
                 theme: currentTheme,
@@ -157,6 +160,7 @@ Button.propTypes = {
     showArrow: PropTypes.bool,
     iconLeft: PropTypes.element,
     disabled: PropTypes.bool,
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onClick: PropTypes.func,
 };
 export default Button;

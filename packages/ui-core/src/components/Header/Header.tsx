@@ -2,8 +2,9 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Header.less';
 import cnCreate from 'utils/cnCreate';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
-interface IHeaderProps {
+interface IHeaderProps extends IDataAttributes {
     /** Tag */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Color */
@@ -13,7 +14,7 @@ interface IHeaderProps {
     /** Additional element */
     addition?: JSX.Element;
     /** Custom class name */
-    className?: string;
+    className?: string | string[];
     /** Horizontal align */
     hAlign?: 'inherit' | 'left' | 'center' | 'right';
     /** Children */
@@ -30,6 +31,7 @@ class Header extends React.Component<IHeaderProps, {}> {
         margin: PropTypes.bool,
         addition: PropTypes.element,
         hAlign: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
+        dataAttrs: PropTypes.objectOf(PropTypes.string),
         onClick: PropTypes.func,
         children: PropTypes.node,
     };
@@ -41,21 +43,22 @@ class Header extends React.Component<IHeaderProps, {}> {
     };
 
     renderAddition() {
-        return (
-            <div className={cn('addition')}>
-                {this.props.addition}
-            </div>
-        );
+        return <div className={cn('addition')}>{this.props.addition}</div>;
     }
 
     render() {
-        const ElementType = this.props.as as React.ElementType;
-        const { color, margin, as: level, hAlign, className, onClick } = this.props;
+        const { color, margin, as: level, hAlign, onClick, dataAttrs, className } = this.props;
+        const ElementType = level as React.ElementType;
 
         return (
             <ElementType
-                    className={cn({ color, margin, level, 'h-align': hAlign }, className)}
-                    onClick={onClick}>
+                {...filterDataAttrs(dataAttrs)}
+                className={cn(
+                    { color, margin, level, 'h-align': hAlign },
+                    className
+                )}
+                onClick={onClick}
+            >
                 {this.props.children}
                 {this.props.addition && this.renderAddition()}
             </ElementType>
