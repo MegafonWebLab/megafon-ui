@@ -3,9 +3,25 @@ import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
 import { cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { IBenefit, GridConfig, GridGutterSize } from './types';
+import { DESKTOP_MIDDLE_START } from '../../../../ui-core/src/constants/breakpoints';
 
-const DESKTOP_MIDDLE_START = 1280;
 const THROTTLE_TIME = 500;
+
+const columnSize: GridConfig = {
+    wide: '4',
+    desktop: '4',
+    tablet: '5',
+};
+
+export enum GutterSize {
+    MEDIUM = 'medium',
+    LARGE = 'large',
+}
+
+export enum HorizontalAlign {
+    CENTER = 'center',
+    LEFT = 'left',
+}
 
 export interface IBenefitsPictures {
     /** Benefits list */
@@ -15,21 +31,14 @@ export interface IBenefitsPictures {
     /** Grid gap size */
     gridGap: GridGutterSize;
     /** Image horizontal align */
-    hAlignImg?: 'left' | 'center';
+    hAlignImg?: HorizontalAlign;
 }
-
-const columnSize: GridConfig = {
-    wide: '4',
-    desktop: '4',
-    tablet: '5',
-};
 
 const isEvenIndex = index => !((index + 1) % 2);
 const getEvenOffset = index =>  isEvenIndex(index) ? '1' : undefined;
 const getOddOffset = index => isEvenIndex(index) ? undefined : '1';
 
 const getLeftConfig = (count: number, index: number): GridConfig => {
-
     switch (count) {
         case 2:
         case 4:
@@ -48,50 +57,43 @@ const getLeftConfig = (count: number, index: number): GridConfig => {
     }
 };
 
-const getCenterConfig = (count: number, index: number, gutterSize: string ): GridConfig => {
+const getCenterMediumConfig = (count: number, index: number): GridConfig => {
+    switch (count) {
+        case 3:
+            return {
+                ...columnSize,
+                leftOffsetTablet: getOddOffset(index),
+            };
 
-    if (gutterSize === 'medium') {
-        switch (count) {
-            case 3:
-                return {
-                    ...columnSize,
-                };
+        case 4:
+            return {
+                ...columnSize,
+                rightOffsetWide: getOddOffset(index),
+                leftOffsetWide: getEvenOffset(index),
+                rightOffsetDesktop: getEvenOffset(index),
+                leftOffsetDesktop: getOddOffset(index),
+                rightOffsetTablet: getEvenOffset(index),
+                leftOffsetTablet: getOddOffset(index),
+            };
 
-            case 4:
-                return {
-                    ...columnSize,
-                    // wide
-                    rightOffsetWide: getOddOffset(index),
-                    leftOffsetWide: getEvenOffset(index),
-                    // desktop
-                    rightOffsetDesktop: getEvenOffset(index),
-                    leftOffsetDesktop: getOddOffset(index),
-                    // tablet
-                    rightOffsetTablet: getEvenOffset(index),
-                    leftOffsetTablet: getOddOffset(index),
-                };
-
-            default:
-                return {
-                    ...columnSize,
-                    // wide
-                    rightOffsetWide: getOddOffset(index),
-                    leftOffsetWide: getEvenOffset(index),
-                };
-        }
+        default:
+            return {
+                ...columnSize,
+                rightOffsetWide: getOddOffset(index),
+                leftOffsetWide: getEvenOffset(index),
+            };
     }
+};
 
+const getCenterLargeConfig = (count: number, index: number): GridConfig => {
     switch (count) {
         case 4:
             return {
                 ...columnSize,
-                // wide
                 leftOffsetWide: getOddOffset(index),
                 rightOffsetWide: getEvenOffset(index),
-                // desktop
                 leftOffsetDesktop: getOddOffset(index),
                 rightOffsetDesktop: getEvenOffset(index),
-                // tablet
                 leftOffsetTablet: getOddOffset(index),
                 rightOffsetTablet: getEvenOffset(index),
             };
@@ -99,7 +101,6 @@ const getCenterConfig = (count: number, index: number, gutterSize: string ): Gri
         case 3: {
             return {
                 ...columnSize,
-                // tablet
                 leftOffsetTablet: getOddOffset(index),
             };
         }
@@ -111,14 +112,26 @@ const getCenterConfig = (count: number, index: number, gutterSize: string ): Gri
     }
 };
 
+const getCenterConfig = (count: number, index: number, gutterSize: string ): GridConfig => {
+    switch (gutterSize) {
+        case 'medium': {
+            return getCenterMediumConfig(count, index);
+        }
+
+        default: {
+            return getCenterLargeConfig(count, index);
+        }
+    }
+};
+
 const cn = cnCreate('benefits-pictures');
 const BenefitsPictures: React.FC<IBenefitsPictures> = ({
     items,
     hAlign = 'left',
-    gridGap = 'large',
-    hAlignImg = 'left',
+    gridGap = GutterSize.LARGE,
+    hAlignImg = HorizontalAlign.LEFT,
 }) => {
-    const isLargeGutter = gridGap === 'large';
+    const isLargeGutter = gridGap === GutterSize.LARGE;
     const [currentGutter, setCurrentGutter] = React.useState(gridGap);
 
     const resizeHandler = () => {
@@ -127,9 +140,9 @@ const BenefitsPictures: React.FC<IBenefitsPictures> = ({
         }
 
         if (window.innerWidth < DESKTOP_MIDDLE_START) {
-            setCurrentGutter('medium');
+            setCurrentGutter(GutterSize.MEDIUM);
         } else {
-            setCurrentGutter('large');
+            setCurrentGutter(GutterSize.LARGE);
         }
     };
 
@@ -148,11 +161,15 @@ const BenefitsPictures: React.FC<IBenefitsPictures> = ({
         <div className={cn()}>
             <Grid
                 guttersLeft={currentGutter}
-                hAlign={hAlign === 'center' && items.length !== 3 ? 'center' : 'left'}
+                hAlign={
+                    hAlign === HorizontalAlign.CENTER && items.length !== 3
+                        ? HorizontalAlign.CENTER
+                        : HorizontalAlign.LEFT
+                }
             >
                 {items.map(({img, title, text}, index) =>
                     <GridColumn
-                        {...hAlign === 'left'
+                        {...hAlign === HorizontalAlign.LEFT
                             ? getLeftConfig(items.length, index)
                             : getCenterConfig(items.length, index, gridGap)}
                         key={index}
