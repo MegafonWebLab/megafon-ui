@@ -79,7 +79,9 @@ import { DemoBlockWrapper } from './Button.docz';
 ## White theme with outline
 
 <Playground>
-    <DemoBlockWrapper>
+    <DemoBlockWrapper customStyles={{
+        backgroundColor: '#333333'
+    }}>
         <Button type="outline" theme="white">active</Button>
         <Button type="outline" theme="white" disabled>disabled</Button>
         <Button type="outline" theme="white" showSpinner>with spinner</Button>
@@ -91,9 +93,7 @@ import { DemoBlockWrapper } from './Button.docz';
 ## Black theme with outline
 
 <Playground>
-    <DemoBlockWrapper customStyles={{
-        backgroundColor: '#333333'
-    }}>
+    <DemoBlockWrapper>
         <Button type="outline" theme="black">active</Button>
         <Button type="outline" theme="black" disabled>disabled</Button>
         <Button type="outline" theme="black" showSpinner>with spinner</Button>

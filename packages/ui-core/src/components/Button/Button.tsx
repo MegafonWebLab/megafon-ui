@@ -10,12 +10,14 @@ import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 export interface IButtonProps extends IDataAttributes {
     /* Custom root class name */
     className?: string | string[];
-    /** Custom classes for button and button content */
+    /** Custom classes for button, button content and inner container */
     classes?: {
         /** Button class */
         root?: string;
-        /** Inner content class */
+        /** Content class */
         content?: string;
+        /** Inner container class */
+        inner?: string;
     };
     /** Theme */
     theme?: 'green' | 'purple' | 'white' | 'black';
@@ -57,6 +59,7 @@ const Button: React.FC<IButtonProps> = props => {
         classes: {
             root: rootClassName,
             content: contentClassName,
+            inner: innerClassName,
         } = {},
         className = '',
         theme = 'green',
@@ -132,7 +135,7 @@ const Button: React.FC<IButtonProps> = props => {
             onClick={handleClick}
             disabled={!href && disabled}
         >
-            <div className={cn('inner')}>
+            <div className={cn('inner', innerClassName)}>
                 {!showSpinner && children && renderChildren}
                 {showSpinner && renderSpinner}
             </div>
@@ -144,6 +147,7 @@ Button.propTypes = {
     classes: PropTypes.shape({
         root: PropTypes.string,
         content: PropTypes.string,
+        inner: PropTypes.string,
     }),
     theme: PropTypes.oneOf(['green', 'purple', 'white', 'black']),
     type: PropTypes.oneOf(['primary', 'outline']),
@@ -163,4 +167,5 @@ Button.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onClick: PropTypes.func,
 };
+
 export default Button;
