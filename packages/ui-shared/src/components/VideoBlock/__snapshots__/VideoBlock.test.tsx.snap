@@ -2,7 +2,7 @@
 
 exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
 <div
-  className="mfui-video-block test-class-name"
+  className="mfui-video-block"
 >
   <ContentArea
     innerBackgroundColor="transparent"
@@ -163,7 +163,7 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with gif media type 1`] = `
 <div
-  className="mfui-video-block test-class-name"
+  className="mfui-video-block"
 >
   <ContentArea
     innerBackgroundColor="transparent"
@@ -271,7 +271,7 @@ exports[`<VideoBlock /> it renders VideoBlock with props 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
 <div
-  className="mfui-video-block test-class-name"
+  className="mfui-video-block"
 >
   <ContentArea
     innerBackgroundColor="transparent"

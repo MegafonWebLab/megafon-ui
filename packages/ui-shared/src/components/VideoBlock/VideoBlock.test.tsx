@@ -33,22 +33,22 @@ describe('<VideoBlock />', () => {
     });
 
     it('it renders VideoBlock with content', () => {
-        const component = shallow(<VideoBlock {...props} content={content}>Test paragraph text</VideoBlock>);
+        const component = shallow(<VideoBlock mediaSource="" content={content}>Test paragraph text</VideoBlock>);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with youtube media type', () => {
-        const component = shallow(<VideoBlock {...props} mediaType="youtube">Test paragraph text</VideoBlock>);
+        const component = shallow(<VideoBlock mediaSource="" mediaType="youtube">Test paragraph text</VideoBlock>);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with gif media type', () => {
-        const component = shallow(<VideoBlock {...props} mediaType="gif">Test paragraph text</VideoBlock>);
+        const component = shallow(<VideoBlock mediaSource="" mediaType="gif">Test paragraph text</VideoBlock>);
         expect(component).toMatchSnapshot();
     });
 
     it('should call onClick props', () => {
-        const component = shallow(<VideoBlock {...props} content={content}>Test paragraph text</VideoBlock>);
+        const component = shallow(<VideoBlock mediaSource="" content={content}>Test paragraph text</VideoBlock>);
         const btn = component.find(`.${cn('button')}`);
 
         btn.simulate('click');
