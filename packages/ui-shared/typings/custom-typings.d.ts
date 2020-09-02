@@ -6,8 +6,3 @@ declare module '*.svg' {
 declare interface Window {
     DocumentTouch: any;
 }
-
-declare module '*.png' {
-    const content: any;
-    export default content;
-}
