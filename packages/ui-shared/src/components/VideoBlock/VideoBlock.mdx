@@ -1,0 +1,51 @@
+---
+name: VideoBlock
+menu: Constructor
+route: components/video-block
+---
+
+import { Playground, Props } from 'docz';
+import VideoBlock from './VideoBlock';
+import { content, img } from './VideoBlock.docz';
+
+# VideoBlock
+
+## Properties
+
+<Props of={VideoBlock} />
+
+## Video content
+
+<Playground>
+    <VideoBlock
+        content={content}
+        mediaType="gif"
+        mediaSource={img}
+    />
+</Playground>
+
+## Video without content
+
+<Playground>
+    <VideoBlock
+        mediaType="gif"
+        mediaSource={img}
+    />
+</Playground>
+
+## Included props
+
+```javascript
+const content = {
+    title: 'Lorem ipsum',
+    description: [
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. '
+    ],
+    href: '#',
+    buttonTitle: 'Lorem ipsum',
+    onButtonClick: () => alert('button click'),
+}
+
+const mediaSource = 'image.gif' | 'video.mp4' | 'https://www.youtube.com/embed/...';
+```

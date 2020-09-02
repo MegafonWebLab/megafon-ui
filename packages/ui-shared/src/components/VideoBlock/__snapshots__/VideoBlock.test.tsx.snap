@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
+<div
+  className="mfui-video-block test-class-name"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    innerPadding="default"
+    mobileInnerPadding="default"
+    outerBackgroundColor="white"
+  >
+    <div
+      className="mfui-video-block__inner"
+    >
+      <Grid
+        hAlign="center"
+        multiRow={true}
+        vAlign="center"
+      >
+        <GridColumn
+          all="5"
+          flex={false}
+          grow={false}
+          key="1"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="2"
+          orderTablet="2"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-block__content"
+          >
+            <Header
+              as="h3"
+              className="mfui-video-block__header"
+              color="black"
+              hAlign="inherit"
+            >
+              Test title
+            </Header>
+            <Paragraph
+              className="mfui-video-block__text"
+              hasMargin={false}
+              key="0Test description"
+            >
+              Test description
+            </Paragraph>
+            <Paragraph
+              className="mfui-video-block__text"
+              hasMargin={false}
+              key="1Test description"
+            >
+              Test description
+            </Paragraph>
+            <Button
+              className="mfui-video-block__button"
+              href="#"
+              onClick={[MockFunction]}
+            >
+              Button title
+            </Button>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="7"
+          flex={false}
+          grow={false}
+          key="0"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-block__video-wrapper"
+          >
+            <div
+              className="mfui-video-block__video-inner"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-video-block__video"
+                muted={true}
+              >
+                <source
+                  className="mfui-video-block__source"
+                  src=""
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    innerPadding="default"
+    mobileInnerPadding="default"
+    outerBackgroundColor="white"
+  >
+    <div
+      className="mfui-video-block__inner"
+    >
+      <Grid
+        hAlign="center"
+        multiRow={true}
+        vAlign="center"
+      >
+        <GridColumn
+          all="10"
+          flex={false}
+          grow={false}
+          key="0"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-block__video-wrapper"
+          >
+            <div
+              className="mfui-video-block__video-inner"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-video-block__video"
+                muted={true}
+              >
+                <source
+                  className="mfui-video-block__source"
+                  src=""
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with gif media type 1`] = `
+<div
+  className="mfui-video-block test-class-name"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    innerPadding="default"
+    mobileInnerPadding="default"
+    outerBackgroundColor="white"
+  >
+    <div
+      className="mfui-video-block__inner"
+    >
+      <Grid
+        hAlign="center"
+        multiRow={true}
+        vAlign="center"
+      >
+        <GridColumn
+          all="10"
+          flex={false}
+          grow={false}
+          key="0"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-block__video-wrapper"
+          >
+            <div
+              className="mfui-video-block__video-inner"
+            >
+              <img
+                alt="gif"
+                className="mfui-video-block__image"
+                src=""
+              />
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with props 1`] = `
+<div
+  className="mfui-video-block test-class-name"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    innerPadding="default"
+    mobileInnerPadding="default"
+    outerBackgroundColor="white"
+  >
+    <div
+      className="mfui-video-block__inner"
+    >
+      <Grid
+        hAlign="center"
+        multiRow={true}
+        vAlign="center"
+      >
+        <GridColumn
+          all="10"
+          flex={false}
+          grow={false}
+          key="0"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-block__video-wrapper"
+          >
+            <div
+              className="mfui-video-block__video-inner"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-video-block__video"
+                muted={true}
+              >
+                <source
+                  className="mfui-video-block__source"
+                  src=""
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
+<div
+  className="mfui-video-block test-class-name"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    innerPadding="default"
+    mobileInnerPadding="default"
+    outerBackgroundColor="white"
+  >
+    <div
+      className="mfui-video-block__inner"
+    >
+      <Grid
+        hAlign="center"
+        multiRow={true}
+        vAlign="center"
+      >
+        <GridColumn
+          all="10"
+          flex={false}
+          grow={false}
+          key="0"
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="12"
+        >
+          <div
+            className="mfui-video-block__video-wrapper"
+          >
+            <div
+              className="mfui-video-block__video-inner"
+            >
+              <iframe
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen={true}
+                className="mfui-video-block__youtube-wrapper"
+                frameBorder="0"
+                src=""
+              />
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </ContentArea>
+</div>
+`;
