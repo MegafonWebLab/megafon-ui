@@ -1,5 +1,136 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Select /> it renders Select 1`] = `
+<Select
+  items={
+    Array [
+      Object {
+        "title": "test-name-1",
+        "value": 1,
+      },
+      Object {
+        "title": "test-name-2",
+        "value": 2,
+      },
+    ]
+  }
+  notFoundText="Ничего не нашлось"
+  type="classic"
+>
+  <div
+    className="mfui-beta-select mfui-beta-select_no-touch"
+  >
+    <div
+      className="mfui-beta-select__inner"
+    >
+      <div
+        className="mfui-beta-select__control"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="mfui-beta-select__title"
+          onClick={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="mfui-beta-select__title-inner"
+          />
+        </div>
+        <div
+          className="mfui-beta-select__arrow-wrap"
+          onClick={[Function]}
+          tabIndex={1}
+        >
+          <span
+            className="mfui-beta-select__arrow"
+          />
+        </div>
+      </div>
+      <div
+        className="mfui-beta-select__list"
+      >
+        <div
+          className="mfui-beta-select__list-inner"
+        >
+          <div
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            key="1"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              test-name-1
+            </div>
+          </div>
+          <div
+            className="mfui-beta-select__list-item"
+            key="3"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              test-name-2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Select>
+`;
+
+exports[`<Select /> it renders with data attributes 1`] = `
+<div
+  className="mfui-beta-select mfui-beta-select_no-touch"
+  data-test="test"
+>
+  <div
+    className="mfui-beta-select__inner"
+  >
+    <div
+      className="mfui-beta-select__control"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="mfui-beta-select__title"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        <div
+          className="mfui-beta-select__title-inner"
+        />
+      </div>
+      <div
+        className="mfui-beta-select__arrow-wrap"
+        onClick={[Function]}
+        tabIndex={1}
+      >
+        <span
+          className="mfui-beta-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__list"
+    >
+      <div
+        className="mfui-beta-select__list-inner"
+      >
+        <div
+          className="mfui-beta-select__not-found"
+        >
+          Ничего не нашлось
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Select /> it renders with disabled state 1`] = `
 <div
   className="mfui-beta-select mfui-beta-select_disabled mfui-beta-select_no-touch"

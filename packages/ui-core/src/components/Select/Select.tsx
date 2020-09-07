@@ -6,6 +6,7 @@ import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
 import Paragraph from 'components/Paragraph/Paragraph';
 import debounce from 'lodash.debounce';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 enum Verification {
     VALID = 'valid',
@@ -28,7 +29,7 @@ interface ISelectClasses {
     root?: string;
 }
 
-interface ISelectProps {
+interface ISelectProps extends IDataAttributes {
     /** Select type */
     type?: Types;
     /** Field title */
@@ -97,6 +98,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             })
         ),
         onSelect: PropTypes.func,
+        dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     };
 
     static defaultProps: Partial<ISelectProps> = {
@@ -396,11 +398,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             required,
             className = '',
             classes = {},
+            dataAttrs,
         } = this.props;
         const { isOpened } = this.state;
 
         return (
             <div
+                {...filterDataAttrs(dataAttrs)}
                 className={cn({
                     open: isOpened,
                     disabled: isDisabled,

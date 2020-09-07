@@ -23,6 +23,10 @@ const props = {
             title: 'test-name-2',
         },
     ],
+    dataAttrs: {
+        'data-test': 'test',
+        'incorrect-attr': 'test',
+    },
 };
 
 const controlSelector = '.mfui-beta-select__control';
@@ -32,12 +36,17 @@ describe('<Select />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it.only('it renders with disabled state', () => {
+    it('it renders with disabled state', () => {
         const handleClick = jest.fn();
         const wrapper = shallow(<Select items={[]} isDisabled />);
 
         wrapper.find(controlSelector).simulate('click');
         expect(handleClick).not.toHaveBeenCalled();
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders with data attributes', () => {
+        const wrapper = shallow(<Select dataAttrs={props.dataAttrs} />);
         expect(wrapper).toMatchSnapshot();
     });
 });
