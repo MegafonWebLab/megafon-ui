@@ -1,0 +1,60 @@
+---
+name: VideoBanner
+menu: Constructor
+route: components/video-banner
+---
+
+import { Playground, Props } from 'docz';
+import VideoBanner from './VideoBanner';
+import { content, image, video } from './VideoBanner.docz.tsx'
+
+# VideoBanner
+
+## Properties
+
+<Props of={VideoBanner} />
+
+## Basic usage
+
+<Playground>
+    <VideoBanner video={video} image={image} />
+</Playground>
+
+## With content
+
+<Playground>
+    <VideoBanner video={video} image={image} content={content} />
+</Playground>
+
+## Only image
+
+<Playground>
+    <VideoBanner image={image} content={content} />
+</Playground>
+
+## Included props
+
+``` javascript
+const content = {
+    title: 'Текст ≈40 симовлов. Короткие слова',
+    text: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+    href: '#',
+    buttonTitle: 'Текст в кнопке',
+    clickHandler: () => alert('button click'),
+}
+
+const image = {
+    main: 'image-main.png',
+    mobile: 'image-mobile.png'
+}
+
+const video = {
+    src: 'video.mp4',
+    type: 'video',
+}
+
+const youtube = {
+    src: 'https://www.youtube.com/embed/videoId',
+    type: 'youtube'
+}
+```

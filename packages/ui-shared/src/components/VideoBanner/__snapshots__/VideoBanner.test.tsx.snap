@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoBanner /> render component 1`] = `
+<VideoBanner
+  image={
+    Object {
+      "main": "test-file-stub",
+      "mobile": "test-file-stub",
+    }
+  }
+>
+  <div
+    className="mfui-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      innerPadding="default"
+      mobileInnerPadding="default"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-video-banner__wrapper"
+            style={
+              Object {
+                "backgroundImage": "url(test-file-stub)",
+              }
+            }
+          />
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> render with content 1`] = `
+<VideoBanner
+  content={
+    Object {
+      "buttonTitle": "Текст в кнопке",
+      "clickHandler": [MockFunction],
+      "href": "#",
+      "text": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
+      "title": "Текст ≈40 симовлов. Короткие слова",
+    }
+  }
+  image={
+    Object {
+      "main": "test-file-stub",
+      "mobile": "test-file-stub",
+    }
+  }
+>
+  <div
+    className="mfui-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      innerPadding="default"
+      mobileInnerPadding="default"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-video-banner__wrapper"
+            style={
+              Object {
+                "backgroundImage": "url(test-file-stub)",
+              }
+            }
+          >
+            <div
+              className="mfui-video-banner__content"
+            >
+              <Header
+                as="h1"
+                className="mfui-video-banner__title"
+                color="white"
+                hAlign="inherit"
+              >
+                <h1
+                  className="mfui-beta-header mfui-beta-header_color_white mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-video-banner__title"
+                >
+                  Текст ≈40 симовлов. Короткие слова
+                </h1>
+              </Header>
+              <div
+                className="mfui-video-banner__text"
+              >
+                <Paragraph
+                  color="clearWhite"
+                  hasMargin={false}
+                >
+                  <p
+                    className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_clearWhite"
+                  >
+                    Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+                  </p>
+                </Paragraph>
+              </div>
+              <Button
+                className="mfui-video-banner__button"
+                href="#"
+                onClick={[MockFunction]}
+              >
+                <a
+                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-video-banner__button"
+                  disabled={false}
+                  href="#"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="mfui-beta-button__inner"
+                  >
+                    <div
+                      className="mfui-beta-button__content"
+                    >
+                      Текст в кнопке
+                    </div>
+                  </div>
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> render with video 1`] = `
+<VideoBanner
+  image={
+    Object {
+      "main": "test-file-stub",
+      "mobile": "test-file-stub",
+    }
+  }
+  video={
+    Object {
+      "src": "test-file-stub",
+      "type": "video",
+    }
+  }
+>
+  <div
+    className="mfui-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      innerPadding="default"
+      mobileInnerPadding="default"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-video-banner__wrapper"
+            style={
+              Object {
+                "backgroundImage": "url(test-file-stub)",
+              }
+            }
+          >
+            <video
+              autoPlay={true}
+              className="mfui-video-banner__video"
+              loop={true}
+              muted={true}
+            >
+              <source
+                src="test-file-stub"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> render with youtube video 1`] = `
+<VideoBanner
+  image={
+    Object {
+      "main": "test-file-stub",
+      "mobile": "test-file-stub",
+    }
+  }
+  video={
+    Object {
+      "src": "youtube.com/videoId",
+      "type": "youtube",
+    }
+  }
+>
+  <div
+    className="mfui-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      innerPadding="default"
+      mobileInnerPadding="default"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-video-banner__wrapper"
+            style={
+              Object {
+                "backgroundImage": "url(test-file-stub)",
+              }
+            }
+          >
+            <iframe
+              allow="autoplay"
+              className="mfui-video-banner__video"
+              frameBorder="0"
+              height="100%"
+              src="youtube.com/videoId?controls=0&autoplay=1"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
