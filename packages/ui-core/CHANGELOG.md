@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.4...@megafon/ui-core@2.0.0-beta.5) (2020-09-09)
+
+
+### Bug Fixes
+
+* **textfield:** fix Verification type ([2911a94](https://github.com/MegafonWebLab/megafon-ui/commit/2911a9447126a3d24206a995e456884badfac7d6))
+
+
+
+
+
 # [2.0.0-beta.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.3...@megafon/ui-core@2.0.0-beta.4) (2020-09-07)
 
 
