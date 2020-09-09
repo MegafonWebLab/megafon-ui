@@ -91,7 +91,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
               >
                 <source
                   className="mfui-video-block__source"
-                  src=""
+                  src="video.mp4"
                   type="video/mp4"
                 />
               </video>
@@ -148,7 +148,7 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
               >
                 <source
                   className="mfui-video-block__source"
-                  src=""
+                  src="mediaSource"
                   type="video/mp4"
                 />
               </video>
@@ -201,7 +201,7 @@ exports[`<VideoBlock /> it renders VideoBlock with gif media type 1`] = `
               <img
                 alt="gif"
                 className="mfui-video-block__image"
-                src=""
+                src="image.gif"
               />
             </div>
           </div>
@@ -256,7 +256,7 @@ exports[`<VideoBlock /> it renders VideoBlock with props 1`] = `
               >
                 <source
                   className="mfui-video-block__source"
-                  src=""
+                  src="mediaSource"
                   type="video/mp4"
                 />
               </video>
@@ -311,7 +311,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
                 allowFullScreen={true}
                 className="mfui-video-block__youtube-wrapper"
                 frameBorder="0"
-                src=""
+                src="youtube.com"
               />
             </div>
           </div>
