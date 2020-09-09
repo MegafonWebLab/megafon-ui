@@ -12,13 +12,16 @@ import Show from 'icons/Basic/24/Show_24.svg';
 
 const InputMask = require('react-input-mask');
 
-export enum Verification {
-    VALID = 'valid',
-    ERROR = 'error',
-}
 interface ITextFieldClasses {
     input?: string | null;
 }
+
+export const Verification = {
+    VALID: 'valid',
+    ERROR: 'error',
+} as const;
+
+type VerificationType = typeof Verification[keyof typeof Verification];
 
 export interface ITextFieldProps {
     /** Toggle to textarea */
@@ -32,7 +35,7 @@ export interface ITextFieldProps {
     /** Forcefully prohibits icon's render */
     hideIcon?: boolean;
     /** The result of external field's validation */
-    verification?: Verification;
+    verification?: VerificationType;
     /** Text message. Could be a validation message or a simple hint to user */
     noticeText?: string;
     /** Disables field. The value of this prop is also passed through to attribute with the same name */
