@@ -27,11 +27,9 @@ export interface IBenefitsPictures {
     /** Benefits list */
     items: IBenefit[];
     /** Benefits horizontal align */
-    hAlign?: 'left' | 'center';
+    hAlign?: HorizontalAlign;
     /** Grid gap size */
     gridGap: GridGutterSize;
-    /** Image horizontal align */
-    hAlignImg?: HorizontalAlign;
 }
 
 const isEvenIndex = index => !((index + 1) % 2);
@@ -114,7 +112,7 @@ const getCenterLargeConfig = (count: number, index: number): GridConfig => {
 
 const getCenterConfig = (count: number, index: number, gutterSize: string ): GridConfig => {
     switch (gutterSize) {
-        case 'medium': {
+        case GutterSize.MEDIUM: {
             return getCenterMediumConfig(count, index);
         }
 
@@ -127,11 +125,11 @@ const getCenterConfig = (count: number, index: number, gutterSize: string ): Gri
 const cn = cnCreate('benefits-pictures');
 const BenefitsPictures: React.FC<IBenefitsPictures> = ({
     items,
-    hAlign = 'left',
+    hAlign = HorizontalAlign.LEFT,
     gridGap = GutterSize.LARGE,
-    hAlignImg = HorizontalAlign.LEFT,
 }) => {
     const isLargeGutter = gridGap === GutterSize.LARGE;
+    const isGridCenterAlign = hAlign === HorizontalAlign.CENTER && items.length !== 3;
     const [currentGutter, setCurrentGutter] = React.useState(gridGap);
 
     const resizeHandler = () => {
@@ -161,11 +159,7 @@ const BenefitsPictures: React.FC<IBenefitsPictures> = ({
         <div className={cn()}>
             <Grid
                 guttersLeft={currentGutter}
-                hAlign={
-                    hAlign === HorizontalAlign.CENTER && items.length !== 3
-                        ? HorizontalAlign.CENTER
-                        : HorizontalAlign.LEFT
-                }
+                hAlign={isGridCenterAlign ? HorizontalAlign.CENTER : HorizontalAlign.LEFT}
             >
                 {items.map(({img, title, text}, index) =>
                     <GridColumn
@@ -175,9 +169,7 @@ const BenefitsPictures: React.FC<IBenefitsPictures> = ({
                         key={index}
                     >
                         <div className={cn('item')}>
-                            <img className={cn('img', {
-                                'h-align': hAlignImg,
-                            })}
+                            <img className={cn('img', { 'h-align': hAlign })}
                                  src={img}
                                  alt=""
                             />
