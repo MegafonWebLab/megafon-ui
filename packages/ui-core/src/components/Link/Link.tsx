@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
-interface ILinkProps {
+export interface ILinkProps {
     /** Link */
     href?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;

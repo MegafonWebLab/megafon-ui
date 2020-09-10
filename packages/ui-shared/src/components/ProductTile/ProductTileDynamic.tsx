@@ -6,7 +6,7 @@ import ProductSwitcher from '../ProductSwitcher/ProductSwitcher';
 import { IServicePack, ISwitcher } from './ProductTile';
 import AnimationValue from './ProductTileValue';
 
-interface IProductTileDynamicProps {
+export interface IProductTileDynamicProps {
     /** Current pack */
     currentPack: Partial<IServicePack>;
     /** Switcher */

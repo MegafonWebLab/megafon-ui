@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './ListItem.less';
 import cnCreate from 'utils/cnCreate';
 
-interface IListItemProps {
+export interface IListItemProps {
     /** Custom classname */
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;

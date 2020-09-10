@@ -5,7 +5,7 @@ import './CarouselArrow.less';
 import Arrow from 'icons/System/16/Arrow_forward_16.svg';
 import ArrowLikeQuote from 'icons/System/16/Arrow_right_16.svg';
 
-interface ICarouselArrowProps {
+export interface ICarouselArrowProps {
     className: string;
     onClick: any;
     theme?: string;

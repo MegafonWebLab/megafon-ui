@@ -6,7 +6,7 @@ import greenHorizontalImg from 'docIcons/green-horizontal.svg';
 import greenVerticalImg from 'docIcons/green-vertical.svg';
 import Link from '../Link/Link';
 
-interface ILogoProps {
+export interface ILogoProps {
     /** Color */
     color?: string;
     /** View */

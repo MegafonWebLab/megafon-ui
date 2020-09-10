@@ -4,7 +4,7 @@ import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTileStatic.less';
 import { IPack } from './ProductTile';
 
-interface IProductTileStaticProps {
+export interface IProductTileStaticProps {
     /** Packs */
     packs: Array<Partial<IPack>>;
 }

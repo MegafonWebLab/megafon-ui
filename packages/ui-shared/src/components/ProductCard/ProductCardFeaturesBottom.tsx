@@ -4,7 +4,7 @@ import './ProductCardFeaturesBottom.less';
 import { Header, Paragraph, cnCreate } from '@megafon/ui-core';
 import { ISecondParamChildren } from './ProductCardFeatures';
 
-interface IProductCardFeaturesBottomProps {
+export interface IProductCardFeaturesBottomProps {
     /** Custom class name */
     className?: string;
     /** Title */

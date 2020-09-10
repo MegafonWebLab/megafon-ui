@@ -4,7 +4,7 @@ import { cnCreate, BubbleHint } from '@megafon/ui-core';
 import './style/ProductTileOptions.less';
 import { IOption } from './ProductTile';
 
-interface IProductTileOptionsProps {
+export interface IProductTileOptionsProps {
     /** Has head */
     head?: string;
     /** Options */

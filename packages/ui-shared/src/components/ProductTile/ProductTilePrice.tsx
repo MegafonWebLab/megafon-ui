@@ -4,7 +4,7 @@ import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTilePrice.less';
 import AnimationValue from './ProductTileValue';
 
-interface IProductTilePriceProps {
+export interface IProductTilePriceProps {
     /** title */
     title?: string;
     /** value */

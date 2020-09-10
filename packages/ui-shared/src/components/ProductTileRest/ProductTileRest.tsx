@@ -6,7 +6,7 @@ import './ProductTileRest.less';
 export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
 type IButtonProps = React.ComponentProps<typeof Button>;
 
-interface IProductTileRestProps {
+export interface IProductTileRestProps {
     className?: string;
     title: string;
     description: string;

@@ -4,7 +4,7 @@ import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTileHint.less';
 import { TLinkTargetType } from './ProductTile';
 
-interface IProductTileHintProps {
+export interface IProductTileHintProps {
     /** Title */
     title: string;
     /** Link href */

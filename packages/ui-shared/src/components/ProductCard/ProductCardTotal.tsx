@@ -6,7 +6,7 @@ import './ProductCardTotal.less';
 const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
 export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
 
-interface IProductCardTotalProps {
+export interface IProductCardTotalProps {
     /** Payment
      * Object with args: value: string(required), unit: string(required), oldValue: string
      */
