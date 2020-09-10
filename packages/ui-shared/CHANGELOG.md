@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.5...@megafon/ui-shared@2.0.0-beta.6) (2020-09-10)
+
+
+### Bug Fixes
+
+* export interfaces ([275c2e1](https://github.com/MegafonWebLab/megafon-ui/commit/275c2e1f94ea69f7a29e4b3590504dd2def32ac1))
+
+
+
+
+
 # [2.0.0-beta.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.4...@megafon/ui-shared@2.0.0-beta.5) (2020-09-09)
 
 **Note:** Version bump only for package @megafon/ui-shared
