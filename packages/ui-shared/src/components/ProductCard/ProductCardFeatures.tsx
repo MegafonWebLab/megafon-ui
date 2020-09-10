@@ -27,7 +27,7 @@ export interface ISecondParamChildren {
     svgIcon: JSX.Element;
 }
 
-interface IProductCardFeaturesProps {
+export interface IProductCardFeaturesProps {
     /** Showcase first param
      * Param with args: title: string(requred), caption: string,
      * children: [JSX.Element(requred), title: string(requred)]

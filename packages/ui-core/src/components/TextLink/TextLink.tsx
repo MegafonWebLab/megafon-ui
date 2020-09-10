@@ -4,7 +4,7 @@ import './TextLink.less';
 import Link from '../Link/Link';
 import cnCreate from 'utils/cnCreate';
 
-interface ITextLinkProps {
+export interface ITextLinkProps {
     /** Color */
     color: 'white' | 'black' | 'gray' | 'blue' | 'green' | 'inherit';
     /** Underline visibility */

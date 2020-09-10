@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-core';
 import './ProductCardWrapper.less';
 
-interface IProductCardWrapperProps {
+export interface IProductCardWrapperProps {
     /** This option add specific className on container
      * and child components change styles: background, paddings, font-size...
      */

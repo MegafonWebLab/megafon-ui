@@ -5,7 +5,7 @@ import { Manager, Popper, Target, Arrow, IPopperProps } from 'react-popper';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 
-interface IBubbleHintProps {
+export interface IBubbleHintProps {
     /** Custom class name */
     className?: string;
     /** Padding in popup */

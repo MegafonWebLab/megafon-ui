@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './InputLabel.less';
 
-interface IInputLabelProps {
+export interface IInputLabelProps {
     htmlFor?: string;
 }
 

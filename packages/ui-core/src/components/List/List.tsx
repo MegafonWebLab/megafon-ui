@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './List.less';
 import cnCreate from 'utils/cnCreate';
 
-interface IListProps {
+export interface IListProps {
     /** List type */
     as?: 'ul' | 'ol';
     /** Align the list horizontally */

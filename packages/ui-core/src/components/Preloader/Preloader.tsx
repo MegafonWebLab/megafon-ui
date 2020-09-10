@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Preloader.less';
 import cnCreate from 'utils/cnCreate';
 
-interface IPreloaderProps {
+export interface IPreloaderProps {
     /** Color theme of preloader's circles */
     color?: 'default' | 'black' | 'white';
     /** Preloader size */

@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTileCashback.less';
 
-interface IProductTileCashbackProps {
+export interface IProductTileCashbackProps {
     /** title */
     title?: string;
     /** value */
