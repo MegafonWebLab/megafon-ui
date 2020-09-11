@@ -366,7 +366,7 @@ exports[`<TextField /> should render with custom icon 1`] = `
       type="text"
     />
     <div
-      className="mfui-beta-text-field__icon-box mfui-beta-text-field__icon-box_no-handler"
+      className="mfui-beta-text-field__icon-box"
       onClick={[Function]}
     >
       <test-file-stub />

@@ -271,7 +271,8 @@ const TextField: React.FC<ITextFieldProps> = ({
                 className={cn('icon-box', {
                     error: verification === Verification.ERROR,
                     password: isPasswordType,
-                    'no-handler': !!customIcon && !onCustomIconClick })}
+                    'custom-handler': !!onCustomIconClick,
+                })}
                 onClick={handleIconClick}
             >
                 {icon}
