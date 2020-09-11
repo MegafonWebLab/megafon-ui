@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.7](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.6...@megafon/ui-core@2.0.0-beta.7) (2020-09-11)
+
+
+### Bug Fixes
+
+* **textfield:** increase zIndex icon with onClick handler ([f169dd5](https://github.com/MegafonWebLab/megafon-ui/commit/f169dd5c1200193868ddfbd637e8ff3aeb90e904))
+
+
+
+
+
 # [2.0.0-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.5...@megafon/ui-core@2.0.0-beta.6) (2020-09-10)
 
 
