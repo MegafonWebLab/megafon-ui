@@ -65,10 +65,14 @@ field        | description
 
 ## Custom icon and handler
 <Playground>
-    <TextFieldWrapper>
+    <TextFieldWrapper width={550}>
         <TextField
             verification="error"
             noticeText="Error notice"
+            customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
+            onCustomIconClick={ () => alert('Custom click handler') }
+        />
+        <TextField
             customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
             onCustomIconClick={ () => alert('Custom click handler') }
         />
