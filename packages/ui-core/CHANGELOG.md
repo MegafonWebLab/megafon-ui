@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.8](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.7...@megafon/ui-core@2.0.0-beta.8) (2020-09-14)
+
+
+### Bug Fixes
+
+* **tile:** fixed notes ([79ed5ec](https://github.com/MegafonWebLab/megafon-ui/commit/79ed5ec7179888bff5c4cff9e871162e943184da))
+
+
+### Features
+
+* **tile:** added new component ([4efc047](https://github.com/MegafonWebLab/megafon-ui/commit/4efc0479bc748013e1ce50a78d07cc08cd2e2007))
+
+
+
+
+
 # [2.0.0-beta.7](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.6...@megafon/ui-core@2.0.0-beta.7) (2020-09-11)
 
 
