@@ -1,0 +1,138 @@
+---
+name: Tile
+menu: Components
+route: components/Tile
+---
+
+import { Playground, Props } from 'docz';
+import Tile from './Tile';
+import { DemoTileWrapper, tileInner } from './Tile.docz';
+
+# Tile
+
+## Properties
+
+<Props of={Tile} />
+
+```javascript
+export enum Theme {
+    LIGHT = 'light',
+    DARK = 'dark',
+}
+
+export enum Radius {
+    DEFAULT = 'default',
+    ROUNDED = 'rounded',
+}
+
+export enum Shadow {
+    ZERO = 'zero',
+    LOW = 'low',
+    HIGH = 'high',
+    HOVER = 'hover',
+}
+```
+
+## Rounded and squared tiles on light background
+
+<Playground>
+    <DemoTileWrapper>
+        <Tile shadowLevel="zero" theme="light">
+            <div style={tileInner}>Zero shadow</div>
+        </Tile>
+        <Tile shadowLevel="low" theme="light">
+            <div style={tileInner}>Low shadow</div>
+        </Tile>
+        <Tile shadowLevel="high" theme="light">
+            <div style={tileInner}>High shadow</div>
+        </Tile>
+        <Tile shadowLevel="hover" theme="light">
+            <div style={tileInner}>Hover shadow</div>
+        </Tile>
+    </DemoTileWrapper>
+    <DemoTileWrapper>
+        <Tile radius="rounded" shadowLevel="zero" theme="light">
+            <div style={tileInner}>Zero shadow</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="low" theme="light">
+            <div style={tileInner}>Low shadow</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="high" theme="light">
+            <div style={tileInner}>High shadow</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="hover" theme="light">
+            <div style={tileInner}>Hover shadow</div>
+        </Tile>
+    </DemoTileWrapper>
+</Playground>
+
+## Rounded and squared tiles on dark background
+
+<Playground>
+    <DemoTileWrapper wrapperTheme="dark">
+        <Tile shadowLevel="zero" theme="dark">
+            <div style={tileInner}>Zero shadow</div>
+        </Tile>
+        <Tile shadowLevel="low" theme="dark">
+            <div style={tileInner}>Low shadow</div>
+        </Tile>
+        <Tile shadowLevel="high" theme="dark">
+            <div style={tileInner}>High shadow</div>
+        </Tile>
+        <Tile shadowLevel="hover" theme="dark">
+            <div style={tileInner}>Hover shadow</div>
+        </Tile>
+    </DemoTileWrapper>
+    <DemoTileWrapper wrapperTheme="dark">
+        <Tile radius="rounded" shadowLevel="zero">
+            <div theme="dark" style={tileInner}>Zero shadow</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="low">
+            <div theme="dark"style={tileInner}>Low shadow</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="high">
+            <div theme="dark"style={tileInner}>High shadow</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="hover">
+            <div theme="dark"style={tileInner}>Hover shadow</div>
+        </Tile>
+    </DemoTileWrapper>
+</Playground>
+
+## Tiles with links
+
+<Playground>
+    <DemoTileWrapper>
+        <Tile shadowLevel="zero" href="#">
+            <div style={tileInner}>Zero shadow</div>
+        </Tile>
+        <Tile shadowLevel="low" href="#">
+            <div style={tileInner}>Low shadow</div>
+        </Tile>
+        <Tile shadowLevel="high" href="#">
+            <div style={tileInner}>High shadow</div>
+        </Tile>
+        <Tile shadowLevel="hover" href="#">
+            <div style={tileInner}>Hover shadow</div>
+        </Tile>
+    </DemoTileWrapper>
+</Playground>
+
+## Interactive tiles
+
+<Playground>
+    <DemoTileWrapper>
+        <Tile isInteractive shadowLevel="zero">
+            <div style={tileInner}>Zero shadow</div>
+        </Tile>
+        <Tile isInteractive shadowLevel="low">
+            <div style={tileInner}>Low shadow</div>
+        </Tile>
+        <Tile isInteractive shadowLevel="high">
+            <div style={tileInner}>High shadow</div>
+        </Tile>
+        <Tile isInteractive shadowLevel="hover">
+            <div style={tileInner}>Hover shadow</div>
+        </Tile>
+    </DemoTileWrapper>
+</Playground>

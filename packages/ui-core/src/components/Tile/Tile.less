@@ -1,0 +1,45 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-beta-tile');
+
+@{b} {
+    background-color: @clearWhite;
+
+    &_radius_rounded {
+        border-radius: 8px;
+    }
+
+    &_pointer {
+        cursor: pointer;
+    }
+
+    &_theme_light&_shadow_low {
+        box-shadow: 0 0.25px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    &_theme_light&_shadow_high {
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.15);
+    }
+
+    &_theme_light&_shadow_hover {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    &_theme_dark&_shadow_low {
+        box-shadow: 0 0.25px 3px rgba(0, 0, 0, 0.45);
+    }
+
+    &_theme_dark&_shadow_high {
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.25);
+    }
+
+    &_theme_dark&_shadow_hover {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+    }
+}
