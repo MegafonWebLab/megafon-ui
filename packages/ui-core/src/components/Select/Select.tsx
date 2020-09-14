@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import debounce from 'lodash.debounce';
 import './Select.less';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
 import Paragraph from 'components/Paragraph/Paragraph';
-import debounce from 'lodash.debounce';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 enum Verification {
@@ -18,9 +18,11 @@ enum Types {
     COMBOBOX = 'combobox',
 }
 
+export type SelectItemValueType = number | string;
+
 export interface ISelectItem {
     title: string;
-    value: number | string;
+    value: SelectItemValueType;
     view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
@@ -37,7 +39,7 @@ interface ISelectProps extends IDataAttributes {
     /** Html id attribute for label */
     labelId?: string;
     /** Current selected item */
-    currentValue?: number;
+    currentValue?: SelectItemValueType;
     /** Verification */
     verification?: Verification;
     /** Notice text */
@@ -74,7 +76,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         type: PropTypes.oneOf(Object.values(Types)),
         label: PropTypes.string,
         id: PropTypes.string,
-        currentValue: PropTypes.number,
+        currentValue:  PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         verification: PropTypes.oneOf(Object.values(Verification)),
         noticeText: PropTypes.string,
         isDisabled: PropTypes.bool,
@@ -94,7 +96,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                     PropTypes.element,
                 ]),
                 title: PropTypes.node,
-                value: PropTypes.number,
+                value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
             })
         ),
         onSelect: PropTypes.func,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ISelectItem } from './Select';
+import { ISelectItem, SelectItemValueType } from './Select';
 
 export const items = [
     {
@@ -58,10 +58,8 @@ const selectWrapperStyle = {
     minWidth: '300px',
 };
 
-type CurrentValue = number | undefined;
-
 interface ISelectChildrenProps {
-    currentValue: number | undefined;
+    currentValue?: SelectItemValueType;
     onSelect: (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => void;
 }
 
@@ -70,10 +68,10 @@ interface ISelectWrapperProps {
 }
 
 export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
-    const [currentValue, setCurrentValue] = React.useState<CurrentValue>(undefined);
+    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>();
 
     const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
-        setCurrentValue(Number(data.value));
+        setCurrentValue(data.value);
     };
 
     return (
