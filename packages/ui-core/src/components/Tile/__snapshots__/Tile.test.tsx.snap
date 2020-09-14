@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tile /> handlers should render shadow on mouse enter 1`] = `
+<div
+  className="mfui-beta-tile mfui-beta-tile_theme_light mfui-beta-tile_radius_default mfui-beta-tile_shadow_hover"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Some test content
+</div>
+`;
+
+exports[`<Tile /> handlers should render shadow on mouse leave 1`] = `
+<div
+  className="mfui-beta-tile mfui-beta-tile_theme_light mfui-beta-tile_radius_default mfui-beta-tile_shadow_zero"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Some test content
+</div>
+`;
+
+exports[`<Tile /> snapshots renders component 1`] = `
+<div
+  className="mfui-beta-tile mfui-beta-tile_theme_light mfui-beta-tile_radius_default mfui-beta-tile_shadow_zero"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Some test content
+</div>
+`;
+
+exports[`<Tile /> snapshots renders component with props 1`] = `
+<div
+  className="mfui-beta-tile mfui-beta-tile_theme_dark mfui-beta-tile_radius_rounded mfui-beta-tile_shadow_high mfui-beta-tile_pointer test-class"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <a
+    className="mfui-beta-tile__link"
+    href="test-link"
+  >
+    Some test content
+  </a>
+</div>
+`;
