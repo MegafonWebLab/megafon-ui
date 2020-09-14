@@ -1,21 +1,21 @@
 import * as React from 'react';
 
-export const lightFlexStyle = {
+export const wrapperStyle = {
     display: 'grid',
     gap: '20px',
     gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
     justifyContent: 'center',
-    backgroundColor: '#F6F6F6',
     padding: '20px',
 };
 
-export const darkFlexStyle = {
-    display: 'grid',
-    gap: '20px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
-    justifyContent: 'center',
+export const lightWrapperStyle = {
+    ...wrapperStyle,
+    backgroundColor: '#F6F6F6',
+};
+
+export const darkWrapperStyle = {
+    ...wrapperStyle,
     backgroundColor: '#00B956',
-    padding: '20px',
 };
 
 export const tileInner = {
@@ -31,12 +31,12 @@ export const tileInner = {
 
 export const DemoTileWrapper = (
     props: {
-        wrapperTheme: string;
+        wrapperTheme: 'light' | 'dark';
         children: JSX.Element[] | Element[] | JSX.Element | Element | string;
     }
 ) => {
     const { wrapperTheme = 'light', children } = props;
-    const theme = wrapperTheme === 'dark' ? darkFlexStyle : lightFlexStyle;
+    const theme = wrapperTheme === 'dark' ? darkWrapperStyle : lightWrapperStyle;
 
     return (
         <div style={theme}>
