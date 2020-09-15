@@ -76,7 +76,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         type: PropTypes.oneOf(Object.values(Types)),
         label: PropTypes.string,
         id: PropTypes.string,
-        currentValue:  PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         verification: PropTypes.oneOf(Object.values(Verification)),
         noticeText: PropTypes.string,
         isDisabled: PropTypes.bool,
@@ -172,7 +172,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
-    handleClickItem = (itemValue: number | string) => (e: React.MouseEvent<HTMLDivElement>): void => {
+    handleClickItem = (itemValue: SelectItemValueType) => (e: React.MouseEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
         const item = items.find(elem => elem.value === itemValue);
 
