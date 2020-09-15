@@ -6,13 +6,29 @@ route: components/benefits-pictures
 
 import { Playground, Props } from 'docz';
 import BenefitsPictures from './BenefitsPictures';
-import { twoItems, threeItems, fourItems, twoItemsWithShortImg } from './BenefitsPictures.docz.tsx';
+import { twoItems, threeItems, fourItems } from './BenefitsPictures.docz.tsx';
 import { Grid, GridColumn } from '@megafon/ui-core';
 
 # BenefitsPictures
 
 ## Properties
 <Props of={BenefitsPictures} />
+
+## Included props
+``` javascript
+const items = [
+    {
+        title: 'Lorem ipsum',
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        img: image.png,
+    },
+    {
+        title: 'Lorem ipsum',
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        img: image.png,
+    },
+]
+```
 
 ## Basic usage
 
@@ -106,19 +122,3 @@ import { Grid, GridColumn } from '@megafon/ui-core';
         items={fourItems}
     />
 </Playground>
-
-## Included props
-``` javascript
-const twoItems = [
-    {
-        title: 'Lorem ipsum',
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
-        img: image.png,
-    },
-    {
-        title: 'Lorem ipsum',
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
-        img: image.png,
-    },
-]
-```

@@ -6,6 +6,7 @@ import { IBenefit, GridConfig, GridGutterSize } from './types';
 import { DESKTOP_MIDDLE_START } from '../../../../ui-core/src/constants/breakpoints';
 
 const THROTTLE_TIME = 500;
+const ONLY_LEFT_ALIGN_ITEMS_COUNT = 3;
 
 const columnSize: GridConfig = {
     wide: '4',
@@ -18,16 +19,18 @@ export enum GutterSize {
     LARGE = 'large',
 }
 
-export enum HorizontalAlign {
-    CENTER = 'center',
-    LEFT = 'left',
-}
+export const HorizontalAlign = {
+    CENTER: 'center',
+    LEFT: 'left',
+} as const;
+
+type HorizontalAlignType = typeof HorizontalAlign[keyof typeof HorizontalAlign];
 
 export interface IBenefitsPictures {
     /** Benefits list */
     items: IBenefit[];
     /** Benefits horizontal align */
-    hAlign?: HorizontalAlign;
+    hAlign?: HorizontalAlignType;
     /** Grid gap size */
     gridGap: GridGutterSize;
 }
@@ -129,7 +132,7 @@ const BenefitsPictures: React.FC<IBenefitsPictures> = ({
     gridGap = GutterSize.LARGE,
 }) => {
     const isLargeGutter = gridGap === GutterSize.LARGE;
-    const isGridCenterAlign = hAlign === HorizontalAlign.CENTER && items.length !== 3;
+    const isGridCenterAlign = hAlign === HorizontalAlign.CENTER && items.length !== ONLY_LEFT_ALIGN_ITEMS_COUNT;
     const [currentGutter, setCurrentGutter] = React.useState(gridGap);
 
     const resizeHandler = () => {
