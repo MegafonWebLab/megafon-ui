@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import {useCallback, useState, useRef, useEffect} from 'react';
+import { useCallback, useState, useRef, useEffect } from 'react';
 import SearchIcon from 'icons/Basic/16/Search_16.svg';
 import debounce from 'lodash.debounce';
 import cnCreate from 'utils/cnCreate';
@@ -24,6 +24,8 @@ export interface ISearchProps {
         /** Value */
         value: string | number;
     }>;
+    /** Debounce delay */
+    changeDelay?: number;
     /** Change handler */
     onChange?: (value: string) => void;
     /** Submit handler */
@@ -36,13 +38,14 @@ const Search: React.FC<ISearchProps> = ({
         placeholder,
         hideIcon,
         items = [],
+        changeDelay = 250,
         onChange,
         onSubmit,
 }) => {
     const [searchQuery, setSearchQuery] = useState(value);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [isFocused, setFocus] = useState(false);
-    const debouncedOnChange = useRef(debounce((inputValue) => onChange && onChange(inputValue), 250));
+    const debouncedOnChange = useRef(debounce((inputValue) => onChange && onChange(inputValue), changeDelay));
 
     useEffect(() => setSearchQuery(value), [value, setSearchQuery]);
 
@@ -55,53 +58,50 @@ const Search: React.FC<ISearchProps> = ({
             debouncedOnChange.current(inputValue);
         }, [setSearchQuery, setActiveIndex, debouncedOnChange]);
 
-    const handleHoverItem = useCallback((index: number) => (_e: React.SyntheticEvent<EventTarget>) => {
+    const handleHoverItem = useCallback((index: number) => (_e: React.SyntheticEvent<EventTarget>): void => {
         setActiveIndex(index);
     }, [activeIndex, setActiveIndex]);
 
-    const handleSearchSubmit: HandleSearchSubmit = useCallback(() => {
-         onSubmit && searchQuery && onSubmit(searchQuery);
-    }, [searchQuery]);
+    const handleSearchSubmit: HandleSearchSubmit = useCallback((): void => {
+        onSubmit && searchQuery && onSubmit(searchQuery);
+    }, [searchQuery, onSubmit]);
 
-    const handleItemSubmit: HandleItemSubmit = useCallback((index: number) => {
+    const handleItemSubmit: HandleItemSubmit = useCallback((index: number): void => {
         const chosenValue = items[index].title;
 
         onSubmit && onSubmit(chosenValue);
     }, [onSubmit, items]);
 
     const handleSelectSubmit: HandleSelectSubmit =
-        useCallback((index: number) => (_e) => {
-            handleItemSubmit(index);
-        }, [handleItemSubmit]);
+        useCallback(() => (_e): void => {
+            handleItemSubmit(activeIndex);
+        }, [handleItemSubmit, activeIndex]);
 
-    const handleFieldFocus: React.EventHandler<React.FocusEvent<HTMLInputElement>> =
-        useCallback(() => {
-            setFocus(focus => !focus);
-        }, [setFocus]);
+    const handleFieldFocusToggle = useCallback((): void => {
+        setFocus(focus => !focus);
+    }, [setFocus]);
 
-    const handleClick: React.EventHandler<React.MouseEvent<HTMLInputElement>> =
-        useCallback(() => {
-            if (activeIndex >= 0) {
-                setActiveIndex(-1);
-            }
-        }, [activeIndex, setActiveIndex]);
+    const handleClick = useCallback((): void => {
+        if (activeIndex >= 0) {
+            setActiveIndex(-1);
+        }
+    }, [activeIndex, setActiveIndex]);
 
-    const handleKeyDown: React.EventHandler<React.KeyboardEvent<HTMLInputElement>> =
-        useCallback(e => {
-            if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
-                setActiveIndex(index => index + 1);
-                e.preventDefault();
-            } else if (e.key === 'ArrowUp' && activeIndex > -1) {
-                setActiveIndex(index => index - 1);
-                e.preventDefault();
-            } else if (e.key === 'Enter' && activeIndex > -1) {
-                handleItemSubmit(activeIndex);
-            } else if (e.key === 'Enter' && activeIndex === -1) {
-                handleSearchSubmit();
-            }
+    const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>): boolean => {
+        if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
+            setActiveIndex(index => index + 1);
+            e.preventDefault();
+        } else if (e.key === 'ArrowUp' && activeIndex > -1) {
+            setActiveIndex(index => index - 1);
+            e.preventDefault();
+        } else if (e.key === 'Enter' && activeIndex > -1) {
+            handleItemSubmit(activeIndex);
+        } else if (e.key === 'Enter' && activeIndex === -1) {
+            handleSearchSubmit();
+        }
 
-            return false;
-        }, [activeIndex, setActiveIndex, handleSearchSubmit]);
+        return false;
+    }, [activeIndex, setActiveIndex, handleSearchSubmit, handleItemSubmit]);
 
     return (
         <div className={cn({ open: isFocused })}>
@@ -113,8 +113,8 @@ const Search: React.FC<ISearchProps> = ({
                     placeholder={placeholder}
                     value={searchQuery}
                     onChange={handleChange}
-                    onFocus={handleFieldFocus}
-                    onBlur={handleFieldFocus}
+                    onFocus={handleFieldFocusToggle}
+                    onBlur={handleFieldFocusToggle}
                     onKeyDown={handleKeyDown}
                     onClick={handleClick}
                     type="text"

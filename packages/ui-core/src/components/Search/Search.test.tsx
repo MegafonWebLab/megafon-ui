@@ -93,7 +93,7 @@ describe('<Search />', () => {
             const wrapper = mount(<Search {...props} />);
             const searchField = wrapper.find(`.${cn('search-field')}`);
             const listItem = `.${cn('list-item')}`;
-            const listItemActive = 'mfui-search__list-item_active';
+            const listItemActive = `${cn('list-item_active')}`;
 
             searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {}});
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
