@@ -4,8 +4,9 @@ import cnCreate from 'utils/cnCreate';
 import './Checkbox.less';
 import CheckedIcon from 'icons/System/16/Checked_16.svg';
 import detectTouch from 'utils/detectTouch';
+import filterDataAttrs, { IDataAttributes } from '../../utils/dataAttrs';
 
-export interface ICheckboxProps {
+export interface ICheckboxProps extends IDataAttributes {
     /** Color scheme */
     color?: 'dark' | 'light';
     /** Custom classname */
@@ -50,6 +51,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
             PropTypes.element,
             PropTypes.string,
         ]),
+        dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
         onChange: PropTypes.func,
     };
 
@@ -78,6 +80,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
             error,
             children,
             extraContent,
+            dataAttrs,
         } = this.props;
 
         return (
@@ -93,6 +96,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                     },
                     className
                 )}
+                {...filterDataAttrs(dataAttrs)}
             >
                 <div className={cn('inner')}>
                     <label className={cn('label', { 'no-touch': !this.isTouch })}>

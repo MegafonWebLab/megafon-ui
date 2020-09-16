@@ -12,6 +12,11 @@ const props = {
     extraContent: 'text',
 };
 
+const dataAttrs = {
+    'data-test': 'test',
+    'incorrect-attr': 'test',
+};
+
 describe('<Checkbox />', () => {
     describe('layout', () => {
         it('renders Checkbox', () => {
@@ -41,6 +46,11 @@ describe('<Checkbox />', () => {
             expect(wrapper).toMatchSnapshot();
 
             window.ontouchstart = onTouchStart;
+        });
+
+        it('renders with data attrs', () => {
+            const wrapper = shallow(<Checkbox dataAttrs={dataAttrs} />);
+            expect(wrapper).toMatchSnapshot();
         });
     });
 
