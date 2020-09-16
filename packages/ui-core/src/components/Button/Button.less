@@ -233,6 +233,42 @@
     // theme = white
 
     &_type_outline&_theme_white {
+        box-shadow: inset 0 0 0 1px @clearWhite;
+        color: @clearWhite;
+        background-color: transparent;
+
+        svg {
+            fill: @clearWhite;
+        }
+    }
+
+    &_no-touch&_type_outline&_theme_white {
+        &:not(@{b}_loading):hover {
+            background-color: fade(@clearWhite, 7%);
+        }
+
+        &:not(@{b}_loading):active {
+            background-color: fade(@clearWhite, 14%);
+        }
+    }
+
+    &&_type_outline&_theme_white&_disabled,
+    &&_no-touch&_type_outline&_theme_white&_disabled,
+    &&_no-touch&_type_outline&_theme_white&_disabled:hover,
+    &&_no-touch&_type_outline&_theme_white&_disabled:active {
+        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%);
+        color: fade(@clearWhite, 50%);
+        background-color: transparent;
+
+        svg {
+            fill: fade(@clearWhite, 50%);
+        }
+    }
+
+    // type = outline
+    // theme = black
+
+    &_type_outline&_theme_black {
         box-shadow: inset 0 0 0 1px @freshAsphalt;
         color: @freshAsphalt;
         background-color: transparent;
@@ -242,7 +278,7 @@
         }
     }
 
-    &_no-touch&_type_outline&_theme_white {
+    &_no-touch&_type_outline&_theme_black {
         &:not(@{b}_loading):hover {
             background-color: fade(@freshAsphalt, 7%);
         }
@@ -262,42 +298,6 @@
 
         svg {
             fill: fade(@freshAsphalt, 50%);
-        }
-    }
-
-    // type = outline
-    // theme = black
-
-    &_type_outline&_theme_black {
-        box-shadow: inset 0 0 0 1px @clearWhite;
-        color: @clearWhite;
-        background-color: transparent;
-
-        svg {
-            fill: @clearWhite;
-        }
-    }
-
-    &_no-touch&_type_outline&_theme_black {
-        &:not(@{b}_loading):hover {
-            background-color: fade(@clearWhite, 15%);
-        }
-
-        &:not(@{b}_loading):active {
-            background-color: fade(@clearWhite, 30%);
-        }
-    }
-
-    &&_type_outline&_theme_black&_disabled,
-    &&_no-touch&_type_outline&_theme_black&_disabled,
-    &&_no-touch&_type_outline&_theme_black&_disabled:hover,
-    &&_no-touch&_type_outline&_theme_black&_disabled:active {
-        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%);
-        color: fade(@clearWhite, 50%);
-        background-color: transparent;
-
-        svg {
-            fill: fade(@clearWhite, 50%);
         }
     }
 

@@ -1,0 +1,59 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-beta-icon-button');
+
+@{b} {
+    border-radius: 50%;
+    padding: 0;
+
+    &__content {
+        display: block;
+    }
+
+    .generateSize(all);
+
+    @media @desktopMU {
+        .generateSize(wide);
+    }
+
+    @media @desktop {
+        .generateSize(desktop);
+    }
+
+    @media @mobileB {
+        .generateSize(tablet);
+    }
+
+    @media @mobileSM {
+        .generateSize(mobile);
+    }
+
+    .generateSize(@resolution) {
+        &_size-@{resolution}_small &__inner {
+            width: 32px;
+
+            @{b}__content {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &_size-@{resolution}_medium &__inner {
+            width: 48px;
+
+            @{b}__content {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        &_size-@{resolution}_large &__inner {
+            width: 60px;
+
+            @{b}__content {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
