@@ -373,7 +373,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                             className={cn('list-item', {
                                 active: activeIndex === i,
                             })}
-                            key={Number(value) + i}
+                            key={`${i}_${value}`}
                             onClick={this.handleClickItem(value)}
                             onMouseEnter={this.handleHoverItem(i)}
                             ref={this.getNodeList}
