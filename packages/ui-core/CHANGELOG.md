@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.11](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.10...@megafon/ui-core@2.0.0-beta.11) (2020-09-17)
+
+
+### Bug Fixes
+
+* **select:** edit item value prop type ([78d667d](https://github.com/MegafonWebLab/megafon-ui/commit/78d667df26d32e0159abb4a7d4d16bb2be0bdbc3))
+
+
+### Features
+
+* **checkbox:** add data attrs prop ([5d66a67](https://github.com/MegafonWebLab/megafon-ui/commit/5d66a67bb33ce487dfb2e9ffe4663c921734997a))
+
+
+
+
+
 # [2.0.0-beta.10](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.9...@megafon/ui-core@2.0.0-beta.10) (2020-09-16)
 
 
