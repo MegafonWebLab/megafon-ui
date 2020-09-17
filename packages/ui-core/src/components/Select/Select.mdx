@@ -88,7 +88,7 @@ const items = [
 
 ```javascript
 const DemoSelectWrapper = props => {
-    const [currentValue, setCurrentValue] = React.useState(undefined);
+    const [currentValue, setCurrentValue] = React.useState();
 
     const handleSelect = (_e, data) => {
         setCurrentValue(data.value);
