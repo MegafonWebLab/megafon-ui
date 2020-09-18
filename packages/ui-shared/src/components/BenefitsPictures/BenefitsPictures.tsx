@@ -3,7 +3,7 @@ import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
 import { cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { IBenefit, GridConfig, GridGutterSize } from './types';
-import { DESKTOP_MIDDLE_START } from '../../../../ui-core/src/constants/breakpoints';
+import { DESKTOP_MIDDLE_START } from '../../constants/breakpoints';
 
 const THROTTLE_TIME = 500;
 const ONLY_LEFT_ALIGN_ITEMS_COUNT = 3;
