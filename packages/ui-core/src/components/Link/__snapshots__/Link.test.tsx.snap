@@ -9,3 +9,13 @@ exports[`Link renders children 1`] = `
 `;
 
 exports[`Link renders with default props 1`] = `<a />`;
+
+exports[`Link renders with rel 1`] = `
+<a
+  rel="noopener"
+>
+  <h3>
+    No opener
+  </h3>
+</a>
+`;

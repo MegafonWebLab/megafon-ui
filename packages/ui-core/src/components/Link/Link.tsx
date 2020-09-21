@@ -9,6 +9,8 @@ export interface ILinkProps {
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** Custom class name */
     className?: string;
+    /** rel - property tag <a> */
+    rel?: string;
     /** Click event handler */
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
 }
@@ -24,6 +26,7 @@ class Link extends React.Component<ILinkProps, {}> {
         ]),
         target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
         className: PropTypes.string,
+        rel: PropTypes.string,
         onClick: PropTypes.func,
     };
 
