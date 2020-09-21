@@ -12,6 +12,11 @@ test('Link renders children', () => {
     expect(link).toMatchSnapshot();
 });
 
+test('Link renders with rel', () => {
+    const link = shallow(<Link rel="noopener"><h3>No opener</h3></Link>);
+    expect(link).toMatchSnapshot();
+});
+
 test('Link calls onClick handler', () => {
     const fn = jest.fn();
     const link = shallow(<Link onClick={fn}>some text</Link>);
