@@ -8,15 +8,19 @@ import InputLabel from 'components/InputLabel/InputLabel';
 import Paragraph from 'components/Paragraph/Paragraph';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
-enum Verification {
-    VALID = 'valid',
-    ERROR = 'error',
-}
+export const Verification = {
+    VALID: 'valid',
+    ERROR: 'error',
+} as const;
 
-enum Types {
-    CLASSIC = 'classic',
-    COMBOBOX = 'combobox',
-}
+type VerificationType = typeof Verification[keyof typeof Verification];
+
+export const Types = {
+    CLASSIC: 'classic',
+    COMBOBOX: 'combobox',
+} as const;
+
+type TypesType = typeof Types[keyof typeof Types];
 
 export type SelectItemValueType = number | string;
 
@@ -33,7 +37,7 @@ interface ISelectClasses {
 
 interface ISelectProps extends IDataAttributes {
     /** Select type */
-    type?: Types;
+    type?: TypesType;
     /** Field title */
     label?: string;
     /** Html id attribute for label */
@@ -41,7 +45,7 @@ interface ISelectProps extends IDataAttributes {
     /** Current selected item */
     currentValue?: SelectItemValueType;
     /** Verification */
-    verification?: Verification;
+    verification?: VerificationType;
     /** Notice text */
     noticeText?: string;
     /** isDisabled field */

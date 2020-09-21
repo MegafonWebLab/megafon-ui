@@ -17,15 +17,15 @@ import Metro from 'icons/System/24/Metro_24.svg';
 <Props of={Select} />
 
 ```javascript
-enum Verification {
-    VALID = 'valid',
-    ERROR = 'error',
-}
+export const Verification = {
+    VALID: 'valid',
+    ERROR: 'error',
+} as const;
 
-enum Types {
-    CLASSIC = 'classic',
-    COMBOBOX = 'combobox',
-}
+export const Types = {
+    CLASSIC: 'classic',
+    COMBOBOX: 'combobox',
+} as const;
 ```
 
 ```javascript
