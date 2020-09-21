@@ -15,22 +15,22 @@ import { DemoTileWrapper, tileInner } from './Tile.docz';
 <Props of={Tile} />
 
 ```javascript
-export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark',
-}
+export const Theme = {
+    LIGHT: 'light',
+    DARK: 'dark',
+} as const;
 
-export enum Radius {
-    DEFAULT = 'default',
-    ROUNDED = 'rounded',
-}
+export const Radius = {
+    DEFAULT: 'default',
+    ROUNDED: 'rounded',
+} as const;
 
-export enum Shadow {
-    ZERO = 'zero',
-    LOW = 'low',
-    HIGH = 'high',
-    HOVER = 'hover',
-}
+export const Shadow = {
+    ZERO: 'zero',
+    LOW: 'low',
+    HIGH: 'high',
+    HOVER: 'hover',
+} as const;
 ```
 
 ## Rounded and squared tiles on light background

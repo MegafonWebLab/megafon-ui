@@ -3,32 +3,38 @@ import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Tile.less';
 
-export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark',
-}
+export const Theme = {
+    LIGHT: 'light',
+    DARK: 'dark',
+} as const;
 
-export enum Radius {
-    DEFAULT = 'default',
-    ROUNDED = 'rounded',
-}
+type ThemeType = typeof Theme[keyof typeof Theme];
 
-export enum Shadow {
-    ZERO = 'zero',
-    LOW = 'low',
-    HIGH = 'high',
-    HOVER = 'hover',
-}
+export const Radius = {
+    DEFAULT: 'default',
+    ROUNDED: 'rounded',
+} as const;
+
+type RadiusType = typeof Radius[keyof typeof Radius];
+
+export const Shadow = {
+    ZERO: 'zero',
+    LOW: 'low',
+    HIGH: 'high',
+    HOVER: 'hover',
+} as const;
+
+type ShadowType = typeof Shadow[keyof typeof Shadow];
 
 export interface ITileProps {
     /** Link href */
     href?: string;
     /** Tile view according to the background color */
-    theme?: Theme;
+    theme?: ThemeType;
     /** Border radius */
-    radius?: Radius;
+    radius?: RadiusType;
     /** Shadow levels of tile contour */
-    shadowLevel?: Shadow;
+    shadowLevel?: ShadowType;
     /** Enabling shadow on hover */
     isInteractive?: boolean;
     /** Custom class */
