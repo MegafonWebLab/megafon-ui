@@ -16,16 +16,7 @@ const props: ISearchProps = {
     placeholder: 'type to search here',
     onChange: jest.fn(),
     onSubmit: jest.fn(),
-    items: [
-        {
-            title: 'item title',
-            value: 'item value',
-        },
-        {
-            title: 'another title',
-            value: 'another value',
-        },
-    ],
+    items: ['title', 'title2', 'title3', 'title4'],
 };
 
 describe('<Search />', () => {
@@ -43,6 +34,11 @@ describe('<Search />', () => {
             const wrapper = shallow(<Search {...props} />);
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('renders Search without icon', () => {
+            const wrapper = shallow(<Search {...props} hideIcon />);
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('typing', () => {
@@ -54,6 +50,15 @@ describe('<Search />', () => {
                 },
             });
             expect(mockedDebounce).toBeCalledWith(expect.any(Function), 250);
+            expect(props.onChange).toBeCalledWith('new value');
+        });
+        it('calls onChange', () => {
+            const wrapper = shallow(<Search {...props} changeDelay={0} />);
+            wrapper.find(`.${cn('search-field')}`).simulate('change', {
+                target: {
+                    value: 'new value',
+                },
+            });
             expect(props.onChange).toBeCalledWith('new value');
         });
     });
@@ -73,18 +78,31 @@ describe('<Search />', () => {
 
         it('calls onSubmit on press Enter with value from items', () => {
             const wrapper = mount(<Search {...props} />);
+
+            wrapper.find(`.${cn('search-field')}`).simulate('change', {
+                target: {
+                    value: 'title',
+                },
+            });
             wrapper.find(`.${cn('list-item')}`).at(0).simulate('mouseenter');
             wrapper.find(`.${cn('search-field')}`).simulate('keyDown', { key: 'Enter' });
 
-            expect(props.onSubmit).toBeCalledWith('item title');
+            expect(props.onSubmit).toBeCalledWith('title');
         });
 
         it('calls onSubmit by clicking on item', () => {
+            const listItem = `.${cn('list-item')}`;
             const wrapper = mount(<Search {...props} />);
-            wrapper.find(`.${cn('list-item')}`).at(0).simulate('mouseenter');
-            wrapper.find(`.${cn('list-item')}`).at(0).simulate('mousedown');
 
-            expect(props.onSubmit).toBeCalledWith('item title');
+            wrapper.find(`.${cn('search-field')}`).simulate('change', {
+                target: {
+                    value: 'title',
+                },
+            });
+            wrapper.find(listItem).at(0).simulate('mouseenter');
+            wrapper.find(listItem).at(0).simulate('mousedown');
+
+            expect(props.onSubmit).toBeCalledWith('title');
         });
     });
 
@@ -94,6 +112,12 @@ describe('<Search />', () => {
             const searchField = wrapper.find(`.${cn('search-field')}`);
             const listItem = `.${cn('list-item')}`;
             const listItemActive = `${cn('list-item_active')}`;
+
+            searchField.simulate('change', {
+                target: {
+                    value: 'title',
+                },
+            });
 
             searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {}});
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);

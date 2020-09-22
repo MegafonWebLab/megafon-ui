@@ -18,14 +18,10 @@ import { DemoSearchWrapper } from './Search.docz';
 export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     const [value, setValue] = React.useState('');
 
-    const handleSubmit = (value: string): void => {
-        setValue(value);
-    };
-
     return (
         <div>
             <p style={{ marginTop: 0 }}>Value: {value}</p>
-            {children({ onSubmit: handleSubmit })}
+            {children({ onSubmit: setValue })}
         </div>
     );
 };
@@ -54,22 +50,16 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
 
 <Playground>
     <DemoSearchWrapper>
-        {({ onSubmit }) =>
-            <Search
-                placeholder="Type here for search"
-                onSubmit={onSubmit}
-                items={[
-                    {
-                        title: 'title',
-                        value: 'value',
-                    },
-                    {
-                        title: 'title2',
-                        value: 'value2',
-                    },
-                ]}
-            />
-        }
+        {({ onSubmit, chosenValue }) => {
+            return (
+                <Search
+                    placeholder="Type here for search"
+                    onSubmit={onSubmit}
+                    items={['title', 'title2', 'title3', 'title4']}
+                    value={chosenValue}
+                />
+            )
+        }}
     </DemoSearchWrapper>
 </Playground>
 
@@ -103,17 +93,8 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
 ## Usage with emulating incomingData
 
 <Playground>
-      {() => {
-        const [items, setItems] = React.useState([]);
-        const [chosenValue, setValue] = React.useState('');
-        const onChange = React.useCallback((query) => {
-                if (!query) {
-                    return;
-                }
-                setItems((oldItems) => [...oldItems, { title: query, value: query }]);
-            }, [items, setItems]);
-        const onSubmit = React.useCallback((value) => setValue(value), [chosenValue, setValue]);
-        return (
+    <DemoSearchWrapper>
+        {({ onSubmit, chosenValue, items, onChange }) => (
             <Search
                 value={chosenValue}
                 items={items}
@@ -121,6 +102,6 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
                 onChange={onChange}
                 onSubmit={onSubmit}
             />
-        )
-      }}
+        )}
+    </DemoSearchWrapper>
 </Playground>

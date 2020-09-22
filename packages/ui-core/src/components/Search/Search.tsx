@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCallback, useState, useRef, useEffect } from 'react';
+import Paragraph from 'components/Paragraph/Paragraph';
 import SearchIcon from 'icons/Basic/16/Search_16.svg';
 import debounce from 'lodash.debounce';
 import cnCreate from 'utils/cnCreate';
@@ -18,12 +19,7 @@ export interface ISearchProps {
     /** Forcefully prohibits icon's render */
     hideIcon?: boolean;
     /** Array of objects to be used for options rendering */
-    items?: Array<{
-        /** Header */
-        title: string;
-        /** Value */
-        value: string | number;
-    }>;
+    items?: string[];
     /** Debounce delay */
     changeDelay?: number;
     /** Change handler */
@@ -43,31 +39,33 @@ const Search: React.FC<ISearchProps> = ({
         onSubmit,
 }) => {
     const [searchQuery, setSearchQuery] = useState(value);
+    const [filteredItems, setFiltredItems] = useState<string[]>([]);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [isFocused, setFocus] = useState(false);
     const debouncedOnChange = useRef(debounce((inputValue) => onChange && onChange(inputValue), changeDelay));
 
     useEffect(() => setSearchQuery(value), [value, setSearchQuery]);
 
-    const handleChange: React.EventHandler<React.ChangeEvent<HTMLInputElement>> =
-        useCallback((e): void => {
-            const { target: { value: inputValue = '' } } = e;
+    const handleChange: React.EventHandler<React.ChangeEvent<HTMLInputElement>> = (e) => {
+        const { target: { value: inputValue = '' } } = e;
 
-            setSearchQuery(inputValue);
-            setActiveIndex(-1);
-            debouncedOnChange.current(inputValue);
-        }, [setSearchQuery, setActiveIndex, debouncedOnChange]);
+        setSearchQuery(inputValue);
+        setActiveIndex(-1);
+
+        changeDelay === 0 ? onChange && onChange(inputValue) : debouncedOnChange.current(inputValue);
+        filterItems(inputValue);
+    };
 
     const handleHoverItem = useCallback((index: number) => (_e: React.SyntheticEvent<EventTarget>): void => {
         setActiveIndex(index);
-    }, [activeIndex, setActiveIndex]);
+    }, [setActiveIndex]);
 
     const handleSearchSubmit: HandleSearchSubmit = useCallback((): void => {
         onSubmit && searchQuery && onSubmit(searchQuery);
     }, [searchQuery, onSubmit]);
 
     const handleItemSubmit: HandleItemSubmit = useCallback((index: number): void => {
-        const chosenValue = items[index].title;
+        const chosenValue = items[index];
 
         onSubmit && onSubmit(chosenValue);
     }, [onSubmit, items]);
@@ -103,11 +101,42 @@ const Search: React.FC<ISearchProps> = ({
         return false;
     }, [activeIndex, setActiveIndex, handleSearchSubmit, handleItemSubmit]);
 
+    const filterItems = (currentValue) => {
+        if (!items.length) {
+            return;
+        }
+
+        const filteredListItems = items.filter((title) => {
+            if (currentValue.length <= title.length && currentValue.length !== 0) {
+                return RegExp(currentValue, 'ig').test(title);
+            }
+
+            return false;
+        });
+
+        setFiltredItems(filteredListItems);
+    };
+
+    const highlightString = (title) => {
+        const stringFragments = title.split(RegExp(`(${searchQuery})`, 'ig'));
+
+        return (
+            <Paragraph hasMargin={false}>
+                {stringFragments.map((fragment, i) => (
+                    <React.Fragment key={i}>
+                        {(fragment.toLowerCase() === searchQuery.toLowerCase())
+                            ? <span className={cn('highlighted-fragment')}>{fragment}</span>
+                            : fragment
+                        }
+                    </React.Fragment>
+                ))}
+            </Paragraph>
+        );
+    };
+
     return (
         <div className={cn({ open: isFocused })}>
-            <div
-                className={cn('control')}
-            >
+            <div className={cn('control')}>
                 <input
                     className={cn('search-field')}
                     placeholder={placeholder}
@@ -127,17 +156,19 @@ const Search: React.FC<ISearchProps> = ({
                     <SearchIcon className={cn('icon')} />
                 </div>}
             </div>
-            {items && !!items.length &&
+            {!!filteredItems.length &&
                 <div className={cn('list')}>
                     <div className={cn('list-inner')}>
-                        {items.map(({ value: title }, i) =>
+                        {filteredItems.map((title, i) =>
                             <div
                                 className={cn('list-item', { active: activeIndex === i })}
                                 onMouseDown={handleSelectSubmit(i)}
                                 onMouseEnter={handleHoverItem(i)}
                                 key={i}
                             >
-                                <div className={cn('item-title')}>{title}</div>
+                                <div className={cn('item-title')}>
+                                    {highlightString(title)}
+                                </div>
                             </div>
                         )}
                     </div>
@@ -150,12 +181,9 @@ const Search: React.FC<ISearchProps> = ({
 Search.propTypes = {
     value: PropTypes.string,
     placeholder: PropTypes.string,
-    items: PropTypes.arrayOf(
-        PropTypes.shape({
-            title: PropTypes.string.isRequired,
-            value: PropTypes.string.isRequired,
-        }).isRequired
-    ),
+    hideIcon: PropTypes.bool,
+    changeDelay: PropTypes.number,
+    items: PropTypes.arrayOf(PropTypes.string.isRequired),
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
 };
