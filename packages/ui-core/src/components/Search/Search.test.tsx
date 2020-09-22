@@ -42,23 +42,38 @@ describe('<Search />', () => {
     });
 
     describe('typing', () => {
+        it('highlighted text', () => {
+            const wrapper = shallow(<Search {...props} />);
+
+            wrapper.find(`.${cn('search-field')}`).simulate('change', {
+                target: {
+                    value: 'title2',
+                },
+            });
+
+            expect(wrapper).toMatchSnapshot();
+        });
         it('calls onChange while typing in the field with delay', () => {
             const wrapper = shallow(<Search {...props} />);
+
             wrapper.find(`.${cn('search-field')}`).simulate('change', {
                 target: {
                     value: 'new value',
                 },
             });
+
             expect(mockedDebounce).toBeCalledWith(expect.any(Function), 250);
             expect(props.onChange).toBeCalledWith('new value');
         });
         it('calls onChange', () => {
             const wrapper = shallow(<Search {...props} changeDelay={0} />);
+
             wrapper.find(`.${cn('search-field')}`).simulate('change', {
                 target: {
                     value: 'new value',
                 },
             });
+
             expect(props.onChange).toBeCalledWith('new value');
         });
     });

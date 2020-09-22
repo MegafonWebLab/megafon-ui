@@ -28,6 +28,70 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
       />
     </div>
   </div>
+  <div
+    className="mfui-search__list"
+  >
+    <div
+      className="mfui-search__list-inner"
+    >
+      <div
+        className="mfui-search__list-item"
+        key="0"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="1"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title2
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="2"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title3
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="3"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title4
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -50,6 +114,70 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
       type="text"
       value="initial value"
     />
+  </div>
+  <div
+    className="mfui-search__list"
+  >
+    <div
+      className="mfui-search__list-inner"
+    >
+      <div
+        className="mfui-search__list-item"
+        key="0"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="1"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title2
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="2"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title3
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="3"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title4
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;
@@ -79,6 +207,105 @@ exports[`<Search /> snapshots renders Search without props correctly 1`] = `
       <test-file-stub
         className="mfui-search__icon"
       />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Search /> typing highlighted text 1`] = `
+<div
+  className="mfui-search"
+>
+  <div
+    className="mfui-search__control"
+  >
+    <input
+      autoComplete="off"
+      className="mfui-search__search-field"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="type to search here"
+      type="text"
+      value="title2"
+    />
+    <div
+      className="mfui-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-search__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-search__list"
+  >
+    <div
+      className="mfui-search__list-inner"
+    >
+      <div
+        className="mfui-search__list-item"
+        key="0"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="1"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            <span
+              className="mfui-search__highlighted-fragment"
+            >
+              title2
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="2"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title3
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-search__list-item"
+        key="3"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-search__item-title"
+        >
+          <div>
+            title4
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

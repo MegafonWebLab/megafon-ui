@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCallback, useState, useRef, useEffect } from 'react';
-import Paragraph from 'components/Paragraph/Paragraph';
 import SearchIcon from 'icons/Basic/16/Search_16.svg';
 import debounce from 'lodash.debounce';
 import cnCreate from 'utils/cnCreate';
@@ -18,7 +17,7 @@ export interface ISearchProps {
     placeholder?: string;
     /** Forcefully prohibits icon's render */
     hideIcon?: boolean;
-    /** Array of objects to be used for options rendering */
+    /** Array of strings to be used for options rendering */
     items?: string[];
     /** Debounce delay */
     changeDelay?: number;
@@ -39,7 +38,6 @@ const Search: React.FC<ISearchProps> = ({
         onSubmit,
 }) => {
     const [searchQuery, setSearchQuery] = useState(value);
-    const [filteredItems, setFiltredItems] = useState<string[]>([]);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [isFocused, setFocus] = useState(false);
     const debouncedOnChange = useRef(debounce((inputValue) => onChange && onChange(inputValue), changeDelay));
@@ -53,7 +51,6 @@ const Search: React.FC<ISearchProps> = ({
         setActiveIndex(-1);
 
         changeDelay === 0 ? onChange && onChange(inputValue) : debouncedOnChange.current(inputValue);
-        filterItems(inputValue);
     };
 
     const handleHoverItem = useCallback((index: number) => (_e: React.SyntheticEvent<EventTarget>): void => {
@@ -101,27 +98,11 @@ const Search: React.FC<ISearchProps> = ({
         return false;
     }, [activeIndex, setActiveIndex, handleSearchSubmit, handleItemSubmit]);
 
-    const filterItems = (currentValue) => {
-        if (!items.length) {
-            return;
-        }
-
-        const filteredListItems = items.filter((title) => {
-            if (currentValue.length <= title.length && currentValue.length !== 0) {
-                return RegExp(currentValue, 'ig').test(title);
-            }
-
-            return false;
-        });
-
-        setFiltredItems(filteredListItems);
-    };
-
     const highlightString = (title) => {
         const stringFragments = title.split(RegExp(`(${searchQuery})`, 'ig'));
 
         return (
-            <Paragraph hasMargin={false}>
+            <div>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
                         {(fragment.toLowerCase() === searchQuery.toLowerCase())
@@ -130,7 +111,7 @@ const Search: React.FC<ISearchProps> = ({
                         }
                     </React.Fragment>
                 ))}
-            </Paragraph>
+            </div>
         );
     };
 
@@ -156,10 +137,10 @@ const Search: React.FC<ISearchProps> = ({
                     <SearchIcon className={cn('icon')} />
                 </div>}
             </div>
-            {!!filteredItems.length &&
+            {items && !!items.length &&
                 <div className={cn('list')}>
                     <div className={cn('list-inner')}>
-                        {filteredItems.map((title, i) =>
+                        {items.map((title, i) =>
                             <div
                                 className={cn('list-item', { active: activeIndex === i })}
                                 onMouseDown={handleSelectSubmit(i)}

@@ -46,23 +46,6 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
     <Search hideIcon />
 </Playground>
 
-## Usage with initial items
-
-<Playground>
-    <DemoSearchWrapper>
-        {({ onSubmit, chosenValue }) => {
-            return (
-                <Search
-                    placeholder="Type here for search"
-                    onSubmit={onSubmit}
-                    items={['title', 'title2', 'title3', 'title4']}
-                    value={chosenValue}
-                />
-            )
-        }}
-    </DemoSearchWrapper>
-</Playground>
-
 ## Usage with initial value
 
 <Playground>
