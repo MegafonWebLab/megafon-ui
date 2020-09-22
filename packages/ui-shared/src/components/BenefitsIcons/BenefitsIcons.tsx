@@ -112,7 +112,7 @@ const getColumnConfig = (iconPosition: IconPositionEnum, count: number, index: n
     }
 };
 
-const cn = cnCreate('benefits-icons');
+const cn = cnCreate('mfui-benefits-icons');
 const BenefitsIcons: React.FC<IBenefitsIcons> = ({
     iconPosition = IconPositionEnum.LEFT_TOP,
     items,
