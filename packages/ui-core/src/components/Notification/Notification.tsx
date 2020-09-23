@@ -7,23 +7,25 @@ import AttentionIcon from 'icons/System/24/Info_24.svg';
 import AttentionInvertIcon from 'icons/System/24/Info_invert_24.svg';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
 
-export enum Types {
-    SUCCESS = 'success',
-    WARNING = 'warning',
-    ERROR = 'error',
-}
+export const NotificationTypes = {
+    SUCCESS: 'success',
+    WARNING: 'warning',
+    ERROR: 'error',
+} as const;
+
+type NotificationTypesType = typeof NotificationTypes[keyof typeof NotificationTypes];
 
 export type Props = {
     /** Types of notification */
-    type?: Types;
+    type?: NotificationTypesType;
     /** Short size of notification */
     isShort?: boolean;
 };
 
 const cn = cnCreate('mfui-beta-notification');
-const Notification: React.FC<Props> = ({ type = Types.SUCCESS, isShort = false, children }) => {
+const Notification: React.FC<Props> = ({ type = NotificationTypes.SUCCESS, isShort = false, children }) => {
     const renderIcon = (): JSX.Element => {
-        if (type === Types.SUCCESS) {
+        if (type === NotificationTypes.SUCCESS) {
             return <CheckedIcon className={cn('icon')} />;
         }
 
@@ -53,7 +55,7 @@ const Notification: React.FC<Props> = ({ type = Types.SUCCESS, isShort = false, 
 };
 
 Notification.propTypes = {
-    type: PropTypes.oneOf(Object.values(Types)),
+    type: PropTypes.oneOf(Object.values(NotificationTypes)),
     isShort: PropTypes.bool,
 };
 

@@ -8,15 +8,19 @@ import InputLabel from 'components/InputLabel/InputLabel';
 import Paragraph from 'components/Paragraph/Paragraph';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
-enum Verification {
-    VALID = 'valid',
-    ERROR = 'error',
-}
+export const Verification = {
+    VALID: 'valid',
+    ERROR: 'error',
+} as const;
 
-enum Types {
-    CLASSIC = 'classic',
-    COMBOBOX = 'combobox',
-}
+type VerificationType = typeof Verification[keyof typeof Verification];
+
+export const SelectTypes = {
+    CLASSIC: 'classic',
+    COMBOBOX: 'combobox',
+} as const;
+
+type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 
 export type SelectItemValueType = number | string;
 
@@ -31,9 +35,9 @@ interface ISelectClasses {
     root?: string;
 }
 
-interface ISelectProps extends IDataAttributes {
+export interface ISelectProps extends IDataAttributes {
     /** Select type */
-    type?: Types;
+    type?: SelectTypesType;
     /** Field title */
     label?: string;
     /** Html id attribute for label */
@@ -41,7 +45,7 @@ interface ISelectProps extends IDataAttributes {
     /** Current selected item */
     currentValue?: SelectItemValueType;
     /** Verification */
-    verification?: Verification;
+    verification?: VerificationType;
     /** Notice text */
     noticeText?: string;
     /** isDisabled field */
@@ -73,7 +77,7 @@ interface ISelectState {
 const cn = cnCreate('mfui-beta-select');
 class Select extends React.Component<ISelectProps, ISelectState> {
     static propTypes = {
-        type: PropTypes.oneOf(Object.values(Types)),
+        type: PropTypes.oneOf(Object.values(SelectTypes)),
         label: PropTypes.string,
         id: PropTypes.string,
         currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -104,7 +108,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     };
 
     static defaultProps: Partial<ISelectProps> = {
-        type: Types.CLASSIC,
+        type: SelectTypes.CLASSIC,
         notFoundText: 'Ничего не нашлось',
         items: [],
     };
@@ -293,10 +297,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const { type } = this.props;
         const { comparableInputValue } = this.state;
 
-        if (type === Types.CLASSIC) {
+        if (type === SelectTypes.CLASSIC) {
             return view || title;
         }
-        if (type === Types.COMBOBOX && view) {
+        if (type === SelectTypes.COMBOBOX && view) {
             return view;
         }
 
@@ -363,7 +367,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     renderChildren() {
         const { type, items, notFoundText } = this.props;
         const { filteredItems, activeIndex } = this.state;
-        const currentItems = type === Types.COMBOBOX ? filteredItems : items;
+        const currentItems = type === SelectTypes.COMBOBOX ? filteredItems : items;
 
         return (
             <div className={cn('list')}>
@@ -427,8 +431,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                         className={cn('control', classes.control)}
                         onKeyDown={this.handleKeyDown}
                     >
-                        {(type === Types.COMBOBOX) && this.renderCombobox()}
-                        {(type === Types.CLASSIC) && this.renderTitle()}
+                        {(type === SelectTypes.COMBOBOX) && this.renderCombobox()}
+                        {(type === SelectTypes.CLASSIC) && this.renderTitle()}
                         <div className={cn('arrow-wrap')} tabIndex={1} onClick={this.handleOpenDropdown}>
                             <span className={cn('arrow')} />
                         </div>
