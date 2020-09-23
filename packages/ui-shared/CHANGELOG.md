@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.17](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.16...@megafon/ui-shared@2.0.0-beta.17) (2020-09-23)
+
+
+### Bug Fixes
+
+* **build:** add usage param for polyfills ([a26b725](https://github.com/MegafonWebLab/megafon-ui/commit/a26b7253b2f38b6984df7dabf61aee86f9a43ce0))
+
+
+
+
+
 # [2.0.0-beta.16](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.15...@megafon/ui-shared@2.0.0-beta.16) (2020-09-23)
 
 **Note:** Version bump only for package @megafon/ui-shared
