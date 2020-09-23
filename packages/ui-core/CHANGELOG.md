@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.14](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.13...@megafon/ui-core@2.0.0-beta.14) (2020-09-23)
+
+
+### Features
+
+* **textlink:** add rel prop ([cb2dd84](https://github.com/MegafonWebLab/megafon-ui/commit/cb2dd841740285631cae9238d5a2c0e28107dc7e))
+
+
+
+
+
 # [2.0.0-beta.13](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.12...@megafon/ui-core@2.0.0-beta.13) (2020-09-21)
 
 
