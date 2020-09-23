@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.7.16
+- **build**
+    - change inline-svg-plugin to custom pipe
+
 ## 1.7.15
 - **TextField**
     - 'classes' prop added
