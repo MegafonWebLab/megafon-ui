@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.15](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.14...@megafon/ui-core@2.0.0-beta.15) (2020-09-23)
+
+
+### Bug Fixes
+
+* **notification:** changed enum to object literal ([2b3f77c](https://github.com/MegafonWebLab/megafon-ui/commit/2b3f77c3575754626a88b6f431fb45e6c80b27a3))
+* **select:** changed enum to object literal ([2873aeb](https://github.com/MegafonWebLab/megafon-ui/commit/2873aeb013beca7068c5062afaf7d8c50d495bcf))
+* **tile:** changed enum to object literal ([3d55209](https://github.com/MegafonWebLab/megafon-ui/commit/3d55209bedffe8240607f7ff47edcf1f8c34158b))
+
+
+
+
+
 # [2.0.0-beta.14](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.13...@megafon/ui-core@2.0.0-beta.14) (2020-09-23)
 
 
