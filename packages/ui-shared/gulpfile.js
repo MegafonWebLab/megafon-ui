@@ -69,8 +69,7 @@ const babelEsConfig = {
         ...babelPlugins,
         ['module-resolver', {
             root: './src'
-        }],
-        require.resolve('babel-plugin-inline-react-svg')
+        }]
     ]
 };
 const babelLibConfig = {
@@ -119,6 +118,7 @@ gulp.task('ts', () => {
             .pipe(dest(esPath))
             .pipe(dest(libPath)),
         result.js
+            .pipe(inlineSvgToReact())
             .pipe(babel(babelEsConfig))
             .pipe(replaceContent(/\.less/g, '.css'))
             .pipe(dest(esPath))
@@ -168,6 +168,54 @@ const replaceContent = (regExp, newStr) => changePipe(function (file, encoding) 
 
     file.contents = Buffer.from(content.replace(regExp, newStr));
     this.push(file);
+});
+
+
+const inlineSvgToReact = () => changePipe(async function (file, encoding) {
+    const regExpSvg = /(?<key>import)\s+(?:(?:\s*(?<alias>[\w\r\n\t,{}\s\* ]+)\s*)\s*from)?\s*(?:["']?(?<ref>[@\w\s\\\/\-\.]+\.svg)["']?)/gi;
+    const regExpImport = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
+    const svgImports = file.contents.toString(encoding).match(regExpSvg);
+    let components = '';
+
+    if (Array.isArray(svgImports) && svgImports.length) {
+        for (const svgImport of svgImports) {
+            const [importName, importPath] = svgImport.split('from')
+            const svgImportPath = importPath.replace(/'/g, '').trim();
+            const componentName =  importName.replace('import', '').trim();
+            const absolutePath = path.resolve(srcPath, svgImportPath);
+            const data = fs.readFileSync(absolutePath);
+            let code;
+
+            try {
+                code = await svgr(data, {
+                    icon: true,
+                    svgo: true,
+                    svgoConfig: {
+                        plugins: [
+                            {
+                                prefixIds: {
+                                    prefix: componentName
+                                }
+                            }
+                        ]
+                    },
+                }, { componentName });
+
+            } catch (e) {
+                throw new Error(e)
+            }
+
+            components += code.replace('import React from "react";', '').replace(`export default ${componentName};`, '');
+            file.contents = Buffer.from(file.contents.toString(encoding).replace(`${svgImport};`, ''));
+        }
+
+        const imports = file.contents.toString(encoding).match(regExpImport);
+        const indexToPaste = file.contents.toString(encoding).lastIndexOf(imports[imports.length - 1]) + imports[imports.length - 1].length;
+
+        file.contents = Buffer.from(`${file.contents.toString(encoding).slice(0, indexToPaste)}\n${components}${file.contents.toString(encoding).slice(indexToPaste)}`);
+    }
+
+    this.push(file)
 });
 
 const svgToReact = () => changePipe(async function (file, encoding) {
