@@ -15,6 +15,8 @@ export interface ITextLinkProps {
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** Link */
     href?: string;
+    /** Rel attribute */
+    rel?: string;
     /** Custom class name */
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
