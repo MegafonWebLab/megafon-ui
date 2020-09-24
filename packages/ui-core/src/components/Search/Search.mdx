@@ -17,11 +17,20 @@ import { DemoSearchWrapper } from './Search.docz';
 ```javascript
 export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     const [value, setValue] = React.useState('');
+    const [items, setItems] = React.useState([]);
+
+    const handleChange = React.useCallback((query: string) => {
+        if (!query) {
+            return;
+        }
+
+        setItems((oldItems) => [...oldItems, query]);
+    }, [items, setItems]);
 
     return (
         <div>
             <p style={{ marginTop: 0 }}>Value: {value}</p>
-            {children({ onSubmit: setValue })}
+            {children({ onChange: handleChange, onSubmit: setValue, items: items, chosenValue: value })}
         </div>
     );
 };
@@ -68,6 +77,7 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
             <Search
                 placeholder="Type here for search"
                 onChange={onSubmit}
+                changeDelay={50}
             />
         }
     </DemoSearchWrapper>

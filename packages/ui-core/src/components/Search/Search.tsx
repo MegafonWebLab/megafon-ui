@@ -11,7 +11,7 @@ type HandleSelectSubmit = (i: number) => (e: React.MouseEvent) => void;
 type HandleItemSubmit = (index: number) => void;
 
 export interface ISearchProps {
-    /** Selected value. Should correlate with items.value */
+    /** Current selected value */
     value?: string;
     /** Placeholder */
     placeholder?: string;
@@ -19,7 +19,7 @@ export interface ISearchProps {
     hideIcon?: boolean;
     /** Array of strings to be used for options rendering */
     items?: string[];
-    /** Debounce delay */
+    /** Debounce delay for onChange callback */
     changeDelay?: number;
     /** Change handler */
     onChange?: (value: string) => void;
@@ -102,7 +102,7 @@ const Search: React.FC<ISearchProps> = ({
         const stringFragments = title.split(RegExp(`(${searchQuery})`, 'ig'));
 
         return (
-            <div>
+            <>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
                         {(fragment.toLowerCase() === searchQuery.toLowerCase())
@@ -111,7 +111,7 @@ const Search: React.FC<ISearchProps> = ({
                         }
                     </React.Fragment>
                 ))}
-            </div>
+            </>
         );
     };
 

@@ -14,8 +14,6 @@ const cn = cnCreate('mfui-search');
 const props: ISearchProps = {
     value: 'initial value',
     placeholder: 'type to search here',
-    onChange: jest.fn(),
-    onSubmit: jest.fn(),
     items: ['title', 'title2', 'title3', 'title4'],
 };
 
@@ -54,7 +52,10 @@ describe('<Search />', () => {
             expect(wrapper).toMatchSnapshot();
         });
         it('calls onChange while typing in the field with delay', () => {
-            const wrapper = shallow(<Search {...props} />);
+            jest.useFakeTimers();
+
+            const handleChange = jest.fn();
+            const wrapper = shallow(<Search {...props} changeDelay={300} onChange={handleChange} />);
 
             wrapper.find(`.${cn('search-field')}`).simulate('change', {
                 target: {
@@ -62,11 +63,12 @@ describe('<Search />', () => {
                 },
             });
 
-            expect(mockedDebounce).toBeCalledWith(expect.any(Function), 250);
-            expect(props.onChange).toBeCalledWith('new value');
+            jest.advanceTimersByTime(300);
+            expect(handleChange).toHaveBeenCalledTimes(1);
         });
         it('calls onChange', () => {
-            const wrapper = shallow(<Search {...props} changeDelay={0} />);
+            const handleChange = jest.fn();
+            const wrapper = shallow(<Search {...props} changeDelay={0} onChange={handleChange} />);
 
             wrapper.find(`.${cn('search-field')}`).simulate('change', {
                 target: {
@@ -74,40 +76,49 @@ describe('<Search />', () => {
                 },
             });
 
-            expect(props.onChange).toBeCalledWith('new value');
+            expect(handleChange).toBeCalledWith('new value');
         });
     });
 
     describe('submitting', () => {
         it('calls onSubmit on icon click', () => {
-            const wrapper = shallow(<Search {...props} />);
+            const handleSubmit = jest.fn();
+            const wrapper = shallow(<Search {...props} onSubmit={handleSubmit} />);
+
             wrapper.find(`.${cn('icon-box')}`).simulate('click');
-            expect(props.onSubmit).toBeCalledWith(props.value);
+
+            expect(handleSubmit).toBeCalledWith(props.value);
         });
 
         it('calls onSubmit on press Enter with focus on input', () => {
-            const wrapper = shallow(<Search {...props} />);
+            const handleSubmit = jest.fn();
+            const wrapper = shallow(<Search {...props} onSubmit={handleSubmit} />);
+
             wrapper.find(`.${cn('search-field')}`).simulate('keyDown', { key: 'Enter' });
-            expect(props.onSubmit).toBeCalledWith(props.value);
+
+            expect(handleSubmit).toBeCalledWith(props.value);
         });
 
         it('calls onSubmit on press Enter with value from items', () => {
-            const wrapper = mount(<Search {...props} />);
+            const handleSubmit = jest.fn();
+            const wrapper = mount(<Search {...props} onSubmit={handleSubmit} />);
 
             wrapper.find(`.${cn('search-field')}`).simulate('change', {
                 target: {
                     value: 'title',
                 },
             });
+
             wrapper.find(`.${cn('list-item')}`).at(0).simulate('mouseenter');
             wrapper.find(`.${cn('search-field')}`).simulate('keyDown', { key: 'Enter' });
 
-            expect(props.onSubmit).toBeCalledWith('title');
+            expect(handleSubmit).toBeCalledWith('title');
         });
 
         it('calls onSubmit by clicking on item', () => {
+            const handleSubmit = jest.fn();
             const listItem = `.${cn('list-item')}`;
-            const wrapper = mount(<Search {...props} />);
+            const wrapper = mount(<Search {...props} onSubmit={handleSubmit} />);
 
             wrapper.find(`.${cn('search-field')}`).simulate('change', {
                 target: {
@@ -117,7 +128,7 @@ describe('<Search />', () => {
             wrapper.find(listItem).at(0).simulate('mouseenter');
             wrapper.find(listItem).at(0).simulate('mousedown');
 
-            expect(props.onSubmit).toBeCalledWith('title');
+            expect(handleSubmit).toBeCalledWith('title');
         });
     });
 
