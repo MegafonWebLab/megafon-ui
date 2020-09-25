@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.19](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.18...@megafon/ui-core@2.0.0-beta.19) (2020-09-25)
+
+
+### Features
+
+* **search:** added Search component ([69ed181](https://github.com/MegafonWebLab/megafon-ui/commit/69ed181093ac94e476b28cf4f02055fc00076862))
+
+
+
+
+
 # [2.0.0-beta.18](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.17...@megafon/ui-core@2.0.0-beta.18) (2020-09-24)
 
 **Note:** Version bump only for package @megafon/ui-core
