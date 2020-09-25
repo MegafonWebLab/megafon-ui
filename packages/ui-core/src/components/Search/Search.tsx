@@ -25,6 +25,8 @@ export interface ISearchProps {
     onChange?: (value: string) => void;
     /** Submit handler */
     onSubmit?: (value: string) => void;
+     /** Custom className */
+    className?: string;
 }
 
 const cn = cnCreate('mfui-beta-search');
@@ -34,6 +36,7 @@ const Search: React.FC<ISearchProps> = ({
         hideIcon,
         items = [],
         changeDelay = 250,
+        className,
         onChange,
         onSubmit,
 }) => {
@@ -116,7 +119,7 @@ const Search: React.FC<ISearchProps> = ({
     };
 
     return (
-        <div className={cn({ open: isFocused })}>
+        <div className={cn({ open: isFocused }, [className])}>
             <div className={cn('control')}>
                 <input
                     className={cn('search-field')}

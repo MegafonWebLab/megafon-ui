@@ -9,6 +9,7 @@ const props: ISearchProps = {
     value: 'initial value',
     placeholder: 'type to search here',
     items: ['title', 'title2', 'title3', 'title4'],
+    className: 'test',
 };
 
 describe('<Search />', () => {

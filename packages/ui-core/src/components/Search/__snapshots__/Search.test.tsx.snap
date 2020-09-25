@@ -2,7 +2,7 @@
 
 exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
 <div
-  className="mfui-beta-search"
+  className="mfui-beta-search test"
 >
   <div
     className="mfui-beta-search__control"
@@ -89,7 +89,7 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
 
 exports[`<Search /> snapshots renders Search without icon 1`] = `
 <div
-  className="mfui-beta-search"
+  className="mfui-beta-search test"
 >
   <div
     className="mfui-beta-search__control"
@@ -198,7 +198,7 @@ exports[`<Search /> snapshots renders Search without props correctly 1`] = `
 
 exports[`<Search /> typing highlighted text 1`] = `
 <div
-  className="mfui-beta-search"
+  className="mfui-beta-search test"
 >
   <div
     className="mfui-beta-search__control"
