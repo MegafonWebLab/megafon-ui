@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **Icons**
+    - update icons: Checked_32, Gag_16, Gag_24, Gag_32, Metro_24, Metro_32
 
 ## 1.7.16
 - **build**
