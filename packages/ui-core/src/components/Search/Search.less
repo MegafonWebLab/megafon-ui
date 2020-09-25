@@ -1,0 +1,126 @@
+@import '~styles/base.less';
+@b: e('.mfui-beta-search');
+
+@{b} {
+    .fontFamily();
+    .commonFont();
+    position: relative;
+    z-index: auto;
+    color: @freshAsphalt;
+    min-height: 40px;
+
+    &__control {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+        height: 48px;
+        cursor: pointer;
+        border: 1px solid @spbSky2;
+        background-color: @clearWhite;
+        outline: none;
+        padding: 0 20px;
+    }
+
+    &__search-field {
+        box-sizing: border-box;
+        font-family: inherit;
+        line-height: 25px;
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+        border: none;
+        height: 100%;
+        //fix for ios - Focus on input with padding (filled with text) pushes cursor out of bounds
+        padding: 0;
+        outline: none;
+        opacity: 1;
+        border-radius: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-shadow: none;
+        overflow: auto;
+        flex-grow: 1;
+
+        @media @mobileSM {
+            width: 90%;
+        }
+    }
+
+    &__list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 0;
+        background-color: @clearWhite;
+        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &__icon {
+        min-width: 24px;
+        width: 24px;
+        fill: @freshAsphalt;
+    }
+
+    &__icon-box {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &__list-inner {
+        overflow: auto;
+        padding: 12px 0;
+        box-sizing: border-box;
+    }
+
+    &__list-item {
+        .fontFamily();
+        padding: 8px 32px;
+        cursor: pointer;
+        background-color: @clearWhite;
+    }
+
+    &__list-item_active {
+        background-color: @spbSky0;
+    }
+
+    &__item-title {
+        overflow: hidden;
+        white-space: nowrap;
+        flex-grow: 1;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @clearWhite);
+        }
+    }
+
+    &__list-item_active &__item-title {
+        &:after {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky0);
+        }
+    }
+
+    &_open &__list {
+        display: block;
+        border-color: @freshAsphalt;
+    }
+
+    &_open {
+        z-index: 12;
+    }
+
+    &__highlighted-fragment {
+        font-weight: bold;
+    }
+}
