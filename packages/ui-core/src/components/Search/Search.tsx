@@ -11,7 +11,7 @@ type HandleSelectSubmit = (i: number) => (e: React.MouseEvent) => void;
 type HandleItemSubmit = (index: number) => void;
 
 export interface ISearchProps {
-    /** Current selected value */
+    /** Current value */
     value?: string;
     /** Placeholder */
     placeholder?: string;
@@ -27,7 +27,7 @@ export interface ISearchProps {
     onSubmit?: (value: string) => void;
 }
 
-const cn = cnCreate('mfui-search');
+const cn = cnCreate('mfui-beta-search');
 const Search: React.FC<ISearchProps> = ({
         value = '',
         placeholder,

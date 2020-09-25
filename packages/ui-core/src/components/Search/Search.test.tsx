@@ -3,13 +3,7 @@ import { shallow, mount } from 'enzyme';
 import Search , { ISearchProps } from './Search';
 import cnCreate from 'utils/cnCreate';
 
-let mockedDebounce;
-jest.mock('lodash.debounce', () => {
-    mockedDebounce = jest.fn().mockImplementation((fn) => fn);
-    return mockedDebounce;
-});
-
-const cn = cnCreate('mfui-search');
+const cn = cnCreate('mfui-beta-search');
 
 const props: ISearchProps = {
     value: 'initial value',
@@ -51,11 +45,9 @@ describe('<Search />', () => {
 
             expect(wrapper).toMatchSnapshot();
         });
-        it('calls onChange while typing in the field with delay', () => {
-            jest.useFakeTimers();
-
+        it('calls onChange while typing in the field with delay', async () => {
             const handleChange = jest.fn();
-            const wrapper = shallow(<Search {...props} changeDelay={300} onChange={handleChange} />);
+            const wrapper = mount(<Search {...props} changeDelay={300} onChange={handleChange} />);
 
             wrapper.find(`.${cn('search-field')}`).simulate('change', {
                 target: {
@@ -63,8 +55,15 @@ describe('<Search />', () => {
                 },
             });
 
-            jest.advanceTimersByTime(300);
-            expect(handleChange).toHaveBeenCalledTimes(1);
+            expect(handleChange).not.toHaveBeenCalled();
+
+            await new Promise((r) => setTimeout(r, 150));
+
+            expect(handleChange).not.toHaveBeenCalled();
+
+            await new Promise((r) => setTimeout(r, 150));
+
+            expect(handleChange).toHaveBeenCalledWith('new value');
         });
         it('calls onChange', () => {
             const handleChange = jest.fn();
