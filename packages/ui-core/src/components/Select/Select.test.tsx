@@ -3,12 +3,6 @@ import { shallow, mount } from 'enzyme';
 import Select, { ISelectProps, SelectTypes, Verification } from './Select';
 import cnCreate from 'utils/cnCreate';
 
-let mockedDebounce;
-jest.mock('lodash.debounce', () => {
-    mockedDebounce = jest.fn().mockImplementation((fn) => fn);
-    return mockedDebounce;
-});
-
 const cn = cnCreate('mfui-beta-select');
 
 const props: ISelectProps = {
@@ -40,19 +34,19 @@ const props: ISelectProps = {
 
 describe('<Select />', () => {
     describe('snapshots', () => {
-        it('it renders Select', () => {
+        it('renders with default props', () => {
             const wrapper = mount(<Select items={props.items} />);
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('it renders with props', () => {
+        it('renders with props', () => {
             const wrapper = mount(<Select {...props} />);
             expect(wrapper).toMatchSnapshot();
         });
     });
 
     describe('states of select', () => {
-        it('it renders with disabled state', () => {
+        it('renders with disabled state', () => {
             const handleClick = jest.fn();
             const wrapper = shallow(<Select onSelect={handleClick} items={[]} isDisabled />);
 
@@ -62,12 +56,12 @@ describe('<Select />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('it renders with valid state', () => {
+        it('renders with valid state', () => {
             const wrapper = shallow(<Select items={[]} verification={Verification.VALID} noticeText="success" />);
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('it renders with error state', () => {
+        it('renders with error state', () => {
             const wrapper = shallow(<Select items={[]} verification={Verification.ERROR} noticeText="error" />);
             expect(wrapper).toMatchSnapshot();
         });
@@ -89,10 +83,7 @@ describe('<Select />', () => {
     });
 
     describe('key typing handlers', () => {
-        it('calls onChange while typing in the field with debounce', () => {
-            jest.useFakeTimers();
-            const delay = 250;
-
+        it.only('calls onChange while typing in the field with debounce', async () => {
             const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} />);
 
             expect(wrapper).toMatchSnapshot();
@@ -103,24 +94,14 @@ describe('<Select />', () => {
                 },
             });
 
-            jest.advanceTimersByTime(100);
+            await new Promise((r) => setTimeout(r, 150));
+
             expect(wrapper).toMatchSnapshot();
 
-            jest.advanceTimersByTime(delay);
+            await new Promise((r) => setTimeout(r, 100));
+
             expect(wrapper).toMatchSnapshot();
         });
-        // it('calls onChange while typing in the field with debounce', () => {
-        //     const wrapper = shallow(<Select {...props} type={Types.COMBOBOX}  />);
-
-        //     wrapper.find(`.${cn('combobox')}`).simulate('change', {
-        //         target: {
-        //             value: 'new value',
-        //         },
-        //     });
-
-        //     expect(mockedDebounce).toBeCalledWith(expect.any(Function), 250);
-        //     expect(wrapper.state('inputValue')).toEqual('new value');
-        // });
 
         it('highlighted text', () => {
             const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX}  />);

@@ -5,7 +5,6 @@ import './Select.less';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
-import Paragraph from 'components/Paragraph/Paragraph';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const Verification = {
@@ -168,10 +167,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         document.removeEventListener('click', this.handleClickOutside);
     }
 
-    handleClickOutside = (e: MouseEvent): void => {
+    handleClickOutside = (): void => {
         const { isOpened } = this.state;
 
-        if (this.selectNode.contains(e.target as Node) || !isOpened) {
+        if (!isOpened) {
             return;
         }
 
@@ -207,7 +206,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState({ activeIndex: index });
     }
 
-    handleClickCombobox = (e: React.FocusEvent<HTMLInputElement>): void => {
+    handleComboboxFocus = (e: React.FocusEvent<HTMLInputElement>): void => {
         const { isOpened, filteredItems } = this.state;
 
         e.stopPropagation();
@@ -215,8 +214,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         if (!isOpened && filteredItems) {
             e.target.select();
         }
-
-        this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -313,16 +310,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const stringFragments = title.split(RegExp(`(${comparableInputValue})`, 'ig'));
 
         return (
-            <Paragraph hasMargin={false}>
+            <>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
-                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase())
+                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase() && fragment !== '')
                             ? <span className={cn('highlighted-fragment')}>{fragment}</span>
                             : fragment
                         }
                     </React.Fragment>
                 ))}
-            </Paragraph>
+            </>
         );
     }
 
@@ -373,7 +370,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         return (
             <input
                 className={cn('combobox')}
-                onFocus={this.handleClickCombobox}
+                onFocus={this.handleComboboxFocus}
                 onChange={this.handleChangeCombobox}
                 type="text"
                 value={inputValue}
