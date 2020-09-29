@@ -2,26 +2,26 @@
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
 <div
-  className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
 >
   <div
-    className="mfui-benefits-icons-tile__svg-icon"
+    className="mfui-beta-benefits-icons-tile__svg-icon"
   >
     <test-file-stub />
   </div>
   <div
-    className="mfui-benefits-icons-tile__content-wrapper"
+    className="mfui-beta-benefits-icons-tile__content-wrapper"
   >
     <Header
       as="h5"
-      className="mfui-benefits-icons-tile__title"
+      className="mfui-beta-benefits-icons-tile__title"
       color="black"
       hAlign="inherit"
     >
       title
     </Header>
     <Paragraph
-      className="mfui-benefits-icons-tile__text"
+      className="mfui-beta-benefits-icons-tile__text"
       hasMargin={false}
     >
       text
@@ -32,19 +32,19 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
 <div
-  className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
 >
   <div
-    className="mfui-benefits-icons-tile__svg-icon"
+    className="mfui-beta-benefits-icons-tile__svg-icon"
   >
     <test-file-stub />
   </div>
   <div
-    className="mfui-benefits-icons-tile__content-wrapper"
+    className="mfui-beta-benefits-icons-tile__content-wrapper"
   >
     <Header
       as="h5"
-      className="mfui-benefits-icons-tile__title"
+      className="mfui-beta-benefits-icons-tile__title"
       color="black"
       hAlign="inherit"
     >
@@ -56,18 +56,18 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without title 1`] = `
 <div
-  className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
 >
   <div
-    className="mfui-benefits-icons-tile__svg-icon"
+    className="mfui-beta-benefits-icons-tile__svg-icon"
   >
     <test-file-stub />
   </div>
   <div
-    className="mfui-benefits-icons-tile__content-wrapper"
+    className="mfui-beta-benefits-icons-tile__content-wrapper"
   >
     <Paragraph
-      className="mfui-benefits-icons-tile__text"
+      className="mfui-beta-benefits-icons-tile__text"
       hasMargin={false}
     >
       text
