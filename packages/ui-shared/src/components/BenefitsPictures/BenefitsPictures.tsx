@@ -15,7 +15,7 @@ const columnSize: GridConfig = {
     tablet: '5',
 };
 
-export interface IBenefitsPictures {
+export interface IBenefitsPicturesProps {
     /** Benefits list */
     items: IBenefit[];
     /** Benefits horizontal align */
@@ -115,7 +115,7 @@ const getCenterConfig = (count: number, index: number, gutterSize: string): Grid
 };
 
 const cn = cnCreate('mfui-beta-benefits-pictures');
-const BenefitsPictures: React.FC<IBenefitsPictures> = ({
+const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     items,
     hAlign = 'left',
     gridGap = 'large',

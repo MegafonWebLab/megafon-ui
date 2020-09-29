@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import BenefitsPictures, { IBenefitsPictures } from './BenefitsPictures';
+import BenefitsPictures, { IBenefitsPicturesProps } from './BenefitsPictures';
 import { fourItems, threeItems, twoItems } from './BenefitsPictures.docz';
 
-const props: IBenefitsPictures = {
+const props: IBenefitsPicturesProps = {
     items: twoItems,
     hAlign: 'left',
     gridGap: 'large',
