@@ -7,7 +7,6 @@ route: components/benefits-pictures
 import { Playground, Props } from 'docz';
 import BenefitsPictures from './BenefitsPictures';
 import { twoItems, threeItems, fourItems } from './BenefitsPictures.docz.tsx';
-import { Grid, GridColumn } from '@megafon/ui-core';
 
 # BenefitsPictures
 
@@ -16,6 +15,14 @@ import { Grid, GridColumn } from '@megafon/ui-core';
 
 ## Included props
 ``` javascript
+interface IBenefit {
+    title: string;
+    text: string;
+    img: string;
+}
+
+type GridGutterSize = 'large' | 'medium';
+
 const items = [
     {
         title: 'Lorem ipsum',

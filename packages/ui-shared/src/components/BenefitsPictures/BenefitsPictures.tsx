@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useCallback } from 'react';
 import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
 import { cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
@@ -14,23 +15,11 @@ const columnSize: GridConfig = {
     tablet: '5',
 };
 
-export enum GutterSize {
-    MEDIUM = 'medium',
-    LARGE = 'large',
-}
-
-export const HorizontalAlign = {
-    CENTER: 'center',
-    LEFT: 'left',
-} as const;
-
-type HorizontalAlignType = typeof HorizontalAlign[keyof typeof HorizontalAlign];
-
 export interface IBenefitsPictures {
     /** Benefits list */
     items: IBenefit[];
     /** Benefits horizontal align */
-    hAlign?: HorizontalAlignType;
+    hAlign?: 'left' | 'center';
     /** Grid gap size */
     gridGap: GridGutterSize;
 }
@@ -113,9 +102,9 @@ const getCenterLargeConfig = (count: number, index: number): GridConfig => {
     }
 };
 
-const getCenterConfig = (count: number, index: number, gutterSize: string ): GridConfig => {
+const getCenterConfig = (count: number, index: number, gutterSize: string): GridConfig => {
     switch (gutterSize) {
-        case GutterSize.MEDIUM: {
+        case 'medium': {
             return getCenterMediumConfig(count, index);
         }
 
@@ -125,48 +114,48 @@ const getCenterConfig = (count: number, index: number, gutterSize: string ): Gri
     }
 };
 
-const cn = cnCreate('mfui-benefits-pictures');
+const cn = cnCreate('mfui-beta-benefits-pictures');
 const BenefitsPictures: React.FC<IBenefitsPictures> = ({
     items,
-    hAlign = HorizontalAlign.LEFT,
-    gridGap = GutterSize.LARGE,
+    hAlign = 'left',
+    gridGap = 'large',
 }) => {
-    const isLargeGutter = gridGap === GutterSize.LARGE;
-    const isGridCenterAlign = hAlign === HorizontalAlign.CENTER && items.length !== ONLY_LEFT_ALIGN_ITEMS_COUNT;
+    const isLargeGutter = gridGap === 'large';
+    const isGridCenterAlign = hAlign === 'center' && items.length !== ONLY_LEFT_ALIGN_ITEMS_COUNT;
     const [currentGutter, setCurrentGutter] = React.useState(gridGap);
 
-    const resizeHandler = () => {
-        if (!isLargeGutter) {
-            return;
-        }
+    const resizeHandler = useCallback(
+        () => {
+            if (!isLargeGutter) {
+                return;
+            }
 
-        if (window.innerWidth < DESKTOP_MIDDLE_START) {
-            setCurrentGutter(GutterSize.MEDIUM);
-        } else {
-            setCurrentGutter(GutterSize.LARGE);
-        }
-    };
-
-    const ThrottledResizeHandler = throttle(resizeHandler, THROTTLE_TIME);
+            if (window.innerWidth < DESKTOP_MIDDLE_START) {
+                setCurrentGutter('medium');
+            } else {
+                setCurrentGutter('large');
+            }
+        }, []
+    );
 
     React.useEffect(() => {
-        resizeHandler();
-        window.addEventListener('resize', ThrottledResizeHandler);
+        const throttledResizeHandler = throttle(resizeHandler, THROTTLE_TIME);
 
-        return () => {
-            window.removeEventListener('resize', ThrottledResizeHandler);
-        };
+        resizeHandler();
+        window.addEventListener('resize', throttledResizeHandler);
+
+        return () => window.removeEventListener('resize', throttledResizeHandler);
     }, []);
 
     return (
         <div className={cn()}>
             <Grid
                 guttersLeft={currentGutter}
-                hAlign={isGridCenterAlign ? HorizontalAlign.CENTER : HorizontalAlign.LEFT}
+                hAlign={isGridCenterAlign ? 'center' : 'left'}
             >
-                {items.map(({img, title, text}, index) =>
+                {items.map(({ img, title, text }, index) =>
                     <GridColumn
-                        {...hAlign === HorizontalAlign.LEFT
+                        {...hAlign === 'left'
                             ? getLeftConfig(items.length, index)
                             : getCenterConfig(items.length, index, gridGap)}
                         key={index}

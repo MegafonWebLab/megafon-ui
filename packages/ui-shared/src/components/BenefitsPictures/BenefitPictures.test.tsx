@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import BenefitsPictures, { GutterSize, HorizontalAlign, IBenefitsPictures } from './BenefitsPictures';
+import BenefitsPictures, { IBenefitsPictures } from './BenefitsPictures';
 import { fourItems, threeItems, twoItems } from './BenefitsPictures.docz';
 
 const props: IBenefitsPictures = {
     items: twoItems,
-    hAlign: HorizontalAlign.LEFT,
-    gridGap: GutterSize.LARGE,
+    hAlign: 'left',
+    gridGap: 'large',
 };
 
 const itemsSet = [
@@ -23,14 +23,14 @@ describe('<BenefitsPictures />', () => {
 
     it('render with center horizontal align', () => {
         itemsSet.forEach(items => {
-            const wrapper = shallow(<BenefitsPictures {...props} items={items} hAlign={HorizontalAlign.CENTER}/>);
+            const wrapper = shallow(<BenefitsPictures {...props} items={items} hAlign={'left'} />);
             expect(wrapper).toMatchSnapshot();
         });
     });
 
     it('render with medium grid gap', () => {
         itemsSet.forEach(items => {
-            const wrapper = shallow(<BenefitsPictures {...props} items={items} gridGap={GutterSize.MEDIUM} />);
+            const wrapper = shallow(<BenefitsPictures {...props} items={items} gridGap={'medium'} />);
             expect(wrapper).toMatchSnapshot();
         });
     });
