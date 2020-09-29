@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
 import { cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
@@ -21,7 +22,7 @@ export interface IBenefitsPicturesProps {
     /** Benefits horizontal align */
     hAlign?: 'left' | 'center';
     /** Grid gap size */
-    gridGap: GridGutterSize;
+    gridGap?: GridGutterSize;
 }
 
 const isEvenIndex = index => !((index + 1) % 2);
@@ -173,6 +174,18 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
             </Grid>
         </div>
     );
+};
+
+BenefitsPictures.propTypes = {
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            text: PropTypes.string.isRequired,
+            img: PropTypes.string.isRequired,
+        }).isRequired
+    ).isRequired,
+    hAlign: PropTypes.oneOf(['left', 'center']),
+    gridGap: PropTypes.oneOf(['medium', 'large']),
 };
 
 export default BenefitsPictures;
