@@ -167,10 +167,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         document.removeEventListener('click', this.handleClickOutside);
     }
 
-    handleClickOutside = (): void => {
+    handleClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
-        if (!isOpened) {
+        if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpened) {
             return;
         }
 

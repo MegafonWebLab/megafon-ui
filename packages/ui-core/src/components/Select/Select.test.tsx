@@ -83,7 +83,7 @@ describe('<Select />', () => {
     });
 
     describe('key typing handlers', () => {
-        it.only('calls onChange while typing in the field with debounce', async () => {
+        it('calls onChange while typing in the field with debounce', async () => {
             const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} />);
 
             expect(wrapper).toMatchSnapshot();
