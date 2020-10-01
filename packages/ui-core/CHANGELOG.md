@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.22](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.21...@megafon/ui-core@2.0.0-beta.22) (2020-10-01)
+
+
+### Bug Fixes
+
+* **icons:** add new checked_16 icon with normal path ([314fbf1](https://github.com/MegafonWebLab/megafon-ui/commit/314fbf17b14db8070d7795cb91ad7ac4744f17bd))
+
+
+
+
+
 # [2.0.0-beta.21](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.20...@megafon/ui-core@2.0.0-beta.21) (2020-09-29)
 
 
