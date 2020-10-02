@@ -188,10 +188,13 @@ const TextField: React.FC<ITextFieldProps> = ({
         ...commonParams,
         className: cn('field', input),
         value: inputValue,
-        mask,
-        maskChar,
         onChange: handleInputChange,
         type: isVisiblePassword ? 'text' : type,
+    };
+
+    const inputMaskParams = {
+        mask,
+        maskChar,
     };
 
     const textareaParams = {
@@ -226,7 +229,7 @@ const TextField: React.FC<ITextFieldProps> = ({
             <>
                 {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-input')}
                 {mask
-                    ? <InputMask {...inputParams} inputRef={getFieldNode} />
+                    ? <InputMask {...inputParams}  {...inputMaskParams} inputRef={getFieldNode} />
                     : <input {...inputParams} ref={getFieldNode} />
                 }
                 {!hideIcon && renderIconBlock()}
