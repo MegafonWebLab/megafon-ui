@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.23](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.22...@megafon/ui-core@2.0.0-beta.23) (2020-10-02)
+
+
+### Bug Fixes
+
+* **text filed:** separate input params for react input mask ([de6f00e](https://github.com/MegafonWebLab/megafon-ui/commit/de6f00ef3af5fff01b8e2f8fc983b89d7d8a956a))
+
+
+
+
+
 # [2.0.0-beta.22](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.21...@megafon/ui-core@2.0.0-beta.22) (2020-10-01)
 
 
