@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Tile.less';
+import filterDataAttrs, { IDataAttributes } from '../../utils/dataAttrs';
 
 export const Theme = {
     LIGHT: 'light',
@@ -26,7 +27,7 @@ export const Shadow = {
 
 type ShadowType = typeof Shadow[keyof typeof Shadow];
 
-export interface ITileProps {
+export interface ITileProps extends IDataAttributes {
     /** Link href */
     href?: string;
     /** Tile view according to the background color */
@@ -41,10 +42,12 @@ export interface ITileProps {
     className?: string;
     /** Handler */
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+    /** Enabling height 100% */
+    isFullHeight?: boolean;
 }
 
 const cn = cnCreate('mfui-beta-tile');
-const Tile: React.FC<ITileProps> = (props) => {
+const Tile: React.FC<ITileProps> = props => {
     const {
         href,
         children,
@@ -54,6 +57,8 @@ const Tile: React.FC<ITileProps> = (props) => {
         radius = Radius.DEFAULT,
         isInteractive = false,
         onClick,
+        isFullHeight = false,
+        dataAttrs,
     } = props;
 
     const [currentShadow, setCurrentShadow] = React.useState(shadowLevel);
@@ -78,12 +83,14 @@ const Tile: React.FC<ITileProps> = (props) => {
                     radius,
                     shadow: currentShadow,
                     pointer: !!href,
+                    'full-height': isFullHeight,
                 },
                 className
             )}
             onClick={handleClick}
             onMouseEnter={handleHoverTile}
             onMouseLeave={handleMouseLeave}
+            {...filterDataAttrs(dataAttrs)}
         >
             {href && (
                 <a href={href} className={cn('link')}>
