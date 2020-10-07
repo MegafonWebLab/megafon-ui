@@ -6,7 +6,7 @@ route: components/video-block
 
 import { Playground, Props } from 'docz';
 import VideoBlock from './VideoBlock';
-import { content, img } from './VideoBlock.docz';
+import { content, video, youtubeVideoId } from './VideoBlock.docz';
 
 # VideoBlock
 
@@ -14,28 +14,17 @@ import { content, img } from './VideoBlock.docz';
 
 <Props of={VideoBlock} />
 
-## Video content
-
-<Playground>
-    <VideoBlock
-        content={content}
-        mediaType="gif"
-        mediaSource={img}
-    />
-</Playground>
-
-## Video without content
-
-<Playground>
-    <VideoBlock
-        mediaType="gif"
-        mediaSource={img}
-    />
-</Playground>
-
 ## Included props
 
 ```javascript
+interface IContentData {
+    title: string;
+    description: string[];
+    buttonTitle: string;
+    href?: string;
+    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+}
+
 const content = {
     title: 'Lorem ipsum',
     description: [
@@ -47,5 +36,31 @@ const content = {
     onButtonClick: () => alert('button click'),
 }
 
-const mediaSource = 'image.gif' | 'video.mp4' | 'https://www.youtube.com/embed/...';
+const mediaSource = 'video.mp4' | '2Sps5MnvlKM';
 ```
+
+## Video without content
+
+<Playground>
+    <VideoBlock
+        mediaSource={video}
+    />
+</Playground>
+
+## Video with content
+
+<Playground>
+    <VideoBlock
+        content={content}
+        mediaSource={video}
+    />
+</Playground>
+
+## Video from Youtube
+
+<Playground>
+    <VideoBlock
+        mediaSource={youtubeVideoId}
+        mediaType="youtube"
+    />
+</Playground>

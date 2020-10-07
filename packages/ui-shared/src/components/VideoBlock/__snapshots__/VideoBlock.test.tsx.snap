@@ -161,57 +161,6 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 </div>
 `;
 
-exports[`<VideoBlock /> it renders VideoBlock with gif media type 1`] = `
-<div
-  className="mfui-video-block"
->
-  <ContentArea
-    innerBackgroundColor="transparent"
-    innerPadding="default"
-    mobileInnerPadding="default"
-    outerBackgroundColor="white"
-  >
-    <div
-      className="mfui-video-block__inner"
-    >
-      <Grid
-        hAlign="center"
-        multiRow={true}
-        vAlign="center"
-      >
-        <GridColumn
-          all="10"
-          flex={false}
-          grow={false}
-          key="0"
-          mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
-          tablet="12"
-        >
-          <div
-            className="mfui-video-block__video-wrapper"
-          >
-            <div
-              className="mfui-video-block__video-inner"
-            >
-              <img
-                alt="gif"
-                className="mfui-video-block__image"
-                src="image.gif"
-              />
-            </div>
-          </div>
-        </GridColumn>
-      </Grid>
-    </div>
-  </ContentArea>
-</div>
-`;
-
 exports[`<VideoBlock /> it renders VideoBlock with props 1`] = `
 <div
   className="mfui-video-block test-class-name"
@@ -307,11 +256,11 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
               className="mfui-video-block__video-inner"
             >
               <iframe
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay"
                 allowFullScreen={true}
                 className="mfui-video-block__youtube-wrapper"
                 frameBorder="0"
-                src="youtube.com"
+                src="https://www.youtube.com/embed/youtube.com?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube.com"
               />
             </div>
           </div>

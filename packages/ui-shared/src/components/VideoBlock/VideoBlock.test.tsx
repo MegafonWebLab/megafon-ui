@@ -46,11 +46,6 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
-    it('it renders VideoBlock with gif media type', () => {
-        const component = shallow(<VideoBlock mediaSource="image.gif" mediaType="gif">Test paragraph text</VideoBlock>);
-        expect(component).toMatchSnapshot();
-    });
-
     it('should call onClick props', () => {
         const component = shallow(
             <VideoBlock mediaSource="mediaSource" content={content}>Test paragraph text</VideoBlock>

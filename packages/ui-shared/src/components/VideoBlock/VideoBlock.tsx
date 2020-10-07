@@ -15,7 +15,7 @@ export interface Props {
     /** Content */
     content?: IContentData;
     /** Media type */
-    mediaType?: 'video' | 'youtube' | 'gif';
+    mediaType?: 'video' | 'youtube';
     /** Media source */
     mediaSource: string;
     /** Custom className */
@@ -29,20 +29,17 @@ const VideoBlock: React.FC<Props> = ({
     mediaSource,
     className,
 }) => {
-
     const renderSource = (sourceType): JSX.Element => {
         switch (sourceType) {
             case 'youtube':
+                const src = `https://www.youtube.com/embed/${mediaSource}?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${mediaSource}`;
+
                 return (
                     <iframe className={cn('youtube-wrapper')}
-                            src={mediaSource}
+                            src={src}
                             frameBorder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allow="autoplay"
                             allowFullScreen />
-                );
-            case 'gif':
-                return (
-                    <img className={cn('image')} src={mediaSource} alt="gif"/>
                 );
             default:
                 return (
@@ -119,7 +116,7 @@ VideoBlock.propTypes = {
         buttonTitle: PropTypes.string.isRequired,
         onButtonClick: PropTypes.func,
     }),
-    mediaType: PropTypes.oneOf(['video', 'youtube', 'gif']),
+    mediaType: PropTypes.oneOf(['video', 'youtube']),
     mediaSource: PropTypes.string.isRequired,
     className: PropTypes.string,
 };
