@@ -6,7 +6,7 @@ route: components/video-banner
 
 import { Playground, Props } from 'docz';
 import VideoBanner from './VideoBanner';
-import { content, image, video } from './VideoBanner.docz.tsx'
+import { content, image, video, youtubeVideoId } from './VideoBanner.docz.tsx'
 
 # VideoBanner
 
@@ -14,27 +14,23 @@ import { content, image, video } from './VideoBanner.docz.tsx'
 
 <Props of={VideoBanner} />
 
-## Basic usage
-
-<Playground>
-    <VideoBanner video={video} image={image} />
-</Playground>
-
-## With content
-
-<Playground>
-    <VideoBanner video={video} image={image} content={content} />
-</Playground>
-
-## Only image
-
-<Playground>
-    <VideoBanner image={image} content={content} />
-</Playground>
-
 ## Included props
 
 ``` javascript
+
+interface IContent {
+    title: string;
+    text: string;
+    buttonTitle: string;
+    href?: string;
+    clickHandler?: (e: React.SyntheticEvent<EventTarget>) => void;
+}
+
+interface IImage {
+    mobile: string;
+    main: string;
+}
+
 const content = {
     title: 'Текст ≈40 симовлов. Короткие слова',
     text: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
@@ -48,13 +44,31 @@ const image = {
     mobile: 'image-mobile.png'
 }
 
-const video = {
-    src: 'video.mp4',
-    type: 'video',
-}
+const videoSrc = 'video.mp4' | '2Sps5MnvlKM';
 
-const youtube = {
-    src: 'https://www.youtube.com/embed/videoId',
-    type: 'youtube'
-}
+const videoType = 'video' | 'youtube';
 ```
+
+## Basic usage
+
+<Playground>
+    <VideoBanner videoType="video" videoSrc={video} image={image} />
+</Playground>
+
+## With content
+
+<Playground>
+    <VideoBanner videoType="video" videoSrc={video} image={image} content={content} />
+</Playground>
+
+## Only image
+
+<Playground>
+    <VideoBanner image={image} content={content} />
+</Playground>
+
+## Youtube
+
+<Playground>
+    <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} image={image} />
+</Playground>

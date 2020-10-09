@@ -1,17 +1,13 @@
 import mainImage from '../../../demo/bg_grey_desktop.png';
 import mobileImage from '../../../demo/bg_grey_mobile.png';
-import videoSrc from '../../../demo/video.mp4';
-import { VideoCategory } from './VideoBanner';
+import video from '../../../demo/video.mp4';
 
 const image = {
     mobile: mobileImage,
     main: mainImage,
 };
 
-const video = {
-    src: videoSrc,
-    type: VideoCategory.VIDEO,
-};
+const youtubeVideoId = '2Sps5MnvlKM';
 
 const content = {
     title: 'Текст ≈40 симовлов. Короткие слова',
@@ -21,4 +17,4 @@ const content = {
     clickHandler: () => alert('button click'),
 };
 
-export { content, image, video };
+export { content, image, video, youtubeVideoId };

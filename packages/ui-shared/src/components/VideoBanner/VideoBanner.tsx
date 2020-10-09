@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
 import { Button, cnCreate, ContentArea, Header, Paragraph } from '@megafon/ui-core';
-import { MOBILE_BIG_START } from '../../../../ui-core/src/constants/breakpoints';
+import { MOBILE_BIG_START } from '../../constants/breakpoints';
 
 const THROTTLE_TIME = 750;
 
@@ -20,43 +20,26 @@ interface IImage {
     main: string;
 }
 
-export const VideoCategory = {
-    YOUTUBE: 'youtube',
-    VIDEO: 'video',
-} as const;
-
-type VideoCategoryType = typeof VideoCategory[keyof  typeof VideoCategory];
-
-interface IVideo {
-    src: string;
-    type: VideoCategoryType;
-}
-
 interface IVideoBanner {
     image: IImage;
-    video?: IVideo;
     content?: IContent;
+    videoSrc?: string;
+    videoType?: 'video' | 'youtube';
+    isMuted?: boolean;
 }
 
-const cn = cnCreate('mfui-video-banner');
-const VideoBanner: React.FC<IVideoBanner> = ({ video, image, content}) => {
+const cn = cnCreate('mfui-beta-video-banner');
+const VideoBanner: React.FC<IVideoBanner> = ({ videoSrc, videoType, image, content, isMuted = true}) => {
     const [isMobile, setIsMobile] = React.useState(true);
-    const isRenderVideo = !isMobile && video;
+    const isVideo = !!videoSrc && !!videoType;
+    const isRenderVideo = !isMobile && isVideo;
 
-    const resizeHandler = () => {
-        if (window.innerWidth <= MOBILE_BIG_START && !isMobile) {
-            setIsMobile(true);
+    const renderContent = React.useMemo(() => {
+        if (!content) {
             return;
         }
 
-        if (window.innerWidth > MOBILE_BIG_START && isMobile) {
-            setIsMobile(false);
-            return;
-        }
-    };
-
-    const renderContent = (data: IContent): JSX.Element => {
-        const { title, text, buttonTitle, href, clickHandler } = data;
+        const { title, text, buttonTitle, href, clickHandler } = content;
 
         return (
             <div className={cn('content')}>
@@ -67,16 +50,12 @@ const VideoBanner: React.FC<IVideoBanner> = ({ video, image, content}) => {
                 <Button className={cn('button')} href={href} onClick={clickHandler}>{buttonTitle}</Button>
             </div>
         );
-    };
+    }, [content]);
 
-    const renderVideo = () => {
-        if (!video) {
-            return;
-        }
-
-        switch (video.type) {
-            case(VideoCategory.YOUTUBE): {
-                const src = `${video.src}?controls=0&autoplay=1`;
+    const renderVideo = React.useMemo(() => {
+        switch (videoType) {
+            case('youtube'): {
+                const src = `https://www.youtube.com/embed/${videoSrc}?&autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${videoSrc}`;
 
                 return (
                     <iframe className={cn('video')}
@@ -89,10 +68,10 @@ const VideoBanner: React.FC<IVideoBanner> = ({ video, image, content}) => {
                 );
             }
 
-            case(VideoCategory.VIDEO): {
+            case('video'): {
                 return (
-                    <video className={cn('video')} autoPlay muted loop>
-                        <source src={video.src} type="video/mp4" />
+                    <video className={cn('video')} autoPlay loop muted={isMuted}>
+                        <source src={videoSrc} type="video/mp4" />
                     </video>
                 );
             }
@@ -101,18 +80,30 @@ const VideoBanner: React.FC<IVideoBanner> = ({ video, image, content}) => {
                 return null;
             }
         }
-    };
+    }, [videoType, videoSrc, isMuted]);
 
-    const resizeHandlerThrottled = throttle(resizeHandler, THROTTLE_TIME);
+    const resizeHandler = React.useCallback(() => {
+        if (window.innerWidth <= MOBILE_BIG_START && !isMobile) {
+            setIsMobile(true);
+            return;
+        }
+
+        if (window.innerWidth > MOBILE_BIG_START && isMobile) {
+            setIsMobile(false);
+            return;
+        }
+    }, [isMobile]);
 
     React.useEffect(() => {
+        const resizeHandlerThrottled = throttle(resizeHandler, THROTTLE_TIME);
+
         resizeHandler();
         window.addEventListener('resize', resizeHandlerThrottled);
 
         return () => {
             window.removeEventListener('resize', resizeHandlerThrottled);
         };
-    }, [isMobile]);
+    }, [resizeHandler]);
 
     return (
         <div className={cn()}>
@@ -120,8 +111,8 @@ const VideoBanner: React.FC<IVideoBanner> = ({ video, image, content}) => {
                 <div
                     className={cn('wrapper')}
                     style={{backgroundImage: `url(${isMobile ? image.mobile : image.main})`}}>
-                    {isRenderVideo && renderVideo()}
-                    {content && renderContent(content)}
+                    {isRenderVideo && renderVideo}
+                    {renderContent}
                 </div>
             </ContentArea>
         </div>
@@ -129,14 +120,13 @@ const VideoBanner: React.FC<IVideoBanner> = ({ video, image, content}) => {
 };
 
 VideoBanner.propTypes = {
-    video: PropTypes.shape({
-        src: PropTypes.string.isRequired,
-        type: PropTypes.oneOf(Object.values(VideoCategory)).isRequired,
-    }),
+    videoSrc: PropTypes.string,
+    videoType: PropTypes.oneOf(['video', 'youtube']),
     image: PropTypes.shape({
         mobile: PropTypes.string.isRequired,
         main: PropTypes.string.isRequired,
     }).isRequired,
+    isMuted: PropTypes.bool,
 };
 
 export default VideoBanner;

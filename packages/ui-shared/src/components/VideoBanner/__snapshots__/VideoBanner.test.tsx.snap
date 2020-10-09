@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<VideoBanner /> render component 1`] = `
+exports[`<VideoBanner /> render component on desktop resolution only with required props 1`] = `
 <VideoBanner
   image={
     Object {
-      "main": "test-file-stub",
-      "mobile": "test-file-stub",
+      "main": "image-main.png",
+      "mobile": "image-mobile.png",
     }
   }
 >
   <div
-    className="mfui-video-banner"
+    className="mfui-beta-video-banner"
   >
     <ContentArea
       innerBackgroundColor="transparent"
@@ -25,10 +25,10 @@ exports[`<VideoBanner /> render component 1`] = `
           className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
         >
           <div
-            className="mfui-video-banner__wrapper"
+            className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(test-file-stub)",
+                "backgroundImage": "url(image-main.png)",
               }
             }
           />
@@ -37,6 +37,28 @@ exports[`<VideoBanner /> render component 1`] = `
     </ContentArea>
   </div>
 </VideoBanner>
+`;
+
+exports[`<VideoBanner /> render component on mobile resolution only with required props 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    innerPadding="default"
+    mobileInnerPadding="default"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+      style={
+        Object {
+          "backgroundImage": "url(image-mobile.png)",
+        }
+      }
+    />
+  </ContentArea>
+</div>
 `;
 
 exports[`<VideoBanner /> render with content 1`] = `
@@ -52,13 +74,13 @@ exports[`<VideoBanner /> render with content 1`] = `
   }
   image={
     Object {
-      "main": "test-file-stub",
-      "mobile": "test-file-stub",
+      "main": "image-main.png",
+      "mobile": "image-mobile.png",
     }
   }
 >
   <div
-    className="mfui-video-banner"
+    className="mfui-beta-video-banner"
   >
     <ContentArea
       innerBackgroundColor="transparent"
@@ -73,30 +95,30 @@ exports[`<VideoBanner /> render with content 1`] = `
           className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
         >
           <div
-            className="mfui-video-banner__wrapper"
+            className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(test-file-stub)",
+                "backgroundImage": "url(image-main.png)",
               }
             }
           >
             <div
-              className="mfui-video-banner__content"
+              className="mfui-beta-video-banner__content"
             >
               <Header
                 as="h1"
-                className="mfui-video-banner__title"
+                className="mfui-beta-video-banner__title"
                 color="white"
                 hAlign="inherit"
               >
                 <h1
-                  className="mfui-beta-header mfui-beta-header_color_white mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-video-banner__title"
+                  className="mfui-beta-header mfui-beta-header_color_white mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
                 >
                   Текст ≈40 симовлов. Короткие слова
                 </h1>
               </Header>
               <div
-                className="mfui-video-banner__text"
+                className="mfui-beta-video-banner__text"
               >
                 <Paragraph
                   color="clearWhite"
@@ -110,12 +132,12 @@ exports[`<VideoBanner /> render with content 1`] = `
                 </Paragraph>
               </div>
               <Button
-                className="mfui-video-banner__button"
+                className="mfui-beta-video-banner__button"
                 href="#"
                 onClick={[MockFunction]}
               >
                 <a
-                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-video-banner__button"
+                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
                   disabled={false}
                   href="#"
                   onClick={[Function]}
@@ -144,19 +166,16 @@ exports[`<VideoBanner /> render with video 1`] = `
 <VideoBanner
   image={
     Object {
-      "main": "test-file-stub",
-      "mobile": "test-file-stub",
+      "main": "image-main.png",
+      "mobile": "image-mobile.png",
     }
   }
-  video={
-    Object {
-      "src": "test-file-stub",
-      "type": "video",
-    }
-  }
+  isMuted={false}
+  videoSrc="video.mp4"
+  videoType="video"
 >
   <div
-    className="mfui-video-banner"
+    className="mfui-beta-video-banner"
   >
     <ContentArea
       innerBackgroundColor="transparent"
@@ -171,21 +190,21 @@ exports[`<VideoBanner /> render with video 1`] = `
           className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
         >
           <div
-            className="mfui-video-banner__wrapper"
+            className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(test-file-stub)",
+                "backgroundImage": "url(image-main.png)",
               }
             }
           >
             <video
               autoPlay={true}
-              className="mfui-video-banner__video"
+              className="mfui-beta-video-banner__video"
               loop={true}
-              muted={true}
+              muted={false}
             >
               <source
-                src="test-file-stub"
+                src="video.mp4"
                 type="video/mp4"
               />
             </video>
@@ -201,19 +220,15 @@ exports[`<VideoBanner /> render with youtube video 1`] = `
 <VideoBanner
   image={
     Object {
-      "main": "test-file-stub",
-      "mobile": "test-file-stub",
+      "main": "image-main.png",
+      "mobile": "image-mobile.png",
     }
   }
-  video={
-    Object {
-      "src": "youtube.com/videoId",
-      "type": "youtube",
-    }
-  }
+  videoSrc="2Sps5MnvlKM"
+  videoType="youtube"
 >
   <div
-    className="mfui-video-banner"
+    className="mfui-beta-video-banner"
   >
     <ContentArea
       innerBackgroundColor="transparent"
@@ -228,19 +243,19 @@ exports[`<VideoBanner /> render with youtube video 1`] = `
           className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
         >
           <div
-            className="mfui-video-banner__wrapper"
+            className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(test-file-stub)",
+                "backgroundImage": "url(image-main.png)",
               }
             }
           >
             <iframe
               allow="autoplay"
-              className="mfui-video-banner__video"
+              className="mfui-beta-video-banner__video"
               frameBorder="0"
               height="100%"
-              src="youtube.com/videoId?controls=0&autoplay=1"
+              src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
               width="100%"
             />
           </div>
