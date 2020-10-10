@@ -1,0 +1,129 @@
+---
+name: Tooltip
+menu: Components
+route: components/tooltip
+---
+
+import { Playground, Props } from 'docz';
+import Tooltip, { Placement } from './Tooltip';
+import {
+    DemoBlockWrapper,
+    DemoTooltipWrapper,
+    OpenStateWrapper,
+} from './Tooltip.docz';
+import Paragraph from '../Paragraph/Paragraph';
+import TextLink from '../TextLink/TextLink';
+import Button from '../Button/Button';
+
+# Tooltip
+
+## Properties
+
+<Props of={Tooltip} />
+
+## Placements
+
+<Playground>
+    <DemoBlockWrapper>
+        <Tooltip
+            triggerElement={<Button fullWidth={true}>Top</Button>}
+        >
+            Top placement (default)
+        </Tooltip>
+        <Tooltip
+            placement={Placement.RIGHT}
+            triggerElement={<Button fullWidth={true}>Right</Button>}
+        >
+            Right placement
+        </Tooltip>
+        <Tooltip
+            placement={Placement.BOTTOM}
+            triggerElement={<Button fullWidth={true}>Bottom</Button>}
+        >
+            Bottom placement
+        </Tooltip>
+        <Tooltip
+            placement={Placement.LEFT}
+            triggerElement={<Button fullWidth={true}>Left</Button>}
+        >
+            Left placement
+        </Tooltip>
+    </DemoBlockWrapper>
+</Playground>
+
+#
+## Trigger
+
+<Playground>
+    <DemoBlockWrapper>
+        <Tooltip
+            triggerElement={<Button fullWidth={true}>Hover</Button>}
+        >
+            Hover trigger (default)
+        </Tooltip>
+        <Tooltip
+            trigger="click"
+            triggerElement={<Button fullWidth={true}>Click</Button>}
+        >
+            Click trigger
+        </Tooltip>
+    </DemoBlockWrapper>
+</Playground>
+
+#
+## Sizes
+
+<Playground>
+    <DemoBlockWrapper>
+        <Paragraph hasMargin={false}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod
+            <Tooltip
+                triggerElement={<TextLink>tempor</TextLink>}
+            >
+                <Paragraph hasMargin={false}>
+                    Tooltip with default size
+                </Paragraph>
+            </Tooltip>
+            {' '}incididunt ut labore et dolore magna aliqua.
+            <br/>Ut enim ad minim veniam, quis nostrud
+            <Tooltip
+                size="small"
+                triggerElement={<TextLink>exercitation</TextLink>}
+            >
+                <Paragraph hasMargin={false}>
+                    Tooltip with small size
+                </Paragraph>
+            </Tooltip>
+            {' '}ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.
+        </Paragraph>
+    </DemoBlockWrapper>
+</Playground>
+
+#
+## Manipulate Tooltip open state form outside
+
+<Playground>
+    <DemoBlockWrapper>
+        <DemoTooltipWrapper>
+            <OpenStateWrapper>
+                {({ isOpened, openDrop, closeDrop}) => (
+                    <Tooltip
+                        onOpen={openDrop}
+                        onClose={closeDrop}
+                        isOpened={isOpened}
+                        trigger="click"
+                        triggerElement={<div><Button>Open</Button></div>}
+                    >
+                        <Paragraph>
+                            Please be careful when filling out the forms.
+                        </Paragraph>
+                        <Button onClick={closeDrop}>Close</Button>
+                    </Tooltip>
+                )}
+            </OpenStateWrapper>
+        </DemoTooltipWrapper>
+    </DemoBlockWrapper>
+</Playground>

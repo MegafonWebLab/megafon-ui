@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip /> snapshots must open drop when click on component 1`] = `
+<Tooltip
+  trigger="click"
+  triggerElement={
+    <span>
+      trigger
+    </span>
+  }
+>
+  <span
+    className="mfui-beta-tooltip mfui-beta-tooltip_size_medium"
+    onClick={[Function]}
+  >
+    <span
+      className="mfui-beta-tooltip__trigger"
+    >
+      <span>
+        trigger
+      </span>
+    </span>
+    <span
+      className="mfui-beta-tooltip__popper mfui-beta-tooltip__popper_open"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
+        }
+      }
+    >
+      <span
+        className="mfui-beta-tooltip__arrow-container"
+      />
+      <span
+        className="mfui-beta-tooltip__content"
+      >
+        Some test content
+      </span>
+    </span>
+  </span>
+</Tooltip>
+`;
+
+exports[`<Tooltip /> snapshots must toggle drop open on component mouseenter/mouseleave 1`] = `
+<Tooltip
+  triggerElement={
+    <span>
+      trigger
+    </span>
+  }
+>
+  <span
+    className="mfui-beta-tooltip mfui-beta-tooltip_size_medium"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="mfui-beta-tooltip__trigger"
+    >
+      <span>
+        trigger
+      </span>
+    </span>
+    <span
+      className="mfui-beta-tooltip__popper"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
+        }
+      }
+    >
+      <span
+        className="mfui-beta-tooltip__arrow-container"
+      />
+      <span
+        className="mfui-beta-tooltip__content"
+      >
+        Some test content
+      </span>
+    </span>
+  </span>
+</Tooltip>
+`;
+
+exports[`<Tooltip /> snapshots renders component 1`] = `
+<Tooltip
+  triggerElement={
+    <span>
+      trigger
+    </span>
+  }
+>
+  <span
+    className="mfui-beta-tooltip mfui-beta-tooltip_size_medium"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="mfui-beta-tooltip__trigger"
+    >
+      <span>
+        trigger
+      </span>
+    </span>
+    <span
+      className="mfui-beta-tooltip__popper"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
+        }
+      }
+    >
+      <span
+        className="mfui-beta-tooltip__arrow-container"
+      />
+      <span
+        className="mfui-beta-tooltip__content"
+      >
+        Some test content
+      </span>
+    </span>
+  </span>
+</Tooltip>
+`;
+
+exports[`<Tooltip /> snapshots renders component with isOpened prop set to true 1`] = `
+<Tooltip
+  isOpened={true}
+  triggerElement={
+    <span>
+      trigger
+    </span>
+  }
+>
+  <span
+    className="mfui-beta-tooltip mfui-beta-tooltip_size_medium"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <span
+      className="mfui-beta-tooltip__trigger"
+    >
+      <span>
+        trigger
+      </span>
+    </span>
+    <span
+      className="mfui-beta-tooltip__popper mfui-beta-tooltip__popper_open"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
+        }
+      }
+    >
+      <span
+        className="mfui-beta-tooltip__arrow-container"
+      />
+      <span
+        className="mfui-beta-tooltip__content"
+      >
+        Some test content
+      </span>
+    </span>
+  </span>
+</Tooltip>
+`;
+
+exports[`<Tooltip /> snapshots renders component with props 1`] = `
+<Tooltip
+  className="test-class"
+  onClose={[MockFunction]}
+  onOpen={[MockFunction]}
+  placement="left"
+  size="small"
+  trigger="click"
+  triggerElement={
+    <span>
+      trigger
+    </span>
+  }
+>
+  <span
+    className="mfui-beta-tooltip mfui-beta-tooltip_size_small test-class"
+    onClick={[Function]}
+  >
+    <span
+      className="mfui-beta-tooltip__trigger"
+    >
+      <span>
+        trigger
+      </span>
+    </span>
+    <span
+      className="mfui-beta-tooltip__popper"
+      style={
+        Object {
+          "left": "0",
+          "position": "absolute",
+          "top": "0",
+        }
+      }
+    >
+      <span
+        className="mfui-beta-tooltip__arrow-container"
+      />
+      <span
+        className="mfui-beta-tooltip__content"
+      >
+        Some test content
+      </span>
+    </span>
+  </span>
+</Tooltip>
+`;

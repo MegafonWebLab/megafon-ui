@@ -1,0 +1,134 @@
+@import '~styles/base.less';
+@b: e('.mfui-beta-tooltip');
+@popperLeft: ~"[data-popper-placement='left']";
+@popperRight: ~"[data-popper-placement='right']";
+@popperTop: ~"[data-popper-placement='top']";
+@popperBottom: ~"[data-popper-placement='bottom']";
+@popperOffset: 14px;
+@arrowContainerOffset: @popperOffset + 1;
+@arrowContainerPosition: calc(~'100% - @{arrowContainerOffset}');
+@arrowSize: 12px;
+
+.arrowSize() {
+    height: @arrowSize;
+    width: @arrowSize;
+}
+
+.arrowHorizontalEdgeContainer() {
+    height: @arrowSize;
+    width: @arrowSize * 3;
+}
+
+.arrowVerticalEdgeContainer() {
+    height: @arrowSize * 3;
+    width: @arrowSize;
+}
+
+.arrow() {
+    .arrowSize();
+    content: '';
+    background-color: @clearWhite;
+    transform: rotate(45deg);
+    position: absolute;
+    .shadow();
+}
+
+.shadow() {
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.15);
+}
+
+@{b} {
+    &__content {
+        display: block;
+        background-color: @clearWhite;
+        .shadow();
+    }
+
+    &_size_small {
+        @{b}__content {
+            padding: 8px 16px;
+        }
+    }
+
+    &_size_medium {
+        @{b}__content {
+            padding: 24px;
+        }
+    }
+
+    &__trigger {
+        cursor: pointer;
+    }
+
+    &__popper {
+        visibility: hidden;
+        z-index: 100;
+
+        &_open {
+            visibility: visible;
+        }
+
+        &@{popperRight} {
+            padding-left: @popperOffset;
+        }
+
+        &@{popperLeft} {
+            padding-right: @popperOffset;
+        }
+
+        &@{popperTop} {
+            padding-bottom: @popperOffset;
+        }
+
+        &@{popperBottom} {
+            padding-top: @popperOffset;
+        }
+    }
+
+    &__arrow-container {
+        .arrowHorizontalEdgeContainer();
+        overflow: hidden;
+
+        &:before {
+            .arrow();
+        }
+    }
+
+    & > @{popperRight} > &__arrow-container {
+        .arrowVerticalEdgeContainer();
+        right: @arrowContainerPosition;
+
+        &:before {
+            left: @arrowSize / 2;
+            top: @arrowSize;
+        }
+    }
+
+    & > @{popperLeft} > &__arrow-container {
+        .arrowVerticalEdgeContainer();
+        left: @arrowContainerPosition;
+
+        &:before {
+            right: @arrowSize / 2;
+            top: @arrowSize;
+        }
+    }
+
+    & > @{popperTop} > &__arrow-container {
+        top: @arrowContainerPosition;
+
+        &:before {
+            left: @arrowSize;
+            bottom: @arrowSize / 2;
+        }
+    }
+
+    & > @{popperBottom} > &__arrow-container {
+        bottom: @arrowContainerPosition;
+
+        &:before {
+            left: @arrowSize;
+            top: @arrowSize / 2;
+        }
+    }
+}
