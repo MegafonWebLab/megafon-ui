@@ -65,6 +65,8 @@ export interface ITextFieldProps {
     className?: string;
     /** Custom classes */
     classes?: ITextFieldClasses;
+    /** Inputnode for input */
+    inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
     /** Change handler */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Blur handler */
@@ -112,6 +114,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         verification,
         noticeText,
         inputRef,
+        inputMode,
         classes: {
             input,
         } = {},
@@ -182,6 +185,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         placeholder,
         required,
         maxLength,
+        inputMode,
     };
 
     const inputParams = {
