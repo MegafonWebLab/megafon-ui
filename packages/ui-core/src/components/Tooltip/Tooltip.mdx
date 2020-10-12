@@ -1,0 +1,172 @@
+---
+name: Tooltip
+menu: Components
+route: components/tooltip
+---
+
+import { Playground, Props } from 'docz';
+import Tooltip, { Placement } from './Tooltip';
+import {
+    DemoBlockWrapper,
+    DemoTooltipWrapper,
+    DemoTooltipWrapperWithTrigger,
+    OpenStateWrapper,
+} from './Tooltip.docz';
+import Paragraph from '../Paragraph/Paragraph';
+import TextLink from '../TextLink/TextLink';
+import Button from '../Button/Button';
+
+# Tooltip
+
+## Properties
+
+<Props of={Tooltip} />
+
+<!-- ## Placements
+
+<Playground>
+    <DemoBlockWrapper>
+        <Tooltip
+            triggerElement={<Button fullWidth={true}>Top</Button>}
+        >
+            Top placement (default)
+        </Tooltip>
+        <Tooltip
+            placement={Placement.RIGHT}
+            triggerElement={<Button fullWidth={true}>Right</Button>}
+        >
+            Right placement
+        </Tooltip>
+        <Tooltip
+            placement={Placement.BOTTOM}
+            triggerElement={<Button fullWidth={true}>Bottom</Button>}
+        >
+            Bottom placement
+        </Tooltip>
+        <Tooltip
+            placement={Placement.LEFT}
+            triggerElement={<Button fullWidth={true}>Left</Button>}
+        >
+            Left placement
+        </Tooltip>
+    </DemoBlockWrapper>
+</Playground> -->
+
+#
+## Trigger
+
+<Playground>
+    <DemoBlockWrapper>
+        <DemoTooltipWrapperWithTrigger>
+            {({triggerElement, setTriggerElement}) => (
+                <>
+                    <span ref={setTriggerElement}>
+                        <Button fullWidth={true}>Hover</Button>
+                    </span>
+                    <Tooltip
+                        triggerElement={triggerElement}
+                    >
+                        Hover trigger (default)
+                    </Tooltip>
+                </>
+            )}
+        </DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWrapperWithTrigger>
+            {({triggerElement, setTriggerElement}) => (
+                <>
+                    <span ref={setTriggerElement}>
+                        <Button fullWidth={true}>Click</Button>
+                    </span>
+                    <Tooltip
+                        trigger="click"
+                        triggerElement={triggerElement}
+                    >
+                        Click trigger
+                    </Tooltip>
+                </>
+            )}
+        </DemoTooltipWrapperWithTrigger>
+    </DemoBlockWrapper>
+</Playground>
+
+#
+## Sizes
+
+<Playground>
+    <DemoBlockWrapper>
+        <DemoTooltipWrapperWithTrigger>
+            {({triggerElement, setTriggerElement}) => (
+                <>
+                    <Paragraph hasMargin={false}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod
+                        <span ref={setTriggerElement}>
+                            <TextLink>tempor</TextLink>
+                        </span>
+                        {' '}incididunt ut labore et dolore magna aliqua.
+                    </Paragraph>
+                    <Tooltip triggerElement={triggerElement}>
+                        <Paragraph hasMargin={false}>
+                            Tooltip with default size
+                        </Paragraph>
+                    </Tooltip>
+                </>
+            )}
+        </DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWrapperWithTrigger>
+            {({triggerElement, setTriggerElement}) => (
+                <>
+                    <Paragraph hasMargin={false}>
+                        Ut enim ad minim veniam, quis nostrud
+                        <span ref={setTriggerElement}>
+                            <TextLink>exercitation</TextLink>
+                        </span>
+                        {' '}ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur.
+                    </Paragraph>
+                    <Tooltip size="small" triggerElement={triggerElement}>
+                        <Paragraph hasMargin={false}>
+                            Tooltip with small size
+                        </Paragraph>
+                    </Tooltip>
+                </>
+            )}
+        </DemoTooltipWrapperWithTrigger>
+    </DemoBlockWrapper>
+</Playground>
+
+#
+## Manipulate Tooltip open state form outside
+
+<Playground>
+    <DemoBlockWrapper>
+        <DemoTooltipWrapper>
+            <DemoTooltipWrapperWithTrigger>
+                {({triggerElement, setTriggerElement}) => (
+                    <>
+                        <span ref={setTriggerElement}>
+                            <Button>Open</Button>
+                        </span>
+                        <OpenStateWrapper>
+                            {({ isOpened, openDrop, closeDrop}) => (
+                                <Tooltip
+                                    onOpen={openDrop}
+                                    onClose={closeDrop}
+                                    isOpened={isOpened}
+                                    trigger="click"
+                                    triggerElement={triggerElement}
+                                >
+                                    <Paragraph>
+                                        Please be careful when filling out the forms.
+                                    </Paragraph>
+                                    <Button onClick={closeDrop}>Close</Button>
+                                </Tooltip>
+                            )}
+                        </OpenStateWrapper>
+                    </>
+                )}
+            </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWrapper>
+    </DemoBlockWrapper>
+</Playground>
