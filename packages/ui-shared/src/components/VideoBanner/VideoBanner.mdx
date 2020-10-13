@@ -20,27 +20,27 @@ import { content, image, video, youtubeVideoId } from './VideoBanner.docz.tsx'
 
 interface IContent {
     title: string;
-    text: string;
+    description: string;
     buttonTitle: string;
     href?: string;
-    clickHandler?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 interface IImage {
     mobile: string;
-    main: string;
+    desktop: string;
 }
 
-const content = {
+const content: IContent = {
     title: 'Текст ≈40 симовлов. Короткие слова',
-    text: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     href: '#',
     buttonTitle: 'Текст в кнопке',
-    clickHandler: () => alert('button click'),
+    onButtonClick: () => alert('button click'),
 }
 
-const image = {
-    main: 'image-main.png',
+const image: IImage = {
+    desktop: 'image-desktop.png',
     mobile: 'image-mobile.png'
 }
 

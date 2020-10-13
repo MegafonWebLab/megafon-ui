@@ -7,20 +7,20 @@ import { MOBILE_BIG_START } from '../../constants/breakpoints';
 
 const THROTTLE_TIME = 750;
 
-interface IContent {
+export interface IContent {
     title: string;
-    text: string;
+    description: string;
     buttonTitle: string;
     href?: string;
-    clickHandler?: (e: React.SyntheticEvent<EventTarget>) => void;
+    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-interface IImage {
+export interface IImage {
     mobile: string;
-    main: string;
+    desktop: string;
 }
 
-interface IVideoBanner {
+interface IVideoBannerProps {
     image: IImage;
     content?: IContent;
     videoSrc?: string;
@@ -29,7 +29,7 @@ interface IVideoBanner {
 }
 
 const cn = cnCreate('mfui-beta-video-banner');
-const VideoBanner: React.FC<IVideoBanner> = ({ videoSrc, videoType, image, content, isMuted = true}) => {
+const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, content, isMuted = true}) => {
     const [isMobile, setIsMobile] = React.useState(true);
     const isVideo = !!videoSrc && !!videoType;
     const isRenderVideo = !isMobile && isVideo;
@@ -39,15 +39,15 @@ const VideoBanner: React.FC<IVideoBanner> = ({ videoSrc, videoType, image, conte
             return;
         }
 
-        const { title, text, buttonTitle, href, clickHandler } = content;
+        const { title, description, buttonTitle, href, onButtonClick } = content;
 
         return (
             <div className={cn('content')}>
                 <Header className={cn('title')} color="white" as="h1">{title}</Header>
                 <div className={cn('text')}>
-                    <Paragraph color="clearWhite" hasMargin={false}>{text}</Paragraph>
+                    <Paragraph color="clearWhite" hasMargin={false}>{description}</Paragraph>
                 </div>
-                <Button className={cn('button')} href={href} onClick={clickHandler}>{buttonTitle}</Button>
+                <Button className={cn('button')} href={href} onClick={onButtonClick}>{buttonTitle}</Button>
             </div>
         );
     }, [content]);
@@ -82,19 +82,9 @@ const VideoBanner: React.FC<IVideoBanner> = ({ videoSrc, videoType, image, conte
         }
     }, [videoType, videoSrc, isMuted]);
 
-    const resizeHandler = React.useCallback(() => {
-        if (window.innerWidth <= MOBILE_BIG_START && !isMobile) {
-            setIsMobile(true);
-            return;
-        }
-
-        if (window.innerWidth > MOBILE_BIG_START && isMobile) {
-            setIsMobile(false);
-            return;
-        }
-    }, [isMobile]);
-
     React.useEffect(() => {
+        const resizeHandler = () =>
+            window.innerWidth <= MOBILE_BIG_START ? setIsMobile(true) : setIsMobile(false);
         const resizeHandlerThrottled = throttle(resizeHandler, THROTTLE_TIME);
 
         resizeHandler();
@@ -103,14 +93,14 @@ const VideoBanner: React.FC<IVideoBanner> = ({ videoSrc, videoType, image, conte
         return () => {
             window.removeEventListener('resize', resizeHandlerThrottled);
         };
-    }, [resizeHandler]);
+    }, [isMobile, setIsMobile]);
 
     return (
         <div className={cn()}>
             <ContentArea>
                 <div
                     className={cn('wrapper')}
-                    style={{backgroundImage: `url(${isMobile ? image.mobile : image.main})`}}>
+                    style={{backgroundImage: `url(${isMobile ? image.mobile : image.desktop})`}}>
                     {isRenderVideo && renderVideo}
                     {renderContent}
                 </div>
@@ -122,9 +112,16 @@ const VideoBanner: React.FC<IVideoBanner> = ({ videoSrc, videoType, image, conte
 VideoBanner.propTypes = {
     videoSrc: PropTypes.string,
     videoType: PropTypes.oneOf(['video', 'youtube']),
+    content: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        buttonTitle: PropTypes.string.isRequired,
+        href: PropTypes.string,
+        onButtonClick: PropTypes.func,
+    }),
     image: PropTypes.shape({
         mobile: PropTypes.string.isRequired,
-        main: PropTypes.string.isRequired,
+        desktop: PropTypes.string.isRequired,
     }).isRequired,
     isMuted: PropTypes.bool,
 };

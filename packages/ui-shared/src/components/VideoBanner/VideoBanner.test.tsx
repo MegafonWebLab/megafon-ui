@@ -4,7 +4,7 @@ import { cnCreate } from '@megafon/ui-core';
 import VideoBanner from './VideoBanner';
 
 const image = {
-    main: 'image-main.png',
+    desktop: 'image-desktop.png',
     mobile: 'image-mobile.png',
 };
 
@@ -14,10 +14,10 @@ const youtubeVideoId = '2Sps5MnvlKM';
 
 const content = {
     title: 'Текст ≈40 симовлов. Короткие слова',
-    text: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     href: '#',
     buttonTitle: 'Текст в кнопке',
-    clickHandler: jest.fn(),
+    onButtonClick: jest.fn(),
 };
 
 const cn = cnCreate('mfui-beta-video-banner');
@@ -49,11 +49,20 @@ describe('<VideoBanner />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('render with video and content', () => {
+        // Props isMuted must be false, if the rendering method is "mount". Otherwise an error will occur.
+        // https://github.com/enzymejs/enzyme/issues/2326
+        const component = mount(
+            <VideoBanner image={image} videoType="video" videoSrc={video} content={content} isMuted={false}/>
+            );
+        expect(component).toMatchSnapshot();
+    });
+
     it('should call onClick props', () => {
         const component = shallow(<VideoBanner image={image} content={content} />);
         const btn = component.find(`.${cn('button')}`);
 
         btn.simulate('click');
-        expect(content.clickHandler).toBeCalled();
+        expect(content.onButtonClick).toBeCalled();
     });
 });

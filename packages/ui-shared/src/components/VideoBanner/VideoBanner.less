@@ -6,22 +6,21 @@
     &__wrapper {
         box-sizing: border-box;
         position: relative;
-        height: 562px;
+        height: 400px;
         padding: 90px 80px;
         background-repeat: no-repeat;
         background-position: right center;
+
+        @media @desktopB {
+            height: 562px;
+        }
 
         @media @desktopM {
             height: 500px;
         }
 
         @media @desktopS {
-            height: 400px;
             padding: 52px 64px;
-        }
-
-        @media @mobile {
-            height: 400px;
         }
 
         @media @mobileSM {

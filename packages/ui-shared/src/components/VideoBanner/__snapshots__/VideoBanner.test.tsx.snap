@@ -4,7 +4,7 @@ exports[`<VideoBanner /> render component on desktop resolution only with requir
 <VideoBanner
   image={
     Object {
-      "main": "image-main.png",
+      "desktop": "image-desktop.png",
       "mobile": "image-mobile.png",
     }
   }
@@ -28,7 +28,7 @@ exports[`<VideoBanner /> render component on desktop resolution only with requir
             className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(image-main.png)",
+                "backgroundImage": "url(image-desktop.png)",
               }
             }
           />
@@ -66,15 +66,15 @@ exports[`<VideoBanner /> render with content 1`] = `
   content={
     Object {
       "buttonTitle": "Текст в кнопке",
-      "clickHandler": [MockFunction],
+      "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
       "href": "#",
-      "text": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
+      "onButtonClick": [MockFunction],
       "title": "Текст ≈40 симовлов. Короткие слова",
     }
   }
   image={
     Object {
-      "main": "image-main.png",
+      "desktop": "image-desktop.png",
       "mobile": "image-mobile.png",
     }
   }
@@ -98,7 +98,7 @@ exports[`<VideoBanner /> render with content 1`] = `
             className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(image-main.png)",
+                "backgroundImage": "url(image-desktop.png)",
               }
             }
           >
@@ -166,7 +166,7 @@ exports[`<VideoBanner /> render with video 1`] = `
 <VideoBanner
   image={
     Object {
-      "main": "image-main.png",
+      "desktop": "image-desktop.png",
       "mobile": "image-mobile.png",
     }
   }
@@ -193,7 +193,7 @@ exports[`<VideoBanner /> render with video 1`] = `
             className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(image-main.png)",
+                "backgroundImage": "url(image-desktop.png)",
               }
             }
           >
@@ -216,11 +216,126 @@ exports[`<VideoBanner /> render with video 1`] = `
 </VideoBanner>
 `;
 
+exports[`<VideoBanner /> render with video and content 1`] = `
+<VideoBanner
+  content={
+    Object {
+      "buttonTitle": "Текст в кнопке",
+      "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
+      "href": "#",
+      "onButtonClick": [MockFunction],
+      "title": "Текст ≈40 симовлов. Короткие слова",
+    }
+  }
+  image={
+    Object {
+      "desktop": "image-desktop.png",
+      "mobile": "image-mobile.png",
+    }
+  }
+  isMuted={false}
+  videoSrc="video.mp4"
+  videoType="video"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      innerPadding="default"
+      mobileInnerPadding="default"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+            style={
+              Object {
+                "backgroundImage": "url(image-desktop.png)",
+              }
+            }
+          >
+            <video
+              autoPlay={true}
+              className="mfui-beta-video-banner__video"
+              loop={true}
+              muted={false}
+            >
+              <source
+                src="video.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div
+              className="mfui-beta-video-banner__content"
+            >
+              <Header
+                as="h1"
+                className="mfui-beta-video-banner__title"
+                color="white"
+                hAlign="inherit"
+              >
+                <h1
+                  className="mfui-beta-header mfui-beta-header_color_white mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
+                >
+                  Текст ≈40 симовлов. Короткие слова
+                </h1>
+              </Header>
+              <div
+                className="mfui-beta-video-banner__text"
+              >
+                <Paragraph
+                  color="clearWhite"
+                  hasMargin={false}
+                >
+                  <p
+                    className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_clearWhite"
+                  >
+                    Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+                  </p>
+                </Paragraph>
+              </div>
+              <Button
+                className="mfui-beta-video-banner__button"
+                href="#"
+                onClick={[MockFunction]}
+              >
+                <a
+                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
+                  disabled={false}
+                  href="#"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="mfui-beta-button__inner"
+                  >
+                    <div
+                      className="mfui-beta-button__content"
+                    >
+                      Текст в кнопке
+                    </div>
+                  </div>
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
 exports[`<VideoBanner /> render with youtube video 1`] = `
 <VideoBanner
   image={
     Object {
-      "main": "image-main.png",
+      "desktop": "image-desktop.png",
       "mobile": "image-mobile.png",
     }
   }
@@ -246,7 +361,7 @@ exports[`<VideoBanner /> render with youtube video 1`] = `
             className="mfui-beta-video-banner__wrapper"
             style={
               Object {
-                "backgroundImage": "url(image-main.png)",
+                "backgroundImage": "url(image-desktop.png)",
               }
             }
           >
