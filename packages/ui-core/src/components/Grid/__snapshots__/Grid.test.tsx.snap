@@ -2,7 +2,7 @@
 
 exports[`<Grid /> it renders Grid with props 1`] = `
 <div
-  className="mfui-beta-grid"
+  className="mfui-beta-grid custom-class-name"
 >
   <div
     className="mfui-beta-grid__container mfui-beta-grid__container_h-align_right mfui-beta-grid__container_v-align_top mfui-beta-grid__container_gutters-left_large mfui-beta-grid__container_gutters-bottom_medium"
