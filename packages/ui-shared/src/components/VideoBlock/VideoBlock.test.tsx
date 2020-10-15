@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import VideoBlock, { Props } from './VideoBlock';
 import { cnCreate } from '@megafon/ui-core';
-
-const props: Props = {
-    mediaSource: 'mediaSource',
-    className: 'test-class-name',
-};
+import VideoBlock from './VideoBlock';
 
 const content = {
     title: 'Test title',
@@ -19,36 +14,31 @@ const content = {
     onButtonClick: jest.fn(),
 };
 
-const cn = cnCreate('mfui-video-block');
+const cn = cnCreate('mfui-beta-video-block');
 
 describe('<VideoBlock />', () => {
     it('it renders VideoBlock with default props', () => {
-        const component = shallow(<VideoBlock mediaSource="mediaSource">Test paragraph text</VideoBlock>);
-        expect(component).toMatchSnapshot();
-    });
-
-    it('it renders VideoBlock with props', () => {
-        const component = shallow(<VideoBlock {...props}>Test paragraph text</VideoBlock>);
+        const component = shallow(<VideoBlock videoSrc="video.mp4" />);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with content', () => {
         const component = shallow(
-            <VideoBlock mediaSource="video.mp4" content={content}>Test paragraph text</VideoBlock>
+            <VideoBlock videoSrc="video.mp4" content={content} />
         );
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with youtube media type', () => {
         const component = shallow(
-            <VideoBlock mediaSource="youtube.com" mediaType="youtube">Test paragraph text</VideoBlock>
+            <VideoBlock videoSrc="youtube" videoType="youtube" />
         );
         expect(component).toMatchSnapshot();
     });
 
     it('should call onClick props', () => {
         const component = shallow(
-            <VideoBlock mediaSource="mediaSource" content={content}>Test paragraph text</VideoBlock>
+            <VideoBlock videoSrc="video.mp4" content={content} />
         );
         const btn = component.find(`.${cn('button')}`);
 
