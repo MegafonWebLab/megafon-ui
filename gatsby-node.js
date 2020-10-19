@@ -63,9 +63,6 @@ exports.onCreateWebpackConfig = args => {
         },
         module: {
             rules: [{
-                test: /\.md$/,
-                use: ['babel-loader', '@mdx-js/loader']
-            }, {
                 test: /\.svg$/,
                 use: [
                     ({ resource }) => ({
