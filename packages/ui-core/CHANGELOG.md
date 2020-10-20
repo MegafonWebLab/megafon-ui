@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.24](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.23...@megafon/ui-core@2.0.0-beta.24) (2020-10-12)
+
+
+### Features
+
+* **textfield:** added inputmode for input ([5762d99](https://github.com/MegafonWebLab/megafon-ui/commit/5762d9996261e23bb9342d435a0562993f648e03))
+
+
+
+
+
+# [2.0.0-beta.23](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.22...@megafon/ui-core@2.0.0-beta.23) (2020-10-02)
+
+
+### Bug Fixes
+
+* **text filed:** separate input params for react input mask ([de6f00e](https://github.com/MegafonWebLab/megafon-ui/commit/de6f00ef3af5fff01b8e2f8fc983b89d7d8a956a))
+
+
+
+
+
+# [2.0.0-beta.22](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.21...@megafon/ui-core@2.0.0-beta.22) (2020-10-01)
+
+
+### Bug Fixes
+
+* **icons:** add new checked_16 icon with normal path ([314fbf1](https://github.com/MegafonWebLab/megafon-ui/commit/314fbf17b14db8070d7795cb91ad7ac4744f17bd))
+
+
+
+
+
+# [2.0.0-beta.21](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.20...@megafon/ui-core@2.0.0-beta.21) (2020-09-29)
+
+
+### Features
+
+* **search:** add className prop ([0502a00](https://github.com/MegafonWebLab/megafon-ui/commit/0502a0098f005f70fb678b9b3c59f726e05ad297))
+
+
+
+
+
+# [2.0.0-beta.20](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.19...@megafon/ui-core@2.0.0-beta.20) (2020-09-25)
+
+
+### Bug Fixes
+
+* **select:** increased z-index ([13c1ae5](https://github.com/MegafonWebLab/megafon-ui/commit/13c1ae518ee102119fba2c55c728b038cf163526))
+
+
+
+
+
+# [2.0.0-beta.19](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.18...@megafon/ui-core@2.0.0-beta.19) (2020-09-25)
+
+
+### Features
+
+* **search:** added Search component ([69ed181](https://github.com/MegafonWebLab/megafon-ui/commit/69ed181093ac94e476b28cf4f02055fc00076862))
+
+
+
+
+
 # [2.0.0-beta.18](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.17...@megafon/ui-core@2.0.0-beta.18) (2020-09-24)
 
 **Note:** Version bump only for package @megafon/ui-core

@@ -80,6 +80,32 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
 </TextField>
 `;
 
+exports[`<TextField /> input should render with inputnode 1`] = `
+<div
+  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default"
+>
+  <div
+    className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
+  >
+    <input
+      className="mfui-beta-text-field__field"
+      disabled={true}
+      id="id"
+      inputMode="numeric"
+      maxLength={4}
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyUp={[MockFunction]}
+      placeholder="placeholder"
+      required={true}
+      type="text"
+    />
+  </div>
+</div>
+`;
+
 exports[`<TextField /> input should render with mask 1`] = `
 <div
   className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default"

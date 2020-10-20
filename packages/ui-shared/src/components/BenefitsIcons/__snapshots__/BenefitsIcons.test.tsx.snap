@@ -2,10 +2,10 @@
 
 exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
 <div
-  className="benefits-icons__className"
+  className="mfui-beta-benefits-icons__className"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -82,10 +82,10 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 1`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -159,10 +159,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 2`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -266,10 +266,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 3`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -411,10 +411,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 4`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -578,10 +578,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -657,10 +657,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -765,10 +765,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -906,10 +906,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -1075,10 +1075,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 1`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -1155,10 +1155,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 2`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -1265,10 +1265,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 3`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -1406,10 +1406,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 4`] = `
 <div
-  className="benefits-icons"
+  className="mfui-beta-benefits-icons"
 >
   <div
-    className="benefits-icons__inner"
+    className="mfui-beta-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"

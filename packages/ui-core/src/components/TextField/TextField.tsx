@@ -65,6 +65,8 @@ export interface ITextFieldProps {
     className?: string;
     /** Custom classes */
     classes?: ITextFieldClasses;
+    /** Inputnode for input */
+    inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
     /** Change handler */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Blur handler */
@@ -112,6 +114,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         verification,
         noticeText,
         inputRef,
+        inputMode,
         classes: {
             input,
         } = {},
@@ -182,16 +185,20 @@ const TextField: React.FC<ITextFieldProps> = ({
         placeholder,
         required,
         maxLength,
+        inputMode,
     };
 
     const inputParams = {
         ...commonParams,
         className: cn('field', input),
         value: inputValue,
-        mask,
-        maskChar,
         onChange: handleInputChange,
         type: isVisiblePassword ? 'text' : type,
+    };
+
+    const inputMaskParams = {
+        mask,
+        maskChar,
     };
 
     const textareaParams = {
@@ -226,7 +233,7 @@ const TextField: React.FC<ITextFieldProps> = ({
             <>
                 {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-input')}
                 {mask
-                    ? <InputMask {...inputParams} inputRef={getFieldNode} />
+                    ? <InputMask {...inputParams}  {...inputMaskParams} inputRef={getFieldNode} />
                     : <input {...inputParams} ref={getFieldNode} />
                 }
                 {!hideIcon && renderIconBlock()}

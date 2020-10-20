@@ -209,6 +209,11 @@ describe('<TextField />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render with inputnode', () => {
+            const wrapper = shallow(<TextField {...commonFieldProps} inputMode="numeric" />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should render with hidden password', () => {
             const wrapper = shallow(
                 <TextField {...commonFieldProps} value="value" type="password" />
