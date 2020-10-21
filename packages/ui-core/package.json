@@ -44,6 +44,7 @@
         }
       }
     },
+    "globalSetup": "<rootDir>/scripts/globalSetup.ts",
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/scripts/styleMock.ts",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/fileMock.ts"
@@ -139,8 +140,10 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/runtime": "^7.8.4",
     "@popperjs/core": "^2.5.3",
+    "@datepicker-react/hooks": "^2.7.0",
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
+    "date-fns": "^2.16.1",
     "deep-equal": "^1.1.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",

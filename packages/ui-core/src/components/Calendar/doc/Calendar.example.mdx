@@ -1,0 +1,89 @@
+import { Playground } from 'docz';
+import Calendar from '../Calendar';
+import { DemoCalendarWithHandleChange, DemoCalendarWithBlockedDates } from './Calendar.docz';
+
+## Базовое использование
+
+<Playground>
+    <div style={{margin: 'auto', maxWidth: '320px'}}>
+        <Calendar />
+    </div>
+</Playground>
+
+## С возможностью выбора одной даты и стилизованной оберткой
+
+<Playground>
+    <div style={{
+        padding: '0 18px',
+        margin: 'auto',
+        boxShadow: '0 2px 9px rgba(0, 0, 0, 0.15)',
+        maxWidth: '320px',
+    }}>
+        <Calendar isSingleDate />
+    </div>
+</Playground>
+
+## С недоступными датами
+
+```javascript
+const date = new Date();
+const currentMonth = date.getMonth();
+const currentYear = date.getFullYear();
+const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
+const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
+const unavailableDates = [
+    new Date(currentYear, currentMonth, 12),
+    new Date(currentYear, currentMonth, 15),
+    new Date(currentYear, currentMonth, 18),
+];
+
+export const DemoCalendarWithBlockedDates = ({ children }) =>
+    children({ minBookingDate, maxBookingDate, unavailableDates });
+```
+
+<Playground>
+    <DemoCalendarWithBlockedDates>
+        {({ minBookingDate, maxBookingDate, unavailableDates }) =>
+            <div style={{margin: 'auto', maxWidth: '320px'}}>
+                <Calendar
+                    unavailableDates={unavailableDates}
+                    minBookingDate={minBookingDate}
+                    maxBookingDate={maxBookingDate}
+                />
+            </div>
+        }
+    </DemoCalendarWithBlockedDates>
+</Playground>
+
+## С предвыбранным интервалом дат
+
+```javascript
+export const DemoCalendarWithHandleChange = ({ children }) => {
+    const [from, setFrom] = React.useState<string | null>(formatDate(startDate, 'dd.MM.yyyy'));
+    const [to, setTo] = React.useState<string | null>(formatDate(endDate, 'dd.MM.yyyy'));
+
+    const handleChange = (currentStartDate, currentEndDate) => {
+        setFrom(formatDate(currentStartDate, 'dd.MM.yyyy'));
+        setTo(currentEndDate ? formatDate(currentEndDate, 'dd.MM.yyyy') : currentEndDate);
+    };
+
+    return (
+        <div style={{ textAlign: 'center' }}>
+            <h3 style={{ marginBottom: '32px' }}>
+                {to ? `Выбран диапазон дат с ${from} до ${to}` : `Выбрана начальная дата ${from}`}
+            </h3>
+            {children({ handleChange, startDate, endDate })}
+        </div>
+    );
+};
+```
+
+<Playground>
+    <DemoCalendarWithHandleChange>
+        {({ handleChange, startDate, endDate }) =>
+            <div style={{ textAlign: 'center' }}>
+                <Calendar handleChange={handleChange} startDate={startDate} endDate={endDate} />
+            </div>
+        }
+    </DemoCalendarWithHandleChange>
+</Playground>

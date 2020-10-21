@@ -1,0 +1,109 @@
+@import '~styles/base.less';
+
+@b: e( '.mfui-beta-day');
+
+@{b} {
+    .Graphik();
+    .small();
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    line-height: 24px;
+    color: @freshAsphalt;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    appearance: none;
+
+    &:hover:not(&_active):not(&_between):not(&:disabled) {
+        border-radius: 50%;
+        background-color: @spbSky0;
+    }
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.3;
+    }
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus,
+    &_active
+    {
+        position: relative;
+        border-radius: 50% !important;
+        color: @clearWhite;
+        background-color: @green;
+    }
+
+    &_active + &_active:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: @spbSky1;
+        height: 32px;
+        width: 32px;
+        top: 0;
+        left: -22px;
+        z-index: -1;
+    }
+
+    &_between {
+        position: relative;
+        background-color: @spbSky1;
+        border-radius: 0;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: -20px;
+            padding: 0 20px;
+            height: 32px;
+            background-color: @spbSky1;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -25px;
+            width: 40px;
+            height: 32px;
+            background-color: @spbSky1;
+        }
+    }
+
+    &_sunday, &_last {
+        border-radius: 0 50% 50% 0;
+
+        &:after {
+            display: none !important;
+        }
+    }
+
+    &_monday, &_first {
+        border-radius: 50% 0 0 50%;
+
+        &:before {
+            display: none !important;
+        }
+    }
+
+    &_sunday&_first {
+        border-radius: 50%;
+    }
+
+    &__label {
+        position: relative;
+        z-index: 99;
+    }
+}
