@@ -1,0 +1,91 @@
+@import "~styles/base.less";
+
+@b: e(".mfui-calendar-day");
+
+@{b} {
+    .Graphik();
+    .commonFont();
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-size: 12px;
+    color: @freshAsphalt;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    &:hover:not(&_active):not(&_between){
+        border-radius: 50%;
+        background-color: @spbSky0;
+    }
+
+    &:focus {
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.15);
+    }
+
+    &_active {
+        z-index: 2;
+        color: @clearWhite;
+        background-color: @green;
+    }
+
+    &_between {
+        z-index: 1;
+        position: relative;
+        background-color: @spbSky1;
+        border-radius: 0;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: -20px;
+            padding: 0 20px;
+            height: 32px;
+            background-color: @spbSky1;
+
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            right: -25px;
+            width: 25px;
+            height: 32px;
+            background-color: @spbSky1;
+        }
+    }
+
+    &_sunday, &_last {
+        border-radius: 0 50% 50% 0;
+        &::after {
+            display: none;
+        }
+    }
+
+
+    &_monday, &_first{
+        border-radius: 50% 0 0 50%;
+        &::before {
+            display: none;
+        }
+    }
+
+    &_sunday&_first {
+        border-radius: 50%;
+    }
+
+    &__lable {
+        position: relative;
+        z-index: 99;
+    }
+}

@@ -1,0 +1,65 @@
+@import '~styles/base.less';
+
+@b: e('.mfui-calendar-month');
+
+@{b} {
+    .Graphik();
+    .commonFont();
+    position: relative;
+    padding: 28px 0;
+    width: 320px;
+    background-color: @clearWhite;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        width: 282px;
+        margin-bottom: 20px;
+        align-items: center;
+        text-transform: capitalize;
+
+        strong {
+            width: 224px;
+            text-align: center;
+        }
+
+        svg {
+            height: 24.5px;
+            fill: @freshAsphalt;
+            cursor: pointer;
+            -webkit-user-select: none;
+        }
+    }
+
+    &__weekday-lables {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 22px;
+        width: 272px;
+        padding-bottom: 13px;
+        border-bottom: 1px solid @spbSky1;
+    }
+
+    &__weekday {
+        color: @fullBlack;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: capitalize;
+        text-align: center;
+        width: 20px;
+        height: 16px;
+    }
+
+    &__days {
+        display: grid;
+        width: 284px;
+        margin-top: 8px;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: 10px;
+        row-gap: 8px;
+    }
+}
