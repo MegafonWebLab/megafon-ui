@@ -1,0 +1,36 @@
+import { Playground } from 'docz';
+import Calendar from '../Calendar';
+import { WithInitialDates, WithHandleChange, WithTwoMonths } from './Calendar.docz';
+
+## Базовое использование
+
+<Playground>
+    <Calendar/>
+</Playground>
+
+
+## С предвыбранным интервалом дат
+
+<Playground>
+    <WithInitialDates>
+        {({initials}) => <Calendar initials={initials}/>}
+    </WithInitialDates>
+</Playground>
+
+## Пример обработки изменений
+
+<Playground>
+    <WithHandleChange>
+        {({handleChange, initials}) => <Calendar handleChange={handleChange} initials={initials} />}
+    </WithHandleChange>
+</Playground>
+
+## Отображение двух месяцев сразу
+
+<Playground>
+    <WithTwoMonths>
+        {({handleChange, initials}) => <Calendar handleChange={handleChange} initials={initials} numberOfMonths={2} />}
+    </WithTwoMonths>
+</Playground>
+
+

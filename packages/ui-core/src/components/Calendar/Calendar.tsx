@@ -11,16 +11,16 @@ interface ICalendarClasses {
 }
 
 export interface ICalendarProps {
-    /** Outer classes for Calendar and internal components */
+    /** Классы для модификации компонента */
     classes?: ICalendarClasses;
-    /** Number of visible months, 1 by default */
+    /** Число отображаемых месяцев, по умолчанию - 1 */
     numberOfMonths?: number;
-    /** Default Start and End dates */
+    /** Интервал дат по умолчанию — объект со свойствами starDate: Date и endDate: Date */
     initials?: Initials;
-    /** Position of Calendar to appear */
+    /** Позиция календаря по отношению к переданному компоненту (Еще не реализовано) */
     // TODO: Currently controls only triangle, should be removed upgraded for mor functionality.
     position?: 'top' | 'right' | 'bottom' | 'left';
-    /** Change handler, receives object with selected startDate and endDate as a argument */
+    /** Обработчик изменений, получает объект с выбранными startDate и endDate в качестве аргументов */
     handleChange?: (date: OnDatesChangeProps) => void;
 }
 
