@@ -4,51 +4,33 @@
 @popperRight: ~"[data-popper-placement='right']";
 @popperTop: ~"[data-popper-placement='top']";
 @popperBottom: ~"[data-popper-placement='bottom']";
+@popperEscaped: ~"[data-popper-escaped='true']";
 @popperOffset: 14px;
-@arrowContainerOffset: @popperOffset + 1;
-@arrowContainerPosition: calc(~'100% - @{arrowContainerOffset}');
 @arrowSize: 12px;
+@arrowContainerOffset: @popperOffset + @arrowSize / 2;
+@arrowContainerPosition: calc(~'100% - @{arrowContainerOffset}');
 
 .arrowSize() {
     height: @arrowSize;
     width: @arrowSize;
 }
 
-.arrowHorizontalEdgeContainer() {
-    height: @arrowSize;
-    width: @arrowSize * 3;
-}
-
-.arrowVerticalEdgeContainer() {
-    height: @arrowSize * 3;
-    width: @arrowSize;
-}
-
 .arrow() {
     .arrowSize();
     content: '';
-    background-color: @clearWhite;
     transform: rotate(45deg);
     position: absolute;
-    .shadow();
-}
-
-.shadow() {
-    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.15);
 }
 
 @{b} {
+    padding: @popperOffset;
+    pointer-events: none;
     visibility: hidden;
     z-index: 100;
 
     &_open {
         visibility: visible;
-    }
-
-    &__content {
-        display: block;
-        background-color: @clearWhite;
-        .shadow();
+        pointer-events: all;
     }
 
     &_size_small {
@@ -63,66 +45,42 @@
         }
     }
 
-    &@{popperRight} {
-        padding-left: @popperOffset;
-    }
-
-    &@{popperLeft} {
-        padding-right: @popperOffset;
-    }
-
-    &@{popperTop} {
-        padding-bottom: @popperOffset;
-    }
-
-    &@{popperBottom} {
-        padding-top: @popperOffset;
-    }
-
     &__arrow-container {
-        .arrowHorizontalEdgeContainer();
-        overflow: hidden;
+        position: absolute;
+        .arrowSize();
 
         &:before {
             .arrow();
+            background-color: @clearWhite;
+        }
+
+        &_shadow {
+            z-index: -1;
+
+            &:before {
+                .arrow();
+                box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.15);
+            }
         }
     }
 
     &@{popperRight} > &__arrow-container {
-        .arrowVerticalEdgeContainer();
         right: @arrowContainerPosition;
-
-        &:before {
-            left: @arrowSize / 2;
-            top: @arrowSize;
-        }
     }
 
     &@{popperLeft} > &__arrow-container {
-        .arrowVerticalEdgeContainer();
         left: @arrowContainerPosition;
-
-        &:before {
-            right: @arrowSize / 2;
-            top: @arrowSize;
-        }
     }
 
     &@{popperTop} > &__arrow-container {
         top: @arrowContainerPosition;
-
-        &:before {
-            left: @arrowSize;
-            bottom: @arrowSize / 2;
-        }
     }
 
     &@{popperBottom} > &__arrow-container {
         bottom: @arrowContainerPosition;
+    }
 
-        &:before {
-            left: @arrowSize;
-            top: @arrowSize / 2;
-        }
+    &@{popperEscaped} {
+        pointer-events: none;
     }
 }

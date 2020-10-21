@@ -56,17 +56,15 @@ export const DemoTooltipWrapperWithTrigger = ({children}) => {
     });
 };
 
-export const OpenStateWrapper = ({ children }) => {
-    const [ isOpened, setIsOpened ] = React.useState(false);
-    const toggleDrop = () => setIsOpened(o => !o);
-    const openDrop = () => setIsOpened(true);
-    const closeDrop = () => setIsOpened(false);
+export const OpenStateWrapper = ({ children, isOpen = false }) => {
+    const [ isOpened, setIsOpened ] = React.useState(isOpen);
+    const handleOpen = () => setIsOpened(true);
+    const handleClose = () => setIsOpened(false);
     return (
         children({
             isOpened,
-            toggleDrop,
-            openDrop,
-            closeDrop,
+            handleOpen,
+            handleClose,
         })
     );
 };
