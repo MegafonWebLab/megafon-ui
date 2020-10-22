@@ -7,8 +7,8 @@
 @popperEscaped: ~"[data-popper-escaped='true']";
 @popperOffset: 14px;
 @arrowSize: 12px;
-@arrowContainerOffset: @popperOffset + @arrowSize / 2;
-@arrowContainerPosition: calc(~'100% - @{arrowContainerOffset}');
+@arrowOffset: @popperOffset + @arrowSize / 2;
+@arrowPosition: calc(~'100% - @{arrowOffset}');
 
 .arrowSize() {
     height: @arrowSize;
@@ -45,7 +45,7 @@
         }
     }
 
-    &__arrow-container {
+    &__arrow {
         position: absolute;
         .arrowSize();
 
@@ -64,20 +64,20 @@
         }
     }
 
-    &@{popperRight} > &__arrow-container {
-        right: @arrowContainerPosition;
+    &@{popperRight} > &__arrow {
+        right: @arrowPosition;
     }
 
-    &@{popperLeft} > &__arrow-container {
-        left: @arrowContainerPosition;
+    &@{popperLeft} > &__arrow {
+        left: @arrowPosition;
     }
 
-    &@{popperTop} > &__arrow-container {
-        top: @arrowContainerPosition;
+    &@{popperTop} > &__arrow {
+        top: @arrowPosition;
     }
 
-    &@{popperBottom} > &__arrow-container {
-        bottom: @arrowContainerPosition;
+    &@{popperBottom} > &__arrow {
+        bottom: @arrowPosition;
     }
 
     &@{popperEscaped} {

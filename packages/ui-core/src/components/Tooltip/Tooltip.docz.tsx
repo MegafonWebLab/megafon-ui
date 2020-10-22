@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Trigger } from './Tooltip';
+import { ISelectItem, SelectItemValueType } from '..//Select/Select';
 
 export const wrapperBlockStyles: React.CSSProperties = {
     display: 'grid',
@@ -50,14 +52,27 @@ export const DemoTooltipWrapper = (
 
 export const DemoTooltipWrapperWithTrigger = ({children}) => {
     const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+    const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
+    const [ triggerType, setTriggerType] = React.useState(Trigger.CONTROLLED);
+
+    const handleTriggerChange = React.useCallback((trigger) => {
+        if (!isTriggered) {
+            setIsTriggered(true);
+            setTriggerType(trigger);
+        }
+    }, [isTriggered]);
+
     return children({
         setTriggerElement,
         triggerElement,
+        handleTriggerChange,
+        triggerType,
     });
 };
 
-export const OpenStateWrapper = ({ children, isOpen = false }) => {
+export const ControlledWrapper = ({ children, isOpen = false }) => {
     const [ isOpened, setIsOpened ] = React.useState(isOpen);
+    const handleToggle = () => setIsOpened(open => !open);
     const handleOpen = () => setIsOpened(true);
     const handleClose = () => setIsOpened(false);
     return (
@@ -65,6 +80,37 @@ export const OpenStateWrapper = ({ children, isOpen = false }) => {
             isOpened,
             handleOpen,
             handleClose,
+            handleToggle,
+        })
+    );
+};
+
+export const triggerTypes: ISelectItem[] = [
+    {
+        value: Trigger.CONTROLLED,
+        title: Trigger.CONTROLLED,
+    },
+    {
+        value: Trigger.HOVER,
+        title: Trigger.HOVER,
+    },
+    {
+        value: Trigger.CLICK,
+        title: Trigger.CLICK,
+    },
+];
+
+export const DemoSelectTriggerWrapper = ({children}) => {
+    const { value } = triggerTypes[0];
+    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+        setCurrentValue(data.value);
+    };
+
+    return (
+        children({
+            onSelect: handleSelect,
+            currentValue: currentValue,
         })
     );
 };

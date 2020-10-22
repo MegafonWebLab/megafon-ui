@@ -25,7 +25,7 @@ type SizeType = typeof Size[keyof typeof Size];
 export const Trigger = {
     HOVER: 'hover',
     CLICK: 'click',
-    NONE: 'none',
+    CONTROLLED: 'controlled',
  } as const;
 
 type TriggerType = typeof Trigger[keyof typeof Trigger];
@@ -63,6 +63,10 @@ const Tooltip: React.FC<ITooltipProps>  = ({
 }) => {
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
     const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
+
+    const [isOpen, setIsOpen] = useState(isOpened);
+    useEffect(() => setIsOpen(isOpened), [isOpened]);
+
     const options = useMemo(() => ({
         placement,
         modifiers: [
@@ -76,55 +80,57 @@ const Tooltip: React.FC<ITooltipProps>  = ({
                     fallbackPlacements: ['left', 'right' , 'top' , 'bottom'],
                 },
             },
+            {
+                name: 'eventListeners',
+                options: {
+                    scroll: isOpen,
+                    resize: isOpen,
+                },
+            },
         ],
-    }), [placement, arrowElement]);
-    const { styles, attributes } = usePopper(triggerElement, popperElement, options);
+    }), [placement, arrowElement, isOpen]);
 
-    const [isTriggered, setIsTriggered] = useState(false);
-    const [isOpen, setIsOpen] = useState(isOpened);
-    useEffect(() => setIsOpen(isOpened), [isOpened]);
+    const { styles, attributes, update } = usePopper(triggerElement, popperElement, options);
 
-    const handleOpen = useCallback((e: MouseEvent): void => {
-        setIsOpen(true);
-        onOpen && onOpen(e);
-    }, [onOpen]);
+    useEffect(() => {
+        update && update();
+    }, [children, update]);
 
-    const handleClose = useCallback((e: MouseEvent): void => {
-        setIsOpen(false);
-        onClose && onClose(e);
-    }, [onClose]);
+    const [isTouchDevice, setIsTouchDevice ] = useState(false);
+    useEffect(() => setIsTouchDevice(detectTouch()), [detectTouch]);
+
+    const clickEvent = useMemo(() => isTouchDevice ? 'touchstart' : 'click', [isTouchDevice]);
+    const triggerEvent: TriggerType = useMemo(() => isTouchDevice ? 'click' : trigger, [isTouchDevice, trigger]);
 
     const handleMouseEnter = useCallback((e: MouseEvent): void => {
-        if (!isTriggered) {
-            setIsTriggered(true);
-        }
         if (!isOpen) {
-            handleOpen(e);
+            setIsOpen(true);
+            onOpen && onOpen(e);
         }
-    }, [isTriggered, isOpen, handleOpen]);
+    }, [isOpen, onOpen]);
 
     const handleClick = useCallback((e: MouseEvent): void => {
-        if (!isTriggered) {
-            setIsTriggered(true);
+        setIsOpen(open => !open);
+        if (!isOpen) {
+            onOpen && onOpen(e);
+        } else {
+            onClose && onClose(e);
         }
-        setIsOpen(o => !o);
-        !isOpen ? onOpen && onOpen(e) : onClose && onClose(e);
-    }, [isTriggered, isOpen, onClose, onOpen]);
+    }, [isOpen, onOpen, onClose]);
 
     const handleOutsideEvent = useCallback((e: MouseEvent): void => {
         const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
         const isTargetInTrigger = e.target instanceof Element && triggerElement && triggerElement.contains(e.target);
         if (!isTargetInPopper && !isTargetInTrigger) {
-            handleClose(e);
+            setIsOpen(false);
+            onClose && onClose(e);
         }
-    }, [handleClose, triggerElement, popperElement]);
-
-    const event: TriggerType = useMemo(() => detectTouch() ? 'click' : trigger, [detectTouch, trigger]);
+    }, [onClose, triggerElement, popperElement]);
 
     useEffect(() => {
-        if (event === Trigger.HOVER) {
+        if (triggerEvent === Trigger.HOVER) {
             triggerElement && triggerElement.addEventListener('mouseenter', handleMouseEnter);
-            if (isTriggered && isOpen) {
+            if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
@@ -135,43 +141,42 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             };
         }
     }, [
-        event, isOpen, isTriggered, triggerElement,
+        triggerEvent, isOpen, triggerElement,
         handleOutsideEvent, handleMouseEnter,
     ]);
 
     useEffect(() => {
-        if (event === Trigger.CLICK) {
-            triggerElement && triggerElement.addEventListener('click', handleClick);
-            if (isTriggered && isOpen) {
-                document.addEventListener('click', handleOutsideEvent);
+        if (triggerEvent === Trigger.CLICK) {
+            triggerElement && triggerElement.addEventListener(clickEvent, handleClick);
+            if (isOpen) {
+                document.addEventListener(clickEvent, handleOutsideEvent);
             } else {
-                document.removeEventListener('click', handleOutsideEvent);
+                document.removeEventListener(clickEvent, handleOutsideEvent);
             }
             return () => {
-                triggerElement && triggerElement.removeEventListener('click', handleClick);
-                document.removeEventListener('click', handleOutsideEvent);
+                triggerElement && triggerElement.removeEventListener(clickEvent, handleClick);
+                document.removeEventListener(clickEvent, handleOutsideEvent);
             };
         }
     }, [
-        event, isOpen, isTriggered, triggerElement,
+        triggerEvent, isOpen, triggerElement,
         handleOutsideEvent, handleClick,
     ]);
 
     return (
         <div
-            className={cn([className], { size , open: isOpen })}
+            className={cn([className], { size, open: isOpen })}
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}
             >
             <div
                 ref={setArrowElement}
-                className={cn('arrow-container')}
+                className={cn('arrow')}
                 style={styles.arrow}
             />
             <div
-                ref={setArrowElement}
-                className={cn('arrow-container', { shadow: true })}
+                className={cn('arrow', { shadow: true })}
                 style={styles.arrow}
             />
             <Tile shadowLevel="high" className={cn('content')}>
@@ -189,7 +194,7 @@ Tooltip.propTypes = {
         const prop = props[propName];
         if ((prop === undefined)) {
             return new Error(
-                `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`${prop}\`.`
+                `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`undefined\`.`
             );
         }
         if (prop && prop.nodeType !== 1) {
