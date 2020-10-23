@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Trigger } from './Tooltip';
+import { TriggerEvent } from './Tooltip';
 import { ISelectItem, SelectItemValueType } from '..//Select/Select';
 
 export const wrapperBlockStyles: React.CSSProperties = {
@@ -33,84 +33,63 @@ export const DemoBlockWrapper = (
     );
 };
 
-export const DemoTooltipWrapper = (
-    props: {
-        customStyles: React.CSSProperties;
-        children: React.ReactNode;
-    }
-) => {
-    const { customStyles, children } = props;
-    return (
-        <div style={{
-            ...wrapperTooltipStyles,
-            ...customStyles,
-        }}>
-            {children}
-        </div>
-    );
-};
-
-export const DemoTooltipWrapperWithTrigger = ({children}) => {
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
     const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
     const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
-    const [ triggerType, setTriggerType] = React.useState(Trigger.CONTROLLED);
+    const [ triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
 
     const handleTriggerChange = React.useCallback((trigger) => {
         if (!isTriggered) {
             setIsTriggered(true);
-            setTriggerType(trigger);
+            setTriggerEvent(trigger);
         }
     }, [isTriggered]);
 
     return children({
-        setTriggerElement,
         triggerElement,
+        setTriggerElement,
+        triggerEvent,
         handleTriggerChange,
-        triggerType,
     });
 };
 
-export const ControlledWrapper = ({ children, isOpen = false }) => {
-    const [ isOpened, setIsOpened ] = React.useState(isOpen);
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
     const handleToggle = () => setIsOpened(open => !open);
     const handleOpen = () => setIsOpened(true);
     const handleClose = () => setIsOpened(false);
-    return (
-        children({
-            isOpened,
-            handleOpen,
-            handleClose,
-            handleToggle,
-        })
-    );
+    return children({
+        isOpened,
+        handleOpen,
+        handleClose,
+        handleToggle,
+    });
 };
 
-export const triggerTypes: ISelectItem[] = [
+export const triggerEvents: ISelectItem[] = [
     {
-        value: Trigger.CONTROLLED,
-        title: Trigger.CONTROLLED,
+        value: TriggerEvent.CONTROLLED,
+        title: TriggerEvent.CONTROLLED,
     },
     {
-        value: Trigger.HOVER,
-        title: Trigger.HOVER,
+        value: TriggerEvent.HOVER,
+        title: TriggerEvent.HOVER,
     },
     {
-        value: Trigger.CLICK,
-        title: Trigger.CLICK,
+        value: TriggerEvent.CLICK,
+        title: TriggerEvent.CLICK,
     },
 ];
 
 export const DemoSelectTriggerWrapper = ({children}) => {
-    const { value } = triggerTypes[0];
+    const { value } = triggerEvents[0];
     const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
     const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
         setCurrentValue(data.value);
     };
 
-    return (
-        children({
-            onSelect: handleSelect,
-            currentValue: currentValue,
-        })
-    );
+    return children({
+        onSelect: handleSelect,
+        currentValue: currentValue,
+    });
 };

@@ -5,14 +5,13 @@ route: components/tooltip
 ---
 
 import { Playground, Props } from 'docz';
-import Tooltip, { Placement, Trigger } from './Tooltip';
+import Tooltip, { Placement, TriggerEvent } from './Tooltip';
 import {
     DemoBlockWrapper,
-    DemoTooltipWrapper,
-    DemoTooltipWrapperWithTrigger,
+    DemoTooltipWithTriggerWrapper,
     DemoSelectTriggerWrapper,
-    ControlledWrapper,
-    triggerTypes,
+    DemoControlledTooltipWrapper,
+    triggerEvents,
 } from './Tooltip.docz';
 import Paragraph from '../Paragraph/Paragraph';
 import TextField from '../TextField/TextField';
@@ -26,12 +25,22 @@ import Select from '../Select/Select';
 
 <Props of={Tooltip} />
 
-#
-## Trigger
+## Trigger event
+
+```javascript
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
+    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+
+    return children({
+        triggerElement,
+        setTriggerElement,
+    });
+};
+```
 
 <Playground>
     <DemoBlockWrapper>
-        <DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
@@ -44,34 +53,44 @@ import Select from '../Select/Select';
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
-        <DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
                         <Button fullWidth>Click</Button>
                     </span>
                     <Tooltip
-                        trigger="click"
+                        triggerEvent="click"
                         triggerElement={triggerElement}
                     >
                         Click trigger
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
     </DemoBlockWrapper>
 </Playground>
 
-#
 ## Placements
+
+```javascript
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
+    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+
+    return children({
+        triggerElement,
+        setTriggerElement,
+    });
+};
+```
 
 <Playground>
     <DemoBlockWrapper customStyles={{
         gridTemplateColumns: 'auto 100px',
         gap: 50,
     }}>
-        <DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
@@ -86,8 +105,8 @@ import Select from '../Select/Select';
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
-        <DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
@@ -103,8 +122,8 @@ import Select from '../Select/Select';
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
-        <DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
@@ -120,8 +139,8 @@ import Select from '../Select/Select';
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
-        <DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
@@ -137,16 +156,26 @@ import Select from '../Select/Select';
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
     </DemoBlockWrapper>
 </Playground>
 
-#
 ## Sizes
+
+```javascript
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
+    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+
+    return children({
+        triggerElement,
+        setTriggerElement,
+    });
+};
+```
 
 <Playground>
     <DemoBlockWrapper>
-        <DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <Paragraph hasMargin={false}>
@@ -164,8 +193,8 @@ import Select from '../Select/Select';
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
-        <DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <Paragraph hasMargin={false}>
@@ -184,79 +213,147 @@ import Select from '../Select/Select';
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
     </DemoBlockWrapper>
 </Playground>
 
-#
-## Set trigger on first interactions with Tooltip when it open
+## Set a trigger event on first interaction with Tooltip when it's opened
+
+```javascript
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
+    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+    const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
+    const [ triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
+
+    const handleTriggerChange = React.useCallback((trigger) => {
+        if (!isTriggered) {
+            setIsTriggered(true);
+            setTriggerEvent(trigger);
+        }
+    }, [isTriggered]);
+
+    return children({
+        setTriggerElement,
+        triggerElement,
+        handleTriggerChange,
+        triggerEvent,
+    });
+};
+```
 
 <Playground>
     <DemoBlockWrapper>
-        <DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWithTriggerWrapper>
             {({
                 triggerElement,
                 setTriggerElement,
                 handleTriggerChange,
-                triggerType,
+                triggerEvent,
             }) => (
                 <>
                     <span
-                        onMouseEnter={() => handleTriggerChange(Trigger.HOVER)}
+                        onMouseEnter={() => handleTriggerChange(TriggerEvent.HOVER)}
                         ref={setTriggerElement}
                         >
-                        <Button fullWidth>Current trigger is {triggerType}</Button>
+                        <Button fullWidth>Current trigger is {triggerEvent}</Button>
                     </span>
                     <Tooltip
                         isOpened={true}
-                        trigger={triggerType}
+                        triggerEvent={triggerEvent}
                         triggerElement={triggerElement}
                     >
-                        {triggerType}
+                        {triggerEvent}
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
-        <DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
+        <DemoTooltipWithTriggerWrapper>
             {({
                 triggerElement,
                 setTriggerElement,
                 handleTriggerChange,
-                triggerType,
+                triggerEvent,
             }) => (
                 <>
                     <span
-                        onMouseEnter={() => handleTriggerChange(Trigger.CLICK)}
+                        onMouseEnter={() => handleTriggerChange(TriggerEvent.CLICK)}
                         ref={setTriggerElement}
                         >
-                        <Button fullWidth>Current trigger is {triggerType}</Button>
+                        <Button fullWidth>Current trigger is {triggerEvent}</Button>
                     </span>
                     <Tooltip
                         isOpened={true}
-                        trigger={triggerType}
+                        triggerEvent={triggerEvent}
                         triggerElement={triggerElement}
                     >
-                        {triggerType}
+                        {triggerEvent}
                     </Tooltip>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
     </DemoBlockWrapper>
 </Playground>
 
-#
-## Change trigger
+## Change trigger event on select
+
+```javascript
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
+    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+
+    return children({
+        triggerElement,
+        setTriggerElement,
+    });
+};
+
+export const triggerEvents: ISelectItem[] = [
+    {
+        value: TriggerEvent.CONTROLLED,
+        title: TriggerEvent.CONTROLLED,
+    },
+    {
+        value: TriggerEvent.HOVER,
+        title: TriggerEvent.HOVER,
+    },
+    {
+        value: TriggerEvent.CLICK,
+        title: TriggerEvent.CLICK,
+    },
+];
+
+export const DemoSelectTriggerWrapper = ({children}) => {
+    const { value } = triggerEvents[0];
+    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+        setCurrentValue(data.value);
+    };
+
+    return children({
+        onSelect: handleSelect,
+        currentValue: currentValue,
+    });
+};
+
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const handleToggle = () => setIsOpened(open => !open);
+    return children({
+        isOpened,
+        handleToggle,
+    });
+};
+```
 
 <Playground>
     <DemoBlockWrapper customStyles={{
         gridTemplateColumns: 'auto',
         gap: 50
     }}>
-        <DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
             <DemoSelectTriggerWrapper>
                 {({ onSelect, currentValue }) => (
-                    <ControlledWrapper isOpen={true}>
+                    <DemoControlledTooltipWrapper isOpen={true}>
                         {({
                             isOpened,
                             handleToggle
@@ -268,7 +365,7 @@ import Select from '../Select/Select';
                                     </span>
                                     <Tooltip
                                         isOpened={isOpened}
-                                        trigger={currentValue}
+                                        triggerEvent={currentValue}
                                         triggerElement={triggerElement}
                                     >
                                         {currentValue}
@@ -279,38 +376,59 @@ import Select from '../Select/Select';
                                         label="Change trigger"
                                         onSelect={onSelect}
                                         placeholder="Choose trigger"
-                                        items={triggerTypes}
+                                        items={triggerEvents}
                                         currentValue={currentValue}
                                     />
                                 </div>
                                 <Button
                                     fullWidth
                                     onClick={handleToggle}
-                                    disabled={currentValue !== Trigger.CONTROLLED}
+                                    disabled={currentValue !== TriggerEvent.CONTROLLED}
                                 >
                                     Toggle Tooltip
                                 </Button>
                             </>
                         )}
-                    </ControlledWrapper>
+                    </DemoControlledTooltipWrapper>
                 )}
             </DemoSelectTriggerWrapper>
         )}
-        </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
     </DemoBlockWrapper>
 </Playground>
 
-#
-## Full controlled from outside
+## Controlled from outside
+
+```javascript
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
+    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+
+    return children({
+        triggerElement,
+        setTriggerElement,
+    });
+};
+
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const handleOpen = () => setIsOpened(true);
+    const handleClose = () => setIsOpened(false);
+    return children({
+        isOpened,
+        handleOpen,
+        handleClose,
+    });
+};
+```
 
 <Playground>
     <DemoBlockWrapper customStyles={{
         gridTemplateColumns: 'auto',
         gap: 50
     }}>
-        <DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
-                <ControlledWrapper>
+                <DemoControlledTooltipWrapper>
                     {({ isOpened, handleOpen, handleClose}) => (
                         <>
                             <span
@@ -326,8 +444,8 @@ import Select from '../Select/Select';
                                 />
                             </span>
                             <Tooltip
-                                trigger="controlled"
                                 isOpened={isOpened}
+                                triggerEvent="controlled"
                                 triggerElement={triggerElement}
                             >
                                 <Paragraph hasMargin={false}>
@@ -336,24 +454,45 @@ import Select from '../Select/Select';
                             </Tooltip>
                         </>
                     )}
-                </ControlledWrapper>
+                </DemoControlledTooltipWrapper>
             )}
-        </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
     </DemoBlockWrapper>
 </Playground>
 
-#
-## Controlled from outside, with default Tooltip handlers
+## Controlled from outside, with default Tooltip trigger event handlers
+
+```javascript
+export const DemoTooltipWithTriggerWrapper = ({children}) => {
+    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+
+    return children({
+        triggerElement,
+        setTriggerElement,
+    });
+};
+
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const handleOpen = () => setIsOpened(true);
+    const handleClose = () => setIsOpened(false);
+    return children({
+        isOpened,
+        handleOpen,
+        handleClose,
+    });
+};
+```
 
 <Playground>
     <DemoBlockWrapper>
-        <DemoTooltipWrapperWithTrigger>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
                         <Button fullWidth>Hover</Button>
                     </span>
-                    <ControlledWrapper>
+                    <DemoControlledTooltipWrapper>
                         {({ isOpened, handleOpen, handleClose}) => (
                             <Tooltip
                                 onOpen={handleOpen}
@@ -367,23 +506,23 @@ import Select from '../Select/Select';
                                 <Button onClick={handleClose}>Close</Button>
                             </Tooltip>
                         )}
-                    </ControlledWrapper>
+                    </DemoControlledTooltipWrapper>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
-        <DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
+        <DemoTooltipWithTriggerWrapper>
             {({triggerElement, setTriggerElement}) => (
                 <>
                     <span ref={setTriggerElement}>
                         <Button fullWidth>Click</Button>
                     </span>
-                    <ControlledWrapper>
+                    <DemoControlledTooltipWrapper>
                         {({ isOpened, handleOpen, handleClose}) => (
                             <Tooltip
                                 onOpen={handleOpen}
                                 onClose={handleClose}
                                 isOpened={isOpened}
-                                trigger="click"
+                                triggerEvent="click"
                                 triggerElement={triggerElement}
                             >
                                 <Paragraph>
@@ -392,9 +531,9 @@ import Select from '../Select/Select';
                                 <Button onClick={handleClose}>Close</Button>
                             </Tooltip>
                         )}
-                    </ControlledWrapper>
+                    </DemoControlledTooltipWrapper>
                 </>
             )}
-        </DemoTooltipWrapperWithTrigger>
+        </DemoTooltipWithTriggerWrapper>
     </DemoBlockWrapper>
 </Playground>

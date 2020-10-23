@@ -22,13 +22,13 @@ export const Size = {
 
 type SizeType = typeof Size[keyof typeof Size];
 
-export const Trigger = {
+export const TriggerEvent = {
     HOVER: 'hover',
     CLICK: 'click',
     CONTROLLED: 'controlled',
  } as const;
 
-type TriggerType = typeof Trigger[keyof typeof Trigger];
+type TriggerEventType = typeof TriggerEvent[keyof typeof TriggerEvent];
 
 export interface ITooltipProps {
     /** Tooltip position */
@@ -36,7 +36,7 @@ export interface ITooltipProps {
     /** Size of padding in tooltip content */
     size?: SizeType;
     /** Trigger handler type */
-    trigger?: TriggerType;
+    triggerEvent?: TriggerEventType;
     /** Trigger element */
     triggerElement: HTMLElement;
     /** Manipulate open state from outside */
@@ -54,7 +54,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     className,
     placement = Placement.TOP,
     size = Size.MEDIUM,
-    trigger = Trigger.HOVER,
+    triggerEvent = TriggerEvent.HOVER,
     triggerElement,
     isOpened = false,
     children,
@@ -65,7 +65,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
 
     const [isOpen, setIsOpen] = useState(isOpened);
-    useEffect(() => setIsOpen(isOpened), [isOpened]);
+    useEffect(() => setIsOpen(isOpened), [isOpened, setIsOpen]);
 
     const options = useMemo(() => ({
         placement,
@@ -97,17 +97,19 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     }, [children, update]);
 
     const [isTouchDevice, setIsTouchDevice ] = useState(false);
-    useEffect(() => setIsTouchDevice(detectTouch()), [detectTouch]);
+    useEffect(() => setIsTouchDevice(detectTouch()), [detectTouch, setIsTouchDevice]);
 
     const clickEvent = useMemo(() => isTouchDevice ? 'touchstart' : 'click', [isTouchDevice]);
-    const triggerEvent: TriggerType = useMemo(() => isTouchDevice ? 'click' : trigger, [isTouchDevice, trigger]);
+    const triggerEventName: TriggerEventType = useMemo(() => (
+        isTouchDevice ? 'click' : triggerEvent
+    ), [isTouchDevice, triggerEvent]);
 
     const handleMouseEnter = useCallback((e: MouseEvent): void => {
         if (!isOpen) {
             setIsOpen(true);
             onOpen && onOpen(e);
         }
-    }, [isOpen, onOpen]);
+    }, [isOpen, onOpen, setIsOpen]);
 
     const handleClick = useCallback((e: MouseEvent): void => {
         setIsOpen(open => !open);
@@ -116,7 +118,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
         } else {
             onClose && onClose(e);
         }
-    }, [isOpen, onOpen, onClose]);
+    }, [isOpen, onOpen, onClose, setIsOpen]);
 
     const handleOutsideEvent = useCallback((e: MouseEvent): void => {
         const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
@@ -125,10 +127,10 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             setIsOpen(false);
             onClose && onClose(e);
         }
-    }, [onClose, triggerElement, popperElement]);
+    }, [onClose, triggerElement, popperElement, setIsOpen]);
 
     useEffect(() => {
-        if (triggerEvent === Trigger.HOVER) {
+        if (triggerEventName === TriggerEvent.HOVER) {
             triggerElement && triggerElement.addEventListener('mouseenter', handleMouseEnter);
             if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
@@ -141,12 +143,12 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             };
         }
     }, [
-        triggerEvent, isOpen, triggerElement,
+        triggerEventName, isOpen, triggerElement,
         handleOutsideEvent, handleMouseEnter,
     ]);
 
     useEffect(() => {
-        if (triggerEvent === Trigger.CLICK) {
+        if (triggerEventName === TriggerEvent.CLICK) {
             triggerElement && triggerElement.addEventListener(clickEvent, handleClick);
             if (isOpen) {
                 document.addEventListener(clickEvent, handleOutsideEvent);
@@ -159,7 +161,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             };
         }
     }, [
-        triggerEvent, isOpen, triggerElement,
+        triggerEventName, isOpen, triggerElement,
         handleOutsideEvent, handleClick,
     ]);
 
@@ -176,7 +178,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
                 style={styles.arrow}
             />
             <div
-                className={cn('arrow', { shadow: true })}
+                className={cn('arrow-shadow')}
                 style={styles.arrow}
             />
             <Tile shadowLevel="high" className={cn('content')}>
@@ -189,7 +191,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
 Tooltip.propTypes = {
     placement: PropTypes.oneOf(Object.values(Placement)),
     size: PropTypes.oneOf(Object.values(Size)),
-    trigger: PropTypes.oneOf(Object.values(Trigger)),
+    triggerEvent: PropTypes.oneOf(Object.values(TriggerEvent)),
     triggerElement: (props, propName, componentName, location) => {
         const prop = props[propName];
         if ((prop === undefined)) {
