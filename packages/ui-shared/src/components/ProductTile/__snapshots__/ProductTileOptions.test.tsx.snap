@@ -32,30 +32,29 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
             }
           }
         />
-        <BubbleHint
+        <div
           className="mfui-beta-product-tile-options__cashback-c"
-          click={true}
-          placement="bottom"
-          popupAlign="left"
-          popupPadding="normal"
-          popupWidth="small"
-          trigger={
-            <span
-              className="mfui-beta-product-tile-options__bubble-trigger"
-            >
-              Подробнее
-            </span>
-          }
         >
-          <div
-            className="mfui-beta-product-tile-options__hint-text"
-            dangerouslySetInnerHTML={
-              Object {
-                "__html": "footnote",
+          <span
+            className="mfui-beta-product-tile-options__bubble-trigger"
+          >
+            Подробнее
+          </span>
+          <Tooltip
+            placement="bottom"
+            triggerElement={null}
+            triggerEvent="click"
+          >
+            <div
+              className="mfui-beta-product-tile-options__hint-text"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "footnote",
+                }
               }
-            }
-          />
-        </BubbleHint>
+            />
+          </Tooltip>
+        </div>
       </div>
     </div>
   </div>

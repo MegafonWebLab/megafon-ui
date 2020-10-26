@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate, BubbleHint } from '@megafon/ui-core';
+import { cnCreate, Tooltip } from '@megafon/ui-core';
 import './style/ProductTileOptions.less';
 import { IOption } from './ProductTile';
 
@@ -13,8 +13,12 @@ export interface IProductTileOptionsProps {
     onClickBubble?: () => void;
 }
 
+type IProductTileOptionsState = {
+    triggerElement: HTMLElement | null;
+};
+
 const cn = cnCreate('mfui-beta-product-tile-options');
-class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
+class ProductTileOptions extends React.Component<IProductTileOptionsProps, IProductTileOptionsState> {
     static propTypes = {
         head: PropTypes.string,
         options: PropTypes.arrayOf(PropTypes.shape({
@@ -28,24 +32,41 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         onClickBubble: PropTypes.func,
     };
 
+    constructor(props: IProductTileOptionsProps) {
+        super(props);
+        this.state = { triggerElement: null };
+    }
+
+    setTriggerElement = (elem: HTMLDivElement): void => {
+        this.setState({ triggerElement: elem });
+    }
+
     renderFootnote(title: string, footnote: string): JSX.Element {
         const { onClickBubble } = this.props;
+        const { triggerElement } = this.state;
 
         return (
             <div className={cn('content')}>
                 <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
-                <BubbleHint
-                    className={cn('cashback-c')}
-                    popupWidth="small"
-                    placement="bottom"
-                    click
-                    trigger={<span className={cn('bubble-trigger')} onClick={onClickBubble}>Подробнее</span>}
-                >
-                    <div
-                        className={cn('hint-text')}
-                        dangerouslySetInnerHTML={{ __html: footnote }}
-                    />
-                </BubbleHint>
+                <div className={cn('cashback-c')}>
+                    <span
+                        ref={this.setTriggerElement}
+                        className={cn('bubble-trigger')}
+                        onClick={onClickBubble}
+                    >
+                        Подробнее
+                    </span>
+                    <Tooltip
+                        placement="bottom"
+                        triggerEvent="click"
+                        triggerElement={triggerElement}
+                    >
+                        <div
+                            className={cn('hint-text')}
+                            dangerouslySetInnerHTML={{ __html: footnote }}
+                        />
+                    </Tooltip>
+                </div>
             </div>
         );
     }
