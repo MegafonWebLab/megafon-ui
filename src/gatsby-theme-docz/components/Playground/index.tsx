@@ -14,7 +14,7 @@ const transformCode = (code: string) => {
 
 const cn = cnCreate('docz-playground');
 
-export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean }> = ({ code, scope, language, useScoping = false }) => {
+export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean }> = ({ style, code, scope, language, useScoping = false }) => {
     const [scopeOnMount] = React.useState(scope)
 
     return (
@@ -25,7 +25,7 @@ export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean }> = 
             language={language as Language}
             theme={theme}
         >
-            <div className={cn('preview')}>
+            <div className={cn('preview')} style={style}>
                 <Wrapper
                     content="preview"
                 >

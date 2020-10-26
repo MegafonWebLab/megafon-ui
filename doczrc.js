@@ -37,11 +37,11 @@ export default {
         /.docz/
     ],
     menu: [
-        'Beginning of work',
-        'Components',
-        'Constructor',
-        'Icons',
-        'Colors'
+        'Введение',
+        'Компоненты',
+        'Конструктор',
+        'Иконки',
+        'Цвета'
     ],
     mdPlugins: [[defaultNameYamlPlugin, { type: 'name' }]],
     notUseSpecifiers: true,
