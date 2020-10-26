@@ -30,7 +30,6 @@ exports[`<ProductCardFeaturesTop /> it renders ProductCardFeaturesTop 1`] = `
           },
         ]
       }
-      maxIconNumber={6}
     />
   </div>
 </div>
