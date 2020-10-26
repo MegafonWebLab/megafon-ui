@@ -1,0 +1,45 @@
+@import '~styles/base.less';
+@b: e('.mfui-beta-nav-arrow');
+
+@{b} {
+    box-sizing: border-box;
+    padding: 4px;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    outline: none;
+
+    &__icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: @clearWhite;
+    }
+
+    &_theme_purple {
+        background-color: @purple;
+
+        &:hover:not(:disabled) {
+            background-color: @buttonhoverPurple;
+        }
+    }
+
+    &_theme_dark {
+        background-color: fade(@fullBlack, 25%);
+
+        &:hover:not(:disabled) {
+            background-color: fade(@fullBlack, 50%);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.3;
+        cursor: default;
+    }
+}

@@ -1,0 +1,84 @@
+---
+name: Banner
+menu: Components
+route: components/banner
+---
+
+import { Playground, Props } from 'docz';
+import Banner from './Banner';
+import { DemoSlide } from './Banner.docz';
+
+# Banner
+
+## Properties
+
+<Props of={Banner} />
+
+## Basic usage
+
+<Playground>
+    <Banner>
+        <DemoSlide background="#00B956">1</DemoSlide>
+        <DemoSlide background="#00a04b">2</DemoSlide>
+        <DemoSlide background="#02d263">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Usage with green navTheme
+
+<Playground>
+    <Banner navTheme="green">
+        <DemoSlide background="#f0f0f0">1</DemoSlide>
+        <DemoSlide background="#ededed">2</DemoSlide>
+        <DemoSlide background="#f5f5f5">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Usage with dark navTheme
+
+<Playground>
+    <Banner navTheme="dark">
+        <DemoSlide background="#C5C1BD">1</DemoSlide>
+        <DemoSlide background="#C1C1BD">2</DemoSlide>
+        <DemoSlide background="#C9C1BD">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Usage with loop
+
+<Playground>
+    <Banner loop>
+        <DemoSlide background="#00B956">1</DemoSlide>
+        <DemoSlide background="#00a04b">2</DemoSlide>
+        <DemoSlide background="#02d263">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Usage with autoPlay
+
+<Playground>
+    <Banner loop autoPlay>
+        <DemoSlide background="#00B956">1</DemoSlide>
+        <DemoSlide background="#00a04b">2</DemoSlide>
+        <DemoSlide background="#02d263">3</DemoSlide>
+    </Banner>
+</Playground>
+
+``` javascript
+export const DemoSlide = ({ children, background }) => {
+    return (
+        <div
+            style={{
+                height: "100%",
+                backgroundColor: background,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```

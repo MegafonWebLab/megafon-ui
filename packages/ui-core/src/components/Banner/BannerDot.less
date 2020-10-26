@@ -1,0 +1,66 @@
+@import '~styles/base.less';
+@b: e('.mfui-beta-banner-dot');
+
+@{b} {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    padding: 2px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: fade(@clearWhite, 50%);
+        border-radius: 50%;
+    }
+
+    &_active {
+        padding: 0;
+        cursor: default;
+
+        &:before {
+            background-color: @clearWhite;
+        }
+    }
+
+    &_active&_timer {
+        &:before {
+            display: none;
+        }
+    }
+
+    &__timer {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform: rotate(90deg);
+        border-radius: 50%;
+    }
+
+    &__timer-circle {
+        fill: fade(@clearWhite, 50%);
+        stroke: @clearWhite;
+        stroke-width: 100;
+        stroke-dasharray: 1000;
+        animation: timer linear;
+        transform: scale(-1, 1);
+        transform-origin: center;
+    }
+
+    @keyframes timer {
+        0% {
+            stroke-dashoffset: 0;
+        }
+
+        100% {
+            stroke-dashoffset: -350;
+        }
+    }
+}
