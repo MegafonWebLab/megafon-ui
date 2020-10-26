@@ -1,36 +1,13 @@
 import * as React from 'react';
-import { TriggerEvent } from './Tooltip';
-import { ISelectItem, SelectItemValueType } from '..//Select/Select';
+import { TriggerEvent } from '../Tooltip';
+import { ISelectItem, SelectItemValueType } from 'components/Select/Select';
 
-export const wrapperBlockStyles: React.CSSProperties = {
+export const demoWrapperBlockStyles: React.CSSProperties = {
     display: 'grid',
     gap: '24px',
     gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
     justifyContent: 'center',
     padding: '50px',
-};
-
-export const wrapperTooltipStyles: React.CSSProperties = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-};
-
-export const DemoBlockWrapper = (
-    props: {
-        customStyles: React.CSSProperties;
-        children: React.ReactNode;
-    }
-) => {
-    const { customStyles, children } = props;
-    return (
-        <div style={{
-            ...wrapperBlockStyles,
-            ...customStyles,
-        }}>
-            {children}
-        </div>
-    );
 };
 
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
