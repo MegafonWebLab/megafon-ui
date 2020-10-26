@@ -26,7 +26,7 @@ const generateIndex = files => {
 };
 
 const createReadmeMdx = () => {
-    const mdxFormatter = '---\nname: Beginning of work\nroute: /\n---\n\n';
+    const mdxFormatter = '---\nname: Введение\nroute: /\n---\n\n';
     return mdxFormatter + fs.readFileSync('../README.md')
 };
 
