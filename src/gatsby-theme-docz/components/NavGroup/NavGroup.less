@@ -1,0 +1,65 @@
+.docz-nav-group {
+    margin-bottom: 12px;
+
+    &__title-wrapper {
+        display: flex;
+        align-items: center;
+
+        cursor: pointer;
+    }
+
+    &__title {
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #333;
+        margin-right: 4px;
+    }
+
+    &__list-wrapper {
+        display: none;
+
+        &_active {
+            display: block;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding-left: 16px;
+    }
+
+    &__item {
+        margin-bottom: 12px;
+    }
+
+    &__search {
+        padding: 24px 0 24px 16px;
+    }
+
+    &__search-inner {
+        position: relative;
+    }
+
+    &__search-icon {
+        position: absolute;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & svg {
+            height: 20px;
+        }
+    }
+
+    &__search-field {
+        width: 100%;
+        padding: 8px 24px;
+        border: none;
+        border-bottom: 1px solid #EDEDED;
+        outline: none;
+    }
+}
