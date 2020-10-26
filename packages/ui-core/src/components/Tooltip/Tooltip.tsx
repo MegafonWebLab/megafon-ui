@@ -38,7 +38,7 @@ export interface ITooltipProps {
     /** Trigger handler type */
     triggerEvent?: TriggerEventType;
     /** Trigger element */
-    triggerElement: HTMLElement;
+    triggerElement?: HTMLElement | null;
     /** Manipulate open state from outside */
     isOpened?: boolean;
     /** Custom class name */
