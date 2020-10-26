@@ -25,11 +25,9 @@ export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean }> = 
             language={language as Language}
             theme={theme}
         >
-            <div className={cn('preview')} style={style}>
-                <Wrapper
-                    content="preview"
-                >
-                    <LivePreview data-testid="live-preview" />
+            <div className={cn('preview')}>
+                <Wrapper content="preview">
+                    <LivePreview className={cn('preview-content')} data-testid="live-preview" style={style} />
                 </Wrapper>
             </div>
             <Wrapper
