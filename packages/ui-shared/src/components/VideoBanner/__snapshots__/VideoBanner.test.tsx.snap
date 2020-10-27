@@ -68,7 +68,6 @@ exports[`<VideoBanner /> render with content 1`] = `
       "buttonTitle": "Текст в кнопке",
       "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
       "href": "#",
-      "onButtonClick": [MockFunction],
       "title": "Текст ≈40 симовлов. Короткие слова",
     }
   }
@@ -134,7 +133,6 @@ exports[`<VideoBanner /> render with content 1`] = `
               <Button
                 className="mfui-beta-video-banner__button"
                 href="#"
-                onClick={[MockFunction]}
               >
                 <a
                   className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
@@ -223,7 +221,6 @@ exports[`<VideoBanner /> render with video and content 1`] = `
       "buttonTitle": "Текст в кнопке",
       "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
       "href": "#",
-      "onButtonClick": [MockFunction],
       "title": "Текст ≈40 симовлов. Короткие слова",
     }
   }
@@ -260,17 +257,6 @@ exports[`<VideoBanner /> render with video and content 1`] = `
               }
             }
           >
-            <video
-              autoPlay={true}
-              className="mfui-beta-video-banner__video"
-              loop={true}
-              muted={false}
-            >
-              <source
-                src="video.mp4"
-                type="video/mp4"
-              />
-            </video>
             <div
               className="mfui-beta-video-banner__content"
             >
@@ -303,7 +289,6 @@ exports[`<VideoBanner /> render with video and content 1`] = `
               <Button
                 className="mfui-beta-video-banner__button"
                 href="#"
-                onClick={[MockFunction]}
               >
                 <a
                   className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
@@ -323,6 +308,17 @@ exports[`<VideoBanner /> render with video and content 1`] = `
                 </a>
               </Button>
             </div>
+            <video
+              autoPlay={true}
+              className="mfui-beta-video-banner__video"
+              loop={true}
+              muted={false}
+            >
+              <source
+                src="video.mp4"
+                type="video/mp4"
+              />
+            </video>
           </div>
         </div>
       </div>

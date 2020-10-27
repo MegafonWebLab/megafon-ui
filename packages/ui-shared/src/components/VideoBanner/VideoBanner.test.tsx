@@ -17,7 +17,6 @@ const content = {
     description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     href: '#',
     buttonTitle: 'Текст в кнопке',
-    onButtonClick: jest.fn(),
 };
 
 const cn = cnCreate('mfui-beta-video-banner');
@@ -59,10 +58,16 @@ describe('<VideoBanner />', () => {
     });
 
     it('should call onClick props', () => {
-        const component = shallow(<VideoBanner image={image} content={content} />);
+        const onButtonClick = jest.fn();
+        const contentWithMockFunc = {
+            ...content,
+            onButtonClick,
+        };
+
+        const component = shallow(<VideoBanner image={image} content={contentWithMockFunc} />);
         const btn = component.find(`.${cn('button')}`);
 
         btn.simulate('click');
-        expect(content.onButtonClick).toBeCalled();
+        expect(onButtonClick).toBeCalled();
     });
 });
