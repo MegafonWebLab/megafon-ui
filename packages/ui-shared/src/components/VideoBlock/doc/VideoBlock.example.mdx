@@ -1,28 +1,21 @@
----
-name: VideoBlock
-menu: Constructor
-route: components/video-block
----
-
-import { Playground, Props } from 'docz';
-import VideoBlock from './VideoBlock';
+import { Playground } from 'docz';
+import VideoBlock from '../VideoBlock';
 import { content, video, youtubeVideoId } from './VideoBlock.docz';
 
-# VideoBlock
-
-## Properties
-
-<Props of={VideoBlock} />
-
-## Included props
+## Примеры свойств
 
 ```javascript
 
 interface IContent {
+    /** Заголовок */
     title: string;
+    /** Текст-описание */
     description: string[];
+    /** Текст кнопки */
     buttonTitle: string;
+    /** Ссылка на кнопке */
     href?: string;
+    /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
@@ -34,13 +27,10 @@ const content: IContent = {
     ],
     href: '#',
     buttonTitle: 'Lorem ipsum',
-    onButtonClick: () => alert('button click'),
 }
-
-const videoSrc = 'video.mp4' | '2Sps5MnvlKM';
 ```
 
-## Video without content
+## Видео без контента
 
 <Playground>
     <VideoBlock
@@ -48,7 +38,7 @@ const videoSrc = 'video.mp4' | '2Sps5MnvlKM';
     />
 </Playground>
 
-## Video with content
+## Видео с контентом
 
 <Playground>
     <VideoBlock
@@ -57,7 +47,7 @@ const videoSrc = 'video.mp4' | '2Sps5MnvlKM';
     />
 </Playground>
 
-## Video from Youtube
+## Видео с Youtube
 
 <Playground>
     <VideoBlock
@@ -66,7 +56,7 @@ const videoSrc = 'video.mp4' | '2Sps5MnvlKM';
     />
 </Playground>
 
-## Video from Youtube with content
+## Видео с Youtube с контентом
 
 <Playground>
     <VideoBlock

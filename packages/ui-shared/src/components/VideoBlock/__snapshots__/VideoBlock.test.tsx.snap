@@ -13,7 +13,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
       all="5"
       flex={false}
       grow={false}
-      key="1"
+      key="column-content"
       mobile="12"
       orderAll="0"
       orderDesktop="0"
@@ -33,24 +33,25 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
         >
           Test title
         </Header>
-        <Paragraph
-          className="mfui-beta-video-block__text"
-          hasMargin={false}
-          key="0Test description"
-        >
-          Test description
-        </Paragraph>
-        <Paragraph
-          className="mfui-beta-video-block__text"
-          hasMargin={false}
-          key="1Test description"
-        >
-          Test description
-        </Paragraph>
+        <div>
+          <Paragraph
+            className="mfui-beta-video-block__text"
+            hasMargin={false}
+            key="0Test description"
+          >
+            Test description
+          </Paragraph>
+          <Paragraph
+            className="mfui-beta-video-block__text"
+            hasMargin={false}
+            key="1Test description2"
+          >
+            Test description2
+          </Paragraph>
+        </div>
         <Button
           className="mfui-beta-video-block__button"
           href="#"
-          onClick={[MockFunction]}
         >
           Button title
         </Button>
@@ -60,7 +61,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
       all="7"
       flex={false}
       grow={false}
-      key="0"
+      key="column-video"
       mobile="12"
       orderAll="0"
       orderDesktop="0"
@@ -102,7 +103,7 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
       all="10"
       flex={false}
       grow={false}
-      key="0"
+      key="column-video"
       mobile="12"
       orderAll="0"
       orderDesktop="0"
@@ -131,6 +132,48 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 </div>
 `;
 
+exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
+<div
+  className="mfui-beta-video-block"
+>
+  <Grid
+    className="mfui-beta-video-block__grid"
+    hAlign="center"
+    multiRow={true}
+  >
+    <GridColumn
+      all="10"
+      flex={false}
+      grow={false}
+      key="column-video"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      tablet="12"
+    >
+      <div
+        className="mfui-beta-video-block__video-wrapper"
+      >
+        <video
+          autoPlay={true}
+          className="mfui-beta-video-block__video"
+          loop={true}
+          muted={false}
+        >
+          <source
+            src="video"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
 <div
   className="mfui-beta-video-block"
@@ -144,7 +187,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
       all="10"
       flex={false}
       grow={false}
-      key="0"
+      key="column-video"
       mobile="12"
       orderAll="0"
       orderDesktop="0"
@@ -161,6 +204,44 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
           frameBorder="0"
           height="100%"
           src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          width="100%"
+        />
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound turned on 1`] = `
+<div
+  className="mfui-beta-video-block"
+>
+  <Grid
+    className="mfui-beta-video-block__grid"
+    hAlign="center"
+    multiRow={true}
+  >
+    <GridColumn
+      all="10"
+      flex={false}
+      grow={false}
+      key="column-video"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      tablet="12"
+    >
+      <div
+        className="mfui-beta-video-block__video-wrapper"
+      >
+        <iframe
+          allow="autoplay"
+          frameBorder="0"
+          height="100%"
+          src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=0&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
           width="100%"
         />
       </div>

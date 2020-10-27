@@ -7,15 +7,13 @@ const content = {
     title: 'Test title',
     description: [
         'Test description',
-        'Test description',
+        'Test description2',
     ],
     buttonTitle: 'Button title',
     href: '#',
-    onButtonClick: jest.fn(),
 };
 
 const cn = cnCreate('mfui-beta-video-block');
-
 describe('<VideoBlock />', () => {
     it('it renders VideoBlock with default props', () => {
         const component = shallow(<VideoBlock videoSrc="video.mp4" />);
@@ -29,6 +27,13 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with sound turned on', () => {
+        const component = shallow(
+            <VideoBlock videoSrc="video" videoType="video" isMuted={false} />
+        );
+        expect(component).toMatchSnapshot();
+    });
+
     it('it renders VideoBlock with youtube media type', () => {
         const component = shallow(
             <VideoBlock videoSrc="youtube" videoType="youtube" />
@@ -36,13 +41,25 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
-    it('should call onClick props', () => {
+    it('it renders VideoBlock with youtube media type and sound turned on', () => {
         const component = shallow(
-            <VideoBlock videoSrc="video.mp4" content={content} />
+            <VideoBlock videoSrc="youtube" videoType="youtube" isMuted={false}/>
+        );
+        expect(component).toMatchSnapshot();
+    });
+
+    it('should call onClick props', () => {
+        const onButtonClick = jest.fn();
+        const contentWithMockFunc = {
+            ...content,
+            onButtonClick,
+        };
+        const component = shallow(
+            <VideoBlock videoSrc="video.mp4" content={contentWithMockFunc} />
         );
         const btn = component.find(`.${cn('button')}`);
 
         btn.simulate('click');
-        expect(content.onButtonClick).toBeCalled();
+        expect(onButtonClick).toBeCalled();
     });
 });
