@@ -35,14 +35,18 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
         <div
           className="mfui-beta-product-tile-options__cashback-c"
         >
-          <span
+          <div
             className="mfui-beta-product-tile-options__bubble-trigger"
           >
             Подробнее
-          </span>
+          </div>
           <Tooltip
             placement="bottom"
-            triggerElement={null}
+            triggerElement={
+              Object {
+                "current": null,
+              }
+            }
             triggerEvent="click"
           >
             <div

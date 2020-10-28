@@ -13,12 +13,8 @@ export interface IProductTileOptionsProps {
     onClickBubble?: () => void;
 }
 
-type IProductTileOptionsState = {
-    triggerElement: HTMLElement | null;
-};
-
 const cn = cnCreate('mfui-beta-product-tile-options');
-class ProductTileOptions extends React.Component<IProductTileOptionsProps, IProductTileOptionsState> {
+class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
     static propTypes = {
         head: PropTypes.string,
         options: PropTypes.arrayOf(PropTypes.shape({
@@ -34,32 +30,34 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps, IProd
 
     constructor(props: IProductTileOptionsProps) {
         super(props);
-        this.state = { triggerElement: null };
+
+        const { options } = this.props;
+
+        options && options.forEach((option, index) => {
+            if (option.footnote) {
+                this[`option${index}footnote`] = React.createRef<HTMLDivElement>();
+            }
+        });
     }
 
-    setTriggerElement = (elem: HTMLDivElement): void => {
-        this.setState({ triggerElement: elem });
-    }
-
-    renderFootnote(title: string, footnote: string): JSX.Element {
+    renderFootnote(title: string, footnote: string, footnoteRef: React.RefObject<HTMLDivElement>): JSX.Element {
         const { onClickBubble } = this.props;
-        const { triggerElement } = this.state;
 
         return (
             <div className={cn('content')}>
                 <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
                 <div className={cn('cashback-c')}>
-                    <span
-                        ref={this.setTriggerElement}
+                    <div
+                        ref={footnoteRef}
                         className={cn('bubble-trigger')}
                         onClick={onClickBubble}
                     >
                         Подробнее
-                    </span>
+                    </div>
                     <Tooltip
                         placement="bottom"
                         triggerEvent="click"
-                        triggerElement={triggerElement}
+                        triggerElement={footnoteRef}
                     >
                         <div
                             className={cn('hint-text')}
@@ -102,7 +100,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps, IProd
                             <div className={cn('option')} key={title + index}>
                                 {this.renderIcon(svgIcon)}
                                 {footnote
-                                    ? this.renderFootnote(title, footnote)
+                                    ? this.renderFootnote(title, footnote, this[`option${index}footnote`])
                                     : this.renderContent(title, caption, value, unit)
                                 }
                             </div>
