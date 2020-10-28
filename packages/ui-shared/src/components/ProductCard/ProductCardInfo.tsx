@@ -83,24 +83,12 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         additionalParams: [],
     };
 
-    constructor(props: IProductCardInfoProps) {
-        super(props);
-
-        const { badges } = this.props;
-
-        badges && badges.forEach((badge, index) => {
-            if (badge.hint) {
-                this[`badge${index}hint`] = React.createRef<HTMLDivElement>();
-            }
-        });
-    }
-
     renderBadges = (): React.ReactNode => (
         <div className={cn('badges')}>
             {this.props.badges!.map((badge, index) =>
                 <div key={`${badge.title}${index}`} className={cn('badge', { type: badge.code })}>
                     {badge.hint
-                        ? this.renderTooltip(badge.title, badge.hint, this[`badge${index}hint`])
+                        ? this.renderTooltip(badge.title, badge.hint)
                         : <div className={cn('badge-title')}>{badge.title}</div>
                     }
                 </div>
@@ -108,17 +96,24 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         </div>
     )
 
-    renderTooltip = (title: string, hint: string, hintRef: React.RefObject<HTMLDivElement>): React.ReactNode => (
-        <>
-            <div ref={hintRef} className={cn('badge-title', { 'tooltip': true })}>{title}</div>
-            <Tooltip
-                className={cn('badge-tooltip')}
-                placement="right"
-                triggerElement={hintRef}
-            >
-                <div dangerouslySetInnerHTML={{ __html: hint }} />
-            </Tooltip>
-        </>
+    renderTooltipWrapper = (children: (triggerRef: React.RefObject<HTMLDivElement>) => React.ReactNode) => {
+        const triggerRef = React.createRef<HTMLDivElement>();
+        return children(triggerRef);
+    }
+
+    renderTooltip = (title: string, hint: string): React.ReactNode => (
+        this.renderTooltipWrapper((triggerRef) => (
+            <>
+                <div ref={triggerRef} className={cn('badge-title', { 'tooltip': true })}>{title}</div>
+                <Tooltip
+                    className={cn('badge-tooltip')}
+                    placement="right"
+                    triggerElement={triggerRef}
+                >
+                    <div dangerouslySetInnerHTML={{ __html: hint }} />
+                </Tooltip>
+            </>
+        ))
     )
 
     handleClickMoreInfo = (e: React.SyntheticEvent<EventTarget>): void => {
