@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- **build**
+    - remove icon property from svgr config in inlineSvgToReact
+
 - **Icons**
     - update icons: Checked_32, Gag_16, Gag_24, Gag_32, Metro_24, Metro_32
 
