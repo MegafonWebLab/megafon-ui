@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate, Header, BubbleHint, TextLink } from '@megafon/ui-core';
+import { cnCreate, Header, Tooltip, TextLink } from '@megafon/ui-core';
 import './ProductCardInfo.less';
 
 interface IBadge {
@@ -83,34 +83,43 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         additionalParams: [],
     };
 
-    renderBadges() {
-        const badgeTitle = (badge: IBadge) => <div className={cn('badge-title')}>{badge.title}</div>;
+    constructor(props: IProductCardInfoProps) {
+        super(props);
 
-        return (
-            <div className={cn('badges')}>
-                {this.props.badges!.map((badge: IBadge, key: number) =>
-                    <div key={`${badge.title}${key}`} className={cn('badge', { type: badge.code })}>
-                        {badge.hint
-                            ? this.renderBubbleHint(badgeTitle(badge), badge.hint)
-                            : badgeTitle(badge)
-                        }
-                    </div>
-                )}
-            </div>
-        );
+        const { badges } = this.props;
+
+        badges && badges.forEach((badge, index) => {
+            if (badge.hint) {
+                this[`badge${index}hint`] = React.createRef<HTMLDivElement>();
+            }
+        });
     }
 
-    renderBubbleHint(title: JSX.Element, hint: string) {
-        return (
-            <BubbleHint
-                popupWidth="small"
+    renderBadges = (): React.ReactNode => (
+        <div className={cn('badges')}>
+            {this.props.badges!.map((badge, index) =>
+                <div key={`${badge.title}${index}`} className={cn('badge', { type: badge.code })}>
+                    {badge.hint
+                        ? this.renderTooltip(badge.title, badge.hint, this[`badge${index}hint`])
+                        : <div className={cn('badge-title')}>{badge.title}</div>
+                    }
+                </div>
+            )}
+        </div>
+    )
+
+    renderTooltip = (title: string, hint: string, hintRef: React.RefObject<HTMLDivElement>): React.ReactNode => (
+        <>
+            <div ref={hintRef} className={cn('badge-title', { 'tooltip': true })}>{title}</div>
+            <Tooltip
+                className={cn('badge-tooltip')}
                 placement="right"
-                trigger={title}
+                triggerElement={hintRef}
             >
                 <div dangerouslySetInnerHTML={{ __html: hint }} />
-            </BubbleHint>
-        );
-    }
+            </Tooltip>
+        </>
+    )
 
     handleClickMoreInfo = (e: React.SyntheticEvent<EventTarget>): void => {
         const { onClickMoreInfo } = this.props;

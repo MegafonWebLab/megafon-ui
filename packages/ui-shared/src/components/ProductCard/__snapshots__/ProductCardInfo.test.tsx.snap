@@ -23,17 +23,18 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
         className="mfui-beta-product-card-info__badge mfui-beta-product-card-info__badge_type_code"
         key="title0"
       >
-        <BubbleHint
+        <div
+          className="mfui-beta-product-card-info__badge-title mfui-beta-product-card-info__badge-title_tooltip"
+        >
+          title
+        </div>
+        <Tooltip
+          className="mfui-beta-product-card-info__badge-tooltip"
           placement="right"
-          popupAlign="left"
-          popupPadding="normal"
-          popupWidth="small"
-          trigger={
-            <div
-              className="mfui-beta-product-card-info__badge-title"
-            >
-              title
-            </div>
+          triggerElement={
+            Object {
+              "current": null,
+            }
           }
         >
           <div
@@ -43,7 +44,7 @@ exports[`<ProductCardInfo /> it renders ProductCardInfo 1`] = `
               }
             }
           />
-        </BubbleHint>
+        </Tooltip>
       </div>
       <div
         className="mfui-beta-product-card-info__badge mfui-beta-product-card-info__badge_type_code"
