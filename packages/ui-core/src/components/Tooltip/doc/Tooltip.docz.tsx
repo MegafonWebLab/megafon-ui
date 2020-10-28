@@ -11,7 +11,7 @@ export const demoWrapperBlockStyles: React.CSSProperties = {
 };
 
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
-    const [ triggerElement, setTriggerElement ] = React.useState<Element | null>(null);
+    const triggerElement = React.useRef<HTMLElement | null>(null);
     const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
     const [ triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
 
@@ -24,7 +24,6 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 
     return children({
         triggerElement,
-        setTriggerElement,
         triggerEvent,
         handleTriggerChange,
     });

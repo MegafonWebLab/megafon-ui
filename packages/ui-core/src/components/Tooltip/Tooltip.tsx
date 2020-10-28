@@ -38,7 +38,7 @@ export interface ITooltipProps {
     /** Trigger handler type */
     triggerEvent?: TriggerEventType;
     /** Trigger element */
-    triggerElement?: HTMLElement | null;
+    triggerElement: React.RefObject<HTMLElement>;
     /** Manipulate open state from outside */
     isOpened?: boolean;
     /** Custom class name */
@@ -61,6 +61,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     onOpen,
     onClose,
 }) => {
+    const currentTrigger = triggerElement.current;
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
     const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
 
@@ -90,7 +91,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
         ],
     }), [placement, arrowElement, isOpen]);
 
-    const { styles, attributes, update } = usePopper(triggerElement, popperElement, options);
+    const { styles, attributes, update } = usePopper(currentTrigger, popperElement, options);
 
     useEffect(() => {
         update && update();
@@ -122,46 +123,46 @@ const Tooltip: React.FC<ITooltipProps>  = ({
 
     const handleOutsideEvent = useCallback((e: MouseEvent): void => {
         const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
-        const isTargetInTrigger = e.target instanceof Element && triggerElement && triggerElement.contains(e.target);
+        const isTargetInTrigger = e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
         if (!isTargetInPopper && !isTargetInTrigger) {
             setIsOpen(false);
             onClose && onClose(e);
         }
-    }, [onClose, triggerElement, popperElement, setIsOpen]);
+    }, [onClose, currentTrigger, popperElement, setIsOpen]);
 
     useEffect(() => {
         if (triggerEventName === TriggerEvent.HOVER) {
-            triggerElement && triggerElement.addEventListener('mouseenter', handleMouseEnter);
+            currentTrigger && currentTrigger.addEventListener('mouseenter', handleMouseEnter);
             if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
             }
             return () => {
-                triggerElement && triggerElement.removeEventListener('mouseenter', handleMouseEnter);
+                currentTrigger && currentTrigger.removeEventListener('mouseenter', handleMouseEnter);
                 document.removeEventListener('mouseover', handleOutsideEvent);
             };
         }
     }, [
-        triggerEventName, isOpen, triggerElement,
+        triggerEventName, isOpen, currentTrigger,
         handleOutsideEvent, handleMouseEnter,
     ]);
 
     useEffect(() => {
         if (triggerEventName === TriggerEvent.CLICK) {
-            triggerElement && triggerElement.addEventListener(clickEvent, handleClick);
+            currentTrigger && currentTrigger.addEventListener(clickEvent, handleClick);
             if (isOpen) {
                 document.addEventListener(clickEvent, handleOutsideEvent);
             } else {
                 document.removeEventListener(clickEvent, handleOutsideEvent);
             }
             return () => {
-                triggerElement && triggerElement.removeEventListener(clickEvent, handleClick);
+                currentTrigger && currentTrigger.removeEventListener(clickEvent, handleClick);
                 document.removeEventListener(clickEvent, handleOutsideEvent);
             };
         }
     }, [
-        triggerEventName, isOpen, triggerElement,
+        triggerEventName, isOpen, currentTrigger,
         handleOutsideEvent, handleClick,
     ]);
 
@@ -194,14 +195,16 @@ Tooltip.propTypes = {
     triggerEvent: PropTypes.oneOf(Object.values(TriggerEvent)),
     triggerElement: (props, propName, componentName, location) => {
         const prop = props[propName];
+        const isObject = typeof prop === 'object' && prop !== null;
+        const hasPropCurrent = prop.hasOwnProperty('current');
         if ((prop === undefined)) {
             return new Error(
                 `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`undefined\`.`
             );
         }
-        if (prop && prop.nodeType !== 1) {
+        if (!isObject && !hasPropCurrent) {
             return new Error(
-                `Invalid ${location} \`${propName}\` supplied to \`${componentName}\`, expected HTMLElement.`
+                `Invalid ${location} \`${propName}\` supplied to \`${componentName}\`, expected React.RefObject.`
             );
         }
         return null;
