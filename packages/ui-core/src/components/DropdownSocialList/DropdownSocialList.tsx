@@ -20,13 +20,13 @@ export interface IDropdownSocialListProps {
 
 const cn = cnCreate('mfui-beta-dropdown-social-list');
 const DropdownSocialList: React.FC<IDropdownSocialListProps> = ({icons, maxIconNumber = 6, className}) => {
-    const [ triggerElement, setTriggerElement ] = React.useState<HTMLSpanElement | null>(null);
+    const triggerElement = React.useRef<HTMLDivElement | null>(null);
 
     const renderDropdown = (): React.ReactNode => (
         <div className={cn('dropdown')}>
-            <span ref={setTriggerElement} className={cn('dropdown-trigger')}>
+            <div ref={triggerElement} className={cn('dropdown-trigger')}>
                 и еще {icons.length - maxIconNumber}
-            </span>
+            </div>
             <Tooltip
                 placement="bottom"
                 triggerEvent="click"

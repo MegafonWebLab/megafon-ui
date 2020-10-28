@@ -1,11 +1,3 @@
-import * as React from 'react';
-
-export const DropdownSocialListWrapper: React.FC = ({ children }) => {
-    return (
-        <div style={{ height: '200px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center' }}>
-            {children}
-        </div>
-    );
-};
+export const dropdownSocialListWrapperStyles = { height: '200px', display: 'flex', 'justifyContent': 'center', 'alignItems': 'center' };
 
 export const iconStyles = { width: '24px', height: '24px' };

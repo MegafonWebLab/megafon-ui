@@ -6,7 +6,6 @@
     .commonFont();
     display: flex;
     align-items: flex-end;
-    position: relative;
 
     &__list {
         display: flex;
@@ -33,16 +32,13 @@
         pointer-events: none;
     }
 
-    &__dropdown {
-        margin-left: 4px;
-    }
-
     &__dropdown-trigger {
         cursor: pointer;
         display: inline-block;
         font-size: 12px;
         line-height: 16px;
         color: @link;
+        margin-left: 4px;
         margin-bottom: 8px;
         border-bottom: 1px dashed;
     }
