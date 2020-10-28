@@ -28,42 +28,39 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         onClickBubble: PropTypes.func,
     };
 
-    constructor(props: IProductTileOptionsProps) {
-        super(props);
-
-        const { options } = this.props;
-
-        options && options.forEach((option, index) => {
-            if (option.footnote) {
-                this[`option${index}footnote`] = React.createRef<HTMLDivElement>();
-            }
-        });
+    renderTooltipWrapper = (children: (triggerRef: React.RefObject<HTMLDivElement>) => React.ReactNode) => {
+        const triggerRef = React.createRef<HTMLDivElement>();
+        return children(triggerRef);
     }
 
-    renderFootnote(title: string, footnote: string, footnoteRef: React.RefObject<HTMLDivElement>): JSX.Element {
+    renderFootnote(title: string, footnote: string): JSX.Element {
         const { onClickBubble } = this.props;
 
         return (
             <div className={cn('content')}>
                 <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
                 <div className={cn('cashback-c')}>
-                    <div
-                        ref={footnoteRef}
-                        className={cn('bubble-trigger')}
-                        onClick={onClickBubble}
-                    >
-                        Подробнее
-                    </div>
-                    <Tooltip
-                        placement="bottom"
-                        triggerEvent="click"
-                        triggerElement={footnoteRef}
-                    >
-                        <div
-                            className={cn('hint-text')}
-                            dangerouslySetInnerHTML={{ __html: footnote }}
-                        />
-                    </Tooltip>
+                    {this.renderTooltipWrapper((triggerRef) => (
+                        <>
+                            <div
+                                ref={triggerRef}
+                                className={cn('bubble-trigger')}
+                                onClick={onClickBubble}
+                            >
+                                Подробнее
+                            </div>
+                            <Tooltip
+                                placement="bottom"
+                                triggerEvent="click"
+                                triggerElement={triggerRef}
+                            >
+                                <div
+                                    className={cn('hint-text')}
+                                    dangerouslySetInnerHTML={{ __html: footnote }}
+                                />
+                            </Tooltip>
+                        </>
+                    ))}
                 </div>
             </div>
         );
@@ -100,7 +97,7 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
                             <div className={cn('option')} key={title + index}>
                                 {this.renderIcon(svgIcon)}
                                 {footnote
-                                    ? this.renderFootnote(title, footnote, this[`option${index}footnote`])
+                                    ? this.renderFootnote(title, footnote)
                                     : this.renderContent(title, caption, value, unit)
                                 }
                             </div>
