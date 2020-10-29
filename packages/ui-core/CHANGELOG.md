@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.26](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.25...@megafon/ui-core@2.0.0-beta.26) (2020-10-29)
+
+
+### Bug Fixes
+
+* **tile:** edit text decoration on hover ([bb5c694](https://github.com/MegafonWebLab/megafon-ui/commit/bb5c694413564f8ec05f1b1c0d5f625efd410e8d))
+
+
+
+
+
 # [2.0.0-beta.25](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.24...@megafon/ui-core@2.0.0-beta.25) (2020-10-26)
 
 **Note:** Version bump only for package @megafon/ui-core
