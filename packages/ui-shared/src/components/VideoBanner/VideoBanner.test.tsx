@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { cnCreate } from '@megafon/ui-core';
-import VideoBanner from './VideoBanner';
+import VideoBanner, { VideoTypes } from './VideoBanner';
 
 const image = {
     desktop: 'image-desktop.png',
@@ -37,14 +37,16 @@ describe('<VideoBanner />', () => {
     });
 
     it('render with youtube video', () => {
-        const component = mount(<VideoBanner image={image} videoType="youtube" videoSrc={youtubeVideoId}/>);
+        const component = mount(<VideoBanner image={image} videoType={VideoTypes.YOUTUBE} videoSrc={youtubeVideoId} />);
         expect(component).toMatchSnapshot();
     });
 
     it('render with video', () => {
         // Props isMuted must be false, if the rendering method is "mount". Otherwise an error will occur.
         // https://github.com/enzymejs/enzyme/issues/2326
-        const component = mount(<VideoBanner image={image} videoType="video" videoSrc={video} isMuted={false}/>);
+        const component = mount(
+            <VideoBanner image={image} videoType={VideoTypes.VIDEO} videoSrc={video} isMuted={false} />
+            );
         expect(component).toMatchSnapshot();
     });
 
@@ -52,8 +54,13 @@ describe('<VideoBanner />', () => {
         // Props isMuted must be false, if the rendering method is "mount". Otherwise an error will occur.
         // https://github.com/enzymejs/enzyme/issues/2326
         const component = mount(
-            <VideoBanner image={image} videoType="video" videoSrc={video} content={content} isMuted={false}/>
-            );
+            <VideoBanner
+                image={image}
+                videoType={VideoTypes.VIDEO}
+                videoSrc={video}
+                content={content}
+                isMuted={false} />
+                );
         expect(component).toMatchSnapshot();
     });
 

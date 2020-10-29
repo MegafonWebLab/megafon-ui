@@ -6,10 +6,12 @@ import { Button, cnCreate, ContentArea, Header, Paragraph } from '@megafon/ui-co
 import { MOBILE_BIG_END } from '../../constants/breakpoints';
 
 const THROTTLE_TIME = 750;
-const VideoTypes = {
+export const VideoTypes = {
     YOUTUBE: 'youtube',
     VIDEO: 'video',
-};
+} as const;
+
+type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
 
 export interface IContent {
     /** Заголовок */
@@ -39,7 +41,7 @@ interface IVideoBannerProps {
     /** Источник видео. Если видео с youtube, то необходимо указать id, например 2Sps5MnvlKM */
     videoSrc?: string;
     /** Тип видео */
-    videoType?: 'video' | 'youtube';
+    videoType?: VideoType;
     /** Наличие звука в видео */
     isMuted?: boolean;
 }
@@ -124,7 +126,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
 
 VideoBanner.propTypes = {
     videoSrc: PropTypes.string,
-    videoType: PropTypes.oneOf(['video', 'youtube']),
+    videoType: PropTypes.oneOf(Object.values(VideoTypes)),
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
