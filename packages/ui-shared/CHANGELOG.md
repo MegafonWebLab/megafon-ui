@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.28](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.27...@megafon/ui-shared@2.0.0-beta.28) (2020-10-29)
+
+
+### Bug Fixes
+
+* **build:** remove icon property from svgr config ([812bc9f](https://github.com/MegafonWebLab/megafon-ui/commit/812bc9fbbea617edbd56e28b6618654876229924))
+
+
+
+
+
 # [2.0.0-beta.27](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.26...@megafon/ui-shared@2.0.0-beta.27) (2020-10-29)
 
 **Note:** Version bump only for package @megafon/ui-shared
