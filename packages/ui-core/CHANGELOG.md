@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.7.17
 - **build**
     - remove icon property from svgr config in inlineSvgToReact
 
