@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import { cnCreate } from '@megafon/ui-core';
-import VideoBlock from './VideoBlock';
+import VideoBlock, { VideoTypes } from './VideoBlock';
 
 const content = {
     title: 'Test title',
@@ -29,21 +29,21 @@ describe('<VideoBlock />', () => {
 
     it('it renders VideoBlock with sound turned on', () => {
         const component = shallow(
-            <VideoBlock videoSrc="video" videoType="video" isMuted={false} />
+            <VideoBlock videoSrc="video" isMuted={false} />
         );
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with youtube media type', () => {
         const component = shallow(
-            <VideoBlock videoSrc="youtube" videoType="youtube" />
+            <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} />
         );
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with youtube media type and sound turned on', () => {
         const component = shallow(
-            <VideoBlock videoSrc="youtube" videoType="youtube" isMuted={false}/>
+            <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isMuted={false}/>
         );
         expect(component).toMatchSnapshot();
     });

@@ -16,11 +16,18 @@ export interface IContent {
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
+export const VideoTypes = {
+    YOUTUBE: 'youtube',
+    VIDEO: 'video',
+} as const;
+
+type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
+
 export interface Props {
     /** Данные для блока с контентом */
     content?: IContent;
     /** Тип видео */
-    videoType?: 'video' | 'youtube';
+    videoType?: VideoType;
     /** Источник видео. Если видео с youtube, то необходимо указать id, например 2Sps5MnvlKM */
     videoSrc: string;
     /** Наличие звука в видео */
@@ -28,11 +35,6 @@ export interface Props {
     /** Дополнительный класс для основного контейнера */
     className?: string;
 }
-
-const VideoTypes = {
-    YOUTUBE: 'youtube',
-    VIDEO: 'video',
-};
 
 const cn = cnCreate('mfui-beta-video-block');
 const VideoBlock: React.FC<Props> = ({
@@ -129,7 +131,7 @@ VideoBlock.propTypes = {
         buttonTitle: PropTypes.string.isRequired,
         onButtonClick: PropTypes.func,
     }),
-    videoType: PropTypes.oneOf(['video', 'youtube']),
+    videoType: PropTypes.oneOf(Object.values(VideoTypes)),
     videoSrc: PropTypes.string.isRequired,
     className: PropTypes.string,
 };
