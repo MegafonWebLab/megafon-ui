@@ -207,7 +207,6 @@ const inlineSvgToReact = () => changePipe(async function (file, encoding) {
 
             try {
                 code = await svgr(data, {
-                    icon: true,
                     svgo: true,
                     svgoConfig: {
                         plugins: [
