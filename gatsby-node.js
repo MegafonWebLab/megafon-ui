@@ -26,7 +26,7 @@ const generateIndex = files => {
 };
 
 const createReadmeMdx = () => {
-    const mdxFormatter = '---\nname: Beginning of work\nroute: /\n---\n\n';
+    const mdxFormatter = '---\nname: Введение\nroute: /\n---\n\n';
     return mdxFormatter + fs.readFileSync('../README.md')
 };
 
@@ -63,9 +63,6 @@ exports.onCreateWebpackConfig = args => {
         },
         module: {
             rules: [{
-                test: /\.md$/,
-                use: ['babel-loader', '@mdx-js/loader']
-            }, {
                 test: /\.svg$/,
                 use: [
                     ({ resource }) => ({

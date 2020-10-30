@@ -2,7 +2,6 @@ import * as React from 'react';
 
 const blockStyle: React.CSSProperties = {
     padding: '20px',
-    margin: '-20px',
     backgroundColor: '#F5F5F5',
     display: 'inline-grid',
     gridGap: '20px',
