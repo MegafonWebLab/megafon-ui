@@ -6,19 +6,6 @@ import { content, video, youtubeVideoId } from './VideoBlock.docz';
 
 ```javascript
 
-interface IContent {
-    /** Заголовок */
-    title: string;
-    /** Текст-описание */
-    description: string[];
-    /** Текст кнопки */
-    buttonTitle: string;
-    /** Ссылка на кнопке */
-    href?: string;
-    /** Обработчик клика по кнопке */
-    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
-}
-
 const content: IContent = {
     title: 'Lorem ipsum',
     description: [
@@ -28,6 +15,10 @@ const content: IContent = {
     href: '#',
     buttonTitle: 'Lorem ipsum',
 }
+
+Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
+<VideoBlock videoType='youtube' videoSrc='2Sps5MnvlKM' />
+
 ```
 
 ## Видео без контента

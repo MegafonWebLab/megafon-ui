@@ -1,5 +1,5 @@
 import { IContent } from '../VideoBlock';
-import video from '../../../../demo/video.mp4';
+import video from './video.mp4';
 
 const content: IContent = {
     title: 'Lorem ipsum',

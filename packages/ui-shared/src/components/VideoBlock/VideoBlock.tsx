@@ -28,7 +28,7 @@ export interface Props {
     content?: IContent;
     /** Тип видео */
     videoType?: VideoType;
-    /** Источник видео. Если видео с youtube, то необходимо указать id, например 2Sps5MnvlKM */
+    /** Источник видео. Если видео с youtube, то необходимо указать id */
     videoSrc: string;
     /** Наличие звука в видео */
     isMuted?: boolean;
