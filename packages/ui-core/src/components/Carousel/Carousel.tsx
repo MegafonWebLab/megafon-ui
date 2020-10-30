@@ -31,7 +31,7 @@ export type SlidesSettingsType = {
 };
 
 export interface ICarouselProps {
-    /** Сss класс */
+    /** Сss класс для внешнего контейнера */
     className?: string;
     /** Сss класс для задания внутренних оступов */
     innerIndentsClass?: string;
