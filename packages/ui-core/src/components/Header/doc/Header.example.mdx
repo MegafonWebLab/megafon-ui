@@ -1,27 +1,6 @@
----
-name: Header
-menu: Компоненты
-route: components/header
----
-
 import { Playground, Props } from 'docz';
-import Header from './Header';
-
-export const tableRowStyle = {
-    border: '1px solid #EDEDED',
-    display: 'flex',
-    alignItems: 'center',
-    minHeight: '50px',
-    padding: '15px',
-}
-
-# Header
-
-## Properties
-
-<Props of={Header} />
-
-## Header's levels
+import Header from '../Header';
+import { tableRowStyle } from './Header.docz';
 
 <Playground>
     <div style={tableRowStyle}>
@@ -38,7 +17,7 @@ export const tableRowStyle = {
     </div>
 </Playground>
 
-## Header's color
+## Цвета
 
 <Playground>
     <div style={tableRowStyle}>
@@ -52,7 +31,7 @@ export const tableRowStyle = {
     </div>
 </Playground>
 
-## Header's margin
+## Наличие отступа
 
 <Playground>
     <div style={tableRowStyle}>
@@ -63,7 +42,7 @@ export const tableRowStyle = {
     </div>
 </Playground>
 
-## Header with additional component
+## С дополнительным компонентом
 
 <Playground>
     <div style={tableRowStyle}>
@@ -73,7 +52,7 @@ export const tableRowStyle = {
     </div>
 </Playground>
 
-## Align
+## Выравнивание
 
 <Playground>
     <Header hAlign="left">

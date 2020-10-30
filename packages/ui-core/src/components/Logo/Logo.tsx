@@ -7,16 +7,16 @@ import greenVerticalImg from 'docIcons/green-vertical.svg';
 import Link from '../Link/Link';
 
 export interface ILogoProps {
-    /** Color */
-    color?: string;
-    /** View */
-    view?: 'horizontal' | 'vertical';
-    /** Link */
-    href?: string;
-    /** target - property tag <a> */
-    target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Цвет */
+    color?: string;
+    /** Отображение */
+    view?: 'horizontal' | 'vertical';
+    /** Ссылка */
+    href?: string;
+    /** target - аргумент тега <a> */
+    target?: '_self' | '_blank' | '_parent' | '_top';
 }
 
 const cn = cnCreate('mfui-beta-logo');
