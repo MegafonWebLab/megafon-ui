@@ -1,63 +1,33 @@
-# Architecture
+# Архитектура
 
-`megafon-ui` is a monorepository managed with [Lerna](https://github.com/lerna/lerna).
+`megafon-ui` - библиотека под управлением [Lerna](https://github.com/lerna/lerna).
 
-`packages` directory includes several library parts which are
-the separated `npm` modules with independent versions.
+Директория `packages` включает несколько пакетов, которые публикуются в `npm` с независимыми версиями.
 
-Root `package.json` defines scripts for proxying execution of commands in every package.
-For example, script `lerna run build` (or `yarn run build` in
-root folder) runs `yarn run build` inside every directory in `packages` folder.
+В корневой `package.json` добавлены скрипты для выполнения команд в каждом из пакетов.
+Например, запуск `yarn run build` последовательно запустит `build`-скрипты в каждом из пакетов из директории `packages`.
 
-# Development
 
-For contributing to `megafon-ui` library you need to create your own fork of the main repository.
-After making some changes you should create pull request with appropriate description.
+# Разработка
 
-We use TypeScript for development. All components are based on classes.
+Для внесения изменений в библиотеку необходимо форкнуть репозиторий, создать в своей копии ветку и после
+внесения изменений создать pull request в главный репозиторий.
 
-Every component's directory should include:
+Разработка ведется на языке TypeScript. Новые компоненты должны быть функциональными.
 
-1. File `<Component name>.tsx` with component class.
-2. File `<Component name>.less` for styles.
-3. File `<Component name>.test.tsx` with tests. Events should be tested with mocks,
-whereas snapshots should be used for visual representations.
-4. File `<Component name>.mdx` for documentation in [Docz](https://github.com/doczjs/docz) format.
-Such documentation is available only for `ui-core` module for a now.
+Для каждого компонента должна быть создана своя директория со следующим содержимым:
 
-Examples of components can be found [here](https://github.com/MegafonWebLab/megafon-ui/tree/master/packages/ui-core/src).
+1. `<Component name>.tsx` с кодом компонента
+2. `<Component name>.less` для стилей
+3. `<Component name>.test.tsx` для тестов. Все пропсы должны быть
+протестированы: колбэки с помощью моков, остальные пропсы через снепшоты.
+4. Директория `doc`, включающая документацию в формате [Docz](https://github.com/doczjs/docz):
+    - `<Component name>.mdx` - корневая страница документации для компонента, должна содержать компонент DoczTabs
+    - `<Component name>.example.mdx` - файл с примерами использования компонента
+    - `<Component name>.design.mdx` - дизайнерская документация
+    - `<Component name>.docz.tsx` - исходники для примеров, например для кода оберток или дополнительных стилей
 
-Special function `cn` should be created before every component's class declaration.
-This function generates css-classes in BEM-format for component's elements.
-The name of component in css should be prefixed with `mfui-beta-`. This name should be
-passed to the function for `cn` creation.
-
-For example:
-
-```
-const cn = cnCreate('mfui-beta-button');
-```
-
-Interfaces `IComponentNameProps` and `IComponentNameState` should be declared before
-component class in case component has incoming props or internal state.
-Interface with props should be exported.
-
-For example:
-
-```
-export interface IButtonProps {
-    /** Link */
-    href?: string | null;
-    /** Click event handler */
-    onClick?(e: React.SyntheticEvent<EventTarget>): void;
-}
-
-interface IButtonState {
-    isTouch: boolean;
-}
-```
-
-Tests and code linting checks can be executed with commands:
+Тесты и линтеры можно запустить с помощью команд:
 
 ```bash
 $ yarn run lint
@@ -67,37 +37,93 @@ $ yarn run lint
 $ yarn run test
 ```
 
-Tests and code linting also run via git hooks before committing of any changes.
-`ui-shared` depends on `ui-core` and while `ui-core` hasn't been builded, you won't be able
-to run tests (and commit changes) in `ui-shared` package.
+Тесты и линтеры также автоматически запускаются перед каждым коммитом.
 
-To solve it, run
-```bash
-$ yarn run build
+Перед запуском тестов необходимо собрать проект через `yarn run build`, т.к. если проект не будет собран, то
+возникнет проблема с зависимостями между пакетами.
+
+
+## Как сделать коммит
+
+На проекте используются [conventional commits](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/).
+Более прикладное описание можно подсмотреть тут: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
+
+Сообщение каждого коммита должно описывать:
+
+- тип, т.е. какой уровень изменений привнесет влитие коммита (например: feat, fix, ci или docs)
+- scope (контекст) изменений (например, какой-то компонент)
+- описание изменений, которые будут зафиксированы отдельной строкой в changelog-е.
+
+*Примеры типов по семверу:*
+
 ```
-in the root of repository.
+patch: fix(button): new prop onClick
+minor: feat(incredible-component): added new component
+major:
 
-# Release process
+feat(button): deprecated onClick prop removed
 
-Before starting release process you need to build project:
-
-```bash
-$ yarn run build
+BREAKING CHANGE: onClick prop removed
 ```
 
-To make a new release of all changed packages you need to run:
+Для упрощения создания коммитов в зависимости добавлен commitizen, с ним коммит можно делать так:
 
-```bash
-$ yarn run release
+```
+git add .
+git cz
 ```
 
-This script prompts for a new version of each changed package.
+После запуска cz запустится wizard, который задаст необходимые параметры сообщения. На одном из шагов
+нужно отметить тикер задачи, к которой относятся правки.
 
-After confirm script does the following:
+Если после попытки коммита что-то пошло не так (например коммит был прерван из-за ошибок линтера), то
+чтобы не вводить параметры коммита заново, можно воспользоваться командой git cz --retry.
 
-- updates cross-dependencies
-- makes commit with publish info
-- creates git tags for each updated package
-- pushes all of that to git
 
-TravisCI will publish packages to NPM after successful build.
+### Типы коммитов
+
+Основные - это fix и feat для патча и минорного изменения соответственно. Они будут использоваться в 99% случаев.
+Breaking changes могут появиться внутри любого из них (либо с другим типом), тогда при влитии будет опубликована
+следующая мажорная версия. Это должен быть редкий случай. Другие типы можно подсмотреть в доке для [angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
+
+
+### Что попадет в changelog
+
+Сообщения из коммитов с типом `feat`, `fix`, `perf`, а также все коммиты помеченные как `breaking change` с любым типом попадают в changelog.
+
+
+### Добавление коммитов в существующую ветку
+
+Если в ветке уже есть коммит с типом, попадающим в генерацию changelog'а, то можно добавить новые
+коммиты с типом `refactor`, чтобы они не были добавлены в changelog.
+
+
+## Ревью
+
+В процессе ревью необходимо проверять сообщения в коммитах на предмет соответствия
+правок в реквесте. Если сообщения несоответствуют правкам в коде - необходимо вернуть реквест на доработку.
+
+Особое внимание должно уделяться `breaking change` - в интерфейсе github'а в сообщении коммита эта строка не видна
+и при просмотре будет необходимо раскрывать сообщения коммитов, они свернуты под иконкой троеточия.
+
+## Публикация пакетов
+
+Публикация происходит автоматически при коммите в ветку `master` с помощью Github Actions. Lerna по сообщениям из коммитов определяет
+следующую релизную версию, генерирует changelog и при наличии изменений в коде публикует пакеты в npm.
+
+### Как пропустить публикацию
+
+Чтобы не публиковать новый пакет нужно в сообщение коммита добавить строку `skip release`.
+Сообщение должно быть в последнем коммите, загруженном в репозиторий, например:
+
+1. если пушнуть 2 коммита одновременно, `skip release` должен быть в последнем коммите, в первом не обязательно
+2. если нужно влить ветку без публикации, в поле сообщения в интерфейсе github'а нужно добавить `skip release`
+
+Добавленные изменения попадут в релиз при следующем коммите в мастер, если у него не будет `skip release` в сообщении.
+
+## Переход от пререлизной версии к основной:
+
+1. в `lerna.json` удалить строки с `distTag`, `conventionalPrerelease`, `preid`
+2. в `lerna.json` вместо удаленных добавить `conventionalGraduate="*"``
+3. влить в мастер, дождаться прохода пайплайна и публикации пакетов
+4. следующим коммитом можно удалить `conventionalGraduate="*"`` (если не удалять, он все равно будет игнорироваться)
