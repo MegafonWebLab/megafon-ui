@@ -1,0 +1,48 @@
+import VideoBanner from '../VideoBanner';
+import { content, image, video, youtubeVideoId } from './VideoBanner.docz.tsx'
+
+## Примеры свойств
+
+``` javascript
+
+const content: IContent = {
+    title: 'Текст ≈40 симовлов. Короткие слова',
+    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+    href: '#',
+    buttonTitle: 'Текст в кнопке',
+    onButtonClick: () => alert('button click'),
+}
+const image: IImage = {
+    desktop: 'image-desktop.png',
+    mobile: 'image-mobile.png'
+}
+
+Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
+
+<VideoBanner videoType="youtube" videoSrc="2Sps5MnvlKM" />
+
+```
+
+## Видеобаннер
+
+<Playground>
+    <VideoBanner videoType="video" videoSrc={video} image={image} />
+</Playground>
+
+## С контентом
+
+<Playground>
+    <VideoBanner videoType="video" videoSrc={video} image={image} content={content} />
+</Playground>
+
+## Только изображение
+
+<Playground>
+    <VideoBanner image={image} content={content} />
+</Playground>
+
+## Видео с youtube
+
+<Playground>
+    <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} image={image} />
+</Playground>

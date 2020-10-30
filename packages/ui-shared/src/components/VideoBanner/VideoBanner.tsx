@@ -38,7 +38,7 @@ interface IVideoBannerProps {
     image: IImage;
     /** Данные для блока с контентом */
     content?: IContent;
-    /** Источник видео. Если видео с youtube, то необходимо указать id, например 2Sps5MnvlKM */
+    /** Источник видео. Если видео с youtube, то необходимо указать id */
     videoSrc?: string;
     /** Тип видео */
     videoType?: VideoType;
