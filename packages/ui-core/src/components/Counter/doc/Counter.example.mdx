@@ -1,36 +1,6 @@
----
-name: Counter
-menu: Компоненты
-route: components/counter
----
-
 import { Playground, Props } from 'docz';
-import Counter from './Counter';
+import Counter from '../Counter';
 import { DemoCounterWrapper, flexStyle } from './Counter.docz';
-
-# Counter
-
-## Properties
-
-<Props of={Counter} />
-
-```javascript
-export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
-    const [value, setValue] = React.useState(initialValue);
-
-    return (
-        <div>
-            <p style={{ marginTop: 0 }}>Value: {value}</p>
-            {children({
-                onChange: setValue,
-                initialValue: initialValue,
-            })}
-        </div>
-    );
-};
-```
-
-## Basic usage
 
 <Playground>
     <div style={flexStyle}>
@@ -74,3 +44,19 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initial
         </DemoCounterWrapper>
     </div>
 </Playground>
+
+```javascript
+export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
+    const [value, setValue] = React.useState(initialValue);
+
+    return (
+        <div>
+            <p style={{ marginTop: 0 }}>Value: {value}</p>
+            {children({
+                onChange: setValue,
+                initialValue: initialValue,
+            })}
+        </div>
+    );
+};
+```

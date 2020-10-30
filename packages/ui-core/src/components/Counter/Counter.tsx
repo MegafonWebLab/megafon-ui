@@ -2,26 +2,26 @@ import * as React from 'react';
 import cnCreate from 'utils/cnCreate';
 import './Counter.less';
 
-type Props = {
-    /** Custom class name */
+export interface ICounterProps {
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Initial number in counter */
+    /** Начальное значение */
     initialValue?: number;
-    /** Minimal allowed value */
+    /** Минимальное доступное значение */
     min?: number;
-    /** Maximum allowed value */
+    /** Максимальное доступное значение */
     max?: number;
-    /** Disabled state of counter */
+    /** Запретить взаимодействие с компонентом */
     isDisabled?: boolean;
-    /** onChange handler */
+    /** Обработчик изменения значения 'value' */
     onChange?: (value: number) => void;
-};
+}
 
 const DEFAULT_MIN_VALUE = 0;
 const DEFAULT_MAX_VALUE = 999999;
 
 const cn = cnCreate('counter');
-const Counter: React.FC<Props> = ({
+const Counter: React.FC<ICounterProps> = ({
     className,
     initialValue,
     max = DEFAULT_MAX_VALUE,

@@ -7,26 +7,26 @@ import detectTouch from 'utils/detectTouch';
 import filterDataAttrs, { IDataAttributes } from '../../utils/dataAttrs';
 
 export interface ICheckboxProps extends IDataAttributes {
-    /** Color scheme */
+    /** Цвет чекбокса */
     color?: 'dark' | 'light';
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Font size */
+    /** Размер текста */
     fontSize?: 'regular' | 'small';
-    /** Checkbox name */
+    /** Имя компонента в DOM */
     name?: string;
-    /** Checkbox value */
+    /** Значение чекбокса */
     value?: string;
-    /** Checked */
+    /** Управление состоянием вкл/выкл компонента */
     checked?: boolean;
-    /** Disabled */
+    /** Управление возможности взаимодействия с компонентом */
     disabled?: boolean;
-    /** Error */
+    /** Отобразить компонент в состоянии ошибки */
     error?: boolean;
-    /** Extra content */
+    /** Дополнительный контент справа */
     extraContent?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
-    /** onChange handler */
+    /** Обработчик изменения значения 'value' */
     onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 

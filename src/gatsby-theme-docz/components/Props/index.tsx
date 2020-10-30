@@ -25,10 +25,15 @@ const cn = cnCreate('docz-props');
 export const Prop = ({ propName, prop }) => {
     if (!prop.type && !prop.flowType) return null;
 
+    const type = prop.type.name
+        .replace(/ \| undefined/g, '')
+        .replace(/\|/g, '<br>| ')
+        .replace(/\"/g, "'");
+
     return (
         <tr className={cn('row')}>
             <td className={cn('cell', { name: true })}>{propName}{prop.required && '*'}</td>
-            <td className={cn('cell')}>{prop.type.name.replace(/ \| undefined/g, '')}</td>
+            <td className={cn('cell')} dangerouslySetInnerHTML={{ __html: type }} />
             <td className={cn('cell')}>
                 {prop.defaultValue && (
                     <div data-testid="prop-default-value">
@@ -42,8 +47,14 @@ export const Prop = ({ propName, prop }) => {
 }
 
 export const Props = ({ props }) => {
-    const entries = Object.entries(props);
-
+    const entries = Object.entries<any>(props)
+        .sort(([, propA], [, propB]) =>
+            Number(!!propB.required) - Number(!!propA.required)
+        )
+        .sort(([, propA], [, propB]) =>
+            Number(propA.type.name.search('=>') !== -1) - Number(propB.type.name.search('=>') !== -1)
+        );
+    console.log('entries', entries);
     return (
         <table className={cn()}>
             <thead>
