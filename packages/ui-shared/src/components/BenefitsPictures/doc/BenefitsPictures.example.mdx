@@ -1,27 +1,9 @@
----
-name: BenefitsPictures
-menu: Конструктор
-route: components/benefits-pictures
----
-
-import { Playground, Props } from 'docz';
-import BenefitsPictures from './BenefitsPictures';
+import { Playground } from 'docz';
+import BenefitsPictures from '../BenefitsPictures';
 import { twoItems, threeItems, fourItems } from './BenefitsPictures.docz.tsx';
 
-# BenefitsPictures
-
-## Properties
-<Props of={BenefitsPictures} />
-
-## Included props
+## Примеры свойств
 ``` javascript
-interface IBenefit {
-    title: string;
-    text: string;
-    img: string;
-}
-
-type GridGutterSize = 'large' | 'medium';
 
 const items = [
     {
@@ -37,9 +19,7 @@ const items = [
 ]
 ```
 
-## Basic usage
-
-### Left align, large grid gap
+## Выравнивание по левому краю, большое расстояние между бенефитами
 <Playground>
     <BenefitsPictures
         items={twoItems}
@@ -58,7 +38,7 @@ const items = [
     />
 </Playground>
 
-### Left align, medium grid gap
+## Выравнивание по левому краю, среднее расстояние между бенефитами
 
 <Playground>
     <BenefitsPictures
@@ -81,7 +61,7 @@ const items = [
     />
 </Playground>
 
-### Center align, large grid gap
+## Выравнивание по центру, большое расстояние между бенефитами
 
 <Playground>
     <BenefitsPictures
@@ -104,7 +84,7 @@ const items = [
     />
 </Playground>
 
-### Center align, medium grid gap
+## Выравнивание по центру, среднее расстояние между бенефитами
 
 <Playground>
     <BenefitsPictures

@@ -1,4 +1,4 @@
-import img from '../../../demo/bg_light_grey.png';
+import img from './bg_light_grey.png';
 
 const getItems = (i, image) => Array.from({ length: i }, () => ({
     title: 'Lorem ipsum',
