@@ -1,0 +1,133 @@
+import { Playground, Props } from 'docz';
+import Carousel from '../Carousel';
+import { DemoSlide } from './Carousel.docz';
+import ContentArea from 'components/ContentArea/ContentArea';
+
+## Особенности использования на мобильных разрешениях
+На разрешении меньше 1024 отключаются стрелки и появляются "уши",
+для корректного отображения которых необходимо предоставить компоненту возможность растянуться на всю страницу.
+Чтобы основные слайды выравнивались по остальному контенту страницы,
+необходимо переопределить размеры внутренних отступов у компонента с помощью
+переданного в innerIndentsClass класса.
+По умолчанию используются гайдовые отступы для контента страницы (32px на 320-767 и 48px на 768-1023)
+
+## Базовое использование
+
+<Playground>
+    <ContentArea>
+        <Carousel>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Тема навигации для использования на зеленом фоне
+
+<Playground>
+    <ContentArea>
+        <div style={{ padding: '20px 0' }}>
+            <Carousel navTheme="green">
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+                <DemoSlide>3</DemoSlide>
+                <DemoSlide>4</DemoSlide>
+                <DemoSlide>5</DemoSlide>
+                <DemoSlide>6</DemoSlide>
+            </Carousel>
+        </div>
+    </ContentArea>
+</Playground>
+
+## Прокрутка слайдов с зацикливанием
+
+<Playground>
+    <ContentArea>
+        <Carousel loop>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Автоматическая прокрутка слайдов
+
+<Playground>
+    <ContentArea>
+        <Carousel loop autoPlay>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Ширина слайдов по содержимому
+
+<Playground>
+    <ContentArea>
+        <Carousel slidesSettings={{
+            0: { slidesPerView: 'auto', spaceBetween: 16 },
+            768: { slidesPerView: 'auto', spaceBetween: 20 },
+        }}>
+            <DemoSlide><div style={{ width: '100px'}}>1</div></DemoSlide>
+            <DemoSlide><div style={{ width: '200px'}}>2</div></DemoSlide>
+            <DemoSlide><div style={{ width: '80px'}}>3</div></DemoSlide>
+            <DemoSlide><div style={{ width: '240px'}}>4</div></DemoSlide>
+            <DemoSlide><div style={{ width: '180px'}}>5</div></DemoSlide>
+            <DemoSlide><div style={{ width: '90px'}}>6</div></DemoSlide>
+            <DemoSlide><div style={{ width: '220px'}}>7</div></DemoSlide>
+            <DemoSlide><div style={{ width: '240px'}}>8</div></DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Переопределение количества видимых слайдов
+
+<Playground>
+    <ContentArea>
+        <Carousel slidesSettings={{
+            0: { slidesPerView: 1, spaceBetween: 16 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1280: { slidesPerView: 5, spaceBetween: 20 }
+        }}>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+``` javascript
+export const DemoSlide = ({ children }) => {
+    return (
+        <div
+            style={{
+                height: '200px',
+                backgroundColor: '#f3f3f3',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```

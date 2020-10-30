@@ -1,175 +1,100 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
+import cnCreate from '../../utils/cnCreate';
 import Carousel, { ICarouselProps } from './Carousel';
-import Link from '../Link/Link';
-import throttle from 'lodash.throttle';
+import { DemoSlide } from './doc/Carousel.docz';
 
-const originalThrottle = throttle;
+const props = {
+    className: 'class',
+    innerIndentsClass: 'inner-indents-class',
+    loop: true,
+    autoPlay: true,
+    autoPlayDelay: 1000,
+    navTheme: 'green',
+    onNextClick: jest.fn(),
+    onPrevClick: jest.fn(),
+    onChange: jest.fn(),
+} as ICarouselProps;
 
-const props: ICarouselProps = {
-    className: 'some-class',
-    options: {
-        arrows: true,
-        dots: true,
-        initialSlide: 0,
-        slidesToShow: 4,
-        responsive: [
-            {
-                breakpoint: 1000,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 3,
-                },
-            },
-            {
-                breakpoint: 900,
-                settings: {
-                    arrows: true,
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 860,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 1,
-                },
-            },
-        ],
-    },
-    children: [
-        <Link key={1} />,
-        <Link key={2} />,
-    ],
-    onClickNext: jest.fn(),
-    onClickPrev: jest.fn(),
-    onAfterChange: jest.fn(),
-    onBeforeChange: jest.fn(),
-    onSwipe: jest.fn(),
-};
+const cnCarousel = cnCreate('.mfui-beta-carousel');
 
 describe('<Carousel />', () => {
-    beforeEach(() => {
-        // @ts-ignore
-        throttle = jest.fn();
-    });
-
     afterEach(() => {
-        // @ts-ignore
-        throttle = originalThrottle;
-        jest.resetAllMocks();
+        jest.clearAllMocks();
     });
 
-    describe('render tests', () => {
-        it('should render component with required props', () => {
-            const wrapper = shallow(
-                <Carousel
-                    options={{ slidesToShow: 2, responsive: [] }}
-                    children={[]}
-                />
-            );
+    it('should render with default props', () => {
+        const wrapper = shallow(
+            <Carousel>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>
+        );
 
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render component with all props', () => {
-            const wrapper = shallow(<Carousel {...props} />);
-
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render component with prev arrow active and next disabled', () => {
-            const wrapper = shallow(<Carousel {...props} />);
-
-            wrapper.setState({ isPrevActive: true, isNextActive: false });
-
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render component with classes props', () => {
-            const classesProps = {
-                ...props,
-                children: [
-                    <Link key={1} />,
-                    <Link key={2} />,
-                    <Link key={3} />,
-                    <Link key={4} />,
-                    <Link key={5} />,
-                ],
-                classes: {
-                    root: 'root-string',
-                    slider: 'slider-cn',
-                    leftArrow: 'left-arrow-string',
-                    rightArrow: 'right-arrow-string',
-                },
-            };
-            const wrapper = shallow(<Carousel {...classesProps} />);
-
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(wrapper).toMatchSnapshot();
     });
 
-    describe('componentDidMount tests', () => {
-        it('should call event listener', () => {
-            const addEventListener = jest.spyOn(window, 'addEventListener');
+    it('should render with props', () => {
+        const wrapper = shallow(
+            <Carousel
+                {...props}
+                slidesSettings={{
+                    768: { slidesPerView: 'auto', spaceBetween: 2 },
+                }}
+            >
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>
+        );
 
-            const wrapper = shallow(<Carousel {...props} />);
-            const instance = wrapper.instance() as Carousel;
-
-            expect(addEventListener).toBeCalledWith('resize', instance.throttledResizeEvents);
-
-            addEventListener.mockRestore();
-        });
-
-        it('should set isNextActive as true and isPrevActive as false', () => {
-            const wrapper = shallow(<Carousel {...props} />);
-
-            expect(wrapper.state('isNextActive')).toBeTruthy();
-            expect(wrapper.state('isPrevActive')).toBeFalsy();
-        });
+        expect(wrapper).toMatchSnapshot();
     });
 
-    describe('onBeforeChange', () => {
-        it('is called if slide is changed', () => {
-            const wrapper = mount(
-                <Carousel {...props} >
-                    <Link key={1} />
-                    <Link key={2} />
-                    <Link key={3} />
-                    <Link key={4} />
-                    <Link key={5} />
-                    <Link key={6} />
-                </Carousel>
-            );
+    it('should call onNextClick', () => {
+        const wrapper = mount(
+            <Carousel {...props}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>
+        );
 
-            wrapper.find('.slick-dots > li > button').last().simulate('click');
-            expect(props.onBeforeChange).toBeCalledWith(0, 5);
-        });
+        wrapper
+            .find(cnCarousel('arrow'))
+            .last()
+            .simulate('click');
+
+        expect(props.onNextClick).toBeCalled();
     });
 
-    describe('onSwipe', () => {
-        it('should call onSwipe callback on carousel swipe', () => {
-            const wrapper = mount(
-                <Carousel
-                    {...props}
-                    children={[
-                        <Link key={1} />,
-                        <Link key={2} />,
-                        <Link key={3} />,
-                        <Link key={4} />,
-                        <Link key={5} />,
-                        <Link key={6} />,
-                    ]}
-                />
-            );
+    it('should call onPrevClick', () => {
+        const wrapper = mount(
+            <Carousel {...props}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>
+        );
 
-            const slider = wrapper.find('.slick-list');
-            slider.simulate('touchstart', { touches: [{ pageX: 100, pageY: 0 }]});
-            slider.simulate('touchmove', { touches: [{ pageX: 150, pageY: 0 }]});
-            slider.simulate('touchend', { touches: [{ pageX: 200, pageY: 0 }]});
+        wrapper
+            .find(cnCarousel('arrow'))
+            .first()
+            .simulate('click');
 
-            const { onSwipe } = props;
-            expect(onSwipe).toHaveBeenCalledWith('right');
-        });
+        expect(props.onPrevClick).toBeCalled();
+    });
+
+    it('should call onChange', () => {
+        const wrapper = mount(
+            <Carousel {...props}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>
+        );
+
+        wrapper
+            .find(cnCarousel('arrow'))
+            .last()
+            .simulate('click');
+
+        expect(props.onChange).toBeCalled();
     });
 });

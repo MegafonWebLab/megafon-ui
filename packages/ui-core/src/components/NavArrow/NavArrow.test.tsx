@@ -9,6 +9,7 @@ const props: INavArrowProps = {
     disabled: true,
     onClick: jest.fn(),
 };
+
 describe('<NavArrow />', () => {
     it('should render with default props', () => {
         const wrapper = shallow(<NavArrow />);
