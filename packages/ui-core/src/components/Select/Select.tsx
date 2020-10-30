@@ -109,6 +109,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     };
 
     static defaultProps: Partial<ISelectProps> = {
+        isDisabled: false,
+        required: false,
         type: SelectTypes.CLASSIC,
         notFoundText: 'Ничего не нашлось',
         items: [],
@@ -131,7 +133,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         });
 
-        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true });
+        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true, activeIndex: 0 });
     }, 250);
 
     constructor(props: ISelectProps) {
@@ -148,7 +150,19 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     componentDidMount() {
-        this.getCurrentIndex();
+        const { currentValue } = this.props;
+        const { filteredItems } = this.state;
+        const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
+
+        if (currentIndex !== -1) {
+            this.setState({
+                activeIndex: currentIndex,
+                inputValue: filteredItems[currentIndex].title,
+                comparableInputValue: filteredItems[currentIndex].title,
+            });
+
+            return;
+        }
     }
 
     componentDidUpdate() {
@@ -178,16 +192,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleOpenDropdown = (): void => {
-        this.getCurrentIndex();
         this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
     handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
         const { activeIndex, filteredItems } = this.state;
+
         const currentItem = filteredItems[activeIndex].value;
 
-        const item = items.find(elem => elem.value === currentItem);
+        const item = filteredItems.find(elem => elem.value === currentItem);
 
         if (!item) {
             return;
@@ -211,6 +225,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         e.stopPropagation();
 
+        this.setState((state) => ({ isOpened: !state.isOpened }));
+
         if (!isOpened && filteredItems) {
             e.target.select();
         }
@@ -225,14 +241,14 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
-        const { activeIndex, isOpened } = this.state;
-        const { items } = this.props;
+        const { activeIndex, isOpened, filteredItems } = this.state;
+        const { isDisabled } = this.props;
 
-        if (items.length === 0) {
+        if (filteredItems.length === 0 || isDisabled) {
             return true;
         }
 
-        if (e.key === 'ArrowDown' && isOpened && activeIndex < items.length - 1) {
+        if (e.key === 'ArrowDown' && isOpened && activeIndex < filteredItems.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
                 this.scrollList(this.state.activeIndex);
             });
@@ -326,18 +342,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     getItemWrapper = node => this.itemWrapperNode = node;
     getSelectNode = node => this.selectNode = node;
     getNodeList = node => this.itemsNodeList.push(node);
-
-    getCurrentIndex = () => {
-        const { currentValue } = this.props;
-        const { filteredItems } = this.state;
-        const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
-
-        if (currentIndex !== -1) {
-            this.setState({ activeIndex: currentIndex, inputValue: filteredItems[currentIndex].title });
-
-            return;
-        }
-    }
 
     renderTitle() {
         const { placeholder, items, currentValue } = this.props;

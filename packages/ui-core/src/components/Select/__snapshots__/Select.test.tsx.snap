@@ -433,6 +433,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
       "incorrect-attr": "test",
     }
   }
+  isDisabled={false}
   items={
     Array [
       Object {
@@ -557,6 +558,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
       "incorrect-attr": "test",
     }
   }
+  isDisabled={false}
   items={
     Array [
       Object {
@@ -668,6 +670,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 
 exports[`<Select /> snapshots renders with default props 1`] = `
 <Select
+  isDisabled={false}
   items={
     Array [
       Object {
@@ -681,6 +684,7 @@ exports[`<Select /> snapshots renders with default props 1`] = `
     ]
   }
   notFoundText="Ничего не нашлось"
+  required={false}
   type="classic"
 >
   <div
@@ -764,6 +768,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
       "incorrect-attr": "test",
     }
   }
+  isDisabled={false}
   items={
     Array [
       Object {
