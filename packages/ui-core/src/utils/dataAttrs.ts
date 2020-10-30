@@ -3,6 +3,7 @@ interface IAttributes {
 }
 
 export interface IDataAttributes {
+    /** Дата атрибуты для корневого элемента */
     dataAttrs?: IAttributes;
 }
 

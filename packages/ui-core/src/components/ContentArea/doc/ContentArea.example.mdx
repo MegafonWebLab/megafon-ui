@@ -1,43 +1,33 @@
----
-name: ContentArea
-menu: Компоненты
-route: components/content-area
----
-
 import { Playground, Props } from 'docz';
-import ContentArea from './ContentArea';
+import ContentArea from '../ContentArea';
 import { wrapperStyles } from './ContentArea.docz';
 
-# ContentArea
-
-## Properties
-
-<Props of={ContentArea} />
-
-## Basic usage
-
 <Playground>
-    <ContentArea>Some content</ContentArea>
+    <ContentArea>
+        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+        Монтажник проведёт все необходимые работы под ключ.
+    </ContentArea>
 </Playground>
 
-## Mobile inner padding
+## Внутренний отступ на мобильном разрешении
 
 <Playground>
     <ContentArea outerBackgroundColor="spbSky0" mobileInnerPadding="none">
-        It disable paddings for internal block on viewport width smaller than 768px.
-        This can be seen on screens width less than 768 pixels.
+        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+        Монтажник проведёт все необходимые работы под ключ.
     </ContentArea>
 </Playground>
 
-## None-padding usage
+## Без отступов
 
 <Playground>
     <ContentArea innerPadding="none" innerBackgroundColor="white">
-        Some content
+        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+        Монтажник проведёт все необходимые работы под ключ.
     </ContentArea>
 </Playground>
 
-## You can choose the background color for an external or internal block
+## Задний фон внутреннего контейнера
 
 <Playground>
     <div style={wrapperStyles}>

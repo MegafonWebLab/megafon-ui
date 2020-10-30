@@ -15,16 +15,16 @@ export type BackgroundColorType =
     | 'fullBlack';
 
 export interface IConrentAreaProps {
-    /** Background color of the external container */
-    outerBackgroundColor?: BackgroundColorType;
-    /** Background color of the internal container */
-    innerBackgroundColor?: BackgroundColorType;
-    /** Side paddings of the internal container */
-    innerPadding?: 'default' | 'none';
-    /** Side paddings of the internal container on mobile screen */
-    mobileInnerPadding?: 'default' | 'none';
-    /** Custom class name for an external content area block */
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Цвет заднего фона внешнего контейнера */
+    outerBackgroundColor?: BackgroundColorType;
+    /** Цвет заднего фона внутреннего контейнера */
+    innerBackgroundColor?: BackgroundColorType;
+    /** Внутренние отступы */
+    innerPadding?: 'default' | 'none';
+    /** Внутренние отступы на мобильном разрешении */
+    mobileInnerPadding?: 'default' | 'none';
 }
 
 const BACKGROUND_COLORS = [

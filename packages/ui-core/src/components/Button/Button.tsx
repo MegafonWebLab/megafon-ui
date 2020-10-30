@@ -8,9 +8,9 @@ import detectTouch from 'utils/detectTouch';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export interface IButtonProps extends IDataAttributes {
-    /* Custom root class name */
+    /** Дополнительный класс корневого элемента */
     className?: string | string[];
-    /** Custom classes for button, button content and inner container */
+    /** Дополнительные классы для внутренних элементов */
     classes?: {
         /** Button class */
         root?: string;
@@ -19,37 +19,37 @@ export interface IButtonProps extends IDataAttributes {
         /** Inner container class */
         inner?: string;
     };
-    /** Theme */
+    /** Тема компонента */
     theme?: 'green' | 'purple' | 'white' | 'black';
-    /** Type */
+    /** Тип компонента */
     type?: 'primary' | 'outline';
-    /** Link */
+    /** Ссылка */
     href?: string;
-    /** Target - property of <a> tag */
+    /** Target - свойство тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Form action */
+    /** Поведение кнопки */
     actionType?: 'button' | 'reset' | 'submit';
-    /** Size for all devices */
+    /** Размер на всех разрешениях экрана */
     sizeAll?: 'small' | 'medium' | 'large';
-    /** Size for wide devices 1280+ */
+    /** Размер на разрешении экрана 1280+ */
     sizeWide?: 'small' | 'medium' | 'large';
-    /** Size for desktop 1020+ */
+    /** Размер на разрешении экрана 1020+ */
     sizeDesktop?: 'small' | 'medium' | 'large';
-    /** Size for tablet 730-1020 */
+    /** Размер на разрешении экрана 730-1020 */
     sizeTablet?: 'small' | 'medium' | 'large';
-    /** Size for mobile 320-730 */
+    /** Размер на разрешении экрана 320-730 */
     sizeMobile?: 'small' | 'medium' | 'large';
-    /** Display full width button */
+    /** Растянуть на полную ширину контейнера */
     fullWidth?: boolean;
-    /** Show spinner */
+    /** Показать загрузку */
     showSpinner?: boolean;
-    /** Show button with arrow */
+    /** Показать стелку */
     showArrow?: boolean;
-    /** Icon to output with a text */
+    /** Иконка слева */
     iconLeft?: JSX.Element;
-    /** Disabled */
+    /** Управление возможности взаимодействия с компонентом */
     disabled?: boolean;
-    /** Click event handler */
+    /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 

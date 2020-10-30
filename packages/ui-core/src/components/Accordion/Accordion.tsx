@@ -7,19 +7,17 @@ import Collapse from 'components/Collapse/Collapse';
 import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
 import ArrowDown from 'icons/System/24/Arrow_down_24.svg';
 
-interface IAccordionClasses {
-    root?: string;
-    collapse?: string;
-}
-
 export interface IAccordionProps {
-    /** Accordion title */
+    /** Заголовок */
     title: string;
-    /** Accordion external state */
+    /** Состояние открытости */
     isOpened?: boolean;
-    /** Outer classes for Accordion and internal components */
-    classes?: IAccordionClasses;
-    /** Click handler */
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        root?: string;
+        collapse?: string;
+    };
+    /** Обработчик клика */
     onClickAccordion?: (isOpened: boolean, title: string) => void;
 }
 
