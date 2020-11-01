@@ -96,25 +96,22 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         </div>
     )
 
-    renderTooltipWrapper = (children: (triggerRef: React.RefObject<HTMLDivElement>) => React.ReactNode) => {
-        const triggerRef = React.createRef<HTMLDivElement>();
-        return children(triggerRef);
-    }
+    renderTooltip = (title: string, hint: string): React.ReactNode => {
+        const triggerElement = React.createRef<HTMLDivElement>();
 
-    renderTooltip = (title: string, hint: string): React.ReactNode => (
-        this.renderTooltipWrapper((triggerRef) => (
+        return(
             <>
-                <div ref={triggerRef} className={cn('badge-title', { 'tooltip': true })}>{title}</div>
+                <div ref={triggerElement} className={cn('badge-title', { 'tooltip': true })}>{title}</div>
                 <Tooltip
                     className={cn('badge-tooltip')}
                     placement="right"
-                    triggerElement={triggerRef}
+                    triggerElement={triggerElement}
                 >
                     <div dangerouslySetInnerHTML={{ __html: hint }} />
                 </Tooltip>
             </>
-        ))
-    )
+        );
+    }
 
     handleClickMoreInfo = (e: React.SyntheticEvent<EventTarget>): void => {
         const { onClickMoreInfo } = this.props;
