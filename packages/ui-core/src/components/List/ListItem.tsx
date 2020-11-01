@@ -4,7 +4,7 @@ import './ListItem.less';
 import cnCreate from 'utils/cnCreate';
 
 export interface IListItemProps {
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }

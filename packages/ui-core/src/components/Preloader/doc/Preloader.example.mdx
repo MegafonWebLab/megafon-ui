@@ -1,0 +1,28 @@
+
+import { Playground } from 'docz';
+import Preloader from '../Preloader';
+import {
+    DemoPreloaderWrapper,
+    flexboxStyles,
+} from './Preloader.docz';
+
+<Playground style={flexboxStyles}>
+    <Preloader />
+</Playground>
+
+## Цветовые темы
+
+<Playground style={flexboxStyles}>
+    <Preloader color="default" />
+    <Preloader color="black" />
+    <DemoPreloaderWrapper>
+        <Preloader color="white" />
+    </DemoPreloaderWrapper>
+</Playground>
+
+## Размеры
+
+<Playground style={flexboxStyles}>
+    <Preloader size="small" />
+    <Preloader size="medium" />
+</Playground>

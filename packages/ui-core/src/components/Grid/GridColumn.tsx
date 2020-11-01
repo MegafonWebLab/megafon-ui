@@ -7,57 +7,57 @@ const GridSizeValues = PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', 
 export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
 
 export interface IGridColumn {
-    /** Size of columns on wide screens */
+    /** Размер колон на разрещении 1280+ */
     wide?: TGridSizeValues;
-    /** Size of columns on desktop screens */
+    /** Размер колон на разрещении 1024+ */
     desktop?: TGridSizeValues;
-    /** Size of columns on tablet screens */
+    /** Размер колон на разрещении 768+ */
     tablet?: TGridSizeValues;
-    /** Size of columns on mobile screens */
+    /** Размер колон на разрещении 767- */
     mobile?: TGridSizeValues;
-    /** Size of columns on all screens */
+    /** Размер колон на всех разрешениях */
     all?: TGridSizeValues;
 
-    /** Order on all screens */
-    orderAll?: string;
-    /** Order on wide screens */
+    /** Порядок на разрещении 1280+ */
     orderWide?: string;
-    /** Order on desktop screens */
+    /** Порядок на разрещении 1024+ */
     orderDesktop?: string;
-    /** Order on tablet screens */
+    /** Порядок на разрещении 768+ */
     orderTablet?: string;
-    /** Order on mobile screens */
+    /** Порядок на разрещении 767- */
     orderMobile?: string;
+    /** Порядок на всех разрешениях */
+    orderAll?: string;
 
-    /** Size of left offset on wide screens */
+    /** Размер левого смещения на 1280+ */
     leftOffsetWide?: TGridSizeValues;
-    /** Size of left offset on desktop screens */
+    /** Размер левого смещения на 1024+ */
     leftOffsetDesktop?: TGridSizeValues;
-    /** Size of left offset on tablet screens */
+    /** Размер левого смещения на 768+ */
     leftOffsetTablet?: TGridSizeValues;
-    /** Size of left offset on mobile screens */
+    /** Размер левого смещения на 767- */
     leftOffsetMobile?: TGridSizeValues;
-    /** Size of left offset on all screens */
+    /** Размер левого смещения на всех разрешениях */
     leftOffsetAll?: TGridSizeValues;
 
-    /** Size of right offset on wide screens */
+    /** Размер правого смещения на 1280+ */
     rightOffsetWide?: TGridSizeValues;
-    /** Size of right offset on desktop screens */
+    /** Размер правого смещения на 1024+ */
     rightOffsetDesktop?: TGridSizeValues;
-    /** Size of right offset on tablet screens */
+    /** Размер правого смещения на 768+ */
     rightOffsetTablet?: TGridSizeValues;
-    /** Size of right offset on mobile screens */
+    /** Размер правого смещения на 767- */
     rightOffsetMobile?: TGridSizeValues;
-    /** Size of right offset on all screens */
+    /** Размер правого смещения на всех разрешениях */
     rightOffsetAll?: TGridSizeValues;
 
-    /** Custom alignment of column */
+    /** Дополнительное выравние колонны */
     align?: 'right' | 'left' | 'center';
-    /** Column flex grow */
+    /** Flex grow колонны */
     grow?: boolean;
-    /** Column as flex container */
+    /** Сделать колонну флекс контейнером */
     flex?: boolean;
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
     children: React.ReactNode;
 }

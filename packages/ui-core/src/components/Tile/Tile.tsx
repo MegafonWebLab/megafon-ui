@@ -27,35 +27,33 @@ export const Shadow = {
 type ShadowType = typeof Shadow[keyof typeof Shadow];
 
 export interface ITileProps {
-    /** Link href */
+    /** Ссылка */
     href?: string;
-    /** Tile view according to the background color */
+    /** Тема */
     theme?: ThemeType;
-    /** Border radius */
+    /** Радиус границы */
     radius?: RadiusType;
-    /** Shadow levels of tile contour */
+    /** Уровень тени */
     shadowLevel?: ShadowType;
-    /** Enabling shadow on hover */
+    /** Включить тень при наведении */
     isInteractive?: boolean;
-    /** Custom class */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Handler */
+    /** Обработчик клика */
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const cn = cnCreate('mfui-beta-tile');
-const Tile: React.FC<ITileProps> = (props) => {
-    const {
-        href,
-        children,
-        className,
-        theme = Theme.LIGHT,
-        shadowLevel = Shadow.ZERO,
-        radius = Radius.DEFAULT,
-        isInteractive = false,
-        onClick,
-    } = props;
-
+const Tile: React.FC<ITileProps> = ({
+    href,
+    children,
+    className,
+    theme = 'light',
+    shadowLevel = 'zero',
+    radius = 'default',
+    isInteractive = false,
+    onClick,
+}) => {
     const [currentShadow, setCurrentShadow] = React.useState(shadowLevel);
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {

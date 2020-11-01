@@ -1,23 +1,15 @@
 import * as React from 'react';
 
-const flexboxStyles = {
+export const flexboxStyles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around',
     padding: '16px',
 };
 
-const wrapperStyles = {
+export const wrapperStyles = {
     backgroundColor: '#00B956',
     padding: '20px',
-};
-
-export const DemoFlexboxWrapper: React.FC = ({ children }) => {
-    return (
-        <div style={flexboxStyles}>
-            {children}
-        </div>
-    );
 };
 
 export const DemoPreloaderWrapper: React.FC = ({ children }) => {
