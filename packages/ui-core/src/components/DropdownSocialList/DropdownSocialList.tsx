@@ -19,7 +19,7 @@ export interface IDropdownSocialListProps {
 }
 
 const cn = cnCreate('mfui-beta-dropdown-social-list');
-const DropdownSocialList: React.FC<IDropdownSocialListProps> = ({icons, maxIconNumber = 6, className}) => {
+const DropdownSocialList: React.FC<IDropdownSocialListProps> = ({ icons, maxIconNumber = 6, className }) => {
     const triggerElement = React.useRef<HTMLDivElement | null>(null);
 
     const renderDropdown = (): React.ReactNode => (
