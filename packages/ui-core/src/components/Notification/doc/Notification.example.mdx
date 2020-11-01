@@ -1,20 +1,6 @@
----
-name: Notification
-menu: Компоненты
-route: components/Notification
----
-
 import { Playground, Props } from 'docz';
-import Notification from './Notification';
+import Notification from '../Notification';
 import { marginBottom } from './Notification.docz';
-
-# Notification
-
-## Properties
-
-<Props of={Notification} />
-
-## Basic types
 
 <Playground>
     <div style={marginBottom}>
@@ -26,7 +12,7 @@ import { marginBottom } from './Notification.docz';
     <Notification type="error">Вы превысили количество допустимых запросов в сутки. Пожалуйста, повторите попытку позже. Строка для двух строк, выравнивание  иконки по верхней.</Notification>
 </Playground>
 
-## Short types
+## Уменьшенный размер
 
 <Playground>
     <div style={marginBottom}>

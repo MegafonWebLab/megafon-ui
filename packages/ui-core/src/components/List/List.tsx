@@ -4,15 +4,15 @@ import './List.less';
 import cnCreate from 'utils/cnCreate';
 
 export interface IListProps {
-    /** List type */
+    /** Тип списка */
     as?: 'ul' | 'ol';
-    /** Align the list horizontally */
+    /** Выравнивание по горизонтали */
     hAlign?: 'center' | 'right';
-    /** Font weight */
+    /** Жирность шрифта */
     weight?: 'light' | 'regular' | 'bold';
-    /** Color */
+    /** Цвет */
     color?: 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
     children: JSX.Element[] | Element[] | JSX.Element | Element;
 }

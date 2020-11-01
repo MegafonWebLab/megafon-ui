@@ -5,15 +5,15 @@ import cnCreate from 'utils/cnCreate';
 import { IGridColumn } from './GridColumn';
 
 export interface IGridProps {
-    /** Alignment of all columns by horizontal axis */
+    /** Выравнивание всех колонн по горизонтали */
     hAlign?: 'left' | 'right' | 'center' | 'between' | 'around';
-    /** Alignment of all columns by vertical axis */
+    /** Выравнивание всех колонн по вертикали */
     vAlign?: 'top' | 'bottom' | 'center' | 'baseline';
-    /** Margin area on the left side of column */
+    /** Отступ слева от колонны */
     guttersLeft?: 'large' | 'medium';
-    /** Margin area on the bottom side of column */
+    /** Отступ снизу от колонны */
     guttersBottom?: 'large' | 'medium';
-    /** Transfering of columns onto multiple lines */
+    /** Перенос столбцов в несколько строк */
     multiRow?: boolean;
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
