@@ -28,58 +28,50 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
         onClickBubble: PropTypes.func,
     };
 
-    renderTooltipWrapper = (children: (triggerRef: React.RefObject<HTMLDivElement>) => React.ReactNode) => {
-        const triggerRef = React.createRef<HTMLDivElement>();
-        return children(triggerRef);
-    }
-
-    renderFootnote(title: string, footnote: string): JSX.Element {
+    renderFootnote = (footnote: string): React.ReactNode =>  {
         const { onClickBubble } = this.props;
+        const footnoteID = Math.random().toString(20).substr(2, 6);
+        const triggerElement = React.createRef<HTMLDivElement>();
 
         return (
-            <div className={cn('content')}>
-                <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
-                <div className={cn('cashback-c')}>
-                    {this.renderTooltipWrapper((triggerRef) => (
-                        <>
-                            <div
-                                ref={triggerRef}
-                                className={cn('bubble-trigger')}
-                                onClick={onClickBubble}
-                            >
-                                Подробнее
-                            </div>
-                            <Tooltip
-                                placement="bottom"
-                                triggerEvent="click"
-                                triggerElement={triggerRef}
-                            >
-                                <div
-                                    className={cn('hint-text')}
-                                    dangerouslySetInnerHTML={{ __html: footnote }}
-                                />
-                            </Tooltip>
-                        </>
-                    ))}
+            <div className={cn('footnote')} key={footnoteID}>
+                <div
+                    className={cn('footnote-trigger')}
+                    onClick={onClickBubble}
+                    ref={triggerElement}
+                >
+                    Подробнее
                 </div>
+                <Tooltip
+                    placement="bottom"
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                >
+                    <div
+                        className={cn('footnote-text')}
+                        dangerouslySetInnerHTML={{ __html: footnote }}
+                    />
+                </Tooltip>
             </div>
         );
     }
 
-    renderContent(title: string, caption: string = '', value: string = '', unit: string = ''): JSX.Element {
-        return (
-            <div className={cn('content')}>
-                <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
-                <div className={cn('description')}>
-                    {caption || `${value} ${unit}`}
+    renderOption = (option: IOption, index: number): React.ReactNode => {
+        const { title, caption, value, unit = '', svgIcon, footnote } = option;
+
+        return(
+            <div className={cn('option')} key={title + index}>
+                {svgIcon && <div className={cn('icon')}>{svgIcon}</div>}
+                <div className={cn('content')}>
+                    <div className={cn('title')} dangerouslySetInnerHTML={{ __html: title }} />
+                    {!footnote && (caption || value) && (
+                        <div className={cn('caption')}>
+                            {caption || `${value} ${unit}`}
+                        </div>
+                    )}
+                    {footnote && this.renderFootnote(footnote)}
                 </div>
             </div>
-        );
-    }
-
-    renderIcon(svgIcon: JSX.Element | null = null): JSX.Element {
-        return (
-            <div className={cn('icon')}>{svgIcon}</div>
         );
     }
 
@@ -88,21 +80,9 @@ class ProductTileOptions extends React.Component<IProductTileOptionsProps> {
 
         return (
             <div className={cn('')}>
-                {!!head && <div className={cn('head')}>{head}</div>}
+                {head && <div className={cn('head')}>{head}</div>}
                 <div className={cn('wrapper')}>
-                    {options.map((option, index) => {
-                        const { title, caption, value, unit, svgIcon, footnote } = option;
-
-                        return (
-                            <div className={cn('option')} key={title + index}>
-                                {this.renderIcon(svgIcon)}
-                                {footnote
-                                    ? this.renderFootnote(title, footnote)
-                                    : this.renderContent(title, caption, value, unit)
-                                }
-                            </div>
-                        );
-                    })}
+                    {options.map(this.renderOption)}
                 </div>
             </div>
         );
