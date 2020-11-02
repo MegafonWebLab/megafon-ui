@@ -1,26 +1,8 @@
----
-name: TextField
-menu: Компоненты
-route: components/textfield
----
 
-import { Playground, Props } from 'docz';
-import TextField from './TextField';
+import { Playground } from 'docz';
+import TextField from '../TextField';
 import { TextFieldWrapper } from './TextField.docz';
 import CustomIcon from 'icons/System/24/Rating_5_24.svg';
-
-# TextField
-
-## Properties
-
-<Props of={TextField} />
-
-### Classes property keys
-field        | description
--------------|----------
-*input*       |  Class that is passed to the input
-
-## Basic usage
 
 <Playground>
     <TextFieldWrapper>
@@ -28,15 +10,15 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## Required field
+## Обязательное поле
 
 <Playground>
     <TextFieldWrapper>
-        <TextField name="name" required label="Phone number" />
+        <TextField name="name" required label="Телефон" />
     </TextFieldWrapper>
 </Playground>
 
-## Mask usage
+## Маска телефона
 
 <Playground>
     <TextFieldWrapper>
@@ -44,7 +26,7 @@ field        | description
             placeholder="+7 (999) 999-99-99"
             mask="+7 (999) 999-99-99"
             maskchar="_"
-            label="Phone number"
+            label="Телефон"
             id="2"
             inputMode="numeric"
             classes={{input: 'parent__inputClass'}}
@@ -52,8 +34,8 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## Error usage
-Сlicking on cross icon clears the field by default. This behavior won't work with defined custom icon or onCustomIconClick handler.
+## Ошибка
+Клик по иконки очищает поле по умолчанию. Если установлена иконка и `onCustomIconClick` то очищение перестает работать.
 
 <Playground>
     <TextFieldWrapper>
@@ -64,7 +46,7 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## Custom icon and handler
+## Иконка и обработчик
 <Playground>
     <TextFieldWrapper width={550}>
         <TextField
@@ -80,7 +62,7 @@ field        | description
      </TextFieldWrapper>
 </Playground>
 
-## Valid usage
+## Валидация
 
 <Playground>
     <TextFieldWrapper>
@@ -88,7 +70,7 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## Comment usage
+## Подпись снизу
 
 <Playground>
     <TextFieldWrapper>
@@ -96,7 +78,7 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## Max length text usage
+## Максимальное количество текста
 
 <Playground>
     <TextFieldWrapper>
@@ -104,7 +86,7 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## Disable usage
+## Запрещенное взаимодействие
 
 <Playground>
     <TextFieldWrapper>
@@ -112,7 +94,7 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## Password type usage
+## Тип с паролем
 
 <Playground>
     <TextFieldWrapper>
@@ -120,7 +102,7 @@ field        | description
     </TextFieldWrapper>
 </Playground>
 
-## With externally set value
+## Внешнее состояние
 
 <Playground>
     <TextFieldWrapper>
@@ -129,10 +111,8 @@ field        | description
 </Playground>
 
 ##
-# Textarea view
-The **multiline** property set to **true** changes TextField to textarea-like view.
-
-## Basic usage
+# Textarea
+Пропс **multiline** выставленный в значение **true** изменяет компонент в `textarea`.
 
 <Playground>
     <TextFieldWrapper>
@@ -140,7 +120,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     </TextFieldWrapper>
 </Playground>
 
-## Required usage
+## Обязательное поле
 
 <Playground>
     <TextFieldWrapper>
@@ -153,7 +133,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     </TextFieldWrapper>
 </Playground>
 
-## Error usage
+## Ошибка
 
 <Playground>
     <TextFieldWrapper>
@@ -167,7 +147,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     </TextFieldWrapper>
 </Playground>
 
-## Valid usage
+## Валидация
 
 <Playground>
     <TextFieldWrapper>
@@ -178,7 +158,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     </TextFieldWrapper>
 </Playground>
 
-## Comment usage
+## Подпись снизу
 
 <Playground>
     <TextFieldWrapper>
@@ -189,7 +169,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     </TextFieldWrapper>
 </Playground>
 
-## Success text usage
+## Успешная валидация
 
 <Playground>
     <TextFieldWrapper>
@@ -201,7 +181,7 @@ The **multiline** property set to **true** changes TextField to textarea-like vi
     </TextFieldWrapper>
 </Playground>
 
-## Disable usage
+## Запрещенное взаимодействие
 
 <Playground>
     <TextFieldWrapper>

@@ -4,13 +4,13 @@ import './Switcher.less';
 import detectTouch from 'utils/detectTouch';
 
 export interface ISwitcherProps {
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Checked */
+    /** Управление состоянием вкл/выкл компонента */
     checked?: boolean;
-    /** Disabled */
+    /** Управление возможности взаимодействия с компонентом */
     disabled?: boolean;
-    /** onChange handler */
+    /** Обработчик изменения элемента */
     onChange?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 

@@ -12,10 +12,6 @@ import Show from 'icons/Basic/24/Show_24.svg';
 
 const InputMask = require('react-input-mask');
 
-interface ITextFieldClasses {
-    input?: string | null;
-}
-
 export const Verification = {
     VALID: 'valid',
     ERROR: 'error',
@@ -24,58 +20,58 @@ export const Verification = {
 type VerificationType = typeof Verification[keyof typeof Verification];
 
 export interface ITextFieldProps {
-    /** Toggle to textarea */
+    /** Включить режим textarea */
     multiline?: boolean;
-    /** Field label */
+    /** Лейбл */
     label?: string;
-    /** HTML-attribute "type" of input element. Doesn't work with **multiline=true** */
+    /** Атрибут элемента input. Не работает с **multiline=true** */
     type?: 'text' | 'password' | 'tel' | 'email';
-    /** Field color scheme */
+    /** Цветовая тема */
     theme?: 'default' | 'white';
-    /** Forcefully prohibits icon's render */
+    /** Запрещает отрисовку иконки */
     hideIcon?: boolean;
-    /** The result of external field's validation */
+    /** Отоброжение валидации */
     verification?: VerificationType;
-    /** Text message. Could be a validation message or a simple hint to user */
+    /** Подпись снизу, меняет цвет в зависимости от аргумента `verification` */
     noticeText?: string;
-    /** Disables field. The value of this prop is also passed through to attribute with the same name */
+    /** Управление возможности взаимодействия с компонентом */
     disabled?: boolean;
-    /** Makes the field required. The value of this prop is also passed through to attribute with the same name */
+    /** Показывает обязательность поля  */
     required?: boolean;
-    /** Ref-callback */
+    /** Ref обработчик */
     inputRef?: (node: HTMLInputElement | HTMLTextAreaElement) => void;
-    /** Field name. The value of this prop is passed through to attribute with the same name */
+    /** Имя поля */
     name?: string;
-    /** Initial Placeholder */
+    /** Отображаемый текст в отсутствии значения */
     placeholder?: string;
-    /** Html id attribute, also automatically allows to focus on input while clicking on the label */
+    /** Атрибут корневого DOM элемента компонента */
     id?: string;
-    /** Externally set value */
+    /** Внешнее значение компонента */
     value?: string;
-    /** Max length of the text */
+    /** Максимальное вводимое количество текста */
     maxLength?: number;
-    /** Custom icon */
+    /** Иконка */
     customIcon?: JSX.Element;
     /** Mask for the input-field. Doesn't work with **multiline=true**. */
     /** You may find additional info on https://github.com/sanniassin/react-input-mask */
     mask?: string;
-    /** Split symbol for a mask. Doesn't work with **multiline=true** */
+    /** Разделение символов для маски. Не работает **multiline=true** */
     maskChar?: string;
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Custom classes */
-    classes?: ITextFieldClasses;
-    /** Inputnode for input */
+    /** Дополнительные классы элементов */
+    classes?: { input?: string | null };
+    /** Аргумент элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
-    /** Change handler */
+    /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** Blur handler */
+    /** Обработчик выхода из фокуса */
     onBlur?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** Focus handler */
+    /** Обработчик входа в фокус */
     onFocus?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** KeyUp handler */
+    /** Обработчик поднятия клавиши */
     onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** Custom icon click handler */
+    /** Обработчик клика добавленной иконки */
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -119,7 +115,6 @@ const TextField: React.FC<ITextFieldProps> = ({
             input,
         } = {},
     }) => {
-
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = React.useState(value);
     const [isIE11, setIsIE11] = React.useState(false);

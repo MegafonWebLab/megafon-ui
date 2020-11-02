@@ -5,22 +5,22 @@ import Link from '../Link/Link';
 import cnCreate from 'utils/cnCreate';
 
 export interface ITextLinkProps {
-    /** Color */
+    /** Цвет */
     color: 'white' | 'black' | 'gray' | 'blue' | 'green' | 'inherit';
-    /** Underline visibility */
+    /** Отображение подчеркивания */
     underlineVisibility: 'hover' | 'always';
-    /** Underline style */
+    /** Стиль подчеркивания */
     underlineStyle: 'solid' | 'dashed' | 'border' | 'none';
-    /** Target - property tag <a> */
+    /** Target - аргумент тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Link */
+    /** Ссылка */
     href?: string;
-    /** Rel attribute */
+    /** Реакт rel аттрибут */
     rel?: string;
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    /** Click handler */
+    /** Обработчик клика */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
