@@ -2,16 +2,16 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 export interface ILinkProps {
-    /** Link */
+    /** Дополнительный класс корневого элемента */
+    className?: string;
+    /** Ссылка */
     href?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    /** target - property tag <a> */
+    /** target - аргумент тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Custom class name */
-    className?: string;
-    /** rel - property tag <a> */
+    /** rel - аргумент тега <a> */
     rel?: string;
-    /** Click event handler */
+    /** Обработчик клика */
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
 }
 

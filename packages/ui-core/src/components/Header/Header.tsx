@@ -5,21 +5,21 @@ import cnCreate from 'utils/cnCreate';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 interface IHeaderProps extends IDataAttributes {
-    /** Tag */
+    /** Тег */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
-    /** Color */
+    /** Цвет */
     color?: 'black' | 'white' | 'green' | 'purple' | 'blue' | 'inherit';
-    /** Turn on margin */
+    /** Включить отступ */
     margin?: boolean;
-    /** Additional element */
+    /** Дополнительный элемент */
     addition?: JSX.Element;
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string | string[];
-    /** Horizontal align */
+    /** Горизонтальное выравнивание */
     hAlign?: 'inherit' | 'left' | 'center' | 'right';
     /** Children */
     children?: React.ReactNode;
-    /** Click handler */
+    /** Обработчик клика */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 

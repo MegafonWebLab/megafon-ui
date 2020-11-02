@@ -11,6 +11,7 @@ const Layout: React.FC = ({ children }) => {
             <div className={cn('side-bar')}>
                 <SideBar />
             </div>
+            <div className={cn('sep')} />
             <div className={cn('content')}>
                 <div className={cn('content-inner')}>
                     {children}

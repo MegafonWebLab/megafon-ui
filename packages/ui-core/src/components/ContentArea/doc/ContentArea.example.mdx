@@ -1,0 +1,86 @@
+import { Playground, Props } from 'docz';
+import ContentArea from '../ContentArea';
+import { wrapperStyles } from './ContentArea.docz';
+
+<Playground>
+    <ContentArea>
+        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+        Монтажник проведёт все необходимые работы под ключ.
+    </ContentArea>
+</Playground>
+
+## Внутренний отступ на мобильном разрешении
+
+<Playground>
+    <ContentArea outerBackgroundColor="spbSky0" mobileInnerPadding="none">
+        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+        Монтажник проведёт все необходимые работы под ключ.
+    </ContentArea>
+</Playground>
+
+## Без отступов
+
+<Playground>
+    <ContentArea innerPadding="none" innerBackgroundColor="white">
+        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+        Монтажник проведёт все необходимые работы под ключ.
+    </ContentArea>
+</Playground>
+
+## Задний фон внутреннего контейнера
+
+<Playground>
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="green">
+            green
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="purple">
+            <div style={{color: 'white'}}>purple</div>
+        </ContentArea>
+    </div>
+
+        <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="transparent">
+            transparent
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="white">
+            white
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="spbSky0">
+            spbSky0
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="spbSky1">
+            spbSky1
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="spbSky2">
+            spbSky2
+        </ContentArea>
+    </div>
+
+    <div style={wrapperStyles}>
+        <ContentArea innerBackgroundColor="freshAsphalt">
+            <div style={{color: 'white'}}>freshAsphalt</div>
+        </ContentArea>
+    </div>
+
+    <div style={{ ...wrapperStyles, marginBottom: 0 }}>
+        <ContentArea innerBackgroundColor="fullBlack">
+            <div style={{color: 'white'}}>fullBlack</div>
+        </ContentArea>
+    </div>
+</Playground>

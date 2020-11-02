@@ -1,0 +1,112 @@
+import { Playground, Props } from 'docz';
+import IconButton from '../IconButton';
+import Download from 'icons/Basic/24/Download_24.svg';
+import Bus from 'icons/Basic/24/Bus_24.svg';
+import Like from 'icons/Basic/24/Like_24.svg';
+import Shop from 'icons/Basic/24/Shop_24.svg';
+import { blockStyle } from './IconButton.docz';
+
+## Цветовые темы с типом 'primary'
+
+<Playground style={{...blockStyle, backgroundColor: '#e9e9e9'}}>
+    <div>
+        <IconButton theme="green" icon={<Download />} />
+        <div>green</div>
+    </div>
+    <div>
+        <IconButton theme="purple" icon={<Download />} />
+        <div>purple</div>
+    </div>
+    <div>
+        <IconButton theme="white" icon={<Download />} />
+        <div>white</div>
+    </div>
+    <div>
+        <IconButton theme="white" icon={<Download />} disabled />
+        <div>disabled</div>
+    </div>
+</Playground>
+
+## Цветовые темы с типом 'outline'
+
+<Playground style={{...blockStyle, backgroundColor: '#e9e9e9'}}>
+    <div>
+        <IconButton type="outline" theme="green" icon={<Download />} />
+        <div>green</div>
+    </div>
+    <div>
+        <IconButton type="outline" theme="purple" icon={<Download />} />
+        <div>purple</div>
+    </div>
+    <div>
+        <IconButton type="outline" theme="white" icon={<Download />} />
+        <div>white</div>
+    </div>
+    <div>
+        <IconButton type="outline" theme="black" icon={<Download />} />
+        <div>black</div>
+    </div>
+    <div>
+        <IconButton type="outline" theme="black" icon={<Download />} disabled />
+        <div>disabled</div>
+    </div>
+</Playground>
+
+## Размер
+
+<Playground>
+    <div style={{marginBottom: 8}}>
+        <IconButton sizeAll="small" icon={<Download />} />
+        <div>small</div>
+    </div>
+    <div style={{marginBottom: 8}}>
+        <IconButton sizeAll="medium" icon={<Download />} />
+        <div>medium</div>
+    </div>
+    <div style={{marginBottom: 8}}>
+        <IconButton sizeAll="large" icon={<Download />} />
+        <div>large</div>
+    </div>
+    <div>
+        <IconButton sizeDesktop="large" sizeTablet="medium" sizeMobile="small" icon={<Download />} />
+        <div>adaptive</div>
+    </div>
+</Playground>
+
+## Разные иконки
+
+<Playground>
+    <div style={{marginBottom: 8}}>
+        <IconButton icon={<Download />} />
+        <div>Загрузка</div>
+    </div>
+    <div style={{marginBottom: 8}}>
+        <IconButton icon={<Bus />} />
+        <div>Автобус</div>
+    </div>
+    <div style={{marginBottom: 8}}>
+        <IconButton icon={<Like />} />
+        <div>Лайк</div>
+    </div>
+    <div>
+        <IconButton icon={<Shop />} />
+        <div>Магазин</div>
+    </div>
+</Playground>
+
+## Ссылка
+
+<Playground>
+    <div>
+        <IconButton href="test.com" icon={<Download />} />
+        <div>link</div>
+    </div>
+    <div>
+        <IconButton href="test.com" target="_blank" icon={<Download />} />
+        <div>_blank</div>
+    </div>
+    <div>
+        <IconButton href="test.com" icon={<Download />} disabled />
+        <div>disabled</div>
+    </div>
+</Playground>

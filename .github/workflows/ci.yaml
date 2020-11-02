@@ -56,6 +56,12 @@ jobs:
           else
             echo ::set-output name=is_base::false
           fi
+          if [ ${{ contains(github.event.head_commit.message, 'skip release') }} = true ];
+          then
+            echo ::set-output name=should_release::false
+          else
+            echo ::set-output name=should_release::true
+          fi
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -88,14 +94,14 @@ jobs:
           publish_dir: ./docs
 
       - name: Configure CI Git User
-        if: steps.branch.outputs.is_base == 'true'
+        if: steps.branch.outputs.is_base == 'true' && steps.branch.outputs.should_release == 'true'
         run: |
           git config --global user.name 'Megafon CI'
           git config --global user.email 'megafon-ci@users.noreply.github.com'
           git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
 
       - name: Authenticate with NPM Registry
-        if: steps.branch.outputs.is_base == 'true'
+        if: steps.branch.outputs.is_base == 'true' && steps.branch.outputs.should_release == 'true'
         run: |
           echo "registry=http://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
@@ -104,7 +110,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish
-        if: steps.branch.outputs.is_base == 'true'
+        if: steps.branch.outputs.is_base == 'true' && steps.branch.outputs.should_release == 'true'
         run: yarn exec lerna publish -- --yes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,25 @@
+import { Playground, Props } from 'docz';
+import Notification from '../Notification';
+import { marginBottom } from './Notification.docz';
+
+<Playground>
+    <div style={marginBottom}>
+        <Notification type="success">Тариф «Включайся! Премиум» успешно подключен. Вторая строка показана для примера, значок выравнивается по верхней строке.</Notification>
+     </div>
+     <div style={marginBottom}>
+        <Notification type="warning">Обратите внимание, что подключённые на текущем тарифе пакеты минут, SMS и интернета «сгорят» и не будут действовать на новом тарифе.</Notification>
+     </div>
+    <Notification type="error">Вы превысили количество допустимых запросов в сутки. Пожалуйста, повторите попытку позже. Строка для двух строк, выравнивание  иконки по верхней.</Notification>
+</Playground>
+
+## Уменьшенный размер
+
+<Playground>
+    <div style={marginBottom}>
+        <Notification type="success" isShort>Success</Notification>
+    </div>
+    <div style={marginBottom}>
+        <Notification type="warning" isShort>Warning</Notification>
+    </div>
+    <Notification type="error" isShort>Error</Notification>
+</Playground>

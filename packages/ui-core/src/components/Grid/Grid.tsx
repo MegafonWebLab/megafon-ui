@@ -5,16 +5,18 @@ import cnCreate from 'utils/cnCreate';
 import { IGridColumn } from './GridColumn';
 
 export interface IGridProps {
-    /** Alignment of all columns by horizontal axis */
+    /** Выравнивание всех колонн по горизонтали */
     hAlign?: 'left' | 'right' | 'center' | 'between' | 'around';
-    /** Alignment of all columns by vertical axis */
+    /** Выравнивание всех колонн по вертикали */
     vAlign?: 'top' | 'bottom' | 'center' | 'baseline';
-    /** Margin area on the left side of column */
+    /** Отступ слева от колонны */
     guttersLeft?: 'large' | 'medium';
-    /** Margin area on the bottom side of column */
+    /** Отступ снизу от колонны */
     guttersBottom?: 'large' | 'medium';
-    /** Transfering of columns onto multiple lines */
+    /** Перенос столбцов в несколько строк */
     multiRow?: boolean;
+    /** Custom classname */
+    className?: string;
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
 
@@ -26,6 +28,7 @@ class Grid extends React.Component<IGridProps> {
         guttersLeft: PropTypes.oneOf(['large', 'medium']),
         guttersBottom: PropTypes.oneOf(['large', 'medium']),
         multiRow: PropTypes.bool,
+        className: PropTypes.string,
         children: PropTypes.node,
     };
 
@@ -34,10 +37,10 @@ class Grid extends React.Component<IGridProps> {
     };
 
     render() {
-        const { children, guttersLeft, guttersBottom, multiRow, hAlign, vAlign } = this.props;
+        const { children, guttersLeft, guttersBottom, multiRow, hAlign, vAlign, className } = this.props;
 
         return (
-            <div className={cn('')}>
+            <div className={cn([className])}>
                 <div
                     className={cn('container', {
                         'multi-row': multiRow,

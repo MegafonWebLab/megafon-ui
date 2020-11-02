@@ -4,20 +4,20 @@ import './RadioButton.less';
 import cnCreate from 'utils/cnCreate';
 
 export interface IRadioButtonProps {
-    /** Radio button value */
+    /** Значение */
     value: string;
-    /** Radio button name */
+    /** Имя для тега form */
     name?: string;
-    /** Size of radio button label */
+    /** Размер текса лейбла */
     textSize?: 'small' | 'medium';
-    /** Disabled state of radio button */
+    /** Управление возможности взаимодействия с компонентом */
     isDisabled?: boolean;
-    /** Checked state of radio button */
+    /** Управление состоянием вкл/выкл компонента */
     isChecked?: boolean;
-    /** Custom class name */
-    className?: string;
+    /** Дополнительный класс корневого элемента */
+    className?: string | string[];
     children?: React.ReactNode;
-    /** OnChange handler */
+    /** Обработчик изменения значения 'value' */
     onChange?: (value: string) => void;
 }
 

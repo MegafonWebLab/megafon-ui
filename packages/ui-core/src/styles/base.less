@@ -34,6 +34,7 @@
 @desktopMiddleStart:  1280px;
 @desktopMiddleEnd:    1439px;
 @desktopBigStart:     1440px;
+@desktopBigEnd:       1599px;
 
 @mobile:          ~'screen and (max-width: @{mobileBigEnd})';                                            // ∞ - 1023
 @mobileS:         ~'screen and (max-width: @{mobileSmallEnd})';                                          // ∞ - 479
@@ -46,7 +47,8 @@
 @desktop:         ~'screen and (min-width: @{desktopSmallStart})';                                       // 1024 - ∞
 @desktopS:        ~'screen and (min-width: @{desktopSmallStart}) and (max-width: @{desktopSmallEnd})';   // 1024 - 1279
 @desktopM:        ~'screen and (min-width: @{desktopMiddleStart}) and (max-width: @{desktopMiddleEnd})'; // 1280 - 1439
-@desktopB:        ~'screen and (min-width: @{desktopBigStart})';                                         // 1440 - ∞
+@desktopB:        ~'screen and (min-width: @{desktopBigStart}) and (max-width: @{desktopBigEnd})';       // 1440 - 1599
+@desktopBU:       ~'screen and (min-width: @{desktopBigStart})';                                        // 1440 - ∞
 @desktopSM:       ~'screen and (min-width: @{desktopSmallStart}) and (max-width: @{desktopMiddleEnd})';  // 1024 - 1439
 @desktopMU:       ~'screen and (min-width: @{desktopMiddleStart})';                                      // 1280 - ∞
 

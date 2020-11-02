@@ -1,6 +1,7 @@
 .docz-props {
     border-collapse: collapse;
-
+    width: 100%;
+    
     &__cell {
         padding: 12px 0;
         border-bottom: 1px solid #D8D8D8;
@@ -10,6 +11,14 @@
         color: #333;
         vertical-align: top;
 
+        &:not(:first-child) {
+            padding-left: 5px;
+        }
+
+        &:not(:last-child) {
+            padding-right: 5px;
+        }
+        
         & p {
             padding: 0 !important;
             margin: 0 !important;

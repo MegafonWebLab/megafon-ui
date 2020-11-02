@@ -1,0 +1,111 @@
+import { Playground } from 'docz';
+import BenefitsPictures from '../BenefitsPictures';
+import { twoItems, threeItems, fourItems } from './BenefitsPictures.docz.tsx';
+
+## Примеры свойств
+``` javascript
+
+const items = [
+    {
+        title: 'Lorem ipsum',
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        img: image.png,
+    },
+    {
+        title: 'Lorem ipsum',
+        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        img: image.png,
+    },
+]
+```
+
+## Выравнивание по левому краю, большое расстояние между бенефитами
+<Playground>
+    <BenefitsPictures
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        items={fourItems}
+    />
+</Playground>
+
+## Выравнивание по левому краю, среднее расстояние между бенефитами
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        items={fourItems}
+    />
+</Playground>
+
+## Выравнивание по центру, большое расстояние между бенефитами
+
+<Playground>
+    <BenefitsPictures
+        hAlign="center"
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        hAlign="center"
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        hAlign="center"
+        items={fourItems}
+    />
+</Playground>
+
+## Выравнивание по центру, среднее расстояние между бенефитами
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        hAlign="center"
+        items={twoItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        hAlign="center"
+        items={threeItems}
+    />
+</Playground>
+
+<Playground>
+    <BenefitsPictures
+        gridGap="medium"
+        hAlign="center"
+        items={fourItems}
+    />
+</Playground>

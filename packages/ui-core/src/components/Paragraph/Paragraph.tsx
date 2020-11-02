@@ -4,15 +4,15 @@ import './Paragraph.less';
 import cnCreate from 'utils/cnCreate';
 
 export interface IParagraphProps {
-    /** Align text horizontally */
+    /** Выравнивание по горизонтали */
     align?: 'left' | 'center' | 'right';
-    /** Font size */
+    /** Размер шрифта */
     size?: 'regular' | 'small';
-    /** Vertical margin (enabled by default) */
+    /** Вертикальный отступ (включен по умолчанию) */
     hasMargin?: boolean;
-    /** Text color */
+    /** Цвет текста */
     color?: 'green' | 'purple' | 'clearWhite' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'freshAsphalt' | 'fullBlack' | 'inherit';
-    /** Custom className */
+    /** Дополнительный класс корневого элемента */
     className?: string;
 }
 

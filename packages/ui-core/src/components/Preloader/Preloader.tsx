@@ -4,11 +4,11 @@ import './Preloader.less';
 import cnCreate from 'utils/cnCreate';
 
 export interface IPreloaderProps {
-    /** Color theme of preloader's circles */
+    /** Цветовая тема */
     color?: 'default' | 'black' | 'white';
-    /** Preloader size */
+    /** Размер */
     size?: 'small' | 'medium';
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
 }
 

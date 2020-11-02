@@ -14,7 +14,9 @@ const transformCode = (code: string) => {
 
 const cn = cnCreate('docz-playground');
 
-export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean }> = ({ style, code, scope, language, useScoping = false }) => {
+export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean }> = ({
+    style, code, scope, language, useScoping = false, showEditor = true,
+}) => {
     const [scopeOnMount] = React.useState(scope)
 
     return (
@@ -30,14 +32,16 @@ export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean }> = 
                     <LivePreview className={cn('preview-content')} data-testid="live-preview" style={style} />
                 </Wrapper>
             </div>
-            <Wrapper
-                content="editor"
-                useScoping={useScoping}
-            >
-                <div className={cn('editor')}>
-                    <LiveEditor data-testid="live-editor" />
-                </div>
-            </Wrapper>
+            {showEditor &&
+                <Wrapper
+                    content="editor"
+                    useScoping={useScoping}
+                >
+                    <div className={cn('editor')}>
+                        <LiveEditor data-testid="live-editor" />
+                    </div>
+                </Wrapper>
+            }
             <LiveError data-testid="live-error" />
         </LiveProvider>
     )

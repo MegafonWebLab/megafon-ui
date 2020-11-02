@@ -1,0 +1,25 @@
+
+import { Playground } from 'docz';
+import Switcher from '../Switcher';
+import { SwitcherWrapper } from './Switcher.docz.tsx';
+
+
+<Playground>
+    <SwitcherWrapper>
+        {({ checked, onChange }) => <Switcher checked={checked} onChange={onChange} />}
+    </SwitcherWrapper>
+</Playground>
+
+## Запрет управлением
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher disabled onChange={onChange} />}
+    </SwitcherWrapper>
+</Playground>
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher checked disabled onChange={onChange} />}
+    </SwitcherWrapper>
+</Playground>
