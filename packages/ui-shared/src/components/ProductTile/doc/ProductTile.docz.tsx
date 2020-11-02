@@ -1,10 +1,6 @@
 import * as React from 'react';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 
-export const ProductTileWrapper = ({children}) => {
-    return <div style={{ padding: '20px', display: 'flex', flexWrap: 'wrap' }}>{children}</div>;
-};
-
 export const tariff = {
     topBadgeTitle: 'Тариф–конструктор от 250 ₽',
     link: '/tariffs/vklyuchaysya/smotri.html',
