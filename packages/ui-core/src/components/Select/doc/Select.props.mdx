@@ -1,0 +1,62 @@
+import Select from '../Select';
+import { Props } from 'docz';
+
+<Props of={Select} />
+
+```javascript
+export interface ISelectItem {
+    title: string;
+    value: number | string;
+    view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+}
+
+interface ISelectClasses {
+    control?: string;
+    root?: string;
+}
+```
+
+```javascript
+const items = [
+    {
+        value: 1,
+        title: 'Авиамоторная',
+    },
+    {
+        value: 2,
+        title: 'Академическая',
+    },
+    {
+        value: 3,
+        title: 'Бабушкинская',
+    },
+    {
+        value: 4,
+        title: 'Багратионовская',
+    },
+    {
+        value: 5,
+        title: 'ВДНХ',
+    },
+    {
+        value: 6,
+        title: 'Варшавская',
+    },
+    {
+        value: 7,
+        title: 'Деловой центр',
+    },
+    {
+        value: 8,
+        title: 'Дмитровская',
+    },
+    {
+        value: 9,
+        title: 'Калужская',
+    },
+    {
+        value: 10,
+        title: 'Кантемировская',
+    },
+];
+```
