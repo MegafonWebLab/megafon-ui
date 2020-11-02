@@ -13,7 +13,7 @@ import {
     triggerEvents,
 } from './Tooltip.docz';
 
-## Событие на элементе триггера
+## Тип взаимодействия с триггер-элементом для показа тултипа
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -54,7 +54,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 </Playground>
 
 
-## Позиционирование относительно триггер элемента
+## Позиционирование относительно триггер-элемента
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -188,7 +188,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Размер контента когда задана ширина
+## Размер тултипа с установленной шириной контента
 
 <Playground style={{
     ...demoWrapperBlockStyles,
@@ -220,7 +220,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Размер контента когда родительский элемент позиционируется относительно
+## Размер тултипа при относительном позиционировании родительского элемента
 
 <Playground style={{
     ...demoWrapperBlockStyles,
@@ -252,7 +252,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Устанавливаем событие триггера при первом взаимодействии с Tooltip в открытом состоянии
+## Смена типа взаимодействия с триггер-элементом при первом наведении мыши на элемент, когда тултип открыт
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -324,7 +324,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Изменение обработчика события триггера при выборе
+## Смена типа взаимодействия с триггер-элементом при выборе из списка
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -482,7 +482,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Управление компонентом снаружи с сохранением внутренних обработчиков для элемента триггера
+## Управление компонентом снаружи с сохранением внутренних обработчиков для триггер-элемента
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {

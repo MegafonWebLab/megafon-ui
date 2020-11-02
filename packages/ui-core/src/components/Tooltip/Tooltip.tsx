@@ -31,15 +31,15 @@ export const TriggerEvent = {
 type TriggerEventType = typeof TriggerEvent[keyof typeof TriggerEvent];
 
 export interface ITooltipProps {
-    /** Позиционирование относительно триггер элемента */
+    /** Позиционирование относительно триггер-элемента */
     placement?: PlacementType;
     /** Размер отступов от контента */
     size?: SizeType;
-    /** Событие на элементе триггера */
+    /** Тип взаимодействия с триггер-элементом для показа тултипа */
     triggerEvent?: TriggerEventType;
-    /** Элемент триггера */
+    /** Триггер-элемент */
     triggerElement: React.RefObject<HTMLElement>;
-    /** Управление внутренним состоянием снаружи */
+    /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
