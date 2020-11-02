@@ -1,0 +1,58 @@
+import { Playground } from 'docz';
+import VideoBlock from '../VideoBlock';
+import { content, video, youtubeVideoId } from './VideoBlock.docz';
+
+## Примеры свойств
+
+```javascript
+
+const content: IContent = {
+    title: 'Lorem ipsum',
+    description: [
+        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. '
+    ],
+    href: '#',
+    buttonTitle: 'Lorem ipsum',
+}
+
+Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
+<VideoBlock videoType='youtube' videoSrc='2Sps5MnvlKM' />
+
+```
+
+## Видео без контента
+
+<Playground>
+    <VideoBlock
+        videoSrc={video}
+    />
+</Playground>
+
+## Видео с контентом
+
+<Playground>
+    <VideoBlock
+        content={content}
+        videoSrc={video}
+    />
+</Playground>
+
+## Видео с Youtube
+
+<Playground>
+    <VideoBlock
+        videoSrc={youtubeVideoId}
+        videoType="youtube"
+    />
+</Playground>
+
+## Видео с Youtube с контентом
+
+<Playground>
+    <VideoBlock
+        content={content}
+        videoSrc={youtubeVideoId}
+        videoType="youtube"
+    />
+</Playground>

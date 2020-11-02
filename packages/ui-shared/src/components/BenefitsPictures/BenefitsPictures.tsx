@@ -17,11 +17,11 @@ const columnSize: GridConfig = {
 };
 
 export interface IBenefitsPicturesProps {
-    /** Benefits list */
+    /** Данные для бенефитов */
     items: IBenefit[];
-    /** Benefits horizontal align */
+    /** Горизонтальное выравнивание */
     hAlign?: 'left' | 'center';
-    /** Grid gap size */
+    /** Расстояние между бенефитами */
     gridGap?: GridGutterSize;
 }
 
