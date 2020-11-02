@@ -71,13 +71,13 @@ jobs:
         id: branch
         run: |
           if
-          [ ${{ contains(github.event.head_commit.message, 'skip release') }} = true ] ||
-          [ ${{ github.repository_owner }} != ${{ env.BASE_REPO }} ] ||
-          [ ${{ github.ref }} != refs/heads/${{ env.BASE_BRANCH }} ];
+          [ ${{ contains(github.event.head_commit.message, 'skip release') }} = false ] &&
+          [ ${{ github.repository_owner }} = ${{ env.BASE_REPO }} ] &&
+          [ ${{ github.ref }} = refs/heads/${{ env.BASE_BRANCH }} ];
           then
-            echo ::set-output name=should_release::false
-          else
             echo ::set-output name=should_release::true
+          else
+            echo ::set-output name=should_release::false
           fi
 
       - name: Configure CI Git User
