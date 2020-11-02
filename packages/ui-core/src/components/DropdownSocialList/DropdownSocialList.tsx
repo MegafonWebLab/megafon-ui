@@ -10,11 +10,11 @@ export interface IIcon {
 }
 
 export interface IDropdownSocialListProps {
-    /** Icons list */
+    /** Массив иконок */
     icons: Array<Partial<IIcon>>;
-    /** Max icon */
+    /** Максимальное число отображаемых иконок */
     maxIconNumber?: number;
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
 }
 
