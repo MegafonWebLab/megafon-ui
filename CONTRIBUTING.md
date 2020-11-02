@@ -28,6 +28,7 @@ const ComponentName = ({ name = 'name' }) => ...
 4. Директория `doc`, включающая документацию в формате [Docz](https://github.com/doczjs/docz):
     - `<Component name>.mdx` - корневая страница документации для компонента, должна содержать компонент DoczTabs
     - `<Component name>.example.mdx` - файл с примерами использования компонента
+    - `<Component name>.props.mdx` - для контента вкладки с таблицей пропсов
     - `<Component name>.design.mdx` - дизайнерская документация
     - `<Component name>.docz.tsx` - исходники для примеров, например для кода оберток или дополнительных стилей
 
