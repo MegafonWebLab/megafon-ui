@@ -47,7 +47,7 @@ export interface IButtonProps extends IDataAttributes {
     showArrow?: boolean;
     /** Иконка слева */
     iconLeft?: JSX.Element;
-    /** Управление возможности взаимодействия с компонентом */
+    /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;

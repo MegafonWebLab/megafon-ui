@@ -35,33 +35,33 @@ interface ISelectClasses {
 }
 
 export interface ISelectProps extends IDataAttributes {
-    /** Select type */
+    /** Тип компонента */
     type?: SelectTypesType;
-    /** Field title */
+    /** Заголовок поля */
     label?: string;
-    /** Html id attribute for label */
+    /** HTML идентификатор для заголовка поля */
     labelId?: string;
-    /** Current selected item */
+    /** Текущий выбранный элемент селекта */
     currentValue?: SelectItemValueType;
-    /** Verification */
+    /** Результат проверки данных */
     verification?: VerificationType;
-    /** Notice text */
+    /** Дополнительный текст */
     noticeText?: string;
-    /** isDisabled field */
+    /** Управление возможностью взаимодействия с компонентом */
     isDisabled?: boolean;
-    /** Makes the field required. */
+    /** Делает поле обязательным */
     required?: boolean;
-    /** Placeholder */
+    /** Текст внутри поля по умолчанию */
     placeholder?: string;
-    /** Text in the absence of search results */
+    /** Текст при отсутствии результатов поиска */
     notFoundText?: string;
-    /** Array of objects to be used for options rendering */
+    /** Массив элементов селекта */
     items: ISelectItem[];
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Object for the custom class */
+    /** Дополнительные классы для внутренних элементов */
     classes?: ISelectClasses;
-    /** Select item handler */
+    /** Обработчик выбора элемента селекта */
     onSelect?: (
         e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
     ) => void;
@@ -160,8 +160,6 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 inputValue: filteredItems[currentIndex].title,
                 comparableInputValue: filteredItems[currentIndex].title,
             });
-
-            return;
         }
     }
 
