@@ -1,0 +1,94 @@
+@import '~styles/base.less';
+@b: e('.mfui-beta-tooltip');
+@popperLeft: ~"[data-popper-placement='left']";
+@popperRight: ~"[data-popper-placement='right']";
+@popperTop: ~"[data-popper-placement='top']";
+@popperBottom: ~"[data-popper-placement='bottom']";
+@popperEscaped: ~"[data-popper-escaped='true']";
+@popperOffset: 14px;
+@arrowSize: 12px;
+@arrowOffset: @popperOffset + @arrowSize / 2;
+@arrowPosition: calc(~'100% - @{arrowOffset}');
+
+.arrowSize() {
+    height: @arrowSize;
+    width: @arrowSize;
+}
+
+.arrow() {
+    .arrowSize();
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+@{b} {
+    padding: @popperOffset;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 100;
+
+    &_open {
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    &_size_small {
+        @{b}__content {
+            padding: 8px 16px;
+        }
+    }
+
+    &_size_medium {
+        @{b}__content {
+            padding: 24px;
+        }
+    }
+
+    &__arrow {
+        .arrowSize();
+        position: absolute;
+
+        &:before {
+            .arrow();
+            background-color: @clearWhite;
+        }
+    }
+
+    &__arrow-shadow {
+        .arrowSize();
+        position: absolute;
+        z-index: -1;
+
+        &:before {
+            .arrow();
+            box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    &@{popperRight} > &__arrow,
+    &@{popperRight} > &__arrow-shadow {
+        right: @arrowPosition;
+    }
+
+    &@{popperLeft} > &__arrow,
+    &@{popperLeft} > &__arrow-shadow {
+        left: @arrowPosition;
+    }
+
+    &@{popperTop} > &__arrow,
+    &@{popperTop} > &__arrow-shadow {
+        top: @arrowPosition;
+    }
+
+    &@{popperBottom} > &__arrow,
+    &@{popperBottom} > &__arrow-shadow {
+        bottom: @arrowPosition;
+    }
+
+    &@{popperEscaped} {
+        pointer-events: none;
+    }
+}

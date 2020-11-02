@@ -138,6 +138,7 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/runtime": "^7.8.4",
+    "@popperjs/core": "^2.5.3",
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
     "deep-equal": "^1.1.1",
@@ -145,7 +146,7 @@
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.7.2",
     "react-input-mask": "^2.0.4",
-    "react-popper": "0.10.4",
+    "react-popper": "^2.2.3",
     "react-slick": "^0.25.2"
   }
 }

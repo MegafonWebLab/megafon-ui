@@ -21,6 +21,22 @@ export const infoProps = {
             title: 'На любые сервисы',
         },
     ],
+    badges: [
+        {
+            title: 'badge-title1',
+            code: 'action',
+            hint: 'badge-hint1',
+        },
+        {
+            title: 'badge-title2',
+            code: 'orange',
+            hint: 'badge-hint2',
+        },
+        {
+            title: 'badge-title1',
+            code: 'purple',
+        },
+    ],
 };
 
 export const featuresProps = {

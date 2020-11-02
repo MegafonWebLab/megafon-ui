@@ -5,9 +5,19 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
   className="mfui-beta-product-tile-options"
 >
   <div
+    className="mfui-beta-product-tile-options__wrapper"
+  />
+</div>
+`;
+
+exports[`<ProductTileOptions /> it renders ProductTileOptions with props 1`] = `
+<div
+  className="mfui-beta-product-tile-options"
+>
+  <div
     className="mfui-beta-product-tile-options__head"
   >
-    sdfsdfsdf
+    head
   </div>
   <div
     className="mfui-beta-product-tile-options__wrapper"
@@ -32,30 +42,117 @@ exports[`<ProductTileOptions /> it renders ProductTileOptions 1`] = `
             }
           }
         />
-        <BubbleHint
-          className="mfui-beta-product-tile-options__cashback-c"
-          click={true}
-          placement="bottom"
-          popupAlign="left"
-          popupPadding="normal"
-          popupWidth="small"
-          trigger={
-            <span
-              className="mfui-beta-product-tile-options__bubble-trigger"
-            >
-              Подробнее
-            </span>
-          }
+        <div
+          className="mfui-beta-product-tile-options__footnote"
+          key="297d18"
         >
           <div
-            className="mfui-beta-product-tile-options__hint-text"
-            dangerouslySetInnerHTML={
+            className="mfui-beta-product-tile-options__footnote-trigger"
+          >
+            Подробнее
+          </div>
+          <Tooltip
+            placement="bottom"
+            triggerElement={
               Object {
-                "__html": "footnote",
+                "current": null,
               }
             }
-          />
-        </BubbleHint>
+            triggerEvent="click"
+          >
+            <div
+              className="mfui-beta-product-tile-options__footnote-text"
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "footnote",
+                }
+              }
+            />
+          </Tooltip>
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-beta-product-tile-options__option"
+      key="title11"
+    >
+      <div
+        className="mfui-beta-product-tile-options__content"
+      >
+        <div
+          className="mfui-beta-product-tile-options__title"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "title1",
+            }
+          }
+        />
+        <div
+          className="mfui-beta-product-tile-options__caption"
+        >
+          caption1
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-beta-product-tile-options__option"
+      key="title22"
+    >
+      <div
+        className="mfui-beta-product-tile-options__content"
+      >
+        <div
+          className="mfui-beta-product-tile-options__title"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "title2",
+            }
+          }
+        />
+        <div
+          className="mfui-beta-product-tile-options__caption"
+        >
+          value2 unit2
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-beta-product-tile-options__option"
+      key="title33"
+    >
+      <div
+        className="mfui-beta-product-tile-options__content"
+      >
+        <div
+          className="mfui-beta-product-tile-options__title"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "title3",
+            }
+          }
+        />
+        <div
+          className="mfui-beta-product-tile-options__caption"
+        >
+          value3 
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-beta-product-tile-options__option"
+      key="title44"
+    >
+      <div
+        className="mfui-beta-product-tile-options__content"
+      >
+        <div
+          className="mfui-beta-product-tile-options__title"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "title4",
+            }
+          }
+        />
       </div>
     </div>
   </div>

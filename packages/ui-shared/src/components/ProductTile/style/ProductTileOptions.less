@@ -43,16 +43,12 @@
         }
     }
 
-    &__description {
+    &__caption {
         font-size: 12px;
         line-height: 16px;
     }
 
-    &__cashback-hint {
-        margin-top: -5px;
-    }
-
-    &__hint-text {
+    &__footnote-text {
         font-weight: 300;
 
         p {
@@ -72,17 +68,19 @@
         }
     }
 
-    &__bubble-trigger {
+    &__footnote-trigger {
+        cursor: pointer;
         display: inline-block;
         font-size: 12px;
         line-height: 16px;
         color: @link;
-        border-bottom: 1px dashed;
+        text-decoration: underline;
+        text-decoration-style: dashed;
         font-weight: 400;
         margin: 0 4px 1px 2px;
 
         &:hover {
-            border-bottom: none;
+            text-decoration: none;
         }
     }
 }

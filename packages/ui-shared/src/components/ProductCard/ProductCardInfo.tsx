@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate, Header, BubbleHint, TextLink } from '@megafon/ui-core';
+import { cnCreate, Header, Tooltip, TextLink } from '@megafon/ui-core';
 import './ProductCardInfo.less';
 
 interface IBadge {
@@ -83,32 +83,33 @@ class ProductCardInfo extends React.Component<IProductCardInfoProps, {}> {
         additionalParams: [],
     };
 
-    renderBadges() {
-        const badgeTitle = (badge: IBadge) => <div className={cn('badge-title')}>{badge.title}</div>;
+    renderBadges = (): React.ReactNode => (
+        <div className={cn('badges')}>
+            {this.props.badges!.map((badge, index) =>
+                <div key={`${badge.title}${index}`} className={cn('badge', { type: badge.code })}>
+                    {badge.hint
+                        ? this.renderTooltip(badge.title, badge.hint)
+                        : <div className={cn('badge-title')}>{badge.title}</div>
+                    }
+                </div>
+            )}
+        </div>
+    )
 
-        return (
-            <div className={cn('badges')}>
-                {this.props.badges!.map((badge: IBadge, key: number) =>
-                    <div key={`${badge.title}${key}`} className={cn('badge', { type: badge.code })}>
-                        {badge.hint
-                            ? this.renderBubbleHint(badgeTitle(badge), badge.hint)
-                            : badgeTitle(badge)
-                        }
-                    </div>
-                )}
-            </div>
-        );
-    }
+    renderTooltip = (title: string, hint: string): React.ReactNode => {
+        const triggerElement = React.createRef<HTMLDivElement>();
 
-    renderBubbleHint(title: JSX.Element, hint: string) {
-        return (
-            <BubbleHint
-                popupWidth="small"
-                placement="right"
-                trigger={title}
-            >
-                <div dangerouslySetInnerHTML={{ __html: hint }} />
-            </BubbleHint>
+        return(
+            <>
+                <div ref={triggerElement} className={cn('badge-title', { 'tooltip': true })}>{title}</div>
+                <Tooltip
+                    className={cn('badge-tooltip')}
+                    placement="right"
+                    triggerElement={triggerElement}
+                >
+                    <div dangerouslySetInnerHTML={{ __html: hint }} />
+                </Tooltip>
+            </>
         );
     }
 
