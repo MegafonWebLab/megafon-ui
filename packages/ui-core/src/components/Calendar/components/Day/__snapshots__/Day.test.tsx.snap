@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Day /> layout renders Day with props 1`] = `
+<button
+  className="mfui-calendar-day mfui-calendar-day_sunday"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseEnter={[Function]}
+  tabIndex={0}
+  type="button"
+>
+  <span
+    className="mfui-calendar-day__lable"
+  >
+    Пн
+  </span>
+</button>
+`;
+
+exports[`<Day /> layout should return empty div if label is not provided 1`] = `<div />`;

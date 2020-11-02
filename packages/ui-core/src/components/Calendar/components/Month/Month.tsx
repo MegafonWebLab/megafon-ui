@@ -66,7 +66,7 @@ const Month: React.FC<IMonthProps> = ({
                             return (
                                 <Day
                                     date={day.date}
-                                    key={day.date.toString()}
+                                    key={day.date.toISOString()}
                                     dayLabel={day.dayLabel}
                                 />
                             );

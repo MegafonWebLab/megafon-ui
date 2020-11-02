@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Calendar /> layout renders Calendar with default props 1`] = `
+<div
+  className="mfui-calendar"
+>
+  <ContextProvider
+    value={
+      Object {
+        "focusedDate": null,
+        "isDateBlocked": [Function],
+        "isDateFocused": [Function],
+        "isDateHovered": [Function],
+        "isDateSelected": [Function],
+        "isFirstOrLastSelectedDate": [Function],
+        "onDateFocus": [Function],
+        "onDateHover": [Function],
+        "onDateSelect": [Function],
+      }
+    }
+  >
+    <div
+      className="mfui-calendar__month-list"
+    >
+      <Month
+        firstDayOfWeek={1}
+        goToNextMonths={[Function]}
+        goToPreviousMonths={[Function]}
+        key="2020-10"
+        month={10}
+        year={2020}
+      />
+    </div>
+  </ContextProvider>
+</div>
+`;
+
+exports[`<Calendar /> layout renders with all props 1`] = `
+<div
+  className="mfui-calendar__rootClass"
+>
+  <ContextProvider
+    value={
+      Object {
+        "focusedDate": 2020-01-06T21:00:00.000Z,
+        "isDateBlocked": [Function],
+        "isDateFocused": [Function],
+        "isDateHovered": [Function],
+        "isDateSelected": [Function],
+        "isFirstOrLastSelectedDate": [Function],
+        "onDateFocus": [Function],
+        "onDateHover": [Function],
+        "onDateSelect": [Function],
+      }
+    }
+  >
+    <div
+      className="mfui-calendar__month-list"
+    >
+      <Month
+        firstDayOfWeek={1}
+        goToNextMonths={[Function]}
+        goToPreviousMonths={[Function]}
+        key="2020-0"
+        month={0}
+        year={2020}
+      />
+      <Month
+        firstDayOfWeek={1}
+        goToNextMonths={[Function]}
+        goToPreviousMonths={[Function]}
+        key="2020-1"
+        month={1}
+        year={2020}
+      />
+    </div>
+  </ContextProvider>
+</div>
+`;

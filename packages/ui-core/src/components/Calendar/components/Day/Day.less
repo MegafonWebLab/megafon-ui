@@ -1,6 +1,6 @@
-@import "~styles/base.less";
+@import '~styles/base.less';
 
-@b: e(".mfui-calendar-day");
+@b: e( '.mfui-calendar-day');
 
 @{b} {
     .Graphik();
@@ -18,7 +18,7 @@
     text-decoration: none;
     box-sizing: border-box;
 
-    &:hover:not(&_active):not(&_between){
+    &:hover:not(&_active):not(&_between) {
         border-radius: 50%;
         background-color: @spbSky0;
     }
@@ -39,7 +39,7 @@
         background-color: @spbSky1;
         border-radius: 0;
 
-        &::before {
+        &:before {
             content: '';
             display: block;
             position: absolute;
@@ -49,10 +49,9 @@
             padding: 0 20px;
             height: 32px;
             background-color: @spbSky1;
-
         }
 
-        &::after {
+        &:after {
             content: '';
             display: block;
             position: absolute;
@@ -67,15 +66,16 @@
 
     &_sunday, &_last {
         border-radius: 0 50% 50% 0;
-        &::after {
+
+        &:after {
             display: none;
         }
     }
 
-
-    &_monday, &_first{
+    &_monday, &_first {
         border-radius: 50% 0 0 50%;
-        &::before {
+
+        &:before {
             display: none;
         }
     }
