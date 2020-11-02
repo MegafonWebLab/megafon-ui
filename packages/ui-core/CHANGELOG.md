@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.31](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.30...@megafon/ui-core@2.0.0-beta.31) (2020-11-02)
+
+
+### Bug Fixes
+
+* **base styles:** edit media queries ([e7a22db](https://github.com/MegafonWebLab/megafon-ui/commit/e7a22dbf98835c163fb77bd1974c8f92d1acf0bd))
+* **grid:** added custom classname prop ([66e9536](https://github.com/MegafonWebLab/megafon-ui/commit/66e953696e74b7648f83b11a72c51ea93d9ff8f4))
+* **icons:** new Cancel svg files with merged path, for all icon sizes ([9d4cf8d](https://github.com/MegafonWebLab/megafon-ui/commit/9d4cf8d85d4c5c24da7b6e7dc159630a4f930034))
+
+
+
+
+
 # [2.0.0-beta.30](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.29...@megafon/ui-core@2.0.0-beta.30) (2020-11-01)
 
 **Note:** Version bump only for package @megafon/ui-core
