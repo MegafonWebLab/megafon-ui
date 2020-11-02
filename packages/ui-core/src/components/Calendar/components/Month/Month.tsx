@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {FirstDayOfWeek, useMonth} from '@datepicker-react/hooks';
 import cnCreate from 'utils/cnCreate';
+import dayjs from 'utils/dayjs';
 import Day from 'components/Calendar/components/Day/Day';
 import ArrowLeft from 'icons/System/16/Arrow-list_left_16.svg';
 import ArrowRight from 'icons/System/16/Arrow-list_right_16.svg';
@@ -23,20 +24,11 @@ const Month: React.FC<IMonthProps> = ({
          goToPreviousMonths,
          goToNextMonths,
      }) => {
-        const weekdayLabelFormat = (date: Date): string =>
-            date.toLocaleString('ru', {weekday: 'short'});
+        const weekdayLabelFormat = (date: Date): string => dayjs(date).format('dd');
 
-        const dayLabelFormat = (date: Date): string => {
-            const str = date.toLocaleString('ru', {day: '2-digit'});
-            if (str[0] === '0') {
-                return str.replace('0', '');
-            }
+        const dayLabelFormat = (date: Date): string => dayjs(date).format('D');
 
-            return str;
-        };
-
-        const monthLabelFormat = (date: Date): string =>
-            date.toLocaleString('ru', {month: 'long'});
+        const monthLabelFormat = (date: Date): string => dayjs(date).format('MMMM');
 
         const {days, weekdayLabels, monthLabel} = useMonth({
             year,
@@ -66,7 +58,7 @@ const Month: React.FC<IMonthProps> = ({
                             return (
                                 <Day
                                     date={day.date}
-                                    key={day.date.toISOString()}
+                                    key={dayjs(day.date).format('DD-MM-YYYY')}
                                     dayLabel={day.dayLabel}
                                 />
                             );

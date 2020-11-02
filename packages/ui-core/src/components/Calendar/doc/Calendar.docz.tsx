@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { OnDatesChangeProps } from '@datepicker-react/hooks';
+import dayjs from 'utils/dayjs';
 
 export const WithInitialDates = ({children}) => {
     const initials = {
@@ -15,16 +16,16 @@ export const WithHandleChange = ({children}) => {
         endDate: new Date('01.19.2020'),
     };
 
-    const [from, setFrom] = React.useState<string>(initials.startDate.toLocaleDateString('ru'));
-    const [to, setTo] = React.useState<string>(initials.endDate.toLocaleDateString('ru'));
+    const [from, setFrom] = React.useState<string>(dayjs(initials.startDate).format('DD.MM.YYYY'));
+    const [to, setTo] = React.useState<string>(dayjs(initials.endDate).format('DD.MM.YYYY'));
 
     const handleChange = (date: OnDatesChangeProps) => {
         const {startDate, endDate} = date;
         if (startDate !== null) {
-            setFrom(startDate.toLocaleDateString('ru'));
+            setFrom(dayjs(startDate).format('DD.MM.YYYY'));
         }
         if (endDate !== null) {
-            setTo(endDate.toLocaleDateString('ru'));
+            setTo(dayjs(endDate).format('DD.MM.YYYY'));
         }
     };
     return (
@@ -38,7 +39,7 @@ export const WithHandleChange = ({children}) => {
 export const WithTwoMonths = ({children}) => {
     const initials = {
         startDate: new Date('10.10.2019'),
-        endDate: new Date('10.11.2020'),
+        endDate: new Date('11.10.2019'),
     };
 
     return <div style={{padding: '24px 0'}}>{children({initials})}</div>;
