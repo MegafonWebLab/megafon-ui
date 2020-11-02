@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.33](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.32...@megafon/ui-core@2.0.0-beta.33) (2020-11-02)
+
+
+### Bug Fixes
+
+* **bubblehint:** delete component ([2872b9b](https://github.com/MegafonWebLab/megafon-ui/commit/2872b9b39cd32811c6378c09c23d43abd5ca3dbc))
+* **dropdownsociallist:** changed snapshots when moved to new Tooltip in DropdownSocialList component ([d53d66c](https://github.com/MegafonWebLab/megafon-ui/commit/d53d66cf341a723eaf3238fa0de218333d78a2be))
+* **dropdownsociallist:** replaced BubbleHint with Tooltip ([96a0a38](https://github.com/MegafonWebLab/megafon-ui/commit/96a0a38001f91b0a6ae42e3f3964065beaddd11f))
+
+
+### Features
+
+* **tooltip:** new Tooltip component with ref trigger element ([46efee7](https://github.com/MegafonWebLab/megafon-ui/commit/46efee792a1ae1c7fa056ea20846250ec556be4c))
+
+
+### BREAKING CHANGES
+
+* **bubblehint:** BubbleHint component has been removed. Use new Tooltip component instead
+
+
+
+
+
 # [2.0.0-beta.32](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.31...@megafon/ui-core@2.0.0-beta.32) (2020-11-02)
 
 **Note:** Version bump only for package @megafon/ui-core
