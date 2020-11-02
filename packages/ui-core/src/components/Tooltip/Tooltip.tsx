@@ -31,21 +31,21 @@ export const TriggerEvent = {
 type TriggerEventType = typeof TriggerEvent[keyof typeof TriggerEvent];
 
 export interface ITooltipProps {
-    /** Tooltip position */
+    /** Позиционирование относительно триггер элемента */
     placement?: PlacementType;
-    /** Size of padding in tooltip content */
+    /** Размер отступов от контента */
     size?: SizeType;
-    /** Trigger handler type */
+    /** Событие на элементе триггера */
     triggerEvent?: TriggerEventType;
-    /** Trigger element */
+    /** Элемент триггера */
     triggerElement: React.RefObject<HTMLElement>;
-    /** Manipulate open state from outside */
+    /** Управление внутренним состоянием снаружи */
     isOpened?: boolean;
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Open event callback */
+    /** Обработчик на открытие */
     onOpen?: (e: MouseEvent) => void;
-    /** Close event callback */
+    /** Обработчик на закрытие */
     onClose?: (e: MouseEvent) => void;
 }
 
@@ -196,8 +196,8 @@ Tooltip.propTypes = {
     triggerElement: (props, propName, componentName, location) => {
         const prop = props[propName];
         const isObject = typeof prop === 'object' && prop !== null;
-        const hasPropCurrent = prop.hasOwnProperty('current');
-        if ((prop === undefined)) {
+        const hasPropCurrent = isObject && prop.hasOwnProperty('current');
+        if (prop === undefined) {
             return new Error(
                 `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`undefined\`.`
             );

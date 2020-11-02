@@ -13,7 +13,7 @@ import {
     triggerEvents,
 } from './Tooltip.docz';
 
-## Trigger event
+## Событие на элементе триггера
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -54,7 +54,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 </Playground>
 
 
-## Placements
+## Позиционирование относительно триггер элемента
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -136,7 +136,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Sizes
+##  Размер отступов от контента
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -188,37 +188,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Size of content when its width is not set
-
-<Playground style={{
-    ...demoWrapperBlockStyles,
-    gridTemplateColumns: 'auto',
-    gap: 50
-}}>
-    <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
-            <>
-                <span ref={triggerElement}>
-                    Tooltip will fill the entire width of browser window.
-                </span>
-                <Tooltip
-                    placement="bottom"
-                    isOpened={true}
-                    triggerEvent="controlled"
-                    triggerElement={triggerElement}
-                >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </Tooltip>
-            </>
-        )}
-    </DemoTooltipWithTriggerWrapper>
-</Playground>
-
-## Size of content when its width is set
+## Размер контента когда задана ширина
 
 <Playground style={{
     ...demoWrapperBlockStyles,
@@ -250,7 +220,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Size of content when parent element position is relative
+## Размер контента когда родительский элемент позиционируется относительно
 
 <Playground style={{
     ...demoWrapperBlockStyles,
@@ -282,7 +252,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Set a trigger event on first interaction with Tooltip when it's opened
+## Устанавливаем событие триггера при первом взаимодействии с Tooltip в открытом состоянии
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -354,7 +324,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Change trigger event on select
+## Изменение обработчика события триггера при выборе
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -453,7 +423,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Controlled from outside
+## Управление компонентом снаружи
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
@@ -512,7 +482,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Controlled from outside, with default Tooltip trigger event handlers
+## Управление компонентом снаружи с сохранением внутренних обработчиков для элемента триггера
 
 ```javascript
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
