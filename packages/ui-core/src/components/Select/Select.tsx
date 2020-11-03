@@ -45,7 +45,7 @@ export interface ISelectProps extends IDataAttributes {
     currentValue?: SelectItemValueType;
     /** Результат проверки данных */
     verification?: VerificationType;
-    /** Дополнительный текст */
+    /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
     /** Управление возможностью взаимодействия с компонентом */
     isDisabled?: boolean;
