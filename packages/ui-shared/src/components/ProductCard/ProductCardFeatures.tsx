@@ -28,18 +28,22 @@ export interface ISecondParamChildren {
 }
 
 export interface IProductCardFeaturesProps {
-    /** Showcase first param
-     * Param with args: title: string(requred), caption: string,
+    /** Начальные параметры витрины
+     * title: string(requred),
+     * caption: string,
      * children: [JSX.Element(requred), title: string(requred)]
      */
     firstParam?: IFirstParam;
-    /** Showcase second param
-     * Param with args: title: string,
+    /** Вторичные параметры витрины
+     * title: string,
      * children: [JSX.Element(requred), title: string(requred), caption: string](requred)
      */
     secondParam?: ISecondParam;
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительный класс верхнего элемента */
     classNameTop?: string;
+    /** Дополнительный класс нижнего элемента */
     classNameBottom?: string;
 }
 

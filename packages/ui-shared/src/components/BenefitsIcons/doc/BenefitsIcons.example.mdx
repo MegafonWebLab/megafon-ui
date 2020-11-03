@@ -1,34 +1,13 @@
----
-name: BenefitsIcons
-menu: Конструктор
-route: components/benefits-icons
----
 
-import { Playground, Props } from 'docz';
-import BenefitsIcons from './BenefitsIcons';
+import { Playground } from 'docz';
+import BenefitsIcons from '../BenefitsIcons';
 import { fiveItems, fourItems, threeItems, twoItems, twoItemsWithoutText, twoItemsWithoutTitle } from './BenefitsIcons.docz.tsx';
 
-# BenefitsIcons
-
-## Properties
-<Props of={BenefitsIcons} />
-
-### iconPosition values
-value        | description
--------------|----------
-*left-side*  | left-aligned column with left side icon
-*left-top*   | left-aligned column with left-aligned icon on top
-*center-top* | center-aligned column with center-aligned icon on top
-
-## Basic usage
-
 <Playground>
-    <BenefitsIcons
-        items={twoItems}
-    />
+    <BenefitsIcons items={twoItems} />
 </Playground>
 
-## Only title
+## Один заголовок
 
 <Playground>
     <BenefitsIcons
@@ -37,7 +16,7 @@ value        | description
     />
 </Playground>
 
-## Only text
+## Только текст
 
 <Playground>
     <BenefitsIcons
@@ -46,9 +25,9 @@ value        | description
     />
 </Playground>
 
-## Left-aligned column with left-aligned icon on top
+## Столбец с выравниванием по левому краю, значок с выравниванием по левому краю вверху
 
-#### 2 items
+#### 2 бенефита
 <Playground>
     <BenefitsIcons
         items={twoItems}
@@ -56,7 +35,7 @@ value        | description
     />
 </Playground>
 
-#### 3 items
+#### 3 бенефита
 <Playground>
     <BenefitsIcons
         items={threeItems}
@@ -64,7 +43,7 @@ value        | description
     />
 </Playground>
 
-#### 4 items
+#### 4 бенефита
 <Playground>
     <BenefitsIcons
         items={fourItems}
@@ -72,7 +51,7 @@ value        | description
     />
 </Playground>
 
-#### 5 items
+#### 5 бенефитов
 <Playground>
     <BenefitsIcons
         items={fiveItems}
@@ -80,9 +59,9 @@ value        | description
     />
 </Playground>
 
-## Left-aligned column with left side icon
+## Выровненный по левому краю столбец со значком слева
 
-#### 2 items
+#### 2 бенефита
 <Playground>
     <BenefitsIcons
         items={twoItems}
@@ -90,7 +69,7 @@ value        | description
     />
 </Playground>
 
-#### 3 items
+#### 3 бенефита
 <Playground>
     <BenefitsIcons
         items={threeItems}
@@ -98,7 +77,7 @@ value        | description
     />
 </Playground>
 
-#### 4 items
+#### 4 бенефита
 <Playground>
     <BenefitsIcons
         items={fourItems}
@@ -106,7 +85,7 @@ value        | description
     />
 </Playground>
 
-#### 5 items
+#### 5 бенефитов
 <Playground>
     <BenefitsIcons
         items={fiveItems}
@@ -114,9 +93,9 @@ value        | description
     />
 </Playground>
 
-## Center-aligned column with center-aligned icon on top
+## Выровненный по центру столбец со значком выровненного по центру вверху
 
-#### 2 items
+#### 2 бенефита
 <Playground>
     <BenefitsIcons
         items={twoItems}
@@ -124,7 +103,7 @@ value        | description
     />
 </Playground>
 
-#### 3 items
+#### 3 бенефита
 <Playground>
     <BenefitsIcons
         items={threeItems}
@@ -132,7 +111,7 @@ value        | description
     />
 </Playground>
 
-#### 4 items
+#### 4 бенефита
 <Playground>
     <BenefitsIcons
         items={fourItems}
@@ -140,7 +119,7 @@ value        | description
     />
 </Playground>
 
-#### 5 items
+#### 4 бенефитов
 <Playground>
     <BenefitsIcons
         items={fiveItems}
@@ -148,40 +127,40 @@ value        | description
     />
 </Playground>
 
-## Included props
+## Входящие пропсы
 
 ``` javascript
 const twoItemsWithoutText = [
     {
-        title: 'Lorem ipsum',
+        title: 'Звонки',
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
     {
-        title: 'Lorem ipsum',
+        title: 'Интернет',
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
 ];
 
 const twoItemsWithoutTitle = [
     {
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        text: 'Оставайтесь всегда на связи',
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
     {
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        text: 'Подключите, и гигабайты и минуты всегда будут с вами!',
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
 ];
 
 const twoItems = [
     {
-        title: 'Lorem ipsum',
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        title: 'Звонки',
+        text: 'Оставайтесь всегда на связи',
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
     {
-        title: 'Lorem ipsum',
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+        title: 'Интернет',
+        text: 'Подключите, и гигабайты и минуты всегда будут с вами!',
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
 ];

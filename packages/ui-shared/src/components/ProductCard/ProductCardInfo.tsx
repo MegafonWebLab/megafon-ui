@@ -16,33 +16,41 @@ interface IAdditionalParams {
 }
 
 export interface IProductCardInfoProps {
-    /** Title */
+    /** Заголовок */
     title: string;
-    /** Link */
+    /** Ссылка */
     link: string;
-    /** Link target */
+    /** Target - аргумента тега <a> */
     linkTarget?: '_self' | '_blank' | '_parent' | '_top';
-    /** Link text */
+    /** Текст ссылки */
     linkText?: string;
-    /** Description
-     * string or JSX.element with custom styles
-     */
+    /** Описание */
     description?: string | JSX.Element;
-    /** Description Svg */
+    /** Иконка описания */
     descriptionIcon?: JSX.Element;
-    /** Badges
-     * list of objects with args: title(required), code(required), hint
+    /** Бейджи
+     * title: string;
+     * code: string;
+     * hint?: string;
      */
     badges?: IBadge[];
-    /** Additional params
-     * list of params with args: title(required), value(required), unit(required)
+    /** Дополнительные параметры
+     * title: string;
+     * value: string | number;
+     * unit: string | JSX.Element;
      */
     additionalParams?: IAdditionalParams[];
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительный класс элемента описания */
     classNameDescription?: string;
+    /** Дополнительный класс элемента описания текста */
     classNameDescriptionText?: string;
+    /** Дополнительный класс элемента параметров */
     classNameParams?: string;
+    /** Дополнительный класс элемента конкретного параметра */
     classNameParamsItem?: string;
+    /** Обработчик клика */
     onClickMoreInfo?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 

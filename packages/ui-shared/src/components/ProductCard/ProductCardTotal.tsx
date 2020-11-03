@@ -7,51 +7,51 @@ const LinkTargetType = PropTypes.oneOf(['_self', '_blank', '_parent', '_top']);
 export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
 
 export interface IProductCardTotalProps {
-    /** Payment
-     * Object with args: value: string(required), unit: string(required), oldValue: string
-     */
+    /** Оплата */
     payment?: {
         value: string | number;
         unit: string;
         oldValue?: string;
     };
-    /** Info - any type - return with onSubmit, onClickConnect, onClickMore */
+    /** Любое значение вовзращающееся в onSubmit, onClickConnect, onClickMore */
     info?: {};
-    /** Submit text */
+    /** Текст кнопки отправки */
     submitText?: string;
-    /** Submit link,
-     * show button if included
+    /** Ссылка кнопки отправки,
+     * показывает кнопку если добавлен
      */
     submitLink?: string;
-    /** Submit link target */
+    /** Target кнопки отправки */
     submitLinkTarget?: TLinkTargetType;
-    /** More text */
+    /** Текст кнопки больше */
     moreText?: string;
-    /** More link,
-     *  show button if included
+    /** Текст кнопки больше,
+     *  sпоказывает кнопку если добавлен
      */
     moreLink?: string;
-    /** More link target */
+    /** Target кнопки больше */
     moreLinkTarget?: TLinkTargetType;
-    /** Connect text */
+    /** Текст кнопки коннект */
     connectText?: string;
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительный класс элемента обертки */
     classNameWrap?: string;
     classNameCost?: string;
     classNameButtons?: string;
     classNameSubmit?: string;
     classNameMore?: string;
     classNameConnect?: string;
-    /** Submit hander,
-     * show button if included
+    /** Обработчик отправки формы,
+     * показывает кнопку если добавлен
      */
     onSubmit?: (e: React.SyntheticEvent<EventTarget>, info: {}) => void;
-    /** Connect hander,
-     * show button if included
+    /** Обратчик клика,
+     * показывает кнопку если добавлен
      */
     onClickConnect?: (e: React.SyntheticEvent<EventTarget>, info: {}) => void;
-    /** More hander,
-     * show button if included
+    /** Обратчик клика,
+     * показывает кнопку если добавлен
      */
     onClickMore?: (e: React.SyntheticEvent<EventTarget>, info: {}) => void;
 }

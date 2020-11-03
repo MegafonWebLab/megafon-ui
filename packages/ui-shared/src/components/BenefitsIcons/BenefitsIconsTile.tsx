@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import convert from 'htmr';
 import './style/BenefitsIconsTile.less';
 import { Header, Paragraph, cnCreate } from '@megafon/ui-core';
-import { IBenefit, IconPositionEnum } from './types';
+import { IBenefit, IconPositionEnum, IconPosition } from './types';
 
 export interface IBenefitsIconsTile extends IBenefit {
-    iconPosition?: IconPositionEnum;
+    iconPosition?: IconPosition;
 }
 
 const cn = cnCreate('mfui-beta-benefits-icons-tile');

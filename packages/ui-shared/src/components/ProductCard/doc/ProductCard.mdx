@@ -1,0 +1,28 @@
+---
+name: ProductCard
+menu: Компоненты
+route: components/product-card
+---
+
+import { Playground, Props } from 'docz';
+import ProductCardWrapper from '../ProductCardWrapper';
+import ProductCardInfo from '../ProductCardInfo';
+import ProductCardFeatures from '../ProductCardFeatures';
+import ProductCardTotal from '../ProductCardTotal';
+import Example from './ProductCard.example.mdx';
+
+# ProductCard
+
+<DoczTabs>
+    <Example />
+    <div>
+        <h2>ProductCardWrapper</h2>
+        <Props of={ProductCardWrapper} />
+        <h2>ProductCardInfo</h2>
+        <Props of={ProductCardInfo} />
+        <h2>ProductCardFeatures</h2>
+        <Props of={ProductCardFeatures} />
+        <h2>ProductCardTotal</h2>
+        <Props of={ProductCardTotal} />
+    </div>
+</DoczTabs>

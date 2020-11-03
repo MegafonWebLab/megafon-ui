@@ -4,19 +4,19 @@ import { cnCreate, Button, TextLink } from '@megafon/ui-core';
 import './ButtonLinkBox.less';
 
 export interface IButtonLinkBoxProps {
-    /** Custom className */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Button title */
+    /** Заголовок кнопки */
     buttonTitle?: string;
-    /** Button url */
+    /** Ссылка кнопки */
     buttonUrl?: string;
-    /** Button color */
+    /** Цвет кнопки */
     buttonColor?: 'green' | 'purple';
-    /** Link title */
+    /** Заголовок ссылки */
     linkTitle?: string;
-    /** Link url */
+    /** Адрес ссылки */
     linkUrl?: string;
-    /** Horizontal alignment */
+    /** Горизонтальное выравнивание */
     hAlign?: 'center' | 'left';
 }
 
