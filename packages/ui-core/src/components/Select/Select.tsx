@@ -5,7 +5,6 @@ import './Select.less';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
-import Paragraph from 'components/Paragraph/Paragraph';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const Verification = {
@@ -22,7 +21,7 @@ export const SelectTypes = {
 
 type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 
-export type SelectItemValueType = number | string;
+export type SelectItemValueType = number | string | undefined;
 
 export interface ISelectItem {
     title: string;
@@ -36,34 +35,36 @@ interface ISelectClasses {
 }
 
 export interface ISelectProps extends IDataAttributes {
-    /** Select type */
+    /** Тип компонента */
     type?: SelectTypesType;
-    /** Field title */
+    /** Заголовок поля */
     label?: string;
-    /** Html id attribute for label */
+    /** HTML идентификатор для заголовка поля */
     labelId?: string;
-    /** Current selected item */
+    /** Текущий выбранный элемент селекта */
     currentValue?: SelectItemValueType;
-    /** Verification */
+    /** Результат проверки данных */
     verification?: VerificationType;
-    /** Notice text */
+    /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
-    /** isDisabled field */
+    /** Управление возможностью взаимодействия с компонентом */
     isDisabled?: boolean;
-    /** Makes the field required. */
+    /** Делает поле обязательным */
     required?: boolean;
-    /** Placeholder */
+    /** Текст внутри поля по умолчанию */
     placeholder?: string;
-    /** Text in the absence of search results */
+    /** Текст при отсутствии результатов поиска */
     notFoundText?: string;
-    /** Array of objects to be used for options rendering */
+    /** Массив элементов селекта */
     items: ISelectItem[];
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Object for the custom class */
+    /** Дополнительные классы для внутренних элементов */
     classes?: ISelectClasses;
-    /** Select item handler */
-    onSelect?: (e: React.MouseEvent<HTMLDivElement>, dataItem: ISelectItem) => void;
+    /** Обработчик выбора элемента селекта */
+    onSelect?: (
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
+    ) => void;
 }
 
 interface ISelectState {
@@ -108,6 +109,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     };
 
     static defaultProps: Partial<ISelectProps> = {
+        isDisabled: false,
+        required: false,
         type: SelectTypes.CLASSIC,
         notFoundText: 'Ничего не нашлось',
         items: [],
@@ -130,7 +133,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         });
 
-        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true });
+        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true, activeIndex: 0 });
     }, 250);
 
     constructor(props: ISelectProps) {
@@ -144,6 +147,20 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             inputValue: '',
         };
         this.itemsNodeList = [];
+    }
+
+    componentDidMount() {
+        const { currentValue } = this.props;
+        const { filteredItems } = this.state;
+        const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
+
+        if (currentIndex !== -1) {
+            this.setState({
+                activeIndex: currentIndex,
+                inputValue: filteredItems[currentIndex].title,
+                comparableInputValue: filteredItems[currentIndex].title,
+            });
+        }
     }
 
     componentDidUpdate() {
@@ -176,9 +193,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
-    handleClickItem = (itemValue: SelectItemValueType) => (e: React.MouseEvent<HTMLDivElement>): void => {
+    handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
-        const item = items.find(elem => elem.value === itemValue);
+        const { activeIndex, filteredItems } = this.state;
+
+        const currentItem = filteredItems[activeIndex].value;
+
+        const item = filteredItems.find(elem => elem.value === currentItem);
 
         if (!item) {
             return;
@@ -186,7 +207,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         const { title } = item;
 
-        this.setState({isOpened: false, inputValue: title });
+        this.setState({isOpened: false, inputValue: title, comparableInputValue: title, filteredItems: items });
 
         onSelect && onSelect(e, item);
     }
@@ -197,20 +218,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState({ activeIndex: index });
     }
 
-    handleClickCombobox = (e: React.FormEvent<EventTarget>): void => {
+    handleComboboxFocus = (e: React.FocusEvent<HTMLInputElement>): void => {
         const { isOpened, filteredItems } = this.state;
 
         e.stopPropagation();
 
-        if (!(e.target instanceof HTMLInputElement)) {
-            return;
-        }
+        this.setState((state) => ({ isOpened: !state.isOpened }));
 
         if (!isOpened && filteredItems) {
             e.target.select();
         }
-
-        this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -222,14 +239,14 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
-        const { activeIndex, isOpened } = this.state;
-        const { items } = this.props;
+        const { activeIndex, isOpened, filteredItems } = this.state;
+        const { isDisabled } = this.props;
 
-        if (items.length === 0) {
+        if (filteredItems.length === 0 || isDisabled) {
             return true;
         }
 
-        if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
+        if (e.key === 'ArrowDown' && isOpened && activeIndex < filteredItems.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
                 this.scrollList(this.state.activeIndex);
             });
@@ -238,7 +255,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
             return false;
         }
-        if (e.key === 'ArrowUp' && activeIndex > 0) {
+        if (e.key === 'ArrowUp' && isOpened && activeIndex > 0) {
             this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
                 this.scrollList(this.state.activeIndex);
             });
@@ -248,7 +265,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         }
         if (e.key === 'Enter' && isOpened) {
-            this.itemsNodeList[activeIndex].click();
+            this.handleSelectItem(e);
 
             return false;
         }
@@ -307,16 +324,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const stringFragments = title.split(RegExp(`(${comparableInputValue})`, 'ig'));
 
         return (
-            <Paragraph hasMargin={false}>
+            <>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
-                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase())
+                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase() && fragment !== '')
                             ? <span className={cn('highlighted-fragment')}>{fragment}</span>
                             : fragment
                         }
                     </React.Fragment>
                 ))}
-            </Paragraph>
+            </>
         );
     }
 
@@ -355,7 +372,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         return (
             <input
                 className={cn('combobox')}
-                onClick={this.handleClickCombobox}
+                onFocus={this.handleComboboxFocus}
                 onChange={this.handleChangeCombobox}
                 type="text"
                 value={inputValue}
@@ -378,7 +395,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                                 active: activeIndex === i,
                             })}
                             key={`${i}_${value}`}
-                            onClick={this.handleClickItem(value)}
+                            onClick={this.handleSelectItem}
                             onMouseEnter={this.handleHoverItem(i)}
                             ref={this.getNodeList}
                         >
@@ -387,7 +404,9 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                             </div>
                         </div>
                     ))}
-                    {!currentItems.length && <div className={cn('not-found')}>{notFoundText}</div>}
+                    {type === SelectTypes.COMBOBOX && !currentItems.length && (
+                        <div className={cn('not-found')}>{notFoundText}</div>
+                    )}
                 </div>
             </div>
         );
