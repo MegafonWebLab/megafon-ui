@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.35](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.34...@megafon/ui-shared@2.0.0-beta.35) (2020-11-03)
+
+
+### Features
+
+* **video banner:** add new component ([291c9c2](https://github.com/MegafonWebLab/megafon-ui/commit/291c9c277ff99029cccec5f5f9b02ff4f3929e41))
+
+
+
+
+
 # [2.0.0-beta.34](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.33...@megafon/ui-shared@2.0.0-beta.34) (2020-11-02)
 
 

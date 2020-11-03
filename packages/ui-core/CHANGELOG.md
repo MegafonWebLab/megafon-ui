@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.34](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.33...@megafon/ui-core@2.0.0-beta.34) (2020-11-03)
+
+
+### Bug Fixes
+
+* **grid column:** add types according renderHtml returned type ([b338acd](https://github.com/MegafonWebLab/megafon-ui/commit/b338acd6c9d77b7d006915c4d3ec1171d920fc4b))
+
+
+
+
+
 # [2.0.0-beta.33](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.32...@megafon/ui-core@2.0.0-beta.33) (2020-11-02)
 
 
