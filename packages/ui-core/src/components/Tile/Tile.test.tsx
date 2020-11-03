@@ -26,6 +26,11 @@ describe('<Tile />', () => {
             );
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('it renders with data attributes', () => {
+            const wrapper = shallow(<Tile dataAttrs={{ 'data-test': 'test', 'incorrect-attr': 'test' }} />);
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('handlers', () => {

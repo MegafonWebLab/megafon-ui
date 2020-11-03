@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Tile.less';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const Theme = {
     LIGHT: 'light',
@@ -26,7 +27,7 @@ export const Shadow = {
 
 type ShadowType = typeof Shadow[keyof typeof Shadow];
 
-export interface ITileProps {
+export interface ITileProps extends IDataAttributes {
     /** Ссылка */
     href?: string;
     /** Тема */
@@ -53,6 +54,7 @@ const Tile: React.FC<ITileProps> = ({
     radius = 'default',
     isInteractive = false,
     onClick,
+    dataAttrs,
 }) => {
     const [currentShadow, setCurrentShadow] = React.useState(shadowLevel);
 
@@ -82,6 +84,7 @@ const Tile: React.FC<ITileProps> = ({
             onClick={handleClick}
             onMouseEnter={handleHoverTile}
             onMouseLeave={handleMouseLeave}
+            {...filterDataAttrs(dataAttrs)}
         >
             {href && (
                 <a href={href} className={cn('link')}>
@@ -101,6 +104,7 @@ Tile.propTypes = {
     className: PropTypes.string,
     isInteractive: PropTypes.bool,
     onClick: PropTypes.func,
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
 };
 
 export default Tile;
