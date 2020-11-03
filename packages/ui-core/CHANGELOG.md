@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.35](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.34...@megafon/ui-core@2.0.0-beta.35) (2020-11-03)
+
+
+### Bug Fixes
+
+* **tile:** added data attributes prop ([321ea34](https://github.com/MegafonWebLab/megafon-ui/commit/321ea34d916ced836a4a8a9df08082d5b6634242))
+
+
+### Features
+
+* **select:** tests and functional extensions ([2ed549b](https://github.com/MegafonWebLab/megafon-ui/commit/2ed549b2de35b4230f8ea1251f940555794f560b))
+
+
+
+
+
 # [2.0.0-beta.34](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.33...@megafon/ui-core@2.0.0-beta.34) (2020-11-03)
 
 
