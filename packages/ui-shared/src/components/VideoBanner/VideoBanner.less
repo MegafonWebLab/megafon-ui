@@ -1,0 +1,90 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-video-banner');
+
+@{b} {
+    &__wrapper {
+        box-sizing: border-box;
+        position: relative;
+        height: 400px;
+        padding: 90px 80px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media @desktopB {
+            height: 562px;
+        }
+
+        @media @desktopM {
+            height: 500px;
+        }
+
+        @media @desktopS {
+            padding: 52px 64px;
+        }
+
+        @media @mobileSM {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 42px;
+            background-position: center;
+        }
+    }
+
+    &__video {
+        max-width: 100%;
+        max-height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__content {
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 550px;
+        height: 320px;
+
+        @media @desktopS {
+            width: 512px;
+            height: 296px;
+        }
+
+        @media @mobileB {
+            width: 384px;
+            height: 272px;
+        }
+
+        @media @mobileSM {
+            align-items: center;
+            width: 288px;
+            height: 316px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+
+        @media @mobileSM {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title,
+    &__text {
+        @media @mobileSM {
+            text-align: center;
+        }
+    }
+}

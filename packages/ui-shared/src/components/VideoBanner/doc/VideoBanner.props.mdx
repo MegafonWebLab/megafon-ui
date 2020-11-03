@@ -1,0 +1,28 @@
+import { Props } from 'docz';
+import VideoBanner from '../VideoBanner';
+
+<Props of={VideoBanner} />
+
+``` javascript
+
+interface IContent {
+    /** Заголовок */
+    title: string;
+    /** Текст-описание */
+    description: string;
+    /** Текст кнопки */
+    buttonTitle: string;
+    /** Ссылка на кнопке */
+    href?: string;
+    /** Обработчик клика по кнопке */
+    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+}
+
+interface IImage {
+    /** Изображение для мобильных устройств */
+    mobile: string;
+    /** Изображение для компьютерных устройств */
+    desktop: string;
+}
+
+```
