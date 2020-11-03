@@ -59,7 +59,7 @@ export interface IGridColumn {
     flex?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
-    children: React.ReactNode;
+    children: React.ReactNode | JSX.Element | JSX.Element[];
 }
 
 const cn = cnCreate('mfui-beta-grid-column');
