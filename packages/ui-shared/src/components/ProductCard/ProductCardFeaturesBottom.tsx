@@ -5,11 +5,15 @@ import { Header, Paragraph, cnCreate } from '@megafon/ui-core';
 import { ISecondParamChildren } from './ProductCardFeatures';
 
 export interface IProductCardFeaturesBottomProps {
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Title */
+    /** Заголовок */
     title?: string;
-    /** Showcase params childrens list */
+    /** Параметры витрины
+     * title?: string;
+     * caption?: string;
+     * svgIcon?: JSX.Element;
+     */
     params: Array<Partial<ISecondParamChildren>>;
 }
 

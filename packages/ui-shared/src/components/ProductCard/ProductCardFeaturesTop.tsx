@@ -5,13 +5,16 @@ import { Header, cnCreate, DropdownSocialList } from '@megafon/ui-core';
 import { IFirstParamChildren } from './ProductCardFeatures';
 
 export interface IProductCardFeaturesTopProps {
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Title */
+    /** Заголовок */
     title?: string;
-    /** Caption */
+    /** Подпись */
     caption?: string;
-    /** Showcase params childrens list */
+    /** Параметры витрины
+     * title?: string;
+     * svgIcon?: JSX.Element;
+     */
     params: Array<Partial<IFirstParamChildren>>;
 }
 

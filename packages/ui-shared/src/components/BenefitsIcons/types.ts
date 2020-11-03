@@ -6,11 +6,12 @@ export interface IBenefit {
     icon: React.ReactNode;
 }
 
-export enum IconPositionEnum {
-    LEFT_TOP = 'left-top',
-    CENTER_TOP = 'center-top',
-    LEFT_SIDE = 'left-side',
-}
+export const IconPositionEnum = {
+    LEFT_TOP: 'left-top',
+    CENTER_TOP: 'center-top',
+    LEFT_SIDE: 'left-side',
+} as const;
+export type IconPosition = typeof IconPositionEnum[keyof typeof IconPositionEnum];
 
 export type GridConfig = {
     wide?: TGridSizeValues;

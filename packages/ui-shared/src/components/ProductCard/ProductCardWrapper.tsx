@@ -4,18 +4,15 @@ import { cnCreate } from '@megafon/ui-core';
 import './ProductCardWrapper.less';
 
 export interface IProductCardWrapperProps {
-    /** This option add specific className on container
-     * and child components change styles: background, paddings, font-size...
-     */
+    /** Тема обертки */
     theme?: 'default';
-    /** Hint from left */
+    /** Подсказка слева */
     hint?: {
         title: string;
         color: 'green' | 'orange' | 'black';
     };
-    /** Show border
-     * each property:'sky' or true(bool)
-     * true - get default color #D8D8D8
+    /** Показать границы
+     * true - #D8D8D8
      * sky - #EDEDED
      */
     border?: Partial<{
@@ -25,8 +22,11 @@ export interface IProductCardWrapperProps {
         left: boolean | 'sky';
     }>;
     children: JSX.Element[] | Element[] | JSX.Element | Element;
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительный класс внутренней обертки элемента */
     classNameInner?: string;
+    /** Дополнительный класс внутреннего контейнера элемента */
     classNameContainer?: string;
 }
 
