@@ -1,4 +1,4 @@
-name: megafon-ui CI
+name: docs deploy
 
 on:
   release:
@@ -6,11 +6,49 @@ on:
 
 jobs:
   main:
-    if: ${{ github.repository_owner = 'MegafonWebLab' }}
+    if: github.repository_owner == 'MegafonWebLab'
 
     runs-on: ubuntu-latest
 
     steps:
+      - name: Cancel previous runs
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{secrets.PAT_TOKEN}}
+          script: |
+            try {
+              const result = await github.request('GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs', {
+                owner: context.payload.repository.owner.login,
+                repo: context.payload.repository.name,
+                workflow_id: 'deploy-docs.yaml',
+                event: 'release'
+              })
+
+              const currentRun = result.data.workflow_runs.find((r) => r.id === context.runId);
+
+              if (!currentRun) {
+                return;
+              }
+
+              for (const workflowRun of result.data.workflow_runs) {
+                const notThis = workflowRun.id !== currentRun.id;
+                const notCompleted = workflowRun.status !== 'completed';
+                const createdBeforeCurrent = new Date(currentRun.created_at) > new Date(workflowRun.created_at);
+
+                if (notThis && notCompleted && createdBeforeCurrent) {
+                  console.log(`cancel run: number - ${workflowRun.run_number}, id - ${workflowRun.id}, name - ${workflowRun.head_commit.message}`);
+
+                  await github.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel', {
+                    owner: context.payload.repository.owner.login,
+                    repo: context.payload.repository.name,
+                    run_id: workflowRun.id
+                  });
+                }
+              }
+            } catch (ex) {
+              console.log('Exception while cancelling other workflow runs: ', ex);
+            }
+
       - uses: actions/checkout@v2
 
       - name: Setup Node.js

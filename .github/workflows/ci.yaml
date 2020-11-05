@@ -1,4 +1,4 @@
-name: megafon-ui CI
+name: test and release
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ jobs:
   main:
     env:
       BASE_BRANCH: master
-      BASE_REPO: MegafonWebLab
+      BASE_REPO_OWNER: MegafonWebLab
 
     runs-on: ubuntu-latest
 
@@ -72,7 +72,7 @@ jobs:
         run: |
           if
           [ ${{ contains(github.event.head_commit.message, 'skip release') }} = false ] &&
-          [ ${{ github.repository_owner }} = ${{ env.BASE_REPO }} ] &&
+          [ ${{ github.repository_owner }} = ${{ env.BASE_REPO_OWNER }} ] &&
           [ ${{ github.ref }} = refs/heads/${{ env.BASE_BRANCH }} ];
           then
             echo ::set-output name=should_release::true
@@ -100,4 +100,4 @@ jobs:
         if: steps.branch.outputs.should_release == 'true'
         run: yarn exec lerna publish -- --yes
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
