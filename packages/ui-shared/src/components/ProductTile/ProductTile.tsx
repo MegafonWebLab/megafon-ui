@@ -80,90 +80,90 @@ export interface IDefaultInfo {
 }
 
 export interface IProductTileProps {
-    /** Class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Tile */
+    /** Заголовок */
     title: string;
-    /** Top badge title */
+    /** Заголовок верхнего бейджа */
     topBadgeTitle?: string;
-    /** Top badge link href */
+    /** Ссылка верхнего бейджа */
     topBadgeLink?: string;
-    /** Top badge link target */
+    /** Target верхнего бейджа */
     topBadgeLinkTarget?: TLinkTargetType;
-    /** Second params head */
+    /** Второй параметр заголовка */
     secondParamsHead?: string;
-    /** Shop tag */
+    /** Тег магазина */
     shopTag?: string;
-    /** Start calls index */
+    /** Индекс начало звонка */
     startCallsIndex?: number;
-    /** Start traffic index */
+    /** Индекс начала трафика */
     startTrafficIndex?: number;
-    /** Cookie calls index */
+    /** Индекс звонков куки */
     cookieCallsIndex?: number;
-    /** Cookie traffic index */
+    /** Индекс куки трафика */
     cookieTrafficIndex?: number;
 
-    /** More link */
+    /** Ссылка */
     link?: string;
-    /** link target */
+    /** Target - аргумент тега <a> */
     linkTarget?: TLinkTargetType;
-    /** More link text */
+    /** Ссылка кноки больше */
     moreLinkText?: string;
-    /** Show more link */
+    /** Ссылка кноки показать больше */
     showMoreLink?: boolean;
 
-    /** Buy link */
+    /** Ссылка нопки купить */
     buyLink?: string;
-    /** Buy link target */
+    /** Target нопки купить */
     buyLinkTarget?: TLinkTargetType;
-    /** Use pack buy link */
+    /** Использовать пак кнопки купить */
     usePackBuyLink?: boolean;
-    /** Buy button text */
+    /** Текст кнопки купить */
     buyButtonText?: string;
-    /** Show buy button */
+    /** Показать кнопку купить */
     showBuyButton?: boolean;
-    /** button theme */
+    /** Тема кнопки */
     buttonTheme?: IProductTileBuyProps['buttonTheme'];
-    /** button type */
+    /** Тип кнопки */
     buttonType?: IProductTileBuyProps['buttonType'];
 
-    /** Connect link */
+    /** Ссылка кнопки подключить */
     connectLink?: string;
-    /** Connect link target */
+    /** Target кнопки подключить */
     connectLinkTarget?: TLinkTargetType;
-    /** Connect button text */
+    /** Текст кнопки подключить */
     connectButtonText?: string;
-    /** Show connect button */
+    /** Показать кнопку подключить */
     showConnectButton?: boolean;
 
-    /** Payment */
+    /** Оплата */
     payment: IPayment;
-    /** Packs */
+    /** Паки */
     packs?: IPack[];
-    /** Second params */
+    /** Дополнительные параметры */
     secondParams: IOption[];
-    /** Cashback */
+    /** Кешбек */
     cashback: ICashback;
-    /** First params */
+    /** Первоначальные параметры */
     firstParams: IFirstParam;
-    /** Service packs */
+    /** Сервисные паки */
     servicePacks?: Array<Partial<IServicePack>>;
-    /** Info - object type - return with onClickConnect, onClickBuy */
+    /** Info - объект возвращаемый в колбеках onClickConnect, onClickBuy */
     info: {};
-    /** isAtive */
+    /** Является ли активным */
     isActive?: boolean;
 
-    /** Connect handler */
+    /** Обработчик клика по кноке подключить */
     onClickConnect?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
-    /** Buy handler */
+    /** Обработчик клика по кнопке купить */
     onClickBuy?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
-    /** More handler */
+    /** Обработчик клика по кнопке больше */
     onClickMore?(info: {}, e: React.SyntheticEvent<EventTarget>): void;
-    /** Bubble handler */
+    /** Обработчик клика по баблу */
     onClickBubble?(info: {}): void;
-    /** Calls change callback  */
+    /** Обработчик изменения звонков */
     onCallsChange?(index: number): void;
-    /** Traffic change callback */
+    /** Обработчик изменения трафка */
     onTrafficChange?(index: number): void;
 }
 

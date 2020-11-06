@@ -12,7 +12,7 @@ const cn = cnCreate('docz-nav-link');
 
 const NavLink: React.FC<NavLinkProps> = ({ to, children, className }) => {
     if(typeof children === 'string' && children.trim()) {
-        return <Link className={cn([className])} to={`${to === '/' ? to : '/' + to}`} activeClassName="active">{children}</Link>
+        return <Link id={to} className={cn([className])} to={`${to === '/' ? to : '/' + to}`} activeClassName="active">{children}</Link>
     }
 
     return <div />;

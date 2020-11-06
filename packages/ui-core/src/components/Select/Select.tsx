@@ -111,7 +111,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     static defaultProps: Partial<ISelectProps> = {
         isDisabled: false,
         required: false,
-        type: SelectTypes.CLASSIC,
+        type: 'classic',
         notFoundText: 'Ничего не нашлось',
         items: [],
     };

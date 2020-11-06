@@ -1,19 +1,7 @@
----
-name: ProductSwitcher
-menu: Компоненты
-route: components/product-switcher
----
 
-import { Playground, Props } from 'docz';
-import ProductSwitcher from './ProductSwitcher';
+import { Playground } from 'docz';
+import ProductSwitcher from '../ProductSwitcher';
 import { items, valuedItems, colorLineItems } from './ProductSwitcher.docz';
-
-# ProductSwitcher
-
-## Properties ProductSwitcher
-<Props of={ProductSwitcher} />
-
-## Basic usage
 
 <Playground>
     <ProductSwitcher items={items} onChange={() => {return true}}/>
@@ -22,7 +10,7 @@ import { items, valuedItems, colorLineItems } from './ProductSwitcher.docz';
     </div>
 </Playground>
 
-## Included props
+## Входящие пропсы
 
 ``` javascript
 const items = [
@@ -47,7 +35,7 @@ const items = [
     <ProductSwitcher items={valuedItems} onChange={() => {return true}} theme="with-unit-values" />
 </Playground>
 
-## Included props
+## Входящие пропсы
 
 ``` javascript
 const items = [
@@ -66,13 +54,13 @@ const items = [
 ];
 ```
 
-## Usage with green line
+## Использование зеленой линии
 
 <Playground>
     <ProductSwitcher items={colorLineItems} onChange={() => {return true}} theme="with-color-row" />
 </Playground>
 
-## Included props
+## Входящие пропсы
 
 ``` javascript
 const colorLineItems = [

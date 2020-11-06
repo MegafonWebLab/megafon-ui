@@ -52,9 +52,9 @@ export interface ITooltipProps {
 const cn = cnCreate('mfui-beta-tooltip');
 const Tooltip: React.FC<ITooltipProps>  = ({
     className,
-    placement = Placement.TOP,
-    size = Size.MEDIUM,
-    triggerEvent = TriggerEvent.HOVER,
+    placement = 'top',
+    size = 'medium',
+    triggerEvent = 'hover',
     triggerElement,
     isOpened = false,
     children,

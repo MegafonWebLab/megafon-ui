@@ -1,9 +1,6 @@
 import * as React from 'react';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
 
-export const ProductTileRestWrapper = ({ children }) =>
-    <div style={{ padding: '20px', display: 'flex' }}>{children}</div>;
-
 export const tariff = {
     link: '/tariffs/vklyuchaysya/smotri.html',
     linkTarget: '_self',

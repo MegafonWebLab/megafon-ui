@@ -5,15 +5,15 @@ import './style/ProductTilePrice.less';
 import AnimationValue from './ProductTileValue';
 
 export interface IProductTilePriceProps {
-    /** title */
+    /** Заголовок */
     title?: string;
-    /** value */
+    /** Значение */
     value: string;
-    /** unitExtra */
+    /** Дополнительный юнит */
     unitExtra: string;
-    /** unitValue */
+    /** Значение юнита */
     unitValue: string;
-    /** discount */
+    /** Скидка */
     discount?: string;
 }
 

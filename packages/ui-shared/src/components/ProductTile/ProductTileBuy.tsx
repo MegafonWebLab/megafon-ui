@@ -7,31 +7,31 @@ import { TLinkTargetType } from './ProductTile';
 type IButtonProps = React.ComponentProps<typeof Button>;
 
 export interface IProductTileBuyProps {
-    /** Class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Buy link */
+    /** Ссылка кнопки купить */
     buyLink?: string;
-    /** Buy Link target */
+    /** Target кнопки купить */
     buyLinkTarget?: TLinkTargetType;
-    /** Buy button text */
+    /** Текст кнопки купить */
     buyButtonText?: string;
-    /** Show buy button */
+    /** Показать кнопку купить */
     showBuyButton?: boolean;
-    /** Connect link */
+    /** Ссылка кнопки подключить */
     connectLink?: string;
-    /** Connect Link target */
+    /** Target кнопки подключить */
     connectLinkTarget?: TLinkTargetType;
-    /** Connect button text */
+    /** Текст кнопки подключить */
     connectButtonText?: string;
-    /** Show connect button */
+    /** Показать кнопку подключить */
     showConnectButton?: boolean;
-    /** button theme */
+    /** Тема кнопки */
     buttonTheme?: IButtonProps['theme'];
-    /** button type */
+    /** Тип кнопки */
     buttonType?: IButtonProps['type'];
-    /** button background color */
+    /** Обработчик клика кнопки подключить */
     onClickConnect?(e: React.SyntheticEvent<EventTarget>): void;
-    /** Buy hander */
+    /** Обработчик клика кнопки купить */
     onClickBuy?(e: React.SyntheticEvent<EventTarget>): void;
 }
 

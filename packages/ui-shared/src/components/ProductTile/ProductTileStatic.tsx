@@ -5,7 +5,7 @@ import './style/ProductTileStatic.less';
 import { IPack } from './ProductTile';
 
 export interface IProductTileStaticProps {
-    /** Packs */
+    /** Паки */
     packs: Array<Partial<IPack>>;
 }
 

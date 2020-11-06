@@ -5,11 +5,11 @@ import './style/ProductTileOptions.less';
 import { IOption } from './ProductTile';
 
 export interface IProductTileOptionsProps {
-    /** Has head */
+    /** Заголовок */
     head?: string;
-    /** Options */
+    /** Опции */
     options: IOption[];
-    /** Handle bubble */
+    /** Обработчик клика по баблу */
     onClickBubble?: () => void;
 }
 

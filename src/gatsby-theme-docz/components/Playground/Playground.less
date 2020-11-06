@@ -10,9 +10,26 @@
     }
 
     &__editor {
+        position: relative;
         border: 1px solid #EDEDED;
         border-radius: 4px;
         font-size: 15px;
         line-height: 24px;
+    }
+
+    &__copy {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        border:none;
+
+        background: none;
+        outline: none;
+        cursor: pointer;
     }
 }
