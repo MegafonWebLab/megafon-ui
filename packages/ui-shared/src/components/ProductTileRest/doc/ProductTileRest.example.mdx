@@ -1,33 +1,19 @@
----
-name: ProductTileRest
-menu: Компоненты
-route: components/product-tile-rest
----
 
 import { Playground, Props } from 'docz';
-import ProductTileRest from './ProductTileRest';
+import ProductTileRest from '../ProductTileRest';
 import MegafonTv from 'icons/Service-logos/24/MF-TV.svg';
-import { ProductTileRestWrapper, tariff, tariff2 } from './ProductTileRest.docz';
+import { tariff, tariff2 } from './ProductTileRest.docz';
 
-# ProductTileRest
-
-## Properties ProductTileRest
-<Props of={ProductTileRest} />
-
-## Basic usage
-
-<Playground>
-    <ProductTileRestWrapper>
-        <div style={{ width: '300px', margin: '0 20px 0 0' }}>
-            <ProductTileRest {...tariff} />
-        </div>
-        <div style={{ width: '300px' }}>
-            <ProductTileRest {...tariff2} />
-        </div>
-    </ProductTileRestWrapper>
+<Playground style={{ padding: '20px', display: 'flex' }}>
+    <div style={{ width: '300px', margin: '0 20px 0 0' }}>
+        <ProductTileRest {...tariff} />
+    </div>
+    <div style={{ width: '300px' }}>
+        <ProductTileRest {...tariff2} />
+    </div>
 </Playground>
 
-## Included props
+## Входящие пропсы
 
 ``` javascript
 export const tariff = {

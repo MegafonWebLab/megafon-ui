@@ -5,18 +5,18 @@ import './style/ProductTileHint.less';
 import { TLinkTargetType } from './ProductTile';
 
 export interface IProductTileHintProps {
-    /** Title */
+    /** Заголовок */
     title: string;
-    /** Link href */
+    /** Ссылка */
     linkHref?: string;
-    /** Link target */
+    /** Target ссылки */
     linkTarget?: TLinkTargetType;
 }
 
 interface IElementAtributes {
-    /** Href */
+    /** Ссылка */
     href?: string;
-    /** Target */
+    /** Target ссылки */
     target?: string;
 }
 

@@ -54,7 +54,7 @@ export const Props = ({ props }) => {
         .sort(([, propA], [, propB]) =>
             Number(propA.type.name.search('=>') !== -1) - Number(propB.type.name.search('=>') !== -1)
         );
-    console.log('entries', entries);
+
     return (
         <table className={cn()}>
             <thead>

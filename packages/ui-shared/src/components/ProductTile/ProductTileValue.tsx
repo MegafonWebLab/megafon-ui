@@ -4,9 +4,9 @@ import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTileValue.less';
 
 export interface IProductTileValueProps {
-    /** Value */
+    /** Значение */
     value: string;
-    /** hAlign */
+    /** Выравнивание по горизонтали */
     hAlign?: 'center';
 }
 

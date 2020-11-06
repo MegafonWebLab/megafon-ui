@@ -4,11 +4,11 @@ import { cnCreate } from '@megafon/ui-core';
 import './style/ProductTileCashback.less';
 
 export interface IProductTileCashbackProps {
-    /** title */
+    /** Заголовок */
     title?: string;
-    /** value */
+    /** Значение */
     value?: number;
-    /** unit */
+    /** Юнит */
     unit?: string;
 }
 

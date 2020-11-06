@@ -7,17 +7,17 @@ import { IServicePack, ISwitcher } from './ProductTile';
 import AnimationValue from './ProductTileValue';
 
 export interface IProductTileDynamicProps {
-    /** Current pack */
+    /** Текущий пак */
     currentPack: Partial<IServicePack>;
-    /** Switcher */
+    /** Свитчер */
     switcher: ISwitcher;
-    /** Start calls index */
+    /** Индекс начала звонков */
     startCallsIndex?: number;
-    /** Start traffic index */
+    /** Индекс начала трафика */
     startTrafficIndex?: number;
-    /** Change calls */
+    /** Обработчик изменения звонков */
     onChangeCalls(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
-    /** Change Traffic */
+    /** Обработчик изменения трафика */
     onChangeTraffic(e: React.SyntheticEvent<EventTarget>, value: string, index: number): boolean;
 }
 

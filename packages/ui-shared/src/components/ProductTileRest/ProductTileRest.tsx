@@ -7,29 +7,45 @@ export type TLinkTargetType = '_self' | '_blank' | '_parent' | '_top';
 type IButtonProps = React.ComponentProps<typeof Button>;
 
 export interface IProductTileRestProps {
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Заголовок */
     title: string;
+    /** Описание */
     description: string;
+    /** Тег магазина */
     shopTag: string;
 
+    /** Ссылка */
     link: string;
+    /** Target - аргумент тега <a> */
     linkTarget?: TLinkTargetType;
+    /** Текст кнопки больше */
     moreLinkText: string;
+    /** Показать ссылку больше */
     showMoreLink: boolean;
 
+    /** Ссылка купить */
     buyLink: string;
+    /** Target - аргумент тега <a> */
     buyLinkTarget?: TLinkTargetType;
+    /** Текст кнопки купить */
     buyButtonText: string;
+    /** Показать кнопку купить */
     showBuyButton: boolean;
 
-    /** button theme */
+    /** Тема кнопки */
     buttonTheme?: IButtonProps['theme'];
-    /** button type */
+    /** Тип кнопки */
     buttonType?: IButtonProps['type'];
 
+    /** Ссылка коннекта */
     connectLink: string;
+    /** Target - аргумент тега <a> */
     connectLinkTarget?: TLinkTargetType;
+    /** Текст кнопки коннекта */
     connectButtonText: string;
+    /** Показать кнопку коннекта */
     showConnectButton: boolean;
 
     payment: any;
