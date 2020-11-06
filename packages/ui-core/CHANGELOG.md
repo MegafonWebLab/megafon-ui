@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.36](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.35...@megafon/ui-core@2.0.0-beta.36) (2020-11-06)
+
+**Note:** Version bump only for package @megafon/ui-core
+
+
+
+
+
 # [2.0.0-beta.35](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.34...@megafon/ui-core@2.0.0-beta.35) (2020-11-03)
 
 
