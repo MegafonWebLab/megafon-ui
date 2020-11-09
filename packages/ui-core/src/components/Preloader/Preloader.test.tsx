@@ -9,7 +9,15 @@ describe('<Preloader />', () => {
     });
 
     it('it renders Preloader with small size', () => {
-        const wrapper = shallow(<Preloader size="small" />);
+        const wrapper = shallow(
+            <Preloader
+                sizeAll="small"
+                sizeMobile="small"
+                sizeTablet="small"
+                sizeDesktop="small"
+                sizeWide="small"
+            />
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
