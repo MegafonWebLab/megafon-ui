@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.37](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.36...@megafon/ui-core@2.0.0-beta.37) (2020-11-09)
+
+
+### Bug Fixes
+
+* **button:** added preloader in button instead of spinner ([fdc29c7](https://github.com/MegafonWebLab/megafon-ui/commit/fdc29c73ac4bf9fbe57a0dc197e82e539e021771))
+* **preloader:** added different resolutions ([0969158](https://github.com/MegafonWebLab/megafon-ui/commit/0969158729985b2954cd0dee5ccd6ca41fb545c1))
+
+
+### BREAKING CHANGES
+
+* **button:** renamed prop showSpinner to showLoader
+* **preloader:** added different sizes except one
+
+
+
+
+
 # [2.0.0-beta.36](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.35...@megafon/ui-core@2.0.0-beta.36) (2020-11-06)
 
 **Note:** Version bump only for package @megafon/ui-core
