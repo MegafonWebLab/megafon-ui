@@ -20,22 +20,27 @@ jobs:
               const owner = context.payload.repository.owner.login;
               const repo = context.payload.repository.name;
 
-              console.log('owner', owner);
-              console.log('repo', repo);
+              console.log('owner:', owner);
+              console.log('repo:', repo);
 
               const result = await github.request('GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs', {
                 owner,
                 repo,
                 workflow_id: 'deploy-docs.yaml',
                 event: 'release'
-              })
+              });
+
+              console.log('result:');
+              console.log(result);
 
               const currentRun = result.data.workflow_runs.find((r) => r.id === context.runId);
 
               if (!currentRun) {
-                console.log("current run doesn't belong to release event, exit...");
+                console.log("Current run doesn't belong to release event, exit...");
 
                 return;
+              } else {
+                console.log('Current run has been found, id:', currentRun.id);
               }
 
               for (const workflowRun of result.data.workflow_runs) {
@@ -43,14 +48,20 @@ jobs:
                 const notCompleted = workflowRun.status !== 'completed';
                 const createdBeforeCurrent = new Date(currentRun.created_at) > new Date(workflowRun.created_at);
 
+                console.log(`Run number: ${workflowRun.run_number}, id: ${workflowRun.id}, name: ${workflowRun.head_commit.message}`);
+
                 if (notThis && notCompleted && createdBeforeCurrent) {
-                  console.log(`cancel run: number - ${workflowRun.run_number}, id - ${workflowRun.id}, name - ${workflowRun.head_commit.message}`);
+                  console.log('Cancelling...');
 
                   await github.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel', {
                     owner,
                     repo,
                     run_id: workflowRun.id
                   });
+
+                  console.log('Cancelled.');
+                } else {
+                  console.log('Skipping, notThis:', notThis, 'notCompleted:', notCompleted, 'createdBeforeCurrent:', createdBeforeCurrent);
                 }
               }
             } catch (ex) {
