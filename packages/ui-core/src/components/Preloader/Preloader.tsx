@@ -37,31 +37,29 @@ export interface IPreloaderProps {
 
 const cn = cnCreate('mfui-beta-preloader');
 const Preloader: React.FC<IPreloaderProps> = ({
-    color = PreloaderColors.DEFAULT,
-    sizeAll = PreloaderSizes.MEDIUM,
+    color = 'default',
+    sizeAll = 'medium',
     sizeWide,
     sizeDesktop,
     sizeTablet,
     sizeMobile,
     className,
-}) => {
-    return (
-        <div className={cn(
-            {
-                color,
-                'size-all': sizeAll,
-                'size-wide': sizeWide,
-                'size-desktop': sizeDesktop,
-                'size-tablet': sizeTablet,
-                'size-mobile': sizeMobile,
-            }, className)}
-        >
-            <div className={cn('item', { first: true })} />
-            <div className={cn('item', { second: true })} />
-            <div className={cn('item', { third: true })} />
-        </div>
-    );
-};
+}) => (
+    <div className={cn(
+        {
+            color,
+            'size-all': sizeAll,
+            'size-wide': sizeWide,
+            'size-desktop': sizeDesktop,
+            'size-tablet': sizeTablet,
+            'size-mobile': sizeMobile,
+        }, className)}
+    >
+        <div className={cn('item', { first: true })} />
+        <div className={cn('item', { second: true })} />
+        <div className={cn('item', { third: true })} />
+    </div>
+);
 
 Preloader.propTypes = {
     color: PropTypes.oneOf(Object.values(PreloaderColors)),
