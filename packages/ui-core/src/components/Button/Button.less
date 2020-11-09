@@ -57,16 +57,6 @@
         margin-right: -8px;
     }
 
-    &__spinner {
-        display: block;
-        width: 40px;
-        height: 40px;
-        animation-name: rotateLoader;
-        animation-duration: 0.7s;
-        animation-iteration-count: infinite;
-        animation-timing-function: cubic-bezier(0, 0, 1, 1);
-    }
-
     .generateSize(all);
 
     @media @desktopMU {
@@ -86,10 +76,6 @@
     }
 
     &_size-all_small &__icon {
-        display: none;
-    }
-
-    &_size-all_small &__spinner {
         display: none;
     }
 
@@ -318,15 +304,5 @@
 
     &_size-@{resolution}_large &__inner {
         height: 60px;
-    }
-}
-
-@keyframes rotateLoader {
-    from {
-        transform: rotate(0);
-    }
-
-    to {
-        transform: rotate(360deg);
     }
 }

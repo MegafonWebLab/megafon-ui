@@ -53,7 +53,7 @@ describe('<Button />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should render with different width for resolutions', () => {
+        it('should render with different height for resolutions', () => {
             const wrapper = shallow(
                 <Button
                     {...props}
@@ -68,11 +68,6 @@ describe('<Button />', () => {
 
         it('should render full width button', () => {
             const wrapper = shallow(<Button {...props} fullWidth />);
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('it renders spinner', () => {
-            const wrapper = shallow(<Button showSpinner />);
             expect(wrapper).toMatchSnapshot();
         });
 
@@ -104,6 +99,36 @@ describe('<Button />', () => {
         it('should render green theme when type is "primary" and theme is "black"', () => {
             const wrapper = shallow(<Button type="primary" theme="black" />);
             expect(wrapper.exists(`.${cn()}_theme_green`)).toBe(true);
+        });
+    });
+
+    describe('snapshots with loader', () => {
+        it('it renders loader with white color and medium size on all resolutions', () => {
+            const wrapper = shallow(<Button {...props} showLoader />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render loader with default color', () => {
+            const wrapper = shallow(<Button type="outline" theme="purple" showLoader />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render loader with black color', () => {
+            const wrapper = shallow(<Button type="outline" theme="black" showLoader />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render loader with small size on mobile resolution and medium size on the rest', () => {
+            const wrapper = shallow(
+                <Button
+                    sizeWide="large"
+                    sizeDesktop="large"
+                    sizeTablet="medium"
+                    sizeMobile="small"
+                    showLoader
+                />
+            );
+            expect(wrapper).toMatchSnapshot();
         });
     });
 
