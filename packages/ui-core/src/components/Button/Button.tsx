@@ -77,6 +77,10 @@ export interface IButtonProps extends IDataAttributes {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
+const getLoaderSize = (size: string): PreloaderSizesType => (
+    size === ButtonSizes.SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM
+);
+
 const cn = cnCreate('mfui-beta-button');
 const Button: React.FC<IButtonProps> = props => {
     const {
@@ -86,12 +90,12 @@ const Button: React.FC<IButtonProps> = props => {
             inner: innerClassName,
         } = {},
         className = '',
-        theme = ButtonThemes.GREEN,
-        type = ButtonTypes.PRIMARY,
+        theme = 'green',
+        type = 'primary',
         href,
         target,
         actionType = 'button',
-        sizeAll = ButtonSizes.MEDIUM,
+        sizeAll = 'medium',
         sizeWide,
         sizeDesktop,
         sizeTablet,
@@ -121,15 +125,13 @@ const Button: React.FC<IButtonProps> = props => {
 
     const currentTheme: string = React.useMemo(() => (
         (type === ButtonTypes.PRIMARY) && (theme === ButtonThemes.BLACK) ? ButtonThemes.GREEN : theme
-    ), [theme]);
+    ), [type, theme]);
 
-    const loaderWhite: boolean = React.useMemo(() => {
-        return (
-            type === ButtonTypes.PRIMARY && theme === ButtonThemes.GREEN ||
-            type === ButtonTypes.PRIMARY && theme === ButtonThemes.PURPLE ||
-            type === ButtonTypes.OUTLINE && theme === ButtonThemes.WHITE
-        );
-    }, []);
+    const loaderWhite: boolean = React.useMemo(() => (
+        type === ButtonTypes.PRIMARY && theme === ButtonThemes.GREEN ||
+        type === ButtonTypes.PRIMARY && theme === ButtonThemes.PURPLE ||
+        type === ButtonTypes.OUTLINE && theme === ButtonThemes.WHITE
+    ), [type, theme]);
 
     const loaderColor: PreloaderColorsType = React.useMemo(() => {
         switch (true) {
@@ -142,17 +144,13 @@ const Button: React.FC<IButtonProps> = props => {
         }
     }, [type, theme, loaderWhite]);
 
-    const getLoaderSize = (size: string): PreloaderSizesType => (
-        size === ButtonSizes.SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM
-    );
-
     const renderChildren: JSX.Element = React.useMemo(() => (
         <div className={cn('content', contentClassName)}>
             {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
             {children}
             {!iconLeft && showArrow && <Arrow className={cn('icon-arrow')} />}
         </div>
-    ), [contentClassName, showArrow, children]);
+    ), [iconLeft, contentClassName, showArrow, children]);
 
     const renderLoader: JSX.Element = React.useMemo(() => (
         <Preloader
