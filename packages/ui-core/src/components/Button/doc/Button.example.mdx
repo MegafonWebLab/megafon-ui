@@ -8,7 +8,7 @@ import { blockStyle } from './Button.docz';
 <Playground style={blockStyle}>
     <Button>active</Button>
     <Button disabled>disabled</Button>
-    <Button showSpinner>with spinner</Button>
+    <Button showLoader>with loader</Button>
     <Button showArrow>with arrow</Button>
     <Button iconLeft={<Balance />}>with icon</Button>
 </Playground>
@@ -18,7 +18,7 @@ import { blockStyle } from './Button.docz';
 <Playground style={blockStyle}>
     <Button theme="purple">active</Button>
     <Button theme="purple" disabled>disabled</Button>
-    <Button theme="purple" showSpinner>with spinner</Button>
+    <Button theme="purple" showLoader>with loader</Button>
     <Button theme="purple" showArrow>with arrow</Button>
     <Button theme="purple" iconLeft={<Balance />}>with icon</Button>
 </Playground>
@@ -28,7 +28,7 @@ import { blockStyle } from './Button.docz';
 <Playground style={blockStyle}>
     <Button theme="white">active</Button>
     <Button theme="white" disabled>disabled</Button>
-    <Button theme="white" showSpinner>with spinner</Button>
+    <Button theme="white" showLoader>with loader</Button>
     <Button theme="white" showArrow>with arrow</Button>
     <Button theme="white" iconLeft={<Balance />}>with icon</Button>
 </Playground>
@@ -39,7 +39,7 @@ import { blockStyle } from './Button.docz';
 <Playground style={blockStyle}>
     <Button type="outline">active</Button>
     <Button type="outline" disabled>disabled</Button>
-    <Button type="outline" showSpinner>with spinner</Button>
+    <Button type="outline" showLoader>with loader</Button>
     <Button type="outline" showArrow>with arrow</Button>
     <Button type="outline" iconLeft={<Balance />}>with icon</Button>
 </Playground>
@@ -49,7 +49,7 @@ import { blockStyle } from './Button.docz';
 <Playground style={blockStyle}>
     <Button type="outline" theme="purple">active</Button>
     <Button type="outline" theme="purple" disabled>disabled</Button>
-    <Button type="outline" theme="purple" showSpinner>with spinner</Button>
+    <Button type="outline" theme="purple" showLoader>with loader</Button>
     <Button type="outline" theme="purple" showArrow>with arrow</Button>
     <Button type="outline" theme="purple" iconLeft={<Balance />}>with icon</Button>
 </Playground>
@@ -59,7 +59,7 @@ import { blockStyle } from './Button.docz';
 <Playground style={{...blockStyle, backgroundColor: '#333333'}}>
     <Button type="outline" theme="white">active</Button>
     <Button type="outline" theme="white" disabled>disabled</Button>
-    <Button type="outline" theme="white" showSpinner>with spinner</Button>
+    <Button type="outline" theme="white" showLoader>with loader</Button>
     <Button type="outline" theme="white" showArrow>with arrow</Button>
     <Button type="outline" theme="white" iconLeft={<Balance />}>with icon</Button>
 </Playground>
@@ -69,7 +69,7 @@ import { blockStyle } from './Button.docz';
 <Playground style={blockStyle}>
     <Button type="outline" theme="black">active</Button>
     <Button type="outline" theme="black" disabled>disabled</Button>
-    <Button type="outline" theme="black" showSpinner>with spinner</Button>
+    <Button type="outline" theme="black" showLoader>with loader</Button>
     <Button type="outline" theme="black" showArrow>with arrow</Button>
     <Button type="outline" theme="black" iconLeft={<Balance />}>with icon</Button>
 </Playground>
@@ -81,6 +81,15 @@ import { blockStyle } from './Button.docz';
     <Button sizeAll="medium" iconLeft={<Balance />}>Medium</Button>
     <Button sizeAll="large">Large</Button>
     <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showArrow>Adaptive</Button>
+</Playground>
+
+## Размер лоадера в зависимости от размера кнопки
+
+<Playground style={blockStyle}>
+    <Button sizeAll="small" showLoader>Small</Button>
+    <Button sizeAll="medium" showLoader>Medium</Button>
+    <Button sizeAll="large" showLoader>Large</Button>
+    <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showLoader>Adaptive</Button>
 </Playground>
 
 ## В полную ширину

@@ -33,24 +33,6 @@ exports[`<Button /> layout it renders children 1`] = `
 </a>
 `;
 
-exports[`<Button /> layout it renders spinner 1`] = `
-<button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_loading mfui-beta-button_no-touch"
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="mfui-beta-button__inner"
-  >
-    <div
-      className="mfui-beta-button__spinner"
-    >
-      <test-file-stub />
-    </div>
-  </div>
-</button>
-`;
-
 exports[`<Button /> layout renders Button with default props 1`] = `
 <button
   className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch"
@@ -140,7 +122,7 @@ exports[`<Button /> layout should render with arrow 1`] = `
 </button>
 `;
 
-exports[`<Button /> layout should render with different width for resolutions 1`] = `
+exports[`<Button /> layout should render with different height for resolutions 1`] = `
 <a
   className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_purple mfui-beta-button_size-all_large mfui-beta-button_size-wide_large mfui-beta-button_size-desktop_medium mfui-beta-button_size-tablet_medium mfui-beta-button_size-mobile_small mfui-beta-button_no-touch class root-class"
   data-test="test"
@@ -174,6 +156,81 @@ exports[`<Button /> layout should render with left icon 1`] = `
       </div>
       left icon
     </div>
+  </div>
+</button>
+`;
+
+exports[`<Button /> snapshots with loader it renders loader with white color and medium size on all resolutions 1`] = `
+<a
+  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_purple mfui-beta-button_size-all_large mfui-beta-button_loading mfui-beta-button_no-touch class root-class"
+  data-test="test"
+  disabled={false}
+  href="any"
+  onClick={[Function]}
+  target="_blank"
+>
+  <div
+    className="mfui-beta-button__inner"
+  >
+    <Preloader
+      color="white"
+      sizeAll="medium"
+    />
+  </div>
+</a>
+`;
+
+exports[`<Button /> snapshots with loader should render loader with black color 1`] = `
+<button
+  className="mfui-beta-button mfui-beta-button_type_outline mfui-beta-button_theme_black mfui-beta-button_size-all_medium mfui-beta-button_loading mfui-beta-button_no-touch"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="mfui-beta-button__inner"
+  >
+    <Preloader
+      color="black"
+      sizeAll="medium"
+    />
+  </div>
+</button>
+`;
+
+exports[`<Button /> snapshots with loader should render loader with default color 1`] = `
+<button
+  className="mfui-beta-button mfui-beta-button_type_outline mfui-beta-button_theme_purple mfui-beta-button_size-all_medium mfui-beta-button_loading mfui-beta-button_no-touch"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="mfui-beta-button__inner"
+  >
+    <Preloader
+      color="default"
+      sizeAll="medium"
+    />
+  </div>
+</button>
+`;
+
+exports[`<Button /> snapshots with loader should render loader with small size on mobile resolution and medium size on the rest 1`] = `
+<button
+  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_size-wide_large mfui-beta-button_size-desktop_large mfui-beta-button_size-tablet_medium mfui-beta-button_size-mobile_small mfui-beta-button_loading mfui-beta-button_no-touch"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="mfui-beta-button__inner"
+  >
+    <Preloader
+      color="white"
+      sizeAll="medium"
+      sizeDesktop="medium"
+      sizeMobile="small"
+      sizeTablet="medium"
+      sizeWide="medium"
+    />
   </div>
 </button>
 `;

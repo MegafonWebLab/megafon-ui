@@ -2,10 +2,34 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Button.less';
-import Spinner from 'docIcons/spinner.svg';
+import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
 import Arrow from 'icons/System/32/Arrow_right_32.svg';
 import detectTouch from 'utils/detectTouch';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
+
+export const ButtonTypes = {
+    PRIMARY: 'primary',
+    OUTLINE: 'outline',
+} as const;
+
+type ButtonTypesType = typeof ButtonTypes[keyof typeof ButtonTypes];
+
+export const ButtonThemes = {
+    GREEN: 'green',
+    PURPLE: 'purple',
+    WHITE: 'white',
+    BLACK: 'black',
+} as const;
+
+type ButtonThemesType = typeof ButtonThemes[keyof typeof ButtonThemes];
+
+export const ButtonSizes = {
+    SMALL: 'small',
+    MEDIUM: 'medium',
+    LARGE: 'large',
+} as const;
+
+type ButtonSizesType = typeof ButtonSizes[keyof typeof ButtonSizes];
 
 export interface IButtonProps extends IDataAttributes {
     /** Дополнительный класс корневого элемента */
@@ -13,16 +37,16 @@ export interface IButtonProps extends IDataAttributes {
     /** Дополнительные классы для внутренних элементов */
     classes?: {
         /** Button class */
-        root?: string;
+        root?: string | null;
         /** Content class */
-        content?: string;
+        content?: string | null;
         /** Inner container class */
-        inner?: string;
+        inner?: string | null;
     };
     /** Тема компонента */
-    theme?: 'green' | 'purple' | 'white' | 'black';
+    theme?: ButtonThemesType;
     /** Тип компонента */
-    type?: 'primary' | 'outline';
+    type?: ButtonTypesType;
     /** Ссылка */
     href?: string;
     /** Target - свойство тега <a> */
@@ -30,19 +54,19 @@ export interface IButtonProps extends IDataAttributes {
     /** Поведение кнопки */
     actionType?: 'button' | 'reset' | 'submit';
     /** Размер на всех разрешениях экрана */
-    sizeAll?: 'small' | 'medium' | 'large';
+    sizeAll?: ButtonSizesType;
     /** Размер на разрешении экрана 1280+ */
-    sizeWide?: 'small' | 'medium' | 'large';
+    sizeWide?: ButtonSizesType;
     /** Размер на разрешении экрана 1020+ */
-    sizeDesktop?: 'small' | 'medium' | 'large';
+    sizeDesktop?: ButtonSizesType;
     /** Размер на разрешении экрана 730-1020 */
-    sizeTablet?: 'small' | 'medium' | 'large';
+    sizeTablet?: ButtonSizesType;
     /** Размер на разрешении экрана 320-730 */
-    sizeMobile?: 'small' | 'medium' | 'large';
+    sizeMobile?: ButtonSizesType;
     /** Растянуть на полную ширину контейнера */
     fullWidth?: boolean;
     /** Показать загрузку */
-    showSpinner?: boolean;
+    showLoader?: boolean;
     /** Показать стелку */
     showArrow?: boolean;
     /** Иконка слева */
@@ -52,6 +76,10 @@ export interface IButtonProps extends IDataAttributes {
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
+
+const getLoaderSize = (size: string): PreloaderSizesType => (
+    size === ButtonSizes.SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM
+);
 
 const cn = cnCreate('mfui-beta-button');
 const Button: React.FC<IButtonProps> = props => {
@@ -73,7 +101,7 @@ const Button: React.FC<IButtonProps> = props => {
         sizeTablet,
         sizeMobile,
         fullWidth = false,
-        showSpinner = false,
+        showLoader = false,
         showArrow = false,
         iconLeft,
         disabled,
@@ -96,8 +124,25 @@ const Button: React.FC<IButtonProps> = props => {
     }, [disabled, onClick]);
 
     const currentTheme: string = React.useMemo(() => (
-        (type === 'primary') && (theme === 'black') ? 'green' : theme
-    ), [theme]);
+        (type === ButtonTypes.PRIMARY) && (theme === ButtonThemes.BLACK) ? ButtonThemes.GREEN : theme
+    ), [type, theme]);
+
+    const loaderWhite: boolean = React.useMemo(() => (
+        type === ButtonTypes.PRIMARY && theme === ButtonThemes.GREEN ||
+        type === ButtonTypes.PRIMARY && theme === ButtonThemes.PURPLE ||
+        type === ButtonTypes.OUTLINE && theme === ButtonThemes.WHITE
+    ), [type, theme]);
+
+    const loaderColor: PreloaderColorsType = React.useMemo(() => {
+        switch (true) {
+            case loaderWhite:
+                return PreloaderColors.WHITE;
+            case type === ButtonTypes.OUTLINE && theme === ButtonThemes.BLACK:
+                return PreloaderColors.BLACK;
+            default:
+                return PreloaderColors.DEFAULT;
+        }
+    }, [type, theme, loaderWhite]);
 
     const renderChildren: JSX.Element = React.useMemo(() => (
         <div className={cn('content', contentClassName)}>
@@ -105,13 +150,18 @@ const Button: React.FC<IButtonProps> = props => {
             {children}
             {!iconLeft && showArrow && <Arrow className={cn('icon-arrow')} />}
         </div>
-    ), [contentClassName, showArrow, children]);
+    ), [iconLeft, contentClassName, showArrow, children]);
 
-    const renderSpinner: JSX.Element = React.useMemo(() => (
-        <div className={cn('spinner')}>
-            <Spinner />
-        </div>
-    ), []);
+    const renderLoader: JSX.Element = React.useMemo(() => (
+        <Preloader
+            color={loaderColor}
+            sizeAll={getLoaderSize(sizeAll)}
+            sizeWide={sizeWide && getLoaderSize(sizeWide)}
+            sizeDesktop={sizeDesktop && getLoaderSize(sizeDesktop)}
+            sizeTablet={sizeTablet && getLoaderSize(sizeTablet)}
+            sizeMobile={sizeMobile && getLoaderSize(sizeMobile)}
+        />
+    ), [sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile]);
 
     return (
         <ElementType
@@ -126,7 +176,7 @@ const Button: React.FC<IButtonProps> = props => {
                 'size-tablet': sizeTablet,
                 'size-mobile': sizeMobile,
                 'full-width': fullWidth,
-                loading: showSpinner,
+                loading: showLoader,
                 'no-touch': !isTouch,
             }, [className, rootClassName])}
             href={href}
@@ -136,8 +186,8 @@ const Button: React.FC<IButtonProps> = props => {
             disabled={!href && disabled}
         >
             <div className={cn('inner', innerClassName)}>
-                {!showSpinner && children && renderChildren}
-                {showSpinner && renderSpinner}
+                {!showLoader && children && renderChildren}
+                {showLoader && renderLoader}
             </div>
         </ElementType>
     );
@@ -149,18 +199,18 @@ Button.propTypes = {
         content: PropTypes.string,
         inner: PropTypes.string,
     }),
-    theme: PropTypes.oneOf(['green', 'purple', 'white', 'black']),
-    type: PropTypes.oneOf(['primary', 'outline']),
+    theme: PropTypes.oneOf(Object.values(ButtonThemes)),
+    type: PropTypes.oneOf(Object.values(ButtonTypes)),
     href: PropTypes.string,
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
     actionType: PropTypes.oneOf(['button', 'reset', 'submit']),
-    sizeAll: PropTypes.oneOf(['small', 'medium', 'large']),
-    sizeWide: PropTypes.oneOf(['small', 'medium', 'large']),
-    sizeDesktop: PropTypes.oneOf(['small', 'medium', 'large']),
-    sizeTablet: PropTypes.oneOf(['small', 'medium', 'large']),
-    sizeMobile: PropTypes.oneOf(['small', 'medium', 'large']),
+    sizeAll: PropTypes.oneOf(Object.values(ButtonSizes)),
+    sizeWide: PropTypes.oneOf(Object.values(ButtonSizes)),
+    sizeDesktop: PropTypes.oneOf(Object.values(ButtonSizes)),
+    sizeTablet: PropTypes.oneOf(Object.values(ButtonSizes)),
+    sizeMobile: PropTypes.oneOf(Object.values(ButtonSizes)),
     fullWidth: PropTypes.bool,
-    showSpinner: PropTypes.bool,
+    showLoader: PropTypes.bool,
     showArrow: PropTypes.bool,
     iconLeft: PropTypes.element,
     disabled: PropTypes.bool,
