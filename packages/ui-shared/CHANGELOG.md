@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.40](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.39...@megafon/ui-shared@2.0.0-beta.40) (2020-11-10)
+
+
+### Features
+
+* **accordionbox:** add component AccordionBox to constructor ([7bf5029](https://github.com/MegafonWebLab/megafon-ui/commit/7bf5029d5dc35d430a254e194a43ffa6b977fd88))
+
+
+
+
+
 # [2.0.0-beta.39](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.38...@megafon/ui-shared@2.0.0-beta.39) (2020-11-10)
 
 **Note:** Version bump only for package @megafon/ui-shared
