@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.38](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.37...@megafon/ui-core@2.0.0-beta.38) (2020-11-10)
+
+
+### Features
+
+* **contentarea:** add box-sizing to avoid redefinition by global site styles ([e747072](https://github.com/MegafonWebLab/megafon-ui/commit/e7470728536fa8ffc0119fe86d870566cec03f01))
+
+
+### BREAKING CHANGES
+
+* **contentarea:** container width can change if site sets border-box globally for all elements
+
+
+
+
+
 # [2.0.0-beta.37](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.36...@megafon/ui-core@2.0.0-beta.37) (2020-11-09)
 
 
