@@ -1,8 +1,8 @@
 import img from './bg_light_grey.png';
 
 const getItems = (i, image) => Array.from({ length: i }, () => ({
-    title: 'Lorem ipsum',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit',
+    title: 'Интернет',
+    text: 'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
     img: image,
 }));
 

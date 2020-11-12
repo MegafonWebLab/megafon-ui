@@ -28,10 +28,10 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         {({triggerElement}) => (
             <>
                 <span ref={triggerElement}>
-                    <Button fullWidth>Hover</Button>
+                    <Button fullWidth>Навести</Button>
                 </span>
                 <Tooltip triggerElement={triggerElement}>
-                    Hover trigger (default)
+                    Эмуляция при наведении
                 </Tooltip>
             </>
         )}
@@ -40,13 +40,13 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         {({triggerElement}) => (
             <>
                 <span ref={triggerElement}>
-                    <Button fullWidth>Click</Button>
+                    <Button fullWidth>Кликнуть</Button>
                 </span>
                 <Tooltip
                     triggerEvent="click"
                     triggerElement={triggerElement}
                 >
-                    Click trigger
+                    Эмуляция при клике
                 </Tooltip>
             </>
         )}
@@ -74,11 +74,11 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
-                        Top
+                        Сверху
                     </Button>
                 </span>
                 <Tooltip triggerElement={triggerElement}>
-                    Top placement (default)
+                    Положение сверху
                 </Tooltip>
             </>
         )}
@@ -88,14 +88,14 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
-                        Right
+                        Справа
                     </Button>
                 </span>
                 <Tooltip
                     placement="right"
                     triggerElement={triggerElement}
                 >
-                    Right placement
+                    Положение справа
                 </Tooltip>
             </>
         )}
@@ -105,14 +105,14 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
-                        Left
+                        Слева
                     </Button>
                 </span>
                 <Tooltip
                     placement="left"
                     triggerElement={triggerElement}
                 >
-                    Left placement
+                    Положение слева
                 </Tooltip>
             </>
         )}
@@ -122,14 +122,14 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
-                        Bottom
+                        Снизу
                     </Button>
                 </span>
                 <Tooltip
                     placement="bottom"
                     triggerElement={triggerElement}
                 >
-                    Bottom placement
+                    Положение снизу
                 </Tooltip>
             </>
         )}
@@ -151,16 +151,15 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         {({triggerElement}) => (
             <>
                 <Paragraph hasMargin={false}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod
+                    Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям
                     <span ref={triggerElement}>
-                        <TextLink>tempor</TextLink>
+                        <TextLink>технологиям</TextLink>
                     </span>
-                    {' '}incididunt ut labore et dolore magna aliqua.
+                    {' '}Ethernet, Docsis.
                 </Paragraph>
                 <Tooltip triggerElement={triggerElement}>
                     <Paragraph hasMargin={false}>
-                        Tooltip with default size
+                        Монтажник проведёт все необходимые работы под ключ.(размер текста больше)
                     </Paragraph>
                 </Tooltip>
             </>
@@ -170,17 +169,15 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         {({triggerElement}) => (
             <>
                 <Paragraph hasMargin={false}>
-                    Ut enim ad minim veniam, quis nostrud
+                    Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям
                     <span ref={triggerElement}>
-                        <TextLink>exercitation</TextLink>
+                        <TextLink>технологиям</TextLink>
                     </span>
-                    {' '}ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur.
+                    {' '}Ethernet, Docsis.
                 </Paragraph>
                 <Tooltip size="small" triggerElement={triggerElement}>
                     <Paragraph hasMargin={false}>
-                        Tooltip with small size
+                        Монтажник проведёт все необходимые работы под ключ.(размер текста меньше)
                     </Paragraph>
                 </Tooltip>
             </>
@@ -199,7 +196,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         {({triggerElement}) => (
             <>
                 <span ref={triggerElement}>
-                    Tooltip will have the same width as content node.
+                    Тултип будет такой же длины как контент
                 </span>
                 <Tooltip
                     placement="bottom"
@@ -208,11 +205,8 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
                     triggerElement={triggerElement}
                 >
                     <div style={{ width: '100%', maxWidth: 460 }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                        Монтажник проведёт все необходимые работы под ключ.
                     </div>
                 </Tooltip>
             </>
@@ -231,7 +225,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         {({triggerElement}) => (
             <div style={{ width: 280, position: 'relative' }}>
                 <span ref={triggerElement}>
-                    Tooltip will have the same width as parent node.
+                    Тултип будет такой же длины как родитель
                 </span>
                 <Tooltip
                     placement="bottom"
@@ -240,11 +234,8 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
                     triggerElement={triggerElement}
                 >
                     <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                        Монтажник проведёт все необходимые работы под ключ.
                     </div>
                 </Tooltip>
             </div>
@@ -286,8 +277,8 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
                 <span
                     onMouseEnter={() => handleTriggerChange(TriggerEvent.HOVER)}
                     ref={triggerElement}
-                    >
-                    <Button fullWidth>Current trigger is {triggerEvent}</Button>
+                >
+                    <Button fullWidth>Текущая эмуляция - {triggerEvent}</Button>
                 </span>
                 <Tooltip
                     isOpened={true}
@@ -309,8 +300,8 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
                 <span
                     onMouseEnter={() => handleTriggerChange(TriggerEvent.CLICK)}
                     ref={triggerElement}
-                    >
-                    <Button fullWidth>Current trigger is {triggerEvent}</Button>
+                >
+                    <Button fullWidth>Текущая эмуляция - {triggerEvent}</Button>
                 </span>
                 <Tooltip
                     isOpened={true}
@@ -388,7 +379,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                         <>
                             <div>
                                 <span ref={triggerElement}>
-                                    <TextLink>Tooltip trigger</TextLink>
+                                    <TextLink>Эмуляция тултипа</TextLink>
                                 </span>
                                 <Tooltip
                                     isOpened={isOpened}
@@ -400,9 +391,9 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                             </div>
                             <div style={{ width: 250 }}>
                                 <Select
-                                    label="Change trigger"
+                                    label="Изменить эмуляцию"
                                     onSelect={onSelect}
-                                    placeholder="Choose trigger"
+                                    placeholder="Выберите эмуляцию"
                                     items={triggerEvents}
                                     currentValue={currentValue}
                                 />
@@ -412,7 +403,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                                 onClick={handleToggle}
                                 disabled={currentValue !== TriggerEvent.CONTROLLED}
                             >
-                                Toggle Tooltip
+                                Переключение тултипа
                             </Button>
                         </>
                     )}
@@ -461,7 +452,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                                 }}
                                 >
                                 <TextField
-                                    placeholder="Focus on me, i show you Tooltip"
+                                    placeholder="Сфокусируся на мне"
                                     onFocus={handleOpen}
                                     onBlur={handleClose}
                                 />
@@ -472,7 +463,8 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                                 triggerElement={triggerElement}
                             >
                                 <Paragraph hasMargin={false}>
-                                    Please be careful when filling out the forms.
+                                    Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                                    Монтажник проведёт все необходимые работы под ключ.
                                 </Paragraph>
                             </Tooltip>
                         </>
@@ -508,7 +500,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         {({triggerElement}) => (
             <>
                 <span ref={triggerElement}>
-                    <Button fullWidth>Hover</Button>
+                    <Button fullWidth>Навести</Button>
                 </span>
                 <DemoControlledTooltipWrapper>
                     {({ isOpened, handleOpen, handleClose}) => (
@@ -519,9 +511,10 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                             triggerElement={triggerElement}
                         >
                             <Paragraph>
-                                Please be careful when filling out the forms.
+                                Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                                Монтажник проведёт все необходимые работы под ключ.
                             </Paragraph>
-                            <Button onClick={handleClose}>Close</Button>
+                            <Button onClick={handleClose}>Закрыть</Button>
                         </Tooltip>
                     )}
                 </DemoControlledTooltipWrapper>
@@ -532,7 +525,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         {({triggerElement}) => (
             <>
                 <span ref={triggerElement}>
-                    <Button fullWidth>Click</Button>
+                    <Button fullWidth>Кликнуть</Button>
                 </span>
                 <DemoControlledTooltipWrapper>
                     {({ isOpened, handleOpen, handleClose}) => (
@@ -544,9 +537,10 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                             triggerElement={triggerElement}
                         >
                             <Paragraph>
-                                Please be careful when filling out the forms.
+                                Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                                Монтажник проведёт все необходимые работы под ключ.
                             </Paragraph>
-                            <Button onClick={handleClose}>Close</Button>
+                            <Button onClick={handleClose}>Закрыть</Button>
                         </Tooltip>
                     )}
                 </DemoControlledTooltipWrapper>
