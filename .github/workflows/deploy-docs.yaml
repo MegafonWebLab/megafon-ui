@@ -3,6 +3,7 @@ name: docs deploy
 on:
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   main:
@@ -12,6 +13,7 @@ jobs:
 
     steps:
       - name: Cancel previous runs
+        if: github.event_name == 'release'
         uses: actions/github-script@v3
         with:
           github-token: ${{secrets.PAT_TOKEN}}
@@ -30,9 +32,6 @@ jobs:
                 event: 'release'
               });
 
-              console.log('result:');
-              console.log(result);
-
               const currentRun = result.data.workflow_runs.find((r) => r.id === context.runId);
 
               if (!currentRun) {
@@ -49,6 +48,8 @@ jobs:
                 const createdBeforeCurrent = new Date(currentRun.created_at) > new Date(workflowRun.created_at);
 
                 console.log(`Run number: ${workflowRun.run_number}, id: ${workflowRun.id}, name: ${workflowRun.head_commit.message}`);
+
+                console.log(workflowRun);
 
                 if (notThis && notCompleted && createdBeforeCurrent) {
                   console.log('Cancelling...');
