@@ -78,7 +78,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 * **bubblehint:** delete component ([2872b9b](https://github.com/MegafonWebLab/megafon-ui/commit/2872b9b39cd32811c6378c09c23d43abd5ca3dbc))
-* **dropdownsociallist:** changed snapshots when moved to new Tooltip in DropdownSocialList component ([d53d66c](https://github.com/MegafonWebLab/megafon-ui/commit/d53d66cf341a723eaf3238fa0de218333d78a2be))
 * **dropdownsociallist:** replaced BubbleHint with Tooltip ([96a0a38](https://github.com/MegafonWebLab/megafon-ui/commit/96a0a38001f91b0a6ae42e3f3964065beaddd11f))
 
 
