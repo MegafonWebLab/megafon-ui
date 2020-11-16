@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.39](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.38...@megafon/ui-core@2.0.0-beta.39) (2020-11-16)
+
+
+### Bug Fixes
+
+* **tooltip:** don't show tooltip when it's not in viewport ([4a42df3](https://github.com/MegafonWebLab/megafon-ui/commit/4a42df32f88abc4df2dcc995d50cec031012a3f1))
+
+
+
+
+
 # [2.0.0-beta.38](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.37...@megafon/ui-core@2.0.0-beta.38) (2020-11-10)
 
 
