@@ -62,15 +62,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **dropdownsociallist:** changed snapshots when moved to new Tooltip in DropdownSocialList component ([d53d66c](https://github.com/MegafonWebLab/megafon-ui/commit/d53d66cf341a723eaf3238fa0de218333d78a2be))
 * **productcard:** replace BubbleHint with Tooltip in ProductCardInfo component ([5a2491d](https://github.com/MegafonWebLab/megafon-ui/commit/5a2491d698c9feee7af1c199907d38ac60e31d71))
 * **producttile:** component height changes when hint-text node change its border visibility ([5bb16de](https://github.com/MegafonWebLab/megafon-ui/commit/5bb16de3cfc738454bd220acea06bbcc4a6546d5))
 * **producttile:** switched from BubbleHint to new Tooltip in ProductTileOptions component ([674c158](https://github.com/MegafonWebLab/megafon-ui/commit/674c15816ed5fe2ec462974db739a6a75ac6cacd))
 
-
-### Features
-
-* **tooltip:** new Tooltip component with ref trigger element ([46efee7](https://github.com/MegafonWebLab/megafon-ui/commit/46efee792a1ae1c7fa056ea20846250ec556be4c))
 
 
 
