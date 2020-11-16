@@ -50,6 +50,7 @@ BannerDot.propTypes = {
     index: PropTypes.number.isRequired,
     isActive: PropTypes.bool.isRequired,
     showTimer: PropTypes.bool.isRequired,
+    timerDelay: PropTypes.number.isRequired,
     onClick: PropTypes.func.isRequired,
 };
 

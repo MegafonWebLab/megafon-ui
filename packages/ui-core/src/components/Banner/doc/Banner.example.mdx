@@ -1,20 +1,9 @@
----
-name: Banner
-menu: Components
-route: components/banner
----
-
-import { Playground, Props } from 'docz';
-import Banner from './Banner';
+import { Playground } from 'docz';
+import Banner from '../Banner';
 import { DemoSlide } from './Banner.docz';
+import Balance from 'icons/Basic/24/Balance_24.svg';
 
-# Banner
-
-## Properties
-
-<Props of={Banner} />
-
-## Basic usage
+## Базовое использование
 
 <Playground>
     <Banner>
@@ -24,7 +13,7 @@ import { DemoSlide } from './Banner.docz';
     </Banner>
 </Playground>
 
-## Usage with green navTheme
+## Цветовая тема навигации - green
 
 <Playground>
     <Banner navTheme="green">
@@ -34,7 +23,7 @@ import { DemoSlide } from './Banner.docz';
     </Banner>
 </Playground>
 
-## Usage with dark navTheme
+## Цветовая тема навигации - dark
 
 <Playground>
     <Banner navTheme="dark">
@@ -44,7 +33,7 @@ import { DemoSlide } from './Banner.docz';
     </Banner>
 </Playground>
 
-## Usage with loop
+## Прокрутка с зацикливанием
 
 <Playground>
     <Banner loop>
@@ -54,10 +43,10 @@ import { DemoSlide } from './Banner.docz';
     </Banner>
 </Playground>
 
-## Usage with autoPlay
+## Автоматическая прокрутка
 
 <Playground>
-    <Banner loop autoPlay>
+    <Banner loop autoPlay autoPlayDelay={3000}>
         <DemoSlide background="#00B956">1</DemoSlide>
         <DemoSlide background="#00a04b">2</DemoSlide>
         <DemoSlide background="#02d263">3</DemoSlide>

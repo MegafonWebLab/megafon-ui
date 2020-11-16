@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import NavArrow, { INavArrowProps } from './NavArrow';
+import NavArrow, { INavArrowProps, Theme, View } from './NavArrow';
 
 const props: INavArrowProps = {
     className: 'class',
-    theme: 'dark',
-    view: 'next',
+    theme: Theme.DARK,
+    view: View.NEXT,
     disabled: true,
     onClick: jest.fn(),
 };

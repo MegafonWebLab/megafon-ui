@@ -8,8 +8,12 @@ exports[`<Banner /> should render with default props 1`] = `
     autoplay={false}
     className="mfui-beta-banner__swiper"
     loop={false}
+    onAutoplayStop={[Function]}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
     onSwiper={[Function]}
-    watchSlidesVisibility={true}
   >
     <SwiperSlide
       className="mfui-beta-banner__slide"
@@ -81,8 +85,12 @@ exports[`<Banner /> should render with props 1`] = `
     }
     className="mfui-beta-banner__swiper"
     loop={true}
+    onAutoplayStop={[Function]}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
     onSwiper={[Function]}
-    watchSlidesVisibility={true}
   >
     <SwiperSlide
       className="mfui-beta-banner__slide"

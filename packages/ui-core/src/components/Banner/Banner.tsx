@@ -18,21 +18,21 @@ export const NavTheme = {
 type NavThemeType = typeof NavTheme[keyof typeof NavTheme];
 
 export interface IBannerProps {
-    /** Continuous loop mode */
+    /** Прокрутка с зацикливанием */
     loop?: boolean;
-    /** Autoplay */
+    /** Автоматическая прокрутка */
     autoPlay?: boolean;
-    /** Autoplay delay */
+    /** Задержка автоматической прокрутки */
     autoPlayDelay?: number;
-    /** Navigation theme */
+    /** Цветовая тема навигации */
     navTheme?: NavThemeType;
-    /** Next arrow click event handler (should be wrapped in useCallback) */
+    /** Обработчик клика по стрелке "вперед" (должен быть обернут в useCallback) */
     onNextClick?: (index: number) => void;
-    /** Prev arrow click event handler (should be wrapped in useCallback) */
+    /** Обработчик клика по стрелке "назад" (должен быть обернут в useCallback) */
     onPrevClick?: (index: number) => void;
-    /** Dot click event handler (should be wrapped in useCallback) */
+    /** Обработчик клика по точке навигации (должен быть обернут в useCallback) */
     onDotClick?: (index: number) => void;
-    /** Change event handler (should be wrapped in useCallback) */
+    /** Обработчик смены слайда (должен быть обернут в useCallback) */
     onChange?: (index: number) => void;
 }
 
@@ -58,10 +58,10 @@ const Banner: React.FC<IBannerProps> = ({
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
     const [isEnd, setEnd] = React.useState(false);
-    const [isAutoPlayning, setAutoPlayning] = React.useState(autoPlay);
+    const [isAutoPlaying, setAutoPlayning] = React.useState(autoPlay);
     const [activeIndex, setActiveIndex] = React.useState(0);
 
-    const showDotTimer = loop ? isAutoPlayning : isAutoPlayning && !isEnd;
+    const showDotTimer = loop ? isAutoPlaying : isAutoPlaying && !isEnd;
     const dotTimerDelay = autoPlayDelay / 1000;
     const navArrowTheme =
         navTheme === NavTheme.DARK ? ArrowTheme.DARK : ArrowTheme.PURPLE;
@@ -89,7 +89,12 @@ const Banner: React.FC<IBannerProps> = ({
             return;
         }
 
-        swiperInstance.slideTo(loop ? index + 1 : index);
+        if (loop) {
+            swiperInstance.slideToLoop(index);
+        } else {
+            swiperInstance.slideTo(index);
+        }
+
         onDotClick && onDotClick(swiperInstance.realIndex);
     }, [swiperInstance, loop, onDotClick]);
 
@@ -97,46 +102,44 @@ const Banner: React.FC<IBannerProps> = ({
         setSwiperInstance(swiper);
     }, []);
 
-    React.useEffect(() => {
-        if (!swiperInstance) {
-            return;
+    const handleReachBeginning = React.useCallback(() => {
+        setBeginning(true);
+    }, []);
+
+    const handleReachEnd = React.useCallback(({ params, autoplay }: SwiperCore) => {
+        setEnd(true);
+
+        if (!params.loop && autoplay.running) {
+            autoplay.stop();
         }
+    }, []);
 
-        swiperInstance.on('reachBeginning', () => {
-            setBeginning(true);
-        });
+    const handleFromEdge = React.useCallback((swiper: SwiperCore) => {
+        setBeginning(swiper.isBeginning);
+        setEnd(swiper.isEnd);
+    }, []);
 
-        swiperInstance.on('reachEnd', () => {
-            setEnd(true);
+    const handleSlideChange = React.useCallback(({ realIndex }: SwiperCore) => {
+        setActiveIndex(realIndex);
+        onChange && onChange(realIndex);
+    }, []);
 
-            if (!loop && swiperInstance.autoplay.running) {
-                swiperInstance.autoplay.stop();
-            }
-        });
-
-        swiperInstance.on('fromEdge', () => {
-            setBeginning(swiperInstance.isBeginning);
-            setEnd(swiperInstance.isEnd);
-        });
-
-        swiperInstance.on('slideChange', () => {
-            setActiveIndex(swiperInstance.realIndex);
-            onChange && onChange(swiperInstance.realIndex);
-        });
-
-        swiperInstance.on('autoplayStop', () => {
-            setAutoPlayning(false);
-        });
-    }, [swiperInstance, loop, onChange]);
+    const handleAutoplayStop = React.useCallback(() => {
+        setAutoPlayning(false);
+    }, []);
 
     return (
         <div className={cn({ 'nav-theme': navTheme })}>
             <Swiper
                 className={cn('swiper')}
-                watchSlidesVisibility
                 loop={loop}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
                 onSwiper={handleSwiper}
+                onReachBeginning={handleReachBeginning}
+                onReachEnd={handleReachEnd}
+                onFromEdge={handleFromEdge}
+                onSlideChange={handleSlideChange}
+                onAutoplayStop={handleAutoplayStop}
             >
                 {React.Children.map(children, (child, i) => (
                     <SwiperSlide key={i} className={cn('slide')}>

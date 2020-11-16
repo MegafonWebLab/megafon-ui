@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import cnCreate from '../../utils/cnCreate';
-import Banner, { IBannerProps } from './Banner';
-import { DemoSlide } from './Banner.docz';
+import Banner, { IBannerProps, NavTheme } from './Banner';
+import { DemoSlide } from './doc/Banner.docz';
 
 const props = {
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,
-    navTheme: 'dark',
+    navTheme: NavTheme.DARK,
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
     onDotClick: jest.fn(),
