@@ -7,8 +7,8 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
   <Month
     goToNextMonth={[Function]}
     goToPreviousMonth={[Function]}
-    isNextMonthDisabled={false}
-    isPrevMonthDisabled={false}
+    isNextMonthDisabled={true}
+    isPrevMonthDisabled={true}
     key="2020-1"
     monthLabel="февраля"
     weekdayLabels={

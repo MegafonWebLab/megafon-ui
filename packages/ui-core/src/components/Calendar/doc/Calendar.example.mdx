@@ -4,10 +4,8 @@ import { DemoCalendarWithHandleChange, DemoCalendarWithBlockedDates } from './Ca
 
 ## Базовое использование
 
-<Playground>
-    <div style={{margin: 'auto', maxWidth: '320px'}}>
-        <Calendar />
-    </div>
+<Playground style={{margin: 'auto', maxWidth: '320px'}}>
+    <Calendar />
 </Playground>
 
 ## С возможностью выбора одной даты и стилизованной оберткой
@@ -15,7 +13,7 @@ import { DemoCalendarWithHandleChange, DemoCalendarWithBlockedDates } from './Ca
 <Playground>
     <div style={{
         padding: '0 18px',
-        margin: 'auto',
+        margin: '24px auto',
         boxShadow: '0 2px 9px rgba(0, 0, 0, 0.15)',
         maxWidth: '320px',
     }}>
@@ -31,25 +29,16 @@ const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
 const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
 const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
-const unavailableDates = [
-    new Date(currentYear, currentMonth, 12),
-    new Date(currentYear, currentMonth, 15),
-    new Date(currentYear, currentMonth, 18),
-];
 
 export const DemoCalendarWithBlockedDates = ({ children }) =>
-    children({ minBookingDate, maxBookingDate, unavailableDates });
+    children({ minBookingDate, maxBookingDate });
 ```
 
 <Playground>
     <DemoCalendarWithBlockedDates>
-        {({ minBookingDate, maxBookingDate, unavailableDates }) =>
+        {({ minBookingDate, maxBookingDate }) =>
             <div style={{margin: 'auto', maxWidth: '320px'}}>
-                <Calendar
-                    unavailableDates={unavailableDates}
-                    minBookingDate={minBookingDate}
-                    maxBookingDate={maxBookingDate}
-                />
+                <Calendar minBookingDate={minBookingDate} maxBookingDate={maxBookingDate} />
             </div>
         }
     </DemoCalendarWithBlockedDates>
@@ -78,12 +67,10 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
 };
 ```
 
-<Playground>
+<Playground style={{ textAlign: 'center' }}>
     <DemoCalendarWithHandleChange>
         {({ handleChange, startDate, endDate }) =>
-            <div style={{ textAlign: 'center' }}>
-                <Calendar handleChange={handleChange} startDate={startDate} endDate={endDate} />
-            </div>
+            <Calendar handleChange={handleChange} startDate={startDate} endDate={endDate} />
         }
     </DemoCalendarWithHandleChange>
 </Playground>

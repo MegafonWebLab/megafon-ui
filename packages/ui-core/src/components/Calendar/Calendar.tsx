@@ -9,7 +9,7 @@ import {
     useDatepicker,
     useMonth,
 } from '@datepicker-react/hooks';
-import { format, isEqual, isAfter } from 'date-fns';
+import { format, isEqual, isAfter, isSameMonth } from 'date-fns';
 import ruLocale from 'date-fns/locale/ru';
 import Month, { IMonthPickerProps } from 'components/Calendar/components/Month/Month';
 import Day, { DayType, IDayPickerProps } from 'components/Calendar/components/Day/Day';
@@ -33,13 +33,11 @@ export interface ICalendarProps {
     startDate?: Date;
     /** Дата окончания периода по умолчанию */
     endDate?: Date;
-    /** Блокирует возможность выбора дат до указанной */
+    /** Блокирует возможность выбора дат до указанной (включительно) */
     minBookingDate?: Date;
-    /** Блокирует возможность выбора дат после указанной */
+    /** Блокирует возможность выбора дат после указанной (включительно) */
     maxBookingDate?: Date;
-    /** Массив отдельных дат, которые будут недоступны для выбора */
-    unavailableDates?: Date[];
-    /** Обработчик изменения выбранного периода. Возвращает startDate первым аргументом и endDate вторым */
+    /** Обработчик изменения выбранного периода. При isSingleDate = true возвращается только startDate */
     handleChange?: (startDate: Date | null, endDate: Date | null) => void;
 }
 
@@ -56,22 +54,13 @@ const Calendar: React.FC<ICalendarProps> = ({
     handleChange,
     minBookingDate,
     maxBookingDate,
-    unavailableDates = [],
 }) => {
     const isInitialDatesEqual = startDate && endDate && isEqual(startDate, endDate);
     const isStartFocus = !startDate || (endDate && !isInitialDatesEqual);
-    const minBookingMonth = minBookingDate && formatDate(minBookingDate, 'MM');
-    const maxBookingMonth = maxBookingDate && formatDate(maxBookingDate, 'MM');
-
-    const checkBlockedDates = (periodStart: Date | null, periodEnd: Date | null): boolean => {
-        return unavailableDates.some((blockedDate) =>
-            periodStart && periodEnd && isAfter(blockedDate, periodStart) && !isAfter(blockedDate, periodEnd)
-        );
-    };
 
     const [calendarState, setCalendarState] = useState<ICalendarState>({
         startDate,
-        endDate: isInitialDatesEqual || isSingleDate || checkBlockedDates(startDate, endDate) ? null : endDate,
+        endDate: isInitialDatesEqual || isSingleDate ? null : endDate,
         focusedInput: isStartFocus ? START_DATE : END_DATE,
     });
 
@@ -84,25 +73,28 @@ const Calendar: React.FC<ICalendarProps> = ({
     const handleDaySelect = (date: Date): void => {
         const isStartChose = stateFocusedInput === START_DATE;
         const isEndChose = stateFocusedInput === END_DATE;
+        const isEndDateChose = stateStartDate && isEndChose;
+        const isStartDatePeriodNarrow = stateStartDate && stateEndDate && isEndChose
+            && isAfter(date, stateStartDate) && !isAfter(date, stateEndDate);
+        const isStartDateClick = stateStartDate && isEqual(stateStartDate || 0, date);
+        const isEndDateClick = stateEndDate && isEqual(stateEndDate || 0, date);
+        const isClickBeforeChosenEndDate = stateEndDate && isEndChose && !isAfter(date, stateEndDate || 0);
+        const isClickAfterChosenEndDate = stateEndDate && isStartChose && isAfter(date, stateEndDate || 0);
+        const isCliclBeforeStartDate = stateStartDate && isEndChose && !isAfter(date, stateStartDate || 0);
+        const isStartDateChose = isStartDateClick || isEndDateClick || isClickBeforeChosenEndDate
+            || isClickAfterChosenEndDate || isCliclBeforeStartDate;
 
         switch (true) {
             case isSingleDate:
                 setCalendarState({ ...calendarState, startDate: date });
                 break;
-            case stateStartDate && stateEndDate && isEndChose &&
-            isAfter(date, stateStartDate) && !isAfter(date, stateEndDate):
+            case isStartDatePeriodNarrow:
                 setCalendarState({ ...calendarState, endDate: date, focusedInput: START_DATE });
                 break;
-            case !!unavailableDates.length && checkBlockedDates(stateStartDate, date):
-            case stateStartDate && isEqual(stateStartDate || 0, date):
-            case stateEndDate && isEqual(stateEndDate || 0, date):
-            case stateEndDate && isEndChose && !isAfter(date, stateEndDate || 0):
-            case stateEndDate && isStartChose && isAfter(date, stateEndDate || 0):
-            case stateStartDate && isEndChose && !isAfter(date, stateStartDate || 0):
-            case stateEndDate && isStartChose && isAfter(date, stateEndDate):
+            case isStartDateChose:
                 setCalendarState({ startDate: date, endDate: null, focusedInput: END_DATE });
                 break;
-            case stateStartDate && isEndChose:
+            case isEndDateChose:
                 setCalendarState({ ...calendarState, endDate: date, focusedInput: START_DATE });
                 break;
             default:
@@ -121,7 +113,6 @@ const Calendar: React.FC<ICalendarProps> = ({
         numberOfMonths: 1,
         minBookingDate,
         maxBookingDate,
-        unavailableDates,
         ...calendarState,
     });
 
@@ -157,14 +148,17 @@ const Calendar: React.FC<ICalendarProps> = ({
             monthLabelFormat,
         });
 
+        const isPrevMonthDisabled = !!minBookingDate && isSameMonth(new Date(year, month, 1), minBookingDate);
+        const isNextMonthDisabled = !!maxBookingDate && isSameMonth(new Date(year, month, 1), maxBookingDate);
+
         return (
             <Month
                 key={`${year}-${month}`}
                 year={year}
                 weekdayLabels={weekdayLabels}
                 monthLabel={monthLabel}
-                isPrevMonthDisabled={String(month + 1) === minBookingMonth}
-                isNextMonthDisabled={String(month + 1) === maxBookingMonth}
+                isPrevMonthDisabled={isPrevMonthDisabled}
+                isNextMonthDisabled={isNextMonthDisabled}
                 goToPreviousMonth={goToPreviousMonths}
                 goToNextMonth={goToNextMonths}
             >
@@ -187,7 +181,6 @@ Calendar.propTypes = {
     endDate: PropTypes.instanceOf(Date),
     minBookingDate: PropTypes.instanceOf(Date),
     maxBookingDate: PropTypes.instanceOf(Date),
-    unavailableDates: PropTypes.arrayOf(PropTypes.instanceOf(Date).isRequired),
     handleChange: PropTypes.func as PropTypes.Validator<ICalendarProps['handleChange']>,
 };
 

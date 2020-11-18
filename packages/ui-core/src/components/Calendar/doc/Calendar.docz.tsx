@@ -11,14 +11,9 @@ const startDate = new Date(2020, 1, 7);
 const endDate = new Date(2020, 1, 19);
 const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
 const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
-const unavailableDates = [
-    new Date(currentYear, currentMonth, 12),
-    new Date(currentYear, currentMonth, 15),
-    new Date(currentYear, currentMonth, 18),
-];
 
 export const DemoCalendarWithBlockedDates = ({ children }) =>
-    children({ minBookingDate, maxBookingDate, unavailableDates });
+    children({ minBookingDate, maxBookingDate });
 
 export const DemoCalendarWithHandleChange = ({ children }) => {
     const [from, setFrom] = React.useState<string | null>(formatDate(startDate, 'dd.MM.yyyy'));
@@ -30,11 +25,11 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
     };
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <>
             <h3 style={{ marginBottom: '32px' }}>
                 {to ? `Выбран диапазон дат с ${from} до ${to}` : `Выбрана начальная дата ${from}`}
             </h3>
             {children({ handleChange, startDate, endDate })}
-        </div>
+        </>
     );
 };

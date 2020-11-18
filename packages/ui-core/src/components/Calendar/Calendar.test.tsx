@@ -8,11 +8,6 @@ const props: ICalendarProps = {
     endDate: new Date(2020, 1, 14),
     minBookingDate: new Date(2020, 1, 3),
     maxBookingDate: new Date(2020, 1, 25),
-    unavailableDates: [
-        new Date(2020, 1, 15),
-        new Date(2020, 1, 20),
-        new Date(2020, 1, 25),
-    ],
     handleChange: jest.fn(),
 };
 
@@ -27,7 +22,7 @@ describe('<Calendar />', () => {
 
     describe('handleChange', () => {
         it('calls handleChange on date change', () => {
-            const { minBookingDate, maxBookingDate, unavailableDates, ...restProps } = props;
+            const { minBookingDate, maxBookingDate, ...restProps } = props;
             const handleChange = jest.fn();
 
             const wrapper = mount(<Calendar {...restProps} handleChange={handleChange} />);
@@ -59,31 +54,6 @@ describe('<Calendar />', () => {
             wrapper.find('.mfui-beta-day').at(18).simulate('click');
 
             expect(handleChange).toBeCalledWith(new Date('2020-02-19T00:00:00.000Z'), null);
-        });
-
-        it('shouldnt call handleChange with click on blocked date', () => {
-            const handleChange = jest.fn();
-
-            const wrapper = mount(<Calendar {...props} handleChange={handleChange} />);
-            jest.resetAllMocks();
-
-            wrapper.find('.mfui-beta-day').at(19).simulate('click');
-
-            expect(handleChange).toHaveBeenCalledTimes(0);
-        });
-
-        it('should call handleChange only with start date when period with blocked date chosen', () => {
-            const handleChange = jest.fn();
-
-            const wrapper = mount(<Calendar {...props} handleChange={handleChange} />);
-
-            wrapper.find('.mfui-beta-day').at(8).simulate('click');
-
-            jest.resetAllMocks();
-
-            wrapper.find('.mfui-beta-day').at(16).simulate('click');
-
-            expect(handleChange).toHaveBeenCalledWith(new Date('2020-02-17T00:00:00.000Z'), null);
         });
 
         it('calls handleChange on render only with startDate even if both props given', () => {

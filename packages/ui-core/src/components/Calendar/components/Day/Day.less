@@ -40,6 +40,11 @@
         background-color: @green;
     }
 
+    &:not(:disabled):not(&_active):hover {
+        background-color: @spbSky0;
+        color: @freshAsphalt;
+    }
+
     &_active + &_active:before {
         content: '';
         display: block;
@@ -83,7 +88,7 @@
     }
 
     &_sunday, &_last {
-        border-radius: 0 50% 50% 0;
+        border-radius: 50%;
 
         &:after {
             display: none !important;
@@ -91,7 +96,7 @@
     }
 
     &_monday, &_first {
-        border-radius: 50% 0 0 50%;
+        border-radius: 50%;
 
         &:before {
             display: none !important;
