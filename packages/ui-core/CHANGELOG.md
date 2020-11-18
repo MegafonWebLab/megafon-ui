@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.40](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.39...@megafon/ui-core@2.0.0-beta.40) (2020-11-18)
+
+
+### Bug Fixes
+
+* **search:** prevent placeholder selection, when double-click on control element ([0607fc8](https://github.com/MegafonWebLab/megafon-ui/commit/0607fc81a4422830ef80930cf236e19dba64a3a5))
+
+
+
+
+
 # [2.0.0-beta.39](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.38...@megafon/ui-core@2.0.0-beta.39) (2020-11-16)
 
 
