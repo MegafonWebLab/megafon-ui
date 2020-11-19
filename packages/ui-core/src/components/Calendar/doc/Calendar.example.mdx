@@ -1,6 +1,6 @@
 import { Playground } from 'docz';
 import Calendar from '../Calendar';
-import { DemoCalendarWithHandleChange, DemoCalendarWithBlockedDates } from './Calendar.docz';
+import { DemoCalendarWithHandleChange, minBookingDate, maxBookingDate } from './Calendar.docz';
 
 ## Базовое использование
 
@@ -34,14 +34,8 @@ export const DemoCalendarWithBlockedDates = ({ children }) =>
     children({ minBookingDate, maxBookingDate });
 ```
 
-<Playground>
-    <DemoCalendarWithBlockedDates>
-        {({ minBookingDate, maxBookingDate }) =>
-            <div style={{margin: 'auto', maxWidth: '320px'}}>
-                <Calendar minBookingDate={minBookingDate} maxBookingDate={maxBookingDate} />
-            </div>
-        }
-    </DemoCalendarWithBlockedDates>
+<Playground style={{margin: 'auto', maxWidth: '320px'}}>
+    <Calendar minBookingDate={minBookingDate} maxBookingDate={maxBookingDate} />
 </Playground>
 
 ## С предвыбранным интервалом дат

@@ -9,11 +9,8 @@ const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
 const startDate = new Date(2020, 1, 7);
 const endDate = new Date(2020, 1, 19);
-const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
-const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
-
-export const DemoCalendarWithBlockedDates = ({ children }) =>
-    children({ minBookingDate, maxBookingDate });
+export const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
+export const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
 
 export const DemoCalendarWithHandleChange = ({ children }) => {
     const [from, setFrom] = React.useState<string | null>(formatDate(startDate, 'dd.MM.yyyy'));

@@ -80,9 +80,9 @@ const Calendar: React.FC<ICalendarProps> = ({
         const isEndDateClick = stateEndDate && isEqual(stateEndDate || 0, date);
         const isClickBeforeChosenEndDate = stateEndDate && isEndChose && !isAfter(date, stateEndDate || 0);
         const isClickAfterChosenEndDate = stateEndDate && isStartChose && isAfter(date, stateEndDate || 0);
-        const isCliclBeforeStartDate = stateStartDate && isEndChose && !isAfter(date, stateStartDate || 0);
+        const isClickBeforeStartDate = stateStartDate && isEndChose && !isAfter(date, stateStartDate || 0);
         const isStartDateChose = isStartDateClick || isEndDateClick || isClickBeforeChosenEndDate
-            || isClickAfterChosenEndDate || isCliclBeforeStartDate;
+            || isClickAfterChosenEndDate || isClickBeforeStartDate;
 
         switch (true) {
             case isSingleDate:
