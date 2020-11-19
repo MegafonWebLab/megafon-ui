@@ -29,9 +29,6 @@ const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
 const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
 const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
-
-export const DemoCalendarWithBlockedDates = ({ children }) =>
-    children({ minBookingDate, maxBookingDate });
 ```
 
 <Playground style={{margin: 'auto', maxWidth: '320px'}}>
