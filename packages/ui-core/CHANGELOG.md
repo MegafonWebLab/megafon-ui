@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.41](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.40...@megafon/ui-core@2.0.0-beta.41) (2020-11-19)
+
+
+### Features
+
+* **calendar:** added new Calendar component ([22108ce](https://github.com/MegafonWebLab/megafon-ui/commit/22108ce73e833ecfa7aadde95931fa0b8b9af0d5))
+
+
+
+
+
 # [2.0.0-beta.40](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.39...@megafon/ui-core@2.0.0-beta.40) (2020-11-18)
 
 
