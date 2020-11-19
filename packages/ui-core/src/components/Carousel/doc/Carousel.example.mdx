@@ -11,6 +11,26 @@ import ContentArea from 'components/ContentArea/ContentArea';
 переданного в innerIndentsClass класса.
 По умолчанию используются гайдовые отступы для контента страницы (32px на 320-767 и 48px на 768-1023)
 
+``` javascript
+export const DemoSlide = ({ children }) => {
+    return (
+        <div
+            style={{
+                height: '200px',
+                backgroundColor: '#f3f3f3',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```
+
 ## Базовое использование
 
 <Playground style={blockStyle}>
@@ -112,23 +132,3 @@ import ContentArea from 'components/ContentArea/ContentArea';
         </Carousel>
     </ContentArea>
 </Playground>
-
-``` javascript
-export const DemoSlide = ({ children }) => {
-    return (
-        <div
-            style={{
-                height: '200px',
-                backgroundColor: '#f3f3f3',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
-                fontSize: '30px',
-            }}
-        >
-            {children}
-        </div>
-    );
-}
-```
