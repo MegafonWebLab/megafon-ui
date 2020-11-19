@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Day /> snapshots renders Day with props 1`] = `
+<button
+  className="mfui-beta-day mfui-beta-day_sunday"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseEnter={[Function]}
+  tabIndex={-1}
+  type="button"
+>
+  <span
+    className="mfui-beta-day__label"
+  >
+    Пн
+  </span>
+</button>
+`;
+
+exports[`<Day /> snapshots should return empty div if label is not provided 1`] = `
+<button
+  className="mfui-beta-day mfui-beta-day_sunday"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseEnter={[Function]}
+  tabIndex={-1}
+  type="button"
+>
+  <span
+    className="mfui-beta-day__label"
+  />
+</button>
+`;
