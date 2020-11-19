@@ -24,6 +24,10 @@ exports[`<Carousel /> should render with default props 1`] = `
     }
     className="mfui-beta-carousel__swiper mfui-beta-carousel__swiper_default-inner-indents"
     loop={false}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
     onSwiper={[Function]}
     pagination={
       Object {
@@ -88,6 +92,10 @@ exports[`<Carousel /> should render with props 1`] = `
     }
     className="mfui-beta-carousel__swiper inner-indents-class"
     loop={true}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
     onSwiper={[Function]}
     pagination={
       Object {

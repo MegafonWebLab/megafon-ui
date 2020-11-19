@@ -115,32 +115,26 @@ const Carousel: React.FC<ICarouselProps> = ({
         setSwiperInstance(swiper);
     }, []);
 
-    React.useEffect(() => {
-        if (!swiperInstance) {
-            return;
+    const handleReachBeginnig = React.useCallback(() => {
+        setBeginning(true);
+    }, []);
+
+    const handleReachEnd = React.useCallback(({ params, autoplay }: SwiperCore) => {
+        setEnd(true);
+
+        if (!params.loop && autoplay.running) {
+            autoplay.stop();
         }
+    }, []);
 
-        swiperInstance.on('reachBeginning', () => {
-            setBeginning(true);
-        });
+    const handleFromEdge = React.useCallback((swiper: SwiperCore) => {
+        setBeginning(swiper.isBeginning);
+        setEnd(swiper.isEnd);
+    }, []);
 
-        swiperInstance.on('reachEnd', () => {
-            setEnd(true);
-
-            if (!loop && swiperInstance.autoplay.running) {
-                swiperInstance.autoplay.stop();
-            }
-        });
-
-        swiperInstance.on('fromEdge', () => {
-            setBeginning(swiperInstance.isBeginning);
-            setEnd(swiperInstance.isEnd);
-        });
-
-        swiperInstance.on('slideChange', () => {
-            onChange && onChange(swiperInstance.realIndex);
-        });
-    }, [swiperInstance, loop, onChange]);
+    const handleSlideChange = React.useCallback(({ realIndex }: SwiperCore) => {
+        onChange && onChange(realIndex);
+    }, [onChange]);
 
     return (
         <div className={cn({ 'nav-theme': navTheme }, [className])}>
@@ -156,6 +150,10 @@ const Carousel: React.FC<ICarouselProps> = ({
                 pagination={{ clickable: true }}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
                 onSwiper={handleSwiper}
+                onReachBeginning={handleReachBeginnig}
+                onReachEnd={handleReachEnd}
+                onFromEdge={handleFromEdge}
+                onSlideChange={handleSlideChange}
             >
                 {React.Children.map(children, (child, i) => (
                     <SwiperSlide key={i} className={cn('slide')}>

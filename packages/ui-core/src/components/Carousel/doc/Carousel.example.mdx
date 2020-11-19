@@ -1,6 +1,6 @@
 import { Playground, Props } from 'docz';
 import Carousel from '../Carousel';
-import { DemoSlide } from './Carousel.docz';
+import { DemoSlide, blockStyle } from './Carousel.docz';
 import ContentArea from 'components/ContentArea/ContentArea';
 
 ## Особенности использования на мобильных разрешениях
@@ -13,7 +13,7 @@ import ContentArea from 'components/ContentArea/ContentArea';
 
 ## Базовое использование
 
-<Playground>
+<Playground style={blockStyle}>
     <ContentArea disableIndents="mobile-tablet">
         <Carousel>
             <DemoSlide>1</DemoSlide>
@@ -28,9 +28,9 @@ import ContentArea from 'components/ContentArea/ContentArea';
 
 ## Тема навигации для использования на зеленом фоне
 
-<Playground>
+<Playground style={blockStyle}>
     <ContentArea disableIndents="mobile-tablet" outerBackgroundColor="green">
-        <div style={{ padding: '20px 0' }}>
+        <div style={blockStyle}>
             <Carousel navTheme="green">
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
@@ -45,7 +45,7 @@ import ContentArea from 'components/ContentArea/ContentArea';
 
 ## Прокрутка слайдов с зацикливанием
 
-<Playground>
+<Playground style={blockStyle}>
     <ContentArea disableIndents="mobile-tablet">
         <Carousel loop>
             <DemoSlide>1</DemoSlide>
@@ -60,7 +60,7 @@ import ContentArea from 'components/ContentArea/ContentArea';
 
 ## Автоматическая прокрутка слайдов
 
-<Playground>
+<Playground style={blockStyle}>
     <ContentArea disableIndents="mobile-tablet">
         <Carousel loop autoPlay>
             <DemoSlide>1</DemoSlide>
@@ -75,27 +75,28 @@ import ContentArea from 'components/ContentArea/ContentArea';
 
 ## Ширина слайдов по содержимому
 
-<Playground>
+<Playground style={blockStyle}>
     <ContentArea disableIndents="mobile-tablet">
         <Carousel slidesSettings={{
             0: { slidesPerView: 'auto', spaceBetween: 16 },
             768: { slidesPerView: 'auto', spaceBetween: 20 },
         }}>
-            <DemoSlide><div style={{ width: '100px'}}>1</div></DemoSlide>
-            <DemoSlide><div style={{ width: '200px'}}>2</div></DemoSlide>
-            <DemoSlide><div style={{ width: '80px'}}>3</div></DemoSlide>
-            <DemoSlide><div style={{ width: '240px'}}>4</div></DemoSlide>
-            <DemoSlide><div style={{ width: '180px'}}>5</div></DemoSlide>
-            <DemoSlide><div style={{ width: '90px'}}>6</div></DemoSlide>
-            <DemoSlide><div style={{ width: '220px'}}>7</div></DemoSlide>
-            <DemoSlide><div style={{ width: '240px'}}>8</div></DemoSlide>
+            <DemoSlide>111111</DemoSlide>
+            <DemoSlide>22222222</DemoSlide>
+            <DemoSlide>33333333333</DemoSlide>
+            <DemoSlide>444444</DemoSlide>
+            <DemoSlide>555555555555555555</DemoSlide>
+            <DemoSlide>66</DemoSlide>
+            <DemoSlide>7777777777777</DemoSlide>
+            <DemoSlide>888888888888</DemoSlide>
+            <DemoSlide>9</DemoSlide>
         </Carousel>
     </ContentArea>
 </Playground>
 
 ## Переопределение количества видимых слайдов
 
-<Playground>
+<Playground style={blockStyle}>
     <ContentArea disableIndents="mobile-tablet">
         <Carousel slidesSettings={{
             0: { slidesPerView: 1, spaceBetween: 16 },

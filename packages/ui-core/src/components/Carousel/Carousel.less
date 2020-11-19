@@ -4,13 +4,19 @@
 @swiperPagination: e('.swiper-pagination');
 @swiperBullet: e('.swiper-pagination-bullet');
 @swiperBulletActive: e('.swiper-pagination-bullet-active');
+@swiperSlideVisible: e('.swiper-slide-visible');
 
 @{b} {
     position: relative;
+    display: flex;
 
     &__swiper {
+        flex-shrink: 1;
+        flex-grow: 1;
         position: relative;
         overflow: hidden;
+        padding-top: 20px;
+        margin-top: -20px;
     }
 
     &__swiper_default-inner-indents {
@@ -23,6 +29,13 @@
             padding-left: 32px;
             padding-right: 32px;
         }
+
+        @media @desktop {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: -20px;
+            margin-right: -20px;
+        }
     }
 
     @{swiperWrapper} {
@@ -33,6 +46,18 @@
 
     &__slide {
         flex-shrink: 0;
+
+        @media @desktop {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+
+    @{swiperSlideVisible} {
+        @media @desktop {
+            opacity: 1;
+            transition: opacity 0.4s;
+        }
     }
 
     &__arrow {
