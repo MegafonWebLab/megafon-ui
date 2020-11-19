@@ -3,6 +3,25 @@ import Banner from '../Banner';
 import { DemoSlide } from './Banner.docz';
 import Balance from 'icons/Basic/24/Balance_24.svg';
 
+``` javascript
+export const DemoSlide = ({ children, background }) => {
+    return (
+        <div
+            style={{
+                height: "100%",
+                backgroundColor: background,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```
+
 ## Базовое использование
 
 <Playground>
@@ -52,22 +71,3 @@ import Balance from 'icons/Basic/24/Balance_24.svg';
         <DemoSlide background="#02d263">3</DemoSlide>
     </Banner>
 </Playground>
-
-``` javascript
-export const DemoSlide = ({ children, background }) => {
-    return (
-        <div
-            style={{
-                height: "100%",
-                backgroundColor: background,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                fontSize: '30px',
-            }}
-        >
-            {children}
-        </div>
-    );
-}
-```
