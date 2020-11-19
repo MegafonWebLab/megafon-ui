@@ -51,6 +51,8 @@ export interface IButtonProps extends IDataAttributes {
     href?: string;
     /** Target - свойство тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
+    /** Rel - свойство тега <a> */
+    rel?: string;
     /** Поведение кнопки */
     actionType?: 'button' | 'reset' | 'submit';
     /** Размер на всех разрешениях экрана */
@@ -94,6 +96,7 @@ const Button: React.FC<IButtonProps> = props => {
         type = 'primary',
         href,
         target,
+        rel,
         actionType = 'button',
         sizeAll = 'medium',
         sizeWide,
@@ -163,6 +166,21 @@ const Button: React.FC<IButtonProps> = props => {
         />
     ), [sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile]);
 
+    const setRelAttribute = () => {
+        if (ElementType !== 'a') {
+            return undefined;
+        }
+
+        if (rel) {
+            return rel;
+        }
+
+        if (target && target !== '_self') {
+            return 'noreferrer noopener';
+        }
+
+    };
+
     return (
         <ElementType
             {...filterDataAttrs(dataAttrs)}
@@ -181,6 +199,7 @@ const Button: React.FC<IButtonProps> = props => {
             }, [className, rootClassName])}
             href={href}
             target={href ? target : undefined}
+            rel={setRelAttribute()}
             type={href ? undefined : actionType}
             onClick={handleClick}
             disabled={!href && disabled}
@@ -203,6 +222,7 @@ Button.propTypes = {
     type: PropTypes.oneOf(Object.values(ButtonTypes)),
     href: PropTypes.string,
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    rel: PropTypes.string,
     actionType: PropTypes.oneOf(['button', 'reset', 'submit']),
     sizeAll: PropTypes.oneOf(Object.values(ButtonSizes)),
     sizeWide: PropTypes.oneOf(Object.values(ButtonSizes)),
