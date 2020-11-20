@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner /> should render with default props 1`] = `
+<div
+  className="mfui-beta-banner mfui-beta-banner_nav-theme_light"
+>
+  <Swiper
+    autoplay={false}
+    className="mfui-beta-banner__swiper"
+    loop={false}
+    onAutoplayStop={[Function]}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
+    onSwiper={[Function]}
+  >
+    <SwiperSlide
+      className="mfui-beta-banner__slide"
+      key="0/.0"
+    >
+      <Component>
+        1
+      </Component>
+    </SwiperSlide>
+    <SwiperSlide
+      className="mfui-beta-banner__slide"
+      key="1/.1"
+    >
+      <Component>
+        2
+      </Component>
+    </SwiperSlide>
+  </Swiper>
+  <NavArrow
+    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_prev"
+    disabled={true}
+    onClick={[Function]}
+    theme="purple"
+  />
+  <NavArrow
+    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_next"
+    disabled={false}
+    onClick={[Function]}
+    theme="purple"
+    view="next"
+  />
+  <div
+    className="mfui-beta-banner__pagination mfui-beta-banner__pagination_theme_light"
+  >
+    <BannerDot
+      className="mfui-beta-banner__dot"
+      index={0}
+      isActive={true}
+      key="0/.0"
+      onClick={[Function]}
+      showTimer={false}
+      timerDelay={5}
+    />
+    <BannerDot
+      className="mfui-beta-banner__dot"
+      index={1}
+      isActive={false}
+      key="1/.1"
+      onClick={[Function]}
+      showTimer={false}
+      timerDelay={5}
+    />
+  </div>
+</div>
+`;
+
+exports[`<Banner /> should render with props 1`] = `
+<div
+  className="mfui-beta-banner mfui-beta-banner_nav-theme_dark"
+>
+  <Swiper
+    autoplay={
+      Object {
+        "delay": 1000,
+        "disableOnInteraction": false,
+        "stopOnLastSlide": true,
+        "waitForTransition": false,
+      }
+    }
+    className="mfui-beta-banner__swiper"
+    loop={true}
+    onAutoplayStop={[Function]}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
+    onSwiper={[Function]}
+  >
+    <SwiperSlide
+      className="mfui-beta-banner__slide"
+      key="0/.0"
+    >
+      <Component>
+        1
+      </Component>
+    </SwiperSlide>
+    <SwiperSlide
+      className="mfui-beta-banner__slide"
+      key="1/.1"
+    >
+      <Component>
+        2
+      </Component>
+    </SwiperSlide>
+  </Swiper>
+  <NavArrow
+    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_prev"
+    disabled={false}
+    onClick={[Function]}
+    theme="dark"
+  />
+  <NavArrow
+    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_next"
+    disabled={false}
+    onClick={[Function]}
+    theme="dark"
+    view="next"
+  />
+  <div
+    className="mfui-beta-banner__pagination mfui-beta-banner__pagination_theme_dark"
+  >
+    <BannerDot
+      className="mfui-beta-banner__dot"
+      index={0}
+      isActive={true}
+      key="0/.0"
+      onClick={[Function]}
+      showTimer={true}
+      timerDelay={1}
+    />
+    <BannerDot
+      className="mfui-beta-banner__dot"
+      index={1}
+      isActive={false}
+      key="1/.1"
+      onClick={[Function]}
+      showTimer={true}
+      timerDelay={1}
+    />
+  </div>
+</div>
+`;

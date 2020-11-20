@@ -150,6 +150,7 @@
     "prop-types": "^15.7.2",
     "react-input-mask": "^2.0.4",
     "react-popper": "^2.2.3",
-    "react-slick": "^0.25.2"
+    "react-slick": "^0.25.2",
+    "swiper": "^6.3.4"
   }
 }
