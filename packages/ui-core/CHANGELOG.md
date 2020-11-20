@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.43](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.42...@megafon/ui-core@2.0.0-beta.43) (2020-11-20)
+
+
+### Features
+
+* **select:** add ability to update items state after transfer of new items to props ([b78eed4](https://github.com/MegafonWebLab/megafon-ui/commit/b78eed48ce354248ad94284d595879a7722144e4))
+
+
+
+
+
 # [2.0.0-beta.42](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.41...@megafon/ui-core@2.0.0-beta.42) (2020-11-20)
 
 
