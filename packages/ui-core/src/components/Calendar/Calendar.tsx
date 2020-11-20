@@ -38,7 +38,7 @@ export interface ICalendarProps {
     /** Блокирует возможность выбора дат после указанной (включительно) */
     maxBookingDate?: Date;
     /** Обработчик изменения выбранного периода. При isSingleDate = true возвращается только startDate */
-    handleChange?: (startDate: Date | null, endDate: Date | null) => void;
+    onChange?: (startDate: Date | null, endDate: Date | null) => void;
 }
 
 const weekdayLabelFormat = (date: Date): string => formatDate(date, 'EEEEEE');
@@ -51,7 +51,7 @@ const Calendar: React.FC<ICalendarProps> = ({
     startDate = null,
     endDate = null,
     className,
-    handleChange,
+    onChange,
     minBookingDate,
     maxBookingDate,
 }) => {
@@ -67,7 +67,7 @@ const Calendar: React.FC<ICalendarProps> = ({
     const { startDate: stateStartDate, endDate: stateEndDate, focusedInput: stateFocusedInput } = calendarState;
 
     useEffect(() => {
-        handleChange && handleChange(stateStartDate, stateEndDate);
+        onChange && onChange(stateStartDate, stateEndDate);
     }, [stateStartDate, stateEndDate]);
 
     const handleDaySelect = (date: Date): void => {
@@ -181,7 +181,7 @@ Calendar.propTypes = {
     endDate: PropTypes.instanceOf(Date),
     minBookingDate: PropTypes.instanceOf(Date),
     maxBookingDate: PropTypes.instanceOf(Date),
-    handleChange: PropTypes.func as PropTypes.Validator<ICalendarProps['handleChange']>,
+    onChange: PropTypes.func as PropTypes.Validator<ICalendarProps['onChange']>,
 };
 
 export default Calendar;

@@ -16,7 +16,7 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
     const [from, setFrom] = React.useState<string | null>(formatDate(startDate, 'dd.MM.yyyy'));
     const [to, setTo] = React.useState<string | null>(formatDate(endDate, 'dd.MM.yyyy'));
 
-    const handleChange = (currentStartDate, currentEndDate) => {
+    const onChange = (currentStartDate, currentEndDate) => {
         setFrom(formatDate(currentStartDate, 'dd.MM.yyyy'));
         setTo(currentEndDate ? formatDate(currentEndDate, 'dd.MM.yyyy') : currentEndDate);
     };
@@ -26,7 +26,7 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
             <h3 style={{ marginBottom: '32px' }}>
                 {to ? `Выбран диапазон дат с ${from} до ${to}` : `Выбрана начальная дата ${from}`}
             </h3>
-            {children({ handleChange, startDate, endDate })}
+            {children({ onChange, startDate, endDate })}
         </>
     );
 };
