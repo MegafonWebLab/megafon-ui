@@ -1,5 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
+<div
+  className="mfui-beta-video-block"
+>
+  <Grid
+    className="mfui-beta-video-block__grid"
+    hAlign="center"
+    multiRow={true}
+  >
+    <GridColumn
+      all="10"
+      flex={false}
+      grow={false}
+      key="column-video"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      tablet="12"
+    >
+      <div
+        className="mfui-beta-video-block__video-wrapper"
+      >
+        <video
+          autoPlay={true}
+          className="mfui-beta-video-block__video"
+          controls={false}
+          loop={true}
+          muted={true}
+        >
+          <source
+            src="video"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
 <div
   className="mfui-beta-video-block"
@@ -74,8 +117,9 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
         className="mfui-beta-video-block__video-wrapper mfui-beta-video-block__video-wrapper_with-content"
       >
         <video
-          autoPlay={true}
+          autoPlay={false}
           className="mfui-beta-video-block__video"
+          controls={true}
           loop={true}
           muted={true}
         >
@@ -116,8 +160,9 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
         className="mfui-beta-video-block__video-wrapper"
       >
         <video
-          autoPlay={true}
+          autoPlay={false}
           className="mfui-beta-video-block__video"
+          controls={true}
           loop={true}
           muted={true}
         >
@@ -158,8 +203,9 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
         className="mfui-beta-video-block__video-wrapper"
       >
         <video
-          autoPlay={true}
+          autoPlay={false}
           className="mfui-beta-video-block__video"
+          controls={true}
           loop={true}
           muted={false}
         >
@@ -175,6 +221,44 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
 `;
 
 exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
+<div
+  className="mfui-beta-video-block"
+>
+  <Grid
+    className="mfui-beta-video-block__grid"
+    hAlign="center"
+    multiRow={true}
+  >
+    <GridColumn
+      all="10"
+      flex={false}
+      grow={false}
+      key="column-video"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      tablet="12"
+    >
+      <div
+        className="mfui-beta-video-block__video-wrapper"
+      >
+        <iframe
+          allow="autoplay"
+          frameBorder="0"
+          height="100%"
+          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          width="100%"
+        />
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autoplay 1`] = `
 <div
   className="mfui-beta-video-block"
 >
@@ -241,7 +325,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
           allow="autoplay"
           frameBorder="0"
           height="100%"
-          src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=0&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=0&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
           width="100%"
         />
       </div>
