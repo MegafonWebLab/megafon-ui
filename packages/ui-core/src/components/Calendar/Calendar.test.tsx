@@ -8,7 +8,7 @@ const props: ICalendarProps = {
     endDate: new Date(2020, 1, 14),
     minBookingDate: new Date(2020, 1, 3),
     maxBookingDate: new Date(2020, 1, 25),
-    handleChange: jest.fn(),
+    onChange: jest.fn(),
 };
 
 describe('<Calendar />', () => {
@@ -20,74 +20,74 @@ describe('<Calendar />', () => {
         });
     });
 
-    describe('handleChange', () => {
-        it('calls handleChange on date change', () => {
+    describe('onChange', () => {
+        it('calls onChange on date change', () => {
             const { minBookingDate, maxBookingDate, ...restProps } = props;
-            const handleChange = jest.fn();
+            const onChange = jest.fn();
 
-            const wrapper = mount(<Calendar {...restProps} handleChange={handleChange} />);
+            const wrapper = mount(<Calendar {...restProps} onChange={onChange} />);
             jest.resetAllMocks();
 
             wrapper.find('.mfui-beta-day_first').at(0).simulate('click');
             wrapper.find('.mfui-beta-day_last').at(0).simulate('click');
 
-            expect(handleChange).toBeCalledTimes(2);
+            expect(onChange).toBeCalledTimes(2);
         });
 
-        it('calls handleChange only with start date with click after chosen period', () => {
-            const handleChange = jest.fn();
+        it('calls onChange only with start date with click after chosen period', () => {
+            const onChange = jest.fn();
 
-            const wrapper = mount(<Calendar {...props} handleChange={handleChange} />);
+            const wrapper = mount(<Calendar {...props} onChange={onChange} />);
             jest.resetAllMocks();
 
             wrapper.find('.mfui-beta-day').at(23).simulate('click');
 
-            expect(handleChange).toBeCalledWith(new Date('2020-02-24T00:00:00.000Z'), null);
+            expect(onChange).toBeCalledWith(new Date('2020-02-24T00:00:00.000Z'), null);
         });
 
-        it('calls handleChange only with start date with click on any of chosen dates', () => {
-            const handleChange = jest.fn();
+        it('calls onChange only with start date with click on any of chosen dates', () => {
+            const onChange = jest.fn();
 
-            const wrapper = mount(<Calendar {...props} handleChange={handleChange} />);
+            const wrapper = mount(<Calendar {...props} onChange={onChange} />);
             jest.resetAllMocks();
 
             wrapper.find('.mfui-beta-day').at(18).simulate('click');
 
-            expect(handleChange).toBeCalledWith(new Date('2020-02-19T00:00:00.000Z'), null);
+            expect(onChange).toBeCalledWith(new Date('2020-02-19T00:00:00.000Z'), null);
         });
 
-        it('calls handleChange on render only with startDate even if both props given', () => {
-            const handleChange = jest.fn();
+        it('calls onChange on render only with startDate even if both props given', () => {
+            const onChange = jest.fn();
 
-            mount(<Calendar {...props} handleChange={handleChange} isSingleDate />);
+            mount(<Calendar {...props} onChange={onChange} isSingleDate />);
 
-            expect(handleChange).toHaveBeenCalledWith(new Date('2020-02-07T00:00:00.000Z'), null);
+            expect(onChange).toHaveBeenCalledWith(new Date('2020-02-07T00:00:00.000Z'), null);
         });
 
-        it('should call handleChange with correct arguments in single date mode', () => {
-            const handleChange = jest.fn();
+        it('should call onChange with correct arguments in single date mode', () => {
+            const onChange = jest.fn();
 
-            const wrapper = mount(<Calendar {...props} handleChange={handleChange} isSingleDate />);
+            const wrapper = mount(<Calendar {...props} onChange={onChange} isSingleDate />);
             jest.resetAllMocks();
 
             wrapper.find('.mfui-beta-day').at(21).simulate('click');
 
-            expect(handleChange).toHaveBeenCalledWith(new Date('2020-02-22T00:00:00.000Z'), null);
+            expect(onChange).toHaveBeenCalledWith(new Date('2020-02-22T00:00:00.000Z'), null);
         });
 
-        it('should call handleChange with correct arguments when narroving chosen period', () => {
-            const handleChange = jest.fn();
+        it('should call onChange with correct arguments when narroving chosen period', () => {
+            const onChange = jest.fn();
 
-            const wrapper = mount(<Calendar {...props} handleChange={handleChange} />);
+            const wrapper = mount(<Calendar {...props} onChange={onChange} />);
             jest.resetAllMocks();
 
             wrapper.find('.mfui-beta-day').at(8).simulate('click');
 
-            expect(handleChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-14T00:00:00.000Z'));
+            expect(onChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-14T00:00:00.000Z'));
 
             wrapper.find('.mfui-beta-day').at(12).simulate('click');
 
-            expect(handleChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-13T00:00:00.000Z'));
+            expect(onChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-13T00:00:00.000Z'));
         });
     });
 });
