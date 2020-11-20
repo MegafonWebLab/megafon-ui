@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.46](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.45...@megafon/ui-shared@2.0.0-beta.46) (2020-11-20)
+
+
+### Features
+
+* **videoblock:** added autoplay prop ([22493e7](https://github.com/MegafonWebLab/megafon-ui/commit/22493e7a452e32bea859c245ac07b2ce4f87dfe4))
+
+
+### BREAKING CHANGES
+
+* **videoblock:** The video was autoplayed by default. Now added prop "isAutoplay".
+
+
+
+
+
 # [2.0.0-beta.45](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.44...@megafon/ui-shared@2.0.0-beta.45) (2020-11-20)
 
 **Note:** Version bump only for package @megafon/ui-shared
