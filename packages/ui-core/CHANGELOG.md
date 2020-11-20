@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.42](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.41...@megafon/ui-core@2.0.0-beta.42) (2020-11-20)
+
+
+### Bug Fixes
+
+* **calendar:** fixes when parent has z-index, and elements with -1 value of z-index is dropped out ([d068539](https://github.com/MegafonWebLab/megafon-ui/commit/d068539cc327dc2bea896071b127bb97f5f7972a))
+* **calendar:** handleChange property renamed to onChange for better consistency ([4e753c8](https://github.com/MegafonWebLab/megafon-ui/commit/4e753c8b59cca1ce9a44f68375dde06ed4c3f209))
+
+
+### BREAKING CHANGES
+
+* **calendar:** use onChange property to pass callback function instead of handleChange
+
+
+
+
+
 # [2.0.0-beta.41](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.40...@megafon/ui-core@2.0.0-beta.41) (2020-11-19)
 
 
