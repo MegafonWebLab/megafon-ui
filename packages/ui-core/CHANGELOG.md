@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.44](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.43...@megafon/ui-core@2.0.0-beta.44) (2020-11-20)
+
+
+### Features
+
+* **banner:** add new component ([a4b2c12](https://github.com/MegafonWebLab/megafon-ui/commit/a4b2c125f7ed54a67e9ea57928681e0a76e53ab2))
+
+
+
+
+
 # [2.0.0-beta.43](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.42...@megafon/ui-core@2.0.0-beta.43) (2020-11-20)
 
 
