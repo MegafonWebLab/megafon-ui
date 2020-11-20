@@ -32,6 +32,8 @@ export interface Props {
     videoSrc: string;
     /** Наличие звука в видео */
     isMuted?: boolean;
+    /** Автоматическое проигрывание видео */
+    isAutoplay?: boolean;
     /** Дополнительный класс для основного контейнера */
     className?: string;
 }
@@ -42,12 +44,13 @@ const VideoBlock: React.FC<Props> = ({
     videoType = 'video',
     videoSrc,
     isMuted = true,
+    isAutoplay = false,
     className,
 }) => {
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
             case(VideoTypes.YOUTUBE): {
-                const src = `https://www.youtube.com/embed/${videoSrc}?&autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${videoSrc}`;
+                const src = `https://www.youtube.com/embed/${videoSrc}?&autoplay=${isAutoplay ? 1 : 0}&mute=${isMuted ? 1 : 0}&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${videoSrc}`;
 
                 return (
                     <iframe src={src} width="100%" height="100%" frameBorder="0" allow="autoplay"/>
@@ -56,7 +59,7 @@ const VideoBlock: React.FC<Props> = ({
 
             case (VideoTypes.VIDEO): {
                 return (
-                    <video className={cn('video')} autoPlay muted={isMuted} loop>
+                    <video className={cn('video')} autoPlay={isAutoplay} muted={isMuted} controls={!isAutoplay} loop>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
                 );
@@ -133,6 +136,8 @@ VideoBlock.propTypes = {
     }),
     videoType: PropTypes.oneOf(Object.values(VideoTypes)),
     videoSrc: PropTypes.string.isRequired,
+    isMuted: PropTypes.bool,
+    isAutoplay: PropTypes.bool,
     className: PropTypes.string,
 };
 

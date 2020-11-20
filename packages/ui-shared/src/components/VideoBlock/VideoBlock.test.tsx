@@ -34,6 +34,13 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with autoplay', () => {
+        const component = shallow(
+            <VideoBlock videoSrc="video" isAutoplay />
+        );
+        expect(component).toMatchSnapshot();
+    });
+
     it('it renders VideoBlock with youtube media type', () => {
         const component = shallow(
             <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} />
@@ -44,6 +51,13 @@ describe('<VideoBlock />', () => {
     it('it renders VideoBlock with youtube media type and sound turned on', () => {
         const component = shallow(
             <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isMuted={false}/>
+        );
+        expect(component).toMatchSnapshot();
+    });
+
+    it('it renders VideoBlock with youtube media type and autoplay', () => {
+        const component = shallow(
+            <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isAutoplay />
         );
         expect(component).toMatchSnapshot();
     });
