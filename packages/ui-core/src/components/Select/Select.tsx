@@ -163,8 +163,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         }
     }
 
-    componentDidUpdate() {
+    componentDidUpdate({ items: prevItems }: ISelectProps) {
+        const { items } = this.props;
         const { isOpened } = this.state;
+
+        if (!this.isEqualItems(items, prevItems)) {
+            this.setState({ filteredItems: items });
+        }
 
         if (isOpened) {
             document.addEventListener('click', this.handleClickOutside);
@@ -177,6 +182,19 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
     componentWillUnmount() {
         document.removeEventListener('click', this.handleClickOutside);
+    }
+
+    isEqualItems = (items: ISelectItem[], prevItems: ISelectItem[]) => {
+        if (items.length !== prevItems.length) {
+            return false;
+        }
+
+        return items.every((item, i) => {
+            const isEqualValue = item.value === prevItems[i].value;
+            const isEqualTitle = item.title === prevItems[i].title;
+
+            return isEqualValue && isEqualTitle;
+        });
     }
 
     handleClickOutside = (e: MouseEvent): void => {

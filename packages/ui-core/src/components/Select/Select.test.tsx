@@ -32,6 +32,17 @@ const props: ISelectProps = {
     },
 };
 
+const newItems = [
+    {
+        value: 111,
+        title: 'new-test-name-1',
+    },
+    {
+        value: 222,
+        title: 'new-test-name-2',
+    },
+];
+
 describe('<Select />', () => {
     describe('snapshots', () => {
         it('renders with default props', () => {
@@ -41,6 +52,15 @@ describe('<Select />', () => {
 
         it('renders with props', () => {
             const wrapper = mount(<Select {...props} />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('renders combobox after update with new prop items', () => {
+            const wrapper = mount(<Select {...props} type="combobox" />);
+
+            wrapper.setProps({ items: newItems });
+            wrapper.update();
+
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -79,6 +99,26 @@ describe('<Select />', () => {
 
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
+        });
+
+        it('calls onSelect after update with new prop items', () => {
+            const handleSelectItem = jest.fn();
+            const wrapper = shallow(<Select {...props} onSelect={handleSelectItem} />);
+
+            wrapper.setProps({ items: newItems });
+            wrapper.update();
+
+            const title =  wrapper.find(`.${cn('title')}`);
+            const lastListItem = wrapper.find(`.${cn('list-item')}`).last();
+
+            title.simulate('click');
+            lastListItem.simulate('mouseenter', { preventDefault: () => {} });
+            lastListItem.simulate('click', {});
+
+            expect(handleSelectItem).toBeCalledWith(
+                {},
+                newItems[1]
+            );
         });
     });
 

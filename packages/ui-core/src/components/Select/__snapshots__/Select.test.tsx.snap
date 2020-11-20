@@ -668,6 +668,156 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 </Select>
 `;
 
+exports[`<Select /> snapshots renders combobox after update with new prop items 1`] = `
+<Select
+  className="test-class"
+  classes={
+    Object {
+      "control": "test-control-class",
+      "root": "test-root-class",
+    }
+  }
+  dataAttrs={
+    Object {
+      "data-test": "test",
+      "incorrect-attr": "test",
+    }
+  }
+  isDisabled={false}
+  items={
+    Array [
+      Object {
+        "title": "new-test-name-1",
+        "value": 111,
+      },
+      Object {
+        "title": "new-test-name-2",
+        "value": 222,
+      },
+    ]
+  }
+  label="test-label"
+  labelId="1"
+  notFoundText="Ничего не нашлось"
+  noticeText="test-notice-text"
+  placeholder="test-placeholder"
+  required={true}
+  type="combobox"
+>
+  <div
+    className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+    data-test="test"
+  >
+    <div
+      className="mfui-beta-select__inner"
+    >
+      <InputLabel
+        htmlFor="1"
+      >
+        <label
+          className="mfui-beta-input-label"
+          htmlFor="1"
+        >
+          test-label
+          <span
+            className="mfui-beta-select__require-mark"
+          >
+            *
+          </span>
+        </label>
+      </InputLabel>
+      <div
+        className="mfui-beta-select__control test-control-class"
+        onKeyDown={[Function]}
+      >
+        <input
+          className="mfui-beta-select__combobox"
+          onChange={[Function]}
+          onFocus={[Function]}
+          placeholder="test-placeholder"
+          type="text"
+          value=""
+        />
+        <div
+          className="mfui-beta-select__arrow-wrap"
+          onClick={[Function]}
+          tabIndex={1}
+        >
+          <span
+            className="mfui-beta-select__arrow"
+          />
+        </div>
+      </div>
+      <div
+        className="mfui-beta-select__list"
+      >
+        <div
+          className="mfui-beta-select__list-inner"
+        >
+          <div
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            key="0_111"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              n
+              e
+              w
+              -
+              t
+              e
+              s
+              t
+              -
+              n
+              a
+              m
+              e
+              -
+              1
+            </div>
+          </div>
+          <div
+            className="mfui-beta-select__list-item"
+            key="1_222"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-beta-select__item-title"
+            >
+              n
+              e
+              w
+              -
+              t
+              e
+              s
+              t
+              -
+              n
+              a
+              m
+              e
+              -
+              2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__text"
+    >
+      test-notice-text
+    </div>
+  </div>
+</Select>
+`;
+
 exports[`<Select /> snapshots renders with default props 1`] = `
 <Select
   isDisabled={false}
