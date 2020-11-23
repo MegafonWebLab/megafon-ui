@@ -1,0 +1,134 @@
+import { Playground, Props } from 'docz';
+import Carousel from '../Carousel';
+import { DemoSlide, blockStyle } from './Carousel.docz';
+import ContentArea from 'components/ContentArea/ContentArea';
+
+## Особенности использования на мобильных разрешениях
+На разрешении меньше 1024 отключаются стрелки и появляются "уши",
+для корректного отображения которых необходимо предоставить компоненту возможность растянуться на всю страницу.
+Чтобы основные слайды выравнивались по остальному контенту страницы,
+необходимо переопределить размеры внутренних отступов у компонента с помощью
+переданного в innerIndentsClass класса.
+По умолчанию используются гайдовые отступы для контента страницы (32px на 320-767 и 48px на 768-1023)
+
+``` javascript
+export const DemoSlide = ({ children }) => {
+    return (
+        <div
+            style={{
+                height: '200px',
+                backgroundColor: '#f3f3f3',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```
+
+## Базовое использование
+
+<Playground style={blockStyle}>
+    <ContentArea disableIndents="mobile-tablet">
+        <Carousel>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Тема навигации для использования на зеленом фоне
+
+<Playground style={blockStyle}>
+    <ContentArea disableIndents="mobile-tablet" outerBackgroundColor="green">
+        <div style={blockStyle}>
+            <Carousel navTheme="green">
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+                <DemoSlide>3</DemoSlide>
+                <DemoSlide>4</DemoSlide>
+                <DemoSlide>5</DemoSlide>
+                <DemoSlide>6</DemoSlide>
+            </Carousel>
+        </div>
+    </ContentArea>
+</Playground>
+
+## Прокрутка слайдов с зацикливанием
+
+<Playground style={blockStyle}>
+    <ContentArea disableIndents="mobile-tablet">
+        <Carousel loop>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Автоматическая прокрутка слайдов
+
+<Playground style={blockStyle}>
+    <ContentArea disableIndents="mobile-tablet">
+        <Carousel loop autoPlay>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Ширина слайдов по содержимому
+
+<Playground style={blockStyle}>
+    <ContentArea disableIndents="mobile-tablet">
+        <Carousel slidesSettings={{
+            0: { slidesPerView: 'auto', spaceBetween: 16 },
+            768: { slidesPerView: 'auto', spaceBetween: 20 },
+        }}>
+            <DemoSlide>111111</DemoSlide>
+            <DemoSlide>22222222</DemoSlide>
+            <DemoSlide>33333333333</DemoSlide>
+            <DemoSlide>444444</DemoSlide>
+            <DemoSlide>555555555555555555</DemoSlide>
+            <DemoSlide>66</DemoSlide>
+            <DemoSlide>7777777777777</DemoSlide>
+            <DemoSlide>888888888888</DemoSlide>
+            <DemoSlide>9</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Переопределение количества видимых слайдов
+
+<Playground style={blockStyle}>
+    <ContentArea disableIndents="mobile-tablet">
+        <Carousel slidesSettings={{
+            0: { slidesPerView: 1, spaceBetween: 16 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1280: { slidesPerView: 5, spaceBetween: 20 }
+        }}>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>

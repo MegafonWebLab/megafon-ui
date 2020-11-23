@@ -14,17 +14,23 @@ export type BackgroundColorType =
     | 'freshAsphalt'
     | 'fullBlack';
 
+const DisableIndents = {
+    MOBILE: 'mobile',
+    MOBILE_TABLET: 'mobile-tablet',
+    ALL: 'all',
+} as const;
+
+type DisableIndentsType = typeof DisableIndents[keyof typeof DisableIndents];
+
 export interface IConrentAreaProps {
-    /** Дополнительный класс корневого элемента */
-    className?: string;
-    /** Цвет заднего фона внешнего контейнера */
+    /** Фоновый цвет внешнего контейнера */
     outerBackgroundColor?: BackgroundColorType;
-    /** Цвет заднего фона внутреннего контейнера */
+    /** Фоновый цвет внутреннего контейнера */
     innerBackgroundColor?: BackgroundColorType;
-    /** Внутренние отступы */
-    innerPadding?: 'default' | 'none';
-    /** Внутренние отступы на мобильном разрешении */
-    mobileInnerPadding?: 'default' | 'none';
+    /** Отключение отступов на различных разрешениях */
+    disableIndents?: DisableIndentsType;
+    /** Сss класс для внешнего контейнера */
+    className?: string;
 }
 
 const BACKGROUND_COLORS = [
@@ -44,8 +50,7 @@ class ContentArea extends React.Component<IConrentAreaProps> {
     static propTypes = {
         outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
         innerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
-        innerPadding: PropTypes.oneOf(['default', 'none']),
-        mobileInnerPadding: PropTypes.oneOf(['default', 'none']),
+        disableIndents: PropTypes.oneOf(Object.values(DisableIndents)),
         children: PropTypes.node,
         className: PropTypes.string,
     };
@@ -53,16 +58,13 @@ class ContentArea extends React.Component<IConrentAreaProps> {
     static defaultProps = {
         outerBackgroundColor: 'transparent',
         innerBackgroundColor: 'transparent',
-        innerPadding: 'default',
-        mobileInnerPadding: 'default',
     };
 
     render() {
         const {
             outerBackgroundColor,
             innerBackgroundColor,
-            innerPadding,
-            mobileInnerPadding,
+            disableIndents,
             children,
             className,
         } = this.props;
@@ -71,8 +73,7 @@ class ContentArea extends React.Component<IConrentAreaProps> {
             <div className={cn({ color: outerBackgroundColor }, className)}>
                 <div
                     className={cn('inner', {
-                        padding: innerPadding,
-                        'mobile-padding': mobileInnerPadding,
+                        'disable-indents': disableIndents,
                         color: innerBackgroundColor,
                     })}
                 >

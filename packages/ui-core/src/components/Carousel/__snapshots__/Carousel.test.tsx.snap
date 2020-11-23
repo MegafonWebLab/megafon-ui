@@ -1,181 +1,138 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Carousel /> render tests should render component with all props 1`] = `
+exports[`<Carousel /> should render with default props 1`] = `
 <div
-  className="mfui-beta-carousel some-class"
+  className="mfui-beta-carousel mfui-beta-carousel_nav-theme_light"
 >
-  <Slider
-    afterChange={[Function]}
-    arrows={false}
-    beforeChange={[MockFunction]}
-    dots={true}
-    initialSlide={0}
-    onSwipe={[Function]}
-    responsive={
-      Array [
-        Object {
-          "breakpoint": 1000,
-          "settings": Object {
-            "arrows": false,
-            "slidesToShow": 3,
-          },
+  <Swiper
+    autoplay={false}
+    breakpoints={
+      Object {
+        "0": Object {
+          "slidesPerView": 1,
+          "spaceBetween": 16,
         },
-        Object {
-          "breakpoint": 900,
-          "settings": Object {
-            "arrows": true,
-            "slidesToShow": 2,
-          },
+        "1280": Object {
+          "slidesPerView": 4,
+          "spaceBetween": 20,
         },
-        Object {
-          "breakpoint": 860,
-          "settings": Object {
-            "arrows": false,
-            "slidesToShow": 1,
-          },
+        "768": Object {
+          "slidesPerView": 3,
+          "spaceBetween": 20,
         },
-      ]
+      }
     }
-    slidesToShow={4}
+    className="mfui-beta-carousel__swiper mfui-beta-carousel__swiper_default-inner-indents"
+    loop={false}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
+    onSwiper={[Function]}
+    pagination={
+      Object {
+        "clickable": true,
+      }
+    }
+    watchSlidesVisibility={true}
   >
-    <Link
-      key="1"
-    />
-    <Link
-      key="2"
-    />
-  </Slider>
+    <SwiperSlide
+      className="mfui-beta-carousel__slide"
+      key="0/.0"
+    >
+      <Component>
+        1
+      </Component>
+    </SwiperSlide>
+    <SwiperSlide
+      className="mfui-beta-carousel__slide"
+      key="1/.1"
+    >
+      <Component>
+        2
+      </Component>
+    </SwiperSlide>
+  </Swiper>
+  <NavArrow
+    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_prev"
+    disabled={true}
+    onClick={[Function]}
+    theme="purple"
+  />
+  <NavArrow
+    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_next"
+    disabled={false}
+    onClick={[Function]}
+    theme="purple"
+    view="next"
+  />
 </div>
 `;
 
-exports[`<Carousel /> render tests should render component with classes props 1`] = `
+exports[`<Carousel /> should render with props 1`] = `
 <div
-  className="mfui-beta-carousel some-class root-string"
+  className="mfui-beta-carousel mfui-beta-carousel_nav-theme_green class"
 >
-  <div
-    className="mfui-beta-carousel__arrows"
-  >
-    <CarouselArrow
-      className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_arrow-prev mfui-beta-carousel__arrow_disabled left-arrow-string"
-      onClick={[Function]}
-    />
-    <CarouselArrow
-      className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_arrow-next right-arrow-string"
-      onClick={[Function]}
-    />
-  </div>
-  <Slider
-    afterChange={[Function]}
-    arrows={false}
-    beforeChange={[MockFunction]}
-    className="slider-cn"
-    dots={true}
-    initialSlide={0}
-    onSwipe={[Function]}
-    responsive={
-      Array [
-        Object {
-          "breakpoint": 1000,
-          "settings": Object {
-            "arrows": false,
-            "slidesToShow": 3,
-          },
-        },
-        Object {
-          "breakpoint": 900,
-          "settings": Object {
-            "arrows": true,
-            "slidesToShow": 2,
-          },
-        },
-        Object {
-          "breakpoint": 860,
-          "settings": Object {
-            "arrows": false,
-            "slidesToShow": 1,
-          },
-        },
-      ]
+  <Swiper
+    autoplay={
+      Object {
+        "delay": 1000,
+        "disableOnInteraction": false,
+        "stopOnLastSlide": true,
+        "waitForTransition": false,
+      }
     }
-    slidesToShow={4}
-  >
-    <Link
-      key="1"
-    />
-    <Link
-      key="2"
-    />
-    <Link
-      key="3"
-    />
-    <Link
-      key="4"
-    />
-    <Link
-      key="5"
-    />
-  </Slider>
-</div>
-`;
-
-exports[`<Carousel /> render tests should render component with prev arrow active and next disabled 1`] = `
-<div
-  className="mfui-beta-carousel some-class"
->
-  <Slider
-    afterChange={[Function]}
-    arrows={false}
-    beforeChange={[MockFunction]}
-    dots={true}
-    initialSlide={0}
-    onSwipe={[Function]}
-    responsive={
-      Array [
-        Object {
-          "breakpoint": 1000,
-          "settings": Object {
-            "arrows": false,
-            "slidesToShow": 3,
-          },
+    breakpoints={
+      Object {
+        "768": Object {
+          "slidesPerView": "auto",
+          "spaceBetween": 2,
         },
-        Object {
-          "breakpoint": 900,
-          "settings": Object {
-            "arrows": true,
-            "slidesToShow": 2,
-          },
-        },
-        Object {
-          "breakpoint": 860,
-          "settings": Object {
-            "arrows": false,
-            "slidesToShow": 1,
-          },
-        },
-      ]
+      }
     }
-    slidesToShow={4}
+    className="mfui-beta-carousel__swiper inner-indents-class"
+    loop={true}
+    onFromEdge={[Function]}
+    onReachBeginning={[Function]}
+    onReachEnd={[Function]}
+    onSlideChange={[Function]}
+    onSwiper={[Function]}
+    pagination={
+      Object {
+        "clickable": true,
+      }
+    }
+    watchSlidesVisibility={true}
   >
-    <Link
-      key="1"
-    />
-    <Link
-      key="2"
-    />
-  </Slider>
-</div>
-`;
-
-exports[`<Carousel /> render tests should render component with required props 1`] = `
-<div
-  className="mfui-beta-carousel"
->
-  <Slider
-    afterChange={[Function]}
-    arrows={false}
-    onSwipe={[Function]}
-    responsive={Array []}
-    slidesToShow={2}
+    <SwiperSlide
+      className="mfui-beta-carousel__slide"
+      key="0/.0"
+    >
+      <Component>
+        1
+      </Component>
+    </SwiperSlide>
+    <SwiperSlide
+      className="mfui-beta-carousel__slide"
+      key="1/.1"
+    >
+      <Component>
+        2
+      </Component>
+    </SwiperSlide>
+  </Swiper>
+  <NavArrow
+    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_prev"
+    disabled={false}
+    onClick={[Function]}
+    theme="purple"
+  />
+  <NavArrow
+    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_next"
+    disabled={false}
+    onClick={[Function]}
+    theme="purple"
+    view="next"
   />
 </div>
 `;

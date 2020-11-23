@@ -14,15 +14,13 @@ exports[`<VideoBanner /> render component on desktop resolution only with requir
   >
     <ContentArea
       innerBackgroundColor="transparent"
-      innerPadding="default"
-      mobileInnerPadding="default"
       outerBackgroundColor="transparent"
     >
       <div
         className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
       >
         <div
-          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
         >
           <div
             className="mfui-beta-video-banner__wrapper"
@@ -45,8 +43,6 @@ exports[`<VideoBanner /> render component on mobile resolution only with require
 >
   <ContentArea
     innerBackgroundColor="transparent"
-    innerPadding="default"
-    mobileInnerPadding="default"
     outerBackgroundColor="transparent"
   >
     <div
@@ -83,15 +79,13 @@ exports[`<VideoBanner /> render with content 1`] = `
   >
     <ContentArea
       innerBackgroundColor="transparent"
-      innerPadding="default"
-      mobileInnerPadding="default"
       outerBackgroundColor="transparent"
     >
       <div
         className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
       >
         <div
-          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
         >
           <div
             className="mfui-beta-video-banner__wrapper"
@@ -177,15 +171,13 @@ exports[`<VideoBanner /> render with video 1`] = `
   >
     <ContentArea
       innerBackgroundColor="transparent"
-      innerPadding="default"
-      mobileInnerPadding="default"
       outerBackgroundColor="transparent"
     >
       <div
         className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
       >
         <div
-          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
         >
           <div
             className="mfui-beta-video-banner__wrapper"
@@ -239,15 +231,13 @@ exports[`<VideoBanner /> render with video and content 1`] = `
   >
     <ContentArea
       innerBackgroundColor="transparent"
-      innerPadding="default"
-      mobileInnerPadding="default"
       outerBackgroundColor="transparent"
     >
       <div
         className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
       >
         <div
-          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
         >
           <div
             className="mfui-beta-video-banner__wrapper"
@@ -343,15 +333,13 @@ exports[`<VideoBanner /> render with youtube video 1`] = `
   >
     <ContentArea
       innerBackgroundColor="transparent"
-      innerPadding="default"
-      mobileInnerPadding="default"
       outerBackgroundColor="transparent"
     >
       <div
         className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
       >
         <div
-          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
         >
           <div
             className="mfui-beta-video-banner__wrapper"

@@ -1,0 +1,11 @@
+export const mobileSmallStart = 0;
+export const mobileSmallEnd = 479;
+export const mobileMiddleStart = 480;
+export const mobileMiddleEnd = 767;
+export const mobileBigStart = 768;
+export const mobileBigEnd = 1023;
+export const desktopSmallStart = 1024;
+export const desktopSmallEnd = 1279;
+export const desktopMiddleStart = 1280;
+export const desktopMiddleEnd = 1439;
+export const desktopBigStart = 1440;

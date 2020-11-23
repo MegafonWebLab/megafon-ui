@@ -43,16 +43,6 @@
         margin: 0 auto;
         max-width: 1440px;
         box-sizing: content-box;
-    }
-
-    // mod: padding
-
-    &__inner_padding_none {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    &__inner_padding_default {
         padding-left: 80px;
         padding-right: 80px;
 
@@ -71,12 +61,25 @@
             padding-right: 64px;
         }
     }
+    // mod: disable-indents
 
-    &__inner_mobile-padding_none {
+    &__inner_disable-indents_mobile {
         @media @mobileSM {
             padding-left: 0;
             padding-right: 0;
         }
+    }
+
+    &__inner_disable-indents_mobile-tablet {
+        @media @mobile {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__inner_disable-indents_all {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     // mod: color
