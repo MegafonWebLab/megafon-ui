@@ -43,24 +43,25 @@
         margin: 0 auto;
         max-width: 1440px;
         box-sizing: content-box;
-        padding-left: 80px;
-        padding-right: 80px;
+        padding-left: @contentIndentDesktopMU;
+        padding-right: @contentIndentDesktopMU;
 
         @media @mobileSM {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: @contentIndentMobileSM;
+            padding-right: @contentIndentMobileSM;
         }
 
         @media @mobileB {
-            padding-left: 48px;
-            padding-right: 48px;
+            padding-left: @contentIndentMobileB;
+            padding-right: @contentIndentMobileB;
         }
 
         @media @desktopS {
-            padding-left: 64px;
-            padding-right: 64px;
+            padding-left: @contentIndentDesktopS;
+            padding-right: @contentIndentDesktopS;
         }
     }
+
     // mod: disable-indents
 
     &__inner_disable-indents_mobile {
