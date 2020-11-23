@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.47](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.46...@megafon/ui-core@2.0.0-beta.47) (2020-11-23)
+
+
+### Bug Fixes
+
+* **carousel:** fix arrows align ([6b648c1](https://github.com/MegafonWebLab/megafon-ui/commit/6b648c1dda947213eaae35ecf8f0421229d27eb7))
+
+
+
+
+
 # [2.0.0-beta.46](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.45...@megafon/ui-core@2.0.0-beta.46) (2020-11-23)
 
 
