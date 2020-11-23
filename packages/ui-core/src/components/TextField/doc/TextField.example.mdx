@@ -116,7 +116,15 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 
 <Playground>
     <TextFieldWrapper>
-        <TextField name="name" multiline placeholder="Multiline"/>
+        <TextField name="name" multiline placeholder="Multiline" maxLength={10} />
+    </TextFieldWrapper>
+</Playground>
+
+## Тип flexible с возможностью растягивать поле по высоте
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField name="name" multiline multilineType="flexible" placeholder="Multiline" />
     </TextFieldWrapper>
 </Playground>
 
@@ -138,12 +146,18 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 <Playground>
     <TextFieldWrapper>
         <TextField
-            label="Notice"
-            id="1"
             verification="error"
             noticeText="Name is required"
             multiline
         />
+    </TextFieldWrapper>
+</Playground>
+
+## Превышение заданного ограничения по вводу символов
+
+<Playground>
+    <TextFieldWrapper>
+        <TextField maxLength={10} multiline value="Иванов Иван Иванович" />
     </TextFieldWrapper>
 </Playground>
 

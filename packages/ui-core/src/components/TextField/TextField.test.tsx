@@ -271,5 +271,26 @@ describe('<TextField />', () => {
 
     describe('textarea', () => {
         testCommonCases(selectors.textarea, true);
+
+        it('should render flexible textarea', () => {
+            const wrapper = shallow(
+                <TextField {...commonProps} multiline multilineType="flexible" />
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with error because of max limit is exceeded', () => {
+            const value = '123456';
+            const event = { target: { value } };
+            const wrapper = shallow(
+                <TextField {...commonProps} multiline maxLength={4} />
+            );
+
+            wrapper.find('textarea').simulate('change', event);
+            wrapper.update();
+
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 });

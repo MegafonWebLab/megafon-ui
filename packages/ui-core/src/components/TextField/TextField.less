@@ -4,34 +4,38 @@
 
 @{b} {
     .fontFamily();
+    .commonFont();
     color: @freshAsphalt;
-    font-size: 15px;
-    line-height: 20px;
 
     &__field {
-        font-family: inherit;
+        .fontFamily();
+        .commonFont();
         position: relative;
         z-index: 1;
-        font-size: 15px;
         width: 100%;
         box-sizing: border-box;
-        height: 48px;
+        min-height: 48px;
         outline: none;
         cursor: text;
-        padding: 13px 20px 13px 20px;
-        line-height: 20px;
+        padding: 12px 20px 12px 20px;
         background-color: transparent;
         opacity: 1;
         border-radius: 0;
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        appearance: none;
         box-shadow: none;
-        overflow: auto;
         margin: 0;
 
         &_multiline {
             display: block;
-            height: 152px;
+            overflow: hidden;
+            min-height: 96px;
+        }
+
+        &_type_fixed {
+            resize: none;
+        }
+
+        &_type_flexible {
             resize: vertical;
         }
     }
