@@ -62,8 +62,8 @@
 
     &__arrow {
         position: absolute;
-        top: calc(~'50% - @{paginationIndent}');
-        transform: translateY(calc(~'- 50% - @{paginationIndent}'));
+        top: 50%;
+        transform: translateY(calc(~'-50% - @{paginationIndent} / 2'));
 
         @media @mobile {
             display: none;
@@ -153,10 +153,9 @@
 @paginationIndent: 40px;
 
 .arrowPosition(@direction) {
-    @{direction}: 100%;
-    margin-@{direction}: 12px;
+    @{direction}: calc(~'100% + 12px');
 
     @media @desktopMU {
-        margin-@{direction}: 20px;
+        @{direction}: calc(~'100% + 20px');
     }
 }
