@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.45](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.44...@megafon/ui-core@2.0.0-beta.45) (2020-11-23)
+
+
+### Code Refactoring
+
+* **carousel:** full rework component ([90e7d97](https://github.com/MegafonWebLab/megafon-ui/commit/90e7d97e46c7677213ecdb483a75ecb677e5f3c8))
+
+
+### Features
+
+* **carousel:** add opacity animation ([f548f11](https://github.com/MegafonWebLab/megafon-ui/commit/f548f1108225a5c10b36163c5c6855e437b93939))
+* **contentarea:** add new prop disableIndents ([2a9ff72](https://github.com/MegafonWebLab/megafon-ui/commit/2a9ff72d4b4988287cf6ba0390d6816ceda3bbb0))
+
+
+### BREAKING CHANGES
+
+* **contentarea:** remove innerPadding and mobileInnerPadding props
+* **carousel:** full changed api, logic and dependencies
+
+
+
+
+
 # [2.0.0-beta.44](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.43...@megafon/ui-core@2.0.0-beta.44) (2020-11-20)
 
 

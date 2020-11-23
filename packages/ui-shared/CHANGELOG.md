@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.48](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.47...@megafon/ui-shared@2.0.0-beta.48) (2020-11-23)
+
+
+### Bug Fixes
+
+* **videobanner:** update snaphots after rebase ([af00664](https://github.com/MegafonWebLab/megafon-ui/commit/af00664a96e12949c6259fc3c2e8cbc3ace72972))
+
+
+
+
+
 # [2.0.0-beta.47](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.46...@megafon/ui-shared@2.0.0-beta.47) (2020-11-20)
 
 **Note:** Version bump only for package @megafon/ui-shared
