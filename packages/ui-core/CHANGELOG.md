@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.46](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.45...@megafon/ui-core@2.0.0-beta.46) (2020-11-23)
+
+
+### Features
+
+* **tabs:** add new component ([5d9c6bc](https://github.com/MegafonWebLab/megafon-ui/commit/5d9c6bcd8a9951dda44f646e005e48329a99fba9))
+
+
+
+
+
 # [2.0.0-beta.45](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.44...@megafon/ui-core@2.0.0-beta.45) (2020-11-23)
 
 
