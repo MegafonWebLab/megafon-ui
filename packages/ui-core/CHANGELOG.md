@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.48](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.47...@megafon/ui-core@2.0.0-beta.48) (2020-11-24)
+
+
+### Bug Fixes
+
+* **calendar:** added effect to change state if props changed ([a7ec076](https://github.com/MegafonWebLab/megafon-ui/commit/a7ec0762f0521898838871b6698d6408ca2a55d2))
+
+
+
+
+
 # [2.0.0-beta.47](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.46...@megafon/ui-core@2.0.0-beta.47) (2020-11-23)
 
 
