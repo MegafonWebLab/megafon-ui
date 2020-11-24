@@ -75,6 +75,9 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
 
 ```javascript
 export const DemoCalendarWithDatesChange = ({ children }) => {
+    const startDate = new Date(2020, 1, 7);
+    const endDate = new Date(2020, 1, 19);
+    
     const [period, setPeriod] = React.useState({ periodStart: startDate, periodEnd: endDate });
 
     const onChange = (firstDate, secondDate) => () =>
