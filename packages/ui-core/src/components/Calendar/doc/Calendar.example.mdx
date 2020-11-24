@@ -1,6 +1,11 @@
 import { Playground } from 'docz';
 import Calendar from '../Calendar';
-import { DemoCalendarWithHandleChange, minBookingDate, maxBookingDate } from './Calendar.docz';
+import {
+    DemoCalendarWithHandleChange,
+    DemoCalendarWithDatesChange,
+    minBookingDate,
+    maxBookingDate,
+} from './Calendar.docz';
 
 ## Базовое использование
 
@@ -64,4 +69,44 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
             <Calendar onChange={onChange} startDate={startDate} endDate={endDate} />
         }
     </DemoCalendarWithHandleChange>
+</Playground>
+
+## Изменение дат с помощью получения новых в свойствах
+
+```javascript
+export const DemoCalendarWithDatesChange = ({ children }) => {
+    const startDate = new Date(2020, 1, 7);
+    const endDate = new Date(2020, 1, 19);
+    
+    const [period, setPeriod] = React.useState({ periodStart: startDate, periodEnd: endDate });
+
+    const onChange = (firstDate, secondDate) => () =>
+        setPeriod({ periodStart: firstDate, periodEnd: secondDate });
+
+    const { periodEnd, periodStart } = period;
+
+    return (
+        <>
+            {children({ startDate: periodStart, endDate: periodEnd })}
+            <div>
+                <div style={{ display: 'inline-block', marginRight: '12px' }}>
+                    <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 7))}>
+                        Первая неделя
+                    </Button>
+                </div>
+                <Button onClick={onChange(new Date(2020, 1, 23), new Date(2020, 1, 29))}>
+                    Последняя неделя
+                </Button>
+            </div>
+        </>
+    );
+};
+```
+
+<Playground style={{ textAlign: 'center' }}>
+    <DemoCalendarWithDatesChange>
+        {({ startDate, endDate }) =>
+            <Calendar startDate={startDate} endDate={endDate} />
+        }
+    </DemoCalendarWithDatesChange>
 </Playground>

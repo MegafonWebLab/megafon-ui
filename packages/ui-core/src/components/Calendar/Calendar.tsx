@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect } from 'react';
+import React, { ReactNode, useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import './Calendar.less';
 import cnCreate from 'utils/cnCreate';
@@ -55,16 +55,24 @@ const Calendar: React.FC<ICalendarProps> = ({
     minBookingDate,
     maxBookingDate,
 }) => {
-    const isInitialDatesEqual = startDate && endDate && isEqual(startDate, endDate);
-    const isStartFocus = !startDate || (endDate && !isInitialDatesEqual);
+    const calendarStateFromProps: ICalendarState = useMemo(() => {
+        const isInitialDatesEqual = startDate && endDate && isEqual(startDate, endDate);
+        const isStartFocus = !startDate || (endDate && !isInitialDatesEqual);
 
-    const [calendarState, setCalendarState] = useState<ICalendarState>({
-        startDate,
-        endDate: isInitialDatesEqual || isSingleDate ? null : endDate,
-        focusedInput: isStartFocus ? START_DATE : END_DATE,
-    });
+        return {
+            startDate,
+            endDate: isInitialDatesEqual || isSingleDate ? null : endDate,
+            focusedInput: isStartFocus ? START_DATE : END_DATE,
+        };
+    }, [startDate, endDate, isSingleDate]);
+
+    const [calendarState, setCalendarState] = useState<ICalendarState>(calendarStateFromProps);
 
     const { startDate: stateStartDate, endDate: stateEndDate, focusedInput: stateFocusedInput } = calendarState;
+
+    useEffect(() => {
+        setCalendarState(calendarStateFromProps);
+    }, [calendarStateFromProps]);
 
     useEffect(() => {
         onChange && onChange(stateStartDate, stateEndDate);
