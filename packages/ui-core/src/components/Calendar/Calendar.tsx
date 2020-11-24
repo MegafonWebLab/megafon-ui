@@ -58,13 +58,17 @@ const Calendar: React.FC<ICalendarProps> = ({
     const isInitialDatesEqual = startDate && endDate && isEqual(startDate, endDate);
     const isStartFocus = !startDate || (endDate && !isInitialDatesEqual);
 
-    const [calendarState, setCalendarState] = useState<ICalendarState>({
+    const getCalendarState = (): ICalendarState => ({
         startDate,
         endDate: isInitialDatesEqual || isSingleDate ? null : endDate,
         focusedInput: isStartFocus ? START_DATE : END_DATE,
     });
 
+    const [calendarState, setCalendarState] = useState<ICalendarState>(getCalendarState());
+
     const { startDate: stateStartDate, endDate: stateEndDate, focusedInput: stateFocusedInput } = calendarState;
+
+    useEffect(() => setCalendarState(getCalendarState()), [startDate, endDate]);
 
     useEffect(() => {
         onChange && onChange(stateStartDate, stateEndDate);

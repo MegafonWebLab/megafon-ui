@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { format } from 'date-fns';
 import ruLocale from 'date-fns/locale/ru';
+import Button from 'components/Button/Button';
 
 const formatDate = (data: Date, pattern: string, locale = ruLocale) => format(data, pattern, { locale });
 
@@ -27,6 +28,31 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
                 {to ? `Выбран диапазон дат с ${from} до ${to}` : `Выбрана начальная дата ${from}`}
             </h3>
             {children({ onChange, startDate, endDate })}
+        </>
+    );
+};
+
+export const DemoCalendarWithDatesChange = ({ children }) => {
+    const [period, setPeriod] = React.useState({ periodStart: startDate, periodEnd: endDate });
+
+    const onChange = (firstDate, secondDate) => () =>
+        setPeriod({ periodStart: firstDate, periodEnd: secondDate });
+
+    const { periodEnd, periodStart } = period;
+
+    return (
+        <>
+            {children({ startDate: periodStart, endDate: periodEnd })}
+            <div>
+                <div style={{ display: 'inline-block', marginRight: '12px' }}>
+                    <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 7))}>
+                        Первая неделя
+                    </Button>
+                </div>
+                <Button onClick={onChange(new Date(2020, 1, 23), new Date(2020, 1, 29))}>
+                    Последняя неделя
+                </Button>
+            </div>
         </>
     );
 };
