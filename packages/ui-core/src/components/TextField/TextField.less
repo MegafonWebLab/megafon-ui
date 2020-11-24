@@ -10,6 +10,7 @@
     &__field {
         .fontFamily();
         .commonFont();
+        display: block;
         position: relative;
         z-index: 1;
         width: 100%;
@@ -27,7 +28,6 @@
 
         &_multiline {
             display: block;
-            overflow: hidden;
             min-height: 96px;
         }
 
@@ -37,6 +37,11 @@
 
         &_type_flexible {
             resize: vertical;
+            overflow: hidden;
+        }
+
+        &_scrolling {
+            overflow: auto;
         }
     }
 
@@ -120,6 +125,22 @@
         line-height: 0;
         color: @fury;
         margin-left: 1px;
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__counter {
+        opacity: 0.5;
+        margin-top: 4px;
+        margin-left: auto;
+    }
+
+    &__counter_error {
+        color: @fury;
+        opacity: 1;
     }
 
     //mod theme:

@@ -1,207 +1,156 @@
 
 import { Playground } from 'docz';
 import TextField from '../TextField';
-import { TextFieldWrapper } from './TextField.docz';
+import { wrapperDefaultWidthStyle, wrapperWideWidthStyle } from './TextField.docz';
 import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 
-<Playground>
-    <TextFieldWrapper>
-        <TextField name="name" />
-    </TextFieldWrapper>
-</Playground>
-
-## Обязательное поле
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField name="name" required label="Телефон" />
-    </TextFieldWrapper>
-</Playground>
-
-## Маска телефона
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            placeholder="+7 (999) 999-99-99"
-            mask="+7 (999) 999-99-99"
-            maskchar="_"
-            label="Телефон"
-            id="2"
-            inputMode="numeric"
-            classes={{input: 'parent__inputClass'}}
-        />
-    </TextFieldWrapper>
-</Playground>
-
-## Ошибка
-Клик по иконки очищает поле по умолчанию. Если установлена иконка и `onCustomIconClick` то очищение перестает работать.
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            verification="error"
-            noticeText="Name is required"
-        />
-    </TextFieldWrapper>
-</Playground>
-
-## Иконка и обработчик
-<Playground>
-    <TextFieldWrapper width={550}>
-        <TextField
-            verification="error"
-            noticeText="Error notice"
-            customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
-            onCustomIconClick={ () => alert('Custom click handler') }
-        />
-        <TextField
-            customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
-            onCustomIconClick={ () => alert('Custom click handler') }
-        />
-     </TextFieldWrapper>
-</Playground>
-
-## Валидация
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField verification="valid" noticeText="You can write that field value is correct"/>
-    </TextFieldWrapper>
-</Playground>
-
-## Подпись снизу
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField noticeText="Comment" />
-    </TextFieldWrapper>
-</Playground>
-
-## Максимальное количество текста
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField maxLength={10} />
-    </TextFieldWrapper>
-</Playground>
-
-## Запрещенное взаимодействие
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField disabled={true} />
-    </TextFieldWrapper>
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField name="name" />
 </Playground>
 
 ## Тип с паролем
 
-<Playground>
-    <TextFieldWrapper>
-        <TextField name="name" placeholder="password" type="password" />
-    </TextFieldWrapper>
-</Playground>
-
-## Внешнее состояние
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField value='initial value' />
-    </TextFieldWrapper>
-</Playground>
-
-##
-# Textarea
-Пропс **multiline** выставленный в значение **true** изменяет компонент в `textarea`.
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField name="name" multiline placeholder="Multiline" maxLength={10} />
-    </TextFieldWrapper>
-</Playground>
-
-## Тип flexible с возможностью растягивать поле по высоте
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField name="name" multiline multilineType="flexible" placeholder="Multiline" />
-    </TextFieldWrapper>
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField name="name" placeholder="password" type="password" />
 </Playground>
 
 ## Обязательное поле
 
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            label="Required field"
-            multiline
-            required
-            classes={{input: 'parent__inputClass'}}
-        />
-    </TextFieldWrapper>
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField name="name" required label="Телефон" />
 </Playground>
 
-## Ошибка
+## Маска телефона
 
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            verification="error"
-            noticeText="Name is required"
-            multiline
-        />
-    </TextFieldWrapper>
-</Playground>
-
-## Превышение заданного ограничения по вводу символов
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField maxLength={10} multiline value="Иванов Иван Иванович" />
-    </TextFieldWrapper>
-</Playground>
-
-## Валидация
-
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            verification="valid"
-            multiline
-        />
-    </TextFieldWrapper>
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField
+        placeholder="+7 (999) 999-99-99"
+        mask="+7 (999) 999-99-99"
+        maskchar="_"
+        label="Телефон"
+        id="2"
+        inputMode="numeric"
+        classes={{input: 'parent__inputClass'}}
+    />
 </Playground>
 
 ## Подпись снизу
 
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            noticeText="Comment"
-            multiline
-        />
-    </TextFieldWrapper>
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField noticeText="Comment" />
 </Playground>
 
-## Успешная валидация
+## Валидация
+Клик по иконке очищает поле по умолчанию. Если установлены иконка и `onCustomIconClick`, то очищение перестает работать.
 
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            verification="valid"
-            noticeText="Field passed validation"
-            multiline
-        />
-    </TextFieldWrapper>
+<Playground style={wrapperWideWidthStyle}>
+    <TextField
+        verification="error"
+        noticeText="Name is required"
+    />
+    <TextField verification="valid" noticeText="You can write that field value is correct" />
+</Playground>
+
+## Иконка и обработчик
+<Playground style={wrapperWideWidthStyle}>
+    <TextField
+        verification="error"
+        noticeText="Error notice"
+        customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
+        onCustomIconClick={ () => alert('Custom click handler') }
+    />
+    <TextField
+        customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
+        onCustomIconClick={ () => alert('Custom click handler') }
+    />
+</Playground>
+
+## Максимальное количество текста
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField maxLength={10} />
 </Playground>
 
 ## Запрещенное взаимодействие
 
-<Playground>
-    <TextFieldWrapper>
-        <TextField
-            disabled
-            multiline
-        />
-    </TextFieldWrapper>
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField disabled={true} />
+</Playground>
+
+## Внешнее состояние
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField value='initial value' />
+</Playground>
+
+##
+# Textarea
+Пропс **textarea** выставленный в значение **true** изменяет компонент в `textarea`.
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField name="name" textarea placeholder="placeholder" />
+</Playground>
+
+## Тип flexible с возможностью растягивать поле по высоте
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField name="name" textarea="flexible" />
+</Playground>
+
+## Обязательное поле
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField
+        label="Required field"
+        textarea
+        required
+        classes={{input: 'parent__inputClass'}}
+    />
+</Playground>
+
+## Подпись снизу
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField
+        noticeText="Comment"
+        textarea
+    />
+</Playground>
+
+## Валидация
+
+<Playground style={wrapperWideWidthStyle}>
+    <TextField
+        verification="error"
+        noticeText="Name is required"
+        textarea
+    />
+    <TextField
+        verification="valid"
+        noticeText="Field passed validation"
+        textarea
+    />
+</Playground>
+
+## Максимальное количество текста
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField maxLength={10} textarea />
+</Playground>
+
+## Счетчик введенных символов
+При превышении переданного количества поле становится невалидным.
+
+<Playground style={wrapperWideWidthStyle}>
+    <TextField symbolCounter={10} textarea value="Иванов Ива" />
+    <TextField symbolCounter={10} textarea value="Иванов Иван Иванович" />
+</Playground>
+
+## Запрещенное взаимодействие
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField
+        disabled
+        textarea
+    />
 </Playground>
