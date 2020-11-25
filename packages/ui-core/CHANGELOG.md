@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.50](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.49...@megafon/ui-core@2.0.0-beta.50) (2020-11-25)
+
+
+### Bug Fixes
+
+* **breakpoints:** import files from constants is fixed ([8e3baa5](https://github.com/MegafonWebLab/megafon-ui/commit/8e3baa55eed164c3732d59bac8da76bd04a39dfb))
+
+
+
+
+
 # [2.0.0-beta.49](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.48...@megafon/ui-core@2.0.0-beta.49) (2020-11-25)
 
 

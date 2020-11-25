@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.53](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.52...@megafon/ui-shared@2.0.0-beta.53) (2020-11-25)
+
+
+### Bug Fixes
+
+* **breakpoints:** import files from constants is fixed ([8e3baa5](https://github.com/MegafonWebLab/megafon-ui/commit/8e3baa55eed164c3732d59bac8da76bd04a39dfb))
+
+
+
+
+
 # [2.0.0-beta.52](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.51...@megafon/ui-shared@2.0.0-beta.52) (2020-11-25)
 
 **Note:** Version bump only for package @megafon/ui-shared
