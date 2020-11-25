@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.51](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.50...@megafon/ui-core@2.0.0-beta.51) (2020-11-25)
+
+
+### Bug Fixes
+
+* **calendar:** changed date transform pattern for month ([8fc7933](https://github.com/MegafonWebLab/megafon-ui/commit/8fc79336235ecfdfc72a491cda336b0af40505b9))
+
+
+
+
+
 # [2.0.0-beta.50](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.49...@megafon/ui-core@2.0.0-beta.50) (2020-11-25)
 
 
