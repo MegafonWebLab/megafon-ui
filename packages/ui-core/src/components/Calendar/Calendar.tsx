@@ -43,7 +43,7 @@ export interface ICalendarProps {
 
 const weekdayLabelFormat = (date: Date): string => formatDate(date, 'EEEEEE');
 const dayLabelFormat = (date: Date): string => formatDate(date, 'd');
-const monthLabelFormat = (date: Date): string => formatDate(date, 'MMMM');
+const monthLabelFormat = (date: Date): string => formatDate(date, 'LLLL');
 
 const cn = cnCreate('mfui-beta-calendar');
 const Calendar: React.FC<ICalendarProps> = ({

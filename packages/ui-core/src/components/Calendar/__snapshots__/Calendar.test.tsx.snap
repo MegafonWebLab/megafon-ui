@@ -10,7 +10,7 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
     isNextMonthDisabled={true}
     isPrevMonthDisabled={true}
     key="2020-1"
-    monthLabel="февраля"
+    monthLabel="февраль"
     weekdayLabels={
       Array [
         "пн",
