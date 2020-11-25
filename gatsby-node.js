@@ -35,7 +35,9 @@ exports.onPreInit = () => {
 
     const components = glob.sync('../packages/ui-core/src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
     const utils = glob.sync('../packages/ui-core/src/utils/*.ts', { ignore: testsReg });
-    fs.writeFile(indexTs, generateIndex([...components, ...utils]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
+    const constants = glob.sync('../packages/ui-core/src/constants/*.ts');
+
+    fs.writeFile(indexTs, generateIndex([...components, ...utils, ...constants]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
 }
 
 exports.onCreateWebpackConfig = args => {
