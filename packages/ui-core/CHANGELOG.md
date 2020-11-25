@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.49](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.48...@megafon/ui-core@2.0.0-beta.49) (2020-11-25)
+
+
+### Bug Fixes
+
+* **select:** default font weight added ([126389a](https://github.com/MegafonWebLab/megafon-ui/commit/126389a85b937e7eea42440de0cbd311d3710d62))
+
+
+
+
+
 # [2.0.0-beta.48](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.47...@megafon/ui-core@2.0.0-beta.48) (2020-11-24)
 
 
