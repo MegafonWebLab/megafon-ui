@@ -77,7 +77,8 @@ const babelEsConfig = {
             root: ['./src'],
             alias: {
                 utils: './src/utils',
-                components: './src/components'
+                components: './src/components',
+                constants: './src/constants'
             }
         }],
     ]
@@ -154,7 +155,9 @@ gulp.task('ts', () => {
 gulp.task('main', done => {
     const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
     const utils = glob.sync('src/utils/*.ts', { ignore: testsReg });
-    fs.writeFile(indexTs, generateIndex([...components, ...utils]), done);
+    const constants = glob.sync('src/constants/*.ts');
+
+    fs.writeFile(indexTs, generateIndex([...components, ...utils, ...constants]), done);
 });
 
 gulp.task('build', gulp.series(

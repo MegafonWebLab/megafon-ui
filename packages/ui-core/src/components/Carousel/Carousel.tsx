@@ -6,7 +6,7 @@ import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
-import { desktopMiddleStart, mobileBigStart, mobileSmallStart } from 'constants/breakpoints';
+import breakpoints from 'constants/breakpoints';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -61,15 +61,15 @@ const getAutoPlayConfig = (delay: number) => ({
 });
 
 const defaultSlidesSettings: SlidesSettingsType = {
-    [mobileSmallStart]: {
+    [breakpoints.mobileSmallStart]: {
         slidesPerView: 1,
         spaceBetween: 16,
     },
-    [mobileBigStart]: {
+    [breakpoints.mobileBigStart]: {
         slidesPerView: 3,
         spaceBetween: 20,
     },
-    [desktopMiddleStart]: {
+    [breakpoints.desktopMiddleStart]: {
         slidesPerView: 4,
         spaceBetween: 20,
     },

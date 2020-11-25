@@ -2,8 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
-import { Button, cnCreate, ContentArea, Header, Paragraph } from '@megafon/ui-core';
-import { MOBILE_BIG_END } from '../../constants/breakpoints';
+import { Button, cnCreate, ContentArea, Header, Paragraph, breakpoints } from '@megafon/ui-core';
 
 const THROTTLE_TIME = 750;
 export const VideoTypes = {
@@ -98,7 +97,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
 
     React.useEffect(() => {
         const resizeHandler = () =>
-            window.innerWidth <= MOBILE_BIG_END ? setIsMobile(true) : setIsMobile(false);
+            window.innerWidth <= breakpoints.mobileBigEnd ? setIsMobile(true) : setIsMobile(false);
         const resizeHandlerThrottled = throttle(resizeHandler, THROTTLE_TIME);
 
         resizeHandler();
