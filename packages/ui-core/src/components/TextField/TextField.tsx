@@ -209,11 +209,8 @@ const TextField: React.FC<ITextFieldProps> = ({
         onBlur && onBlur(e);
     }, [onBlur]);
 
-    const getTextareaMod = () => (
-        textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED
-    );
-
-    const isScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
+    const textareaType = textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED;
+    const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
 
     const commonParams = {
         disabled,
@@ -244,8 +241,8 @@ const TextField: React.FC<ITextFieldProps> = ({
     const textareaParams = {
         ...commonParams,
         className: cn('field', {
-            type: getTextareaMod(),
-            scrolling: isScrolling,
+            type: textareaType,
+            scrolling: hasScrolling,
         }, input),
     };
 
