@@ -51,7 +51,7 @@ export interface IButtonProps extends IDataAttributes {
     href?: string;
     /** Target - свойство тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Rel - свойство тега <a> */
+    /** Rel - атрибут тега <a> */
     rel?: string;
     /** Поведение кнопки */
     actionType?: 'button' | 'reset' | 'submit';
@@ -178,7 +178,6 @@ const Button: React.FC<IButtonProps> = props => {
         if (target && target !== '_self') {
             return 'noreferrer noopener';
         }
-
     };
 
     return (
