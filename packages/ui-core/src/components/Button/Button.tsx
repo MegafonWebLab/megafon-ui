@@ -75,7 +75,7 @@ export interface IButtonProps extends IDataAttributes {
     disabled?: boolean;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
-    /** Reference на элемент */
+    /** Ссылка на элемент */
     getRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;
 }
 
