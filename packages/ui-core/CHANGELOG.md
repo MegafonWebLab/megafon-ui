@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.52](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.51...@megafon/ui-core@2.0.0-beta.52) (2020-11-27)
+
+
+### Bug Fixes
+
+* **textfield:** added fixes and symbol counter, removed textarea autoheight increase after resize ([3bbdf7a](https://github.com/MegafonWebLab/megafon-ui/commit/3bbdf7a8bdc193b8a5455e7107453d851b6cc90a))
+
+
+### Features
+
+* **textfield:** added textarea flexible functional, symbol limit view ([d378b8b](https://github.com/MegafonWebLab/megafon-ui/commit/d378b8be96a20940102598007a94f07288dbc898))
+
+
+### BREAKING CHANGES
+
+* **textfield:** added prop symbolCounter, replaced prop multiline to textarea with fixed and
+flexible views
+
+
+
+
+
 # [2.0.0-beta.51](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.50...@megafon/ui-core@2.0.0-beta.51) (2020-11-25)
 
 
