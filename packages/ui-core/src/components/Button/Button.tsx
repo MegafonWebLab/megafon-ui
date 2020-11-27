@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { LegacyRef } from 'react';
 import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Button.less';
@@ -75,6 +75,8 @@ export interface IButtonProps extends IDataAttributes {
     disabled?: boolean;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Reference на элемент */
+    getRef?: LegacyRef<any>;
 }
 
 const getLoaderSize = (size: string): PreloaderSizesType => (
@@ -108,6 +110,7 @@ const Button: React.FC<IButtonProps> = props => {
         children,
         onClick,
         dataAttrs,
+        getRef,
     } = props;
 
     const isTouch: boolean = React.useMemo(() => detectTouch(), []);
@@ -184,6 +187,7 @@ const Button: React.FC<IButtonProps> = props => {
             type={href ? undefined : actionType}
             onClick={handleClick}
             disabled={!href && disabled}
+            ref={getRef}
         >
             <div className={cn('inner', innerClassName)}>
                 {!showLoader && children && renderChildren}
