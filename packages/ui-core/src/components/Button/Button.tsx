@@ -73,10 +73,10 @@ export interface IButtonProps extends IDataAttributes {
     iconLeft?: JSX.Element;
     /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
-    /** Обработчик клика по кнопке */
-    onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Ссылка на элемент */
     getRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;
+    /** Обработчик клика по кнопке */
+    onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const getLoaderSize = (size: string): PreloaderSizesType => (
