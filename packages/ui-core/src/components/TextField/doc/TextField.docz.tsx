@@ -1,5 +1,4 @@
-import * as React from 'react';
+const commonStyle = {display: 'flex', justifyContent: 'space-between'};
 
-export const TextFieldWrapper: React.FC<{ width?: number }> = ({ children, width = 250}) => (
-    <div style={{ width, display: 'flex', justifyContent: 'space-between' }}>{children}</div>
-);
+export const wrapperDefaultWidthStyle = {...commonStyle, width: '250px'};
+export const wrapperWideWidthStyle = {...commonStyle, width: '550px'};

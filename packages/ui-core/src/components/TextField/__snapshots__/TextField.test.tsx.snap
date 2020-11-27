@@ -31,6 +31,9 @@ exports[`<TextField /> input should render with hidden password 1`] = `
       />
     </div>
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -40,13 +43,13 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
   hideIcon={false}
   id="id"
   maxLength={4}
-  multiline={false}
   name="name"
   onBlur={[MockFunction]}
   onFocus={[MockFunction]}
   onKeyUp={[MockFunction]}
   placeholder="placeholder"
   required={true}
+  textarea={false}
   theme="default"
   type="text"
 >
@@ -76,6 +79,9 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
         type="text"
       />
     </div>
+    <div
+      className="mfui-beta-text-field__wrap"
+    />
   </div>
 </TextField>
 `;
@@ -103,6 +109,9 @@ exports[`<TextField /> input should render with inputnode 1`] = `
       type="text"
     />
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -131,6 +140,9 @@ exports[`<TextField /> input should render with mask 1`] = `
       type="text"
     />
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -156,6 +168,9 @@ exports[`<TextField /> input should render with type 1`] = `
       type="tel"
     />
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -182,6 +197,9 @@ exports[`<TextField /> input should render with value 1`] = `
       value="value"
     />
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -191,13 +209,13 @@ exports[`<TextField /> input should render with value after updating prop 1`] = 
   hideIcon={false}
   id="id"
   maxLength={4}
-  multiline={false}
   name="name"
   onBlur={[MockFunction]}
   onFocus={[MockFunction]}
   onKeyUp={[MockFunction]}
   placeholder="placeholder"
   required={true}
+  textarea={false}
   theme="default"
   type="text"
   value="newValue"
@@ -224,6 +242,9 @@ exports[`<TextField /> input should render with value after updating prop 1`] = 
         value="value"
       />
     </div>
+    <div
+      className="mfui-beta-text-field__wrap"
+    />
   </div>
 </TextField>
 `;
@@ -259,6 +280,9 @@ exports[`<TextField /> input should render with visible password 1`] = `
       />
     </div>
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -268,13 +292,13 @@ exports[`<TextField /> input should render without ie placeholder when value is 
   hideIcon={false}
   id="id"
   maxLength={4}
-  multiline={false}
   name="name"
   onBlur={[MockFunction]}
   onFocus={[MockFunction]}
   onKeyUp={[MockFunction]}
   placeholder="placeholder"
   required={true}
+  textarea={false}
   theme="default"
   type="text"
   value="value"
@@ -301,6 +325,9 @@ exports[`<TextField /> input should render without ie placeholder when value is 
         value="value"
       />
     </div>
+    <div
+      className="mfui-beta-text-field__wrap"
+    />
   </div>
 </TextField>
 `;
@@ -327,6 +354,9 @@ exports[`<TextField /> input should render without no-touch class 1`] = `
       type="text"
     />
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -358,9 +388,13 @@ exports[`<TextField /> should render with common props 1`] = `
     />
   </div>
   <div
-    className="mfui-beta-text-field__text"
+    className="mfui-beta-text-field__wrap"
   >
-    noticeText
+    <div
+      className="mfui-beta-text-field__text"
+    >
+      noticeText
+    </div>
   </div>
 </div>
 `;
@@ -399,9 +433,13 @@ exports[`<TextField /> should render with custom icon 1`] = `
     </div>
   </div>
   <div
-    className="mfui-beta-text-field__text"
+    className="mfui-beta-text-field__wrap"
   >
-    noticeText
+    <div
+      className="mfui-beta-text-field__text"
+    >
+      noticeText
+    </div>
   </div>
 </div>
 `;
@@ -421,6 +459,9 @@ exports[`<TextField /> should render with default props 1`] = `
       type="text"
     />
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -460,9 +501,13 @@ exports[`<TextField /> should render with error 1`] = `
     </div>
   </div>
   <div
-    className="mfui-beta-text-field__text mfui-beta-text-field__text_error"
+    className="mfui-beta-text-field__wrap"
   >
-    noticeText
+    <div
+      className="mfui-beta-text-field__text mfui-beta-text-field__text_error"
+    >
+      noticeText
+    </div>
   </div>
 </div>
 `;
@@ -495,9 +540,13 @@ exports[`<TextField /> should render with hidden icon 1`] = `
     />
   </div>
   <div
-    className="mfui-beta-text-field__text"
+    className="mfui-beta-text-field__wrap"
   >
-    noticeText
+    <div
+      className="mfui-beta-text-field__text"
+    >
+      noticeText
+    </div>
   </div>
 </div>
 `;
@@ -538,9 +587,153 @@ exports[`<TextField /> should render with valid 1`] = `
     </div>
   </div>
   <div
-    className="mfui-beta-text-field__text mfui-beta-text-field__text_success"
+    className="mfui-beta-text-field__wrap"
   >
-    noticeText
+    <div
+      className="mfui-beta-text-field__text mfui-beta-text-field__text_success"
+    >
+      noticeText
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> textarea should render fixed textarea 1`] = `
+<div
+  className="mfui-beta-text-field mfui-beta-text-field_theme_white customClass"
+>
+  <InputLabel
+    htmlFor="id"
+  >
+    label
+    <span
+      className="mfui-beta-text-field__require-mark"
+    >
+      *
+    </span>
+  </InputLabel>
+  <div
+    className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
+  >
+    <textarea
+      className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
+      id="id"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      required={true}
+      style={
+        Object {
+          "height": "96px",
+        }
+      }
+    />
+  </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  >
+    <div
+      className="mfui-beta-text-field__text"
+    >
+      noticeText
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> textarea should render flexible textarea 1`] = `
+<div
+  className="mfui-beta-text-field mfui-beta-text-field_theme_white customClass"
+>
+  <InputLabel
+    htmlFor="id"
+  >
+    label
+    <span
+      className="mfui-beta-text-field__require-mark"
+    >
+      *
+    </span>
+  </InputLabel>
+  <div
+    className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
+  >
+    <textarea
+      className="mfui-beta-text-field__field mfui-beta-text-field__field_type_flexible"
+      id="id"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      required={true}
+      style={
+        Object {
+          "height": "96px",
+        }
+      }
+    />
+  </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  >
+    <div
+      className="mfui-beta-text-field__text"
+    >
+      noticeText
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> textarea should render with error because of max limit is exceeded 1`] = `
+<div
+  className="mfui-beta-text-field mfui-beta-text-field_theme_white mfui-beta-text-field_error customClass"
+>
+  <InputLabel
+    htmlFor="id"
+  >
+    label
+    <span
+      className="mfui-beta-text-field__require-mark"
+    >
+      *
+    </span>
+  </InputLabel>
+  <div
+    className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
+  >
+    <textarea
+      className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
+      id="id"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      required={true}
+      style={
+        Object {
+          "height": "96px",
+        }
+      }
+      value="123456"
+    />
+  </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  >
+    <div
+      className="mfui-beta-text-field__text"
+    >
+      noticeText
+    </div>
+    <Paragraph
+      className="mfui-beta-text-field__counter mfui-beta-text-field__counter_error"
+      hasMargin={false}
+      size="small"
+    >
+      6/4
+    </Paragraph>
   </div>
 </div>
 `;
@@ -551,13 +744,13 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
   hideIcon={false}
   id="id"
   maxLength={4}
-  multiline={true}
   name="name"
   onBlur={[MockFunction]}
   onFocus={[MockFunction]}
   onKeyUp={[MockFunction]}
   placeholder="placeholder"
   required={true}
+  textarea={true}
   theme="default"
   type="text"
 >
@@ -573,19 +766,28 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
         placeholder
       </span>
       <textarea
-        className="mfui-beta-text-field__field mfui-beta-text-field__field_multiline"
+        className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
         disabled={true}
         id="id"
         maxLength={4}
         name="name"
         onBlur={[Function]}
         onChange={[Function]}
+        onClick={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
         placeholder=""
         required={true}
+        style={
+          Object {
+            "height": "96px",
+          }
+        }
       />
     </div>
+    <div
+      className="mfui-beta-text-field__wrap"
+    />
   </div>
 </TextField>
 `;
@@ -598,20 +800,29 @@ exports[`<TextField /> textarea should render with value 1`] = `
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
     <textarea
-      className="mfui-beta-text-field__field mfui-beta-text-field__field_multiline"
+      className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
       disabled={true}
       id="id"
       maxLength={4}
       name="name"
       onBlur={[Function]}
       onChange={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
       placeholder="placeholder"
       required={true}
+      style={
+        Object {
+          "height": "96px",
+        }
+      }
       value="value"
     />
   </div>
+  <div
+    className="mfui-beta-text-field__wrap"
+  />
 </div>
 `;
 
@@ -621,13 +832,13 @@ exports[`<TextField /> textarea should render with value after updating prop 1`]
   hideIcon={false}
   id="id"
   maxLength={4}
-  multiline={true}
   name="name"
   onBlur={[MockFunction]}
   onFocus={[MockFunction]}
   onKeyUp={[MockFunction]}
   placeholder="placeholder"
   required={true}
+  textarea={true}
   theme="default"
   type="text"
   value="newValue"
@@ -639,20 +850,29 @@ exports[`<TextField /> textarea should render with value after updating prop 1`]
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
       <textarea
-        className="mfui-beta-text-field__field mfui-beta-text-field__field_multiline"
+        className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
         disabled={true}
         id="id"
         maxLength={4}
         name="name"
         onBlur={[Function]}
         onChange={[Function]}
+        onClick={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
         placeholder="placeholder"
         required={true}
+        style={
+          Object {
+            "height": "96px",
+          }
+        }
         value="value"
       />
     </div>
+    <div
+      className="mfui-beta-text-field__wrap"
+    />
   </div>
 </TextField>
 `;
@@ -663,13 +883,13 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
   hideIcon={false}
   id="id"
   maxLength={4}
-  multiline={true}
   name="name"
   onBlur={[MockFunction]}
   onFocus={[MockFunction]}
   onKeyUp={[MockFunction]}
   placeholder="placeholder"
   required={true}
+  textarea={true}
   theme="default"
   type="text"
   value="value"
@@ -681,20 +901,29 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
       <textarea
-        className="mfui-beta-text-field__field mfui-beta-text-field__field_multiline"
+        className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
         disabled={true}
         id="id"
         maxLength={4}
         name="name"
         onBlur={[Function]}
         onChange={[Function]}
+        onClick={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
         placeholder="placeholder"
         required={true}
+        style={
+          Object {
+            "height": "96px",
+          }
+        }
         value="value"
       />
     </div>
+    <div
+      className="mfui-beta-text-field__wrap"
+    />
   </div>
 </TextField>
 `;
