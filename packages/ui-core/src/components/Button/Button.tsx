@@ -219,11 +219,11 @@ Button.propTypes = {
     iconLeft: PropTypes.element,
     disabled: PropTypes.bool,
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
-    onClick: PropTypes.func,
     getRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
+    onClick: PropTypes.func,
 };
 
 export default Button;
