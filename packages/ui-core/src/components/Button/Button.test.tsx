@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { shallow } from 'enzyme';
+import React, { createRef } from 'react';
+import { mount, shallow } from 'enzyme';
 import Button, { IButtonProps } from './Button';
 import cnCreate from '../../utils/cnCreate';
 import detectTouch from '../../utils/detectTouch';
@@ -139,5 +139,17 @@ describe('<Button />', () => {
         wrapper.simulate('click');
 
         expect(onClick).toBeCalled();
+    });
+
+    it('should return a reference to the element', () => {
+        const ref: React.RefObject<HTMLButtonElement> = createRef();
+
+        mount(<Button getRef={ref} />);
+
+        if (ref.current === null) {
+            throw new Error('No ref');
+        }
+
+        expect(ref.current.type).toBe('button');
     });
 });

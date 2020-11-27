@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Button.less';
@@ -75,6 +75,8 @@ export interface IButtonProps extends IDataAttributes {
     disabled?: boolean;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Ссылка на элемент */
+    getRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;
 }
 
 const getLoaderSize = (size: string): PreloaderSizesType => (
@@ -108,6 +110,7 @@ const Button: React.FC<IButtonProps> = props => {
         children,
         onClick,
         dataAttrs,
+        getRef,
     } = props;
 
     const isTouch: boolean = React.useMemo(() => detectTouch(), []);
@@ -184,6 +187,7 @@ const Button: React.FC<IButtonProps> = props => {
             type={href ? undefined : actionType}
             onClick={handleClick}
             disabled={!href && disabled}
+            ref={getRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
         >
             <div className={cn('inner', innerClassName)}>
                 {!showLoader && children && renderChildren}
@@ -216,6 +220,10 @@ Button.propTypes = {
     disabled: PropTypes.bool,
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onClick: PropTypes.func,
+    getRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
 };
 
 export default Button;
