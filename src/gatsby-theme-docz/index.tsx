@@ -22,7 +22,7 @@ const map = {
     table: table,
     playground: Playground,
     layout: Layout,
-    DoczTabs: DoczTabs
+    DoczTabs: DoczTabs,
 };
 
 const Theme = ({ children }) => {

@@ -28,7 +28,11 @@ import {
 
 ## С недоступными датами
 
-```javascript
+<Playground style={{margin: 'auto', maxWidth: '320px'}}>
+    <Calendar minBookingDate={minBookingDate} maxBookingDate={maxBookingDate} />
+</Playground>
+
+```javascript collapse=Демо-данные
 const date = new Date();
 const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
@@ -36,13 +40,17 @@ const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
 const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
 ```
 
-<Playground style={{margin: 'auto', maxWidth: '320px'}}>
-    <Calendar minBookingDate={minBookingDate} maxBookingDate={maxBookingDate} />
-</Playground>
-
 ## С предвыбранным интервалом дат
 
-```javascript
+<Playground style={{ textAlign: 'center' }}>
+    <DemoCalendarWithHandleChange>
+        {({ onChange, startDate, endDate }) =>
+            <Calendar onChange={onChange} startDate={startDate} endDate={endDate} />
+        }
+    </DemoCalendarWithHandleChange>
+</Playground>
+
+```javascript collapse=Код DemoCalendarWithHandleChange
 export const DemoCalendarWithHandleChange = ({ children }) => {
     const [from, setFrom] = React.useState<string | null>(formatDate(startDate, 'dd.MM.yyyy'));
     const [to, setTo] = React.useState<string | null>(formatDate(endDate, 'dd.MM.yyyy'));
@@ -63,21 +71,21 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
 };
 ```
 
-<Playground style={{ textAlign: 'center' }}>
-    <DemoCalendarWithHandleChange>
-        {({ onChange, startDate, endDate }) =>
-            <Calendar onChange={onChange} startDate={startDate} endDate={endDate} />
-        }
-    </DemoCalendarWithHandleChange>
-</Playground>
-
 ## Изменение дат с помощью получения новых в свойствах
 
-```javascript
+<Playground style={{ textAlign: 'center' }}>
+    <DemoCalendarWithDatesChange>
+        {({ startDate, endDate }) =>
+            <Calendar startDate={startDate} endDate={endDate} />
+        }
+    </DemoCalendarWithDatesChange>
+</Playground>
+
+```javascript collapse=Код DemoCalendarWithDatesChange
 export const DemoCalendarWithDatesChange = ({ children }) => {
     const startDate = new Date(2020, 1, 7);
     const endDate = new Date(2020, 1, 19);
-    
+
     const [period, setPeriod] = React.useState({ periodStart: startDate, periodEnd: endDate });
 
     const onChange = (firstDate, secondDate) => () =>
@@ -102,11 +110,3 @@ export const DemoCalendarWithDatesChange = ({ children }) => {
     );
 };
 ```
-
-<Playground style={{ textAlign: 'center' }}>
-    <DemoCalendarWithDatesChange>
-        {({ startDate, endDate }) =>
-            <Calendar startDate={startDate} endDate={endDate} />
-        }
-    </DemoCalendarWithDatesChange>
-</Playground>
