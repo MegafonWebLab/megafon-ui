@@ -25,24 +25,19 @@
         appearance: none;
         box-shadow: none;
         margin: 0;
+    }
 
-        &_multiline {
-            display: block;
-            min-height: 96px;
-        }
+    &__field_type_fixed {
+        resize: none;
+    }
 
-        &_type_fixed {
-            resize: none;
-        }
+    &__field_type_flexible {
+        resize: vertical;
+        overflow: hidden;
+    }
 
-        &_type_flexible {
-            resize: vertical;
-            overflow: hidden;
-        }
-
-        &_scrolling {
-            overflow: auto;
-        }
+    &__field_scrolling {
+        overflow: auto;
     }
 
     &__placeholder-input, &__placeholder-textarea {

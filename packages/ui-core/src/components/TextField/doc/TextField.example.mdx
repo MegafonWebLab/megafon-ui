@@ -41,7 +41,7 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 </Playground>
 
 ## Валидация
-Клик по иконке очищает поле по умолчанию. Если установлены иконка и `onCustomIconClick`, то очищение перестает работать.
+Клик по "крестику" очищает поле по умолчанию. Если установлены кастомная иконка и `onCustomIconClick`, то очищение перестает работать.
 
 <Playground style={wrapperWideWidthStyle}>
     <TextField
@@ -85,13 +85,15 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 
 ##
 # Textarea
-Пропс **textarea** выставленный в значение **true** изменяет компонент в `textarea`.
+Пропс **textarea**, выставленный в значение **true**, изменяет компонент в `textarea`.
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField name="name" textarea placeholder="placeholder" />
 </Playground>
 
 ## Тип flexible с возможностью растягивать поле по высоте
+Поле автоматически увеличивается при вводе текста до высоты шести строк.
+Режим автоматического увеличения высоты отключается при ручном ресайзе поля.
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField name="name" textarea="flexible" />

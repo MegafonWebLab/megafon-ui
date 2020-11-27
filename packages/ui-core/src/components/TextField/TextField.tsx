@@ -24,21 +24,21 @@ export const TextareaTypes = {
 } as const;
 
 export interface ITextFieldProps {
-    /** Включить режим textarea. Fixed - это alias для textarea=true. */
+    /** Включить режим textarea. Fixed - это alias для **textarea=true.** */
     textarea?: boolean | 'fixed' | 'flexible';
     /** Лейбл */
     label?: string;
-    /** Атрибут элемента input. Не работает с **multiline=true** */
+    /** Атрибут элемента input. Не работает с **textarea=true** */
     type?: 'text' | 'password' | 'tel' | 'email';
     /** Цветовая тема */
     theme?: 'default' | 'white';
     /** Запрещает отрисовку иконки */
     hideIcon?: boolean;
-    /** Отоброжение валидации */
+    /** Отображение валидации */
     verification?: 'valid' | 'error';
     /** Подпись снизу, меняет цвет в зависимости от аргумента `verification` */
     noticeText?: string;
-    /** Управление возможности взаимодействия с компонентом */
+    /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
     /** Показывает обязательность поля  */
     required?: boolean;
@@ -46,7 +46,7 @@ export interface ITextFieldProps {
     inputRef?: (node: HTMLInputElement | HTMLTextAreaElement) => void;
     /** Имя поля */
     name?: string;
-    /** Отображаемый текст в отсутствии значения */
+    /** Отображаемый текст при отсутствии значения */
     placeholder?: string;
     /** Атрибут корневого DOM элемента компонента */
     id?: string;
@@ -58,10 +58,10 @@ export interface ITextFieldProps {
     symbolCounter?: number;
     /** Иконка */
     customIcon?: JSX.Element;
-    /** Mask for the input-field. Doesn't work with **multiline=true**. */
-    /** You may find additional info on https://github.com/sanniassin/react-input-mask */
+    /** Маска для поля. Не работает с **textarea=true**. */
+    /** Дополнительную информацию можно найти на https://github.com/sanniassin/react-input-mask */
     mask?: string;
-    /** Разделение символов для маски. Не работает **multiline=true** */
+    /** Разделение символов для маски. Не работает **textarea=true** */
     maskChar?: string;
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -146,8 +146,8 @@ const TextField: React.FC<ITextFieldProps> = ({
         return <span className={cn(classes)}>{placeholder}</span>;
     };
 
-    const checkSymbolMaxLimit = useCallback((textareaValue?: string): void => {
-        if (!textareaValue || !symbolCounter) {
+    const checkSymbolMaxLimit = useCallback((textareaValue: string = ''): void => {
+        if (!symbolCounter) {
             return;
         }
 
@@ -172,7 +172,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         if (textarea === TextareaTypes.FLEXIBLE) {
-            getTextareaHeight();
+            setTextareaHeight();
         }
 
         setInputValue(e.target.value);
@@ -213,12 +213,14 @@ const TextField: React.FC<ITextFieldProps> = ({
         textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED
     );
 
-    const isScrolling = initialTextareaHeight === TEXTAREA_MAX_HEIGHT || isTextareaResized;
+    const isScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
 
     const commonParams = {
         disabled,
         id,
         name,
+        value: inputValue,
+        onChange: handleInputChange,
         onBlur: handleBlur,
         onFocus: handleFocus,
         onKeyUp,
@@ -231,8 +233,6 @@ const TextField: React.FC<ITextFieldProps> = ({
     const inputParams = {
         ...commonParams,
         className: cn('field', input),
-        value: inputValue,
-        onChange: handleInputChange,
         type: isVisiblePassword ? 'text' : type,
     };
 
@@ -243,8 +243,6 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const textareaParams = {
         ...commonParams,
-        value: inputValue,
-        onChange: handleInputChange,
         className: cn('field', {
             type: getTextareaMod(),
             scrolling: isScrolling,
@@ -260,7 +258,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         inputRef && inputRef(node);
     };
 
-    const getTextareaHeight = (): void => {
+    const setTextareaHeight = (): void => {
         if (!fieldNode?.current) {
             return;
         }
