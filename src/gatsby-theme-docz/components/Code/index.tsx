@@ -31,7 +31,7 @@ const Code = ({ children, className: outerClassName, ...meta }) => {
         >
             {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <Styled.pre
-                    className={cn('code-block', [`${outerClassName || ''}`, className])}
+                    className={cn('code-block', [outerClassName, className])}
                     style={{ ...style, overflowX: 'auto' }}
                     data-testid="code"
                 >
