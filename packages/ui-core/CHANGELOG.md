@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.53](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.52...@megafon/ui-core@2.0.0-beta.53) (2020-11-30)
+
+
+### Features
+
+* **button:** add new button property ([713b6fe](https://github.com/MegafonWebLab/megafon-ui/commit/713b6fee5206847851063596d1a8d07337d610e1))
+* **button:** fix props order ([a6d3091](https://github.com/MegafonWebLab/megafon-ui/commit/a6d3091e5ff25be683cd4b690bc9630e7b42222a))
+* **button:** fix proptypes order ([98f6d37](https://github.com/MegafonWebLab/megafon-ui/commit/98f6d3737145e8b5f3219f9e0c7a3730799c6e21))
+
+
+
+
+
 # [2.0.0-beta.52](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.51...@megafon/ui-core@2.0.0-beta.52) (2020-11-27)
 
 
