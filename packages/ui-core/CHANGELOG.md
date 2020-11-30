@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.7.18
+- **ContentArea**
+    - add box-sizing to avoid redefinition by global site
+
 ## 1.7.17
 - **build**
     - remove icon property from svgr config in inlineSvgToReact
