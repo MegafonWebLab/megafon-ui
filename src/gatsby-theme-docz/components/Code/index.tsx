@@ -6,7 +6,7 @@ import { Collapse, TextLink, cnCreate } from '@megafon/ui-core';
 import './Code.less';
 
 const cn = cnCreate('docz-code');
-const Code = ({children, className: outerClassName, ...meta}) => {
+const Code = ({ children, className: outerClassName, ...meta }) => {
     const metaString = meta && meta.metastring || '';
     const hasCollapse = meta && (!!meta.collapse || metaString.includes('collapse'));
     const metaStringSplited = metaString.split('=');
@@ -29,17 +29,17 @@ const Code = ({children, className: outerClassName, ...meta}) => {
             language={language}
             theme={theme}
         >
-            {({className, style, tokens, getLineProps, getTokenProps}) => (
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
                 <Styled.pre
-                    className={cn('code-block', [`${outerClassName || ''} ${className}`])}
-                    style={{...style, overflowX: 'auto'}}
+                    className={cn('code-block', [`${outerClassName || ''}`, className])}
+                    style={{ ...style, overflowX: 'auto' }}
                     data-testid="code"
                 >
                     {tokens.map((line, i) => (
-                        <div {...getLineProps({line, key: i})}>
+                        <div {...getLineProps({ line, key: i })}>
                             {line.map((token, key) => (
                                 <span
-                                    {...getTokenProps({token, key})}
+                                    {...getTokenProps({ token, key })}
                                 />
                             ))}
                         </div>
