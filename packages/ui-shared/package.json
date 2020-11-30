@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-shared",
-  "version": "1.0.52",
+  "version": "1.0.53",
   "files": [
     "dist"
   ],
@@ -138,7 +138,7 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.0.0",
     "@babel/runtime": "^7.0.0",
-    "@megafon/ui-core": "^1.7.17",
+    "@megafon/ui-core": "^1.7.18",
     "classnames": "^2.2.6",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.6.2",
