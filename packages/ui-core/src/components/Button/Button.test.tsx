@@ -144,7 +144,7 @@ describe('<Button />', () => {
     it('should return a reference to the element', () => {
         const ref: React.RefObject<HTMLButtonElement> = createRef();
 
-        mount(<Button getRef={ref} />);
+        mount(<Button buttonRef={ref} />);
 
         if (ref.current === null) {
             throw new Error('No ref');

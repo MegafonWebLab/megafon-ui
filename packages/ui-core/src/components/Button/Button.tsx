@@ -74,7 +74,7 @@ export interface IButtonProps extends IDataAttributes {
     /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
     /** Ссылка на элемент */
-    getRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;
+    buttonRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -110,7 +110,7 @@ const Button: React.FC<IButtonProps> = props => {
         children,
         onClick,
         dataAttrs,
-        getRef,
+        buttonRef,
     } = props;
 
     const isTouch: boolean = React.useMemo(() => detectTouch(), []);
@@ -187,7 +187,7 @@ const Button: React.FC<IButtonProps> = props => {
             type={href ? undefined : actionType}
             onClick={handleClick}
             disabled={!href && disabled}
-            ref={getRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
+            ref={buttonRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
         >
             <div className={cn('inner', innerClassName)}>
                 {!showLoader && children && renderChildren}
@@ -219,7 +219,7 @@ Button.propTypes = {
     iconLeft: PropTypes.element,
     disabled: PropTypes.bool,
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
-    getRef: PropTypes.oneOfType([
+    buttonRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
