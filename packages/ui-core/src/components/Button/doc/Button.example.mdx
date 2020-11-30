@@ -2,6 +2,8 @@ import { Playground } from 'docz';
 import Button from '../Button';
 import Balance from 'icons/Basic/24/Balance_24.svg';
 import { blockStyle } from './Button.docz';
+import { createRef } from "react";
+export const ref = createRef();
 
 ## Зеленая тема
 
@@ -104,4 +106,10 @@ import { blockStyle } from './Button.docz';
     <Button href="#">Link</Button>
     <Button href="#" disabled>Disabled Link</Button>
     <Button href="#" target="_blank">Target Link</Button>
+</Playground>
+
+## Ссылка на элемент
+
+<Playground style={blockStyle}>
+    <Button buttonRef={ref}>Ref</Button>
 </Playground>
