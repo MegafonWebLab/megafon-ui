@@ -86,36 +86,34 @@ const getLoaderSize = (size: string): PreloaderSizesType => (
 );
 
 const cn = cnCreate('mfui-beta-button');
-const Button: React.FC<IButtonProps> = props => {
-    const {
-        classes: {
-            root: rootClassName,
-            content: contentClassName,
-            inner: innerClassName,
-        } = {},
-        className = '',
-        theme = 'green',
-        type = 'primary',
-        href,
-        target,
-        rel,
-        actionType = 'button',
-        sizeAll = 'medium',
-        sizeWide,
-        sizeDesktop,
-        sizeTablet,
-        sizeMobile,
-        fullWidth = false,
-        showLoader = false,
-        showArrow = false,
-        iconLeft,
-        disabled,
-        children,
-        onClick,
-        dataAttrs,
-        buttonRef,
-    } = props;
-
+const Button: React.FC<IButtonProps> = ({
+    classes: {
+        root: rootClassName,
+        content: contentClassName,
+        inner: innerClassName,
+    } = {},
+    className = '',
+    theme = 'green',
+    type = 'primary',
+    href,
+    target,
+    rel,
+    actionType = 'button',
+    sizeAll = 'medium',
+    sizeWide,
+    sizeDesktop,
+    sizeTablet,
+    sizeMobile,
+    fullWidth = false,
+    showLoader = false,
+    showArrow = false,
+    iconLeft,
+    disabled,
+    children,
+    onClick,
+    dataAttrs,
+    buttonRef,
+}) => {
     const isTouch: boolean = React.useMemo(() => detectTouch(), []);
     const ElementType = href ? 'a' : 'button';
 
