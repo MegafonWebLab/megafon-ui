@@ -2,38 +2,39 @@
 
 exports[`<Counter /> layout renders Counter 1`] = `
 <div
-  className="counter"
+  className="mfui-beta-counter"
 >
   <button
-    className="counter__btn counter__btn_left"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_left"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <span
-      className="counter__minus"
+      className="mfui-beta-counter__minus"
     >
       –
     </span>
   </button>
   <div
-    className="counter__input-box"
+    className="mfui-beta-counter__input-box"
   >
     <input
-      className="counter__input"
+      className="mfui-beta-counter__input"
+      disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
       value={0}
     />
   </div>
   <button
-    className="counter__btn counter__btn_right"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_right"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <span
-      className="counter__plus"
+      className="mfui-beta-counter__plus"
     >
       +
     </span>
@@ -43,25 +44,25 @@ exports[`<Counter /> layout renders Counter 1`] = `
 
 exports[`<Counter /> layout renders Counter with props 1`] = `
 <div
-  className="counter counter_disabled test-class"
+  className="mfui-beta-counter mfui-beta-counter_disabled test-class"
 >
   <button
-    className="counter__btn counter__btn_left"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_left"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <span
-      className="counter__minus"
+      className="mfui-beta-counter__minus"
     >
       –
     </span>
   </button>
   <div
-    className="counter__input-box"
+    className="mfui-beta-counter__input-box"
   >
     <input
-      className="counter__input"
+      className="mfui-beta-counter__input"
       disabled={true}
       onBlur={[Function]}
       onChange={[Function]}
@@ -69,13 +70,13 @@ exports[`<Counter /> layout renders Counter with props 1`] = `
     />
   </div>
   <button
-    className="counter__btn counter__btn_right"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_right"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <span
-      className="counter__plus"
+      className="mfui-beta-counter__plus"
     >
       +
     </span>

@@ -17,16 +17,13 @@ export interface ICounterProps {
     onChange?: (value: number) => void;
 }
 
-const DEFAULT_MIN_VALUE = 0;
-const DEFAULT_MAX_VALUE = 999999;
-
-const cn = cnCreate('counter');
+const cn = cnCreate('mfui-beta-counter');
 const Counter: React.FC<ICounterProps> = ({
     className,
     initialValue,
-    max = DEFAULT_MAX_VALUE,
-    min = DEFAULT_MIN_VALUE,
-    isDisabled,
+    max = 999999,
+    min = 0,
+    isDisabled = false,
     onChange,
 }) => {
     const currentInitialValue = initialValue || min;
