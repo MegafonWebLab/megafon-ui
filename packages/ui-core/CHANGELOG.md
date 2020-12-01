@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.54](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.53...@megafon/ui-core@2.0.0-beta.54) (2020-12-01)
+
+
+### Features
+
+* **component:** added rel attribute to button component ([21fa921](https://github.com/MegafonWebLab/megafon-ui/commit/21fa92144df2d2c2e084121355160e4f1c5aa863))
+
+
+
+
+
 # [2.0.0-beta.53](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.52...@megafon/ui-core@2.0.0-beta.53) (2020-11-30)
 
 
