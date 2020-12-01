@@ -96,6 +96,21 @@ describe('<Button />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render tag with target _self and without rel attribute', () => {
+            const wrapper = shallow(<Button href="test" target="_self" />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render tag without target, href and rel attribute', () => {
+            const wrapper = shallow(<Button rel="nofollow" />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render tag without target and with rel attribute', () => {
+            const wrapper = shallow(<Button href="test" rel="nofollow" />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should render green theme when type is "primary" and theme is "black"', () => {
             const wrapper = shallow(<Button type="primary" theme="black" />);
             expect(wrapper.exists(`.${cn()}_theme_green`)).toBe(true);
