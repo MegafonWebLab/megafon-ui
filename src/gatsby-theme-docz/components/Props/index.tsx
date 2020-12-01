@@ -3,12 +3,19 @@ import { cnCreate } from '@megafon/ui-core';
 import './Props.less';
 
 export const getDefaultValue = ({ defaultValue, type, flowType }) => {
-    const propType = flowType ? flowType : type;
-    if (!defaultValue || !defaultValue.value) return null;
+    if (!defaultValue || (!defaultValue.value && defaultValue.value !== 0 && typeof defaultValue.value !== 'boolean')) {
+        return null;
+    }
+
     if (defaultValue.value === "''") {
         return '[Empty string]';
     }
 
+    if (typeof defaultValue.value === 'boolean') {
+        return `${defaultValue.value}`;
+    }
+
+    const propType = flowType ? flowType : type;
     if (propType && propType.name === 'string') {
         return defaultValue.value.replace(/\'/g, '"');
     }
