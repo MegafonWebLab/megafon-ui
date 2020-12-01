@@ -5,6 +5,7 @@ import cnCreate from 'utils/cnCreate';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import throttle from 'lodash.throttle';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import breakpoints from 'constants/breakpoints';
 
@@ -160,6 +161,16 @@ const Carousel: React.FC<ICarouselProps> = ({
         }
     };
 
+    // https://github.com/nolimits4web/Swiper/issues/2346
+    const handleSwiperResize = React.useCallback(
+        throttle(({ params, slides }: SwiperCore) => {
+            if (params.slidesPerView === SlidesPerView.AUTO) {
+                slides.css('width', '');
+            }
+        }, 300),
+        []
+    );
+
     return (
         <div className={cn({ 'nav-theme': navTheme }, [rootClass])} onClick={handleRootClick}>
             <Swiper
@@ -179,6 +190,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 onFromEdge={handleFromEdge}
                 onSlideChange={handleSlideChange}
                 onTouchEnd={increaseAutoplayDelay}
+                onResize={handleSwiperResize}
             >
                 {React.Children.map(children, (child, i) => (
                     <SwiperSlide key={i} className={cn('slide')}>
