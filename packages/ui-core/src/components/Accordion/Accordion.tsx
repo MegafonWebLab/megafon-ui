@@ -24,7 +24,7 @@ export interface IAccordionProps {
 const cn = cnCreate('mfui-beta-accordion');
 const Accordion: React.FC<IAccordionProps> = ({
     title,
-    isOpened: isOpenedProps = false,
+    isOpened = false,
     classes: {
         root: rootPropsClasses = '',
         collapse: collapsePropsClasses = '',
@@ -32,24 +32,24 @@ const Accordion: React.FC<IAccordionProps> = ({
     onClickAccordion,
     children,
 }) => {
-    const [isOpened, setIsOpened] = React.useState<boolean>(isOpenedProps);
+    const [isOpenedState, setIsOpenedState] = React.useState<boolean>(isOpened);
 
     React.useEffect(() => {
-        setIsOpened(isOpenedProps);
-    }, [isOpenedProps]);
+        setIsOpenedState(isOpened);
+    }, [isOpened]);
 
     const handleClickTitle = (): void => {
-        onClickAccordion && onClickAccordion(!isOpened, title);
+        onClickAccordion && onClickAccordion(!isOpenedState, title);
 
-        setIsOpened(!isOpened);
+        setIsOpenedState(!isOpenedState);
     };
 
     return (
-        <div className={cn({ open: isOpened }, rootPropsClasses)}>
+        <div className={cn({ open: isOpenedState }, rootPropsClasses)}>
             <div className={cn('title-wrap')} onClick={handleClickTitle}>
                 <Header as="h5">{title}</Header>
-                <div className={cn('icon-box', { open: isOpened })}>
-                    {isOpened
+                <div className={cn('icon-box', { open: isOpenedState })}>
+                    {isOpenedState
                         ? (<ArrowUp />)
                         : (<ArrowDown />)
                     }
@@ -58,7 +58,7 @@ const Accordion: React.FC<IAccordionProps> = ({
             <Collapse
                 className={cn('content', collapsePropsClasses)}
                 classNameContainer={cn('content-inner')}
-                isOpened={isOpened}
+                isOpened={isOpenedState}
             >
                 {children}
             </Collapse>
