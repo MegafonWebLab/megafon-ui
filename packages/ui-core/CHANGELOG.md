@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.55](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.54...@megafon/ui-core@2.0.0-beta.55) (2020-12-01)
+
+
+### Bug Fixes
+
+* **counter:** default props refactoring, block class changed ([9b5c80f](https://github.com/MegafonWebLab/megafon-ui/commit/9b5c80f85190610641874eb1f88decbe358a818b))
+
+
+
+
+
 # [2.0.0-beta.54](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.53...@megafon/ui-core@2.0.0-beta.54) (2020-12-01)
 
 
