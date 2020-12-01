@@ -1,0 +1,43 @@
+
+import { Playground } from 'docz';
+import Partners from '../Partners';
+import { ContentArea } from "@megafon/ui-core";
+import { fourItems, eightItemsWithoutHref, twelveItems } from './Partners.docz.tsx'
+
+## Примеры свойств
+``` javascript
+
+const items = [
+    {
+        href: '#',
+        src: 'image.png',
+    },
+    {
+        src: 'image.png',
+    },
+]
+```
+
+# Базовое использование
+
+<Playground>
+    <ContentArea>
+        <Partners items={fourItems} />
+    </ContentArea>
+</Playground>
+
+# Логотипы без ссылок
+
+<Playground>
+    <ContentArea>
+        <Partners items={eightItemsWithoutHref} />
+    </ContentArea>
+</Playground>
+
+# Количество логотипов больше 8
+
+<Playground>
+    <ContentArea>
+        <Partners items={twelveItems} />
+    </ContentArea>
+</Playground>
