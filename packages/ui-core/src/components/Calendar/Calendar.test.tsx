@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import Calendar, { ICalendarProps } from './Calendar';
 
 const props: ICalendarProps = {
+    className: 'rootClass',
     startDate: new Date(2020, 1, 7),
     endDate: new Date(2020, 1, 14),
     minBookingDate: new Date(2020, 1, 3),
