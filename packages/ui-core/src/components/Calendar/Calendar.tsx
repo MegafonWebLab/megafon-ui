@@ -9,7 +9,7 @@ import {
     useDatepicker,
     useMonth,
 } from '@datepicker-react/hooks';
-import { format, isEqual, isAfter, isSameMonth } from 'date-fns';
+import { format, isEqual, isAfter, isBefore, isSameMonth } from 'date-fns';
 import ruLocale from 'date-fns/locale/ru';
 import Month, { IMonthPickerProps } from 'components/Calendar/components/Month/Month';
 import Day, { DayType, IDayPickerProps } from 'components/Calendar/components/Day/Day';
@@ -58,13 +58,19 @@ const Calendar: React.FC<ICalendarProps> = ({
     const calendarStateFromProps: ICalendarState = useMemo(() => {
         const isInitialDatesEqual = startDate && endDate && isEqual(startDate, endDate);
         const isStartFocus = !startDate || (endDate && !isInitialDatesEqual);
+        const isStartDateBlocked =
+            startDate && minBookingDate && maxBookingDate &&
+            (isAfter(minBookingDate, startDate) || isBefore(maxBookingDate, startDate));
+        const isEndDateBlocked =
+            endDate && minBookingDate && maxBookingDate &&
+            (isAfter(minBookingDate, endDate) || isBefore(maxBookingDate, endDate));
 
         return {
-            startDate,
-            endDate: isInitialDatesEqual || isSingleDate ? null : endDate,
+            startDate: isStartDateBlocked ? null : startDate,
+            endDate: isEndDateBlocked || isInitialDatesEqual || isSingleDate ? null : endDate,
             focusedInput: isStartFocus ? START_DATE : END_DATE,
         };
-    }, [startDate, endDate, isSingleDate]);
+    }, [startDate, endDate, isSingleDate, minBookingDate, maxBookingDate]);
 
     const [calendarState, setCalendarState] = useState<ICalendarState>(calendarStateFromProps);
 
@@ -121,6 +127,7 @@ const Calendar: React.FC<ICalendarProps> = ({
         numberOfMonths: 1,
         minBookingDate,
         maxBookingDate,
+        initialVisibleMonth: stateStartDate || undefined,
         ...calendarState,
     });
 

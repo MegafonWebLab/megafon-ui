@@ -2,7 +2,7 @@
 
 exports[`<Calendar /> snapshots renders with all props 1`] = `
 <div
-  className="mfui-beta-calendar rootClass"
+  className="mfui-beta-calendar"
 >
   <Month
     goToNextMonth={[Function]}

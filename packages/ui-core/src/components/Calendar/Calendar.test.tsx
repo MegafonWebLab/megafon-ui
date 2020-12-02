@@ -3,7 +3,6 @@ import { shallow, mount } from 'enzyme';
 import Calendar, { ICalendarProps } from './Calendar';
 
 const props: ICalendarProps = {
-    className: 'rootClass',
     startDate: new Date(2020, 1, 7),
     endDate: new Date(2020, 1, 14),
     minBookingDate: new Date(2020, 1, 3),
@@ -88,6 +87,21 @@ describe('<Calendar />', () => {
             wrapper.find('.mfui-beta-day').at(12).simulate('click');
 
             expect(onChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-13T00:00:00.000Z'));
+        });
+
+        it('should call onChange with both arguments as null if dates are blocked', () => {
+            const onChange = jest.fn();
+
+            const wrapper = mount(
+                <Calendar
+                    {...props}
+                    startDate={new Date(2020, 1, 1)}
+                    endDate={new Date(2020, 1, 27)}
+                    onChange={onChange}
+                />
+            );
+
+            expect(onChange).toHaveBeenCalledWith(null, null);
         });
     });
 });
