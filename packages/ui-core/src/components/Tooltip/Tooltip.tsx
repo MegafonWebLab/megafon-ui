@@ -100,7 +100,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     const [isTouchDevice, setIsTouchDevice ] = useState(false);
     useEffect(() => setIsTouchDevice(detectTouch()), [detectTouch, setIsTouchDevice]);
 
-    const clickEvent = useMemo(() => isTouchDevice ? 'touchstart' : 'click', [isTouchDevice]);
+    const clickEvent = useMemo(() => isTouchDevice ? 'touchstart' : 'mousedown', [isTouchDevice]);
     const triggerEventName: TriggerEventType = useMemo(() => (
         isTouchDevice ? 'click' : triggerEvent
     ), [isTouchDevice, triggerEvent]);
@@ -124,6 +124,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     const handleOutsideEvent = useCallback((e: MouseEvent): void => {
         const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
         const isTargetInTrigger = e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
+
         if (!isTargetInPopper && !isTargetInTrigger) {
             setIsOpen(false);
             onClose && onClose(e);
