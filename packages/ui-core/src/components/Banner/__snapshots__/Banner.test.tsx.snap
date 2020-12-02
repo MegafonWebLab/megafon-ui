@@ -14,6 +14,7 @@ exports[`<Banner /> should render with default props 1`] = `
     onReachEnd={[Function]}
     onSlideChange={[Function]}
     onSwiper={[Function]}
+    onTouchEnd={[Function]}
   >
     <SwiperSlide
       className="mfui-beta-banner__slide"
@@ -72,7 +73,7 @@ exports[`<Banner /> should render with default props 1`] = `
 
 exports[`<Banner /> should render with props 1`] = `
 <div
-  className="mfui-beta-banner mfui-beta-banner_nav-theme_dark"
+  className="mfui-beta-banner mfui-beta-banner_nav-theme_dark custom-class"
 >
   <Swiper
     autoplay={
@@ -91,6 +92,7 @@ exports[`<Banner /> should render with props 1`] = `
     onReachEnd={[Function]}
     onSlideChange={[Function]}
     onSwiper={[Function]}
+    onTouchEnd={[Function]}
   >
     <SwiperSlide
       className="mfui-beta-banner__slide"

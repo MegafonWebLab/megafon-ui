@@ -5,6 +5,7 @@ import Banner, { IBannerProps, NavTheme } from './Banner';
 import { DemoSlide } from './doc/Banner.docz';
 
 const props = {
+    className: 'custom-class',
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,

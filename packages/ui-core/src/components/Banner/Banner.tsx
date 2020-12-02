@@ -18,6 +18,8 @@ export const NavTheme = {
 type NavThemeType = typeof NavTheme[keyof typeof NavTheme];
 
 export interface IBannerProps {
+    /** Сss класс для внешнего контейнера */
+    className?: string;
     /** Прокрутка с зацикливанием */
     loop?: boolean;
     /** Автоматическая прокрутка */
@@ -45,10 +47,11 @@ const getAutoPlayConfig = (delay: number) => ({
 
 const cn = cnCreate('mfui-beta-banner');
 const Banner: React.FC<IBannerProps> = ({
+    className,
     autoPlay = false,
     autoPlayDelay = 5000,
     loop = false,
-    navTheme = NavTheme.LIGHT,
+    navTheme = 'light',
     children = [],
     onNextClick,
     onPrevClick,
@@ -66,6 +69,19 @@ const Banner: React.FC<IBannerProps> = ({
     const navArrowTheme =
         navTheme === NavTheme.DARK ? ArrowTheme.DARK : ArrowTheme.PURPLE;
 
+    const increaseAutoplayDelay = React.useCallback(
+        ({ params, autoplay }: SwiperCore) => {
+            if (typeof params.autoplay !== 'object' || !autoplay.running) {
+                return;
+            }
+
+            autoplay.stop();
+            params.autoplay.delay = autoPlayDelay * 3;
+            autoplay.start();
+        },
+        [autoPlayDelay]
+    );
+
     const handlePrevClick = React.useCallback(() => {
         if (!swiperInstance) {
             return;
@@ -73,6 +89,7 @@ const Banner: React.FC<IBannerProps> = ({
 
         swiperInstance.slidePrev();
         onPrevClick && onPrevClick(swiperInstance.realIndex);
+        increaseAutoplayDelay(swiperInstance);
     }, [swiperInstance, onPrevClick]);
 
     const handleNextClick = React.useCallback(() => {
@@ -82,6 +99,7 @@ const Banner: React.FC<IBannerProps> = ({
 
         swiperInstance.slideNext();
         onNextClick && onNextClick(swiperInstance.realIndex);
+        increaseAutoplayDelay(swiperInstance);
     }, [swiperInstance, onNextClick]);
 
     const handleDotClick = React.useCallback((index: number) => {
@@ -96,6 +114,7 @@ const Banner: React.FC<IBannerProps> = ({
         }
 
         onDotClick && onDotClick(swiperInstance.realIndex);
+        increaseAutoplayDelay(swiperInstance);
     }, [swiperInstance, loop, onDotClick]);
 
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
@@ -129,7 +148,7 @@ const Banner: React.FC<IBannerProps> = ({
     }, []);
 
     return (
-        <div className={cn({ 'nav-theme': navTheme })}>
+        <div className={cn({ 'nav-theme': navTheme }, className)}>
             <Swiper
                 className={cn('swiper')}
                 loop={loop}
@@ -140,6 +159,7 @@ const Banner: React.FC<IBannerProps> = ({
                 onFromEdge={handleFromEdge}
                 onSlideChange={handleSlideChange}
                 onAutoplayStop={handleAutoplayStop}
+                onTouchEnd={increaseAutoplayDelay}
             >
                 {React.Children.map(children, (child, i) => (
                     <SwiperSlide key={i} className={cn('slide')}>
@@ -178,6 +198,7 @@ const Banner: React.FC<IBannerProps> = ({
 };
 
 Banner.propTypes = {
+    className: PropTypes.string,
     loop: PropTypes.bool,
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
