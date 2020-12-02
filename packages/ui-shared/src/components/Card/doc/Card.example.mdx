@@ -1,0 +1,84 @@
+import { Playground } from 'docz';
+import Card from '../Card';
+import { title, text, button, link, fakeLink, img, imgShort, svg, DemoWrapper, buttonWithLongTitle } from './Card.docz.tsx';
+
+## Карточка
+
+```javascript
+
+Если в карточке заданы изображение и иконка, то иконка будет проигнорирована.
+
+```
+
+## Наличие изображения в карточке
+
+<Playground style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start'}}>
+    <DemoWrapper wrapperTitle="С картинкой">
+        <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="С иконкой">
+        <Card title={title} text={text} button={button} link={link} svgSrc={svg} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="Без изображения">
+        <Card title={title} text={text} button={button} link={link}/>
+    </DemoWrapper>
+</Playground>
+
+## Наличие кнопок/ссылок
+
+```javascript
+
+Если в компонент не добавлены кнопка и ссылка, то в параметрах самой карточки должна быть указана ссылка.
+В таком случае карточка становится кликабельной и имеет hover состояние. Чтобы обозначить такое поведение
+карточки в неё можно добавить "ложную ссылку" (надпись синего цвета).
+
+```
+
+<Playground style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start' }}>
+    <DemoWrapper wrapperTitle="Кнопка и ссылка">
+        <Card title={title} text={text} button={button} link={link} svgSrc={svg} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="Только кнопка ">
+        <Card title={title} text={text} button={button} svgSrc={svg} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="Только ссылка">
+        <Card title={title} text={text}  link={link} svgSrc={svg} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="Без кнопки и ссылки">
+        <Card title={title} text={text} link={fakeLink} svgSrc={svg} href="#"/>
+    </DemoWrapper>
+</Playground>
+
+## Расположение кнопки и ссылки
+
+```javascript
+
+Расположение по левому краю применимо, если в карточке находится либо одна кнопка, либо одна ссылка.
+Если в карточке находится и кнопка и ссылка, то они располагаются всегда по центру.
+
+```
+<Playground style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start'}}>
+    <DemoWrapper wrapperTitle="По левому краю">
+        <Card title={title} text={text} button={button} svgSrc={svg} isLeftHAlign />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="По центру">
+        <Card title={title} text={text} button={button} svgSrc={svg} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="Всегда по центру">
+        <Card title={title} text={text} button={button} link={link} svgSrc={svg} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="Перенос элементов">
+        <Card title={title} text={text} button={buttonWithLongTitle} link={link} svgSrc={svg} />
+    </DemoWrapper>
+</Playground>
+
+## Позиционирование изображения
+
+<Playground style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-start'}}>
+    <DemoWrapper wrapperTitle="Изображение заполняет контейнер по ширине">
+        <Card title={title} text={text} link={link} imageSrc={img} />
+    </DemoWrapper>
+    <DemoWrapper wrapperTitle="Изображение вписывается в контейнер">
+        <Card title={title} text={text} button={button} imageSrc={imgShort} objectFit="contain"/>
+    </DemoWrapper>
+</Playground>
