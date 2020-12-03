@@ -89,5 +89,20 @@ describe('<Calendar />', () => {
 
             expect(onChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-13T00:00:00.000Z'));
         });
+
+        it('should call onChange with both arguments as null if dates are blocked', () => {
+            const onChange = jest.fn();
+
+            const wrapper = mount(
+                <Calendar
+                    {...props}
+                    startDate={new Date(2020, 1, 1)}
+                    endDate={new Date(2020, 1, 27)}
+                    onChange={onChange}
+                />
+            );
+
+            expect(onChange).toHaveBeenCalledWith(null, null);
+        });
     });
 });
