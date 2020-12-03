@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.56](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.55...@megafon/ui-core@2.0.0-beta.56) (2020-12-03)
+
+
+### Bug Fixes
+
+* **calendar:** minor style fixes and disabled possibility to give blocked date in props ([993aeaf](https://github.com/MegafonWebLab/megafon-ui/commit/993aeaf866b2b0232686127d2a0e4356b9c91264))
+* **tooltip:** changed click event to mousedown so ref wont change at the moment of contains check ([be2c328](https://github.com/MegafonWebLab/megafon-ui/commit/be2c328c9152b146dac47f624892b4d1a49d7da5))
+
+
+
+
+
 # [2.0.0-beta.55](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.54...@megafon/ui-core@2.0.0-beta.55) (2020-12-01)
 
 
