@@ -64,10 +64,11 @@ const Calendar: React.FC<ICalendarProps> = ({
         const isEndDateBlocked =
             endDate && minBookingDate && maxBookingDate &&
             (isAfter(minBookingDate, endDate) || isBefore(maxBookingDate, endDate));
+        const isEndDate = isEndDateBlocked || isInitialDatesEqual || isSingleDate;
 
         return {
             startDate: isStartDateBlocked ? null : startDate,
-            endDate: isEndDateBlocked || isInitialDatesEqual || isSingleDate ? null : endDate,
+            endDate: isEndDate ? null : endDate,
             focusedInput: isStartFocus ? START_DATE : END_DATE,
         };
     }, [startDate, endDate, isSingleDate, minBookingDate, maxBookingDate]);
