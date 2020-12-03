@@ -99,14 +99,12 @@ const Partners: React.FC<IPartnersProps> = ({
                 onNextClick={onNextClick}
                 onPrevClick={onPrevClick}
             >
-                {topRow.map((item, i) => {
-                    return (
-                        <div key={i + item.src} className={cn('slide')}>
-                            {renderItem(item)}
-                            {renderItem(bottomRow[i])}
-                        </div>
-                    );
-                })}
+                {topRow.map((item, i) => (
+                    <div key={i + item.src} className={cn('slide')}>
+                        {renderItem(item)}
+                        {renderItem(bottomRow[i])}
+                    </div>
+                ))}
             </Carousel>
         );
     }, [items]);
