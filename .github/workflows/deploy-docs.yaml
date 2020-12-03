@@ -69,7 +69,6 @@ jobs:
               console.log('Exception while cancelling other workflow runs: ', ex);
             }
 
-
       - uses: actions/checkout@v2
 
       - name: Setup Node.js
@@ -113,4 +112,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
-          cname: ui.megafon.ru
