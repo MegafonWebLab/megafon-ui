@@ -1,7 +1,6 @@
 import * as React from 'react';
 import img from './img.png';
 import imgShort from './img_short.png';
-import { Header } from '@megafon/ui-core';
 import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 const title = 'Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь';
@@ -28,13 +27,6 @@ const link = {
 
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 
-const DemoWrapper = ({ wrapperTitle, children }) => (
-    <div style={{ maxWidth: '33%', display: 'flex', alignItems: 'center', flexDirection: 'column', margin: '10px'}}>
-        <Header as="h2" hAlign="center">{wrapperTitle}</Header>
-        <div style={{ marginTop: '15px'}}>
-            {children}
-        </div>
-    </div>
-);
+const DemoWrapper = ({children}) => <div style={{ marginTop: '-50px' }}>{children}</div>;
 
-export { title, text, button, link, fakeLink, img, imgShort, svg, DemoWrapper, buttonWithLongTitle };
+export { title, text, button, link, fakeLink, img, imgShort, svg, buttonWithLongTitle, DemoWrapper };

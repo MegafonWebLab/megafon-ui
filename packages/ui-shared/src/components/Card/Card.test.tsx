@@ -1,7 +1,26 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Card, { ObjectFit } from './Card';
-import { title, text, img, svg, button, link, fakeLink } from './doc/Card.docz';
+import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
+import img from './img.png';
+
+const title = 'Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь';
+const text = 'Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.';
+const button = {
+    title: 'Подробнее',
+    href: '#',
+};
+
+const fakeLink = {
+    title: 'Подключить',
+};
+
+const link = {
+    ...fakeLink,
+    href: '#',
+};
+
+const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 
 describe('Card', () => {
     it('render component', () => {

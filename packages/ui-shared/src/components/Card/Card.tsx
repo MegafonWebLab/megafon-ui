@@ -52,7 +52,6 @@ const Card: React.FC<ICard> = ({
     href,
     objectFit = 'fill',
 }) => {
-    const isRenderImage = !!imageSrc || !!svgSrc;
     const isAlignAvailable = !button || !link;
     const isCardLink = !!href;
     const isRenderBtn = !!button && !isCardLink;
@@ -62,7 +61,7 @@ const Card: React.FC<ICard> = ({
             case !!imageSrc: {
                 return (
                     <div className={cn('pic-wrapper', { 'object-fit': objectFit, 'img': true })}>
-                        <img src={imageSrc} />
+                        <img className={cn('img')} src={imageSrc} />
                     </div>
                 );
             }
@@ -78,7 +77,7 @@ const Card: React.FC<ICard> = ({
             default:
                 return null;
         }
-    }, [imageSrc, svgSrc]);
+    }, [imageSrc, svgSrc, objectFit]);
 
     const renderLink = React.useCallback(({ href: linkHref, title: linkTitle }) => {
         const isFakeLink = !linkHref;
@@ -90,26 +89,25 @@ const Card: React.FC<ICard> = ({
         return (
             <TextLink className={cn('link')} href={linkHref}>{linkTitle}</TextLink>
         );
-    }, [link]);
+    }, [isCardLink]);
 
     const renderBtn = React.useCallback(({ href: btnHref, title: btnTitle}) => (
         <Button className={cn('button')} href={btnHref}>{btnTitle}</Button>
-    ), [button]);
+    ), []);
 
     return (
         <div className={cn('', { 'href': !!href })}>
-            {href && (
-                <Link href={href} className={cn('href-wrapper')} />
-            )}
-            <>
-                {isRenderImage && renderImage()}
-                <Header as="h3" className={cn('title')}>{title}</Header>
-                <Paragraph hasMargin={false}>{text}</Paragraph>
-                <div className={cn('btns-wrapper', { 'left-align': isAlignAvailable && isLeftHAlign })}>
-                    {isRenderBtn && renderBtn(button)}
-                    {link && renderLink(link)}
+            <Link href={href}>
+                <div className={cn('inner')}>
+                    {renderImage()}
+                    <Header as="h3" className={cn('title')}>{title}</Header>
+                    <Paragraph hasMargin={false}>{text}</Paragraph>
+                    <div className={cn('btns-wrapper', { 'left-align': isAlignAvailable && isLeftHAlign })}>
+                        {isRenderBtn && renderBtn(button)}
+                        {link && renderLink(link)}
+                    </div>
                 </div>
-            </>
+            </Link>
         </div>
     );
 };
