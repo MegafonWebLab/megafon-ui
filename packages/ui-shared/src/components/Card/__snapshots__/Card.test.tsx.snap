@@ -53,7 +53,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -98,7 +98,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
         </TextLink>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;
 
@@ -106,7 +106,7 @@ exports[`Card left align of the interactive element 1`] = `
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -145,7 +145,7 @@ exports[`Card left align of the interactive element 1`] = `
         </TextLink>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;
 
@@ -153,7 +153,7 @@ exports[`Card render component 1`] = `
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -198,7 +198,7 @@ exports[`Card render component 1`] = `
         </TextLink>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;
 
@@ -206,7 +206,7 @@ exports[`Card render component with icon 1`] = `
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -255,7 +255,7 @@ exports[`Card render component with icon 1`] = `
         </TextLink>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;
 
@@ -263,7 +263,7 @@ exports[`Card render component with img, if image source and svg source are spec
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -308,7 +308,7 @@ exports[`Card render component with img, if image source and svg source are spec
         </TextLink>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;
 
@@ -316,7 +316,7 @@ exports[`Card render with contain object fit 1`] = `
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -352,7 +352,7 @@ exports[`Card render with contain object fit 1`] = `
         </Button>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;
 
@@ -409,7 +409,7 @@ exports[`Card render with one interactive element 1`] = `
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -449,7 +449,7 @@ exports[`Card render with one interactive element 1`] = `
         </Button>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;
 
@@ -457,7 +457,7 @@ exports[`Card render without img and svg 1`] = `
 <div
   className="mfui-beta-card"
 >
-  <Link>
+  <div>
     <div
       className="mfui-beta-card__inner"
     >
@@ -494,6 +494,6 @@ exports[`Card render without img and svg 1`] = `
         </TextLink>
       </div>
     </div>
-  </Link>
+  </div>
 </div>
 `;

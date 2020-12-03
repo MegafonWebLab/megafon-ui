@@ -55,6 +55,7 @@ const Card: React.FC<ICard> = ({
     const isAlignAvailable = !button || !link;
     const isCardLink = !!href;
     const isRenderBtn = !!button && !isCardLink;
+    const Element = href ? Link : 'div';
 
     const renderImage = React.useCallback(() => {
         switch (true) {
@@ -97,7 +98,7 @@ const Card: React.FC<ICard> = ({
 
     return (
         <div className={cn('', { 'href': !!href })}>
-            <Link href={href}>
+            <Element href={href}>
                 <div className={cn('inner')}>
                     {renderImage()}
                     <Header as="h3" className={cn('title')}>{title}</Header>
@@ -107,7 +108,7 @@ const Card: React.FC<ICard> = ({
                         {link && renderLink(link)}
                     </div>
                 </div>
-            </Link>
+            </Element>
         </div>
     );
 };
