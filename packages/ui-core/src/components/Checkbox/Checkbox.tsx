@@ -26,8 +26,8 @@ export interface ICheckboxProps extends IDataAttributes {
     /** Дополнительный контент справа */
     extraContent?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
-    /** Обработчик изменения значения 'value' */
-    onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Обработчик изменения значения */
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const cn = cnCreate('mfui-beta-checkbox');
@@ -63,7 +63,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
 
     isTouch: boolean = detectTouch();
 
-    handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onChange } = this.props;
         onChange && onChange(e);
     }
