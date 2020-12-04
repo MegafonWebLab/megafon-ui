@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './Card.less';
 import { cnCreate, Header, Paragraph, Button, TextLink, Link } from '@megafon/ui-core';
+import PropTypes from 'prop-types';
 
 interface IButton {
     title: string;
@@ -111,6 +112,24 @@ const Card: React.FC<ICard> = ({
             </Element>
         </div>
     );
+};
+
+Card.propTypes = {
+    imageSrc: PropTypes.string,
+    svgSrc: PropTypes.node,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    button: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        href: PropTypes.string.isRequired,
+    }),
+    link: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        href: PropTypes.string,
+    }),
+    isLeftHAlign: PropTypes.bool,
+    href: PropTypes.string,
+    objectFit: PropTypes.oneOf(Object.values(ObjectFit)),
 };
 
 export default Card;
