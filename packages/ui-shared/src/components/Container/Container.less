@@ -1,0 +1,314 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@root: e('.mfui-beta-container');
+@k1: e('.mfui-beta-video-banner');
+@k2: e('.mfui-beta-title-description-box');
+@k3: e('.mfui-beta-benefits-icons');
+@k4: e('.mfui-beta-benefits-pictures');
+@k5: e('.mfui-beta-infocard'); // component is not made
+@k6: e('.mfui-beta-items-carousel'); // component is not made
+@k7: e('.mfui-beta-video-block');
+@k8: e('.mfui-beta-tabs'); // component is not made
+@k9: e('.mfui-beta-partners'); // component is not made
+@k10: e('.mfui-beta-instructions'); // component is not made
+@k11: e('.mfui-beta-properties'); // component is not made
+@k12: e('.mfui-beta-table'); // component is not made
+@k13: e('.mfui-beta-accordion-box');
+@k14: e('.mfui-beta-button-link-box');
+@k15: e('.mfui-beta-banner'); // component is not made
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15;
+
+@color-modificator: e('&_bg-color_');
+@color-default: e('default');
+@color-light-gray: e('light-gray');
+@color-gray: e('gray');
+@color-green: e('green');
+@color-purple: e('purple');
+@colors: @color-default, @color-light-gray, @color-gray, @color-green, @color-purple;
+
+@small: 32px;
+@middle: 40px;
+@big: 48px;
+@large: 56px;
+
+.disableMarginTop() {
+    margin-top: 0 !important;
+}
+
+.paddingTop() {
+    padding-top: @contentVerticalIndentDesktop;
+
+    @media @mobileB {
+        padding-top: @contentVerticalIndentMobileB;
+    }
+
+    @media @mobileSM {
+        padding-top: @contentVerticalIndentMobileSM;
+    }
+}
+
+.generateComponentsMargins(@margin, @root, @minValue, @maxValue, @i:1) when (@i <= length(@components)) {
+    & when (@i >= @minValue) and (@i <= @maxValue) {
+        @selector: extract(@components, @i);
+
+        @{root} + @{selector} {
+            margin-top: @margin;
+        }
+    }
+
+    .generateComponentsMargins(@margin, @root, @minValue, @maxValue, (@i + 1));
+}
+
+.generateInnerTabsMargins(@margin, @minValue, @maxValue, @i:1) when (@i <= length(@components)) {
+    & when (@i >= @minValue) and (@i <= @maxValue) {
+        @selector: extract(@components, @i);
+
+        @{k8} @{selector}:first-child {
+            margin-top: @margin;
+        }
+    }
+
+    .generateInnerTabsMargins(@margin, @minValue, @maxValue, (@i + 1));
+}
+
+.generateOneContainerColorPaddingTop(@index, @colors, @i:1) when (@i <= length(@colors)) {
+    @rootColor: extract(@colors, @index);
+    @currentColor: extract(@colors, @i);
+
+    & when not (@rootColor = @currentColor) {
+        @{color-modificator}@{rootColor} + @{color-modificator}@{currentColor} {
+            .paddingTop();
+        }
+    }
+
+    .generateOneContainerColorPaddingTop(@index, @colors, (@i + 1));
+}
+
+.generateAllContainersColorsPaddingTop(@colors, @i:1) when (@i <= length(@colors)) {
+    .generateOneContainerColorPaddingTop(@i, @colors);
+    .generateAllContainersColorsPaddingTop(@colors, (@i + 1));
+}
+
+@{root} {
+    padding-bottom: @contentVerticalIndentDesktop;
+
+    @media @mobileB {
+        padding-bottom: @contentVerticalIndentMobileB;
+    }
+
+    @media @mobileSM {
+        padding-bottom: @contentVerticalIndentMobileSM;
+    }
+
+    @{color-modificator}@{color-default} {
+        background-color: @clearWhite;
+    }
+
+    @{color-modificator}@{color-light-gray} {
+        background-color: @spbSky0;
+    }
+
+    @{color-modificator}@{color-gray} {
+        background-color: @spbSky1;
+    }
+
+    @{color-modificator}@{color-green} {
+        background-color: @green;
+    }
+
+    @{color-modificator}@{color-purple} {
+        background-color: @purple;
+    }
+
+    .generateAllContainersColorsPaddingTop(@colors);
+
+    // k2(title-description-box)
+
+    @{k2} + @{k14} {
+        margin-top: @small;
+    }
+
+    .generateComponentsMargins(@large, @k2, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k2, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k2, 3 ,13);
+    }
+
+    // k3(title-description-box)
+
+    @{k3} + @{k14} {
+        margin-top: @big;
+    }
+
+    .generateComponentsMargins(@large, @k3, 4, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k3, 4, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k3, 4, 14);
+    }
+
+    // k4(benefits-pictures);
+
+    @{k4} + @{k14} {
+        margin-top: @big;
+    }
+
+    .generateComponentsMargins(@large, @k4, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k4, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k4, 3, 14);
+    }
+
+    @{k4} + @{k4} {
+        .disableMarginTop();
+    }
+
+    // k5(infocard)
+
+    @{k5} + @{k14} {
+        margin-top: @big;
+    }
+
+    .generateComponentsMargins(@large, @k5, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k5, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k5, 3, 14);
+    }
+
+    @{k5} + @{k5} {
+        .disableMarginTop();
+    }
+
+    // k6(items-carousel)
+
+    @{k6} + @{k14} {
+        margin-top: @big;
+    }
+
+    .generateComponentsMargins(@large, @k6, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k6, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k6, 3, 14);
+    }
+
+    @{k6} + @{k6} {
+        .disableMarginTop();
+    }
+
+    // k7(items-carousel)
+
+    @{k7} + @{k14} {
+        margin-top: @small;
+    }
+
+    .generateComponentsMargins(@large, @k7, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k7, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k7, 3, 13);
+    }
+
+    // k8(tabs)
+
+    @{k8} + @{k14} {
+        margin-top: @big;
+
+        @media @mobileSM {
+            margin-top: @small;
+        }
+    }
+
+    .generateInnerTabsMargins(@big, 3, 13);
+
+    @media @mobileSM {
+        .generateInnerTabsMargins(@small, 3, 13);
+    }
+
+    @{k8} @{k8} {
+        .disableMarginTop();
+    }
+
+    // k9(partners)
+
+    @{k9} + @{k14} {
+        margin-top: @big;
+    }
+
+    .generateComponentsMargins(@large, @k9, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k9, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k9, 3, 14);
+    }
+
+    @{k9} + @{k9} {
+        .disableMarginTop();
+    }
+
+    // k10(instructions)
+
+    .generateComponentsMargins(@large, @k10, 3, 13);
+
+    @media @mobile {
+        .generateComponentsMargins(@big, @k10, 3, 13);
+    }
+
+    // k11(properties)
+
+    .generateComponentsMargins(@large, @k11, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k11, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k11, 3, 13);
+    }
+
+    // k12(table)
+
+    @{k12} + @{k14} {
+        margin-top: @small;
+    }
+
+    .generateComponentsMargins(@large, @k12, 3, 13);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k12, 3, 13);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k12, 3, 13);
+    }
+
+    // k13(accordion-box)
+
+    @{k13} + @{k14} {
+        margin-top: @small;
+    }
+}

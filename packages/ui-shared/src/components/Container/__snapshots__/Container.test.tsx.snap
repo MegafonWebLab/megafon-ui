@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container it renders component 1`] = `
+<div
+  className="mfui-beta-container mfui-beta-container_bg-color_default"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <TitleDescriptionBox
+      title="title"
+    />
+  </ContentArea>
+</div>
+`;
+
+exports[`Container it renders component with green background color 1`] = `
+<div
+  className="mfui-beta-container mfui-beta-container_bg-color_green"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <TitleDescriptionBox
+      title="title"
+    />
+  </ContentArea>
+</div>
+`;
