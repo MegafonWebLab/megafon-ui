@@ -3,9 +3,13 @@ import { shallow, mount } from 'enzyme';
 import { cnCreate } from '@megafon/ui-core';
 import VideoBanner, { VideoTypes } from './VideoBanner';
 
-const image = {
-    desktop: 'image-desktop.png',
+const onlyMobileImage = {
     mobile: 'image-mobile.png',
+};
+
+const image = {
+    ...onlyMobileImage,
+    desktop: 'image-desktop.png',
 };
 
 const video = 'video.mp4';
@@ -22,7 +26,7 @@ const content = {
 const cn = cnCreate('mfui-beta-video-banner');
 describe('<VideoBanner />', () => {
     it('render component on mobile resolution only with required props', () => {
-        const component = shallow(<VideoBanner image={image} />);
+        const component = shallow(<VideoBanner image={onlyMobileImage} />);
         expect(component).toMatchSnapshot();
     });
 
@@ -37,7 +41,9 @@ describe('<VideoBanner />', () => {
     });
 
     it('render with youtube video', () => {
-        const component = mount(<VideoBanner image={image} videoType={VideoTypes.YOUTUBE} videoSrc={youtubeVideoId} />);
+        const component = mount(
+            <VideoBanner image={onlyMobileImage} videoType={VideoTypes.YOUTUBE} videoSrc={youtubeVideoId} />
+            );
         expect(component).toMatchSnapshot();
     });
 
@@ -45,7 +51,7 @@ describe('<VideoBanner />', () => {
         // Props isMuted must be false, if the rendering method is "mount". Otherwise an error will occur.
         // https://github.com/enzymejs/enzyme/issues/2326
         const component = mount(
-            <VideoBanner image={image} videoType={VideoTypes.VIDEO} videoSrc={video} isMuted={false} />
+            <VideoBanner image={onlyMobileImage} videoType={VideoTypes.VIDEO} videoSrc={video} isMuted={false} />
             );
         expect(component).toMatchSnapshot();
     });
@@ -55,7 +61,7 @@ describe('<VideoBanner />', () => {
         // https://github.com/enzymejs/enzyme/issues/2326
         const component = mount(
             <VideoBanner
-                image={image}
+                image={onlyMobileImage}
                 videoType={VideoTypes.VIDEO}
                 videoSrc={video}
                 content={content}

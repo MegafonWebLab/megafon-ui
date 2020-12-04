@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
-import { Button, cnCreate, ContentArea, Header, Paragraph, breakpoints } from '@megafon/ui-core';
+import { Button, cnCreate, Header, Paragraph, breakpoints } from '@megafon/ui-core';
 
 const THROTTLE_TIME = 750;
 export const VideoTypes = {
@@ -29,7 +29,7 @@ export interface IImage {
     /** Изображение для мобильных устройств */
     mobile: string;
     /** Изображение для компьютерных устройств */
-    desktop: string;
+    desktop?: string;
 }
 
 interface IVideoBannerProps {
@@ -37,7 +37,7 @@ interface IVideoBannerProps {
     image: IImage;
     /** Данные для блока с контентом */
     content?: IContent;
-    /** Источник видео. Если видео с youtube, то необходимо указать id */
+    /** Источник видео. */
     videoSrc?: string;
     /** Тип видео */
     videoType?: VideoType;
@@ -51,10 +51,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
     const isVideo = !!videoSrc && !!videoType;
     const isRenderVideo = !isMobile && isVideo;
 
-    const renderContent = React.useCallback((data) => {
-        const { title, description, buttonTitle, href, onButtonClick } = data;
-
-        return (
+    const renderContent = React.useCallback(({ title, description, buttonTitle, href, onButtonClick }) => (
             <div className={cn('content')}>
                 <Header className={cn('title')} color="white" as="h1">{title}</Header>
                 <div className={cn('text')}>
@@ -62,8 +59,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
                 </div>
                 <Button className={cn('button')} href={href} onClick={onButtonClick}>{buttonTitle}</Button>
             </div>
-        );
-    }, [content]);
+    ), []);
 
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
@@ -95,6 +91,14 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
         }
     }, [videoType, videoSrc, isMuted]);
 
+    const renderImage = React.useCallback(({ mobile, desktop }: IImage) => {
+        const src = desktop && !isMobile ? desktop : mobile;
+
+        return (
+            <img src={src} className={cn('background-image', { 'mobile': !desktop })} />
+        );
+    }, [isMobile]);
+
     React.useEffect(() => {
         const resizeHandler = () =>
             window.innerWidth <= breakpoints.mobileBigEnd ? setIsMobile(true) : setIsMobile(false);
@@ -110,15 +114,13 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
 
     return (
         <div className={cn()}>
-            <ContentArea>
-                    <div
-                        className={cn('wrapper')}
-                        style={{backgroundImage: `url(${isMobile ? image.mobile : image.desktop})`}}
-                    >
-                        {content && renderContent(content)}
-                        {isRenderVideo && renderVideo()}
-                    </div>
-            </ContentArea>
+            <div
+                className={cn('wrapper')}
+            >
+                {renderImage(image)}
+                {content && renderContent(content)}
+                {isRenderVideo && renderVideo()}
+            </div>
         </div>
     );
 };
@@ -135,7 +137,7 @@ VideoBanner.propTypes = {
     }),
     image: PropTypes.shape({
         mobile: PropTypes.string.isRequired,
-        desktop: PropTypes.string.isRequired,
+        desktop: PropTypes.string,
     }).isRequired,
     isMuted: PropTypes.bool,
 };
