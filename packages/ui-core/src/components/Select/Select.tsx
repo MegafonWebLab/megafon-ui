@@ -29,11 +29,6 @@ export interface ISelectItem {
     view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
-interface ISelectClasses {
-    control?: string;
-    root?: string;
-}
-
 export interface ISelectProps extends IDataAttributes {
     /** Тип компонента */
     type?: SelectTypesType;
@@ -60,7 +55,13 @@ export interface ISelectProps extends IDataAttributes {
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
-    classes?: ISelectClasses;
+    classes?: {
+        root?: string;
+        control?: string;
+        list?: string;
+        listItem?: string;
+        listItemTitle?: string;
+    };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
         e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
@@ -90,8 +91,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         notFoundText: PropTypes.string,
         className: PropTypes.string,
         classes: PropTypes.shape({
-            control: PropTypes.string,
             root: PropTypes.string,
+            control: PropTypes.string,
+            list: PropTypes.string,
+            listItem: PropTypes.string,
+            listItemTitle: PropTypes.string,
         }),
         items: PropTypes.arrayOf(
             PropTypes.shape({
@@ -400,24 +404,24 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     renderChildren() {
-        const { type, items, notFoundText } = this.props;
+        const { type, items, notFoundText, classes = {} } = this.props;
         const { filteredItems, activeIndex } = this.state;
         const currentItems = type === SelectTypes.COMBOBOX ? filteredItems : items;
 
         return (
-            <div className={cn('list')}>
+            <div className={cn('list', [classes.list])}>
                 <div className={cn('list-inner')} ref={this.getItemWrapper}>
                     {currentItems.map(({ title, value, view }, i) => (
                         <div
                             className={cn('list-item', {
                                 active: activeIndex === i,
-                            })}
+                            }, [classes.listItem])}
                             key={`${i}_${value}`}
                             onClick={this.handleSelectItem}
                             onMouseEnter={this.handleHoverItem(i)}
                             ref={this.getNodeList}
                         >
-                            <div className={cn('item-title')}>
+                            <div className={cn('item-title', [classes.listItemTitle])}>
                                 {this.highlightString(title, view)}
                             </div>
                         </div>

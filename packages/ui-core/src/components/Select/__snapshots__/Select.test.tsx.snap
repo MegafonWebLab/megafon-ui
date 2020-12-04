@@ -83,19 +83,19 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-beta-select__list list"
     >
       <div
         className="mfui-beta-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-beta-select__item-title list-item-title"
           >
             t
             e
@@ -111,13 +111,13 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
           </div>
         </div>
         <div
-          className="mfui-beta-select__list-item"
+          className="mfui-beta-select__list-item list-item"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-beta-select__item-title list-item-title"
           >
             t
             e
@@ -184,19 +184,19 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-beta-select__list list"
     >
       <div
         className="mfui-beta-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-beta-select__item-title list-item-title"
           >
             t
             e
@@ -212,13 +212,13 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
           </div>
         </div>
         <div
-          className="mfui-beta-select__list-item"
+          className="mfui-beta-select__list-item list-item"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-beta-select__item-title list-item-title"
           >
             t
             e
@@ -285,19 +285,19 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-beta-select__list list"
     >
       <div
         className="mfui-beta-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-beta-select__item-title list-item-title"
           >
             <span
               className="mfui-beta-select__highlighted-fragment"
@@ -358,19 +358,19 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-beta-select__list list"
     >
       <div
         className="mfui-beta-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-beta-select__item-title list-item-title"
           >
             t
             e
@@ -386,13 +386,13 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
           </div>
         </div>
         <div
-          className="mfui-beta-select__list-item"
+          className="mfui-beta-select__list-item list-item"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-beta-select__item-title list-item-title"
           >
             t
             e
@@ -424,6 +424,9 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
   classes={
     Object {
       "control": "test-control-class",
+      "list": "list",
+      "listItem": "list-item",
+      "listItemTitle": "list-item-title",
       "root": "test-root-class",
     }
   }
@@ -502,31 +505,31 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         </div>
       </div>
       <div
-        className="mfui-beta-select__list"
+        className="mfui-beta-select__list list"
       >
         <div
           className="mfui-beta-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               test-name-1
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item"
+            className="mfui-beta-select__list-item list-item"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               test-name-2
             </div>
@@ -549,6 +552,9 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
   classes={
     Object {
       "control": "test-control-class",
+      "list": "list",
+      "listItem": "list-item",
+      "listItemTitle": "list-item-title",
       "root": "test-root-class",
     }
   }
@@ -627,31 +633,31 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         </div>
       </div>
       <div
-        className="mfui-beta-select__list"
+        className="mfui-beta-select__list list"
       >
         <div
           className="mfui-beta-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               test-name-1
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item"
+            className="mfui-beta-select__list-item list-item"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               test-name-2
             </div>
@@ -674,6 +680,9 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
   classes={
     Object {
       "control": "test-control-class",
+      "list": "list",
+      "listItem": "list-item",
+      "listItemTitle": "list-item-title",
       "root": "test-root-class",
     }
   }
@@ -749,19 +758,19 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         </div>
       </div>
       <div
-        className="mfui-beta-select__list"
+        className="mfui-beta-select__list list"
       >
         <div
           className="mfui-beta-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
             key="0_111"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               n
               e
@@ -781,13 +790,13 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item"
+            className="mfui-beta-select__list-item list-item"
             key="1_222"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               n
               e
@@ -909,6 +918,9 @@ exports[`<Select /> snapshots renders with props 1`] = `
   classes={
     Object {
       "control": "test-control-class",
+      "list": "list",
+      "listItem": "list-item",
+      "listItemTitle": "list-item-title",
       "root": "test-root-class",
     }
   }
@@ -987,31 +999,31 @@ exports[`<Select /> snapshots renders with props 1`] = `
         </div>
       </div>
       <div
-        className="mfui-beta-select__list"
+        className="mfui-beta-select__list list"
       >
         <div
           className="mfui-beta-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               test-name-1
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item"
+            className="mfui-beta-select__list-item list-item"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-beta-select__item-title list-item-title"
             >
               test-name-2
             </div>
