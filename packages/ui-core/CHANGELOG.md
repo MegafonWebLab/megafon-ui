@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.59](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.58...@megafon/ui-core@2.0.0-beta.59) (2020-12-04)
+
+
+### Bug Fixes
+
+* **select:** add new keys to prop classes ([2a632f0](https://github.com/MegafonWebLab/megafon-ui/commit/2a632f02145514ce594728358770ccc2ea6b8d41))
+
+
+
+
+
 # [2.0.0-beta.58](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.57...@megafon/ui-core@2.0.0-beta.58) (2020-12-04)
 
 
