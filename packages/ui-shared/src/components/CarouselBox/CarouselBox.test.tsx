@@ -11,7 +11,7 @@ const props: ICarouselBox = {
     navTheme: 'green',
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
-    onChange: jest.fn()
+    onChange: jest.fn(),
 };
 
 describe('<CarouselBox />', () => {
