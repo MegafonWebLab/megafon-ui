@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CarouselBox /> render CarouselBox with default props 1`] = `
+<div
+  className="mfui-beta-carousel-block"
+>
+  <Carousel>
+    <div>
+      test
+    </div>
+  </Carousel>
+</div>
+`;
+
+exports[`<CarouselBox /> render CarouselBox with props 1`] = `
+<div
+  className="mfui-beta-carousel-block"
+>
+  <Carousel
+    autoPlay={true}
+    autoPlayDelay={10}
+    className="testClassName"
+    innerIndentsClass="testInnerClass"
+    loop={true}
+    navTheme="green"
+    onChange={[MockFunction]}
+    onNextClick={[MockFunction]}
+    onPrevClick={[MockFunction]}
+  >
+    <div>
+      test
+    </div>
+  </Carousel>
+</div>
+`;

@@ -9,7 +9,7 @@ const NavTheme = {
 
 declare type NavThemeType = typeof NavTheme[keyof typeof NavTheme];
 
-export interface ICarouselBlock {
+export interface ICarouselBox {
     /** Сss класс для внешнего контейнера */
     className?: string;
     /** Сss класс для задания внутренних оступов */
@@ -31,7 +31,7 @@ export interface ICarouselBlock {
 }
 
 const cn = cnCreate('mfui-beta-carousel-block');
-const CarouselBlock: React.FC<ICarouselBlock> = ({ children, ...props }) => (
+const CarouselBox: React.FC<ICarouselBox> = ({ children, ...props }) => (
     <div className={cn()}>
         <Carousel {...props}>
             {children}
@@ -39,7 +39,7 @@ const CarouselBlock: React.FC<ICarouselBlock> = ({ children, ...props }) => (
     </div>
 );
 
-CarouselBlock.propTypes = {
+CarouselBox.propTypes = {
     className: PropTypes.string,
     innerIndentsClass: PropTypes.string,
     loop: PropTypes.bool,
@@ -51,4 +51,4 @@ CarouselBlock.propTypes = {
     onChange: PropTypes.func,
 };
 
-export default CarouselBlock;
+export default CarouselBox;
