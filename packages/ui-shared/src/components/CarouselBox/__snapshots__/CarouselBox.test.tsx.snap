@@ -2,7 +2,7 @@
 
 exports[`<CarouselBox /> render CarouselBox with default props 1`] = `
 <div
-  className="mfui-beta-carousel-block"
+  className="mfui-beta-carousel-box"
 >
   <Carousel>
     <div>
@@ -14,7 +14,7 @@ exports[`<CarouselBox /> render CarouselBox with default props 1`] = `
 
 exports[`<CarouselBox /> render CarouselBox with props 1`] = `
 <div
-  className="mfui-beta-carousel-block"
+  className="mfui-beta-carousel-box"
 >
   <Carousel
     autoPlay={true}

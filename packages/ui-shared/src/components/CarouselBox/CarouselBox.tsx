@@ -30,7 +30,7 @@ export interface ICarouselBox {
     onChange?: (index: number) => void;
 }
 
-const cn = cnCreate('mfui-beta-carousel-block');
+const cn = cnCreate('mfui-beta-carousel-box');
 const CarouselBox: React.FC<ICarouselBox> = ({ children, ...props }) => (
     <div className={cn()}>
         <Carousel {...props}>
