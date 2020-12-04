@@ -13,8 +13,11 @@ const props: ISelectProps = {
     required: true,
     placeholder: 'test-placeholder',
     classes: {
-        control: 'test-control-class',
         root: 'test-root-class',
+        control: 'test-control-class',
+        list: 'list',
+        listItem: 'list-item',
+        listItemTitle: 'list-item-title',
     },
     items: [
         {
