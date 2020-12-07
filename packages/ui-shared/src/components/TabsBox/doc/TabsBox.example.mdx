@@ -1,0 +1,28 @@
+import { Playground } from 'docz';
+import { ContentArea } from "@megafon/ui-core";
+import TabsBox from '../TabsBox';
+import TabBox from '../TabBox';
+import { DemoContent } from './TabsBox.docz';
+
+Компонент **TabsBox** является оберткой над компонентом **Tabs** из раздела **Компоненты** и имеет идентичные свойства и методы
+
+## Базовое использование
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <TabsBox>
+            <TabBox title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </TabBox>
+            <TabBox title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </TabBox>
+            <TabBox title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </TabBox>
+            <TabBox title="Таб 4">
+                <DemoContent>Контент 4</DemoContent>
+            </TabBox>
+        </TabsBox>
+    </ContentArea>
+</Playground>
