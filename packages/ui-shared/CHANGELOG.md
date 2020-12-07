@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.63](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.62...@megafon/ui-shared@2.0.0-beta.63) (2020-12-07)
+
+
+### Code Refactoring
+
+* **component - dropdownsociallist and producttalerest, folder - productcard:** remove component ([574e074](https://github.com/MegafonWebLab/megafon-ui/commit/574e074537cd2d9dcde5b3cffbbc8145d33aea49))
+
+
+### BREAKING CHANGES
+
+* **component - dropdownsociallist and producttalerest, folder - productcard:** destruction of public components
+
+
+
+
+
 # [2.0.0-beta.62](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.61...@megafon/ui-shared@2.0.0-beta.62) (2020-12-04)
 
 **Note:** Version bump only for package @megafon/ui-shared
