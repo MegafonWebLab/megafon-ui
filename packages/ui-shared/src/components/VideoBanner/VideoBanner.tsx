@@ -64,7 +64,17 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
             case(VideoTypes.YOUTUBE): {
-                const src = `https://www.youtube.com/embed/${videoSrc}?&autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${videoSrc}`;
+                const url = `https://www.youtube.com/embed/${videoSrc}?`;
+                const autoplay = '&autoplay=1';
+                const mute = `&mute=${isMuted ? 1 : 0}`;
+                const loop = '&loop=1';
+                const rel = '&rel=0';
+                const controls = '&controls=0';
+                const info = '&showinfo=0e';
+                const policy = '&iv_load_policy=3';
+                const playlist = `&playlist=${videoSrc}`;
+
+                const src = `${url}${autoplay}${mute}${loop}${rel}${controls}${info}${policy}${playlist}`;
 
                 return (
                     <iframe className={cn('video')}
