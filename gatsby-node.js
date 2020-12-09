@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { basename, resolve, join, parse } = require("path");
 const glob = require('glob');
+const { NODE_ENV } = process.env;
 
 const srcPath = join(__dirname, '..', 'packages', 'ui-core', 'src');
 const indexTs = join(srcPath, 'index.ts');
@@ -54,6 +55,11 @@ exports.onCreateWebpackConfig = args => {
     args.actions.replaceWebpackConfig(config);
 
     args.actions.setWebpackConfig({
+        plugins: [
+            args.plugins.define({
+              '__DEV__': NODE_ENV === 'development',
+            }),
+        ],
         resolve: {
             modules: [
                 resolve(__dirname, "../packages/ui-core/src"),
