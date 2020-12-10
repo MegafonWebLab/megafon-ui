@@ -8,6 +8,7 @@ import { h1, h2, h3, h5 } from './components/Header'
 import { DoczTabs } from './components/Tabs';
 import Code from './components/Code';
 import { td, th, table } from './components/Table';
+import loadFonts from './loadFonts';
 
 const map = {
     h1,
@@ -26,6 +27,11 @@ const map = {
 };
 
 const Theme = ({ children }) => {
+
+    React.useEffect(() => {
+        loadFonts();
+    }, []);
+
     return (
         <ComponentsProvider components={map}>
             {children}
