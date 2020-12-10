@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TabsBox /> should render with props 1`] = `
+<div
+  className="mfui-beta-tabs-box"
+>
+  <Tabs
+    className="className"
+    currentIndex={1}
+    defaultIndex={1}
+    hAlign="center"
+    innerIndentsClass="innerIndentsClass"
+    size="small"
+    sticky={true}
+    tabColorTheme="green"
+  >
+    <Tab
+      href="www.test.com"
+      icon={<test-file-stub />}
+      title="title 1"
+    >
+      1
+    </Tab>
+    <Tab
+      renderTabWrapper={[Function]}
+      title="title 2"
+    >
+      2
+    </Tab>
+  </Tabs>
+</div>
+`;
