@@ -134,27 +134,24 @@ class Icons extends React.Component<{}, IIconsState> {
             const Svg = reqSvgs(svg.path).default;
 
             return (
-                <div
+                <button
                     key={svg.path}
                     className={cn('icon-container', { active: activeElement.name === name })}
                     onClick={this.handleIconClick({ name, svgList })}
                 >
                     <div className={cn('icon')}><Svg /></div>
                     {name}
-                </div>
+                </button>
             );
         });
     }
 
     renderInfoIcon(svg: svgDataType) {
         const { copyIndex } = this.state;
-        const Svg = reqSvgs(svg.path).default;
-        const styles = { width: `${Number(svg.size) * 2}px` };
         const importStr = importIcon + svg.importPath;
 
         return (
             <div className={cn('info-icon-wrapper')} key={svg.path}>
-                <div className={cn('info-icon')} style={styles}><Svg /></div>
                 <div className={cn('info-code')}>
                     <div className={cn('info-import')}>
                         Svg <code className={cn('info-code-style')}>{importStr}.svg';</code>
@@ -162,7 +159,7 @@ class Icons extends React.Component<{}, IIconsState> {
                             <Copy
                                 className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
                                 onClick={this.copyToClipBoard &&
-                                        this.copyToClipBoard(`${importStr}.svg'`, copyBoard.SVG)}
+                                        this.copyToClipBoard(`${importStr}.svg;'`, copyBoard.SVG)}
                             />
                         </a>
                     </div>
@@ -172,7 +169,7 @@ class Icons extends React.Component<{}, IIconsState> {
                             <Copy
                                 className={cn('info-copy', { active: copyIndex === copyBoard.JSX })}
                                 onClick={this.copyToClipBoard
-                                    && this.copyToClipBoard(`${importStr}'`, copyBoard.JSX)}
+                                    && this.copyToClipBoard(`${importStr};'`, copyBoard.JSX)}
                             />
                         </a>
                     </div>
@@ -183,13 +180,14 @@ class Icons extends React.Component<{}, IIconsState> {
 
     render() {
         const { sections, activeElement: { svgList }, activeIcon } = this.state;
+        const Svg = svgList && reqSvgs(svgList[activeIcon].path).default;
 
         return (
             <React.Fragment>
-                <div className={cn('')}>
+                <div className={cn()}>
                     {Object.keys(sections).map((section: string) =>
                         <div key={section}>
-                            <Header as="h2">{section}</Header>
+                            <Header as="h2" className={cn('icon-title')}>{section}</Header>
                             <div className={cn('icons')}>
                                 {this.renderIcons(Object.entries(sections[section]))}
                             </div>
@@ -199,21 +197,24 @@ class Icons extends React.Component<{}, IIconsState> {
                 {svgList &&
                     <div className={cn('info')}>
                         <div className={cn('info-icons')}>
-                            <React.Fragment>
-                                {this.renderInfoIcon(svgList[activeIcon])}
-                                <div className={cn('info-sizes')}>
-                                    {svgList.map((svg: svgDataType, i: number) =>
-                                        <div
-                                            className={cn('info-size', { active: activeIcon === i })}
-                                            key={svg.size}
-                                            onClick={this.handleClickInfoIcon(i)}
-                                        >
-                                            {sizeDictionary[svg.size]}
-                                        </div>
-                                    )}
+                            <div className={cn('info-sizes')}>
+                                {svgList.map((svg: svgDataType, i: number) =>
+                                    <div
+                                        className={cn('info-size', { active: activeIcon === i })}
+                                        key={svg.size}
+                                        onClick={this.handleClickInfoIcon(i)}
+                                    >
+                                        {sizeDictionary[svg.size]}
+                                    </div>
+                                )}
+                            </div>
+                            <div className={cn('info-icon-wrap')}>
+                                <div style={{width: `${Number(svgList[activeIcon].size) * 2}px` }}>
+                                    <Svg />
                                 </div>
-                            </React.Fragment>
+                            </div>
                         </div>
+                        {this.renderInfoIcon(svgList[activeIcon])}
                         <div className={cn('info-close')} onClick={this.handleClickClose}>
                             <Cancel />
                         </div>

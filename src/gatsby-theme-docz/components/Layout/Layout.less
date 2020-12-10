@@ -1,21 +1,57 @@
 .docz-layout {
+    padding-top: 48px;
+
+    @media screen and (min-width: 767px) {
+        padding-top: 0px;
+    }
+
     &__side-bar {
         position: fixed;
-        top: 0;
+        top: 48px;
         bottom: 0;
+        width: 240px;
+        transform: translateX(-240px);
+        transition: transform .5s;
+
+        @media screen and (min-width: 767px) {
+            top: 0;
+        }
+
+        &_open {
+            transform: translateX(0);
+        }
     }
     &__sep {
         position: fixed;
-        top: 0;
+        top: 48px;
         bottom: 0;
-        left: 240px;
+        left: 0;
         width: 1px;
         background-color: #EDEDED;
+        transform: translateX(0);
+        transition: transform .5s;
+
+        @media screen and (min-width: 767px) {
+            top: 0;
+        }
+
+        &_open {
+            transform: translateX(240px);
+        }
     }
     &__content {
-        padding-left: 240px;
+        padding-left: 0;
+        transition: padding .5s;
+
+        &_open {
+            padding-left: 240px;
+        }
     }
     &__content-inner {
         padding: 80px;
+
+        @media screen and (max-width: 1120px) {
+            padding: 24px;
+        }
     }
 }
