@@ -5,87 +5,82 @@
 @{b} {
     margin-bottom: 140px;
 
+    &__icon-title {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
     &__icons {
         display: flex;
         flex-wrap: wrap;
     }
 
     &__icon-container {
-        width: 110px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 160px;
         margin-right: 10px;
         margin-bottom: 10px;
         text-align: center;
         cursor: pointer;
         word-wrap: break-word;
+        font-size: 12px;
+        white-space: nowrap;
+        border: none;
+        background: none;
+        outline: none;
     }
 
-    &__icon-container:hover:not(&__icon-container_active) &__icon {
-        transform: translateY(-5px);
+    &__icon-container:hover:before,
+    &__icon-container_active:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: -4px;
+        bottom: -2px;
+        left: -8px;
+        z-index: -1;
+        background: #F6F6F6;
+        border-radius: 8px;
     }
 
     &__icon {
         position: relative;
         z-index: 5;
-        width: 36px;
-        height: 36px;
-        margin: 0 auto;
+        width: 24px;
+        height: 24px;
         transition: all 0.2s ease;
-    }
-
-    &__icon-container_active &__icon:before {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    &__icon:before {
-        content: '';
-        position: absolute;
-        width: 48px;
-        height: 48px;
-        top: -6px;
-        left: 50%;
-        background: @spbSky2;
-        border-radius: 24px;
-        margin-left: -24px;
-        z-index: -1;
-        opacity: 0;
-        transition: all 0.2s ease;
+        margin-right: 8px;
     }
 
     &__info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: @clearWhite;
         position: fixed;
-        z-index: 10;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 20px;
-        border: 1px solid #CCCCCC;
+        z-index: 10;
+        padding: 16px;
+        border: 1px solid @spbSky1;
+        background: @clearWhite;
 
         @media screen and (min-width: 1120px) {
-            left: 280px;
+            left: 240px;
         }
     }
 
     &__info-close {
-        width: 52px;
-        height: 52px;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 40px;
+        height: 40px;
         cursor: pointer;
     }
 
     &__info-icons {
         display: flex;
-        align-items: center;
-        width: 100%;
-        justify-content: space-between;
-        margin: 0 30px;
-    }
-
-    &__info-icon {
-        margin-right: 15px;
+        margin-bottom: 16px;
     }
 
     &__info-import {
@@ -100,8 +95,8 @@
 
     &__info-code-style {
         font-size: 12px;
-        background: @spbSky2;
-        padding: 5px;
+        background: @spbSky1;
+        padding: 4px;
         border-radius: 5px;
         margin-left: 10px;
         width: 100%;
@@ -109,11 +104,11 @@
     }
 
     &__info-copy {
-        background: @spbSky2;
+        background: @spbSky1;
         width: 32px;
         height: 32px;
         cursor: pointer;
-        border-radius: 5px;
+        border-radius: 8px;
         margin-left: 6px;
 
         &_active {
@@ -127,11 +122,18 @@
         align-items: flex-end;
     }
 
+    &__info-icon-wrap {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        height: 48px;
+    }
+
     &__info-icon-wrapper {
         display: flex;
         align-items: center;
         width: 100%;
-        justify-content: space-around;
         margin-right: 10px;
     }
 
@@ -140,11 +142,19 @@
         flex-direction: column;
     }
 
+    &__info-icon {
+        width: 32px;
+        height: 32px;
+    }
+
     &__info-sizes {
         display: flex;
     }
 
     &__info-size {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 32px;
         height: 32px;
         font-size: 20px;

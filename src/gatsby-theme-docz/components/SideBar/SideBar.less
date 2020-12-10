@@ -4,6 +4,10 @@
 
     &__logo-wrapper {
         padding: 24px 16px 32px;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
     }
 
     &__logo {
@@ -14,5 +18,11 @@
     &__menu {
         max-height: calc(100vh - 116px);
         overflow: auto;
+        margin-bottom: 24px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 24px;
+            max-height: calc(100vh - 24px - 48px);
+        }
     }
 }

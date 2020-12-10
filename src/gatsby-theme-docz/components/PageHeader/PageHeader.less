@@ -1,0 +1,32 @@
+.docz-page-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+
+    background: #FFF;
+    box-shadow: 0 0 16px 0 rgba(0,0,0,.2);
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+
+    &__hamburger {
+        width: 48px;
+        height: 48px;
+
+        margin-left: 4px;
+
+        background: none;
+        border: none;
+        outline: none;
+    }
+
+    &__logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+}
