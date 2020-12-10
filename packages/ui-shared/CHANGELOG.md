@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.65](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.64...@megafon/ui-shared@2.0.0-beta.65) (2020-12-10)
+
+
+### Features
+
+* **tabsbox:** add new constructor component ([68101d4](https://github.com/MegafonWebLab/megafon-ui/commit/68101d439e9c0b3edd3d868070f5318b50760d0e))
+
+
+
+
+
 # [2.0.0-beta.64](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.63...@megafon/ui-shared@2.0.0-beta.64) (2020-12-08)
 
 
