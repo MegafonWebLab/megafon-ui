@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.62](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.61...@megafon/ui-core@2.0.0-beta.62) (2020-12-11)
+
+
+### Bug Fixes
+
+* **search:** rewrite inner callback after onChange props changed ([9954f5e](https://github.com/MegafonWebLab/megafon-ui/commit/9954f5eb2f8d56bc3991c697b5d84dcd030cfd06))
+
+
+
+
+
 # [2.0.0-beta.61](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.60...@megafon/ui-core@2.0.0-beta.61) (2020-12-10)
 
 **Note:** Version bump only for package @megafon/ui-core
