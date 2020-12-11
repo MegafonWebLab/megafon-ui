@@ -66,6 +66,21 @@ describe('<Search />', () => {
 
             expect(handleChange).toHaveBeenCalledWith('new value');
         });
+        it('calls onChange while typing with changed onChange', async () => {
+            const handleChange = jest.fn();
+            const wrapper = mount(<Search {...props} changeDelay={300} onChange={undefined} />);
+
+            wrapper.setProps({ changeDelay: 300, onChange: handleChange });
+            wrapper.find(`.${cn('search-field')}`).simulate('change', {
+                target: {
+                    value: 'new value',
+                },
+            });
+
+            await new Promise((r) => setTimeout(r, 300));
+
+            expect(handleChange).toHaveBeenCalledWith('new value');
+        });
         it('calls onChange', () => {
             const handleChange = jest.fn();
             const wrapper = shallow(<Search {...props} changeDelay={0} onChange={handleChange} />);
