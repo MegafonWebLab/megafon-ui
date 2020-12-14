@@ -10,11 +10,12 @@
 }
 
 @{b} {
+    position: relative;
+    overflow: hidden;
+
     &__wrapper {
-        position: relative;
         display: flex;
         height: 400px;
-        overflow: hidden;
 
         @media @desktopBU {
             height: 562px;
@@ -46,6 +47,10 @@
             padding-left: 16px;
             padding-right: 16px;
         }
+    }
+
+    &__video {
+        max-width: 100%;
     }
 
     &__background-image,
