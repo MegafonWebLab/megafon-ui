@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PropertyDescription /> should render description in one row 1`] = `
+<div
+  className="mfui-beta-property-description"
+>
+  <Paragraph
+    className="mfui-beta-property-description__desc"
+    hasMargin={false}
+    key="0"
+  >
+    Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
+  </Paragraph>
+</div>
+`;
+
+exports[`<PropertyDescription /> should render description in several rows 1`] = `
+<div
+  className="mfui-beta-property-description"
+>
+  <Paragraph
+    className="mfui-beta-property-description__desc"
+    hasMargin={false}
+    key="0"
+  >
+    Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
+  </Paragraph>
+  <Paragraph
+    className="mfui-beta-property-description__desc"
+    hasMargin={false}
+    key="1"
+  >
+    Google Play Music, Apple Music, онлайн радио.
+  </Paragraph>
+</div>
+`;
+
+exports[`<PropertyDescription /> should render hidden description 1`] = `
+<div
+  className="mfui-beta-property-description"
+>
+  <span
+    className="mfui-beta-property-description__collapse"
+    onClick={[Function]}
+  >
+    Подробнее
+  </span>
+  <Collapse
+    className="mfui-beta-property-description__content"
+    classNameContainer="mfui-beta-property-description__content-inner"
+    isOpened={false}
+  >
+    <Paragraph
+      className="mfui-beta-property-description__desc"
+      hasMargin={false}
+      key="0"
+    >
+      Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
+    </Paragraph>
+    <Paragraph
+      className="mfui-beta-property-description__desc"
+      hasMargin={false}
+      key="1"
+    >
+      Google Play Music, Apple Music, онлайн радио.
+    </Paragraph>
+  </Collapse>
+</div>
+`;

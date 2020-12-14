@@ -1,0 +1,96 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-property');
+
+@innerWidth: 431px;
+@innerMarginRight: 115px;
+
+@innerWidthMobileSM: 164px;
+@innerMarginRightMobileSM: 16px;
+
+@innerWidthMobileB: 360px;
+@innerMarginRightMobileB: 135px;
+
+@innerWidthDesktopS: 415px;
+@innerMarginRightDesktopS: 96px;
+
+@{b} {
+    width: 100%;
+    padding: 25.5px 24px;
+    border-top: 1px solid @spbSky2;
+    position: relative;
+
+    &_border-bottom {
+        border-bottom: 1px solid @spbSky2;
+    }
+
+    @media @mobileSM {
+        padding: 23.5px 0;
+    }
+
+    @media @mobileB {
+        padding: 23.5px 24px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: baseline;
+
+        &_multirow:first-child {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+        margin-right: 9px;
+        margin-left: 1px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    &__badge {
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 8px;
+        color: @clearWhite;
+        background: @mandarin;
+    }
+
+    &__inner {
+        width: @innerWidth;
+        margin-right: @innerMarginRight;
+
+        @media @mobileSM {
+            width: @innerWidthMobileSM;
+            margin-right: @innerMarginRightMobileSM;
+        }
+
+        @media @mobileB {
+            width: @innerWidthMobileB;
+            margin-right: @innerMarginRightMobileB;
+        }
+
+        @media @desktopS {
+            width: @innerWidthDesktopS;
+            margin-right: @innerMarginRightDesktopS;
+        }
+    }
+
+    &__merged-value {
+        position: absolute;
+        left: calc(@innerWidth + @innerMarginRight);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__desc {
+        margin-top: 8px;
+    }
+
+    &__item ~ &__item {
+        margin-top: 16px;
+    }
+}
