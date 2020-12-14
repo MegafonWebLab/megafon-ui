@@ -28,7 +28,7 @@ export interface IPartnersProps {
     onChange?: (index: number) => void;
 }
 
-const MAX_ITEMS_LENGTH = 8;
+const MAX_GRID_ITEMS_LENGTH = 8;
 
 const slidesSettings = {
     [breakpoints.mobileSmallStart]: {
@@ -111,7 +111,7 @@ const Partners: React.FC<IPartnersProps> = ({
 
     return (
         <div className={cn([className])}>
-            {items.length > MAX_ITEMS_LENGTH ? renderCarousel() : renderGrid()}
+            {items.length > MAX_GRID_ITEMS_LENGTH ? renderCarousel() : renderGrid()}
         </div>
     );
 };
@@ -124,6 +124,9 @@ Partners.propTypes = {
             src: PropTypes.string.isRequired,
         }).isRequired
     ).isRequired,
+    onChange: PropTypes.func,
+    onNextClick: PropTypes.func,
+    onPrevClick: PropTypes.func,
 };
 
 export default Partners;
