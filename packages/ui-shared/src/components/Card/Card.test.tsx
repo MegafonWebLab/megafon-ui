@@ -45,8 +45,13 @@ describe('Card', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('render with one interactive element', () => {
+    it('render with a single interactive button element', () => {
         const wrapper = shallow(<Card title={title} text={text} svgSrc={svg} button={button} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render with a single interactive link element', () => {
+        const wrapper = shallow(<Card title={title} text={text} svgSrc={svg} link={link} />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -57,7 +62,7 @@ describe('Card', () => {
 
     it('disable left align if there is a button and link', () => {
         const wrapper = shallow(
-            <Card title={title} text={text} imageSrc={img} button={button} link={link} isLeftHAlign/>
+            <Card title={title} text={text} imageSrc={img} button={button} link={link} isLeftHAlign />
             );
         expect(wrapper).toMatchSnapshot();
     });

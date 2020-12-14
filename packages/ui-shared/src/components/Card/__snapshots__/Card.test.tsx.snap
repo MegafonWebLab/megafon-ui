@@ -312,6 +312,105 @@ exports[`Card render component with img, if image source and svg source are spec
 </div>
 `;
 
+exports[`Card render with a single interactive button element 1`] = `
+<div
+  className="mfui-beta-card"
+>
+  <div>
+    <div
+      className="mfui-beta-card__inner"
+    >
+      <div
+        className="mfui-beta-card__pic-wrapper"
+      >
+        <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />
+      </div>
+      <Header
+        as="h3"
+        className="mfui-beta-card__title"
+        color="black"
+        hAlign="inherit"
+      >
+        Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      </Header>
+      <Paragraph
+        hasMargin={false}
+      >
+        Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
+      </Paragraph>
+      <div
+        className="mfui-beta-card__btns-wrapper"
+      >
+        <Button
+          className="mfui-beta-card__button"
+          href="#"
+        >
+          Подробнее
+        </Button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card render with a single interactive link element 1`] = `
+<div
+  className="mfui-beta-card"
+>
+  <div>
+    <div
+      className="mfui-beta-card__inner"
+    >
+      <div
+        className="mfui-beta-card__pic-wrapper"
+      >
+        <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />
+      </div>
+      <Header
+        as="h3"
+        className="mfui-beta-card__title"
+        color="black"
+        hAlign="inherit"
+      >
+        Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      </Header>
+      <Paragraph
+        hasMargin={false}
+      >
+        Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
+      </Paragraph>
+      <div
+        className="mfui-beta-card__btns-wrapper"
+      >
+        <TextLink
+          className="mfui-beta-card__link"
+          color="blue"
+          href="#"
+          underlineStyle="solid"
+          underlineVisibility="hover"
+        >
+          Подключить
+        </TextLink>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Card render with contain object fit 1`] = `
 <div
   className="mfui-beta-card"
@@ -402,54 +501,6 @@ exports[`Card render with link on the card 1`] = `
       </div>
     </div>
   </Link>
-</div>
-`;
-
-exports[`Card render with one interactive element 1`] = `
-<div
-  className="mfui-beta-card"
->
-  <div>
-    <div
-      className="mfui-beta-card__inner"
-    >
-      <div
-        className="mfui-beta-card__pic-wrapper"
-      >
-        <test-file-stub
-          style={
-            Object {
-              "display": "block",
-              "fill": "#00B956",
-            }
-          }
-        />
-      </div>
-      <Header
-        as="h3"
-        className="mfui-beta-card__title"
-        color="black"
-        hAlign="inherit"
-      >
-        Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
-      </Header>
-      <Paragraph
-        hasMargin={false}
-      >
-        Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-      </Paragraph>
-      <div
-        className="mfui-beta-card__btns-wrapper"
-      >
-        <Button
-          className="mfui-beta-card__button"
-          href="#"
-        >
-          Подробнее
-        </Button>
-      </div>
-    </div>
-  </div>
 </div>
 `;
 
