@@ -154,7 +154,7 @@ gulp.task('ts', () => {
 
 gulp.task('main', done => {
     const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
-    const utils = glob.sync('src/utils/*.ts', { ignore: testsReg });
+    const utils = glob.sync('src/utils/*.{tsx,ts}', { ignore: testsReg });
     const constants = glob.sync('src/constants/*.ts');
 
     fs.writeFile(indexTs, generateIndex([...components, ...utils, ...constants]), done);

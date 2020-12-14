@@ -34,7 +34,7 @@ exports.onPreInit = () => {
     fs.writeFile('../index.mdx', createReadmeMdx(), err => { if (!err) { console.log('index.mdx created'); } });
 
     const components = glob.sync('../packages/ui-core/src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
-    const utils = glob.sync('../packages/ui-core/src/utils/*.ts', { ignore: testsReg });
+    const utils = glob.sync('../packages/ui-core/src/utils/*.{tsx,ts}', { ignore: testsReg });
     const constants = glob.sync('../packages/ui-core/src/constants/*.ts');
 
     fs.writeFile(indexTs, generateIndex([...components, ...utils, ...constants]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
