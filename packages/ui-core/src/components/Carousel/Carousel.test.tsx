@@ -5,8 +5,10 @@ import Carousel, { ICarouselProps, NavTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
 
 const props = {
-    className: 'class',
-    innerIndentsClass: 'inner-indents-class',
+    classes: {
+        root: 'class',
+        innerIndents: 'inner-indents-class',
+    },
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,

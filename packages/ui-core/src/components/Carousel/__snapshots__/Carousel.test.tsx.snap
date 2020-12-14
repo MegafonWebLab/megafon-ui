@@ -3,6 +3,7 @@
 exports[`<Carousel /> should render with default props 1`] = `
 <div
   className="mfui-beta-carousel mfui-beta-carousel_nav-theme_light"
+  onClick={[Function]}
 >
   <Swiper
     autoplay={false}
@@ -29,6 +30,7 @@ exports[`<Carousel /> should render with default props 1`] = `
     onReachEnd={[Function]}
     onSlideChange={[Function]}
     onSwiper={[Function]}
+    onTouchEnd={[Function]}
     pagination={
       Object {
         "clickable": true,
@@ -72,6 +74,7 @@ exports[`<Carousel /> should render with default props 1`] = `
 exports[`<Carousel /> should render with props 1`] = `
 <div
   className="mfui-beta-carousel mfui-beta-carousel_nav-theme_green class"
+  onClick={[Function]}
 >
   <Swiper
     autoplay={
@@ -97,6 +100,7 @@ exports[`<Carousel /> should render with props 1`] = `
     onReachEnd={[Function]}
     onSlideChange={[Function]}
     onSwiper={[Function]}
+    onTouchEnd={[Function]}
     pagination={
       Object {
         "clickable": true,
