@@ -1,15 +1,29 @@
 import { Playground } from 'docz';
 import TextBox from '../TextBox';
-import { Paragraph, Header } from '@megafon/ui-core';
+import { Paragraph, Header, Link, List, ListItem } from '@megafon/ui-core';
 
 ## Использование со значениями свойств заданными по умолчанию
 
 <Playground>
     <TextBox>
-        <Header as="h3">Lorem ipsum</Header>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
         <Paragraph>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
-            Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+            Услуга SMS (Short Message Service) позволяет обмениваться с телефона небольшими текстовыми сообщениями. Вы можете отправить SMS-сообщение даже на городской телефон. Услуга «Голосовое SMS» превратит обычное текстовое сообщение в голосовое и зачитает его адресату.
+        </Paragraph>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
+        <Header as="h5" margin>Путешествуй без забот</Header>
+        <Paragraph>
+            Бесплатные входящие вызовы и безлимитные звонки на номера московского МегаФона, минуты и SMS по России.
+            <Link href="https://megafon.ru">Click me</Link>
+        </Paragraph>
+        <List>
+            <ListItem>Тарифы</ListItem>
+            <ListItem>Интернет</ListItem>
+            <ListItem>Связь</ListItem>
+            <ListItem>Услуги</ListItem>
+        </List>
+        <Paragraph size="small">
+            Доступно для: WhatsApp, Viber, eMotion, Facebook Messenger, Telegram, ТамТам
         </Paragraph>
     </TextBox>
 </Playground>
@@ -18,10 +32,24 @@ import { Paragraph, Header } from '@megafon/ui-core';
 
 <Playground>
     <TextBox textCenter={true}>
-        <Header as="h3">Lorem ipsum</Header>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
         <Paragraph>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
-            Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+            Услуга SMS (Short Message Service) позволяет обмениваться с телефона небольшими текстовыми сообщениями. Вы можете отправить SMS-сообщение даже на городской телефон. Услуга «Голосовое SMS» превратит обычное текстовое сообщение в голосовое и зачитает его адресату.
+        </Paragraph>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
+        <Header as="h5" margin>Путешествуй без забот</Header>
+        <Paragraph>
+            Бесплатные входящие вызовы и безлимитные звонки на номера московского МегаФона, минуты и SMS по России.
+            <Link href="https://megafon.ru">Click me</Link>
+        </Paragraph>
+        <List>
+            <ListItem>Тарифы</ListItem>
+            <ListItem>Интернет</ListItem>
+            <ListItem>Связь</ListItem>
+            <ListItem>Услуги</ListItem>
+        </List>
+        <Paragraph size="small">
+            Доступно для: WhatsApp, Viber, eMotion, Facebook Messenger, Telegram, ТамТам
         </Paragraph>
     </TextBox>
 </Playground>
