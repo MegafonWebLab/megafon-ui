@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextBox /> renders TextBox with centered content 1`] = `
+<div
+  className="mfui-beta-text-box mfui-beta-text-box_text-center"
+>
+  <p>
+    test
+  </p>
+</div>
+`;
+
+exports[`<TextBox /> renders TextBox with default props 1`] = `
+<div
+  className="mfui-beta-text-box"
+>
+  <p>
+    test
+  </p>
+</div>
+`;
