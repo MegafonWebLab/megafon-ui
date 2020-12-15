@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.64](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.63...@megafon/ui-core@2.0.0-beta.64) (2020-12-15)
+
+
+### Features
+
+* **calendar:** changed onChange prop behavior ([1ef345f](https://github.com/MegafonWebLab/megafon-ui/commit/1ef345fe0575e560c45ae4735bf2c9ff863c9f82))
+
+
+### BREAKING CHANGES
+
+* **calendar:** made onChange callback to call only on manual dates change
+
+
+
+
+
 # [2.0.0-beta.63](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.62...@megafon/ui-core@2.0.0-beta.63) (2020-12-15)
 
 
