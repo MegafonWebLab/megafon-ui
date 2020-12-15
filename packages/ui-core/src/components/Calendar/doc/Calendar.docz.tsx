@@ -10,7 +10,7 @@ const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
 const startDate = new Date(2020, 1, 7);
 const endDate = new Date(2020, 1, 19);
-export const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
+export const minBookingDate = new Date(currentYear, currentMonth, 7);
 export const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
 
 export const DemoCalendarWithHandleChange = ({ children }) => {
