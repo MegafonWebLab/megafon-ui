@@ -81,11 +81,7 @@ const Calendar: React.FC<ICalendarProps> = ({
         setCalendarState(calendarStateFromProps);
     }, [calendarStateFromProps]);
 
-    useEffect(() => {
-        onChange && onChange(stateStartDate, stateEndDate);
-    }, [stateStartDate, stateEndDate]);
-
-    const handleDaySelect = (date: Date): void => {
+    const getCalendarState = (date: Date): ICalendarState => {
         const isStartChose = stateFocusedInput === START_DATE;
         const isEndChose = stateFocusedInput === END_DATE;
         const isEndDateChose = stateStartDate && isEndChose;
@@ -101,20 +97,25 @@ const Calendar: React.FC<ICalendarProps> = ({
 
         switch (true) {
             case isSingleDate:
-                setCalendarState({ ...calendarState, startDate: date });
-                break;
+                return { ...calendarState, startDate: date };
             case isStartDatePeriodNarrow:
-                setCalendarState({ ...calendarState, endDate: date, focusedInput: START_DATE });
-                break;
+                return { ...calendarState, endDate: date, focusedInput: START_DATE };
             case isStartDateChose:
-                setCalendarState({ startDate: date, endDate: null, focusedInput: END_DATE });
-                break;
+                return { startDate: date, endDate: null, focusedInput: END_DATE };
             case isEndDateChose:
-                setCalendarState({ ...calendarState, endDate: date, focusedInput: START_DATE });
-                break;
+                return { ...calendarState, endDate: date, focusedInput: START_DATE };
             default:
-                setCalendarState({ ...calendarState, startDate: date, focusedInput: END_DATE });
+                return { ...calendarState, startDate: date, focusedInput: END_DATE };
         }
+    };
+
+    const handleDaySelect = (date: Date): void => {
+        const nextState = getCalendarState(date);
+        const { startDate: nextStartDate, endDate: nextEndDate } = nextState;
+
+        setCalendarState(nextState);
+
+        onChange && onChange(nextStartDate, nextEndDate);
     };
 
     const {

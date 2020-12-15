@@ -18,6 +18,24 @@ describe('<Calendar />', () => {
 
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('renders calendar with single date', () => {
+            const wrapper = mount(<Calendar {...props} isSingleDate />);
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('renders calendar without chosen dates if they are blocked', () => {
+            const wrapper = mount(
+                <Calendar
+                    {...props}
+                    startDate={new Date(2020, 1, 1)}
+                    endDate={new Date(2020, 1, 27)}
+                />
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('onChange', () => {
@@ -56,14 +74,6 @@ describe('<Calendar />', () => {
             expect(onChange).toBeCalledWith(new Date('2020-02-19T00:00:00.000Z'), null);
         });
 
-        it('calls onChange on render only with startDate even if both props given', () => {
-            const onChange = jest.fn();
-
-            mount(<Calendar {...props} onChange={onChange} isSingleDate />);
-
-            expect(onChange).toHaveBeenCalledWith(new Date('2020-02-07T00:00:00.000Z'), null);
-        });
-
         it('should call onChange with correct arguments in single date mode', () => {
             const onChange = jest.fn();
 
@@ -90,19 +100,12 @@ describe('<Calendar />', () => {
             expect(onChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-13T00:00:00.000Z'));
         });
 
-        it('should call onChange with both arguments as null if dates are blocked', () => {
+        it('shouldnt call onChange if startDate or endDate props changed', () => {
             const onChange = jest.fn();
 
-            const wrapper = mount(
-                <Calendar
-                    {...props}
-                    startDate={new Date(2020, 1, 1)}
-                    endDate={new Date(2020, 1, 27)}
-                    onChange={onChange}
-                />
-            );
+            const wrapper = mount(<Calendar {...props} onChange={onChange} />);
 
-            expect(onChange).toHaveBeenCalledWith(null, null);
+            expect(onChange).toBeCalledTimes(0);
         });
     });
 });
