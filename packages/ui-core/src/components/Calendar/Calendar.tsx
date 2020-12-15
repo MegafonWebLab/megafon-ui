@@ -16,7 +16,11 @@ import Day, { DayType, IDayPickerProps } from 'components/Calendar/components/Da
 
 const formatDate = (date: Date, pattern: string, locale = ruLocale) => format(date, pattern, { locale });
 
-type DatePickerType = IDayPickerProps & IMonthPickerProps;
+interface ICalendarPickerProps {
+    goToDate: (date: Date) => void;
+}
+
+type DatePickerType = ICalendarPickerProps & IDayPickerProps & IMonthPickerProps;
 
 interface ICalendarState {
     startDate: Date | null;
@@ -77,8 +81,28 @@ const Calendar: React.FC<ICalendarProps> = ({
 
     const { startDate: stateStartDate, endDate: stateEndDate, focusedInput: stateFocusedInput } = calendarState;
 
+    const {
+        firstDayOfWeek,
+        activeMonths,
+        goToPreviousMonths,
+        goToNextMonths,
+        goToDate,
+        ...pickerProps
+    }: DatePickerType = useDatepicker({
+        onDatesChange: () => {},
+        numberOfMonths: 1,
+        minBookingDate,
+        maxBookingDate,
+        initialVisibleMonth: stateStartDate || undefined,
+        ...calendarState,
+    });
+
     useEffect(() => {
+        const { startDate: propsStartDate } = calendarStateFromProps;
+
         setCalendarState(calendarStateFromProps);
+
+        propsStartDate && goToDate(propsStartDate);
     }, [calendarStateFromProps]);
 
     const getCalendarState = (date: Date): ICalendarState => {
@@ -117,21 +141,6 @@ const Calendar: React.FC<ICalendarProps> = ({
 
         onChange && onChange(nextStartDate, nextEndDate);
     };
-
-    const {
-        firstDayOfWeek,
-        activeMonths,
-        goToPreviousMonths,
-        goToNextMonths,
-        ...pickerProps
-    }: DatePickerType = useDatepicker({
-        onDatesChange: () => {},
-        numberOfMonths: 1,
-        minBookingDate,
-        maxBookingDate,
-        initialVisibleMonth: stateStartDate || undefined,
-        ...calendarState,
-    });
 
     const renderDays = (days: Array<number | DayType>): ReactNode => days.map((day, index) => {
         if (typeof day === 'object') {

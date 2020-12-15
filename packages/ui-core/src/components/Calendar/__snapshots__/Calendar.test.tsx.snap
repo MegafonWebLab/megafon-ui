@@ -120,8 +120,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-01T00:00:00.000Z}
             dayLabel="1"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -147,7 +146,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -160,8 +159,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-02T00:00:00.000Z}
             dayLabel="2"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -187,7 +185,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -200,8 +198,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-03T00:00:00.000Z}
             dayLabel="3"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -227,7 +224,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -240,8 +237,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-04T00:00:00.000Z}
             dayLabel="4"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -267,7 +263,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -280,8 +276,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-05T00:00:00.000Z}
             dayLabel="5"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -307,7 +302,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -320,8 +315,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-06T00:00:00.000Z}
             dayLabel="6"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -347,7 +341,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -360,8 +354,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-07T00:00:00.000Z}
             dayLabel="7"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -400,8 +393,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-08T00:00:00.000Z}
             dayLabel="8"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -427,7 +419,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -440,8 +432,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-09T00:00:00.000Z}
             dayLabel="9"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -467,7 +458,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -480,8 +471,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-10T00:00:00.000Z}
             dayLabel="10"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -507,7 +497,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -520,8 +510,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-11T00:00:00.000Z}
             dayLabel="11"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -547,7 +536,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -560,8 +549,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-12T00:00:00.000Z}
             dayLabel="12"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -587,7 +575,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -600,8 +588,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-13T00:00:00.000Z}
             dayLabel="13"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -627,7 +614,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -640,8 +627,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-14T00:00:00.000Z}
             dayLabel="14"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -667,7 +653,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -680,8 +666,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-15T00:00:00.000Z}
             dayLabel="15"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -707,7 +692,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -720,8 +705,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-16T00:00:00.000Z}
             dayLabel="16"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -747,7 +731,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -760,8 +744,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-17T00:00:00.000Z}
             dayLabel="17"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -787,7 +770,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -800,8 +783,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-18T00:00:00.000Z}
             dayLabel="18"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -827,7 +809,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -840,8 +822,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-19T00:00:00.000Z}
             dayLabel="19"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -867,7 +848,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -880,8 +861,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-20T00:00:00.000Z}
             dayLabel="20"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -907,7 +887,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -920,8 +900,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-21T00:00:00.000Z}
             dayLabel="21"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -947,7 +926,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -960,8 +939,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-22T00:00:00.000Z}
             dayLabel="22"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -987,7 +965,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1000,8 +978,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-23T00:00:00.000Z}
             dayLabel="23"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1027,7 +1004,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1040,8 +1017,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-24T00:00:00.000Z}
             dayLabel="24"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1067,7 +1043,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1080,8 +1056,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-25T00:00:00.000Z}
             dayLabel="25"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1107,7 +1082,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1120,8 +1095,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-26T00:00:00.000Z}
             dayLabel="26"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1147,7 +1121,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1160,8 +1134,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-27T00:00:00.000Z}
             dayLabel="27"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1187,7 +1160,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1200,8 +1173,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-28T00:00:00.000Z}
             dayLabel="28"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1227,7 +1199,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1240,8 +1212,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <Day
             date={2020-02-29T00:00:00.000Z}
             dayLabel="29"
-            focusedDate={2020-02-07T00:00:00.000Z}
-            goToDate={[Function]}
+            focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1267,7 +1238,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
-              tabIndex={-1}
+              tabIndex={0}
               type="button"
             >
               <span
@@ -1392,7 +1363,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-01T00:00:00.000Z}
             dayLabel="1"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1432,7 +1402,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-02T00:00:00.000Z}
             dayLabel="2"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1472,7 +1441,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-03T00:00:00.000Z}
             dayLabel="3"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1512,7 +1480,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-04T00:00:00.000Z}
             dayLabel="4"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1552,7 +1519,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-05T00:00:00.000Z}
             dayLabel="5"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1592,7 +1558,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-06T00:00:00.000Z}
             dayLabel="6"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1632,7 +1597,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-07T00:00:00.000Z}
             dayLabel="7"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1672,7 +1636,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-08T00:00:00.000Z}
             dayLabel="8"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1712,7 +1675,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-09T00:00:00.000Z}
             dayLabel="9"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1752,7 +1714,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-10T00:00:00.000Z}
             dayLabel="10"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1792,7 +1753,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-11T00:00:00.000Z}
             dayLabel="11"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1832,7 +1792,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-12T00:00:00.000Z}
             dayLabel="12"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1872,7 +1831,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-13T00:00:00.000Z}
             dayLabel="13"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1912,7 +1870,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-14T00:00:00.000Z}
             dayLabel="14"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1952,7 +1909,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-15T00:00:00.000Z}
             dayLabel="15"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -1992,7 +1948,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-16T00:00:00.000Z}
             dayLabel="16"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2032,7 +1987,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-17T00:00:00.000Z}
             dayLabel="17"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2072,7 +2026,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-18T00:00:00.000Z}
             dayLabel="18"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2112,7 +2065,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-19T00:00:00.000Z}
             dayLabel="19"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2152,7 +2104,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-20T00:00:00.000Z}
             dayLabel="20"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2192,7 +2143,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-21T00:00:00.000Z}
             dayLabel="21"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2232,7 +2182,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-22T00:00:00.000Z}
             dayLabel="22"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2272,7 +2221,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-23T00:00:00.000Z}
             dayLabel="23"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2312,7 +2260,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-24T00:00:00.000Z}
             dayLabel="24"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2352,7 +2299,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-25T00:00:00.000Z}
             dayLabel="25"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2392,7 +2338,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-26T00:00:00.000Z}
             dayLabel="26"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2432,7 +2377,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-27T00:00:00.000Z}
             dayLabel="27"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2472,7 +2416,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-28T00:00:00.000Z}
             dayLabel="28"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2512,7 +2455,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-29T00:00:00.000Z}
             dayLabel="29"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2552,7 +2494,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-30T00:00:00.000Z}
             dayLabel="30"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2592,7 +2533,6 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             date={2020-12-31T00:00:00.000Z}
             dayLabel="31"
             focusedDate={null}
-            goToDate={[Function]}
             goToNextMonthsByOneMonth={[Function]}
             goToNextYear={[Function]}
             goToPreviousMonthsByOneMonth={[Function]}
@@ -2678,7 +2618,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-01T00:00:00.000Z}
       dayLabel="1"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2702,7 +2641,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-02T00:00:00.000Z}
       dayLabel="2"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2726,7 +2664,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-03T00:00:00.000Z}
       dayLabel="3"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2750,7 +2687,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-04T00:00:00.000Z}
       dayLabel="4"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2774,7 +2710,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-05T00:00:00.000Z}
       dayLabel="5"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2798,7 +2733,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-06T00:00:00.000Z}
       dayLabel="6"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2822,7 +2756,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-07T00:00:00.000Z}
       dayLabel="7"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2846,7 +2779,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-08T00:00:00.000Z}
       dayLabel="8"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2870,7 +2802,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-09T00:00:00.000Z}
       dayLabel="9"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2894,7 +2825,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-10T00:00:00.000Z}
       dayLabel="10"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2918,7 +2848,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-11T00:00:00.000Z}
       dayLabel="11"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2942,7 +2871,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-12T00:00:00.000Z}
       dayLabel="12"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2966,7 +2894,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-13T00:00:00.000Z}
       dayLabel="13"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -2990,7 +2917,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-14T00:00:00.000Z}
       dayLabel="14"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3014,7 +2940,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-15T00:00:00.000Z}
       dayLabel="15"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3038,7 +2963,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-16T00:00:00.000Z}
       dayLabel="16"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3062,7 +2986,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-17T00:00:00.000Z}
       dayLabel="17"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3086,7 +3009,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-18T00:00:00.000Z}
       dayLabel="18"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3110,7 +3032,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-19T00:00:00.000Z}
       dayLabel="19"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3134,7 +3055,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-20T00:00:00.000Z}
       dayLabel="20"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3158,7 +3078,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-21T00:00:00.000Z}
       dayLabel="21"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3182,7 +3101,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-22T00:00:00.000Z}
       dayLabel="22"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3206,7 +3124,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-23T00:00:00.000Z}
       dayLabel="23"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3230,7 +3147,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-24T00:00:00.000Z}
       dayLabel="24"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3254,7 +3170,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-25T00:00:00.000Z}
       dayLabel="25"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3278,7 +3193,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-26T00:00:00.000Z}
       dayLabel="26"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3302,7 +3216,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-27T00:00:00.000Z}
       dayLabel="27"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3326,7 +3239,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-28T00:00:00.000Z}
       dayLabel="28"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}
@@ -3350,7 +3262,6 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       date={2020-02-29T00:00:00.000Z}
       dayLabel="29"
       focusedDate={2020-02-07T00:00:00.000Z}
-      goToDate={[Function]}
       goToNextMonthsByOneMonth={[Function]}
       goToNextYear={[Function]}
       goToPreviousMonthsByOneMonth={[Function]}

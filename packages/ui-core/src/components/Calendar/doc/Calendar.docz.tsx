@@ -45,12 +45,12 @@ export const DemoCalendarWithDatesChange = ({ children }) => {
             {children({ startDate: periodStart, endDate: periodEnd })}
             <div>
                 <div style={{ display: 'inline-block', marginRight: '12px' }}>
-                    <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 7))}>
-                        Первая неделя
+                    <Button onClick={onChange(new Date(2020, 0, 1), new Date(2020, 0, 31))}>
+                        Январь
                     </Button>
                 </div>
-                <Button onClick={onChange(new Date(2020, 1, 23), new Date(2020, 1, 29))}>
-                    Последняя неделя
+                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>
+                    Ферваль
                 </Button>
             </div>
         </>
