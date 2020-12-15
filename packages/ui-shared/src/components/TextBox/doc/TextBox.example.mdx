@@ -1,0 +1,27 @@
+import { Playground } from 'docz';
+import TextBox from '../TextBox';
+import { Paragraph, Header } from '@megafon/ui-core';
+
+## Использование со значениями свойств заданными по умолчанию
+
+<Playground>
+    <TextBox>
+        <Header as="h3">Lorem ipsum</Header>
+        <Paragraph>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
+            Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+        </Paragraph>
+    </TextBox>
+</Playground>
+
+## Использование с центрированием по горизонтали
+
+<Playground>
+    <TextBox textCenter={true}>
+        <Header as="h3">Lorem ipsum</Header>
+        <Paragraph>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
+            Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+        </Paragraph>
+    </TextBox>
+</Playground>
