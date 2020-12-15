@@ -7,6 +7,11 @@ import {
     maxBookingDate,
 } from './Calendar.docz';
 
+## Особенности использования
+Колбек onChange вызывается только при ручном выборе дат в календаре, при этом, если
+новые даты были прокинуты через пропсы, но противоречат логике компонента (endDate
+является более ранней датой, чем startDate), они будут выведены согласно логике календаря
+
 ## Базовое использование
 
 <Playground style={{margin: 'auto', maxWidth: '320px'}}>
@@ -36,7 +41,7 @@ import {
 const date = new Date();
 const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
-const minBookingDate = new Date(currentYear, currentMonth - 1, 7);
+const minBookingDate = new Date(currentYear, currentMonth, 7);
 const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
 ```
 
@@ -98,12 +103,12 @@ export const DemoCalendarWithDatesChange = ({ children }) => {
             {children({ startDate: periodStart, endDate: periodEnd })}
             <div>
                 <div style={{ display: 'inline-block', marginRight: '12px' }}>
-                    <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 7))}>
-                        Первая неделя
+                    <Button onClick={onChange(new Date(2020, 0, 1), new Date(2020, 0, 31))}>
+                        Январь
                     </Button>
                 </div>
-                <Button onClick={onChange(new Date(2020, 1, 23), new Date(2020, 1, 29))}>
-                    Последняя неделя
+                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>
+                    Ферваль
                 </Button>
             </div>
         </>

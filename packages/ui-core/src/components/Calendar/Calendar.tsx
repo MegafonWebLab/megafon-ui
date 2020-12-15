@@ -16,7 +16,11 @@ import Day, { DayType, IDayPickerProps } from 'components/Calendar/components/Da
 
 const formatDate = (date: Date, pattern: string, locale = ruLocale) => format(date, pattern, { locale });
 
-type DatePickerType = IDayPickerProps & IMonthPickerProps;
+interface ICalendarPickerProps {
+    goToDate: (date: Date) => void;
+}
+
+type DatePickerType = ICalendarPickerProps & IDayPickerProps & IMonthPickerProps;
 
 interface ICalendarState {
     startDate: Date | null;
@@ -77,15 +81,31 @@ const Calendar: React.FC<ICalendarProps> = ({
 
     const { startDate: stateStartDate, endDate: stateEndDate, focusedInput: stateFocusedInput } = calendarState;
 
+    const {
+        firstDayOfWeek,
+        activeMonths,
+        goToPreviousMonths,
+        goToNextMonths,
+        goToDate,
+        ...pickerProps
+    }: DatePickerType = useDatepicker({
+        onDatesChange: () => {},
+        numberOfMonths: 1,
+        minBookingDate,
+        maxBookingDate,
+        initialVisibleMonth: stateStartDate || undefined,
+        ...calendarState,
+    });
+
     useEffect(() => {
+        const { startDate: propsStartDate } = calendarStateFromProps;
+
         setCalendarState(calendarStateFromProps);
+
+        propsStartDate && goToDate(propsStartDate);
     }, [calendarStateFromProps]);
 
-    useEffect(() => {
-        onChange && onChange(stateStartDate, stateEndDate);
-    }, [stateStartDate, stateEndDate]);
-
-    const handleDaySelect = (date: Date): void => {
+    const getCalendarState = (date: Date): ICalendarState => {
         const isStartChose = stateFocusedInput === START_DATE;
         const isEndChose = stateFocusedInput === END_DATE;
         const isEndDateChose = stateStartDate && isEndChose;
@@ -101,36 +121,26 @@ const Calendar: React.FC<ICalendarProps> = ({
 
         switch (true) {
             case isSingleDate:
-                setCalendarState({ ...calendarState, startDate: date });
-                break;
+                return { ...calendarState, startDate: date };
             case isStartDatePeriodNarrow:
-                setCalendarState({ ...calendarState, endDate: date, focusedInput: START_DATE });
-                break;
+                return { ...calendarState, endDate: date, focusedInput: START_DATE };
             case isStartDateChose:
-                setCalendarState({ startDate: date, endDate: null, focusedInput: END_DATE });
-                break;
+                return { startDate: date, endDate: null, focusedInput: END_DATE };
             case isEndDateChose:
-                setCalendarState({ ...calendarState, endDate: date, focusedInput: START_DATE });
-                break;
+                return { ...calendarState, endDate: date, focusedInput: START_DATE };
             default:
-                setCalendarState({ ...calendarState, startDate: date, focusedInput: END_DATE });
+                return { ...calendarState, startDate: date, focusedInput: END_DATE };
         }
     };
 
-    const {
-        firstDayOfWeek,
-        activeMonths,
-        goToPreviousMonths,
-        goToNextMonths,
-        ...pickerProps
-    }: DatePickerType = useDatepicker({
-        onDatesChange: () => {},
-        numberOfMonths: 1,
-        minBookingDate,
-        maxBookingDate,
-        initialVisibleMonth: stateStartDate || undefined,
-        ...calendarState,
-    });
+    const handleDaySelect = (date: Date): void => {
+        const nextState = getCalendarState(date);
+        const { startDate: nextStartDate, endDate: nextEndDate } = nextState;
+
+        setCalendarState(nextState);
+
+        onChange && onChange(nextStartDate, nextEndDate);
+    };
 
     const renderDays = (days: Array<number | DayType>): ReactNode => days.map((day, index) => {
         if (typeof day === 'object') {
