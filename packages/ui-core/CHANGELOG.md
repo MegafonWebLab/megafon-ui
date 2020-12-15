@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.63](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.62...@megafon/ui-core@2.0.0-beta.63) (2020-12-15)
+
+
+### Features
+
+* **icons:** added new Copy icon ([de45029](https://github.com/MegafonWebLab/megafon-ui/commit/de4502903dcaeada613e3390b4d0ed9b9f237875))
+
+
+
+
+
 # [2.0.0-beta.62](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.61...@megafon/ui-core@2.0.0-beta.62) (2020-12-11)
 
 
