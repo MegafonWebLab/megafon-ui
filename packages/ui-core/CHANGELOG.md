@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.65](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.64...@megafon/ui-core@2.0.0-beta.65) (2020-12-16)
+
+
+### Bug Fixes
+
+* **tabs:** fix shadow transparent in safari ([a3308fc](https://github.com/MegafonWebLab/megafon-ui/commit/a3308fc7592be1dce7a428a513fc0779c07a6c9a))
+
+
+
+
+
 # [2.0.0-beta.64](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.63...@megafon/ui-core@2.0.0-beta.64) (2020-12-15)
 
 
