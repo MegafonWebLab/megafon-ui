@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.71](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.70...@megafon/ui-shared@2.0.0-beta.71) (2020-12-16)
+
+
+### Features
+
+* **card:** added new component ([1652f9b](https://github.com/MegafonWebLab/megafon-ui/commit/1652f9b293f682e1c0e6134c0091a61767922787))
+
+
+
+
+
 # [2.0.0-beta.70](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.69...@megafon/ui-shared@2.0.0-beta.70) (2020-12-15)
 
 **Note:** Version bump only for package @megafon/ui-shared
