@@ -27,4 +27,24 @@ describe('<ButtonLinkBox />', () => {
         const wrapper = shallow(<ButtonLinkBox {...props} linkTitle={undefined} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('calls onButtonClick', () => {
+        const onButtonClickMock = jest.fn();
+        const wrapper = shallow(<ButtonLinkBox {...props} onButtonClick={onButtonClickMock} />);
+        const event = 'event';
+
+        wrapper.find('Button').simulate('click', event);
+
+        expect(onButtonClickMock).toBeCalledWith(event);
+    });
+
+    it('calls onLinkClick', () => {
+        const onLinkClickMock = jest.fn();
+        const wrapper = shallow(<ButtonLinkBox {...props} onLinkClick={onLinkClickMock} />);
+        const event = 'event';
+
+        wrapper.find('TextLink').simulate('click', event);
+
+        expect(onLinkClickMock).toBeCalledWith(event);
+    });
 });
