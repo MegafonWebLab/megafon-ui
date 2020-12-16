@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadLinks render component 1`] = `
+<div
+  className="mfui-beta-download-links"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+    multiRow={true}
+  >
+    <GridColumn
+      all="6"
+      flex={false}
+      grow={false}
+      key="0/.$.0"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+    >
+      <DownloadLink
+        className="mfui-beta-download-links__item"
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        key=".0"
+        text="text"
+      />
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`DownloadLinks render component with another grid config 1`] = `
+<div
+  className="mfui-beta-download-links"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+    multiRow={true}
+  >
+    <GridColumn
+      all="4"
+      flex={false}
+      grow={false}
+      key="0/.$.0"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      tablet="6"
+    >
+      <DownloadLink
+        className="mfui-beta-download-links__item"
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        key=".0"
+        text="text"
+      />
+      <DownloadLink
+        className="mfui-beta-download-links__item"
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        key=".1"
+        text="text"
+      />
+    </GridColumn>
+    <GridColumn
+      all="4"
+      flex={false}
+      grow={false}
+      key="2/.$.2"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      tablet="6"
+    >
+      <DownloadLink
+        className="mfui-beta-download-links__item"
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        key=".2"
+        text="text"
+      />
+      <DownloadLink
+        className="mfui-beta-download-links__item"
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        key=".3"
+        text="text"
+      />
+    </GridColumn>
+    <GridColumn
+      all="4"
+      flex={false}
+      grow={false}
+      key="4/.$.4"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+      tablet="6"
+    >
+      <DownloadLink
+        className="mfui-beta-download-links__item"
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        key=".4"
+        text="text"
+      />
+    </GridColumn>
+  </Grid>
+</div>
+`;
