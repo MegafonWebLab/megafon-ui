@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.68](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.67...@megafon/ui-core@2.0.0-beta.68) (2020-12-17)
+
+
+### Bug Fixes
+
+* **preloader:** added fixed delay for rendering ([16a03e1](https://github.com/MegafonWebLab/megafon-ui/commit/16a03e163bf878078fa9291f621b100ea89db7b4))
+
+
+
+
+
 # [2.0.0-beta.67](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.66...@megafon/ui-core@2.0.0-beta.67) (2020-12-17)
 
 
