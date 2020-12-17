@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 import CarouselBox from 'components/CarouselBox/CarouselBox';
 
 describe('<CarouselBox />', () => {
@@ -16,8 +16,10 @@ describe('<CarouselBox />', () => {
     it('render CarouselBox with props', () => {
         const wrapper = shallow(
             <CarouselBox
-                className={'testClassName'}
-                innerIndentsClass={'testInnerClass'}
+                classes={{
+                    root: 'testClassName',
+                    innerIndents: 'testInnerClass',
+                }}
                 loop={true}
                 autoPlay={true}
                 autoPlayDelay={10}
@@ -25,7 +27,7 @@ describe('<CarouselBox />', () => {
                 onNextClick={jest.fn()}
                 onPrevClick={jest.fn()}
                 onChange={jest.fn()}>
-                    <div>test</div>
+                <div>test</div>
             </CarouselBox>
         );
 
