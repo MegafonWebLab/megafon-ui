@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.75](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.74...@megafon/ui-shared@2.0.0-beta.75) (2020-12-17)
+
+
+### Code Refactoring
+
+* **videobanner:** added fixes ([fd83bf7](https://github.com/MegafonWebLab/megafon-ui/commit/fd83bf7c9c4e0a49375d16d11dc76d2ebc13f2c5))
+
+
+### BREAKING CHANGES
+
+* **videobanner:** desktop image prop is not required
+
+
+
+
+
 # [2.0.0-beta.74](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.73...@megafon/ui-shared@2.0.0-beta.74) (2020-12-17)
 
 **Note:** Version bump only for package @megafon/ui-shared
