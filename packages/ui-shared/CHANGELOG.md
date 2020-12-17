@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.77](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.76...@megafon/ui-shared@2.0.0-beta.77) (2020-12-17)
+
+
+### Bug Fixes
+
+* **carouselbox:** fix tests ([d95cc71](https://github.com/MegafonWebLab/megafon-ui/commit/d95cc711d6c0f1b624acaf490b55f67d2bcc1531))
+
+
+### Features
+
+* **carouselbox:** add carouselbox component ([6bb6613](https://github.com/MegafonWebLab/megafon-ui/commit/6bb66136e4cfa770b86b9f9e82b09b2ebfb48a17))
+
+
+
+
+
 # [2.0.0-beta.76](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.75...@megafon/ui-shared@2.0.0-beta.76) (2020-12-17)
 
 **Note:** Version bump only for package @megafon/ui-shared
