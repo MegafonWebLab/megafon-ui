@@ -1,81 +1,105 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Preloader /> it renders Preloader 1`] = `
-<div
-  className="mfui-beta-preloader mfui-beta-preloader_color_default mfui-beta-preloader_size-all_medium"
->
+exports[`<Preloader /> it renders Preloader only after 250ms delay 1`] = `<Preloader />`;
+
+exports[`<Preloader /> it renders Preloader only after 250ms delay 2`] = `
+<Preloader>
   <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
-  />
-</div>
+    className="mfui-beta-preloader mfui-beta-preloader_color_default mfui-beta-preloader_size-all_medium"
+  >
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
+    />
+  </div>
+</Preloader>
 `;
 
 exports[`<Preloader /> it renders Preloader with black color 1`] = `
-<div
-  className="mfui-beta-preloader mfui-beta-preloader_color_black mfui-beta-preloader_size-all_medium"
+<Preloader
+  color="black"
 >
   <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
-  />
-</div>
+    className="mfui-beta-preloader mfui-beta-preloader_color_black mfui-beta-preloader_size-all_medium"
+  >
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
+    />
+  </div>
+</Preloader>
 `;
 
 exports[`<Preloader /> it renders Preloader with custom className 1`] = `
-<div
-  className="mfui-beta-preloader mfui-beta-preloader_color_default mfui-beta-preloader_size-all_medium test-class"
+<Preloader
+  className="test-class"
 >
   <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
-  />
-</div>
+    className="mfui-beta-preloader mfui-beta-preloader_color_default mfui-beta-preloader_size-all_medium test-class"
+  >
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
+    />
+  </div>
+</Preloader>
 `;
 
 exports[`<Preloader /> it renders Preloader with small size 1`] = `
-<div
-  className="mfui-beta-preloader mfui-beta-preloader_color_default mfui-beta-preloader_size-all_small mfui-beta-preloader_size-wide_small mfui-beta-preloader_size-desktop_small mfui-beta-preloader_size-tablet_small mfui-beta-preloader_size-mobile_small"
+<Preloader
+  sizeAll="small"
+  sizeDesktop="small"
+  sizeMobile="small"
+  sizeTablet="small"
+  sizeWide="small"
 >
   <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
-  />
-</div>
+    className="mfui-beta-preloader mfui-beta-preloader_color_default mfui-beta-preloader_size-all_small mfui-beta-preloader_size-wide_small mfui-beta-preloader_size-desktop_small mfui-beta-preloader_size-tablet_small mfui-beta-preloader_size-mobile_small"
+  >
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
+    />
+  </div>
+</Preloader>
 `;
 
 exports[`<Preloader /> it renders Preloader with white color 1`] = `
-<div
-  className="mfui-beta-preloader mfui-beta-preloader_color_white mfui-beta-preloader_size-all_medium"
+<Preloader
+  color="white"
 >
   <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
-  />
-  <div
-    className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
-  />
-</div>
+    className="mfui-beta-preloader mfui-beta-preloader_color_white mfui-beta-preloader_size-all_medium"
+  >
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_first"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_second"
+    />
+    <div
+      className="mfui-beta-preloader__item mfui-beta-preloader__item_third"
+    />
+  </div>
+</Preloader>
 `;
