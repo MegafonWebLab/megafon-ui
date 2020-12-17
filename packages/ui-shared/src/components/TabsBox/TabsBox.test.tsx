@@ -12,8 +12,10 @@ describe('<TabsBox />', () => {
     it('should render with props', () => {
         const wrapper = shallow(
             <TabsBox
-                className="className"
-                innerIndentsClass="innerIndentsClass"
+                classes={{
+                    root: 'className',
+                    innerIndents: 'innerIndentsClass',
+                }}
                 size="small"
                 hAlign="center"
                 tabColorTheme="green"

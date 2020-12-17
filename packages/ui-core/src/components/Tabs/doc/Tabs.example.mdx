@@ -20,6 +20,28 @@ import ContentArea from "components/ContentArea/ContentArea";
 }
 ```
 
+## Код демо компонентов
+``` jsx
+const DemoContent = ({ children }) => (
+    <div
+        style={{
+            padding: '0 0 20px 0',
+        }}
+    >
+        <div
+            style={{
+                padding: '80px 0',
+                background: '#F6F6F6',
+                fontSize: '20px',
+                textAlign: 'center',
+            }}
+        >
+            {children}
+        </div>
+    </div>
+);
+```
+
 ## Базовое использование
 
 <Playground style={{ paddingRight: '0', paddingLeft: '0' }}>

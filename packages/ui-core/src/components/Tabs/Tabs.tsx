@@ -30,10 +30,11 @@ type TabHAlignType = typeof TabHAlign[keyof typeof TabHAlign];
 type TabColorThemeType = typeof TabColorTheme[keyof typeof TabColorTheme];
 
 export interface ITabsProps {
-    /** Дополнительный класс корневого элемента */
-    className?: string | string[];
-    /** Дополнительный класс для внутренних отступов */
-    innerIndentsClass?: string;
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        root?: string;
+        innerIndents?: string;
+    };
     /** Размер табов */
     size?: TabSizeType;
     /** Горизонтальное выравнивание */
@@ -53,11 +54,10 @@ export interface ITabsProps {
 
 const cn = cnCreate('mfui-beta-tabs');
 const Tabs: React.FC<ITabsProps> = ({
-    className,
-    innerIndentsClass,
-    size = TabSize.MEDIUM,
-    hAlign = TabHAlign.LEFT,
-    tabColorTheme = TabColorTheme.WHITE,
+    classes: { root: rootClass, innerIndents: innerIndentsClass } = {},
+    size = 'medium',
+    hAlign = 'left',
+    tabColorTheme = 'white',
     sticky = false,
     defaultIndex = 0,
     currentIndex: outerIndex,
@@ -262,7 +262,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     indents: !innerIndentsClass,
                     sticky: isSticky,
                 },
-                [className]
+                [rootClass]
             )}
             ref={rootRef}
         >
@@ -324,8 +324,10 @@ const Tabs: React.FC<ITabsProps> = ({
 };
 
 Tabs.propTypes = {
-    className: PropTypes.string,
-    innerIndentsClass: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        innerIndents: PropTypes.string,
+    }),
     size: PropTypes.oneOf(Object.values(TabSize)),
     hAlign: PropTypes.oneOf(Object.values(TabHAlign)),
     tabColorTheme: PropTypes.oneOf(Object.values(TabColorTheme)),

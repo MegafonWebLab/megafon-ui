@@ -31,10 +31,11 @@ export type SlidesSettingsType = {
 };
 
 export interface ICarouselProps {
-    /** Сss класс для внешнего контейнера */
-    className?: string;
-    /** Сss класс для задания внутренних оступов */
-    innerIndentsClass?: string;
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        root?: string;
+        innerIndents?: string;
+    };
     /** Настройки слайдов */
     slidesSettings?: SlidesSettingsType;
     /** Смена слайдов с зацикливанием */
@@ -77,13 +78,12 @@ const defaultSlidesSettings: SlidesSettingsType = {
 
 const cn = cnCreate('mfui-beta-carousel');
 const Carousel: React.FC<ICarouselProps> = ({
-    className,
-    innerIndentsClass,
+    classes: { root: rootClass, innerIndents: innerIndentsClass } = {},
     slidesSettings = defaultSlidesSettings,
     autoPlay = false,
     autoPlayDelay = 5000,
     loop = false,
-    navTheme = NavTheme.LIGHT,
+    navTheme = 'light',
     children,
     onNextClick,
     onPrevClick,
@@ -93,6 +93,19 @@ const Carousel: React.FC<ICarouselProps> = ({
     const [isBeginning, setBeginning] = React.useState(true);
     const [isEnd, setEnd] = React.useState(false);
 
+    const increaseAutoplayDelay = React.useCallback(
+        ({ params, autoplay }: SwiperCore) => {
+            if (typeof params.autoplay !== 'object' || !autoplay.running) {
+                return;
+            }
+
+            autoplay.stop();
+            params.autoplay.delay = autoPlayDelay * 3;
+            autoplay.start();
+        },
+        [autoPlayDelay]
+    );
+
     const handlePrevClick = React.useCallback(() => {
         if (!swiperInstance) {
             return;
@@ -100,7 +113,8 @@ const Carousel: React.FC<ICarouselProps> = ({
 
         swiperInstance.slidePrev();
         onPrevClick && onPrevClick(swiperInstance.realIndex);
-    }, [swiperInstance, onPrevClick]);
+        increaseAutoplayDelay(swiperInstance);
+    }, [swiperInstance, onPrevClick, increaseAutoplayDelay]);
 
     const handleNextClick = React.useCallback(() => {
         if (!swiperInstance) {
@@ -109,7 +123,8 @@ const Carousel: React.FC<ICarouselProps> = ({
 
         swiperInstance.slideNext();
         onNextClick && onNextClick(swiperInstance.realIndex);
-    }, [swiperInstance, onNextClick]);
+        increaseAutoplayDelay(swiperInstance);
+    }, [swiperInstance, onNextClick, increaseAutoplayDelay]);
 
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
         setSwiperInstance(swiper);
@@ -136,8 +151,17 @@ const Carousel: React.FC<ICarouselProps> = ({
         onChange && onChange(realIndex);
     }, [onChange]);
 
+    const handleRootClick = (e: React.SyntheticEvent<EventTarget>) => {
+        const elem = e.target as Element;
+        const isBullet = elem.classList.contains('swiper-pagination-bullet');
+
+        if (isBullet && swiperInstance) {
+            increaseAutoplayDelay(swiperInstance);
+        }
+    };
+
     return (
-        <div className={cn({ 'nav-theme': navTheme }, [className])}>
+        <div className={cn({ 'nav-theme': navTheme }, [rootClass])} onClick={handleRootClick}>
             <Swiper
                 className={cn(
                     'swiper',
@@ -154,6 +178,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 onReachEnd={handleReachEnd}
                 onFromEdge={handleFromEdge}
                 onSlideChange={handleSlideChange}
+                onTouchEnd={increaseAutoplayDelay}
             >
                 {React.Children.map(children, (child, i) => (
                     <SwiperSlide key={i} className={cn('slide')}>
@@ -179,8 +204,10 @@ const Carousel: React.FC<ICarouselProps> = ({
 };
 
 Carousel.propTypes = {
-    className: PropTypes.string,
-    innerIndentsClass: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        innerIndents: PropTypes.string,
+    }),
     slidesSettings: PropTypes.objectOf(
         checkBreakpointsPropTypes({
             slidesPerView: PropTypes.oneOfType([
