@@ -9,9 +9,12 @@
         position: fixed;
         top: 48px;
         bottom: 0;
+        z-index: 10;
         width: 240px;
         transform: translateX(-240px);
         transition: transform .5s;
+
+        background: #FFF;
 
         @media screen and (min-width: 767px) {
             top: 0;
@@ -20,6 +23,17 @@
         &_open {
             transform: translateX(0);
         }
+    }
+
+    &__open-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+
+        background: rgba(0,0,0, 0.3);
     }
     &__sep {
         position: fixed;
@@ -43,9 +57,6 @@
         padding-left: 0;
         transition: padding .5s;
 
-        &_open {
-            padding-left: 240px;
-        }
     }
     &__content-inner {
         padding: 80px;
