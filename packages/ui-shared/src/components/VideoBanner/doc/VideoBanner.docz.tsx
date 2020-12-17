@@ -3,8 +3,12 @@ import desktopImage from './bg_grey_desktop.png';
 import mobileImage from './bg_grey_mobile.png';
 import video from './video.mp4';
 
-const image: IImage = {
+const imageOnlyMobile: IImage = {
     mobile: mobileImage,
+};
+
+const image: IImage = {
+    ...imageOnlyMobile,
     desktop: desktopImage,
 };
 
@@ -17,4 +21,4 @@ const content: IContent = {
     buttonTitle: 'Текст в кнопке',
 };
 
-export { content, image, video, youtubeVideoId };
+export { content, imageOnlyMobile, image, video, youtubeVideoId };

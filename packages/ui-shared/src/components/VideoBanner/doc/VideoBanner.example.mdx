@@ -1,6 +1,7 @@
 import { Playground } from 'docz';
 import VideoBanner from '../VideoBanner';
-import { content, image, video, youtubeVideoId } from './VideoBanner.docz.tsx'
+import { ContentArea } from '@megafon/ui-core';
+import { content, imageOnlyMobile, image, video, youtubeVideoId } from './VideoBanner.docz.tsx'
 
 ## Примеры свойств
 
@@ -13,37 +14,47 @@ const content: IContent = {
     buttonTitle: 'Текст в кнопке',
     onButtonClick: () => alert('button click'),
 }
+
 const image: IImage = {
     desktop: 'image-desktop.png',
     mobile: 'image-mobile.png'
 }
 
 Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
-
 <VideoBanner videoType="youtube" videoSrc="2Sps5MnvlKM" />
 
 ```
 
 ## Видеобаннер
 
+### На мобильном разрешении отображается только картинка.
+
 <Playground>
-    <VideoBanner videoType="video" videoSrc={video} image={image} />
+    <ContentArea>
+        <VideoBanner videoType="video" videoSrc={video} image={imageOnlyMobile} />
+    </ContentArea>
 </Playground>
 
 ## С контентом
 
 <Playground>
-    <VideoBanner videoType="video" videoSrc={video} image={image} content={content} />
+    <ContentArea outerBackgroundColor='freshAsphalt'>
+        <VideoBanner videoType="video" videoSrc={video} content={content} image={imageOnlyMobile} />
+    </ContentArea>
 </Playground>
 
 ## Только изображение
 
 <Playground>
-    <VideoBanner image={image} content={content} />
+    <ContentArea>
+        <VideoBanner image={image} content={content} image={image} />
+    </ContentArea>
 </Playground>
 
 ## Видео с youtube
 
 <Playground>
-    <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} image={image} />
+    <ContentArea>
+        <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} image={imageOnlyMobile} />
+    </ContentArea>
 </Playground>
