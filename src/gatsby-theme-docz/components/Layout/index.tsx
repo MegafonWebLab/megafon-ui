@@ -33,7 +33,7 @@ const Layout: React.FC = ({ children }) => {
                 <SideBar />
             </div>
             <div className={cn('sep', { open: isOpen })} />
-            {isOpen && <div className={cn('open-bg')} onClick={handleClickOut} />}
+            <div className={cn('bg', { open: isOpen })} onClick={handleClickOut} />
             <div className={cn('content')}>
                 <div className={cn('content-inner')}>
                     {children}

@@ -1,5 +1,7 @@
 .docz-props {
-    overflow: scroll;
+    @media screen and (max-width: 767px) {
+        overflow-x: scroll;
+    }
 
     &__table {
         border-collapse: collapse;
