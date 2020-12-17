@@ -63,25 +63,27 @@ export const Props = ({ props }) => {
         );
 
     return (
-        <table className={cn()}>
-            <thead>
-                <tr className={cn('row')}>
-                    <td className={cn('cell', { title: true, first: true })}>Prop name</td>
-                    <td className={cn('cell', { title: true, second: true })}>Type</td>
-                    <td className={cn('cell', { title: true, third: true })}>Default</td>
-                    <td className={cn('cell', { title: true, fourth: true })}>Description</td>
-                </tr>
-            </thead>
-            <tbody>
-                {entries.map(([key, prop]) => (
-                    <Prop
-                        key={key}
-                        propName={key}
-                        prop={prop}
-                    />
-                ))}
-            </tbody>
-        </table>
+        <div className={cn()}>
+            <table className={cn('table')}>
+                <thead>
+                    <tr className={cn('row')}>
+                        <td className={cn('cell', { title: true, first: true })}>Prop name</td>
+                        <td className={cn('cell', { title: true, second: true })}>Type</td>
+                        <td className={cn('cell', { title: true, third: true })}>Default</td>
+                        <td className={cn('cell', { title: true, fourth: true })}>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {entries.map(([key, prop]) => (
+                        <Prop
+                            key={key}
+                            propName={key}
+                            prop={prop}
+                        />
+                    ))}
+                </tbody>
+            </table>
+        </div>
     )
 }
 
