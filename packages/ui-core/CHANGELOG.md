@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.67](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.66...@megafon/ui-core@2.0.0-beta.67) (2020-12-17)
+
+
+### Bug Fixes
+
+* **banner:** fix remarks ([9c8d186](https://github.com/MegafonWebLab/megafon-ui/commit/9c8d186c22c1f63d9daf8e1d01ed3657c065681f))
+* **carousel:** fix remarks ([9bafdb9](https://github.com/MegafonWebLab/megafon-ui/commit/9bafdb955f8a58bb0c1eb976eef25b09a7888479))
+* **tabs:** fix remarks ([f61639d](https://github.com/MegafonWebLab/megafon-ui/commit/f61639decbb014611ecc4b64148ce35630ca6aee))
+
+
+### BREAKING CHANGES
+
+* **tabs:** move className and innerIndentsClass props to classes object
+* **carousel:** move className and innerIndentsClass props to classes object
+
+
+
+
+
 # [2.0.0-beta.66](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.65...@megafon/ui-core@2.0.0-beta.66) (2020-12-17)
 
 **Note:** Version bump only for package @megafon/ui-core
