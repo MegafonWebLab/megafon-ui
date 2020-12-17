@@ -10,16 +10,16 @@ const SideBar: React.FC = () => {
     const currentDoc = useCurrentDoc();
 
     React.useEffect(() => {
-            const current = document.getElementById(currentDoc.route);
-            const option = { threshold: 0 };
+        const current = document.getElementById(currentDoc.route);
+        const option = { threshold: 0 };
 
-            current && window.IntersectionObserver && new window.IntersectionObserver((entries, obs) => {
-                const [entry] = entries;
-                if (entry && !entry.isIntersecting) {
-                    current.scrollIntoView();
-                }
-                obs.disconnect();
-            }, option).observe(current);
+        current && window.IntersectionObserver && new window.IntersectionObserver((entries, obs) => {
+            const [entry] = entries;
+            if (entry && !entry.isIntersecting) {
+                current.scrollIntoView();
+            }
+            obs.disconnect();
+        }, option).observe(current);
     }, []);
 
     return (

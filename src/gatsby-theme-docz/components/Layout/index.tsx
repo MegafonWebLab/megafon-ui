@@ -8,10 +8,10 @@ import PageHeader from '../PageHeader';
 const cn = cnCreate('docz-layout');
 const Layout: React.FC = ({ children }) => {
     const size = useWindowSize();
-    const [isOpen, setIsOpen] = React.useState(size.innerWidth > 767);
+    const [isOpen, setIsOpen] = React.useState(size.innerWidth >= 768);
 
     React.useEffect(() => {
-        if (size.innerWidth > 767 && !isOpen) {
+        if (size.innerWidth >= 768 && !isOpen) {
             setIsOpen(true);
         } else if (size.innerWidth < 768 && isOpen) {
             setIsOpen(false);
