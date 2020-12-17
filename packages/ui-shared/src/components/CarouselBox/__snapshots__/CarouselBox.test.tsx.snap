@@ -19,8 +19,12 @@ exports[`<CarouselBox /> render CarouselBox with props 1`] = `
   <Carousel
     autoPlay={true}
     autoPlayDelay={10}
-    className="testClassName"
-    innerIndentsClass="testInnerClass"
+    classes={
+      Object {
+        "innerIndents": "testInnerClass",
+        "root": "testClassName",
+      }
+    }
     loop={true}
     navTheme="green"
     onChange={[MockFunction]}
