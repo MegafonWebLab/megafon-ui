@@ -443,6 +443,7 @@ exports[`<Property /> should render with links 1`] = `
         Тарифы 
         <a
           href="https://moscow.megafon.ru"
+          key="1"
         >
           Включайся!
         </a>
