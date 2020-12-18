@@ -6,13 +6,15 @@ export interface ILinkProps {
     className?: string;
     /** Ссылка */
     href?: string;
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
     /** target - аргумент тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** rel - аргумент тега <a> */
     rel?: string;
     /** Обработчик клика */
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
+    /** Добавление атрибута download */
+    download?: boolean;
+    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
 class Link extends React.Component<ILinkProps, {}> {
@@ -28,6 +30,7 @@ class Link extends React.Component<ILinkProps, {}> {
         className: PropTypes.string,
         rel: PropTypes.string,
         onClick: PropTypes.func,
+        download: PropTypes.bool,
     };
 
     render() {
