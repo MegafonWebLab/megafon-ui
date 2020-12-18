@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardsBox render component 1`] = `
+<div
+  className="mfui-beta-cards-box"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+    multiRow={true}
+  >
+    <GridColumn
+      all="4"
+      flex={false}
+      grow={false}
+      key=".0"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+    >
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      />
+    </GridColumn>
+  </Grid>
+</div>
+`;
