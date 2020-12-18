@@ -8,6 +8,12 @@ exports[`Link renders children 1`] = `
 </a>
 `;
 
+exports[`Link renders with attribute download 1`] = `
+<a
+  download={true}
+/>
+`;
+
 exports[`Link renders with default props 1`] = `<a />`;
 
 exports[`Link renders with rel 1`] = `
