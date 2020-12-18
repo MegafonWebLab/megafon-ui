@@ -20,7 +20,7 @@ export const ObjectFit = {
 
 type ObjectFitType = typeof ObjectFit[keyof typeof ObjectFit];
 
-interface ICard {
+export interface ICard {
     /** Изображение в карточке */
     imageSrc?: string;
     /** Иконка в карточке */
