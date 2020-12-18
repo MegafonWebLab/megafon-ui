@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate, TextLink, Paragraph } from '@megafon/ui-core';
+import { cnCreate, TextLink } from '@megafon/ui-core';
 import './DownloadLink.less';
 import Download from 'icons/Basic/32/Download_32.svg';
 
@@ -19,7 +19,7 @@ export interface IDownloadLink {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-export const cn = cnCreate('mfui-beta-download-link');
+const cn = cnCreate('mfui-beta-download-link');
 const DownloadLink: React.FC<IDownloadLink> = ({ href, text, extension, fileSize, onClick, className }) =>
    (
         <div className={cn([className])}>
@@ -28,9 +28,9 @@ const DownloadLink: React.FC<IDownloadLink> = ({ href, text, extension, fileSize
             </div>
             <div>
                 <TextLink className={cn('link')} href={href} onClick={onClick} download>{text}</TextLink>
-                <Paragraph hasMargin={false} size="small" className={cn('info')}>
+                <p className={cn('info')}>
                     {`${extension}, ${fileSize}`}
-                </Paragraph>
+                </p>
             </div>
         </div>
    );

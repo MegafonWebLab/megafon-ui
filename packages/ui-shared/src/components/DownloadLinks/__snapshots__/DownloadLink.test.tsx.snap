@@ -20,13 +20,11 @@ exports[`DownloadLink render component 1`] = `
     >
       text
     </TextLink>
-    <Paragraph
+    <p
       className="mfui-beta-download-link__info"
-      hasMargin={false}
-      size="small"
     >
       PDF, 500 MB
-    </Paragraph>
+    </p>
   </div>
 </div>
 `;
@@ -51,13 +49,11 @@ exports[`DownloadLink render with custom classname 1`] = `
     >
       text
     </TextLink>
-    <Paragraph
+    <p
       className="mfui-beta-download-link__info"
-      hasMargin={false}
-      size="small"
     >
       PDF, 500 MB
-    </Paragraph>
+    </p>
   </div>
 </div>
 `;

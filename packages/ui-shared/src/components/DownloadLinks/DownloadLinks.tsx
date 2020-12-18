@@ -32,7 +32,7 @@ const cn = cnCreate('mfui-beta-download-links');
 const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
     const columnConfig = getColumnConfig(React.Children.count(children));
 
-    const renderLinks = () => {
+    const renderLinks = React.useCallback(() => {
         const childrenWithProps = React.Children.map(children, (child: React.ReactElement<IDownloadLink>) =>
             React.cloneElement(child, { className: cn('item')})
         );
@@ -51,7 +51,7 @@ const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
                 </GridColumn>
             );
         });
-    };
+    }, []);
 
     return (
         <div className={cn()}>

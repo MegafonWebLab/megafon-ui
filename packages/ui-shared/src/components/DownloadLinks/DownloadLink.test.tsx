@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import DownloadLink, { IDownloadLink, cn } from './DownloadLink';
+import { cnCreate } from '@megafon/ui-core';
+import DownloadLink, { IDownloadLink } from './DownloadLink';
 
 const props: IDownloadLink = {
     href: 'href',
@@ -8,6 +9,8 @@ const props: IDownloadLink = {
     extension: 'PDF',
     fileSize: '500 MB',
 };
+
+const cn = cnCreate('mfui-beta-download-link');
 
 describe('DownloadLink', () => {
     it('render component', () => {
