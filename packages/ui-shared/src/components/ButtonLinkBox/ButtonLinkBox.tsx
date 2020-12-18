@@ -18,6 +18,10 @@ export interface IButtonLinkBoxProps {
     linkUrl?: string;
     /** Горизонтальное выравнивание */
     hAlign?: 'center' | 'left';
+    /** Обработчик клика по кнопке */
+    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Обработчик клика по ссылке */
+    onLinkClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-beta-button-link-box');
@@ -29,6 +33,8 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     linkUrl,
     hAlign,
     className,
+    onButtonClick,
+    onLinkClick,
 }) => (
     <div className={cn({ 'h-align': hAlign }, className)}>
         {buttonTitle && (
@@ -36,6 +42,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
                 <Button
                     href={buttonUrl}
                     theme={buttonColor}
+                    onClick={onButtonClick}
                 >
                     {buttonTitle}
                 </Button>
@@ -43,7 +50,11 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
         )}
         {linkTitle && (
             <div className={cn('row')}>
-                <TextLink href={linkUrl} underlineVisibility="always">
+                <TextLink
+                    href={linkUrl}
+                    underlineVisibility="always"
+                    onClick={onLinkClick}
+                >
                     {linkTitle}
                 </TextLink>
             </div>
@@ -59,6 +70,8 @@ ButtonLinkBox.propTypes = {
     linkTitle: PropTypes.string,
     linkUrl: PropTypes.string,
     hAlign: PropTypes.oneOf(['center']),
+    onButtonClick: PropTypes.func,
+    onLinkClick: PropTypes.func,
 };
 
 export default ButtonLinkBox;
