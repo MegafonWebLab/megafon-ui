@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.69](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.68...@megafon/ui-core@2.0.0-beta.69) (2020-12-18)
+
+
+### Bug Fixes
+
+* **carousel:** fixed swiper bug with slidesPerView auto on different resolutions ([fbe13d2](https://github.com/MegafonWebLab/megafon-ui/commit/fbe13d28c55fd3faaf154efd3299d8cec2fa4a1b))
+
+
+
+
+
 # [2.0.0-beta.68](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.67...@megafon/ui-core@2.0.0-beta.68) (2020-12-17)
 
 
