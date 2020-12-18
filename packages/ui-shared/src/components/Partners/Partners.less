@@ -1,0 +1,52 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-partners');
+
+@{b} {
+    &__tile:not(:last-child) {
+        margin-bottom: 20px;
+
+        @media @mobileSM {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__slide &__tile {
+        @media @mobileB {
+            width: 153px;
+        }
+
+        @media @mobileSM {
+            width: 120px;
+        }
+    }
+
+    &__tile-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        min-height: 132px;
+        padding: 28px 48px;
+
+        @media @desktopS {
+            min-height: 104px;
+            padding: 22px 37px;
+        }
+
+        @media @mobileB {
+            min-height: 77px;
+            padding: 10px;
+        }
+
+        @media @mobileSM {
+            min-height: 60px;
+            padding: 8px;
+        }
+    }
+
+    &__tile-img {
+        max-width: 100%;
+        display: block;
+    }
+}

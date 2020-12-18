@@ -6,11 +6,20 @@ import ContentArea from 'components/ContentArea/ContentArea';
 ## Особенности использования на мобильных разрешениях
 На разрешении меньше 1024 отключаются стрелки и появляются "уши",
 для корректного отображения которых необходимо предоставить компоненту возможность растянуться на всю страницу.
-Чтобы основные слайды выравнивались по остальному контенту страницы,
-необходимо переопределить размеры внутренних отступов у компонента с помощью
-переданного в innerIndentsClass класса.
-По умолчанию используются гайдовые отступы для контента страницы (32px на 320-767 и 48px на 768-1023)
+По умолчанию компонент растягивается на всю страницу за счет отрицательных margin на величину гайдовых контентных отступов (32px на 320-767 и 48px на 768-1023)
+и компенсируется с помощью padding, чтобы основные видимые слайды выравнивались по контенту страницы,
+Если на площадке используются негайдовые контентные отступы, то нужно их переопределить с помощью дополнительного класса,
+который передается через свойство innerIndentsClass.
+``` css
+.custom-class {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: -50px;
+    margin-right: -50px;
+}
+```
 
+## Код демо компонента
 ``` javascript
 export const DemoSlide = ({ children }) => {
     return (
@@ -34,7 +43,7 @@ export const DemoSlide = ({ children }) => {
 ## Базовое использование
 
 <Playground style={blockStyle}>
-    <ContentArea disableIndents="mobile-tablet">
+    <ContentArea>
         <Carousel>
             <DemoSlide>1</DemoSlide>
             <DemoSlide>2</DemoSlide>
@@ -49,7 +58,7 @@ export const DemoSlide = ({ children }) => {
 ## Тема навигации для использования на зеленом фоне
 
 <Playground style={blockStyle}>
-    <ContentArea disableIndents="mobile-tablet" outerBackgroundColor="green">
+    <ContentArea outerBackgroundColor="green">
         <div style={blockStyle}>
             <Carousel navTheme="green">
                 <DemoSlide>1</DemoSlide>
@@ -66,7 +75,7 @@ export const DemoSlide = ({ children }) => {
 ## Прокрутка слайдов с зацикливанием
 
 <Playground style={blockStyle}>
-    <ContentArea disableIndents="mobile-tablet">
+    <ContentArea>
         <Carousel loop>
             <DemoSlide>1</DemoSlide>
             <DemoSlide>2</DemoSlide>
@@ -81,7 +90,7 @@ export const DemoSlide = ({ children }) => {
 ## Автоматическая прокрутка слайдов
 
 <Playground style={blockStyle}>
-    <ContentArea disableIndents="mobile-tablet">
+    <ContentArea>
         <Carousel loop autoPlay>
             <DemoSlide>1</DemoSlide>
             <DemoSlide>2</DemoSlide>
@@ -96,7 +105,7 @@ export const DemoSlide = ({ children }) => {
 ## Ширина слайдов по содержимому
 
 <Playground style={blockStyle}>
-    <ContentArea disableIndents="mobile-tablet">
+    <ContentArea>
         <Carousel slidesSettings={{
             0: { slidesPerView: 'auto', spaceBetween: 16 },
             768: { slidesPerView: 'auto', spaceBetween: 20 },
@@ -117,7 +126,7 @@ export const DemoSlide = ({ children }) => {
 ## Переопределение количества видимых слайдов
 
 <Playground style={blockStyle}>
-    <ContentArea disableIndents="mobile-tablet">
+    <ContentArea>
         <Carousel slidesSettings={{
             0: { slidesPerView: 1, spaceBetween: 16 },
             768: { slidesPerView: 2, spaceBetween: 20 },
