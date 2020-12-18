@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.78](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.77...@megafon/ui-shared@2.0.0-beta.78) (2020-12-18)
+
+
+### Features
+
+* **buttonlinkbox:** add click handlers to props ([19b1072](https://github.com/MegafonWebLab/megafon-ui/commit/19b10720147c86755c8c6d3b25384c8a5cc7cb89))
+
+
+
+
+
 # [2.0.0-beta.77](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.76...@megafon/ui-shared@2.0.0-beta.77) (2020-12-17)
 
 
