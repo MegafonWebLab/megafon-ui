@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate, TextLink } from '@megafon/ui-core';
 import './DownloadLink.less';
-import Download from 'icons/Basic/32/Download_32.svg';
+import DownloadIcon from 'icons/Basic/32/Download_32.svg';
 
 export interface IDownloadLink {
     /** Адресы ссылки */
@@ -24,7 +24,7 @@ const DownloadLink: React.FC<IDownloadLink> = ({ href, text, extension, fileSize
    (
         <div className={cn([className])}>
             <div className={cn('icon')}>
-                <Download />
+                <DownloadIcon />
             </div>
             <div>
                 <TextLink className={cn('link')} href={href} onClick={onClick} download>{text}</TextLink>

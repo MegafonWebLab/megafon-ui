@@ -3,26 +3,6 @@ import * as PropTypes from 'prop-types';
 import { cnCreate, Grid, GridColumn } from '@megafon/ui-core';
 import './DownloadLinks.less';
 import { IDownloadLink } from './DownloadLink';
-import { ColumnConfig } from './types';
-
-const getColumnConfig = (itemsCount): ColumnConfig => {
-    switch (true) {
-        case (itemsCount <= 4): {
-            return {
-                all: '6',
-                mobile: '12',
-            };
-        }
-
-        default: {
-            return {
-                all: '4',
-                tablet: '6',
-                mobile: '12',
-            };
-        }
-    }
-};
 
 interface IDownloadLinks {
     children: Array<React.ReactElement<IDownloadLink>> | React.ReactElement<IDownloadLink>;
@@ -30,32 +10,56 @@ interface IDownloadLinks {
 
 const cn = cnCreate('mfui-beta-download-links');
 const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
-    const columnConfig = getColumnConfig(React.Children.count(children));
+    const itemsCount = React.Children.count(children);
 
     const renderLinks = React.useCallback(() => {
-        const childrenWithProps = React.Children.map(children, (child: React.ReactElement<IDownloadLink>) =>
-            React.cloneElement(child, { className: cn('item')})
-        );
+        const renderColumns = index => {
+            switch (true) {
+                case (itemsCount === 1): {
+                    return (
+                        <GridColumn all="6" mobile="12">{children}</GridColumn>
+                    );
+                }
 
-        return React.Children.map(childrenWithProps, (_child, index) => {
-            const isIndexEven = !(index % 2);
+                case (itemsCount <= 4): {
+                    const isIndexEven = !(index % 2);
 
-            if (!isIndexEven) {
-                return;
+                    if (!isIndexEven) {
+                        return;
+                    }
+
+                    return (
+                        <GridColumn all="6" mobile="12" className={cn('column')}>
+                            <div className={cn('item')}>
+                                {children[index]}
+                            </div>
+                            {children[index + 1] && (
+                                <div className={cn('item')}>
+                                    {children[index + 1]}
+                                </div>
+                            )}
+                        </GridColumn>
+                    );
+                }
+
+                default: {
+                    return (
+                        <GridColumn desktop="4" wide="4" tablet="6" mobile="12" className={cn('column')}>
+                            <div className={cn('item')}>
+                                {children[index]}
+                            </div>
+                        </GridColumn>
+                    );
+                }
             }
+        };
 
-            return (
-                <GridColumn {...columnConfig} key={index}>
-                    {childrenWithProps[index]}
-                    {childrenWithProps[index + 1]}
-                </GridColumn>
-            );
-        });
+        return React.Children.map(children, (_child, index) => renderColumns(index));
     }, []);
 
     return (
         <div className={cn()}>
-            <Grid guttersBottom="medium" guttersLeft="medium">
+            <Grid guttersLeft="medium">
                 {renderLinks()}
             </Grid>
         </div>

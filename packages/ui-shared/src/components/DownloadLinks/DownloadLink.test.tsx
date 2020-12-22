@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { cnCreate } from '@megafon/ui-core';
 import DownloadLink, { IDownloadLink } from './DownloadLink';
 
 const props: IDownloadLink = {
@@ -9,8 +8,6 @@ const props: IDownloadLink = {
     extension: 'PDF',
     fileSize: '500 MB',
 };
-
-const cn = cnCreate('mfui-beta-download-link');
 
 describe('DownloadLink', () => {
     it('render component', () => {
@@ -26,7 +23,7 @@ describe('DownloadLink', () => {
     it('should call onClick props', () => {
         const onClick = jest.fn();
         const wrapper = shallow(<DownloadLink {...props} onClick={onClick} />);
-        const link = wrapper.find(`.${cn('link')}`);
+        const link = wrapper.find('TextLink');
 
         link.simulate('click');
         expect(onClick).toBeCalled();

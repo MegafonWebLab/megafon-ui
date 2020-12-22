@@ -5,10 +5,37 @@ import { text, extension, fileSize, href } from './DownloadLinks.docz.tsx';
 
 # DownloadLinks
 
+## Примеры свойств
+
+```javascript
+
+const text = 'Заявление на объединение/разделение Лицевых счетов и дополнительная информация';
+const extension = 'pdf';
+const fileSize = '202,3 кб';
+const href = 'href';
+
+```
 ## Базовое использование
 
+### Одна колонка
 <Playground>
     <DownloadLinks>
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+    </DownloadLinks>
+</Playground>
+
+<Playground>
+    <DownloadLinks>
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+    </DownloadLinks>
+</Playground>
+
+### Две колонки
+<Playground>
+    <DownloadLinks>
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
     </DownloadLinks>
 </Playground>
@@ -22,8 +49,22 @@ import { text, extension, fileSize, href } from './DownloadLinks.docz.tsx';
     </DownloadLinks>
 </Playground>
 
+### Три колонки
 <Playground>
     <DownloadLinks>
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+    </DownloadLinks>
+</Playground>
+
+<Playground>
+    <DownloadLinks>
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
+        <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />

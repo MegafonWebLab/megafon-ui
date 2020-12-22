@@ -1,7 +1,26 @@
+@import '~@megafon/ui-core/styles/base.less';
 @root: e('.mfui-beta-download-links');
 
 @{root} {
-    &__item:first-child {
+    &__item:first-child:not(:last-child) {
         margin-bottom: 24px;
+    }
+
+    @media @desktop {
+        &__column:nth-child(n + 4) {
+            margin-top: 24px;
+        }
+    }
+
+    @media @mobileB {
+        &__column:nth-child(n + 3) {
+            margin-top: 24px;
+        }
+    }
+
+    @media @mobileSM {
+        &__column:not(:first-child) {
+            margin-top: 24px;
+        }
     }
 }

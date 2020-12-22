@@ -11,12 +11,22 @@ const props: IDownloadLink = {
 };
 
 describe('DownloadLinks', () => {
-    it('render component', () => {
+    it('render component with one column', () => {
         const wrapper = shallow(<DownloadLinks><DownloadLink {...props} /></DownloadLinks>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('render component with another grid config', () => {
+    it('render component with two columns', () => {
+        const wrapper = shallow(
+            <DownloadLinks>
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+            </DownloadLinks>);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render component with three columns', () => {
         const wrapper = shallow(
             <DownloadLinks>
                 <DownloadLink {...props} />
