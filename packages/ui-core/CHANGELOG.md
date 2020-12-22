@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.70](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.69...@megafon/ui-core@2.0.0-beta.70) (2020-12-22)
+
+
+### Bug Fixes
+
+* **textfield:** deleted declared cursor ([10311f9](https://github.com/MegafonWebLab/megafon-ui/commit/10311f9f8460073f34cdc6dcdcc5d8d32df07a5a))
+
+
+
+
+
 # [2.0.0-beta.69](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.68...@megafon/ui-core@2.0.0-beta.69) (2020-12-18)
 
 
