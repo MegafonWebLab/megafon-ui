@@ -16,7 +16,8 @@
 @k13: e('.mfui-beta-accordion-box');
 @k14: e('.mfui-beta-button-link-box');
 @k15: e('.mfui-beta-banner'); // component is not made
-@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15;
+@k16: e('.mfui-beta-text-box');
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16;
 
 @color-modificator: e('&_bg-color_');
 @color-default: e('default');
@@ -310,5 +311,20 @@
 
     @{k13} + @{k14} {
         margin-top: @small;
+    }
+
+    // k16(text-box)
+
+    .generateComponentsMargins(@large, @k16, 3, 16);
+    .generateComponentsMargins(@small, @k16, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k16, 3, 16);
+        .generateComponentsMargins(@small, @k16, 14, 15);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@middle, @k16, 3, 16);
+        .generateComponentsMargins(@small, @k16, 14, 15);
     }
 }
