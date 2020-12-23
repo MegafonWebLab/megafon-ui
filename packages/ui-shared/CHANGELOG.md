@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.82](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.81...@megafon/ui-shared@2.0.0-beta.82) (2020-12-23)
+
+
+### Features
+
+* **container:** added margins in container for textbox component ([f61dca5](https://github.com/MegafonWebLab/megafon-ui/commit/f61dca5524b03a92b1543f81261e3cc9283fc3d6))
+* **textbox:** added TextBox component ([9a98038](https://github.com/MegafonWebLab/megafon-ui/commit/9a98038afef89759e9aef95f6c2e056e7bf01f61))
+
+
+
+
+
 # [2.0.0-beta.81](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.80...@megafon/ui-shared@2.0.0-beta.81) (2020-12-22)
 
 **Note:** Version bump only for package @megafon/ui-shared
