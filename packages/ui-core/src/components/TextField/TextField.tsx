@@ -24,11 +24,11 @@ export const TextareaTypes = {
 } as const;
 
 export interface ITextFieldProps {
-    /** Включить режим textarea. Fixed - это alias для **textarea=true.** */
+    /** Включить режим textarea. Fixed - это alias для textarea=true. */
     textarea?: boolean | 'fixed' | 'flexible';
     /** Лейбл */
     label?: string;
-    /** Атрибут элемента input. Не работает с **textarea=true** */
+    /** Атрибут элемента input. Не работает с textarea=true */
     type?: 'text' | 'password' | 'tel' | 'email';
     /** Цветовая тема */
     theme?: 'default' | 'white';
@@ -36,7 +36,7 @@ export interface ITextFieldProps {
     hideIcon?: boolean;
     /** Отображение валидации */
     verification?: 'valid' | 'error';
-    /** Подпись снизу, меняет цвет в зависимости от аргумента `verification` */
+    /** Подпись снизу, меняет цвет в зависимости от аргумента verification */
     noticeText?: string;
     /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
@@ -58,10 +58,10 @@ export interface ITextFieldProps {
     symbolCounter?: number;
     /** Иконка */
     customIcon?: JSX.Element;
-    /** Маска для поля. Не работает с **textarea=true**. */
+    /** Маска для поля. Не работает с textarea=true. */
     /** Дополнительную информацию можно найти на https://github.com/sanniassin/react-input-mask */
     mask?: string;
-    /** Разделение символов для маски. Не работает **textarea=true** */
+    /** Разделение символов для маски. Не работает textarea=true */
     maskChar?: string;
     /** Дополнительный класс корневого элемента */
     className?: string;

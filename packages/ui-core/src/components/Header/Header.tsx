@@ -17,8 +17,6 @@ interface IHeaderProps extends IDataAttributes {
     className?: string | string[];
     /** Горизонтальное выравнивание */
     hAlign?: 'inherit' | 'left' | 'center' | 'right';
-    /** Children */
-    children?: React.ReactNode;
     /** Обработчик клика */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }

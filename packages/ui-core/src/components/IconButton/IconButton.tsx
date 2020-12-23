@@ -17,15 +17,15 @@ export interface IIconButtonProps {
     sizeAll?: 'small' | 'medium' | 'large';
     /** Размер на разрешении экрана 1280+ */
     sizeWide?: 'small' | 'medium' | 'large';
-    /** Размер на разрешении экрана 1020+ */
+    /** Размер на разрешении экрана 1024+ */
     sizeDesktop?: 'small' | 'medium' | 'large';
-    /** Размер на разрешении экрана 730-1020 */
+    /** Размер на разрешении экрана 768-1023 */
     sizeTablet?: 'small' | 'medium' | 'large';
-    /** Размер на разрешении экрана 320-730 */
+    /** Размер на разрешении экрана 0-767 */
     sizeMobile?: 'small' | 'medium' | 'large';
     /** Иконка */
     icon: JSX.Element;
-    /** Управление возможности взаимодействия с компонентом */
+    /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;

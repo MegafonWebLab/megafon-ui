@@ -19,7 +19,7 @@ export interface ICheckboxProps extends IDataAttributes {
     value?: string;
     /** Управление состоянием вкл/выкл компонента */
     checked?: boolean;
-    /** Управление возможности взаимодействия с компонентом */
+    /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
     /** Отобразить компонент в состоянии ошибки */
     error?: boolean;

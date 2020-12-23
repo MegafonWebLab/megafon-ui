@@ -29,7 +29,7 @@ interface ICalendarState {
 }
 
 export interface ICalendarProps {
-    /** Переключение календаря в режим выбора одной даты, вместо периода */
+    /** Переключение календаря в режим выбора одной даты вместо периода */
     isSingleDate?: boolean;
     /** Классы для модификации компонента */
     className?: string;

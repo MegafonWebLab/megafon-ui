@@ -10,14 +10,14 @@ interface IAccordionClasses {
 export interface IAccordionBox {
     /** Заголовок аккордеона */
     title: string;
-    /** Состояние аккордеона заданное извне */
+    /** Состояние аккордеона, заданное извне */
     isOpened?: boolean;
+    /** Центрирование по горизонтали для расширения 1280+ */
+    hCenterAlignWide?: boolean;
     /** Внешние классы для аккордеона и внутренних компонентов */
     classes?: IAccordionClasses;
     /** Обработчик клика */
     onClickAccordion?: (isOpened: boolean, title: string) => void;
-    /** Центрирование по горизонтали для расширения 1280+ */
-    hCenterAlignWide?: boolean;
 }
 
 const cn = cnCreate('mfui-beta-accordion-box');

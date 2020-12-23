@@ -29,7 +29,7 @@ export interface IConrentAreaProps {
     innerBackgroundColor?: BackgroundColorType;
     /** Отключение отступов на различных разрешениях */
     disableIndents?: DisableIndentsType;
-    /** Сss класс для внешнего контейнера */
+    /** Дополнительный класс корневого элемента */
     className?: string;
 }
 
