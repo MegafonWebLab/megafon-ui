@@ -2,14 +2,15 @@
 
 exports[`DownloadLinks render component with one column 1`] = `
 <div
-  className="mfui-beta-download-links"
+  className="mfui-beta-download-links mfui-beta-download-links_count_1"
 >
   <Grid
     guttersLeft="medium"
     multiRow={true}
   >
     <GridColumn
-      all="6"
+      all="7"
+      className="mfui-beta-download-links__column"
       flex={false}
       grow={false}
       key=".0"
@@ -33,7 +34,7 @@ exports[`DownloadLinks render component with one column 1`] = `
 
 exports[`DownloadLinks render component with three columns 1`] = `
 <div
-  className="mfui-beta-download-links"
+  className="mfui-beta-download-links mfui-beta-download-links_count_5"
 >
   <Grid
     guttersLeft="medium"
@@ -55,16 +56,12 @@ exports[`DownloadLinks render component with three columns 1`] = `
       tablet="6"
       wide="4"
     >
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
     </GridColumn>
     <GridColumn
       all="12"
@@ -82,16 +79,12 @@ exports[`DownloadLinks render component with three columns 1`] = `
       tablet="6"
       wide="4"
     >
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
     </GridColumn>
     <GridColumn
       all="12"
@@ -109,16 +102,12 @@ exports[`DownloadLinks render component with three columns 1`] = `
       tablet="6"
       wide="4"
     >
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
     </GridColumn>
     <GridColumn
       all="12"
@@ -136,16 +125,12 @@ exports[`DownloadLinks render component with three columns 1`] = `
       tablet="6"
       wide="4"
     >
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
     </GridColumn>
     <GridColumn
       all="12"
@@ -163,16 +148,12 @@ exports[`DownloadLinks render component with three columns 1`] = `
       tablet="6"
       wide="4"
     >
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
     </GridColumn>
   </Grid>
 </div>
@@ -180,7 +161,7 @@ exports[`DownloadLinks render component with three columns 1`] = `
 
 exports[`DownloadLinks render component with two columns 1`] = `
 <div
-  className="mfui-beta-download-links"
+  className="mfui-beta-download-links mfui-beta-download-links_count_3"
 >
   <Grid
     guttersLeft="medium"
@@ -199,26 +180,32 @@ exports[`DownloadLinks render component with two columns 1`] = `
       orderTablet="0"
       orderWide="0"
     >
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
+    </GridColumn>
+    <GridColumn
+      all="6"
+      className="mfui-beta-download-links__column"
+      flex={false}
+      grow={false}
+      key=".1"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+    >
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
     </GridColumn>
     <GridColumn
       all="6"
@@ -233,16 +220,12 @@ exports[`DownloadLinks render component with two columns 1`] = `
       orderTablet="0"
       orderWide="0"
     >
-      <div
-        className="mfui-beta-download-links__item"
-      >
-        <DownloadLink
-          extension="PDF"
-          fileSize="500 MB"
-          href="href"
-          text="text"
-        />
-      </div>
+      <DownloadLink
+        extension="PDF"
+        fileSize="500 MB"
+        href="href"
+        text="text"
+      />
     </GridColumn>
   </Grid>
 </div>

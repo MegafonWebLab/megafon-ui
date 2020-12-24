@@ -2,25 +2,40 @@
 @root: e('.mfui-beta-download-links');
 
 @{root} {
-    &__item:first-child:not(:last-child) {
-        margin-bottom: 24px;
-    }
+    @gap: 24px;
 
     @media @desktop {
         &__column:nth-child(n + 4) {
-            margin-top: 24px;
+            margin-top: @gap;
         }
     }
 
     @media @mobileB {
         &__column:nth-child(n + 3) {
-            margin-top: 24px;
+            margin-top: @gap;
         }
     }
 
     @media @mobileSM {
         &__column:not(:first-child) {
-            margin-top: 24px;
+            margin-top: @gap;
+        }
+    }
+
+    &_count_2 {
+        @media @mobileBU {
+            @{root}__column:nth-child(n + 2) {
+                margin-top: @gap;
+            }
+        }
+    }
+
+    &_count_3,
+    &_count_4 {
+        @media @mobileBU {
+            @{root}__column:nth-child(n + 3) {
+                margin-top: @gap;
+            }
         }
     }
 }
