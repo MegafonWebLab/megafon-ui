@@ -31,7 +31,7 @@ enum copyBoard {
 }
 
 const sizeDictionary = {
-    16: 'X',
+    16: 'S',
     24: 'M',
     32: 'L',
 };
@@ -152,27 +152,25 @@ class Icons extends React.Component<{}, IIconsState> {
 
         return (
             <div className={cn('info-icon-wrapper')} key={svg.path}>
-                <div className={cn('info-code')}>
-                    <div className={cn('info-import')}>
-                        Svg <code className={cn('info-code-style')}>{importStr}.svg';</code>
-                        <a title="copy to clipboard">
-                            <Copy
-                                className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
-                                onClick={this.copyToClipBoard &&
-                                        this.copyToClipBoard(`${importStr}.svg;'`, copyBoard.SVG)}
-                            />
-                        </a>
-                    </div>
-                    <div className={cn('info-import')}>
-                        JSX <code className={cn('info-code-style')}>{importStr}';</code>
-                        <a title="copy to clipboard">
-                            <Copy
-                                className={cn('info-copy', { active: copyIndex === copyBoard.JSX })}
-                                onClick={this.copyToClipBoard
-                                    && this.copyToClipBoard(`${importStr};'`, copyBoard.JSX)}
-                            />
-                        </a>
-                    </div>
+                <div className={cn('info-import')}>
+                    Svg <code className={cn('info-code-style')}>{importStr}.svg';</code>
+                    <a title="copy to clipboard">
+                        <Copy
+                            className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
+                            onClick={this.copyToClipBoard &&
+                                    this.copyToClipBoard(`${importStr}.svg;'`, copyBoard.SVG)}
+                        />
+                    </a>
+                </div>
+                <div className={cn('info-import')}>
+                    JSX <code className={cn('info-code-style')}>{importStr}';</code>
+                    <a title="copy to clipboard">
+                        <Copy
+                            className={cn('info-copy', { active: copyIndex === copyBoard.JSX })}
+                            onClick={this.copyToClipBoard
+                                && this.copyToClipBoard(`${importStr};'`, copyBoard.JSX)}
+                        />
+                    </a>
                 </div>
             </div>
         );
@@ -196,7 +194,8 @@ class Icons extends React.Component<{}, IIconsState> {
                 </div>
                 {svgList &&
                     <div className={cn('info')}>
-                        <div className={cn('info-icons')}>
+                        <div className={cn('info-sizes-wrap')}>
+                            <div>Размер</div>
                             <div className={cn('info-sizes')}>
                                 {svgList.map((svg: svgDataType, i: number) =>
                                     <div
@@ -208,13 +207,13 @@ class Icons extends React.Component<{}, IIconsState> {
                                     </div>
                                 )}
                             </div>
-                            <div className={cn('info-icon-wrap')}>
-                                <div style={{width: `${Number(svgList[activeIcon].size) * 2}px` }}>
-                                    <Svg />
-                                </div>
-                            </div>
                         </div>
                         {this.renderInfoIcon(svgList[activeIcon])}
+                        <div className={cn('info-icon-wrap')}>
+                            <div style={{width: `${Number(svgList[activeIcon].size) * 2}px` }}>
+                                <Svg />
+                            </div>
+                        </div>
                         <div className={cn('info-close')} onClick={this.handleClickClose}>
                             <Cancel />
                         </div>
