@@ -11,6 +11,7 @@ const props: ITextLinkProps = {
     rel: 'noopener',
     className: 'class',
     children: 'text',
+    download: true,
 };
 
 describe('<TextLink />', () => {
