@@ -3,10 +3,11 @@ import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import { cnCreate, Grid, GridColumn, Carousel, breakpoints } from '@megafon/ui-core';
 import { ICard } from '../Card/Card';
-import { SlidesSettingsType } from '@megafon/ui-core/dist/es/components/Carousel/Carousel';
+import ThrottleTime from '../../constants/throttle-time';
+
+type SlidesSettingsType = Pick<React.ComponentProps<typeof Carousel>, 'slidesSettings'>;
 
 const MAX_CARDS_COUNT_IN_GRID_ON_MOBILE = 2;
-const THROTTLE_TIME = 750;
 
 const SlidesSettings: SlidesSettingsType = {
     [breakpoints.mobileSmallStart]: {
@@ -39,16 +40,16 @@ const CardsBox: React.FC<ICardsBox> = ({ children }) => {
                 ))
             }
         </Grid>
-    ), []);
+    ), [children]);
 
     const renderCarousel = React.useCallback(() => (
         <Carousel slidesSettings={SlidesSettings}>{children}</Carousel>
-    ), []);
+    ), [children]);
 
     React.useEffect(() => {
         const resizeHandler = () =>
             window.innerWidth <= breakpoints.mobileBigEnd ? setIsMobile(true) : setIsMobile(false);
-        const resizeHandlerThrottled = throttle(resizeHandler, THROTTLE_TIME);
+        const resizeHandlerThrottled = throttle(resizeHandler, ThrottleTime.RESIZE);
 
         resizeHandler();
         window.addEventListener('resize', resizeHandlerThrottled);
