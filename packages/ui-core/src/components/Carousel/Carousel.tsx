@@ -39,7 +39,7 @@ export interface ICarouselProps {
     slidesSettings?: SlidesSettingsType;
     /** Смена слайдов с зацикливанием */
     loop?: boolean;
-    /** Автомтическая прокрутка */
+    /** Автоматическая прокрутка */
     autoPlay?: boolean;
     /** Задержка для авто прокрутки */
     autoPlayDelay?: number;
