@@ -5,8 +5,8 @@ import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
 import { cnCreate, Grid, GridColumn, Header, Paragraph, breakpoints } from '@megafon/ui-core';
 import { IBenefit, GridConfig, GridGutterSize } from './types';
+import ThrottleTime from '../../constants/throttle-time';
 
-const THROTTLE_TIME = 500;
 const ONLY_LEFT_ALIGN_ITEMS_COUNT = 3;
 
 const columnSize: GridConfig = {
@@ -139,7 +139,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     );
 
     React.useEffect(() => {
-        const throttledResizeHandler = throttle(resizeHandler, THROTTLE_TIME);
+        const throttledResizeHandler = throttle(resizeHandler, ThrottleTime.RESIZE);
 
         resizeHandler();
         window.addEventListener('resize', throttledResizeHandler);
