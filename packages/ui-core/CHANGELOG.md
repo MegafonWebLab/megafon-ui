@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.72](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.71...@megafon/ui-core@2.0.0-beta.72) (2020-12-25)
+
+
+### Features
+
+* **link:** added download attribute prop ([6234ee3](https://github.com/MegafonWebLab/megafon-ui/commit/6234ee358dbe93635b6eabac8572449d734f8775))
+* **textlink:** added download attribute prop ([c962e20](https://github.com/MegafonWebLab/megafon-ui/commit/c962e205dfa8f3be96c92776536cb99877e8961e))
+
+
+
+
+
 # [2.0.0-beta.71](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.70...@megafon/ui-core@2.0.0-beta.71) (2020-12-24)
 
 **Note:** Version bump only for package @megafon/ui-core
