@@ -3,8 +3,8 @@ import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
 import { Button, cnCreate, Header, Paragraph, breakpoints } from '@megafon/ui-core';
+import ThrottleTime from '../../constants/throttle-time';
 
-const THROTTLE_TIME = 750;
 export const VideoTypes = {
     YOUTUBE: 'youtube',
     VIDEO: 'video',
@@ -112,7 +112,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
     React.useEffect(() => {
         const resizeHandler = () =>
             window.innerWidth <= breakpoints.mobileBigEnd ? setIsMobile(true) : setIsMobile(false);
-        const resizeHandlerThrottled = throttle(resizeHandler, THROTTLE_TIME);
+        const resizeHandlerThrottled = throttle(resizeHandler, ThrottleTime.RESIZE);
 
         resizeHandler();
         window.addEventListener('resize', resizeHandlerThrottled);
