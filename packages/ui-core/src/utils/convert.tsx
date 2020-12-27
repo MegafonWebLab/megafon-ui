@@ -32,7 +32,7 @@ const typographyConfig: Config = {
     },
 };
 
-function getTransform(config: Config) {
+const getTransform = (config: Config) => {
     return {
         _: (node, props, children) => {
             // text node
@@ -56,7 +56,7 @@ function getTransform(config: Config) {
             }
         },
     };
-}
+};
 
 const convertToReact = (html, config = typographyConfig) => {
     let nodes = convert(html, {

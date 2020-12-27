@@ -17,13 +17,11 @@ const PropertyDescription: React.FC<Desc> = ({
 
     const renderDescriptionItems = React.useCallback(
         () => (
-            <>
-                {value.map((valueItem, i) => (
-                    <Paragraph className={cn('desc')} hasMargin={false} key={i}>
-                        {convert(valueItem)}
-                    </Paragraph>
-                ))}
-            </>
+            value.map((valueItem, i) => (
+                <Paragraph hasMargin={false} key={i}>
+                    {convert(valueItem)}
+                </Paragraph>
+            ))
         ),
         [value]
     );

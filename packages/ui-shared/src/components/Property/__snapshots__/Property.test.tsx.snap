@@ -22,7 +22,6 @@ exports[`<Property /> should render only title 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -75,7 +74,6 @@ exports[`<Property /> should render several rows 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -104,7 +102,6 @@ exports[`<Property /> should render several rows 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -133,7 +130,6 @@ exports[`<Property /> should render several rows 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -214,7 +210,6 @@ exports[`<Property /> should render title and description in several rows 1`] = 
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -260,7 +255,6 @@ exports[`<Property /> should render title and hidden description 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -300,7 +294,6 @@ exports[`<Property /> should render title in several row 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -337,7 +330,6 @@ exports[`<Property /> should render with badge 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -369,7 +361,6 @@ exports[`<Property /> should render with border bottom 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -413,7 +404,6 @@ exports[`<Property /> should render with icon 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -464,7 +454,6 @@ exports[`<Property /> should render with links 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >
@@ -521,7 +510,6 @@ exports[`<Property /> should render with several descriptions 1`] = `
     </div>
     <Header
       as="h3"
-      className="mfui-beta-property__value"
       color="black"
       hAlign="inherit"
     >

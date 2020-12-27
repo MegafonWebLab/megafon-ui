@@ -16,7 +16,6 @@ export interface IProperty {
 }
 
 const cn = cnCreate('mfui-beta-property');
-
 const Property: React.FC<IProperty> = ({
     items,
     className,
@@ -52,7 +51,7 @@ const Property: React.FC<IProperty> = ({
     );
 
     return (
-        <div className={cn('', { 'border-bottom': borderBottom }, [className])}>
+        <div className={cn({ 'border-bottom': borderBottom }, [className])}>
             {badge && <span className={cn('badge')}>{badge}</span>}
             {items.map(({ title, value, description }, i) => (
                 <div className={cn('item', { multirow })} key={i}>
@@ -60,16 +59,12 @@ const Property: React.FC<IProperty> = ({
                         {renderTitle(title)}
                         {renderDescription(description)}
                     </div>
-                    {value && (
-                        <Header as="h3" className={cn('value')}>
-                            {value}
-                        </Header>
-                    )}
+                    {value && !mergedValue && <Header as="h3">{value}</Header>}
 
                     {mergedValue && i === 0 && (
-                        <Header as="h3" className={cn('merged-value')}>
-                            {mergedValue}
-                        </Header>
+                        <div className={cn('merged-value')}>
+                            <Header as="h3">{mergedValue}</Header>
+                        </div>
                     )}
                 </div>
             ))}

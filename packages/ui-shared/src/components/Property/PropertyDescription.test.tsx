@@ -39,4 +39,19 @@ describe('<PropertyDescription />', () => {
 
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('should render opened description', () => {
+        const wrapper = shallow(
+            <PropertyDescription
+                value={[
+                    'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка',
+                    'Google Play Music, Apple Music, онлайн радио.',
+                ]}
+                isCollapsible={true}
+            />
+        );
+
+        wrapper.find('.mfui-beta-property-description__collapse').simulate('click');
+        expect(wrapper).toMatchSnapshot();
+    });
 });
