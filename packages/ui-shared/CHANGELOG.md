@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.84](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.83...@megafon/ui-shared@2.0.0-beta.84) (2020-12-25)
+
+
+### Features
+
+* **download links:** added new component ([bee5ac4](https://github.com/MegafonWebLab/megafon-ui/commit/bee5ac48d2ad2a506bf38f44e64e21672b540cd7))
+
+
+
+
+
 # [2.0.0-beta.83](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.82...@megafon/ui-shared@2.0.0-beta.83) (2020-12-24)
 
 **Note:** Version bump only for package @megafon/ui-shared

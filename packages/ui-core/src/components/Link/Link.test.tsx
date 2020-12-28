@@ -24,3 +24,8 @@ test('Link calls onClick handler', () => {
     link.simulate('click');
     expect(fn).toHaveBeenCalledTimes(1);
 });
+
+test('Link renders with attribute download', () => {
+    const link = shallow(<Link download />);
+    expect(link).toMatchSnapshot();
+});
