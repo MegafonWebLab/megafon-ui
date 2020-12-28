@@ -1,10 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Carousel } from '@megafon/ui-core';
 import CardsBox from './CardsBox';
 import Card, { ICard } from '../Card/Card';
-
-type CarouselPropsType = React.ComponentProps<typeof Carousel>;
 
 const cardProps: ICard = {
     title: 'title',
@@ -24,7 +21,7 @@ type LocalWindowType = Omit<Window, 'innerWidth'> & {
 };
 
 jest.mock('@megafon/ui-core/dist/lib/components/Carousel/Carousel', () => {
-    const CarouselMock = (props: CarouselPropsType): CarouselPropsType['children'] => props.children;
+    const CarouselMock = (props): React.ReactNode => props.children;
 
     return CarouselMock;
 });

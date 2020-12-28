@@ -5,7 +5,7 @@ import { cnCreate, Grid, GridColumn, Carousel, breakpoints } from '@megafon/ui-c
 import { ICard } from '../Card/Card';
 import ThrottleTime from '../../constants/throttle-time';
 
-type SlidesSettingsType = Pick<React.ComponentProps<typeof Carousel>, 'slidesSettings'>;
+type SlidesSettingsType = Pick<React.ComponentProps<typeof Carousel>, 'slidesSettings'>['slidesSettings'];
 
 const MAX_CARDS_COUNT_IN_GRID_ON_MOBILE = 2;
 
