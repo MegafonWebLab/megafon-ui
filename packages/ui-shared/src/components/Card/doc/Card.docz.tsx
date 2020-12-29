@@ -27,6 +27,4 @@ const link = {
 
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 
-const DemoWrapper = ({children}) => <div style={{ marginTop: '-50px' }}>{children}</div>;
-
-export { title, text, button, link, fakeLink, img, imgShort, svg, buttonWithLongTitle, DemoWrapper };
+export { title, text, button, link, fakeLink, img, imgShort, svg, buttonWithLongTitle };

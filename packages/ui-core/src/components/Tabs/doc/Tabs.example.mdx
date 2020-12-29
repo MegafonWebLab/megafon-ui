@@ -15,13 +15,14 @@ import ContentArea from "components/ContentArea/ContentArea";
 Если на странице используются не гайдовые отступы для контента, то необходимо переопределить дефолтные оступы табов с помощью дополнительного класса, переданного в свойство `innerIndentsClass`
 ``` css
 .custom-indents-class {
-    margin: 0 -22px;
-    padding: 0 22px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-left: -22px;
+    margin-right: -22px;
 }
 ```
 
-## Код демо компонентов
-``` jsx
+```javascript collapse=Код DemoContent
 const DemoContent = ({ children }) => (
     <div
         style={{
@@ -42,7 +43,7 @@ const DemoContent = ({ children }) => (
 );
 ```
 
-## Базовое использование
+## Выравнивание табов по умолчанию
 
 <Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
     <ContentArea>

@@ -2,11 +2,6 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate, Grid, GridColumn, Accordion } from '@megafon/ui-core';
 
-interface IAccordionClasses {
-    root?: string;
-    collapse?: string;
-}
-
 export interface IAccordionBox {
     /** Заголовок аккордеона */
     title: string;
@@ -15,7 +10,10 @@ export interface IAccordionBox {
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
     /** Внешние классы для аккордеона и внутренних компонентов */
-    classes?: IAccordionClasses;
+    classes?: {
+        root?: string;
+        collapse?: string;
+    };
     /** Обработчик клика */
     onClickAccordion?: (isOpened: boolean, title: string) => void;
 }

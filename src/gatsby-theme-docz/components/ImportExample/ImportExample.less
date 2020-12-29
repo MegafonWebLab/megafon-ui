@@ -1,0 +1,29 @@
+.import-example {
+    display: flex;
+    align-items: center;
+
+    &__code {
+        font-size: 12px;
+        background: #EDEDED;
+        padding: 4px 4px 4px 10px;
+        border-radius: 4px;
+        max-width: 400px;
+        width: 100%;
+        text-align: left;
+
+    }
+
+    &__button:active &__icon {
+        opacity: 0.7;
+    }
+
+    &__icon {
+        background: #EDEDED;
+        display: block;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-left: 6px;
+    }
+}

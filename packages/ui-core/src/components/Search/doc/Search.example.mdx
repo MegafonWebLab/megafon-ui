@@ -1,20 +1,8 @@
----
-name: Search
-menu: Компоненты
-route: components/search
----
-
-import { Playground, Props } from 'docz';
-import Search from './Search';
+import { Playground } from 'docz';
+import Search from '../Search';
 import { DemoSearchWrapper } from './Search.docz';
 
-# Search
-
-## Properties
-
-<Props of={Search} />
-
-```javascript
+```javascript collapse=Код DemoSearchWrapper
 export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     const [value, setValue] = React.useState('');
     const [items, setItems] = React.useState([]);
@@ -36,20 +24,7 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
 };
 ```
 
-## Базовое использование
-
-<Playground>
-    <DemoSearchWrapper>
-        {({ onSubmit }) =>
-            <Search
-                onSubmit={onSubmit}
-                placeholder="Type here and press ENTER"
-            />
-        }
-    </DemoSearchWrapper>
-</Playground>
-
-## С иконкой
+## Без иконки
 
 <Playground>
     <Search hideIcon />

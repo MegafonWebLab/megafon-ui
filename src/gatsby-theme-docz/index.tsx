@@ -6,6 +6,7 @@ import Playground from './components/Playground';
 import { theme, ComponentsProvider } from 'docz';
 import { h1, h2, h3, h5 } from './components/Header'
 import { DoczTabs } from './components/Tabs';
+import ImportExample from './components/ImportExample';
 import Code from './components/Code';
 import { td, th, table } from './components/Table';
 import loadFonts from './loadFonts';
@@ -24,6 +25,7 @@ const map = {
     playground: Playground,
     layout: Layout,
     DoczTabs: DoczTabs,
+    ImportExample: ImportExample,
 };
 
 const Theme = ({ children }) => {

@@ -2,10 +2,7 @@ import { Playground } from 'docz';
 import VideoBlock from '../VideoBlock';
 import { content, video, youtubeVideoId } from './VideoBlock.docz';
 
-## Примеры свойств
-
-```javascript
-
+```javascript collapse=Демо данные
 const content: IContent = {
     title: 'Интернет',
     description: [
@@ -18,7 +15,6 @@ const content: IContent = {
 
 Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
 <VideoBlock videoType='youtube' videoSrc='2Sps5MnvlKM' />
-
 ```
 
 ## Видео без контента

@@ -4,9 +4,26 @@ import TabsBox from '../TabsBox';
 import TabBox from '../TabBox';
 import { DemoContent } from './TabsBox.docz';
 
-Компонент **TabsBox** является оберткой над компонентом **Tabs** из раздела **Компоненты** и имеет идентичные свойства и методы
-
-## Базовое использование
+```javascript collapse=Демо данные
+export const DemoContent = ({ children }) => (
+    <div
+        style={{
+            padding: '0 0 20px 0',
+        }}
+    >
+        <div
+            style={{
+                padding: '80px 0',
+                background: '#f1f1f1',
+                fontSize: '20px',
+                textAlign: 'center',
+            }}
+        >
+            {children}
+        </div>
+    </div>
+);
+```
 
 <Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
     <ContentArea>

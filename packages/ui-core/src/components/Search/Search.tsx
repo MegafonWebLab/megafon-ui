@@ -15,7 +15,7 @@ export interface ISearchProps {
     className?: string;
     /** Значение */
     value?: string;
-    /** Текст внутри пол по умолчанию */
+    /** Текст внутри поля по умолчанию */
     placeholder?: string;
     /** Запрещает отрисовку иконки */
     hideIcon?: boolean;

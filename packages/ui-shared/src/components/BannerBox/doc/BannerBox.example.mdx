@@ -3,9 +3,24 @@ import BannerBox from '../BannerBox';
 import { Paragraph } from '@megafon/ui-core';
 import { DemoSlide } from './BannerBox.docz'
 
-Компонент **BannerBox** является оберткой над компонентом **Banner** из раздела **Компоненты** и имеет идентичные свойства и методы
-
-## Базовое использование
+```javascript collapse=Код DemoSlide
+export const DemoSlide = ({ children, background }) => {
+    return (
+        <div
+            style={{
+                height: '100%',
+                backgroundColor: 'white',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```
 
 <Playground>
     <BannerBox>

@@ -2,7 +2,27 @@ import { Playground } from "docz";
 import CarouselBox from "../CarouselBox";
 import { DemoSlide } from './CarouselBox.docz';
 
-Компонент **CarouselBox** является оберткой над компонентом **Carousel** из раздела **Компоненты** и имеет идентичные свойства и методы
+```javascript collapse=Код DemoSlide
+export const DemoSlide = ({ children }) => {
+    return (
+        <Tile isInteractive shadowLevel="high" radius="rounded">
+            <div
+                style={{
+                    height: '200px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    fontSize: '30px',
+                    padding: '10px',
+                }}
+            >
+                {children}
+            </div>
+        </Tile>
+    );
+};
+```
 
 ## Использование со значениями свойств, заданными по умолчанию
 

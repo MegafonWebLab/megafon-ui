@@ -13,15 +13,15 @@ import {
     triggerEvents,
 } from './Tooltip.docz';
 
-## Тип взаимодействия с триггер-элементом для показа тултипа
-
-```javascript
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
     const triggerElement = React.useRef<HTMLElement | null>(null);
 
     return children({ triggerElement })
 };
 ```
+
+## Тип взаимодействия с триггер-элементом для показа тултипа
 
 <Playground style={demoWrapperBlockStyles}>
     <DemoTooltipWithTriggerWrapper>
@@ -53,16 +53,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-
 ## Позиционирование относительно триггер-элемента
-
-```javascript
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
-    const triggerElement = React.useRef<HTMLElement | null>(null);
-
-    return children({ triggerElement })
-};
-```
 
 <Playground style={{
     ...demoWrapperBlockStyles,
@@ -137,14 +128,6 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 </Playground>
 
 ##  Размер отступов от контента
-
-```javascript
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
-    const triggerElement = React.useRef<HTMLElement | null>(null);
-
-    return children({ triggerElement })
-};
-```
 
 <Playground style={demoWrapperBlockStyles}>
     <DemoTooltipWithTriggerWrapper>
@@ -245,27 +228,6 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 
 ## Смена типа взаимодействия с триггер-элементом при первом наведении мыши на элемент, когда тултип открыт
 
-```javascript
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
-    const triggerElement = React.useRef<HTMLElement | null>(null);
-    const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
-    const [ triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
-
-    const handleTriggerChange = React.useCallback((trigger) => {
-        if (!isTriggered) {
-            setIsTriggered(true);
-            setTriggerEvent(trigger);
-        }
-    }, [isTriggered]);
-
-    return children({
-        triggerElement,
-        triggerEvent,
-        handleTriggerChange,
-    });
-};
-```
-
 <Playground style={demoWrapperBlockStyles}>
     <DemoTooltipWithTriggerWrapper>
         {({
@@ -315,52 +277,28 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Смена типа взаимодействия с триггер-элементом при выборе из списка
-
-```javascript
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
 export const DemoTooltipWithTriggerWrapper = ({children}) => {
     const triggerElement = React.useRef<HTMLElement | null>(null);
+    const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
+    const [ triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
 
-    return children({triggerElement});
-};
-
-export const triggerEvents: ISelectItem[] = [
-    {
-        value: TriggerEvent.CONTROLLED,
-        title: TriggerEvent.CONTROLLED,
-    },
-    {
-        value: TriggerEvent.HOVER,
-        title: TriggerEvent.HOVER,
-    },
-    {
-        value: TriggerEvent.CLICK,
-        title: TriggerEvent.CLICK,
-    },
-];
-
-export const DemoSelectTriggerWrapper = ({children}) => {
-    const { value } = triggerEvents[0];
-    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
-    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
-        setCurrentValue(data.value);
-    };
+    const handleTriggerChange = React.useCallback((trigger) => {
+        if (!isTriggered) {
+            setIsTriggered(true);
+            setTriggerEvent(trigger);
+        }
+    }, [isTriggered]);
 
     return children({
-        onSelect: handleSelect,
-        currentValue: currentValue,
-    });
-};
-
-export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
-    const handleToggle = () => setIsOpened(open => !open);
-    return children({
-        isOpened,
-        handleToggle,
+        triggerElement,
+        triggerEvent,
+        handleTriggerChange,
     });
 };
 ```
+
+## Смена типа взаимодействия с триггер-элементом при выборе из списка
 
 <Playground style={{
     ...demoWrapperBlockStyles,
@@ -414,26 +352,50 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Управление компонентом снаружи
+```javascript collapse=Триггер-события
+export const triggerEvents: ISelectItem[] = [
+    {
+        value: TriggerEvent.CONTROLLED,
+        title: TriggerEvent.CONTROLLED,
+    },
+    {
+        value: TriggerEvent.HOVER,
+        title: TriggerEvent.HOVER,
+    },
+    {
+        value: TriggerEvent.CLICK,
+        title: TriggerEvent.CLICK,
+    },
+];
+```
 
-```javascript
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
-    const triggerElement = React.useRef<HTMLElement | null>(null);
+```javascript collapse=Код DemoSelectTriggerWrapper
+export const DemoSelectTriggerWrapper = ({children}) => {
+    const { value } = triggerEvents[0];
+    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+        setCurrentValue(data.value);
+    };
 
-    return children({ triggerElement })
-};
-
-export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
-    const handleOpen = () => setIsOpened(true);
-    const handleClose = () => setIsOpened(false);
     return children({
-        isOpened,
-        handleOpen,
-        handleClose,
+        onSelect: handleSelect,
+        currentValue: currentValue,
     });
 };
 ```
+
+```javascript collapse=Код DemoControlledTooltipWrapper
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const handleToggle = () => setIsOpened(open => !open);
+    return children({
+        isOpened,
+        handleToggle,
+    });
+};
+```
+
+## Управление компонентом снаружи
 
 <Playground style={{
     ...demoWrapperBlockStyles,
@@ -474,15 +436,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-## Управление компонентом снаружи с сохранением внутренних обработчиков для триггер-элемента
-
-```javascript
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
-    const triggerElement = React.useRef<HTMLElement | null>(null);
-
-    return children({triggerElement});
-};
-
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
 export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
     const handleOpen = () => setIsOpened(true);
@@ -494,6 +448,8 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     });
 };
 ```
+
+## Управление компонентом снаружи с сохранением внутренних обработчиков для триггер-элемента
 
 <Playground style={demoWrapperBlockStyles}>
     <DemoTooltipWithTriggerWrapper>
@@ -548,3 +504,16 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         )}
     </DemoTooltipWithTriggerWrapper>
 </Playground>
+
+```javascript collapse=Код DemoControlledTooltipWrapper
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const handleOpen = () => setIsOpened(true);
+    const handleClose = () => setIsOpened(false);
+    return children({
+        isOpened,
+        handleOpen,
+        handleClose,
+    });
+};
+```

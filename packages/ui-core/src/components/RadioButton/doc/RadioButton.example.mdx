@@ -26,29 +26,7 @@ import { flexStyle, DemoRadioButtonWrapper } from './RadioButton.docz';
     </DemoRadioButtonWrapper>
 </Playground>
 
-## Пример с неконтролируемым переключением
-
-<Playground>
-    <DemoRadioButtonWrapper>
-        {({ onChange, selectedOption }) => (
-            <>
-                <RadioButton value="value-1" name="group-1" onChange={onChange}>First radio button</RadioButton>
-                <RadioButton value="value-2" name="group-1" onChange={onChange}>Second radio button</RadioButton>
-            </>
-        )}
-    </DemoRadioButtonWrapper>
-</Playground>
-
-## Размер лейблов
-
-<Playground>
-    <div style={flexStyle}>
-        <RadioButton name="group-2" value="value-1" textSize="small">First radio button</RadioButton>
-        <RadioButton name="group-2" value="value-2" textSize="medium">Second radio button</RadioButton>
-    </div>
-</Playground>
-
-```javascript
+```javascript collapse=Код DemoRadioButtonWrapper
 export const DemoRadioButtonWrapper = ({ children }) => {
     const [selectedOption, setSelectedOption] = React.useState('');
 
@@ -69,3 +47,47 @@ export const DemoRadioButtonWrapper = ({ children }) => {
     );
 }
 ```
+
+## Пример с неконтролируемым переключением
+
+<Playground>
+    <DemoRadioButtonWrapper>
+        {({ onChange, selectedOption }) => (
+            <>
+                <RadioButton value="value-1" name="group-1" onChange={onChange}>First radio button</RadioButton>
+                <RadioButton value="value-2" name="group-1" onChange={onChange}>Second radio button</RadioButton>
+            </>
+        )}
+    </DemoRadioButtonWrapper>
+</Playground>
+
+```javascript collapse=Код DemoRadioButtonWrapper
+export const DemoRadioButtonWrapper = ({ children }) => {
+    const [selectedOption, setSelectedOption] = React.useState('');
+
+    const handleChange = (value) => {
+        setSelectedOption(value);
+    }
+
+    return (
+        <>
+            <p style={{textAlign: 'center', marginTop: 0}}><b>Value:</b> "{selectedOption || undefined}"</p>
+            <div style={flexStyle}>
+                {children({
+                    onChange: handleChange,
+                    selectedOption: selectedOption,
+                })}
+            </div>
+        </>
+    );
+}
+```
+
+## Размер лейблов
+
+<Playground>
+    <div style={flexStyle}>
+        <RadioButton name="group-2" value="value-1" textSize="small">First radio button</RadioButton>
+        <RadioButton name="group-2" value="value-2" textSize="medium">Second radio button</RadioButton>
+    </div>
+</Playground>

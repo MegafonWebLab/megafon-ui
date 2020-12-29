@@ -2,6 +2,22 @@ import { Playground, Props } from 'docz';
 import Counter from '../Counter';
 import { DemoCounterWrapper, flexStyle } from './Counter.docz';
 
+```javascript collapse=Код DemoCounterWrapper
+export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
+    const [value, setValue] = React.useState(initialValue);
+
+    return (
+        <div>
+            <p style={{ marginTop: 0 }}>Value: {value}</p>
+            {children({
+                onChange: setValue,
+                initialValue: initialValue,
+            })}
+        </div>
+    );
+};
+```
+
 <Playground>
     <div style={flexStyle}>
         <DemoCounterWrapper initialValue={3}>
@@ -44,19 +60,3 @@ import { DemoCounterWrapper, flexStyle } from './Counter.docz';
         </DemoCounterWrapper>
     </div>
 </Playground>
-
-```javascript
-export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
-    const [value, setValue] = React.useState(initialValue);
-
-    return (
-        <div>
-            <p style={{ marginTop: 0 }}>Value: {value}</p>
-            {children({
-                onChange: setValue,
-                initialValue: initialValue,
-            })}
-        </div>
-    );
-};
-```

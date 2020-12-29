@@ -6,10 +6,6 @@ import {
     flexboxStyles,
 } from './Preloader.docz';
 
-<Playground style={flexboxStyles}>
-    <Preloader />
-</Playground>
-
 ## Цветовые темы
 
 <Playground style={flexboxStyles}>
@@ -19,6 +15,16 @@ import {
         <Preloader color="white" />
     </DemoPreloaderWrapper>
 </Playground>
+
+```javascript collapse=Код DemoPreloaderWrapper
+export const DemoPreloaderWrapper: React.FC = ({ children }) => {
+    return (
+        <div style={wrapperStyles}>
+            {children}
+        </div>
+    );
+};
+```
 
 ## Размеры
 
