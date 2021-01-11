@@ -26,6 +26,8 @@ describe('<Calendar />', () => {
         });
 
         it('renders calendar without chosen dates if they are blocked', () => {
+            jest.spyOn(global.Date, 'now').mockImplementationOnce(() => new Date(2020, 11, 31).valueOf());
+
             const wrapper = mount(
                 <Calendar
                     {...props}
