@@ -7,7 +7,9 @@ exports[`DownloadLink render component 1`] = `
   <div
     className="mfui-beta-download-link__icon"
   >
-    <test-file-stub />
+    <test-file-stub
+      className="mfui-beta-download-link__icon-svg"
+    />
   </div>
   <div>
     <TextLink
@@ -36,7 +38,9 @@ exports[`DownloadLink render with custom classname 1`] = `
   <div
     className="mfui-beta-download-link__icon"
   >
-    <test-file-stub />
+    <test-file-stub
+      className="mfui-beta-download-link__icon-svg"
+    />
   </div>
   <div>
     <TextLink
