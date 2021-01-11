@@ -29,6 +29,10 @@ export default {
     dest: 'docs',
     typescript: true,
     protocol: 'http',
+    public: 'src/public',
+    htmlContext: {
+      favicon: 'public/mf-icon.png',
+    },
     ignore: [
         /node_modules/,
         /README.md/,
