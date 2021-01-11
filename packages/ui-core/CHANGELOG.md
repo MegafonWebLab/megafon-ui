@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.73](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.72...@megafon/ui-core@2.0.0-beta.73) (2021-01-11)
+
+
+### Bug Fixes
+
+* **calendar:** added date mock for disabled dates test ([fc6df26](https://github.com/MegafonWebLab/megafon-ui/commit/fc6df268f8272152e3b073806160606a09046f6a))
+
+
+### Features
+
+* **utils:** add wrapper around htmr to cut forbidden tags and attrs ([71248da](https://github.com/MegafonWebLab/megafon-ui/commit/71248dabfed0f58a290bf087d10b8d5b994bf568))
+
+
+
+
+
 # [2.0.0-beta.72](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.71...@megafon/ui-core@2.0.0-beta.72) (2020-12-25)
 
 
