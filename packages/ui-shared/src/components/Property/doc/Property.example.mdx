@@ -1,0 +1,76 @@
+import { Playground } from 'docz';
+import Property from '../Property';
+import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
+
+## Только заголовок
+
+<Playground>
+    <Property items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
+</Playground>
+
+## Заголовок в несколько строк
+
+<Playground>
+    <Property items={[{title: ['Детализация в салонах МегаФона', 'Оплачивается каждый день заказанной детализации.'], value: '2ГБ' }]}/>
+</Playground>
+
+## Заголовок и описание
+
+<Playground>
+    <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка']}] }]}/>
+</Playground>
+
+## Заголовок и описание в несколько строк
+
+<Playground>
+    <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка', 'Google Play Music, Apple Music, онлайн радио.']}], value: '500 ₽' }]}/>
+</Playground>
+
+## Заголовок и скрытое описание в несколько строк
+
+<Playground>
+    <Property items={[{title: ['Музыкальные сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.'], isCollapsible: true}], value: '500 ₽' }]}/>
+</Playground>
+
+## С бейджом
+
+<Playground>
+    <Property badge={'Акция'} items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
+</Playground>
+
+## Заголовок c иконкой
+
+<Playground>
+    <Property icon={<WiFi style={{ display: 'block', fill: '#00B956' }} />} items={[{title: ['Интернет не на все сервисы'], value: '500 ₽' }]}/>
+</Playground>
+
+## Несколько описаний
+
+<Playground>
+    <Property items={[{title: ['Доп звонки'], value: '500Р', description: [{value: ['После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.']}, {value: ['Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.'], isCollapsible: true}]}]}/>
+</Playground>
+
+## С ссылками
+
+<Playground>
+    <Property items={[{title: ['Тарифы <a href="https://moscow.megafon.ru">Включайся!</a>, с которыми работает опция'], value: '500 ₽', description: [{value: ['<a href="https://moscow.megafon.ru">Выбирай, Смотри, Слушай, Говори, Общайся</a>']}]}]}/>
+</Playground>
+
+## Одно значение
+
+<Playground>
+    <Property mergedValue='500 ₽' items={[{title: ['Музыкальные сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка,  Google Play Music, Apple Music, онлайн радио.']}], value: 'value'}, {title: ['Интернет не на все сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.']}] }]}/>
+</Playground>
+
+## Несколько строк
+
+<Playground>
+    <Property multirow items={[{title: ['Абонентская плата:']}, {value: '500 ₽', description: [{value: ['Звонки на все номера России']}]}, {value: '500 ₽', description: [{value: ['Звонки на все номера России']}]}, {value: '500 ₽', description: [{value: ['Звонки на все номера России']}]}]}/>
+</Playground>
+
+## С нижней границей
+
+<Playground>
+    <Property items={[{title: ['Звонки на все номера России'], value: '500 ₽'}]} borderBottom/>
+</Playground>
+

@@ -1,0 +1,116 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-property');
+
+@innerWidth: 431px;
+@innerWidthDesktopS: 415px;
+@innerWidthMobileB: 360px;
+@innerWidthMobileSM: 165px;
+
+@marginTopDesktop: 26px;
+@marginTopMobile: 24px;
+@marginLeftDesktop: 24px;
+@marginLeftMobile: 0;
+
+@{b} {
+    width: 100%;
+    padding: @marginTopDesktop @marginLeftDesktop;
+    border-top: 1px solid @spbSky2;
+    position: relative;
+
+    &_border-bottom {
+        border-bottom: 1px solid @spbSky2;
+    }
+
+    @media @mobileSM {
+        padding: @marginTopMobile @marginLeftMobile;
+    }
+
+    @media @mobileB {
+        padding: @marginTopMobile;
+    }
+
+    &__item {
+        display: flex;
+        align-items: baseline;
+
+        &_multirow:first-child {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+        margin-right: 9px;
+        margin-left: 1px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    &__badge {
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 8px;
+        color: @clearWhite;
+        background: @mandarin;
+    }
+
+    &__inner {
+        width: @innerWidth;
+        margin-right: 115px;
+
+        @media @mobileSM {
+            width: @innerWidthMobileSM;
+            margin-right: 16px;
+        }
+
+        @media @mobileB {
+            width: @innerWidthMobileB;
+            margin-right: 135px;
+        }
+
+        @media @desktopS {
+            width: @innerWidthDesktopS;
+            margin-right: 96px;
+        }
+    }
+
+    &__merged-value {
+        height: calc(100% - @marginTopDesktop * 2);
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: calc(@innerWidth + @marginLeftDesktop + 20px);
+        top: 50%;
+        transform: translateY(-50%);
+        border-left: 1px solid @spbSky2;
+        padding-left: 94px;
+
+        @media @mobileSM {
+            height: calc(100% - @marginTopMobile * 2);
+            left: calc(@innerWidthMobileSM + @marginLeftMobile + 8px);
+            padding-left: 7px;
+        }
+
+        @media @mobileB {
+            height: calc(100% - @marginTopMobile * 2);
+            left: calc(@innerWidthMobileB + @marginLeftDesktop + 77px);
+            padding-left: 58px;
+        }
+
+        @media @desktopS {
+            left: calc(@innerWidthDesktopS + @marginLeftDesktop + 20px);
+            padding-left: 75px;
+        }
+    }
+
+    &__desc {
+        margin-top: 8px;
+    }
+
+    &__item ~ &__item {
+        margin-top: 16px;
+    }
+}

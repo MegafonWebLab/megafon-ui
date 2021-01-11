@@ -10155,6 +10155,14 @@ htmr@^0.8.8:
     html-entities "^1.2.1"
     htmlparser2 "^3.10.1"
 
+htmr@^0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/htmr/-/htmr-0.9.2.tgz#724a063e08b08f0c6e2aebf8b9810c5f0ac16826"
+  integrity sha512-xeQMcN98ASLmZ2R+UB/FrOSuSv0z+Ah7d0L/4QirZWj2GZwQNQLtt5TtdsN6kJmvh8FbqCSZ/Q/tS3X8Xc5n1w==
+  dependencies:
+    html-entities "^1.2.1"
+    htmlparser2 "^3.10.1"
+
 http-cache-semantics@3.8.1, http-cache-semantics@^3.8.1:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-3.8.1.tgz#39b0e16add9b605bf0a9ef3d9daaf4843b4cacd2"
