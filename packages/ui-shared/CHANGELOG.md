@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.87](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.86...@megafon/ui-shared@2.0.0-beta.87) (2021-01-12)
+
+**Note:** Version bump only for package @megafon/ui-shared
+
+
+
+
+
 # [2.0.0-beta.86](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.85...@megafon/ui-shared@2.0.0-beta.86) (2021-01-12)
 
 

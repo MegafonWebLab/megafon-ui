@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.74](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.73...@megafon/ui-core@2.0.0-beta.74) (2021-01-12)
+
+
+### Bug Fixes
+
+* **carousel:** update carousel component ([090681c](https://github.com/MegafonWebLab/megafon-ui/commit/090681ce607a4d8342d9710a18306d89ab5c0f08))
+
+
+
+
+
 # [2.0.0-beta.73](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.72...@megafon/ui-core@2.0.0-beta.73) (2021-01-11)
 
 
