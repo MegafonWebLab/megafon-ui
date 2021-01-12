@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PictureWithDescription /> should render with default props 1`] = `
+<div
+  className="mfui-beta-picture-with-description"
+>
+  <div
+    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_left"
+  >
+    <img
+      alt=""
+      className="mfui-beta-picture-with-description__img"
+      src="/testUrl"
+    />
+  </div>
+  <div
+    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left"
+  >
+    <div />
+  </div>
+</div>
+`;
+
+exports[`<PictureWithDescription /> should render with right side picture 1`] = `
+<div
+  className="mfui-beta-picture-with-description"
+>
+  <div
+    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_right"
+  >
+    <img
+      alt=""
+      className="mfui-beta-picture-with-description__img"
+      src="/testUrl"
+    />
+  </div>
+  <div
+    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_right"
+  >
+    <div />
+  </div>
+</div>
+`;
