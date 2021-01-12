@@ -24,7 +24,7 @@ const DownloadLink: React.FC<IDownloadLink> = ({ href, text, extension, fileSize
    (
         <div className={cn([className])}>
             <div className={cn('icon')}>
-                <DownloadIcon />
+                <DownloadIcon className={cn('icon-svg')}/>
             </div>
             <div>
                 <TextLink className={cn('link')} href={href} onClick={onClick} download>{text}</TextLink>
