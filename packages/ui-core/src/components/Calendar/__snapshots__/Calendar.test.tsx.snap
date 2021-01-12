@@ -1272,8 +1272,8 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
       goToPreviousMonth={[Function]}
       isNextMonthDisabled={false}
       isPrevMonthDisabled={false}
-      key="2020-11"
-      monthLabel="декабрь"
+      key="2021-0"
+      monthLabel="январь"
       weekdayLabels={
         Array [
           "пн",
@@ -1285,7 +1285,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           "вс",
         ]
       }
-      year={2020}
+      year={2021}
     >
       <div
         className="mfui-beta-month"
@@ -1300,7 +1300,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           <span
             className="mfui-beta-month__title"
           >
-            декабрь 2020
+            январь 2021
           </span>
           <test-file-stub
             className="mfui-beta-month__arrow"
@@ -1359,8 +1359,17 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           <div
             key="0"
           />
+          <div
+            key="1"
+          />
+          <div
+            key="2"
+          />
+          <div
+            key="3"
+          />
           <Day
-            date={2020-12-01T00:00:00.000Z}
+            date={2021-01-01T00:00:00.000Z}
             dayLabel="1"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1375,7 +1384,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="01-12-2020"
+            key="01-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1399,7 +1408,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-02T00:00:00.000Z}
+            date={2021-01-02T00:00:00.000Z}
             dayLabel="2"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1414,7 +1423,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="02-12-2020"
+            key="02-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1438,7 +1447,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-03T00:00:00.000Z}
+            date={2021-01-03T00:00:00.000Z}
             dayLabel="3"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1453,7 +1462,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="03-12-2020"
+            key="03-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1461,7 +1470,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_sunday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1477,7 +1486,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-04T00:00:00.000Z}
+            date={2021-01-04T00:00:00.000Z}
             dayLabel="4"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1492,7 +1501,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="04-12-2020"
+            key="04-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1500,7 +1509,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_monday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1516,7 +1525,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-05T00:00:00.000Z}
+            date={2021-01-05T00:00:00.000Z}
             dayLabel="5"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1531,7 +1540,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="05-12-2020"
+            key="05-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1555,7 +1564,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-06T00:00:00.000Z}
+            date={2021-01-06T00:00:00.000Z}
             dayLabel="6"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1570,7 +1579,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="06-12-2020"
+            key="06-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1578,7 +1587,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_sunday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1594,7 +1603,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-07T00:00:00.000Z}
+            date={2021-01-07T00:00:00.000Z}
             dayLabel="7"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1609,7 +1618,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="07-12-2020"
+            key="07-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1617,7 +1626,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1633,7 +1642,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-08T00:00:00.000Z}
+            date={2021-01-08T00:00:00.000Z}
             dayLabel="8"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1648,7 +1657,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="08-12-2020"
+            key="08-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1672,7 +1681,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-09T00:00:00.000Z}
+            date={2021-01-09T00:00:00.000Z}
             dayLabel="9"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1687,7 +1696,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="09-12-2020"
+            key="09-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1711,7 +1720,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-10T00:00:00.000Z}
+            date={2021-01-10T00:00:00.000Z}
             dayLabel="10"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1726,7 +1735,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="10-12-2020"
+            key="10-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1734,7 +1743,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_sunday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1750,7 +1759,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-11T00:00:00.000Z}
+            date={2021-01-11T00:00:00.000Z}
             dayLabel="11"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1765,7 +1774,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="11-12-2020"
+            key="11-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1773,7 +1782,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_monday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1789,7 +1798,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-12T00:00:00.000Z}
+            date={2021-01-12T00:00:00.000Z}
             dayLabel="12"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1804,7 +1813,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="12-12-2020"
+            key="12-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1828,7 +1837,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-13T00:00:00.000Z}
+            date={2021-01-13T00:00:00.000Z}
             dayLabel="13"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1843,7 +1852,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="13-12-2020"
+            key="13-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1851,7 +1860,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_sunday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1867,7 +1876,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-14T00:00:00.000Z}
+            date={2021-01-14T00:00:00.000Z}
             dayLabel="14"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1882,7 +1891,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="14-12-2020"
+            key="14-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1890,7 +1899,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1906,7 +1915,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-15T00:00:00.000Z}
+            date={2021-01-15T00:00:00.000Z}
             dayLabel="15"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1921,7 +1930,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="15-12-2020"
+            key="15-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1945,7 +1954,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-16T00:00:00.000Z}
+            date={2021-01-16T00:00:00.000Z}
             dayLabel="16"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1960,7 +1969,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="16-12-2020"
+            key="16-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -1984,7 +1993,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-17T00:00:00.000Z}
+            date={2021-01-17T00:00:00.000Z}
             dayLabel="17"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -1999,7 +2008,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="17-12-2020"
+            key="17-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2007,7 +2016,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_sunday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2023,7 +2032,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-18T00:00:00.000Z}
+            date={2021-01-18T00:00:00.000Z}
             dayLabel="18"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2038,7 +2047,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="18-12-2020"
+            key="18-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2046,7 +2055,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_monday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2062,7 +2071,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-19T00:00:00.000Z}
+            date={2021-01-19T00:00:00.000Z}
             dayLabel="19"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2077,7 +2086,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="19-12-2020"
+            key="19-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2101,7 +2110,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-20T00:00:00.000Z}
+            date={2021-01-20T00:00:00.000Z}
             dayLabel="20"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2116,7 +2125,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="20-12-2020"
+            key="20-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2124,7 +2133,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_sunday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2140,7 +2149,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-21T00:00:00.000Z}
+            date={2021-01-21T00:00:00.000Z}
             dayLabel="21"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2155,7 +2164,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="21-12-2020"
+            key="21-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2163,7 +2172,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2179,7 +2188,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-22T00:00:00.000Z}
+            date={2021-01-22T00:00:00.000Z}
             dayLabel="22"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2194,7 +2203,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="22-12-2020"
+            key="22-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2218,7 +2227,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-23T00:00:00.000Z}
+            date={2021-01-23T00:00:00.000Z}
             dayLabel="23"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2233,7 +2242,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="23-12-2020"
+            key="23-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2257,7 +2266,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-24T00:00:00.000Z}
+            date={2021-01-24T00:00:00.000Z}
             dayLabel="24"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2272,7 +2281,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="24-12-2020"
+            key="24-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2280,7 +2289,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_sunday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2296,7 +2305,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-25T00:00:00.000Z}
+            date={2021-01-25T00:00:00.000Z}
             dayLabel="25"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2311,7 +2320,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="25-12-2020"
+            key="25-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2319,7 +2328,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-beta-day mfui-beta-day_monday"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2335,7 +2344,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-26T00:00:00.000Z}
+            date={2021-01-26T00:00:00.000Z}
             dayLabel="26"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2350,7 +2359,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="26-12-2020"
+            key="26-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2374,7 +2383,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-27T00:00:00.000Z}
+            date={2021-01-27T00:00:00.000Z}
             dayLabel="27"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2389,7 +2398,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="27-12-2020"
+            key="27-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2397,7 +2406,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_sunday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2413,7 +2422,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-28T00:00:00.000Z}
+            date={2021-01-28T00:00:00.000Z}
             dayLabel="28"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2428,7 +2437,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="28-12-2020"
+            key="28-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2436,7 +2445,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-beta-day"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2452,7 +2461,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-29T00:00:00.000Z}
+            date={2021-01-29T00:00:00.000Z}
             dayLabel="29"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2467,7 +2476,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="29-12-2020"
+            key="29-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2491,7 +2500,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-30T00:00:00.000Z}
+            date={2021-01-30T00:00:00.000Z}
             dayLabel="30"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2506,7 +2515,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="30-12-2020"
+            key="30-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2530,7 +2539,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
-            date={2020-12-31T00:00:00.000Z}
+            date={2021-01-31T00:00:00.000Z}
             dayLabel="31"
             focusedDate={null}
             goToNextMonthsByOneMonth={[Function]}
@@ -2545,7 +2554,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             isEndDate={[Function]}
             isFirstOrLastSelectedDate={[Function]}
             isStartDate={[Function]}
-            key="31-12-2020"
+            key="31-01-2021"
             numberOfMonths={1}
             onDateFocus={[Function]}
             onDateHover={[Function]}
@@ -2553,7 +2562,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_last"
+              className="mfui-beta-day mfui-beta-day_sunday mfui-beta-day_last"
               disabled={true}
               onClick={[Function]}
               onKeyDown={[Function]}

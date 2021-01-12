@@ -1,17 +1,15 @@
 import React from 'react';
-import './ImportExample.less';
+import './CopyToClipboardBox.less';
 import cnCreate from 'utils/cnCreate';
 import Copy from 'icons/System/24/Copy_24.svg';
 
-const cn = cnCreate('import-example');
+const cn = cnCreate('copy-to-clipboard-box');
 
 interface IProps {
-    name: string;
+    importPath: string;
 }
 
-const ImportExample: React.FC<IProps> = ({ name }) => {
-    const importPath = `import { ${name} } from '@megafon/ui-core';`;
-
+const CopyToClipboardBox: React.FC<IProps> = ({ importPath }) => {
     const createElToClipboard = () => {
         const el = document.createElement('textarea');
 
@@ -29,7 +27,7 @@ const ImportExample: React.FC<IProps> = ({ name }) => {
 
     return (
         <div className={cn()}>
-            <code className={cn('code')}>{importPath}</code>
+            <code>{importPath}</code>
             <a title="Скопировать в буфер" className={cn('button')}>
                 <Copy
                     className={cn('icon')}
@@ -40,4 +38,4 @@ const ImportExample: React.FC<IProps> = ({ name }) => {
     );
 };
 
-export default ImportExample;
+export default CopyToClipboardBox;

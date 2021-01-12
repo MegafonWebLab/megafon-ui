@@ -5,12 +5,10 @@ import { flexStyle, DemoRadioButtonWrapper } from './RadioButton.docz';
 
 ## Различные состояния компонента
 
-<Playground>
-    <div style={flexStyle}>
-        <RadioButton value="not-checked-value" isChecked={false}>Not checked</RadioButton>
-        <RadioButton value="checked-value" isChecked>Checked</RadioButton>
-        <RadioButton value="disabled-value" isDisabled>Disabled</RadioButton>
-    </div>
+<Playground style={flexStyle}>
+    <RadioButton value="not-checked-value" isChecked={false}>Not checked</RadioButton>
+    <RadioButton value="checked-value" isChecked>Checked</RadioButton>
+    <RadioButton value="disabled-value" isDisabled>Disabled</RadioButton>
 </Playground>
 
 ## Пример с переключением
@@ -86,8 +84,6 @@ export const DemoRadioButtonWrapper = ({ children }) => {
 ## Размер лейблов
 
 <Playground>
-    <div style={flexStyle}>
-        <RadioButton name="group-2" value="value-1" textSize="small">First radio button</RadioButton>
-        <RadioButton name="group-2" value="value-2" textSize="medium">Second radio button</RadioButton>
-    </div>
+    <RadioButton name="group-2" value="value-1" textSize="small">First radio button</RadioButton>
+    <RadioButton name="group-2" value="value-2" textSize="medium">Second radio button</RadioButton>
 </Playground>

@@ -56,7 +56,7 @@ export const DemoSlide = ({ children, background }) => {
 
 ## Тема навигации для использования на зеленом фоне
 
-<Playground style={blockStyle}>
+<Playground>
     <ContentArea outerBackgroundColor="green">
         <div style={blockStyle}>
             <Carousel navTheme="green">
@@ -70,6 +70,10 @@ export const DemoSlide = ({ children, background }) => {
         </div>
     </ContentArea>
 </Playground>
+
+```javascript collapse=Код blockStyle
+const blockStyle = { padding: '20px 0' };
+```
 
 ## Прокрутка слайдов с зацикливанием
 
