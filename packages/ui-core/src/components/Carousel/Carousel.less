@@ -2,6 +2,7 @@
 @b: e('.mfui-beta-carousel');
 @swiperWrapper: e('.swiper-wrapper');
 @swiperPagination: e('.swiper-pagination');
+@swiperPaginationLock: e('.swiper-pagination-lock');
 @swiperBullet: e('.swiper-pagination-bullet');
 @swiperBulletActive: e('.swiper-pagination-bullet-active');
 @swiperSlideVisible: e('.swiper-slide-visible');
@@ -84,6 +85,10 @@
         .arrowPosition(left);
     }
 
+    &__arrow_locked {
+        display: none;
+    }
+
     @{swiperPagination} {
         z-index: 2;
         position: absolute;
@@ -94,6 +99,10 @@
         justify-content: center;
         align-items: center;
         border-radius: 12px;
+    }
+
+    @{swiperPagination}@{swiperPaginationLock} {
+        display: none;
     }
 
     @{swiperBullet} {

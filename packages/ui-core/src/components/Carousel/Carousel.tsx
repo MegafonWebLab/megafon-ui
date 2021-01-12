@@ -93,6 +93,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
     const [isEnd, setEnd] = React.useState(false);
+    const [isLocked, setLocked] = React.useState(false);
 
     const increaseAutoplayDelay = React.useCallback(
         ({ params, autoplay }: SwiperCore) => {
@@ -129,6 +130,7 @@ const Carousel: React.FC<ICarouselProps> = ({
 
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
         setSwiperInstance(swiper);
+        setLocked(swiper.isBeginning && swiper.isEnd);
     }, []);
 
     const handleReachBeginnig = React.useCallback(() => {
@@ -163,9 +165,13 @@ const Carousel: React.FC<ICarouselProps> = ({
 
     // https://github.com/nolimits4web/Swiper/issues/2346
     const handleSwiperResize = React.useCallback(
-        throttle(({ params, slides }: SwiperCore) => {
-            if (params.slidesPerView === SlidesPerView.AUTO) {
-                slides.css('width', '');
+        throttle((swiper: SwiperCore) => {
+            setBeginning(swiper.isBeginning);
+            setEnd(swiper.isEnd);
+            setLocked(swiper.isBeginning && swiper.isEnd);
+
+            if (swiper.params.slidesPerView === SlidesPerView.AUTO) {
+                swiper.slides.css('width', '');
             }
         }, 300),
         []
@@ -181,6 +187,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 )}
                 breakpoints={slidesSettings}
                 watchSlidesVisibility
+                watchOverflow
                 loop={loop}
                 pagination={{ clickable: true }}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
@@ -199,13 +206,13 @@ const Carousel: React.FC<ICarouselProps> = ({
                 ))}
             </Swiper>
             <NavArrow
-                className={cn('arrow', { prev: true })}
+                className={cn('arrow', { prev: true, locked: isLocked })}
                 onClick={handlePrevClick}
                 disabled={!loop && isBeginning}
                 theme={ArrowTheme.PURPLE}
             />
             <NavArrow
-                className={cn('arrow', { next: true })}
+                className={cn('arrow', { next: true, locked: isLocked })}
                 view="next"
                 onClick={handleNextClick}
                 disabled={!loop && isEnd}
