@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.86](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.85...@megafon/ui-shared@2.0.0-beta.86) (2021-01-12)
+
+
+### Bug Fixes
+
+* **downloadlink:** add explicit dimensions to svg icon ([01e0493](https://github.com/MegafonWebLab/megafon-ui/commit/01e04931ed40b39ff9076db7dc572f5cbd9f0edb))
+
+
+
+
+
 # [2.0.0-beta.85](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.84...@megafon/ui-shared@2.0.0-beta.85) (2021-01-11)
 
 
