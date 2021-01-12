@@ -37,6 +37,7 @@ exports[`<Carousel /> should render with default props 1`] = `
         "clickable": true,
       }
     }
+    watchOverflow={true}
     watchSlidesVisibility={true}
   >
     <SwiperSlide
@@ -108,6 +109,7 @@ exports[`<Carousel /> should render with props 1`] = `
         "clickable": true,
       }
     }
+    watchOverflow={true}
     watchSlidesVisibility={true}
   >
     <SwiperSlide
