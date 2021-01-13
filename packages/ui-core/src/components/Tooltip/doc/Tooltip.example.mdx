@@ -14,7 +14,7 @@ import {
 } from './Tooltip.docz';
 
 ```javascript collapse=Код DemoTooltipWithTriggerWrapper
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
+export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     const triggerElement = React.useRef<HTMLElement | null>(null);
 
     return children({ triggerElement })
@@ -25,7 +25,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 
 <Playground style={demoWrapperBlockStyles}>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>Навести</Button>
@@ -37,7 +37,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         )}
     </DemoTooltipWithTriggerWrapper>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>Кликнуть</Button>
@@ -61,7 +61,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     gap: 50,
 }}>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
@@ -75,7 +75,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         )}
     </DemoTooltipWithTriggerWrapper>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
@@ -92,7 +92,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         )}
     </DemoTooltipWithTriggerWrapper>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
@@ -109,7 +109,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         )}
     </DemoTooltipWithTriggerWrapper>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>
@@ -131,7 +131,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 
 <Playground style={demoWrapperBlockStyles}>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <Paragraph hasMargin={false}>
                     Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям
@@ -149,7 +149,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
         )}
     </DemoTooltipWithTriggerWrapper>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <Paragraph hasMargin={false}>
                     Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям
@@ -176,7 +176,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     gap: 50
 }}>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     Тултип будет такой же длины как контент
@@ -205,7 +205,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
     gap: 50,
 }}>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <div style={{ width: 280, position: 'relative' }}>
                 <span ref={triggerElement}>
                     Тултип будет такой же длины как родитель
@@ -278,10 +278,10 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 </Playground>
 
 ```javascript collapse=Код DemoTooltipWithTriggerWrapper
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
+export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     const triggerElement = React.useRef<HTMLElement | null>(null);
-    const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
-    const [ triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
+    const [isTriggered, setIsTriggered] = React.useState(false);
+    const [triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
 
     const handleTriggerChange = React.useCallback((trigger) => {
         if (!isTriggered) {
@@ -370,7 +370,7 @@ export const triggerEvents: ISelectItem[] = [
 ```
 
 ```javascript collapse=Код DemoSelectTriggerWrapper
-export const DemoSelectTriggerWrapper = ({children}) => {
+export const DemoSelectTriggerWrapper = ({ children }) => {
     const { value } = triggerEvents[0];
     const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
     const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
@@ -386,8 +386,9 @@ export const DemoSelectTriggerWrapper = ({children}) => {
 
 ```javascript collapse=Код DemoControlledTooltipWrapper
 export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const [isOpened, setIsOpened] = React.useState(isOpen);
     const handleToggle = () => setIsOpened(open => !open);
+
     return children({
         isOpened,
         handleToggle,
@@ -403,7 +404,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     gap: 50
 }}>
         <DemoTooltipWithTriggerWrapper>
-            {({triggerElement}) => (
+            {({ triggerElement }) => (
                 <DemoControlledTooltipWrapper>
                     {({ isOpened, handleOpen, handleClose}) => (
                         <>
@@ -438,9 +439,10 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
 
 ```javascript collapse=Код DemoTooltipWithTriggerWrapper
 export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const [isOpened, setIsOpened] = React.useState(isOpen);
     const handleOpen = () => setIsOpened(true);
     const handleClose = () => setIsOpened(false);
+
     return children({
         isOpened,
         handleOpen,
@@ -453,7 +455,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
 
 <Playground style={demoWrapperBlockStyles}>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>Навести</Button>
@@ -478,7 +480,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         )}
     </DemoTooltipWithTriggerWrapper>
     <DemoTooltipWithTriggerWrapper>
-        {({triggerElement}) => (
+        {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
                     <Button fullWidth>Кликнуть</Button>
@@ -507,9 +509,10 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
 
 ```javascript collapse=Код DemoControlledTooltipWrapper
 export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const [isOpened, setIsOpened] = React.useState(isOpen);
     const handleOpen = () => setIsOpened(true);
     const handleClose = () => setIsOpened(false);
+
     return children({
         isOpened,
         handleOpen,
