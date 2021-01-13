@@ -55,7 +55,7 @@ const Code = ({ children, className: outerClassName, ...meta }) => {
                 hasCollapse ? (
                     <>
                         <TextLink onClick={handleClick} underlineStyle="dashed">
-                            {`${collapseTitle}`}
+                            {collapseTitle}
                         </TextLink>
                         <Collapse isOpened={isOpened} className={cn('wrapper')} classNameContainer={cn('inner')}>
                             {renderCodeBlock()}
