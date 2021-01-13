@@ -93,6 +93,7 @@
     &__info-import {
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         &:not(:last-child) {
             margin-bottom: 5px;
@@ -114,8 +115,8 @@
     &__info-code-style {
         font-size: 12px;
         background: @spbSky1;
-        padding: 4px;
-        border-radius: 5px;
+        padding: 4px 4px 4px 10px;
+        border-radius: 4px;
         margin-left: 10px;
         flex-grow: 1;
         text-align: left;
@@ -126,12 +127,11 @@
         width: 32px;
         height: 32px;
         cursor: pointer;
-        border-radius: 8px;
+        border-radius: 4px;
         margin-left: 6px;
 
-        &_active {
-            fill: @clearWhite;
-            background: @green;
+        &:active {
+            opacity: 0.7;
         }
     }
 

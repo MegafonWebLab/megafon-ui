@@ -2,22 +2,20 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate, Grid, GridColumn, Accordion } from '@megafon/ui-core';
 
-interface IAccordionClasses {
-    root?: string;
-    collapse?: string;
-}
-
 export interface IAccordionBox {
     /** Заголовок аккордеона */
     title: string;
-    /** Состояние аккордеона заданное извне */
+    /** Состояние аккордеона, заданное извне */
     isOpened?: boolean;
-    /** Внешние классы для аккордеона и внутренних компонентов */
-    classes?: IAccordionClasses;
-    /** Обработчик клика */
-    onClickAccordion?: (isOpened: boolean, title: string) => void;
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
+    /** Внешние классы для аккордеона и внутренних компонентов */
+    classes?: {
+        root?: string;
+        collapse?: string;
+    };
+    /** Обработчик клика */
+    onClickAccordion?: (isOpened: boolean, title: string) => void;
 }
 
 const cn = cnCreate('mfui-beta-accordion-box');

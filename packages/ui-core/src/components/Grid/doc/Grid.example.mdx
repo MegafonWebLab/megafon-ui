@@ -4,6 +4,17 @@ import Grid from '../Grid';
 import GridColumn from '../GridColumn';
 import { itemView } from './Grid.docz';
 
+```javascript collapse=Код itemView
+const itemView = {
+    backgroundColor: '#00B956',
+    color: '#fff',
+    textAlign: 'center',
+    padding: '5px 10px',
+};
+```
+
+## Использование по умолчанию
+
 <Playground>
     <Grid>
         <GridColumn>
@@ -21,7 +32,7 @@ import { itemView } from './Grid.docz';
     </Grid>
 </Playground>
 
-## Средние отступы с разной шириной у колонон на всех разрешениях
+## Средние отступы с разной шириной у колонок на всех разрешениях
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -33,7 +44,7 @@ import { itemView } from './Grid.docz';
     </Grid>
 </Playground>
 
-## Большие отступы с разной шириной у колонон на всех разрешениях
+## Большие отступы с разной шириной у колонок на всех разрешениях
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large">
@@ -43,7 +54,7 @@ import { itemView } from './Grid.docz';
         <GridColumn all="2">
             <div style={itemView}>Интернет</div>
         </GridColumn>
-        <GridColumn all="1">
+        <GridColumn all="2">
             <div style={itemView}>Услуги</div>
         </GridColumn>
         <GridColumn all="3">
@@ -69,10 +80,10 @@ import { itemView } from './Grid.docz';
             <div style={itemView}>Услуги</div>
         </GridColumn>
         <GridColumn all="3">
-            <div style={itemView}>Опции</div>
-        </GridColumn>
-        <GridColumn all="2">
             <div style={itemView}>Личный кабинет</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Опции</div>
         </GridColumn>
     </Grid>
 </Playground>
@@ -91,10 +102,10 @@ import { itemView } from './Grid.docz';
             <div style={itemView}>Услуги</div>
         </GridColumn>
         <GridColumn all="3">
-            <div style={itemView}>Опции</div>
+            <div style={itemView}>Личный кабинет</div>
         </GridColumn>
         <GridColumn all="2">
-            <div style={itemView}>Личный кабинет</div>
+            <div style={itemView}>Опции</div>
         </GridColumn>
     </Grid>
 </Playground>
@@ -113,10 +124,10 @@ import { itemView } from './Grid.docz';
             <div style={itemView}>Услуги</div>
         </GridColumn>
         <GridColumn all="3">
-            <div style={itemView}>Опции</div>
+            <div style={itemView}>Личный кабинет</div>
         </GridColumn>
         <GridColumn all="2">
-            <div style={itemView}>Личный кабинет</div>
+            <div style={itemView}>Опции</div>
         </GridColumn>
     </Grid>
 </Playground>
@@ -135,10 +146,10 @@ import { itemView } from './Grid.docz';
             <div style={itemView}>Услуги</div>
         </GridColumn>
         <GridColumn all="3">
-            <div style={itemView}>Опции</div>
+            <div style={itemView}>Личный кабинет</div>
         </GridColumn>
         <GridColumn all="2">
-            <div style={itemView}>Личный кабинет</div>
+            <div style={itemView}>Опции</div>
         </GridColumn>
     </Grid>
 </Playground>
@@ -257,7 +268,7 @@ import { itemView } from './Grid.docz';
     </Grid>
 </Playground>
 
-## Разная ширина колонн на разных разрешениях
+## Разная ширина колонок на разных разрешениях
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -273,13 +284,13 @@ import { itemView } from './Grid.docz';
         <GridColumn all="3" wide="12">
             <div style={itemView}>Опции</div>
         </GridColumn>
-        <GridColumn all="2">
+        <GridColumn all="3">
             <div style={itemView}>Личный кабинет</div>
         </GridColumn>
     </Grid>
 </Playground>
 
-## Изменение порядка колонн на мобильном разрешении
+## Изменение порядка колонок на мобильном разрешении
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -295,7 +306,7 @@ import { itemView } from './Grid.docz';
     </Grid>
 </Playground>
 
-## Изменение порядка колонн на планшетном разрешении
+## Изменение порядка колонок на планшетном разрешении
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -311,7 +322,7 @@ import { itemView } from './Grid.docz';
     </Grid>
 </Playground>
 
-## Изменение порядка колонн на разных разрешениях
+## Изменение порядка колонок на разных разрешениях
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">

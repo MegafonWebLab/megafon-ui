@@ -3,21 +3,14 @@ import DownloadLinks from '../DownloadLinks';
 import DownloadLink from '../DownloadLink';
 import { text, extension, fileSize, href } from './DownloadLinks.docz.tsx';
 
-# DownloadLinks
-
-## Примеры свойств
-
-```javascript
-
+```javascript collapse=Демо данные
 const text = 'Заявление на объединение/разделение Лицевых счетов и дополнительная информация';
 const extension = 'pdf';
 const fileSize = '202,3 кб';
 const href = 'href';
-
 ```
-## Базовое использование
 
-### Одна колонка
+## Одна колонка
 <Playground>
     <DownloadLinks>
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
@@ -31,7 +24,7 @@ const href = 'href';
     </DownloadLinks>
 </Playground>
 
-### Две колонки
+## Две колонки
 <Playground>
     <DownloadLinks>
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
@@ -49,7 +42,7 @@ const href = 'href';
     </DownloadLinks>
 </Playground>
 
-### Три колонки
+## Три колонки
 <Playground>
     <DownloadLinks>
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
@@ -73,4 +66,3 @@ const href = 'href';
         <DownloadLink href={href} text={text} extension={extension} fileSize={fileSize} />
     </DownloadLinks>
 </Playground>
-

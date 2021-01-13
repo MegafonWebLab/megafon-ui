@@ -10,15 +10,15 @@ import {
 import './TitleDescriptionBox.less';
 
 export interface ITitleDescriptionBoxProps {
-    /** Custom className */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Title */
+    /** Заголовок */
     title?: string;
-    /** Description */
+    /** Описание */
     description?: string;
-    /** Text color */
+    /** Цвет текста */
     textColor?: 'white';
-    /** Horizontal alignment */
+    /** Горизонтальное выравнивание */
     hAlign?: 'center';
 }
 

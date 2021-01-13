@@ -11,7 +11,7 @@ import ContentArea from 'components/ContentArea/ContentArea';
 Если на площадке используются негайдовые контентные отступы, то нужно их переопределить с помощью дополнительного класса,
 который передается через свойство innerIndentsClass.
 ``` css
-.custom-class {
+.custom-indents-class {
     padding-left: 50px;
     padding-right: 50px;
     margin-left: -50px;
@@ -19,20 +19,19 @@ import ContentArea from 'components/ContentArea/ContentArea';
 }
 ```
 
-## Код демо компонента
-``` javascript
-export const DemoSlide = ({ children }) => {
+```javascript collapse=Код DemoSlide
+export const DemoSlide = ({ children, background }) => {
     return (
         <div
             style={{
-                height: '200px',
-                backgroundColor: '#f3f3f3',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
-                fontSize: '30px',
-            }}
+                    height: '200px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    fontSize: '30px',
+                    padding: '10px',
+                }}
         >
             {children}
         </div>
@@ -40,7 +39,7 @@ export const DemoSlide = ({ children }) => {
 }
 ```
 
-## Базовое использование
+## Использование по умолчанию
 
 <Playground style={blockStyle}>
     <ContentArea>
@@ -57,7 +56,7 @@ export const DemoSlide = ({ children }) => {
 
 ## Тема навигации для использования на зеленом фоне
 
-<Playground style={blockStyle}>
+<Playground>
     <ContentArea outerBackgroundColor="green">
         <div style={blockStyle}>
             <Carousel navTheme="green">
@@ -71,6 +70,10 @@ export const DemoSlide = ({ children }) => {
         </div>
     </ContentArea>
 </Playground>
+
+```javascript collapse=Код blockStyle
+const blockStyle = { padding: '20px 0' };
+```
 
 ## Прокрутка слайдов с зацикливанием
 

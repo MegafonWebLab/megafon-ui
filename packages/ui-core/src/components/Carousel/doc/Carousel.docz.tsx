@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Carousel from '../Carousel';
 import Tile from 'components/Tile/Tile';
 
 export const DemoSlide = ({ children }) => {

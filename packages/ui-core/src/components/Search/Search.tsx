@@ -15,15 +15,15 @@ export interface ISearchProps {
     className?: string;
     /** Значение */
     value?: string;
-    /** Плейсхолдер */
+    /** Текст внутри поля по умолчанию */
     placeholder?: string;
     /** Запрещает отрисовку иконки */
     hideIcon?: boolean;
     /** Список строк выпадающего списка */
     items?: string[];
-    /** Debounce делей колбека onChage */
+    /** Использование функции debounce для onChange */
     changeDelay?: number;
-    /** Обработчик изменения инпута */
+    /** Обработчик изменения поля */
     onChange?: (value: string) => void;
     /** Обработчик нажатия на enter */
     onSubmit?: (value: string) => void;

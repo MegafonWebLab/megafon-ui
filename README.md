@@ -17,7 +17,7 @@ Megafon React UI components library.
 - ui-shared
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-shared/beta?label=%40megafon%2Fui-shared)](https://www.npmjs.com/package/@megafon/ui-shared/v/beta)
 
-Установите используя команды:
+Установите, используя команды:
 ```bash
 npm install @megafon/ui-core@beta
 ```

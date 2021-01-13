@@ -5,17 +5,17 @@ import cnCreate from 'utils/cnCreate';
 import { IGridColumn } from './GridColumn';
 
 export interface IGridProps {
-    /** Выравнивание всех колонн по горизонтали */
+    /** Выравнивание всех колонок по горизонтали */
     hAlign?: 'left' | 'right' | 'center' | 'between' | 'around';
-    /** Выравнивание всех колонн по вертикали */
+    /** Выравнивание всех колонок по вертикали */
     vAlign?: 'top' | 'bottom' | 'center' | 'baseline';
-    /** Отступ слева от колонны */
+    /** Отступ слева от колонки */
     guttersLeft?: 'large' | 'medium';
-    /** Отступ снизу от колонны */
+    /** Отступ снизу от колонки */
     guttersBottom?: 'large' | 'medium';
     /** Перенос столбцов в несколько строк */
     multiRow?: boolean;
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }

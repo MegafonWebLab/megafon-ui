@@ -2,7 +2,7 @@ import * as React from 'react';
 import './Icons.less';
 import Header from '../components/Header/Header';
 import Cancel from 'icons/System/32/Cancel_32.svg';
-import Copy from 'icons/Basic/24/Whats-left_24.svg';
+import Copy from 'icons/System/24/Copy_24.svg';
 import cnCreate from 'utils/cnCreate';
 
 // tslint:disable-next-line:no-string-literal
@@ -154,7 +154,7 @@ class Icons extends React.Component<{}, IIconsState> {
             <div className={cn('info-icon-wrapper')} key={svg.path}>
                 <div className={cn('info-import')}>
                     Svg <code className={cn('info-code-style')}>{importStr}.svg';</code>
-                    <a title="copy to clipboard">
+                    <a title="Скопировать в буфер">
                         <Copy
                             className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
                             onClick={this.copyToClipBoard &&
@@ -164,7 +164,7 @@ class Icons extends React.Component<{}, IIconsState> {
                 </div>
                 <div className={cn('info-import')}>
                     JSX <code className={cn('info-code-style')}>{importStr}';</code>
-                    <a title="copy to clipboard">
+                    <a title="Скопировать в буфер">
                         <Copy
                             className={cn('info-copy', { active: copyIndex === copyBoard.JSX })}
                             onClick={this.copyToClipBoard

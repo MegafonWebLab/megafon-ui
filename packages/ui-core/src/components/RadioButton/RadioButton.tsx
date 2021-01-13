@@ -8,9 +8,9 @@ export interface IRadioButtonProps {
     value: string;
     /** Имя для тега form */
     name?: string;
-    /** Размер текса лейбла */
+    /** Размер текста лейбла */
     textSize?: 'small' | 'medium';
-    /** Управление возможности взаимодействия с компонентом */
+    /** Управление возможностью взаимодействия с компонентом */
     isDisabled?: boolean;
     /** Управление состоянием вкл/выкл компонента */
     isChecked?: boolean;

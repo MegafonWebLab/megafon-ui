@@ -25,11 +25,11 @@ export interface IPreloaderProps {
     sizeAll?: PreloaderSizesType;
     /** Размер на разрешении экрана 1280+ */
     sizeWide?: PreloaderSizesType;
-    /** Размер на разрешении экрана 1020+ */
+    /** Размер на разрешении экрана 1024+ */
     sizeDesktop?: PreloaderSizesType;
-    /** Размер на разрешении экрана 730-1020 */
+    /** Размер на разрешении экрана 768-1023 */
     sizeTablet?: PreloaderSizesType;
-    /** Размер на разрешении экрана 320-730 */
+    /** Размер на разрешении экрана 0-767 */
     sizeMobile?: PreloaderSizesType;
     /** Дополнительный класс корневого элемента */
     className?: string;

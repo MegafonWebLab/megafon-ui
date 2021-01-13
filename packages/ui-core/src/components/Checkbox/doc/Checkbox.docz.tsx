@@ -4,13 +4,7 @@ interface ICheckboxWrapperProps {
     children: (prop: { checked: boolean; onChange: () => void }) => JSX.Element;
 }
 
-export const LightColorWrapper: React.FC = ({ children }) => {
-    return (
-        <div style={{ backgroundColor: '#00b956' }}>
-            {children}
-        </div>
-    );
-};
+export const extraContentStyle = { backgroundColor: '#00B956', color: '#FFF', padding: '5px'};
 
 export const CheckboxWrapper: React.FC<ICheckboxWrapperProps> = (props) => {
     const [checked, setChecked] = React.useState<boolean>(false);

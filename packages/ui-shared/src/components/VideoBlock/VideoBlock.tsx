@@ -34,7 +34,7 @@ export interface Props {
     isMuted?: boolean;
     /** Автоматическое проигрывание видео */
     isAutoplay?: boolean;
-    /** Дополнительный класс для основного контейнера */
+    /** Дополнительный класс корневого элемента */
     className?: string;
 }
 

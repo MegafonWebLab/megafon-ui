@@ -59,11 +59,11 @@ export interface IButtonProps extends IDataAttributes {
     sizeAll?: ButtonSizesType;
     /** Размер на разрешении экрана 1280+ */
     sizeWide?: ButtonSizesType;
-    /** Размер на разрешении экрана 1020+ */
+    /** Размер на разрешении экрана 1024+ */
     sizeDesktop?: ButtonSizesType;
-    /** Размер на разрешении экрана 730-1020 */
+    /** Размер на разрешении экрана 768-1023 */
     sizeTablet?: ButtonSizesType;
-    /** Размер на разрешении экрана 320-730 */
+    /** Размер на разрешении экрана 0-767 */
     sizeMobile?: ButtonSizesType;
     /** Растянуть на полную ширину контейнера */
     fullWidth?: boolean;

@@ -1,20 +1,8 @@
----
-name: Search
-menu: Компоненты
-route: components/search
----
-
-import { Playground, Props } from 'docz';
-import Search from './Search';
+import { Playground } from 'docz';
+import Search from '../Search';
 import { DemoSearchWrapper } from './Search.docz';
 
-# Search
-
-## Properties
-
-<Props of={Search} />
-
-```javascript
+```javascript collapse=Код DemoSearchWrapper
 export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     const [value, setValue] = React.useState('');
     const [items, setItems] = React.useState([]);
@@ -36,26 +24,13 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
 };
 ```
 
-## Basic usage
-
-<Playground>
-    <DemoSearchWrapper>
-        {({ onSubmit }) =>
-            <Search
-                onSubmit={onSubmit}
-                placeholder="Type here and press ENTER"
-            />
-        }
-    </DemoSearchWrapper>
-</Playground>
-
-## Usage without icon
+## Без иконки
 
 <Playground>
     <Search hideIcon />
 </Playground>
 
-## Usage with initial value
+## С установленным значением по умолчанию
 
 <Playground>
     <DemoSearchWrapper>
@@ -69,7 +44,7 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
     </DemoSearchWrapper>
 </Playground>
 
-## Usage with onChange callback
+## С функцией onChange
 
 <Playground>
     <DemoSearchWrapper>
@@ -83,7 +58,7 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
     </DemoSearchWrapper>
 </Playground>
 
-## Usage with emulating incomingData
+## Эмулирование получения данных
 
 <Playground>
     <DemoSearchWrapper>
