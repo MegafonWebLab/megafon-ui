@@ -232,10 +232,10 @@ const inlineSvgToReact = () => changePipe(async function (file, encoding) {
 
     if (Array.isArray(svgImports) && svgImports.length) {
         for (const svgImport of svgImports) {
-            const [importName, importName] = svgImport.split('from')
-            const svgImportName = importName.replace(/'/g, '').trim();
+            const [importName, importPath] = svgImport.split('from')
+            const svgImportPath = importPath.replace(/'/g, '').trim();
             const componentName =  importName.replace('import', '').trim();
-            const absolutePath = path.resolve(srcPath, svgImportName);
+            const absolutePath = path.resolve(srcPath, svgImportPath);
             const data = fs.readFileSync(absolutePath);
             let code;
 
