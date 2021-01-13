@@ -16,7 +16,7 @@ interface IIconsState {
     copyIndex: copyBoard;
 }
 
-type svgDataType = { size: string; path: string; text: string };
+type svgDataType = { size: string; path: string; importPath: string };
 
 type IconEntry = [string, svgDataType[]];
 
@@ -79,7 +79,7 @@ class Icons extends React.Component<{}, IIconsState> {
                 sectDictionary[sectionCamelCase][svgName] = [];
             }
 
-            const text = item
+            const importPath = item
                 .replace('./', '')
                 .toLowerCase()
                 .replace('.svg', '')
@@ -87,7 +87,7 @@ class Icons extends React.Component<{}, IIconsState> {
                 .replace(/[^a-z0-9-]+/g, '_');
 
             sectDictionary[sectionCamelCase][svgName] = sectDictionary[sectionCamelCase][svgName].concat({
-                size: svgSize, path: item, text,
+                size: svgSize, path: item, importPath,
             });
 
             return sectDictionary;
@@ -148,7 +148,7 @@ class Icons extends React.Component<{}, IIconsState> {
 
     renderInfoIcon(svg: svgDataType) {
         const { copyIndex } = this.state;
-        const importStr = importIcon + svg.text;
+        const importStr = importIcon + svg.importPath;
 
         return (
             <div className={cn('info-icon-wrapper')} key={svg.path}>
