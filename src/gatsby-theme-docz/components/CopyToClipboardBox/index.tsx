@@ -18,11 +18,9 @@ const CopyToClipboardBox: React.FC<IProps> = ({ text }) => {
         el.style.left = '-9999px';
         document.body.appendChild(el);
 
-        return () => {
-            el.value = text;
-            el.select();
-            document.execCommand('copy');
-        };
+        el.value = text;
+        el.select();
+        document.execCommand('copy');
     };
 
     return (
@@ -31,7 +29,7 @@ const CopyToClipboardBox: React.FC<IProps> = ({ text }) => {
             <a title="Скопировать в буфер" className={cn('button')}>
                 <Copy
                     className={cn('icon')}
-                    onClick={createElToClipboard()}
+                    onClick={createElToClipboard}
                 />
             </a>
         </div>
