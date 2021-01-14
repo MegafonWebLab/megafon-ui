@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.91](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.90...@megafon/ui-shared@2.0.0-beta.91) (2021-01-14)
+
+
+### Features
+
+* **cards box:** added new component ([1834169](https://github.com/MegafonWebLab/megafon-ui/commit/18341692c2de37cf25a14d34ae063acc6c8aae57))
+* **container:** edit component classes ([9ab5d09](https://github.com/MegafonWebLab/megafon-ui/commit/9ab5d09d793e4cf8325d729f9157a5b42aefeca5))
+
+
+
+
+
 # [2.0.0-beta.90](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.89...@megafon/ui-shared@2.0.0-beta.90) (2021-01-14)
 
 
