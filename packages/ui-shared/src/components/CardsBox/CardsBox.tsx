@@ -1,9 +1,8 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
-import { cnCreate, Grid, GridColumn, Carousel, breakpoints } from '@megafon/ui-core';
+import { cnCreate, Grid, GridColumn, Carousel, breakpoints, throttleTime } from '@megafon/ui-core';
 import { ICard } from '../Card/Card';
-import ThrottleTime from '../../constants/throttle-time';
 
 type SlidesSettingsType = Pick<React.ComponentProps<typeof Carousel>, 'slidesSettings'>['slidesSettings'];
 
@@ -49,7 +48,7 @@ const CardsBox: React.FC<ICardsBox> = ({ children }) => {
     React.useEffect(() => {
         const resizeHandler = () =>
             window.innerWidth <= breakpoints.mobileBigEnd ? setIsMobile(true) : setIsMobile(false);
-        const resizeHandlerThrottled = throttle(resizeHandler, ThrottleTime.RESIZE);
+        const resizeHandlerThrottled = throttle(resizeHandler, throttleTime.resize);
 
         resizeHandler();
         window.addEventListener('resize', resizeHandlerThrottled);

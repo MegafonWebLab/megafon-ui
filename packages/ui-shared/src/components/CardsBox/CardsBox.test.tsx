@@ -49,6 +49,5 @@ describe('CardsBox', () => {
         expect(wrapper).toMatchSnapshot();
 
         localWindow.innerWidth = windowInnerWidth;
-        jest.restoreAllMocks();
     });
 });
