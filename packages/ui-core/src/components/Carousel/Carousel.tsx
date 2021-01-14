@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import throttle from 'lodash.throttle';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import breakpoints from 'constants/breakpoints';
+import throttleTime from 'constants/throttleTime';
 
 SwiperCore.use([Autoplay, Pagination]);
 
@@ -173,7 +174,7 @@ const Carousel: React.FC<ICarouselProps> = ({
             if (swiper.params.slidesPerView === SlidesPerView.AUTO) {
                 swiper.slides.css('width', '');
             }
-        }, 300),
+        }, throttleTime.resize),
         []
     );
 
