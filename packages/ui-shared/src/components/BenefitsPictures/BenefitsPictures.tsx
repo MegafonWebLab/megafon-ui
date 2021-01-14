@@ -3,10 +3,9 @@ import { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
-import { cnCreate, Grid, GridColumn, Header, Paragraph, breakpoints } from '@megafon/ui-core';
+import { cnCreate, Grid, GridColumn, Header, Paragraph, breakpoints, throttleTime } from '@megafon/ui-core';
 import { IBenefit, GridConfig, GridGutterSize } from './types';
 
-const THROTTLE_TIME = 500;
 const ONLY_LEFT_ALIGN_ITEMS_COUNT = 3;
 
 const columnSize: GridConfig = {
@@ -139,7 +138,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     );
 
     React.useEffect(() => {
-        const throttledResizeHandler = throttle(resizeHandler, THROTTLE_TIME);
+        const throttledResizeHandler = throttle(resizeHandler, throttleTime.resize);
 
         resizeHandler();
         window.addEventListener('resize', throttledResizeHandler);

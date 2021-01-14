@@ -1,0 +1,343 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardsBox render component 1`] = `
+<div
+  className="mfui-beta-cards-box"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+    multiRow={true}
+  >
+    <GridColumn
+      all="4"
+      flex={false}
+      grow={false}
+      key=".0"
+      mobile="12"
+      orderAll="0"
+      orderDesktop="0"
+      orderMobile="0"
+      orderTablet="0"
+      orderWide="0"
+    >
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      />
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`CardsBox render on mobile resolution with carousel 1`] = `
+<CardsBox>
+  <div
+    className="mfui-beta-cards-box"
+  >
+    <CarouselMock
+      slidesSettings={
+        Object {
+          "0": Object {
+            "slidesPerView": 1,
+            "spaceBetween": 16,
+          },
+          "768": Object {
+            "slidesPerView": 2,
+            "spaceBetween": 20,
+          },
+        }
+      }
+    >
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      >
+        <div
+          className="mfui-beta-card"
+        >
+          <div>
+            <div
+              className="mfui-beta-card__inner"
+            >
+              <Header
+                as="h3"
+                className="mfui-beta-card__title"
+                color="black"
+                hAlign="inherit"
+              >
+                <h3
+                  className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-card__title"
+                >
+                  title
+                </h3>
+              </Header>
+              <Paragraph
+                hasMargin={false}
+              >
+                <p
+                  className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt"
+                >
+                  text
+                </p>
+              </Paragraph>
+              <div
+                className="mfui-beta-card__btns-wrapper"
+              >
+                <Button
+                  className="mfui-beta-card__button"
+                  href="button-href"
+                >
+                  <a
+                    className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-card__button"
+                    disabled={false}
+                    href="button-href"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="mfui-beta-button__inner"
+                    >
+                      <div
+                        className="mfui-beta-button__content"
+                      >
+                        button-title
+                      </div>
+                    </div>
+                  </a>
+                </Button>
+                <TextLink
+                  className="mfui-beta-card__link"
+                  color="blue"
+                  href="href"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  <Link
+                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                    href="href"
+                  >
+                    <a
+                      className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                      href="href"
+                    >
+                      href-title
+                    </a>
+                  </Link>
+                </TextLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      >
+        <div
+          className="mfui-beta-card"
+        >
+          <div>
+            <div
+              className="mfui-beta-card__inner"
+            >
+              <Header
+                as="h3"
+                className="mfui-beta-card__title"
+                color="black"
+                hAlign="inherit"
+              >
+                <h3
+                  className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-card__title"
+                >
+                  title
+                </h3>
+              </Header>
+              <Paragraph
+                hasMargin={false}
+              >
+                <p
+                  className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt"
+                >
+                  text
+                </p>
+              </Paragraph>
+              <div
+                className="mfui-beta-card__btns-wrapper"
+              >
+                <Button
+                  className="mfui-beta-card__button"
+                  href="button-href"
+                >
+                  <a
+                    className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-card__button"
+                    disabled={false}
+                    href="button-href"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="mfui-beta-button__inner"
+                    >
+                      <div
+                        className="mfui-beta-button__content"
+                      >
+                        button-title
+                      </div>
+                    </div>
+                  </a>
+                </Button>
+                <TextLink
+                  className="mfui-beta-card__link"
+                  color="blue"
+                  href="href"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  <Link
+                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                    href="href"
+                  >
+                    <a
+                      className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                      href="href"
+                    >
+                      href-title
+                    </a>
+                  </Link>
+                </TextLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      >
+        <div
+          className="mfui-beta-card"
+        >
+          <div>
+            <div
+              className="mfui-beta-card__inner"
+            >
+              <Header
+                as="h3"
+                className="mfui-beta-card__title"
+                color="black"
+                hAlign="inherit"
+              >
+                <h3
+                  className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-card__title"
+                >
+                  title
+                </h3>
+              </Header>
+              <Paragraph
+                hasMargin={false}
+              >
+                <p
+                  className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt"
+                >
+                  text
+                </p>
+              </Paragraph>
+              <div
+                className="mfui-beta-card__btns-wrapper"
+              >
+                <Button
+                  className="mfui-beta-card__button"
+                  href="button-href"
+                >
+                  <a
+                    className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-card__button"
+                    disabled={false}
+                    href="button-href"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="mfui-beta-button__inner"
+                    >
+                      <div
+                        className="mfui-beta-button__content"
+                      >
+                        button-title
+                      </div>
+                    </div>
+                  </a>
+                </Button>
+                <TextLink
+                  className="mfui-beta-card__link"
+                  color="blue"
+                  href="href"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  <Link
+                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                    href="href"
+                  >
+                    <a
+                      className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                      href="href"
+                    >
+                      href-title
+                    </a>
+                  </Link>
+                </TextLink>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
+    </CarouselMock>
+  </div>
+</CardsBox>
+`;
