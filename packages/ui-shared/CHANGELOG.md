@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.90](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.89...@megafon/ui-shared@2.0.0-beta.90) (2021-01-14)
+
+
+### Documentation
+
+* **component - productswitcher, producttile:** remove components ([20a135e](https://github.com/MegafonWebLab/megafon-ui/commit/20a135e64c858400b7935ad0ac38235c81e67ba7))
+
+
+### BREAKING CHANGES
+
+* **component - productswitcher, producttile:** destruction of public components
+
+
+
+
+
 # [2.0.0-beta.89](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.88...@megafon/ui-shared@2.0.0-beta.89) (2021-01-13)
 
 **Note:** Version bump only for package @megafon/ui-shared
