@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.92](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.91...@megafon/ui-shared@2.0.0-beta.92) (2021-01-22)
+
+
+### Bug Fixes
+
+* **table:** possible empty table cell, correctly showed shadow in table ([6f69629](https://github.com/MegafonWebLab/megafon-ui/commit/6f69629ca10182ab9904fd6eced61148955940e8))
+
+
+
+
+
 # [2.0.0-beta.91](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.90...@megafon/ui-shared@2.0.0-beta.91) (2021-01-14)
 
 
