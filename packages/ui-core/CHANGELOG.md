@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.79](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.78...@megafon/ui-core@2.0.0-beta.79) (2021-01-22)
+
+
+### Bug Fixes
+
+* **textfield:** change textfield height by styleguide ([f0f69a9](https://github.com/MegafonWebLab/megafon-ui/commit/f0f69a9ed7baba63176510d3197b1d99ee01586e))
+
+
+
+
+
 # [2.0.0-beta.78](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.77...@megafon/ui-core@2.0.0-beta.78) (2021-01-22)
 
 
