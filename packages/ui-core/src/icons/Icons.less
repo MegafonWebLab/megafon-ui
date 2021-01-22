@@ -48,10 +48,14 @@
     &__icon {
         position: relative;
         z-index: 5;
-        width: 32px;
-        height: 32px;
+        min-width: 32px;
         transition: all 0.2s ease;
         margin-right: 8px;
+    }
+
+    &__icon svg {
+        display: block;
+        margin: auto;
     }
 
     &__info {
