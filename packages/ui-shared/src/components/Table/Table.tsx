@@ -50,8 +50,8 @@ const Table: React.FC<ITable> = ({
         const deltaHeight = scrollHeight - clientHeight;
         const deltaWidth = scrollWidth - clientWidth;
 
-        setRightGradient(deltaWidth !== scrollLeft);
-        setBottomGradient(deltaHeight !== scrollTop);
+        setRightGradient(deltaWidth !== Math.floor(scrollLeft));
+        setBottomGradient(deltaHeight !== Math.floor(scrollTop));
         setTopShadow(!!scrollTop);
         setLeftShadow(!!scrollLeft);
     }, []);
