@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.78](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.77...@megafon/ui-core@2.0.0-beta.78) (2021-01-22)
+
+
+### Bug Fixes
+
+* **listitem:** remove extra margin ([e8bb642](https://github.com/MegafonWebLab/megafon-ui/commit/e8bb64213521fe9f2aac188f93127555ebf36e5d))
+
+
+
+
+
 # [2.0.0-beta.77](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.76...@megafon/ui-core@2.0.0-beta.77) (2021-01-22)
 
 
