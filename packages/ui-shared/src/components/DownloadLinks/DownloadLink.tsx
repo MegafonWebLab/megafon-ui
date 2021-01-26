@@ -29,7 +29,7 @@ const DownloadLink: React.FC<IDownloadLink> = ({ href, text, extension, fileSize
             <div>
                 <TextLink className={cn('link')} href={href} onClick={onClick} download>{text}</TextLink>
                 <p className={cn('info')}>
-                    {`${extension}, ${fileSize}`}
+                    {`${extension}${extension && fileSize ? ',' : ''} ${fileSize}`}
                 </p>
             </div>
         </div>
