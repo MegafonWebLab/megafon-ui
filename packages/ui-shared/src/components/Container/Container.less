@@ -9,15 +9,16 @@
 @k6: e('.mfui-beta-carousel-box');
 @k7: e('.mfui-beta-video-block');
 @k8: e('.mfui-beta-tabs-box');
-@k9: e('.mfui-beta-partners'); // component is not made
-@k10: e('.mfui-beta-instructions'); // component is not made
-@k11: e('.mfui-beta-properties'); // component is not made
+@k9: e('.mfui-beta-partners');
+@k10: e('.mfui-beta-instructions');
+@k11: e('.mfui-beta-property');
 @k12: e('.mfui-beta-table');
 @k13: e('.mfui-beta-accordion-box');
 @k14: e('.mfui-beta-button-link-box');
 @k15: e('.mfui-beta-download-links');
 @k16: e('.mfui-beta-text-box');
-@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16;
+@k17: e('.mfui-beta-picture-with-description');
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17;
 
 @color-modificator: e('&_bg-color_');
 @color-default: e('default');
@@ -28,7 +29,7 @@
 @colors: @color-default, @color-light-gray, @color-gray, @color-green, @color-purple;
 
 @small: 32px;
-@middle: 40px;
+@medium: 40px;
 @big: 48px;
 @large: 56px;
 
@@ -125,119 +126,117 @@
 
     // k2(title-description-box)
 
-    @{k2} + @{k14} {
-        margin-top: @small;
-    }
-
-    .generateComponentsMargins(@large, @k2, 3, 13);
+    .generateComponentsMargins(@large, @k2, 3, 17);
+    .generateComponentsMargins(@small, @k2, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k2, 3, 13);
+        .generateComponentsMargins(@big, @k2, 3, 17);
+        .generateComponentsMargins(@small, @k2, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k2, 3 ,13);
+        .generateComponentsMargins(@medium, @k2, 3 ,17);
+        .generateComponentsMargins(@small, @k2, 14, 15);
     }
 
-    // k3(title-description-box)
+    // k3(benefits-icons)
 
-    @{k3} + @{k14} {
-        margin-top: @big;
-    }
-
-    .generateComponentsMargins(@large, @k3, 4, 13);
+    .generateComponentsMargins(@large, @k3, 4, 17);
+    .generateComponentsMargins(@big, @k3, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k3, 4, 13);
+        .generateComponentsMargins(@big, @k3, 4, 17);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k3, 4, 14);
+        .generateComponentsMargins(@medium, @k3, 4, 17);
     }
 
     // k4(benefits-pictures);
 
-    @{k4} + @{k14} {
-        margin-top: @big;
-    }
-
-    .generateComponentsMargins(@large, @k4, 3, 13);
+    .generateComponentsMargins(@large, @k4, 3, 17);
+    .generateComponentsMargins(@big, @k4, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k4, 3, 13);
+        .generateComponentsMargins(@big, @k4, 3, 17);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k4, 3, 14);
+        .generateComponentsMargins(@medium, @k4, 3, 17);
     }
 
     @{k4} + @{k4} {
         .disableMarginTop();
     }
 
-    // k5(infocard)
+    // k5(cards-box)
 
-    @{k5} + @{k14} {
-        margin-top: @big;
-    }
-
-    .generateComponentsMargins(@large, @k5, 3, 13);
+    .generateComponentsMargins(@large, @k5, 3, 17);
+    .generateComponentsMargins(@big, @k5, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k5, 3, 13);
+        .generateComponentsMargins(@big, @k5, 3, 17);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k5, 3, 14);
+        .generateComponentsMargins(@medium, @k5, 3, 17);
     }
 
     @{k5} + @{k5} {
         .disableMarginTop();
     }
 
-    // k6(items-carousel)
+    // k6(carousel-box)
 
-    @{k6} + @{k14} {
-        margin-top: @big;
-    }
-
-    .generateComponentsMargins(@large, @k6, 3, 13);
+    .generateComponentsMargins(@large, @k6, 3, 17);
+    .generateComponentsMargins(@big, @k6, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k6, 3, 13);
+        .generateComponentsMargins(@big, @k6, 3, 17);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k6, 3, 14);
+        .generateComponentsMargins(@medium, @k6, 3, 17);
     }
 
     @{k6} + @{k6} {
         .disableMarginTop();
     }
 
-    // k7(items-carousel)
+    // k7(video-block)
 
-    @{k7} + @{k14} {
-        margin-top: @small;
-    }
-
-    .generateComponentsMargins(@large, @k7, 3, 13);
+    .generateComponentsMargins(@large, @k7, 3, 17);
+    .generateComponentsMargins(@small, @k7, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k7, 3, 13);
+        .generateComponentsMargins(@big, @k7, 3, 17);
+        .generateComponentsMargins(@small, @k7, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k7, 3, 13);
+        .generateComponentsMargins(@medium, @k7, 3, 17);
+        .generateComponentsMargins(@small, @k7, 14, 15);
     }
 
-    // k8(tabs)
+    // k8(tabs-box)
 
     @{k8} + @{k14} {
         margin-top: @big;
 
         @media @mobileSM {
             margin-top: @small;
+        }
+    }
+
+    @{k8} + @{k16} {
+        margin-top: @large;
+
+        @media @mobileB {
+            margin-top: @big;
+        }
+
+        @media @mobileSM {
+            margin-top: @medium;
         }
     }
 
@@ -257,54 +256,64 @@
         margin-top: @big;
     }
 
-    .generateComponentsMargins(@large, @k9, 3, 13);
+    .generateComponentsMargins(@large, @k9, 3, 17);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k9, 3, 13);
+        .generateComponentsMargins(@big, @k9, 3, 17);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k9, 3, 14);
+        .generateComponentsMargins(@medium, @k9, 3, 17);
     }
 
-    @{k9} + @{k9} {
+    @{k9} + @{k9},
+    @{k9} + @{k15} {
         .disableMarginTop();
     }
 
     // k10(instructions)
 
-    .generateComponentsMargins(@large, @k10, 3, 13);
+    .generateComponentsMargins(@large, @k10, 3, 17);
 
     @media @mobile {
-        .generateComponentsMargins(@big, @k10, 3, 13);
+        .generateComponentsMargins(@big, @k10, 3, 17);
     }
 
-    // k11(properties)
+    @{k10} + @{k14},
+    @{k10} + @{k15} {
+        .disableMarginTop();
+    }
 
-    .generateComponentsMargins(@large, @k11, 3, 13);
+    // k11(property)
+
+    .generateComponentsMargins(@large, @k11, 3, 17);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k11, 3, 13);
+        .generateComponentsMargins(@big, @k11, 3, 17);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k11, 3, 13);
+        .generateComponentsMargins(@medium, @k11, 3, 17);
+    }
+
+    @{k11} + @{k14},
+    @{k11} + @{k15} {
+        .disableMarginTop();
     }
 
     // k12(table)
 
-    @{k12} + @{k14} {
-        margin-top: @small;
-    }
-
-    .generateComponentsMargins(@large, @k12, 3, 13);
+    .generateComponentsMargins(@large, @k12, 3, 17);
+    .generateComponentsMargins(@small, @k12, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k12, 3, 13);
+        .generateComponentsMargins(@big, @k12, 3, 17);
+        .generateComponentsMargins(@small, @k12, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k12, 3, 13);
+        .generateComponentsMargins(@medium, @k12, 3, 17);
+        .generateComponentsMargins(@small, @k12, 14, 15);
     }
 
     // k13(accordion-box)
@@ -313,18 +322,59 @@
         margin-top: @small;
     }
 
+    @{k13} + @{k16} {
+        margin-top: @large;
+
+        @media @mobileB {
+            margin-top: @big;
+        }
+
+        @media @mobileSM {
+            margin-top: @medium;
+        }
+    }
+
+    // k14(button-link-box)
+
+    @{k14} + @{k16} {
+        margin-top: @large;
+
+        @media @mobileB {
+            margin-top: @big;
+        }
+
+        @media @mobileSM {
+            margin-top: @medium;
+        }
+    }
+
     // k16(text-box)
 
-    .generateComponentsMargins(@large, @k16, 3, 16);
+    .generateComponentsMargins(@large, @k16, 3, 17);
     .generateComponentsMargins(@small, @k16, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k16, 3, 16);
+        .generateComponentsMargins(@big, @k16, 3, 17);
         .generateComponentsMargins(@small, @k16, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@middle, @k16, 3, 16);
+        .generateComponentsMargins(@medium, @k16, 3, 17);
         .generateComponentsMargins(@small, @k16, 14, 15);
+    }
+
+    // k17(picture-with-description)
+
+    .generateComponentsMargins(@large, @k17, 3, 17);
+    .generateComponentsMargins(@small, @k17, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k17, 3, 17);
+        .generateComponentsMargins(@small, @k17, 14, 15);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k17, 3, 17);
+        .generateComponentsMargins(@small, @k17, 14, 15);
     }
 }
