@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.80](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.79...@megafon/ui-core@2.0.0-beta.80) (2021-01-28)
+
+
+### Features
+
+* **content area:** added classes prop, added new disable indents range ([f43480e](https://github.com/MegafonWebLab/megafon-ui/commit/f43480e7438178c683c42335e5c2e992b7169709))
+
+
+### BREAKING CHANGES
+
+* **content area:** className prop was deleted. Added new prop for custom class names.
+
+
+
+
+
 # [2.0.0-beta.79](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.78...@megafon/ui-core@2.0.0-beta.79) (2021-01-22)
 
 
