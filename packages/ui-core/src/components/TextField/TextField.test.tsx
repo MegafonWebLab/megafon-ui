@@ -283,7 +283,7 @@ describe('<TextField />', () => {
             expect(wrapper.find('input').prop('value')).toEqual('value');
         });
 
-        it('should change component inputValue state via value prop update', () => {
+        it('should change component inputValue state via value prop update when controlled', () => {
             const wrapper = mount(
                 <TextField
                     {...commonFieldProps}
