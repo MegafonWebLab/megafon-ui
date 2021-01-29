@@ -1,6 +1,10 @@
 import { Playground } from 'docz';
 import TextField from '../TextField';
-import { wrapperDefaultWidthStyle, wrapperWideWidthStyle } from './TextField.docz';
+import {
+    wrapperDefaultWidthStyle,
+    wrapperWideWidthStyle,
+    DemoTextFieldWithControlledValue,
+} from './TextField.docz';
 import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 
 ## Тип с паролем
@@ -77,6 +81,31 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField value='initial value' />
 </Playground>
+
+## Контролируемое состояние с вводом только цифр
+В данном состоянии компонент полностью контролируется родительским,
+в том числе очистка поля ввода путем клика на иконку, для нее следует
+использовать коллбек onCustomIconClick
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <DemoTextFieldWithControlledValue>
+        {({ value, onChange }) => <TextField value={value} onChange={onChange} isControlled />}
+    </DemoTextFieldWithControlledValue>
+</Playground>
+
+```javascript collapse=Код DemoControlledTextField
+export const DemoTextFieldWithControlledValue = ({ children }) => {
+    const [inputValue, setInputValue] = useState('');
+
+    const handleChange = ({ target: { value } }) => {
+        const valueDigits = value.replace(/[^0-9]/g, '');
+
+        setInputValue(valueDigits);
+    };
+
+    return <>{children({ value: inputValue, onChange: handleChange })}</>;
+};
+```
 
 ##
 # Textarea

@@ -267,6 +267,54 @@ describe('<TextField />', () => {
 
             expect(onCustomIconClickMock).toBeCalledWith(target);
         });
+
+        it('shouldnt change component inputValue state via input change when controlled', () => {
+            const target = { target: { value: 'something' } };
+            const wrapper = shallow(
+                <TextField
+                    {...commonFieldProps}
+                    value="value"
+                    isControlled
+                />
+            );
+
+            wrapper.find('input').simulate('change', target);
+
+            expect(wrapper.find('input').prop('value')).toEqual('value');
+        });
+
+        it('shouldnt clear inputValue state via custom icon click when controlled', () => {
+            const target = { target: { value: 'something' } };
+            const wrapper = shallow(
+                <TextField
+                    {...commonFieldProps}
+                    value="value"
+                    customIcon={<Balance />}
+                    verification={Verification.ERROR}
+                    isControlled
+                    onCustomIconClick={jest.fn()}
+                />
+            );
+
+            wrapper.find(selectors.iconBox).simulate('click');
+
+            expect(wrapper.find('input').prop('value')).toEqual('value');
+        });
+
+        it('should change component inputValue state via value prop update when controlled', () => {
+            const wrapper = mount(
+                <TextField
+                    {...commonFieldProps}
+                    value="value"
+                    isControlled
+                />
+            );
+
+            wrapper.setProps({ value: 'something' });
+            wrapper.update();
+
+            expect(wrapper.find('input').prop('value')).toEqual('something');
+        });
     });
 
     describe('textarea', () => {
