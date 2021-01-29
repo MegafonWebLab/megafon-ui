@@ -69,7 +69,7 @@ export interface ITextFieldProps {
     classes?: { input?: string | null };
     /** Аргумент элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
-    /** Переводит компонент в контроллируемое состояние */
+    /** Переводит компонент в контролируемое состояние */
     isControlled?: boolean;
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -200,7 +200,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
         isPasswordType && togglePasswordHiding();
         onCustomIconClick && onCustomIconClick(e);
-        isClearFuncAvailable && setInputValue('');
+        !isControlled && isClearFuncAvailable && setInputValue('');
         field && field.focus();
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
 

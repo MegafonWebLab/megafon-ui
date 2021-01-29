@@ -283,6 +283,24 @@ describe('<TextField />', () => {
             expect(wrapper.find('input').prop('value')).toEqual('value');
         });
 
+        it('shouldnt clear inputValue state via custom icon click when controlled', () => {
+            const target = { target: { value: 'something' } };
+            const wrapper = shallow(
+                <TextField
+                    {...commonFieldProps}
+                    value="value"
+                    customIcon={<Balance />}
+                    verification={Verification.ERROR}
+                    isControlled
+                    onCustomIconClick={jest.fn()}
+                />
+            );
+
+            wrapper.find(selectors.iconBox).simulate('click');
+
+            expect(wrapper.find('input').prop('value')).toEqual('value');
+        });
+
         it('should change component inputValue state via value prop update when controlled', () => {
             const wrapper = mount(
                 <TextField

@@ -82,7 +82,10 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
     <TextField value='initial value' />
 </Playground>
 
-## Контроллируемое состояние с вводом только цифр
+## Контролируемое состояние с вводом только цифр
+В данном состоянии компонент полностью контролируется родительским,
+в том числе очистка поля ввода путем клика на иконку, для нее следует
+использовать коллбек onCustomIconClick
 
 <Playground style={wrapperDefaultWidthStyle}>
     <DemoTextFieldWithControlledValue>
