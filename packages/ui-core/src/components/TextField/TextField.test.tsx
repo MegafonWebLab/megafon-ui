@@ -267,6 +267,36 @@ describe('<TextField />', () => {
 
             expect(onCustomIconClickMock).toBeCalledWith(target);
         });
+
+        it('shouldnt change component inputValue state via input change when controlled', () => {
+            const target = { target: { value: 'something' } };
+            const wrapper = shallow(
+                <TextField
+                    {...commonFieldProps}
+                    value="value"
+                    isControlled
+                />
+            );
+
+            wrapper.find('input').simulate('change', target);
+
+            expect(wrapper.find('input').prop('value')).toEqual('value');
+        });
+
+        it('should change component inputValue state via value prop update', () => {
+            const wrapper = mount(
+                <TextField
+                    {...commonFieldProps}
+                    value="value"
+                    isControlled
+                />
+            );
+
+            wrapper.setProps({ value: 'something' });
+            wrapper.update();
+
+            expect(wrapper.find('input').prop('value')).toEqual('something');
+        });
     });
 
     describe('textarea', () => {

@@ -69,6 +69,8 @@ export interface ITextFieldProps {
     classes?: { input?: string | null };
     /** Аргумент элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
+    /** Переводит компонент в контроллируемое состояние */
+    isControlled?: boolean;
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Обработчик выхода из фокуса */
@@ -111,6 +113,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         name,
         placeholder,
         required,
+        isControlled = false,
         onBlur,
         onChange,
         onCustomIconClick,
@@ -175,7 +178,7 @@ const TextField: React.FC<ITextFieldProps> = ({
             setTextareaHeight();
         }
 
-        setInputValue(e.target.value);
+        !isControlled && setInputValue(e.target.value);
         checkSymbolMaxLimit(e.target.value);
 
         onChange && onChange(e);
