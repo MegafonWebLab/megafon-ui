@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.83](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.82...@megafon/ui-core@2.0.0-beta.83) (2021-01-29)
+
+
+### Features
+
+* **textfield:** added controlled state for component ([15cca94](https://github.com/MegafonWebLab/megafon-ui/commit/15cca945c8888612eccb5609b0b412c0b37c219e))
+
+
+
+
+
 # [2.0.0-beta.82](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.81...@megafon/ui-core@2.0.0-beta.82) (2021-01-29)
 
 
