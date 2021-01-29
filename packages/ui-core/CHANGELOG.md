@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.82](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.81...@megafon/ui-core@2.0.0-beta.82) (2021-01-29)
+
+
+### Bug Fixes
+
+* **tabs:** fix sticky tabs z-index ([931e538](https://github.com/MegafonWebLab/megafon-ui/commit/931e53813df35cfb2a18936e454d5cabff903ef4))
+
+
+
+
+
 # [2.0.0-beta.81](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.80...@megafon/ui-core@2.0.0-beta.81) (2021-01-29)
 
 **Note:** Version bump only for package @megafon/ui-core
