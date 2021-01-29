@@ -158,7 +158,7 @@ class Icons extends React.Component<{}, IIconsState> {
                         <Copy
                             className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
                             onClick={this.copyToClipBoard &&
-                                    this.copyToClipBoard(`${importStr}.svg;'`, copyBoard.SVG)}
+                                    this.copyToClipBoard(`${importStr}.svg';`, copyBoard.SVG)}
                         />
                     </a>
                 </div>
@@ -168,7 +168,7 @@ class Icons extends React.Component<{}, IIconsState> {
                         <Copy
                             className={cn('info-copy', { active: copyIndex === copyBoard.JSX })}
                             onClick={this.copyToClipBoard
-                                && this.copyToClipBoard(`${importStr};'`, copyBoard.JSX)}
+                                && this.copyToClipBoard(`${importStr}';`, copyBoard.JSX)}
                         />
                     </a>
                 </div>
