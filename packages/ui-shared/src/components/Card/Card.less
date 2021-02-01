@@ -7,6 +7,7 @@
 @verticalIndentSM: 24px;
 
 @{b} {
+    display: flex;
     border-radius: 8px;
     box-shadow: 0 0.25px 3px rgba(0, 0, 0, 0.25);
     background-color: @clearWhite;
@@ -23,6 +24,12 @@
     }
 
     &__inner {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 0;
+        flex-shrink: 1;
+        width: 100%;
+        box-sizing: border-box;
         padding: @verticalIndent @horizontalIndent;
 
         @media @mobileSM {
@@ -39,7 +46,8 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 12px;
+        padding-top: 12px;
+        margin-top: auto;
     }
 
     &__btns-wrapper_left-align {
@@ -95,6 +103,10 @@
 
     &__pic-wrapper_object-fit_contain img {
         width: auto;
+        height: 100%;
+    }
+
+    &_full-height {
         height: 100%;
     }
 }

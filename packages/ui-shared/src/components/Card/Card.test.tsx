@@ -85,4 +85,11 @@ describe('Card', () => {
             );
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('render with fullHeight', () => {
+        const wrapper = shallow(
+            <Card title={title} text={text} isFullHeight />
+            );
+        expect(wrapper).toMatchSnapshot();
+    });
 });
