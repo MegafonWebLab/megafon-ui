@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.102](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.101...@megafon/ui-shared@2.0.0-beta.102) (2021-02-02)
+
+
+### Features
+
+* **card:** add isFullHeight prop ([6e5b927](https://github.com/MegafonWebLab/megafon-ui/commit/6e5b927c9909c57f01c54477c2a67c9b9b1f73e1))
+
+
+
+
+
 # [2.0.0-beta.101](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.100...@megafon/ui-shared@2.0.0-beta.101) (2021-02-02)
 
 **Note:** Version bump only for package @megafon/ui-shared
