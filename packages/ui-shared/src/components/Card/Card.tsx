@@ -35,6 +35,8 @@ export interface ICard {
     link?: ILink;
     /** Расположение кнопки/ссылки по левой стороне */
     isLeftHAlign?: boolean;
+    /** Высота корневого элемента 100% */
+    isFullHeight?: boolean;
     /** Ссылка для всей карточки */
     href?: string;
     /** Режим позиционирования изображения */
@@ -50,6 +52,7 @@ const Card: React.FC<ICard> = ({
     button,
     link,
     isLeftHAlign = false,
+    isFullHeight = false,
     href,
     objectFit = 'fill',
 }) => {
@@ -98,9 +101,9 @@ const Card: React.FC<ICard> = ({
     ), []);
 
     return (
-        <div className={cn('', { 'href': !!href })}>
-            <Element href={href}>
-                <div className={cn('inner')}>
+        <div className={cn('', { 'href': !!href, 'full-height': isFullHeight })}>
+            <Element href={href} className={cn('inner')}>
+                <>
                     {renderImage()}
                     <Header as="h3" className={cn('title')}>{title}</Header>
                     <Paragraph hasMargin={false}>{text}</Paragraph>
@@ -108,7 +111,7 @@ const Card: React.FC<ICard> = ({
                         {isRenderBtn && renderBtn(button)}
                         {link && renderLink(link)}
                     </div>
-                </div>
+                </>
             </Element>
         </div>
     );
@@ -128,6 +131,7 @@ Card.propTypes = {
         href: PropTypes.string,
     }),
     isLeftHAlign: PropTypes.bool,
+    isFullHeight: PropTypes.bool,
     href: PropTypes.string,
     objectFit: PropTypes.oneOf(Object.values(ObjectFit)),
 };
