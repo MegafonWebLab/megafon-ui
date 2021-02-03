@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Header, cnCreate, convert } from '@megafon/ui-core';
+import {Header, cnCreate, convert, TextLink} from '@megafon/ui-core';
 import './Property.less';
 import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
@@ -14,6 +14,13 @@ export interface IProperty {
     icon?: React.ReactNode;
     multirow?: boolean;
 }
+
+const typographyConfig = {
+    a: {
+        component: TextLink,
+        props: ['href', 'target'],
+    },
+};
 
 const cn = cnCreate('mfui-beta-property');
 const Property: React.FC<IProperty> = ({
@@ -33,7 +40,7 @@ const Property: React.FC<IProperty> = ({
                     {icon && i === 0 && (
                         <div className={cn('icon')}>{icon}</div>
                     )}
-                    {convert(titleItem)}
+                    {convert(titleItem, typographyConfig)}
                 </Header>
             )),
         []

@@ -118,7 +118,17 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
                 className="mfui-beta-instructions__articles-item-title"
                 hasMargin={false}
               >
-                Test2
+                Test2 
+                <TextLink
+                  color="blue"
+                  href="/test"
+                  key="1"
+                  target="_blank"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  test link
+                </TextLink>
               </Paragraph>
             </li>
           </ul>
@@ -247,7 +257,17 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
                 className="mfui-beta-instructions__articles-item-title"
                 hasMargin={false}
               >
-                Test2
+                Test2 
+                <TextLink
+                  color="blue"
+                  href="/test"
+                  key="1"
+                  target="_blank"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  test link
+                </TextLink>
               </Paragraph>
             </li>
           </ul>
@@ -383,7 +403,17 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
                 className="mfui-beta-instructions__articles-item-title"
                 hasMargin={false}
               >
-                Test2
+                Test2 
+                <TextLink
+                  color="blue"
+                  href="/test"
+                  key="1"
+                  target="_blank"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  test link
+                </TextLink>
               </Paragraph>
             </li>
           </ul>
@@ -512,7 +542,17 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
                 className="mfui-beta-instructions__articles-item-title"
                 hasMargin={false}
               >
-                Test2
+                Test2 
+                <TextLink
+                  color="blue"
+                  href="/test"
+                  key="1"
+                  target="_blank"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  test link
+                </TextLink>
               </Paragraph>
             </li>
           </ul>
@@ -535,7 +575,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
       Object {
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
-        "title": "Test2",
+        "title": "Test2 <a href=\\"/test\\" target=\\"_blank\\">test link</a>",
       },
     ]
   }
@@ -2273,7 +2313,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
       Object {
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
-        "title": "Test2",
+        "title": "Test2 <a href=\\"/test\\" target=\\"_blank\\">test link</a>",
       },
     ]
   }
@@ -4011,7 +4051,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
       Object {
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
-        "title": "Test2",
+        "title": "Test2 <a href=\\"/test\\" target=\\"_blank\\">test link</a>",
       },
     ]
   }
@@ -5734,7 +5774,29 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                         <p
                           className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-instructions__articles-item-title"
                         >
-                          Test2
+                          Test2 
+                          <TextLink
+                            color="blue"
+                            href="/test"
+                            key="1"
+                            target="_blank"
+                            underlineStyle="solid"
+                            underlineVisibility="hover"
+                          >
+                            <Link
+                              className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue"
+                              href="/test"
+                              target="_blank"
+                            >
+                              <a
+                                className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue"
+                                href="/test"
+                                target="_blank"
+                              >
+                                test link
+                              </a>
+                            </Link>
+                          </TextLink>
                         </p>
                       </Paragraph>
                     </li>

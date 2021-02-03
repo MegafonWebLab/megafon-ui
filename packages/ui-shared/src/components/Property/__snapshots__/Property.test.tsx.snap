@@ -431,12 +431,15 @@ exports[`<Property /> should render with links 1`] = `
         key="0"
       >
         Тарифы 
-        <a
+        <TextLink
+          color="blue"
           href="https://moscow.megafon.ru"
           key="1"
+          underlineStyle="solid"
+          underlineVisibility="hover"
         >
           Включайся!
-        </a>
+        </TextLink>
         , с которыми работает опция
       </Header>
       <div

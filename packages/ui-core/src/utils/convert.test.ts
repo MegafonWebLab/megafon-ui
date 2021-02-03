@@ -1,15 +1,33 @@
 import React from 'react';
-import convertToReact, { Config } from 'utils/convert';
+import convertToReact, { Config } from './convert';
 import Header from '../components/Header/Header';
+import Link from '../components/Link/Link';
 
 const config: Config = {
     h: {
         component: Header,
         props: ['as', 'color', 'margin', 'hAlign'],
     },
+    a: {
+        component: Link,
+        props: ['href', 'target'],
+    },
 };
 
 describe('convertToReact', () => {
+    test('should convert to <Link href="/test" target="_blank" />', () => {
+        const converted: React.ReactNode = convertToReact(
+            '<a href="/test" target="_blank">link</a>',
+            config
+        );
+
+        expect(Array.isArray(converted)).toBe(true);
+        expect(converted[0]).toBeDefined();
+        expect(converted[0].type.name).toBe('Link');
+        expect(converted[0].props.href).toBe('/test');
+        expect(converted[0].props.target).toBe('_blank');
+    });
+
     test('should convert to <Header as=h1 />', () => {
         const converted: React.ReactNode = convertToReact(
             '<h as="h1">title</h>',
