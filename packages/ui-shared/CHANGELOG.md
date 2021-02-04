@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.103](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.102...@megafon/ui-shared@2.0.0-beta.103) (2021-02-04)
+
+
+### Bug Fixes
+
+* **benefitsicons:** fix cn parameter passing ([b6f15ba](https://github.com/MegafonWebLab/megafon-ui/commit/b6f15bac92e8e5f9665d79835b9069038c3f1a08))
+
+
+
+
+
 # [2.0.0-beta.102](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.101...@megafon/ui-shared@2.0.0-beta.102) (2021-02-02)
 
 
