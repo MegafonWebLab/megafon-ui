@@ -2,14 +2,27 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
-import { Button, cnCreate, Header, Paragraph, breakpoints, throttleTime } from '@megafon/ui-core';
+import { Button, cnCreate, Header, Paragraph, breakpoints, throttleTime, ContentArea } from '@megafon/ui-core';
 
-export const VideoTypes = {
+export const ClassName = {
+    BUTTON: 'button',
+    VIDEO: 'video',
+    BACKGROUND_IMAGE: 'background-image',
+};
+
+export const VideoType = {
     YOUTUBE: 'youtube',
     VIDEO: 'video',
 } as const;
 
-type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
+type VideoType = typeof VideoType[keyof typeof VideoType];
+
+export const TextColor = {
+    FRESH_ASPHALT: 'freshAsphalt',
+    CLEAR_WHITE: 'clearWhite',
+} as const;
+
+type TextColorType = typeof TextColor[keyof typeof TextColor];
 
 export interface IContent {
     /** Заголовок */
@@ -22,18 +35,11 @@ export interface IContent {
     href?: string;
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
-}
-
-export interface IImage {
-    /** Изображение для мобильных устройств */
-    mobile: string;
-    /** Изображение для компьютерных устройств */
-    desktop?: string;
+    /** Цвет текста */
+    textColor?: TextColorType;
 }
 
 interface IVideoBannerProps {
-    /** Фоновые изображения */
-    image: IImage;
     /** Данные для блока с контентом */
     content?: IContent;
     /** Источник видео. */
@@ -42,27 +48,52 @@ interface IVideoBannerProps {
     videoType?: VideoType;
     /** Наличие звука в видео */
     isMuted?: boolean;
+    /** Изображение для мобильного разрешения */
+    imageMobile: string;
+    /** Изображение для планшетного разрешения */
+    imageTablet: string;
+    /** Изображение для компьютерного разрешения */
+    imageDesktop?: string;
+    /** Изображение для большого компьютерного разрешения */
+    imageDesktopWide?: string;
 }
 
 const cn = cnCreate('mfui-beta-video-banner');
-const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, content, isMuted = true}) => {
+const VideoBanner: React.FC<IVideoBannerProps> = ({
+    videoSrc,
+    videoType,
+    imageMobile,
+    imageTablet,
+    imageDesktop = '',
+    imageDesktopWide = '',
+    content,
+    isMuted = true,
+}) => {
     const [isMobile, setIsMobile] = React.useState(true);
-    const isVideo = !!videoSrc && !!videoType;
-    const isRenderVideo = !isMobile && isVideo;
+    const [imageSrc, setImageSrc] = React.useState(imageMobile);
+    const isVideoData = !!videoSrc && !!videoType;
+    const isRenderVideo = !isMobile && isVideoData;
 
-    const renderContent = React.useCallback(({ title, description, buttonTitle, href, onButtonClick }) => (
-            <div className={cn('content')}>
-                <Header className={cn('title')} color="white" as="h1">{title}</Header>
+    const renderContent = React.useCallback(({
+        title,
+        description,
+        buttonTitle,
+        href,
+        onButtonClick,
+        textColor = TextColor.FRESH_ASPHALT,
+    }) => (
+            <div className={cn('content', { 'text-color': textColor })}>
+                <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
                 <div className={cn('text')}>
-                    <Paragraph color="clearWhite" hasMargin={false}>{description}</Paragraph>
+                    <Paragraph hasMargin={false} color="inherit">{description}</Paragraph>
                 </div>
-                <Button className={cn('button')} href={href} onClick={onButtonClick}>{buttonTitle}</Button>
+                <Button className={cn(ClassName.BUTTON)} href={href} onClick={onButtonClick}>{buttonTitle}</Button>
             </div>
-    ), []);
+    ), [content]);
 
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
-            case(VideoTypes.YOUTUBE): {
+            case(VideoType.YOUTUBE): {
                 const url = `https://www.youtube.com/embed/${videoSrc}?`;
                 const autoplay = '&autoplay=1';
                 const mute = `&mute=${isMuted ? 1 : 0}`;
@@ -76,7 +107,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
                 const src = `${url}${autoplay}${mute}${loop}${rel}${controls}${info}${policy}${playlist}`;
 
                 return (
-                    <iframe className={cn('video')}
+                    <iframe className={cn(ClassName.VIDEO)}
                             src={src}
                             width="100%"
                             height="100%"
@@ -86,9 +117,9 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
                 );
             }
 
-            case(VideoTypes.VIDEO): {
+            case(VideoType.VIDEO): {
                 return (
-                    <video className={cn('video')} autoPlay loop muted={isMuted}>
+                    <video className={cn(ClassName.VIDEO)} autoPlay loop muted={isMuted}>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
                 );
@@ -100,17 +131,25 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
         }
     }, [videoType, videoSrc, isMuted]);
 
-    const renderImage = React.useCallback(({ mobile, desktop }: IImage) => {
-        const src = desktop && !isMobile ? desktop : mobile;
-
-        return (
-            <img src={src} className={cn('background-image', { 'mobile': !desktop })} />
-        );
-    }, [isMobile]);
-
     React.useEffect(() => {
-        const resizeHandler = () =>
-            window.innerWidth <= breakpoints.mobileBigEnd ? setIsMobile(true) : setIsMobile(false);
+        const getImageSrc = () => {
+            const windowWidth = window.innerWidth;
+
+            switch (true) {
+                case windowWidth >= breakpoints.desktopMiddleStart:
+                    return imageDesktopWide;
+                case windowWidth >= breakpoints.desktopSmallStart && windowWidth <= breakpoints.desktopSmallEnd:
+                    return imageDesktop;
+                case windowWidth >= breakpoints.mobileBigStart && windowWidth <= breakpoints.mobileBigEnd:
+                    return imageTablet;
+                default:
+                    return imageMobile;
+            }
+        };
+        const resizeHandler = () => {
+            setIsMobile(window.innerWidth < breakpoints.desktopSmallStart);
+            setImageSrc(getImageSrc());
+        };
         const resizeHandlerThrottled = throttle(resizeHandler, throttleTime.resize);
 
         resizeHandler();
@@ -123,32 +162,38 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({ videoSrc, videoType, image, 
 
     return (
         <div className={cn()}>
-            <div
-                className={cn('wrapper')}
-            >
-                {renderImage(image)}
-                {content && renderContent(content)}
-                {isRenderVideo && renderVideo()}
-            </div>
+            <ContentArea>
+                <div
+                    className={cn('wrapper')}
+                >
+                    {content && renderContent(content)}
+                    {isRenderVideo && renderVideo()}
+                    {!isRenderVideo && (
+                        <div style={{ backgroundImage: `url(${imageSrc})` }}
+                             className={cn(ClassName.BACKGROUND_IMAGE)} />
+                    )}
+                </div>
+            </ContentArea>
         </div>
     );
 };
 
 VideoBanner.propTypes = {
     videoSrc: PropTypes.string,
-    videoType: PropTypes.oneOf(Object.values(VideoTypes)),
+    videoType: PropTypes.oneOf(Object.values(VideoType)),
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         buttonTitle: PropTypes.string.isRequired,
         href: PropTypes.string,
         onButtonClick: PropTypes.func,
+        textColor: PropTypes.oneOf(Object.values(TextColor)),
     }),
-    image: PropTypes.shape({
-        mobile: PropTypes.string.isRequired,
-        desktop: PropTypes.string,
-    }).isRequired,
     isMuted: PropTypes.bool,
+    imageMobile: PropTypes.string.isRequired,
+    imageTablet: PropTypes.string.isRequired,
+    imageDesktop: PropTypes.string,
+    imageDesktopWide: PropTypes.string,
 };
 
 export default VideoBanner;
