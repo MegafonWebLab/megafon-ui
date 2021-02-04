@@ -39,6 +39,8 @@ export interface IInstructionsProps {
     pictureAlign?: PictureAlignTypesType;
     /** Маска изображения */
     pictureMask?: PictureMaskTypesType;
+    /** Наличие звука в видео */
+    isMuted?: boolean;
 }
 
 const cn = cnCreate('mfui-beta-instructions');
@@ -48,6 +50,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     instructionItems,
     pictureAlign = 'left',
     pictureMask = 'none',
+    isMuted = true,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperClass>();
     const [slideIndex, setSlideIndex] = React.useState(0);
@@ -88,7 +91,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     }, [pictureMask]);
 
     const renderVideo = React.useCallback((mediaUrl: string): JSX.Element => (
-        <video className={cn('swiper-img')} autoPlay muted loop>
+        <video className={cn('swiper-img')} autoPlay muted={isMuted} loop>
             <source src={mediaUrl} type="video/mp4" />
         </video>
     ), []);
@@ -205,6 +208,7 @@ Instructions.propTypes = {
         pictureMaskTypes.LAPTOP,
         pictureMaskTypes.NONE,
     ]),
+    isMuted: PropTypes.bool,
 };
 
 export default Instructions;

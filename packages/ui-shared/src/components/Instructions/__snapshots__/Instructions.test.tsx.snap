@@ -539,6 +539,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
       },
     ]
   }
+  isMuted={false}
   title="Test instruction title"
 >
   <div
@@ -1388,7 +1389,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               autoPlay={true}
                               className="mfui-beta-instructions__swiper-img"
                               loop={true}
-                              muted={true}
+                              muted={false}
                             >
                               <source
                                 src="ImgUrl1"
@@ -2277,6 +2278,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
       },
     ]
   }
+  isMuted={false}
   title="Test instruction title"
 >
   <div
@@ -3126,7 +3128,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               autoPlay={true}
                               className="mfui-beta-instructions__swiper-img"
                               loop={true}
-                              muted={true}
+                              muted={false}
                             >
                               <source
                                 src="ImgUrl1"
@@ -4015,6 +4017,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
       },
     ]
   }
+  isMuted={false}
   title="Test instruction title"
 >
   <div
@@ -4864,7 +4867,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               autoPlay={true}
                               className="mfui-beta-instructions__swiper-img"
                               loop={true}
-                              muted={true}
+                              muted={false}
                             >
                               <source
                                 src="ImgUrl1"

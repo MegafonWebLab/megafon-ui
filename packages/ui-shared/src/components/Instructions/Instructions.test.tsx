@@ -91,16 +91,20 @@ describe('<Instructions />', () => {
         });
 
         it('should render with default props', () => {
+            // Props isMuted must be false, if the rendering method is "mount". Otherwise an error will occur.
+            // https://github.com/enzymejs/enzyme/issues/2326
             const wrapper = mount(
-                <Instructions {...props} />
+                <Instructions {...props} isMuted={false} />
             );
 
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should rerender when window resize', () => {
+            // Props isMuted must be false, if the rendering method is "mount". Otherwise an error will occur.
+            // https://github.com/enzymejs/enzyme/issues/2326
             const wrapper = mount(
-                <Instructions {...props} />
+                <Instructions {...props} isMuted={false} />
             );
 
             expect(wrapper).toMatchSnapshot();
