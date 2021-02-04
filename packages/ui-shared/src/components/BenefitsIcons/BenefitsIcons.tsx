@@ -121,7 +121,7 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
     const hAlign = iconPosition === IconPositionEnum.CENTER_TOP ? 'center' : 'left';
 
     return (
-        <div className={cn(className)}>
+        <div className={cn([className])}>
             <div className={cn('inner')}>
                 <Grid guttersLeft="medium" hAlign={hAlign}>
                     {items.map(({ title, text, icon }, i) => (
