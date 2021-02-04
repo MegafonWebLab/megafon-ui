@@ -2,7 +2,7 @@
 
 exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
 <div
-  className="mfui-beta-benefits-icons__className"
+  className="mfui-beta-benefits-icons className"
 >
   <div
     className="mfui-beta-benefits-icons__inner"
