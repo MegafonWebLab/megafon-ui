@@ -16,13 +16,8 @@ interface IContent {
     href?: string;
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
-}
-
-interface IImage {
-    /** Изображение для мобильных устройств */
-    mobile: string;
-    /** Изображение для компьютерных устройств */
-    desktop?: string;
+    /** Цвет текста */
+    textColor?: 'freshAsphalt' | 'clearWhite';
 }
 
 ```

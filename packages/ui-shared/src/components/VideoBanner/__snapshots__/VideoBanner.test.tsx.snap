@@ -1,289 +1,260 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<VideoBanner /> render component on desktop resolution only with required props 1`] = `
-<VideoBanner
-  image={
-    Object {
-      "desktop": "image-desktop.png",
-      "mobile": "image-mobile.png",
-    }
-  }
->
-  <div
-    className="mfui-beta-video-banner"
-  >
-    <div
-      className="mfui-beta-video-banner__wrapper"
-    >
-      <img
-        className="mfui-beta-video-banner__background-image"
-        src="image-desktop.png"
-      />
-    </div>
-  </div>
-</VideoBanner>
-`;
-
-exports[`<VideoBanner /> render component on mobile resolution only with required props 1`] = `
+exports[`<VideoBanner /> render component with pictures 1`] = `
 <div
   className="mfui-beta-video-banner"
 >
-  <div
-    className="mfui-beta-video-banner__wrapper"
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
   >
-    <img
-      className="mfui-beta-video-banner__background-image mfui-beta-video-banner__background-image_mobile"
-      src="image-mobile.png"
-    />
-  </div>
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
 </div>
 `;
 
-exports[`<VideoBanner /> render with content 1`] = `
-<VideoBanner
-  content={
-    Object {
-      "buttonTitle": "Текст в кнопке",
-      "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
-      "href": "#",
-      "title": "Текст ≈40 симовлов. Короткие слова",
-    }
-  }
-  image={
-    Object {
-      "desktop": "image-desktop.png",
-      "mobile": "image-mobile.png",
-    }
-  }
+exports[`<VideoBanner /> render component with pictures and content 1`] = `
+<div
+  className="mfui-beta-video-banner"
 >
-  <div
-    className="mfui-beta-video-banner"
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
   >
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <img
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_clearWhite"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Paragraph
+            color="inherit"
+            hasMargin={false}
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Paragraph>
+        </div>
+        <Button
+          className="mfui-beta-video-banner__button"
+          href="#"
+        >
+          Текст в кнопке
+        </Button>
+      </div>
+      <div
         className="mfui-beta-video-banner__background-image"
-        src="image-desktop.png"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
       />
-      <div
-        className="mfui-beta-video-banner__content"
-      >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="white"
-          hAlign="inherit"
-        >
-          <h1
-            className="mfui-beta-header mfui-beta-header_color_white mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
-          >
-            Текст ≈40 симовлов. Короткие слова
-          </h1>
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Paragraph
-            color="clearWhite"
-            hasMargin={false}
-          >
-            <p
-              className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_clearWhite"
-            >
-              Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-            </p>
-          </Paragraph>
-        </div>
-        <Button
-          className="mfui-beta-video-banner__button"
-          href="#"
-        >
-          <a
-            className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
-            disabled={false}
-            href="#"
-            onClick={[Function]}
-          >
-            <div
-              className="mfui-beta-button__inner"
-            >
-              <div
-                className="mfui-beta-button__content"
-              >
-                Текст в кнопке
-              </div>
-            </div>
-          </a>
-        </Button>
-      </div>
     </div>
-  </div>
-</VideoBanner>
+  </ContentArea>
+</div>
 `;
 
-exports[`<VideoBanner /> render with video 1`] = `
+exports[`<VideoBanner /> tests with local window render with video 1`] = `
 <VideoBanner
-  image={
-    Object {
-      "mobile": "image-mobile.png",
-    }
-  }
-  isMuted={false}
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
   videoSrc="video.mp4"
   videoType="video"
 >
   <div
     className="mfui-beta-video-banner"
   >
-    <div
-      className="mfui-beta-video-banner__wrapper"
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
     >
-      <img
-        className="mfui-beta-video-banner__background-image mfui-beta-video-banner__background-image_mobile"
-        src="image-mobile.png"
-      />
-      <video
-        autoPlay={true}
-        className="mfui-beta-video-banner__video"
-        loop={true}
-        muted={false}
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
       >
-        <source
-          src="video.mp4"
-          type="video/mp4"
-        />
-      </video>
-    </div>
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <video
+              autoPlay={true}
+              className="mfui-beta-video-banner__video"
+              loop={true}
+              muted={true}
+            >
+              <source
+                src="video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </div>
+    </ContentArea>
   </div>
 </VideoBanner>
 `;
 
-exports[`<VideoBanner /> render with video and content 1`] = `
+exports[`<VideoBanner /> tests with local window render with video and content 1`] = `
 <VideoBanner
   content={
     Object {
       "buttonTitle": "Текст в кнопке",
       "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
       "href": "#",
+      "textColor": "clearWhite",
       "title": "Текст ≈40 симовлов. Короткие слова",
     }
   }
-  image={
-    Object {
-      "mobile": "image-mobile.png",
-    }
-  }
-  isMuted={false}
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
   videoSrc="video.mp4"
   videoType="video"
 >
   <div
     className="mfui-beta-video-banner"
   >
-    <div
-      className="mfui-beta-video-banner__wrapper"
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
     >
-      <img
-        className="mfui-beta-video-banner__background-image mfui-beta-video-banner__background-image_mobile"
-        src="image-mobile.png"
-      />
       <div
-        className="mfui-beta-video-banner__content"
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="white"
-          hAlign="inherit"
-        >
-          <h1
-            className="mfui-beta-header mfui-beta-header_color_white mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
-          >
-            Текст ≈40 симовлов. Короткие слова
-          </h1>
-        </Header>
         <div
-          className="mfui-beta-video-banner__text"
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
         >
-          <Paragraph
-            color="clearWhite"
-            hasMargin={false}
-          >
-            <p
-              className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_clearWhite"
-            >
-              Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-            </p>
-          </Paragraph>
-        </div>
-        <Button
-          className="mfui-beta-video-banner__button"
-          href="#"
-        >
-          <a
-            className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
-            disabled={false}
-            href="#"
-            onClick={[Function]}
+          <div
+            className="mfui-beta-video-banner__wrapper"
           >
             <div
-              className="mfui-beta-button__inner"
+              className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_clearWhite"
             >
-              <div
-                className="mfui-beta-button__content"
+              <Header
+                as="h1"
+                className="mfui-beta-video-banner__title"
+                color="inherit"
+                hAlign="inherit"
               >
-                Текст в кнопке
+                <h1
+                  className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
+                >
+                  Текст ≈40 симовлов. Короткие слова
+                </h1>
+              </Header>
+              <div
+                className="mfui-beta-video-banner__text"
+              >
+                <Paragraph
+                  color="inherit"
+                  hasMargin={false}
+                >
+                  <p
+                    className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_inherit"
+                  >
+                    Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+                  </p>
+                </Paragraph>
               </div>
+              <Button
+                className="mfui-beta-video-banner__button"
+                href="#"
+              >
+                <a
+                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
+                  disabled={false}
+                  href="#"
+                  onClick={[Function]}
+                >
+                  <div
+                    className="mfui-beta-button__inner"
+                  >
+                    <div
+                      className="mfui-beta-button__content"
+                    >
+                      Текст в кнопке
+                    </div>
+                  </div>
+                </a>
+              </Button>
             </div>
-          </a>
-        </Button>
+            <video
+              autoPlay={true}
+              className="mfui-beta-video-banner__video"
+              loop={true}
+              muted={true}
+            >
+              <source
+                src="video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
       </div>
-      <video
-        autoPlay={true}
-        className="mfui-beta-video-banner__video"
-        loop={true}
-        muted={false}
-      >
-        <source
-          src="video.mp4"
-          type="video/mp4"
-        />
-      </video>
-    </div>
+    </ContentArea>
   </div>
 </VideoBanner>
 `;
 
-exports[`<VideoBanner /> render with youtube video 1`] = `
+exports[`<VideoBanner /> tests with local window render with youtube video 1`] = `
 <VideoBanner
-  image={
-    Object {
-      "mobile": "image-mobile.png",
-    }
-  }
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
   videoSrc="2Sps5MnvlKM"
   videoType="youtube"
 >
   <div
     className="mfui-beta-video-banner"
   >
-    <div
-      className="mfui-beta-video-banner__wrapper"
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
     >
-      <img
-        className="mfui-beta-video-banner__background-image mfui-beta-video-banner__background-image_mobile"
-        src="image-mobile.png"
-      />
-      <iframe
-        allow="autoplay"
-        className="mfui-beta-video-banner__video"
-        frameBorder="0"
-        height="100%"
-        src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
-        width="100%"
-      />
-    </div>
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <iframe
+              allow="autoplay"
+              className="mfui-beta-video-banner__video"
+              frameBorder="0"
+              height="100%"
+              src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
   </div>
 </VideoBanner>
 `;

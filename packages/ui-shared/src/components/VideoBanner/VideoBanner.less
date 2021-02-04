@@ -2,16 +2,29 @@
 
 @b: e('.mfui-beta-video-banner');
 
-.centerAbsolute() {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 @{b} {
     position: relative;
     overflow: hidden;
+
+    @media @desktopMU {
+        margin-left: -@contentHorizontalIndentDesktopMU;
+        margin-right: -@contentHorizontalIndentDesktopMU;
+    }
+
+    @media @desktopS {
+        margin-left: -@contentHorizontalIndentDesktopS;
+        margin-right: -@contentHorizontalIndentDesktopS;
+    }
+
+    @media @mobileB {
+        margin-left: -@contentHorizontalIndentMobileB;
+        margin-right: -@contentHorizontalIndentMobileB;
+    }
+
+    @media @mobileSM {
+        margin-left: -@contentHorizontalIndentMobileSM;
+        margin-right: -@contentHorizontalIndentMobileSM;
+    }
 
     &__wrapper {
         display: flex;
@@ -25,27 +38,10 @@
             height: 500px;
         }
 
-        @media @desktopMU {
-            padding-left: 80px;
-            padding-right: 80px;
-        }
-
-        @media @desktopS {
-            padding-left: 64px;
-            padding-right: 64px;
-        }
-
-        @media @mobileB {
-            padding-left: 48px;
-            padding-right: 48px;
-        }
-
         @media @mobileSM {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-left: 16px;
-            padding-right: 16px;
         }
     }
 
@@ -55,13 +51,17 @@
 
     &__background-image,
     &__video {
-        .centerAbsolute();
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
-    &__background-image_mobile {
-        @media @desktop {
-            display: none;
-        }
+    &__background-image {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
     }
 
     &__content {
@@ -91,6 +91,14 @@
             width: 288px;
             height: 316px;
         }
+    }
+
+    &__content_text-color_freshAsphalt {
+        color: @freshAsphalt;
+    }
+
+    &__content_text-color_clearWhite {
+        color: @clearWhite;
     }
 
     &__text {

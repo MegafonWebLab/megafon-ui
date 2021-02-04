@@ -1,7 +1,7 @@
 import { Playground } from 'docz';
 import VideoBanner from '../VideoBanner';
 import { ContentArea } from '@megafon/ui-core';
-import { content, imageOnlyMobile, image, video, youtubeVideoId } from './VideoBanner.docz.tsx'
+import { content, imageMobile, video, youtubeVideoId, imageDesktop } from './VideoBanner.docz.tsx'
 
 ```javascript collapse=Демо данные
 
@@ -10,12 +10,8 @@ const content: IContent = {
     description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     href: '#',
     buttonTitle: 'Текст в кнопке',
-    onButtonClick: () => alert('button click'),
-}
-
-const image: IImage = {
-    desktop: 'image-desktop.png',
-    mobile: 'image-mobile.png'
+    onButtonClick: () => {},
+    textColor: 'clearWhite'
 }
 
 Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
@@ -29,15 +25,15 @@ const image: IImage = {
 
 <Playground>
     <ContentArea>
-        <VideoBanner videoType="video" videoSrc={video} image={imageOnlyMobile} />
+        <VideoBanner videoType="video" videoSrc={video} imageMobile={imageMobile} imageTablet={imageMobile} />
     </ContentArea>
 </Playground>
 
 ## С контентом
 
 <Playground>
-    <ContentArea outerBackgroundColor='freshAsphalt'>
-        <VideoBanner videoType="video" videoSrc={video} content={content} image={imageOnlyMobile} />
+    <ContentArea>
+        <VideoBanner videoType="video" videoSrc={video} content={content} imageMobile={imageMobile} imageTablet={imageMobile} />
     </ContentArea>
 </Playground>
 
@@ -45,14 +41,14 @@ const image: IImage = {
 
 <Playground>
     <ContentArea>
-        <VideoBanner image={image} content={content} image={image} />
-    </ContentArea>
+        <VideoBanner imageMobile={imageMobile} imageTablet={imageMobile} imageDesktop={imageDesktop} imageDesktopWide={imageDesktop} content={content} />
+        </ContentArea>
 </Playground>
 
 ## Видео с youtube
 
 <Playground>
     <ContentArea>
-        <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} image={imageOnlyMobile} />
+        <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} imageMobile={imageMobile} imageTablet={imageMobile} />
     </ContentArea>
 </Playground>
