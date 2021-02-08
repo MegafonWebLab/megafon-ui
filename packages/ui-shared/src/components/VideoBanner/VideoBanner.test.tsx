@@ -99,6 +99,23 @@ describe('<VideoBanner />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('render video with sounds enabled', () => {
+            localWindow.innerWidth = 1920;
+            const wrapper = mount(
+                <VideoBanner
+                    imageMobile={imageMobile}
+                    imageTablet={imageTablet}
+                    videoType={VideoType.VIDEO}
+                    videoSrc={video}
+                    isMuted={false}
+                />
+            );
+            const videoElement = wrapper.find(`.${cn(ClassName.VIDEO)}`);
+            const mutedProp = videoElement.get(0).props.muted;
+
+            expect(mutedProp).toBeFalsy();
+        });
+
         it('render with video and content', () => {
             localWindow.innerWidth = 1920;
             const wrapper = mount(

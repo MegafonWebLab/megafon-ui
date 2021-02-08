@@ -82,14 +82,14 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         onButtonClick,
         textColor = TextColor.FRESH_ASPHALT,
     }) => (
-            <div className={cn('content', { 'text-color': textColor })}>
-                <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
-                <div className={cn('text')}>
-                    <Paragraph hasMargin={false} color="inherit">{description}</Paragraph>
-                </div>
-                <Button className={cn(ClassName.BUTTON)} href={href} onClick={onButtonClick}>{buttonTitle}</Button>
+        <div className={cn('content', { 'text-color': textColor })}>
+            <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
+            <div className={cn('text')}>
+                <Paragraph hasMargin={false} color="inherit">{description}</Paragraph>
             </div>
-    ), [content]);
+            <Button className={cn(ClassName.BUTTON)} href={href} onClick={onButtonClick}>{buttonTitle}</Button>
+        </div>
+    ), []);
 
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
