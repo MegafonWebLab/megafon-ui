@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.85](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.84...@megafon/ui-core@2.0.0-beta.85) (2021-02-08)
+
+
+### Bug Fixes
+
+* **icons:** added icons with merged path for Gag, Metro ([a2cb6ed](https://github.com/MegafonWebLab/megafon-ui/commit/a2cb6edd2a2a6c92415e51f909306227782719d3))
+
+
+### Features
+
+* **icons:** added plus, minus icons ([51c4bbe](https://github.com/MegafonWebLab/megafon-ui/commit/51c4bbe38fe1452394e5fef7b18b10d792e3faa3))
+
+
+### BREAKING CHANGES
+
+* **icons:** Metro_32 icon will be larger, new icon has less padding from wrapper to shape
+
+
+
+
+
 # [2.0.0-beta.84](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.83...@megafon/ui-core@2.0.0-beta.84) (2021-02-02)
 
 
