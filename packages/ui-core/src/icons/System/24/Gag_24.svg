@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>Source/System Icons/24/Gag_24</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M16,4 C9.372583,4 4,9.372583 4,16 C4,22.627417 9.372583,28 16,28 C22.627417,28 28,22.627417 28,16 C28,9.372583 22.627417,4 16,4 Z" id="path-1"></path>
-    </defs>
-    <g id="Source/System-Icons/24/Gag_24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <g id="Mask" fill-rule="nonzero"></g>
-        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
-            <rect id="Rectangle" x="0" y="0" width="32" height="32"></rect>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"/></svg>
