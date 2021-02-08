@@ -125,9 +125,47 @@ describe('<Select />', () => {
         });
     });
 
+    describe('onChange', () => {
+        it('calls onChange', () => {
+            const handleChange = jest.fn();
+            const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} onChange={handleChange} />);
+
+            wrapper.find(`.${cn('combobox')}`).simulate('change', {
+                target: {
+                    value: 'test-name-1',
+                },
+            });
+
+            expect(handleChange).toBeCalledWith({ target: { value: 'test-name-1' } });
+        });
+
+    });
+
+    describe('onBlur', () => {
+        it('calls onBlur', () => {
+            const handleBlur = jest.fn();
+            const wrapper = shallow(<Select {...props} onBlur={handleBlur} />);
+            const title = wrapper.find(`.${cn('title')}`);
+            const control = wrapper.find(`.${cn('control')}`);
+            const listItem = wrapper.find(`.${cn('list-item')}`);
+
+            title.simulate('click');
+            listItem.last().simulate('mouseenter', { preventDefault: () => {}});
+            listItem.last().simulate('click');
+
+            wrapper.update();
+
+            control.simulate('keyDown', { key: 'Tab', preventDefault: () => {}});
+
+            expect(handleBlur).toBeCalledWith({ title: 'test-name-2', value: 2 });
+
+        });
+
+    });
+
     describe('key typing handlers', () => {
         it('calls onChange while typing in the field with debounce', async () => {
-            const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} />);
+            const wrapper = shallow(<Select {...props} withFilter type={SelectTypes.COMBOBOX} />);
 
             expect(wrapper).toMatchSnapshot();
 

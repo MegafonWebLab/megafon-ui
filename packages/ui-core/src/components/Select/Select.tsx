@@ -34,6 +34,8 @@ export interface ISelectProps extends IDataAttributes {
     type?: SelectTypesType;
     /** Заголовок поля */
     label?: string;
+    /** Атрибут для использования в формах */
+    name?: string;
     /** HTML идентификатор для заголовка поля */
     labelId?: string;
     /** Текущий выбранный элемент селекта */
@@ -52,6 +54,8 @@ export interface ISelectProps extends IDataAttributes {
     notFoundText?: string;
     /** Массив элементов селекта */
     items: ISelectItem[];
+    /** Свойство включает/отключает внутренний фильтр компонента по списку items (по умолчанию выключен) */
+    withFilter?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -66,6 +70,12 @@ export interface ISelectProps extends IDataAttributes {
     onSelect?: (
         e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
     ) => void;
+    /** Обработчик изменения значения поля ввода элемента селекта с type="combobox" */
+    onChange?: (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => void;
+    /** Обработчик потери фокуса селекта */
+    onBlur?: ( dataItem?: ISelectItem ) => void;
 }
 
 interface ISelectState {
@@ -74,6 +84,7 @@ interface ISelectState {
     filteredItems: ISelectItem[];
     comparableInputValue: string;
     inputValue: string;
+    activeItem: ISelectItem | undefined;
 }
 
 const cn = cnCreate('mfui-beta-select');
@@ -108,7 +119,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
             })
         ),
+        withFilter: PropTypes.bool,
         onSelect: PropTypes.func,
+        onChange: PropTypes.func,
+        onBlur: PropTypes.func,
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     };
 
@@ -149,6 +163,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             filteredItems: props.items,
             comparableInputValue: '',
             inputValue: '',
+            activeItem: undefined,
         };
         this.itemsNodeList = [];
     }
@@ -202,13 +217,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleClickOutside = (e: MouseEvent): void => {
-        const { isOpened } = this.state;
+        const { isOpened, activeItem } = this.state;
+        const { onBlur } = this.props;
 
         if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpened) {
             return;
         }
 
         this.setState({ isOpened: false });
+
+        onBlur && onBlur(activeItem);
     }
 
     handleOpenDropdown = (): void => {
@@ -229,9 +247,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         const { title } = item;
 
-        this.setState({isOpened: false, inputValue: title, comparableInputValue: title, filteredItems: items });
+        this.setState({
+            isOpened: false,
+            activeItem: item,
+            inputValue: title,
+            comparableInputValue: title,
+            filteredItems: items,
+        });
 
         onSelect && onSelect(e, item);
+
     }
 
     handleHoverItem = (index: number) => (e: React.MouseEvent<HTMLDivElement>): void => {
@@ -253,16 +278,23 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        const { onChange, withFilter } = this.props;
+
         const filterValue = e.target.value;
 
-        this.setState({ inputValue: filterValue });
+        this.setState({ inputValue: filterValue, activeItem: { value: filterValue, title: filterValue }});
 
-        this.debouncedComboboxChange(filterValue);
+        if (withFilter) {
+            this.debouncedComboboxChange(filterValue);
+        }
+
+        onChange && onChange(e);
+
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
-        const { activeIndex, isOpened, filteredItems } = this.state;
-        const { isDisabled } = this.props;
+        const { activeIndex, isOpened, filteredItems, activeItem } = this.state;
+        const { isDisabled, onBlur } = this.props;
 
         if (filteredItems.length === 0 || isDisabled) {
             return true;
@@ -298,6 +330,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         }
         if (e.key === 'Tab') {
             this.setState({ isOpened: false });
+
+            onBlur && onBlur(activeItem);
 
             return false;
         }
@@ -364,7 +398,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     getNodeList = node => this.itemsNodeList.push(node);
 
     renderTitle() {
-        const { placeholder, items, currentValue } = this.props;
+        const { placeholder, items, currentValue, name } = this.props;
         const item = items.find(elem => elem.value === currentValue);
         let inputTitle: string | undefined = placeholder;
 
@@ -381,6 +415,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 onClick={this.handleOpenDropdown}
             >
                 <div className={cn('title-inner')}>
+                    <input type="hidden" name={name} value={inputTitle} disabled/>
                     {inputTitle}
                 </div>
             </div>
@@ -388,7 +423,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     renderCombobox() {
-        const { placeholder } = this.props;
+        const { placeholder, name } = this.props;
         const { inputValue } = this.state;
 
         return (
@@ -399,6 +434,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 type="text"
                 value={inputValue}
                 placeholder={placeholder}
+                name={name}
             />
         );
     }

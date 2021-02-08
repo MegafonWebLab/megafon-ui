@@ -19,7 +19,12 @@ exports[`<Select /> it renders with data attributes 1`] = `
       >
         <div
           className="mfui-beta-select__title-inner"
-        />
+        >
+          <input
+            disabled={true}
+            type="hidden"
+          />
+        </div>
       </div>
       <div
         className="mfui-beta-select__arrow-wrap"
@@ -491,6 +496,11 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
           <div
             className="mfui-beta-select__title-inner"
           >
+            <input
+              disabled={true}
+              type="hidden"
+              value="test-placeholder"
+            />
             test-placeholder
           </div>
         </div>
@@ -619,6 +629,11 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
           <div
             className="mfui-beta-select__title-inner"
           >
+            <input
+              disabled={true}
+              type="hidden"
+              value="test-placeholder"
+            />
             test-placeholder
           </div>
         </div>
@@ -863,7 +878,12 @@ exports[`<Select /> snapshots renders with default props 1`] = `
         >
           <div
             className="mfui-beta-select__title-inner"
-          />
+          >
+            <input
+              disabled={true}
+              type="hidden"
+            />
+          </div>
         </div>
         <div
           className="mfui-beta-select__arrow-wrap"
@@ -985,6 +1005,11 @@ exports[`<Select /> snapshots renders with props 1`] = `
           <div
             className="mfui-beta-select__title-inner"
           >
+            <input
+              disabled={true}
+              type="hidden"
+              value="test-placeholder"
+            />
             test-placeholder
           </div>
         </div>
@@ -1058,7 +1083,12 @@ exports[`<Select /> states of select renders with disabled state 1`] = `
       >
         <div
           className="mfui-beta-select__title-inner"
-        />
+        >
+          <input
+            disabled={true}
+            type="hidden"
+          />
+        </div>
       </div>
       <div
         className="mfui-beta-select__arrow-wrap"
@@ -1099,7 +1129,12 @@ exports[`<Select /> states of select renders with error state 1`] = `
       >
         <div
           className="mfui-beta-select__title-inner"
-        />
+        >
+          <input
+            disabled={true}
+            type="hidden"
+          />
+        </div>
       </div>
       <div
         className="mfui-beta-select__arrow-wrap"
@@ -1145,7 +1180,12 @@ exports[`<Select /> states of select renders with valid state 1`] = `
       >
         <div
           className="mfui-beta-select__title-inner"
-        />
+        >
+          <input
+            disabled={true}
+            type="hidden"
+          />
+        </div>
       </div>
       <div
         className="mfui-beta-select__arrow-wrap"
