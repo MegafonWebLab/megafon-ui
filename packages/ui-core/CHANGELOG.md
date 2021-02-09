@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.86](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.85...@megafon/ui-core@2.0.0-beta.86) (2021-02-09)
+
+
+### Features
+
+* **counter:** edits added ([90e829a](https://github.com/MegafonWebLab/megafon-ui/commit/90e829aac312f2fad8c1124c8126b663568ac55e))
+
+
+### BREAKING CHANGES
+
+* **counter:** СlassName prop was deleted. Added new prop for custom class names.
+
+
+
+
+
 # [2.0.0-beta.85](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.84...@megafon/ui-core@2.0.0-beta.85) (2021-02-08)
 
 
