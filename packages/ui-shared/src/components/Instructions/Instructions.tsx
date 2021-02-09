@@ -4,7 +4,7 @@ import './Instructions.less';
 import throttle from 'lodash.throttle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
-import { breakpoints, cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
+import { breakpoints, cnCreate, Grid, GridColumn, Header, Paragraph, convert, TextLink } from '@megafon/ui-core';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -40,6 +40,16 @@ export interface IInstructionsProps {
     /** Маска изображения */
     pictureMask?: PictureMaskTypesType;
 }
+
+const typographyConfig = {
+    a: {
+        component: TextLink,
+        props: ['href', 'target'],
+    },
+    b: {
+        component: ({ children }) => <b>{children}</b>,
+    },
+};
 
 const cn = cnCreate('mfui-beta-instructions');
 const swiperSlideCn = cn('slide');
@@ -122,7 +132,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                         <span className={cn('articles-item-dot-number')}>{ind + 1}</span>
                     </div>
                     <Paragraph className={cn('articles-item-title')} hasMargin={false}>
-                        {itemTitle}
+                        {convert(itemTitle, typographyConfig)}
                     </Paragraph>
                 </li>
             ))}

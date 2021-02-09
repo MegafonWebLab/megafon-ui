@@ -1,35 +1,13 @@
 import React from 'react';
 import convert from 'htmr';
-import Header from 'components/Header/Header';
-import Paragraph from 'components/Paragraph/Paragraph';
-import List from 'components/List/List';
 
 type ConfigItem = {
     component: React.ElementType;
-    props: string[];
+    props?: string[];
 };
 
 export type Config = {
     [key: string]: ConfigItem;
-};
-
-const typographyConfig: Config = {
-    h: {
-        component: Header,
-        props: ['as', 'color', 'margin', 'hAlign'],
-    },
-    p: {
-        component: Paragraph,
-        props: ['align', 'size', 'hasMargin', 'color'],
-    },
-    ul: {
-        component: List,
-        props: ['as', 'hAlign', 'weight', 'color'],
-    },
-    a: {
-        component: 'a',
-        props: ['href'],
-    },
 };
 
 const getTransform = (config: Config) => {
@@ -58,7 +36,7 @@ const getTransform = (config: Config) => {
     };
 };
 
-const convertToReact = (html, config = typographyConfig) => {
+const convertToReact = (html, config: Config) => {
     let nodes = convert(html, {
         preserveAttributes: [],
         dangerouslySetChildren: [],

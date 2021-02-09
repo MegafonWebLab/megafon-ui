@@ -1,8 +1,15 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate, Collapse, Paragraph, convert } from '@megafon/ui-core';
+import {cnCreate, Collapse, Paragraph, convert, TextLink} from '@megafon/ui-core';
 import './PropertyDescription.less';
 import { Desc } from './types';
+
+const typographyConfig = {
+    a: {
+        component: TextLink,
+        props: ['href', 'target'],
+    },
+};
 
 const cn = cnCreate('mfui-beta-property-description');
 const PropertyDescription: React.FC<Desc> = ({
@@ -19,7 +26,7 @@ const PropertyDescription: React.FC<Desc> = ({
         () => (
             value.map((valueItem, i) => (
                 <Paragraph hasMargin={false} key={i}>
-                    {convert(valueItem)}
+                    {convert(valueItem, typographyConfig)}
                 </Paragraph>
             ))
         ),
