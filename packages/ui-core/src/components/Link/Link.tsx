@@ -14,7 +14,7 @@ export interface ILinkProps {
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
     /** Добавление атрибута download */
     download?: boolean;
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
 class Link extends React.Component<ILinkProps, {}> {
