@@ -1,6 +1,17 @@
 @import '~styles/base';
 @b: e('.mfui-beta-counter');
 
+@text-color-disabled: rgba(@freshAsphalt, 0.5);
+
+.disabled() {
+    cursor: default;
+    background-color: @spbSky1;
+}
+
+.iconDisabled() {
+    fill: @text-color-disabled;
+}
+
 @{b} {
     background-color: @clearWhite;
     box-sizing: border-box;
@@ -25,16 +36,18 @@
         appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         text-decoration: none;
-        min-width: 32px;
+        max-width: 32px;
 
         &:hover {
             background-color: @spbSky0;
         }
 
         &:disabled {
-            cursor: default;
-            color: @spbSky2;
-            background-color: @spbSky1;
+            .disabled();
+
+            @{b}__icon {
+                .iconDisabled();
+            }
         }
     }
 
@@ -48,14 +61,9 @@
         border-bottom-right-radius: 50px;
     }
 
-    &__minus {
-        position: relative;
-        top: -1px;
-    }
-
-    &__plus {
-        position: relative;
-        top: 1px;
+    &__icon {
+        width: 55%;
+        height: 55%;
     }
 
     &__input-box {
@@ -85,15 +93,16 @@
 
     &_disabled {
         @{b}__btn {
-            background-color: @spbSky1;
-            color: @spbSky2;
-            cursor: default;
+            .disabled();
         }
 
         @{b}__input {
-            background-color: @spbSky1;
-            color: rgba(51, 51, 51, 0.5);
-            cursor: default;
+            .disabled();
+            color: @text-color-disabled;
+        }
+
+        @{b}__icon {
+            .iconDisabled();
         }
     }
 }

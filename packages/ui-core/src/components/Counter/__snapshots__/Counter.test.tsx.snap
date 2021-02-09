@@ -10,11 +10,9 @@ exports[`<Counter /> layout renders Counter 1`] = `
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="mfui-beta-counter__minus"
-    >
-      –
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
   <div
     className="mfui-beta-counter__input-box"
@@ -33,36 +31,32 @@ exports[`<Counter /> layout renders Counter 1`] = `
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="mfui-beta-counter__plus"
-    >
-      +
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
 </div>
 `;
 
 exports[`<Counter /> layout renders Counter with props 1`] = `
 <div
-  className="mfui-beta-counter mfui-beta-counter_disabled test-class"
+  className="mfui-beta-counter mfui-beta-counter_disabled root-class"
 >
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_left"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_left button-minus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="mfui-beta-counter__minus"
-    >
-      –
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
   <div
     className="mfui-beta-counter__input-box"
   >
     <input
-      className="mfui-beta-counter__input"
+      className="mfui-beta-counter__input input-class"
       disabled={true}
       onBlur={[Function]}
       onChange={[Function]}
@@ -70,16 +64,14 @@ exports[`<Counter /> layout renders Counter with props 1`] = `
     />
   </div>
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_right"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_right button-plus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="mfui-beta-counter__plus"
-    >
-      +
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
 </div>
 `;
