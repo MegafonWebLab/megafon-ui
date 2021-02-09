@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate, Grid, GridColumn, Accordion } from '@megafon/ui-core';
+import './AccordionBox.less';
 
 export interface IAccordionBox {
     /** Заголовок аккордеона */
