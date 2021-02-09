@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.87](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.86...@megafon/ui-core@2.0.0-beta.87) (2021-02-09)
+
+
+### Bug Fixes
+
+* **convert:** typographic config is defined by the component ([fbac681](https://github.com/MegafonWebLab/megafon-ui/commit/fbac6810730cb4352568c20120374e7c374a9c23))
+
+
+
+
+
 # [2.0.0-beta.86](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.85...@megafon/ui-core@2.0.0-beta.86) (2021-02-09)
 
 
