@@ -6,12 +6,19 @@ import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
 
 export interface IProperty {
+    /** Массив с данными для строки */
     items: Item[];
+    /** Дополнительный класс для основного контейнера */
     className?: string;
+    /** Текст для бейджа */
     badge?: string;
+    /** Наличие нижней границы */
     borderBottom?: boolean;
+    /** Единое значение для всей строки */
     mergedValue?: string;
+    /** Иконка для строки */
     icon?: React.ReactNode;
+    /** Несколько рядов в строке */
     multirow?: boolean;
 }
 
@@ -59,22 +66,37 @@ const Property: React.FC<IProperty> = ({
 
     return (
         <div className={cn({ 'border-bottom': borderBottom }, [className])}>
-            {badge && <span className={cn('badge')}>{badge}</span>}
-            {items.map(({ title, value, description }, i) => (
-                <div className={cn('item', { multirow })} key={i}>
-                    <div className={cn('inner')}>
-                        {renderTitle(title)}
-                        {renderDescription(description)}
-                    </div>
-                    {value && !mergedValue && <Header as="h3">{value}</Header>}
-
-                    {mergedValue && i === 0 && (
-                        <div className={cn('merged-value')}>
-                            <Header as="h3">{mergedValue}</Header>
-                        </div>
-                    )}
+            {badge && (
+                <div className={cn('badge-wrapper')}>
+                    <span className={cn('badge')}>{badge}</span>
                 </div>
-            ))}
+            )}
+            <div className={cn('content')}>
+                <div className={cn('items-wrapper')}>
+                    {items.map(({ title, value, description }, i) => (
+                        <div className={cn('item', { multirow })} key={i}>
+                            <div className={cn('inner')}>
+                                {renderTitle(title)}
+                                {renderDescription(description)}
+                            </div>
+                            {
+                                !mergedValue && (
+                                    <div className={cn('value-wrapper')}>
+                                        {value &&  (
+                                            <Header as="h3">{value}</Header>
+                                        )}
+                                    </div>
+                                )
+                            }
+                        </div>
+                    ))}
+                </div>
+                {mergedValue && (
+                    <div className={cn('value-wrapper', { merged: true })}>
+                        <Header as="h3">{mergedValue}</Header>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

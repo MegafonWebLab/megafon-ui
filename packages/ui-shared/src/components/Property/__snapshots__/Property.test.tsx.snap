@@ -5,28 +5,40 @@ exports[`<Property /> should render only title 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
+      <div
+        className="mfui-beta-property__item"
         key="0"
       >
-        Звонки на все номера России
-      </Header>
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Звонки на все номера России
+          </Header>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
+      </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -36,105 +48,128 @@ exports[`<Property /> should render several rows 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item mfui-beta-property__item_multirow"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
-    >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
-        key="0"
-      >
-        Абонентская плата:
-      </Header>
-    </div>
-  </div>
-  <div
-    className="mfui-beta-property__item mfui-beta-property__item_multirow"
-    key="1"
-  >
-    <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
       <div
-        className="mfui-beta-property__desc"
+        className="mfui-beta-property__item mfui-beta-property__item_multirow"
         key="0"
       >
-        <PropertyDescription
-          value={
-            Array [
-              "Звонки на все номера России",
-            ]
-          }
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Абонентская плата:
+          </Header>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
         />
       </div>
-    </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
-  </div>
-  <div
-    className="mfui-beta-property__item mfui-beta-property__item_multirow"
-    key="2"
-  >
-    <div
-      className="mfui-beta-property__inner"
-    >
       <div
-        className="mfui-beta-property__desc"
-        key="0"
+        className="mfui-beta-property__item mfui-beta-property__item_multirow"
+        key="1"
       >
-        <PropertyDescription
-          value={
-            Array [
-              "Звонки на все номера России",
-            ]
-          }
-        />
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              value={
+                Array [
+                  "Звонки на все номера России",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
       </div>
-    </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
-  </div>
-  <div
-    className="mfui-beta-property__item mfui-beta-property__item_multirow"
-    key="3"
-  >
-    <div
-      className="mfui-beta-property__inner"
-    >
       <div
-        className="mfui-beta-property__desc"
-        key="0"
+        className="mfui-beta-property__item mfui-beta-property__item_multirow"
+        key="2"
       >
-        <PropertyDescription
-          value={
-            Array [
-              "Звонки на все номера России",
-            ]
-          }
-        />
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              value={
+                Array [
+                  "Звонки на все номера России",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-property__item mfui-beta-property__item_multirow"
+        key="3"
+      >
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              value={
+                Array [
+                  "Звонки на все номера России",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
       </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -144,30 +179,41 @@ exports[`<Property /> should render title and description 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
-        key="0"
-      >
-        Интернет на все сервисы
-      </Header>
       <div
-        className="mfui-beta-property__desc"
+        className="mfui-beta-property__item"
         key="0"
       >
-        <PropertyDescription
-          value={
-            Array [
-              "Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка",
-            ]
-          }
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Интернет на все сервисы
+          </Header>
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              value={
+                Array [
+                  "Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
         />
       </div>
     </div>
@@ -180,41 +226,53 @@ exports[`<Property /> should render title and description in several rows 1`] = 
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
-        key="0"
-      >
-        Интернет на все сервисы
-      </Header>
       <div
-        className="mfui-beta-property__desc"
+        className="mfui-beta-property__item"
         key="0"
       >
-        <PropertyDescription
-          value={
-            Array [
-              "Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка",
-              "Google Play Music, Apple Music, онлайн радио.",
-            ]
-          }
-        />
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Интернет на все сервисы
+          </Header>
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              value={
+                Array [
+                  "Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка",
+                  "Google Play Music, Apple Music, онлайн радио.",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
       </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -224,42 +282,54 @@ exports[`<Property /> should render title and hidden description 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
-        key="0"
-      >
-        Музыкальные сервисы
-      </Header>
       <div
-        className="mfui-beta-property__desc"
+        className="mfui-beta-property__item"
         key="0"
       >
-        <PropertyDescription
-          isCollapsible={true}
-          value={
-            Array [
-              "Звонки на местные городские номера, когда вы находитесь дома,",
-              "оплачиваются отдельно.",
-            ]
-          }
-        />
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Музыкальные сервисы
+          </Header>
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              isCollapsible={true}
+              value={
+                Array [
+                  "Звонки на местные городские номера, когда вы находитесь дома,",
+                  "оплачиваются отдельно.",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
       </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -269,36 +339,48 @@ exports[`<Property /> should render title in several row 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
+      <div
+        className="mfui-beta-property__item"
         key="0"
       >
-        Детализация в салонах МегаФона
-      </Header>
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
-        key="1"
-      >
-        Оплачивается каждый день заказанной детализации.
-      </Header>
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Детализация в салонах МегаФона
+          </Header>
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="1"
+          >
+            Оплачивается каждый день заказанной детализации.
+          </Header>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            2ГБ
+          </Header>
+        </div>
+      </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      2ГБ
-    </Header>
   </div>
 </div>
 `;
@@ -307,34 +389,50 @@ exports[`<Property /> should render with badge 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <span
-    className="mfui-beta-property__badge"
-  >
-    Акция
-  </span>
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__badge-wrapper"
+  >
+    <span
+      className="mfui-beta-property__badge"
+    >
+      Акция
+    </span>
+  </div>
+  <div
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
+      <div
+        className="mfui-beta-property__item"
         key="0"
       >
-        Звонки на все номера России
-      </Header>
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Звонки на все номера России
+          </Header>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
+      </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -344,28 +442,40 @@ exports[`<Property /> should render with border bottom 1`] = `
   className="mfui-beta-property mfui-beta-property_border-bottom"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
+      <div
+        className="mfui-beta-property__item"
         key="0"
       >
-        Звонки на все номера России
-      </Header>
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Звонки на все номера России
+          </Header>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
+      </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -375,40 +485,52 @@ exports[`<Property /> should render with icon 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
+      <div
+        className="mfui-beta-property__item"
         key="0"
       >
         <div
-          className="mfui-beta-property__icon"
+          className="mfui-beta-property__inner"
         >
-          <test-file-stub
-            style={
-              Object {
-                "display": "block",
-                "fill": "#00B956",
-              }
-            }
-          />
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            <div
+              className="mfui-beta-property__icon"
+            >
+              <test-file-stub
+                style={
+                  Object {
+                    "display": "block",
+                    "fill": "#00B956",
+                  }
+                }
+              />
+            </div>
+            Интернет на все сервисы
+          </Header>
         </div>
-        Интернет на все сервисы
-      </Header>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
+      </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -418,50 +540,62 @@ exports[`<Property /> should render with links 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
-        key="0"
-      >
-        Тарифы 
-        <TextLink
-          color="blue"
-          href="https://moscow.megafon.ru"
-          key="1"
-          underlineStyle="solid"
-          underlineVisibility="hover"
-        >
-          Включайся!
-        </TextLink>
-        , с которыми работает опция
-      </Header>
       <div
-        className="mfui-beta-property__desc"
+        className="mfui-beta-property__item"
         key="0"
       >
-        <PropertyDescription
-          value={
-            Array [
-              "<a href=\\"https://moscow.megafon.ru\\">Выбирай, Смотри, Слушай, Говори, Общайся</a>",
-            ]
-          }
-        />
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Тарифы 
+            <TextLink
+              color="blue"
+              href="https://moscow.megafon.ru"
+              key="1"
+              underlineStyle="solid"
+              underlineVisibility="hover"
+            >
+              Включайся!
+            </TextLink>
+            , с которыми работает опция
+          </Header>
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              value={
+                Array [
+                  "<a href=\\"https://moscow.megafon.ru\\">Выбирай, Смотри, Слушай, Говори, Общайся</a>",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500 ₽
+          </Header>
+        </div>
       </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500 ₽
-    </Header>
   </div>
 </div>
 `;
@@ -471,53 +605,65 @@ exports[`<Property /> should render with several descriptions 1`] = `
   className="mfui-beta-property"
 >
   <div
-    className="mfui-beta-property__item"
-    key="0"
+    className="mfui-beta-property__content"
   >
     <div
-      className="mfui-beta-property__inner"
+      className="mfui-beta-property__items-wrapper"
     >
-      <Header
-        as="h5"
-        color="black"
-        hAlign="inherit"
+      <div
+        className="mfui-beta-property__item"
         key="0"
       >
-        Доп звонки
-      </Header>
-      <div
-        className="mfui-beta-property__desc"
-        key="0"
-      >
-        <PropertyDescription
-          value={
-            Array [
-              "После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.",
-            ]
-          }
-        />
-      </div>
-      <div
-        className="mfui-beta-property__desc"
-        key="1"
-      >
-        <PropertyDescription
-          isCollapsible={true}
-          value={
-            Array [
-              "Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.",
-            ]
-          }
-        />
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Доп звонки
+          </Header>
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              value={
+                Array [
+                  "После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.",
+                ]
+              }
+            />
+          </div>
+          <div
+            className="mfui-beta-property__desc"
+            key="1"
+          >
+            <PropertyDescription
+              isCollapsible={true}
+              value={
+                Array [
+                  "Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.",
+                ]
+              }
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <Header
+            as="h3"
+            color="black"
+            hAlign="inherit"
+          >
+            500Р
+          </Header>
+        </div>
       </div>
     </div>
-    <Header
-      as="h3"
-      color="black"
-      hAlign="inherit"
-    >
-      500Р
-    </Header>
   </div>
 </div>
 `;
