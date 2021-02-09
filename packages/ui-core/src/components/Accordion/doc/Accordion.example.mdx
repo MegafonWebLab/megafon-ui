@@ -1,29 +1,45 @@
 import { Playground } from 'docz';
 import Accordion from '../Accordion';
 import Balance from 'icons/Basic/24/Balance_24.svg';
-import { DemoParagraphWrapper } from './Accordion.docz';
 import Paragraph from 'components/Paragraph/Paragraph';
+
+## Использование по умолчанию
 
 <Playground>
     <Accordion title="Списание абонентской платы">
-        <DemoParagraphWrapper>
+        <Paragraph hasMargin={false}>
+            При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
+            за месяц и дополнительных услуг, указанных в заявке.
+            В день перехода на тариф списывается полная сумма абонентской платы, далее списания происходят раз
+            в месяц в тот же день.
+        </Paragraph>
+    </Accordion>
+</Playground>
+
+## Использование с вертикальными отступами
+
+<Playground>
+    <Accordion title="Списание абонентской платы" hasVerticalPaddings>
             <Paragraph hasMargin={false}>
                 При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
                 за месяц и дополнительных услуг, указанных в заявке.
                 В день перехода на тариф списывается полная сумма абонентской платы, далее списания происходят раз
                 в месяц в тот же день.
             </Paragraph>
-        </DemoParagraphWrapper>
-    </Accordion>
+        </Accordion>
+</Playground>
+
+## Использование с вертикальными отступами и открытым аккордионом по умолчанию
+
+<Playground>
     <Accordion
         title="Подключение к интернету"
         isOpened={true}
+        hasVerticalPaddings
     >
-        <DemoParagraphWrapper>
-            <Paragraph hasMargin={false}>
-                Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
-                Монтажник проведёт все необходимые работы под ключ.
-            </Paragraph>
-        </DemoParagraphWrapper>
+        <Paragraph hasMargin={false}>
+            Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </Paragraph>
     </Accordion>
 </Playground>
