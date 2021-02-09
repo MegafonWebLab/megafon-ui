@@ -11,7 +11,7 @@ export interface ITextLinkProps extends ILinkProps {
     underlineVisibility: 'hover' | 'always';
     /** Стиль подчеркивания */
     underlineStyle: 'solid' | 'dashed' | 'border' | 'none';
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
 const cn = cnCreate('mfui-beta-text-link');
