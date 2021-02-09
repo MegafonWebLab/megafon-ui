@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.88](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.87...@megafon/ui-core@2.0.0-beta.88) (2021-02-09)
+
+
+### Bug Fixes
+
+* **link:** one more type for children ([b21a946](https://github.com/MegafonWebLab/megafon-ui/commit/b21a9468e534dc366e776e6ca1951ab40213f652))
+* **textlink:** one more type for children ([e235712](https://github.com/MegafonWebLab/megafon-ui/commit/e235712436216cf88917d8297e4233e65a3c2f5a))
+
+
+
+
+
 # [2.0.0-beta.87](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.86...@megafon/ui-core@2.0.0-beta.87) (2021-02-09)
 
 
