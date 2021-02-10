@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.89](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.88...@megafon/ui-core@2.0.0-beta.89) (2021-02-10)
+
+
+### Features
+
+* **accordion:** add hasVerticalPaddings prop ([74ecad8](https://github.com/MegafonWebLab/megafon-ui/commit/74ecad8ee48f14676ad9cd3a93e512d3d11f6afa))
+
+
+
+
+
 # [2.0.0-beta.88](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.87...@megafon/ui-core@2.0.0-beta.88) (2021-02-09)
 
 

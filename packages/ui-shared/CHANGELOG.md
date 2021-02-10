@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.109](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.108...@megafon/ui-shared@2.0.0-beta.109) (2021-02-10)
+
+
+### Bug Fixes
+
+* **accordionbox:** add styles for used inside components (accordion, property) ([c39e346](https://github.com/MegafonWebLab/megafon-ui/commit/c39e34692621b5bdf0f90eb3f6fd8dbaa7121518))
+
+
+
+
+
 # [2.0.0-beta.108](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.107...@megafon/ui-shared@2.0.0-beta.108) (2021-02-09)
 
 **Note:** Version bump only for package @megafon/ui-shared
