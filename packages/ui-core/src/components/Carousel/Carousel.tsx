@@ -48,6 +48,8 @@ export interface ICarouselProps {
     autoPlayDelay?: number;
     /** Тема навигации */
     navTheme?: NavThemeType;
+    /** Css селектор элемента, при перетаскивании которого не будет происходить смена слайдов */
+    noSwipingSelector?: string;
     /** Обработчик клика по стрелке вперед (должен быть обернут в useCallback) */
     onNextClick?: (index: number) => void;
     /** Обработчик клика по стрелке назад (должен быть обернут в useCallback) */
@@ -86,6 +88,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     autoPlayDelay = 5000,
     loop = false,
     navTheme = 'light',
+    noSwipingSelector,
     children,
     onNextClick,
     onPrevClick,
@@ -192,6 +195,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 loop={loop}
                 pagination={{ clickable: true }}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
+                noSwipingSelector={noSwipingSelector}
                 onSwiper={handleSwiper}
                 onReachBeginning={handleReachBeginnig}
                 onReachEnd={handleReachEnd}
@@ -241,6 +245,7 @@ Carousel.propTypes = {
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
     navTheme: PropTypes.oneOf(Object.values(NavTheme)),
+    noSwipingSelector: PropTypes.string,
     onNextClick: PropTypes.func,
     onPrevClick: PropTypes.func,
     onChange: PropTypes.func,
