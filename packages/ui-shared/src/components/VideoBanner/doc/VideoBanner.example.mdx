@@ -14,8 +14,15 @@ const content: IContent = {
     textColor: 'clearWhite'
 }
 
+```
+
+```javascript
+
 Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
 <VideoBanner videoType="youtube" videoSrc="2Sps5MnvlKM" />
+
+Если в компоненте не указан источник видео, то необходимо добавить изображения для всех разрешений.
+<VideoBanner imageMobile='imageMobile' imageTablet='imageMobile' imageDesktop='imageDesktop' imageDesktopWide='imageDesktop' />
 
 ```
 

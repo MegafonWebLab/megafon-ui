@@ -16,7 +16,6 @@ const content = {
     description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     href: '#',
     buttonTitle: 'Текст в кнопке',
-    textColor: TextColor.CLEAR_WHITE,
 };
 
 type LocalWindowType = Omit<Window, 'innerWidth'> & {
@@ -39,9 +38,36 @@ describe('<VideoBanner />', () => {
     });
 
     it('render component with pictures and content', () => {
-        const wrapper = shallow(<VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} content={content} />);
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                imageDesktop={imageDesktop}
+                imageDesktopWide={imageDesktopWide}
+                content={content}
+            />
+        );
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render component with pictures and non default content text color', () => {
+        const localContent = {
+            ...content,
+            textColor: TextColor.CLEAR_WHITE,
+        };
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                imageDesktop={imageDesktop}
+                imageDesktopWide={imageDesktopWide}
+                content={localContent}
+            />);
+        const contentWrapper = wrapper.find(`.${cn(ClassName.CONTENT)}`);
+        const contentWrapperClassName = contentWrapper.props().className;
+
+        expect(contentWrapperClassName).toContain('mfui-beta-video-banner__content_text-color_clearWhite');
     });
 
     it('should call onClick props', () => {
@@ -99,6 +125,21 @@ describe('<VideoBanner />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('render with video and content', () => {
+            localWindow.innerWidth = 1920;
+            const wrapper = mount(
+                <VideoBanner
+                    imageMobile={imageMobile}
+                    imageTablet={imageTablet}
+                    videoType={VideoType.VIDEO}
+                    videoSrc={video}
+                    content={content}
+                />
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('render video with sounds enabled', () => {
             localWindow.innerWidth = 1920;
             const wrapper = mount(
@@ -111,23 +152,26 @@ describe('<VideoBanner />', () => {
                 />
             );
             const videoElement = wrapper.find(`.${cn(ClassName.VIDEO)}`);
-            const mutedProp = videoElement.get(0).props.muted;
+            const mutedProp = videoElement.props().muted;
 
             expect(mutedProp).toBeFalsy();
         });
 
-        it('render with video and content', () => {
+        it('render youtube video with sounds enabled', () => {
             localWindow.innerWidth = 1920;
             const wrapper = mount(
                 <VideoBanner
                     imageMobile={imageMobile}
                     imageTablet={imageTablet}
-                    videoType={VideoType.VIDEO}
-                    videoSrc={video}
-                    content={content}
+                    videoType={VideoType.YOUTUBE}
+                    videoSrc={youtubeVideoId}
+                    isMuted={false}
                 />
             );
-            expect(wrapper).toMatchSnapshot();
+            const videoElement = wrapper.find(`.${cn(ClassName.VIDEO)}`);
+            const videoSrc = videoElement.props().src;
+
+            expect(videoSrc).toContain('&mute=0');
         });
 
         it('should not render video on mobile resolution', () => {

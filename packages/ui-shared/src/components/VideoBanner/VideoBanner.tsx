@@ -8,6 +8,7 @@ export const ClassName = {
     BUTTON: 'button',
     VIDEO: 'video',
     BACKGROUND_IMAGE: 'background-image',
+    CONTENT: 'content',
 };
 
 export const VideoType = {
@@ -82,7 +83,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         onButtonClick,
         textColor = TextColor.FRESH_ASPHALT,
     }) => (
-        <div className={cn('content', { 'text-color': textColor })}>
+        <div className={cn(ClassName.CONTENT, { 'text-color': textColor })}>
             <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
             <div className={cn('text')}>
                 <Paragraph hasMargin={false} color="inherit">{description}</Paragraph>

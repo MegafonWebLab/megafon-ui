@@ -36,7 +36,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
       className="mfui-beta-video-banner__wrapper"
     >
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_clearWhite"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
       >
         <Header
           as="h1"
@@ -125,7 +125,6 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
       "buttonTitle": "Текст в кнопке",
       "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
       "href": "#",
-      "textColor": "clearWhite",
       "title": "Текст ≈40 симовлов. Короткие слова",
     }
   }
@@ -151,7 +150,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
             className="mfui-beta-video-banner__wrapper"
           >
             <div
-              className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_clearWhite"
+              className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
             >
               <Header
                 as="h1"
