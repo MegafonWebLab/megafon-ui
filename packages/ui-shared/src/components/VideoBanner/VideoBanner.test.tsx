@@ -64,10 +64,8 @@ describe('<VideoBanner />', () => {
                 imageDesktopWide={imageDesktopWide}
                 content={localContent}
             />);
-        const contentWrapper = wrapper.find(`.${cn(ClassName.CONTENT)}`);
-        const contentWrapperClassName = contentWrapper.props().className;
 
-        expect(contentWrapperClassName).toContain('mfui-beta-video-banner__content_text-color_clearWhite');
+        expect(wrapper).toMatchSnapshot();
     });
 
     it('should call onClick props', () => {
@@ -151,10 +149,8 @@ describe('<VideoBanner />', () => {
                     isMuted={false}
                 />
             );
-            const videoElement = wrapper.find(`.${cn(ClassName.VIDEO)}`);
-            const mutedProp = videoElement.props().muted;
 
-            expect(mutedProp).toBeFalsy();
+            expect(wrapper).toMatchSnapshot();
         });
 
         it('render youtube video with sounds enabled', () => {
@@ -168,10 +164,8 @@ describe('<VideoBanner />', () => {
                     isMuted={false}
                 />
             );
-            const videoElement = wrapper.find(`.${cn(ClassName.VIDEO)}`);
-            const videoSrc = videoElement.props().src;
 
-            expect(videoSrc).toContain('&mute=0');
+            expect(wrapper).toMatchSnapshot();
         });
 
         it('should not render video on mobile resolution', () => {
@@ -184,9 +178,8 @@ describe('<VideoBanner />', () => {
                     videoSrc={video}
                 />
             );
-            const videoElement = wrapper.find(`.${cn(ClassName.VIDEO)}`);
 
-            expect(videoElement).toHaveLength(0);
+            expect(wrapper).toMatchSnapshot();
         });
 
         it('should not render background image on desktop resolution with video', () => {
@@ -199,9 +192,8 @@ describe('<VideoBanner />', () => {
                     videoSrc={youtubeVideoId}
                 />
             );
-            const backgroundImageElement = wrapper.find(`.${cn(ClassName.BACKGROUND_IMAGE)}`);
 
-            expect(backgroundImageElement).toHaveLength(0);
+            expect(wrapper).toMatchSnapshot();
         });
 
         it('render mobile image on relevant resolution', () => {
@@ -214,10 +206,8 @@ describe('<VideoBanner />', () => {
                     imageDesktopWide={imageDesktopWide}
                 />
             );
-            const backgroundImageElement = wrapper.find(`.${cn(ClassName.BACKGROUND_IMAGE)}`);
-            const imageSource = backgroundImageElement.get(0).props.style.backgroundImage;
 
-            expect(imageSource).toBe(`url(${imageMobile})`);
+            expect(wrapper).toMatchSnapshot();
         });
 
         it('render tablet image on relevant resolution', () => {
@@ -230,10 +220,8 @@ describe('<VideoBanner />', () => {
                     imageDesktopWide={imageDesktopWide}
                 />
             );
-            const backgroundImageElement = wrapper.find(`.${cn(ClassName.BACKGROUND_IMAGE)}`);
-            const imageSource = backgroundImageElement.get(0).props.style.backgroundImage;
 
-            expect(imageSource).toBe(`url(${imageTablet})`);
+            expect(wrapper).toMatchSnapshot();
         });
 
         it('render desktop image on relevant resolution', () => {
@@ -246,13 +234,11 @@ describe('<VideoBanner />', () => {
                     imageDesktopWide={imageDesktopWide}
                 />
             );
-            const backgroundImageElement = wrapper.find(`.${cn(ClassName.BACKGROUND_IMAGE)}`);
-            const imageSource = backgroundImageElement.get(0).props.style.backgroundImage;
 
-            expect(imageSource).toBe(`url(${imageDesktop})`);
+            expect(wrapper).toMatchSnapshot();
         });
 
-        it('render desktop image on relevant resolution', () => {
+        it('render wide desktop image on relevant resolution', () => {
             localWindow.innerWidth = 1280;
             const wrapper = mount(
                 <VideoBanner
@@ -262,10 +248,8 @@ describe('<VideoBanner />', () => {
                     imageDesktopWide={imageDesktopWide}
                 />
             );
-            const backgroundImageElement = wrapper.find(`.${cn(ClassName.BACKGROUND_IMAGE)}`);
-            const imageSource = backgroundImageElement.get(0).props.style.backgroundImage;
 
-            expect(imageSource).toBe(`url(${imageDesktopWide})`);
+            expect(wrapper).toMatchSnapshot();
         });
     });
 });
