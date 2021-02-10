@@ -165,7 +165,27 @@ describe('<Select />', () => {
 
     describe('key typing handlers', () => {
         it('calls onChange while typing in the field with debounce', async () => {
-            const wrapper = shallow(<Select {...props} withFilter type={SelectTypes.COMBOBOX} />);
+            const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} />);
+
+            expect(wrapper).toMatchSnapshot();
+
+            wrapper.find(`.${cn('combobox')}`).simulate('change', {
+                target: {
+                    value: 'test-name-1',
+                },
+            });
+
+            await new Promise((r) => setTimeout(r, 150));
+
+            expect(wrapper).toMatchSnapshot();
+
+            await new Promise((r) => setTimeout(r, 100));
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('calls onChange while typing in the field without debounce', async () => {
+            const wrapper = shallow(<Select {...props} withOutFilter type={SelectTypes.COMBOBOX} />);
 
             expect(wrapper).toMatchSnapshot();
 

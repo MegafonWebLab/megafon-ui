@@ -54,8 +54,8 @@ export interface ISelectProps extends IDataAttributes {
     notFoundText?: string;
     /** Массив элементов селекта */
     items: ISelectItem[];
-    /** Свойство включает/отключает внутренний фильтр компонента по списку items (по умолчанию выключен) */
-    withFilter?: boolean;
+    /** Свойство отключает внутренний фильтр компонента по списку items (по умолчанию фильтр включен) */
+    withOutFilter?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -119,7 +119,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
             })
         ),
-        withFilter: PropTypes.bool,
+        withOutFilter: PropTypes.bool,
         onSelect: PropTypes.func,
         onChange: PropTypes.func,
         onBlur: PropTypes.func,
@@ -278,13 +278,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        const { onChange, withFilter } = this.props;
+        const { onChange, withOutFilter } = this.props;
 
         const filterValue = e.target.value;
 
         this.setState({ inputValue: filterValue, activeItem: { value: filterValue, title: filterValue }});
 
-        if (withFilter) {
+        if (!withOutFilter) {
             this.debouncedComboboxChange(filterValue);
         }
 
