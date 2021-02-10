@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.90](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.89...@megafon/ui-core@2.0.0-beta.90) (2021-02-10)
+
+
+### Features
+
+* **carousel:** add noSwipingSelector prop ([2f96991](https://github.com/MegafonWebLab/megafon-ui/commit/2f96991516fbc25935966b2200a9624b1ed27240))
+
+
+
+
+
 # [2.0.0-beta.89](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.88...@megafon/ui-core@2.0.0-beta.89) (2021-02-10)
 
 
