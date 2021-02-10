@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.110](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.109...@megafon/ui-shared@2.0.0-beta.110) (2021-02-10)
+
+
+### Features
+
+* **videobanner:** added content text color prop, added image props for all resolutions ([a0799ff](https://github.com/MegafonWebLab/megafon-ui/commit/a0799ff06f8337d2f4d2669153aadeb6ee88e424))
+
+
+### BREAKING CHANGES
+
+* **videobanner:** Removed image prop as an object. Added separate image props for each resolution.
+
+
+
+
+
 # [2.0.0-beta.109](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.108...@megafon/ui-shared@2.0.0-beta.109) (2021-02-10)
 
 
