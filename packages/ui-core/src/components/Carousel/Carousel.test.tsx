@@ -13,6 +13,7 @@ const props = {
     autoPlay: true,
     autoPlayDelay: 1000,
     navTheme: NavTheme.GREEN,
+    noSwipingSelector: 'button',
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
     onChange: jest.fn(),
