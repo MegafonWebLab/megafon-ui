@@ -49,19 +49,45 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
         <div
           className="mfui-beta-video-banner__text"
         >
-          <Paragraph
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
             color="inherit"
-            hasMargin={false}
+            hAlign="inherit"
           >
             Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Paragraph>
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
         </div>
-        <Button
-          className="mfui-beta-video-banner__button"
-          href="#"
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
         >
-          Текст в кнопке
-        </Button>
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
       </div>
       <div
         className="mfui-beta-video-banner__background-image"
@@ -101,19 +127,45 @@ exports[`<VideoBanner /> render component with pictures and non default content 
         <div
           className="mfui-beta-video-banner__text"
         >
-          <Paragraph
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
             color="inherit"
-            hasMargin={false}
+            hAlign="inherit"
           >
             Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Paragraph>
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
         </div>
-        <Button
-          className="mfui-beta-video-banner__button"
-          href="#"
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
         >
-          Текст в кнопке
-        </Button>
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
       </div>
       <div
         className="mfui-beta-video-banner__background-image"
@@ -373,9 +425,12 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
 <VideoBanner
   content={
     Object {
+      "buttonHref": "#",
       "buttonTitle": "Текст в кнопке",
+      "cost": "oт <b>1000 ₽</b> за сообщение",
       "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
-      "href": "#",
+      "linkTitle": "Личный кабинет услуги",
+      "linkUrl": "#",
       "title": "Текст ≈40 симовлов. Короткие слова",
     }
   }
@@ -418,38 +473,85 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
               <div
                 className="mfui-beta-video-banner__text"
               >
-                <Paragraph
+                <Header
+                  as="h5"
+                  className="mfui-beta-video-banner__description"
                   color="inherit"
-                  hasMargin={false}
+                  hAlign="inherit"
                 >
-                  <p
-                    className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_inherit"
+                  <h5
+                    className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-video-banner__description"
                   >
                     Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-                  </p>
-                </Paragraph>
-              </div>
-              <Button
-                className="mfui-beta-video-banner__button"
-                href="#"
-              >
-                <a
-                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
-                  disabled={false}
-                  href="#"
-                  onClick={[Function]}
+                  </h5>
+                </Header>
+                <div
+                  className="mfui-beta-video-banner__cost"
                 >
-                  <div
-                    className="mfui-beta-button__inner"
+                  oт 
+                  <component
+                    key="1"
+                  >
+                    <Header
+                      as="h3"
+                      className="mfui-beta-video-banner__value"
+                      color="inherit"
+                      hAlign="inherit"
+                    >
+                      <h3
+                        className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-video-banner__value"
+                      >
+                        1000 ₽
+                      </h3>
+                    </Header>
+                  </component>
+                   за сообщение
+                </div>
+              </div>
+              <div
+                className="mfui-beta-video-banner__btns-wrapper"
+              >
+                <Button
+                  className="mfui-beta-video-banner__button"
+                  href="#"
+                >
+                  <a
+                    className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-video-banner__button"
+                    disabled={false}
+                    href="#"
+                    onClick={[Function]}
                   >
                     <div
-                      className="mfui-beta-button__content"
+                      className="mfui-beta-button__inner"
                     >
-                      Текст в кнопке
+                      <div
+                        className="mfui-beta-button__content"
+                      >
+                        Текст в кнопке
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </Button>
+                  </a>
+                </Button>
+                <TextLink
+                  className="mfui-beta-video-banner__link"
+                  color="blue"
+                  href="#"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  <Link
+                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
+                    href="#"
+                  >
+                    <a
+                      className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
+                      href="#"
+                    >
+                      Личный кабинет услуги
+                    </a>
+                  </Link>
+                </TextLink>
+              </div>
             </div>
             <video
               autoPlay={true}

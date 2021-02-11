@@ -2,13 +2,26 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
-import { Button, cnCreate, Header, Paragraph, breakpoints, throttleTime, ContentArea } from '@megafon/ui-core';
+import {
+    Button,
+    cnCreate,
+    Header,
+    breakpoints,
+    throttleTime,
+    ContentArea,
+    TextLink,
+    convert,
+} from '@megafon/ui-core';
 
-export const ClassName = {
-    BUTTON: 'button',
-    VIDEO: 'video',
-    BACKGROUND_IMAGE: 'background-image',
-    CONTENT: 'content',
+export enum ClassName {
+    BUTTON = 'button',
+}
+
+const typographyConfig = {
+    b: {
+        component: ({ children }) =>
+            <Header className={cn('value')} as="h3" color="inherit">{children}</Header>,
+    },
 };
 
 export const VideoType = {
@@ -33,11 +46,17 @@ export interface IContent {
     /** Текст кнопки */
     buttonTitle: string;
     /** Ссылка на кнопке */
-    href?: string;
+    buttonHref?: string;
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
     textColor?: TextColorType;
+    /** Текст ссылки */
+    linkTitle?: string;
+    /** Адрес ссылки */
+    linkUrl?: string;
+    /** Строка со стоимостью услуги */
+    cost?: string;
 }
 
 interface IVideoBannerProps {
@@ -79,16 +98,35 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         title,
         description,
         buttonTitle,
-        href,
+        buttonHref,
         onButtonClick,
         textColor = TextColor.FRESH_ASPHALT,
+        linkTitle,
+        linkUrl,
+        cost,
     }) => (
-        <div className={cn(ClassName.CONTENT, { 'text-color': textColor })}>
+        <div className={cn('content', { 'text-color': textColor })}>
             <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
             <div className={cn('text')}>
-                <Paragraph hasMargin={false} color="inherit">{description}</Paragraph>
+                <Header as="h5" color="inherit" className={cn('description')}>
+                    {description}
+                </Header>
+                {cost && (
+                    <div className={cn('cost')}>
+                        {convert(cost, typographyConfig)}
+                    </div>
+                )}
             </div>
-            <Button className={cn(ClassName.BUTTON)} href={href} onClick={onButtonClick}>{buttonTitle}</Button>
+            <div className={cn('btns-wrapper')}>
+                <Button className={cn(ClassName.BUTTON)} href={buttonHref} onClick={onButtonClick}>
+                    {buttonTitle}
+                </Button>
+                {linkTitle && (
+                    <TextLink className={cn('link')} href={linkUrl}>
+                        {linkTitle}
+                    </TextLink>
+                )}
+            </div>
         </div>
     ), []);
 
@@ -108,7 +146,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 const src = `${url}${autoplay}${mute}${loop}${rel}${controls}${info}${policy}${playlist}`;
 
                 return (
-                    <iframe className={cn(ClassName.VIDEO)}
+                    <iframe className={cn('video')}
                             src={src}
                             width="100%"
                             height="100%"
@@ -120,7 +158,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
 
             case(VideoType.VIDEO): {
                 return (
-                    <video className={cn(ClassName.VIDEO)} autoPlay loop muted={isMuted}>
+                    <video className={cn('video')} autoPlay loop muted={isMuted}>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
                 );
@@ -171,7 +209,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                     {isRenderVideo && renderVideo()}
                     {!isRenderVideo && (
                         <div style={{ backgroundImage: `url(${imageSrc})` }}
-                             className={cn(ClassName.BACKGROUND_IMAGE)} />
+                             className={cn('background-image')} />
                     )}
                 </div>
             </ContentArea>
@@ -189,6 +227,9 @@ VideoBanner.propTypes = {
         href: PropTypes.string,
         onButtonClick: PropTypes.func,
         textColor: PropTypes.oneOf(Object.values(TextColor)),
+        linkTitle: PropTypes.string,
+        linkUrl: PropTypes.string,
+        cost: PropTypes.string,
     }),
     isMuted: PropTypes.bool,
     imageMobile: PropTypes.string.isRequired,

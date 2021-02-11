@@ -14,8 +14,11 @@ const youtubeVideoId = '2Sps5MnvlKM';
 const content = {
     title: 'Текст ≈40 симовлов. Короткие слова',
     description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
-    href: '#',
+    buttonHref: '#',
     buttonTitle: 'Текст в кнопке',
+    linkTitle: 'Личный кабинет услуги',
+    linkUrl: '#',
+    cost: 'oт <b>1000 ₽</b> за сообщение',
 };
 
 type LocalWindowType = Omit<Window, 'innerWidth'> & {

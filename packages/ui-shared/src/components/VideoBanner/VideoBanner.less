@@ -102,7 +102,7 @@
         color: @clearWhite;
     }
 
-    &__text {
+    &__description {
         margin-bottom: 32px;
     }
 
@@ -119,5 +119,35 @@
         @media @mobileSM {
             text-align: center;
         }
+    }
+
+    @btns-vertical-margin: 24px;
+    @btns-horizontal-margin: 10px;
+
+    &__btns-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: -@btns-vertical-margin -@btns-horizontal-margin 0;
+
+        @media @mobileS {
+            flex-direction: column;
+        }
+    }
+
+    &__link,
+    &__button {
+        margin: @btns-vertical-margin @btns-horizontal-margin 0;
+    }
+
+    &__cost {
+        .small();
+        margin-bottom: 18px;
+    }
+
+    &__value {
+        display: inline;
+        margin: 0 3px;
     }
 }

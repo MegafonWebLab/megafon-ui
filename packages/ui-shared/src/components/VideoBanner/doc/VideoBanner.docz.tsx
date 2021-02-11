@@ -7,11 +7,14 @@ import imageWhiteMobile from './image_white_mobile.png';
 
 const youtubeVideoId = '2Sps5MnvlKM';
 
-const contentWithDefaultTextColor = {
+const contentWithDefaultTextColor: IContent = {
     title: 'Текст ≈40 символов. Короткие слова',
     description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
-    href: '#',
+    buttonHref: '#',
     buttonTitle: 'Текст в кнопке',
+    linkTitle: 'Личный кабинет услуги',
+    linkUrl: '#',
+    cost: 'oт <b>1000 ₽</b> за сообщение',
 };
 
 const content: IContent = {
