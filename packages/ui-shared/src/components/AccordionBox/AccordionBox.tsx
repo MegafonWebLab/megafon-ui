@@ -10,6 +10,8 @@ export interface IAccordionBox {
     isOpened?: boolean;
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
+    /** Вертикальные отступы */
+    hasVerticalPaddings?: boolean;
     /** Внешние классы для аккордеона и внутренних компонентов */
     classes?: {
         root?: string;
@@ -33,12 +35,13 @@ const AccordionBox: React.FC<IAccordionBox> = ({hCenterAlignWide = false, ...pro
 AccordionBox.propTypes = {
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,
+    hCenterAlignWide: PropTypes.bool,
+    hasVerticalPaddings: PropTypes.bool,
     classes: PropTypes.shape({
         root: PropTypes.string,
         collapse: PropTypes.string,
     }),
     onClickAccordion: PropTypes.func,
-    hCenterAlignWide: PropTypes.bool,
 };
 
 export default AccordionBox;

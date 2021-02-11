@@ -20,6 +20,7 @@ exports[`<AccordionBox /> render AccordionBox 1`] = `
       wide="8"
     >
       <Accordion
+        hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
         title="Test"
@@ -53,6 +54,7 @@ exports[`<AccordionBox /> render AccordionBox with hCenterAlignWide=true 1`] = `
       wide="8"
     >
       <Accordion
+        hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
         title="Test"
