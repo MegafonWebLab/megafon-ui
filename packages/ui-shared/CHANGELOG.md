@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.114](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.113...@megafon/ui-shared@2.0.0-beta.114) (2021-02-12)
+
+
+### Features
+
+* **videobanner:** adds text with coast and link in content block ([6d14f24](https://github.com/MegafonWebLab/megafon-ui/commit/6d14f24c1cf9289ed3aba0b74b494e422a546ddc))
+
+
+### BREAKING CHANGES
+
+* **videobanner:** Prop for button url was changed from 'href' to 'buttonHref'.
+
+
+
+
+
 # [2.0.0-beta.113](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.112...@megafon/ui-shared@2.0.0-beta.113) (2021-02-12)
 
 
