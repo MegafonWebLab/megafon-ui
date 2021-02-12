@@ -40,19 +40,36 @@ const mockUserAgentAsTrident = () => {
 };
 
 const testCommonCases = (selector: string, textarea: boolean = false) => {
-    it('should render with value', () => {
+    it('should render with string value', () => {
         const wrapper = shallow(
             <TextField {...commonFieldProps} value="value" textarea={textarea} />
         );
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with value after updating prop', () => {
+    it('should render with number value', () => {
+        const wrapper = shallow(
+            <TextField {...commonFieldProps} value={1234} textarea={textarea} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with value after updating string prop', () => {
         const wrapper = mount(
             <TextField {...commonFieldProps} value="value" textarea={textarea} />
         );
 
         wrapper.setProps({ value: 'newValue' });
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with value after updating number prop', () => {
+        const wrapper = mount(
+            <TextField {...commonFieldProps} value={1234} textarea={textarea} />
+        );
+
+        wrapper.setProps({ value: 5678 });
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -137,6 +154,38 @@ const testCommonCases = (selector: string, textarea: boolean = false) => {
         wrapper.find(selector).simulate('keyup', event);
 
         expect(onKeyUpMock).toBeCalledWith(event);
+    });
+
+    it('shouldn\'t change component inputValue state via input change when controlled', () => {
+        const target = { target: { value: 'something' } };
+        const wrapper = shallow(
+            <TextField
+                {...commonFieldProps}
+                value="value"
+                textarea={textarea}
+                isControlled
+            />
+        );
+
+        wrapper.find(selector).simulate('change', target);
+
+        expect(wrapper.find(selector).prop('value')).toEqual('value');
+    });
+
+    it('should change component inputValue state via value prop update when controlled', () => {
+        const wrapper = mount(
+            <TextField
+                {...commonFieldProps}
+                value="value"
+                textarea={textarea}
+                isControlled
+            />
+        );
+
+        wrapper.setProps({ value: 'something' });
+        wrapper.update();
+
+        expect(wrapper.find(selector).prop('value')).toEqual('something');
     });
 };
 
@@ -268,22 +317,7 @@ describe('<TextField />', () => {
             expect(onCustomIconClickMock).toBeCalledWith(target);
         });
 
-        it('shouldnt change component inputValue state via input change when controlled', () => {
-            const target = { target: { value: 'something' } };
-            const wrapper = shallow(
-                <TextField
-                    {...commonFieldProps}
-                    value="value"
-                    isControlled
-                />
-            );
-
-            wrapper.find('input').simulate('change', target);
-
-            expect(wrapper.find('input').prop('value')).toEqual('value');
-        });
-
-        it('shouldnt clear inputValue state via custom icon click when controlled', () => {
+        it('shouldn\'t clear inputValue state via custom icon click when controlled', () => {
             const target = { target: { value: 'something' } };
             const wrapper = shallow(
                 <TextField
@@ -299,21 +333,6 @@ describe('<TextField />', () => {
             wrapper.find(selectors.iconBox).simulate('click');
 
             expect(wrapper.find('input').prop('value')).toEqual('value');
-        });
-
-        it('should change component inputValue state via value prop update when controlled', () => {
-            const wrapper = mount(
-                <TextField
-                    {...commonFieldProps}
-                    value="value"
-                    isControlled
-                />
-            );
-
-            wrapper.setProps({ value: 'something' });
-            wrapper.update();
-
-            expect(wrapper.find('input').prop('value')).toEqual('something');
         });
     });
 

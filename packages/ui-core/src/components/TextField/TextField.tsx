@@ -51,7 +51,7 @@ export interface ITextFieldProps {
     /** Атрибут корневого DOM элемента компонента */
     id?: string;
     /** Внешнее значение компонента */
-    value?: string;
+    value?: string | number;
     /** Максимальное вводимое количество текста */
     maxLength?: number;
     /** Показывает счетчик с подсчетом введенных символов. Только для textarea. */
@@ -131,7 +131,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         } = {},
     }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
-    const [inputValue, setInputValue] = useState(value);
+    const [inputValue, setInputValue] = useState<string | number | undefined>(value);
     const [isIE11, setIsIE11] = useState(false);
     const [initialTextareaHeight, setInitialTextareaHeight] = useState(TEXTAREA_MIN_HEIGHT);
     const [isTextareaResized, setIsTextareaResized] = useState(false);
@@ -149,12 +149,12 @@ const TextField: React.FC<ITextFieldProps> = ({
         return <span className={cn(classes)}>{placeholder}</span>;
     };
 
-    const checkSymbolMaxLimit = useCallback((textareaValue: string = ''): void => {
+    const checkSymbolMaxLimit = useCallback((textareaValue: string | number = ''): void => {
         if (!symbolCounter) {
             return;
         }
 
-        setIsMaxLimitExceeded(symbolCounter < textareaValue.length);
+        setIsMaxLimitExceeded(symbolCounter < String(textareaValue).length);
     }, [symbolCounter]);
 
     useEffect(() => {
@@ -352,7 +352,8 @@ const TextField: React.FC<ITextFieldProps> = ({
     };
 
     const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
-    const currentSymbolCount = inputValue?.length ?? 0;
+    const valueHasSymbols = inputValue !== null && inputValue !== undefined;
+    const currentSymbolCount = valueHasSymbols && String(inputValue).length || 0;
 
     return (
         <div className={cn({
@@ -414,7 +415,7 @@ TextField.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     maxLength: PropTypes.number,
     symbolCounter: PropTypes.number,
     customIcon: PropTypes.element,
