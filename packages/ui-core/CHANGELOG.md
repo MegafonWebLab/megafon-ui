@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.91](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.90...@megafon/ui-core@2.0.0-beta.91) (2021-02-12)
+
+
+### Bug Fixes
+
+* **textfield:** number value in typings ([9bd5799](https://github.com/MegafonWebLab/megafon-ui/commit/9bd5799b18aa0997136ae1a0a9b51f804065e1d6))
+
+
+
+
+
 # [2.0.0-beta.90](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.89...@megafon/ui-core@2.0.0-beta.90) (2021-02-10)
 
 
