@@ -13,7 +13,7 @@ import { twoItems as twoItemsBenefitsPictures,threeItems as threeItemsBenefitsPi
 import VideoBlock from '../../VideoBlock/VideoBlock';
 import { video, content as videoBlockContent } from '../../VideoBlock/doc/VideoBlock.docz.tsx';
 import VideoBanner from '../../VideoBanner/VideoBanner';
-import { video as videoBannerVideo, imageOnlyMobile as videoBannerImage } from '../../VideoBanner/doc/VideoBanner.docz.tsx';
+import { video as videoBannerVideo, imageMobile as videoBannerImage } from '../../VideoBanner/doc/VideoBanner.docz.tsx';
 import CardsBox from '../../CardsBox/CardsBox';
 import Card from '../../Card/Card';
 import { img as cardImg, title as cardTitle, button as cardButton, link as cardLink, text as cardText } from '../../Card/doc/Card.docz.tsx';
@@ -167,7 +167,7 @@ import {
 ## Пример страницы
 <Playground>
     <Container>
-        <VideoBanner videoType='video' videoSrc={videoBannerVideo} image={videoBannerImage} />
+        <VideoBanner videoType='video' videoSrc={videoBannerVideo} imageMobile={videoBannerImage} imageTablet={videoBannerImage} />
     </Container>
     <Container>
         <TitleDescriptionBox
