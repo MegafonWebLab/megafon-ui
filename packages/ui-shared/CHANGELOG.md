@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.112](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.111...@megafon/ui-shared@2.0.0-beta.112) (2021-02-12)
+
+
+### Features
+
+* **accordionbox:** add prop - hasVerticalPaddings ([04d4be8](https://github.com/MegafonWebLab/megafon-ui/commit/04d4be8d698276e3e286c6a0ad93b333fa95ef52))
+
+
+
+
+
 # [2.0.0-beta.111](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.110...@megafon/ui-shared@2.0.0-beta.111) (2021-02-10)
 
 **Note:** Version bump only for package @megafon/ui-shared
