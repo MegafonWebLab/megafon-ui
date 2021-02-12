@@ -145,7 +145,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 {instructionItems.map(({ title: itemTitle }, ind) => (
                     slideIndex === ind &&
                         <Paragraph className={cn('articles-title')} hasMargin={false} key={ind}>
-                            {itemTitle}
+                            {convert(itemTitle, typographyConfig)}
                         </Paragraph>
                 ))}
             </div>

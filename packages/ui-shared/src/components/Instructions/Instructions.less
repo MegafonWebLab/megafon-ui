@@ -63,12 +63,6 @@
     }
 
     &_mask_none {
-        @{b}__swiper-img {
-            width: auto;
-            height: auto;
-            margin: auto;
-        }
-
         @{b}__slide {
             display: flex;
         }
@@ -108,8 +102,10 @@
     &_mask_black-iphone,
     &_mask_white-iphone,
     &_mask_android {
-        @media @mobile {
-            height: 423px;
+        @{b}__img-wrapper {
+            @media @mobile {
+                height: 423px;
+            }
         }
 
         @{b}__device-screen {
@@ -145,8 +141,10 @@
     }
 
     &_mask_android {
-        @media @mobile {
-            height: 430px;
+        @{b}__img-wrapper {
+            @media @mobile {
+                height: 430px;
+            }
         }
 
         @{b}__device-screen {
@@ -161,8 +159,10 @@
     }
 
     &_mask_new-iphone {
-        @media @mobile {
-            height: 460px;
+        @{b}__img-wrapper {
+            @media @mobile {
+                height: 460px;
+            }
         }
 
         @{b}__device-screen {
@@ -190,16 +190,32 @@
     }
 
     &_mask_laptop {
-        @media @mobileB {
-            height: 283px;
+        @{b}__img-wrapper {
+            @media @mobileB {
+                height: 283px;
+            }
+
+            @media @mobileM {
+                height: 208px;
+            }
+
+            @media @mobileS {
+                height: 115px;
+            }
         }
 
-        @media @mobileM {
-            height: 241px;
-        }
+        @{b}__img-wrapper:before {
+            @media @mobileS {
+                width: 310px;
+            }
 
-        @media @mobileS {
-            height: 145px;
+            @media @mobileM {
+                width: 460px;
+            }
+
+            @media @mobileB {
+                width: 590px;
+            }
         }
 
         @{b}__device-screen {
@@ -239,31 +255,17 @@
             transform: translate(-50%, -50%);
 
             @media @mobileM {
-                width: 345px;
-                height: 225px;
+                max-width: 345px;
+                height: 190px;
             }
 
             @media @mobileS {
-                width: 210px;
-                height: 135px;
+                max-width: 210px;
+                height: 105px;
             }
 
             @media @desktop {
                 transform: translate(-50%, -53%);
-            }
-        }
-
-        &:before {
-            @media @mobile {
-                width: 590px;
-            }
-
-            @media @mobileM {
-                width: 460px;
-            }
-
-            @media @mobileS {
-                width: 310px;
             }
         }
     }
