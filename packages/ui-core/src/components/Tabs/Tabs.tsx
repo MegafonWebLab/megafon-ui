@@ -30,7 +30,9 @@ type TabHAlignType = typeof TabHAlign[keyof typeof TabHAlign];
 type TabColorThemeType = typeof TabColorTheme[keyof typeof TabColorTheme];
 
 export interface ITabsProps {
-    /** Дополнительные классы для внутренних элементов */
+    /** Дополнительный класс для корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         root?: string;
         innerIndents?: string;
@@ -54,6 +56,7 @@ export interface ITabsProps {
 
 const cn = cnCreate('mfui-beta-tabs');
 const Tabs: React.FC<ITabsProps> = ({
+    className,
     classes: { root: rootClass, innerIndents: innerIndentsClass } = {},
     size = 'medium',
     hAlign = 'left',
@@ -262,7 +265,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     indents: !innerIndentsClass,
                     sticky: isSticky,
                 },
-                [rootClass]
+                [className, rootClass]
             )}
             ref={rootRef}
         >
@@ -324,6 +327,7 @@ const Tabs: React.FC<ITabsProps> = ({
 };
 
 Tabs.propTypes = {
+    className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
         innerIndents: PropTypes.string,
