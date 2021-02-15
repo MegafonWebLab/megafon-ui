@@ -33,7 +33,9 @@ export type SlidesSettingsType = {
 };
 
 export interface ICarouselProps {
-    /** Дополнительные классы для внутренних элементов */
+    /** Дополнительные классы для корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         root?: string;
         innerIndents?: string;
@@ -82,6 +84,7 @@ const defaultSlidesSettings: SlidesSettingsType = {
 
 const cn = cnCreate('mfui-beta-carousel');
 const Carousel: React.FC<ICarouselProps> = ({
+    className,
     classes: { root: rootClass, innerIndents: innerIndentsClass } = {},
     slidesSettings = defaultSlidesSettings,
     autoPlay = false,
@@ -182,7 +185,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     );
 
     return (
-        <div className={cn({ 'nav-theme': navTheme }, [rootClass])} onClick={handleRootClick}>
+        <div className={cn({ 'nav-theme': navTheme }, [className, rootClass])} onClick={handleRootClick}>
             <Swiper
                 className={cn(
                     'swiper',
@@ -228,6 +231,7 @@ const Carousel: React.FC<ICarouselProps> = ({
 };
 
 Carousel.propTypes = {
+    className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
         innerIndents: PropTypes.string,

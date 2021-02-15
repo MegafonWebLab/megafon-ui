@@ -75,7 +75,7 @@ exports[`<Carousel /> should render with default props 1`] = `
 
 exports[`<Carousel /> should render with props 1`] = `
 <div
-  className="mfui-beta-carousel mfui-beta-carousel_nav-theme_green class"
+  className="mfui-beta-carousel mfui-beta-carousel_nav-theme_green className rootClass"
   onClick={[Function]}
 >
   <Swiper
@@ -95,7 +95,7 @@ exports[`<Carousel /> should render with props 1`] = `
         },
       }
     }
-    className="mfui-beta-carousel__swiper inner-indents-class"
+    className="mfui-beta-carousel__swiper innerIndentsClass"
     loop={true}
     noSwipingSelector="button"
     onFromEdge={[Function]}
