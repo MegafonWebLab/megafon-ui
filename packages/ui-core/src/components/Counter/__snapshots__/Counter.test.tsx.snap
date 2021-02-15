@@ -40,7 +40,7 @@ exports[`<Counter /> layout renders Counter 1`] = `
 
 exports[`<Counter /> layout renders Counter with props 1`] = `
 <div
-  className="mfui-beta-counter mfui-beta-counter_disabled root-class"
+  className="mfui-beta-counter mfui-beta-counter_disabled class-name root-class"
 >
   <button
     className="mfui-beta-counter__btn mfui-beta-counter__btn_left button-minus-class"

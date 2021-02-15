@@ -16,7 +16,9 @@ export interface ICounterProps {
     isDisabled?: boolean;
     /** Обработчик изменения значения 'value' */
     onChange?: (value: number) => void;
-    /** Дополнительные классы для внутренних элементов */
+    /** Дополнительный класс для корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         root?: string;
         buttonMinus?: string;
@@ -32,6 +34,7 @@ const Counter: React.FC<ICounterProps> = ({
     min = 0,
     isDisabled = false,
     onChange,
+    className,
     classes = {},
 }) => {
     const currentInitialValue = initialValue || min;
@@ -94,7 +97,7 @@ const Counter: React.FC<ICounterProps> = ({
     }, [handleValueChange, min, max]);
 
     return (
-        <div className={cn({ disabled: isDisabled }, classes.root)}>
+        <div className={cn({ disabled: isDisabled }, [className, classes.root])}>
             <button
                 className={cn('btn', { left: true }, classes.buttonMinus)}
                 type="button"
@@ -130,6 +133,7 @@ Counter.propTypes = {
     max: PropTypes.number,
     isDisabled: PropTypes.bool,
     onChange: PropTypes.func,
+    className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
         buttonMinus: PropTypes.string,
