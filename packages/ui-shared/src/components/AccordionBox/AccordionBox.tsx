@@ -12,7 +12,9 @@ export interface IAccordionBox {
     hCenterAlignWide?: boolean;
     /** Вертикальные отступы */
     hasVerticalPaddings?: boolean;
-    /** Внешние классы для аккордеона и внутренних компонентов */
+    /** Дополнительный класс для корнеовго элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         root?: string;
         collapse?: string;
@@ -37,6 +39,7 @@ AccordionBox.propTypes = {
     isOpened: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,
     hasVerticalPaddings: PropTypes.bool,
+    className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
         collapse: PropTypes.string,
