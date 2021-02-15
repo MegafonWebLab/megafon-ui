@@ -14,7 +14,9 @@ export interface IAccordionProps {
     isOpened?: boolean;
     /** Вертикальные отступы */
     hasVerticalPaddings?: boolean;
-    /** Дополнительные классы для внутренних элементов */
+    /** Дополнительный класс для корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         root?: string;
         collapse?: string;
@@ -28,9 +30,10 @@ const Accordion: React.FC<IAccordionProps> = ({
     title,
     isOpened = false,
     hasVerticalPaddings = false,
+    className,
     classes: {
-        root: rootPropsClasses = '',
-        collapse: collapsePropsClasses = '',
+        root: rootPropsClasses,
+        collapse: collapsePropsClasses,
     } = {},
     onClickAccordion,
     children,
@@ -48,7 +51,7 @@ const Accordion: React.FC<IAccordionProps> = ({
     };
 
     return (
-        <div className={cn({ open: isOpenedState }, rootPropsClasses)}>
+        <div className={cn({ open: isOpenedState }, [className, rootPropsClasses])}>
             <div className={cn('title-wrap')} onClick={handleClickTitle}>
                 <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpenedState })}>
@@ -73,6 +76,7 @@ Accordion.propTypes = {
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,
     hasVerticalPaddings: PropTypes.bool,
+    className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
         collapse: PropTypes.string,
