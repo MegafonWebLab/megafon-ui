@@ -30,7 +30,9 @@ export interface IConrentAreaProps {
     innerBackgroundColor?: BackgroundColorType;
     /** Отключение отступов на различных разрешениях */
     disableIndents?: DisableIndentsType;
-    /** Дополнительные классы */
+    /** Дополнительные классы для корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         root?: string;
         inner?: string;
@@ -56,6 +58,7 @@ class ContentArea extends React.Component<IConrentAreaProps> {
         innerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
         disableIndents: PropTypes.oneOf(Object.values(DisableIndents)),
         children: PropTypes.node,
+        className: PropTypes.string,
         classes: PropTypes.shape({
             root: PropTypes.string,
             inner: PropTypes.string,
@@ -73,11 +76,12 @@ class ContentArea extends React.Component<IConrentAreaProps> {
             innerBackgroundColor,
             disableIndents,
             children,
+            className,
             classes = {},
         } = this.props;
 
         return (
-            <div className={cn({ color: outerBackgroundColor }, classes.root)}>
+            <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
                 <div
                     className={cn('inner', {
                         'disable-indents': disableIndents,
