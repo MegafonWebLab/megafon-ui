@@ -39,7 +39,7 @@ export interface ITooltipProps {
     triggerEvent?: TriggerEventType;
     /** Триггер-элемент */
     triggerElement: React.RefObject<HTMLElement>;
-    /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
+    /** Управление состоянием. Компонент поддерживает контролируемое и неконтролируемое состояние. */
     isOpened?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
