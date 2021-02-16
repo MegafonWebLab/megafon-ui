@@ -43,9 +43,9 @@ export interface ITooltipProps {
     isOpened?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Обработчик на открытие */
+    /** Обработчик на открытие по внутреннему событию */
     onOpen?: (e: MouseEvent) => void;
-    /** Обработчик на закрытие */
+    /** Обработчик на закрытие по внутреннему событию */
     onClose?: (e: MouseEvent) => void;
 }
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow, mount, ReactWrapper } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import Tooltip, { ITooltipProps, Placement, Size } from './Tooltip';
 
@@ -19,6 +19,7 @@ const controlledOnClose = jest.fn();
 const TestTooltipWrapper = ({ isOpen = false, children }) => {
     const triggerElement = React.useRef<HTMLElement>(null);
     const [isOpened, setIsOpened] = React.useState(isOpen);
+
     const handleOpen = () => {
         controlledOnOpen();
         setIsOpened(true);
@@ -42,30 +43,39 @@ const TestTooltipWithHandlers: React.FC<Partial<ITooltipProps>> = ({
     onOpen,
     onClose,
     children,
-}) => (
-    <TestTooltipWrapper>
-        {({ triggerElement }) => (
-            <>
-                <div className={triggerNodeClassName.substr(1)} ref={triggerElement} />
-                <div className={outsideNodeClassName.substr(1)} />
-                <Tooltip
-                    triggerEvent={triggerEvent}
-                    triggerElement={triggerElement}
-                    isOpened={isOpened}
-                    onOpen={onOpen}
-                    onClose={onClose}
-                >
-                    {children}
-                </Tooltip>
-            </>
-        )}
-    </TestTooltipWrapper>
-);
+}) => {
+    const triggerElement = React.useRef<HTMLDivElement>(null);
+
+    return (
+        <>
+            <div className={triggerNodeClassName.substr(1)} ref={triggerElement} />
+            <div className={outsideNodeClassName.substr(1)} />
+            <Tooltip
+                triggerEvent={triggerEvent}
+                triggerElement={triggerElement}
+                isOpened={isOpened}
+                onOpen={onOpen}
+                onClose={onClose}
+            >
+                {children}
+            </Tooltip>
+        </>
+    );
+};
+
 const mouseDownEvent = new MouseEvent('mousedown');
 const mouseDownEventBubbles = new MouseEvent('mousedown', { bubbles: true });
 const mouseEnterEvent = new MouseEvent('mouseenter');
 const touchStartEvent = new MouseEvent('touchstart');
 const mouseOverEventBubbles = new MouseEvent('mouseover', { bubbles: true });
+
+const dispatchEvent = async (wrapper: ReactWrapper, targetClassName: string, event: MouseEvent) => {
+    const targetNode = wrapper.find(targetClassName).getDOMNode();
+    await act( async () => {
+        targetNode.dispatchEvent(event);
+    });
+    wrapper.update();
+};
 
 describe('<Tooltip />', () => {
     beforeEach(() => {
@@ -89,36 +99,22 @@ describe('<Tooltip />', () => {
     });
 
     describe('expected properties', () => {
-        it('renders component with expected placement', async () => {
+        it('renders component with expected props on nodes', async () => {
             const triggerElement = { current: document.createElement('div') };
-            const wrapper = mount(<Tooltip triggerElement={triggerElement} placement={props.placement} />);
+            const wrapper = mount(
+                <Tooltip
+                    triggerElement={triggerElement}
+                    isOpened={true}
+                    size={props.size}
+                    placement={props.placement}
+                />
+            );
 
             await act(async () => Promise.resolve());
             wrapper.update();
 
-            expect(wrapper.find(Tooltip).prop('placement')).toEqual(props.placement);
             expect(wrapper.find(`[data-popper-placement="${props.placement}"]`)).toHaveLength(1);
-        });
-
-        it('renders component with expected size', async () => {
-            const triggerElement = { current: document.createElement('div') };
-            const wrapper = mount(<Tooltip triggerElement={triggerElement} size={props.size} />);
-
-            await act(async () => Promise.resolve());
-            wrapper.update();
-
-            expect(wrapper.find(Tooltip).prop('size')).toEqual(props.size);
             expect(wrapper.find(`${tooltipClassName}_size_${props.size}`)).toHaveLength(1);
-        });
-
-        it('renders component with expected isOpened', async () => {
-            const triggerElement = { current: document.createElement('div') };
-            const wrapper = mount(<Tooltip triggerElement={triggerElement} isOpened={true} />);
-
-            await act(async () => Promise.resolve());
-            wrapper.update();
-
-            expect(wrapper.find(Tooltip).prop('isOpened')).toBeTruthy();
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
         });
     });
@@ -126,25 +122,22 @@ describe('<Tooltip />', () => {
     describe('triggerEvent:click', () => {
         it('toggles open with click on triggerElement', async () => {
             const wrapper = mount(
-                <TestTooltipWithHandlers onOpen={props.onOpen} onClose={props.onClose} triggerEvent="click" />
+                <TestTooltipWithHandlers
+                    triggerEvent="click"
+                    onOpen={props.onOpen}
+                    onClose={props.onClose}
+                />
             );
             expect(props.onOpen).not.toBeCalled();
             expect(props.onClose).not.toBeCalled();
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
 
-            const triggerNode = wrapper.find(triggerNodeClassName).getDOMNode();
-            await act( async () => {
-                triggerNode.dispatchEvent(mouseDownEvent);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, triggerNodeClassName, mouseDownEvent);
 
             expect(props.onOpen).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
 
-            await act( async () => {
-                triggerNode.dispatchEvent(mouseDownEvent);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, triggerNodeClassName, mouseDownEvent);
 
             expect(props.onClose).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
@@ -156,19 +149,16 @@ describe('<Tooltip />', () => {
 
             const wrapper = mount(
                 <TestTooltipWithHandlers
+                    triggerEvent="click"
                     isOpened={true}
                     onClose={props.onClose}
-                    triggerEvent="click"
-                />, { attachTo: documentDiv }
+                />,
+                { attachTo: documentDiv }
             );
 
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
 
-            const outsideNode = wrapper.find(outsideNodeClassName).getDOMNode();
-            await act( async () => {
-                outsideNode.dispatchEvent(mouseDownEventBubbles);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, outsideNodeClassName, mouseDownEventBubbles);
 
             expect(props.onClose).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
@@ -183,17 +173,14 @@ describe('<Tooltip />', () => {
 
             const wrapper = mount(
                 <TestTooltipWithHandlers
+                    triggerEvent="click"
                     isOpened={true}
                     onClose={props.onClose}
-                    triggerEvent="click"
-                />, { attachTo: documentDiv }
+                />,
+                { attachTo: documentDiv }
             );
 
-            const tooltipNode = wrapper.find(tooltipClassName).getDOMNode();
-            await act( async () => {
-                tooltipNode.dispatchEvent(mouseDownEventBubbles);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, tooltipClassName, mouseDownEventBubbles);
 
             expect(props.onClose).not.toBeCalled();
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
@@ -208,11 +195,7 @@ describe('<Tooltip />', () => {
                 <TestTooltipWithHandlers onOpen={props.onOpen} triggerEvent="click" />
             );
 
-            const triggerNode = wrapper.find(triggerNodeClassName).getDOMNode();
-            await act( async () => {
-                triggerNode.dispatchEvent(touchStartEvent);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, triggerNodeClassName, touchStartEvent);
 
             expect(props.onOpen).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
@@ -227,11 +210,7 @@ describe('<Tooltip />', () => {
                 <TestTooltipWithHandlers onOpen={props.onOpen} triggerEvent="hover" />
             );
 
-            const triggerNode = wrapper.find(triggerNodeClassName).getDOMNode();
-            await act( async () => {
-                triggerNode.dispatchEvent(mouseEnterEvent);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, triggerNodeClassName, mouseEnterEvent);
 
             expect(props.onOpen).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
@@ -243,18 +222,15 @@ describe('<Tooltip />', () => {
 
             const wrapper = mount(
                 <TestTooltipWithHandlers
+                    triggerEvent="hover"
                     isOpened={true}
                     onClose={props.onClose}
-                    triggerEvent="hover"
-                />, { attachTo: documentDiv }
+                />,
+                { attachTo: documentDiv }
             );
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
 
-            const outsideTrigger = wrapper.find(outsideNodeClassName).getDOMNode();
-            await act( async () => {
-                outsideTrigger.dispatchEvent(mouseOverEventBubbles);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, outsideNodeClassName, mouseOverEventBubbles);
 
             expect(props.onClose).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
@@ -269,17 +245,14 @@ describe('<Tooltip />', () => {
 
             const wrapper = mount(
                 <TestTooltipWithHandlers
+                    triggerEvent="hover"
                     isOpened={true}
                     onClose={props.onClose}
-                    triggerEvent="hover"
-                />, { attachTo: documentDiv }
+                />,
+                { attachTo: documentDiv }
             );
-            const tooltipNode = wrapper.find(tooltipClassName).getDOMNode();
 
-            await act( async () => {
-                tooltipNode.dispatchEvent(mouseOverEventBubbles);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, tooltipClassName, mouseOverEventBubbles);
 
             expect(props.onClose).not.toBeCalled();
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
@@ -293,12 +266,7 @@ describe('<Tooltip />', () => {
             const wrapper = mount(
                 <TestTooltipWithHandlers onOpen={props.onOpen} triggerEvent="hover" />
             );
-            const triggerNode = wrapper.find(triggerNodeClassName).getDOMNode();
-
-            await act( async () => {
-                triggerNode.dispatchEvent(touchStartEvent);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, triggerNodeClassName, touchStartEvent);
 
             expect(props.onOpen).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
@@ -308,14 +276,35 @@ describe('<Tooltip />', () => {
     });
 
     describe('triggerEvent:controlled', () => {
-        it(`doesn't open with default event handlers in component`, async () => {
-            const wrapper = mount(<TestTooltipWithHandlers onOpen={props.onOpen} triggerEvent="controlled" />);
-            const triggerNode = wrapper.find(triggerNodeClassName).getDOMNode();
+        it('toggles opening with isOpened property changes', async () => {
+            const triggerElement = { current: document.createElement('div') };
+            const wrapper = mount<ITooltipProps>(
+                <Tooltip
+                    triggerEvent="controlled"
+                    triggerElement={triggerElement}
+                    isOpened={false}
+                />
+            );
+            expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
 
             await act( async () => {
-                triggerNode.dispatchEvent(mouseDownEvent);
+                wrapper.setProps({ isOpened: true });
             });
             wrapper.update();
+            expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
+
+            await act( async () => {
+                wrapper.setProps({ isOpened: false });
+            });
+            wrapper.update();
+            expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
+        });
+
+        it(`doesn't open with default event handlers in component`, async () => {
+            const wrapper = mount(
+                <TestTooltipWithHandlers triggerEvent="controlled" onOpen={props.onOpen} />
+            );
+            await dispatchEvent(wrapper, triggerNodeClassName, mouseDownEvent);
 
             expect(props.onOpen).not.toBeCalled();
         });
@@ -326,66 +315,22 @@ describe('<Tooltip />', () => {
 
             const wrapper = mount(
                 <TestTooltipWithHandlers
+                    triggerEvent="controlled"
                     isOpened={true}
                     onClose={props.onClose}
-                    triggerEvent="controlled"
-                />, { attachTo: documentDiv }
+                />,
+                { attachTo: documentDiv }
             );
-            const outsideTrigger = wrapper.find(outsideNodeClassName).getDOMNode();
-
-            await act( async () => {
-                outsideTrigger.dispatchEvent(mouseOverEventBubbles);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, outsideNodeClassName, mouseOverEventBubbles);
 
             expect(props.onClose).not.toBeCalled();
 
             wrapper.detach();
             document.body.removeChild(documentDiv);
         });
-
-        it('toggles open with onClick', async () => {
-            const wrapper = mount(
-                <TestTooltipWrapper isOpen={false}>
-                    {({ triggerElement, isOpened, handleOpen, handleClose }) => (
-                        <>
-                            <div ref={triggerElement} />
-                            <Tooltip
-                                triggerEvent="controlled"
-                                triggerElement={triggerElement}
-                                isOpened={isOpened}
-                                onOpen={handleOpen}
-                            />
-                            <div className="open-button" onClick={handleOpen} />
-                            <div className="close-button" onClick={handleClose} />
-                        </>
-                    )}
-                </TestTooltipWrapper>
-            );
-            const openButton = wrapper.find('.open-button');
-            const closeButton = wrapper.find('.close-button');
-
-            expect(controlledOnOpen).not.toBeCalled();
-            expect(controlledOnClose).not.toBeCalled();
-            expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
-
-            await act( async () => {
-                openButton.simulate('click');
-            });
-            wrapper.update();
-            expect(controlledOnOpen).toBeCalledTimes(1);
-            expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
-
-            await act( async () => {
-                closeButton.simulate('click');
-            });
-            wrapper.update();
-            expect(controlledOnClose).toBeCalledTimes(1);
-            expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
-        });
     });
 
-    describe('controlled isOpened property and default event', () => {
+    describe('controlled isOpened property with default event', () => {
         it('closes onClick and opens with default click event on triggerElement', async () => {
             const wrapper = mount(
                 <TestTooltipWrapper isOpen={true}>
@@ -405,7 +350,6 @@ describe('<Tooltip />', () => {
                     )}
                 </TestTooltipWrapper>
             );
-            const triggerNode = wrapper.find('.trigger-element').getDOMNode();
             const button = wrapper.find('.button');
 
             expect(controlledOnOpen).not.toHaveBeenCalled();
@@ -419,10 +363,8 @@ describe('<Tooltip />', () => {
             expect(controlledOnClose).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(0);
 
-            await act( async () => {
-                triggerNode.dispatchEvent(mouseDownEvent);
-            });
-            wrapper.update();
+            await dispatchEvent(wrapper, '.trigger-element', mouseDownEvent);
+
             expect(controlledOnOpen).toBeCalledTimes(1);
             expect(wrapper.find(openedTooltipClassName)).toHaveLength(1);
         });
