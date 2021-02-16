@@ -114,23 +114,40 @@ const Tabs: React.FC<ITabsProps> = ({
         setUnderlineTranslate(translate);
     }, [currentIndex]);
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
+
+            const stickyON = (leftOffset: number, rightOffset: number) => {
+                const documentWidth = document.documentElement.clientWidth;
+
+                setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
+                setSticky(true);
+            };
+
+            const stickyOFF = () => {
+                setStickyOffset({ left: 0, right: 0 });
+                setSticky(false);
+            };
+
+            if (isIntersecting) {
+                top < 0 ? stickyON(left, right) : stickyOFF();
+            } else {
+                top < 0 && stickyOFF();
+            }
+      });
+    }, { threshold: [ 0 , 1 ] });
+
     const calculateSticky = React.useCallback(() => {
         if (!sticky || !rootRef.current || !tabListRef.current) {
             return;
         }
 
-        const { top, left, right } = rootRef.current.getBoundingClientRect();
-        const documentWidth = document.documentElement.clientWidth;
         const listHeight = tabListRef.current.clientHeight;
-        const rootHeight = rootRef.current.clientHeight;
-        const contentHeight = rootHeight - listHeight;
-        const needSetSticky = top < 0 && Math.abs(top) < contentHeight;
-        const stickyLeftOffset = needSetSticky ? left : 0;
-        const stickyRightOffset = needSetSticky ? documentWidth - right : 0;
 
-        setTabListHeight(needSetSticky ? listHeight : 'auto');
-        setSticky(needSetSticky);
-        setStickyOffset({ left: stickyLeftOffset, right: stickyRightOffset });
+        setTabListHeight(listHeight);
+
+        observer.observe(rootRef.current);
+
     }, [sticky]);
 
     const handleTabInnerClick = React.useCallback((index: number) => () => {
@@ -225,6 +242,7 @@ const Tabs: React.FC<ITabsProps> = ({
 
         return () => {
             document.removeEventListener('scroll', handleScroll);
+            rootRef && rootRef.current &&  observer.unobserve(rootRef.current);
         };
     }, [calculateSticky]);
 
@@ -240,6 +258,7 @@ const Tabs: React.FC<ITabsProps> = ({
 
         return () => {
             window.removeEventListener('resize', handleResize);
+            rootRef && rootRef.current &&  observer.unobserve(rootRef.current);
         };
     }, [calculateUnderline, calculateSticky]);
 
@@ -266,56 +285,58 @@ const Tabs: React.FC<ITabsProps> = ({
             )}
             ref={rootRef}
         >
-            <div
-                ref={tabListRef}
-                style={{ height: tabListHeight }}
-            >
+            <div style={{ height: tabListHeight }}>
                 <div
-                    className={cn('swiper-wrapper')}
-                    style={{
-                        paddingLeft: stickyOffset.left,
-                        paddingRight: stickyOffset.right,
-                    }}
+                    ref={tabListRef}
+                    style={{ height: tabListHeight }}
                 >
-                    <Swiper
-                        simulateTouch={false}
-                        className={cn(
-                            'swiper',
-                            {
-                                beginning: isBeginning,
-                                end: isEnd,
-                            },
-                            [innerIndentsClass]
-                        )}
-                        slidesPerView="auto"
-                        initialSlide={currentIndex}
-                        onSwiper={handleSwiper}
-                        onReachBeginning={handleReachBeginning}
-                        onReachEnd={handleReachEnd}
-                        onFromEdge={handleFromEdge}
+                    <div
+                        className={cn('swiper-wrapper')}
+                        style={{
+                            paddingLeft: stickyOffset.left,
+                            paddingRight: stickyOffset.right,
+                        }}
                     >
-                        {renderTabs()}
-                        <div
-                            className={cn('underline')}
-                            slot="wrapper-start"
-                            style={{
-                                width: `${underlineWidth}px`,
-                                transform: `translateX(${underlineTranslate}px)`,
-                                transitionProperty: underlineTransition,
-                            }}
-                        />
-                        <ArrowLeft
-                            className={cn('arrow', {
-                                prev: true,
-                                hide: isBeginning,
-                            })}
-                            onClick={handlePrevArrowClick}
-                        />
-                        <ArrowRight
-                            className={cn('arrow', { next: true, hide: isEnd })}
-                            onClick={handleNextArrowClick}
-                        />
-                    </Swiper>
+                        <Swiper
+                            simulateTouch={false}
+                            className={cn(
+                                'swiper',
+                                {
+                                    beginning: isBeginning,
+                                    end: isEnd,
+                                },
+                                [innerIndentsClass]
+                            )}
+                            slidesPerView="auto"
+                            initialSlide={currentIndex}
+                            onSwiper={handleSwiper}
+                            onReachBeginning={handleReachBeginning}
+                            onReachEnd={handleReachEnd}
+                            onFromEdge={handleFromEdge}
+                        >
+                            {renderTabs()}
+                            <div
+                                className={cn('underline')}
+                                slot="wrapper-start"
+                                style={{
+                                    width: `${underlineWidth}px`,
+                                    transform: `translateX(${underlineTranslate}px)`,
+                                    transitionProperty: underlineTransition,
+                                }}
+                            />
+                            <ArrowLeft
+                                className={cn('arrow', {
+                                    prev: true,
+                                    hide: isBeginning,
+                                })}
+                                onClick={handlePrevArrowClick}
+                            />
+                            <ArrowRight
+                                className={cn('arrow', { next: true, hide: isEnd })}
+                                onClick={handleNextArrowClick}
+                            />
+                        </Swiper>
+                    </div>
                 </div>
             </div>
             {renderPanels()}

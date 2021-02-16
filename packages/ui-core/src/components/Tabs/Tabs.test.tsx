@@ -9,6 +9,16 @@ const renderTabWrapper = (tab: React.ReactNode) => {
     return <div className="tab-wrapper">{tab}</div>;
 };
 
+window.IntersectionObserver = jest.fn(() => ({
+  observe: jest.fn(),
+  unobserve: jest.fn(),
+  thresholds: [],
+  root: null,
+  rootMargin: '',
+  disconnect: jest.fn(),
+  takeRecords: jest.fn(),
+}));
+
 const cn = cnCreate('.mfui-beta-tabs');
 describe('<Tabs />', () => {
     afterAll(() => jest.clearAllMocks());
