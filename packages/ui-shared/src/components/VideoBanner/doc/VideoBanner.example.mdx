@@ -1,7 +1,16 @@
 import { Playground } from 'docz';
 import VideoBanner from '../VideoBanner';
 import { ContentArea } from '@megafon/ui-core';
-import { content, contentWithDefaultTextColor, video, youtubeVideoId, imageMobile, imageDesktop, images } from './VideoBanner.docz.tsx'
+import {
+    content,
+    contentWithDefaultTextColor,
+    contentWithDifferentTextColor,
+    video,
+    youtubeVideoId,
+    imageMobile,
+    imageDesktop,
+    images
+} from './VideoBanner.docz.tsx'
 
 ```javascript collapse=Демо данные
 
@@ -63,10 +72,18 @@ const content: IContent = {
     </ContentArea>
 </Playground>
 
-## Тёмный цвет текста
+## Определение цвета текста
 
+### На всех разрешениях тёмный цвет текста
 <Playground>
     <ContentArea>
         <VideoBanner imageMobile={images.imageMobile} imageTablet={images.imageTablet} imageDesktop={images.imageDesktop} imageDesktopWide={images.imageDesktopWide} content={contentWithDefaultTextColor} />
+        </ContentArea>
+</Playground>
+
+### Светлый цвет текста на мобильном разрешении
+<Playground>
+    <ContentArea>
+        <VideoBanner imageMobile={imageMobile} imageTablet={images.imageTablet} imageDesktop={images.imageDesktop} imageDesktopWide={images.imageDesktopWide} content={contentWithDifferentTextColor} />
         </ContentArea>
 </Playground>

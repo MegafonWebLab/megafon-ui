@@ -51,6 +51,8 @@ export interface IContent {
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
     textColor?: TextColorType;
+    /** Цвет текста на мобильном разрешении */
+    textColorMobile?: TextColorType;
     /** Текст ссылки */
     linkTitle?: string;
     /** Адрес ссылки */
@@ -101,11 +103,16 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         buttonHref,
         onButtonClick,
         textColor = TextColor.FRESH_ASPHALT,
+        textColorMobile,
         linkTitle,
         linkUrl,
         cost,
     }) => (
-        <div className={cn('content', { 'text-color': textColor })}>
+        <div className={cn('content', {
+                'text-color': textColor,
+                'text-color-mobile': textColorMobile,
+            })}
+        >
             <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
             <div className={cn('text')}>
                 <Header as="h5" color="inherit" className={cn('description')}>
@@ -227,6 +234,7 @@ VideoBanner.propTypes = {
         href: PropTypes.string,
         onButtonClick: PropTypes.func,
         textColor: PropTypes.oneOf(Object.values(TextColor)),
+        textColorMobile: PropTypes.oneOf(Object.values(TextColor)),
         linkTitle: PropTypes.string,
         linkUrl: PropTypes.string,
         cost: PropTypes.string,
