@@ -17,6 +17,12 @@ const contentWithDefaultTextColor: IContent = {
     cost: 'oт <b>1000 ₽</b> за сообщение',
 };
 
+const contentWithDifferentTextColor: IContent = {
+    ...contentWithDefaultTextColor,
+    textColor: TextColor.FRESH_ASPHALT,
+    textColorMobile: TextColor.CLEAR_WHITE,
+};
+
 const content: IContent = {
     ...contentWithDefaultTextColor,
     textColor: TextColor.CLEAR_WHITE,
@@ -29,4 +35,13 @@ const images = {
     imageDesktopWide: imageWhiteDesktop,
 };
 
-export { content, contentWithDefaultTextColor, video, youtubeVideoId, imageMobile, imageDesktop, images };
+export {
+    content,
+    contentWithDefaultTextColor,
+    contentWithDifferentTextColor,
+    video,
+    youtubeVideoId,
+    imageMobile,
+    imageDesktop,
+    images
+};

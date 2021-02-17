@@ -71,6 +71,24 @@ describe('<VideoBanner />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('render component with the different content text color on desktop and mobile resolution', () => {
+        const localContent = {
+            ...content,
+            textColor: TextColor.FRESH_ASPHALT,
+            textColorMobile: TextColor.CLEAR_WHITE,
+        };
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                imageDesktop={imageDesktop}
+                imageDesktopWide={imageDesktopWide}
+                content={localContent}
+            />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should call onClick props', () => {
         const onButtonClick = jest.fn();
         const contentWithMockFunc = {

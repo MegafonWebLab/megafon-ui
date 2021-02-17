@@ -18,6 +18,14 @@ interface IContent {
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
     textColor?: 'freshAsphalt' | 'clearWhite';
+    /** Цвет текста на мобильном разрешении */
+    textColorMobile?: 'freshAsphalt' | 'clearWhite';
+    /** Текст ссылки */
+    linkTitle?: string;
+    /** Адрес ссылки */
+    linkUrl?: string;
+    /** Строка со стоимостью услуги */
+    cost?: string;
 }
 
 ```
