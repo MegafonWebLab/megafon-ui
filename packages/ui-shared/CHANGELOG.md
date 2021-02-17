@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.118](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.117...@megafon/ui-shared@2.0.0-beta.118) (2021-02-17)
+
+
+### Features
+
+* **videobanner:** adds prop for mobile content text color ([6eed9bb](https://github.com/MegafonWebLab/megafon-ui/commit/6eed9bbea39858368da677774d4236fde8040a4e))
+
+
+
+
+
 # [2.0.0-beta.117](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.116...@megafon/ui-shared@2.0.0-beta.117) (2021-02-17)
 
 **Note:** Version bump only for package @megafon/ui-shared
