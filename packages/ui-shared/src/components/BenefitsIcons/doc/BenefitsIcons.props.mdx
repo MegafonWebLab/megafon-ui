@@ -3,15 +3,15 @@ import BenefitsIcons from '../BenefitsIcons';
 
 <Props of={BenefitsIcons} />
 
-``` javascript
+``` typescript
 
 interface IBenefit {
     /** Заголовок бенефита */
-    title: string;
+    title?: string;
     /** Основной текст в бенефите */
-    text: string;
+    text?: string;
     /** Изображение */
-    img: string;
+    icon: React.ReactNode;
 }
 
 ```
