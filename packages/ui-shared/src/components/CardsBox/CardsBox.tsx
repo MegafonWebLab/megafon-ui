@@ -19,12 +19,12 @@ const SlidesSettings: SlidesSettingsType = {
     },
 };
 
-interface ICardsBox {
+interface ICardsBoxProps {
     children: Array<React.ReactElement<ICard>> | React.ReactElement<ICard>;
 }
 
 const cn = cnCreate('mfui-beta-cards-box');
-const CardsBox: React.FC<ICardsBox> = ({ children }) => {
+const CardsBox: React.FC<ICardsBoxProps> = ({ children }) => {
     const [isMobile, setIsMobile] = React.useState(false);
     const itemsCount = React.Children.count(children);
     const isRenderCarousel = isMobile && itemsCount > MAX_CARDS_COUNT_IN_GRID_ON_MOBILE;
