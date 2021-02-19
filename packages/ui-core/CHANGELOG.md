@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.92](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.91...@megafon/ui-core@2.0.0-beta.92) (2021-02-19)
+
+
+### Bug Fixes
+
+* **radiobutton:** add props inputRef ([461ce6c](https://github.com/MegafonWebLab/megafon-ui/commit/461ce6cbf1369088ef5b6fc1ac4eefe2e70446a5))
+
+
+
+
+
 # [2.0.0-beta.91](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.90...@megafon/ui-core@2.0.0-beta.91) (2021-02-12)
 
 
