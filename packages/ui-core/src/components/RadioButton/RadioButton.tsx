@@ -19,6 +19,8 @@ export interface IRadioButtonProps {
     children?: React.ReactNode;
     /** Обработчик изменения значения 'value' */
     onChange?: (value: string) => void;
+    /** Ссылка на input */
+    inputRef?: React.Ref<HTMLInputElement>;
 }
 
 const cn = cnCreate('mfui-beta-radio-button');
@@ -32,6 +34,10 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         className: PropTypes.string,
         children: PropTypes.node,
         onChange: PropTypes.func,
+        inputRef: PropTypes.oneOfType([
+            PropTypes.func,
+            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        ]),
     };
 
     static defaultProps: Partial<IRadioButtonProps> = {
@@ -46,7 +52,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
     }
 
     render() {
-        const { isChecked, isDisabled, name, value, textSize, children } = this.props;
+        const { isChecked, isDisabled, name, value, textSize, children, inputRef } = this.props;
         const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
 
         return (
@@ -64,6 +70,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                         value={value}
                         onChange={this.handleChange}
                         disabled={isDisabled}
+                        ref={inputRef as React.Ref<HTMLInputElement>}
                     />
                     <div className={cn('custom-input')} />
                     {children && <div className={cn('text', { 'size': textSize })}>{children}</div>}
