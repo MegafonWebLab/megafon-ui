@@ -42,6 +42,7 @@ import {
     fileSize as downloadLinkFileSize,
     href as downloadLinkHref
 } from '../../DownloadLinks/doc/DownloadLinks.docz.tsx';
+import ButtonBanner from '../../ButtonBanner/ButtonBanner';
 
 ## Отступ между компонентами 32px
 
@@ -324,5 +325,12 @@ import {
             <DownloadLink href={downloadLinkHref} text={downloadLinkText} extension={downloadLinkExtension} fileSize={downloadLinkFileSize} />
             <DownloadLink href={downloadLinkHref} text={downloadLinkText} extension={downloadLinkExtension} fileSize={downloadLinkFileSize} />
         </DownloadLinks>
+    </Container>
+    <Container>
+        <ButtonBanner
+            title="Сложность с выбором тарифа? "
+            text="Наши консультанты помогут подобрать нужный тариф и ответят на все интересующие вас вопросы."
+            buttonText="Заказать консультацию"
+        />
     </Container>
 </Playground>
