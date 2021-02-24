@@ -93,7 +93,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                     <StoreButton
                                         theme={StoreButtonTheme.GOOGLE_PLAY}
                                         href={linkGoogle}
-                                        className={cn('store-link')}
+                                        className={cn('store-link', { 'google-play': true })}
                                         onClick={onClickGoogle}
                                     />
                                 </div>

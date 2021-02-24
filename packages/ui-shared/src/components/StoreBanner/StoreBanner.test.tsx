@@ -50,7 +50,7 @@ describe('StoreBanner', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should call link click handler', () => {
+    it('should call click handler on app store link', () => {
         const onClickApple = jest.fn();
         const wrapper = shallow(<StoreBanner {...props} onClickApple={onClickApple} />);
 
@@ -58,5 +58,15 @@ describe('StoreBanner', () => {
         link.simulate('click');
 
         expect(onClickApple).toHaveBeenCalled();
+    });
+
+    it('should call click handler on google play link', () => {
+        const onClickGoogle = jest.fn();
+        const wrapper = shallow(<StoreBanner {...props} onClickGoogle={onClickGoogle} />);
+
+        const link = wrapper.find('.mfui-beta-store-banner__store-link_google-play');
+        link.simulate('click');
+
+        expect(onClickGoogle).toHaveBeenCalled();
     });
 });

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate, Link } from '@megafon/ui-core';
 import './StoreButton.less';
 
 export enum Theme {
@@ -8,19 +8,18 @@ export enum Theme {
     APP_STORE = 'app-store',
 }
 
-export type Props = {
-    href: string;
+type LinkPropTypes = React.ComponentProps<typeof Link>;
+
+export type Props = Required<Pick<LinkPropTypes, 'href'>> & Pick<LinkPropTypes, 'onClick'> & {
     /** Тема кнопки */
     theme: Theme;
-    /** Обработчик клика */
-    onClick?: (e: React.MouseEvent<EventTarget>) => void;
     /** Дополнительный класс */
     className?: string;
 };
 
 const cn = cnCreate('mfui-beta-store-button');
 const StoreButton: React.FC<Props> = ({ href, onClick, theme, className }) => (
-    <a href={href} onClick={onClick} className={cn({ theme }, className)} />
+    <Link href={href} onClick={onClick} className={cn({ theme }, className)} />
 );
 
 StoreButton.propTypes = {

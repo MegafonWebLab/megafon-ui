@@ -60,7 +60,7 @@ exports[`StoreBanner should render with QR-code 1`] = `
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link"
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -156,7 +156,7 @@ exports[`StoreBanner should render with custom class name 1`] = `
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link"
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -252,7 +252,7 @@ exports[`StoreBanner should render with green theme 1`] = `
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link"
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -348,7 +348,7 @@ exports[`StoreBanner should render with iphone mask 1`] = `
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link"
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -444,7 +444,7 @@ exports[`StoreBanner should render with required props 1`] = `
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link"
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
