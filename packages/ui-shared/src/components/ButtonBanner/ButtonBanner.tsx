@@ -46,7 +46,7 @@ export interface IButtonBannerProps {
 }
 
 const getMediaStyle = (imageUrl: string) => imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined;
-const converConfig = {
+const convertConfig = {
     a: {
         component: TextLink,
         props: ['href', 'target'],
@@ -83,7 +83,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
                <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
                     <div className={cn('content')}>
                         <Header className={cn('header')} as="h2">{title}</Header>
-                        <Paragraph className={cn('text')} hasMargin={false}>{convert(text, converConfig)}</Paragraph>
+                        <Paragraph className={cn('text')} hasMargin={false}>{convert(text, convertConfig)}</Paragraph>
                         {!!imageUrl && buttonElem}
                     </div>
                </GridColumn>
