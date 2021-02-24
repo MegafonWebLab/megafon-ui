@@ -5,4 +5,7 @@ import qrCode from './img/qr-code.png';
 const title = 'Скачивайте мобильное приложение МегаФон';
 const text = 'Скачай и получи максимум';
 
-export { title, text, image, qrCode, newIphoneImage } ;
+const link = '#';
+const onClick = () => {};
+
+export { title, text, image, qrCode, newIphoneImage, link, onClick } ;

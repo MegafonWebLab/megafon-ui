@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StoreButton should render with App Store theme 1`] = `
+<a
+  className="mfui-beta-store-button mfui-beta-store-button_theme_app-store"
+  href="href"
+/>
+`;
+
+exports[`StoreButton should render with Google Play 1`] = `
+<a
+  className="mfui-beta-store-button mfui-beta-store-button_theme_google-play"
+  href="href"
+/>
+`;
+
+exports[`StoreButton should render with custom class name 1`] = `
+<a
+  className="mfui-beta-store-button mfui-beta-store-button_theme_app-store custom-class-name"
+  href="href"
+/>
+`;

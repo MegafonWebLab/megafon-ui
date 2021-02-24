@@ -39,8 +39,24 @@ describe('StoreBanner', () => {
     });
 
     it('should render with QR-code', () => {
-        const wrapper = shallow(<StoreBanner {...props} qrCode={'qr-code.png'}/>);
+        const wrapper = shallow(<StoreBanner {...props} qrCode={'qr-code.png'} />);
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with custom class name', () => {
+        const wrapper = shallow(<StoreBanner {...props} className="custom-class-name" />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should call link click handler', () => {
+        const onClickApple = jest.fn();
+        const wrapper = shallow(<StoreBanner {...props} onClickApple={onClickApple} />);
+
+        const link = wrapper.find('.mfui-beta-store-banner__store-link_app-store');
+        link.simulate('click');
+
+        expect(onClickApple).toHaveBeenCalled();
     });
 });
