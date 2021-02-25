@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.120](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.119...@megafon/ui-shared@2.0.0-beta.120) (2021-02-25)
+
+
+### Features
+
+* **buttonbanner:** create constructor component ([4d28f5b](https://github.com/MegafonWebLab/megafon-ui/commit/4d28f5bf23948cabb4fbb3967662d6c255f050d6))
+* **container:** add ButtonBanner component ([46fe66a](https://github.com/MegafonWebLab/megafon-ui/commit/46fe66a8860bfe03cb1251a863e4ea5bbebb2a48))
+
+
+
+
+
 # [2.0.0-beta.119](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.118...@megafon/ui-shared@2.0.0-beta.119) (2021-02-19)
 
 **Note:** Version bump only for package @megafon/ui-shared
