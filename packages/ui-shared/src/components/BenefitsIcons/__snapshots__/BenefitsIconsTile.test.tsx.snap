@@ -20,12 +20,85 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
     >
       title
     </Header>
-    <Paragraph
-      className="mfui-beta-benefits-icons-tile__text"
-      hasMargin={false}
+    <div
+      className="mfui-beta-benefits-icons-tile__content"
     >
       text
-    </Paragraph>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field 1`] = `
+<div
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
+>
+  <div
+    className="mfui-beta-benefits-icons-tile__svg-icon"
+  >
+    <test-file-stub />
+  </div>
+  <div
+    className="mfui-beta-benefits-icons-tile__content-wrapper"
+  >
+    <Header
+      as="h5"
+      className="mfui-beta-benefits-icons-tile__title"
+      color="black"
+      hAlign="inherit"
+    >
+      title
+    </Header>
+    <div
+      className="mfui-beta-benefits-icons-tile__content"
+    >
+      <List
+        as="ol"
+        className=""
+        color="red"
+        key="0"
+        weight="regular"
+      >
+        <ListItem
+          className=""
+          key="0"
+        >
+          <Paragraph
+            className="mfui-beta-benefits-icons-tile__text"
+            key="0"
+          >
+            пункт 1
+          </Paragraph>
+        </ListItem>
+        <ListItem
+          className=""
+          key="1"
+        >
+          пункт 2
+        </ListItem>
+        <ListItem
+          className=""
+          key="2"
+        >
+          <TextLink
+            className=""
+            color="blue"
+            key="0"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            пункт
+          </TextLink>
+           
+          <component
+            className=""
+            key="2"
+          >
+            3
+          </component>
+        </ListItem>
+      </List>
+    </div>
   </div>
 </div>
 `;
@@ -66,12 +139,11 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without title 1`] = `
   <div
     className="mfui-beta-benefits-icons-tile__content-wrapper"
   >
-    <Paragraph
-      className="mfui-beta-benefits-icons-tile__text"
-      hasMargin={false}
+    <div
+      className="mfui-beta-benefits-icons-tile__content"
     >
       text
-    </Paragraph>
+    </div>
   </div>
 </div>
 `;
