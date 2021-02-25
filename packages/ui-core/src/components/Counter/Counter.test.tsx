@@ -7,6 +7,7 @@ const props: ICounterProps = {
     min: 3,
     max: 33,
     isDisabled: true,
+    className: 'class-name',
     classes: {
         root: 'root-class',
         buttonMinus: 'button-minus-class',

@@ -27,8 +27,9 @@ describe('<Tabs />', () => {
     it('should render with props', () => {
         const wrapper = shallow(
             <Tabs
+                className="className"
                 classes={{
-                    root: 'className',
+                    root: 'rootClass',
                     innerIndents: 'innerIndentsClass',
                 }}
                 size={TabSize.SMALL}

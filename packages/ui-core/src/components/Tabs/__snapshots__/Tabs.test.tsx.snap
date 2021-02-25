@@ -99,7 +99,7 @@ exports[`<Tabs /> should render with default props 1`] = `
 
 exports[`<Tabs /> should render with props 1`] = `
 <div
-  className="mfui-beta-tabs mfui-beta-tabs_size_small mfui-beta-tabs_h-align_center mfui-beta-tabs_tab-color_green className"
+  className="mfui-beta-tabs mfui-beta-tabs_size_small mfui-beta-tabs_h-align_center mfui-beta-tabs_tab-color_green className rootClass"
 >
   <div
     style={
