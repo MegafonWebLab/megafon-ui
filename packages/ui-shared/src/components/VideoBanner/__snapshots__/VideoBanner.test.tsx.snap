@@ -62,6 +62,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
           >
             oт 
             <component
+              className=""
               key="1"
             >
               1000 ₽
@@ -140,6 +141,7 @@ exports[`<VideoBanner /> render component with pictures and non default content 
           >
             oт 
             <component
+              className=""
               key="1"
             >
               1000 ₽
@@ -218,6 +220,7 @@ exports[`<VideoBanner /> render component with the different content text color 
           >
             oт 
             <component
+              className=""
               key="1"
             >
               1000 ₽
@@ -568,6 +571,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                 >
                   oт 
                   <component
+                    className=""
                     key="1"
                   >
                     <Header

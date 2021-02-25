@@ -120,6 +120,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
               >
                 Test2 
                 <TextLink
+                  className=""
                   color="blue"
                   href="/test"
                   key="1"
@@ -259,6 +260,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
               >
                 Test2 
                 <TextLink
+                  className=""
                   color="blue"
                   href="/test"
                   key="1"
@@ -405,6 +407,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
               >
                 Test2 
                 <TextLink
+                  className=""
                   color="blue"
                   href="/test"
                   key="1"
@@ -544,6 +547,7 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
               >
                 Test2 
                 <TextLink
+                  className=""
                   color="blue"
                   href="/test"
                   key="1"
@@ -5776,6 +5780,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                         >
                           Test2 
                           <TextLink
+                            className=""
                             color="blue"
                             href="/test"
                             key="1"
