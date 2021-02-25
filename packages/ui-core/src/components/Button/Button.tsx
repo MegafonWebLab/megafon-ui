@@ -151,7 +151,7 @@ const Button: React.FC<IButtonProps> = ({
     const renderChildren: JSX.Element = React.useMemo(() => (
         <div className={cn('content', contentClassName)}>
             {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
-            {children}
+            <span className={cn('text')}>{children}</span>
             {!iconLeft && showArrow && <Arrow className={cn('icon-arrow')} />}
         </div>
     ), [iconLeft, contentClassName, showArrow, children]);

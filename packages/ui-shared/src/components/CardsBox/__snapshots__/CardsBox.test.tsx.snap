@@ -123,7 +123,11 @@ exports[`CardsBox render on mobile resolution with carousel 1`] = `
                     <div
                       className="mfui-beta-button__content"
                     >
-                      button-title
+                      <span
+                        className="mfui-beta-button__text"
+                      >
+                        button-title
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -213,7 +217,11 @@ exports[`CardsBox render on mobile resolution with carousel 1`] = `
                     <div
                       className="mfui-beta-button__content"
                     >
-                      button-title
+                      <span
+                        className="mfui-beta-button__text"
+                      >
+                        button-title
+                      </span>
                     </div>
                   </div>
                 </a>
@@ -303,7 +311,11 @@ exports[`CardsBox render on mobile resolution with carousel 1`] = `
                     <div
                       className="mfui-beta-button__content"
                     >
-                      button-title
+                      <span
+                        className="mfui-beta-button__text"
+                      >
+                        button-title
+                      </span>
                     </div>
                   </div>
                 </a>

@@ -28,7 +28,11 @@ exports[`<Button /> layout it renders children 1`] = `
     <div
       className="mfui-beta-button__content content-class"
     >
-      button
+      <span
+        className="mfui-beta-button__text"
+      >
+        button
+      </span>
     </div>
   </div>
 </a>
@@ -156,7 +160,11 @@ exports[`<Button /> layout should render with arrow 1`] = `
     <div
       className="mfui-beta-button__content"
     >
-      arrow
+      <span
+        className="mfui-beta-button__text"
+      >
+        arrow
+      </span>
       <test-file-stub
         className="mfui-beta-button__icon-arrow"
       />
@@ -198,7 +206,11 @@ exports[`<Button /> layout should render with left icon 1`] = `
       >
         <test-file-stub />
       </div>
-      left icon
+      <span
+        className="mfui-beta-button__text"
+      >
+        left icon
+      </span>
     </div>
   </div>
 </button>
