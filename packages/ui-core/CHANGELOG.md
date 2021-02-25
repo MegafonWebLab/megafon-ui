@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.93](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.92...@megafon/ui-core@2.0.0-beta.93) (2021-02-25)
+
+
+### Features
+
+* **accordion:** add className prop ([1c00fda](https://github.com/MegafonWebLab/megafon-ui/commit/1c00fda68089edfd0fccfdc3167d54ce1aadaf81))
+* **carousel:** add className prop ([3db96c5](https://github.com/MegafonWebLab/megafon-ui/commit/3db96c5b79289f38229b333572afc2fb2bf73ab5))
+* **contentarea:** add className prop ([3a255be](https://github.com/MegafonWebLab/megafon-ui/commit/3a255be03ad366b2fc982c8b49084eb8503b7162))
+* **counter:** add className prop ([eec3790](https://github.com/MegafonWebLab/megafon-ui/commit/eec3790217695543b1bf482aec4e9a9196925eed))
+* **tabs:** add className prop ([863ebeb](https://github.com/MegafonWebLab/megafon-ui/commit/863ebebc0f4a3334d4983c2e0d1e173107404739))
+
+
+
+
+
 # [2.0.0-beta.92](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.91...@megafon/ui-core@2.0.0-beta.92) (2021-02-19)
 
 

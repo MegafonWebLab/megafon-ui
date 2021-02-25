@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.121](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.120...@megafon/ui-shared@2.0.0-beta.121) (2021-02-25)
+
+
+### Features
+
+* **accordionbox:** add className prop ([6d3e8e7](https://github.com/MegafonWebLab/megafon-ui/commit/6d3e8e7035ff8d4fe4bf4cab787a1d06d2a79faa))
+
+
+
+
+
 # [2.0.0-beta.120](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.119...@megafon/ui-shared@2.0.0-beta.120) (2021-02-25)
 
 
