@@ -42,6 +42,12 @@ import {
     fileSize as downloadLinkFileSize,
     href as downloadLinkHref
 } from '../../DownloadLinks/doc/DownloadLinks.docz.tsx';
+import StoreBanner from '../../StoreBanner/StoreBanner';
+import {
+    text as storeBannerText,
+    title as storeBannerTitle,
+    image as storeBannerImage
+} from '../../StoreBanner/doc/StoreBanner.docz.tsx';
 import ButtonBanner from '../../ButtonBanner/ButtonBanner';
 
 ## Отступ между компонентами 32px
@@ -325,6 +331,16 @@ import ButtonBanner from '../../ButtonBanner/ButtonBanner';
             <DownloadLink href={downloadLinkHref} text={downloadLinkText} extension={downloadLinkExtension} fileSize={downloadLinkFileSize} />
             <DownloadLink href={downloadLinkHref} text={downloadLinkText} extension={downloadLinkExtension} fileSize={downloadLinkFileSize} />
         </DownloadLinks>
+    </Container>
+    <Container>
+        <StoreBanner
+            title={storeBannerTitle}
+            text={storeBannerText}
+            linkApple="#"
+            linkGoogle="#"
+            imageSrc={storeBannerImage}
+            deviceMask="android"
+        />
     </Container>
     <Container>
         <ButtonBanner

@@ -1,0 +1,130 @@
+import { Playground } from 'docz';
+import StoreBanner from '../StoreBanner';
+import { title, text, image, qrCode, newIphoneImage, link, onClick } from './StoreBanner.docz.tsx';
+import { ContentArea } from '@megafon/ui-core';
+
+```javascript collapse=Демо данные
+
+const title = 'Скачивайте мобильное приложение МегаФон';
+const text = 'Скачай и получи максимум';
+const link = '#';
+const onClick = () => {};
+
+```
+
+## Базовое использование
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            deviceMask="android"
+        />
+    </ContentArea>
+</Playground>
+
+## Разные шаблоны девайсов
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={newIphoneImage}
+            deviceMask="new-iphone"
+        />
+    </ContentArea>
+</Playground>
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            deviceMask="white-iphone"
+        />
+    </ContentArea>
+</Playground>
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            deviceMask="black-iphone"
+        />
+    </ContentArea>
+</Playground>
+
+## Цветовые схемы
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            theme="green"
+            deviceMask="white-iphone"
+        />
+    </ContentArea>
+</Playground>
+
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            theme="spbSky1"
+            deviceMask="android"
+        />
+    </ContentArea>
+</Playground>
+
+## C QR-кодом
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            qrCode={qrCode}
+            deviceMask="black-iphone"
+        />
+    </ContentArea>
+</Playground>

@@ -9,9 +9,9 @@ export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9
 export interface IGridColumn {
     /** Размер колон на разрещении 1280+ */
     wide?: TGridSizeValues;
-    /** Размер колон на разрещении 1024+ */
+    /** Размер колон на разрещении 1024 - 1279 */
     desktop?: TGridSizeValues;
-    /** Размер колон на разрещении 768+ */
+    /** Размер колон на разрещении 768 - 1023 */
     tablet?: TGridSizeValues;
     /** Размер колон на разрещении 767- */
     mobile?: TGridSizeValues;
@@ -20,9 +20,9 @@ export interface IGridColumn {
 
     /** Порядок на разрещении 1280+ */
     orderWide?: string;
-    /** Порядок на разрещении 1024+ */
+    /** Порядок на разрещении 1024 - 1279 */
     orderDesktop?: string;
-    /** Порядок на разрещении 768+ */
+    /** Порядок на разрещении 768 - 1023 */
     orderTablet?: string;
     /** Порядок на разрещении 767- */
     orderMobile?: string;
@@ -31,9 +31,9 @@ export interface IGridColumn {
 
     /** Размер левого смещения на 1280+ */
     leftOffsetWide?: TGridSizeValues;
-    /** Размер левого смещения на 1024+ */
+    /** Размер левого смещения на 1024 - 1279  */
     leftOffsetDesktop?: TGridSizeValues;
-    /** Размер левого смещения на 768+ */
+    /** Размер левого смещения на 768 - 1023 */
     leftOffsetTablet?: TGridSizeValues;
     /** Размер левого смещения на 767- */
     leftOffsetMobile?: TGridSizeValues;
@@ -42,9 +42,9 @@ export interface IGridColumn {
 
     /** Размер правого смещения на 1280+ */
     rightOffsetWide?: TGridSizeValues;
-    /** Размер правого смещения на 1024+ */
+    /** Размер правого смещения на 1024 - 1279 */
     rightOffsetDesktop?: TGridSizeValues;
-    /** Размер правого смещения на 768+ */
+    /** Размер правого смещения на 768 - 1023 */
     rightOffsetTablet?: TGridSizeValues;
     /** Размер правого смещения на 767- */
     rightOffsetMobile?: TGridSizeValues;
