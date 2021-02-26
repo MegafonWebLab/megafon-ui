@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.123](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.122...@megafon/ui-shared@2.0.0-beta.123) (2021-02-26)
+
+
+### Bug Fixes
+
+* **button:** fix text vertical align ([fb9b9bb](https://github.com/MegafonWebLab/megafon-ui/commit/fb9b9bb09d6c4e257c65af4c6ccaf39987867638))
+
+
+
+
+
 # [2.0.0-beta.122](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.121...@megafon/ui-shared@2.0.0-beta.122) (2021-02-26)
 
 

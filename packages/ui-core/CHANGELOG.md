@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.95](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.94...@megafon/ui-core@2.0.0-beta.95) (2021-02-26)
+
+
+### Bug Fixes
+
+* **button:** fix text vertical align ([fb9b9bb](https://github.com/MegafonWebLab/megafon-ui/commit/fb9b9bb09d6c4e257c65af4c6ccaf39987867638))
+
+
+
+
+
 # [2.0.0-beta.94](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.93...@megafon/ui-core@2.0.0-beta.94) (2021-02-26)
 
 **Note:** Version bump only for package @megafon/ui-core
