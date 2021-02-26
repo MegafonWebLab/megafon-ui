@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.122](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.121...@megafon/ui-shared@2.0.0-beta.122) (2021-02-26)
+
+
+### Features
+
+* **store banner:** adds new component ([ba48414](https://github.com/MegafonWebLab/megafon-ui/commit/ba48414ac86d356cfb8be17a2f64596f2d50833b))
+
+
+
+
+
 # [2.0.0-beta.121](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.120...@megafon/ui-shared@2.0.0-beta.121) (2021-02-25)
 
 
