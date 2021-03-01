@@ -144,10 +144,11 @@ exports[`Card left align of the interactive element 1`] = `
 
 exports[`Card render component 1`] = `
 <div
-  className="mfui-beta-card"
+  className="mfui-beta-card className rootClass"
+  data-test="value"
 >
   <div
-    className="mfui-beta-card__inner"
+    className="mfui-beta-card__inner innerClass"
   >
     <div
       className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_fill mfui-beta-card__pic-wrapper_img"
@@ -174,13 +175,13 @@ exports[`Card render component 1`] = `
       className="mfui-beta-card__btns-wrapper"
     >
       <Button
-        className="mfui-beta-card__button"
+        className="mfui-beta-card__button buttonClass"
         href="#"
       >
         Подробнее
       </Button>
       <TextLink
-        className="mfui-beta-card__link"
+        className="mfui-beta-card__link linkClass"
         color="blue"
         href="#"
         underlineStyle="solid"
