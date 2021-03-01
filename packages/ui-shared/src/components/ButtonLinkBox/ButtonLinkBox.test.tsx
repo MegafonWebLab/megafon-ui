@@ -4,6 +4,14 @@ import ButtonLinkBox, { IButtonLinkBoxProps } from './ButtonLinkBox';
 
 const props: IButtonLinkBoxProps = {
     className: 'custom-class',
+    classes: {
+        root: 'root-class',
+        button: 'button-class',
+        link: 'link-class',
+    },
+    dataAttrs: {
+        'data-test': 'value',
+    },
     buttonTitle: 'button title',
     buttonUrl: 'button-url',
     buttonColor: 'purple',
