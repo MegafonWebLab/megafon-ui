@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Sleep for 15 seconds before canceling other workflow runs
+        if: github.event_name == 'release'
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '15s'
       - name: Cancel previous runs
         if: github.event_name == 'release'
         uses: actions/github-script@v3

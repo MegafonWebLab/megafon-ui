@@ -605,7 +605,11 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                       <div
                         className="mfui-beta-button__content"
                       >
-                        Текст в кнопке
+                        <span
+                          className="mfui-beta-button__text"
+                        >
+                          Текст в кнопке
+                        </span>
                       </div>
                     </div>
                   </a>

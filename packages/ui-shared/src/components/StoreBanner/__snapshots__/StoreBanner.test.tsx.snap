@@ -1,0 +1,486 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StoreBanner should render with QR-code 1`] = `
+<div
+  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android"
+>
+  <div
+    className="mfui-beta-store-banner__container"
+  >
+    <div
+      className="mfui-beta-store-banner__grid"
+    >
+      <Grid
+        multiRow={true}
+      >
+        <GridColumn
+          all="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          rightOffsetWide="1"
+        >
+          <div
+            className="mfui-beta-store-banner__content"
+          >
+            <Header
+              as="h2"
+              className="mfui-beta-store-banner__title"
+              color="inherit"
+              hAlign="inherit"
+            >
+              Title
+            </Header>
+            <Paragraph
+              className="mfui-beta-store-banner__text"
+              color="inherit"
+              hasMargin={false}
+            >
+              Text
+            </Paragraph>
+            <div
+              className="mfui-beta-store-banner__links"
+            >
+              <img
+                alt="QR-код"
+                className="mfui-beta-store-banner__qr-code"
+                src="qr-code.png"
+              />
+              <div
+                className="mfui-beta-store-banner__stores"
+              >
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  href="App Store link"
+                  theme="app-store"
+                />
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  href="Google Play link"
+                  theme="google-play"
+                />
+              </div>
+            </div>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="4"
+          desktop="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="6"
+        >
+          <div
+            className="mfui-beta-store-banner__device-wrapper"
+          >
+            <div
+              className="mfui-beta-store-banner__device"
+            >
+              <img
+                alt="Изображение приложения на экране телефона"
+                className="mfui-beta-store-banner__screen"
+                src="image.png"
+              />
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StoreBanner should render with custom class name 1`] = `
+<div
+  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name"
+>
+  <div
+    className="mfui-beta-store-banner__container"
+  >
+    <div
+      className="mfui-beta-store-banner__grid"
+    >
+      <Grid
+        multiRow={true}
+      >
+        <GridColumn
+          all="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          rightOffsetWide="1"
+        >
+          <div
+            className="mfui-beta-store-banner__content"
+          >
+            <Header
+              as="h2"
+              className="mfui-beta-store-banner__title"
+              color="inherit"
+              hAlign="inherit"
+            >
+              Title
+            </Header>
+            <Paragraph
+              className="mfui-beta-store-banner__text"
+              color="inherit"
+              hasMargin={false}
+            >
+              Text
+            </Paragraph>
+            <div
+              className="mfui-beta-store-banner__links"
+            >
+              <div
+                className="mfui-beta-store-banner__stores"
+              >
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  href="App Store link"
+                  theme="app-store"
+                />
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  href="Google Play link"
+                  theme="google-play"
+                />
+              </div>
+            </div>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="4"
+          desktop="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="6"
+        >
+          <div
+            className="mfui-beta-store-banner__device-wrapper"
+          >
+            <div
+              className="mfui-beta-store-banner__device"
+            >
+              <img
+                alt="Изображение приложения на экране телефона"
+                className="mfui-beta-store-banner__screen"
+                src="image.png"
+              />
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StoreBanner should render with green theme 1`] = `
+<div
+  className="mfui-beta-store-banner mfui-beta-store-banner_theme_green mfui-beta-store-banner_mask_android"
+>
+  <div
+    className="mfui-beta-store-banner__container"
+  >
+    <div
+      className="mfui-beta-store-banner__grid"
+    >
+      <Grid
+        multiRow={true}
+      >
+        <GridColumn
+          all="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          rightOffsetWide="1"
+        >
+          <div
+            className="mfui-beta-store-banner__content"
+          >
+            <Header
+              as="h2"
+              className="mfui-beta-store-banner__title"
+              color="inherit"
+              hAlign="inherit"
+            >
+              Title
+            </Header>
+            <Paragraph
+              className="mfui-beta-store-banner__text"
+              color="inherit"
+              hasMargin={false}
+            >
+              Text
+            </Paragraph>
+            <div
+              className="mfui-beta-store-banner__links"
+            >
+              <div
+                className="mfui-beta-store-banner__stores"
+              >
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  href="App Store link"
+                  theme="app-store"
+                />
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  href="Google Play link"
+                  theme="google-play"
+                />
+              </div>
+            </div>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="4"
+          desktop="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="6"
+        >
+          <div
+            className="mfui-beta-store-banner__device-wrapper"
+          >
+            <div
+              className="mfui-beta-store-banner__device"
+            >
+              <img
+                alt="Изображение приложения на экране телефона"
+                className="mfui-beta-store-banner__screen"
+                src="image.png"
+              />
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StoreBanner should render with iphone mask 1`] = `
+<div
+  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_black-iphone"
+>
+  <div
+    className="mfui-beta-store-banner__container"
+  >
+    <div
+      className="mfui-beta-store-banner__grid"
+    >
+      <Grid
+        multiRow={true}
+      >
+        <GridColumn
+          all="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          rightOffsetWide="1"
+        >
+          <div
+            className="mfui-beta-store-banner__content"
+          >
+            <Header
+              as="h2"
+              className="mfui-beta-store-banner__title"
+              color="inherit"
+              hAlign="inherit"
+            >
+              Title
+            </Header>
+            <Paragraph
+              className="mfui-beta-store-banner__text"
+              color="inherit"
+              hasMargin={false}
+            >
+              Text
+            </Paragraph>
+            <div
+              className="mfui-beta-store-banner__links"
+            >
+              <div
+                className="mfui-beta-store-banner__stores"
+              >
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  href="App Store link"
+                  theme="app-store"
+                />
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  href="Google Play link"
+                  theme="google-play"
+                />
+              </div>
+            </div>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="4"
+          desktop="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="6"
+        >
+          <div
+            className="mfui-beta-store-banner__device-wrapper"
+          >
+            <div
+              className="mfui-beta-store-banner__device"
+            >
+              <img
+                alt="Изображение приложения на экране телефона"
+                className="mfui-beta-store-banner__screen"
+                src="image.png"
+              />
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StoreBanner should render with required props 1`] = `
+<div
+  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android"
+>
+  <div
+    className="mfui-beta-store-banner__container"
+  >
+    <div
+      className="mfui-beta-store-banner__grid"
+    >
+      <Grid
+        multiRow={true}
+      >
+        <GridColumn
+          all="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          rightOffsetWide="1"
+        >
+          <div
+            className="mfui-beta-store-banner__content"
+          >
+            <Header
+              as="h2"
+              className="mfui-beta-store-banner__title"
+              color="inherit"
+              hAlign="inherit"
+            >
+              Title
+            </Header>
+            <Paragraph
+              className="mfui-beta-store-banner__text"
+              color="inherit"
+              hasMargin={false}
+            >
+              Text
+            </Paragraph>
+            <div
+              className="mfui-beta-store-banner__links"
+            >
+              <div
+                className="mfui-beta-store-banner__stores"
+              >
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  href="App Store link"
+                  theme="app-store"
+                />
+                <StoreButton
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  href="Google Play link"
+                  theme="google-play"
+                />
+              </div>
+            </div>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="4"
+          desktop="6"
+          flex={false}
+          grow={false}
+          mobile="12"
+          orderAll="0"
+          orderDesktop="0"
+          orderMobile="0"
+          orderTablet="0"
+          orderWide="0"
+          tablet="6"
+        >
+          <div
+            className="mfui-beta-store-banner__device-wrapper"
+          >
+            <div
+              className="mfui-beta-store-banner__device"
+            >
+              <img
+                alt="Изображение приложения на экране телефона"
+                className="mfui-beta-store-banner__screen"
+                src="image.png"
+              />
+            </div>
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </div>
+</div>
+`;

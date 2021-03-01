@@ -18,7 +18,9 @@
 @k15: e('.mfui-beta-download-links');
 @k16: e('.mfui-beta-text-box');
 @k17: e('.mfui-beta-picture-with-description');
-@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17;
+@k18: e('.mfui-beta-store-banner');
+@k19: e('.mfui-beta-button-banner');
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19;
 
 @color-modificator: e('&_bg-color_');
 @color-default: e('default');
@@ -141,28 +143,28 @@
 
     // k3(benefits-icons)
 
-    .generateComponentsMargins(@large, @k3, 4, 17);
+    .generateComponentsMargins(@large, @k3, 4, 19);
     .generateComponentsMargins(@big, @k3, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k3, 4, 17);
+        .generateComponentsMargins(@big, @k3, 4, 19);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k3, 4, 17);
+        .generateComponentsMargins(@medium, @k3, 4, 19);
     }
 
     // k4(benefits-pictures);
 
-    .generateComponentsMargins(@large, @k4, 3, 17);
+    .generateComponentsMargins(@large, @k4, 3, 19);
     .generateComponentsMargins(@big, @k4, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k4, 3, 17);
+        .generateComponentsMargins(@big, @k4, 3, 19);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k4, 3, 17);
+        .generateComponentsMargins(@medium, @k4, 3, 19);
     }
 
     @{k4} + @{k4} {
@@ -171,15 +173,15 @@
 
     // k5(cards-box)
 
-    .generateComponentsMargins(@large, @k5, 3, 17);
+    .generateComponentsMargins(@large, @k5, 3, 19);
     .generateComponentsMargins(@big, @k5, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k5, 3, 17);
+        .generateComponentsMargins(@big, @k5, 3, 19);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k5, 3, 17);
+        .generateComponentsMargins(@medium, @k5, 3, 19);
     }
 
     @{k5} + @{k5} {
@@ -188,15 +190,15 @@
 
     // k6(carousel-box)
 
-    .generateComponentsMargins(@large, @k6, 3, 17);
+    .generateComponentsMargins(@large, @k6, 3, 19);
     .generateComponentsMargins(@big, @k6, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k6, 3, 17);
+        .generateComponentsMargins(@big, @k6, 3, 19);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k6, 3, 17);
+        .generateComponentsMargins(@medium, @k6, 3, 19);
     }
 
     @{k6} + @{k6} {
@@ -205,16 +207,16 @@
 
     // k7(video-block)
 
-    .generateComponentsMargins(@large, @k7, 3, 17);
+    .generateComponentsMargins(@large, @k7, 3, 19);
     .generateComponentsMargins(@small, @k7, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k7, 3, 17);
+        .generateComponentsMargins(@big, @k7, 3, 19);
         .generateComponentsMargins(@small, @k7, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k7, 3, 17);
+        .generateComponentsMargins(@medium, @k7, 3, 19);
         .generateComponentsMargins(@small, @k7, 14, 15);
     }
 
@@ -241,11 +243,11 @@
     }
 
     .generateInnerTabsMargins(@big, 3, 13);
-    .generateInnerTabsMargins(@big, 16, 17);
+    .generateInnerTabsMargins(@big, 16, 19);
 
     @media @mobileSM {
         .generateInnerTabsMargins(@small, 3, 13);
-        .generateInnerTabsMargins(@small, 16, 17);
+        .generateInnerTabsMargins(@small, 16, 19);
     }
 
     @{k8} @{k8} {
@@ -258,14 +260,14 @@
         margin-top: @big;
     }
 
-    .generateComponentsMargins(@large, @k9, 3, 17);
+    .generateComponentsMargins(@large, @k9, 3, 19);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k9, 3, 17);
+        .generateComponentsMargins(@big, @k9, 3, 19);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k9, 3, 17);
+        .generateComponentsMargins(@medium, @k9, 3, 19);
     }
 
     @{k9} + @{k9},
@@ -275,10 +277,10 @@
 
     // k10(instructions)
 
-    .generateComponentsMargins(@large, @k10, 3, 17);
+    .generateComponentsMargins(@large, @k10, 3, 19);
 
     @media @mobile {
-        .generateComponentsMargins(@big, @k10, 3, 17);
+        .generateComponentsMargins(@big, @k10, 3, 19);
     }
 
     @{k10} + @{k14},
@@ -288,14 +290,14 @@
 
     // k11(property)
 
-    .generateComponentsMargins(@large, @k11, 3, 17);
+    .generateComponentsMargins(@large, @k11, 3, 19);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k11, 3, 17);
+        .generateComponentsMargins(@big, @k11, 3, 19);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k11, 3, 17);
+        .generateComponentsMargins(@medium, @k11, 3, 19);
     }
 
     @{k11} + @{k14},
@@ -305,16 +307,16 @@
 
     // k12(table)
 
-    .generateComponentsMargins(@large, @k12, 3, 17);
+    .generateComponentsMargins(@large, @k12, 3, 19);
     .generateComponentsMargins(@small, @k12, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k12, 3, 17);
+        .generateComponentsMargins(@big, @k12, 3, 19);
         .generateComponentsMargins(@small, @k12, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k12, 3, 17);
+        .generateComponentsMargins(@medium, @k12, 3, 19);
         .generateComponentsMargins(@small, @k12, 14, 15);
     }
 
@@ -352,31 +354,31 @@
 
     // k16(text-box)
 
-    .generateComponentsMargins(@large, @k16, 3, 17);
+    .generateComponentsMargins(@large, @k16, 3, 19);
     .generateComponentsMargins(@small, @k16, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k16, 3, 17);
+        .generateComponentsMargins(@big, @k16, 3, 19);
         .generateComponentsMargins(@small, @k16, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k16, 3, 17);
+        .generateComponentsMargins(@medium, @k16, 3, 19);
         .generateComponentsMargins(@small, @k16, 14, 15);
     }
 
     // k17(picture-with-description)
 
-    .generateComponentsMargins(@large, @k17, 3, 17);
+    .generateComponentsMargins(@large, @k17, 3, 19);
     .generateComponentsMargins(@small, @k17, 14, 15);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k17, 3, 17);
+        .generateComponentsMargins(@big, @k17, 3, 19);
         .generateComponentsMargins(@small, @k17, 14, 15);
     }
 
     @media @mobileSM {
-        .generateComponentsMargins(@medium, @k17, 3, 17);
+        .generateComponentsMargins(@medium, @k17, 3, 19);
         .generateComponentsMargins(@small, @k17, 14, 15);
     }
 }

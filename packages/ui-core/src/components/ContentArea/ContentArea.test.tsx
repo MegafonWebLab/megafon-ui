@@ -6,9 +6,10 @@ const props: Partial<IConrentAreaProps> = {
     outerBackgroundColor: 'white',
     innerBackgroundColor: 'white',
     disableIndents: 'all',
+    className: 'className',
     classes: {
-        root: 'root-custom-class',
-        inner: 'inner-custom-class',
+        root: 'rootClass',
+        inner: 'innerClass',
     },
 };
 

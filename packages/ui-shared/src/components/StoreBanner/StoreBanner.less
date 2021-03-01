@@ -1,0 +1,242 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-store-banner');
+
+@containerVerticalPadding: 30px;
+@gridVerticalPadding: 32px;
+@gridBorderWidth: 1px;
+
+@{b} {
+    &_theme_clearWhite {
+        @{b}__grid {
+            background-color: @clearWhite;
+        }
+
+        @{b}__content {
+            color: @freshAsphalt;
+        }
+    }
+
+    &_theme_green {
+        @{b}__grid {
+            background-color: @green;
+        }
+
+        @{b}__content {
+            color: @clearWhite;
+        }
+    }
+
+    &_theme_spbSky1 {
+        @{b}__grid {
+            background-color: @spbSky1;
+        }
+
+        @{b}__content {
+            color: @freshAsphalt;
+        }
+    }
+
+    &_mask_new-iphone {
+        @{b}__device {
+            background-image: url('./img/new-iphone.png');
+        }
+
+        @{b}__screen {
+            top: 13px;
+            width: 87%;
+
+            @media @mobileB {
+                top: 10px;
+            }
+
+            @media @mobileSM {
+                top: 9px;
+            }
+        }
+    }
+
+    &_mask_android {
+        @{b}__device {
+            background-image: url('./img/android.png');
+        }
+
+        @{b}__screen {
+            top: 59px;
+            width: 86%;
+
+            @media @mobileB {
+                top: 48px;
+            }
+
+            @media @mobileSM {
+                top: 40px;
+            }
+        }
+    }
+
+    &_mask_white-iphone {
+        @{b}__device {
+            background-image: url('./img/white-iphone.png');
+        }
+    }
+
+    &_mask_black-iphone {
+        @{b}__device {
+            background-image: url('./img/black-iphone.png');
+        }
+    }
+
+    &_mask_white-iphone,
+    &_mask_black-iphone {
+        @{b}__screen {
+            top: 57px;
+            width: 87%;
+
+            @media @mobileB {
+                top: 47px;
+            }
+
+            @media @mobileSM {
+                top: 39px;
+            }
+        }
+    }
+
+    &__container {
+        @media @desktop {
+            padding-top: @containerVerticalPadding;
+        }
+    }
+
+    &__grid {
+        padding-top: @gridVerticalPadding;
+        padding-bottom: @gridVerticalPadding;
+        border: @gridBorderWidth solid @spbSky2;
+        border-radius: 8px;
+
+        @media @mobileSM {
+            padding-top: 24px;
+            padding-bottom: 0;
+        }
+    }
+
+    &__content {
+        padding-left: 32px;
+
+        @media @mobileB {
+            padding-right: 10px;
+        }
+
+        @media @mobileSM {
+            padding-bottom: 32px;
+            padding-left: 15px;
+            padding-right: 15px;
+            text-align: center;
+        }
+    }
+
+    &__device {
+        position: relative;
+        width: 235px;
+        height: 1px;
+        min-height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+
+        @media @desktopS {
+            width: 260px;
+        }
+
+        @media @mobileB {
+            width: 196px;
+        }
+
+        @media @mobileSM {
+            width: 163px;
+        }
+    }
+
+    &__device-wrapper {
+        position: relative;
+        bottom: calc(2 * (@gridVerticalPadding - @gridBorderWidth));
+        height: calc(100% + 2 * @gridVerticalPadding + @containerVerticalPadding);
+
+        @media @mobile {
+            position: static;
+            bottom: 0;
+        }
+
+        @media @mobileB {
+            height: calc(100% + @gridVerticalPadding);
+        }
+
+        @media @mobileSM {
+            height: 222px;
+            padding-top: 24px;
+        }
+    }
+
+    &__links {
+        display: flex;
+    }
+
+    &__qr-code {
+        margin-right: 16px;
+
+        @media @mobileSM {
+            display: none;
+        }
+    }
+
+    &__qr-code + &__stores {
+        @media @mobileBU {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &__store-link {
+        width: 136px;
+        height: 40px;
+
+        @media @mobileSM {
+            width: 119px;
+            height: 35px;
+        }
+    }
+
+    &__store-link_app-store {
+        margin-right: 16px;
+        margin-bottom: 10px;
+    }
+
+    &__stores {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media @mobileSM {
+            justify-content: center;
+        }
+    }
+
+    &__text {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+    }
+
+    &__screen {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: auto;
+    }
+}

@@ -64,6 +64,7 @@ describe('<Accordion />', () => {
     it('test Classes props', () => {
         const propsWithClasses = {
             ...props,
+            className: 'testClassName',
             classes: {
                 root: 'testRootClass',
                 collapse: 'testCollapseClass',
@@ -72,9 +73,12 @@ describe('<Accordion />', () => {
         const wrapper = shallow(
             <Accordion {...propsWithClasses}><div /></Accordion>
         );
+        const rootNode = wrapper.find('.mfui-beta-accordion');
+        const contentNode = wrapper.find('.mfui-beta-accordion__content');
 
-        expect(wrapper.find('.mfui-beta-accordion').hasClass('testRootClass')).toEqual(true);
-        expect(wrapper.find('.mfui-beta-accordion__content').hasClass('testCollapseClass')).toEqual(true);
+        expect(rootNode.hasClass('testClassName')).toEqual(true);
+        expect(rootNode.hasClass('testRootClass')).toEqual(true);
+        expect(contentNode.hasClass('testCollapseClass')).toEqual(true);
     });
 
     describe('testing the behavior of the Accordion when changing the external props - isOpened', () => {

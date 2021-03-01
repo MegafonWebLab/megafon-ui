@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.123](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.122...@megafon/ui-shared@2.0.0-beta.123) (2021-02-26)
+
+
+### Bug Fixes
+
+* **button:** fix text vertical align ([fb9b9bb](https://github.com/MegafonWebLab/megafon-ui/commit/fb9b9bb09d6c4e257c65af4c6ccaf39987867638))
+
+
+
+
+
+# [2.0.0-beta.122](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.121...@megafon/ui-shared@2.0.0-beta.122) (2021-02-26)
+
+
+### Features
+
+* **store banner:** adds new component ([ba48414](https://github.com/MegafonWebLab/megafon-ui/commit/ba48414ac86d356cfb8be17a2f64596f2d50833b))
+
+
+
+
+
+# [2.0.0-beta.121](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.120...@megafon/ui-shared@2.0.0-beta.121) (2021-02-25)
+
+
+### Features
+
+* **accordionbox:** add className prop ([6d3e8e7](https://github.com/MegafonWebLab/megafon-ui/commit/6d3e8e7035ff8d4fe4bf4cab787a1d06d2a79faa))
+
+
+
+
+
+# [2.0.0-beta.120](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.119...@megafon/ui-shared@2.0.0-beta.120) (2021-02-25)
+
+
+### Features
+
+* **buttonbanner:** create constructor component ([4d28f5b](https://github.com/MegafonWebLab/megafon-ui/commit/4d28f5bf23948cabb4fbb3967662d6c255f050d6))
+* **container:** add ButtonBanner component ([46fe66a](https://github.com/MegafonWebLab/megafon-ui/commit/46fe66a8860bfe03cb1251a863e4ea5bbebb2a48))
+
+
+
+
+
 # [2.0.0-beta.119](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.118...@megafon/ui-shared@2.0.0-beta.119) (2021-02-19)
 
 **Note:** Version bump only for package @megafon/ui-shared
