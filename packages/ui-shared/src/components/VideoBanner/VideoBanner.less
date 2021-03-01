@@ -28,6 +28,7 @@
 
     &__wrapper {
         display: flex;
+        align-items: center;
         height: 400px;
 
         @media @desktopBU {
@@ -36,11 +37,24 @@
 
         @media @desktopM {
             height: 500px;
+            padding-top: 90px;
+            padding-bottom: 90px;
+        }
+
+        @media @desktopS {
+            padding-top: 52px;
+            padding-bottom: 52px;
+        }
+
+        @media @mobileB {
+            padding-top: 64px;
+            padding-bottom: 64px;
         }
 
         @media @mobileSM {
-            display: flex;
-            align-items: center;
+            height: 488px;
+            padding-top: 42px;
+            padding-bottom: 42px;
             justify-content: center;
         }
     }
@@ -58,39 +72,30 @@
     }
 
     &__background-image {
+        width: 100%;
+        height: 100%;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
     }
 
     &__content {
         box-sizing: border-box;
         position: relative;
         z-index: 1;
-        align-self: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
         width: 550px;
-        height: 320px;
 
         @media @desktopS {
             width: 512px;
-            height: 296px;
         }
 
         @media @mobileB {
             width: 384px;
-            height: 272px;
         }
 
         @media @mobileSM {
-            align-items: center;
             width: 288px;
-            height: 316px;
+            align-items: center;
         }
     }
 
@@ -139,9 +144,13 @@
     &__btns-wrapper {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
         margin: -@btns-vertical-margin -@btns-horizontal-margin 0;
+
+        @media @mobileSM {
+            justify-content: center;
+        }
 
         @media @mobileS {
             flex-direction: column;
