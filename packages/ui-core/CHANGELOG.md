@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.96](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.95...@megafon/ui-core@2.0.0-beta.96) (2021-03-01)
+
+
+### Bug Fixes
+
+* **button:** button text move to top by 1px ([a4a9aee](https://github.com/MegafonWebLab/megafon-ui/commit/a4a9aee2e3eb68655cd79228b29ff2ff349b4481))
+
+
+
+
+
 # [2.0.0-beta.95](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.94...@megafon/ui-core@2.0.0-beta.95) (2021-02-26)
 
 
