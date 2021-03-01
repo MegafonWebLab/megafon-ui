@@ -2,7 +2,8 @@
 
 exports[`<ButtonBanner /> should render with props 1`] = `
 <div
-  className="mfui-beta-button-banner mfui-beta-button-banner_image className"
+  className="mfui-beta-button-banner mfui-beta-button-banner_image className rootClass"
+  data-test="value"
 >
   <Grid
     guttersLeft="medium"
@@ -51,7 +52,7 @@ exports[`<ButtonBanner /> should render with props 1`] = `
           </TextLink>
         </Paragraph>
         <Button
-          className="mfui-beta-button-banner__button"
+          className="mfui-beta-button-banner__button buttonClass"
           href="#"
           target="_blank"
           theme="purple"

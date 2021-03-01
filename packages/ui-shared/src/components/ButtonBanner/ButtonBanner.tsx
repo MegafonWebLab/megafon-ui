@@ -10,6 +10,7 @@ import {
     Paragraph,
     TextLink,
     convert,
+    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
 
 export const ButtonColor = {
@@ -25,8 +26,15 @@ export const ButtonTarget = {
 type ButtonTargetType = typeof ButtonTarget[keyof typeof ButtonTarget];
 
 export interface IButtonBannerProps {
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
     /** Дополнительный css класс для корневого элемента */
     className?: string;
+    /** Дополнительный css классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        button?: string;
+    };
     /** Заголовок */
     title: string;
     /** Текст */
@@ -55,7 +63,9 @@ const convertConfig = {
 
 const cn = cnCreate('mfui-beta-button-banner');
 const ButtonBanner: React.FC<IButtonBannerProps> = ({
+    dataAttrs,
     className,
+    classes = {},
     title,
     text,
     imageUrl = '',
@@ -67,7 +77,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
 }) => {
     const buttonElem = (
         <Button
-            className={cn('button')}
+            className={cn('button', [classes.button])}
             href={buttonUrl}
             target={buttonTarget}
             theme={buttonColor}
@@ -78,7 +88,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
     );
 
     return (
-        <div className={cn({ image: !!imageUrl }, [className])}>
+        <div {...filterDataAttrs(dataAttrs)} className={cn({ image: !!imageUrl }, [className, classes.root])}>
            <Grid guttersLeft="medium">
                <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
                     <div className={cn('content')}>
@@ -98,7 +108,12 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
 };
 
 ButtonBanner.propTypes = {
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        button: PropTypes.string,
+    }),
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     imageUrl: PropTypes.string,

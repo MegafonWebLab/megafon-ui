@@ -10,7 +10,14 @@ const requiredProps: IButtonBannerProps = {
 
 const props: IButtonBannerProps = {
     ...requiredProps,
+    dataAttrs: {
+        'data-test': 'value',
+    },
     className: 'className',
+    classes: {
+        root: 'rootClass',
+        button: 'buttonClass',
+    },
     imageUrl: 'image.png',
     buttonUrl: '#',
     buttonTarget: ButtonTarget.BLANK,
