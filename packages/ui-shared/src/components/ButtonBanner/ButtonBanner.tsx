@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import * as PropTypes from 'prop-types';
 import './ButtonBanner.less';
 import {
@@ -35,6 +35,8 @@ export interface IButtonBannerProps {
         root?: string;
         button?: string;
     };
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Заголовок */
     title: string;
     /** Текст */
@@ -66,6 +68,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
     dataAttrs,
     className,
     classes = {},
+    rootRef,
     title,
     text,
     imageUrl = '',
@@ -88,7 +91,11 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
     );
 
     return (
-        <div {...filterDataAttrs(dataAttrs)} className={cn({ image: !!imageUrl }, [className, classes.root])}>
+        <div
+            {...filterDataAttrs(dataAttrs)}
+            className={cn({ image: !!imageUrl }, [className, classes.root])}
+            ref={rootRef}
+        >
            <Grid guttersLeft="medium">
                <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
                     <div className={cn('content')}>
@@ -114,6 +121,10 @@ ButtonBanner.propTypes = {
         root: PropTypes.string,
         button: PropTypes.string,
     }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     title: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     imageUrl: PropTypes.string,
