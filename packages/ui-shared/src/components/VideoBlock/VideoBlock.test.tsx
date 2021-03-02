@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { cnCreate } from '@megafon/ui-core';
 import VideoBlock, { VideoTypes } from './VideoBlock';
 
@@ -81,6 +81,15 @@ describe('<VideoBlock />', () => {
             <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isAutoplay />
         );
         expect(component).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<VideoBlock videoSrc="video" isMuted={false} rootRef={ref} />);
+        const tagName = ref.current === null ? '' : ref.current.tagName;
+
+        expect(tagName).toBe('DIV');
     });
 
     it('should call onClick props', () => {

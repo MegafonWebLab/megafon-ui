@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './VideoBlock.less';
 import { Header, Button, Paragraph, Grid, GridColumn, cnCreate, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
@@ -33,6 +33,8 @@ export interface Props {
         root?: string;
         button?: string;
     };
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Данные для блока с контентом */
     content?: IContent;
     /** Тип видео */
@@ -50,6 +52,7 @@ const VideoBlock: React.FC<Props> = ({
     dataAttrs,
     className,
     classes = {},
+    rootRef,
     content,
     videoType = 'video',
     videoSrc,
@@ -127,7 +130,7 @@ const VideoBlock: React.FC<Props> = ({
     }, [renderContent, renderVideo, content]);
 
     return (
-        <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])}>
+        <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>
             <Grid hAlign="center" className={cn('grid')}>
                 {renderGridColumns()}
             </Grid>
@@ -142,6 +145,10 @@ VideoBlock.propTypes = {
         root: PropTypes.string,
         button: PropTypes.string,
     }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.array.isRequired,
