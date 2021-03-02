@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import * as PropTypes from 'prop-types';
 import { cnCreate, Button, TextLink, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
 import './ButtonLinkBox.less';
@@ -14,6 +14,8 @@ export interface IButtonLinkBoxProps {
         button?: string;
         link?: string;
     };
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Заголовок кнопки */
     buttonTitle?: string;
     /** Ссылка кнопки */
@@ -35,6 +37,7 @@ export interface IButtonLinkBoxProps {
 const cn = cnCreate('mfui-beta-button-link-box');
 const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     dataAttrs,
+    rootRef,
     buttonTitle,
     buttonUrl,
     buttonColor = 'green',
@@ -46,7 +49,11 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     onButtonClick,
     onLinkClick,
 }) => (
-    <div {...filterDataAttrs(dataAttrs)} className={cn({ 'h-align': hAlign }, [className, classes.root])}>
+    <div
+        {...filterDataAttrs(dataAttrs)}
+        className={cn({ 'h-align': hAlign }, [className, classes.root])}
+        ref={rootRef}
+    >
         {buttonTitle && (
             <div className={cn('row')}>
                 <Button
@@ -82,6 +89,10 @@ ButtonLinkBox.propTypes = {
         button: PropTypes.string,
         link: PropTypes.string,
     }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     buttonTitle: PropTypes.string,
     buttonUrl: PropTypes.string,
     buttonColor: PropTypes.oneOf(['green', 'purple']),

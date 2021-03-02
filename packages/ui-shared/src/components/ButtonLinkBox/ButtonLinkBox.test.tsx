@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import ButtonLinkBox, { IButtonLinkBoxProps } from './ButtonLinkBox';
 
 const props: IButtonLinkBoxProps = {
@@ -34,6 +34,15 @@ describe('<ButtonLinkBox />', () => {
     it('renders ButtonLinkBox without link', () => {
         const wrapper = shallow(<ButtonLinkBox {...props} linkTitle={undefined} />);
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<ButtonLinkBox {...props} rootRef={ref} />);
+        const tagName = ref.current === null ? '' : ref.current.tagName;
+
+        expect(tagName).toBe('DIV');
     });
 
     it('calls onButtonClick', () => {
