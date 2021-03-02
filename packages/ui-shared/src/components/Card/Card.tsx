@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import './Card.less';
 import { cnCreate, Header, Paragraph, Button, TextLink, Link, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
 import PropTypes from 'prop-types';
@@ -32,6 +32,8 @@ export interface ICard {
         link?: string;
         inner?: string;
     };
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Изображение в карточке */
     imageSrc?: string;
     /** Иконка в карточке */
@@ -59,6 +61,7 @@ const Card: React.FC<ICard> = ({
     dataAttrs,
     className,
     classes = {},
+    rootRef,
     imageSrc,
     svgSrc,
     title,
@@ -118,6 +121,7 @@ const Card: React.FC<ICard> = ({
         <div
             {...filterDataAttrs(dataAttrs)}
             className={cn('', { 'href': !!href, 'full-height': isFullHeight }, [className, classes.root])}
+            ref={rootRef}
         >
             <Element href={href} className={cn('inner', [classes.inner])}>
                 <>
@@ -143,6 +147,10 @@ Card.propTypes = {
         link: PropTypes.string,
         inner: PropTypes.string,
     }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     imageSrc: PropTypes.string,
     svgSrc: PropTypes.node,
     title: PropTypes.string.isRequired,

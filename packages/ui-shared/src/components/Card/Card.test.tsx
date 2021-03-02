@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Card, { ObjectFit } from './Card';
 import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 import img from './img.png';
@@ -104,5 +104,14 @@ describe('Card', () => {
             <Card title={title} text={text} isFullHeight />
             );
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<Card title={title} text={text} isFullHeight rootRef={ref} />);
+        const tagName = ref.current === null ? '' : ref.current.tagName;
+
+        expect(tagName).toBe('DIV');
     });
 });
