@@ -27,6 +27,27 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with classes', () => {
+        const component = shallow(
+            <VideoBlock
+                videoSrc="video.mp4"
+                content={content}
+                className="className"
+                classes={{ root: 'rootClass', button: 'buttonClass' }} />
+        );
+        expect(component).toMatchSnapshot();
+    });
+
+    it('it renders VideoBlock with dataAttrs', () => {
+        const component = shallow(
+            <VideoBlock
+                videoSrc="video.mp4"
+                dataAttrs={{ 'data-test': 'value' }}
+            />
+        );
+        expect(component.first().prop('data-test')).toEqual('value');
+    });
+
     it('it renders VideoBlock with sound turned on', () => {
         const component = shallow(
             <VideoBlock videoSrc="video" isMuted={false} />
