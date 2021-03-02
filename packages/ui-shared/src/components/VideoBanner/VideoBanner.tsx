@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
@@ -73,6 +73,8 @@ interface IVideoBannerProps {
         button?: string;
         link?: string;
     };
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Данные для блока с контентом */
     content?: IContent;
     /** Источник видео. */
@@ -96,6 +98,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     dataAttrs,
     className,
     classes = {},
+    rootRef,
     videoSrc,
     videoType,
     imageMobile,
@@ -221,7 +224,11 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     }, []);
 
     return (
-        <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])}>
+        <div
+            {...filterDataAttrs(dataAttrs)}
+            className={cn([className, classes.root])}
+            ref={rootRef}
+        >
             <ContentArea>
                 <div
                     className={cn('wrapper')}
@@ -246,6 +253,10 @@ VideoBanner.propTypes = {
         button: PropTypes.string,
         link: PropTypes.string,
     }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     videoSrc: PropTypes.string,
     videoType: PropTypes.oneOf(Object.values(VideoType)),
     content: PropTypes.shape({

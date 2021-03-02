@@ -119,6 +119,15 @@ describe('<VideoBanner />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} rootRef={ref} />);
+        const tagName = ref.current === null ? '' : ref.current.tagName;
+
+        expect(tagName).toBe('DIV');
+    });
+
     it('should call onClick props', () => {
         const onButtonClick = jest.fn();
         const contentWithMockFunc = {
