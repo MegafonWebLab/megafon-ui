@@ -115,4 +115,12 @@ describe('<Instructions />', () => {
             expect(wrapper).toMatchSnapshot();
         });
     });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+        mount(<Instructions {...props} rootRef={ref} />);
+        const tagName = ref.current === null ? '' : ref.current.tagName;
+
+        expect(tagName).toBe('DIV');
+    });
 });
