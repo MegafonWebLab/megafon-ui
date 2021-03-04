@@ -224,8 +224,7 @@ describe('<Property />', () => {
                 rootRef={ref}
             />
         );
-        const tagName = ref.current === null ? '' : ref.current.tagName;
 
-        expect(tagName).toBe('DIV');
+        expect(ref.current).not.toBeNull();
     });
 });
