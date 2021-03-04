@@ -123,9 +123,8 @@ describe('<VideoBanner />', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
 
         mount(<VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} rootRef={ref} />);
-        const tagName = ref.current === null ? '' : ref.current.tagName;
 
-        expect(tagName).toBe('DIV');
+        expect(ref.current).not.toBeNull();
     });
 
     it('should call onClick props', () => {
