@@ -40,9 +40,8 @@ describe('<ButtonLinkBox />', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
 
         mount(<ButtonLinkBox {...props} rootRef={ref} />);
-        const tagName = ref.current === null ? '' : ref.current.tagName;
 
-        expect(tagName).toBe('DIV');
+        expect(ref.current).not.toBeNull();
     });
 
     it('calls onButtonClick', () => {
