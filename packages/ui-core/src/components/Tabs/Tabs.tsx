@@ -114,8 +114,15 @@ const Tabs: React.FC<ITabsProps> = ({
         setUnderlineTranslate(translate);
     }, [currentIndex]);
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = React.useMemo(() => new IntersectionObserver((entries) => {
         entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
+            if (!sticky || !rootRef.current || !tabListRef.current) {
+                return;
+            }
+
+            const listHeight = tabListRef.current.clientHeight;
+
+            setTabListHeight(listHeight);
 
             const stickyON = (leftOffset: number, rightOffset: number) => {
                 const documentWidth = document.documentElement.clientWidth;
@@ -135,20 +142,7 @@ const Tabs: React.FC<ITabsProps> = ({
                 top < 0 && stickyOFF();
             }
       });
-    }, { threshold: [ 0 , 1 ] });
-
-    const calculateSticky = React.useCallback(() => {
-        if (!sticky || !rootRef.current || !tabListRef.current) {
-            return;
-        }
-
-        const listHeight = tabListRef.current.clientHeight;
-
-        setTabListHeight(listHeight);
-
-        observer.observe(rootRef.current);
-
-    }, [sticky]);
+    }, { threshold: [ 0 , 1 ] }), []);
 
     const handleTabInnerClick = React.useCallback((index: number) => () => {
         setUnderlineTransition('all');
@@ -236,20 +230,16 @@ const Tabs: React.FC<ITabsProps> = ({
     }, []);
 
     React.useEffect(() => {
-        const handleScroll = throttle(calculateSticky, 50);
-
-        document.addEventListener('scroll', handleScroll);
+        rootRef.current && observer.observe(rootRef.current);
 
         return () => {
-            document.removeEventListener('scroll', handleScroll);
-            rootRef && rootRef.current &&  observer.unobserve(rootRef.current);
+           rootRef.current &&  observer.unobserve(rootRef.current);
         };
-    }, [calculateSticky]);
+    }, []);
 
     React.useEffect(() => {
         const handleResize = throttle(() => {
             calculateUnderline();
-            calculateSticky();
         }, 300);
 
         calculateUnderline();
@@ -260,7 +250,7 @@ const Tabs: React.FC<ITabsProps> = ({
             window.removeEventListener('resize', handleResize);
             rootRef && rootRef.current &&  observer.unobserve(rootRef.current);
         };
-    }, [calculateUnderline, calculateSticky]);
+    }, [calculateUnderline]);
 
     React.useEffect(() => {
         if (!swiperInstance) {
