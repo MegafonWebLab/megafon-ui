@@ -100,14 +100,17 @@ class Icons extends React.Component<{}, IIconsState> {
 
     createElToClipboard = () => {
         const el = document.createElement('textarea');
+
         el.setAttribute('readonly', '');
         el.style.position = 'absolute';
         el.style.left = '-9999px';
         document.body.appendChild(el);
+
         return (str: string, copyIndex: copyBoard) => () => {
             el.value = str;
             el.select();
             document.execCommand('copy');
+            el.remove();
             this.setState({ copyIndex });
         };
     }
