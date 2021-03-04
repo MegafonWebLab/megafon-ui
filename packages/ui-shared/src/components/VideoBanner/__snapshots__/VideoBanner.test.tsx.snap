@@ -38,6 +38,7 @@ exports[`<VideoBanner /> render component with classes 1`] = `
           >
             oт 
             <component
+              className=""
               key="1"
             >
               1000 ₽
