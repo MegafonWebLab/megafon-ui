@@ -119,8 +119,7 @@ describe('<Instructions />', () => {
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
         mount(<Instructions {...props} rootRef={ref} />);
-        const tagName = ref.current === null ? '' : ref.current.tagName;
 
-        expect(tagName).toBe('DIV');
+        expect(ref.current).not.toBeNull();
     });
 });
