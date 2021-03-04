@@ -87,9 +87,8 @@ describe('<VideoBlock />', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
 
         mount(<VideoBlock videoSrc="video" isMuted={false} rootRef={ref} />);
-        const tagName = ref.current === null ? '' : ref.current.tagName;
 
-        expect(tagName).toBe('DIV');
+        expect(ref.current).not.toBeNull();
     });
 
     it('should call onClick props', () => {
