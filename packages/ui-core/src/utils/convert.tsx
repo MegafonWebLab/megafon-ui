@@ -1,16 +1,17 @@
 import React from 'react';
 import convert from 'htmr';
 
-type ConfigItem = {
+type TransformConfigItem = {
     component: React.ElementType;
     props?: string[];
+    className?: string;
 };
 
-export type Config = {
-    [key: string]: ConfigItem;
+export type TransformConfig = {
+    [key: string]: TransformConfigItem;
 };
 
-const getTransform = (config: Config) => {
+const getTransform = (config: TransformConfig) => {
     return {
         _: (node, props, children) => {
             // text node
@@ -18,25 +19,30 @@ const getTransform = (config: Config) => {
                 return node;
             }
 
-            const Component = config[node]?.component;
+            const nodeElement = config[node];
 
-            if (Component) {
-                const filteredProps = {key: props.key};
-                config[node].props?.forEach(prop => {
+            if (nodeElement) {
+                const { component: Component, className } = nodeElement;
+                const filteredProps = {
+                    key: props.key,
+                    className: className || '',
+                };
+
+                nodeElement.props?.forEach(prop => {
                     if (props[prop] !== undefined) {
                         filteredProps[prop] = props[prop];
                     }
                 });
 
                 return <Component {...filteredProps}>{children}</Component>;
-            } else {
-                return null;
             }
+
+            return null;
         },
     };
 };
 
-const convertToReact = (html, config: Config) => {
+const convertToReact = (html, config: TransformConfig) => {
     let nodes = convert(html, {
         preserveAttributes: [],
         dangerouslySetChildren: [],

@@ -560,6 +560,7 @@ exports[`<Property /> should render with links 1`] = `
           >
             Тарифы 
             <TextLink
+              className=""
               color="blue"
               href="https://moscow.megafon.ru"
               key="1"

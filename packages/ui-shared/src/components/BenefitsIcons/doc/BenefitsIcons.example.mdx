@@ -1,7 +1,15 @@
 
 import { Playground } from 'docz';
 import BenefitsIcons from '../BenefitsIcons';
-import { fiveItems, fourItems, threeItems, twoItems, twoItemsWithoutText, twoItemsWithoutTitle } from './BenefitsIcons.docz.tsx';
+import {
+    twoItems,
+    fiveItems,
+    fourItems,
+    threeItems,
+    itemsTextByHtml,
+    twoItemsWithoutText,
+    twoItemsWithoutTitle,
+} from './BenefitsIcons.docz.tsx';
 
 ```javascript collapse=Демо данные
 const items = [
@@ -40,6 +48,12 @@ const items = [
         items={twoItemsWithoutTitle}
         iconPosition="left-side"
     />
+</Playground>
+
+## Пример передачи html-размеки в качестве текста
+
+<Playground>
+    <BenefitsIcons items={itemsTextByHtml} />
 </Playground>
 
 ## Столбец с выравниванием по левому краю, значок с выравниванием по левому краю вверху
@@ -178,6 +192,17 @@ const twoItems = [
     {
         title: 'Интернет',
         text: 'Подключите, и гигабайты и минуты всегда будут с вами!',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
+const itemsTextByHtml = [
+    {
+        text: '<ul as="ol" color="red"><li>пункт 1</li><li>пункт 2</li><li>пункт 3</li></ul>',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        text: '<p color="green">Оставайтесь <a>всегда</a> на <b>связи</b></p>',
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
 ];

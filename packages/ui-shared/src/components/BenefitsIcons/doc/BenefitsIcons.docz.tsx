@@ -104,3 +104,14 @@ export const twoItemsWithoutTitle = [
         icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
     },
 ];
+
+export const itemsTextByHtml = [
+    {
+        text: '<ul as="ol" color="red"><li>пункт 1</li><li>пункт 2</li><li>пункт 3</li></ul>',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        text: '<p color="green">Оставайтесь <a>всегда</a> на <b>связи</b></p>',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];

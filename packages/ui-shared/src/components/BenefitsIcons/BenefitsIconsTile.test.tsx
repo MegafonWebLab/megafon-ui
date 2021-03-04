@@ -26,4 +26,14 @@ describe('<BenefitsIconsTile />', () => {
         const wrapper = shallow(<BenefitsIconsTile {...props} text={undefined} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('renders BenefitsIconsTile with html in text field', () => {
+        const newProps = {
+            ...props,
+            text: '<ul as="ol" color="red"><li><p>пункт 1</p></li><li>пункт 2</li><li><a>пункт</a> <b>3</b></li></ul>',
+        };
+
+        const wrapper = shallow(<BenefitsIconsTile {...newProps} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });

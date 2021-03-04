@@ -1,12 +1,13 @@
 import React from 'react';
-import convertToReact, { Config } from './convert';
+import convertToReact, { TransformConfig } from './convert';
 import Header from '../components/Header/Header';
 import Link from '../components/Link/Link';
 
-const config: Config = {
+const config: TransformConfig = {
     h: {
         component: Header,
         props: ['as', 'color', 'margin', 'hAlign'],
+        className: 'class-name',
     },
     a: {
         component: Link,
@@ -38,6 +39,7 @@ describe('convertToReact', () => {
         expect(converted[0]).toBeDefined();
         expect(converted[0].type.name).toBe('Header');
         expect(converted[0].props.as).toBe('h1');
+        expect(converted[0].props.className).toBe('class-name');
     });
 
     test('should return empty array', () => {
