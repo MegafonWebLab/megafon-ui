@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.97](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.96...@megafon/ui-core@2.0.0-beta.97) (2021-03-04)
+
+
+### Features
+
+* **convert:** add classname prop to returned component ([c76162a](https://github.com/MegafonWebLab/megafon-ui/commit/c76162a8b06a57025fe50019b5fa1b5ac3dceeb9))
+
+
+
+
+
 # [2.0.0-beta.96](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.95...@megafon/ui-core@2.0.0-beta.96) (2021-03-01)
 
 
