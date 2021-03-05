@@ -68,7 +68,9 @@ const Partners: React.FC<IPartnersProps> = ({
                 isInteractive={!!href}
             >
                 <div className={cn('tile-inner')}>
-                    <img src={src} className={cn('tile-img')} />
+                    <div className={cn('img-wrapper')}>
+                        <img src={src} className={cn('tile-img')} />
+                    </div>
                 </div>
             </Tile>
         );
