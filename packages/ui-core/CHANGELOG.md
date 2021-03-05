@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+- **ListItem**
+    - change children type
 
 ## 1.7.18
 - **ContentArea**
