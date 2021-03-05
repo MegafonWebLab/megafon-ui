@@ -2,6 +2,19 @@
 
 @b: e('.mfui-beta-video-banner');
 
+// paddings
+@paddingHorizontalDesktopMU: 70px;
+@paddingHorizontalDesktopS: 52px;
+@paddingHorizontalMobileB: 64px;
+@paddingHorizontalMobileSM: 42px;
+// max-height
+@bannerMaxHeightDesktopS: 440px;
+@bannerMaxHeightMobileB: 440px;
+@bannerMaxHeightMobileSM: 488px;
+// height
+@bannerHeightDesktopM: 500px;
+@bannerHeightDesktopBU: 562px;
+
 @{b} {
     position: relative;
     overflow: hidden;
@@ -29,33 +42,32 @@
     &__wrapper {
         display: flex;
         align-items: center;
-        height: 400px;
+        min-height: 400px;
 
         @media @desktopBU {
-            height: 562px;
+            height: @bannerHeightDesktopBU;
         }
 
         @media @desktopM {
-            height: 500px;
-            padding-top: 90px;
-            padding-bottom: 90px;
+            height: @bannerHeightDesktopM;
         }
 
         @media @desktopS {
-            padding-top: 52px;
-            padding-bottom: 52px;
+            max-height: @bannerMaxHeightDesktopS;
+            padding-top: @paddingHorizontalDesktopS;
+            padding-bottom: @paddingHorizontalDesktopS;
         }
 
         @media @mobileB {
-            padding-top: 64px;
-            padding-bottom: 64px;
+            max-height: @bannerMaxHeightMobileB;
+            padding-top: @paddingHorizontalMobileB;
+            padding-bottom: @paddingHorizontalMobileB;
         }
 
         @media @mobileSM {
-            height: 488px;
-            padding-top: 42px;
-            padding-bottom: 42px;
-            justify-content: center;
+            max-height: @bannerMaxHeightMobileSM;
+            padding-top: @paddingHorizontalMobileSM;
+            padding-bottom: @paddingHorizontalMobileSM;
         }
     }
 
@@ -83,19 +95,31 @@
         box-sizing: border-box;
         position: relative;
         z-index: 1;
-        width: 550px;
+        width: 60%;
+
+        @media @desktopBU {
+            max-height: calc(@bannerHeightDesktopBU - 2 * @paddingHorizontalDesktopMU);
+        }
+
+        @media @desktopMU {
+            width: 51%;
+        }
+
+        @media @desktopM {
+            max-height: calc(@bannerHeightDesktopM - 2 * @paddingHorizontalDesktopMU);
+        }
 
         @media @desktopS {
-            width: 512px;
+            max-height: calc(@bannerMaxHeightDesktopS - 2 * @paddingHorizontalDesktopS);
         }
 
         @media @mobileB {
-            width: 384px;
+            max-height: calc(@bannerMaxHeightMobileB - 2 * @paddingHorizontalMobileB);
         }
 
         @media @mobileSM {
-            width: 288px;
-            align-items: center;
+            width: 100%;
+            max-height: calc(@bannerMaxHeightMobileSM - 2 * @paddingHorizontalMobileSM);
         }
     }
 
