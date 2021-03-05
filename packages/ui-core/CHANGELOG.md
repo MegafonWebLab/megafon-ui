@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.98](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.97...@megafon/ui-core@2.0.0-beta.98) (2021-03-05)
+
+
+### Bug Fixes
+
+* **counter:** counter icons were fixed ([f4ea586](https://github.com/MegafonWebLab/megafon-ui/commit/f4ea586c9a6fe6e37d5e8b424e28a539f482ba9b))
+* **icons:** added removing of element after copying it ([c763b42](https://github.com/MegafonWebLab/megafon-ui/commit/c763b426230f0b0d1b55b8da0fdd676d4518b7a8))
+
+
+
+
+
 # [2.0.0-beta.97](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.96...@megafon/ui-core@2.0.0-beta.97) (2021-03-04)
 
 
