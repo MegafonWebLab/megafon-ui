@@ -21,6 +21,7 @@ const CopyToClipboardBox: React.FC<IProps> = ({ text }) => {
         el.value = text;
         el.select();
         document.execCommand('copy');
+        el.remove();
     };
 
     return (
