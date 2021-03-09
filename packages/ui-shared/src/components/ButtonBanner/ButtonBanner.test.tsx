@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import ButtonBanner, { IButtonBannerProps, ButtonTarget, ButtonColor } from './ButtonBanner';
 
 const requiredProps: IButtonBannerProps = {
@@ -10,7 +10,14 @@ const requiredProps: IButtonBannerProps = {
 
 const props: IButtonBannerProps = {
     ...requiredProps,
+    dataAttrs: {
+        'data-test': 'value',
+    },
     className: 'className',
+    classes: {
+        root: 'rootClass',
+        button: 'buttonClass',
+    },
     imageUrl: 'image.png',
     buttonUrl: '#',
     buttonTarget: ButtonTarget.BLANK,
@@ -32,6 +39,14 @@ describe('<ButtonBanner />', () => {
         );
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<ButtonBanner {...requiredProps} rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
     });
 
     it('should call onButtonClick', () => {

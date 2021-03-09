@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Card, { ObjectFit } from './Card';
 import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 import img from './img.png';
@@ -22,9 +22,22 @@ const link = {
 
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 
+const classes = { root: 'rootClass', button: 'buttonClass', link: 'linkClass', inner: 'innerClass'};
+
 describe('Card', () => {
     it('render component', () => {
-        const wrapper = shallow(<Card title={title} text={text} imageSrc={img} button={button} link={link} />);
+        const wrapper = shallow(
+            <Card
+                title={title}
+                text={text}
+                imageSrc={img}
+                button={button}
+                link={link}
+                classes={classes}
+                className="className"
+                dataAttrs={{ 'data-test': 'value' }}
+            />
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -91,5 +104,13 @@ describe('Card', () => {
             <Card title={title} text={text} isFullHeight />
             );
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<Card title={title} text={text} isFullHeight rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
     });
 });

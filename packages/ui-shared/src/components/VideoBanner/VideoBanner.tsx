@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './VideoBanner.less';
@@ -11,6 +11,7 @@ import {
     ContentArea,
     TextLink,
     convert,
+    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
 
 export enum ClassName {
@@ -62,6 +63,18 @@ export interface IContent {
 }
 
 interface IVideoBannerProps {
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
+    /** Дополнительный класс корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        button?: string;
+        link?: string;
+    };
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Данные для блока с контентом */
     content?: IContent;
     /** Источник видео. */
@@ -82,6 +95,10 @@ interface IVideoBannerProps {
 
 const cn = cnCreate('mfui-beta-video-banner');
 const VideoBanner: React.FC<IVideoBannerProps> = ({
+    dataAttrs,
+    className,
+    classes = {},
+    rootRef,
     videoSrc,
     videoType,
     imageMobile,
@@ -125,11 +142,11 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 )}
             </div>
             <div className={cn('btns-wrapper')}>
-                <Button className={cn(ClassName.BUTTON)} href={buttonHref} onClick={onButtonClick}>
+                <Button className={cn(ClassName.BUTTON, [classes.button])} href={buttonHref} onClick={onButtonClick}>
                     {buttonTitle}
                 </Button>
                 {linkTitle && (
-                    <TextLink className={cn('link')} href={linkUrl}>
+                    <TextLink className={cn('link', [classes.link])} href={linkUrl}>
                         {linkTitle}
                     </TextLink>
                 )}
@@ -207,7 +224,11 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     }, []);
 
     return (
-        <div className={cn()}>
+        <div
+            {...filterDataAttrs(dataAttrs)}
+            className={cn([className, classes.root])}
+            ref={rootRef}
+        >
             <ContentArea>
                 <div
                     className={cn('wrapper')}
@@ -225,6 +246,17 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
 };
 
 VideoBanner.propTypes = {
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        button: PropTypes.string,
+        link: PropTypes.string,
+    }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     videoSrc: PropTypes.string,
     videoType: PropTypes.oneOf(Object.values(VideoType)),
     content: PropTypes.shape({

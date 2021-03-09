@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import {Header, cnCreate, convert, TextLink} from '@megafon/ui-core';
 import './Property.less';
@@ -6,6 +6,8 @@ import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
 
 export interface IProperty {
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Массив с данными для строки */
     items: Item[];
     /** Дополнительный класс для основного контейнера */
@@ -31,6 +33,7 @@ const typographyConfig = {
 
 const cn = cnCreate('mfui-beta-property');
 const Property: React.FC<IProperty> = ({
+    rootRef,
     items,
     className,
     badge = '',
@@ -65,7 +68,7 @@ const Property: React.FC<IProperty> = ({
     );
 
     return (
-        <div className={cn({ 'border-bottom': borderBottom }, [className])}>
+        <div className={cn({ 'border-bottom': borderBottom }, [className])} ref={rootRef}>
             {badge && (
                 <div className={cn('badge-wrapper')}>
                     <span className={cn('badge')}>{badge}</span>
@@ -102,6 +105,10 @@ const Property: React.FC<IProperty> = ({
 };
 
 Property.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     items: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.arrayOf(PropTypes.string.isRequired),

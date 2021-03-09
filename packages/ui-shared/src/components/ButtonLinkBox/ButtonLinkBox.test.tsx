@@ -1,9 +1,17 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import ButtonLinkBox, { IButtonLinkBoxProps } from './ButtonLinkBox';
 
 const props: IButtonLinkBoxProps = {
     className: 'custom-class',
+    classes: {
+        root: 'root-class',
+        button: 'button-class',
+        link: 'link-class',
+    },
+    dataAttrs: {
+        'data-test': 'value',
+    },
     buttonTitle: 'button title',
     buttonUrl: 'button-url',
     buttonColor: 'purple',
@@ -26,6 +34,14 @@ describe('<ButtonLinkBox />', () => {
     it('renders ButtonLinkBox without link', () => {
         const wrapper = shallow(<ButtonLinkBox {...props} linkTitle={undefined} />);
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<ButtonLinkBox {...props} rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
     });
 
     it('calls onButtonClick', () => {

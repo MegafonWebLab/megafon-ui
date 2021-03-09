@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './VideoBlock.less';
-import { Header, Button, Paragraph, Grid, GridColumn, cnCreate } from '@megafon/ui-core';
+import { Header, Button, Paragraph, Grid, GridColumn, cnCreate, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
 
 export interface IContent {
     /** Заголовок */
@@ -24,6 +24,17 @@ export const VideoTypes = {
 type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
 
 export interface Props {
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
+    /** Дополнительный класс корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        button?: string;
+    };
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Данные для блока с контентом */
     content?: IContent;
     /** Тип видео */
@@ -34,18 +45,19 @@ export interface Props {
     isMuted?: boolean;
     /** Автоматическое проигрывание видео */
     isAutoplay?: boolean;
-    /** Дополнительный класс корневого элемента */
-    className?: string;
 }
 
 const cn = cnCreate('mfui-beta-video-block');
 const VideoBlock: React.FC<Props> = ({
+    dataAttrs,
+    className,
+    classes = {},
+    rootRef,
     content,
     videoType = 'video',
     videoSrc,
     isMuted = true,
     isAutoplay = false,
-    className,
 }) => {
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
@@ -87,7 +99,7 @@ const VideoBlock: React.FC<Props> = ({
                         </Paragraph>
                     ))}
                 </div>
-                <Button className={cn('button')} href={href} onClick={onButtonClick}>
+                <Button className={cn('button', [classes.button])} href={href} onClick={onButtonClick}>
                     {buttonTitle}
                 </Button>
             </div>
@@ -118,7 +130,7 @@ const VideoBlock: React.FC<Props> = ({
     }, [renderContent, renderVideo, content]);
 
     return (
-        <div className={cn([className])}>
+        <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>
             <Grid hAlign="center" className={cn('grid')}>
                 {renderGridColumns()}
             </Grid>
@@ -127,6 +139,16 @@ const VideoBlock: React.FC<Props> = ({
 };
 
 VideoBlock.propTypes = {
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        button: PropTypes.string,
+    }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.array.isRequired,
@@ -138,7 +160,6 @@ VideoBlock.propTypes = {
     videoSrc: PropTypes.string.isRequired,
     isMuted: PropTypes.bool,
     isAutoplay: PropTypes.bool,
-    className: PropTypes.string,
 };
 
 export default VideoBlock;

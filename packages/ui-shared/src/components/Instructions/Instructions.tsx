@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './Instructions.less';
 import throttle from 'lodash.throttle';
@@ -31,6 +31,8 @@ export type InstructionItemType = {
 };
 
 export interface IInstructionsProps {
+    /** Ссылка на корневой элемент */
+    rootRef?: Ref<HTMLDivElement>;
     /** Заголовок инструкции */
     title: string;
     /** Пункты инструкции */
@@ -54,6 +56,7 @@ const typographyConfig = {
 const cn = cnCreate('mfui-beta-instructions');
 const swiperSlideCn = cn('slide');
 const Instructions: React.FC<IInstructionsProps> = ({
+    rootRef,
     title,
     instructionItems,
     pictureAlign = 'left',
@@ -175,7 +178,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     }, [handleResize]);
 
     return (
-        <div className={cn({ mask: pictureMask })}>
+        <div className={cn({ mask: pictureMask })} ref={rootRef}>
             <Grid hAlign="center">
                 <GridColumn all="12" >
                     {renderTitle('mobile')}
@@ -198,6 +201,10 @@ const Instructions: React.FC<IInstructionsProps> = ({
 };
 
 Instructions.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     title: PropTypes.string.isRequired,
     instructionItems: PropTypes.arrayOf(
         PropTypes.shape({

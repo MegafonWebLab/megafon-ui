@@ -54,6 +54,36 @@ describe('<VideoBanner />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('render component with classes', () => {
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                content={content}
+                className="className"
+                classes={{
+                    root: 'rootClass',
+                    button: 'buttonClass',
+                    link: 'linkClass',
+                }}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render component with dataAttrs', () => {
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                dataAttrs={{ 'data-test': 'value' }}
+            />
+        );
+
+        expect(wrapper.first().prop('data-test')).toEqual('value');
+    });
+
     it('render component with pictures and non default content text color', () => {
         const localContent = {
             ...content,
@@ -87,6 +117,14 @@ describe('<VideoBanner />', () => {
             />);
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
     });
 
     it('should call onClick props', () => {
