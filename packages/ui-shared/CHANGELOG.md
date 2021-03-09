@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.128](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.127...@megafon/ui-shared@2.0.0-beta.128) (2021-03-09)
+
+
+### Bug Fixes
+
+* **partners:** fix images width in IE ([7c00c88](https://github.com/MegafonWebLab/megafon-ui/commit/7c00c88f9ae2f2da2b5b88e5447f7d5b7cdb8b6a))
+* **videobanner:** fix content width in ie, fix content height after link added ([f6951c7](https://github.com/MegafonWebLab/megafon-ui/commit/f6951c718b4268c199ae190fc0358e2ed1e43937))
+
+
+
+
+
 # [2.0.0-beta.127](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.126...@megafon/ui-shared@2.0.0-beta.127) (2021-03-09)
 
 
