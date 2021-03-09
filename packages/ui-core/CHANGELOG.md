@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.99](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.98...@megafon/ui-core@2.0.0-beta.99) (2021-03-09)
+
+
+### Bug Fixes
+
+* **counter:** fix btns width in ie ([8dbd525](https://github.com/MegafonWebLab/megafon-ui/commit/8dbd5250d254df8814984cfa1b9d17a2c7b99bfd))
+
+
+
+
+
 # [2.0.0-beta.98](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.97...@megafon/ui-core@2.0.0-beta.98) (2021-03-05)
 
 
