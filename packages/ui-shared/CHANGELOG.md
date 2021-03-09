@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.127](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.126...@megafon/ui-shared@2.0.0-beta.127) (2021-03-09)
+
+
+### Features
+
+* **buttonbanner:** add dataAttrs and classes props ([dfab775](https://github.com/MegafonWebLab/megafon-ui/commit/dfab7755102147e7e24dfc8a67d7a875faac583d))
+* **buttonbanner:** add rootRef prop ([931a9a3](https://github.com/MegafonWebLab/megafon-ui/commit/931a9a3c2205d4bb0a7a4a0fc12ccd7f22284d2e))
+* **buttonlinkbox:** add dataAttrs and classes props ([50b8bf8](https://github.com/MegafonWebLab/megafon-ui/commit/50b8bf80229366c2bc661a3ede5e3adbed68cd61))
+* **buttonlinkbox:** add rootRef prop ([f54b70a](https://github.com/MegafonWebLab/megafon-ui/commit/f54b70a69b406883d622b417555e0a823c44a1f1))
+* **card:** add dataAttrs and classes props ([a0b270f](https://github.com/MegafonWebLab/megafon-ui/commit/a0b270f9ebac60993ec31dca1f022f893bee1502))
+* **card:** add rootRef prop ([2d186d2](https://github.com/MegafonWebLab/megafon-ui/commit/2d186d2b5bac9c651b0a54d4631060f97407b2ce))
+* **instructions:** add rootRef prop ([2082e2d](https://github.com/MegafonWebLab/megafon-ui/commit/2082e2d66989311198cea765cf130005b0daf0d8))
+* **property:** add rootRef prop ([8fdad19](https://github.com/MegafonWebLab/megafon-ui/commit/8fdad194312ac19ea847daa9eb9b4b2f6524fccf))
+* **titledescriptionbox:** add dataAttrs prop ([3b3686a](https://github.com/MegafonWebLab/megafon-ui/commit/3b3686ae1304947f873b95d735f9269741ccb7f5))
+* **videobanner:** add dataAttrs and classes props ([1e44614](https://github.com/MegafonWebLab/megafon-ui/commit/1e4461471a02387e669688871fe8618ed79d8f29))
+* **videobanner:** add rootRef prop ([13a0046](https://github.com/MegafonWebLab/megafon-ui/commit/13a00463d729acc20a5094425e032512259e9f00))
+* **videoblock:** add dataAttrs and classes props ([2a5d0e2](https://github.com/MegafonWebLab/megafon-ui/commit/2a5d0e259d516769a757d90311a7a34ef09ddb57))
+* **videoblock:** add rootRef prop ([8e5069a](https://github.com/MegafonWebLab/megafon-ui/commit/8e5069a21a54b4a23f4629f4faa0b836d7bc99d6))
+
+
+
+
+
 # [2.0.0-beta.126](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.125...@megafon/ui-shared@2.0.0-beta.126) (2021-03-05)
 
 **Note:** Version bump only for package @megafon/ui-shared
