@@ -114,6 +114,19 @@ const Tabs: React.FC<ITabsProps> = ({
         setUnderlineTranslate(translate);
     }, [currentIndex]);
 
+    const calculateStickyOffset = React.useCallback(() => {
+        if (!isSticky || !rootRef.current ) {
+            return;
+        }
+
+        const { left, right } = rootRef.current.getBoundingClientRect();
+
+        const documentWidth = document.documentElement.clientWidth;
+
+        setStickyOffset({ left, right: documentWidth - right });
+
+    }, [stickyOffset, isSticky]);
+
     const observer = React.useMemo(() => new IntersectionObserver((entries) => {
         entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
             if (!sticky || !rootRef.current || !tabListRef.current) {
@@ -240,6 +253,7 @@ const Tabs: React.FC<ITabsProps> = ({
     React.useEffect(() => {
         const handleResize = throttle(() => {
             calculateUnderline();
+            calculateStickyOffset();
         }, 300);
 
         calculateUnderline();
@@ -248,9 +262,8 @@ const Tabs: React.FC<ITabsProps> = ({
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            rootRef && rootRef.current &&  observer.unobserve(rootRef.current);
         };
-    }, [calculateUnderline]);
+    }, [calculateUnderline, calculateStickyOffset]);
 
     React.useEffect(() => {
         if (!swiperInstance) {
