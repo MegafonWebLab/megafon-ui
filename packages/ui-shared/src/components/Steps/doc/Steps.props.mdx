@@ -5,7 +5,10 @@ import Steps from '../Steps';
 
 ```javascript
 
-type ItemType = {
+interface IStepsItem = {
+    /** Номер элемента */
+    index: number;
+    /** Текст */
     text: string;
 };
 
