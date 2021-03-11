@@ -29,25 +29,26 @@ export interface IIconButtonProps {
     disabled?: boolean;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Дополнительный класс корневого элемента */
+    className?: string;
 }
 
 const cn = cnCreate('mfui-beta-icon-button');
-const IconButton: React.FC<IIconButtonProps> = props => {
-    const {
-        theme = 'green',
-        type = 'primary',
-        href,
-        target,
-        sizeAll = 'medium',
-        sizeWide,
-        sizeDesktop,
-        sizeTablet,
-        sizeMobile,
-        icon,
-        disabled,
-        onClick,
-    } = props;
-
+const IconButton: React.FC<IIconButtonProps> = ({
+    theme = 'green',
+    type = 'primary',
+    href,
+    target,
+    sizeAll = 'medium',
+    sizeWide,
+    sizeDesktop,
+    sizeTablet,
+    sizeMobile,
+    icon,
+    disabled,
+    onClick,
+    className,
+}) => {
     const currentTheme = React.useMemo(() => (
         (type === 'primary') && (theme === 'black') ? 'green' : theme
     ), [theme]);
@@ -55,7 +56,7 @@ const IconButton: React.FC<IIconButtonProps> = props => {
     return (
         <Button
             classes={{
-                root: cn(''),
+                root: cn([className]),
                 content: cn('content'),
                 inner: cn('inner'),
             }}
@@ -97,6 +98,7 @@ IconButton.propTypes = {
     icon: PropTypes.element.isRequired,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
+    className: PropTypes.string,
 };
 
 export default IconButton;

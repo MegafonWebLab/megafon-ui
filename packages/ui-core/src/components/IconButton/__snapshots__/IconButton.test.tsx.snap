@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IconButton /> snapshots renders with props 1`] = `
+<Button
+  className="mfui-beta-icon-button mfui-beta-icon-button_disabled mfui-beta-icon-button_size-all_large mfui-beta-icon-button_size-wide_large mfui-beta-icon-button_size-desktop_large mfui-beta-icon-button_size-tablet_medium mfui-beta-icon-button_size-mobile_small"
+  classes={
+    Object {
+      "content": "mfui-beta-icon-button__content",
+      "inner": "mfui-beta-icon-button__inner",
+      "root": "mfui-beta-icon-button customClassName",
+    }
+  }
+  disabled={true}
+  href="href"
+  sizeAll="large"
+  sizeDesktop="large"
+  sizeMobile="small"
+  sizeTablet="medium"
+  sizeWide="large"
+  target="_blank"
+  theme="purple"
+  type="primary"
+>
+  <test-file-stub />
+</Button>
+`;
+
+exports[`<IconButton /> snapshots renders with required props 1`] = `
+<Button
+  className="mfui-beta-icon-button mfui-beta-icon-button_size-all_medium"
+  classes={
+    Object {
+      "content": "mfui-beta-icon-button__content",
+      "inner": "mfui-beta-icon-button__inner",
+      "root": "mfui-beta-icon-button",
+    }
+  }
+  sizeAll="medium"
+  theme="green"
+  type="primary"
+>
+  <test-file-stub />
+</Button>
+`;
