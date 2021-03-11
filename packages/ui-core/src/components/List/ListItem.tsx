@@ -9,7 +9,7 @@ interface IListItemProps {
     /** Left margin */
     disableLeftMargin?: boolean;
     /** Children */
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    children?: React.ReactNode;
 }
 
 const cn = cnCreate('mfui-list-item');
