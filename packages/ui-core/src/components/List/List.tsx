@@ -14,44 +14,38 @@ export interface IListProps {
     color?: 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
     /** Дополнительный класс корневого элемента */
     className?: string;
-    children: JSX.Element[] | Element[] | JSX.Element | Element;
 }
 
 const cn = cnCreate('mfui-beta-list');
-class List extends React.Component<IListProps, {}> {
-    static propTypes = {
-        as: PropTypes.oneOf(['ul', 'ol']),
-        hAlign: PropTypes.oneOf(['center', 'right']),
-        weight: PropTypes.oneOf(['light', 'regular', 'bold']),
-        color: PropTypes.oneOf(['black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
-        className: PropTypes.string,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-        ]).isRequired,
-    };
+const List: React.FC<IListProps> = ({
+    as = 'ul',
+    color = 'black',
+    weight = 'regular',
+    hAlign,
+    className,
+    children,
+}) => {
+    const ElementType = as as React.ElementType;
 
-    static defaultProps: Partial<IListProps> = {
-        as: 'ul',
-        color: 'black',
-        weight: 'regular',
-    };
+    return (
+        <ElementType
+            className={cn({
+                'h-align': hAlign,
+                color,
+                weight,
+                type: as,
+            }, className)}>
+            {children}
+        </ElementType>
+    );
+};
 
-    render() {
-        const ElementType = this.props.as as React.ElementType;
-        const { as, hAlign, color, weight, className, children } = this.props;
-
-        return (
-            <ElementType
-                className={cn('', {
-                    'h-align': hAlign,
-                    color, weight,
-                    type: as,
-                }, className)}>
-                {children}
-            </ElementType>
-        );
-    }
-}
+List.propTypes = {
+    as: PropTypes.oneOf(['ul', 'ol']),
+    hAlign: PropTypes.oneOf(['center', 'right']),
+    weight: PropTypes.oneOf(['light', 'regular', 'bold']),
+    color: PropTypes.oneOf(['black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
+    className: PropTypes.string,
+};
 
 export default List;

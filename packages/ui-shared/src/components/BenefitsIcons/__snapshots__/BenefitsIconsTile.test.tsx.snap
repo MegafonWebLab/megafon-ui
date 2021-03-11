@@ -57,7 +57,6 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field
         className=""
         color="red"
         key="0"
-        weight="regular"
       >
         <ListItem
           className=""
