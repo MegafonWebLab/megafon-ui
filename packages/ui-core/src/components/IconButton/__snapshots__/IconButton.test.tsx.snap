@@ -2,12 +2,11 @@
 
 exports[`<IconButton /> snapshots renders with props 1`] = `
 <Button
-  className="mfui-beta-icon-button mfui-beta-icon-button_disabled mfui-beta-icon-button_size-all_large mfui-beta-icon-button_size-wide_large mfui-beta-icon-button_size-desktop_large mfui-beta-icon-button_size-tablet_medium mfui-beta-icon-button_size-mobile_small"
   classes={
     Object {
       "content": "mfui-beta-icon-button__content",
       "inner": "mfui-beta-icon-button__inner",
-      "root": "mfui-beta-icon-button customClassName",
+      "root": "mfui-beta-icon-button mfui-beta-icon-button_disabled mfui-beta-icon-button_size-all_large mfui-beta-icon-button_size-wide_large mfui-beta-icon-button_size-desktop_large mfui-beta-icon-button_size-tablet_medium mfui-beta-icon-button_size-mobile_small customClassName",
     }
   }
   disabled={true}
@@ -27,12 +26,11 @@ exports[`<IconButton /> snapshots renders with props 1`] = `
 
 exports[`<IconButton /> snapshots renders with required props 1`] = `
 <Button
-  className="mfui-beta-icon-button mfui-beta-icon-button_size-all_medium"
   classes={
     Object {
       "content": "mfui-beta-icon-button__content",
       "inner": "mfui-beta-icon-button__inner",
-      "root": "mfui-beta-icon-button",
+      "root": "mfui-beta-icon-button mfui-beta-icon-button_size-all_medium",
     }
   }
   sizeAll="medium"

@@ -56,18 +56,17 @@ const IconButton: React.FC<IIconButtonProps> = ({
     return (
         <Button
             classes={{
-                root: cn([className]),
+                root: cn({
+                    disabled,
+                    'size-all': sizeAll,
+                    'size-wide': sizeWide,
+                    'size-desktop': sizeDesktop,
+                    'size-tablet': sizeTablet,
+                    'size-mobile': sizeMobile,
+                }, [className]),
                 content: cn('content'),
                 inner: cn('inner'),
             }}
-            className={cn({
-                disabled,
-                'size-all': sizeAll,
-                'size-wide': sizeWide,
-                'size-desktop': sizeDesktop,
-                'size-tablet': sizeTablet,
-                'size-mobile': sizeMobile,
-            })}
             disabled={disabled}
             theme={currentTheme}
             target={target}
