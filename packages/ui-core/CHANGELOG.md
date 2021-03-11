@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.101](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.100...@megafon/ui-core@2.0.0-beta.101) (2021-03-11)
+
+
+### Features
+
+* **icon-button:** pass className prop to root node ([742a4f4](https://github.com/MegafonWebLab/megafon-ui/commit/742a4f44e10ac03f3dc3be3186f5d30f73d1455f))
+
+
+
+
+
 # [2.0.0-beta.100](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.99...@megafon/ui-core@2.0.0-beta.100) (2021-03-11)
 
 **Note:** Version bump only for package @megafon/ui-core
