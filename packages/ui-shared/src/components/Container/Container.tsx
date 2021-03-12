@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import './Container.less';
 import { cnCreate, ContentArea } from '@megafon/ui-core';
 
@@ -13,18 +14,25 @@ export const BackgroundColors = {
 type BackgroundColorType = typeof BackgroundColors[keyof typeof BackgroundColors];
 
 type Props = {
+    /** Дополнительный класс корневого элемента */
+    className?: string;
     /** Цвет фона */
     backgroundColor?: BackgroundColorType;
 };
 
 const cn = cnCreate('mfui-beta-container');
-const Container: React.FC<Props> = ({ backgroundColor = 'default', children }) =>
+const Container: React.FC<Props> = ({ backgroundColor = 'default', className, children }) =>
     (
-        <div className={cn({'bg-color': backgroundColor})}>
+        <div className={cn({'bg-color': backgroundColor}, [className])}>
             <ContentArea>
                 {children}
             </ContentArea>
         </div>
     );
+
+Container.propTypes = {
+    className: PropTypes.string,
+    backgroundColor: PropTypes.oneOf(Object.values(BackgroundColors)),
+};
 
 export default Container;

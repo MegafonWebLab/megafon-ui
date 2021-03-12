@@ -10,6 +10,16 @@ describe('Container', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('it renders component with className', () => {
+        const wrapper = shallow(
+            <Container className="className">
+                <TitleDescriptionBox title="title" />
+            </Container>
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('it renders component with green background color', () => {
         const wrapper = shallow(
             <Container backgroundColor={BackgroundColors.GREEN}>
