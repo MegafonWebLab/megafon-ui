@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.132](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.131...@megafon/ui-shared@2.0.0-beta.132) (2021-03-12)
+
+
+### Features
+
+* **container:** add className prop ([aab0332](https://github.com/MegafonWebLab/megafon-ui/commit/aab03324d44f04e5a5050b537b59e2705a2b1d4a))
+
+
+
+
+
 # [2.0.0-beta.131](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.130...@megafon/ui-shared@2.0.0-beta.131) (2021-03-11)
 
 **Note:** Version bump only for package @megafon/ui-shared
