@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+
+## 1.7.19
 - **ListItem**
     - change children type
 

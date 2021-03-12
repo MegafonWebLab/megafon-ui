@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## Release 1.0.54
+- **package.json**
+    - updated @megafon/ui-core package
+
 ## Release 1.0.53
 - **package.json**
     - updated @megafon/ui-core package
