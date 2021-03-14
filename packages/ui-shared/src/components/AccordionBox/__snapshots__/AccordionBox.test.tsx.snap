@@ -6,7 +6,6 @@ exports[`<AccordionBox /> render AccordionBox 1`] = `
 >
   <Grid
     hAlign="left"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -47,7 +46,6 @@ exports[`<AccordionBox /> render AccordionBox with hCenterAlignWide=true 1`] = `
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"

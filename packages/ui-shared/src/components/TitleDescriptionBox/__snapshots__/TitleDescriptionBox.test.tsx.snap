@@ -7,7 +7,6 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -48,7 +47,6 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without description
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -82,7 +80,6 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without title 1`] =
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"

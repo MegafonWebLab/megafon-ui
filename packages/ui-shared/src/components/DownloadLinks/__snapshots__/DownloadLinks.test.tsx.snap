@@ -6,7 +6,6 @@ exports[`DownloadLinks render component with one column 1`] = `
 >
   <Grid
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="7"
@@ -38,7 +37,6 @@ exports[`DownloadLinks render component with three columns 1`] = `
 >
   <Grid
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -165,7 +163,6 @@ exports[`DownloadLinks render component with two columns 1`] = `
 >
   <Grid
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="6"

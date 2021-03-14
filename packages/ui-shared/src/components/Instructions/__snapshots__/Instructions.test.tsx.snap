@@ -6,7 +6,6 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -146,7 +145,6 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -286,7 +284,6 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -433,7 +430,6 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
@@ -590,7 +586,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
   >
     <Grid
       hAlign="center"
-      multiRow={true}
     >
       <div
         className="mfui-beta-grid"
@@ -2328,7 +2323,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
   >
     <Grid
       hAlign="center"
-      multiRow={true}
     >
       <div
         className="mfui-beta-grid"
@@ -4066,7 +4060,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
   >
     <Grid
       hAlign="center"
-      multiRow={true}
     >
       <div
         className="mfui-beta-grid"

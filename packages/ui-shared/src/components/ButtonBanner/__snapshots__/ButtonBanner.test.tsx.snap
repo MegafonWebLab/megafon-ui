@@ -7,7 +7,6 @@ exports[`<ButtonBanner /> should render with props 1`] = `
 >
   <Grid
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="6"
@@ -91,7 +90,6 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
 >
   <Grid
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="6"

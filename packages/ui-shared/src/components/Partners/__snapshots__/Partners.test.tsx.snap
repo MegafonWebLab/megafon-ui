@@ -556,7 +556,6 @@ exports[`<Partners /> should render grid 1`] = `
   <Grid
     guttersBottom="medium"
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="3"
@@ -697,7 +696,6 @@ exports[`<Partners /> should render logotypes without href 1`] = `
   <Grid
     guttersBottom="medium"
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="3"

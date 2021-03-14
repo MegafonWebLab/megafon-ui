@@ -7,7 +7,6 @@ exports[`CardsBox render component 1`] = `
   <Grid
     guttersBottom="medium"
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="4"

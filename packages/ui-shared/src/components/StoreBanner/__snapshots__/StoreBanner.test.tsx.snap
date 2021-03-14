@@ -10,9 +10,7 @@ exports[`StoreBanner should render with QR-code 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
           flex={false}
@@ -111,9 +109,7 @@ exports[`StoreBanner should render with custom class name 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
           flex={false}
@@ -207,9 +203,7 @@ exports[`StoreBanner should render with green theme 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
           flex={false}
@@ -303,9 +297,7 @@ exports[`StoreBanner should render with iphone mask 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
           flex={false}
@@ -399,9 +391,7 @@ exports[`StoreBanner should render with required props 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
           flex={false}
