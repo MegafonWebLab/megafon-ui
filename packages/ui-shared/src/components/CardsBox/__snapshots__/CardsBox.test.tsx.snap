@@ -10,15 +10,8 @@ exports[`CardsBox render component 1`] = `
   >
     <GridColumn
       all="4"
-      flex={false}
-      grow={false}
       key=".0"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <Card
         button={

@@ -9,15 +9,7 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
     hAlign="center"
   >
     <GridColumn
-      all="12"
       desktop="10"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Header
@@ -49,15 +41,7 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without description
     hAlign="center"
   >
     <GridColumn
-      all="12"
       desktop="10"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Header
@@ -82,15 +66,7 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without title 1`] =
     hAlign="center"
   >
     <GridColumn
-      all="12"
       desktop="10"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Paragraph

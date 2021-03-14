@@ -10,15 +10,8 @@ exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
   >
     <GridColumn
       all="10"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -52,15 +45,10 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
   >
     <GridColumn
       all="5"
-      flex={false}
-      grow={false}
       key="column-content"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
       orderMobile="2"
       orderTablet="2"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -100,15 +88,8 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
     </GridColumn>
     <GridColumn
       all="7"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -142,15 +123,10 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
   >
     <GridColumn
       all="5"
-      flex={false}
-      grow={false}
       key="column-content"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
       orderMobile="2"
       orderTablet="2"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -190,15 +166,8 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
     </GridColumn>
     <GridColumn
       all="7"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -232,15 +201,8 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
   >
     <GridColumn
       all="10"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -274,15 +236,8 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
   >
     <GridColumn
       all="10"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -316,15 +271,8 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
   >
     <GridColumn
       all="10"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -353,15 +301,8 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autopl
   >
     <GridColumn
       all="10"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div
@@ -390,15 +331,8 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
   >
     <GridColumn
       all="10"
-      flex={false}
-      grow={false}
       key="column-video"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       tablet="12"
     >
       <div

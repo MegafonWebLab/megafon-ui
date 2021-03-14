@@ -12,16 +12,8 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -42,19 +34,11 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -91,16 +75,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
       hAlign="center"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -121,16 +97,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -167,16 +135,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
       hAlign="center"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -197,16 +157,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -227,16 +179,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -273,18 +217,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
       hAlign="center"
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -305,16 +241,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         rightOffsetDesktop="1"
         rightOffsetTablet="1"
         tablet="5"
@@ -337,18 +265,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -369,16 +289,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="3"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         rightOffsetDesktop="1"
         rightOffsetTablet="1"
         tablet="5"
@@ -417,16 +329,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
       hAlign="center"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -447,16 +351,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -477,16 +373,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -507,16 +395,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="3"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -537,16 +417,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="4"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -583,16 +455,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] 
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -613,18 +477,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -661,16 +517,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -691,17 +539,9 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -722,16 +562,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -768,16 +600,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -798,18 +622,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -830,16 +646,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -860,18 +668,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetDesktop="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -908,16 +708,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -938,17 +730,9 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -969,16 +753,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -999,17 +775,9 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetDesktop="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -1030,16 +798,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="4"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -1076,16 +836,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -1106,19 +858,11 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -1155,16 +899,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1185,18 +921,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1217,17 +945,9 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1264,16 +984,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1294,18 +1006,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1326,16 +1030,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1356,18 +1052,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1404,16 +1092,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
       hAlign="left"
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1434,18 +1114,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1466,17 +1138,9 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1497,17 +1161,9 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1528,17 +1184,9 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="4"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
