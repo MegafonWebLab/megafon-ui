@@ -3,7 +3,9 @@ import * as PropTypes from 'prop-types';
 import './GridColumn.less';
 import cnCreate from 'utils/cnCreate';
 
-const GridSizeValues = PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);
+const GridSizeValues = PropTypes.oneOf<TGridSizeValues>(
+    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+);
 export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
 
 export interface IGridColumn {
@@ -59,117 +61,100 @@ export interface IGridColumn {
     flex?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
-    children: React.ReactNode | JSX.Element | JSX.Element[];
+    children: React.ReactNode;
 }
 
 const cn = cnCreate('mfui-beta-grid-column');
-class GridColumn extends React.Component<IGridColumn, {}> {
-    static propTypes = {
-        wide: GridSizeValues,
-        desktop: GridSizeValues,
-        tablet: GridSizeValues,
-        mobile: GridSizeValues,
-        all: GridSizeValues,
+const GridColumn: React.FC<IGridColumn> = ({
+   all = '12',
+   wide,
+   desktop,
+   tablet,
+   mobile,
+   orderAll = '0',
+   orderWide = '0',
+   orderDesktop = '0',
+   orderTablet = '0',
+   orderMobile = '0',
+   leftOffsetAll,
+   leftOffsetWide,
+   leftOffsetDesktop,
+   leftOffsetTablet,
+   leftOffsetMobile,
+   rightOffsetAll,
+   rightOffsetWide,
+   rightOffsetDesktop,
+   rightOffsetTablet,
+   rightOffsetMobile,
+   className,
+   flex = false,
+   grow = false,
+   align,
+   children,
+}) => (
+    <div
+        className={cn(
+            '',
+            {
+                flex,
+                grow,
+                align,
+                all,
+                wide,
+                desktop,
+                tablet,
+                mobile,
+                'all-order': orderAll,
+                'wide-order': orderWide,
+                'desktop-order': orderDesktop,
+                'tablet-order': orderTablet,
+                'mobile-order': orderMobile,
+                'left-offset-all': leftOffsetAll,
+                'left-offset-wide': leftOffsetWide,
+                'left-offset-desktop': leftOffsetDesktop,
+                'left-offset-tablet': leftOffsetTablet,
+                'left-offset-mobile': leftOffsetMobile,
+                'right-offset-all': rightOffsetAll,
+                'right-offset-wide': rightOffsetWide,
+                'right-offset-desktop': rightOffsetDesktop,
+                'right-offset-tablet': rightOffsetTablet,
+                'right-offset-mobile': rightOffsetMobile,
+            },
+            className
+        )}
+    >
+        {children}
+    </div>
+);
 
-        orderAll: PropTypes.string,
-        orderWide: PropTypes.string,
-        orderDesktop: PropTypes.string,
-        orderTablet: PropTypes.string,
-        orderMobile: PropTypes.string,
+GridColumn.propTypes = {
+    wide: GridSizeValues,
+    desktop: GridSizeValues,
+    tablet: GridSizeValues,
+    mobile: GridSizeValues,
+    all: GridSizeValues,
 
-        leftOffsetWide: GridSizeValues,
-        leftOffsetDesktop: GridSizeValues,
-        leftOffsetTablet: GridSizeValues,
-        leftOffsetMobile: GridSizeValues,
-        leftOffsetAll: GridSizeValues,
+    orderAll: PropTypes.string,
+    orderWide: PropTypes.string,
+    orderDesktop: PropTypes.string,
+    orderTablet: PropTypes.string,
+    orderMobile: PropTypes.string,
 
-        align: PropTypes.oneOf(['right', 'left', 'center']),
-        grow: PropTypes.bool,
-        flex: PropTypes.bool,
-        className: PropTypes.string,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
-    };
+    leftOffsetWide: GridSizeValues,
+    leftOffsetDesktop: GridSizeValues,
+    leftOffsetTablet: GridSizeValues,
+    leftOffsetMobile: GridSizeValues,
+    leftOffsetAll: GridSizeValues,
 
-    static defaultProps = {
-        all: '12',
-        flex: false,
-        grow: false,
-        orderWide: '0',
-        orderDesktop: '0',
-        orderTablet: '0',
-        orderMobile: '0',
-        orderAll: '0',
-    };
-
-    render() {
-        const {
-            all,
-            wide,
-            desktop,
-            tablet,
-            mobile,
-            orderAll,
-            orderWide,
-            orderDesktop,
-            orderTablet,
-            orderMobile,
-            leftOffsetAll,
-            leftOffsetWide,
-            leftOffsetDesktop,
-            leftOffsetTablet,
-            leftOffsetMobile,
-            rightOffsetAll,
-            rightOffsetWide,
-            rightOffsetDesktop,
-            rightOffsetTablet,
-            rightOffsetMobile,
-            className,
-            flex,
-            grow,
-            align,
-            children,
-        } = this.props;
-
-        return (
-            <div
-                className={cn(
-                    '',
-                    {
-                        flex,
-                        grow,
-                        align,
-                        all,
-                        wide,
-                        desktop,
-                        tablet,
-                        mobile,
-                        'all-order': orderAll,
-                        'wide-order': orderWide,
-                        'desktop-order': orderDesktop,
-                        'tablet-order': orderTablet,
-                        'mobile-order': orderMobile,
-                        'left-offset-all': leftOffsetAll,
-                        'left-offset-wide': leftOffsetWide,
-                        'left-offset-desktop': leftOffsetDesktop,
-                        'left-offset-tablet': leftOffsetTablet,
-                        'left-offset-mobile': leftOffsetMobile,
-                        'right-offset-all': rightOffsetAll,
-                        'right-offset-wide': rightOffsetWide,
-                        'right-offset-desktop': rightOffsetDesktop,
-                        'right-offset-tablet': rightOffsetTablet,
-                        'right-offset-mobile': rightOffsetMobile,
-                    },
-                    className
-                )}
-            >
-                {children}
-            </div>
-        );
-    }
-}
+    align: PropTypes.oneOf(['right', 'left', 'center']),
+    grow: PropTypes.bool,
+    flex: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element),
+        PropTypes.element,
+        PropTypes.string,
+    ]),
+};
 
 export default GridColumn;
