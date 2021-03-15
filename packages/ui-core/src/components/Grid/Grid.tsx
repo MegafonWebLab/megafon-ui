@@ -62,7 +62,7 @@ Grid.propTypes = {
     guttersBottom: PropTypes.oneOf(['large', 'medium']),
     multiRow: PropTypes.bool,
     className: PropTypes.string,
-    children: PropTypes.node,
+    children: PropTypes.element.isRequired,
 };
 
 export default Grid;
