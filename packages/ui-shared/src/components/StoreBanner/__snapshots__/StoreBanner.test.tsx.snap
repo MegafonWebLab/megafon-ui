@@ -10,19 +10,10 @@ exports[`StoreBanner should render with QR-code 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           rightOffsetWide="1"
         >
           <div
@@ -71,14 +62,7 @@ exports[`StoreBanner should render with QR-code 1`] = `
         <GridColumn
           all="4"
           desktop="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           tablet="6"
         >
           <div
@@ -111,19 +95,10 @@ exports[`StoreBanner should render with custom class name 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           rightOffsetWide="1"
         >
           <div
@@ -167,14 +142,7 @@ exports[`StoreBanner should render with custom class name 1`] = `
         <GridColumn
           all="4"
           desktop="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           tablet="6"
         >
           <div
@@ -207,19 +175,10 @@ exports[`StoreBanner should render with green theme 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           rightOffsetWide="1"
         >
           <div
@@ -263,14 +222,7 @@ exports[`StoreBanner should render with green theme 1`] = `
         <GridColumn
           all="4"
           desktop="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           tablet="6"
         >
           <div
@@ -303,19 +255,10 @@ exports[`StoreBanner should render with iphone mask 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           rightOffsetWide="1"
         >
           <div
@@ -359,14 +302,7 @@ exports[`StoreBanner should render with iphone mask 1`] = `
         <GridColumn
           all="4"
           desktop="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           tablet="6"
         >
           <div
@@ -399,19 +335,10 @@ exports[`StoreBanner should render with required props 1`] = `
     <div
       className="mfui-beta-store-banner__grid"
     >
-      <Grid
-        multiRow={true}
-      >
+      <Grid>
         <GridColumn
           all="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           rightOffsetWide="1"
         >
           <div
@@ -455,14 +382,7 @@ exports[`StoreBanner should render with required props 1`] = `
         <GridColumn
           all="4"
           desktop="6"
-          flex={false}
-          grow={false}
           mobile="12"
-          orderAll="0"
-          orderDesktop="0"
-          orderMobile="0"
-          orderTablet="0"
-          orderWide="0"
           tablet="6"
         >
           <div

@@ -7,21 +7,13 @@ exports[`<ButtonBanner /> should render with props 1`] = `
 >
   <Grid
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="6"
-      flex={false}
-      grow={false}
       leftOffsetDesktop="1"
       leftOffsetTablet="1"
       leftOffsetWide="1"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <div
         className="mfui-beta-button-banner__content"
@@ -63,14 +55,7 @@ exports[`<ButtonBanner /> should render with props 1`] = `
     </GridColumn>
     <GridColumn
       all="5"
-      flex={false}
-      grow={false}
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <div
         className="mfui-beta-button-banner__media"
@@ -91,21 +76,13 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
 >
   <Grid
     guttersLeft="medium"
-    multiRow={true}
   >
     <GridColumn
       all="6"
-      flex={false}
-      grow={false}
       leftOffsetDesktop="1"
       leftOffsetTablet="1"
       leftOffsetWide="1"
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <div
         className="mfui-beta-button-banner__content"
@@ -139,14 +116,7 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
     </GridColumn>
     <GridColumn
       all="5"
-      flex={false}
-      grow={false}
       mobile="12"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <div
         className="mfui-beta-button-banner__media"

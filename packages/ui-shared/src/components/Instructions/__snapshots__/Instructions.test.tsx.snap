@@ -6,17 +6,9 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <Header
         as="h2"
@@ -146,17 +138,9 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <Header
         as="h2"
@@ -286,17 +270,9 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <Header
         as="h2"
@@ -433,17 +409,9 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
       all="12"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       <Header
         as="h2"
@@ -590,7 +558,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
   >
     <Grid
       hAlign="center"
-      multiRow={true}
     >
       <div
         className="mfui-beta-grid"
@@ -601,14 +568,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
           <GridColumn
             all="12"
             className="mfui-beta-grid__column"
-            flex={false}
-            grow={false}
             key=".0"
-            orderAll="0"
-            orderDesktop="0"
-            orderMobile="0"
-            orderTablet="0"
-            orderWide="0"
           >
             <div
               className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column"
@@ -2328,7 +2288,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
   >
     <Grid
       hAlign="center"
-      multiRow={true}
     >
       <div
         className="mfui-beta-grid"
@@ -2339,14 +2298,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
           <GridColumn
             all="12"
             className="mfui-beta-grid__column"
-            flex={false}
-            grow={false}
             key=".0"
-            orderAll="0"
-            orderDesktop="0"
-            orderMobile="0"
-            orderTablet="0"
-            orderWide="0"
           >
             <div
               className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column"
@@ -4066,7 +4018,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
   >
     <Grid
       hAlign="center"
-      multiRow={true}
     >
       <div
         className="mfui-beta-grid"
@@ -4077,14 +4028,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
           <GridColumn
             all="12"
             className="mfui-beta-grid__column"
-            flex={false}
-            grow={false}
             key=".0"
-            orderAll="0"
-            orderDesktop="0"
-            orderMobile="0"
-            orderTablet="0"
-            orderWide="0"
           >
             <div
               className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column"

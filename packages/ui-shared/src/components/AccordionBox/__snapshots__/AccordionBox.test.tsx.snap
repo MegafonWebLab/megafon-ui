@@ -6,17 +6,8 @@ exports[`<AccordionBox /> render AccordionBox 1`] = `
 >
   <Grid
     hAlign="left"
-    multiRow={true}
   >
     <GridColumn
-      all="12"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Accordion
@@ -47,17 +38,8 @@ exports[`<AccordionBox /> render AccordionBox with hCenterAlignWide=true 1`] = `
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
-      all="12"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Accordion
