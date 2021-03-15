@@ -150,11 +150,7 @@ GridColumn.propTypes = {
     grow: PropTypes.bool,
     flex: PropTypes.bool,
     className: PropTypes.string,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element),
-        PropTypes.element,
-        PropTypes.string,
-    ]),
+    children: PropTypes.node.isRequired,
 };
 
 export default GridColumn;
