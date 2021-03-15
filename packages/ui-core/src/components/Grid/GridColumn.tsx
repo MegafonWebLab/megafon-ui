@@ -94,7 +94,6 @@ const GridColumn: React.FC<IGridColumn> = ({
 }) => (
     <div
         className={cn(
-            '',
             {
                 flex,
                 grow,
