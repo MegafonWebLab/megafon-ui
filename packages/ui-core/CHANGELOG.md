@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.102](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.101...@megafon/ui-core@2.0.0-beta.102) (2021-03-15)
+
+
+### Bug Fixes
+
+* **grid:** correct children proptype ([252f55e](https://github.com/MegafonWebLab/megafon-ui/commit/252f55e61996272d5bfbc2edd272feb044f73e81))
+* **grid:** rewritten to functional component ([4d153f2](https://github.com/MegafonWebLab/megafon-ui/commit/4d153f25b7e76a91f2e8c49f491eed510a4fc289))
+* **gridcolumn:** correct children proptype ([411cce0](https://github.com/MegafonWebLab/megafon-ui/commit/411cce0e280cabd3626dabb9dd3941ade1a3829f))
+* **gridcolumn:** rewritten to functional component ([b653163](https://github.com/MegafonWebLab/megafon-ui/commit/b653163f1f4c81dc196d6c53fbf545496b6fb849))
+
+
+
+
+
 # [2.0.0-beta.101](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.100...@megafon/ui-core@2.0.0-beta.101) (2021-03-11)
 
 
