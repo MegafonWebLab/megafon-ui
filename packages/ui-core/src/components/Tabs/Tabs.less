@@ -3,6 +3,8 @@
 @b: e('.mfui-beta-tabs');
 @swiperWrapper: e('.swiper-wrapper');
 
+@border: 1px solid @spbSky2;
+
 @{b} {
     &__swiper {
         .fontFamily();
@@ -62,10 +64,6 @@
         @media @mobileSM {
             flex-grow: 1;
         }
-    }
-
-    &__tab {
-        border-bottom: 1px solid @spbSky2;
     }
 
     &__tab-inner {
@@ -212,6 +210,16 @@
     &_h-align_center {
         @{b}__swiper {
             justify-content: center;
+        }
+
+        @{b}__tab {
+            border-bottom: @border;
+        }
+    }
+
+    &_h-align_left {
+        @{b}__swiper-wrapper {
+            border-bottom: @border;
         }
     }
 
