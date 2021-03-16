@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
-import './IconButton.less';
 import Button from 'components/Button/Button';
 
 export interface IIconButtonProps {
@@ -48,41 +47,30 @@ const IconButton: React.FC<IIconButtonProps> = ({
     disabled,
     onClick,
     className,
-}) => {
-    const currentTheme = React.useMemo(() => (
-        (type === 'primary') && (theme === 'black') ? 'green' : theme
-    ), [theme]);
-
-    return (
-        <Button
-            classes={{
-                root: cn({
-                    disabled,
-                    'size-all': sizeAll,
-                    'size-wide': sizeWide,
-                    'size-desktop': sizeDesktop,
-                    'size-tablet': sizeTablet,
-                    'size-mobile': sizeMobile,
-                }, [className]),
-                content: cn('content'),
-                inner: cn('inner'),
-            }}
-            disabled={disabled}
-            theme={currentTheme}
-            target={target}
-            href={href}
-            type={type}
-            sizeAll={sizeAll}
-            sizeWide={sizeWide}
-            sizeDesktop={sizeDesktop}
-            sizeTablet={sizeTablet}
-            sizeMobile={sizeMobile}
-            onClick={onClick}
-        >
-            {icon}
-        </Button>
-    );
-};
+}) => (
+    <Button
+        className={cn({
+            disabled,
+            'size-all': sizeAll,
+            'size-wide': sizeWide,
+            'size-desktop': sizeDesktop,
+            'size-tablet': sizeTablet,
+            'size-mobile': sizeMobile,
+        }, [className])}
+        disabled={disabled}
+        theme={theme}
+        target={target}
+        href={href}
+        type={type}
+        sizeAll={sizeAll}
+        sizeWide={sizeWide}
+        sizeDesktop={sizeDesktop}
+        sizeTablet={sizeTablet}
+        sizeMobile={sizeMobile}
+        onClick={onClick}
+        iconLeft={icon}
+    />
+);
 
 IconButton.propTypes = {
     theme: PropTypes.oneOf(['green', 'purple', 'white', 'black']),

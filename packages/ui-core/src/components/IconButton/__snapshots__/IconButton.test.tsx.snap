@@ -2,15 +2,10 @@
 
 exports[`<IconButton /> snapshots renders with props 1`] = `
 <Button
-  classes={
-    Object {
-      "content": "mfui-beta-icon-button__content",
-      "inner": "mfui-beta-icon-button__inner",
-      "root": "mfui-beta-icon-button mfui-beta-icon-button_disabled mfui-beta-icon-button_size-all_large mfui-beta-icon-button_size-wide_large mfui-beta-icon-button_size-desktop_large mfui-beta-icon-button_size-tablet_medium mfui-beta-icon-button_size-mobile_small customClassName",
-    }
-  }
+  className="mfui-beta-icon-button mfui-beta-icon-button_disabled mfui-beta-icon-button_size-all_large mfui-beta-icon-button_size-wide_large mfui-beta-icon-button_size-desktop_large mfui-beta-icon-button_size-tablet_medium mfui-beta-icon-button_size-mobile_small customClassName"
   disabled={true}
   href="href"
+  iconLeft={<test-file-stub />}
   sizeAll="large"
   sizeDesktop="large"
   sizeMobile="small"
@@ -19,24 +14,15 @@ exports[`<IconButton /> snapshots renders with props 1`] = `
   target="_blank"
   theme="purple"
   type="primary"
->
-  <test-file-stub />
-</Button>
+/>
 `;
 
 exports[`<IconButton /> snapshots renders with required props 1`] = `
 <Button
-  classes={
-    Object {
-      "content": "mfui-beta-icon-button__content",
-      "inner": "mfui-beta-icon-button__inner",
-      "root": "mfui-beta-icon-button mfui-beta-icon-button_size-all_medium",
-    }
-  }
+  className="mfui-beta-icon-button mfui-beta-icon-button_size-all_medium"
+  iconLeft={<test-file-stub />}
   sizeAll="medium"
   theme="green"
   type="primary"
->
-  <test-file-stub />
-</Button>
+/>
 `;

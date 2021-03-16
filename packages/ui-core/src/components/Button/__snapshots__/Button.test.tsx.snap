@@ -191,7 +191,7 @@ exports[`<Button /> layout should render with different height for resolutions 1
 
 exports[`<Button /> layout should render with left icon 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch"
+  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content_icon-text"
   onClick={[Function]}
   type="button"
 >

@@ -25,6 +25,10 @@
         text-decoration: none;
     }
 
+    svg {
+        display: block;
+    }
+
     &_disabled {
         cursor: default;
     }
@@ -45,12 +49,6 @@
     &__content {
         display: flex;
         align-items: center;
-    }
-
-    &__icon {
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
     }
 
     &__icon-arrow {
@@ -78,8 +76,23 @@
         .generateSize(mobile);
     }
 
-    &_size-all_small &__icon {
-        display: none;
+    &_content_icon-text {
+        @{b}__icon {
+            margin-right: 8px;
+            margin-left: -8px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &_content_icon-text&_size-all_small {
+        @{b}__icon {
+            display: none;
+        }
+    }
+
+    &_content_icon {
+        padding: 0;
     }
 
     // type = primary
@@ -299,13 +312,31 @@
 .generateSize(@resolution) {
     &_size-@{resolution}_small &__inner {
         height: 32px;
+        min-width: 32px;
     }
 
     &_size-@{resolution}_medium &__inner {
         height: 48px;
+        min-width: 48px;
     }
 
     &_size-@{resolution}_large &__inner {
         height: 60px;
+        min-width: 60px;
+    }
+
+    &_size-@{resolution}_small &__icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &_size-@{resolution}_medium &__icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    &_size-@{resolution}_large &__icon {
+        width: 40px;
+        height: 40px;
     }
 }

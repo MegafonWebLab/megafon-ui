@@ -40,8 +40,6 @@ export interface IButtonProps extends IDataAttributes {
         root?: string | null;
         /** Content class */
         content?: string | null;
-        /** Inner container class */
-        inner?: string | null;
     };
     /** Тема компонента */
     theme?: ButtonThemesType;
@@ -79,6 +77,7 @@ export interface IButtonProps extends IDataAttributes {
     buttonRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    children?: string;
 }
 
 const getLoaderSize = (size: string): PreloaderSizesType => (
@@ -90,7 +89,6 @@ const Button: React.FC<IButtonProps> = ({
     classes: {
         root: rootClassName,
         content: contentClassName,
-        inner: innerClassName,
     } = {},
     className = '',
     theme = 'green',
@@ -114,7 +112,7 @@ const Button: React.FC<IButtonProps> = ({
     dataAttrs,
     buttonRef,
 }) => {
-    const isTouch: boolean = React.useMemo(() => detectTouch(), []);
+    const isTouch = React.useMemo(() => detectTouch(), []);
     const ElementType = href ? 'a' : 'button';
 
     const handleClick = React.useCallback((e: React.SyntheticEvent<EventTarget>): void => {
@@ -151,7 +149,7 @@ const Button: React.FC<IButtonProps> = ({
     const renderChildren: JSX.Element = React.useMemo(() => (
         <div className={cn('content', contentClassName)}>
             {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
-            <span className={cn('text')}>{children}</span>
+            {children && <span className={cn('text')}>{children}</span>}
             {!iconLeft && showArrow && <Arrow className={cn('icon-arrow')} />}
         </div>
     ), [iconLeft, contentClassName, showArrow, children]);
@@ -180,6 +178,17 @@ const Button: React.FC<IButtonProps> = ({
             return 'noreferrer noopener';
         }
     };
+    const contentType = React.useMemo(() => {
+        if (iconLeft && children) {
+            return 'icon-text';
+        }
+
+        if (iconLeft && !children) {
+            return 'icon';
+        }
+
+        return undefined;
+    }, []);
 
     return (
         <ElementType
@@ -196,6 +205,7 @@ const Button: React.FC<IButtonProps> = ({
                 'full-width': fullWidth,
                 loading: showLoader,
                 'no-touch': !isTouch,
+                'content': contentType,
             }, [className, rootClassName])}
             href={href}
             target={href ? target : undefined}
@@ -205,8 +215,8 @@ const Button: React.FC<IButtonProps> = ({
             disabled={!href && disabled}
             ref={buttonRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
         >
-            <div className={cn('inner', innerClassName)}>
-                {!showLoader && children && renderChildren}
+            <div className={cn('inner')}>
+                {!showLoader && (iconLeft || children) && renderChildren}
                 {showLoader && renderLoader}
             </div>
         </ElementType>
