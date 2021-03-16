@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.136](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.135...@megafon/ui-shared@2.0.0-beta.136) (2021-03-16)
+
+
+### Bug Fixes
+
+* **buttonbanner:** add white background-color ([0b201e3](https://github.com/MegafonWebLab/megafon-ui/commit/0b201e32fa56ab666ebfcf5903a3e75245e45cf5))
+
+
+
+
+
 # [2.0.0-beta.135](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.134...@megafon/ui-shared@2.0.0-beta.135) (2021-03-16)
 
 **Note:** Version bump only for package @megafon/ui-shared
