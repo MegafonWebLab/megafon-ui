@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.103](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.102...@megafon/ui-core@2.0.0-beta.103) (2021-03-16)
+
+
+### Bug Fixes
+
+* **grid:** allow to pass array in children proptype ([0e4cd7d](https://github.com/MegafonWebLab/megafon-ui/commit/0e4cd7dfa969d027c297b34cb1072c305a6bacd5))
+
+
+
+
+
 # [2.0.0-beta.102](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.101...@megafon/ui-core@2.0.0-beta.102) (2021-03-15)
 
 
