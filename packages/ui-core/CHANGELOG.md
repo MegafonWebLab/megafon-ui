@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.105](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.104...@megafon/ui-core@2.0.0-beta.105) (2021-03-18)
+
+
+### Bug Fixes
+
+* **icons:** added facebook icon with white background ([5d5e1f8](https://github.com/MegafonWebLab/megafon-ui/commit/5d5e1f86fd6e2346e37f5440529162f2501e367f))
+
+
+### Features
+
+* **icons:** added new Habr icon ([f0716dc](https://github.com/MegafonWebLab/megafon-ui/commit/f0716dc2e135c32674353d8e53616f66c7e1ab16))
+
+
+
+
+
 # [2.0.0-beta.104](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.103...@megafon/ui-core@2.0.0-beta.104) (2021-03-16)
 
 **Note:** Version bump only for package @megafon/ui-core
