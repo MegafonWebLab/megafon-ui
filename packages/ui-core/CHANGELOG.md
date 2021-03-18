@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.106](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.105...@megafon/ui-core@2.0.0-beta.106) (2021-03-18)
+
+
+### Features
+
+* **button:** allows to be used as IconButton if icon prop is passed and children prop is not ([9b89105](https://github.com/MegafonWebLab/megafon-ui/commit/9b89105de8455f9ea042005ab62c877a9afa2280))
+* **iconbutton:** deleted component ([23e175e](https://github.com/MegafonWebLab/megafon-ui/commit/23e175ebada66903a76db9eef1092f0f0c5edde5))
+
+
+### BREAKING CHANGES
+
+* **button:** "iconLeft" prop renamed to "icon"
+* **iconbutton:** IconButton component was deleted. Use Button with "icon" prop instead
+
+
+
+
+
 # [2.0.0-beta.105](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.104...@megafon/ui-core@2.0.0-beta.105) (2021-03-18)
 
 
