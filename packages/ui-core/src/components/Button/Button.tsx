@@ -154,17 +154,19 @@ const Button: React.FC<IButtonProps> = ({
         }
     }, [type, theme, loaderWhite]);
 
-    const renderedContent = React.useMemo(
-        (): null | JSX.Element =>
-            !children && !icon ? null : (
-                <div className={cn('content', contentClassName)}>
-                    {icon && <div className={cn('icon')}>{icon}</div>}
-                    {children && <span className={cn('text')}>{children}</span>}
-                    {!icon && showArrow && <Arrow className={cn('icon-arrow')} />}
-                </div>
-            ),
-        [contentClassName, showArrow, icon, children]
-    );
+    const renderedContent = React.useMemo((): null | JSX.Element => {
+        if (!children && !icon) {
+            return null;
+        }
+
+        return (
+            <div className={cn('content', contentClassName)}>
+                {icon && <div className={cn('icon')}>{icon}</div>}
+                {children && <span className={cn('text')}>{children}</span>}
+                {!icon && showArrow && <Arrow className={cn('icon-arrow')} />}
+            </div>
+        );
+    }, [contentClassName, showArrow, icon, children]);
 
     const contentType = React.useMemo(() => {
         switch (true) {
