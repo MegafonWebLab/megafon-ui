@@ -1,7 +1,6 @@
 import React, { createRef } from 'react';
 import { mount, shallow } from 'enzyme';
 import Button, { IButtonProps } from './Button';
-import cnCreate from '../../utils/cnCreate';
 import detectTouch from '../../utils/detectTouch';
 import Balance from 'icons/Basic/24/Balance_24.svg';
 
@@ -24,7 +23,7 @@ const props: IButtonProps = {
     actionType: 'reset',
     sizeAll: 'large',
 };
-const cn = cnCreate('mfui-beta-button');
+const cn = '.mfui-beta-button';
 
 describe('<Button />', () => {
     afterAll(() => jest.restoreAllMocks());
@@ -71,19 +70,28 @@ describe('<Button />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should render with arrow', () => {
+        it('should render with arrow icon on the right', () => {
             const wrapper = shallow(<Button showArrow>arrow</Button>);
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should render with left icon', () => {
-            const wrapper = shallow(<Button iconLeft={<Balance />}>left icon</Button>);
+        it('should render with custom icon', () => {
+            const wrapper = shallow(<Button icon={<Balance />} />);
+
+            expect(wrapper.exists(`${cn}_content-type_icon`)).toBeTruthy();
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should render with left icon and without right icon', () => {
-            const wrapper = shallow(<Button showArrow iconLeft={<Balance />}>left icon</Button>);
-            expect(wrapper.exists(`.${cn('icon-arrow')}`)).not.toBe(true);
+        it('should render with custom icon and children', () => {
+            const wrapper = shallow(<Button icon={<Balance />}>left icon</Button>);
+
+            expect(wrapper.exists(`${cn}_content-type_icon-text`)).toBeTruthy();
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with custom icon and without arrow icon on the right', () => {
+            const wrapper = shallow(<Button showArrow icon={<Balance />}>left icon</Button>);
+            expect(wrapper.exists(`${cn}__icon-arrow`)).toBeFalsy();
         });
 
         it('should render tag button with disabled state', () => {
@@ -113,7 +121,7 @@ describe('<Button />', () => {
 
         it('should render green theme when type is "primary" and theme is "black"', () => {
             const wrapper = shallow(<Button type="primary" theme="black" />);
-            expect(wrapper.exists(`.${cn()}_theme_green`)).toBe(true);
+            expect(wrapper.exists(`${cn}_theme_green`)).toBeTruthy();
         });
     });
 
