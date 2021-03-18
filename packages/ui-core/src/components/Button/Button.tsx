@@ -31,6 +31,12 @@ export const ButtonSizes = {
 
 type ButtonSizesType = typeof ButtonSizes[keyof typeof ButtonSizes];
 
+enum Content {
+    TEXT = 'text',
+    ICON = 'icon',
+    ICON_TEXT = 'icon-text',
+}
+
 export interface IButtonProps extends IDataAttributes {
     /** Дополнительный класс корневого элемента */
     className?: string | string[];
@@ -71,8 +77,8 @@ export interface IButtonProps extends IDataAttributes {
     showLoader?: boolean;
     /** Показать стелку */
     showArrow?: boolean;
-    /** Иконка слева */
-    iconLeft?: JSX.Element;
+    /** Иконка */
+    icon?: JSX.Element;
     /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
     /** Ссылка на элемент */
@@ -107,14 +113,14 @@ const Button: React.FC<IButtonProps> = ({
     fullWidth = false,
     showLoader = false,
     showArrow = false,
-    iconLeft,
+    icon,
     disabled,
     children,
     onClick,
     dataAttrs,
     buttonRef,
 }) => {
-    const isTouch: boolean = React.useMemo(() => detectTouch(), []);
+    const isTouch = React.useMemo(() => detectTouch(), []);
     const ElementType = href ? 'a' : 'button';
 
     const handleClick = React.useCallback((e: React.SyntheticEvent<EventTarget>): void => {
@@ -148,15 +154,30 @@ const Button: React.FC<IButtonProps> = ({
         }
     }, [type, theme, loaderWhite]);
 
-    const renderChildren: JSX.Element = React.useMemo(() => (
-        <div className={cn('content', contentClassName)}>
-            {iconLeft && <div className={cn('icon')}>{iconLeft}</div>}
-            <span className={cn('text')}>{children}</span>
-            {!iconLeft && showArrow && <Arrow className={cn('icon-arrow')} />}
-        </div>
-    ), [iconLeft, contentClassName, showArrow, children]);
+    const renderedContent = React.useMemo(
+        (): null | JSX.Element =>
+            !children && !icon ? null : (
+                <div className={cn('content', contentClassName)}>
+                    {icon && <div className={cn('icon')}>{icon}</div>}
+                    {children && <span className={cn('text')}>{children}</span>}
+                    {!icon && showArrow && <Arrow className={cn('icon-arrow')} />}
+                </div>
+            ),
+        [contentClassName, showArrow, icon, children]
+    );
 
-    const renderLoader: JSX.Element = React.useMemo(() => (
+    const contentType = React.useMemo(() => {
+        switch (true) {
+            case icon && !children:
+                return Content.ICON;
+            case icon && !!children:
+                return Content.ICON_TEXT;
+            default:
+                return Content.TEXT;
+        }
+    }, [icon, children]);
+
+    const renderedLoader: JSX.Element = React.useMemo(() => (
         <Preloader
             color={loaderColor}
             sizeAll={getLoaderSize(sizeAll)}
@@ -196,6 +217,7 @@ const Button: React.FC<IButtonProps> = ({
                 'full-width': fullWidth,
                 loading: showLoader,
                 'no-touch': !isTouch,
+                'content-type': contentType,
             }, [className, rootClassName])}
             href={href}
             target={href ? target : undefined}
@@ -206,8 +228,7 @@ const Button: React.FC<IButtonProps> = ({
             ref={buttonRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
         >
             <div className={cn('inner', innerClassName)}>
-                {!showLoader && children && renderChildren}
-                {showLoader && renderLoader}
+                {!showLoader ? renderedContent : renderedLoader}
             </div>
         </ElementType>
     );
@@ -233,7 +254,7 @@ Button.propTypes = {
     fullWidth: PropTypes.bool,
     showLoader: PropTypes.bool,
     showArrow: PropTypes.bool,
-    iconLeft: PropTypes.element,
+    icon: PropTypes.element,
     disabled: PropTypes.bool,
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     buttonRef: PropTypes.oneOfType([
