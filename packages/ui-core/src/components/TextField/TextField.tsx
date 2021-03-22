@@ -200,8 +200,10 @@ const TextField: React.FC<ITextFieldProps> = ({
 
         isPasswordType && togglePasswordHiding();
         onCustomIconClick && onCustomIconClick(e);
-        !isControlled && isClearFuncAvailable && setInputValue('');
-        field && field.focus();
+        if (!isControlled && isClearFuncAvailable) {
+            setInputValue('');
+            field && field.focus();
+        }
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
 
     const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -340,7 +342,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         return icon && (
             <div
                 className={cn('icon-box', {
-                    error: verification === Verification.ERROR,
+                    error: verification === Verification.ERROR && !customIcon,
                     password: isPasswordType,
                     'custom-handler': !!onCustomIconClick,
                 })}
@@ -361,7 +363,7 @@ const TextField: React.FC<ITextFieldProps> = ({
             theme,
             valid: verification === Verification.VALID,
             error: verification === Verification.ERROR || isMaxLimitExceeded,
-            icon: !hideIcon && (!!verification || !!customIcon) && !textarea,
+            icon: !hideIcon && (!!verification || !!customIcon || type === 'password') && !textarea,
             password: isPlaceholderShowed,
         }, className)}>
             {label && <InputLabel htmlFor={id}>

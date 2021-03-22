@@ -83,7 +83,7 @@
     &__icon-box {
         box-sizing: border-box;
         position: absolute;
-        z-index: 0;
+        z-index: 3;
         top: 0;
         right: 0;
         bottom: 0;
@@ -91,14 +91,13 @@
         padding-right: 16px;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
         text-align: center;
     }
 
     &__icon-box_error,
     &__icon-box_password,
     &__icon-box_custom-handler {
-        z-index: 3;
+        cursor: pointer;
     }
 
     &__icon {

@@ -2,7 +2,7 @@
 
 exports[`<TextField /> input should render with hidden password 1`] = `
 <div
-  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_password"
+  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon mfui-beta-text-field_password"
 >
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
@@ -326,7 +326,7 @@ exports[`<TextField /> input should render with value after updating string prop
 
 exports[`<TextField /> input should render with visible password 1`] = `
 <div
-  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default"
+  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon"
 >
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
