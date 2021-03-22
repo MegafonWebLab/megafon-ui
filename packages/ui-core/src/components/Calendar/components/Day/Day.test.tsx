@@ -24,12 +24,30 @@ describe('<Day />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('renders Day with all props', () => {
+            const wrapper = shallow(<Day {...props} onMouseLeave={jest.fn()} isBetween />);
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should return empty div if label is not provided', () => {
             const { dayLabel, ...restProps } = props;
 
             const wrapper = shallow(<Day {...restProps} />);
 
             expect(wrapper).toMatchSnapshot();
+        });
+    });
+
+    describe('handleMouseLeave tests', () => {
+        it('', () => {
+            const onMouseLeave = jest.fn();
+
+            const wrapper = shallow(<Day {...props} onMouseLeave={onMouseLeave} />);
+
+            wrapper.find('button').simulate('mouseleave');
+
+            expect(onMouseLeave).toBeCalled();
         });
     });
 });

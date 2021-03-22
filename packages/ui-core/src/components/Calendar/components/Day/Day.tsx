@@ -18,15 +18,21 @@ export interface IDayPickerProps {
 }
 
 export type DayType = {
+    isBetween?: boolean;
     dayLabel?: string;
     date: Date;
+    onMouseLeave?: () => void;
 };
 
 export type IDayProps = IDayPickerProps & DayType;
 
 const cn = cnCreate('mfui-beta-day');
-const Day: React.FC<IDayProps> = ({ dayLabel, date, ...pickerProps }) => {
+const Day: React.FC<IDayProps> = ({ isBetween = false, dayLabel, date, onMouseLeave, ...pickerProps }) => {
     const dayRef = React.useRef(null);
+
+    const handleMouseLeave = (): void => {
+        onMouseLeave && onMouseLeave();
+    };
 
     const {
         isSelected,
@@ -40,7 +46,7 @@ const Day: React.FC<IDayProps> = ({ dayLabel, date, ...pickerProps }) => {
 
     const modClasses = {
         active: isSelectedStartOrEnd,
-        between: isSelected && !isSelectedStartOrEnd,
+        between: isBetween || (isSelected && !isSelectedStartOrEnd),
         sunday: isSunday(date),
         monday: isMonday(date),
         first: !isSelectedStartOrEnd && isFirstDayOfMonth(date),
@@ -52,6 +58,7 @@ const Day: React.FC<IDayProps> = ({ dayLabel, date, ...pickerProps }) => {
             onClick={onClick}
             onKeyDown={onKeyDown}
             onMouseEnter={onMouseEnter}
+            onMouseLeave={handleMouseLeave}
             tabIndex={tabIndex}
             type="button"
             disabled={isDateDisabled}
