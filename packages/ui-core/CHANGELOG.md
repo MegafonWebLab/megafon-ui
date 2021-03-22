@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.107](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.106...@megafon/ui-core@2.0.0-beta.107) (2021-03-22)
+
+
+### Bug Fixes
+
+* **textfield:** increase z-index in icon-box, add right space in password type ([b5284b4](https://github.com/MegafonWebLab/megafon-ui/commit/b5284b40bfe148bcb4aee0a57f7a22406cb298e7))
+
+
+
+
+
 # [2.0.0-beta.106](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.105...@megafon/ui-core@2.0.0-beta.106) (2021-03-18)
 
 
