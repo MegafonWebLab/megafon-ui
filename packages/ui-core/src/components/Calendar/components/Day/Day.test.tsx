@@ -18,8 +18,8 @@ const props: IDayProps = {
 
 describe('<Day />', () => {
     describe('snapshots', () => {
-        it('renders Day with props', () => {
-            const wrapper = shallow(<Day {...props} />);
+        it('renders Day with required props', () => {
+            const wrapper = shallow(<Day {...props} dayLabel={undefined}/>);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -40,7 +40,7 @@ describe('<Day />', () => {
     });
 
     describe('handleMouseLeave tests', () => {
-        it('', () => {
+        it('calls callback on them cursor leaves the button', () => {
             const onMouseLeave = jest.fn();
 
             const wrapper = shallow(<Day {...props} onMouseLeave={onMouseLeave} />);

@@ -18,7 +18,7 @@ exports[`<Day /> snapshots renders Day with all props 1`] = `
 </button>
 `;
 
-exports[`<Day /> snapshots renders Day with props 1`] = `
+exports[`<Day /> snapshots renders Day with required props 1`] = `
 <button
   className="mfui-beta-day mfui-beta-day_sunday"
   onClick={[Function]}
@@ -30,9 +30,7 @@ exports[`<Day /> snapshots renders Day with props 1`] = `
 >
   <span
     className="mfui-beta-day__label"
-  >
-    Пн
-  </span>
+  />
 </button>
 `;
 

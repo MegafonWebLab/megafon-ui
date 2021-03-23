@@ -3,22 +3,26 @@
 @b: e( '.mfui-beta-day');
 
 @{b} {
+    position: relative;
     .small();
     width: 32px;
     height: 32px;
-    padding: 0;
+    padding: 0 10px 8px 0;
     line-height: 24px;
     color: @freshAsphalt;
     border: none;
-    border-radius: 50%;
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
     outline: none;
     text-decoration: none;
-    box-sizing: border-box;
+    box-sizing: content-box;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     appearance: none;
     user-select: none;
+
+    &:last-child {
+        padding-right: 0px;
+    }
 
     &:hover:not(&_active):not(&_between):not(&:disabled) {
         border-radius: 50%;
@@ -30,22 +34,35 @@
         opacity: 0.3;
     }
 
-    &:not(:disabled):hover,
-    &:not(:disabled):focus,
-    &_active
+    &_active,
+    &:not(:disabled):focus
     {
-        position: relative;
-        border-radius: 50% !important;
         color: @clearWhite;
-        background-color: @green;
     }
 
-    &:not(:disabled):not(&_active):hover {
+    &:not(:disabled):hover:after,
+    &:not(:disabled):focus:after,
+    &_active:after
+    {
+        content: '';
+        position: absolute;
+        background-color: @green;
+        border-radius: 50% !important;
+        width: 32px;
+        height: 32px;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    &:not(:disabled):not(&_active):hover:after {
         background-color: @spbSky0;
         color: @freshAsphalt;
     }
-
-    &_active + &_active:before {
+    
+    &_active + &_active:before,
+    &_between:hover + &:not(&_monday)&_active:before
+    {
         content: '';
         display: block;
         position: absolute;
@@ -59,7 +76,6 @@
 
     &_between {
         position: relative;
-        background-color: @spbSky1;
         border-radius: 0;
 
         &:before {
@@ -80,7 +96,7 @@
             position: absolute;
             z-index: -1;
             top: 0;
-            right: -25px;
+            right: -16px;
             width: 40px;
             height: 32px;
             background-color: @spbSky1;
@@ -91,15 +107,24 @@
         border-radius: 50%;
 
         &:after {
-            display: none !important;
+            width: 32px;
+            right: 10px;
+            border-radius: 50%;
         }
+    }
+
+    &_last:after {
+        right: 0;
     }
 
     &_monday, &_first {
         border-radius: 50%;
 
         &:before {
-            display: none !important;
+            padding: 0;
+            border-radius: 50%;
+            width: 32px;
+            left: 0px;
         }
     }
 

@@ -142,7 +142,7 @@ const Calendar: React.FC<ICalendarProps> = ({
         }
     };
 
-    const checkDateStatus = (date: Date): boolean => {
+    const isDateHighlighted = (date: Date): boolean => {
         if (!stateStartDate || !!stateEndDate) {
             return false;
         }
@@ -180,7 +180,7 @@ const Calendar: React.FC<ICalendarProps> = ({
                     onDateSelect={handleDaySelect}
                     onDateHover={handleDateHover}
                     onMouseLeave={handleDateMouseLeave}
-                    isBetween={checkDateStatus(date)}
+                    isBetween={isDateHighlighted(date)}
                 />
             );
         }
