@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.108](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.107...@megafon/ui-core@2.0.0-beta.108) (2021-03-23)
+
+
+### Bug Fixes
+
+* **tabs:** added coordinate recalculation when changing the window size ([8ea1644](https://github.com/MegafonWebLab/megafon-ui/commit/8ea164429ccb7677fd0e3b4094edb5266e56333c))
+
+
+
+
+
 # [2.0.0-beta.107](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.106...@megafon/ui-core@2.0.0-beta.107) (2021-03-22)
 
 
