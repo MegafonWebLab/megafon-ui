@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Steps should render component 1`] = `
+<div
+  className="mfui-beta-steps"
+>
+  <Header
+    as="h2"
+    className="mfui-beta-steps__title"
+    color="black"
+    hAlign="center"
+  >
+    title
+  </Header>
+  <ul
+    className="mfui-beta-steps__list"
+  >
+    <li
+      className="mfui-beta-steps__item"
+      key=".0"
+    >
+      <StepsItem
+        index={1}
+        text="text"
+      />
+    </li>
+  </ul>
+</div>
+`;

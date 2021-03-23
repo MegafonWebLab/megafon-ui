@@ -49,6 +49,8 @@ import {
     image as storeBannerImage
 } from '../../StoreBanner/doc/StoreBanner.docz.tsx';
 import ButtonBanner from '../../ButtonBanner/ButtonBanner';
+import Steps from '../../Steps/Steps';
+import StepsItem from '../../Steps/StepsItem';
 
 ## Отступ между компонентами 32px
 
@@ -344,9 +346,18 @@ import ButtonBanner from '../../ButtonBanner/ButtonBanner';
     </Container>
     <Container>
         <ButtonBanner
-            title="Сложность с выбором тарифа? "
+            title="Сложность с выбором тарифа?"
             text="Наши консультанты помогут подобрать нужный тариф и ответят на все интересующие вас вопросы."
             buttonText="Заказать консультацию"
         />
+    </Container>
+    <Container>
+        <Steps title='Как подписаться'>
+            <StepsItem index={1} text="Авторизуйтесь на сайте сервиса <a href=#>special.megafon.ru</a>, перейдите в магазин и добавьте покупки в корзину" />
+            <StepsItem index={2} text="Выберите любой тариф из линейки <b>«Включайся!»</b>, которым хотите пользоваться со скидкой 50% на абонентскую плату." />
+            <StepsItem index={3} text="Оформите заказ и оплатите его удобным способом: онлайн или при получении" />
+            <StepsItem index={4} text="Позвоните первому свободному врачу или запишитесь на онлайн-консультацию к конкретному специалисту" />
+            <StepsItem index={5} text="Позвоните первому свободному врачу или запишитесь на онлайн-консультацию к конкретному специалисту" />
+        </Steps>
     </Container>
 </Playground>
