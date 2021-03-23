@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.141](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.140...@megafon/ui-shared@2.0.0-beta.141) (2021-03-23)
+
+
+### Bug Fixes
+
+* **package.json:** add neccesary module for shared package, remove unused module react-slick ([aa18476](https://github.com/MegafonWebLab/megafon-ui/commit/aa18476b192cfc207d15a3ea5614af19b0ff8963))
+
+
+
+
+
 # [2.0.0-beta.140](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.139...@megafon/ui-shared@2.0.0-beta.140) (2021-03-23)
 
 
