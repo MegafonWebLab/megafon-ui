@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.110](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.109...@megafon/ui-core@2.0.0-beta.110) (2021-03-24)
+
+
+### Features
+
+* **calendar:** changed dates chose behaviour and added hover ([04817ba](https://github.com/MegafonWebLab/megafon-ui/commit/04817bae82c0544ccc663be6c96e80a3b40b90ab))
+
+
+
+
+
 # [2.0.0-beta.109](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.108...@megafon/ui-core@2.0.0-beta.109) (2021-03-24)
 
 **Note:** Version bump only for package @megafon/ui-core
