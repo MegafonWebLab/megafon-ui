@@ -9,7 +9,7 @@ import {
     useDatepicker,
     useMonth,
 } from '@datepicker-react/hooks';
-import { format, isEqual, isAfter, isBefore, isSameMonth } from 'date-fns';
+import { format, isEqual, isAfter, isBefore, isSameMonth, differenceInDays } from 'date-fns';
 import ruLocale from 'date-fns/locale/ru';
 import Month, { IMonthPickerProps } from 'components/Calendar/components/Month/Month';
 import Day, { DayType, IDayPickerProps } from 'components/Calendar/components/Day/Day';
@@ -78,6 +78,7 @@ const Calendar: React.FC<ICalendarProps> = ({
     }, [startDate, endDate, isSingleDate, minBookingDate, maxBookingDate]);
 
     const [calendarState, setCalendarState] = useState<ICalendarState>(calendarStateFromProps);
+    const [hoveredDate, setHoveredDate] = useState<Date | undefined>(undefined);
 
     const { startDate: stateStartDate, endDate: stateEndDate, focusedInput: stateFocusedInput } = calendarState;
 
@@ -109,8 +110,8 @@ const Calendar: React.FC<ICalendarProps> = ({
         const isStartChose = stateFocusedInput === START_DATE;
         const isEndChose = stateFocusedInput === END_DATE;
         const isEndDateChose = stateStartDate && isEndChose;
-        const isStartDatePeriodNarrow = stateStartDate && stateEndDate && isEndChose
-            && isAfter(date, stateStartDate) && !isAfter(date, stateEndDate);
+        const isPeriodNarrow = stateStartDate && stateEndDate
+            && isAfter(date, stateStartDate) && isBefore(date, stateEndDate);
         const isStartDateClick = stateStartDate && isEqual(stateStartDate || 0, date);
         const isEndDateClick = stateEndDate && isEqual(stateEndDate || 0, date);
         const isClickBeforeChosenEndDate = stateEndDate && isEndChose && !isAfter(date, stateEndDate || 0);
@@ -122,8 +123,16 @@ const Calendar: React.FC<ICalendarProps> = ({
         switch (true) {
             case isSingleDate:
                 return { ...calendarState, startDate: date };
-            case isStartDatePeriodNarrow:
-                return { ...calendarState, endDate: date, focusedInput: START_DATE };
+            case isPeriodNarrow:
+                const isCloserToStart = stateStartDate && stateEndDate
+                    && differenceInDays(stateStartDate, date) >= differenceInDays(date, stateEndDate);
+
+                return {
+                    ...calendarState,
+                    startDate: isCloserToStart ? date : stateStartDate,
+                    endDate: isCloserToStart ? stateEndDate : date,
+                    focusedInput: START_DATE,
+                };
             case isStartDateChose:
                 return { startDate: date, endDate: null, focusedInput: END_DATE };
             case isEndDateChose:
@@ -131,6 +140,14 @@ const Calendar: React.FC<ICalendarProps> = ({
             default:
                 return { ...calendarState, startDate: date, focusedInput: END_DATE };
         }
+    };
+
+    const isDateHighlighted = (date: Date): boolean => {
+        if (!stateStartDate || !!stateEndDate || isSingleDate) {
+            return false;
+        }
+
+        return !!stateStartDate && !!hoveredDate && isAfter(hoveredDate, date) && isBefore(stateStartDate, date);
     };
 
     const handleDaySelect = (date: Date): void => {
@@ -141,6 +158,10 @@ const Calendar: React.FC<ICalendarProps> = ({
 
         onChange && onChange(nextStartDate, nextEndDate);
     };
+
+    const handleDateHover = (date: Date): void => setHoveredDate(date);
+
+    const handleDateMouseLeave = (): void => setHoveredDate(undefined);
 
     const renderDays = (days: Array<number | DayType>): ReactNode => days.map((day, index) => {
         if (typeof day === 'object') {
@@ -157,6 +178,9 @@ const Calendar: React.FC<ICalendarProps> = ({
                     dayLabel={dayLabel}
                     {...pickerProps}
                     onDateSelect={handleDaySelect}
+                    onDateHover={handleDateHover}
+                    onMouseLeave={handleDateMouseLeave}
+                    isBetween={isDateHighlighted(date)}
                 />
             );
         }
