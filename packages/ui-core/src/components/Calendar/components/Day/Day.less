@@ -31,18 +31,19 @@
     }
 
     &_active,
-    &:not(:disabled):focus
+    &:not(:disabled):not(&_active):focus
     {
         color: @clearWhite;
     }
 
-    &:not(:disabled):hover:after,
-    &:not(:disabled):focus:after,
+    &:not(:disabled):not(&_active):hover:after,
+    &:not(:disabled):not(&_active):focus:after,
     &_active:after
     {
         content: '';
         position: absolute;
-        background-color: @green;
+        background-color: @spbSky0;
+        color: @freshAsphalt;
         border-radius: 50% !important;
         width: 32px;
         height: 32px;
@@ -51,9 +52,16 @@
         z-index: 1;
     }
 
+
     &:not(:disabled):not(&_active):hover:after {
         background-color: @spbSky0;
         color: @freshAsphalt;
+    }
+
+    &:not(:disabled):not(&_active):focus:after,
+    &_active:after
+    {
+        background-color: @green;
     }
     
     &_active + &_active:before,
