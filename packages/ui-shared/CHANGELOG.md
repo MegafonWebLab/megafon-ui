@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.146](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.145...@megafon/ui-shared@2.0.0-beta.146) (2021-03-24)
+
+
+### Features
+
+* **package.json:** change swiper version to sync with ui-core ([99402bc](https://github.com/MegafonWebLab/megafon-ui/commit/99402bc3c63c12b0d8dfe21726f3e9c2c21196e7))
+
+
+
+
+
 # [2.0.0-beta.145](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.144...@megafon/ui-shared@2.0.0-beta.145) (2021-03-24)
 
 **Note:** Version bump only for package @megafon/ui-shared
