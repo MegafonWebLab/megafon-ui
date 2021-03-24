@@ -24,12 +24,8 @@
         padding-right: 0px;
     }
 
-    &:hover:not(&_active):not(&_between):not(&:disabled) {
-        border-radius: 50%;
-        background-color: @spbSky0;
-    }
-
-    &:disabled {
+    &_disabled {
+        pointer-events: none;
         cursor: default;
         opacity: 0.3;
     }

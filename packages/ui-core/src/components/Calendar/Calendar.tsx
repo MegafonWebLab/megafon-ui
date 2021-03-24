@@ -143,7 +143,7 @@ const Calendar: React.FC<ICalendarProps> = ({
     };
 
     const isDateHighlighted = (date: Date): boolean => {
-        if (!stateStartDate || !!stateEndDate) {
+        if (!stateStartDate || !!stateEndDate || isSingleDate) {
             return false;
         }
 
