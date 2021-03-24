@@ -25,7 +25,18 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
         color="inherit"
         hasMargin={false}
       >
-        description
+        description 
+        <TextLink
+          className=""
+          color="blue"
+          href="#"
+          key="1"
+          target="_blank"
+          underlineStyle="solid"
+          underlineVisibility="hover"
+        >
+          link
+        </TextLink>
       </Paragraph>
     </GridColumn>
   </Grid>
@@ -74,7 +85,18 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without title 1`] =
         color="inherit"
         hasMargin={false}
       >
-        description
+        description 
+        <TextLink
+          className=""
+          color="blue"
+          href="#"
+          key="1"
+          target="_blank"
+          underlineStyle="solid"
+          underlineVisibility="hover"
+        >
+          link
+        </TextLink>
       </Paragraph>
     </GridColumn>
   </Grid>

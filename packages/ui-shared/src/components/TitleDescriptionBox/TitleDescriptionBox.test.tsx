@@ -4,7 +4,7 @@ import TitleDescriptionBox, { ITitleDescriptionBoxProps } from './TitleDescripti
 
 const props: ITitleDescriptionBoxProps = {
     title: 'title',
-    description: 'description',
+    description: 'description <a href="#" target="_blank">link</a>',
     textColor: 'white',
     hAlign: 'center',
     className: 'custom class',

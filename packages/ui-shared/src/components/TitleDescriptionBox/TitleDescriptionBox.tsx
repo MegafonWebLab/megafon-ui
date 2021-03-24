@@ -6,6 +6,8 @@ import {
     Paragraph,
     Grid,
     GridColumn,
+    TextLink,
+    convert,
     dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
 import './TitleDescriptionBox.less';
@@ -24,6 +26,13 @@ export interface ITitleDescriptionBoxProps {
     /** Горизонтальное выравнивание */
     hAlign?: 'center';
 }
+
+const convertConfig = {
+    a: {
+        component: TextLink,
+        props: ['href', 'target'],
+    },
+};
 
 const cn = cnCreate('mfui-beta-title-description-box');
 const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
@@ -58,7 +67,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
                         hasMargin={false}
                         color="inherit"
                     >
-                        {description}
+                        {convert(description, convertConfig)}
                     </Paragraph>
                 )}
             </GridColumn>
