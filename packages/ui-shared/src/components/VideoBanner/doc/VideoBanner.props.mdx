@@ -13,7 +13,9 @@ interface IContent {
     /** Текст кнопки */
     buttonTitle: string;
     /** Ссылка на кнопке */
-    href?: string;
+    buttonHref?: string;
+    /** Цвет кнопки */
+    buttonColor?: 'green' | 'purple';
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */

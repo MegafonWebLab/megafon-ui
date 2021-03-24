@@ -39,6 +39,13 @@ export const TextColor = {
 
 type TextColorType = typeof TextColor[keyof typeof TextColor];
 
+export const ButtonColor = {
+    GREEN: 'green',
+    PURPLE: 'purple',
+} as const;
+
+export type ButtonColorType = typeof ButtonColor[keyof typeof ButtonColor];
+
 export interface IContent {
     /** Заголовок */
     title: string;
@@ -48,6 +55,8 @@ export interface IContent {
     buttonTitle: string;
     /** Ссылка на кнопке */
     buttonHref?: string;
+    /** Цвет кнопки */
+    buttonColor?: ButtonColorType;
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
@@ -118,6 +127,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         description,
         buttonTitle,
         buttonHref,
+        buttonColor = ButtonColor.GREEN,
         onButtonClick,
         textColor = TextColor.FRESH_ASPHALT,
         textColorMobile,
@@ -142,7 +152,12 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 )}
             </div>
             <div className={cn('btns-wrapper')}>
-                <Button className={cn(ClassName.BUTTON, [classes.button])} href={buttonHref} onClick={onButtonClick}>
+                <Button
+                    className={cn(ClassName.BUTTON, [classes.button])}
+                    theme={buttonColor}
+                    href={buttonHref}
+                    onClick={onButtonClick}
+                >
                     {buttonTitle}
                 </Button>
                 {linkTitle && (
@@ -263,7 +278,8 @@ VideoBanner.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         buttonTitle: PropTypes.string.isRequired,
-        href: PropTypes.string,
+        buttonHref: PropTypes.string,
+        buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
         onButtonClick: PropTypes.func,
         textColor: PropTypes.oneOf(Object.values(TextColor)),
         textColorMobile: PropTypes.oneOf(Object.values(TextColor)),
