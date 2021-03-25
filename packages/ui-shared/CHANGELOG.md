@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.147](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.146...@megafon/ui-shared@2.0.0-beta.147) (2021-03-25)
+
+
+### Features
+
+* **titledescriptionbox:** extend type of description prop ([a934054](https://github.com/MegafonWebLab/megafon-ui/commit/a9340548fc3edea5b6b72db7bc538f97b7f4ea56))
+
+
+
+
+
 # [2.0.0-beta.146](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.145...@megafon/ui-shared@2.0.0-beta.146) (2021-03-24)
 
 
