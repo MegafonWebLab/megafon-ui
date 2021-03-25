@@ -18,7 +18,7 @@ export interface ITitleDescriptionBoxProps {
     /** Заголовок */
     title?: string;
     /** Описание */
-    description?: string;
+    description?: string | React.ReactNode[];
     /** Цвет текста */
     textColor?: 'white';
     /** Горизонтальное выравнивание */
@@ -70,7 +70,7 @@ TitleDescriptionBox.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     className: PropTypes.string,
     title: PropTypes.string,
-    description: PropTypes.string,
+    description: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
     hAlign: PropTypes.oneOf(['center']),
     textColor: PropTypes.oneOf(['white']),
 };
