@@ -125,6 +125,47 @@ describe('<Select />', () => {
         });
     });
 
+    describe('onOpened and onClosed', () => {
+        it('calls onOpened and onClosed when click on select', () => {
+            const handleOpened = jest.fn();
+            const handleClosed = jest.fn();
+            const wrapper = shallow(<Select {...props} onOpened={handleOpened} onClosed={handleClosed} />);
+
+            wrapper.find(`.${cn('title')}`).simulate('click');
+            expect(handleOpened).toBeCalled();
+
+            wrapper.find(`.${cn('title')}`).simulate('click');
+            expect(handleClosed).toBeCalled();
+        });
+
+        it('calls onClosed when click on select item', () => {
+            const handleSelectItem = jest.fn();
+            const handleClosed = jest.fn();
+            const wrapper = shallow(<Select {...props} onSelect={handleSelectItem} onClosed={handleClosed} />);
+
+            wrapper.find(`.${cn('title')}`).simulate('click');
+            wrapper.find(`.${cn('list-item')}`).last().simulate('click');
+            expect(handleClosed).toBeCalled();
+        });
+
+        it('calls onOpened when focus in input', () => {
+            const handleOpened = jest.fn();
+            const wrapper = mount(<Select {...props} type={SelectTypes.COMBOBOX} onOpened={handleOpened} />);
+
+            wrapper.find(`.${cn('combobox')}`).simulate('focus');
+            expect(handleOpened).toBeCalled();
+        });
+
+        it('calls onOpened when keyDown Enter with focus', () => {
+            const handleOpened = jest.fn();
+            const wrapper = mount(<Select {...props} onOpened={handleOpened} />);
+
+            wrapper.find(`.${cn('title')}`).simulate('focus');
+            wrapper.find(`.${cn('control')}`).simulate('keyDown', { key: 'Enter', preventDefault: () => {}});
+            expect(handleOpened).toBeCalled();
+        });
+    });
+
     describe('key typing handlers', () => {
         it('calls onChange while typing in the field with debounce', async () => {
             const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} />);
