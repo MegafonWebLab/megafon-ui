@@ -1,18 +1,24 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Container, { BackgroundColors } from './Container';
 import TitleDescriptionBox from '../TitleDescriptionBox/TitleDescriptionBox';
 
+const optionalProps = {
+    id: 'id',
+    className: 'className',
+    backgroundColor: BackgroundColors.GREEN,
+};
+
 describe('Container', () => {
-    it('it renders component', () => {
+    it('should renders component with default props', () => {
         const wrapper = shallow(<Container><TitleDescriptionBox title="title"/></Container>);
 
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('it renders component with className', () => {
+    it('should renders component with optional props', () => {
         const wrapper = shallow(
-            <Container className="className">
+            <Container {...optionalProps}>
                 <TitleDescriptionBox title="title" />
             </Container>
         );
@@ -20,13 +26,15 @@ describe('Container', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('it renders component with green background color', () => {
-        const wrapper = shallow(
-            <Container backgroundColor={BackgroundColors.GREEN}>
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(
+            <Container rootRef={ref}>
                 <TitleDescriptionBox title="title"/>
             </Container>
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(ref.current).not.toBeNull();
     });
 });
