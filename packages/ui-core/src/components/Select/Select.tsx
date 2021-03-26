@@ -66,6 +66,10 @@ export interface ISelectProps extends IDataAttributes {
     onSelect?: (
         e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
     ) => void;
+    /** Обработчик при отркытом селекте */
+    onOpened?: () => void;
+    /** Обработчик при закрытом селекте */
+    onClosed?: () => void;
 }
 
 interface ISelectState {
@@ -110,6 +114,8 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         ),
         onSelect: PropTypes.func,
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+        onOpened: PropTypes.func,
+        onClosed: PropTypes.func,
     };
 
     static defaultProps: Partial<ISelectProps> = {
@@ -201,6 +207,18 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         });
     }
 
+    handleOpened = () => {
+        const { onOpened } = this.props;
+
+        onOpened && onOpened();
+    }
+
+    handleClosed = () => {
+        const { onClosed } = this.props;
+
+        onClosed && onClosed();
+    }
+
     handleClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
@@ -208,11 +226,21 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return;
         }
 
-        this.setState({ isOpened: false });
+        this.setState({ isOpened: false }, () => {
+            if (!this.state.isOpened) {
+                this.handleClosed();
+            }
+        });
     }
 
     handleOpenDropdown = (): void => {
-        this.setState((state) => ({ isOpened: !state.isOpened }));
+        this.setState((state) => ({ isOpened: !state.isOpened }), () => {
+            if (this.state.isOpened) {
+                this.handleOpened();
+            } else {
+                this.handleClosed();
+            }
+        });
     }
 
     handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
@@ -232,6 +260,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState({isOpened: false, inputValue: title, comparableInputValue: title, filteredItems: items });
 
         onSelect && onSelect(e, item);
+        this.handleClosed();
     }
 
     handleHoverItem = (index: number) => (e: React.MouseEvent<HTMLDivElement>): void => {
@@ -246,6 +275,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         e.stopPropagation();
 
         this.setState((state) => ({ isOpened: !state.isOpened }));
+        this.handleOpened();
 
         if (!isOpened && filteredItems) {
             e.target.select();
@@ -293,6 +323,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         }
         if (e.key === 'Enter' && !isOpened) {
             this.setState({ isOpened: true });
+            this.handleOpened();
 
             return false;
         }
