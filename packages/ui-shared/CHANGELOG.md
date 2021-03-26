@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.148](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.147...@megafon/ui-shared@2.0.0-beta.148) (2021-03-26)
+
+
+### Features
+
+* **container:** add id and rootRef props ([3fe5faf](https://github.com/MegafonWebLab/megafon-ui/commit/3fe5fafb79ac79da419d6091fbbe2e93f83de67b))
+
+
+
+
+
 # [2.0.0-beta.147](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.146...@megafon/ui-shared@2.0.0-beta.147) (2021-03-25)
 
 
