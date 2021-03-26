@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.112](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.111...@megafon/ui-core@2.0.0-beta.112) (2021-03-26)
+
+
+### Features
+
+* **select:** add props onOpened and onClosed ([8dd81d5](https://github.com/MegafonWebLab/megafon-ui/commit/8dd81d5ec16e04ecf6cabb5be846152b9fd8aaca))
+
+
+
+
+
 # [2.0.0-beta.111](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.110...@megafon/ui-core@2.0.0-beta.111) (2021-03-24)
 
 **Note:** Version bump only for package @megafon/ui-core
