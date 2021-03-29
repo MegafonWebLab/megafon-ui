@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.150](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.149...@megafon/ui-shared@2.0.0-beta.150) (2021-03-29)
+
+
+### Features
+
+* **videobanner:** add buttonColor prop ([c57813a](https://github.com/MegafonWebLab/megafon-ui/commit/c57813ad2c9747105e19579cb5038917279bf843))
+
+
+
+
+
 # [2.0.0-beta.149](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.148...@megafon/ui-shared@2.0.0-beta.149) (2021-03-26)
 
 **Note:** Version bump only for package @megafon/ui-shared
