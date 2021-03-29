@@ -102,13 +102,12 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                     </GridColumn>
                     <GridColumn all="4" desktop="6" tablet="6" mobile="12">
                         <div className={cn('device-wrapper')}>
-                            <div className={cn('device')}>
-                                <img
-                                    src={imageSrc}
-                                    className={cn('screen')}
-                                    alt="Изображение приложения на экране телефона"
-                                />
-                            </div>
+                            <div className={cn('device-mask')} />
+                            <img
+                                src={imageSrc}
+                                className={cn('screen')}
+                                alt="Изображение приложения на экране телефона"
+                            />
                         </div>
                     </GridColumn>
                 </Grid>

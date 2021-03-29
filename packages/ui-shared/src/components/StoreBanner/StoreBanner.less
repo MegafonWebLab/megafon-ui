@@ -38,7 +38,8 @@
     }
 
     &_mask_new-iphone {
-        @{b}__device {
+        @{b}__device-mask {
+            z-index: 2;
             background-image: url('./img/new-iphone.png');
         }
 
@@ -51,13 +52,13 @@
             }
 
             @media @mobileSM {
-                top: 9px;
+                top: 33px;
             }
         }
     }
 
     &_mask_android {
-        @{b}__device {
+        @{b}__device-mask {
             background-image: url('./img/android.png');
         }
 
@@ -70,19 +71,19 @@
             }
 
             @media @mobileSM {
-                top: 40px;
+                top: 64px;
             }
         }
     }
 
     &_mask_white-iphone {
-        @{b}__device {
+        @{b}__device-mask {
             background-image: url('./img/white-iphone.png');
         }
     }
 
     &_mask_black-iphone {
-        @{b}__device {
+        @{b}__device-mask {
             background-image: url('./img/black-iphone.png');
         }
     }
@@ -98,7 +99,7 @@
             }
 
             @media @mobileSM {
-                top: 39px;
+                top: 63px;
             }
         }
     }
@@ -136,45 +137,38 @@
         }
     }
 
-    &__device {
+    &__device-mask {
         position: relative;
-        width: 235px;
         height: 1px;
         min-height: 100%;
-        margin-left: auto;
-        margin-right: auto;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    &__device-wrapper {
+        width: 235px;
+        position: relative;
+        bottom: calc(2 * (@gridVerticalPadding - @gridBorderWidth));
+        height: calc(100% + 2 * @gridVerticalPadding + @containerVerticalPadding);
+        margin-left: auto;
+        margin-right: auto;
         overflow: hidden;
 
         @media @desktopS {
             width: 260px;
         }
 
-        @media @mobileB {
-            width: 196px;
-        }
-
-        @media @mobileSM {
-            width: 163px;
-        }
-    }
-
-    &__device-wrapper {
-        position: relative;
-        bottom: calc(2 * (@gridVerticalPadding - @gridBorderWidth));
-        height: calc(100% + 2 * @gridVerticalPadding + @containerVerticalPadding);
-
         @media @mobile {
-            position: static;
             bottom: 0;
         }
 
         @media @mobileB {
+            width: 196px;
             height: calc(100% + @gridVerticalPadding);
         }
 
         @media @mobileSM {
+            width: 163px;
             height: 222px;
             padding-top: 24px;
         }
