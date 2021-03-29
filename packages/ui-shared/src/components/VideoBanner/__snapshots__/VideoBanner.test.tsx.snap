@@ -52,11 +52,92 @@ exports[`<VideoBanner /> render component with classes 1`] = `
           <Button
             className="mfui-beta-video-banner__button buttonClass"
             href="#"
+            theme="green"
           >
             Текст в кнопке
           </Button>
           <TextLink
             className="mfui-beta-video-banner__link linkClass"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              className=""
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+            theme="purple"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
             color="blue"
             href="#"
             underlineStyle="solid"
@@ -155,6 +236,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
           <Button
             className="mfui-beta-video-banner__button"
             href="#"
+            theme="green"
           >
             Текст в кнопке
           </Button>
@@ -234,6 +316,7 @@ exports[`<VideoBanner /> render component with pictures and non default content 
           <Button
             className="mfui-beta-video-banner__button"
             href="#"
+            theme="green"
           >
             Текст в кнопке
           </Button>
@@ -313,6 +396,7 @@ exports[`<VideoBanner /> render component with the different content text color 
           <Button
             className="mfui-beta-video-banner__button"
             href="#"
+            theme="green"
           >
             Текст в кнопке
           </Button>
@@ -675,6 +759,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                 <Button
                   className="mfui-beta-video-banner__button"
                   href="#"
+                  theme="green"
                 >
                   <a
                     className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text mfui-beta-video-banner__button"

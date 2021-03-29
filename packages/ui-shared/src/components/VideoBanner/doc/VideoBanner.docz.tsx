@@ -1,4 +1,4 @@
-import { IContent, TextColor } from '../VideoBanner';
+import { IContent, TextColor, ButtonColor } from '../VideoBanner';
 import imageDesktop from './bg_grey_desktop.png';
 import imageMobile from './bg_grey_mobile.png';
 import video from './video.mp4';
@@ -28,6 +28,11 @@ const content: IContent = {
     textColor: TextColor.CLEAR_WHITE,
 };
 
+const contentWithPurpleButton: IContent = {
+    ...content,
+    buttonColor: ButtonColor.PURPLE,
+};
+
 const images = {
     imageMobile: imageWhiteMobile,
     imageTablet: imageWhiteMobile,
@@ -39,6 +44,7 @@ export {
     content,
     contentWithDefaultTextColor,
     contentWithDifferentTextColor,
+    contentWithPurpleButton,
     video,
     youtubeVideoId,
     imageMobile,

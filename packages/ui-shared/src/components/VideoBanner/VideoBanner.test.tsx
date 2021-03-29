@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { cnCreate } from '@megafon/ui-core';
-import VideoBanner, { VideoType, TextColor, ClassName } from './VideoBanner';
+import VideoBanner, { VideoType, TextColor, ButtonColor, ClassName } from './VideoBanner';
 
 const imageMobile = 'imageMobile';
 const imageTablet = 'imageTablet';
@@ -88,6 +88,23 @@ describe('<VideoBanner />', () => {
         const localContent = {
             ...content,
             textColor: TextColor.CLEAR_WHITE,
+        };
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                imageDesktop={imageDesktop}
+                imageDesktopWide={imageDesktopWide}
+                content={localContent}
+            />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render component with non default buttonColor', () => {
+        const localContent = {
+            ...content,
+            buttonColor: ButtonColor.PURPLE,
         };
         const wrapper = shallow(
             <VideoBanner

@@ -5,6 +5,7 @@ import {
     content,
     contentWithDefaultTextColor,
     contentWithDifferentTextColor,
+    contentWithPurpleButton,
     video,
     youtubeVideoId,
     imageMobile,
@@ -16,9 +17,10 @@ import {
 
 const content: IContent = {
     title: 'Текст ≈40 симовлов. Короткие слова',
-    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратко и не будет проблем с текстовым контентом.',
     href: '#',
     buttonTitle: 'Текст в кнопке',
+    buttonColor: 'green',
     onButtonClick: () => {},
     textColor: 'clearWhite',
     linkTitle: 'Личный кабинет услуги',
@@ -86,4 +88,14 @@ const content: IContent = {
     <ContentArea>
         <VideoBanner imageMobile={imageMobile} imageTablet={images.imageTablet} imageDesktop={images.imageDesktop} imageDesktopWide={images.imageDesktopWide} content={contentWithDifferentTextColor} />
         </ContentArea>
+</Playground>
+
+## Цвета кнопок
+
+<Playground>
+    <ContentArea>
+        <VideoBanner imageMobile={imageMobile} imageTablet={imageMobile} imageDesktop={imageDesktop} imageDesktopWide={imageDesktop} content={content} />
+        <br/>
+        <VideoBanner imageMobile={imageMobile} imageTablet={imageMobile} imageDesktop={imageDesktop} imageDesktopWide={imageDesktop} content={contentWithPurpleButton} />
+    </ContentArea>
 </Playground>
