@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
-import {Header, cnCreate, convert, TextLink} from '@megafon/ui-core';
+import { Header, cnCreate, convert, TextLink } from '@megafon/ui-core';
 import './Property.less';
 import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
@@ -85,9 +85,11 @@ const Property: React.FC<IProperty> = ({
                             {
                                 !mergedValue && (
                                     <div className={cn('value-wrapper')}>
-                                        {value &&  (
-                                            <Header as="h3">{value}</Header>
-                                        )}
+                                        {(value || []).map((text, index) => (
+                                            <Header as="h3" key={`${index}_${text}`}>
+                                                {text}
+                                            </Header>
+                                        ))}
                                     </div>
                                 )
                             }
@@ -118,7 +120,7 @@ Property.propTypes = {
                     isCollapsible: PropTypes.bool,
                 })
             ),
-            value: PropTypes.string,
+            value: PropTypes.arrayOf(PropTypes.string),
         }).isRequired
     ).isRequired,
     className: PropTypes.string,

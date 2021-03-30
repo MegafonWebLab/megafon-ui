@@ -8,7 +8,7 @@ describe('<Property />', () => {
         const wrapper = shallow(
             <Property
                 items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
+                    { title: ['Звонки на все номера России'], value: ['500 ₽'] },
                 ]}
             />
         );
@@ -24,8 +24,19 @@ describe('<Property />', () => {
                             'Детализация в салонах МегаФона',
                             'Оплачивается каждый день заказанной детализации.',
                         ],
-                        value: '2ГБ',
+                        value: ['2ГБ'],
                     },
+                ]}
+            />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render value in several row', () => {
+        const wrapper = shallow(
+            <Property
+                items={[
+                    { title: ['Звонки на все номера России'], value: ['500 ₽', '1000 Гб'] },
                 ]}
             />
         );
@@ -66,7 +77,7 @@ describe('<Property />', () => {
                                 ],
                             },
                         ],
-                        value: '500 ₽',
+                        value: ['500 ₽'],
                     },
                 ]}
             />
@@ -89,7 +100,7 @@ describe('<Property />', () => {
                                 isCollapsible: true,
                             },
                         ],
-                        value: '500 ₽',
+                        value: ['500 ₽'],
                     },
                 ]}
             />
@@ -102,7 +113,7 @@ describe('<Property />', () => {
             <Property
                 badge={'Акция'}
                 items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
+                    { title: ['Звонки на все номера России'], value: ['500 ₽'] },
                 ]}
             />
         );
@@ -113,7 +124,7 @@ describe('<Property />', () => {
         const wrapper = shallow(
             <Property
                 icon={<WiFi style={{ display: 'block', fill: '#00B956' }} />}
-                items={[{ title: ['Интернет на все сервисы'], value: '500 ₽' }]}
+                items={[{ title: ['Интернет на все сервисы'], value: ['500 ₽'] }]}
             />
         );
         expect(wrapper).toMatchSnapshot();
@@ -125,7 +136,7 @@ describe('<Property />', () => {
                 items={[
                     {
                         title: ['Доп звонки'],
-                        value: '500Р',
+                        value: ['500Р'],
                         description: [
                             {
                                 value: [
@@ -154,7 +165,7 @@ describe('<Property />', () => {
                         title: [
                             'Тарифы <a href="https://moscow.megafon.ru">Включайся!</a>, с которыми работает опция',
                         ],
-                        value: '500 ₽',
+                        value: ['500 ₽'],
                         description: [
                             {
                                 value: [
@@ -176,19 +187,19 @@ describe('<Property />', () => {
                 items={[
                     { title: ['Абонентская плата:'] },
                     {
-                        value: '500 ₽',
+                        value: ['500 ₽'],
                         description: [
                             { value: ['Звонки на все номера России'] },
                         ],
                     },
                     {
-                        value: '500 ₽',
+                        value: ['500 ₽'],
                         description: [
                             { value: ['Звонки на все номера России'] },
                         ],
                     },
                     {
-                        value: '500 ₽',
+                        value: ['500 ₽'],
                         description: [
                             { value: ['Звонки на все номера России'] },
                         ],
@@ -205,7 +216,7 @@ describe('<Property />', () => {
                 items={[
                     {
                         title: ['Звонки на все номера России'],
-                        value: '500 ₽',
+                        value: ['500 ₽'],
                     },
                 ]}
                 borderBottom
@@ -219,7 +230,7 @@ describe('<Property />', () => {
         mount(
             <Property
                 items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
+                    { title: ['Звонки на все номера России'], value: ['500 ₽'] },
                 ]}
                 rootRef={ref}
             />

@@ -2,12 +2,15 @@ import { ContentArea } from '@megafon/ui-core';
 import { Playground } from 'docz';
 import Property from '../Property';
 import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
+import DemoWrapper from './DemoWrapper.tsx';
 
 ## Только заголовок
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Звонки на все номера России'], value: ['500 ₽'] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -15,7 +18,19 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Детализация в салонах МегаФона', 'Оплачивается каждый день заказанной детализации.'], value: '2ГБ' }]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Детализация в салонах МегаФона', 'Оплачивается каждый день заказанной детализации.'], value: ['2ГБ'] }]}/>
+        </DemoWrapper>
+    </ContentArea>
+</Playground>
+
+## Значение в несколько строк
+
+<Playground>
+    <ContentArea>
+        <DemoWrapper>
+            <Property items={[{title: ['Звонки на все номера России'], value: ['500 ₽', '1000 Гб'] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -23,7 +38,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка']}] }]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка']}] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -31,7 +48,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка', 'Google Play Music, Apple Music, онлайн радио.']}], value: '500 ₽' }]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка', 'Google Play Music, Apple Music, онлайн радио.']}], value: ['500 ₽'] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -39,7 +58,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Музыкальные сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.'], isCollapsible: true}], value: '500 ₽' }]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Музыкальные сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.'], isCollapsible: true}], value: ['500 ₽'] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -47,7 +68,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property badge={'Акция'} items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
+        <DemoWrapper>
+            <Property badge={'Акция'} items={[{title: ['Звонки на все номера России'], value: ['500 ₽'] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -55,7 +78,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property icon={<WiFi style={{ display: 'block', fill: '#00B956' }} />} items={[{title: ['Интернет не на все сервисы'], value: '500 ₽' }]}/>
+        <DemoWrapper>
+            <Property icon={<WiFi style={{ display: 'block', fill: '#00B956' }} />} items={[{title: ['Интернет не на все сервисы'], value: ['500 ₽'] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -63,7 +88,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Доп звонки'], value: '500Р', description: [{value: ['После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.']}, {value: ['Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.'], isCollapsible: true}]}]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Доп звонки'], value: ['500 ₽'], description: [{value: ['После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.']}, {value: ['Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.'], isCollapsible: true}]}]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -71,7 +98,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Тарифы <a href="https://moscow.megafon.ru">Включайся!</a>, с которыми работает опция'], value: '500 ₽', description: [{value: ['<a href="https://moscow.megafon.ru">Выбирай, Смотри, Слушай, Говори, Общайся</a>']}]}]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Тарифы <a href="https://moscow.megafon.ru">Включайся!</a>, с которыми работает опция'], value: ['500 ₽'], description: [{value: ['<a href="https://moscow.megafon.ru">Выбирай, Смотри, Слушай, Говори, Общайся</a>']}]}]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -79,7 +108,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property mergedValue='500 ₽' items={[{title: ['Музыкальные сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка,  Google Play Music, Apple Music, онлайн радио.']}], value: 'value'}, {title: ['Интернет не на все сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.']}] }]}/>
+        <DemoWrapper>
+            <Property mergedValue='500 ₽'items={[{title: ['Музыкальные сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка,  Google Play Music, Apple Music, онлайн радио.']}]}, {title: ['Интернет не на все сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.']}] }]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -87,7 +118,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property multirow items={[{title: ['Абонентская плата:']}, {value: '500 ₽', description: [{value: ['Звонки на все номера России']}]}, {value: '500 ₽', description: [{value: ['Звонки на все номера России']}]}, {value: '500 ₽', description: [{value: ['Звонки на все номера России']}]}]}/>
+        <DemoWrapper>
+            <Property multirow items={[{title: ['Абонентская плата:']}, {value: ['500 ₽'], description: [{value: ['Звонки на все номера России']}]}, {value: ['500 ₽'], description: [{value: ['Звонки на все номера России']}]}, {value: ['500 ₽'], description: [{value: ['Звонки на все номера России']}]}]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -95,7 +128,9 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Звонки на все номера России'], value: '500 ₽'}]} borderBottom/>
+        <DemoWrapper>
+            <Property items={[{title: ['Звонки на все номера России'], value: ['500 ₽']}]} borderBottom/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 
@@ -103,10 +138,12 @@ import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Доп звонки'], description: [{value: ['После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.']},{value: ['Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.'], isCollapsible: true}]}]}/>
-        <Property icon={<WiFi style={{ display: 'block', fill: '#00B956' }} />} items={[{title: ['Звонки на все номера России'], value: 'Безлимитно' }]}/>
-        <Property mergedValue='500 ₽' badge={'Акция'} items={[{title: ['Музыкальные сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка,  Google Play Music, Apple Music, онлайн радио.']}], value: 'value'}, {title: ['Интернет не на все сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.']}] }]}/>
-        <Property multirow items={[{title: ['Абонентская плата:']}, {value: '500 ₽', description: [{value: ['Звонки на все номера России']}]}, {value: '3 ₽ в сутки', description: [{value: ['SMS на прочие номера России']}]}]}/>
+        <DemoWrapper>
+            <Property items={[{title: ['Доп звонки'], description: [{value: ['После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.']},{value: ['Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.'], isCollapsible: true}]}]}/>
+            <Property icon={<WiFi style={{ display: 'block', fill: '#00B956' }} />} items={[{title: ['Звонки на все номера России'], value: ['Безлимитно'] }]}/>
+            <Property mergedValue='500 ₽' badge={'Акция'} items={[{title: ['Музыкальные сервисы'], description: [{value: ['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка,  Google Play Music, Apple Music, онлайн радио.']}]}, {title: ['Интернет не на все сервисы'], description: [{value: ['Звонки на местные городские номера, когда вы находитесь дома,', 'оплачиваются отдельно.']}] }]}/>
+            <Property multirow items={[{title: ['Абонентская плата:']}, {value: ['500 ₽'], description: [{value: ['Звонки на все номера России']}]}, {value: ['3 ₽ в сутки'], description: [{value: ['SMS на прочие номера России']}]}]}/>
+        </DemoWrapper>
     </ContentArea>
 </Playground>
 

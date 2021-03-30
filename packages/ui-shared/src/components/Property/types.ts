@@ -6,5 +6,5 @@ export type Desc = {
 export type Item = {
     title?: string[];
     description?: Desc[];
-    value?: string;
+    value?: string[];
 };
