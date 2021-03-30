@@ -69,14 +69,13 @@ exports[`StoreBanner should render with QR-code 1`] = `
             className="mfui-beta-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device"
-            >
-              <img
-                alt="Изображение приложения на экране телефона"
-                className="mfui-beta-store-banner__screen"
-                src="image.png"
-              />
-            </div>
+              className="mfui-beta-store-banner__device-mask"
+            />
+            <img
+              alt="Изображение приложения на экране телефона"
+              className="mfui-beta-store-banner__screen"
+              src="image.png"
+            />
           </div>
         </GridColumn>
       </Grid>
@@ -149,14 +148,13 @@ exports[`StoreBanner should render with custom class name 1`] = `
             className="mfui-beta-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device"
-            >
-              <img
-                alt="Изображение приложения на экране телефона"
-                className="mfui-beta-store-banner__screen"
-                src="image.png"
-              />
-            </div>
+              className="mfui-beta-store-banner__device-mask"
+            />
+            <img
+              alt="Изображение приложения на экране телефона"
+              className="mfui-beta-store-banner__screen"
+              src="image.png"
+            />
           </div>
         </GridColumn>
       </Grid>
@@ -229,14 +227,13 @@ exports[`StoreBanner should render with green theme 1`] = `
             className="mfui-beta-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device"
-            >
-              <img
-                alt="Изображение приложения на экране телефона"
-                className="mfui-beta-store-banner__screen"
-                src="image.png"
-              />
-            </div>
+              className="mfui-beta-store-banner__device-mask"
+            />
+            <img
+              alt="Изображение приложения на экране телефона"
+              className="mfui-beta-store-banner__screen"
+              src="image.png"
+            />
           </div>
         </GridColumn>
       </Grid>
@@ -309,14 +306,13 @@ exports[`StoreBanner should render with iphone mask 1`] = `
             className="mfui-beta-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device"
-            >
-              <img
-                alt="Изображение приложения на экране телефона"
-                className="mfui-beta-store-banner__screen"
-                src="image.png"
-              />
-            </div>
+              className="mfui-beta-store-banner__device-mask"
+            />
+            <img
+              alt="Изображение приложения на экране телефона"
+              className="mfui-beta-store-banner__screen"
+              src="image.png"
+            />
           </div>
         </GridColumn>
       </Grid>
@@ -389,14 +385,13 @@ exports[`StoreBanner should render with required props 1`] = `
             className="mfui-beta-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device"
-            >
-              <img
-                alt="Изображение приложения на экране телефона"
-                className="mfui-beta-store-banner__screen"
-                src="image.png"
-              />
-            </div>
+              className="mfui-beta-store-banner__device-mask"
+            />
+            <img
+              alt="Изображение приложения на экране телефона"
+              className="mfui-beta-store-banner__screen"
+              src="image.png"
+            />
           </div>
         </GridColumn>
       </Grid>
