@@ -39,6 +39,7 @@
 
     &_mask_new-iphone {
         @{b}__device-mask {
+            position: relative;
             z-index: 2;
             background-image: url('./img/new-iphone.png');
         }
@@ -138,9 +139,7 @@
     }
 
     &__device-mask {
-        position: relative;
-        height: 1px;
-        min-height: 100%;
+        height: 100%;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -230,7 +229,5 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
-        height: auto;
     }
 }
