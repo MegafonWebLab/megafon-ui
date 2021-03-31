@@ -86,7 +86,7 @@ const Property: React.FC<IProperty> = ({
                                 !mergedValue && (
                                     <div className={cn('value-wrapper')}>
                                         {value &&  (
-                                            <Header as="h3">{value}</Header>
+                                            <span className={cn('value')}>{value}</span>
                                         )}
                                     </div>
                                 )

@@ -29,13 +29,11 @@ exports[`<Property /> should render only title 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -96,13 +94,11 @@ exports[`<Property /> should render several rows 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
       <div
@@ -128,13 +124,11 @@ exports[`<Property /> should render several rows 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
       <div
@@ -160,13 +154,11 @@ exports[`<Property /> should render several rows 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -263,13 +255,11 @@ exports[`<Property /> should render title and description in several rows 1`] = 
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -320,13 +310,11 @@ exports[`<Property /> should render title and hidden description 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -371,13 +359,11 @@ exports[`<Property /> should render title in several row 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             2ГБ
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -423,13 +409,11 @@ exports[`<Property /> should render with badge 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -466,13 +450,11 @@ exports[`<Property /> should render with border bottom 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -521,13 +503,11 @@ exports[`<Property /> should render with icon 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -587,13 +567,11 @@ exports[`<Property /> should render with links 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500 ₽
-          </Header>
+          </span>
         </div>
       </div>
     </div>
@@ -655,13 +633,11 @@ exports[`<Property /> should render with several descriptions 1`] = `
         <div
           className="mfui-beta-property__value-wrapper"
         >
-          <Header
-            as="h3"
-            color="black"
-            hAlign="inherit"
+          <span
+            className="mfui-beta-property__value"
           >
             500Р
-          </Header>
+          </span>
         </div>
       </div>
     </div>
