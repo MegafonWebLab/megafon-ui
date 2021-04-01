@@ -15,25 +15,7 @@ exports[`StepsItem should render component 1`] = `
     <Paragraph
       hasMargin={false}
     >
-      text 
-      <TextLink
-        className=""
-        color="blue"
-        href="#"
-        key="1"
-        target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
-      >
-        link
-      </TextLink>
-       
-      <component
-        className=""
-        key="3"
-      >
-        bold
-      </component>
+      text
     </Paragraph>
   </div>
 </div>
