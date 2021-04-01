@@ -1,17 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate, convert, Paragraph, TextLink } from '@megafon/ui-core';
+import { cnCreate, Paragraph } from '@megafon/ui-core';
 import './StepsItem.less';
-
-const convertConfig = {
-    a: {
-        component: TextLink,
-        props: ['href', 'target'],
-    },
-    b: {
-        component: ({ children }) => <b>{children}</b>,
-    },
-};
 
 interface IStepsItem {
     /** Номер элемента */
@@ -27,7 +17,7 @@ const StepsItem: React.FC<IStepsItem> = ({ index, text }) => (
             {index}
         </span>
         <div className={cn('text-wrapper')}>
-            <Paragraph hasMargin={false}>{convert(text, convertConfig)}</Paragraph>
+            <Paragraph hasMargin={false}>{text}</Paragraph>
         </div>
     </div>
 );
