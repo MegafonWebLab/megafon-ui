@@ -41,3 +41,24 @@ exports[`<PictureWithDescription /> should render with right side picture 1`] = 
   </div>
 </div>
 `;
+
+exports[`<PictureWithDescription /> should render with top align text 1`] = `
+<div
+  className="mfui-beta-picture-with-description"
+>
+  <div
+    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_left"
+  >
+    <img
+      alt=""
+      className="mfui-beta-picture-with-description__img"
+      src="/testUrl"
+    />
+  </div>
+  <div
+    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left mfui-beta-picture-with-description__articles_text-top-align"
+  >
+    <div />
+  </div>
+</div>
+`;
