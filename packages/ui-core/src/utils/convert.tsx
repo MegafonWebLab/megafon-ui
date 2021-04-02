@@ -42,7 +42,7 @@ const getTransform = (config: TransformConfig) => {
     };
 };
 
-const convertToReact = (html, config: TransformConfig) => {
+const convertToReact = (html: string, config: TransformConfig) => {
     let nodes = convert(html, {
         preserveAttributes: [],
         dangerouslySetChildren: [],
