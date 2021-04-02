@@ -54,8 +54,6 @@ export interface ITabsProps {
     children: Array<React.ReactElement<ITabProps>>;
 }
 
-const isClient = typeof window === 'object';
-
 const cn = cnCreate('mfui-beta-tabs');
 const Tabs: React.FC<ITabsProps> = ({
     className,
@@ -130,41 +128,6 @@ const Tabs: React.FC<ITabsProps> = ({
         setStickyOffset({ left, right: documentWidth - right });
 
     }, [stickyOffset, isSticky]);
-
-    let observer: IntersectionObserver | undefined;
-
-    if (isClient) {
-        observer =  React.useMemo(() => new IntersectionObserver((entries) => {
-           entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
-               if (!sticky || !rootRef.current || !tabListRef.current) {
-                   return;
-               }
-
-               const listHeight = tabListRef.current.clientHeight;
-
-               setTabListHeight(listHeight);
-
-               const stickyON = (leftOffset: number, rightOffset: number) => {
-                   const documentWidth = document.documentElement.clientWidth;
-
-                   setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
-                   setSticky(true);
-               };
-
-               const stickyOFF = () => {
-                   setStickyOffset({ left: 0, right: 0 });
-                   setSticky(false);
-               };
-
-               if (isIntersecting) {
-                   top < 0 ? stickyON(left, right) : stickyOFF();
-               } else {
-                   top < 0 && stickyOFF();
-               }
-         });
-       }, { threshold: [ 0 , 1 ] }), []);
-
-    }
 
     const handleTabInnerClick = React.useCallback((index: number) => () => {
         setUnderlineTransition('all');
@@ -252,10 +215,40 @@ const Tabs: React.FC<ITabsProps> = ({
     }, []);
 
     React.useEffect(() => {
-        rootRef.current && observer?.observe(rootRef.current);
+        const observer =  new IntersectionObserver((entries) => {
+            entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
+                if (!sticky || !rootRef.current || !tabListRef.current) {
+                    return;
+                }
+
+                const listHeight = tabListRef.current.clientHeight;
+
+                setTabListHeight(listHeight);
+
+                const stickyON = (leftOffset: number, rightOffset: number) => {
+                    const documentWidth = document.documentElement.clientWidth;
+
+                    setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
+                    setSticky(true);
+                };
+
+                const stickyOFF = () => {
+                    setStickyOffset({ left: 0, right: 0 });
+                    setSticky(false);
+                };
+
+                if (isIntersecting) {
+                    top < 0 ? stickyON(left, right) : stickyOFF();
+                } else {
+                    top < 0 && stickyOFF();
+                }
+          });
+        }, { threshold: [ 0 , 1 ] });
+
+        rootRef.current && observer.observe(rootRef.current);
 
         return () => {
-           rootRef.current &&  observer?.unobserve(rootRef.current);
+           rootRef.current && observer.unobserve(rootRef.current);
         };
     }, [calculateSticky]);
 
