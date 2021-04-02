@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.113](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.112...@megafon/ui-core@2.0.0-beta.113) (2021-04-02)
+
+
+### Bug Fixes
+
+* **convert:** fix argument type ([b59e964](https://github.com/MegafonWebLab/megafon-ui/commit/b59e964eee26b08d4d16be939e39238154c198c3))
+
+
+
+
+
 # [2.0.0-beta.112](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.111...@megafon/ui-core@2.0.0-beta.112) (2021-03-26)
 
 
