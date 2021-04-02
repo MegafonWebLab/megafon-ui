@@ -5,63 +5,67 @@ import cnCreate from 'utils/cnCreate';
 import { IGridColumn } from './GridColumn';
 
 export interface IGridProps {
-    /** Alignment of all columns by horizontal axis */
+    /** Выравнивание всех колонок по горизонтали */
     hAlign?: 'left' | 'right' | 'center' | 'between' | 'around';
-    /** Alignment of all columns by vertical axis */
+    /** Выравнивание всех колонок по вертикали */
     vAlign?: 'top' | 'bottom' | 'center' | 'baseline';
-    /** Margin area on the left side of column */
+    /** Отступ слева от колонки */
     guttersLeft?: 'large' | 'medium';
-    /** Margin area on the bottom side of column */
+    /** Отступ снизу от колонки */
     guttersBottom?: 'large' | 'medium';
-    /** Transfering of columns onto multiple lines */
+    /** Перенос столбцов в несколько строк */
     multiRow?: boolean;
+    /** Дополнительный класс корневого элемента */
+    className?: string;
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
 
 const cn = cnCreate('mfui-beta-grid');
-class Grid extends React.Component<IGridProps> {
-    static propTypes = {
-        hAlign: PropTypes.oneOf(['left', 'right', 'center', 'between', 'around']),
-        vAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'baseline']),
-        guttersLeft: PropTypes.oneOf(['large', 'medium']),
-        guttersBottom: PropTypes.oneOf(['large', 'medium']),
-        multiRow: PropTypes.bool,
-        children: PropTypes.node,
-    };
+const Grid: React.FC<IGridProps> = ({
+    children,
+    guttersLeft,
+    guttersBottom,
+    multiRow = true,
+    hAlign,
+    vAlign,
+    className,
+}) => (
+    <div className={cn([className])}>
+        <div
+            className={cn('container', {
+                'multi-row': multiRow,
+                'h-align': hAlign,
+                'v-align': vAlign,
+                'gutters-left': guttersLeft,
+                'gutters-bottom': guttersBottom,
+            })}>
+            {React.Children.map(children, (child: React.ReactElement<IGridColumn>) =>
+                React.cloneElement(child, {
+                    className: cn(
+                        'column',
+                        {
+                            'gutter-left': guttersLeft,
+                            'gutter-bottom': guttersBottom,
+                        },
+                        child.props.className
+                    ),
+                })
+            )}
+        </div>
+    </div>
+);
 
-    static defaultProps = {
-        multiRow: true,
-    };
-
-    render() {
-        const { children, guttersLeft, guttersBottom, multiRow, hAlign, vAlign } = this.props;
-
-        return (
-            <div className={cn('')}>
-                <div
-                    className={cn('container', {
-                        'multi-row': multiRow,
-                        'h-align': hAlign,
-                        'v-align': vAlign,
-                        'gutters-left': guttersLeft,
-                        'gutters-bottom': guttersBottom,
-                    })}>
-                    {React.Children.map(children, (child: React.ReactElement<IGridColumn>) =>
-                        React.cloneElement(child, {
-                            className: cn(
-                                'column',
-                                {
-                                    'gutter-left': guttersLeft,
-                                    'gutter-bottom': guttersBottom,
-                                },
-                                child.props.className
-                            ),
-                        })
-                    )}
-                </div>
-            </div>
-        );
-    }
-}
+Grid.propTypes = {
+    hAlign: PropTypes.oneOf(['left', 'right', 'center', 'between', 'around']),
+    vAlign: PropTypes.oneOf(['top', 'bottom', 'center', 'baseline']),
+    guttersLeft: PropTypes.oneOf(['large', 'medium']),
+    guttersBottom: PropTypes.oneOf(['large', 'medium']),
+    multiRow: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element.isRequired),
+        PropTypes.element.isRequired,
+    ]).isRequired,
+};
 
 export default Grid;

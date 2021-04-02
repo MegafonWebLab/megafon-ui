@@ -3,21 +3,13 @@
 exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
 <div
   className="mfui-beta-title-description-box mfui-beta-title-description-box_h-align_center mfui-beta-title-description-box_text-color_white custom class"
+  data-test="value"
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
-      all="12"
       desktop="10"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Header
@@ -43,21 +35,13 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
 exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without description 1`] = `
 <div
   className="mfui-beta-title-description-box mfui-beta-title-description-box_h-align_center mfui-beta-title-description-box_text-color_white custom class"
+  data-test="value"
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
-      all="12"
       desktop="10"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Header
@@ -76,21 +60,13 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without description
 exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without title 1`] = `
 <div
   className="mfui-beta-title-description-box mfui-beta-title-description-box_h-align_center mfui-beta-title-description-box_text-color_white custom class"
+  data-test="value"
 >
   <Grid
     hAlign="center"
-    multiRow={true}
   >
     <GridColumn
-      all="12"
       desktop="10"
-      flex={false}
-      grow={false}
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
       wide="8"
     >
       <Paragraph

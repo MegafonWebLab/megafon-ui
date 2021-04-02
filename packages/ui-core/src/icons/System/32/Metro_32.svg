@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
-    <title>Source/System Icons/32/Metro_32</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M20,32 C13.372583,32 8,26.627417 8,20 C8,13.372583 13.372583,8 20,8 C26.627417,8 32,13.372583 32,20 C32,26.627417 26.627417,32 20,32 Z M22.5997131,20.655066 L23.6791009,23.6721456 L22.8077475,23.6721456 L22.8077475,25 L28,25 L28,23.6721456 L27.0090866,23.6721456 L23.2790531,14 L20,19.9551903 L16.7209469,14 L12.9911526,23.6721456 L12,23.6721456 L12,25 L17.1924916,25 L17.1924916,23.6721456 L16.3208991,23.6721456 L17.4002869,20.655066 L20,25 L22.5997131,20.655066 Z" id="path-1"></path>
-    </defs>
-    <g id="Source/System-Icons/32/Metro_32" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2" fill="white">
-            <use xlink:href="#path-1"></use>
-        </mask>
-        <g id="Combined-Shape"></g>
-        <g id="Colors/Basic/Fresh-Asphalt" mask="url(#mask-2)" fill="#000000">
-            <rect id="Rectangle" x="0" y="0" width="40" height="40"></rect>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M36,20A16,16,0,1,1,20,4,16,16,0,0,1,36,20ZM24.9,24.9l-1.4-4L20,26.7l-3.5-5.8-1.4,4h1.2v1.8h-7V24.9h1.3l5-12.9L20,19.9,24.4,12l5,12.9h1.3v1.8H23.8V24.9Z" style="fill-rule:evenodd"/></svg>

@@ -1,8 +1,9 @@
-interface IAttributes {
+export interface IAttributes {
     [key: string]: string;
 }
 
 export interface IDataAttributes {
+    /** Дата атрибуты для корневого элемента */
     dataAttrs?: IAttributes;
 }
 

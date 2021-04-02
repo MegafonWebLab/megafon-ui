@@ -2,14 +2,45 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import convert from 'htmr';
 import './style/BenefitsIconsTile.less';
-import { Header, Paragraph, cnCreate } from '@megafon/ui-core';
-import { IBenefit, IconPositionEnum } from './types';
+import {
+    List,
+    Header,
+    cnCreate,
+    TextLink,
+    ListItem,
+    Paragraph,
+    convert as htmlToReactComponent
+} from '@megafon/ui-core';
+import { IBenefit, IconPositionEnum, IconPosition } from './types';
 
 export interface IBenefitsIconsTile extends IBenefit {
-    iconPosition?: IconPositionEnum;
+    iconPosition?: IconPosition;
 }
 
 const cn = cnCreate('mfui-beta-benefits-icons-tile');
+
+const typographyConfig = {
+    ul: {
+        component: List,
+        props: ['as', 'weight', 'color'],
+    },
+    li: {
+        component: ListItem,
+    },
+    p: {
+        component: Paragraph,
+        props: ['color'],
+        className: cn('text'),
+    },
+    a: {
+        component: TextLink,
+        props: ['href', 'target'],
+    },
+    b: {
+        component: ({ children }) => <b>{children}</b>,
+    },
+};
+
 const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
     title,
     text,
@@ -25,9 +56,9 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
                 </Header>
             )}
             {text && (
-                <Paragraph className={cn('text')} hasMargin={false}>
-                    {convert(text)}
-                </Paragraph>
+                <div className={cn('content')}>
+                    {htmlToReactComponent(text, typographyConfig)}
+                </div>
             )}
         </div>
     </div>

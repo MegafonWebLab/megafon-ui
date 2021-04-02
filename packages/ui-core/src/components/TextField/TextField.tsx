@@ -1,10 +1,11 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { useCallback, useState, useMemo } from 'react';
+import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import './TextField.less';
 import InputLabel from '../InputLabel/InputLabel';
+import Paragraph from '../Paragraph/Paragraph';
 import CheckedIcon from 'icons/System/24/Checked_24.svg';
 import ErrorIcon from 'icons/System/24/Cancel_24.svg';
 import Hide from 'icons/Basic/24/Hide_24.svg';
@@ -12,68 +13,73 @@ import Show from 'icons/Basic/24/Show_24.svg';
 
 const InputMask = require('react-input-mask');
 
-interface ITextFieldClasses {
-    input?: string | null;
-}
-
 export const Verification = {
     VALID: 'valid',
     ERROR: 'error',
 } as const;
 
-type VerificationType = typeof Verification[keyof typeof Verification];
+export const TextareaTypes = {
+    FIXED: 'fixed',
+    FLEXIBLE: 'flexible',
+} as const;
 
 export interface ITextFieldProps {
-    /** Toggle to textarea */
-    multiline?: boolean;
-    /** Field label */
+    /** Включить режим textarea. Fixed - это alias для textarea=true. */
+    textarea?: boolean | 'fixed' | 'flexible';
+    /** Лейбл */
     label?: string;
-    /** HTML-attribute "type" of input element. Doesn't work with **multiline=true** */
+    /** Атрибут элемента input. Не работает с textarea=true */
     type?: 'text' | 'password' | 'tel' | 'email';
-    /** Field color scheme */
+    /** Цветовая тема */
     theme?: 'default' | 'white';
-    /** Forcefully prohibits icon's render */
+    /** Запрещает отрисовку иконки */
     hideIcon?: boolean;
-    /** The result of external field's validation */
-    verification?: VerificationType;
-    /** Text message. Could be a validation message or a simple hint to user */
+    /** Отображение валидации */
+    verification?: 'valid' | 'error';
+    /** Подпись снизу, меняет цвет в зависимости от аргумента verification */
     noticeText?: string;
-    /** Disables field. The value of this prop is also passed through to attribute with the same name */
+    /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
-    /** Makes the field required. The value of this prop is also passed through to attribute with the same name */
+    /** Показывает обязательность поля  */
     required?: boolean;
-    /** Ref-callback */
+    /** Ref обработчик */
     inputRef?: (node: HTMLInputElement | HTMLTextAreaElement) => void;
-    /** Field name. The value of this prop is passed through to attribute with the same name */
+    /** Имя поля */
     name?: string;
-    /** Initial Placeholder */
+    /** Отображаемый текст при отсутствии значения */
     placeholder?: string;
-    /** Html id attribute, also automatically allows to focus on input while clicking on the label */
+    /** Атрибут корневого DOM элемента компонента */
     id?: string;
-    /** Externally set value */
-    value?: string;
-    /** Max length of the text */
+    /** Внешнее значение компонента */
+    value?: string | number;
+    /** Максимальное вводимое количество текста */
     maxLength?: number;
-    /** Custom icon */
+    /** Показывает счетчик с подсчетом введенных символов. Только для textarea. */
+    symbolCounter?: number;
+    /** Иконка */
     customIcon?: JSX.Element;
-    /** Mask for the input-field. Doesn't work with **multiline=true**. */
-    /** You may find additional info on https://github.com/sanniassin/react-input-mask */
+    /** Маска для поля. Не работает с textarea=true. */
+    /** Дополнительную информацию можно найти на https://github.com/sanniassin/react-input-mask */
     mask?: string;
-    /** Split symbol for a mask. Doesn't work with **multiline=true** */
+    /** Разделение символов для маски. Не работает textarea=true */
     maskChar?: string;
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Custom classes */
-    classes?: ITextFieldClasses;
-    /** Change handler */
+    /** Дополнительные классы элементов */
+    classes?: { input?: string | null };
+    /** Аргумент элемента input */
+    inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
+    /** Переводит компонент в контролируемое состояние */
+    isControlled?: boolean;
+    /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** Blur handler */
+    /** Обработчик выхода из фокуса */
     onBlur?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** Focus handler */
+    /** Обработчик входа в фокус */
     onFocus?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** KeyUp handler */
+    /** Обработчик поднятия клавиши */
     onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    /** Custom icon click handler */
+    /** Обработчик клика добавленной иконки */
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
@@ -86,6 +92,11 @@ const detectIE11 = (): boolean => {
     return userAgent.indexOf('trident/') !== -1;
 };
 
+const TEXTAREA_MIN_HEIGHT = 96;
+const TEXTAREA_MAX_HEIGHT = 168;
+const ROW_HEIGHT = 24;
+const DEFAULT_ROW_COUNT = 3;
+
 const cn = cnCreate('mfui-beta-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
         className,
@@ -97,10 +108,12 @@ const TextField: React.FC<ITextFieldProps> = ({
         mask,
         maskChar,
         maxLength,
-        multiline,
+        symbolCounter,
+        textarea,
         name,
         placeholder,
         required,
+        isControlled = false,
         onBlur,
         onChange,
         onCustomIconClick,
@@ -112,15 +125,18 @@ const TextField: React.FC<ITextFieldProps> = ({
         verification,
         noticeText,
         inputRef,
+        inputMode,
         classes: {
             input,
         } = {},
     }) => {
-
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
-    const [inputValue, setInputValue] = React.useState(value);
-    const [isIE11, setIsIE11] = React.useState(false);
-    const fieldNode = React.useRef<HTMLInputElement | HTMLTextAreaElement>();
+    const [inputValue, setInputValue] = useState<string | number | undefined>(value);
+    const [isIE11, setIsIE11] = useState(false);
+    const [initialTextareaHeight, setInitialTextareaHeight] = useState(TEXTAREA_MIN_HEIGHT);
+    const [isTextareaResized, setIsTextareaResized] = useState(false);
+    const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
+    const fieldNode = useRef<HTMLInputElement | HTMLTextAreaElement>();
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
     const isVisiblePassword: boolean = useMemo(
@@ -133,11 +149,20 @@ const TextField: React.FC<ITextFieldProps> = ({
         return <span className={cn(classes)}>{placeholder}</span>;
     };
 
-    React.useEffect(() => {
-        setInputValue(value);
-    }, [value]);
+    const checkSymbolMaxLimit = useCallback((textareaValue: string | number = ''): void => {
+        if (!symbolCounter) {
+            return;
+        }
 
-    React.useEffect(() => {
+        setIsMaxLimitExceeded(symbolCounter < String(textareaValue).length);
+    }, [symbolCounter]);
+
+    useEffect(() => {
+        setInputValue(value);
+        checkSymbolMaxLimit(value);
+    }, [value, checkSymbolMaxLimit]);
+
+    useEffect(() => {
         if (detectIE11()) {
             setIsIE11(true);
         }
@@ -149,9 +174,24 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-        setInputValue(e.target.value);
+        if (textarea === TextareaTypes.FLEXIBLE) {
+            setTextareaHeight();
+        }
+
+        !isControlled && setInputValue(e.target.value);
+        checkSymbolMaxLimit(e.target.value);
 
         onChange && onChange(e);
+    };
+
+    const handleTextareaClick = () => {
+        if (!fieldNode?.current) {
+            return;
+        }
+
+        const { current: { offsetHeight: textAreaHeight } } = fieldNode;
+
+        setIsTextareaResized(textAreaHeight < initialTextareaHeight);
     };
 
     const handleIconClick = useCallback(e => {
@@ -160,8 +200,10 @@ const TextField: React.FC<ITextFieldProps> = ({
 
         isPasswordType && togglePasswordHiding();
         onCustomIconClick && onCustomIconClick(e);
-        isClearFuncAvailable && setInputValue('');
-        field && field.focus();
+        if (!isControlled && isClearFuncAvailable) {
+            setInputValue('');
+            field && field.focus();
+        }
     }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
 
     const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -172,23 +214,27 @@ const TextField: React.FC<ITextFieldProps> = ({
         onBlur && onBlur(e);
     }, [onBlur]);
 
+    const textareaType = textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED;
+    const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
+
     const commonParams = {
         disabled,
         id,
         name,
+        value: inputValue,
+        onChange: handleInputChange,
         onBlur: handleBlur,
         onFocus: handleFocus,
         onKeyUp,
+        maxLength,
         placeholder,
         required,
-        maxLength,
+        inputMode,
     };
 
     const inputParams = {
         ...commonParams,
         className: cn('field', input),
-        value: inputValue,
-        onChange: handleInputChange,
         type: isVisiblePassword ? 'text' : type,
     };
 
@@ -199,9 +245,10 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const textareaParams = {
         ...commonParams,
-        value: inputValue,
-        onChange: handleInputChange,
-        className: cn('field', { multiline }, input),
+        className: cn('field', {
+            type: textareaType,
+            scrolling: hasScrolling,
+        }, input),
     };
 
     const getFieldNode = (node: HTMLInputElement | HTMLTextAreaElement | null) => {
@@ -213,8 +260,25 @@ const TextField: React.FC<ITextFieldProps> = ({
         inputRef && inputRef(node);
     };
 
+    const setTextareaHeight = (): void => {
+        if (!fieldNode?.current) {
+            return;
+        }
+
+        const { current: { scrollHeight } } = fieldNode;
+
+        if (!isTextareaResized) {
+            const extraRowCount = Math.round((scrollHeight - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
+            const newHeight = extraRowCount <= DEFAULT_ROW_COUNT
+                ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount
+                : TEXTAREA_MAX_HEIGHT;
+
+            setInitialTextareaHeight(newHeight);
+        }
+    };
+
     const renderField = (): React.ReactNode => {
-        if (multiline) {
+        if (textarea) {
             return renderTextarea();
         }
 
@@ -241,10 +305,16 @@ const TextField: React.FC<ITextFieldProps> = ({
         if (!inputValue && textareaParams.placeholder && isIE11) {
             textareaParams.placeholder = '';
         }
+
         return (
             <>
                 {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-textarea')}
-                <textarea {...textareaParams} ref={getFieldNode} />
+                <textarea
+                    {...textareaParams}
+                    onClick={handleTextareaClick}
+                    style={{ height: `${initialTextareaHeight}px`}}
+                    ref={getFieldNode}
+                />
             </>
         );
     };
@@ -272,7 +342,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         return icon && (
             <div
                 className={cn('icon-box', {
-                    error: verification === Verification.ERROR,
+                    error: verification === Verification.ERROR && !customIcon,
                     password: isPasswordType,
                     'custom-handler': !!onCustomIconClick,
                 })}
@@ -284,14 +354,16 @@ const TextField: React.FC<ITextFieldProps> = ({
     };
 
     const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
+    const valueHasSymbols = inputValue !== null && inputValue !== undefined;
+    const currentSymbolCount = valueHasSymbols && String(inputValue).length || 0;
 
     return (
         <div className={cn({
             disabled,
             theme,
             valid: verification === Verification.VALID,
-            error: verification === Verification.ERROR,
-            icon: !hideIcon && (!!verification || !!customIcon),
+            error: verification === Verification.ERROR || isMaxLimitExceeded,
+            icon: !hideIcon && (!!verification || !!customIcon || type === 'password') && !textarea,
             password: isPlaceholderShowed,
         }, className)}>
             {label && <InputLabel htmlFor={id}>
@@ -303,27 +375,38 @@ const TextField: React.FC<ITextFieldProps> = ({
             >
                 {renderField()}
             </div>
-            {noticeText &&
-                <div className={cn('text', {
-                    error: verification === Verification.ERROR,
-                    success: verification === Verification.VALID,
-                })}>
-                    {noticeText}
-                </div>
-            }
+            <div className={cn('wrap')}>
+                {noticeText &&
+                    <div className={cn('text', {
+                        error: verification === Verification.ERROR,
+                        success: verification === Verification.VALID,
+                    })}>
+                        {noticeText}
+                    </div>
+                }
+                {symbolCounter && (
+                    <Paragraph
+                        size="small"
+                        hasMargin={false}
+                        className={cn('counter', { error: isMaxLimitExceeded })}
+                    >
+                        {`${currentSymbolCount}/${symbolCounter}`}
+                    </Paragraph>
+                )}
+            </div>
         </div>
     );
 };
 
 TextField.defaultProps = {
-    multiline: false,
+    textarea: false,
     theme: 'default',
     type: 'text',
     hideIcon: false,
 };
 
 TextField.propTypes = {
-    multiline: PropTypes.bool,
+    textarea: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(Object.values(TextareaTypes))]),
     label: PropTypes.string,
     theme: PropTypes.oneOf(['default', 'white']),
     hideIcon: PropTypes.bool,
@@ -334,8 +417,9 @@ TextField.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     maxLength: PropTypes.number,
+    symbolCounter: PropTypes.number,
     customIcon: PropTypes.element,
     mask: PropTypes.string,
     maskChar: PropTypes.string,

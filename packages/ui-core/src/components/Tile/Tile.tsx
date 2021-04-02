@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Tile.less';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const Theme = {
     LIGHT: 'light',
@@ -26,36 +27,35 @@ export const Shadow = {
 
 type ShadowType = typeof Shadow[keyof typeof Shadow];
 
-export interface ITileProps {
-    /** Link href */
+export interface ITileProps extends IDataAttributes {
+    /** Ссылка */
     href?: string;
-    /** Tile view according to the background color */
+    /** Тема */
     theme?: ThemeType;
-    /** Border radius */
+    /** Радиус границы */
     radius?: RadiusType;
-    /** Shadow levels of tile contour */
+    /** Уровень тени */
     shadowLevel?: ShadowType;
-    /** Enabling shadow on hover */
+    /** Включить тень при наведении */
     isInteractive?: boolean;
-    /** Custom class */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Handler */
+    /** Обработчик клика */
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const cn = cnCreate('mfui-beta-tile');
-const Tile: React.FC<ITileProps> = (props) => {
-    const {
-        href,
-        children,
-        className,
-        theme = Theme.LIGHT,
-        shadowLevel = Shadow.ZERO,
-        radius = Radius.DEFAULT,
-        isInteractive = false,
-        onClick,
-    } = props;
-
+const Tile: React.FC<ITileProps> = ({
+    href,
+    children,
+    className,
+    theme = 'light',
+    shadowLevel = 'zero',
+    radius = 'default',
+    isInteractive = false,
+    onClick,
+    dataAttrs,
+}) => {
     const [currentShadow, setCurrentShadow] = React.useState(shadowLevel);
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
@@ -84,6 +84,7 @@ const Tile: React.FC<ITileProps> = (props) => {
             onClick={handleClick}
             onMouseEnter={handleHoverTile}
             onMouseLeave={handleMouseLeave}
+            {...filterDataAttrs(dataAttrs)}
         >
             {href && (
                 <a href={href} className={cn('link')}>
@@ -103,6 +104,7 @@ Tile.propTypes = {
     className: PropTypes.string,
     isInteractive: PropTypes.bool,
     onClick: PropTypes.func,
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
 };
 
 export default Tile;

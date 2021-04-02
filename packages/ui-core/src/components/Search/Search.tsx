@@ -11,22 +11,22 @@ type HandleSelectSubmit = (i: number) => (e: React.MouseEvent) => void;
 type HandleItemSubmit = (index: number) => void;
 
 export interface ISearchProps {
-    /** Current value */
-    value?: string;
-    /** Placeholder */
-    placeholder?: string;
-    /** Forcefully prohibits icon's render */
-    hideIcon?: boolean;
-    /** Array of strings to be used for options rendering */
-    items?: string[];
-    /** Debounce delay for onChange callback */
-    changeDelay?: number;
-    /** Change handler */
-    onChange?: (value: string) => void;
-    /** Submit handler */
-    onSubmit?: (value: string) => void;
-     /** Custom className */
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Значение */
+    value?: string;
+    /** Текст внутри поля по умолчанию */
+    placeholder?: string;
+    /** Запрещает отрисовку иконки */
+    hideIcon?: boolean;
+    /** Список строк выпадающего списка */
+    items?: string[];
+    /** Использование функции debounce для onChange */
+    changeDelay?: number;
+    /** Обработчик изменения поля */
+    onChange?: (value: string) => void;
+    /** Обработчик нажатия на enter */
+    onSubmit?: (value: string) => void;
 }
 
 const cn = cnCreate('mfui-beta-search');
@@ -43,7 +43,11 @@ const Search: React.FC<ISearchProps> = ({
     const [searchQuery, setSearchQuery] = useState(value);
     const [activeIndex, setActiveIndex] = useState(-1);
     const [isFocused, setFocus] = useState(false);
-    const debouncedOnChange = useRef(debounce((inputValue) => onChange && onChange(inputValue), changeDelay));
+    const debouncedOnChange = useRef(debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay));
+
+    React.useEffect(() => {
+        debouncedOnChange.current = debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay);
+    }, [onChange]);
 
     useEffect(() => setSearchQuery(value), [value, setSearchQuery]);
 

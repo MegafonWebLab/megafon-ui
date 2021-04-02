@@ -1,0 +1,161 @@
+
+import { Playground } from 'docz';
+import Table from '../Table';
+import TableRow from '../TableRow';
+import TableCell from '../TableCell';
+
+## Использование по умолчанию
+
+<Playground>
+    <Table>
+        <TableRow head>
+            <TableCell>Интернет-опция</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>Интернет XS</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>Интернет XL</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+        </TableRow>
+            <TableRow head>
+            <TableCell>Интернет-опция</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>Интернет XS</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>Интернет XL</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+        </TableRow>
+    </Table>
+</Playground>
+
+## Минимальный размер ячеек - small
+
+<Playground>
+    <Table minCellSize="small">
+        <TableRow head>
+            <TableCell>Интернет-опция</TableCell>
+            <TableCell>Да</TableCell>
+            <TableCell>Нет</TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>Интернет XS</TableCell>
+            <TableCell>+</TableCell>
+            <TableCell>-</TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>Интернет XL</TableCell>
+            <TableCell>-</TableCell>
+            <TableCell>+</TableCell>
+        </TableRow>
+    </Table>
+</Playground>
+
+## Отключение фиксации первой колонки
+
+<Playground>
+    <Table fixColumn={false}>
+        <TableRow head>
+            <TableCell>Интернет-опция</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+            <TableCell>Объем трафика</TableCell>
+            <TableCell>Стоимость</TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>Интернет XS</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+            <TableCell>10 ГБ днём + 10 ГБ ночью</TableCell>
+            <TableCell>420 ₽</TableCell>
+        </TableRow>
+    </Table>
+</Playground>

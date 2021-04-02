@@ -1,0 +1,79 @@
+import { Playground, Props } from 'docz';
+import Header from '../Header';
+import { tableRowStyle } from './Header.docz';
+
+```javascript collapse=Код tableRowStyle
+export const tableRowStyle = {
+    border: '1px solid #EDEDED',
+    display: 'flex',
+    alignItems: 'center',
+    minHeight: '50px',
+    padding: '15px',
+};
+```
+
+## Размеры
+
+<Playground>
+    <div style={tableRowStyle}>
+        <Header as="h1">H1. Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h2">H2. Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h3">H3. Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h5">H5. Megafon lib</Header>
+    </div>
+</Playground>
+
+## Цвета
+
+<Playground>
+    <div style={tableRowStyle}>
+        <Header color="purple" as="h2">Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header color="green" as="h2">Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header color="blue" as="h2">Megafon lib</Header>
+    </div>
+</Playground>
+
+## Наличие отступа
+
+<Playground>
+    <div style={tableRowStyle}>
+        <Header as="h2" margin>Megafon lib</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h2">Megafon lib</Header>
+    </div>
+</Playground>
+
+## С дополнительным компонентом
+
+<Playground>
+    <div style={tableRowStyle}>
+        <Header as="h2" addition={
+            <Header as="h3">Additional component</Header>
+        }>Megafon lib</Header>
+    </div>
+</Playground>
+
+## Выравнивание
+
+<Playground>
+    <Header hAlign="left">
+        Megafon lib
+    </Header>
+    <Header hAlign="center">
+        Megafon lib
+    </Header>
+    <Header hAlign="right">
+        Megafon lib
+    </Header>
+</Playground>

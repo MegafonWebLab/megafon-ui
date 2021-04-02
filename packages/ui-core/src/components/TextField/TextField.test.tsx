@@ -39,17 +39,24 @@ const mockUserAgentAsTrident = () => {
     jest.spyOn(window.navigator, 'userAgent', 'get').mockReturnValue('trident/');
 };
 
-const testCommonCases = (selector: string, multiline: boolean = false) => {
-    it('should render with value', () => {
+const testCommonCases = (selector: string, textarea: boolean = false) => {
+    it('should render with string value', () => {
         const wrapper = shallow(
-            <TextField {...commonFieldProps} value="value" multiline={multiline} />
+            <TextField {...commonFieldProps} value="value" textarea={textarea} />
         );
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with value after updating prop', () => {
+    it('should render with number value', () => {
+        const wrapper = shallow(
+            <TextField {...commonFieldProps} value={1234} textarea={textarea} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with value after updating string prop', () => {
         const wrapper = mount(
-            <TextField {...commonFieldProps} value="value" multiline={multiline} />
+            <TextField {...commonFieldProps} value="value" textarea={textarea} />
         );
 
         wrapper.setProps({ value: 'newValue' });
@@ -57,10 +64,20 @@ const testCommonCases = (selector: string, multiline: boolean = false) => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render with value after updating number prop', () => {
+        const wrapper = mount(
+            <TextField {...commonFieldProps} value={1234} textarea={textarea} />
+        );
+
+        wrapper.setProps({ value: 5678 });
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render with ie placeholder', () => {
         mockUserAgentAsTrident();
 
-        const wrapper = mount(<TextField {...commonFieldProps} multiline={multiline} />);
+        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -68,7 +85,7 @@ const testCommonCases = (selector: string, multiline: boolean = false) => {
     it('should render without ie placeholder when value is passed', () => {
         mockUserAgentAsTrident();
 
-        const wrapper = mount(<TextField {...commonFieldProps} multiline={multiline} value="value" />);
+        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} value="value" />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -78,7 +95,7 @@ const testCommonCases = (selector: string, multiline: boolean = false) => {
         const wrapper = mount(
             <TextField
                 {...commonFieldProps}
-                multiline={multiline}
+                textarea={textarea}
                 inputRef={inputRefMock}
             />
         );
@@ -92,7 +109,7 @@ const testCommonCases = (selector: string, multiline: boolean = false) => {
         const value = 'newValue';
         const event = { target: { value } };
         const wrapper = shallow(
-            <TextField {...commonFieldProps} multiline={multiline} onChange={onChangeMock} />
+            <TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} />
         );
 
         wrapper.find(selector).simulate('change', event);
@@ -106,7 +123,7 @@ const testCommonCases = (selector: string, multiline: boolean = false) => {
         const value = 'newValue';
         const event = { target: { value } };
         const wrapper = shallow(
-            <TextField {...commonFieldProps} multiline={multiline} onBlur={onBlurMock} />
+            <TextField {...commonFieldProps} textarea={textarea} onBlur={onBlurMock} />
         );
 
         wrapper.find(selector).simulate('blur', event);
@@ -119,7 +136,7 @@ const testCommonCases = (selector: string, multiline: boolean = false) => {
         const value = 'newValue';
         const event = { target: { value } };
         const wrapper = shallow(
-            <TextField {...commonFieldProps} multiline={multiline} onFocus={onFocusMock} />
+            <TextField {...commonFieldProps} textarea={textarea} onFocus={onFocusMock} />
         );
 
         wrapper.find(selector).simulate('focus', event);
@@ -131,12 +148,44 @@ const testCommonCases = (selector: string, multiline: boolean = false) => {
         const onKeyUpMock = jest.fn();
         const event = { target: {} };
         const wrapper = shallow(
-            <TextField {...commonFieldProps} multiline={multiline} onKeyUp={onKeyUpMock} />
+            <TextField {...commonFieldProps} textarea={textarea} onKeyUp={onKeyUpMock} />
         );
 
         wrapper.find(selector).simulate('keyup', event);
 
         expect(onKeyUpMock).toBeCalledWith(event);
+    });
+
+    it('shouldn\'t change component inputValue state via input change when controlled', () => {
+        const target = { target: { value: 'something' } };
+        const wrapper = shallow(
+            <TextField
+                {...commonFieldProps}
+                value="value"
+                textarea={textarea}
+                isControlled
+            />
+        );
+
+        wrapper.find(selector).simulate('change', target);
+
+        expect(wrapper.find(selector).prop('value')).toEqual('value');
+    });
+
+    it('should change component inputValue state via value prop update when controlled', () => {
+        const wrapper = mount(
+            <TextField
+                {...commonFieldProps}
+                value="value"
+                textarea={textarea}
+                isControlled
+            />
+        );
+
+        wrapper.setProps({ value: 'something' });
+        wrapper.update();
+
+        expect(wrapper.find(selector).prop('value')).toEqual('something');
     });
 };
 
@@ -209,6 +258,11 @@ describe('<TextField />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render with inputnode', () => {
+            const wrapper = shallow(<TextField {...commonFieldProps} inputMode="numeric" />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should render with hidden password', () => {
             const wrapper = shallow(
                 <TextField {...commonFieldProps} value="value" type="password" />
@@ -262,9 +316,56 @@ describe('<TextField />', () => {
 
             expect(onCustomIconClickMock).toBeCalledWith(target);
         });
+
+        it('shouldn\'t clear inputValue state via custom icon click when controlled', () => {
+            const target = { target: { value: 'something' } };
+            const wrapper = shallow(
+                <TextField
+                    {...commonFieldProps}
+                    value="value"
+                    customIcon={<Balance />}
+                    verification={Verification.ERROR}
+                    isControlled
+                    onCustomIconClick={jest.fn()}
+                />
+            );
+
+            wrapper.find(selectors.iconBox).simulate('click');
+
+            expect(wrapper.find('input').prop('value')).toEqual('value');
+        });
     });
 
     describe('textarea', () => {
         testCommonCases(selectors.textarea, true);
+
+        it('should render fixed textarea', () => {
+            const wrapper = shallow(
+                <TextField {...commonProps} textarea />
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render flexible textarea', () => {
+            const wrapper = shallow(
+                <TextField {...commonProps} textarea="flexible" />
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with error because of max limit is exceeded', () => {
+            const value = '123456';
+            const event = { target: { value } };
+            const wrapper = shallow(
+                <TextField {...commonProps} textarea symbolCounter={4} />
+            );
+
+            wrapper.find('textarea').simulate('change', event);
+            wrapper.update();
+
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 });

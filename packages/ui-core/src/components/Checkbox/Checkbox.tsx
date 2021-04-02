@@ -7,27 +7,27 @@ import detectTouch from 'utils/detectTouch';
 import filterDataAttrs, { IDataAttributes } from '../../utils/dataAttrs';
 
 export interface ICheckboxProps extends IDataAttributes {
-    /** Color scheme */
+    /** Цвет чекбокса */
     color?: 'dark' | 'light';
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Font size */
+    /** Размер текста */
     fontSize?: 'regular' | 'small';
-    /** Checkbox name */
+    /** Имя компонента в DOM */
     name?: string;
-    /** Checkbox value */
+    /** Значение чекбокса */
     value?: string;
-    /** Checked */
+    /** Управление состоянием вкл/выкл компонента */
     checked?: boolean;
-    /** Disabled */
+    /** Управление возможностью взаимодействия с компонентом */
     disabled?: boolean;
-    /** Error */
+    /** Отобразить компонент в состоянии ошибки */
     error?: boolean;
-    /** Extra content */
+    /** Дополнительный контент справа */
     extraContent?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
-    /** onChange handler */
-    onChange?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Обработчик изменения значения */
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const cn = cnCreate('mfui-beta-checkbox');
@@ -63,7 +63,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
 
     isTouch: boolean = detectTouch();
 
-    handleChange = (e: React.SyntheticEvent<EventTarget>): void => {
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onChange } = this.props;
         onChange && onChange(e);
     }

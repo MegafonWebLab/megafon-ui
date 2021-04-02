@@ -1,0 +1,423 @@
+@import '~@megafon/ui-core/styles/base.less';
+@b: e('.mfui-beta-instructions');
+@swiperWrapper: e('.swiper-wrapper');
+
+@{b} {
+    &__title_resolution_mobile {
+        text-align: center;
+        margin-bottom: 32px;
+
+        @media @mobileB {
+            margin-bottom: 56px;
+        }
+
+        @media @desktop {
+            display: none;
+        }
+    }
+
+    &__title_resolution_desktop {
+        margin-bottom: 40px;
+
+        @media @mobile {
+            display: none;
+        }
+    }
+
+    @{swiperWrapper} {
+        display: flex;
+    }
+
+    &__wrapper {
+        @media @desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &__picture {
+        max-width: 530px;
+        max-height: 490px;
+        overflow: hidden;
+
+        @media @mobile {
+            margin: 0 auto 32px;
+        }
+
+        @media @mobileB {
+            margin: 0 auto 48px;
+        }
+
+        @media @desktop {
+            width: 50%;
+            order: 2;
+        }
+    }
+
+    &__picture_align_left {
+        @media @desktop {
+            order: 0;
+            margin-right: 40px;
+        }
+    }
+
+    &_mask_none {
+        @{b}__slide {
+            display: flex;
+        }
+    }
+
+    &__swiper-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img-wrapper {
+        position: relative;
+        display: flex;
+        height: 490px;
+
+        &:before {
+            @media @mobile {
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 324px;
+                height: 1px;
+                margin: 0 auto;
+                background: @spbSky2;
+                z-index: 2;
+            }
+        }
+    }
+
+    &__device-screen {
+        overflow: hidden;
+    }
+
+    &_mask_black-iphone,
+    &_mask_white-iphone,
+    &_mask_android {
+        @{b}__img-wrapper {
+            @media @mobile {
+                height: 423px;
+            }
+        }
+
+        @{b}__device-screen {
+            width: 100%;
+            height: 490px;
+            margin: auto;
+        }
+
+        @{b}__swiper {
+            position: absolute;
+            top: 59px;
+            left: 0;
+            right: 0;
+            width: 204px;
+            height: 363px;
+            margin: auto;
+            overflow: hidden;
+        }
+    }
+
+    &_mask_black-iphone {
+        @{b}__device-screen {
+            background: url('./img/blackIphone.png') 50% no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &_mask_white-iphone {
+        @{b}__device-screen {
+            background: url('./img/whiteIphone.png') 50% no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &_mask_android {
+        @{b}__img-wrapper {
+            @media @mobile {
+                height: 430px;
+            }
+        }
+
+        @{b}__device-screen {
+            background: url('./img/android.png') 50% no-repeat;
+            background-size: contain;
+        }
+
+        @{b}__swiper {
+            width: 206px;
+            height: 370px;
+        }
+    }
+
+    &_mask_new-iphone {
+        @{b}__img-wrapper {
+            @media @mobile {
+                height: 460px;
+            }
+        }
+
+        @{b}__device-screen {
+            position: relative;
+            width: 100%;
+            height: 490px;
+            margin: auto;
+            background: url('./img/newIphone.png') 50% no-repeat;
+            background-size: contain;
+            z-index: 2;
+        }
+
+        @{b}__swiper {
+            position: absolute;
+            top: 14px;
+            left: 0;
+            right: 0;
+            width: 214px;
+            height: 462px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 20px;
+            z-index: 1;
+        }
+    }
+
+    &_mask_laptop {
+        @{b}__img-wrapper {
+            @media @mobileB {
+                height: 283px;
+            }
+
+            @media @mobileM {
+                height: 208px;
+            }
+
+            @media @mobileS {
+                height: 115px;
+            }
+        }
+
+        @{b}__img-wrapper:before {
+            @media @mobileS {
+                width: 310px;
+            }
+
+            @media @mobileM {
+                width: 460px;
+            }
+
+            @media @mobileB {
+                width: 590px;
+            }
+        }
+
+        @{b}__device-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background: url('./img/laptop.png') 50% 0% no-repeat;
+            background-size: 100%;
+
+            @media @mobileB {
+                width: 530px;
+            }
+
+            @media @mobileM {
+                width: 450px;
+            }
+
+            @media @mobileS {
+                width: 270px;
+            }
+
+            @media @desktop {
+                background: url('./img/laptop.png') 50% no-repeat;
+                background-size: contain;
+            }
+        }
+
+        @{b}__swiper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            width: 78%;
+            margin: auto;
+            overflow: hidden;
+            transform: translate(-50%, -50%);
+
+            @media @mobileM {
+                max-width: 345px;
+                height: 190px;
+            }
+
+            @media @mobileS {
+                max-width: 210px;
+                height: 105px;
+            }
+
+            @media @desktop {
+                transform: translate(-50%, -53%);
+            }
+        }
+    }
+
+    &__slide {
+        flex-shrink: 0;
+    }
+
+    &__articles {
+        @media @desktop {
+            width: 50%;
+            order: 1;
+        }
+    }
+
+    &__articles_align_right {
+        @media @desktop {
+            margin-right: 40px;
+        }
+    }
+
+    &__articles-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__articles-item {
+        opacity: 0.5;
+        position: relative;
+
+        @media @desktop {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__articles-item:hover,
+    &__articles-item_active {
+        opacity: 1;
+
+        @{b}__articles-item-dot {
+            color: @clearWhite;
+        }
+
+        @{b}__articles-item-dot:before {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: @green;
+        }
+    }
+
+    &__articles-item:last-child {
+        @media @desktop {
+            margin-bottom: 0;
+        }
+    }
+
+    &__articles-item-dot,
+    &__articles-dot {
+        position: absolute;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 40px;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1px #B2B2B2;
+        cursor: pointer;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 50%;
+            bottom: 50%;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+        }
+    }
+
+    &__articles-item-dot-number,
+    &__articles-dot-number {
+        position: relative;
+    }
+
+    &__articles-item-title {
+        display: inline-block;
+        cursor: pointer;
+
+        @media @desktop {
+            padding: 4px 0 0 56px;
+        }
+    }
+
+    &__articles-dots {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    &__articles-dot {
+        position: relative;
+
+        @media @mobileSM {
+            margin-right: 20px;
+        }
+
+        @media @mobileB {
+            margin-right: 40px;
+        }
+    }
+
+    &__articles-dot:hover,
+    &__articles-dot_active {
+        color: @clearWhite;
+
+        &:before {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: @green;
+        }
+    }
+
+    &__articles-dot:last-child {
+        margin-right: 0;
+    }
+
+    &__articles-title-block {
+        text-align: center;
+
+        @media @mobileSM {
+            width: 55%;
+            margin: 0 auto 24px;
+        }
+
+        @media @mobileS {
+            width: 100%;
+        }
+
+        @media @mobileB {
+            width: 55%;
+            margin: 0 auto 32px;
+        }
+    }
+}

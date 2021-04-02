@@ -1,4 +1,4 @@
-name: megafon-ui CI
+name: test and release
 
 on:
   pull_request:
@@ -10,6 +10,7 @@ jobs:
   main:
     env:
       BASE_BRANCH: master
+      BASE_REPO_OWNER: MegafonWebLab
 
     runs-on: ubuntu-latest
 
@@ -47,16 +48,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nodemodules-
 
-      - name: Define branch purpose
-        id: branch
-        run: |
-          if [ ${{ github.ref }} = refs/heads/${{ env.BASE_BRANCH }} ];
-          then
-            echo ::set-output name=is_base::true
-          else
-            echo ::set-output name=is_base::false
-          fi
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
@@ -76,26 +67,28 @@ jobs:
       - name: Tests
         run: yarn test
 
-      - name: Build documentation
-        if: steps.branch.outputs.is_base == 'true'
-        run: yarn demo:build
-
-      - name: Deploy documentation
-        if: steps.branch.outputs.is_base == 'true'
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+      - name: Define branch purpose
+        id: branch
+        run: |
+          if
+          [ ${{ contains(github.event.head_commit.message, 'skip release') }} = false ] &&
+          [ ${{ github.repository_owner }} = ${{ env.BASE_REPO_OWNER }} ] &&
+          [ ${{ github.ref }} = refs/heads/${{ env.BASE_BRANCH }} ];
+          then
+            echo ::set-output name=should_release::true
+          else
+            echo ::set-output name=should_release::false
+          fi
 
       - name: Configure CI Git User
-        if: steps.branch.outputs.is_base == 'true'
+        if: steps.branch.outputs.should_release == 'true'
         run: |
           git config --global user.name 'Megafon CI'
           git config --global user.email 'megafon-ci@users.noreply.github.com'
           git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
 
       - name: Authenticate with NPM Registry
-        if: steps.branch.outputs.is_base == 'true'
+        if: steps.branch.outputs.should_release == 'true'
         run: |
           echo "registry=http://registry.npmjs.org/" >> .npmrc
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
@@ -104,7 +97,7 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish
-        if: steps.branch.outputs.is_base == 'true'
+        if: steps.branch.outputs.should_release == 'true'
         run: yarn exec lerna publish -- --yes
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}

@@ -1,0 +1,75 @@
+import { Playground } from 'docz';
+import Search from '../Search';
+import { DemoSearchWrapper } from './Search.docz';
+
+```javascript collapse=Код DemoSearchWrapper
+export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
+    const [value, setValue] = React.useState('');
+    const [items, setItems] = React.useState([]);
+
+    const handleChange = React.useCallback((query: string) => {
+        if (!query) {
+            return;
+        }
+
+        setItems((oldItems) => [...oldItems, query]);
+    }, [items, setItems]);
+
+    return (
+        <div>
+            <p style={{ marginTop: 0 }}>Value: {value}</p>
+            {children({ onChange: handleChange, onSubmit: setValue, items: items, chosenValue: value })}
+        </div>
+    );
+};
+```
+
+## Без иконки
+
+<Playground>
+    <Search hideIcon />
+</Playground>
+
+## С установленным значением по умолчанию
+
+<Playground>
+    <DemoSearchWrapper>
+        {({ onSubmit }) =>
+            <Search
+                placeholder="Type here for search"
+                value="Previous request"
+                onSubmit={onSubmit}
+            />
+        }
+    </DemoSearchWrapper>
+</Playground>
+
+## С функцией onChange
+
+<Playground>
+    <DemoSearchWrapper>
+        {({ onSubmit }) =>
+            <Search
+                placeholder="Type here for search"
+                onChange={onSubmit}
+                changeDelay={50}
+            />
+        }
+    </DemoSearchWrapper>
+</Playground>
+
+## Эмулирование получения данных
+
+<Playground>
+    <DemoSearchWrapper>
+        {({ onSubmit, chosenValue, items, onChange }) => (
+            <Search
+                value={chosenValue}
+                items={items}
+                placeholder="Type and wait for results"
+                onChange={onChange}
+                onSubmit={onSubmit}
+            />
+        )}
+    </DemoSearchWrapper>
+</Playground>

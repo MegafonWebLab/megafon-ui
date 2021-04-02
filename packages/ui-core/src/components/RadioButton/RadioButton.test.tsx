@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import RadioButton, { IRadioButtonProps } from './RadioButton';
 
 const props: IRadioButtonProps = {
@@ -44,5 +44,17 @@ describe('<RadioButton />', () => {
             wrapper.find('.mfui-beta-radio-button__input').simulate('change');
             expect(handleChange).toHaveBeenCalledWith(value);
         });
+    });
+
+    it('should return a reference to the element', () => {
+        const ref: React.Ref<HTMLInputElement> = React.createRef();
+
+        mount(<RadioButton inputRef={ref} />);
+
+        if (ref.current === null) {
+            throw new Error('No ref');
+        }
+
+        expect(ref.current.type).toBe('radio');
     });
 });

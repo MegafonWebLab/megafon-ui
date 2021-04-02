@@ -5,25 +5,29 @@ import {
     Header,
     Paragraph,
     Grid,
-    GridColumn
+    GridColumn,
+    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
 import './TitleDescriptionBox.less';
 
 export interface ITitleDescriptionBoxProps {
-    /** Custom className */
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Title */
+    /** Заголовок */
     title?: string;
-    /** Description */
-    description?: string;
-    /** Text color */
+    /** Описание */
+    description?: string | React.ReactNode[];
+    /** Цвет текста */
     textColor?: 'white';
-    /** Horizontal alignment */
+    /** Горизонтальное выравнивание */
     hAlign?: 'center';
 }
 
 const cn = cnCreate('mfui-beta-title-description-box');
 const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
+    dataAttrs,
     title,
     description,
     textColor,
@@ -31,6 +35,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     className,
 }) => (
     <div
+        {...filterDataAttrs(dataAttrs)}
         className={cn(
             { 'h-align': hAlign, 'text-color': textColor },
             className
@@ -62,9 +67,10 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
 );
 
 TitleDescriptionBox.propTypes = {
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     className: PropTypes.string,
     title: PropTypes.string,
-    description: PropTypes.string,
+    description: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
     hAlign: PropTypes.oneOf(['center']),
     textColor: PropTypes.oneOf(['white']),
 };

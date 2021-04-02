@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { basename, resolve, join, parse } = require("path");
 const glob = require('glob');
+const { NODE_ENV } = process.env;
 
 const srcPath = join(__dirname, '..', 'packages', 'ui-core', 'src');
 const indexTs = join(srcPath, 'index.ts');
@@ -26,7 +27,7 @@ const generateIndex = files => {
 };
 
 const createReadmeMdx = () => {
-    const mdxFormatter = '---\nname: Beginning of work\nroute: /\n---\n\n';
+    const mdxFormatter = '---\nname: Введение\nroute: /\n---\n\n';
     return mdxFormatter + fs.readFileSync('../README.md')
 };
 
@@ -34,8 +35,10 @@ exports.onPreInit = () => {
     fs.writeFile('../index.mdx', createReadmeMdx(), err => { if (!err) { console.log('index.mdx created'); } });
 
     const components = glob.sync('../packages/ui-core/src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
-    const utils = glob.sync('../packages/ui-core/src/utils/*.ts', { ignore: testsReg });
-    fs.writeFile(indexTs, generateIndex([...components, ...utils]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
+    const utils = glob.sync('../packages/ui-core/src/utils/*.{tsx,ts}', { ignore: testsReg });
+    const constants = glob.sync('../packages/ui-core/src/constants/*.ts');
+
+    fs.writeFile(indexTs, generateIndex([...components, ...utils, ...constants]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
 }
 
 exports.onCreateWebpackConfig = args => {
@@ -52,6 +55,11 @@ exports.onCreateWebpackConfig = args => {
     args.actions.replaceWebpackConfig(config);
 
     args.actions.setWebpackConfig({
+        plugins: [
+            args.plugins.define({
+              '__DEV__': NODE_ENV === 'development',
+            }),
+        ],
         resolve: {
             modules: [
                 resolve(__dirname, "../packages/ui-core/src"),
@@ -63,9 +71,6 @@ exports.onCreateWebpackConfig = args => {
         },
         module: {
             rules: [{
-                test: /\.md$/,
-                use: ['babel-loader', '@mdx-js/loader']
-            }, {
                 test: /\.svg$/,
                 use: [
                     ({ resource }) => ({

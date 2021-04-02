@@ -42,40 +42,52 @@
     &__inner {
         margin: 0 auto;
         max-width: 1440px;
-    }
-
-    // mod: padding
-
-    &__inner_padding_none {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    &__inner_padding_default {
-        padding-left: 80px;
-        padding-right: 80px;
+        box-sizing: content-box;
+        padding-left: @contentHorizontalIndentDesktopMU;
+        padding-right: @contentHorizontalIndentDesktopMU;
 
         @media @mobileSM {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: @contentHorizontalIndentMobileSM;
+            padding-right: @contentHorizontalIndentMobileSM;
         }
 
         @media @mobileB {
-            padding-left: 48px;
-            padding-right: 48px;
+            padding-left: @contentHorizontalIndentMobileB;
+            padding-right: @contentHorizontalIndentMobileB;
         }
 
         @media @desktopS {
-            padding-left: 64px;
-            padding-right: 64px;
+            padding-left: @contentHorizontalIndentDesktopS;
+            padding-right: @contentHorizontalIndentDesktopS;
         }
     }
 
-    &__inner_mobile-padding_none {
+    // mod: disable-indents
+
+    &__inner_disable-indents_mobile {
         @media @mobileSM {
             padding-left: 0;
             padding-right: 0;
         }
+    }
+
+    &__inner_disable-indents_mobile-tablet {
+        @media @mobile {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__inner_disable-indents_tablet-desktop {
+        @media @mobileBU {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__inner_disable-indents_all {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     // mod: color

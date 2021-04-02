@@ -1,0 +1,219 @@
+import { Playground } from 'docz';
+import Tabs from '../Tabs';
+import Tab from '../Tab';
+import { DemoContent } from './Tabs.docz';
+import Balance from 'icons/Basic/24/Balance_24.svg';
+import ContentArea from "components/ContentArea/ContentArea";
+
+## Особенности использования на мобильных разрешениях
+На разрешении меньше 1024 у списка табов при переполнении появляются "уши",
+для корректного отображения которых необходимо предоставить табам возможность растянуться на всю страницу.
+
+По умолчанию табы растягиваются за счет отрицательных отступов на величину гайдовых боковых отступов у контента страницы (16px на 320-767 и 48px на 768-1023),
+которые затем компенсируются с помощью padding для выравнивания основных видимых табов по ширине контента.
+
+Если на странице используются не гайдовые отступы для контента, то необходимо переопределить дефолтные оступы табов с помощью дополнительного класса, переданного в свойство `innerIndentsClass`
+``` css
+.custom-indents-class {
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-left: -22px;
+    margin-right: -22px;
+}
+```
+
+```javascript collapse=Код DemoContent
+const DemoContent = ({ children }) => (
+    <div
+        style={{
+            padding: '0 0 20px 0',
+        }}
+    >
+        <div
+            style={{
+                padding: '80px 0',
+                background: '#F6F6F6',
+                fontSize: '20px',
+                textAlign: 'center',
+            }}
+        >
+            {children}
+        </div>
+    </div>
+);
+```
+
+## Выравнивание табов по умолчанию
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs>
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+            <Tab title="Таб 4">
+                <DemoContent>Контент 4</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Выравнивание табов по центру
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs hAlign="center">
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Размер табов - small
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs size="small">
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3" icon={<Balance />}>
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Размер табов - medium
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs size="medium">
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3" icon={<Balance />}>
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Размер табов - large
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs size="large">
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3" icon={<Balance />}>
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Цветовая тема табов для использования на зеленом фоне
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea outerBackgroundColor="green">
+        <Tabs size="large" tabColorTheme="green">
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3" icon={<Balance />}>
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Фиксация табов у верхней границы окна
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs sticky>
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+            <Tab title="Таб 4">
+                <DemoContent>Контент 4</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Переполнение табов
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs>
+            <Tab title="Таб с большим количеством текста 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб с большим количеством текста 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб с большим количеством текста 3">
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+            <Tab title="Таб с большим количеством текста 4">
+                <DemoContent>Контент 4</DemoContent>
+            </Tab>
+            <Tab title="Таб с большим количеством текста 6">
+                <DemoContent>Контент 6</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+## Рендер компонента-обертки для заголовка и иконки таба
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs>
+            <Tab
+                title="Таб 1"
+                icon={<Balance />}
+                renderTabWrapper={tab => <div style={{ background: '#f1f1f1'}}>{tab}</div>}
+            >
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>

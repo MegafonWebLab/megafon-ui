@@ -1,0 +1,47 @@
+
+import { Playground } from 'docz';
+import Switcher from '../Switcher';
+import { SwitcherWrapper } from './Switcher.docz.tsx';
+
+```javascript collapse=Код SwitcherWrapper
+export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
+    const [checked, setChecked] = React.useState<boolean>(false);
+
+    const handleChange = () => {
+        setChecked(!checked);
+    };
+
+    return (
+        <div style={{ padding: '20px 15px' }}>
+            {props.children({
+                checked,
+                onChange: handleChange,
+            })}
+        </div>
+    );
+};
+```
+
+## Доступное взаимодейтвие с компонентом
+
+<Playground>
+    <SwitcherWrapper>
+        {({ checked, onChange }) => <Switcher checked={checked} onChange={onChange} />}
+    </SwitcherWrapper>
+</Playground>
+
+## Недоступное взаимодействие с компонентом
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher disabled onChange={onChange} />}
+    </SwitcherWrapper>
+</Playground>
+
+## Недоступное взаимодействие с компонентом + состояние checked
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher checked disabled onChange={onChange} />}
+    </SwitcherWrapper>
+</Playground>

@@ -1,0 +1,401 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@root: e('.mfui-beta-container');
+@k1: e('.mfui-beta-video-banner');
+@k2: e('.mfui-beta-title-description-box');
+@k3: e('.mfui-beta-benefits-icons');
+@k4: e('.mfui-beta-benefits-pictures');
+@k5: e('.mfui-beta-cards-box');
+@k6: e('.mfui-beta-carousel-box');
+@k7: e('.mfui-beta-video-block');
+@k8: e('.mfui-beta-tabs-box');
+@k9: e('.mfui-beta-partners');
+@k10: e('.mfui-beta-instructions');
+@k11: e('.mfui-beta-property');
+@k12: e('.mfui-beta-table');
+@k13: e('.mfui-beta-accordion-box');
+@k14: e('.mfui-beta-button-link-box');
+@k15: e('.mfui-beta-download-links');
+@k16: e('.mfui-beta-text-box');
+@k17: e('.mfui-beta-picture-with-description');
+@k18: e('.mfui-beta-store-banner');
+@k19: e('.mfui-beta-button-banner');
+@k20: e('.mfui-beta-steps');
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19, @k20;
+
+@color-modificator: e('&_bg-color_');
+@color-default: e('default');
+@color-light-gray: e('light-gray');
+@color-gray: e('gray');
+@color-green: e('green');
+@color-purple: e('purple');
+@colors: @color-default, @color-light-gray, @color-gray, @color-green, @color-purple;
+
+@small: 32px;
+@medium: 40px;
+@big: 48px;
+@large: 56px;
+
+.disableMarginTop() {
+    margin-top: 0 !important;
+}
+
+.paddingTop() {
+    padding-top: @contentVerticalIndentDesktop;
+
+    @media @mobileB {
+        padding-top: @contentVerticalIndentMobileB;
+    }
+
+    @media @mobileSM {
+        padding-top: @contentVerticalIndentMobileSM;
+    }
+}
+
+.generateComponentsMargins(@margin, @root, @minValue, @maxValue, @i:1) when (@i <= length(@components)) {
+    & when (@i >= @minValue) and (@i <= @maxValue) {
+        @selector: extract(@components, @i);
+
+        @{root} + @{selector} {
+            margin-top: @margin;
+        }
+    }
+
+    .generateComponentsMargins(@margin, @root, @minValue, @maxValue, (@i + 1));
+}
+
+.generateInnerTabsMargins(@margin, @minValue, @maxValue, @i:1) when (@i <= length(@components)) {
+    & when (@i >= @minValue) and (@i <= @maxValue) {
+        @selector: extract(@components, @i);
+
+        @{k8} @{selector}:first-child {
+            margin-top: @margin;
+        }
+    }
+
+    .generateInnerTabsMargins(@margin, @minValue, @maxValue, (@i + 1));
+}
+
+.generateOneContainerColorPaddingTop(@index, @colors, @i:1) when (@i <= length(@colors)) {
+    @rootColor: extract(@colors, @index);
+    @currentColor: extract(@colors, @i);
+
+    & when not (@rootColor = @currentColor) {
+        @{color-modificator}@{rootColor} + @{color-modificator}@{currentColor} {
+            .paddingTop();
+        }
+    }
+
+    .generateOneContainerColorPaddingTop(@index, @colors, (@i + 1));
+}
+
+.generateAllContainersColorsPaddingTop(@colors, @i:1) when (@i <= length(@colors)) {
+    .generateOneContainerColorPaddingTop(@i, @colors);
+    .generateAllContainersColorsPaddingTop(@colors, (@i + 1));
+}
+
+@{root} {
+    padding-bottom: @contentVerticalIndentDesktop;
+
+    @media @mobileB {
+        padding-bottom: @contentVerticalIndentMobileB;
+    }
+
+    @media @mobileSM {
+        padding-bottom: @contentVerticalIndentMobileSM;
+    }
+
+    @{color-modificator}@{color-default} {
+        background-color: @clearWhite;
+    }
+
+    @{color-modificator}@{color-light-gray} {
+        background-color: @spbSky0;
+    }
+
+    @{color-modificator}@{color-gray} {
+        background-color: @spbSky1;
+    }
+
+    @{color-modificator}@{color-green} {
+        background-color: @green;
+    }
+
+    @{color-modificator}@{color-purple} {
+        background-color: @purple;
+    }
+
+    .generateAllContainersColorsPaddingTop(@colors);
+
+    // k2(title-description-box)
+
+    .generateComponentsMargins(@large, @k2, 3, 17);
+    .generateComponentsMargins(@small, @k2, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k2, 3, 17);
+        .generateComponentsMargins(@small, @k2, 14, 15);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k2, 3 ,17);
+        .generateComponentsMargins(@small, @k2, 14, 15);
+    }
+
+    // k3(benefits-icons)
+
+    .generateComponentsMargins(@large, @k3, 4, 20);
+    .generateComponentsMargins(@big, @k3, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k3, 4, 20);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k3, 4, 20);
+    }
+
+    // k4(benefits-pictures);
+
+    .generateComponentsMargins(@large, @k4, 3, 20);
+    .generateComponentsMargins(@big, @k4, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k4, 3, 20);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k4, 3, 20);
+    }
+
+    @{k4} + @{k4} {
+        .disableMarginTop();
+    }
+
+    // k5(cards-box)
+
+    .generateComponentsMargins(@large, @k5, 3, 20);
+    .generateComponentsMargins(@big, @k5, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k5, 3, 20);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k5, 3, 20);
+    }
+
+    @{k5} + @{k5} {
+        .disableMarginTop();
+    }
+
+    // k6(carousel-box)
+
+    .generateComponentsMargins(@large, @k6, 3, 20);
+    .generateComponentsMargins(@big, @k6, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k6, 3, 20);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k6, 3, 20);
+    }
+
+    @{k6} + @{k6} {
+        .disableMarginTop();
+    }
+
+    // k7(video-block)
+
+    .generateComponentsMargins(@large, @k7, 3, 20);
+    .generateComponentsMargins(@small, @k7, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k7, 3, 20);
+        .generateComponentsMargins(@small, @k7, 14, 15);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k7, 3, 20);
+        .generateComponentsMargins(@small, @k7, 14, 15);
+    }
+
+    // k8(tabs-box)
+
+    @{k8} + @{k14} {
+        margin-top: @big;
+
+        @media @mobileSM {
+            margin-top: @small;
+        }
+    }
+
+    @{k8} + @{k16} {
+        margin-top: @large;
+
+        @media @mobileB {
+            margin-top: @big;
+        }
+
+        @media @mobileSM {
+            margin-top: @medium;
+        }
+    }
+
+    .generateInnerTabsMargins(@big, 3, 13);
+    .generateInnerTabsMargins(@big, 16, 19);
+
+    @media @mobileSM {
+        .generateInnerTabsMargins(@small, 3, 13);
+        .generateInnerTabsMargins(@small, 16, 19);
+    }
+
+    @{k8} @{k8} {
+        .disableMarginTop();
+    }
+
+    // k9(partners)
+
+    @{k9} + @{k14} {
+        margin-top: @big;
+    }
+
+    .generateComponentsMargins(@large, @k9, 3, 20);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k9, 3, 20);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k9, 3, 20);
+    }
+
+    @{k9} + @{k9},
+    @{k9} + @{k15} {
+        .disableMarginTop();
+    }
+
+    // k10(instructions)
+
+    .generateComponentsMargins(@large, @k10, 3, 20);
+
+    @media @mobile {
+        .generateComponentsMargins(@big, @k10, 3, 20);
+    }
+
+    @{k10} + @{k14},
+    @{k10} + @{k15} {
+        .disableMarginTop();
+    }
+
+    // k11(property)
+
+    .generateComponentsMargins(@large, @k11, 3, 20);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k11, 3, 20);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k11, 3, 20);
+    }
+
+    @{k11} + @{k14},
+    @{k11} + @{k15} {
+        .disableMarginTop();
+    }
+
+    // k12(table)
+
+    .generateComponentsMargins(@large, @k12, 3, 20);
+    .generateComponentsMargins(@small, @k12, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k12, 3, 20);
+        .generateComponentsMargins(@small, @k12, 14, 15);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k12, 3, 20);
+        .generateComponentsMargins(@small, @k12, 14, 15);
+    }
+
+    // k13(accordion-box)
+
+    @{k13} + @{k14} {
+        margin-top: @small;
+    }
+
+    @{k13} + @{k16} {
+        margin-top: @large;
+
+        @media @mobileB {
+            margin-top: @big;
+        }
+
+        @media @mobileSM {
+            margin-top: @medium;
+        }
+    }
+
+    // k14(button-link-box)
+
+    @{k14} + @{k16} {
+        margin-top: @large;
+
+        @media @mobileB {
+            margin-top: @big;
+        }
+
+        @media @mobileSM {
+            margin-top: @medium;
+        }
+    }
+
+    // k16(text-box)
+
+    .generateComponentsMargins(@large, @k16, 3, 20);
+    .generateComponentsMargins(@small, @k16, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k16, 3, 20);
+        .generateComponentsMargins(@small, @k16, 14, 15);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k16, 3, 20);
+        .generateComponentsMargins(@small, @k16, 14, 15);
+    }
+
+    // k17(picture-with-description)
+
+    .generateComponentsMargins(@large, @k17, 3, 20);
+    .generateComponentsMargins(@small, @k17, 14, 15);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k17, 3, 20);
+        .generateComponentsMargins(@small, @k17, 14, 15);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k17, 3, 20);
+        .generateComponentsMargins(@small, @k17, 14, 15);
+    }
+
+    // k20(steps)
+    .generateComponentsMargins(@large, @k20, 3, 19);
+
+    @{k20} + @{k14},
+    @{k20} + @{k15} {
+        .disableMarginTop();
+    }
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k20, 3, 19);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k20, 3, 19);
+    }
+}

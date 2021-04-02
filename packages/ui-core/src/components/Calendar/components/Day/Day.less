@@ -1,0 +1,143 @@
+@import '~styles/base.less';
+
+@b: e( '.mfui-beta-day');
+
+@{b} {
+    position: relative;
+    .small();
+    width: 32px;
+    height: 32px;
+    padding: 0 10px 8px 0;
+    line-height: 24px;
+    color: @freshAsphalt;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    box-sizing: content-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    appearance: none;
+    user-select: none;
+
+    &:last-child {
+        padding-right: 0px;
+    }
+
+    &_disabled {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.3;
+    }
+
+    &_active,
+    &:not(:disabled):not(&_active):focus
+    {
+        color: @clearWhite;
+    }
+
+    &:not(:disabled):not(&_active):hover:after,
+    &:not(:disabled):not(&_active):focus:after,
+    &_active:after
+    {
+        content: '';
+        position: absolute;
+        background-color: @spbSky0;
+        color: @freshAsphalt;
+        border-radius: 50% !important;
+        width: 32px;
+        height: 32px;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+
+    &:not(:disabled):not(&_active):hover:after {
+        background-color: @spbSky0;
+        color: @freshAsphalt;
+    }
+
+    &:not(:disabled):not(&_active):focus:after,
+    &_active:after
+    {
+        background-color: @green;
+    }
+    
+    &_active + &_active:before,
+    &_between:hover + &:not(&_monday)&_active:before
+    {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: @spbSky1;
+        height: 32px;
+        width: 32px;
+        top: 0;
+        left: -22px;
+        z-index: -1;
+    }
+
+    &_between {
+        position: relative;
+        border-radius: 0;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: -22px;
+            padding: 0 20px;
+            height: 32px;
+            background-color: @spbSky1;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -16px;
+            width: 40px;
+            height: 32px;
+            background-color: @spbSky1;
+        }
+    }
+
+    &_sunday, &_last {
+        border-radius: 50%;
+
+        &:after {
+            width: 32px;
+            right: 10px;
+            border-radius: 50%;
+        }
+    }
+
+    &_last:after {
+        right: 0;
+    }
+
+    &_monday, &_first {
+        border-radius: 50%;
+
+        &:before {
+            padding: 0;
+            border-radius: 50%;
+            width: 32px;
+            left: 0px;
+        }
+    }
+
+    &_sunday&_first {
+        border-radius: 50%;
+    }
+
+    &__label {
+        position: relative;
+        z-index: 99;
+    }
+}

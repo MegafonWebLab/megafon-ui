@@ -1,0 +1,45 @@
+import { Playground } from 'docz';
+import { ContentArea } from "@megafon/ui-core";
+import TabsBox from '../TabsBox';
+import TabBox from '../TabBox';
+import { DemoContent } from './TabsBox.docz';
+
+```javascript collapse=Демо данные
+export const DemoContent = ({ children }) => (
+    <div
+        style={{
+            padding: '0 0 20px 0',
+        }}
+    >
+        <div
+            style={{
+                padding: '80px 0',
+                background: '#f1f1f1',
+                fontSize: '20px',
+                textAlign: 'center',
+            }}
+        >
+            {children}
+        </div>
+    </div>
+);
+```
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <TabsBox>
+            <TabBox title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </TabBox>
+            <TabBox title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </TabBox>
+            <TabBox title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </TabBox>
+            <TabBox title="Таб 4">
+                <DemoContent>Контент 4</DemoContent>
+            </TabBox>
+        </TabsBox>
+    </ContentArea>
+</Playground>

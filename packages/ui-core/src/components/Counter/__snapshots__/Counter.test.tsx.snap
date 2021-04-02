@@ -2,66 +2,61 @@
 
 exports[`<Counter /> layout renders Counter 1`] = `
 <div
-  className="counter"
+  className="mfui-beta-counter"
 >
   <button
-    className="counter__btn counter__btn_left"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_left"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="counter__minus"
-    >
-      –
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
   <div
-    className="counter__input-box"
+    className="mfui-beta-counter__input-box"
   >
     <input
-      className="counter__input"
+      className="mfui-beta-counter__input"
+      disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
       value={0}
     />
   </div>
   <button
-    className="counter__btn counter__btn_right"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_right"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="counter__plus"
-    >
-      +
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
 </div>
 `;
 
 exports[`<Counter /> layout renders Counter with props 1`] = `
 <div
-  className="counter counter_disabled test-class"
+  className="mfui-beta-counter mfui-beta-counter_disabled class-name root-class"
 >
   <button
-    className="counter__btn counter__btn_left"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_left button-minus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="counter__minus"
-    >
-      –
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
   <div
-    className="counter__input-box"
+    className="mfui-beta-counter__input-box"
   >
     <input
-      className="counter__input"
+      className="mfui-beta-counter__input input-class"
       disabled={true}
       onBlur={[Function]}
       onChange={[Function]}
@@ -69,16 +64,14 @@ exports[`<Counter /> layout renders Counter with props 1`] = `
     />
   </div>
   <button
-    className="counter__btn counter__btn_right"
+    className="mfui-beta-counter__btn mfui-beta-counter__btn_right button-plus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
-    <span
-      className="counter__plus"
-    >
-      +
-    </span>
+    <test-file-stub
+      className="mfui-beta-counter__icon"
+    />
   </button>
 </div>
 `;

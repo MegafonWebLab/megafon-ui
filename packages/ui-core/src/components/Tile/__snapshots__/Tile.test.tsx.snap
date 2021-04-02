@@ -22,6 +22,16 @@ exports[`<Tile /> handlers should render shadow on mouse leave 1`] = `
 </div>
 `;
 
+exports[`<Tile /> snapshots it renders with data attributes 1`] = `
+<div
+  className="mfui-beta-tile mfui-beta-tile_theme_light mfui-beta-tile_radius_default mfui-beta-tile_shadow_zero"
+  data-test="test"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+/>
+`;
+
 exports[`<Tile /> snapshots renders component 1`] = `
 <div
   className="mfui-beta-tile mfui-beta-tile_theme_light mfui-beta-tile_radius_default mfui-beta-tile_shadow_zero"

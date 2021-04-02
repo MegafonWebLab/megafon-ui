@@ -5,7 +5,6 @@ import './Select.less';
 import cnCreate from 'utils/cnCreate';
 import detectTouch from 'utils/detectTouch';
 import InputLabel from 'components/InputLabel/InputLabel';
-import Paragraph from 'components/Paragraph/Paragraph';
 import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const Verification = {
@@ -22,7 +21,7 @@ export const SelectTypes = {
 
 type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 
-export type SelectItemValueType = number | string;
+export type SelectItemValueType = number | string | undefined;
 
 export interface ISelectItem {
     title: string;
@@ -30,40 +29,47 @@ export interface ISelectItem {
     view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
 }
 
-interface ISelectClasses {
-    control?: string;
-    root?: string;
-}
-
 export interface ISelectProps extends IDataAttributes {
-    /** Select type */
+    /** Тип компонента */
     type?: SelectTypesType;
-    /** Field title */
+    /** Заголовок поля */
     label?: string;
-    /** Html id attribute for label */
+    /** HTML идентификатор для заголовка поля */
     labelId?: string;
-    /** Current selected item */
+    /** Текущий выбранный элемент селекта */
     currentValue?: SelectItemValueType;
-    /** Verification */
+    /** Результат проверки данных */
     verification?: VerificationType;
-    /** Notice text */
+    /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
-    /** isDisabled field */
+    /** Управление возможностью взаимодействия с компонентом */
     isDisabled?: boolean;
-    /** Makes the field required. */
+    /** Делает поле обязательным */
     required?: boolean;
-    /** Placeholder */
+    /** Текст внутри поля по умолчанию */
     placeholder?: string;
-    /** Text in the absence of search results */
+    /** Текст при отсутствии результатов поиска */
     notFoundText?: string;
-    /** Array of objects to be used for options rendering */
+    /** Массив элементов селекта */
     items: ISelectItem[];
-    /** Custom classname */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Object for the custom class */
-    classes?: ISelectClasses;
-    /** Select item handler */
-    onSelect?: (e: React.MouseEvent<HTMLDivElement>, dataItem: ISelectItem) => void;
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        root?: string;
+        control?: string;
+        list?: string;
+        listItem?: string;
+        listItemTitle?: string;
+    };
+    /** Обработчик выбора элемента селекта */
+    onSelect?: (
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
+    ) => void;
+    /** Обработчик при отркытом селекте */
+    onOpened?: () => void;
+    /** Обработчик при закрытом селекте */
+    onClosed?: () => void;
 }
 
 interface ISelectState {
@@ -89,8 +95,11 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         notFoundText: PropTypes.string,
         className: PropTypes.string,
         classes: PropTypes.shape({
-            control: PropTypes.string,
             root: PropTypes.string,
+            control: PropTypes.string,
+            list: PropTypes.string,
+            listItem: PropTypes.string,
+            listItemTitle: PropTypes.string,
         }),
         items: PropTypes.arrayOf(
             PropTypes.shape({
@@ -105,10 +114,14 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         ),
         onSelect: PropTypes.func,
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+        onOpened: PropTypes.func,
+        onClosed: PropTypes.func,
     };
 
     static defaultProps: Partial<ISelectProps> = {
-        type: SelectTypes.CLASSIC,
+        isDisabled: false,
+        required: false,
+        type: 'classic',
         notFoundText: 'Ничего не нашлось',
         items: [],
     };
@@ -130,7 +143,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         });
 
-        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true });
+        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true, activeIndex: 0 });
     }, 250);
 
     constructor(props: ISelectProps) {
@@ -146,8 +159,27 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.itemsNodeList = [];
     }
 
-    componentDidUpdate() {
+    componentDidMount() {
+        const { currentValue } = this.props;
+        const { filteredItems } = this.state;
+        const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
+
+        if (currentIndex !== -1) {
+            this.setState({
+                activeIndex: currentIndex,
+                inputValue: filteredItems[currentIndex].title,
+                comparableInputValue: filteredItems[currentIndex].title,
+            });
+        }
+    }
+
+    componentDidUpdate({ items: prevItems }: ISelectProps) {
+        const { items } = this.props;
         const { isOpened } = this.state;
+
+        if (!this.isEqualItems(items, prevItems)) {
+            this.setState({ filteredItems: items });
+        }
 
         if (isOpened) {
             document.addEventListener('click', this.handleClickOutside);
@@ -162,6 +194,31 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         document.removeEventListener('click', this.handleClickOutside);
     }
 
+    isEqualItems = (items: ISelectItem[], prevItems: ISelectItem[]) => {
+        if (items.length !== prevItems.length) {
+            return false;
+        }
+
+        return items.every((item, i) => {
+            const isEqualValue = item.value === prevItems[i].value;
+            const isEqualTitle = item.title === prevItems[i].title;
+
+            return isEqualValue && isEqualTitle;
+        });
+    }
+
+    handleOpened = () => {
+        const { onOpened } = this.props;
+
+        onOpened && onOpened();
+    }
+
+    handleClosed = () => {
+        const { onClosed } = this.props;
+
+        onClosed && onClosed();
+    }
+
     handleClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
@@ -169,16 +226,30 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return;
         }
 
-        this.setState({ isOpened: false });
+        this.setState({ isOpened: false }, () => {
+            if (!this.state.isOpened) {
+                this.handleClosed();
+            }
+        });
     }
 
     handleOpenDropdown = (): void => {
-        this.setState((state) => ({ isOpened: !state.isOpened }));
+        this.setState((state) => ({ isOpened: !state.isOpened }), () => {
+            if (this.state.isOpened) {
+                this.handleOpened();
+            } else {
+                this.handleClosed();
+            }
+        });
     }
 
-    handleClickItem = (itemValue: SelectItemValueType) => (e: React.MouseEvent<HTMLDivElement>): void => {
+    handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
-        const item = items.find(elem => elem.value === itemValue);
+        const { activeIndex, filteredItems } = this.state;
+
+        const currentItem = filteredItems[activeIndex].value;
+
+        const item = filteredItems.find(elem => elem.value === currentItem);
 
         if (!item) {
             return;
@@ -186,9 +257,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
         const { title } = item;
 
-        this.setState({isOpened: false, inputValue: title });
+        this.setState({isOpened: false, inputValue: title, comparableInputValue: title, filteredItems: items });
 
         onSelect && onSelect(e, item);
+        this.handleClosed();
     }
 
     handleHoverItem = (index: number) => (e: React.MouseEvent<HTMLDivElement>): void => {
@@ -197,20 +269,17 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState({ activeIndex: index });
     }
 
-    handleClickCombobox = (e: React.FormEvent<EventTarget>): void => {
+    handleComboboxFocus = (e: React.FocusEvent<HTMLInputElement>): void => {
         const { isOpened, filteredItems } = this.state;
 
         e.stopPropagation();
 
-        if (!(e.target instanceof HTMLInputElement)) {
-            return;
-        }
+        this.setState((state) => ({ isOpened: !state.isOpened }));
+        this.handleOpened();
 
         if (!isOpened && filteredItems) {
             e.target.select();
         }
-
-        this.setState((state) => ({ isOpened: !state.isOpened }));
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -222,14 +291,14 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
-        const { activeIndex, isOpened } = this.state;
-        const { items } = this.props;
+        const { activeIndex, isOpened, filteredItems } = this.state;
+        const { isDisabled } = this.props;
 
-        if (items.length === 0) {
+        if (filteredItems.length === 0 || isDisabled) {
             return true;
         }
 
-        if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
+        if (e.key === 'ArrowDown' && isOpened && activeIndex < filteredItems.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
                 this.scrollList(this.state.activeIndex);
             });
@@ -238,7 +307,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
 
             return false;
         }
-        if (e.key === 'ArrowUp' && activeIndex > 0) {
+        if (e.key === 'ArrowUp' && isOpened && activeIndex > 0) {
             this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
                 this.scrollList(this.state.activeIndex);
             });
@@ -248,12 +317,13 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return false;
         }
         if (e.key === 'Enter' && isOpened) {
-            this.itemsNodeList[activeIndex].click();
+            this.handleSelectItem(e);
 
             return false;
         }
         if (e.key === 'Enter' && !isOpened) {
             this.setState({ isOpened: true });
+            this.handleOpened();
 
             return false;
         }
@@ -307,16 +377,16 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         const stringFragments = title.split(RegExp(`(${comparableInputValue})`, 'ig'));
 
         return (
-            <Paragraph hasMargin={false}>
+            <>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
-                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase())
+                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase() && fragment !== '')
                             ? <span className={cn('highlighted-fragment')}>{fragment}</span>
                             : fragment
                         }
                     </React.Fragment>
                 ))}
-            </Paragraph>
+            </>
         );
     }
 
@@ -355,7 +425,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         return (
             <input
                 className={cn('combobox')}
-                onClick={this.handleClickCombobox}
+                onFocus={this.handleComboboxFocus}
                 onChange={this.handleChangeCombobox}
                 type="text"
                 value={inputValue}
@@ -365,29 +435,31 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     }
 
     renderChildren() {
-        const { type, items, notFoundText } = this.props;
+        const { type, items, notFoundText, classes = {} } = this.props;
         const { filteredItems, activeIndex } = this.state;
         const currentItems = type === SelectTypes.COMBOBOX ? filteredItems : items;
 
         return (
-            <div className={cn('list')}>
+            <div className={cn('list', [classes.list])}>
                 <div className={cn('list-inner')} ref={this.getItemWrapper}>
                     {currentItems.map(({ title, value, view }, i) => (
                         <div
                             className={cn('list-item', {
                                 active: activeIndex === i,
-                            })}
+                            }, [classes.listItem])}
                             key={`${i}_${value}`}
-                            onClick={this.handleClickItem(value)}
+                            onClick={this.handleSelectItem}
                             onMouseEnter={this.handleHoverItem(i)}
                             ref={this.getNodeList}
                         >
-                            <div className={cn('item-title')}>
+                            <div className={cn('item-title', [classes.listItemTitle])}>
                                 {this.highlightString(title, view)}
                             </div>
                         </div>
                     ))}
-                    {!currentItems.length && <div className={cn('not-found')}>{notFoundText}</div>}
+                    {type === SelectTypes.COMBOBOX && !currentItems.length && (
+                        <div className={cn('not-found')}>{notFoundText}</div>
+                    )}
                 </div>
             </div>
         );

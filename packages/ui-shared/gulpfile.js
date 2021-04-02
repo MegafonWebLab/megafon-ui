@@ -6,6 +6,7 @@ const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
 const gulpLess = require('gulp-less');
 const svgmin = require('gulp-svgmin');
+const imagemin = require('gulp-imagemin');
 const LessAutoprefix = require('less-plugin-autoprefix');
 const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 const merge = require('merge2');
@@ -106,6 +107,14 @@ gulp.task('svg', () => {
         .pipe(dest(dist));
 });
 
+gulp.task('image', () => {
+    return gulp
+        .src('src/**/img/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest(esPath))
+        .pipe(gulp.dest(libPath));
+});
+
 gulp.task('less', () => {
     return gulp
         .src('src/**/*.less')
@@ -172,7 +181,7 @@ gulp.task(
     gulp.series(
         gulp.parallel('clean', 'clean:index'),
         'main',
-        gulp.parallel('ts', 'less', 'svg'),
+        gulp.parallel('ts', 'less', 'svg', 'image'),
         'clean:index'
     )
 );
@@ -232,7 +241,6 @@ const inlineSvgToReact = () => changePipe(async function (file, encoding) {
 
             try {
                 code = await svgr(data, {
-                    icon: true,
                     svgo: true,
                     svgoConfig: {
                         plugins: [

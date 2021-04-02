@@ -2,12 +2,14 @@
 
 exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
 <div
-  className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class"
+  className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class root-class"
+  data-test="value"
 >
   <div
     className="mfui-beta-button-link-box__row"
   >
     <Button
+      className="button-class"
       href="button-url"
       theme="purple"
     >
@@ -18,6 +20,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
     className="mfui-beta-button-link-box__row"
   >
     <TextLink
+      className="link-class"
       color="blue"
       href="link-url"
       underlineStyle="solid"
@@ -31,12 +34,14 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
 
 exports[`<ButtonLinkBox /> renders ButtonLinkBox without button 1`] = `
 <div
-  className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class"
+  className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class root-class"
+  data-test="value"
 >
   <div
     className="mfui-beta-button-link-box__row"
   >
     <TextLink
+      className="link-class"
       color="blue"
       href="link-url"
       underlineStyle="solid"
@@ -50,12 +55,14 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox without button 1`] = `
 
 exports[`<ButtonLinkBox /> renders ButtonLinkBox without link 1`] = `
 <div
-  className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class"
+  className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class root-class"
+  data-test="value"
 >
   <div
     className="mfui-beta-button-link-box__row"
   >
     <Button
+      className="button-class"
       href="button-url"
       theme="purple"
     >

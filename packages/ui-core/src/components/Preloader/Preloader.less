@@ -21,26 +21,22 @@
 
     // mod: size
 
-    &_size_small {
-        @{b}__item {
-            width: 6px;
-            height: 6px;
-        }
+    .generateSize(all);
 
-        @{b}__item:not(:last-child) {
-            margin-right: 3px;
-        }
+    @media @desktopMU {
+        .generateSize(wide);
     }
 
-    &_size_medium {
-        @{b}__item {
-            width: 12px;
-            height: 12px;
-        }
+    @media @desktop {
+        .generateSize(desktop);
+    }
 
-        @{b}__item:not(:last-child) {
-            margin-right: 6px;
-        }
+    @media @mobileB {
+        .generateSize(tablet);
+    }
+
+    @media @mobileSM {
+        .generateSize(mobile);
     }
 
     // mod: color
@@ -133,6 +129,30 @@
         100% {
             transform: scale(1);
             opacity: 0.35;
+        }
+    }
+}
+
+.generateSize(@resolution) {
+    &_size-@{resolution}_small {
+        @{b}__item {
+            width: 6px;
+            height: 6px;
+        }
+
+        @{b}__item:not(:last-child) {
+            margin-right: 3px;
+        }
+    }
+
+    &_size-@{resolution}_medium {
+        @{b}__item {
+            width: 12px;
+            height: 12px;
+        }
+
+        @{b}__item:not(:last-child) {
+            margin-right: 6px;
         }
     }
 }

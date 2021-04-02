@@ -1,33 +1,41 @@
 import * as React from 'react';
+import * as PropTypes from 'prop-types';
 import cnCreate from 'utils/cnCreate';
 import './Counter.less';
+import IconMinus from 'icons/System/16/Minus_16.svg';
+import IconPlus from 'icons/System/16/Plus_16.svg';
 
-type Props = {
-    /** Custom class name */
-    className?: string;
-    /** Initial number in counter */
+export interface ICounterProps {
+    /** Начальное значение */
     initialValue?: number;
-    /** Minimal allowed value */
+    /** Минимальное доступное значение */
     min?: number;
-    /** Maximum allowed value */
+    /** Максимальное доступное значение */
     max?: number;
-    /** Disabled state of counter */
+    /** Запретить взаимодействие с компонентом */
     isDisabled?: boolean;
-    /** onChange handler */
+    /** Обработчик изменения значения 'value' */
     onChange?: (value: number) => void;
-};
+    /** Дополнительный класс для корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        buttonMinus?: string;
+        buttonPlus?: string;
+        input?: string;
+    };
+}
 
-const DEFAULT_MIN_VALUE = 0;
-const DEFAULT_MAX_VALUE = 999999;
-
-const cn = cnCreate('counter');
-const Counter: React.FC<Props> = ({
-    className,
+const cn = cnCreate('mfui-beta-counter');
+const Counter: React.FC<ICounterProps> = ({
     initialValue,
-    max = DEFAULT_MAX_VALUE,
-    min = DEFAULT_MIN_VALUE,
-    isDisabled,
+    max = 999999,
+    min = 0,
+    isDisabled = false,
     onChange,
+    className,
+    classes = {},
 }) => {
     const currentInitialValue = initialValue || min;
     const [counter, setCounter] = React.useState(currentInitialValue);
@@ -36,7 +44,7 @@ const Counter: React.FC<Props> = ({
         setCounter(currentInitialValue);
     }, [currentInitialValue]);
 
-    function handleValueChange(value: number) {
+    const handleValueChange = React.useCallback((value: number) => {
         setCounter(value);
 
         if (value < min) {
@@ -50,17 +58,17 @@ const Counter: React.FC<Props> = ({
         if (value >= min && value <= max) {
             onChange && onChange(value);
         }
-    }
+    }, [min, max, onChange]);
 
-    function handleMinusClick(): void {
+    const handleMinusClick = React.useCallback((): void => {
         handleValueChange(counter - 1);
-    }
+    }, [handleValueChange, counter]);
 
-    function handlePlusClick(): void {
+    const handlePlusClick = React.useCallback((): void => {
         handleValueChange(counter + 1);
-    }
+    }, [handleValueChange, counter]);
 
-    function handleInputChange(e: React.ChangeEvent<HTMLInputElement>): void {
+    const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>): void => {
         const pattern = /^[0-9\b]+$/;
         const { value } = e.target;
 
@@ -69,9 +77,9 @@ const Counter: React.FC<Props> = ({
         }
 
         handleValueChange(Number(value));
-    }
+    }, [handleValueChange]);
 
-    function handleInputBlur(e: React.FocusEvent<HTMLInputElement>): void {
+    const handleInputBlur = React.useCallback((e: React.FocusEvent<HTMLInputElement>): void => {
         const { value } = e.target;
         const numberValue = Number(value);
 
@@ -86,21 +94,21 @@ const Counter: React.FC<Props> = ({
 
             return;
         }
-    }
+    }, [handleValueChange, min, max]);
 
     return (
-        <div className={cn({ disabled: isDisabled }, className)}>
+        <div className={cn({ disabled: isDisabled }, [className, classes.root])}>
             <button
-                className={cn('btn', { left: true })}
+                className={cn('btn', { left: true }, classes.buttonMinus)}
                 type="button"
                 disabled={isDisabled || counter <= min}
                 onClick={handleMinusClick}
             >
-                <span className={cn('minus')}>–</span>
+                <IconMinus className={cn('icon')} />
             </button>
             <div className={cn('input-box')}>
                 <input
-                    className={cn('input')}
+                    className={cn('input', classes.input)}
                     value={counter}
                     onChange={handleInputChange}
                     onBlur={handleInputBlur}
@@ -108,15 +116,30 @@ const Counter: React.FC<Props> = ({
                 />
             </div>
             <button
-                className={cn('btn', { right: true })}
+                className={cn('btn', { right: true }, classes.buttonPlus)}
                 type="button"
                 disabled={isDisabled || counter >= max}
                 onClick={handlePlusClick}
             >
-                <span className={cn('plus')}>+</span>
+                <IconPlus className={cn('icon')} />
             </button>
         </div>
     );
+};
+
+Counter.propTypes = {
+    initialValue: PropTypes.number,
+    min: PropTypes.number,
+    max: PropTypes.number,
+    isDisabled: PropTypes.bool,
+    onChange: PropTypes.func,
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        buttonMinus: PropTypes.string,
+        buttonPlus: PropTypes.string,
+        input: PropTypes.string,
+    }),
 };
 
 export default Counter;

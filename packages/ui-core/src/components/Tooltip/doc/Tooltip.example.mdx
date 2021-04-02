@@ -1,0 +1,522 @@
+import { Playground } from 'docz';
+import Tooltip, { Placement, TriggerEvent } from '../Tooltip';
+import Paragraph from 'components/Paragraph/Paragraph';
+import TextField from 'components/TextField/TextField';
+import TextLink from 'components/TextLink/TextLink';
+import Button from 'components/Button/Button';
+import Select from 'components/Select/Select';
+import {
+    demoWrapperBlockStyles,
+    DemoTooltipWithTriggerWrapper,
+    DemoSelectTriggerWrapper,
+    DemoControlledTooltipWrapper,
+    triggerEvents,
+} from './Tooltip.docz';
+
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
+export const DemoTooltipWithTriggerWrapper = ({ children }) => {
+    const triggerElement = React.useRef<HTMLElement | null>(null);
+
+    return children({ triggerElement })
+};
+```
+
+## Тип взаимодействия с триггер-элементом для показа тултипа
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Навести</Button>
+                </span>
+                <Tooltip triggerElement={triggerElement}>
+                    Эмуляция при наведении
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Кликнуть</Button>
+                </span>
+                <Tooltip
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                >
+                    Эмуляция при клике
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+## Позиционирование относительно триггер-элемента
+
+<Playground style={{
+    ...demoWrapperBlockStyles,
+    gridTemplateColumns: 'auto 100px',
+    gap: 50,
+}}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Сверху
+                    </Button>
+                </span>
+                <Tooltip triggerElement={triggerElement}>
+                    Положение сверху
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Справа
+                    </Button>
+                </span>
+                <Tooltip
+                    placement="right"
+                    triggerElement={triggerElement}
+                >
+                    Положение справа
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Слева
+                    </Button>
+                </span>
+                <Tooltip
+                    placement="left"
+                    triggerElement={triggerElement}
+                >
+                    Положение слева
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Снизу
+                    </Button>
+                </span>
+                <Tooltip
+                    placement="bottom"
+                    triggerElement={triggerElement}
+                >
+                    Положение снизу
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+##  Размер отступов от контента
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <Paragraph hasMargin={false}>
+                    Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям
+                    <span ref={triggerElement}>
+                        <TextLink>технологиям</TextLink>
+                    </span>
+                    {' '}Ethernet, Docsis.
+                </Paragraph>
+                <Tooltip triggerElement={triggerElement}>
+                    <Paragraph hasMargin={false}>
+                        Монтажник проведёт все необходимые работы под ключ.(размер текста больше)
+                    </Paragraph>
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <Paragraph hasMargin={false}>
+                    Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям
+                    <span ref={triggerElement}>
+                        <TextLink>технологиям</TextLink>
+                    </span>
+                    {' '}Ethernet, Docsis.
+                </Paragraph>
+                <Tooltip size="small" triggerElement={triggerElement}>
+                    <Paragraph hasMargin={false}>
+                        Монтажник проведёт все необходимые работы под ключ.(размер текста меньше)
+                    </Paragraph>
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+## Размер тултипа с установленной шириной контента
+
+<Playground style={{
+    ...demoWrapperBlockStyles,
+    gridTemplateColumns: 'auto',
+    gap: 50
+}}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    Тултип будет такой же длины как контент
+                </span>
+                <Tooltip
+                    placement="bottom"
+                    isOpened={true}
+                    triggerEvent="controlled"
+                    triggerElement={triggerElement}
+                >
+                    <div style={{ width: '100%', maxWidth: 460 }}>
+                        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                        Монтажник проведёт все необходимые работы под ключ.
+                    </div>
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+## Размер тултипа при относительном позиционировании родительского элемента
+
+<Playground style={{
+    ...demoWrapperBlockStyles,
+    gridTemplateColumns: 'auto',
+    gap: 50,
+}}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <div style={{ width: 280, position: 'relative' }}>
+                <span ref={triggerElement}>
+                    Тултип будет такой же длины как родитель
+                </span>
+                <Tooltip
+                    placement="bottom"
+                    isOpened={true}
+                    triggerEvent="controlled"
+                    triggerElement={triggerElement}
+                >
+                    <div>
+                        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                        Монтажник проведёт все необходимые работы под ключ.
+                    </div>
+                </Tooltip>
+            </div>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+## Смена типа взаимодействия с триггер-элементом при первом наведении мыши на элемент, когда тултип открыт
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({
+            triggerElement,
+            triggerEvent,
+            handleTriggerChange,
+        }) => (
+            <>
+                <span
+                    onMouseEnter={() => handleTriggerChange(TriggerEvent.HOVER)}
+                    ref={triggerElement}
+                >
+                    <Button fullWidth>Текущая эмуляция - {triggerEvent}</Button>
+                </span>
+                <Tooltip
+                    isOpened={true}
+                    triggerEvent={triggerEvent}
+                    triggerElement={triggerElement}
+                >
+                    {triggerEvent}
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({
+            triggerElement,
+            triggerEvent,
+            handleTriggerChange,
+        }) => (
+            <>
+                <span
+                    onMouseEnter={() => handleTriggerChange(TriggerEvent.CLICK)}
+                    ref={triggerElement}
+                >
+                    <Button fullWidth>Текущая эмуляция - {triggerEvent}</Button>
+                </span>
+                <Tooltip
+                    isOpened={true}
+                    triggerEvent={triggerEvent}
+                    triggerElement={triggerElement}
+                >
+                    {triggerEvent}
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
+export const DemoTooltipWithTriggerWrapper = ({ children }) => {
+    const triggerElement = React.useRef<HTMLElement | null>(null);
+    const [isTriggered, setIsTriggered] = React.useState(false);
+    const [triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
+
+    const handleTriggerChange = React.useCallback((trigger) => {
+        if (!isTriggered) {
+            setIsTriggered(true);
+            setTriggerEvent(trigger);
+        }
+    }, [isTriggered]);
+
+    return children({
+        triggerElement,
+        triggerEvent,
+        handleTriggerChange,
+    });
+};
+```
+
+## Смена типа взаимодействия с триггер-элементом при выборе из списка
+
+<Playground style={{
+    ...demoWrapperBlockStyles,
+    gridTemplateColumns: 'auto',
+    gap: 50
+}}>
+    <DemoTooltipWithTriggerWrapper>
+        {({triggerElement}) => (
+        <DemoSelectTriggerWrapper>
+            {({ onSelect, currentValue }) => (
+                <DemoControlledTooltipWrapper isOpen={true}>
+                    {({
+                        isOpened,
+                        handleToggle
+                    }) => (
+                        <>
+                            <div>
+                                <span ref={triggerElement}>
+                                    <TextLink>Эмуляция тултипа</TextLink>
+                                </span>
+                                <Tooltip
+                                    isOpened={isOpened}
+                                    triggerEvent={currentValue}
+                                    triggerElement={triggerElement}
+                                >
+                                    {currentValue}
+                                </Tooltip>
+                            </div>
+                            <div style={{ width: 250 }}>
+                                <Select
+                                    label="Изменить эмуляцию"
+                                    onSelect={onSelect}
+                                    placeholder="Выберите эмуляцию"
+                                    items={triggerEvents}
+                                    currentValue={currentValue}
+                                />
+                            </div>
+                            <Button
+                                fullWidth
+                                onClick={handleToggle}
+                                disabled={currentValue !== TriggerEvent.CONTROLLED}
+                            >
+                                Переключение тултипа
+                            </Button>
+                        </>
+                    )}
+                </DemoControlledTooltipWrapper>
+            )}
+        </DemoSelectTriggerWrapper>
+    )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+```javascript collapse=Триггер-события
+export const triggerEvents: ISelectItem[] = [
+    {
+        value: TriggerEvent.CONTROLLED,
+        title: TriggerEvent.CONTROLLED,
+    },
+    {
+        value: TriggerEvent.HOVER,
+        title: TriggerEvent.HOVER,
+    },
+    {
+        value: TriggerEvent.CLICK,
+        title: TriggerEvent.CLICK,
+    },
+];
+```
+
+```javascript collapse=Код DemoSelectTriggerWrapper
+export const DemoSelectTriggerWrapper = ({ children }) => {
+    const { value } = triggerEvents[0];
+    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+        setCurrentValue(data.value);
+    };
+
+    return children({
+        onSelect: handleSelect,
+        currentValue: currentValue,
+    });
+};
+```
+
+```javascript collapse=Код DemoControlledTooltipWrapper
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [isOpened, setIsOpened] = React.useState(isOpen);
+    const handleToggle = () => setIsOpened(open => !open);
+
+    return children({
+        isOpened,
+        handleToggle,
+    });
+};
+```
+
+## Управление компонентом снаружи
+
+<Playground style={{
+    ...demoWrapperBlockStyles,
+    gridTemplateColumns: 'auto',
+    gap: 50
+}}>
+        <DemoTooltipWithTriggerWrapper>
+            {({ triggerElement }) => (
+                <DemoControlledTooltipWrapper>
+                    {({ isOpened, handleOpen, handleClose}) => (
+                        <>
+                            <span
+                                ref={triggerElement}
+                                style={{
+                                    width: 250,
+                                }}
+                                >
+                                <TextField
+                                    placeholder="Сфокусируся на мне"
+                                    onFocus={handleOpen}
+                                    onBlur={handleClose}
+                                />
+                            </span>
+                            <Tooltip
+                                isOpened={isOpened}
+                                triggerEvent="controlled"
+                                triggerElement={triggerElement}
+                            >
+                                <Paragraph hasMargin={false}>
+                                    Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                                    Монтажник проведёт все необходимые работы под ключ.
+                                </Paragraph>
+                            </Tooltip>
+                        </>
+                    )}
+                </DemoControlledTooltipWrapper>
+            )}
+        </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [isOpened, setIsOpened] = React.useState(isOpen);
+    const handleOpen = () => setIsOpened(true);
+    const handleClose = () => setIsOpened(false);
+
+    return children({
+        isOpened,
+        handleOpen,
+        handleClose,
+    });
+};
+```
+
+## Управление компонентом снаружи с сохранением внутренних обработчиков для триггер-элемента
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Навести</Button>
+                </span>
+                <DemoControlledTooltipWrapper>
+                    {({ isOpened, handleOpen, handleClose}) => (
+                        <Tooltip
+                            onOpen={handleOpen}
+                            onClose={handleClose}
+                            isOpened={isOpened}
+                            triggerElement={triggerElement}
+                        >
+                            <Paragraph>
+                                Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                                Монтажник проведёт все необходимые работы под ключ.
+                            </Paragraph>
+                            <Button onClick={handleClose}>Закрыть</Button>
+                        </Tooltip>
+                    )}
+                </DemoControlledTooltipWrapper>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Кликнуть</Button>
+                </span>
+                <DemoControlledTooltipWrapper>
+                    {({ isOpened, handleOpen, handleClose}) => (
+                        <Tooltip
+                            onOpen={handleOpen}
+                            onClose={handleClose}
+                            isOpened={isOpened}
+                            triggerEvent="click"
+                            triggerElement={triggerElement}
+                        >
+                            <Paragraph>
+                                Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+                                Монтажник проведёт все необходимые работы под ключ.
+                            </Paragraph>
+                            <Button onClick={handleClose}>Закрыть</Button>
+                        </Tooltip>
+                    )}
+                </DemoControlledTooltipWrapper>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+```javascript collapse=Код DemoControlledTooltipWrapper
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [isOpened, setIsOpened] = React.useState(isOpen);
+    const handleOpen = () => setIsOpened(true);
+    const handleClose = () => setIsOpened(false);
+
+    return children({
+        isOpened,
+        handleOpen,
+        handleClose,
+    });
+};
+```

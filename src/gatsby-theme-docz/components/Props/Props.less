@@ -1,0 +1,59 @@
+.docz-props {
+    @media screen and (max-width: 767px) {
+        overflow-x: scroll;
+    }
+
+    &__table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    &__cell {
+        padding: 12px 0;
+        border-bottom: 1px solid #D8D8D8;
+        text-align: left;
+        font-size: 15px;
+        line-height: 24px;
+        color: #333;
+        vertical-align: top;
+
+        &:not(:first-child) {
+            padding-left: 5px;
+        }
+
+        &:not(:last-child) {
+            padding-right: 5px;
+        }
+
+        & p {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        &_title {
+            font-size: 15px;
+            line-height: 24px;
+            color: rgba(51, 51, 51, 0.5);
+        }
+
+        &_first {
+            width: 20%;
+        }
+
+        &_second {
+            width: 35%;
+        }
+
+        &_third {
+            width: 20%;
+        }
+
+        &_fourth {
+            width: 25%;
+        }
+
+        &_name {
+            color: #34AAF2;
+        }
+    }
+}

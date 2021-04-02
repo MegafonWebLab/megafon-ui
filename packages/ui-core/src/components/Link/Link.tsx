@@ -2,17 +2,19 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 export interface ILinkProps {
-    /** Link */
-    href?: string;
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element;
-    /** target - property tag <a> */
-    target?: '_self' | '_blank' | '_parent' | '_top';
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** rel - property tag <a> */
+    /** Ссылка */
+    href?: string;
+    /** target - аргумент тега <a> */
+    target?: '_self' | '_blank' | '_parent' | '_top';
+    /** rel - аргумент тега <a> */
     rel?: string;
-    /** Click event handler */
+    /** Обработчик клика */
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
+    /** Добавление атрибута download */
+    download?: boolean;
+    children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
 class Link extends React.Component<ILinkProps, {}> {
@@ -28,6 +30,7 @@ class Link extends React.Component<ILinkProps, {}> {
         className: PropTypes.string,
         rel: PropTypes.string,
         onClick: PropTypes.func,
+        download: PropTypes.bool,
     };
 
     render() {

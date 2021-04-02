@@ -1,0 +1,209 @@
+
+import { Playground } from 'docz';
+import BenefitsIcons from '../BenefitsIcons';
+import {
+    twoItems,
+    fiveItems,
+    fourItems,
+    threeItems,
+    itemsTextByHtml,
+    twoItemsWithoutText,
+    twoItemsWithoutTitle,
+} from './BenefitsIcons.docz.tsx';
+
+```javascript collapse=Демо данные
+const items = [
+    {
+        title: 'Звонки',
+        text: 'Оставайтесь всегда на связи',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        title: 'Интернет',
+        text: 'Подключите, и гигабайты и минуты всегда будут с вами!',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+]
+```
+
+## Заголовок с текстом
+
+<Playground>
+    <BenefitsIcons items={twoItems} />
+</Playground>
+
+## Только заголовок
+
+<Playground>
+    <BenefitsIcons
+        items={twoItemsWithoutText}
+        iconPosition="left-side"
+    />
+</Playground>
+
+## Только текст
+
+<Playground>
+    <BenefitsIcons
+        items={twoItemsWithoutTitle}
+        iconPosition="left-side"
+    />
+</Playground>
+
+## Пример передачи html-размеки в качестве текста
+
+<Playground>
+    <BenefitsIcons items={itemsTextByHtml} />
+</Playground>
+
+## Столбец с выравниванием по левому краю, значок с выравниванием по левому краю вверху
+
+#### 2 бенефита
+<Playground>
+    <BenefitsIcons
+        items={twoItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+#### 3 бенефита
+<Playground>
+    <BenefitsIcons
+        items={threeItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+#### 4 бенефита
+<Playground>
+    <BenefitsIcons
+        items={fourItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+#### 5 бенефитов
+<Playground>
+    <BenefitsIcons
+        items={fiveItems}
+        iconPosition="left-top"
+    />
+</Playground>
+
+## Выровненный по левому краю столбец со значком слева
+
+#### 2 бенефита
+<Playground>
+    <BenefitsIcons
+        items={twoItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+#### 3 бенефита
+<Playground>
+    <BenefitsIcons
+        items={threeItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+#### 4 бенефита
+<Playground>
+    <BenefitsIcons
+        items={fourItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+#### 5 бенефитов
+<Playground>
+    <BenefitsIcons
+        items={fiveItems}
+        iconPosition="left-side"
+    />
+</Playground>
+
+## Выровненный по центру столбец со значком выровненного по центру вверху
+
+#### 2 бенефита
+<Playground>
+    <BenefitsIcons
+        items={twoItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+#### 3 бенефита
+<Playground>
+    <BenefitsIcons
+        items={threeItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+#### 4 бенефита
+<Playground>
+    <BenefitsIcons
+        items={fourItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+#### 4 бенефитов
+<Playground>
+    <BenefitsIcons
+        items={fiveItems}
+        iconPosition="center-top"
+    />
+</Playground>
+
+## Входящие пропсы
+
+``` javascript
+const twoItemsWithoutText = [
+    {
+        title: 'Звонки',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        title: 'Интернет',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
+const twoItemsWithoutTitle = [
+    {
+        text: 'Оставайтесь всегда на связи',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        text: 'Подключите, и гигабайты и минуты всегда будут с вами!',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
+const twoItems = [
+    {
+        title: 'Звонки',
+        text: 'Оставайтесь всегда на связи',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        title: 'Интернет',
+        text: 'Подключите, и гигабайты и минуты всегда будут с вами!',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
+const itemsTextByHtml = [
+    {
+        text: '<ul as="ol" color="red"><li>пункт 1</li><li>пункт 2</li><li>пункт 3</li></ul>',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        text: '<p color="green">Оставайтесь <a>всегда</a> на <b>связи</b></p>',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+```

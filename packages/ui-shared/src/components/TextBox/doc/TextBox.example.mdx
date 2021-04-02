@@ -1,0 +1,55 @@
+import { Playground } from 'docz';
+import TextBox from '../TextBox';
+import { Paragraph, Header, Link, List, ListItem } from '@megafon/ui-core';
+
+## Использование по умолчанию
+
+<Playground>
+    <TextBox>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
+        <Paragraph>
+            Услуга SMS (Short Message Service) позволяет обмениваться с телефона небольшими текстовыми сообщениями. Вы можете отправить SMS-сообщение даже на городской телефон. Услуга «Голосовое SMS» превратит обычное текстовое сообщение в голосовое и зачитает его адресату.
+        </Paragraph>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
+        <Header as="h5" margin>Путешествуй без забот</Header>
+        <Paragraph>
+            Бесплатные входящие вызовы и безлимитные звонки на номера московского МегаФона, минуты и SMS по России.
+            <Link href="https://megafon.ru">Click me</Link>
+        </Paragraph>
+        <List>
+            <ListItem>Тарифы</ListItem>
+            <ListItem>Интернет</ListItem>
+            <ListItem>Связь</ListItem>
+            <ListItem>Услуги</ListItem>
+        </List>
+        <Paragraph size="small">
+            Доступно для: WhatsApp, Viber, eMotion, Facebook Messenger, Telegram, ТамТам
+        </Paragraph>
+    </TextBox>
+</Playground>
+
+## Использование с центрированием по горизонтали
+
+<Playground>
+    <TextBox textCenter={true}>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
+        <Paragraph>
+            Услуга SMS (Short Message Service) позволяет обмениваться с телефона небольшими текстовыми сообщениями. Вы можете отправить SMS-сообщение даже на городской телефон. Услуга «Голосовое SMS» превратит обычное текстовое сообщение в голосовое и зачитает его адресату.
+        </Paragraph>
+        <Header as="h3" margin>В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:</Header>
+        <Header as="h5" margin>Путешествуй без забот</Header>
+        <Paragraph>
+            Бесплатные входящие вызовы и безлимитные звонки на номера московского МегаФона, минуты и SMS по России.
+            <Link href="https://megafon.ru">Click me</Link>
+        </Paragraph>
+        <List>
+            <ListItem>Тарифы</ListItem>
+            <ListItem>Интернет</ListItem>
+            <ListItem>Связь</ListItem>
+            <ListItem>Услуги</ListItem>
+        </List>
+        <Paragraph size="small">
+            Доступно для: WhatsApp, Viber, eMotion, Facebook Messenger, Telegram, ТамТам
+        </Paragraph>
+    </TextBox>
+</Playground>

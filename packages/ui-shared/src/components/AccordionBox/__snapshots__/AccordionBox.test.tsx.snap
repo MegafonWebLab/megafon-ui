@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AccordionBox /> render AccordionBox 1`] = `
+<div
+  className="mfui-beta-accordion-box"
+>
+  <Grid
+    hAlign="left"
+  >
+    <GridColumn
+      wide="8"
+    >
+      <Accordion
+        className="className"
+        classes={
+          Object {
+            "collapse": "collapseClass",
+            "root": "rootClass",
+          }
+        }
+        hasVerticalPaddings={true}
+        isOpened={false}
+        onClickAccordion={[MockFunction]}
+        title="Test"
+      >
+        <div>
+          test
+        </div>
+      </Accordion>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<AccordionBox /> render AccordionBox with hCenterAlignWide=true 1`] = `
+<div
+  className="mfui-beta-accordion-box"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      wide="8"
+    >
+      <Accordion
+        className="className"
+        classes={
+          Object {
+            "collapse": "collapseClass",
+            "root": "rootClass",
+          }
+        }
+        hasVerticalPaddings={true}
+        isOpened={false}
+        onClickAccordion={[MockFunction]}
+        title="Test"
+      >
+        <div>
+          test
+        </div>
+      </Accordion>
+    </GridColumn>
+  </Grid>
+</div>
+`;

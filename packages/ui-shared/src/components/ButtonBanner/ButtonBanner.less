@@ -1,0 +1,102 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-button-banner');
+
+@mobileSidePadding: 16px;
+@mainRadiusSize: 8px;
+@extraRadiusSize: 12px;
+
+.border-radius(@size) {
+    border-radius: 0 @size @size 0;
+
+    @media @mobileSM {
+        border-radius: 0 0 @size @size;
+    }
+}
+
+@{b} {
+    position: relative;
+    border: 1px solid @spbSky2;
+    background-color: @clearWhite;
+    .border-radius(@mainRadiusSize);
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 12px;
+        background-color: @green;
+        .border-radius(@extraRadiusSize);
+    }
+
+    @media @mobileSM {
+        &:before {
+            bottom: auto;
+            right: 0;
+            width: auto;
+            height: 12px;
+        }
+    }
+
+    &__content {
+        box-sizing: border-box;
+
+        @media @mobileSM {
+            text-align: center;
+            padding: 36px @mobileSidePadding 32px;
+        }
+
+        @media @mobileB {
+            padding: 32px 0;
+        }
+
+        @media @desktopS {
+            padding: 40px 0;
+        }
+
+        @media @desktopMU {
+            padding: 48px 0;
+        }
+    }
+
+    &__media {
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        padding: 0 20px;
+        .border-radius(@mainRadiusSize);
+
+        @media @mobileSM {
+            height: auto;
+            padding: 0 @mobileSidePadding 24px;
+        }
+    }
+
+    &__header {
+        margin-bottom: 16px;
+    }
+
+    &__button {
+        max-width: 100%;
+    }
+}
+
+@{b}_image {
+    @{b}__media {
+        padding: 0;
+
+        @media @mobileSM {
+            height: 222px;
+        }
+    }
+
+    @{b}__text {
+        margin-bottom: 32px;
+    }
+}

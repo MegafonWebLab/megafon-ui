@@ -1,0 +1,73 @@
+import { Playground } from 'docz';
+import Banner from '../Banner';
+import { DemoSlide } from './Banner.docz';
+import Balance from 'icons/Basic/24/Balance_24.svg';
+
+```javascript collapse=Код DemoSlide
+export const DemoSlide = ({ children, background }) => {
+    return (
+        <div
+            style={{
+                height: "100%",
+                backgroundColor: background,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```
+
+## Цветовая тема навигации - light
+
+<Playground>
+    <Banner>
+        <DemoSlide background="#00B956">1</DemoSlide>
+        <DemoSlide background="#00a04b">2</DemoSlide>
+        <DemoSlide background="#02d263">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Цветовая тема навигации - green
+
+<Playground>
+    <Banner navTheme="green">
+        <DemoSlide background="#f0f0f0">1</DemoSlide>
+        <DemoSlide background="#ededed">2</DemoSlide>
+        <DemoSlide background="#f5f5f5">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Цветовая тема навигации - dark
+
+<Playground>
+    <Banner navTheme="dark">
+        <DemoSlide background="#C5C1BD">1</DemoSlide>
+        <DemoSlide background="#C1C1BD">2</DemoSlide>
+        <DemoSlide background="#C9C1BD">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Прокрутка с зацикливанием
+
+<Playground>
+    <Banner loop>
+        <DemoSlide background="#00B956">1</DemoSlide>
+        <DemoSlide background="#00a04b">2</DemoSlide>
+        <DemoSlide background="#02d263">3</DemoSlide>
+    </Banner>
+</Playground>
+
+## Автоматическая прокрутка
+
+<Playground>
+    <Banner loop autoPlay autoPlayDelay={3000}>
+        <DemoSlide background="#00B956">1</DemoSlide>
+        <DemoSlide background="#00a04b">2</DemoSlide>
+        <DemoSlide background="#02d263">3</DemoSlide>
+    </Banner>
+</Playground>

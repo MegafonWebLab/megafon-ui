@@ -1,0 +1,19 @@
+import VideoBlock from '../VideoBlock';
+import { Props } from 'docz';
+
+<Props of={VideoBlock} />
+
+```javascript
+interface IContent {
+    /** Заголовок */
+    title: string;
+    /** Текст-описание */
+    description: string[];
+    /** Текст кнопки */
+    buttonTitle: string;
+    /** Ссылка на кнопке */
+    href?: string;
+    /** Обработчик клика по кнопке */
+    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+}
+```

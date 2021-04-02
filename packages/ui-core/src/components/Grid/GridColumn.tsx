@@ -3,173 +3,153 @@ import * as PropTypes from 'prop-types';
 import './GridColumn.less';
 import cnCreate from 'utils/cnCreate';
 
-const GridSizeValues = PropTypes.oneOf(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);
+const GridSizeValues = PropTypes.oneOf<TGridSizeValues>(
+    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+);
 export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
 
 export interface IGridColumn {
-    /** Size of columns on wide screens */
+    /** Размер колон на разрещении 1280+ */
     wide?: TGridSizeValues;
-    /** Size of columns on desktop screens */
+    /** Размер колон на разрещении 1024 - 1279 */
     desktop?: TGridSizeValues;
-    /** Size of columns on tablet screens */
+    /** Размер колон на разрещении 768 - 1023 */
     tablet?: TGridSizeValues;
-    /** Size of columns on mobile screens */
+    /** Размер колон на разрещении 767- */
     mobile?: TGridSizeValues;
-    /** Size of columns on all screens */
+    /** Размер колон на всех разрешениях */
     all?: TGridSizeValues;
 
-    /** Order on all screens */
-    orderAll?: string;
-    /** Order on wide screens */
+    /** Порядок на разрещении 1280+ */
     orderWide?: string;
-    /** Order on desktop screens */
+    /** Порядок на разрещении 1024 - 1279 */
     orderDesktop?: string;
-    /** Order on tablet screens */
+    /** Порядок на разрещении 768 - 1023 */
     orderTablet?: string;
-    /** Order on mobile screens */
+    /** Порядок на разрещении 767- */
     orderMobile?: string;
+    /** Порядок на всех разрешениях */
+    orderAll?: string;
 
-    /** Size of left offset on wide screens */
+    /** Размер левого смещения на 1280+ */
     leftOffsetWide?: TGridSizeValues;
-    /** Size of left offset on desktop screens */
+    /** Размер левого смещения на 1024 - 1279  */
     leftOffsetDesktop?: TGridSizeValues;
-    /** Size of left offset on tablet screens */
+    /** Размер левого смещения на 768 - 1023 */
     leftOffsetTablet?: TGridSizeValues;
-    /** Size of left offset on mobile screens */
+    /** Размер левого смещения на 767- */
     leftOffsetMobile?: TGridSizeValues;
-    /** Size of left offset on all screens */
+    /** Размер левого смещения на всех разрешениях */
     leftOffsetAll?: TGridSizeValues;
 
-    /** Size of right offset on wide screens */
+    /** Размер правого смещения на 1280+ */
     rightOffsetWide?: TGridSizeValues;
-    /** Size of right offset on desktop screens */
+    /** Размер правого смещения на 1024 - 1279 */
     rightOffsetDesktop?: TGridSizeValues;
-    /** Size of right offset on tablet screens */
+    /** Размер правого смещения на 768 - 1023 */
     rightOffsetTablet?: TGridSizeValues;
-    /** Size of right offset on mobile screens */
+    /** Размер правого смещения на 767- */
     rightOffsetMobile?: TGridSizeValues;
-    /** Size of right offset on all screens */
+    /** Размер правого смещения на всех разрешениях */
     rightOffsetAll?: TGridSizeValues;
 
-    /** Custom alignment of column */
+    /** Дополнительное выравние колонны */
     align?: 'right' | 'left' | 'center';
-    /** Column flex grow */
+    /** Flex grow колонны */
     grow?: boolean;
-    /** Column as flex container */
+    /** Сделать колонну флекс контейнером */
     flex?: boolean;
-    /** Custom class name */
+    /** Дополнительный класс корневого элемента */
     className?: string;
     children: React.ReactNode;
 }
 
 const cn = cnCreate('mfui-beta-grid-column');
-class GridColumn extends React.Component<IGridColumn, {}> {
-    static propTypes = {
-        wide: GridSizeValues,
-        desktop: GridSizeValues,
-        tablet: GridSizeValues,
-        mobile: GridSizeValues,
-        all: GridSizeValues,
+const GridColumn: React.FC<IGridColumn> = ({
+   all = '12',
+   wide,
+   desktop,
+   tablet,
+   mobile,
+   orderAll = '0',
+   orderWide = '0',
+   orderDesktop = '0',
+   orderTablet = '0',
+   orderMobile = '0',
+   leftOffsetAll,
+   leftOffsetWide,
+   leftOffsetDesktop,
+   leftOffsetTablet,
+   leftOffsetMobile,
+   rightOffsetAll,
+   rightOffsetWide,
+   rightOffsetDesktop,
+   rightOffsetTablet,
+   rightOffsetMobile,
+   className,
+   flex = false,
+   grow = false,
+   align,
+   children,
+}) => (
+    <div
+        className={cn(
+            {
+                flex,
+                grow,
+                align,
+                all,
+                wide,
+                desktop,
+                tablet,
+                mobile,
+                'all-order': orderAll,
+                'wide-order': orderWide,
+                'desktop-order': orderDesktop,
+                'tablet-order': orderTablet,
+                'mobile-order': orderMobile,
+                'left-offset-all': leftOffsetAll,
+                'left-offset-wide': leftOffsetWide,
+                'left-offset-desktop': leftOffsetDesktop,
+                'left-offset-tablet': leftOffsetTablet,
+                'left-offset-mobile': leftOffsetMobile,
+                'right-offset-all': rightOffsetAll,
+                'right-offset-wide': rightOffsetWide,
+                'right-offset-desktop': rightOffsetDesktop,
+                'right-offset-tablet': rightOffsetTablet,
+                'right-offset-mobile': rightOffsetMobile,
+            },
+            className
+        )}
+    >
+        {children}
+    </div>
+);
 
-        orderAll: PropTypes.string,
-        orderWide: PropTypes.string,
-        orderDesktop: PropTypes.string,
-        orderTablet: PropTypes.string,
-        orderMobile: PropTypes.string,
+GridColumn.propTypes = {
+    wide: GridSizeValues,
+    desktop: GridSizeValues,
+    tablet: GridSizeValues,
+    mobile: GridSizeValues,
+    all: GridSizeValues,
 
-        leftOffsetWide: GridSizeValues,
-        leftOffsetDesktop: GridSizeValues,
-        leftOffsetTablet: GridSizeValues,
-        leftOffsetMobile: GridSizeValues,
-        leftOffsetAll: GridSizeValues,
+    orderAll: PropTypes.string,
+    orderWide: PropTypes.string,
+    orderDesktop: PropTypes.string,
+    orderTablet: PropTypes.string,
+    orderMobile: PropTypes.string,
 
-        align: PropTypes.oneOf(['right', 'left', 'center']),
-        grow: PropTypes.bool,
-        flex: PropTypes.bool,
-        className: PropTypes.string,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
-    };
+    leftOffsetWide: GridSizeValues,
+    leftOffsetDesktop: GridSizeValues,
+    leftOffsetTablet: GridSizeValues,
+    leftOffsetMobile: GridSizeValues,
+    leftOffsetAll: GridSizeValues,
 
-    static defaultProps = {
-        all: '12',
-        flex: false,
-        grow: false,
-        orderWide: '0',
-        orderDesktop: '0',
-        orderTablet: '0',
-        orderMobile: '0',
-        orderAll: '0',
-    };
-
-    render() {
-        const {
-            all,
-            wide,
-            desktop,
-            tablet,
-            mobile,
-            orderAll,
-            orderWide,
-            orderDesktop,
-            orderTablet,
-            orderMobile,
-            leftOffsetAll,
-            leftOffsetWide,
-            leftOffsetDesktop,
-            leftOffsetTablet,
-            leftOffsetMobile,
-            rightOffsetAll,
-            rightOffsetWide,
-            rightOffsetDesktop,
-            rightOffsetTablet,
-            rightOffsetMobile,
-            className,
-            flex,
-            grow,
-            align,
-            children,
-        } = this.props;
-
-        return (
-            <div
-                className={cn(
-                    '',
-                    {
-                        flex,
-                        grow,
-                        align,
-                        all,
-                        wide,
-                        desktop,
-                        tablet,
-                        mobile,
-                        'all-order': orderAll,
-                        'wide-order': orderWide,
-                        'desktop-order': orderDesktop,
-                        'tablet-order': orderTablet,
-                        'mobile-order': orderMobile,
-                        'left-offset-all': leftOffsetAll,
-                        'left-offset-wide': leftOffsetWide,
-                        'left-offset-desktop': leftOffsetDesktop,
-                        'left-offset-tablet': leftOffsetTablet,
-                        'left-offset-mobile': leftOffsetMobile,
-                        'right-offset-all': rightOffsetAll,
-                        'right-offset-wide': rightOffsetWide,
-                        'right-offset-desktop': rightOffsetDesktop,
-                        'right-offset-tablet': rightOffsetTablet,
-                        'right-offset-mobile': rightOffsetMobile,
-                    },
-                    className
-                )}
-            >
-                {children}
-            </div>
-        );
-    }
-}
+    align: PropTypes.oneOf(['right', 'left', 'center']),
+    grow: PropTypes.bool,
+    flex: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired,
+};
 
 export default GridColumn;

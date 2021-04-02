@@ -1,13 +1,19 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import Counter from './Counter';
+import Counter, { ICounterProps } from './Counter';
 
-const props = {
-    className: 'test-class',
+const props: ICounterProps = {
     initialValue: 10,
     min: 3,
     max: 33,
     isDisabled: true,
+    className: 'class-name',
+    classes: {
+        root: 'root-class',
+        buttonMinus: 'button-minus-class',
+        buttonPlus: 'button-plus-class',
+        input: 'input-class',
+    },
 };
 
 describe('<Counter />', () => {

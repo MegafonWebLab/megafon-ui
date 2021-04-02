@@ -15,15 +15,17 @@ export const NotificationTypes = {
 
 type NotificationTypesType = typeof NotificationTypes[keyof typeof NotificationTypes];
 
-export type Props = {
-    /** Types of notification */
+export interface INotificationProps {
+    /** Дополнительный класс корневого элемента */
+    className?: string;
+    /** Тип отображения */
     type?: NotificationTypesType;
-    /** Short size of notification */
+    /** Уменьшенный размер */
     isShort?: boolean;
-};
+}
 
 const cn = cnCreate('mfui-beta-notification');
-const Notification: React.FC<Props> = ({ type = NotificationTypes.SUCCESS, isShort = false, children }) => {
+const Notification: React.FC<INotificationProps> = ({ type = 'success', isShort = false, children, className }) => {
     const renderIcon = (): JSX.Element => {
         if (type === NotificationTypes.SUCCESS) {
             return <CheckedIcon className={cn('icon')} />;
@@ -39,7 +41,7 @@ const Notification: React.FC<Props> = ({ type = NotificationTypes.SUCCESS, isSho
             className={cn({
                 type,
                 short: isShort,
-            })}
+            }, className)}
         >
             <div className={cn('container')}>
                 {renderIcon()}

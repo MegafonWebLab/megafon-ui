@@ -1,0 +1,33 @@
+import { Props } from 'docz';
+import VideoBanner from '../VideoBanner';
+
+<Props of={VideoBanner} />
+
+``` javascript
+
+interface IContent {
+    /** Заголовок */
+    title: string;
+    /** Текст-описание */
+    description: string;
+    /** Текст кнопки */
+    buttonTitle: string;
+    /** Ссылка на кнопке */
+    buttonHref?: string;
+    /** Цвет кнопки */
+    buttonColor?: 'green' | 'purple';
+    /** Обработчик клика по кнопке */
+    onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Цвет текста */
+    textColor?: 'freshAsphalt' | 'clearWhite';
+    /** Цвет текста на мобильном разрешении */
+    textColorMobile?: 'freshAsphalt' | 'clearWhite';
+    /** Текст ссылки */
+    linkTitle?: string;
+    /** Адрес ссылки */
+    linkUrl?: string;
+    /** Строка со стоимостью услуги */
+    cost?: string;
+}
+
+```

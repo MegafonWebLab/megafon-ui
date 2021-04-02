@@ -1,0 +1,115 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-property');
+
+@{b} {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-top: 1px solid @spbSky2;
+
+    @media @mobileSM {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @media @desktopMU {
+        padding-top: 26px;
+        padding-bottom: 26px;
+    }
+
+    &_border-bottom {
+        border-bottom: 1px solid @spbSky2;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__item {
+        display: flex;
+
+        &_multirow:first-child {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+        margin-right: 9px;
+        margin-left: 1px;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    &__badge {
+        border-radius: 2px;
+        font-size: 12px;
+        padding: 2px 8px;
+        color: @clearWhite;
+        background: @mandarin;
+    }
+
+    &__inner {
+        flex-grow: 1;
+        padding-right: 20px;
+
+        @media @mobileB {
+            padding-right: 77px;
+        }
+
+        @media @mobileSM {
+            padding-right: 8px;
+        }
+    }
+
+    &__items-wrapper {
+        flex-grow: 1;
+    }
+
+    &__value-wrapper {
+        width: 47%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        flex-shrink: 0;
+
+        @media @desktopS {
+            width: 35%;
+        }
+
+        @media @mobileB {
+            width: 30%;
+        }
+
+        @media @mobileSM {
+            width: 50%;
+        }
+    }
+
+    &__value-wrapper_merged {
+        border-left: 1px solid @spbSky2;
+        align-items: center;
+    }
+
+    &__desc {
+        margin-top: 8px;
+    }
+
+    &__item ~ &__item {
+        margin-top: 16px;
+    }
+
+    &__value {
+        max-width: 234px;
+        white-space: pre-wrap;
+        text-align: right;
+        .h3();
+
+        @media @mobileSM {
+            .h5();
+        }
+    }
+}

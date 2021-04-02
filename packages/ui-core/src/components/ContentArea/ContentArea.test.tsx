@@ -5,9 +5,12 @@ import ContentArea, { IConrentAreaProps, BackgroundColorType } from './ContentAr
 const props: Partial<IConrentAreaProps> = {
     outerBackgroundColor: 'white',
     innerBackgroundColor: 'white',
-    innerPadding: 'none',
-    mobileInnerPadding: 'none',
-    className: 'test-class',
+    disableIndents: 'all',
+    className: 'className',
+    classes: {
+        root: 'rootClass',
+        inner: 'innerClass',
+    },
 };
 
 const backgroundColors = [

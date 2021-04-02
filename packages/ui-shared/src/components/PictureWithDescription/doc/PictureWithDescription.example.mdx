@@ -1,0 +1,50 @@
+import { Playground } from 'docz';
+import { Header, Paragraph, List, ListItem } from '@megafon/ui-core'
+import PictureWithDescription from '../PictureWithDescription';
+import {
+    title,
+    listItems,
+    description,
+    wrapperStyles,
+    Image1,
+    Image2,
+} from './PictureWithDescription.docz.tsx';
+
+## Базовое использование
+
+<Playground style={wrapperStyles}>
+    <PictureWithDescription pictureUrl={Image1}>
+        <Header as='h3' margin>{title}</Header>
+        <Paragraph>{description}</Paragraph>
+        <List>
+            <ListItem>{listItems[0]}</ListItem>
+            <ListItem>{listItems[1]}</ListItem>
+            <ListItem>{listItems[2]}</ListItem>
+            <ListItem>{listItems[3]}</ListItem>
+        </List>
+    </PictureWithDescription>
+</Playground>
+
+## Изображение справа
+
+<Playground style={wrapperStyles}>
+    <PictureWithDescription pictureUrl={Image1} pictureAlign='right'>
+        <Header as='h3' margin>{title}</Header>
+        <Paragraph>{description}</Paragraph>
+        <List>
+            <ListItem>{listItems[0]}</ListItem>
+            <ListItem>{listItems[1]}</ListItem>
+            <ListItem>{listItems[2]}</ListItem>
+            <ListItem>{listItems[3]}</ListItem>
+        </List>
+    </PictureWithDescription>
+</Playground>
+
+## С небольшим количеством контента
+
+<Playground style={wrapperStyles}>
+    <PictureWithDescription pictureUrl={Image2}>
+        <Header as='h3' margin>{title}</Header>
+        <Paragraph>{description}</Paragraph>
+    </PictureWithDescription>
+</Playground>

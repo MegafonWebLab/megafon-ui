@@ -1,0 +1,92 @@
+@import '~styles/base.less';
+@b: e('.mfui-beta-banner');
+@sw: e('.swiper-wrapper');
+
+@{b} {
+    overflow: hidden;
+    position: relative;
+
+    @{sw} {
+        display: flex;
+    }
+
+    &__slide {
+        height: 500px;
+        flex-shrink: 0;
+
+        @media @mobileB {
+            height: 540px;
+        }
+
+        @media @desktopS {
+            height: 420px;
+        }
+
+        @media @desktopMU {
+            height: 400px;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__arrow_prev {
+        .arrowPosition(left);
+    }
+
+    &__arrow_next {
+        .arrowPosition(right);
+    }
+
+    &__pagination {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    &__pagination_theme_light {
+        background-color: transparent;
+    }
+
+    &__pagination_theme_green {
+        background-color: @green;
+    }
+
+    &__pagination_theme_dark {
+        background-color: fade(@fullBlack, 25%);
+    }
+
+    &__dot {
+        width: 12px;
+        height: 12px;
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.arrowPosition(@direction) {
+    @{direction}: 12px;
+
+    @media @mobileSM {
+        @{direction}: 8px;
+    }
+
+    @media @mobileB {
+        @{direction}: 16px;
+    }
+
+    @media @desktopMU {
+        @{direction}: 20px;
+    }
+}

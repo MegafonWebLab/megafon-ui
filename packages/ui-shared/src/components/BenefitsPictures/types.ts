@@ -1,6 +1,9 @@
 export interface IBenefit {
+    /** Заголовок бенефита */
     title: string;
+    /** Основной текст в бенефите */
     text: string;
+    /** Изображение */
     img: string;
 }
 

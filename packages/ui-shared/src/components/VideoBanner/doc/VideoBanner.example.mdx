@@ -1,0 +1,101 @@
+import { Playground } from 'docz';
+import VideoBanner from '../VideoBanner';
+import { ContentArea } from '@megafon/ui-core';
+import {
+    content,
+    contentWithDefaultTextColor,
+    contentWithDifferentTextColor,
+    contentWithPurpleButton,
+    video,
+    youtubeVideoId,
+    imageMobile,
+    imageDesktop,
+    images
+} from './VideoBanner.docz.tsx'
+
+```javascript collapse=Демо данные
+
+const content: IContent = {
+    title: 'Текст ≈40 симовлов. Короткие слова',
+    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратко и не будет проблем с текстовым контентом.',
+    href: '#',
+    buttonTitle: 'Текст в кнопке',
+    buttonColor: 'green',
+    onButtonClick: () => {},
+    textColor: 'clearWhite',
+    linkTitle: 'Личный кабинет услуги',
+    linkUrl: '#',
+    cost: 'oт <b>1000 ₽</b> за сообщение',
+}
+
+```
+
+```javascript
+
+Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
+<VideoBanner videoType="youtube" videoSrc="2Sps5MnvlKM" />
+
+Если в компоненте не указан источник видео, то необходимо добавить изображения для всех разрешений.
+<VideoBanner imageMobile='imageMobile' imageTablet='imageMobile' imageDesktop='imageDesktop' imageDesktopWide='imageDesktop' />
+
+```
+
+## Видеобаннер
+
+### На мобильном разрешении отображается только картинка.
+
+<Playground>
+    <ContentArea>
+        <VideoBanner videoType="video" videoSrc={video} imageMobile={imageMobile} imageTablet={imageMobile} />
+    </ContentArea>
+</Playground>
+
+## С контентом
+
+<Playground>
+    <ContentArea>
+        <VideoBanner videoType="video" videoSrc={video} content={content} imageMobile={imageMobile} imageTablet={imageMobile} />
+    </ContentArea>
+</Playground>
+
+## Только изображение
+
+<Playground>
+    <ContentArea>
+        <VideoBanner imageMobile={imageMobile} imageTablet={imageMobile} imageDesktop={imageDesktop} imageDesktopWide={imageDesktop} content={content} />
+        </ContentArea>
+</Playground>
+
+## Видео с youtube
+
+<Playground>
+    <ContentArea>
+        <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} imageMobile={imageMobile} imageTablet={imageMobile} />
+    </ContentArea>
+</Playground>
+
+## Определение цвета текста
+
+### На всех разрешениях тёмный цвет текста
+<Playground>
+    <ContentArea>
+        <VideoBanner imageMobile={images.imageMobile} imageTablet={images.imageTablet} imageDesktop={images.imageDesktop} imageDesktopWide={images.imageDesktopWide} content={contentWithDefaultTextColor} />
+        </ContentArea>
+</Playground>
+
+### Светлый цвет текста на мобильном разрешении
+<Playground>
+    <ContentArea>
+        <VideoBanner imageMobile={imageMobile} imageTablet={images.imageTablet} imageDesktop={images.imageDesktop} imageDesktopWide={images.imageDesktopWide} content={contentWithDifferentTextColor} />
+        </ContentArea>
+</Playground>
+
+## Цвета кнопок
+
+<Playground>
+    <ContentArea>
+        <VideoBanner imageMobile={imageMobile} imageTablet={imageMobile} imageDesktop={imageDesktop} imageDesktopWide={imageDesktop} content={content} />
+        <br/>
+        <VideoBanner imageMobile={imageMobile} imageTablet={imageMobile} imageDesktop={imageDesktop} imageDesktopWide={imageDesktop} content={contentWithPurpleButton} />
+    </ContentArea>
+</Playground>

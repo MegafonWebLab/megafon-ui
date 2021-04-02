@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadLink render component 1`] = `
+<div
+  className="mfui-beta-download-link"
+>
+  <div
+    className="mfui-beta-download-link__icon"
+  >
+    <test-file-stub
+      className="mfui-beta-download-link__icon-svg"
+    />
+  </div>
+  <div>
+    <TextLink
+      className="mfui-beta-download-link__link"
+      color="blue"
+      download={true}
+      href="href"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      text
+    </TextLink>
+    <p
+      className="mfui-beta-download-link__info"
+    >
+      PDF, 500 MB
+    </p>
+  </div>
+</div>
+`;
+
+exports[`DownloadLink render with custom classname 1`] = `
+<div
+  className="mfui-beta-download-link custom-classname"
+>
+  <div
+    className="mfui-beta-download-link__icon"
+  >
+    <test-file-stub
+      className="mfui-beta-download-link__icon-svg"
+    />
+  </div>
+  <div>
+    <TextLink
+      className="mfui-beta-download-link__link"
+      color="blue"
+      download={true}
+      href="href"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      text
+    </TextLink>
+    <p
+      className="mfui-beta-download-link__info"
+    >
+      PDF, 500 MB
+    </p>
+  </div>
+</div>
+`;

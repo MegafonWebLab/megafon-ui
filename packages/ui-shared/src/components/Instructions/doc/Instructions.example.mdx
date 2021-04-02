@@ -1,0 +1,80 @@
+import { Playground } from 'docz';
+import Instructions from '../Instructions';
+import {
+    items,
+    itemsWithVideo,
+    iphoneInstructionItems,
+    androidInstructionItems,
+    newIphoneInstructionItems,
+    laptopInstructionItems,
+    wrapperStyles,
+} from './Instructions.docz.tsx';
+
+```javascript collapse=Демо данные
+const items = [
+    {
+        title:  'Пункт инструкции №1';
+        mediaUrl: '/instructions/1.png';
+        isVideo: true;
+    },
+    {
+        title: 'Пункт инструкции №2';
+        mediaUrl: '/instructions/2.png',
+        isVideo: false;
+    },
+]
+```
+
+## Использование по умолчанию
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={items} />
+</Playground>
+
+## С видео контентом
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={itemsWithVideo} />
+</Playground>
+
+## Изображение справа
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={items} pictureAlign='right' />
+</Playground>
+
+## С небольшим количеством пунктов
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={[items[0], items[1]]} />
+</Playground>
+
+## С рамкой для изображения "черный iPhone"
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={iphoneInstructionItems} pictureMask='black-iphone' />
+</Playground>
+
+## С рамкой для изображения "белый iPhone"
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={iphoneInstructionItems} pictureMask='white-iphone' />
+</Playground>
+
+## С рамкой для изображения "android"
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={androidInstructionItems} pictureMask='android' />
+</Playground>
+
+## С рамкой для изображения "new iphone"
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={newIphoneInstructionItems} pictureMask='new-iphone' />
+</Playground>
+
+## С рамкой для изображения "ноутбук"
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={laptopInstructionItems} pictureMask='laptop' />
+</Playground>

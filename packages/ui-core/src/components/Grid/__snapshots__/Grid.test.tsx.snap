@@ -2,36 +2,20 @@
 
 exports[`<Grid /> it renders Grid with props 1`] = `
 <div
-  className="mfui-beta-grid"
+  className="mfui-beta-grid custom-class-name"
 >
   <div
     className="mfui-beta-grid__container mfui-beta-grid__container_h-align_right mfui-beta-grid__container_v-align_top mfui-beta-grid__container_gutters-left_large mfui-beta-grid__container_gutters-bottom_medium"
   >
     <GridColumn
-      all="12"
       className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_large mfui-beta-grid__column_gutter-bottom_medium"
-      flex={false}
-      grow={false}
       key=".0"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       child1
     </GridColumn>
     <GridColumn
-      all="12"
       className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_large mfui-beta-grid__column_gutter-bottom_medium"
-      flex={false}
-      grow={false}
       key=".1"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       child2
     </GridColumn>
@@ -47,30 +31,14 @@ exports[`<Grid /> it renders Grid without props 1`] = `
     className="mfui-beta-grid__container mfui-beta-grid__container_multi-row"
   >
     <GridColumn
-      all="12"
       className="mfui-beta-grid__column"
-      flex={false}
-      grow={false}
       key=".0"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       child1
     </GridColumn>
     <GridColumn
-      all="12"
       className="mfui-beta-grid__column"
-      flex={false}
-      grow={false}
       key=".1"
-      orderAll="0"
-      orderDesktop="0"
-      orderMobile="0"
-      orderTablet="0"
-      orderWide="0"
     >
       child2
     </GridColumn>

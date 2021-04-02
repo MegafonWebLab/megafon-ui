@@ -2,7 +2,7 @@
 
 exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
 <div
-  className="mfui-beta-benefits-icons__className"
+  className="mfui-beta-benefits-icons className"
 >
   <div
     className="mfui-beta-benefits-icons__inner"
@@ -10,19 +10,10 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -38,24 +29,16 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Оставайтесь всегда на связи"
+          title="Звонки"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -71,8 +54,8 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -90,19 +73,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
     <Grid
       guttersLeft="medium"
       hAlign="center"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -118,21 +92,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Оставайтесь всегда на связи"
+          title="Звонки"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -148,8 +114,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -167,19 +133,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
     <Grid
       guttersLeft="medium"
       hAlign="center"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -195,21 +152,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -225,21 +174,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интенет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -255,8 +196,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -274,21 +215,12 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
     <Grid
       guttersLeft="medium"
       hAlign="center"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -304,21 +236,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         rightOffsetDesktop="1"
         rightOffsetTablet="1"
         tablet="5"
@@ -336,23 +260,15 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -368,21 +284,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="3"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         rightOffsetDesktop="1"
         rightOffsetTablet="1"
         tablet="5"
@@ -400,8 +308,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -419,19 +327,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
     <Grid
       guttersLeft="medium"
       hAlign="center"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -447,21 +346,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -477,21 +368,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -507,21 +390,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="3"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -537,21 +412,13 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="4"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="4"
         wide="4"
       >
@@ -567,8 +434,8 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
             />
           }
           iconPosition="center-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -586,19 +453,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] 
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -614,23 +472,15 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Оставайтесь всегда на связи"
+          title="Звонки"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -646,8 +496,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -665,19 +515,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -693,22 +534,14 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -724,21 +557,13 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интенет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -754,8 +579,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -773,19 +598,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -801,23 +617,15 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -833,21 +641,13 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -863,23 +663,15 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetDesktop="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -895,8 +687,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -914,19 +706,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -942,22 +725,14 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -973,21 +748,13 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -1003,22 +770,14 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetDesktop="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -1034,21 +793,13 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="5"
-        flex={false}
-        grow={false}
         key="4"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="10"
         wide="4"
       >
@@ -1064,8 +815,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
             />
           }
           iconPosition="left-side"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -1083,19 +834,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -1111,24 +853,16 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Оставайтесь всегда на связи"
+          title="Звонки"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="4"
       >
@@ -1144,8 +878,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -1163,19 +897,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1191,23 +916,15 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1223,22 +940,14 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интенет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1254,8 +963,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -1273,19 +982,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1301,23 +1001,15 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1333,21 +1025,13 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1363,23 +1047,15 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetDesktop="1"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1395,8 +1071,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>
@@ -1414,19 +1090,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
     <Grid
       guttersLeft="medium"
       hAlign="left"
-      multiRow={true}
     >
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="0"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1442,23 +1109,15 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="1"
         leftOffsetTablet="1"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1474,22 +1133,14 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="2"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1505,22 +1156,14 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="3"
         leftOffsetTablet="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1536,22 +1179,14 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
       <GridColumn
-        all="12"
         desktop="4"
-        flex={false}
-        grow={false}
         key="4"
         leftOffsetWide="1"
-        orderAll="0"
-        orderDesktop="0"
-        orderMobile="0"
-        orderTablet="0"
-        orderWide="0"
         tablet="5"
         wide="3"
       >
@@ -1567,8 +1202,8 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
             />
           }
           iconPosition="left-top"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit"
-          title="Lorem ipsum"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
         />
       </GridColumn>
     </Grid>

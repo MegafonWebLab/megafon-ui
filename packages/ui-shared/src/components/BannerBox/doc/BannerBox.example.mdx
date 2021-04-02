@@ -1,0 +1,33 @@
+import { Playground } from 'docz';
+import BannerBox from '../BannerBox';
+import { Paragraph } from '@megafon/ui-core';
+import { DemoSlide } from './BannerBox.docz'
+
+```javascript collapse=Код DemoSlide
+export const DemoSlide = ({ children, background }) => {
+    return (
+        <div
+            style={{
+                height: '100%',
+                backgroundColor: 'white',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontSize: '30px',
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+```
+
+<Playground>
+    <BannerBox>
+        <DemoSlide>1</DemoSlide>
+        <DemoSlide>2</DemoSlide>
+        <DemoSlide>3</DemoSlide>
+        <DemoSlide>4</DemoSlide>
+        <DemoSlide>5</DemoSlide>
+    </BannerBox>
+</Playground>

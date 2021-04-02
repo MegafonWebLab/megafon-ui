@@ -5,7 +5,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with freshAs
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_freshAsphalt"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_freshAsphalt"
   >
     some content
   </div>
@@ -17,7 +17,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with fullBla
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_fullBlack"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_fullBlack"
   >
     some content
   </div>
@@ -29,7 +29,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with green 1
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_green"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_green"
   >
     some content
   </div>
@@ -41,7 +41,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with purple 
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_purple"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_purple"
   >
     some content
   </div>
@@ -53,7 +53,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with spbSky0
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_spbSky0"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_spbSky0"
   >
     some content
   </div>
@@ -65,7 +65,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with spbSky1
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_spbSky1"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_spbSky1"
   >
     some content
   </div>
@@ -77,7 +77,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with spbSky2
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_spbSky2"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_spbSky2"
   >
     some content
   </div>
@@ -89,7 +89,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with transpa
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -101,7 +101,7 @@ exports[`<ContentArea /> render component when innerBackgroundColor with white 1
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_white"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_white"
   >
     some content
   </div>
@@ -113,7 +113,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with freshAs
   className="mfui-beta-content-area mfui-beta-content-area_color_freshAsphalt"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -125,7 +125,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with fullBla
   className="mfui-beta-content-area mfui-beta-content-area_color_fullBlack"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -137,7 +137,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with green 1
   className="mfui-beta-content-area mfui-beta-content-area_color_green"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -149,7 +149,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with purple 
   className="mfui-beta-content-area mfui-beta-content-area_color_purple"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -161,7 +161,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with spbSky0
   className="mfui-beta-content-area mfui-beta-content-area_color_spbSky0"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -173,7 +173,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with spbSky1
   className="mfui-beta-content-area mfui-beta-content-area_color_spbSky1"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -185,7 +185,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with spbSky2
   className="mfui-beta-content-area mfui-beta-content-area_color_spbSky2"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -197,7 +197,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with transpa
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -209,7 +209,7 @@ exports[`<ContentArea /> render component when outerBackgroundColor with white 1
   className="mfui-beta-content-area mfui-beta-content-area_color_white"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -218,10 +218,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with white 1
 
 exports[`<ContentArea /> renders correctly with custom props 1`] = `
 <div
-  className="mfui-beta-content-area mfui-beta-content-area_color_white test-class"
+  className="mfui-beta-content-area mfui-beta-content-area_color_white className rootClass"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_none mfui-beta-content-area__inner_mobile-padding_none mfui-beta-content-area__inner_color_white"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_disable-indents_all mfui-beta-content-area__inner_color_white innerClass"
   >
     <span>
       child
@@ -235,7 +235,7 @@ exports[`<ContentArea /> renders correctly with default props 1`] = `
   className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
 >
   <div
-    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_padding_default mfui-beta-content-area__inner_mobile-padding_default mfui-beta-content-area__inner_color_transparent"
+    className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
   >
     <span>
       child

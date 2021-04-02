@@ -1,0 +1,23 @@
+---
+name: Table
+menu: Конструктор
+route: components/Table
+---
+
+import { Props } from 'docz';
+import Table from '../Table';
+import TableRow from '../TableRow';
+import Example from './Table.example.mdx'
+
+# Table
+
+<CopyToClipboardBox text="import { Table, TableRow, TableCell } from '@megafon/ui-shared';" />
+
+<DoczTabs>
+    <Example />
+    <div>
+        <Props of={Table} />
+        <h2>TableRow</h2>
+        <Props of={TableRow} />
+    </div>
+</DoczTabs>

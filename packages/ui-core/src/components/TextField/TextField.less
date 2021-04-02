@@ -4,36 +4,39 @@
 
 @{b} {
     .fontFamily();
+    .commonFont();
     color: @freshAsphalt;
-    font-size: 15px;
-    line-height: 20px;
 
     &__field {
-        font-family: inherit;
+        .fontFamily();
+        .commonFont();
+        display: block;
         position: relative;
         z-index: 1;
-        font-size: 15px;
         width: 100%;
         box-sizing: border-box;
-        height: 48px;
+        min-height: 48px;
         outline: none;
-        cursor: text;
-        padding: 13px 20px 13px 20px;
-        line-height: 20px;
+        padding: 11px 19px;
         background-color: transparent;
         opacity: 1;
         border-radius: 0;
-        -webkit-appearance: none;
-        -moz-appearance: none;
+        appearance: none;
         box-shadow: none;
-        overflow: auto;
         margin: 0;
+    }
 
-        &_multiline {
-            display: block;
-            height: 152px;
-            resize: vertical;
-        }
+    &__field_type_fixed {
+        resize: none;
+    }
+
+    &__field_type_flexible {
+        resize: vertical;
+        overflow: hidden;
+    }
+
+    &__field_scrolling {
+        overflow: auto;
     }
 
     &__placeholder-input, &__placeholder-textarea {
@@ -80,7 +83,7 @@
     &__icon-box {
         box-sizing: border-box;
         position: absolute;
-        z-index: 0;
+        z-index: 3;
         top: 0;
         right: 0;
         bottom: 0;
@@ -88,14 +91,13 @@
         padding-right: 16px;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
         text-align: center;
     }
 
     &__icon-box_error,
     &__icon-box_password,
     &__icon-box_custom-handler {
-        z-index: 3;
+        cursor: pointer;
     }
 
     &__icon {
@@ -116,6 +118,22 @@
         line-height: 0;
         color: @fury;
         margin-left: 1px;
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__counter {
+        opacity: 0.5;
+        margin-top: 4px;
+        margin-left: auto;
+    }
+
+    &__counter_error {
+        color: @fury;
+        opacity: 1;
     }
 
     //mod theme:

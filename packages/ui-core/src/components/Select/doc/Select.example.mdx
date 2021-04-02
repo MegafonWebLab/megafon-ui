@@ -1,0 +1,177 @@
+import { Playground } from 'docz';
+import Select from '../Select';
+import Metro from 'icons/System/24/Metro_24.svg';
+import Checked from 'icons/System/24/Checked_24.svg';
+import { DemoSelectWrapper, items, flexStyle } from './Select.docz';
+
+```javascript collapse=Код DemoSelectWrapper
+const DemoSelectWrapper = props => {
+    const [currentValue, setCurrentValue] = React.useState();
+
+    const handleSelect = (_e, data) => {
+        setCurrentValue(data.value);
+    };
+
+    return (
+        <div style={DemoSelectWrapperStyle}>
+            {props.children({
+                onSelect: handleSelect,
+                currentValue: currentValue,
+            })}
+        </div>
+    );
+};
+```
+
+```javascript collapse=Демо данные
+const items = [
+    {
+        value: 1,
+        title: 'Авиамоторная',
+    },
+    {
+        value: 2,
+        title: 'Академическая',
+    },
+    {
+        value: 3,
+        title: 'Бабушкинская',
+    },
+    {
+        value: 4,
+        title: 'Багратионовская',
+    },
+    {
+        value: 5,
+        title: 'ВДНХ',
+    },
+    {
+        value: 6,
+        title: 'Варшавская',
+    },
+    {
+        value: 7,
+        title: 'Деловой центр',
+    },
+    {
+        value: 8,
+        title: 'Дмитровская',
+    },
+    {
+        value: 9,
+        title: 'Калужская',
+    },
+    {
+        value: 10,
+        title: 'Кантемировская',
+    },
+];
+```
+
+<Playground style={flexStyle}>
+    <DemoSelectWrapper>
+        {({ onSelect, currentValue }) => (
+            <Select
+                label="Тип сlassic (по умолчанию)"
+                onSelect={onSelect}
+                placeholder="Choose your step"
+                items={items}
+                currentValue={currentValue}
+            />
+        )}
+    </DemoSelectWrapper>
+    <DemoSelectWrapper>
+        {({ onSelect, canOpen, currentValue }) => (
+            <Select
+                label="Дополнительный компонент у элементов"
+                placeholder="Choose your step"
+                items={items.map(item => ({
+                    title: item.title,
+                    value: item.value,
+                    view: (
+                        <>
+                            <Metro style={{ width: '24px', height: '24px', marginRight: '16px' }} />
+                            {item.title}
+                        </>
+                    ),
+                }))}
+                onSelect={onSelect}
+                currentValue={currentValue}
+            />
+        )}
+    </DemoSelectWrapper>
+    <DemoSelectWrapper>
+        {({ onSelect, currentValue }) => (
+            <Select
+                label="Выключенное состояние"
+                isDisabled
+                onSelect={onSelect}
+                placeholder="You have no choice"
+                items={items}
+                currentValue={currentValue}
+            />
+        )}
+    </DemoSelectWrapper>
+</Playground>
+
+## Валидация
+
+<Playground style={flexStyle}>
+    <DemoSelectWrapper>
+        {({ onSelect, currentValue = 3 }) => (
+            <Select
+                label="Успешное состояние"
+                required
+                verification="valid"
+                noticeText="Success message"
+                onSelect={onSelect}
+                placeholder="Choose your step"
+                items={items}
+                currentValue={currentValue}
+            />
+        )}
+    </DemoSelectWrapper>
+    <DemoSelectWrapper>
+        {({ onSelect, currentValue }) => (
+            <Select
+                label="Состояние ошибки"
+                required
+                verification="error"
+                noticeText="Error message"
+                onSelect={onSelect}
+                placeholder="Choose your step"
+                items={items}
+                currentValue={currentValue}
+            />
+        )}
+    </DemoSelectWrapper>
+</Playground>
+
+## Тип сombobox
+
+<Playground style={flexStyle}>
+    <DemoSelectWrapper>
+        {({ onSelect, currentValue }) => (
+            <Select
+                label="Тип combobox"
+                type="combobox"
+                onSelect={onSelect}
+                placeholder="Choose or type your step"
+                items={items}
+                currentValue={currentValue}
+            />
+        )}
+    </DemoSelectWrapper>
+    <DemoSelectWrapper>
+        {({ onSelect, currentValue = 6 }) => (
+            <Select
+                label="Combobox с выбранным по умолчанию значением"
+                type="combobox"
+                onSelect={onSelect}
+                placeholder="Choose or type your step"
+                items={items}
+                currentValue={currentValue}
+            />
+        )}
+    </DemoSelectWrapper>
+</Playground>

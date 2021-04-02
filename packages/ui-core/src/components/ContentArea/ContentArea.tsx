@@ -14,17 +14,29 @@ export type BackgroundColorType =
     | 'freshAsphalt'
     | 'fullBlack';
 
+const DisableIndents = {
+    MOBILE: 'mobile',
+    MOBILE_TABLET: 'mobile-tablet',
+    TABLET_DESKTOP: 'tablet-desktop',
+    ALL: 'all',
+} as const;
+
+type DisableIndentsType = typeof DisableIndents[keyof typeof DisableIndents];
+
 export interface IConrentAreaProps {
-    /** Background color of the external container */
+    /** Фоновый цвет внешнего контейнера */
     outerBackgroundColor?: BackgroundColorType;
-    /** Background color of the internal container */
+    /** Фоновый цвет внутреннего контейнера */
     innerBackgroundColor?: BackgroundColorType;
-    /** Side paddings of the internal container */
-    innerPadding?: 'default' | 'none';
-    /** Side paddings of the internal container on mobile screen */
-    mobileInnerPadding?: 'default' | 'none';
-    /** Custom class name for an external content area block */
+    /** Отключение отступов на различных разрешениях */
+    disableIndents?: DisableIndentsType;
+    /** Дополнительные классы для корневого элемента */
     className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        inner?: string;
+    };
 }
 
 const BACKGROUND_COLORS = [
@@ -44,37 +56,37 @@ class ContentArea extends React.Component<IConrentAreaProps> {
     static propTypes = {
         outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
         innerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
-        innerPadding: PropTypes.oneOf(['default', 'none']),
-        mobileInnerPadding: PropTypes.oneOf(['default', 'none']),
+        disableIndents: PropTypes.oneOf(Object.values(DisableIndents)),
         children: PropTypes.node,
         className: PropTypes.string,
+        classes: PropTypes.shape({
+            root: PropTypes.string,
+            inner: PropTypes.string,
+        }),
     };
 
     static defaultProps = {
         outerBackgroundColor: 'transparent',
         innerBackgroundColor: 'transparent',
-        innerPadding: 'default',
-        mobileInnerPadding: 'default',
     };
 
     render() {
         const {
             outerBackgroundColor,
             innerBackgroundColor,
-            innerPadding,
-            mobileInnerPadding,
+            disableIndents,
             children,
             className,
+            classes = {},
         } = this.props;
 
         return (
-            <div className={cn({ color: outerBackgroundColor }, className)}>
+            <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
                 <div
                     className={cn('inner', {
-                        padding: innerPadding,
-                        'mobile-padding': mobileInnerPadding,
+                        'disable-indents': disableIndents,
                         color: innerBackgroundColor,
-                    })}
+                    }, classes.inner)}
                 >
                     {children}
                 </div>

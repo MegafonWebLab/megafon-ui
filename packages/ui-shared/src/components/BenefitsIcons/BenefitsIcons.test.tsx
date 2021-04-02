@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import BenefitsIcons, { IBenefitsIcons } from './BenefitsIcons';
-import { fiveItems, fourItems, threeItems, twoItems } from './BenefitsIcons.docz';
+import { fiveItems, fourItems, threeItems, twoItems } from './doc/BenefitsIcons.docz';
 import { IconPositionEnum } from './types';
 
 const props: IBenefitsIcons = {

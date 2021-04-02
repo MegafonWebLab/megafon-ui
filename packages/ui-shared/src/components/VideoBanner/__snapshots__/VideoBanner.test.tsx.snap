@@ -1,0 +1,965 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoBanner /> render component with classes 1`] = `
+<div
+  className="mfui-beta-video-banner className rootClass"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              className=""
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <Button
+            className="mfui-beta-video-banner__button buttonClass"
+            href="#"
+            theme="green"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link linkClass"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              className=""
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+            theme="purple"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBanner /> render component with pictures 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBanner /> render component with pictures and content 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              className=""
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+            theme="green"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBanner /> render component with pictures and non default content text color 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_clearWhite"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              className=""
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+            theme="green"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBanner /> render component with the different content text color on desktop and mobile resolution 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt mfui-beta-video-banner__content_text-color-mobile_clearWhite"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              className=""
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+            theme="green"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
+exports[`<VideoBanner /> tests with local window render desktop image on relevant resolution 1`] = `
+<VideoBanner
+  imageDesktop="imageDesktop"
+  imageDesktopWide="imageDesktopWide"
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <div
+              className="mfui-beta-video-banner__background-image"
+              style={
+                Object {
+                  "backgroundImage": "url(imageDesktop)",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render mobile image on relevant resolution 1`] = `
+<VideoBanner
+  imageDesktop="imageDesktop"
+  imageDesktopWide="imageDesktopWide"
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <div
+              className="mfui-beta-video-banner__background-image"
+              style={
+                Object {
+                  "backgroundImage": "url(imageMobile)",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render tablet image on relevant resolution 1`] = `
+<VideoBanner
+  imageDesktop="imageDesktop"
+  imageDesktopWide="imageDesktopWide"
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <div
+              className="mfui-beta-video-banner__background-image"
+              style={
+                Object {
+                  "backgroundImage": "url(imageTablet)",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render video with sounds enabled 1`] = `
+<VideoBanner
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+  isMuted={false}
+  videoSrc="video.mp4"
+  videoType="video"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <video
+              autoPlay={true}
+              className="mfui-beta-video-banner__video"
+              loop={true}
+              muted={false}
+            >
+              <source
+                src="video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render wide desktop image on relevant resolution 1`] = `
+<VideoBanner
+  imageDesktop="imageDesktop"
+  imageDesktopWide="imageDesktopWide"
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <div
+              className="mfui-beta-video-banner__background-image"
+              style={
+                Object {
+                  "backgroundImage": "url(imageDesktopWide)",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render with video 1`] = `
+<VideoBanner
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+  videoSrc="video.mp4"
+  videoType="video"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <video
+              autoPlay={true}
+              className="mfui-beta-video-banner__video"
+              loop={true}
+              muted={true}
+            >
+              <source
+                src="video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render with video and content 1`] = `
+<VideoBanner
+  content={
+    Object {
+      "buttonHref": "#",
+      "buttonTitle": "Текст в кнопке",
+      "cost": "oт <b>1000 ₽</b> за сообщение",
+      "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
+      "linkTitle": "Личный кабинет услуги",
+      "linkUrl": "#",
+      "title": "Текст ≈40 симовлов. Короткие слова",
+    }
+  }
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+  videoSrc="video.mp4"
+  videoType="video"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <div
+              className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+            >
+              <Header
+                as="h1"
+                className="mfui-beta-video-banner__title"
+                color="inherit"
+                hAlign="inherit"
+              >
+                <h1
+                  className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
+                >
+                  Текст ≈40 симовлов. Короткие слова
+                </h1>
+              </Header>
+              <div
+                className="mfui-beta-video-banner__text"
+              >
+                <Header
+                  as="h5"
+                  className="mfui-beta-video-banner__description"
+                  color="inherit"
+                  hAlign="inherit"
+                >
+                  <h5
+                    className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-video-banner__description"
+                  >
+                    Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+                  </h5>
+                </Header>
+                <div
+                  className="mfui-beta-video-banner__cost"
+                >
+                  oт 
+                  <component
+                    className=""
+                    key="1"
+                  >
+                    <Header
+                      as="h3"
+                      className="mfui-beta-video-banner__value"
+                      color="inherit"
+                      hAlign="inherit"
+                    >
+                      <h3
+                        className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-video-banner__value"
+                      >
+                        1000 ₽
+                      </h3>
+                    </Header>
+                  </component>
+                   за сообщение
+                </div>
+              </div>
+              <div
+                className="mfui-beta-video-banner__btns-wrapper"
+              >
+                <Button
+                  className="mfui-beta-video-banner__button"
+                  href="#"
+                  theme="green"
+                >
+                  <a
+                    className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text mfui-beta-video-banner__button"
+                    disabled={false}
+                    href="#"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="mfui-beta-button__inner"
+                    >
+                      <div
+                        className="mfui-beta-button__content"
+                      >
+                        <span
+                          className="mfui-beta-button__text"
+                        >
+                          Текст в кнопке
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </Button>
+                <TextLink
+                  className="mfui-beta-video-banner__link"
+                  color="blue"
+                  href="#"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  <Link
+                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
+                    href="#"
+                  >
+                    <a
+                      className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
+                      href="#"
+                    >
+                      Личный кабинет услуги
+                    </a>
+                  </Link>
+                </TextLink>
+              </div>
+            </div>
+            <video
+              autoPlay={true}
+              className="mfui-beta-video-banner__video"
+              loop={true}
+              muted={true}
+            >
+              <source
+                src="video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render with youtube video 1`] = `
+<VideoBanner
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+  videoSrc="2Sps5MnvlKM"
+  videoType="youtube"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <iframe
+              allow="autoplay"
+              className="mfui-beta-video-banner__video"
+              frameBorder="0"
+              height="100%"
+              src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window render youtube video with sounds enabled 1`] = `
+<VideoBanner
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+  isMuted={false}
+  videoSrc="2Sps5MnvlKM"
+  videoType="youtube"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <iframe
+              allow="autoplay"
+              className="mfui-beta-video-banner__video"
+              frameBorder="0"
+              height="100%"
+              src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=0&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window should not render background image on desktop resolution with video 1`] = `
+<VideoBanner
+  imageMobile="imageMobile"
+  imageTablet="imageTablet"
+  videoSrc="2Sps5MnvlKM"
+  videoType="youtube"
+>
+  <div
+    className="mfui-beta-video-banner"
+  >
+    <ContentArea
+      innerBackgroundColor="transparent"
+      outerBackgroundColor="transparent"
+    >
+      <div
+        className="mfui-beta-content-area mfui-beta-content-area_color_transparent"
+      >
+        <div
+          className="mfui-beta-content-area__inner mfui-beta-content-area__inner_color_transparent"
+        >
+          <div
+            className="mfui-beta-video-banner__wrapper"
+          >
+            <iframe
+              allow="autoplay"
+              className="mfui-beta-video-banner__video"
+              frameBorder="0"
+              height="100%"
+              src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </ContentArea>
+  </div>
+</VideoBanner>
+`;
+
+exports[`<VideoBanner /> tests with local window should not render video on mobile resolution 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;

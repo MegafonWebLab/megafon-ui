@@ -1,0 +1,80 @@
+.docz-layout {
+    padding-top: 48px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 0px;
+    }
+
+    &__side-bar {
+        position: fixed;
+        top: 48px;
+        bottom: 0;
+        z-index: 10;
+        width: 240px;
+        transform: translateX(-240px);
+        transition: transform .5s;
+
+        background: #FFF;
+
+        @media screen and (min-width: 768px) {
+            top: 0;
+            transform: translateX(0);
+        }
+
+        &_open {
+            transform: translateX(0);
+        }
+    }
+
+    &__bg {
+        display: none;
+
+        &_open {
+            @media screen and (max-width: 767px) {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 9;
+
+                background: rgba(0,0,0, 0.3);
+            }
+        }
+    }
+    &__sep {
+        position: fixed;
+        top: 48px;
+        bottom: 0;
+        left: 0;
+        width: 1px;
+        background-color: #EDEDED;
+        transform: translateX(0);
+        transition: transform .5s;
+
+        @media screen and (min-width: 767px) {
+            top: 0;
+            transform: translateX(240px);
+        }
+
+        &_open {
+            transform: translateX(240px);
+        }
+    }
+    &__content {
+        padding-left: 0;
+        transition: padding .5s;
+
+        @media screen and (min-width: 768px) {
+            padding-left: 240px;
+        }
+    }
+    &__content-inner {
+        padding: 80px;
+
+        @media screen and (max-width: 1120px) {
+            padding: 24px;
+        }
+    }
+}

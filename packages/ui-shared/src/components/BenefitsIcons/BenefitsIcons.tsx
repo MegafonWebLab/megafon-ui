@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import './style/BenefitsIcons.less';
 import { cnCreate, Grid, GridColumn } from '@megafon/ui-core';
 import BenefitsIconsTile from './BenefitsIconsTile';
-import { GridConfig, IconPositionEnum, IBenefit } from './types';
+import { GridConfig, IconPositionEnum, IconPosition, IBenefit } from './types';
 
 export interface IBenefitsIcons {
-    /** Icon position */
-    iconPosition?: IconPositionEnum;
-    /** Benefits list */
+    /** Позиция иконки */
+    iconPosition?: IconPosition;
+    /** Список бенефитов */
     items: IBenefit[];
-    /** Custom className */
+    /** Дополнительный класс корневого элемента */
     className?: string;
 }
 
@@ -99,7 +99,7 @@ const getCenterTopConfig = (count: number, index: number): GridConfig => {
     }
 };
 
-const getColumnConfig = (iconPosition: IconPositionEnum, count: number, index: number) => {
+const getColumnConfig = (iconPosition: IconPosition, count: number, index: number) => {
     switch (iconPosition) {
         case IconPositionEnum.LEFT_TOP:
             return getLeftTopConfig(count, index);
@@ -114,14 +114,14 @@ const getColumnConfig = (iconPosition: IconPositionEnum, count: number, index: n
 
 const cn = cnCreate('mfui-beta-benefits-icons');
 const BenefitsIcons: React.FC<IBenefitsIcons> = ({
-    iconPosition = IconPositionEnum.LEFT_TOP,
+    iconPosition = 'left-top',
     items,
     className,
 }) => {
     const hAlign = iconPosition === IconPositionEnum.CENTER_TOP ? 'center' : 'left';
 
     return (
-        <div className={cn(className)}>
+        <div className={cn([className])}>
             <div className={cn('inner')}>
                 <Grid guttersLeft="medium" hAlign={hAlign}>
                     {items.map(({ title, text, icon }, i) => (

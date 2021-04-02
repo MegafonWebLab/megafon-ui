@@ -1,0 +1,54 @@
+import { Playground } from 'docz';
+import VideoBlock from '../VideoBlock';
+import { content, video, youtubeVideoId } from './VideoBlock.docz';
+
+```javascript collapse=Демо данные
+const content: IContent = {
+    title: 'Интернет',
+    description: [
+        'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
+        'Монтажник проведёт все необходимые работы под ключ.',
+    ],
+    href: '#',
+    buttonTitle: 'Подключить',
+}
+
+Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
+<VideoBlock videoType='youtube' videoSrc='2Sps5MnvlKM' />
+```
+
+## Видео без контента
+
+<Playground>
+    <VideoBlock
+        videoSrc={video}
+    />
+</Playground>
+
+## Видео с контентом
+
+<Playground>
+    <VideoBlock
+        content={content}
+        videoSrc={video}
+    />
+</Playground>
+
+## Видео с Youtube
+
+<Playground>
+    <VideoBlock
+        videoSrc={youtubeVideoId}
+        videoType="youtube"
+    />
+</Playground>
+
+## Видео с Youtube с контентом
+
+<Playground>
+    <VideoBlock
+        content={content}
+        videoSrc={youtubeVideoId}
+        videoType="youtube"
+    />
+</Playground>

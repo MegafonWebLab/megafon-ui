@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ButtonBanner /> should render with props 1`] = `
+<div
+  className="mfui-beta-button-banner mfui-beta-button-banner_image className rootClass"
+  data-test="value"
+>
+  <Grid
+    guttersLeft="medium"
+  >
+    <GridColumn
+      all="6"
+      leftOffsetDesktop="1"
+      leftOffsetTablet="1"
+      leftOffsetWide="1"
+      mobile="12"
+    >
+      <div
+        className="mfui-beta-button-banner__content"
+      >
+        <Header
+          as="h2"
+          className="mfui-beta-button-banner__header"
+          color="black"
+          hAlign="inherit"
+        >
+          Заголовок
+        </Header>
+        <Paragraph
+          className="mfui-beta-button-banner__text"
+          hasMargin={false}
+        >
+          Текст 
+          <TextLink
+            className=""
+            color="blue"
+            href="#"
+            key="1"
+            target="_blank"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            тект
+          </TextLink>
+        </Paragraph>
+        <Button
+          className="mfui-beta-button-banner__button buttonClass"
+          href="#"
+          target="_blank"
+          theme="purple"
+        >
+          Кнопка
+        </Button>
+      </div>
+    </GridColumn>
+    <GridColumn
+      all="5"
+      mobile="12"
+    >
+      <div
+        className="mfui-beta-button-banner__media"
+        style={
+          Object {
+            "backgroundImage": "url(image.png)",
+          }
+        }
+      />
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<ButtonBanner /> should render with required props 1`] = `
+<div
+  className="mfui-beta-button-banner"
+>
+  <Grid
+    guttersLeft="medium"
+  >
+    <GridColumn
+      all="6"
+      leftOffsetDesktop="1"
+      leftOffsetTablet="1"
+      leftOffsetWide="1"
+      mobile="12"
+    >
+      <div
+        className="mfui-beta-button-banner__content"
+      >
+        <Header
+          as="h2"
+          className="mfui-beta-button-banner__header"
+          color="black"
+          hAlign="inherit"
+        >
+          Заголовок
+        </Header>
+        <Paragraph
+          className="mfui-beta-button-banner__text"
+          hasMargin={false}
+        >
+          Текст 
+          <TextLink
+            className=""
+            color="blue"
+            href="#"
+            key="1"
+            target="_blank"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            тект
+          </TextLink>
+        </Paragraph>
+      </div>
+    </GridColumn>
+    <GridColumn
+      all="5"
+      mobile="12"
+    >
+      <div
+        className="mfui-beta-button-banner__media"
+      >
+        <Button
+          className="mfui-beta-button-banner__button"
+          target="_self"
+          theme="green"
+        >
+          Кнопка
+        </Button>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
