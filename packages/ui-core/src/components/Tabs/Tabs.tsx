@@ -122,7 +122,7 @@ const Tabs: React.FC<ITabsProps> = ({
             return;
         }
 
-        const { top, left, right } = rootRef.current.getBoundingClientRect();
+        const { left, right } = rootRef.current.getBoundingClientRect();
         const documentWidth = document.documentElement.clientWidth;
 
         setStickyOffset({ left, right: documentWidth - right });
