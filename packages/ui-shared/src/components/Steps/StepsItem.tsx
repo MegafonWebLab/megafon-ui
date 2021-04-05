@@ -7,7 +7,7 @@ interface IStepsItem {
     /** Номер элемента */
     index: number;
     /** Текст */
-    text: string;
+    text: string | React.ReactNode[];
 }
 
 const cn = cnCreate('mfui-beta-steps-item');
@@ -24,7 +24,7 @@ const StepsItem: React.FC<IStepsItem> = ({ index, text }) => (
 
 StepsItem.propTypes = {
     index: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
 };
 
 export default StepsItem;
