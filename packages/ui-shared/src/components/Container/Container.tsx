@@ -22,9 +22,9 @@ type Props = {
     className?: string;
     /** Цвет фона */
     backgroundColor?: BackgroundColorType;
-    /** Отключает отступ сверху */
+    /** Отключить отступ сверху */
     disablePaddingTop?: boolean;
-    /** Отключает отступ снизу */
+    /** Отключить отступ снизу */
     disablePaddingBottom?: boolean;
 };
 
@@ -54,6 +54,8 @@ Container.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
+    disablePaddingTop: PropTypes.bool,
+    disablePaddingBottom: PropTypes.bool,
 };
 
 export default Container;
