@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.157](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.156...@megafon/ui-shared@2.0.0-beta.157) (2021-04-06)
+
+
+### Features
+
+* **benefitpictures:** add render html for title and text ([d866d4f](https://github.com/MegafonWebLab/megafon-ui/commit/d866d4f2a3c52b715aaf5247200796cc7529aacb))
+
+
+
+
+
 # [2.0.0-beta.156](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.155...@megafon/ui-shared@2.0.0-beta.156) (2021-04-06)
 
 
