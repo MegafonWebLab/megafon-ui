@@ -14,8 +14,3 @@ $ yarn add @megafon/ui-shared@beta
 ## Development notes
 
 ### Build
-
-```bash
-$ yarn run build
-```
-

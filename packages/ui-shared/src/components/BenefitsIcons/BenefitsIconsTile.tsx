@@ -37,7 +37,10 @@ const typographyConfig = {
         props: ['href', 'target'],
     },
     b: {
-        component: ({ children }) => <b>{children}</b>,
+        component: ({ children, className }) => <b className={className}>{children}</b>,
+    },
+    span: {
+        component: ({ children, className }) => <span className={className}>{children}</span>,
     },
 };
 

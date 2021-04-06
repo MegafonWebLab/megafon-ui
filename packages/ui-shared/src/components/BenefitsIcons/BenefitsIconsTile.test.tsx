@@ -36,4 +36,15 @@ describe('<BenefitsIconsTile />', () => {
         const wrapper = shallow(<BenefitsIconsTile {...newProps} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('renders BenefitsIconsTile with html(span) in text field', () => {
+        const newProps = {
+            ...props,
+            text: '<span class="test"><b class="red">*</b><b class="num">105</b></span>',
+        };
+
+        const wrapper = shallow(<BenefitsIconsTile {...newProps} />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
