@@ -25,7 +25,7 @@ const getTransform = (config: TransformConfig) => {
                 const { component: Component, className } = nodeElement;
                 const filteredProps = {
                     key: props.key,
-                    className: className || '',
+                    className: className || props.className || '',
                 };
 
                 nodeElement.props?.forEach(prop => {

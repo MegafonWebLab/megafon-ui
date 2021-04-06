@@ -102,6 +102,51 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field
 </div>
 `;
 
+exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html(span) in text field 1`] = `
+<div
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
+>
+  <div
+    className="mfui-beta-benefits-icons-tile__svg-icon"
+  >
+    <test-file-stub />
+  </div>
+  <div
+    className="mfui-beta-benefits-icons-tile__content-wrapper"
+  >
+    <Header
+      as="h5"
+      className="mfui-beta-benefits-icons-tile__title"
+      color="black"
+      hAlign="inherit"
+    >
+      title
+    </Header>
+    <div
+      className="mfui-beta-benefits-icons-tile__content"
+    >
+      <component
+        className="test"
+        key="0"
+      >
+        <component
+          className="red"
+          key="0"
+        >
+          *
+        </component>
+        <component
+          className="num"
+          key="1"
+        >
+          105
+        </component>
+      </component>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
 <div
   className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
