@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.115](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.114...@megafon/ui-core@2.0.0-beta.115) (2021-04-06)
+
+
+### Features
+
+* **benefitsiconstile, convert, readme:** fix and update render html ([0c08667](https://github.com/MegafonWebLab/megafon-ui/commit/0c086674f666a068e1c4fde4a1a615d26f225512))
+
+
+
+
+
 # [2.0.0-beta.114](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.113...@megafon/ui-core@2.0.0-beta.114) (2021-04-06)
 
 **Note:** Version bump only for package @megafon/ui-core
