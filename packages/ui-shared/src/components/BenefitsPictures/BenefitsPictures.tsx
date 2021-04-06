@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
 import { cnCreate, Grid, GridColumn, Header, Paragraph, breakpoints, throttleTime } from '@megafon/ui-core';
+import convert from 'htmr';
 import { IBenefit, GridConfig, GridGutterSize } from './types';
 
 const ONLY_LEFT_ALIGN_ITEMS_COUNT = 3;
@@ -164,8 +165,8 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
                                  src={img}
                                  alt=""
                             />
-                            <Header className={cn('title')} hAlign={hAlign} as="h3">{title}</Header>
-                            <Paragraph align={hAlign}>{text}</Paragraph>
+                            <Header className={cn('title')} hAlign={hAlign} as="h3">{convert(title)}</Header>
+                            <Paragraph align={hAlign}>{convert(text)}</Paragraph>
                         </div>
                     </GridColumn>
                 )}
