@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.158](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.157...@megafon/ui-shared@2.0.0-beta.158) (2021-04-07)
+
+
+### Features
+
+* **steps:** edit steps item text type ([53da4fd](https://github.com/MegafonWebLab/megafon-ui/commit/53da4fd30268e0d9c0aa4bf585fba02b46261fe7))
+
+
+### BREAKING CHANGES
+
+* **steps:** adds ReactNode type to text props for convert function
+
+
+
+
+
 # [2.0.0-beta.157](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.156...@megafon/ui-shared@2.0.0-beta.157) (2021-04-06)
 
 
