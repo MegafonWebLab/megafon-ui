@@ -361,3 +361,31 @@ import StepsItem from '../../Steps/StepsItem';
         </Steps>
     </Container>
 </Playground>
+
+## Несколько контейнеров с отключенными отступами у первого контейнера
+
+<Playground>
+    <Container disablePaddingTop={true} disablePaddingBottom={true}>
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+        />
+        <ButtonLinkBox
+            buttonTitle="Кнопка"
+            buttonUrl="#"
+            hAlign="center"
+        />
+    </Container>
+    <Container>
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+        />
+        <BenefitsIcons
+            items={benefitsIconsContent}
+            iconPosition="center-top"
+        />
+    </Container>
+</Playground>

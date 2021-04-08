@@ -22,12 +22,24 @@ type Props = {
     className?: string;
     /** Цвет фона */
     backgroundColor?: BackgroundColorType;
+    /** Отключить отступ сверху */
+    disablePaddingTop?: boolean;
+    /** Отключить отступ снизу */
+    disablePaddingBottom?: boolean;
 };
 
 const cn = cnCreate('mfui-beta-container');
-const Container: React.FC<Props> = ({ backgroundColor = 'default', rootRef, id, className, children }) =>
+const Container: React.FC<Props> = ({
+    backgroundColor = 'default',
+    rootRef,
+    id,
+    className,
+    children,
+    disablePaddingTop,
+    disablePaddingBottom,
+}) =>
     (
-        <div className={cn({'bg-color': backgroundColor}, [className])} ref={rootRef} id={id}>
+        <div className={cn({'bg-color': backgroundColor, 'disable-padding-top': disablePaddingTop, 'disable-padding-bottom': disablePaddingBottom }, [className])} ref={rootRef} id={id}>
             <ContentArea>
                 {children}
             </ContentArea>
@@ -42,6 +54,8 @@ Container.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
+    disablePaddingTop: PropTypes.bool,
+    disablePaddingBottom: PropTypes.bool,
 };
 
 export default Container;

@@ -7,6 +7,8 @@ const optionalProps = {
     id: 'id',
     className: 'className',
     backgroundColor: BackgroundColors.GREEN,
+    disablePaddingTop: true,
+    disablePaddingBottom: true,
 };
 
 describe('Container', () => {
