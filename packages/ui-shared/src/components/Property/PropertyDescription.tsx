@@ -1,15 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import {cnCreate, Collapse, Paragraph, convert, TextLink} from '@megafon/ui-core';
+import { cnCreate, Collapse } from '@megafon/ui-core';
 import './PropertyDescription.less';
 import { Desc } from './types';
-
-const typographyConfig = {
-    a: {
-        component: TextLink,
-        props: ['href', 'target'],
-    },
-};
 
 const cn = cnCreate('mfui-beta-property-description');
 const PropertyDescription: React.FC<Desc> = ({
@@ -22,17 +15,6 @@ const PropertyDescription: React.FC<Desc> = ({
         isOpened,
     ]);
 
-    const renderDescriptionItems = React.useCallback(
-        () => (
-            value.map((valueItem, i) => (
-                <Paragraph hasMargin={false} key={i}>
-                    {convert(valueItem, typographyConfig)}
-                </Paragraph>
-            ))
-        ),
-        [value]
-    );
-
     if (isCollapsible) {
         return (
             <div className={cn()}>
@@ -44,17 +26,17 @@ const PropertyDescription: React.FC<Desc> = ({
                     classNameContainer={cn('content-inner')}
                     isOpened={isOpened}
                 >
-                    {renderDescriptionItems()}
+                    {value}
                 </Collapse>
             </div>
         );
     } else {
-        return <div className={cn()}>{renderDescriptionItems()}</div>;
+        return <div className={cn()}>{value}</div>;
     }
 };
 
 PropertyDescription.propTypes = {
-    value: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     isCollapsible: PropTypes.bool,
 };
 

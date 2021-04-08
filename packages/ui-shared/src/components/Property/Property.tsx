@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
-import {Header, cnCreate, convert, TextLink} from '@megafon/ui-core';
+import { Header, cnCreate } from '@megafon/ui-core';
 import './Property.less';
 import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
@@ -24,13 +24,6 @@ export interface IProperty {
     multirow?: boolean;
 }
 
-const typographyConfig = {
-    a: {
-        component: TextLink,
-        props: ['href', 'target'],
-    },
-};
-
 const cn = cnCreate('mfui-beta-property');
 const Property: React.FC<IProperty> = ({
     rootRef,
@@ -50,7 +43,7 @@ const Property: React.FC<IProperty> = ({
                     {icon && i === 0 && (
                         <div className={cn('icon')}>{icon}</div>
                     )}
-                    {convert(titleItem, typographyConfig)}
+                    {titleItem}
                 </Header>
             )),
         []
@@ -111,10 +104,10 @@ Property.propTypes = {
     ]),
     items: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.arrayOf(PropTypes.string.isRequired),
+            title: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
             description: PropTypes.arrayOf(
                 PropTypes.shape({
-                    value: PropTypes.arrayOf(PropTypes.string).isRequired,
+                    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
                     isCollapsible: PropTypes.bool,
                 })
             ),

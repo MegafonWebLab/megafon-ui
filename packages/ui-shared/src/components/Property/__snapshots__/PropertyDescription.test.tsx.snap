@@ -1,34 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<PropertyDescription /> should render description in one row 1`] = `
+exports[`<PropertyDescription /> should render description 1`] = `
 <div
   className="mfui-beta-property-description"
 >
-  <Paragraph
-    hasMargin={false}
-    key="0"
-  >
-    Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
-  </Paragraph>
-</div>
-`;
-
-exports[`<PropertyDescription /> should render description in several rows 1`] = `
-<div
-  className="mfui-beta-property-description"
->
-  <Paragraph
-    hasMargin={false}
-    key="0"
-  >
-    Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
-  </Paragraph>
-  <Paragraph
-    hasMargin={false}
-    key="1"
-  >
-    Google Play Music, Apple Music, онлайн радио.
-  </Paragraph>
+  Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
 </div>
 `;
 
@@ -47,18 +23,7 @@ exports[`<PropertyDescription /> should render hidden description 1`] = `
     classNameContainer="mfui-beta-property-description__content-inner"
     isOpened={false}
   >
-    <Paragraph
-      hasMargin={false}
-      key="0"
-    >
-      Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
-    </Paragraph>
-    <Paragraph
-      hasMargin={false}
-      key="1"
-    >
-      Google Play Music, Apple Music, онлайн радио.
-    </Paragraph>
+    Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
   </Collapse>
 </div>
 `;
@@ -78,18 +43,7 @@ exports[`<PropertyDescription /> should render opened description 1`] = `
     classNameContainer="mfui-beta-property-description__content-inner"
     isOpened={true}
   >
-    <Paragraph
-      hasMargin={false}
-      key="0"
-    >
-      Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
-    </Paragraph>
-    <Paragraph
-      hasMargin={false}
-      key="1"
-    >
-      Google Play Music, Apple Music, онлайн радио.
-    </Paragraph>
+    Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
   </Collapse>
 </div>
 `;

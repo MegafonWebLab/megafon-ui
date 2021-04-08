@@ -83,11 +83,7 @@ exports[`<Property /> should render several rows 1`] = `
             key="0"
           >
             <PropertyDescription
-              value={
-                Array [
-                  "Звонки на все номера России",
-                ]
-              }
+              value="Звонки на все номера России"
             />
           </div>
         </div>
@@ -113,11 +109,7 @@ exports[`<Property /> should render several rows 1`] = `
             key="0"
           >
             <PropertyDescription
-              value={
-                Array [
-                  "Звонки на все номера России",
-                ]
-              }
+              value="Звонки на все номера России"
             />
           </div>
         </div>
@@ -143,11 +135,7 @@ exports[`<Property /> should render several rows 1`] = `
             key="0"
           >
             <PropertyDescription
-              value={
-                Array [
-                  "Звонки на все номера России",
-                ]
-              }
+              value="Звонки на все номера России"
             />
           </div>
         </div>
@@ -196,71 +184,13 @@ exports[`<Property /> should render title and description 1`] = `
             key="0"
           >
             <PropertyDescription
-              value={
-                Array [
-                  "Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка",
-                ]
-              }
+              value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
             />
           </div>
         </div>
         <div
           className="mfui-beta-property__value-wrapper"
         />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Property /> should render title and description in several rows 1`] = `
-<div
-  className="mfui-beta-property"
->
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
-    >
-      <div
-        className="mfui-beta-property__item"
-        key="0"
-      >
-        <div
-          className="mfui-beta-property__inner"
-        >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Интернет на все сервисы
-          </Header>
-          <div
-            className="mfui-beta-property__desc"
-            key="0"
-          >
-            <PropertyDescription
-              value={
-                Array [
-                  "Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка",
-                  "Google Play Music, Apple Music, онлайн радио.",
-                ]
-              }
-            />
-          </div>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
-        </div>
       </div>
     </div>
   </div>
@@ -298,12 +228,7 @@ exports[`<Property /> should render title and hidden description 1`] = `
           >
             <PropertyDescription
               isCollapsible={true}
-              value={
-                Array [
-                  "Звонки на местные городские номера, когда вы находитесь дома,",
-                  "оплачиваются отдельно.",
-                ]
-              }
+              value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
             />
           </div>
         </div>
@@ -515,70 +440,6 @@ exports[`<Property /> should render with icon 1`] = `
 </div>
 `;
 
-exports[`<Property /> should render with links 1`] = `
-<div
-  className="mfui-beta-property"
->
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
-    >
-      <div
-        className="mfui-beta-property__item"
-        key="0"
-      >
-        <div
-          className="mfui-beta-property__inner"
-        >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Тарифы 
-            <TextLink
-              className=""
-              color="blue"
-              href="https://moscow.megafon.ru"
-              key="1"
-              underlineStyle="solid"
-              underlineVisibility="hover"
-            >
-              Включайся!
-            </TextLink>
-            , с которыми работает опция
-          </Header>
-          <div
-            className="mfui-beta-property__desc"
-            key="0"
-          >
-            <PropertyDescription
-              value={
-                Array [
-                  "<a href=\\"https://moscow.megafon.ru\\">Выбирай, Смотри, Слушай, Говори, Общайся</a>",
-                ]
-              }
-            />
-          </div>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`<Property /> should render with several descriptions 1`] = `
 <div
   className="mfui-beta-property"
@@ -609,11 +470,7 @@ exports[`<Property /> should render with several descriptions 1`] = `
             key="0"
           >
             <PropertyDescription
-              value={
-                Array [
-                  "После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.",
-                ]
-              }
+              value="После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно."
             />
           </div>
           <div
@@ -622,11 +479,7 @@ exports[`<Property /> should render with several descriptions 1`] = `
           >
             <PropertyDescription
               isCollapsible={true}
-              value={
-                Array [
-                  "Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.",
-                ]
-              }
+              value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
             />
           </div>
         </div>

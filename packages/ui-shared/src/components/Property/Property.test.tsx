@@ -40,33 +40,9 @@ describe('<Property />', () => {
                         title: ['Интернет на все сервисы'],
                         description: [
                             {
-                                value: [
-                                    'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка',
-                                ],
+                                value: 'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка',
                             },
                         ],
-                    },
-                ]}
-            />
-        );
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render title and description in several rows', () => {
-        const wrapper = shallow(
-            <Property
-                items={[
-                    {
-                        title: ['Интернет на все сервисы'],
-                        description: [
-                            {
-                                value: [
-                                    'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка',
-                                    'Google Play Music, Apple Music, онлайн радио.',
-                                ],
-                            },
-                        ],
-                        value: '500 ₽',
                     },
                 ]}
             />
@@ -82,10 +58,7 @@ describe('<Property />', () => {
                         title: ['Музыкальные сервисы'],
                         description: [
                             {
-                                value: [
-                                    'Звонки на местные городские номера, когда вы находитесь дома,',
-                                    'оплачиваются отдельно.',
-                                ],
+                                value: 'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.',
                                 isCollapsible: true,
                             },
                         ],
@@ -128,38 +101,13 @@ describe('<Property />', () => {
                         value: '500Р',
                         description: [
                             {
-                                value: [
+                                value:
                                     'После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.',
-                                ],
                             },
                             {
-                                value: [
+                                value:
                                     'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.',
-                                ],
                                 isCollapsible: true,
-                            },
-                        ],
-                    },
-                ]}
-            />
-        );
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with links', () => {
-        const wrapper = shallow(
-            <Property
-                items={[
-                    {
-                        title: [
-                            'Тарифы <a href="https://moscow.megafon.ru">Включайся!</a>, с которыми работает опция',
-                        ],
-                        value: '500 ₽',
-                        description: [
-                            {
-                                value: [
-                                    '<a href="https://moscow.megafon.ru">Выбирай, Смотри, Слушай, Говори, Общайся</a>',
-                                ],
                             },
                         ],
                     },
@@ -178,19 +126,19 @@ describe('<Property />', () => {
                     {
                         value: '500 ₽',
                         description: [
-                            { value: ['Звонки на все номера России'] },
+                            { value: 'Звонки на все номера России' },
                         ],
                     },
                     {
                         value: '500 ₽',
                         description: [
-                            { value: ['Звонки на все номера России'] },
+                            { value: 'Звонки на все номера России' },
                         ],
                     },
                     {
                         value: '500 ₽',
                         description: [
-                            { value: ['Звонки на все номера России'] },
+                            { value: 'Звонки на все номера России' },
                         ],
                     },
                 ]}
