@@ -9,6 +9,14 @@ const props = {
     classes: {
         root: 'rootClass',
         innerIndents: 'innerIndentsClass',
+        container: 'container',
+        containerModifier: 'containerModifier',
+        prev: 'prev',
+        next: 'next',
+    },
+    slidesPerView: 3,
+    pagination: {
+        el: '.some-el',
     },
     loop: true,
     autoPlay: true,
