@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.159](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.158...@megafon/ui-shared@2.0.0-beta.159) (2021-04-08)
+
+
+### Features
+
+* **container:** added enable/disable padding top and bottom ([fdae2bb](https://github.com/MegafonWebLab/megafon-ui/commit/fdae2bbfff5a63bb9b0d10d25024842bf220ec17))
+
+
+
+
+
 # [2.0.0-beta.158](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.157...@megafon/ui-shared@2.0.0-beta.158) (2021-04-07)
 
 
