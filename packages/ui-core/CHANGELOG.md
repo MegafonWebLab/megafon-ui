@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.116](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.115...@megafon/ui-core@2.0.0-beta.116) (2021-04-08)
+
+
+### Features
+
+* **carousel:** add new custom classes, pagination settings, ref callback ([8a90f46](https://github.com/MegafonWebLab/megafon-ui/commit/8a90f46f29483bdd0969fcbf0a4bdb4b023d43e9))
+
+
+
+
+
 # [2.0.0-beta.115](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.114...@megafon/ui-core@2.0.0-beta.115) (2021-04-06)
 
 
