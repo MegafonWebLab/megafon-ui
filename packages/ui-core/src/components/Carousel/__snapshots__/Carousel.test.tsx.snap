@@ -95,7 +95,8 @@ exports[`<Carousel /> should render with props 1`] = `
         },
       }
     }
-    className="mfui-beta-carousel__swiper innerIndentsClass"
+    className="mfui-beta-carousel__swiper innerIndentsClass container"
+    containerModifierClass="containerModifier"
     loop={true}
     noSwipingSelector="button"
     onFromEdge={[Function]}
@@ -108,8 +109,10 @@ exports[`<Carousel /> should render with props 1`] = `
     pagination={
       Object {
         "clickable": true,
+        "el": ".some-el",
       }
     }
+    slidesPerView={3}
     watchOverflow={true}
     watchSlidesVisibility={true}
   >
@@ -131,13 +134,13 @@ exports[`<Carousel /> should render with props 1`] = `
     </SwiperSlide>
   </Swiper>
   <NavArrow
-    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_prev"
+    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_prev prev"
     disabled={false}
     onClick={[Function]}
     theme="purple"
   />
   <NavArrow
-    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_next"
+    className="mfui-beta-carousel__arrow mfui-beta-carousel__arrow_next next"
     disabled={false}
     onClick={[Function]}
     theme="purple"

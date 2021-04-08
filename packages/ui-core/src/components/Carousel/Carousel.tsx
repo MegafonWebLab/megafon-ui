@@ -5,6 +5,7 @@ import cnCreate from 'utils/cnCreate';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { PaginationOptions } from 'swiper/types/components/pagination';
 import throttle from 'lodash.throttle';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import breakpoints from 'constants/breakpoints';
@@ -39,19 +40,29 @@ export interface ICarouselProps {
     classes?: {
         root?: string;
         innerIndents?: string;
+        container?: string;
+        containerModifier?: string;
+        prev?: string;
+        next?: string;
     };
+    /** Настройка количества слайдов */
+    slidesPerView?: number | 'auto';
     /** Настройки слайдов */
     slidesSettings?: SlidesSettingsType;
     /** Смена слайдов с зацикливанием */
     loop?: boolean;
     /** Автоматическая прокрутка */
     autoPlay?: boolean;
+    /** Настройки пагинации */
+    pagination?: PaginationOptions;
     /** Задержка для авто прокрутки */
     autoPlayDelay?: number;
     /** Тема навигации */
     navTheme?: NavThemeType;
     /** Css селектор элемента, при перетаскивании которого не будет происходить смена слайдов */
     noSwipingSelector?: string;
+    /** Ref на swiper */
+    getSwiper?: (instance: SwiperCore) => void;
     /** Обработчик клика по стрелке вперед (должен быть обернут в useCallback) */
     onNextClick?: (index: number) => void;
     /** Обработчик клика по стрелке назад (должен быть обернут в useCallback) */
@@ -85,7 +96,14 @@ const defaultSlidesSettings: SlidesSettingsType = {
 const cn = cnCreate('mfui-beta-carousel');
 const Carousel: React.FC<ICarouselProps> = ({
     className,
-    classes: { root: rootClass, innerIndents: innerIndentsClass } = {},
+    classes: {
+        root: rootClass,
+        innerIndents: innerIndentsClass,
+        prev: prevClass,
+        next: nextClass,
+        container: containerClass,
+        containerModifier,
+    } = {},
     slidesSettings = defaultSlidesSettings,
     autoPlay = false,
     autoPlayDelay = 5000,
@@ -93,6 +111,9 @@ const Carousel: React.FC<ICarouselProps> = ({
     navTheme = 'light',
     noSwipingSelector,
     children,
+    pagination,
+    slidesPerView,
+    getSwiper,
     onNextClick,
     onPrevClick,
     onChange,
@@ -138,6 +159,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
         setSwiperInstance(swiper);
         setLocked(swiper.isBeginning && swiper.isEnd);
+        getSwiper && getSwiper(swiper);
     }, []);
 
     const handleReachBeginnig = React.useCallback(() => {
@@ -187,16 +209,18 @@ const Carousel: React.FC<ICarouselProps> = ({
     return (
         <div className={cn({ 'nav-theme': navTheme }, [className, rootClass])} onClick={handleRootClick}>
             <Swiper
+                {...containerModifier ? {containerModifierClass: containerModifier} : {}}
                 className={cn(
                     'swiper',
                     { 'default-inner-indents': !innerIndentsClass },
-                    [innerIndentsClass]
+                    [innerIndentsClass, containerClass]
                 )}
+                slidesPerView={slidesPerView}
                 breakpoints={slidesSettings}
                 watchSlidesVisibility
                 watchOverflow
                 loop={loop}
-                pagination={{ clickable: true }}
+                pagination={{ clickable: true, ...pagination }}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
                 noSwipingSelector={noSwipingSelector}
                 onSwiper={handleSwiper}
@@ -214,13 +238,13 @@ const Carousel: React.FC<ICarouselProps> = ({
                 ))}
             </Swiper>
             <NavArrow
-                className={cn('arrow', { prev: true, locked: isLocked })}
+                className={cn('arrow', { prev: true, locked: isLocked }, [prevClass])}
                 onClick={handlePrevClick}
                 disabled={!loop && isBeginning}
                 theme={ArrowTheme.PURPLE}
             />
             <NavArrow
-                className={cn('arrow', { next: true, locked: isLocked })}
+                className={cn('arrow', { next: true, locked: isLocked }, [nextClass])}
                 view="next"
                 onClick={handleNextClick}
                 disabled={!loop && isEnd}
@@ -245,11 +269,23 @@ Carousel.propTypes = {
             spaceBetween: PropTypes.number.isRequired,
         })
     ),
+    slidesPerView: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.oneOf(Object.values(SlidesPerView)),
+    ]),
+    pagination: PropTypes.shape({
+        el: PropTypes.string,
+        bulletElement: PropTypes.string,
+        dynamicBullets: PropTypes.string,
+        clickable: PropTypes.bool,
+        renderBullet: PropTypes.func,
+    }),
     loop: PropTypes.bool,
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
     navTheme: PropTypes.oneOf(Object.values(NavTheme)),
     noSwipingSelector: PropTypes.string,
+    getSwiper: PropTypes.func,
     onNextClick: PropTypes.func,
     onPrevClick: PropTypes.func,
     onChange: PropTypes.func,
