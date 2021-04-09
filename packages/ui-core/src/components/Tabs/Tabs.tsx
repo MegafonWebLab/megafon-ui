@@ -143,7 +143,9 @@ const Tabs: React.FC<ITabsProps> = ({
         if (outerIndex === undefined) {
             setInnerIndex(index);
         }
-    }, [onTabClick, outerIndex]);
+
+        swiperInstance?.slideTo(index);
+    }, [onTabClick, outerIndex, swiperInstance]);
 
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
         setSwiperInstance(swiper);
