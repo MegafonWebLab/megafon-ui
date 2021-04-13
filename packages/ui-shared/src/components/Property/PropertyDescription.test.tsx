@@ -3,23 +3,10 @@ import { shallow } from 'enzyme';
 import PropertyDescription from './PropertyDescription';
 
 describe('<PropertyDescription />', () => {
-    it('should render description in one row', () => {
+    it('should render description', () => {
         const wrapper = shallow(
             <PropertyDescription
-                value={['Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка']}
-            />
-        );
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render description in several rows', () => {
-        const wrapper = shallow(
-            <PropertyDescription
-                value={[
-                    'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка',
-                    'Google Play Music, Apple Music, онлайн радио.',
-                ]}
+                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
             />
         );
 
@@ -29,11 +16,8 @@ describe('<PropertyDescription />', () => {
     it('should render hidden description', () => {
         const wrapper = shallow(
             <PropertyDescription
-                value={[
-                    'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка',
-                    'Google Play Music, Apple Music, онлайн радио.',
-                ]}
-                isCollapsible={true}
+                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
+                isCollapsible
             />
         );
 
@@ -43,11 +27,8 @@ describe('<PropertyDescription />', () => {
     it('should render opened description', () => {
         const wrapper = shallow(
             <PropertyDescription
-                value={[
-                    'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка',
-                    'Google Play Music, Apple Music, онлайн радио.',
-                ]}
-                isCollapsible={true}
+                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
+                isCollapsible
             />
         );
 
