@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.161](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.160...@megafon/ui-shared@2.0.0-beta.161) (2021-04-13)
+
+
+### Features
+
+* **property:** delete convert from component ([447022e](https://github.com/MegafonWebLab/megafon-ui/commit/447022ecb1fb81054fd1514cc2ec599ceb3c2d44))
+
+
+### BREAKING CHANGES
+
+* **property:** title and description does not support html tags
+
+
+
+
+
 # [2.0.0-beta.160](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.159...@megafon/ui-shared@2.0.0-beta.160) (2021-04-08)
 
 **Note:** Version bump only for package @megafon/ui-shared
