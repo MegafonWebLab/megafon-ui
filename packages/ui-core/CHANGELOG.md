@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.117](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.116...@megafon/ui-core@2.0.0-beta.117) (2021-04-14)
+
+
+### Bug Fixes
+
+* **package.json:** update swiper to fix error with types ([594cc99](https://github.com/MegafonWebLab/megafon-ui/commit/594cc99af7d9533ac9efca3f8b1ded3cdd5a0433))
+
+
+
+
+
 # [2.0.0-beta.116](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.115...@megafon/ui-core@2.0.0-beta.116) (2021-04-08)
 
 
