@@ -672,6 +672,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   </div>
                                 </div>,
                               ],
+                              "__swiper__": true,
                               "activeIndex": 0,
                               "allowClick": true,
                               "allowSlideNext": true,
@@ -745,9 +746,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   [Function],
                                   [Function],
                                 ],
-                                "_swiper": Array [
-                                  [Function],
-                                ],
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
@@ -806,6 +804,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "isVertical": [Function],
                               "loopCreate": [Function],
                               "loopDestroy": [Function],
+                              "mounted": true,
                               "observer": Object {
                                 "attach": [Function],
                                 "destroy": [Function],
@@ -831,6 +830,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -840,38 +840,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -883,7 +851,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -903,7 +871,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -938,6 +905,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -1006,6 +974,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -1015,38 +984,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -1058,7 +995,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -1078,7 +1015,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -1113,6 +1049,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -1166,6 +1103,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "allowTouchMove": true,
                                 "autoHeight": false,
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -1175,38 +1113,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -1218,7 +1124,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -1235,7 +1141,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -1244,6 +1149,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -1294,7 +1200,10 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "progress": NaN,
                               "realIndex": 0,
                               "resize": Object {
+                                "createObserver": [Function],
+                                "observer": null,
                                 "orientationChangeHandler": [Function],
+                                "removeObserver": [Function],
                                 "resizeHandler": [Function],
                               },
                               "rtl": false,
@@ -1471,6 +1380,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   </div>
                                 </div>,
                               ],
+                              "__swiper__": true,
                               "activeIndex": 0,
                               "allowClick": true,
                               "allowSlideNext": true,
@@ -1544,9 +1454,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   [Function],
                                   [Function],
                                 ],
-                                "_swiper": Array [
-                                  [Function],
-                                ],
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
@@ -1605,6 +1512,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "isVertical": [Function],
                               "loopCreate": [Function],
                               "loopDestroy": [Function],
+                              "mounted": true,
                               "observer": Object {
                                 "attach": [Function],
                                 "destroy": [Function],
@@ -1630,6 +1538,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -1639,38 +1548,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -1682,7 +1559,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -1702,7 +1579,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -1737,6 +1613,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -1805,6 +1682,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -1814,38 +1692,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -1857,7 +1703,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -1877,7 +1723,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -1912,6 +1757,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -1965,6 +1811,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "allowTouchMove": true,
                                 "autoHeight": false,
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -1974,38 +1821,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -2017,7 +1832,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -2034,7 +1849,6 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -2043,6 +1857,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -2093,7 +1908,10 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "progress": NaN,
                               "realIndex": 0,
                               "resize": Object {
+                                "createObserver": [Function],
+                                "observer": null,
                                 "orientationChangeHandler": [Function],
+                                "removeObserver": [Function],
                                 "resizeHandler": [Function],
                               },
                               "rtl": false,
@@ -2402,6 +2220,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   </div>
                                 </div>,
                               ],
+                              "__swiper__": true,
                               "activeIndex": 0,
                               "allowClick": true,
                               "allowSlideNext": true,
@@ -2475,9 +2294,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   [Function],
                                   [Function],
                                 ],
-                                "_swiper": Array [
-                                  [Function],
-                                ],
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
@@ -2536,6 +2352,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "isVertical": [Function],
                               "loopCreate": [Function],
                               "loopDestroy": [Function],
+                              "mounted": true,
                               "observer": Object {
                                 "attach": [Function],
                                 "destroy": [Function],
@@ -2561,6 +2378,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -2570,38 +2388,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -2613,7 +2399,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -2633,7 +2419,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -2668,6 +2453,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -2736,6 +2522,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -2745,38 +2532,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -2788,7 +2543,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -2808,7 +2563,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -2843,6 +2597,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -2896,6 +2651,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "allowTouchMove": true,
                                 "autoHeight": false,
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -2905,38 +2661,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -2948,7 +2672,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -2965,7 +2689,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -2974,6 +2697,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -3024,7 +2748,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "progress": NaN,
                               "realIndex": 0,
                               "resize": Object {
+                                "createObserver": [Function],
+                                "observer": null,
                                 "orientationChangeHandler": [Function],
+                                "removeObserver": [Function],
                                 "resizeHandler": [Function],
                               },
                               "rtl": false,
@@ -3201,6 +2928,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   </div>
                                 </div>,
                               ],
+                              "__swiper__": true,
                               "activeIndex": 0,
                               "allowClick": true,
                               "allowSlideNext": true,
@@ -3274,9 +3002,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   [Function],
                                   [Function],
                                 ],
-                                "_swiper": Array [
-                                  [Function],
-                                ],
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
@@ -3335,6 +3060,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "isVertical": [Function],
                               "loopCreate": [Function],
                               "loopDestroy": [Function],
+                              "mounted": true,
                               "observer": Object {
                                 "attach": [Function],
                                 "destroy": [Function],
@@ -3360,6 +3086,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -3369,38 +3096,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -3412,7 +3107,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -3432,7 +3127,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -3467,6 +3161,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -3535,6 +3230,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -3544,38 +3240,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -3587,7 +3251,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -3607,7 +3271,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -3642,6 +3305,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -3695,6 +3359,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "allowTouchMove": true,
                                 "autoHeight": false,
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -3704,38 +3369,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -3747,7 +3380,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -3764,7 +3397,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -3773,6 +3405,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -3823,7 +3456,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "progress": NaN,
                               "realIndex": 0,
                               "resize": Object {
+                                "createObserver": [Function],
+                                "observer": null,
                                 "orientationChangeHandler": [Function],
+                                "removeObserver": [Function],
                                 "resizeHandler": [Function],
                               },
                               "rtl": false,
@@ -4132,6 +3768,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   </div>
                                 </div>,
                               ],
+                              "__swiper__": true,
                               "activeIndex": 0,
                               "allowClick": true,
                               "allowSlideNext": true,
@@ -4205,9 +3842,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   [Function],
                                   [Function],
                                 ],
-                                "_swiper": Array [
-                                  [Function],
-                                ],
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
@@ -4266,6 +3900,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "isVertical": [Function],
                               "loopCreate": [Function],
                               "loopDestroy": [Function],
+                              "mounted": true,
                               "observer": Object {
                                 "attach": [Function],
                                 "destroy": [Function],
@@ -4291,6 +3926,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -4300,38 +3936,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -4343,7 +3947,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -4363,7 +3967,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -4398,6 +4001,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -4466,6 +4070,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -4475,38 +4080,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -4518,7 +4091,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -4538,7 +4111,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -4573,6 +4145,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -4626,6 +4199,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "allowTouchMove": true,
                                 "autoHeight": false,
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -4635,38 +4209,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -4678,7 +4220,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -4695,7 +4237,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -4704,6 +4245,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -4754,7 +4296,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "progress": NaN,
                               "realIndex": 0,
                               "resize": Object {
+                                "createObserver": [Function],
+                                "observer": null,
                                 "orientationChangeHandler": [Function],
+                                "removeObserver": [Function],
                                 "resizeHandler": [Function],
                               },
                               "rtl": false,
@@ -4931,6 +4476,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   </div>
                                 </div>,
                               ],
+                              "__swiper__": true,
                               "activeIndex": 0,
                               "allowClick": true,
                               "allowSlideNext": true,
@@ -5004,9 +4550,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   [Function],
                                   [Function],
                                 ],
-                                "_swiper": Array [
-                                  [Function],
-                                ],
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
@@ -5065,6 +4608,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "isVertical": [Function],
                               "loopCreate": [Function],
                               "loopDestroy": [Function],
+                              "mounted": true,
                               "observer": Object {
                                 "attach": [Function],
                                 "destroy": [Function],
@@ -5090,6 +4634,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -5099,38 +4644,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -5142,7 +4655,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -5162,7 +4675,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -5197,6 +4709,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -5265,6 +4778,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   "waitForTransition": true,
                                 },
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -5274,38 +4788,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -5317,7 +4799,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -5337,7 +4819,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -5372,6 +4853,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -5425,6 +4907,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "allowTouchMove": true,
                                 "autoHeight": false,
                                 "breakpoints": undefined,
+                                "breakpointsBase": "window",
                                 "centerInsufficientSlides": false,
                                 "centeredSlides": false,
                                 "centeredSlidesBounds": false,
@@ -5434,38 +4917,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
-                                "el": <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
-                                >
-                                  <div
-                                    class="swiper-wrapper"
-                                    style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
-                                  >
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <video
-                                        autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        loop=""
-                                      >
-                                        <source
-                                          src="ImgUrl1"
-                                          type="video/mp4"
-                                        />
-                                      </video>
-                                    </div>
-                                    <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
-                                    >
-                                      <img
-                                        alt=""
-                                        class="mfui-beta-instructions__swiper-img"
-                                        src="ImgUrl2"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>,
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -5477,7 +4928,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "freeModeSticky": false,
                                 "grabCursor": false,
                                 "height": null,
-                                "init": true,
+                                "init": false,
                                 "initialSlide": 0,
                                 "longSwipes": true,
                                 "longSwipesMs": 300,
@@ -5494,7 +4945,6 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
-                                  "_swiper": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -5503,6 +4953,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "preventInteractionOnTransition": false,
                                 "resistance": true,
                                 "resistanceRatio": 0.85,
+                                "resizeObserver": false,
                                 "roundLengths": false,
                                 "runCallbacksOnInit": true,
                                 "setWrapperSize": false,
@@ -5553,7 +5004,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "progress": NaN,
                               "realIndex": 0,
                               "resize": Object {
+                                "createObserver": [Function],
+                                "observer": null,
                                 "orientationChangeHandler": [Function],
+                                "removeObserver": [Function],
                                 "resizeHandler": [Function],
                               },
                               "rtl": false,
