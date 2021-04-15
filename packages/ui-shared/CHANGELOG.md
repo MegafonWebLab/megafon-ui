@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.163](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.162...@megafon/ui-shared@2.0.0-beta.163) (2021-04-15)
+
+
+### Bug Fixes
+
+* **property:** fix bug with flexbox in IE ([55f9c12](https://github.com/MegafonWebLab/megafon-ui/commit/55f9c124123fc350d5d8898345bc6ddbfec1bc3f))
+
+
+
+
+
 # [2.0.0-beta.162](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.161...@megafon/ui-shared@2.0.0-beta.162) (2021-04-14)
 
 
