@@ -44,8 +44,14 @@ describe('StoreBanner', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with custom class name', () => {
-        const wrapper = shallow(<StoreBanner {...props} className="custom-class-name" />);
+    it('should render with custom class names', () => {
+        const wrapper = shallow(
+            <StoreBanner
+                {...props}
+                className="custom-class-name"
+                classes={{ appleLink: 'app-store-custom-class-name', googleLink: 'google-store-custom-class-name' }}
+            />
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
