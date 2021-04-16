@@ -33,6 +33,11 @@ export type InstructionItemType = {
 export interface IInstructionsProps {
     /** Ссылка на корневой элемент */
     rootRef?: Ref<HTMLDivElement>;
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        instructionItem?: string;
+        activeInstructionItem?: string;
+    };
     /** Заголовок инструкции */
     title: string;
     /** Пункты инструкции */
@@ -57,6 +62,10 @@ const cn = cnCreate('mfui-beta-instructions');
 const swiperSlideCn = cn('slide');
 const Instructions: React.FC<IInstructionsProps> = ({
     rootRef,
+    classes: {
+        instructionItem,
+        activeInstructionItem,
+    } = {},
     title,
     instructionItems,
     pictureAlign = 'left',
@@ -69,6 +78,14 @@ const Instructions: React.FC<IInstructionsProps> = ({
     const getSwiperInstance = React.useCallback((swiper: SwiperClass): void => {
         setSwiperInstance(swiper);
     }, []);
+
+    const getArticleCustomClasses = React.useCallback((articleIndex: number, activeIndex: number) => {
+        if (!instructionItem || !activeInstructionItem) {
+            return;
+        }
+
+        return articleIndex === activeIndex ? `${instructionItem} ${activeInstructionItem}` : instructionItem;
+    }, [instructionItem, activeInstructionItem]);
 
     const handleResize = React.useCallback((): void => {
         const isMobileScreen = window.innerWidth < breakpoints.desktopSmallStart;
@@ -127,7 +144,11 @@ const Instructions: React.FC<IInstructionsProps> = ({
         <ul className={cn('articles-list')}>
             {instructionItems.map(({title: itemTitle}, ind) => (
                 <li
-                    className={cn('articles-item', {active: slideIndex === ind})}
+                    className={cn(
+                        'articles-item',
+                        { active: slideIndex === ind },
+                        [getArticleCustomClasses(ind, slideIndex)]
+                    )}
                     onClick={handleArticleClick(ind)}
                     key={ind}
                 >
@@ -156,7 +177,11 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 {instructionItems.map((_item, ind) => (
                     <div
                         key={ind}
-                        className={cn('articles-dot', {active: slideIndex === ind})}
+                        className={cn(
+                            'articles-dot',
+                            { active: slideIndex === ind },
+                            [getArticleCustomClasses(ind, slideIndex)]
+                        )}
                         onClick={handleArticleClick(ind)}
                     >
                         <span className={cn('articles-dot-number')}>{ind + 1}</span>
@@ -205,6 +230,10 @@ Instructions.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
+    classes: PropTypes.shape({
+        instructionItem: PropTypes.string,
+        activeInstructionItem: PropTypes.string,
+    }),
     title: PropTypes.string.isRequired,
     instructionItems: PropTypes.arrayOf(
         PropTypes.shape({

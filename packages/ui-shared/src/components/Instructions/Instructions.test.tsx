@@ -122,4 +122,18 @@ describe('<Instructions />', () => {
 
         expect(ref.current).not.toBeNull();
     });
+
+    it('should render with classes props', () => {
+        const wrapper = shallow(
+            <Instructions
+                {...props}
+                classes={{
+                    instructionItem: 'test-class_articleItem',
+                    activeInstructionItem: 'test-class_activeArticleItem',
+                }}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });

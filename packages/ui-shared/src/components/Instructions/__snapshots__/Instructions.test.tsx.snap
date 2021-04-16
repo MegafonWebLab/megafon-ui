@@ -5214,3 +5214,135 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
   </div>
 </Instructions>
 `;
+
+exports[`<Instructions /> should render with classes props 1`] = `
+<div
+  className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      all="12"
+    >
+      <Header
+        as="h2"
+        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        color="black"
+        hAlign="inherit"
+      >
+        Test instruction title
+      </Header>
+      <div
+        className="mfui-beta-instructions__wrapper"
+      >
+        <div
+          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+        >
+          <Swiper
+            className="mfui-beta-instructions__swiper"
+            noSwipingClass="mfui-beta-instructions__slide"
+            onSwiper={[Function]}
+          >
+            <SwiperSlide
+              className="mfui-beta-instructions__slide"
+              key="0ImgUrl1"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-beta-instructions__swiper-img"
+                loop={true}
+                muted={true}
+              >
+                <source
+                  src="ImgUrl1"
+                  type="video/mp4"
+                />
+              </video>
+            </SwiperSlide>
+            <SwiperSlide
+              className="mfui-beta-instructions__slide"
+              key="1ImgUrl2"
+            >
+              <img
+                alt=""
+                className="mfui-beta-instructions__swiper-img"
+                src="ImgUrl2"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div
+          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+        >
+          <Header
+            as="h2"
+            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            color="black"
+            hAlign="inherit"
+          >
+            Test instruction title
+          </Header>
+          <ul
+            className="mfui-beta-instructions__articles-list"
+          >
+            <li
+              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active test-class_articleItem test-class_activeArticleItem"
+              key="0"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-beta-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-beta-instructions__articles-item-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <Paragraph
+                className="mfui-beta-instructions__articles-item-title"
+                hasMargin={false}
+              >
+                Test1
+              </Paragraph>
+            </li>
+            <li
+              className="mfui-beta-instructions__articles-item test-class_articleItem"
+              key="1"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-beta-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-beta-instructions__articles-item-dot-number"
+                >
+                  2
+                </span>
+              </div>
+              <Paragraph
+                className="mfui-beta-instructions__articles-item-title"
+                hasMargin={false}
+              >
+                Test2 
+                <TextLink
+                  className=""
+                  color="blue"
+                  href="/test"
+                  key="1"
+                  target="_blank"
+                  underlineStyle="solid"
+                  underlineVisibility="hover"
+                >
+                  test link
+                </TextLink>
+              </Paragraph>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
