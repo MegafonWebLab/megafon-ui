@@ -4,6 +4,8 @@ import { cnCreate, Grid, GridColumn, Accordion } from '@megafon/ui-core';
 import './AccordionBox.less';
 
 export interface IAccordionBox {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок аккордеона */
     title: string;
     /** Состояние аккордеона, заданное извне */
@@ -16,6 +18,7 @@ export interface IAccordionBox {
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
+        openedClass?: string;
         root?: string;
         collapse?: string;
     };
@@ -35,12 +38,17 @@ const AccordionBox: React.FC<IAccordionBox> = ({hCenterAlignWide = false, ...pro
 );
 
 AccordionBox.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,
     hasVerticalPaddings: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
+        openedClass: PropTypes.string,
         root: PropTypes.string,
         collapse: PropTypes.string,
     }),
