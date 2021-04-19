@@ -86,7 +86,7 @@ exports[`StoreBanner should render with QR-code 1`] = `
 
 exports[`StoreBanner should render with custom class names 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name"
+  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name root-custom-class-name"
 >
   <div
     className="mfui-beta-store-banner__container"

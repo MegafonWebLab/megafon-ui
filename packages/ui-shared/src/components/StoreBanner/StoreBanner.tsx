@@ -45,14 +45,15 @@ export interface IStoreBannerProps {
     deviceMask: DeviceMaskType;
     /** Изображение на дисплее телефона */
     imageSrc: string;
-    /** Дополнительный класс для основного контейнера */
+    /** Дополнительный класс корневого элемента */
     className?: string;
-    /** Дополнительные классы для внутренних элементов */
+    /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
+        root?: string;
         appleLink?: string;
         googleLink?: string;
     };
-    /** Ссылка на основной контейнер компонента */
+    /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
 }
 
@@ -72,7 +73,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     classes = {},
     rootRef,
 }) => (
-    <div className={cn({ theme, mask: deviceMask }, className)} ref={rootRef}>
+    <div className={cn({ theme, mask: deviceMask }, [className, classes.root])} ref={rootRef}>
         <div className={cn('container')}>
             <div className={cn('grid')}>
                 <Grid>
