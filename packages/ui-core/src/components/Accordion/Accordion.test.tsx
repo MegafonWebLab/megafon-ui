@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import Accordion, { IAccordionProps  } from './Accordion';
 
 const props: IAccordionProps = {
@@ -66,19 +66,28 @@ describe('<Accordion />', () => {
             ...props,
             className: 'testClassName',
             classes: {
+                openedClass: 'testIsOpenClass',
                 root: 'testRootClass',
                 collapse: 'testCollapseClass',
             },
         };
-        const wrapper = shallow(
+        const wrapper = mount(
             <Accordion {...propsWithClasses}><div /></Accordion>
         );
         const rootNode = wrapper.find('.mfui-beta-accordion');
-        const contentNode = wrapper.find('.mfui-beta-accordion__content');
+        const contentNode = wrapper.find('Collapse');
 
         expect(rootNode.hasClass('testClassName')).toEqual(true);
         expect(rootNode.hasClass('testRootClass')).toEqual(true);
+        expect(rootNode.hasClass('testIsOpenClass')).toEqual(false);
         expect(contentNode.hasClass('testCollapseClass')).toEqual(true);
+
+        wrapper.find('.mfui-beta-accordion__title-wrap').simulate('click');
+        wrapper.update();
+
+        const newRootNode = wrapper.find('.mfui-beta-accordion');
+
+        expect(newRootNode.hasClass('testIsOpenClass')).toEqual(true);
     });
 
     describe('testing the behavior of the Accordion when changing the external props - isOpened', () => {
@@ -132,6 +141,13 @@ describe('<Accordion />', () => {
             wrapper.setProps({ isOpened: true });
             wrapper.update();
             expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
+        });
+
+        it('should return reference to root element', () => {
+            const ref: React.RefObject<HTMLDivElement> = React.createRef();
+            mount(<Accordion {...props} rootRef={ref}><div /></Accordion>);
+
+            expect(ref.current).not.toBeNull();
         });
     });
 });
