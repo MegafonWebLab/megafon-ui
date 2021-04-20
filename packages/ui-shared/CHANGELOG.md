@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.165](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.164...@megafon/ui-shared@2.0.0-beta.165) (2021-04-20)
+
+
+### Features
+
+* **store banner:** adds classnames and ref props ([658e145](https://github.com/MegafonWebLab/megafon-ui/commit/658e145c832ddc673bed9546c839b925615f1db9))
+
+
+
+
+
 # [2.0.0-beta.164](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.163...@megafon/ui-shared@2.0.0-beta.164) (2021-04-20)
 
 **Note:** Version bump only for package @megafon/ui-shared
