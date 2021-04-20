@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import StoreBanner, { IStoreBannerProps, DeviceMask, Theme } from './StoreBanner';
 
 const props: IStoreBannerProps = {
@@ -44,8 +44,14 @@ describe('StoreBanner', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with custom class name', () => {
-        const wrapper = shallow(<StoreBanner {...props} className="custom-class-name" />);
+    it('should render with custom class names', () => {
+        const wrapper = shallow(
+            <StoreBanner
+                {...props}
+                className="custom-class-name"
+                classes={{ root: 'root-custom-class-name', appleLink: 'app-store-custom-class-name', googleLink: 'google-store-custom-class-name' }}
+            />
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -68,5 +74,13 @@ describe('StoreBanner', () => {
         link.simulate('click');
 
         expect(onClickGoogle).toHaveBeenCalled();
+    });
+
+    it('should return reference to root element', () => {
+        const ref = React.createRef<HTMLDivElement>();
+        const component = mount(<StoreBanner {...props} rootRef={ref} />);
+        const rootContainer = component.getDOMNode();
+
+        expect(ref.current).toEqual(rootContainer);
     });
 });

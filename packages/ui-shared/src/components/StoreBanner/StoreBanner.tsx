@@ -45,8 +45,16 @@ export interface IStoreBannerProps {
     deviceMask: DeviceMaskType;
     /** Изображение на дисплее телефона */
     imageSrc: string;
-    /** Дополнительный класс */
+    /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        appleLink?: string;
+        googleLink?: string;
+    };
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
 }
 
 const cn = cnCreate('mfui-beta-store-banner');
@@ -62,8 +70,10 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     theme = Theme.CLEAR_WHITE,
     deviceMask,
     className,
+    classes: { root: rootClassName, appleLink: appleLinkClassName, googleLink: googleLinkClassName } = {},
+    rootRef,
 }) => (
-    <div className={cn({ theme, mask: deviceMask }, className)}>
+    <div className={cn({ theme, mask: deviceMask }, [className, rootClassName])} ref={rootRef}>
         <div className={cn('container')}>
             <div className={cn('grid')}>
                 <Grid>
@@ -88,12 +98,12 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                         theme={StoreButtonTheme.APP_STORE}
                                         href={linkApple}
                                         onClick={onClickApple}
-                                        className={cn('store-link', { 'app-store': true })}
+                                        className={cn('store-link', { 'app-store': true }, appleLinkClassName)}
                                     />
                                     <StoreButton
                                         theme={StoreButtonTheme.GOOGLE_PLAY}
                                         href={linkGoogle}
-                                        className={cn('store-link', { 'google-play': true })}
+                                        className={cn('store-link', { 'google-play': true }, googleLinkClassName)}
                                         onClick={onClickGoogle}
                                     />
                                 </div>
@@ -128,6 +138,14 @@ StoreBanner.propTypes = {
     deviceMask: PropTypes.oneOf(Object.values(DeviceMask)).isRequired,
     imageSrc: PropTypes.string.isRequired,
     className: PropTypes.string,
+    classes: PropTypes.shape({
+        appleLink: PropTypes.string,
+        googleLink: PropTypes.string,
+    }),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
+    ]),
 };
 
 export default StoreBanner;

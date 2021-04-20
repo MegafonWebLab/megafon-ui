@@ -84,9 +84,9 @@ exports[`StoreBanner should render with QR-code 1`] = `
 </div>
 `;
 
-exports[`StoreBanner should render with custom class name 1`] = `
+exports[`StoreBanner should render with custom class names 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name"
+  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name root-custom-class-name"
 >
   <div
     className="mfui-beta-store-banner__container"
@@ -125,12 +125,12 @@ exports[`StoreBanner should render with custom class name 1`] = `
                 className="mfui-beta-store-banner__stores"
               >
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store app-store-custom-class-name"
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play google-store-custom-class-name"
                   href="Google Play link"
                   theme="google-play"
                 />
