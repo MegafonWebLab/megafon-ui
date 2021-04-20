@@ -5,17 +5,11 @@
 @{b} {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 24px 0;
     border-top: 1px solid @spbSky2;
 
-    @media @mobileSM {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
     @media @desktopMU {
-        padding-top: 26px;
-        padding-bottom: 26px;
+        padding: 26px 0;
     }
 
     &_border-bottom {
@@ -76,8 +70,9 @@
         align-items: flex-start;
         flex-shrink: 0;
 
-        @media @mobileSM {
-            width: 50%;
+        @media @mobileS {
+            width: auto;
+            padding-left: 10px;
         }
     }
 
