@@ -31,6 +31,7 @@ describe('<Tabs />', () => {
                 classes={{
                     root: 'rootClass',
                     innerIndents: 'innerIndentsClass',
+                    tab: 'tabClass',
                 }}
                 size={TabSize.SMALL}
                 hAlign={TabHAlign.CENTER}
