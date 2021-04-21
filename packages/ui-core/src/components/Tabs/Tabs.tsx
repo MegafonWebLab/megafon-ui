@@ -36,6 +36,7 @@ export interface ITabsProps {
     classes?: {
         root?: string;
         innerIndents?: string;
+        gtm?: string;
     };
     /** Размер табов */
     size?: TabSizeType;
@@ -57,7 +58,7 @@ export interface ITabsProps {
 const cn = cnCreate('mfui-beta-tabs');
 const Tabs: React.FC<ITabsProps> = ({
     className,
-    classes: { root: rootClass, innerIndents: innerIndentsClass } = {},
+    classes: { root: rootClass, innerIndents: innerIndentsClass, gtm: gtmClass} = {},
     size = 'medium',
     hAlign = 'left',
     tabColorTheme = 'white',
@@ -188,7 +189,7 @@ const Tabs: React.FC<ITabsProps> = ({
 
             return (
                 <SwiperSlide className={cn('slide')}>
-                    <div className={cn('tab')} ref={setTabRef}>
+                    <div className={cn('tab', gtmClass)} ref={setTabRef}>
                         {renderTabWrapper ? renderTabWrapper(tab) : tab}
                     </div>
                 </SwiperSlide>
@@ -331,6 +332,7 @@ Tabs.propTypes = {
     classes: PropTypes.shape({
         root: PropTypes.string,
         innerIndents: PropTypes.string,
+        gtm: PropTypes.string,
     }),
     size: PropTypes.oneOf(Object.values(TabSize)),
     hAlign: PropTypes.oneOf(Object.values(TabHAlign)),
