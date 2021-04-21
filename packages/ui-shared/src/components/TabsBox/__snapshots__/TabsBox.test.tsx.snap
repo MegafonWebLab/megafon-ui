@@ -14,6 +14,11 @@ exports[`<TabsBox /> should render with props 1`] = `
     currentIndex={1}
     defaultIndex={1}
     hAlign="center"
+    rootRef={
+      Object {
+        "current": null,
+      }
+    }
     size="small"
     sticky={true}
     tabColorTheme="green"

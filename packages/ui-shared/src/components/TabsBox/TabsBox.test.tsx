@@ -10,6 +10,7 @@ const renderTabWrapper = (tab: React.ReactNode) => {
 
 describe('<TabsBox />', () => {
     it('should render with props', () => {
+        const ref = React.createRef<HTMLDivElement>();
         const wrapper = shallow(
             <TabsBox
                 classes={{
@@ -22,6 +23,7 @@ describe('<TabsBox />', () => {
                 sticky
                 currentIndex={1}
                 defaultIndex={1}
+                rootRef={ref}
             >
                 <TabBox title="title 1" icon={<Balance />} href="www.test.com">
                     1
