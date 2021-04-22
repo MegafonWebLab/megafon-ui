@@ -38,9 +38,9 @@ export interface ITooltipProps {
     paddings?: PaddingsType;
     /** Тип взаимодействия с триггер-элементом для показа тултипа */
     triggerEvent?: TriggerEventType;
-    /** Элемент, относительно которой тултип проверяется на переполнение */
+    /** Реф на элемент, за границы которого тултип не сможет выйти. По умолчанию viewport  */
     boundaryElement?: React.RefObject<HTMLElement>;
-    /** Триггер-элемент */
+    /** Реф на триггер-элемент */
     triggerElement: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
