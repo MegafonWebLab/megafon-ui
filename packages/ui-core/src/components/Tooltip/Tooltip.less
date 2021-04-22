@@ -29,19 +29,23 @@
     pointer-events: none;
     visibility: hidden;
     z-index: 100;
+    opacity: 0;
+    transition-property: opacity, visibility;
+    transition-duration: 0.3s;
 
     &_open {
+        opacity: 1;
         visibility: visible;
         pointer-events: all;
     }
 
-    &_size_small {
+    &_paddings_small {
         @{b}__content {
             padding: 8px 16px;
         }
     }
 
-    &_size_medium {
+    &_paddings_medium {
         @{b}__content {
             padding: 24px;
         }

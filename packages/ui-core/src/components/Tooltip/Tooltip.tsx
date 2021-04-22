@@ -15,12 +15,13 @@ export const Placement = {
 
 type PlacementType = typeof Placement[keyof typeof Placement];
 
-export const Size = {
+export const Paddings = {
+    NONE: 'none',
     SMALL: 'small',
     MEDIUM: 'medium',
  } as const;
 
-type SizeType = typeof Size[keyof typeof Size];
+type PaddingsType = typeof Paddings[keyof typeof Paddings];
 
 export const TriggerEvent = {
     HOVER: 'hover',
@@ -34,9 +35,11 @@ export interface ITooltipProps {
     /** Позиционирование относительно триггер-элемента */
     placement?: PlacementType;
     /** Размер отступов от контента */
-    size?: SizeType;
+    paddings?: PaddingsType;
     /** Тип взаимодействия с триггер-элементом для показа тултипа */
     triggerEvent?: TriggerEventType;
+    /** Элемент, относительно которой тултип проверяется на переполнение */
+    boundaryElement?: React.RefObject<HTMLElement>;
     /** Триггер-элемент */
     triggerElement: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
@@ -53,8 +56,9 @@ const cn = cnCreate('mfui-beta-tooltip');
 const Tooltip: React.FC<ITooltipProps>  = ({
     className,
     placement = 'top',
-    size = 'medium',
+    paddings = 'medium',
     triggerEvent = 'hover',
+    boundaryElement,
     triggerElement,
     isOpened = false,
     children,
@@ -62,6 +66,8 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     onClose,
 }) => {
     const currentTrigger = triggerElement.current;
+    const currentBoundary = boundaryElement?.current;
+
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
     const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
 
@@ -88,8 +94,14 @@ const Tooltip: React.FC<ITooltipProps>  = ({
                     resize: isOpen,
                 },
             },
+            {
+                name: 'preventOverflow',
+                options: {
+                    boundary: currentBoundary,
+                },
+            },
         ],
-    }), [placement, arrowElement, isOpen]);
+    }), [placement, arrowElement, currentBoundary, isOpen]);
 
     const { styles, attributes, update } = usePopper(currentTrigger, popperElement, options);
 
@@ -169,7 +181,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
 
     return (
         <div
-            className={cn([className], { size, open: isOpen })}
+            className={cn([className], { paddings, open: isOpen })}
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}
@@ -192,8 +204,24 @@ const Tooltip: React.FC<ITooltipProps>  = ({
 
 Tooltip.propTypes = {
     placement: PropTypes.oneOf(Object.values(Placement)),
-    size: PropTypes.oneOf(Object.values(Size)),
+    paddings: PropTypes.oneOf(Object.values(Paddings)),
     triggerEvent: PropTypes.oneOf(Object.values(TriggerEvent)),
+    boundaryElement: (props, propName, componentName, location) => {
+        const prop = props[propName];
+        const isObject = typeof prop === 'object' && prop !== null;
+        const hasPropCurrent = isObject && prop.hasOwnProperty('current');
+        if (prop === undefined) {
+            return new Error(
+                `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`undefined\`.`
+            );
+        }
+        if (!isObject && !hasPropCurrent) {
+            return new Error(
+                `Invalid ${location} \`${propName}\` supplied to \`${componentName}\`, expected React.RefObject.`
+            );
+        }
+        return null;
+    },
     triggerElement: (props, propName, componentName, location) => {
         const prop = props[propName];
         const isObject = typeof prop === 'object' && prop !== null;
