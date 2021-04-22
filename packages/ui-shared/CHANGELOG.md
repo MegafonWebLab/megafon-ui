@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.167](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.166...@megafon/ui-shared@2.0.0-beta.167) (2021-04-22)
+
+
+### Features
+
+* **instructions:** add prop classes for add class names to inner elements ([f816b76](https://github.com/MegafonWebLab/megafon-ui/commit/f816b762d0f04d6b83738915917fa2a94583a9d4))
+
+
+
+
+
 # [2.0.0-beta.166](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.165...@megafon/ui-shared@2.0.0-beta.166) (2021-04-20)
 
 **Note:** Version bump only for package @megafon/ui-shared
