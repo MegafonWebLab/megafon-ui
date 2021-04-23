@@ -6,6 +6,8 @@ import detectTouch from 'utils/detectTouch';
 import Tile from 'components/Tile/Tile';
 import './Tooltip.less';
 
+const TOOLTIP_PADDING_FOR_FLIP = 14;
+
 export const Placement = {
     LEFT: 'left',
     TOP: 'top',
@@ -85,6 +87,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
                 name: 'flip',
                 options: {
                     fallbackPlacements: ['left', 'right' , 'top' , 'bottom'],
+                    padding: TOOLTIP_PADDING_FOR_FLIP,
                 },
             },
             {

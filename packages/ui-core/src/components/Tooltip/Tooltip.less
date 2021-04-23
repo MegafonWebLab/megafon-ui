@@ -89,7 +89,7 @@
             }
 
             &__content {
-                right: -@popperOffset;
+                transform: translateX(@popperOffset);
             }
 
             &__content-shadow {
@@ -109,7 +109,7 @@
             }
 
             &__content {
-                left: -@popperOffset;
+                transform: translateX(-@popperOffset);
             }
 
             &__content-shadow {
@@ -129,7 +129,7 @@
             }
 
             &__content {
-                top: -@popperOffset;
+                transform: translateY(-@popperOffset);
             }
 
             &__content-shadow {
@@ -149,7 +149,7 @@
             }
 
             &__content {
-                bottom: -@popperOffset;
+                transform: translateY(@popperOffset);
             }
 
             &__content-shadow {
