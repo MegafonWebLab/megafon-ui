@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import cnCreate from '../../utils/cnCreate';
-import Carousel, { ICarouselProps, NavTheme } from './Carousel';
+import Carousel, { ICarouselProps, NavTheme, EffectTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
 
 const props = {
@@ -13,15 +13,19 @@ const props = {
         containerModifier: 'containerModifier',
         prev: 'prev',
         next: 'next',
+        slide: 'slide',
     },
-    slidesPerView: 3,
     pagination: {
         el: '.some-el',
     },
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,
+    transitionSpeed: 1000,
+    disableTouchMove: true,
+    centeredSlides: true,
     navTheme: NavTheme.GREEN,
+    effectTheme: EffectTheme.FADE,
     noSwipingSelector: 'button',
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
