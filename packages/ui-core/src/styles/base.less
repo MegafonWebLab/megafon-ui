@@ -79,6 +79,11 @@
 @contentVerticalIndentMobileB: 72px;
 @contentVerticalIndentMobileSM: 48px;
 
+// GLOBAL CLASSES global classes
+@b-number-call: e('.b-number-call');
+@c-number-call: e('.c-number-call');
+@pipe: e('.pipe');
+
 // MIXINS
 .Graphik() {
     font-family: Graphik, Arial, sans-serif;
@@ -86,6 +91,12 @@
 
 h1, h2, h3, h4, h5 {
     margin: 0;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .h2() {
@@ -162,4 +173,55 @@ h1, h2, h3, h4, h5 {
 .commonFont() {
     font-size: 15px;
     line-height: 24px;
+}
+
+// TYPOGRAPHY
+.megaicons() {
+    font-weight: normal !important;
+    font-family: megaicons, Arial, sans-serif !important;
+    font-style: normal !important;
+    font-variant: normal !important;
+    line-height: 1;
+    text-transform: none !important;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// CONTENT CLASSES MIXINS
+.number-call() {
+    @{b-number-call},
+    @{c-number-call} {
+        span,
+        b {
+            min-width: 0;
+            height: auto;
+            margin: 0;
+            padding: 0 0.5px;
+            color: @freshAsphalt;
+            text-decoration: none;
+            background: none;
+
+            @media @mobile {
+                padding: 0;
+            }
+        }
+
+        @{pipe}:before {
+            .megaicons();
+            content: '\e095';
+            position: relative;
+            margin-left: 2px;
+            color: @green;
+            font-size: 12px;
+
+            @media @mobileSM {
+                top: 1px;
+            }
+
+            @media @mobileB {
+                top: 0;
+            }
+        }
+    }
 }

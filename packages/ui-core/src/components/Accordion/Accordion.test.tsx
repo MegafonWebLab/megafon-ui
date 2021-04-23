@@ -39,6 +39,13 @@ describe('<Accordion />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('it render Accordion with list style', () => {
+        const wrapper = mount(
+            <Accordion {...props} listStyle="disc"><div /></Accordion>
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('it handle click title', () => {
         const { onClickAccordion, title, isOpened } = props;
         const wrapper = mount(

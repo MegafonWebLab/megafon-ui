@@ -14,6 +14,8 @@ export interface IAccordionProps {
     isOpened?: boolean;
     /** Вертикальные отступы */
     hasVerticalPaddings?: boolean;
+    /** Стиль списка в аккордеоне */
+    listStyle?: 'disc' | 'dash' | 'numeric';
     /** Дополнительный класс для корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -30,6 +32,7 @@ const Accordion: React.FC<IAccordionProps> = ({
     title,
     isOpened = false,
     hasVerticalPaddings = false,
+    listStyle,
     className,
     classes: {
         root: rootPropsClasses,
@@ -63,7 +66,7 @@ const Accordion: React.FC<IAccordionProps> = ({
             </div>
             <Collapse
                 className={cn('content', collapsePropsClasses)}
-                classNameContainer={cn('content-inner', { 'v-padding': hasVerticalPaddings })}
+                classNameContainer={cn('content-inner', { 'v-padding': hasVerticalPaddings, 'list-style': listStyle })}
                 isOpened={isOpenedState}
             >
                 {children}
@@ -76,6 +79,7 @@ Accordion.propTypes = {
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,
     hasVerticalPaddings: PropTypes.bool,
+    listStyle: PropTypes.oneOf(['disc', 'dash', 'numeric']),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,

@@ -33,6 +33,7 @@
     }
 
     &__content-inner {
+        .number-call();
         padding: 0 68px 0 40px;
     }
 
@@ -43,5 +44,54 @@
 
     &__icon {
         fill: @fullBlack;
+    }
+
+    &__content-inner li:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+@{b}__content-inner_list-style_disc {
+    li {
+        position: relative;
+        padding-left: 18px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            display: block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: @freshAsphalt;
+        }
+    }
+}
+
+@{b}__content-inner_list-style_dash {
+    li {
+        position: relative;
+        padding-left: 18px;
+
+        &:before {
+            content: '—';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+    }
+}
+
+@{b}__content-inner_list-style_numeric {
+    ul {
+        padding-left: 18px;
+    }
+
+    li {
+        list-style: decimal;
+        list-style-position: outside;
     }
 }
