@@ -25,26 +25,39 @@
 }
 
 @{b} {
-    padding: @popperOffset;
     pointer-events: none;
     visibility: hidden;
     z-index: 100;
+    opacity: 0;
+    transition-property: opacity, visibility;
+    transition-duration: 0.3s;
 
     &_open {
+        opacity: 1;
         visibility: visible;
         pointer-events: all;
     }
 
-    &_size_small {
+    &_paddings_small {
         @{b}__content {
             padding: 8px 16px;
         }
     }
 
-    &_size_medium {
+    &_paddings_medium {
         @{b}__content {
             padding: 24px;
         }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__content-shadow {
+        position: absolute;
+        z-index: -1;
     }
 
     &__arrow {
@@ -68,24 +81,84 @@
         }
     }
 
-    &@{popperRight} > &__arrow,
-    &@{popperRight} > &__arrow-shadow {
-        right: @arrowPosition;
+    &@{popperRight} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                right: @arrowPosition;
+            }
+
+            &__content {
+                transform: translateX(@popperOffset);
+            }
+
+            &__content-shadow {
+                top: 0;
+                left: @popperOffset;
+                bottom: 0;
+                right: -@popperOffset;
+            }
+        }
     }
 
-    &@{popperLeft} > &__arrow,
-    &@{popperLeft} > &__arrow-shadow {
-        left: @arrowPosition;
+    &@{popperLeft} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                left: @arrowPosition;
+            }
+
+            &__content {
+                transform: translateX(-@popperOffset);
+            }
+
+            &__content-shadow {
+                top: 0;
+                left: -@popperOffset;
+                bottom: 0;
+                right: @popperOffset;
+            }
+        }
     }
 
-    &@{popperTop} > &__arrow,
-    &@{popperTop} > &__arrow-shadow {
-        top: @arrowPosition;
+    &@{popperTop} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                top: @arrowPosition;
+            }
+
+            &__content {
+                transform: translateY(-@popperOffset);
+            }
+
+            &__content-shadow {
+                top: -@popperOffset;
+                left: 0;
+                bottom: @popperOffset;
+                right: 0;
+            }
+        }
     }
 
-    &@{popperBottom} > &__arrow,
-    &@{popperBottom} > &__arrow-shadow {
-        bottom: @arrowPosition;
+    &@{popperBottom} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                bottom: @arrowPosition;
+            }
+
+            &__content {
+                transform: translateY(@popperOffset);
+            }
+
+            &__content-shadow {
+                top: @popperOffset;
+                left: 0;
+                bottom: -@popperOffset;
+                right: 0;
+            }
+        }
     }
 
     &@{popperEscaped} {

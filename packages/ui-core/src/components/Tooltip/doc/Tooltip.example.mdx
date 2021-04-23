@@ -140,7 +140,7 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
                     </span>
                     {' '}Ethernet, Docsis.
                 </Paragraph>
-                <Tooltip triggerElement={triggerElement}>
+                <Tooltip paddings="none" triggerElement={triggerElement}>
                     <Paragraph hasMargin={false}>
                         Монтажник проведёт все необходимые работы под ключ.(размер текста больше)
                     </Paragraph>
@@ -158,10 +158,61 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
                     </span>
                     {' '}Ethernet, Docsis.
                 </Paragraph>
-                <Tooltip size="small" triggerElement={triggerElement}>
+                <Tooltip paddings="small" triggerElement={triggerElement}>
                     <Paragraph hasMargin={false}>
                         Монтажник проведёт все необходимые работы под ключ.(размер текста меньше)
                     </Paragraph>
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <Paragraph hasMargin={false}>
+                    Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям
+                    <span ref={triggerElement}>
+                        <TextLink>технологиям</TextLink>
+                    </span>
+                    {' '}Ethernet, Docsis.
+                </Paragraph>
+                <Tooltip paddings="medium" triggerElement={triggerElement}>
+                    <Paragraph hasMargin={false}>
+                        Монтажник проведёт все необходимые работы под ключ.(размер текста меньше)
+                    </Paragraph>
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+##  Выравнивание по boundary-элементу
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement, boundaryElement }) => (
+            <>
+                <Paragraph hasMargin={false}>
+                    <span 
+                        ref={boundaryElement}
+                        style={{
+                            outline: '1px solid rgba(0,0,0,0.1)',
+                            padding: '12px'
+                        }}
+                    >Тултип выровнен по границе этого 
+                        <span ref={triggerElement}>
+                            <TextLink>текста.</TextLink>
+                        </span>
+                    </span>
+                </Paragraph>
+                <Tooltip
+                    placement="bottom"
+                    triggerElement={triggerElement}
+                    boundaryElement={boundaryElement}
+                >
+                    <div>
+                        Тултип выровнен по границе boundaryElement, даже несмотря на то, что он больше не центрируется.
+                    </div>
                 </Tooltip>
             </>
         )}
