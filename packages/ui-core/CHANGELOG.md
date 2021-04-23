@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.118](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.117...@megafon/ui-core@2.0.0-beta.118) (2021-04-23)
+
+
+### Features
+
+* **tooltip:** add fade and boundary props and none-padding value ([4f22c29](https://github.com/MegafonWebLab/megafon-ui/commit/4f22c29740122c63a7c74d3e1dff89e65d11ee7e))
+
+
+### BREAKING CHANGES
+
+* **tooltip:** size props rename to paddings
+
+
+
+
+
 # [2.0.0-beta.117](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.116...@megafon/ui-core@2.0.0-beta.117) (2021-04-14)
 
 
