@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.119](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.118...@megafon/ui-core@2.0.0-beta.119) (2021-04-23)
+
+
+### Features
+
+* **carousel:** added custom slide class, swiper props, fade effect ([8949a0b](https://github.com/MegafonWebLab/megafon-ui/commit/8949a0b7e9139063f5d25d5e754e0240801f8c20))
+
+
+
+
+
 # [2.0.0-beta.118](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.117...@megafon/ui-core@2.0.0-beta.118) (2021-04-23)
 
 
