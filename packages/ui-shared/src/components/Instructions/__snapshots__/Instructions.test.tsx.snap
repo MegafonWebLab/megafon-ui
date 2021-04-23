@@ -749,6 +749,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
+                                "beforeInit": Array [
+                                  [Function],
+                                ],
                                 "beforeTransitionStart": Array [
                                   [Function],
                                 ],
@@ -773,6 +776,12 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "resize": Array [
                                   [Function],
                                 ],
+                                "setTransition": Array [
+                                  [Function],
+                                ],
+                                "setTranslate": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -788,6 +797,10 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "touchEnd": Array [
                                   [Function],
                                 ],
+                              },
+                              "fadeEffect": Object {
+                                "setTransition": [Function],
+                                "setTranslate": [Function],
                               },
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
@@ -840,6 +853,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -984,6 +1000,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -1457,6 +1476,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
+                                "beforeInit": Array [
+                                  [Function],
+                                ],
                                 "beforeTransitionStart": Array [
                                   [Function],
                                 ],
@@ -1481,6 +1503,12 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "resize": Array [
                                   [Function],
                                 ],
+                                "setTransition": Array [
+                                  [Function],
+                                ],
+                                "setTranslate": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -1496,6 +1524,10 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "touchEnd": Array [
                                   [Function],
                                 ],
+                              },
+                              "fadeEffect": Object {
+                                "setTransition": [Function],
+                                "setTranslate": [Function],
                               },
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
@@ -1548,6 +1580,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -1692,6 +1727,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -2297,6 +2335,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
+                                "beforeInit": Array [
+                                  [Function],
+                                ],
                                 "beforeTransitionStart": Array [
                                   [Function],
                                 ],
@@ -2321,6 +2362,12 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "resize": Array [
                                   [Function],
                                 ],
+                                "setTransition": Array [
+                                  [Function],
+                                ],
+                                "setTranslate": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -2336,6 +2383,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "touchEnd": Array [
                                   [Function],
                                 ],
+                              },
+                              "fadeEffect": Object {
+                                "setTransition": [Function],
+                                "setTranslate": [Function],
                               },
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
@@ -2388,6 +2439,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -2532,6 +2586,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -3005,6 +3062,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
+                                "beforeInit": Array [
+                                  [Function],
+                                ],
                                 "beforeTransitionStart": Array [
                                   [Function],
                                 ],
@@ -3029,6 +3089,12 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "resize": Array [
                                   [Function],
                                 ],
+                                "setTransition": Array [
+                                  [Function],
+                                ],
+                                "setTranslate": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -3044,6 +3110,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "touchEnd": Array [
                                   [Function],
                                 ],
+                              },
+                              "fadeEffect": Object {
+                                "setTransition": [Function],
+                                "setTranslate": [Function],
                               },
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
@@ -3096,6 +3166,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -3240,6 +3313,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -3845,6 +3921,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
+                                "beforeInit": Array [
+                                  [Function],
+                                ],
                                 "beforeTransitionStart": Array [
                                   [Function],
                                 ],
@@ -3869,6 +3948,12 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "resize": Array [
                                   [Function],
                                 ],
+                                "setTransition": Array [
+                                  [Function],
+                                ],
+                                "setTranslate": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -3884,6 +3969,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "touchEnd": Array [
                                   [Function],
                                 ],
+                              },
+                              "fadeEffect": Object {
+                                "setTransition": [Function],
+                                "setTranslate": [Function],
                               },
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
@@ -3936,6 +4025,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -4080,6 +4172,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -4553,6 +4648,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "activeIndexChange": Array [
                                   [Function],
                                 ],
+                                "beforeInit": Array [
+                                  [Function],
+                                ],
                                 "beforeTransitionStart": Array [
                                   [Function],
                                 ],
@@ -4577,6 +4675,12 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "resize": Array [
                                   [Function],
                                 ],
+                                "setTransition": Array [
+                                  [Function],
+                                ],
+                                "setTranslate": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -4592,6 +4696,10 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "touchEnd": Array [
                                   [Function],
                                 ],
+                              },
+                              "fadeEffect": Object {
+                                "setTransition": [Function],
+                                "setTranslate": [Function],
                               },
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
@@ -4644,6 +4752,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,
@@ -4788,6 +4899,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "edgeSwipeDetection": false,
                                 "edgeSwipeThreshold": 20,
                                 "effect": "slide",
+                                "fadeEffect": Object {
+                                  "crossFade": false,
+                                },
                                 "followFinger": true,
                                 "freeMode": false,
                                 "freeModeMinimumVelocity": 0.02,

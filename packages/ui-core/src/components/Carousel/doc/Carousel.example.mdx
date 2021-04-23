@@ -157,3 +157,48 @@ const blockStyle = { padding: '20px 0' };
         </Carousel>
     </ContentArea>
 </Playground>
+
+## Активный слайд по центру карусели
+
+<Playground style={blockStyle}>
+    <ContentArea>
+        <Carousel loop centeredSlides>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Изменение скорости прокрутки
+
+<Playground style={blockStyle}>
+    <ContentArea>
+        <Carousel transitionSpeed={1000}>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+## Отключение смены слайда свайпами
+
+<Playground style={blockStyle}>
+    <ContentArea>
+        <Carousel disableTouchMove>
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>

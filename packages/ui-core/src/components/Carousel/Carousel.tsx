@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import './Carousel.less';
 import cnCreate from 'utils/cnCreate';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
+import SwiperCore, { Autoplay, Pagination, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PaginationOptions } from 'swiper/types/components/pagination';
 import throttle from 'lodash.throttle';
@@ -11,11 +11,16 @@ import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import breakpoints from 'constants/breakpoints';
 import throttleTime from 'constants/throttleTime';
 
-SwiperCore.use([Autoplay, Pagination]);
+SwiperCore.use([Autoplay, Pagination, EffectFade]);
 
 export const NavTheme = {
     LIGHT: 'light',
     GREEN: 'green',
+} as const;
+
+export const EffectTheme = {
+    SLIDE: 'slide',
+    FADE: 'fade',
 } as const;
 
 const SlidesPerView = {
@@ -25,6 +30,7 @@ const SlidesPerView = {
 type SlidesPerViewType = typeof SlidesPerView[keyof typeof SlidesPerView];
 
 type NavThemeType = typeof NavTheme[keyof typeof NavTheme];
+type EffectThemeType = typeof EffectTheme[keyof typeof EffectTheme];
 
 export type SlidesSettingsType = {
     [key: number]: {
@@ -44,9 +50,8 @@ export interface ICarouselProps {
         containerModifier?: string;
         prev?: string;
         next?: string;
+        slide?: string;
     };
-    /** Настройка количества слайдов */
-    slidesPerView?: number | 'auto';
     /** Настройки слайдов */
     slidesSettings?: SlidesSettingsType;
     /** Смена слайдов с зацикливанием */
@@ -57,8 +62,16 @@ export interface ICarouselProps {
     pagination?: PaginationOptions;
     /** Задержка для авто прокрутки */
     autoPlayDelay?: number;
+    /** Скорость смены слайдов */
+    transitionSpeed?: number;
+    /** Отключение смены слайда свайпами */
+    disableTouchMove?: boolean;
+    /** Активный слайд по центру экрана */
+    centeredSlides?: boolean;
     /** Тема навигации */
     navTheme?: NavThemeType;
+    /** Эффект анимации */
+    effectTheme?: EffectThemeType;
     /** Css селектор элемента, при перетаскивании которого не будет происходить смена слайдов */
     noSwipingSelector?: string;
     /** Ref на swiper */
@@ -103,16 +116,20 @@ const Carousel: React.FC<ICarouselProps> = ({
         next: nextClass,
         container: containerClass,
         containerModifier,
+        slide: slideClass,
     } = {},
     slidesSettings = defaultSlidesSettings,
     autoPlay = false,
     autoPlayDelay = 5000,
     loop = false,
+    transitionSpeed = 300,
+    disableTouchMove = false,
+    centeredSlides = false,
     navTheme = 'light',
+    effectTheme = 'slide',
     noSwipingSelector,
     children,
     pagination,
-    slidesPerView,
     getSwiper,
     onNextClick,
     onPrevClick,
@@ -215,13 +232,16 @@ const Carousel: React.FC<ICarouselProps> = ({
                     { 'default-inner-indents': !innerIndentsClass },
                     [innerIndentsClass, containerClass]
                 )}
-                slidesPerView={slidesPerView}
                 breakpoints={slidesSettings}
                 watchSlidesVisibility
                 watchOverflow
                 loop={loop}
                 pagination={{ clickable: true, ...pagination }}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
+                speed={transitionSpeed}
+                allowTouchMove={!disableTouchMove}
+                centeredSlides={centeredSlides}
+                effect={effectTheme}
                 noSwipingSelector={noSwipingSelector}
                 onSwiper={handleSwiper}
                 onReachBeginning={handleReachBeginnig}
@@ -232,7 +252,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 onResize={handleSwiperResize}
             >
                 {React.Children.map(children, (child, i) => (
-                    <SwiperSlide key={i} className={cn('slide')}>
+                    <SwiperSlide key={i} className={cn('slide', slideClass)}>
                         {child}
                     </SwiperSlide>
                 ))}
@@ -259,6 +279,11 @@ Carousel.propTypes = {
     classes: PropTypes.shape({
         root: PropTypes.string,
         innerIndents: PropTypes.string,
+        container: PropTypes.string,
+        containerModifier: PropTypes.string,
+        prev: PropTypes.string,
+        next: PropTypes.string,
+        slide: PropTypes.string,
     }),
     slidesSettings: PropTypes.objectOf(
         checkBreakpointsPropTypes({
@@ -269,21 +294,24 @@ Carousel.propTypes = {
             spaceBetween: PropTypes.number.isRequired,
         })
     ),
-    slidesPerView: PropTypes.oneOfType([
-        PropTypes.number,
-        PropTypes.oneOf(Object.values(SlidesPerView)),
-    ]),
     pagination: PropTypes.shape({
         el: PropTypes.string,
         bulletElement: PropTypes.string,
         dynamicBullets: PropTypes.string,
         clickable: PropTypes.bool,
         renderBullet: PropTypes.func,
+        bulletClass: PropTypes.string,
+        bulletActiveClass: PropTypes.string,
+        modifierClass: PropTypes.string,
     }),
     loop: PropTypes.bool,
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
+    disableTouchMove: PropTypes.bool,
+    centeredSlides: PropTypes.bool,
+    transitionSpeed: PropTypes.number,
     navTheme: PropTypes.oneOf(Object.values(NavTheme)),
+    effectTheme: PropTypes.oneOf(Object.values(EffectTheme)),
     noSwipingSelector: PropTypes.string,
     getSwiper: PropTypes.func,
     onNextClick: PropTypes.func,
