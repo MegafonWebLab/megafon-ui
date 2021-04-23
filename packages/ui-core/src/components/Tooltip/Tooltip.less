@@ -25,7 +25,6 @@
 }
 
 @{b} {
-    padding: @popperOffset;
     pointer-events: none;
     visibility: hidden;
     z-index: 100;
@@ -51,6 +50,16 @@
         }
     }
 
+    &__content {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__content-shadow {
+        position: absolute;
+        z-index: -1;
+    }
+
     &__arrow {
         .arrowSize();
         position: absolute;
@@ -72,24 +81,84 @@
         }
     }
 
-    &@{popperRight} > &__arrow,
-    &@{popperRight} > &__arrow-shadow {
-        right: @arrowPosition;
+    &@{popperRight} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                right: @arrowPosition;
+            }
+
+            &__content {
+                right: -@popperOffset;
+            }
+
+            &__content-shadow {
+                top: 0;
+                left: @popperOffset;
+                bottom: 0;
+                right: -@popperOffset;
+            }
+        }
     }
 
-    &@{popperLeft} > &__arrow,
-    &@{popperLeft} > &__arrow-shadow {
-        left: @arrowPosition;
+    &@{popperLeft} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                left: @arrowPosition;
+            }
+
+            &__content {
+                left: -@popperOffset;
+            }
+
+            &__content-shadow {
+                top: 0;
+                left: -@popperOffset;
+                bottom: 0;
+                right: @popperOffset;
+            }
+        }
     }
 
-    &@{popperTop} > &__arrow,
-    &@{popperTop} > &__arrow-shadow {
-        top: @arrowPosition;
+    &@{popperTop} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                top: @arrowPosition;
+            }
+
+            &__content {
+                top: -@popperOffset;
+            }
+
+            &__content-shadow {
+                top: -@popperOffset;
+                left: 0;
+                bottom: @popperOffset;
+                right: 0;
+            }
+        }
     }
 
-    &@{popperBottom} > &__arrow,
-    &@{popperBottom} > &__arrow-shadow {
-        bottom: @arrowPosition;
+    &@{popperBottom} {
+        @{b} {
+            &__arrow,
+            &__arrow-shadow {
+                bottom: @arrowPosition;
+            }
+
+            &__content {
+                bottom: -@popperOffset;
+            }
+
+            &__content-shadow {
+                top: @popperOffset;
+                left: 0;
+                bottom: -@popperOffset;
+                right: 0;
+            }
+        }
     }
 
     &@{popperEscaped} {

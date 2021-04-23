@@ -195,9 +195,10 @@ const Tooltip: React.FC<ITooltipProps>  = ({
                 className={cn('arrow-shadow')}
                 style={styles.arrow}
             />
-            <Tile shadowLevel="high" className={cn('content')}>
+            <Tile className={cn('content')}>
                 {children}
             </Tile>
+            <Tile shadowLevel="high" className={cn('content-shadow')} />
         </div>
     );
 };
@@ -206,22 +207,10 @@ Tooltip.propTypes = {
     placement: PropTypes.oneOf(Object.values(Placement)),
     paddings: PropTypes.oneOf(Object.values(Paddings)),
     triggerEvent: PropTypes.oneOf(Object.values(TriggerEvent)),
-    boundaryElement: (props, propName, componentName, location) => {
-        const prop = props[propName];
-        const isObject = typeof prop === 'object' && prop !== null;
-        const hasPropCurrent = isObject && prop.hasOwnProperty('current');
-        if (prop === undefined) {
-            return new Error(
-                `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`undefined\`.`
-            );
-        }
-        if (!isObject && !hasPropCurrent) {
-            return new Error(
-                `Invalid ${location} \`${propName}\` supplied to \`${componentName}\`, expected React.RefObject.`
-            );
-        }
-        return null;
-    },
+    boundaryElement: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     triggerElement: (props, propName, componentName, location) => {
         const prop = props[propName];
         const isObject = typeof prop === 'object' && prop !== null;

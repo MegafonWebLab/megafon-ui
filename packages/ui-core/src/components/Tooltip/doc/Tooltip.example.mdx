@@ -192,8 +192,14 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     <DemoTooltipWithTriggerWrapper>
         {({ triggerElement, boundaryElement }) => (
             <>
-                <Paragraph hasMargin={false} >
-                    <span ref={boundaryElement}>Тултип выровнен по границе этого 
+                <Paragraph hasMargin={false}>
+                    <span 
+                        ref={boundaryElement}
+                        style={{
+                            outline: '1px solid rgba(0,0,0,0.1)',
+                            padding: '12px'
+                        }}
+                    >Тултип выровнен по границе этого 
                         <span ref={triggerElement}>
                             <TextLink>текста.</TextLink>
                         </span>
