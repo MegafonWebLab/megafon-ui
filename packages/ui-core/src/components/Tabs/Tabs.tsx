@@ -332,7 +332,7 @@ Tabs.propTypes = {
     classes: PropTypes.shape({
         root: PropTypes.string,
         innerIndents: PropTypes.string,
-        gtm: PropTypes.string,
+        tab: PropTypes.string,
     }),
     size: PropTypes.oneOf(Object.values(TabSize)),
     hAlign: PropTypes.oneOf(Object.values(TabHAlign)),
