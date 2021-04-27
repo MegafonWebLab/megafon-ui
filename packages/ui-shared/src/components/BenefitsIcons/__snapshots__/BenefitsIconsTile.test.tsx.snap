@@ -126,17 +126,17 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html(span) in text
       className="mfui-beta-benefits-icons-tile__content"
     >
       <component
-        className="test"
+        className=""
         key="0"
       >
         <component
-          className="red"
+          className=""
           key="0"
         >
           *
         </component>
         <component
-          className="num"
+          className=""
           key="1"
         >
           105

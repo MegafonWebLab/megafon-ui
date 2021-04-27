@@ -4,6 +4,7 @@ import {
     wrapperDefaultWidthStyle,
     wrapperWideWidthStyle,
     DemoTextFieldWithControlledValue,
+    DemoTextFieldWithBeforeMaskChangeValue,
 } from './TextField.docz';
 import CustomIcon from 'icons/System/24/Rating_5_24.svg';
 
@@ -31,6 +32,18 @@ import CustomIcon from 'icons/System/24/Rating_5_24.svg';
         inputMode="numeric"
         classes={{input: 'parent__inputClass'}}
     />
+</Playground>
+
+## Маска телефона с перехватом вводимого значения
+При вставке телефона в форме +79998887766 выведет его сразу в нужном формате, для других случаев 
+требуется ручная обработка внутри коллбека
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <DemoTextFieldWithBeforeMaskChangeValue>
+        {({ handleBeforeMaskChange }) =>
+            <TextField onBeforeMaskChange={handleBeforeMaskChange} mask="+7 (999) 999-99-99" maskchar="_" />
+        }
+    </DemoTextFieldWithBeforeMaskChangeValue>
 </Playground>
 
 ## Подпись снизу
