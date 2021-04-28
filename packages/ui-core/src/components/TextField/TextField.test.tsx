@@ -5,6 +5,8 @@ import detectTouch from 'utils/detectTouch';
 import TextField, { Verification } from './TextField';
 import Balance from 'icons/Basic/24/Balance_24.svg';
 
+const InputMask = require('react-input-mask');
+
 jest.mock('utils/detectTouch', () => jest.fn().mockReturnValue(false));
 
 const commonFieldProps = {
@@ -333,6 +335,27 @@ describe('<TextField />', () => {
             wrapper.find(selectors.iconBox).simulate('click');
 
             expect(wrapper.find('input').prop('value')).toEqual('value');
+        });
+
+        it('should call onBeforeMaskChange callback on masked input change with correct args', () => {
+            const onBeforeMaskChange = jest.fn();
+
+            const nextState = { value: 'some_value', selection: { start: 3, end: 4 } };
+            const prevState = { value: 'some_new_value', selection: { start: 3, end: 6 } };
+
+            const wrapper = shallow(
+                <TextField
+                    {...commonFieldProps}
+                    mask="+7 (999) 999-99-99"
+                    maskChar="_"
+                    onBeforeMaskChange={onBeforeMaskChange}
+                />
+            );
+
+            const inputElementProps = wrapper.find('InputElement').props() as React.ComponentProps<typeof InputMask>;
+            inputElementProps.beforeMaskedValueChange && inputElementProps.beforeMaskedValueChange(nextState, prevState, 'h');
+
+            expect(onBeforeMaskChange).toBeCalledWith('h', nextState, prevState);
         });
     });
 

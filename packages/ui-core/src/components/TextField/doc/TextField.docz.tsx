@@ -16,3 +16,14 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
 
     return <>{children({ value: inputValue, onChange: handleChange })}</>;
 };
+
+export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
+    const handleBeforeMaskChange = (value, newState) => {
+        const { value: newMaskedValue } = newState;
+        const isValuePasted = value && value.length > 1;
+
+        return { ...newState, value: isValuePasted ? value : newMaskedValue };
+    };
+
+    return <>{children({ handleBeforeMaskChange })}</>;
+};
