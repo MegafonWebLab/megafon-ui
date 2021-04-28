@@ -132,7 +132,7 @@ exports[`<Tabs /> should render with props 1`] = `
           key=".0"
         >
           <div
-            className="mfui-beta-tabs__tab"
+            className="mfui-beta-tabs__tab tabClass"
           >
             <a
               className="mfui-beta-tabs__tab-inner"
@@ -157,7 +157,7 @@ exports[`<Tabs /> should render with props 1`] = `
           key=".1"
         >
           <div
-            className="mfui-beta-tabs__tab"
+            className="mfui-beta-tabs__tab tabClass"
           >
             <div
               className="tab-wrapper"

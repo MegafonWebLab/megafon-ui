@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import TabsBox from './TabsBox';
 import TabBox from './TabBox';
 import Balance from 'icons/Basic/24/Balance_24.svg';
@@ -34,6 +34,27 @@ describe('<TabsBox />', () => {
                 </TabBox>
             </TabsBox>
         );
+
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref = React.createRef<HTMLDivElement>();
+
+        mount(
+            <TabsBox rootRef={ref}>
+                <TabBox title="title 1" icon={<Balance />} href="www.test.com">
+                    1
+                </TabBox>
+                <TabBox
+                    title="title 2"
+                    renderTabWrapper={renderTabWrapper}
+                >
+                    2
+                </TabBox>
+            </TabsBox>
+        );
+
+        expect(ref.current).not.toBeNull();
     });
 });
