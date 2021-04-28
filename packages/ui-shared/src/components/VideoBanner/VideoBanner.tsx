@@ -55,6 +55,8 @@ export interface IContent {
     buttonTitle: string;
     /** Ссылка на кнопке */
     buttonHref?: string;
+    /** Добавляет атрибут download к свойству тега <a> */
+    buttonDownload?: boolean;
     /** Цвет кнопки */
     buttonColor?: ButtonColorType;
     /** Обработчик клика по кнопке */
@@ -67,6 +69,8 @@ export interface IContent {
     linkTitle?: string;
     /** Адрес ссылки */
     linkUrl?: string;
+    /** Добавляет атрибут download к свойству тега */
+    linkDownload?: boolean;
     /** Строка со стоимостью услуги */
     cost?: string;
 }
@@ -127,12 +131,14 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         description,
         buttonTitle,
         buttonHref,
+        buttonDownload,
         buttonColor = ButtonColor.GREEN,
         onButtonClick,
         textColor = TextColor.FRESH_ASPHALT,
         textColorMobile,
         linkTitle,
         linkUrl,
+        linkDownload,
         cost,
     }) => (
         <div className={cn('content', {
@@ -157,11 +163,12 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                     theme={buttonColor}
                     href={buttonHref}
                     onClick={onButtonClick}
+                    download={buttonDownload}
                 >
                     {buttonTitle}
                 </Button>
                 {linkTitle && (
-                    <TextLink className={cn('link', [classes.link])} href={linkUrl}>
+                    <TextLink className={cn('link', [classes.link])} href={linkUrl} download={linkDownload}>
                         {linkTitle}
                     </TextLink>
                 )}
@@ -279,12 +286,14 @@ VideoBanner.propTypes = {
         description: PropTypes.string.isRequired,
         buttonTitle: PropTypes.string.isRequired,
         buttonHref: PropTypes.string,
+        buttonDownload: PropTypes.bool,
         buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
         onButtonClick: PropTypes.func,
         textColor: PropTypes.oneOf(Object.values(TextColor)),
         textColorMobile: PropTypes.oneOf(Object.values(TextColor)),
         linkTitle: PropTypes.string,
         linkUrl: PropTypes.string,
+        linkDownload: PropTypes.bool,
         cost: PropTypes.string,
     }),
     isMuted: PropTypes.bool,

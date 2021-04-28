@@ -101,6 +101,25 @@ describe('<VideoBanner />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('render component with pictures and download links content', () => {
+        const localContent = {
+            ...content,
+            buttonDownload: true,
+            linkDownload: true,
+        };
+
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                imageDesktop={imageDesktop}
+                imageDesktopWide={imageDesktopWide}
+                content={localContent}
+            />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('render component with non default buttonColor', () => {
         const localContent = {
             ...content,
