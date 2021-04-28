@@ -23,6 +23,16 @@ export const TextareaTypes = {
     FLEXIBLE: 'flexible',
 } as const;
 
+interface IMaskSelection {
+    start: number;
+    end: number;
+}
+
+export interface IMaskState {
+    value: string;
+    selection: IMaskSelection;
+}
+
 export interface ITextFieldProps {
     /** Включить режим textarea. Fixed - это alias для textarea=true. */
     textarea?: boolean | 'fixed' | 'flexible';
@@ -73,6 +83,8 @@ export interface ITextFieldProps {
     isControlled?: boolean;
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    /** Обработчик изменения значения маскированного инпута до обработки маской */
+    onBeforeMaskChange?: (value: string, newState: IMaskState, oldState: IMaskState) => void;
     /** Обработчик выхода из фокуса */
     onBlur?: (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Обработчик входа в фокус */
@@ -116,6 +128,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         isControlled = false,
         onBlur,
         onChange,
+        onBeforeMaskChange,
         onCustomIconClick,
         onFocus,
         onKeyUp,
@@ -214,6 +227,10 @@ const TextField: React.FC<ITextFieldProps> = ({
         onBlur && onBlur(e);
     }, [onBlur]);
 
+    const handleBeforeMaskChange = useCallback((newState, oldState, inputedValue) =>
+        onBeforeMaskChange && onBeforeMaskChange(inputedValue, newState, oldState),
+    [onBeforeMaskChange]);
+
     const textareaType = textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED;
     const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
 
@@ -241,6 +258,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     const inputMaskParams = {
         mask,
         maskChar,
+        beforeMaskedValueChange: onBeforeMaskChange ? handleBeforeMaskChange : undefined,
     };
 
     const textareaParams = {
@@ -426,6 +444,7 @@ TextField.propTypes = {
     noticeText: PropTypes.string,
     className: PropTypes.string,
     onChange: PropTypes.func,
+    onBeforeMaskChange: PropTypes.func,
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
     onKeyUp: PropTypes.func,
