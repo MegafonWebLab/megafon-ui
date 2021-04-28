@@ -8,6 +8,8 @@ import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
 import ArrowDown from 'icons/System/24/Arrow_down_24.svg';
 
 export interface IAccordionProps {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок */
     title: string;
     /** Состояние открытости */
@@ -18,6 +20,7 @@ export interface IAccordionProps {
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
+        openedClass?: string;
         root?: string;
         collapse?: string;
     };
@@ -27,11 +30,13 @@ export interface IAccordionProps {
 
 const cn = cnCreate('mfui-beta-accordion');
 const Accordion: React.FC<IAccordionProps> = ({
+    rootRef,
     title,
     isOpened = false,
     hasVerticalPaddings = false,
     className,
     classes: {
+        openedClass,
         root: rootPropsClasses,
         collapse: collapsePropsClasses,
     } = {},
@@ -51,7 +56,10 @@ const Accordion: React.FC<IAccordionProps> = ({
     };
 
     return (
-        <div className={cn({ open: isOpenedState }, [className, rootPropsClasses])}>
+        <div
+            ref={rootRef}
+            className={cn({ open: isOpenedState }, [className, rootPropsClasses, isOpenedState && openedClass])}
+        >
             <div className={cn('title-wrap')} onClick={handleClickTitle}>
                 <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpenedState })}>
@@ -73,11 +81,16 @@ const Accordion: React.FC<IAccordionProps> = ({
 };
 
 Accordion.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,
     hasVerticalPaddings: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
+        openedClass: PropTypes.string,
         root: PropTypes.string,
         collapse: PropTypes.string,
     }),

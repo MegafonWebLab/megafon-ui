@@ -15,12 +15,14 @@ exports[`<AccordionBox /> render AccordionBox 1`] = `
         classes={
           Object {
             "collapse": "collapseClass",
+            "openedClass": "isOpenClass",
             "root": "rootClass",
           }
         }
         hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
+        rootRef={[MockFunction]}
         title="Test"
       >
         <div>
@@ -47,12 +49,14 @@ exports[`<AccordionBox /> render AccordionBox with hCenterAlignWide=true 1`] = `
         classes={
           Object {
             "collapse": "collapseClass",
+            "openedClass": "isOpenClass",
             "root": "rootClass",
           }
         }
         hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
+        rootRef={[MockFunction]}
         title="Test"
       >
         <div>

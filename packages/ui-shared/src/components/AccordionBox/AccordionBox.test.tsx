@@ -3,11 +3,13 @@ import { shallow } from 'enzyme';
 import AccordionBox, { IAccordionBox } from './AccordionBox';
 
 const props: IAccordionBox = {
+    rootRef: jest.fn(),
     title: 'Test',
     isOpened: false,
     hasVerticalPaddings: true,
     className: 'className',
     classes: {
+        openedClass: 'isOpenClass',
         root: 'rootClass',
         collapse: 'collapseClass',
     },
