@@ -32,7 +32,6 @@ exports[`<ButtonBanner /> should render with props 1`] = `
         >
           Текст 
           <TextLink
-            className=""
             color="blue"
             href="#"
             key="1"
@@ -101,7 +100,6 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
         >
           Текст 
           <TextLink
-            className=""
             color="blue"
             href="#"
             key="1"

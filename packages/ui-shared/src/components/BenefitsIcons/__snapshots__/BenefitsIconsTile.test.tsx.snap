@@ -54,12 +54,10 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field
     >
       <List
         as="ol"
-        className=""
         color="red"
         key="0"
       >
         <ListItem
-          className=""
           key="0"
         >
           <Paragraph
@@ -70,17 +68,14 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field
           </Paragraph>
         </ListItem>
         <ListItem
-          className=""
           key="1"
         >
           пункт 2
         </ListItem>
         <ListItem
-          className=""
           key="2"
         >
           <TextLink
-            className=""
             color="blue"
             key="0"
             underlineStyle="solid"
@@ -90,7 +85,6 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field
           </TextLink>
            
           <component
-            className=""
             key="2"
           >
             3

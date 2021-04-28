@@ -1,13 +1,22 @@
-import React from 'react';
+import * as React from 'react';
 import convertToReact, { TransformConfig } from './convert';
 import Header from '../components/Header/Header';
 import Link from '../components/Link/Link';
+
+type NodeType = React.ReactElement & {
+    type: {
+        name: string;
+    };
+    props: {
+        [key: string]: string;
+    };
+};
 
 const config: TransformConfig = {
     h: {
         component: Header,
         props: ['as', 'color', 'margin', 'hAlign'],
-        className: 'class-name',
+        customProps: { className: 'class-name', testAttr: 'test-attr'},
     },
     a: {
         component: Link,
@@ -17,63 +26,55 @@ const config: TransformConfig = {
 
 describe('convertToReact', () => {
     test('should convert to <Link href="/test" target="_blank" />', () => {
-        const converted: React.ReactNode = convertToReact(
-            '<a href="/test" target="_blank">link</a>',
-            config
-        );
+        const converted = convertToReact('<a href="/test" target="_blank">link</a>', config);
+        const node = converted[0] as NodeType;
 
         expect(Array.isArray(converted)).toBe(true);
-        expect(converted[0]).toBeDefined();
-        expect(converted[0].type.name).toBe('Link');
-        expect(converted[0].props.href).toBe('/test');
-        expect(converted[0].props.target).toBe('_blank');
+        expect(node).toBeDefined();
+        expect(node.type.name).toBe('Link');
+        expect(node.props.href).toBe('/test');
+        expect(node.props.target).toBe('_blank');
     });
 
-    test('should convert to <Header as=h1 />', () => {
-        const converted: React.ReactNode = convertToReact(
-            '<h as="h1">title</h>',
-            config
-        );
+    test('should convert to "<Header as=h1 />"', () => {
+        const converted = convertToReact('<h as="h1">title</h>', config);
+        const node = converted[0] as NodeType;
 
         expect(Array.isArray(converted)).toBe(true);
-        expect(converted[0]).toBeDefined();
-        expect(converted[0].type.name).toBe('Header');
-        expect(converted[0].props.as).toBe('h1');
-        expect(converted[0].props.className).toBe('class-name');
+        expect(node).toBeDefined();
+        expect(node.type.name).toBe('Header');
+        expect(node.props.as).toBe('h1');
+        expect(node.props.className).toBe('class-name');
+        expect(node.props.testAttr).toBe('test-attr');
     });
 
     test('should return empty array', () => {
-        const converted: React.ReactNode[] = convertToReact(
-            '<div><h>title</h></div>',
-            config
-        );
+        const converted = convertToReact('<div><h>title</h></div>', config);
 
         expect(Array.isArray(converted)).toBe(true);
         expect(converted.length).toBe(0);
     });
 
     test('should return only allowed tags', () => {
-        const converted: React.ReactNode[] = convertToReact(
-            '<h as="h1">title<div></div></h>',
-            config
-        );
+        const converted = convertToReact('<h as="h1">title<div></div></h>', config);
 
         expect(Array.isArray(converted)).toBe(true);
         expect(converted.length).toBe(1);
     });
 
     test('should cut forbidden props', () => {
-        const converted: React.ReactNode = convertToReact(
+        const converted = convertToReact(
             '<h as="h1" color="green" forbiddebProp="test" margin>title</h>',
             config
         );
+        const node = converted[0] as NodeType;
 
         expect(Array.isArray(converted)).toBe(true);
-        expect(converted[0]).toBeDefined();
-        expect(converted[0].type.name).toBe('Header');
-        expect(converted[0].props.as).toBeDefined();
-        expect(converted[0].props.color).toBeDefined();
-        expect(converted[0].props.margin).toBeDefined();
-        expect(converted[0].props.forbiddebProp).toBeUndefined();
+        expect(node).toBeDefined();
+        expect(node.type.name).toBe('Header');
+        expect(node.props.as).toBeDefined();
+        expect(node.props.color).toBeDefined();
+        expect(node.props.margin).toBeDefined();
+        expect(node.props.forbiddebProp).toBeUndefined();
     });
 });
