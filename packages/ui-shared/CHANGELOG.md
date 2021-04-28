@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.171](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.170...@megafon/ui-shared@2.0.0-beta.171) (2021-04-28)
+
+
+### Features
+
+* **tabsbox:** added ref props ([8aa39cd](https://github.com/MegafonWebLab/megafon-ui/commit/8aa39cd7b8cf0023c06af87582bfc25ac072fbde))
+
+
+
+
+
 # [2.0.0-beta.170](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.169...@megafon/ui-shared@2.0.0-beta.170) (2021-04-28)
 
 
