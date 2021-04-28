@@ -47,6 +47,8 @@ export interface IButtonBannerProps {
     buttonText: string;
     /** URL кнопки */
     buttonUrl?: string;
+    /** Download - свойство тега <a> */
+    buttonDownload?: boolean;
     /** Target - свойство тега <a> */
     buttonTarget?: ButtonTargetType;
     /** Цвет кнопки */
@@ -74,6 +76,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
     imageUrl = '',
     buttonText,
     buttonUrl,
+    buttonDownload,
     buttonTarget = '_self',
     buttonColor = 'green',
     onButtonClick,
@@ -85,6 +88,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
             target={buttonTarget}
             theme={buttonColor}
             onClick={onButtonClick}
+            download={buttonDownload}
         >
             {buttonText}
         </Button>
@@ -130,6 +134,7 @@ ButtonBanner.propTypes = {
     imageUrl: PropTypes.string,
     buttonText: PropTypes.string.isRequired,
     buttonUrl: PropTypes.string,
+    buttonDownload: PropTypes.bool,
     buttonTarget:  PropTypes.oneOf(Object.values(ButtonTarget)),
     buttonColor:  PropTypes.oneOf(Object.values(ButtonColor)),
     onButtonClick: PropTypes.func,
