@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.170](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.169...@megafon/ui-shared@2.0.0-beta.170) (2021-04-28)
+
+
+### Features
+
+* **accordionbox:** add isOpenClass in classes object and add rootRef prop ([ca37da9](https://github.com/MegafonWebLab/megafon-ui/commit/ca37da99cc912669f1cd014d2d44deda40378ed5))
+
+
+
+
+
 # [2.0.0-beta.169](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.168...@megafon/ui-shared@2.0.0-beta.169) (2021-04-23)
 
 

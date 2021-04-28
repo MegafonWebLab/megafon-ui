@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.120](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.119...@megafon/ui-core@2.0.0-beta.120) (2021-04-28)
+
+
+### Features
+
+* **accordion:** add isOpenClass props in classes object and rootRef prop ([a92d247](https://github.com/MegafonWebLab/megafon-ui/commit/a92d24724835ebda494630c8c2d453a0e2d51b08))
+
+
+
+
+
 # [2.0.0-beta.119](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.118...@megafon/ui-core@2.0.0-beta.119) (2021-04-23)
 
 
