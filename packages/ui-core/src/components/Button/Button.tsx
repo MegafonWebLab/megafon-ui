@@ -249,6 +249,7 @@ Button.propTypes = {
     theme: PropTypes.oneOf(Object.values(ButtonThemes)),
     type: PropTypes.oneOf(Object.values(ButtonTypes)),
     href: PropTypes.string,
+    download: PropTypes.bool,
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
     rel: PropTypes.string,
     actionType: PropTypes.oneOf(['button', 'reset', 'submit']),
