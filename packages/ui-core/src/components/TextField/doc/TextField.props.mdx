@@ -1,0 +1,16 @@
+import TextField from '../TextField';
+import { Props } from 'docz';
+
+<Props of={TextField} />
+
+```javascript
+interface IMaskSelection {
+    start: number;
+    end: number;
+}
+
+export interface IMaskState {
+    value: string;
+    selection: IMaskSelection;
+}
+```
