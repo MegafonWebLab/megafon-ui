@@ -38,6 +38,11 @@ describe('<ButtonLinkBox />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('renders ButtonLinkBox with download links', () => {
+        const wrapper = shallow(<ButtonLinkBox {...props} linkDownload={true} buttonDownload={true} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
 

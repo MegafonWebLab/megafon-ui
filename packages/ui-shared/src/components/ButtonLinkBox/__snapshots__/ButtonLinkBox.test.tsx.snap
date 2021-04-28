@@ -34,6 +34,40 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
 </div>
 `;
 
+exports[`<ButtonLinkBox /> renders ButtonLinkBox with download links 1`] = `
+<div
+  className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class root-class"
+  data-test="value"
+>
+  <div
+    className="mfui-beta-button-link-box__row"
+  >
+    <Button
+      className="button-class"
+      download={true}
+      href="button-url"
+      theme="purple"
+    >
+      button title
+    </Button>
+  </div>
+  <div
+    className="mfui-beta-button-link-box__row"
+  >
+    <TextLink
+      className="link-class"
+      color="blue"
+      download={true}
+      href="link-url"
+      underlineStyle="solid"
+      underlineVisibility="always"
+    >
+      link title
+    </TextLink>
+  </div>
+</div>
+`;
+
 exports[`<ButtonLinkBox /> renders ButtonLinkBox without button 1`] = `
 <div
   className="mfui-beta-button-link-box mfui-beta-button-link-box_h-align_center custom-class root-class"
