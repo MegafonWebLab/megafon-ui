@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.122](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.121...@megafon/ui-core@2.0.0-beta.122) (2021-04-28)
+
+
+### Features
+
+* **textfield:** added callback intercepting masked input change ([ec32b99](https://github.com/MegafonWebLab/megafon-ui/commit/ec32b995ff8cf2fc875284d93d93256dda40d9c6))
+
+
+
+
+
 # [2.0.0-beta.121](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.120...@megafon/ui-core@2.0.0-beta.121) (2021-04-28)
 
 
