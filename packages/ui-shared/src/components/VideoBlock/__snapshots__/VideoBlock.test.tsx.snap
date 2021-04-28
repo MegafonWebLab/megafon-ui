@@ -191,6 +191,85 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
 </div>
 `;
 
+exports[`<VideoBlock /> it renders VideoBlock with content and button download link 1`] = `
+<div
+  className="mfui-beta-video-block"
+>
+  <Grid
+    className="mfui-beta-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="5"
+      key="column-content"
+      mobile="12"
+      orderMobile="2"
+      orderTablet="2"
+      tablet="12"
+    >
+      <div
+        className="mfui-beta-video-block__content"
+      >
+        <Header
+          as="h3"
+          className="mfui-beta-video-block__header"
+          color="black"
+          hAlign="inherit"
+        >
+          Test title
+        </Header>
+        <div>
+          <Paragraph
+            className="mfui-beta-video-block__text"
+            hasMargin={false}
+            key="0Test description"
+          >
+            Test description
+          </Paragraph>
+          <Paragraph
+            className="mfui-beta-video-block__text"
+            hasMargin={false}
+            key="1Test description2"
+          >
+            Test description2
+          </Paragraph>
+        </div>
+        <Button
+          className="mfui-beta-video-block__button"
+          download={true}
+          href="#"
+        >
+          Button title
+        </Button>
+      </div>
+    </GridColumn>
+    <GridColumn
+      all="7"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <div
+        className="mfui-beta-video-block__video-wrapper mfui-beta-video-block__video-wrapper_with-content"
+      >
+        <video
+          autoPlay={false}
+          className="mfui-beta-video-block__video"
+          controls={true}
+          loop={true}
+          muted={true}
+        >
+          <source
+            src="video.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 <div
   className="mfui-beta-video-block"
