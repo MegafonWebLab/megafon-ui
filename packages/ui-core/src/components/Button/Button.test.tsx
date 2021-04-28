@@ -119,6 +119,11 @@ describe('<Button />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render tag with download attribute', () => {
+            const wrapper = shallow(<Button href="test" download />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should render green theme when type is "primary" and theme is "black"', () => {
             const wrapper = shallow(<Button type="primary" theme="black" />);
             expect(wrapper.exists(`${cn}_theme_green`)).toBeTruthy();

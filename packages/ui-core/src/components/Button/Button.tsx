@@ -55,6 +55,8 @@ export interface IButtonProps extends IDataAttributes {
     type?: ButtonTypesType;
     /** Ссылка */
     href?: string;
+    /** Задает атрибут download для ссылки */
+    download?: boolean;
     /** Target - свойство тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** Rel - атрибут тега <a> */
@@ -102,6 +104,7 @@ const Button: React.FC<IButtonProps> = ({
     theme = 'green',
     type = 'primary',
     href,
+    download,
     target,
     rel,
     actionType = 'button',
@@ -222,6 +225,7 @@ const Button: React.FC<IButtonProps> = ({
                 'content-type': contentType,
             }, [className, rootClassName])}
             href={href}
+            download={href && download}
             target={href ? target : undefined}
             rel={setRelAttribute()}
             type={href ? undefined : actionType}

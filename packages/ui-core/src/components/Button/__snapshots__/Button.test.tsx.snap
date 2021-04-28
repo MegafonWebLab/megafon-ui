@@ -108,6 +108,20 @@ exports[`<Button /> layout should render tag button with disabled state 1`] = `
 </button>
 `;
 
+exports[`<Button /> layout should render tag with download attribute 1`] = `
+<a
+  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  disabled={false}
+  download={true}
+  href="test"
+  onClick={[Function]}
+>
+  <div
+    className="mfui-beta-button__inner"
+  />
+</a>
+`;
+
 exports[`<Button /> layout should render tag with target _self and without rel attribute 1`] = `
 <a
   className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
