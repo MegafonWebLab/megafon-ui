@@ -11,6 +11,7 @@ export interface ITextLinkProps extends ILinkProps {
     underlineVisibility: 'hover' | 'always';
     /** Стиль подчеркивания */
     underlineStyle: 'solid' | 'dashed' | 'border' | 'none';
+    target?: '_self' | '_blank' | '_parent' | '_top';
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
