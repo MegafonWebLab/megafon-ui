@@ -11,6 +11,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
     <Button
       className="button-class"
       href="button-url"
+      target="_self"
       theme="purple"
     >
       button title
@@ -23,6 +24,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
       className="link-class"
       color="blue"
       href="link-url"
+      target="_blank"
       underlineStyle="solid"
       underlineVisibility="always"
     >
@@ -44,6 +46,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox without button 1`] = `
       className="link-class"
       color="blue"
       href="link-url"
+      target="_blank"
       underlineStyle="solid"
       underlineVisibility="always"
     >
@@ -64,6 +67,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox without link 1`] = `
     <Button
       className="button-class"
       href="button-url"
+      target="_self"
       theme="purple"
     >
       button title
