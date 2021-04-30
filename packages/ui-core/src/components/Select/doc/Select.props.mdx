@@ -5,9 +5,14 @@ import { Props } from 'docz';
 
 ```javascript
 export interface ISelectItem {
+    // Заголовок элемента в выпадающем списке
     title: string;
+    // Значение value элемента
     value: number | string;
+    // Настраиваемое отображение элементов в выпадающем списке
     view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    // Настраиваемое отображение выбранного элемента в поле селекта
+    selectedView?: JSX.Element | Element | React.ReactElement;
 }
 
 interface ISelectClasses {

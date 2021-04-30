@@ -24,9 +24,13 @@ type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 export type SelectItemValueType = number | string | undefined;
 
 export interface ISelectItem<T extends SelectItemValueType> {
+    /** Заголовок элемента в выпадающем списке  */
     title: string;
+    /** Значение value элемента */
     value: T;
+    /** Настраиваемое отображение элементов в выпадающем списке  */
     view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    /** Настраиваемое отображение выбранного элемента в поле селекта  */
     selectedView?: JSX.Element | Element | React.ReactElement;
 }
 
@@ -37,7 +41,7 @@ export interface ISelectProps<T extends SelectItemValueType> extends IDataAttrib
     label?: string;
     /** HTML идентификатор для заголовка поля */
     labelId?: string;
-    /** Текущий выбранный элемент селекта */
+    /** Текущий выбранный элемент селекта (extends SelectItemValueType) */
     currentValue?: T;
     /** Результат проверки данных */
     verification?: VerificationType;
@@ -53,7 +57,6 @@ export interface ISelectProps<T extends SelectItemValueType> extends IDataAttrib
     notFoundText?: string;
     /** Массив элементов селекта */
     items: Array<ISelectItem<T>>;
-    /**  */
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -80,7 +83,6 @@ interface ISelectState<T extends SelectItemValueType> {
     filteredItems: Array<ISelectItem<T>>;
     comparableInputValue: string;
     inputValue: string;
-    selectedView: JSX.Element | Element | React.ReactElement | undefined;
 }
 
 const cn = cnCreate('mfui-beta-select');
@@ -158,14 +160,13 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             filteredItems: props.items,
             comparableInputValue: '',
             inputValue: '',
-            selectedView: undefined,
         };
         this.itemsNodeList = [];
     }
 
     componentDidMount() {
         const { currentValue } = this.props;
-        const { filteredItems, selectedView } = this.state;
+        const { filteredItems } = this.state;
         const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
 
         if (currentIndex !== -1) {
@@ -173,9 +174,6 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 activeIndex: currentIndex,
                 inputValue: filteredItems[currentIndex].title,
                 comparableInputValue: filteredItems[currentIndex].title,
-                selectedView: filteredItems[currentIndex].selectedView ?
-                                filteredItems[currentIndex].selectedView :
-                                selectedView,
             });
         }
     }
@@ -262,14 +260,14 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             return;
         }
 
-        const { title, selectedView } = item;
+        const { title } = item;
 
         this.setState({
             isOpened: false,
             inputValue: title,
             comparableInputValue: title,
             filteredItems: items,
-            selectedView: selectedView});
+        });
 
         onSelect && onSelect(e, item);
         this.handleClosed();
