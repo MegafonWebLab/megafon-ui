@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.123](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.122...@megafon/ui-core@2.0.0-beta.123) (2021-04-30)
+
+
+### Features
+
+* **select:** add selectedView in selectItem ([a9f944a](https://github.com/MegafonWebLab/megafon-ui/commit/a9f944a0dc6b29b004b288eaf5136ce1b666d4d6))
+
+
+
+
+
 # [2.0.0-beta.122](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.121...@megafon/ui-core@2.0.0-beta.122) (2021-04-28)
 
 
