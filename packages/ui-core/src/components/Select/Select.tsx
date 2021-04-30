@@ -23,13 +23,14 @@ type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 
 export type SelectItemValueType = number | string | undefined;
 
-export interface ISelectItem {
+export interface ISelectItem<T extends SelectItemValueType> {
     title: string;
-    value: SelectItemValueType;
+    value: T;
     view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    selectedView?: JSX.Element | Element | React.ReactElement;
 }
 
-export interface ISelectProps extends IDataAttributes {
+export interface ISelectProps<T extends SelectItemValueType> extends IDataAttributes {
     /** Тип компонента */
     type?: SelectTypesType;
     /** Заголовок поля */
@@ -37,7 +38,7 @@ export interface ISelectProps extends IDataAttributes {
     /** HTML идентификатор для заголовка поля */
     labelId?: string;
     /** Текущий выбранный элемент селекта */
-    currentValue?: SelectItemValueType;
+    currentValue?: T;
     /** Результат проверки данных */
     verification?: VerificationType;
     /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
@@ -51,7 +52,8 @@ export interface ISelectProps extends IDataAttributes {
     /** Текст при отсутствии результатов поиска */
     notFoundText?: string;
     /** Массив элементов селекта */
-    items: ISelectItem[];
+    items: Array<ISelectItem<T>>;
+    /**  */
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -64,24 +66,25 @@ export interface ISelectProps extends IDataAttributes {
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
-        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem<T>
     ) => void;
-    /** Обработчик при отркытом селекте */
+    /** Обработчик при открытом селекте */
     onOpened?: () => void;
     /** Обработчик при закрытом селекте */
     onClosed?: () => void;
 }
 
-interface ISelectState {
+interface ISelectState<T extends SelectItemValueType> {
     isOpened: boolean;
     activeIndex: number;
-    filteredItems: ISelectItem[];
+    filteredItems: Array<ISelectItem<T>>;
     comparableInputValue: string;
     inputValue: string;
+    selectedView: JSX.Element | Element | React.ReactElement | undefined;
 }
 
 const cn = cnCreate('mfui-beta-select');
-class Select extends React.Component<ISelectProps, ISelectState> {
+class Select<T extends SelectItemValueType> extends React.Component<ISelectProps<T>, ISelectState<T>> {
     static propTypes = {
         type: PropTypes.oneOf(Object.values(SelectTypes)),
         label: PropTypes.string,
@@ -118,7 +121,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         onClosed: PropTypes.func,
     };
 
-    static defaultProps: Partial<ISelectProps> = {
+    static defaultProps: Partial<ISelectProps<never>> = {
         isDisabled: false,
         required: false,
         type: 'classic',
@@ -146,7 +149,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true, activeIndex: 0 });
     }, 250);
 
-    constructor(props: ISelectProps) {
+    constructor(props: ISelectProps<T>) {
         super(props);
 
         this.state = {
@@ -155,13 +158,14 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             filteredItems: props.items,
             comparableInputValue: '',
             inputValue: '',
+            selectedView: undefined,
         };
         this.itemsNodeList = [];
     }
 
     componentDidMount() {
         const { currentValue } = this.props;
-        const { filteredItems } = this.state;
+        const { filteredItems, selectedView } = this.state;
         const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
 
         if (currentIndex !== -1) {
@@ -169,11 +173,14 @@ class Select extends React.Component<ISelectProps, ISelectState> {
                 activeIndex: currentIndex,
                 inputValue: filteredItems[currentIndex].title,
                 comparableInputValue: filteredItems[currentIndex].title,
+                selectedView: filteredItems[currentIndex].selectedView ?
+                                filteredItems[currentIndex].selectedView :
+                                selectedView,
             });
         }
     }
 
-    componentDidUpdate({ items: prevItems }: ISelectProps) {
+    componentDidUpdate({ items: prevItems }: ISelectProps<T>) {
         const { items } = this.props;
         const { isOpened } = this.state;
 
@@ -194,7 +201,7 @@ class Select extends React.Component<ISelectProps, ISelectState> {
         document.removeEventListener('click', this.handleClickOutside);
     }
 
-    isEqualItems = (items: ISelectItem[], prevItems: ISelectItem[]) => {
+    isEqualItems = (items: Array<ISelectItem<T>>, prevItems: Array<ISelectItem<T>>) => {
         if (items.length !== prevItems.length) {
             return false;
         }
@@ -255,9 +262,14 @@ class Select extends React.Component<ISelectProps, ISelectState> {
             return;
         }
 
-        const { title } = item;
+        const { title, selectedView } = item;
 
-        this.setState({isOpened: false, inputValue: title, comparableInputValue: title, filteredItems: items });
+        this.setState({
+            isOpened: false,
+            inputValue: title,
+            comparableInputValue: title,
+            filteredItems: items,
+            selectedView: selectedView});
 
         onSelect && onSelect(e, item);
         this.handleClosed();
@@ -397,10 +409,10 @@ class Select extends React.Component<ISelectProps, ISelectState> {
     renderTitle() {
         const { placeholder, items, currentValue } = this.props;
         const item = items.find(elem => elem.value === currentValue);
-        let inputTitle: string | undefined = placeholder;
+        let inputTitle: string | JSX.Element | Element | undefined = placeholder;
 
         if (item && item.title) {
-            inputTitle = item.title;
+            inputTitle = item.selectedView ? item.selectedView : item.title;
         }
 
         return (
