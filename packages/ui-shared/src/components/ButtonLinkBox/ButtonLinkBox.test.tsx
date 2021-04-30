@@ -18,6 +18,8 @@ const props: IButtonLinkBoxProps = {
     linkTitle: 'link title',
     linkUrl: 'link-url',
     hAlign: 'center',
+    linkTarget: '_blank',
+    buttonTarget: '_self',
 };
 
 describe('<ButtonLinkBox />', () => {

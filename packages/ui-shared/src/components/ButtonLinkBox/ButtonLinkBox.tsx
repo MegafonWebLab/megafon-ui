@@ -22,10 +22,14 @@ export interface IButtonLinkBoxProps {
     buttonUrl?: string;
     /** Цвет кнопки */
     buttonColor?: 'green' | 'purple';
+    /** Target свойство кнопки */
+    buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Заголовок ссылки */
     linkTitle?: string;
     /** Адрес ссылки */
     linkUrl?: string;
+    /** Target свойство ссылки */
+    linkTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Горизонтальное выравнивание */
     hAlign?: 'center' | 'left';
     /** Обработчик клика по кнопке */
@@ -45,6 +49,8 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     linkUrl,
     hAlign,
     className,
+    buttonTarget,
+    linkTarget,
     classes = {},
     onButtonClick,
     onLinkClick,
@@ -61,6 +67,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
                     href={buttonUrl}
                     theme={buttonColor}
                     onClick={onButtonClick}
+                    target={buttonTarget}
                 >
                     {buttonTitle}
                 </Button>
@@ -72,6 +79,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
                     className={classes.link}
                     href={linkUrl}
                     underlineVisibility="always"
+                    target={linkTarget}
                     onClick={onLinkClick}
                 >
                     {linkTitle}
