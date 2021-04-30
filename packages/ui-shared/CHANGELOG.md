@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.173](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.172...@megafon/ui-shared@2.0.0-beta.173) (2021-04-30)
+
+
+### Features
+
+* **buttonlinkbox:** add target prop for ButtonLinkBox ([14759a9](https://github.com/MegafonWebLab/megafon-ui/commit/14759a97b708e950909c1ad03ac891e73bbb783b))
+
+
+
+
+
 # [2.0.0-beta.172](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.171...@megafon/ui-shared@2.0.0-beta.172) (2021-04-28)
 
 **Note:** Version bump only for package @megafon/ui-shared
