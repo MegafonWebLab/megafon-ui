@@ -5,7 +5,7 @@ import cnCreate from 'utils/cnCreate';
 
 const cn = cnCreate('mfui-beta-select');
 
-const props: ISelectProps = {
+const props: ISelectProps<number> = {
     className: 'test-class',
     label: 'test-label',
     labelId: '1',
@@ -54,12 +54,12 @@ describe('<Select />', () => {
         });
 
         it('renders with props', () => {
-            const wrapper = mount(<Select {...props} />);
+            const wrapper = mount(<Select<number> {...props} />);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('renders combobox after update with new prop items', () => {
-            const wrapper = mount(<Select {...props} type="combobox" />);
+            const wrapper = mount(<Select<number> {...props} type="combobox" />);
 
             wrapper.setProps({ items: newItems });
             wrapper.update();
@@ -129,7 +129,7 @@ describe('<Select />', () => {
         it('calls onOpened and onClosed when click on select', () => {
             const handleOpened = jest.fn();
             const handleClosed = jest.fn();
-            const wrapper = shallow(<Select {...props} onOpened={handleOpened} onClosed={handleClosed} />);
+            const wrapper = shallow(<Select<number> {...props} onOpened={handleOpened} onClosed={handleClosed} />);
 
             wrapper.find(`.${cn('title')}`).simulate('click');
             expect(handleOpened).toBeCalled();
@@ -150,7 +150,7 @@ describe('<Select />', () => {
 
         it('calls onOpened when focus in input', () => {
             const handleOpened = jest.fn();
-            const wrapper = mount(<Select {...props} type={SelectTypes.COMBOBOX} onOpened={handleOpened} />);
+            const wrapper = mount(<Select<number> {...props} type={SelectTypes.COMBOBOX} onOpened={handleOpened} />);
 
             wrapper.find(`.${cn('combobox')}`).simulate('focus');
             expect(handleOpened).toBeCalled();
@@ -158,7 +158,7 @@ describe('<Select />', () => {
 
         it('calls onOpened when keyDown Enter with focus', () => {
             const handleOpened = jest.fn();
-            const wrapper = mount(<Select {...props} onOpened={handleOpened} />);
+            const wrapper = mount(<Select<number> {...props} onOpened={handleOpened} />);
 
             wrapper.find(`.${cn('title')}`).simulate('focus');
             wrapper.find(`.${cn('control')}`).simulate('keyDown', { key: 'Enter', preventDefault: () => {}});
@@ -168,7 +168,7 @@ describe('<Select />', () => {
 
     describe('key typing handlers', () => {
         it('calls onChange while typing in the field with debounce', async () => {
-            const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX} />);
+            const wrapper = shallow(<Select<number> {...props} type={SelectTypes.COMBOBOX} />);
 
             expect(wrapper).toMatchSnapshot();
 
@@ -188,7 +188,7 @@ describe('<Select />', () => {
         });
 
         it('highlighted text', () => {
-            const wrapper = shallow(<Select {...props} type={SelectTypes.COMBOBOX}  />);
+            const wrapper = shallow(<Select<number> {...props} type={SelectTypes.COMBOBOX}  />);
 
             wrapper.find(`.${cn('combobox')}`).simulate('change', {
                 target: {
@@ -202,7 +202,7 @@ describe('<Select />', () => {
 
     describe('keyboard actions', () => {
         it('handles ArrowUp and ArrowDown', () => {
-            const wrapper = mount(<Select {...props}  />);
+            const wrapper = mount(<Select<number> {...props}  />);
             const title = wrapper.find(`.${cn('title')}`);
             const control = wrapper.find(`.${cn('control')}`);
             const listItem = `.${cn('list-item')}`;
@@ -221,7 +221,7 @@ describe('<Select />', () => {
         });
 
         it('handles Tab', () => {
-            const wrapper = mount(<Select {...props}  />);
+            const wrapper = mount(<Select<number> {...props}  />);
             const title = wrapper.find(`.${cn('title')}`);
             const control = wrapper.find(`.${cn('control')}`);
 

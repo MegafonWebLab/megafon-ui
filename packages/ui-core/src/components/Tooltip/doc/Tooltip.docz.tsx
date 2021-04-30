@@ -44,7 +44,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     });
 };
 
-export const triggerEvents: ISelectItem[] = [
+export const triggerEvents: Array<ISelectItem<string>> = [
     {
         value: TriggerEvent.CONTROLLED,
         title: TriggerEvent.CONTROLLED,
@@ -62,7 +62,7 @@ export const triggerEvents: ISelectItem[] = [
 export const DemoSelectTriggerWrapper = ({children}) => {
     const { value } = triggerEvents[0];
     const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
-    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem<string>) => {
         setCurrentValue(data.value);
     };
 
