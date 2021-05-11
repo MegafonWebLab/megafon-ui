@@ -10,7 +10,7 @@ export interface IContent {
     description: string[];
     /** Текст кнопки */
     buttonTitle: string;
-    /** Добавляет атрибут download к свойству тега <a> */
+    /** Добавляет атрибут download для тега <a> компонента Button */
     buttonDownload?: boolean;
     /** Ссылка на кнопке */
     href?: string;
@@ -86,10 +86,14 @@ const VideoBlock: React.FC<Props> = ({
 
     }, [videoType, videoSrc]);
 
-    const renderContent = React.useCallback((data: IContent) => {
-        const { title, description, href, buttonDownload, buttonTitle, onButtonClick } = data;
-
-        return (
+    const renderContent = React.useCallback(({
+        title,
+        description,
+        href,
+        buttonDownload,
+        buttonTitle,
+        onButtonClick,
+    }: IContent) => (
             <div className={cn('content')}>
                 <Header as="h3" className={cn('header')}>
                     {title}
@@ -108,8 +112,7 @@ const VideoBlock: React.FC<Props> = ({
                     {buttonTitle}
                 </Button>
             </div>
-        );
-    }, [content]);
+        ), [content]);
 
     const renderGridColumns = React.useCallback(() => {
         const columns: JSX.Element[] = [];
