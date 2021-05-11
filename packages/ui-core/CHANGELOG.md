@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.125](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.124...@megafon/ui-core@2.0.0-beta.125) (2021-05-11)
+
+
+### Bug Fixes
+
+* **tabs:** swipe slider after click on tab ([c8b684d](https://github.com/MegafonWebLab/megafon-ui/commit/c8b684d2139435282bfd290f08591fee35f48357))
+
+
+
+
+
 # [2.0.0-beta.124](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.123...@megafon/ui-core@2.0.0-beta.124) (2021-05-11)
 
 
