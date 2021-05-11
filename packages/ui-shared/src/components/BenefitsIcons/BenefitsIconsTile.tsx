@@ -30,7 +30,7 @@ const typographyConfig = {
     p: {
         component: Paragraph,
         props: ['color'],
-        className: cn('text'),
+        customProps: { className: cn('text') },
     },
     a: {
         component: TextLink,
