@@ -55,7 +55,7 @@ export interface IContent {
     buttonTitle: string;
     /** Ссылка на кнопке */
     buttonHref?: string;
-    /** Добавляет атрибут download к свойству тега <a> */
+    /** Добавляет атрибут download для тега <a> компонента Button */
     buttonDownload?: boolean;
     /** Цвет кнопки */
     buttonColor?: ButtonColorType;
@@ -69,7 +69,7 @@ export interface IContent {
     linkTitle?: string;
     /** Адрес ссылки */
     linkUrl?: string;
-    /** Добавляет атрибут download к свойству тега */
+    /** Добавляет атрибут download для тега <a> компонента TextLink */
     linkDownload?: boolean;
     /** Строка со стоимостью услуги */
     cost?: string;
