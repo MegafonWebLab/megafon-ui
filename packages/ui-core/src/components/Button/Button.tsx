@@ -55,7 +55,7 @@ export interface IButtonProps extends IDataAttributes {
     type?: ButtonTypesType;
     /** Ссылка */
     href?: string;
-    /** Задает атрибут download для ссылки */
+    /** Задает атрибут download для тега */
     download?: boolean;
     /** Target - свойство тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';

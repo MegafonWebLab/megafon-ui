@@ -119,7 +119,7 @@ describe('<Button />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should render tag with download attribute', () => {
+        it('should render tag "a" with download attribute', () => {
             const wrapper = shallow(<Button href="test" download />);
             expect(wrapper).toMatchSnapshot();
         });
