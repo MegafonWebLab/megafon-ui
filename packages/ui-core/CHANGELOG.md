@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.124](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.123...@megafon/ui-core@2.0.0-beta.124) (2021-05-11)
+
+
+### Features
+
+* **convert:** change props type and add customProps in TransformConfigItem type ([244f2ab](https://github.com/MegafonWebLab/megafon-ui/commit/244f2ab13797ecaceabac2e50b87f78cbfedd0df))
+
+
+### BREAKING CHANGES
+
+* **convert:** change props type and add customProps
+
+
+
+
+
 # [2.0.0-beta.123](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.122...@megafon/ui-core@2.0.0-beta.123) (2021-04-30)
 
 
