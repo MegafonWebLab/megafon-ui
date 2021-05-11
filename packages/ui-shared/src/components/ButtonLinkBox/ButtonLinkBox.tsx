@@ -20,7 +20,7 @@ export interface IButtonLinkBoxProps {
     buttonTitle?: string;
     /** Ссылка кнопки */
     buttonUrl?: string;
-    /** Добавляет атрибут download к свойству тега <a> */
+    /** Добавляет атрибут download для тега <a> компонента Button */
     buttonDownload?: boolean;
     /** Цвет кнопки */
     buttonColor?: 'green' | 'purple';
@@ -28,7 +28,7 @@ export interface IButtonLinkBoxProps {
     buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Заголовок ссылки */
     linkTitle?: string;
-    /** Адрес ссылки */
+    /** Добавляет атрибут download для тега компонента Button  */
     linkUrl?: string;
     /** Target свойство ссылки */
     linkTarget?: '_self' | '_blank' | '_parent' | '_top';

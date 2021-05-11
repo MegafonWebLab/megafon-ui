@@ -46,6 +46,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox with download links 1`] = `
       className="button-class"
       download={true}
       href="button-url"
+      target="_self"
       theme="purple"
     >
       button title
@@ -59,6 +60,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox with download links 1`] = `
       color="blue"
       download={true}
       href="link-url"
+      target="_blank"
       underlineStyle="solid"
       underlineVisibility="always"
     >
