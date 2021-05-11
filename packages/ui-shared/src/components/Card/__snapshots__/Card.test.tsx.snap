@@ -395,49 +395,7 @@ exports[`Card render with a single interactive link element 1`] = `
 </div>
 `;
 
-exports[`Card render with contain object fit 1`] = `
-<div
-  className="mfui-beta-card"
->
-  <div
-    className="mfui-beta-card__inner"
-  >
-    <div
-      className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_contain mfui-beta-card__pic-wrapper_img"
-    >
-      <img
-        className="mfui-beta-card__img"
-        src="test-file-stub"
-      />
-    </div>
-    <Header
-      as="h3"
-      className="mfui-beta-card__title"
-      color="black"
-      hAlign="inherit"
-    >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
-    </Header>
-    <Paragraph
-      hasMargin={false}
-    >
-      Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
-    <div
-      className="mfui-beta-card__btns-wrapper"
-    >
-      <Button
-        className="mfui-beta-card__button"
-        href="#"
-      >
-        Подробнее
-      </Button>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Card render with download button link and download textlink 1`] = `
+exports[`Card render with attribute "download" button link and download textlink 1`] = `
 <div
   className="mfui-beta-card"
 >
@@ -477,6 +435,48 @@ exports[`Card render with download button link and download textlink 1`] = `
       >
         Подключить
       </TextLink>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card render with contain object fit 1`] = `
+<div
+  className="mfui-beta-card"
+>
+  <div
+    className="mfui-beta-card__inner"
+  >
+    <div
+      className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_contain mfui-beta-card__pic-wrapper_img"
+    >
+      <img
+        className="mfui-beta-card__img"
+        src="test-file-stub"
+      />
+    </div>
+    <Header
+      as="h3"
+      className="mfui-beta-card__title"
+      color="black"
+      hAlign="inherit"
+    >
+      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+    </Header>
+    <Paragraph
+      hasMargin={false}
+    >
+      Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
+    </Paragraph>
+    <div
+      className="mfui-beta-card__btns-wrapper"
+    >
+      <Button
+        className="mfui-beta-card__button"
+        href="#"
+      >
+        Подробнее
+      </Button>
     </div>
   </div>
 </div>

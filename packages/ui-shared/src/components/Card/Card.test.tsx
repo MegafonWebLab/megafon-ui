@@ -114,7 +114,7 @@ describe('Card', () => {
         expect(ref.current).not.toBeNull();
     });
 
-    it('render with download button link and download textlink', () => {
+    it('render with attribute "download" button link and download textlink', () => {
         const downloadLink = {...link, download: true};
         const downloadButton = {...button, download: true};
 
