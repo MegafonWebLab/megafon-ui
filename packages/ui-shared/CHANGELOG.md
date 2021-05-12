@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.178](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.177...@megafon/ui-shared@2.0.0-beta.178) (2021-05-12)
+
+
+### Bug Fixes
+
+* **card:** removed underscore when hover on card with href ([2670367](https://github.com/MegafonWebLab/megafon-ui/commit/26703670ed9b49266a4f256328438beeb1f56d87))
+
+
+
+
+
 # [2.0.0-beta.177](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.176...@megafon/ui-shared@2.0.0-beta.177) (2021-05-12)
 
 
