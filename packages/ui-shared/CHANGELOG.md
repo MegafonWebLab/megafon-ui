@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.177](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.176...@megafon/ui-shared@2.0.0-beta.177) (2021-05-12)
+
+
+### Features
+
+* **picturewithdescription:** add prop istexttopalign ([e0f1659](https://github.com/MegafonWebLab/megafon-ui/commit/e0f16591dca67d4434ae157b47d7388855b3a1e6))
+
+
+
+
+
 # [2.0.0-beta.176](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.175...@megafon/ui-shared@2.0.0-beta.176) (2021-05-11)
 
 **Note:** Version bump only for package @megafon/ui-shared
