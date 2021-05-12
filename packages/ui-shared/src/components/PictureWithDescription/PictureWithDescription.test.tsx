@@ -30,4 +30,17 @@ describe('<PictureWithDescription />', () => {
 
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('should render with top align text', () => {
+        const newProps = {
+            ...props,
+            isTextTopAlign: true,
+        };
+
+        const wrapper = shallow(
+            <PictureWithDescription {...newProps}><div /></PictureWithDescription>
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
