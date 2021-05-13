@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.179](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.178...@megafon/ui-shared@2.0.0-beta.179) (2021-05-13)
+
+
+### Features
+
+* **buttonbanner:** added props download to button ([cf26ab0](https://github.com/MegafonWebLab/megafon-ui/commit/cf26ab00d79b39aafcbd77675e34612adfecf6af))
+* **buttonlinkbox:** added props download to button and textlink ([cd9cd74](https://github.com/MegafonWebLab/megafon-ui/commit/cd9cd74dfce0b16ef2953a6c90aee45da7b1da7b))
+* **card:** added props download to button and textlink ([952ea9a](https://github.com/MegafonWebLab/megafon-ui/commit/952ea9aa1e0ec5fb3565d60c0d0e6b917c4d1e42))
+* **videobanner:** added props download to textlink and button ([f2f4a37](https://github.com/MegafonWebLab/megafon-ui/commit/f2f4a370b71d105e4ff6d74b9d832896fbd77bf1))
+* **videoblock:** added props download for button ([9e438ba](https://github.com/MegafonWebLab/megafon-ui/commit/9e438ba8587a05fa5718e06121b5e24a04657bb4))
+
+
+
+
+
 # [2.0.0-beta.178](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.177...@megafon/ui-shared@2.0.0-beta.178) (2021-05-12)
 
 

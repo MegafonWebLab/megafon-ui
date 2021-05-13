@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.126](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.125...@megafon/ui-core@2.0.0-beta.126) (2021-05-13)
+
+
+### Features
+
+* **button:** added download props ([1d3c489](https://github.com/MegafonWebLab/megafon-ui/commit/1d3c4896f5189d9eb84094e074aa13aab7be09f4))
+
+
+
+
+
 # [2.0.0-beta.125](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.124...@megafon/ui-core@2.0.0-beta.125) (2021-05-11)
 
 
