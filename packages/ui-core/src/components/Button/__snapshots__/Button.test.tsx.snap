@@ -82,6 +82,20 @@ exports[`<Button /> layout should render full width button 1`] = `
 </a>
 `;
 
+exports[`<Button /> layout should render tag "a" with download attribute 1`] = `
+<a
+  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  disabled={false}
+  download={true}
+  href="test"
+  onClick={[Function]}
+>
+  <div
+    className="mfui-beta-button__inner"
+  />
+</a>
+`;
+
 exports[`<Button /> layout should render tag a with disabled state 1`] = `
 <a
   className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_disabled mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"

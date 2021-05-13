@@ -10,6 +10,8 @@ export interface IContent {
     description: string[];
     /** Текст кнопки */
     buttonTitle: string;
+    /** Добавляет атрибут download для тега <a> компонента Button */
+    buttonDownload?: boolean;
     /** Ссылка на кнопке */
     href?: string;
     /** Обработчик клика по кнопке */
@@ -84,10 +86,14 @@ const VideoBlock: React.FC<Props> = ({
 
     }, [videoType, videoSrc]);
 
-    const renderContent = React.useCallback((data: IContent) => {
-        const { title, description, href, buttonTitle, onButtonClick } = data;
-
-        return (
+    const renderContent = React.useCallback(({
+        title,
+        description,
+        href,
+        buttonDownload,
+        buttonTitle,
+        onButtonClick,
+    }: IContent) => (
             <div className={cn('content')}>
                 <Header as="h3" className={cn('header')}>
                     {title}
@@ -99,12 +105,14 @@ const VideoBlock: React.FC<Props> = ({
                         </Paragraph>
                     ))}
                 </div>
-                <Button className={cn('button', [classes.button])} href={href} onClick={onButtonClick}>
+                <Button className={cn('button', [classes.button])}
+                    href={href}
+                    onClick={onButtonClick}
+                    download={buttonDownload}>
                     {buttonTitle}
                 </Button>
             </div>
-        );
-    }, [content]);
+        ), [content]);
 
     const renderGridColumns = React.useCallback(() => {
         const columns: JSX.Element[] = [];
@@ -154,6 +162,7 @@ VideoBlock.propTypes = {
         description: PropTypes.array.isRequired,
         href: PropTypes.string,
         buttonTitle: PropTypes.string.isRequired,
+        buttonDownload: PropTypes.bool,
         onButtonClick: PropTypes.func,
     }),
     videoType: PropTypes.oneOf(Object.values(VideoTypes)),

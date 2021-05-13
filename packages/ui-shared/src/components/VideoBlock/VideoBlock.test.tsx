@@ -27,6 +27,14 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with content and button download link', () => {
+        const component = shallow(
+            <VideoBlock videoSrc="video.mp4" content={{ ...content, buttonDownload: true }} />
+        );
+
+        expect(component).toMatchSnapshot();
+    });
+
     it('it renders VideoBlock with classes', () => {
         const component = shallow(
             <VideoBlock

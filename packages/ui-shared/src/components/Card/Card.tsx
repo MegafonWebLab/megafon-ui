@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 interface IButton {
     title: string;
     href: string;
+    download?: boolean;
 }
 
 interface ILink {
     title: string;
     href?: string;
+    download?: boolean;
 }
 
 export const ObjectFit = {
@@ -101,7 +103,7 @@ const Card: React.FC<ICard> = ({
         }
     }, [imageSrc, svgSrc, objectFit]);
 
-    const renderLink = React.useCallback(({ href: linkHref, title: linkTitle }) => {
+    const renderLink = React.useCallback(({ href: linkHref, title: linkTitle, download }) => {
         const isFakeLink = !linkHref;
 
         if (isFakeLink || isCardLink) {
@@ -109,12 +111,12 @@ const Card: React.FC<ICard> = ({
         }
 
         return (
-            <TextLink className={cn('link', [classes.link])} href={linkHref}>{linkTitle}</TextLink>
+            <TextLink className={cn('link', [classes.link])} href={linkHref} download={download}>{linkTitle}</TextLink>
         );
     }, [isCardLink]);
 
-    const renderBtn = React.useCallback(({ href: btnHref, title: btnTitle}) => (
-        <Button className={cn('button', [classes.button])} href={btnHref}>{btnTitle}</Button>
+    const renderBtn = React.useCallback(({ href: btnHref, title: btnTitle, download: buttonDownload }) => (
+        <Button className={cn('button', [classes.button])} href={btnHref} download={buttonDownload}>{btnTitle}</Button>
     ), []);
 
     return (
@@ -158,10 +160,12 @@ Card.propTypes = {
     button: PropTypes.shape({
         title: PropTypes.string.isRequired,
         href: PropTypes.string.isRequired,
+        download: PropTypes.bool,
     }),
     link: PropTypes.shape({
         title: PropTypes.string.isRequired,
         href: PropTypes.string,
+        download: PropTypes.bool,
     }),
     isLeftHAlign: PropTypes.bool,
     isFullHeight: PropTypes.bool,

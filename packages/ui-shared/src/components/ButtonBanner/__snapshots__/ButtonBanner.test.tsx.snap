@@ -44,6 +44,7 @@ exports[`<ButtonBanner /> should render with props 1`] = `
         </Paragraph>
         <Button
           className="mfui-beta-button-banner__button buttonClass"
+          download={true}
           href="#"
           target="_blank"
           theme="purple"

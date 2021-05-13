@@ -20,6 +20,7 @@ const props: IButtonBannerProps = {
     },
     imageUrl: 'image.png',
     buttonUrl: '#',
+    buttonDownload: true,
     buttonTarget: ButtonTarget.BLANK,
     buttonColor: ButtonColor.PURPLE,
 };

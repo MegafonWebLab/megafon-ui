@@ -113,4 +113,12 @@ describe('Card', () => {
 
         expect(ref.current).not.toBeNull();
     });
+
+    it('render with attribute "download" for <Button> and <Textlink>', () => {
+        const downloadLink = {...link, download: true};
+        const downloadButton = {...button, download: true};
+
+        const wrapper = shallow(<Card title={title} text={text} link={downloadLink} button={downloadButton}/>);
+        expect(wrapper).toMatchSnapshot();
+    });
 });

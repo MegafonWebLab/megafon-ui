@@ -20,16 +20,20 @@ export interface IButtonLinkBoxProps {
     buttonTitle?: string;
     /** Ссылка кнопки */
     buttonUrl?: string;
+    /** Добавляет атрибут download для тега <a> компонента Button */
+    buttonDownload?: boolean;
     /** Цвет кнопки */
     buttonColor?: 'green' | 'purple';
     /** Target свойство кнопки */
     buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Заголовок ссылки */
     linkTitle?: string;
-    /** Адрес ссылки */
+    /** Добавляет атрибут download для тега <a> компонента Button */
     linkUrl?: string;
     /** Target свойство ссылки */
     linkTarget?: '_self' | '_blank' | '_parent' | '_top';
+    /** Добавляет атрибут download к свойству тега <a> */
+    linkDownload?: boolean;
     /** Горизонтальное выравнивание */
     hAlign?: 'center' | 'left';
     /** Обработчик клика по кнопке */
@@ -44,9 +48,11 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     rootRef,
     buttonTitle,
     buttonUrl,
+    buttonDownload,
     buttonColor = 'green',
     linkTitle,
     linkUrl,
+    linkDownload,
     hAlign,
     className,
     buttonTarget,
@@ -68,6 +74,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
                     theme={buttonColor}
                     onClick={onButtonClick}
                     target={buttonTarget}
+                    download={buttonDownload}
                 >
                     {buttonTitle}
                 </Button>
@@ -78,6 +85,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
                 <TextLink
                     className={classes.link}
                     href={linkUrl}
+                    download={linkDownload}
                     underlineVisibility="always"
                     target={linkTarget}
                     onClick={onLinkClick}
@@ -103,9 +111,11 @@ ButtonLinkBox.propTypes = {
     ]),
     buttonTitle: PropTypes.string,
     buttonUrl: PropTypes.string,
+    buttonDownload: PropTypes.bool,
     buttonColor: PropTypes.oneOf(['green', 'purple']),
     linkTitle: PropTypes.string,
     linkUrl: PropTypes.string,
+    linkDownload: PropTypes.bool,
     hAlign: PropTypes.oneOf(['center']),
     onButtonClick: PropTypes.func,
     onLinkClick: PropTypes.func,
