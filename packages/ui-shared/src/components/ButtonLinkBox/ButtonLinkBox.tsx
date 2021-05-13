@@ -28,7 +28,7 @@ export interface IButtonLinkBoxProps {
     buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Заголовок ссылки */
     linkTitle?: string;
-    /** Добавляет атрибут download для тега компонента Button  */
+    /** Добавляет атрибут download для тега <a> компонента Button */
     linkUrl?: string;
     /** Target свойство ссылки */
     linkTarget?: '_self' | '_blank' | '_parent' | '_top';
