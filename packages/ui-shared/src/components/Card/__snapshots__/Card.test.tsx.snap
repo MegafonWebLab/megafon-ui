@@ -395,7 +395,7 @@ exports[`Card render with a single interactive link element 1`] = `
 </div>
 `;
 
-exports[`Card render with attribute "download" button link and download textlink 1`] = `
+exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] = `
 <div
   className="mfui-beta-card"
 >
