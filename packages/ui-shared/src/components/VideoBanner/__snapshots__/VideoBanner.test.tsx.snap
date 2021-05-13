@@ -299,7 +299,6 @@ exports[`<VideoBanner /> render component with pictures and download links conte
           >
             oт 
             <component
-              className=""
               key="1"
             >
               1000 ₽
