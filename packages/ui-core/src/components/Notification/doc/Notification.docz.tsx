@@ -1,3 +1,3 @@
 export const marginBottom = {
-    marginBottom: '10px',
+    marginBottom: '20px',
 };

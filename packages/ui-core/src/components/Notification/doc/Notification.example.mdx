@@ -1,27 +1,83 @@
 import { Playground, Props } from 'docz';
 import Notification from '../Notification';
 import { marginBottom } from './Notification.docz';
+import Attention from 'icons/System/16/Attention_16.svg';
 
-## Размер по умолчанию
+## Нотификации с цветным фоном
 
 <Playground>
     <div style={marginBottom}>
-        <Notification type="success">Тариф «Включайся! Премиум» успешно подключен. Вторая строка показана для примера, значок выравнивается по верхней строке.</Notification>
+        <Notification 
+        type="error" 
+        title='Нотификация с крестиком закрытия и ссылкой и без тени'
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        shadowLevel='zero'
+        link='Ссылка с обработчиком'
+        hasCloseButton
+        onClose={() => {alert('Обработчик закрытия')}}
+        isColored
+        onLinkClick={() => {alert('Оработчик клика по ссылке')}}
+        icon={<Attention />}
+        ></Notification>
      </div>
+
+    <div style={marginBottom}>
+        <Notification type="success" 
+        title='Hover shadow' 
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        link='Переход по ссылке'
+        href="/"
+        target="_blank"
+        shadowLevel='hover' isColored icon={<Attention />}></Notification>
+     </div>
+     
+    <div style={marginBottom}>
+        <Notification type="warning" title='Low shadow' 
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        link='Cсылка-якорь'
+        href="#"
+        shadowLevel='low' isColored icon={<Attention />}></Notification>
+     </div>
+
      <div style={marginBottom}>
-        <Notification type="warning">Обратите внимание, что подключённые на текущем тарифе пакеты минут, SMS и интернета «сгорят» и не будут действовать на новом тарифе.</Notification>
+        <Notification type="info" title='High shadow' 
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        shadowLevel='high' isColored icon={<Attention />}></Notification>
      </div>
-    <Notification type="error">Вы превысили количество допустимых запросов в сутки. Пожалуйста, повторите попытку позже. Строка для двух строк, выравнивание  иконки по верхней.</Notification>
 </Playground>
 
-## Уменьшенный размер
-
+## Нотификации с белым фоном
 <Playground>
     <div style={marginBottom}>
-        <Notification type="success" isShort>Success</Notification>
-    </div>
+        <Notification 
+        type="error" 
+        title='Нотификация с крестиком закрытия и ссылкой'
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        shadowLevel='low'
+        hasCloseButton
+        onClose={() => {alert('Обработчик закрытия')}}
+        link='Переход по ссылке'
+        href="/"
+        icon={<Attention />}
+        ></Notification>
+     </div>
+
     <div style={marginBottom}>
-        <Notification type="warning" isShort>Warning</Notification>
-    </div>
-    <Notification type="error" isShort>Error</Notification>
+        <Notification type="success" 
+        title='Hover shadow' 
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        shadowLevel='hover'icon={<Attention />}></Notification>
+     </div>
+     
+    <div style={marginBottom}>
+        <Notification type="warning" title='Low shadow' 
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        shadowLevel='low' icon={<Attention />}></Notification>
+     </div>
+
+     <div style={marginBottom}>
+        <Notification type="info" title='High shadow' 
+        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
+        shadowLevel='high' icon={<Attention />}></Notification>
+     </div> 
 </Playground>
