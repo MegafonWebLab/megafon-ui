@@ -8,7 +8,7 @@ const Wrapper = ({ children }) => {
                 <meta name="robots" content="noindex, nofollow" />
                 <link rel="icon"
                     type="image/png"
-                    href="src/public/mf-icon.png"
+                    href="/src/public/mf-icon.png"
                 />
             </Helmet>
             {children}
