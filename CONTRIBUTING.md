@@ -1,27 +1,26 @@
-# Architecture
+# Contributing
 
 `megafon-ui` - is a monorepository managed with [Lerna](https://github.com/lerna/lerna).
 
-`packages` directory includes several library parts which are
-the separated `npm` modules with independent versions.
+`packages` directory includes several library parts that are separate `npm` modules with independent versions.
 
-Root `package.json` defines scripts for proxying execution of commands in every package.
-For example, script `lerna run build` (or `yarn run build` in
-root folder) runs `yarn run build` inside every directory in `packages` folder.
-
+Root `package.json` defines scripts for proxying execution of commands in every package. For example, script
+`lerna run build` (or `yarn run build` in root folder) runs `yarn run build` inside every directory under `packages`
+directory.
 
 # Development
 
-For contributing to `megafon-ui` library you need to create your own fork of the main repository.
-After making some changes you should create pull request with appropriate description.
+To contribute to `megafon-ui` you need to create your own fork of this repository. After making changes, you create pull
+request with appropriate description.
 
-For Development use TypeScript. All components are based on functions.
-Parameters by default set in destructuration in component arguments.
+For development `typeScript` is used. All components are based on functions. Parameters by default set in
+destructuration in component arguments.
+
 ```jsx
 const ComponentName = ({ name = 'name' }) => ...
 ```
 
-For each components should be create a directory with:
+For every component a directory is created with:
 
 1. `<Component name>.tsx` with components
 2. `<Component name>.less` for styles
@@ -43,21 +42,21 @@ $ yarn run lint
 $ yarn run test
 ```
 
-Tests and code linting also run via git hooks before committing of any changes.
+Tests and code linting are also run via git hooks before committing.
 
-Before run tests need build packages with command `yarn run build`, if packages not be builded, then there will be a problem with dependencies between packages.
+Before running tests `yarn run build` needs to be executed otherwise there will be a problem with dependencies between
+packages.
 
+## How to commit
 
-## How commit changes
+Project uses [conventional commits](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/). A more applied description
+can be found [here](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
 
-Project use [conventional commits](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/).
-A more applied description can be found here: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
+A commit message has to describe:
 
-Message each commit should describe:
-
-- type, т.е. what level of change will the impact of the commit bring (example: feat, fix, ci или docs)
-- scope changes (component)
-- description of changes, which will be recorded on a separate line in the changelog.
+- **type**, level of change (i.e. feat, fix, ci or docs);
+- **scope** of changes (i.e. component);
+- **description** of changes to be in changelog.
 
 *Example of types by semver:*
 
@@ -71,61 +70,61 @@ feat(button): deprecated onClick prop removed
 BREAKING CHANGE: onClick prop removed
 ```
 
+To simplify the creation of commits, a `commitizen` has been added so you can do it like this:
 
-To simplify the creation of commits, a commitizen has been added, with it a commit can be done like this:
-
+```bash
+$ git add .
+$ git cz
 ```
-git add .
-git cz
-```
 
-After starting `cz` starts `wizard`, which will task the required message parameters. One of steps need mark task number to which applies changes.
+`cz` starts a wizard that will guide you through the steps to create a valid message.
 
-If something go wrong on commit(linter fails), you can use command `git cz --retry`.
-
+If something goes wrong with commit (i.e. linter fails), you can retry command `git cz --retry`.
 
 ### Commit types
 
-Main types - fix and feat for patch and minor changes. It will be used in 99% cases.
-Breaking changes may to appear inside anyone types, then after merge will release next major version.
-That's rare case. Other types can be seen in the dock for [angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
+Main types are `fix` and `feat` for patch and minor changes. They are used in 99% cases. Others can be found in
+[angular documentation](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
+Breaking changes may appear under any type. When BC commits are merged new major version gets released. That's a very
+rare case.
 
+### What changelog consists of
 
-### What will fall in changelog
-
-Messages from commits with type `feat`, `fix`, `perf`, and all commits marked as `breaking change` with any type will fall in changelog.
+Commit messages with type `feat`, `fix`, `perf`, and all commits marked as `breaking change` with any type will be
+included in the changelog.
 
 ### Adding commits to an existing branch
 
-If branch already have commit with type, which fall in generation changelog'а, then can add new
-commits with the type `refactor` for not added to changelog.
+If branch already has a commit with type that gets recorded in the changelog, new commits can be added with type
+`refactor` not to be included in the changelog.
 
 ## Review
 
-In review process need to check commit messages for compliance
-edit in request. If message inappropriate changes in code need return request for revision.
+All changes in pull requests must be checked to reflect the commit messages. When it's not the case the pull request is
+to be returned to the contributor.
 
-Особое внимание должно уделяться `breaking change` - в интерфейсе github'а в сообщении коммита эта строка не видна
-и при просмотре будет необходимо раскрывать сообщения коммитов, они свернуты под иконкой троеточия.
+Close attention must be paid to `breaking changes` commit messages. Github interface may not show these messages without
+clicking on `...` to expand the commit message.
 
-## Публикация пакетов
+## Package Publishing
 
-Публикация происходит автоматически при коммите в ветку `master` с помощью Github Actions. Lerna по сообщениям из коммитов определяет
-следующую релизную версию, генерирует changelog и при наличии изменений в коде публикует пакеты в npm.
+Publishing is executed automatically when a commit is pushed to the `master` branch. `Lerna` uses commit messages to
+determine next release version, generates changelog and publishes a new version to the registry.
 
-### Как пропустить публикацию
+### How to skip publishing
 
-Чтобы не публиковать новый пакет нужно в сообщение коммита добавить строку `skip release`.
-Сообщение должно быть в последнем коммите, загруженном в репозиторий, например:
+In order to skip package publishing **the latest commit** must contain `skip release` in its message. When branch should
+not trigger publishing on merge, `skip release` can be written in commit message in `github` ui.
 
-1. если пушнуть 2 коммита одновременно, `skip release` должен быть в последнем коммите, в первом не обязательно
-2. если нужно влить ветку без публикации, в поле сообщения в интерфейсе github'а нужно добавить `skip release`
+These changes will be released when a new commit without `skip release` in its message is pushed to `master` branch.
 
-Добавленные изменения попадут в релиз при следующем коммите в мастер, если у него не будет `skip release` в сообщении.
+## From beta to stable
 
-## Переход от пререлизной версии к основной:
+1. Remove lines with `distTag`, `conventionalPrerelease`, `preid` from `lerna.json`;
+2. Replace those with `conventionalGraduate="*"` in `lerna.json`;
+3. Merge in `master` branch, wait on pipeline and publishing;
+4. Next commit may remove `conventionalGraduate="*"` (it's ignored anyway);
 
-1. в `lerna.json` удалить строки с `distTag`, `conventionalPrerelease`, `preid`
-2. в `lerna.json` вместо удаленных добавить `conventionalGraduate="*"``
-3. влить в мастер, дождаться прохода пайплайна и публикации пакетов
-4. следующим коммитом можно удалить `conventionalGraduate="*"`` (если не удалять, он все равно будет игнорироваться)
+## Legal Information
+
+When contributing to the project you adopt the `Rules for use of intellectual property in simplified manner` and `Rules for participation in open source projects of MegaFon PJSC` that are available at [https://www.megafon.ru/opensource/](https://www.megafon.ru/opensource/) in Russian and English languages.
