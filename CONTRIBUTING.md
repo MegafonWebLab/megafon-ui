@@ -1,38 +1,39 @@
-# Архитектура
+# Architecture
 
-`megafon-ui` - библиотека под управлением [Lerna](https://github.com/lerna/lerna).
+`megafon-ui` - is a monorepository managed with [Lerna](https://github.com/lerna/lerna).
 
-Директория `packages` включает несколько пакетов, которые публикуются в `npm` с независимыми версиями.
+`packages` directory includes several library parts which are
+the separated `npm` modules with independent versions.
 
-В корневой `package.json` добавлены скрипты для выполнения команд в каждом из пакетов.
-Например, запуск `yarn run build` последовательно запустит `build`-скрипты в каждом из пакетов из директории `packages`.
+Root `package.json` defines scripts for proxying execution of commands in every package.
+For example, script `lerna run build` (or `yarn run build` in
+root folder) runs `yarn run build` inside every directory in `packages` folder.
 
 
-# Разработка
+# Development
 
-Для внесения изменений в библиотеку необходимо форкнуть репозиторий, создать в своей копии ветку и после
-внесения изменений создать pull request в ветку master главного репозитория.
+For contributing to `megafon-ui` library you need to create your own fork of the main repository.
+After making some changes you should create pull request with appropriate description.
 
-Разработка ведется на языке TypeScript. Новые компоненты должны быть функциональными.
-Параметры по умолчанию задавать при деструктуризации в аргументе компонента.
+For Development use TypeScript. All components are based on functions.
+Parameters by default set in destructuration in component arguments.
 ```jsx
 const ComponentName = ({ name = 'name' }) => ...
 ```
 
-Для каждого компонента должна быть создана своя директория со следующим содержимым:
+For each components should be create a directory with:
 
-1. `<Component name>.tsx` с кодом компонента
-2. `<Component name>.less` для стилей
-3. `<Component name>.test.tsx` для тестов. Все пропсы должны быть
-протестированы: колбэки с помощью моков, остальные пропсы через снепшоты.
-4. Директория `doc`, включающая документацию в формате [Docz](https://github.com/doczjs/docz):
-    - `<Component name>.mdx` - корневая страница документации для компонента, должна содержать компонент DoczTabs
-    - `<Component name>.example.mdx` - файл с примерами использования компонента
-    - `<Component name>.props.mdx` - для контента вкладки с таблицей пропсов
-    - `<Component name>.design.mdx` - дизайнерская документация
-    - `<Component name>.docz.tsx` - исходники для примеров, например для кода оберток или дополнительных стилей
+1. `<Component name>.tsx` with components
+2. `<Component name>.less` for styles
+3. `<Component name>.test.tsx` for tests. All props should be tested: callbacks with mocks, other props with snapshots.
+4. `doc` directory, include documentation in format [Docz](https://github.com/doczjs/docz):
+    - `<Component name>.mdx` - root page documentation for components, should include component DoczTabs
+    - `<Component name>.example.mdx` - file with examples how to use component
+    - `<Component name>.props.mdx` - table with props
+    - `<Component name>.design.mdx` - design documentation
+    - `<Component name>.docz.tsx` - source for examples, by example for wrappers and styles
 
-Тесты и линтеры можно запустить с помощью команд:
+Tests and code linting checks can be executed with commands:
 
 ```bash
 $ yarn run lint
@@ -42,24 +43,23 @@ $ yarn run lint
 $ yarn run test
 ```
 
-Тесты и линтеры также автоматически запускаются перед каждым коммитом.
+Tests and code linting also run via git hooks before committing of any changes.
 
-Перед запуском тестов необходимо собрать проект через `yarn run build`, т.к. если проект не будет собран, то
-возникнет проблема с зависимостями между пакетами.
+Before run tests need build packages with command `yarn run build`, if packages not be builded, then there will be a problem with dependencies between packages.
 
 
-## Как сделать коммит
+## How commit changes
 
-На проекте используются [conventional commits](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/).
-Более прикладное описание можно подсмотреть тут: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
+Project use [conventional commits](https://www.conventionalcommits.org/ru/v1.0.0-beta.4/).
+A more applied description can be found here: https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format
 
-Сообщение каждого коммита должно описывать:
+Message each commit should describe:
 
-- тип, т.е. какой уровень изменений привнесет влитие коммита (например: feat, fix, ci или docs)
-- scope (контекст) изменений (например, какой-то компонент)
-- описание изменений, которые будут зафиксированы отдельной строкой в changelog-е.
+- type, т.е. what level of change will the impact of the commit bring (example: feat, fix, ci или docs)
+- scope changes (component)
+- description of changes, which will be recorded on a separate line in the changelog.
 
-*Примеры типов по семверу:*
+*Example of types by semver:*
 
 ```
 patch: fix(button): new prop onClick
@@ -71,42 +71,39 @@ feat(button): deprecated onClick prop removed
 BREAKING CHANGE: onClick prop removed
 ```
 
-Для упрощения создания коммитов в зависимости добавлен commitizen, с ним коммит можно делать так:
+
+To simplify the creation of commits, a commitizen has been added, with it a commit can be done like this:
 
 ```
 git add .
 git cz
 ```
 
-После запуска cz запустится wizard, который задаст необходимые параметры сообщения. На одном из шагов
-нужно отметить тикер задачи, к которой относятся правки.
+After starting `cz` starts `wizard`, which will task the required message parameters. One of steps need mark task number to which applies changes.
 
-Если после попытки коммита что-то пошло не так (например коммит был прерван из-за ошибок линтера), то
-чтобы не вводить параметры коммита заново, можно воспользоваться командой git cz --retry.
+If something go wrong on commit(linter fails), you can use command `git cz --retry`.
 
 
-### Типы коммитов
+### Commit types
 
-Основные - это fix и feat для патча и минорного изменения соответственно. Они будут использоваться в 99% случаев.
-Breaking changes могут появиться внутри любого из них (либо с другим типом), тогда при влитии будет опубликована
-следующая мажорная версия. Это должен быть редкий случай. Другие типы можно подсмотреть в доке для [angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
-
-
-### Что попадет в changelog
-
-Сообщения из коммитов с типом `feat`, `fix`, `perf`, а также все коммиты помеченные как `breaking change` с любым типом попадают в changelog.
+Main types - fix and feat for patch and minor changes. It will be used in 99% cases.
+Breaking changes may to appear inside anyone types, then after merge will release next major version.
+That's rare case. Other types can be seen in the dock for [angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format).
 
 
-### Добавление коммитов в существующую ветку
+### What will fall in changelog
 
-Если в ветке уже есть коммит с типом, попадающим в генерацию changelog'а, то можно добавить новые
-коммиты с типом `refactor`, чтобы они не были добавлены в changelog.
+Messages from commits with type `feat`, `fix`, `perf`, and all commits marked as `breaking change` with any type will fall in changelog.
 
+### Adding commits to an existing branch
 
-## Ревью
+If branch already have commit with type, which fall in generation changelog'а, then can add new
+commits with the type `refactor` for not added to changelog.
 
-В процессе ревью необходимо проверять сообщения в коммитах на предмет соответствия
-правок в реквесте. Если сообщения несоответствуют правкам в коде - необходимо вернуть реквест на доработку.
+## Review
+
+In review process need to check commit messages for compliance
+edit in request. If message inappropriate changes in code need return request for revision.
 
 Особое внимание должно уделяться `breaking change` - в интерфейсе github'а в сообщении коммита эта строка не видна
 и при просмотре будет необходимо раскрывать сообщения коммитов, они свернуты под иконкой троеточия.

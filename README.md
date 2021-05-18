@@ -6,18 +6,18 @@ Megafon React UI components library.
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Интерактивная документация находится [здесь](https://ui.megafon.ru/EqR2rxoML8).
+Documentation is located [here](https://ui.megafon.ru/EqR2rxoML8).
 
-## Как пользоваться
+## How to use
 
-Библиотека компонентов МегаФона доступна как несколько npm пакетов:
+MegaFon components library available as few npm packages:
 - ui-core
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-core/beta?label=%40megafon%2Fui-core)](https://www.npmjs.com/package/@megafon/ui-core/v/beta)
 
 - ui-shared
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-shared/beta?label=%40megafon%2Fui-shared)](https://www.npmjs.com/package/@megafon/ui-shared/v/beta)
 
-Установите, используя команды:
+Install using commands:
 ```bash
 npm install @megafon/ui-core@beta
 ```
@@ -25,24 +25,24 @@ npm install @megafon/ui-core@beta
 npm install @megafon/ui-shared@beta
 ```
 
-Для локальной разработки понадобятся:
+For local development require:
 
-1. Зависимости внешней системы — node 12+ и yarn.
-2. Установка зависимостей.
+1. External system dependencies — node 12+ and yarn.
+2. Install dependencies.
 ```bash
 yarn install
 ```
-3. Запуск документации:
+3. Run documentation:
 ```bash
 yarn run demo
 ```
 
-## Собрать все пакеты
+## Build all packages
 
 ```bash
 $ yarn run build
 ```
 
-## Github репозиторий
+## Github repo
 
 [https://github.com/MegafonWebLab/megafon-ui](https://github.com/MegafonWebLab/megafon-ui)
