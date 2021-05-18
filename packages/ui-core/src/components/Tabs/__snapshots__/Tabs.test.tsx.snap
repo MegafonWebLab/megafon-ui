@@ -157,7 +157,7 @@ exports[`<Tabs /> should render with props 1`] = `
           key=".1"
         >
           <div
-            className="mfui-beta-tabs__tab tabClass"
+            className="mfui-beta-tabs__tab tabClass activeTabClass"
           >
             <div
               className="tab-wrapper"
