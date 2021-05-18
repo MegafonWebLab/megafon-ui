@@ -41,7 +41,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Error'
       content='Уведомление типа error с цветным фоном и без тени'
       shadowLevel='zero'
-      isColored
       icon={<Attention />} 
    />
 
@@ -50,6 +49,7 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Warning'
       content='Уведомление типа warning с белым фоном и с типом тени Low'
       shadowLevel='low'
+      isColored={false}
       icon={<Attention />}
    />
 
@@ -58,6 +58,7 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Info'
       content='Уведомление типа info с белым фоном и с типом тени High'
       shadowLevel='high'
+      isColored={false}
       icon={<Attention />}
    />
 
@@ -66,7 +67,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Success'
       content='Уведомление типа success с цветным фоном и с типом тени Hover'
       shadowLevel='hover'
-      isColored
       icon={<Attention />}
    />
 </Playground>
@@ -79,7 +79,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Error'
       content='Уведомление типа error с цветным фоном и без тени'
       shadowLevel='zero'
-      isColored
       icon={<Rating1 />} 
    />
 
@@ -88,6 +87,7 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Warning'
       content='Уведомление типа warning с белым фоном и с типом тени Low'
       shadowLevel='low'
+      isColored={false}
       icon={<Rating3 />}
    />
 
@@ -96,6 +96,7 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Info'
       content='Уведомление типа info с белым фоном и с типом тени High'
       shadowLevel='high'
+      isColored={false}
       icon={<Info />}
    />
 
@@ -104,7 +105,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Success'
       content='Уведомление типа success с цветным фоном и с типом тени Hover'
       shadowLevel='hover'
-      isColored
       icon={<Checked />}
    />
 </Playground>
@@ -120,6 +120,7 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       link="Cсылка на новую страницу"
       target="_blank"
       href="/"
+      isColored={false}
       icon={<Attention />} 
    />
 
@@ -132,7 +133,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
             shadowLevel='low'
             link="Cсылка с обработчиком"
             onLinkClick={onLinkClick}
-            isColored
             icon={<Attention />}
          />
       }
@@ -149,8 +149,8 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
             title='Кнопка закрытия с обработчиком'
             content={`Количество кликов ${initialCloseClickAmount}`}
             shadowLevel='low'
-            isColored
             hasCloseButton
+            isColored={false}
             onClose={onClose}
             icon={<Attention />}
          />
@@ -162,6 +162,7 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Уведомление без кнопки закрытия'
       content='На персональном счёте недостаточно средств.'
       shadowLevel='hover'
+      isColored={false}
       icon={<Attention />}
    />
 </Playground>

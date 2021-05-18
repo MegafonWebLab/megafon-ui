@@ -37,7 +37,7 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
 
 exports[`<Notification /> renders component 1`] = `
 <Tile
-  className="mfui-beta-notification mfui-beta-notification_type_success"
+  className="mfui-beta-notification mfui-beta-notification_type_success mfui-beta-notification_colored"
   radius="rounded"
   shadowLevel="zero"
 >
@@ -51,7 +51,13 @@ exports[`<Notification /> renders component 1`] = `
     </div>
     <div
       className="mfui-beta-notification__content"
-    />
+    >
+      <p
+        className="mfui-beta-notification__text"
+      >
+        content
+      </p>
+    </div>
   </div>
 </Tile>
 `;

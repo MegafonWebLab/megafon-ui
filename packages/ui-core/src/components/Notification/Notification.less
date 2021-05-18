@@ -97,7 +97,7 @@
     }
 
     &__close:hover {
-        background-color: @clearWhite60;
+        background-color: @spbSky160;
     }
 
     &__close-icon {
@@ -160,8 +160,14 @@
     }
 
     &_colored {
-        @{b}__icon-container {
-            background-color: @clearWhite;
+        @{b} {
+            &__icon-container {
+                background-color: @clearWhite;
+            }
+
+            &__close:hover {
+                background-color: @clearWhite60;
+            }
         }
     }
 

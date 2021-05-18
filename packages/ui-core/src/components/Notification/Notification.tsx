@@ -40,7 +40,7 @@ export interface INotificationProps {
     /** Заголовок */
     title?: string;
     /** Контент/текст уведомления */
-    content?: string;
+    content: string;
     /** Текст ссылки внизу уведомления */
     link?: string;
     /** rel - аргумент тега <a> для ссылки */
@@ -62,7 +62,7 @@ const Notification: React.FC<INotificationProps> = ({
     className,
     type = 'success',
     shadowLevel = 'zero',
-    isColored = false,
+    isColored = true,
     hasCloseButton,
     title,
     content,
@@ -121,7 +121,7 @@ Notification.propTypes = {
     isColored: PropTypes.bool,
     hasCloseButton: PropTypes.bool,
     title: PropTypes.string,
-    content: PropTypes.string,
+    content: PropTypes.string.isRequired,
     link: PropTypes.string,
     rel: PropTypes.string,
     href: PropTypes.string,

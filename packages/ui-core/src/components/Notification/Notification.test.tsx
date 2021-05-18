@@ -13,15 +13,15 @@ const props: INotificationProps = {
     target: '_blank',
     icon: <Attention />,
     title: 'title',
-    content: 'content',
     isColored: true,
+    content: 'content',
 };
 
 describe('<Notification />', () => {
     it('renders component', () => {
         const icon = <Attention />;
         const wrapper = shallow(
-            <Notification icon={icon}>Some test text</Notification>
+            <Notification icon={icon} content="content">Some test text</Notification>
         );
         expect(wrapper).toMatchSnapshot();
     });
