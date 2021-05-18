@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.127](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.126...@megafon/ui-core@2.0.0-beta.127) (2021-05-18)
+
+
+### Features
+
+* **tabs:** added activeTab class ([b06a4be](https://github.com/MegafonWebLab/megafon-ui/commit/b06a4be9942727daa54fa5ba67159fca2281c17f))
+
+
+
+
+
 # [2.0.0-beta.126](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.125...@megafon/ui-core@2.0.0-beta.126) (2021-05-13)
 
 
