@@ -111,121 +111,105 @@
         }
     }
 
-    &_type {
-        &_error {
-            @{b} {
-                &__icon-container {
-                    background-color: @warmRedC20;
+    &_type_error {
+        @{b} {
+            &__icon-container {
+                background-color: @warmRedC20;
 
-                    svg {
-                        fill: @warmRedC;
-                    }
+                svg {
+                    fill: @warmRedC;
                 }
             }
         }
+    }
 
-        &_success {
-            @{b} {
-                &__icon-container {
-                    background-color: @green20;
+    &_type_success {
+        @{b} {
+            &__icon-container {
+                background-color: @green20;
 
-                    svg {
-                        fill: @green;
-                    }
+                svg {
+                    fill: @green;
                 }
             }
         }
+    }
 
-        &_warning {
-            @{b} {
-                &__icon-container {
-                    background-color: @mandarin20;
+    &_type_warning {
+        @{b} {
+            &__icon-container {
+                background-color: @mandarin20;
 
-                    svg {
-                        fill: @mandarin;
-                    }
+                svg {
+                    fill: @mandarin;
                 }
             }
         }
+    }
 
-        &_info {
-            @{b} {
-                &__icon-container {
-                    background-color: @31120;
+    &_type_info {
+        @{b} {
+            &__icon-container {
+                background-color: @31120;
 
-                    svg {
-                        fill: @311;
-                    }
+                svg {
+                    fill: @311;
                 }
             }
         }
     }
 
     &_colored {
+        @{b}__icon-container {
+            background-color: @clearWhite;
+        }
+    }
+
+    &_colored&_type_error {
+        background-color: @error;
+
         @{b} {
+            &__title,
+            &__text,
+            &__link {
+                color: @clearWhite;
+            }
+
+            &__right-arrow {
+                fill: @clearWhite;
+            }
+
             &__icon-container {
-                background-color: @clearWhite;
+                background-color: @clearWhite20;
+
+                svg {
+                    fill: @clearWhite;
+                }
             }
         }
     }
 
-    &_colored&@{b}_type {
-        &_error {
-            background-color: @error;
+    &_colored&_type_success {
+        background-color: @success;
 
-            @{b} {
-                &__title,
-                &__text,
-                &__link {
-                    color: @clearWhite;
-                }
-
-                &__right-arrow {
-                    fill: @clearWhite;
-                }
-
-                &__icon-container {
-                    background-color: @clearWhite20;
-
-                    svg {
-                        fill: @clearWhite;
-                    }
-                }
-            }
+        @{b}__icon-container svg {
+            fill: @green;
         }
+    }
 
-        &_success {
-            background-color: @success;
+    &_colored&_type_warning {
+        background-color: @warning;
 
-            @{b} {
-                &__icon-container svg {
-                    fill: @green;
-                }
-            }
+        @{b}__icon-container svg {
+            fill: @mandarin;
         }
+    }
 
-        &_warning {
-            background-color: @warning;
+    &_colored&_type_info {
+        background-color: @info;
 
-            @{b} {
-                &__icon-container {
-                    svg {
-                        fill: @mandarin;
-                    }
-                }
-            }
-        }
-
-        &_info {
-            background-color: @info;
-
-            @{b} {
-                &__icon-container {
-                    svg {
-                        fill: @311;
-                    }
-                }
-            }
+        @{b}__icon-container svg {
+            fill: @311;
         }
     }
 }

@@ -1,83 +1,167 @@
 import { Playground, Props } from 'docz';
 import Notification from '../Notification';
-import { marginBottom } from './Notification.docz';
+import { DemoNotificationWrapper, wrapperStyle } from './Notification.docz';
 import Attention from 'icons/System/16/Attention_16.svg';
+import Rating1 from 'icons/System/24/Rating_1_24.svg';
+import Checked from 'icons/System/16/Checked_16.svg';
+import Rating3 from 'icons/System/24/Rating_3_24.svg';
+import Info from 'icons/System/16/Info_16.svg';
 
-## Нотификации с цветным фоном
+```javascript collapse=Код DemoNotificationWrapper
+export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmount = 0, initialLinkClickAmount = 0, children }) => {
+    const [closeClickAmount, setCloseClickAmount] = useState(initialCloseClickAmount);
+    const [linkClickAmount, setLinkClickAmount] = useState(initialLinkClickAmount);
 
-<Playground>
-    <div style={marginBottom}>
-        <Notification 
-        type="error" 
-        title='Нотификация с крестиком закрытия и ссылкой и без тени'
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        shadowLevel='zero'
-        link='Ссылка с обработчиком'
-        hasCloseButton
-        onClose={() => {alert('Обработчик закрытия')}}
-        isColored
-        onLinkClick={() => {alert('Оработчик клика по ссылке')}}
-        icon={<Attention />}
-        ></Notification>
-     </div>
+    const handleCloseButtonClick = (): void => {
+        setCloseClickAmount(closeClickAmount + 1)
+    }
 
-    <div style={marginBottom}>
-        <Notification type="success" 
-        title='Hover shadow' 
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        link='Переход по ссылке'
-        href="/"
-        target="_blank"
-        shadowLevel='hover' isColored icon={<Attention />}></Notification>
-     </div>
-     
-    <div style={marginBottom}>
-        <Notification type="warning" title='Low shadow' 
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        link='Cсылка-якорь'
-        href="#"
-        shadowLevel='low' isColored icon={<Attention />}></Notification>
-     </div>
+    const handleLinkClick = (): void => {
+        setLinkClickAmount(linkClickAmount + 1)
+    }
 
-     <div style={marginBottom}>
-        <Notification type="info" title='High shadow' 
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        shadowLevel='high' isColored icon={<Attention />}></Notification>
-     </div>
+    return (
+        <div>
+            {children({
+                onLinkClick: handleLinkClick,
+                onClose: handleCloseButtonClick,
+                initialLinkClickAmount: linkClickAmount,
+                initialCloseClickAmount: closeClickAmount
+            })}
+        </div>
+    );
+};
+```
+
+## Уведомления с различной заливкой и вариантами теней
+
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="error"
+      title='Error'
+      content='Уведомление типа error с цветным фоном и без тени'
+      shadowLevel='zero'
+      isColored
+      icon={<Attention />} 
+   />
+
+   <Notification 
+      type="warning"
+      title='Warning'
+      content='Уведомление типа warning с белым фоном и с типом тени Low'
+      shadowLevel='low'
+      icon={<Attention />}
+   />
+
+   <Notification 
+      type="info"
+      title='Info'
+      content='Уведомление типа info с белым фоном и с типом тени High'
+      shadowLevel='high'
+      icon={<Attention />}
+   />
+
+   <Notification 
+      type="success" 
+      title='Success'
+      content='Уведомление типа success с цветным фоном и с типом тени Hover'
+      shadowLevel='hover'
+      isColored
+      icon={<Attention />}
+   />
 </Playground>
 
-## Нотификации с белым фоном
-<Playground>
-    <div style={marginBottom}>
-        <Notification 
-        type="error" 
-        title='Нотификация с крестиком закрытия и ссылкой'
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        shadowLevel='low'
-        hasCloseButton
-        onClose={() => {alert('Обработчик закрытия')}}
-        link='Переход по ссылке'
-        href="/"
-        icon={<Attention />}
-        ></Notification>
-     </div>
+## Уведомления с различными вариантами используемых иконок
 
-    <div style={marginBottom}>
-        <Notification type="success" 
-        title='Hover shadow' 
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        shadowLevel='hover'icon={<Attention />}></Notification>
-     </div>
-     
-    <div style={marginBottom}>
-        <Notification type="warning" title='Low shadow' 
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        shadowLevel='low' icon={<Attention />}></Notification>
-     </div>
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="error"
+      title='Error'
+      content='Уведомление типа error с цветным фоном и без тени'
+      shadowLevel='zero'
+      isColored
+      icon={<Rating1 />} 
+   />
 
-     <div style={marginBottom}>
-        <Notification type="info" title='High shadow' 
-        content='На персональном счёте недостаточно средств. Услуги, подключённые на нём, временно недоступны.'
-        shadowLevel='high' icon={<Attention />}></Notification>
-     </div> 
+   <Notification 
+      type="warning"
+      title='Warning'
+      content='Уведомление типа warning с белым фоном и с типом тени Low'
+      shadowLevel='low'
+      icon={<Rating3 />}
+   />
+
+   <Notification 
+      type="info"
+      title='Info'
+      content='Уведомление типа info с белым фоном и с типом тени High'
+      shadowLevel='high'
+      icon={<Info />}
+   />
+
+   <Notification 
+      type="success" 
+      title='Success'
+      content='Уведомление типа success с цветным фоном и с типом тени Hover'
+      shadowLevel='hover'
+      isColored
+      icon={<Checked />}
+   />
+</Playground>
+
+## Уведомления со ссылками
+
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="info"
+      title='Cсылка ведет на новую страницу'
+      content='На персональном счёте недостаточно средств.'
+      shadowLevel='hover'
+      link="Cсылка на новую страницу"
+      target="_blank"
+      href="/"
+      icon={<Attention />} 
+   />
+
+   <DemoNotificationWrapper>
+      {({ initialLinkClickAmount, onLinkClick }) =>
+         <Notification 
+            type="warning"
+            title='Cсылка с кастомным обработчиком.'
+            content={`Количество кликов ${initialLinkClickAmount}`}
+            shadowLevel='low'
+            link="Cсылка с обработчиком"
+            onLinkClick={onLinkClick}
+            isColored
+            icon={<Attention />}
+         />
+      }
+   </DemoNotificationWrapper>
+</Playground>
+
+## Уведомления с кнопкой закрытия
+
+<Playground style={wrapperStyle}>
+   <DemoNotificationWrapper>
+      {({ initialCloseClickAmount, onClose }) =>
+         <Notification 
+            type="error"
+            title='Кнопка закрытия с обработчиком'
+            content={`Количество кликов ${initialCloseClickAmount}`}
+            shadowLevel='low'
+            isColored
+            hasCloseButton
+            onClose={onClose}
+            icon={<Attention />}
+         />
+      }
+   </DemoNotificationWrapper>
+
+   <Notification 
+      type="error"
+      title='Уведомление без кнопки закрытия'
+      content='На персональном счёте недостаточно средств.'
+      shadowLevel='hover'
+      icon={<Attention />}
+   />
 </Playground>
