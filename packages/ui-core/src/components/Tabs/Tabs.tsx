@@ -129,19 +129,12 @@ const Tabs: React.FC<ITabsProps> = ({
             return;
         }
 
-        const { top, left, right } = rootRef.current.getBoundingClientRect();
+        const { left, right } = rootRef.current.getBoundingClientRect();
         const documentWidth = document.documentElement.clientWidth;
-        const listHeight = tabListRef.current.clientHeight;
-        const rootHeight = rootRef.current.clientHeight;
-        const contentHeight = rootHeight - listHeight;
-        const needSetSticky = top < 0 && Math.abs(top) < contentHeight;
-        const stickyLeftOffset = needSetSticky ? left : 0;
-        const stickyRightOffset = needSetSticky ? documentWidth - right : 0;
 
-        setTabListHeight(needSetSticky ? listHeight : 'auto');
-        setSticky(needSetSticky);
-        setStickyOffset({ left: stickyLeftOffset, right: stickyRightOffset });
-    }, [sticky]);
+        setStickyOffset({ left, right: documentWidth - right });
+
+    }, [stickyOffset, isSticky]);
 
     const handleTabInnerClick = React.useCallback((index: number) => () => {
         setUnderlineTransition('all');
@@ -231,12 +224,40 @@ const Tabs: React.FC<ITabsProps> = ({
     }, []);
 
     React.useEffect(() => {
-        const handleScroll = throttle(calculateSticky, 50);
+        const observer =  new IntersectionObserver((entries) => {
+            entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
+                if (!sticky || !rootRef.current || !tabListRef.current) {
+                    return;
+                }
 
-        document.addEventListener('scroll', handleScroll);
+                const listHeight = tabListRef.current.clientHeight;
+
+                setTabListHeight(listHeight);
+
+                const stickyON = (leftOffset: number, rightOffset: number) => {
+                    const documentWidth = document.documentElement.clientWidth;
+
+                    setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
+                    setSticky(true);
+                };
+
+                const stickyOFF = () => {
+                    setStickyOffset({ left: 0, right: 0 });
+                    setSticky(false);
+                };
+
+                if (isIntersecting) {
+                    top < 0 ? stickyON(left, right) : stickyOFF();
+                } else {
+                    top < 0 && stickyOFF();
+                }
+          });
+        }, { threshold: [ 0 , 1 ] });
+
+        rootRef.current && observer.observe(rootRef.current);
 
         return () => {
-            document.removeEventListener('scroll', handleScroll);
+           rootRef.current && observer.unobserve(rootRef.current);
         };
     }, [calculateSticky]);
 
