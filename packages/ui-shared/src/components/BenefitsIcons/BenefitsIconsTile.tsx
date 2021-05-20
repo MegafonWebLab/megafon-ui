@@ -60,7 +60,11 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
             )}
             {text && (
                 <div className={cn('content')}>
-                    {htmlToReactComponent(text, typographyConfig)}
+                    {/* temporary fix*/}
+                    {typeof text === 'string'
+                        ? htmlToReactComponent(text, typographyConfig)
+                        : text
+                    }
                 </div>
             )}
         </div>
@@ -69,7 +73,7 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
 
 BenefitsIconsTile.propTypes = {
     title: PropTypes.string,
-    text: PropTypes.string,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
     icon: PropTypes.node,
 };
