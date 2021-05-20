@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCallback, useState, useRef, useEffect } from 'react';
-import SearchIcon from 'icons/Basic/16/Search_16.svg';
+import SearchIcon from 'icons/Basic/24/Search_24.svg';
 import debounce from 'lodash.debounce';
 import cnCreate from 'utils/cnCreate';
 import './Search.less';
