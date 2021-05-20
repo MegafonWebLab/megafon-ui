@@ -40,6 +40,16 @@ describe('<TabsBox />', () => {
 
     it('should return reference to root element', () => {
         const ref = React.createRef<HTMLDivElement>();
+        const mockObserveFn = () => {
+            return {
+                observe: jest.fn(),
+                unobserve: jest.fn(),
+            };
+        };
+
+        window.IntersectionObserver = jest
+            .fn()
+            .mockImplementationOnce(mockObserveFn);
 
         mount(
             <TabsBox rootRef={ref}>
