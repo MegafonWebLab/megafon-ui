@@ -25,6 +25,12 @@ export const ButtonTarget = {
 } as const;
 type ButtonTargetType = typeof ButtonTarget[keyof typeof ButtonTarget];
 
+export const ImageScaling = {
+    COVER: 'cover',
+    CONTAIN: 'contain',
+} as const;
+type ImageScalingType = typeof ImageScaling[keyof typeof ImageScaling];
+
 export interface IButtonBannerProps {
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
@@ -53,6 +59,8 @@ export interface IButtonBannerProps {
     buttonTarget?: ButtonTargetType;
     /** Цвет кнопки */
     buttonColor?: ButtonColorType;
+    /** Масштабирование изображения */
+    imageScaling?: ImageScalingType;
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -79,6 +87,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
     buttonDownload,
     buttonTarget = '_self',
     buttonColor = 'green',
+    imageScaling = 'cover',
     onButtonClick,
 }) => {
     const buttonElem = (
@@ -97,7 +106,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
     return (
         <div
             {...filterDataAttrs(dataAttrs)}
-            className={cn({ image: !!imageUrl }, [className, classes.root])}
+            className={cn({ image: !!imageUrl, scaling: imageScaling }, [className, classes.root])}
             ref={rootRef}
         >
            <Grid guttersLeft="medium">

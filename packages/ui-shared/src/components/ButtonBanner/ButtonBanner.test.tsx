@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
-import ButtonBanner, { IButtonBannerProps, ButtonTarget, ButtonColor } from './ButtonBanner';
+import ButtonBanner, { IButtonBannerProps, ButtonTarget, ButtonColor, ImageScaling } from './ButtonBanner';
 
 const requiredProps: IButtonBannerProps = {
     title: 'Заголовок',
@@ -23,6 +23,7 @@ const props: IButtonBannerProps = {
     buttonDownload: true,
     buttonTarget: ButtonTarget.BLANK,
     buttonColor: ButtonColor.PURPLE,
+    imageScaling: ImageScaling.CONTAIN,
 };
 
 describe('<ButtonBanner />', () => {

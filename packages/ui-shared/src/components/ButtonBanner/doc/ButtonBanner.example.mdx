@@ -56,3 +56,23 @@ import image from './i/image.png';
         buttonColor="purple"
     />
 </Playground>
+
+## Масштабирование изображения
+
+<Playground>
+    <ButtonBanner
+        title="Текст не более 70 символов"
+        text="Текстовое описание не должно превышать 150 символов."
+        buttonText="Выбрать тариф"
+        imageScaling="cover"
+        imageUrl={image}
+    />
+    <br />
+    <ButtonBanner
+        title="Текст не более 70 символов"
+        text="Текстовое описание не должно превышать 150 символов."
+        buttonText="Выбрать тариф"
+        imageScaling="contain"
+        imageUrl={image}
+    />
+</Playground>

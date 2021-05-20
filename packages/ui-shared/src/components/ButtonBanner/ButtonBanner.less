@@ -67,7 +67,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-size: cover;
+        background-repeat: no-repeat;
         background-position: center;
         padding: 0 20px;
         .border-radius(@mainRadiusSize);
@@ -76,6 +76,14 @@
             height: auto;
             padding: 0 @mobileSidePadding 24px;
         }
+    }
+
+    &_scaling_cover &__media {
+        background-size: cover;
+    }
+
+    &_scaling_contain &__media {
+        background-size: contain;
     }
 
     &__header {
