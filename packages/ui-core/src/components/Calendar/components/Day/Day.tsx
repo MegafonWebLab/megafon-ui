@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { useDay } from '@datepicker-react/hooks';
 import cnCreate from 'utils/cnCreate';
 import './Day.less';
-import { isSunday, isMonday, isLastDayOfMonth, isFirstDayOfMonth } from 'date-fns';
+import isSunday from 'date-fns/isSunday';
+import isMonday from 'date-fns/isMonday';
+import isLastDayOfMonth from 'date-fns/isLastDayOfMonth';
+import isFirstDayOfMonth from 'date-fns/isFirstDayOfMonth';
 
 export interface IDayPickerProps {
     isDateSelected: (date: Date) => boolean;

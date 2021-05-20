@@ -9,7 +9,12 @@ import {
     useDatepicker,
     useMonth,
 } from '@datepicker-react/hooks';
-import { format, isEqual, isAfter, isBefore, isSameMonth, differenceInDays } from 'date-fns';
+import format from 'date-fns/format';
+import isEqual from 'date-fns/isEqual';
+import isAfter from 'date-fns/isAfter';
+import isBefore from 'date-fns/isBefore';
+import isSameMonth from 'date-fns/isSameMonth';
+import differenceInDays from 'date-fns/differenceInDays';
 import ruLocale from 'date-fns/locale/ru';
 import Month, { IMonthPickerProps } from 'components/Calendar/components/Month/Month';
 import Day, { DayType, IDayPickerProps } from 'components/Calendar/components/Day/Day';
