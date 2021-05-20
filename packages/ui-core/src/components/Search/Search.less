@@ -20,7 +20,7 @@
         border: 1px solid @spbSky2;
         background-color: @clearWhite;
         outline: none;
-        padding: 0 20px;
+        padding: 0 16px 0 20px;
         user-select: none;
     }
 
@@ -60,15 +60,19 @@
     }
 
     &__icon {
-        min-width: 24px;
-        width: 24px;
+        width: 32px;
+        height: 32px;
+        display: block;
+        user-select: none;
         fill: @freshAsphalt;
     }
 
     &__icon-box {
         display: flex;
+        align-items: center;
         justify-content: center;
         height: 100%;
+        text-align: center;
     }
 
     &__list-inner {
