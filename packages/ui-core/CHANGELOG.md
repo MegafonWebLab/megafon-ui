@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.129](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.128...@megafon/ui-core@2.0.0-beta.129) (2021-05-20)
+
+
+### Performance Improvements
+
+* **calendar:** change date-fns imports to descrease build size ([69aaaf9](https://github.com/MegafonWebLab/megafon-ui/commit/69aaaf9467ed78e12848dc2eea4c7553bcb5c219))
+
+
+
+
+
 # [2.0.0-beta.128](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.127...@megafon/ui-core@2.0.0-beta.128) (2021-05-20)
 
 
