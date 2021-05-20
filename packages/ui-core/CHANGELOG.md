@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.130](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.129...@megafon/ui-core@2.0.0-beta.130) (2021-05-20)
+
+
+### Bug Fixes
+
+* **search:** update icon ([1aa5b53](https://github.com/MegafonWebLab/megafon-ui/commit/1aa5b53c3faec52b41038cd302bf80b3ff59e75d))
+
+
+
+
+
 # [2.0.0-beta.129](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.128...@megafon/ui-core@2.0.0-beta.129) (2021-05-20)
 
 
