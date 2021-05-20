@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.181](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.180...@megafon/ui-shared@2.0.0-beta.181) (2021-05-20)
+
+
+### Features
+
+* **buttonbanner:** add imageScaling prop ([5c1328e](https://github.com/MegafonWebLab/megafon-ui/commit/5c1328eea9abb4904dd087d215fd4b3069e0f974))
+
+
+
+
+
 # [2.0.0-beta.180](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.179...@megafon/ui-shared@2.0.0-beta.180) (2021-05-18)
 
 **Note:** Version bump only for package @megafon/ui-shared

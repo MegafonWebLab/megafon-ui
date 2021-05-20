@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.128](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.127...@megafon/ui-core@2.0.0-beta.128) (2021-05-20)
+
+
+### Bug Fixes
+
+* **accordion:** fix bottom border styles for last item, fix paddings ([c7a38b9](https://github.com/MegafonWebLab/megafon-ui/commit/c7a38b94b18d6582270d9d343279632063e161f2))
+* **tabs:** fixed a bug related to IntersectionObserver during server rendering ([995cee1](https://github.com/MegafonWebLab/megafon-ui/commit/995cee1f82ba6ef8c5d3872dfca44bc462457b71))
+
+
+
+
+
 # [2.0.0-beta.127](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.126...@megafon/ui-core@2.0.0-beta.127) (2021-05-18)
 
 
