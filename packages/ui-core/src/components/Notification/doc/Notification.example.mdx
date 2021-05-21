@@ -1,31 +1,24 @@
-import { Playground, Props } from 'docz';
-import Notification from '../Notification';
-import { DemoNotificationWrapper, wrapperStyle } from './Notification.docz';
-import Rating1 from 'icons/System/24/Rating_1_24.svg';
-import Checked from 'icons/System/16/Checked_16.svg';
-import Rating3 from 'icons/System/24/Rating_3_24.svg';
-import Info from 'icons/System/16/Info_16.svg';
+import { Playground, Props } from "docz";
+import Notification from "../Notification";
+import { DemoNotificationWrapper, wrapperStyle } from "./Notification.docz";
+import Rating1 from "icons/System/24/Rating_1_24.svg";
+import Checked from "icons/System/16/Checked_16.svg";
+import Rating3 from "icons/System/24/Rating_3_24.svg";
+import Info from "icons/System/16/Info_16.svg";
 
 ```javascript collapse=Код DemoNotificationWrapper
-export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmount = 0, initialLinkClickAmount = 0, children }) => {
-    const [closeClickAmount, setCloseClickAmount] = useState(initialCloseClickAmount);
-    const [linkClickAmount, setLinkClickAmount] = useState(initialLinkClickAmount);
-
-    const handleCloseButtonClick = (): void => {
-        setCloseClickAmount(closeClickAmount + 1)
-    }
-
-    const handleLinkClick = (): void => {
-        setLinkClickAmount(linkClickAmount + 1)
-    }
+export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ( {
+    initialClickAmount = 0,
+    children,
+} ) => {
+    const [cliickAmount, setClickAmount] = useState(initialClickAmount);
 
     return (
         <div>
             {children({
-                onLinkClick: handleLinkClick,
-                onClose: handleCloseButtonClick,
-                initialLinkClickAmount: linkClickAmount,
-                initialCloseClickAmount: closeClickAmount
+                onLinkClick: () => setClickAmount(cliickAmount + 1),
+                onClose: () => setClickAmount(cliickAmount + 1),
+                initialClickAmount: cliickAmount,
             })}
         </div>
     );
@@ -37,32 +30,32 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
 <Playground style={wrapperStyle}>
    <Notification 
       type="error"
-      title='Error'
-      content='Уведомление типа error с цветным фоном и без тени'
-      shadowLevel='zero'
+      title="Error"
+      content="Уведомление типа error с цветным фоном и без тени"
+      shadowLevel="zero"
    />
 
    <Notification 
       type="warning"
-      title='Warning'
-      content='Уведомление типа warning с белым фоном и с типом тени Low'
-      shadowLevel='low'
+      title="Warning"
+      content="Уведомление типа warning с белым фоном и с типом тени Low"
+      shadowLevel="low"
       isColored={false}
    />
 
    <Notification 
       type="info"
-      title='Info'
-      content='Уведомление типа info с белым фоном и с типом тени High'
-      shadowLevel='high'
+      title="Info"
+      content="Уведомление типа info с белым фоном и с типом тени High"
+      shadowLevel="high"
       isColored={false}
    />
 
    <Notification 
       type="success" 
-      title='Success'
-      content='Уведомление типа success с цветным фоном и с типом тени Hover'
-      shadowLevel='hover'
+      title="Success"
+      content="Уведомление типа success с цветным фоном и с типом тени Hover"
+      shadowLevel="hover"
    />
 </Playground>
 
@@ -71,35 +64,35 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
 <Playground style={wrapperStyle}>
    <Notification 
       type="error"
-      title='Error'
-      content='Уведомление типа error с цветным фоном и без тени'
-      shadowLevel='zero'
+      title="Error"
+      content="Уведомление типа error с цветным фоном и без тени"
+      shadowLevel="zero"
       icon={<Rating1 />} 
    />
 
    <Notification 
       type="warning"
-      title='Warning'
-      content='Уведомление типа warning с белым фоном и с типом тени Low'
-      shadowLevel='low'
+      title="Warning"
+      content="Уведомление типа warning с белым фоном и с типом тени Low"
+      shadowLevel="low"
       isColored={false}
       icon={<Rating3 />}
    />
 
    <Notification 
       type="info"
-      title='Info'
-      content='Уведомление типа info с белым фоном и с типом тени High'
-      shadowLevel='high'
+      title="Info"
+      content="Уведомление типа info с белым фоном и с типом тени High"
+      shadowLevel="high"
       isColored={false}
       icon={<Info />}
    />
 
    <Notification 
       type="success" 
-      title='Success'
-      content='Уведомление типа success с цветным фоном и с типом тени Hover'
-      shadowLevel='hover'
+      title="Success"
+      content="Уведомление типа success с цветным фоном и с типом тени Hover"
+      shadowLevel="hover"
       icon={<Checked />}
    />
 </Playground>
@@ -109,9 +102,9 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
 <Playground style={wrapperStyle}>
    <Notification 
       type="info"
-      title='Cсылка ведет на новую страницу'
-      content='На персональном счёте недостаточно средств.'
-      shadowLevel='hover'
+      title="Cсылка ведет на новую страницу"
+      content="На персональном счёте недостаточно средств."
+      shadowLevel="hover"
       link="Cсылка на новую страницу"
       target="_blank"
       href="/"
@@ -119,12 +112,12 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
    />
 
    <DemoNotificationWrapper>
-      {({ initialLinkClickAmount, onLinkClick }) =>
+      {({ initialClickAmount, onLinkClick }) =>
          <Notification 
             type="warning"
-            title='Cсылка с кастомным обработчиком.'
-            content={`Количество кликов ${initialLinkClickAmount}`}
-            shadowLevel='low'
+            title="Cсылка с кастомным обработчиком"
+            content={`Количество кликов: ${initialClickAmount}`}
+            shadowLevel="low"
             link="Cсылка с обработчиком"
             onLinkClick={onLinkClick}
          />
@@ -136,12 +129,12 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
 
 <Playground style={wrapperStyle}>
    <DemoNotificationWrapper>
-      {({ initialCloseClickAmount, onClose }) =>
+      {({ initialClickAmount, onClose }) =>
          <Notification 
             type="error"
-            title='Кнопка закрытия с обработчиком'
-            content={`Количество кликов ${initialCloseClickAmount}`}
-            shadowLevel='low'
+            title="Кнопка закрытия с обработчиком"
+            content={`Количество кликов: ${initialClickAmount}`}
+            shadowLevel="low"
             hasCloseButton
             isColored={false}
             onClose={onClose}
@@ -151,9 +144,9 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
 
    <Notification 
       type="error"
-      title='Уведомление без кнопки закрытия'
-      content='На персональном счёте недостаточно средств.'
-      shadowLevel='hover'
+      title="Уведомление без кнопки закрытия"
+      content="На персональном счёте недостаточно средств."
+      shadowLevel="hover"
       isColored={false}
    />
 </Playground>

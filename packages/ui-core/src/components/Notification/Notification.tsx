@@ -64,7 +64,7 @@ export interface INotificationProps {
 const cn = cnCreate('mfui-beta-notification');
 const Notification: React.FC<INotificationProps> = ({
     className,
-    type = 'success',
+    type = 'info',
     shadowLevel = 'zero',
     isColored = true,
     hasCloseButton,
@@ -86,20 +86,21 @@ const Notification: React.FC<INotificationProps> = ({
     );
 
     const renderIcon = (): JSX.Element => {
-        const { SUCCESS, ERROR, INFO } = NotificationTypes;
         if (icon) {
             return icon;
         }
+
+        const { SUCCESS, ERROR, WARNING } = NotificationTypes;
 
         switch (type) {
             case SUCCESS:
                 return <SuccessIcon />;
             case ERROR:
                 return <ErrorIcon />;
-            case INFO:
-                return <InfoIcon />;
-            default:
+            case WARNING:
                 return <WarningIcon />;
+            default:
+                return <InfoIcon />;
         }
     };
 
@@ -117,13 +118,11 @@ const Notification: React.FC<INotificationProps> = ({
 
                 <div className={cn('content')}>
                     {title && (
-                        <Header as="h5" className={cn('title')}>
+                        <Header as="h5" className={cn('title', { 'close-padding': hasCloseButton })}>
                             {title}
                         </Header>
                     )}
-                    {content &&
-                        <p className={cn('text')}>{content}</p>
-                    }
+                    <p className={cn('text', {'close-padding': hasCloseButton && !title})}>{content}</p>
                     {link && renderLink()}
                 </div>
             </div>
