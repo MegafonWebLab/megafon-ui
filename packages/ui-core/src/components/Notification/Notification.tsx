@@ -7,6 +7,10 @@ import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';
 import CancelIcon from 'icons/System/32/Cancel_32.svg';
 import RightArrow from 'icons/System/16/Arrow_right_16.svg';
+import SuccessIcon from 'icons/System/24/Checked_24.svg';
+import ErrorIcon from 'icons/Basic/24/Block_24.svg';
+import WarningIcon from 'icons/System/24/Attention_invert_24.svg';
+import InfoIcon from 'icons/System/24/Info_invert_24.svg';
 
 export const NotificationTypes = {
     SUCCESS: 'success',
@@ -50,7 +54,7 @@ export interface INotificationProps {
     /** target - аргумент тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** Иконка */
-    icon: JSX.Element;
+    icon?: JSX.Element;
     /** Обработчик на закрытие */
     onClose?: () => void;
     /** Обработчик клика по ссылке */
@@ -81,6 +85,24 @@ const Notification: React.FC<INotificationProps> = ({
         </TextLink>
     );
 
+    const renderIcon = (): JSX.Element => {
+        const { SUCCESS, ERROR, INFO } = NotificationTypes;
+        if (icon) {
+            return icon;
+        }
+
+        switch (type) {
+            case SUCCESS:
+                return <SuccessIcon />;
+            case ERROR:
+                return <ErrorIcon />;
+            case INFO:
+                return <InfoIcon />;
+            default:
+                return <WarningIcon />;
+        }
+    };
+
     return (
         <Tile radius="rounded"
             shadowLevel={shadowLevel}
@@ -90,7 +112,7 @@ const Notification: React.FC<INotificationProps> = ({
         >
             <div className={cn('container')}>
                 <div className={cn('icon-container')}>
-                    {icon}
+                    {renderIcon()}
                 </div>
 
                 <div className={cn('content')}>
@@ -126,7 +148,7 @@ Notification.propTypes = {
     rel: PropTypes.string,
     href: PropTypes.string,
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
-    icon: PropTypes.element.isRequired,
+    icon: PropTypes.element,
     onClose: PropTypes.func,
     onLinkClick: PropTypes.func,
 };

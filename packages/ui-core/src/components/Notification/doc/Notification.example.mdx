@@ -1,7 +1,6 @@
 import { Playground, Props } from 'docz';
 import Notification from '../Notification';
 import { DemoNotificationWrapper, wrapperStyle } from './Notification.docz';
-import Attention from 'icons/System/16/Attention_16.svg';
 import Rating1 from 'icons/System/24/Rating_1_24.svg';
 import Checked from 'icons/System/16/Checked_16.svg';
 import Rating3 from 'icons/System/24/Rating_3_24.svg';
@@ -41,7 +40,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Error'
       content='Уведомление типа error с цветным фоном и без тени'
       shadowLevel='zero'
-      icon={<Attention />} 
    />
 
    <Notification 
@@ -50,7 +48,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       content='Уведомление типа warning с белым фоном и с типом тени Low'
       shadowLevel='low'
       isColored={false}
-      icon={<Attention />}
    />
 
    <Notification 
@@ -59,7 +56,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       content='Уведомление типа info с белым фоном и с типом тени High'
       shadowLevel='high'
       isColored={false}
-      icon={<Attention />}
    />
 
    <Notification 
@@ -67,11 +63,10 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       title='Success'
       content='Уведомление типа success с цветным фоном и с типом тени Hover'
       shadowLevel='hover'
-      icon={<Attention />}
    />
 </Playground>
 
-## Уведомления с различными вариантами используемых иконок
+## Уведомления с использованием настраиваемых иконок
 
 <Playground style={wrapperStyle}>
    <Notification 
@@ -121,7 +116,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       target="_blank"
       href="/"
       isColored={false}
-      icon={<Attention />} 
    />
 
    <DemoNotificationWrapper>
@@ -133,7 +127,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
             shadowLevel='low'
             link="Cсылка с обработчиком"
             onLinkClick={onLinkClick}
-            icon={<Attention />}
          />
       }
    </DemoNotificationWrapper>
@@ -152,7 +145,6 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
             hasCloseButton
             isColored={false}
             onClose={onClose}
-            icon={<Attention />}
          />
       }
    </DemoNotificationWrapper>
@@ -163,6 +155,5 @@ export const DemoNotificationWrapper: React.FC<Props> = ({ initialCloseClickAmou
       content='На персональном счёте недостаточно средств.'
       shadowLevel='hover'
       isColored={false}
-      icon={<Attention />}
    />
 </Playground>
