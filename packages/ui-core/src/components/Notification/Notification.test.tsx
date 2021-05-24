@@ -19,9 +19,8 @@ const props: INotificationProps = {
 
 describe('<Notification />', () => {
     it('renders component', () => {
-        const icon = <Attention />;
         const wrapper = shallow(
-            <Notification icon={icon} content="content">Some test text</Notification>
+            <Notification content="content">Some test text</Notification>
         );
         expect(wrapper).toMatchSnapshot();
     });

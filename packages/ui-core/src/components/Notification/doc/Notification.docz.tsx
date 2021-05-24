@@ -6,7 +6,7 @@ export const wrapperStyle = {
     gridTemplateColumns: 'repeat(auto-fit,minmax(49%, 1fr))',
     justifyContent: 'center',
     padding: '20px',
-    alignItems: 'center',
+    alignItems: 'start',
 };
 
 interface IDemoNotificationWrapperProps {
@@ -18,19 +18,15 @@ interface IDemoNotificationWrapperProps {
     initialClickAmount: number;
 }
 
-export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ( {
+export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ({
     initialClickAmount = 0,
     children,
-} ) => {
+}) => {
     const [clickAmount, setClickAmount] = useState(initialClickAmount);
 
-    return (
-        <div>
-            {children({
-                onLinkClick: () => setClickAmount(clickAmount + 1),
-                onClose: () => setClickAmount(clickAmount + 1),
-                initialClickAmount: clickAmount,
-            })}
-        </div>
-    );
+    return children({
+        onLinkClick: () => setClickAmount(clickAmount + 1),
+        onClose: () => setClickAmount(clickAmount + 1),
+        initialClickAmount: clickAmount,
+    });
 };
