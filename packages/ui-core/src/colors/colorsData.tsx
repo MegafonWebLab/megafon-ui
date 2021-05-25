@@ -49,7 +49,7 @@ export default [
             },
 
             {
-                name: '311C',
+                name: 'Pantone311C',
                 value: '#5BD9E5',
             },
             {

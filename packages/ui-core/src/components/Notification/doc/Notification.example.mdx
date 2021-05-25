@@ -1,27 +1,294 @@
-import { Playground, Props } from 'docz';
-import Notification from '../Notification';
-import { marginBottom } from './Notification.docz';
+import { Playground, Props } from "docz";
+import Notification from "../Notification";
+import { DemoNotificationWrapper, wrapperStyle } from "./Notification.docz";
+import Rating1 from "icons/System/24/Rating_1_24.svg";
+import Sended from "icons/System/16/Sended_16.svg";
+import Cancel from "icons/System/16/Cancel_16.svg";
+import Send from "icons/System/24/Send_24.svg";
 
-## Размер по умолчанию
+```javascript collapse=Код DemoNotificationWrapper
+export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ( {
+    initialClickAmount = 0,
+    children,
+} ) => {
+    const [cliickAmount, setClickAmount] = useState(initialClickAmount);
 
-<Playground>
-    <div style={marginBottom}>
-        <Notification type="success">Тариф «Включайся! Премиум» успешно подключен. Вторая строка показана для примера, значок выравнивается по верхней строке.</Notification>
-     </div>
-     <div style={marginBottom}>
-        <Notification type="warning">Обратите внимание, что подключённые на текущем тарифе пакеты минут, SMS и интернета «сгорят» и не будут действовать на новом тарифе.</Notification>
-     </div>
-    <Notification type="error">Вы превысили количество допустимых запросов в сутки. Пожалуйста, повторите попытку позже. Строка для двух строк, выравнивание  иконки по верхней.</Notification>
+    return (
+        <div>
+            {children({
+                onLinkClick: () => setClickAmount(cliickAmount + 1),
+                onClose: () => setClickAmount(cliickAmount + 1),
+                initialClickAmount: cliickAmount,
+            })}
+        </div>
+    );
+};
+```
+
+## Типы уведомлений
+
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="info"
+      title="Info"
+      content="Уведомление типа info"
+      shadowLevel="low"
+   />
+
+   <Notification 
+      type="success"
+      title="Success"
+      content="Уведомление типа success"
+      shadowLevel="low"
+   />
+
+   <Notification 
+      type="warning"
+      title="Warning"
+      content="Уведомление типа warning"
+      shadowLevel="low"
+   />
+
+   <Notification 
+      type="error" 
+      title="Error"
+      content="Уведомление типа error"
+      shadowLevel="low"
+   />
 </Playground>
 
-## Уменьшенный размер
+## На белом фоне
 
-<Playground>
-    <div style={marginBottom}>
-        <Notification type="success" isShort>Success</Notification>
-    </div>
-    <div style={marginBottom}>
-        <Notification type="warning" isShort>Warning</Notification>
-    </div>
-    <Notification type="error" isShort>Error</Notification>
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="info"
+      title="Info"
+      content="Уведомление типа info с белым фоном "
+      shadowLevel="low"
+      isColored={false}
+   />
+
+   <Notification 
+      type="success" 
+      title="Success"
+      content="Уведомление типа success с цветным фоном и с типом тени Hover"
+      shadowLevel="low"
+      isColored={false}
+   />   
+
+   <Notification 
+      type="warning"
+      title="Warning"
+      content="Уведомление типа warning с белым фоном"
+      shadowLevel="low"
+      isColored={false}
+   />
+
+   <Notification 
+      type="error"
+      title="Error"
+      content="Уведомление типа error с белым фоном"
+      shadowLevel="low"
+      isColored={false}
+   />
+</Playground>
+
+## Тени
+
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="info"
+      title="shadowLevel=zero"
+      content="Уровень тени zero"
+      shadowLevel="zero"
+   />
+
+   <Notification 
+      type="info"
+      title="shadowLevel=low"
+      content="Уровень тени low"
+      shadowLevel="low"
+      isColored={false}
+   />
+
+   <Notification 
+      type="info"
+      title="shadowLevel=high"
+      content="Уровень тени high"
+      shadowLevel="high"
+      isColored={false}
+   />
+
+   <Notification 
+      type="info"
+      title="shadowLevel=hover"
+      content="Уровень тени hover"
+      shadowLevel="hover"
+   />
+</Playground>
+
+## Кастомные иконки
+
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="info"
+      title="Info"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      icon={<Send />} 
+   />
+
+   <Notification 
+      type="info"
+      title="Info"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      isColored={false}
+      icon={<Send />} 
+   />
+
+   <Notification 
+      type="success"
+      title="Success"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      icon={<Sended />}
+   />
+
+   <Notification 
+      type="success"
+      title="Success"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      isColored={false}
+       icon={<Sended />}
+   />
+
+   <Notification 
+      type="warning"
+      title="Warning"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      icon={<Rating1 />} 
+   />
+
+   <Notification 
+      type="warning"
+      title="Warning"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      isColored={false}
+      icon={<Rating1 />}
+   />
+
+   <Notification 
+      type="error"
+      title="Error"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      icon={<Cancel />}
+   />
+
+   <Notification 
+      type="error" 
+      title="Error"
+      content="Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления"
+      shadowLevel="low"
+      isColored={false}
+      icon={<Cancel />}
+   />
+</Playground>
+
+## Уведомления со ссылками
+
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="info"
+      title="Cсылка ведет на новую страницу"
+      content="На персональном счёте недостаточно средств."
+      shadowLevel="low"
+      link="Cсылка на новую страницу"
+      target="_blank"
+      href="/"
+      target="_blank"
+      isColored={false}
+   />
+
+   <DemoNotificationWrapper>
+      {({ initialClickAmount, onLinkClick }) =>
+         <Notification 
+            type="warning"
+            title="Cсылка с кастомным обработчиком"
+            content={`Количество кликов: ${initialClickAmount}`}
+            shadowLevel="low"
+            link="Cсылка с обработчиком"
+            onLinkClick={onLinkClick}
+         />
+      }
+   </DemoNotificationWrapper>
+
+   <DemoNotificationWrapper>
+      {({ initialClickAmount, onLinkClick }) =>
+         <Notification 
+            type="error"
+            title="Cсылка с кастомным обработчиком"
+            content={`Количество кликов: ${initialClickAmount}`}
+            shadowLevel="low"
+            link="Cсылка с обработчиком"
+            onLinkClick={onLinkClick}
+         />
+      }
+   </DemoNotificationWrapper>
+</Playground>
+
+## Наличие кнопки закрытия
+
+<Playground style={wrapperStyle}>
+   <DemoNotificationWrapper>
+      {({ initialClickAmount, onClose }) =>
+         <Notification 
+            type="error"
+            title="Кнопка закрытия с обработчиком"
+            content={`Количество кликов: ${initialClickAmount}`}
+            shadowLevel="low"
+            hasCloseButton
+            isColored={false}
+            onClose={onClose}
+         />
+      }
+   </DemoNotificationWrapper>
+</Playground>
+
+
+## Заполнение контентом частично
+
+<Playground style={wrapperStyle}>
+   <Notification 
+      type="info"
+      content={`Ссылка и отсутствие заголовка.`}
+      shadowLevel="low"
+      isColored={false}
+      link="Cсылка"
+      href="/"
+      target="_blank"
+   />
+
+   <Notification 
+      type="info"
+      content={`Отсутствие заголовка и ссылки`}
+      shadowLevel="low"
+      hasCloseButton
+   />
+
+   <Notification 
+      type="info"
+      title="Кнопка закрытия с обработчиком и ссылка на новую страницу"
+      content="Использованы все опциональные элементы"
+      shadowLevel="low"
+      hasCloseButton
+      isColored={false}
+      link="Cсылка на новую страницу"
+      href="/"
+      target="_blank"
+   />
 </Playground>

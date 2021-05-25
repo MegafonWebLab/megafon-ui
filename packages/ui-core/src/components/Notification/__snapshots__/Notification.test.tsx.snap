@@ -1,61 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Notification /> it renders Notification with type 1`] = `
-<div
-  className="mfui-beta-notification mfui-beta-notification_type_success"
+exports[`<Notification /> it renders colored Notification with Props 1`] = `
+<Tile
+  className="mfui-beta-notification mfui-beta-notification_type_error mfui-beta-notification_colored notification"
+  radius="rounded"
+  shadowLevel="hover"
 >
   <div
     className="mfui-beta-notification__container"
   >
-    <test-file-stub
-      className="mfui-beta-notification__icon"
-    />
-    <Paragraph
-      className="mfui-beta-notification__text"
-      hasMargin={false}
+    <div
+      className="mfui-beta-notification__icon-container"
     >
-      Some test text
-    </Paragraph>
+      <test-file-stub />
+    </div>
+    <div
+      className="mfui-beta-notification__content"
+    >
+      <Header
+        as="h5"
+        className="mfui-beta-notification__title"
+        color="black"
+        hAlign="inherit"
+      >
+        title
+      </Header>
+      <p
+        className="mfui-beta-notification__text"
+      >
+        content
+      </p>
+    </div>
   </div>
-</div>
+</Tile>
 `;
 
-exports[`<Notification /> it renders Notification without props 1`] = `
-<div
-  className="mfui-beta-notification mfui-beta-notification_type_success"
+exports[`<Notification /> renders component 1`] = `
+<Tile
+  className="mfui-beta-notification mfui-beta-notification_type_info mfui-beta-notification_colored"
+  radius="rounded"
+  shadowLevel="zero"
 >
   <div
     className="mfui-beta-notification__container"
   >
-    <test-file-stub
-      className="mfui-beta-notification__icon"
-    />
-    <Paragraph
-      className="mfui-beta-notification__text"
-      hasMargin={false}
+    <div
+      className="mfui-beta-notification__icon-container"
     >
-      Some test text
-    </Paragraph>
-  </div>
-</div>
-`;
-
-exports[`<Notification /> it renders short Notification 1`] = `
-<div
-  className="mfui-beta-notification mfui-beta-notification_type_success mfui-beta-notification_short"
->
-  <div
-    className="mfui-beta-notification__container"
-  >
-    <test-file-stub
-      className="mfui-beta-notification__icon"
-    />
-    <Paragraph
-      className="mfui-beta-notification__text"
-      hasMargin={false}
+      <test-file-stub />
+    </div>
+    <div
+      className="mfui-beta-notification__content"
     >
-      Some test text
-    </Paragraph>
+      <p
+        className="mfui-beta-notification__text"
+      >
+        content
+      </p>
+    </div>
   </div>
-</div>
+</Tile>
 `;
