@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.132](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.131...@megafon/ui-core@2.0.0-beta.132) (2021-05-25)
+
+
+### Features
+
+* **carousel:** add dataAttrs prop and new params to onChange handler ([c410621](https://github.com/MegafonWebLab/megafon-ui/commit/c410621b2b0a743cad0729b1b86c5391ff5903f9))
+
+
+
+
+
 # [2.0.0-beta.131](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.130...@megafon/ui-core@2.0.0-beta.131) (2021-05-25)
 
 
