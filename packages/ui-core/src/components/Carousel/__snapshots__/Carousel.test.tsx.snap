@@ -80,6 +80,7 @@ exports[`<Carousel /> should render with default props 1`] = `
 exports[`<Carousel /> should render with props 1`] = `
 <div
   className="mfui-beta-carousel mfui-beta-carousel_nav-theme_green className rootClass"
+  data-test-attr="dataValue"
   onClick={[Function]}
 >
   <Swiper

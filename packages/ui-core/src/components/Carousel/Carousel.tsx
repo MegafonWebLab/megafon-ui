@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Carousel.less';
 import cnCreate from 'utils/cnCreate';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import SwiperCore, { Autoplay, Pagination, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -39,7 +40,7 @@ export type SlidesSettingsType = {
     };
 };
 
-export interface ICarouselProps {
+export interface ICarouselProps extends IDataAttributes {
     /** Дополнительные классы для корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -81,7 +82,7 @@ export interface ICarouselProps {
     /** Обработчик клика по стрелке назад (должен быть обернут в useCallback) */
     onPrevClick?: (index: number) => void;
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
-    onChange?: (index: number) => void;
+    onChange?: (currentIndex: number, previousIndex: number, slidesPerView?: number | 'auto') => void;
 }
 
 const getAutoPlayConfig = (delay: number) => ({
@@ -118,6 +119,7 @@ const Carousel: React.FC<ICarouselProps> = ({
         containerModifier,
         slide: slideClass,
     } = {},
+    dataAttrs,
     slidesSettings = defaultSlidesSettings,
     autoPlay = false,
     autoPlayDelay = 5000,
@@ -196,8 +198,8 @@ const Carousel: React.FC<ICarouselProps> = ({
         setEnd(swiper.isEnd);
     }, []);
 
-    const handleSlideChange = React.useCallback(({ realIndex }: SwiperCore) => {
-        onChange && onChange(realIndex);
+    const handleSlideChange = React.useCallback(({ realIndex, previousIndex, params }: SwiperCore) => {
+        onChange && onChange(realIndex, previousIndex, params.slidesPerView);
     }, [onChange]);
 
     const handleRootClick = (e: React.SyntheticEvent<EventTarget>) => {
@@ -224,7 +226,11 @@ const Carousel: React.FC<ICarouselProps> = ({
     );
 
     return (
-        <div className={cn({ 'nav-theme': navTheme }, [className, rootClass])} onClick={handleRootClick}>
+        <div
+            {...filterDataAttrs(dataAttrs)}
+            className={cn({ 'nav-theme': navTheme }, [className, rootClass])}
+            onClick={handleRootClick}
+        >
             <Swiper
                 {...containerModifier ? {containerModifierClass: containerModifier} : {}}
                 className={cn(
@@ -285,6 +291,7 @@ Carousel.propTypes = {
         next: PropTypes.string,
         slide: PropTypes.string,
     }),
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     slidesSettings: PropTypes.objectOf(
         checkBreakpointsPropTypes({
             slidesPerView: PropTypes.oneOfType([
