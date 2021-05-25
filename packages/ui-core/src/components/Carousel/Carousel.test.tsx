@@ -18,6 +18,9 @@ const props = {
     pagination: {
         el: '.some-el',
     },
+    dataAttrs: {
+        'data-test-attr': 'dataValue',
+    },
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,
