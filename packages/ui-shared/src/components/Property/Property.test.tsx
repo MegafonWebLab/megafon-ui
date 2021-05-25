@@ -176,6 +176,19 @@ describe('<Property />', () => {
         expect(ref.current).not.toBeNull();
     });
 
+    it('should render with 100% width', () => {
+        const wrapper = shallow(
+            <Property
+                items={[
+                    { title: ['Звонки на все номера России'], value: '500 ₽' },
+                ]}
+                fullWidth
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render with data attribute', () => {
         const wrapper = shallow(
             <Property

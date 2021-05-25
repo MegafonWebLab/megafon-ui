@@ -3,17 +3,21 @@
 @b: e('.mfui-beta-property');
 
 @{b} {
-    display: flex;
-    flex-direction: column;
-    padding: 24px 0;
-    border-top: 1px solid @spbSky2;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 0;
+        border-top: 1px solid @spbSky2;
 
-    @media @desktopMU {
-        padding: 26px 0;
+        @media @desktopMU {
+            padding: 26px 0;
+        }
     }
 
     &_border-bottom {
-        border-bottom: 1px solid @spbSky2;
+        @{b}__wrapper {
+            border-bottom: 1px solid @spbSky2;
+        }
     }
 
     &__content {

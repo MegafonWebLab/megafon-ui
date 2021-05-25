@@ -4,40 +4,53 @@ exports[`<Property /> should render only title 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
+          <div
+            className="mfui-beta-property__items-wrapper"
           >
-            Звонки на все номера России
-          </Header>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Звонки на все номера России
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -45,130 +58,143 @@ exports[`<Property /> should render several rows 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item mfui-beta-property__item_multirow"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
-        >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Абонентская плата:
-          </Header>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        />
-      </div>
-      <div
-        className="mfui-beta-property__item mfui-beta-property__item_multirow"
-        key="1"
-      >
-        <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
           <div
-            className="mfui-beta-property__desc"
-            key="0"
+            className="mfui-beta-property__items-wrapper"
           >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": undefined,
-                  "toggle": undefined,
-                }
-              }
-              value="Звонки на все номера России"
-            />
+            <div
+              className="mfui-beta-property__item mfui-beta-property__item_multirow"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Абонентская плата:
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              />
+            </div>
+            <div
+              className="mfui-beta-property__item mfui-beta-property__item_multirow"
+              key="1"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <div
+                  className="mfui-beta-property__desc"
+                  key="0"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": undefined,
+                        "toggle": undefined,
+                      }
+                    }
+                    value="Звонки на все номера России"
+                  />
+                </div>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
+            <div
+              className="mfui-beta-property__item mfui-beta-property__item_multirow"
+              key="2"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <div
+                  className="mfui-beta-property__desc"
+                  key="0"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": undefined,
+                        "toggle": undefined,
+                      }
+                    }
+                    value="Звонки на все номера России"
+                  />
+                </div>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
+            <div
+              className="mfui-beta-property__item mfui-beta-property__item_multirow"
+              key="3"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <div
+                  className="mfui-beta-property__desc"
+                  key="0"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": undefined,
+                        "toggle": undefined,
+                      }
+                    }
+                    value="Звонки на все номера России"
+                  />
+                </div>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
-        </div>
       </div>
-      <div
-        className="mfui-beta-property__item mfui-beta-property__item_multirow"
-        key="2"
-      >
-        <div
-          className="mfui-beta-property__inner"
-        >
-          <div
-            className="mfui-beta-property__desc"
-            key="0"
-          >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": undefined,
-                  "toggle": undefined,
-                }
-              }
-              value="Звонки на все номера России"
-            />
-          </div>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
-        </div>
-      </div>
-      <div
-        className="mfui-beta-property__item mfui-beta-property__item_multirow"
-        key="3"
-      >
-        <div
-          className="mfui-beta-property__inner"
-        >
-          <div
-            className="mfui-beta-property__desc"
-            key="0"
-          >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": undefined,
-                  "toggle": undefined,
-                }
-              }
-              value="Звонки на все номера России"
-            />
-          </div>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -176,48 +202,61 @@ exports[`<Property /> should render title and description 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Интернет на все сервисы
-          </Header>
           <div
-            className="mfui-beta-property__desc"
-            key="0"
+            className="mfui-beta-property__items-wrapper"
           >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": undefined,
-                  "toggle": undefined,
-                }
-              }
-              value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
-            />
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Интернет на все сервисы
+                </Header>
+                <div
+                  className="mfui-beta-property__desc"
+                  key="0"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": undefined,
+                        "toggle": undefined,
+                      }
+                    }
+                    value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
+                  />
+                </div>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              />
+            </div>
           </div>
         </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        />
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -225,55 +264,68 @@ exports[`<Property /> should render title and hidden description 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Музыкальные сервисы
-          </Header>
           <div
-            className="mfui-beta-property__desc"
-            key="0"
+            className="mfui-beta-property__items-wrapper"
           >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": undefined,
-                  "toggle": undefined,
-                }
-              }
-              isCollapsible={true}
-              value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
-            />
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Музыкальные сервисы
+                </Header>
+                <div
+                  className="mfui-beta-property__desc"
+                  key="0"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": undefined,
+                        "toggle": undefined,
+                      }
+                    }
+                    isCollapsible={true}
+                    value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
+                  />
+                </div>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
-        </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -281,48 +333,112 @@ exports[`<Property /> should render title in several row 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
+          <div
+            className="mfui-beta-property__items-wrapper"
           >
-            Детализация в салонах МегаФона
-          </Header>
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="1"
-          >
-            Оплачивается каждый день заказанной детализации.
-          </Header>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            2ГБ
-          </span>
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Детализация в салонах МегаФона
+                </Header>
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="1"
+                >
+                  Оплачивается каждый день заказанной детализации.
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  2ГБ
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<Property /> should render with 100% width 1`] = `
+<div
+  className="mfui-beta-property"
+>
+  <Grid>
+    <GridColumn
+      all="12"
+    >
+      <div
+        className="mfui-beta-property__wrapper"
+      >
+        <div
+          className="mfui-beta-property__content"
+        >
+          <div
+            className="mfui-beta-property__items-wrapper"
+          >
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Звонки на все номера России
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -330,49 +446,62 @@ exports[`<Property /> should render with badge 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__badge-wrapper"
-  >
-    <span
-      className="mfui-beta-property__badge"
-    >
-      Акция
-    </span>
-  </div>
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
-        >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Звонки на все номера России
-          </Header>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
+          className="mfui-beta-property__badge-wrapper"
         >
           <span
-            className="mfui-beta-property__value"
+            className="mfui-beta-property__badge"
           >
-            500 ₽
+            Акция
           </span>
         </div>
+        <div
+          className="mfui-beta-property__content"
+        >
+          <div
+            className="mfui-beta-property__items-wrapper"
+          >
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Звонки на все номера России
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -380,40 +509,53 @@ exports[`<Property /> should render with border bottom 1`] = `
 <div
   className="mfui-beta-property mfui-beta-property_border-bottom"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
+          <div
+            className="mfui-beta-property__items-wrapper"
           >
-            Звонки на все номера России
-          </Header>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Звонки на все номера России
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -421,56 +563,69 @@ exports[`<Property /> should render with custom class names 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            className="title-custom-class"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Доп звонки
-          </Header>
           <div
-            className="mfui-beta-property__desc"
-            key="0"
+            className="mfui-beta-property__items-wrapper"
           >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": "opened-description-custom-class",
-                  "toggle": "toggle-description-custom-class",
-                }
-              }
-              isCollapsible={true}
-              value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
-            />
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  className="title-custom-class"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Доп звонки
+                </Header>
+                <div
+                  className="mfui-beta-property__desc"
+                  key="0"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": "opened-description-custom-class",
+                        "toggle": "toggle-description-custom-class",
+                      }
+                    }
+                    isCollapsible={true}
+                    value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
+                  />
+                </div>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500Р
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500Р
-          </span>
-        </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -479,40 +634,53 @@ exports[`<Property /> should render with data attribute 1`] = `
   className="mfui-beta-property"
   data-test="value"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
+          <div
+            className="mfui-beta-property__items-wrapper"
           >
-            Звонки на все номера России
-          </Header>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Звонки на все номера России
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -520,52 +688,65 @@ exports[`<Property /> should render with icon 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
+          <div
+            className="mfui-beta-property__items-wrapper"
           >
             <div
-              className="mfui-beta-property__icon"
+              className="mfui-beta-property__item"
+              key="0"
             >
-              <test-file-stub
-                style={
-                  Object {
-                    "display": "block",
-                    "fill": "#00B956",
-                  }
-                }
-              />
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  <div
+                    className="mfui-beta-property__icon"
+                  >
+                    <test-file-stub
+                      style={
+                        Object {
+                          "display": "block",
+                          "fill": "#00B956",
+                        }
+                      }
+                    />
+                  </div>
+                  Интернет на все сервисы
+                </Header>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500 ₽
+                </span>
+              </div>
             </div>
-            Интернет на все сервисы
-          </Header>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500 ₽
-          </span>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
 
@@ -573,68 +754,81 @@ exports[`<Property /> should render with several descriptions 1`] = `
 <div
   className="mfui-beta-property"
 >
-  <div
-    className="mfui-beta-property__content"
-  >
-    <div
-      className="mfui-beta-property__items-wrapper"
+  <Grid>
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
     >
       <div
-        className="mfui-beta-property__item"
-        key="0"
+        className="mfui-beta-property__wrapper"
       >
         <div
-          className="mfui-beta-property__inner"
+          className="mfui-beta-property__content"
         >
-          <Header
-            as="h5"
-            color="black"
-            hAlign="inherit"
-            key="0"
-          >
-            Доп звонки
-          </Header>
           <div
-            className="mfui-beta-property__desc"
-            key="0"
+            className="mfui-beta-property__items-wrapper"
           >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": undefined,
-                  "toggle": undefined,
-                }
-              }
-              value="После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно."
-            />
+            <div
+              className="mfui-beta-property__item"
+              key="0"
+            >
+              <div
+                className="mfui-beta-property__inner"
+              >
+                <Header
+                  as="h5"
+                  color="black"
+                  hAlign="inherit"
+                  key="0"
+                >
+                  Доп звонки
+                </Header>
+                <div
+                  className="mfui-beta-property__desc"
+                  key="0"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": undefined,
+                        "toggle": undefined,
+                      }
+                    }
+                    value="После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно."
+                  />
+                </div>
+                <div
+                  className="mfui-beta-property__desc"
+                  key="1"
+                >
+                  <PropertyDescription
+                    classes={
+                      Object {
+                        "open": undefined,
+                        "toggle": undefined,
+                      }
+                    }
+                    isCollapsible={true}
+                    value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
+                  />
+                </div>
+              </div>
+              <div
+                className="mfui-beta-property__value-wrapper"
+              >
+                <span
+                  className="mfui-beta-property__value"
+                >
+                  500Р
+                </span>
+              </div>
+            </div>
           </div>
-          <div
-            className="mfui-beta-property__desc"
-            key="1"
-          >
-            <PropertyDescription
-              classes={
-                Object {
-                  "open": undefined,
-                  "toggle": undefined,
-                }
-              }
-              isCollapsible={true}
-              value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
-            />
-          </div>
-        </div>
-        <div
-          className="mfui-beta-property__value-wrapper"
-        >
-          <span
-            className="mfui-beta-property__value"
-          >
-            500Р
-          </span>
         </div>
       </div>
-    </div>
-  </div>
+    </GridColumn>
+  </Grid>
 </div>
 `;
