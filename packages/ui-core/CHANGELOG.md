@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.131](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.130...@megafon/ui-core@2.0.0-beta.131) (2021-05-25)
+
+
+### Features
+
+* **notification:** new props and design ([af149bc](https://github.com/MegafonWebLab/megafon-ui/commit/af149bc3ca782495b7407b708708255afc760e0c))
+
+
+### BREAKING CHANGES
+
+* **notification:** isShort Prop removed, new layout and props added
+
+
+
+
+
 # [2.0.0-beta.130](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.129...@megafon/ui-core@2.0.0-beta.130) (2021-05-20)
 
 
