@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.189](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.188...@megafon/ui-shared@2.0.0-beta.189) (2021-05-26)
+
+
+### Bug Fixes
+
+* **property:** fix text wrap ([bee10c2](https://github.com/MegafonWebLab/megafon-ui/commit/bee10c258fc0b7b22bf5c0c6ec97ab741e9d8f42))
+
+
+
+
+
 # [2.0.0-beta.188](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.187...@megafon/ui-shared@2.0.0-beta.188) (2021-05-26)
 
 
