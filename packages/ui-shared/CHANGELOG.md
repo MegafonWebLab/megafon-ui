@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.188](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.187...@megafon/ui-shared@2.0.0-beta.188) (2021-05-26)
+
+
+### Features
+
+* **partners:** add props rootRef and classes ([0f64240](https://github.com/MegafonWebLab/megafon-ui/commit/0f642405454ba0df2024aef83145de4e80d27053))
+
+
+### BREAKING CHANGES
+
+* **partners:** add props rootRef and classes
+
+feat(partners): test
+
+
+
+
+
 # [2.0.0-beta.187](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.186...@megafon/ui-shared@2.0.0-beta.187) (2021-05-26)
 
 
