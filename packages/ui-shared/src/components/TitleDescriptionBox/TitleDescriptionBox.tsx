@@ -33,38 +33,48 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     textColor,
     hAlign,
     className,
-}) => (
-    <div
-        {...filterDataAttrs(dataAttrs)}
-        className={cn(
-            { 'h-align': hAlign, 'text-color': textColor },
-            className
-        )}
-    >
-        <Grid hAlign={hAlign}>
-            <GridColumn wide="8" desktop="10">
-                {title && (
-                    <Header
-                        className={cn('item')}
-                        as="h2"
-                        color="inherit"
-                    >
-                        {title}
-                    </Header>
-                )}
-                {description && (
-                    <Paragraph
-                        className={cn('item')}
-                        hasMargin={false}
-                        color="inherit"
-                    >
-                        {description}
-                    </Paragraph>
-                )}
-            </GridColumn>
-        </Grid>
-    </div>
-);
+}) => {
+    const renderDescription = React.useCallback(() => {
+        if (typeof description === 'string') {
+            return (
+                <Paragraph
+                    className={cn('item')}
+                    hasMargin={false}
+                    color="inherit"
+                >
+                    {description}
+                </Paragraph>
+            );
+        }
+
+        return <div className={cn('description')}>{description}</div>;
+    }, [description]);
+
+    return (
+        <div
+            {...filterDataAttrs(dataAttrs)}
+            className={cn(
+                {'h-align': hAlign, 'text-color': textColor},
+                className
+            )}
+        >
+            <Grid hAlign={hAlign}>
+                <GridColumn wide="8" desktop="10">
+                    {title && (
+                        <Header
+                            className={cn('item')}
+                            as="h2"
+                            color="inherit"
+                        >
+                            {title}
+                        </Header>
+                    )}
+                    {description && renderDescription()}
+                </GridColumn>
+            </Grid>
+        </div>
+    );
+};
 
 TitleDescriptionBox.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),

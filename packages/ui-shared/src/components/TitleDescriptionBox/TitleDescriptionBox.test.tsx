@@ -26,4 +26,11 @@ describe('<TitleDescriptionBox />', () => {
         const wrapper = shallow(<TitleDescriptionBox {...props} description={undefined} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('renders with components in description field', () => {
+        const descriptions = [<div key="0">Test node render</div>];
+        const wrapper = shallow(<TitleDescriptionBox {...props} description={descriptions} />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
