@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.187](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.186...@megafon/ui-shared@2.0.0-beta.187) (2021-05-26)
+
+
+### Bug Fixes
+
+* **container:** fix margin for Property ([50308b5](https://github.com/MegafonWebLab/megafon-ui/commit/50308b5d63fc9a995688f068d747e3ef45a9d2c9))
+
+
+### Features
+
+* **store banner:** adds data attribute prop ([898a195](https://github.com/MegafonWebLab/megafon-ui/commit/898a195d1556c9849a958d5621859534b4c08668))
+
+
+
+
+
 # [2.0.0-beta.186](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.185...@megafon/ui-shared@2.0.0-beta.186) (2021-05-25)
 
 **Note:** Version bump only for package @megafon/ui-shared
