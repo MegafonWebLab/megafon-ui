@@ -3,6 +3,7 @@
 exports[`StoreBanner should render with QR-code 1`] = `
 <div
   className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android"
+  data-test="value"
 >
   <div
     className="mfui-beta-store-banner__container"
@@ -87,6 +88,7 @@ exports[`StoreBanner should render with QR-code 1`] = `
 exports[`StoreBanner should render with custom class names 1`] = `
 <div
   className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name root-custom-class-name"
+  data-test="value"
 >
   <div
     className="mfui-beta-store-banner__container"
@@ -166,6 +168,7 @@ exports[`StoreBanner should render with custom class names 1`] = `
 exports[`StoreBanner should render with green theme 1`] = `
 <div
   className="mfui-beta-store-banner mfui-beta-store-banner_theme_green mfui-beta-store-banner_mask_android"
+  data-test="value"
 >
   <div
     className="mfui-beta-store-banner__container"
@@ -245,6 +248,7 @@ exports[`StoreBanner should render with green theme 1`] = `
 exports[`StoreBanner should render with iphone mask 1`] = `
 <div
   className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_black-iphone"
+  data-test="value"
 >
   <div
     className="mfui-beta-store-banner__container"
@@ -324,6 +328,7 @@ exports[`StoreBanner should render with iphone mask 1`] = `
 exports[`StoreBanner should render with required props 1`] = `
 <div
   className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android"
+  data-test="value"
 >
   <div
     className="mfui-beta-store-banner__container"

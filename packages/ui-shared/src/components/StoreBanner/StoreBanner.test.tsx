@@ -9,6 +9,7 @@ const props: IStoreBannerProps = {
     linkGoogle: 'Google Play link',
     deviceMask: DeviceMask.ANDROID,
     imageSrc: 'image.png',
+    dataAttrs: { 'data-test': 'value' },
 };
 
 describe('StoreBanner', () => {

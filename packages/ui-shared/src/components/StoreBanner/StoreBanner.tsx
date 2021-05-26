@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
+import { cnCreate, Grid, GridColumn, Header, Paragraph,  dataAttrs as filterDataAttrs } from '@megafon/ui-core';
 import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType } from '../StoreButton/StoreButton';
 import './StoreBanner.less';
 
@@ -55,6 +55,8 @@ export interface IStoreBannerProps {
     };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
 }
 
 const cn = cnCreate('mfui-beta-store-banner');
@@ -72,8 +74,13 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     className,
     classes: { root: rootClassName, appleLink: appleLinkClassName, googleLink: googleLinkClassName } = {},
     rootRef,
+    dataAttrs,
 }) => (
-    <div className={cn({ theme, mask: deviceMask }, [className, rootClassName])} ref={rootRef}>
+    <div
+        className={cn({ theme, mask: deviceMask }, [className, rootClassName])}
+        ref={rootRef}
+        {...filterDataAttrs(dataAttrs)}
+    >
         <div className={cn('container')}>
             <div className={cn('grid')}>
                 <Grid>
@@ -146,6 +153,7 @@ StoreBanner.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
 };
 
 export default StoreBanner;
