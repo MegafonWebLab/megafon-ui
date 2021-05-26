@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.190](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.189...@megafon/ui-shared@2.0.0-beta.190) (2021-05-26)
+
+
+### Bug Fixes
+
+* **instructions:** fix intruction items margin bottom ([428edde](https://github.com/MegafonWebLab/megafon-ui/commit/428edde0687198c4f2fcf90446ce9e83a5de8447))
+
+
+
+
+
 # [2.0.0-beta.189](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.188...@megafon/ui-shared@2.0.0-beta.189) (2021-05-26)
 
 
