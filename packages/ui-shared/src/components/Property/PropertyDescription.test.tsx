@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import PropertyDescription from './PropertyDescription';
 
 describe('<PropertyDescription />', () => {
@@ -34,5 +34,31 @@ describe('<PropertyDescription />', () => {
 
         wrapper.find('.mfui-beta-property-description__collapse').simulate('click');
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with custom toggle class', () => {
+        const wrapper = shallow(
+            <PropertyDescription
+                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
+                isCollapsible
+                classes={{ toggle: 'toggle-custom-class'}}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with open custom class name', () => {
+        const wrapper = mount(
+            <PropertyDescription
+                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
+                isCollapsible
+                classes={{ open: 'open-custom-class' }}
+            />
+        );
+
+        wrapper.find('.mfui-beta-property-description__collapse').simulate('click');
+
+        expect(wrapper.getDOMNode().classList.contains('open-custom-class')).toBeTruthy();
     });
 });
