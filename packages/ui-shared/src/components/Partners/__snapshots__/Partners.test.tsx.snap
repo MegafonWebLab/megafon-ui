@@ -768,3 +768,115 @@ exports[`<Partners /> should render logotypes without href 1`] = `
   </Grid>
 </div>
 `;
+
+exports[`<Partners /> should render with classes props 1`] = `
+<div
+  className="mfui-beta-partners test-root-class custom-class"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+  >
+    <GridColumn
+      all="3"
+      key="0test-file-stub"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-beta-partners__tile"
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-beta-partners__tile-inner test-item-class"
+        >
+          <div
+            className="mfui-beta-partners__img-wrapper"
+          >
+            <img
+              className="mfui-beta-partners__tile-img"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="1test-file-stub"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-beta-partners__tile"
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-beta-partners__tile-inner test-item-class"
+        >
+          <div
+            className="mfui-beta-partners__img-wrapper"
+          >
+            <img
+              className="mfui-beta-partners__tile-img"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="2test-file-stub"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-beta-partners__tile"
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-beta-partners__tile-inner test-item-class"
+        >
+          <div
+            className="mfui-beta-partners__img-wrapper"
+          >
+            <img
+              className="mfui-beta-partners__tile-img"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="3test-file-stub"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-beta-partners__tile"
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-beta-partners__tile-inner test-item-class"
+        >
+          <div
+            className="mfui-beta-partners__img-wrapper"
+          >
+            <img
+              className="mfui-beta-partners__tile-img"
+              src="test-file-stub"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+  </Grid>
+</div>
+`;
