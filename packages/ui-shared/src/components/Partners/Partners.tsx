@@ -16,6 +16,13 @@ export type ItemType = {
 };
 
 export interface IPartnersProps {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        itemClass?: string;
+    };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Список логотипов */
@@ -47,6 +54,8 @@ const slidesSettings = {
 
 const cn = cnCreate('mfui-beta-partners');
 const Partners: React.FC<IPartnersProps> = ({
+    rootRef,
+    classes: { root, itemClass } = {},
     className,
     items,
     onChange,
@@ -67,7 +76,7 @@ const Partners: React.FC<IPartnersProps> = ({
                 shadowLevel="low"
                 isInteractive={!!href}
             >
-                <div className={cn('tile-inner')}>
+                <div className={cn('tile-inner', [itemClass])}>
                     <div className={cn('img-wrapper')}>
                         <img src={src} className={cn('tile-img')} />
                     </div>
@@ -112,13 +121,21 @@ const Partners: React.FC<IPartnersProps> = ({
     }, [items]);
 
     return (
-        <div className={cn([className])}>
+        <div className={cn([root, className])} ref={rootRef}>
             {items.length > MAX_GRID_ITEMS_LENGTH ? renderCarousel() : renderGrid()}
         </div>
     );
 };
 
 Partners.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        itemClass: PropTypes.string,
+    }),
     className: PropTypes.string,
     items: PropTypes.arrayOf(
         PropTypes.shape({

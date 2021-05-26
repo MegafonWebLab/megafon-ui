@@ -70,4 +70,23 @@ describe('<Partners />', () => {
 
         expect(mockOnPrevClick).toBeCalled();
     });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<Partners items={generateItems(12, '#')} rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
+    });
+
+    it('should render with classes props', () => {
+        const wrapper = shallow(
+            <Partners className="custom-class" items={generateItems(4, '#')} classes={{
+                root: 'test-root-class',
+                itemClass: 'test-item-class',
+            }} />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
