@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.191](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.190...@megafon/ui-shared@2.0.0-beta.191) (2021-05-26)
+
+
+### Bug Fixes
+
+* **titledescriptionbox:** fix rendering description ([91d5ac6](https://github.com/MegafonWebLab/megafon-ui/commit/91d5ac648199d2d9ad60b516f080d84f0eb27401))
+
+
+
+
+
 # [2.0.0-beta.190](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.189...@megafon/ui-shared@2.0.0-beta.190) (2021-05-26)
 
 
