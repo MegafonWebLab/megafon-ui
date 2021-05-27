@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.192](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.191...@megafon/ui-shared@2.0.0-beta.192) (2021-05-27)
+
+
+### Features
+
+* **property:** add data attrtibute and custom classes props ([bfceba1](https://github.com/MegafonWebLab/megafon-ui/commit/bfceba104d04ad153c439385ed41377e825042f3))
+
+
+
+
+
 # [2.0.0-beta.191](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.190...@megafon/ui-shared@2.0.0-beta.191) (2021-05-26)
 
 
