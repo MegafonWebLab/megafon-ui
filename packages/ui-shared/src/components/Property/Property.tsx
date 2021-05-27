@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
-import { Header, cnCreate } from '@megafon/ui-core';
+import { Header, cnCreate, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
 import './Property.less';
 import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
@@ -22,6 +22,14 @@ export interface IProperty {
     icon?: React.ReactNode;
     /** Несколько рядов в строке */
     multirow?: boolean;
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        title?: string;
+        openedDescription?: string;
+        toggleDescription?: string;
+    };
 }
 
 const cn = cnCreate('mfui-beta-property');
@@ -34,12 +42,14 @@ const Property: React.FC<IProperty> = ({
     borderBottom = false,
     mergedValue = '',
     multirow = false,
+    classes= {},
+    dataAttrs,
 }) => {
     const renderTitle = React.useCallback(
         title =>
             title &&
             title.map((titleItem, i) => (
-                <Header as={'h5'} key={i}>
+                <Header as={'h5'} key={i} className={classes.title}>
                     {icon && i === 0 && (
                         <div className={cn('icon')}>{icon}</div>
                     )}
@@ -52,16 +62,24 @@ const Property: React.FC<IProperty> = ({
     const renderDescription = React.useCallback(
         description =>
             description &&
-            description.map((descriptionItem, j) => (
+            description.map(({ value, isCollapsible }, j) => (
                 <div className={cn('desc')} key={j}>
-                    <PropertyDescription {...descriptionItem} />
+                    <PropertyDescription
+                        value={value}
+                        isCollapsible={isCollapsible}
+                        classes={{ open: classes.openedDescription, toggle: classes.toggleDescription }}
+                    />
                 </div>
             )),
         []
     );
 
     return (
-        <div className={cn({ 'border-bottom': borderBottom }, [className])} ref={rootRef}>
+        <div
+            className={cn({ 'border-bottom': borderBottom }, [className])}
+            ref={rootRef}
+            {...filterDataAttrs(dataAttrs)}
+        >
             {badge && (
                 <div className={cn('badge-wrapper')}>
                     <span className={cn('badge')}>{badge}</span>
@@ -120,6 +138,12 @@ Property.propTypes = {
     mergedValue: PropTypes.string,
     icon: PropTypes.node,
     multirow: PropTypes.bool,
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    classes: PropTypes.shape({
+        title: PropTypes.string,
+        openedDescription: PropTypes.string,
+        toggleDescription: PropTypes.string,
+    }),
 };
 
 export default Property;

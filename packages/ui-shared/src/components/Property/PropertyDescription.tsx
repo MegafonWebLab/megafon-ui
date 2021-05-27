@@ -8,6 +8,7 @@ const cn = cnCreate('mfui-beta-property-description');
 const PropertyDescription: React.FC<Desc> = ({
     value,
     isCollapsible = false,
+    classes = {},
 }) => {
     const [isOpened, setIsOpened] = React.useState(false);
 
@@ -17,8 +18,8 @@ const PropertyDescription: React.FC<Desc> = ({
 
     if (isCollapsible) {
         return (
-            <div className={cn()}>
-                <span className={cn('collapse')} onClick={handleClickDesc}>
+            <div className={cn([isOpened ? classes.open : undefined])}>
+                <span className={cn('collapse', classes.toggle)} onClick={handleClickDesc}>
                     {isOpened ? 'Скрыть' : 'Подробнее'}
                 </span>
                 <Collapse
@@ -38,6 +39,10 @@ const PropertyDescription: React.FC<Desc> = ({
 PropertyDescription.propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     isCollapsible: PropTypes.bool,
+    classes: PropTypes.shape({
+        open: PropTypes.string,
+        toggle: PropTypes.string,
+    }),
 };
 
 export default PropertyDescription;

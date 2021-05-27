@@ -83,6 +83,12 @@ exports[`<Property /> should render several rows 1`] = `
             key="0"
           >
             <PropertyDescription
+              classes={
+                Object {
+                  "open": undefined,
+                  "toggle": undefined,
+                }
+              }
               value="Звонки на все номера России"
             />
           </div>
@@ -109,6 +115,12 @@ exports[`<Property /> should render several rows 1`] = `
             key="0"
           >
             <PropertyDescription
+              classes={
+                Object {
+                  "open": undefined,
+                  "toggle": undefined,
+                }
+              }
               value="Звонки на все номера России"
             />
           </div>
@@ -135,6 +147,12 @@ exports[`<Property /> should render several rows 1`] = `
             key="0"
           >
             <PropertyDescription
+              classes={
+                Object {
+                  "open": undefined,
+                  "toggle": undefined,
+                }
+              }
               value="Звонки на все номера России"
             />
           </div>
@@ -184,6 +202,12 @@ exports[`<Property /> should render title and description 1`] = `
             key="0"
           >
             <PropertyDescription
+              classes={
+                Object {
+                  "open": undefined,
+                  "toggle": undefined,
+                }
+              }
               value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
             />
           </div>
@@ -227,6 +251,12 @@ exports[`<Property /> should render title and hidden description 1`] = `
             key="0"
           >
             <PropertyDescription
+              classes={
+                Object {
+                  "open": undefined,
+                  "toggle": undefined,
+                }
+              }
               isCollapsible={true}
               value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
             />
@@ -387,6 +417,105 @@ exports[`<Property /> should render with border bottom 1`] = `
 </div>
 `;
 
+exports[`<Property /> should render with custom class names 1`] = `
+<div
+  className="mfui-beta-property"
+>
+  <div
+    className="mfui-beta-property__content"
+  >
+    <div
+      className="mfui-beta-property__items-wrapper"
+    >
+      <div
+        className="mfui-beta-property__item"
+        key="0"
+      >
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            className="title-custom-class"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Доп звонки
+          </Header>
+          <div
+            className="mfui-beta-property__desc"
+            key="0"
+          >
+            <PropertyDescription
+              classes={
+                Object {
+                  "open": "opened-description-custom-class",
+                  "toggle": "toggle-description-custom-class",
+                }
+              }
+              isCollapsible={true}
+              value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
+            />
+          </div>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <span
+            className="mfui-beta-property__value"
+          >
+            500Р
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Property /> should render with data attribute 1`] = `
+<div
+  className="mfui-beta-property"
+  data-test="value"
+>
+  <div
+    className="mfui-beta-property__content"
+  >
+    <div
+      className="mfui-beta-property__items-wrapper"
+    >
+      <div
+        className="mfui-beta-property__item"
+        key="0"
+      >
+        <div
+          className="mfui-beta-property__inner"
+        >
+          <Header
+            as="h5"
+            color="black"
+            hAlign="inherit"
+            key="0"
+          >
+            Звонки на все номера России
+          </Header>
+        </div>
+        <div
+          className="mfui-beta-property__value-wrapper"
+        >
+          <span
+            className="mfui-beta-property__value"
+          >
+            500 ₽
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Property /> should render with icon 1`] = `
 <div
   className="mfui-beta-property"
@@ -470,6 +599,12 @@ exports[`<Property /> should render with several descriptions 1`] = `
             key="0"
           >
             <PropertyDescription
+              classes={
+                Object {
+                  "open": undefined,
+                  "toggle": undefined,
+                }
+              }
               value="После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно."
             />
           </div>
@@ -478,6 +613,12 @@ exports[`<Property /> should render with several descriptions 1`] = `
             key="1"
           >
             <PropertyDescription
+              classes={
+                Object {
+                  "open": undefined,
+                  "toggle": undefined,
+                }
+              }
               isCollapsible={true}
               value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
             />

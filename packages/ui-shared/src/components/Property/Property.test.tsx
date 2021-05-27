@@ -175,4 +175,44 @@ describe('<Property />', () => {
 
         expect(ref.current).not.toBeNull();
     });
+
+    it('should render with data attribute', () => {
+        const wrapper = shallow(
+            <Property
+                items={[
+                    { title: ['Звонки на все номера России'], value: '500 ₽' },
+                ]}
+                dataAttrs={{ 'data-test': 'value' }}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with custom class names', () => {
+        const wrapper = shallow(
+            <Property
+                items={[
+                    {
+                        title: ['Доп звонки'],
+                        value: '500Р',
+                        description: [
+                            {
+                                value:
+                                    'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.',
+                                isCollapsible: true,
+                            },
+                        ],
+                    },
+                ]}
+                classes={{
+                    title: 'title-custom-class',
+                    openedDescription: 'opened-description-custom-class',
+                    toggleDescription: 'toggle-description-custom-class',
+                }}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
