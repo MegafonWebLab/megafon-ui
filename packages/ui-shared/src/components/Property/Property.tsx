@@ -1,9 +1,12 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
-import { Header, cnCreate, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
+import { Header, cnCreate, Grid, GridColumn, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
 import './Property.less';
 import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
+
+type GridColumnPropsType = React.ComponentProps<typeof GridColumn>;
+type GridColumnConfigType = Pick<GridColumnPropsType, 'all' | 'wide' | 'desktop' | 'tablet' | 'mobile'>;
 
 export interface IProperty {
     /** Ссылка на корневой элемент */
@@ -22,6 +25,8 @@ export interface IProperty {
     icon?: React.ReactNode;
     /** Несколько рядов в строке */
     multirow?: boolean;
+    /** Растягивание компонента на всю доступную ширину */
+    fullWidth?: boolean;
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
     /** Дополнительные классы для внутренних элементов */
@@ -42,6 +47,7 @@ const Property: React.FC<IProperty> = ({
     borderBottom = false,
     mergedValue = '',
     multirow = false,
+    fullWidth = false,
     classes= {},
     dataAttrs,
 }) => {
@@ -74,43 +80,53 @@ const Property: React.FC<IProperty> = ({
         []
     );
 
+    const getColumnConfig = React.useCallback((): GridColumnConfigType => (
+        fullWidth ? { all: '12' } : { wide: '8', desktop: '10', tablet: '12', mobile: '12'}
+    ), [fullWidth]);
+
     return (
         <div
             className={cn({ 'border-bottom': borderBottom }, [className])}
             ref={rootRef}
             {...filterDataAttrs(dataAttrs)}
         >
-            {badge && (
-                <div className={cn('badge-wrapper')}>
-                    <span className={cn('badge')}>{badge}</span>
-                </div>
-            )}
-            <div className={cn('content')}>
-                <div className={cn('items-wrapper')}>
-                    {items.map(({ title, value, description }, i) => (
-                        <div className={cn('item', { multirow })} key={i}>
-                            <div className={cn('inner')}>
-                                {renderTitle(title)}
-                                {renderDescription(description)}
+            <Grid>
+                <GridColumn {...getColumnConfig()}>
+                    <div className={cn('wrapper')}>
+                        {badge && (
+                            <div className={cn('badge-wrapper')}>
+                                <span className={cn('badge')}>{badge}</span>
                             </div>
-                            {
-                                !mergedValue && (
-                                    <div className={cn('value-wrapper')}>
-                                        {value &&  (
-                                            <span className={cn('value')}>{value}</span>
-                                        )}
+                        )}
+                        <div className={cn('content')}>
+                            <div className={cn('items-wrapper')}>
+                                {items.map(({ title, value, description }, i) => (
+                                    <div className={cn('item', { multirow })} key={i}>
+                                        <div className={cn('inner')}>
+                                            {renderTitle(title)}
+                                            {renderDescription(description)}
+                                        </div>
+                                        {
+                                            !mergedValue && (
+                                                <div className={cn('value-wrapper')}>
+                                                    {value &&  (
+                                                        <span className={cn('value')}>{value}</span>
+                                                    )}
+                                                </div>
+                                            )
+                                        }
                                     </div>
-                                )
-                            }
+                                ))}
+                            </div>
+                            {mergedValue && (
+                                <div className={cn('value-wrapper', { merged: true })}>
+                                    <Header as="h3">{mergedValue}</Header>
+                                </div>
+                            )}
                         </div>
-                    ))}
-                </div>
-                {mergedValue && (
-                    <div className={cn('value-wrapper', { merged: true })}>
-                        <Header as="h3">{mergedValue}</Header>
                     </div>
-                )}
-            </div>
+                </GridColumn>
+            </Grid>
         </div>
     );
 };
@@ -138,6 +154,7 @@ Property.propTypes = {
     mergedValue: PropTypes.string,
     icon: PropTypes.node,
     multirow: PropTypes.bool,
+    fullWidth: PropTypes.bool,
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     classes: PropTypes.shape({
         title: PropTypes.string,
