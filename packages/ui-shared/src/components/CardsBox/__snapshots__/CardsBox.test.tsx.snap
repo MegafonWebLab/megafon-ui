@@ -88,10 +88,11 @@ exports[`CardsBox render on mobile resolution with carousel 1`] = `
               </h3>
             </Header>
             <Paragraph
+              className="mfui-beta-card__text"
               hasMargin={false}
             >
               <p
-                className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt"
+                className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-card__text"
               >
                 text
               </p>
@@ -182,10 +183,11 @@ exports[`CardsBox render on mobile resolution with carousel 1`] = `
               </h3>
             </Header>
             <Paragraph
+              className="mfui-beta-card__text"
               hasMargin={false}
             >
               <p
-                className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt"
+                className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-card__text"
               >
                 text
               </p>
@@ -276,10 +278,11 @@ exports[`CardsBox render on mobile resolution with carousel 1`] = `
               </h3>
             </Header>
             <Paragraph
+              className="mfui-beta-card__text"
               hasMargin={false}
             >
               <p
-                className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt"
+                className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-card__text"
               >
                 text
               </p>

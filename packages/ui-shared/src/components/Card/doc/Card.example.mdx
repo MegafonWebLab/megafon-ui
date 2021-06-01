@@ -132,3 +132,16 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
         </GridColumn>
     </Grid>
 </Playground>
+
+## Выравнивание текста
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="3" mobile="12">
+            <Card isCenteredText={false} title={title} text={text} button={button} link={link} isFullHeight />
+        </GridColumn>
+        <GridColumn all="3" mobile="12">
+            <Card isCenteredText={true} title={title} text={text} button={button} link={link} isFullHeight />
+        </GridColumn>
+    </Grid>
+</Playground>

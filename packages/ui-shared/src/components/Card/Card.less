@@ -13,16 +13,6 @@
     background-color: @clearWhite;
     overflow: hidden;
 
-    &_href {
-        * {
-            text-decoration: none !important;
-        }
-
-        &:hover {
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-        }
-    }
-
     &__inner {
         display: flex;
         flex-direction: column;
@@ -106,7 +96,24 @@
         height: 100%;
     }
 
+    &_href {
+        * {
+            text-decoration: none !important;
+        }
+
+        &:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+        }
+    }
+
     &_full-height {
         height: 100%;
+    }
+
+    &_centered-text {
+        @{b}__text,
+        @{b}__title {
+            text-align: center;
+        }
     }
 }
