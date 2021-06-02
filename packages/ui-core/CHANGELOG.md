@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.133](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.132...@megafon/ui-core@2.0.0-beta.133) (2021-06-02)
+
+
+### Features
+
+* **notification:** replaced content property with childs ([a2f3b61](https://github.com/MegafonWebLab/megafon-ui/commit/a2f3b612b40fca247821612ccd8f2ff482f8e8ab))
+
+
+### BREAKING CHANGES
+
+* **notification:** replaced content property with childs
+
+
+
+
+
 # [2.0.0-beta.132](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.131...@megafon/ui-core@2.0.0-beta.132) (2021-05-25)
 
 
