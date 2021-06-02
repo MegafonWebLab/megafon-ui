@@ -117,36 +117,6 @@ describe('<Property />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render several rows', () => {
-        const wrapper = shallow(
-            <Property
-                multirow
-                items={[
-                    { title: ['Абонентская плата:'] },
-                    {
-                        value: '500 ₽',
-                        description: [
-                            { value: 'Звонки на все номера России' },
-                        ],
-                    },
-                    {
-                        value: '500 ₽',
-                        description: [
-                            { value: 'Звонки на все номера России' },
-                        ],
-                    },
-                    {
-                        value: '500 ₽',
-                        description: [
-                            { value: 'Звонки на все номера России' },
-                        ],
-                    },
-                ]}
-            />
-        );
-        expect(wrapper).toMatchSnapshot();
-    });
-
     it('should render with border bottom', () => {
         const wrapper = shallow(
             <Property

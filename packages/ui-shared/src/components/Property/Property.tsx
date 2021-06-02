@@ -23,8 +23,6 @@ export interface IProperty {
     mergedValue?: string;
     /** Иконка для строки */
     icon?: React.ReactNode;
-    /** Несколько рядов в строке */
-    multirow?: boolean;
     /** Растягивание компонента на всю доступную ширину */
     fullWidth?: boolean;
     /** Дата атрибуты для корневого элемента */
@@ -46,7 +44,6 @@ const Property: React.FC<IProperty> = ({
     icon,
     borderBottom = false,
     mergedValue = '',
-    multirow = false,
     fullWidth = false,
     classes= {},
     dataAttrs,
@@ -101,7 +98,7 @@ const Property: React.FC<IProperty> = ({
                         <div className={cn('content')}>
                             <div className={cn('items-wrapper')}>
                                 {items.map(({ title, value, description }, i) => (
-                                    <div className={cn('item', { multirow })} key={i}>
+                                    <div className={cn('item')} key={i}>
                                         <div className={cn('inner')}>
                                             {renderTitle(title)}
                                             {renderDescription(description)}
@@ -153,7 +150,6 @@ Property.propTypes = {
     borderBottom: PropTypes.bool,
     mergedValue: PropTypes.string,
     icon: PropTypes.node,
-    multirow: PropTypes.bool,
     fullWidth: PropTypes.bool,
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     classes: PropTypes.shape({
