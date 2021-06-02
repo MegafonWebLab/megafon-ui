@@ -321,9 +321,6 @@ exports[`Card render component with required props 1`] = `
     >
       Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <div
-      className="mfui-beta-card__btns-wrapper"
-    />
   </div>
 </div>
 `;
@@ -535,9 +532,6 @@ exports[`Card render with fullHeight 1`] = `
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
     </Paragraph>
-    <div
-      className="mfui-beta-card__btns-wrapper"
-    />
   </div>
 </div>
 `;
