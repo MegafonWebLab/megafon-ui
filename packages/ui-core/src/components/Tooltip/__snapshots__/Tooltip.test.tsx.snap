@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip /> snapshots renders component 1`] = `
+<div
+  className="mfui-beta-tooltip mfui-beta-tooltip_size_medium"
+  style={
+    Object {
+      "left": "0",
+      "position": "absolute",
+      "top": "0",
+    }
+  }
+>
+  <div
+    className="mfui-beta-tooltip__arrow"
+  />
+  <div
+    className="mfui-beta-tooltip__arrow-shadow"
+  />
+  <Tile
+    className="mfui-beta-tooltip__content"
+    shadowLevel="high"
+  />
+</div>
+`;
+
+exports[`<Tooltip /> snapshots renders component with props 1`] = `
+<div
+  className="mfui-beta-tooltip mfui-beta-tooltip_size_small mfui-beta-tooltip_open className"
+  style={
+    Object {
+      "left": "0",
+      "position": "absolute",
+      "top": "0",
+    }
+  }
+>
+  <div
+    className="mfui-beta-tooltip__arrow"
+  />
+  <div
+    className="mfui-beta-tooltip__arrow-shadow"
+  />
+  <Tile
+    className="mfui-beta-tooltip__content"
+    shadowLevel="high"
+  >
+    content
+  </Tile>
+</div>
+`;
