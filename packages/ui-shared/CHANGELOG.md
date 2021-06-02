@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.194](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.193...@megafon/ui-shared@2.0.0-beta.194) (2021-06-02)
+
+
+### Features
+
+* **card:** add isCenteredText prop ([1215adb](https://github.com/MegafonWebLab/megafon-ui/commit/1215adb0d3e8fe50f765620a1572062a38a6346e))
+* **property:** delete prop 'multirow' from component ([e580d84](https://github.com/MegafonWebLab/megafon-ui/commit/e580d8462ce016ead28be0bb690e9397b66a9fc8))
+
+
+### BREAKING CHANGES
+
+* **property:** delete prop 'multirow' from component
+
+
+
+
+
 # [2.0.0-beta.193](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.192...@megafon/ui-shared@2.0.0-beta.193) (2021-05-28)
 
 
