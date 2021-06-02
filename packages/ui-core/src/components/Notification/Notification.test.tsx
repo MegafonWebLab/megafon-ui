@@ -14,13 +14,12 @@ const props: INotificationProps = {
     icon: <Attention />,
     title: 'title',
     isColored: true,
-    content: 'content',
 };
 
 describe('<Notification />', () => {
     it('renders component', () => {
         const wrapper = shallow(
-            <Notification content="content">Some test text</Notification>
+            <Notification>Some test text</Notification>
         );
         expect(wrapper).toMatchSnapshot();
     });

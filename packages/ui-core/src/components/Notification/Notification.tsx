@@ -43,8 +43,6 @@ export interface INotificationProps {
     hasCloseButton?: boolean;
     /** Заголовок */
     title?: string;
-    /** Контент/текст уведомления */
-    content: string;
     /** Текст ссылки внизу уведомления */
     link?: string;
     /** rel - аргумент тега <a> для ссылки */
@@ -64,12 +62,12 @@ export interface INotificationProps {
 const cn = cnCreate('mfui-beta-notification');
 const Notification: React.FC<INotificationProps> = ({
     className,
+    children,
     type = 'info',
     shadowLevel = 'zero',
     isColored = true,
     hasCloseButton,
     title,
-    content,
     link,
     rel,
     href,
@@ -122,7 +120,7 @@ const Notification: React.FC<INotificationProps> = ({
                             {title}
                         </Header>
                     )}
-                    <p className={cn('text', {'close-padding': hasCloseButton && !title})}>{content}</p>
+                    <p className={cn('text', {'close-padding': hasCloseButton && !title})}>{children}</p>
                     {link && renderLink()}
                 </div>
             </div>
@@ -142,7 +140,6 @@ Notification.propTypes = {
     isColored: PropTypes.bool,
     hasCloseButton: PropTypes.bool,
     title: PropTypes.string,
-    content: PropTypes.string.isRequired,
     link: PropTypes.string,
     rel: PropTypes.string,
     href: PropTypes.string,
