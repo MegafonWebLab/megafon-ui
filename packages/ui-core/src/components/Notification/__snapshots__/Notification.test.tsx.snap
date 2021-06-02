@@ -28,7 +28,7 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
       <p
         className="mfui-beta-notification__text"
       >
-        content
+        Some test text
       </p>
     </div>
   </div>
@@ -55,7 +55,7 @@ exports[`<Notification /> renders component 1`] = `
       <p
         className="mfui-beta-notification__text"
       >
-        content
+        Some test text
       </p>
     </div>
   </div>
