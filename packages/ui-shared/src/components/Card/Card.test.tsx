@@ -25,7 +25,14 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 const classes = { root: 'rootClass', button: 'buttonClass', link: 'linkClass', inner: 'innerClass'};
 
 describe('Card', () => {
-    it('render component', () => {
+    it('render component with required props', () => {
+        const wrapper = shallow(
+            <Card title={title} />
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render component with optional props', () => {
         const wrapper = shallow(
             <Card
                 title={title}
@@ -36,6 +43,7 @@ describe('Card', () => {
                 classes={classes}
                 className="className"
                 dataAttrs={{ 'data-test': 'value' }}
+                isCenteredText
             />
         );
         expect(wrapper).toMatchSnapshot();

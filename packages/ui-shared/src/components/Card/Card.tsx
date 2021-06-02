@@ -43,11 +43,13 @@ export interface ICard {
     /** Заголовок карточки */
     title: string;
     /** Текст карточки */
-    text: string;
+    text?: string;
     /** Данные для кнопки */
     button?: IButton;
     /** Данные для ссылки */
     link?: ILink;
+    /** Выравнивание текста по центру */
+    isCenteredText?: boolean;
     /** Расположение кнопки/ссылки по левой стороне */
     isLeftHAlign?: boolean;
     /** Высота корневого элемента 100% */
@@ -70,6 +72,7 @@ const Card: React.FC<ICard> = ({
     text,
     button,
     link,
+    isCenteredText = false,
     isLeftHAlign = false,
     isFullHeight = false,
     href,
@@ -122,14 +125,21 @@ const Card: React.FC<ICard> = ({
     return (
         <div
             {...filterDataAttrs(dataAttrs)}
-            className={cn('', { 'href': !!href, 'full-height': isFullHeight }, [className, classes.root])}
+            className={cn(
+                '',
+                {
+                    'href': !!href,
+                    'full-height': isFullHeight,
+                    'centered-text': isCenteredText,
+                },
+                [className, classes.root])}
             ref={rootRef}
         >
             <Element href={href} className={cn('inner', [classes.inner])}>
                 <>
                     {renderImage()}
                     <Header as="h3" className={cn('title')}>{title}</Header>
-                    <Paragraph hasMargin={false}>{text}</Paragraph>
+                    {!!text && <Paragraph hasMargin={false} className={cn('text')}>{text}</Paragraph>}
                     <div className={cn('btns-wrapper', { 'left-align': isAlignAvailable && isLeftHAlign })}>
                         {isRenderBtn && renderBtn(button)}
                         {link && renderLink(link)}
@@ -156,7 +166,7 @@ Card.propTypes = {
     imageSrc: PropTypes.string,
     svgSrc: PropTypes.node,
     title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     button: PropTypes.shape({
         title: PropTypes.string.isRequired,
         href: PropTypes.string.isRequired,
@@ -167,6 +177,7 @@ Card.propTypes = {
         href: PropTypes.string,
         download: PropTypes.bool,
     }),
+    isCenteredText: PropTypes.bool,
     isLeftHAlign: PropTypes.bool,
     isFullHeight: PropTypes.bool,
     href: PropTypes.string,
