@@ -17,7 +17,7 @@ const props: IAccordionBox = {
 };
 
 describe('<AccordionBox />', () => {
-    it('render AccordionBox', () => {
+    it('should render with props', () => {
         const wrapper = shallow(
             <AccordionBox {...props}>
                 <div>test</div>
@@ -27,12 +27,22 @@ describe('<AccordionBox />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('render AccordionBox with hCenterAlignWide=true', () => {
+    it('should render with centered grid when hCenterAlignWide is true', () => {
         const wrapper = shallow(
             <AccordionBox {...props} hCenterAlignWide>
                 <div>test</div>
             </AccordionBox>
-            );
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render without grid when isFullWidth is true', () => {
+        const wrapper = shallow(
+            <AccordionBox {...props} isFullWidth>
+                <div>test</div>
+            </AccordionBox>
+        );
 
         expect(wrapper).toMatchSnapshot();
     });

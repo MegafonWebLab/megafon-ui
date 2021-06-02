@@ -1,6 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AccordionBox /> render AccordionBox 1`] = `
+exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide is true 1`] = `
+<div
+  className="mfui-beta-accordion-box"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      wide="8"
+    >
+      <Accordion
+        className="className"
+        classes={
+          Object {
+            "collapse": "collapseClass",
+            "openedClass": "isOpenClass",
+            "root": "rootClass",
+          }
+        }
+        hasVerticalPaddings={true}
+        isOpened={false}
+        onClickAccordion={[MockFunction]}
+        rootRef={[MockFunction]}
+        title="Test"
+      >
+        <div>
+          test
+        </div>
+      </Accordion>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<AccordionBox /> should render with props 1`] = `
 <div
   className="mfui-beta-accordion-box"
 >
@@ -34,36 +68,24 @@ exports[`<AccordionBox /> render AccordionBox 1`] = `
 </div>
 `;
 
-exports[`<AccordionBox /> render AccordionBox with hCenterAlignWide=true 1`] = `
-<div
-  className="mfui-beta-accordion-box"
+exports[`<AccordionBox /> should render without grid when isFullWidth is true 1`] = `
+<Accordion
+  className="className"
+  classes={
+    Object {
+      "collapse": "collapseClass",
+      "openedClass": "isOpenClass",
+      "root": "rootClass",
+    }
+  }
+  hasVerticalPaddings={true}
+  isOpened={false}
+  onClickAccordion={[MockFunction]}
+  rootRef={[MockFunction]}
+  title="Test"
 >
-  <Grid
-    hAlign="center"
-  >
-    <GridColumn
-      wide="8"
-    >
-      <Accordion
-        className="className"
-        classes={
-          Object {
-            "collapse": "collapseClass",
-            "openedClass": "isOpenClass",
-            "root": "rootClass",
-          }
-        }
-        hasVerticalPaddings={true}
-        isOpened={false}
-        onClickAccordion={[MockFunction]}
-        rootRef={[MockFunction]}
-        title="Test"
-      >
-        <div>
-          test
-        </div>
-      </Accordion>
-    </GridColumn>
-  </Grid>
-</div>
+  <div>
+    test
+  </div>
+</Accordion>
 `;
