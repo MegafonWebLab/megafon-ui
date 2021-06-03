@@ -53,6 +53,7 @@ export interface ITooltipProps {
         root?: string;
         arrow?: string;
         content?: string;
+        contentShadow?: string;
     };
     /** Обработчик на открытие */
     onOpen?: (e: MouseEvent) => void;
@@ -74,6 +75,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
         root: rootClassName,
         arrow: arrowClassName,
         content: contentClassName,
+        contentShadow: contentShadowClassName,
     } = {},
     onOpen,
     onClose,
@@ -212,7 +214,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             <Tile className={cn('content', [contentClassName])}>
                 {children}
             </Tile>
-            <Tile shadowLevel="high" className={cn('content-shadow')} />
+            <Tile shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
 };
@@ -247,6 +249,7 @@ Tooltip.propTypes = {
         root: PropTypes.string,
         arrow: PropTypes.string,
         content: PropTypes.string,
+        contentShadow: PropTypes.string,
     }),
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
