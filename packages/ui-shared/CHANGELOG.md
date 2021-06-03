@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.197](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.196...@megafon/ui-shared@2.0.0-beta.197) (2021-06-03)
+
+
+### Bug Fixes
+
+* **card:** hide btns-wrapper element when empty ([a74daa1](https://github.com/MegafonWebLab/megafon-ui/commit/a74daa1a92aeff44b5aa09b6136a305647131a03))
+
+
+### Features
+
+* **accordionbox:** add isFullWidth prop ([f031c99](https://github.com/MegafonWebLab/megafon-ui/commit/f031c992975f2e7aaba4c8d6ae018061124c89f2))
+
+
+
+
+
 # [2.0.0-beta.196](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.195...@megafon/ui-shared@2.0.0-beta.196) (2021-06-03)
 
 **Note:** Version bump only for package @megafon/ui-shared
