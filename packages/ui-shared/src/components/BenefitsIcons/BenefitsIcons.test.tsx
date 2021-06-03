@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import BenefitsIcons, { IBenefitsIcons } from './BenefitsIcons';
 import { fiveItems, fourItems, threeItems, twoItems } from './doc/BenefitsIcons.docz';
 import { IconPositionEnum } from './types';
 
 const props: IBenefitsIcons = {
     items: twoItems,
-    className: 'className',
+    className: 'class-name',
+    classes: {
+        root: 'root-class',
+        item: 'item-class',
+    },
 };
 
 const itemsSet = [
@@ -41,5 +45,13 @@ describe('<BenefitsIcons />', () => {
             const wrapper = shallow(<BenefitsIcons items={items} iconPosition={IconPositionEnum.CENTER_TOP} />);
             expect(wrapper).toMatchSnapshot();
         });
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<BenefitsIcons {...props} rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
     });
 });

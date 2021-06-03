@@ -9,6 +9,7 @@ const props: IBenefitsIconsTile = {
     text: 'text',
     iconPosition: IconPositionEnum.LEFT_SIDE,
     icon: <Checked />,
+    className: 'class-name',
 };
 
 describe('<BenefitsIconsTile />', () => {

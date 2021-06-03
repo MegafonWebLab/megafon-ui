@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { string } from 'prop-types';
 import convert from 'htmr';
 import './style/BenefitsIconsTile.less';
 import {
@@ -15,6 +15,7 @@ import { IBenefit, IconPositionEnum, IconPosition } from './types';
 
 export interface IBenefitsIconsTile extends IBenefit {
     iconPosition?: IconPosition;
+    className?: string;
 }
 
 const cn = cnCreate('mfui-beta-benefits-icons-tile');
@@ -49,8 +50,9 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
     text,
     icon,
     iconPosition = IconPositionEnum.LEFT_TOP,
+    className,
 }) => (
-    <div className={cn('', { 'icon-position': iconPosition })}>
+    <div className={cn('', { 'icon-position': iconPosition }, [className])}>
         <div className={cn('svg-icon')}>{icon}</div>
         <div className={cn('content-wrapper')}>
             {title && (
@@ -72,6 +74,7 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
 );
 
 BenefitsIconsTile.propTypes = {
+    className: string,
     title: PropTypes.string,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),

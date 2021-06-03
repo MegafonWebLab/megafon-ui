@@ -2,7 +2,7 @@
 
 exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
 <div
-  className="mfui-beta-benefits-icons className"
+  className="mfui-beta-benefits-icons class-name root-class"
 >
   <div
     className="mfui-beta-benefits-icons__inner"
@@ -18,6 +18,7 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
         wide="4"
       >
         <BenefitsIconsTile
+          className="item-class"
           icon={
             <test-file-stub
               style={
@@ -43,6 +44,7 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
         wide="4"
       >
         <BenefitsIconsTile
+          className="item-class"
           icon={
             <test-file-stub
               style={
