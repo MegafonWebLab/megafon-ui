@@ -13,6 +13,10 @@ type HandleItemSubmit = (index: number) => void;
 export interface ISearchProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        listItemTitle?: string;
+    };
     /** Значение */
     value?: string;
     /** Текст внутри поля по умолчанию */
@@ -37,6 +41,7 @@ const Search: React.FC<ISearchProps> = ({
         items = [],
         changeDelay = 250,
         className,
+        classes,
         onChange,
         onSubmit,
 }) => {
@@ -154,7 +159,7 @@ const Search: React.FC<ISearchProps> = ({
                                 onMouseEnter={handleHoverItem(i)}
                                 key={i}
                             >
-                                <div className={cn('item-title')}>
+                                <div className={cn('item-title', [classes?.listItemTitle])}>
                                     {highlightString(title)}
                                 </div>
                             </div>
