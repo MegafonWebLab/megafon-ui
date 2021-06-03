@@ -48,6 +48,12 @@ export interface ITooltipProps {
     isOpened?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        root?: string;
+        arrow?: string;
+        content?: string;
+    };
     /** Обработчик на открытие */
     onOpen?: (e: MouseEvent) => void;
     /** Обработчик на закрытие */
@@ -64,6 +70,11 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     triggerElement,
     isOpened = false,
     children,
+    classes: {
+        root: rootClassName,
+        arrow: arrowClassName,
+        content: contentClassName,
+    } = {},
     onOpen,
     onClose,
 }) => {
@@ -184,21 +195,21 @@ const Tooltip: React.FC<ITooltipProps>  = ({
 
     return (
         <div
-            className={cn([className], { paddings, open: isOpen })}
+            className={cn({ paddings, open: isOpen }, [className, rootClassName])}
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}
             >
             <div
                 ref={setArrowElement}
-                className={cn('arrow')}
+                className={cn('arrow', [arrowClassName])}
                 style={styles.arrow}
             />
             <div
                 className={cn('arrow-shadow')}
                 style={styles.arrow}
             />
-            <Tile className={cn('content')}>
+            <Tile className={cn('content', [contentClassName])}>
                 {children}
             </Tile>
             <Tile shadowLevel="high" className={cn('content-shadow')} />
@@ -232,6 +243,11 @@ Tooltip.propTypes = {
     },
     isOpened: PropTypes.bool,
     className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        arrow: PropTypes.string,
+        content: PropTypes.string,
+    }),
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
 };
