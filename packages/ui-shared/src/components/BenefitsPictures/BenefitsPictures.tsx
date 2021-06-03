@@ -16,12 +16,21 @@ const columnSize: GridConfig = {
 };
 
 export interface IBenefitsPicturesProps {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Данные для бенефитов */
     items: IBenefit[];
     /** Горизонтальное выравнивание */
     hAlign?: 'left' | 'center';
     /** Расстояние между бенефитами */
     gridGap?: GridGutterSize;
+    /** Дополнительный css класс для корневого элемента */
+    className?: string;
+    /** Дополнительные css классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        item?: string;
+    };
 }
 
 const isEvenIndex = index => !((index + 1) % 2);
@@ -119,6 +128,9 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     items,
     hAlign = 'left',
     gridGap = 'large',
+    rootRef,
+    className,
+    classes = {},
 }) => {
     const isLargeGutter = gridGap === 'large';
     const isGridCenterAlign = hAlign === 'center' && items.length !== ONLY_LEFT_ALIGN_ITEMS_COUNT;
@@ -148,7 +160,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     }, []);
 
     return (
-        <div className={cn()}>
+        <div className={cn([className, classes.root])} ref={rootRef}>
             <Grid
                 guttersLeft={currentGutter}
                 hAlign={isGridCenterAlign ? 'center' : 'left'}
@@ -160,7 +172,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
                             : getCenterConfig(items.length, index, gridGap)}
                         key={index}
                     >
-                        <div className={cn('item')}>
+                        <div className={cn('item', [classes.item])}>
                             <img className={cn('img', { 'h-align': hAlign })}
                                  src={img}
                                  alt=""
@@ -176,6 +188,10 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
 };
 
 BenefitsPictures.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     items: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
@@ -185,6 +201,11 @@ BenefitsPictures.propTypes = {
     ).isRequired,
     hAlign: PropTypes.oneOf(['left', 'center']),
     gridGap: PropTypes.oneOf(['medium', 'large']),
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        item: PropTypes.string,
+    }),
 };
 
 export default BenefitsPictures;
