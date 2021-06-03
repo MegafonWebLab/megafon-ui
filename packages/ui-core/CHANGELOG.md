@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.134](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.133...@megafon/ui-core@2.0.0-beta.134) (2021-06-03)
+
+
+### Bug Fixes
+
+* **tooltip:** add new prop classes ([a10780f](https://github.com/MegafonWebLab/megafon-ui/commit/a10780f3b2865f051c187d4e189eb13ab42eb39d))
+
+
+
+
+
 # [2.0.0-beta.133](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.132...@megafon/ui-core@2.0.0-beta.133) (2021-06-02)
 
 
