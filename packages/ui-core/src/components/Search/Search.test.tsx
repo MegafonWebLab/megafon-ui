@@ -32,6 +32,11 @@ describe('<Search />', () => {
             const wrapper = shallow(<Search {...props} hideIcon />);
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('renders Search with classes', () => {
+            const wrapper = shallow(<Search {...props} classes={{listItemTitle: 'wrap-text-test'}} />);
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('typing', () => {

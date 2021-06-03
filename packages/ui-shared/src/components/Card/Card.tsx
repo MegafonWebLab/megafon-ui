@@ -80,7 +80,6 @@ const Card: React.FC<ICard> = ({
 }) => {
     const isAlignAvailable = !button || !link;
     const isCardLink = !!href;
-    const isRenderBtn = !!button && !isCardLink;
     const Element = href ? Link : 'div';
 
     const renderImage = React.useCallback(() => {
@@ -106,21 +105,61 @@ const Card: React.FC<ICard> = ({
         }
     }, [imageSrc, svgSrc, objectFit]);
 
-    const renderLink = React.useCallback(({ href: linkHref, title: linkTitle, download }) => {
-        const isFakeLink = !linkHref;
+    const renderLink = React.useCallback(() => {
+        if (!link) {
+            return null;
+        }
 
-        if (isFakeLink || isCardLink) {
+        const { href: linkHref, title: linkTitle, download } = link;
+
+        if (!linkHref || isCardLink) {
             return <span className={cn('fake-link')}>{linkTitle}</span>;
         }
 
         return (
-            <TextLink className={cn('link', [classes.link])} href={linkHref} download={download}>{linkTitle}</TextLink>
+            <TextLink
+                className={cn('link', [classes.link])}
+                href={linkHref}
+                download={download}
+            >
+                {linkTitle}
+            </TextLink>
         );
-    }, [isCardLink]);
+    }, [link, isCardLink, classes]);
 
-    const renderBtn = React.useCallback(({ href: btnHref, title: btnTitle, download: buttonDownload }) => (
-        <Button className={cn('button', [classes.button])} href={btnHref} download={buttonDownload}>{btnTitle}</Button>
-    ), []);
+    const renderBtn = React.useCallback(() => {
+        if (!button || isCardLink) {
+            return null;
+        }
+
+        const { href: btnHref, title: btnTitle, download: buttonDownload } = button;
+
+        return (
+            <Button
+                className={cn('button', [classes.button])}
+                href={btnHref}
+                download={buttonDownload}
+            >
+                {btnTitle}
+            </Button>
+        );
+    }, [button, isCardLink, classes]);
+
+    const renderBtnsWrapper = React.useCallback(() => {
+        const btnElem = renderBtn();
+        const linkElem = renderLink();
+
+        if (!btnElem && !linkElem) {
+            return null;
+        }
+
+        return (
+            <div className={cn('btns-wrapper', { 'left-align': isAlignAvailable && isLeftHAlign })}>
+                {btnElem}
+                {linkElem}
+            </div>
+        );
+    }, [renderBtn, renderLink, isAlignAvailable, isLeftHAlign]);
 
     return (
         <div
@@ -140,10 +179,7 @@ const Card: React.FC<ICard> = ({
                     {renderImage()}
                     <Header as="h3" className={cn('title')}>{title}</Header>
                     {!!text && <Paragraph hasMargin={false} className={cn('text')}>{text}</Paragraph>}
-                    <div className={cn('btns-wrapper', { 'left-align': isAlignAvailable && isLeftHAlign })}>
-                        {isRenderBtn && renderBtn(button)}
-                        {link && renderLink(link)}
-                    </div>
+                    {renderBtnsWrapper()}
                 </>
             </Element>
         </div>
