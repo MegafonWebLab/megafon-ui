@@ -77,4 +77,12 @@ describe('convertToReact', () => {
         expect(node.props.margin).toBeDefined();
         expect(node.props.forbiddebProp).toBeUndefined();
     });
+
+    test('should support boolean props', () => {
+        const converted = convertToReact('<h as="h1" margin="false">title</h>', config);
+        const node = converted[0] as NodeType;
+
+        expect(Array.isArray(converted)).toBe(true);
+        expect(node.props.margin).toBe(false);
+    });
 });

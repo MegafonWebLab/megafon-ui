@@ -21,6 +21,22 @@ type NodeType = keyof React.ReactHTML | keyof React.ReactSVG | string;
 
 type TransformPropsType = Record<string, string>;
 
+const checkBooleanProp = (prop: string) => {
+    switch (prop) {
+        case ('false'): {
+            return false;
+        }
+
+        case ('true'): {
+            return true;
+        }
+
+        default: {
+            return prop;
+        }
+    }
+};
+
 const getTransform = (config: TransformConfig) => {
     return {
         _: (node: NodeType, nodeProps?: TransformPropsType, children?: React.ReactNode) => {
@@ -35,7 +51,7 @@ const getTransform = (config: TransformConfig) => {
                 return null;
             }
 
-            const { component: Component, props, customProps } = reactElement;
+            const { component: Component, props: configProps, customProps } = reactElement;
             const { className: nodePropsClass, key } = nodeProps;
             const filteredProps: Record<string, any> = {
                 ...customProps,
@@ -52,19 +68,27 @@ const getTransform = (config: TransformConfig) => {
                     : filteredProps.className = nodePropsClass;
             }
 
-            if (Array.isArray(props)) {
-                props.forEach(prop => {
-                    if (isProp(prop)) {
-                        filteredProps[prop] = nodeProps[prop.toLowerCase()];
+            if (Array.isArray(configProps)) {
+                configProps.forEach(prop => {
+                    if (!isProp(prop)) {
+                        return;
                     }
+
+                    const nodeProp = nodeProps[prop.toLowerCase()];
+
+                    filteredProps[prop] = checkBooleanProp(nodeProp);
                 });
             }
 
-            if (props && Object.keys(props).length) {
-                Object.keys(props).forEach(prop => {
-                    if (isProp(prop)) {
-                        filteredProps[props[prop]] = nodeProps[prop.toLowerCase()];
+            if (configProps && Object.keys(configProps).length) {
+                Object.keys(configProps).forEach(prop => {
+                    if (!isProp(prop)) {
+                        return;
                     }
+
+                    const nodeProp = nodeProps[prop.toLowerCase()];
+
+                    filteredProps[configProps[prop]] = checkBooleanProp(nodeProp);
                 });
             }
 
