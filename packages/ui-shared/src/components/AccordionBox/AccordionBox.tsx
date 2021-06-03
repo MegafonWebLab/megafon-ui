@@ -10,6 +10,8 @@ export interface IAccordionBox {
     title: string;
     /** Состояние аккордеона, заданное извне */
     isOpened?: boolean;
+    /** Отключить ограничение ширины */
+    isFullWidth?: boolean;
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
     /** Вертикальные отступы */
@@ -27,15 +29,23 @@ export interface IAccordionBox {
 }
 
 const cn = cnCreate('mfui-beta-accordion-box');
-const AccordionBox: React.FC<IAccordionBox> = ({hCenterAlignWide = false, ...props }) => (
-    <div className={cn()}>
-        <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
-            <GridColumn wide="8">
-                <Accordion {...props} />
-            </GridColumn>
-        </Grid>
-    </div>
-);
+const AccordionBox: React.FC<IAccordionBox> = ({
+    hCenterAlignWide = false,
+    isFullWidth = false,
+    ...restProps
+}) => {
+    const renderAccordionWithGrid = React.useCallback(() => (
+        <div className={cn()}>
+            <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
+                <GridColumn wide="8">
+                    <Accordion {...restProps} />
+                </GridColumn>
+            </Grid>
+        </div>
+    ), [restProps, hCenterAlignWide]);
+
+    return isFullWidth ? <Accordion {...restProps} /> : renderAccordionWithGrid();
+};
 
 AccordionBox.propTypes = {
     rootRef: PropTypes.oneOfType([
@@ -43,6 +53,7 @@ AccordionBox.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
     title: PropTypes.string.isRequired,
+    isFullWidth: PropTypes.bool,
     isOpened: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,
     hasVerticalPaddings: PropTypes.bool,

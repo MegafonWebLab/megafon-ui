@@ -2,7 +2,7 @@ import { Playground } from 'docz';
 import AccordionBox from '../AccordionBox';
 import { Paragraph } from '@megafon/ui-core';
 
-## Использование по умолчанию
+## Базовое использование
 
 <Playground>
     <AccordionBox title="Accordion title">
@@ -13,7 +13,19 @@ import { Paragraph } from '@megafon/ui-core';
     </AccordionBox>
 </Playground>
 
-## Использование с центрированием по горизонтали для расширений 1280+
+## Без ограничения по ширине
+
+<Playground>
+    <AccordionBox title="Accordion title" isFullWidth={true}>
+        <Paragraph hasMargin={false}>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit dolore quam deserunt magni consequuntur veniam!
+            Enim doloremque error expedita nisi nobis architecto aliquid. Iste dolores cupiditate earum vero, at quis.
+        </Paragraph>
+    </AccordionBox>
+</Playground>
+
+## Центрированием по горизонтали для расширений 1280+
+### Работает только с ограничением по ширине
 
 <Playground>
     <AccordionBox title="Accordion title" hCenterAlignWide={true}>
