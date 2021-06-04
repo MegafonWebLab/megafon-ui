@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.136](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.135...@megafon/ui-core@2.0.0-beta.136) (2021-06-04)
+
+
+### Bug Fixes
+
+* **notification:** fix content alignmtent in container ([8236e8e](https://github.com/MegafonWebLab/megafon-ui/commit/8236e8e03bb5c0344c2438cb48026ee51aeb5a0a))
+
+
+
+
+
 # [2.0.0-beta.135](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.134...@megafon/ui-core@2.0.0-beta.135) (2021-06-03)
 
 
