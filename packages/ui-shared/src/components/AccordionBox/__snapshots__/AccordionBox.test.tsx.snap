@@ -19,6 +19,11 @@ exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide
             "root": "rootClass",
           }
         }
+        dataAttrs={
+          Object {
+            "data-test": "data-test-value",
+          }
+        }
         hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
@@ -53,6 +58,11 @@ exports[`<AccordionBox /> should render with props 1`] = `
             "root": "rootClass",
           }
         }
+        dataAttrs={
+          Object {
+            "data-test": "data-test-value",
+          }
+        }
         hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
@@ -76,6 +86,11 @@ exports[`<AccordionBox /> should render without grid when isFullWidth is true 1`
       "collapse": "collapseClass",
       "openedClass": "isOpenClass",
       "root": "rootClass",
+    }
+  }
+  dataAttrs={
+    Object {
+      "data-test": "data-test-value",
     }
   }
   hasVerticalPaddings={true}
