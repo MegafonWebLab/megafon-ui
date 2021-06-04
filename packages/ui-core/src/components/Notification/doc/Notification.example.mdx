@@ -300,14 +300,6 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 
    <Notification 
       type="info"
-      shadowLevel="zero"
-      hasCloseButton
-   >
-      Отсутствие заголовка и ссылки
-   </Notification>
-
-   <Notification 
-      type="info"
       title="Кнопка закрытия с обработчиком и ссылка на новую страницу"
       shadowLevel="high"
       hasCloseButton
@@ -317,5 +309,22 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       target="_blank"
    >
       Использованы все опциональные элементы
+   </Notification>
+
+   <Notification 
+      type="info"
+      shadowLevel="zero"
+      hasCloseButton
+   >
+      Отсутствие заголовка и ссылки.<br />
+      Если высота текста больше высоты иконки, то они выравниваются по верху контентной области.
+   </Notification>
+
+   <Notification 
+      type="info"
+      shadowLevel="zero"
+      hasCloseButton
+   >
+     Центрирование по вертикали, при небольшой высоте текста. 
    </Notification>
 </Playground>

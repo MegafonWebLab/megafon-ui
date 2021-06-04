@@ -16,23 +16,18 @@
 
     &__container {
         display: flex;
-        align-items: flex-start;
     }
 
     &__title {
         margin-bottom: 8px;
 
-        @media @mobileBU {
+        @media @desktopMU {
             margin-bottom: 4px;
         }
     }
 
     &__title_close-padding {
         padding-right: 20px;
-
-        @media @mobileBU {
-            padding-right: 0;
-        }
     }
 
     &__text {
@@ -42,10 +37,6 @@
 
     &__text_close-padding {
         padding-right: 20px;
-
-        @media @mobileBU {
-            padding-right: 0;
-        }
     }
 
     &__content {
@@ -54,6 +45,7 @@
         align-items: flex-start;
         margin-left: 12px;
         max-width: 212px;
+        align-self: center;
 
         @media @mobileBU {
             max-width: 540px;
@@ -76,6 +68,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        align-self: flex-start;
     }
 
     &__attention-icon,
