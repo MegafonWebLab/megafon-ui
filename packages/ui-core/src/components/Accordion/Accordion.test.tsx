@@ -6,6 +6,9 @@ const props: IAccordionProps = {
     title: 'Test',
     isOpened: false,
     hasVerticalPaddings: false,
+    dataAttrs: {
+        'data-test': 'data-test-value',
+    },
     onClickAccordion: jest.fn(),
 };
 
