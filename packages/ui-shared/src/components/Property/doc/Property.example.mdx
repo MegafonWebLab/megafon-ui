@@ -2,8 +2,40 @@ import { ContentArea } from '@megafon/ui-core';
 import { Playground } from 'docz';
 import Property from '../Property';
 import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
-import { valueInSeveralRow, textWithLink, titleWithLink } from './Property.docz.tsx';
+import { valueInSeveralRow, textWithLink, titleWithLink, textWithParagraph } from './Property.docz.tsx';
 import Container from '../../Container/Container';
+
+```javascript collapse=Демо данные
+
+import { convert, TextLink, Paragraph } from '@megafon/ui-core';
+
+const convertConfig = {
+    a: {
+        component: TextLink,
+        props: ['href'],
+    },
+    p: {
+        component: Paragraph,
+        props: ['size', 'hasMargin'],
+    },
+};
+
+const titleWithLink = convert(
+    'Тарифы <a href="https://moscow.megafon.ru">Включайся!</a>, с которыми работает опция',
+    convertConfig
+);
+
+const textWithLink = convert(
+    '<a href="https://moscow.megafon.ru">Выбирай, Смотри, Слушай, Говори, Общайся</a>',
+    convertConfig
+);
+
+const textWithParagraph = convert(
+    '<p hasMargin="false">Почта</p><p size="small">Mail.ru, Яндекс.Почта, Gmail</p><p hasMargin="false">Мессенджеры</p><p size="small">WhatsApp, Viber, Facebook Messenger, Snapchat, eMotion, ТамТам</p>',
+    convertConfig
+);
+
+```
 
 ## Только заголовок
 
@@ -93,13 +125,13 @@ import Container from '../../Container/Container';
     </ContentArea>
 </Playground>
 
-## C ссылками
+## Добавление компонентов
 
 В качестве заголовка и описания можно использовать другие компоненты.
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: [titleWithLink], value: '500 ₽', description: [{ value: textWithLink }]}]}/>
+        <Property items={[{title: [titleWithLink], value: '500 ₽', description: [{ value: textWithLink }, { value: textWithParagraph }]}]}/>
     </ContentArea>
 </Playground>
 
