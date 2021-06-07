@@ -28,24 +28,13 @@ describe('<BenefitsIconsTile />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('renders BenefitsIconsTile with html in text field', () => {
+    it('renders BenefitsIconsTile with react node in text field', () => {
         const newProps = {
             ...props,
-            text: '<ul as="ol" color="red"><li><p>пункт 1</p></li><li>пункт 2</li><li><a>пункт</a> <b>3</b></li></ul>',
+            text: [<div key="test">test</div>],
         };
 
         const wrapper = shallow(<BenefitsIconsTile {...newProps} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('renders BenefitsIconsTile with html(span) in text field', () => {
-        const newProps = {
-            ...props,
-            text: '<span class="test"><b class="red">*</b><b class="num">105</b></span>',
-        };
-
-        const wrapper = shallow(<BenefitsIconsTile {...newProps} />);
-
         expect(wrapper).toMatchSnapshot();
     });
 });

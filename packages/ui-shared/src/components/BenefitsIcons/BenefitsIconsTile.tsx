@@ -2,15 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import convert from 'htmr';
 import './style/BenefitsIconsTile.less';
-import {
-    List,
-    Header,
-    cnCreate,
-    TextLink,
-    ListItem,
-    Paragraph,
-    convert as htmlToReactComponent
-} from '@megafon/ui-core';
+import { Header, cnCreate } from '@megafon/ui-core';
 import { IBenefit, IconPositionEnum, IconPosition } from './types';
 
 export interface IBenefitsIconsTile extends IBenefit {
@@ -19,32 +11,6 @@ export interface IBenefitsIconsTile extends IBenefit {
 }
 
 const cn = cnCreate('mfui-beta-benefits-icons-tile');
-
-const typographyConfig = {
-    ul: {
-        component: List,
-        props: ['as', 'weight', 'color'],
-    },
-    li: {
-        component: ListItem,
-    },
-    p: {
-        component: Paragraph,
-        props: ['color'],
-        customProps: { className: cn('text') },
-    },
-    a: {
-        component: TextLink,
-        props: ['href', 'target'],
-    },
-    b: {
-        component: ({ children, className }) => <b className={className}>{children}</b>,
-    },
-    span: {
-        component: ({ children, className }) => <span className={className}>{children}</span>,
-    },
-};
-
 const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
     title,
     text,
@@ -62,11 +28,7 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
             )}
             {text && (
                 <div className={cn('content')}>
-                    {/* temporary fix*/}
-                    {typeof text === 'string'
-                        ? htmlToReactComponent(text, typographyConfig)
-                        : text
-                    }
+                    {text}
                 </div>
             )}
         </div>
@@ -76,7 +38,7 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
 BenefitsIconsTile.propTypes = {
     className: PropTypes.string,
     title: PropTypes.string,
-    text: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
     icon: PropTypes.node,
 };

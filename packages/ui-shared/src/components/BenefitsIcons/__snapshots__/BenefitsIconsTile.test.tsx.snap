@@ -29,7 +29,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
 </div>
 `;
 
-exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field 1`] = `
+exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with react node in text field 1`] = `
 <div
   className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
 >
@@ -52,90 +52,11 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field
     <div
       className="mfui-beta-benefits-icons-tile__content"
     >
-      <List
-        as="ol"
-        color="red"
-        key="0"
+      <div
+        key="test"
       >
-        <ListItem
-          key="0"
-        >
-          <Paragraph
-            className="mfui-beta-benefits-icons-tile__text"
-            key="0"
-          >
-            пункт 1
-          </Paragraph>
-        </ListItem>
-        <ListItem
-          key="1"
-        >
-          пункт 2
-        </ListItem>
-        <ListItem
-          key="2"
-        >
-          <TextLink
-            color="blue"
-            key="0"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            пункт
-          </TextLink>
-           
-          <component
-            key="2"
-          >
-            3
-          </component>
-        </ListItem>
-      </List>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html(span) in text field 1`] = `
-<div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
->
-  <div
-    className="mfui-beta-benefits-icons-tile__svg-icon"
-  >
-    <test-file-stub />
-  </div>
-  <div
-    className="mfui-beta-benefits-icons-tile__content-wrapper"
-  >
-    <Header
-      as="h5"
-      className="mfui-beta-benefits-icons-tile__title"
-      color="black"
-      hAlign="inherit"
-    >
-      title
-    </Header>
-    <div
-      className="mfui-beta-benefits-icons-tile__content"
-    >
-      <component
-        className="test"
-        key="0"
-      >
-        <component
-          className="red"
-          key="0"
-        >
-          *
-        </component>
-        <component
-          className="num"
-          key="1"
-        >
-          105
-        </component>
-      </component>
+        test
+      </div>
     </div>
   </div>
 </div>

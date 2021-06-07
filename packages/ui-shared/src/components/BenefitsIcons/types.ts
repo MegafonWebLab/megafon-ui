@@ -4,7 +4,7 @@ export interface IBenefit {
     /** Заголовок бенефита */
     title?: string;
     /** Основной текст в бенефите */
-    text?: string | React.ReactNode[];
+    text?: string | React.ReactNode | React.ReactNode[];
     /** Иконка */
     icon: React.ReactNode;
 }
