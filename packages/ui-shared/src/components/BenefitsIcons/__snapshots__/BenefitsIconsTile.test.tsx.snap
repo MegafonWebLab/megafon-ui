@@ -2,7 +2,7 @@
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
     className="mfui-beta-benefits-icons-tile__svg-icon"
@@ -31,7 +31,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
     className="mfui-beta-benefits-icons-tile__svg-icon"
@@ -98,7 +98,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html in text field
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html(span) in text field 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
     className="mfui-beta-benefits-icons-tile__svg-icon"
@@ -143,7 +143,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with html(span) in text
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
     className="mfui-beta-benefits-icons-tile__svg-icon"
@@ -167,7 +167,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without title 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side"
+  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
     className="mfui-beta-benefits-icons-tile__svg-icon"

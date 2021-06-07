@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import BenefitsPictures, { IBenefitsPicturesProps } from './BenefitsPictures';
 import { fourItems, threeItems, twoItems } from './doc/BenefitsPictures.docz';
 
@@ -7,6 +7,11 @@ const props: IBenefitsPicturesProps = {
     items: twoItems,
     hAlign: 'left',
     gridGap: 'large',
+    className: 'class-name',
+    classes: {
+        root: 'root-class',
+        item: 'item-class',
+    },
 };
 
 const itemsSet = [
@@ -51,5 +56,13 @@ describe('<BenefitsPictures />', () => {
 
         const wrapper = shallow(<BenefitsPictures {...props} items={itemsLocal} />);
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<BenefitsPictures {...props} rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
     });
 });

@@ -6,12 +6,19 @@ import BenefitsIconsTile from './BenefitsIconsTile';
 import { GridConfig, IconPositionEnum, IconPosition, IBenefit } from './types';
 
 export interface IBenefitsIcons {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Позиция иконки */
     iconPosition?: IconPosition;
     /** Список бенефитов */
     items: IBenefit[];
-    /** Дополнительный класс корневого элемента */
+    /** Дополнительный css класс для корневого элемента */
     className?: string;
+    /** Дополнительные css классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        item?: string;
+    };
 }
 
 // left-aligned column with left side icon,
@@ -114,19 +121,22 @@ const getColumnConfig = (iconPosition: IconPosition, count: number, index: numbe
 
 const cn = cnCreate('mfui-beta-benefits-icons');
 const BenefitsIcons: React.FC<IBenefitsIcons> = ({
+    rootRef,
     iconPosition = 'left-top',
     items,
     className,
+    classes = {},
 }) => {
     const hAlign = iconPosition === IconPositionEnum.CENTER_TOP ? 'center' : 'left';
 
     return (
-        <div className={cn([className])}>
+        <div className={cn([className, classes.root])} ref={rootRef}>
             <div className={cn('inner')}>
                 <Grid guttersLeft="medium" hAlign={hAlign}>
                     {items.map(({ title, text, icon }, i) => (
                         <GridColumn {...getColumnConfig(iconPosition, items.length, i)} key={i}>
                             <BenefitsIconsTile
+                                className={classes.item}
                                 title={title}
                                 text={text}
                                 icon={icon}
@@ -141,6 +151,10 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
 };
 
 BenefitsIcons.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
     items: PropTypes.arrayOf(
         PropTypes.shape({
@@ -150,6 +164,10 @@ BenefitsIcons.propTypes = {
         }).isRequired
     ).isRequired,
     className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        item: PropTypes.string,
+    }),
 };
 
 export default BenefitsIcons;
