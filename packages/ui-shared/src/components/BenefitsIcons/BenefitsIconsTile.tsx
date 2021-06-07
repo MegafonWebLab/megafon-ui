@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PropTypes, { string } from 'prop-types';
+import PropTypes from 'prop-types';
 import convert from 'htmr';
 import './style/BenefitsIconsTile.less';
 import {
@@ -74,7 +74,7 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
 );
 
 BenefitsIconsTile.propTypes = {
-    className: string,
+    className: PropTypes.string,
     title: PropTypes.string,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
