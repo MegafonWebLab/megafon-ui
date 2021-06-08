@@ -46,7 +46,7 @@ export interface IButtonBannerProps {
     /** Заголовок */
     title: string;
     /** Текст */
-    text: string;
+    text: string | React.ReactNode[];
     /** URL изображения */
     imageUrl?: string;
     /** Текст кнопки */
@@ -113,7 +113,13 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
                <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
                     <div className={cn('content')}>
                         <Header className={cn('header')} as="h2">{title}</Header>
-                        <Paragraph className={cn('text')} hasMargin={false}>{convert(text, convertConfig)}</Paragraph>
+                        <Paragraph className={cn('text')} hasMargin={false}>
+                            {/* temporary fix*/}
+                            {typeof text === 'string'
+                                ? convert(text, convertConfig)
+                                : text
+                            }
+                        </Paragraph>
                         {!!imageUrl && buttonElem}
                     </div>
                </GridColumn>
@@ -139,7 +145,7 @@ ButtonBanner.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
     title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     imageUrl: PropTypes.string,
     buttonText: PropTypes.string.isRequired,
     buttonUrl: PropTypes.string,
