@@ -72,7 +72,7 @@ export interface IContent {
     /** Добавляет атрибут download для тега <a> компонента TextLink */
     linkDownload?: boolean;
     /** Строка со стоимостью услуги */
-    cost?: string;
+    cost?: string | React.ReactNode[];
 }
 
 interface IVideoBannerProps {
@@ -140,7 +140,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         linkUrl,
         linkDownload,
         cost,
-    }) => (
+    }: IContent) => (
         <div className={cn('content', {
                 'text-color': textColor,
                 'text-color-mobile': textColorMobile,
@@ -153,7 +153,11 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 </Header>
                 {cost && (
                     <div className={cn('cost')}>
-                        {convert(cost, typographyConfig)}
+                        {/* temporary fix*/}
+                        {typeof cost === 'string'
+                            ? convert(cost, typographyConfig)
+                            : cost
+                        }
                     </div>
                 )}
             </div>
@@ -294,7 +298,7 @@ VideoBanner.propTypes = {
         linkTitle: PropTypes.string,
         linkUrl: PropTypes.string,
         linkDownload: PropTypes.bool,
-        cost: PropTypes.string,
+        cost: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
     }),
     isMuted: PropTypes.bool,
     imageMobile: PropTypes.string.isRequired,
