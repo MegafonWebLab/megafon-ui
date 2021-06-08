@@ -4,6 +4,8 @@ import { cnCreate, Grid, GridColumn, Accordion } from '@megafon/ui-core';
 import './AccordionBox.less';
 
 export interface IAccordionBox {
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок аккордеона */
@@ -48,6 +50,7 @@ const AccordionBox: React.FC<IAccordionBox> = ({
 };
 
 AccordionBox.propTypes = {
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),

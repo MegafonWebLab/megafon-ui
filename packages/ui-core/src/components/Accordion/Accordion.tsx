@@ -6,8 +6,9 @@ import Header from 'components/Header/Header';
 import Collapse from 'components/Collapse/Collapse';
 import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
 import ArrowDown from 'icons/System/24/Arrow_down_24.svg';
+import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
-export interface IAccordionProps {
+export interface IAccordionProps extends IDataAttributes {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок */
@@ -40,6 +41,7 @@ const Accordion: React.FC<IAccordionProps> = ({
         root: rootPropsClasses,
         collapse: collapsePropsClasses,
     } = {},
+    dataAttrs,
     onClickAccordion,
     children,
 }) => {
@@ -57,6 +59,7 @@ const Accordion: React.FC<IAccordionProps> = ({
 
     return (
         <div
+            {...filterDataAttrs(dataAttrs)}
             ref={rootRef}
             className={cn({ open: isOpenedState }, [className, rootPropsClasses, isOpenedState && openedClass])}
         >
@@ -94,6 +97,7 @@ Accordion.propTypes = {
         root: PropTypes.string,
         collapse: PropTypes.string,
     }),
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onClickAccordion: PropTypes.func,
 };
 
