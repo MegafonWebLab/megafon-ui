@@ -25,6 +25,7 @@ export interface IAccordionBox {
         openedClass?: string;
         root?: string;
         collapse?: string;
+        titleWrap?: string;
     };
     /** Обработчик клика */
     onClickAccordion?: (isOpened: boolean, title: string) => void;
@@ -65,6 +66,7 @@ AccordionBox.propTypes = {
         openedClass: PropTypes.string,
         root: PropTypes.string,
         collapse: PropTypes.string,
+        titleWrap: PropTypes.string,
     }),
     onClickAccordion: PropTypes.func,
 };
