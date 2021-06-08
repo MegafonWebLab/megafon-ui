@@ -5,6 +5,7 @@ exports[`<TextLink /> it renders TextLink 1`] = `
   className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_white class"
   download={true}
   href="href"
+  rel="noopener"
   target="_self"
 >
   text

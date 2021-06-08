@@ -42,6 +42,7 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
             className,
             target,
             href,
+            rel,
             onClick,
             children,
             download,
@@ -51,6 +52,7 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
             <Link
                 target={target}
                 href={href}
+                rel={rel}
                 onClick={onClick}
                 children={children}
                 className={cn('', {
