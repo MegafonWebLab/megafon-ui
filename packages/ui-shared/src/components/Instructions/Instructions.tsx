@@ -25,7 +25,7 @@ type PictureAlignTypesType = typeof pictureAlignTypes[keyof typeof pictureAlignT
 type PictureMaskTypesType = typeof pictureMaskTypes[keyof typeof pictureMaskTypes];
 
 export type InstructionItemType = {
-    title: string;
+    title: string | React.ReactNode[];
     mediaUrl: string;
     isVideo: boolean;
 };
@@ -156,7 +156,11 @@ const Instructions: React.FC<IInstructionsProps> = ({
                         <span className={cn('articles-item-dot-number')}>{ind + 1}</span>
                     </div>
                     <Paragraph className={cn('articles-item-title')} hasMargin={false}>
-                        {convert(itemTitle, typographyConfig)}
+                        {/* temporary fix*/}
+                        {typeof itemTitle === 'string'
+                            ? convert(itemTitle, typographyConfig)
+                            : itemTitle
+                        }
                     </Paragraph>
                 </li>
             ))}
@@ -169,7 +173,11 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 {instructionItems.map(({ title: itemTitle }, ind) => (
                     slideIndex === ind &&
                         <Paragraph className={cn('articles-title')} hasMargin={false} key={ind}>
-                            {convert(itemTitle, typographyConfig)}
+                            {/* temporary fix*/}
+                            {typeof itemTitle === 'string'
+                                ? convert(itemTitle, typographyConfig)
+                                : itemTitle
+                            }
                         </Paragraph>
                 ))}
             </div>
@@ -237,7 +245,7 @@ Instructions.propTypes = {
     title: PropTypes.string.isRequired,
     instructionItems: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.string.isRequired,
+            title: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
             mediaUrl: PropTypes.string.isRequired,
             isVideo: PropTypes.bool.isRequired,
         }).isRequired
