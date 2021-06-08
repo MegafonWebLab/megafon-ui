@@ -4,7 +4,7 @@ import ButtonBanner, { IButtonBannerProps, ButtonTarget, ButtonColor, ImageScali
 
 const requiredProps: IButtonBannerProps = {
     title: 'Заголовок',
-    text: 'Текст <a href="#" target="_blank">тект</a>',
+    text: 'Текст',
     buttonText: 'Кнопка',
 };
 

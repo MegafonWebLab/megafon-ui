@@ -26,22 +26,11 @@ exports[`<ButtonBanner /> should render with props 1`] = `
         >
           Заголовок
         </Header>
-        <Paragraph
+        <div
           className="mfui-beta-button-banner__text"
-          hasMargin={false}
         >
-          Текст 
-          <TextLink
-            color="blue"
-            href="#"
-            key="1"
-            target="_blank"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            тект
-          </TextLink>
-        </Paragraph>
+          Текст
+        </div>
         <Button
           className="mfui-beta-button-banner__button buttonClass"
           download={true}
@@ -95,22 +84,11 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
         >
           Заголовок
         </Header>
-        <Paragraph
+        <div
           className="mfui-beta-button-banner__text"
-          hasMargin={false}
         >
-          Текст 
-          <TextLink
-            color="blue"
-            href="#"
-            key="1"
-            target="_blank"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            тект
-          </TextLink>
-        </Paragraph>
+          Текст
+        </div>
       </div>
     </GridColumn>
     <GridColumn

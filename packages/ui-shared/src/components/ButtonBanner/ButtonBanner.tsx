@@ -7,9 +7,6 @@ import {
     Grid,
     GridColumn,
     Header,
-    Paragraph,
-    TextLink,
-    convert,
     dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
 
@@ -46,7 +43,7 @@ export interface IButtonBannerProps {
     /** Заголовок */
     title: string;
     /** Текст */
-    text: string;
+    text: string | React.ReactNode | React.ReactNode[];
     /** URL изображения */
     imageUrl?: string;
     /** Текст кнопки */
@@ -66,12 +63,6 @@ export interface IButtonBannerProps {
 }
 
 const getMediaStyle = (imageUrl: string) => imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined;
-const convertConfig = {
-    a: {
-        component: TextLink,
-        props: ['href', 'target'],
-    },
-};
 
 const cn = cnCreate('mfui-beta-button-banner');
 const ButtonBanner: React.FC<IButtonBannerProps> = ({
@@ -113,7 +104,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
                <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
                     <div className={cn('content')}>
                         <Header className={cn('header')} as="h2">{title}</Header>
-                        <Paragraph className={cn('text')} hasMargin={false}>{convert(text, convertConfig)}</Paragraph>
+                        <div className={cn('text')}>{text}</div>
                         {!!imageUrl && buttonElem}
                     </div>
                </GridColumn>
@@ -139,7 +130,7 @@ ButtonBanner.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
     title: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     imageUrl: PropTypes.string,
     buttonText: PropTypes.string.isRequired,
     buttonUrl: PropTypes.string,
