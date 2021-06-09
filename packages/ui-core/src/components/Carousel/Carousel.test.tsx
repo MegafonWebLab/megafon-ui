@@ -116,4 +116,11 @@ describe('<Carousel />', () => {
 
         expect(props.onChange).toBeCalled();
     });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+        mount(<Carousel {...props} rootRef={ref}><DemoSlide>1</DemoSlide></Carousel>);
+
+        expect(ref.current).not.toBeNull();
+    });
 });
