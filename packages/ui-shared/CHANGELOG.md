@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.203](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.202...@megafon/ui-shared@2.0.0-beta.203) (2021-06-09)
+
+
+### Bug Fixes
+
+* **benefitsiconstile:** remove convert ([984bb26](https://github.com/MegafonWebLab/megafon-ui/commit/984bb2615359fbb710e6fb9ffd1797bf6fadddea))
+* **buttonbanner:** convert removed ([7b2c5fc](https://github.com/MegafonWebLab/megafon-ui/commit/7b2c5fc2867d35f44b73c4a6ef4588e8882fbc9e))
+* **instructions:** convert removed ([986cc51](https://github.com/MegafonWebLab/megafon-ui/commit/986cc51d4b33ad3a8435f51aa39018a1a7cb0422))
+
+
+### Features
+
+* **accordionbox:** add title to classes ([1f9c798](https://github.com/MegafonWebLab/megafon-ui/commit/1f9c798f69155c1976598c5b905f861e5774ca96))
+* **downloadlink:** add ref props ([4a287e2](https://github.com/MegafonWebLab/megafon-ui/commit/4a287e2fade6a83b0cd88ec477f0137502f32077))
+
+
+### BREAKING CHANGES
+
+* **instructions:** convert removed
+* **buttonbanner:** convert removed
+* **benefitsiconstile:** convert removed
+
+
+
+
+
 # [2.0.0-beta.202](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.201...@megafon/ui-shared@2.0.0-beta.202) (2021-06-08)
 
 **Note:** Version bump only for package @megafon/ui-shared

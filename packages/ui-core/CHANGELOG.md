@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.140](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.139...@megafon/ui-core@2.0.0-beta.140) (2021-06-09)
+
+
+### Features
+
+* **accordion:** add 'title' to classes ([dc7cc28](https://github.com/MegafonWebLab/megafon-ui/commit/dc7cc28551693f97c57f0e852c0621ebd2af5677))
+* **carusel:** add ref ([b1b2889](https://github.com/MegafonWebLab/megafon-ui/commit/b1b28893dc27d9aa03033c9bc8577c60d85922a7))
+
+
+
+
+
 # [2.0.0-beta.139](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.138...@megafon/ui-core@2.0.0-beta.139) (2021-06-08)
 
 
