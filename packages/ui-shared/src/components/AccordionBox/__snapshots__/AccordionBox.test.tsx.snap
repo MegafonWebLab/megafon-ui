@@ -17,6 +17,7 @@ exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide
             "collapse": "collapseClass",
             "openedClass": "isOpenClass",
             "root": "rootClass",
+            "titleWrap": "titleWrapClass",
           }
         }
         dataAttrs={
@@ -56,6 +57,7 @@ exports[`<AccordionBox /> should render with props 1`] = `
             "collapse": "collapseClass",
             "openedClass": "isOpenClass",
             "root": "rootClass",
+            "titleWrap": "titleWrapClass",
           }
         }
         dataAttrs={
@@ -86,6 +88,7 @@ exports[`<AccordionBox /> should render without grid when isFullWidth is true 1`
       "collapse": "collapseClass",
       "openedClass": "isOpenClass",
       "root": "rootClass",
+      "titleWrap": "titleWrapClass",
     }
   }
   dataAttrs={

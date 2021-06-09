@@ -19,7 +19,7 @@ const items: InstructionItemType[] = [
         isVideo: true,
     },
     {
-        title: 'Test2 <a href="/test" target="_blank">test link</a>',
+        title: 'Test2',
         mediaUrl: 'ImgUrl2',
         isVideo: false,
     },

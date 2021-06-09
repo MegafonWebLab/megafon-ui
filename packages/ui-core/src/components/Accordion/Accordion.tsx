@@ -24,6 +24,7 @@ export interface IAccordionProps extends IDataAttributes {
         openedClass?: string;
         root?: string;
         collapse?: string;
+        titleWrap?: string;
     };
     /** Обработчик клика */
     onClickAccordion?: (isOpened: boolean, title: string) => void;
@@ -40,6 +41,7 @@ const Accordion: React.FC<IAccordionProps> = ({
         openedClass,
         root: rootPropsClasses,
         collapse: collapsePropsClasses,
+        titleWrap: titleWrapPropsClasses,
     } = {},
     dataAttrs,
     onClickAccordion,
@@ -63,7 +65,7 @@ const Accordion: React.FC<IAccordionProps> = ({
             ref={rootRef}
             className={cn({ open: isOpenedState }, [className, rootPropsClasses, isOpenedState && openedClass])}
         >
-            <div className={cn('title-wrap')} onClick={handleClickTitle}>
+            <div className={cn('title-wrap', [titleWrapPropsClasses])} onClick={handleClickTitle}>
                 <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpenedState })}>
                     {isOpenedState
@@ -96,6 +98,7 @@ Accordion.propTypes = {
         openedClass: PropTypes.string,
         root: PropTypes.string,
         collapse: PropTypes.string,
+        titleWrap: PropTypes.string,
     }),
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onClickAccordion: PropTypes.func,

@@ -4,7 +4,7 @@ import './Instructions.less';
 import throttle from 'lodash.throttle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
-import { breakpoints, cnCreate, Grid, GridColumn, Header, Paragraph, convert, TextLink } from '@megafon/ui-core';
+import { breakpoints, cnCreate, Grid, GridColumn, Header } from '@megafon/ui-core';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -25,7 +25,7 @@ type PictureAlignTypesType = typeof pictureAlignTypes[keyof typeof pictureAlignT
 type PictureMaskTypesType = typeof pictureMaskTypes[keyof typeof pictureMaskTypes];
 
 export type InstructionItemType = {
-    title: string;
+    title: string | React.ReactNode | React.ReactNode[];
     mediaUrl: string;
     isVideo: boolean;
 };
@@ -47,16 +47,6 @@ export interface IInstructionsProps {
     /** Маска изображения */
     pictureMask?: PictureMaskTypesType;
 }
-
-const typographyConfig = {
-    a: {
-        component: TextLink,
-        props: ['href', 'target'],
-    },
-    b: {
-        component: ({ children }) => <b>{children}</b>,
-    },
-};
 
 const cn = cnCreate('mfui-beta-instructions');
 const swiperSlideCn = cn('slide');
@@ -155,9 +145,9 @@ const Instructions: React.FC<IInstructionsProps> = ({
                     <div className={cn('articles-item-dot')}>
                         <span className={cn('articles-item-dot-number')}>{ind + 1}</span>
                     </div>
-                    <Paragraph className={cn('articles-item-title')} hasMargin={false}>
-                        {convert(itemTitle, typographyConfig)}
-                    </Paragraph>
+                    <div className={cn('articles-item-title')}>
+                        {itemTitle}
+                    </div>
                 </li>
             ))}
         </ul>
@@ -168,9 +158,9 @@ const Instructions: React.FC<IInstructionsProps> = ({
             <div className={cn('articles-title-block')}>
                 {instructionItems.map(({ title: itemTitle }, ind) => (
                     slideIndex === ind &&
-                        <Paragraph className={cn('articles-title')} hasMargin={false} key={ind}>
-                            {convert(itemTitle, typographyConfig)}
-                        </Paragraph>
+                        <div className={cn('articles-title')} key={ind}>
+                            {itemTitle}
+                        </div>
                 ))}
             </div>
             <ul className={cn('articles-dots')}>
@@ -237,7 +227,9 @@ Instructions.propTypes = {
     title: PropTypes.string.isRequired,
     instructionItems: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.string.isRequired,
+            title: PropTypes.oneOfType([
+                PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node),
+            ]).isRequired,
             mediaUrl: PropTypes.string.isRequired,
             isVideo: PropTypes.bool.isRequired,
         }).isRequired
