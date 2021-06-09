@@ -41,6 +41,8 @@ export type SlidesSettingsType = {
 };
 
 export interface ICarouselProps extends IDataAttributes {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительные классы для корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -109,6 +111,7 @@ const defaultSlidesSettings: SlidesSettingsType = {
 
 const cn = cnCreate('mfui-beta-carousel');
 const Carousel: React.FC<ICarouselProps> = ({
+    rootRef,
     className,
     classes: {
         root: rootClass,
@@ -228,6 +231,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     return (
         <div
             {...filterDataAttrs(dataAttrs)}
+            ref={rootRef}
             className={cn({ 'nav-theme': navTheme }, [className, rootClass])}
             onClick={handleRootClick}
         >
@@ -281,6 +285,10 @@ const Carousel: React.FC<ICarouselProps> = ({
 };
 
 Carousel.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
