@@ -159,7 +159,7 @@ BenefitsIcons.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string,
-            text: PropTypes.string,
+            text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
             icon: PropTypes.node.isRequired,
         }).isRequired
     ).isRequired,

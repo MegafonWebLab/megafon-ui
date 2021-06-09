@@ -85,12 +85,11 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
                   1
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
                 Test1
-              </Paragraph>
+              </div>
             </li>
             <li
               className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
@@ -106,22 +105,11 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
                   2
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
-                Test2 
-                <TextLink
-                  color="blue"
-                  href="/test"
-                  key="1"
-                  target="_blank"
-                  underlineStyle="solid"
-                  underlineVisibility="hover"
-                >
-                  test link
-                </TextLink>
-              </Paragraph>
+                Test2
+              </div>
             </li>
           </ul>
         </div>
@@ -216,12 +204,11 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
                   1
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
                 Test1
-              </Paragraph>
+              </div>
             </li>
             <li
               className="mfui-beta-instructions__articles-item"
@@ -237,22 +224,11 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
                   2
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
-                Test2 
-                <TextLink
-                  color="blue"
-                  href="/test"
-                  key="1"
-                  target="_blank"
-                  underlineStyle="solid"
-                  underlineVisibility="hover"
-                >
-                  test link
-                </TextLink>
-              </Paragraph>
+                Test2
+              </div>
             </li>
           </ul>
         </div>
@@ -354,12 +330,11 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
                   1
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
                 Test1
-              </Paragraph>
+              </div>
             </li>
             <li
               className="mfui-beta-instructions__articles-item"
@@ -375,22 +350,11 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
                   2
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
-                Test2 
-                <TextLink
-                  color="blue"
-                  href="/test"
-                  key="1"
-                  target="_blank"
-                  underlineStyle="solid"
-                  underlineVisibility="hover"
-                >
-                  test link
-                </TextLink>
-              </Paragraph>
+                Test2
+              </div>
             </li>
           </ul>
         </div>
@@ -485,12 +449,11 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
                   1
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
                 Test1
-              </Paragraph>
+              </div>
             </li>
             <li
               className="mfui-beta-instructions__articles-item"
@@ -506,22 +469,11 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
                   2
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
-                Test2 
-                <TextLink
-                  color="blue"
-                  href="/test"
-                  key="1"
-                  target="_blank"
-                  underlineStyle="solid"
-                  underlineVisibility="hover"
-                >
-                  test link
-                </TextLink>
-              </Paragraph>
+                Test2
+              </div>
             </li>
           </ul>
         </div>
@@ -543,7 +495,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
       Object {
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
-        "title": "Test2 <a href=\\"/test\\" target=\\"_blank\\">test link</a>",
+        "title": "Test2",
       },
     ]
   }
@@ -2068,17 +2020,12 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                   <div
                     className="mfui-beta-instructions__articles-title-block"
                   >
-                    <Paragraph
+                    <div
                       className="mfui-beta-instructions__articles-title"
-                      hasMargin={false}
                       key="0"
                     >
-                      <p
-                        className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-instructions__articles-title"
-                      >
-                        Test1
-                      </p>
-                    </Paragraph>
+                      Test1
+                    </div>
                   </div>
                   <ul
                     className="mfui-beta-instructions__articles-dots"
@@ -2129,7 +2076,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
       Object {
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
-        "title": "Test2 <a href=\\"/test\\" target=\\"_blank\\">test link</a>",
+        "title": "Test2",
       },
     ]
   }
@@ -3654,17 +3601,12 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                   <div
                     className="mfui-beta-instructions__articles-title-block"
                   >
-                    <Paragraph
+                    <div
                       className="mfui-beta-instructions__articles-title"
-                      hasMargin={false}
                       key="0"
                     >
-                      <p
-                        className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-instructions__articles-title"
-                      >
-                        Test1
-                      </p>
-                    </Paragraph>
+                      Test1
+                    </div>
                   </div>
                   <ul
                     className="mfui-beta-instructions__articles-dots"
@@ -3715,7 +3657,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
       Object {
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
-        "title": "Test2 <a href=\\"/test\\" target=\\"_blank\\">test link</a>",
+        "title": "Test2",
       },
     ]
   }
@@ -5254,16 +5196,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                           1
                         </span>
                       </div>
-                      <Paragraph
+                      <div
                         className="mfui-beta-instructions__articles-item-title"
-                        hasMargin={false}
                       >
-                        <p
-                          className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-instructions__articles-item-title"
-                        >
-                          Test1
-                        </p>
-                      </Paragraph>
+                        Test1
+                      </div>
                     </li>
                     <li
                       className="mfui-beta-instructions__articles-item"
@@ -5279,38 +5216,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                           2
                         </span>
                       </div>
-                      <Paragraph
+                      <div
                         className="mfui-beta-instructions__articles-item-title"
-                        hasMargin={false}
                       >
-                        <p
-                          className="mfui-beta-paragraph mfui-beta-paragraph_size_regular mfui-beta-paragraph_color_freshAsphalt mfui-beta-instructions__articles-item-title"
-                        >
-                          Test2 
-                          <TextLink
-                            color="blue"
-                            href="/test"
-                            key="1"
-                            target="_blank"
-                            underlineStyle="solid"
-                            underlineVisibility="hover"
-                          >
-                            <Link
-                              className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue"
-                              href="/test"
-                              target="_blank"
-                            >
-                              <a
-                                className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue"
-                                href="/test"
-                                target="_blank"
-                              >
-                                test link
-                              </a>
-                            </Link>
-                          </TextLink>
-                        </p>
-                      </Paragraph>
+                        Test2
+                      </div>
                     </li>
                   </ul>
                 </div>
@@ -5409,12 +5319,11 @@ exports[`<Instructions /> should render with classes props 1`] = `
                   1
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
                 Test1
-              </Paragraph>
+              </div>
             </li>
             <li
               className="mfui-beta-instructions__articles-item test-class_articleItem"
@@ -5430,22 +5339,11 @@ exports[`<Instructions /> should render with classes props 1`] = `
                   2
                 </span>
               </div>
-              <Paragraph
+              <div
                 className="mfui-beta-instructions__articles-item-title"
-                hasMargin={false}
               >
-                Test2 
-                <TextLink
-                  color="blue"
-                  href="/test"
-                  key="1"
-                  target="_blank"
-                  underlineStyle="solid"
-                  underlineVisibility="hover"
-                >
-                  test link
-                </TextLink>
-              </Paragraph>
+                Test2
+              </div>
             </li>
           </ul>
         </div>
