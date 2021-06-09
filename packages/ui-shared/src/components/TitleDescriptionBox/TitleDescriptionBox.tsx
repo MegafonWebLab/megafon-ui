@@ -13,6 +13,8 @@ import './TitleDescriptionBox.less';
 export interface ITitleDescriptionBoxProps {
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Заголовок */
@@ -32,6 +34,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     description,
     textColor,
     hAlign,
+    rootRef,
     className,
 }) => {
     const renderDescription = React.useCallback(() => {
@@ -57,6 +60,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
                 {'h-align': hAlign, 'text-color': textColor},
                 className
             )}
+            ref={rootRef}
         >
             <Grid hAlign={hAlign}>
                 <GridColumn wide="8" desktop="10">
@@ -78,6 +82,10 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
 
 TitleDescriptionBox.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
+    ]),
     className: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
