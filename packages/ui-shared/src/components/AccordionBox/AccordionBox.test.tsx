@@ -15,6 +15,7 @@ const props: IAccordionBox = {
         openedClass: 'isOpenClass',
         root: 'rootClass',
         collapse: 'collapseClass',
+        titleWrap: 'titleWrapClass',
     },
     onClickAccordion: jest.fn(),
 };

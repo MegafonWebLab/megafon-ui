@@ -72,6 +72,7 @@ describe('<Accordion />', () => {
                 openedClass: 'testIsOpenClass',
                 root: 'testRootClass',
                 collapse: 'testCollapseClass',
+                titleWrap: 'testTitleWrapClass',
             },
         };
         const wrapper = mount(
@@ -79,13 +80,15 @@ describe('<Accordion />', () => {
         );
         const rootNode = wrapper.find('.mfui-beta-accordion');
         const contentNode = wrapper.find('Collapse');
+        const titleWrapNode = wrapper.find('.mfui-beta-accordion__title-wrap');
 
         expect(rootNode.hasClass('testClassName')).toEqual(true);
         expect(rootNode.hasClass('testRootClass')).toEqual(true);
         expect(rootNode.hasClass('testIsOpenClass')).toEqual(false);
         expect(contentNode.hasClass('testCollapseClass')).toEqual(true);
+        expect(titleWrapNode.hasClass('testTitleWrapClass')).toEqual(true);
 
-        wrapper.find('.mfui-beta-accordion__title-wrap').simulate('click');
+        titleWrapNode.simulate('click');
         wrapper.update();
 
         const newRootNode = wrapper.find('.mfui-beta-accordion');
