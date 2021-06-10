@@ -2,7 +2,7 @@ type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10
 
 export interface IBenefit {
     /** Заголовок бенефита */
-    title?: string;
+    title?: string | React.ReactNode | React.ReactNode[];
     /** Основной текст в бенефите */
     text?: string | React.ReactNode | React.ReactNode[];
     /** Иконка */

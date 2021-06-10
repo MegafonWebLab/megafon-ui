@@ -1,6 +1,5 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import convert from 'htmr';
 import './style/BenefitsIconsTile.less';
 import { Header, cnCreate } from '@megafon/ui-core';
 import { IBenefit, IconPositionEnum, IconPosition } from './types';
@@ -18,12 +17,12 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
     iconPosition = IconPositionEnum.LEFT_TOP,
     className,
 }) => (
-    <div className={cn('', { 'icon-position': iconPosition }, [className])}>
+    <div className={cn({ 'icon-position': iconPosition }, [className])}>
         <div className={cn('svg-icon')}>{icon}</div>
         <div className={cn('content-wrapper')}>
             {title && (
                 <Header className={cn('title')} as="h5">
-                    {convert(title)}
+                    {title}
                 </Header>
             )}
             {text && (
@@ -37,10 +36,10 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
 
 BenefitsIconsTile.propTypes = {
     className: PropTypes.string,
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
-    icon: PropTypes.node,
+    icon: PropTypes.node.isRequired,
 };
 
 export default BenefitsIconsTile;

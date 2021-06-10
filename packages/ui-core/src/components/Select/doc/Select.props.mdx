@@ -10,7 +10,7 @@ export interface ISelectItem {
     // Значение value элемента
     value: number | string;
     // Настраиваемое отображение элементов в выпадающем списке
-    view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString);
     // Настраиваемое отображение выбранного элемента в поле селекта
     selectedView?: JSX.Element | Element | React.ReactElement;
 }
@@ -19,4 +19,7 @@ interface ISelectClasses {
     control?: string;
     root?: string;
 }
+
+type ElementOrString = JSX.Element[] | JSX.Element | Element[] | Element | string;
+type ViewCallbackArguments = { filterValue: string };
 ```

@@ -23,13 +23,16 @@ type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 
 export type SelectItemValueType = number | string | undefined;
 
+type ElementOrString = JSX.Element[] | JSX.Element | Element[] | Element | string;
+type ViewCallbackArguments = { filterValue: string };
+
 export interface ISelectItem<T extends SelectItemValueType> {
     /** Заголовок элемента в выпадающем списке  */
     title: string;
     /** Значение value элемента */
     value: T;
     /** Настраиваемое отображение элементов в выпадающем списке  */
-    view?: JSX.Element[] | Element[] | JSX.Element | string | Element;
+    view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString);
     /** Настраиваемое отображение выбранного элемента в поле селекта  */
     selectedView?: JSX.Element | Element | React.ReactElement;
 }
@@ -373,14 +376,18 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }
     }
 
-    highlightString = (title, view) => {
+    highlightString = (title: string, view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString)) => {
         const { type } = this.props;
-        const { comparableInputValue } = this.state;
+        const { comparableInputValue, inputValue } = this.state;
 
         if (type === SelectTypes.CLASSIC) {
             return view || title;
         }
         if (type === SelectTypes.COMBOBOX && view) {
+            if (typeof view === 'function' && !React.isValidElement(view)) {
+                return view({ filterValue: inputValue });
+            }
+
             return view;
         }
 

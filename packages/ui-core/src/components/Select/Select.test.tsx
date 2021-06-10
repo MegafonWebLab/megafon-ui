@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import Select, { ISelectProps, SelectTypes, Verification } from './Select';
+import Select, { ISelectProps, SelectTypes, Verification, ISelectItem } from './Select';
 import cnCreate from 'utils/cnCreate';
 
 const cn = cnCreate('mfui-beta-select');
@@ -43,6 +43,14 @@ const newItems = [
     {
         value: 222,
         title: 'new-test-name-2',
+    },
+];
+
+const viewItems: Array<ISelectItem<number>> = [
+    {
+        value: 111,
+        title: '111',
+        view: ({ filterValue }) => <div>view {filterValue}</div>,
     },
 ];
 
@@ -247,6 +255,13 @@ describe('<Select />', () => {
 
     it('it renders with data attributes', () => {
         const wrapper = shallow(<Select dataAttrs={props.dataAttrs} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render items.view as function', () => {
+        const wrapper = shallow(<Select type="combobox" items={viewItems} dataAttrs={props.dataAttrs} />);
+        wrapper.find(`.${cn('combobox')}`).simulate('change', { target: { value: 123 }});
+
         expect(wrapper).toMatchSnapshot();
     });
 });

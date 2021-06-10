@@ -41,6 +41,22 @@ export const items = [
     {
         value: 10,
         title: 'Кантемировская',
+        view: ({ filterValue }) => {
+            const stringFragments = 'Кантемировская'.split(RegExp(`(${filterValue})`, 'ig'));
+
+            return (
+                <>
+                    {stringFragments.map((fragment, i) => (
+                        <React.Fragment key={i}>
+                            {(fragment.toLowerCase() === filterValue.toLowerCase() && fragment !== '')
+                                ? <b>{fragment}</b>
+                                : fragment
+                            }
+                        </React.Fragment>
+                    ))}
+                </>
+            );
+        },
     },
 ];
 

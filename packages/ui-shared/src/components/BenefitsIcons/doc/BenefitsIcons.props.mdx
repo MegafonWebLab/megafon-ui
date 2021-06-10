@@ -7,9 +7,9 @@ import BenefitsIcons from '../BenefitsIcons';
 
 interface IBenefit {
     /** Заголовок бенефита */
-    title?: string;
+    title?: string | React.ReactNode | React.ReactNode[];
     /** Основной текст в бенефите */
-    text?: string;
+    text?: string | React.ReactNode | React.ReactNode[];
     /** Изображение */
     icon: React.ReactNode;
 }
