@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs should render component 1`] = `
+<div
+  className="mfui-beta-breadcrumbs mfui-beta-breadcrumbs_color_freshAsphalt"
+>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="МегаФон"
+  >
+    <TextLink
+      color="black"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      МегаФон
+    </TextLink>
+  </div>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="Мобильная связь"
+  >
+    <TextLink
+      color="black"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      Мобильная связь
+    </TextLink>
+  </div>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="Тарифы"
+  >
+    <TextLink
+      color="black"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      Тарифы
+    </TextLink>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumbs should render with custom class name 1`] = `
+<div
+  className="mfui-beta-breadcrumbs mfui-beta-breadcrumbs_color_freshAsphalt custom-class-name"
+>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="МегаФон"
+  >
+    <TextLink
+      color="black"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      МегаФон
+    </TextLink>
+  </div>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="Мобильная связь"
+  >
+    <TextLink
+      color="black"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      Мобильная связь
+    </TextLink>
+  </div>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="Тарифы"
+  >
+    <TextLink
+      color="black"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      Тарифы
+    </TextLink>
+  </div>
+</div>
+`;
+
+exports[`Breadcrumbs should render with white text color 1`] = `
+<div
+  className="mfui-beta-breadcrumbs mfui-beta-breadcrumbs_color_clearWhite"
+>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="МегаФон"
+  >
+    <TextLink
+      color="white"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      МегаФон
+    </TextLink>
+  </div>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="Мобильная связь"
+  >
+    <TextLink
+      color="white"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      Мобильная связь
+    </TextLink>
+  </div>
+  <div
+    className="mfui-beta-breadcrumbs__item"
+    key="Тарифы"
+  >
+    <TextLink
+      color="white"
+      href="#"
+      underlineStyle="solid"
+      underlineVisibility="hover"
+    >
+      Тарифы
+    </TextLink>
+  </div>
+</div>
+`;

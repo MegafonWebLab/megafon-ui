@@ -1,7 +1,6 @@
 import React, { Ref } from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
-import './VideoBanner.less';
 import {
     Button,
     cnCreate,
@@ -13,6 +12,11 @@ import {
     convert,
     dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
+import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
+import './VideoBanner.less';
+import Color, { ColorType } from '../../constants/colors';
+
+type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
 
 export enum ClassName {
     BUTTON = 'button',
@@ -31,13 +35,6 @@ export const VideoType = {
 } as const;
 
 type VideoType = typeof VideoType[keyof typeof VideoType];
-
-export const TextColor = {
-    FRESH_ASPHALT: 'freshAsphalt',
-    CLEAR_WHITE: 'clearWhite',
-} as const;
-
-type TextColorType = typeof TextColor[keyof typeof TextColor];
 
 export const ButtonColor = {
     GREEN: 'green',
@@ -62,9 +59,9 @@ export interface IContent {
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
-    textColor?: TextColorType;
+    textColor?: ColorType;
     /** Цвет текста на мобильном разрешении */
-    textColorMobile?: TextColorType;
+    textColorMobile?: ColorType;
     /** Текст ссылки */
     linkTitle?: string;
     /** Адрес ссылки */
@@ -104,6 +101,8 @@ interface IVideoBannerProps {
     imageDesktop?: string;
     /** Изображение для большого компьютерного разрешения */
     imageDesktopWide?: string;
+    /** Хлебные крошки */
+    breadcrumbs?: BreadCrumbsItemsType;
 }
 
 const cn = cnCreate('mfui-beta-video-banner');
@@ -120,6 +119,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     imageDesktopWide = '',
     content,
     isMuted = true,
+    breadcrumbs,
 }) => {
     const [isMobile, setIsMobile] = React.useState(true);
     const [imageSrc, setImageSrc] = React.useState(imageMobile);
@@ -134,7 +134,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         buttonDownload,
         buttonColor = ButtonColor.GREEN,
         onButtonClick,
-        textColor = TextColor.FRESH_ASPHALT,
+        textColor = Color.FRESH_ASPHALT,
         textColorMobile,
         linkTitle,
         linkUrl,
@@ -255,6 +255,13 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 <div
                     className={cn('wrapper')}
                 >
+                    {breadcrumbs && !!breadcrumbs.length &&
+                        <Breadcrumbs
+                            className={cn('breadcrumbs')}
+                            items={breadcrumbs}
+                            color={content?.textColor}
+                        />
+                    }
                     {content && renderContent(content)}
                     {isRenderVideo && renderVideo()}
                     {!isRenderVideo && (
@@ -289,8 +296,8 @@ VideoBanner.propTypes = {
         buttonDownload: PropTypes.bool,
         buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
         onButtonClick: PropTypes.func,
-        textColor: PropTypes.oneOf(Object.values(TextColor)),
-        textColorMobile: PropTypes.oneOf(Object.values(TextColor)),
+        textColor: PropTypes.oneOf(Object.values(Color)),
+        textColorMobile: PropTypes.oneOf(Object.values(Color)),
         linkTitle: PropTypes.string,
         linkUrl: PropTypes.string,
         linkDownload: PropTypes.bool,
@@ -301,6 +308,12 @@ VideoBanner.propTypes = {
     imageTablet: PropTypes.string.isRequired,
     imageDesktop: PropTypes.string,
     imageDesktopWide: PropTypes.string,
+    breadcrumbs: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            href: PropTypes.string.isRequired,
+        }).isRequired
+    ),
 };
 
 export default VideoBanner;

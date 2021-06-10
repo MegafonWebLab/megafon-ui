@@ -92,9 +92,8 @@
     }
 
     &__content {
-        box-sizing: border-box;
         position: relative;
-        z-index: 1;
+        box-sizing: border-box;
         width: 60%;
 
         @media @desktopBU {
@@ -194,5 +193,19 @@
     &__value {
         display: inline;
         margin: 0 3px;
+    }
+
+    &__content,
+    &__breadcrumbs {
+        z-index: 1;
+    }
+
+    &__breadcrumbs {
+        position: absolute;
+        top: 32px;
+
+        @media @mobileSM {
+            display: none;
+        }
     }
 }

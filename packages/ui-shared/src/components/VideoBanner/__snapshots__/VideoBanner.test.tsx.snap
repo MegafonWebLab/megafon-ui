@@ -1,5 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <Breadcrumbs
+        className="mfui-beta-video-banner__breadcrumbs"
+        items={
+          Array [
+            Object {
+              "href": "#",
+              "title": "МегаФон",
+            },
+            Object {
+              "href": "#",
+              "title": "Мобильная связь",
+            },
+            Object {
+              "href": "#",
+              "title": "Тарифы",
+            },
+          ]
+        }
+      />
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <Button
+            className="mfui-beta-video-banner__button"
+            href="#"
+            theme="green"
+          >
+            Текст в кнопке
+          </Button>
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
 exports[`<VideoBanner /> render component with classes 1`] = `
 <div
   className="mfui-beta-video-banner className rootClass"

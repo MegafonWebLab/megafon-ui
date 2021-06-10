@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { cnCreate } from '@megafon/ui-core';
-import VideoBanner, { VideoType, TextColor, ButtonColor, ClassName } from './VideoBanner';
+import VideoBanner, { VideoType, ButtonColor, ClassName } from './VideoBanner';
+import Color from 'constants/colors';
 
 const imageMobile = 'imageMobile';
 const imageTablet = 'imageTablet';
@@ -20,6 +21,21 @@ const content = {
     linkUrl: '#',
     cost: 'oт <b>1000 ₽</b> за сообщение',
 };
+
+const breadcrumbs = [
+    {
+        title: 'МегаФон',
+        href: '#',
+    },
+    {
+        title: 'Мобильная связь',
+        href: '#',
+    },
+    {
+        title: 'Тарифы',
+        href: '#',
+    },
+];
 
 type LocalWindowType = Omit<Window, 'innerWidth'> & {
     innerWidth: number;
@@ -48,6 +64,21 @@ describe('<VideoBanner />', () => {
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
                 content={content}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render component with breadcrumbs', () => {
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                imageDesktop={imageDesktop}
+                imageDesktopWide={imageDesktopWide}
+                content={content}
+                breadcrumbs={breadcrumbs}
             />
         );
 
@@ -87,7 +118,7 @@ describe('<VideoBanner />', () => {
     it('render component with pictures and non default content text color', () => {
         const localContent = {
             ...content,
-            textColor: TextColor.CLEAR_WHITE,
+            textColor: Color.CLEAR_WHITE,
         };
         const wrapper = shallow(
             <VideoBanner
@@ -140,8 +171,8 @@ describe('<VideoBanner />', () => {
     it('render component with the different content text color on desktop and mobile resolution', () => {
         const localContent = {
             ...content,
-            textColor: TextColor.FRESH_ASPHALT,
-            textColorMobile: TextColor.CLEAR_WHITE,
+            textColor: Color.FRESH_ASPHALT,
+            textColorMobile: Color.CLEAR_WHITE,
         };
         const wrapper = shallow(
             <VideoBanner
