@@ -674,6 +674,62 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 </Select>
 `;
 
+exports[`<Select /> should render items.view as function 1`] = `
+<div
+  className="mfui-beta-select mfui-beta-select_no-touch"
+  data-test="test"
+>
+  <div
+    className="mfui-beta-select__inner"
+  >
+    <div
+      className="mfui-beta-select__control"
+      onKeyDown={[Function]}
+    >
+      <input
+        className="mfui-beta-select__combobox"
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+        value={123}
+      />
+      <div
+        className="mfui-beta-select__arrow-wrap"
+        onClick={[Function]}
+        tabIndex={1}
+      >
+        <span
+          className="mfui-beta-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__list"
+    >
+      <div
+        className="mfui-beta-select__list-inner"
+      >
+        <div
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          key="0_111"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            <div>
+              view 
+              123
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<Select /> snapshots renders combobox after update with new prop items 1`] = `
 <Select
   className="test-class"
