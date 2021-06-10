@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.204](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.203...@megafon/ui-shared@2.0.0-beta.204) (2021-06-10)
+
+
+### Features
+
+* **select:** add new type to view in item ([453f375](https://github.com/MegafonWebLab/megafon-ui/commit/453f3753e46cc2b0fd56287635b8b0918bec56f6))
+* **textbox:** add className and rootRef props ([25afe19](https://github.com/MegafonWebLab/megafon-ui/commit/25afe19dfd1acd1e304bc5b2f8363c48ab448277))
+* **titledescriptionbox:** add rootRef prop ([c3b1d90](https://github.com/MegafonWebLab/megafon-ui/commit/c3b1d905a73bf0c5266e846787d707c6434d2f99))
+
+
+
+
+
 # [2.0.0-beta.203](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.202...@megafon/ui-shared@2.0.0-beta.203) (2021-06-09)
 
 

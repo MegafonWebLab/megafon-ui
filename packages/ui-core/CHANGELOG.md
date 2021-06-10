@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.141](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.140...@megafon/ui-core@2.0.0-beta.141) (2021-06-10)
+
+
+### Features
+
+* **select:** add new type to view in item ([453f375](https://github.com/MegafonWebLab/megafon-ui/commit/453f3753e46cc2b0fd56287635b8b0918bec56f6))
+
+
+
+
+
 # [2.0.0-beta.140](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.139...@megafon/ui-core@2.0.0-beta.140) (2021-06-09)
 
 
