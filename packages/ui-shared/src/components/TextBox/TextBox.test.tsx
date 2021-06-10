@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import TextBox, { ITextBoxProps } from './TextBox';
 
 const props: ITextBoxProps = {
     textCenter: true,
+    className: 'class-name',
 };
 
 describe('<TextBox />', () => {
@@ -23,5 +24,16 @@ describe('<TextBox />', () => {
             </TextBox>
         );
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+        mount(
+            <TextBox {...props} rootRef={ref}>
+                <p>test</p>
+            </TextBox>
+        );
+
+        expect(ref.current).not.toBeNull();
     });
 });
