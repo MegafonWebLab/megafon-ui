@@ -2,7 +2,7 @@
 
 exports[`<TextBox /> renders TextBox with centered content 1`] = `
 <div
-  className="mfui-beta-text-box mfui-beta-text-box_text-center"
+  className="mfui-beta-text-box mfui-beta-text-box_text-center class-name"
 >
   <p>
     test

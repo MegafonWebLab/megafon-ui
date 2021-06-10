@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import TitleDescriptionBox, { ITitleDescriptionBoxProps } from './TitleDescriptionBox';
 
 const props: ITitleDescriptionBoxProps = {
@@ -32,5 +32,12 @@ describe('<TitleDescriptionBox />', () => {
         const wrapper = shallow(<TitleDescriptionBox {...props} description={descriptions} />);
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+        mount(<TitleDescriptionBox {...props} rootRef={ref} />);
+
+        expect(ref.current).not.toBeNull();
     });
 });
