@@ -13,6 +13,11 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
     >
       <Breadcrumbs
         className="mfui-beta-video-banner__breadcrumbs"
+        classes={
+          Object {
+            "item": "breadcrumbs-item-custom-class-name",
+          }
+        }
         items={
           Array [
             Object {
@@ -31,7 +36,7 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
         }
       />
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
       >
         <Header
           as="h1"
@@ -110,7 +115,7 @@ exports[`<VideoBanner /> render component with classes 1`] = `
       className="mfui-beta-video-banner__wrapper"
     >
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
       >
         <Header
           as="h1"
@@ -189,7 +194,7 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
       className="mfui-beta-video-banner__wrapper"
     >
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
       >
         <Header
           as="h1"
@@ -292,7 +297,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
       className="mfui-beta-video-banner__wrapper"
     >
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
       >
         <Header
           as="h1"
@@ -371,7 +376,7 @@ exports[`<VideoBanner /> render component with pictures and download links conte
       className="mfui-beta-video-banner__wrapper"
     >
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
       >
         <Header
           as="h1"
@@ -452,7 +457,7 @@ exports[`<VideoBanner /> render component with pictures and non default content 
       className="mfui-beta-video-banner__wrapper"
     >
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_clearWhite"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_white"
       >
         <Header
           as="h1"
@@ -531,7 +536,7 @@ exports[`<VideoBanner /> render component with the different content text color 
       className="mfui-beta-video-banner__wrapper"
     >
       <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt mfui-beta-video-banner__content_text-color-mobile_clearWhite"
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black mfui-beta-video-banner__content_text-color-mobile_white"
       >
         <Header
           as="h1"
@@ -874,7 +879,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
             className="mfui-beta-video-banner__wrapper"
           >
             <div
-              className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_freshAsphalt"
+              className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
             >
               <Header
                 as="h1"

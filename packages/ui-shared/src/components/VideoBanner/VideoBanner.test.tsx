@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { cnCreate } from '@megafon/ui-core';
-import VideoBanner, { VideoType, ButtonColor, ClassName } from './VideoBanner';
-import Color from 'constants/colors';
+import VideoBanner, { VideoType, ButtonColor, ClassName, TextColor } from './VideoBanner';
 
 const imageMobile = 'imageMobile';
 const imageTablet = 'imageTablet';
@@ -79,6 +78,7 @@ describe('<VideoBanner />', () => {
                 imageDesktopWide={imageDesktopWide}
                 content={content}
                 breadcrumbs={breadcrumbs}
+                classes={{ breadcrumbs: 'breadcrumbs-item-custom-class-name' }}
             />
         );
 
@@ -118,7 +118,7 @@ describe('<VideoBanner />', () => {
     it('render component with pictures and non default content text color', () => {
         const localContent = {
             ...content,
-            textColor: Color.CLEAR_WHITE,
+            textColor: TextColor.WHITE,
         };
         const wrapper = shallow(
             <VideoBanner
@@ -171,8 +171,8 @@ describe('<VideoBanner />', () => {
     it('render component with the different content text color on desktop and mobile resolution', () => {
         const localContent = {
             ...content,
-            textColor: Color.FRESH_ASPHALT,
-            textColorMobile: Color.CLEAR_WHITE,
+            textColor: TextColor.BLACK,
+            textColorMobile: TextColor.WHITE,
         };
         const wrapper = shallow(
             <VideoBanner

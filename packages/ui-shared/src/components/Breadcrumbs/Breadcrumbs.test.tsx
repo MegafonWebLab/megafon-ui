@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Breadcrumbs from './Breadcrumbs';
-import Color from 'constants/colors';
+import Breadcrumbs, { TextColor } from './Breadcrumbs';
 
 const items = [
     {
@@ -26,13 +25,13 @@ describe('Breadcrumbs', () => {
     });
 
     it('should render with custom class name', () => {
-        const wrapper = shallow(<Breadcrumbs items={items} className="custom-class-name" />);
+        const wrapper = shallow(<Breadcrumbs items={items} className="custom-class-name" classes={{ item: 'item-custom-class-name' }} />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with white text color', () => {
-        const wrapper = shallow(<Breadcrumbs items={items} color={Color.CLEAR_WHITE} />);
+        const wrapper = shallow(<Breadcrumbs items={items} color={TextColor.WHITE} />);
 
         expect(wrapper).toMatchSnapshot();
     });

@@ -1,5 +1,4 @@
-import { IContent, ButtonColor } from '../VideoBanner';
-import Color from '../../../constants/colors';
+import { IContent, ButtonColor, TextColor } from '../VideoBanner';
 import imageDesktop from './bg_grey_desktop.png';
 import imageMobile from './bg_grey_mobile.png';
 import video from './video.mp4';
@@ -20,13 +19,13 @@ const contentWithDefaultTextColor: IContent = {
 
 const contentWithDifferentTextColor: IContent = {
     ...contentWithDefaultTextColor,
-    textColor: Color.FRESH_ASPHALT,
-    textColorMobile: Color.CLEAR_WHITE,
+    textColor: TextColor.BLACK,
+    textColorMobile: TextColor.WHITE,
 };
 
 const content: IContent = {
     ...contentWithDefaultTextColor,
-    textColor: Color.CLEAR_WHITE,
+    textColor: TextColor.WHITE,
 };
 
 const contentWithPurpleButton: IContent = {

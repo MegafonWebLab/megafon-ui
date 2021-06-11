@@ -5,13 +5,13 @@
 @{b} {
     display: flex;
 
-    &_color_freshAsphalt {
+    &_color_black {
         @{b}__item:before {
             color: @freshAsphalt;
         }
     }
 
-    &_color_clearWhite {
+    &_color_white {
         @{b}__item:before {
             color: @clearWhite;
         }
@@ -43,5 +43,9 @@
         &:before {
             display: none;
         }
+    }
+
+    &__item:last-child {
+        pointer-events: none;
     }
 }

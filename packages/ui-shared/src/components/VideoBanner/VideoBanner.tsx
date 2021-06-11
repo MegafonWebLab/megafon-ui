@@ -14,7 +14,6 @@ import {
 } from '@megafon/ui-core';
 import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
 import './VideoBanner.less';
-import Color, { ColorType } from '../../constants/colors';
 
 type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
 
@@ -43,6 +42,13 @@ export const ButtonColor = {
 
 export type ButtonColorType = typeof ButtonColor[keyof typeof ButtonColor];
 
+export const TextColor = {
+    BLACK: 'black',
+    WHITE: 'white',
+} as const;
+
+type TextColorType = typeof TextColor[keyof typeof TextColor];
+
 export interface IContent {
     /** Заголовок */
     title: string;
@@ -59,9 +65,9 @@ export interface IContent {
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
-    textColor?: ColorType;
+    textColor?: TextColorType;
     /** Цвет текста на мобильном разрешении */
-    textColorMobile?: ColorType;
+    textColorMobile?: TextColorType;
     /** Текст ссылки */
     linkTitle?: string;
     /** Адрес ссылки */
@@ -82,6 +88,7 @@ interface IVideoBannerProps {
         root?: string;
         button?: string;
         link?: string;
+        breadcrumbs?: string;
     };
     /** Ссылка на корневой элемент */
     rootRef?: Ref<HTMLDivElement>;
@@ -134,7 +141,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         buttonDownload,
         buttonColor = ButtonColor.GREEN,
         onButtonClick,
-        textColor = Color.FRESH_ASPHALT,
+        textColor =  TextColor.BLACK,
         textColorMobile,
         linkTitle,
         linkUrl,
@@ -260,6 +267,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                             className={cn('breadcrumbs')}
                             items={breadcrumbs}
                             color={content?.textColor}
+                            classes={{ item: classes.breadcrumbs }}
                         />
                     }
                     {content && renderContent(content)}
@@ -281,6 +289,7 @@ VideoBanner.propTypes = {
         root: PropTypes.string,
         button: PropTypes.string,
         link: PropTypes.string,
+        breadcrumbs: PropTypes.string,
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -296,8 +305,8 @@ VideoBanner.propTypes = {
         buttonDownload: PropTypes.bool,
         buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
         onButtonClick: PropTypes.func,
-        textColor: PropTypes.oneOf(Object.values(Color)),
-        textColorMobile: PropTypes.oneOf(Object.values(Color)),
+        textColor: PropTypes.oneOf(Object.values(TextColor)),
+        textColorMobile: PropTypes.oneOf(Object.values(TextColor)),
         linkTitle: PropTypes.string,
         linkUrl: PropTypes.string,
         linkDownload: PropTypes.bool,
@@ -311,7 +320,7 @@ VideoBanner.propTypes = {
     breadcrumbs: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
-            href: PropTypes.string.isRequired,
+            href: PropTypes.string,
         }).isRequired
     ),
 };
