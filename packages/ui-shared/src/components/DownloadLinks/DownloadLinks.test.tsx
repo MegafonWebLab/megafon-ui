@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import DownloadLinks from './DownloadLinks';
 import DownloadLink, { IDownloadLink } from './DownloadLink';
 
@@ -36,5 +36,12 @@ describe('DownloadLinks', () => {
                 <DownloadLink {...props} />
             </DownloadLinks>);
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+        mount(<DownloadLinks rootRef={ref}><DownloadLink {...props} /></DownloadLinks>);
+
+        expect(ref.current).not.toBeNull();
     });
 });

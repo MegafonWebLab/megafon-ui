@@ -5,8 +5,6 @@ import './DownloadLink.less';
 import DownloadIcon from 'icons/Basic/32/Download_32.svg';
 
 export interface IDownloadLink {
-    /** Ссылка на корневой элемент */
-    rootRef?: React.Ref<HTMLDivElement>;
     /** Адресы ссылки */
     href: string;
     /** Текст ссылки */
@@ -29,10 +27,9 @@ const DownloadLink: React.FC<IDownloadLink> = ({
     fileSize,
     onClick,
     className,
-    rootRef,
 }) =>
    (
-        <div className={cn([className])} ref={rootRef}>
+        <div className={cn([className])}>
             <div className={cn('icon')}>
                 <DownloadIcon className={cn('icon-svg')}/>
             </div>
@@ -46,10 +43,6 @@ const DownloadLink: React.FC<IDownloadLink> = ({
    );
 
 DownloadLink.propTypes = {
-    rootRef: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
-    ]),
     href: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     extension: PropTypes.string.isRequired,

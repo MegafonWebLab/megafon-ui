@@ -42,16 +42,18 @@ const getColumnConfig = (itemsCount): ColumnConfig => {
 };
 
 interface IDownloadLinks {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     children: Array<React.ReactElement<IDownloadLink>> | React.ReactElement<IDownloadLink>;
 }
 
 const cn = cnCreate('mfui-beta-download-links');
-const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
+const DownloadLinks: React.FC<IDownloadLinks> = ({ children, rootRef}) => {
     const itemsCount = React.Children.count(children);
     const columnConfig = getColumnConfig(itemsCount);
 
     return (
-        <div className={cn({ count: `${itemsCount}`})}>
+        <div className={cn({ count: `${itemsCount}`})} ref={rootRef}>
             <Grid guttersLeft="medium">
                 {React.Children.map(children, (child) =>
                     <GridColumn {...columnConfig} className={cn('column')}>
@@ -64,6 +66,10 @@ const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
 };
 
 DownloadLinks.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.element.isRequired),
         PropTypes.element,
