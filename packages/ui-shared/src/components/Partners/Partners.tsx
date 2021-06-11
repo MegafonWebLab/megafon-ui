@@ -13,6 +13,7 @@ import './Partners.less';
 export type ItemType = {
     src: string;
     href?: string;
+    alt: string;
 };
 
 export interface IPartnersProps {
@@ -67,7 +68,7 @@ const Partners: React.FC<IPartnersProps> = ({
             return null;
         }
 
-        const { src, href } = item;
+        const { src, href, alt } = item;
 
         return (
             <Tile
@@ -78,7 +79,7 @@ const Partners: React.FC<IPartnersProps> = ({
             >
                 <div className={cn('tile-inner', [itemClass])}>
                     <div className={cn('img-wrapper')}>
-                        <img src={src} className={cn('tile-img')} />
+                        <img src={src} alt={alt} className={cn('tile-img')} />
                     </div>
                 </div>
             </Tile>
@@ -141,6 +142,7 @@ Partners.propTypes = {
         PropTypes.shape({
             href: PropTypes.string,
             src: PropTypes.string.isRequired,
+            alt: PropTypes.string.isRequired,
         }).isRequired
     ).isRequired,
     onChange: PropTypes.func,
