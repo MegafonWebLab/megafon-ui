@@ -49,17 +49,17 @@ exports[`<Carousel /> should render with default props 1`] = `
       className="mfui-beta-carousel__slide"
       key="0/.0"
     >
-      <Component>
+      <DemoSlide>
         1
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
     <SwiperSlide
       className="mfui-beta-carousel__slide"
       key="1/.1"
     >
-      <Component>
+      <DemoSlide>
         2
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
   </Swiper>
   <NavArrow
@@ -129,17 +129,17 @@ exports[`<Carousel /> should render with props 1`] = `
       className="mfui-beta-carousel__slide slide"
       key="0/.0"
     >
-      <Component>
+      <DemoSlide>
         1
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
     <SwiperSlide
       className="mfui-beta-carousel__slide slide"
       key="1/.1"
     >
-      <Component>
+      <DemoSlide>
         2
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
   </Swiper>
   <NavArrow

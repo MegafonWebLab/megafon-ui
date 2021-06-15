@@ -33,68 +33,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "jest": {
-    "globals": {
-      "ts-jest": {
-        "babelConfig": {
-          "presets": [
-            "@babel/preset-env",
-            "@babel/react"
-          ]
-        }
-      }
-    },
-    "globalSetup": "<rootDir>/scripts/globalSetup.ts",
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/scripts/styleMock.ts",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/fileMock.ts"
-    },
-    "moduleDirectories": [
-      "node_modules",
-      "src"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/utils/modernizr.ts"
-    ],
-    "coverageDirectory": "coverage",
-    "testURL": "http://localhost/",
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "transform": {
-      "\\.tsx?$": "ts-jest"
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/lib/",
-      "/src/utils/modernizr.ts"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "setupFilesAfterEnv": [
-      "<rootDir>/scripts/setupEnzyme.ts"
-    ]
-  },
   "peerDependencies": {
     "react": ">=16.13.0",
     "react-dom": ">=16.13.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-transform-block-scoping": "^7.8.3",
     "@babel/plugin-transform-object-assign": "^7.8.3",
-    "@babel/plugin-transform-react-constant-elements": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
@@ -131,14 +77,12 @@
     "react-dom": "^16.13.0",
     "stylelint": "^9.10.1",
     "through2": "^2.0.5",
-    "ts-jest": "^25.2.1",
     "tslint": "^5.20.1",
     "tslint-react": "^3.6.0",
     "typescript": "^3.8.3",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/runtime": "^7.8.4",
     "@datepicker-react/hooks": "^2.7.0",
     "@popperjs/core": "^2.5.3",

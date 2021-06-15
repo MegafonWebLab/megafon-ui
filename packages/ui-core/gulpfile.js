@@ -14,15 +14,23 @@ const through = require('through2');
 const svgr = require('@svgr/core').default;
 const babelCore = require('@babel/core');
 const cheerio = require('cheerio');
+const {
+    env: {
+        buildReactIcons: {
+            plugins: babelPlugins,
+            presets: babelPresets
+        },
+        buildEs: babelEsConfig,
+        buildLib: babelLibConfig
+    },
+} = require('./.babelrc');
 
 const sep = path.sep;
 const dest = gulp.dest;
 
 const dist = path.join(__dirname, 'dist');
 const esPath = path.join(dist, 'es');
-const esStylesPath = path.join(esPath, 'styles');
 const libPath = path.join(dist, 'lib');
-const libStylesPath = path.join(libPath, 'styles');
 const srcPath = path.join(__dirname, 'src');
 const iconsPath = path.join(srcPath, 'icons');
 const docIconsPath = path.join(srcPath, 'docIcons');
@@ -49,47 +57,6 @@ const tsConfig = {
     moduleResolution: 'node',
     declaration: true,
     allowSyntheticDefaultImports: true,
-};
-const babelPlugins = [
-    require.resolve('@babel/plugin-transform-object-assign'),
-    require.resolve('@babel/plugin-proposal-class-properties'),
-    require.resolve('@babel/plugin-transform-runtime')
-];
-const babelPresets = [
-    '@babel/react',
-    ['@babel/preset-env', {
-        useBuiltIns: 'usage',
-        corejs: '3.6'
-    }]
-];
-const babelEsConfig = {
-    presets: [
-        '@babel/react',
-        ['@babel/preset-env', {
-            modules: false,
-            useBuiltIns: 'usage',
-            corejs: '3.6'
-        }]
-    ],
-    plugins: [
-        ...babelPlugins,
-        ['module-resolver', {
-            root: ['./src'],
-            alias: {
-                utils: './src/utils',
-                components: './src/components',
-                constants: './src/constants'
-            }
-        }],
-    ]
-};
-const babelLibConfig = {
-    presets: [
-        ['@babel/preset-env', {
-            useBuiltIns: 'usage',
-            corejs: '3.6'
-        }]
-    ]
 };
 
 /**
