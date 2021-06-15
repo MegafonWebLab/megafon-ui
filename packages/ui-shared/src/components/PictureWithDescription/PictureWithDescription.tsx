@@ -11,6 +11,8 @@ export const pictureAlignTypes = {
 type PictureAlignTypesType = typeof pictureAlignTypes[keyof typeof pictureAlignTypes];
 
 export interface IPictureWithDescriptionProps {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Url изображения */
     pictureUrl: string;
     /** Расположение изображения */
@@ -21,12 +23,13 @@ export interface IPictureWithDescriptionProps {
 
 const cn = cnCreate('mfui-beta-picture-with-description');
 const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
+    rootRef,
     pictureUrl,
     pictureAlign = 'left',
     isTextTopAlign,
     children,
 }) => (
-    <div className={cn()}>
+    <div className={cn()} ref={rootRef}>
         <div className={cn('picture', { align: pictureAlign })}>
             <img className={cn('img')} src={pictureUrl} alt="" />
         </div>
@@ -37,6 +40,10 @@ const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
 );
 
 PictureWithDescription.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     pictureUrl: PropTypes.string.isRequired,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),
     isTextTopAlign: PropTypes.bool,
