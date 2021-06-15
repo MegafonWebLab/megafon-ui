@@ -4,13 +4,15 @@ import { cnCreate, Header } from '@megafon/ui-core';
 import './Steps.less';
 
 export interface ISteps {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок */
     title: string;
 }
 
 const cn = cnCreate('mfui-beta-steps');
-const Steps: React.FC<ISteps> = ({ title, children }) => (
-    <div className={cn()}>
+const Steps: React.FC<ISteps> = ({ title, rootRef, children }) => (
+    <div className={cn()} ref={rootRef}>
         <Header as="h2" hAlign="center" className={cn('title')}>{title}</Header>
         <ul className={cn('list')}>
             {React.Children.map(children, (child) => (
@@ -23,6 +25,10 @@ const Steps: React.FC<ISteps> = ({ title, children }) => (
 );
 
 Steps.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     title: PropTypes.string.isRequired,
 };
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Steps from './Steps';
 import StepsItem from './StepsItem';
 
@@ -8,5 +8,13 @@ describe('Steps', () => {
         const wrapper = shallow(<Steps title="title"><StepsItem index={1} text="text" /></Steps>);
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<Steps title="title" rootRef={ref}><StepsItem index={1} text="text" /></Steps>);
+
+        expect(ref.current).not.toBeNull();
     });
 });
