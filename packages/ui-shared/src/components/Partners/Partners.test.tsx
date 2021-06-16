@@ -10,6 +10,7 @@ const generateItems = (i, href?) =>
     Array.from({ length: i }, () => ({
         href,
         src: megafon,
+        alt: 'test img',
     }));
 
 describe('<Partners />', () => {
