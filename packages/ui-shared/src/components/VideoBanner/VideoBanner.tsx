@@ -141,7 +141,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         buttonDownload,
         buttonColor = ButtonColor.GREEN,
         onButtonClick,
-        textColor =  TextColor.BLACK,
+        textColor = TextColor.BLACK,
         textColorMobile,
         linkTitle,
         linkUrl,
@@ -262,7 +262,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 <div
                     className={cn('wrapper')}
                 >
-                    {breadcrumbs && !!breadcrumbs.length &&
+                    {breadcrumbs?.length &&
                         <Breadcrumbs
                             className={cn('breadcrumbs')}
                             items={breadcrumbs}

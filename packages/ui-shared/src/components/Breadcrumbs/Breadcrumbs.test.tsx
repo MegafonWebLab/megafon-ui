@@ -24,14 +24,15 @@ describe('Breadcrumbs', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with custom class name', () => {
-        const wrapper = shallow(<Breadcrumbs items={items} className="custom-class-name" classes={{ item: 'item-custom-class-name' }} />);
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with white text color', () => {
-        const wrapper = shallow(<Breadcrumbs items={items} color={TextColor.WHITE} />);
+    it('should render with optional props', () => {
+        const wrapper = shallow(
+            <Breadcrumbs
+                items={items}
+                className="custom-class-name"
+                classes={{ item: 'item-custom-class-name' }}
+                color={TextColor.WHITE}
+            />
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
