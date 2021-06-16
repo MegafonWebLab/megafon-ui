@@ -92,9 +92,8 @@
     }
 
     &__content {
-        box-sizing: border-box;
         position: relative;
-        z-index: 1;
+        box-sizing: border-box;
         width: 60%;
 
         @media @desktopBU {
@@ -123,21 +122,21 @@
         }
     }
 
-    &__content_text-color_freshAsphalt {
+    &__content_text-color_black {
         color: @freshAsphalt;
     }
 
-    &__content_text-color_clearWhite {
+    &__content_text-color_white {
         color: @clearWhite;
     }
 
-    &__content_text-color-mobile_freshAsphalt {
+    &__content_text-color-mobile_black {
         @media @mobileSM {
             color: @freshAsphalt;
         }
     }
 
-    &__content_text-color-mobile_clearWhite {
+    &__content_text-color-mobile_white {
         @media @mobileSM {
             color: @clearWhite;
         }
@@ -194,5 +193,19 @@
     &__value {
         display: inline;
         margin: 0 3px;
+    }
+
+    &__content,
+    &__breadcrumbs {
+        z-index: 1;
+    }
+
+    &__breadcrumbs {
+        position: absolute;
+        top: 32px;
+
+        @media @mobileSM {
+            display: none;
+        }
     }
 }

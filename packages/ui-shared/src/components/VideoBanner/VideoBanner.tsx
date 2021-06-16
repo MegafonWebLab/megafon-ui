@@ -1,7 +1,6 @@
 import React, { Ref } from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
-import './VideoBanner.less';
 import {
     Button,
     cnCreate,
@@ -13,6 +12,10 @@ import {
     convert,
     dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
+import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
+import './VideoBanner.less';
+
+type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
 
 export enum ClassName {
     BUTTON = 'button',
@@ -32,19 +35,19 @@ export const VideoType = {
 
 type VideoType = typeof VideoType[keyof typeof VideoType];
 
-export const TextColor = {
-    FRESH_ASPHALT: 'freshAsphalt',
-    CLEAR_WHITE: 'clearWhite',
-} as const;
-
-type TextColorType = typeof TextColor[keyof typeof TextColor];
-
 export const ButtonColor = {
     GREEN: 'green',
     PURPLE: 'purple',
 } as const;
 
 export type ButtonColorType = typeof ButtonColor[keyof typeof ButtonColor];
+
+export const TextColor = {
+    BLACK: 'black',
+    WHITE: 'white',
+} as const;
+
+type TextColorType = typeof TextColor[keyof typeof TextColor];
 
 export interface IContent {
     /** Заголовок */
@@ -85,6 +88,7 @@ interface IVideoBannerProps {
         root?: string;
         button?: string;
         link?: string;
+        breadcrumbs?: string;
     };
     /** Ссылка на корневой элемент */
     rootRef?: Ref<HTMLDivElement>;
@@ -104,6 +108,8 @@ interface IVideoBannerProps {
     imageDesktop?: string;
     /** Изображение для большого компьютерного разрешения */
     imageDesktopWide?: string;
+    /** Хлебные крошки */
+    breadcrumbs?: BreadCrumbsItemsType;
 }
 
 const cn = cnCreate('mfui-beta-video-banner');
@@ -120,6 +126,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     imageDesktopWide = '',
     content,
     isMuted = true,
+    breadcrumbs,
 }) => {
     const [isMobile, setIsMobile] = React.useState(true);
     const [imageSrc, setImageSrc] = React.useState(imageMobile);
@@ -134,7 +141,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         buttonDownload,
         buttonColor = ButtonColor.GREEN,
         onButtonClick,
-        textColor = TextColor.FRESH_ASPHALT,
+        textColor = TextColor.BLACK,
         textColorMobile,
         linkTitle,
         linkUrl,
@@ -255,6 +262,14 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 <div
                     className={cn('wrapper')}
                 >
+                    {breadcrumbs?.length &&
+                        <Breadcrumbs
+                            className={cn('breadcrumbs')}
+                            items={breadcrumbs}
+                            color={content?.textColor}
+                            classes={{ item: classes.breadcrumbs }}
+                        />
+                    }
                     {content && renderContent(content)}
                     {isRenderVideo && renderVideo()}
                     {!isRenderVideo && (
@@ -274,6 +289,7 @@ VideoBanner.propTypes = {
         root: PropTypes.string,
         button: PropTypes.string,
         link: PropTypes.string,
+        breadcrumbs: PropTypes.string,
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -301,6 +317,12 @@ VideoBanner.propTypes = {
     imageTablet: PropTypes.string.isRequired,
     imageDesktop: PropTypes.string,
     imageDesktopWide: PropTypes.string,
+    breadcrumbs: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            href: PropTypes.string,
+        }).isRequired
+    ),
 };
 
 export default VideoBanner;

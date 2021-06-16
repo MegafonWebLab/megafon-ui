@@ -1,4 +1,4 @@
-import { IContent, TextColor, ButtonColor } from '../VideoBanner';
+import { IContent, ButtonColor, TextColor } from '../VideoBanner';
 import imageDesktop from './bg_grey_desktop.png';
 import imageMobile from './bg_grey_mobile.png';
 import video from './video.mp4';
@@ -19,13 +19,13 @@ const contentWithDefaultTextColor: IContent = {
 
 const contentWithDifferentTextColor: IContent = {
     ...contentWithDefaultTextColor,
-    textColor: TextColor.FRESH_ASPHALT,
-    textColorMobile: TextColor.CLEAR_WHITE,
+    textColor: TextColor.BLACK,
+    textColorMobile: TextColor.WHITE,
 };
 
 const content: IContent = {
     ...contentWithDefaultTextColor,
-    textColor: TextColor.CLEAR_WHITE,
+    textColor: TextColor.WHITE,
 };
 
 const contentWithPurpleButton: IContent = {
@@ -40,6 +40,21 @@ const images = {
     imageDesktopWide: imageWhiteDesktop,
 };
 
+const breadcrumbs = [
+    {
+        title: 'МегаФон',
+        href: '#',
+    },
+    {
+        title: 'Мобильная связь',
+        href: '#',
+    },
+    {
+        title: 'Тарифы',
+        href: '#',
+    },
+];
+
 export {
     content,
     contentWithDefaultTextColor,
@@ -49,5 +64,6 @@ export {
     youtubeVideoId,
     imageMobile,
     imageDesktop,
-    images
+    images,
+    breadcrumbs
 };

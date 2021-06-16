@@ -1,0 +1,51 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-breadcrumbs');
+
+@{b} {
+    display: flex;
+
+    &_color_black {
+        @{b}__item:before {
+            color: @freshAsphalt;
+        }
+    }
+
+    &_color_white {
+        @{b}__item:before {
+            color: @clearWhite;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        width: 14px;
+        height: 3px;
+        margin-right: 10px;
+    }
+
+    &__item {
+        position: relative;
+        padding-left: 22px;
+        margin-right: 10px;
+
+        &:before {
+            content: '→';
+            position: absolute;
+            top: -2px;
+            left: 0;
+        }
+    }
+
+    &__item:first-child {
+        padding-left: 0;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &__item:last-child {
+        pointer-events: none;
+    }
+}
