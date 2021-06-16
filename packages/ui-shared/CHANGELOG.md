@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.205](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.204...@megafon/ui-shared@2.0.0-beta.205) (2021-06-16)
+
+
+### Features
+
+* **partners:** add alt prop to item ([dd93143](https://github.com/MegafonWebLab/megafon-ui/commit/dd9314365122f5bcee261517ab9326f987dfffab))
+* **picturewithdescription:** add rootRef prop ([96feae1](https://github.com/MegafonWebLab/megafon-ui/commit/96feae14d74aed46969261846259601b02b6d408))
+* **steps:** add rootRef prop ([59bef59](https://github.com/MegafonWebLab/megafon-ui/commit/59bef59a9fac2ede30b1f35c4fb1590f1dcea2c4))
+* **videobanner:** add breadcrumbs ([d266b31](https://github.com/MegafonWebLab/megafon-ui/commit/d266b31bc8c66ba5fa85b629f3de0c7813586c81))
+
+
+
+
+
 # [2.0.0-beta.204](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.203...@megafon/ui-shared@2.0.0-beta.204) (2021-06-10)
 
 
