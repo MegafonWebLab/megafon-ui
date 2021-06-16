@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import PictureWithDescription, {
     pictureAlignTypes,
     IPictureWithDescriptionProps,
@@ -42,5 +42,13 @@ describe('<PictureWithDescription />', () => {
         );
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        mount(<PictureWithDescription {...props} rootRef={ref}><div /></PictureWithDescription>);
+
+        expect(ref.current).not.toBeNull();
     });
 });
