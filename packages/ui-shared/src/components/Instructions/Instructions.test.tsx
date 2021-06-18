@@ -130,10 +130,23 @@ describe('<Instructions />', () => {
                 classes={{
                     instructionItem: 'test-class_articleItem',
                     activeInstructionItem: 'test-class_activeArticleItem',
+                    desktopItemTitle: 'desktopItemTitle',
+                    mobileItemTitle: 'mobileItemTitle',
                 }}
             />
         );
 
         expect(wrapper).toMatchSnapshot();
+    });
+    it('should render with classes props', () => {
+        const handleSwiper = jest.fn();
+        mount(
+            <Instructions
+                {...props}
+                getSwiper={handleSwiper}
+            />
+        );
+
+        expect(handleSwiper).toHaveBeenCalled();
     });
 });

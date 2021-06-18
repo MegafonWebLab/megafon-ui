@@ -2,6 +2,7 @@ import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './Instructions.less';
 import throttle from 'lodash.throttle';
+import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
 import { breakpoints, cnCreate, Grid, GridColumn, Header } from '@megafon/ui-core';
@@ -37,6 +38,8 @@ export interface IInstructionsProps {
     classes?: {
         instructionItem?: string;
         activeInstructionItem?: string;
+        desktopItemTitle?: string;
+        mobileItemTitle?: string;
     };
     /** Заголовок инструкции */
     title: string;
@@ -46,6 +49,8 @@ export interface IInstructionsProps {
     pictureAlign?: PictureAlignTypesType;
     /** Маска изображения */
     pictureMask?: PictureMaskTypesType;
+    /** Ref на swiper */
+    getSwiper?: (instance: SwiperCore) => void;
 }
 
 const cn = cnCreate('mfui-beta-instructions');
@@ -55,11 +60,14 @@ const Instructions: React.FC<IInstructionsProps> = ({
     classes: {
         instructionItem,
         activeInstructionItem,
+        desktopItemTitle,
+        mobileItemTitle,
     } = {},
     title,
     instructionItems,
     pictureAlign = 'left',
     pictureMask = 'none',
+    getSwiper,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperClass>();
     const [slideIndex, setSlideIndex] = React.useState(0);
@@ -67,6 +75,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
 
     const getSwiperInstance = React.useCallback((swiper: SwiperClass): void => {
         setSwiperInstance(swiper);
+        getSwiper && getSwiper(swiper);
     }, []);
 
     const getArticleCustomClasses = React.useCallback((articleIndex: number, activeIndex: number) => {
@@ -139,13 +148,14 @@ const Instructions: React.FC<IInstructionsProps> = ({
                         { active: slideIndex === ind },
                         [getArticleCustomClasses(ind, slideIndex)]
                     )}
+                    data-index={ind}
                     onClick={handleArticleClick(ind)}
                     key={ind}
                 >
                     <div className={cn('articles-item-dot')}>
                         <span className={cn('articles-item-dot-number')}>{ind + 1}</span>
                     </div>
-                    <div className={cn('articles-item-title')}>
+                    <div className={cn('articles-item-title', [desktopItemTitle])}>
                         {itemTitle}
                     </div>
                 </li>
@@ -158,7 +168,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
             <div className={cn('articles-title-block')}>
                 {instructionItems.map(({ title: itemTitle }, ind) => (
                     slideIndex === ind &&
-                        <div className={cn('articles-title')} key={ind}>
+                        <div className={cn('articles-title', [mobileItemTitle])} data-index={ind} key={ind}>
                             {itemTitle}
                         </div>
                 ))}
@@ -223,6 +233,8 @@ Instructions.propTypes = {
     classes: PropTypes.shape({
         instructionItem: PropTypes.string,
         activeInstructionItem: PropTypes.string,
+        desktopItemTitle: PropTypes.string,
+        mobileItemTitle: PropTypes.string,
     }),
     title: PropTypes.string.isRequired,
     instructionItems: PropTypes.arrayOf(
@@ -243,6 +255,7 @@ Instructions.propTypes = {
         pictureMaskTypes.LAPTOP,
         pictureMaskTypes.NONE,
     ]),
+    getSwiper: PropTypes.func,
 };
 
 export default Instructions;
