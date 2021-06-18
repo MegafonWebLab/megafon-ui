@@ -34,7 +34,7 @@ describe('<Search />', () => {
         });
 
         it('renders Search with classes', () => {
-            const wrapper = shallow(<Search {...props} classes={{listItemTitle: 'wrap-text-test'}} />);
+            const wrapper = shallow(<Search {...props} classes={{listItemTitle: 'wrap-text-test', control: 'control-outer'}} />);
             expect(wrapper).toMatchSnapshot();
         });
     });
