@@ -1,6 +1,7 @@
-
 import { Playground } from 'docz';
 import BenefitsIcons from '../BenefitsIcons';
+import TitleDescriptionBox from '../../TitleDescriptionBox/TitleDescriptionBox';
+import Container from '../../Container/Container';
 import {
     twoItems,
     fiveItems,
@@ -149,6 +150,17 @@ const items = [
         items={fiveItems}
         iconPosition="center-top"
     />
+</Playground>
+
+## С заголовком
+<Playground>
+    <Container>
+        <TitleDescriptionBox title="Возможные услуги" />
+        <BenefitsIcons
+            items={twoItems}
+            iconPosition="left-top"
+        />
+    </Container>
 </Playground>
 
 ## Входящие пропсы
