@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.142](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.141...@megafon/ui-core@2.0.0-beta.142) (2021-06-18)
+
+
+### Features
+
+* **search:** expand classes for Search component ([d6ceb3b](https://github.com/MegafonWebLab/megafon-ui/commit/d6ceb3b0507edc49802ef3134a3274a25094c74e))
+
+
+
+
+
 # [2.0.0-beta.141](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.140...@megafon/ui-core@2.0.0-beta.141) (2021-06-10)
 
 

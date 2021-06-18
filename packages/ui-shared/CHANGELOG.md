@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.206](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.205...@megafon/ui-shared@2.0.0-beta.206) (2021-06-18)
+
+
+### Bug Fixes
+
+* **benefits icons:** delete padding from benefits ([419fcc0](https://github.com/MegafonWebLab/megafon-ui/commit/419fcc01f80f8e5fc794570559bf3e5a89307b50))
+
+
+### Features
+
+* **instructions:** add getSwiper prop and update classes prop ([4555d5f](https://github.com/MegafonWebLab/megafon-ui/commit/4555d5f56c4c2ada86519f63be652aa5769076d0))
+
+
+
+
+
 # [2.0.0-beta.205](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.204...@megafon/ui-shared@2.0.0-beta.205) (2021-06-16)
 
 
