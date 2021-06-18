@@ -92,7 +92,7 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
   className="mfui-beta-search test"
 >
   <div
-    className="mfui-beta-search__control"
+    className="mfui-beta-search__control control-outer"
   >
     <input
       autoComplete="off"

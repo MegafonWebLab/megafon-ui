@@ -16,6 +16,7 @@ export interface ISearchProps {
     /** Дополнительные классы для внутренних элементов */
     classes?: {
         listItemTitle?: string;
+        control?: string;
     };
     /** Значение */
     value?: string;
@@ -129,7 +130,7 @@ const Search: React.FC<ISearchProps> = ({
 
     return (
         <div className={cn({ open: isFocused }, [className])}>
-            <div className={cn('control')}>
+            <div className={cn('control', [classes?.control])}>
                 <input
                     className={cn('search-field')}
                     placeholder={placeholder}
