@@ -1,40 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardsBox render component 1`] = `
-<div
-  className="mfui-beta-cards-box"
->
-  <Grid
-    guttersBottom="medium"
-    guttersLeft="medium"
-  >
-    <GridColumn
-      all="4"
-      key=".0"
-      mobile="12"
-    >
-      <Card
-        button={
-          Object {
-            "href": "button-href",
-            "title": "button-title",
-          }
-        }
-        link={
-          Object {
-            "href": "href",
-            "title": "href-title",
-          }
-        }
-        text="text"
-        title="title"
-      />
-    </GridColumn>
-  </Grid>
-</div>
-`;
-
-exports[`CardsBox render on mobile resolution with carousel 1`] = `
+exports[`CardsBox mobile resolution render with carousel 1`] = `
 <CardsBox>
   <div
     className="mfui-beta-cards-box"
@@ -341,4 +307,38 @@ exports[`CardsBox render on mobile resolution with carousel 1`] = `
     </CarouselMock>
   </div>
 </CardsBox>
+`;
+
+exports[`CardsBox render component 1`] = `
+<div
+  className="mfui-beta-cards-box"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+  >
+    <GridColumn
+      all="4"
+      key=".0"
+      mobile="12"
+    >
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      />
+    </GridColumn>
+  </Grid>
+</div>
 `;

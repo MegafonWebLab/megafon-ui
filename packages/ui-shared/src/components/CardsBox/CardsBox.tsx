@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import { cnCreate, Grid, GridColumn, Carousel, breakpoints, throttleTime } from '@megafon/ui-core';
 import { ICard } from '../Card/Card';
+import filterDataAttrs, { IDataAttributes } from '@megafon/ui-core/src/utils/dataAttrs';
 
 type SlidesSettingsType = Pick<React.ComponentProps<typeof Carousel>, 'slidesSettings'>['slidesSettings'];
 
@@ -19,12 +20,18 @@ const SlidesSettings: SlidesSettingsType = {
     },
 };
 
-interface ICardsBoxProps {
+interface ICardsBoxProps extends IDataAttributes {
+    /** Обработчик смены слайда (должен быть обернут в useCallback) */
+    onChange?: (currentIndex: number, previousIndex: number, slidesPerView?: number | 'auto') => void;
     children: Array<React.ReactElement<ICard>> | React.ReactElement<ICard>;
 }
 
 const cn = cnCreate('mfui-beta-cards-box');
-const CardsBox: React.FC<ICardsBoxProps> = ({ children }) => {
+const CardsBox: React.FC<ICardsBoxProps> = ({
+    dataAttrs,
+    onChange,
+    children,
+}) => {
     const [isMobile, setIsMobile] = React.useState(false);
     const itemsCount = React.Children.count(children);
     const isRenderCarousel = isMobile && itemsCount > MAX_CARDS_COUNT_IN_GRID_ON_MOBILE;
@@ -42,7 +49,12 @@ const CardsBox: React.FC<ICardsBoxProps> = ({ children }) => {
     ), [children]);
 
     const renderCarousel = React.useCallback(() => (
-        <Carousel slidesSettings={SlidesSettings}>{children}</Carousel>
+        <Carousel
+            slidesSettings={SlidesSettings}
+            onChange={onChange}
+        >
+            {children}
+        </Carousel>
     ), [children]);
 
     React.useEffect(() => {
@@ -59,7 +71,7 @@ const CardsBox: React.FC<ICardsBoxProps> = ({ children }) => {
     }, []);
 
     return (
-        <div className={cn()}>
+        <div className={cn()} {...filterDataAttrs(dataAttrs)}>
             {isRenderCarousel ? renderCarousel() : renderGrid()}
         </div>
     );
@@ -70,6 +82,8 @@ CardsBox.propTypes = {
         PropTypes.arrayOf(PropTypes.element.isRequired),
         PropTypes.element,
     ]).isRequired,
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    onChange: PropTypes.func,
 };
 
 export default CardsBox;

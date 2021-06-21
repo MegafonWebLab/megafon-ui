@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { act } from 'react-dom/test-utils';
 import { shallow, mount } from 'enzyme';
 import CardsBox from './CardsBox';
 import Card, { ICard } from '../Card/Card';
+import Carousel from '@megafon/ui-core/dist/lib/components/Carousel/Carousel';
 
 const cardProps: ICard = {
     title: 'title',
@@ -26,28 +28,55 @@ jest.mock('@megafon/ui-core/dist/lib/components/Carousel/Carousel', () => {
     return CarouselMock;
 });
 
+const localWindow = window as LocalWindowType;
+const windowInnerWidth = window.innerWidth;
+
 describe('CardsBox', () => {
     it('render component', () => {
         const wrapper = shallow(<CardsBox><Card {...cardProps} /></CardsBox>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('render on mobile resolution with carousel', () => {
-        const localWindow = window as LocalWindowType;
-        const windowInnerWidth = window.innerWidth;
+    describe('mobile resolution', () => {
+        beforeAll(() => {
+            localWindow.innerWidth = 320;
+        });
 
-        localWindow.innerWidth = 320;
+        afterAll(() => {
+            localWindow.innerWidth = windowInnerWidth;
+        });
 
-        const wrapper = mount(
-            <CardsBox>
-                <Card {...cardProps} />
-                <Card {...cardProps} />
-                <Card {...cardProps} />
-            </CardsBox>
-        );
+        it('render with carousel', () => {
+            const wrapper = mount(
+                <CardsBox>
+                    <Card {...cardProps} />
+                    <Card {...cardProps} />
+                    <Card {...cardProps} />
+                </CardsBox>
+            );
 
-        expect(wrapper).toMatchSnapshot();
+            expect(wrapper).toMatchSnapshot();
+        });
 
-        localWindow.innerWidth = windowInnerWidth;
+        it('should call onChange on mobile resolution', () => {
+            const mockOnChange = jest.fn();
+
+            const wrapper = mount(
+                <CardsBox onChange={mockOnChange}>
+                    <Card {...cardProps} />
+                    <Card {...cardProps} />
+                    <Card {...cardProps} />
+                </CardsBox>
+            );
+
+            const CarouselProps = wrapper.find('CarouselMock').props() as React.ComponentProps<typeof Carousel>;
+
+            act(() => {
+                CarouselProps.onChange &&
+                CarouselProps.onChange(1, 0, 3);
+            });
+
+            expect(mockOnChange).toBeCalled();
+        });
     });
 });

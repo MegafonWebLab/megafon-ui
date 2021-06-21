@@ -9,6 +9,7 @@ import {
     breakpoints,
 } from '@megafon/ui-core';
 import './Partners.less';
+import filterDataAttrs, { IDataAttributes } from '@megafon/ui-core/src/utils/dataAttrs';
 
 export type ItemType = {
     src: string;
@@ -16,7 +17,7 @@ export type ItemType = {
     alt: string;
 };
 
-export interface IPartnersProps {
+export interface IPartnersProps extends IDataAttributes {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -33,7 +34,7 @@ export interface IPartnersProps {
     /** Обработчик клика по стрелке назад (должен быть обернут в useCallback) */
     onPrevClick?: (index: number) => void;
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
-    onChange?: (index: number) => void;
+    onChange?: (currentIndex: number, previousIndex: number, slidesPerView?: number | 'auto') => void;
 }
 
 const MAX_GRID_ITEMS_LENGTH = 8;
@@ -57,6 +58,7 @@ const cn = cnCreate('mfui-beta-partners');
 const Partners: React.FC<IPartnersProps> = ({
     rootRef,
     classes: { root, itemClass } = {},
+    dataAttrs,
     className,
     items,
     onChange,
@@ -122,7 +124,11 @@ const Partners: React.FC<IPartnersProps> = ({
     }, [items]);
 
     return (
-        <div className={cn([root, className])} ref={rootRef}>
+        <div
+            ref={rootRef}
+            className={cn([root, className])}
+            {...filterDataAttrs(dataAttrs)}
+        >
             {items.length > MAX_GRID_ITEMS_LENGTH ? renderCarousel() : renderGrid()}
         </div>
     );
@@ -137,6 +143,7 @@ Partners.propTypes = {
         root: PropTypes.string,
         itemClass: PropTypes.string,
     }),
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     className: PropTypes.string,
     items: PropTypes.arrayOf(
         PropTypes.shape({
