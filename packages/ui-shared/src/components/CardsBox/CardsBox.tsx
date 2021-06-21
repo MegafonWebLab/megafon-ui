@@ -1,9 +1,16 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
-import { cnCreate, Grid, GridColumn, Carousel, breakpoints, throttleTime } from '@megafon/ui-core';
+import {
+    Grid,
+    Carousel,
+    cnCreate,
+    GridColumn,
+    breakpoints,
+    throttleTime,
+    dataAttrs as filterDataAttrs,
+} from '@megafon/ui-core';
 import { ICard } from '../Card/Card';
-import filterDataAttrs, { IDataAttributes } from '@megafon/ui-core/src/utils/dataAttrs';
 
 type SlidesSettingsType = Pick<React.ComponentProps<typeof Carousel>, 'slidesSettings'>['slidesSettings'];
 
@@ -20,7 +27,9 @@ const SlidesSettings: SlidesSettingsType = {
     },
 };
 
-interface ICardsBoxProps extends IDataAttributes {
+interface ICardsBoxProps {
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
     onChange?: (currentIndex: number, previousIndex: number, slidesPerView?: number | 'auto') => void;
     children: Array<React.ReactElement<ICard>> | React.ReactElement<ICard>;
