@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.207](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.206...@megafon/ui-shared@2.0.0-beta.207) (2021-06-21)
+
+
+### Features
+
+* **cardsbox:** add dataAttrs and onChange props ([783c3d9](https://github.com/MegafonWebLab/megafon-ui/commit/783c3d95d0fef0a89ccbd06e44fd0959ead7e724))
+* **partners:** add dataAttr prop, extend onChange func ([86989ef](https://github.com/MegafonWebLab/megafon-ui/commit/86989efffa90763ab80875c29bc31cc69c7b4034))
+
+
+### BREAKING CHANGES
+
+* **cardsbox:** add dataAttrs and onChange props
+* **partners:** add dataAttr for Partnets, extend arguments list
+for onChange prop
+
+
+
+
+
 # [2.0.0-beta.206](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.205...@megafon/ui-shared@2.0.0-beta.206) (2021-06-18)
 
 
