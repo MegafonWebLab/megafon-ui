@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.208](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.207...@megafon/ui-shared@2.0.0-beta.208) (2021-06-22)
+
+
+### Bug Fixes
+
+* **cardsbox:** fix dataAttrs import ([ab49dbb](https://github.com/MegafonWebLab/megafon-ui/commit/ab49dbbaefd5c0e0c984a70e9f27b714a3fb11f6))
+* **partners:** fix dataAttrs import ([a07a50e](https://github.com/MegafonWebLab/megafon-ui/commit/a07a50e3f6cd15321caa28e418cb80eb67c1f049))
+
+
+
+
+
 # [2.0.0-beta.207](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.206...@megafon/ui-shared@2.0.0-beta.207) (2021-06-21)
 
 

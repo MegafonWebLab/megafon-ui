@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.143](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.142...@megafon/ui-core@2.0.0-beta.143) (2021-06-22)
+
+
+### Bug Fixes
+
+* **carousel:** fix opacity transition bug in Safari 13 ([62d066c](https://github.com/MegafonWebLab/megafon-ui/commit/62d066ceb255f3db4de2352a7a9ef90b06d058da))
+* **notification:** fix style ([9198668](https://github.com/MegafonWebLab/megafon-ui/commit/9198668ba1a4263fcfbfb207dc80d2d25d036378))
+
+
+
+
+
 # [2.0.0-beta.142](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.141...@megafon/ui-core@2.0.0-beta.142) (2021-06-18)
 
 
