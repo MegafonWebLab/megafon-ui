@@ -7,9 +7,9 @@ import {
     Tile,
     Carousel,
     breakpoints,
+    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
 import './Partners.less';
-import filterDataAttrs, { IDataAttributes } from '@megafon/ui-core/src/utils/dataAttrs';
 
 export type ItemType = {
     src: string;
@@ -17,7 +17,7 @@ export type ItemType = {
     alt: string;
 };
 
-export interface IPartnersProps extends IDataAttributes {
+export interface IPartnersProps {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -25,6 +25,8 @@ export interface IPartnersProps extends IDataAttributes {
         root?: string;
         itemClass?: string;
     };
+    /** Дата атрибуты для корневого элемента */
+    dataAttrs?: { [key: string]: string };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Список логотипов */
