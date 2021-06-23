@@ -102,7 +102,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             {
                 name: 'flip',
                 options: {
-                    fallbackPlacements: fallbackPlacements,
+                    fallbackPlacements,
                     padding: TOOLTIP_PADDING_FOR_FLIP,
                 },
             },
