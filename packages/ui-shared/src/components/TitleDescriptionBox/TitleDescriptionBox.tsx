@@ -18,9 +18,9 @@ export interface ITitleDescriptionBoxProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Заголовок */
-    title?: string;
+    title?: string | React.ReactNode[] | React.ReactNode;
     /** Описание */
-    description?: string | React.ReactNode[];
+    description?: string | React.ReactNode[] | React.ReactNode;
     /** Цвет текста */
     textColor?: 'white';
     /** Горизонтальное выравнивание */
