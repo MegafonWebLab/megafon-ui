@@ -17,6 +17,11 @@ export interface IDownloadLink {
     fileSize: string;
     /** Дополнительный класс для компонента */
     className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        link?: string;
+    };
     /** Обработчик клика по ссылке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -29,15 +34,23 @@ const DownloadLink: React.FC<IDownloadLink> = ({
     fileSize,
     onClick,
     className,
+    classes = {},
     rootRef,
 }) =>
    (
-        <div className={cn([className])} ref={rootRef}>
+        <div className={cn([className, classes.root])} ref={rootRef}>
             <div className={cn('icon')}>
                 <DownloadIcon className={cn('icon-svg')}/>
             </div>
             <div>
-                <TextLink className={cn('link')} href={href} onClick={onClick} download>{text}</TextLink>
+                <TextLink
+                    className={cn('link', [classes.link])}
+                    href={href}
+                    onClick={onClick}
+                    download
+                >
+                    {text}
+                </TextLink>
                 <p className={cn('info')}>
                     {`${extension}${extension && fileSize ? ',' : ''} ${fileSize}`}
                 </p>
@@ -55,6 +68,10 @@ DownloadLink.propTypes = {
     extension: PropTypes.string.isRequired,
     fileSize: PropTypes.string.isRequired,
     className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        link: PropTypes.string,
+    }),
     onClick: PropTypes.func,
 };
 
