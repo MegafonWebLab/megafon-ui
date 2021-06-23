@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageTitle should render component 1`] = `
+<div
+  className="mfui-beta-page-title"
+>
+  <div
+    className="mfui-beta-page-title__inner"
+  >
+    <Header
+      as="h1"
+      color="black"
+      hAlign="inherit"
+    >
+      title
+    </Header>
+  </div>
+</div>
+`;
+
+exports[`PageTitle should render with optional props 1`] = `
+<div
+  className="mfui-beta-page-title"
+>
+  <div
+    className="mfui-beta-page-title__inner"
+  >
+    <Breadcrumbs
+      className="mfui-beta-page-title__breadcrumbs"
+      items={
+        Array [
+          Object {
+            "href": "#",
+            "title": "Тарифы",
+          },
+          Object {
+            "href": "#",
+            "title": "Управляй !",
+          },
+          Object {
+            "href": "#",
+            "title": "Менеджер",
+          },
+        ]
+      }
+    />
+    <div
+      className="mfui-beta-page-title__badge"
+    >
+      badge
+    </div>
+    <Header
+      as="h1"
+      color="black"
+      hAlign="inherit"
+    >
+      title
+    </Header>
+  </div>
+</div>
+`;

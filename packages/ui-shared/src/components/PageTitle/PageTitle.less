@@ -1,0 +1,51 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-page-title');
+
+@{b} {
+    &__inner {
+        position: relative;
+        padding-top: 100px;
+
+        @media @mobileB {
+            padding-top: 90px;
+        }
+
+        @media @mobileSM {
+            padding-top: 45px;
+        }
+    }
+
+    &__breadcrumbs {
+        position: absolute;
+        top: 32px;
+        left: 0;
+
+        @media @mobileSM {
+            display: none;
+        }
+    }
+
+    &__badge {
+        .small();
+        position: absolute;
+        top: 75px;
+        left: 0;
+        padding: 2px 14px;
+        font-weight: 500;
+        background-color: @purple;
+        color: @clearWhite;
+
+        @media @desktopS {
+            top: 67px;
+        }
+
+        @media @mobileB {
+            top: 59px;
+        }
+
+        @media @mobileSM {
+            top: 16px;
+        }
+    }
+}
