@@ -36,6 +36,8 @@ type TriggerEventType = typeof TriggerEvent[keyof typeof TriggerEvent];
 export interface ITooltipProps {
     /** Позиционирование относительно триггер-элемента */
     placement?: PlacementType;
+    /** Направления перестроения тултипа при переполнении */
+    fallbackPlacements?: PlacementType[];
     /** Размер отступов от контента */
     paddings?: PaddingsType;
     /** Тип взаимодействия с триггер-элементом для показа тултипа */
@@ -65,6 +67,7 @@ const cn = cnCreate('mfui-beta-tooltip');
 const Tooltip: React.FC<ITooltipProps>  = ({
     className,
     placement = 'top',
+    fallbackPlacements = ['left', 'right' , 'top' , 'bottom'],
     paddings = 'medium',
     triggerEvent = 'hover',
     boundaryElement,
@@ -99,7 +102,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             {
                 name: 'flip',
                 options: {
-                    fallbackPlacements: ['left', 'right' , 'top' , 'bottom'],
+                    fallbackPlacements,
                     padding: TOOLTIP_PADDING_FOR_FLIP,
                 },
             },
@@ -221,6 +224,7 @@ const Tooltip: React.FC<ITooltipProps>  = ({
 
 Tooltip.propTypes = {
     placement: PropTypes.oneOf(Object.values(Placement)),
+    fallbackPlacements: PropTypes.arrayOf(PropTypes.oneOf(Object.values(Placement)).isRequired),
     paddings: PropTypes.oneOf(Object.values(Paddings)),
     triggerEvent: PropTypes.oneOf(Object.values(TriggerEvent)),
     boundaryElement: PropTypes.oneOfType([

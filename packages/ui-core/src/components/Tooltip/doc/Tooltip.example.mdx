@@ -127,6 +127,75 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
+## Перестроение относительно триггер-элемента
+
+<Playground style={{
+    ...demoWrapperBlockStyles,
+    gridTemplateColumns: 'auto 200px',
+    gap: 70,
+    justifyContent: 'space-evenly',
+}}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Сверху
+                    </Button>
+                </span>
+                <Tooltip
+                    placement="top"
+                    triggerElement={triggerElement}
+                    isOpened={true}
+                    triggerEvent="controlled"
+                    fallbackPlacements={["bottom"]}
+                >
+                    Перестроение только вниз
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Сверху
+                    </Button>
+                </span>
+                <Tooltip 
+                    triggerElement={triggerElement}
+                    isOpened={true}
+                    triggerEvent="controlled"
+                >
+                    Перестроение по умолчанию, во все стороны
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Сверху
+                    </Button>
+                </span>
+                <Tooltip
+                    placement="bottom"
+                    triggerElement={triggerElement}
+                    isOpened={true}
+                    triggerEvent="controlled"
+                    fallbackPlacements={['bottom']}
+                >
+                    Перестроение не происходит при совпадении<br />
+                    расположения и заданного направления для перестроения
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
 ##  Размер отступов от контента
 
 <Playground style={demoWrapperBlockStyles}>
