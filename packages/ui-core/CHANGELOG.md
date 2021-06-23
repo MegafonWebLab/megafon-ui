@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.144](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.143...@megafon/ui-core@2.0.0-beta.144) (2021-06-23)
+
+
+### Bug Fixes
+
+* **tooltip:** add new prop fallbackPlacements ([b98ee5c](https://github.com/MegafonWebLab/megafon-ui/commit/b98ee5c6a76c32746590908e6fd39b25b9dbd816))
+
+
+
+
+
 # [2.0.0-beta.143](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.142...@megafon/ui-core@2.0.0-beta.143) (2021-06-22)
 
 

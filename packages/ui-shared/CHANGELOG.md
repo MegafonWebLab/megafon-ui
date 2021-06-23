@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.209](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.208...@megafon/ui-shared@2.0.0-beta.209) (2021-06-23)
+
+
+### Features
+
+* **downloadlink:** add classes prop ([4f3eba2](https://github.com/MegafonWebLab/megafon-ui/commit/4f3eba27d80eda6c268a2f7f5ccdaff733f8a383))
+* **titledescriptionbox:** fix type for render HTML ([476ec22](https://github.com/MegafonWebLab/megafon-ui/commit/476ec22998712e5d4a83f6c7bba3f1e9700d74da))
+
+
+
+
+
 # [2.0.0-beta.208](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.207...@megafon/ui-shared@2.0.0-beta.208) (2021-06-22)
 
 
