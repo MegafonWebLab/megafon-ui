@@ -41,6 +41,7 @@ exports[`<Carousel /> should render with default props 1`] = `
       }
     }
     speed={300}
+    threshold={1}
     watchOverflow={true}
     watchSlidesVisibility={true}
   >
@@ -121,6 +122,7 @@ exports[`<Carousel /> should render with props 1`] = `
       }
     }
     speed={1000}
+    threshold={1}
     watchOverflow={true}
     watchSlidesVisibility={true}
   >

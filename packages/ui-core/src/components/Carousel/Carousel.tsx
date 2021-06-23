@@ -67,6 +67,8 @@ export interface ICarouselProps extends IDataAttributes {
     autoPlayDelay?: number;
     /** Скорость смены слайдов */
     transitionSpeed?: number;
+    /** Пороговое значение свайпа при котором выполняется сдвиг слайдов в карусели */
+    threshold?: number;
     /** Отключение смены слайда свайпами */
     disableTouchMove?: boolean;
     /** Активный слайд по центру экрана */
@@ -128,6 +130,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     autoPlayDelay = 5000,
     loop = false,
     transitionSpeed = 300,
+    threshold = 1,
     disableTouchMove = false,
     centeredSlides = false,
     navTheme = 'light',
@@ -249,6 +252,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 pagination={{ clickable: true, ...pagination }}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
                 speed={transitionSpeed}
+                threshold={threshold}
                 allowTouchMove={!disableTouchMove}
                 centeredSlides={centeredSlides}
                 effect={effectTheme}
@@ -320,6 +324,7 @@ Carousel.propTypes = {
         modifierClass: PropTypes.string,
     }),
     loop: PropTypes.bool,
+    threshold: PropTypes.number,
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
     disableTouchMove: PropTypes.bool,
