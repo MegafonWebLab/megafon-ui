@@ -31,9 +31,9 @@ exports[`DownloadLink render component 1`] = `
 </div>
 `;
 
-exports[`DownloadLink render with custom classname 1`] = `
+exports[`DownloadLink render with custom classes 1`] = `
 <div
-  className="mfui-beta-download-link custom-classname"
+  className="mfui-beta-download-link custom-classname root-class"
 >
   <div
     className="mfui-beta-download-link__icon"
@@ -44,7 +44,7 @@ exports[`DownloadLink render with custom classname 1`] = `
   </div>
   <div>
     <TextLink
-      className="mfui-beta-download-link__link"
+      className="mfui-beta-download-link__link link-class"
       color="blue"
       download={true}
       href="href"

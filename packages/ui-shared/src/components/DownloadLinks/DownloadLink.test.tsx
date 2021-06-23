@@ -15,8 +15,17 @@ describe('DownloadLink', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('render with custom classname', () => {
-        const wrapper = shallow(<DownloadLink {...props} className="custom-classname" />);
+    it('render with custom classes', () => {
+        const wrapper = shallow(
+            <DownloadLink
+                {...props}
+                className="custom-classname"
+                classes={{
+                    root: 'root-class',
+                    link: 'link-class',
+                }}
+            />
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
