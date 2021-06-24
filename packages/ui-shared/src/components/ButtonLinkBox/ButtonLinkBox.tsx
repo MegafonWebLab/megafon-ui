@@ -1,6 +1,7 @@
 import React, { Ref } from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate, Button, TextLink, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
+import { Button, TextLink } from '@megafon/ui-core';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import './ButtonLinkBox.less';
 
 export interface IButtonLinkBoxProps {

@@ -2,7 +2,7 @@ import React from 'react'
 import { LiveProvider, LiveError, LivePreview, LiveEditor } from 'react-live'
 import { Wrapper } from './Wrapper';
 import { theme } from './theme';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Playground.less';
 import { PlaygroundProps } from 'docz/dist/hooks/useComponents';
 import { Language } from 'prism-react-renderer';

@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavLink.less';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import { Link } from 'docz';
 
 type NavLinkProps = {

@@ -1,7 +1,7 @@
 import React, { ReactNode, useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import './Calendar.less';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import {
     FocusedInput,
     START_DATE,

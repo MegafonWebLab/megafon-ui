@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './BannerDot.less';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 
 export interface IBannerDotProps {
     className?: string;

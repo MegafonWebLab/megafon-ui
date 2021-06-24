@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { cnCreate, Grid, GridColumn } from '@megafon/ui-core';
+import { Grid, GridColumn } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './DownloadLinks.less';
 import { IDownloadLink } from './DownloadLink';
 

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { cnCreate, Tabs } from '@megafon/ui-core';
+import { Tabs } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 
 type TabsPropsType = React.ComponentProps<typeof Tabs> & {
     /** Ссылка на корневой элемент */

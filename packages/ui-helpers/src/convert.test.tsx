@@ -1,5 +1,5 @@
 import * as React from 'react';
-import convertToReact, { TransformConfig } from './convert';
+import convertToReact, { ConvertTransformConfig } from './convert';
 
 type NodeType = React.ReactElement & {
     type: {
@@ -37,7 +37,7 @@ const TextLinkComponent: React.FC<TestLinkProps> = ({
     children,
 }) => <a href={href} target={target}>{children}</a>;
 
-const config: TransformConfig = {
+const config: ConvertTransformConfig = {
     h: {
         component: TestHeaderComponent,
         props: ['type', 'color', 'margin'],

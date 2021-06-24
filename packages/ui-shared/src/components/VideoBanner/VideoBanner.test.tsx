@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import VideoBanner, { VideoType, ButtonColor, ClassName, TextColor } from './VideoBanner';
 
 const imageMobile = 'imageMobile';

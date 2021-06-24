@@ -15,16 +15,6 @@ const through = require('through2');
 const svgr = require('@svgr/core').default;
 const babelCore = require('@babel/core');
 const cheerio = require('cheerio');
-const {
-    env: {
-        buildReactIcons: {
-            plugins: babelPlugins,
-            presets: babelPresets
-        },
-        buildEs: babelEsConfig,
-        buildLib: babelLibConfig
-    },
-} = require('./.babelrc');
 
 const sep = path.sep;
 const dest = gulp.dest;
@@ -46,7 +36,7 @@ const typesReg = 'src/**/types.ts';
  */
 const lessConfig = { paths: [srcPath], plugins: [autoprefix] };
 const tsConfig = {
-    rootDir: './src',
+    baseUrl: './src',
     noUnusedParameters: true,
     noUnusedLocals: true,
     strictNullChecks: true,
@@ -55,6 +45,40 @@ const tsConfig = {
     moduleResolution: 'node',
     declaration: true,
     allowSyntheticDefaultImports: true
+};
+const babelPlugins = [
+    require.resolve('@babel/plugin-transform-object-assign'),
+    require.resolve('@babel/plugin-transform-runtime')
+];
+const babelPresets = [
+    '@babel/react',
+    ['@babel/env', {
+        useBuiltIns: 'usage',
+        corejs: '3.6'
+    }]
+];
+const babelEsConfig = {
+    presets: [
+        '@babel/react',
+        ['@babel/env', {
+            modules: false,
+            useBuiltIns: 'usage',
+            corejs: '3.6'
+        }]
+    ],
+    plugins: [
+        ...babelPlugins,
+        ['module-resolver', {
+            root: ['./src'],
+        }],
+    ]
+};
+const babelLibConfig = {
+    presets: [
+        ['@babel/env', {
+            modules: 'commonjs'
+        }]
+    ]
 };
 
 /**

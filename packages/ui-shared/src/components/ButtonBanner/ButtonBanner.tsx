@@ -3,12 +3,11 @@ import * as PropTypes from 'prop-types';
 import './ButtonBanner.less';
 import {
     Button,
-    cnCreate,
     Grid,
     GridColumn,
     Header,
-    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 
 export const ButtonColor = {
     GREEN: 'green',

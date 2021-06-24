@@ -2,10 +2,8 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 import './Select.less';
-import cnCreate from 'utils/cnCreate';
-import detectTouch from 'utils/detectTouch';
+import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import InputLabel from 'components/InputLabel/InputLabel';
-import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const Verification = {
     VALID: 'valid',
@@ -37,7 +35,7 @@ export interface ISelectItem<T extends SelectItemValueType> {
     selectedView?: JSX.Element | Element | React.ReactElement;
 }
 
-export interface ISelectProps<T extends SelectItemValueType> extends IDataAttributes {
+export interface ISelectProps<T extends SelectItemValueType> extends IFilterDataAttrs {
     /** Тип компонента */
     type?: SelectTypesType;
     /** Заголовок поля */

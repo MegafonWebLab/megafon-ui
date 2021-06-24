@@ -2,7 +2,7 @@ import * as React from 'react';
 import './Colors.less';
 import Header from 'components/Header/Header';
 import Paragraph from 'components/Paragraph/Paragraph';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import colors from './colorsData';
 
 const cn = cnCreate('colors');

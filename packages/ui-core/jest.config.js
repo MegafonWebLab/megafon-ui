@@ -17,7 +17,7 @@ module.exports = {
         "<rootDir>/src"
     ],
     "transform": {
-        "\\.tsx?$": "babel-jest"
+        "\\.tsx?$": ["babel-jest", {"rootMode": "upward"}]
     },
     "testPathIgnorePatterns": [
         "/node_modules/",

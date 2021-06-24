@@ -1,5 +1,5 @@
 import React from 'react';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Props.less';
 
 export const getDefaultValue = ({ defaultValue, type, flowType }) => {

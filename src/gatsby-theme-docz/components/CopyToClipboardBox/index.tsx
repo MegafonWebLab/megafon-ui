@@ -1,6 +1,6 @@
 import React from 'react';
 import './CopyToClipboardBox.less';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import Copy from 'icons/System/24/Copy_24.svg';
 
 const cn = cnCreate('docz-copy-to-clipboard-box');

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Counter.less';
 import IconMinus from 'icons/System/16/Minus_16.svg';
 import IconPlus from 'icons/System/16/Plus_16.svg';

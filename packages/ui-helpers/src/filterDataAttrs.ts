@@ -2,7 +2,7 @@ export interface IAttributes {
     [key: string]: string;
 }
 
-export interface IDataAttributes {
+export interface IFilterDataAttrs {
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: IAttributes;
 }

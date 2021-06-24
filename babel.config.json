@@ -1,0 +1,16 @@
+{
+  "env": {
+    "test": {
+      "presets": [
+        "@babel/react",
+        "@babel/typescript",
+        [
+          "@babel/env", {
+            "targets": {
+              "node": "14.17.1"
+            }
+        }]
+      ]
+    }
+  }
+}

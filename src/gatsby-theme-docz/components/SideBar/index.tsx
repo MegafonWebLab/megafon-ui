@@ -1,5 +1,6 @@
 import React from 'react';
-import { Logo, cnCreate } from '@megafon/ui-core';
+import { Logo } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './SideBar.less';
 import Menu from '../Menu';
 import { useCurrentDoc } from 'docz';

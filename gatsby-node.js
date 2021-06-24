@@ -35,11 +35,9 @@ exports.onPreInit = () => {
     fs.writeFile('../index.mdx', createReadmeMdx(), err => { if (!err) { console.log('index.mdx created'); } });
 
     const components = glob.sync('../packages/ui-core/src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
-    const utils = glob.sync('../packages/ui-core/src/utils/*.{tsx,ts}', { ignore: testsReg });
-    const constants = glob.sync('../packages/ui-core/src/constants/*.ts');
 
-    fs.writeFile(indexTs, generateIndex([...components, ...utils, ...constants]), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
-}
+    fs.writeFile(indexTs, generateIndex(components), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
+};
 
 exports.onCreateWebpackConfig = args => {
     const config = args.getConfig();
@@ -67,6 +65,7 @@ exports.onCreateWebpackConfig = args => {
             ],
             alias: {
                 "@megafon/ui-core": resolve(__dirname, "../packages/ui-core/src"),
+                "@megafon/ui-helpers": resolve(__dirname, "../packages/ui-helpers/src")
             }
         },
         module: {

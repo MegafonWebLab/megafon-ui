@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate, Collapse } from '@megafon/ui-core';
+import { Collapse } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './PropertyDescription.less';
 import { Desc } from './types';
 

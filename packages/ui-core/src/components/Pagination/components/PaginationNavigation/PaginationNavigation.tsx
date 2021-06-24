@@ -1,5 +1,5 @@
 import React from 'react';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './PaginationNavigation.less';
 import ArrowRightIcon from 'icons/System/24/Arrow_right_24.svg';

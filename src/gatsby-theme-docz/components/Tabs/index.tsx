@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Tabs.less';
 
 const TextMap = ['Примеры и код', 'Свойства и методы', 'Правила использования'];
