@@ -4,58 +4,52 @@ exports[`PageTitle should render component 1`] = `
 <div
   className="mfui-beta-page-title"
 >
-  <div
-    className="mfui-beta-page-title__inner"
+  <Header
+    as="h1"
+    className="mfui-beta-page-title__title"
+    color="black"
+    hAlign="inherit"
   >
-    <Header
-      as="h1"
-      color="black"
-      hAlign="inherit"
-    >
-      title
-    </Header>
-  </div>
+    title
+  </Header>
 </div>
 `;
 
 exports[`PageTitle should render with optional props 1`] = `
 <div
-  className="mfui-beta-page-title"
+  className="mfui-beta-page-title custom-class-name"
 >
+  <Breadcrumbs
+    className="mfui-beta-page-title__breadcrumbs breadcrumbs-custom-class-name"
+    items={
+      Array [
+        Object {
+          "href": "#",
+          "title": "Тарифы",
+        },
+        Object {
+          "href": "#",
+          "title": "Управляй !",
+        },
+        Object {
+          "href": "#",
+          "title": "Менеджер",
+        },
+      ]
+    }
+  />
   <div
-    className="mfui-beta-page-title__inner"
+    className="mfui-beta-page-title__badge"
   >
-    <Breadcrumbs
-      className="mfui-beta-page-title__breadcrumbs"
-      items={
-        Array [
-          Object {
-            "href": "#",
-            "title": "Тарифы",
-          },
-          Object {
-            "href": "#",
-            "title": "Управляй !",
-          },
-          Object {
-            "href": "#",
-            "title": "Менеджер",
-          },
-        ]
-      }
-    />
-    <div
-      className="mfui-beta-page-title__badge"
-    >
-      badge
-    </div>
-    <Header
-      as="h1"
-      color="black"
-      hAlign="inherit"
-    >
-      title
-    </Header>
+    badge
   </div>
+  <Header
+    as="h1"
+    className="mfui-beta-page-title__title"
+    color="black"
+    hAlign="inherit"
+  >
+    title
+  </Header>
 </div>
 `;

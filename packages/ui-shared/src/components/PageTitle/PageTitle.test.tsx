@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import PageTitle from './PageTitle';
 
 const breadcrumbs = [
@@ -27,8 +27,24 @@ describe('PageTitle', () => {
     });
 
     it('should render with optional props', () => {
-        const wrapper = shallow(<PageTitle title="title" breadcrumbs={breadcrumbs} badge={badge} />);
+        const wrapper = shallow(
+            <PageTitle
+                title="title"
+                breadcrumbs={breadcrumbs}
+                badge={badge}
+                className="custom-class-name"
+                classes={{ breadcrumbs: 'breadcrumbs-custom-class-name' }}/>
+        );
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return ref to component', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+
+        const wrapper = mount(<PageTitle title="title" rootRef={ref} />);
+        const rootNode = wrapper.getDOMNode();
+
+        expect(ref.current).toBe(rootNode);
     });
 });

@@ -3,49 +3,72 @@
 @b: e('.mfui-beta-page-title');
 
 @{b} {
-    &__inner {
-        position: relative;
-        padding-top: 100px;
-
-        @media @mobileB {
-            padding-top: 90px;
-        }
-
-        @media @mobileSM {
-            padding-top: 45px;
-        }
-    }
+    display: inline-block;
+    width: 100%;
 
     &__breadcrumbs {
-        position: absolute;
-        top: 32px;
-        left: 0;
+        margin-top: 32px;
 
         @media @mobileSM {
             display: none;
         }
     }
 
+    &__title {
+        margin-top: 110px;
+
+        @media @desktopS {
+            margin-top: 100px;
+        }
+
+        @media @mobileB {
+            margin-top: 90px;
+        }
+
+        @media @mobileSM {
+            margin-top: 45px;
+        }
+    }
+
     &__badge {
         .small();
-        position: absolute;
-        top: 75px;
-        left: 0;
+        display: inline-block;
+        margin-top: 16px;
         padding: 2px 14px;
         font-weight: 500;
         background-color: @purple;
         color: @clearWhite;
+    }
+
+    &__breadcrumbs + &__badge {
+        @media @desktopMU {
+            margin-top: 32px;
+        }
 
         @media @desktopS {
-            top: 67px;
+            margin-top: 24px;
         }
 
         @media @mobileB {
-            top: 59px;
+            margin-top: 16px;
+        }
+    }
+
+    &__breadcrumbs + &__title {
+        @media @desktopMU {
+            margin-top: 60px;
         }
 
-        @media @mobileSM {
-            top: 16px;
+        @media @desktopS {
+            margin-top: 50px;
         }
+
+        @media @mobileB {
+            margin-top: 45px;
+        }
+    }
+
+    &__badge + &__title {
+        margin-top: 8px;
     }
 }
