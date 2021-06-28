@@ -22,9 +22,9 @@ type Props = {
 };
 
 const cn = cnCreate('mfui-beta-page-title');
-const PageTitle: React.FC<Props> = ({ title, breadcrumbs, badge, className, classes= {}, rootRef }) => (
+const PageTitle: React.FC<Props> = ({ title, breadcrumbs, badge, className, classes = {}, rootRef }) => (
     <div className={cn([className])} ref={rootRef}>
-        {breadcrumbs?.length &&
+        {!!breadcrumbs?.length &&
             <Breadcrumbs items={breadcrumbs} className={cn('breadcrumbs', {}, classes.breadcrumbs)} />}
         {badge && <div className={cn('badge')}>{badge}</div>}
         <Header className={cn('title')} as="h1">{title}</Header>
@@ -46,7 +46,10 @@ PageTitle.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([
+            PropTypes.shape({ current: PropTypes.elementType }),
+            PropTypes.any,
+        ]),
     ]),
 };
 
