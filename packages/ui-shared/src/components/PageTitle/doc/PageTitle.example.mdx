@@ -1,0 +1,52 @@
+import { Playground } from 'docz';
+import PageTitle from '../PageTitle';
+import { title, breadcrumbs, badge } from './PageTitle.docz.ts';
+
+```javascript collapse=Демо данные
+
+const title = 'Копилка';
+
+const breadcrumbs = [
+    {
+        title: 'Тарифы',
+        href: '#',
+    },
+    {
+        title: 'Управляй !',
+        href: '#',
+    },
+    {
+        title: 'Менеджер',
+        href: '#',
+    },
+];
+
+const badge = 'VIP';
+
+```
+
+## Базовое использование
+
+<Playground>
+    <PageTitle title={title} />
+</Playground>
+
+## C хлебными крошками
+
+Хлебные крошки не отображаются на мобильном разрешении
+
+<Playground>
+    <PageTitle title={title} breadcrumbs={breadcrumbs} />
+</Playground>
+
+## С бейджем
+
+<Playground>
+    <PageTitle title={title} badge={badge} />
+</Playground>
+
+## Все опции
+
+<Playground>
+    <PageTitle title={title} breadcrumbs={breadcrumbs} badge={badge} />
+</Playground>

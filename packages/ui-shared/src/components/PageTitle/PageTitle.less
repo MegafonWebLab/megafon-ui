@@ -1,0 +1,74 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-beta-page-title');
+
+@{b} {
+    display: inline-block;
+    width: 100%;
+
+    &__breadcrumbs {
+        margin-top: 32px;
+
+        @media @mobileSM {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-top: 110px;
+
+        @media @desktopS {
+            margin-top: 100px;
+        }
+
+        @media @mobileB {
+            margin-top: 90px;
+        }
+
+        @media @mobileSM {
+            margin-top: 45px;
+        }
+    }
+
+    &__badge {
+        .small();
+        display: inline-block;
+        margin-top: 16px;
+        padding: 2px 14px;
+        font-weight: 500;
+        background-color: @purple;
+        color: @clearWhite;
+    }
+
+    &__breadcrumbs + &__badge {
+        @media @desktopMU {
+            margin-top: 32px;
+        }
+
+        @media @desktopS {
+            margin-top: 24px;
+        }
+
+        @media @mobileB {
+            margin-top: 16px;
+        }
+    }
+
+    &__breadcrumbs + &__title {
+        @media @desktopMU {
+            margin-top: 60px;
+        }
+
+        @media @desktopS {
+            margin-top: 50px;
+        }
+
+        @media @mobileB {
+            margin-top: 45px;
+        }
+    }
+
+    &__badge + &__title {
+        margin-top: 8px;
+    }
+}

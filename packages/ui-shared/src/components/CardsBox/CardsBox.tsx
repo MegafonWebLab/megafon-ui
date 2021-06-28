@@ -28,6 +28,8 @@ const SlidesSettings: SlidesSettingsType = {
 };
 
 interface ICardsBoxProps {
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
@@ -37,6 +39,7 @@ interface ICardsBoxProps {
 
 const cn = cnCreate('mfui-beta-cards-box');
 const CardsBox: React.FC<ICardsBoxProps> = ({
+    rootRef,
     dataAttrs,
     onChange,
     children,
@@ -80,13 +83,17 @@ const CardsBox: React.FC<ICardsBoxProps> = ({
     }, []);
 
     return (
-        <div className={cn()} {...filterDataAttrs(dataAttrs)}>
+        <div className={cn()} ref={rootRef} {...filterDataAttrs(dataAttrs)}>
             {isRenderCarousel ? renderCarousel() : renderGrid()}
         </div>
     );
 };
 
 CardsBox.propTypes = {
+    rootRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+    ]),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.element.isRequired),
         PropTypes.element,

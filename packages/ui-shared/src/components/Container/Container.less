@@ -21,7 +21,8 @@
 @k18: e('.mfui-beta-store-banner');
 @k19: e('.mfui-beta-button-banner');
 @k20: e('.mfui-beta-steps');
-@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19, @k20;
+@k21: e('.mfui-beta-page-title');
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19, @k20, @k21;
 
 @color-modificator: e('&_bg-color_');
 @color-default: e('default');
@@ -406,5 +407,24 @@
 
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k20, 3, 19);
+    }
+
+    // k21(page-title)
+    .generateComponentsMargins(@large, @k21, 2, 17);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k21, 2, 17);
+    }
+
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k21, 2, 17);
+    }
+
+    @{k21} + @{k15} {
+        margin-top: @small;
+    }
+
+    @{k21} + @{k14} {
+        .disableMarginTop();
     }
 }
