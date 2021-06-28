@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.210](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.209...@megafon/ui-shared@2.0.0-beta.210) (2021-06-28)
+
+
+### Bug Fixes
+
+* **videobanner:** fix breadcrumbs render ([aebb08f](https://github.com/MegafonWebLab/megafon-ui/commit/aebb08fa282dbe9449a9b678d875b37c1f7f9cfe))
+
+
+### Features
+
+* **cardsbox:** add ref prop ([974c645](https://github.com/MegafonWebLab/megafon-ui/commit/974c64547fb8e3af19b81258131b1783eaab80eb))
+* **pagetitle:** add new component ([93120cf](https://github.com/MegafonWebLab/megafon-ui/commit/93120cfcdba4f0c345747fec77dc22c8ba286073))
+* **titledescriptionbox:** fix PropTypes for render HTML ([46e801b](https://github.com/MegafonWebLab/megafon-ui/commit/46e801bf97715e9f9a1473ea89472b646273f14d))
+
+
+### BREAKING CHANGES
+
+* **cardsbox:** add ref prop
+
+
+
+
+
 # [2.0.0-beta.209](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.208...@megafon/ui-shared@2.0.0-beta.209) (2021-06-23)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.145](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.144...@megafon/ui-core@2.0.0-beta.145) (2021-06-28)
+
+
+### Bug Fixes
+
+* **notification:** fix style ([d891e56](https://github.com/MegafonWebLab/megafon-ui/commit/d891e56b67be216a516a7b2ba761048c441a7e3b))
+
+
+### Features
+
+* **carousel:** add new prop threshold ([a9b429c](https://github.com/MegafonWebLab/megafon-ui/commit/a9b429c33c741a509654c1fc0fa5fd275a90d802))
+
+
+
+
+
 # [2.0.0-beta.144](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.143...@megafon/ui-core@2.0.0-beta.144) (2021-06-23)
 
 
