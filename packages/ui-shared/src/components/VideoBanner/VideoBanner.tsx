@@ -262,7 +262,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 <div
                     className={cn('wrapper')}
                 >
-                    {breadcrumbs?.length &&
+                    {!!breadcrumbs?.length &&
                         <Breadcrumbs
                             className={cn('breadcrumbs')}
                             items={breadcrumbs}
