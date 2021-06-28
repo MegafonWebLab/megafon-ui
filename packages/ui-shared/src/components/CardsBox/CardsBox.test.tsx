@@ -37,6 +37,13 @@ describe('CardsBox', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should return reference to root element', () => {
+        const ref: React.RefObject<HTMLDivElement> = React.createRef();
+        mount(<CardsBox rootRef={ref}><Card {...cardProps} /></CardsBox>);
+
+        expect(ref.current).not.toBeNull();
+    });
+
     describe('mobile resolution', () => {
         beforeAll(() => {
             localWindow.innerWidth = 320;
