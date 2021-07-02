@@ -40,6 +40,7 @@ export interface IInstructionsProps {
         activeInstructionItem?: string;
         desktopItemTitle?: string;
         mobileItemTitle?: string;
+        instructionItemImg?: string;
     };
     /** Заголовок инструкции */
     title: string;
@@ -62,6 +63,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
         activeInstructionItem,
         desktopItemTitle,
         mobileItemTitle,
+        instructionItemImg,
     } = {},
     title,
     instructionItems,
@@ -132,7 +134,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 <SwiperSlide className={swiperSlideCn} key={ind + mediaUrl}>
                     {isVideo
                         ? renderVideo(mediaUrl)
-                        : <img className={cn('swiper-img')} src={mediaUrl} alt="" />
+                        : <img className={cn('swiper-img', [instructionItemImg])} src={mediaUrl} alt="" />
                     }
                 </SwiperSlide>
             ))}
@@ -235,6 +237,7 @@ Instructions.propTypes = {
         activeInstructionItem: PropTypes.string,
         desktopItemTitle: PropTypes.string,
         mobileItemTitle: PropTypes.string,
+        instructionItemImg: PropTypes.string,
     }),
     title: PropTypes.string.isRequired,
     instructionItems: PropTypes.arrayOf(

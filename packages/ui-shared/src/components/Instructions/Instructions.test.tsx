@@ -132,6 +132,7 @@ describe('<Instructions />', () => {
                     activeInstructionItem: 'test-class_activeArticleItem',
                     desktopItemTitle: 'desktopItemTitle',
                     mobileItemTitle: 'mobileItemTitle',
+                    instructionItemImg: 'instructionItemImg',
                 }}
             />
         );
