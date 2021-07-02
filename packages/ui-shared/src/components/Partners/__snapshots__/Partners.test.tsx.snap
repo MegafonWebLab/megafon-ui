@@ -8,15 +8,15 @@ exports[`<Partners /> should render carousel 1`] = `
     slidesSettings={
       Object {
         "0": Object {
-          "slidesPerView": "auto",
+          "slidesPerView": 2,
           "spaceBetween": 16,
         },
         "1024": Object {
           "slidesPerView": 4,
           "spaceBetween": 20,
         },
-        "768": Object {
-          "slidesPerView": "auto",
+        "480": Object {
+          "slidesPerView": 3,
           "spaceBetween": 20,
         },
       }
@@ -304,15 +304,15 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     slidesSettings={
       Object {
         "0": Object {
-          "slidesPerView": "auto",
+          "slidesPerView": 2,
           "spaceBetween": 16,
         },
         "1024": Object {
           "slidesPerView": 4,
           "spaceBetween": 20,
         },
-        "768": Object {
-          "slidesPerView": "auto",
+        "480": Object {
+          "slidesPerView": 3,
           "spaceBetween": 20,
         },
       }
