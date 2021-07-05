@@ -130,7 +130,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     autoPlayDelay = 5000,
     loop = false,
     transitionSpeed = 300,
-    threshold = 1,
+    threshold,
     disableTouchMove = false,
     centeredSlides = false,
     navTheme = 'light',
@@ -256,7 +256,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 allowTouchMove={!disableTouchMove}
                 centeredSlides={centeredSlides}
                 effect={effectTheme}
-                noSwipingSelector={noSwipingSelector}
+                noSwipingSelector={!!noSwipingSelector ? `.swiper-pagination, ${noSwipingSelector}` : '.swiper-pagination'}
                 onSwiper={handleSwiper}
                 onReachBeginning={handleReachBeginnig}
                 onReachEnd={handleReachEnd}

@@ -5297,7 +5297,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
             >
               <img
                 alt=""
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-beta-instructions__swiper-img instructionItemImg"
                 src="ImgUrl2"
               />
             </SwiperSlide>
