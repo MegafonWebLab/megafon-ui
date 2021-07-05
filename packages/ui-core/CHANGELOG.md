@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.146](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.145...@megafon/ui-core@2.0.0-beta.146) (2021-07-05)
+
+
+### Bug Fixes
+
+* **carousel:** turn off swiping on pagination ([caec9be](https://github.com/MegafonWebLab/megafon-ui/commit/caec9bef833893abd36821b407e6ad323d0669ff))
+
+
+
+
+
 # [2.0.0-beta.145](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.144...@megafon/ui-core@2.0.0-beta.145) (2021-06-28)
 
 

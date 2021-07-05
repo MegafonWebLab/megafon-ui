@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.211](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.210...@megafon/ui-shared@2.0.0-beta.211) (2021-07-05)
+
+
+### Features
+
+* **instructions:** add new classes instructionItemImg for img ([1dac031](https://github.com/MegafonWebLab/megafon-ui/commit/1dac0315b9b565313ca87c3a090eada8ccbdf801))
+* **partners:** configured to display a fixed number of slides ([fde3dc7](https://github.com/MegafonWebLab/megafon-ui/commit/fde3dc7a2e36b46958bf1f5afc8272cb85cbb2ca))
+
+
+
+
+
 # [2.0.0-beta.210](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.209...@megafon/ui-shared@2.0.0-beta.210) (2021-06-28)
 
 
