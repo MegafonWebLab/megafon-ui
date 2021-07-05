@@ -43,11 +43,11 @@ const MAX_GRID_ITEMS_LENGTH = 8;
 
 const slidesSettings = {
     [breakpoints.mobileSmallStart]: {
-        slidesPerView: 'auto' as const,
+        slidesPerView: 2,
         spaceBetween: 16,
     },
-    [breakpoints.mobileBigStart]: {
-        slidesPerView: 'auto' as const,
+    [breakpoints.mobileMiddleStart]: {
+        slidesPerView: 3,
         spaceBetween: 20,
     },
     [breakpoints.desktopSmallStart]: {
