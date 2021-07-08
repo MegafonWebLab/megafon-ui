@@ -10,13 +10,13 @@ exports[`<Carousel /> should render with default props 1`] = `
     autoplay={false}
     breakpoints={
       Object {
-        "0": Object {
-          "slidesPerView": 1,
-          "spaceBetween": 16,
-        },
         "1280": Object {
           "slidesPerView": 4,
           "spaceBetween": 20,
+        },
+        "320": Object {
+          "slidesPerView": 1,
+          "spaceBetween": 16,
         },
         "768": Object {
           "slidesPerView": 3,
