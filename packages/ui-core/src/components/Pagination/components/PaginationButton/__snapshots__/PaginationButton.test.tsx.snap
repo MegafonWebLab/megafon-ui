@@ -2,7 +2,7 @@
 
 exports[`PaginationButton should render active button 1`] = `
 <button
-  className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_black"
+  className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_default"
   disabled={false}
   onClick={[Function]}
 >
@@ -12,7 +12,7 @@ exports[`PaginationButton should render active button 1`] = `
 
 exports[`PaginationButton should render component 1`] = `
 <button
-  className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black"
+  className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default"
   disabled={false}
   onClick={[Function]}
 >
@@ -22,7 +22,7 @@ exports[`PaginationButton should render component 1`] = `
 
 exports[`PaginationButton should render disabled button 1`] = `
 <button
-  className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black"
+  className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default"
   disabled={true}
   onClick={[Function]}
 >
@@ -32,7 +32,7 @@ exports[`PaginationButton should render disabled button 1`] = `
 
 exports[`PaginationButton should render with optional props 1`] = `
 <button
-  className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_white custom-class-name"
+  className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_light custom-class-name"
   disabled={false}
   onClick={[Function]}
 >

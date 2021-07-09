@@ -7,7 +7,7 @@ import './PaginationButtons.less';
 
 interface IPaginationButtons {
    items: Array<string | number>;
-   theme?: 'black' | 'white';
+   theme?: 'default' | 'light';
    activeButton: number;
    hiddenButton: string;
    onClick: (value?: number| string) => void;
@@ -58,7 +58,7 @@ const PaginationButtons: React.FC<IPaginationButtons> = ({
 
 PaginationButtons.propTypes = {
     items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired).isRequired,
-    theme: PropTypes.oneOf(['black', 'white']),
+    theme: PropTypes.oneOf(['default', 'light']),
     activeButton: PropTypes.number.isRequired,
     hiddenButton: PropTypes.string.isRequired,
     onClick: PropTypes.func.isRequired,

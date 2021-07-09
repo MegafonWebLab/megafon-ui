@@ -14,16 +14,16 @@ exports[`Pagination render on mobile resolution should render component with lef
       direction="left"
       isDisabled={false}
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
         isDisabled={false}
         onClick={[Function]}
-        theme="black"
+        theme="default"
       >
         <button
-          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
+          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
         >
@@ -46,7 +46,7 @@ exports[`Pagination render on mobile resolution should render component with lef
         ]
       }
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <div
         className="mfui-beta-pagination-buttons"
@@ -56,11 +56,11 @@ exports[`Pagination render on mobile resolution should render component with lef
           isActive={false}
           key="0"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={1}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -71,10 +71,10 @@ exports[`Pagination render on mobile resolution should render component with lef
           className="mfui-beta-pagination-buttons__button"
           isDisabled={true}
           key="1"
-          theme="black"
+          theme="default"
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
           >
@@ -86,11 +86,11 @@ exports[`Pagination render on mobile resolution should render component with lef
           isActive={true}
           key="2"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={5}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -101,10 +101,10 @@ exports[`Pagination render on mobile resolution should render component with lef
           className="mfui-beta-pagination-buttons__button"
           isDisabled={true}
           key="3"
-          theme="black"
+          theme="default"
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
           >
@@ -116,11 +116,11 @@ exports[`Pagination render on mobile resolution should render component with lef
           isActive={false}
           key="4"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={10}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -133,16 +133,16 @@ exports[`Pagination render on mobile resolution should render component with lef
       className="mfui-beta-pagination__button"
       isDisabled={false}
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
         isDisabled={false}
         onClick={[Function]}
-        theme="black"
+        theme="default"
       >
         <button
-          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
+          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
         >
@@ -170,16 +170,16 @@ exports[`Pagination render on mobile resolution should render component with lef
       direction="left"
       isDisabled={false}
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
         isDisabled={false}
         onClick={[Function]}
-        theme="black"
+        theme="default"
       >
         <button
-          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
+          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
         >
@@ -202,7 +202,7 @@ exports[`Pagination render on mobile resolution should render component with lef
         ]
       }
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <div
         className="mfui-beta-pagination-buttons"
@@ -212,11 +212,11 @@ exports[`Pagination render on mobile resolution should render component with lef
           isActive={false}
           key="0"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={1}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -227,10 +227,10 @@ exports[`Pagination render on mobile resolution should render component with lef
           className="mfui-beta-pagination-buttons__button"
           isDisabled={true}
           key="1"
-          theme="black"
+          theme="default"
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
           >
@@ -242,11 +242,11 @@ exports[`Pagination render on mobile resolution should render component with lef
           isActive={true}
           key="2"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={8}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -258,11 +258,11 @@ exports[`Pagination render on mobile resolution should render component with lef
           isActive={false}
           key="3"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={9}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -274,11 +274,11 @@ exports[`Pagination render on mobile resolution should render component with lef
           isActive={false}
           key="4"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={10}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -291,16 +291,16 @@ exports[`Pagination render on mobile resolution should render component with lef
       className="mfui-beta-pagination__button"
       isDisabled={false}
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
         isDisabled={false}
         onClick={[Function]}
-        theme="black"
+        theme="default"
       >
         <button
-          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
+          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
         >
@@ -328,16 +328,16 @@ exports[`Pagination render on mobile resolution should render component with rig
       direction="left"
       isDisabled={true}
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
         isDisabled={true}
         onClick={[Function]}
-        theme="black"
+        theme="default"
       >
         <button
-          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
+          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
           disabled={true}
           onClick={[Function]}
         >
@@ -360,7 +360,7 @@ exports[`Pagination render on mobile resolution should render component with rig
         ]
       }
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <div
         className="mfui-beta-pagination-buttons"
@@ -370,11 +370,11 @@ exports[`Pagination render on mobile resolution should render component with rig
           isActive={true}
           key="0"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={1}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -386,11 +386,11 @@ exports[`Pagination render on mobile resolution should render component with rig
           isActive={false}
           key="1"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={2}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -402,11 +402,11 @@ exports[`Pagination render on mobile resolution should render component with rig
           isActive={false}
           key="2"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={3}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -417,10 +417,10 @@ exports[`Pagination render on mobile resolution should render component with rig
           className="mfui-beta-pagination-buttons__button"
           isDisabled={true}
           key="3"
-          theme="black"
+          theme="default"
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
           >
@@ -432,11 +432,11 @@ exports[`Pagination render on mobile resolution should render component with rig
           isActive={false}
           key="4"
           onClick={[Function]}
-          theme="black"
+          theme="default"
           value={10}
         >
           <button
-            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-buttons__button"
+            className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
           >
@@ -449,16 +449,16 @@ exports[`Pagination render on mobile resolution should render component with rig
       className="mfui-beta-pagination__button"
       isDisabled={false}
       onClick={[Function]}
-      theme="black"
+      theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
         isDisabled={false}
         onClick={[Function]}
-        theme="black"
+        theme="default"
       >
         <button
-          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_black mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
+          className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
         >
@@ -481,7 +481,7 @@ exports[`Pagination should render component with left and right hidden buttons 1
     direction="left"
     isDisabled={false}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationButtons
     activeButton={5}
@@ -498,13 +498,13 @@ exports[`Pagination should render component with left and right hidden buttons 1
       ]
     }
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     isDisabled={false}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
 </div>
 `;
@@ -518,7 +518,7 @@ exports[`Pagination should render component with left hidden buttons 1`] = `
     direction="left"
     isDisabled={false}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationButtons
     activeButton={8}
@@ -535,13 +535,13 @@ exports[`Pagination should render component with left hidden buttons 1`] = `
       ]
     }
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     isDisabled={false}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
 </div>
 `;
@@ -555,7 +555,7 @@ exports[`Pagination should render component with number of buttons does not exce
     direction="left"
     isDisabled={true}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationButtons
     activeButton={1}
@@ -568,13 +568,13 @@ exports[`Pagination should render component with number of buttons does not exce
       ]
     }
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     isDisabled={false}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
 </div>
 `;
@@ -588,7 +588,7 @@ exports[`Pagination should render component with right hidden buttons 1`] = `
     direction="left"
     isDisabled={true}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationButtons
     activeButton={1}
@@ -605,13 +605,13 @@ exports[`Pagination should render component with right hidden buttons 1`] = `
       ]
     }
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     isDisabled={false}
     onClick={[Function]}
-    theme="black"
+    theme="default"
   />
 </div>
 `;

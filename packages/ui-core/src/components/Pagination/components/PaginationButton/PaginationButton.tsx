@@ -8,7 +8,7 @@ type ValueType = string | number;
 export interface IPaginationButton {
     isDisabled?: boolean;
     isActive?: boolean;
-    theme?: 'black' | 'white';
+    theme?: 'default' | 'light';
     className?: string;
     onClick?: (value?: ValueType) => void;
     value?: ValueType;
@@ -18,7 +18,7 @@ const cn = cnCreate('mfui-beta-pagination-button');
 const PaginationButton: React.FC<IPaginationButton> = ({
     isDisabled = false,
     isActive = false,
-    theme = 'black',
+    theme = 'default',
     className,
     children,
     onClick,
@@ -42,10 +42,10 @@ const PaginationButton: React.FC<IPaginationButton> = ({
 PaginationButton.propTypes = {
     isDisabled: PropTypes.bool,
     isActive: PropTypes.bool,
-    theme: PropTypes.oneOf(['black', 'white']),
+    theme: PropTypes.oneOf(['default', 'light']),
     className: PropTypes.string,
     onClick: PropTypes.func,
-    value: PropTypes.oneOfType([ PropTypes.number, PropTypes.string ]),
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default PaginationButton;

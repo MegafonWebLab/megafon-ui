@@ -24,7 +24,7 @@ describe('PaginationButton', () => {
     it('should render with optional props', () => {
         const wrapper = shallow(
             <PaginationButton
-                theme="white"
+                theme="light"
                 className="custom-class-name"
                 value={1}
                 onClick={jest.fn()}

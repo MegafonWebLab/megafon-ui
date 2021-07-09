@@ -3,11 +3,11 @@ import cnCreate from 'utils/cnCreate';
 import PropTypes from 'prop-types';
 import './PaginationNavigation.less';
 import ArrowRightIcon from 'icons/System/24/Arrow_right_24.svg';
-import PaginationButton from 'components/Pagination/components/PaginationButton/PaginationButton';
+import PaginationButton from '../PaginationButton/PaginationButton';
 
 interface IPaginationNavigation {
     direction?: 'left' | 'right';
-    theme?: 'black' | 'white';
+    theme?: 'default' | 'light';
     isDisabled?: boolean;
     isActive?: boolean;
     className?: string;
@@ -36,7 +36,7 @@ const PaginationNavigation: React.FC<IPaginationNavigation> = ({
 
 PaginationNavigation.propTypes = {
     direction: PropTypes.oneOf(['left', 'right']),
-    theme: PropTypes.oneOf(['black', 'white']),
+    theme: PropTypes.oneOf(['default', 'light']),
     isDisabled: PropTypes.bool,
     isActive: PropTypes.bool,
     className: PropTypes.string,

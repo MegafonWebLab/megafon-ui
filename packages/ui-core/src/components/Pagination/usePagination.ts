@@ -16,7 +16,14 @@ const NeighbourCount = {
 const BUTTON_RATIO = 5;
 const MOBILE_RESOLUTION = 360;
 
-const getItems = (totalPages: number, activePage: number, maxButtonsCount: number, neighbourCount: number) => {
+type GetItemsParamsType = {
+    totalPages: number;
+    activePage: number;
+    maxButtonsCount: number;
+    neighbourCount: number;
+};
+
+const getItems = ({ totalPages, activePage,  maxButtonsCount, neighbourCount }: GetItemsParamsType) => {
     const isMoreThenMaxBtnsCount = totalPages > maxButtonsCount;
     const lastPage = totalPages;
 
@@ -29,7 +36,6 @@ const getItems = (totalPages: number, activePage: number, maxButtonsCount: numbe
 
     switch (true) {
         case (!hasLeftHiddenBtns && hasRightHiddenBtns): {
-
             const range = getRange(Button.FIRST, maxButtonsCount - 2);
 
             return [...range, Button.HIDDEN, lastPage];
@@ -38,7 +44,7 @@ const getItems = (totalPages: number, activePage: number, maxButtonsCount: numbe
         case (hasLeftHiddenBtns && !hasRightHiddenBtns): {
             const range = getRange(totalPages - (2 + 2 * neighbourCount), totalPages);
 
-            return [Button.FIRST,  Button.HIDDEN, ...range];
+            return [Button.FIRST, Button.HIDDEN, ...range];
         }
 
         default: {
@@ -52,7 +58,12 @@ const getItems = (totalPages: number, activePage: number, maxButtonsCount: numbe
 const usePagination = (totalPages: number, activePage: number) => {
     const [neighbourCount, setNeighbourCount] = React.useState(NeighbourCount.MAIN);
     const maxButtonsCount = 2 * neighbourCount + BUTTON_RATIO;
-    const paginationItems = getItems(totalPages, activePage, maxButtonsCount, neighbourCount);
+    const paginationItems = getItems({
+        totalPages,
+        activePage,
+        maxButtonsCount,
+        neighbourCount,
+    });
 
     React.useEffect(() => {
         const handleResize = () => {

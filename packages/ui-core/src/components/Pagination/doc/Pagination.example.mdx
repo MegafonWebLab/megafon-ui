@@ -33,11 +33,11 @@ import ContentArea from "components/ContentArea/ContentArea";
     <Pagination totalPages={300} activePage={200} onChange={() => {}} />
 </Playground>
 
-## Белая тема
+## Светлая тема
 
 <Playground>
     <div style={{ padding: '30px 0', backgroundColor: "#00B956" }}>
-        <Pagination totalPages={10} activePage={1} theme="white" onChange={() => {}} />
+        <Pagination totalPages={10} activePage={1} theme="light" onChange={() => {}} />
     </div>
 </Playground>
 
@@ -48,15 +48,11 @@ import ContentArea from "components/ContentArea/ContentArea";
 const DemoWrapper = ({ totalPages }) => {
     const [activePage, setActivePage] = React.useState(3);
 
-    const handleChange = (value) => {
-       setActivePage(value);
-    };
-
     return (
         <Pagination
             activePage={activePage}
             totalPages={totalPages}
-            onChange={handleChange}
+            onChange={setActivePage}
         />
     );
 };
