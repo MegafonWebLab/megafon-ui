@@ -7,13 +7,13 @@ exports[`<Partners /> should render carousel 1`] = `
   <Carousel
     slidesSettings={
       Object {
-        "0": Object {
-          "slidesPerView": 2,
-          "spaceBetween": 16,
-        },
         "1024": Object {
           "slidesPerView": 4,
           "spaceBetween": 20,
+        },
+        "320": Object {
+          "slidesPerView": 2,
+          "spaceBetween": 16,
         },
         "480": Object {
           "slidesPerView": 3,
@@ -303,13 +303,13 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
   <Carousel
     slidesSettings={
       Object {
-        "0": Object {
-          "slidesPerView": 2,
-          "spaceBetween": 16,
-        },
         "1024": Object {
           "slidesPerView": 4,
           "spaceBetween": 20,
+        },
+        "320": Object {
+          "slidesPerView": 2,
+          "spaceBetween": 16,
         },
         "480": Object {
           "slidesPerView": 3,
