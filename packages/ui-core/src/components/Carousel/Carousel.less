@@ -58,6 +58,7 @@
             opacity: 0;
             transition: opacity 0.2s;
             backface-visibility: hidden; // fix opacity transition bug in Safari 13
+            transform: translate3d(0, 0, 0); // fix opacity transition bug in IE
         }
     }
 
