@@ -133,6 +133,7 @@ describe('<Instructions />', () => {
                     desktopItemTitle: 'desktopItemTitle',
                     mobileItemTitle: 'mobileItemTitle',
                     instructionItemImg: 'instructionItemImg',
+                    instructionItemText: 'instructionItemText',
                 }}
             />
         );

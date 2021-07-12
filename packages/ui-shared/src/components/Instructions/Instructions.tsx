@@ -5,7 +5,7 @@ import throttle from 'lodash.throttle';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
-import { breakpoints, cnCreate, Grid, GridColumn, Header } from '@megafon/ui-core';
+import { breakpoints, cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -41,11 +41,14 @@ export interface IInstructionsProps {
         desktopItemTitle?: string;
         mobileItemTitle?: string;
         instructionItemImg?: string;
+        instructionItemText?: string;
     };
     /** Заголовок инструкции */
     title: string;
     /** Пункты инструкции */
     instructionItems: InstructionItemType[];
+    /** Описание после инструкции */
+    text?: string;
     /** Расположение изображения */
     pictureAlign?: PictureAlignTypesType;
     /** Маска изображения */
@@ -64,9 +67,11 @@ const Instructions: React.FC<IInstructionsProps> = ({
         desktopItemTitle,
         mobileItemTitle,
         instructionItemImg,
+        instructionItemText,
     } = {},
     title,
     instructionItems,
+    text,
     pictureAlign = 'left',
     pictureMask = 'none',
     getSwiper,
@@ -103,6 +108,12 @@ const Instructions: React.FC<IInstructionsProps> = ({
         <Header className={cn('title', { resolution })} as="h2">
             {title}
         </Header>
+    ), []);
+
+    const renderText = React.useCallback((): JSX.Element => (
+        <Paragraph className={cn('text', { instructionItemText })} hasMargin={false}>
+            {text}
+        </Paragraph>
     ), []);
 
     const renderPicture = React.useCallback((): JSX.Element => {
@@ -219,6 +230,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                                 ? renderMobileArticles()
                                 : renderDesktopArticles()
                             }
+                            {text && renderText()}
                         </div>
                     </div>
                 </GridColumn>
@@ -238,6 +250,7 @@ Instructions.propTypes = {
         desktopItemTitle: PropTypes.string,
         mobileItemTitle: PropTypes.string,
         instructionItemImg: PropTypes.string,
+        instructionItemText: PropTypes.string,
     }),
     title: PropTypes.string.isRequired,
     instructionItems: PropTypes.arrayOf(
@@ -249,6 +262,7 @@ Instructions.propTypes = {
             isVideo: PropTypes.bool.isRequired,
         }).isRequired
     ).isRequired,
+    text: PropTypes.string,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),
     pictureMask: PropTypes.oneOf([
         pictureMaskTypes.ANDROID,
