@@ -1,0 +1,58 @@
+@import '~styles/base';
+
+@root: e('.mfui-beta-pagination-button');
+
+@{root} {
+    .h5();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:disabled {
+        pointer-events: none;
+    }
+
+    &_active {
+        border-color: @green;
+        pointer-events: none;
+    }
+
+    &_theme_default {
+        color: @freshAsphalt;
+
+        svg {
+            fill: @freshAsphalt;
+        }
+
+        &:hover {
+            background-color: @spbSky0;
+        }
+    }
+
+    &_theme_default&_active {
+        border-color: @green;
+    }
+
+    &_theme_light {
+        color: @clearWhite;
+
+        svg {
+            fill: @clearWhite;
+        }
+
+        &:hover {
+            background-color: rgba(@clearWhite, 0.25);
+        }
+    }
+
+    &_theme_light&_active {
+        border-color: @clearWhite;
+    }
+}

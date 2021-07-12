@@ -1,5 +1,5 @@
 export default {
-   mobileSmallStart: 0,
+   mobileSmallStart: 320,
    mobileSmallEnd: 479,
    mobileMiddleStart: 480,
    mobileMiddleEnd: 767,
