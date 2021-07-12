@@ -116,6 +116,12 @@ describe('<Instructions />', () => {
         });
     });
 
+    it('should render component with additional text', () => {
+        const wrapper = shallow(<Instructions {...props} additionalText="additionalText" /> );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
         mount(<Instructions {...props} rootRef={ref} />);
@@ -133,6 +139,7 @@ describe('<Instructions />', () => {
                     desktopItemTitle: 'desktopItemTitle',
                     mobileItemTitle: 'mobileItemTitle',
                     instructionItemImg: 'instructionItemImg',
+                    additionalText: 'additionalText',
                 }}
             />
         );
