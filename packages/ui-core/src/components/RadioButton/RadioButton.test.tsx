@@ -4,6 +4,12 @@ import RadioButton, { IRadioButtonProps } from './RadioButton';
 
 const props: IRadioButtonProps = {
     className: 'test-class',
+    classes: {
+        root: 'root-class',
+        label: 'label-class',
+        customInput: 'custom-input-class',
+        labelText: 'label-text-class',
+    },
     name: 'test-input-name',
     value: 'test-input-value',
     isDisabled: true,
