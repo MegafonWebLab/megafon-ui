@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import './Instructions.less';
 import throttle from 'lodash.throttle';
 import SwiperCore from 'swiper';
+import convert from 'htmr';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
-import { breakpoints, cnCreate, Grid, GridColumn, Header } from '@megafon/ui-core';
+import { breakpoints, cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
+
+const THROTTLE_MILLISECONDS = 100;
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -41,11 +44,14 @@ export interface IInstructionsProps {
         desktopItemTitle?: string;
         mobileItemTitle?: string;
         instructionItemImg?: string;
+        additionalText?: string;
     };
     /** Заголовок инструкции */
     title: string;
     /** Пункты инструкции */
     instructionItems: InstructionItemType[];
+    /** Описание после инструкции */
+    additionalText?: string;
     /** Расположение изображения */
     pictureAlign?: PictureAlignTypesType;
     /** Маска изображения */
@@ -64,12 +70,14 @@ const Instructions: React.FC<IInstructionsProps> = ({
         desktopItemTitle,
         mobileItemTitle,
         instructionItemImg,
+        additionalText,
     } = {},
     title,
     instructionItems,
     pictureAlign = 'left',
     pictureMask = 'none',
     getSwiper,
+    additionalText: text,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperClass>();
     const [slideIndex, setSlideIndex] = React.useState(0);
@@ -104,6 +112,12 @@ const Instructions: React.FC<IInstructionsProps> = ({
             {title}
         </Header>
     ), []);
+
+    const renderText = React.useCallback((): JSX.Element => (
+        <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
+            {convert(text as string)}
+        </Paragraph>
+    ), [text, additionalText]);
 
     const renderPicture = React.useCallback((): JSX.Element => {
         if (pictureMask === pictureMaskTypes.NONE) {
@@ -142,7 +156,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     ), [instructionItems]);
 
     const renderDesktopArticles = React.useCallback((): JSX.Element => (
-        <ul className={cn('articles-list')}>
+        <ul className={cn('articles-list', { 'text-after': !!text })}>
             {instructionItems.map(({title: itemTitle}, ind) => (
                 <li
                     className={cn(
@@ -163,7 +177,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 </li>
             ))}
         </ul>
-    ), [instructionItems, slideIndex, handleArticleClick]);
+    ), [instructionItems, slideIndex, handleArticleClick, text]);
 
     const renderMobileArticles = React.useCallback((): JSX.Element => (
         <>
@@ -175,7 +189,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                         </div>
                 ))}
             </div>
-            <ul className={cn('articles-dots')}>
+            <ul className={cn('articles-dots', { 'text-after': !!text })}>
                 {instructionItems.map((_item, ind) => (
                     <div
                         key={ind}
@@ -191,10 +205,10 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 ))}
             </ul>
         </>
-    ), [instructionItems, slideIndex, handleArticleClick]);
+    ), [instructionItems, slideIndex, handleArticleClick, text]);
 
     React.useEffect(() => {
-        const handleSetThrottled = throttle(handleResize, 100);
+        const handleSetThrottled = throttle(handleResize, THROTTLE_MILLISECONDS);
 
         handleResize();
         window.addEventListener('resize', handleSetThrottled);
@@ -219,6 +233,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                                 ? renderMobileArticles()
                                 : renderDesktopArticles()
                             }
+                            {text && renderText()}
                         </div>
                     </div>
                 </GridColumn>
@@ -240,6 +255,7 @@ Instructions.propTypes = {
         instructionItemImg: PropTypes.string,
     }),
     title: PropTypes.string.isRequired,
+    additionalText: PropTypes.string,
     instructionItems: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.oneOfType([

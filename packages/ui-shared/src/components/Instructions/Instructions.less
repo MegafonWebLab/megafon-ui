@@ -36,6 +36,12 @@
         }
     }
 
+    &__text {
+        @media @mobile {
+            text-align: center;
+        }
+    }
+
     &__picture {
         max-width: 530px;
         max-height: 490px;
@@ -291,6 +297,10 @@
         list-style-type: none;
         padding: 0;
         margin: 0;
+
+        &_text-after {
+            margin-bottom: 48px;
+        }
     }
 
     &__articles-item {
@@ -373,6 +383,10 @@
         padding: 0;
         margin: 0;
         list-style-type: none;
+
+        &_text-after {
+            margin-bottom: 48px;
+        }
     }
 
     &__articles-dot {
