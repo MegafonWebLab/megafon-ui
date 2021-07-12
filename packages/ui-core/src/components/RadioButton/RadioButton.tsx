@@ -16,6 +16,13 @@ export interface IRadioButtonProps {
     isChecked?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string | string[];
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        label?: string;
+        customInput?: string;
+        labelText?: string;
+    };
     children?: React.ReactNode;
     /** Обработчик изменения значения 'value' */
     onChange?: (value: string) => void;
@@ -32,6 +39,12 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         isDisabled: PropTypes.bool,
         isChecked: PropTypes.bool,
         className: PropTypes.string,
+        classes: PropTypes.shape({
+            root: PropTypes.string,
+            label: PropTypes.string,
+            customInput: PropTypes.string,
+            labelText: PropTypes.string,
+        }),
         children: PropTypes.node,
         onChange: PropTypes.func,
         inputRef: PropTypes.oneOfType([
@@ -52,15 +65,25 @@ class RadioButton extends React.Component<IRadioButtonProps> {
     }
 
     render() {
-        const { isChecked, isDisabled, name, value, textSize, children, inputRef } = this.props;
+        const {
+            isChecked,
+            isDisabled,
+            name,
+            value,
+            textSize,
+            children,
+            inputRef,
+            className,
+            classes = {},
+        } = this.props;
         const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
 
         return (
-            <div className={cn()}>
+            <div className={cn([className, classes.root])}>
                 <label
                     className={cn('label', {
                         disabled: isDisabled,
-                    })}
+                    }, classes.label)}
                 >
                     <input
                         {...checkedProp}
@@ -72,8 +95,8 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                         disabled={isDisabled}
                         ref={inputRef as React.Ref<HTMLInputElement>}
                     />
-                    <div className={cn('custom-input')} />
-                    {children && <div className={cn('text', { 'size': textSize })}>{children}</div>}
+                    <div className={cn('custom-input', classes.customInput)} />
+                    {children && <div className={cn('text', { 'size': textSize }, classes.labelText)}>{children}</div>}
                 </label>
             </div>
         );

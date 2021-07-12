@@ -1,0 +1,64 @@
+import { Playground } from 'docz';
+import Pagination from '../Pagination';
+import { DemoWrapper } from './Pagination.docz.tsx';
+import ContentArea from "components/ContentArea/ContentArea";
+
+## Состояния компонента
+
+<Playground>
+    <Pagination totalPages={3} activePage={1} onChange={() => {}} />
+</Playground>
+
+<Playground>
+    <Pagination totalPages={7} activePage={1} onChange={() => {}} />
+</Playground>
+
+<Playground>
+    <Pagination totalPages={7} activePage={7} onChange={() => {}} />
+</Playground>
+
+<Playground>
+    <Pagination totalPages={10} activePage={2} onChange={() => {}} />
+</Playground>
+
+<Playground>
+    <Pagination totalPages={10} activePage={6} onChange={() => {}} />
+</Playground>
+
+<Playground>
+    <Pagination totalPages={10} activePage={9} onChange={() => {}} />
+</Playground>
+
+<Playground>
+    <Pagination totalPages={300} activePage={200} onChange={() => {}} />
+</Playground>
+
+## Светлая тема
+
+<Playground>
+    <div style={{ padding: '30px 0', backgroundColor: "#00B956" }}>
+        <Pagination totalPages={10} activePage={1} theme="light" onChange={() => {}} />
+    </div>
+</Playground>
+
+## Интерактивное демо
+
+```javascript collapse=Код DemoWrapper
+
+const DemoWrapper = ({ totalPages }) => {
+    const [activePage, setActivePage] = React.useState(3);
+
+    return (
+        <Pagination
+            activePage={activePage}
+            totalPages={totalPages}
+            onChange={setActivePage}
+        />
+    );
+};
+
+```
+
+<Playground>
+    <DemoWrapper totalPages={15} />
+</Playground>

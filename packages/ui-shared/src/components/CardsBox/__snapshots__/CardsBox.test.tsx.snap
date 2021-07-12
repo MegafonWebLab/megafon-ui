@@ -8,7 +8,7 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
     <CarouselMock
       slidesSettings={
         Object {
-          "0": Object {
+          "320": Object {
             "slidesPerView": 1,
             "spaceBetween": 16,
           },

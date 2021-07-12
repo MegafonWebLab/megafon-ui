@@ -1,0 +1,17 @@
+@import '~styles/base';
+
+@root: e('.mfui-beta-pagination-navigation');
+
+@{root} {
+    &_direction_left {
+        @{root}__icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &:disabled {
+        svg {
+            fill: @spbSky2;
+        }
+    }
+}

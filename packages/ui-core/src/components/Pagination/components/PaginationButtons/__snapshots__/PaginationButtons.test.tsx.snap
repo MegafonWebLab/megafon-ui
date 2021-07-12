@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationButtons should render component 1`] = `
+<div
+  className="mfui-beta-pagination-buttons"
+>
+  <PaginationButton
+    className="mfui-beta-pagination-buttons__button"
+    isActive={false}
+    key="0"
+    onClick={[MockFunction]}
+    value={1}
+  >
+    1
+  </PaginationButton>
+  <PaginationButton
+    className="mfui-beta-pagination-buttons__button"
+    isDisabled={true}
+    key="1"
+  >
+    <test-file-stub />
+  </PaginationButton>
+  <PaginationButton
+    className="mfui-beta-pagination-buttons__button"
+    isActive={true}
+    key="2"
+    onClick={[MockFunction]}
+    value={4}
+  >
+    4
+  </PaginationButton>
+  <PaginationButton
+    className="mfui-beta-pagination-buttons__button"
+    isActive={false}
+    key="3"
+    onClick={[MockFunction]}
+    value={5}
+  >
+    5
+  </PaginationButton>
+</div>
+`;

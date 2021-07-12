@@ -5246,6 +5246,133 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
 </Instructions>
 `;
 
+exports[`<Instructions /> should render component with additional text 1`] = `
+<div
+  className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      all="12"
+    >
+      <Header
+        as="h2"
+        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        color="black"
+        hAlign="inherit"
+      >
+        Test instruction title
+      </Header>
+      <div
+        className="mfui-beta-instructions__wrapper"
+      >
+        <div
+          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+        >
+          <Swiper
+            className="mfui-beta-instructions__swiper"
+            noSwipingClass="mfui-beta-instructions__slide"
+            onSwiper={[Function]}
+          >
+            <SwiperSlide
+              className="mfui-beta-instructions__slide"
+              key="0ImgUrl1"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-beta-instructions__swiper-img"
+                loop={true}
+                muted={true}
+              >
+                <source
+                  src="ImgUrl1"
+                  type="video/mp4"
+                />
+              </video>
+            </SwiperSlide>
+            <SwiperSlide
+              className="mfui-beta-instructions__slide"
+              key="1ImgUrl2"
+            >
+              <img
+                alt=""
+                className="mfui-beta-instructions__swiper-img"
+                src="ImgUrl2"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div
+          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+        >
+          <Header
+            as="h2"
+            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            color="black"
+            hAlign="inherit"
+          >
+            Test instruction title
+          </Header>
+          <ul
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_text-after"
+          >
+            <li
+              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              data-index={0}
+              key="0"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-beta-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-beta-instructions__articles-item-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-item-title"
+              >
+                Test1
+              </div>
+            </li>
+            <li
+              className="mfui-beta-instructions__articles-item"
+              data-index={1}
+              key="1"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-beta-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-beta-instructions__articles-item-dot-number"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-item-title"
+              >
+                Test2
+              </div>
+            </li>
+          </ul>
+          <Paragraph
+            className="mfui-beta-instructions__text"
+            hasMargin={false}
+          >
+            additionalText
+          </Paragraph>
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<Instructions /> should render with classes props 1`] = `
 <div
   className="mfui-beta-instructions mfui-beta-instructions_mask_none"
