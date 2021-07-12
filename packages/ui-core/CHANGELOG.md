@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.147](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.146...@megafon/ui-core@2.0.0-beta.147) (2021-07-12)
+
+
+### Bug Fixes
+
+* **carousel:** fix opacity transition bug in ie ([6a1fe04](https://github.com/MegafonWebLab/megafon-ui/commit/6a1fe04ba5883ece1a001e01ea622a29da8821b1))
+* **constants:** change mobile small start value ([859e6d8](https://github.com/MegafonWebLab/megafon-ui/commit/859e6d8a2465e8082fa428da8e8eaf5cfbf5da23))
+* **search:** add max-height and scroll to dropdown ([71067a0](https://github.com/MegafonWebLab/megafon-ui/commit/71067a05e01631b8cfefc9cee30407905f1d5a37))
+
+
+### Features
+
+* **pagination:** add new component ([cf5897f](https://github.com/MegafonWebLab/megafon-ui/commit/cf5897f4beabed37f770ec82afd6666283be73f1))
+* **radiobutton:** added className and classes for inner elements ([e75f523](https://github.com/MegafonWebLab/megafon-ui/commit/e75f523c66d0c6597f00f67fc6d70d553ac886b9))
+
+
+### BREAKING CHANGES
+
+* **constants:** change mobile small start value
+
+
+
+
+
 # [2.0.0-beta.146](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.145...@megafon/ui-core@2.0.0-beta.146) (2021-07-05)
 
 

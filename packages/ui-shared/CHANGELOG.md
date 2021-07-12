@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.212](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.211...@megafon/ui-shared@2.0.0-beta.212) (2021-07-12)
+
+
+### Features
+
+* **instructions:** add new prop additional text ([1609801](https://github.com/MegafonWebLab/megafon-ui/commit/1609801d701e6d4f49b40bb6422f7f4dee4e7d18))
+
+
+
+
+
 # [2.0.0-beta.211](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.210...@megafon/ui-shared@2.0.0-beta.211) (2021-07-05)
 
 
