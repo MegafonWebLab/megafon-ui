@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from 'icons/System/16/Arrow-list_left_16.svg';
 import ArrowRight from 'icons/System/16/Arrow-list_right_16.svg';
 import './Month.less';

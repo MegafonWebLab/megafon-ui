@@ -3,16 +3,13 @@ import * as PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import {
     Button,
-    cnCreate,
     Header,
-    breakpoints,
-    throttleTime,
     ContentArea,
     TextLink,
-    convert,
-    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
+import { breakpoints, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
 import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
+import throttleTime from 'constants/throttleTime';
 import './VideoBanner.less';
 
 type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
@@ -228,18 +225,18 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
             const windowWidth = window.innerWidth;
 
             switch (true) {
-                case windowWidth >= breakpoints.desktopMiddleStart:
+                case windowWidth >= breakpoints.DESKTOP_MIDDLE_START:
                     return imageDesktopWide;
-                case windowWidth >= breakpoints.desktopSmallStart && windowWidth <= breakpoints.desktopSmallEnd:
+                case windowWidth >= breakpoints.DESKTOP_SMALL_START && windowWidth <= breakpoints.DESKTOP_SMALL_END:
                     return imageDesktop;
-                case windowWidth >= breakpoints.mobileBigStart && windowWidth <= breakpoints.mobileBigEnd:
+                case windowWidth >= breakpoints.MOBILE_BIG_START && windowWidth <= breakpoints.MOBILE_BIG_END:
                     return imageTablet;
                 default:
                     return imageMobile;
             }
         };
         const resizeHandler = () => {
-            setIsMobile(window.innerWidth < breakpoints.desktopSmallStart);
+            setIsMobile(window.innerWidth < breakpoints.DESKTOP_SMALL_START);
             setImageSrc(getImageSrc());
         };
         const resizeHandlerThrottled = throttle(resizeHandler, throttleTime.resize);

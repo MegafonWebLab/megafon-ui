@@ -1,6 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import usePagination from '../usePagination';
-import breakpoints from 'constants/breakpoints';
+import usePagination, { MOBILE_RESOLUTION } from '../usePagination';
 
 describe('usePagination', () => {
     it('should return items without hidden buttons', () => {
@@ -36,7 +35,7 @@ describe('usePagination', () => {
         const windowInnerWidth = window.innerWidth;
 
         beforeAll(() => {
-            localWindow.innerWidth = breakpoints.mobileSmallStart;
+            localWindow.innerWidth = MOBILE_RESOLUTION;
         });
 
         afterAll(() => {

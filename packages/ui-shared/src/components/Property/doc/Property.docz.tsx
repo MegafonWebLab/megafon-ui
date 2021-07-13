@@ -1,5 +1,6 @@
 import React from 'react';
-import { convert, TextLink, Paragraph } from '@megafon/ui-core';
+import { TextLink, Paragraph } from '@megafon/ui-core';
+import { convert } from '@megafon/ui-helpers';
 
 export const valueInSeveralRow =
     `до 100 Гб

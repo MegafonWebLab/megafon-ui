@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate , TextLink } from '@megafon/ui-core';
+import { TextLink } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Breadcrumbs.less';
 
 type ItemType = {

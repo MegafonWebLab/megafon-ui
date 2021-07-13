@@ -1,10 +1,13 @@
 import React, { createRef } from 'react';
 import { mount, shallow } from 'enzyme';
 import Button, { IButtonProps } from './Button';
-import detectTouch from '../../utils/detectTouch';
 import Balance from 'icons/Basic/24/Balance_24.svg';
+import { detectTouch } from '@megafon/ui-helpers';
 
-jest.mock('../../utils/detectTouch', () => jest.fn().mockReturnValue(false));
+jest.mock('@megafon/ui-helpers', () => ({
+    ...jest.requireActual('@megafon/ui-helpers'),
+    detectTouch: jest.fn().mockReturnValue(false),
+}));
 
 const props: IButtonProps = {
     className: 'class',

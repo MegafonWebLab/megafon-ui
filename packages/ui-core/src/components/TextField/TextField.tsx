@@ -1,8 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import cnCreate from 'utils/cnCreate';
-import detectTouch from 'utils/detectTouch';
+import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import './TextField.less';
 import InputLabel from '../InputLabel/InputLabel';
 import Paragraph from '../Paragraph/Paragraph';
@@ -76,7 +75,7 @@ export interface ITextFieldProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы элементов */
-    classes?: { input?: string | null };
+    classes?: { input?: string };
     /** Аргумент элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
     /** Переводит компонент в контролируемое состояние */

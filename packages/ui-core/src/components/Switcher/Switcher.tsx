@@ -1,7 +1,6 @@
 import * as React from 'react';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import './Switcher.less';
-import detectTouch from 'utils/detectTouch';
 
 export interface ISwitcherProps {
     /** Дополнительный класс корневого элемента */

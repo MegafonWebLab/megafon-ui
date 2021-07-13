@@ -1,14 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import {
-    cnCreate,
     Grid,
     GridColumn,
     Tile,
     Carousel,
-    breakpoints,
-    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
+import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import './Partners.less';
 
 export type ItemType = {
@@ -42,15 +40,15 @@ export interface IPartnersProps {
 const MAX_GRID_ITEMS_LENGTH = 8;
 
 const slidesSettings = {
-    [breakpoints.mobileSmallStart]: {
+    [breakpoints.MOBILE_SMALL_START]: {
         slidesPerView: 2,
         spaceBetween: 16,
     },
-    [breakpoints.mobileMiddleStart]: {
+    [breakpoints.MOBILE_MIDDLE_START]: {
         slidesPerView: 3,
         spaceBetween: 20,
     },
-    [breakpoints.desktopSmallStart]: {
+    [breakpoints.DESKTOP_SMALL_START]: {
         slidesPerView: 4,
         spaceBetween: 20,
     },

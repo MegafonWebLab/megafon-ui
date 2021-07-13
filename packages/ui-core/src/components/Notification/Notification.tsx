@@ -1,7 +1,7 @@
 import React from 'react';
 import * as PropTypes from 'prop-types';
 import './Notification.less';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import Tile from 'components/Tile/Tile';
 import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';

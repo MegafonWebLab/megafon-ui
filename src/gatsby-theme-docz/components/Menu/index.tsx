@@ -1,6 +1,6 @@
 import React from 'react';
 import './Menu.less';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import { useMenus } from 'docz'
 import NavGroup from '../NavGroup';
 import NavLink from '../NavLink';

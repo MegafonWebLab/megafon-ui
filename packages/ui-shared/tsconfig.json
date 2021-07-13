@@ -5,7 +5,6 @@
   },
   "include": [
     "typings/**/*",
-    "src/**/*.ts",
     "src/**/*"
   ],
   "exclude": [

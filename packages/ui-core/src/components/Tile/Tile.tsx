@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import './Tile.less';
-import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const Theme = {
     LIGHT: 'light',
@@ -27,7 +26,7 @@ export const Shadow = {
 
 type ShadowType = typeof Shadow[keyof typeof Shadow];
 
-export interface ITileProps extends IDataAttributes {
+export interface ITileProps extends IFilterDataAttrs {
     /** Ссылка */
     href?: string;
     /** Тема */

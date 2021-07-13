@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './NavArrow.less';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from 'icons/System/24/Arrow_left_24.svg';
 import ArrowRight from 'icons/System/24/Arrow_right_24.svg';
 

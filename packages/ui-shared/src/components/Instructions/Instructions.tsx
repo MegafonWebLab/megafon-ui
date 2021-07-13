@@ -6,7 +6,8 @@ import SwiperCore from 'swiper';
 import convert from 'htmr';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
-import { breakpoints, cnCreate, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
+import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
+import { breakpoints, cnCreate } from '@megafon/ui-helpers';
 
 const THROTTLE_MILLISECONDS = 100;
 
@@ -97,7 +98,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     }, [instructionItem, activeInstructionItem]);
 
     const handleResize = React.useCallback((): void => {
-        const isMobileScreen = window.innerWidth < breakpoints.desktopSmallStart;
+        const isMobileScreen = window.innerWidth < breakpoints.DESKTOP_SMALL_START;
 
         setIsMobile(isMobileScreen);
     }, []);

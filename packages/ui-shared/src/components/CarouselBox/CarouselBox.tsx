@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { cnCreate, Carousel} from '@megafon/ui-core';
+import { Carousel } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 
 type CarouselPropsTypes = React.ComponentProps<typeof Carousel>;
 

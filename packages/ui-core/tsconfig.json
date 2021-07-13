@@ -5,12 +5,9 @@
   },
   "include": [
     "typings/**/*",
-    "src/**/*.ts",
     "src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "src/**/*.test.ts",
-    "src/**/*.test.tsx"
   ]
 }

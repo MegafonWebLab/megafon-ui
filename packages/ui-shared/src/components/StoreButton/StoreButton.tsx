@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate, Link } from '@megafon/ui-core';
+import { Link } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './StoreButton.less';
 
 export enum Theme {

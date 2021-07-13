@@ -1,5 +1,6 @@
 import React from 'react';
-import { cnCreate, Logo } from '@megafon/ui-core';
+import { Logo } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './PageHeader.less';
 
 interface IPageHeaderProps {

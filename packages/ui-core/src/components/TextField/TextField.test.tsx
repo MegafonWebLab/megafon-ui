@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import cnCreate from 'utils/cnCreate';
-import detectTouch from 'utils/detectTouch';
+import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import TextField, { Verification } from './TextField';
 import Balance from 'icons/Basic/24/Balance_24.svg';
 
 const InputMask = require('react-input-mask');
 
-jest.mock('utils/detectTouch', () => jest.fn().mockReturnValue(false));
+jest.mock('@megafon/ui-helpers', () => ({
+    ...jest.requireActual('@megafon/ui-helpers'),
+    detectTouch: jest.fn().mockReturnValue(false),
+}));
 
 const commonFieldProps = {
     disabled: true,
@@ -283,7 +285,7 @@ describe('<TextField />', () => {
         });
 
         it('should render without no-touch class', () => {
-            (detectTouch as jest.Mock).mockImplementation(() => true);
+            (detectTouch as jest.Mock).mockReturnValueOnce(true);
 
             const wrapper = shallow(
                 <TextField {...commonFieldProps} />

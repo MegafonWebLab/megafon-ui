@@ -1,5 +1,5 @@
 import React from 'react';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import { useWindowSize } from 'docz'
 import './Layout.less';
 import SideBar from '../SideBar';

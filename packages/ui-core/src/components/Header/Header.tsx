@@ -1,10 +1,9 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Header.less';
-import cnCreate from 'utils/cnCreate';
-import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
+import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 
-interface IHeaderProps extends IDataAttributes {
+interface IHeaderProps extends IFilterDataAttrs {
     /** Тег */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Цвет */

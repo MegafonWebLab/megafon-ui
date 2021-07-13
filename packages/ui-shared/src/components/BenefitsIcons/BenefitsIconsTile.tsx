@@ -1,7 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './style/BenefitsIconsTile.less';
-import { Header, cnCreate } from '@megafon/ui-core';
+import { Header } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import { IBenefit, IconPositionEnum, IconPosition } from './types';
 
 export interface IBenefitsIconsTile extends IBenefit {
