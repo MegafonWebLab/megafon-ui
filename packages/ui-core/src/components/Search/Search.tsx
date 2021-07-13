@@ -112,7 +112,8 @@ const Search: React.FC<ISearchProps> = ({
     }, [activeIndex, setActiveIndex, handleSearchSubmit, handleItemSubmit]);
 
     const highlightString = (title) => {
-        const stringFragments = title.split(RegExp(`(${searchQuery})`, 'ig'));
+        const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
+        const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
 
         return (
             <>
