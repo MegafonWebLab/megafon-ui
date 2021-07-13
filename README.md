@@ -15,16 +15,24 @@ MegaFon components library consists of the following npm packages:
 - ui-core
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-core/beta?label=%40megafon%2Fui-core)](https://www.npmjs.com/package/@megafon/ui-core/v/beta)
 
+
 - ui-shared
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-shared/beta?label=%40megafon%2Fui-shared)](https://www.npmjs.com/package/@megafon/ui-shared/v/beta)
+
+
+- ui-helpers
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-helpers/beta?label=%40megafon%2Fui-helpers)](https://www.npmjs.com/package/@megafon/ui-helpers/v/beta)
 
 Install using commands:
 
 ```bash
-$ npm install @megafon/ui-core@beta
+npm install @megafon/ui-core@beta
 ```
 ```bash
-$ npm install @megafon/ui-shared@beta
+npm install @megafon/ui-shared@beta
+```
+```bash
+npm install @megafon/ui-helpers@beta
 ```
 
 For local development require:
@@ -33,19 +41,19 @@ For local development require:
 2. Install dependencies.
 
 ```bash
-$ yarn install
+yarn install
 ```
 
 3. Run documentation:
 
 ```bash
-$ yarn run demo
+yarn run demo
 ```
 
 ## Build all packages
 
 ```bash
-$ yarn run build
+yarn run build
 ```
 
 ## Contributing
