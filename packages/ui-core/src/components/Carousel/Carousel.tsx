@@ -1,15 +1,13 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Carousel.less';
-import cnCreate from 'utils/cnCreate';
-import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
+import { breakpoints, cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import SwiperCore, { Autoplay, Pagination, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PaginationOptions } from 'swiper/types/components/pagination';
 import throttle from 'lodash.throttle';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
-import breakpoints from 'constants/breakpoints';
 import throttleTime from 'constants/throttleTime';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
@@ -40,7 +38,7 @@ export type SlidesSettingsType = {
     };
 };
 
-export interface ICarouselProps extends IDataAttributes {
+export interface ICarouselProps extends IFilterDataAttrs {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительные классы для корневого элемента */
@@ -97,15 +95,15 @@ const getAutoPlayConfig = (delay: number) => ({
 });
 
 const defaultSlidesSettings: SlidesSettingsType = {
-    [breakpoints.mobileSmallStart]: {
+    [breakpoints.MOBILE_SMALL_START]: {
         slidesPerView: 1,
         spaceBetween: 16,
     },
-    [breakpoints.mobileBigStart]: {
+    [breakpoints.MOBILE_BIG_START]: {
         slidesPerView: 3,
         spaceBetween: 20,
     },
-    [breakpoints.desktopMiddleStart]: {
+    [breakpoints.DESKTOP_MIDDLE_START]: {
         slidesPerView: 4,
         spaceBetween: 20,
     },

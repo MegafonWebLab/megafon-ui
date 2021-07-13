@@ -1,4 +1,4 @@
-import filterDataAttrs from './dataAttrs';
+import filterDataAttrs from './filterDataAttrs';
 
 describe('filterDataAttrs', () => {
     it('should return correct attributes', () => {

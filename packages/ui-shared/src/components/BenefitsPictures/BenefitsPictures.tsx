@@ -3,9 +3,11 @@ import { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import './BenfitsPictures.less';
-import { cnCreate, Grid, GridColumn, Header, Paragraph, breakpoints, throttleTime } from '@megafon/ui-core';
+import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
+import { breakpoints, cnCreate } from '@megafon/ui-helpers';
 import convert from 'htmr';
 import { IBenefit, GridConfig, GridGutterSize } from './types';
+import throttleTime from 'constants/throttleTime';
 
 const ONLY_LEFT_ALIGN_ITEMS_COUNT = 3;
 
@@ -142,7 +144,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
                 return;
             }
 
-            if (window.innerWidth < breakpoints.desktopMiddleStart) {
+            if (window.innerWidth < breakpoints.DESKTOP_MIDDLE_START) {
                 setCurrentGutter('medium');
             } else {
                 setCurrentGutter('large');

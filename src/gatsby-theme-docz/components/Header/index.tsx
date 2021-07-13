@@ -1,5 +1,6 @@
 import React from 'react';
-import { cnCreate, Header } from '@megafon/ui-core';
+import { Header } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Header.less';
 
 const cn = cnCreate('docz-header');

@@ -20,17 +20,17 @@ exports[`<Banner /> should render with default props 1`] = `
       className="mfui-beta-banner__slide"
       key="0/.0"
     >
-      <Component>
+      <DemoSlide>
         1
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
     <SwiperSlide
       className="mfui-beta-banner__slide"
       key="1/.1"
     >
-      <Component>
+      <DemoSlide>
         2
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
   </Swiper>
   <NavArrow
@@ -98,17 +98,17 @@ exports[`<Banner /> should render with props 1`] = `
       className="mfui-beta-banner__slide"
       key="0/.0"
     >
-      <Component>
+      <DemoSlide>
         1
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
     <SwiperSlide
       className="mfui-beta-banner__slide"
       key="1/.1"
     >
-      <Component>
+      <DemoSlide>
         2
-      </Component>
+      </DemoSlide>
     </SwiperSlide>
   </Swiper>
   <NavArrow

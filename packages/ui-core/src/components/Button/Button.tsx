@@ -1,11 +1,9 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import './Button.less';
 import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
 import Arrow from 'icons/System/32/Arrow_right_32.svg';
-import detectTouch from 'utils/detectTouch';
-import filterDataAttrs, { IDataAttributes } from './../../utils/dataAttrs';
 
 export const ButtonTypes = {
     PRIMARY: 'primary',
@@ -37,17 +35,17 @@ enum Content {
     ICON_TEXT = 'icon-text',
 }
 
-export interface IButtonProps extends IDataAttributes {
+export interface IButtonProps extends IFilterDataAttrs {
     /** Дополнительный класс корневого элемента */
     className?: string | string[];
     /** Дополнительные классы для внутренних элементов */
     classes?: {
         /** Button class */
-        root?: string | null;
+        root?: string;
         /** Content class */
-        content?: string | null;
+        content?: string;
         /** Inner container class */
-        inner?: string | null;
+        inner?: string;
     };
     /** Тема компонента */
     theme?: ButtonThemesType;
@@ -207,6 +205,8 @@ const Button: React.FC<IButtonProps> = ({
         }
     };
 
+    const classNameValue = Array.isArray(className) ? [...className, rootClassName] : [className, rootClassName];
+
     return (
         <ElementType
             {...filterDataAttrs(dataAttrs)}
@@ -223,7 +223,7 @@ const Button: React.FC<IButtonProps> = ({
                 loading: showLoader,
                 'no-touch': !isTouch,
                 'content-type': contentType,
-            }, [className, rootClassName])}
+            }, classNameValue)}
             href={href}
             download={href && download}
             target={href ? target : undefined}

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate, Grid, GridColumn, Header, Paragraph,  dataAttrs as filterDataAttrs } from '@megafon/ui-core';
+import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType } from '../StoreButton/StoreButton';
 import './StoreBanner.less';
 

@@ -1,4 +1,4 @@
-import cnCreate from 'utils/cnCreate';
+import cnCreate from './cnCreate';
 
 let cn;
 

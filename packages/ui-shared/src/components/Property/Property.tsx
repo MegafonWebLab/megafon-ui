@@ -1,6 +1,7 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
-import { Header, cnCreate, Grid, GridColumn, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
+import { Header, Grid, GridColumn } from '@megafon/ui-core';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import './Property.less';
 import { Item } from './types';
 import PropertyDescription from './PropertyDescription';

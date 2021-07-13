@@ -1,13 +1,12 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import {
-    cnCreate,
     Header,
     Paragraph,
     Grid,
     GridColumn,
-    dataAttrs as filterDataAttrs,
 } from '@megafon/ui-core';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import './TitleDescriptionBox.less';
 
 export interface ITitleDescriptionBoxProps {

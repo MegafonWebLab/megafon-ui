@@ -1,7 +1,8 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './Container.less';
-import { cnCreate, ContentArea } from '@megafon/ui-core';
+import { ContentArea } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 
 export const BackgroundColors = {
     DEFAULT: 'default',

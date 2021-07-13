@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import { useCallback, useState, useRef, useEffect } from 'react';
 import SearchIcon from 'icons/Basic/24/Search_24.svg';
 import debounce from 'lodash.debounce';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Search.less';
 
 type HandleSearchSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;

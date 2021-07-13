@@ -20,9 +20,7 @@ const dest = gulp.dest;
 
 const dist = path.join(__dirname, 'dist');
 const esPath = path.join(dist, 'es');
-const esStylesPath = path.join(esPath, 'styles');
 const libPath = path.join(dist, 'lib');
-const libStylesPath = path.join(libPath, 'styles');
 const srcPath = path.join(__dirname, 'src');
 const iconsPath = path.join(srcPath, 'icons');
 const docIconsPath = path.join(srcPath, 'docIcons');
@@ -39,7 +37,6 @@ const iconsReg = 'src/**/Icons.{tsx,ts}';
  */
 const lessConfig = { paths: [srcPath], plugins: [autoprefix] };
 const tsConfig = {
-    rootDir: './src',
     baseUrl: './src',
     noUnusedParameters: true,
     noUnusedLocals: true,
@@ -52,12 +49,11 @@ const tsConfig = {
 };
 const babelPlugins = [
     require.resolve('@babel/plugin-transform-object-assign'),
-    require.resolve('@babel/plugin-proposal-class-properties'),
     require.resolve('@babel/plugin-transform-runtime')
 ];
 const babelPresets = [
     '@babel/react',
-    ['@babel/preset-env', {
+    ['@babel/env', {
         useBuiltIns: 'usage',
         corejs: '3.6'
     }]
@@ -65,7 +61,7 @@ const babelPresets = [
 const babelEsConfig = {
     presets: [
         '@babel/react',
-        ['@babel/preset-env', {
+        ['@babel/env', {
             modules: false,
             useBuiltIns: 'usage',
             corejs: '3.6'
@@ -76,18 +72,15 @@ const babelEsConfig = {
         ['module-resolver', {
             root: ['./src'],
             alias: {
-                utils: './src/utils',
                 components: './src/components',
-                constants: './src/constants'
             }
         }],
     ]
 };
 const babelLibConfig = {
     presets: [
-        ['@babel/preset-env', {
-            useBuiltIns: 'usage',
-            corejs: '3.6'
+        ['@babel/env', {
+            modules: 'commonjs'
         }]
     ]
 };
@@ -154,10 +147,8 @@ gulp.task('ts', () => {
 
 gulp.task('main', done => {
     const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
-    const utils = glob.sync('src/utils/*.{tsx,ts}', { ignore: testsReg });
-    const constants = glob.sync('src/constants/*.ts');
 
-    fs.writeFile(indexTs, generateIndex([...components, ...utils, ...constants]), done);
+    fs.writeFile(indexTs, generateIndex(components), done);
 });
 
 gulp.task('build', gulp.series(

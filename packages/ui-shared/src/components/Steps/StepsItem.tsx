@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cnCreate, Paragraph } from '@megafon/ui-core';
+import { Paragraph } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
+
 import './StepsItem.less';
 
 interface IStepsItem {

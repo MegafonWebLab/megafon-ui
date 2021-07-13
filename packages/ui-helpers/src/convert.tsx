@@ -13,7 +13,7 @@ type TransformConfigItem = {
     customProps?: Record<string, any>;
 };
 
-export type TransformConfig = {
+export type ConvertTransformConfig = {
     [key: string]: TransformConfigItem;
 };
 
@@ -37,7 +37,7 @@ const checkBooleanProp = (prop: string) => {
     }
 };
 
-const getTransform = (config: TransformConfig) => {
+const getTransform = (config: ConvertTransformConfig) => {
     return {
         _: (node: NodeType, nodeProps?: TransformPropsType, children?: React.ReactNode) => {
             // text node
@@ -109,7 +109,7 @@ const getTransform = (config: TransformConfig) => {
  * пропсам компонента
  * @param {Record<string, any>} config[key].customProps - список дополнительных заданных пропсов
  */
-const convertToReact = (html: string, config: TransformConfig): React.ReactNode[] => {
+const convertToReact = (html: string, config: ConvertTransformConfig): React.ReactNode[] => {
     let nodes = convert(html, {
         preserveAttributes: [],
         dangerouslySetChildren: [],

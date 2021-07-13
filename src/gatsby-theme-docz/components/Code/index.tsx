@@ -2,7 +2,8 @@ import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { Styled } from 'theme-ui';
 import { theme } from '../Playground/theme';
-import { Collapse, TextLink, cnCreate } from '@megafon/ui-core';
+import { Collapse, TextLink } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Code.less';
 
 const cn = cnCreate('docz-code');

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import throttle from 'lodash.throttle';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 import './Tabs.less';
 import { ITabProps } from './Tab';
 import ArrowLeft from 'icons/System/16/Arrow_left_16.svg';
@@ -188,9 +188,11 @@ const Tabs: React.FC<ITabsProps> = ({
             } = child;
             const tab = renderTab(i, title, icon, href);
 
+            const activeTabClassName = currentIndex === i ? activeTabClass : undefined;
+
             return (
                 <SwiperSlide className={cn('slide')}>
-                    <div className={cn('tab', [tabClass, currentIndex === i && activeTabClass])} ref={setTabRef}>
+                    <div className={cn('tab', [tabClass, activeTabClassName])} ref={setTabRef}>
                         {renderTabWrapper ? renderTabWrapper(tab) : tab}
                     </div>
                 </SwiperSlide>

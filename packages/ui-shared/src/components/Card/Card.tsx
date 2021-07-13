@@ -1,6 +1,7 @@
 import React, { Ref } from 'react';
 import './Card.less';
-import { cnCreate, Header, Paragraph, Button, TextLink, Link, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
+import { Header, Paragraph, Button, TextLink, Link} from '@megafon/ui-core';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 
 interface IButton {

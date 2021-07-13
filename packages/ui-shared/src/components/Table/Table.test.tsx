@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
-import { cnCreate } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import Table, { ITable } from './Table';
 import TableRow from './TableRow';
 import TableCell from './TableCell';

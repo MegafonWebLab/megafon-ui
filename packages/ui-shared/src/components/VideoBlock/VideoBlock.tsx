@@ -1,7 +1,8 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './VideoBlock.less';
-import { Header, Button, Paragraph, Grid, GridColumn, cnCreate, dataAttrs as filterDataAttrs } from '@megafon/ui-core';
+import { Header, Button, Paragraph, Grid, GridColumn } from '@megafon/ui-core';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 
 export interface IContent {
     /** Заголовок */

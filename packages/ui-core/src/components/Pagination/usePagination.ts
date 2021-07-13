@@ -14,7 +14,7 @@ const NeighbourCount = {
 };
 
 const BUTTON_RATIO = 5;
-const MOBILE_RESOLUTION = 360;
+export const MOBILE_RESOLUTION = 360;
 
 type GetItemsParamsType = {
     totalPages: number;
@@ -67,7 +67,7 @@ const usePagination = (totalPages: number, activePage: number) => {
 
     React.useEffect(() => {
         const handleResize = () => {
-            const isMobile = window.innerWidth < MOBILE_RESOLUTION;
+            const isMobile = window.innerWidth <= MOBILE_RESOLUTION;
             const value = isMobile ? NeighbourCount.MOBILE : NeighbourCount.MAIN;
 
             setNeighbourCount(value);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './RadioButton.less';
-import cnCreate from 'utils/cnCreate';
+import { cnCreate } from '@megafon/ui-helpers';
 
 export interface IRadioButtonProps {
     /** Значение */
@@ -78,8 +78,10 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         } = this.props;
         const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
 
+        const rootClassNames = Array.isArray(className) ? [...className, classes.root] : [className, classes.root];
+
         return (
-            <div className={cn([className, classes.root])}>
+            <div className={cn(rootClassNames)}>
                 <label
                     className={cn('label', {
                         disabled: isDisabled,

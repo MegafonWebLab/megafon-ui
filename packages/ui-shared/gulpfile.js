@@ -36,7 +36,7 @@ const typesReg = 'src/**/types.ts';
  */
 const lessConfig = { paths: [srcPath], plugins: [autoprefix] };
 const tsConfig = {
-    rootDir: './src',
+    baseUrl: './src',
     noUnusedParameters: true,
     noUnusedLocals: true,
     strictNullChecks: true,
@@ -48,47 +48,36 @@ const tsConfig = {
 };
 const babelPlugins = [
     require.resolve('@babel/plugin-transform-object-assign'),
-    require.resolve('@babel/plugin-proposal-class-properties'),
     require.resolve('@babel/plugin-transform-runtime')
 ];
 const babelPresets = [
-    '@babel/react', [
-        '@babel/preset-env',
-        {
-            useBuiltIns: 'usage',
-            corejs: '3.6'
-        }
-    ]
+    '@babel/react',
+    ['@babel/env', {
+        useBuiltIns: 'usage',
+        corejs: '3.6'
+    }]
 ];
 const babelEsConfig = {
     presets: [
-        '@babel/react', [
-            '@babel/preset-env',
-            {
-                modules: false,
-                useBuiltIns: 'usage',
-                corejs: '3.6'
-            }
-        ]
+        '@babel/react',
+        ['@babel/env', {
+            modules: false,
+            useBuiltIns: 'usage',
+            corejs: '3.6'
+        }]
     ],
     plugins: [
-        ...babelPlugins, [
-            'module-resolver',
-            {
-                root: './src'
-            }
-        ]
+        ...babelPlugins,
+        ['module-resolver', {
+            root: ['./src'],
+        }],
     ]
 };
 const babelLibConfig = {
     presets: [
-        [
-            '@babel/preset-env',
-            {
-                useBuiltIns: 'usage',
-                corejs: '3.6'
-            }
-        ]
+        ['@babel/env', {
+            modules: 'commonjs'
+        }]
     ]
 };
 
