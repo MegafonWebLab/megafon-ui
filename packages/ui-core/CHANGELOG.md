@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.148](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.147...@megafon/ui-core@2.0.0-beta.148) (2021-07-13)
+
+
+### Bug Fixes
+
+* **search:** change highlight regexp logic ([f6ce881](https://github.com/MegafonWebLab/megafon-ui/commit/f6ce881904dc926e1f503c581d59825ed8986d14))
+
+
+### Features
+
+* **packages:** added @megafon/ui-helpers package ([811f67c](https://github.com/MegafonWebLab/megafon-ui/commit/811f67c26c87e2582e461c03223b12344513ecac))
+
+
+### BREAKING CHANGES
+
+* **packages:** utils from @megafon/ui-core removed, use @megafon/ui-helpers package instead
+* **packages:** breakpoints from @megafon/ui-core removed, use @megafon/ui-helpers package instead
+* **packages:** throttleTime removed from export in @megafon/ui-core package
+
+
+
+
+
 # [2.0.0-beta.147](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.146...@megafon/ui-core@2.0.0-beta.147) (2021-07-12)
 
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.213](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.212...@megafon/ui-shared@2.0.0-beta.213) (2021-07-13)
+
+
+### Features
+
+* **packages:** added @megafon/ui-helpers package ([811f67c](https://github.com/MegafonWebLab/megafon-ui/commit/811f67c26c87e2582e461c03223b12344513ecac))
+
+
+### BREAKING CHANGES
+
+* **packages:** utils from @megafon/ui-core removed, use @megafon/ui-helpers package instead
+* **packages:** breakpoints from @megafon/ui-core removed, use @megafon/ui-helpers package instead
+* **packages:** throttleTime removed from export in @megafon/ui-core package
+
+
+
+
+
 # [2.0.0-beta.212](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.211...@megafon/ui-shared@2.0.0-beta.212) (2021-07-12)
 
 
