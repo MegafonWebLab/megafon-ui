@@ -110,7 +110,7 @@
     &_mask_android {
         @{b}__img-wrapper {
             @media @mobile {
-                height: 423px;
+                height: 421px;
             }
         }
 
@@ -149,7 +149,7 @@
     &_mask_android {
         @{b}__img-wrapper {
             @media @mobile {
-                height: 430px;
+                height: 424px;
             }
         }
 
@@ -177,6 +177,31 @@
             height: 490px;
             margin: auto;
             background: url('./img/newIphone.png') 50% no-repeat;
+            background-size: contain;
+            z-index: 2;
+        }
+
+        @{b}__swiper {
+            position: absolute;
+            top: 14px;
+            left: 0;
+            right: 0;
+            width: 214px;
+            height: 462px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 20px;
+            z-index: 1;
+        }
+    }
+
+    &_mask_iphone-12 {
+        @{b}__device-screen {
+            position: relative;
+            width: 100%;
+            height: 490px;
+            margin: auto;
+            background: url('./img/iphone12.png') 50% no-repeat;
             background-size: contain;
             z-index: 2;
         }
@@ -278,6 +303,7 @@
 
     &__slide {
         flex-shrink: 0;
+        height: 100%;
     }
 
     &__articles {
@@ -349,6 +375,10 @@
         box-shadow: inset 0 0 0 1px #B2B2B2;
         cursor: pointer;
 
+        @media screen and (max-width: 370px) {
+            min-width: 40px;
+        }
+
         &:before {
             content: '';
             position: absolute;
@@ -398,6 +428,10 @@
 
         @media @mobileB {
             margin-right: 40px;
+        }
+
+        @media screen and (max-width: 370px) {
+            margin-right: 12px;
         }
     }
 

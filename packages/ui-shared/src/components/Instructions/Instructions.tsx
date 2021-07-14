@@ -21,6 +21,7 @@ export const pictureMaskTypes = {
     BLACK_IPHONE: 'black-iphone',
     WHITE_IPHONE: 'white-iphone',
     LAPTOP: 'laptop',
+    IPHONE_12: 'iphone-12',
     NONE: 'none',
 } as const;
 
@@ -272,6 +273,7 @@ Instructions.propTypes = {
         pictureMaskTypes.WHITE_IPHONE,
         pictureMaskTypes.BLACK_IPHONE,
         pictureMaskTypes.LAPTOP,
+        pictureMaskTypes.IPHONE_12,
         pictureMaskTypes.NONE,
     ]),
     getSwiper: PropTypes.func,

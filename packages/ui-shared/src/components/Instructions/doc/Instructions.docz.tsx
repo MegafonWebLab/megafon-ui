@@ -8,6 +8,7 @@ import LaptopScreen from './i/laptopScreen.png';
 import IphoneScreen from './i/iphoneScreen.png';
 import AndroidScreen from './i/androidScreen.png';
 import NewIphoneScreen from './i/newIphoneScreen.png';
+import Iphone12Screen from './i/iphone12Screen.png';
 
 const instructionTitles = [
     'Авторизуйтесь на сайте сервиса special.megafon.ru, перейдите в магазин и добавьте покупки в корзину',
@@ -36,6 +37,8 @@ export const iphoneInstructionItems = instructionItems(IphoneScreen);
 export const androidInstructionItems = instructionItems(AndroidScreen);
 
 export const newIphoneInstructionItems = instructionItems(NewIphoneScreen);
+
+export const iphone12InstructionItems = instructionItems(Iphone12Screen);
 
 export const laptopInstructionItems = instructionItems(LaptopScreen);
 
