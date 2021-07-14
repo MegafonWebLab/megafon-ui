@@ -73,6 +73,7 @@ const babelEsConfig = {
             root: ['./src'],
             alias: {
                 components: './src/components',
+                constants: './src/constants'
             }
         }],
     ]

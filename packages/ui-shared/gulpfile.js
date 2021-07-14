@@ -70,6 +70,9 @@ const babelEsConfig = {
         ...babelPlugins,
         ['module-resolver', {
             root: ['./src'],
+            alias: {
+                constants: './src/constants'
+            }
         }],
     ]
 };
