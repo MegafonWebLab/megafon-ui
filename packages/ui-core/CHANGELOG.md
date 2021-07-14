@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.149](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.148...@megafon/ui-core@2.0.0-beta.149) (2021-07-14)
+
+
+### Bug Fixes
+
+* **build:** change contants path resolve ([b4b810a](https://github.com/MegafonWebLab/megafon-ui/commit/b4b810a6b3b753103360dbccc20e891fd6f87cd8))
+
+
+
+
+
 # [2.0.0-beta.148](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.147...@megafon/ui-core@2.0.0-beta.148) (2021-07-13)
 
 
