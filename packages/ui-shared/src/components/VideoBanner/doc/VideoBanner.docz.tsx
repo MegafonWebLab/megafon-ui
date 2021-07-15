@@ -33,6 +33,8 @@ const contentWithPurpleButton: IContent = {
     buttonColor: ButtonColor.PURPLE,
 };
 
+const { buttonTitle, ...contentWithoutButton }: IContent = content;
+
 const images = {
     imageMobile: imageWhiteMobile,
     imageTablet: imageWhiteMobile,
@@ -60,6 +62,7 @@ export {
     contentWithDefaultTextColor,
     contentWithDifferentTextColor,
     contentWithPurpleButton,
+    contentWithoutButton,
     video,
     youtubeVideoId,
     imageMobile,

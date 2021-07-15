@@ -6,6 +6,7 @@ import {
     contentWithDefaultTextColor,
     contentWithDifferentTextColor,
     contentWithPurpleButton,
+    contentWithoutButton,
     video,
     youtubeVideoId,
     imageMobile,
@@ -71,6 +72,14 @@ const breadcrumbs = [
 <Playground>
     <ContentArea>
         <VideoBanner videoType="video" videoSrc={video} content={content} imageMobile={imageMobile} imageTablet={imageMobile} />
+    </ContentArea>
+</Playground>
+
+## Без кнопки
+
+<Playground>
+    <ContentArea>
+        <VideoBanner videoType="video" videoSrc={video} content={contentWithoutButton} imageMobile={imageMobile} imageTablet={imageMobile} />
     </ContentArea>
 </Playground>
 
