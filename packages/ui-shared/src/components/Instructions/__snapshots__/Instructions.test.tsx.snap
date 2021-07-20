@@ -417,6 +417,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
                   className="mfui-beta-instructions__swiper-img"
                   loop={true}
                   muted={true}
+                  playsInline={true}
                 >
                   <source
                     src="ImgUrl1"
