@@ -38,6 +38,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
                 className="mfui-beta-instructions__swiper-img"
                 loop={true}
                 muted={true}
+                playsInline={true}
               >
                 <source
                   src="ImgUrl1"
@@ -159,6 +160,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
                 className="mfui-beta-instructions__swiper-img"
                 loop={true}
                 muted={true}
+                playsInline={true}
               >
                 <source
                   src="ImgUrl1"
@@ -286,6 +288,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
                   className="mfui-beta-instructions__swiper-img"
                   loop={true}
                   muted={true}
+                  playsInline={true}
                 >
                   <source
                     src="ImgUrl1"
@@ -536,6 +539,7 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
                 className="mfui-beta-instructions__swiper-img"
                 loop={true}
                 muted={true}
+                playsInline={true}
               >
                 <source
                   src="ImgUrl1"
@@ -707,6 +711,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                         autoplay=""
                                         class="mfui-beta-instructions__swiper-img"
                                         loop=""
+                                        playsinline=""
                                       >
                                         <source
                                           src="ImgUrl1"
@@ -738,6 +743,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -800,6 +806,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -1376,6 +1383,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     autoplay=""
                                     class="mfui-beta-instructions__swiper-img"
                                     loop=""
+                                    playsinline=""
                                   >
                                     <source
                                       src="ImgUrl1"
@@ -1405,6 +1413,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               className="mfui-beta-instructions__swiper-img"
                               loop={true}
                               muted={true}
+                              playsInline={true}
                             >
                               <source
                                 src="ImgUrl1"
@@ -1434,6 +1443,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                         autoplay=""
                                         class="mfui-beta-instructions__swiper-img"
                                         loop=""
+                                        playsinline=""
                                       >
                                         <source
                                           src="ImgUrl1"
@@ -1465,6 +1475,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -1527,6 +1538,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -2103,6 +2115,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     autoplay=""
                                     class="mfui-beta-instructions__swiper-img"
                                     loop=""
+                                    playsinline=""
                                   >
                                     <source
                                       src="ImgUrl1"
@@ -2289,6 +2302,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                         autoplay=""
                                         class="mfui-beta-instructions__swiper-img"
                                         loop=""
+                                        playsinline=""
                                       >
                                         <source
                                           src="ImgUrl1"
@@ -2320,6 +2334,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -2382,6 +2397,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -2958,6 +2974,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     autoplay=""
                                     class="mfui-beta-instructions__swiper-img"
                                     loop=""
+                                    playsinline=""
                                   >
                                     <source
                                       src="ImgUrl1"
@@ -2987,6 +3004,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               className="mfui-beta-instructions__swiper-img"
                               loop={true}
                               muted={true}
+                              playsInline={true}
                             >
                               <source
                                 src="ImgUrl1"
@@ -3016,6 +3034,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                         autoplay=""
                                         class="mfui-beta-instructions__swiper-img"
                                         loop=""
+                                        playsinline=""
                                       >
                                         <source
                                           src="ImgUrl1"
@@ -3047,6 +3066,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -3109,6 +3129,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -3685,6 +3706,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     autoplay=""
                                     class="mfui-beta-instructions__swiper-img"
                                     loop=""
+                                    playsinline=""
                                   >
                                     <source
                                       src="ImgUrl1"
@@ -3871,6 +3893,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                         autoplay=""
                                         class="mfui-beta-instructions__swiper-img"
                                         loop=""
+                                        playsinline=""
                                       >
                                         <source
                                           src="ImgUrl1"
@@ -3902,6 +3925,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -3964,6 +3988,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -4540,6 +4565,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     autoplay=""
                                     class="mfui-beta-instructions__swiper-img"
                                     loop=""
+                                    playsinline=""
                                   >
                                     <source
                                       src="ImgUrl1"
@@ -4569,6 +4595,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               className="mfui-beta-instructions__swiper-img"
                               loop={true}
                               muted={true}
+                              playsInline={true}
                             >
                               <source
                                 src="ImgUrl1"
@@ -4598,6 +4625,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                         autoplay=""
                                         class="mfui-beta-instructions__swiper-img"
                                         loop=""
+                                        playsinline=""
                                       >
                                         <source
                                           src="ImgUrl1"
@@ -4629,6 +4657,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -4691,6 +4720,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       autoplay=""
                                       class="mfui-beta-instructions__swiper-img"
                                       loop=""
+                                      playsinline=""
                                     >
                                       <source
                                         src="ImgUrl1"
@@ -5267,6 +5297,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     autoplay=""
                                     class="mfui-beta-instructions__swiper-img"
                                     loop=""
+                                    playsinline=""
                                   >
                                     <source
                                       src="ImgUrl1"
@@ -5412,6 +5443,7 @@ exports[`<Instructions /> should render component with additional text 1`] = `
                 className="mfui-beta-instructions__swiper-img"
                 loop={true}
                 muted={true}
+                playsInline={true}
               >
                 <source
                   src="ImgUrl1"
@@ -5539,6 +5571,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
                 className="mfui-beta-instructions__swiper-img"
                 loop={true}
                 muted={true}
+                playsInline={true}
               >
                 <source
                   src="ImgUrl1"

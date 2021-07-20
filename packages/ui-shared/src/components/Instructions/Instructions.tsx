@@ -135,7 +135,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     }, [pictureMask]);
 
     const renderVideo = React.useCallback((mediaUrl: string): JSX.Element => (
-        <video className={cn('swiper-img')} autoPlay muted loop>
+        <video className={cn('swiper-img')} autoPlay muted loop playsInline>
             <source src={mediaUrl} type="video/mp4" />
         </video>
     ), []);
