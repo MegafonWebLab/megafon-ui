@@ -603,6 +603,78 @@ exports[`<VideoBanner /> render component with the different content text color 
 </div>
 `;
 
+exports[`<VideoBanner /> render component without button 1`] = `
+<div
+  className="mfui-beta-video-banner"
+>
+  <ContentArea
+    innerBackgroundColor="transparent"
+    outerBackgroundColor="transparent"
+  >
+    <div
+      className="mfui-beta-video-banner__wrapper"
+    >
+      <div
+        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+      >
+        <Header
+          as="h1"
+          className="mfui-beta-video-banner__title"
+          color="inherit"
+          hAlign="inherit"
+        >
+          Текст ≈40 симовлов. Короткие слова
+        </Header>
+        <div
+          className="mfui-beta-video-banner__text"
+        >
+          <Header
+            as="h5"
+            className="mfui-beta-video-banner__description"
+            color="inherit"
+            hAlign="inherit"
+          >
+            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          </Header>
+          <div
+            className="mfui-beta-video-banner__cost"
+          >
+            oт 
+            <component
+              key="1"
+            >
+              1000 ₽
+            </component>
+             за сообщение
+          </div>
+        </div>
+        <div
+          className="mfui-beta-video-banner__btns-wrapper"
+        >
+          <TextLink
+            className="mfui-beta-video-banner__link"
+            color="blue"
+            href="#"
+            underlineStyle="solid"
+            underlineVisibility="hover"
+          >
+            Личный кабинет услуги
+          </TextLink>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-video-banner__background-image"
+        style={
+          Object {
+            "backgroundImage": "url(imageMobile)",
+          }
+        }
+      />
+    </div>
+  </ContentArea>
+</div>
+`;
+
 exports[`<VideoBanner /> tests with local window render desktop image on relevant resolution 1`] = `
 <VideoBanner
   imageDesktop="imageDesktop"
