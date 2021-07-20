@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.215](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.214...@megafon/ui-shared@2.0.0-beta.215) (2021-07-20)
+
+
+### Bug Fixes
+
+* **instructions:** fix image on android and video on ios ([10b87f5](https://github.com/MegafonWebLab/megafon-ui/commit/10b87f58c60c9584e811ff69e3391c2beae37eff))
+
+
+### Features
+
+* **instructions:** add new mask for iphone 12 and some style fix ([eea27c8](https://github.com/MegafonWebLab/megafon-ui/commit/eea27c8d3138c8fc32ac63aa801240b84a1156a9))
+* **instructions:** change image screen ([fc32590](https://github.com/MegafonWebLab/megafon-ui/commit/fc32590d5f9931bb0c28c9828740aa4e6181f799))
+
+
+
+
+
 # [2.0.0-beta.214](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.213...@megafon/ui-shared@2.0.0-beta.214) (2021-07-14)
 
 
