@@ -370,6 +370,134 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
 </div>
 `;
 
+exports[`<Instructions /> desktop resolution should render with pictureMask Iphone 12 1`] = `
+<div
+  className="mfui-beta-instructions mfui-beta-instructions_mask_iphone-12"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      all="12"
+    >
+      <Header
+        as="h2"
+        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        color="black"
+        hAlign="inherit"
+      >
+        Test instruction title
+      </Header>
+      <div
+        className="mfui-beta-instructions__wrapper"
+      >
+        <div
+          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+        >
+          <div
+            className="mfui-beta-instructions__img-wrapper"
+          >
+            <div
+              className="mfui-beta-instructions__device-screen"
+            />
+            <Swiper
+              className="mfui-beta-instructions__swiper"
+              noSwipingClass="mfui-beta-instructions__slide"
+              onSwiper={[Function]}
+            >
+              <SwiperSlide
+                className="mfui-beta-instructions__slide"
+                key="0ImgUrl1"
+              >
+                <video
+                  autoPlay={true}
+                  className="mfui-beta-instructions__swiper-img"
+                  loop={true}
+                  muted={true}
+                >
+                  <source
+                    src="ImgUrl1"
+                    type="video/mp4"
+                  />
+                </video>
+              </SwiperSlide>
+              <SwiperSlide
+                className="mfui-beta-instructions__slide"
+                key="1ImgUrl2"
+              >
+                <img
+                  alt=""
+                  className="mfui-beta-instructions__swiper-img"
+                  src="ImgUrl2"
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+        <div
+          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+        >
+          <Header
+            as="h2"
+            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            color="black"
+            hAlign="inherit"
+          >
+            Test instruction title
+          </Header>
+          <ul
+            className="mfui-beta-instructions__articles-list"
+          >
+            <li
+              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              data-index={0}
+              key="0"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-beta-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-beta-instructions__articles-item-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-item-title"
+              >
+                Test1
+              </div>
+            </li>
+            <li
+              className="mfui-beta-instructions__articles-item"
+              data-index={1}
+              key="1"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-beta-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-beta-instructions__articles-item-dot-number"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-item-title"
+              >
+                Test2
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<Instructions /> desktop resolution should render with right side picture 1`] = `
 <div
   className="mfui-beta-instructions mfui-beta-instructions_mask_none"
