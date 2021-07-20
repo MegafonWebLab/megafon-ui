@@ -6,6 +6,7 @@ import {
     iphoneInstructionItems,
     androidInstructionItems,
     newIphoneInstructionItems,
+    iphone12InstructionItems,
     laptopInstructionItems,
     wrapperStyles,
 } from './Instructions.docz.tsx';
@@ -71,6 +72,12 @@ const items = [
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={newIphoneInstructionItems} pictureMask='new-iphone' />
+</Playground>
+
+## С рамкой для изображения "iphone 12"
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={iphone12InstructionItems} pictureMask='iphone-12' />
 </Playground>
 
 ## С рамкой для изображения "ноутбук"

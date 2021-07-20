@@ -66,6 +66,19 @@ describe('<Instructions />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render with pictureMask Iphone 12', () => {
+            const newProps = {
+                ...props,
+                pictureMask: pictureMaskTypes.IPHONE_12,
+            };
+
+            const wrapper = shallow(
+                <Instructions {...newProps} />
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('active slide will be changed', () => {
             const wrapper = shallow(
                 <Instructions {...props} />

@@ -22,6 +22,7 @@ export const pictureMaskTypes = {
     BLACK_IPHONE: 'black-iphone',
     WHITE_IPHONE: 'white-iphone',
     LAPTOP: 'laptop',
+    IPHONE_12: 'iphone-12',
     NONE: 'none',
 } as const;
 
@@ -134,7 +135,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     }, [pictureMask]);
 
     const renderVideo = React.useCallback((mediaUrl: string): JSX.Element => (
-        <video className={cn('swiper-img')} autoPlay muted loop>
+        <video className={cn('swiper-img')} autoPlay muted loop playsInline>
             <source src={mediaUrl} type="video/mp4" />
         </video>
     ), []);
@@ -273,6 +274,7 @@ Instructions.propTypes = {
         pictureMaskTypes.WHITE_IPHONE,
         pictureMaskTypes.BLACK_IPHONE,
         pictureMaskTypes.LAPTOP,
+        pictureMaskTypes.IPHONE_12,
         pictureMaskTypes.NONE,
     ]),
     getSwiper: PropTypes.func,
