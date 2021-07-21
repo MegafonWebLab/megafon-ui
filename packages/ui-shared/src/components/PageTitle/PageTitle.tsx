@@ -1,17 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Header } from '@megafon/ui-core';
+import { Header, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
 import './PageTitle.less';
 import Breadcrumbs, { Props as BreadcrumbsType } from '../Breadcrumbs/Breadcrumbs';
 
 type Props = {
     /** Текст заголовка */
-    title: string;
+    title: string | React.ReactNode | React.ReactNode[];
     /** Хлебные крошки */
     breadcrumbs?: BreadcrumbsType['items'];
     /** Текст бейджа */
     badge?: string;
+    /** Растягивание компонента на всю доступную ширину */
+    isFullWidth?: boolean;
     /** Класс для корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -23,17 +25,50 @@ type Props = {
 };
 
 const cn = cnCreate('mfui-beta-page-title');
-const PageTitle: React.FC<Props> = ({ title, breadcrumbs, badge, className, classes = {}, rootRef }) => (
-    <div className={cn([className])} ref={rootRef}>
-        {!!breadcrumbs?.length &&
-            <Breadcrumbs items={breadcrumbs} className={cn('breadcrumbs', {}, classes.breadcrumbs)} />}
-        {badge && <div className={cn('badge')}>{badge}</div>}
-        <Header className={cn('title')} as="h1">{title}</Header>
-    </div>
-);
+const PageTitle: React.FC<Props> = ({
+    title,
+    breadcrumbs,
+    badge,
+    isFullWidth = true,
+    className,
+    classes = {},
+    rootRef,
+}) => {
+    const renderPageTitle = React.useCallback(
+        () => (
+            <>
+                {breadcrumbs?.length &&
+                    <Breadcrumbs items={breadcrumbs} className={cn('breadcrumbs', [classes.breadcrumbs])} />
+                }
+                {badge && <div className={cn('badge')}>{badge}</div>}
+                <Header className={cn('title')} as="h1">{title}</Header>
+            </>
+        ),
+        [breadcrumbs, classes, badge, title]
+    );
+
+    const renderPageTitleWithGrid = React.useCallback(
+        () => (
+            <Grid>
+                <GridColumn wide="8" desktop="10" tablet="12" mobile="12">
+                    {renderPageTitle()}
+                </GridColumn>
+            </Grid>
+        ),
+        [renderPageTitle]
+    );
+
+    return (
+        <div className={cn([className])} ref={rootRef}>
+            {isFullWidth ? renderPageTitle() : renderPageTitleWithGrid()}
+        </div>
+    );
+};
 
 PageTitle.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.oneOfType([
+        PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node),
+    ]).isRequired,
     breadcrumbs: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
@@ -41,6 +76,7 @@ PageTitle.propTypes = {
         }).isRequired
     ),
     badge: PropTypes.string,
+    isFullWidth: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         breadcrumbs: PropTypes.string,
