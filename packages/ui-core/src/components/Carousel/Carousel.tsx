@@ -67,6 +67,8 @@ export interface ICarouselProps extends IFilterDataAttrs {
     transitionSpeed?: number;
     /** Пороговое значение свайпа при котором выполняется сдвиг слайдов в карусели */
     threshold?: number;
+    /** Порядковый номер первого видимого слайда */
+    initialSlide?: number;
     /** Отключение смены слайда свайпами */
     disableTouchMove?: boolean;
     /** Активный слайд по центру экрана */
@@ -129,6 +131,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     loop = false,
     transitionSpeed = 300,
     threshold,
+    initialSlide = 1,
     disableTouchMove = false,
     centeredSlides = false,
     navTheme = 'light',
@@ -251,6 +254,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
                 speed={transitionSpeed}
                 threshold={threshold}
+                initialSlide={initialSlide - 1}
                 allowTouchMove={!disableTouchMove}
                 centeredSlides={centeredSlides}
                 effect={effectTheme}
