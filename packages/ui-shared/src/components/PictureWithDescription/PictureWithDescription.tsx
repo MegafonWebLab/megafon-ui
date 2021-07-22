@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import './PictureWithDescription.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import { Header } from '@megafon/ui-core';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -13,6 +14,15 @@ type PictureAlignTypesType = typeof pictureAlignTypes[keyof typeof pictureAlignT
 export interface IPictureWithDescriptionProps {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
+    /** Дополнительный класс для корневого элемента */
+    className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        title?: string;
+    };
+    /** Заголовок */
+    title?: string;
     /** Url изображения */
     pictureUrl: string;
     /** Расположение изображения */
@@ -24,16 +34,20 @@ export interface IPictureWithDescriptionProps {
 const cn = cnCreate('mfui-beta-picture-with-description');
 const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
     rootRef,
+    className,
+    classes = {},
+    title,
     pictureUrl,
     pictureAlign = 'left',
     isTextTopAlign,
     children,
 }) => (
-    <div className={cn()} ref={rootRef}>
+    <div className={cn([className, classes.root])} ref={rootRef}>
         <div className={cn('picture', { align: pictureAlign })}>
             <img className={cn('img')} src={pictureUrl} alt="" />
         </div>
         <div className={cn('articles', { align: pictureAlign, 'text-top-align': isTextTopAlign })}>
+            {!!title && <Header className={cn('title', [classes.title])} as="h2">{title}</Header>}
             {children}
         </div>
     </div>
@@ -44,6 +58,12 @@ PictureWithDescription.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
     ]),
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        title: PropTypes.string,
+    }),
+    title: PropTypes.string,
     pictureUrl: PropTypes.string.isRequired,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),
     isTextTopAlign: PropTypes.bool,

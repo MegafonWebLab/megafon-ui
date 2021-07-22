@@ -18,6 +18,32 @@ describe('<PictureWithDescription />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render with title', () => {
+        const wrapper = shallow(
+            <PictureWithDescription {...props} title="Заголовок"><div /></PictureWithDescription>
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with custom classes', () => {
+        const wrapper = shallow(
+            <PictureWithDescription
+                {...props}
+                title="Заголовок"
+                className="class-name"
+                classes={{
+                    root: 'root-class',
+                    title: 'title-class',
+                }}
+            >
+                    <div />
+            </PictureWithDescription>
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render with right side picture', () => {
         const newProps = {
             ...props,
