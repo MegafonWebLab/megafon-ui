@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.217](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.216...@megafon/ui-shared@2.0.0-beta.217) (2021-07-26)
+
+
+### Features
+
+* **pagetitle:** add isFullWidth props, expanded title type ([63f7628](https://github.com/MegafonWebLab/megafon-ui/commit/63f76287857d57c754498bd029084aee0add79df))
+* **textbox:** add centeringWithLimitedWidth and isFullWidth props ([6f3a080](https://github.com/MegafonWebLab/megafon-ui/commit/6f3a080dc3284b2b37e956a585bb854d61f5a772))
+
+
+
+
+
 # [2.0.0-beta.216](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.215...@megafon/ui-shared@2.0.0-beta.216) (2021-07-26)
 
 
