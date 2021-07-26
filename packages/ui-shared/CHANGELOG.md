@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.216](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.215...@megafon/ui-shared@2.0.0-beta.216) (2021-07-26)
+
+
+### Features
+
+* **picturewithdescription:** add title and classes props ([1bb140c](https://github.com/MegafonWebLab/megafon-ui/commit/1bb140c80cc998fd537fad4069adc1b158de93be))
+* **videobanner:** props buttonTitle made optional ([f7cf47a](https://github.com/MegafonWebLab/megafon-ui/commit/f7cf47a771d2f876935d6b823e5221eb4d218a14))
+
+
+
+
+
 # [2.0.0-beta.215](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.214...@megafon/ui-shared@2.0.0-beta.215) (2021-07-20)
 
 
