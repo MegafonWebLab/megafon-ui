@@ -39,6 +39,19 @@ describe('PageTitle', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render with limited width', () => {
+        const wrapper = shallow(
+            <PageTitle
+                title="title"
+                breadcrumbs={breadcrumbs}
+                badge={badge}
+                isFullWidth={false}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should return ref to component', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
 
