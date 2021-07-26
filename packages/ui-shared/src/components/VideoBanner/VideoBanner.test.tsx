@@ -85,6 +85,22 @@ describe('<VideoBanner />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('render component without button', () => {
+        const { buttonTitle, ...contentWithoutButton } = content;
+
+        const wrapper = shallow(
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                imageDesktop={imageDesktop}
+                imageDesktopWide={imageDesktopWide}
+                content={contentWithoutButton}
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('render component with classes', () => {
         const wrapper = shallow(
             <VideoBanner

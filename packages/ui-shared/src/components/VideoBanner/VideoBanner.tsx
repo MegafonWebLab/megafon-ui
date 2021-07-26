@@ -52,7 +52,7 @@ export interface IContent {
     /** Текст-описание */
     description: string;
     /** Текст кнопки */
-    buttonTitle: string;
+    buttonTitle?: string;
     /** Ссылка на кнопке */
     buttonHref?: string;
     /** Добавляет атрибут download для тега <a> компонента Button */
@@ -162,15 +162,17 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 )}
             </div>
             <div className={cn('btns-wrapper')}>
-                <Button
-                    className={cn(ClassName.BUTTON, [classes.button])}
-                    theme={buttonColor}
-                    href={buttonHref}
-                    onClick={onButtonClick}
-                    download={buttonDownload}
-                >
-                    {buttonTitle}
-                </Button>
+                {buttonTitle && (
+                    <Button
+                        className={cn(ClassName.BUTTON, [classes.button])}
+                        theme={buttonColor}
+                        href={buttonHref}
+                        onClick={onButtonClick}
+                        download={buttonDownload}
+                    >
+                        {buttonTitle}
+                    </Button>
+                )}
                 {linkTitle && (
                     <TextLink className={cn('link', [classes.link])} href={linkUrl} download={linkDownload}>
                         {linkTitle}
@@ -297,7 +299,7 @@ VideoBanner.propTypes = {
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
-        buttonTitle: PropTypes.string.isRequired,
+        buttonTitle: PropTypes.string,
         buttonHref: PropTypes.string,
         buttonDownload: PropTypes.bool,
         buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
