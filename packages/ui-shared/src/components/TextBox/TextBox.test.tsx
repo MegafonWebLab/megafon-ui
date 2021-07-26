@@ -1,14 +1,9 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
-import TextBox, { ITextBoxProps } from './TextBox';
+import TextBox from './TextBox';
 
-const props: ITextBoxProps = {
-    textCenter: true,
-    className: 'class-name',
-};
-
-describe('<TextBox />', () => {
-    it('renders TextBox with default props', () => {
+describe('TextBox', () => {
+    it('render with default props', () => {
         const wrapper = shallow(
             <TextBox>
                 <p>test</p>
@@ -17,9 +12,54 @@ describe('<TextBox />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('renders TextBox with centered content', () => {
+    it('render with className="test-class-name"', () => {
         const wrapper = shallow(
-            <TextBox {...props}>
+            <TextBox className="test-class-name">
+                <p>test</p>
+            </TextBox>
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render with centered text', () => {
+        const wrapper = shallow(
+            <TextBox textCenter={true}>
+                <p>test</p>
+            </TextBox>
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render with limited width', () => {
+        const wrapper = shallow(
+            <TextBox isFullWidth={false}>
+                <p>test</p>
+            </TextBox>
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render with limited width and centered text', () => {
+        const wrapper = shallow(
+            <TextBox isFullWidth={false} textCenter={true}>
+                <p>test</p>
+            </TextBox>
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render with limited width and centered component', () => {
+        const wrapper = shallow(
+            <TextBox isFullWidth={false} centeringWithLimitedWidth={true}>
+                <p>test</p>
+            </TextBox>
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('render with limited width, centered component and centered text', () => {
+        const wrapper = shallow(
+            <TextBox isFullWidth={false} centeringWithLimitedWidth={true} textCenter={true}>
                 <p>test</p>
             </TextBox>
         );
@@ -29,7 +69,7 @@ describe('<TextBox />', () => {
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
         mount(
-            <TextBox {...props} rootRef={ref}>
+            <TextBox rootRef={ref}>
                 <p>test</p>
             </TextBox>
         );
