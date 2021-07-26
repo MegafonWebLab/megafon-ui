@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextBox /> renders TextBox with centered content 1`] = `
+exports[`TextBox render with centered text 1`] = `
 <div
-  className="mfui-beta-text-box mfui-beta-text-box_text-center class-name"
+  className="mfui-beta-text-box mfui-beta-text-box_text-center"
 >
   <p>
     test
@@ -10,12 +10,106 @@ exports[`<TextBox /> renders TextBox with centered content 1`] = `
 </div>
 `;
 
-exports[`<TextBox /> renders TextBox with default props 1`] = `
+exports[`TextBox render with className="test-class-name" 1`] = `
+<div
+  className="mfui-beta-text-box test-class-name"
+>
+  <p>
+    test
+  </p>
+</div>
+`;
+
+exports[`TextBox render with default props 1`] = `
 <div
   className="mfui-beta-text-box"
 >
   <p>
     test
   </p>
+</div>
+`;
+
+exports[`TextBox render with limited width 1`] = `
+<div
+  className="mfui-beta-text-box"
+>
+  <Grid
+    hAlign="left"
+  >
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
+    >
+      <p>
+        test
+      </p>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`TextBox render with limited width and centered component 1`] = `
+<div
+  className="mfui-beta-text-box"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
+    >
+      <p>
+        test
+      </p>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`TextBox render with limited width and centered text 1`] = `
+<div
+  className="mfui-beta-text-box mfui-beta-text-box_text-center"
+>
+  <Grid
+    hAlign="left"
+  >
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
+    >
+      <p>
+        test
+      </p>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`TextBox render with limited width, centered component and centered text 1`] = `
+<div
+  className="mfui-beta-text-box mfui-beta-text-box_text-center"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
+      wide="8"
+    >
+      <p>
+        test
+      </p>
+    </GridColumn>
+  </Grid>
 </div>
 `;
