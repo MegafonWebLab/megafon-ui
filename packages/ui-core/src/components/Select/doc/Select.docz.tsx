@@ -92,6 +92,12 @@ export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
         _e: React.SyntheticEvent<EventTarget> | React.KeyboardEvent<HTMLDivElement>,
         data: ISelectItem<number>
     ) => {
+        if (!data) {
+            setCurrentValue('');
+
+            return;
+        }
+
         setCurrentValue(data.value);
     };
 

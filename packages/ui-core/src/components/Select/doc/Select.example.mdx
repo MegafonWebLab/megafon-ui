@@ -9,6 +9,12 @@ const DemoSelectWrapper = props => {
     const [currentValue, setCurrentValue] = React.useState();
 
     const handleSelect = (_e, data) => {
+        if (!data) {
+            setCurrentValue('');
+
+            return;
+        }
+
         setCurrentValue(data.value);
     };
 
