@@ -42,7 +42,8 @@ export const items = [
         value: 10,
         title: 'Кантемировская',
         view: ({ filterValue }) => {
-            const stringFragments = 'Кантемировская'.split(RegExp(`(${filterValue})`, 'ig'));
+            const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
+            const stringFragments = 'Кантемировская'.split(RegExp(`(${query})`, 'ig'));
 
             return (
                 <>

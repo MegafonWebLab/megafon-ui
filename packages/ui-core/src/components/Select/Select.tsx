@@ -142,9 +142,10 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     debouncedComboboxChange = debounce((filterValue: string) => {
         const { items } = this.props;
 
+        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
         const filteredItems = items.filter(({ title }) => {
             if (filterValue.length <= title.length) {
-                return RegExp(filterValue, 'ig').test(title);
+                return RegExp(query, 'ig').test(title);
             }
 
             return false;
@@ -302,11 +303,11 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
         const filterValue = e.target.value;
 
-        this.setState({ inputValue: filterValue, isChoosenItem: false }, () => {
-            if (isChoosenItem) {
-                onSelect && onSelect(null);
-            }
-        });
+        if (isChoosenItem) {
+            onSelect && onSelect(null);
+        }
+
+        this.setState({ inputValue: filterValue, isChoosenItem: false });
 
         this.debouncedComboboxChange(filterValue);
     }
