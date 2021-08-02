@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.151](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.150...@megafon/ui-core@2.0.0-beta.151) (2021-08-02)
+
+
+### Bug Fixes
+
+* add new prop classes ([d72a883](https://github.com/MegafonWebLab/megafon-ui/commit/d72a8835e9d62234e2fec2e22c355d22755950da))
+* **pagination:** fix svg icons in safari ([97ef850](https://github.com/MegafonWebLab/megafon-ui/commit/97ef850284debe00583f5f8c7551e3a822e78c7d))
+* **select:** update component Select ([33e2623](https://github.com/MegafonWebLab/megafon-ui/commit/33e2623045c263ea80d01e9d7451f087e7a7aacd))
+
+
+
+
+
 # [2.0.0-beta.150](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.149...@megafon/ui-core@2.0.0-beta.150) (2021-07-26)
 
 

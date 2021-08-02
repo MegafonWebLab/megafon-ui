@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.218](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.217...@megafon/ui-shared@2.0.0-beta.218) (2021-08-02)
+
+
+### Features
+
+* **picturewithdescription:** extend title type ([15d4db1](https://github.com/MegafonWebLab/megafon-ui/commit/15d4db1e2372c14ff362483e360a4c590937d693))
+
+
+
+
+
 # [2.0.0-beta.217](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.216...@megafon/ui-shared@2.0.0-beta.217) (2021-07-26)
 
 
