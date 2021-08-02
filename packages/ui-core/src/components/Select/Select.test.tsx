@@ -131,6 +131,29 @@ describe('<Select />', () => {
                 newItems[1]
             );
         });
+
+        it('calls onSelect with null when type combobox after chosen item and change value', () => {
+            const handleSelectItem = jest.fn();
+            const wrapper = mount(
+                <Select<number> {...props} type={SelectTypes.COMBOBOX} onSelect={handleSelectItem} />
+            );
+            const combobox = `.${cn('combobox')}`;
+            const listItem = `.${cn('list-item')}`;
+
+            wrapper.find(combobox).simulate('focus');
+            wrapper.find(listItem).at(1).simulate('click');
+
+            expect(wrapper.state('isChoosenItem')).toBeTruthy();
+
+            wrapper.find(combobox).simulate('change', {
+                target: {
+                    value: 'name-1',
+                },
+            });
+
+            expect(handleSelectItem).toBeCalledWith(null);
+            expect(wrapper.state('isChoosenItem')).toBeFalsy();
+        });
     });
 
     describe('onOpened and onClosed', () => {
@@ -258,10 +281,15 @@ describe('<Select />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render items.view as function', () => {
+    it('should render items.view as function and type combobox', () => {
         const wrapper = shallow(<Select type="combobox" items={viewItems} dataAttrs={props.dataAttrs} />);
         wrapper.find(`.${cn('combobox')}`).simulate('change', { target: { value: 123 }});
 
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render items.view as function and type classic', () => {
+        const wrapper = shallow(<Select items={viewItems} dataAttrs={props.dataAttrs} />);
         expect(wrapper).toMatchSnapshot();
     });
 });

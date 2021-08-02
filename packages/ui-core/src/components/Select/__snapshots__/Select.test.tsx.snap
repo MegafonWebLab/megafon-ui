@@ -674,7 +674,64 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 </Select>
 `;
 
-exports[`<Select /> should render items.view as function 1`] = `
+exports[`<Select /> should render items.view as function and type classic 1`] = `
+<div
+  className="mfui-beta-select mfui-beta-select_no-touch"
+  data-test="test"
+>
+  <div
+    className="mfui-beta-select__inner"
+  >
+    <div
+      className="mfui-beta-select__control"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="mfui-beta-select__title"
+        onClick={[Function]}
+        tabIndex={0}
+      >
+        <div
+          className="mfui-beta-select__title-inner"
+        />
+      </div>
+      <div
+        className="mfui-beta-select__arrow-wrap"
+        onClick={[Function]}
+        tabIndex={1}
+      >
+        <span
+          className="mfui-beta-select__arrow"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-beta-select__list"
+    >
+      <div
+        className="mfui-beta-select__list-inner"
+      >
+        <div
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          key="0_111"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            <div>
+              view 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Select /> should render items.view as function and type combobox 1`] = `
 <div
   className="mfui-beta-select mfui-beta-select_no-touch"
   data-test="test"

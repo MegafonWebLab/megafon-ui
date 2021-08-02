@@ -70,7 +70,7 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
-        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>, dataItem: ISelectItem<T>
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement> | null, dataItem?: ISelectItem<T>
     ) => void;
     /** Обработчик при открытом селекте */
     onOpened?: () => void;
@@ -84,6 +84,7 @@ interface ISelectState<T extends SelectItemValueType> {
     filteredItems: Array<ISelectItem<T>>;
     comparableInputValue: string;
     inputValue: string;
+    isChoosenItem: boolean;
 }
 
 const cn = cnCreate('mfui-beta-select');
@@ -111,10 +112,10 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             PropTypes.shape({
                 view: PropTypes.oneOfType([
                     PropTypes.string,
-                    PropTypes.number,
                     PropTypes.element,
+                    PropTypes.func,
                 ]),
-                title: PropTypes.node,
+                title: PropTypes.string,
                 value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
             })
         ),
@@ -141,9 +142,10 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     debouncedComboboxChange = debounce((filterValue: string) => {
         const { items } = this.props;
 
+        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
         const filteredItems = items.filter(({ title }) => {
             if (filterValue.length <= title.length) {
-                return RegExp(filterValue, 'ig').test(title);
+                return RegExp(query, 'ig').test(title);
             }
 
             return false;
@@ -161,6 +163,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             filteredItems: props.items,
             comparableInputValue: '',
             inputValue: '',
+            isChoosenItem: false,
         };
         this.itemsNodeList = [];
     }
@@ -268,6 +271,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             inputValue: title,
             comparableInputValue: title,
             filteredItems: items,
+            isChoosenItem: true,
         });
 
         onSelect && onSelect(e, item);
@@ -294,9 +298,16 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     }
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
+        const { onSelect } = this.props;
+        const { isChoosenItem } = this.state;
+
         const filterValue = e.target.value;
 
-        this.setState({ inputValue: filterValue });
+        if (isChoosenItem) {
+            onSelect && onSelect(null);
+        }
+
+        this.setState({ inputValue: filterValue, isChoosenItem: false });
 
         this.debouncedComboboxChange(filterValue);
     }
@@ -379,6 +390,9 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         const { comparableInputValue, inputValue } = this.state;
 
         if (type === SelectTypes.CLASSIC) {
+            if (typeof view === 'function' && !React.isValidElement(view)) {
+                return view({ filterValue: inputValue });
+            }
             return view || title;
         }
         if (type === SelectTypes.COMBOBOX && view) {
