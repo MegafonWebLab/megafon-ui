@@ -6,6 +6,9 @@ import { DemoSlide } from './doc/Banner.docz';
 
 const props = {
     className: 'custom-class',
+    classes: {
+        slide: 'slide',
+    },
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,
