@@ -22,6 +22,10 @@ export interface IBannerProps {
     className?: string;
     /** Прокрутка с зацикливанием */
     loop?: boolean;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        slide?: string;
+    };
     /** Автоматическая прокрутка */
     autoPlay?: boolean;
     /** Задержка автоматической прокрутки */
@@ -48,6 +52,7 @@ const getAutoPlayConfig = (delay: number) => ({
 const cn = cnCreate('mfui-beta-banner');
 const Banner: React.FC<IBannerProps> = ({
     className,
+    classes = {},
     autoPlay = false,
     autoPlayDelay = 5000,
     loop = false,
@@ -162,7 +167,7 @@ const Banner: React.FC<IBannerProps> = ({
                 onTouchEnd={increaseAutoplayDelay}
             >
                 {React.Children.map(children, (child, i) => (
-                    <SwiperSlide key={i} className={cn('slide')}>
+                    <SwiperSlide key={i} className={cn('slide', classes?.slide )}>
                         {child}
                     </SwiperSlide>
                 ))}
@@ -200,6 +205,9 @@ const Banner: React.FC<IBannerProps> = ({
 Banner.propTypes = {
     className: PropTypes.string,
     loop: PropTypes.bool,
+    classes: PropTypes.shape({
+        slide: PropTypes.string,
+    }),
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
     navTheme: PropTypes.oneOf(Object.values(NavTheme)),
