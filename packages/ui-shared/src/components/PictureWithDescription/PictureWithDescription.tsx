@@ -22,7 +22,7 @@ export interface IPictureWithDescriptionProps {
         title?: string;
     };
     /** Заголовок */
-    title?: string;
+    title?: string | React.ReactNode | React.ReactNode[];
     /** Url изображения */
     pictureUrl: string;
     /** Расположение изображения */
@@ -63,7 +63,9 @@ PictureWithDescription.propTypes = {
         root: PropTypes.string,
         title: PropTypes.string,
     }),
-    title: PropTypes.string,
+    title: PropTypes.oneOfType([
+        PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node),
+    ]),
     pictureUrl: PropTypes.string.isRequired,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),
     isTextTopAlign: PropTypes.bool,
