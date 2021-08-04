@@ -4,8 +4,8 @@ import './Accordion.less';
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import Header from 'components/Header/Header';
 import Collapse from 'components/Collapse/Collapse';
-import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
-import ArrowDown from 'icons/System/24/Arrow_down_24.svg';
+import ArrowUp from '@megafon/icons/dist/system-24-arrow_up_24.svg';
+import ArrowDown from '@megafon/icons/dist/system-24-arrow_down_24.svg';
 
 export interface IAccordionProps extends IFilterDataAttrs {
     /** Ссылка на корневой элемент */

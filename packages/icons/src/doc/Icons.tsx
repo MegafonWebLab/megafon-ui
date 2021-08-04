@@ -1,12 +1,11 @@
 import * as React from 'react';
 import './Icons.less';
-import Header from '../components/Header/Header';
-import Cancel from 'icons/System/32/Cancel_32.svg';
-import Copy from 'icons/System/24/Copy_24.svg';
+import Cancel from '../System/32/Cancel_32.svg';
+import Copy from '../System/24/Copy_24.svg';
 import { cnCreate } from '@megafon/ui-helpers';
 
 // tslint:disable-next-line:no-string-literal
-export const reqSvgs = require['context']('icons', true, /\.svg$/);
+export const reqSvgs = require['context']('../', true, /\.svg$/);
 
 const cn = cnCreate('icons');
 interface IIconsState {
@@ -36,7 +35,7 @@ const sizeDictionary = {
     32: 'L',
 };
 
-const importIcon = 'import Icon from \'@megafon/ui-core/dist/icons/';
+const importIcon = 'import Icon from \'@megafon/icons/dist/';
 
 class Icons extends React.Component<{}, IIconsState> {
     copyToClipBoard?: (str: string, copyIndex: copyBoard) => void = undefined;
@@ -188,7 +187,7 @@ class Icons extends React.Component<{}, IIconsState> {
                 <div className={cn()}>
                     {Object.keys(sections).map((section: string) =>
                         <div key={section}>
-                            <Header as="h2" className={cn('icon-title')}>{section}</Header>
+                            <h2 className={cn('icon-title')}>{section}</h2>
                             <div className={cn('icons')}>
                                 {this.renderIcons(Object.entries(sections[section]))}
                             </div>

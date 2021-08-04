@@ -1,0 +1,38 @@
+{
+  "name": "@megafon/icons",
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegafonWebLab/megafon-ui.git"
+  },
+  "author": "MegaFon",
+  "license": "MIT",
+  "scripts": {
+    "build": "gulp build",
+    "typecheck": "tsc --noEmit -p .",
+    "lint": "yarn lint:ts && yarn lint:less",
+    "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
+    "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@megafon/ui-helpers": "^1.0.0-beta.0",
+    "@types/node": "^13.9.1",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "del": "^3.0.0",
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-svgmin": "^2.2.0",
+    "stylelint": "^9.10.1",
+    "through2": "^2.0.5",
+    "tslint": "^5.20.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.8.3"
+  }
+}

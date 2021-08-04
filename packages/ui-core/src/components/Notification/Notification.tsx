@@ -5,12 +5,12 @@ import { cnCreate } from '@megafon/ui-helpers';
 import Tile from 'components/Tile/Tile';
 import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';
-import CancelIcon from 'icons/System/32/Cancel_32.svg';
-import RightArrow from 'icons/System/16/Arrow_right_16.svg';
-import SuccessIcon from 'icons/System/24/Checked_24.svg';
-import ErrorIcon from 'icons/Basic/24/Block_24.svg';
-import WarningIcon from 'icons/System/24/Attention_invert_24.svg';
-import InfoIcon from 'icons/System/24/Info_invert_24.svg';
+import CancelIcon from '@megafon/icons/dist/system-32-cancel_32.svg';
+import RightArrow from '@megafon/icons/dist/system-16-arrow_right_16.svg';
+import SuccessIcon from '@megafon/icons/dist/system-24-checked_24.svg';
+import ErrorIcon from '@megafon/icons/dist/basic-24-block_24.svg';
+import WarningIcon from '@megafon/icons/dist/system-24-attention_invert_24.svg';
+import InfoIcon from '@megafon/icons/dist/system-24-info_invert_24.svg';
 
 export const NotificationTypes = {
     SUCCESS: 'success',

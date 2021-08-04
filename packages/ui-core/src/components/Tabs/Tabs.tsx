@@ -6,8 +6,8 @@ import throttle from 'lodash.throttle';
 import { cnCreate } from '@megafon/ui-helpers';
 import './Tabs.less';
 import { ITabProps } from './Tab';
-import ArrowLeft from 'icons/System/16/Arrow_left_16.svg';
-import ArrowRight from 'icons/System/16/Arrow_right_16.svg';
+import ArrowLeft from '@megafon/icons/dist/system-16-arrow_left_16.svg';
+import ArrowRight from '@megafon/icons/dist/system-16-arrow_right_16.svg';
 
 export const TabSize = {
     SMALL: 'small',

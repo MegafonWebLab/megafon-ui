@@ -1,5 +1,5 @@
 import * as React from 'react';
-import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
+import WiFi from '@megafon/icons/dist/basic-32-wi-fi_32.svg';
 
 export const fiveItems = [
     {

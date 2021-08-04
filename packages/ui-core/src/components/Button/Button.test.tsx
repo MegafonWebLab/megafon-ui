@@ -1,8 +1,8 @@
 import React, { createRef } from 'react';
 import { mount, shallow } from 'enzyme';
 import Button, { IButtonProps } from './Button';
-import Balance from 'icons/Basic/24/Balance_24.svg';
 import { detectTouch } from '@megafon/ui-helpers';
+import Balance from '@megafon/icons/dist/basic-24-balance_24.svg';
 
 jest.mock('@megafon/ui-helpers', () => ({
     ...jest.requireActual('@megafon/ui-helpers'),

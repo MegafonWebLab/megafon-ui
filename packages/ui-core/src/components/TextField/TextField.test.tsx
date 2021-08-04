@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import TextField, { Verification } from './TextField';
-import Balance from 'icons/Basic/24/Balance_24.svg';
+import Balance from '@megafon/icons/dist/basic-24-balance_24.svg';
 
 const InputMask = require('react-input-mask');
 

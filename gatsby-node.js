@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { basename, resolve, join, parse } = require("path");
+const { basename, resolve, join, parse } = require('path');
 const glob = require('glob');
 const { NODE_ENV } = process.env;
 
@@ -28,7 +28,8 @@ const generateIndex = files => {
 
 const createReadmeMdx = () => {
     const mdxFormatter = '---\nname: Введение\nroute: /\n---\n\n';
-    return mdxFormatter + fs.readFileSync('../README.md')
+
+    return mdxFormatter + fs.readFileSync('../README.md');
 };
 
 exports.onPreInit = () => {
@@ -39,62 +40,60 @@ exports.onPreInit = () => {
     fs.writeFile(indexTs, generateIndex(components), err => { if (!err) { console.log('ui-core/src/index.ts created'); } });
 };
 
-exports.onCreateWebpackConfig = args => {
-    const config = args.getConfig();
-    const rule = config.module.rules.find(r => r.test.test(".svg"));
-    const idx = config.module.rules.findIndex(r => r.test.test(".svg"));
+exports.onCreateWebpackConfig = ({ actions, getConfig, plugins, loaders }) => {
+    const config = getConfig();
+    const { module: { rules } } = config;
 
-    rule.exclude = [
-        resolve(__dirname, "../packages/ui-core/src/icons"),
-        resolve(__dirname, "../packages/ui-core/src/docIcons")
-    ];
-    config.module.rules[idx] = rule;
+    config.module.rules = rules.filter(rule => !(rule.test && rule.test instanceof RegExp && rule.test.test('.svg')));
+    actions.replaceWebpackConfig(config);
 
-    args.actions.replaceWebpackConfig(config);
-
-    args.actions.setWebpackConfig({
+    actions.setWebpackConfig({
         plugins: [
-            args.plugins.define({
+            plugins.define({
               '__DEV__': NODE_ENV === 'development',
             }),
         ],
         resolve: {
             modules: [
-                resolve(__dirname, "../packages/ui-core/src"),
-                resolve(__dirname, "../node_modules"),
+                resolve(__dirname, '../packages/ui-core/src'),
+                resolve(__dirname, '../node_modules'),
             ],
             alias: {
-                "@megafon/ui-core": resolve(__dirname, "../packages/ui-core/src"),
-                "@megafon/ui-helpers": resolve(__dirname, "../packages/ui-helpers/src")
+                '@megafon/ui-core': resolve(__dirname, '../packages/ui-core/src'),
+                '@megafon/ui-helpers': resolve(__dirname, '../packages/ui-helpers/src')
             }
         },
         module: {
-            rules: [{
-                test: /\.svg$/,
-                use: [
-                    ({ resource }) => ({
-                        loader: "@svgr/webpack",
-                        options: {
-                            svgoConfig: {
-                                plugins: [{
-                                        cleanupIDs: {
-                                            prefix: `svg-${basename(
-                                                    resource,
-                                                    ".svg"
-                                                )}`
-                                        }
-                                    },
-                                    {
-                                        inlineStyles: {
-                                            onlyMatchedOnce: false
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    })
-                ]
-            }]
-        }
+            rules: [
+                {
+                    test: /\.(ico|jpg|jpeg|png|gif|webp)(\?.*)?$/,
+                    use: [ loaders.url() ],
+                },
+                {
+                    test: /\.svg$/,
+                    use: [
+                        ({ resource }) => ({
+                            loader: '@svgr/webpack',
+                            options: {
+                                svgoConfig: {
+                                    plugins: [
+                                        {
+                                            cleanupIDs: {
+                                                prefix: `svg-${basename(resource, '.svg')}`,
+                                            },
+                                        },
+                                        {
+                                            inlineStyles: {
+                                                onlyMatchedOnce: false
+                                            },
+                                        },
+                                    ],
+                                },
+                            },
+                        })
+                    ],
+                },
+            ],
+        },
     });
 };

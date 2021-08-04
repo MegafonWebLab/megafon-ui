@@ -1,13 +1,30 @@
-@import '~styles/base.less';
-
 @b: e('.icons');
 
 @{b} {
     margin-bottom: 140px;
 
     &__icon-title {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 600;
         margin-top: 16px;
         margin-bottom: 16px;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 28px;
+            line-height: 36px;
+            letter-spacing: 0.5px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            font-size: 32px;
+            line-height: 40px;
+        }
     }
 
     &__icons {
@@ -65,8 +82,8 @@
         bottom: 0;
         z-index: 10;
         padding: 16px;
-        border: 1px solid @spbSky1;
-        background: @clearWhite;
+        border: 1px solid #EDEDED;
+        background: #FFFFFF;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -118,7 +135,7 @@
 
     &__info-code-style {
         font-size: 12px;
-        background: @spbSky1;
+        background: #EDEDED;
         padding: 4px 4px 4px 10px;
         border-radius: 4px;
         margin-left: 10px;
@@ -127,7 +144,7 @@
     }
 
     &__info-copy {
-        background: @spbSky1;
+        background: #EDEDED;
         width: 32px;
         height: 32px;
         cursor: pointer;
@@ -187,8 +204,8 @@
 
         &_active {
             border-radius: 50%;
-            background: @green;
-            color: @clearWhite;
+            background: #00B956;
+            color: #FFFFFF;
         }
     }
 }
