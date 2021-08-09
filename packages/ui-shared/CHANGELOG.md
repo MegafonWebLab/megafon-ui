@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.219](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.218...@megafon/ui-shared@2.0.0-beta.219) (2021-08-09)
+
+
+### Bug Fixes
+
+* **titledescriptionbox:** apply white-space to header only ([7e5e185](https://github.com/MegafonWebLab/megafon-ui/commit/7e5e1853f8fa10630742a419c7de9319f625e4b2))
+
+
+
+
+
 # [2.0.0-beta.218](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.217...@megafon/ui-shared@2.0.0-beta.218) (2021-08-02)
 
 
