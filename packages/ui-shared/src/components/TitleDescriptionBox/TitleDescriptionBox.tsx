@@ -65,7 +65,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
                 <GridColumn wide="8" desktop="10">
                     {title && (
                         <Header
-                            className={cn('item')}
+                            className={cn('item', { header: true })}
                             as="h2"
                             color="inherit"
                         >

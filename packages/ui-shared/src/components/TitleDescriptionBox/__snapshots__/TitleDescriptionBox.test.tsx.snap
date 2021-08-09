@@ -14,7 +14,7 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
     >
       <Header
         as="h2"
-        className="mfui-beta-title-description-box__item"
+        className="mfui-beta-title-description-box__item mfui-beta-title-description-box__item_header"
         color="inherit"
         hAlign="inherit"
       >
@@ -46,7 +46,7 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without description
     >
       <Header
         as="h2"
-        className="mfui-beta-title-description-box__item"
+        className="mfui-beta-title-description-box__item mfui-beta-title-description-box__item_header"
         color="inherit"
         hAlign="inherit"
       >
@@ -95,7 +95,7 @@ exports[`<TitleDescriptionBox /> renders with components in description field 1`
     >
       <Header
         as="h2"
-        className="mfui-beta-title-description-box__item"
+        className="mfui-beta-title-description-box__item mfui-beta-title-description-box__item_header"
         color="inherit"
         hAlign="inherit"
       >
