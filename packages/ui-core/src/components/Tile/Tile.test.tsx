@@ -8,11 +8,10 @@ const props: ITileProps = {
     theme: Theme.DARK,
     radius: Radius.ROUNDED,
     shadowLevel: Shadow.HIGH,
+    isInteractive: true,
     onClick: jest.fn(),
 };
 
-const tileSelector = '.mfui-beta-tile';
-const tileHoverSelector = 'mfui-beta-tile_shadow_hover';
 describe('<Tile />', () => {
     describe('snapshots', () => {
         it('renders component', () => {
@@ -41,20 +40,6 @@ describe('<Tile />', () => {
 
             wrapper.simulate('click');
             expect(handleClick).toBeCalled();
-        });
-
-        it('should render shadow on mouse enter', () => {
-            const wrapper = shallow(<Tile isInteractive>Some test content</Tile>);
-            wrapper.find(tileSelector).simulate('mouseenter');
-
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render shadow on mouse leave', () => {
-            const wrapper = shallow(<Tile isInteractive>Some test content</Tile>);
-            wrapper.find(tileSelector).simulate('mouseleave');
-
-            expect(wrapper).toMatchSnapshot();
         });
     });
 });
