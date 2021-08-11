@@ -1,5 +1,10 @@
 @b: e('.icons');
 
+@clearWhite: #FFFFFF;
+@spbSky0: #F6F6F6;
+@spbSky1: #EDEDED;
+@green: #00B956;
+
 @{b} {
     margin-bottom: 140px;
 
@@ -58,7 +63,7 @@
         bottom: -2px;
         left: -8px;
         z-index: -1;
-        background: #F6F6F6;
+        background: @spbSky0;
         border-radius: 8px;
     }
 
@@ -82,8 +87,8 @@
         bottom: 0;
         z-index: 10;
         padding: 16px;
-        border: 1px solid #EDEDED;
-        background: #FFFFFF;
+        border: 1px solid @spbSky1;
+        background: @clearWhite;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -135,7 +140,7 @@
 
     &__info-code-style {
         font-size: 12px;
-        background: #EDEDED;
+        background: @spbSky1;
         padding: 4px 4px 4px 10px;
         border-radius: 4px;
         margin-left: 10px;
@@ -144,7 +149,7 @@
     }
 
     &__info-copy {
-        background: #EDEDED;
+        background: @spbSky1;
         width: 32px;
         height: 32px;
         cursor: pointer;
@@ -204,8 +209,8 @@
 
         &_active {
             border-radius: 50%;
-            background: #00B956;
-            color: #FFFFFF;
+            background: @green;
+            color: @clearWhite;
         }
     }
 }

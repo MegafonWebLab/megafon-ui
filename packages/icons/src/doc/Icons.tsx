@@ -26,7 +26,6 @@ type activeElementType = { name: string; svgList: svgDataType[] };
 enum copyBoard {
     NO,
     SVG,
-    JSX,
 }
 
 const sizeDictionary = {
@@ -161,16 +160,6 @@ class Icons extends React.Component<{}, IIconsState> {
                             className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
                             onClick={this.copyToClipBoard &&
                                     this.copyToClipBoard(`${importStr}.svg';`, copyBoard.SVG)}
-                        />
-                    </a>
-                </div>
-                <div className={cn('info-import')}>
-                    JSX <code className={cn('info-code-style')}>{importStr}';</code>
-                    <a title="Скопировать в буфер">
-                        <Copy
-                            className={cn('info-copy', { active: copyIndex === copyBoard.JSX })}
-                            onClick={this.copyToClipBoard
-                                && this.copyToClipBoard(`${importStr}';`, copyBoard.JSX)}
                         />
                     </a>
                 </div>
