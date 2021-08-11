@@ -3,6 +3,10 @@ const gulp = require('gulp');
 const svgmin = require('gulp-svgmin');
 const del = require('del');
 const through = require('through2');
+/*
+ * Adding cheerio as a package dependency will crash the docz demo.
+ * More details: https://github.com/MegafonWebLab/megafon-ui/pull/673#discussion_r686969911
+ */
 const cheerio = require('cheerio');
 
 const sep = path.sep;
