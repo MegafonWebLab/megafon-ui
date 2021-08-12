@@ -48,7 +48,7 @@ const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
         </div>
         <div className={cn('articles', { align: pictureAlign, 'text-top-align': isTextTopAlign })}>
             {!!title && <Header className={cn('title', [classes.title])} as="h2">{title}</Header>}
-            {children}
+            <div className={cn('content')}>{children}</div>
         </div>
     </div>
 );
