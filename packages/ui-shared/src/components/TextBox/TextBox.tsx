@@ -26,17 +26,21 @@ const TextBox: React.FC<ITextBoxProps> = ({
     className,
     children,
 }) => {
+    const renderContent = () => (
+        <div className={cn('content')}>{children}</div>
+    );
+
     const renderTextBoxWithGrid = () => (
         <Grid hAlign={centeringWithLimitedWidth ? 'center' : 'left'}>
             <GridColumn wide="8" desktop="10" tablet="12" mobile="12">
-                {children}
+                {renderContent()}
             </GridColumn>
         </Grid>
     );
 
     return (
         <div className={cn({ 'text-center': textCenter }, [className])} ref={rootRef}>
-            {isFullWidth ? children : renderTextBoxWithGrid()}
+            {isFullWidth ? renderContent() : renderTextBoxWithGrid()}
         </div>
     );
 };
