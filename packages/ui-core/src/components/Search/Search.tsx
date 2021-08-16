@@ -17,6 +17,7 @@ export interface ISearchProps {
     classes?: {
         listItemTitle?: string;
         control?: string;
+        icon?: string;
     };
     /** Значение */
     value?: string;
@@ -148,7 +149,7 @@ const Search: React.FC<ISearchProps> = ({
                     className={cn('icon-box')}
                     onClick={handleSearchSubmit}
                 >
-                    <SearchIcon className={cn('icon')} />
+                    <SearchIcon className={cn('icon', [classes?.icon])} />
                 </div>}
             </div>
             {items && !!items.length &&

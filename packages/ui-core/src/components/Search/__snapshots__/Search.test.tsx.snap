@@ -111,7 +111,7 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
       onClick={[Function]}
     >
       <test-file-stub
-        className="mfui-beta-search__icon"
+        className="mfui-beta-search__icon icon-outer"
       />
     </div>
   </div>
