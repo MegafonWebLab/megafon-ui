@@ -95,6 +95,34 @@ exports[`<Checkbox /> layout renders Checkbox with props 1`] = `
 </div>
 `;
 
+exports[`<Checkbox /> layout renders with classes 1`] = `
+<div
+  className="mfui-beta-checkbox mfui-beta-checkbox_font-size_regular mfui-beta-checkbox_color_dark"
+>
+  <div
+    className="mfui-beta-checkbox__inner custom-inner"
+  >
+    <label
+      className="mfui-beta-checkbox__label"
+    >
+      <input
+        checked={false}
+        className="mfui-beta-checkbox__input"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <div
+        className="mfui-beta-checkbox__custom-input custom-icon"
+      >
+        <test-file-stub
+          className="mfui-beta-checkbox__icon"
+        />
+      </div>
+    </label>
+  </div>
+</div>
+`;
+
 exports[`<Checkbox /> layout renders with data attrs 1`] = `
 <div
   className="mfui-beta-checkbox mfui-beta-checkbox_font-size_regular mfui-beta-checkbox_color_dark"
