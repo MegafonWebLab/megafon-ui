@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.152](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.151...@megafon/ui-core@2.0.0-beta.152) (2021-08-16)
+
+
+### Bug Fixes
+
+* **tile:** fix component shadow ([aada445](https://github.com/MegafonWebLab/megafon-ui/commit/aada44552c919d357678de64ec1fd46fc3f2061d))
+
+
+### Features
+
+* **checkbox:** add classes for checkbox component ([47d56a5](https://github.com/MegafonWebLab/megafon-ui/commit/47d56a5f8ddc7fbec65a7ba9efd8dc2db034eb47))
+* **search:** add outer class for icon ([a670bff](https://github.com/MegafonWebLab/megafon-ui/commit/a670bff2bd5989c78c2e2bb5eb588c3665b760fb))
+
+
+
+
+
 # [2.0.0-beta.151](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.150...@megafon/ui-core@2.0.0-beta.151) (2021-08-02)
 
 

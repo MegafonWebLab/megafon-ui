@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.220](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.219...@megafon/ui-shared@2.0.0-beta.220) (2021-08-16)
+
+
+### Bug Fixes
+
+* **picturewithdescription:** reset margin of first and last child ([5e16fb1](https://github.com/MegafonWebLab/megafon-ui/commit/5e16fb1b78a60b39b5c57d0a9f213d1f3d1ea7a5))
+* **textbox:** reset margin of first and last child ([20a2127](https://github.com/MegafonWebLab/megafon-ui/commit/20a21272cf4ce1b83e4cb717ea55d7d8120233c3))
+* **titledescriptionbox:** reset margin of last child ([1a01a16](https://github.com/MegafonWebLab/megafon-ui/commit/1a01a164af10f010f790c3f51c6d9a6fc345c8b7))
+
+
+
+
+
 # [2.0.0-beta.219](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.218...@megafon/ui-shared@2.0.0-beta.219) (2021-08-09)
 
 
