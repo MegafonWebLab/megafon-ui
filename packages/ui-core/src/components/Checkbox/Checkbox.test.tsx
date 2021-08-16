@@ -52,6 +52,11 @@ describe('<Checkbox />', () => {
             const wrapper = shallow(<Checkbox dataAttrs={dataAttrs} />);
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('renders with classes', () => {
+            const wrapper = shallow(<Checkbox classes={{ icon: 'custom-icon', inner: 'custom-inner' }} />);
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('handleChange', () => {

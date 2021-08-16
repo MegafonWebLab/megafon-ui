@@ -9,6 +9,11 @@ export interface ICheckboxProps extends IFilterDataAttrs {
     color?: 'dark' | 'light';
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        inner?: string;
+        icon?: string;
+    };
     /** Размер текста */
     fontSize?: 'regular' | 'small';
     /** Имя компонента в DOM */
@@ -79,6 +84,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
             children,
             extraContent,
             dataAttrs,
+            classes,
         } = this.props;
 
         return (
@@ -96,7 +102,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                 )}
                 {...filterDataAttrs(dataAttrs)}
             >
-                <div className={cn('inner')}>
+                <div className={cn('inner', [classes?.inner])}>
                     <label className={cn('label', { 'no-touch': !this.isTouch })}>
                         <input
                             className={cn('input')}
@@ -107,7 +113,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                             onChange={this.handleChange}
                             disabled={disabled}
                         />
-                        <div className={cn('custom-input')}>
+                        <div className={cn('custom-input', [classes?.icon])}>
                             <CheckedIcon className={cn('icon')} />
                         </div>
                         {children}
