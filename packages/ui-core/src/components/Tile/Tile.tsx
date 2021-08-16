@@ -55,19 +55,10 @@ const Tile: React.FC<ITileProps> = ({
     onClick,
     dataAttrs,
 }) => {
-    const [currentShadow, setCurrentShadow] = React.useState(shadowLevel);
-
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
         onClick && onClick(e);
     };
-
-    const handleHoverTile = (): void => {
-        isInteractive && setCurrentShadow(Shadow.HOVER);
-    };
-
-    const handleMouseLeave = (): void => {
-        setCurrentShadow(shadowLevel);
-    };
+    const isPointer = !!href || isInteractive;
 
     return (
         <div
@@ -75,14 +66,13 @@ const Tile: React.FC<ITileProps> = ({
                 {
                     theme,
                     radius,
-                    shadow: currentShadow,
-                    pointer: !!href,
+                    shadow: shadowLevel,
+                    pointer: isPointer,
+                    interactive: isInteractive,
                 },
                 className
             )}
             onClick={handleClick}
-            onMouseEnter={handleHoverTile}
-            onMouseLeave={handleMouseLeave}
             {...filterDataAttrs(dataAttrs)}
         >
             {href && (

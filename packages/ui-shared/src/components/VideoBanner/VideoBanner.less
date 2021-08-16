@@ -71,16 +71,13 @@
         }
     }
 
-    &__video {
-        max-width: 100%;
-    }
-
     &__background-image,
     &__video {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        max-width: @maxContentWidth;
     }
 
     &__background-image {
@@ -94,14 +91,9 @@
     &__content {
         position: relative;
         box-sizing: border-box;
-        width: 60%;
 
         @media @desktopBU {
             max-height: calc(@bannerHeightDesktopBU - 2 * @paddingHorizontalDesktopMU);
-        }
-
-        @media @desktopMU {
-            width: 51%;
         }
 
         @media @desktopM {
@@ -117,7 +109,6 @@
         }
 
         @media @mobileSM {
-            width: 100%;
             max-height: calc(@bannerMaxHeightMobileSM - 2 * @paddingHorizontalMobileSM);
         }
     }
@@ -210,5 +201,9 @@
         @media @mobileSM {
             display: none;
         }
+    }
+
+    &__grid {
+        width: 100%;
     }
 }

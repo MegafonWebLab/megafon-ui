@@ -4,9 +4,13 @@ exports[`TextBox render with centered text 1`] = `
 <div
   className="mfui-beta-text-box mfui-beta-text-box_text-center"
 >
-  <p>
-    test
-  </p>
+  <div
+    className="mfui-beta-text-box__content"
+  >
+    <p>
+      test
+    </p>
+  </div>
 </div>
 `;
 
@@ -14,9 +18,13 @@ exports[`TextBox render with className="test-class-name" 1`] = `
 <div
   className="mfui-beta-text-box test-class-name"
 >
-  <p>
-    test
-  </p>
+  <div
+    className="mfui-beta-text-box__content"
+  >
+    <p>
+      test
+    </p>
+  </div>
 </div>
 `;
 
@@ -24,9 +32,13 @@ exports[`TextBox render with default props 1`] = `
 <div
   className="mfui-beta-text-box"
 >
-  <p>
-    test
-  </p>
+  <div
+    className="mfui-beta-text-box__content"
+  >
+    <p>
+      test
+    </p>
+  </div>
 </div>
 `;
 
@@ -43,9 +55,13 @@ exports[`TextBox render with limited width 1`] = `
       tablet="12"
       wide="8"
     >
-      <p>
-        test
-      </p>
+      <div
+        className="mfui-beta-text-box__content"
+      >
+        <p>
+          test
+        </p>
+      </div>
     </GridColumn>
   </Grid>
 </div>
@@ -64,9 +80,13 @@ exports[`TextBox render with limited width and centered component 1`] = `
       tablet="12"
       wide="8"
     >
-      <p>
-        test
-      </p>
+      <div
+        className="mfui-beta-text-box__content"
+      >
+        <p>
+          test
+        </p>
+      </div>
     </GridColumn>
   </Grid>
 </div>
@@ -85,9 +105,13 @@ exports[`TextBox render with limited width and centered text 1`] = `
       tablet="12"
       wide="8"
     >
-      <p>
-        test
-      </p>
+      <div
+        className="mfui-beta-text-box__content"
+      >
+        <p>
+          test
+        </p>
+      </div>
     </GridColumn>
   </Grid>
 </div>
@@ -106,9 +130,13 @@ exports[`TextBox render with limited width, centered component and centered text
       tablet="12"
       wide="8"
     >
-      <p>
-        test
-      </p>
+      <div
+        className="mfui-beta-text-box__content"
+      >
+        <p>
+          test
+        </p>
+      </div>
     </GridColumn>
   </Grid>
 </div>

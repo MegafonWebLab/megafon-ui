@@ -24,7 +24,11 @@ exports[`<PictureWithDescription /> should render with custom classes 1`] = `
     >
       Заголовок
     </Header>
-    <div />
+    <div
+      className="mfui-beta-picture-with-description__content"
+    >
+      <div />
+    </div>
   </div>
 </div>
 `;
@@ -45,7 +49,11 @@ exports[`<PictureWithDescription /> should render with default props 1`] = `
   <div
     className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left"
   >
-    <div />
+    <div
+      className="mfui-beta-picture-with-description__content"
+    >
+      <div />
+    </div>
   </div>
 </div>
 `;
@@ -66,7 +74,11 @@ exports[`<PictureWithDescription /> should render with right side picture 1`] = 
   <div
     className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_right"
   >
-    <div />
+    <div
+      className="mfui-beta-picture-with-description__content"
+    >
+      <div />
+    </div>
   </div>
 </div>
 `;
@@ -95,7 +107,11 @@ exports[`<PictureWithDescription /> should render with title 1`] = `
     >
       Заголовок
     </Header>
-    <div />
+    <div
+      className="mfui-beta-picture-with-description__content"
+    >
+      <div />
+    </div>
   </div>
 </div>
 `;
@@ -116,7 +132,11 @@ exports[`<PictureWithDescription /> should render with top align text 1`] = `
   <div
     className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left mfui-beta-picture-with-description__articles_text-top-align"
   >
-    <div />
+    <div
+      className="mfui-beta-picture-with-description__content"
+    >
+      <div />
+    </div>
   </div>
 </div>
 `;

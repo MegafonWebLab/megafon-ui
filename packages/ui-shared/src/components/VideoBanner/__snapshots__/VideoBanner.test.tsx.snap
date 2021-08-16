@@ -35,61 +35,73 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
           ]
         }
       />
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <Button
+                className="mfui-beta-video-banner__button"
+                href="#"
+                theme="green"
+              >
+                Текст в кнопке
+              </Button>
+              <TextLink
+                className="mfui-beta-video-banner__link"
+                color="blue"
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <Button
-            className="mfui-beta-video-banner__button"
-            href="#"
-            theme="green"
-          >
-            Текст в кнопке
-          </Button>
-          <TextLink
-            className="mfui-beta-video-banner__link"
-            color="blue"
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -114,61 +126,73 @@ exports[`<VideoBanner /> render component with classes 1`] = `
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <Button
+                className="mfui-beta-video-banner__button buttonClass"
+                href="#"
+                theme="green"
+              >
+                Текст в кнопке
+              </Button>
+              <TextLink
+                className="mfui-beta-video-banner__link linkClass"
+                color="blue"
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <Button
-            className="mfui-beta-video-banner__button buttonClass"
-            href="#"
-            theme="green"
-          >
-            Текст в кнопке
-          </Button>
-          <TextLink
-            className="mfui-beta-video-banner__link linkClass"
-            color="blue"
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -193,61 +217,73 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <Button
+                className="mfui-beta-video-banner__button"
+                href="#"
+                theme="purple"
+              >
+                Текст в кнопке
+              </Button>
+              <TextLink
+                className="mfui-beta-video-banner__link"
+                color="blue"
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <Button
-            className="mfui-beta-video-banner__button"
-            href="#"
-            theme="purple"
-          >
-            Текст в кнопке
-          </Button>
-          <TextLink
-            className="mfui-beta-video-banner__link"
-            color="blue"
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -296,61 +332,73 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <Button
+                className="mfui-beta-video-banner__button"
+                href="#"
+                theme="green"
+              >
+                Текст в кнопке
+              </Button>
+              <TextLink
+                className="mfui-beta-video-banner__link"
+                color="blue"
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <Button
-            className="mfui-beta-video-banner__button"
-            href="#"
-            theme="green"
-          >
-            Текст в кнопке
-          </Button>
-          <TextLink
-            className="mfui-beta-video-banner__link"
-            color="blue"
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -375,63 +423,75 @@ exports[`<VideoBanner /> render component with pictures and download links conte
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <Button
+                className="mfui-beta-video-banner__button"
+                download={true}
+                href="#"
+                theme="green"
+              >
+                Текст в кнопке
+              </Button>
+              <TextLink
+                className="mfui-beta-video-banner__link"
+                color="blue"
+                download={true}
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <Button
-            className="mfui-beta-video-banner__button"
-            download={true}
-            href="#"
-            theme="green"
-          >
-            Текст в кнопке
-          </Button>
-          <TextLink
-            className="mfui-beta-video-banner__link"
-            color="blue"
-            download={true}
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -456,61 +516,73 @@ exports[`<VideoBanner /> render component with pictures and non default content 
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_white"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_white"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <Button
+                className="mfui-beta-video-banner__button"
+                href="#"
+                theme="green"
+              >
+                Текст в кнопке
+              </Button>
+              <TextLink
+                className="mfui-beta-video-banner__link"
+                color="blue"
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <Button
-            className="mfui-beta-video-banner__button"
-            href="#"
-            theme="green"
-          >
-            Текст в кнопке
-          </Button>
-          <TextLink
-            className="mfui-beta-video-banner__link"
-            color="blue"
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -535,61 +607,73 @@ exports[`<VideoBanner /> render component with the different content text color 
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black mfui-beta-video-banner__content_text-color-mobile_white"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black mfui-beta-video-banner__content_text-color-mobile_white"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <Button
+                className="mfui-beta-video-banner__button"
+                href="#"
+                theme="green"
+              >
+                Текст в кнопке
+              </Button>
+              <TextLink
+                className="mfui-beta-video-banner__link"
+                color="blue"
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <Button
-            className="mfui-beta-video-banner__button"
-            href="#"
-            theme="green"
-          >
-            Текст в кнопке
-          </Button>
-          <TextLink
-            className="mfui-beta-video-banner__link"
-            color="blue"
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -614,54 +698,66 @@ exports[`<VideoBanner /> render component without button 1`] = `
     <div
       className="mfui-beta-video-banner__wrapper"
     >
-      <div
-        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+      <Grid
+        className="mfui-beta-video-banner__grid"
+        guttersLeft="medium"
       >
-        <Header
-          as="h1"
-          className="mfui-beta-video-banner__title"
-          color="inherit"
-          hAlign="inherit"
+        <GridColumn
+          desktop="7"
+          mobile="12"
+          tablet="7"
+          wide="6"
         >
-          Текст ≈40 симовлов. Короткие слова
-        </Header>
-        <div
-          className="mfui-beta-video-banner__text"
-        >
-          <Header
-            as="h5"
-            className="mfui-beta-video-banner__description"
-            color="inherit"
-            hAlign="inherit"
-          >
-            Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-          </Header>
           <div
-            className="mfui-beta-video-banner__cost"
+            className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
           >
-            oт 
-            <component
-              key="1"
+            <Header
+              as="h1"
+              className="mfui-beta-video-banner__title"
+              color="inherit"
+              hAlign="inherit"
             >
-              1000 ₽
-            </component>
-             за сообщение
+              Текст ≈40 симовлов. Короткие слова
+            </Header>
+            <div
+              className="mfui-beta-video-banner__text"
+            >
+              <Header
+                as="h5"
+                className="mfui-beta-video-banner__description"
+                color="inherit"
+                hAlign="inherit"
+              >
+                Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+              </Header>
+              <div
+                className="mfui-beta-video-banner__cost"
+              >
+                oт 
+                <component
+                  key="1"
+                >
+                  1000 ₽
+                </component>
+                 за сообщение
+              </div>
+            </div>
+            <div
+              className="mfui-beta-video-banner__btns-wrapper"
+            >
+              <TextLink
+                className="mfui-beta-video-banner__link"
+                color="blue"
+                href="#"
+                underlineStyle="solid"
+                underlineVisibility="hover"
+              >
+                Личный кабинет услуги
+              </TextLink>
+            </div>
           </div>
-        </div>
-        <div
-          className="mfui-beta-video-banner__btns-wrapper"
-        >
-          <TextLink
-            className="mfui-beta-video-banner__link"
-            color="blue"
-            href="#"
-            underlineStyle="solid"
-            underlineVisibility="hover"
-          >
-            Личный кабинет услуги
-          </TextLink>
-        </div>
-      </div>
+        </GridColumn>
+      </Grid>
       <div
         className="mfui-beta-video-banner__background-image"
         style={
@@ -950,109 +1046,135 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
           <div
             className="mfui-beta-video-banner__wrapper"
           >
-            <div
-              className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
+            <Grid
+              className="mfui-beta-video-banner__grid"
+              guttersLeft="medium"
             >
-              <Header
-                as="h1"
-                className="mfui-beta-video-banner__title"
-                color="inherit"
-                hAlign="inherit"
-              >
-                <h1
-                  className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
-                >
-                  Текст ≈40 симовлов. Короткие слова
-                </h1>
-              </Header>
               <div
-                className="mfui-beta-video-banner__text"
+                className="mfui-beta-grid mfui-beta-video-banner__grid"
               >
-                <Header
-                  as="h5"
-                  className="mfui-beta-video-banner__description"
-                  color="inherit"
-                  hAlign="inherit"
-                >
-                  <h5
-                    className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-video-banner__description"
-                  >
-                    Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
-                  </h5>
-                </Header>
                 <div
-                  className="mfui-beta-video-banner__cost"
+                  className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_gutters-left_medium"
                 >
-                  oт 
-                  <component
-                    key="1"
-                  >
-                    <Header
-                      as="h3"
-                      className="mfui-beta-video-banner__value"
-                      color="inherit"
-                      hAlign="inherit"
-                    >
-                      <h3
-                        className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-video-banner__value"
-                      >
-                        1000 ₽
-                      </h3>
-                    </Header>
-                  </component>
-                   за сообщение
-                </div>
-              </div>
-              <div
-                className="mfui-beta-video-banner__btns-wrapper"
-              >
-                <Button
-                  className="mfui-beta-video-banner__button"
-                  href="#"
-                  theme="green"
-                >
-                  <a
-                    className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text mfui-beta-video-banner__button"
-                    disabled={false}
-                    href="#"
-                    onClick={[Function]}
+                  <GridColumn
+                    className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium"
+                    desktop="7"
+                    key=".0"
+                    mobile="12"
+                    tablet="7"
+                    wide="6"
                   >
                     <div
-                      className="mfui-beta-button__inner"
+                      className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_6 mfui-beta-grid-column_desktop_7 mfui-beta-grid-column_tablet_7 mfui-beta-grid-column_mobile_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium"
                     >
                       <div
-                        className="mfui-beta-button__content"
+                        className="mfui-beta-video-banner__content mfui-beta-video-banner__content_text-color_black"
                       >
-                        <span
-                          className="mfui-beta-button__text"
+                        <Header
+                          as="h1"
+                          className="mfui-beta-video-banner__title"
+                          color="inherit"
+                          hAlign="inherit"
                         >
-                          Текст в кнопке
-                        </span>
+                          <h1
+                            className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h1 mfui-beta-header_h-align_inherit mfui-beta-video-banner__title"
+                          >
+                            Текст ≈40 симовлов. Короткие слова
+                          </h1>
+                        </Header>
+                        <div
+                          className="mfui-beta-video-banner__text"
+                        >
+                          <Header
+                            as="h5"
+                            className="mfui-beta-video-banner__description"
+                            color="inherit"
+                            hAlign="inherit"
+                          >
+                            <h5
+                              className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-video-banner__description"
+                            >
+                              Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+                            </h5>
+                          </Header>
+                          <div
+                            className="mfui-beta-video-banner__cost"
+                          >
+                            oт 
+                            <component
+                              key="1"
+                            >
+                              <Header
+                                as="h3"
+                                className="mfui-beta-video-banner__value"
+                                color="inherit"
+                                hAlign="inherit"
+                              >
+                                <h3
+                                  className="mfui-beta-header mfui-beta-header_color_inherit mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-video-banner__value"
+                                >
+                                  1000 ₽
+                                </h3>
+                              </Header>
+                            </component>
+                             за сообщение
+                          </div>
+                        </div>
+                        <div
+                          className="mfui-beta-video-banner__btns-wrapper"
+                        >
+                          <Button
+                            className="mfui-beta-video-banner__button"
+                            href="#"
+                            theme="green"
+                          >
+                            <a
+                              className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text mfui-beta-video-banner__button"
+                              disabled={false}
+                              href="#"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="mfui-beta-button__inner"
+                              >
+                                <div
+                                  className="mfui-beta-button__content"
+                                >
+                                  <span
+                                    className="mfui-beta-button__text"
+                                  >
+                                    Текст в кнопке
+                                  </span>
+                                </div>
+                              </div>
+                            </a>
+                          </Button>
+                          <TextLink
+                            className="mfui-beta-video-banner__link"
+                            color="blue"
+                            href="#"
+                            underlineStyle="solid"
+                            underlineVisibility="hover"
+                          >
+                            <Link
+                              className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
+                              href="#"
+                            >
+                              <a
+                                className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
+                                href="#"
+                              >
+                                Личный кабинет услуги
+                              </a>
+                            </Link>
+                          </TextLink>
+                        </div>
                       </div>
                     </div>
-                  </a>
-                </Button>
-                <TextLink
-                  className="mfui-beta-video-banner__link"
-                  color="blue"
-                  href="#"
-                  underlineStyle="solid"
-                  underlineVisibility="hover"
-                >
-                  <Link
-                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
-                    href="#"
-                  >
-                    <a
-                      className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-video-banner__link"
-                      href="#"
-                    >
-                      Личный кабинет услуги
-                    </a>
-                  </Link>
-                </TextLink>
+                  </GridColumn>
+                </div>
               </div>
-            </div>
+            </Grid>
             <video
               autoPlay={true}
               className="mfui-beta-video-banner__video"

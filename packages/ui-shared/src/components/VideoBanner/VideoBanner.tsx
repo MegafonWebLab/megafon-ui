@@ -6,6 +6,8 @@ import {
     Header,
     ContentArea,
     TextLink,
+    Grid,
+    GridColumn,
 } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
 import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
@@ -145,41 +147,45 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         linkDownload,
         cost,
     }) => (
-        <div className={cn('content', {
-                'text-color': textColor,
-                'text-color-mobile': textColorMobile,
-            })}
-        >
-            <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
-            <div className={cn('text')}>
-                <Header as="h5" color="inherit" className={cn('description')}>
-                    {description}
-                </Header>
-                {cost && (
-                    <div className={cn('cost')}>
-                        {convert(cost, typographyConfig)}
+        <Grid className={cn('grid')} guttersLeft="medium">
+            <GridColumn mobile="12" tablet="7" desktop="7" wide="6">
+                <div className={cn('content', {
+                    'text-color': textColor,
+                    'text-color-mobile': textColorMobile,
+                })}
+                >
+                    <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
+                    <div className={cn('text')}>
+                        <Header as="h5" color="inherit" className={cn('description')}>
+                            {description}
+                        </Header>
+                        {cost && (
+                            <div className={cn('cost')}>
+                                {convert(cost, typographyConfig)}
+                            </div>
+                        )}
                     </div>
-                )}
-            </div>
-            <div className={cn('btns-wrapper')}>
-                {buttonTitle && (
-                    <Button
-                        className={cn(ClassName.BUTTON, [classes.button])}
-                        theme={buttonColor}
-                        href={buttonHref}
-                        onClick={onButtonClick}
-                        download={buttonDownload}
-                    >
-                        {buttonTitle}
-                    </Button>
-                )}
-                {linkTitle && (
-                    <TextLink className={cn('link', [classes.link])} href={linkUrl} download={linkDownload}>
-                        {linkTitle}
-                    </TextLink>
-                )}
-            </div>
-        </div>
+                    <div className={cn('btns-wrapper')}>
+                        {buttonTitle && (
+                            <Button
+                                className={cn(ClassName.BUTTON, [classes.button])}
+                                theme={buttonColor}
+                                href={buttonHref}
+                                onClick={onButtonClick}
+                                download={buttonDownload}
+                            >
+                                {buttonTitle}
+                            </Button>
+                        )}
+                        {linkTitle && (
+                            <TextLink className={cn('link', [classes.link])} href={linkUrl} download={linkDownload}>
+                                {linkTitle}
+                            </TextLink>
+                        )}
+                    </div>
+                </div>
+            </GridColumn>
+        </Grid>
     ), []);
 
     const renderVideo = React.useCallback(() => {
