@@ -53,28 +53,24 @@
     }
 }
 
-.generateComponentsMargins(@margin, @root, @minValue, @maxValue, @i:1) when (@i <= length(@components)) {
-    & when (@i >= @minValue) and (@i <= @maxValue) {
-        @selector: extract(@components, @i);
+.generateComponentsMargins(@margin, @root, @minValue, @maxValue) when (@minValue <= @maxValue) {
+    @selector: extract(@components, @minValue);
 
-        @{root} + @{selector} {
-            margin-top: @margin;
-        }
+    @{root} + @{selector} {
+        margin-top: @margin;
     }
 
-    .generateComponentsMargins(@margin, @root, @minValue, @maxValue, (@i + 1));
+    .generateComponentsMargins(@margin, @root, (@minValue + 1), @maxValue);
 }
 
-.generateInnerTabsMargins(@margin, @minValue, @maxValue, @i:1) when (@i <= length(@components)) {
-    & when (@i >= @minValue) and (@i <= @maxValue) {
-        @selector: extract(@components, @i);
+.generateInnerTabsMargins(@margin, @minValue, @maxValue ) when (@minValue <= @maxValue) {
+    @selector: extract(@components, @minValue);
 
-        @{k8} @{selector}:first-child {
-            margin-top: @margin;
-        }
+    @{k8} @{selector}:first-child {
+        margin-top: @margin;
     }
 
-    .generateInnerTabsMargins(@margin, @minValue, @maxValue, (@i + 1));
+    .generateInnerTabsMargins(@margin, (@minValue + 1), @maxValue );
 }
 
 .generateOneContainerColorPaddingTop(@index, @colors, @i:1) when (@i <= length(@colors)) {
