@@ -1,4 +1,4 @@
-const getRange = (from, to, step = 1) => {
+const getRange = (from: number, to: number, step = 1): number[] => {
     let i = from;
     const range: number[] = [];
 

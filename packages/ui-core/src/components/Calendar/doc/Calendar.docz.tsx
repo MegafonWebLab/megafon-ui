@@ -1,7 +1,10 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-magic-numbers */
+/* eslint-disable react/jsx-props-no-spreading */
+import Button from 'components/Button/Button';
 import format from 'date-fns/format';
 import ruLocale from 'date-fns/locale/ru';
-import Button from 'components/Button/Button';
+import * as React from 'react';
 
 const formatDate = (data: Date, pattern: string, locale = ruLocale) => format(data, pattern, { locale });
 
@@ -13,7 +16,7 @@ const endDate = new Date(2020, 1, 19);
 export const minBookingDate = new Date(currentYear, currentMonth, 7);
 export const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
 
-export const DemoCalendarWithHandleChange = ({ children }) => {
+export const DemoCalendarWithHandleChange = ({ children }: Record<string, (params) => JSX.Element>): JSX.Element => {
     const [from, setFrom] = React.useState<string | null>(formatDate(startDate, 'dd.MM.yyyy'));
     const [to, setTo] = React.useState<string | null>(formatDate(endDate, 'dd.MM.yyyy'));
 
@@ -32,11 +35,11 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
     );
 };
 
-export const DemoCalendarWithDatesChange = ({ children }) => {
+// eslint-disable-next-line react/no-multi-comp
+export const DemoCalendarWithDatesChange = ({ children }: Record<string, (params) => JSX.Element>): JSX.Element => {
     const [period, setPeriod] = React.useState({ periodStart: startDate, periodEnd: endDate });
 
-    const onChange = (firstDate, secondDate) => () =>
-        setPeriod({ periodStart: firstDate, periodEnd: secondDate });
+    const onChange = (firstDate, secondDate) => () => setPeriod({ periodStart: firstDate, periodEnd: secondDate });
 
     const { periodEnd, periodStart } = period;
 
@@ -44,14 +47,15 @@ export const DemoCalendarWithDatesChange = ({ children }) => {
         <>
             {children({ startDate: periodStart, endDate: periodEnd })}
             <div>
-                <div style={{ display: 'inline-block', marginRight: '12px' }}>
-                    <Button onClick={onChange(new Date(2020, 0, 1), new Date(2020, 0, 31))}>
-                        Январь
-                    </Button>
+                <div
+                    style={{
+                        display: 'inline-block',
+                        marginRight: '12px',
+                    }}
+                >
+                    <Button onClick={onChange(new Date(2020, 0, 1), new Date(2020, 0, 31))}>Январь</Button>
                 </div>
-                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>
-                    Ферваль
-                </Button>
+                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>Ферваль</Button>
             </div>
         </>
     );

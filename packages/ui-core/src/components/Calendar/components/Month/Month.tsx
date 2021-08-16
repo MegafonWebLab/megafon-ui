@@ -1,10 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
 import { cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from 'icons/System/16/Arrow-list_left_16.svg';
 import ArrowRight from 'icons/System/16/Arrow-list_right_16.svg';
+import PropTypes from 'prop-types';
+import React from 'react';
 import './Month.less';
-import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
 
 export interface IMonthPickerProps {
     firstDayOfWeek: FirstDayOfWeek;
@@ -22,8 +24,7 @@ export interface IMonthProps {
     goToPreviousMonth: () => void;
     goToNextMonth: () => void;
 }
-
-const cn = cnCreate('mfui-beta-month');
+const cn: (param1?: string, param2?: Record<string, unknown>) => string = cnCreate('mfui-beta-month');
 const Month: React.FC<IMonthProps> = ({
     isPrevMonthDisabled,
     isNextMonthDisabled,
@@ -45,10 +46,7 @@ const Month: React.FC<IMonthProps> = ({
     return (
         <div className={cn()}>
             <div className={cn('header')}>
-                <ArrowLeft
-                    className={cn('arrow', { disabled: isPrevMonthDisabled })}
-                    onClick={handleArrowLeftClick}
-                />
+                <ArrowLeft className={cn('arrow', { disabled: isPrevMonthDisabled })} onClick={handleArrowLeftClick} />
                 <span className={cn('title')}>{`${monthLabel} ${year}`}</span>
                 <ArrowRight
                     className={cn('arrow', { disabled: isNextMonthDisabled })}
@@ -57,14 +55,13 @@ const Month: React.FC<IMonthProps> = ({
             </div>
             <div className={cn('weekday-labels')}>
                 {weekdayLabels.map((dayLabel, index) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <div className={cn('weekday')} key={dayLabel + index}>
                         {dayLabel}
                     </div>
                 ))}
             </div>
-            <div className={cn('days')}>
-                {children}
-            </div>
+            <div className={cn('days')}>{children}</div>
         </div>
     );
 };

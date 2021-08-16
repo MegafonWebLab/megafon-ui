@@ -1,5 +1,8 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import TitleDescriptionBox, { ITitleDescriptionBoxProps } from './TitleDescriptionBox';
 
 const props: ITitleDescriptionBoxProps = {

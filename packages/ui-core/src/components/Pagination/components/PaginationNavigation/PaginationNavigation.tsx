@@ -1,8 +1,10 @@
-import React from 'react';
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import { cnCreate } from '@megafon/ui-helpers';
-import PropTypes from 'prop-types';
-import './PaginationNavigation.less';
 import ArrowRightIcon from 'icons/System/24/Arrow_right_24.svg';
+import PropTypes from 'prop-types';
+import React from 'react';
+import './PaginationNavigation.less';
 import PaginationButton from '../PaginationButton/PaginationButton';
 
 interface IPaginationNavigation {
@@ -14,7 +16,9 @@ interface IPaginationNavigation {
     onClick?: (value?: number | string) => void;
 }
 
-const cn = cnCreate('mfui-beta-pagination-navigation');
+const cn: (param1?: string | Record<string, unknown>, param2?: string) => string = cnCreate(
+    'mfui-beta-pagination-navigation',
+);
 const PaginationNavigation: React.FC<IPaginationNavigation> = ({
     direction = 'right',
     theme,

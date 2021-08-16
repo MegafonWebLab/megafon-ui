@@ -1,5 +1,7 @@
-import React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow, mount } from 'enzyme';
+import React from 'react';
 import PageTitle from './PageTitle';
 
 const breadcrumbs = [
@@ -33,7 +35,8 @@ describe('PageTitle', () => {
                 breadcrumbs={breadcrumbs}
                 badge={badge}
                 className="custom-class-name"
-                classes={{ breadcrumbs: 'breadcrumbs-custom-class-name' }}/>
+                classes={{ breadcrumbs: 'breadcrumbs-custom-class-name' }}
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -41,12 +44,7 @@ describe('PageTitle', () => {
 
     it('should render with limited width', () => {
         const wrapper = shallow(
-            <PageTitle
-                title="title"
-                breadcrumbs={breadcrumbs}
-                badge={badge}
-                isFullWidth={false}
-            />
+            <PageTitle title="title" breadcrumbs={breadcrumbs} badge={badge} isFullWidth={false} />,
         );
 
         expect(wrapper).toMatchSnapshot();

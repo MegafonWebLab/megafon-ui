@@ -1,12 +1,10 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import {
-    Grid,
-    GridColumn,
-    Tile,
-    Carousel,
-} from '@megafon/ui-core';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-magic-numbers */
+/* eslint-disable react/no-array-index-key */
+import { Grid, GridColumn, Tile, Carousel } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './Partners.less';
 
 export type ItemType = {
@@ -53,8 +51,10 @@ const slidesSettings = {
         spaceBetween: 20,
     },
 };
-
-const cn = cnCreate('mfui-beta-partners');
+const cn: (
+    param1?: string | (string | undefined)[],
+    param2?: (string | undefined)[] | Record<string, unknown>,
+) => string = cnCreate('mfui-beta-partners');
 const Partners: React.FC<IPartnersProps> = ({
     rootRef,
     classes: { root, itemClass } = {},
@@ -65,28 +65,26 @@ const Partners: React.FC<IPartnersProps> = ({
     onNextClick,
     onPrevClick,
 }) => {
-    const renderItem = React.useCallback((item?: ItemType) => {
-        if (!item) {
-            return null;
-        }
+    const renderItem = React.useCallback(
+        (item?: ItemType) => {
+            if (!item) {
+                return null;
+            }
 
-        const { src, href, alt } = item;
+            const { src, href, alt } = item;
 
-        return (
-            <Tile
-                className={cn('tile')}
-                href={href}
-                shadowLevel="low"
-                isInteractive={!!href}
-            >
-                <div className={cn('tile-inner', [itemClass])}>
-                    <div className={cn('img-wrapper')}>
-                        <img src={src} alt={alt} className={cn('tile-img')} />
+            return (
+                <Tile className={cn('tile')} href={href} shadowLevel="low" isInteractive={!!href}>
+                    <div className={cn('tile-inner', [itemClass])}>
+                        <div className={cn('img-wrapper')}>
+                            <img src={src} alt={alt} className={cn('tile-img')} />
+                        </div>
                     </div>
-                </div>
-            </Tile>
-        );
-    }, []);
+                </Tile>
+            );
+        },
+        [itemClass],
+    );
 
     const renderGrid = React.useCallback(
         () => (
@@ -98,7 +96,7 @@ const Partners: React.FC<IPartnersProps> = ({
                 ))}
             </Grid>
         ),
-        [items]
+        [items, renderItem],
     );
 
     const renderCarousel = React.useCallback(() => {
@@ -121,14 +119,11 @@ const Partners: React.FC<IPartnersProps> = ({
                 ))}
             </Carousel>
         );
-    }, [items]);
+    }, [items, onChange, onNextClick, onPrevClick, renderItem]);
 
     return (
-        <div
-            ref={rootRef}
-            className={cn([root, className])}
-            {...filterDataAttrs(dataAttrs)}
-        >
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <div ref={rootRef} className={cn([root, className])} {...filterDataAttrs(dataAttrs)}>
             {items.length > MAX_GRID_ITEMS_LENGTH ? renderCarousel() : renderGrid()}
         </div>
     );
@@ -137,7 +132,7 @@ const Partners: React.FC<IPartnersProps> = ({
 Partners.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     classes: PropTypes.shape({
         root: PropTypes.string,
@@ -150,7 +145,7 @@ Partners.propTypes = {
             href: PropTypes.string,
             src: PropTypes.string.isRequired,
             alt: PropTypes.string.isRequired,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     onChange: PropTypes.func,
     onNextClick: PropTypes.func,

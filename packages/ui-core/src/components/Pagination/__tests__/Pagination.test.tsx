@@ -1,5 +1,8 @@
-import React from 'react';
+/* eslint-disable no-magic-numbers */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow, mount } from 'enzyme';
+import React from 'react';
 import Pagination from '../Pagination';
 
 describe('Pagination', () => {

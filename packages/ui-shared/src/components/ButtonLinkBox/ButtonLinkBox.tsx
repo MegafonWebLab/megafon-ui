@@ -1,7 +1,8 @@
-import React, { Ref } from 'react';
-import * as PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
 import { Button, TextLink } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import React, { Ref } from 'react';
 import './ButtonLinkBox.less';
 
 export interface IButtonLinkBoxProps {
@@ -43,7 +44,8 @@ export interface IButtonLinkBoxProps {
     onLinkClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-beta-button-link-box');
+const cn: (param1?: string | Record<string, unknown>, param2?: (string | undefined)[]) => string =
+    cnCreate('mfui-beta-button-link-box');
 const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     dataAttrs,
     rootRef,
@@ -62,11 +64,8 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     onButtonClick,
     onLinkClick,
 }) => (
-    <div
-        {...filterDataAttrs(dataAttrs)}
-        className={cn({ 'h-align': hAlign }, [className, classes.root])}
-        ref={rootRef}
-    >
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <div {...filterDataAttrs(dataAttrs)} className={cn({ 'h-align': hAlign }, [className, classes.root])} ref={rootRef}>
         {buttonTitle && (
             <div className={cn('row')}>
                 <Button
@@ -108,7 +107,7 @@ ButtonLinkBox.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     buttonTitle: PropTypes.string,
     buttonUrl: PropTypes.string,

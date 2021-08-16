@@ -1,7 +1,8 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './Preloader.less';
+/* eslint-disable import/no-unresolved */
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './Preloader.less';
 
 export const PreloaderColors = {
     DEFAULT: 'default',
@@ -35,7 +36,8 @@ export interface IPreloaderProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-beta-preloader');
+const cn: (param1?: Record<string, unknown> | string, param2?: Record<string, unknown> | string) => string =
+    cnCreate('mfui-beta-preloader');
 const Preloader: React.FC<IPreloaderProps> = ({
     color = 'default',
     sizeAll = 'medium',
@@ -48,9 +50,10 @@ const Preloader: React.FC<IPreloaderProps> = ({
     const [isShowed, setIsShowed] = React.useState(false);
 
     React.useEffect((): (() => void) => {
+        const timerValue = 250;
         const timerId = setTimeout(() => {
             setIsShowed(true);
-        }, 250);
+        }, timerValue);
 
         return (): void => {
             clearTimeout(timerId);
@@ -58,15 +61,18 @@ const Preloader: React.FC<IPreloaderProps> = ({
     }, []);
 
     return isShowed ? (
-        <div className={cn(
-            {
-                color,
-                'size-all': sizeAll,
-                'size-wide': sizeWide,
-                'size-desktop': sizeDesktop,
-                'size-tablet': sizeTablet,
-                'size-mobile': sizeMobile,
-            }, className)}
+        <div
+            className={cn(
+                {
+                    color,
+                    'size-all': sizeAll,
+                    'size-wide': sizeWide,
+                    'size-desktop': sizeDesktop,
+                    'size-tablet': sizeTablet,
+                    'size-mobile': sizeMobile,
+                },
+                className,
+            )}
         >
             <div className={cn('item', { first: true })} />
             <div className={cn('item', { second: true })} />

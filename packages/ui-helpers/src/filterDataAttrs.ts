@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 export interface IAttributes {
     [key: string]: string;
 }
@@ -7,7 +8,7 @@ export interface IFilterDataAttrs {
     dataAttrs?: IAttributes;
 }
 
-const filterDataAttrs = (attrs: IAttributes = {}): IAttributes | {} => {
+const filterDataAttrs = (attrs: IAttributes = {}): IAttributes | Record<string, unknown> => {
     if (!attrs || typeof attrs !== 'object') {
         return {};
     }

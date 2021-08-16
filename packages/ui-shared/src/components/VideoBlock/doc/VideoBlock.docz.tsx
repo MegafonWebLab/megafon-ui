@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { IContent } from '../VideoBlock';
 import video from './video.mp4';
 

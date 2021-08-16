@@ -1,8 +1,10 @@
-import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
-import './VideoBlock.less';
+/* eslint-disable react/no-array-index-key */
+// eslint-disable-next-line import/no-unresolved
 import { Header, Button, Paragraph, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React, { Ref } from 'react';
+import './VideoBlock.less';
 
 export interface IContent {
     /** Заголовок */
@@ -26,7 +28,7 @@ export const VideoTypes = {
 
 type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
 
-export interface Props {
+export interface IProps {
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
     /** Дополнительный класс корневого элемента */
@@ -50,8 +52,11 @@ export interface Props {
     isAutoplay?: boolean;
 }
 
-const cn = cnCreate('mfui-beta-video-block');
-const VideoBlock: React.FC<Props> = ({
+const cn: (
+    param1?: string | (string | undefined)[],
+    param2?: (string | undefined)[] | Record<string, unknown>,
+) => string = cnCreate('mfui-beta-video-block');
+const VideoBlock: React.FC<IProps> = ({
     dataAttrs,
     className,
     classes = {},
@@ -62,18 +67,32 @@ const VideoBlock: React.FC<Props> = ({
     isMuted = true,
     isAutoplay = false,
 }) => {
+    const logicTrue = 1;
+    const logicFalse = 0;
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
-            case(VideoTypes.YOUTUBE): {
-                const src = `https://www.youtube.com/embed/${videoSrc}?&autoplay=${isAutoplay ? 1 : 0}&mute=${isMuted ? 1 : 0}&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${videoSrc}`;
+            case VideoTypes.YOUTUBE: {
+                const src = `https://www.youtube.com/embed/${videoSrc}?&autoplay=${
+                    isAutoplay ? logicTrue : logicFalse
+                }&mute=${
+                    isMuted ? logicTrue : logicFalse
+                }&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${videoSrc}`;
 
                 return (
-                    <iframe src={src} width="100%" height="100%" frameBorder="0" allow="autoplay"/>
+                    <iframe
+                        title={VideoTypes.YOUTUBE}
+                        src={src}
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        allow="autoplay"
+                    />
                 );
             }
 
-            case (VideoTypes.VIDEO): {
+            case VideoTypes.VIDEO: {
                 return (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video className={cn('video')} autoPlay={isAutoplay} muted={isMuted} controls={!isAutoplay} loop>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
@@ -84,36 +103,34 @@ const VideoBlock: React.FC<Props> = ({
                 return null;
             }
         }
+    }, [videoType, videoSrc, isMuted, isAutoplay]);
 
-    }, [videoType, videoSrc]);
-
-    const renderContent = React.useCallback(({
-        title,
-        description,
-        href,
-        buttonDownload,
-        buttonTitle,
-        onButtonClick,
-    }: IContent) => (
+    const renderContent = React.useCallback(
+        ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
             <div className={cn('content')}>
                 <Header as="h3" className={cn('header')}>
                     {title}
                 </Header>
                 <div>
-                    {description && description.map((paragraph, i) => (
-                        <Paragraph key={i + paragraph} className={cn('text')} hasMargin={false}>
-                            {paragraph}
-                        </Paragraph>
-                    ))}
+                    {description &&
+                        description.map((paragraph, i) => (
+                            <Paragraph key={i + paragraph} className={cn('text')} hasMargin={false}>
+                                {paragraph}
+                            </Paragraph>
+                        ))}
                 </div>
-                <Button className={cn('button', [classes.button])}
+                <Button
+                    className={cn('button', [classes.button])}
                     href={href}
                     onClick={onButtonClick}
-                    download={buttonDownload}>
+                    download={buttonDownload}
+                >
                     {buttonTitle}
                 </Button>
             </div>
-        ), [content]);
+        ),
+        [classes.button],
+    );
 
     const renderGridColumns = React.useCallback(() => {
         const columns: JSX.Element[] = [];
@@ -121,24 +138,23 @@ const VideoBlock: React.FC<Props> = ({
 
         if (content) {
             columns.push(
-                <GridColumn all="5" tablet="12" mobile="12" orderTablet="2" orderMobile="2" key={'column-content'}>
+                <GridColumn all="5" tablet="12" mobile="12" orderTablet="2" orderMobile="2" key="column-content">
                     {renderContent && renderContent(content)}
-                </GridColumn>
+                </GridColumn>,
             );
         }
 
         columns.push(
-            <GridColumn all={columnWidth} tablet="12" mobile="12" key={'column-video'}>
-                <div className={cn('video-wrapper', {'with-content': !!content })}>
-                    {renderVideo()}
-                </div>
-            </GridColumn>
+            <GridColumn all={columnWidth} tablet="12" mobile="12" key="column-video">
+                <div className={cn('video-wrapper', { 'with-content': !!content })}>{renderVideo()}</div>
+            </GridColumn>,
         );
 
         return columns;
     }, [renderContent, renderVideo, content]);
 
     return (
+        // eslint-disable-next-line react/jsx-props-no-spreading
         <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>
             <Grid hAlign="center" className={cn('grid')}>
                 {renderGridColumns()}
@@ -156,10 +172,11 @@ VideoBlock.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
+        // eslint-disable-next-line react/forbid-prop-types
         description: PropTypes.array.isRequired,
         href: PropTypes.string,
         buttonTitle: PropTypes.string.isRequired,

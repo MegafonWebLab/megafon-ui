@@ -1,13 +1,14 @@
-import * as React from 'react';
-import {shallow} from 'enzyme';
+/* eslint-disable import/no-unresolved */
 import CarouselBox from 'components/CarouselBox/CarouselBox';
+import { shallow } from 'enzyme';
+import * as React from 'react';
 
 describe('<CarouselBox />', () => {
     it('render CarouselBox with default props', () => {
         const wrapper = shallow(
             <CarouselBox>
                 <div>test</div>
-            </CarouselBox>
+            </CarouselBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -20,15 +21,16 @@ describe('<CarouselBox />', () => {
                     root: 'testClassName',
                     innerIndents: 'testInnerClass',
                 }}
-                loop={true}
-                autoPlay={true}
+                loop
+                autoPlay
                 autoPlayDelay={10}
-                navTheme={'green'}
+                navTheme="green"
                 onNextClick={jest.fn()}
                 onPrevClick={jest.fn()}
-                onChange={jest.fn()}>
+                onChange={jest.fn()}
+            >
                 <div>test</div>
-            </CarouselBox>
+            </CarouselBox>,
         );
 
         expect(wrapper).toMatchSnapshot();

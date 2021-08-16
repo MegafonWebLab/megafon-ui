@@ -1,6 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
 import './Tile.less';
 
 export const Theme = {
@@ -42,8 +47,8 @@ export interface ITileProps extends IFilterDataAttrs {
     /** Обработчик клика */
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
-
-const cn = cnCreate('mfui-beta-tile');
+const cn: (param1?: Record<string, unknown> | string, param2?: string | undefined) => string =
+    cnCreate('mfui-beta-tile');
 const Tile: React.FC<ITileProps> = ({
     href,
     children,
@@ -70,7 +75,7 @@ const Tile: React.FC<ITileProps> = ({
                     pointer: isPointer,
                     interactive: isInteractive,
                 },
-                className
+                className,
             )}
             onClick={handleClick}
             {...filterDataAttrs(dataAttrs)}

@@ -1,11 +1,23 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './GridColumn.less';
+/* eslint-disable import/no-unresolved */
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './GridColumn.less';
 
-const GridSizeValues = PropTypes.oneOf<TGridSizeValues>(
-    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
-);
+const GridSizeValues = PropTypes.oneOf<TGridSizeValues>([
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11',
+    '12',
+]);
 export type TGridSizeValues = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
 
 export interface IGridColumn {
@@ -64,33 +76,33 @@ export interface IGridColumn {
     children: React.ReactNode;
 }
 
-const cn = cnCreate('mfui-beta-grid-column');
+const cn: (param1?: Record<string, unknown>, param2?: string) => string = cnCreate('mfui-beta-grid-column');
 const GridColumn: React.FC<IGridColumn> = ({
-   all = '12',
-   wide,
-   desktop,
-   tablet,
-   mobile,
-   orderAll = '0',
-   orderWide = '0',
-   orderDesktop = '0',
-   orderTablet = '0',
-   orderMobile = '0',
-   leftOffsetAll,
-   leftOffsetWide,
-   leftOffsetDesktop,
-   leftOffsetTablet,
-   leftOffsetMobile,
-   rightOffsetAll,
-   rightOffsetWide,
-   rightOffsetDesktop,
-   rightOffsetTablet,
-   rightOffsetMobile,
-   className,
-   flex = false,
-   grow = false,
-   align,
-   children,
+    all = '12',
+    wide,
+    desktop,
+    tablet,
+    mobile,
+    orderAll = '0',
+    orderWide = '0',
+    orderDesktop = '0',
+    orderTablet = '0',
+    orderMobile = '0',
+    leftOffsetAll,
+    leftOffsetWide,
+    leftOffsetDesktop,
+    leftOffsetTablet,
+    leftOffsetMobile,
+    rightOffsetAll,
+    rightOffsetWide,
+    rightOffsetDesktop,
+    rightOffsetTablet,
+    rightOffsetMobile,
+    className,
+    flex = false,
+    grow = false,
+    align,
+    children,
 }) => (
     <div
         className={cn(
@@ -119,7 +131,7 @@ const GridColumn: React.FC<IGridColumn> = ({
                 'right-offset-tablet': rightOffsetTablet,
                 'right-offset-mobile': rightOffsetMobile,
             },
-            className
+            className,
         )}
     >
         {children}

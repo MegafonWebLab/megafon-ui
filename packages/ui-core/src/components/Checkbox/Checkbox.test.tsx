@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Checkbox from './Checkbox';
 
 const props = {
@@ -26,14 +28,10 @@ describe('<Checkbox />', () => {
 
         it('renders Checkbox with props', () => {
             const wrapper = shallow(
-                <Checkbox
-                    {...props}
-                    fontSize="small"
-                    color="light"
-                    onChange={jest.fn()}
-                >
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                <Checkbox {...props} fontSize="small" color="light" onChange={jest.fn()}>
                     Тестовая строка
-                </Checkbox>
+                </Checkbox>,
             );
             expect(wrapper).toMatchSnapshot();
         });

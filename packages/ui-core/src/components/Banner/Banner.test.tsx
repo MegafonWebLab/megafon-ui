@@ -1,6 +1,9 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
 import Banner, { IBannerProps, NavTheme } from './Banner';
 import { DemoSlide } from './doc/Banner.docz';
 
@@ -19,7 +22,7 @@ const props = {
     onChange: jest.fn(),
 } as IBannerProps;
 
-const cnBanner = cnCreate('.mfui-beta-banner');
+const cnBanner: (param1: string) => string = cnCreate('.mfui-beta-banner');
 const cnBannerDot = cnCreate('.mfui-beta-banner-dot');
 
 describe('<Banner />', () => {
@@ -32,7 +35,7 @@ describe('<Banner />', () => {
             <Banner>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -43,7 +46,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -54,7 +57,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBanner('arrow')).last().simulate('click');
@@ -67,7 +70,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBanner('arrow')).last().simulate('click');
@@ -80,7 +83,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBanner('arrow')).first().simulate('click');
@@ -93,7 +96,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBannerDot()).last().simulate('click');

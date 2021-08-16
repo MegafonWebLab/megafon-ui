@@ -1,7 +1,8 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import { cnCreate } from '@megafon/ui-helpers';
+/* eslint-disable import/no-unresolved */
 import { Grid, GridColumn } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './TextBox.less';
 
 export interface ITextBoxProps {
@@ -16,8 +17,8 @@ export interface ITextBoxProps {
     /** Дополнительный класс для корневого элемента */
     className?: string;
 }
-
-const cn = cnCreate('mfui-beta-text-box');
+const cn: (param1?: string | Record<string, unknown>, param2?: (string | undefined)[]) => string =
+    cnCreate('mfui-beta-text-box');
 const TextBox: React.FC<ITextBoxProps> = ({
     textCenter = false,
     centeringWithLimitedWidth = false,
@@ -26,9 +27,7 @@ const TextBox: React.FC<ITextBoxProps> = ({
     className,
     children,
 }) => {
-    const renderContent = () => (
-        <div className={cn('content')}>{children}</div>
-    );
+    const renderContent = () => <div className={cn('content')}>{children}</div>;
 
     const renderTextBoxWithGrid = () => (
         <Grid hAlign={centeringWithLimitedWidth ? 'center' : 'left'}>

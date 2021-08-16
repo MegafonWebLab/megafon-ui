@@ -1,7 +1,9 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './Grid.less';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './Grid.less';
 import { IGridColumn } from './GridColumn';
 
 export interface IGridProps {
@@ -19,8 +21,8 @@ export interface IGridProps {
     className?: string;
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
-
-const cn = cnCreate('mfui-beta-grid');
+const cn: (param1?: (string | undefined)[] | string, param2?: Record<string, unknown>, param3?: string) => string =
+    cnCreate('mfui-beta-grid');
 const Grid: React.FC<IGridProps> = ({
     children,
     guttersLeft,
@@ -38,7 +40,8 @@ const Grid: React.FC<IGridProps> = ({
                 'v-align': vAlign,
                 'gutters-left': guttersLeft,
                 'gutters-bottom': guttersBottom,
-            })}>
+            })}
+        >
             {React.Children.map(children, (child: React.ReactElement<IGridColumn>) =>
                 React.cloneElement(child, {
                     className: cn(
@@ -47,9 +50,9 @@ const Grid: React.FC<IGridProps> = ({
                             'gutter-left': guttersLeft,
                             'gutter-bottom': guttersBottom,
                         },
-                        child.props.className
+                        child.props.className,
                     ),
-                })
+                }),
             )}
         </div>
     </div>
@@ -62,10 +65,8 @@ Grid.propTypes = {
     guttersBottom: PropTypes.oneOf(['large', 'medium']),
     multiRow: PropTypes.bool,
     className: PropTypes.string,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element.isRequired),
-        PropTypes.element.isRequired,
-    ]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element.isRequired])
+        .isRequired,
 };
 
 export default Grid;

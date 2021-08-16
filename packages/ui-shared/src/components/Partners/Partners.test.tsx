@@ -1,10 +1,13 @@
-import * as React from 'react';
-import { mount, shallow } from 'enzyme';
-import Partners from './Partners';
-import megafon from './megafon.png';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable no-magic-numbers */
 import { cnCreate } from '@megafon/ui-helpers';
+import { mount, shallow } from 'enzyme';
+import * as React from 'react';
+import megafon from './megafon.png';
+import Partners from './Partners';
 
-const cnCarousel = cnCreate('.mfui-beta-carousel');
+const cnCarousel: (param1?: string) => string = cnCreate('.mfui-beta-carousel');
 
 const generateItems = (i, href?) =>
     Array.from({ length: i }, () => ({
@@ -15,9 +18,7 @@ const generateItems = (i, href?) =>
 
 describe('<Partners />', () => {
     it('should render grid', () => {
-        const wrapper = shallow(
-            <Partners className="custom-class" items={generateItems(4, '#')} />
-        );
+        const wrapper = shallow(<Partners className="custom-class" items={generateItems(4, '#')} />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -38,9 +39,7 @@ describe('<Partners />', () => {
 
     it('should call onChange', () => {
         const mockOnChange = jest.fn();
-        const wrapper = mount(
-            <Partners items={generateItems(12)} onChange={mockOnChange} />
-        );
+        const wrapper = mount(<Partners items={generateItems(12)} onChange={mockOnChange} />);
         const arrows = wrapper.find(cnCarousel('arrow'));
 
         arrows.last().simulate('click');
@@ -50,9 +49,7 @@ describe('<Partners />', () => {
 
     it('should call onNextClick', () => {
         const mockOnNextClick = jest.fn();
-        const wrapper = mount(
-            <Partners items={generateItems(12)} onNextClick={mockOnNextClick} />
-        );
+        const wrapper = mount(<Partners items={generateItems(12)} onNextClick={mockOnNextClick} />);
         const arrows = wrapper.find(cnCarousel('arrow'));
 
         arrows.last().simulate('click');
@@ -62,9 +59,7 @@ describe('<Partners />', () => {
 
     it('should call onPrevClick', () => {
         const mockOnPrevClick = jest.fn();
-        const wrapper = mount(
-            <Partners items={generateItems(12)} onPrevClick={mockOnPrevClick} />
-        );
+        const wrapper = mount(<Partners items={generateItems(12)} onPrevClick={mockOnPrevClick} />);
         const arrows = wrapper.find(cnCarousel('arrow'));
 
         arrows.first().simulate('click');
@@ -82,10 +77,14 @@ describe('<Partners />', () => {
 
     it('should render with classes props', () => {
         const wrapper = shallow(
-            <Partners className="custom-class" items={generateItems(4, '#')} classes={{
-                root: 'test-root-class',
-                itemClass: 'test-item-class',
-            }} />
+            <Partners
+                className="custom-class"
+                items={generateItems(4, '#')}
+                classes={{
+                    root: 'test-root-class',
+                    itemClass: 'test-item-class',
+                }}
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();

@@ -1,13 +1,20 @@
-import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-magic-numbers */
+/* eslint-disable react/jsx-props-no-spreading */
 import { Header, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React, { Ref } from 'react';
 import './Property.less';
-import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
+import { Item } from './types';
 
 type GridColumnPropsType = React.ComponentProps<typeof GridColumn>;
-type GridColumnConfigType = Pick<GridColumnPropsType, 'all' | 'wide' | 'desktop' | 'tablet' | 'mobile'>;
+type GridColumnConfigType =
+    | Pick<GridColumnPropsType, 'wide' | 'desktop' | 'tablet' | 'mobile'>
+    | Pick<GridColumnPropsType, 'all'>;
 
 export interface IProperty {
     /** Ссылка на корневой элемент */
@@ -35,8 +42,10 @@ export interface IProperty {
         toggleDescription?: string;
     };
 }
-
-const cn = cnCreate('mfui-beta-property');
+const cn: (
+    param1?: string | Record<string, unknown> | (string | undefined)[],
+    param2?: (string | undefined)[] | Record<string, unknown> | string,
+) => string = cnCreate('mfui-beta-property');
 const Property: React.FC<IProperty> = ({
     rootRef,
     items,
@@ -46,21 +55,19 @@ const Property: React.FC<IProperty> = ({
     borderBottom = false,
     mergedValue = '',
     fullWidth = false,
-    classes= {},
+    classes = {},
     dataAttrs,
 }) => {
     const renderTitle = React.useCallback(
         title =>
             title &&
             title.map((titleItem, i) => (
-                <Header as={'h5'} key={i} className={classes.title}>
-                    {icon && i === 0 && (
-                        <div className={cn('icon')}>{icon}</div>
-                    )}
+                <Header as="h5" key={i} className={classes.title}>
+                    {icon && i === 0 && <div className={cn('icon')}>{icon}</div>}
                     {titleItem}
                 </Header>
             )),
-        []
+        [classes.title, icon],
     );
 
     const renderDescription = React.useCallback(
@@ -75,12 +82,14 @@ const Property: React.FC<IProperty> = ({
                     />
                 </div>
             )),
-        []
+        [classes.openedDescription, classes.toggleDescription],
     );
 
-    const getColumnConfig = React.useCallback((): GridColumnConfigType => (
-        fullWidth ? { all: '12' } : { wide: '8', desktop: '10', tablet: '12', mobile: '12'}
-    ), [fullWidth]);
+    const getColumnConfig = React.useCallback(
+        (): GridColumnConfigType =>
+            fullWidth ? { all: '12' } : { wide: '8', desktop: '10', tablet: '12', mobile: '12' },
+        [fullWidth],
+    );
 
     return (
         <div
@@ -104,15 +113,11 @@ const Property: React.FC<IProperty> = ({
                                             {renderTitle(title)}
                                             {renderDescription(description)}
                                         </div>
-                                        {
-                                            !mergedValue && (
-                                                <div className={cn('value-wrapper')}>
-                                                    {value &&  (
-                                                        <span className={cn('value')}>{value}</span>
-                                                    )}
-                                                </div>
-                                            )
-                                        }
+                                        {!mergedValue && (
+                                            <div className={cn('value-wrapper')}>
+                                                {value && <span className={cn('value')}>{value}</span>}
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
@@ -132,7 +137,7 @@ const Property: React.FC<IProperty> = ({
 Property.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     items: PropTypes.arrayOf(
         PropTypes.shape({
@@ -141,10 +146,10 @@ Property.propTypes = {
                 PropTypes.shape({
                     value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
                     isCollapsible: PropTypes.bool,
-                })
+                }),
             ),
             value: PropTypes.string,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     className: PropTypes.string,
     badge: PropTypes.string,

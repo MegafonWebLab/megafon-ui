@@ -1,12 +1,8 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import {
-    Header,
-    Paragraph,
-    Grid,
-    GridColumn,
-} from '@megafon/ui-core';
+// eslint-disable-next-line import/no-unresolved
+import { Header, Paragraph, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './TitleDescriptionBox.less';
 
 export interface ITitleDescriptionBoxProps {
@@ -25,8 +21,10 @@ export interface ITitleDescriptionBoxProps {
     /** Горизонтальное выравнивание */
     hAlign?: 'center';
 }
-
-const cn = cnCreate('mfui-beta-title-description-box');
+const cn: (
+    param1?: string | Record<string, unknown>,
+    param2?: (string | undefined)[] | Record<string, unknown> | string,
+) => string = cnCreate('mfui-beta-title-description-box');
 const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     dataAttrs,
     title,
@@ -39,11 +37,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     const renderDescription = React.useCallback(() => {
         if (typeof description === 'string') {
             return (
-                <Paragraph
-                    className={cn('item')}
-                    hasMargin={false}
-                    color="inherit"
-                >
+                <Paragraph className={cn('item')} hasMargin={false} color="inherit">
                     {description}
                 </Paragraph>
             );
@@ -54,21 +48,15 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
 
     return (
         <div
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...filterDataAttrs(dataAttrs)}
-            className={cn(
-                {'h-align': hAlign, 'text-color': textColor},
-                className
-            )}
+            className={cn({ 'h-align': hAlign, 'text-color': textColor }, className)}
             ref={rootRef}
         >
             <Grid hAlign={hAlign}>
                 <GridColumn wide="8" desktop="10">
                     {title && (
-                        <Header
-                            className={cn('item', { header: true })}
-                            as="h2"
-                            color="inherit"
-                        >
+                        <Header className={cn('item', { header: true })} as="h2" color="inherit">
                             {title}
                         </Header>
                     )}

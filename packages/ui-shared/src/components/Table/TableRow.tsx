@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import { ITableCell } from './TableCell';
 
 export interface ITableRow {
@@ -11,7 +13,6 @@ export interface ITableRow {
 const TableRow: React.FC<ITableRow> = ({ children }) => <>{children}</>;
 
 TableRow.propTypes = {
-    head: PropTypes.bool,
     children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
 };
 

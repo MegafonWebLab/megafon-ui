@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import GridColumn from './GridColumn';
 
 describe('<GridColumn />', () => {
@@ -24,7 +26,7 @@ describe('<GridColumn />', () => {
                 flex
             >
                 item
-            </GridColumn>
+            </GridColumn>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -55,7 +57,7 @@ describe('<GridColumn />', () => {
                 flex
             >
                 item
-            </GridColumn>
+            </GridColumn>,
         );
         expect(wrapper).toMatchSnapshot();
     });

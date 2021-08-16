@@ -1,5 +1,8 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Tile, { ITileProps, Theme, Radius, Shadow } from './Tile';
 
 const props: ITileProps = {
@@ -20,9 +23,7 @@ describe('<Tile />', () => {
         });
 
         it('renders component with props', () => {
-            const wrapper = shallow(
-                <Tile {...props}>Some test content</Tile>
-            );
+            const wrapper = shallow(<Tile {...props}>Some test content</Tile>);
             expect(wrapper).toMatchSnapshot();
         });
 

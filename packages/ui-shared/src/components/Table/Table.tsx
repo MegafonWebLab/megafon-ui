@@ -1,8 +1,10 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
-import convert from 'htmr';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import convert from 'htmr';
+import throttle from 'lodash.throttle';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './Table.less';
 import { ITableRow } from './TableRow';
 
@@ -15,14 +17,11 @@ export interface ITable {
     minCellSize?: 'small' | 'large';
     children: Array<React.ReactElement<ITableRow>>;
 }
-
-const cn = cnCreate('mfui-beta-table');
-const Table: React.FC<ITable> = ({
-    className,
-    fixColumn = true,
-    minCellSize = 'large',
-    children,
-}) => {
+const cn: (
+    param1?: string | Record<string, unknown>,
+    param2?: (string | undefined)[] | Record<string, unknown> | string,
+) => string = cnCreate('mfui-beta-table');
+const Table: React.FC<ITable> = ({ className, fixColumn = true, minCellSize = 'large', children }) => {
     const scrollRef = React.useRef<HTMLDivElement | null>(null);
 
     const [isTopShadow, setTopShadow] = React.useState(false);
@@ -38,14 +37,7 @@ const Table: React.FC<ITable> = ({
             return;
         }
 
-        const {
-            scrollHeight,
-            clientHeight,
-            scrollTop,
-            scrollWidth,
-            clientWidth,
-            scrollLeft,
-        } = scrollNode;
+        const { scrollHeight, clientHeight, scrollTop, scrollWidth, clientWidth, scrollLeft } = scrollNode;
 
         const deltaHeight = scrollHeight - clientHeight;
         const deltaWidth = scrollWidth - clientWidth;
@@ -57,7 +49,8 @@ const Table: React.FC<ITable> = ({
     }, []);
 
     React.useEffect(() => {
-        const handleResize = throttle(handleTableScroll, 300);
+        const scrollSize = 300;
+        const handleResize = throttle(handleTableScroll, scrollSize);
 
         handleTableScroll();
         window.addEventListener('resize', handleResize);
@@ -75,9 +68,7 @@ const Table: React.FC<ITable> = ({
         React.Children.map(children, ({ props: { children: cells, head } }) => (
             <tr className={cn('row', { head })}>
                 {React.Children.map(cells, ({ props: { children: cell } }) => (
-                    <td className={cn('cell')}>
-                        {typeof cell === 'string' ? convert(cell) : cell}
-                    </td>
+                    <td className={cn('cell')}>{typeof cell === 'string' ? convert(cell) : cell}</td>
                 ))}
             </tr>
         ));
@@ -90,14 +81,10 @@ const Table: React.FC<ITable> = ({
                     'min-cell-size': minCellSize,
                     touch: isTouchDevice,
                 },
-                [className]
+                [className],
             )}
         >
-            <div
-                className={cn('scroll')}
-                ref={scrollRef}
-                onScroll={handleTableScroll}
-            >
+            <div className={cn('scroll')} ref={scrollRef} onScroll={handleTableScroll}>
                 {isTopShadow && <div className={cn('top-shadow')} />}
                 {isLeftShadow && <div className={cn('left-shadow')} />}
                 <table className={cn('table')}>

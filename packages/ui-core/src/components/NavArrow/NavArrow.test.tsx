@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import NavArrow, { INavArrowProps, Theme, View } from './NavArrow';
 
 const props: INavArrowProps = {
@@ -18,6 +20,7 @@ describe('<NavArrow />', () => {
     });
 
     it('should render with props', () => {
+        // eslint-disable-next-line react/jsx-props-no-spreading
         const wrapper = shallow(<NavArrow {...props} />);
 
         expect(wrapper).toMatchSnapshot();

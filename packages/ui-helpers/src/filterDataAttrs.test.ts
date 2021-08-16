@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import filterDataAttrs from './filterDataAttrs';
 
 describe('filterDataAttrs', () => {
@@ -10,8 +12,8 @@ describe('filterDataAttrs', () => {
             'Data-test': 'test',
             'test-data-test': 'test',
             'test-data': 'test',
-            'dataTest': 'test',
-            'testTest': 'test',
+            dataTest: 'test',
+            testTest: 'test',
         };
         const filteredAttrs = filterDataAttrs({
             ...correctAttrs,
@@ -22,7 +24,8 @@ describe('filterDataAttrs', () => {
     });
 
     it('should return empty object with incorrect params', () => {
-        const incorrectParams = [undefined, null, [], () => {}, 'test', 123];
+        const numberRandom = 123;
+        const incorrectParams = [undefined, null, [], Function, 'test', numberRandom];
 
         incorrectParams.forEach((param: any) => {
             expect(filterDataAttrs(param)).toEqual({});

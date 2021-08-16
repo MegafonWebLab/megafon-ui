@@ -1,8 +1,9 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import './PictureWithDescription.less';
-import { cnCreate } from '@megafon/ui-helpers';
+/* eslint-disable import/no-unresolved */
 import { Header } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import './PictureWithDescription.less';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -30,8 +31,10 @@ export interface IPictureWithDescriptionProps {
     /** Выравнивание текста по верхнему краю */
     isTextTopAlign?: boolean;
 }
-
-const cn = cnCreate('mfui-beta-picture-with-description');
+const cn: (
+    param1?: string | Record<string, unknown> | (string | undefined)[],
+    param2?: (string | undefined)[] | Record<string, unknown> | string,
+) => string = cnCreate('mfui-beta-picture-with-description');
 const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
     rootRef,
     className,
@@ -47,7 +50,11 @@ const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
             <img className={cn('img')} src={pictureUrl} alt="" />
         </div>
         <div className={cn('articles', { align: pictureAlign, 'text-top-align': isTextTopAlign })}>
-            {!!title && <Header className={cn('title', [classes.title])} as="h2">{title}</Header>}
+            {!!title && (
+                <Header className={cn('title', [classes.title])} as="h2">
+                    {title}
+                </Header>
+            )}
             <div className={cn('content')}>{children}</div>
         </div>
     </div>
@@ -56,16 +63,14 @@ const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
 PictureWithDescription.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
         title: PropTypes.string,
     }),
-    title: PropTypes.oneOfType([
-        PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node),
-    ]),
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     pictureUrl: PropTypes.string.isRequired,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),
     isTextTopAlign: PropTypes.bool,

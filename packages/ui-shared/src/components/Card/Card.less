@@ -9,17 +9,18 @@
 @{b} {
     display: flex;
     border-radius: 8px;
-    box-shadow: 0 0.25px 3px rgba(0, 0, 0, 0.25);
-    background-color: @clearWhite;
     overflow: hidden;
+
+    background-color: @clearWhite;
+    box-shadow: 0 0.25px 3px rgba(0, 0, 0, 0.25);
 
     &__inner {
         display: flex;
         flex-direction: column;
         flex-grow: 0;
         flex-shrink: 1;
-        width: 100%;
         box-sizing: border-box;
+        width: 100%;
         padding: @verticalIndent @horizontalIndent;
 
         @media @mobileSM {
@@ -34,10 +35,10 @@
     &__btns-wrapper {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
         align-items: center;
-        padding-top: 12px;
+        justify-content: space-evenly;
         margin-top: auto;
+        padding-top: 12px;
     }
 
     &__btns-wrapper_left-align {
@@ -73,16 +74,16 @@
 
     &__pic-wrapper_img {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         margin-top: -(@verticalIndent);
-        margin-left: -(@horizontalIndent);
         margin-right: -(@horizontalIndent);
+        margin-left: -(@horizontalIndent);
 
         @media @mobileSM {
             margin-top: -(@verticalIndentSM);
-            margin-left: -(@horizontalIndentSM);
             margin-right: -(@horizontalIndentSM);
+            margin-left: -(@horizontalIndentSM);
         }
     }
 

@@ -1,5 +1,7 @@
-import React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow, mount } from 'enzyme';
+import React from 'react';
 import PaginationButton from './PaginationButton';
 
 describe('PaginationButton', () => {
@@ -23,14 +25,9 @@ describe('PaginationButton', () => {
 
     it('should render with optional props', () => {
         const wrapper = shallow(
-            <PaginationButton
-                theme="light"
-                className="custom-class-name"
-                value={1}
-                onClick={jest.fn()}
-            >
+            <PaginationButton theme="light" className="custom-class-name" value={1} onClick={jest.fn()}>
                 Click me
-            </PaginationButton>
+            </PaginationButton>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -45,7 +42,11 @@ describe('PaginationButton', () => {
 
         it('should call click handler with valid arguments', () => {
             const value = 1;
-            const wrapper = shallow(<PaginationButton value={value} onClick={clickHandler}>Click me</PaginationButton>);
+            const wrapper = shallow(
+                <PaginationButton value={value} onClick={clickHandler}>
+                    Click me
+                </PaginationButton>,
+            );
 
             wrapper.simulate('click');
 
@@ -53,7 +54,11 @@ describe('PaginationButton', () => {
         });
 
         it('should not call click handler on disabled button', () => {
-            const wrapper = mount(<PaginationButton onClick={clickHandler} isDisabled>Click me</PaginationButton>);
+            const wrapper = mount(
+                <PaginationButton onClick={clickHandler} isDisabled>
+                    Click me
+                </PaginationButton>,
+            );
 
             wrapper.simulate('click');
 

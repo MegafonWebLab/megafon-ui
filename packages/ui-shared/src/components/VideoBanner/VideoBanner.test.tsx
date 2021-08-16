@@ -1,6 +1,8 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
 import VideoBanner, { VideoType, ButtonColor, ClassName, TextColor } from './VideoBanner';
 
 const imageMobile = 'imageMobile';
@@ -13,7 +15,8 @@ const youtubeVideoId = '2Sps5MnvlKM';
 
 const content = {
     title: 'Текст ≈40 симовлов. Короткие слова',
-    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+    description:
+        'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     buttonHref: '#',
     buttonTitle: 'Текст в кнопке',
     linkTitle: 'Личный кабинет услуги',
@@ -39,8 +42,10 @@ const breadcrumbs = [
 type LocalWindowType = Omit<Window, 'innerWidth'> & {
     innerWidth: number;
 };
-
-const cn = cnCreate('mfui-beta-video-banner');
+const cn: (
+    param1?: string | (string | undefined)[],
+    param2?: (string | undefined)[] | Record<string, unknown>,
+) => string = cnCreate('mfui-beta-video-banner');
 describe('<VideoBanner />', () => {
     it('render component with pictures', () => {
         const wrapper = shallow(
@@ -49,7 +54,7 @@ describe('<VideoBanner />', () => {
                 imageTablet={imageTablet}
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -63,7 +68,7 @@ describe('<VideoBanner />', () => {
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
                 content={content}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -79,14 +84,14 @@ describe('<VideoBanner />', () => {
                 content={content}
                 breadcrumbs={breadcrumbs}
                 classes={{ breadcrumbs: 'breadcrumbs-item-custom-class-name' }}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render component without button', () => {
-        const { buttonTitle, ...contentWithoutButton } = content;
+        const { ...contentWithoutButton } = content;
 
         const wrapper = shallow(
             <VideoBanner
@@ -95,7 +100,7 @@ describe('<VideoBanner />', () => {
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
                 content={contentWithoutButton}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -113,7 +118,7 @@ describe('<VideoBanner />', () => {
                     button: 'buttonClass',
                     link: 'linkClass',
                 }}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -121,11 +126,7 @@ describe('<VideoBanner />', () => {
 
     it('render component with dataAttrs', () => {
         const wrapper = shallow(
-            <VideoBanner
-                imageMobile={imageMobile}
-                imageTablet={imageTablet}
-                dataAttrs={{ 'data-test': 'value' }}
-            />
+            <VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} dataAttrs={{ 'data-test': 'value' }} />,
         );
 
         expect(wrapper.first().prop('data-test')).toEqual('value');
@@ -143,7 +144,8 @@ describe('<VideoBanner />', () => {
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
                 content={localContent}
-            />);
+            />,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -162,7 +164,8 @@ describe('<VideoBanner />', () => {
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
                 content={localContent}
-            />);
+            />,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -179,7 +182,8 @@ describe('<VideoBanner />', () => {
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
                 content={localContent}
-            />);
+            />,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -197,7 +201,8 @@ describe('<VideoBanner />', () => {
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
                 content={localContent}
-            />);
+            />,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -218,7 +223,8 @@ describe('<VideoBanner />', () => {
         };
 
         const component = shallow(
-            <VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} content={contentWithMockFunc} />);
+            <VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} content={contentWithMockFunc} />,
+        );
         const btn = component.find(`.${cn(ClassName.BUTTON)}`);
 
         btn.simulate('click');
@@ -245,7 +251,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageTablet}
                     videoType={VideoType.YOUTUBE}
                     videoSrc={youtubeVideoId}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -259,7 +265,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageTablet}
                     videoType={VideoType.VIDEO}
                     videoSrc={video}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -274,7 +280,7 @@ describe('<VideoBanner />', () => {
                     videoType={VideoType.VIDEO}
                     videoSrc={video}
                     content={content}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -289,7 +295,7 @@ describe('<VideoBanner />', () => {
                     videoType={VideoType.VIDEO}
                     videoSrc={video}
                     isMuted={false}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -304,7 +310,7 @@ describe('<VideoBanner />', () => {
                     videoType={VideoType.YOUTUBE}
                     videoSrc={youtubeVideoId}
                     isMuted={false}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -318,7 +324,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageDesktop}
                     videoType={VideoType.VIDEO}
                     videoSrc={video}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -332,7 +338,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageTablet}
                     videoType={VideoType.YOUTUBE}
                     videoSrc={youtubeVideoId}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -346,7 +352,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageTablet}
                     imageDesktop={imageDesktop}
                     imageDesktopWide={imageDesktopWide}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -360,7 +366,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageTablet}
                     imageDesktop={imageDesktop}
                     imageDesktopWide={imageDesktopWide}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -374,7 +380,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageTablet}
                     imageDesktop={imageDesktop}
                     imageDesktopWide={imageDesktopWide}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -388,7 +394,7 @@ describe('<VideoBanner />', () => {
                     imageTablet={imageTablet}
                     imageDesktop={imageDesktop}
                     imageDesktopWide={imageDesktopWide}
-                />
+                />,
             );
 
             expect(wrapper).toMatchSnapshot();

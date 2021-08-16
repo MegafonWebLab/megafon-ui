@@ -1,16 +1,20 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import './style/BenefitsIconsTile.less';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { Header } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import './style/BenefitsIconsTile.less';
 import { IBenefit, IconPositionEnum, IconPosition } from './types';
 
 export interface IBenefitsIconsTile extends IBenefit {
     iconPosition?: IconPosition;
     className?: string;
 }
-
-const cn = cnCreate('mfui-beta-benefits-icons-tile');
+const cn: (
+    param1?: (string | undefined)[] | string | Record<string, unknown>,
+    param2?: (string | undefined)[],
+) => string = cnCreate('mfui-beta-benefits-icons-tile');
 const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
     title,
     text,
@@ -26,11 +30,7 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
                     {title}
                 </Header>
             )}
-            {text && (
-                <div className={cn('content')}>
-                    {text}
-                </div>
-            )}
+            {text && <div className={cn('content')}>{text}</div>}
         </div>
     </div>
 );

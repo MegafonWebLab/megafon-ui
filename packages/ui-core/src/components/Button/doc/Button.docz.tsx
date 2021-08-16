@@ -8,3 +8,4 @@ export const blockStyle: React.CSSProperties = {
     alignItems: 'center',
     width: '100%',
 };
+export default blockStyle;

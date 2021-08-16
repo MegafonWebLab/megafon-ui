@@ -1,7 +1,10 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './BannerDot.less';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './BannerDot.less';
 
 export interface IBannerDotProps {
     className?: string;
@@ -12,24 +15,14 @@ export interface IBannerDotProps {
     onClick: (index: number) => void;
 }
 
-const cn = cnCreate('mfui-beta-banner-dot');
-const BannerDot: React.FC<IBannerDotProps> = ({
-    className,
-    index,
-    isActive,
-    showTimer,
-    timerDelay,
-    onClick,
-}) => {
+const cn: (param1?: Record<string, unknown> | string, param2?: string) => string = cnCreate('mfui-beta-banner-dot');
+const BannerDot: React.FC<IBannerDotProps> = ({ className, index, isActive, showTimer, timerDelay, onClick }) => {
     const handleDotClick = React.useCallback(() => {
         onClick(index);
     }, [onClick, index]);
 
     return (
-        <div
-            className={cn({ active: isActive, timer: showTimer }, className)}
-            onClick={handleDotClick}
-        >
+        <div className={cn({ active: isActive, timer: showTimer }, className)} onClick={handleDotClick}>
             {showTimer && isActive && (
                 <svg className={cn('timer')} viewBox="0 0 100 100">
                     <circle

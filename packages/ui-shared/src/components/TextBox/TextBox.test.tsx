@@ -1,5 +1,8 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import TextBox from './TextBox';
 
 describe('TextBox', () => {
@@ -7,7 +10,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -16,16 +19,16 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox className="test-class-name">
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with centered text', () => {
         const wrapper = shallow(
-            <TextBox textCenter={true}>
+            <TextBox textCenter>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -34,34 +37,34 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox isFullWidth={false}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with limited width and centered text', () => {
         const wrapper = shallow(
-            <TextBox isFullWidth={false} textCenter={true}>
+            <TextBox isFullWidth={false} textCenter>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with limited width and centered component', () => {
         const wrapper = shallow(
-            <TextBox isFullWidth={false} centeringWithLimitedWidth={true}>
+            <TextBox isFullWidth={false} centeringWithLimitedWidth>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with limited width, centered component and centered text', () => {
         const wrapper = shallow(
-            <TextBox isFullWidth={false} centeringWithLimitedWidth={true} textCenter={true}>
+            <TextBox isFullWidth={false} centeringWithLimitedWidth textCenter>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -71,7 +74,7 @@ describe('TextBox', () => {
         mount(
             <TextBox rootRef={ref}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
 
         expect(ref.current).not.toBeNull();

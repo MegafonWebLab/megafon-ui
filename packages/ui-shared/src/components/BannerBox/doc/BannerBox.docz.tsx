@@ -1,8 +1,7 @@
 import * as React from 'react';
 
-export const DemoSlide = ({ children }) => {
-    return (
-        <div
+export const DemoSlide = ({ children }: Record<string, React.ReactChildren>): JSX.Element => (
+    <div
         style={{
             height: '100%',
             backgroundColor: 'white',
@@ -14,8 +13,7 @@ export const DemoSlide = ({ children }) => {
     >
         {children}
     </div>
-    );
-};
+);
 
 export const blockStyle: React.CSSProperties = {
     padding: '20px 0',

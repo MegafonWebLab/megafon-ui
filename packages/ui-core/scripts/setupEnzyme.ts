@@ -7,8 +7,8 @@ const globalTyped: any = global;
 
 const matchMediaPolyfill = () => ({
     matches: false,
-    addListener: () => {},
-    removeListener: () => {},
+    addListener: null,
+    removeListener: null,
 });
 
 globalTyped.matchMedia = globalTyped.matchMedia || matchMediaPolyfill;

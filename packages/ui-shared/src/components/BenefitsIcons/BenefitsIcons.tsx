@@ -1,8 +1,12 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import './style/BenefitsIcons.less';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-magic-numbers */
 import { Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import './style/BenefitsIcons.less';
 import BenefitsIconsTile from './BenefitsIconsTile';
 import { GridConfig, IconPositionEnum, IconPosition, IBenefit } from './types';
 
@@ -120,7 +124,7 @@ const getColumnConfig = (iconPosition: IconPosition, count: number, index: numbe
     }
 };
 
-const cn = cnCreate('mfui-beta-benefits-icons');
+const cn: (param1?: string | (string | undefined)[]) => string = cnCreate('mfui-beta-benefits-icons');
 const BenefitsIcons: React.FC<IBenefitsIcons> = ({
     rootRef,
     iconPosition = 'left-top',
@@ -135,6 +139,7 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
             <div className={cn('inner')}>
                 <Grid guttersLeft="medium" hAlign={hAlign}>
                     {items.map(({ title, text, icon }, i) => (
+                        // eslint-disable-next-line react/jsx-props-no-spreading
                         <GridColumn {...getColumnConfig(iconPosition, items.length, i)} key={i}>
                             <BenefitsIconsTile
                                 className={classes.item}
@@ -154,7 +159,7 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
 BenefitsIcons.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
     items: PropTypes.arrayOf(
@@ -162,7 +167,7 @@ BenefitsIcons.propTypes = {
             title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
             text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
             icon: PropTypes.node.isRequired,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     className: PropTypes.string,
     classes: PropTypes.shape({

@@ -1,8 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// eslint-disable-next-line import/no-unresolved
 import { TextLink } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
 import './Breadcrumbs.less';
+import React from 'react';
 
 type ItemType = {
     title: string;
@@ -22,8 +23,7 @@ export type Props = {
     items: ItemType[];
     color?: TextColorType;
 };
-
-const cn = cnCreate('mfui-beta-breadcrumbs');
+const cn: (param1?: string | Record<string, unknown>, param2?: string) => string = cnCreate('mfui-beta-breadcrumbs');
 const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, classes = {} }) => (
     <div className={cn({ color }, className)}>
         {items.map(({ title, href }) => (
@@ -45,7 +45,7 @@ Breadcrumbs.propTypes = {
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             href: PropTypes.string,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     color: PropTypes.oneOf(Object.values(TextColor)),
 };

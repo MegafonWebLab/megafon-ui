@@ -1,7 +1,8 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './ContentArea.less';
+/* eslint-disable import/no-unresolved */
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './ContentArea.less';
 
 export type BackgroundColorType =
     | 'white'
@@ -50,8 +51,12 @@ const BACKGROUND_COLORS = [
     'freshAsphalt',
     'fullBlack',
 ];
-
-const cn = cnCreate('mfui-beta-content-area');
+const cn: (
+    param1?: string | Record<string, unknown>,
+    param2?: Record<string, unknown> | (string | undefined)[] | string,
+    param3?: string,
+) => string = cnCreate('mfui-beta-content-area');
+// eslint-disable-next-line react/prefer-stateless-function
 class ContentArea extends React.Component<IConrentAreaProps> {
     static propTypes = {
         outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
@@ -70,7 +75,7 @@ class ContentArea extends React.Component<IConrentAreaProps> {
         innerBackgroundColor: 'transparent',
     };
 
-    render() {
+    render(): JSX.Element {
         const {
             outerBackgroundColor,
             innerBackgroundColor,
@@ -83,10 +88,14 @@ class ContentArea extends React.Component<IConrentAreaProps> {
         return (
             <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
                 <div
-                    className={cn('inner', {
-                        'disable-indents': disableIndents,
-                        color: innerBackgroundColor,
-                    }, classes.inner)}
+                    className={cn(
+                        'inner',
+                        {
+                            'disable-indents': disableIndents,
+                            color: innerBackgroundColor,
+                        },
+                        classes.inner,
+                    )}
                 >
                     {children}
                 </div>

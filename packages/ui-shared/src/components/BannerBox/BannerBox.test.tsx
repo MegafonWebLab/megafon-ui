@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import BannerBox from './BannerBox';
 
 describe('<BannerBox />', () => {
@@ -7,7 +9,7 @@ describe('<BannerBox />', () => {
         const wrapper = shallow(
             <BannerBox>
                 <div>test</div>
-            </BannerBox>
+            </BannerBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -19,13 +21,14 @@ describe('<BannerBox />', () => {
                 loop
                 autoPlay
                 autoPlayDelay={1000}
-                navTheme={'green'}
+                navTheme="green"
                 onNextClick={jest.fn()}
                 onPrevClick={jest.fn()}
                 onDotClick={jest.fn()}
-                onChange={jest.fn()}>
+                onChange={jest.fn()}
+            >
                 <div>test</div>
-            </BannerBox>
+            </BannerBox>,
         );
 
         expect(wrapper).toMatchSnapshot();

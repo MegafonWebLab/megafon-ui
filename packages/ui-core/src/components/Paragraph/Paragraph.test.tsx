@@ -1,5 +1,8 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Paragraph, { IParagraphProps } from './Paragraph';
 
 const props: IParagraphProps = {
@@ -24,28 +27,28 @@ describe('<Paragraph />', () => {
     it('testing align props', () => {
         const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
 
-        wrapper.setProps({align: 'center'});
+        wrapper.setProps({ align: 'center' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({align: 'right'});
+        wrapper.setProps({ align: 'right' });
         expect(wrapper).toMatchSnapshot();
     });
 
     it('testing color props', () => {
         const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
 
-        wrapper.setProps({color: 'green'});
+        wrapper.setProps({ color: 'green' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({color: 'clearWhite'});
+        wrapper.setProps({ color: 'clearWhite' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({color: 'spbSky0'});
+        wrapper.setProps({ color: 'spbSky0' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({color: 'spbSky1'});
+        wrapper.setProps({ color: 'spbSky1' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({color: 'spbSky2'});
+        wrapper.setProps({ color: 'spbSky2' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({color: 'freshAsphalt'});
+        wrapper.setProps({ color: 'freshAsphalt' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({color: 'fullBlack'});
+        wrapper.setProps({ color: 'fullBlack' });
         expect(wrapper).toMatchSnapshot();
     });
 });

@@ -1,9 +1,11 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import './NavArrow.less';
 import { cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from 'icons/System/24/Arrow_left_24.svg';
 import ArrowRight from 'icons/System/24/Arrow_right_24.svg';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
 export const Theme = {
     PURPLE: 'purple',
@@ -26,7 +28,7 @@ export interface INavArrowProps {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-beta-nav-arrow');
+const cn: (param1?: string | Record<string, unknown>, param2?: string) => string = cnCreate('mfui-beta-nav-arrow');
 const NavArrow: React.FC<INavArrowProps> = ({
     className,
     view = View.PREV,
@@ -40,12 +42,12 @@ const NavArrow: React.FC<INavArrowProps> = ({
                 return <ArrowLeft className={cn('icon')} />;
 
             default:
-                return <ArrowRight className={cn('icon')}/>;
+                return <ArrowRight className={cn('icon')} />;
         }
     }, [view]);
 
     return (
-        <button className={cn({ theme }, className)} onClick={onClick} disabled={disabled}>
+        <button type="button" className={cn({ theme }, className)} onClick={onClick} disabled={disabled}>
             {renderIcon()}
         </button>
     );

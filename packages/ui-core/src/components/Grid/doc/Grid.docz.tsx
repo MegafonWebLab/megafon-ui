@@ -4,3 +4,5 @@ export const itemView = {
     textAlign: 'center',
     padding: '5px 10px',
 };
+
+export default itemView;

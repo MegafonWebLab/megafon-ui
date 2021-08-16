@@ -1,7 +1,8 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './RadioButton.less';
+/* eslint-disable import/no-unresolved */
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './RadioButton.less';
 
 export interface IRadioButtonProps {
     /** Значение */
@@ -30,7 +31,12 @@ export interface IRadioButtonProps {
     inputRef?: React.Ref<HTMLInputElement>;
 }
 
-const cn = cnCreate('mfui-beta-radio-button');
+const cn: (
+    param1?: string | (string | undefined)[],
+    param2?: Record<string, unknown> | string,
+    param3?: string,
+) => string = cnCreate('mfui-beta-radio-button');
+
 class RadioButton extends React.Component<IRadioButtonProps> {
     static propTypes = {
         value: PropTypes.string.isRequired,
@@ -49,7 +55,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         onChange: PropTypes.func,
         inputRef: PropTypes.oneOfType([
             PropTypes.func,
-            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
         ]),
     };
 
@@ -58,13 +64,13 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         isDisabled: false,
     };
 
-    handleChange = () => {
+    handleChange = (): void => {
         const { onChange, value } = this.props;
 
         onChange && onChange(value);
-    }
+    };
 
-    render() {
+    render(): JSX.Element {
         const {
             isChecked,
             isDisabled,
@@ -83,11 +89,18 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         return (
             <div className={cn(rootClassNames)}>
                 <label
-                    className={cn('label', {
-                        disabled: isDisabled,
-                    }, classes.label)}
+                    htmlFor="input"
+                    className={cn(
+                        'label',
+                        {
+                            disabled: isDisabled,
+                        },
+                        classes.label,
+                    )}
                 >
                     <input
+                        id="input"
+                        // eslint-disable-next-line react/jsx-props-no-spreading
                         {...checkedProp}
                         className={cn('input')}
                         type="radio"
@@ -98,7 +111,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                         ref={inputRef as React.Ref<HTMLInputElement>}
                     />
                     <div className={cn('custom-input', classes.customInput)} />
-                    {children && <div className={cn('text', { 'size': textSize }, classes.labelText)}>{children}</div>}
+                    {children && <div className={cn('text', { size: textSize }, classes.labelText)}>{children}</div>}
                 </label>
             </div>
         );

@@ -1,7 +1,10 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { shallow } from 'enzyme';
-import Notification, { INotificationProps, NotificationTypes, ShadowTypes } from './Notification';
 import Attention from 'icons/System/16/Attention_16.svg';
+import * as React from 'react';
+import Notification, { INotificationProps, NotificationTypes, ShadowTypes } from './Notification';
 
 const props: INotificationProps = {
     className: 'notification',
@@ -18,16 +21,12 @@ const props: INotificationProps = {
 
 describe('<Notification />', () => {
     it('renders component', () => {
-        const wrapper = shallow(
-            <Notification>Some test text</Notification>
-        );
+        const wrapper = shallow(<Notification>Some test text</Notification>);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders colored Notification with Props', () => {
-        const wrapper = shallow(
-            <Notification {...props}>Some test text</Notification>
-        );
+        const wrapper = shallow(<Notification {...props}>Some test text</Notification>);
         expect(wrapper).toMatchSnapshot();
     });
 

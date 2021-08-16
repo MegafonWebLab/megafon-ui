@@ -1,6 +1,9 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
 import Carousel, { ICarouselProps, NavTheme, EffectTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
 
@@ -35,7 +38,7 @@ const props = {
     onChange: jest.fn(),
 } as ICarouselProps;
 
-const cnCarousel = cnCreate('.mfui-beta-carousel');
+const cnCarousel: (param1?: string) => string = cnCreate('.mfui-beta-carousel');
 
 describe('<Carousel />', () => {
     afterEach(() => {
@@ -45,9 +48,13 @@ describe('<Carousel />', () => {
     it('should render with default props', () => {
         const wrapper = shallow(
             <Carousel>
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Carousel>
+                <DemoSlide>
+                    <b>1</b>
+                </DemoSlide>
+                <DemoSlide>
+                    <b>2</b>
+                </DemoSlide>
+            </Carousel>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -61,9 +68,13 @@ describe('<Carousel />', () => {
                     768: { slidesPerView: 'auto', spaceBetween: 2 },
                 }}
             >
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Carousel>
+                <DemoSlide>
+                    <b>1</b>
+                </DemoSlide>
+                <DemoSlide>
+                    <b>2</b>
+                </DemoSlide>
+            </Carousel>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -72,15 +83,16 @@ describe('<Carousel />', () => {
     it('should call onNextClick', () => {
         const wrapper = mount(
             <Carousel {...props}>
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Carousel>
+                <DemoSlide>
+                    <b>1</b>
+                </DemoSlide>
+                <DemoSlide>
+                    <b>2</b>
+                </DemoSlide>
+            </Carousel>,
         );
 
-        wrapper
-            .find(cnCarousel('arrow'))
-            .last()
-            .simulate('click');
+        wrapper.find(cnCarousel('arrow')).last().simulate('click');
 
         expect(props.onNextClick).toBeCalled();
     });
@@ -88,15 +100,16 @@ describe('<Carousel />', () => {
     it('should call onPrevClick', () => {
         const wrapper = mount(
             <Carousel {...props}>
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Carousel>
+                <DemoSlide>
+                    <b>1</b>
+                </DemoSlide>
+                <DemoSlide>
+                    <b>2</b>
+                </DemoSlide>
+            </Carousel>,
         );
 
-        wrapper
-            .find(cnCarousel('arrow'))
-            .first()
-            .simulate('click');
+        wrapper.find(cnCarousel('arrow')).first().simulate('click');
 
         expect(props.onPrevClick).toBeCalled();
     });
@@ -104,22 +117,29 @@ describe('<Carousel />', () => {
     it('should call onChange', () => {
         const wrapper = mount(
             <Carousel {...props}>
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Carousel>
+                <DemoSlide>
+                    <b>1</b>
+                </DemoSlide>
+                <DemoSlide>
+                    <b>2</b>
+                </DemoSlide>
+            </Carousel>,
         );
 
-        wrapper
-            .find(cnCarousel('arrow'))
-            .last()
-            .simulate('click');
+        wrapper.find(cnCarousel('arrow')).last().simulate('click');
 
         expect(props.onChange).toBeCalled();
     });
 
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
-        mount(<Carousel {...props} rootRef={ref}><DemoSlide>1</DemoSlide></Carousel>);
+        mount(
+            <Carousel {...props} rootRef={ref}>
+                <DemoSlide>
+                    <b>1</b>
+                </DemoSlide>
+            </Carousel>,
+        );
 
         expect(ref.current).not.toBeNull();
     });

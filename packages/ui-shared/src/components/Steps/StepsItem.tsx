@@ -1,7 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
 import { Paragraph } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 import './StepsItem.less';
 
@@ -12,12 +13,10 @@ interface IStepsItem {
     text: string | React.ReactNode[];
 }
 
-const cn = cnCreate('mfui-beta-steps-item');
+const cn: (param1?: string) => string = cnCreate('mfui-beta-steps-item');
 const StepsItem: React.FC<IStepsItem> = ({ index, text }) => (
     <div className={cn()}>
-        <span className={cn('step-number')}>
-            {index}
-        </span>
+        <span className={cn('step-number')}>{index}</span>
         <div className={cn('text-wrapper')}>
             <Paragraph hasMargin={false}>{text}</Paragraph>
         </div>

@@ -1,8 +1,11 @@
-import React, { createRef } from 'react';
-import { mount, shallow } from 'enzyme';
-import Button, { IButtonProps } from './Button';
-import Balance from 'icons/Basic/24/Balance_24.svg';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { detectTouch } from '@megafon/ui-helpers';
+import { mount, shallow } from 'enzyme';
+import Balance from 'icons/Basic/24/Balance_24.svg';
+import React, { createRef } from 'react';
+import Button, { IButtonProps } from './Button';
 
 jest.mock('@megafon/ui-helpers', () => ({
     ...jest.requireActual('@megafon/ui-helpers'),
@@ -57,13 +60,7 @@ describe('<Button />', () => {
 
         it('should render with different height for resolutions', () => {
             const wrapper = shallow(
-                <Button
-                    {...props}
-                    sizeWide="large"
-                    sizeDesktop="medium"
-                    sizeTablet="medium"
-                    sizeMobile="small"
-                />
+                <Button {...props} sizeWide="large" sizeDesktop="medium" sizeTablet="medium" sizeMobile="small" />,
             );
             expect(wrapper).toMatchSnapshot();
         });
@@ -93,7 +90,11 @@ describe('<Button />', () => {
         });
 
         it('should render with custom icon and without arrow icon on the right', () => {
-            const wrapper = shallow(<Button showArrow icon={<Balance />}>left icon</Button>);
+            const wrapper = shallow(
+                <Button showArrow icon={<Balance />}>
+                    left icon
+                </Button>,
+            );
             expect(wrapper.exists(`${cn}__icon-arrow`)).toBeFalsy();
         });
 
@@ -151,13 +152,7 @@ describe('<Button />', () => {
 
         it('should render loader with small size on mobile resolution and medium size on the rest', () => {
             const wrapper = shallow(
-                <Button
-                    sizeWide="large"
-                    sizeDesktop="large"
-                    sizeTablet="medium"
-                    sizeMobile="small"
-                    showLoader
-                />
+                <Button sizeWide="large" sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showLoader />,
             );
             expect(wrapper).toMatchSnapshot();
         });

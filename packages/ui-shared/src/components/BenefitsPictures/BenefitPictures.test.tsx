@@ -1,5 +1,8 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import BenefitsPictures, { IBenefitsPicturesProps } from './BenefitsPictures';
 import { fourItems, threeItems, twoItems } from './doc/BenefitsPictures.docz';
 
@@ -14,11 +17,7 @@ const props: IBenefitsPicturesProps = {
     },
 };
 
-const itemsSet = [
-    twoItems,
-    threeItems,
-    fourItems,
-];
+const itemsSet = [twoItems, threeItems, fourItems];
 
 describe('<BenefitsPictures />', () => {
     it('renders BenefitsPictures', () => {
@@ -28,14 +27,14 @@ describe('<BenefitsPictures />', () => {
 
     it('render with center horizontal align', () => {
         itemsSet.forEach(items => {
-            const wrapper = shallow(<BenefitsPictures {...props} items={items} hAlign={'left'} />);
+            const wrapper = shallow(<BenefitsPictures {...props} items={items} hAlign="left" />);
             expect(wrapper).toMatchSnapshot();
         });
     });
 
     it('render with medium grid gap', () => {
         itemsSet.forEach(items => {
-            const wrapper = shallow(<BenefitsPictures {...props} items={items} gridGap={'medium'} />);
+            const wrapper = shallow(<BenefitsPictures {...props} items={items} gridGap="medium" />);
             expect(wrapper).toMatchSnapshot();
         });
     });

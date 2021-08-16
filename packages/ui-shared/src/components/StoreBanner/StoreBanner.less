@@ -41,18 +41,19 @@
         @{b}__device-mask {
             position: relative;
             z-index: 2;
+
             background-image: url('./img/new-iphone.png');
         }
 
         @{b}__screen {
-            z-index: 1;
             top: 13px;
+            z-index: 1;
+
             width: 87%;
 
             @media @mobileB {
                 top: 10px;
             }
-
             @media @mobileSM {
                 top: 33px;
             }
@@ -66,12 +67,12 @@
 
         @{b}__screen {
             top: 59px;
+
             width: 86%;
 
             @media @mobileB {
                 top: 48px;
             }
-
             @media @mobileSM {
                 top: 64px;
             }
@@ -94,12 +95,12 @@
     &_mask_black-iphone {
         @{b}__screen {
             top: 57px;
+
             width: 87%;
 
             @media @mobileB {
                 top: 47px;
             }
-
             @media @mobileSM {
                 top: 63px;
             }
@@ -130,43 +131,42 @@
         @media @mobileB {
             padding-right: 10px;
         }
-
         @media @mobileSM {
+            padding-right: 15px;
             padding-bottom: 32px;
             padding-left: 15px;
-            padding-right: 15px;
+
             text-align: center;
         }
     }
 
     &__device-mask {
         height: 100%;
+
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     &__device-wrapper {
-        width: 235px;
         position: relative;
         bottom: calc(2 * (@gridVerticalPadding - @gridBorderWidth));
+
+        width: 235px;
         height: calc(100% + 2 * @gridVerticalPadding + @containerVerticalPadding);
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
         overflow: hidden;
 
         @media @desktopS {
             width: 260px;
         }
-
         @media @mobile {
             bottom: 0;
         }
-
         @media @mobileB {
             width: 196px;
             height: calc(100% + @gridVerticalPadding);
         }
-
         @media @mobileSM {
             width: 163px;
             height: 222px;
@@ -209,8 +209,8 @@
     }
 
     &__stores {
-        flex-grow: 1;
         display: flex;
+        flex-grow: 1;
         flex-wrap: wrap;
 
         @media @mobileSM {
@@ -229,6 +229,7 @@
     &__screen {
         position: absolute;
         left: 50%;
+
         transform: translateX(-50%);
     }
 }

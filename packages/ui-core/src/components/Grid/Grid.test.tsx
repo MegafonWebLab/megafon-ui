@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Grid from './Grid';
 import GridColumn from './GridColumn';
 
@@ -9,7 +11,7 @@ describe('<Grid />', () => {
             <Grid>
                 <GridColumn>child1</GridColumn>
                 <GridColumn>child2</GridColumn>
-            </Grid>
+            </Grid>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -22,11 +24,11 @@ describe('<Grid />', () => {
                 guttersLeft="large"
                 guttersBottom="medium"
                 multiRow={false}
-                className={'custom-class-name'}
+                className="custom-class-name"
             >
                 <GridColumn>child1</GridColumn>
                 <GridColumn>child2</GridColumn>
-            </Grid>
+            </Grid>,
         );
         expect(wrapper).toMatchSnapshot();
     });

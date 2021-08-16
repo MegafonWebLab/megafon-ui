@@ -1,6 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
 import './PaginationButton.less';
 
 type ValueType = string | number;
@@ -14,7 +15,7 @@ export interface IPaginationButton {
     value?: ValueType;
 }
 
-const cn = cnCreate('mfui-beta-pagination-button');
+const cn: (param1?: Record<string, unknown>, param2?: string) => string = cnCreate('mfui-beta-pagination-button');
 const PaginationButton: React.FC<IPaginationButton> = ({
     isDisabled = false,
     isActive = false,
@@ -30,6 +31,7 @@ const PaginationButton: React.FC<IPaginationButton> = ({
 
     return (
         <button
+            type="button"
             className={cn({ active: isActive, theme }, className)}
             disabled={isDisabled}
             onClick={handleClick}

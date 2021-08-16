@@ -1,7 +1,10 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { mount, shallow } from 'enzyme';
-import Container, { BackgroundColors } from './Container';
+import * as React from 'react';
 import TitleDescriptionBox from '../TitleDescriptionBox/TitleDescriptionBox';
+import Container, { BackgroundColors } from './Container';
 
 const optionalProps = {
     id: 'id',
@@ -13,7 +16,11 @@ const optionalProps = {
 
 describe('Container', () => {
     it('should renders component with default props', () => {
-        const wrapper = shallow(<Container><TitleDescriptionBox title="title"/></Container>);
+        const wrapper = shallow(
+            <Container>
+                <TitleDescriptionBox title="title" />
+            </Container>,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -22,7 +29,7 @@ describe('Container', () => {
         const wrapper = shallow(
             <Container {...optionalProps}>
                 <TitleDescriptionBox title="title" />
-            </Container>
+            </Container>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -33,8 +40,8 @@ describe('Container', () => {
 
         mount(
             <Container rootRef={ref}>
-                <TitleDescriptionBox title="title"/>
-            </Container>
+                <TitleDescriptionBox title="title" />
+            </Container>,
         );
 
         expect(ref.current).not.toBeNull();

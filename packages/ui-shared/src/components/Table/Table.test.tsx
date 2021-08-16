@@ -1,9 +1,12 @@
-import * as React from 'react';
-import { mount, shallow } from 'enzyme';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { cnCreate } from '@megafon/ui-helpers';
+import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import Table, { ITable } from './Table';
-import TableRow from './TableRow';
 import TableCell from './TableCell';
+import TableRow from './TableRow';
 
 const cn = cnCreate('mfui-beta-table');
 
@@ -25,7 +28,7 @@ describe('<Table />', () => {
                     <TableCell>Текст 1</TableCell>
                     <TableCell>Текст 2</TableCell>
                 </TableRow>
-            </Table>
+            </Table>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -42,7 +45,7 @@ describe('<Table />', () => {
                     <TableCell>Текст 1</TableCell>
                     <TableCell>Текст 2</TableCell>
                 </TableRow>
-            </Table>
+            </Table>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -59,7 +62,7 @@ describe('<Table />', () => {
                     <TableCell>Текст&nbsp;1</TableCell>
                     <TableCell>Текст&nbsp;2</TableCell>
                 </TableRow>
-            </Table>
+            </Table>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -84,7 +87,7 @@ describe('<Table />', () => {
                         <span>Текст 2</span>
                     </TableCell>
                 </TableRow>
-            </Table>
+            </Table>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -104,7 +107,7 @@ describe('<Table />', () => {
                     <TableCell>Текст 1</TableCell>
                     <TableCell>Текст 2</TableCell>
                 </TableRow>
-            </Table>
+            </Table>,
         );
 
         expect(wrapper.children().hasClass(`${cn()}_touch`)).toBeTruthy();

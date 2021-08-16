@@ -1,15 +1,18 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { IContent, ButtonColor, TextColor } from '../VideoBanner';
 import imageDesktop from './bg_grey_desktop.png';
 import imageMobile from './bg_grey_mobile.png';
-import video from './video.mp4';
 import imageWhiteDesktop from './image_white_desktop.png';
 import imageWhiteMobile from './image_white_mobile.png';
+import video from './video.mp4';
 
 const youtubeVideoId = '2Sps5MnvlKM';
 
 const contentWithDefaultTextColor: IContent = {
     title: 'Текст ≈40 символов. Короткие слова',
-    description: 'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+    description:
+        'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     buttonHref: '#',
     buttonTitle: 'Текст в кнопке',
     linkTitle: 'Личный кабинет услуги',
@@ -33,7 +36,7 @@ const contentWithPurpleButton: IContent = {
     buttonColor: ButtonColor.PURPLE,
 };
 
-const { buttonTitle, ...contentWithoutButton }: IContent = content;
+const { ...contentWithoutButton }: IContent = content;
 
 const images = {
     imageMobile: imageWhiteMobile,
@@ -68,5 +71,5 @@ export {
     imageMobile,
     imageDesktop,
     images,
-    breadcrumbs
+    breadcrumbs,
 };

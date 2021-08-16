@@ -1,12 +1,7 @@
 import * as React from 'react';
 
 interface ISwitcherWrapperProps {
-    children: (
-        switcherProps: {
-            checked: boolean;
-            onChange: () => void;
-        }
-    ) => JSX.Element;
+    children: (switcherProps: { checked: boolean; onChange: () => void }) => JSX.Element;
 }
 
 export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
@@ -16,12 +11,16 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
         setChecked(!checked);
     };
 
+    const { children } = props;
+
     return (
         <div style={{ padding: '20px 15px' }}>
-            {props.children({
+            {children({
                 checked,
                 onChange: handleChange,
             })}
         </div>
     );
 };
+
+export default SwitcherWrapper;

@@ -1,7 +1,10 @@
+/* eslint-disable no-magic-numbers */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+import throttleTime from 'constants/throttleTime';
+import throttle from 'lodash.throttle';
 import React from 'react';
 import getRange from './helpers';
-import throttle from 'lodash.throttle';
-import throttleTime from 'constants/throttleTime';
 
 export const Button = {
     HIDDEN: 'HIDDEN',
@@ -23,7 +26,7 @@ type GetItemsParamsType = {
     neighbourCount: number;
 };
 
-const getItems = ({ totalPages, activePage,  maxButtonsCount, neighbourCount }: GetItemsParamsType) => {
+const getItems = ({ totalPages, activePage, maxButtonsCount, neighbourCount }: GetItemsParamsType) => {
     const isMoreThenMaxBtnsCount = totalPages > maxButtonsCount;
     const lastPage = totalPages;
 
@@ -35,13 +38,13 @@ const getItems = ({ totalPages, activePage,  maxButtonsCount, neighbourCount }: 
     const hasRightHiddenBtns = lastPage > activePage + neighbourCount + 2;
 
     switch (true) {
-        case (!hasLeftHiddenBtns && hasRightHiddenBtns): {
+        case !hasLeftHiddenBtns && hasRightHiddenBtns: {
             const range = getRange(Button.FIRST, maxButtonsCount - 2);
 
             return [...range, Button.HIDDEN, lastPage];
         }
 
-        case (hasLeftHiddenBtns && !hasRightHiddenBtns): {
+        case hasLeftHiddenBtns && !hasRightHiddenBtns: {
             const range = getRange(totalPages - (2 + 2 * neighbourCount), totalPages);
 
             return [Button.FIRST, Button.HIDDEN, ...range];
@@ -55,7 +58,7 @@ const getItems = ({ totalPages, activePage,  maxButtonsCount, neighbourCount }: 
     }
 };
 
-const usePagination = (totalPages: number, activePage: number) => {
+const usePagination = (totalPages: number, activePage: number): (string | number)[] => {
     const [neighbourCount, setNeighbourCount] = React.useState(NeighbourCount.MAIN);
     const maxButtonsCount = 2 * neighbourCount + BUTTON_RATIO;
     const paginationItems = getItems({

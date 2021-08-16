@@ -1,8 +1,9 @@
-import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
-import './Container.less';
+/* eslint-disable import/no-unresolved */
 import { ContentArea } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React, { Ref } from 'react';
+import './Container.less';
 
 export const BackgroundColors = {
     DEFAULT: 'default',
@@ -28,8 +29,8 @@ type Props = {
     /** Отключить отступ снизу */
     disablePaddingBottom?: boolean;
 };
-
-const cn = cnCreate('mfui-beta-container');
+const cn: (param1?: Record<string, unknown>, param2?: (string | undefined)[]) => string =
+    cnCreate('mfui-beta-container');
 const Container: React.FC<Props> = ({
     backgroundColor = 'default',
     rootRef,
@@ -38,14 +39,22 @@ const Container: React.FC<Props> = ({
     children,
     disablePaddingTop,
     disablePaddingBottom,
-}) =>
-    (
-        <div className={cn({'bg-color': backgroundColor, 'disable-padding-top': disablePaddingTop, 'disable-padding-bottom': disablePaddingBottom }, [className])} ref={rootRef} id={id}>
-            <ContentArea>
-                {children}
-            </ContentArea>
-        </div>
-    );
+}) => (
+    <div
+        className={cn(
+            {
+                'bg-color': backgroundColor,
+                'disable-padding-top': disablePaddingTop,
+                'disable-padding-bottom': disablePaddingBottom,
+            },
+            [className],
+        )}
+        ref={rootRef}
+        id={id}
+    >
+        <ContentArea>{children}</ContentArea>
+    </div>
+);
 
 Container.propTypes = {
     id: PropTypes.string,
@@ -53,7 +62,7 @@ Container.propTypes = {
     backgroundColor: PropTypes.oneOf(Object.values(BackgroundColors)),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     disablePaddingTop: PropTypes.bool,
     disablePaddingBottom: PropTypes.bool,

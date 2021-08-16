@@ -1,6 +1,8 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable react/jsx-props-no-spreading */
 import { Banner } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as React from 'react';
 
 type BannerBoxProps = React.ComponentProps<typeof Banner>;
 

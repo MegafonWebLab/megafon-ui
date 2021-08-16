@@ -1,6 +1,8 @@
-import * as React from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+// eslint-disable-next-line import/no-unresolved
 import { Tabs } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as React from 'react';
 
 type TabsPropsType = React.ComponentProps<typeof Tabs> & {
     /** Ссылка на корневой элемент */

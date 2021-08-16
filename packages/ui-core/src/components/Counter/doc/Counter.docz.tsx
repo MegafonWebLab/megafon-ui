@@ -8,10 +8,7 @@ export const flexStyle = {
 };
 
 interface IDemoCounterWrapperProps {
-    children: (prop: {
-        onChange: (value: number) => void;
-        initialValue: number;
-    }) => JSX.Element;
+    children: (prop: { onChange: (value: number) => void; initialValue: number }) => JSX.Element;
     initialValue: number;
 }
 
@@ -23,7 +20,7 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initial
             <p style={{ marginTop: 0 }}>Value: {value}</p>
             {children({
                 onChange: setValue,
-                initialValue: initialValue,
+                initialValue,
             })}
         </div>
     );

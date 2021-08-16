@@ -1,8 +1,10 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import CheckedIcon from 'icons/System/16/Checked_16.svg';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import './Checkbox.less';
-import CheckedIcon from 'icons/System/16/Checked_16.svg';
 
 export interface ICheckboxProps extends IFilterDataAttrs {
     /** Цвет чекбокса */
@@ -32,9 +34,12 @@ export interface ICheckboxProps extends IFilterDataAttrs {
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
-
-const cn = cnCreate('mfui-beta-checkbox');
-class Checkbox extends React.Component<ICheckboxProps, {}> {
+const cn: (
+    param1?: string,
+    param2?: Record<string, unknown> | (string | undefined)[] | string,
+    param3?: string,
+) => string = cnCreate('mfui-beta-checkbox');
+class Checkbox extends React.Component<ICheckboxProps, Record<string, never>> {
     static propTypes = {
         className: PropTypes.string,
         fontSize: PropTypes.oneOf(['regular', 'small']),
@@ -44,16 +49,8 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
         checked: PropTypes.bool,
         disabled: PropTypes.bool,
         error: PropTypes.bool,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
-        extraContent: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
+        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
+        extraContent: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
         onChange: PropTypes.func,
     };
@@ -69,9 +66,9 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
     handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onChange } = this.props;
         onChange && onChange(e);
-    }
+    };
 
-    render() {
+    render(): JSX.Element {
         const {
             className,
             fontSize,
@@ -98,12 +95,13 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                         disabled,
                         error,
                     },
-                    className
+                    className,
                 )}
+                // eslint-disable-next-line react/jsx-props-no-spreading
                 {...filterDataAttrs(dataAttrs)}
             >
                 <div className={cn('inner', [classes?.inner])}>
-                    <label className={cn('label', { 'no-touch': !this.isTouch })}>
+                    <label htmlFor={' '} className={cn('label', { 'no-touch': !this.isTouch })}>
                         <input
                             className={cn('input')}
                             type="checkbox"

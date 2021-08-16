@@ -1,7 +1,10 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { shallow } from 'enzyme';
-import DownloadLinks from './DownloadLinks';
+import * as React from 'react';
 import DownloadLink, { IDownloadLink } from './DownloadLink';
+import DownloadLinks from './DownloadLinks';
 
 const props: IDownloadLink = {
     href: 'href',
@@ -12,7 +15,11 @@ const props: IDownloadLink = {
 
 describe('DownloadLinks', () => {
     it('render component with one column', () => {
-        const wrapper = shallow(<DownloadLinks><DownloadLink {...props} /></DownloadLinks>);
+        const wrapper = shallow(
+            <DownloadLinks>
+                <DownloadLink {...props} />
+            </DownloadLinks>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -22,7 +29,8 @@ describe('DownloadLinks', () => {
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
-            </DownloadLinks>);
+            </DownloadLinks>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -34,7 +42,8 @@ describe('DownloadLinks', () => {
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
-            </DownloadLinks>);
+            </DownloadLinks>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 });

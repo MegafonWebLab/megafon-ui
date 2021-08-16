@@ -1,5 +1,9 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable no-magic-numbers */
+/* eslint-disable react/jsx-props-no-spreading */
 import { shallow, mount } from 'enzyme';
+import * as React from 'react';
 import Calendar, { ICalendarProps } from './Calendar';
 
 const props: ICalendarProps = {
@@ -29,11 +33,7 @@ describe('<Calendar />', () => {
             jest.spyOn(global.Date, 'now').mockImplementationOnce(() => new Date(2020, 11, 31).valueOf());
 
             const wrapper = mount(
-                <Calendar
-                    {...props}
-                    startDate={new Date(2020, 1, 1)}
-                    endDate={new Date(2020, 1, 27)}
-                />
+                <Calendar {...props} startDate={new Date(2020, 1, 1)} endDate={new Date(2020, 1, 27)} />,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -42,7 +42,7 @@ describe('<Calendar />', () => {
 
     describe('onChange', () => {
         it('calls onChange on date change', () => {
-            const { minBookingDate, maxBookingDate, ...restProps } = props;
+            const { ...restProps } = props;
             const onChange = jest.fn();
 
             const wrapper = mount(<Calendar {...restProps} onChange={onChange} />);
@@ -95,17 +95,23 @@ describe('<Calendar />', () => {
 
             wrapper.find('.mfui-beta-day').at(8).simulate('click');
 
-            expect(onChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-14T00:00:00.000Z'));
+            expect(onChange).toHaveBeenCalledWith(
+                new Date('2020-02-09T00:00:00.000Z'),
+                new Date('2020-02-14T00:00:00.000Z'),
+            );
 
             wrapper.find('.mfui-beta-day').at(12).simulate('click');
 
-            expect(onChange).toHaveBeenCalledWith(new Date('2020-02-09T00:00:00.000Z'), new Date('2020-02-13T00:00:00.000Z'));
+            expect(onChange).toHaveBeenCalledWith(
+                new Date('2020-02-09T00:00:00.000Z'),
+                new Date('2020-02-13T00:00:00.000Z'),
+            );
         });
 
         it('shouldnt call onChange if startDate or endDate props changed', () => {
             const onChange = jest.fn();
 
-            const wrapper = mount(<Calendar {...props} onChange={onChange} />);
+            mount(<Calendar {...props} onChange={onChange} />);
 
             expect(onChange).toBeCalledTimes(0);
         });

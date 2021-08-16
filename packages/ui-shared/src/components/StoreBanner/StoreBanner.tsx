@@ -1,7 +1,10 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-props-no-spreading */
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import * as React from 'react';
 import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType } from '../StoreButton/StoreButton';
 import './StoreBanner.less';
 
@@ -59,8 +62,11 @@ export interface IStoreBannerProps {
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
 }
-
-const cn = cnCreate('mfui-beta-store-banner');
+const cn: (
+    param1?: string | Record<string, unknown>,
+    param2?: (string | undefined)[] | Record<string, unknown> | string,
+    param3?: string,
+) => string = cnCreate('mfui-beta-store-banner');
 const StoreBanner: React.FC<IStoreBannerProps> = ({
     title,
     text,
@@ -85,11 +91,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
         <div className={cn('container')}>
             <div className={cn('grid')}>
                 <Grid>
-                    <GridColumn
-                        all="6"
-                        mobile="12"
-                        rightOffsetWide="1"
-                    >
+                    <GridColumn all="6" mobile="12" rightOffsetWide="1">
                         <div className={cn('content')}>
                             <Header as="h2" className={cn('title')} color="inherit">
                                 {title}
@@ -98,9 +100,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                 {text}
                             </Paragraph>
                             <div className={cn('links')}>
-                                {qrCode && (
-                                    <img src={qrCode} className={cn('qr-code')} alt="QR-код"/>
-                                )}
+                                {qrCode && <img src={qrCode} className={cn('qr-code')} alt="QR-код" />}
                                 <div className={cn('stores')}>
                                     <StoreButton
                                         theme={StoreButtonTheme.APP_STORE}

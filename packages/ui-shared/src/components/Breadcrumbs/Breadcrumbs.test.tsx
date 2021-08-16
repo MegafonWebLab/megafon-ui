@@ -1,5 +1,7 @@
-import React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import React from 'react';
 import Breadcrumbs, { TextColor } from './Breadcrumbs';
 
 const items = [
@@ -31,7 +33,7 @@ describe('Breadcrumbs', () => {
                 className="custom-class-name"
                 classes={{ item: 'item-custom-class-name' }}
                 color={TextColor.WHITE}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();

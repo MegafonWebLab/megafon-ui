@@ -1,5 +1,7 @@
-import React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import React from 'react';
 import PaginationNavigation from './PaginationNavigation';
 
 describe('PaginationNavigation', () => {

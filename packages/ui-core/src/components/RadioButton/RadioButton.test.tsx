@@ -1,5 +1,6 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */ import { shallow, mount } from 'enzyme';
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
 import RadioButton, { IRadioButtonProps } from './RadioButton';
 
 const props: IRadioButtonProps = {
@@ -26,13 +27,8 @@ describe('<RadioButton />', () => {
         });
 
         it('renders RadioButton with props', () => {
-            const wrapper = shallow(
-                <RadioButton
-                    {...props}
-                >
-                    Тестовая строка
-                </RadioButton>
-            );
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            const wrapper = shallow(<RadioButton {...props}>Тестовая строка</RadioButton>);
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -44,7 +40,9 @@ describe('<RadioButton />', () => {
             const value = 'value-text';
 
             const wrapper = shallow(
-                <RadioButton name="group" value={value} onChange={handleChange}>Тестовая строка</RadioButton>
+                <RadioButton name="group" value={value} onChange={handleChange}>
+                    Тестовая строка
+                </RadioButton>,
             );
 
             wrapper.find('.mfui-beta-radio-button__input').simulate('change');

@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import ContentArea, { IConrentAreaProps, BackgroundColorType } from './ContentArea';
 
 const props: Partial<IConrentAreaProps> = {
@@ -28,9 +30,10 @@ const backgroundColors = [
 describe('<ContentArea />', () => {
     const getWrapper = (additionalProps?: Partial<IConrentAreaProps>) =>
         shallow(
+            // eslint-disable-next-line react/jsx-props-no-spreading
             <ContentArea {...additionalProps}>
                 <span>child</span>
-            </ContentArea>
+            </ContentArea>,
         );
 
     it('renders correctly with default props', () => {
@@ -46,11 +49,7 @@ describe('<ContentArea />', () => {
     backgroundColors.forEach(color => {
         it(`render component when outerBackgroundColor with ${color}`, () => {
             const wrapper = shallow(
-                <ContentArea
-                    outerBackgroundColor={color as BackgroundColorType}
-                >
-                    some content
-                </ContentArea>
+                <ContentArea outerBackgroundColor={color as BackgroundColorType}>some content</ContentArea>,
             );
             expect(wrapper).toMatchSnapshot();
         });
@@ -59,11 +58,7 @@ describe('<ContentArea />', () => {
     backgroundColors.forEach(color => {
         it(`render component when innerBackgroundColor with ${color}`, () => {
             const wrapper = shallow(
-                <ContentArea
-                    innerBackgroundColor={color as BackgroundColorType}
-                >
-                    some content
-                </ContentArea>
+                <ContentArea innerBackgroundColor={color as BackgroundColorType}>some content</ContentArea>,
             );
             expect(wrapper).toMatchSnapshot();
         });

@@ -1,5 +1,7 @@
-import * as React from 'react';
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable react/prefer-stateless-function */
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
 export interface ILinkProps {
     /** Дополнительный класс корневого элемента */
@@ -17,7 +19,7 @@ export interface ILinkProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
-class Link extends React.Component<ILinkProps, {}> {
+class Link extends React.Component<ILinkProps, Record<string, never>> {
     static propTypes = {
         href: PropTypes.string,
         children: PropTypes.oneOfType([
@@ -33,11 +35,9 @@ class Link extends React.Component<ILinkProps, {}> {
         download: PropTypes.bool,
     };
 
-    render() {
-
-        return (
-            <a {...this.props} />
-        );
+    render(): JSX.Element {
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <a {...this.props} />;
     }
 }
 

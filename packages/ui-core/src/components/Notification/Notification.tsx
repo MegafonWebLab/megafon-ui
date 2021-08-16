@@ -1,16 +1,18 @@
-import React from 'react';
-import * as PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import './Notification.less';
 import { cnCreate } from '@megafon/ui-helpers';
-import Tile from 'components/Tile/Tile';
 import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';
-import CancelIcon from 'icons/System/32/Cancel_32.svg';
-import RightArrow from 'icons/System/16/Arrow_right_16.svg';
-import SuccessIcon from 'icons/System/24/Checked_24.svg';
+import Tile from 'components/Tile/Tile';
 import ErrorIcon from 'icons/Basic/24/Block_24.svg';
+import RightArrow from 'icons/System/16/Arrow_right_16.svg';
 import WarningIcon from 'icons/System/24/Attention_invert_24.svg';
+import SuccessIcon from 'icons/System/24/Checked_24.svg';
 import InfoIcon from 'icons/System/24/Info_invert_24.svg';
+import CancelIcon from 'icons/System/32/Cancel_32.svg';
+import * as PropTypes from 'prop-types';
+import React from 'react';
 
 export const NotificationTypes = {
     SUCCESS: 'success',
@@ -58,8 +60,8 @@ export interface INotificationProps {
     /** Обработчик клика по ссылке */
     onLinkClick?: () => void;
 }
-
-const cn = cnCreate('mfui-beta-notification');
+const cn: (param1?: string | Record<string, unknown>, param2?: Record<string, unknown> | string) => string =
+    cnCreate('mfui-beta-notification');
 const Notification: React.FC<INotificationProps> = ({
     className,
     children,
@@ -103,16 +105,19 @@ const Notification: React.FC<INotificationProps> = ({
     };
 
     return (
-        <Tile radius="rounded"
+        <Tile
+            radius="rounded"
             shadowLevel={shadowLevel}
-            className={cn({
-                type, colored: isColored,
-            }, className)}
+            className={cn(
+                {
+                    type,
+                    colored: isColored,
+                },
+                className,
+            )}
         >
             <div className={cn('container')}>
-                <div className={cn('icon-container')}>
-                    {renderIcon()}
-                </div>
+                <div className={cn('icon-container')}>{renderIcon()}</div>
 
                 <div className={cn('content')}>
                     {title && (
@@ -120,7 +125,7 @@ const Notification: React.FC<INotificationProps> = ({
                             {title}
                         </Header>
                     )}
-                    <p className={cn('text', {'close-padding': hasCloseButton && !title})}>{children}</p>
+                    <p className={cn('text', { 'close-padding': hasCloseButton && !title })}>{children}</p>
                     {link && renderLink()}
                 </div>
             </div>

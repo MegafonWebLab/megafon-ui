@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import classnames from 'classnames';
 
 interface IModificators {
@@ -43,7 +44,7 @@ const getCustomClassName = (first?: ElementNameType, second?: ElementNameType, t
  * @param {String} customClassNames - названия кастомных классов
  * @returns {String}
  */
-function cnCreate(blockName: string) {
+function cnCreate(blockName: string): () => string {
     function getElement(): string;
     function getElement(elementName: ElementNameType): string;
     function getElement(modificatorsObject: ElementNameType): string;
@@ -54,41 +55,38 @@ function cnCreate(blockName: string) {
     function getElement(
         elementName: ElementNameType,
         modificatorsObject: ElementNameType,
-        customClassNames: CustomClassNamesType
+        customClassNames: CustomClassNamesType,
     ): string;
     function getElement(
         elementName?: ElementNameType,
         modificatorsObject?: ElementNameType,
-        customClassNames?: CustomClassNamesType
+        customClassNames?: CustomClassNamesType,
     ): string {
         const prefix = typeof elementName === 'string' ? elementName : '';
         const className = getCustomClassName(elementName, modificatorsObject, customClassNames);
-        const secondMods = !Array.isArray(modificatorsObject) && typeof modificatorsObject !== 'string'
-            ? modificatorsObject
-            : undefined;
-        const params = typeof elementName !== 'string' && !Array.isArray(elementName)
-            ? elementName
-            : secondMods;
+        const secondMods =
+            !Array.isArray(modificatorsObject) && typeof modificatorsObject !== 'string'
+                ? modificatorsObject
+                : undefined;
+        const params = typeof elementName !== 'string' && !Array.isArray(elementName) ? elementName : secondMods;
 
-        if (!params || typeof params === 'object' && Object.keys(params).length === 0) {
-            return classnames(`${blockName}${prefix ? '__' + prefix : ''}`, className);
+        if (!params || (typeof params === 'object' && Object.keys(params).length === 0)) {
+            return classnames(`${blockName}${prefix ? `__${prefix}` : ''}`, className);
         }
 
         const classParams: IClassSet = {};
-        let prefixKey = '', withoutPrefix = '';
+        let prefixKey = '';
+        let withoutPrefix = '';
 
+        // eslint-disable-next-line no-restricted-syntax
         for (const key in params) {
             if (typeof params[key] === 'boolean' && params[key]) {
                 prefixKey = `__${prefix}_${key}`;
-                classParams[
-                    `${blockName}${prefix ? prefixKey : '_' + key}`
-                ] = true;
+                classParams[`${blockName}${prefix ? prefixKey : `_${key}`}`] = true;
             } else if (typeof params[key] === 'string') {
                 prefixKey = `__${prefix}_${key}_${params[key]}`;
                 withoutPrefix = `_${key}_${params[key]}`;
-                classParams[
-                    `${blockName}${prefix ? prefixKey : withoutPrefix}`
-                ] = true;
+                classParams[`${blockName}${prefix ? prefixKey : withoutPrefix}`] = true;
             }
         }
 

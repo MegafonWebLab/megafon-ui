@@ -1,11 +1,15 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import './Accordion.less';
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
-import Header from 'components/Header/Header';
 import Collapse from 'components/Collapse/Collapse';
-import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
+import Header from 'components/Header/Header';
 import ArrowDown from 'icons/System/24/Arrow_down_24.svg';
+import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
 export interface IAccordionProps extends IFilterDataAttrs {
     /** Ссылка на корневой элемент */
@@ -29,7 +33,10 @@ export interface IAccordionProps extends IFilterDataAttrs {
     onClickAccordion?: (isOpened: boolean, title: string) => void;
 }
 
-const cn = cnCreate('mfui-beta-accordion');
+const cn: (
+    param1?: Record<string, unknown> | string,
+    param2?: Record<string, unknown> | string | (string | undefined)[],
+) => string = cnCreate('mfui-beta-accordion');
 const Accordion: React.FC<IAccordionProps> = ({
     rootRef,
     title,
@@ -62,6 +69,7 @@ const Accordion: React.FC<IAccordionProps> = ({
 
     return (
         <div
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...filterDataAttrs(dataAttrs)}
             ref={rootRef}
             className={cn({ open: isOpenedState }, [className, rootPropsClasses, openedClassName])}
@@ -69,10 +77,7 @@ const Accordion: React.FC<IAccordionProps> = ({
             <div className={cn('title-wrap', [titleWrapPropsClasses])} onClick={handleClickTitle}>
                 <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpenedState })}>
-                    {isOpenedState
-                        ? (<ArrowUp />)
-                        : (<ArrowDown />)
-                    }
+                    {isOpenedState ? <ArrowUp /> : <ArrowDown />}
                 </div>
             </div>
             <Collapse
@@ -89,7 +94,7 @@ const Accordion: React.FC<IAccordionProps> = ({
 Accordion.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,

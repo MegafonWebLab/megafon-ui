@@ -1,5 +1,9 @@
-import * as React from 'react';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import * as React from 'react';
 import './Switcher.less';
 
 export interface ISwitcherProps {
@@ -13,14 +17,9 @@ export interface ISwitcherProps {
     onChange?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const cn = cnCreate('mfui-beta-switcher');
+const cn: (param1?: Record<string, unknown> | string, param2?: string) => string = cnCreate('mfui-beta-switcher');
 const Switcher: React.FC<ISwitcherProps> = props => {
-    const {
-        className,
-        checked = false,
-        disabled = false,
-        onChange,
-    } = props;
+    const { className, checked = false, disabled = false, onChange } = props;
 
     const isTouch: boolean = detectTouch();
 
@@ -40,7 +39,7 @@ const Switcher: React.FC<ISwitcherProps> = props => {
                     disabled,
                     'no-touch': !isTouch,
                 },
-                className
+                className,
             )}
             onClick={handleChange}
         >

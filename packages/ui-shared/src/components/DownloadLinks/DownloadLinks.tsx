@@ -1,7 +1,11 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable no-magic-numbers */
+/* eslint-disable react/jsx-props-no-spreading */
 import { Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './DownloadLinks.less';
 import { IDownloadLink } from './DownloadLink';
 
@@ -46,29 +50,26 @@ interface IDownloadLinks {
     children: Array<React.ReactElement<IDownloadLink>> | React.ReactElement<IDownloadLink>;
 }
 
-const cn = cnCreate('mfui-beta-download-links');
+const cn: (param1?: Record<string, unknown> | string) => string = cnCreate('mfui-beta-download-links');
 const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
     const itemsCount = React.Children.count(children);
     const columnConfig = getColumnConfig(itemsCount);
 
     return (
-        <div className={cn({ count: `${itemsCount}`})}>
+        <div className={cn({ count: `${itemsCount}` })}>
             <Grid guttersLeft="medium">
-                {React.Children.map(children, (child) =>
+                {React.Children.map(children, child => (
                     <GridColumn {...columnConfig} className={cn('column')}>
                         {child}
                     </GridColumn>
-                )}
+                ))}
             </Grid>
         </div>
     );
 };
 
 DownloadLinks.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element.isRequired),
-        PropTypes.element,
-    ]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element]).isRequired,
 };
 
 export default DownloadLinks;

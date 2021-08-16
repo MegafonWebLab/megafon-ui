@@ -1,13 +1,9 @@
-import React, { Ref } from 'react';
-import * as PropTypes from 'prop-types';
-import './ButtonBanner.less';
-import {
-    Button,
-    Grid,
-    GridColumn,
-    Header,
-} from '@megafon/ui-core';
+/* eslint-disable import/no-unresolved */
+import { Button, Grid, GridColumn, Header } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import React, { Ref } from 'react';
+import './ButtonBanner.less';
 
 export const ButtonColor = {
     GREEN: 'green',
@@ -61,9 +57,10 @@ export interface IButtonBannerProps {
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const getMediaStyle = (imageUrl: string) => imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined;
+const getMediaStyle = (imageUrl: string) => (imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined);
 
-const cn = cnCreate('mfui-beta-button-banner');
+const cn: (param1?: string | Record<string, unknown>, param2?: (string | undefined)[]) => string =
+    cnCreate('mfui-beta-button-banner');
 const ButtonBanner: React.FC<IButtonBannerProps> = ({
     dataAttrs,
     className,
@@ -95,24 +92,27 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
 
     return (
         <div
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...filterDataAttrs(dataAttrs)}
             className={cn({ image: !!imageUrl, scaling: imageScaling }, [className, classes.root])}
             ref={rootRef}
         >
-           <Grid guttersLeft="medium">
-               <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
+            <Grid guttersLeft="medium">
+                <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
                     <div className={cn('content')}>
-                        <Header className={cn('header')} as="h2">{title}</Header>
+                        <Header className={cn('header')} as="h2">
+                            {title}
+                        </Header>
                         <div className={cn('text')}>{text}</div>
                         {!!imageUrl && buttonElem}
                     </div>
-               </GridColumn>
-               <GridColumn all="5" mobile="12">
+                </GridColumn>
+                <GridColumn all="5" mobile="12">
                     <div className={cn('media')} style={getMediaStyle(imageUrl)}>
                         {!imageUrl && buttonElem}
                     </div>
-               </GridColumn>
-           </Grid>
+                </GridColumn>
+            </Grid>
         </div>
     );
 };
@@ -126,7 +126,7 @@ ButtonBanner.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     title: PropTypes.string.isRequired,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
@@ -134,8 +134,8 @@ ButtonBanner.propTypes = {
     buttonText: PropTypes.string.isRequired,
     buttonUrl: PropTypes.string,
     buttonDownload: PropTypes.bool,
-    buttonTarget:  PropTypes.oneOf(Object.values(ButtonTarget)),
-    buttonColor:  PropTypes.oneOf(Object.values(ButtonColor)),
+    buttonTarget: PropTypes.oneOf(Object.values(ButtonTarget)),
+    buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
     onButtonClick: PropTypes.func,
 };
 

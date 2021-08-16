@@ -1,5 +1,5 @@
 declare namespace JSX {
-    export type ComponentDefaultPropNames = "defaultProps";
+    export type ComponentDefaultPropNames = 'defaultProps';
 }
 
 declare module '*.svg' {
