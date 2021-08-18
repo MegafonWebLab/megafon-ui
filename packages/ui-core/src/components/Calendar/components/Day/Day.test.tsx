@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Day, { IDayProps } from './Day';
 
 const props: IDayProps = {
@@ -19,7 +19,7 @@ const props: IDayProps = {
 describe('<Day />', () => {
     describe('snapshots', () => {
         it('renders Day with required props', () => {
-            const wrapper = shallow(<Day {...props} dayLabel={undefined}/>);
+            const wrapper = shallow(<Day {...props} dayLabel={undefined} />);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -31,7 +31,7 @@ describe('<Day />', () => {
         });
 
         it('should return empty div if label is not provided', () => {
-            const { dayLabel, ...restProps } = props;
+            const { ...restProps } = props;
 
             const wrapper = shallow(<Day {...restProps} />);
 

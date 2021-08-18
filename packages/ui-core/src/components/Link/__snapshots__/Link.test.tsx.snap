@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link renders children 1`] = `
-<a>
+<a
+  href=" "
+>
+   
   <h3>
     some text
   </h3>
@@ -11,15 +14,26 @@ exports[`Link renders children 1`] = `
 exports[`Link renders with attribute download 1`] = `
 <a
   download={true}
-/>
+  href=" "
+>
+   
+</a>
 `;
 
-exports[`Link renders with default props 1`] = `<a />`;
+exports[`Link renders with default props 1`] = `
+<a
+  href=" "
+>
+   
+</a>
+`;
 
 exports[`Link renders with rel 1`] = `
 <a
+  href=" "
   rel="noopener"
 >
+   
   <h3>
     No opener
   </h3>

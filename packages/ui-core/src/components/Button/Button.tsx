@@ -1,7 +1,7 @@
-import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
 import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import './Button.less';
+import PropTypes from 'prop-types';
+import React, { Ref } from 'react';
 import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
 import Arrow from 'icons/System/32/Arrow_right_32.svg';
 
@@ -87,17 +87,12 @@ export interface IButtonProps extends IFilterDataAttrs {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const getLoaderSize = (size: string): PreloaderSizesType => (
-    size === ButtonSizes.SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM
-);
+const getLoaderSize = (size: string): PreloaderSizesType =>
+    size === ButtonSizes.SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM;
 
 const cn = cnCreate('mfui-beta-button');
 const Button: React.FC<IButtonProps> = ({
-    classes: {
-        root: rootClassName,
-        content: contentClassName,
-        inner: innerClassName,
-    } = {},
+    classes: { root: rootClassName, content: contentClassName, inner: innerClassName } = {},
     className = '',
     theme = 'green',
     type = 'primary',
@@ -124,25 +119,31 @@ const Button: React.FC<IButtonProps> = ({
     const isTouch = React.useMemo(() => detectTouch(), []);
     const ElementType = href ? 'a' : 'button';
 
-    const handleClick = React.useCallback((e: React.SyntheticEvent<EventTarget>): void => {
-        if (disabled) {
-            e.preventDefault();
+    const handleClick = React.useCallback(
+        (e: React.SyntheticEvent<EventTarget>): void => {
+            if (disabled) {
+                e.preventDefault();
 
-            return;
-        }
+                return;
+            }
 
-        onClick && onClick(e);
-    }, [disabled, onClick]);
+            onClick && onClick(e);
+        },
+        [disabled, onClick],
+    );
 
-    const currentTheme: string = React.useMemo(() => (
-        (type === ButtonTypes.PRIMARY) && (theme === ButtonThemes.BLACK) ? ButtonThemes.GREEN : theme
-    ), [type, theme]);
+    const currentTheme: string = React.useMemo(
+        () => (type === ButtonTypes.PRIMARY && theme === ButtonThemes.BLACK ? ButtonThemes.GREEN : theme),
+        [type, theme],
+    );
 
-    const loaderWhite: boolean = React.useMemo(() => (
-        type === ButtonTypes.PRIMARY && theme === ButtonThemes.GREEN ||
-        type === ButtonTypes.PRIMARY && theme === ButtonThemes.PURPLE ||
-        type === ButtonTypes.OUTLINE && theme === ButtonThemes.WHITE
-    ), [type, theme]);
+    const loaderWhite: boolean = React.useMemo(
+        () =>
+            (type === ButtonTypes.PRIMARY && theme === ButtonThemes.GREEN) ||
+            (type === ButtonTypes.PRIMARY && theme === ButtonThemes.PURPLE) ||
+            (type === ButtonTypes.OUTLINE && theme === ButtonThemes.WHITE),
+        [type, theme],
+    );
 
     const loaderColor: PreloaderColorsType = React.useMemo(() => {
         switch (true) {
@@ -180,17 +181,21 @@ const Button: React.FC<IButtonProps> = ({
         }
     }, [icon, children]);
 
-    const renderedLoader: JSX.Element = React.useMemo(() => (
-        <Preloader
-            color={loaderColor}
-            sizeAll={getLoaderSize(sizeAll)}
-            sizeWide={sizeWide && getLoaderSize(sizeWide)}
-            sizeDesktop={sizeDesktop && getLoaderSize(sizeDesktop)}
-            sizeTablet={sizeTablet && getLoaderSize(sizeTablet)}
-            sizeMobile={sizeMobile && getLoaderSize(sizeMobile)}
-        />
-    ), [sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile]);
+    const renderedLoader: JSX.Element = React.useMemo(
+        () => (
+            <Preloader
+                color={loaderColor}
+                sizeAll={getLoaderSize(sizeAll)}
+                sizeWide={sizeWide && getLoaderSize(sizeWide)}
+                sizeDesktop={sizeDesktop && getLoaderSize(sizeDesktop)}
+                sizeTablet={sizeTablet && getLoaderSize(sizeTablet)}
+                sizeMobile={sizeMobile && getLoaderSize(sizeMobile)}
+            />
+        ),
+        [loaderColor, sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile],
+    );
 
+    // eslint-disable-next-line consistent-return
     const setRelAttribute = () => {
         if (ElementType !== 'a') {
             return undefined;
@@ -210,20 +215,23 @@ const Button: React.FC<IButtonProps> = ({
     return (
         <ElementType
             {...filterDataAttrs(dataAttrs)}
-            className={cn({
-                type,
-                theme: currentTheme,
-                disabled,
-                'size-all': sizeAll,
-                'size-wide': sizeWide,
-                'size-desktop': sizeDesktop,
-                'size-tablet': sizeTablet,
-                'size-mobile': sizeMobile,
-                'full-width': fullWidth,
-                loading: showLoader,
-                'no-touch': !isTouch,
-                'content-type': contentType,
-            }, classNameValue)}
+            className={cn(
+                {
+                    type,
+                    theme: currentTheme,
+                    disabled,
+                    'size-all': sizeAll,
+                    'size-wide': sizeWide,
+                    'size-desktop': sizeDesktop,
+                    'size-tablet': sizeTablet,
+                    'size-mobile': sizeMobile,
+                    'full-width': fullWidth,
+                    loading: showLoader,
+                    'no-touch': !isTouch,
+                    'content-type': contentType,
+                },
+                classNameValue,
+            )}
             href={href}
             download={href && download}
             target={href ? target : undefined}
@@ -233,9 +241,7 @@ const Button: React.FC<IButtonProps> = ({
             disabled={!href && disabled}
             ref={buttonRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
         >
-            <div className={cn('inner', innerClassName)}>
-                {!showLoader ? renderedContent : renderedLoader}
-            </div>
+            <div className={cn('inner', innerClassName)}>{!showLoader ? renderedContent : renderedLoader}</div>
         </ElementType>
     );
 };
@@ -266,7 +272,7 @@ Button.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     buttonRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     onClick: PropTypes.func,
 };

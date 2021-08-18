@@ -3,6 +3,13 @@
 @root: e('.mfui-beta-pagination-navigation');
 
 @{root} {
+
+    &:disabled {
+        svg {
+            opacity: 0.25;
+        }
+    }
+
     &_direction_left {
         @{root}__icon {
             transform: rotate(180deg);
@@ -11,11 +18,5 @@
 
     svg {
         width: 100%;
-    }
-
-    &:disabled {
-        svg {
-            opacity: 0.25;
-        }
     }
 }

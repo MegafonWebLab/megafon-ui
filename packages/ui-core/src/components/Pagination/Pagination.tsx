@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
 import './Pagination.less';
-import PaginationNavigation from './components/PaginationNavigation/PaginationNavigation';
 import PaginationButtons from './components/PaginationButtons/PaginationButtons';
+import PaginationNavigation from './components/PaginationNavigation/PaginationNavigation';
 import usePagination, { Button } from './usePagination';
 
 interface IPagination {
@@ -18,25 +18,23 @@ interface IPagination {
 }
 
 const cn = cnCreate('mfui-beta-pagination');
-const Pagination: React.FC<IPagination> = ({
-    totalPages,
-    activePage,
-    theme = 'default',
-    onChange,
-}) => {
+const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'default', onChange }) => {
     const paginationItems = usePagination(totalPages, activePage);
 
     const handleBackClick = React.useCallback(() => {
         onChange(activePage - 1);
-    }, [activePage]);
+    }, [activePage, onChange]);
 
     const handleNextClick = React.useCallback(() => {
         onChange(activePage + 1);
-    }, [activePage]);
+    }, [activePage, onChange]);
 
-    const handlePageButtonClick = React.useCallback(value => {
-        onChange(value);
-    }, []);
+    const handlePageButtonClick = React.useCallback(
+        value => {
+            onChange(value);
+        },
+        [onChange],
+    );
 
     return (
         <div className={cn()}>

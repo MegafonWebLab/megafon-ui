@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './Header.less';
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './Header.less';
 
 interface IHeaderProps extends IFilterDataAttrs {
     /** Тег */
@@ -21,7 +21,7 @@ interface IHeaderProps extends IFilterDataAttrs {
 }
 
 const cn = cnCreate('mfui-beta-header');
-class Header extends React.Component<IHeaderProps, {}> {
+class Header extends React.Component<IHeaderProps> {
     static propTypes = {
         as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),
         color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
@@ -39,25 +39,24 @@ class Header extends React.Component<IHeaderProps, {}> {
         hAlign: 'inherit',
     };
 
-    renderAddition() {
-        return <div className={cn('addition')}>{this.props.addition}</div>;
+    renderAddition(): JSX.Element {
+        const { addition } = this.props;
+
+        return <div className={cn('addition')}>{addition}</div>;
     }
 
-    render() {
-        const { color, margin, as: level, hAlign, onClick, dataAttrs, className } = this.props;
+    render(): JSX.Element {
+        const { children, addition, color, margin, as: level, hAlign, onClick, dataAttrs, className } = this.props;
         const ElementType = level as React.ElementType;
 
         return (
             <ElementType
                 {...filterDataAttrs(dataAttrs)}
-                className={cn(
-                    { color, margin, level, 'h-align': hAlign },
-                    className
-                )}
+                className={cn({ color, margin, level, 'h-align': hAlign }, className)}
                 onClick={onClick}
             >
-                {this.props.children}
-                {this.props.addition && this.renderAddition()}
+                {children}
+                {addition && this.renderAddition()}
             </ElementType>
         );
     }

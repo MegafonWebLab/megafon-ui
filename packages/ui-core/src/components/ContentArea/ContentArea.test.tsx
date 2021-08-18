@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import ContentArea, { IConrentAreaProps, BackgroundColorType } from './ContentArea';
 
 const props: Partial<IConrentAreaProps> = {
@@ -30,7 +30,7 @@ describe('<ContentArea />', () => {
         shallow(
             <ContentArea {...additionalProps}>
                 <span>child</span>
-            </ContentArea>
+            </ContentArea>,
         );
 
     it('renders correctly with default props', () => {
@@ -46,11 +46,7 @@ describe('<ContentArea />', () => {
     backgroundColors.forEach(color => {
         it(`render component when outerBackgroundColor with ${color}`, () => {
             const wrapper = shallow(
-                <ContentArea
-                    outerBackgroundColor={color as BackgroundColorType}
-                >
-                    some content
-                </ContentArea>
+                <ContentArea outerBackgroundColor={color as BackgroundColorType}>some content</ContentArea>,
             );
             expect(wrapper).toMatchSnapshot();
         });
@@ -59,11 +55,7 @@ describe('<ContentArea />', () => {
     backgroundColors.forEach(color => {
         it(`render component when innerBackgroundColor with ${color}`, () => {
             const wrapper = shallow(
-                <ContentArea
-                    innerBackgroundColor={color as BackgroundColorType}
-                >
-                    some content
-                </ContentArea>
+                <ContentArea innerBackgroundColor={color as BackgroundColorType}>some content</ContentArea>,
             );
             expect(wrapper).toMatchSnapshot();
         });

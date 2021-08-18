@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import { cnCreate } from '@megafon/ui-helpers';
 import { Grid, GridColumn } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './TextBox.less';
 
 export interface ITextBoxProps {
@@ -26,9 +26,7 @@ const TextBox: React.FC<ITextBoxProps> = ({
     className,
     children,
 }) => {
-    const renderContent = () => (
-        <div className={cn('content')}>{children}</div>
-    );
+    const renderContent = () => <div className={cn('content')}>{children}</div>;
 
     const renderTextBoxWithGrid = () => (
         <Grid hAlign={centeringWithLimitedWidth ? 'center' : 'left'}>

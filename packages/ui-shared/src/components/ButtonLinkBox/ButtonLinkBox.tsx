@@ -1,7 +1,7 @@
-import React, { Ref } from 'react';
-import * as PropTypes from 'prop-types';
 import { Button, TextLink } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import React, { Ref } from 'react';
 import './ButtonLinkBox.less';
 
 export interface IButtonLinkBoxProps {
@@ -62,11 +62,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     onButtonClick,
     onLinkClick,
 }) => (
-    <div
-        {...filterDataAttrs(dataAttrs)}
-        className={cn({ 'h-align': hAlign }, [className, classes.root])}
-        ref={rootRef}
-    >
+    <div {...filterDataAttrs(dataAttrs)} className={cn({ 'h-align': hAlign }, [className, classes.root])} ref={rootRef}>
         {buttonTitle && (
             <div className={cn('row')}>
                 <Button
@@ -108,7 +104,7 @@ ButtonLinkBox.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     buttonTitle: PropTypes.string,
     buttonUrl: PropTypes.string,

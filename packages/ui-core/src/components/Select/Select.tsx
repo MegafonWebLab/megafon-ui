@@ -1,8 +1,9 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import debounce from 'lodash.debounce';
-import './Select.less';
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import debounce from 'lodash.debounce';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './Select.less';
 import InputLabel from 'components/InputLabel/InputLabel';
 
 export const Verification = {
@@ -70,7 +71,8 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
-        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement> | null, dataItem?: ISelectItem<T>
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement> | null,
+        dataItem?: ISelectItem<T>,
     ) => void;
     /** Обработчик при открытом селекте */
     onOpened?: () => void;
@@ -110,14 +112,10 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }),
         items: PropTypes.arrayOf(
             PropTypes.shape({
-                view: PropTypes.oneOfType([
-                    PropTypes.string,
-                    PropTypes.element,
-                    PropTypes.func,
-                ]),
+                view: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
                 title: PropTypes.string,
                 value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-            })
+            }),
         ),
         onSelect: PropTypes.func,
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
@@ -134,7 +132,9 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     };
 
     itemWrapperNode: HTMLDivElement;
+
     itemsNodeList: HTMLDivElement[];
+
     selectNode: HTMLDivElement;
 
     isTouch: boolean = detectTouch();
@@ -142,7 +142,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     debouncedComboboxChange = debounce((filterValue: string) => {
         const { items } = this.props;
 
-        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
+        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
         const filteredItems = items.filter(({ title }) => {
             if (filterValue.length <= title.length) {
                 return RegExp(query, 'ig').test(title);
@@ -151,7 +151,12 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             return false;
         });
 
-        this.setState({ filteredItems, comparableInputValue: filterValue, isOpened: true, activeIndex: 0 });
+        this.setState({
+            filteredItems,
+            comparableInputValue: filterValue,
+            isOpened: true,
+            activeIndex: 0,
+        });
     }, 250);
 
     constructor(props: ISelectProps<T>) {
@@ -168,7 +173,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         this.itemsNodeList = [];
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         const { currentValue } = this.props;
         const { filteredItems } = this.state;
         const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
@@ -182,11 +187,12 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }
     }
 
-    componentDidUpdate({ items: prevItems }: ISelectProps<T>) {
+    componentDidUpdate({ items: prevItems }: ISelectProps<T>): void {
         const { items } = this.props;
         const { isOpened } = this.state;
 
         if (!this.isEqualItems(items, prevItems)) {
+            // eslint-disable-next-line react/no-did-update-set-state
             this.setState({ filteredItems: items });
         }
 
@@ -199,11 +205,11 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         document.removeEventListener('click', this.handleClickOutside);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         document.removeEventListener('click', this.handleClickOutside);
     }
 
-    isEqualItems = (items: Array<ISelectItem<T>>, prevItems: Array<ISelectItem<T>>) => {
+    isEqualItems = (items: Array<ISelectItem<T>>, prevItems: Array<ISelectItem<T>>): boolean => {
         if (items.length !== prevItems.length) {
             return false;
         }
@@ -214,43 +220,48 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
             return isEqualValue && isEqualTitle;
         });
-    }
+    };
 
-    handleOpened = () => {
+    handleOpened = (): void => {
         const { onOpened } = this.props;
 
         onOpened && onOpened();
-    }
+    };
 
-    handleClosed = () => {
+    handleClosed = (): void => {
         const { onClosed } = this.props;
 
         onClosed && onClosed();
-    }
+    };
 
     handleClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
-        if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpened) {
+        if ((e.target instanceof Node && this.selectNode.contains(e.target)) || !isOpened) {
             return;
         }
 
         this.setState({ isOpened: false }, () => {
-            if (!this.state.isOpened) {
+            if (!isOpened) {
                 this.handleClosed();
             }
         });
-    }
+    };
 
     handleOpenDropdown = (): void => {
-        this.setState((state) => ({ isOpened: !state.isOpened }), () => {
-            if (this.state.isOpened) {
-                this.handleOpened();
-            } else {
-                this.handleClosed();
-            }
-        });
-    }
+        this.setState(
+            state => ({ isOpened: !state.isOpened }),
+            () => {
+                const { isOpened } = this.state;
+
+                if (isOpened) {
+                    this.handleOpened();
+                } else {
+                    this.handleClosed();
+                }
+            },
+        );
+    };
 
     handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
@@ -276,26 +287,28 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
         onSelect && onSelect(e, item);
         this.handleClosed();
-    }
+    };
 
-    handleHoverItem = (index: number) => (e: React.MouseEvent<HTMLDivElement>): void => {
-        e.preventDefault();
+    handleHoverItem =
+        (index: number) =>
+        (e: React.MouseEvent<HTMLDivElement>): void => {
+            e.preventDefault();
 
-        this.setState({ activeIndex: index });
-    }
+            this.setState({ activeIndex: index });
+        };
 
     handleComboboxFocus = (e: React.FocusEvent<HTMLInputElement>): void => {
         const { isOpened, filteredItems } = this.state;
 
         e.stopPropagation();
 
-        this.setState((state) => ({ isOpened: !state.isOpened }));
+        this.setState(state => ({ isOpened: !state.isOpened }));
         this.handleOpened();
 
         if (!isOpened && filteredItems) {
             e.target.select();
         }
-    }
+    };
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onSelect } = this.props;
@@ -310,7 +323,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         this.setState({ inputValue: filterValue, isChoosenItem: false });
 
         this.debouncedComboboxChange(filterValue);
-    }
+    };
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
         const { activeIndex, isOpened, filteredItems } = this.state;
@@ -322,7 +335,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
         if (e.key === 'ArrowDown' && isOpened && activeIndex < filteredItems.length - 1) {
             this.setState({ activeIndex: activeIndex + 1 }, () => {
-                this.scrollList(this.state.activeIndex);
+                this.scrollList(activeIndex);
             });
 
             e.preventDefault();
@@ -330,9 +343,12 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             return false;
         }
         if (e.key === 'ArrowUp' && isOpened && activeIndex > 0) {
-            this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
-                this.scrollList(this.state.activeIndex);
-            });
+            this.setState(
+                prevState => ({ activeIndex: prevState.activeIndex - 1 }),
+                () => {
+                    this.scrollList(activeIndex);
+                },
+            );
 
             e.preventDefault();
 
@@ -356,13 +372,65 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }
 
         return true;
-    }
+    };
+
+    highlightString = (
+        title: string,
+        view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString),
+    ): JSX.Element | string | ElementOrString => {
+        const { type } = this.props;
+        const { comparableInputValue, inputValue } = this.state;
+
+        if (type === SelectTypes.CLASSIC) {
+            if (typeof view === 'function' && !React.isValidElement(view)) {
+                return view({ filterValue: inputValue });
+            }
+
+            return view || title;
+        }
+        if (type === SelectTypes.COMBOBOX && view) {
+            if (typeof view === 'function' && !React.isValidElement(view)) {
+                return view({ filterValue: inputValue });
+            }
+
+            return view;
+        }
+
+        const stringFragments = title.split(RegExp(`(${comparableInputValue})`, 'ig'));
+
+        return (
+            <>
+                {stringFragments.map((fragment, i) => (
+                    <React.Fragment key={i}>
+                        {fragment.toLowerCase() === comparableInputValue.toLowerCase() && fragment !== '' ? (
+                            <span className={cn('highlighted-fragment')}>{fragment}</span>
+                        ) : (
+                            fragment
+                        )}
+                    </React.Fragment>
+                ))}
+            </>
+        );
+    };
+
+    getItemWrapper = (node: HTMLDivElement): HTMLDivElement => {
+        this.itemWrapperNode = node;
+
+        return this.itemWrapperNode;
+    };
+
+    getSelectNode = (node: HTMLDivElement): HTMLDivElement => {
+        this.selectNode = node;
+
+        return this.selectNode;
+    };
+
+    getNodeList = (node: HTMLDivElement): number => this.itemsNodeList.push(node);
 
     scrollList(activeIndex: number): void {
         if (!this.itemsNodeList) {
             return;
         }
-
         const wrapper = this.itemWrapperNode;
         const wrapperScroll = wrapper.scrollTop;
         const wrapperHeight = wrapper.offsetHeight;
@@ -385,45 +453,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }
     }
 
-    highlightString = (title: string, view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString)) => {
-        const { type } = this.props;
-        const { comparableInputValue, inputValue } = this.state;
-
-        if (type === SelectTypes.CLASSIC) {
-            if (typeof view === 'function' && !React.isValidElement(view)) {
-                return view({ filterValue: inputValue });
-            }
-            return view || title;
-        }
-        if (type === SelectTypes.COMBOBOX && view) {
-            if (typeof view === 'function' && !React.isValidElement(view)) {
-                return view({ filterValue: inputValue });
-            }
-
-            return view;
-        }
-
-        const stringFragments = title.split(RegExp(`(${comparableInputValue})`, 'ig'));
-
-        return (
-            <>
-                {stringFragments.map((fragment, i) => (
-                    <React.Fragment key={i}>
-                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase() && fragment !== '')
-                            ? <span className={cn('highlighted-fragment')}>{fragment}</span>
-                            : fragment
-                        }
-                    </React.Fragment>
-                ))}
-            </>
-        );
-    }
-
-    getItemWrapper = node => this.itemWrapperNode = node;
-    getSelectNode = node => this.selectNode = node;
-    getNodeList = node => this.itemsNodeList.push(node);
-
-    renderTitle() {
+    renderTitle(): JSX.Element {
         const { placeholder, items, currentValue } = this.props;
         const item = items.find(elem => elem.value === currentValue);
         let inputTitle: string | JSX.Element | Element | undefined = placeholder;
@@ -440,14 +470,12 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 tabIndex={0}
                 onClick={this.handleOpenDropdown}
             >
-                <div className={cn('title-inner')}>
-                    {inputTitle}
-                </div>
+                <div className={cn('title-inner')}>{inputTitle}</div>
             </div>
         );
     }
 
-    renderCombobox() {
+    renderCombobox(): JSX.Element {
         const { placeholder } = this.props;
         const { inputValue } = this.state;
 
@@ -463,7 +491,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         );
     }
 
-    renderChildren() {
+    renderChildren(): JSX.Element {
         const { type, items, notFoundText, classes = {} } = this.props;
         const { filteredItems, activeIndex } = this.state;
         const currentItems = type === SelectTypes.COMBOBOX ? filteredItems : items;
@@ -473,9 +501,13 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 <div className={cn('list-inner')} ref={this.getItemWrapper}>
                     {currentItems.map(({ title, value, view }, i) => (
                         <div
-                            className={cn('list-item', {
-                                active: activeIndex === i,
-                            }, [classes.listItem])}
+                            className={cn(
+                                'list-item',
+                                {
+                                    active: activeIndex === i,
+                                },
+                                [classes.listItem],
+                            )}
                             key={`${i}_${value}`}
                             onClick={this.handleSelectItem}
                             onMouseEnter={this.handleHoverItem(i)}
@@ -494,7 +526,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         );
     }
 
-    render() {
+    render(): JSX.Element {
         const {
             type,
             isDisabled,
@@ -512,13 +544,16 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         return (
             <div
                 {...filterDataAttrs(dataAttrs)}
-                className={cn({
-                    open: isOpened,
-                    disabled: isDisabled,
-                    'no-touch': !this.isTouch,
-                    valid: verification === Verification.VALID,
-                    error: verification === Verification.ERROR,
-                }, [className, classes.root])}
+                className={cn(
+                    {
+                        open: isOpened,
+                        disabled: isDisabled,
+                        'no-touch': !this.isTouch,
+                        valid: verification === Verification.VALID,
+                        error: verification === Verification.ERROR,
+                    },
+                    [className, classes.root],
+                )}
                 ref={this.getSelectNode}
             >
                 <div className={cn('inner')}>
@@ -528,26 +563,26 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                             {required && <span className={cn('require-mark')}>*</span>}
                         </InputLabel>
                     )}
-                    <div
-                        className={cn('control', classes.control)}
-                        onKeyDown={this.handleKeyDown}
-                    >
-                        {(type === SelectTypes.COMBOBOX) && this.renderCombobox()}
-                        {(type === SelectTypes.CLASSIC) && this.renderTitle()}
+                    <div className={cn('control', classes.control)} onKeyDown={this.handleKeyDown}>
+                        {type === SelectTypes.COMBOBOX && this.renderCombobox()}
+                        {type === SelectTypes.CLASSIC && this.renderTitle()}
+                        {/* eslint-disable-next-line jsx-a11y/tabindex-no-positive */}
                         <div className={cn('arrow-wrap')} tabIndex={1} onClick={this.handleOpenDropdown}>
                             <span className={cn('arrow')} />
                         </div>
                     </div>
                     {this.renderChildren()}
                 </div>
-                {noticeText &&
-                    <div className={cn('text', {
-                        error: verification === Verification.ERROR,
-                        success: verification === Verification.VALID,
-                    })}>
+                {noticeText && (
+                    <div
+                        className={cn('text', {
+                            error: verification === Verification.ERROR,
+                            success: verification === Verification.VALID,
+                        })}
+                    >
                         {noticeText}
                     </div>
-                }
+                )}
             </div>
         );
     }

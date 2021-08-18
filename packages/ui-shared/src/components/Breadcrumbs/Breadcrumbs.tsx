@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { TextLink } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
 import './Breadcrumbs.less';
 
 type ItemType = {
@@ -45,7 +45,7 @@ Breadcrumbs.propTypes = {
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             href: PropTypes.string,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     color: PropTypes.oneOf(Object.values(TextColor)),
 };

@@ -11,8 +11,8 @@
 @arrowPosition: calc(~'100% - @{arrowOffset}');
 
 .arrowSize() {
-    height: @arrowSize;
     width: @arrowSize;
+    height: @arrowSize;
 }
 
 .arrow() {
@@ -21,20 +21,25 @@
     position: absolute;
     top: 0;
     left: 0;
+
     transform: rotate(45deg);
 }
 
 @{b} {
-    pointer-events: none;
-    visibility: hidden;
     z-index: 100;
+
+    visibility: hidden;
     opacity: 0;
-    transition-property: opacity, visibility;
+
     transition-duration: 0.3s;
+    transition-property: opacity, visibility;
+
+    pointer-events: none;
 
     &_open {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
+
         pointer-events: all;
     }
 
@@ -94,9 +99,9 @@
 
             &__content-shadow {
                 top: 0;
-                left: @popperOffset;
-                bottom: 0;
                 right: -@popperOffset;
+                bottom: 0;
+                left: @popperOffset;
             }
         }
     }
@@ -114,9 +119,9 @@
 
             &__content-shadow {
                 top: 0;
-                left: -@popperOffset;
-                bottom: 0;
                 right: @popperOffset;
+                bottom: 0;
+                left: -@popperOffset;
             }
         }
     }
@@ -134,9 +139,9 @@
 
             &__content-shadow {
                 top: -@popperOffset;
-                left: 0;
-                bottom: @popperOffset;
                 right: 0;
+                bottom: @popperOffset;
+                left: 0;
             }
         }
     }
@@ -154,15 +159,16 @@
 
             &__content-shadow {
                 top: @popperOffset;
-                left: 0;
-                bottom: -@popperOffset;
                 right: 0;
+                bottom: -@popperOffset;
+                left: 0;
             }
         }
     }
 
     &@{popperEscaped} {
-        pointer-events: none;
         visibility: hidden;
+
+        pointer-events: none;
     }
 }

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './List.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './List.less';
 
 export interface IListProps {
     /** Тип списка */
@@ -29,12 +29,16 @@ const List: React.FC<IListProps> = ({
 
     return (
         <ElementType
-            className={cn({
-                'h-align': hAlign,
-                color,
-                weight,
-                type: as,
-            }, className)}>
+            className={cn(
+                {
+                    'h-align': hAlign,
+                    color,
+                    weight,
+                    type: as,
+                },
+                className,
+            )}
+        >
             {children}
         </ElementType>
     );

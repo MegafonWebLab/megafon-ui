@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import Select, { ISelectProps, SelectTypes, Verification, ISelectItem } from './Select';
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
+import Select, { ISelectProps, SelectTypes, Verification, ISelectItem } from './Select';
 
 const cn = cnCreate('mfui-beta-select');
 
@@ -119,23 +119,20 @@ describe('<Select />', () => {
             wrapper.setProps({ items: newItems });
             wrapper.update();
 
-            const title =  wrapper.find(`.${cn('title')}`);
+            const title = wrapper.find(`.${cn('title')}`);
             const lastListItem = wrapper.find(`.${cn('list-item')}`).last();
 
             title.simulate('click');
-            lastListItem.simulate('mouseenter', { preventDefault: () => {} });
+            lastListItem.simulate('mouseenter', { preventDefault: jest.fn });
             lastListItem.simulate('click', {});
 
-            expect(handleSelectItem).toBeCalledWith(
-                {},
-                newItems[1]
-            );
+            expect(handleSelectItem).toBeCalledWith({}, newItems[1]);
         });
 
         it('calls onSelect with null when type combobox after chosen item and change value', () => {
             const handleSelectItem = jest.fn();
             const wrapper = mount(
-                <Select<number> {...props} type={SelectTypes.COMBOBOX} onSelect={handleSelectItem} />
+                <Select<number> {...props} type={SelectTypes.COMBOBOX} onSelect={handleSelectItem} />,
             );
             const combobox = `.${cn('combobox')}`;
             const listItem = `.${cn('list-item')}`;
@@ -175,7 +172,10 @@ describe('<Select />', () => {
             const wrapper = shallow(<Select {...props} onSelect={handleSelectItem} onClosed={handleClosed} />);
 
             wrapper.find(`.${cn('title')}`).simulate('click');
-            wrapper.find(`.${cn('list-item')}`).last().simulate('click');
+            wrapper
+                .find(`.${cn('list-item')}`)
+                .last()
+                .simulate('click');
             expect(handleClosed).toBeCalled();
         });
 
@@ -192,7 +192,10 @@ describe('<Select />', () => {
             const wrapper = mount(<Select<number> {...props} onOpened={handleOpened} />);
 
             wrapper.find(`.${cn('title')}`).simulate('focus');
-            wrapper.find(`.${cn('control')}`).simulate('keyDown', { key: 'Enter', preventDefault: () => {}});
+            wrapper.find(`.${cn('control')}`).simulate('keyDown', {
+                key: 'Enter',
+                preventDefault: () => jest.fn,
+            });
             expect(handleOpened).toBeCalled();
         });
     });
@@ -209,17 +212,17 @@ describe('<Select />', () => {
                 },
             });
 
-            await new Promise((r) => setTimeout(r, 150));
+            await new Promise(r => setTimeout(r, 150));
 
             expect(wrapper).toMatchSnapshot();
 
-            await new Promise((r) => setTimeout(r, 100));
+            await new Promise(r => setTimeout(r, 100));
 
             expect(wrapper).toMatchSnapshot();
         });
 
         it('highlighted text', () => {
-            const wrapper = shallow(<Select<number> {...props} type={SelectTypes.COMBOBOX}  />);
+            const wrapper = shallow(<Select<number> {...props} type={SelectTypes.COMBOBOX} />);
 
             wrapper.find(`.${cn('combobox')}`).simulate('change', {
                 target: {
@@ -233,7 +236,7 @@ describe('<Select />', () => {
 
     describe('keyboard actions', () => {
         it('handles ArrowUp and ArrowDown', () => {
-            const wrapper = mount(<Select<number> {...props}  />);
+            const wrapper = mount(<Select<number> {...props} />);
             const title = wrapper.find(`.${cn('title')}`);
             const control = wrapper.find(`.${cn('control')}`);
             const listItem = `.${cn('list-item')}`;
@@ -242,24 +245,33 @@ describe('<Select />', () => {
             title.simulate('click');
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
 
-            control.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {}});
+            control.simulate('keyDown', {
+                key: 'ArrowDown',
+                preventDefault: jest.fn,
+            });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(false);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(true);
 
-            control.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => {}});
+            control.simulate('keyDown', {
+                key: 'ArrowUp',
+                preventDefault: jest.fn,
+            });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
         });
 
         it('handles Tab', () => {
-            const wrapper = mount(<Select<number> {...props}  />);
+            const wrapper = mount(<Select<number> {...props} />);
             const title = wrapper.find(`.${cn('title')}`);
             const control = wrapper.find(`.${cn('control')}`);
 
             title.simulate('click');
             expect(wrapper).toMatchSnapshot();
 
-            control.simulate('keyDown', { key: 'Tab', preventDefault: () => {}});
+            control.simulate('keyDown', {
+                key: 'Tab',
+                preventDefault: jest.fn,
+            });
             expect(wrapper).toMatchSnapshot();
         });
 
@@ -270,7 +282,10 @@ describe('<Select />', () => {
             const title = wrapper.find(`.${cn('title')}`);
 
             title.simulate('focus');
-            control.simulate('keyDown', { key: 'Enter', preventDefault: () => {}});
+            control.simulate('keyDown', {
+                key: 'Enter',
+                preventDefault: jest.fn,
+            });
 
             expect(wrapper.state('isOpened')).toBeTruthy();
         });
@@ -283,7 +298,7 @@ describe('<Select />', () => {
 
     it('should render items.view as function and type combobox', () => {
         const wrapper = shallow(<Select type="combobox" items={viewItems} dataAttrs={props.dataAttrs} />);
-        wrapper.find(`.${cn('combobox')}`).simulate('change', { target: { value: 123 }});
+        wrapper.find(`.${cn('combobox')}`).simulate('change', { target: { value: 123 } });
 
         expect(wrapper).toMatchSnapshot();
     });

@@ -3,25 +3,24 @@
 @sw: e('.swiper-wrapper');
 
 @{b} {
-    overflow: hidden;
     position: relative;
+
+    overflow: hidden;
 
     @{sw} {
         display: flex;
     }
 
     &__slide {
-        height: 500px;
         flex-shrink: 0;
+        height: 500px;
 
         @media @mobileB {
             height: 540px;
         }
-
         @media @desktopS {
             height: 420px;
         }
-
         @media @desktopMU {
             height: 400px;
         }
@@ -30,8 +29,9 @@
     &__arrow {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         z-index: 10;
+
+        transform: translateY(-50%);
     }
 
     &__arrow_prev {
@@ -46,13 +46,15 @@
         position: absolute;
         bottom: 16px;
         left: 50%;
-        transform: translateX(-50%);
+        z-index: 10;
+
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         padding: 6px;
         border-radius: 12px;
-        z-index: 10;
+
+        transform: translateX(-50%);
     }
 
     &__pagination_theme_light {
@@ -83,11 +85,9 @@
     @media @mobileSM {
         @{direction}: 8px;
     }
-
     @media @mobileB {
         @{direction}: 16px;
     }
-
     @media @desktopMU {
         @{direction}: 20px;
     }

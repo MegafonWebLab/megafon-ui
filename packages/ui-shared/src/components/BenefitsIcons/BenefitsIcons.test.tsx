@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import BenefitsIcons, { IBenefitsIcons } from './BenefitsIcons';
 import { fiveItems, fourItems, threeItems, twoItems } from './doc/BenefitsIcons.docz';
 import { IconPositionEnum } from './types';
@@ -13,12 +13,7 @@ const props: IBenefitsIcons = {
     },
 };
 
-const itemsSet = [
-    twoItems,
-    threeItems,
-    fourItems,
-    fiveItems,
-];
+const itemsSet = [twoItems, threeItems, fourItems, fiveItems];
 
 describe('<BenefitsIcons />', () => {
     it('renders BenefitsIcons', () => {

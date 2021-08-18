@@ -1,8 +1,15 @@
-import React, { Ref } from 'react';
 import './Card.less';
-import { Header, Paragraph, Button, TextLink, Link} from '@megafon/ui-core';
+import { Header, Paragraph, Button, TextLink, Link } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
+import React, { Ref } from 'react';
+
+export const Target = {
+    SELF: '_self',
+    BLANK: '_blank',
+} as const;
+
+type TargetType = typeof Target[keyof typeof Target];
 
 export const Target = {
     SELF: '_self',
@@ -99,18 +106,14 @@ const Card: React.FC<ICard> = ({
         switch (true) {
             case !!imageSrc: {
                 return (
-                    <div className={cn('pic-wrapper', { 'object-fit': objectFit, 'img': true })}>
-                        <img className={cn('img')} src={imageSrc} />
+                    <div className={cn('pic-wrapper', { 'object-fit': objectFit, img: true })}>
+                        <img alt="" className={cn('img')} src={imageSrc} />
                     </div>
                 );
             }
 
             case !!svgSrc: {
-                return (
-                    <div className={cn('pic-wrapper')}>
-                        {svgSrc}
-                    </div>
-                );
+                return <div className={cn('pic-wrapper')}>{svgSrc}</div>;
             }
 
             default:
@@ -130,12 +133,7 @@ const Card: React.FC<ICard> = ({
         }
 
         return (
-            <TextLink
-                className={cn('link', [classes.link])}
-                href={linkHref}
-                target={linkTarget}
-                download={download}
-            >
+            <TextLink className={cn('link', [classes.link])} href={linkHref} target={linkTarget} download={download}>
                 {linkTitle}
             </TextLink>
         );
@@ -182,18 +180,25 @@ const Card: React.FC<ICard> = ({
             className={cn(
                 '',
                 {
-                    'href': !!href,
+                    href: !!href,
                     'full-height': isFullHeight,
                     'centered-text': isCenteredText,
                 },
-                [className, classes.root])}
+                [className, classes.root],
+            )}
             ref={rootRef}
         >
             <Element href={href} target={target} className={cn('inner', [classes.inner])}>
                 <>
                     {renderImage()}
-                    <Header as="h3" className={cn('title')}>{title}</Header>
-                    {!!text && <Paragraph hasMargin={false} className={cn('text')}>{text}</Paragraph>}
+                    <Header as="h3" className={cn('title')}>
+                        {title}
+                    </Header>
+                    {!!text && (
+                        <Paragraph hasMargin={false} className={cn('text')}>
+                            {text}
+                        </Paragraph>
+                    )}
                     {renderBtnsWrapper()}
                 </>
             </Element>
@@ -212,7 +217,7 @@ Card.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     imageSrc: PropTypes.string,
     svgSrc: PropTypes.node,

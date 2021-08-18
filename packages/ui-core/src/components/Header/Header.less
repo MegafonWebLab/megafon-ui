@@ -1,6 +1,7 @@
 @import '~styles/base.less';
+@b: e('.mfui-beta-header');
 
-.mfui-beta-header {
+@{b} {
     .fontFamily();
     font-weight: 400;
 
@@ -10,21 +11,19 @@
     }
 
     &_level_h1 {
+        font-weight: 700;
         font-size: 30px;
         line-height: 36px;
-        font-weight: 700;
 
         @media @mobileB {
             font-size: 36px;
             line-height: 40px;
         }
-
         @media @desktop {
             font-size: 44px;
             line-height: 48px;
             letter-spacing: 0.5px;
         }
-
         @media @desktopMU {
             font-size: 52px;
             line-height: 56px;
@@ -36,21 +35,19 @@
     }
 
     &_level_h2 {
+        font-weight: 600;
         font-size: 22px;
         line-height: 28px;
-        font-weight: 600;
 
         @media @mobileB {
             font-size: 26px;
             line-height: 32px;
         }
-
         @media @desktop {
             font-size: 28px;
             line-height: 36px;
             letter-spacing: 0.5px;
         }
-
         @media @desktopMU {
             font-size: 32px;
             line-height: 40px;
@@ -62,14 +59,13 @@
     }
 
     &_level_h3 {
+        font-weight: 500;
         font-size: 18px;
         line-height: 24px;
-        font-weight: 500;
 
         @media @desktop {
             letter-spacing: 0.5px;
         }
-
         @media @desktopMU {
             font-size: 20px;
             line-height: 28px;

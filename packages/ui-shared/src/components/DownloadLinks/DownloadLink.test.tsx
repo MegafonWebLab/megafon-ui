@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import DownloadLink, { IDownloadLink } from './DownloadLink';
 
 const props: IDownloadLink = {
@@ -24,7 +24,7 @@ describe('DownloadLink', () => {
                     root: 'root-class',
                     link: 'link-class',
                 }}
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });

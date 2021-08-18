@@ -1,22 +1,23 @@
 const fs = require('fs');
-const glob = require('glob');
 const path = require('path');
+const babelCore = require('@babel/core');
+const svgr = require('@svgr/core').default;
+const cheerio = require('cheerio');
+const del = require('del');
+const glob = require('glob');
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const ts = require('gulp-typescript');
 const gulpLess = require('gulp-less');
 const svgmin = require('gulp-svgmin');
+const ts = require('gulp-typescript');
 const LessAutoprefix = require('less-plugin-autoprefix');
+
 const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 const merge = require('merge2');
-const del = require('del');
 const through = require('through2');
-const svgr = require('@svgr/core').default;
-const babelCore = require('@babel/core');
-const cheerio = require('cheerio');
 
-const sep = path.sep;
-const dest = gulp.dest;
+const { sep } = path;
+const { dest } = gulp;
 
 const dist = path.join(__dirname, 'dist');
 const esPath = path.join(dist, 'es');
@@ -49,41 +50,53 @@ const tsConfig = {
 };
 const babelPlugins = [
     require.resolve('@babel/plugin-transform-object-assign'),
-    require.resolve('@babel/plugin-transform-runtime')
+    require.resolve('@babel/plugin-transform-runtime'),
 ];
 const babelPresets = [
     '@babel/react',
-    ['@babel/env', {
-        useBuiltIns: 'usage',
-        corejs: '3.6'
-    }]
+    [
+        '@babel/env',
+        {
+            useBuiltIns: 'usage',
+            corejs: '3.6',
+        },
+    ],
 ];
 const babelEsConfig = {
     presets: [
         '@babel/react',
-        ['@babel/env', {
-            modules: false,
-            useBuiltIns: 'usage',
-            corejs: '3.6'
-        }]
+        [
+            '@babel/env',
+            {
+                modules: false,
+                useBuiltIns: 'usage',
+                corejs: '3.6',
+            },
+        ],
     ],
     plugins: [
         ...babelPlugins,
-        ['module-resolver', {
-            root: ['./src'],
-            alias: {
-                components: './src/components',
-                constants: './src/constants'
-            }
-        }],
-    ]
+        [
+            'module-resolver',
+            {
+                root: ['./src'],
+                alias: {
+                    components: './src/components',
+                    constants: './src/constants',
+                },
+            },
+        ],
+    ],
 };
 const babelLibConfig = {
     presets: [
-        ['@babel/env', {
-            modules: 'commonjs'
-        }]
-    ]
+        [
+            '@babel/env',
+            {
+                modules: 'commonjs',
+            },
+        ],
+    ],
 };
 
 /**
@@ -92,49 +105,47 @@ const babelLibConfig = {
 gulp.task('clean', () => del(['dist', 'styles']));
 gulp.task('clean:index', () => del('src/index.ts'));
 
-gulp.task('svg', () => {
-    return gulp.src('src/**/*.svg')
+gulp.task('svg', () =>
+    gulp
+        .src('src/**/*.svg')
         .pipe(svgmin(file => getSvgrConfig(file.path).svgoConfig))
         .pipe(removeSvgMasks())
         .pipe(svgToReact())
-        .pipe(dest(dist));
-});
+        .pipe(dest(dist)),
+);
 
-gulp.task('less:compile', () => {
-    return gulp.src(['src/**/*.less', `!${baseLessSrc}`])
+gulp.task('less:compile', () =>
+    gulp
+        .src(['src/**/*.less', `!${baseLessSrc}`])
         .pipe(replaceContent(/\~styles/g, 'styles'))
-        .pipe(replaceContent(/icons\/\w+\/\d+\/.*\.svg/g, function (match) {
-            const newPath = match.toLowerCase()
-                .replace(/icons\//g, '')
-                .replace(/\//g, '-');
+        .pipe(
+            replaceContent(/icons\/\w+\/\d+\/.*\.svg/g, function (match) {
+                const newPath = match
+                    .toLowerCase()
+                    .replace(/icons\//g, '')
+                    .replace(/\//g, '-');
 
-            return `dist/icons/${newPath}`;
-        }))
+                return `dist/icons/${newPath}`;
+            }),
+        )
         .pipe(gulpLess(lessConfig))
         .pipe(dest(esPath))
-        .pipe(dest(libPath));
-});
+        .pipe(dest(libPath)),
+);
 
-gulp.task('less:copy-base', function() {
-    return gulp.src(baseLessSrc)
-        .pipe(dest(baseLessPackagePath));
+gulp.task('less:copy-base', function () {
+    return gulp.src(baseLessSrc).pipe(dest(baseLessPackagePath));
 });
 
 gulp.task('less', gulp.series('less:compile', 'less:copy-base'));
 
 gulp.task('ts', () => {
-    const result = gulp.src([
-        'src/**/*.{tsx,ts}',
-        `!${doczReg}`,
-        `!${testsReg}`,
-        `!${iconsReg}`,
-        './typings/*.d.ts'
-    ]).pipe(ts(tsConfig));
+    const result = gulp
+        .src(['src/**/*.{tsx,ts}', `!${doczReg}`, `!${testsReg}`, `!${iconsReg}`, './typings/*.d.ts'])
+        .pipe(ts(tsConfig));
 
     return merge(
-        result.dts
-            .pipe(dest(esPath))
-            .pipe(dest(libPath)),
+        result.dts.pipe(dest(esPath)).pipe(dest(libPath)),
         result.js
             .pipe(inlineSvgToReact())
             .pipe(babel(babelEsConfig))
@@ -142,22 +153,22 @@ gulp.task('ts', () => {
             .pipe(dest(esPath))
             .pipe(removeCss())
             .pipe(babel(babelLibConfig))
-            .pipe(dest(libPath))
+            .pipe(dest(libPath)),
     );
 });
 
 gulp.task('main', done => {
-    const components = glob.sync('src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
+    const components = glob.sync('src/components/**/*.{tsx,ts}', {
+        ignore: [testsReg, doczReg],
+    });
 
     fs.writeFile(indexTs, generateIndex(components), done);
 });
 
-gulp.task('build', gulp.series(
-    gulp.parallel('clean', 'clean:index'),
-    'main',
-    gulp.parallel('ts', 'less', 'svg'),
-    'clean:index'
-));
+gulp.task(
+    'build',
+    gulp.series(gulp.parallel('clean', 'clean:index'), 'main', gulp.parallel('ts', 'less', 'svg'), 'clean:index'),
+);
 
 /**
  * Helpers
@@ -165,99 +176,117 @@ gulp.task('build', gulp.series(
 const generateIndex = files => {
     const components = files.map(file => {
         const parsed = path.parse(file);
+
         return {
             path: file.replace('src/', './'),
             name: parsed.name,
-            ext: parsed.ext
-        }
+            ext: parsed.ext,
+        };
     });
     const collator = new Intl.Collator();
     const sorted = components.sort((a, b) => collator.compare(a.name, b.name));
-    const imports = sorted.map(({ name, path: cPath, ext: extension }) => {
-        return `export { default as ${name} } from '${cPath.replace(extension, '')}';`;
-    });
+    const imports = sorted.map(
+        ({ name, path: cPath, ext: extension }) =>
+            `export { default as ${name} } from '${cPath.replace(extension, '')}';`,
+    );
 
     return `${imports.join('\n')}`;
 };
 
-const changePipe = fn => through.obj(async function (file, encoding, next) {
-    await fn.call(this, file, encoding);
-    next();
-});
+const changePipe = fn =>
+    through.obj(async function (file, encoding, next) {
+        await fn.call(this, file, encoding);
+        next();
+    });
 
-const replaceContent = (regExp, newStr) => changePipe(function (file, encoding) {
-    const content = file.contents.toString(encoding);
+const replaceContent = (regExp, newStr) =>
+    changePipe(function (file, encoding) {
+        const content = file.contents.toString(encoding);
 
-    file.contents = Buffer.from(content.replace(regExp, newStr));
-    this.push(file);
-});
+        file.contents = Buffer.from(content.replace(regExp, newStr));
+        this.push(file);
+    });
 
-const inlineSvgToReact = () => changePipe(async function (file, encoding) {
-    const regExpSvg = /(?<key>import)\s+(?:(?:\s*(?<alias>[\w\r\n\t,{}\s\* ]+)\s*)\s*from)?\s*(?:["']?(?<ref>[@\w\s\\\/\-\.]+\.svg)["']?)/gi;
-    const regExpImport = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
-    const svgImports = file.contents.toString(encoding).match(regExpSvg);
-    let components = '';
+const inlineSvgToReact = () =>
+    changePipe(async function (file, encoding) {
+        const regExpSvg =
+            /(?<key>import)\s+(?:(?:\s*(?<alias>[\w\r\n\t,{}\s\* ]+)\s*)\s*from)?\s*(?:["']?(?<ref>[@\w\s\\\/\-\.]+\.svg)["']?)/gi;
+        const regExpImport = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from\s+?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;
+        const svgImports = file.contents.toString(encoding).match(regExpSvg);
+        let components = '';
 
-    if (Array.isArray(svgImports) && svgImports.length) {
-        for (const svgImport of svgImports) {
-            const [importName, importPath] = svgImport.split('from')
-            const svgImportPath = importPath.replace(/'/g, '').trim();
-            const componentName =  importName.replace('import', '').trim();
-            const absolutePath = path.resolve(srcPath, svgImportPath);
-            const data = fs.readFileSync(absolutePath);
-            let code;
+        if (Array.isArray(svgImports) && svgImports.length) {
+            for (const svgImport of svgImports) {
+                const [importName, importPath] = svgImport.split('from');
+                const svgImportPath = importPath.replace(/'/g, '').trim();
+                const componentName = importName.replace('import', '').trim();
+                const absolutePath = path.resolve(srcPath, svgImportPath);
+                const data = fs.readFileSync(absolutePath);
+                let code;
 
-            try {
-                code = await svgr(data, {
-                    svgo: true,
-                    svgoConfig: {
-                        plugins: [
-                            {
-                                prefixIds: {
-                                    prefix: componentName
-                                }
-                            }
-                        ]
-                    },
-                }, { componentName });
+                try {
+                    code = await svgr(
+                        data,
+                        {
+                            svgo: true,
+                            svgoConfig: {
+                                plugins: [
+                                    {
+                                        prefixIds: {
+                                            prefix: componentName,
+                                        },
+                                    },
+                                ],
+                            },
+                        },
+                        { componentName },
+                    );
+                } catch (e) {
+                    throw new Error(e);
+                }
 
-            } catch (e) {
-                throw new Error(e)
+                components += code
+                    .replace('import React from "react";', '')
+                    .replace(`export default ${componentName};`, '');
+                file.contents = Buffer.from(file.contents.toString(encoding).replace(`${svgImport};`, ''));
             }
 
-            components += code.replace('import React from "react";', '').replace(`export default ${componentName};`, '');
-            file.contents = Buffer.from(file.contents.toString(encoding).replace(`${svgImport};`, ''));
+            const imports = file.contents.toString(encoding).match(regExpImport);
+            const indexToPaste =
+                file.contents.toString(encoding).lastIndexOf(imports[imports.length - 1]) +
+                imports[imports.length - 1].length;
+
+            file.contents = Buffer.from(
+                `${file.contents.toString(encoding).slice(0, indexToPaste)}\n${components}${file.contents
+                    .toString(encoding)
+                    .slice(indexToPaste)}`,
+            );
         }
 
-        const imports = file.contents.toString(encoding).match(regExpImport);
-        const indexToPaste = file.contents.toString(encoding).lastIndexOf(imports[imports.length - 1]) + imports[imports.length - 1].length;
+        this.push(file);
+    });
 
-        file.contents = Buffer.from(`${file.contents.toString(encoding).slice(0, indexToPaste)}\n${components}${file.contents.toString(encoding).slice(indexToPaste)}`);
-    }
+const svgToReact = () =>
+    changePipe(async function (file, encoding) {
+        const name = file.path
+            .replace(iconsPath + sep, '')
+            .replace(docIconsPath + sep, '')
+            .toLowerCase()
+            .replace('.svg', '')
+            .replace(new RegExp(`\\${sep}`, 'g'), '-')
+            .replace(/[^a-z0-9-]+/g, '_');
 
-    this.push(file)
-});
+        const jsFile = await generateEs6js(file, encoding, name);
+        const moduleFile = generateModulejs(jsFile, encoding, name);
+        const packageJson = generatePackageJson(file, name);
 
-const svgToReact = () => changePipe(async function (file, encoding) {
-    const name = file.path
-        .replace(iconsPath + sep, '')
-        .replace(docIconsPath + sep, '')
-        .toLowerCase()
-        .replace('.svg', '')
-        .replace(new RegExp('\\' + sep, 'g'), '-')
-        .replace(/[^a-z0-9-]+/g, '_');
+        file.path = `${iconsPath}${sep}${name}.svg`;
 
-    const jsFile = await generateEs6js(file, encoding, name);
-    const moduleFile = generateModulejs(jsFile, encoding, name);
-    const packageJson = generatePackageJson(file, name);
-
-    file.path = `${iconsPath}${sep}${name}.svg`;
-
-    this.push(file);
-    this.push(jsFile);
-    this.push(moduleFile);
-    this.push(packageJson);
-});
+        this.push(file);
+        this.push(jsFile);
+        this.push(moduleFile);
+        this.push(packageJson);
+    });
 
 const generateEs6js = async (file, encoding, name) => {
     const jsFile = file.clone();
@@ -294,22 +323,23 @@ const generatePackageJson = (file, name) => {
 
 const getIconFolder = name => `${iconsPath}${sep}${name}${sep}`;
 
-const removeCss = () => changePipe(function (file, encoding) {
-    const content = file.contents.toString(encoding);
-    file.contents = Buffer.from(
-        content.split('\n').filter(c => c.search('.css') === -1).join('\n')
-    );
-    this.push(file);
-});
+const removeCss = () =>
+    changePipe(function (file, encoding) {
+        const content = file.contents.toString(encoding);
+        file.contents = Buffer.from(
+            content
+                .split('\n')
+                .filter(c => c.search('.css') === -1)
+                .join('\n'),
+        );
+        this.push(file);
+    });
 
 const getSvgrConfig = (filePath, name) => ({
     template: code => {
-
-        const modCode = code.match(/".*?"/g).reduce(
-            (outCode, regStr) => {
-                return outCode.replace(regStr, `{\`${regStr.replace(/"/g, '')}\`}`);
-            }, code
-        );
+        const modCode = code
+            .match(/".*?"/g)
+            .reduce((outCode, regStr) => outCode.replace(regStr, `{\`${regStr.replace(/"/g, '')}\`}`), code);
 
         return `import React from 'react'
 
@@ -323,106 +353,107 @@ const getSvgrConfig = (filePath, name) => ({
     },
     icon: true,
     svgoConfig: {
-        plugins: [{
-            cleanupIDs: { prefix: name ? '${id}' : `svg-${path.basename(filePath, '.svg')}` },
-        },
-        {
-            inlineStyles: { onlyMatchedOnce: false }
-        }]
-    }
+        plugins: [
+            {
+                cleanupIDs: {
+                    prefix: name ? '${id}' : `svg-${path.basename(filePath, '.svg')}`,
+                },
+            },
+            {
+                inlineStyles: { onlyMatchedOnce: false },
+            },
+        ],
+    },
 });
 
-const getComponentName = filePath => {
-    return path.basename(filePath, '.svg')
+const getComponentName = filePath =>
+    path
+        .basename(filePath, '.svg')
         .replace('+', '-')
         .split('-')
         .map(w => w.charAt(0).toUpperCase() + w.slice(1))
         .join('');
-};
+const removeSvgMasks = () =>
+    changePipe(function (file, encoding) {
+        const content = file.contents.toString(encoding);
+        const $ = cheerio.load(content, { xmlMode: true });
+        const $svg = $('svg');
 
+        const mask = $svg.find('[mask]');
 
-const removeSvgMasks = () => changePipe(function (file, encoding) {
-    const content = file.contents.toString(encoding);
-    const $ = cheerio.load(content, { xmlMode: true });
-    const $svg = $('svg');
+        if (mask.length === 0) {
+            this.push(file);
 
-    const mask = $svg.find('[mask]');
+            return;
+        }
 
-    if (mask.length === 0) {
+        mask.each((i, item) => getMaskData(item));
+
+        file.contents = Buffer.from($.xml());
+
         this.push(file);
-        return;
-    }
 
-    mask.each((i, item) => getMaskData(item));
+        function getMaskData(mask) {
+            const maskAttr = $(mask).attr('mask');
+            const maskId = getIdFromMaskAttr(maskAttr);
+            const divs = [];
 
-    file.contents = Buffer.from($.xml());
+            if (maskId.length === 0) {
+                return;
+            }
 
-    this.push(file);
+            findById(maskId, divs);
 
-    function getMaskData(mask) {
-        const maskAttr = $(mask).attr('mask');
-        const maskId = getIdFromMaskAttr(maskAttr);
-        const divs = [];
+            if (divs.length === 0) {
+                return;
+            }
 
-        if (maskId.length === 0) {
-            return;
+            $(mask).html(divs.map(i => i.removeAttr('id')).join(''));
+
+            $(mask).removeAttr('mask');
         }
 
-        findById(maskId, divs);
+        function linkedTag($tag, divs, $parent) {
+            const attrs = $tag.attr();
+            const { 'xlink:href': xlinkHref } = attrs;
 
-        if (divs.length === 0) {
-            return;
+            switch (true) {
+                case !!xlinkHref:
+                    findById(xlinkHref, divs, $parent);
+                    break;
+                default:
+                    divs.push($tag);
+                    $tag.remove();
+                    $parent.remove();
+                    break;
+            }
         }
 
-        $(mask).html(divs.map(i => i.removeAttr('id')).join(''));
+        function findById(id, divs, $parent) {
+            const tag = $svg.find(id);
 
-        $(mask).removeAttr('mask')
-    }
+            if (tag.length === 0) {
+                return;
+            }
 
-    function linkedTag($tag, divs, $parent) {
-        const attrs = $tag.attr();
-        const { 'xlink:href': xlinkHref } = attrs;
+            const child = tag.children();
 
-        switch (true) {
-            case !!xlinkHref:
-                findById(xlinkHref, divs, $parent);
-                break;
-            default:
-                divs.push($tag);
-                $tag.remove();
-                $parent.remove();
-                break;
-        }
-    }
-
-    function findById(id, divs, $parent) {
-        const tag = $svg.find(id);
-
-        if (tag.length === 0) {
-            return;
+            switch (child.length) {
+                case 1:
+                    linkedTag(child, divs, tag);
+                    break;
+                case 0:
+                    divs.push(tag);
+                    tag.remove();
+                    $parent && $parent.remove();
+                    break;
+                default:
+                    child.map(item => linkedTag(item, divs));
+                    break;
+            }
         }
 
-        const child = tag.children();
-
-        switch (child.length) {
-            case 1:
-                linkedTag(child, divs, tag);
-                break;
-            case 0:
-                divs.push(tag);
-                tag.remove();
-                $parent && $parent.remove();
-                break;
-            default:
-                child.map(item => linkedTag(item, divs));
-                break;
+        function getIdFromMaskAttr(attr) {
+            return attr.match(/\(.*\)/g).reduce((id, match) => (match ? match.slice(1, -1) : id), '');
         }
-    }
-
-    function getIdFromMaskAttr(attr) {
-        return attr.match(/\(.*\)/g).reduce(
-            (id, match) => match ? match.slice(1, -1) : id,
-            ''
-        );
-    }
-});
+    });

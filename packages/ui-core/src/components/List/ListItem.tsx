@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './ListItem.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './ListItem.less';
 
 export interface IListItemProps {
     /** Дополнительный класс корневого элемента */
@@ -9,11 +9,7 @@ export interface IListItemProps {
 }
 
 const cn = cnCreate('mfui-beta-list-item');
-const ListItem: React.FC<IListItemProps> = ({className, children }) => (
-    <li className={cn([className])}>
-        {children}
-    </li>
-);
+const ListItem: React.FC<IListItemProps> = ({ className, children }) => <li className={cn([className])}>{children}</li>;
 
 ListItem.propTypes = {
     className: PropTypes.string,

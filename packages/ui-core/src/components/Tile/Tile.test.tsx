@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Tile, { ITileProps, Theme, Radius, Shadow } from './Tile';
 
 const props: ITileProps = {
@@ -20,14 +20,19 @@ describe('<Tile />', () => {
         });
 
         it('renders component with props', () => {
-            const wrapper = shallow(
-                <Tile {...props}>Some test content</Tile>
-            );
+            const wrapper = shallow(<Tile {...props}>Some test content</Tile>);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('it renders with data attributes', () => {
-            const wrapper = shallow(<Tile dataAttrs={{ 'data-test': 'test', 'incorrect-attr': 'test' }} />);
+            const wrapper = shallow(
+                <Tile
+                    dataAttrs={{
+                        'data-test': 'test',
+                        'incorrect-attr': 'test',
+                    }}
+                />,
+            );
             expect(wrapper).toMatchSnapshot();
         });
     });

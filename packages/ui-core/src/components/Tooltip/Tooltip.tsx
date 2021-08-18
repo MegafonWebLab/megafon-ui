@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import PropTypes from 'prop-types';
-import { usePopper } from 'react-popper';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import { usePopper } from 'react-popper';
 import Tile from 'components/Tile/Tile';
 import './Tooltip.less';
 
@@ -20,7 +20,7 @@ export const Paddings = {
     NONE: 'none',
     SMALL: 'small',
     MEDIUM: 'medium',
- } as const;
+} as const;
 
 type PaddingsType = typeof Paddings[keyof typeof Paddings];
 
@@ -28,7 +28,7 @@ export const TriggerEvent = {
     HOVER: 'hover',
     CLICK: 'click',
     CONTROLLED: 'controlled',
- } as const;
+} as const;
 
 type TriggerEventType = typeof TriggerEvent[keyof typeof TriggerEvent];
 
@@ -63,10 +63,10 @@ export interface ITooltipProps {
 }
 
 const cn = cnCreate('mfui-beta-tooltip');
-const Tooltip: React.FC<ITooltipProps>  = ({
+const Tooltip: React.FC<ITooltipProps> = ({
     className,
     placement = 'top',
-    fallbackPlacements = ['left', 'right' , 'top' , 'bottom'],
+    fallbackPlacements = ['left', 'right', 'top', 'bottom'],
     paddings = 'medium',
     triggerEvent = 'hover',
     boundaryElement,
@@ -91,35 +91,39 @@ const Tooltip: React.FC<ITooltipProps>  = ({
     const [isOpen, setIsOpen] = useState(isOpened);
     useEffect(() => setIsOpen(isOpened), [isOpened, setIsOpen]);
 
-    const options = useMemo(() => ({
-        placement,
-        modifiers: [
-            {
-                name: 'arrow',
-                options: { element: arrowElement },
-            },
-            {
-                name: 'flip',
-                options: {
-                    fallbackPlacements,
-                    padding: TOOLTIP_PADDING_FOR_FLIP,
+    const options = useMemo(
+        () => ({
+            placement,
+            modifiers: [
+                {
+                    name: 'arrow',
+                    options: { element: arrowElement },
                 },
-            },
-            {
-                name: 'eventListeners',
-                options: {
-                    scroll: isOpen,
-                    resize: isOpen,
+                {
+                    name: 'flip',
+                    options: {
+                        fallbackPlacements,
+                        padding: TOOLTIP_PADDING_FOR_FLIP,
+                    },
                 },
-            },
-            {
-                name: 'preventOverflow',
-                options: {
-                    boundary: currentBoundary,
+                {
+                    name: 'eventListeners',
+                    options: {
+                        scroll: isOpen,
+                        resize: isOpen,
+                    },
                 },
-            },
-        ],
-    }), [placement, arrowElement, currentBoundary, isOpen]);
+                {
+                    name: 'preventOverflow',
+                    options: {
+                        boundary: currentBoundary,
+                    },
+                },
+            ],
+        }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [placement, arrowElement, currentBoundary, isOpen],
+    );
 
     const { styles, attributes, update } = usePopper(currentTrigger, popperElement, options);
 
@@ -127,40 +131,52 @@ const Tooltip: React.FC<ITooltipProps>  = ({
         update && update();
     }, [children, update]);
 
-    const [isTouchDevice, setIsTouchDevice ] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => setIsTouchDevice(detectTouch()), [detectTouch, setIsTouchDevice]);
 
-    const clickEvent = useMemo(() => isTouchDevice ? 'touchstart' : 'mousedown', [isTouchDevice]);
-    const triggerEventName: TriggerEventType = useMemo(() => (
-        isTouchDevice ? 'click' : triggerEvent
-    ), [isTouchDevice, triggerEvent]);
+    const clickEvent = useMemo(() => (isTouchDevice ? 'touchstart' : 'mousedown'), [isTouchDevice]);
+    const triggerEventName: TriggerEventType = useMemo(
+        () => (isTouchDevice ? 'click' : triggerEvent),
+        [isTouchDevice, triggerEvent],
+    );
 
-    const handleMouseEnter = useCallback((e: MouseEvent): void => {
-        if (!isOpen) {
-            setIsOpen(true);
-            onOpen && onOpen(e);
-        }
-    }, [isOpen, onOpen, setIsOpen]);
+    const handleMouseEnter = useCallback(
+        (e: MouseEvent): void => {
+            if (!isOpen) {
+                setIsOpen(true);
+                onOpen && onOpen(e);
+            }
+        },
+        [isOpen, onOpen, setIsOpen],
+    );
 
-    const handleClick = useCallback((e: MouseEvent): void => {
-        setIsOpen(open => !open);
-        if (!isOpen) {
-            onOpen && onOpen(e);
-        } else {
-            onClose && onClose(e);
-        }
-    }, [isOpen, onOpen, onClose, setIsOpen]);
+    const handleClick = useCallback(
+        (e: MouseEvent): void => {
+            setIsOpen(open => !open);
+            if (!isOpen) {
+                onOpen && onOpen(e);
+            } else {
+                onClose && onClose(e);
+            }
+        },
+        [isOpen, onOpen, onClose, setIsOpen],
+    );
 
-    const handleOutsideEvent = useCallback((e: MouseEvent): void => {
-        const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
-        const isTargetInTrigger = e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
+    const handleOutsideEvent = useCallback(
+        (e: MouseEvent): void => {
+            const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
+            const isTargetInTrigger =
+                e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
 
-        if (!isTargetInPopper && !isTargetInTrigger) {
-            setIsOpen(false);
-            onClose && onClose(e);
-        }
-    }, [onClose, currentTrigger, popperElement, setIsOpen]);
-
+            if (!isTargetInPopper && !isTargetInTrigger) {
+                setIsOpen(false);
+                onClose && onClose(e);
+            }
+        },
+        [onClose, currentTrigger, popperElement, setIsOpen],
+    );
+    // eslint-disable-next-line consistent-return
     useEffect(() => {
         if (triggerEventName === TriggerEvent.HOVER) {
             currentTrigger && currentTrigger.addEventListener('mouseenter', handleMouseEnter);
@@ -169,16 +185,15 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
             }
+
             return () => {
                 currentTrigger && currentTrigger.removeEventListener('mouseenter', handleMouseEnter);
                 document.removeEventListener('mouseover', handleOutsideEvent);
             };
         }
-    }, [
-        triggerEventName, isOpen, currentTrigger,
-        handleOutsideEvent, handleMouseEnter,
-    ]);
+    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleMouseEnter]);
 
+    // eslint-disable-next-line consistent-return
     useEffect(() => {
         if (triggerEventName === TriggerEvent.CLICK) {
             currentTrigger && currentTrigger.addEventListener(clickEvent, handleClick);
@@ -187,15 +202,14 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             } else {
                 document.removeEventListener(clickEvent, handleOutsideEvent);
             }
+
             return () => {
                 currentTrigger && currentTrigger.removeEventListener(clickEvent, handleClick);
                 document.removeEventListener(clickEvent, handleOutsideEvent);
             };
         }
-    }, [
-        triggerEventName, isOpen, currentTrigger,
-        handleOutsideEvent, handleClick,
-    ]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleClick]);
 
     return (
         <div
@@ -203,19 +217,10 @@ const Tooltip: React.FC<ITooltipProps>  = ({
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}
-            >
-            <div
-                ref={setArrowElement}
-                className={cn('arrow', [arrowClassName])}
-                style={styles.arrow}
-            />
-            <div
-                className={cn('arrow-shadow')}
-                style={styles.arrow}
-            />
-            <Tile className={cn('content', [contentClassName])}>
-                {children}
-            </Tile>
+        >
+            <div ref={setArrowElement} className={cn('arrow', [arrowClassName])} style={styles.arrow} />
+            <div className={cn('arrow-shadow')} style={styles.arrow} />
+            <Tile className={cn('content', [contentClassName])}>{children}</Tile>
             <Tile shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
@@ -228,22 +233,24 @@ Tooltip.propTypes = {
     triggerEvent: PropTypes.oneOf(Object.values(TriggerEvent)),
     boundaryElement: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     triggerElement: (props, propName, componentName, location) => {
         const prop = props[propName];
         const isObject = typeof prop === 'object' && prop !== null;
+        // eslint-disable-next-line no-prototype-builtins
         const hasPropCurrent = isObject && prop.hasOwnProperty('current');
         if (prop === undefined) {
             return new Error(
-                `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`undefined\`.`
+                `The prop \`${propName}\` is marked as required in \`${componentName}\`, but its value is \`undefined\`.`,
             );
         }
         if (!isObject && !hasPropCurrent) {
             return new Error(
-                `Invalid ${location} \`${propName}\` supplied to \`${componentName}\`, expected React.RefObject.`
+                `Invalid ${location} \`${propName}\` supplied to \`${componentName}\`, expected React.RefObject.`,
             );
         }
+
         return null;
     },
     isOpened: PropTypes.bool,

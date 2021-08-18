@@ -1,8 +1,8 @@
+import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
-import './Checkbox.less';
 import CheckedIcon from 'icons/System/16/Checked_16.svg';
+import './Checkbox.less';
 
 export interface ICheckboxProps extends IFilterDataAttrs {
     /** Цвет чекбокса */
@@ -34,7 +34,7 @@ export interface ICheckboxProps extends IFilterDataAttrs {
 }
 
 const cn = cnCreate('mfui-beta-checkbox');
-class Checkbox extends React.Component<ICheckboxProps, {}> {
+class Checkbox extends React.Component<ICheckboxProps> {
     static propTypes = {
         className: PropTypes.string,
         fontSize: PropTypes.oneOf(['regular', 'small']),
@@ -44,16 +44,8 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
         checked: PropTypes.bool,
         disabled: PropTypes.bool,
         error: PropTypes.bool,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
-        extraContent: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
+        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
+        extraContent: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
         onChange: PropTypes.func,
     };
@@ -69,9 +61,9 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
     handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onChange } = this.props;
         onChange && onChange(e);
-    }
+    };
 
-    render() {
+    render(): JSX.Element {
         const {
             className,
             fontSize,
@@ -98,11 +90,12 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                         disabled,
                         error,
                     },
-                    className
+                    className,
                 )}
                 {...filterDataAttrs(dataAttrs)}
             >
                 <div className={cn('inner', [classes?.inner])}>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                     <label className={cn('label', { 'no-touch': !this.isTouch })}>
                         <input
                             className={cn('input')}

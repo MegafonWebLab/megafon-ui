@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './RadioButton.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './RadioButton.less';
 
 export interface IRadioButtonProps {
     /** Значение */
@@ -49,7 +49,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         onChange: PropTypes.func,
         inputRef: PropTypes.oneOfType([
             PropTypes.func,
-            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
         ]),
     };
 
@@ -58,13 +58,13 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         isDisabled: false,
     };
 
-    handleChange = () => {
+    handleChange = (): void => {
         const { onChange, value } = this.props;
 
         onChange && onChange(value);
-    }
+    };
 
-    render() {
+    render(): JSX.Element {
         const {
             isChecked,
             isDisabled,
@@ -82,10 +82,15 @@ class RadioButton extends React.Component<IRadioButtonProps> {
 
         return (
             <div className={cn(rootClassNames)}>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label
-                    className={cn('label', {
-                        disabled: isDisabled,
-                    }, classes.label)}
+                    className={cn(
+                        'label',
+                        {
+                            disabled: isDisabled,
+                        },
+                        classes.label,
+                    )}
                 >
                     <input
                         {...checkedProp}
@@ -98,7 +103,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                         ref={inputRef as React.Ref<HTMLInputElement>}
                     />
                     <div className={cn('custom-input', classes.customInput)} />
-                    {children && <div className={cn('text', { 'size': textSize }, classes.labelText)}>{children}</div>}
+                    {children && <div className={cn('text', { size: textSize }, classes.labelText)}>{children}</div>}
                 </label>
             </div>
         );

@@ -7,7 +7,7 @@ export interface IFilterDataAttrs {
     dataAttrs?: IAttributes;
 }
 
-const filterDataAttrs = (attrs: IAttributes = {}): IAttributes | {} => {
+const filterDataAttrs = (attrs: IAttributes = {}): IAttributes | Record<string, never> => {
     if (!attrs || typeof attrs !== 'object') {
         return {};
     }

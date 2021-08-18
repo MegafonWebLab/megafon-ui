@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const DemoContent = ({ children }) => (
+export const DemoContent = ({ children }: Record<string, React.ReactNode>): JSX.Element => (
     <div
         style={{
             padding: '0 0 20px 0',
@@ -18,3 +18,5 @@ export const DemoContent = ({ children }) => (
         </div>
     </div>
 );
+
+export default DemoContent;

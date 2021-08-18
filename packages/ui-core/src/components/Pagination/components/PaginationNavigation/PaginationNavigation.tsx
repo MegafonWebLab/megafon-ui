@@ -1,7 +1,7 @@
-import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
-import PropTypes from 'prop-types';
 import './PaginationNavigation.less';
+import PropTypes from 'prop-types';
+import React from 'react';
 import ArrowRightIcon from 'icons/System/24/Arrow_right_24.svg';
 import PaginationButton from '../PaginationButton/PaginationButton';
 

@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
 import Carousel, { ICarouselProps, NavTheme, EffectTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
 
@@ -47,7 +47,7 @@ describe('<Carousel />', () => {
             <Carousel>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Carousel>
+            </Carousel>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -63,7 +63,7 @@ describe('<Carousel />', () => {
             >
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Carousel>
+            </Carousel>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -74,13 +74,10 @@ describe('<Carousel />', () => {
             <Carousel {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Carousel>
+            </Carousel>,
         );
 
-        wrapper
-            .find(cnCarousel('arrow'))
-            .last()
-            .simulate('click');
+        wrapper.find(cnCarousel('arrow')).last().simulate('click');
 
         expect(props.onNextClick).toBeCalled();
     });
@@ -90,13 +87,10 @@ describe('<Carousel />', () => {
             <Carousel {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Carousel>
+            </Carousel>,
         );
 
-        wrapper
-            .find(cnCarousel('arrow'))
-            .first()
-            .simulate('click');
+        wrapper.find(cnCarousel('arrow')).first().simulate('click');
 
         expect(props.onPrevClick).toBeCalled();
     });
@@ -106,20 +100,21 @@ describe('<Carousel />', () => {
             <Carousel {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Carousel>
+            </Carousel>,
         );
 
-        wrapper
-            .find(cnCarousel('arrow'))
-            .last()
-            .simulate('click');
+        wrapper.find(cnCarousel('arrow')).last().simulate('click');
 
         expect(props.onChange).toBeCalled();
     });
 
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
-        mount(<Carousel {...props} rootRef={ref}><DemoSlide>1</DemoSlide></Carousel>);
+        mount(
+            <Carousel {...props} rootRef={ref}>
+                <DemoSlide>1</DemoSlide>
+            </Carousel>,
+        );
 
         expect(ref.current).not.toBeNull();
     });

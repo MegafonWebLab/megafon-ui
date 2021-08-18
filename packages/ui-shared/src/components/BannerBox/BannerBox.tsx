@@ -1,6 +1,6 @@
-import * as React from 'react';
 import { Banner } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as React from 'react';
 
 type BannerBoxProps = React.ComponentProps<typeof Banner>;
 

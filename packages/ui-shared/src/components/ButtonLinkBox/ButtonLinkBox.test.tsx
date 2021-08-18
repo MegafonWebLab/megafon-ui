@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { mount, shallow } from 'enzyme';
+import * as React from 'react';
 import ButtonLinkBox, { IButtonLinkBoxProps } from './ButtonLinkBox';
 
 const props: IButtonLinkBoxProps = {
@@ -24,7 +24,7 @@ const props: IButtonLinkBoxProps = {
 
 describe('<ButtonLinkBox />', () => {
     it('renders ButtonLinkBox', () => {
-        const wrapper = shallow(<ButtonLinkBox {...props}/>);
+        const wrapper = shallow(<ButtonLinkBox {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -39,7 +39,7 @@ describe('<ButtonLinkBox />', () => {
     });
 
     it('renders ButtonLinkBox with download links', () => {
-        const wrapper = shallow(<ButtonLinkBox {...props} linkDownload={true} buttonDownload={true} />);
+        const wrapper = shallow(<ButtonLinkBox {...props} linkDownload buttonDownload />);
         expect(wrapper).toMatchSnapshot();
     });
 

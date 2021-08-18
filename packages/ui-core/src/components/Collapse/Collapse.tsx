@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
 type DefaultProps = {
     animation?: boolean;
@@ -16,14 +16,7 @@ type Props = DefaultProps & {
 const BROWSER_DELAY = 100;
 
 const Collapse = (props: Props): React.FunctionComponentElement<Props> => {
-    const {
-        className,
-        classNameContainer,
-        animation = true,
-        animationDuration = 300,
-        children,
-        isOpened,
-    } = props;
+    const { className, classNameContainer, animation = true, animationDuration = 300, children, isOpened } = props;
     const canUpdate = React.useRef(false);
     const timer = React.useRef<number | undefined>(undefined);
     const rootNode = React.useRef<HTMLInputElement>(null);
@@ -64,7 +57,11 @@ const Collapse = (props: Props): React.FunctionComponentElement<Props> => {
     return (
         <div
             className={className}
-            style={{ overflow: 'hidden', height, transition }}
+            style={{
+                overflow: 'hidden',
+                height,
+                transition,
+            }}
             ref={rootNode}
         >
             <div className={classNameContainer}>{children}</div>

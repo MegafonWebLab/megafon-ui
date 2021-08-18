@@ -14,7 +14,7 @@ export interface IRadioButtonState {
     selectedOption?: string;
 }
 
-export const DemoRadioButtonWrapper = ({ children }: IRadioButtonProps) => {
+export const DemoRadioButtonWrapper = ({ children }: IRadioButtonProps): JSX.Element => {
     const [selectedOption, setSelectedOption] = React.useState('');
 
     const handleChange = (value: string): void => {
@@ -23,11 +23,19 @@ export const DemoRadioButtonWrapper = ({ children }: IRadioButtonProps) => {
 
     return (
         <>
-            <p style={{textAlign: 'center', marginTop: 0}}><b>Value:</b> "{selectedOption || undefined}"</p>
+            <p
+                style={{
+                    textAlign: 'center',
+                    marginTop: 0,
+                }}
+            >
+                {/* eslint-disable-next-line react/no-unescaped-entities */}
+                <b>Value:</b> "{selectedOption || undefined}"
+            </p>
             <div style={flexStyle}>
                 {children({
                     onChange: handleChange,
-                    selectedOption: selectedOption,
+                    selectedOption,
                 })}
             </div>
         </>

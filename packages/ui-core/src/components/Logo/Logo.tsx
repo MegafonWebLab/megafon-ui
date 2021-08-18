@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import './Logo.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import greenHorizontalImg from 'docIcons/green-horizontal.svg';
 import greenVerticalImg from 'docIcons/green-vertical.svg';
 import Link from '../Link/Link';
@@ -20,7 +20,7 @@ export interface ILogoProps {
 }
 
 const cn = cnCreate('mfui-beta-logo');
-class Logo extends React.Component<ILogoProps, {}> {
+class Logo extends React.PureComponent<ILogoProps, Record<string, unknown>> {
     static propTypes = {
         color: PropTypes.string,
         view: PropTypes.oneOf(['horizontal', 'vertical']),
@@ -36,7 +36,7 @@ class Logo extends React.Component<ILogoProps, {}> {
         href: '/',
     };
 
-    render() {
+    render(): JSX.Element {
         const { color, view, className, href, target } = this.props;
         const images = {
             'green-horizontal': greenHorizontalImg,

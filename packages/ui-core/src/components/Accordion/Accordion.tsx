@@ -1,11 +1,11 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import './Accordion.less';
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
-import Header from 'components/Header/Header';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import Collapse from 'components/Collapse/Collapse';
-import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
+import Header from 'components/Header/Header';
 import ArrowDown from 'icons/System/24/Arrow_down_24.svg';
+import ArrowUp from 'icons/System/24/Arrow_up_24.svg';
 
 export interface IAccordionProps extends IFilterDataAttrs {
     /** Ссылка на корневой элемент */
@@ -69,15 +69,14 @@ const Accordion: React.FC<IAccordionProps> = ({
             <div className={cn('title-wrap', [titleWrapPropsClasses])} onClick={handleClickTitle}>
                 <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpenedState })}>
-                    {isOpenedState
-                        ? (<ArrowUp />)
-                        : (<ArrowDown />)
-                    }
+                    {isOpenedState ? <ArrowUp /> : <ArrowDown />}
                 </div>
             </div>
             <Collapse
                 className={cn('content', collapsePropsClasses)}
-                classNameContainer={cn('content-inner', { 'v-padding': hasVerticalPaddings })}
+                classNameContainer={cn('content-inner', {
+                    'v-padding': hasVerticalPaddings,
+                })}
                 isOpened={isOpenedState}
             >
                 {children}
@@ -89,7 +88,7 @@ const Accordion: React.FC<IAccordionProps> = ({
 Accordion.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,

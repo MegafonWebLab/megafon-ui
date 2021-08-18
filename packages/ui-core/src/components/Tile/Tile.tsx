@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React from 'react';
 import './Tile.less';
 
 export const Theme = {
@@ -70,7 +70,7 @@ const Tile: React.FC<ITileProps> = ({
                     pointer: isPointer,
                     interactive: isInteractive,
                 },
-                className
+                className,
             )}
             onClick={handleClick}
             {...filterDataAttrs(dataAttrs)}

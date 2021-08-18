@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import TextLink, { ITextLinkProps } from './TextLink';
 
 const props: ITextLinkProps = {
@@ -24,6 +24,7 @@ describe('<TextLink />', () => {
         const onClick = jest.fn();
         const wrapper = shallow(<TextLink onClick={onClick} />);
         wrapper.simulate('click');
+        // eslint-disable-next-line no-magic-numbers
         expect(onClick.mock.calls).toHaveLength(1);
     });
 });

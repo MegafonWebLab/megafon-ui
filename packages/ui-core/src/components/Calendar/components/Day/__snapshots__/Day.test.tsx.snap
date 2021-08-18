@@ -46,6 +46,8 @@ exports[`<Day /> snapshots should return empty div if label is not provided 1`] 
 >
   <span
     className="mfui-beta-day__label"
-  />
+  >
+    Пн
+  </span>
 </button>
 `;

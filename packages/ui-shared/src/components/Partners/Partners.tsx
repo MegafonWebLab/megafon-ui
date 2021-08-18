@@ -1,12 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import {
-    Grid,
-    GridColumn,
-    Tile,
-    Carousel,
-} from '@megafon/ui-core';
+import { Grid, GridColumn, Tile, Carousel } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './Partners.less';
 
 export type ItemType = {
@@ -73,12 +68,7 @@ const Partners: React.FC<IPartnersProps> = ({
         const { src, href, alt } = item;
 
         return (
-            <Tile
-                className={cn('tile')}
-                href={href}
-                shadowLevel="low"
-                isInteractive={!!href}
-            >
+            <Tile className={cn('tile')} href={href} shadowLevel="low" isInteractive={!!href}>
                 <div className={cn('tile-inner', [itemClass])}>
                     <div className={cn('img-wrapper')}>
                         <img src={src} alt={alt} className={cn('tile-img')} />
@@ -86,6 +76,7 @@ const Partners: React.FC<IPartnersProps> = ({
                 </div>
             </Tile>
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const renderGrid = React.useCallback(
@@ -98,7 +89,8 @@ const Partners: React.FC<IPartnersProps> = ({
                 ))}
             </Grid>
         ),
-        [items]
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [items],
     );
 
     const renderCarousel = React.useCallback(() => {
@@ -121,14 +113,11 @@ const Partners: React.FC<IPartnersProps> = ({
                 ))}
             </Carousel>
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [items]);
 
     return (
-        <div
-            ref={rootRef}
-            className={cn([root, className])}
-            {...filterDataAttrs(dataAttrs)}
-        >
+        <div ref={rootRef} className={cn([root, className])} {...filterDataAttrs(dataAttrs)}>
             {items.length > MAX_GRID_ITEMS_LENGTH ? renderCarousel() : renderGrid()}
         </div>
     );
@@ -137,7 +126,7 @@ const Partners: React.FC<IPartnersProps> = ({
 Partners.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     classes: PropTypes.shape({
         root: PropTypes.string,
@@ -150,7 +139,7 @@ Partners.propTypes = {
             href: PropTypes.string,
             src: PropTypes.string.isRequired,
             alt: PropTypes.string.isRequired,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     onChange: PropTypes.func,
     onNextClick: PropTypes.func,

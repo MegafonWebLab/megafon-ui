@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
 export interface ILinkProps {
     /** Дополнительный класс корневого элемента */
@@ -17,7 +17,7 @@ export interface ILinkProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
-class Link extends React.Component<ILinkProps, {}> {
+class Link extends React.PureComponent<ILinkProps> {
     static propTypes = {
         href: PropTypes.string,
         children: PropTypes.oneOfType([
@@ -33,11 +33,10 @@ class Link extends React.Component<ILinkProps, {}> {
         download: PropTypes.bool,
     };
 
-    render() {
+    render(): JSX.Element {
+        const { children } = this.props;
 
-        return (
-            <a {...this.props} />
-        );
+        return <a {...this.props}> {children}</a>;
     }
 }
 

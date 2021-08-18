@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { cnCreate } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './TextLink.less';
 import Link, { ILinkProps } from '../Link/Link';
-import { cnCreate } from '@megafon/ui-helpers';
 
 export interface ITextLinkProps extends ILinkProps {
     /** Цвет */
@@ -15,7 +15,7 @@ export interface ITextLinkProps extends ILinkProps {
 }
 
 const cn = cnCreate('mfui-beta-text-link');
-class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
+class TextLink extends React.PureComponent<Partial<ITextLinkProps>> {
     static propTypes = {
         color: PropTypes.oneOf(['white', 'black', 'gray', 'blue', 'green', 'inherit']),
         underlineVisibility: PropTypes.oneOf(['hover', 'always']),
@@ -34,7 +34,7 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
         color: 'blue',
     };
 
-    render() {
+    render(): JSX.Element {
         const {
             underlineVisibility,
             underlineStyle,
@@ -54,13 +54,19 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
                 href={href}
                 rel={rel}
                 onClick={onClick}
-                children={children}
-                className={cn('', {
-                    'underline-visibility': underlineVisibility,
-                    'underline-style': underlineStyle, color,
-                }, className)}
+                className={cn(
+                    '',
+                    {
+                        'underline-visibility': underlineVisibility,
+                        'underline-style': underlineStyle,
+                        color,
+                    },
+                    className,
+                )}
                 download={download}
-            />
+            >
+                {children}
+            </Link>
         );
     }
 }

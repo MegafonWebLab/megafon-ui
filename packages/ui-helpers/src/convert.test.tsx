@@ -16,32 +16,36 @@ type TestHeaderProps = {
     margin?: string;
     className?: string;
 };
-const TestHeaderComponent: React.FC<TestHeaderProps> = ({
-    type,
-    color,
-    margin,
-    className,
-    children,
-}) => {
+const TestHeaderComponent: React.FC<TestHeaderProps> = ({ type, color, margin, className, children }) => {
     const ElementType = type as React.ElementType;
 
     return (
-        <ElementType className={className} style={{ color, margin }}>{children}</ElementType>
+        <ElementType
+            className={className}
+            style={{
+                color,
+                margin,
+            }}
+        >
+            {children}
+        </ElementType>
     );
 };
 
 type TestLinkProps = { href?: string; target?: string };
-const TextLinkComponent: React.FC<TestLinkProps> = ({
-    href,
-    target,
-    children,
-}) => <a href={href} target={target}>{children}</a>;
+
+// eslint-disable-next-line react/no-multi-comp
+const TextLinkComponent: React.FC<TestLinkProps> = ({ href, target, children }) => (
+    <a href={href} target={target}>
+        {children}
+    </a>
+);
 
 const config: ConvertTransformConfig = {
     h: {
         component: TestHeaderComponent,
         props: ['type', 'color', 'margin'],
-        customProps: { className: 'class-name', testAttr: 'test-attr'},
+        customProps: { className: 'class-name', testAttr: 'test-attr' },
     },
     a: {
         component: TextLinkComponent,
@@ -87,10 +91,7 @@ describe('convertToReact', () => {
     });
 
     test('should cut forbidden props', () => {
-        const converted = convertToReact(
-            '<h type="h1" color="green" forbiddebProp="test" margin>title</h>',
-            config
-        );
+        const converted = convertToReact('<h type="h1" color="green" forbiddebProp="test" margin>title</h>', config);
         const node = converted[0] as NodeType;
 
         expect(Array.isArray(converted)).toBe(true);

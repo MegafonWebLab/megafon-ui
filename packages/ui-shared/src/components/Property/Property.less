@@ -29,20 +29,23 @@
     }
 
     &__icon {
+        display: inline-block;
         width: 24px;
         height: 24px;
-        overflow: hidden;
         margin-right: 9px;
         margin-left: 1px;
-        display: inline-block;
+        overflow: hidden;
+
         vertical-align: bottom;
     }
 
     &__badge {
-        border-radius: 2px;
-        font-size: 12px;
         padding: 2px 8px;
+        border-radius: 2px;
+
         color: @clearWhite;
+        font-size: 12px;
+
         background: @mandarin;
     }
 
@@ -53,7 +56,6 @@
         @media @mobileB {
             padding-right: 77px;
         }
-
         @media @mobileSM {
             padding-right: 8px;
         }
@@ -64,11 +66,11 @@
     }
 
     &__value-wrapper {
-        width: 35%;
         display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
         flex-shrink: 0;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 35%;
 
         @media @mobileS {
             width: auto;
@@ -77,8 +79,8 @@
     }
 
     &__value-wrapper_merged {
-        border-left: 1px solid @spbSky2;
         align-items: center;
+        border-left: 1px solid @spbSky2;
     }
 
     &__desc {
@@ -91,6 +93,7 @@
 
     &__value {
         max-width: 234px;
+
         white-space: pre-line;
         text-align: right;
         .h3();

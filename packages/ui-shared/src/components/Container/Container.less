@@ -47,7 +47,6 @@
     @media @mobileB {
         padding-top: @contentVerticalIndentMobileB;
     }
-
     @media @mobileSM {
         padding-top: @contentVerticalIndentMobileSM;
     }
@@ -94,20 +93,114 @@
 @{root} {
     padding-bottom: @contentVerticalIndentDesktop;
 
+    @media @mobileB {
+        padding-bottom: @contentVerticalIndentMobileB;
+    }
+    @media @mobileSM {
+        padding-bottom: @contentVerticalIndentMobileSM;
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k2, 3, 17);
+        .generateComponentsMargins(@small, @k2, 14, 15);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k2, 3 ,17);
+        .generateComponentsMargins(@small, @k2, 14, 15);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k3, 4, 20);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k3, 4, 20);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k4, 3, 20);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k4, 3, 20);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k5, 3, 20);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k5, 3, 20);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k6, 3, 20);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k6, 3, 20);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k7, 3, 20);
+        .generateComponentsMargins(@small, @k7, 14, 15);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k7, 3, 20);
+        .generateComponentsMargins(@small, @k7, 14, 15);
+    }
+    @media @mobileSM {
+        .generateInnerTabsMargins(@small, 3, 13);
+        .generateInnerTabsMargins(@small, 16, 19);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k9, 3, 20);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k9, 3, 20);
+    }
+    @media @mobile {
+        .generateComponentsMargins(@big, @k10, 3, 20);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k11, 3, 20);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k11, 3, 20);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k12, 3, 20);
+        .generateComponentsMargins(@small, @k12, 14, 15);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k12, 3, 20);
+        .generateComponentsMargins(@small, @k12, 14, 15);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k16, 3, 20);
+        .generateComponentsMargins(@small, @k16, 14, 15);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k16, 3, 20);
+        .generateComponentsMargins(@small, @k16, 14, 15);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k17, 3, 20);
+        .generateComponentsMargins(@small, @k17, 14, 15);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k17, 3, 20);
+        .generateComponentsMargins(@small, @k17, 14, 15);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k20, 3, 19);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k20, 3, 19);
+    }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k21, 2, 17);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k21, 2, 17);
+    }
+
     &_disable-padding-top {
         padding-top: 0 !important;
     }
 
     &_disable-padding-bottom {
         padding-bottom: 0 !important;
-    }
-
-    @media @mobileB {
-        padding-bottom: @contentVerticalIndentMobileB;
-    }
-
-    @media @mobileSM {
-        padding-bottom: @contentVerticalIndentMobileSM;
     }
 
     @{color-modificator}@{color-default} {
@@ -137,41 +230,15 @@
     .generateComponentsMargins(@large, @k2, 3, 17);
     .generateComponentsMargins(@small, @k2, 14, 15);
 
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k2, 3, 17);
-        .generateComponentsMargins(@small, @k2, 14, 15);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k2, 3 ,17);
-        .generateComponentsMargins(@small, @k2, 14, 15);
-    }
-
     // k3(benefits-icons)
 
     .generateComponentsMargins(@large, @k3, 4, 20);
     .generateComponentsMargins(@big, @k3, 14, 15);
 
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k3, 4, 20);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k3, 4, 20);
-    }
-
     // k4(benefits-pictures);
 
     .generateComponentsMargins(@large, @k4, 3, 20);
     .generateComponentsMargins(@big, @k4, 14, 15);
-
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k4, 3, 20);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k4, 3, 20);
-    }
 
     @{k4} + @{k4} {
         .disableMarginTop();
@@ -182,14 +249,6 @@
     .generateComponentsMargins(@large, @k5, 3, 20);
     .generateComponentsMargins(@big, @k5, 14, 15);
 
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k5, 3, 20);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k5, 3, 20);
-    }
-
     @{k5} + @{k5} {
         .disableMarginTop();
     }
@@ -199,14 +258,6 @@
     .generateComponentsMargins(@large, @k6, 3, 20);
     .generateComponentsMargins(@big, @k6, 14, 15);
 
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k6, 3, 20);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k6, 3, 20);
-    }
-
     @{k6} + @{k6} {
         .disableMarginTop();
     }
@@ -215,16 +266,6 @@
 
     .generateComponentsMargins(@large, @k7, 3, 20);
     .generateComponentsMargins(@small, @k7, 14, 15);
-
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k7, 3, 20);
-        .generateComponentsMargins(@small, @k7, 14, 15);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k7, 3, 20);
-        .generateComponentsMargins(@small, @k7, 14, 15);
-    }
 
     // k8(tabs-box)
 
@@ -242,7 +283,6 @@
         @media @mobileB {
             margin-top: @big;
         }
-
         @media @mobileSM {
             margin-top: @medium;
         }
@@ -250,11 +290,6 @@
 
     .generateInnerTabsMargins(@big, 3, 13);
     .generateInnerTabsMargins(@big, 16, 19);
-
-    @media @mobileSM {
-        .generateInnerTabsMargins(@small, 3, 13);
-        .generateInnerTabsMargins(@small, 16, 19);
-    }
 
     @{k8} @{k8} {
         .disableMarginTop();
@@ -268,14 +303,6 @@
 
     .generateComponentsMargins(@large, @k9, 3, 20);
 
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k9, 3, 20);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k9, 3, 20);
-    }
-
     @{k9} + @{k9},
     @{k9} + @{k15} {
         .disableMarginTop();
@@ -285,10 +312,6 @@
 
     .generateComponentsMargins(@large, @k10, 3, 20);
 
-    @media @mobile {
-        .generateComponentsMargins(@big, @k10, 3, 20);
-    }
-
     @{k10} + @{k14},
     @{k10} + @{k15} {
         .disableMarginTop();
@@ -297,14 +320,6 @@
     // k11(property)
 
     .generateComponentsMargins(@large, @k11, 3, 20);
-
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k11, 3, 20);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k11, 3, 20);
-    }
 
     @{k11} + @{k11},
     @{k11} + @{k14},
@@ -316,16 +331,6 @@
 
     .generateComponentsMargins(@large, @k12, 3, 20);
     .generateComponentsMargins(@small, @k12, 14, 15);
-
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k12, 3, 20);
-        .generateComponentsMargins(@small, @k12, 14, 15);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k12, 3, 20);
-        .generateComponentsMargins(@small, @k12, 14, 15);
-    }
 
     // k13(accordion-box)
 
@@ -339,7 +344,6 @@
         @media @mobileB {
             margin-top: @big;
         }
-
         @media @mobileSM {
             margin-top: @medium;
         }
@@ -353,7 +357,6 @@
         @media @mobileB {
             margin-top: @big;
         }
-
         @media @mobileSM {
             margin-top: @medium;
         }
@@ -364,30 +367,10 @@
     .generateComponentsMargins(@large, @k16, 3, 20);
     .generateComponentsMargins(@small, @k16, 14, 15);
 
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k16, 3, 20);
-        .generateComponentsMargins(@small, @k16, 14, 15);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k16, 3, 20);
-        .generateComponentsMargins(@small, @k16, 14, 15);
-    }
-
     // k17(picture-with-description)
 
     .generateComponentsMargins(@large, @k17, 3, 20);
     .generateComponentsMargins(@small, @k17, 14, 15);
-
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k17, 3, 20);
-        .generateComponentsMargins(@small, @k17, 14, 15);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k17, 3, 20);
-        .generateComponentsMargins(@small, @k17, 14, 15);
-    }
 
     // k20(steps)
     .generateComponentsMargins(@large, @k20, 3, 19);
@@ -397,24 +380,8 @@
         .disableMarginTop();
     }
 
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k20, 3, 19);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k20, 3, 19);
-    }
-
     // k21(page-title)
     .generateComponentsMargins(@large, @k21, 2, 17);
-
-    @media @mobileB {
-        .generateComponentsMargins(@big, @k21, 2, 17);
-    }
-
-    @media @mobileSM {
-        .generateComponentsMargins(@medium, @k21, 2, 17);
-    }
 
     @{k21} + @{k15} {
         margin-top: @small;

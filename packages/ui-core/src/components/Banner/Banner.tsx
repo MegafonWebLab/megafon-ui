@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './Banner.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './Banner.less';
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
@@ -71,8 +71,7 @@ const Banner: React.FC<IBannerProps> = ({
 
     const showDotTimer = loop ? isAutoPlaying : isAutoPlaying && !isEnd;
     const dotTimerDelay = autoPlayDelay / 1000;
-    const navArrowTheme =
-        navTheme === NavTheme.DARK ? ArrowTheme.DARK : ArrowTheme.PURPLE;
+    const navArrowTheme = navTheme === NavTheme.DARK ? ArrowTheme.DARK : ArrowTheme.PURPLE;
 
     const increaseAutoplayDelay = React.useCallback(
         ({ params, autoplay }: SwiperCore) => {
@@ -81,10 +80,11 @@ const Banner: React.FC<IBannerProps> = ({
             }
 
             autoplay.stop();
+            // eslint-disable-next-line no-param-reassign
             params.autoplay.delay = autoPlayDelay * 3;
             autoplay.start();
         },
-        [autoPlayDelay]
+        [autoPlayDelay],
     );
 
     const handlePrevClick = React.useCallback(() => {
@@ -95,6 +95,7 @@ const Banner: React.FC<IBannerProps> = ({
         swiperInstance.slidePrev();
         onPrevClick && onPrevClick(swiperInstance.realIndex);
         increaseAutoplayDelay(swiperInstance);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [swiperInstance, onPrevClick]);
 
     const handleNextClick = React.useCallback(() => {
@@ -105,22 +106,26 @@ const Banner: React.FC<IBannerProps> = ({
         swiperInstance.slideNext();
         onNextClick && onNextClick(swiperInstance.realIndex);
         increaseAutoplayDelay(swiperInstance);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [swiperInstance, onNextClick]);
 
-    const handleDotClick = React.useCallback((index: number) => {
-        if (!swiperInstance) {
-            return;
-        }
+    const handleDotClick = React.useCallback(
+        (index: number) => {
+            if (!swiperInstance) {
+                return;
+            }
 
-        if (loop) {
-            swiperInstance.slideToLoop(index);
-        } else {
-            swiperInstance.slideTo(index);
-        }
+            if (loop) {
+                swiperInstance.slideToLoop(index);
+            } else {
+                swiperInstance.slideTo(index);
+            }
 
-        onDotClick && onDotClick(swiperInstance.realIndex);
-        increaseAutoplayDelay(swiperInstance);
-    }, [swiperInstance, loop, onDotClick]);
+            onDotClick && onDotClick(swiperInstance.realIndex);
+            increaseAutoplayDelay(swiperInstance);
+        },
+        [swiperInstance, loop, onDotClick, increaseAutoplayDelay],
+    );
 
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
         setSwiperInstance(swiper);
@@ -143,10 +148,13 @@ const Banner: React.FC<IBannerProps> = ({
         setEnd(swiper.isEnd);
     }, []);
 
-    const handleSlideChange = React.useCallback(({ realIndex }: SwiperCore) => {
-        setActiveIndex(realIndex);
-        onChange && onChange(realIndex);
-    }, []);
+    const handleSlideChange = React.useCallback(
+        ({ realIndex }: SwiperCore) => {
+            setActiveIndex(realIndex);
+            onChange && onChange(realIndex);
+        },
+        [onChange],
+    );
 
     const handleAutoplayStop = React.useCallback(() => {
         setAutoPlayning(false);
@@ -167,7 +175,7 @@ const Banner: React.FC<IBannerProps> = ({
                 onTouchEnd={increaseAutoplayDelay}
             >
                 {React.Children.map(children, (child, i) => (
-                    <SwiperSlide key={i} className={cn('slide', classes?.slide )}>
+                    <SwiperSlide key={i} className={cn('slide', classes?.slide)}>
                         {child}
                     </SwiperSlide>
                 ))}

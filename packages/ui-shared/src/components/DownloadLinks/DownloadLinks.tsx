@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './DownloadLinks.less';
 import { IDownloadLink } from './DownloadLink';
 
@@ -52,23 +52,20 @@ const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
     const columnConfig = getColumnConfig(itemsCount);
 
     return (
-        <div className={cn({ count: `${itemsCount}`})}>
+        <div className={cn({ count: `${itemsCount}` })}>
             <Grid guttersLeft="medium">
-                {React.Children.map(children, (child) =>
+                {React.Children.map(children, child => (
                     <GridColumn {...columnConfig} className={cn('column')}>
                         {child}
                     </GridColumn>
-                )}
+                ))}
             </Grid>
         </div>
     );
 };
 
 DownloadLinks.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element.isRequired),
-        PropTypes.element,
-    ]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element]).isRequired,
 };
 
 export default DownloadLinks;

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow, mount } from 'enzyme';
+import * as React from 'react';
 import StoreBanner, { IStoreBannerProps, DeviceMask, Theme } from './StoreBanner';
 
 const props: IStoreBannerProps = {
@@ -40,7 +40,7 @@ describe('StoreBanner', () => {
     });
 
     it('should render with QR-code', () => {
-        const wrapper = shallow(<StoreBanner {...props} qrCode={'qr-code.png'} />);
+        const wrapper = shallow(<StoreBanner {...props} qrCode="qr-code.png" />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -50,8 +50,12 @@ describe('StoreBanner', () => {
             <StoreBanner
                 {...props}
                 className="custom-class-name"
-                classes={{ root: 'root-custom-class-name', appleLink: 'app-store-custom-class-name', googleLink: 'google-store-custom-class-name' }}
-            />
+                classes={{
+                    root: 'root-custom-class-name',
+                    appleLink: 'app-store-custom-class-name',
+                    googleLink: 'google-store-custom-class-name',
+                }}
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './ContentArea.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import './ContentArea.less';
 
 export type BackgroundColorType =
     | 'white'
@@ -52,7 +52,7 @@ const BACKGROUND_COLORS = [
 ];
 
 const cn = cnCreate('mfui-beta-content-area');
-class ContentArea extends React.Component<IConrentAreaProps> {
+class ContentArea extends React.PureComponent<IConrentAreaProps> {
     static propTypes = {
         outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
         innerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
@@ -70,7 +70,7 @@ class ContentArea extends React.Component<IConrentAreaProps> {
         innerBackgroundColor: 'transparent',
     };
 
-    render() {
+    render(): JSX.Element {
         const {
             outerBackgroundColor,
             innerBackgroundColor,
@@ -83,10 +83,14 @@ class ContentArea extends React.Component<IConrentAreaProps> {
         return (
             <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
                 <div
-                    className={cn('inner', {
-                        'disable-indents': disableIndents,
-                        color: innerBackgroundColor,
-                    }, classes.inner)}
+                    className={cn(
+                        'inner',
+                        {
+                            'disable-indents': disableIndents,
+                            color: innerBackgroundColor,
+                        },
+                        classes.inner,
+                    )}
                 >
                     {children}
                 </div>

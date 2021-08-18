@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Header from './Header';
 
 describe('<Header />', () => {
@@ -7,7 +7,6 @@ describe('<Header />', () => {
         const wrapper = shallow(<Header />);
         expect(wrapper.type()).toEqual('h1');
     });
-
     ['h1', 'h2', 'h3', 'h5'].forEach(tag => {
         it(`it renders only with ${tag}`, () => {
             type AsValuesType = Header['props']['as'];
@@ -32,7 +31,11 @@ describe('<Header />', () => {
     });
 
     it('it renders with children', () => {
-        const wrapper = shallow(<Header><section /></Header>);
+        const wrapper = shallow(
+            <Header>
+                <section />
+            </Header>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 

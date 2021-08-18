@@ -29,18 +29,12 @@ export const tileInner = {
     margin: '0 auto',
 };
 
-export const DemoTileWrapper = (
-    props: {
-        wrapperTheme: 'light' | 'dark';
-        children: JSX.Element[] | Element[] | JSX.Element | Element | string;
-    }
-) => {
+export const DemoTileWrapper = (props: {
+    wrapperTheme: 'light' | 'dark';
+    children: JSX.Element[] | Element[] | JSX.Element | Element | string;
+}): JSX.Element => {
     const { wrapperTheme = 'light', children } = props;
     const theme = wrapperTheme === 'dark' ? darkWrapperStyle : lightWrapperStyle;
 
-    return (
-        <div style={theme}>
-            {children}
-        </div>
-    );
+    return <div style={theme}>{children}</div>;
 };

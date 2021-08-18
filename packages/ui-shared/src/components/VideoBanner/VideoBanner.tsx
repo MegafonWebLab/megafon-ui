@@ -1,17 +1,10 @@
-import React, { Ref } from 'react';
-import * as PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
-import {
-    Button,
-    Header,
-    ContentArea,
-    TextLink,
-    Grid,
-    GridColumn,
-} from '@megafon/ui-core';
+import { Button, Header, ContentArea, TextLink, Grid, GridColumn } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
-import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
+import throttle from 'lodash.throttle';
+import * as PropTypes from 'prop-types';
+import React, { Ref } from 'react';
 import throttleTime from 'constants/throttleTime';
+import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
 import './VideoBanner.less';
 
 type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
@@ -20,10 +13,15 @@ export enum ClassName {
     BUTTON = 'button',
 }
 
+const cn = cnCreate('mfui-beta-video-banner');
+
 const typographyConfig = {
     b: {
-        component: ({ children }) =>
-            <Header className={cn('value')} as="h3" color="inherit">{children}</Header>,
+        component: ({ children }) => (
+            <Header className={cn('value')} as="h3" color="inherit">
+                {children}
+            </Header>
+        ),
     },
 };
 
@@ -111,7 +109,6 @@ interface IVideoBannerProps {
     breadcrumbs?: BreadCrumbsItemsType;
 }
 
-const cn = cnCreate('mfui-beta-video-banner');
 const VideoBanner: React.FC<IVideoBannerProps> = ({
     dataAttrs,
     className,
@@ -132,65 +129,68 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     const isVideoData = !!videoSrc && !!videoType;
     const isRenderVideo = !isMobile && isVideoData;
 
-    const renderContent = React.useCallback(({
-        title,
-        description,
-        buttonTitle,
-        buttonHref,
-        buttonDownload,
-        buttonColor = ButtonColor.GREEN,
-        onButtonClick,
-        textColor = TextColor.BLACK,
-        textColorMobile,
-        linkTitle,
-        linkUrl,
-        linkDownload,
-        cost,
-    }) => (
-        <Grid className={cn('grid')} guttersLeft="medium">
-            <GridColumn mobile="12" tablet="7" desktop="7" wide="6">
-                <div className={cn('content', {
-                    'text-color': textColor,
-                    'text-color-mobile': textColorMobile,
-                })}
-                >
-                    <Header className={cn('title')} as="h1" color="inherit">{title}</Header>
-                    <div className={cn('text')}>
-                        <Header as="h5" color="inherit" className={cn('description')}>
-                            {description}
+    const renderContent = React.useCallback(
+        ({
+            title,
+            description,
+            buttonTitle,
+            buttonHref,
+            buttonDownload,
+            buttonColor = ButtonColor.GREEN,
+            onButtonClick,
+            textColor = TextColor.BLACK,
+            textColorMobile,
+            linkTitle,
+            linkUrl,
+            linkDownload,
+            cost,
+        }) => (
+            <Grid className={cn('grid')} guttersLeft="medium">
+                <GridColumn mobile="12" tablet="7" desktop="7" wide="6">
+                    <div
+                        className={cn('content', {
+                            'text-color': textColor,
+                            'text-color-mobile': textColorMobile,
+                        })}
+                    >
+                        <Header className={cn('title')} as="h1" color="inherit">
+                            {title}
                         </Header>
-                        {cost && (
-                            <div className={cn('cost')}>
-                                {convert(cost, typographyConfig)}
-                            </div>
-                        )}
+                        <div className={cn('text')}>
+                            <Header as="h5" color="inherit" className={cn('description')}>
+                                {description}
+                            </Header>
+                            {cost && <div className={cn('cost')}>{convert(cost, typographyConfig)}</div>}
+                        </div>
+                        <div className={cn('btns-wrapper')}>
+                            {buttonTitle && (
+                                <Button
+                                    className={cn(ClassName.BUTTON, [classes.button])}
+                                    theme={buttonColor}
+                                    href={buttonHref}
+                                    onClick={onButtonClick}
+                                    download={buttonDownload}
+                                >
+                                    {buttonTitle}
+                                </Button>
+                            )}
+                            {linkTitle && (
+                                <TextLink className={cn('link', [classes.link])} href={linkUrl} download={linkDownload}>
+                                    {linkTitle}
+                                </TextLink>
+                            )}
+                        </div>
                     </div>
-                    <div className={cn('btns-wrapper')}>
-                        {buttonTitle && (
-                            <Button
-                                className={cn(ClassName.BUTTON, [classes.button])}
-                                theme={buttonColor}
-                                href={buttonHref}
-                                onClick={onButtonClick}
-                                download={buttonDownload}
-                            >
-                                {buttonTitle}
-                            </Button>
-                        )}
-                        {linkTitle && (
-                            <TextLink className={cn('link', [classes.link])} href={linkUrl} download={linkDownload}>
-                                {linkTitle}
-                            </TextLink>
-                        )}
-                    </div>
-                </div>
-            </GridColumn>
-        </Grid>
-    ), []);
+                </GridColumn>
+            </Grid>
+        ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [],
+    );
 
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
-            case(VideoType.YOUTUBE): {
+            case VideoType.YOUTUBE: {
                 const url = `https://www.youtube.com/embed/${videoSrc}?`;
                 const autoplay = '&autoplay=1';
                 const mute = `&mute=${isMuted ? 1 : 0}`;
@@ -204,18 +204,20 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 const src = `${url}${autoplay}${mute}${loop}${rel}${controls}${info}${policy}${playlist}`;
 
                 return (
-                    <iframe className={cn('video')}
-                            src={src}
-                            width="100%"
-                            height="100%"
-                            frameBorder="0"
-                            allow="autoplay"
+                    <iframe
+                        className={cn('video')}
+                        src={src}
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        allow="autoplay"
                     />
                 );
             }
 
-            case(VideoType.VIDEO): {
+            case VideoType.VIDEO: {
                 return (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video className={cn('video')} autoPlay loop muted={isMuted}>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
@@ -255,31 +257,25 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         return () => {
             window.removeEventListener('resize', resizeHandlerThrottled);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <div
-            {...filterDataAttrs(dataAttrs)}
-            className={cn([className, classes.root])}
-            ref={rootRef}
-        >
+        <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>
             <ContentArea>
-                <div
-                    className={cn('wrapper')}
-                >
-                    {!!breadcrumbs?.length &&
+                <div className={cn('wrapper')}>
+                    {!!breadcrumbs?.length && (
                         <Breadcrumbs
                             className={cn('breadcrumbs')}
                             items={breadcrumbs}
                             color={content?.textColor}
                             classes={{ item: classes.breadcrumbs }}
                         />
-                    }
+                    )}
                     {content && renderContent(content)}
                     {isRenderVideo && renderVideo()}
                     {!isRenderVideo && (
-                        <div style={{ backgroundImage: `url(${imageSrc})` }}
-                             className={cn('background-image')} />
+                        <div style={{ backgroundImage: `url(${imageSrc})` }} className={cn('background-image')} />
                     )}
                 </div>
             </ContentArea>
@@ -298,7 +294,7 @@ VideoBanner.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     videoSrc: PropTypes.string,
     videoType: PropTypes.oneOf(Object.values(VideoType)),
@@ -326,7 +322,7 @@ VideoBanner.propTypes = {
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             href: PropTypes.string,
-        }).isRequired
+        }).isRequired,
     ),
 };
 

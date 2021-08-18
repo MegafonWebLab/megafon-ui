@@ -18,14 +18,15 @@
     }
 
     &__title-wrap {
-        cursor: pointer;
         position: relative;
+
         padding: 24px 52px 24px 16px;
+
+        cursor: pointer;
 
         @media @mobileBU {
             padding: 24px 68px 24px 24px;
         }
-
         @media @desktopMU {
             padding: 24px 72px 24px 24px;
         }
@@ -33,10 +34,12 @@
 
     &__icon-box {
         position: absolute;
-        right: 20px;
         top: 50%;
+        right: 20px;
+
         width: 32px;
         height: 32px;
+
         transform: translateY(-50%);
         opacity: 1;
     }
@@ -47,11 +50,9 @@
         @media @mobileB {
             padding: 24px;
         }
-
         @media @desktopS {
             padding: 24px 48px;
         }
-
         @media @desktopMU {
             padding: 24px 40px;
         }

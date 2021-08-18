@@ -1,3 +1,3 @@
 declare interface Window {
-    DocumentTouch: any;
+    DocumentTouch: any
 }

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
+import * as React from 'react';
 import { act } from 'react-dom/test-utils';
 import Preloader from './Preloader';
 
@@ -29,13 +29,7 @@ describe('<Preloader />', () => {
 
     it('it renders Preloader with small size', () => {
         const wrapper = mount(
-            <Preloader
-                sizeAll="small"
-                sizeMobile="small"
-                sizeTablet="small"
-                sizeDesktop="small"
-                sizeWide="small"
-            />
+            <Preloader sizeAll="small" sizeMobile="small" sizeTablet="small" sizeDesktop="small" sizeWide="small" />,
         );
 
         updatePreloaderTimer(wrapper, PRELOADER_DELAY);

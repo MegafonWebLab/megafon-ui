@@ -58,6 +58,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
       className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_fill mfui-beta-card__pic-wrapper_img"
     >
       <img
+        alt=""
         className="mfui-beta-card__img"
         src="test-file-stub"
       />
@@ -112,6 +113,7 @@ exports[`Card left align of the interactive element 1`] = `
       className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_fill mfui-beta-card__pic-wrapper_img"
     >
       <img
+        alt=""
         className="mfui-beta-card__img"
         src="test-file-stub"
       />
@@ -217,6 +219,7 @@ exports[`Card render component with img, if image source and svg source are spec
       className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_fill mfui-beta-card__pic-wrapper_img"
     >
       <img
+        alt=""
         className="mfui-beta-card__img"
         src="test-file-stub"
       />
@@ -272,6 +275,7 @@ exports[`Card render component with optional props 1`] = `
       className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_fill mfui-beta-card__pic-wrapper_img"
     >
       <img
+        alt=""
         className="mfui-beta-card__img"
         src="test-file-stub"
       />
@@ -492,6 +496,7 @@ exports[`Card render with contain object fit 1`] = `
       className="mfui-beta-card__pic-wrapper mfui-beta-card__pic-wrapper_object-fit_contain mfui-beta-card__pic-wrapper_img"
     >
       <img
+        alt=""
         className="mfui-beta-card__img"
         src="test-file-stub"
       />

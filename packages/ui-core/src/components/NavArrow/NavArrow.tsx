@@ -1,9 +1,9 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './NavArrow.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import ArrowLeft from 'icons/System/24/Arrow_left_24.svg';
 import ArrowRight from 'icons/System/24/Arrow_right_24.svg';
+import './NavArrow.less';
 
 export const Theme = {
     PURPLE: 'purple',
@@ -40,12 +40,12 @@ const NavArrow: React.FC<INavArrowProps> = ({
                 return <ArrowLeft className={cn('icon')} />;
 
             default:
-                return <ArrowRight className={cn('icon')}/>;
+                return <ArrowRight className={cn('icon')} />;
         }
     }, [view]);
 
     return (
-        <button className={cn({ theme }, className)} onClick={onClick} disabled={disabled}>
+        <button type="button" className={cn({ theme }, className)} onClick={onClick} disabled={disabled}>
             {renderIcon()}
         </button>
     );

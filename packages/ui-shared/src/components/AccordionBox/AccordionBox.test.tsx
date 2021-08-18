@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import AccordionBox, { IAccordionBox } from './AccordionBox';
 
 const props: IAccordionBox = {
@@ -25,7 +25,7 @@ describe('<AccordionBox />', () => {
         const wrapper = shallow(
             <AccordionBox {...props}>
                 <div>test</div>
-            </AccordionBox>
+            </AccordionBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -35,7 +35,7 @@ describe('<AccordionBox />', () => {
         const wrapper = shallow(
             <AccordionBox {...props} hCenterAlignWide>
                 <div>test</div>
-            </AccordionBox>
+            </AccordionBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe('<AccordionBox />', () => {
         const wrapper = shallow(
             <AccordionBox {...props} isFullWidth>
                 <div>test</div>
-            </AccordionBox>
+            </AccordionBox>,
         );
 
         expect(wrapper).toMatchSnapshot();

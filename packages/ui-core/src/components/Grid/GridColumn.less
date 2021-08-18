@@ -1,7 +1,29 @@
 @import '~styles/base.less';
+@b: e('.mfui-beta-grid-column');
 
-.mfui-beta-grid-column {
+@{b} {
     box-sizing: border-box;
+
+    @media @desktopMU {
+        .generateColumns(wide);
+        .generateOrder(wide-order);
+        .generateOffsets(wide);
+    }
+    @media @desktopS {
+        .generateColumns(desktop);
+        .generateOrder(desktop-order);
+        .generateOffsets(desktop);
+    }
+    @media @mobileB {
+        .generateColumns(tablet);
+        .generateOrder(tablet-order);
+        .generateOffsets(tablet);
+    }
+    @media @mobileSM {
+        .generateColumns(mobile);
+        .generateOrder(mobile-order);
+        .generateOffsets(mobile);
+    }
 
     &_grow {
         flex-grow: 1;
@@ -22,37 +44,13 @@
 
     &_flex {
         display: flex;
-        flex-shrink: 0;
         flex-grow: 0;
+        flex-shrink: 0;
     }
 
     .generateColumns(all);
     .generateOffsets(all);
     .generateOrder(all-order);
-
-    @media @desktopMU {
-        .generateColumns(wide);
-        .generateOrder(wide-order);
-        .generateOffsets(wide);
-    }
-
-    @media @desktopS {
-        .generateColumns(desktop);
-        .generateOrder(desktop-order);
-        .generateOffsets(desktop);
-    }
-
-    @media @mobileB {
-        .generateColumns(tablet);
-        .generateOrder(tablet-order);
-        .generateOffsets(tablet);
-    }
-
-    @media @mobileSM {
-        .generateColumns(mobile);
-        .generateOrder(mobile-order);
-        .generateOffsets(mobile);
-    }
 }
 
 .generateColumns(@resolution, @columnCount: 12, @i: 1) when (@i <= @columnCount) {

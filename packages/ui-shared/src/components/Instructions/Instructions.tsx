@@ -1,13 +1,14 @@
-import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
-import './Instructions.less';
-import throttle from 'lodash.throttle';
-import SwiperCore from 'swiper';
-import convert from 'htmr';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperClass from 'swiper/types/swiper-class';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { breakpoints, cnCreate } from '@megafon/ui-helpers';
+import convert from 'htmr';
+import throttle from 'lodash.throttle';
+import PropTypes from 'prop-types';
+import React, { Ref } from 'react';
+import './Instructions.less';
+import SwiperCore from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// eslint-disable-next-line import/no-unresolved
+import SwiperClass from 'swiper/types/swiper-class';
 
 const THROTTLE_MILLISECONDS = 100;
 
@@ -88,15 +89,20 @@ const Instructions: React.FC<IInstructionsProps> = ({
     const getSwiperInstance = React.useCallback((swiper: SwiperClass): void => {
         setSwiperInstance(swiper);
         getSwiper && getSwiper(swiper);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const getArticleCustomClasses = React.useCallback((articleIndex: number, activeIndex: number) => {
-        if (!instructionItem || !activeInstructionItem) {
-            return;
-        }
+    const getArticleCustomClasses = React.useCallback(
+        (articleIndex: number, activeIndex: number) => {
+            if (!instructionItem || !activeInstructionItem) {
+                return;
+            }
 
-        return articleIndex === activeIndex ? `${instructionItem} ${activeInstructionItem}` : instructionItem;
-    }, [instructionItem, activeInstructionItem]);
+            // eslint-disable-next-line consistent-return
+            return articleIndex === activeIndex ? `${instructionItem} ${activeInstructionItem}` : instructionItem;
+        },
+        [instructionItem, activeInstructionItem],
+    );
 
     const handleResize = React.useCallback((): void => {
         const isMobileScreen = window.innerWidth < breakpoints.DESKTOP_SMALL_START;
@@ -104,22 +110,59 @@ const Instructions: React.FC<IInstructionsProps> = ({
         setIsMobile(isMobileScreen);
     }, []);
 
-    const handleArticleClick = React.useCallback((ind: number) => (): void => {
-        setSlideIndex(ind);
-        swiperInstance && swiperInstance.slideTo(ind);
-    }, [swiperInstance]);
+    const handleArticleClick = React.useCallback(
+        (ind: number) => (): void => {
+            setSlideIndex(ind);
+            swiperInstance && swiperInstance.slideTo(ind);
+        },
+        [swiperInstance],
+    );
 
-    const renderTitle = React.useCallback((resolution: string): JSX.Element => (
-        <Header className={cn('title', { resolution })} as="h2">
-            {title}
-        </Header>
-    ), []);
+    const renderTitle = React.useCallback(
+        (resolution: string): JSX.Element => (
+            <Header className={cn('title', { resolution })} as="h2">
+                {title}
+            </Header>
+        ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [],
+    );
 
-    const renderText = React.useCallback((): JSX.Element => (
-        <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
-            {convert(text as string)}
-        </Paragraph>
-    ), [text, additionalText]);
+    const renderText = React.useCallback(
+        (): JSX.Element => (
+            <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
+                {convert(text as string)}
+            </Paragraph>
+        ),
+        [text, additionalText],
+    );
+
+    const renderVideo = React.useCallback(
+        (mediaUrl: string): JSX.Element => (
+            <video className={cn('swiper-img')} autoPlay muted loop playsInline>
+                <source src={mediaUrl} type="video/mp4" />
+            </video>
+        ),
+        [],
+    );
+
+    const renderSlider = React.useCallback(
+        (): JSX.Element => (
+            <Swiper className={cn('swiper')} onSwiper={getSwiperInstance} noSwipingClass={swiperSlideCn}>
+                {instructionItems.map(({ mediaUrl, isVideo }, ind) => (
+                    <SwiperSlide className={swiperSlideCn} key={ind + mediaUrl}>
+                        {isVideo ? (
+                            renderVideo(mediaUrl)
+                        ) : (
+                            <img className={cn('swiper-img', [instructionItemImg])} src={mediaUrl} alt="" />
+                        )}
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [instructionItems],
+    );
 
     const renderPicture = React.useCallback((): JSX.Element => {
         if (pictureMask === pictureMaskTypes.NONE) {
@@ -132,82 +175,65 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 {renderSlider()}
             </div>
         );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pictureMask]);
 
-    const renderVideo = React.useCallback((mediaUrl: string): JSX.Element => (
-        <video className={cn('swiper-img')} autoPlay muted loop playsInline>
-            <source src={mediaUrl} type="video/mp4" />
-        </video>
-    ), []);
-
-    const renderSlider = React.useCallback((): JSX.Element => (
-        <Swiper
-            className={cn('swiper')}
-            onSwiper={getSwiperInstance}
-            noSwipingClass={swiperSlideCn}
-        >
-            {instructionItems.map(({ mediaUrl, isVideo}, ind) => (
-                <SwiperSlide className={swiperSlideCn} key={ind + mediaUrl}>
-                    {isVideo
-                        ? renderVideo(mediaUrl)
-                        : <img className={cn('swiper-img', [instructionItemImg])} src={mediaUrl} alt="" />
-                    }
-                </SwiperSlide>
-            ))}
-        </Swiper>
-    ), [instructionItems]);
-
-    const renderDesktopArticles = React.useCallback((): JSX.Element => (
-        <ul className={cn('articles-list', { 'text-after': !!text })}>
-            {instructionItems.map(({title: itemTitle}, ind) => (
-                <li
-                    className={cn(
-                        'articles-item',
-                        { active: slideIndex === ind },
-                        [getArticleCustomClasses(ind, slideIndex)]
-                    )}
-                    data-index={ind}
-                    onClick={handleArticleClick(ind)}
-                    key={ind}
-                >
-                    <div className={cn('articles-item-dot')}>
-                        <span className={cn('articles-item-dot-number')}>{ind + 1}</span>
-                    </div>
-                    <div className={cn('articles-item-title', [desktopItemTitle])}>
-                        {itemTitle}
-                    </div>
-                </li>
-            ))}
-        </ul>
-    ), [instructionItems, slideIndex, handleArticleClick, text]);
-
-    const renderMobileArticles = React.useCallback((): JSX.Element => (
-        <>
-            <div className={cn('articles-title-block')}>
+    const renderDesktopArticles = React.useCallback(
+        (): JSX.Element => (
+            <ul className={cn('articles-list', { 'text-after': !!text })}>
                 {instructionItems.map(({ title: itemTitle }, ind) => (
-                    slideIndex === ind &&
-                        <div className={cn('articles-title', [mobileItemTitle])} data-index={ind} key={ind}>
-                            {itemTitle}
-                        </div>
-                ))}
-            </div>
-            <ul className={cn('articles-dots', { 'text-after': !!text })}>
-                {instructionItems.map((_item, ind) => (
-                    <div
-                        key={ind}
-                        className={cn(
-                            'articles-dot',
-                            { active: slideIndex === ind },
-                            [getArticleCustomClasses(ind, slideIndex)]
-                        )}
+                    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                    <li
+                        className={cn('articles-item', { active: slideIndex === ind }, [
+                            getArticleCustomClasses(ind, slideIndex),
+                        ])}
+                        data-index={ind}
                         onClick={handleArticleClick(ind)}
+                        key={ind}
                     >
-                        <span className={cn('articles-dot-number')}>{ind + 1}</span>
-                    </div>
+                        <div className={cn('articles-item-dot')}>
+                            <span className={cn('articles-item-dot-number')}>{ind + 1}</span>
+                        </div>
+                        <div className={cn('articles-item-title', [desktopItemTitle])}>{itemTitle}</div>
+                    </li>
                 ))}
             </ul>
-        </>
-    ), [instructionItems, slideIndex, handleArticleClick, text]);
+        ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [instructionItems, slideIndex, handleArticleClick, text],
+    );
+
+    const renderMobileArticles = React.useCallback(
+        (): JSX.Element => (
+            <>
+                <div className={cn('articles-title-block')}>
+                    {instructionItems.map(
+                        ({ title: itemTitle }, ind) =>
+                            slideIndex === ind && (
+                                <div className={cn('articles-title', [mobileItemTitle])} data-index={ind} key={ind}>
+                                    {itemTitle}
+                                </div>
+                            ),
+                    )}
+                </div>
+                <ul className={cn('articles-dots', { 'text-after': !!text })}>
+                    {instructionItems.map((_item, ind) => (
+                        <div
+                            key={ind}
+                            className={cn('articles-dot', { active: slideIndex === ind }, [
+                                getArticleCustomClasses(ind, slideIndex),
+                            ])}
+                            onClick={handleArticleClick(ind)}
+                        >
+                            <span className={cn('articles-dot-number')}>{ind + 1}</span>
+                        </div>
+                    ))}
+                </ul>
+            </>
+        ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [instructionItems, slideIndex, handleArticleClick, text],
+    );
 
     React.useEffect(() => {
         const handleSetThrottled = throttle(handleResize, THROTTLE_MILLISECONDS);
@@ -223,18 +249,13 @@ const Instructions: React.FC<IInstructionsProps> = ({
     return (
         <div className={cn({ mask: pictureMask })} ref={rootRef}>
             <Grid hAlign="center">
-                <GridColumn all="12" >
+                <GridColumn all="12">
                     {renderTitle('mobile')}
                     <div className={cn('wrapper')}>
-                        <div className={cn('picture', { align: pictureAlign })}>
-                            {renderPicture()}
-                        </div>
+                        <div className={cn('picture', { align: pictureAlign })}>{renderPicture()}</div>
                         <div className={cn('articles', { align: pictureAlign })}>
                             {renderTitle('desktop')}
-                            {isMobile
-                                ? renderMobileArticles()
-                                : renderDesktopArticles()
-                            }
+                            {isMobile ? renderMobileArticles() : renderDesktopArticles()}
                             {text && renderText()}
                         </div>
                     </div>
@@ -247,7 +268,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
 Instructions.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     classes: PropTypes.shape({
         instructionItem: PropTypes.string,
@@ -260,12 +281,11 @@ Instructions.propTypes = {
     additionalText: PropTypes.string,
     instructionItems: PropTypes.arrayOf(
         PropTypes.shape({
-            title: PropTypes.oneOfType([
-                PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node),
-            ]).isRequired,
+            title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)])
+                .isRequired,
             mediaUrl: PropTypes.string.isRequired,
             isVideo: PropTypes.bool.isRequired,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),
     pictureMask: PropTypes.oneOf([

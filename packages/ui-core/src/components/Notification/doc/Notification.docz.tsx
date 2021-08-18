@@ -10,11 +10,7 @@ export const wrapperStyle = {
 };
 
 interface IDemoNotificationWrapperProps {
-    children: (prop: {
-        onClose?: () => void;
-        onLinkClick?: () => void;
-        initialClickAmount: number;
-    }) => JSX.Element;
+    children: (prop: { onClose?: () => void; onLinkClick?: () => void; initialClickAmount: number }) => JSX.Element;
     initialClickAmount: number;
 }
 
@@ -23,10 +19,11 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
     children,
 }) => {
     const [clickAmount, setClickAmount] = useState(initialClickAmount);
+    const stepClick = 1;
 
     return children({
-        onLinkClick: () => setClickAmount(clickAmount + 1),
-        onClose: () => setClickAmount(clickAmount + 1),
+        onLinkClick: () => setClickAmount(clickAmount + stepClick),
+        onClose: () => setClickAmount(clickAmount + stepClick),
         initialClickAmount: clickAmount,
     });
 };

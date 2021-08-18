@@ -5,3 +5,5 @@ export const tableRowStyle = {
     minHeight: '50px',
     padding: '15px',
 };
+
+export default tableRowStyle;

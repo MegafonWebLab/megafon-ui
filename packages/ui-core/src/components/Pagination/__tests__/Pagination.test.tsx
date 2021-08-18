@@ -1,5 +1,5 @@
-import React from 'react';
 import { shallow, mount } from 'enzyme';
+import React from 'react';
 import Pagination from '../Pagination';
 
 describe('Pagination', () => {
@@ -78,7 +78,7 @@ describe('Pagination', () => {
 
     describe('should call change handler with valid arguments', () => {
         const handleChange = jest.fn();
-
+        const stepPagination = 1;
         afterEach(() => {
             jest.clearAllMocks();
         });
@@ -90,7 +90,7 @@ describe('Pagination', () => {
 
             button.simulate('click');
 
-            expect(handleChange).toHaveBeenCalledWith(activePage - 1);
+            expect(handleChange).toHaveBeenCalledWith(activePage - stepPagination);
         });
 
         it('after click on next button', () => {
@@ -100,11 +100,12 @@ describe('Pagination', () => {
 
             button.simulate('click');
 
-            expect(handleChange).toHaveBeenCalledWith(activePage + 1);
+            expect(handleChange).toHaveBeenCalledWith(activePage + stepPagination);
         });
 
         it('after click on page button', () => {
             const wrapper = mount(<Pagination totalPages={3} activePage={1} onChange={handleChange} />);
+            // eslint-disable-next-line no-magic-numbers
             const button = wrapper.find('PaginationButton').at(1);
             const value = button.prop('value');
 
