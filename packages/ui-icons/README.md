@@ -1,4 +1,4 @@
-# @megafon/icons
+# @megafon/ui-icons
 
 Icons library
 
@@ -6,12 +6,12 @@ Icons library
 
 with npm
 ```bash
-npm install --save @megafon/icons@beta
+npm install --save @megafon/ui-icons@beta
 ```
 
 or yarn
 ```bash
-yarn add @megafon/icons@beta
+yarn add @megafon/ui-icons@beta
 ```
 
 ## Development notes

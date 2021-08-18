@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCallback, useState, useRef, useEffect } from 'react';
-import SearchIcon from '@megafon/icons/dist/basic-24-search_24.svg';
+import SearchIcon from '@megafon/ui-icons/dist/basic-24-search_24.svg';
 import debounce from 'lodash.debounce';
 import { cnCreate } from '@megafon/ui-helpers';
 import './Search.less';

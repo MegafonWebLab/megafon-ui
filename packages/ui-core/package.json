@@ -80,7 +80,7 @@
     "@babel/runtime": "^7.8.4",
     "@datepicker-react/hooks": "^2.7.0",
     "@megafon/ui-helpers": "^1.0.0-beta.0",
-    "@megafon/icons": "^0.0.1",
+    "@megafon/ui-icons": "^0.0.1",
     "@popperjs/core": "^2.5.3",
     "core-js": "^3.6.4",
     "date-fns": "^2.16.1",

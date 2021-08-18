@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { cnCreate } from '@megafon/ui-helpers';
 import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
 import Tab from './Tab';
-import Balance from '@megafon/icons/dist/basic-24-balance_24.svg';
+import Balance from '@megafon/ui-icons/dist/basic-24-balance_24.svg';
 
 const renderTabWrapper = (tab: React.ReactNode) => {
     return <div className="tab-wrapper">{tab}</div>;
