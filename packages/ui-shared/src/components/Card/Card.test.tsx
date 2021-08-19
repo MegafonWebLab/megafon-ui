@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
-import Card, { ObjectFit } from './Card';
+import Card, { ObjectFit, Target } from './Card';
 import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
 import img from './img.png';
 
-const title = 'Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь';
+const title = 'Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь';
 const text = 'Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.';
 const button = {
     title: 'Подробнее',
     href: '#',
+    target: Target.BLANK,
 };
 
 const fakeLink = {
@@ -18,6 +19,7 @@ const fakeLink = {
 const link = {
     ...fakeLink,
     href: '#',
+    target: Target.SELF,
 };
 
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
@@ -89,7 +91,16 @@ describe('Card', () => {
     });
 
     it('render with link on the card', () => {
-        const wrapper = shallow(<Card title={title} text={text} svgSrc={svg} link={fakeLink} href={'card-href'} />);
+        const wrapper = shallow(
+            <Card
+                title={title}
+                text={text}
+                svgSrc={svg}
+                link={fakeLink}
+                href={'card-href'}
+                target={Target.BLANK}
+            />
+        );
         expect(wrapper).toMatchSnapshot();
     });
 

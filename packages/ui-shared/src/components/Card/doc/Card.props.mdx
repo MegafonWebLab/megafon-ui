@@ -5,11 +5,18 @@ import Card from '../Card';
 
 ```javascript
 
+enum TargetType = {
+    SELF: '_self',
+    BLANK: '_blank',
+};
+
 interface IButton {
      /** Текст кнопки */
     title: string;
     /** Ссылка в кнопке */
     href: string;
+    /** Target свойство, аналогично свойству 'target' тега 'a' */
+    target: TargetType;
 }
 
 interface ILink {
@@ -17,6 +24,8 @@ interface ILink {
     title: string;
     /** Адрес ссылки */
     href?: string;
+    /** Target свойство, аналогично свойству 'target' тега 'a' */
+    target: TargetType;
 }
 
 ```

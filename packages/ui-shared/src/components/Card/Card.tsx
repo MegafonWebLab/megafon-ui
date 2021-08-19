@@ -4,15 +4,24 @@ import { Header, Paragraph, Button, TextLink, Link} from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 
+export const Target = {
+    SELF: '_self',
+    BLANK: '_blank',
+} as const;
+
+type TargetType = typeof Target[keyof typeof Target];
+
 interface IButton {
     title: string;
     href: string;
+    target?: TargetType;
     download?: boolean;
 }
 
 interface ILink {
     title: string;
     href?: string;
+    target?: TargetType;
     download?: boolean;
 }
 
@@ -57,6 +66,8 @@ export interface ICard {
     isFullHeight?: boolean;
     /** Ссылка для всей карточки */
     href?: string;
+    /** Target свойство, аналогично свойству 'target' тега 'a' */
+    target?: TargetType;
     /** Режим позиционирования изображения */
     objectFit?: ObjectFitType;
 }
@@ -77,6 +88,7 @@ const Card: React.FC<ICard> = ({
     isLeftHAlign = false,
     isFullHeight = false,
     href,
+    target,
     objectFit = 'fill',
 }) => {
     const isAlignAvailable = !button || !link;
@@ -111,7 +123,7 @@ const Card: React.FC<ICard> = ({
             return null;
         }
 
-        const { href: linkHref, title: linkTitle, download } = link;
+        const { href: linkHref, title: linkTitle, target: linkTarget, download } = link;
 
         if (!linkHref || isCardLink) {
             return <span className={cn('fake-link')}>{linkTitle}</span>;
@@ -121,6 +133,7 @@ const Card: React.FC<ICard> = ({
             <TextLink
                 className={cn('link', [classes.link])}
                 href={linkHref}
+                target={linkTarget}
                 download={download}
             >
                 {linkTitle}
@@ -133,12 +146,13 @@ const Card: React.FC<ICard> = ({
             return null;
         }
 
-        const { href: btnHref, title: btnTitle, download: buttonDownload } = button;
+        const { href: btnHref, title: btnTitle, target: btnTarget, download: buttonDownload } = button;
 
         return (
             <Button
                 className={cn('button', [classes.button])}
                 href={btnHref}
+                target={btnTarget}
                 download={buttonDownload}
             >
                 {btnTitle}
@@ -175,7 +189,7 @@ const Card: React.FC<ICard> = ({
                 [className, classes.root])}
             ref={rootRef}
         >
-            <Element href={href} className={cn('inner', [classes.inner])}>
+            <Element href={href} target={target} className={cn('inner', [classes.inner])}>
                 <>
                     {renderImage()}
                     <Header as="h3" className={cn('title')}>{title}</Header>
@@ -207,17 +221,20 @@ Card.propTypes = {
     button: PropTypes.shape({
         title: PropTypes.string.isRequired,
         href: PropTypes.string.isRequired,
+        target: PropTypes.oneOf(Object.values(Target)),
         download: PropTypes.bool,
     }),
     link: PropTypes.shape({
         title: PropTypes.string.isRequired,
         href: PropTypes.string,
+        target: PropTypes.oneOf(Object.values(Target)),
         download: PropTypes.bool,
     }),
     isCenteredText: PropTypes.bool,
     isLeftHAlign: PropTypes.bool,
     isFullHeight: PropTypes.bool,
     href: PropTypes.string,
+    target: PropTypes.oneOf(Object.values(Target)),
     objectFit: PropTypes.oneOf(Object.values(ObjectFit)),
 };
 
