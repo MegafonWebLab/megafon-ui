@@ -18,6 +18,7 @@ type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
 
 export enum ClassName {
     BUTTON = 'button',
+    LINK = 'link',
 }
 
 const typographyConfig = {
@@ -63,6 +64,8 @@ export interface IContent {
     buttonColor?: ButtonColorType;
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Обработчик клика по ссылке */
+    onLinkClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
     textColor?: TextColorType;
     /** Цвет текста на мобильном разрешении */
@@ -140,6 +143,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         buttonDownload,
         buttonColor = ButtonColor.GREEN,
         onButtonClick,
+        onLinkClick,
         textColor = TextColor.BLACK,
         textColorMobile,
         linkTitle,
@@ -178,7 +182,12 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                             </Button>
                         )}
                         {linkTitle && (
-                            <TextLink className={cn('link', [classes.link])} href={linkUrl} download={linkDownload}>
+                            <TextLink
+                                className={cn(ClassName.LINK, [classes.link])}
+                                href={linkUrl}
+                                download={linkDownload}
+                                onClick={onLinkClick}
+                            >
                                 {linkTitle}
                             </TextLink>
                         )}
@@ -310,6 +319,7 @@ VideoBanner.propTypes = {
         buttonDownload: PropTypes.bool,
         buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
         onButtonClick: PropTypes.func,
+        onLinkClick: PropTypes.func,
         textColor: PropTypes.oneOf(Object.values(TextColor)),
         textColorMobile: PropTypes.oneOf(Object.values(TextColor)),
         linkTitle: PropTypes.string,

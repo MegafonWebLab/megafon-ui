@@ -210,7 +210,7 @@ describe('<VideoBanner />', () => {
         expect(ref.current).not.toBeNull();
     });
 
-    it('should call onClick props', () => {
+    it('should call onButtonClick prop', () => {
         const onButtonClick = jest.fn();
         const contentWithMockFunc = {
             ...content,
@@ -223,6 +223,21 @@ describe('<VideoBanner />', () => {
 
         btn.simulate('click');
         expect(onButtonClick).toBeCalled();
+    });
+
+    it('should call onLinkClick prop', () => {
+        const onLinkClick = jest.fn();
+        const contentWithMockFunc = {
+            ...content,
+            onLinkClick,
+        };
+
+        const component = shallow(
+            <VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} content={contentWithMockFunc} />);
+        const link = component.find(`.${cn(ClassName.LINK)}`);
+
+        link.simulate('click');
+        expect(onLinkClick).toBeCalled();
     });
 
     describe('tests with local window', () => {
