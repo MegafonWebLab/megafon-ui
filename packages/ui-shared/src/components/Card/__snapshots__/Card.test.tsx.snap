@@ -26,7 +26,7 @@ exports[`Card button is not rendered if a card has the href property set 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -68,7 +68,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -82,6 +82,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
       <Button
         className="mfui-beta-card__button"
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -89,6 +90,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
         className="mfui-beta-card__link"
         color="blue"
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -120,7 +122,7 @@ exports[`Card left align of the interactive element 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -135,6 +137,7 @@ exports[`Card left align of the interactive element 1`] = `
         className="mfui-beta-card__link"
         color="blue"
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -170,7 +173,7 @@ exports[`Card render component with icon 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -184,6 +187,7 @@ exports[`Card render component with icon 1`] = `
       <Button
         className="mfui-beta-card__button"
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -191,6 +195,7 @@ exports[`Card render component with icon 1`] = `
         className="mfui-beta-card__link"
         color="blue"
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -222,7 +227,7 @@ exports[`Card render component with img, if image source and svg source are spec
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -236,6 +241,7 @@ exports[`Card render component with img, if image source and svg source are spec
       <Button
         className="mfui-beta-card__button"
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -243,6 +249,7 @@ exports[`Card render component with img, if image source and svg source are spec
         className="mfui-beta-card__link"
         color="blue"
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -275,7 +282,7 @@ exports[`Card render component with optional props 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -289,6 +296,7 @@ exports[`Card render component with optional props 1`] = `
       <Button
         className="mfui-beta-card__button buttonClass"
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -296,6 +304,7 @@ exports[`Card render component with optional props 1`] = `
         className="mfui-beta-card__link linkClass"
         color="blue"
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -319,7 +328,7 @@ exports[`Card render component with required props 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
   </div>
 </div>
@@ -350,7 +359,7 @@ exports[`Card render with a single interactive button element 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -364,6 +373,7 @@ exports[`Card render with a single interactive button element 1`] = `
       <Button
         className="mfui-beta-card__button"
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -397,7 +407,7 @@ exports[`Card render with a single interactive link element 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -412,6 +422,7 @@ exports[`Card render with a single interactive link element 1`] = `
         className="mfui-beta-card__link"
         color="blue"
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -435,7 +446,7 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -450,6 +461,7 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
         className="mfui-beta-card__button"
         download={true}
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -458,6 +470,7 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
         color="blue"
         download={true}
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >
@@ -489,7 +502,7 @@ exports[`Card render with contain object fit 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -503,6 +516,7 @@ exports[`Card render with contain object fit 1`] = `
       <Button
         className="mfui-beta-card__button"
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -524,7 +538,7 @@ exports[`Card render with fullHeight 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -543,6 +557,7 @@ exports[`Card render with link on the card 1`] = `
   <Link
     className="mfui-beta-card__inner"
     href="card-href"
+    target="_blank"
   >
     <div
       className="mfui-beta-card__pic-wrapper"
@@ -562,7 +577,7 @@ exports[`Card render with link on the card 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -596,7 +611,7 @@ exports[`Card render without img and svg 1`] = `
       color="black"
       hAlign="inherit"
     >
-      Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
     <Paragraph
       className="mfui-beta-card__text"
@@ -610,6 +625,7 @@ exports[`Card render without img and svg 1`] = `
       <Button
         className="mfui-beta-card__button"
         href="#"
+        target="_blank"
       >
         Подробнее
       </Button>
@@ -617,6 +633,7 @@ exports[`Card render without img and svg 1`] = `
         className="mfui-beta-card__link"
         color="blue"
         href="#"
+        target="_self"
         underlineStyle="solid"
         underlineVisibility="hover"
       >

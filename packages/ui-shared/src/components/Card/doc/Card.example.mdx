@@ -10,11 +10,13 @@ const text = 'Сдайте старое оборудование в трейд�
 const button = {
     title: 'Подробнее',
     href: '#',
+    target: '_self',
 };
 
 const buttonWithLongTitle = {
     title: 'Очень длинный заголовок',
     href: '#',
+    target: '_blank',
 };
 
 const fakeLink = {
@@ -142,6 +144,19 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
         </GridColumn>
         <GridColumn all="3" mobile="12">
             <Card isCenteredText={true} title={title} text={text} button={button} link={link} isFullHeight />
+        </GridColumn>
+    </Grid>
+</Playground>
+
+## Карточка в виде ссылки
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="3" mobile="12">
+            <Card isCenteredText={false} title={title} text={text} href="#" target="_self" isFullHeight />
+        </GridColumn>
+        <GridColumn all="3" mobile="12">
+            <Card isCenteredText={true} title={title} text={text} href="#" target="_blank" isFullHeight />
         </GridColumn>
     </Grid>
 </Playground>
