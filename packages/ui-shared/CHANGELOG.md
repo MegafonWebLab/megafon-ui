@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.221](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.220...@megafon/ui-shared@2.0.0-beta.221) (2021-08-23)
+
+
+### Features
+
+* **card:** add target prop to root element, button and link ([37811e7](https://github.com/MegafonWebLab/megafon-ui/commit/37811e72070550bd1eec7f1bce6cbb12f91aa707))
+
+
+
+
+
 # [2.0.0-beta.220](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.219...@megafon/ui-shared@2.0.0-beta.220) (2021-08-16)
 
 
