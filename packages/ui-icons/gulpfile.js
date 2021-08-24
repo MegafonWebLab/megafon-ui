@@ -11,18 +11,17 @@ const cheerio = require('cheerio');
 
 const sep = path.sep;
 const dest = gulp.dest;
-const dist = path.join(__dirname, 'dist');
 /**
  * Tasks
  */
-gulp.task('clean', () => del(['dist']));
+gulp.task('clean', () => del(['*.svg']));
 
 gulp.task('svg', () => {
     return gulp.src('src/**/*.svg')
         .pipe(svgmin(file => getSvgrConfig(file.path).svgoConfig))
         .pipe(removeSvgMasks())
         .pipe(renameFile())
-        .pipe(dest(dist));
+        .pipe(dest(__dirname));
 });
 
 gulp.task('build', gulp.series('clean', 'svg'));

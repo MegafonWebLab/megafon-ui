@@ -1,0 +1,6 @@
+*.json
+*.js
+*.log
+*.lock
+typings
+src
