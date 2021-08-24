@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './NavArrow.less';
 import { cnCreate } from '@megafon/ui-helpers';
-import ArrowLeft from '@megafon/ui-icons/dist/system-24-arrow_left_24.svg';
-import ArrowRight from '@megafon/ui-icons/dist/system-24-arrow_right_24.svg';
+import ArrowLeft from '@megafon/ui-icons/system-24-arrow_left_24.svg';
+import ArrowRight from '@megafon/ui-icons/system-24-arrow_right_24.svg';
 
 export const Theme = {
     PURPLE: 'purple',

@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import { TextLink } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
 import './DownloadLink.less';
-import DownloadIcon from '@megafon/ui-icons/dist/basic-32-download_32.svg';
+import DownloadIcon from '@megafon/ui-icons/basic-32-download_32.svg';
 
 export interface IDownloadLink {
     /** Ссылка на корневой элемент */

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import img from './img.png';
 import imgShort from './img_short.png';
-import WiFi from '@megafon/ui-icons/dist/basic-32-wi-fi_32.svg';
+import WiFi from '@megafon/ui-icons/basic-32-wi-fi_32.svg';
 
 const title = 'Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь';
 const text = 'Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.';

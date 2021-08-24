@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import Notification, { INotificationProps, NotificationTypes, ShadowTypes } from './Notification';
-import Attention from '@megafon/ui-icons/dist/system-16-attention_16.svg';
+import Attention from '@megafon/ui-icons/system-16-attention_16.svg';
 
 const props: INotificationProps = {
     className: 'notification',
