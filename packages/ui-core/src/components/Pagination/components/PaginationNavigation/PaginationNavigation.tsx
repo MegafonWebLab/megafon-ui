@@ -2,7 +2,7 @@ import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './PaginationNavigation.less';
-import ArrowRightIcon from 'icons/System/24/Arrow_right_24.svg';
+import ArrowRightIcon from '@megafon/ui-icons/system-24-arrow_right_24.svg';
 import PaginationButton from '../PaginationButton/PaginationButton';
 
 interface IPaginationNavigation {

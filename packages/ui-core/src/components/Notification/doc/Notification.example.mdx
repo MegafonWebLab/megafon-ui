@@ -1,10 +1,10 @@
-import { Playground, Props } from "docz";
-import Notification from "../Notification";
-import { DemoNotificationWrapper, wrapperStyle } from "./Notification.docz";
-import Rating1 from "icons/System/24/Rating_1_24.svg";
-import Sended from "icons/System/16/Sended_16.svg";
-import Cancel from "icons/System/16/Cancel_16.svg";
-import Send from "icons/System/24/Send_24.svg";
+import { Playground, Props } from 'docz';
+import Notification from '../Notification';
+import { DemoNotificationWrapper, wrapperStyle } from './Notification.docz';
+import Rating1 from '@megafon/ui-icons/system-24-rating_1_24.svg';
+import Sended from '@megafon/ui-icons/system-16-sended_16.svg';
+import Cancel from '@megafon/ui-icons/system-16-cancel_16.svg';
+import Send from '@megafon/ui-icons/system-24-send_24.svg';
 
 ```javascript collapse=Код DemoNotificationWrapper
 export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ( {
@@ -36,7 +36,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уведомление типа info
    </Notification>
 
-   <Notification 
+   <Notification
       type="success"
       title="Success"
       shadowLevel="zero"
@@ -44,7 +44,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уведомление типа success
    </Notification>
 
-   <Notification 
+   <Notification
       type="warning"
       title="Warning"
       shadowLevel="zero"
@@ -52,8 +52,8 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уведомление типа warning
    </Notification>
 
-   <Notification 
-      type="error" 
+   <Notification
+      type="error"
       title="Error"
       shadowLevel="zero"
    >
@@ -64,7 +64,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ## На белом фоне
 
 <Playground style={wrapperStyle}>
-   <Notification 
+   <Notification
       type="info"
       title="Info"
       shadowLevel="high"
@@ -73,8 +73,8 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уведомление типа info с белым фоном
    </Notification>
 
-   <Notification 
-      type="success" 
+   <Notification
+      type="success"
       title="Success"
       shadowLevel="high"
       isColored={false}
@@ -82,7 +82,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уведомление типа success с цветным фоном и с типом тени Hover
    </Notification>
 
-   <Notification 
+   <Notification
       type="warning"
       title="Warning"
       shadowLevel="high"
@@ -91,7 +91,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уведомление типа warning с белым фоном
    </Notification>
 
-   <Notification 
+   <Notification
       type="error"
       title="Error"
       shadowLevel="high"
@@ -104,7 +104,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ## Тени
 
 <Playground style={wrapperStyle}>
-   <Notification 
+   <Notification
       type="info"
       title="shadowLevel=zero"
       shadowLevel="zero"
@@ -112,7 +112,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уровень тени zero
    </Notification>
 
-   <Notification 
+   <Notification
       type="info"
       title="shadowLevel=low"
       shadowLevel="low"
@@ -121,7 +121,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уровень тени low
    </Notification>
 
-   <Notification 
+   <Notification
       type="info"
       title="shadowLevel=high"
       shadowLevel="high"
@@ -130,7 +130,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уровень тени high
    </Notification>
 
-   <Notification 
+   <Notification
       type="info"
       title="shadowLevel=hover"
       shadowLevel="hover"
@@ -142,26 +142,26 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ## Кастомные иконки
 
 <Playground style={wrapperStyle}>
-   <Notification 
+   <Notification
       type="info"
       title="Info"
       shadowLevel="zero"
-      icon={<Send />} 
+      icon={<Send />}
    >
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification 
+   <Notification
       type="info"
       title="Info"
       shadowLevel="high"
       isColored={false}
-      icon={<Send />} 
+      icon={<Send />}
    >
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification 
+   <Notification
       type="success"
       title="Success"
       shadowLevel="zero"
@@ -170,7 +170,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification 
+   <Notification
       type="success"
       title="Success"
       shadowLevel="high"
@@ -180,16 +180,16 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification 
+   <Notification
       type="warning"
       title="Warning"
       shadowLevel="zero"
-      icon={<Rating1 />} 
+      icon={<Rating1 />}
    >
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification 
+   <Notification
       type="warning"
       title="Warning"
       shadowLevel="high"
@@ -199,7 +199,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification 
+   <Notification
       type="error"
       title="Error"
       shadowLevel="zero"
@@ -208,8 +208,8 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification 
-      type="error" 
+   <Notification
+      type="error"
       title="Error"
       shadowLevel="high"
       isColored={false}
@@ -222,7 +222,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ## Уведомления со ссылками
 
 <Playground style={wrapperStyle}>
-   <Notification 
+   <Notification
       type="info"
       title="Cсылка ведет на новую страницу"
       shadowLevel="high"
@@ -237,7 +237,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 
    <DemoNotificationWrapper>
       {({ initialClickAmount, onLinkClick }) =>
-         <Notification 
+         <Notification
             type="warning"
             title="Cсылка с кастомным обработчиком"
             shadowLevel="zero"
@@ -251,7 +251,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 
    <DemoNotificationWrapper>
       {({ initialClickAmount, onLinkClick }) =>
-         <Notification 
+         <Notification
             type="error"
             title="Cсылка с кастомным обработчиком"
             shadowLevel="zero"
@@ -269,7 +269,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 <Playground style={wrapperStyle}>
    <DemoNotificationWrapper>
       {({ initialClickAmount, onClose }) =>
-         <Notification 
+         <Notification
             type="error"
             title="Кнопка закрытия с обработчиком"
             shadowLevel="high"
@@ -287,7 +287,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ## Заполнение контентом частично
 
 <Playground style={wrapperStyle}>
-   <Notification 
+   <Notification
       type="info"
       shadowLevel="high"
       isColored={false}
@@ -298,7 +298,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Ссылка и отсутствие заголовка.
    </Notification>
 
-   <Notification 
+   <Notification
       type="info"
       title="Кнопка закрытия с обработчиком и ссылка на новую страницу"
       shadowLevel="high"
@@ -311,7 +311,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Использованы все опциональные элементы
    </Notification>
 
-   <Notification 
+   <Notification
       type="info"
       shadowLevel="zero"
       hasCloseButton
@@ -320,11 +320,11 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Если высота текста больше высоты иконки, то они выравниваются по верху контентной области.
    </Notification>
 
-   <Notification 
+   <Notification
       type="info"
       shadowLevel="zero"
       hasCloseButton
    >
-     Центрирование по вертикали, при небольшой высоте текста. 
+     Центрирование по вертикали, при небольшой высоте текста.
    </Notification>
 </Playground>

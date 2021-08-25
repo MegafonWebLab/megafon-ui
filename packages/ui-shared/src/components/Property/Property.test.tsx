@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
-import WiFi from 'icons/Basic/32/Wi-fi_32.svg';
+import WiFi from '@megafon/ui-icons/basic-32-wi-fi_32.svg';
 import Property from './Property';
 
 describe('<Property />', () => {

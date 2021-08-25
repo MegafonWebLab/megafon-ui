@@ -20,6 +20,10 @@ MegaFon components library consists of the following npm packages:
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-shared/beta?label=%40megafon%2Fui-shared)](https://www.npmjs.com/package/@megafon/ui-shared/v/beta)
 
 
+- icons
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-icons/beta?label=%40megafon%2Ficons)](https://www.npmjs.com/package/@megafon/ui-icons/v/beta)
+
+
 - ui-helpers
 [![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-helpers/beta?label=%40megafon%2Fui-helpers)](https://www.npmjs.com/package/@megafon/ui-helpers/v/beta)
 
@@ -30,6 +34,9 @@ npm install @megafon/ui-core@beta
 ```
 ```bash
 npm install @megafon/ui-shared@beta
+```
+```bash
+npm install @megafon/ui-icons@beta
 ```
 ```bash
 npm install @megafon/ui-helpers@beta

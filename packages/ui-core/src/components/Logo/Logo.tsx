@@ -2,8 +2,8 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import './Logo.less';
 import { cnCreate } from '@megafon/ui-helpers';
-import greenHorizontalImg from 'docIcons/green-horizontal.svg';
-import greenVerticalImg from 'docIcons/green-vertical.svg';
+import greenHorizontalImg from './green-horizontal.svg';
+import greenVerticalImg from './green-vertical.svg';
 import Link from '../Link/Link';
 
 export interface ILogoProps {

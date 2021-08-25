@@ -2,7 +2,7 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import { IconPositionEnum } from './types';
 import BenefitsIconsTile, { IBenefitsIconsTile } from './BenefitsIconsTile';
-import Checked from 'icons/System/24/Checked_24.svg';
+import Checked from '@megafon/ui-icons/system-24-checked_24.svg';
 
 const props: IBenefitsIconsTile = {
     title: 'title',

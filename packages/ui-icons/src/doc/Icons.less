@@ -1,13 +1,35 @@
-@import '~styles/base.less';
-
 @b: e('.icons');
+
+@clearWhite: #FFFFFF;
+@spbSky0: #F6F6F6;
+@spbSky1: #EDEDED;
+@green: #00B956;
 
 @{b} {
     margin-bottom: 140px;
 
     &__icon-title {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 600;
         margin-top: 16px;
         margin-bottom: 16px;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 28px;
+            line-height: 36px;
+            letter-spacing: 0.5px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            font-size: 32px;
+            line-height: 40px;
+        }
     }
 
     &__icons {
@@ -41,7 +63,7 @@
         bottom: -2px;
         left: -8px;
         z-index: -1;
-        background: #F6F6F6;
+        background: @spbSky0;
         border-radius: 8px;
     }
 

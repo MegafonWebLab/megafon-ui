@@ -5,10 +5,10 @@ import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import './TextField.less';
 import InputLabel from '../InputLabel/InputLabel';
 import Paragraph from '../Paragraph/Paragraph';
-import CheckedIcon from 'icons/System/24/Checked_24.svg';
-import ErrorIcon from 'icons/System/24/Cancel_24.svg';
-import Hide from 'icons/Basic/24/Hide_24.svg';
-import Show from 'icons/Basic/24/Show_24.svg';
+import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
+import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
+import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
+import Show from '@megafon/ui-icons/basic-24-show_24.svg';
 
 const InputMask = require('react-input-mask');
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
 import PaginationButton from 'components/Pagination/components/PaginationButton/PaginationButton';
-import NothingIcon from 'icons/Basic/16/Nothing_16.svg';
+import NothingIcon from '@megafon/ui-icons/basic-16-nothing_16.svg';
 import './PaginationButtons.less';
 
 interface IPaginationButtons {

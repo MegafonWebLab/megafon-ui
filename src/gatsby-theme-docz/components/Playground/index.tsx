@@ -6,7 +6,7 @@ import { cnCreate } from '@megafon/ui-helpers';
 import './Playground.less';
 import { PlaygroundProps } from 'docz/dist/hooks/useComponents';
 import { Language } from 'prism-react-renderer';
-import Copy from 'icons/System/24/Copy_24.svg';
+import Copy from '@megafon/ui-icons/system-24-copy_24.svg';
 import copy from 'copy-text-to-clipboard'
 
 const transformCode = (code: string) => {
