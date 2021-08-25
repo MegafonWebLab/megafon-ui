@@ -1,7 +1,9 @@
 {
   "name": "@megafon/ui-icons",
-  "version": "0.0.1",
-  "files": ["*.svg"],
+  "version": "0.0.2-beta.0",
+  "files": [
+    "*.svg"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MegafonWebLab/megafon-ui.git"

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.222](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.221...@megafon/ui-shared@2.0.0-beta.222) (2021-08-25)
+
+
+### Features
+
+* **packages:** extracts icons from @megafon/ui-core to @megafon/ui-icons package ([ddabc32](https://github.com/MegafonWebLab/megafon-ui/commit/ddabc325b888540804f1fa13c94a1c5a58009df2))
+
+
+### BREAKING CHANGES
+
+* **packages:** icons from @megafon/ui-core removed, use @megafon/ui-icons package instead
+
+
+
+
+
 # [2.0.0-beta.221](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.220...@megafon/ui-shared@2.0.0-beta.221) (2021-08-23)
 
 
