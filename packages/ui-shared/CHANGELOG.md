@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.223](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.222...@megafon/ui-shared@2.0.0-beta.223) (2021-08-30)
+
+
+### Features
+
+* **videobanner:** add onLinkClick prop ([8e932b2](https://github.com/MegafonWebLab/megafon-ui/commit/8e932b2245457a2b38035aeeccacaad89f8cf8b0))
+
+
+
+
+
 # [2.0.0-beta.222](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.221...@megafon/ui-shared@2.0.0-beta.222) (2021-08-25)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.154](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.153...@megafon/ui-core@2.0.0-beta.154) (2021-08-30)
+
+
+### Bug Fixes
+
+* **carousel:** edit slide margin on mobile resolution ([45aba92](https://github.com/MegafonWebLab/megafon-ui/commit/45aba928f11167cc31eefc018858ea6f4c793d96))
+* **pagination:** add dependencies for usecallback buttons handler ([0faad5f](https://github.com/MegafonWebLab/megafon-ui/commit/0faad5fdd76e96daf521fa70f9ee2d85e593fda0))
+
+
+
+
+
 # [2.0.0-beta.153](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.152...@megafon/ui-core@2.0.0-beta.153) (2021-08-25)
 
 
