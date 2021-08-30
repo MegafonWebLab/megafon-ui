@@ -28,15 +28,15 @@ const Pagination: React.FC<IPagination> = ({
 
     const handleBackClick = React.useCallback(() => {
         onChange(activePage - 1);
-    }, [activePage]);
+    }, [activePage, onChange]);
 
     const handleNextClick = React.useCallback(() => {
         onChange(activePage + 1);
-    }, [activePage]);
+    }, [activePage, onChange]);
 
     const handlePageButtonClick = React.useCallback(value => {
         onChange(value);
-    }, []);
+    }, [onChange]);
 
     return (
         <div className={cn()}>
