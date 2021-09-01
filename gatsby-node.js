@@ -60,7 +60,8 @@ exports.onCreateWebpackConfig = ({ actions, getConfig, plugins, loaders }) => {
             ],
             alias: {
                 '@megafon/ui-core': resolve(__dirname, '../packages/ui-core/src'),
-                '@megafon/ui-helpers': resolve(__dirname, '../packages/ui-helpers/src')
+                '@megafon/ui-helpers': resolve(__dirname, '../packages/ui-helpers/src'),
+                '@megafon/ui-icons': resolve(__dirname, '../packages/ui-icons')
             }
         },
         module: {
