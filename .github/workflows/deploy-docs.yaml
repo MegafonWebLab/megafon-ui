@@ -109,6 +109,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Build @megafon/ui-icons package
+        run: yarn workspace @megafon/ui-icons build
+
       - name: Build documentation
         run: yarn demo:build
 
