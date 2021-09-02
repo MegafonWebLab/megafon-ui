@@ -34,14 +34,17 @@ const PageTitle: React.FC<Props> = ({
     classes = {},
     rootRef,
 }) => {
-    const renderPageTitle = React.useCallback(
-        () => (
+    const isBreadcrumbs = !!breadcrumbs?.length;
+
+    const renderPageTitle = React.useCallback(() => (
             <>
-                {breadcrumbs?.length &&
-                    <Breadcrumbs items={breadcrumbs} className={cn('breadcrumbs', [classes.breadcrumbs])} />
-                }
-                {badge && <div className={cn('badge')}>{badge}</div>}
-                <Header className={cn('title')} as="h1">{title}</Header>
+                {badge && <div className={cn('badge', { 'under-breadcrumbs': isBreadcrumbs })}>{badge}</div>}
+                <Header
+                    className={cn('title', { 'under-breadcrumbs': isBreadcrumbs && !badge })}
+                    as="h1"
+                >
+                    {title}
+                </Header>
             </>
         ),
         [breadcrumbs, classes, badge, title]
@@ -60,6 +63,9 @@ const PageTitle: React.FC<Props> = ({
 
     return (
         <div className={cn([className])} ref={rootRef}>
+            {breadcrumbs?.length &&
+                <Breadcrumbs items={breadcrumbs} className={cn('breadcrumbs', [classes.breadcrumbs])} />
+            }
             {isFullWidth ? renderPageTitle() : renderPageTitleWithGrid()}
         </div>
     );

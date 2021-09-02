@@ -19,6 +19,25 @@ exports[`PageTitle should render with limited width 1`] = `
 <div
   className="mfui-beta-page-title"
 >
+  <Breadcrumbs
+    className="mfui-beta-page-title__breadcrumbs"
+    items={
+      Array [
+        Object {
+          "href": "#",
+          "title": "Тарифы",
+        },
+        Object {
+          "href": "#",
+          "title": "Управляй !",
+        },
+        Object {
+          "href": "#",
+          "title": "Менеджер",
+        },
+      ]
+    }
+  />
   <Grid>
     <GridColumn
       desktop="10"
@@ -26,27 +45,8 @@ exports[`PageTitle should render with limited width 1`] = `
       tablet="12"
       wide="8"
     >
-      <Breadcrumbs
-        className="mfui-beta-page-title__breadcrumbs"
-        items={
-          Array [
-            Object {
-              "href": "#",
-              "title": "Тарифы",
-            },
-            Object {
-              "href": "#",
-              "title": "Управляй !",
-            },
-            Object {
-              "href": "#",
-              "title": "Менеджер",
-            },
-          ]
-        }
-      />
       <div
-        className="mfui-beta-page-title__badge"
+        className="mfui-beta-page-title__badge mfui-beta-page-title__badge_under-breadcrumbs"
       >
         badge
       </div>
@@ -87,7 +87,7 @@ exports[`PageTitle should render with optional props 1`] = `
     }
   />
   <div
-    className="mfui-beta-page-title__badge"
+    className="mfui-beta-page-title__badge mfui-beta-page-title__badge_under-breadcrumbs"
   >
     badge
   </div>
