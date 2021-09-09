@@ -10,6 +10,8 @@ const props: IBenefitsIcons = {
     classes: {
         root: 'root-class',
         item: 'item-class',
+        grid: 'grid-class',
+        gridColumn: 'grid-column-class',
     },
 };
 
