@@ -128,3 +128,52 @@ const onClick = () => {};
         />
     </ContentArea>
 </Playground>
+
+## C QR-кодом и 3 сторами
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            linkHuawei={link}
+            onClickHuawei={onClick}
+            imageSrc={image}
+            qrCode={qrCode}
+            deviceMask="black-iphone"
+        />
+    </ContentArea>
+</Playground>
+
+## C кнопкой
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkButton="#"
+            imageSrc={image}
+            deviceMask="black-iphone"
+        />
+    </ContentArea>
+</Playground>
+
+## C кнопкой и зеленым фоном
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkButton="#"
+            imageSrc={image}
+            deviceMask="black-iphone"
+            theme="green"
+        />
+    </ContentArea>
+</Playground>
