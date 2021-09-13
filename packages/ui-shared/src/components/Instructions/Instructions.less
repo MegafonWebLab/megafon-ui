@@ -330,6 +330,18 @@
         }
     }
 
+    &__articles-list_mobile {
+        @media @desktop {
+            display: none;
+        }
+    }
+
+    &__articles-list_desktop {
+        @media @mobile {
+            display: none;
+        }
+    }
+
     &__articles-item {
         opacity: 0.5;
         position: relative;

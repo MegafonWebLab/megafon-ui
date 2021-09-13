@@ -1,15 +1,12 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './Instructions.less';
-import throttle from 'lodash.throttle';
 import SwiperCore from 'swiper';
 import convert from 'htmr';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
-import { breakpoints, cnCreate } from '@megafon/ui-helpers';
-
-const THROTTLE_MILLISECONDS = 100;
+import { cnCreate } from '@megafon/ui-helpers';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -83,7 +80,6 @@ const Instructions: React.FC<IInstructionsProps> = ({
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperClass>();
     const [slideIndex, setSlideIndex] = React.useState(0);
-    const [isMobile, setIsMobile] = React.useState(false);
 
     const getSwiperInstance = React.useCallback((swiper: SwiperClass): void => {
         setSwiperInstance(swiper);
@@ -97,12 +93,6 @@ const Instructions: React.FC<IInstructionsProps> = ({
 
         return articleIndex === activeIndex ? `${instructionItem} ${activeInstructionItem}` : instructionItem;
     }, [instructionItem, activeInstructionItem]);
-
-    const handleResize = React.useCallback((): void => {
-        const isMobileScreen = window.innerWidth < breakpoints.DESKTOP_SMALL_START;
-
-        setIsMobile(isMobileScreen);
-    }, []);
 
     const handleArticleClick = React.useCallback((ind: number) => (): void => {
         setSlideIndex(ind);
@@ -158,7 +148,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     ), [instructionItems]);
 
     const renderDesktopArticles = React.useCallback((): JSX.Element => (
-        <ul className={cn('articles-list', { 'text-after': !!text })}>
+        <ul className={cn('articles-list', { 'text-after': !!text, desktop: true })}>
             {instructionItems.map(({title: itemTitle}, ind) => (
                 <li
                     className={cn(
@@ -182,7 +172,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     ), [instructionItems, slideIndex, handleArticleClick, text]);
 
     const renderMobileArticles = React.useCallback((): JSX.Element => (
-        <>
+        <div className={cn('articles-list', { mobile: true })}>
             <div className={cn('articles-title-block')}>
                 {instructionItems.map(({ title: itemTitle }, ind) => (
                     slideIndex === ind &&
@@ -206,19 +196,8 @@ const Instructions: React.FC<IInstructionsProps> = ({
                     </div>
                 ))}
             </ul>
-        </>
+        </div>
     ), [instructionItems, slideIndex, handleArticleClick, text]);
-
-    React.useEffect(() => {
-        const handleSetThrottled = throttle(handleResize, THROTTLE_MILLISECONDS);
-
-        handleResize();
-        window.addEventListener('resize', handleSetThrottled);
-
-        return (): void => {
-            window.removeEventListener('resize', handleSetThrottled);
-        };
-    }, [handleResize]);
 
     return (
         <div className={cn({ mask: pictureMask })} ref={rootRef}>
@@ -231,10 +210,8 @@ const Instructions: React.FC<IInstructionsProps> = ({
                         </div>
                         <div className={cn('articles', { align: pictureAlign })}>
                             {renderTitle('desktop')}
-                            {isMobile
-                                ? renderMobileArticles()
-                                : renderDesktopArticles()
-                            }
+                            {renderMobileArticles()}
+                            {renderDesktopArticles()}
                             {text && renderText()}
                         </div>
                     </div>

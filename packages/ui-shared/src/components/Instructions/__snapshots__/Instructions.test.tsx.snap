@@ -69,8 +69,49 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
           >
             Test instruction title
           </Header>
+          <div
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-beta-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-beta-instructions__articles-title"
+                data-index={1}
+                key="1"
+              >
+                Test2
+              </div>
+            </div>
+            <ul
+              className="mfui-beta-instructions__articles-dots"
+            >
+              <div
+                className="mfui-beta-instructions__articles-dot"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
           <ul
-            className="mfui-beta-instructions__articles-list"
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
           >
             <li
               className="mfui-beta-instructions__articles-item"
@@ -191,8 +232,49 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
           >
             Test instruction title
           </Header>
+          <div
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-beta-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-beta-instructions__articles-title"
+                data-index={0}
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-beta-instructions__articles-dots"
+            >
+              <div
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-dot"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
           <ul
-            className="mfui-beta-instructions__articles-list"
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
           >
             <li
               className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
@@ -320,8 +402,49 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
           >
             Test instruction title
           </Header>
+          <div
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-beta-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-beta-instructions__articles-title"
+                data-index={0}
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-beta-instructions__articles-dots"
+            >
+              <div
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-dot"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
           <ul
-            className="mfui-beta-instructions__articles-list"
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
           >
             <li
               className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
@@ -449,8 +572,49 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
           >
             Test instruction title
           </Header>
+          <div
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-beta-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-beta-instructions__articles-title"
+                data-index={0}
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-beta-instructions__articles-dots"
+            >
+              <div
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-dot"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
           <ul
-            className="mfui-beta-instructions__articles-list"
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
           >
             <li
               className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
@@ -571,8 +735,49 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
           >
             Test instruction title
           </Header>
+          <div
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-beta-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-beta-instructions__articles-title"
+                data-index={0}
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-beta-instructions__articles-dots"
+            >
+              <div
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-dot"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
           <ul
-            className="mfui-beta-instructions__articles-list"
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
           >
             <li
               className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
@@ -2168,41 +2373,91 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                     </h2>
                   </Header>
                   <div
-                    className="mfui-beta-instructions__articles-title-block"
+                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
                   >
                     <div
-                      className="mfui-beta-instructions__articles-title"
-                      data-index={0}
-                      key="0"
+                      className="mfui-beta-instructions__articles-title-block"
                     >
-                      Test1
+                      <div
+                        className="mfui-beta-instructions__articles-title"
+                        data-index={0}
+                        key="0"
+                      >
+                        Test1
+                      </div>
                     </div>
+                    <ul
+                      className="mfui-beta-instructions__articles-dots"
+                    >
+                      <div
+                        className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                        key="0"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="mfui-beta-instructions__articles-dot-number"
+                        >
+                          1
+                        </span>
+                      </div>
+                      <div
+                        className="mfui-beta-instructions__articles-dot"
+                        key="1"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="mfui-beta-instructions__articles-dot-number"
+                        >
+                          2
+                        </span>
+                      </div>
+                    </ul>
                   </div>
                   <ul
-                    className="mfui-beta-instructions__articles-dots"
+                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
                   >
-                    <div
-                      className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                    <li
+                      className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+                      data-index={0}
                       key="0"
                       onClick={[Function]}
                     >
-                      <span
-                        className="mfui-beta-instructions__articles-dot-number"
+                      <div
+                        className="mfui-beta-instructions__articles-item-dot"
                       >
-                        1
-                      </span>
-                    </div>
-                    <div
-                      className="mfui-beta-instructions__articles-dot"
+                        <span
+                          className="mfui-beta-instructions__articles-item-dot-number"
+                        >
+                          1
+                        </span>
+                      </div>
+                      <div
+                        className="mfui-beta-instructions__articles-item-title"
+                      >
+                        Test1
+                      </div>
+                    </li>
+                    <li
+                      className="mfui-beta-instructions__articles-item"
+                      data-index={1}
                       key="1"
                       onClick={[Function]}
                     >
-                      <span
-                        className="mfui-beta-instructions__articles-dot-number"
+                      <div
+                        className="mfui-beta-instructions__articles-item-dot"
                       >
-                        2
-                      </span>
-                    </div>
+                        <span
+                          className="mfui-beta-instructions__articles-item-dot-number"
+                        >
+                          2
+                        </span>
+                      </div>
+                      <div
+                        className="mfui-beta-instructions__articles-item-title"
+                      >
+                        Test2
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -3759,41 +4014,91 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                     </h2>
                   </Header>
                   <div
-                    className="mfui-beta-instructions__articles-title-block"
+                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
                   >
                     <div
-                      className="mfui-beta-instructions__articles-title"
-                      data-index={0}
-                      key="0"
+                      className="mfui-beta-instructions__articles-title-block"
                     >
-                      Test1
+                      <div
+                        className="mfui-beta-instructions__articles-title"
+                        data-index={0}
+                        key="0"
+                      >
+                        Test1
+                      </div>
                     </div>
+                    <ul
+                      className="mfui-beta-instructions__articles-dots"
+                    >
+                      <div
+                        className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                        key="0"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="mfui-beta-instructions__articles-dot-number"
+                        >
+                          1
+                        </span>
+                      </div>
+                      <div
+                        className="mfui-beta-instructions__articles-dot"
+                        key="1"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="mfui-beta-instructions__articles-dot-number"
+                        >
+                          2
+                        </span>
+                      </div>
+                    </ul>
                   </div>
                   <ul
-                    className="mfui-beta-instructions__articles-dots"
+                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
                   >
-                    <div
-                      className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                    <li
+                      className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+                      data-index={0}
                       key="0"
                       onClick={[Function]}
                     >
-                      <span
-                        className="mfui-beta-instructions__articles-dot-number"
+                      <div
+                        className="mfui-beta-instructions__articles-item-dot"
                       >
-                        1
-                      </span>
-                    </div>
-                    <div
-                      className="mfui-beta-instructions__articles-dot"
+                        <span
+                          className="mfui-beta-instructions__articles-item-dot-number"
+                        >
+                          1
+                        </span>
+                      </div>
+                      <div
+                        className="mfui-beta-instructions__articles-item-title"
+                      >
+                        Test1
+                      </div>
+                    </li>
+                    <li
+                      className="mfui-beta-instructions__articles-item"
+                      data-index={1}
                       key="1"
                       onClick={[Function]}
                     >
-                      <span
-                        className="mfui-beta-instructions__articles-dot-number"
+                      <div
+                        className="mfui-beta-instructions__articles-item-dot"
                       >
-                        2
-                      </span>
-                    </div>
+                        <span
+                          className="mfui-beta-instructions__articles-item-dot-number"
+                        >
+                          2
+                        </span>
+                      </div>
+                      <div
+                        className="mfui-beta-instructions__articles-item-title"
+                      >
+                        Test2
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -5349,8 +5654,49 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                       Test instruction title
                     </h2>
                   </Header>
+                  <div
+                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+                  >
+                    <div
+                      className="mfui-beta-instructions__articles-title-block"
+                    >
+                      <div
+                        className="mfui-beta-instructions__articles-title"
+                        data-index={0}
+                        key="0"
+                      >
+                        Test1
+                      </div>
+                    </div>
+                    <ul
+                      className="mfui-beta-instructions__articles-dots"
+                    >
+                      <div
+                        className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                        key="0"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="mfui-beta-instructions__articles-dot-number"
+                        >
+                          1
+                        </span>
+                      </div>
+                      <div
+                        className="mfui-beta-instructions__articles-dot"
+                        key="1"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="mfui-beta-instructions__articles-dot-number"
+                        >
+                          2
+                        </span>
+                      </div>
+                    </ul>
+                  </div>
                   <ul
-                    className="mfui-beta-instructions__articles-list"
+                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
                   >
                     <li
                       className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
@@ -5475,8 +5821,49 @@ exports[`<Instructions /> should render component with additional text 1`] = `
           >
             Test instruction title
           </Header>
+          <div
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-beta-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-beta-instructions__articles-title"
+                data-index={0}
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-beta-instructions__articles-dots mfui-beta-instructions__articles-dots_text-after"
+            >
+              <div
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-dot"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_text-after"
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_text-after mfui-beta-instructions__articles-list_desktop"
           >
             <li
               className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
@@ -5603,8 +5990,49 @@ exports[`<Instructions /> should render with classes props 1`] = `
           >
             Test instruction title
           </Header>
+          <div
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-beta-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-beta-instructions__articles-title mobileItemTitle"
+                data-index={0}
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-beta-instructions__articles-dots"
+            >
+              <div
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active test-class_articleItem test-class_activeArticleItem"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-beta-instructions__articles-dot test-class_articleItem"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-beta-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
           <ul
-            className="mfui-beta-instructions__articles-list"
+            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
           >
             <li
               className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active test-class_articleItem test-class_activeArticleItem"
