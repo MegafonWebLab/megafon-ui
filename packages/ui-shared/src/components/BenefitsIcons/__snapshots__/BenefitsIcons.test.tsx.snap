@@ -8,10 +8,12 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
     className="mfui-beta-benefits-icons__inner"
   >
     <Grid
+      className="grid-class"
       guttersLeft="medium"
       hAlign="left"
     >
       <GridColumn
+        className="grid-column-class"
         desktop="4"
         key="0"
         tablet="5"
@@ -35,6 +37,7 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
         />
       </GridColumn>
       <GridColumn
+        className="grid-column-class"
         desktop="4"
         key="1"
         leftOffsetDesktop="1"

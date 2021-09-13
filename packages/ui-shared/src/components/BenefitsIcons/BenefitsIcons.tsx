@@ -19,6 +19,8 @@ export interface IBenefitsIcons {
     classes?: {
         root?: string;
         item?: string;
+        grid?: string;
+        gridColumn?: string;
     };
 }
 
@@ -133,16 +135,19 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
     return (
         <div className={cn([className, classes.root])} ref={rootRef}>
             <div className={cn('inner')}>
-                <Grid guttersLeft="medium" hAlign={hAlign}>
+                <Grid className={classes.grid} guttersLeft="medium" hAlign={hAlign}>
                     {items.map(({ title, text, icon }, i) => (
-                        <GridColumn {...getColumnConfig(iconPosition, items.length, i)} key={i}>
-                            <BenefitsIconsTile
-                                className={classes.item}
-                                title={title}
-                                text={text}
-                                icon={icon}
-                                iconPosition={iconPosition}
-                            />
+                        <GridColumn
+                            className={classes.gridColumn}
+                            {...getColumnConfig(iconPosition, items.length, i)}
+                            key={i}>
+                                <BenefitsIconsTile
+                                    className={classes.item}
+                                    title={title}
+                                    text={text}
+                                    icon={icon}
+                                    iconPosition={iconPosition}
+                                />
                         </GridColumn>
                     ))}
                 </Grid>
