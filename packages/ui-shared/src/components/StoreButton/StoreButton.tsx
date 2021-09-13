@@ -7,6 +7,7 @@ import './StoreButton.less';
 export enum Theme {
     GOOGLE_PLAY = 'google-play',
     APP_STORE = 'app-store',
+    HUAWEI_STORE = 'huawei-store',
 }
 
 type LinkPropTypes = React.ComponentProps<typeof Link>;
