@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.224](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.223...@megafon/ui-shared@2.0.0-beta.224) (2021-09-13)
+
+
+### Bug Fixes
+
+* **instructions:** removed javascript resolution tracking ([7cfaddb](https://github.com/MegafonWebLab/megafon-ui/commit/7cfaddb3cda52c671b5541e42ff29bd5864809a5))
+
+
+### Features
+
+* **benefitsicons:** added classes for Grid and GridColumn ([be71f0c](https://github.com/MegafonWebLab/megafon-ui/commit/be71f0c32ae6e721c30baaa895acca7220a217c0))
+* **instructions:** fix style for Instructions ([acb53fa](https://github.com/MegafonWebLab/megafon-ui/commit/acb53fa8e8574c22631d89edf02c0503d091f72d))
+* **instructions:** fix style for iphone 12 mask ([4ae746b](https://github.com/MegafonWebLab/megafon-ui/commit/4ae746b9a347acaf5de29fdbc82082474d7ffcb7))
+* **pagetitle:** removed breadcrumbs from grid ([04c2c79](https://github.com/MegafonWebLab/megafon-ui/commit/04c2c794061dea920a7db6ed2f1303bbe48127b6))
+* **storebanner:** added new store button and update StoreBanner ([c13f37b](https://github.com/MegafonWebLab/megafon-ui/commit/c13f37bf8d2e5ed61f4d43c0e1d19eb4375a8c15))
+
+
+
+
+
 # [2.0.0-beta.223](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.222...@megafon/ui-shared@2.0.0-beta.223) (2021-08-30)
 
 

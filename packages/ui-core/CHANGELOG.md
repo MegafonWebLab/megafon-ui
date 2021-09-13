@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.155](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.154...@megafon/ui-core@2.0.0-beta.155) (2021-09-13)
+
+
+### Bug Fixes
+
+* **select:** add classes for title and arrow ([7d46cf2](https://github.com/MegafonWebLab/megafon-ui/commit/7d46cf2c978cb6a773fe97511e779bbc13da9d6a))
+
+
+
+
+
 # [2.0.0-beta.154](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.153...@megafon/ui-core@2.0.0-beta.154) (2021-08-30)
 
 
