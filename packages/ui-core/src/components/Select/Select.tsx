@@ -64,9 +64,13 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
     classes?: {
         root?: string;
         control?: string;
+        title?: string;
+        titleInner?: string;
         list?: string;
         listItem?: string;
         listItemTitle?: string;
+        arrowWrap?: string;
+        arrow?: string;
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
@@ -104,9 +108,13 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         classes: PropTypes.shape({
             root: PropTypes.string,
             control: PropTypes.string,
+            title: PropTypes.string,
+            titleInner: PropTypes.string,
             list: PropTypes.string,
             listItem: PropTypes.string,
             listItemTitle: PropTypes.string,
+            arrowWrap: PropTypes.string,
+            arrow: PropTypes.string,
         }),
         items: PropTypes.arrayOf(
             PropTypes.shape({
@@ -424,7 +432,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     getNodeList = node => this.itemsNodeList.push(node);
 
     renderTitle() {
-        const { placeholder, items, currentValue } = this.props;
+        const { placeholder, items, currentValue, classes } = this.props;
         const item = items.find(elem => elem.value === currentValue);
         let inputTitle: string | JSX.Element | Element | undefined = placeholder;
 
@@ -436,11 +444,11 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             <div
                 className={cn('title', {
                     placeholder: !!placeholder && !currentValue,
-                })}
+                }, [classes?.title])}
                 tabIndex={0}
                 onClick={this.handleOpenDropdown}
             >
-                <div className={cn('title-inner')}>
+                <div className={cn('title-inner', [classes?.titleInner])}>
                     {inputTitle}
                 </div>
             </div>
@@ -534,8 +542,12 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                     >
                         {(type === SelectTypes.COMBOBOX) && this.renderCombobox()}
                         {(type === SelectTypes.CLASSIC) && this.renderTitle()}
-                        <div className={cn('arrow-wrap')} tabIndex={1} onClick={this.handleOpenDropdown}>
-                            <span className={cn('arrow')} />
+                        <div
+                            className={cn('arrow-wrap', [classes.arrowWrap])}
+                            tabIndex={1}
+                            onClick={this.handleOpenDropdown}
+                        >
+                            <span className={cn('arrow', [classes.arrow])} />
                         </div>
                     </div>
                     {this.renderChildren()}
