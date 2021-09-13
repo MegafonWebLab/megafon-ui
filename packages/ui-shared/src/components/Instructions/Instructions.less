@@ -197,6 +197,12 @@
     }
 
     &_mask_iphone-12 {
+        @{b}__img-wrapper:before {
+            @media @mobile {
+                display: none;
+            }
+        }
+
         @{b}__device-screen {
             position: relative;
             width: 100%;
