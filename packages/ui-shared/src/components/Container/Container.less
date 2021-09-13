@@ -306,10 +306,17 @@
         .generateComponentsMargins(@medium, @k11, 3, 20);
     }
 
-    @{k11} + @{k11},
+    @{k11} + @{k11} {
+        .disableMarginTop();
+    }
+
     @{k11} + @{k14},
     @{k11} + @{k15} {
-        .disableMarginTop();
+        margin-top: @big;
+
+        @media @mobile {
+            margin-top: @small;
+        }
     }
 
     // k12(table)
