@@ -201,11 +201,11 @@
             width: 119px;
             height: 35px;
         }
-    }
 
-    &__store-link_app-store {
-        margin-right: 16px;
-        margin-bottom: 10px;
+        &:not(:last-child) {
+            margin-right: 16px;
+            margin-bottom: 10px;
+        }
     }
 
     &__stores {
@@ -230,5 +230,48 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    &__links_three {
+        @{b}__qr-code {
+            object-fit: contain;
+
+            @media @mobileB {
+                width: 120px;
+                height: 120px;
+            }
+
+            @media @desktopMU {
+                max-width: 88px;
+                max-height: 88px;
+            }
+        }
+
+        @{b}__qr-code + @{b}__stores {
+            @media @desktop {
+                flex-direction: row;
+                max-width: 305px;
+                justify-content: flex-start;
+            }
+        }
+
+        @{b}__qr-code + @{b}__stores @{b}__store-link {
+            margin-right: 16px;
+        }
+
+        @{b}__qr-code + @{b}__stores @{b}__store-link:not(:first-child) {
+            margin-right: 0;
+        }
+
+        @{b}__store-link {
+            height: 35px;
+            width: 119px;
+        }
+
+        @{b}__store-link:not(:first-child) {
+            @media @mobile {
+                margin-right: 0;
+            }
+        }
     }
 }

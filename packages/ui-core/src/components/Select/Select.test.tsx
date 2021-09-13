@@ -15,9 +15,13 @@ const props: ISelectProps<number> = {
     classes: {
         root: 'test-root-class',
         control: 'test-control-class',
+        title: 'test-title',
+        titleInner: 'test-title-inner',
         list: 'list',
         listItem: 'list-item',
         listItemTitle: 'list-item-title',
+        arrowWrap: 'test-arrow-wrap',
+        arrow: 'test-arrow',
     },
     items: [
         {

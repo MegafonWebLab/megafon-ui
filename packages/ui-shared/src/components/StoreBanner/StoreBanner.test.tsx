@@ -57,6 +57,43 @@ describe('StoreBanner', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render with Huawei Store', () => {
+        const wrapper = shallow(
+            <StoreBanner
+                {...props}
+                className="custom-class-name"
+                linkHuawei="#huawei"
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with green button', () => {
+        const wrapper = shallow(
+            <StoreBanner
+                {...props}
+                className="custom-class-name"
+                linkButton="#button"
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with violet button', () => {
+        const wrapper = shallow(
+            <StoreBanner
+                {...props}
+                className="custom-class-name"
+                linkButton="#button"
+                theme="green"
+            />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should call click handler on app store link', () => {
         const onClickApple = jest.fn();
         const wrapper = shallow(<StoreBanner {...props} onClickApple={onClickApple} />);

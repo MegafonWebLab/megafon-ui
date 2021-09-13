@@ -73,12 +73,12 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         value=""
       />
       <div
-        className="mfui-beta-select__arrow-wrap"
+        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
         tabIndex={1}
       >
         <span
-          className="mfui-beta-select__arrow"
+          className="mfui-beta-select__arrow test-arrow"
         />
       </div>
     </div>
@@ -174,12 +174,12 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         value="test-name-1"
       />
       <div
-        className="mfui-beta-select__arrow-wrap"
+        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
         tabIndex={1}
       >
         <span
-          className="mfui-beta-select__arrow"
+          className="mfui-beta-select__arrow test-arrow"
         />
       </div>
     </div>
@@ -275,12 +275,12 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         value="test-name-1"
       />
       <div
-        className="mfui-beta-select__arrow-wrap"
+        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
         tabIndex={1}
       >
         <span
-          className="mfui-beta-select__arrow"
+          className="mfui-beta-select__arrow test-arrow"
         />
       </div>
     </div>
@@ -348,12 +348,12 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
         value="name-1"
       />
       <div
-        className="mfui-beta-select__arrow-wrap"
+        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
         tabIndex={1}
       >
         <span
-          className="mfui-beta-select__arrow"
+          className="mfui-beta-select__arrow test-arrow"
         />
       </div>
     </div>
@@ -423,11 +423,15 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
   className="test-class"
   classes={
     Object {
+      "arrow": "test-arrow",
+      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
+      "title": "test-title",
+      "titleInner": "test-title-inner",
     }
   }
   dataAttrs={
@@ -484,23 +488,23 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         onKeyDown={[Function]}
       >
         <div
-          className="mfui-beta-select__title mfui-beta-select__title_placeholder"
+          className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
           tabIndex={0}
         >
           <div
-            className="mfui-beta-select__title-inner"
+            className="mfui-beta-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
         </div>
         <div
-          className="mfui-beta-select__arrow-wrap"
+          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
           tabIndex={1}
         >
           <span
-            className="mfui-beta-select__arrow"
+            className="mfui-beta-select__arrow test-arrow"
           />
         </div>
       </div>
@@ -551,11 +555,15 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
   className="test-class"
   classes={
     Object {
+      "arrow": "test-arrow",
+      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
+      "title": "test-title",
+      "titleInner": "test-title-inner",
     }
   }
   dataAttrs={
@@ -612,23 +620,23 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         onKeyDown={[Function]}
       >
         <div
-          className="mfui-beta-select__title mfui-beta-select__title_placeholder"
+          className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
           tabIndex={0}
         >
           <div
-            className="mfui-beta-select__title-inner"
+            className="mfui-beta-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
         </div>
         <div
-          className="mfui-beta-select__arrow-wrap"
+          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
           tabIndex={1}
         >
           <span
-            className="mfui-beta-select__arrow"
+            className="mfui-beta-select__arrow test-arrow"
           />
         </div>
       </div>
@@ -792,11 +800,15 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
   className="test-class"
   classes={
     Object {
+      "arrow": "test-arrow",
+      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
+      "title": "test-title",
+      "titleInner": "test-title-inner",
     }
   }
   dataAttrs={
@@ -861,12 +873,12 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
           value=""
         />
         <div
-          className="mfui-beta-select__arrow-wrap"
+          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
           tabIndex={1}
         >
           <span
-            className="mfui-beta-select__arrow"
+            className="mfui-beta-select__arrow test-arrow"
           />
         </div>
       </div>
@@ -1030,11 +1042,15 @@ exports[`<Select /> snapshots renders with props 1`] = `
   className="test-class"
   classes={
     Object {
+      "arrow": "test-arrow",
+      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
+      "title": "test-title",
+      "titleInner": "test-title-inner",
     }
   }
   dataAttrs={
@@ -1091,23 +1107,23 @@ exports[`<Select /> snapshots renders with props 1`] = `
         onKeyDown={[Function]}
       >
         <div
-          className="mfui-beta-select__title mfui-beta-select__title_placeholder"
+          className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
           tabIndex={0}
         >
           <div
-            className="mfui-beta-select__title-inner"
+            className="mfui-beta-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
         </div>
         <div
-          className="mfui-beta-select__arrow-wrap"
+          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
           tabIndex={1}
         >
           <span
-            className="mfui-beta-select__arrow"
+            className="mfui-beta-select__arrow test-arrow"
           />
         </div>
       </div>
