@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.156](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.155...@megafon/ui-core@2.0.0-beta.156) (2021-09-14)
+
+
+### Bug Fixes
+
+* **navarrow:** change button type ([954937a](https://github.com/MegafonWebLab/megafon-ui/commit/954937a5ea8b532f2fdb3804675dce34c8bb885a))
+
+
+
+
+
 # [2.0.0-beta.155](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.154...@megafon/ui-core@2.0.0-beta.155) (2021-09-13)
 
 
