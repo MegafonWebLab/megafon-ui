@@ -45,7 +45,7 @@ const NavArrow: React.FC<INavArrowProps> = ({
     }, [view]);
 
     return (
-        <button className={cn({ theme }, className)} onClick={onClick} disabled={disabled}>
+        <button type="button" className={cn({ theme }, className)} onClick={onClick} disabled={disabled}>
             {renderIcon()}
         </button>
     );
