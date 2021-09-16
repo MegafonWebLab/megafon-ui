@@ -1,4 +1,5 @@
 @import '~styles/base.less';
+
 @b: e('.mfui-beta-carousel');
 @swiperWrapper: e('.swiper-wrapper');
 @swiperPagination: e('.swiper-pagination');
@@ -9,45 +10,47 @@
 
 @{b} {
     position: relative;
+
     display: flex;
 
     &__swiper {
-        flex-shrink: 1;
-        flex-grow: 1;
         position: relative;
-        overflow: hidden;
-        padding-top: 20px;
+
+        flex-grow: 1;
+        flex-shrink: 1;
         margin-top: -20px;
+        padding-top: 20px;
+        overflow: hidden;
 
         // to avoid clipping slide shadow
 
         @media @desktop {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            margin-left: -20px !important;
             margin-right: -20px !important;
+            margin-left: -20px !important;
+            padding-right: 20px !important;
+            padding-left: 20px !important;
         }
     }
 
     &__swiper_default-inner-indents {
         @media @mobileB {
-            padding-left: 48px;
-            padding-right: 48px;
-            margin-left: -48px;
             margin-right: -48px;
+            margin-left: -48px;
+            padding-right: 48px;
+            padding-left: 48px;
         }
-
         @media @mobileSM {
-            padding-left: 16px;
-            padding-right: 32px;
             margin-right: -16px;
             margin-left: -16px;
+            padding-right: 32px;
+            padding-left: 32px;
         }
     }
 
     @{swiperWrapper} {
-        display: flex;
         z-index: 1;
+
+        display: flex;
         padding-bottom: @paginationIndent;
     }
 
@@ -55,16 +58,18 @@
         flex-shrink: 0;
 
         @media @desktop {
-            opacity: 0;
-            transition: opacity 0.2s;
-            backface-visibility: hidden; // fix opacity transition bug in Safari 13
             transform: translate3d(0, 0, 0); // fix opacity transition bug in IE
+            backface-visibility: hidden; // fix opacity transition bug in Safari 13
+            opacity: 0;
+
+            transition: opacity 0.2s;
         }
     }
 
     @{swiperSlideVisible} {
         @media @desktop {
             opacity: 1;
+
             transition: opacity 0.4s;
         }
     }
@@ -72,6 +77,7 @@
     &__arrow {
         position: absolute;
         top: 50%;
+
         transform: translateY(calc(~'-50% - @{paginationIndent} / 2'));
 
         @media @mobile {
@@ -92,15 +98,17 @@
     }
 
     @{swiperPagination} {
-        z-index: 2;
         position: absolute;
         bottom: 0;
         left: 50%;
-        transform: translateX(-50%);
+        z-index: 2;
+
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         border-radius: 12px;
+
+        transform: translateX(-50%);
     }
 
     @{swiperPagination}@{swiperPaginationLock} {
@@ -108,21 +116,23 @@
     }
 
     @{swiperBullet} {
-        box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
         width: 8px;
         height: 8px;
         padding: 1px;
         border-radius: 50%;
+
         cursor: pointer;
 
         &:before {
             content: '';
+
+            display: block;
             width: 100%;
             height: 100%;
-            display: block;
             border-radius: 50%;
         }
 
@@ -145,11 +155,13 @@
 
     @{swiperBulletActive} {
         padding: 0;
+
         cursor: default;
     }
 
     &_nav-theme_green @{swiperBulletActive} {
         padding: 0;
+
         cursor: default;
 
         &:before {
@@ -159,6 +171,7 @@
 
     &_nav-theme_light @{swiperBulletActive} {
         padding: 0;
+
         cursor: default;
 
         &:before {

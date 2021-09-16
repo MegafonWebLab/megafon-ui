@@ -5,21 +5,40 @@
 @{b} {
     .fontFamily();
     .commonFont();
-    font-weight: 500;
-    vertical-align: top;
-    text-align: center;
-    border: none;
-    background-color: transparent;
+
     display: inline-block;
-    cursor: pointer;
-    outline: none;
-    text-decoration: none;
     box-sizing: border-box;
-    color: @clearWhite;
-    border-radius: 30px;
     padding: 0 32px;
+    border: none;
+    border-radius: 30px;
+
+    color: @clearWhite;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+
     appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    .generateSize(all);
+
+    @media @desktopMU {
+        .generateSize(wide);
+    }
+    @media @desktop {
+        .generateSize(desktop);
+    }
+    @media @mobileB {
+        .generateSize(tablet);
+    }
+    @media @mobileSM {
+        .generateSize(mobile);
+    }
 
     &:hover {
         text-decoration: none;
@@ -29,16 +48,13 @@
         cursor: default;
     }
 
-    svg {
-        display: block;
-    }
-
     &__inner {
-        box-sizing: border-box;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
         width: 100%;
+
         vertical-align: top;
     }
 
@@ -54,26 +70,8 @@
     &__icon-arrow {
         width: 32px;
         height: 32px;
-        margin-left: 4px;
         margin-right: -8px;
-    }
-
-    .generateSize(all);
-
-    @media @desktopMU {
-        .generateSize(wide);
-    }
-
-    @media @desktop {
-        .generateSize(desktop);
-    }
-
-    @media @mobileB {
-        .generateSize(tablet);
-    }
-
-    @media @mobileSM {
-        .generateSize(mobile);
+        margin-left: 4px;
     }
 
     &_content-type_icon {
@@ -81,10 +79,10 @@
     }
 
     &_content-type_icon-text &__icon {
-        margin-right: 8px;
-        margin-left: -8px;
         width: 24px;
         height: 24px;
+        margin-right: 8px;
+        margin-left: -8px;
     }
 
     &_content-type_icon-text&_size-all_small &__icon {
@@ -95,8 +93,9 @@
     // theme = green
 
     &_type_primary&_theme_green {
-        background-color: @green;
         color: @clearWhite;
+
+        background-color: @green;
 
         svg {
             fill: @clearWhite;
@@ -105,13 +104,13 @@
 
     &_no-touch&_type_primary&_theme_green {
         &:not(@{b}_loading):hover {
-            box-shadow: inset 0 0 0 1px @buttonHoverGreen;
             background-color: @buttonHoverGreen;
+            box-shadow: inset 0 0 0 1px @buttonHoverGreen;
         }
 
         &:not(@{b}_loading):active {
-            box-shadow: inset 0 0 0 1px @buttonDown;
             background-color: @buttonDown;
+            box-shadow: inset 0 0 0 1px @buttonDown;
         }
     }
 
@@ -119,8 +118,9 @@
     // theme = purple
 
     &_type_primary&_theme_purple {
-        background-color: @purple;
         color: @clearWhite;
+
+        background-color: @purple;
 
         svg {
             fill: @clearWhite;
@@ -129,13 +129,13 @@
 
     &_no-touch&_type_primary&_theme_purple {
         &:not(@{b}_loading):hover {
-            box-shadow: inset 0 0 0 1px @buttonhoverPurple;
             background-color: @buttonhoverPurple;
+            box-shadow: inset 0 0 0 1px @buttonhoverPurple;
         }
 
         &:not(@{b}_loading):active {
-            box-shadow: inset 0 0 0 1px @buttonDown;
             background-color: @buttonDown;
+            box-shadow: inset 0 0 0 1px @buttonDown;
         }
     }
 
@@ -143,8 +143,9 @@
     // theme = white
 
     &_type_primary&_theme_white {
-        background-color: @clearWhite;
         color: @freshAsphalt;
+
+        background-color: @clearWhite;
 
         svg {
             fill: @freshAsphalt;
@@ -153,9 +154,10 @@
 
     &_no-touch&_type_primary&_theme_white {
         &:not(@{b}_loading):hover {
-            box-shadow: inset 0 0 0 1px @buttonHoverGreen;
             color: @clearWhite;
+
             background-color: @buttonHoverGreen;
+            box-shadow: inset 0 0 0 1px @buttonHoverGreen;
 
             svg {
                 fill: @clearWhite;
@@ -163,21 +165,8 @@
         }
 
         &:not(@{b}_loading):active {
-            box-shadow: inset 0 0 0 1px @buttonDown;
             background-color: @buttonDown;
-        }
-    }
-
-    &&_type_primary&_disabled,
-    &&_no-touch&_type_primary&_disabled,
-    &&_no-touch&_type_primary&_disabled:hover,
-    &&_no-touch&_type_primary&_disabled:active {
-        box-shadow: inset 0 0 0 1px @spbSky2;
-        color: fade(@freshAsphalt, 50%);
-        background-color: @spbSky1;
-
-        svg {
-            fill: fade(@freshAsphalt, 50%);
+            box-shadow: inset 0 0 0 1px @buttonDown;
         }
     }
 
@@ -185,9 +174,10 @@
     // theme = green
 
     &_type_outline&_theme_green {
-        box-shadow: inset 0 0 0 1px @green;
         color: @green;
+
         background-color: transparent;
+        box-shadow: inset 0 0 0 1px @green;
 
         svg {
             fill: @green;
@@ -208,9 +198,10 @@
     // theme = purple
 
     &_type_outline&_theme_purple {
-        box-shadow: inset 0 0 0 1px @purple;
         color: @purple;
+
         background-color: transparent;
+        box-shadow: inset 0 0 0 1px @purple;
 
         svg {
             fill: @purple;
@@ -231,9 +222,10 @@
     // theme = white
 
     &_type_outline&_theme_white {
-        box-shadow: inset 0 0 0 1px @clearWhite;
         color: @clearWhite;
+
         background-color: transparent;
+        box-shadow: inset 0 0 0 1px @clearWhite;
 
         svg {
             fill: @clearWhite;
@@ -250,26 +242,14 @@
         }
     }
 
-    &&_type_outline&_theme_white&_disabled,
-    &&_no-touch&_type_outline&_theme_white&_disabled,
-    &&_no-touch&_type_outline&_theme_white&_disabled:hover,
-    &&_no-touch&_type_outline&_theme_white&_disabled:active {
-        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%);
-        color: fade(@clearWhite, 50%);
-        background-color: transparent;
-
-        svg {
-            fill: fade(@clearWhite, 50%);
-        }
-    }
-
     // type = outline
     // theme = black
 
     &_type_outline&_theme_black {
-        box-shadow: inset 0 0 0 1px @freshAsphalt;
         color: @freshAsphalt;
+
         background-color: transparent;
+        box-shadow: inset 0 0 0 1px @freshAsphalt;
 
         svg {
             fill: @freshAsphalt;
@@ -286,39 +266,72 @@
         }
     }
 
-    &&_type_outline&_disabled,
-    &&_no-touch&_type_outline&_disabled,
-    &&_no-touch&_type_outline&_disabled:hover,
-    &&_no-touch&_type_outline&_disabled:active {
-        box-shadow: inset 0 0 0 1px @spbSky2;
+    &_full-width {
+        display: block;
+        width: 100%;
+    }
+
+    svg {
+        display: block;
+    }
+
+    &&_type_primary&_disabled,
+    &&_no-touch&_type_primary&_disabled,
+    &&_no-touch&_type_primary&_disabled:hover,
+    &&_no-touch&_type_primary&_disabled:active {
         color: fade(@freshAsphalt, 50%);
-        background-color: transparent;
+
+        background-color: @spbSky1;
+        box-shadow: inset 0 0 0 1px @spbSky2;
 
         svg {
             fill: fade(@freshAsphalt, 50%);
         }
     }
 
-    &_full-width {
-        display: block;
-        width: 100%;
+    &&_type_outline&_theme_white&_disabled,
+    &&_no-touch&_type_outline&_theme_white&_disabled,
+    &&_no-touch&_type_outline&_theme_white&_disabled:hover,
+    &&_no-touch&_type_outline&_theme_white&_disabled:active {
+        color: fade(@clearWhite, 50%);
+
+        background-color: transparent;
+        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%);
+
+        svg {
+            fill: fade(@clearWhite, 50%);
+        }
+    }
+
+    &&_type_outline&_disabled,
+    &&_no-touch&_type_outline&_disabled,
+    &&_no-touch&_type_outline&_disabled:hover,
+    &&_no-touch&_type_outline&_disabled:active {
+        color: fade(@freshAsphalt, 50%);
+
+        background-color: transparent;
+        box-shadow: inset 0 0 0 1px @spbSky2;
+
+        svg {
+            fill: fade(@freshAsphalt, 50%);
+        }
     }
 }
 
 .generateSize(@resolution) {
     &_size-@{resolution}_small &__inner {
-        height: 32px;
         min-width: 32px;
+        height: 32px;
     }
 
     &_size-@{resolution}_medium &__inner {
-        height: 48px;
         min-width: 48px;
+        height: 48px;
     }
 
     &_size-@{resolution}_large &__inner {
-        height: 60px;
         min-width: 60px;
+        height: 60px;
     }
 
     &_size-@{resolution}_small &__icon {

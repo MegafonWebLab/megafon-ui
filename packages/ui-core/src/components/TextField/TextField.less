@@ -10,20 +10,23 @@
     &__field {
         .fontFamily();
         .commonFont();
-        display: block;
         position: relative;
         z-index: 1;
-        width: 100%;
+
+        display: block;
         box-sizing: border-box;
+        width: 100%;
         min-height: 48px;
-        outline: none;
-        padding: 11px 19px;
-        background-color: transparent;
-        opacity: 1;
-        border-radius: 0;
-        appearance: none;
-        box-shadow: none;
         margin: 0;
+        padding: 11px 19px;
+        border-radius: 0;
+
+        background-color: transparent;
+        outline: none;
+        box-shadow: none;
+        opacity: 1;
+
+        appearance: none;
     }
 
     &__field_type_fixed {
@@ -31,26 +34,32 @@
     }
 
     &__field_type_flexible {
-        resize: vertical;
         overflow: hidden;
+
+        resize: vertical;
     }
 
     &__field_scrolling {
         overflow: auto;
     }
 
-    &__placeholder-input, &__placeholder-textarea {
-        color: lighten(@freshAsphalt, 25%);
-        padding-left: 20px;
-        font-weight: 400;
-        user-select: none;
+    &__placeholder-input,
+    &__placeholder-textarea {
         position: absolute;
         left: 0;
         z-index: 0;
+
+        padding-left: 20px;
+
+        color: lighten(@freshAsphalt, 25%);
+        font-weight: 400;
+
+        user-select: none;
     }
 
     &__placeholder-input {
         top: 50%;
+
         transform: translateY(-50%);
     }
 
@@ -70,27 +79,32 @@
         color: lighten(@freshAsphalt, 50%);
     }
 
-    input::-ms-clear, input::-ms-reveal {
+    input::-ms-clear,
+    input::-ms-reveal {
         display: none;
     }
 
     &__field-wrapper {
         position: relative;
+
         flex: 1 0 100px;
+
         background: @clearWhite;
     }
 
     &__icon-box {
-        box-sizing: border-box;
         position: absolute;
-        z-index: 3;
         top: 0;
         right: 0;
         bottom: 0;
+        z-index: 3;
+
         display: flex;
-        padding-right: 16px;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-right: 16px;
+
         text-align: center;
     }
 
@@ -101,23 +115,26 @@
     }
 
     &__icon {
+        display: block;
         width: 32px;
         height: 32px;
-        display: block;
+
         user-select: none;
     }
 
     &__text {
+        margin-top: 4px;
+
         font-size: 12px;
         line-height: 16px;
-        margin-top: 4px;
     }
 
     &__require-mark {
+        margin-left: 1px;
+
+        color: @fury;
         font-size: 20px;
         line-height: 0;
-        color: @fury;
-        margin-left: 1px;
     }
 
     &__wrap {
@@ -126,13 +143,15 @@
     }
 
     &__counter {
-        opacity: 0.5;
         margin-top: 4px;
         margin-left: auto;
+
+        opacity: 0.5;
     }
 
     &__counter_error {
         color: @fury;
+
         opacity: 1;
     }
 
@@ -140,8 +159,10 @@
 
     &_theme_default & {
         &__field {
-            color: @freshAsphalt;
             border: 1px solid @spbSky2;
+
+            color: @freshAsphalt;
+
             background-color: transparent;
         }
 
@@ -179,8 +200,9 @@
 
     &_theme_white & {
         &__field {
-            color: @freshAsphalt;
             border: 1px solid @clearWhite;
+
+            color: @freshAsphalt;
         }
 
         &__field-wrapper:hover @{b}__field,
@@ -217,8 +239,10 @@
 
         &__field {
             border-color: @spbSky1 !important;
-            cursor: default !important;
+
             color: @freshAsphalt !important;
+
+            cursor: default !important;
             -webkit-text-fill-color: @freshAsphalt !important;
         }
 
@@ -241,7 +265,8 @@
 
     //mod password
 
-    &_password &__field, &_password &__placeholder {
+    &_password &__field,
+    &_password &__placeholder {
         font: small-caption;
         font-size: 19px;
     }

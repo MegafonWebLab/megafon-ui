@@ -1,6 +1,8 @@
 @import '~styles/base';
 
-.mfui-beta-content-area {
+@b: e('.mfui-beta-content-area');
+
+@{b} {
     // mod: color
 
     &_color_white {
@@ -40,25 +42,23 @@
     }
 
     &__inner {
-        margin: 0 auto;
-        max-width: @maxContentWidth;
         box-sizing: content-box;
-        padding-left: @contentHorizontalIndentDesktopMU;
+        max-width: @maxContentWidth;
+        margin: 0 auto;
         padding-right: @contentHorizontalIndentDesktopMU;
+        padding-left: @contentHorizontalIndentDesktopMU;
 
         @media @mobileSM {
-            padding-left: @contentHorizontalIndentMobileSM;
             padding-right: @contentHorizontalIndentMobileSM;
+            padding-left: @contentHorizontalIndentMobileSM;
         }
-
         @media @mobileB {
-            padding-left: @contentHorizontalIndentMobileB;
             padding-right: @contentHorizontalIndentMobileB;
+            padding-left: @contentHorizontalIndentMobileB;
         }
-
         @media @desktopS {
-            padding-left: @contentHorizontalIndentDesktopS;
             padding-right: @contentHorizontalIndentDesktopS;
+            padding-left: @contentHorizontalIndentDesktopS;
         }
     }
 
@@ -66,28 +66,28 @@
 
     &__inner_disable-indents_mobile {
         @media @mobileSM {
-            padding-left: 0;
             padding-right: 0;
+            padding-left: 0;
         }
     }
 
     &__inner_disable-indents_mobile-tablet {
         @media @mobile {
-            padding-left: 0;
             padding-right: 0;
+            padding-left: 0;
         }
     }
 
     &__inner_disable-indents_tablet-desktop {
         @media @mobileBU {
-            padding-left: 0;
             padding-right: 0;
+            padding-left: 0;
         }
     }
 
     &__inner_disable-indents_all {
-        padding-left: 0;
         padding-right: 0;
+        padding-left: 0;
     }
 
     // mod: color
