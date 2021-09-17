@@ -9,7 +9,7 @@ describe('<Grid />', () => {
             <Grid>
                 <GridColumn>child1</GridColumn>
                 <GridColumn>child2</GridColumn>
-            </Grid>
+            </Grid>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -26,7 +26,7 @@ describe('<Grid />', () => {
             >
                 <GridColumn>child1</GridColumn>
                 <GridColumn>child2</GridColumn>
-            </Grid>
+            </Grid>,
         );
         expect(wrapper).toMatchSnapshot();
     });

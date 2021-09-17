@@ -83,10 +83,14 @@ class ContentArea extends React.Component<IConrentAreaProps> {
         return (
             <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
                 <div
-                    className={cn('inner', {
-                        'disable-indents': disableIndents,
-                        color: innerBackgroundColor,
-                    }, classes.inner)}
+                    className={cn(
+                        'inner',
+                        {
+                            'disable-indents': disableIndents,
+                            color: innerBackgroundColor,
+                        },
+                        classes.inner,
+                    )}
                 >
                     {children}
                 </div>

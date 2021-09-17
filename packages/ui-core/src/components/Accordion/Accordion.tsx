@@ -69,10 +69,7 @@ const Accordion: React.FC<IAccordionProps> = ({
             <div className={cn('title-wrap', [titleWrapPropsClasses])} onClick={handleClickTitle}>
                 <Header as="h5">{title}</Header>
                 <div className={cn('icon-box', { open: isOpenedState })}>
-                    {isOpenedState
-                        ? (<ArrowUp />)
-                        : (<ArrowDown />)
-                    }
+                    {isOpenedState ? <ArrowUp /> : <ArrowDown />}
                 </div>
             </div>
             <Collapse
@@ -89,7 +86,7 @@ const Accordion: React.FC<IAccordionProps> = ({
 Accordion.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     title: PropTypes.string.isRequired,
     isOpened: PropTypes.bool,

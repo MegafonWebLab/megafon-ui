@@ -49,7 +49,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         onChange: PropTypes.func,
         inputRef: PropTypes.oneOfType([
             PropTypes.func,
-            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
         ]),
     };
 
@@ -62,7 +62,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         const { onChange, value } = this.props;
 
         onChange && onChange(value);
-    }
+    };
 
     render() {
         const {
@@ -83,9 +83,13 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         return (
             <div className={cn(rootClassNames)}>
                 <label
-                    className={cn('label', {
-                        disabled: isDisabled,
-                    }, classes.label)}
+                    className={cn(
+                        'label',
+                        {
+                            disabled: isDisabled,
+                        },
+                        classes.label,
+                    )}
                 >
                     <input
                         {...checkedProp}
@@ -98,7 +102,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                         ref={inputRef as React.Ref<HTMLInputElement>}
                     />
                     <div className={cn('custom-input', classes.customInput)} />
-                    {children && <div className={cn('text', { 'size': textSize }, classes.labelText)}>{children}</div>}
+                    {children && <div className={cn('text', { size: textSize }, classes.labelText)}>{children}</div>}
                 </label>
             </div>
         );

@@ -13,9 +13,5 @@ export const wrapperStyles = {
 };
 
 export const DemoPreloaderWrapper: React.FC = ({ children }) => {
-    return (
-        <div style={wrapperStyles}>
-            {children}
-        </div>
-    );
+    return <div style={wrapperStyles}>{children}</div>;
 };

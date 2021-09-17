@@ -2,13 +2,7 @@ import React, { ReactNode, useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import './Calendar.less';
 import { cnCreate } from '@megafon/ui-helpers';
-import {
-    FocusedInput,
-    START_DATE,
-    END_DATE,
-    useDatepicker,
-    useMonth,
-} from '@datepicker-react/hooks';
+import { FocusedInput, START_DATE, END_DATE, useDatepicker, useMonth } from '@datepicker-react/hooks';
 import format from 'date-fns/format';
 import isEqual from 'date-fns/isEqual';
 import isAfter from 'date-fns/isAfter';
@@ -68,10 +62,14 @@ const Calendar: React.FC<ICalendarProps> = ({
         const isInitialDatesEqual = startDate && endDate && isEqual(startDate, endDate);
         const isStartFocus = !startDate || (endDate && !isInitialDatesEqual);
         const isStartDateBlocked =
-            startDate && minBookingDate && maxBookingDate &&
+            startDate &&
+            minBookingDate &&
+            maxBookingDate &&
             (isAfter(minBookingDate, startDate) || isBefore(maxBookingDate, startDate));
         const isEndDateBlocked =
-            endDate && minBookingDate && maxBookingDate &&
+            endDate &&
+            minBookingDate &&
+            maxBookingDate &&
             (isAfter(minBookingDate, endDate) || isBefore(maxBookingDate, endDate));
         const isEndDate = isEndDateBlocked || isInitialDatesEqual || isSingleDate;
 
@@ -115,22 +113,28 @@ const Calendar: React.FC<ICalendarProps> = ({
         const isStartChose = stateFocusedInput === START_DATE;
         const isEndChose = stateFocusedInput === END_DATE;
         const isEndDateChose = stateStartDate && isEndChose;
-        const isPeriodNarrow = stateStartDate && stateEndDate
-            && isAfter(date, stateStartDate) && isBefore(date, stateEndDate);
+        const isPeriodNarrow =
+            stateStartDate && stateEndDate && isAfter(date, stateStartDate) && isBefore(date, stateEndDate);
         const isStartDateClick = stateStartDate && isEqual(stateStartDate || 0, date);
         const isEndDateClick = stateEndDate && isEqual(stateEndDate || 0, date);
         const isClickBeforeChosenEndDate = stateEndDate && isEndChose && !isAfter(date, stateEndDate || 0);
         const isClickAfterChosenEndDate = stateEndDate && isStartChose && isAfter(date, stateEndDate || 0);
         const isClickBeforeStartDate = stateStartDate && isEndChose && !isAfter(date, stateStartDate || 0);
-        const isStartDateChose = isStartDateClick || isEndDateClick || isClickBeforeChosenEndDate
-            || isClickAfterChosenEndDate || isClickBeforeStartDate;
+        const isStartDateChose =
+            isStartDateClick ||
+            isEndDateClick ||
+            isClickBeforeChosenEndDate ||
+            isClickAfterChosenEndDate ||
+            isClickBeforeStartDate;
 
         switch (true) {
             case isSingleDate:
                 return { ...calendarState, startDate: date };
             case isPeriodNarrow:
-                const isCloserToStart = stateStartDate && stateEndDate
-                    && differenceInDays(stateStartDate, date) >= differenceInDays(date, stateEndDate);
+                const isCloserToStart =
+                    stateStartDate &&
+                    stateEndDate &&
+                    differenceInDays(stateStartDate, date) >= differenceInDays(date, stateEndDate);
 
                 return {
                     ...calendarState,
@@ -168,65 +172,63 @@ const Calendar: React.FC<ICalendarProps> = ({
 
     const handleDateMouseLeave = (): void => setHoveredDate(undefined);
 
-    const renderDays = (days: Array<number | DayType>): ReactNode => days.map((day, index) => {
-        if (typeof day === 'object') {
-            const { date, dayLabel } = day;
+    const renderDays = (days: Array<number | DayType>): ReactNode =>
+        days.map((day, index) => {
+            if (typeof day === 'object') {
+                const { date, dayLabel } = day;
 
-            if (!dayLabel) {
-                return <div key={index + String(date)} />;
+                if (!dayLabel) {
+                    return <div key={index + String(date)} />;
+                }
+
+                return (
+                    <Day
+                        date={date}
+                        key={formatDate(date, 'dd-MM-yyyy')}
+                        dayLabel={dayLabel}
+                        {...pickerProps}
+                        onDateSelect={handleDaySelect}
+                        onDateHover={handleDateHover}
+                        onMouseLeave={handleDateMouseLeave}
+                        isBetween={isDateHighlighted(date)}
+                    />
+                );
             }
 
-            return (
-                <Day
-                    date={date}
-                    key={formatDate(date, 'dd-MM-yyyy')}
-                    dayLabel={dayLabel}
-                    {...pickerProps}
-                    onDateSelect={handleDaySelect}
-                    onDateHover={handleDateHover}
-                    onMouseLeave={handleDateMouseLeave}
-                    isBetween={isDateHighlighted(date)}
-                />
-            );
-        }
-
-        return <div key={index + day} />;
-    });
-
-    const renderMonths = (): ReactNode => activeMonths.map(({ month, year }) => {
-        const { days, weekdayLabels, monthLabel } = useMonth({
-            year,
-            month,
-            firstDayOfWeek,
-            dayLabelFormat,
-            weekdayLabelFormat,
-            monthLabelFormat,
+            return <div key={index + day} />;
         });
 
-        const isPrevMonthDisabled = !!minBookingDate && isSameMonth(new Date(year, month, 1), minBookingDate);
-        const isNextMonthDisabled = !!maxBookingDate && isSameMonth(new Date(year, month, 1), maxBookingDate);
+    const renderMonths = (): ReactNode =>
+        activeMonths.map(({ month, year }) => {
+            const { days, weekdayLabels, monthLabel } = useMonth({
+                year,
+                month,
+                firstDayOfWeek,
+                dayLabelFormat,
+                weekdayLabelFormat,
+                monthLabelFormat,
+            });
 
-        return (
-            <Month
-                key={`${year}-${month}`}
-                year={year}
-                weekdayLabels={weekdayLabels}
-                monthLabel={monthLabel}
-                isPrevMonthDisabled={isPrevMonthDisabled}
-                isNextMonthDisabled={isNextMonthDisabled}
-                goToPreviousMonth={goToPreviousMonths}
-                goToNextMonth={goToNextMonths}
-            >
-                {renderDays(days)}
-            </Month>
-        );
-    });
+            const isPrevMonthDisabled = !!minBookingDate && isSameMonth(new Date(year, month, 1), minBookingDate);
+            const isNextMonthDisabled = !!maxBookingDate && isSameMonth(new Date(year, month, 1), maxBookingDate);
 
-    return (
-        <div className={cn([className])}>
-            {renderMonths()}
-        </div>
-    );
+            return (
+                <Month
+                    key={`${year}-${month}`}
+                    year={year}
+                    weekdayLabels={weekdayLabels}
+                    monthLabel={monthLabel}
+                    isPrevMonthDisabled={isPrevMonthDisabled}
+                    isNextMonthDisabled={isNextMonthDisabled}
+                    goToPreviousMonth={goToPreviousMonths}
+                    goToNextMonth={goToNextMonths}
+                >
+                    {renderDays(days)}
+                </Month>
+            );
+        });
+
+    return <div className={cn([className])}>{renderMonths()}</div>;
 };
 
 Calendar.propTypes = {

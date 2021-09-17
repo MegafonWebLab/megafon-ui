@@ -55,10 +55,15 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
                 rel={rel}
                 onClick={onClick}
                 children={children}
-                className={cn('', {
-                    'underline-visibility': underlineVisibility,
-                    'underline-style': underlineStyle, color,
-                }, className)}
+                className={cn(
+                    '',
+                    {
+                        'underline-visibility': underlineVisibility,
+                        'underline-style': underlineStyle,
+                        color,
+                    },
+                    className,
+                )}
                 download={download}
             />
         );

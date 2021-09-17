@@ -50,10 +50,7 @@ class Header extends React.Component<IHeaderProps, {}> {
         return (
             <ElementType
                 {...filterDataAttrs(dataAttrs)}
-                className={cn(
-                    { color, margin, level, 'h-align': hAlign },
-                    className
-                )}
+                className={cn({ color, margin, level, 'h-align': hAlign }, className)}
                 onClick={onClick}
             >
                 {this.props.children}

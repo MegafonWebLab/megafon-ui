@@ -13,13 +13,16 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
     const [value, setValue] = React.useState('');
     const [items, setItems] = React.useState<string[]>([]);
 
-    const handleChange = React.useCallback((query: string) => {
-        if (!query) {
-            return;
-        }
+    const handleChange = React.useCallback(
+        (query: string) => {
+            if (!query) {
+                return;
+            }
 
-        setItems((oldItems) => [...oldItems, query]);
-    }, [items, setItems]);
+            setItems(oldItems => [...oldItems, query]);
+        },
+        [items, setItems],
+    );
 
     return (
         <div>

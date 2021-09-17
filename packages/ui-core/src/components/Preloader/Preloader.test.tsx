@@ -29,13 +29,7 @@ describe('<Preloader />', () => {
 
     it('it renders Preloader with small size', () => {
         const wrapper = mount(
-            <Preloader
-                sizeAll="small"
-                sizeMobile="small"
-                sizeTablet="small"
-                sizeDesktop="small"
-                sizeWide="small"
-            />
+            <Preloader sizeAll="small" sizeMobile="small" sizeTablet="small" sizeDesktop="small" sizeWide="small" />,
         );
 
         updatePreloaderTimer(wrapper, PRELOADER_DELAY);

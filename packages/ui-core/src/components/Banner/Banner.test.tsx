@@ -32,7 +32,7 @@ describe('<Banner />', () => {
             <Banner>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -54,7 +54,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBanner('arrow')).last().simulate('click');
@@ -67,7 +67,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBanner('arrow')).last().simulate('click');
@@ -80,7 +80,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBanner('arrow')).first().simulate('click');
@@ -93,7 +93,7 @@ describe('<Banner />', () => {
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
-            </Banner>
+            </Banner>,
         );
 
         wrapper.find(cnBannerDot()).last().simulate('click');

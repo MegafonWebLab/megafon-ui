@@ -18,16 +18,12 @@ const props: INotificationProps = {
 
 describe('<Notification />', () => {
     it('renders component', () => {
-        const wrapper = shallow(
-            <Notification>Some test text</Notification>
-        );
+        const wrapper = shallow(<Notification>Some test text</Notification>);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders colored Notification with Props', () => {
-        const wrapper = shallow(
-            <Notification {...props}>Some test text</Notification>
-        );
+        const wrapper = shallow(<Notification {...props}>Some test text</Notification>);
         expect(wrapper).toMatchSnapshot();
     });
 

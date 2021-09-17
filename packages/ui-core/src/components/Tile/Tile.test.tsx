@@ -20,9 +20,7 @@ describe('<Tile />', () => {
         });
 
         it('renders component with props', () => {
-            const wrapper = shallow(
-                <Tile {...props}>Some test content</Tile>
-            );
+            const wrapper = shallow(<Tile {...props}>Some test content</Tile>);
             expect(wrapper).toMatchSnapshot();
         });
 

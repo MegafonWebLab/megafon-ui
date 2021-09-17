@@ -13,23 +13,13 @@ export interface IBannerDotProps {
 }
 
 const cn = cnCreate('mfui-beta-banner-dot');
-const BannerDot: React.FC<IBannerDotProps> = ({
-    className,
-    index,
-    isActive,
-    showTimer,
-    timerDelay,
-    onClick,
-}) => {
+const BannerDot: React.FC<IBannerDotProps> = ({ className, index, isActive, showTimer, timerDelay, onClick }) => {
     const handleDotClick = React.useCallback(() => {
         onClick(index);
     }, [onClick, index]);
 
     return (
-        <div
-            className={cn({ active: isActive, timer: showTimer }, className)}
-            onClick={handleDotClick}
-        >
+        <div className={cn({ active: isActive, timer: showTimer }, className)} onClick={handleDotClick}>
             {showTimer && isActive && (
                 <svg className={cn('timer')} viewBox="0 0 100 100">
                     <circle

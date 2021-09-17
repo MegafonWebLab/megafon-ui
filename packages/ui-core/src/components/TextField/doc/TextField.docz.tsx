@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-const commonStyle = {display: 'flex', justifyContent: 'space-between'};
+const commonStyle = { display: 'flex', justifyContent: 'space-between' };
 
-export const wrapperDefaultWidthStyle = {...commonStyle, width: '250px'};
-export const wrapperWideWidthStyle = {...commonStyle, width: '550px'};
+export const wrapperDefaultWidthStyle = { ...commonStyle, width: '250px' };
+export const wrapperWideWidthStyle = { ...commonStyle, width: '550px' };
 
 export const DemoTextFieldWithControlledValue = ({ children }) => {
     const [inputValue, setInputValue] = useState('');

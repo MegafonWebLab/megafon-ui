@@ -18,12 +18,7 @@ interface IPagination {
 }
 
 const cn = cnCreate('mfui-beta-pagination');
-const Pagination: React.FC<IPagination> = ({
-    totalPages,
-    activePage,
-    theme = 'default',
-    onChange,
-}) => {
+const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'default', onChange }) => {
     const paginationItems = usePagination(totalPages, activePage);
 
     const handleBackClick = React.useCallback(() => {
@@ -34,9 +29,12 @@ const Pagination: React.FC<IPagination> = ({
         onChange(activePage + 1);
     }, [activePage, onChange]);
 
-    const handlePageButtonClick = React.useCallback(value => {
-        onChange(value);
-    }, [onChange]);
+    const handlePageButtonClick = React.useCallback(
+        value => {
+            onChange(value);
+        },
+        [onChange],
+    );
 
     return (
         <div className={cn()}>

@@ -19,7 +19,7 @@ const props: IDayProps = {
 describe('<Day />', () => {
     describe('snapshots', () => {
         it('renders Day with required props', () => {
-            const wrapper = shallow(<Day {...props} dayLabel={undefined}/>);
+            const wrapper = shallow(<Day {...props} dayLabel={undefined} />);
 
             expect(wrapper).toMatchSnapshot();
         });

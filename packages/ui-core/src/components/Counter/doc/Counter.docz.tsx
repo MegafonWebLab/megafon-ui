@@ -8,10 +8,7 @@ export const flexStyle = {
 };
 
 interface IDemoCounterWrapperProps {
-    children: (prop: {
-        onChange: (value: number) => void;
-        initialValue: number;
-    }) => JSX.Element;
+    children: (prop: { onChange: (value: number) => void; initialValue: number }) => JSX.Element;
     initialValue: number;
 }
 

@@ -37,15 +37,15 @@ export interface ISearchProps {
 
 const cn = cnCreate('mfui-beta-search');
 const Search: React.FC<ISearchProps> = ({
-        value = '',
-        placeholder,
-        hideIcon,
-        items = [],
-        changeDelay = 250,
-        className,
-        classes,
-        onChange,
-        onSubmit,
+    value = '',
+    placeholder,
+    hideIcon,
+    items = [],
+    changeDelay = 250,
+    className,
+    classes,
+    onChange,
+    onSubmit,
 }) => {
     const [searchQuery, setSearchQuery] = useState(value);
     const [activeIndex, setActiveIndex] = useState(-1);
@@ -58,8 +58,10 @@ const Search: React.FC<ISearchProps> = ({
 
     useEffect(() => setSearchQuery(value), [value, setSearchQuery]);
 
-    const handleChange: React.EventHandler<React.ChangeEvent<HTMLInputElement>> = (e) => {
-        const { target: { value: inputValue = '' } } = e;
+    const handleChange: React.EventHandler<React.ChangeEvent<HTMLInputElement>> = e => {
+        const {
+            target: { value: inputValue = '' },
+        } = e;
 
         setSearchQuery(inputValue);
         setActiveIndex(-1);
@@ -67,24 +69,34 @@ const Search: React.FC<ISearchProps> = ({
         changeDelay === 0 ? onChange && onChange(inputValue) : debouncedOnChange.current(inputValue);
     };
 
-    const handleHoverItem = useCallback((index: number) => (_e: React.SyntheticEvent<EventTarget>): void => {
-        setActiveIndex(index);
-    }, [setActiveIndex]);
+    const handleHoverItem = useCallback(
+        (index: number) =>
+            (_e: React.SyntheticEvent<EventTarget>): void => {
+                setActiveIndex(index);
+            },
+        [setActiveIndex],
+    );
 
     const handleSearchSubmit: HandleSearchSubmit = useCallback((): void => {
         onSubmit && searchQuery && onSubmit(searchQuery);
     }, [searchQuery, onSubmit]);
 
-    const handleItemSubmit: HandleItemSubmit = useCallback((index: number): void => {
-        const chosenValue = items[index];
+    const handleItemSubmit: HandleItemSubmit = useCallback(
+        (index: number): void => {
+            const chosenValue = items[index];
 
-        onSubmit && onSubmit(chosenValue);
-    }, [onSubmit, items]);
+            onSubmit && onSubmit(chosenValue);
+        },
+        [onSubmit, items],
+    );
 
-    const handleSelectSubmit: HandleSelectSubmit =
-        useCallback(() => (_e): void => {
-            handleItemSubmit(activeIndex);
-        }, [handleItemSubmit, activeIndex]);
+    const handleSelectSubmit: HandleSelectSubmit = useCallback(
+        () =>
+            (_e): void => {
+                handleItemSubmit(activeIndex);
+            },
+        [handleItemSubmit, activeIndex],
+    );
 
     const handleFieldFocusToggle = useCallback((): void => {
         setFocus(focus => !focus);
@@ -96,34 +108,38 @@ const Search: React.FC<ISearchProps> = ({
         }
     }, [activeIndex, setActiveIndex]);
 
-    const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>): boolean => {
-        if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
-            setActiveIndex(index => index + 1);
-            e.preventDefault();
-        } else if (e.key === 'ArrowUp' && activeIndex > -1) {
-            setActiveIndex(index => index - 1);
-            e.preventDefault();
-        } else if (e.key === 'Enter' && activeIndex > -1) {
-            handleItemSubmit(activeIndex);
-        } else if (e.key === 'Enter' && activeIndex === -1) {
-            handleSearchSubmit();
-        }
+    const handleKeyDown = useCallback(
+        (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
+            if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
+                setActiveIndex(index => index + 1);
+                e.preventDefault();
+            } else if (e.key === 'ArrowUp' && activeIndex > -1) {
+                setActiveIndex(index => index - 1);
+                e.preventDefault();
+            } else if (e.key === 'Enter' && activeIndex > -1) {
+                handleItemSubmit(activeIndex);
+            } else if (e.key === 'Enter' && activeIndex === -1) {
+                handleSearchSubmit();
+            }
 
-        return false;
-    }, [activeIndex, setActiveIndex, handleSearchSubmit, handleItemSubmit]);
+            return false;
+        },
+        [activeIndex, setActiveIndex, handleSearchSubmit, handleItemSubmit],
+    );
 
-    const highlightString = (title) => {
-        const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
+    const highlightString = title => {
+        const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => '\\' + w);
         const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
 
         return (
             <>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
-                        {(fragment.toLowerCase() === searchQuery.toLowerCase())
-                            ? <span className={cn('highlighted-fragment')}>{fragment}</span>
-                            : fragment
-                        }
+                        {fragment.toLowerCase() === searchQuery.toLowerCase() ? (
+                            <span className={cn('highlighted-fragment')}>{fragment}</span>
+                        ) : (
+                            fragment
+                        )}
                     </React.Fragment>
                 ))}
             </>
@@ -145,17 +161,16 @@ const Search: React.FC<ISearchProps> = ({
                     type="text"
                     autoComplete="off"
                 />
-                {!hideIcon && <div
-                    className={cn('icon-box')}
-                    onClick={handleSearchSubmit}
-                >
-                    <SearchIcon className={cn('icon', [classes?.icon])} />
-                </div>}
+                {!hideIcon && (
+                    <div className={cn('icon-box')} onClick={handleSearchSubmit}>
+                        <SearchIcon className={cn('icon', [classes?.icon])} />
+                    </div>
+                )}
             </div>
-            {items && !!items.length &&
+            {items && !!items.length && (
                 <div className={cn('list')}>
                     <div className={cn('list-inner')}>
-                        {items.map((title, i) =>
+                        {items.map((title, i) => (
                             <div
                                 className={cn('list-item', { active: activeIndex === i })}
                                 onMouseDown={handleSelectSubmit(i)}
@@ -166,10 +181,10 @@ const Search: React.FC<ISearchProps> = ({
                                     {highlightString(title)}
                                 </div>
                             </div>
-                        )}
+                        ))}
                     </div>
                 </div>
-            }
+            )}
         </div>
     );
 };

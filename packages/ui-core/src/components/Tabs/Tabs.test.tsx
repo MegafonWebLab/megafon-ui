@@ -18,7 +18,7 @@ describe('<Tabs />', () => {
             <Tabs>
                 <Tab>1</Tab>
                 <Tab>2</Tab>
-            </Tabs>
+            </Tabs>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -43,13 +43,10 @@ describe('<Tabs />', () => {
                 <Tab title="title 1" icon={<Balance />} href="www.test.com">
                     1
                 </Tab>
-                <Tab
-                    title="title 2"
-                    renderTabWrapper={renderTabWrapper}
-                >
+                <Tab title="title 2" renderTabWrapper={renderTabWrapper}>
                     2
                 </Tab>
-            </Tabs>
+            </Tabs>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -61,7 +58,7 @@ describe('<Tabs />', () => {
             <Tabs onTabClick={mockHandleTabClick}>
                 <Tab>1</Tab>
                 <Tab>2</Tab>
-            </Tabs>
+            </Tabs>,
         );
 
         wrapper.find(cn('tab-inner')).last().simulate('click');

@@ -70,7 +70,7 @@ const Tile: React.FC<ITileProps> = ({
                     pointer: isPointer,
                     interactive: isInteractive,
                 },
-                className
+                className,
             )}
             onClick={handleClick}
             {...filterDataAttrs(dataAttrs)}

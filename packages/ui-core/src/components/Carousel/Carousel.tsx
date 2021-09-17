@@ -159,7 +159,7 @@ const Carousel: React.FC<ICarouselProps> = ({
             params.autoplay.delay = autoPlayDelay * 3;
             autoplay.start();
         },
-        [autoPlayDelay]
+        [autoPlayDelay],
     );
 
     const handlePrevClick = React.useCallback(() => {
@@ -205,9 +205,12 @@ const Carousel: React.FC<ICarouselProps> = ({
         setEnd(swiper.isEnd);
     }, []);
 
-    const handleSlideChange = React.useCallback(({ realIndex, previousIndex, params }: SwiperCore) => {
-        onChange && onChange(realIndex, previousIndex, params.slidesPerView);
-    }, [onChange]);
+    const handleSlideChange = React.useCallback(
+        ({ realIndex, previousIndex, params }: SwiperCore) => {
+            onChange && onChange(realIndex, previousIndex, params.slidesPerView);
+        },
+        [onChange],
+    );
 
     const handleRootClick = (e: React.SyntheticEvent<EventTarget>) => {
         const elem = e.target as Element;
@@ -229,7 +232,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 swiper.slides.css('width', '');
             }
         }, throttleTime.resize),
-        []
+        [],
     );
 
     return (
@@ -240,12 +243,11 @@ const Carousel: React.FC<ICarouselProps> = ({
             onClick={handleRootClick}
         >
             <Swiper
-                {...containerModifier ? {containerModifierClass: containerModifier} : {}}
-                className={cn(
-                    'swiper',
-                    { 'default-inner-indents': !innerIndentsClass },
-                    [innerIndentsClass, containerClass]
-                )}
+                {...(containerModifier ? { containerModifierClass: containerModifier } : {})}
+                className={cn('swiper', { 'default-inner-indents': !innerIndentsClass }, [
+                    innerIndentsClass,
+                    containerClass,
+                ])}
                 breakpoints={slidesSettings}
                 watchSlidesVisibility
                 watchOverflow
@@ -258,7 +260,9 @@ const Carousel: React.FC<ICarouselProps> = ({
                 allowTouchMove={!disableTouchMove}
                 centeredSlides={centeredSlides}
                 effect={effectTheme}
-                noSwipingSelector={!!noSwipingSelector ? `.swiper-pagination, ${noSwipingSelector}` : '.swiper-pagination'}
+                noSwipingSelector={
+                    !!noSwipingSelector ? `.swiper-pagination, ${noSwipingSelector}` : '.swiper-pagination'
+                }
                 onSwiper={handleSwiper}
                 onReachBeginning={handleReachBeginnig}
                 onReachEnd={handleReachEnd}
@@ -293,7 +297,7 @@ const Carousel: React.FC<ICarouselProps> = ({
 Carousel.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     className: PropTypes.string,
     classes: PropTypes.shape({
@@ -308,12 +312,10 @@ Carousel.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     slidesSettings: PropTypes.objectOf(
         checkBreakpointsPropTypes({
-            slidesPerView: PropTypes.oneOfType([
-                PropTypes.number,
-                PropTypes.oneOf(Object.values(SlidesPerView)),
-            ]).isRequired,
+            slidesPerView: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(Object.values(SlidesPerView))])
+                .isRequired,
             spaceBetween: PropTypes.number.isRequired,
-        })
+        }),
     ),
     pagination: PropTypes.shape({
         el: PropTypes.string,

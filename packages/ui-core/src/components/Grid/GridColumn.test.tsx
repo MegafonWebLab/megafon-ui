@@ -24,7 +24,7 @@ describe('<GridColumn />', () => {
                 flex
             >
                 item
-            </GridColumn>
+            </GridColumn>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -55,7 +55,7 @@ describe('<GridColumn />', () => {
                 flex
             >
                 item
-            </GridColumn>
+            </GridColumn>,
         );
         expect(wrapper).toMatchSnapshot();
     });

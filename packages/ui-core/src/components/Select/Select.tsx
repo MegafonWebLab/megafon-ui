@@ -74,7 +74,8 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
-        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement> | null, dataItem?: ISelectItem<T>
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement> | null,
+        dataItem?: ISelectItem<T>,
     ) => void;
     /** Обработчик при открытом селекте */
     onOpened?: () => void;
@@ -118,14 +119,10 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }),
         items: PropTypes.arrayOf(
             PropTypes.shape({
-                view: PropTypes.oneOfType([
-                    PropTypes.string,
-                    PropTypes.element,
-                    PropTypes.func,
-                ]),
+                view: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
                 title: PropTypes.string,
                 value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-            })
+            }),
         ),
         onSelect: PropTypes.func,
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
@@ -150,7 +147,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     debouncedComboboxChange = debounce((filterValue: string) => {
         const { items } = this.props;
 
-        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
+        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => '\\' + w);
         const filteredItems = items.filter(({ title }) => {
             if (filterValue.length <= title.length) {
                 return RegExp(query, 'ig').test(title);
@@ -222,24 +219,24 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
             return isEqualValue && isEqualTitle;
         });
-    }
+    };
 
     handleOpened = () => {
         const { onOpened } = this.props;
 
         onOpened && onOpened();
-    }
+    };
 
     handleClosed = () => {
         const { onClosed } = this.props;
 
         onClosed && onClosed();
-    }
+    };
 
     handleClickOutside = (e: MouseEvent): void => {
         const { isOpened } = this.state;
 
-        if (e.target instanceof Node && this.selectNode.contains(e.target) || !isOpened) {
+        if ((e.target instanceof Node && this.selectNode.contains(e.target)) || !isOpened) {
             return;
         }
 
@@ -248,17 +245,20 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 this.handleClosed();
             }
         });
-    }
+    };
 
     handleOpenDropdown = (): void => {
-        this.setState((state) => ({ isOpened: !state.isOpened }), () => {
-            if (this.state.isOpened) {
-                this.handleOpened();
-            } else {
-                this.handleClosed();
-            }
-        });
-    }
+        this.setState(
+            state => ({ isOpened: !state.isOpened }),
+            () => {
+                if (this.state.isOpened) {
+                    this.handleOpened();
+                } else {
+                    this.handleClosed();
+                }
+            },
+        );
+    };
 
     handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
         const { onSelect, items } = this.props;
@@ -284,26 +284,28 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
         onSelect && onSelect(e, item);
         this.handleClosed();
-    }
+    };
 
-    handleHoverItem = (index: number) => (e: React.MouseEvent<HTMLDivElement>): void => {
-        e.preventDefault();
+    handleHoverItem =
+        (index: number) =>
+        (e: React.MouseEvent<HTMLDivElement>): void => {
+            e.preventDefault();
 
-        this.setState({ activeIndex: index });
-    }
+            this.setState({ activeIndex: index });
+        };
 
     handleComboboxFocus = (e: React.FocusEvent<HTMLInputElement>): void => {
         const { isOpened, filteredItems } = this.state;
 
         e.stopPropagation();
 
-        this.setState((state) => ({ isOpened: !state.isOpened }));
+        this.setState(state => ({ isOpened: !state.isOpened }));
         this.handleOpened();
 
         if (!isOpened && filteredItems) {
             e.target.select();
         }
-    }
+    };
 
     handleChangeCombobox = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onSelect } = this.props;
@@ -318,7 +320,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         this.setState({ inputValue: filterValue, isChoosenItem: false });
 
         this.debouncedComboboxChange(filterValue);
-    }
+    };
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
         const { activeIndex, isOpened, filteredItems } = this.state;
@@ -338,9 +340,12 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             return false;
         }
         if (e.key === 'ArrowUp' && isOpened && activeIndex > 0) {
-            this.setState((prevState) => ({ activeIndex: prevState.activeIndex - 1 }), () => {
-                this.scrollList(this.state.activeIndex);
-            });
+            this.setState(
+                prevState => ({ activeIndex: prevState.activeIndex - 1 }),
+                () => {
+                    this.scrollList(this.state.activeIndex);
+                },
+            );
 
             e.preventDefault();
 
@@ -364,7 +369,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }
 
         return true;
-    }
+    };
 
     scrollList(activeIndex: number): void {
         if (!this.itemsNodeList) {
@@ -417,18 +422,19 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             <>
                 {stringFragments.map((fragment, i) => (
                     <React.Fragment key={i}>
-                        {(fragment.toLowerCase() === comparableInputValue.toLowerCase() && fragment !== '')
-                            ? <span className={cn('highlighted-fragment')}>{fragment}</span>
-                            : fragment
-                        }
+                        {fragment.toLowerCase() === comparableInputValue.toLowerCase() && fragment !== '' ? (
+                            <span className={cn('highlighted-fragment')}>{fragment}</span>
+                        ) : (
+                            fragment
+                        )}
                     </React.Fragment>
                 ))}
             </>
         );
-    }
+    };
 
-    getItemWrapper = node => this.itemWrapperNode = node;
-    getSelectNode = node => this.selectNode = node;
+    getItemWrapper = node => (this.itemWrapperNode = node);
+    getSelectNode = node => (this.selectNode = node);
     getNodeList = node => this.itemsNodeList.push(node);
 
     renderTitle() {
@@ -442,15 +448,17 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
         return (
             <div
-                className={cn('title', {
-                    placeholder: !!placeholder && !currentValue,
-                }, [classes?.title])}
+                className={cn(
+                    'title',
+                    {
+                        placeholder: !!placeholder && !currentValue,
+                    },
+                    [classes?.title],
+                )}
                 tabIndex={0}
                 onClick={this.handleOpenDropdown}
             >
-                <div className={cn('title-inner', [classes?.titleInner])}>
-                    {inputTitle}
-                </div>
+                <div className={cn('title-inner', [classes?.titleInner])}>{inputTitle}</div>
             </div>
         );
     }
@@ -481,9 +489,13 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 <div className={cn('list-inner')} ref={this.getItemWrapper}>
                     {currentItems.map(({ title, value, view }, i) => (
                         <div
-                            className={cn('list-item', {
-                                active: activeIndex === i,
-                            }, [classes.listItem])}
+                            className={cn(
+                                'list-item',
+                                {
+                                    active: activeIndex === i,
+                                },
+                                [classes.listItem],
+                            )}
                             key={`${i}_${value}`}
                             onClick={this.handleSelectItem}
                             onMouseEnter={this.handleHoverItem(i)}
@@ -520,13 +532,16 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         return (
             <div
                 {...filterDataAttrs(dataAttrs)}
-                className={cn({
-                    open: isOpened,
-                    disabled: isDisabled,
-                    'no-touch': !this.isTouch,
-                    valid: verification === Verification.VALID,
-                    error: verification === Verification.ERROR,
-                }, [className, classes.root])}
+                className={cn(
+                    {
+                        open: isOpened,
+                        disabled: isDisabled,
+                        'no-touch': !this.isTouch,
+                        valid: verification === Verification.VALID,
+                        error: verification === Verification.ERROR,
+                    },
+                    [className, classes.root],
+                )}
                 ref={this.getSelectNode}
             >
                 <div className={cn('inner')}>
@@ -536,12 +551,9 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                             {required && <span className={cn('require-mark')}>*</span>}
                         </InputLabel>
                     )}
-                    <div
-                        className={cn('control', classes.control)}
-                        onKeyDown={this.handleKeyDown}
-                    >
-                        {(type === SelectTypes.COMBOBOX) && this.renderCombobox()}
-                        {(type === SelectTypes.CLASSIC) && this.renderTitle()}
+                    <div className={cn('control', classes.control)} onKeyDown={this.handleKeyDown}>
+                        {type === SelectTypes.COMBOBOX && this.renderCombobox()}
+                        {type === SelectTypes.CLASSIC && this.renderTitle()}
                         <div
                             className={cn('arrow-wrap', [classes.arrowWrap])}
                             tabIndex={1}
@@ -552,14 +564,16 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                     </div>
                     {this.renderChildren()}
                 </div>
-                {noticeText &&
-                    <div className={cn('text', {
-                        error: verification === Verification.ERROR,
-                        success: verification === Verification.VALID,
-                    })}>
+                {noticeText && (
+                    <div
+                        className={cn('text', {
+                            error: verification === Verification.ERROR,
+                            success: verification === Verification.VALID,
+                        })}
+                    >
                         {noticeText}
                     </div>
-                }
+                )}
             </div>
         );
     }

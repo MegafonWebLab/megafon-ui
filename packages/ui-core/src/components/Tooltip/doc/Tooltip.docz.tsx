@@ -10,18 +10,21 @@ export const demoWrapperBlockStyles: React.CSSProperties = {
     padding: '50px',
 };
 
-export const DemoTooltipWithTriggerWrapper = ({children}) => {
+export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     const triggerElement = React.useRef<HTMLElement | null>(null);
     const boundaryElement = React.useRef<HTMLElement | null>(null);
-    const [ isTriggered, setIsTriggered ] = React.useState<boolean>(false);
-    const [ triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
+    const [isTriggered, setIsTriggered] = React.useState<boolean>(false);
+    const [triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
 
-    const handleTriggerChange = React.useCallback((trigger) => {
-        if (!isTriggered) {
-            setIsTriggered(true);
-            setTriggerEvent(trigger);
-        }
-    }, [isTriggered]);
+    const handleTriggerChange = React.useCallback(
+        trigger => {
+            if (!isTriggered) {
+                setIsTriggered(true);
+                setTriggerEvent(trigger);
+            }
+        },
+        [isTriggered],
+    );
 
     return children({
         triggerElement,
@@ -32,7 +35,7 @@ export const DemoTooltipWithTriggerWrapper = ({children}) => {
 };
 
 export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [ isOpened, setIsOpened ] = React.useState<boolean>(isOpen);
+    const [isOpened, setIsOpened] = React.useState<boolean>(isOpen);
     const handleToggle = () => setIsOpened(open => !open);
     const handleOpen = () => setIsOpened(true);
     const handleClose = () => setIsOpened(false);
@@ -59,7 +62,7 @@ export const triggerEvents: Array<ISelectItem<string>> = [
     },
 ];
 
-export const DemoSelectTriggerWrapper = ({children}) => {
+export const DemoSelectTriggerWrapper = ({ children }) => {
     const { value } = triggerEvents[0];
     const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
     const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem<string>) => {

@@ -6,33 +6,22 @@ import NothingIcon from '@megafon/ui-icons/basic-16-nothing_16.svg';
 import './PaginationButtons.less';
 
 interface IPaginationButtons {
-   items: Array<string | number>;
-   theme?: 'default' | 'light';
-   activeButton: number;
-   hiddenButton: string;
-   onClick: (value?: number| string) => void;
+    items: Array<string | number>;
+    theme?: 'default' | 'light';
+    activeButton: number;
+    hiddenButton: string;
+    onClick: (value?: number | string) => void;
 }
 
 const cn = cnCreate('mfui-beta-pagination-buttons');
-const PaginationButtons: React.FC<IPaginationButtons> = ({
-    items,
-    theme,
-    onClick,
-    activeButton,
-    hiddenButton,
-}) => (
+const PaginationButtons: React.FC<IPaginationButtons> = ({ items, theme, onClick, activeButton, hiddenButton }) => (
     <div className={cn()}>
         {items.map((pageNumber, index) => {
             const isHiddenButton = hiddenButton === pageNumber;
 
             if (isHiddenButton) {
                 return (
-                    <PaginationButton
-                        className={cn('button')}
-                        isDisabled
-                        key={index}
-                        theme={theme}
-                    >
+                    <PaginationButton className={cn('button')} isDisabled key={index} theme={theme}>
                         <NothingIcon />
                     </PaginationButton>
                 );

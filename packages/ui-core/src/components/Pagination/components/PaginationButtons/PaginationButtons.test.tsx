@@ -8,12 +8,7 @@ const items = [1, hiddenButton, 4, 5];
 describe('PaginationButtons', () => {
     it('should render component', () => {
         const wrapper = shallow(
-            <PaginationButtons
-                items={items}
-                onClick={jest.fn()}
-                activeButton={4}
-                hiddenButton={hiddenButton}
-            />
+            <PaginationButtons items={items} onClick={jest.fn()} activeButton={4} hiddenButton={hiddenButton} />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -23,12 +18,7 @@ describe('PaginationButtons', () => {
         const clickHandler = jest.fn();
 
         const wrapper = shallow(
-            <PaginationButtons
-                items={items}
-                onClick={clickHandler}
-                activeButton={4}
-                hiddenButton={hiddenButton}
-            />
+            <PaginationButtons items={items} onClick={clickHandler} activeButton={4} hiddenButton={hiddenButton} />,
         );
         const button = wrapper.find('PaginationButton').first();
 

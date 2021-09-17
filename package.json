@@ -9,6 +9,7 @@
         "clean": "lerna clean --yes",
         "typecheck": "lerna run typecheck",
         "lint": "lerna run lint",
+        "prettier": "lerna run prettier:check",
         "test": "lerna run test",
         "test:update": "lerna run test:update",
         "coverage": "lerna run coverage",

@@ -45,10 +45,7 @@ const Month: React.FC<IMonthProps> = ({
     return (
         <div className={cn()}>
             <div className={cn('header')}>
-                <ArrowLeft
-                    className={cn('arrow', { disabled: isPrevMonthDisabled })}
-                    onClick={handleArrowLeftClick}
-                />
+                <ArrowLeft className={cn('arrow', { disabled: isPrevMonthDisabled })} onClick={handleArrowLeftClick} />
                 <span className={cn('title')}>{`${monthLabel} ${year}`}</span>
                 <ArrowRight
                     className={cn('arrow', { disabled: isNextMonthDisabled })}
@@ -62,9 +59,7 @@ const Month: React.FC<IMonthProps> = ({
                     </div>
                 ))}
             </div>
-            <div className={cn('days')}>
-                {children}
-            </div>
+            <div className={cn('days')}>{children}</div>
         </div>
     );
 };

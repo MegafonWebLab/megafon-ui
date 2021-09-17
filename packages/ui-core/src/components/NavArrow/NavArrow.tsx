@@ -40,7 +40,7 @@ const NavArrow: React.FC<INavArrowProps> = ({
                 return <ArrowLeft className={cn('icon')} />;
 
             default:
-                return <ArrowRight className={cn('icon')}/>;
+                return <ArrowRight className={cn('icon')} />;
         }
     }, [view]);
 

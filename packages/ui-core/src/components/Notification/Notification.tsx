@@ -103,16 +103,19 @@ const Notification: React.FC<INotificationProps> = ({
     };
 
     return (
-        <Tile radius="rounded"
+        <Tile
+            radius="rounded"
             shadowLevel={shadowLevel}
-            className={cn({
-                type, colored: isColored,
-            }, className)}
+            className={cn(
+                {
+                    type,
+                    colored: isColored,
+                },
+                className,
+            )}
         >
             <div className={cn('container')}>
-                <div className={cn('icon-container')}>
-                    {renderIcon()}
-                </div>
+                <div className={cn('icon-container')}>{renderIcon()}</div>
 
                 <div className={cn('content')}>
                     {title && (
@@ -120,7 +123,7 @@ const Notification: React.FC<INotificationProps> = ({
                             {title}
                         </Header>
                     )}
-                    <p className={cn('text', {'close-padding': hasCloseButton && !title})}>{children}</p>
+                    <p className={cn('text', { 'close-padding': hasCloseButton && !title })}>{children}</p>
                     {link && renderLink()}
                 </div>
             </div>

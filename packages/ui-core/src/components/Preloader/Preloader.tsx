@@ -58,15 +58,18 @@ const Preloader: React.FC<IPreloaderProps> = ({
     }, []);
 
     return isShowed ? (
-        <div className={cn(
-            {
-                color,
-                'size-all': sizeAll,
-                'size-wide': sizeWide,
-                'size-desktop': sizeDesktop,
-                'size-tablet': sizeTablet,
-                'size-mobile': sizeMobile,
-            }, className)}
+        <div
+            className={cn(
+                {
+                    color,
+                    'size-all': sizeAll,
+                    'size-wide': sizeWide,
+                    'size-desktop': sizeDesktop,
+                    'size-tablet': sizeTablet,
+                    'size-mobile': sizeMobile,
+                },
+                className,
+            )}
         >
             <div className={cn('item', { first: true })} />
             <div className={cn('item', { second: true })} />

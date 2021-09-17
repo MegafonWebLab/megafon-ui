@@ -44,16 +44,8 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
         checked: PropTypes.bool,
         disabled: PropTypes.bool,
         error: PropTypes.bool,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
-        extraContent: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-        ]),
+        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
+        extraContent: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
         onChange: PropTypes.func,
     };
@@ -69,7 +61,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
     handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onChange } = this.props;
         onChange && onChange(e);
-    }
+    };
 
     render() {
         const {
@@ -98,7 +90,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                         disabled,
                         error,
                     },
-                    className
+                    className,
                 )}
                 {...filterDataAttrs(dataAttrs)}
             >

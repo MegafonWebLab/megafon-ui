@@ -10,11 +10,7 @@ export const wrapperStyle = {
 };
 
 interface IDemoNotificationWrapperProps {
-    children: (prop: {
-        onClose?: () => void;
-        onLinkClick?: () => void;
-        initialClickAmount: number;
-    }) => JSX.Element;
+    children: (prop: { onClose?: () => void; onLinkClick?: () => void; initialClickAmount: number }) => JSX.Element;
     initialClickAmount: number;
 }
 

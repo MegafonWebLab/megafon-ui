@@ -23,9 +23,11 @@
     "coverage": "yarn coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "typecheck": "tsc --noEmit -p .",
-    "lint": "yarn lint:ts && yarn lint:less",
+    "prettier:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx}\"",
+    "prettier:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "yarn lint:less",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
-    "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
+    "lint:ts": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
     "test": "yarn test:unit",
     "test:unit": "jest",
     "test:update": "jest --updateSnapshot"

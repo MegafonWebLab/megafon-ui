@@ -29,12 +29,16 @@ const List: React.FC<IListProps> = ({
 
     return (
         <ElementType
-            className={cn({
-                'h-align': hAlign,
-                color,
-                weight,
-                type: as,
-            }, className)}>
+            className={cn(
+                {
+                    'h-align': hAlign,
+                    color,
+                    weight,
+                    type: as,
+                },
+                className,
+            )}
+        >
             {children}
         </ElementType>
     );
