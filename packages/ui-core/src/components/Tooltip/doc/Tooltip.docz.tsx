@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { TriggerEvent } from '../Tooltip';
 import { ISelectItem, SelectItemValueType } from 'components/Select/Select';
+import { TriggerEvent } from '../Tooltip';
 
 export const demoWrapperBlockStyles: React.CSSProperties = {
     display: 'grid',
@@ -39,6 +39,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     const handleToggle = () => setIsOpened(open => !open);
     const handleOpen = () => setIsOpened(true);
     const handleClose = () => setIsOpened(false);
+
     return children({
         isOpened,
         handleOpen,
@@ -71,6 +72,6 @@ export const DemoSelectTriggerWrapper = ({ children }) => {
 
     return children({
         onSelect: handleSelect,
-        currentValue: currentValue,
+        currentValue,
     });
 };

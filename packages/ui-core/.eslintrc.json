@@ -13,5 +13,64 @@
       "ecmaFeatures": {
           "jsx": true
       }
-  }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+          "paths": ["src"],
+          "extensions": [".ts", ".tsx"]
+      },
+      "eslint-import-resolver-typescript": true
+    }
+  },
+  "rules": {
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "consistent-return": "off",
+    "import/no-unresolved": "off",
+    "import/order": "off",
+    "jsx-a11y/anchor-has-content": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/tabindex-no-positive": "off",
+    "no-case-declarations": "off",
+    "no-magic-numbers": "off",
+    "no-param-reassign": "off",
+    "no-prototype-builtins": "off",
+    "no-return-assign": "off",
+    "no-unused-expressions": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "react/button-has-type": "off",
+    "react/destructuring-assignment": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "react/no-children-prop": "off",
+    "react/no-did-update-set-state": "off",
+    "react/no-unused-prop-types": "off",
+    "react/prefer-stateless-function": "off",
+    "react/sort-comp": "off"
+  },
+  "overrides": [
+    {
+      "files": "*.docz.tsx",
+      "rules": {
+        "import/prefer-default-export": "off",
+        "react/no-multi-comp": "off"
+      }
+    },
+    {
+      "files": "*.test.tsx",
+      "rules": {
+        "jsx-a11y/anchor-is-valid": "off"
+      }
+    }
+  ]
 }

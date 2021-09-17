@@ -25,9 +25,9 @@
     "typecheck": "tsc --noEmit -p .",
     "prettier:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "yarn lint:less",
+    "lint": "yarn lint:ts && yarn lint:less",
+    "lint:ts": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0 --fix",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
-    "lint:ts": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
     "test": "yarn test:unit",
     "test:unit": "jest",
     "test:update": "jest --updateSnapshot"
@@ -73,8 +73,6 @@
     "react-dom": "^16.13.0",
     "stylelint": "^9.10.1",
     "through2": "^2.0.5",
-    "tslint": "^5.20.1",
-    "tslint-react": "^3.6.0",
     "typescript": "^3.8.3",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },

@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './TextLink.less';
 import Link, { ILinkProps } from '../Link/Link';
 import { cnCreate } from '@megafon/ui-helpers';

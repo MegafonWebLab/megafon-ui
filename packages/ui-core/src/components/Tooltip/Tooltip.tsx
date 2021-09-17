@@ -1,7 +1,7 @@
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import PropTypes from 'prop-types';
-import { usePopper } from 'react-popper';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import { usePopper } from 'react-popper';
 import Tile from 'components/Tile/Tile';
 import './Tooltip.less';
 
@@ -183,6 +183,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
             }
+
             return () => {
                 currentTrigger && currentTrigger.removeEventListener('mouseenter', handleMouseEnter);
                 document.removeEventListener('mouseover', handleOutsideEvent);
@@ -198,6 +199,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
             } else {
                 document.removeEventListener(clickEvent, handleOutsideEvent);
             }
+
             return () => {
                 currentTrigger && currentTrigger.removeEventListener(clickEvent, handleClick);
                 document.removeEventListener(clickEvent, handleOutsideEvent);
@@ -243,6 +245,7 @@ Tooltip.propTypes = {
                 `Invalid ${location} \`${propName}\` supplied to \`${componentName}\`, expected React.RefObject.`,
             );
         }
+
         return null;
     },
     isOpened: PropTypes.bool,

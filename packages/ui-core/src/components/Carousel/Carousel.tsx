@@ -1,14 +1,14 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './Carousel.less';
 import { breakpoints, cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
-import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import SwiperCore, { Autoplay, Pagination, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PaginationOptions } from 'swiper/types/components/pagination';
-import throttle from 'lodash.throttle';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import throttleTime from 'constants/throttleTime';
+import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
+import throttle from 'lodash.throttle';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
 
@@ -261,7 +261,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 centeredSlides={centeredSlides}
                 effect={effectTheme}
                 noSwipingSelector={
-                    !!noSwipingSelector ? `.swiper-pagination, ${noSwipingSelector}` : '.swiper-pagination'
+                    noSwipingSelector ? `.swiper-pagination, ${noSwipingSelector}` : '.swiper-pagination'
                 }
                 onSwiper={handleSwiper}
                 onReachBeginning={handleReachBeginnig}

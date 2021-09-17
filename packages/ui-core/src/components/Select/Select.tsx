@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './Select.less';
 import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import InputLabel from 'components/InputLabel/InputLabel';
@@ -139,7 +139,9 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     };
 
     itemWrapperNode: HTMLDivElement;
+
     itemsNodeList: HTMLDivElement[];
+
     selectNode: HTMLDivElement;
 
     isTouch: boolean = detectTouch();
@@ -147,7 +149,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     debouncedComboboxChange = debounce((filterValue: string) => {
         const { items } = this.props;
 
-        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => '\\' + w);
+        const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
         const filteredItems = items.filter(({ title }) => {
             if (filterValue.length <= title.length) {
                 return RegExp(query, 'ig').test(title);
@@ -406,6 +408,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             if (typeof view === 'function' && !React.isValidElement(view)) {
                 return view({ filterValue: inputValue });
             }
+
             return view || title;
         }
         if (type === SelectTypes.COMBOBOX && view) {
@@ -434,7 +437,9 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     };
 
     getItemWrapper = node => (this.itemWrapperNode = node);
+
     getSelectNode = node => (this.selectNode = node);
+
     getNodeList = node => this.itemsNodeList.push(node);
 
     renderTitle() {

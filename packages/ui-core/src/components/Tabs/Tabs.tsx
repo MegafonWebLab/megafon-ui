@@ -1,13 +1,13 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import SwiperCore from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import throttle from 'lodash.throttle';
 import { cnCreate } from '@megafon/ui-helpers';
-import './Tabs.less';
-import { ITabProps } from './Tab';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow_left_16.svg';
 import ArrowRight from '@megafon/ui-icons/system-16-arrow_right_16.svg';
+import throttle from 'lodash.throttle';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import SwiperCore from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import './Tabs.less';
+import { ITabProps } from './Tab';
 
 export const TabSize = {
     SMALL: 'small',
@@ -193,17 +193,15 @@ const Tabs: React.FC<ITabsProps> = ({
 
     const renderPanels = React.useCallback(
         () =>
-            React.Children.map(children, (child, i) => {
-                return (
-                    <div
-                        className={cn('panel', {
-                            current: currentIndex === i,
-                        })}
-                    >
-                        {child}
-                    </div>
-                );
-            }),
+            React.Children.map(children, (child, i) => (
+                <div
+                    className={cn('panel', {
+                        current: currentIndex === i,
+                    })}
+                >
+                    {child}
+                </div>
+            )),
         [children, currentIndex],
     );
 

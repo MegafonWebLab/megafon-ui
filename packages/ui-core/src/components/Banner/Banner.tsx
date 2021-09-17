@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import './Banner.less';
 import { cnCreate } from '@megafon/ui-helpers';
 import SwiperCore, { Autoplay } from 'swiper';

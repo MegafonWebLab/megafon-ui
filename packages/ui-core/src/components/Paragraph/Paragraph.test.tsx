@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import Paragraph, { IParagraphProps } from './Paragraph';
 
 const props: IParagraphProps = {

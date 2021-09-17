@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
-import TextField, { Verification } from './TextField';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
+import TextField, { Verification } from './TextField';
 
 const InputMask = require('react-input-mask');
 
@@ -43,7 +43,7 @@ const mockUserAgentAsTrident = () => {
     jest.spyOn(window.navigator, 'userAgent', 'get').mockReturnValue('trident/');
 };
 
-const testCommonCases = (selector: string, textarea: boolean = false) => {
+const testCommonCases = (selector: string, textarea = false) => {
     it('should render with string value', () => {
         const wrapper = shallow(<TextField {...commonFieldProps} value="value" textarea={textarea} />);
         expect(wrapper).toMatchSnapshot();

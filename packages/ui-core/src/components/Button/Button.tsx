@@ -2,8 +2,8 @@ import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import './Button.less';
-import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
 import Arrow from '@megafon/ui-icons/system-32-arrow_right_32.svg';
+import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
 
 export const ButtonTypes = {
     PRIMARY: 'primary',

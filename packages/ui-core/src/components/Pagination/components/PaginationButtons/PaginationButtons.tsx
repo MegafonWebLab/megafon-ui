@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
-import PaginationButton from 'components/Pagination/components/PaginationButton/PaginationButton';
 import NothingIcon from '@megafon/ui-icons/basic-16-nothing_16.svg';
+import PropTypes from 'prop-types';
+import React from 'react';
+import PaginationButton from 'components/Pagination/components/PaginationButton/PaginationButton';
 import './PaginationButtons.less';
 
 interface IPaginationButtons {

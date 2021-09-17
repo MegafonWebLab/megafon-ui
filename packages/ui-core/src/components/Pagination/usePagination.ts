@@ -1,7 +1,7 @@
-import React from 'react';
-import getRange from './helpers';
 import throttle from 'lodash.throttle';
+import React from 'react';
 import throttleTime from 'constants/throttleTime';
+import getRange from './helpers';
 
 export const Button = {
     HIDDEN: 'HIDDEN',

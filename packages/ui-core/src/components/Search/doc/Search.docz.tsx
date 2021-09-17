@@ -27,7 +27,7 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
     return (
         <div>
             <p style={{ marginTop: 0 }}>Value: {value}</p>
-            {children({ onChange: handleChange, onSubmit: setValue, items: items, chosenValue: value })}
+            {children({ onChange: handleChange, onSubmit: setValue, items, chosenValue: value })}
         </div>
     );
 };

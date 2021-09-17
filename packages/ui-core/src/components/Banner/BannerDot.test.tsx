@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { shallow } from 'enzyme';
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow } from 'enzyme';
+import * as React from 'react';
 import BannerDot, { IBannerDotProps } from './BannerDot';
 
 const props = {

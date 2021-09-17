@@ -42,7 +42,7 @@ export const items = [
         value: 10,
         title: 'Кантемировская',
         view: ({ filterValue }) => {
-            const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => '\\' + w);
+            const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
             const stringFragments = 'Кантемировская'.split(RegExp(`(${query})`, 'ig'));
 
             return (
@@ -72,7 +72,7 @@ const selectWrapperStyle = {
     height: '200px',
     width: '50%',
     paddingLeft: '15px',
-    boxSizing: 'border-box' as 'border-box',
+    boxSizing: 'border-box' as const,
     minWidth: '300px',
 };
 
@@ -108,7 +108,7 @@ export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = props => {
         <div style={selectWrapperStyle}>
             {props.children({
                 onSelect: handleSelect,
-                currentValue: currentValue,
+                currentValue,
             })}
         </div>
     );

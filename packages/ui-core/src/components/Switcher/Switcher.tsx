@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import * as React from 'react';
 import './Switcher.less';
 
 export interface ISwitcherProps {

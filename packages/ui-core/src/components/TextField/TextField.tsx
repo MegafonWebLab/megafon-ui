@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
 import './TextField.less';
 import InputLabel from '../InputLabel/InputLabel';
 import Paragraph from '../Paragraph/Paragraph';
@@ -100,6 +100,7 @@ const detectIE11 = (): boolean => {
         return false;
     }
     const userAgent: string = window.navigator.userAgent.toLowerCase();
+
     return userAgent.indexOf('trident/') !== -1;
 };
 
@@ -155,9 +156,9 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
 
-    const renderPlaceholderForIe = (classes: string): React.ReactNode => {
-        return <span className={cn(classes)}>{placeholder}</span>;
-    };
+    const renderPlaceholderForIe = (classes: string): React.ReactNode => (
+        <span className={cn(classes)}>{placeholder}</span>
+    );
 
     const checkSymbolMaxLimit = useCallback(
         (textareaValue: string | number = ''): void => {
@@ -327,6 +328,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         if (!inputValue && inputParams.placeholder && isIE11) {
             inputParams.placeholder = '';
         }
+
         return (
             <>
                 {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-input')}

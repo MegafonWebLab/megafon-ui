@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { shallow } from 'enzyme';
+import * as React from 'react';
 import ContentArea, { IConrentAreaProps, BackgroundColorType } from './ContentArea';
 
 const props: Partial<IConrentAreaProps> = {

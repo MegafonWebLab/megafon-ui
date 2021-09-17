@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import Select, { ISelectProps, SelectTypes, Verification, ISelectItem } from './Select';
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
+import Select, { ISelectProps, SelectTypes, Verification, ISelectItem } from './Select';
 
 const cn = cnCreate('mfui-beta-select');
 

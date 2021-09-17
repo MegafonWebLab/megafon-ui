@@ -98,8 +98,6 @@ const Counter: React.FC<ICounterProps> = ({
 
             if (numberValue > max) {
                 handleValueChange(max);
-
-                return;
             }
         },
         [handleValueChange, min, max],

@@ -1,13 +1,11 @@
-import * as React from 'react';
-import { shallow } from 'enzyme';
 import { cnCreate } from '@megafon/ui-helpers';
-import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
-import Tab from './Tab';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
+import { shallow } from 'enzyme';
+import * as React from 'react';
+import Tab from './Tab';
+import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
 
-const renderTabWrapper = (tab: React.ReactNode) => {
-    return <div className="tab-wrapper">{tab}</div>;
-};
+const renderTabWrapper = (tab: React.ReactNode) => <div className="tab-wrapper">{tab}</div>;
 
 const cn = cnCreate('.mfui-beta-tabs');
 describe('<Tabs />', () => {

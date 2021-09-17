@@ -1,6 +1,6 @@
+import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import './Checkbox.less';
 import CheckedIcon from '@megafon/ui-icons/system-16-checked_16.svg';
 

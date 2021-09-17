@@ -1,6 +1,6 @@
-import * as React from 'react';
 import format from 'date-fns/format';
 import ruLocale from 'date-fns/locale/ru';
+import * as React from 'react';
 import Button from 'components/Button/Button';
 
 const formatDate = (data: Date, pattern: string, locale = ruLocale) => format(data, pattern, { locale });

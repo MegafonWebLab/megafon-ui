@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import Search, { ISearchProps } from './Search';
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import * as React from 'react';
+import Search, { ISearchProps } from './Search';
 
 const cn = cnCreate('mfui-beta-search');
 
