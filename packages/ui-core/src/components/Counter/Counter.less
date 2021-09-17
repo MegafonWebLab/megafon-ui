@@ -1,11 +1,12 @@
 @import '~styles/base';
+
 @b: e('.mfui-beta-counter');
 
 @text-color-disabled: rgba(@freshAsphalt, 0.5);
 
 .disabled() {
-    cursor: default;
     background-color: @spbSky1;
+    cursor: default;
 }
 
 .iconDisabled() {
@@ -13,33 +14,37 @@
 }
 
 @{b} {
-    background-color: @clearWhite;
-    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    height: 32px;
+    box-sizing: border-box;
     width: 120px;
+    height: 32px;
+
+    background-color: @clearWhite;
 
     &__btn {
-        background-color: transparent;
-        border: 1px solid @spbSky2;
-        box-sizing: border-box;
-        cursor: pointer;
         display: flex;
-        height: 100%;
-        font-size: 20px;
         flex-grow: 1;
+        flex-shrink: 0;
         align-items: center;
         justify-content: center;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 32px;
+        height: 100%;
         margin: 0;
-        outline: none;
         padding: 0;
+        border: 1px solid @spbSky2;
+
+        font-size: 20px;
+        text-decoration: none;
+
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+
         appearance: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        text-decoration: none;
-        max-width: 32px;
-        width: 100%;
-        flex-shrink: 0;
 
         &:hover {
             background-color: @spbSky0;
@@ -66,33 +71,36 @@
 
     &__icon {
         display: block;
-        height: 20px;
         width: 20px;
+        height: 20px;
     }
 
     &__input-box {
-        border-top: 1px solid @spbSky2;
-        border-bottom: 1px solid @spbSky2;
-        box-sizing: border-box;
         display: flex;
         align-items: center;
-        overflow: hidden;
+        box-sizing: border-box;
         height: 100%;
+        border-top: 1px solid @spbSky2;
+        border-bottom: 1px solid @spbSky2;
+        overflow: hidden;
     }
 
     &__input {
-        border: none;
         box-sizing: border-box;
-        cursor: text;
+        width: 100%;
         height: 100%;
-        appearance: none;
-        box-shadow: none;
-        overflow: auto;
-        outline: none;
         margin: 0;
         padding: 0;
+        border: none;
+        overflow: auto;
+
         text-align: center;
-        width: 100%;
+
+        outline: none;
+        box-shadow: none;
+        cursor: text;
+
+        appearance: none;
     }
 
     &_disabled {
