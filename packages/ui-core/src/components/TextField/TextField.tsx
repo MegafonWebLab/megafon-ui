@@ -172,7 +172,6 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
 
     useEffect(() => {
-        setInputValue(value);
         checkSymbolMaxLimit(value);
     }, [value, checkSymbolMaxLimit]);
 
@@ -252,7 +251,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         disabled,
         id,
         name,
-        value: inputValue,
+        value: isControlled ? value : inputValue,
         onChange: handleInputChange,
         onBlur: handleBlur,
         onFocus: handleFocus,
