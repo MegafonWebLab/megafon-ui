@@ -441,6 +441,63 @@ TextField.defaultProps = {
     isControlled: true,
 };
 
+const MyPropTypes = {
+    isControlled(props: any, propName: string, componentName: string) {
+      if (typeof props[propName] !== 'boolean') {
+        return new Error(
+          `The component ${componentName} need the prop ${propName} to be a boolean, but you passed a ${typeof props[
+            propName
+          ]}.`
+        );
+      }
+
+      return null;
+    },
+    initialValue(props: any, propName: string, componentName: string) {
+        const { isControlled = true,  initialValue } = props;
+
+        const initialValuePropType = typeof props[propName];
+
+        if (initialValuePropType !== 'string' && initialValuePropType !== 'number' && initialValuePropType !== 'undefined') {
+            return new Error(
+              `The component ${componentName} need the prop ${propName} to be a string or number, but you passed a ${typeof props[
+                propName
+              ]}.`
+            );
+          }
+
+        if (isControlled && initialValue !== undefined) {
+            return new Error(
+                `The component ${componentName} need the prop 'value' if isControlled, pass 'initialValue' prop for uncontrolled component`
+            );
+        }
+
+        return null;
+
+    },
+    value(props: any, propName: string, componentName: string) {
+        const { isControlled = true, value } = props;
+
+        const valuePropType = typeof props[propName];
+
+        if (valuePropType !== 'string' && valuePropType !== 'number' && valuePropType !== 'undefined') {
+            return new Error(
+              `The component ${componentName} need the prop ${propName} to be a string or number, but you passed a ${typeof props[
+                propName
+              ]}.`
+            );
+          }
+
+        if (!isControlled && value !== undefined) {
+            return new Error(
+                `The component ${componentName} need the prop 'initialValue' if uncontrolled, pass 'value' or set isControlled={false}`
+            );
+        }
+
+        return null;
+    },
+  };
+
 TextField.propTypes = {
     textarea: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(Object.values(TextareaTypes))]),
     label: PropTypes.string,
@@ -453,10 +510,9 @@ TextField.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string,
-    isControlled: PropTypes.oneOf([true, undefined]),
-    value: PropTypes.oneOfType([PropTypes.oneOf([null, undefined]), PropTypes.string, PropTypes.number]),
-    // @ts-ignore
-    initialValue: PropTypes.oneOfType([PropTypes.oneOf([null, undefined]), PropTypes.string, PropTypes.number]),
+    isControlled: MyPropTypes.isControlled,
+    value: MyPropTypes.value,
+    initialValue: MyPropTypes.initialValue,
     maxLength: PropTypes.number,
     symbolCounter: PropTypes.number,
     customIcon: PropTypes.element,
@@ -474,21 +530,6 @@ TextField.propTypes = {
     classes: PropTypes.shape({
         input: PropTypes.string,
     }),
-    customProp: (props) => {
-        const { isControlled, value, initialValue } = props;
-
-        if (isControlled !== undefined && !isControlled && value !== undefined) {
-            return new Error(
-                'Значение value задается только для контролируемого компонента, передайте initialValue'
-            );
-        }
-
-        if (initialValue !== undefined) {
-            return new Error(
-                'Значение initialValue задается только для неконтролируемого компонента, передайте value или установите isControlled={false}'
-            );
-        }
-    },
 };
 
 export default TextField;
