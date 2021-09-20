@@ -98,7 +98,7 @@ const testCommonCases = (selector: string, textarea = false) => {
         const onChangeMock = jest.fn();
         const value = 'newValue';
         const event = { target: { value } };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} />);
+        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} isControlled={false} />);
 
         wrapper.find(selector).simulate('change', event);
 
@@ -273,7 +273,6 @@ describe('<TextField />', () => {
                     value="value"
                     customIcon={<Balance />}
                     verification={Verification.ERROR}
-                    isControlled
                     onCustomIconClick={jest.fn()}
                 />,
             );

@@ -2,11 +2,16 @@
 
 exports[`<TextField /> input should render with hidden password 1`] = `
 <div
-  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon mfui-beta-text-field_password"
+  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon"
 >
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <input
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -17,7 +22,7 @@ exports[`<TextField /> input should render with hidden password 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="password"
       value="value"
@@ -42,6 +47,7 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -93,6 +99,11 @@ exports[`<TextField /> input should render with inputnode 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <input
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -104,7 +115,7 @@ exports[`<TextField /> input should render with inputnode 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="text"
     />
@@ -122,6 +133,11 @@ exports[`<TextField /> input should render with mask 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <InputElement
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -135,7 +151,7 @@ exports[`<TextField /> input should render with mask 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="text"
     />
@@ -153,6 +169,11 @@ exports[`<TextField /> input should render with number value 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <input
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -163,7 +184,7 @@ exports[`<TextField /> input should render with number value 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="text"
       value={1234}
@@ -182,6 +203,11 @@ exports[`<TextField /> input should render with string value 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <input
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -192,7 +218,7 @@ exports[`<TextField /> input should render with string value 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="text"
       value="value"
@@ -211,6 +237,11 @@ exports[`<TextField /> input should render with type 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <input
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -221,7 +252,7 @@ exports[`<TextField /> input should render with type 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="tel"
     />
@@ -237,6 +268,7 @@ exports[`<TextField /> input should render with value after updating number prop
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -255,6 +287,11 @@ exports[`<TextField /> input should render with value after updating number prop
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
+      <span
+        className="mfui-beta-text-field__placeholder-input"
+      >
+        placeholder
+      </span>
       <input
         className="mfui-beta-text-field__field"
         disabled={true}
@@ -265,10 +302,10 @@ exports[`<TextField /> input should render with value after updating number prop
         onChange={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder="placeholder"
+        placeholder=""
         required={true}
         type="text"
-        value={1234}
+        value={5678}
       />
     </div>
     <div
@@ -283,6 +320,7 @@ exports[`<TextField /> input should render with value after updating string prop
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -301,6 +339,11 @@ exports[`<TextField /> input should render with value after updating string prop
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
+      <span
+        className="mfui-beta-text-field__placeholder-input"
+      >
+        placeholder
+      </span>
       <input
         className="mfui-beta-text-field__field"
         disabled={true}
@@ -311,10 +354,10 @@ exports[`<TextField /> input should render with value after updating string prop
         onChange={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder="placeholder"
+        placeholder=""
         required={true}
         type="text"
-        value="value"
+        value="newValue"
       />
     </div>
     <div
@@ -331,6 +374,11 @@ exports[`<TextField /> input should render with visible password 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <input
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -341,7 +389,7 @@ exports[`<TextField /> input should render with visible password 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="text"
       value="value"
@@ -366,6 +414,7 @@ exports[`<TextField /> input should render without ie placeholder when value is 
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -384,6 +433,11 @@ exports[`<TextField /> input should render without ie placeholder when value is 
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
+      <span
+        className="mfui-beta-text-field__placeholder-input"
+      >
+        placeholder
+      </span>
       <input
         className="mfui-beta-text-field__field"
         disabled={true}
@@ -394,7 +448,7 @@ exports[`<TextField /> input should render without ie placeholder when value is 
         onChange={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder="placeholder"
+        placeholder=""
         required={true}
         type="text"
         value="value"
@@ -414,6 +468,11 @@ exports[`<TextField /> input should render without no-touch class 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-input"
+    >
+      placeholder
+    </span>
     <input
       className="mfui-beta-text-field__field"
       disabled={true}
@@ -424,7 +483,7 @@ exports[`<TextField /> input should render without no-touch class 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       type="text"
     />
@@ -791,7 +850,6 @@ exports[`<TextField /> textarea should render with error because of max limit is
           "height": "96px",
         }
       }
-      value="123456"
     />
   </div>
   <div
@@ -807,7 +865,7 @@ exports[`<TextField /> textarea should render with error because of max limit is
       hasMargin={false}
       size="small"
     >
-      6/4
+      0/4
     </Paragraph>
   </div>
 </div>
@@ -818,6 +876,7 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -874,6 +933,11 @@ exports[`<TextField /> textarea should render with number value 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-textarea"
+    >
+      placeholder
+    </span>
     <textarea
       className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
       disabled={true}
@@ -885,7 +949,7 @@ exports[`<TextField /> textarea should render with number value 1`] = `
       onClick={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       style={
         Object {
@@ -908,6 +972,11 @@ exports[`<TextField /> textarea should render with string value 1`] = `
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
   >
+    <span
+      className="mfui-beta-text-field__placeholder-textarea"
+    >
+      placeholder
+    </span>
     <textarea
       className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
       disabled={true}
@@ -919,7 +988,7 @@ exports[`<TextField /> textarea should render with string value 1`] = `
       onClick={[Function]}
       onFocus={[Function]}
       onKeyUp={[MockFunction]}
-      placeholder="placeholder"
+      placeholder=""
       required={true}
       style={
         Object {
@@ -940,6 +1009,7 @@ exports[`<TextField /> textarea should render with value after updating number p
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -958,6 +1028,11 @@ exports[`<TextField /> textarea should render with value after updating number p
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
+      <span
+        className="mfui-beta-text-field__placeholder-textarea"
+      >
+        placeholder
+      </span>
       <textarea
         className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
         disabled={true}
@@ -969,14 +1044,14 @@ exports[`<TextField /> textarea should render with value after updating number p
         onClick={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder="placeholder"
+        placeholder=""
         required={true}
         style={
           Object {
             "height": "96px",
           }
         }
-        value={1234}
+        value={5678}
       />
     </div>
     <div
@@ -991,6 +1066,7 @@ exports[`<TextField /> textarea should render with value after updating string p
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -1009,6 +1085,11 @@ exports[`<TextField /> textarea should render with value after updating string p
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
+      <span
+        className="mfui-beta-text-field__placeholder-textarea"
+      >
+        placeholder
+      </span>
       <textarea
         className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
         disabled={true}
@@ -1020,14 +1101,14 @@ exports[`<TextField /> textarea should render with value after updating string p
         onClick={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder="placeholder"
+        placeholder=""
         required={true}
         style={
           Object {
             "height": "96px",
           }
         }
-        value="value"
+        value="newValue"
       />
     </div>
     <div
@@ -1042,6 +1123,7 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
   disabled={true}
   hideIcon={false}
   id="id"
+  isControlled={true}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -1060,6 +1142,11 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
+      <span
+        className="mfui-beta-text-field__placeholder-textarea"
+      >
+        placeholder
+      </span>
       <textarea
         className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
         disabled={true}
@@ -1071,7 +1158,7 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
         onClick={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder="placeholder"
+        placeholder=""
         required={true}
         style={
           Object {
