@@ -16,10 +16,13 @@
     &__swiper {
         position: relative;
 
+        display: flex;
+
         flex-grow: 1;
         flex-shrink: 1;
-        margin-top: -20px;
-        padding-top: 20px;
+        flex-wrap: wrap;
+        margin: -20px 0 -25px;
+        padding: 20px 0 25px;
         overflow: hidden;
 
         // to avoid clipping slide shadow
@@ -51,7 +54,6 @@
         z-index: 1;
 
         display: flex;
-        padding-bottom: @paginationIndent;
     }
 
     &__slide {
@@ -98,17 +100,15 @@
     }
 
     @{swiperPagination} {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        z-index: 2;
-
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 12px;
+        justify-self: center;
+        order: 2;
 
-        transform: translateX(-50%);
+        width: 100%;
+        padding-top: 40px;
+        border-radius: 12px;
     }
 
     @{swiperPagination}@{swiperPaginationLock} {
