@@ -32,16 +32,16 @@ export interface IMaskState {
     selection: IMaskSelection;
 }
 
-type ValueProps = | {
+type ValueProps = {
     /** Переводит компонент в контролируемое состояние */
-    isControlled?: false;
-    /** Внешнее значение для контролируемого компонента, для неконтролируемеого не определяется */
+    isControlled: false;
+    /** Внешнее значение для контролируемого компонента, для неконтролируемого не определяется */
     value?: never;
-    /** Первоначально заданное значение для неконтролируемого компонента, для контролируемеого не определяется  */
+    /** Первоначально заданное значение для неконтролируемого компонента, для контролируемого не определяется  */
     initialValue?: string | number;
 } | {
     isControlled?: true;
-    value?: string | number;
+    value: string | number;
     initialValue?: never;
 };
 
@@ -115,14 +115,14 @@ const TextField: React.FC<ITextFieldProps> = ({
     className,
     customIcon,
     disabled,
-    hideIcon,
+    hideIcon = false,
     id,
     label,
     mask,
     maskChar,
     maxLength,
     symbolCounter,
-    textarea,
+    textarea = false,
     name,
     placeholder,
     required,
@@ -133,8 +133,8 @@ const TextField: React.FC<ITextFieldProps> = ({
     onCustomIconClick,
     onFocus,
     onKeyUp,
-    theme,
-    type,
+    theme = 'default',
+    type = 'text',
     initialValue,
     value,
     verification,
@@ -157,15 +157,10 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
 
-    const renderPlaceholderForIe = (classes: string): React.ReactNode => (
-        <span className={cn(classes)}>{placeholder}</span>
-    );
-
-    const checkSymbolMaxLimit = useCallback(
-        (textareaValue: string | number = ''): void => {
-            if (!symbolCounter) {
-                return;
-            }
+    const checkSymbolMaxLimit = useCallback((textareaValue: string | number = ''): void => {
+        if (!symbolCounter) {
+            return;
+        }
 
             setIsMaxLimitExceeded(symbolCounter < String(textareaValue).length);
         },
@@ -173,8 +168,8 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
 
     useEffect(() => {
-        checkSymbolMaxLimit(value);
-    }, [value, checkSymbolMaxLimit]);
+        checkSymbolMaxLimit(value || initialValue);
+    }, [value, initialValue, checkSymbolMaxLimit]);
 
     const togglePasswordHiding = useCallback(
         () => setPasswordHidden(prevPassState => !prevPassState),
@@ -204,20 +199,18 @@ const TextField: React.FC<ITextFieldProps> = ({
         setIsTextareaResized(textAreaHeight < initialTextareaHeight);
     };
 
-    const handleIconClick = useCallback(
-        e => {
-            const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === Verification.ERROR;
-            const { current: field } = fieldNode;
+    const handleIconClick = useCallback(e => {
+        const { ERROR } = Verification;
+        const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === ERROR;
+        const { current: field } = fieldNode;
 
-            isPasswordType && togglePasswordHiding();
-            onCustomIconClick && onCustomIconClick(e);
-            if (!isControlled && isClearFuncAvailable) {
-                setInputValue('');
-                field && field.focus();
-            }
-        },
-        [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue],
-    );
+        isPasswordType && togglePasswordHiding();
+        onCustomIconClick && onCustomIconClick(e);
+        if (!isControlled && isClearFuncAvailable) {
+            setInputValue('');
+            field && field.focus();
+        }
+    }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
 
     const handleFocus = useCallback(
         (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -316,40 +309,26 @@ const TextField: React.FC<ITextFieldProps> = ({
         return renderInput();
     };
 
-    const renderInput = (): React.ReactNode => {
-        if (!inputValue && inputParams.placeholder) {
-            inputParams.placeholder = '';
-        }
+    const renderInput = (): React.ReactNode => (
+        <>
+            {mask
+                ? <InputMask {...inputParams}  {...inputMaskParams} inputRef={getFieldNode} />
+                : <input {...inputParams} ref={getFieldNode} />
+            }
+            {!hideIcon && renderIconBlock()}
+        </>
+    );
 
-        return (
-            <>
-                {!inputValue && placeholder && renderPlaceholderForIe('placeholder-input')}
-                {mask
-                    ? <InputMask {...inputParams}  {...inputMaskParams} inputRef={getFieldNode} />
-                    : <input {...inputParams} ref={getFieldNode} />
-                }
-                {!hideIcon && renderIconBlock()}
-            </>
-        );
-    };
-
-    const renderTextarea = (): React.ReactNode => {
-        if (!inputValue && textareaParams.placeholder) {
-            textareaParams.placeholder = '';
-        }
-
-        return (
-            <>
-                {!inputValue && placeholder && renderPlaceholderForIe('placeholder-textarea')}
-                <textarea
-                    {...textareaParams}
-                    onClick={handleTextareaClick}
-                    style={{ height: `${initialTextareaHeight}px` }}
-                    ref={getFieldNode}
-                />
-            </>
-        );
-    };
+    const renderTextarea = (): React.ReactNode => (
+        <>
+            <textarea
+                {...textareaParams}
+                onClick={handleTextareaClick}
+                style={{ height: `${initialTextareaHeight}px` }}
+                ref={getFieldNode}
+            />
+        </>
+    );
 
     const getIcon = (): React.ReactNode | null => {
         switch (true) {
@@ -433,42 +412,32 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
 };
 
-TextField.defaultProps = {
-    textarea: false,
-    theme: 'default',
-    type: 'text',
-    hideIcon: false,
-    isControlled: true,
-};
-
 const MyPropTypes = {
     isControlled(props: any, propName: string, componentName: string) {
-      if (typeof props[propName] !== 'boolean') {
-        return new Error(
-          `The component ${componentName} need the prop ${propName} to be a boolean, but you passed a ${typeof props[
-            propName
-          ]}.`
-        );
-      }
+        if (typeof props[propName] !== 'boolean') {
+            return new Error(
+                `The component ${componentName} need the prop ${propName} to be a boolean,
+                    but you passed a ${typeof props[propName]}.`
+            );
+        }
 
-      return null;
+        return null;
     },
     initialValue(props: any, propName: string, componentName: string) {
-        const { isControlled = true,  initialValue } = props;
+        const { isControlled = true, initialValue } = props;
 
         const initialValuePropType = typeof props[propName];
 
         if (initialValuePropType !== 'string' && initialValuePropType !== 'number' && initialValuePropType !== 'undefined') {
             return new Error(
-              `The component ${componentName} need the prop ${propName} to be a string or number, but you passed a ${typeof props[
-                propName
-              ]}.`
+                `The component ${componentName} need the prop ${propName} to be a string or number,
+                    but you passed a ${typeof props[propName]}.`
             );
-          }
+        }
 
         if (isControlled && initialValue !== undefined) {
             return new Error(
-                `The component ${componentName} need the prop 'value' if isControlled, pass 'initialValue' prop for uncontrolled component`
+                `The prop ${propName} pass only for uncontrolled component, pass 'value' or set isControlled={false}`
             );
         }
 
@@ -480,23 +449,22 @@ const MyPropTypes = {
 
         const valuePropType = typeof props[propName];
 
-        if (valuePropType !== 'string' && valuePropType !== 'number' && valuePropType !== 'undefined') {
+        if (valuePropType !== 'string' && valuePropType !== 'number' && isControlled) {
             return new Error(
-              `The component ${componentName} need the prop ${propName} to be a string or number, but you passed a ${typeof props[
-                propName
-              ]}.`
+                `The controlled component ${componentName} need the required prop ${propName} to be a string or number,
+                    but you passed a ${typeof props[propName]}.`
             );
-          }
+        }
 
         if (!isControlled && value !== undefined) {
             return new Error(
-                `The component ${componentName} need the prop 'initialValue' if uncontrolled, pass 'value' or set isControlled={false}`
+                `The prop 'value' pass only for controlled component, pass 'initialValue' or set isControlled={true} (value by default)`
             );
         }
 
         return null;
     },
-  };
+};
 
 TextField.propTypes = {
     textarea: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(Object.values(TextareaTypes))]),

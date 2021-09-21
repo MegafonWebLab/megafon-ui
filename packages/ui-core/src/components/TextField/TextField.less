@@ -43,30 +43,6 @@
         overflow: auto;
     }
 
-    &__placeholder-input,
-    &__placeholder-textarea {
-        position: absolute;
-        left: 0;
-        z-index: 0;
-
-        padding-left: 20px;
-
-        color: lighten(@freshAsphalt, 25%);
-        font-weight: 400;
-
-        user-select: none;
-    }
-
-    &__placeholder-input {
-        top: 50%;
-
-        transform: translateY(-50%);
-    }
-
-    &__placeholder-textarea {
-        top: 13px;
-    }
-
     input::-webkit-input-placeholder {
         color: lighten(@freshAsphalt, 50%);
     }
@@ -265,8 +241,7 @@
 
     //mod password
 
-    &_password &__field,
-    &_password &__placeholder {
+    &_password &__field {
         font: small-caption;
         font-size: 19px;
     }

@@ -64,7 +64,7 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
 ## Подпись снизу
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField noticeText="Comment" />
+    <TextField noticeText="Comment" isControlled={false}/>
 </Playground>
 
 ## Валидация
@@ -76,7 +76,7 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
         noticeText="Name is required"
         isControlled={false}
     />
-    <TextField verification="valid" noticeText="You can write that field value is correct" />
+    <TextField verification="valid" noticeText="You can write that field value is correct" isControlled={false}/>
 </Playground>
 
 ## Иконка и обработчик
@@ -86,10 +86,12 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
         noticeText="Error notice"
         customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
         onCustomIconClick={ () => alert('Custom click handler') }
+        isControlled={false}
     />
     <TextField
         customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
         onCustomIconClick={ () => alert('Custom click handler') }
+        isControlled={false}
     />
 </Playground>
 
@@ -102,7 +104,7 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
 ## Недоступное взаимодействие с компонентом
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField disabled={true} />
+    <TextField disabled={true} isControlled={false}/>
 </Playground>
 
 ## Внешнее состояние
@@ -201,8 +203,8 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
 При превышении переданного количества поле становится невалидным.
 
 <Playground style={wrapperWideWidthStyle}>
-    <TextField symbolCounter={10} textarea value="Иванов Ива" isControlled={false}/>
-    <TextField symbolCounter={10} textarea value="Иванов Иван Иванович" isControlled={false}/>
+    <TextField symbolCounter={10} textarea initialValue="Иванов Ива" isControlled={false}/>
+    <TextField symbolCounter={10} textarea initialValue="Иванов Иван Иванович" isControlled={false}/>
 </Playground>
 
 ## Запрещенное взаимодействие
@@ -211,5 +213,6 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
     <TextField
         disabled
         textarea
+        value='disabled'
     />
 </Playground>
