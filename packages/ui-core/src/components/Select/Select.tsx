@@ -1,9 +1,9 @@
+import * as React from 'react';
+import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import './Select.less';
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import InputLabel from 'components/InputLabel/InputLabel';
+import './Select.less';
 
 export const Verification = {
     VALID: 'valid',

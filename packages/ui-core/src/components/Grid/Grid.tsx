@@ -1,8 +1,8 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './Grid.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import { IGridColumn } from './GridColumn';
+import './Grid.less';
 
 export interface IGridProps {
     /** Выравнивание всех колонок по горизонтали */

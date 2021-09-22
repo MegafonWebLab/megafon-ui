@@ -1,14 +1,14 @@
-import { cnCreate, detectTouch } from '@megafon/ui-helpers';
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import './TextField.less';
-import InputLabel from '../InputLabel/InputLabel';
-import Paragraph from '../Paragraph/Paragraph';
-import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
-import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
+import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
+import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
+import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
+import * as PropTypes from 'prop-types';
+import InputLabel from '../InputLabel/InputLabel';
+import Paragraph from '../Paragraph/Paragraph';
+import './TextField.less';
 
 const InputMask = require('react-input-mask');
 

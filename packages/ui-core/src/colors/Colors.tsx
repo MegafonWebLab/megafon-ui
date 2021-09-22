@@ -1,8 +1,8 @@
 import * as React from 'react';
-import './Colors.less';
+import { cnCreate } from '@megafon/ui-helpers';
 import Header from 'components/Header/Header';
 import Paragraph from 'components/Paragraph/Paragraph';
-import { cnCreate } from '@megafon/ui-helpers';
+import './Colors.less';
 import colors from './colorsData';
 
 const cn = cnCreate('colors');

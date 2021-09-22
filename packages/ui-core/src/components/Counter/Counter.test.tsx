@@ -1,5 +1,5 @@
-import { shallow, mount } from 'enzyme';
 import * as React from 'react';
+import { shallow, mount } from 'enzyme';
 import Counter, { ICounterProps } from './Counter';
 
 const props: ICounterProps = {

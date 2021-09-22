@@ -3373,10 +3373,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.0.tgz#896eace2b34238320521c0a92180c349942cd8f6"
   integrity sha512-zzGMtKnc28voDQ4LZFczZzwkm5VwwF7ZbC5iePaWFaF+kD+ekPVdronJEOMFK9SUEKUbmc31Bz81rtS6264z4w==
 
-"@megafon/frontend-presets@^3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@megafon/frontend-presets/-/frontend-presets-3.3.0.tgz#7f66b7955794a1fdc564679dc0b9af7eb29f08dd"
-  integrity sha512-jqlxQwvzsXR/BXB692V5gtHxoQXhS7dd8+cnLp2bPh44j3a8qeFPppLAvc87vop/yuNNbAraIDwWPMvCUySkfQ==
+"@megafon/frontend-presets@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@megafon/frontend-presets/-/frontend-presets-3.4.0.tgz#d42e2bce0ac47299f956780ffc4f6e4ada549f5f"
+  integrity sha512-JUyEqLGl5ka286Dc/IL2mqn5zSUYq/cnCj61vcHneqWBCBSfw+ZmAgIRuVMq4K1ePxgF3RVjpUq/b35UDOd1fw==
 
 "@mikaelkristiansson/domready@^1.0.10":
   version "1.0.10"

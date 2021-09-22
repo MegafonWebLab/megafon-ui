@@ -1,7 +1,7 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './Header.less';
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import './Header.less';
 
 interface IHeaderProps extends IFilterDataAttrs {
     /** Тег */

@@ -1,6 +1,4 @@
 import React, { ReactNode, useState, useEffect, useMemo } from 'react';
-import PropTypes from 'prop-types';
-import './Calendar.less';
 import { FocusedInput, START_DATE, END_DATE, useDatepicker, useMonth } from '@datepicker-react/hooks';
 import { cnCreate } from '@megafon/ui-helpers';
 import differenceInDays from 'date-fns/differenceInDays';
@@ -10,8 +8,10 @@ import isBefore from 'date-fns/isBefore';
 import isEqual from 'date-fns/isEqual';
 import isSameMonth from 'date-fns/isSameMonth';
 import ruLocale from 'date-fns/locale/ru';
+import PropTypes from 'prop-types';
 import Day, { DayType, IDayPickerProps } from 'components/Calendar/components/Day/Day';
 import Month, { IMonthPickerProps } from 'components/Calendar/components/Month/Month';
+import './Calendar.less';
 
 const formatDate = (date: Date, pattern: string, locale = ruLocale) => format(date, pattern, { locale });
 

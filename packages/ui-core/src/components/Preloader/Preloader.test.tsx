@@ -1,5 +1,5 @@
-import { mount, ReactWrapper } from 'enzyme';
 import * as React from 'react';
+import { mount, ReactWrapper } from 'enzyme';
 import { act } from 'react-dom/test-utils';
 import Preloader from './Preloader';
 

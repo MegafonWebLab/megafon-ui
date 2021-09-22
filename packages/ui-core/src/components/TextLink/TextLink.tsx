@@ -1,8 +1,8 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import './TextLink.less';
 import Link, { ILinkProps } from '../Link/Link';
-import { cnCreate } from '@megafon/ui-helpers';
 
 export interface ITextLinkProps extends ILinkProps {
     /** Цвет */

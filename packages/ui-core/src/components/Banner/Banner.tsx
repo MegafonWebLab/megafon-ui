@@ -1,10 +1,10 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './Banner.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
+import './Banner.less';
 import BannerDot from './BannerDot';
 
 SwiperCore.use([Autoplay]);

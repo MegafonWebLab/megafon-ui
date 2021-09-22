@@ -1,8 +1,8 @@
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './Checkbox.less';
+import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import CheckedIcon from '@megafon/ui-icons/system-16-checked_16.svg';
+import * as PropTypes from 'prop-types';
+import './Checkbox.less';
 
 export interface ICheckboxProps extends IFilterDataAttrs {
     /** Цвет чекбокса */

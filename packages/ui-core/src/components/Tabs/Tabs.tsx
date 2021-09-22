@@ -1,9 +1,9 @@
+import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow_left_16.svg';
 import ArrowRight from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 import throttle from 'lodash.throttle';
 import PropTypes from 'prop-types';
-import * as React from 'react';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Tabs.less';

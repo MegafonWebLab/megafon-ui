@@ -1,6 +1,4 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
-import './Notification.less';
 import { cnCreate } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
 import RightArrow from '@megafon/ui-icons/system-16-arrow_right_16.svg';
@@ -8,9 +6,11 @@ import WarningIcon from '@megafon/ui-icons/system-24-attention_invert_24.svg';
 import SuccessIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import InfoIcon from '@megafon/ui-icons/system-24-info_invert_24.svg';
 import CancelIcon from '@megafon/ui-icons/system-32-cancel_32.svg';
+import * as PropTypes from 'prop-types';
 import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';
 import Tile from 'components/Tile/Tile';
+import './Notification.less';
 
 export const NotificationTypes = {
     SUCCESS: 'success',

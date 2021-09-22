@@ -1,14 +1,14 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './Carousel.less';
 import { breakpoints, cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import throttle from 'lodash.throttle';
+import * as PropTypes from 'prop-types';
 import SwiperCore, { Autoplay, Pagination, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { PaginationOptions } from 'swiper/types/components/pagination';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import throttleTime from 'constants/throttleTime';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
-import throttle from 'lodash.throttle';
+import './Carousel.less';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
 

@@ -1,9 +1,9 @@
+import * as React from 'react';
+import { useCallback, useState, useRef, useEffect } from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import SearchIcon from '@megafon/ui-icons/basic-24-search_24.svg';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import { useCallback, useState, useRef, useEffect } from 'react';
 import './Search.less';
 
 type HandleSearchSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;

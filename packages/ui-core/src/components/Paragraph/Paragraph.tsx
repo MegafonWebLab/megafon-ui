@@ -1,7 +1,7 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './Paragraph.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import './Paragraph.less';
 
 export interface IParagraphProps {
     /** Выравнивание по горизонтали */

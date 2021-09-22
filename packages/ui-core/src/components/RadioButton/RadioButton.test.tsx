@@ -1,5 +1,5 @@
-import { shallow, mount } from 'enzyme';
 import * as React from 'react';
+import { shallow, mount } from 'enzyme';
 import RadioButton, { IRadioButtonProps } from './RadioButton';
 
 const props: IRadioButtonProps = {

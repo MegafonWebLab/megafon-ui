@@ -1,7 +1,7 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './RadioButton.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import './RadioButton.less';
 
 export interface IRadioButtonProps {
     /** Значение */

@@ -10,7 +10,6 @@
     "@typescript-eslint/no-var-requires": "off",
     "consistent-return": "off",
     "import/no-unresolved": "off",
-    "import/order": "off",
     "jsx-a11y/anchor-has-content": "off",
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/label-has-associated-control": "off",

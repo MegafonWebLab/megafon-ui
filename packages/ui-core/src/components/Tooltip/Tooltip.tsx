@@ -1,6 +1,6 @@
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { usePopper } from 'react-popper';
 import Tile from 'components/Tile/Tile';
 import './Tooltip.less';

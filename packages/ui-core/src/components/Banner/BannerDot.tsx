@@ -1,7 +1,7 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './BannerDot.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import './BannerDot.less';
 
 export interface IBannerDotProps {
     className?: string;

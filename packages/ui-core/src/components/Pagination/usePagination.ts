@@ -1,5 +1,5 @@
-import throttle from 'lodash.throttle';
 import React from 'react';
+import throttle from 'lodash.throttle';
 import throttleTime from 'constants/throttleTime';
 import getRange from './helpers';
 

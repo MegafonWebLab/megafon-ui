@@ -1,6 +1,6 @@
+import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import { shallow, mount } from 'enzyme';
-import * as React from 'react';
 import Banner, { IBannerProps, NavTheme } from './Banner';
 import { DemoSlide } from './doc/Banner.docz';
 

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
-import './Counter.less';
 import IconMinus from '@megafon/ui-icons/system-16-minus_16.svg';
 import IconPlus from '@megafon/ui-icons/system-16-plus_16.svg';
+import * as PropTypes from 'prop-types';
+import './Counter.less';
 
 export interface ICounterProps {
     /** Начальное значение */

@@ -1,7 +1,7 @@
+import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import { shallow } from 'enzyme';
-import * as React from 'react';
 import Tab from './Tab';
 import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
 

@@ -1,6 +1,6 @@
+import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
-import React from 'react';
 import './Pagination.less';
 import PaginationButtons from './components/PaginationButtons/PaginationButtons';
 import PaginationNavigation from './components/PaginationNavigation/PaginationNavigation';

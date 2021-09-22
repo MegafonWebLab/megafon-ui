@@ -1,6 +1,6 @@
+import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import { shallow, mount } from 'enzyme';
-import * as React from 'react';
 import Carousel, { ICarouselProps, NavTheme, EffectTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
 

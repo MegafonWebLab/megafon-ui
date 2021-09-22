@@ -1,10 +1,10 @@
+import React from 'react';
+import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
 import { cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow-list_left_16.svg';
 import ArrowRight from '@megafon/ui-icons/system-16-arrow-list_right_16.svg';
-import PropTypes from 'prop-types';
-import React from 'react';
 import './Month.less';
-import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
+import PropTypes from 'prop-types';
 
 export interface IMonthPickerProps {
     firstDayOfWeek: FirstDayOfWeek;

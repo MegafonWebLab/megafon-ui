@@ -1,7 +1,7 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './GridColumn.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import './GridColumn.less';
 
 const GridSizeValues = PropTypes.oneOf<TGridSizeValues>([
     '1',

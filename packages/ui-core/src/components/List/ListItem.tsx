@@ -1,7 +1,7 @@
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import './ListItem.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import './ListItem.less';
 
 export interface IListItemProps {
     /** Дополнительный класс корневого элемента */

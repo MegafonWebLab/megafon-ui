@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDay } from '@datepicker-react/hooks';
 import { cnCreate } from '@megafon/ui-helpers';
-import './Day.less';
 import isFirstDayOfMonth from 'date-fns/isFirstDayOfMonth';
 import isLastDayOfMonth from 'date-fns/isLastDayOfMonth';
 import isMonday from 'date-fns/isMonday';
 import isSunday from 'date-fns/isSunday';
+import PropTypes from 'prop-types';
+import './Day.less';
 
 export interface IDayPickerProps {
     isDateSelected: (date: Date) => boolean;

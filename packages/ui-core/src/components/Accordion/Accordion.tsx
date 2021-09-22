@@ -1,11 +1,11 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './Accordion.less';
 import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import ArrowDown from '@megafon/ui-icons/system-24-arrow_down_24.svg';
 import ArrowUp from '@megafon/ui-icons/system-24-arrow_up_24.svg';
+import * as PropTypes from 'prop-types';
 import Collapse from 'components/Collapse/Collapse';
 import Header from 'components/Header/Header';
+import './Accordion.less';
 
 export interface IAccordionProps extends IFilterDataAttrs {
     /** Ссылка на корневой элемент */
