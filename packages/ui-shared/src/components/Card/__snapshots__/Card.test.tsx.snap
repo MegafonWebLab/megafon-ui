@@ -28,12 +28,11 @@ exports[`Card button is not rendered if a card has the href property set 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -70,12 +69,11 @@ exports[`Card disable left align if there is a button and link 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -124,12 +122,11 @@ exports[`Card left align of the interactive element 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper mfui-beta-card__btns-wrapper_left-align"
     >
@@ -175,12 +172,11 @@ exports[`Card render component with icon 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -229,12 +225,11 @@ exports[`Card render component with img, if image source and svg source are spec
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -284,12 +279,11 @@ exports[`Card render component with optional props 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -361,12 +355,11 @@ exports[`Card render with a single interactive button element 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -409,12 +402,11 @@ exports[`Card render with a single interactive link element 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -448,12 +440,11 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -504,12 +495,11 @@ exports[`Card render with contain object fit 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -540,12 +530,11 @@ exports[`Card render with fullHeight 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
   </div>
 </div>
 `;
@@ -579,12 +568,11 @@ exports[`Card render with link on the card 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >
@@ -613,12 +601,11 @@ exports[`Card render without img and svg 1`] = `
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
-    <Paragraph
+    <div
       className="mfui-beta-card__text"
-      hasMargin={false}
     >
       Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
-    </Paragraph>
+    </div>
     <div
       className="mfui-beta-card__btns-wrapper"
     >

@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-core",
-  "version": "2.0.0-beta.156",
+  "version": "2.0.0-beta.157",
   "files": [
     "dist",
     "styles"
@@ -46,7 +46,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@svgr/cli": "^2.4.1",
+    "@megafon/ui-icons": "^0.0.2-beta.2",
     "@svgr/core": "^2.4.1",
     "@testing-library/react-hooks": "^7.0.1",
     "@types/enzyme": "^3.10.5",
@@ -80,11 +80,9 @@
     "@babel/runtime": "^7.8.4",
     "@datepicker-react/hooks": "^2.7.0",
     "@megafon/ui-helpers": "^1.0.0-beta.0",
-    "@megafon/ui-icons": "^0.0.2-beta.1",
     "@popperjs/core": "^2.5.3",
     "core-js": "^3.6.4",
     "date-fns": "^2.16.1",
-    "deep-equal": "^1.1.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.7.2",

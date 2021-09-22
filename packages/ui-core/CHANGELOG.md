@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.157](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.156...@megafon/ui-core@2.0.0-beta.157) (2021-09-20)
+
+
+### Bug Fixes
+
+* **carousel:** fix indent without pagination ([83ce8f8](https://github.com/MegafonWebLab/megafon-ui/commit/83ce8f8492892a35d5f164c8d937bdfea9af9f71))
+* **carousel:** fixed loosing Tooltip position ([bde41dd](https://github.com/MegafonWebLab/megafon-ui/commit/bde41dd306f02de0b0514e77084afac88ee50045))
+* add frontend-presets for ui-core package and fix stylelint errors ([752bce5](https://github.com/MegafonWebLab/megafon-ui/commit/752bce59cfd31494e85c11faa4795ca7ee89adcc))
+
+
+### BREAKING CHANGES
+
+* **carousel:** add negative bottom margin for container
+
+
+
+
+
 # [2.0.0-beta.156](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.155...@megafon/ui-core@2.0.0-beta.156) (2021-09-14)
 
 

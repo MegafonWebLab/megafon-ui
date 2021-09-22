@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import './Card.less';
-import { Header, Paragraph, Button, TextLink, Link} from '@megafon/ui-core';
+import { Header, Button, TextLink, Link} from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 
@@ -51,9 +51,9 @@ export interface ICard {
     /** Иконка в карточке */
     svgSrc?: React.ReactNode;
     /** Заголовок карточки */
-    title: string;
+    title: string | React.ReactNode[] | React.ReactNode;
     /** Текст карточки */
-    text?: string;
+    text?: string | React.ReactNode[] | React.ReactNode;
     /** Данные для кнопки */
     button?: IButton;
     /** Данные для ссылки */
@@ -193,7 +193,7 @@ const Card: React.FC<ICard> = ({
                 <>
                     {renderImage()}
                     <Header as="h3" className={cn('title')}>{title}</Header>
-                    {!!text && <Paragraph hasMargin={false} className={cn('text')}>{text}</Paragraph>}
+                    {!!text && <div className={cn('text')}>{text}</div>}
                     {renderBtnsWrapper()}
                 </>
             </Element>
@@ -216,8 +216,8 @@ Card.propTypes = {
     ]),
     imageSrc: PropTypes.string,
     svgSrc: PropTypes.node,
-    title: PropTypes.string.isRequired,
-    text: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     button: PropTypes.shape({
         title: PropTypes.string.isRequired,
         href: PropTypes.string.isRequired,

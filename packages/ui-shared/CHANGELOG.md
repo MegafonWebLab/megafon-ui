@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.226](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.225...@megafon/ui-shared@2.0.0-beta.226) (2021-09-20)
+
+
+### Bug Fixes
+
+* add frontend-presets for ui-core package and fix stylelint errors ([752bce5](https://github.com/MegafonWebLab/megafon-ui/commit/752bce59cfd31494e85c11faa4795ca7ee89adcc))
+
+
+### Features
+
+* **card:** extend type of title and text props ([e275054](https://github.com/MegafonWebLab/megafon-ui/commit/e275054d304ee8870186b21e2e871a94a0e59ca2))
+* **textboxpictures:** add TextBoxPicture component, should be used only in TexBox component ([a88265f](https://github.com/MegafonWebLab/megafon-ui/commit/a88265f5938f8a27fe51b7cb39fa14ef2e4bdb7f))
+
+
+
+
+
 # [2.0.0-beta.225](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.224...@megafon/ui-shared@2.0.0-beta.225) (2021-09-14)
 
 **Note:** Version bump only for package @megafon/ui-shared

@@ -1,6 +1,8 @@
 import { Playground } from 'docz';
-import { Content } from './TextBox.docz.tsx';
+import { Content, ContentForExampleWithPicture } from './TextBox.docz.tsx';
 import TextBox from '../TextBox';
+import TextBoxPicture from '../TextBoxPicture';
+import Image from './i/img.png';
 
 ```javascript collapse=Content
 
@@ -17,6 +19,7 @@ import TextBox from '../TextBox';
     В рамках системы Личный кабинет (Сервис-Гид) (WEB) Вам доступны следующие возможности:
 </Header>
 <Header as="h5" margin>Путешествуй без забот</Header>
+<TextBoxPicture url={Image} />
 <Paragraph>
     Бесплатные входящие вызовы и безлимитные звонки на номера московского МегаФона,
     минуты и SMS по России.
@@ -30,6 +33,17 @@ import TextBox from '../TextBox';
 </List>
 <Paragraph size="small">
     Доступно для: WhatsApp, Viber, eMotion, Facebook Messenger, Telegram, ТамТам
+</Paragraph>
+
+```
+
+```javascript collapse=ContentForExampleWithPicture
+
+<Paragraph>
+    Услуга SMS (Short Message Service) позволяет обмениваться с телефона небольшими
+    текстовыми сообщениями. Вы можете отправить SMS-сообщение даже на городской
+    телефон. Услуга «Голосовое SMS» превратит обычное текстовое сообщение в
+    голосовое и зачитает его адресату.
 </Paragraph>
 
 ```
@@ -79,5 +93,35 @@ import TextBox from '../TextBox';
 <Playground>
     <TextBox isFullWidth={false} centeringWithLimitedWidth={true} textCenter={true}>
         <Content />
+    </TextBox>
+</Playground>
+
+## Использование с картинкой, с увеличенными вертикальными отступами
+
+<Playground>
+    <TextBox>
+        <ContentForExampleWithPicture />
+        <TextBoxPicture url={Image} margin='big_vertical_margin' />
+        <ContentForExampleWithPicture />
+    </TextBox>
+</Playground>
+
+## Использование с картинкой, с увеличенным нижним отступом
+
+<Playground>
+    <TextBox>
+        <ContentForExampleWithPicture />
+        <TextBoxPicture url={Image} margin='big_bottom_margin' />
+        <ContentForExampleWithPicture />
+    </TextBox>
+</Playground>
+
+## Использование с картинкой, с увеличенным верхним отступом
+
+<Playground>
+    <TextBox>
+        <ContentForExampleWithPicture />
+        <TextBoxPicture url={Image} margin='big_top_margin' />
+        <ContentForExampleWithPicture />
     </TextBox>
 </Playground>
