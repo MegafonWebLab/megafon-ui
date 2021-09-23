@@ -3,22 +3,49 @@
 @b: e('.mfui-beta-table');
 
 @{b} {
+    display: flex;
+
     @firstColumnWidth: 144px;
     @gradientSize: 48px;
     @shadowSize: 6px;
     @transparent: rgba(255, 255, 255, 0);
-
     .fontFamily();
     .commonFont();
-    display: flex;
+
+    &:not(&_touch) {
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: @spbSky1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+
+            background-color: @spbSky2;
+        }
+
+        ::-webkit-scrollbar-corner {
+            background-color: @clearWhite;
+        }
+
+        @{b}__scroll {
+            scrollbar-color: @spbSky2 @spbSky1;
+            scrollbar-width: thin;
+        }
+    }
 
     &__scroll {
+        position: relative;
+
         display: grid;
         grid-template-columns: auto auto auto;
         max-width: 100%;
-        overflow: auto;
-        position: relative;
         border: 1px solid @spbSky2;
+        overflow: auto;
 
         @media @desktop {
             max-height: 500px;
@@ -28,74 +55,85 @@
     &__top-shadow {
         position: sticky;
         top: 0;
-        width: 100%;
-        display: block;
-        grid-column-end: 4;
-        grid-column-start: 1;
         z-index: 2;
-        margin-bottom: -@shadowSize;
+
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        width: 100%;
         height: @shadowSize;
+        margin-bottom: -@shadowSize;
+
         background: linear-gradient(359.94deg, rgba(0, 0, 0, 0.0001) 0.06%, rgba(0, 0, 0, 0.03) 38.08%, rgba(0, 0, 0, 0.08) 74.98%);
     }
 
     &__left-shadow {
         position: sticky;
-        z-index: 2;
-        width: @shadowSize;
-        left: 0;
         top: 0;
         bottom: 0;
+        left: 0;
+        z-index: 2;
+
+        width: @shadowSize;
         margin-right: -@shadowSize;
+
         background: linear-gradient(270deg, rgba(0, 0, 0, 0.0001) 16.3%, rgba(0, 0, 0, 0.03) 51.81%, rgba(0, 0, 0, 0.08) 86.27%);
     }
 
     &__bottom-gradient {
-        display: block;
-        height: @gradientSize;
-        width: 100%;
-        margin-top: -@gradientSize;
         position: sticky;
-        z-index: 1;
         bottom: 0;
-        background: linear-gradient(to top, @clearWhite 25%, @transparent);
-        grid-column-end: 4;
+        z-index: 1;
+
+        display: block;
         grid-column-start: 1;
+        grid-column-end: 4;
+        width: 100%;
+        height: @gradientSize;
+        margin-top: -@gradientSize;
+
+        background: linear-gradient(to top, @clearWhite 25%, @transparent);
     }
 
     &__right-gradient {
-        display: block;
-        height: 100%;
-        width: @gradientSize;
         position: sticky;
-        z-index: 1;
         right: 0;
+        z-index: 1;
+
+        display: block;
+        width: @gradientSize;
+        height: 100%;
         margin-left: -@gradientSize;
+
         background: linear-gradient(to left, @clearWhite 25%, @transparent);
     }
 
     &__table {
-        border-spacing: 0;
         border-width: 0;
         border-collapse: separate;
+        border-spacing: 0;
+
         background-color: @clearWhite;
     }
 
     &__cell {
-        padding: 24px;
         box-sizing: border-box;
+        padding: 24px;
+
         background-color: @clearWhite;
 
         @media @mobileSM {
-            padding-left: 16px;
             padding-right: 16px;
+            padding-left: 16px;
         }
     }
 
     &__cell:first-child {
-        left: 0;
-        min-width: @firstColumnWidth;
-        width: @firstColumnWidth;
         position: relative;
+        left: 0;
+
+        width: @firstColumnWidth;
+        min-width: @firstColumnWidth;
         border-right: 1px solid @spbSky2;
     }
 
@@ -105,11 +143,14 @@
 
     &__row_head &__cell {
         .small();
+
         height: 72px;
-        background-color: @spbSky0;
-        color: fade(@freshAsphalt, 50%);
         padding-bottom: 12px;
+
+        color: fade(@freshAsphalt, 50%);
         vertical-align: bottom;
+
+        background-color: @spbSky0;
     }
 
     &__row:not(:last-child) &__cell {
@@ -141,31 +182,6 @@
 
         @{b}__bottom-gradient {
             z-index: 3;
-        }
-    }
-
-    &:not(&_touch) {
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background-color: @spbSky1;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            border-radius: 4px;
-            background-color: @spbSky2;
-        }
-
-        ::-webkit-scrollbar-corner {
-            background-color: @clearWhite;
-        }
-
-        @{b}__scroll {
-            scrollbar-color: @spbSky2 @spbSky1;
-            scrollbar-width: thin;
         }
     }
 }

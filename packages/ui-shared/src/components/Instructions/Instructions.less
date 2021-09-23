@@ -5,13 +5,13 @@
 
 @{b} {
     &__title_resolution_mobile {
-        text-align: center;
         margin-bottom: 32px;
+
+        text-align: center;
 
         @media @mobileB {
             margin-bottom: 56px;
         }
-
         @media @desktop {
             display: none;
         }
@@ -51,14 +51,12 @@
         @media @mobile {
             margin: 0 auto 32px;
         }
-
         @media @mobileB {
             margin: 0 auto 48px;
         }
-
         @media @desktop {
-            width: 50%;
             order: 2;
+            width: 50%;
         }
     }
 
@@ -78,11 +76,13 @@
     &__swiper-img {
         width: 100%;
         height: 100%;
+
         filter: brightness(108.5%);
     }
 
     &__img-wrapper {
         position: relative;
+
         display: flex;
         height: 490px;
 
@@ -90,15 +90,17 @@
             @media @mobile {
                 content: '';
                 position: absolute;
-                display: block;
+                right: 0;
                 bottom: 0;
                 left: 0;
-                right: 0;
+                z-index: 2;
+
+                display: block;
                 width: 324px;
                 height: 1px;
                 margin: 0 auto;
+
                 background: @spbSky2;
-                z-index: 2;
             }
         }
     }
@@ -125,8 +127,9 @@
         @{b}__swiper {
             position: absolute;
             top: 59px;
-            left: 0;
             right: 0;
+            left: 0;
+
             width: 204px;
             height: 363px;
             margin: auto;
@@ -175,25 +178,28 @@
 
         @{b}__device-screen {
             position: relative;
+            z-index: 2;
+
             width: 100%;
             height: 490px;
             margin: auto;
+
             background: url('./img/newIphone.png') 50% no-repeat;
             background-size: contain;
-            z-index: 2;
         }
 
         @{b}__swiper {
             position: absolute;
             top: 14px;
-            left: 0;
             right: 0;
+            left: 0;
+            z-index: 1;
+
             width: 214px;
             height: 462px;
             margin: auto;
-            overflow: hidden;
             border-radius: 20px;
-            z-index: 1;
+            overflow: hidden;
         }
     }
 
@@ -206,25 +212,28 @@
 
         @{b}__device-screen {
             position: relative;
+            z-index: 2;
+
             width: 100%;
             height: 490px;
             margin: auto;
+
             background: url('./img/iphone12.png') 50% no-repeat;
             background-size: contain;
-            z-index: 2;
         }
 
         @{b}__swiper {
             position: absolute;
             top: 14px;
-            left: 0;
             right: 0;
+            left: 0;
+            z-index: 1;
+
             width: 214px;
             height: 462px;
             margin: auto;
-            overflow: hidden;
             border-radius: 20px;
-            z-index: 1;
+            overflow: hidden;
         }
     }
 
@@ -233,11 +242,9 @@
             @media @mobileB {
                 height: 283px;
             }
-
             @media @mobileM {
                 height: 208px;
             }
-
             @media @mobileS {
                 height: 115px;
             }
@@ -247,11 +254,9 @@
             @media @mobileS {
                 width: 310px;
             }
-
             @media @mobileM {
                 width: 460px;
             }
-
             @media @mobileB {
                 width: 590px;
             }
@@ -259,24 +264,23 @@
 
         @{b}__device-screen {
             position: relative;
+
             width: 100%;
             height: 100%;
             margin: auto;
+
             background: url('./img/laptop.png') 50% 0% no-repeat;
             background-size: 100%;
 
             @media @mobileB {
                 width: 530px;
             }
-
             @media @mobileM {
                 width: 450px;
             }
-
             @media @mobileS {
                 width: 270px;
             }
-
             @media @desktop {
                 background: url('./img/laptop.png') 50% no-repeat;
                 background-size: contain;
@@ -286,23 +290,23 @@
         @{b}__swiper {
             position: absolute;
             top: 50%;
-            left: 50%;
             right: 0;
+            left: 50%;
+
             width: 78%;
             margin: auto;
             overflow: hidden;
+
             transform: translate(-50%, -50%);
 
             @media @mobileM {
                 max-width: 345px;
                 height: 190px;
             }
-
             @media @mobileS {
                 max-width: 210px;
                 height: 105px;
             }
-
             @media @desktop {
                 transform: translate(-50%, -53%);
             }
@@ -316,8 +320,8 @@
 
     &__articles {
         @media @desktop {
-            width: 50%;
             order: 1;
+            width: 50%;
         }
     }
 
@@ -328,9 +332,10 @@
     }
 
     &__articles-list {
-        list-style-type: none;
-        padding: 0;
         margin: 0;
+        padding: 0;
+
+        list-style-type: none;
 
         &_text-after {
             margin-bottom: 48px;
@@ -350,8 +355,9 @@
     }
 
     &__articles-item {
-        opacity: 0.5;
         position: relative;
+
+        opacity: 0.5;
 
         @media @desktop {
             margin-bottom: 48px;
@@ -368,9 +374,10 @@
 
         @{b}__articles-item-dot:before {
             top: 0;
-            left: 0;
             right: 0;
             bottom: 0;
+            left: 0;
+
             background: @green;
         }
     }
@@ -384,14 +391,17 @@
     &__articles-item-dot,
     &__articles-dot {
         position: absolute;
+
         display: inline-block;
         width: 40px;
         height: 40px;
+        border-radius: 50%;
+
+        font-weight: 500;
         font-size: 15px;
         line-height: 40px;
-        font-weight: 500;
         text-align: center;
-        border-radius: 50%;
+
         box-shadow: inset 0 0 0 1px #B2B2B2;
         cursor: pointer;
 
@@ -403,11 +413,13 @@
             content: '';
             position: absolute;
             top: 50%;
-            left: 50%;
             right: 50%;
             bottom: 50%;
-            transition: all 0.3s ease;
+            left: 50%;
+
             border-radius: 50%;
+
+            transition: all 0.3s ease;
         }
     }
 
@@ -419,6 +431,7 @@
     &__articles-item-title {
         .p();
         display: inline-block;
+
         cursor: pointer;
 
         @media @desktop {
@@ -428,10 +441,12 @@
 
     &__articles-dots {
         position: relative;
+
         display: flex;
         justify-content: center;
-        padding: 0;
         margin: 0;
+        padding: 0;
+
         list-style-type: none;
 
         &_text-after {
@@ -445,7 +460,6 @@
         @media @mobileSM {
             margin-right: 20px;
         }
-
         @media @mobileB {
             margin-right: 40px;
         }
@@ -457,9 +471,10 @@
 
         &:before {
             top: 0;
-            left: 0;
             right: 0;
             bottom: 0;
+            left: 0;
+
             background: @green;
         }
     }
@@ -475,11 +490,9 @@
             width: 55%;
             margin: 0 auto 24px;
         }
-
         @media @mobileS {
             width: 100%;
         }
-
         @media @mobileB {
             width: 55%;
             margin: 0 auto 32px;
