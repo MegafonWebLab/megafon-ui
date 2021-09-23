@@ -14,11 +14,7 @@ const props: IBenefitsPicturesProps = {
     },
 };
 
-const itemsSet = [
-    twoItems,
-    threeItems,
-    fourItems,
-];
+const itemsSet = [twoItems, threeItems, fourItems];
 
 describe('<BenefitsPictures />', () => {
     it('renders BenefitsPictures', () => {

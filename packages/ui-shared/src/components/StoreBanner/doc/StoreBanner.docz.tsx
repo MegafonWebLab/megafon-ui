@@ -8,4 +8,4 @@ const text = 'Скачай и получи максимум';
 const link = '#';
 const onClick = () => {};
 
-export { title, text, image, qrCode, newIphoneImage, link, onClick } ;
+export { title, text, image, qrCode, newIphoneImage, link, onClick };

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import StoreButton, { Props, Theme } from './StoreButton';
 
-const props: Props  = {
+const props: Props = {
     href: 'href',
     theme: Theme.APP_STORE,
 };

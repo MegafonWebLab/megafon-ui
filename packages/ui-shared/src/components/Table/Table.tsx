@@ -17,12 +17,7 @@ export interface ITable {
 }
 
 const cn = cnCreate('mfui-beta-table');
-const Table: React.FC<ITable> = ({
-    className,
-    fixColumn = true,
-    minCellSize = 'large',
-    children,
-}) => {
+const Table: React.FC<ITable> = ({ className, fixColumn = true, minCellSize = 'large', children }) => {
     const scrollRef = React.useRef<HTMLDivElement | null>(null);
 
     const [isTopShadow, setTopShadow] = React.useState(false);
@@ -38,14 +33,7 @@ const Table: React.FC<ITable> = ({
             return;
         }
 
-        const {
-            scrollHeight,
-            clientHeight,
-            scrollTop,
-            scrollWidth,
-            clientWidth,
-            scrollLeft,
-        } = scrollNode;
+        const { scrollHeight, clientHeight, scrollTop, scrollWidth, clientWidth, scrollLeft } = scrollNode;
 
         const deltaHeight = scrollHeight - clientHeight;
         const deltaWidth = scrollWidth - clientWidth;
@@ -75,9 +63,7 @@ const Table: React.FC<ITable> = ({
         React.Children.map(children, ({ props: { children: cells, head } }) => (
             <tr className={cn('row', { head })}>
                 {React.Children.map(cells, ({ props: { children: cell } }) => (
-                    <td className={cn('cell')}>
-                        {typeof cell === 'string' ? convert(cell) : cell}
-                    </td>
+                    <td className={cn('cell')}>{typeof cell === 'string' ? convert(cell) : cell}</td>
                 ))}
             </tr>
         ));
@@ -90,14 +76,10 @@ const Table: React.FC<ITable> = ({
                     'min-cell-size': minCellSize,
                     touch: isTouchDevice,
                 },
-                [className]
+                [className],
             )}
         >
-            <div
-                className={cn('scroll')}
-                ref={scrollRef}
-                onScroll={handleTableScroll}
-            >
+            <div className={cn('scroll')} ref={scrollRef} onScroll={handleTableScroll}>
                 {isTopShadow && <div className={cn('top-shadow')} />}
                 {isLeftShadow && <div className={cn('left-shadow')} />}
                 <table className={cn('table')}>

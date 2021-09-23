@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import CarouselBox from 'components/CarouselBox/CarouselBox';
 
 describe('<CarouselBox />', () => {
@@ -7,7 +7,7 @@ describe('<CarouselBox />', () => {
         const wrapper = shallow(
             <CarouselBox>
                 <div>test</div>
-            </CarouselBox>
+            </CarouselBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -26,9 +26,10 @@ describe('<CarouselBox />', () => {
                 navTheme={'green'}
                 onNextClick={jest.fn()}
                 onPrevClick={jest.fn()}
-                onChange={jest.fn()}>
+                onChange={jest.fn()}
+            >
                 <div>test</div>
-            </CarouselBox>
+            </CarouselBox>,
         );
 
         expect(wrapper).toMatchSnapshot();

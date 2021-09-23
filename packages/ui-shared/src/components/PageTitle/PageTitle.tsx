@@ -36,18 +36,16 @@ const PageTitle: React.FC<Props> = ({
 }) => {
     const isBreadcrumbs = !!breadcrumbs?.length;
 
-    const renderPageTitle = React.useCallback(() => (
+    const renderPageTitle = React.useCallback(
+        () => (
             <>
                 {badge && <div className={cn('badge', { 'under-breadcrumbs': isBreadcrumbs })}>{badge}</div>}
-                <Header
-                    className={cn('title', { 'under-breadcrumbs': isBreadcrumbs && !badge })}
-                    as="h1"
-                >
+                <Header className={cn('title', { 'under-breadcrumbs': isBreadcrumbs && !badge })} as="h1">
                     {title}
                 </Header>
             </>
         ),
-        [breadcrumbs, classes, badge, title]
+        [breadcrumbs, classes, badge, title],
     );
 
     const renderPageTitleWithGrid = React.useCallback(
@@ -58,28 +56,26 @@ const PageTitle: React.FC<Props> = ({
                 </GridColumn>
             </Grid>
         ),
-        [renderPageTitle]
+        [renderPageTitle],
     );
 
     return (
         <div className={cn([className])} ref={rootRef}>
-            {breadcrumbs?.length &&
+            {breadcrumbs?.length && (
                 <Breadcrumbs items={breadcrumbs} className={cn('breadcrumbs', [classes.breadcrumbs])} />
-            }
+            )}
             {isFullWidth ? renderPageTitle() : renderPageTitleWithGrid()}
         </div>
     );
 };
 
 PageTitle.propTypes = {
-    title: PropTypes.oneOfType([
-        PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node),
-    ]).isRequired,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     breadcrumbs: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             href: PropTypes.string,
-        }).isRequired
+        }).isRequired,
     ),
     badge: PropTypes.string,
     isFullWidth: PropTypes.bool,
@@ -89,10 +85,7 @@ PageTitle.propTypes = {
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([
-            PropTypes.shape({ current: PropTypes.elementType }),
-            PropTypes.any,
-        ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
 };
 

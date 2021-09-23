@@ -1223,6 +1223,7 @@ exports[`<VideoBanner /> tests with local window render with youtube video 1`] =
               frameBorder="0"
               height="100%"
               src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
+              title="iframe"
               width="100%"
             />
           </div>
@@ -1263,6 +1264,7 @@ exports[`<VideoBanner /> tests with local window render youtube video with sound
               frameBorder="0"
               height="100%"
               src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=0&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
+              title="iframe"
               width="100%"
             />
           </div>
@@ -1302,6 +1304,7 @@ exports[`<VideoBanner /> tests with local window should not render background im
               frameBorder="0"
               height="100%"
               src="https://www.youtube.com/embed/2Sps5MnvlKM?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=2Sps5MnvlKM"
+              title="iframe"
               width="100%"
             />
           </div>

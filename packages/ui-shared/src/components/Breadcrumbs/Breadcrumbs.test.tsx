@@ -31,7 +31,7 @@ describe('Breadcrumbs', () => {
                 className="custom-class-name"
                 classes={{ item: 'item-custom-class-name' }}
                 color={TextColor.WHITE}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();

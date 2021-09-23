@@ -5,13 +5,7 @@ import Property from './Property';
 
 describe('<Property />', () => {
     it('should render only title', () => {
-        const wrapper = shallow(
-            <Property
-                items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
-                ]}
-            />
-        );
+        const wrapper = shallow(<Property items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]} />);
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -20,14 +14,11 @@ describe('<Property />', () => {
             <Property
                 items={[
                     {
-                        title: [
-                            'Детализация в салонах МегаФона',
-                            'Оплачивается каждый день заказанной детализации.',
-                        ],
+                        title: ['Детализация в салонах МегаФона', 'Оплачивается каждый день заказанной детализации.'],
                         value: '2ГБ',
                     },
                 ]}
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -45,7 +36,7 @@ describe('<Property />', () => {
                         ],
                     },
                 ]}
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -65,19 +56,14 @@ describe('<Property />', () => {
                         value: '500 ₽',
                     },
                 ]}
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with badge', () => {
         const wrapper = shallow(
-            <Property
-                badge={'Акция'}
-                items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
-                ]}
-            />
+            <Property badge={'Акция'} items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]} />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -87,7 +73,7 @@ describe('<Property />', () => {
             <Property
                 icon={<WiFi style={{ display: 'block', fill: '#00B956' }} />}
                 items={[{ title: ['Интернет на все сервисы'], value: '500 ₽' }]}
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -101,18 +87,16 @@ describe('<Property />', () => {
                         value: '500Р',
                         description: [
                             {
-                                value:
-                                    'После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.',
+                                value: 'После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.',
                             },
                             {
-                                value:
-                                    'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.',
+                                value: 'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.',
                                 isCollapsible: true,
                             },
                         ],
                     },
                 ]}
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -127,33 +111,21 @@ describe('<Property />', () => {
                     },
                 ]}
                 borderBottom
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
-        mount(
-            <Property
-                items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
-                ]}
-                rootRef={ref}
-            />
-        );
+        mount(<Property items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]} rootRef={ref} />);
 
         expect(ref.current).not.toBeNull();
     });
 
     it('should render with 100% width', () => {
         const wrapper = shallow(
-            <Property
-                items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
-                ]}
-                fullWidth
-            />
+            <Property items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]} fullWidth />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -162,11 +134,9 @@ describe('<Property />', () => {
     it('should render with data attribute', () => {
         const wrapper = shallow(
             <Property
-                items={[
-                    { title: ['Звонки на все номера России'], value: '500 ₽' },
-                ]}
+                items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]}
                 dataAttrs={{ 'data-test': 'value' }}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -181,8 +151,7 @@ describe('<Property />', () => {
                         value: '500Р',
                         description: [
                             {
-                                value:
-                                    'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.',
+                                value: 'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.',
                                 isCollapsible: true,
                             },
                         ],
@@ -193,7 +162,7 @@ describe('<Property />', () => {
                     openedDescription: 'opened-description-custom-class',
                     toggleDescription: 'toggle-description-custom-class',
                 }}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();

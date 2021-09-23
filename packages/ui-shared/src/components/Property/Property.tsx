@@ -46,7 +46,7 @@ const Property: React.FC<IProperty> = ({
     borderBottom = false,
     mergedValue = '',
     fullWidth = false,
-    classes= {},
+    classes = {},
     dataAttrs,
 }) => {
     const renderTitle = React.useCallback(
@@ -54,13 +54,11 @@ const Property: React.FC<IProperty> = ({
             title &&
             title.map((titleItem, i) => (
                 <Header as={'h5'} key={i} className={classes.title}>
-                    {icon && i === 0 && (
-                        <div className={cn('icon')}>{icon}</div>
-                    )}
+                    {icon && i === 0 && <div className={cn('icon')}>{icon}</div>}
                     {titleItem}
                 </Header>
             )),
-        []
+        [],
     );
 
     const renderDescription = React.useCallback(
@@ -75,12 +73,14 @@ const Property: React.FC<IProperty> = ({
                     />
                 </div>
             )),
-        []
+        [],
     );
 
-    const getColumnConfig = React.useCallback((): GridColumnConfigType => (
-        fullWidth ? { all: '12' } : { wide: '8', desktop: '10', tablet: '12', mobile: '12'}
-    ), [fullWidth]);
+    const getColumnConfig = React.useCallback(
+        (): GridColumnConfigType =>
+            fullWidth ? { all: '12' } : { wide: '8', desktop: '10', tablet: '12', mobile: '12' },
+        [fullWidth],
+    );
 
     return (
         <div
@@ -104,15 +104,11 @@ const Property: React.FC<IProperty> = ({
                                             {renderTitle(title)}
                                             {renderDescription(description)}
                                         </div>
-                                        {
-                                            !mergedValue && (
-                                                <div className={cn('value-wrapper')}>
-                                                    {value &&  (
-                                                        <span className={cn('value')}>{value}</span>
-                                                    )}
-                                                </div>
-                                            )
-                                        }
+                                        {!mergedValue && (
+                                            <div className={cn('value-wrapper')}>
+                                                {value && <span className={cn('value')}>{value}</span>}
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>
@@ -132,7 +128,7 @@ const Property: React.FC<IProperty> = ({
 Property.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     items: PropTypes.arrayOf(
         PropTypes.shape({
@@ -141,10 +137,10 @@ Property.propTypes = {
                 PropTypes.shape({
                     value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]).isRequired,
                     isCollapsible: PropTypes.bool,
-                })
+                }),
             ),
             value: PropTypes.string,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     className: PropTypes.string,
     badge: PropTypes.string,

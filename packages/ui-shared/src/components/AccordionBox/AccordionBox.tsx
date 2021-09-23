@@ -33,20 +33,19 @@ export interface IAccordionBox {
 }
 
 const cn = cnCreate('mfui-beta-accordion-box');
-const AccordionBox: React.FC<IAccordionBox> = ({
-    hCenterAlignWide = false,
-    isFullWidth = false,
-    ...restProps
-}) => {
-    const renderAccordionWithGrid = React.useCallback(() => (
-        <div className={cn()}>
-            <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
-                <GridColumn wide="8">
-                    <Accordion {...restProps} />
-                </GridColumn>
-            </Grid>
-        </div>
-    ), [restProps, hCenterAlignWide]);
+const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFullWidth = false, ...restProps }) => {
+    const renderAccordionWithGrid = React.useCallback(
+        () => (
+            <div className={cn()}>
+                <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
+                    <GridColumn wide="8">
+                        <Accordion {...restProps} />
+                    </GridColumn>
+                </Grid>
+            </div>
+        ),
+        [restProps, hCenterAlignWide],
+    );
 
     return isFullWidth ? <Accordion {...restProps} /> : renderAccordionWithGrid();
 };
@@ -55,7 +54,7 @@ AccordionBox.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     title: PropTypes.string.isRequired,
     isFullWidth: PropTypes.bool,

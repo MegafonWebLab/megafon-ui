@@ -7,7 +7,7 @@ describe('<BannerBox />', () => {
         const wrapper = shallow(
             <BannerBox>
                 <div>test</div>
-            </BannerBox>
+            </BannerBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -23,9 +23,10 @@ describe('<BannerBox />', () => {
                 onNextClick={jest.fn()}
                 onPrevClick={jest.fn()}
                 onDotClick={jest.fn()}
-                onChange={jest.fn()}>
+                onChange={jest.fn()}
+            >
                 <div>test</div>
-            </BannerBox>
+            </BannerBox>,
         );
 
         expect(wrapper).toMatchSnapshot();

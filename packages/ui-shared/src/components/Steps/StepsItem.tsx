@@ -15,9 +15,7 @@ interface IStepsItem {
 const cn = cnCreate('mfui-beta-steps-item');
 const StepsItem: React.FC<IStepsItem> = ({ index, text }) => (
     <div className={cn()}>
-        <span className={cn('step-number')}>
-            {index}
-        </span>
+        <span className={cn('step-number')}>{index}</span>
         <div className={cn('text-wrapper')}>
             <Paragraph hasMargin={false}>{text}</Paragraph>
         </div>

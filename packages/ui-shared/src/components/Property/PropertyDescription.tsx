@@ -6,16 +6,10 @@ import './PropertyDescription.less';
 import { Desc } from './types';
 
 const cn = cnCreate('mfui-beta-property-description');
-const PropertyDescription: React.FC<Desc> = ({
-    value,
-    isCollapsible = false,
-    classes = {},
-}) => {
+const PropertyDescription: React.FC<Desc> = ({ value, isCollapsible = false, classes = {} }) => {
     const [isOpened, setIsOpened] = React.useState(false);
 
-    const handleClickDesc = React.useCallback(() => setIsOpened(!isOpened), [
-        isOpened,
-    ]);
+    const handleClickDesc = React.useCallback(() => setIsOpened(!isOpened), [isOpened]);
 
     if (isCollapsible) {
         return (
@@ -23,18 +17,14 @@ const PropertyDescription: React.FC<Desc> = ({
                 <span className={cn('collapse', classes.toggle)} onClick={handleClickDesc}>
                     {isOpened ? 'Скрыть' : 'Подробнее'}
                 </span>
-                <Collapse
-                    className={cn('content')}
-                    classNameContainer={cn('content-inner')}
-                    isOpened={isOpened}
-                >
+                <Collapse className={cn('content')} classNameContainer={cn('content-inner')} isOpened={isOpened}>
                     {value}
                 </Collapse>
             </div>
         );
-    } else {
-        return <div className={cn()}>{value}</div>;
     }
+
+    return <div className={cn()}>{value}</div>;
 };
 
 PropertyDescription.propTypes = {

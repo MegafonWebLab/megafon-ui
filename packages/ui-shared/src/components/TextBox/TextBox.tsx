@@ -26,9 +26,7 @@ const TextBox: React.FC<ITextBoxProps> = ({
     className,
     children,
 }) => {
-    const renderContent = () => (
-        <div className={cn('content')}>{children}</div>
-    );
+    const renderContent = () => <div className={cn('content')}>{children}</div>;
 
     const renderTextBoxWithGrid = () => (
         <Grid hAlign={centeringWithLimitedWidth ? 'center' : 'left'}>

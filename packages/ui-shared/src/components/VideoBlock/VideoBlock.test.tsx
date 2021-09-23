@@ -5,10 +5,7 @@ import VideoBlock, { VideoTypes } from './VideoBlock';
 
 const content = {
     title: 'Test title',
-    description: [
-        'Test description',
-        'Test description2',
-    ],
+    description: ['Test description', 'Test description2'],
     buttonTitle: 'Button title',
     href: '#',
 };
@@ -21,16 +18,12 @@ describe('<VideoBlock />', () => {
     });
 
     it('it renders VideoBlock with content', () => {
-        const component = shallow(
-            <VideoBlock videoSrc="video.mp4" content={content} />
-        );
+        const component = shallow(<VideoBlock videoSrc="video.mp4" content={content} />);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with content and button download link', () => {
-        const component = shallow(
-            <VideoBlock videoSrc="video.mp4" content={{ ...content, buttonDownload: true }} />
-        );
+        const component = shallow(<VideoBlock videoSrc="video.mp4" content={{ ...content, buttonDownload: true }} />);
 
         expect(component).toMatchSnapshot();
     });
@@ -41,53 +34,39 @@ describe('<VideoBlock />', () => {
                 videoSrc="video.mp4"
                 content={content}
                 className="className"
-                classes={{ root: 'rootClass', button: 'buttonClass' }} />
+                classes={{ root: 'rootClass', button: 'buttonClass' }}
+            />,
         );
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with dataAttrs', () => {
-        const component = shallow(
-            <VideoBlock
-                videoSrc="video.mp4"
-                dataAttrs={{ 'data-test': 'value' }}
-            />
-        );
+        const component = shallow(<VideoBlock videoSrc="video.mp4" dataAttrs={{ 'data-test': 'value' }} />);
         expect(component.first().prop('data-test')).toEqual('value');
     });
 
     it('it renders VideoBlock with sound turned on', () => {
-        const component = shallow(
-            <VideoBlock videoSrc="video" isMuted={false} />
-        );
+        const component = shallow(<VideoBlock videoSrc="video" isMuted={false} />);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with autoplay', () => {
-        const component = shallow(
-            <VideoBlock videoSrc="video" isAutoplay />
-        );
+        const component = shallow(<VideoBlock videoSrc="video" isAutoplay />);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with youtube media type', () => {
-        const component = shallow(
-            <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} />
-        );
+        const component = shallow(<VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} />);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with youtube media type and sound turned on', () => {
-        const component = shallow(
-            <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isMuted={false}/>
-        );
+        const component = shallow(<VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isMuted={false} />);
         expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with youtube media type and autoplay', () => {
-        const component = shallow(
-            <VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isAutoplay />
-        );
+        const component = shallow(<VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} isAutoplay />);
         expect(component).toMatchSnapshot();
     });
 
@@ -105,9 +84,7 @@ describe('<VideoBlock />', () => {
             ...content,
             onButtonClick,
         };
-        const component = shallow(
-            <VideoBlock videoSrc="video.mp4" content={contentWithMockFunc} />
-        );
+        const component = shallow(<VideoBlock videoSrc="video.mp4" content={contentWithMockFunc} />);
         const btn = component.find(`.${cn('button')}`);
 
         btn.simulate('click');

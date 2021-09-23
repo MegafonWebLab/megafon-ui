@@ -13,7 +13,11 @@ const optionalProps = {
 
 describe('Container', () => {
     it('should renders component with default props', () => {
-        const wrapper = shallow(<Container><TitleDescriptionBox title="title"/></Container>);
+        const wrapper = shallow(
+            <Container>
+                <TitleDescriptionBox title="title" />
+            </Container>,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -22,7 +26,7 @@ describe('Container', () => {
         const wrapper = shallow(
             <Container {...optionalProps}>
                 <TitleDescriptionBox title="title" />
-            </Container>
+            </Container>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -33,8 +37,8 @@ describe('Container', () => {
 
         mount(
             <Container rootRef={ref}>
-                <TitleDescriptionBox title="title"/>
-            </Container>
+                <TitleDescriptionBox title="title" />
+            </Container>,
         );
 
         expect(ref.current).not.toBeNull();

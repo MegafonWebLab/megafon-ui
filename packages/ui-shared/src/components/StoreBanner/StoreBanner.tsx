@@ -78,7 +78,8 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
         root: rootClassName,
         appleLink: appleLinkClassName,
         googleLink: googleLinkClassName,
-        huaweiLink: huaweiLinkClassName } = {},
+        huaweiLink: huaweiLinkClassName,
+    } = {},
     title,
     text,
     linkApple,
@@ -96,75 +97,87 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     onClickGoogle,
     onClickHuawei,
 }) => (
-        <div
-            className={cn({ theme, mask: deviceMask }, [className, rootClassName])}
-            ref={rootRef}
-            {...filterDataAttrs(dataAttrs)}
-        >
-            <div className={cn('container')}>
-                <div className={cn('grid')}>
-                    <Grid>
-                        <GridColumn
-                            all="6"
-                            mobile="12"
-                            rightOffsetWide="1"
-                        >
-                            <div className={cn('content')}>
-                                <Header as="h2" className={cn('title')} color="inherit">
-                                    {title}
-                                </Header>
-                                <Paragraph className={cn('text')} hasMargin={false} color="inherit">
-                                    {text}
-                                </Paragraph>
-                                <div className={cn('links', {'three': !!linkApple && !!linkGoogle && !!linkHuawei})}>
-                                    {!linkButton && qrCode && (
-                                        <img src={qrCode} className={cn('qr-code')} alt="QR-код"/>
-                                    )}
-                                    {!linkButton && <div className={cn('stores')}>
-                                        {linkApple && <StoreButton
-                                            theme={StoreButtonTheme.APP_STORE}
-                                            href={linkApple}
-                                            onClick={onClickApple}
-                                            className={cn('store-link', { 'app-store': true }, appleLinkClassName)}
-                                        />}
-                                        {linkGoogle && <StoreButton
-                                            theme={StoreButtonTheme.GOOGLE_PLAY}
-                                            href={linkGoogle}
-                                            className={cn('store-link', { 'google-play': true }, googleLinkClassName)}
-                                            onClick={onClickGoogle}
-                                        />}
-                                        {linkHuawei && <StoreButton
-                                            theme={StoreButtonTheme.HUAWEI_STORE}
-                                            href={linkHuawei}
-                                            className={cn('store-link', { 'huawei-store': true }, huaweiLinkClassName)}
-                                            onClick={onClickHuawei}
-                                        />}
-                                    </div>}
-                                    {linkButton && <Button
+    <div
+        className={cn({ theme, mask: deviceMask }, [className, rootClassName])}
+        ref={rootRef}
+        {...filterDataAttrs(dataAttrs)}
+    >
+        <div className={cn('container')}>
+            <div className={cn('grid')}>
+                <Grid>
+                    <GridColumn all="6" mobile="12" rightOffsetWide="1">
+                        <div className={cn('content')}>
+                            <Header as="h2" className={cn('title')} color="inherit">
+                                {title}
+                            </Header>
+                            <Paragraph className={cn('text')} hasMargin={false} color="inherit">
+                                {text}
+                            </Paragraph>
+                            <div className={cn('links', { three: !!linkApple && !!linkGoogle && !!linkHuawei })}>
+                                {!linkButton && qrCode && <img src={qrCode} className={cn('qr-code')} alt="QR-код" />}
+                                {!linkButton && (
+                                    <div className={cn('stores')}>
+                                        {linkApple && (
+                                            <StoreButton
+                                                theme={StoreButtonTheme.APP_STORE}
+                                                href={linkApple}
+                                                onClick={onClickApple}
+                                                className={cn('store-link', { 'app-store': true }, appleLinkClassName)}
+                                            />
+                                        )}
+                                        {linkGoogle && (
+                                            <StoreButton
+                                                theme={StoreButtonTheme.GOOGLE_PLAY}
+                                                href={linkGoogle}
+                                                className={cn(
+                                                    'store-link',
+                                                    { 'google-play': true },
+                                                    googleLinkClassName,
+                                                )}
+                                                onClick={onClickGoogle}
+                                            />
+                                        )}
+                                        {linkHuawei && (
+                                            <StoreButton
+                                                theme={StoreButtonTheme.HUAWEI_STORE}
+                                                href={linkHuawei}
+                                                className={cn(
+                                                    'store-link',
+                                                    { 'huawei-store': true },
+                                                    huaweiLinkClassName,
+                                                )}
+                                                onClick={onClickHuawei}
+                                            />
+                                        )}
+                                    </div>
+                                )}
+                                {linkButton && (
+                                    <Button
                                         className={cn('button')}
                                         href={linkButton}
                                         theme={theme === 'green' ? 'purple' : 'green'}
-                                        >
-                                            {textButton}
-                                    </Button>}
-                                </div>
+                                    >
+                                        {textButton}
+                                    </Button>
+                                )}
                             </div>
-                        </GridColumn>
-                        <GridColumn all="4" desktop="6" tablet="6" mobile="12">
-                            <div className={cn('device-wrapper')}>
-                                <div className={cn('device-mask')} />
-                                <img
-                                    src={imageSrc}
-                                    className={cn('screen')}
-                                    alt="Изображение приложения на экране телефона"
-                                />
-                            </div>
-                        </GridColumn>
-                    </Grid>
-                </div>
+                        </div>
+                    </GridColumn>
+                    <GridColumn all="4" desktop="6" tablet="6" mobile="12">
+                        <div className={cn('device-wrapper')}>
+                            <div className={cn('device-mask')} />
+                            <img
+                                src={imageSrc}
+                                className={cn('screen')}
+                                alt="Изображение приложения на экране телефона"
+                            />
+                        </div>
+                    </GridColumn>
+                </Grid>
             </div>
         </div>
-    );
+    </div>
+);
 
 StoreBanner.propTypes = {
     title: PropTypes.string.isRequired,
