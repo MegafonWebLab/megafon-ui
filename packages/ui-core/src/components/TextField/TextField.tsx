@@ -32,18 +32,20 @@ export interface IMaskState {
     selection: IMaskSelection;
 }
 
-type ValueProps = {
-    /** Переводит компонент в контролируемое состояние */
-    isControlled: false;
-    /** Внешнее значение для контролируемого компонента, для неконтролируемого не определяется */
-    value?: never;
-    /** Первоначально заданное значение для неконтролируемого компонента, для контролируемого не определяется  */
-    initialValue?: string | number;
-} | {
-    isControlled?: true;
-    value: string | number;
-    initialValue?: never;
-};
+type ValueProps =
+    | {
+          /** Переводит компонент в контролируемое состояние */
+          isControlled: false;
+          /** Внешнее значение для контролируемого компонента, для неконтролируемого не определяется */
+          value?: never;
+          /** Первоначально заданное значение для неконтролируемого компонента, для контролируемого не определяется  */
+          initialValue?: string | number;
+      }
+    | {
+          isControlled?: true;
+          value?: string | number;
+          initialValue?: never;
+      };
 
 interface ICommonProps {
     /** Включить режим textarea. Fixed - это alias для textarea=true. */
@@ -103,7 +105,7 @@ interface ICommonProps {
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-export type ITextFieldProps = ICommonProps & ValueProps;
+export type TextFieldProps = ICommonProps & ValueProps;
 
 const TEXTAREA_MIN_HEIGHT = 96;
 const TEXTAREA_MAX_HEIGHT = 168;
@@ -111,7 +113,7 @@ const ROW_HEIGHT = 24;
 const DEFAULT_ROW_COUNT = 3;
 
 const cn = cnCreate('mfui-beta-text-field');
-const TextField: React.FC<ITextFieldProps> = ({
+const TextField: React.FC<TextFieldProps> = ({
     className,
     customIcon,
     disabled,
@@ -157,10 +159,11 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
 
-    const checkSymbolMaxLimit = useCallback((textareaValue: string | number = ''): void => {
-        if (!symbolCounter) {
-            return;
-        }
+    const checkSymbolMaxLimit = useCallback(
+        (textareaValue: string | number = ''): void => {
+            if (!symbolCounter) {
+                return;
+            }
 
             setIsMaxLimitExceeded(symbolCounter < String(textareaValue).length);
         },
@@ -199,18 +202,21 @@ const TextField: React.FC<ITextFieldProps> = ({
         setIsTextareaResized(textAreaHeight < initialTextareaHeight);
     };
 
-    const handleIconClick = useCallback(e => {
-        const { ERROR } = Verification;
-        const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === ERROR;
-        const { current: field } = fieldNode;
+    const handleIconClick = useCallback(
+        e => {
+            const { ERROR } = Verification;
+            const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === ERROR;
+            const { current: field } = fieldNode;
 
-        isPasswordType && togglePasswordHiding();
-        onCustomIconClick && onCustomIconClick(e);
-        if (!isControlled && isClearFuncAvailable) {
-            setInputValue('');
-            field && field.focus();
-        }
-    }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
+            isPasswordType && togglePasswordHiding();
+            onCustomIconClick && onCustomIconClick(e);
+            if (!isControlled && isClearFuncAvailable) {
+                setInputValue('');
+                field && field.focus();
+            }
+        },
+        [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue],
+    );
 
     const handleFocus = useCallback(
         (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -226,9 +232,11 @@ const TextField: React.FC<ITextFieldProps> = ({
         [onBlur],
     );
 
-    const handleBeforeMaskChange = useCallback((newState, oldState, inputedValue) =>
-        onBeforeMaskChange && onBeforeMaskChange(inputedValue, newState, oldState),
-        [onBeforeMaskChange]);
+    const handleBeforeMaskChange = useCallback(
+        (newState, oldState, inputedValue) =>
+            onBeforeMaskChange && onBeforeMaskChange(inputedValue, newState, oldState),
+        [onBeforeMaskChange],
+    );
 
     const textareaType = textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED;
     const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
@@ -311,10 +319,11 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const renderInput = (): React.ReactNode => (
         <>
-            {mask
-                ? <InputMask {...inputParams}  {...inputMaskParams} inputRef={getFieldNode} />
-                : <input {...inputParams} ref={getFieldNode} />
-            }
+            {mask ? (
+                <InputMask {...inputParams} {...inputMaskParams} inputRef={getFieldNode} />
+            ) : (
+                <input {...inputParams} ref={getFieldNode} />
+            )}
             {!hideIcon && renderIconBlock()}
         </>
     );
@@ -412,12 +421,12 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
 };
 
-const MyPropTypes = {
+const CustomPropTypes = {
     isControlled(props: any, propName: string, componentName: string) {
-        if (typeof props[propName] !== 'boolean') {
+        if (typeof props[propName] !== 'boolean' && typeof props[propName] !== 'undefined') {
             return new Error(
                 `The component ${componentName} need the prop ${propName} to be a boolean,
-                    but you passed a ${typeof props[propName]}.`
+                    but you passed a ${typeof props[propName]}.`,
             );
         }
 
@@ -428,21 +437,24 @@ const MyPropTypes = {
 
         const initialValuePropType = typeof props[propName];
 
-        if (initialValuePropType !== 'string' && initialValuePropType !== 'number' && initialValuePropType !== 'undefined') {
+        if (
+            initialValuePropType !== 'string' &&
+            initialValuePropType !== 'number' &&
+            initialValuePropType !== 'undefined'
+        ) {
             return new Error(
                 `The component ${componentName} need the prop ${propName} to be a string or number,
-                    but you passed a ${typeof props[propName]}.`
+                    but you passed a ${typeof props[propName]}.`,
             );
         }
 
         if (isControlled && initialValue !== undefined) {
             return new Error(
-                `The prop ${propName} pass only for uncontrolled component, pass 'value' or set isControlled={false}`
+                `The prop ${propName} pass only for uncontrolled component, pass 'value' or set isControlled={false}`,
             );
         }
 
         return null;
-
     },
     value(props: any, propName: string, componentName: string) {
         const { isControlled = true, value } = props;
@@ -452,13 +464,13 @@ const MyPropTypes = {
         if (valuePropType !== 'string' && valuePropType !== 'number' && isControlled) {
             return new Error(
                 `The controlled component ${componentName} need the required prop ${propName} to be a string or number,
-                    but you passed a ${typeof props[propName]}.`
+                    but you passed a ${typeof props[propName]}.`,
             );
         }
 
         if (!isControlled && value !== undefined) {
             return new Error(
-                `The prop 'value' pass only for controlled component, pass 'initialValue' or set isControlled={true} (value by default)`
+                `The prop 'value' pass only for controlled component, pass 'initialValue' or set isControlled={true} (value by default)`,
             );
         }
 
@@ -478,9 +490,9 @@ TextField.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string,
-    isControlled: MyPropTypes.isControlled,
-    value: MyPropTypes.value,
-    initialValue: MyPropTypes.initialValue,
+    isControlled: CustomPropTypes.isControlled,
+    value: CustomPropTypes.value,
+    initialValue: CustomPropTypes.initialValue,
     maxLength: PropTypes.number,
     symbolCounter: PropTypes.number,
     customIcon: PropTypes.element,
