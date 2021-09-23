@@ -42,17 +42,18 @@ export const items = [
         value: 10,
         title: 'Кантемировская',
         view: ({ filterValue }) => {
-            const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, (w) => '\\' + w);
+            const query = filterValue.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
             const stringFragments = 'Кантемировская'.split(RegExp(`(${query})`, 'ig'));
 
             return (
                 <>
                     {stringFragments.map((fragment, i) => (
                         <React.Fragment key={i}>
-                            {(fragment.toLowerCase() === filterValue.toLowerCase() && fragment !== '')
-                                ? <b>{fragment}</b>
-                                : fragment
-                            }
+                            {fragment.toLowerCase() === filterValue.toLowerCase() && fragment !== '' ? (
+                                <b>{fragment}</b>
+                            ) : (
+                                fragment
+                            )}
                         </React.Fragment>
                     ))}
                 </>
@@ -71,14 +72,15 @@ const selectWrapperStyle = {
     height: '200px',
     width: '50%',
     paddingLeft: '15px',
-    boxSizing: 'border-box' as 'border-box',
+    boxSizing: 'border-box' as const,
     minWidth: '300px',
 };
 
 interface ISelectChildrenProps {
     currentValue: SelectItemValueType;
     onSelect: (
-        e: React.SyntheticEvent<EventTarget> | React.KeyboardEvent<HTMLDivElement>, data: ISelectItem<number>
+        e: React.SyntheticEvent<EventTarget> | React.KeyboardEvent<HTMLDivElement>,
+        data: ISelectItem<number>,
     ) => void;
 }
 
@@ -86,12 +88,12 @@ interface ISelectWrapperProps {
     children: (data: ISelectChildrenProps) => JSX.Element;
 }
 
-export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
+export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = props => {
     const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>();
 
     const handleSelect = (
         _e: React.SyntheticEvent<EventTarget> | React.KeyboardEvent<HTMLDivElement>,
-        data: ISelectItem<number>
+        data: ISelectItem<number>,
     ) => {
         if (!data) {
             setCurrentValue('');
@@ -106,7 +108,7 @@ export const DemoSelectWrapper: React.FC<ISelectWrapperProps> = (props) => {
         <div style={selectWrapperStyle}>
             {props.children({
                 onSelect: handleSelect,
-                currentValue: currentValue,
+                currentValue,
             })}
         </div>
     );

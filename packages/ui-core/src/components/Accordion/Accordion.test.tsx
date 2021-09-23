@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import Accordion, { IAccordionProps  } from './Accordion';
+import Accordion, { IAccordionProps } from './Accordion';
 
 const props: IAccordionProps = {
     title: 'Test',
@@ -15,7 +15,9 @@ const props: IAccordionProps = {
 describe('<Accordion />', () => {
     it('it renders Accordion', () => {
         const wrapper = mount(
-            <Accordion {...props}><div /></Accordion>
+            <Accordion {...props}>
+                <div />
+            </Accordion>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -26,7 +28,9 @@ describe('<Accordion />', () => {
             hasVerticalPaddings: true,
         };
         const wrapper = mount(
-            <Accordion {...newProps}><div /></Accordion>
+            <Accordion {...newProps}>
+                <div />
+            </Accordion>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -37,7 +41,9 @@ describe('<Accordion />', () => {
             isOpened: true,
         };
         const wrapper = mount(
-            <Accordion {...isOpenedProps}><div /></Accordion>
+            <Accordion {...isOpenedProps}>
+                <div />
+            </Accordion>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -45,7 +51,9 @@ describe('<Accordion />', () => {
     it('it handle click title', () => {
         const { onClickAccordion, title, isOpened } = props;
         const wrapper = mount(
-            <Accordion {...props}><div /></Accordion>
+            <Accordion {...props}>
+                <div />
+            </Accordion>,
         );
 
         wrapper.find('.mfui-beta-accordion__title-wrap').simulate('click');
@@ -54,7 +62,9 @@ describe('<Accordion />', () => {
 
     it('checking the opening/closing of the accordion on click', () => {
         const wrapper = mount(
-            <Accordion {...props}><div /></Accordion>
+            <Accordion {...props}>
+                <div />
+            </Accordion>,
         );
 
         wrapper.find('.mfui-beta-accordion__title-wrap').simulate('click');
@@ -76,7 +86,9 @@ describe('<Accordion />', () => {
             },
         };
         const wrapper = mount(
-            <Accordion {...propsWithClasses}><div /></Accordion>
+            <Accordion {...propsWithClasses}>
+                <div />
+            </Accordion>,
         );
         const rootNode = wrapper.find('.mfui-beta-accordion');
         const contentNode = wrapper.find('Collapse');
@@ -103,7 +115,9 @@ describe('<Accordion />', () => {
                 isOpened: true,
             };
             const wrapper = mount(
-                <Accordion {...isOpenedProps}><div /></Accordion>
+                <Accordion {...isOpenedProps}>
+                    <div />
+                </Accordion>,
             );
 
             expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
@@ -114,7 +128,9 @@ describe('<Accordion />', () => {
 
         it('first value of isOpened - false, then it changes to true', () => {
             const wrapper = mount(
-                <Accordion {...props}><div /></Accordion>
+                <Accordion {...props}>
+                    <div />
+                </Accordion>,
             );
 
             expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(false);
@@ -125,7 +141,9 @@ describe('<Accordion />', () => {
 
         it('first value of isOpened - false, then it changes to false', () => {
             const wrapper = mount(
-                <Accordion {...props}><div /></Accordion>
+                <Accordion {...props}>
+                    <div />
+                </Accordion>,
             );
 
             expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(false);
@@ -140,7 +158,9 @@ describe('<Accordion />', () => {
                 isOpened: true,
             };
             const wrapper = mount(
-                <Accordion {...isOpenedProps}><div /></Accordion>
+                <Accordion {...isOpenedProps}>
+                    <div />
+                </Accordion>,
             );
 
             expect(wrapper.find('.mfui-beta-accordion').hasClass('mfui-beta-accordion_open')).toEqual(true);
@@ -151,7 +171,11 @@ describe('<Accordion />', () => {
 
         it('should return reference to root element', () => {
             const ref: React.RefObject<HTMLDivElement> = React.createRef();
-            mount(<Accordion {...props} rootRef={ref}><div /></Accordion>);
+            mount(
+                <Accordion {...props} rootRef={ref}>
+                    <div />
+                </Accordion>,
+            );
 
             expect(ref.current).not.toBeNull();
         });

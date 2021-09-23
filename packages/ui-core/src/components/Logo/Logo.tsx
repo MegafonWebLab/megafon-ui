@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './Logo.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import Link from '../Link/Link';
 import greenHorizontalImg from './green-horizontal.svg';
 import greenVerticalImg from './green-vertical.svg';
-import Link from '../Link/Link';
+import './Logo.less';
 
 export interface ILogoProps {
     /** Дополнительный класс корневого элемента */

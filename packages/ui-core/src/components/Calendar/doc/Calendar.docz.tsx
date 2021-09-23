@@ -35,8 +35,7 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
 export const DemoCalendarWithDatesChange = ({ children }) => {
     const [period, setPeriod] = React.useState({ periodStart: startDate, periodEnd: endDate });
 
-    const onChange = (firstDate, secondDate) => () =>
-        setPeriod({ periodStart: firstDate, periodEnd: secondDate });
+    const onChange = (firstDate, secondDate) => () => setPeriod({ periodStart: firstDate, periodEnd: secondDate });
 
     const { periodEnd, periodStart } = period;
 
@@ -45,13 +44,9 @@ export const DemoCalendarWithDatesChange = ({ children }) => {
             {children({ startDate: periodStart, endDate: periodEnd })}
             <div>
                 <div style={{ display: 'inline-block', marginRight: '12px' }}>
-                    <Button onClick={onChange(new Date(2020, 0, 1), new Date(2020, 0, 31))}>
-                        Январь
-                    </Button>
+                    <Button onClick={onChange(new Date(2020, 0, 1), new Date(2020, 0, 31))}>Январь</Button>
                 </div>
-                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>
-                    Ферваль
-                </Button>
+                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>Ферваль</Button>
             </div>
         </>
     );

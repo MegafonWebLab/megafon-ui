@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { cnCreate } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './TextLink.less';
 import Link, { ILinkProps } from '../Link/Link';
-import { cnCreate } from '@megafon/ui-helpers';
 
 export interface ITextLinkProps extends ILinkProps {
     /** Цвет */
@@ -55,10 +55,15 @@ class TextLink extends React.Component<Partial<ITextLinkProps>, {}> {
                 rel={rel}
                 onClick={onClick}
                 children={children}
-                className={cn('', {
-                    'underline-visibility': underlineVisibility,
-                    'underline-style': underlineStyle, color,
-                }, className)}
+                className={cn(
+                    '',
+                    {
+                        'underline-visibility': underlineVisibility,
+                        'underline-style': underlineStyle,
+                        color,
+                    },
+                    className,
+                )}
                 download={download}
             />
         );

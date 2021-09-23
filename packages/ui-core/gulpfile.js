@@ -199,7 +199,7 @@ const inlineSvgToReact = () => changePipe(async function (file, encoding) {
                 throw new Error(e)
             }
 
-            components += code.replace('import React from "react";', '').replace(`export default ${componentName};`, '');
+            components += code.replace(/import React from ['|"]react['|"];/g, '').replace(`export default ${componentName};`, '');
             file.contents = Buffer.from(file.contents.toString(encoding).replace(`${svgImport};`, ''));
         }
 

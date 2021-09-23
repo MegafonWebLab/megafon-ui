@@ -15,12 +15,7 @@ export interface ISwitcherProps {
 
 const cn = cnCreate('mfui-beta-switcher');
 const Switcher: React.FC<ISwitcherProps> = props => {
-    const {
-        className,
-        checked = false,
-        disabled = false,
-        onChange,
-    } = props;
+    const { className, checked = false, disabled = false, onChange } = props;
 
     const isTouch: boolean = detectTouch();
 
@@ -40,7 +35,7 @@ const Switcher: React.FC<ISwitcherProps> = props => {
                     disabled,
                     'no-touch': !isTouch,
                 },
-                className
+                className,
             )}
             onClick={handleChange}
         >

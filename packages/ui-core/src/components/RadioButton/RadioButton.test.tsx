@@ -26,13 +26,7 @@ describe('<RadioButton />', () => {
         });
 
         it('renders RadioButton with props', () => {
-            const wrapper = shallow(
-                <RadioButton
-                    {...props}
-                >
-                    Тестовая строка
-                </RadioButton>
-            );
+            const wrapper = shallow(<RadioButton {...props}>Тестовая строка</RadioButton>);
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -44,7 +38,9 @@ describe('<RadioButton />', () => {
             const value = 'value-text';
 
             const wrapper = shallow(
-                <RadioButton name="group" value={value} onChange={handleChange}>Тестовая строка</RadioButton>
+                <RadioButton name="group" value={value} onChange={handleChange}>
+                    Тестовая строка
+                </RadioButton>,
             );
 
             wrapper.find('.mfui-beta-radio-button__input').simulate('change');

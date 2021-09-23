@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import Search , { ISearchProps } from './Search';
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
+import Search, { ISearchProps } from './Search';
 
 const cn = cnCreate('mfui-beta-search');
 
@@ -34,7 +34,12 @@ describe('<Search />', () => {
         });
 
         it('renders Search with classes', () => {
-            const wrapper = shallow(<Search {...props} classes={{listItemTitle: 'wrap-text-test', control: 'control-outer', icon: 'icon-outer'}} />);
+            const wrapper = shallow(
+                <Search
+                    {...props}
+                    classes={{ listItemTitle: 'wrap-text-test', control: 'control-outer', icon: 'icon-outer' }}
+                />,
+            );
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -63,11 +68,11 @@ describe('<Search />', () => {
 
             expect(handleChange).not.toHaveBeenCalled();
 
-            await new Promise((r) => setTimeout(r, 150));
+            await new Promise(r => setTimeout(r, 150));
 
             expect(handleChange).not.toHaveBeenCalled();
 
-            await new Promise((r) => setTimeout(r, 150));
+            await new Promise(r => setTimeout(r, 150));
 
             expect(handleChange).toHaveBeenCalledWith('new value');
         });
@@ -82,7 +87,7 @@ describe('<Search />', () => {
                 },
             });
 
-            await new Promise((r) => setTimeout(r, 300));
+            await new Promise(r => setTimeout(r, 300));
 
             expect(handleChange).toHaveBeenCalledWith('new value');
         });
@@ -129,7 +134,10 @@ describe('<Search />', () => {
                 },
             });
 
-            wrapper.find(`.${cn('list-item')}`).at(0).simulate('mouseenter');
+            wrapper
+                .find(`.${cn('list-item')}`)
+                .at(0)
+                .simulate('mouseenter');
             wrapper.find(`.${cn('search-field')}`).simulate('keyDown', { key: 'Enter' });
 
             expect(handleSubmit).toBeCalledWith('title');
@@ -165,14 +173,14 @@ describe('<Search />', () => {
                 },
             });
 
-            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {}});
+            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {} });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
 
-            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {}});
+            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {} });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(false);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(true);
 
-            searchField.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => {}});
+            searchField.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => {} });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
         });

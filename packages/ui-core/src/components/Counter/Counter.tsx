@@ -1,9 +1,9 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
-import './Counter.less';
 import IconMinus from '@megafon/ui-icons/system-16-minus_16.svg';
 import IconPlus from '@megafon/ui-icons/system-16-plus_16.svg';
+import * as PropTypes from 'prop-types';
+import './Counter.less';
 
 export interface ICounterProps {
     /** Начальное значение */
@@ -44,21 +44,24 @@ const Counter: React.FC<ICounterProps> = ({
         setCounter(currentInitialValue);
     }, [currentInitialValue]);
 
-    const handleValueChange = React.useCallback((value: number) => {
-        setCounter(value);
+    const handleValueChange = React.useCallback(
+        (value: number) => {
+            setCounter(value);
 
-        if (value < min) {
-            onChange && onChange(min);
-        }
+            if (value < min) {
+                onChange && onChange(min);
+            }
 
-        if (value > max) {
-            onChange && onChange(max);
-        }
+            if (value > max) {
+                onChange && onChange(max);
+            }
 
-        if (value >= min && value <= max) {
-            onChange && onChange(value);
-        }
-    }, [min, max, onChange]);
+            if (value >= min && value <= max) {
+                onChange && onChange(value);
+            }
+        },
+        [min, max, onChange],
+    );
 
     const handleMinusClick = React.useCallback((): void => {
         handleValueChange(counter - 1);
@@ -68,33 +71,37 @@ const Counter: React.FC<ICounterProps> = ({
         handleValueChange(counter + 1);
     }, [handleValueChange, counter]);
 
-    const handleInputChange = React.useCallback((e: React.ChangeEvent<HTMLInputElement>): void => {
-        const pattern = /^[0-9\b]+$/;
-        const { value } = e.target;
+    const handleInputChange = React.useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>): void => {
+            const pattern = /^[0-9\b]+$/;
+            const { value } = e.target;
 
-        if (value !== '' && !pattern.test(value)) {
-            return;
-        }
+            if (value !== '' && !pattern.test(value)) {
+                return;
+            }
 
-        handleValueChange(Number(value));
-    }, [handleValueChange]);
+            handleValueChange(Number(value));
+        },
+        [handleValueChange],
+    );
 
-    const handleInputBlur = React.useCallback((e: React.FocusEvent<HTMLInputElement>): void => {
-        const { value } = e.target;
-        const numberValue = Number(value);
+    const handleInputBlur = React.useCallback(
+        (e: React.FocusEvent<HTMLInputElement>): void => {
+            const { value } = e.target;
+            const numberValue = Number(value);
 
-        if (numberValue < min) {
-            handleValueChange(min);
+            if (numberValue < min) {
+                handleValueChange(min);
 
-            return;
-        }
+                return;
+            }
 
-        if (numberValue > max) {
-            handleValueChange(max);
-
-            return;
-        }
-    }, [handleValueChange, min, max]);
+            if (numberValue > max) {
+                handleValueChange(max);
+            }
+        },
+        [handleValueChange, min, max],
+    );
 
     return (
         <div className={cn({ disabled: isDisabled }, [className, classes.root])}>

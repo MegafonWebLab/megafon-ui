@@ -13,18 +13,21 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
     const [value, setValue] = React.useState('');
     const [items, setItems] = React.useState<string[]>([]);
 
-    const handleChange = React.useCallback((query: string) => {
-        if (!query) {
-            return;
-        }
+    const handleChange = React.useCallback(
+        (query: string) => {
+            if (!query) {
+                return;
+            }
 
-        setItems((oldItems) => [...oldItems, query]);
-    }, [items, setItems]);
+            setItems(oldItems => [...oldItems, query]);
+        },
+        [items, setItems],
+    );
 
     return (
         <div>
             <p style={{ marginTop: 0 }}>Value: {value}</p>
-            {children({ onChange: handleChange, onSubmit: setValue, items: items, chosenValue: value })}
+            {children({ onChange: handleChange, onSubmit: setValue, items, chosenValue: value })}
         </div>
     );
 };

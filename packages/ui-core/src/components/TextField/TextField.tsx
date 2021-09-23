@@ -1,14 +1,14 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
-import './TextField.less';
-import InputLabel from '../InputLabel/InputLabel';
-import Paragraph from '../Paragraph/Paragraph';
-import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
-import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
+import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
+import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
+import * as PropTypes from 'prop-types';
+import InputLabel from '../InputLabel/InputLabel';
+import Paragraph from '../Paragraph/Paragraph';
+import './TextField.less';
 
 const InputMask = require('react-input-mask');
 
@@ -100,6 +100,7 @@ const detectIE11 = (): boolean => {
         return false;
     }
     const userAgent: string = window.navigator.userAgent.toLowerCase();
+
     return userAgent.indexOf('trident/') !== -1;
 };
 
@@ -110,38 +111,36 @@ const DEFAULT_ROW_COUNT = 3;
 
 const cn = cnCreate('mfui-beta-text-field');
 const TextField: React.FC<ITextFieldProps> = ({
-        className,
-        customIcon,
-        disabled,
-        hideIcon,
-        id,
-        label,
-        mask,
-        maskChar,
-        maxLength,
-        symbolCounter,
-        textarea,
-        name,
-        placeholder,
-        required,
-        isControlled = false,
-        onBlur,
-        onChange,
-        onBeforeMaskChange,
-        onCustomIconClick,
-        onFocus,
-        onKeyUp,
-        theme,
-        type,
-        value,
-        verification,
-        noticeText,
-        inputRef,
-        inputMode,
-        classes: {
-            input,
-        } = {},
-    }) => {
+    className,
+    customIcon,
+    disabled,
+    hideIcon,
+    id,
+    label,
+    mask,
+    maskChar,
+    maxLength,
+    symbolCounter,
+    textarea,
+    name,
+    placeholder,
+    required,
+    isControlled = false,
+    onBlur,
+    onChange,
+    onBeforeMaskChange,
+    onCustomIconClick,
+    onFocus,
+    onKeyUp,
+    theme,
+    type,
+    value,
+    verification,
+    noticeText,
+    inputRef,
+    inputMode,
+    classes: { input } = {},
+}) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = useState<string | number | undefined>(value);
     const [isIE11, setIsIE11] = useState(false);
@@ -153,21 +152,24 @@ const TextField: React.FC<ITextFieldProps> = ({
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
     const isVisiblePassword: boolean = useMemo(
         () => isPasswordType && !isPasswordHidden,
-        [isPasswordHidden, isPasswordType]
+        [isPasswordHidden, isPasswordType],
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
 
-    const renderPlaceholderForIe = (classes: string): React.ReactNode => {
-        return <span className={cn(classes)}>{placeholder}</span>;
-    };
+    const renderPlaceholderForIe = (classes: string): React.ReactNode => (
+        <span className={cn(classes)}>{placeholder}</span>
+    );
 
-    const checkSymbolMaxLimit = useCallback((textareaValue: string | number = ''): void => {
-        if (!symbolCounter) {
-            return;
-        }
+    const checkSymbolMaxLimit = useCallback(
+        (textareaValue: string | number = ''): void => {
+            if (!symbolCounter) {
+                return;
+            }
 
-        setIsMaxLimitExceeded(symbolCounter < String(textareaValue).length);
-    }, [symbolCounter]);
+            setIsMaxLimitExceeded(symbolCounter < String(textareaValue).length);
+        },
+        [symbolCounter],
+    );
 
     useEffect(() => {
         setInputValue(value);
@@ -182,7 +184,7 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const togglePasswordHiding = useCallback(
         () => setPasswordHidden(prevPassState => !prevPassState),
-        [isPasswordHidden]
+        [isPasswordHidden],
     );
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -201,34 +203,47 @@ const TextField: React.FC<ITextFieldProps> = ({
             return;
         }
 
-        const { current: { offsetHeight: textAreaHeight } } = fieldNode;
+        const {
+            current: { offsetHeight: textAreaHeight },
+        } = fieldNode;
 
         setIsTextareaResized(textAreaHeight < initialTextareaHeight);
     };
 
-    const handleIconClick = useCallback(e => {
-        const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === Verification.ERROR;
-        const { current: field } = fieldNode;
+    const handleIconClick = useCallback(
+        e => {
+            const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === Verification.ERROR;
+            const { current: field } = fieldNode;
 
-        isPasswordType && togglePasswordHiding();
-        onCustomIconClick && onCustomIconClick(e);
-        if (!isControlled && isClearFuncAvailable) {
-            setInputValue('');
-            field && field.focus();
-        }
-    }, [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue]);
+            isPasswordType && togglePasswordHiding();
+            onCustomIconClick && onCustomIconClick(e);
+            if (!isControlled && isClearFuncAvailable) {
+                setInputValue('');
+                field && field.focus();
+            }
+        },
+        [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue],
+    );
 
-    const handleFocus = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        onFocus && onFocus(e);
-    }, [onFocus]);
+    const handleFocus = useCallback(
+        (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            onFocus && onFocus(e);
+        },
+        [onFocus],
+    );
 
-    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        onBlur && onBlur(e);
-    }, [onBlur]);
+    const handleBlur = useCallback(
+        (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            onBlur && onBlur(e);
+        },
+        [onBlur],
+    );
 
-    const handleBeforeMaskChange = useCallback((newState, oldState, inputedValue) =>
-        onBeforeMaskChange && onBeforeMaskChange(inputedValue, newState, oldState),
-    [onBeforeMaskChange]);
+    const handleBeforeMaskChange = useCallback(
+        (newState, oldState, inputedValue) =>
+            onBeforeMaskChange && onBeforeMaskChange(inputedValue, newState, oldState),
+        [onBeforeMaskChange],
+    );
 
     const textareaType = textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED;
     const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
@@ -262,10 +277,14 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const textareaParams = {
         ...commonParams,
-        className: cn('field', {
-            type: textareaType,
-            scrolling: hasScrolling,
-        }, input),
+        className: cn(
+            'field',
+            {
+                type: textareaType,
+                scrolling: hasScrolling,
+            },
+            input,
+        ),
     };
 
     const getFieldNode = (node: HTMLInputElement | HTMLTextAreaElement | null) => {
@@ -282,13 +301,16 @@ const TextField: React.FC<ITextFieldProps> = ({
             return;
         }
 
-        const { current: { scrollHeight } } = fieldNode;
+        const {
+            current: { scrollHeight },
+        } = fieldNode;
 
         if (!isTextareaResized) {
             const extraRowCount = Math.round((scrollHeight - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
-            const newHeight = extraRowCount <= DEFAULT_ROW_COUNT
-                ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount
-                : TEXTAREA_MAX_HEIGHT;
+            const newHeight =
+                extraRowCount <= DEFAULT_ROW_COUNT
+                    ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount
+                    : TEXTAREA_MAX_HEIGHT;
 
             setInitialTextareaHeight(newHeight);
         }
@@ -306,13 +328,15 @@ const TextField: React.FC<ITextFieldProps> = ({
         if (!inputValue && inputParams.placeholder && isIE11) {
             inputParams.placeholder = '';
         }
+
         return (
             <>
                 {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-input')}
-                {mask
-                    ? <InputMask {...inputParams}  {...inputMaskParams} inputRef={getFieldNode} />
-                    : <input {...inputParams} ref={getFieldNode} />
-                }
+                {mask ? (
+                    <InputMask {...inputParams} {...inputMaskParams} inputRef={getFieldNode} />
+                ) : (
+                    <input {...inputParams} ref={getFieldNode} />
+                )}
                 {!hideIcon && renderIconBlock()}
             </>
         );
@@ -329,7 +353,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                 <textarea
                     {...textareaParams}
                     onClick={handleTextareaClick}
-                    style={{ height: `${initialTextareaHeight}px`}}
+                    style={{ height: `${initialTextareaHeight}px` }}
                     ref={getFieldNode}
                 />
             </>
@@ -356,57 +380,60 @@ const TextField: React.FC<ITextFieldProps> = ({
     const renderIconBlock = () => {
         const icon: React.ReactNode | null = getIcon();
 
-        return icon && (
-            <div
-                className={cn('icon-box', {
-                    error: verification === Verification.ERROR && !customIcon,
-                    password: isPasswordType,
-                    'custom-handler': !!onCustomIconClick,
-                })}
-                onClick={handleIconClick}
-            >
-                {icon}
-            </div>
+        return (
+            icon && (
+                <div
+                    className={cn('icon-box', {
+                        error: verification === Verification.ERROR && !customIcon,
+                        password: isPasswordType,
+                        'custom-handler': !!onCustomIconClick,
+                    })}
+                    onClick={handleIconClick}
+                >
+                    {icon}
+                </div>
+            )
         );
     };
 
     const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
     const valueHasSymbols = inputValue !== null && inputValue !== undefined;
-    const currentSymbolCount = valueHasSymbols && String(inputValue).length || 0;
+    const currentSymbolCount = (valueHasSymbols && String(inputValue).length) || 0;
 
     return (
-        <div className={cn({
-            disabled,
-            theme,
-            valid: verification === Verification.VALID,
-            error: verification === Verification.ERROR || isMaxLimitExceeded,
-            icon: !hideIcon && (!!verification || !!customIcon || type === 'password') && !textarea,
-            password: isPlaceholderShowed,
-        }, className)}>
-            {label && <InputLabel htmlFor={id}>
-                {label}
-                {required && <span className={cn('require-mark')}>*</span>}
-            </InputLabel>}
-            <div
-                className={cn('field-wrapper', { 'no-touch': !isTouch })}
-            >
-                {renderField()}
-            </div>
+        <div
+            className={cn(
+                {
+                    disabled,
+                    theme,
+                    valid: verification === Verification.VALID,
+                    error: verification === Verification.ERROR || isMaxLimitExceeded,
+                    icon: !hideIcon && (!!verification || !!customIcon || type === 'password') && !textarea,
+                    password: isPlaceholderShowed,
+                },
+                className,
+            )}
+        >
+            {label && (
+                <InputLabel htmlFor={id}>
+                    {label}
+                    {required && <span className={cn('require-mark')}>*</span>}
+                </InputLabel>
+            )}
+            <div className={cn('field-wrapper', { 'no-touch': !isTouch })}>{renderField()}</div>
             <div className={cn('wrap')}>
-                {noticeText &&
-                    <div className={cn('text', {
-                        error: verification === Verification.ERROR,
-                        success: verification === Verification.VALID,
-                    })}>
+                {noticeText && (
+                    <div
+                        className={cn('text', {
+                            error: verification === Verification.ERROR,
+                            success: verification === Verification.VALID,
+                        })}
+                    >
                         {noticeText}
                     </div>
-                }
+                )}
                 {symbolCounter && (
-                    <Paragraph
-                        size="small"
-                        hasMargin={false}
-                        className={cn('counter', { error: isMaxLimitExceeded })}
-                    >
+                    <Paragraph size="small" hasMargin={false} className={cn('counter', { error: isMaxLimitExceeded })}>
                         {`${currentSymbolCount}/${symbolCounter}`}
                     </Paragraph>
                 )}

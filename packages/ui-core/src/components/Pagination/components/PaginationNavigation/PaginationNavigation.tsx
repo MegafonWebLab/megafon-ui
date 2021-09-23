@@ -1,9 +1,9 @@
 import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
-import PropTypes from 'prop-types';
-import './PaginationNavigation.less';
 import ArrowRightIcon from '@megafon/ui-icons/system-24-arrow_right_24.svg';
+import PropTypes from 'prop-types';
 import PaginationButton from '../PaginationButton/PaginationButton';
+import './PaginationNavigation.less';
 
 interface IPaginationNavigation {
     direction?: 'left' | 'right';

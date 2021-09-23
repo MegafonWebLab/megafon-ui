@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './Header.less';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 
 interface IHeaderProps extends IFilterDataAttrs {
     /** Тег */
@@ -50,10 +50,7 @@ class Header extends React.Component<IHeaderProps, {}> {
         return (
             <ElementType
                 {...filterDataAttrs(dataAttrs)}
-                className={cn(
-                    { color, margin, level, 'h-align': hAlign },
-                    className
-                )}
+                className={cn({ color, margin, level, 'h-align': hAlign }, className)}
                 onClick={onClick}
             >
                 {this.props.children}

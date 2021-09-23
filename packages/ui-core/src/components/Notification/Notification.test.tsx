@@ -1,7 +1,7 @@
 import * as React from 'react';
+import Attention from '@megafon/ui-icons/system-16-attention_16.svg';
 import { shallow } from 'enzyme';
 import Notification, { INotificationProps, NotificationTypes, ShadowTypes } from './Notification';
-import Attention from '@megafon/ui-icons/system-16-attention_16.svg';
 
 const props: INotificationProps = {
     className: 'notification',
@@ -18,16 +18,12 @@ const props: INotificationProps = {
 
 describe('<Notification />', () => {
     it('renders component', () => {
-        const wrapper = shallow(
-            <Notification>Some test text</Notification>
-        );
+        const wrapper = shallow(<Notification>Some test text</Notification>);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('it renders colored Notification with Props', () => {
-        const wrapper = shallow(
-            <Notification {...props}>Some test text</Notification>
-        );
+        const wrapper = shallow(<Notification {...props}>Some test text</Notification>);
         expect(wrapper).toMatchSnapshot();
     });
 

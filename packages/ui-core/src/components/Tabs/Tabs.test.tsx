@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
 import { cnCreate } from '@megafon/ui-helpers';
-import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
-import Tab from './Tab';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
+import { shallow } from 'enzyme';
+import Tab from './Tab';
+import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
 
-const renderTabWrapper = (tab: React.ReactNode) => {
-    return <div className="tab-wrapper">{tab}</div>;
-};
+const renderTabWrapper = (tab: React.ReactNode) => <div className="tab-wrapper">{tab}</div>;
 
 const cn = cnCreate('.mfui-beta-tabs');
 describe('<Tabs />', () => {
@@ -18,7 +16,7 @@ describe('<Tabs />', () => {
             <Tabs>
                 <Tab>1</Tab>
                 <Tab>2</Tab>
-            </Tabs>
+            </Tabs>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -43,13 +41,10 @@ describe('<Tabs />', () => {
                 <Tab title="title 1" icon={<Balance />} href="www.test.com">
                     1
                 </Tab>
-                <Tab
-                    title="title 2"
-                    renderTabWrapper={renderTabWrapper}
-                >
+                <Tab title="title 2" renderTabWrapper={renderTabWrapper}>
                     2
                 </Tab>
-            </Tabs>
+            </Tabs>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -61,7 +56,7 @@ describe('<Tabs />', () => {
             <Tabs onTabClick={mockHandleTabClick}>
                 <Tab>1</Tab>
                 <Tab>2</Tab>
-            </Tabs>
+            </Tabs>,
         );
 
         wrapper.find(cn('tab-inner')).last().simulate('click');

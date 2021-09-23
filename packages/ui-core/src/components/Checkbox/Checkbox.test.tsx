@@ -26,14 +26,9 @@ describe('<Checkbox />', () => {
 
         it('renders Checkbox with props', () => {
             const wrapper = shallow(
-                <Checkbox
-                    {...props}
-                    fontSize="small"
-                    color="light"
-                    onChange={jest.fn()}
-                >
+                <Checkbox {...props} fontSize="small" color="light" onChange={jest.fn()}>
                     Тестовая строка
-                </Checkbox>
+                </Checkbox>,
             );
             expect(wrapper).toMatchSnapshot();
         });

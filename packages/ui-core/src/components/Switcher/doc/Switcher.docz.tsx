@@ -1,12 +1,7 @@
 import * as React from 'react';
 
 interface ISwitcherWrapperProps {
-    children: (
-        switcherProps: {
-            checked: boolean;
-            onChange: () => void;
-        }
-    ) => JSX.Element;
+    children: (switcherProps: { checked: boolean; onChange: () => void }) => JSX.Element;
 }
 
 export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {

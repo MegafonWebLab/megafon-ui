@@ -15,7 +15,11 @@ const props: IMonthProps = {
 describe('<Month />', () => {
     describe('snapshots', () => {
         it('renders component with props', () => {
-            const wrapper = shallow(<Month {...props}><div /></Month>);
+            const wrapper = shallow(
+                <Month {...props}>
+                    <div />
+                </Month>,
+            );
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -24,7 +28,7 @@ describe('<Month />', () => {
             const wrapper = shallow(
                 <Month {...props} isNextMonthDisabled isPrevMonthDisabled>
                     <div />
-                </Month>
+                </Month>,
             );
 
             expect(wrapper).toMatchSnapshot();
@@ -46,7 +50,7 @@ describe('<Month />', () => {
                     isPrevMonthDisabled
                 >
                     <div />
-                </Month>
+                </Month>,
             );
 
             wrapper.find('.mfui-beta-month__arrow').first().simulate('click');
@@ -62,7 +66,7 @@ describe('<Month />', () => {
             const wrapper = shallow(
                 <Month {...props} goToPreviousMonth={goToPreviousMonth}>
                     <div />
-                </Month>
+                </Month>,
             );
 
             wrapper.find('.mfui-beta-month__arrow').first().simulate('click');
@@ -76,7 +80,7 @@ describe('<Month />', () => {
             const wrapper = shallow(
                 <Month {...props} goToNextMonth={goToNextMonth}>
                     <div />
-                </Month>
+                </Month>,
             );
 
             wrapper.find('.mfui-beta-month__arrow').last().simulate('click');

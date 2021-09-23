@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
 import { cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow-list_left_16.svg';
 import ArrowRight from '@megafon/ui-icons/system-16-arrow-list_right_16.svg';
 import './Month.less';
-import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
+import PropTypes from 'prop-types';
 
 export interface IMonthPickerProps {
     firstDayOfWeek: FirstDayOfWeek;
@@ -45,10 +45,7 @@ const Month: React.FC<IMonthProps> = ({
     return (
         <div className={cn()}>
             <div className={cn('header')}>
-                <ArrowLeft
-                    className={cn('arrow', { disabled: isPrevMonthDisabled })}
-                    onClick={handleArrowLeftClick}
-                />
+                <ArrowLeft className={cn('arrow', { disabled: isPrevMonthDisabled })} onClick={handleArrowLeftClick} />
                 <span className={cn('title')}>{`${monthLabel} ${year}`}</span>
                 <ArrowRight
                     className={cn('arrow', { disabled: isNextMonthDisabled })}
@@ -62,9 +59,7 @@ const Month: React.FC<IMonthProps> = ({
                     </div>
                 ))}
             </div>
-            <div className={cn('days')}>
-                {children}
-            </div>
+            <div className={cn('days')}>{children}</div>
         </div>
     );
 };

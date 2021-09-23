@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
 import './PaginationButton.less';
 
 type ValueType = string | number;
@@ -29,11 +29,7 @@ const PaginationButton: React.FC<IPaginationButton> = ({
     };
 
     return (
-        <button
-            className={cn({ active: isActive, theme }, className)}
-            disabled={isDisabled}
-            onClick={handleClick}
-        >
+        <button className={cn({ active: isActive, theme }, className)} disabled={isDisabled} onClick={handleClick}>
             {children}
         </button>
     );

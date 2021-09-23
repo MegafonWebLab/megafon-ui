@@ -34,10 +34,7 @@ class Link extends React.Component<ILinkProps, {}> {
     };
 
     render() {
-
-        return (
-            <a {...this.props} />
-        );
+        return <a {...this.props} />;
     }
 }
 

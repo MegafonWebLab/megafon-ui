@@ -1,7 +1,7 @@
 import React from 'react';
-import getRange from './helpers';
 import throttle from 'lodash.throttle';
 import throttleTime from 'constants/throttleTime';
+import getRange from './helpers';
 
 export const Button = {
     HIDDEN: 'HIDDEN',
@@ -23,7 +23,7 @@ type GetItemsParamsType = {
     neighbourCount: number;
 };
 
-const getItems = ({ totalPages, activePage,  maxButtonsCount, neighbourCount }: GetItemsParamsType) => {
+const getItems = ({ totalPages, activePage, maxButtonsCount, neighbourCount }: GetItemsParamsType) => {
     const isMoreThenMaxBtnsCount = totalPages > maxButtonsCount;
     const lastPage = totalPages;
 
@@ -35,13 +35,13 @@ const getItems = ({ totalPages, activePage,  maxButtonsCount, neighbourCount }: 
     const hasRightHiddenBtns = lastPage > activePage + neighbourCount + 2;
 
     switch (true) {
-        case (!hasLeftHiddenBtns && hasRightHiddenBtns): {
+        case !hasLeftHiddenBtns && hasRightHiddenBtns: {
             const range = getRange(Button.FIRST, maxButtonsCount - 2);
 
             return [...range, Button.HIDDEN, lastPage];
         }
 
-        case (hasLeftHiddenBtns && !hasRightHiddenBtns): {
+        case hasLeftHiddenBtns && !hasRightHiddenBtns: {
             const range = getRange(totalPages - (2 + 2 * neighbourCount), totalPages);
 
             return [Button.FIRST, Button.HIDDEN, ...range];

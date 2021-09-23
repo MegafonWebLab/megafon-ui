@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import './InputLabel.less';
 
 export interface IInputLabelProps {

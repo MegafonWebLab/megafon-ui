@@ -1,18 +1,18 @@
 import * as React from 'react';
+import { cnCreate } from '@megafon/ui-helpers';
+import ArrowLeft from '@megafon/ui-icons/system-16-arrow_left_16.svg';
+import ArrowRight from '@megafon/ui-icons/system-16-arrow_right_16.svg';
+import throttle from 'lodash.throttle';
 import PropTypes from 'prop-types';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import throttle from 'lodash.throttle';
-import { cnCreate } from '@megafon/ui-helpers';
 import './Tabs.less';
 import { ITabProps } from './Tab';
-import ArrowLeft from '@megafon/ui-icons/system-16-arrow_left_16.svg';
-import ArrowRight from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 
 export const TabSize = {
     SMALL: 'small',
     MEDIUM: 'medium',
-    LARGE:  'large',
+    LARGE: 'large',
 } as const;
 
 export const TabHAlign = {
@@ -59,12 +59,7 @@ export interface ITabsProps {
 const cn = cnCreate('mfui-beta-tabs');
 const Tabs: React.FC<ITabsProps> = ({
     className,
-    classes: {
-        root: rootClass,
-        innerIndents: innerIndentsClass,
-        tab: tabClass,
-        activeTab: activeTabClass,
-    } = {},
+    classes: { root: rootClass, innerIndents: innerIndentsClass, tab: tabClass, activeTab: activeTabClass } = {},
     size = 'medium',
     hAlign = 'left',
     tabColorTheme = 'white',
@@ -87,13 +82,9 @@ const Tabs: React.FC<ITabsProps> = ({
 
     const [underlineWidth, setUnderlineWidth] = React.useState(0);
     const [underlineTranslate, setUnderlineTranslate] = React.useState(0);
-    const [underlineTransition, setUnderlineTransition] = React.useState(
-        'none'
-    );
+    const [underlineTransition, setUnderlineTransition] = React.useState('none');
 
-    const [tabListHeight, setTabListHeight] = React.useState<number | 'auto'>(
-        'auto'
-    );
+    const [tabListHeight, setTabListHeight] = React.useState<number | 'auto'>('auto');
 
     const [isSticky, setSticky] = React.useState(false);
     const [stickyOffset, setStickyOffset] = React.useState({
@@ -112,13 +103,11 @@ const Tabs: React.FC<ITabsProps> = ({
 
         const tabNodeChild = tabsRef.current[currentIndex].firstElementChild;
         const { clientWidth = 0 } = (tabNodeChild as HTMLDivElement) || {};
-        const translate = [...tabsRef.current]
-            .splice(0, currentIndex)
-            .reduce((accWidth, node) => {
-                const { width } = node.getBoundingClientRect();
+        const translate = [...tabsRef.current].splice(0, currentIndex).reduce((accWidth, node) => {
+            const { width } = node.getBoundingClientRect();
 
-                return accWidth + width;
-            }, 0);
+            return accWidth + width;
+        }, 0);
 
         setUnderlineWidth(clientWidth);
         setUnderlineTranslate(translate);
@@ -133,19 +122,21 @@ const Tabs: React.FC<ITabsProps> = ({
         const documentWidth = document.documentElement.clientWidth;
 
         setStickyOffset({ left, right: documentWidth - right });
-
     }, [stickyOffset, isSticky]);
 
-    const handleTabInnerClick = React.useCallback((index: number) => () => {
-        setUnderlineTransition('all');
+    const handleTabInnerClick = React.useCallback(
+        (index: number) => () => {
+            setUnderlineTransition('all');
 
-        onTabClick && onTabClick(index);
-        if (outerIndex === undefined) {
-            setInnerIndex(index);
-        }
+            onTabClick && onTabClick(index);
+            if (outerIndex === undefined) {
+                setInnerIndex(index);
+            }
 
-        swiperInstance?.slideTo(index);
-    }, [onTabClick, outerIndex, swiperInstance]);
+            swiperInstance?.slideTo(index);
+        },
+        [onTabClick, outerIndex, swiperInstance],
+    );
 
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
         setSwiperInstance(swiper);
@@ -159,49 +150,50 @@ const Tabs: React.FC<ITabsProps> = ({
         swiperInstance?.slideNext();
     }, [swiperInstance]);
 
-    const renderTab = React.useCallback((
-        index: number,
-        title?: string,
-        icon?: React.ReactNode,
-        href?: string
-    ) => {
-        const ElementType = href ? 'a' : 'div';
-
-        return (
-            <ElementType
-                href={href}
-                className={cn('tab-inner', {
-                    current: currentIndex === index,
-                })}
-                onClick={handleTabInnerClick(index)}
-            >
-                {!!icon && <div className={cn('tab-icon')}>{icon}</div>}
-                {!!title && <div className={cn('tab-title')}>{title}</div>}
-            </ElementType>
-        );
-    }, [handleTabInnerClick, currentIndex]);
-
-    const renderTabs = React.useCallback(() =>
-        React.Children.map(children, (child, i) => {
-            const {
-                props: { title, icon, href, renderTabWrapper },
-            } = child;
-            const tab = renderTab(i, title, icon, href);
-
-            const activeTabClassName = currentIndex === i ? activeTabClass : undefined;
+    const renderTab = React.useCallback(
+        (index: number, title?: string, icon?: React.ReactNode, href?: string) => {
+            const ElementType = href ? 'a' : 'div';
 
             return (
-                <SwiperSlide className={cn('slide')}>
-                    <div className={cn('tab', [tabClass, activeTabClassName])} ref={setTabRef}>
-                        {renderTabWrapper ? renderTabWrapper(tab) : tab}
-                    </div>
-                </SwiperSlide>
+                <ElementType
+                    href={href}
+                    className={cn('tab-inner', {
+                        current: currentIndex === index,
+                    })}
+                    onClick={handleTabInnerClick(index)}
+                >
+                    {!!icon && <div className={cn('tab-icon')}>{icon}</div>}
+                    {!!title && <div className={cn('tab-title')}>{title}</div>}
+                </ElementType>
             );
-    }), [renderTab, children]);
+        },
+        [handleTabInnerClick, currentIndex],
+    );
 
-    const renderPanels = React.useCallback(() =>
-        React.Children.map(children, (child, i) => {
-            return (
+    const renderTabs = React.useCallback(
+        () =>
+            React.Children.map(children, (child, i) => {
+                const {
+                    props: { title, icon, href, renderTabWrapper },
+                } = child;
+                const tab = renderTab(i, title, icon, href);
+
+                const activeTabClassName = currentIndex === i ? activeTabClass : undefined;
+
+                return (
+                    <SwiperSlide className={cn('slide')}>
+                        <div className={cn('tab', [tabClass, activeTabClassName])} ref={setTabRef}>
+                            {renderTabWrapper ? renderTabWrapper(tab) : tab}
+                        </div>
+                    </SwiperSlide>
+                );
+            }),
+        [renderTab, children],
+    );
+
+    const renderPanels = React.useCallback(
+        () =>
+            React.Children.map(children, (child, i) => (
                 <div
                     className={cn('panel', {
                         current: currentIndex === i,
@@ -209,8 +201,9 @@ const Tabs: React.FC<ITabsProps> = ({
                 >
                     {child}
                 </div>
-            );
-    }), [children, currentIndex]);
+            )),
+        [children, currentIndex],
+    );
 
     const handleReachBeginning = React.useCallback((swiper: SwiperCore) => {
         setBeginning(swiper.isBeginning);
@@ -226,40 +219,43 @@ const Tabs: React.FC<ITabsProps> = ({
     }, []);
 
     React.useEffect(() => {
-        const observer =  new IntersectionObserver((entries) => {
-            entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
-                if (!sticky || !rootRef.current || !tabListRef.current) {
-                    return;
-                }
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
+                    if (!sticky || !rootRef.current || !tabListRef.current) {
+                        return;
+                    }
 
-                const listHeight = tabListRef.current.clientHeight;
+                    const listHeight = tabListRef.current.clientHeight;
 
-                setTabListHeight(listHeight);
+                    setTabListHeight(listHeight);
 
-                const stickyON = (leftOffset: number, rightOffset: number) => {
-                    const documentWidth = document.documentElement.clientWidth;
+                    const stickyON = (leftOffset: number, rightOffset: number) => {
+                        const documentWidth = document.documentElement.clientWidth;
 
-                    setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
-                    setSticky(true);
-                };
+                        setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
+                        setSticky(true);
+                    };
 
-                const stickyOFF = () => {
-                    setStickyOffset({ left: 0, right: 0 });
-                    setSticky(false);
-                };
+                    const stickyOFF = () => {
+                        setStickyOffset({ left: 0, right: 0 });
+                        setSticky(false);
+                    };
 
-                if (isIntersecting) {
-                    top < 0 ? stickyON(left, right) : stickyOFF();
-                } else {
-                    top < 0 && stickyOFF();
-                }
-          });
-        }, { threshold: [ 0 , 1 ] });
+                    if (isIntersecting) {
+                        top < 0 ? stickyON(left, right) : stickyOFF();
+                    } else {
+                        top < 0 && stickyOFF();
+                    }
+                });
+            },
+            { threshold: [0, 1] },
+        );
 
         rootRef.current && observer.observe(rootRef.current);
 
         return () => {
-           rootRef.current && observer.unobserve(rootRef.current);
+            rootRef.current && observer.unobserve(rootRef.current);
         };
     }, [calculateSticky]);
 
@@ -297,14 +293,11 @@ const Tabs: React.FC<ITabsProps> = ({
                     indents: !innerIndentsClass,
                     sticky: isSticky,
                 },
-                [className, rootClass]
+                [className, rootClass],
             )}
             ref={rootRef}
         >
-            <div
-                ref={tabListRef}
-                style={{ height: tabListHeight }}
-            >
+            <div ref={tabListRef} style={{ height: tabListHeight }}>
                 <div
                     className={cn('swiper-wrapper')}
                     style={{
@@ -320,7 +313,7 @@ const Tabs: React.FC<ITabsProps> = ({
                                 beginning: isBeginning,
                                 end: isEnd,
                             },
-                            [innerIndentsClass]
+                            [innerIndentsClass],
                         )}
                         slidesPerView="auto"
                         initialSlide={currentIndex}

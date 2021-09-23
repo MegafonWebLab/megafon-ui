@@ -32,7 +32,11 @@ describe('<Header />', () => {
     });
 
     it('it renders with children', () => {
-        const wrapper = shallow(<Header><section /></Header>);
+        const wrapper = shallow(
+            <Header>
+                <section />
+            </Header>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 

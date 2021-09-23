@@ -10,7 +10,7 @@ describe('<Switcher />', () => {
         });
 
         it('should render switcher with external className', () => {
-            const wrapper = shallow(<Switcher className={'external-class-name'} />);
+            const wrapper = shallow(<Switcher className="external-class-name" />);
             expect(wrapper).toMatchSnapshot();
         });
 

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import './Grid.less';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import { IGridColumn } from './GridColumn';
+import './Grid.less';
 
 export interface IGridProps {
     /** Выравнивание всех колонок по горизонтали */
@@ -38,7 +38,8 @@ const Grid: React.FC<IGridProps> = ({
                 'v-align': vAlign,
                 'gutters-left': guttersLeft,
                 'gutters-bottom': guttersBottom,
-            })}>
+            })}
+        >
             {React.Children.map(children, (child: React.ReactElement<IGridColumn>) =>
                 React.cloneElement(child, {
                     className: cn(
@@ -47,9 +48,9 @@ const Grid: React.FC<IGridProps> = ({
                             'gutter-left': guttersLeft,
                             'gutter-bottom': guttersBottom,
                         },
-                        child.props.className
+                        child.props.className,
                     ),
-                })
+                }),
             )}
         </div>
     </div>
@@ -62,10 +63,8 @@ Grid.propTypes = {
     guttersBottom: PropTypes.oneOf(['large', 'medium']),
     multiRow: PropTypes.bool,
     className: PropTypes.string,
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element.isRequired),
-        PropTypes.element.isRequired,
-    ]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element.isRequired])
+        .isRequired,
 };
 
 export default Grid;
