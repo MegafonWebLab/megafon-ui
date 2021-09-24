@@ -23,16 +23,6 @@
 
     .border-radius(@mainRadiusSize);
 
-    @media @mobileSM {
-        &:before {
-            right: 0;
-            bottom: auto;
-
-            width: auto;
-            height: 12px;
-        }
-    }
-
     &:before {
         content: '';
         position: absolute;
@@ -44,6 +34,14 @@
 
         background-color: @green;
         .border-radius(@extraRadiusSize);
+
+        @media @mobileSM {
+            right: 0;
+            bottom: auto;
+
+            width: auto;
+            height: 12px;
+        }
     }
 
     &__content {
