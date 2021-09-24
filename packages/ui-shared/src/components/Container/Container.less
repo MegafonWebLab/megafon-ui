@@ -47,7 +47,6 @@
     @media @mobileB {
         padding-top: @contentVerticalIndentMobileB;
     }
-
     @media @mobileSM {
         padding-top: @contentVerticalIndentMobileSM;
     }
@@ -94,22 +93,6 @@
 @{root} {
     padding-bottom: @contentVerticalIndentDesktop;
 
-    &_disable-padding-top {
-        padding-top: 0 !important;
-    }
-
-    &_disable-padding-bottom {
-        padding-bottom: 0 !important;
-    }
-
-    @media @mobileB {
-        padding-bottom: @contentVerticalIndentMobileB;
-    }
-
-    @media @mobileSM {
-        padding-bottom: @contentVerticalIndentMobileSM;
-    }
-
     @{color-modificator}@{color-default} {
         background-color: @clearWhite;
     }
@@ -130,6 +113,13 @@
         background-color: @purple;
     }
 
+    @media @mobileB {
+        padding-bottom: @contentVerticalIndentMobileB;
+    }
+    @media @mobileSM {
+        padding-bottom: @contentVerticalIndentMobileSM;
+    }
+
     .generateAllContainersColorsPaddingTop(@colors);
 
     // k2(title-description-box)
@@ -141,7 +131,6 @@
         .generateComponentsMargins(@big, @k2, 3, 17);
         .generateComponentsMargins(@small, @k2, 14, 15);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k2, 3 ,17);
         .generateComponentsMargins(@small, @k2, 14, 15);
@@ -155,7 +144,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k3, 4, 20);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k3, 4, 20);
     }
@@ -168,7 +156,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k4, 3, 20);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k4, 3, 20);
     }
@@ -185,7 +172,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k5, 3, 20);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k5, 3, 20);
     }
@@ -202,7 +188,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k6, 3, 20);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k6, 3, 20);
     }
@@ -220,7 +205,6 @@
         .generateComponentsMargins(@big, @k7, 3, 20);
         .generateComponentsMargins(@small, @k7, 14, 15);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k7, 3, 20);
         .generateComponentsMargins(@small, @k7, 14, 15);
@@ -242,7 +226,6 @@
         @media @mobileB {
             margin-top: @big;
         }
-
         @media @mobileSM {
             margin-top: @medium;
         }
@@ -271,7 +254,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k9, 3, 20);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k9, 3, 20);
     }
@@ -301,7 +283,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k11, 3, 20);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k11, 3, 20);
     }
@@ -328,7 +309,6 @@
         .generateComponentsMargins(@big, @k12, 3, 20);
         .generateComponentsMargins(@small, @k12, 14, 15);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k12, 3, 20);
         .generateComponentsMargins(@small, @k12, 14, 15);
@@ -346,7 +326,6 @@
         @media @mobileB {
             margin-top: @big;
         }
-
         @media @mobileSM {
             margin-top: @medium;
         }
@@ -360,7 +339,6 @@
         @media @mobileB {
             margin-top: @big;
         }
-
         @media @mobileSM {
             margin-top: @medium;
         }
@@ -375,7 +353,6 @@
         .generateComponentsMargins(@big, @k16, 3, 20);
         .generateComponentsMargins(@small, @k16, 14, 15);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k16, 3, 20);
         .generateComponentsMargins(@small, @k16, 14, 15);
@@ -390,7 +367,6 @@
         .generateComponentsMargins(@big, @k17, 3, 20);
         .generateComponentsMargins(@small, @k17, 14, 15);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k17, 3, 20);
         .generateComponentsMargins(@small, @k17, 14, 15);
@@ -407,7 +383,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k20, 3, 19);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k20, 3, 19);
     }
@@ -418,7 +393,6 @@
     @media @mobileB {
         .generateComponentsMargins(@big, @k21, 2, 17);
     }
-
     @media @mobileSM {
         .generateComponentsMargins(@medium, @k21, 2, 17);
     }
@@ -429,5 +403,13 @@
 
     @{k21} + @{k14} {
         .disableMarginTop();
+    }
+
+    &_disable-padding-top {
+        padding-top: 0 !important;
+    }
+
+    &_disable-padding-bottom {
+        padding-bottom: 0 !important;
     }
 }

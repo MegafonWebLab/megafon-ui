@@ -23,8 +23,8 @@
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "typecheck": "tsc --noEmit -p .",
     "lint": "yarn lint:ts && yarn lint:less",
-    "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "lint:ts": "tslint -c tslint.json '{src,scripts}/**/*.ts?(x)'",
+    "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "test": "yarn test:unit",
     "test:unit": "jest",
     "test:update": "jest --updateSnapshot"
