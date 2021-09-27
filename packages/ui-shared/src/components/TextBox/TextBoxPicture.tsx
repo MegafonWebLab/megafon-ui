@@ -5,9 +5,9 @@ import './TextBoxPicture.less';
 
 export const pictureMarginTypes = {
     DEFAULT: 'default',
-    BIG_TOP_MARGIN: 'big_top_margin',
-    BIG_BOTTOM_MARGIN: 'big_bottom_margin',
-    BIG_VERTICAL_MARGIN: 'big_vertical_margin',
+    BIG_TOP: 'big-top',
+    BIG_BOTTOM: 'big-bottom',
+    BIG_VERTICAL: 'big-vertical',
 } as const;
 
 type PictureMarginTypesType = typeof pictureMarginTypes[keyof typeof pictureMarginTypes];
@@ -30,9 +30,9 @@ TextBoxPicture.propTypes = {
     url: PropTypes.string.isRequired,
     margin: PropTypes.oneOf([
         pictureMarginTypes.DEFAULT,
-        pictureMarginTypes.BIG_TOP_MARGIN,
-        pictureMarginTypes.BIG_BOTTOM_MARGIN,
-        pictureMarginTypes.BIG_VERTICAL_MARGIN,
+        pictureMarginTypes.BIG_TOP,
+        pictureMarginTypes.BIG_BOTTOM,
+        pictureMarginTypes.BIG_VERTICAL,
     ]),
 };
 
