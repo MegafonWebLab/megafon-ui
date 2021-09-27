@@ -2,7 +2,7 @@
 
 exports[`TextBoxPicture render with big bottom margin 1`] = `
 <div
-  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big_bottom_margin"
+  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big-bottom"
 >
   <img
     className="mfui-beta-text-box-picture__img"
@@ -13,7 +13,7 @@ exports[`TextBoxPicture render with big bottom margin 1`] = `
 
 exports[`TextBoxPicture render with big top margin 1`] = `
 <div
-  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big_top_margin"
+  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big-top"
 >
   <img
     className="mfui-beta-text-box-picture__img"
@@ -24,7 +24,7 @@ exports[`TextBoxPicture render with big top margin 1`] = `
 
 exports[`TextBoxPicture render with big vertical margins 1`] = `
 <div
-  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big_vertical_margin"
+  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big-vertical"
 >
   <img
     className="mfui-beta-text-box-picture__img"

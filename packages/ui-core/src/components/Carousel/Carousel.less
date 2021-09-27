@@ -7,6 +7,9 @@
 @swiperBullet: e('.swiper-pagination-bullet');
 @swiperBulletActive: e('.swiper-pagination-bullet-active');
 @swiperSlideVisible: e('.swiper-slide-visible');
+@paginationIndent: 32px;
+@bulletSize: 8px;
+@paginationArea: @paginationIndent + @bulletSize;
 
 @{b} {
     position: relative;
@@ -46,7 +49,7 @@
             margin-right: -16px;
             margin-left: -16px;
             padding-right: 32px;
-            padding-left: 32px;
+            padding-left: 16px;
         }
     }
 
@@ -78,8 +81,9 @@
     &__arrow {
         position: absolute;
         top: 50%;
+        z-index: 2;
 
-        transform: translateY(calc(~'-50% - @{paginationIndent} / 2'));
+        transform: translateY(calc(~'-50% - @{paginationArea} / 2'));
 
         @media @mobile {
             display: none;
@@ -106,7 +110,7 @@
         order: 2;
 
         width: 100%;
-        padding-top: 40px;
+        padding-top: @paginationIndent;
         border-radius: 12px;
     }
 
@@ -119,8 +123,8 @@
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        width: 8px;
-        height: 8px;
+        width: @bulletSize;
+        height: @bulletSize;
         padding: 1px;
         border-radius: 50%;
 
@@ -178,8 +182,6 @@
         }
     }
 }
-
-@paginationIndent: 40px;
 
 .arrowPosition(@direction) {
     @{direction}: calc(~'100% + 12px');

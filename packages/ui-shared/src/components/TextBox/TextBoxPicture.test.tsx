@@ -16,21 +16,21 @@ describe('TextBoxPicture', () => {
 
     it('render with big vertical margins', () => {
         const wrapper = shallow(
-            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_VERTICAL_MARGIN} />
+            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_VERTICAL} />
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with big bottom margin', () => {
         const wrapper = shallow(
-            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_BOTTOM_MARGIN} />
+            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_BOTTOM} />
         );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with big top margin', () => {
         const wrapper = shallow(
-            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_TOP_MARGIN} />
+            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_TOP} />
         );
         expect(wrapper).toMatchSnapshot();
     });
