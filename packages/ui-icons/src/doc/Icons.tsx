@@ -37,8 +37,6 @@ const sizeDictionary = {
 const importIcon = 'import Icon from \'@megafon/ui-icons/';
 
 class Icons extends React.Component<{}, IIconsState> {
-    copyToClipBoard?: (str: string, copyIndex: copyBoard) => void = undefined;
-
     constructor(props: {}) {
         super(props);
         this.state = {
@@ -92,25 +90,20 @@ class Icons extends React.Component<{}, IIconsState> {
         }, {});
 
         this.setState({ sections });
-
-        this.copyToClipBoard = this.createElToClipboard();
     }
 
-    createElToClipboard = () => {
+    copyToClipBoard = (str: string, copyIndex: copyBoard) => () => {
         const el = document.createElement('textarea');
-
         el.setAttribute('readonly', '');
         el.style.position = 'absolute';
         el.style.left = '-9999px';
         document.body.appendChild(el);
 
-        return (str: string, copyIndex: copyBoard) => () => {
-            el.value = str;
-            el.select();
-            document.execCommand('copy');
-            el.remove();
-            this.setState({ copyIndex });
-        };
+        el.value = str;
+        el.select();
+        document.execCommand('copy');
+        el.remove();
+        this.setState({ copyIndex });
     }
 
     handleIconClick = (svgData: {}) => (e: React.SyntheticEvent): void => {
@@ -158,8 +151,7 @@ class Icons extends React.Component<{}, IIconsState> {
                     <a title="Скопировать в буфер">
                         <Copy
                             className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
-                            onClick={this.copyToClipBoard &&
-                                    this.copyToClipBoard(`${importStr}.svg';`, copyBoard.SVG)}
+                            onClick={this.copyToClipBoard(`${importStr}.svg';`, copyBoard.SVG)}
                         />
                     </a>
                 </div>
@@ -201,7 +193,7 @@ class Icons extends React.Component<{}, IIconsState> {
                         </div>
                         {this.renderInfoIcon(svgList[activeIcon])}
                         <div className={cn('info-icon-wrap')}>
-                            <div style={{width: `${Number(svgList[activeIcon].size) * 2}px` }}>
+                            <div style={{ width: `${Number(svgList[activeIcon].size) * 2}px` }}>
                                 <Svg />
                             </div>
                         </div>
