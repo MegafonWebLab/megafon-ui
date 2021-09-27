@@ -36,8 +36,8 @@ export interface IBenefitsPicturesProps {
 }
 
 const isEvenIndex = index => !((index + 1) % 2);
-const getEvenOffset = index =>  isEvenIndex(index) ? '1' : undefined;
-const getOddOffset = index => isEvenIndex(index) ? undefined : '1';
+const getEvenOffset = index => (isEvenIndex(index) ? '1' : undefined);
+const getOddOffset = index => (isEvenIndex(index) ? undefined : '1');
 
 const getLeftConfig = (count: number, index: number): GridConfig => {
     switch (count) {
@@ -138,19 +138,17 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     const isGridCenterAlign = hAlign === 'center' && items.length !== ONLY_LEFT_ALIGN_ITEMS_COUNT;
     const [currentGutter, setCurrentGutter] = React.useState(gridGap);
 
-    const resizeHandler = useCallback(
-        () => {
-            if (!isLargeGutter) {
-                return;
-            }
+    const resizeHandler = useCallback(() => {
+        if (!isLargeGutter) {
+            return;
+        }
 
-            if (window.innerWidth < breakpoints.DESKTOP_MIDDLE_START) {
-                setCurrentGutter('medium');
-            } else {
-                setCurrentGutter('large');
-            }
-        }, []
-    );
+        if (window.innerWidth < breakpoints.DESKTOP_MIDDLE_START) {
+            setCurrentGutter('medium');
+        } else {
+            setCurrentGutter('large');
+        }
+    }, []);
 
     React.useEffect(() => {
         const throttledResizeHandler = throttle(resizeHandler, throttleTime.resize);
@@ -163,27 +161,23 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
 
     return (
         <div className={cn([className, classes.root])} ref={rootRef}>
-            <Grid
-                guttersLeft={currentGutter}
-                hAlign={isGridCenterAlign ? 'center' : 'left'}
-            >
-                {items.map(({ img, title, text }, index) =>
+            <Grid guttersLeft={currentGutter} hAlign={isGridCenterAlign ? 'center' : 'left'}>
+                {items.map(({ img, title, text }, index) => (
                     <GridColumn
-                        {...hAlign === 'left'
+                        {...(hAlign === 'left'
                             ? getLeftConfig(items.length, index)
-                            : getCenterConfig(items.length, index, gridGap)}
+                            : getCenterConfig(items.length, index, gridGap))}
                         key={index}
                     >
                         <div className={cn('item', [classes.item])}>
-                            <img className={cn('img', { 'h-align': hAlign })}
-                                 src={img}
-                                 alt=""
-                            />
-                            <Header className={cn('title')} hAlign={hAlign} as="h3">{convert(title)}</Header>
+                            <img className={cn('img', { 'h-align': hAlign })} src={img} alt="" />
+                            <Header className={cn('title')} hAlign={hAlign} as="h3">
+                                {convert(title)}
+                            </Header>
                             <Paragraph align={hAlign}>{convert(text)}</Paragraph>
                         </div>
                     </GridColumn>
-                )}
+                ))}
             </Grid>
         </div>
     );
@@ -192,14 +186,14 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
 BenefitsPictures.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     items: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             text: PropTypes.string.isRequired,
             img: PropTypes.string.isRequired,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     hAlign: PropTypes.oneOf(['left', 'center']),
     gridGap: PropTypes.oneOf(['medium', 'large']),

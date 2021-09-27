@@ -18,15 +18,12 @@ const instructionTitles = [
     'Позвоните первому свободному врачу или запишитесь на онлайн-консультацию к конкретному специалисту',
 ];
 
-const instructionItems = (image, isFirstItemVideo = false) => (
-    instructionTitles.map((title, i) => (
-        {
-            title,
-            mediaUrl: Array.isArray(image) ? image[i] : image,
-            isVideo: isFirstItemVideo && i === 0,
-        }
-    )
-));
+const instructionItems = (image, isFirstItemVideo = false) =>
+    instructionTitles.map((title, i) => ({
+        title,
+        mediaUrl: Array.isArray(image) ? image[i] : image,
+        isVideo: isFirstItemVideo && i === 0,
+    }));
 
 export const items = instructionItems([Image1, Image2, Image3, Image4, Image5]);
 

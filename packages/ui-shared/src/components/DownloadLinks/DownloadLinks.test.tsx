@@ -12,7 +12,11 @@ const props: IDownloadLink = {
 
 describe('DownloadLinks', () => {
     it('render component with one column', () => {
-        const wrapper = shallow(<DownloadLinks><DownloadLink {...props} /></DownloadLinks>);
+        const wrapper = shallow(
+            <DownloadLinks>
+                <DownloadLink {...props} />
+            </DownloadLinks>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -22,7 +26,8 @@ describe('DownloadLinks', () => {
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
-            </DownloadLinks>);
+            </DownloadLinks>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -34,7 +39,8 @@ describe('DownloadLinks', () => {
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
                 <DownloadLink {...props} />
-            </DownloadLinks>);
+            </DownloadLinks>,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 });

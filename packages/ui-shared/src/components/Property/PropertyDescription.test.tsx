@@ -1,24 +1,17 @@
 import * as React from 'react';
-import {mount, shallow} from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import PropertyDescription from './PropertyDescription';
 
 describe('<PropertyDescription />', () => {
     it('should render description', () => {
-        const wrapper = shallow(
-            <PropertyDescription
-                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
-            />
-        );
+        const wrapper = shallow(<PropertyDescription value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка" />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render hidden description', () => {
         const wrapper = shallow(
-            <PropertyDescription
-                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
-                isCollapsible
-            />
+            <PropertyDescription value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка" isCollapsible />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -26,10 +19,7 @@ describe('<PropertyDescription />', () => {
 
     it('should render opened description', () => {
         const wrapper = shallow(
-            <PropertyDescription
-                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
-                isCollapsible
-            />
+            <PropertyDescription value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка" isCollapsible />,
         );
 
         wrapper.find('.mfui-beta-property-description__collapse').simulate('click');
@@ -41,8 +31,8 @@ describe('<PropertyDescription />', () => {
             <PropertyDescription
                 value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
                 isCollapsible
-                classes={{ toggle: 'toggle-custom-class'}}
-            />
+                classes={{ toggle: 'toggle-custom-class' }}
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -54,7 +44,7 @@ describe('<PropertyDescription />', () => {
                 value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
                 isCollapsible
                 classes={{ open: 'open-custom-class' }}
-            />
+            />,
         );
 
         wrapper.find('.mfui-beta-property-description__collapse').simulate('click');

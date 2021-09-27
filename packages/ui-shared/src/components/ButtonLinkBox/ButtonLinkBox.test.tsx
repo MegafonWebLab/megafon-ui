@@ -24,7 +24,7 @@ const props: IButtonLinkBoxProps = {
 
 describe('<ButtonLinkBox />', () => {
     it('renders ButtonLinkBox', () => {
-        const wrapper = shallow(<ButtonLinkBox {...props}/>);
+        const wrapper = shallow(<ButtonLinkBox {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 

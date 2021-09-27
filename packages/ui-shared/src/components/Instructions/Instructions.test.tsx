@@ -5,7 +5,7 @@ import Instructions, {
     pictureMaskTypes,
     pictureAlignTypes,
     IInstructionsProps,
-    InstructionItemType
+    InstructionItemType,
 } from './Instructions';
 
 type LocalWindowType = Omit<Window, 'innerWidth'> & {
@@ -33,9 +33,7 @@ const props: IInstructionsProps = {
 describe('<Instructions />', () => {
     describe('desktop resolution', () => {
         it('should render with default props', () => {
-            const wrapper = shallow(
-                <Instructions {...props} />
-            );
+            const wrapper = shallow(<Instructions {...props} />);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -46,9 +44,7 @@ describe('<Instructions />', () => {
                 pictureAlign: pictureAlignTypes.RIGHT,
             };
 
-            const wrapper = shallow(
-                <Instructions {...newProps} />
-            );
+            const wrapper = shallow(<Instructions {...newProps} />);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -59,9 +55,7 @@ describe('<Instructions />', () => {
                 pictureMask: pictureMaskTypes.BLACK_IPHONE,
             };
 
-            const wrapper = shallow(
-                <Instructions {...newProps} />
-            );
+            const wrapper = shallow(<Instructions {...newProps} />);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -72,17 +66,13 @@ describe('<Instructions />', () => {
                 pictureMask: pictureMaskTypes.IPHONE_12,
             };
 
-            const wrapper = shallow(
-                <Instructions {...newProps} />
-            );
+            const wrapper = shallow(<Instructions {...newProps} />);
 
             expect(wrapper).toMatchSnapshot();
         });
 
         it('active slide will be changed', () => {
-            const wrapper = shallow(
-                <Instructions {...props} />
-            );
+            const wrapper = shallow(<Instructions {...props} />);
 
             wrapper.find('.mfui-beta-instructions__articles-item').at(1).simulate('click');
 
@@ -104,17 +94,13 @@ describe('<Instructions />', () => {
         });
 
         it('should render with default props', () => {
-            const wrapper = mount(
-                <Instructions {...props} />
-            );
+            const wrapper = mount(<Instructions {...props} />);
 
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should rerender when window resize', () => {
-            const wrapper = mount(
-                <Instructions {...props} />
-            );
+            const wrapper = mount(<Instructions {...props} />);
 
             expect(wrapper).toMatchSnapshot();
 
@@ -130,7 +116,7 @@ describe('<Instructions />', () => {
     });
 
     it('should render component with additional text', () => {
-        const wrapper = shallow(<Instructions {...props} additionalText="additionalText" /> );
+        const wrapper = shallow(<Instructions {...props} additionalText="additionalText" />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -154,19 +140,14 @@ describe('<Instructions />', () => {
                     instructionItemImg: 'instructionItemImg',
                     additionalText: 'additionalText',
                 }}
-            />
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
     });
     it('should render with classes props', () => {
         const handleSwiper = jest.fn();
-        mount(
-            <Instructions
-                {...props}
-                getSwiper={handleSwiper}
-            />
-        );
+        mount(<Instructions {...props} getSwiper={handleSwiper} />);
 
         expect(handleSwiper).toHaveBeenCalled();
     });

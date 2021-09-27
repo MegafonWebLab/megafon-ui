@@ -24,7 +24,7 @@ describe('DownloadLink', () => {
                     root: 'root-class',
                     link: 'link-class',
                 }}
-            />
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });

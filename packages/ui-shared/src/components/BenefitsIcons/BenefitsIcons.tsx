@@ -140,14 +140,15 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
                         <GridColumn
                             className={classes.gridColumn}
                             {...getColumnConfig(iconPosition, items.length, i)}
-                            key={i}>
-                                <BenefitsIconsTile
-                                    className={classes.item}
-                                    title={title}
-                                    text={text}
-                                    icon={icon}
-                                    iconPosition={iconPosition}
-                                />
+                            key={i}
+                        >
+                            <BenefitsIconsTile
+                                className={classes.item}
+                                title={title}
+                                text={text}
+                                icon={icon}
+                                iconPosition={iconPosition}
+                            />
                         </GridColumn>
                     ))}
                 </Grid>
@@ -159,7 +160,7 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
 BenefitsIcons.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
     items: PropTypes.arrayOf(
@@ -167,7 +168,7 @@ BenefitsIcons.propTypes = {
             title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
             text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
             icon: PropTypes.node.isRequired,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     className: PropTypes.string,
     classes: PropTypes.shape({

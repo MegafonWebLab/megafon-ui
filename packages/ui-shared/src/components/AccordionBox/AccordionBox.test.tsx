@@ -25,7 +25,7 @@ describe('<AccordionBox />', () => {
         const wrapper = shallow(
             <AccordionBox {...props}>
                 <div>test</div>
-            </AccordionBox>
+            </AccordionBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -35,7 +35,7 @@ describe('<AccordionBox />', () => {
         const wrapper = shallow(
             <AccordionBox {...props} hCenterAlignWide>
                 <div>test</div>
-            </AccordionBox>
+            </AccordionBox>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -45,7 +45,7 @@ describe('<AccordionBox />', () => {
         const wrapper = shallow(
             <AccordionBox {...props} isFullWidth>
                 <div>test</div>
-            </AccordionBox>
+            </AccordionBox>,
         );
 
         expect(wrapper).toMatchSnapshot();

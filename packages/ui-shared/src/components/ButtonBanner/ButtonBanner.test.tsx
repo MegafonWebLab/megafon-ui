@@ -28,17 +28,13 @@ const props: IButtonBannerProps = {
 
 describe('<ButtonBanner />', () => {
     it('should render with required props', () => {
-        const wrapper = shallow(
-            <ButtonBanner {...requiredProps} />
-        );
+        const wrapper = shallow(<ButtonBanner {...requiredProps} />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with props', () => {
-        const wrapper = shallow(
-            <ButtonBanner {...props} />
-        );
+        const wrapper = shallow(<ButtonBanner {...props} />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -54,9 +50,7 @@ describe('<ButtonBanner />', () => {
     it('should call onButtonClick', () => {
         const onButtonClickMock = jest.fn();
         const event = 'event';
-        const wrapper = shallow(
-            <ButtonBanner {...props} onButtonClick={onButtonClickMock} />
-        );
+        const wrapper = shallow(<ButtonBanner {...props} onButtonClick={onButtonClickMock} />);
 
         wrapper.find('Button').simulate('click', event);
 

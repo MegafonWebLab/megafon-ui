@@ -50,45 +50,32 @@ describe('StoreBanner', () => {
             <StoreBanner
                 {...props}
                 className="custom-class-name"
-                classes={{ root: 'root-custom-class-name', appleLink: 'app-store-custom-class-name', googleLink: 'google-store-custom-class-name' }}
-            />
+                classes={{
+                    root: 'root-custom-class-name',
+                    appleLink: 'app-store-custom-class-name',
+                    googleLink: 'google-store-custom-class-name',
+                }}
+            />,
         );
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with Huawei Store', () => {
-        const wrapper = shallow(
-            <StoreBanner
-                {...props}
-                className="custom-class-name"
-                linkHuawei="#huawei"
-            />
-        );
+        const wrapper = shallow(<StoreBanner {...props} className="custom-class-name" linkHuawei="#huawei" />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with green button', () => {
-        const wrapper = shallow(
-            <StoreBanner
-                {...props}
-                className="custom-class-name"
-                linkButton="#button"
-            />
-        );
+        const wrapper = shallow(<StoreBanner {...props} className="custom-class-name" linkButton="#button" />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with violet button', () => {
         const wrapper = shallow(
-            <StoreBanner
-                {...props}
-                className="custom-class-name"
-                linkButton="#button"
-                theme="green"
-            />
+            <StoreBanner {...props} className="custom-class-name" linkButton="#button" theme="green" />,
         );
 
         expect(wrapper).toMatchSnapshot();

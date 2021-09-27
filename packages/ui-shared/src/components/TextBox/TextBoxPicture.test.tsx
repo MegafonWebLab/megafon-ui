@@ -8,30 +8,22 @@ const props: ITextBoxPictureProps = {
 
 describe('TextBoxPicture', () => {
     it('render with default props', () => {
-        const wrapper = shallow(
-            <TextBoxPicture {...props} />
-        );
+        const wrapper = shallow(<TextBoxPicture {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with big vertical margins', () => {
-        const wrapper = shallow(
-            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_VERTICAL} />
-        );
+        const wrapper = shallow(<TextBoxPicture {...props} margin={pictureMarginTypes.BIG_VERTICAL} />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with big bottom margin', () => {
-        const wrapper = shallow(
-            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_BOTTOM} />
-        );
+        const wrapper = shallow(<TextBoxPicture {...props} margin={pictureMarginTypes.BIG_BOTTOM} />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('render with big top margin', () => {
-        const wrapper = shallow(
-            <TextBoxPicture {...props} margin={pictureMarginTypes.BIG_TOP} />
-        );
+        const wrapper = shallow(<TextBoxPicture {...props} margin={pictureMarginTypes.BIG_TOP} />);
         expect(wrapper).toMatchSnapshot();
     });
 });

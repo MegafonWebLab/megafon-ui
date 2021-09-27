@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
-import PictureWithDescription, {
-    pictureAlignTypes,
-    IPictureWithDescriptionProps,
-} from './PictureWithDescription';
+import PictureWithDescription, { pictureAlignTypes, IPictureWithDescriptionProps } from './PictureWithDescription';
 
 const props: IPictureWithDescriptionProps = {
     pictureUrl: '/testUrl',
@@ -12,7 +9,9 @@ const props: IPictureWithDescriptionProps = {
 describe('<PictureWithDescription />', () => {
     it('should render with default props', () => {
         const wrapper = shallow(
-            <PictureWithDescription {...props}><div /></PictureWithDescription>
+            <PictureWithDescription {...props}>
+                <div />
+            </PictureWithDescription>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -20,7 +19,9 @@ describe('<PictureWithDescription />', () => {
 
     it('should render with title', () => {
         const wrapper = shallow(
-            <PictureWithDescription {...props} title="Заголовок"><div /></PictureWithDescription>
+            <PictureWithDescription {...props} title="Заголовок">
+                <div />
+            </PictureWithDescription>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -37,8 +38,8 @@ describe('<PictureWithDescription />', () => {
                     title: 'title-class',
                 }}
             >
-                    <div />
-            </PictureWithDescription>
+                <div />
+            </PictureWithDescription>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -51,7 +52,9 @@ describe('<PictureWithDescription />', () => {
         };
 
         const wrapper = shallow(
-            <PictureWithDescription {...newProps}><div /></PictureWithDescription>
+            <PictureWithDescription {...newProps}>
+                <div />
+            </PictureWithDescription>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -64,7 +67,9 @@ describe('<PictureWithDescription />', () => {
         };
 
         const wrapper = shallow(
-            <PictureWithDescription {...newProps}><div /></PictureWithDescription>
+            <PictureWithDescription {...newProps}>
+                <div />
+            </PictureWithDescription>,
         );
 
         expect(wrapper).toMatchSnapshot();
@@ -73,7 +78,11 @@ describe('<PictureWithDescription />', () => {
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
 
-        mount(<PictureWithDescription {...props} rootRef={ref}><div /></PictureWithDescription>);
+        mount(
+            <PictureWithDescription {...props} rootRef={ref}>
+                <div />
+            </PictureWithDescription>,
+        );
 
         expect(ref.current).not.toBeNull();
     });

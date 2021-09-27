@@ -12,12 +12,13 @@ export enum Theme {
 
 type LinkPropTypes = React.ComponentProps<typeof Link>;
 
-export type Props = Required<Pick<LinkPropTypes, 'href'>> & Pick<LinkPropTypes, 'onClick'> & {
-    /** Тема кнопки */
-    theme: Theme;
-    /** Дополнительный класс */
-    className?: string;
-};
+export type Props = Required<Pick<LinkPropTypes, 'href'>> &
+    Pick<LinkPropTypes, 'onClick'> & {
+        /** Тема кнопки */
+        theme: Theme;
+        /** Дополнительный класс */
+        className?: string;
+    };
 
 const cn = cnCreate('mfui-beta-store-button');
 const StoreButton: React.FC<Props> = ({ href, onClick, theme, className }) => (

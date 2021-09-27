@@ -362,6 +362,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
           frameBorder="0"
           height="100%"
           src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          title="iframe"
           width="100%"
         />
       </div>
@@ -392,6 +393,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autopl
           frameBorder="0"
           height="100%"
           src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          title="iframe"
           width="100%"
         />
       </div>
@@ -422,6 +424,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
           frameBorder="0"
           height="100%"
           src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=0&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          title="iframe"
           width="100%"
         />
       </div>

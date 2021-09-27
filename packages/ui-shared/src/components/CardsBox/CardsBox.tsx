@@ -32,36 +32,32 @@ interface ICardsBoxProps {
 }
 
 const cn = cnCreate('mfui-beta-cards-box');
-const CardsBox: React.FC<ICardsBoxProps> = ({
-    rootRef,
-    dataAttrs,
-    onChange,
-    children,
-}) => {
+const CardsBox: React.FC<ICardsBoxProps> = ({ rootRef, dataAttrs, onChange, children }) => {
     const [isMobile, setIsMobile] = React.useState(false);
     const itemsCount = React.Children.count(children);
     const isRenderCarousel = isMobile && itemsCount > MAX_CARDS_COUNT_IN_GRID_ON_MOBILE;
 
-    const renderGrid = React.useCallback(() => (
-        <Grid guttersBottom="medium" guttersLeft="medium">
-            {
-                React.Children.map(children, child => (
+    const renderGrid = React.useCallback(
+        () => (
+            <Grid guttersBottom="medium" guttersLeft="medium">
+                {React.Children.map(children, child => (
                     <GridColumn all="4" mobile="12">
                         {child}
                     </GridColumn>
-                ))
-            }
-        </Grid>
-    ), [children]);
+                ))}
+            </Grid>
+        ),
+        [children],
+    );
 
-    const renderCarousel = React.useCallback(() => (
-        <Carousel
-            slidesSettings={SlidesSettings}
-            onChange={onChange}
-        >
-            {children}
-        </Carousel>
-    ), [children]);
+    const renderCarousel = React.useCallback(
+        () => (
+            <Carousel slidesSettings={SlidesSettings} onChange={onChange}>
+                {children}
+            </Carousel>
+        ),
+        [children],
+    );
 
     React.useEffect(() => {
         const resizeHandler = () =>
@@ -86,12 +82,9 @@ const CardsBox: React.FC<ICardsBoxProps> = ({
 CardsBox.propTypes = {
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
-        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any ]),
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
-    children: PropTypes.oneOfType([
-        PropTypes.arrayOf(PropTypes.element.isRequired),
-        PropTypes.element,
-    ]).isRequired,
+    children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element]).isRequired,
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onChange: PropTypes.func,
 };

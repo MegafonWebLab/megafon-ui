@@ -7,7 +7,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -16,7 +16,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox className="test-class-name">
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -25,7 +25,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox textCenter={true}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -34,7 +34,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox isFullWidth={false}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -43,7 +43,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox isFullWidth={false} textCenter={true}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -52,7 +52,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox isFullWidth={false} centeringWithLimitedWidth={true}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -61,7 +61,7 @@ describe('TextBox', () => {
         const wrapper = shallow(
             <TextBox isFullWidth={false} centeringWithLimitedWidth={true} textCenter={true}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -71,7 +71,7 @@ describe('TextBox', () => {
         mount(
             <TextBox rootRef={ref}>
                 <p>test</p>
-            </TextBox>
+            </TextBox>,
         );
 
         expect(ref.current).not.toBeNull();

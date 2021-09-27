@@ -15,12 +15,7 @@ const props: IBenefitsIcons = {
     },
 };
 
-const itemsSet = [
-    twoItems,
-    threeItems,
-    fourItems,
-    fiveItems,
-];
+const itemsSet = [twoItems, threeItems, fourItems, fiveItems];
 
 describe('<BenefitsIcons />', () => {
     it('renders BenefitsIcons', () => {

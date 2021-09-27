@@ -26,11 +26,7 @@ const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
                     {title}
                 </Header>
             )}
-            {text && (
-                <div className={cn('content')}>
-                    {text}
-                </div>
-            )}
+            {text && <div className={cn('content')}>{text}</div>}
         </div>
     </div>
 );

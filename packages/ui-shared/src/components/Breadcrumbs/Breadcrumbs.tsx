@@ -45,7 +45,7 @@ Breadcrumbs.propTypes = {
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             href: PropTypes.string,
-        }).isRequired
+        }).isRequired,
     ).isRequired,
     color: PropTypes.oneOf(Object.values(TextColor)),
 };
