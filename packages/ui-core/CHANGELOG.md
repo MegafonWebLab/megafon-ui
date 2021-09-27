@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.159](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.158...@megafon/ui-core@2.0.0-beta.159) (2021-09-27)
+
+
+### Bug Fixes
+
+* **textfield:** fix value of controlled input ([93d27a7](https://github.com/MegafonWebLab/megafon-ui/commit/93d27a7a5fb623b6ee11b7a504291234127a48cf))
+
+
+### Features
+
+* **textfield:** isConstrolled true by default, new prop initialValue ([78f463c](https://github.com/MegafonWebLab/megafon-ui/commit/78f463c4df2059b233c57d8ffc81b869557b2884))
+
+
+### BREAKING CHANGES
+
+* **textfield:** isControlled prop true by default
+
+
+
+
+
 # [2.0.0-beta.158](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.157...@megafon/ui-core@2.0.0-beta.158) (2021-09-27)
 
 

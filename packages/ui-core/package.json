@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-core",
-  "version": "2.0.0-beta.158",
+  "version": "2.0.0-beta.159",
   "files": [
     "dist",
     "styles"
@@ -47,7 +47,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@megafon/ui-icons": "^0.0.2-beta.2",
+    "@megafon/ui-icons": "^0.0.2-beta.3",
     "@svgr/core": "^2.4.1",
     "@testing-library/react-hooks": "^7.0.1",
     "@types/enzyme": "^3.10.5",
