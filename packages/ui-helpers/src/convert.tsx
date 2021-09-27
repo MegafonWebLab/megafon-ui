@@ -10,7 +10,7 @@ type ConfigItemPropsType = string[] | Record<AttrName, PropName>;
 type TransformConfigItem = {
     component: React.ElementType;
     props?: ConfigItemPropsType;
-    customProps?: Record<string, any>;
+    customProps?: Record<string, unknown>;
 };
 
 export type ConvertTransformConfig = {
@@ -23,11 +23,11 @@ type TransformPropsType = Record<string, string>;
 
 const checkBooleanProp = (prop: string) => {
     switch (prop) {
-        case ('false'): {
+        case 'false': {
             return false;
         }
 
-        case ('true'): {
+        case 'true': {
             return true;
         }
 
@@ -37,65 +37,65 @@ const checkBooleanProp = (prop: string) => {
     }
 };
 
-const getTransform = (config: ConvertTransformConfig) => {
-    return {
-        _: (node: NodeType, nodeProps?: TransformPropsType, children?: React.ReactNode) => {
-            // text node
-            if (!nodeProps) {
-                return node;
-            }
+const getTransform = (config: ConvertTransformConfig) => ({
+    _: (node: NodeType, nodeProps?: TransformPropsType, children?: React.ReactNode) => {
+        // text node
+        if (!nodeProps) {
+            return node;
+        }
 
-            const reactElement = config[node];
+        const reactElement = config[node];
 
-            if (!reactElement) {
-                return null;
-            }
+        if (!reactElement) {
+            return null;
+        }
 
-            const { component: Component, props: configProps, customProps } = reactElement;
-            const { className: nodePropsClass, key } = nodeProps;
-            const filteredProps: Record<string, any> = {
-                ...customProps,
-                key,
-            };
+        const { component: Component, props: configProps, customProps } = reactElement;
+        const { className: nodePropsClass, key } = nodeProps;
+        const filteredProps: Record<string, unknown> = {
+            ...customProps,
+            key,
+        };
 
-            // Используется toLowerCase(), чтоб оставалась возможность использовать пропсы в camelCase формате,
-            // по умолчанию htmr приводит их к kebab-case
-            const isProp = (prop: string) => nodeProps[prop.toLowerCase()] !== undefined;
+        // Используется toLowerCase(), чтоб оставалась возможность использовать пропсы в camelCase формате,
+        // по умолчанию htmr приводит их к kebab-case
+        const isProp = (prop: string) => nodeProps[prop.toLowerCase()] !== undefined;
 
-            if (nodePropsClass) {
-                filteredProps.hasOwnProperty('className')
-                    ? filteredProps.className += ` ${nodePropsClass}`
-                    : filteredProps.className = nodePropsClass;
-            }
+        if (nodePropsClass) {
+            // eslint-disable-next-line no-prototype-builtins
+            filteredProps.className = filteredProps.hasOwnProperty('className')
+                ? `${filteredProps.className} ${nodePropsClass}`
+                : nodePropsClass;
+        }
 
-            if (Array.isArray(configProps)) {
-                configProps.forEach(prop => {
-                    if (!isProp(prop)) {
-                        return;
-                    }
+        if (Array.isArray(configProps)) {
+            configProps.forEach(prop => {
+                if (!isProp(prop)) {
+                    return;
+                }
 
-                    const nodeProp = nodeProps[prop.toLowerCase()];
+                const nodeProp = nodeProps[prop.toLowerCase()];
 
-                    filteredProps[prop] = checkBooleanProp(nodeProp);
-                });
-            }
+                filteredProps[prop] = checkBooleanProp(nodeProp);
+            });
+        }
 
-            if (configProps && Object.keys(configProps).length) {
-                Object.keys(configProps).forEach(prop => {
-                    if (!isProp(prop)) {
-                        return;
-                    }
+        if (configProps && Object.keys(configProps).length) {
+            Object.keys(configProps).forEach(prop => {
+                if (!isProp(prop)) {
+                    return;
+                }
 
-                    const nodeProp = nodeProps[prop.toLowerCase()];
+                const nodeProp = nodeProps[prop.toLowerCase()];
 
-                    filteredProps[configProps[prop]] = checkBooleanProp(nodeProp);
-                });
-            }
+                filteredProps[configProps[prop]] = checkBooleanProp(nodeProp);
+            });
+        }
 
-            return <Component {...filteredProps}>{children}</Component>;
-        },
-    };
-};
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <Component {...filteredProps}>{children}</Component>;
+    },
+});
 
 /**
  * Расширение библиотеки htmr для возможности замены html-тегов собственными компонентами, распознавания пропсов

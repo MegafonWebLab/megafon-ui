@@ -10,8 +10,8 @@ describe('filterDataAttrs', () => {
             'Data-test': 'test',
             'test-data-test': 'test',
             'test-data': 'test',
-            'dataTest': 'test',
-            'testTest': 'test',
+            dataTest: 'test',
+            testTest: 'test',
         };
         const filteredAttrs = filterDataAttrs({
             ...correctAttrs,
@@ -22,8 +22,9 @@ describe('filterDataAttrs', () => {
     });
 
     it('should return empty object with incorrect params', () => {
-        const incorrectParams = [undefined, null, [], () => {}, 'test', 123];
+        const incorrectParams = [undefined, null, [], () => undefined, 'test', 123];
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         incorrectParams.forEach((param: any) => {
             expect(filterDataAttrs(param)).toEqual({});
         });

@@ -4,5 +4,5 @@ export { default as detectTouch } from './detectTouch';
 export { default as filterDataAttrs } from './filterDataAttrs';
 export { default as breakpoints } from './breakpoints';
 
-export type { IFilterDataAttrs } from './filterDataAttrs';
 export type { ConvertTransformConfig } from './convert';
+export type { IFilterDataAttrs } from './filterDataAttrs';

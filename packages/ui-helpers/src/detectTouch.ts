@@ -5,14 +5,13 @@ export default function detectTouch(): boolean {
 
     const { DocumentTouch } = window;
     const prefixes: string[] = ' -webkit- -moz- -o- -ms- '.split(' ');
-    const mq = (queryParam: string): boolean => {
-        return window.matchMedia(queryParam).matches || false;
-    };
+    const mq = (queryParam: string): boolean => window.matchMedia(queryParam).matches || false;
 
-    if (('ontouchstart' in window) || DocumentTouch && document instanceof DocumentTouch) {
+    if ('ontouchstart' in window || (DocumentTouch && document instanceof DocumentTouch)) {
         return true;
     }
 
     const query: string = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+
     return mq(query);
 }

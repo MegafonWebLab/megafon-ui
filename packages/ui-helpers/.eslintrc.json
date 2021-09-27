@@ -1,0 +1,11 @@
+{
+  "extends": "../../.eslintrc.json",
+  "overrides": [
+    {
+      "files": ["*.test.tsx"],
+      "rules": {
+        "react/no-multi-comp": "off"
+      }
+    }
+  ]
+}
