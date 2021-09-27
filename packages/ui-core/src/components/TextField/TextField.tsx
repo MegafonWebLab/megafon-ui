@@ -32,7 +32,22 @@ export interface IMaskState {
     selection: IMaskSelection;
 }
 
-export interface ITextFieldProps {
+type ValueProps =
+    | {
+          /** Переводит компонент в контролируемое состояние */
+          isControlled: false;
+          /** Внешнее значение для контролируемого компонента, для неконтролируемого не определяется */
+          value?: never;
+          /** Первоначально заданное значение для неконтролируемого компонента, для контролируемого не определяется  */
+          initialValue?: string | number;
+      }
+    | {
+          isControlled?: true;
+          value?: string | number;
+          initialValue?: never;
+      };
+
+interface ICommonProps {
     /** Включить режим textarea. Fixed - это alias для textarea=true. */
     textarea?: boolean | 'fixed' | 'flexible';
     /** Лейбл */
@@ -59,8 +74,6 @@ export interface ITextFieldProps {
     placeholder?: string;
     /** Атрибут корневого DOM элемента компонента */
     id?: string;
-    /** Внешнее значение компонента */
-    value?: string | number;
     /** Максимальное вводимое количество текста */
     maxLength?: number;
     /** Показывает счетчик с подсчетом введенных символов. Только для textarea. */
@@ -78,8 +91,6 @@ export interface ITextFieldProps {
     classes?: { input?: string };
     /** Аргумент элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
-    /** Переводит компонент в контролируемое состояние */
-    isControlled?: boolean;
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Обработчик изменения значения маскированного инпута до обработки маской */
@@ -94,15 +105,7 @@ export interface ITextFieldProps {
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-/* Method for defining internet explorer */
-const detectIE11 = (): boolean => {
-    if (typeof window === 'undefined') {
-        return false;
-    }
-    const userAgent: string = window.navigator.userAgent.toLowerCase();
-
-    return userAgent.indexOf('trident/') !== -1;
-};
+export type TextFieldProps = ICommonProps & ValueProps;
 
 const TEXTAREA_MIN_HEIGHT = 96;
 const TEXTAREA_MAX_HEIGHT = 168;
@@ -110,30 +113,31 @@ const ROW_HEIGHT = 24;
 const DEFAULT_ROW_COUNT = 3;
 
 const cn = cnCreate('mfui-beta-text-field');
-const TextField: React.FC<ITextFieldProps> = ({
+const TextField: React.FC<TextFieldProps> = ({
     className,
     customIcon,
     disabled,
-    hideIcon,
+    hideIcon = false,
     id,
     label,
     mask,
     maskChar,
     maxLength,
     symbolCounter,
-    textarea,
+    textarea = false,
     name,
     placeholder,
     required,
-    isControlled = false,
+    isControlled = true,
     onBlur,
     onChange,
     onBeforeMaskChange,
     onCustomIconClick,
     onFocus,
     onKeyUp,
-    theme,
-    type,
+    theme = 'default',
+    type = 'text',
+    initialValue,
     value,
     verification,
     noticeText,
@@ -142,8 +146,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     classes: { input } = {},
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
-    const [inputValue, setInputValue] = useState<string | number | undefined>(value);
-    const [isIE11, setIsIE11] = useState(false);
+    const [inputValue, setInputValue] = useState<string | number | undefined>(initialValue);
     const [initialTextareaHeight, setInitialTextareaHeight] = useState(TEXTAREA_MIN_HEIGHT);
     const [isTextareaResized, setIsTextareaResized] = useState(false);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
@@ -155,10 +158,6 @@ const TextField: React.FC<ITextFieldProps> = ({
         [isPasswordHidden, isPasswordType],
     );
     const isTouch: boolean = useMemo(() => detectTouch(), []);
-
-    const renderPlaceholderForIe = (classes: string): React.ReactNode => (
-        <span className={cn(classes)}>{placeholder}</span>
-    );
 
     const checkSymbolMaxLimit = useCallback(
         (textareaValue: string | number = ''): void => {
@@ -172,15 +171,8 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
 
     useEffect(() => {
-        setInputValue(value);
-        checkSymbolMaxLimit(value);
-    }, [value, checkSymbolMaxLimit]);
-
-    useEffect(() => {
-        if (detectIE11()) {
-            setIsIE11(true);
-        }
-    }, []);
+        checkSymbolMaxLimit(value || initialValue);
+    }, [value, initialValue, checkSymbolMaxLimit]);
 
     const togglePasswordHiding = useCallback(
         () => setPasswordHidden(prevPassState => !prevPassState),
@@ -212,7 +204,8 @@ const TextField: React.FC<ITextFieldProps> = ({
 
     const handleIconClick = useCallback(
         e => {
-            const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === Verification.ERROR;
+            const { ERROR } = Verification;
+            const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === ERROR;
             const { current: field } = fieldNode;
 
             isPasswordType && togglePasswordHiding();
@@ -252,7 +245,7 @@ const TextField: React.FC<ITextFieldProps> = ({
         disabled,
         id,
         name,
-        value: inputValue,
+        value: isControlled ? value : inputValue,
         onChange: handleInputChange,
         onBlur: handleBlur,
         onFocus: handleFocus,
@@ -324,41 +317,27 @@ const TextField: React.FC<ITextFieldProps> = ({
         return renderInput();
     };
 
-    const renderInput = (): React.ReactNode => {
-        if (!inputValue && inputParams.placeholder && isIE11) {
-            inputParams.placeholder = '';
-        }
+    const renderInput = (): React.ReactNode => (
+        <>
+            {mask ? (
+                <InputMask {...inputParams} {...inputMaskParams} inputRef={getFieldNode} />
+            ) : (
+                <input {...inputParams} ref={getFieldNode} />
+            )}
+            {!hideIcon && renderIconBlock()}
+        </>
+    );
 
-        return (
-            <>
-                {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-input')}
-                {mask ? (
-                    <InputMask {...inputParams} {...inputMaskParams} inputRef={getFieldNode} />
-                ) : (
-                    <input {...inputParams} ref={getFieldNode} />
-                )}
-                {!hideIcon && renderIconBlock()}
-            </>
-        );
-    };
-
-    const renderTextarea = (): React.ReactNode => {
-        if (!inputValue && textareaParams.placeholder && isIE11) {
-            textareaParams.placeholder = '';
-        }
-
-        return (
-            <>
-                {!inputValue && placeholder && isIE11 && renderPlaceholderForIe('placeholder-textarea')}
-                <textarea
-                    {...textareaParams}
-                    onClick={handleTextareaClick}
-                    style={{ height: `${initialTextareaHeight}px` }}
-                    ref={getFieldNode}
-                />
-            </>
-        );
-    };
+    const renderTextarea = (): React.ReactNode => (
+        <>
+            <textarea
+                {...textareaParams}
+                onClick={handleTextareaClick}
+                style={{ height: `${initialTextareaHeight}px` }}
+                ref={getFieldNode}
+            />
+        </>
+    );
 
     const getIcon = (): React.ReactNode | null => {
         switch (true) {
@@ -442,11 +421,61 @@ const TextField: React.FC<ITextFieldProps> = ({
     );
 };
 
-TextField.defaultProps = {
-    textarea: false,
-    theme: 'default',
-    type: 'text',
-    hideIcon: false,
+const CustomPropTypes = {
+    isControlled(props: any, propName: string, componentName: string) {
+        if (typeof props[propName] !== 'boolean' && typeof props[propName] !== 'undefined') {
+            return new Error(
+                `The component ${componentName} need the prop ${propName} to be a boolean,
+                    but you passed a ${typeof props[propName]}.`,
+            );
+        }
+
+        return null;
+    },
+    initialValue(props: any, propName: string, componentName: string) {
+        const { isControlled = true, initialValue } = props;
+
+        const initialValuePropType = typeof props[propName];
+
+        if (
+            initialValuePropType !== 'string' &&
+            initialValuePropType !== 'number' &&
+            initialValuePropType !== 'undefined'
+        ) {
+            return new Error(
+                `The component ${componentName} need the prop ${propName} to be a string or number,
+                    but you passed a ${typeof props[propName]}.`,
+            );
+        }
+
+        if (isControlled && initialValue !== undefined) {
+            return new Error(
+                `The prop ${propName} pass only for uncontrolled component, pass 'value' or set isControlled={false}`,
+            );
+        }
+
+        return null;
+    },
+    value(props: any, propName: string, componentName: string) {
+        const { isControlled = true, value } = props;
+
+        const valuePropType = typeof props[propName];
+
+        if (valuePropType !== 'string' && valuePropType !== 'number' && isControlled) {
+            return new Error(
+                `The controlled component ${componentName} need the required prop ${propName} to be a string or number,
+                    but you passed a ${typeof props[propName]}.`,
+            );
+        }
+
+        if (!isControlled && value !== undefined) {
+            return new Error(
+                `The prop 'value' pass only for controlled component, pass 'initialValue' or set isControlled={true} (value by default)`,
+            );
+        }
+
+        return null;
+    },
 };
 
 TextField.propTypes = {
@@ -461,7 +490,9 @@ TextField.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    isControlled: CustomPropTypes.isControlled,
+    value: CustomPropTypes.value,
+    initialValue: CustomPropTypes.initialValue,
     maxLength: PropTypes.number,
     symbolCounter: PropTypes.number,
     customIcon: PropTypes.element,

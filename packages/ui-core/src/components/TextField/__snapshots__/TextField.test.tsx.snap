@@ -2,7 +2,7 @@
 
 exports[`<TextField /> input should render with hidden password 1`] = `
 <div
-  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon mfui-beta-text-field_password"
+  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon"
 >
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
@@ -40,8 +40,8 @@ exports[`<TextField /> input should render with hidden password 1`] = `
 exports[`<TextField /> input should render with ie placeholder 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
+  isControlled={false}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -50,8 +50,6 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
   placeholder="placeholder"
   required={true}
   textarea={false}
-  theme="default"
-  type="text"
 >
   <div
     className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default"
@@ -59,11 +57,6 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
-      <span
-        className="mfui-beta-text-field__placeholder-input"
-      >
-        placeholder
-      </span>
       <input
         className="mfui-beta-text-field__field"
         disabled={true}
@@ -74,7 +67,7 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
         onChange={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder=""
+        placeholder="placeholder"
         required={true}
         type="text"
       />
@@ -235,7 +228,6 @@ exports[`<TextField /> input should render with type 1`] = `
 exports[`<TextField /> input should render with value after updating number prop 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
   maxLength={4}
   name="name"
@@ -245,8 +237,6 @@ exports[`<TextField /> input should render with value after updating number prop
   placeholder="placeholder"
   required={true}
   textarea={false}
-  theme="default"
-  type="text"
   value={5678}
 >
   <div
@@ -268,7 +258,7 @@ exports[`<TextField /> input should render with value after updating number prop
         placeholder="placeholder"
         required={true}
         type="text"
-        value={1234}
+        value={5678}
       />
     </div>
     <div
@@ -281,7 +271,6 @@ exports[`<TextField /> input should render with value after updating number prop
 exports[`<TextField /> input should render with value after updating string prop 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
   maxLength={4}
   name="name"
@@ -291,8 +280,6 @@ exports[`<TextField /> input should render with value after updating string prop
   placeholder="placeholder"
   required={true}
   textarea={false}
-  theme="default"
-  type="text"
   value="newValue"
 >
   <div
@@ -314,7 +301,7 @@ exports[`<TextField /> input should render with value after updating string prop
         placeholder="placeholder"
         required={true}
         type="text"
-        value="value"
+        value="newValue"
       />
     </div>
     <div
@@ -364,7 +351,6 @@ exports[`<TextField /> input should render with visible password 1`] = `
 exports[`<TextField /> input should render without ie placeholder when value is passed 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
   maxLength={4}
   name="name"
@@ -374,8 +360,6 @@ exports[`<TextField /> input should render without ie placeholder when value is 
   placeholder="placeholder"
   required={true}
   textarea={false}
-  theme="default"
-  type="text"
   value="value"
 >
   <div
@@ -460,6 +444,7 @@ exports[`<TextField /> should render with common props 1`] = `
       onFocus={[Function]}
       required={true}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -532,6 +517,7 @@ exports[`<TextField /> should render with default props 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       type="text"
+      value=""
     />
   </div>
   <div
@@ -816,8 +802,8 @@ exports[`<TextField /> textarea should render with error because of max limit is
 exports[`<TextField /> textarea should render with ie placeholder 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
+  isControlled={false}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -826,8 +812,6 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
   placeholder="placeholder"
   required={true}
   textarea={true}
-  theme="default"
-  type="text"
 >
   <div
     className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default"
@@ -835,11 +819,6 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
     <div
       className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
     >
-      <span
-        className="mfui-beta-text-field__placeholder-textarea"
-      >
-        placeholder
-      </span>
       <textarea
         className="mfui-beta-text-field__field mfui-beta-text-field__field_type_fixed"
         disabled={true}
@@ -851,7 +830,7 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
         onClick={[Function]}
         onFocus={[Function]}
         onKeyUp={[MockFunction]}
-        placeholder=""
+        placeholder="placeholder"
         required={true}
         style={
           Object {
@@ -938,7 +917,6 @@ exports[`<TextField /> textarea should render with string value 1`] = `
 exports[`<TextField /> textarea should render with value after updating number prop 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
   maxLength={4}
   name="name"
@@ -948,8 +926,6 @@ exports[`<TextField /> textarea should render with value after updating number p
   placeholder="placeholder"
   required={true}
   textarea={true}
-  theme="default"
-  type="text"
   value={5678}
 >
   <div
@@ -976,7 +952,7 @@ exports[`<TextField /> textarea should render with value after updating number p
             "height": "96px",
           }
         }
-        value={1234}
+        value={5678}
       />
     </div>
     <div
@@ -989,7 +965,6 @@ exports[`<TextField /> textarea should render with value after updating number p
 exports[`<TextField /> textarea should render with value after updating string prop 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
   maxLength={4}
   name="name"
@@ -999,8 +974,6 @@ exports[`<TextField /> textarea should render with value after updating string p
   placeholder="placeholder"
   required={true}
   textarea={true}
-  theme="default"
-  type="text"
   value="newValue"
 >
   <div
@@ -1027,7 +1000,7 @@ exports[`<TextField /> textarea should render with value after updating string p
             "height": "96px",
           }
         }
-        value="value"
+        value="newValue"
       />
     </div>
     <div
@@ -1040,7 +1013,6 @@ exports[`<TextField /> textarea should render with value after updating string p
 exports[`<TextField /> textarea should render without ie placeholder when value is passed 1`] = `
 <TextField
   disabled={true}
-  hideIcon={false}
   id="id"
   maxLength={4}
   name="name"
@@ -1050,8 +1022,6 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
   placeholder="placeholder"
   required={true}
   textarea={true}
-  theme="default"
-  type="text"
   value="value"
 >
   <div

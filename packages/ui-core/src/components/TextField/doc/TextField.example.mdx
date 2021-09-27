@@ -11,13 +11,13 @@ import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
 ## Тип с паролем
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField name="name" placeholder="password" type="password" />
+    <TextField name="name" placeholder="password" type="password" isControlled={false}/>
 </Playground>
 
 ## Обязательное поле
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField name="name" required label="Телефон" />
+    <TextField name="name" required label="Телефон" isControlled={false}/>
 </Playground>
 
 ## Маска телефона
@@ -31,6 +31,7 @@ import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
         id="2"
         inputMode="numeric"
         classes={{input: 'parent__inputClass'}}
+        isControlled={false}
     />
 </Playground>
 
@@ -42,7 +43,7 @@ import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
 <Playground style={wrapperDefaultWidthStyle}>
     <DemoTextFieldWithBeforeMaskChangeValue>
         {({ handleBeforeMaskChange }) =>
-            <TextField onBeforeMaskChange={handleBeforeMaskChange} mask="+7 (999) 999-99-99" maskchar="_" />
+            <TextField onBeforeMaskChange={handleBeforeMaskChange} mask="+7 (999) 999-99-99" maskchar="_" isControlled={false}/>
         }
     </DemoTextFieldWithBeforeMaskChangeValue>
 </Playground>
@@ -63,7 +64,7 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
 ## Подпись снизу
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField noticeText="Comment" />
+    <TextField noticeText="Comment" isControlled={false}/>
 </Playground>
 
 ## Валидация
@@ -73,8 +74,9 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
     <TextField
         verification="error"
         noticeText="Name is required"
+        isControlled={false}
     />
-    <TextField verification="valid" noticeText="You can write that field value is correct" />
+    <TextField verification="valid" noticeText="You can write that field value is correct" isControlled={false}/>
 </Playground>
 
 ## Иконка и обработчик
@@ -84,29 +86,31 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
         noticeText="Error notice"
         customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
         onCustomIconClick={ () => alert('Custom click handler') }
+        isControlled={false}
     />
     <TextField
         customIcon={ <CustomIcon style={{width: "32", height: "32", display: "block", userSelect: "none", fill: "#000000"}} /> }
         onCustomIconClick={ () => alert('Custom click handler') }
+        isControlled={false}
     />
 </Playground>
 
 ## Максимальное количество текста
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField maxLength={10} />
+    <TextField maxLength={10} isControlled={false}/>
 </Playground>
 
 ## Недоступное взаимодействие с компонентом
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField disabled={true} />
+    <TextField disabled={true} isControlled={false}/>
 </Playground>
 
 ## Внешнее состояние
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField value='initial value' />
+    <TextField initialValue='initial value' isControlled={false} />
 </Playground>
 
 ## Контролируемое состояние с вводом только цифр
@@ -116,7 +120,7 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
 
 <Playground style={wrapperDefaultWidthStyle}>
     <DemoTextFieldWithControlledValue>
-        {({ value, onChange }) => <TextField value={value} onChange={onChange} isControlled />}
+        {({ value, onChange }) => <TextField value={value} onChange={onChange} />}
     </DemoTextFieldWithControlledValue>
 </Playground>
 
@@ -139,7 +143,7 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
 Пропс textarea, выставленный в значение true, изменяет компонент в textarea.
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField name="name" textarea placeholder="placeholder" />
+    <TextField name="name" textarea placeholder="placeholder" isControlled={false}/>
 </Playground>
 
 ## Тип flexible с возможностью растягивать поле по высоте
@@ -147,7 +151,7 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
 Режим автоматического увеличения высоты отключается при ручном ресайзе поля.
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField name="name" textarea="flexible" />
+    <TextField name="name" textarea="flexible" isControlled={false}/>
 </Playground>
 
 ## Обязательное поле
@@ -158,6 +162,7 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
         textarea
         required
         classes={{input: 'parent__inputClass'}}
+        isControlled={false}
     />
 </Playground>
 
@@ -167,6 +172,7 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
     <TextField
         noticeText="Comment"
         textarea
+        isControlled={false}
     />
 </Playground>
 
@@ -177,26 +183,28 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
         verification="error"
         noticeText="Name is required"
         textarea
+        isControlled={false}
     />
     <TextField
         verification="valid"
         noticeText="Field passed validation"
         textarea
+        isControlled={false}
     />
 </Playground>
 
 ## Максимальное количество текста
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField maxLength={10} textarea />
+    <TextField maxLength={10} textarea isControlled={false}/>
 </Playground>
 
 ## Счетчик введенных символов
 При превышении переданного количества поле становится невалидным.
 
 <Playground style={wrapperWideWidthStyle}>
-    <TextField symbolCounter={10} textarea value="Иванов Ива" />
-    <TextField symbolCounter={10} textarea value="Иванов Иван Иванович" />
+    <TextField symbolCounter={10} textarea initialValue="Иванов Ива" isControlled={false}/>
+    <TextField symbolCounter={10} textarea initialValue="Иванов Иван Иванович" isControlled={false}/>
 </Playground>
 
 ## Запрещенное взаимодействие
@@ -205,5 +213,6 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
     <TextField
         disabled
         textarea
+        value='disabled'
     />
 </Playground>
