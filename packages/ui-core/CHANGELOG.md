@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.158](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.157...@megafon/ui-core@2.0.0-beta.158) (2021-09-27)
+
+
+### Bug Fixes
+
+* **.stylelintrc.json:** move .stylelint.json to root and extends package configs from it ([ae5eac3](https://github.com/MegafonWebLab/megafon-ui/commit/ae5eac3dbbbea00413cea6b45ecbc22babb723c4))
+* **carousel:** fixed pagination and arrow position ([9cbb3f1](https://github.com/MegafonWebLab/megafon-ui/commit/9cbb3f179dc0dbbf9050f743ffe77613a2a7c2d9))
+* enable and fix few eslint rules ([cb83053](https://github.com/MegafonWebLab/megafon-ui/commit/cb83053b705242a747f792f6622fdc31e6ea042b))
+* make .eslintrc.json to root and extends it in package ([90949c2](https://github.com/MegafonWebLab/megafon-ui/commit/90949c2f97ab6389cd050bf5a7b10a02c5d1cc0b))
+* **gulpfile.js:** allow to replace both type of quotes ([4db4bb5](https://github.com/MegafonWebLab/megafon-ui/commit/4db4bb597fc95b3c271da530809a3f4968d821e8))
+* **gulpfile.js:** fix code replacement ([8a5119a](https://github.com/MegafonWebLab/megafon-ui/commit/8a5119a00222ee1a33b17db04777ab2c6b00b568))
+* **gulpfile.js:** fix regexp ([ac2114c](https://github.com/MegafonWebLab/megafon-ui/commit/ac2114ccd6aa1eaa36bbcf2d9ae8e7c3cc41ed7a))
+* ui-core: add eslint; fix prettier errors; disable some rules to future fix ([bd3afc4](https://github.com/MegafonWebLab/megafon-ui/commit/bd3afc40ab342aa150716c523c76ff1a00dfedcd))
+* ui-core: replace tslint with eslint; fix prettier errors ([6e4437d](https://github.com/MegafonWebLab/megafon-ui/commit/6e4437d5b1d291dfbe32c08ba703177171ef1286))
+
+
+
+
+
 # [2.0.0-beta.157](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.156...@megafon/ui-core@2.0.0-beta.157) (2021-09-20)
 
 

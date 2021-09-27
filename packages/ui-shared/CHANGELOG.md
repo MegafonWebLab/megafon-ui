@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.227](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.226...@megafon/ui-shared@2.0.0-beta.227) (2021-09-27)
+
+
+### Bug Fixes
+
+* **.stylelintrc.json:** move .stylelint.json to root and extends package configs from it ([ae5eac3](https://github.com/MegafonWebLab/megafon-ui/commit/ae5eac3dbbbea00413cea6b45ecbc22babb723c4))
+* **buttonbanner.less:** fix [@media](https://github.com/media) query position ([955b9b4](https://github.com/MegafonWebLab/megafon-ui/commit/955b9b416933078340e7ad9482073da25ba3a0eb))
+* **textboxpicture:** fix modifiers names ([52e713d](https://github.com/MegafonWebLab/megafon-ui/commit/52e713d60edb8da68a0dafe62df08baec6ad23bf))
+* **ui-shared:** add frontend-presets configs; fix stylelint errors ([06df02d](https://github.com/MegafonWebLab/megafon-ui/commit/06df02d5218c611282fa5aea079bca46afcdbd56))
+
+
+
+
+
 # [2.0.0-beta.226](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.225...@megafon/ui-shared@2.0.0-beta.226) (2021-09-20)
 
 
