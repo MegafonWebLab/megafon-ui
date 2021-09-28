@@ -4,7 +4,6 @@ import Copy from '../System/24/Copy_24.svg';
 import Cancel from '../System/32/Cancel_32.svg';
 import './Icons.less';
 
-// tslint:disable-next-line:no-string-literal
 export const reqSvgs = require['context']('../', true, /\.svg$/);
 
 const cn = cnCreate('icons');
