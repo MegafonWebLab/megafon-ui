@@ -1,0 +1,17 @@
+{
+  "extends": "../../.eslintrc.json",
+  "rules": {
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "consistent-return": "off",
+    "dot-notation": "off",
+    "import/no-extraneous-dependencies": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "no-magic-numbers": "off",
+    "no-param-reassign": "off",
+    "import/no-unresolved": "off",
+    "react/no-unescaped-entities": "off"
+  }
+}

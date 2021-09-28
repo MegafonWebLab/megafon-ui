@@ -1,10 +1,9 @@
 import * as React from 'react';
-import './Icons.less';
-import Cancel from '../System/32/Cancel_32.svg';
-import Copy from '../System/24/Copy_24.svg';
 import { cnCreate } from '@megafon/ui-helpers';
+import Copy from '../System/24/Copy_24.svg';
+import Cancel from '../System/32/Cancel_32.svg';
+import './Icons.less';
 
-// tslint:disable-next-line:no-string-literal
 export const reqSvgs = require['context']('../', true, /\.svg$/);
 
 const cn = cnCreate('icons');
@@ -34,7 +33,7 @@ const sizeDictionary = {
     32: 'L',
 };
 
-const importIcon = 'import Icon from \'@megafon/ui-icons/';
+const importIcon = "import Icon from '@megafon/ui-icons/";
 
 class Icons extends React.Component<{}, IIconsState> {
     constructor(props: {}) {
@@ -48,7 +47,10 @@ class Icons extends React.Component<{}, IIconsState> {
     }
 
     static getDerivedStateFromProps(_props: {}, state: IIconsState) {
-        const { activeElement: { svgList }, activeIcon } = state;
+        const {
+            activeElement: { svgList },
+            activeIcon,
+        } = state;
 
         if (svgList && !svgList[activeIcon]) {
             return { ...state, activeIcon: 0 };
@@ -61,7 +63,10 @@ class Icons extends React.Component<{}, IIconsState> {
             const [sectionName, svgSize] = pathList;
             const [svgIcon] = pathList.reverse();
             const svgName = svgIcon.replace('.svg', '').replace(/_[0-9]{2}/, '');
-            const sectionCamelCase = sectionName.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+            const sectionCamelCase = sectionName
+                .split('-')
+                .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+                .join('');
 
             if (sectionCamelCase.search('.svg') !== -1) {
                 return sectDictionary;
@@ -83,7 +88,9 @@ class Icons extends React.Component<{}, IIconsState> {
                 .replace(/[^a-z0-9-]+/g, '_');
 
             sectDictionary[sectionCamelCase][svgName] = sectDictionary[sectionCamelCase][svgName].concat({
-                size: svgSize, path: item, importPath,
+                size: svgSize,
+                path: item,
+                importPath,
             });
 
             return sectDictionary;
@@ -104,20 +111,22 @@ class Icons extends React.Component<{}, IIconsState> {
         document.execCommand('copy');
         el.remove();
         this.setState({ copyIndex });
-    }
+    };
 
-    handleIconClick = (svgData: {}) => (e: React.SyntheticEvent): void => {
-        e.preventDefault();
-        this.setState({ activeElement: svgData, copyIndex: copyBoard.NO });
-    }
+    handleIconClick =
+        (svgData: {}) =>
+        (e: React.SyntheticEvent): void => {
+            e.preventDefault();
+            this.setState({ activeElement: svgData, copyIndex: copyBoard.NO });
+        };
 
     handleClickClose = () => {
         this.setState({ activeElement: {}, activeIcon: 0, copyIndex: copyBoard.NO });
-    }
+    };
 
     handleClickInfoIcon = (index: number) => () => {
         this.setState({ activeIcon: index, copyIndex: copyBoard.NO });
-    }
+    };
 
     renderIcons(entries: Entries) {
         const { activeElement } = this.state;
@@ -132,8 +141,11 @@ class Icons extends React.Component<{}, IIconsState> {
                     key={svg.path}
                     className={cn('icon-container', { active: activeElement.name === name })}
                     onClick={this.handleIconClick({ name, svgList })}
+                    type="button"
                 >
-                    <div className={cn('icon')}><Svg /></div>
+                    <div className={cn('icon')}>
+                        <Svg />
+                    </div>
                     {name}
                 </button>
             );
@@ -160,27 +172,29 @@ class Icons extends React.Component<{}, IIconsState> {
     }
 
     render() {
-        const { sections, activeElement: { svgList }, activeIcon } = this.state;
+        const {
+            sections,
+            activeElement: { svgList },
+            activeIcon,
+        } = this.state;
         const Svg = svgList && reqSvgs(svgList[activeIcon].path).default;
 
         return (
-            <React.Fragment>
+            <>
                 <div className={cn()}>
-                    {Object.keys(sections).map((section: string) =>
+                    {Object.keys(sections).map((section: string) => (
                         <div key={section}>
                             <h2 className={cn('icon-title')}>{section}</h2>
-                            <div className={cn('icons')}>
-                                {this.renderIcons(Object.entries(sections[section]))}
-                            </div>
+                            <div className={cn('icons')}>{this.renderIcons(Object.entries(sections[section]))}</div>
                         </div>
-                    )}
+                    ))}
                 </div>
-                {svgList &&
+                {svgList && (
                     <div className={cn('info')}>
                         <div className={cn('info-sizes-wrap')}>
                             <div>Размер</div>
                             <div className={cn('info-sizes')}>
-                                {svgList.map((svg: svgDataType, i: number) =>
+                                {svgList.map((svg: svgDataType, i: number) => (
                                     <div
                                         className={cn('info-size', { active: activeIcon === i })}
                                         key={svg.size}
@@ -188,7 +202,7 @@ class Icons extends React.Component<{}, IIconsState> {
                                     >
                                         {sizeDictionary[svg.size]}
                                     </div>
-                                )}
+                                ))}
                             </div>
                         </div>
                         {this.renderInfoIcon(svgList[activeIcon])}
@@ -201,8 +215,8 @@ class Icons extends React.Component<{}, IIconsState> {
                             <Cancel />
                         </div>
                     </div>
-                }
-            </React.Fragment>
+                )}
+            </>
         );
     }
 }
