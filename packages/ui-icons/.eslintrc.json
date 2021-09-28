@@ -11,6 +11,7 @@
     "jsx-a11y/no-static-element-interactions": "off",
     "no-magic-numbers": "off",
     "no-param-reassign": "off",
+    "import/no-unresolved": "off",
     "react/no-unescaped-entities": "off"
   }
 }
