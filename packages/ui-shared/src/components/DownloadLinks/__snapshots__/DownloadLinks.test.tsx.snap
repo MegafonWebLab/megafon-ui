@@ -24,6 +24,90 @@ exports[`DownloadLinks render component with one column 1`] = `
 </div>
 `;
 
+exports[`DownloadLinks render component with one column regardless of the quantity 1`] = `
+<div
+  className="mfui-beta-download-links"
+>
+  <div
+    className="mfui-beta-download-links__item"
+    key=".0"
+  >
+    <DownloadLink
+      extension="PDF"
+      fileSize="500 MB"
+      href="href"
+      text="text"
+    />
+  </div>
+  <div
+    className="mfui-beta-download-links__item"
+    key=".1"
+  >
+    <DownloadLink
+      extension="PDF"
+      fileSize="500 MB"
+      href="href"
+      text="text"
+    />
+  </div>
+  <div
+    className="mfui-beta-download-links__item"
+    key=".2"
+  >
+    <DownloadLink
+      extension="PDF"
+      fileSize="500 MB"
+      href="href"
+      text="text"
+    />
+  </div>
+  <div
+    className="mfui-beta-download-links__item"
+    key=".3"
+  >
+    <DownloadLink
+      extension="PDF"
+      fileSize="500 MB"
+      href="href"
+      text="text"
+    />
+  </div>
+  <div
+    className="mfui-beta-download-links__item"
+    key=".4"
+  >
+    <DownloadLink
+      extension="PDF"
+      fileSize="500 MB"
+      href="href"
+      text="text"
+    />
+  </div>
+  <div
+    className="mfui-beta-download-links__item"
+    key=".5"
+  >
+    <DownloadLink
+      extension="PDF"
+      fileSize="500 MB"
+      href="href"
+      text="text"
+    />
+  </div>
+  <div
+    className="mfui-beta-download-links__item"
+    key=".6"
+  >
+    <DownloadLink
+      extension="PDF"
+      fileSize="500 MB"
+      href="href"
+      text="text"
+    />
+  </div>
+</div>
+`;
+
 exports[`DownloadLinks render component with three columns 1`] = `
 <div
   className="mfui-beta-download-links mfui-beta-download-links_count_5"
