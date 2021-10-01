@@ -34,6 +34,7 @@ type EffectThemeType = typeof EffectTheme[keyof typeof EffectTheme];
 export type SlidesSettingsType = {
     [key: number]: {
         slidesPerView: number | SlidesPerViewType;
+        slidesPerGroup?: number;
         spaceBetween: number;
     };
 };
@@ -315,6 +316,7 @@ Carousel.propTypes = {
             slidesPerView: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(Object.values(SlidesPerView))])
                 .isRequired,
             spaceBetween: PropTypes.number.isRequired,
+            slidesPerGroup: PropTypes.number,
         }),
     ),
     pagination: PropTypes.shape({
