@@ -6,8 +6,12 @@ import Carousel from '../Carousel';
 ``` javascript
 type SlidesSettingsType = {
     [key: number]: {
+        // количество отображаемых слайдов
         slidesPerView: number | 'auto';
+        // расстояние между слайдами в px
         spaceBetween: number;
+        // количество переключаемых за 1 раз слайдов
+        slidesPerGroup?: number;
     };
 };
 ```
