@@ -25,6 +25,7 @@ export interface IBannerProps {
     /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         slide?: string;
+        arrow?: string;
     };
     /** Автоматическая прокрутка */
     autoPlay?: boolean;
@@ -175,13 +176,13 @@ const Banner: React.FC<IBannerProps> = ({
                 ))}
             </Swiper>
             <NavArrow
-                className={cn('arrow', { prev: true })}
+                className={cn('arrow', { prev: true }, [classes.arrow])}
                 onClick={handlePrevClick}
                 disabled={!loop && isBeginning}
                 theme={navArrowTheme}
             />
             <NavArrow
-                className={cn('arrow', { next: true })}
+                className={cn('arrow', { next: true }, [classes.arrow])}
                 view="next"
                 onClick={handleNextClick}
                 disabled={!loop && isEnd}

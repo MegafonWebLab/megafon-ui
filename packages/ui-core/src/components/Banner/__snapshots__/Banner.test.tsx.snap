@@ -112,13 +112,13 @@ exports[`<Banner /> should render with props 1`] = `
     </SwiperSlide>
   </Swiper>
   <NavArrow
-    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_prev"
+    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_prev arrows"
     disabled={false}
     onClick={[Function]}
     theme="dark"
   />
   <NavArrow
-    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_next"
+    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_next arrows"
     disabled={false}
     onClick={[Function]}
     theme="dark"
