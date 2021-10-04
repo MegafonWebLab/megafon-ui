@@ -8,6 +8,7 @@ const props = {
     className: 'custom-class',
     classes: {
         slide: 'slide',
+        arrow: 'arrows',
     },
     loop: true,
     autoPlay: true,

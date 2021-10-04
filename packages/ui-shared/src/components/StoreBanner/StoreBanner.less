@@ -248,10 +248,14 @@
         }
 
         @{b}__qr-code + @{b}__stores {
+            max-width: 305px;
+
             @media @desktop {
                 flex-direction: row;
                 justify-content: flex-start;
-                max-width: 305px;
+            }
+            @media @mobileSM {
+                margin: 0 auto;
             }
         }
 

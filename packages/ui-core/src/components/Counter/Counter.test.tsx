@@ -27,6 +27,11 @@ describe('<Counter />', () => {
             const wrapper = shallow(<Counter {...props} />);
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('renders Counter with "isControlled" props', () => {
+            const wrapper = shallow(<Counter {...props} isControlled value={15} />);
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('handlers', () => {

@@ -43,4 +43,19 @@ describe('DownloadLinks', () => {
         );
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('render component with one column regardless of the quantity', () => {
+        const wrapper = shallow(
+            <DownloadLinks inOneColumn>
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+                <DownloadLink {...props} />
+            </DownloadLinks>,
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
 });

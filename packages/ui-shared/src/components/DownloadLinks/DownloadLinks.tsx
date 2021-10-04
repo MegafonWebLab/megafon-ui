@@ -43,11 +43,23 @@ const getColumnConfig = (itemsCount): ColumnConfig => {
 };
 
 interface IDownloadLinks {
+    /** Выстраивать ссылки в одну колонку вне зависимости от количества */
+    inOneColumn?: boolean;
     children: Array<React.ReactElement<IDownloadLink>> | React.ReactElement<IDownloadLink>;
 }
 
 const cn = cnCreate('mfui-beta-download-links');
-const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
+const DownloadLinks: React.FC<IDownloadLinks> = ({ inOneColumn = false, children }) => {
+    if (inOneColumn) {
+        return (
+            <div className={cn()}>
+                {React.Children.map(children, child => (
+                    <div className={cn('item')}>{child}</div>
+                ))}
+            </div>
+        );
+    }
+
     const itemsCount = React.Children.count(children);
     const columnConfig = getColumnConfig(itemsCount);
 
@@ -65,6 +77,7 @@ const DownloadLinks: React.FC<IDownloadLinks> = ({ children }) => {
 };
 
 DownloadLinks.propTypes = {
+    inOneColumn: PropTypes.bool,
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element]).isRequired,
 };
 

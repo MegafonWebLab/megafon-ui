@@ -7,21 +7,38 @@ export const flexStyle = {
     textAlign: 'center',
 };
 
-interface IDemoCounterWrapperProps {
-    children: (prop: { onChange: (value: number) => void; initialValue: number }) => JSX.Element;
+type childrenPropTypes = {
+    onChange: (value: number) => void;
     initialValue: number;
+    value?: number;
+};
+
+interface IDemoCounterWrapperProps {
+    children: (prop: childrenPropTypes) => JSX.Element;
+    initialValue: number;
+    isControlled?: boolean;
 }
 
-export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({ initialValue = 0, children }) => {
+export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({
+    isControlled,
+    initialValue = 0,
+    children,
+}) => {
     const [value, setValue] = React.useState(initialValue);
+
+    const childrenProps: childrenPropTypes = {
+        onChange: setValue,
+        initialValue,
+    };
+
+    if (isControlled) {
+        childrenProps.value = value;
+    }
 
     return (
         <div>
             <p style={{ marginTop: 0 }}>Value: {value}</p>
-            {children({
-                onChange: setValue,
-                initialValue,
-            })}
+            {children(childrenProps)}
         </div>
     );
 };
