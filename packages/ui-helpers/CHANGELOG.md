@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@1.0.0-beta.0...@megafon/ui-helpers@1.0.0-beta.1) (2021-10-04)
+
+
+### Bug Fixes
+
+* **ui-helpers:** eslint and prettier fixes ([920b13d](https://github.com/MegafonWebLab/megafon-ui/commit/920b13d232aa107e974b742a1bc11c0e49d4d955))
+* **ui-helpers:** fix export types ([0e9d170](https://github.com/MegafonWebLab/megafon-ui/commit/0e9d17090780eaa2f916c21ae90b5c7e2355ba71))
+* **ui-icons:** add frontend-presets; fix eslint and prettier errors ([c1e0675](https://github.com/MegafonWebLab/megafon-ui/commit/c1e06758c2b6002a3011d7e98a745f1f25186714))
+
+
+
+
+
 # 1.0.0-beta.0 (2021-07-13)
 
 

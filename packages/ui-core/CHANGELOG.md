@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.160](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.159...@megafon/ui-core@2.0.0-beta.160) (2021-10-04)
+
+
+### Bug Fixes
+
+* **carousel:** add slidesPerGroup setting ([558b745](https://github.com/MegafonWebLab/megafon-ui/commit/558b745cf2311d4e80d9753b57f3a80b6be846b2))
+
+
+### Features
+
+* **banner:** added new classes arrow ([1a03361](https://github.com/MegafonWebLab/megafon-ui/commit/1a033612c1fb882676a5cfb85b53622954b87299))
+* **counter:** add isControlled props for forwarding actual value to component ([ee01afb](https://github.com/MegafonWebLab/megafon-ui/commit/ee01afb28eda1d4a71de99b3b718c6452ec43381))
+
+
+
+
+
 # [2.0.0-beta.159](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.158...@megafon/ui-core@2.0.0-beta.159) (2021-09-27)
 
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.229](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.228...@megafon/ui-shared@2.0.0-beta.229) (2021-10-04)
+
+
+### Bug Fixes
+
+* **gulpfile.js:** fix code replacement ([fe3fca0](https://github.com/MegafonWebLab/megafon-ui/commit/fe3fca05a1915fdd3bd9699579a5a2096c3ffe7e))
+* **ui-shared:** add prettier and eslint configs; fix prettier errors ([0cb5520](https://github.com/MegafonWebLab/megafon-ui/commit/0cb552061dfd58d314ad22a7877ee792d83eb31c))
+* **ui-shared:** remove tslint and tslint config ([3ff4c63](https://github.com/MegafonWebLab/megafon-ui/commit/3ff4c631d5a668e1c388ea317cb1ff4315d4ab4f))
+
+
+### Features
+
+* **downloadlinks:** add props 'inOneColumn' for render links in one column, regardless of quantity ([b44e3a7](https://github.com/MegafonWebLab/megafon-ui/commit/b44e3a7e2eda4c7aeee85f6b7f58886738452f71))
+
+
+
+
+
 # [2.0.0-beta.228](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.227...@megafon/ui-shared@2.0.0-beta.228) (2021-09-27)
 
 **Note:** Version bump only for package @megafon/ui-shared
