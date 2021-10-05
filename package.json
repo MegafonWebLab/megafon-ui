@@ -13,7 +13,7 @@
         "test": "lerna run test",
         "test:update": "lerna run test:update",
         "coverage": "lerna run coverage",
-        "pre-commit": "lerna run typecheck && lerna run lint-staged && lerna run lint && lerna run test",
+        "pre-commit": "lerna run typecheck && lerna run lint-staged && lerna run lint:less && lerna run test",
         "release": "lerna version && yarn install --frozen-lockfile",
         "demo": "docz dev",
         "demo:build": "docz build"
