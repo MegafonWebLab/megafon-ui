@@ -25,7 +25,7 @@
     "typecheck": "tsc --noEmit -p .",
     "prettier:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "yarn lint:ts && yarn lint:less",
+    "lint": "yarn lint-staged && yarn lint:ts && yarn lint:less",
     "lint:ts": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
     "test": "yarn test:unit",
@@ -34,6 +34,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "lint-staged": {
+    "src/**/**/*.(js|jsx|ts|tsx)": [
+      "eslint --max-warnings=0 --config ../../.eslintrc.json"
+    ]
   },
   "peerDependencies": {
     "@megafon/ui-icons": "^0.0.2-beta.2",
