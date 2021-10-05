@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.161](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.160...@megafon/ui-core@2.0.0-beta.161) (2021-10-05)
+
+
+### Features
+
+* **textfield:** isConstrolled false by default, remove prop initialValue ([7cea901](https://github.com/MegafonWebLab/megafon-ui/commit/7cea901e821a34712fc6a984fc1d0a5b9d099948))
+
+
+### BREAKING CHANGES
+
+* **textfield:** isControlled prop false by default
+
+
+
+
+
 # [2.0.0-beta.160](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.159...@megafon/ui-core@2.0.0-beta.160) (2021-10-04)
 
 
