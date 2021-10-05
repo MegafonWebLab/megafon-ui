@@ -32,22 +32,7 @@ export interface IMaskState {
     selection: IMaskSelection;
 }
 
-type ValueProps =
-    | {
-          /** Переводит компонент в контролируемое состояние */
-          isControlled: false;
-          /** Внешнее значение для контролируемого компонента, для неконтролируемого не определяется */
-          value?: never;
-          /** Первоначально заданное значение для неконтролируемого компонента, для контролируемого не определяется  */
-          initialValue?: string | number;
-      }
-    | {
-          isControlled?: true;
-          value?: string | number;
-          initialValue?: never;
-      };
-
-interface ICommonProps {
+export type TextFieldProps = {
     /** Включить режим textarea. Fixed - это alias для textarea=true. */
     textarea?: boolean | 'fixed' | 'flexible';
     /** Лейбл */
@@ -74,6 +59,8 @@ interface ICommonProps {
     placeholder?: string;
     /** Атрибут корневого DOM элемента компонента */
     id?: string;
+    /** Внешнее значение компонента */
+    value?: string | number;
     /** Максимальное вводимое количество текста */
     maxLength?: number;
     /** Показывает счетчик с подсчетом введенных символов. Только для textarea. */
@@ -91,6 +78,8 @@ interface ICommonProps {
     classes?: { input?: string };
     /** Аргумент элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
+    /** Переводит компонент в контролируемое состояние */
+    isControlled?: boolean;
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Обработчик изменения значения маскированного инпута до обработки маской */
@@ -103,9 +92,7 @@ interface ICommonProps {
     onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Обработчик клика добавленной иконки */
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
-}
-
-export type TextFieldProps = ICommonProps & ValueProps;
+};
 
 const TEXTAREA_MIN_HEIGHT = 96;
 const TEXTAREA_MAX_HEIGHT = 168;
@@ -128,7 +115,7 @@ const TextField: React.FC<TextFieldProps> = ({
     name,
     placeholder,
     required,
-    isControlled = true,
+    isControlled = false,
     onBlur,
     onChange,
     onBeforeMaskChange,
@@ -137,7 +124,6 @@ const TextField: React.FC<TextFieldProps> = ({
     onKeyUp,
     theme = 'default',
     type = 'text',
-    initialValue,
     value,
     verification,
     noticeText,
@@ -146,7 +132,7 @@ const TextField: React.FC<TextFieldProps> = ({
     classes: { input } = {},
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
-    const [inputValue, setInputValue] = useState<string | number | undefined>(initialValue);
+    const [inputValue, setInputValue] = useState<string | number | undefined>(value);
     const [initialTextareaHeight, setInitialTextareaHeight] = useState(TEXTAREA_MIN_HEIGHT);
     const [isTextareaResized, setIsTextareaResized] = useState(false);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
@@ -171,8 +157,9 @@ const TextField: React.FC<TextFieldProps> = ({
     );
 
     useEffect(() => {
-        checkSymbolMaxLimit(value || initialValue);
-    }, [value, initialValue, checkSymbolMaxLimit]);
+        !isControlled && setInputValue(value);
+        checkSymbolMaxLimit(value);
+    }, [value, checkSymbolMaxLimit]);
 
     const togglePasswordHiding = useCallback(
         () => setPasswordHidden(prevPassState => !prevPassState),
@@ -421,63 +408,6 @@ const TextField: React.FC<TextFieldProps> = ({
     );
 };
 
-const CustomPropTypes = {
-    isControlled(props: any, propName: string, componentName: string) {
-        if (typeof props[propName] !== 'boolean' && typeof props[propName] !== 'undefined') {
-            return new Error(
-                `The component ${componentName} need the prop ${propName} to be a boolean,
-                    but you passed a ${typeof props[propName]}.`,
-            );
-        }
-
-        return null;
-    },
-    initialValue(props: any, propName: string, componentName: string) {
-        const { isControlled = true, initialValue } = props;
-
-        const initialValuePropType = typeof props[propName];
-
-        if (
-            initialValuePropType !== 'string' &&
-            initialValuePropType !== 'number' &&
-            initialValuePropType !== 'undefined'
-        ) {
-            return new Error(
-                `The component ${componentName} need the prop ${propName} to be a string or number,
-                    but you passed a ${typeof props[propName]}.`,
-            );
-        }
-
-        if (isControlled && initialValue !== undefined) {
-            return new Error(
-                `The prop ${propName} pass only for uncontrolled component, pass 'value' or set isControlled={false}`,
-            );
-        }
-
-        return null;
-    },
-    value(props: any, propName: string, componentName: string) {
-        const { isControlled = true, value } = props;
-
-        const valuePropType = typeof props[propName];
-
-        if (valuePropType !== 'string' && valuePropType !== 'number' && isControlled) {
-            return new Error(
-                `The controlled component ${componentName} need the required prop ${propName} to be a string or number,
-                    but you passed a ${typeof props[propName]}.`,
-            );
-        }
-
-        if (!isControlled && value !== undefined) {
-            return new Error(
-                `The prop 'value' pass only for controlled component, pass 'initialValue' or set isControlled={true} (value by default)`,
-            );
-        }
-
-        return null;
-    },
-};
-
 TextField.propTypes = {
     textarea: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(Object.values(TextareaTypes))]),
     label: PropTypes.string,
@@ -490,9 +420,8 @@ TextField.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string,
-    isControlled: CustomPropTypes.isControlled,
-    value: CustomPropTypes.value,
-    initialValue: CustomPropTypes.initialValue,
+    isControlled: PropTypes.bool,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     maxLength: PropTypes.number,
     symbolCounter: PropTypes.number,
     customIcon: PropTypes.element,

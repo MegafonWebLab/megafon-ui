@@ -2,7 +2,7 @@
 
 exports[`<TextField /> input should render with hidden password 1`] = `
 <div
-  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon"
+  className="mfui-beta-text-field mfui-beta-text-field_disabled mfui-beta-text-field_theme_default mfui-beta-text-field_icon mfui-beta-text-field_password"
 >
   <div
     className="mfui-beta-text-field__field-wrapper mfui-beta-text-field__field-wrapper_no-touch"
@@ -258,7 +258,7 @@ exports[`<TextField /> input should render with value after updating number prop
         placeholder="placeholder"
         required={true}
         type="text"
-        value={5678}
+        value={1234}
       />
     </div>
     <div
@@ -301,7 +301,7 @@ exports[`<TextField /> input should render with value after updating string prop
         placeholder="placeholder"
         required={true}
         type="text"
-        value="newValue"
+        value="value"
       />
     </div>
     <div
@@ -952,7 +952,7 @@ exports[`<TextField /> textarea should render with value after updating number p
             "height": "96px",
           }
         }
-        value={5678}
+        value={1234}
       />
     </div>
     <div
@@ -1000,7 +1000,7 @@ exports[`<TextField /> textarea should render with value after updating string p
             "height": "96px",
           }
         }
-        value="newValue"
+        value="value"
       />
     </div>
     <div
