@@ -254,7 +254,7 @@ describe('<TextField />', () => {
             const wrapper = shallow(
                 <TextField
                     {...commonFieldProps}
-                    initialValue="value"
+                    value="value"
                     verification={Verification.ERROR}
                     isControlled={false}
                 />,
