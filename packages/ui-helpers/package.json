@@ -20,7 +20,7 @@
     "typecheck": "tsc --noEmit -p .",
     "prettier:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "yarn lint-staged && yarn lint:ts",
+    "lint": "yarn lint:ts",
     "lint:ts": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
     "test": "yarn test:unit",
     "test:unit": "jest",
