@@ -35,6 +35,11 @@
   "publishConfig": {
     "access": "public"
   },
+  "lint-staged": {
+    "src/**/**/*.(js|jsx|ts|tsx)": [
+      "eslint --max-warnings=0 --config ../../.eslintrc.json"
+    ]
+  },
   "peerDependencies": {
     "@megafon/ui-icons": "^0.0.2-beta.2",
     "react": ">=16.13.0",

@@ -20,13 +20,19 @@
     "typecheck": "tsc --noEmit -p .",
     "prettier:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
+    "lint": "yarn lint:ts",
+    "lint:ts": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
     "test": "yarn test:unit",
     "test:unit": "jest",
     "test:update": "jest --updateSnapshot"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "lint-staged": {
+    "src/**/**/*.(js|jsx|ts|tsx)": [
+      "eslint --max-warnings=0 --config ../../.eslintrc.json"
+    ]
   },
   "peerDependencies": {
     "react": ">=16.13.0"
