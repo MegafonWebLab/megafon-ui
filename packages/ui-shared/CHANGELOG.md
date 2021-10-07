@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.231](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.230...@megafon/ui-shared@2.0.0-beta.231) (2021-10-07)
+
+
+### Bug Fixes
+
+* add lint-staged to pre-commit hook ([83e2e13](https://github.com/MegafonWebLab/megafon-ui/commit/83e2e1304c92cd0125e80fa0c2879e28476499d9))
+* run lint-staged only on pre-commit hook ([8570564](https://github.com/MegafonWebLab/megafon-ui/commit/857056423e738135f6d0866df8c0166ce9bd289e))
+
+
+
+
+
 # [2.0.0-beta.230](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.229...@megafon/ui-shared@2.0.0-beta.230) (2021-10-05)
 
 **Note:** Version bump only for package @megafon/ui-shared
