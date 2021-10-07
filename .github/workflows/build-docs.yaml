@@ -58,6 +58,6 @@ jobs:
           branch: docs
           message: 'docs update'
           add: 'docs --force' # add only docs directory
-          remove: "-r -- './*' ':(exclude)docs/' ':(exclude)static.json'" # remove everything except docs and heroku config
+          remove: "-r -- './*' ':(exclude)docs/'" # remove everything except docs
           pull_strategy: 'NO-PULL'
           push: origin docs --force
