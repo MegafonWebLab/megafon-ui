@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.232](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.231...@megafon/ui-shared@2.0.0-beta.232) (2021-10-11)
+
+
+### Bug Fixes
+
+* **picturewithdescription:** fix text align ([1cc5829](https://github.com/MegafonWebLab/megafon-ui/commit/1cc5829e62460a57fccf80b2f8ffb83846d0c8f8))
+* **textboxpicture:** fix image styles ([868cf33](https://github.com/MegafonWebLab/megafon-ui/commit/868cf3349ffd2b7e1b8829fec694f7aade416db7))
+* **videoblock:** fix button width ([9fc980b](https://github.com/MegafonWebLab/megafon-ui/commit/9fc980b72d8d716ce2b8d6441610fe0032892f13))
+
+
+
+
+
 # [2.0.0-beta.231](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.230...@megafon/ui-shared@2.0.0-beta.231) (2021-10-07)
 
 
