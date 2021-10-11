@@ -25,8 +25,8 @@ export const defaultNameYamlPlugin = function() {
 export default {
     title: 'MegaFon UI',
     description: 'Megafon React UI Kit',
-    base: '/',
-    dest: 'docs',
+    base: '/EqR2rxoML8',
+    dest: 'docs/EqR2rxoML8',
     typescript: true,
     protocol: 'http',
     public: 'src/public',
