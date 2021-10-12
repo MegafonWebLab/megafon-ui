@@ -4,51 +4,32 @@ import { Grid, GridColumn, Accordion } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
 import './AccordionBox.less';
 
-export interface IAccordionBox {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
-    /** Ссылка на корневой элемент */
-    rootRef?: React.Ref<HTMLDivElement>;
-    /** Заголовок аккордеона */
-    title: string;
-    /** Состояние аккордеона, заданное извне */
-    isOpened?: boolean;
+type AccordionPropsType = React.ComponentProps<typeof Accordion>;
+
+export interface IAccordionBox extends AccordionPropsType {
     /** Отключить ограничение ширины */
     isFullWidth?: boolean;
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
-    /** Вертикальные отступы */
-    hasVerticalPaddings?: boolean;
-    /** Дополнительный класс для корнеовго элемента */
-    className?: string;
-    /** Дополнительные классы для корневого и внутренних элементов */
-    classes?: {
-        openedClass?: string;
-        root?: string;
-        collapse?: string;
-        titleWrap?: string;
-    };
-    /** Обработчик клика */
-    onClickAccordion?: (isOpened: boolean, title: string) => void;
+    /** Дополнительный класс для контейнера компонента */
+    containerClassName?: string;
 }
 
 const cn = cnCreate('mfui-beta-accordion-box');
-const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFullWidth = false, ...restProps }) => {
-    const renderAccordionWithGrid = React.useCallback(
-        () => (
-            <div className={cn()}>
-                <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
-                    <GridColumn wide="8">
-                        <Accordion {...restProps} />
-                    </GridColumn>
-                </Grid>
-            </div>
-        ),
-        [restProps, hCenterAlignWide],
-    );
-
-    return isFullWidth ? <Accordion {...restProps} /> : renderAccordionWithGrid();
-};
+const AccordionBox: React.FC<IAccordionBox> = ({
+    hCenterAlignWide = false,
+    isFullWidth = false,
+    containerClassName,
+    ...restProps
+}) => (
+    <div className={cn([containerClassName])}>
+        <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
+            <GridColumn wide={isFullWidth ? '12' : '8'} all="12">
+                <Accordion {...restProps} />
+            </GridColumn>
+        </Grid>
+    </div>
+);
 
 AccordionBox.propTypes = {
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
@@ -56,7 +37,7 @@ AccordionBox.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
-    title: PropTypes.string.isRequired,
+    title: PropTypes.node.isRequired,
     isFullWidth: PropTypes.bool,
     isOpened: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,

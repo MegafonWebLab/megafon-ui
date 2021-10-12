@@ -2,12 +2,13 @@
 
 exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide is true 1`] = `
 <div
-  className="mfui-beta-accordion-box"
+  className="mfui-beta-accordion-box containerClass"
 >
   <Grid
     hAlign="center"
   >
     <GridColumn
+      all="12"
       wide="8"
     >
       <Accordion
@@ -42,12 +43,13 @@ exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide
 
 exports[`<AccordionBox /> should render with props 1`] = `
 <div
-  className="mfui-beta-accordion-box"
+  className="mfui-beta-accordion-box containerClass"
 >
   <Grid
     hAlign="left"
   >
     <GridColumn
+      all="12"
       wide="8"
     >
       <Accordion
@@ -81,29 +83,42 @@ exports[`<AccordionBox /> should render with props 1`] = `
 `;
 
 exports[`<AccordionBox /> should render without grid when isFullWidth is true 1`] = `
-<Accordion
-  className="className"
-  classes={
-    Object {
-      "collapse": "collapseClass",
-      "openedClass": "isOpenClass",
-      "root": "rootClass",
-      "titleWrap": "titleWrapClass",
-    }
-  }
-  dataAttrs={
-    Object {
-      "data-test": "data-test-value",
-    }
-  }
-  hasVerticalPaddings={true}
-  isOpened={false}
-  onClickAccordion={[MockFunction]}
-  rootRef={[MockFunction]}
-  title="Test"
+<div
+  className="mfui-beta-accordion-box containerClass"
 >
-  <div>
-    test
-  </div>
-</Accordion>
+  <Grid
+    hAlign="left"
+  >
+    <GridColumn
+      all="12"
+      wide="12"
+    >
+      <Accordion
+        className="className"
+        classes={
+          Object {
+            "collapse": "collapseClass",
+            "openedClass": "isOpenClass",
+            "root": "rootClass",
+            "titleWrap": "titleWrapClass",
+          }
+        }
+        dataAttrs={
+          Object {
+            "data-test": "data-test-value",
+          }
+        }
+        hasVerticalPaddings={true}
+        isOpened={false}
+        onClickAccordion={[MockFunction]}
+        rootRef={[MockFunction]}
+        title="Test"
+      >
+        <div>
+          test
+        </div>
+      </Accordion>
+    </GridColumn>
+  </Grid>
+</div>
 `;

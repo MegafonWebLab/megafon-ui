@@ -18,6 +18,7 @@ const props: IAccordionBox = {
         titleWrap: 'titleWrapClass',
     },
     onClickAccordion: jest.fn(),
+    containerClassName: 'containerClass',
 };
 
 describe('<AccordionBox />', () => {
