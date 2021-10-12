@@ -11,7 +11,7 @@ export interface IAccordionProps extends IFilterDataAttrs {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок */
-    title: string;
+    title: React.ReactNode;
     /** Состояние открытости */
     isOpened?: boolean;
     /** Вертикальные отступы */
@@ -26,7 +26,7 @@ export interface IAccordionProps extends IFilterDataAttrs {
         titleWrap?: string;
     };
     /** Обработчик клика */
-    onClickAccordion?: (isOpened: boolean, title: string) => void;
+    onClickAccordion?: (isOpened: boolean, title: React.ReactNode) => void;
 }
 
 const cn = cnCreate('mfui-beta-accordion');
@@ -88,7 +88,7 @@ Accordion.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
-    title: PropTypes.string.isRequired,
+    title: PropTypes.node.isRequired,
     isOpened: PropTypes.bool,
     hasVerticalPaddings: PropTypes.bool,
     className: PropTypes.string,
