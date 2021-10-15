@@ -10,7 +10,7 @@ describe('PaginationButton', () => {
     });
 
     it('should render disabled button', () => {
-        const wrapper = shallow(<PaginationButton isDisabled>Click me</PaginationButton>);
+        const wrapper = shallow(<PaginationButton disabled>Click me</PaginationButton>);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -53,7 +53,7 @@ describe('PaginationButton', () => {
 
         it('should not call click handler on disabled button', () => {
             const wrapper = mount(
-                <PaginationButton onClick={clickHandler} isDisabled>
+                <PaginationButton onClick={clickHandler} disabled>
                     Click me
                 </PaginationButton>,
             );

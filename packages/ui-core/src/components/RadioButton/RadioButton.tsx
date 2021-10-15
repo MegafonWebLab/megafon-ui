@@ -11,7 +11,7 @@ export interface IRadioButtonProps {
     /** Размер текста лейбла */
     textSize?: 'small' | 'medium';
     /** Управление возможностью взаимодействия с компонентом */
-    isDisabled?: boolean;
+    disabled?: boolean;
     /** Управление состоянием вкл/выкл компонента */
     isChecked?: boolean;
     /** Дополнительный класс корневого элемента */
@@ -36,7 +36,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         value: PropTypes.string.isRequired,
         name: PropTypes.string,
         textSize: PropTypes.oneOf(['small', 'medium']),
-        isDisabled: PropTypes.bool,
+        disabled: PropTypes.bool,
         isChecked: PropTypes.bool,
         className: PropTypes.string,
         classes: PropTypes.shape({
@@ -55,7 +55,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
 
     static defaultProps: Partial<IRadioButtonProps> = {
         textSize: 'medium',
-        isDisabled: false,
+        disabled: false,
     };
 
     handleChange = () => {
@@ -65,17 +65,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
     };
 
     render() {
-        const {
-            isChecked,
-            isDisabled,
-            name,
-            value,
-            textSize,
-            children,
-            inputRef,
-            className,
-            classes = {},
-        } = this.props;
+        const { isChecked, disabled, name, value, textSize, children, inputRef, className, classes = {} } = this.props;
         const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
 
         const rootClassNames = Array.isArray(className) ? [...className, classes.root] : [className, classes.root];
@@ -86,7 +76,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                     className={cn(
                         'label',
                         {
-                            disabled: isDisabled,
+                            disabled,
                         },
                         classes.label,
                     )}
@@ -98,7 +88,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
                         name={name}
                         value={value}
                         onChange={this.handleChange}
-                        disabled={isDisabled}
+                        disabled={disabled}
                         ref={inputRef as React.Ref<HTMLInputElement>}
                     />
                     <div className={cn('custom-input', classes.customInput)} />

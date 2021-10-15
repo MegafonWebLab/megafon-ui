@@ -15,7 +15,7 @@ exports[`PaginationButtons should render component 1`] = `
   </PaginationButton>
   <PaginationButton
     className="mfui-beta-pagination-buttons__button"
-    isDisabled={true}
+    disabled={true}
     key="1"
   >
     <test-file-stub />

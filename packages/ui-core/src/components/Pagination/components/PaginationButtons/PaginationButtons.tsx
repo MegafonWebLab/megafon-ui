@@ -21,7 +21,7 @@ const PaginationButtons: React.FC<IPaginationButtons> = ({ items, theme, onClick
 
             if (isHiddenButton) {
                 return (
-                    <PaginationButton className={cn('button')} isDisabled key={index} theme={theme}>
+                    <PaginationButton className={cn('button')} disabled key={index} theme={theme}>
                         <NothingIcon />
                     </PaginationButton>
                 );

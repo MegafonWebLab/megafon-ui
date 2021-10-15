@@ -17,7 +17,7 @@ export interface ICounterProps {
     /** Максимальное доступное значение */
     max?: number;
     /** Запретить взаимодействие с компонентом */
-    isDisabled?: boolean;
+    disabled?: boolean;
     /** Обработчик изменения значения 'value' */
     onChange?: (value: number) => void;
     /** Дополнительный класс для корневого элемента */
@@ -38,7 +38,7 @@ const Counter: React.FC<ICounterProps> = ({
     initialValue,
     max = 999999,
     min = 0,
-    isDisabled = false,
+    disabled = false,
     onChange,
     className,
     classes = {},
@@ -112,11 +112,11 @@ const Counter: React.FC<ICounterProps> = ({
     );
 
     return (
-        <div className={cn({ disabled: isDisabled }, [className, classes.root])}>
+        <div className={cn({ disabled }, [className, classes.root])}>
             <button
                 className={cn('btn', { left: true }, classes.buttonMinus)}
                 type="button"
-                disabled={isDisabled || (isControlled ? value : counter) <= min}
+                disabled={disabled || (isControlled ? value : counter) <= min}
                 onClick={handleMinusClick}
             >
                 <IconMinus className={cn('icon')} />
@@ -127,13 +127,13 @@ const Counter: React.FC<ICounterProps> = ({
                     value={isControlled ? value : counter}
                     onChange={handleInputChange}
                     onBlur={handleInputBlur}
-                    disabled={isDisabled}
+                    disabled={disabled}
                 />
             </div>
             <button
                 className={cn('btn', { right: true }, classes.buttonPlus)}
                 type="button"
-                disabled={isDisabled || counter >= max || value >= max}
+                disabled={disabled || counter >= max || value >= max}
                 onClick={handlePlusClick}
             >
                 <IconPlus className={cn('icon')} />
@@ -148,7 +148,7 @@ Counter.propTypes = {
     initialValue: PropTypes.number,
     min: PropTypes.number,
     max: PropTypes.number,
-    isDisabled: PropTypes.bool,
+    disabled: PropTypes.bool,
     onChange: PropTypes.func,
     className: PropTypes.string,
     classes: PropTypes.shape({

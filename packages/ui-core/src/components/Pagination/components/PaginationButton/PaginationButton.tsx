@@ -6,7 +6,7 @@ import './PaginationButton.less';
 type ValueType = string | number;
 
 export interface IPaginationButton {
-    isDisabled?: boolean;
+    disabled?: boolean;
     isActive?: boolean;
     theme?: 'default' | 'light';
     className?: string;
@@ -16,7 +16,7 @@ export interface IPaginationButton {
 
 const cn = cnCreate('mfui-beta-pagination-button');
 const PaginationButton: React.FC<IPaginationButton> = ({
-    isDisabled = false,
+    disabled = false,
     isActive = false,
     theme = 'default',
     className,
@@ -29,14 +29,14 @@ const PaginationButton: React.FC<IPaginationButton> = ({
     };
 
     return (
-        <button className={cn({ active: isActive, theme }, className)} disabled={isDisabled} onClick={handleClick}>
+        <button className={cn({ active: isActive, theme }, className)} disabled={disabled} onClick={handleClick}>
             {children}
         </button>
     );
 };
 
 PaginationButton.propTypes = {
-    isDisabled: PropTypes.bool,
+    disabled: PropTypes.bool,
     isActive: PropTypes.bool,
     theme: PropTypes.oneOf(['default', 'light']),
     className: PropTypes.string,
