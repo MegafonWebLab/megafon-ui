@@ -40,7 +40,7 @@ const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'de
         <div className={cn()}>
             <PaginationNavigation
                 direction="left"
-                isDisabled={activePage === Button.FIRST}
+                disabled={activePage === Button.FIRST}
                 onClick={handleBackClick}
                 className={cn('button')}
                 theme={theme}
@@ -53,7 +53,7 @@ const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'de
                 onClick={handlePageButtonClick}
             />
             <PaginationNavigation
-                isDisabled={activePage === totalPages}
+                disabled={activePage === totalPages}
                 onClick={handleNextClick}
                 className={cn('button')}
                 theme={theme}

@@ -8,7 +8,7 @@ import './PaginationNavigation.less';
 interface IPaginationNavigation {
     direction?: 'left' | 'right';
     theme?: 'default' | 'light';
-    isDisabled?: boolean;
+    disabled?: boolean;
     isActive?: boolean;
     className?: string;
     onClick?: (value?: number | string) => void;
@@ -18,14 +18,14 @@ const cn = cnCreate('mfui-beta-pagination-navigation');
 const PaginationNavigation: React.FC<IPaginationNavigation> = ({
     direction = 'right',
     theme,
-    isDisabled,
+    disabled,
     isActive,
     onClick,
     className,
 }) => (
     <PaginationButton
         className={cn({ direction }, className)}
-        isDisabled={isDisabled}
+        disabled={disabled}
         isActive={isActive}
         theme={theme}
         onClick={onClick}
@@ -37,7 +37,7 @@ const PaginationNavigation: React.FC<IPaginationNavigation> = ({
 PaginationNavigation.propTypes = {
     direction: PropTypes.oneOf(['left', 'right']),
     theme: PropTypes.oneOf(['default', 'light']),
-    isDisabled: PropTypes.bool,
+    disabled: PropTypes.bool,
     isActive: PropTypes.bool,
     className: PropTypes.string,
     onClick: PropTypes.func,

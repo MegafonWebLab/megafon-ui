@@ -83,7 +83,7 @@ describe('<Select />', () => {
     describe('states of select', () => {
         it('renders with disabled state', () => {
             const handleClick = jest.fn();
-            const wrapper = shallow(<Select onSelect={handleClick} items={[]} isDisabled />);
+            const wrapper = shallow(<Select onSelect={handleClick} items={[]} disabled />);
 
             wrapper.find(`.${cn('control')}`).simulate('click');
 

@@ -31,14 +31,14 @@ describe('Pagination', () => {
         const wrapper = shallow(<Pagination totalPages={3} activePage={1} onChange={jest.fn()} />);
         const button = wrapper.find('PaginationNavigation').first();
 
-        expect(button.prop('isDisabled')).toBeTruthy();
+        expect(button.prop('disabled')).toBeTruthy();
     });
 
     it('should disable right navigation button if last page button is active', () => {
         const wrapper = shallow(<Pagination totalPages={3} activePage={3} onChange={jest.fn()} />);
         const button = wrapper.find('PaginationNavigation').last();
 
-        expect(button.prop('isDisabled')).toBeTruthy();
+        expect(button.prop('disabled')).toBeTruthy();
     });
 
     describe('render on mobile resolution', () => {

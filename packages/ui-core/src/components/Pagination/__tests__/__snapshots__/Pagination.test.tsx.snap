@@ -12,13 +12,13 @@ exports[`Pagination render on mobile resolution should render component with lef
     <PaginationNavigation
       className="mfui-beta-pagination__button"
       direction="left"
-      isDisabled={false}
+      disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
-        isDisabled={false}
+        disabled={false}
         onClick={[Function]}
         theme="default"
       >
@@ -69,7 +69,7 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-beta-pagination-buttons__button"
-          isDisabled={true}
+          disabled={true}
           key="1"
           theme="default"
         >
@@ -99,7 +99,7 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-beta-pagination-buttons__button"
-          isDisabled={true}
+          disabled={true}
           key="3"
           theme="default"
         >
@@ -131,13 +131,13 @@ exports[`Pagination render on mobile resolution should render component with lef
     </PaginationButtons>
     <PaginationNavigation
       className="mfui-beta-pagination__button"
-      isDisabled={false}
+      disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
-        isDisabled={false}
+        disabled={false}
         onClick={[Function]}
         theme="default"
       >
@@ -168,13 +168,13 @@ exports[`Pagination render on mobile resolution should render component with lef
     <PaginationNavigation
       className="mfui-beta-pagination__button"
       direction="left"
-      isDisabled={false}
+      disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
-        isDisabled={false}
+        disabled={false}
         onClick={[Function]}
         theme="default"
       >
@@ -225,7 +225,7 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-beta-pagination-buttons__button"
-          isDisabled={true}
+          disabled={true}
           key="1"
           theme="default"
         >
@@ -289,13 +289,13 @@ exports[`Pagination render on mobile resolution should render component with lef
     </PaginationButtons>
     <PaginationNavigation
       className="mfui-beta-pagination__button"
-      isDisabled={false}
+      disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
-        isDisabled={false}
+        disabled={false}
         onClick={[Function]}
         theme="default"
       >
@@ -326,13 +326,13 @@ exports[`Pagination render on mobile resolution should render component with rig
     <PaginationNavigation
       className="mfui-beta-pagination__button"
       direction="left"
-      isDisabled={true}
+      disabled={true}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
-        isDisabled={true}
+        disabled={true}
         onClick={[Function]}
         theme="default"
       >
@@ -415,7 +415,7 @@ exports[`Pagination render on mobile resolution should render component with rig
         </PaginationButton>
         <PaginationButton
           className="mfui-beta-pagination-buttons__button"
-          isDisabled={true}
+          disabled={true}
           key="3"
           theme="default"
         >
@@ -447,13 +447,13 @@ exports[`Pagination render on mobile resolution should render component with rig
     </PaginationButtons>
     <PaginationNavigation
       className="mfui-beta-pagination__button"
-      isDisabled={false}
+      disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
-        isDisabled={false}
+        disabled={false}
         onClick={[Function]}
         theme="default"
       >
@@ -479,7 +479,7 @@ exports[`Pagination should render component with left and right hidden buttons 1
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     direction="left"
-    isDisabled={false}
+    disabled={false}
     onClick={[Function]}
     theme="default"
   />
@@ -502,7 +502,7 @@ exports[`Pagination should render component with left and right hidden buttons 1
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
-    isDisabled={false}
+    disabled={false}
     onClick={[Function]}
     theme="default"
   />
@@ -516,7 +516,7 @@ exports[`Pagination should render component with left hidden buttons 1`] = `
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     direction="left"
-    isDisabled={false}
+    disabled={false}
     onClick={[Function]}
     theme="default"
   />
@@ -539,7 +539,7 @@ exports[`Pagination should render component with left hidden buttons 1`] = `
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
-    isDisabled={false}
+    disabled={false}
     onClick={[Function]}
     theme="default"
   />
@@ -553,7 +553,7 @@ exports[`Pagination should render component with number of buttons does not exce
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     direction="left"
-    isDisabled={true}
+    disabled={true}
     onClick={[Function]}
     theme="default"
   />
@@ -572,7 +572,7 @@ exports[`Pagination should render component with number of buttons does not exce
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
-    isDisabled={false}
+    disabled={false}
     onClick={[Function]}
     theme="default"
   />
@@ -586,7 +586,7 @@ exports[`Pagination should render component with right hidden buttons 1`] = `
   <PaginationNavigation
     className="mfui-beta-pagination__button"
     direction="left"
-    isDisabled={true}
+    disabled={true}
     onClick={[Function]}
     theme="default"
   />
@@ -609,7 +609,7 @@ exports[`Pagination should render component with right hidden buttons 1`] = `
   />
   <PaginationNavigation
     className="mfui-beta-pagination__button"
-    isDisabled={false}
+    disabled={false}
     onClick={[Function]}
     theme="default"
   />

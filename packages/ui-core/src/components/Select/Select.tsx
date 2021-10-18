@@ -49,7 +49,7 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
     /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
     /** Управление возможностью взаимодействия с компонентом */
-    isDisabled?: boolean;
+    disabled?: boolean;
     /** Делает поле обязательным */
     required?: boolean;
     /** Текст внутри поля по умолчанию */
@@ -101,7 +101,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         currentValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         verification: PropTypes.oneOf(Object.values(Verification)),
         noticeText: PropTypes.string,
-        isDisabled: PropTypes.bool,
+        disabled: PropTypes.bool,
         required: PropTypes.bool,
         placeholder: PropTypes.string,
         notFoundText: PropTypes.string,
@@ -131,7 +131,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     };
 
     static defaultProps: Partial<ISelectProps<never>> = {
-        isDisabled: false,
+        disabled: false,
         required: false,
         type: 'classic',
         notFoundText: 'Ничего не нашлось',
@@ -326,9 +326,9 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
     handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
         const { activeIndex, isOpened, filteredItems } = this.state;
-        const { isDisabled } = this.props;
+        const { disabled } = this.props;
 
-        if (filteredItems.length === 0 || isDisabled) {
+        if (filteredItems.length === 0 || disabled) {
             return true;
         }
 
@@ -522,7 +522,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     render() {
         const {
             type,
-            isDisabled,
+            disabled,
             verification,
             noticeText,
             label,
@@ -540,7 +540,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 className={cn(
                     {
                         open: isOpened,
-                        disabled: isDisabled,
+                        disabled,
                         'no-touch': !this.isTouch,
                         valid: verification === Verification.VALID,
                         error: verification === Verification.ERROR,

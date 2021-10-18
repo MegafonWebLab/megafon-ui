@@ -440,7 +440,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
       "incorrect-attr": "test",
     }
   }
-  isDisabled={false}
+  disabled={false}
   items={
     Array [
       Object {
@@ -572,7 +572,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
       "incorrect-attr": "test",
     }
   }
-  isDisabled={false}
+  disabled={false}
   items={
     Array [
       Object {
@@ -817,7 +817,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
       "incorrect-attr": "test",
     }
   }
-  isDisabled={false}
+  disabled={false}
   items={
     Array [
       Object {
@@ -954,7 +954,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
 
 exports[`<Select /> snapshots renders with default props 1`] = `
 <Select
-  isDisabled={false}
+  disabled={false}
   items={
     Array [
       Object {
@@ -1059,7 +1059,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
       "incorrect-attr": "test",
     }
   }
-  isDisabled={false}
+  disabled={false}
   items={
     Array [
       Object {
