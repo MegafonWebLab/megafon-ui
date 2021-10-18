@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.163](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.162...@megafon/ui-core@2.0.0-beta.163) (2021-10-18)
+
+
+### Bug Fixes
+
+* props isDisabled renamed to disabled ([5c1efee](https://github.com/MegafonWebLab/megafon-ui/commit/5c1efee6d059164e77f4740a4423607262560b4a))
+
+
+### BREAKING CHANGES
+
+* for all components prop isDisabled renamed to disabled
+
+
+
+
+
 # [2.0.0-beta.162](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.161...@megafon/ui-core@2.0.0-beta.162) (2021-10-07)
 
 
