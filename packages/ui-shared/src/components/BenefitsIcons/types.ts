@@ -16,6 +16,12 @@ export const IconPositionEnum = {
 } as const;
 export type IconPosition = typeof IconPositionEnum[keyof typeof IconPositionEnum];
 
+export const ItemsAlignEnum = {
+    LEFT: 'left',
+    CENTER: 'center',
+} as const;
+export type ItemsAlignType = typeof ItemsAlignEnum[keyof typeof ItemsAlignEnum];
+
 export type GridConfig = {
     wide?: TGridSizeValues;
     desktop?: TGridSizeValues;
