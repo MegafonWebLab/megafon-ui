@@ -45,6 +45,8 @@ export interface ITooltipProps {
     boundaryElement?: React.RefObject<HTMLElement>;
     /** Реф на триггер-элемент */
     triggerElement: React.RefObject<HTMLElement>;
+    /** Реф элемента, на который указывает стрелка тултипа */
+    targetElement?: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
     /** Дополнительный класс корневого элемента */
@@ -71,6 +73,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     triggerEvent = 'hover',
     boundaryElement,
     triggerElement,
+    targetElement,
     isOpened = false,
     children,
     classes: {
@@ -83,6 +86,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     onClose,
 }) => {
     const currentTrigger = triggerElement.current;
+    const currentTarget = targetElement?.current || currentTrigger;
     const currentBoundary = boundaryElement?.current;
 
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
@@ -124,7 +128,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         [placement, arrowElement, currentBoundary, isOpen],
     );
 
-    const { styles, attributes, update } = usePopper(currentTrigger, popperElement, options);
+    const { styles, attributes, update } = usePopper(currentTarget, popperElement, options);
 
     useEffect(() => {
         update && update();
@@ -164,8 +168,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const handleOutsideEvent = useCallback(
         (e: MouseEvent): void => {
             const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
-            const isTargetInTrigger =
-                e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
+            const isTargetInTrigger = e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
 
             if (!isTargetInPopper && !isTargetInTrigger) {
                 setIsOpen(false);
