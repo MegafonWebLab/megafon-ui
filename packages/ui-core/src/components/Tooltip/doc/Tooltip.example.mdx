@@ -127,6 +127,42 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
+## Расположение стрелки тултипа
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Относительно триггер-элемента</Button>
+                </span>
+                <Tooltip triggerElement={triggerElement}>
+                    Выравнивание стрелки по умолчанию
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement, targetElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Относительно таргет-элемента
+                        <span ref={targetElement}>▼</span>
+                    </Button>
+                </span>
+                <Tooltip
+                    triggerElement={triggerElement}
+                    targetElement={targetElement}
+                    placement="bottom"
+                >
+                    Использование дополнительного параметра для выравнивания стрелки
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
 ## Перестроение относительно триггер-элемента
 
 <Playground style={{
