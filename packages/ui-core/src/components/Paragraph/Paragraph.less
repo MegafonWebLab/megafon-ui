@@ -4,8 +4,9 @@
 
 @{b} {
     .fontFamily();
-
     margin: 0;
+
+    font-weight: 400;
 
     &_align_left {
         text-align: left;
@@ -20,13 +21,11 @@
     }
 
     &_size_regular {
-        font-size: 15px;
-        line-height: 24px;
+        .commonFont();
     }
 
     &_size_small {
-        font-size: 12px;
-        line-height: 16px;
+        .smallFont();
     }
 
     &_has-margin {
