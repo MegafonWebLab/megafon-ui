@@ -2,15 +2,19 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import './style/BenefitsIcons.less';
 import { Grid, GridColumn } from '@megafon/ui-core';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, breakpoints } from '@megafon/ui-helpers';
 import BenefitsIconsTile from './BenefitsIconsTile';
-import { GridConfig, IconPositionEnum, IconPosition, IBenefit } from './types';
+import { GridConfig, IconPositionEnum, IconPosition, IBenefit, ItemsAlignType, ItemsAlignEnum } from './types';
+import throttle from 'lodash.throttle';
+import throttleTime from 'constants/throttleTime';
 
 export interface IBenefitsIcons {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Позиция иконки */
     iconPosition?: IconPosition;
+    /** Выстраивать бенефиты в одну колонку вне зависимости от количества */
+    inOneColumn?: boolean;
     /** Список бенефитов */
     items: IBenefit[];
     /** Дополнительный css класс для корневого элемента */
@@ -109,7 +113,12 @@ const getCenterTopConfig = (count: number, index: number): GridConfig => {
     }
 };
 
-const getColumnConfig = (iconPosition: IconPosition, count: number, index: number) => {
+const getOneColumnConfig = (iconPosition: IconPosition): GridConfig =>
+    iconPosition !== IconPositionEnum.CENTER_TOP
+        ? { wide: '10', desktop: '10', tablet: '10' }
+        : { wide: '12', desktop: '12', tablet: '12' };
+
+const getMultiColumnConfig = (iconPosition: IconPosition, count: number, index: number): GridConfig => {
     switch (iconPosition) {
         case IconPositionEnum.LEFT_TOP:
             return getLeftTopConfig(count, index);
@@ -125,32 +134,61 @@ const getColumnConfig = (iconPosition: IconPosition, count: number, index: numbe
 const cn = cnCreate('mfui-beta-benefits-icons');
 const BenefitsIcons: React.FC<IBenefitsIcons> = ({
     rootRef,
-    iconPosition = 'left-top',
+    iconPosition = IconPositionEnum.LEFT_TOP,
+    inOneColumn = false,
     items,
     className,
     classes = {},
 }) => {
-    const hAlign = iconPosition === IconPositionEnum.CENTER_TOP ? 'center' : 'left';
+    const [itemsAlign, setItemsAlign] = React.useState<ItemsAlignType>(
+        iconPosition === IconPositionEnum.CENTER_TOP ? 'center' : 'left',
+    );
+    const [localIconPosition, setLocalIconPosition] = React.useState(iconPosition);
+
+    const resizeHandler = React.useCallback(() => {
+        if (window.innerWidth <= breakpoints.MOBILE_MIDDLE_END) {
+            setItemsAlign(ItemsAlignEnum.CENTER);
+            setLocalIconPosition(IconPositionEnum.CENTER_TOP);
+        } else {
+            setItemsAlign(ItemsAlignEnum.LEFT);
+            setLocalIconPosition(iconPosition);
+        }
+    }, [iconPosition]);
+
+    React.useEffect(() => {
+        const resizeHandlerThrottled = throttle(resizeHandler, throttleTime.resize);
+
+        if (inOneColumn) {
+            resizeHandler();
+            window.addEventListener('resize', resizeHandlerThrottled);
+        }
+
+        return () => {
+            window.removeEventListener('resize', resizeHandlerThrottled);
+        };
+    }, [iconPosition, inOneColumn, resizeHandler]);
 
     return (
         <div className={cn([className, classes.root])} ref={rootRef}>
             <div className={cn('inner')}>
-                <Grid className={classes.grid} guttersLeft="medium" hAlign={hAlign}>
-                    {items.map(({ title, text, icon }, i) => (
-                        <GridColumn
-                            className={classes.gridColumn}
-                            {...getColumnConfig(iconPosition, items.length, i)}
-                            key={i}
-                        >
-                            <BenefitsIconsTile
-                                className={classes.item}
-                                title={title}
-                                text={text}
-                                icon={icon}
-                                iconPosition={iconPosition}
-                            />
-                        </GridColumn>
-                    ))}
+                <Grid className={classes.grid} guttersLeft="medium" hAlign={itemsAlign}>
+                    {items.map(({ title, text, icon }, i) => {
+                        const columnConfig = inOneColumn
+                            ? getOneColumnConfig(iconPosition)
+                            : getMultiColumnConfig(iconPosition, items.length, i);
+
+                        return (
+                            <GridColumn className={classes.gridColumn} key={i} {...columnConfig}>
+                                <BenefitsIconsTile
+                                    className={classes.item}
+                                    title={title}
+                                    text={text}
+                                    icon={icon}
+                                    iconPosition={localIconPosition}
+                                />
+                            </GridColumn>
+                        );
+                    })}
                 </Grid>
             </div>
         </div>
@@ -163,6 +201,7 @@ BenefitsIcons.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     iconPosition: PropTypes.oneOf(Object.values(IconPositionEnum)),
+    inOneColumn: PropTypes.bool,
     items: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
