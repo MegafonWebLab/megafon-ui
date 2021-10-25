@@ -97,6 +97,7 @@ body {
 .interesting-dialog__cat a {
     display: none;
     font-size: 0;
+    text-decoration: none;
 }
 
 .interesting-dialog__cat button {
@@ -178,7 +179,7 @@ body {
 
     .interesting-dialog__cat_finally {
         position: relative;
-    }    
+    }
 
     .interesting-dialog__cat_finally a {
         top: 40px;

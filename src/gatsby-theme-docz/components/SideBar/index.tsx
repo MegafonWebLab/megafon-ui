@@ -26,7 +26,7 @@ const SideBar: React.FC = () => {
     return (
         <div className={cn()}>
             <div className={cn('logo-wrapper')}>
-                <Logo className={cn('logo')} />
+                <Logo className={cn('logo')} href="/EqR2rxoML8" target="_self" />
             </div>
             <div className={cn('menu')}>
                 <Menu />

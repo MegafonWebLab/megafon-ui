@@ -29,7 +29,7 @@ const PageHeader: React.FC<IPageHeaderProps> = ({ onClick, isOpen }) => {
                 {isOpen ? closeIcon : burger}
             </button>
             <div className={cn('logo')}>
-                <Logo />
+                <Logo href="/EqR2rxoML8" target="_self" />
             </div>
         </div>
     )
