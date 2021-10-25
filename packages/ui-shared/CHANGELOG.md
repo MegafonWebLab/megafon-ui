@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.234](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.233...@megafon/ui-shared@2.0.0-beta.234) (2021-10-25)
+
+
+### Features
+
+* **benefitsicons:** add ability render benefits in one column ([9e075ce](https://github.com/MegafonWebLab/megafon-ui/commit/9e075cec1a60474b9e3e22a30815ab3150acc54e))
+
+
+
+
+
 # [2.0.0-beta.233](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.232...@megafon/ui-shared@2.0.0-beta.233) (2021-10-18)
 
 **Note:** Version bump only for package @megafon/ui-shared
