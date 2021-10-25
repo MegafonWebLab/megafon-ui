@@ -16,7 +16,7 @@
         "pre-commit": "lerna run typecheck && lerna run lint-staged && lerna run lint:less && lerna run test",
         "release": "lerna version && yarn install --frozen-lockfile",
         "demo": "docz dev",
-        "demo:copy-stub": "cp ./src/in-development.html ./docs/index.html",
+        "demo:copy-stub": "cp -a ./src/in-development/. ./docs",
         "demo:build": "docz build && yarn demo:copy-stub"
     },
     "husky": {
