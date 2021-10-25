@@ -1,0 +1,292 @@
+@font-face {
+    font-family: "GraphikLC Semibold";
+    src: url("https://static0.megafon.ru/.blocks/fonts/graphik/MegaFonGraphikLC-Semibold-Web.woff2")
+            format("woff2"),
+        url("https://static0.megafon.ru/.blocks/fonts/graphik/MegaFonGraphikLC-Semibold-Web.woff")
+            format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    background: radial-gradient(
+            50% 37.09% at 100% 50%,
+            rgba(142, 81, 194, 0.15) 0%,
+            rgba(142, 81, 194, 0) 100%
+        ),
+        radial-gradient(
+            50.14% 22.46% at 0% 27.54%,
+            rgba(15, 222, 101, 0.15) 0%,
+            rgba(15, 222, 101, 0) 100%
+        ),
+        #ffffff;
+    background-repeat: no-repeat;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-family: "GraphikLC Semibold", Arial, "Helvetica CY", "Nimbus Sans L",
+        sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.head {
+    text-align: center;
+}
+
+.head__link {
+    display: block;
+}
+
+.head__logo {
+    width: 136px;
+    height: 42px;
+}
+
+.container {
+    padding: 0 16px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.interesting-dialog {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 120px;
+    background-image: url('./in-development/elements.png');
+    background-position: 80% 85%;
+    background-size: 192px 110px;
+    background-repeat: no-repeat;
+}
+
+.interesting-dialog__phrase {
+    padding: 8px 12px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    background-color: #fff;
+}
+
+.interesting-dialog__phrase--cat {
+    border-radius: 8px 8px 0px 8px;
+    top: 0px;
+    right: 0;
+}
+
+.interesting-dialog__phrase--man {
+    border-radius: 8px 8px 8px 0px;
+    top: 52px;
+    left: 0;
+}
+
+.interesting-dialog__cat a {
+    display: none;
+    font-size: 0;
+}
+
+.interesting-dialog__cat button {
+    cursor: pointer;
+    display: block;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.interesting-dialog__cat button:focus {
+    outline: none;
+}
+
+.interesting-dialog__cat--first-click button {
+    transform: translate(-150%, -100%) scale(-1);
+}
+
+.interesting-dialog__cat--second-click button {
+    transform: translate(-200%, 20%) scale(-1, 1);
+}
+
+.interesting-dialog__cat--finally button {
+    transform: translate(0, 0);
+    pointer-events: none;
+}
+
+.interesting-dialog__cat--finally a {
+    display: block;
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 96px;
+    height: 84px;
+}
+
+.interesting-dialog__cat svg {
+    width: 96px;
+    height: 84px;
+}
+
+.interesting-dialog__man {
+    margin-top: 60px;
+}
+
+.interesting-dialog__man svg {
+    width: 136px;
+    height: 157px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 48px;
+    }
+
+    .interesting-dialog {
+        padding-top: 0;
+        padding-bottom: 30px;
+        background-position: 50% 100%;
+        background-size: 326px 189px;
+    }
+
+    .interesting-dialog__cat,
+    .interesting-dialog__man {
+        position: relative;
+        flex: 1;
+    }
+
+    .interesting-dialog__man {
+        margin-top: 52px;
+        padding-top: 32px;
+    }
+
+    .interesting-dialog__cat {
+        text-align: right;
+        padding-top: 40px;
+    }
+
+    .interesting-dialog__cat--finally {
+        position: relative;
+    }    
+
+    .interesting-dialog__cat--finally a {
+        top: 40px;
+    }
+
+    .interesting-dialog__cat--finally a,
+    .interesting-dialog__cat svg  {
+        width: 153px;
+        height: 135px;
+    }
+
+    .interesting-dialog__man svg {
+        width: 211px;
+        height: 243px;
+    }
+
+    .interesting-dialog__phrase--cat {
+        left: 0;
+        right: auto;
+    }
+
+    .interesting-dialog__phrase--man {
+        right: 0;
+        left: auto;
+        top: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+
+    .head__logo {
+        width: 209px;
+        height: 66px;
+    }
+
+    .container {
+        padding: 0 64px;
+    }
+
+    .interesting-dialog {
+        background-size: 510px 295px;
+    }
+
+    .interesting-dialog__man {
+        margin-top: 72px;
+        padding-top: 48px;
+    }
+
+    .interesting-dialog__cat--finally a,
+    .interesting-dialog__cat svg {
+        width: 209px;
+        height: 185px;
+    }
+
+    .interesting-dialog__man svg {
+        width: 285px;
+        height: 329px;
+    }
+
+    .interesting-dialog__phrase {
+        padding: 16px 20px;
+    }
+
+    .interesting-dialog__phrase--cat {
+        left: -100px;
+        border-radius: 16px 16px 0px 16px;
+    }
+
+    .interesting-dialog__phrase--man {
+        border-radius: 16px 16px 16px 0px;
+        right: -80px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        padding: 0 80px;
+    }
+
+    .interesting-dialog {
+        padding-bottom: 60px;
+        background-size: 688px 398px;
+    }
+
+    .interesting-dialog__cat--finally a,
+    .interesting-dialog__cat svg {
+        width: 265px;
+        height: 235px;
+    }
+
+    .interesting-dialog__man {
+        margin-top: 80px;
+    }
+
+    .interesting-dialog__man svg {
+        width: 364px;
+        height: 421px;
+    }
+
+    .interesting-dialog__phrase--cat {
+        left: -40px;
+    }
+
+    .interesting-dialog__phrase--man {
+        right: 0;
+    }
+}
