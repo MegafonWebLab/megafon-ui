@@ -36,6 +36,7 @@ body {
 
 .head {
     text-align: center;
+    padding-top: 35px;
 }
 
 .head__link {
@@ -65,7 +66,7 @@ body {
     justify-content: space-between;
     box-sizing: border-box;
     padding-top: 120px;
-    background-image: url('./in-development/elements.png');
+    background-image: url('./elements.png');
     background-position: 80% 85%;
     background-size: 192px 110px;
     background-repeat: no-repeat;
@@ -81,13 +82,13 @@ body {
     background-color: #fff;
 }
 
-.interesting-dialog__phrase--cat {
+.interesting-dialog__phrase_cat {
     border-radius: 8px 8px 0px 8px;
     top: 0px;
     right: 0;
 }
 
-.interesting-dialog__phrase--man {
+.interesting-dialog__phrase_man {
     border-radius: 8px 8px 8px 0px;
     top: 52px;
     left: 0;
@@ -99,7 +100,6 @@ body {
 }
 
 .interesting-dialog__cat button {
-    cursor: pointer;
     display: block;
     background-color: transparent;
     padding: 0;
@@ -112,20 +112,20 @@ body {
     outline: none;
 }
 
-.interesting-dialog__cat--first-click button {
+.interesting-dialog__cat_first-click button {
     transform: translate(-150%, -100%) scale(-1);
 }
 
-.interesting-dialog__cat--second-click button {
+.interesting-dialog__cat_second-click button {
     transform: translate(-200%, 20%) scale(-1, 1);
 }
 
-.interesting-dialog__cat--finally button {
+.interesting-dialog__cat_finally button {
     transform: translate(0, 0);
     pointer-events: none;
 }
 
-.interesting-dialog__cat--finally a {
+.interesting-dialog__cat_finally a {
     display: block;
     position: absolute;
     top: 120px;
@@ -176,15 +176,15 @@ body {
         padding-top: 40px;
     }
 
-    .interesting-dialog__cat--finally {
+    .interesting-dialog__cat_finally {
         position: relative;
     }    
 
-    .interesting-dialog__cat--finally a {
+    .interesting-dialog__cat_finally a {
         top: 40px;
     }
 
-    .interesting-dialog__cat--finally a,
+    .interesting-dialog__cat_finally a,
     .interesting-dialog__cat svg  {
         width: 153px;
         height: 135px;
@@ -195,12 +195,12 @@ body {
         height: 243px;
     }
 
-    .interesting-dialog__phrase--cat {
+    .interesting-dialog__phrase_cat {
         left: 0;
         right: auto;
     }
 
-    .interesting-dialog__phrase--man {
+    .interesting-dialog__phrase_man {
         right: 0;
         left: auto;
         top: 0;
@@ -211,6 +211,10 @@ body {
     body {
         font-size: 24px;
         letter-spacing: 0.5px;
+    }
+
+    .head {
+        padding-top: 58px;
     }
 
     .head__logo {
@@ -231,7 +235,7 @@ body {
         padding-top: 48px;
     }
 
-    .interesting-dialog__cat--finally a,
+    .interesting-dialog__cat_finally a,
     .interesting-dialog__cat svg {
         width: 209px;
         height: 185px;
@@ -246,12 +250,12 @@ body {
         padding: 16px 20px;
     }
 
-    .interesting-dialog__phrase--cat {
+    .interesting-dialog__phrase_cat {
         left: -100px;
         border-radius: 16px 16px 0px 16px;
     }
 
-    .interesting-dialog__phrase--man {
+    .interesting-dialog__phrase_man {
         border-radius: 16px 16px 16px 0px;
         right: -80px;
     }
@@ -267,7 +271,7 @@ body {
         background-size: 688px 398px;
     }
 
-    .interesting-dialog__cat--finally a,
+    .interesting-dialog__cat_finally a,
     .interesting-dialog__cat svg {
         width: 265px;
         height: 235px;
@@ -282,11 +286,11 @@ body {
         height: 421px;
     }
 
-    .interesting-dialog__phrase--cat {
+    .interesting-dialog__phrase_cat {
         left: -40px;
     }
 
-    .interesting-dialog__phrase--man {
+    .interesting-dialog__phrase_man {
         right: 0;
     }
 }
