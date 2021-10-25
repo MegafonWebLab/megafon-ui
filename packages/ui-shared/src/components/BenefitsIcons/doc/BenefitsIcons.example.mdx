@@ -9,6 +9,8 @@ import {
     threeItems,
     twoItemsWithoutText,
     twoItemsWithoutTitle,
+    threeItemsWithoutText,
+    threeItemsWithoutTitle,
 } from './BenefitsIcons.docz.tsx';
 
 ```javascript collapse=Демо данные
@@ -144,11 +146,57 @@ const items = [
     />
 </Playground>
 
-#### 4 бенефитов
+#### 5 бенефитов
 <Playground>
     <BenefitsIcons
         items={fiveItems}
         iconPosition="center-top"
+    />
+</Playground>
+
+## В одной колонке
+
+#### Значок с выравниванием по левому краю
+<Playground>
+    <BenefitsIcons
+        inOneColumn
+        iconPosition="left-side"
+        items={fiveItems}
+    />
+</Playground>
+
+#### Значок с выравниванием по левому краю вверху
+<Playground>
+    <BenefitsIcons
+        inOneColumn
+        items={fiveItems}
+    />
+</Playground>
+
+#### Значок с выравниванием по центру
+<Playground>
+    <BenefitsIcons
+        inOneColumn
+        iconPosition="center-top"
+        items={fiveItems}
+    />
+</Playground>
+
+#### Только текст
+<Playground>
+    <BenefitsIcons
+        inOneColumn
+        iconPosition="left-side"
+        items={threeItemsWithoutTitle}
+    />
+</Playground>
+
+#### Только заголовок
+<Playground>
+    <BenefitsIcons
+        inOneColumn
+        iconPosition="left-side"
+        items={threeItemsWithoutText}
     />
 </Playground>
 

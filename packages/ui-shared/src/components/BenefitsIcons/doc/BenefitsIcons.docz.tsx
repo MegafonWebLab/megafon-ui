@@ -70,6 +70,36 @@ export const threeItems = [
     },
 ];
 
+export const threeItemsWithoutTitle = [
+    {
+        text: 'Оставайтесь всегда на связи',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        text: 'Подключите, и гигабайты и минуты всегда будут с вами!',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        text: 'Оставайтесь всегда на связи',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
+export const threeItemsWithoutText = [
+    {
+        title: 'Интернет',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        title: 'Интенет',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+    {
+        title: 'Интернет',
+        icon: <WiFi style={{ display: 'block', fill: '#00B956' }} />,
+    },
+];
+
 export const twoItems = [
     {
         title: 'Звонки',

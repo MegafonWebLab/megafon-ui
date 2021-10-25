@@ -1215,3 +1215,644 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
   </div>
 </div>
 `;
+
+exports[`<BenefitsIcons /> should render in one column 1`] = `
+<div
+  className="mfui-beta-benefits-icons class-name root-class"
+>
+  <div
+    className="mfui-beta-benefits-icons__inner"
+  >
+    <Grid
+      className="grid-class"
+      guttersLeft="medium"
+      hAlign="left"
+    >
+      <GridColumn
+        className="grid-column-class"
+        desktop="10"
+        key="0"
+        tablet="10"
+        wide="10"
+      >
+        <BenefitsIconsTile
+          className="item-class"
+          icon={
+            <test-file-stub
+              style={
+                Object {
+                  "display": "block",
+                  "fill": "#00B956",
+                }
+              }
+            />
+          }
+          iconPosition="left-top"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
+        />
+      </GridColumn>
+      <GridColumn
+        className="grid-column-class"
+        desktop="10"
+        key="1"
+        tablet="10"
+        wide="10"
+      >
+        <BenefitsIconsTile
+          className="item-class"
+          icon={
+            <test-file-stub
+              style={
+                Object {
+                  "display": "block",
+                  "fill": "#00B956",
+                }
+              }
+            />
+          }
+          iconPosition="left-top"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интенет"
+        />
+      </GridColumn>
+      <GridColumn
+        className="grid-column-class"
+        desktop="10"
+        key="2"
+        tablet="10"
+        wide="10"
+      >
+        <BenefitsIconsTile
+          className="item-class"
+          icon={
+            <test-file-stub
+              style={
+                Object {
+                  "display": "block",
+                  "fill": "#00B956",
+                }
+              }
+            />
+          }
+          iconPosition="left-top"
+          text="Подключите, и гигабайты и минуты всегда будут с вами!"
+          title="Интернет"
+        />
+      </GridColumn>
+    </Grid>
+  </div>
+</div>
+`;
+
+exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
+<BenefitsIcons
+  className="class-name"
+  classes={
+    Object {
+      "grid": "grid-class",
+      "gridColumn": "grid-column-class",
+      "item": "item-class",
+      "root": "root-class",
+    }
+  }
+  inOneColumn={true}
+  items={
+    Array [
+      Object {
+        "icon": <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />,
+        "text": "Подключите, и гигабайты и минуты всегда будут с вами!",
+        "title": "Интернет",
+      },
+      Object {
+        "icon": <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />,
+        "text": "Подключите, и гигабайты и минуты всегда будут с вами!",
+        "title": "Интенет",
+      },
+      Object {
+        "icon": <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />,
+        "text": "Подключите, и гигабайты и минуты всегда будут с вами!",
+        "title": "Интернет",
+      },
+    ]
+  }
+>
+  <div
+    className="mfui-beta-benefits-icons class-name root-class"
+  >
+    <div
+      className="mfui-beta-benefits-icons__inner"
+    >
+      <Grid
+        className="grid-class"
+        guttersLeft="medium"
+        hAlign="left"
+      >
+        <div
+          className="mfui-beta-grid grid-class"
+        >
+          <div
+            className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_h-align_left mfui-beta-grid__container_gutters-left_medium"
+          >
+            <GridColumn
+              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              desktop="10"
+              key=".$0"
+              tablet="10"
+              wide="10"
+            >
+              <div
+                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              >
+                <BenefitsIconsTile
+                  className="item-class"
+                  icon={
+                    <test-file-stub
+                      style={
+                        Object {
+                          "display": "block",
+                          "fill": "#00B956",
+                        }
+                      }
+                    />
+                  }
+                  iconPosition="left-top"
+                  text="Подключите, и гигабайты и минуты всегда будут с вами!"
+                  title="Интернет"
+                >
+                  <div
+                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-top item-class"
+                  >
+                    <div
+                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                    >
+                      <test-file-stub
+                        style={
+                          Object {
+                            "display": "block",
+                            "fill": "#00B956",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                    >
+                      <Header
+                        as="h5"
+                        className="mfui-beta-benefits-icons-tile__title"
+                        color="black"
+                        hAlign="inherit"
+                      >
+                        <h5
+                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                        >
+                          Интернет
+                        </h5>
+                      </Header>
+                      <div
+                        className="mfui-beta-benefits-icons-tile__content"
+                      >
+                        Подключите, и гигабайты и минуты всегда будут с вами!
+                      </div>
+                    </div>
+                  </div>
+                </BenefitsIconsTile>
+              </div>
+            </GridColumn>
+            <GridColumn
+              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              desktop="10"
+              key=".$1"
+              tablet="10"
+              wide="10"
+            >
+              <div
+                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              >
+                <BenefitsIconsTile
+                  className="item-class"
+                  icon={
+                    <test-file-stub
+                      style={
+                        Object {
+                          "display": "block",
+                          "fill": "#00B956",
+                        }
+                      }
+                    />
+                  }
+                  iconPosition="left-top"
+                  text="Подключите, и гигабайты и минуты всегда будут с вами!"
+                  title="Интенет"
+                >
+                  <div
+                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-top item-class"
+                  >
+                    <div
+                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                    >
+                      <test-file-stub
+                        style={
+                          Object {
+                            "display": "block",
+                            "fill": "#00B956",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                    >
+                      <Header
+                        as="h5"
+                        className="mfui-beta-benefits-icons-tile__title"
+                        color="black"
+                        hAlign="inherit"
+                      >
+                        <h5
+                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                        >
+                          Интенет
+                        </h5>
+                      </Header>
+                      <div
+                        className="mfui-beta-benefits-icons-tile__content"
+                      >
+                        Подключите, и гигабайты и минуты всегда будут с вами!
+                      </div>
+                    </div>
+                  </div>
+                </BenefitsIconsTile>
+              </div>
+            </GridColumn>
+            <GridColumn
+              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              desktop="10"
+              key=".$2"
+              tablet="10"
+              wide="10"
+            >
+              <div
+                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              >
+                <BenefitsIconsTile
+                  className="item-class"
+                  icon={
+                    <test-file-stub
+                      style={
+                        Object {
+                          "display": "block",
+                          "fill": "#00B956",
+                        }
+                      }
+                    />
+                  }
+                  iconPosition="left-top"
+                  text="Подключите, и гигабайты и минуты всегда будут с вами!"
+                  title="Интернет"
+                >
+                  <div
+                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-top item-class"
+                  >
+                    <div
+                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                    >
+                      <test-file-stub
+                        style={
+                          Object {
+                            "display": "block",
+                            "fill": "#00B956",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                    >
+                      <Header
+                        as="h5"
+                        className="mfui-beta-benefits-icons-tile__title"
+                        color="black"
+                        hAlign="inherit"
+                      >
+                        <h5
+                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                        >
+                          Интернет
+                        </h5>
+                      </Header>
+                      <div
+                        className="mfui-beta-benefits-icons-tile__content"
+                      >
+                        Подключите, и гигабайты и минуты всегда будут с вами!
+                      </div>
+                    </div>
+                  </div>
+                </BenefitsIconsTile>
+              </div>
+            </GridColumn>
+          </div>
+        </div>
+      </Grid>
+    </div>
+  </div>
+</BenefitsIcons>
+`;
+
+exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
+<BenefitsIcons
+  className="class-name"
+  classes={
+    Object {
+      "grid": "grid-class",
+      "gridColumn": "grid-column-class",
+      "item": "item-class",
+      "root": "root-class",
+    }
+  }
+  inOneColumn={true}
+  items={
+    Array [
+      Object {
+        "icon": <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />,
+        "text": "Подключите, и гигабайты и минуты всегда будут с вами!",
+        "title": "Интернет",
+      },
+      Object {
+        "icon": <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />,
+        "text": "Подключите, и гигабайты и минуты всегда будут с вами!",
+        "title": "Интенет",
+      },
+      Object {
+        "icon": <test-file-stub
+          style={
+            Object {
+              "display": "block",
+              "fill": "#00B956",
+            }
+          }
+        />,
+        "text": "Подключите, и гигабайты и минуты всегда будут с вами!",
+        "title": "Интернет",
+      },
+    ]
+  }
+>
+  <div
+    className="mfui-beta-benefits-icons class-name root-class"
+  >
+    <div
+      className="mfui-beta-benefits-icons__inner"
+    >
+      <Grid
+        className="grid-class"
+        guttersLeft="medium"
+        hAlign="center"
+      >
+        <div
+          className="mfui-beta-grid grid-class"
+        >
+          <div
+            className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_h-align_center mfui-beta-grid__container_gutters-left_medium"
+          >
+            <GridColumn
+              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              desktop="10"
+              key=".$0"
+              tablet="10"
+              wide="10"
+            >
+              <div
+                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              >
+                <BenefitsIconsTile
+                  className="item-class"
+                  icon={
+                    <test-file-stub
+                      style={
+                        Object {
+                          "display": "block",
+                          "fill": "#00B956",
+                        }
+                      }
+                    />
+                  }
+                  iconPosition="center-top"
+                  text="Подключите, и гигабайты и минуты всегда будут с вами!"
+                  title="Интернет"
+                >
+                  <div
+                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_center-top item-class"
+                  >
+                    <div
+                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                    >
+                      <test-file-stub
+                        style={
+                          Object {
+                            "display": "block",
+                            "fill": "#00B956",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                    >
+                      <Header
+                        as="h5"
+                        className="mfui-beta-benefits-icons-tile__title"
+                        color="black"
+                        hAlign="inherit"
+                      >
+                        <h5
+                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                        >
+                          Интернет
+                        </h5>
+                      </Header>
+                      <div
+                        className="mfui-beta-benefits-icons-tile__content"
+                      >
+                        Подключите, и гигабайты и минуты всегда будут с вами!
+                      </div>
+                    </div>
+                  </div>
+                </BenefitsIconsTile>
+              </div>
+            </GridColumn>
+            <GridColumn
+              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              desktop="10"
+              key=".$1"
+              tablet="10"
+              wide="10"
+            >
+              <div
+                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              >
+                <BenefitsIconsTile
+                  className="item-class"
+                  icon={
+                    <test-file-stub
+                      style={
+                        Object {
+                          "display": "block",
+                          "fill": "#00B956",
+                        }
+                      }
+                    />
+                  }
+                  iconPosition="center-top"
+                  text="Подключите, и гигабайты и минуты всегда будут с вами!"
+                  title="Интенет"
+                >
+                  <div
+                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_center-top item-class"
+                  >
+                    <div
+                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                    >
+                      <test-file-stub
+                        style={
+                          Object {
+                            "display": "block",
+                            "fill": "#00B956",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                    >
+                      <Header
+                        as="h5"
+                        className="mfui-beta-benefits-icons-tile__title"
+                        color="black"
+                        hAlign="inherit"
+                      >
+                        <h5
+                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                        >
+                          Интенет
+                        </h5>
+                      </Header>
+                      <div
+                        className="mfui-beta-benefits-icons-tile__content"
+                      >
+                        Подключите, и гигабайты и минуты всегда будут с вами!
+                      </div>
+                    </div>
+                  </div>
+                </BenefitsIconsTile>
+              </div>
+            </GridColumn>
+            <GridColumn
+              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              desktop="10"
+              key=".$2"
+              tablet="10"
+              wide="10"
+            >
+              <div
+                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              >
+                <BenefitsIconsTile
+                  className="item-class"
+                  icon={
+                    <test-file-stub
+                      style={
+                        Object {
+                          "display": "block",
+                          "fill": "#00B956",
+                        }
+                      }
+                    />
+                  }
+                  iconPosition="center-top"
+                  text="Подключите, и гигабайты и минуты всегда будут с вами!"
+                  title="Интернет"
+                >
+                  <div
+                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_center-top item-class"
+                  >
+                    <div
+                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                    >
+                      <test-file-stub
+                        style={
+                          Object {
+                            "display": "block",
+                            "fill": "#00B956",
+                          }
+                        }
+                      />
+                    </div>
+                    <div
+                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                    >
+                      <Header
+                        as="h5"
+                        className="mfui-beta-benefits-icons-tile__title"
+                        color="black"
+                        hAlign="inherit"
+                      >
+                        <h5
+                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                        >
+                          Интернет
+                        </h5>
+                      </Header>
+                      <div
+                        className="mfui-beta-benefits-icons-tile__content"
+                      >
+                        Подключите, и гигабайты и минуты всегда будут с вами!
+                      </div>
+                    </div>
+                  </div>
+                </BenefitsIconsTile>
+              </div>
+            </GridColumn>
+          </div>
+        </div>
+      </Grid>
+    </div>
+  </div>
+</BenefitsIcons>
+`;
