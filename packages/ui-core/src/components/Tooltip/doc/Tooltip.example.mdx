@@ -13,11 +13,58 @@ import {
     triggerEvents,
 } from './Tooltip.docz';
 
+```javascript collapse=Триггер-события
+export const triggerEvents: ISelectItem[] = [
+    {
+        value: TriggerEvent.CONTROLLED,
+        title: TriggerEvent.CONTROLLED,
+    },
+    {
+        value: TriggerEvent.HOVER,
+        title: TriggerEvent.HOVER,
+    },
+    {
+        value: TriggerEvent.CLICK,
+        title: TriggerEvent.CLICK,
+    },
+];
+```
+
 ```javascript collapse=Код DemoTooltipWithTriggerWrapper
 export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     const triggerElement = React.useRef<HTMLElement | null>(null);
 
     return children({ triggerElement })
+};
+```
+
+```javascript collapse=Код DemoSelectTriggerWrapper
+export const DemoSelectTriggerWrapper = ({ children }) => {
+    const { value } = triggerEvents[0];
+    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
+    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem<string>) => {
+        setCurrentValue(data.value);
+    };
+
+    return children({
+        onSelect: handleSelect,
+        currentValue,
+    });
+};
+```
+
+```javascript collapse=Код DemoControlledTooltipWrapper
+export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
+    const [isOpened, setIsOpened] = React.useState<boolean>(isOpen);
+
+    const handleOpen = () => setIsOpened(true);
+    const handleClose = () => setIsOpened(false);
+
+    return children({
+        isOpened,
+        handleOpen,
+        handleClose,
+    });
 };
 ```
 
@@ -121,42 +168,6 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
                     triggerElement={triggerElement}
                 >
                     Положение снизу
-                </Tooltip>
-            </>
-        )}
-    </DemoTooltipWithTriggerWrapper>
-</Playground>
-
-## Расположение стрелки тултипа
-
-<Playground style={demoWrapperBlockStyles}>
-    <DemoTooltipWithTriggerWrapper>
-        {({ triggerElement }) => (
-            <>
-                <span ref={triggerElement}>
-                    <Button fullWidth>Относительно триггер-элемента</Button>
-                </span>
-                <Tooltip triggerElement={triggerElement} placement="bottom">
-                    Выравнивание стрелки по умолчанию
-                </Tooltip>
-            </>
-        )}
-    </DemoTooltipWithTriggerWrapper>
-    <DemoTooltipWithTriggerWrapper>
-        {({ triggerElement, targetElement }) => (
-            <>
-                <span ref={triggerElement}>
-                    <Button fullWidth>
-                        Относительно таргет-элемента
-                        <span ref={targetElement}>▼</span>
-                    </Button>
-                </span>
-                <Tooltip
-                    triggerElement={triggerElement}
-                    targetElement={targetElement}
-                    placement="bottom"
-                >
-                    Использование дополнительного параметра для выравнивания стрелки
                 </Tooltip>
             </>
         )}
@@ -291,39 +302,6 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-##  Выравнивание по boundary-элементу
-
-<Playground style={demoWrapperBlockStyles}>
-    <DemoTooltipWithTriggerWrapper>
-        {({ triggerElement, boundaryElement }) => (
-            <>
-                <Paragraph hasMargin={false}>
-                    <span 
-                        ref={boundaryElement}
-                        style={{
-                            outline: '1px solid rgba(0,0,0,0.1)',
-                            padding: '12px'
-                        }}
-                    >Тултип выровнен по границе этого 
-                        <span ref={triggerElement}>
-                            <TextLink>текста.</TextLink>
-                        </span>
-                    </span>
-                </Paragraph>
-                <Tooltip
-                    placement="bottom"
-                    triggerElement={triggerElement}
-                    boundaryElement={boundaryElement}
-                >
-                    <div>
-                        Тултип выровнен по границе boundaryElement, даже несмотря на то, что он больше не центрируется.
-                    </div>
-                </Tooltip>
-            </>
-        )}
-    </DemoTooltipWithTriggerWrapper>
-</Playground>
-
 ## Размер тултипа с установленной шириной контента
 
 <Playground style={{
@@ -382,6 +360,99 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
+## Расположение стрелки тултипа
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Относительно триггер-элемента</Button>
+                </span>
+                <Tooltip triggerElement={triggerElement} placement="bottom">
+                    Выравнивание стрелки по умолчанию
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement, targetElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>
+                        Относительно таргет-элемента
+                        <span ref={targetElement}>▼</span>
+                    </Button>
+                </span>
+                <Tooltip
+                    triggerElement={triggerElement}
+                    targetElement={targetElement}
+                    placement="bottom"
+                >
+                    Использование дополнительного параметра для выравнивания стрелки
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
+export const DemoTooltipWithTriggerWrapper = ({ children }) => {
+    const triggerElement = React.useRef<HTMLElement | null>(null);
+    const targetElement = React.useRef<HTMLElement | null>(null);
+
+    return children({
+        triggerElement,
+        targetElement,
+    });
+};
+```
+
+##  Выравнивание по boundary-элементу
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement, boundaryElement }) => (
+            <>
+                <Paragraph hasMargin={false}>
+                    <span 
+                        ref={boundaryElement}
+                        style={{
+                            outline: '1px solid rgba(0,0,0,0.1)',
+                            padding: '12px'
+                        }}
+                    >Тултип выровнен по границе этого 
+                        <span ref={triggerElement}>
+                            <TextLink>текста.</TextLink>
+                        </span>
+                    </span>
+                </Paragraph>
+                <Tooltip
+                    placement="bottom"
+                    triggerElement={triggerElement}
+                    boundaryElement={boundaryElement}
+                >
+                    <div>
+                        Тултип выровнен по границе boundaryElement, даже несмотря на то, что он больше не центрируется.
+                    </div>
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+```javascript collapse=Код DemoTooltipWithTriggerWrapper
+export const DemoTooltipWithTriggerWrapper = ({ children }) => {
+    const triggerElement = React.useRef<HTMLElement | null>(null);
+    const boundaryElement = React.useRef<HTMLElement | null>(null);
+
+    return children({
+        triggerElement,
+        boundaryElement,
+    });
+};
+```
+
 ## Смена типа взаимодействия с триггер-элементом при первом наведении мыши на элемент, когда тултип открыт
 
 <Playground style={demoWrapperBlockStyles}>
@@ -436,20 +507,22 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
 ```javascript collapse=Код DemoTooltipWithTriggerWrapper
 export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     const triggerElement = React.useRef<HTMLElement | null>(null);
-    const [isTriggered, setIsTriggered] = React.useState(false);
     const [triggerEvent, setTriggerEvent] = React.useState(TriggerEvent.CONTROLLED);
 
-    const handleTriggerChange = React.useCallback((trigger) => {
-        if (!isTriggered) {
-            setIsTriggered(true);
-            setTriggerEvent(trigger);
-        }
-    }, [isTriggered]);
+    const handleTriggerChange = React.useCallback(
+        trigger => {
+            if (!isTriggered) {
+                setIsTriggered(true);
+                setTriggerEvent(trigger);
+            }
+        },
+        [isTriggered],
+    );
 
     return children({
         triggerElement,
         triggerEvent,
-        handleTriggerChange,
+        handleTriggerChange
     });
 };
 ```
@@ -508,41 +581,9 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
-```javascript collapse=Триггер-события
-export const triggerEvents: ISelectItem[] = [
-    {
-        value: TriggerEvent.CONTROLLED,
-        title: TriggerEvent.CONTROLLED,
-    },
-    {
-        value: TriggerEvent.HOVER,
-        title: TriggerEvent.HOVER,
-    },
-    {
-        value: TriggerEvent.CLICK,
-        title: TriggerEvent.CLICK,
-    },
-];
-```
-
-```javascript collapse=Код DemoSelectTriggerWrapper
-export const DemoSelectTriggerWrapper = ({ children }) => {
-    const { value } = triggerEvents[0];
-    const [currentValue, setCurrentValue] = React.useState<SelectItemValueType>(value);
-    const handleSelect = (_e: React.SyntheticEvent<EventTarget>, data: ISelectItem) => {
-        setCurrentValue(data.value);
-    };
-
-    return children({
-        onSelect: handleSelect,
-        currentValue: currentValue,
-    });
-};
-```
-
 ```javascript collapse=Код DemoControlledTooltipWrapper
 export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [isOpened, setIsOpened] = React.useState(isOpen);
+    const [isOpened, setIsOpened] = React.useState<boolean>(isOpen);
     const handleToggle = () => setIsOpened(open => !open);
 
     return children({
@@ -592,20 +633,6 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
             )}
         </DemoTooltipWithTriggerWrapper>
 </Playground>
-
-```javascript collapse=Код DemoTooltipWithTriggerWrapper
-export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [isOpened, setIsOpened] = React.useState(isOpen);
-    const handleOpen = () => setIsOpened(true);
-    const handleClose = () => setIsOpened(false);
-
-    return children({
-        isOpened,
-        handleOpen,
-        handleClose,
-    });
-};
-```
 
 ## Управление компонентом снаружи с сохранением внутренних обработчиков для триггер-элемента
 
@@ -662,17 +689,3 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         )}
     </DemoTooltipWithTriggerWrapper>
 </Playground>
-
-```javascript collapse=Код DemoControlledTooltipWrapper
-export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
-    const [isOpened, setIsOpened] = React.useState(isOpen);
-    const handleOpen = () => setIsOpened(true);
-    const handleClose = () => setIsOpened(false);
-
-    return children({
-        isOpened,
-        handleOpen,
-        handleClose,
-    });
-};
-```
