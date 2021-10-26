@@ -136,7 +136,7 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
                 <span ref={triggerElement}>
                     <Button fullWidth>Относительно триггер-элемента</Button>
                 </span>
-                <Tooltip triggerElement={triggerElement}>
+                <Tooltip triggerElement={triggerElement} placement="bottom">
                     Выравнивание стрелки по умолчанию
                 </Tooltip>
             </>

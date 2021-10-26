@@ -45,7 +45,7 @@ export interface ITooltipProps {
     boundaryElement?: React.RefObject<HTMLElement>;
     /** Реф на триггер-элемент */
     triggerElement: React.RefObject<HTMLElement>;
-    /** Реф элемента, на который указывает стрелка тултипа */
+    /** Реф элемента, на который указывает стрелка тултипа. По умолчанию стрелка указывает на triggerElement. */
     targetElement?: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
@@ -168,7 +168,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const handleOutsideEvent = useCallback(
         (e: MouseEvent): void => {
             const isTargetInPopper = e.target instanceof Element && popperElement && popperElement.contains(e.target);
-            const isTargetInTrigger = e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
+            const isTargetInTrigger =
+                e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
 
             if (!isTargetInPopper && !isTargetInTrigger) {
                 setIsOpen(false);
@@ -251,6 +252,10 @@ Tooltip.propTypes = {
 
         return null;
     },
+    targetElement: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
+    ]),
     isOpened: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
