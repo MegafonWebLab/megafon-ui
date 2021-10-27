@@ -1,10 +1,10 @@
 import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
 import { Header, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
 import './Property.less';
-import { Item } from './types';
 import PropertyDescription from './PropertyDescription';
+import { Item } from './types';
 
 type GridColumnPropsType = React.ComponentProps<typeof GridColumn>;
 type GridColumnConfigType = Pick<GridColumnPropsType, 'all' | 'wide' | 'desktop' | 'tablet' | 'mobile'>;
@@ -53,7 +53,7 @@ const Property: React.FC<IProperty> = ({
         title =>
             title &&
             title.map((titleItem, i) => (
-                <Header as={'h5'} key={i} className={classes.title}>
+                <Header as="h5" key={i} className={classes.title}>
                     {icon && i === 0 && <div className={cn('icon')}>{icon}</div>}
                     {titleItem}
                 </Header>

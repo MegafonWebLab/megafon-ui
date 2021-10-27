@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
-import TabsBox from './TabsBox';
-import TabBox from './TabBox';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
+import { mount, shallow } from 'enzyme';
+import TabBox from './TabBox';
+import TabsBox from './TabsBox';
 
 const renderTabWrapper = (tab: React.ReactNode) => <div className="tab-wrapper">{tab}</div>;
 

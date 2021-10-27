@@ -1,10 +1,10 @@
 import React, { Ref } from 'react';
-import * as PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
 import { Button, Header, ContentArea, TextLink, Grid, GridColumn } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
-import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
+import throttle from 'lodash.throttle';
+import * as PropTypes from 'prop-types';
 import throttleTime from 'constants/throttleTime';
+import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
 import './VideoBanner.less';
 
 type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
@@ -225,6 +225,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
 
             case VideoType.VIDEO: {
                 return (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video className={cn('video')} autoPlay loop muted={isMuted}>
                         <source src={videoSrc} type="video/mp4" />
                     </video>

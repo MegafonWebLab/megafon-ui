@@ -1,8 +1,8 @@
 import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
-import './VideoBlock.less';
 import { Header, Button, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
+import './VideoBlock.less';
 
 export interface IContent {
     /** Заголовок */
@@ -26,6 +26,7 @@ export const VideoTypes = {
 
 type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export interface Props {
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
@@ -75,6 +76,7 @@ const VideoBlock: React.FC<Props> = ({
 
             case VideoTypes.VIDEO: {
                 return (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video className={cn('video')} autoPlay={isAutoplay} muted={isMuted} controls={!isAutoplay} loop>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
@@ -113,14 +115,14 @@ const VideoBlock: React.FC<Props> = ({
 
         if (content) {
             columns.push(
-                <GridColumn all="5" tablet="12" mobile="12" orderTablet="2" orderMobile="2" key={'column-content'}>
+                <GridColumn all="5" tablet="12" mobile="12" orderTablet="2" orderMobile="2" key="column-content">
                     {renderContent && renderContent(content)}
                 </GridColumn>,
             );
         }
 
         columns.push(
-            <GridColumn all={columnWidth} tablet="12" mobile="12" key={'column-video'}>
+            <GridColumn all={columnWidth} tablet="12" mobile="12" key="column-video">
                 <div className={cn('video-wrapper', { 'with-content': !!content })}>{renderVideo()}</div>
             </GridColumn>,
         );

@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { Header } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './PictureWithDescription.less';
-import { cnCreate } from '@megafon/ui-helpers';
-import { Header } from '@megafon/ui-core';
 
 export const pictureAlignTypes = {
     LEFT: 'left',

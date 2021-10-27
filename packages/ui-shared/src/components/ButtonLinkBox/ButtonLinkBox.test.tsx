@@ -39,7 +39,7 @@ describe('<ButtonLinkBox />', () => {
     });
 
     it('renders ButtonLinkBox with download links', () => {
-        const wrapper = shallow(<ButtonLinkBox {...props} linkDownload={true} buttonDownload={true} />);
+        const wrapper = shallow(<ButtonLinkBox {...props} linkDownload buttonDownload />);
         expect(wrapper).toMatchSnapshot();
     });
 

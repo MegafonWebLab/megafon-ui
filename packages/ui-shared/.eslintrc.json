@@ -15,27 +15,10 @@
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/tabindex-no-positive": "off",
     "no-magic-numbers": "off",
-    "no-return-assign": "off",
-    "react-hooks/rules-of-hooks": "off",
-    "react/button-has-type": "off",
-    "react/destructuring-assignment": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
-    "react/no-children-prop": "off",
-    "react/no-did-update-set-state": "off",
-    "react/no-unused-prop-types": "off",
-    "react/prefer-stateless-function": "off",
-    "react/sort-comp": "off",
 
-    "@typescript-eslint/naming-convention": "off",
-    "import/no-extraneous-dependencies": "off",
-    "import/order": "off",
-    "jsx-a11y/alt-text": "off",
-    "jsx-a11y/media-has-caption": "off",
-    "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "react/forbid-prop-types": "off",
-    "react/jsx-boolean-value": "off",
-    "react/jsx-curly-brace-presence": "off"
+    "import/no-extraneous-dependencies": "off"
   },
   "overrides": [
     {

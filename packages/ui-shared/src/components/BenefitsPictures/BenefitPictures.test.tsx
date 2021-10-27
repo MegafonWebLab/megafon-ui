@@ -24,14 +24,14 @@ describe('<BenefitsPictures />', () => {
 
     it('render with center horizontal align', () => {
         itemsSet.forEach(items => {
-            const wrapper = shallow(<BenefitsPictures {...props} items={items} hAlign={'left'} />);
+            const wrapper = shallow(<BenefitsPictures {...props} items={items} hAlign="left" />);
             expect(wrapper).toMatchSnapshot();
         });
     });
 
     it('render with medium grid gap', () => {
         itemsSet.forEach(items => {
-            const wrapper = shallow(<BenefitsPictures {...props} items={items} gridGap={'medium'} />);
+            const wrapper = shallow(<BenefitsPictures {...props} items={items} gridGap="medium" />);
             expect(wrapper).toMatchSnapshot();
         });
     });

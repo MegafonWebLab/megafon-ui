@@ -1,9 +1,9 @@
 import { IContent, ButtonColor, TextColor } from '../VideoBanner';
 import imageDesktop from './bg_grey_desktop.png';
 import imageMobile from './bg_grey_mobile.png';
-import video from './video.mp4';
 import imageWhiteDesktop from './image_white_desktop.png';
 import imageWhiteMobile from './image_white_mobile.png';
+import video from './video.mp4';
 
 const youtubeVideoId = '2Sps5MnvlKM';
 

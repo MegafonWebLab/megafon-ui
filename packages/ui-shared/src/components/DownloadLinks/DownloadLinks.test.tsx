@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import DownloadLinks from './DownloadLinks';
 import DownloadLink, { IDownloadLink } from './DownloadLink';
+import DownloadLinks from './DownloadLinks';
 
 const props: IDownloadLink = {
     href: 'href',

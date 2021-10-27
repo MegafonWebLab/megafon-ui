@@ -1,12 +1,12 @@
 import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
-import './Instructions.less';
-import SwiperCore from 'swiper';
-import convert from 'htmr';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperClass from 'swiper/types/swiper-class';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import convert from 'htmr';
+import PropTypes from 'prop-types';
+import SwiperCore from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperClass from 'swiper/types/swiper-class';
+import './Instructions.less';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -173,6 +173,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
         (): JSX.Element => (
             <ul className={cn('articles-list', { 'text-after': !!text, desktop: true })}>
                 {instructionItems.map(({ title: itemTitle }, ind) => (
+                    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
                     <li
                         className={cn('articles-item', { active: slideIndex === ind }, [
                             getActiveCustomClass(ind, slideIndex),

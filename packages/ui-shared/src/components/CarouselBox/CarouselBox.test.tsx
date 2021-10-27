@@ -20,10 +20,10 @@ describe('<CarouselBox />', () => {
                     root: 'testClassName',
                     innerIndents: 'testInnerClass',
                 }}
-                loop={true}
-                autoPlay={true}
+                loop
+                autoPlay
                 autoPlayDelay={10}
-                navTheme={'green'}
+                navTheme="green"
                 onNextClick={jest.fn()}
                 onPrevClick={jest.fn()}
                 onChange={jest.fn()}

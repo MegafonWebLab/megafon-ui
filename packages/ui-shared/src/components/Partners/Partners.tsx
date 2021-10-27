@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { Grid, GridColumn, Tile, Carousel } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import './Partners.less';
 
 export type ItemType = {
