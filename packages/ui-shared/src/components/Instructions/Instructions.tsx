@@ -85,15 +85,18 @@ const Instructions: React.FC<IInstructionsProps> = ({
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperClass>();
     const [slideIndex, setSlideIndex] = React.useState(0);
 
-    const getSwiperInstance = React.useCallback((swiper: SwiperClass): void => {
-        setSwiperInstance(swiper);
-        getSwiper && getSwiper(swiper);
-    }, []);
+    const getSwiperInstance = React.useCallback(
+        (swiper: SwiperClass): void => {
+            setSwiperInstance(swiper);
+            getSwiper && getSwiper(swiper);
+        },
+        [getSwiper],
+    );
 
     const getActiveCustomClass = React.useCallback(
         (articleIndex: number, activeIndex: number) => {
             if (articleIndex !== activeIndex) {
-                return;
+                return undefined;
             }
 
             return activeInstructionItem;
@@ -108,37 +111,6 @@ const Instructions: React.FC<IInstructionsProps> = ({
         },
         [swiperInstance],
     );
-
-    const renderTitle = React.useCallback(
-        (resolution: string): JSX.Element => (
-            <Header className={cn('title', { resolution })} as="h2">
-                {title}
-            </Header>
-        ),
-        [],
-    );
-
-    const renderText = React.useCallback(
-        (): JSX.Element => (
-            <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
-                {convert(text as string)}
-            </Paragraph>
-        ),
-        [text, additionalText],
-    );
-
-    const renderPicture = React.useCallback((): JSX.Element => {
-        if (pictureMask === pictureMaskTypes.NONE) {
-            return renderSlider();
-        }
-
-        return (
-            <div className={cn('img-wrapper')}>
-                <div className={cn('device-screen')} />
-                {renderSlider()}
-            </div>
-        );
-    }, [pictureMask]);
 
     const renderVideo = React.useCallback(
         (mediaUrl: string): JSX.Element => (
@@ -163,8 +135,39 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 ))}
             </Swiper>
         ),
-        [instructionItems],
+        [getSwiperInstance, instructionItemImg, instructionItems, renderVideo],
     );
+
+    const renderTitle = React.useCallback(
+        (resolution: string): JSX.Element => (
+            <Header className={cn('title', { resolution })} as="h2">
+                {title}
+            </Header>
+        ),
+        [title],
+    );
+
+    const renderText = React.useCallback(
+        (): JSX.Element => (
+            <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
+                {convert(text as string)}
+            </Paragraph>
+        ),
+        [text, additionalText],
+    );
+
+    const renderPicture = React.useCallback((): JSX.Element => {
+        if (pictureMask === pictureMaskTypes.NONE) {
+            return renderSlider();
+        }
+
+        return (
+            <div className={cn('img-wrapper')}>
+                <div className={cn('device-screen')} />
+                {renderSlider()}
+            </div>
+        );
+    }, [pictureMask, renderSlider]);
 
     const renderDesktopArticles = React.useCallback(
         (): JSX.Element => (
@@ -188,7 +191,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 ))}
             </ul>
         ),
-        [instructionItems, slideIndex, handleArticleClick, text],
+        [desktopItemTitle, getArticleCustomClasses, instructionItems, slideIndex, handleArticleClick, text],
     );
 
     const renderMobileArticles = React.useCallback(
@@ -221,7 +224,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 </ul>
             </div>
         ),
-        [instructionItems, slideIndex, handleArticleClick, text],
+        [instructionItems, getArticleCustomClasses, mobileItemTitle, slideIndex, handleArticleClick, text],
     );
 
     return (

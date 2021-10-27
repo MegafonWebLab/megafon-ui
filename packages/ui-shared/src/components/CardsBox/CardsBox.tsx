@@ -56,7 +56,7 @@ const CardsBox: React.FC<ICardsBoxProps> = ({ rootRef, dataAttrs, onChange, chil
                 {children}
             </Carousel>
         ),
-        [children],
+        [children, onChange],
     );
 
     React.useEffect(() => {

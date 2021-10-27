@@ -192,7 +192,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 </GridColumn>
             </Grid>
         ),
-        [],
+        [classes.button, classes.link],
     );
 
     const renderVideo = React.useCallback(() => {
@@ -264,7 +264,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         return () => {
             window.removeEventListener('resize', resizeHandlerThrottled);
         };
-    }, []);
+    }, [imageDesktop, imageDesktopWide, imageMobile, imageTablet]);
 
     return (
         <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>

@@ -85,7 +85,7 @@ const VideoBlock: React.FC<Props> = ({
                 return null;
             }
         }
-    }, [videoType, videoSrc]);
+    }, [isAutoplay, isMuted, videoType, videoSrc]);
 
     const renderContent = React.useCallback(
         ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
@@ -104,7 +104,7 @@ const VideoBlock: React.FC<Props> = ({
                 </Button>
             </div>
         ),
-        [content],
+        [classes.button],
     );
 
     const renderGridColumns = React.useCallback(() => {

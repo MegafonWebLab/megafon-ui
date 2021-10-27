@@ -58,7 +58,7 @@ const Property: React.FC<IProperty> = ({
                     {titleItem}
                 </Header>
             )),
-        [],
+        [classes.title, icon],
     );
 
     const renderDescription = React.useCallback(
@@ -73,7 +73,7 @@ const Property: React.FC<IProperty> = ({
                     />
                 </div>
             )),
-        [],
+        [classes.openedDescription, classes.toggleDescription],
     );
 
     const getColumnConfig = React.useCallback(

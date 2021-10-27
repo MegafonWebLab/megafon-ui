@@ -45,7 +45,7 @@ const PageTitle: React.FC<Props> = ({
                 </Header>
             </>
         ),
-        [breadcrumbs, classes, badge, title],
+        [badge, title, isBreadcrumbs],
     );
 
     const renderPageTitleWithGrid = React.useCallback(

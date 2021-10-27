@@ -148,7 +148,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
         } else {
             setCurrentGutter('large');
         }
-    }, []);
+    }, [isLargeGutter]);
 
     React.useEffect(() => {
         const throttledResizeHandler = throttle(resizeHandler, throttleTime.resize);
@@ -157,7 +157,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
         window.addEventListener('resize', throttledResizeHandler);
 
         return () => window.removeEventListener('resize', throttledResizeHandler);
-    }, []);
+    }, [resizeHandler]);
 
     return (
         <div className={cn([className, classes.root])} ref={rootRef}>
