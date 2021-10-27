@@ -186,11 +186,11 @@
 
     &_no-touch&_type_outline&_theme_green {
         &:not(@{b}_loading):hover {
-            background-color: fade(@green, 7%);
+            background-color: fade(@green, 7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@green, 14%);
+            background-color: fade(@green, 14);
         }
     }
 
@@ -210,11 +210,11 @@
 
     &_no-touch&_type_outline&_theme_purple {
         &:not(@{b}_loading):hover {
-            background-color: fade(@purple, 7%);
+            background-color: fade(@purple, 7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@purple, 14%);
+            background-color: fade(@purple, 14);
         }
     }
 
@@ -234,11 +234,11 @@
 
     &_no-touch&_type_outline&_theme_white {
         &:not(@{b}_loading):hover {
-            background-color: fade(@clearWhite, 7%);
+            background-color: fade(@clearWhite, 7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@clearWhite, 14%);
+            background-color: fade(@clearWhite, 14);
         }
     }
 
@@ -258,11 +258,11 @@
 
     &_no-touch&_type_outline&_theme_black {
         &:not(@{b}_loading):hover {
-            background-color: fade(@freshAsphalt, 7%);
+            background-color: fade(@freshAsphalt, 7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@freshAsphalt, 14%);
+            background-color: fade(@freshAsphalt, 14);
         }
     }
 
@@ -279,13 +279,13 @@
     &&_no-touch&_type_primary&_disabled,
     &&_no-touch&_type_primary&_disabled:hover,
     &&_no-touch&_type_primary&_disabled:active {
-        color: fade(@freshAsphalt, 50%);
+        color: @freshAsphalt50;
 
         background-color: @spbSky1;
         box-shadow: inset 0 0 0 1px @spbSky2;
 
         svg {
-            fill: fade(@freshAsphalt, 50%);
+            fill: @freshAsphalt50;
         }
     }
 
@@ -293,13 +293,13 @@
     &&_no-touch&_type_outline&_theme_white&_disabled,
     &&_no-touch&_type_outline&_theme_white&_disabled:hover,
     &&_no-touch&_type_outline&_theme_white&_disabled:active {
-        color: fade(@clearWhite, 50%);
+        color: @clearWhite50;
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px fade(@clearWhite, 50%);
+        box-shadow: inset 0 0 0 1px @clearWhite50;
 
         svg {
-            fill: fade(@clearWhite, 50%);
+            fill: @clearWhite50;
         }
     }
 
@@ -307,13 +307,13 @@
     &&_no-touch&_type_outline&_disabled,
     &&_no-touch&_type_outline&_disabled:hover,
     &&_no-touch&_type_outline&_disabled:active {
-        color: fade(@freshAsphalt, 50%);
+        color: @freshAsphalt50;
 
         background-color: transparent;
         box-shadow: inset 0 0 0 1px @spbSky2;
 
         svg {
-            fill: fade(@freshAsphalt, 50%);
+            fill: @freshAsphalt50;
         }
     }
 }

@@ -37,6 +37,14 @@
 @clearWhite60: fade(@clearWhite, 60);
 @clearWhite20: fade(@clearWhite, 20);
 
+// Additional Colors Variants
+@clearWhite50: fade(@clearWhite, 50);
+@freshAsphalt25: fade(@freshAsphalt, 25);
+@freshAsphalt50: fade(@freshAsphalt, 50);
+@fullBlack25: fade(@fullBlack, 25);
+@fullBlack50: fade(@fullBlack, 50);
+@freshAsphaltLighten50: lighten(@freshAsphalt, 50);
+
 // BREAKPOINTS
 @mobileSmallEnd:      479px;
 @mobileMiddleStart:   480px;
@@ -62,7 +70,7 @@
 @desktopS:        ~'screen and (min-width: @{desktopSmallStart}) and (max-width: @{desktopSmallEnd})';   // 1024 - 1279
 @desktopM:        ~'screen and (min-width: @{desktopMiddleStart}) and (max-width: @{desktopMiddleEnd})'; // 1280 - 1439
 @desktopB:        ~'screen and (min-width: @{desktopBigStart}) and (max-width: @{desktopBigEnd})';       // 1440 - 1599
-@desktopBU:       ~'screen and (min-width: @{desktopBigStart})';                                        // 1440 - ∞
+@desktopBU:       ~'screen and (min-width: @{desktopBigStart})';                                         // 1440 - ∞
 @desktopSM:       ~'screen and (min-width: @{desktopSmallStart}) and (max-width: @{desktopMiddleEnd})';  // 1024 - 1439
 @desktopMU:       ~'screen and (min-width: @{desktopMiddleStart})';                                      // 1280 - ∞
 
