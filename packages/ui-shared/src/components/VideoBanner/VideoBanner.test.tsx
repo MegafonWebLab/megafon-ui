@@ -87,6 +87,7 @@ describe('<VideoBanner />', () => {
     });
 
     it('render component without button', () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { buttonTitle, ...contentWithoutButton } = content;
 
         const wrapper = shallow(

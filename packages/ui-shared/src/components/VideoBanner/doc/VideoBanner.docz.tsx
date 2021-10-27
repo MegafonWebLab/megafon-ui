@@ -34,6 +34,7 @@ const contentWithPurpleButton: IContent = {
     buttonColor: ButtonColor.PURPLE,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { buttonTitle, ...contentWithoutButton }: IContent = content;
 
 const images = {

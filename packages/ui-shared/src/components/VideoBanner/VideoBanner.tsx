@@ -9,6 +9,8 @@ import './VideoBanner.less';
 
 type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
 
+const cn = cnCreate('mfui-beta-video-banner');
+
 export enum ClassName {
     BUTTON = 'button',
     LINK = 'link',
@@ -110,7 +112,6 @@ interface IVideoBannerProps {
     breadcrumbs?: BreadCrumbsItemsType;
 }
 
-const cn = cnCreate('mfui-beta-video-banner');
 const VideoBanner: React.FC<IVideoBannerProps> = ({
     dataAttrs,
     className,

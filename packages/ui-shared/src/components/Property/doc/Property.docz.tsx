@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextLink, Paragraph } from '@megafon/ui-core';
 import { convert } from '@megafon/ui-helpers';
 

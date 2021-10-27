@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const DemoContent = ({ children }) => (
+export const DemoContent = ({ children }: { children: any }): React.ReactNode => (
     <div
         style={{
             padding: '0 0 20px 0',

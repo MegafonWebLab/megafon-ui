@@ -1,23 +1,13 @@
 {
   "extends": "../../.eslintrc.json",
   "rules": {
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-unused-vars": "off",
-    "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/no-var-requires": "off",
     "import/no-unresolved": "off",
     "jsx-a11y/click-events-have-key-events": "off",
-    "jsx-a11y/label-has-associated-control": "off",
-    "jsx-a11y/no-noninteractive-tabindex": "off",
     "jsx-a11y/no-static-element-interactions": "off",
-    "jsx-a11y/tabindex-no-positive": "off",
     "no-magic-numbers": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
-
     "import/no-extraneous-dependencies": "off"
   },
   "overrides": [

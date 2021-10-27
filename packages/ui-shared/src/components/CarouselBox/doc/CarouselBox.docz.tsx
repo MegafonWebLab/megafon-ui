@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Tile } from '@megafon/ui-core';
 
-export const DemoSlide = ({ children }) => (
+export const DemoSlide = ({ children }: { children: any }): React.ReactNode => (
     <Tile isInteractive shadowLevel="high" radius="rounded">
         <div
             style={{

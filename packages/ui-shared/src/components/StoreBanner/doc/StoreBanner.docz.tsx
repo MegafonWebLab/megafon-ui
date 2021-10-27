@@ -6,6 +6,6 @@ const title = 'Скачивайте мобильное приложение Ме
 const text = 'Скачай и получи максимум';
 
 const link = '#';
-const onClick = () => {};
+const onClick = (): undefined => undefined;
 
 export { title, text, image, qrCode, newIphoneImage, link, onClick };
