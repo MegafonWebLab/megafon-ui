@@ -4,11 +4,12 @@ import Copy from '../System/24/Copy_24.svg';
 import Cancel from '../System/32/Cancel_32.svg';
 import './Icons.less';
 
+// eslint-disable-next-line dot-notation
 export const reqSvgs = require['context']('../', true, /\.svg$/);
 
 const cn = cnCreate('icons');
 interface IIconsState {
-    sections: {};
+    sections: Record<string, Record<string, svgDataType[]>>;
     activeElement: Partial<activeElementType>;
     activeIcon: number;
     copyIndex: copyBoard;
@@ -35,8 +36,8 @@ const sizeDictionary = {
 
 const importIcon = "import Icon from '@megafon/ui-icons/";
 
-class Icons extends React.Component<{}, IIconsState> {
-    constructor(props: {}) {
+class Icons extends React.Component<Record<string, unknown>, IIconsState> {
+    constructor(props: Record<string, unknown>) {
         super(props);
         this.state = {
             sections: {},
@@ -46,7 +47,7 @@ class Icons extends React.Component<{}, IIconsState> {
         };
     }
 
-    static getDerivedStateFromProps(_props: {}, state: IIconsState) {
+    static getDerivedStateFromProps(_props: Record<string, unknown>, state: IIconsState) {
         const {
             activeElement: { svgList },
             activeIcon,
@@ -55,10 +56,13 @@ class Icons extends React.Component<{}, IIconsState> {
         if (svgList && !svgList[activeIcon]) {
             return { ...state, activeIcon: 0 };
         }
+
+        return state;
     }
 
     componentDidMount() {
-        const sections = reqSvgs.keys().reduce((sectDictionary, item) => {
+        const sections = reqSvgs.keys().reduce((initialSectDictionary, item) => {
+            const sectDictionary = { ...initialSectDictionary };
             const pathList = item.split('/').slice(1);
             const [sectionName, svgSize] = pathList;
             const [svgIcon] = pathList.reverse();
@@ -114,7 +118,7 @@ class Icons extends React.Component<{}, IIconsState> {
     };
 
     handleIconClick =
-        (svgData: {}) =>
+        (svgData: Record<string, unknown>) =>
         (e: React.SyntheticEvent): void => {
             e.preventDefault();
             this.setState({ activeElement: svgData, copyIndex: copyBoard.NO });
@@ -159,7 +163,8 @@ class Icons extends React.Component<{}, IIconsState> {
         return (
             <div className={cn('info-icon-wrapper')} key={svg.path}>
                 <div className={cn('info-import')}>
-                    Svg <code className={cn('info-code-style')}>{importStr}.svg';</code>
+                    Svg <code className={cn('info-code-style')}>{`${importStr}.svg';`}</code>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a title="Скопировать в буфер">
                         <Copy
                             className={cn('info-copy', { active: copyIndex === copyBoard.SVG })}
@@ -199,6 +204,8 @@ class Icons extends React.Component<{}, IIconsState> {
                                         className={cn('info-size', { active: activeIcon === i })}
                                         key={svg.size}
                                         onClick={this.handleClickInfoIcon(i)}
+                                        role="button"
+                                        tabIndex={0}
                                     >
                                         {sizeDictionary[svg.size]}
                                     </div>
@@ -207,11 +214,12 @@ class Icons extends React.Component<{}, IIconsState> {
                         </div>
                         {this.renderInfoIcon(svgList[activeIcon])}
                         <div className={cn('info-icon-wrap')}>
+                            {/* eslint-disable-next-line no-magic-numbers */}
                             <div style={{ width: `${Number(svgList[activeIcon].size) * 2}px` }}>
                                 <Svg />
                             </div>
                         </div>
-                        <div className={cn('info-close')} onClick={this.handleClickClose}>
+                        <div className={cn('info-close')} onClick={this.handleClickClose} role="button" tabIndex={0}>
                             <Cancel />
                         </div>
                     </div>
