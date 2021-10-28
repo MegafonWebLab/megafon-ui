@@ -16,9 +16,9 @@ export interface ITextLinkProps extends ILinkProps {
 
 const cn = cnCreate('mfui-beta-text-link');
 const TextLink: React.FC<ITextLinkProps> = ({
-    underlineVisibility = 'hover',
-    underlineStyle = 'solid',
-    color = 'blue',
+    underlineVisibility,
+    underlineStyle,
+    color,
     className,
     target,
     href,
@@ -57,6 +57,12 @@ TextLink.propTypes = {
         PropTypes.string,
         PropTypes.node,
     ]),
+};
+
+TextLink.defaultProps = {
+    underlineVisibility: 'hover',
+    underlineStyle: 'solid',
+    color: 'blue',
 };
 
 export default TextLink;

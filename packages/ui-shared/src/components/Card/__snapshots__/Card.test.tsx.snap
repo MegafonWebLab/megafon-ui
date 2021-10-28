@@ -86,8 +86,11 @@ exports[`Card disable left align if there is a button and link 1`] = `
       </Button>
       <TextLink
         className="mfui-beta-card__link"
+        color="blue"
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -129,8 +132,11 @@ exports[`Card left align of the interactive element 1`] = `
     >
       <TextLink
         className="mfui-beta-card__link"
+        color="blue"
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -183,8 +189,11 @@ exports[`Card render component with icon 1`] = `
       </Button>
       <TextLink
         className="mfui-beta-card__link"
+        color="blue"
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -233,8 +242,11 @@ exports[`Card render component with img, if image source and svg source are spec
       </Button>
       <TextLink
         className="mfui-beta-card__link"
+        color="blue"
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -284,8 +296,11 @@ exports[`Card render component with optional props 1`] = `
       </Button>
       <TextLink
         className="mfui-beta-card__link linkClass"
+        color="blue"
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -397,8 +412,11 @@ exports[`Card render with a single interactive link element 1`] = `
     >
       <TextLink
         className="mfui-beta-card__link"
+        color="blue"
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -440,9 +458,12 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
       </Button>
       <TextLink
         className="mfui-beta-card__link"
+        color="blue"
         download={true}
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -597,8 +618,11 @@ exports[`Card render without img and svg 1`] = `
       </Button>
       <TextLink
         className="mfui-beta-card__link"
+        color="blue"
         href="#"
         target="_self"
+        underlineStyle="solid"
+        underlineVisibility="hover"
       >
         Подключить
       </TextLink>

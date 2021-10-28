@@ -44,8 +44,8 @@ export interface IConrentAreaProps {
 
 const cn = cnCreate('mfui-beta-content-area');
 const ContentArea: React.FC<IConrentAreaProps> = ({
-    outerBackgroundColor = 'transparent',
-    innerBackgroundColor = 'transparent',
+    outerBackgroundColor,
+    innerBackgroundColor,
     disableIndents,
     children,
     className,
@@ -76,6 +76,12 @@ ContentArea.propTypes = {
         root: PropTypes.string,
         inner: PropTypes.string,
     }),
+};
+
+ContentArea.defaultProps = {
+    outerBackgroundColor: 'transparent',
+    innerBackgroundColor: 'transparent',
+    classes: {},
 };
 
 export default ContentArea;
