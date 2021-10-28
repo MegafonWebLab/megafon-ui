@@ -1,8 +1,8 @@
 import { Playground } from 'docz';
 import Search from '../Search';
-import { DemoSearchWrapper } from './Search.docz';
+import { DemoSearchWrapper, DemoSearchCustomItemsWrapper, demoCustomItems } from './Search.docz';
 
-```javascript collapse=Код DemoSearchWrapper
+```javascript collapse=Код DemoSearchWrapper и DemoSearchCustomItemsWrapper
 export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     const [value, setValue] = React.useState('');
     const [items, setItems] = React.useState([]);
@@ -21,6 +21,31 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
             {children({ onChange: handleChange, onSubmit: setValue, items: items, chosenValue: value })}
         </div>
     );
+};
+
+export const DemoSearchCustomItemsWrapper: React.FC<IDemoSearchCustomItemsWrapper> = ({ children }) => {
+    const [value, setValue] = React.useState<string>('');
+
+    const getContent = React.useCallback((index: number) => (
+        <div>
+            <div>
+                <b>ИП Баранник Александр Николаевич {index + 1}</b>
+            </div>
+            <div>
+                <b>ИНН: 503209463031</b>
+            </div>
+            <div>Московская обл, Одинцовский р-н, г Одинцово</div>
+        </div>
+    ), []);
+
+    const items = React.useMemo(() => (
+        new Array(5).fill('').map((_, i) => ({
+            value: `ИП Баранник Александр Николаевич ${i + 1}`,
+            searchView: getContent(i),
+        }))
+    ), []);
+
+    return <div>{children({ value, onSubmit: setValue, items })}</div>;
 };
 ```
 
@@ -72,4 +97,39 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
             />
         )}
     </DemoSearchWrapper>
+</Playground>
+
+## С заголовком и признаком того, что поле обязательно для заполнения
+
+<Playground>
+    <Search label="Заголовок поля" required />
+</Playground>
+
+## С дополнительным текстом
+
+#### без ошибки в работе поля
+
+<Playground>
+    <Search noticeText="Текст под полем" verification="valid" />
+</Playground>
+
+#### с ошибкой в работе поля
+
+<Playground>
+    <Search noticeText="Текст под полем" verification="error" />
+</Playground>
+
+## С кастомизированым списком результатов поиска
+
+<Playground>
+    <DemoSearchCustomItemsWrapper>
+        {({ value, onSubmit, items }) => (
+            <Search
+                value={value}
+                onSubmit={onSubmit}
+                items={items}
+                placeholder="Type and wait for results"
+            />
+        )}
+    </DemoSearchCustomItemsWrapper>
 </Playground>

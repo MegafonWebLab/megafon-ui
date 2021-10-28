@@ -1,14 +1,33 @@
 import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import { shallow, mount } from 'enzyme';
-import Search, { ISearchProps } from './Search';
+import Search, { SearchItem, ISearchProps } from './Search';
 
 const cn = cnCreate('mfui-beta-search');
+
+const getCustomItems = (): SearchItem[] => {
+    const getContent = (index: number) => (
+        <div>
+            <div>
+                <b>ИП Баранник Александр Николаевич {index + 1}</b>
+            </div>
+            <div>
+                <b>ИНН: 503209463031</b>
+            </div>
+            <div>Московская обл, Одинцовский р-н, г Одинцово</div>
+        </div>
+    );
+
+    return new Array(5).fill('').map((_, i) => ({
+        value: `ИП Баранник Александр Николаевич ${i + 1}`,
+        searchView: getContent(i),
+    }));
+};
 
 const props: ISearchProps = {
     value: 'initial value',
     placeholder: 'type to search here',
-    items: ['title', 'title2', 'title3', 'title4'],
+    items: [{ value: 'title' }, { value: 'title2' }, { value: 'title3' }, { value: 'title4' }],
     className: 'test',
 };
 
@@ -40,6 +59,26 @@ describe('<Search />', () => {
                     classes={{ listItemTitle: 'wrap-text-test', control: 'control-outer', icon: 'icon-outer' }}
                 />,
             );
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('renders with label and required props', () => {
+            const wrapper = shallow(<Search {...props} label="test label" required />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('renders with customItemsProps', () => {
+            const wrapper = shallow(<Search {...props} items={getCustomItems()} />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('renders with noticeText and verification="valid"', () => {
+            const wrapper = shallow(<Search {...props} noticeText="test notice text" verification="valid" />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('renders with noticeText and verification="error"', () => {
+            const wrapper = shallow(<Search {...props} noticeText="test notice text" verification="error" />);
             expect(wrapper).toMatchSnapshot();
         });
     });
@@ -102,6 +141,15 @@ describe('<Search />', () => {
             });
 
             expect(handleChange).toBeCalledWith('new value');
+        });
+        it('calls onBlur', () => {
+            const handleBlur = jest.fn();
+            const event = { target: { value: 'new value' } };
+            const wrapper = shallow(<Search {...props} onBlur={handleBlur} />);
+
+            wrapper.find(`.${cn('search-field')}`).simulate('blur', event);
+
+            expect(handleBlur).toBeCalledWith(event);
         });
     });
 
