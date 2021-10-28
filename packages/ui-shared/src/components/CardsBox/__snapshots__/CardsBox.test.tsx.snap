@@ -88,10 +88,7 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
               </Button>
               <TextLink
                 className="mfui-beta-card__link"
-                color="blue"
                 href="href"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 <Link
                   className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
@@ -178,10 +175,7 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
               </Button>
               <TextLink
                 className="mfui-beta-card__link"
-                color="blue"
                 href="href"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 <Link
                   className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
@@ -268,10 +262,7 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
               </Button>
               <TextLink
                 className="mfui-beta-card__link"
-                color="blue"
                 href="href"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 <Link
                   className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"

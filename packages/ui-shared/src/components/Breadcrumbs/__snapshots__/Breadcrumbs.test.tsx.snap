@@ -11,8 +11,6 @@ exports[`Breadcrumbs should render component 1`] = `
     <TextLink
       color="black"
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       МегаФон
     </TextLink>
@@ -24,8 +22,6 @@ exports[`Breadcrumbs should render component 1`] = `
     <TextLink
       color="black"
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Мобильная связь
     </TextLink>
@@ -37,8 +33,6 @@ exports[`Breadcrumbs should render component 1`] = `
     <TextLink
       color="black"
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Тарифы
     </TextLink>
@@ -57,8 +51,6 @@ exports[`Breadcrumbs should render with optional props 1`] = `
     <TextLink
       color="white"
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       МегаФон
     </TextLink>
@@ -70,8 +62,6 @@ exports[`Breadcrumbs should render with optional props 1`] = `
     <TextLink
       color="white"
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Мобильная связь
     </TextLink>
@@ -83,8 +73,6 @@ exports[`Breadcrumbs should render with optional props 1`] = `
     <TextLink
       color="white"
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Тарифы
     </TextLink>

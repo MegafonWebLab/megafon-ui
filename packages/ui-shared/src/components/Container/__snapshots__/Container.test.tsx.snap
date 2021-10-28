@@ -4,10 +4,7 @@ exports[`Container should renders component with default props 1`] = `
 <div
   className="mfui-beta-container mfui-beta-container_bg-color_default"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <TitleDescriptionBox
       title="title"
     />
@@ -20,10 +17,7 @@ exports[`Container should renders component with optional props 1`] = `
   className="mfui-beta-container mfui-beta-container_bg-color_green mfui-beta-container_disable-padding-top mfui-beta-container_disable-padding-bottom className"
   id="id"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <TitleDescriptionBox
       title="title"
     />
