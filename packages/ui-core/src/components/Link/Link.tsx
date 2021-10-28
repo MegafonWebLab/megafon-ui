@@ -17,25 +17,23 @@ export interface ILinkProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
-class Link extends React.Component<ILinkProps, {}> {
-    static propTypes = {
-        href: PropTypes.string,
-        children: PropTypes.oneOfType([
-            PropTypes.arrayOf(PropTypes.element),
-            PropTypes.element,
-            PropTypes.string,
-            PropTypes.node,
-        ]),
-        target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
-        className: PropTypes.string,
-        rel: PropTypes.string,
-        onClick: PropTypes.func,
-        download: PropTypes.bool,
-    };
-
-    render() {
-        return <a {...this.props} />;
-    }
-}
+const Link: React.FC<ILinkProps> = props => (
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    <a {...props} />
+);
+Link.propTypes = {
+    href: PropTypes.string,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element),
+        PropTypes.element,
+        PropTypes.string,
+        PropTypes.node,
+    ]),
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
+    className: PropTypes.string,
+    rel: PropTypes.string,
+    onClick: PropTypes.func,
+    download: PropTypes.bool,
+};
 
 export default Link;

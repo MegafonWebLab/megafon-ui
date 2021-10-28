@@ -72,6 +72,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
 
         return (
             <div className={cn(rootClassNames)}>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label
                     className={cn(
                         'label',

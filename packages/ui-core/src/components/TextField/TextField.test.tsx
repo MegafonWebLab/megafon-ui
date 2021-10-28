@@ -2,9 +2,8 @@ import * as React from 'react';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import { shallow, mount } from 'enzyme';
+import InputMask from 'react-input-mask';
 import TextField, { Verification } from './TextField';
-
-const InputMask = require('react-input-mask');
 
 jest.mock('@megafon/ui-helpers', () => ({
     ...jest.requireActual('@megafon/ui-helpers'),
@@ -283,7 +282,6 @@ describe('<TextField />', () => {
         });
 
         it("shouldn't clear inputValue state via custom icon click when controlled", () => {
-            const target = { target: { value: 'something' } };
             const wrapper = shallow(
                 <TextField
                     {...commonFieldProps}

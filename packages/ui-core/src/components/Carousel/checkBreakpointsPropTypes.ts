@@ -1,7 +1,7 @@
 import * as PropTypes from 'prop-types';
 
 type ObjectType = {
-    [key: string]: any;
+    [key: string]: unknown;
 };
 
 const checkBreakpointsPropTypes =

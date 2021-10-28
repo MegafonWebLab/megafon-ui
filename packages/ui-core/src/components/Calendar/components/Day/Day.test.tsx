@@ -31,6 +31,7 @@ describe('<Day />', () => {
         });
 
         it('should return empty div if label is not provided', () => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { dayLabel, ...restProps } = props;
 
             const wrapper = shallow(<Day {...restProps} />);

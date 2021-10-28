@@ -95,6 +95,7 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                 {...filterDataAttrs(dataAttrs)}
             >
                 <div className={cn('inner', [classes?.inner])}>
+                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                     <label className={cn('label', { 'no-touch': !this.isTouch })}>
                         <input
                             className={cn('input')}

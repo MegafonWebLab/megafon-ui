@@ -3,16 +3,19 @@ import { cnCreate } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 
-export type BackgroundColorType =
-    | 'white'
-    | 'transparent'
-    | 'green'
-    | 'purple'
-    | 'spbSky0'
-    | 'spbSky1'
-    | 'spbSky2'
-    | 'freshAsphalt'
-    | 'fullBlack';
+const BACKGROUND_COLORS = {
+    WHITE: 'white',
+    TRANSPARENT: 'transparent',
+    GREEN: 'green',
+    PURPLE: 'purple',
+    SPB_SKY_0: 'spbSky0',
+    SPB_SKY_1: 'spbSky1',
+    SPB_SKY_2: 'spbSky2',
+    FRESH_ASPHALT: 'freshAsphalt',
+    FULL_BLACK: 'fullBlack',
+};
+
+export type BackgroundColorType = typeof BACKGROUND_COLORS[keyof typeof BACKGROUND_COLORS];
 
 const DisableIndents = {
     MOBILE: 'mobile',
@@ -39,64 +42,40 @@ export interface IConrentAreaProps {
     };
 }
 
-const BACKGROUND_COLORS = [
-    'white',
-    'transparent',
-    'green',
-    'purple',
-    'spbSky0',
-    'spbSky1',
-    'spbSky2',
-    'freshAsphalt',
-    'fullBlack',
-];
-
 const cn = cnCreate('mfui-beta-content-area');
-class ContentArea extends React.Component<IConrentAreaProps> {
-    static propTypes = {
-        outerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
-        innerBackgroundColor: PropTypes.oneOf(BACKGROUND_COLORS),
-        disableIndents: PropTypes.oneOf(Object.values(DisableIndents)),
-        children: PropTypes.node,
-        className: PropTypes.string,
-        classes: PropTypes.shape({
-            root: PropTypes.string,
-            inner: PropTypes.string,
-        }),
-    };
+const ContentArea: React.FC<IConrentAreaProps> = ({
+    outerBackgroundColor = 'transparent',
+    innerBackgroundColor = 'transparent',
+    disableIndents,
+    children,
+    className,
+    classes = {},
+}) => (
+    <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
+        <div
+            className={cn(
+                'inner',
+                {
+                    'disable-indents': disableIndents,
+                    color: innerBackgroundColor,
+                },
+                classes.inner,
+            )}
+        >
+            {children}
+        </div>
+    </div>
+);
 
-    static defaultProps = {
-        outerBackgroundColor: 'transparent',
-        innerBackgroundColor: 'transparent',
-    };
-
-    render() {
-        const {
-            outerBackgroundColor,
-            innerBackgroundColor,
-            disableIndents,
-            children,
-            className,
-            classes = {},
-        } = this.props;
-
-        return (
-            <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
-                <div
-                    className={cn(
-                        'inner',
-                        {
-                            'disable-indents': disableIndents,
-                            color: innerBackgroundColor,
-                        },
-                        classes.inner,
-                    )}
-                >
-                    {children}
-                </div>
-            </div>
-        );
-    }
-}
+ContentArea.propTypes = {
+    outerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
+    innerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
+    disableIndents: PropTypes.oneOf(Object.values(DisableIndents)),
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        inner: PropTypes.string,
+    }),
+};
 
 export default ContentArea;

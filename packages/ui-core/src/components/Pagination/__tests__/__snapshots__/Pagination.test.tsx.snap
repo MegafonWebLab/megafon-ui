@@ -26,6 +26,7 @@ exports[`Pagination render on mobile resolution should render component with lef
           className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <test-file-stub
             className="mfui-beta-pagination-navigation__icon"
@@ -63,6 +64,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             1
           </button>
@@ -77,6 +79,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
+            type="button"
           >
             <test-file-stub />
           </button>
@@ -93,6 +96,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             5
           </button>
@@ -107,6 +111,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
+            type="button"
           >
             <test-file-stub />
           </button>
@@ -123,6 +128,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             10
           </button>
@@ -145,6 +151,7 @@ exports[`Pagination render on mobile resolution should render component with lef
           className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <test-file-stub
             className="mfui-beta-pagination-navigation__icon"
@@ -182,6 +189,7 @@ exports[`Pagination render on mobile resolution should render component with lef
           className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <test-file-stub
             className="mfui-beta-pagination-navigation__icon"
@@ -219,6 +227,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             1
           </button>
@@ -233,6 +242,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
+            type="button"
           >
             <test-file-stub />
           </button>
@@ -249,6 +259,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             8
           </button>
@@ -265,6 +276,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             9
           </button>
@@ -281,6 +293,7 @@ exports[`Pagination render on mobile resolution should render component with lef
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             10
           </button>
@@ -303,6 +316,7 @@ exports[`Pagination render on mobile resolution should render component with lef
           className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <test-file-stub
             className="mfui-beta-pagination-navigation__icon"
@@ -340,6 +354,7 @@ exports[`Pagination render on mobile resolution should render component with rig
           className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left mfui-beta-pagination__button"
           disabled={true}
           onClick={[Function]}
+          type="button"
         >
           <test-file-stub
             className="mfui-beta-pagination-navigation__icon"
@@ -377,6 +392,7 @@ exports[`Pagination render on mobile resolution should render component with rig
             className="mfui-beta-pagination-button mfui-beta-pagination-button_active mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             1
           </button>
@@ -393,6 +409,7 @@ exports[`Pagination render on mobile resolution should render component with rig
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             2
           </button>
@@ -409,6 +426,7 @@ exports[`Pagination render on mobile resolution should render component with rig
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             3
           </button>
@@ -423,6 +441,7 @@ exports[`Pagination render on mobile resolution should render component with rig
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={true}
             onClick={[Function]}
+            type="button"
           >
             <test-file-stub />
           </button>
@@ -439,6 +458,7 @@ exports[`Pagination render on mobile resolution should render component with rig
             className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-buttons__button"
             disabled={false}
             onClick={[Function]}
+            type="button"
           >
             10
           </button>
@@ -461,6 +481,7 @@ exports[`Pagination render on mobile resolution should render component with rig
           className="mfui-beta-pagination-button mfui-beta-pagination-button_theme_default mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right mfui-beta-pagination__button"
           disabled={false}
           onClick={[Function]}
+          type="button"
         >
           <test-file-stub
             className="mfui-beta-pagination-navigation__icon"

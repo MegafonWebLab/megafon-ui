@@ -182,6 +182,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     useEffect(() => {
         if (triggerEventName === TriggerEvent.HOVER) {
             currentTrigger && currentTrigger.addEventListener('mouseenter', handleMouseEnter);
+
             if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
             } else {
@@ -193,6 +194,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
                 document.removeEventListener('mouseover', handleOutsideEvent);
             };
         }
+
+        return undefined;
     }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleMouseEnter]);
 
     useEffect(() => {
@@ -209,6 +212,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
                 document.removeEventListener(clickEvent, handleOutsideEvent);
             };
         }
+
+        return undefined;
     }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleClick]);
 
     return (
@@ -238,6 +243,7 @@ Tooltip.propTypes = {
     triggerElement: (props, propName, componentName, location) => {
         const prop = props[propName];
         const isObject = typeof prop === 'object' && prop !== null;
+        // eslint-disable-next-line no-prototype-builtins
         const hasPropCurrent = isObject && prop.hasOwnProperty('current');
         if (prop === undefined) {
             return new Error(

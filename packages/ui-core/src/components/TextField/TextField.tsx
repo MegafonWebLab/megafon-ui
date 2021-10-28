@@ -6,11 +6,10 @@ import Show from '@megafon/ui-icons/basic-24-show_24.svg';
 import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
 import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import * as PropTypes from 'prop-types';
+import InputMask from 'react-input-mask';
 import InputLabel from '../InputLabel/InputLabel';
 import Paragraph from '../Paragraph/Paragraph';
 import './TextField.less';
-
-const InputMask = require('react-input-mask');
 
 export const Verification = {
     VALID: 'valid',
@@ -166,6 +165,26 @@ const TextField: React.FC<TextFieldProps> = ({
         [isPasswordHidden],
     );
 
+    const setTextareaHeight = (): void => {
+        if (!fieldNode?.current) {
+            return;
+        }
+
+        const {
+            current: { scrollHeight },
+        } = fieldNode;
+
+        if (!isTextareaResized) {
+            const extraRowCount = Math.round((scrollHeight - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
+            const newHeight =
+                extraRowCount <= DEFAULT_ROW_COUNT
+                    ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount
+                    : TEXTAREA_MAX_HEIGHT;
+
+            setInitialTextareaHeight(newHeight);
+        }
+    };
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         if (textarea === TextareaTypes.FLEXIBLE) {
             setTextareaHeight();
@@ -276,56 +295,6 @@ const TextField: React.FC<TextFieldProps> = ({
         inputRef && inputRef(node);
     };
 
-    const setTextareaHeight = (): void => {
-        if (!fieldNode?.current) {
-            return;
-        }
-
-        const {
-            current: { scrollHeight },
-        } = fieldNode;
-
-        if (!isTextareaResized) {
-            const extraRowCount = Math.round((scrollHeight - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
-            const newHeight =
-                extraRowCount <= DEFAULT_ROW_COUNT
-                    ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount
-                    : TEXTAREA_MAX_HEIGHT;
-
-            setInitialTextareaHeight(newHeight);
-        }
-    };
-
-    const renderField = (): React.ReactNode => {
-        if (textarea) {
-            return renderTextarea();
-        }
-
-        return renderInput();
-    };
-
-    const renderInput = (): React.ReactNode => (
-        <>
-            {mask ? (
-                <InputMask {...inputParams} {...inputMaskParams} inputRef={getFieldNode} />
-            ) : (
-                <input {...inputParams} ref={getFieldNode} />
-            )}
-            {!hideIcon && renderIconBlock()}
-        </>
-    );
-
-    const renderTextarea = (): React.ReactNode => (
-        <>
-            <textarea
-                {...textareaParams}
-                onClick={handleTextareaClick}
-                style={{ height: `${initialTextareaHeight}px` }}
-                ref={getFieldNode}
-            />
-        </>
-    );
-
     const getIcon = (): React.ReactNode | null => {
         switch (true) {
             case !!customIcon:
@@ -342,6 +311,17 @@ const TextField: React.FC<TextFieldProps> = ({
                 return null;
         }
     };
+
+    const renderTextarea = (): React.ReactNode => (
+        <>
+            <textarea
+                {...textareaParams}
+                onClick={handleTextareaClick}
+                style={{ height: `${initialTextareaHeight}px` }}
+                ref={getFieldNode}
+            />
+        </>
+    );
 
     const renderIconBlock = () => {
         const icon: React.ReactNode | null = getIcon();
@@ -360,6 +340,25 @@ const TextField: React.FC<TextFieldProps> = ({
                 </div>
             )
         );
+    };
+
+    const renderInput = (): React.ReactNode => (
+        <>
+            {mask ? (
+                <InputMask {...inputParams} {...inputMaskParams} inputRef={getFieldNode} />
+            ) : (
+                <input {...inputParams} ref={getFieldNode} />
+            )}
+            {!hideIcon && renderIconBlock()}
+        </>
+    );
+
+    const renderField = (): React.ReactNode => {
+        if (textarea) {
+            return renderTextarea();
+        }
+
+        return renderInput();
     };
 
     const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
