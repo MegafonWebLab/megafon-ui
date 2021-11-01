@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { IFilterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 
-export interface ITabProps {
+export interface ITabProps extends IFilterDataAttrs {
     /** Заголовок таба */
     title?: string;
     /** Иконка таба */
@@ -19,6 +20,7 @@ Tab.propTypes = {
     icon: PropTypes.node,
     href: PropTypes.string,
     renderTabWrapper: PropTypes.func,
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
 };
 
 export default Tab;

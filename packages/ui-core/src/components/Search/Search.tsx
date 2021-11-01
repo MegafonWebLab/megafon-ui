@@ -1,16 +1,50 @@
-import * as React from 'react';
-import { useCallback, useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import SearchIcon from '@megafon/ui-icons/basic-24-search_24.svg';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
+import InputLabel from '../InputLabel/InputLabel';
 import './Search.less';
 
 type HandleSearchSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
 type HandleSelectSubmit = (i: number) => (e: React.MouseEvent) => void;
 type HandleItemSubmit = (index: number) => void;
 
+export const Verification = {
+    VALID: 'valid',
+    ERROR: 'error',
+} as const;
+
+type VerificationType = typeof Verification[keyof typeof Verification];
+
+type ElementOrString = JSX.Element[] | JSX.Element | Element[] | Element;
+
+export type SearchItem = {
+    /** Значение value элемента */
+    value: string;
+    /** Настраиваемое отображение элементов в выпадающем списке */
+    searchView?: ElementOrString;
+};
+
 export interface ISearchProps {
+    /** Значение */
+    value?: string;
+    /** Заголовок поля */
+    label?: string;
+    /** Текст внутри поля по умолчанию */
+    placeholder?: string;
+    /** Запрещает отрисовку иконки */
+    hideIcon?: boolean;
+    /** Элементы выпадающего списка */
+    items?: SearchItem[];
+    /** Использование функции debounce для onChange */
+    changeDelay?: number;
+    /** Результат проверки данных */
+    verification?: VerificationType;
+    /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
+    noticeText?: string;
+    /** Делает поле обязательным */
+    required?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -19,78 +53,80 @@ export interface ISearchProps {
         control?: string;
         icon?: string;
     };
-    /** Значение */
-    value?: string;
-    /** Текст внутри поля по умолчанию */
-    placeholder?: string;
-    /** Запрещает отрисовку иконки */
-    hideIcon?: boolean;
-    /** Список строк выпадающего списка */
-    items?: string[];
-    /** Использование функции debounce для onChange */
-    changeDelay?: number;
     /** Обработчик изменения поля */
     onChange?: (value: string) => void;
     /** Обработчик нажатия на enter */
     onSubmit?: (value: string) => void;
+    /** Обработчик выхода из фокуса */
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const cn = cnCreate('mfui-beta-search');
 const Search: React.FC<ISearchProps> = ({
     value = '',
+    label,
     placeholder,
     hideIcon,
     items = [],
     changeDelay = 250,
+    verification,
+    required,
+    noticeText,
     className,
     classes,
     onChange,
     onSubmit,
+    onBlur,
 }) => {
-    const [searchQuery, setSearchQuery] = useState(value);
-    const [activeIndex, setActiveIndex] = useState(-1);
-    const [isFocused, setFocus] = useState(false);
-    const debouncedOnChange = useRef(debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay));
+    const [searchQuery, setSearchQuery] = React.useState<string>(value);
+    const [activeIndex, setActiveIndex] = React.useState<number>(-1);
+    const [isFocused, setFocus] = React.useState<boolean>(false);
+    const debouncedOnChange = React.useRef<React.MutableRefObject<(string) => void>>(
+        debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay),
+    );
 
-    React.useEffect(() => {
-        debouncedOnChange.current = debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay);
-    }, [onChange]);
+    const handleChange = React.useCallback(
+        (e: React.ChangeEvent<HTMLInputElement>) => {
+            const {
+                target: { value: inputValue = '' },
+            } = e;
 
-    useEffect(() => setSearchQuery(value), [value, setSearchQuery]);
+            setSearchQuery(inputValue);
+            setActiveIndex(-1);
 
-    const handleChange: React.EventHandler<React.ChangeEvent<HTMLInputElement>> = e => {
-        const {
-            target: { value: inputValue = '' },
-        } = e;
+            if (changeDelay === 0) {
+                onChange && onChange(inputValue);
+            } else {
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
+                debouncedOnChange.current(inputValue);
+            }
+        },
+        [changeDelay, onChange],
+    );
 
-        setSearchQuery(inputValue);
-        setActiveIndex(-1);
-
-        changeDelay === 0 ? onChange && onChange(inputValue) : debouncedOnChange.current(inputValue);
-    };
-
-    const handleHoverItem = useCallback(
+    const handleHoverItem = React.useCallback(
         (index: number) =>
             (_e: React.SyntheticEvent<EventTarget>): void => {
                 setActiveIndex(index);
             },
-        [setActiveIndex],
+        [],
     );
 
-    const handleSearchSubmit: HandleSearchSubmit = useCallback((): void => {
+    const handleSearchSubmit: HandleSearchSubmit = React.useCallback((): void => {
         onSubmit && searchQuery && onSubmit(searchQuery);
     }, [searchQuery, onSubmit]);
 
-    const handleItemSubmit: HandleItemSubmit = useCallback(
+    const handleItemSubmit: HandleItemSubmit = React.useCallback(
         (index: number): void => {
-            const chosenValue = items[index];
+            const chosenValue = items[index].value;
 
             onSubmit && onSubmit(chosenValue);
         },
-        [onSubmit, items],
+        [items, onSubmit],
     );
 
-    const handleSelectSubmit: HandleSelectSubmit = useCallback(
+    const handleSelectSubmit: HandleSelectSubmit = React.useCallback(
         () =>
             (_e): void => {
                 handleItemSubmit(activeIndex);
@@ -98,17 +134,26 @@ const Search: React.FC<ISearchProps> = ({
         [handleItemSubmit, activeIndex],
     );
 
-    const handleFieldFocusToggle = useCallback((): void => {
-        setFocus(focus => !focus);
-    }, [setFocus]);
+    const handleFocus = React.useCallback((): void => {
+        setFocus(true);
+    }, []);
 
-    const handleClick = useCallback((): void => {
+    const handleBlur = React.useCallback(
+        (e: React.FocusEvent<HTMLInputElement>): void => {
+            setFocus(false);
+
+            onBlur && onBlur(e);
+        },
+        [onBlur],
+    );
+
+    const handleClick = React.useCallback((): void => {
         if (activeIndex >= 0) {
             setActiveIndex(-1);
         }
-    }, [activeIndex, setActiveIndex]);
+    }, [activeIndex]);
 
-    const handleKeyDown = useCallback(
+    const handleKeyDown = React.useCallback(
         (e: React.KeyboardEvent<HTMLDivElement>): boolean => {
             if (e.key === 'ArrowDown' && activeIndex < items.length - 1) {
                 setActiveIndex(index => index + 1);
@@ -124,10 +169,16 @@ const Search: React.FC<ISearchProps> = ({
 
             return false;
         },
-        [activeIndex, setActiveIndex, handleSearchSubmit, handleItemSubmit],
+        [activeIndex, items, handleItemSubmit, handleSearchSubmit],
     );
 
-    const highlightString = title => {
+    React.useEffect(() => setSearchQuery(value), [value]);
+
+    React.useEffect(() => {
+        debouncedOnChange.current = debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay);
+    }, [changeDelay, onChange]);
+
+    const highlightString = (title: string) => {
         const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
         const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
 
@@ -148,14 +199,20 @@ const Search: React.FC<ISearchProps> = ({
 
     return (
         <div className={cn({ open: isFocused }, [className])}>
-            <div className={cn('control', [classes?.control])}>
+            {label && (
+                <InputLabel>
+                    {label}
+                    {required && <span className={cn('require-mark')}>*</span>}
+                </InputLabel>
+            )}
+            <div className={cn('control', { error: verification === Verification.ERROR }, [classes?.control])}>
                 <input
                     className={cn('search-field')}
                     placeholder={placeholder}
                     value={searchQuery}
                     onChange={handleChange}
-                    onFocus={handleFieldFocusToggle}
-                    onBlur={handleFieldFocusToggle}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
                     onKeyDown={handleKeyDown}
                     onClick={handleClick}
                     type="text"
@@ -167,10 +224,10 @@ const Search: React.FC<ISearchProps> = ({
                     </div>
                 )}
             </div>
-            {items && !!items.length && (
+            {!!items.length && (
                 <div className={cn('list')}>
                     <div className={cn('list-inner')}>
-                        {items.map((title, i) => (
+                        {items.map(({ value: itemValue, searchView }: SearchItem, i) => (
                             <div
                                 className={cn('list-item', { active: activeIndex === i })}
                                 onMouseDown={handleSelectSubmit(i)}
@@ -178,11 +235,21 @@ const Search: React.FC<ISearchProps> = ({
                                 key={i}
                             >
                                 <div className={cn('item-title', [classes?.listItemTitle])}>
-                                    {highlightString(title)}
+                                    {searchView || highlightString(itemValue)}
                                 </div>
                             </div>
                         ))}
                     </div>
+                </div>
+            )}
+            {noticeText && (
+                <div
+                    className={cn('notice', {
+                        error: verification === Verification.ERROR,
+                        success: verification === Verification.VALID,
+                    })}
+                >
+                    {noticeText}
                 </div>
             )}
         </div>
@@ -191,12 +258,32 @@ const Search: React.FC<ISearchProps> = ({
 
 Search.propTypes = {
     value: PropTypes.string,
+    label: PropTypes.string,
     placeholder: PropTypes.string,
     hideIcon: PropTypes.bool,
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            value: PropTypes.string.isRequired,
+            searchView: PropTypes.oneOfType([
+                PropTypes.string,
+                PropTypes.element,
+                PropTypes.arrayOf(PropTypes.element),
+            ]),
+        }).isRequired,
+    ),
     changeDelay: PropTypes.number,
-    items: PropTypes.arrayOf(PropTypes.string.isRequired),
+    verification: PropTypes.oneOf(['valid', 'error']),
+    noticeText: PropTypes.string,
+    required: PropTypes.bool,
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        listItemTitle: PropTypes.string,
+        control: PropTypes.string,
+        icon: PropTypes.string,
+    }),
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
+    onBlur: PropTypes.func,
 };
 
 export default Search;

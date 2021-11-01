@@ -283,6 +283,459 @@ exports[`<Search /> snapshots renders Search without props correctly 1`] = `
 </div>
 `;
 
+exports[`<Search /> snapshots renders with customItemsProps 1`] = `
+<div
+  className="mfui-beta-search test"
+>
+  <div
+    className="mfui-beta-search__control"
+  >
+    <input
+      autoComplete="off"
+      className="mfui-beta-search__search-field"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="type to search here"
+      type="text"
+      value="initial value"
+    />
+    <div
+      className="mfui-beta-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-beta-search__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-beta-search__list"
+  >
+    <div
+      className="mfui-beta-search__list-inner"
+    >
+      <div
+        className="mfui-beta-search__list-item"
+        key="0"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          <div>
+            <div>
+              <b>
+                ИП Баранник Александр Николаевич 
+                1
+              </b>
+            </div>
+            <div>
+              <b>
+                ИНН: 503209463031
+              </b>
+            </div>
+            <div>
+              Московская обл, Одинцовский р-н, г Одинцово
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="1"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          <div>
+            <div>
+              <b>
+                ИП Баранник Александр Николаевич 
+                2
+              </b>
+            </div>
+            <div>
+              <b>
+                ИНН: 503209463031
+              </b>
+            </div>
+            <div>
+              Московская обл, Одинцовский р-н, г Одинцово
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="2"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          <div>
+            <div>
+              <b>
+                ИП Баранник Александр Николаевич 
+                3
+              </b>
+            </div>
+            <div>
+              <b>
+                ИНН: 503209463031
+              </b>
+            </div>
+            <div>
+              Московская обл, Одинцовский р-н, г Одинцово
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="3"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          <div>
+            <div>
+              <b>
+                ИП Баранник Александр Николаевич 
+                4
+              </b>
+            </div>
+            <div>
+              <b>
+                ИНН: 503209463031
+              </b>
+            </div>
+            <div>
+              Московская обл, Одинцовский р-н, г Одинцово
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="4"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          <div>
+            <div>
+              <b>
+                ИП Баранник Александр Николаевич 
+                5
+              </b>
+            </div>
+            <div>
+              <b>
+                ИНН: 503209463031
+              </b>
+            </div>
+            <div>
+              Московская обл, Одинцовский р-н, г Одинцово
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Search /> snapshots renders with label and required props 1`] = `
+<div
+  className="mfui-beta-search test"
+>
+  <InputLabel>
+    test label
+    <span
+      className="mfui-beta-search__require-mark"
+    >
+      *
+    </span>
+  </InputLabel>
+  <div
+    className="mfui-beta-search__control"
+  >
+    <input
+      autoComplete="off"
+      className="mfui-beta-search__search-field"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="type to search here"
+      type="text"
+      value="initial value"
+    />
+    <div
+      className="mfui-beta-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-beta-search__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-beta-search__list"
+  >
+    <div
+      className="mfui-beta-search__list-inner"
+    >
+      <div
+        className="mfui-beta-search__list-item"
+        key="0"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="1"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title2
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="2"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title3
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="3"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title4
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Search /> snapshots renders with noticeText and verification="error" 1`] = `
+<div
+  className="mfui-beta-search test"
+>
+  <div
+    className="mfui-beta-search__control mfui-beta-search__control_error"
+  >
+    <input
+      autoComplete="off"
+      className="mfui-beta-search__search-field"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="type to search here"
+      type="text"
+      value="initial value"
+    />
+    <div
+      className="mfui-beta-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-beta-search__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-beta-search__list"
+  >
+    <div
+      className="mfui-beta-search__list-inner"
+    >
+      <div
+        className="mfui-beta-search__list-item"
+        key="0"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="1"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title2
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="2"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title3
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="3"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title4
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mfui-beta-search__notice mfui-beta-search__notice_error"
+  >
+    test notice text
+  </div>
+</div>
+`;
+
+exports[`<Search /> snapshots renders with noticeText and verification="valid" 1`] = `
+<div
+  className="mfui-beta-search test"
+>
+  <div
+    className="mfui-beta-search__control"
+  >
+    <input
+      autoComplete="off"
+      className="mfui-beta-search__search-field"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="type to search here"
+      type="text"
+      value="initial value"
+    />
+    <div
+      className="mfui-beta-search__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-beta-search__icon"
+      />
+    </div>
+  </div>
+  <div
+    className="mfui-beta-search__list"
+  >
+    <div
+      className="mfui-beta-search__list-inner"
+    >
+      <div
+        className="mfui-beta-search__list-item"
+        key="0"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="1"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title2
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="2"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title3
+        </div>
+      </div>
+      <div
+        className="mfui-beta-search__list-item"
+        key="3"
+        onMouseDown={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          className="mfui-beta-search__item-title"
+        >
+          title4
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mfui-beta-search__notice mfui-beta-search__notice_success"
+  >
+    test notice text
+  </div>
+</div>
+`;
+
 exports[`<Search /> typing highlighted text 1`] = `
 <div
   className="mfui-beta-search test"
