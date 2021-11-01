@@ -45,6 +45,8 @@ export interface ITooltipProps {
     boundaryElement?: React.RefObject<HTMLElement>;
     /** Реф на триггер-элемент */
     triggerElement: React.RefObject<HTMLElement>;
+    /** Реф элемента, на который указывает стрелка тултипа. По умолчанию стрелка указывает на triggerElement. */
+    targetElement?: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
     /** Дополнительный класс корневого элемента */
@@ -71,6 +73,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     triggerEvent = 'hover',
     boundaryElement,
     triggerElement,
+    targetElement,
     isOpened = false,
     children,
     classes: {
@@ -83,6 +86,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     onClose,
 }) => {
     const currentTrigger = triggerElement.current;
+    const currentTarget = targetElement?.current || currentTrigger;
     const currentBoundary = boundaryElement?.current;
 
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
@@ -124,7 +128,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         [placement, arrowElement, currentBoundary, isOpen],
     );
 
-    const { styles, attributes, update } = usePopper(currentTrigger, popperElement, options);
+    const { styles, attributes, update } = usePopper(currentTarget, popperElement, options);
 
     useEffect(() => {
         update && update();
@@ -248,6 +252,10 @@ Tooltip.propTypes = {
 
         return null;
     },
+    targetElement: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
+    ]),
     isOpened: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
