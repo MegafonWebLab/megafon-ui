@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.165](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.164...@megafon/ui-core@2.0.0-beta.165) (2021-11-01)
+
+
+### Bug Fixes
+
+* add [@fresh](https://github.com/fresh)AsphaltL50 color ([e032c1d](https://github.com/MegafonWebLab/megafon-ui/commit/e032c1df461973717b57290eb565e72b65fcb5b4))
+* add additional faded colors ([6b162b8](https://github.com/MegafonWebLab/megafon-ui/commit/6b162b84b643695c9b7418143e433568aceacff1))
+* rename [@fresh](https://github.com/fresh)AsphaltL50 to [@fresh](https://github.com/fresh)AsphaltLighten50 ([fb7f9cc](https://github.com/MegafonWebLab/megafon-ui/commit/fb7f9cc77899e2b852b9c8afd536925302a6c8fd))
+
+
+### Features
+
+* **search:** add onBlure callback, add ability to render custom search results ([4f04552](https://github.com/MegafonWebLab/megafon-ui/commit/4f045526d586071d91b1f5c7200c44370bea804f))
+* **tabs:** add data attributes for tab ([ef947fd](https://github.com/MegafonWebLab/megafon-ui/commit/ef947fde5330ec866728dd3299378558d0ec4b96))
+* **tooltip:** add new prop targetElement ([e3af122](https://github.com/MegafonWebLab/megafon-ui/commit/e3af122594c5e998835d7b8055d801b248569d20))
+* add color variable [@fresh](https://github.com/fresh)Asphalt50 to base.less ([9aee3d7](https://github.com/MegafonWebLab/megafon-ui/commit/9aee3d7d6e9250fc61546539ea9e8cb5c3be15aa))
+
+
+### BREAKING CHANGES
+
+* **search:** type and functionality of the props items are changed
+
+
+
+
+
 # [2.0.0-beta.164](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.163...@megafon/ui-core@2.0.0-beta.164) (2021-10-25)
 
 

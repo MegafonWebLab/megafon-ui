@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.235](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.234...@megafon/ui-shared@2.0.0-beta.235) (2021-11-01)
+
+
+### Features
+
+* add color variable [@fresh](https://github.com/fresh)Asphalt50 to base.less ([9aee3d7](https://github.com/MegafonWebLab/megafon-ui/commit/9aee3d7d6e9250fc61546539ea9e8cb5c3be15aa))
+
+
+
+
+
 # [2.0.0-beta.234](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.233...@megafon/ui-shared@2.0.0-beta.234) (2021-10-25)
 
 
