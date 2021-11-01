@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow_left_16.svg';
 import ArrowRight from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 import throttle from 'lodash.throttle';
@@ -174,7 +174,7 @@ const Tabs: React.FC<ITabsProps> = ({
         () =>
             React.Children.map(children, (child, i) => {
                 const {
-                    props: { title, icon, href, renderTabWrapper },
+                    props: { title, icon, href, renderTabWrapper, dataAttrs },
                 } = child;
                 const tab = renderTab(i, title, icon, href);
 
@@ -182,7 +182,11 @@ const Tabs: React.FC<ITabsProps> = ({
 
                 return (
                     <SwiperSlide className={cn('slide')}>
-                        <div className={cn('tab', [tabClass, activeTabClassName])} ref={setTabRef}>
+                        <div
+                            className={cn('tab', [tabClass, activeTabClassName])}
+                            ref={setTabRef}
+                            {...filterDataAttrs(dataAttrs)}
+                        >
                             {renderTabWrapper ? renderTabWrapper(tab) : tab}
                         </div>
                     </SwiperSlide>
