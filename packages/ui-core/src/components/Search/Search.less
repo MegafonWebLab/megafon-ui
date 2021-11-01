@@ -12,6 +12,14 @@
 
     color: @freshAsphalt;
 
+    &__require-mark {
+        margin-left: 1px;
+
+        color: @fury;
+        font-size: 20px;
+        line-height: 0;
+    }
+
     &__control {
         position: relative;
         z-index: 1;
@@ -28,6 +36,10 @@
         cursor: pointer;
 
         user-select: none;
+    }
+
+    &__control_error {
+        border-color: @fury;
     }
 
     &__search-field {
@@ -146,5 +158,20 @@
 
     &__highlighted-fragment {
         font-weight: bold;
+    }
+
+    &__notice {
+        margin-top: 4px;
+
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    &__notice_error {
+        color: @fury;
+    }
+
+    &__notice_success {
+        color: @green;
     }
 }
