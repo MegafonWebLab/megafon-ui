@@ -123,7 +123,7 @@ const TextField: React.FC<TextFieldProps> = ({
     onKeyUp,
     theme = 'default',
     type = 'text',
-    value,
+    value = '',
     verification,
     noticeText,
     inputRef,
