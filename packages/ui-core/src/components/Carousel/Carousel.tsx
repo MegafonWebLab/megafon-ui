@@ -264,6 +264,13 @@ const Carousel: React.FC<ICarouselProps> = ({
                 allowTouchMove={!disableTouchMove}
                 centeredSlides={centeredSlides}
                 effect={effectTheme}
+                fadeEffect={
+                    effectTheme === EffectTheme.FADE
+                        ? {
+                              crossFade: effectTheme === EffectTheme.FADE,
+                          }
+                        : undefined
+                }
                 noSwipingSelector={
                     noSwipingSelector ? `.swiper-pagination, ${noSwipingSelector}` : '.swiper-pagination'
                 }
