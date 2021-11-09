@@ -5,7 +5,7 @@ import VideoBlock, { VideoTypes } from './VideoBlock';
 
 const content = {
     title: 'Test title',
-    description: ['Test description', 'Test description2'],
+    description: 'Test description',
     buttonTitle: 'Button title',
     href: '#',
 };
@@ -34,7 +34,7 @@ describe('<VideoBlock />', () => {
                 videoSrc="video.mp4"
                 content={content}
                 className="className"
-                classes={{ root: 'rootClass', button: 'buttonClass' }}
+                classes={{ root: 'rootClass', button: 'buttonClass', description: 'descriptionClass' }}
             />,
         );
         expect(component).toMatchSnapshot();

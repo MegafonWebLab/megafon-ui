@@ -1,14 +1,14 @@
 import React, { Ref } from 'react';
 import PropTypes from 'prop-types';
 import './VideoBlock.less';
-import { Header, Button, Paragraph, Grid, GridColumn } from '@megafon/ui-core';
+import { Header, Button, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 
 export interface IContent {
     /** Заголовок */
     title: string;
     /** Текст-описание */
-    description: string[];
+    description: string | React.ReactNode[] | React.ReactNode;
     /** Текст кнопки */
     buttonTitle: string;
     /** Добавляет атрибут download для тега <a> компонента Button */
@@ -35,6 +35,7 @@ export interface Props {
     classes?: {
         root?: string;
         button?: string;
+        description?: string;
     };
     /** Ссылка на корневой элемент */
     rootRef?: Ref<HTMLDivElement>;
@@ -89,17 +90,10 @@ const VideoBlock: React.FC<Props> = ({
     const renderContent = React.useCallback(
         ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
             <div className={cn('content')}>
-                <Header as="h3" className={cn('header')}>
+                <Header as="h2" className={cn('header')}>
                     {title}
                 </Header>
-                <div>
-                    {description &&
-                        description.map((paragraph, i) => (
-                            <Paragraph key={i + paragraph} className={cn('text')} hasMargin={false}>
-                                {paragraph}
-                            </Paragraph>
-                        ))}
-                </div>
+                <div className={cn('description', [classes.description])}>{description}</div>
                 <Button
                     className={cn('button', [classes.button])}
                     href={href}
@@ -149,6 +143,7 @@ VideoBlock.propTypes = {
     classes: PropTypes.shape({
         root: PropTypes.string,
         button: PropTypes.string,
+        description: PropTypes.string,
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -156,7 +151,8 @@ VideoBlock.propTypes = {
     ]),
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        description: PropTypes.array.isRequired,
+        description: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+            .isRequired,
         href: PropTypes.string,
         buttonTitle: PropTypes.string.isRequired,
         buttonDownload: PropTypes.bool,
