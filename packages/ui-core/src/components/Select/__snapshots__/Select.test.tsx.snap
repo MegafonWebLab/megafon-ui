@@ -15,7 +15,6 @@ exports[`<Select /> it renders with data attributes 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-        tabIndex={0}
       >
         <div
           className="mfui-beta-select__title-inner"
@@ -24,7 +23,6 @@ exports[`<Select /> it renders with data attributes 1`] = `
       <div
         className="mfui-beta-select__arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow"
@@ -75,7 +73,6 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       <div
         className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow test-arrow"
@@ -176,7 +173,6 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       <div
         className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow test-arrow"
@@ -277,7 +273,6 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       <div
         className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow test-arrow"
@@ -350,7 +345,6 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
       <div
         className="mfui-beta-select__arrow-wrap test-arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow test-arrow"
@@ -490,7 +484,6 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         <div
           className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
-          tabIndex={0}
         >
           <div
             className="mfui-beta-select__title-inner test-title-inner"
@@ -501,7 +494,6 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         <div
           className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
-          tabIndex={1}
         >
           <span
             className="mfui-beta-select__arrow test-arrow"
@@ -622,7 +614,6 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         <div
           className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
-          tabIndex={0}
         >
           <div
             className="mfui-beta-select__title-inner test-title-inner"
@@ -633,7 +624,6 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         <div
           className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
-          tabIndex={1}
         >
           <span
             className="mfui-beta-select__arrow test-arrow"
@@ -697,7 +687,6 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-        tabIndex={0}
       >
         <div
           className="mfui-beta-select__title-inner"
@@ -706,7 +695,6 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
       <div
         className="mfui-beta-select__arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow"
@@ -761,7 +749,6 @@ exports[`<Select /> should render items.view as function and type combobox 1`] =
       <div
         className="mfui-beta-select__arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow"
@@ -875,7 +862,6 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         <div
           className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
-          tabIndex={1}
         >
           <span
             className="mfui-beta-select__arrow test-arrow"
@@ -984,7 +970,6 @@ exports[`<Select /> snapshots renders with default props 1`] = `
         <div
           className="mfui-beta-select__title"
           onClick={[Function]}
-          tabIndex={0}
         >
           <div
             className="mfui-beta-select__title-inner"
@@ -993,7 +978,6 @@ exports[`<Select /> snapshots renders with default props 1`] = `
         <div
           className="mfui-beta-select__arrow-wrap"
           onClick={[Function]}
-          tabIndex={1}
         >
           <span
             className="mfui-beta-select__arrow"
@@ -1109,7 +1093,6 @@ exports[`<Select /> snapshots renders with props 1`] = `
         <div
           className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
-          tabIndex={0}
         >
           <div
             className="mfui-beta-select__title-inner test-title-inner"
@@ -1120,7 +1103,6 @@ exports[`<Select /> snapshots renders with props 1`] = `
         <div
           className="mfui-beta-select__arrow-wrap test-arrow-wrap"
           onClick={[Function]}
-          tabIndex={1}
         >
           <span
             className="mfui-beta-select__arrow test-arrow"
@@ -1183,7 +1165,6 @@ exports[`<Select /> states of select renders with disabled state 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-        tabIndex={0}
       >
         <div
           className="mfui-beta-select__title-inner"
@@ -1192,7 +1173,6 @@ exports[`<Select /> states of select renders with disabled state 1`] = `
       <div
         className="mfui-beta-select__arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow"
@@ -1224,7 +1204,6 @@ exports[`<Select /> states of select renders with error state 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-        tabIndex={0}
       >
         <div
           className="mfui-beta-select__title-inner"
@@ -1233,7 +1212,6 @@ exports[`<Select /> states of select renders with error state 1`] = `
       <div
         className="mfui-beta-select__arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow"
@@ -1270,7 +1248,6 @@ exports[`<Select /> states of select renders with valid state 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-        tabIndex={0}
       >
         <div
           className="mfui-beta-select__title-inner"
@@ -1279,7 +1256,6 @@ exports[`<Select /> states of select renders with valid state 1`] = `
       <div
         className="mfui-beta-select__arrow-wrap"
         onClick={[Function]}
-        tabIndex={1}
       >
         <span
           className="mfui-beta-select__arrow"

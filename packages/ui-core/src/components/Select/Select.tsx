@@ -194,6 +194,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         const { isOpened } = this.state;
 
         if (!this.isEqualItems(items, prevItems)) {
+            // eslint-disable-next-line react/no-did-update-set-state
             this.setState({ filteredItems: items });
         }
 
@@ -373,33 +374,6 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         return true;
     };
 
-    scrollList(activeIndex: number): void {
-        if (!this.itemsNodeList) {
-            return;
-        }
-
-        const wrapper = this.itemWrapperNode;
-        const wrapperScroll = wrapper.scrollTop;
-        const wrapperHeight = wrapper.offsetHeight;
-
-        const item = this.itemsNodeList[activeIndex];
-
-        if (!item) {
-            return;
-        }
-
-        const itemOffset = item.offsetTop;
-        const itemHeight = item.offsetHeight;
-
-        if (itemOffset + itemHeight > wrapperScroll + wrapperHeight) {
-            wrapper.scrollTop = itemOffset + itemHeight - wrapperHeight;
-        }
-
-        if (itemOffset < wrapperScroll) {
-            wrapper.scrollTop = itemOffset;
-        }
-    }
-
     highlightString = (title: string, view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString)) => {
         const { type } = this.props;
         const { comparableInputValue, inputValue } = this.state;
@@ -436,11 +410,42 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         );
     };
 
-    getItemWrapper = node => (this.itemWrapperNode = node);
+    getItemWrapper = node => {
+        this.itemWrapperNode = node;
+    };
 
-    getSelectNode = node => (this.selectNode = node);
+    getSelectNode = node => {
+        this.selectNode = node;
+    };
 
     getNodeList = node => this.itemsNodeList.push(node);
+
+    scrollList(activeIndex: number): void {
+        if (!this.itemsNodeList) {
+            return;
+        }
+
+        const wrapper = this.itemWrapperNode;
+        const wrapperScroll = wrapper.scrollTop;
+        const wrapperHeight = wrapper.offsetHeight;
+
+        const item = this.itemsNodeList[activeIndex];
+
+        if (!item) {
+            return;
+        }
+
+        const itemOffset = item.offsetTop;
+        const itemHeight = item.offsetHeight;
+
+        if (itemOffset + itemHeight > wrapperScroll + wrapperHeight) {
+            wrapper.scrollTop = itemOffset + itemHeight - wrapperHeight;
+        }
+
+        if (itemOffset < wrapperScroll) {
+            wrapper.scrollTop = itemOffset;
+        }
+    }
 
     renderTitle() {
         const { placeholder, items, currentValue, classes } = this.props;
@@ -460,7 +465,6 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                     },
                     [classes?.title],
                 )}
-                tabIndex={0}
                 onClick={this.handleOpenDropdown}
             >
                 <div className={cn('title-inner', [classes?.titleInner])}>{inputTitle}</div>
@@ -559,11 +563,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                     <div className={cn('control', classes.control)} onKeyDown={this.handleKeyDown}>
                         {type === SelectTypes.COMBOBOX && this.renderCombobox()}
                         {type === SelectTypes.CLASSIC && this.renderTitle()}
-                        <div
-                            className={cn('arrow-wrap', [classes.arrowWrap])}
-                            tabIndex={1}
-                            onClick={this.handleOpenDropdown}
-                        >
+                        <div className={cn('arrow-wrap', [classes.arrowWrap])} onClick={this.handleOpenDropdown}>
                             <span className={cn('arrow', [classes.arrow])} />
                         </div>
                     </div>

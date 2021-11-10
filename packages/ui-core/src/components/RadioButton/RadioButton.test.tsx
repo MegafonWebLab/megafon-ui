@@ -51,7 +51,7 @@ describe('<RadioButton />', () => {
     it('should return a reference to the element', () => {
         const ref: React.Ref<HTMLInputElement> = React.createRef();
 
-        mount(<RadioButton inputRef={ref} />);
+        mount(<RadioButton inputRef={ref} value="" />);
 
         if (ref.current === null) {
             throw new Error('No ref');

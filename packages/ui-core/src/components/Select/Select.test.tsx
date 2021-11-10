@@ -127,7 +127,7 @@ describe('<Select />', () => {
             const lastListItem = wrapper.find(`.${cn('list-item')}`).last();
 
             title.simulate('click');
-            lastListItem.simulate('mouseenter', { preventDefault: () => {} });
+            lastListItem.simulate('mouseenter', { preventDefault: () => undefined });
             lastListItem.simulate('click', {});
 
             expect(handleSelectItem).toBeCalledWith({}, newItems[1]);
@@ -196,7 +196,7 @@ describe('<Select />', () => {
             const wrapper = mount(<Select<number> {...props} onOpened={handleOpened} />);
 
             wrapper.find(`.${cn('title')}`).simulate('focus');
-            wrapper.find(`.${cn('control')}`).simulate('keyDown', { key: 'Enter', preventDefault: () => {} });
+            wrapper.find(`.${cn('control')}`).simulate('keyDown', { key: 'Enter', preventDefault: () => undefined });
             expect(handleOpened).toBeCalled();
         });
     });
@@ -246,11 +246,11 @@ describe('<Select />', () => {
             title.simulate('click');
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
 
-            control.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {} });
+            control.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => undefined });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(false);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(true);
 
-            control.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => {} });
+            control.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => undefined });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
         });
@@ -263,7 +263,7 @@ describe('<Select />', () => {
             title.simulate('click');
             expect(wrapper).toMatchSnapshot();
 
-            control.simulate('keyDown', { key: 'Tab', preventDefault: () => {} });
+            control.simulate('keyDown', { key: 'Tab', preventDefault: () => undefined });
             expect(wrapper).toMatchSnapshot();
         });
 
@@ -274,7 +274,7 @@ describe('<Select />', () => {
             const title = wrapper.find(`.${cn('title')}`);
 
             title.simulate('focus');
-            control.simulate('keyDown', { key: 'Enter', preventDefault: () => {} });
+            control.simulate('keyDown', { key: 'Enter', preventDefault: () => undefined });
 
             expect(wrapper.state('isOpened')).toBeTruthy();
         });

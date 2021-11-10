@@ -38,6 +38,7 @@ describe('<Calendar />', () => {
 
     describe('onChange', () => {
         it('calls onChange on date change', () => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { minBookingDate, maxBookingDate, ...restProps } = props;
             const onChange = jest.fn();
 
@@ -107,7 +108,7 @@ describe('<Calendar />', () => {
         it('shouldnt call onChange if startDate or endDate props changed', () => {
             const onChange = jest.fn();
 
-            const wrapper = mount(<Calendar {...props} onChange={onChange} />);
+            mount(<Calendar {...props} onChange={onChange} />);
 
             expect(onChange).toBeCalledTimes(0);
         });

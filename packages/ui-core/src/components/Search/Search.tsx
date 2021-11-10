@@ -106,10 +106,9 @@ const Search: React.FC<ISearchProps> = ({
     );
 
     const handleHoverItem = React.useCallback(
-        (index: number) =>
-            (_e: React.SyntheticEvent<EventTarget>): void => {
-                setActiveIndex(index);
-            },
+        (index: number) => (): void => {
+            setActiveIndex(index);
+        },
         [],
     );
 
@@ -127,10 +126,9 @@ const Search: React.FC<ISearchProps> = ({
     );
 
     const handleSelectSubmit: HandleSelectSubmit = React.useCallback(
-        () =>
-            (_e): void => {
-                handleItemSubmit(activeIndex);
-            },
+        () => (): void => {
+            handleItemSubmit(activeIndex);
+        },
         [handleItemSubmit, activeIndex],
     );
 

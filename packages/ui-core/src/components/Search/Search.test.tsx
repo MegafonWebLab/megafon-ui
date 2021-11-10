@@ -221,14 +221,14 @@ describe('<Search />', () => {
                 },
             });
 
-            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {} });
+            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => undefined });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
 
-            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => {} });
+            searchField.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => undefined });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(false);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(true);
 
-            searchField.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => {} });
+            searchField.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => undefined });
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
         });

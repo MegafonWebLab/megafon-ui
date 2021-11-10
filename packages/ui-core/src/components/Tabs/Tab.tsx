@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 import * as React from 'react';
 import { IFilterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';

@@ -93,7 +93,7 @@ const Calendar: React.FC<ICalendarProps> = ({
         goToDate,
         ...pickerProps
     }: DatePickerType = useDatepicker({
-        onDatesChange: () => {},
+        onDatesChange: () => undefined,
         numberOfMonths: 1,
         minBookingDate,
         maxBookingDate,
@@ -130,7 +130,7 @@ const Calendar: React.FC<ICalendarProps> = ({
         switch (true) {
             case isSingleDate:
                 return { ...calendarState, startDate: date };
-            case isPeriodNarrow:
+            case isPeriodNarrow: {
                 const isCloserToStart =
                     stateStartDate &&
                     stateEndDate &&
@@ -142,6 +142,7 @@ const Calendar: React.FC<ICalendarProps> = ({
                     endDate: isCloserToStart ? stateEndDate : date,
                     focusedInput: START_DATE,
                 };
+            }
             case isStartDateChose:
                 return { startDate: date, endDate: null, focusedInput: END_DATE };
             case isEndDateChose:

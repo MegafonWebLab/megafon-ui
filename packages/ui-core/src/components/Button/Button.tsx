@@ -207,6 +207,8 @@ const Button: React.FC<IButtonProps> = ({
         if (target && target !== '_self') {
             return 'noreferrer noopener';
         }
+
+        return undefined;
     };
 
     const classNameValue = Array.isArray(className) ? [...className, rootClassName] : [className, rootClassName];
