@@ -49,9 +49,9 @@ const ContentArea: React.FC<IConrentAreaProps> = ({
     disableIndents,
     children,
     className,
-    classes = {},
+    classes,
 }) => (
-    <div className={cn({ color: outerBackgroundColor }, [className, classes.root])}>
+    <div className={cn({ color: outerBackgroundColor }, [className, classes?.root])}>
         <div
             className={cn(
                 'inner',
@@ -59,7 +59,7 @@ const ContentArea: React.FC<IConrentAreaProps> = ({
                     'disable-indents': disableIndents,
                     color: innerBackgroundColor,
                 },
-                classes.inner,
+                classes?.inner,
             )}
         >
             {children}
@@ -81,7 +81,6 @@ ContentArea.propTypes = {
 ContentArea.defaultProps = {
     outerBackgroundColor: 'transparent',
     innerBackgroundColor: 'transparent',
-    classes: {},
 };
 
 export default ContentArea;

@@ -5,7 +5,6 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -121,7 +120,6 @@ exports[`<VideoBanner /> render component with classes 1`] = `
   className="mfui-beta-video-banner className rootClass"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -213,7 +211,6 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -305,7 +302,6 @@ exports[`<VideoBanner /> render component with pictures 1`] = `
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -330,7 +326,6 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -422,7 +417,6 @@ exports[`<VideoBanner /> render component with pictures and download links conte
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -516,7 +510,6 @@ exports[`<VideoBanner /> render component with pictures and non default content 
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -608,7 +601,6 @@ exports[`<VideoBanner /> render component with the different content text color 
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -700,7 +692,6 @@ exports[`<VideoBanner /> render component without button 1`] = `
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
@@ -791,7 +782,6 @@ exports[`<VideoBanner /> tests with local window render desktop image on relevan
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -831,7 +821,6 @@ exports[`<VideoBanner /> tests with local window render mobile image on relevant
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -871,7 +860,6 @@ exports[`<VideoBanner /> tests with local window render tablet image on relevant
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -912,7 +900,6 @@ exports[`<VideoBanner /> tests with local window render video with sounds enable
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -955,7 +942,6 @@ exports[`<VideoBanner /> tests with local window render wide desktop image on re
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -995,7 +981,6 @@ exports[`<VideoBanner /> tests with local window render with video 1`] = `
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -1049,7 +1034,6 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -1221,7 +1205,6 @@ exports[`<VideoBanner /> tests with local window render with youtube video 1`] =
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -1263,7 +1246,6 @@ exports[`<VideoBanner /> tests with local window render youtube video with sound
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -1304,7 +1286,6 @@ exports[`<VideoBanner /> tests with local window should not render background im
     className="mfui-beta-video-banner"
   >
     <ContentArea
-      classes={Object {}}
       innerBackgroundColor="transparent"
       outerBackgroundColor="transparent"
     >
@@ -1339,7 +1320,6 @@ exports[`<VideoBanner /> tests with local window should not render video on mobi
   className="mfui-beta-video-banner"
 >
   <ContentArea
-    classes={Object {}}
     innerBackgroundColor="transparent"
     outerBackgroundColor="transparent"
   >
