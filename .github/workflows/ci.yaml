@@ -55,11 +55,11 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         run: yarn exec commitlint -- --from=origin/${{ github.base_ref }} --to=HEAD
 
-      - name: Linting sources
-        run: yarn lint
-
       - name: Build
         run: yarn build
+
+      - name: Linting sources
+        run: yarn lint
 
       - name: Typecheck
         run: yarn typecheck
