@@ -56,7 +56,6 @@ class RadioButton extends React.Component<IRadioButtonProps> {
     static defaultProps: Partial<IRadioButtonProps> = {
         textSize: 'medium',
         disabled: false,
-        value: '',
     };
 
     handleChange = () => {
