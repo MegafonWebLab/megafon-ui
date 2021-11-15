@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.237](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.236...@megafon/ui-shared@2.0.0-beta.237) (2021-11-15)
+
+
+### Code Refactoring
+
+* **videoblock:** change description props type, add description class ([ddde89a](https://github.com/MegafonWebLab/megafon-ui/commit/ddde89a66ba48fd60504781a3e1221f308a91370))
+
+
+### BREAKING CHANGES
+
+* **videoblock:** description props now receive string or nodes instead of array of strings
+
+
+
+
+
 # [2.0.0-beta.236](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.235...@megafon/ui-shared@2.0.0-beta.236) (2021-11-15)
 
 **Note:** Version bump only for package @megafon/ui-shared
