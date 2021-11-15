@@ -465,6 +465,8 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                     },
                     [classes?.title],
                 )}
+                role="button"
+                tabIndex={0}
                 onClick={this.handleOpenDropdown}
             >
                 <div className={cn('title-inner', [classes?.titleInner])}>{inputTitle}</div>
@@ -563,7 +565,13 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                     <div className={cn('control', classes.control)} onKeyDown={this.handleKeyDown}>
                         {type === SelectTypes.COMBOBOX && this.renderCombobox()}
                         {type === SelectTypes.CLASSIC && this.renderTitle()}
-                        <div className={cn('arrow-wrap', [classes.arrowWrap])} onClick={this.handleOpenDropdown}>
+                        <div
+                            className={cn('arrow-wrap', [classes.arrowWrap])}
+                            role="button"
+                            // eslint-disable-next-line jsx-a11y/tabindex-no-positive
+                            tabIndex={1}
+                            onClick={this.handleOpenDropdown}
+                        >
                             <span className={cn('arrow', [classes.arrow])} />
                         </div>
                     </div>
