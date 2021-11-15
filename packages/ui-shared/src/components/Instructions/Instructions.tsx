@@ -39,6 +39,8 @@ export interface IInstructionsProps {
     /** Дополнительные классы для внутренних элементов */
     classes?: {
         instructionItem?: string;
+        desktopInstructionItem?: string;
+        mobileInstructionItem?: string;
         activeInstructionItem?: string;
         desktopItemTitle?: string;
         mobileItemTitle?: string;
@@ -65,6 +67,8 @@ const Instructions: React.FC<IInstructionsProps> = ({
     rootRef,
     classes: {
         instructionItem,
+        desktopInstructionItem,
+        mobileInstructionItem,
         activeInstructionItem,
         desktopItemTitle,
         mobileItemTitle,
@@ -169,6 +173,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                     <li
                         className={cn('articles-item', { active: slideIndex === ind }, [
                             getArticleCustomClasses(ind, slideIndex),
+                            desktopInstructionItem,
                         ])}
                         data-index={ind}
                         onClick={handleArticleClick(ind)}
@@ -204,6 +209,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                             key={ind}
                             className={cn('articles-dot', { active: slideIndex === ind }, [
                                 getArticleCustomClasses(ind, slideIndex),
+                                mobileInstructionItem,
                             ])}
                             onClick={handleArticleClick(ind)}
                         >
@@ -243,6 +249,8 @@ Instructions.propTypes = {
     ]),
     classes: PropTypes.shape({
         instructionItem: PropTypes.string,
+        desktopInstructionItem: PropTypes.string,
+        mobileInstructionItem: PropTypes.string,
         activeInstructionItem: PropTypes.string,
         desktopItemTitle: PropTypes.string,
         mobileItemTitle: PropTypes.string,
