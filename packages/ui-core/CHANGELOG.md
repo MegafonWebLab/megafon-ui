@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.167](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.166...@megafon/ui-core@2.0.0-beta.167) (2021-11-15)
+
+
+### Bug Fixes
+
+* **select:** restore keyboard controls ([d78031b](https://github.com/MegafonWebLab/megafon-ui/commit/d78031baf4ee70a69866446f9d32f009f1fcd346))
+
+
+
+
+
 # [2.0.0-beta.166](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.165...@megafon/ui-core@2.0.0-beta.166) (2021-11-15)
 
 
