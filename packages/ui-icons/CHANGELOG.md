@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.2-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.0.2-beta.5...@megafon/ui-icons@0.0.2-beta.6) (2021-11-15)
+
+
+### Bug Fixes
+
+* **ui-icons:** enable some eslint rules and fix problems ([36e0ed6](https://github.com/MegafonWebLab/megafon-ui/commit/36e0ed64876eecc770bf1272ebc87607603ea3fc))
+
+
+
+
+
 ## [0.0.2-beta.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.0.2-beta.4...@megafon/ui-icons@0.0.2-beta.5) (2021-10-07)
 
 

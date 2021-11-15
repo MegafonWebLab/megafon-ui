@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.166](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.165...@megafon/ui-core@2.0.0-beta.166) (2021-11-15)
+
+
+### Bug Fixes
+
+* **textfield:** set empty string as default value ([1bba2bb](https://github.com/MegafonWebLab/megafon-ui/commit/1bba2bbb577acf34fa3bc3c694999ac26f900ef7))
+* **ui-core:** enable some eslint rules and fix problems ([ee8fd03](https://github.com/MegafonWebLab/megafon-ui/commit/ee8fd03d6620cbcff25915f279e481db2193a6d1))
+* **ui-core:** fix ContentArea props ([dbede1d](https://github.com/MegafonWebLab/megafon-ui/commit/dbede1d1a021cc13c2c1872f1b86a8c6a5813b95))
+* **ui-core:** fix RadioButton tests ([f3410f7](https://github.com/MegafonWebLab/megafon-ui/commit/f3410f7b1dd2007d40f17f8ec54905bff76ff994))
+* **ui-core:** fix RedioButton default value ([df1fe2c](https://github.com/MegafonWebLab/megafon-ui/commit/df1fe2c37fc51d10c2ee459cdd5badb6c1ee48fb))
+* **ui-core:** restore defaultProps ([5e2ef7c](https://github.com/MegafonWebLab/megafon-ui/commit/5e2ef7c18c30fb1873b8b7638c299eb066bd1ee3))
+
+
+### Features
+
+* **accordion:** added new type for title ([0275349](https://github.com/MegafonWebLab/megafon-ui/commit/0275349edffec74c4fb08638cbebf7026d99d4cd))
+
+
+
+
+
 # [2.0.0-beta.165](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.164...@megafon/ui-core@2.0.0-beta.165) (2021-11-01)
 
 
