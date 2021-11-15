@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.238](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.237...@megafon/ui-shared@2.0.0-beta.238) (2021-11-15)
+
+
+### Bug Fixes
+
+* **card:** fix icon indent ([5429444](https://github.com/MegafonWebLab/megafon-ui/commit/54294443e0cb8ead74516b0d63ddcf130c29f4f5))
+
+
+### Features
+
+* **instructions:** add mobile and desktop classes for item ([2f27427](https://github.com/MegafonWebLab/megafon-ui/commit/2f27427e665d234f3f175830c0f3f4ea44486de5))
+
+
+
+
+
 # [2.0.0-beta.237](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.236...@megafon/ui-shared@2.0.0-beta.237) (2021-11-15)
 
 
