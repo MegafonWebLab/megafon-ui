@@ -5,13 +5,10 @@ import { content, video, youtubeVideoId } from './VideoBlock.docz';
 ```javascript collapse=Демо данные
 const content: IContent = {
     title: 'Интернет',
-    description: [
-        'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
-        'Монтажник проведёт все необходимые работы под ключ.',
-    ],
+    description: 'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
     href: '#',
-    buttonTitle: 'Подключить',
-}
+    buttonTitle: 'Подключение',
+};
 
 Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
 <VideoBlock videoType='youtube' videoSrc='2Sps5MnvlKM' />

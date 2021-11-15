@@ -55,28 +55,17 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
         className="mfui-beta-video-block__content"
       >
         <Header
-          as="h3"
+          as="h2"
           className="mfui-beta-video-block__header"
           color="black"
           hAlign="inherit"
         >
           Test title
         </Header>
-        <div>
-          <Paragraph
-            className="mfui-beta-video-block__text"
-            hasMargin={false}
-            key="0Test description"
-          >
-            Test description
-          </Paragraph>
-          <Paragraph
-            className="mfui-beta-video-block__text"
-            hasMargin={false}
-            key="1Test description2"
-          >
-            Test description2
-          </Paragraph>
+        <div
+          className="mfui-beta-video-block__description descriptionClass"
+        >
+          Test description
         </div>
         <Button
           className="mfui-beta-video-block__button buttonClass"
@@ -133,28 +122,17 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
         className="mfui-beta-video-block__content"
       >
         <Header
-          as="h3"
+          as="h2"
           className="mfui-beta-video-block__header"
           color="black"
           hAlign="inherit"
         >
           Test title
         </Header>
-        <div>
-          <Paragraph
-            className="mfui-beta-video-block__text"
-            hasMargin={false}
-            key="0Test description"
-          >
-            Test description
-          </Paragraph>
-          <Paragraph
-            className="mfui-beta-video-block__text"
-            hasMargin={false}
-            key="1Test description2"
-          >
-            Test description2
-          </Paragraph>
+        <div
+          className="mfui-beta-video-block__description"
+        >
+          Test description
         </div>
         <Button
           className="mfui-beta-video-block__button"
@@ -211,28 +189,17 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
         className="mfui-beta-video-block__content"
       >
         <Header
-          as="h3"
+          as="h2"
           className="mfui-beta-video-block__header"
           color="black"
           hAlign="inherit"
         >
           Test title
         </Header>
-        <div>
-          <Paragraph
-            className="mfui-beta-video-block__text"
-            hasMargin={false}
-            key="0Test description"
-          >
-            Test description
-          </Paragraph>
-          <Paragraph
-            className="mfui-beta-video-block__text"
-            hasMargin={false}
-            key="1Test description2"
-          >
-            Test description2
-          </Paragraph>
+        <div
+          className="mfui-beta-video-block__description"
+        >
+          Test description
         </div>
         <Button
           className="mfui-beta-video-block__button"
