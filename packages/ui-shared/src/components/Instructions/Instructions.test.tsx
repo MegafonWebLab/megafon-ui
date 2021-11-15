@@ -134,6 +134,8 @@ describe('<Instructions />', () => {
                 {...props}
                 classes={{
                     instructionItem: 'test-class_articleItem',
+                    desktopInstructionItem: 'test-class_desktopInstructionItem',
+                    mobileInstructionItem: 'test-class_mobileInstructionItem',
                     activeInstructionItem: 'test-class_activeArticleItem',
                     desktopItemTitle: 'desktopItemTitle',
                     mobileItemTitle: 'mobileItemTitle',
@@ -145,7 +147,7 @@ describe('<Instructions />', () => {
 
         expect(wrapper).toMatchSnapshot();
     });
-    it('should render with classes props', () => {
+    it('should call getSwiper handler', () => {
         const handleSwiper = jest.fn();
         mount(<Instructions {...props} getSwiper={handleSwiper} />);
 

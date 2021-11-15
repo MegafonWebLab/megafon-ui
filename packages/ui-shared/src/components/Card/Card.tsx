@@ -99,14 +99,14 @@ const Card: React.FC<ICard> = ({
         switch (true) {
             case !!imageSrc: {
                 return (
-                    <div className={cn('pic-wrapper', { 'object-fit': objectFit, img: true })}>
+                    <div className={cn('pic-wrapper', { 'object-fit': objectFit })}>
                         <img className={cn('img')} src={imageSrc} />
                     </div>
                 );
             }
 
             case !!svgSrc: {
-                return <div className={cn('pic-wrapper')}>{svgSrc}</div>;
+                return <div className={cn('svg-wrapper')}>{svgSrc}</div>;
             }
 
             default:

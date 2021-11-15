@@ -59,34 +59,32 @@
         margin: 12px 10px;
     }
 
-    &__pic-wrapper {
-        margin-bottom: 32px;
+    &__svg-wrapper {
+        margin-bottom: 24px;
+    }
 
-        @media @mobileSM {
-            margin-bottom: 24px;
-        }
+    &__svg-wrapper svg {
+        width: 40px;
+        height: 40px;
     }
 
     &__pic-wrapper &__img {
         max-width: 100%;
     }
 
-    &__pic-wrapper svg {
-        width: 40px;
-        height: 40px;
-    }
-
-    &__pic-wrapper_img {
+    &__pic-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: -(@verticalIndent);
         margin-right: -(@horizontalIndent);
+        margin-bottom: 32px;
         margin-left: -(@horizontalIndent);
 
         @media @mobileSM {
             margin-top: -(@verticalIndentSM);
             margin-right: -(@horizontalIndentSM);
+            margin-bottom: 24px;
             margin-left: -(@horizontalIndentSM);
         }
     }
