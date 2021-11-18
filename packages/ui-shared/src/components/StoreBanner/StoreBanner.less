@@ -233,6 +233,10 @@
         transform: translateX(-50%);
     }
 
+    &__button {
+        margin: 0 auto;
+    }
+
     &__links_three {
         @{b}__qr-code {
             object-fit: contain;
@@ -268,8 +272,21 @@
         }
 
         @{b}__store-link {
-            width: 119px;
-            height: 35px;
+            width: 136px;
+            height: 40px;
+
+            @media @mobile {
+                width: 119px;
+                height: 35px;
+            }
+        }
+
+        @{b}__store-link:not(:last-child) {
+            margin-bottom: 8px;
+
+            @media @mobileSM {
+                margin-bottom: 16px;
+            }
         }
 
         @{b}__store-link:not(:first-child) {
