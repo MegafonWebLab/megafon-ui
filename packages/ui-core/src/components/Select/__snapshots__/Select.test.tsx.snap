@@ -38,7 +38,32 @@ exports[`<Select /> it renders with data attributes 1`] = `
     >
       <div
         className="mfui-beta-select__list-inner"
-      />
+      >
+        <div
+          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          key="0_1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            test-name-1
+          </div>
+        </div>
+        <div
+          className="mfui-beta-select__list-item"
+          key="1_2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-select__item-title"
+          >
+            test-name-2
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
