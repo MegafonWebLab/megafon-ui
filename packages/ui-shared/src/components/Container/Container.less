@@ -333,15 +333,24 @@
 
     // k14(button-link-box)
 
-    @{k14} + @{k16} {
-        margin-top: @large;
+    .generateComponentsMargins(@large, @k14, 15, 16);
 
-        @media @mobileB {
-            margin-top: @big;
-        }
-        @media @mobileSM {
-            margin-top: @medium;
-        }
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k14, 15, 16);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k14, 15, 16);
+    }
+
+    // k15(download-links)
+
+    .generateComponentsMargins(@large, @k15, 16, 16);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k15, 16, 16);
+    }
+    @media @mobileSM {
+        .generateComponentsMargins(@medium, @k15, 16, 16);
     }
 
     // k16(text-box)
