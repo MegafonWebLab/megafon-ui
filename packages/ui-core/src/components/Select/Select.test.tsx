@@ -281,7 +281,7 @@ describe('<Select />', () => {
     });
 
     it('it renders with data attributes', () => {
-        const wrapper = shallow(<Select dataAttrs={props.dataAttrs} />);
+        const wrapper = shallow(<Select dataAttrs={props.dataAttrs} items={props.items} />);
         expect(wrapper).toMatchSnapshot();
     });
 
