@@ -6008,7 +6008,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
               className="mfui-beta-instructions__articles-dots"
             >
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active test-class_articleItem test-class_activeArticleItem test-class_mobileInstructionItem"
+                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active test-class_activeArticleItem test-class_articleItem test-class_mobileInstructionItem"
                 key="0"
                 onClick={[Function]}
               >
@@ -6035,7 +6035,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
             className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active test-class_articleItem test-class_activeArticleItem test-class_desktopInstructionItem"
+              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active test-class_activeArticleItem test-class_articleItem test-class_desktopInstructionItem"
               data-index={0}
               key="0"
               onClick={[Function]}
