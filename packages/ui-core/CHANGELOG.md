@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.168](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.167...@megafon/ui-core@2.0.0-beta.168) (2021-11-23)
+
+
+### Features
+
+* **carousel:** fix effect fade ([359fd55](https://github.com/MegafonWebLab/megafon-ui/commit/359fd55990ac7e018917301bb4b3ae12d0e133e0))
+* **select:** update items prop typings ([280d581](https://github.com/MegafonWebLab/megafon-ui/commit/280d5818aee2a8b8f596bb25b3752e5729a8edb3))
+
+
+### BREAKING CHANGES
+
+* **select:** items prop reuired and has exact structure in propType
+
+
+
+
+
 # [2.0.0-beta.167](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.166...@megafon/ui-core@2.0.0-beta.167) (2021-11-15)
 
 

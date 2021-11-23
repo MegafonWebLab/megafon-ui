@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.240](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.239...@megafon/ui-shared@2.0.0-beta.240) (2021-11-23)
+
+
+### Bug Fixes
+
+* **instructions:** fix activeInstructionItem class ([4f4c611](https://github.com/MegafonWebLab/megafon-ui/commit/4f4c611d5fdb227f00c164cc2bcfae6f6eb91c5e))
+
+
+### Features
+
+* **container:** add new indents to child components ([02a4d5b](https://github.com/MegafonWebLab/megafon-ui/commit/02a4d5b819d7c0c653ab819df04c1f069a94c3b1))
+* **storebanner:** fixed style and changed buttons image ([87b77a8](https://github.com/MegafonWebLab/megafon-ui/commit/87b77a8e5da178f8273287bd1be85ac7ccd8f0bd))
+
+
+
+
+
 # [2.0.0-beta.239](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.238...@megafon/ui-shared@2.0.0-beta.239) (2021-11-15)
 
 **Note:** Version bump only for package @megafon/ui-shared
