@@ -90,15 +90,15 @@ const Instructions: React.FC<IInstructionsProps> = ({
         getSwiper && getSwiper(swiper);
     }, []);
 
-    const getArticleCustomClasses = React.useCallback(
+    const getActiveCustomClass = React.useCallback(
         (articleIndex: number, activeIndex: number) => {
-            if (!instructionItem || !activeInstructionItem) {
+            if (articleIndex !== activeIndex) {
                 return;
             }
 
-            return articleIndex === activeIndex ? `${instructionItem} ${activeInstructionItem}` : instructionItem;
+            return activeInstructionItem;
         },
-        [instructionItem, activeInstructionItem],
+        [activeInstructionItem],
     );
 
     const handleArticleClick = React.useCallback(
@@ -172,7 +172,8 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 {instructionItems.map(({ title: itemTitle }, ind) => (
                     <li
                         className={cn('articles-item', { active: slideIndex === ind }, [
-                            getArticleCustomClasses(ind, slideIndex),
+                            getActiveCustomClass(ind, slideIndex),
+                            instructionItem,
                             desktopInstructionItem,
                         ])}
                         data-index={ind}
@@ -208,7 +209,8 @@ const Instructions: React.FC<IInstructionsProps> = ({
                         <div
                             key={ind}
                             className={cn('articles-dot', { active: slideIndex === ind }, [
-                                getArticleCustomClasses(ind, slideIndex),
+                                getActiveCustomClass(ind, slideIndex),
+                                instructionItem,
                                 mobileInstructionItem,
                             ])}
                             onClick={handleArticleClick(ind)}

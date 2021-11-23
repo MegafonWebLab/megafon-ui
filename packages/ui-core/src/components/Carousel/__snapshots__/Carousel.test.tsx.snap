@@ -107,6 +107,11 @@ exports[`<Carousel /> should render with props 1`] = `
     className="mfui-beta-carousel__swiper innerIndentsClass container"
     containerModifierClass="containerModifier"
     effect="fade"
+    fadeEffect={
+      Object {
+        "crossFade": true,
+      }
+    }
     initialSlide={0}
     loop={true}
     noSwipingSelector=".swiper-pagination, button"

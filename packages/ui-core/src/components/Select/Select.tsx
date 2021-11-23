@@ -118,24 +118,24 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             arrow: PropTypes.string,
         }),
         items: PropTypes.arrayOf(
-            PropTypes.shape({
+            PropTypes.exact({
                 view: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
-                title: PropTypes.string,
-                value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+                selectedView: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
+                title: PropTypes.string.isRequired,
+                value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
             }),
-        ),
+        ).isRequired,
         onSelect: PropTypes.func,
         dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
         onOpened: PropTypes.func,
         onClosed: PropTypes.func,
     };
 
-    static defaultProps: Partial<ISelectProps<never>> = {
+    static defaultProps = {
         disabled: false,
         required: false,
         type: 'classic',
         notFoundText: 'Ничего не нашлось',
-        items: [],
     };
 
     itemWrapperNode: HTMLDivElement;
