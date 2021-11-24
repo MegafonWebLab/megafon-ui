@@ -239,6 +239,19 @@ const Carousel: React.FC<ICarouselProps> = ({
         [],
     );
 
+    const handleSlideFocus = (e: React.FocusEvent, index: number) => {
+        if (loop) {
+            const slide = (e.nativeEvent.target as Element).closest('.swiper-slide');
+            const realIndex = Array.prototype.indexOf.call(slide?.parentNode?.children, slide);
+
+            swiperInstance?.slideTo(realIndex);
+
+            return;
+        }
+
+        swiperInstance?.slideTo(index);
+    };
+
     return (
         <div
             {...filterDataAttrs(dataAttrs)}
@@ -283,8 +296,14 @@ const Carousel: React.FC<ICarouselProps> = ({
                 onResize={handleSwiperResize}
             >
                 {React.Children.map(children, (child, i) => (
-                    <SwiperSlide key={i} className={cn('slide', slideClass)}>
-                        {child}
+                    <SwiperSlide
+                        key={i}
+                        className={cn('slide', slideClass)}
+                        onFocus={e => {
+                            handleSlideFocus(e, i);
+                        }}
+                    >
+                        <div>{child}</div>
                     </SwiperSlide>
                 ))}
             </Swiper>
