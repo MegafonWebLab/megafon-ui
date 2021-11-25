@@ -27,59 +27,59 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
         className="mfui-beta-search__icon"
       />
     </div>
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title2
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title2
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title3
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title3
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title4
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title4
+          </div>
         </div>
       </div>
     </div>
@@ -114,59 +114,59 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
         className="mfui-beta-search__icon icon-outer"
       />
     </div>
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title wrap-text-test"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title
+          <div
+            className="mfui-beta-search__item-title wrap-text-test"
+          >
+            title
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title wrap-text-test"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title2
+          <div
+            className="mfui-beta-search__item-title wrap-text-test"
+          >
+            title2
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title wrap-text-test"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title3
+          <div
+            className="mfui-beta-search__item-title wrap-text-test"
+          >
+            title3
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title wrap-text-test"
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title4
+          <div
+            className="mfui-beta-search__item-title wrap-text-test"
+          >
+            title4
+          </div>
         </div>
       </div>
     </div>
@@ -193,59 +193,59 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
       type="text"
       value="initial value"
     />
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title2
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title2
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title3
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title3
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title4
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title4
+          </div>
         </div>
       </div>
     </div>
@@ -310,144 +310,144 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
         className="mfui-beta-search__icon"
       />
     </div>
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          <div>
+          <div
+            className="mfui-beta-search__item-title"
+          >
             <div>
-              <b>
-                ИП Баранник Александр Николаевич 
-                1
-              </b>
-            </div>
-            <div>
-              <b>
-                ИНН: 503209463031
-              </b>
-            </div>
-            <div>
-              Московская обл, Одинцовский р-н, г Одинцово
+              <div>
+                <b>
+                  ИП Баранник Александр Николаевич 
+                  1
+                </b>
+              </div>
+              <div>
+                <b>
+                  ИНН: 503209463031
+                </b>
+              </div>
+              <div>
+                Московская обл, Одинцовский р-н, г Одинцово
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          <div>
+          <div
+            className="mfui-beta-search__item-title"
+          >
             <div>
-              <b>
-                ИП Баранник Александр Николаевич 
-                2
-              </b>
-            </div>
-            <div>
-              <b>
-                ИНН: 503209463031
-              </b>
-            </div>
-            <div>
-              Московская обл, Одинцовский р-н, г Одинцово
+              <div>
+                <b>
+                  ИП Баранник Александр Николаевич 
+                  2
+                </b>
+              </div>
+              <div>
+                <b>
+                  ИНН: 503209463031
+                </b>
+              </div>
+              <div>
+                Московская обл, Одинцовский р-н, г Одинцово
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          <div>
+          <div
+            className="mfui-beta-search__item-title"
+          >
             <div>
-              <b>
-                ИП Баранник Александр Николаевич 
-                3
-              </b>
-            </div>
-            <div>
-              <b>
-                ИНН: 503209463031
-              </b>
-            </div>
-            <div>
-              Московская обл, Одинцовский р-н, г Одинцово
+              <div>
+                <b>
+                  ИП Баранник Александр Николаевич 
+                  3
+                </b>
+              </div>
+              <div>
+                <b>
+                  ИНН: 503209463031
+                </b>
+              </div>
+              <div>
+                Московская обл, Одинцовский р-н, г Одинцово
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          <div>
+          <div
+            className="mfui-beta-search__item-title"
+          >
             <div>
-              <b>
-                ИП Баранник Александр Николаевич 
-                4
-              </b>
-            </div>
-            <div>
-              <b>
-                ИНН: 503209463031
-              </b>
-            </div>
-            <div>
-              Московская обл, Одинцовский р-н, г Одинцово
+              <div>
+                <b>
+                  ИП Баранник Александр Николаевич 
+                  4
+                </b>
+              </div>
+              <div>
+                <b>
+                  ИНН: 503209463031
+                </b>
+              </div>
+              <div>
+                Московская обл, Одинцовский р-н, г Одинцово
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="4"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="4"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          <div>
+          <div
+            className="mfui-beta-search__item-title"
+          >
             <div>
-              <b>
-                ИП Баранник Александр Николаевич 
-                5
-              </b>
-            </div>
-            <div>
-              <b>
-                ИНН: 503209463031
-              </b>
-            </div>
-            <div>
-              Московская обл, Одинцовский р-н, г Одинцово
+              <div>
+                <b>
+                  ИП Баранник Александр Николаевич 
+                  5
+                </b>
+              </div>
+              <div>
+                <b>
+                  ИНН: 503209463031
+                </b>
+              </div>
+              <div>
+                Московская обл, Одинцовский р-н, г Одинцово
+              </div>
             </div>
           </div>
         </div>
@@ -492,59 +492,59 @@ exports[`<Search /> snapshots renders with label and required props 1`] = `
         className="mfui-beta-search__icon"
       />
     </div>
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title2
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title2
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title3
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title3
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title4
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title4
+          </div>
         </div>
       </div>
     </div>
@@ -579,59 +579,59 @@ exports[`<Search /> snapshots renders with noticeText and verification="error" 1
         className="mfui-beta-search__icon"
       />
     </div>
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title2
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title2
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title3
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title3
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title4
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title4
+          </div>
         </div>
       </div>
     </div>
@@ -671,59 +671,59 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
         className="mfui-beta-search__icon"
       />
     </div>
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title2
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title2
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title3
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title3
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title4
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title4
+          </div>
         </div>
       </div>
     </div>
@@ -763,63 +763,63 @@ exports[`<Search /> typing highlighted text 1`] = `
         className="mfui-beta-search__icon"
       />
     </div>
-  </div>
-  <div
-    className="mfui-beta-search__list"
-  >
     <div
-      className="mfui-beta-search__list-inner"
+      className="mfui-beta-search__list"
     >
       <div
-        className="mfui-beta-search__list-item"
-        key="0"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
+        className="mfui-beta-search__list-inner"
       >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="0"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title
-        </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="1"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
-        <div
-          className="mfui-beta-search__item-title"
-        >
-          <span
-            className="mfui-beta-search__highlighted-fragment"
+          <div
+            className="mfui-beta-search__item-title"
           >
-            title2
-          </span>
+            title
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="2"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="1"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title3
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            <span
+              className="mfui-beta-search__highlighted-fragment"
+            >
+              title2
+            </span>
+          </div>
         </div>
-      </div>
-      <div
-        className="mfui-beta-search__list-item"
-        key="3"
-        onMouseDown={[Function]}
-        onMouseEnter={[Function]}
-      >
         <div
-          className="mfui-beta-search__item-title"
+          className="mfui-beta-search__list-item"
+          key="2"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
         >
-          title4
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title3
+          </div>
+        </div>
+        <div
+          className="mfui-beta-search__list-item"
+          key="3"
+          onMouseDown={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-beta-search__item-title"
+          >
+            title4
+          </div>
         </div>
       </div>
     </div>
