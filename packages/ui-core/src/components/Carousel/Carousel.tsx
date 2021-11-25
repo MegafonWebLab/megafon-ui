@@ -239,9 +239,14 @@ const Carousel: React.FC<ICarouselProps> = ({
         [],
     );
 
-    const handleSlideFocus = (e: React.FocusEvent, index: number) => {
+    const handleSlideFocus = (index: number) => (e: React.FocusEvent) => {
         if (loop) {
-            const slide = (e.nativeEvent.target as Element).closest('.swiper-slide');
+            // для корректной прокрутки зацикленной карусели к сфокусированному элементу, необходимо получить его реальный индекс
+            // в коллекции DOM - элементов слайдов, т.к. swiper такой информацией не владеет,
+            // а оперирует data-swiper-slide-index, значения которых находятся в диапазоне от 0 до children.length - 1,
+            // но прокрутку методом slideTo осущетсвляет, используя индекс в DOM - коллекции
+            const slideSelector = `.${cn('slide')}`;
+            const slide = (e.nativeEvent.target as Element).closest(slideSelector);
             const realIndex = Array.prototype.indexOf.call(slide?.parentNode?.children, slide);
 
             swiperInstance?.slideTo(realIndex);
@@ -296,14 +301,8 @@ const Carousel: React.FC<ICarouselProps> = ({
                 onResize={handleSwiperResize}
             >
                 {React.Children.map(children, (child, i) => (
-                    <SwiperSlide
-                        key={i}
-                        className={cn('slide', slideClass)}
-                        onFocus={e => {
-                            handleSlideFocus(e, i);
-                        }}
-                    >
-                        <div>{child}</div>
+                    <SwiperSlide key={i} className={cn('slide', slideClass)} onFocus={handleSlideFocus(i)}>
+                        {child}
                     </SwiperSlide>
                 ))}
             </Swiper>
