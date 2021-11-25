@@ -43,6 +43,8 @@ export interface ISearchProps {
     verification?: VerificationType;
     /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
+    /** Управление возможностью взаимодействия с компонентом */
+    disabled?: boolean;
     /** Делает поле обязательным */
     required?: boolean;
     /** Дополнительный класс корневого элемента */
@@ -70,6 +72,7 @@ const Search: React.FC<ISearchProps> = ({
     items = [],
     changeDelay = 250,
     verification,
+    disabled,
     required,
     noticeText,
     className,
@@ -118,11 +121,15 @@ const Search: React.FC<ISearchProps> = ({
 
     const handleItemSubmit: HandleItemSubmit = React.useCallback(
         (index: number): void => {
+            if (disabled) {
+                return;
+            }
+
             const chosenValue = items[index].value;
 
             onSubmit && onSubmit(chosenValue);
         },
-        [items, onSubmit],
+        [disabled, items, onSubmit],
     );
 
     const handleSelectSubmit: HandleSelectSubmit = React.useCallback(
@@ -176,6 +183,12 @@ const Search: React.FC<ISearchProps> = ({
         debouncedOnChange.current = debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay);
     }, [changeDelay, onChange]);
 
+    React.useEffect(() => {
+        if (isFocused && disabled) {
+            setFocus(false);
+        }
+    }, [disabled, isFocused]);
+
     const highlightString = (title: string) => {
         const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
         const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
@@ -196,7 +209,7 @@ const Search: React.FC<ISearchProps> = ({
     };
 
     return (
-        <div className={cn({ open: isFocused }, [className])}>
+        <div className={cn({ open: isFocused, disabled }, [className])}>
             {label && (
                 <InputLabel>
                     {label}
@@ -213,6 +226,7 @@ const Search: React.FC<ISearchProps> = ({
                     onBlur={handleBlur}
                     onKeyDown={handleKeyDown}
                     onClick={handleClick}
+                    disabled={disabled}
                     type="text"
                     autoComplete="off"
                 />
@@ -272,6 +286,7 @@ Search.propTypes = {
     changeDelay: PropTypes.number,
     verification: PropTypes.oneOf(['valid', 'error']),
     noticeText: PropTypes.string,
+    disabled: PropTypes.bool,
     required: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({

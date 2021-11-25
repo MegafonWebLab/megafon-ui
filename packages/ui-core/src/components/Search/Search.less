@@ -156,6 +156,19 @@
         z-index: 12;
     }
 
+    &_disabled &__control {
+        border-color: @spbSky1;
+
+        background-color: @spbSky1;
+        cursor: default;
+
+        pointer-events: none;
+    }
+
+    &_disabled &__icon {
+        opacity: 0.5;
+    }
+
     &__highlighted-fragment {
         font-weight: bold;
     }
