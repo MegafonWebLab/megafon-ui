@@ -71,7 +71,7 @@ export interface ITooltipProps {
     /** Обработчик на открытие */
     onOpen?: (e: MouseEvent) => void;
     /** Обработчик на закрытие */
-    onClose?: (e: MouseEvent) => void;
+    onClose?: (e: MouseEvent | FocusEvent) => void;
 }
 
 const cn = cnCreate('mfui-beta-tooltip');
@@ -193,18 +193,34 @@ const Tooltip: React.FC<ITooltipProps> = ({
         [onClose, currentTrigger, popperElement, setIsOpen],
     );
 
+    const handleBlurEvent = useCallback(
+        (e: FocusEvent): void => {
+            setIsOpen(false);
+            onClose && onClose(e);
+        },
+        [onClose, setIsOpen],
+    );
+
     useEffect(() => {
         if (triggerEventName === TriggerEvent.HOVER) {
-            currentTrigger && currentTrigger.addEventListener('mouseenter', handleMouseEnter);
+            if (currentTrigger) {
+                currentTrigger.addEventListener('mouseenter', handleMouseEnter);
+                currentTrigger.addEventListener('focus', handleMouseEnter);
+            }
 
             if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
+                currentTrigger && currentTrigger.addEventListener('blur', handleBlurEvent);
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
+                currentTrigger && currentTrigger.removeEventListener('blur', handleBlurEvent);
             }
 
             return () => {
-                currentTrigger && currentTrigger.removeEventListener('mouseenter', handleMouseEnter);
+                if (currentTrigger) {
+                    currentTrigger.removeEventListener('mouseenter', handleMouseEnter);
+                    currentTrigger.removeEventListener('focus', handleMouseEnter);
+                }
                 document.removeEventListener('mouseover', handleOutsideEvent);
             };
         }
