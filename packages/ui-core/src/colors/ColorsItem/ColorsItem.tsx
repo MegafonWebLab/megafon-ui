@@ -9,11 +9,12 @@ type Props = {
     parentColorCode?: string;
     gradient?: string;
     border?: string;
+    className?: string;
 };
 
 const cn = cnCreate('colors-item');
-const ColorsItem: React.FC<Props> = ({ colorCode, colorName, parentColorCode, gradient, border }) => (
-    <div className={cn()}>
+const ColorsItem: React.FC<Props> = ({ colorCode, colorName, parentColorCode, gradient, border, className }) => (
+    <div className={cn([className])}>
         <div className={cn('container')}>
             <div
                 className={cn('color')}

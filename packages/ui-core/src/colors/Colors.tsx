@@ -8,14 +8,17 @@ import Tile from 'components/Tile/Tile';
 import colorsData from './colorsData';
 import ColorsItem from './ColorsItem/ColorsItem';
 import Diagram from './diagram.svg';
-import UnderLine from './underline.svg';
 import './Colors.less';
 
 const { basic, secondary, system, gradientColors, staticColors, staticOpacity, soft } = colorsData;
 
 const cn = cnCreate('colors');
 const Colors = () => {
-    const renderUnderline = () => <UnderLine className={cn('underline')} />;
+    const renderUnderline = () => (
+        <div className={cn('underline')}>
+            <span className={cn('pointer')} />
+        </div>
+    );
 
     const renderBasicsColors = (): JSX.Element => {
         const { title, colorsGroup } = basic;
@@ -27,10 +30,21 @@ const Colors = () => {
                 </Header>
                 <Grid>
                     {colorsGroup.map(({ description, colors }, index) => (
-                        <GridColumn key={description} className={cn('basic-group')} all={!index ? '3' : '9'}>
+                        <GridColumn
+                            key={description}
+                            className={cn('basic-group')}
+                            all={!index ? '3' : '9'}
+                            mobile="12"
+                        >
                             <div className={cn('list')}>
                                 {colors.map(({ name, code, border = '' }) => (
-                                    <ColorsItem colorName={name} colorCode={code} key={name} border={border} />
+                                    <ColorsItem
+                                        className={cn('item')}
+                                        colorName={name}
+                                        colorCode={code}
+                                        key={name}
+                                        border={border}
+                                    />
                                 ))}
                             </div>
                             {renderUnderline()}
@@ -49,7 +63,14 @@ const Colors = () => {
             </Header>
             <div className={cn('list')}>
                 {items.colorsGroup.colors.map(({ name, code, gradient = '', border = '' }) => (
-                    <ColorsItem colorName={name} colorCode={code} gradient={gradient} key={name} border={border} />
+                    <ColorsItem
+                        className={cn('item')}
+                        colorName={name}
+                        colorCode={code}
+                        gradient={gradient}
+                        key={name}
+                        border={border}
+                    />
                 ))}
             </div>
             {renderUnderline()}
@@ -64,21 +85,17 @@ const Colors = () => {
 
         return (
             <div className={cn('soft-list')}>
-                <div className={cn('list')}>
-                    {colors.map(({ name, code, parentColor = '' }, index) => (
-                        <div
+                <div className={cn('list', { soft: true })}>
+                    {colors.map(({ name, code, parentColor = '' }) => (
+                        <ColorsItem
+                            className={cn('item', { soft: true })}
+                            colorName={name}
+                            colorCode={code}
+                            parentColorCode={parentColor}
                             key={name}
-                            className={cn('soft-item')}
-                            style={{
-                                width: `${100 / (colors.length / 2)}%`,
-                                marginBottom: index > 6 ? '0' : '36px',
-                            }}
-                        >
-                            <ColorsItem colorName={name} colorCode={code} parentColorCode={parentColor} />
-                        </div>
+                        />
                     ))}
                 </div>
-                {renderUnderline()}
                 <div className={cn('description')}>{description}</div>
             </div>
         );
@@ -92,12 +109,25 @@ const Colors = () => {
                 <div className={cn('container')}>
                     {renderBasicsColors()}
                     <Grid hAlign="between">
-                        <GridColumn all="6">{renderColorBlock(secondary)}</GridColumn>
-                        <GridColumn all="5">{renderColorBlock(system)}</GridColumn>
+                        <GridColumn all="6" mobile="12" tablet="12">
+                            {renderColorBlock(secondary)}
+                        </GridColumn>
+                        <GridColumn all="5" mobile="12" tablet="12">
+                            {renderColorBlock(system)}
+                        </GridColumn>
                     </Grid>
                     <Grid>
-                        <GridColumn all="5">{renderColorBlock(gradientColors)}</GridColumn>
-                        <GridColumn all="3" leftOffsetAll="1">
+                        <GridColumn all="5" mobile="12" tablet="12">
+                            {renderColorBlock(gradientColors)}
+                        </GridColumn>
+                        <GridColumn
+                            all="3"
+                            leftOffsetWide="1"
+                            leftOffsetTablet="1"
+                            leftOffsetDesktop="1"
+                            mobile="12"
+                            tablet="12"
+                        >
                             {renderColorBlock(staticColors)}
                         </GridColumn>
                     </Grid>

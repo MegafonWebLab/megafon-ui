@@ -94,7 +94,7 @@
         height: 20px;
         margin-top: 4px;
 
-        fill: @link;
+        fill: @systemBlue;
     }
 
     &__close {
@@ -119,7 +119,7 @@
         width: 20px;
         height: 20px;
 
-        fill: @freshAsphalt;
+        fill: @content;
 
         @media @mobileBU {
             width: 32px;
@@ -154,10 +154,10 @@
     &_type_warning {
         @{b} {
             &__icon-container {
-                background-color: @mandarin20;
+                background-color: @Pantone137C20;
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @mandarin;
+                    fill: @Pantone137C;
                 }
             }
         }
@@ -178,11 +178,11 @@
     &_colored {
         @{b} {
             &__icon-container {
-                background-color: @clearWhite;
+                background-color: @base;
             }
 
             &__close:hover {
-                background-color: @clearWhite60;
+                background-color: @base60;
             }
         }
     }
@@ -194,18 +194,18 @@
             &__title,
             &__text,
             &__link {
-                color: @clearWhite;
+                color: @base;
             }
 
             &__right-arrow {
-                fill: @clearWhite;
+                fill: @base;
             }
 
             &__icon-container {
-                background-color: @clearWhite20;
+                background-color: @base20;
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @clearWhite;
+                    fill: @base;
                 }
             }
         }
@@ -223,7 +223,7 @@
         background-color: @warning;
 
         @{b}__icon-container svg {
-            fill: @mandarin;
+            fill: @Pantone137C;
         }
     }
 

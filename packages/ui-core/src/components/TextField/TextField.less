@@ -5,7 +5,7 @@
 @{b} {
     .fontFamily();
     .commonFont();
-    color: @freshAsphalt;
+    color: @content;
 
     &__field {
         .fontFamily();
@@ -44,15 +44,15 @@
     }
 
     input::-webkit-input-placeholder {
-        color: @freshAsphaltLighten50;
+        color: @contentLighten50;
     }
 
     input:-moz-placeholder {
-        color: @freshAsphaltLighten50;
+        color: @contentLighten50;
     }
 
     input:-ms-input-placeholder {
-        color: @freshAsphaltLighten50;
+        color: @contentLighten50;
     }
 
     input::-ms-clear,
@@ -65,7 +65,7 @@
 
         flex: 1 0 100px;
 
-        background: @clearWhite;
+        background: @base;
     }
 
     &__icon-box {
@@ -137,14 +137,14 @@
         &__field {
             border: 1px solid @spbSky2;
 
-            color: @freshAsphalt;
+            color: @content;
 
             background-color: transparent;
         }
 
         &__field-wrapper_no-touch:hover @{b}__field,
         &__field:focus {
-            border-color: @freshAsphalt;
+            border-color: @content;
         }
     }
 
@@ -176,14 +176,14 @@
 
     &_theme_white & {
         &__field {
-            border: 1px solid @clearWhite;
+            border: 1px solid @base;
 
-            color: @freshAsphalt;
+            color: @content;
         }
 
         &__field-wrapper:hover @{b}__field,
         &__field:focus {
-            border-color: @freshAsphalt;
+            border-color: @content;
         }
     }
 
@@ -216,10 +216,10 @@
         &__field {
             border-color: @spbSky1 !important;
 
-            color: @freshAsphalt !important;
+            color: @content !important;
 
             cursor: default !important;
-            -webkit-text-fill-color: @freshAsphalt !important;
+            -webkit-text-fill-color: @content !important;
         }
 
         &__icon-box {

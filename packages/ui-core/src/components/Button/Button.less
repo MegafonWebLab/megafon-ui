@@ -12,7 +12,7 @@
     border: none;
     border-radius: 30px;
 
-    color: @clearWhite;
+    color: @base;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -93,12 +93,12 @@
     // theme = green
 
     &_type_primary&_theme_green {
-        color: @clearWhite;
+        color: @base;
 
         background-color: @green;
 
         svg {
-            fill: @clearWhite;
+            fill: @base;
         }
     }
 
@@ -118,12 +118,12 @@
     // theme = purple
 
     &_type_primary&_theme_purple {
-        color: @clearWhite;
+        color: @base;
 
         background-color: @purple;
 
         svg {
-            fill: @clearWhite;
+            fill: @base;
         }
     }
 
@@ -143,24 +143,24 @@
     // theme = white
 
     &_type_primary&_theme_white {
-        color: @freshAsphalt;
+        color: @content;
 
-        background-color: @clearWhite;
+        background-color: @base;
 
         svg {
-            fill: @freshAsphalt;
+            fill: @content;
         }
     }
 
     &_no-touch&_type_primary&_theme_white {
         &:not(@{b}_loading):hover {
-            color: @clearWhite;
+            color: @base;
 
             background-color: @buttonHoverGreen;
             box-shadow: inset 0 0 0 1px @buttonHoverGreen;
 
             svg {
-                fill: @clearWhite;
+                fill: @base;
             }
         }
 
@@ -222,23 +222,23 @@
     // theme = white
 
     &_type_outline&_theme_white {
-        color: @clearWhite;
+        color: @base;
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @clearWhite;
+        box-shadow: inset 0 0 0 1px @base;
 
         svg {
-            fill: @clearWhite;
+            fill: @base;
         }
     }
 
     &_no-touch&_type_outline&_theme_white {
         &:not(@{b}_loading):hover {
-            background-color: fade(@clearWhite, 7);
+            background-color: fade(@base, 7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@clearWhite, 14);
+            background-color: fade(@base, 14);
         }
     }
 
@@ -246,23 +246,23 @@
     // theme = black
 
     &_type_outline&_theme_black {
-        color: @freshAsphalt;
+        color: @content;
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @freshAsphalt;
+        box-shadow: inset 0 0 0 1px @content;
 
         svg {
-            fill: @freshAsphalt;
+            fill: @content;
         }
     }
 
     &_no-touch&_type_outline&_theme_black {
         &:not(@{b}_loading):hover {
-            background-color: fade(@freshAsphalt, 7);
+            background-color: fade(@content, 7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@freshAsphalt, 14);
+            background-color: fade(@content, 14);
         }
     }
 
@@ -279,13 +279,13 @@
     &&_no-touch&_type_primary&_disabled,
     &&_no-touch&_type_primary&_disabled:hover,
     &&_no-touch&_type_primary&_disabled:active {
-        color: @freshAsphalt50;
+        color: @STCBlack50;
 
         background-color: @spbSky1;
         box-shadow: inset 0 0 0 1px @spbSky2;
 
         svg {
-            fill: @freshAsphalt50;
+            fill: @STCBlack50;
         }
     }
 
@@ -293,13 +293,13 @@
     &&_no-touch&_type_outline&_theme_white&_disabled,
     &&_no-touch&_type_outline&_theme_white&_disabled:hover,
     &&_no-touch&_type_outline&_theme_white&_disabled:active {
-        color: @clearWhite50;
+        color: @STCWhite50;
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @clearWhite50;
+        box-shadow: inset 0 0 0 1px @STCWhite50;
 
         svg {
-            fill: @clearWhite50;
+            fill: @STCWhite50;
         }
     }
 
@@ -307,13 +307,13 @@
     &&_no-touch&_type_outline&_disabled,
     &&_no-touch&_type_outline&_disabled:hover,
     &&_no-touch&_type_outline&_disabled:active {
-        color: @freshAsphalt50;
+        color: @STCBlack50;
 
         background-color: transparent;
         box-shadow: inset 0 0 0 1px @spbSky2;
 
         svg {
-            fill: @freshAsphalt50;
+            fill: @STCBlack50;
         }
     }
 }

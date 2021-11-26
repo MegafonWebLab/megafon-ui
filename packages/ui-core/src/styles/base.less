@@ -1,24 +1,64 @@
 // Basic Colors
 @green: #00B956;
 @purple: #731982;
-@clearWhite: #FFFFFF;
+@base: #FFFFFF;
 @spbSky0: #F6F6F6;
 @spbSky1: #EDEDED;
 @spbSky2: #D8D8D8;
-@freshAsphalt: #333333;
+@spbSky3: #999999;
+@content: #333333;
 @fullBlack: #000000;
 
 // Secondary Colors
 @warmRedC: #EB5A40;
-@mandarin: #FFA717;
+@Pantone137C: #FFA717;
 @Pantone311C: #5BD9E5;
 @reflexBlue: #444189;
 
 // System Colors
 @fury: #F62434;
-@link: #34AAF2;
+@systemBlue: #34AAF2;
+@background: #FFFFFF;
+
+// Gradients
+@basic: linear-gradient(90deg, #01873F 0%, #00B956 74%, #14CD6A 100%);
+@vip: linear-gradient(90deg, #5B1168 0%, #731982 74%, #821E93 100%);
+@exclusive: linear-gradient(90deg, #2A2674 0%, #444189 74%, #504D93 100%);
+
+// Static
+@STCBlack: #333333;
+@STCWhite: #FFFFFF;
+
+// Static Opacity
+
+@base5: #FFFFFF0D;
+@base10: #FFFFFF1A;
+@base20: #FFFFFF33;
+@STCWhite50: #FFFFFF80;
+@STCBlack5: #3333330D;
+@STCBlack10: #3333331A;
+@STCBlack20: #33333333;
+@STCBlack50: #33333380;
+
+// Soft (new)
+@green80: #0CDC78;
+@green20: #DDFFEC;
+@purple80: #AA67C1;
+@purple20: #FFEEFF;
+@warmRedC80: #FF765D;
+@warmRedC20: #FFCFC7;
+@Pantone137C80: #FFB945;
+@Pantone137C20: #FFEDD1;
+@Pantone311C80: #62E3FF;
+@Pantone311C20: #E1FAFF;
+@reflexBlue80: #554FC9;
+@reflexBlue20: #EBEAFF;
+@fury80: #F8505D;
+@fury20: #FFC5C9;
+
+// old colors
 @buttonHoverGreen: #10E272;
-@buttonhoverPurple: #A500BF;
+@buttonhoverPurple: #534455;
 @buttonDown: #404D46;
 
 // Notification Colors
@@ -29,19 +69,16 @@
 @warning: #FFEDD1;
 @green20: fade(@green, 20);
 @warmRedC20: fade(@warmRedC, 20);
-@mandarin20: fade(@mandarin, 20);
+@Pantone137C20: fade(@Pantone137C, 20);
 @Pantone311C20: fade(@Pantone311C, 20);
 @spbSky160: fade(@spbSky1, 60);
-@clearWhite60: fade(@clearWhite, 60);
-@clearWhite20: fade(@clearWhite, 20);
+@base60: fade(@base, 60);
 
 // Additional Colors Variants
-@clearWhite50: fade(@clearWhite, 50);
-@freshAsphalt25: fade(@freshAsphalt, 25);
-@freshAsphalt50: fade(@freshAsphalt, 50);
+@content25: fade(@content, 25);
 @fullBlack25: fade(@fullBlack, 25);
 @fullBlack50: fade(@fullBlack, 50);
-@freshAsphaltLighten50: lighten(@freshAsphalt, 50);
+@contentLighten50: lighten(@content, 50);
 
 // BREAKPOINTS
 @mobileSmallEnd:      479px;
@@ -199,7 +236,7 @@ h5 {
 }
 
 .link() {
-    color: @link;
+    color: @systemBlue;
     text-decoration: none;
 
     &:hover {

@@ -11,16 +11,7 @@ export interface IParagraphProps {
     /** Вертикальный отступ (включен по умолчанию) */
     hasMargin?: boolean;
     /** Цвет текста */
-    color?:
-        | 'green'
-        | 'purple'
-        | 'clearWhite'
-        | 'spbSky0'
-        | 'spbSky1'
-        | 'spbSky2'
-        | 'freshAsphalt'
-        | 'fullBlack'
-        | 'inherit';
+    color?: 'green' | 'purple' | 'base' | 'spbSky0' | 'spbSky1' | 'spbSky2' | 'content' | 'fullBlack' | 'inherit';
     /** Дополнительный класс корневого элемента */
     className?: string;
 }
@@ -29,7 +20,7 @@ const cn = cnCreate('mfui-paragraph');
 const Paragraph: React.FC<IParagraphProps> = ({
     size = 'regular',
     align,
-    color = 'freshAsphalt',
+    color = 'content',
     className,
     hasMargin = true,
     children,
@@ -56,11 +47,11 @@ Paragraph.propTypes = {
     color: PropTypes.oneOf([
         'green',
         'purple',
-        'clearWhite',
+        'base',
         'spbSky0',
         'spbSky1',
         'spbSky2',
-        'freshAsphalt',
+        'content',
         'fullBlack',
         'inherit',
     ]),

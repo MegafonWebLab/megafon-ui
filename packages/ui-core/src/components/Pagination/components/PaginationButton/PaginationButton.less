@@ -29,10 +29,10 @@
     }
 
     &_theme_default {
-        color: @freshAsphalt;
+        color: @content;
 
         svg {
-            fill: @freshAsphalt;
+            fill: @content;
         }
 
         &:hover {
@@ -45,18 +45,18 @@
     }
 
     &_theme_light {
-        color: @clearWhite;
+        color: @base;
 
         svg {
-            fill: @clearWhite;
+            fill: @base;
         }
 
         &:hover {
-            background-color: rgba(@clearWhite, 0.25);
+            background-color: rgba(@base, 0.25);
         }
     }
 
     &_theme_light&_active {
-        border-color: @clearWhite;
+        border-color: @base;
     }
 }

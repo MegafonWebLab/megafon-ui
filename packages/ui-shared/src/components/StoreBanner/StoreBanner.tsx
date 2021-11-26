@@ -6,7 +6,7 @@ import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType }
 import './StoreBanner.less';
 
 export const Theme = {
-    CLEAR_WHITE: 'clearWhite',
+    CLEAR_WHITE: 'base',
     GREEN: 'green',
     SPB_SKY_1: 'spbSky1',
 } as const;

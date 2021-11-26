@@ -21,7 +21,7 @@ const backgroundColors = [
     'spbSky0',
     'spbSky1',
     'spbSky2',
-    'freshAsphalt',
+    'content',
     'fullBlack',
 ];
 

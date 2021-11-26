@@ -9,21 +9,63 @@
         padding: 56px 80px 40px;
 
         background-color: @spbSky0;
+
+        @media screen and (max-width: 1120px) {
+            margin: 0 -24px;
+            padding: 24px;
+        }
+        @media screen and (max-width: 350px) {
+            margin: 0 -15px;
+            padding: 15px;
+        }
     }
 
     &__group-title {
-        margin-bottom: 36px;
+        margin-bottom: 24px;
+
+        @media @mobileBU {
+            margin-bottom: 36px;
+        }
+    }
+
+    &__basic-group {
+        @media @mobile {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__basic-group:last-child {
+        margin-bottom: 0;
+
+        @media @mobileBU {
+            padding-left: 24px;
+        }
     }
 
     &__list,
     &__group {
         display: flex;
         justify-content: space-between;
+
+        @media @mobile {
+            flex-wrap: wrap;
+        }
     }
 
     &__list {
-        flex-wrap: wrap;
         padding-bottom: 12px;
+
+        @media @mobile {
+            justify-content: space-evenly;
+            order: 2;
+            padding-bottom: 0;
+        }
+    }
+
+    &__list_soft {
+        flex-wrap: wrap;
     }
 
     &__description {
@@ -35,11 +77,12 @@
         font-size: 12px;
         line-height: 18px;
         text-align: center;
-    }
 
-    &__underline {
-        width: 100%;
-        height: 10px;
+        @media @mobile {
+            order: 0;
+            margin-bottom: 18px;
+            padding-top: 0;
+        }
     }
 
     &__container {
@@ -47,26 +90,126 @@
     }
 
     &__line {
-        margin-bottom: 48px;
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 18px;
+
+        @media @mobileBU {
+            margin-bottom: 48px;
+        }
     }
 
-    &__soft {
-        padding: 36px 32px 30px;
+    &__item {
+        margin-bottom: 18px;
+
+        @media @desktop {
+            margin-right: 24px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+
+    &__item_soft {
+        display: flex;
+        justify-content: center;
+        margin-right: 0;
+
+        @media @desktop {
+            width: 100% / 7;
+            min-width: 120px;
+            margin-bottom: 36px;
+        }
     }
 
     &__diagram {
-        width: 259px;
-        min-width: 259px;
-        height: 259px;
-        margin-right: 40px;
+        max-width: 259px;
+        margin: 0 auto 24px;
+
+        @media @desktop {
+            width: 259px;
+            min-width: 259px;
+            height: 259px;
+            margin: 0 40px 0 0;
+        }
+    }
+
+    &__soft {
+        padding: 24px 16px;
+
+        @media @desktop {
+            padding: 36px 32px 30px;
+        }
     }
 
     &__soft-list {
+        display: flex;
+        flex-direction: column;
         flex-grow: 1;
     }
 
-    &__soft-item {
-        display: flex;
-        justify-content: center;
+    &__underline {
+        position: relative;
+
+        width: 100%;
+        height: 8px;
+
+        @media @mobile {
+            display: none;
+        }
+    }
+
+    &__pointer {
+        position: absolute;
+        top: 50%;
+
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        background-color: @spbSky2;
+
+        transform: translateY(-50%);
+    }
+
+    &__underline:after,
+    &__underline:before,
+    &__pointer:after {
+        content: '';
+        position: absolute;
+
+        width: 1px;
+        height: 4px;
+
+        background-color: @spbSky2;
+    }
+
+    &__underline:after,
+    &__underline:before {
+        top: 0;
+
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    &__underline:before {
+        left: 0;
+    }
+
+    &__underline:after {
+        right: 0;
+    }
+
+    &__pointer:after {
+        top: 100%;
+        left: 50%;
+
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+
+        transform: translateX(-50%);
     }
 }

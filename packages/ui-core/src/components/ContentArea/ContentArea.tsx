@@ -11,7 +11,7 @@ const BACKGROUND_COLORS = {
     SPB_SKY_0: 'spbSky0',
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
-    FRESH_ASPHALT: 'freshAsphalt',
+    FRESH_ASPHALT: 'content',
     FULL_BLACK: 'fullBlack',
 } as const;
 
