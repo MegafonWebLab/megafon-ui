@@ -15,19 +15,11 @@ exports[`<Select /> it renders with data attributes 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-      >
-        <div
-          className="mfui-beta-select__title-inner"
-        />
-      </div>
-      <div
-        className="mfui-beta-select__arrow-wrap"
-        onClick={[Function]}
         role="button"
         tabIndex={0}
       >
-        <span
-          className="mfui-beta-select__arrow"
+        <div
+          className="mfui-beta-select__title-inner"
         />
       </div>
     </div>
@@ -97,16 +89,6 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         type="text"
         value=""
       />
-      <div
-        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-        onClick={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        <span
-          className="mfui-beta-select__arrow test-arrow"
-        />
-      </div>
     </div>
     <div
       className="mfui-beta-select__list list"
@@ -199,16 +181,6 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         type="text"
         value="test-name-1"
       />
-      <div
-        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-        onClick={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        <span
-          className="mfui-beta-select__arrow test-arrow"
-        />
-      </div>
     </div>
     <div
       className="mfui-beta-select__list list"
@@ -301,16 +273,6 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         type="text"
         value="test-name-1"
       />
-      <div
-        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-        onClick={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        <span
-          className="mfui-beta-select__arrow test-arrow"
-        />
-      </div>
     </div>
     <div
       className="mfui-beta-select__list list"
@@ -375,16 +337,6 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
         type="text"
         value="name-1"
       />
-      <div
-        className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-        onClick={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        <span
-          className="mfui-beta-select__arrow test-arrow"
-        />
-      </div>
     </div>
     <div
       className="mfui-beta-select__list list"
@@ -519,22 +471,14 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         <div
           className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
+          role="button"
+          tabIndex={0}
         >
           <div
             className="mfui-beta-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
-        </div>
-        <div
-          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          <span
-            className="mfui-beta-select__arrow test-arrow"
-          />
         </div>
       </div>
       <div
@@ -651,22 +595,14 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         <div
           className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
+          role="button"
+          tabIndex={0}
         >
           <div
             className="mfui-beta-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
-        </div>
-        <div
-          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          <span
-            className="mfui-beta-select__arrow test-arrow"
-          />
         </div>
       </div>
       <div
@@ -726,19 +662,11 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-      >
-        <div
-          className="mfui-beta-select__title-inner"
-        />
-      </div>
-      <div
-        className="mfui-beta-select__arrow-wrap"
-        onClick={[Function]}
         role="button"
         tabIndex={0}
       >
-        <span
-          className="mfui-beta-select__arrow"
+        <div
+          className="mfui-beta-select__title-inner"
         />
       </div>
     </div>
@@ -787,16 +715,6 @@ exports[`<Select /> should render items.view as function and type combobox 1`] =
         type="text"
         value={123}
       />
-      <div
-        className="mfui-beta-select__arrow-wrap"
-        onClick={[Function]}
-        role="button"
-        tabIndex={-1}
-      >
-        <span
-          className="mfui-beta-select__arrow"
-        />
-      </div>
     </div>
     <div
       className="mfui-beta-select__list"
@@ -902,16 +820,6 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
           type="text"
           value=""
         />
-        <div
-          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-          onClick={[Function]}
-          role="button"
-          tabIndex={-1}
-        >
-          <span
-            className="mfui-beta-select__arrow test-arrow"
-          />
-        </div>
       </div>
       <div
         className="mfui-beta-select__list list"
@@ -1015,19 +923,11 @@ exports[`<Select /> snapshots renders with default props 1`] = `
         <div
           className="mfui-beta-select__title"
           onClick={[Function]}
-        >
-          <div
-            className="mfui-beta-select__title-inner"
-          />
-        </div>
-        <div
-          className="mfui-beta-select__arrow-wrap"
-          onClick={[Function]}
           role="button"
           tabIndex={0}
         >
-          <span
-            className="mfui-beta-select__arrow"
+          <div
+            className="mfui-beta-select__title-inner"
           />
         </div>
       </div>
@@ -1140,22 +1040,14 @@ exports[`<Select /> snapshots renders with props 1`] = `
         <div
           className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
           onClick={[Function]}
+          role="button"
+          tabIndex={0}
         >
           <div
             className="mfui-beta-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
-        </div>
-        <div
-          className="mfui-beta-select__arrow-wrap test-arrow-wrap"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          <span
-            className="mfui-beta-select__arrow test-arrow"
-          />
         </div>
       </div>
       <div
@@ -1214,19 +1106,11 @@ exports[`<Select /> states of select renders with disabled state 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-      >
-        <div
-          className="mfui-beta-select__title-inner"
-        />
-      </div>
-      <div
-        className="mfui-beta-select__arrow-wrap"
-        onClick={[Function]}
         role="button"
         tabIndex={0}
       >
-        <span
-          className="mfui-beta-select__arrow"
+        <div
+          className="mfui-beta-select__title-inner"
         />
       </div>
     </div>
@@ -1255,19 +1139,11 @@ exports[`<Select /> states of select renders with error state 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-      >
-        <div
-          className="mfui-beta-select__title-inner"
-        />
-      </div>
-      <div
-        className="mfui-beta-select__arrow-wrap"
-        onClick={[Function]}
         role="button"
         tabIndex={0}
       >
-        <span
-          className="mfui-beta-select__arrow"
+        <div
+          className="mfui-beta-select__title-inner"
         />
       </div>
     </div>
@@ -1301,19 +1177,11 @@ exports[`<Select /> states of select renders with valid state 1`] = `
       <div
         className="mfui-beta-select__title"
         onClick={[Function]}
-      >
-        <div
-          className="mfui-beta-select__title-inner"
-        />
-      </div>
-      <div
-        className="mfui-beta-select__arrow-wrap"
-        onClick={[Function]}
         role="button"
         tabIndex={0}
       >
-        <span
-          className="mfui-beta-select__arrow"
+        <div
+          className="mfui-beta-select__title-inner"
         />
       </div>
     </div>

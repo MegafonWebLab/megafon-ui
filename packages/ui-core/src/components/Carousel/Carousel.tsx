@@ -241,10 +241,9 @@ const Carousel: React.FC<ICarouselProps> = ({
 
     const handleSlideFocus = (index: number) => (e: React.FocusEvent) => {
         if (loop) {
-            // для корректной прокрутки зацикленной карусели к сфокусированному элементу, необходимо получить его реальный индекс
-            // в коллекции DOM - элементов слайдов, т.к. swiper такой информацией не владеет,
-            // а оперирует data-swiper-slide-index, значения которых находятся в диапазоне от 0 до children.length - 1,
-            // но прокрутку методом slideTo осущетсвляет, используя индекс в DOM - коллекции
+            // for correctly scroll the looped carousel to the focused element, we need to get its real index in the DOM-collection of slides
+            // because swiper does not provide this, only data-swiper-slide-index, whose values are in the range from 0 to children.length - 1,
+            // but method slideTo needs to be passed a real slide index in DOM-collection
             const slideSelector = `.${cn('slide')}`;
             const slide = (e.nativeEvent.target as Element).closest(slideSelector);
             const realIndex = Array.prototype.indexOf.call(slide?.parentNode?.children, slide);
