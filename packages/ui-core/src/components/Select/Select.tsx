@@ -69,8 +69,6 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
         list?: string;
         listItem?: string;
         listItemTitle?: string;
-        arrowWrap?: string;
-        arrow?: string;
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
@@ -114,8 +112,6 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             list: PropTypes.string,
             listItem: PropTypes.string,
             listItemTitle: PropTypes.string,
-            arrowWrap: PropTypes.string,
-            arrow: PropTypes.string,
         }),
         items: PropTypes.arrayOf(
             PropTypes.exact({

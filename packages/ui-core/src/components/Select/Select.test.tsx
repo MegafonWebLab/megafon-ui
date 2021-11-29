@@ -20,8 +20,6 @@ const props: ISelectProps<number> = {
         list: 'list',
         listItem: 'list-item',
         listItemTitle: 'list-item-title',
-        arrowWrap: 'test-arrow-wrap',
-        arrow: 'test-arrow',
     },
     items: [
         {

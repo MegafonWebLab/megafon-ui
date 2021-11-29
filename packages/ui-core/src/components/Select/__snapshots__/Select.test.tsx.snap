@@ -404,8 +404,6 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
   className="test-class"
   classes={
     Object {
-      "arrow": "test-arrow",
-      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
@@ -528,8 +526,6 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
   className="test-class"
   classes={
     Object {
-      "arrow": "test-arrow",
-      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
@@ -748,8 +744,6 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
   className="test-class"
   classes={
     Object {
-      "arrow": "test-arrow",
-      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
@@ -973,8 +967,6 @@ exports[`<Select /> snapshots renders with props 1`] = `
   className="test-class"
   classes={
     Object {
-      "arrow": "test-arrow",
-      "arrowWrap": "test-arrow-wrap",
       "control": "test-control-class",
       "list": "list",
       "listItem": "list-item",
