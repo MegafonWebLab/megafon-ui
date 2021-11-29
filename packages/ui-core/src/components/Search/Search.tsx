@@ -235,25 +235,27 @@ const Search: React.FC<ISearchProps> = ({
                         <SearchIcon className={cn('icon', [classes?.icon])} />
                     </div>
                 )}
-            </div>
-            {!!items.length && (
-                <div className={cn('list')}>
-                    <div className={cn('list-inner')}>
-                        {items.map(({ value: itemValue, searchView }: SearchItem, i) => (
-                            <div
-                                className={cn('list-item', { active: activeIndex === i })}
-                                onMouseDown={handleSelectSubmit(i)}
-                                onMouseEnter={handleHoverItem(i)}
-                                key={i}
-                            >
-                                <div className={cn('item-title', [classes?.listItemTitle])}>
-                                    {searchView || highlightString(itemValue)}
+
+                {!!items.length && (
+                    <div className={cn('list')}>
+                        <div className={cn('list-inner')}>
+                            {items.map(({ value: itemValue, searchView }: SearchItem, i) => (
+                                <div
+                                    className={cn('list-item', { active: activeIndex === i })}
+                                    onMouseDown={handleSelectSubmit(i)}
+                                    onMouseEnter={handleHoverItem(i)}
+                                    key={i}
+                                >
+                                    <div className={cn('item-title', [classes?.listItemTitle])}>
+                                        {searchView || highlightString(itemValue)}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
+
             {noticeText && (
                 <div
                     className={cn('notice', {
