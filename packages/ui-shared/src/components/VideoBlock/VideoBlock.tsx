@@ -26,8 +26,7 @@ export const VideoTypes = {
 
 type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export interface Props {
+export interface IVideoBlockProps {
     /** Дата атрибуты для корневого элемента */
     dataAttrs?: { [key: string]: string };
     /** Дополнительный класс корневого элемента */
@@ -53,7 +52,7 @@ export interface Props {
 }
 
 const cn = cnCreate('mfui-beta-video-block');
-const VideoBlock: React.FC<Props> = ({
+const VideoBlock: React.FC<IVideoBlockProps> = ({
     dataAttrs,
     className,
     classes = {},

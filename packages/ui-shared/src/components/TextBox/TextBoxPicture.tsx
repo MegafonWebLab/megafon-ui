@@ -22,7 +22,7 @@ export interface ITextBoxPictureProps {
 const cn = cnCreate('mfui-beta-text-box-picture');
 const TextBoxPicture: React.FC<ITextBoxPictureProps> = ({ url, margin = pictureMarginTypes.DEFAULT }) => (
     <div className={cn({ margin })}>
-        <img className={cn('img')} src={url} alt="text-box" />
+        <img className={cn('img')} src={url} alt="" />
     </div>
 );
 
