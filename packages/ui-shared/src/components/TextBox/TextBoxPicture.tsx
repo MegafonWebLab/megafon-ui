@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import './TextBoxPicture.less';
 
 export const pictureMarginTypes = {
@@ -22,7 +22,7 @@ export interface ITextBoxPictureProps {
 const cn = cnCreate('mfui-beta-text-box-picture');
 const TextBoxPicture: React.FC<ITextBoxPictureProps> = ({ url, margin = pictureMarginTypes.DEFAULT }) => (
     <div className={cn({ margin })}>
-        <img className={cn('img')} src={url} />
+        <img className={cn('img')} src={url} alt="" />
     </div>
 );
 

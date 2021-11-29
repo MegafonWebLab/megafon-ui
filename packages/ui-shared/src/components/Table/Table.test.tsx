@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
 import { cnCreate } from '@megafon/ui-helpers';
+import { mount, shallow } from 'enzyme';
 import Table, { ITable } from './Table';
-import TableRow from './TableRow';
 import TableCell from './TableCell';
+import TableRow from './TableRow';
 
 const cn = cnCreate('mfui-beta-table');
 

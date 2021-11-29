@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { useCallback } from 'react';
-import PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
-import './BenfitsPictures.less';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { breakpoints, cnCreate } from '@megafon/ui-helpers';
 import convert from 'htmr';
-import { IBenefit, GridConfig, GridGutterSize } from './types';
+import throttle from 'lodash.throttle';
+import PropTypes from 'prop-types';
 import throttleTime from 'constants/throttleTime';
+import { IBenefit, GridConfig, GridGutterSize } from './types';
+import './BenfitsPictures.less';
 
 const ONLY_LEFT_ALIGN_ITEMS_COUNT = 3;
 
@@ -148,7 +148,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
         } else {
             setCurrentGutter('large');
         }
-    }, []);
+    }, [isLargeGutter]);
 
     React.useEffect(() => {
         const throttledResizeHandler = throttle(resizeHandler, throttleTime.resize);
@@ -157,7 +157,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
         window.addEventListener('resize', throttledResizeHandler);
 
         return () => window.removeEventListener('resize', throttledResizeHandler);
-    }, []);
+    }, [resizeHandler]);
 
     return (
         <div className={cn([className, classes.root])} ref={rootRef}>

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { Header } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
 import './Steps.less';
 
 export interface ISteps {

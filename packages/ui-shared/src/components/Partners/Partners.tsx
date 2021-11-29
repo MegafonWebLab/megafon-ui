@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import { Grid, GridColumn, Tile, Carousel } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import './Partners.less';
 
 export type ItemType = {
@@ -60,23 +60,26 @@ const Partners: React.FC<IPartnersProps> = ({
     onNextClick,
     onPrevClick,
 }) => {
-    const renderItem = React.useCallback((item?: ItemType) => {
-        if (!item) {
-            return null;
-        }
+    const renderItem = React.useCallback(
+        (item?: ItemType) => {
+            if (!item) {
+                return null;
+            }
 
-        const { src, href, alt } = item;
+            const { src, href, alt } = item;
 
-        return (
-            <Tile className={cn('tile')} href={href} shadowLevel="low" isInteractive={!!href}>
-                <div className={cn('tile-inner', [itemClass])}>
-                    <div className={cn('img-wrapper')}>
-                        <img src={src} alt={alt} className={cn('tile-img')} />
+            return (
+                <Tile className={cn('tile')} href={href} shadowLevel="low" isInteractive={!!href}>
+                    <div className={cn('tile-inner', [itemClass])}>
+                        <div className={cn('img-wrapper')}>
+                            <img src={src} alt={alt} className={cn('tile-img')} />
+                        </div>
                     </div>
-                </div>
-            </Tile>
-        );
-    }, []);
+                </Tile>
+            );
+        },
+        [itemClass],
+    );
 
     const renderGrid = React.useCallback(
         () => (
@@ -88,7 +91,7 @@ const Partners: React.FC<IPartnersProps> = ({
                 ))}
             </Grid>
         ),
-        [items],
+        [items, renderItem],
     );
 
     const renderCarousel = React.useCallback(() => {
@@ -111,7 +114,7 @@ const Partners: React.FC<IPartnersProps> = ({
                 ))}
             </Carousel>
         );
-    }, [items]);
+    }, [items, onChange, onNextClick, onPrevClick, renderItem]);
 
     return (
         <div ref={rootRef} className={cn([root, className])} {...filterDataAttrs(dataAttrs)}>

@@ -100,7 +100,7 @@ const Card: React.FC<ICard> = ({
             case !!imageSrc: {
                 return (
                     <div className={cn('pic-wrapper', { 'object-fit': objectFit })}>
-                        <img className={cn('img')} src={imageSrc} />
+                        <img className={cn('img')} src={imageSrc} alt="" />
                     </div>
                 );
             }

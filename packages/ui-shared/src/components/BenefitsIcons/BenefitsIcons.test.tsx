@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
+import { act } from 'react-dom/test-utils';
 import BenefitsIcons, { IBenefitsIcons } from './BenefitsIcons';
 import { fiveItems, fourItems, threeItems, twoItems } from './doc/BenefitsIcons.docz';
 import { IconPositionEnum } from './types';
-import { act } from 'react-dom/test-utils';
 
 type LocalWindowType = Omit<Window, 'innerWidth'> & {
     innerWidth: number;

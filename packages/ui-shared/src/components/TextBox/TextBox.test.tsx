@@ -23,7 +23,7 @@ describe('TextBox', () => {
 
     it('render with centered text', () => {
         const wrapper = shallow(
-            <TextBox textCenter={true}>
+            <TextBox textCenter>
                 <p>test</p>
             </TextBox>,
         );
@@ -41,7 +41,7 @@ describe('TextBox', () => {
 
     it('render with limited width and centered text', () => {
         const wrapper = shallow(
-            <TextBox isFullWidth={false} textCenter={true}>
+            <TextBox isFullWidth={false} textCenter>
                 <p>test</p>
             </TextBox>,
         );
@@ -50,7 +50,7 @@ describe('TextBox', () => {
 
     it('render with limited width and centered component', () => {
         const wrapper = shallow(
-            <TextBox isFullWidth={false} centeringWithLimitedWidth={true}>
+            <TextBox isFullWidth={false} centeringWithLimitedWidth>
                 <p>test</p>
             </TextBox>,
         );
@@ -59,7 +59,7 @@ describe('TextBox', () => {
 
     it('render with limited width, centered component and centered text', () => {
         const wrapper = shallow(
-            <TextBox isFullWidth={false} centeringWithLimitedWidth={true} textCenter={true}>
+            <TextBox isFullWidth={false} centeringWithLimitedWidth textCenter>
                 <p>test</p>
             </TextBox>,
         );

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
-import Partners from './Partners';
-import megafon from './megafon.png';
 import { cnCreate } from '@megafon/ui-helpers';
+import { mount, shallow } from 'enzyme';
+import megafon from './megafon.png';
+import Partners from './Partners';
 
 const cnCarousel = cnCreate('.mfui-beta-carousel');
 

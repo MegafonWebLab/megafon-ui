@@ -1,8 +1,8 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
-import convert from 'htmr';
 import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import convert from 'htmr';
+import throttle from 'lodash.throttle';
+import * as PropTypes from 'prop-types';
 import './Table.less';
 import { ITableRow } from './TableRow';
 

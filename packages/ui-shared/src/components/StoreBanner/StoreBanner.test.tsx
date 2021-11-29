@@ -40,7 +40,7 @@ describe('StoreBanner', () => {
     });
 
     it('should render with QR-code', () => {
-        const wrapper = shallow(<StoreBanner {...props} qrCode={'qr-code.png'} />);
+        const wrapper = shallow(<StoreBanner {...props} qrCode="qr-code.png" />);
 
         expect(wrapper).toMatchSnapshot();
     });

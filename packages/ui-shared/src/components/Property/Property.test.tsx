@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { mount, shallow } from 'enzyme';
 import WiFi from '@megafon/ui-icons/basic-32-wi-fi_32.svg';
+import { mount, shallow } from 'enzyme';
 import Property from './Property';
 
 describe('<Property />', () => {
@@ -63,7 +63,7 @@ describe('<Property />', () => {
 
     it('should render with badge', () => {
         const wrapper = shallow(
-            <Property badge={'Акция'} items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]} />,
+            <Property badge="Акция" items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]} />,
         );
         expect(wrapper).toMatchSnapshot();
     });

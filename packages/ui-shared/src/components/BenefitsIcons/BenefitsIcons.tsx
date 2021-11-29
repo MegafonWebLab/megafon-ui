@@ -1,12 +1,12 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import './style/BenefitsIcons.less';
 import { Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, breakpoints } from '@megafon/ui-helpers';
+import throttle from 'lodash.throttle';
+import PropTypes from 'prop-types';
+import throttleTime from 'constants/throttleTime';
 import BenefitsIconsTile from './BenefitsIconsTile';
 import { GridConfig, IconPositionEnum, IconPosition, IBenefit, ItemsAlignType, ItemsAlignEnum } from './types';
-import throttle from 'lodash.throttle';
-import throttleTime from 'constants/throttleTime';
+import './style/BenefitsIcons.less';
 
 export interface IBenefitsIcons {
     /** Ссылка на корневой элемент */
