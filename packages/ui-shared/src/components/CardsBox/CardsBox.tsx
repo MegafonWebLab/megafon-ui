@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
 import { Grid, GridColumn, Carousel } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
-import { ICard } from '../Card/Card';
+import throttle from 'lodash.throttle';
+import * as PropTypes from 'prop-types';
 import throttleTime from 'constants/throttleTime';
+import { ICard } from '../Card/Card';
 
 type SlidesSettingsType = Pick<React.ComponentProps<typeof Carousel>, 'slidesSettings'>['slidesSettings'];
 
@@ -56,7 +56,7 @@ const CardsBox: React.FC<ICardsBoxProps> = ({ rootRef, dataAttrs, onChange, chil
                 {children}
             </Carousel>
         ),
-        [children],
+        [children, onChange],
     );
 
     React.useEffect(() => {

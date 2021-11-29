@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { mount, shallow } from 'enzyme';
-import Container, { BackgroundColors } from './Container';
 import TitleDescriptionBox from '../TitleDescriptionBox/TitleDescriptionBox';
+import Container, { BackgroundColors } from './Container';
 
 const optionalProps = {
     id: 'id',

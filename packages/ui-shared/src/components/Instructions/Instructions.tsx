@@ -1,12 +1,12 @@
 import React, { Ref } from 'react';
-import PropTypes from 'prop-types';
-import './Instructions.less';
-import SwiperCore from 'swiper';
-import convert from 'htmr';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperClass from 'swiper/types/swiper-class';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import convert from 'htmr';
+import PropTypes from 'prop-types';
+import SwiperCore from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperClass from 'swiper/types/swiper-class';
+import './Instructions.less';
 
 export const pictureAlignTypes = {
     LEFT: 'left',
@@ -85,15 +85,18 @@ const Instructions: React.FC<IInstructionsProps> = ({
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperClass>();
     const [slideIndex, setSlideIndex] = React.useState(0);
 
-    const getSwiperInstance = React.useCallback((swiper: SwiperClass): void => {
-        setSwiperInstance(swiper);
-        getSwiper && getSwiper(swiper);
-    }, []);
+    const getSwiperInstance = React.useCallback(
+        (swiper: SwiperClass): void => {
+            setSwiperInstance(swiper);
+            getSwiper && getSwiper(swiper);
+        },
+        [getSwiper],
+    );
 
     const getActiveCustomClass = React.useCallback(
         (articleIndex: number, activeIndex: number) => {
             if (articleIndex !== activeIndex) {
-                return;
+                return undefined;
             }
 
             return activeInstructionItem;
@@ -108,37 +111,6 @@ const Instructions: React.FC<IInstructionsProps> = ({
         },
         [swiperInstance],
     );
-
-    const renderTitle = React.useCallback(
-        (resolution: string): JSX.Element => (
-            <Header className={cn('title', { resolution })} as="h2">
-                {title}
-            </Header>
-        ),
-        [],
-    );
-
-    const renderText = React.useCallback(
-        (): JSX.Element => (
-            <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
-                {convert(text as string)}
-            </Paragraph>
-        ),
-        [text, additionalText],
-    );
-
-    const renderPicture = React.useCallback((): JSX.Element => {
-        if (pictureMask === pictureMaskTypes.NONE) {
-            return renderSlider();
-        }
-
-        return (
-            <div className={cn('img-wrapper')}>
-                <div className={cn('device-screen')} />
-                {renderSlider()}
-            </div>
-        );
-    }, [pictureMask]);
 
     const renderVideo = React.useCallback(
         (mediaUrl: string): JSX.Element => (
@@ -163,13 +135,45 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 ))}
             </Swiper>
         ),
-        [instructionItems],
+        [getSwiperInstance, instructionItemImg, instructionItems, renderVideo],
     );
+
+    const renderTitle = React.useCallback(
+        (resolution: string): JSX.Element => (
+            <Header className={cn('title', { resolution })} as="h2">
+                {title}
+            </Header>
+        ),
+        [title],
+    );
+
+    const renderText = React.useCallback(
+        (): JSX.Element => (
+            <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
+                {convert(text as string)}
+            </Paragraph>
+        ),
+        [text, additionalText],
+    );
+
+    const renderPicture = React.useCallback((): JSX.Element => {
+        if (pictureMask === pictureMaskTypes.NONE) {
+            return renderSlider();
+        }
+
+        return (
+            <div className={cn('img-wrapper')}>
+                <div className={cn('device-screen')} />
+                {renderSlider()}
+            </div>
+        );
+    }, [pictureMask, renderSlider]);
 
     const renderDesktopArticles = React.useCallback(
         (): JSX.Element => (
             <ul className={cn('articles-list', { 'text-after': !!text, desktop: true })}>
                 {instructionItems.map(({ title: itemTitle }, ind) => (
+                    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
                     <li
                         className={cn('articles-item', { active: slideIndex === ind }, [
                             getActiveCustomClass(ind, slideIndex),
@@ -188,7 +192,16 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 ))}
             </ul>
         ),
-        [instructionItems, slideIndex, handleArticleClick, text],
+        [
+            desktopInstructionItem,
+            desktopItemTitle,
+            getActiveCustomClass,
+            handleArticleClick,
+            instructionItem,
+            instructionItems,
+            slideIndex,
+            text,
+        ],
     );
 
     const renderMobileArticles = React.useCallback(
@@ -221,7 +234,16 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 </ul>
             </div>
         ),
-        [instructionItems, slideIndex, handleArticleClick, text],
+        [
+            getActiveCustomClass,
+            handleArticleClick,
+            instructionItem,
+            instructionItems,
+            mobileInstructionItem,
+            mobileItemTitle,
+            slideIndex,
+            text,
+        ],
     );
 
     return (

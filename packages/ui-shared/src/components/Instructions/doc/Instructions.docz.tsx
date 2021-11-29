@@ -4,11 +4,11 @@ import Image3 from './i/3.png';
 import Image4 from './i/4.png';
 import Image5 from './i/5.png';
 import Video from './i/6.mp4';
-import LaptopScreen from './i/laptopScreen.png';
-import IphoneScreen from './i/iphoneScreen.png';
 import AndroidScreen from './i/androidScreen.png';
-import NewIphoneScreen from './i/newIphoneScreen.png';
 import Iphone12Screen from './i/iphone12Screen.png';
+import IphoneScreen from './i/iphoneScreen.png';
+import LaptopScreen from './i/laptopScreen.png';
+import NewIphoneScreen from './i/newIphoneScreen.png';
 
 const instructionTitles = [
     'Авторизуйтесь на сайте сервиса special.megafon.ru, перейдите в магазин и добавьте покупки в корзину',

@@ -19,7 +19,7 @@ describe('<BannerBox />', () => {
                 loop
                 autoPlay
                 autoPlayDelay={1000}
-                navTheme={'green'}
+                navTheme="green"
                 onNextClick={jest.fn()}
                 onPrevClick={jest.fn()}
                 onDotClick={jest.fn()}

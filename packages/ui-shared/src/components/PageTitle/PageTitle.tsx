@@ -1,7 +1,7 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { Header, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
 import './PageTitle.less';
 import Breadcrumbs, { Props as BreadcrumbsType } from '../Breadcrumbs/Breadcrumbs';
 
@@ -45,7 +45,7 @@ const PageTitle: React.FC<Props> = ({
                 </Header>
             </>
         ),
-        [breadcrumbs, classes, badge, title],
+        [badge, title, isBreadcrumbs],
     );
 
     const renderPageTitleWithGrid = React.useCallback(

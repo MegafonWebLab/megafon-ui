@@ -49,6 +49,7 @@ exports[`<Carousel /> should render with default props 1`] = `
     <SwiperSlide
       className="mfui-beta-carousel__slide"
       key="0/.0"
+      onFocus={[Function]}
     >
       <DemoSlide>
         1
@@ -57,6 +58,7 @@ exports[`<Carousel /> should render with default props 1`] = `
     <SwiperSlide
       className="mfui-beta-carousel__slide"
       key="1/.1"
+      onFocus={[Function]}
     >
       <DemoSlide>
         2
@@ -135,6 +137,7 @@ exports[`<Carousel /> should render with props 1`] = `
     <SwiperSlide
       className="mfui-beta-carousel__slide slide"
       key="0/.0"
+      onFocus={[Function]}
     >
       <DemoSlide>
         1
@@ -143,6 +146,7 @@ exports[`<Carousel /> should render with props 1`] = `
     <SwiperSlide
       className="mfui-beta-carousel__slide slide"
       key="1/.1"
+      onFocus={[Function]}
     >
       <DemoSlide>
         2

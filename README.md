@@ -65,4 +65,4 @@ yarn run build
 
 ## Contributing
 
-Follow [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Follow [CONTRIBUTING.md](https://github.com/MegafonWebLab/megafon-ui/blob/master/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](https://github.com/MegafonWebLab/megafon-ui/blob/master/CODE_OF_CONDUCT.md).

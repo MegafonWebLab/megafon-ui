@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import { cnCreate } from '@megafon/ui-helpers';
 import { Grid, GridColumn } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import './TextBox.less';
 
 export interface ITextBoxProps {

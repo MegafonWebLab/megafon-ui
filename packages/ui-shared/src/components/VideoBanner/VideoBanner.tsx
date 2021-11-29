@@ -1,13 +1,15 @@
 import React, { Ref } from 'react';
-import * as PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
 import { Button, Header, ContentArea, TextLink, Grid, GridColumn } from '@megafon/ui-core';
 import { breakpoints, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
-import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
+import throttle from 'lodash.throttle';
+import * as PropTypes from 'prop-types';
 import throttleTime from 'constants/throttleTime';
+import Breadcrumbs, { Props as BreadcrumbsPropsType } from '../Breadcrumbs/Breadcrumbs';
 import './VideoBanner.less';
 
 type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
+
+const cn = cnCreate('mfui-beta-video-banner');
 
 export enum ClassName {
     BUTTON = 'button',
@@ -110,7 +112,6 @@ interface IVideoBannerProps {
     breadcrumbs?: BreadCrumbsItemsType;
 }
 
-const cn = cnCreate('mfui-beta-video-banner');
 const VideoBanner: React.FC<IVideoBannerProps> = ({
     dataAttrs,
     className,
@@ -192,7 +193,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 </GridColumn>
             </Grid>
         ),
-        [],
+        [classes.button, classes.link],
     );
 
     const renderVideo = React.useCallback(() => {
@@ -225,6 +226,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
 
             case VideoType.VIDEO: {
                 return (
+                    // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video className={cn('video')} autoPlay loop muted={isMuted}>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
@@ -264,7 +266,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         return () => {
             window.removeEventListener('resize', resizeHandlerThrottled);
         };
-    }, []);
+    }, [imageDesktop, imageDesktopWide, imageMobile, imageTablet]);
 
     return (
         <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { act } from 'react-dom/test-utils';
-import { shallow, mount } from 'enzyme';
-import CardsBox from './CardsBox';
-import Card, { ICard } from '../Card/Card';
 import Carousel from '@megafon/ui-core/dist/lib/components/Carousel/Carousel';
+import { shallow, mount } from 'enzyme';
+import { act } from 'react-dom/test-utils';
+import Card, { ICard } from '../Card/Card';
+import CardsBox from './CardsBox';
 
 const cardProps: ICard = {
     title: 'title',

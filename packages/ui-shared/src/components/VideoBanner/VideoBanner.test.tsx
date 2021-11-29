@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
 import { cnCreate } from '@megafon/ui-helpers';
+import { shallow, mount } from 'enzyme';
 import VideoBanner, { VideoType, ButtonColor, ClassName, TextColor } from './VideoBanner';
 
 const imageMobile = 'imageMobile';
@@ -87,6 +87,7 @@ describe('<VideoBanner />', () => {
     });
 
     it('render component without button', () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { buttonTitle, ...contentWithoutButton } = content;
 
         const wrapper = shallow(

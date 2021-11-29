@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import { IconPositionEnum } from './types';
-import BenefitsIconsTile, { IBenefitsIconsTile } from './BenefitsIconsTile';
 import Checked from '@megafon/ui-icons/system-24-checked_24.svg';
+import { shallow } from 'enzyme';
+import BenefitsIconsTile, { IBenefitsIconsTile } from './BenefitsIconsTile';
+import { IconPositionEnum } from './types';
 
 const props: IBenefitsIconsTile = {
     title: 'title',

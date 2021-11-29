@@ -11,6 +11,7 @@ export interface ITableRow {
 const TableRow: React.FC<ITableRow> = ({ children }) => <>{children}</>;
 
 TableRow.propTypes = {
+    // eslint-disable-next-line react/no-unused-prop-types
     head: PropTypes.bool,
     children: PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
 };

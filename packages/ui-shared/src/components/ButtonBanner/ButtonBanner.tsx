@@ -1,8 +1,8 @@
 import React, { Ref } from 'react';
-import * as PropTypes from 'prop-types';
-import './ButtonBanner.less';
 import { Button, Grid, GridColumn, Header } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
+import './ButtonBanner.less';
 
 export const ButtonColor = {
     GREEN: 'green',

@@ -72,9 +72,9 @@
 
     &__list {
         position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
+        top: calc(100% + 1px);
+        right: -1px;
+        left: -1px;
         z-index: 0;
 
         display: none;
@@ -154,6 +154,19 @@
 
     &_open {
         z-index: 12;
+    }
+
+    &_disabled &__control {
+        border-color: @spbSky1;
+
+        background-color: @spbSky1;
+        cursor: default;
+
+        pointer-events: none;
+    }
+
+    &_disabled &__icon {
+        opacity: 0.5;
     }
 
     &__highlighted-fragment {
