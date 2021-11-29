@@ -69,8 +69,6 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
         list?: string;
         listItem?: string;
         listItemTitle?: string;
-        arrowWrap?: string;
-        arrow?: string;
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
@@ -114,8 +112,6 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             list: PropTypes.string,
             listItem: PropTypes.string,
             listItemTitle: PropTypes.string,
-            arrowWrap: PropTypes.string,
-            arrow: PropTypes.string,
         }),
         items: PropTypes.arrayOf(
             PropTypes.exact({
@@ -565,15 +561,6 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                     <div className={cn('control', classes.control)} onKeyDown={this.handleKeyDown}>
                         {type === SelectTypes.COMBOBOX && this.renderCombobox()}
                         {type === SelectTypes.CLASSIC && this.renderTitle()}
-                        <div
-                            className={cn('arrow-wrap', [classes.arrowWrap])}
-                            role="button"
-                            // eslint-disable-next-line jsx-a11y/tabindex-no-positive
-                            tabIndex={1}
-                            onClick={this.handleOpenDropdown}
-                        >
-                            <span className={cn('arrow', [classes.arrow])} />
-                        </div>
                     </div>
                     {this.renderChildren()}
                 </div>

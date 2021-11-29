@@ -6,6 +6,10 @@ import Tile from 'components/Tile/Tile';
 import './Tooltip.less';
 
 const TOOLTIP_PADDING_FOR_FLIP = 14;
+const MOUSE_KEY = 'mousedown';
+const KEYBOARD_ENTER_KEY = 'Enter';
+const KEYBOARD_NUMPAD_ENTER_KEY = 'NumpadEnter';
+const TOUCH_KEY = 'touchstart';
 
 export const Placement = {
     LEFT: 'left',
@@ -15,6 +19,12 @@ export const Placement = {
 } as const;
 
 type PlacementType = typeof Placement[keyof typeof Placement];
+
+const checkEventIsClickOrEnterPress = (e: MouseEvent | KeyboardEvent): boolean =>
+    e.type === TOUCH_KEY ||
+    e.type === MOUSE_KEY ||
+    (e as KeyboardEvent).code === KEYBOARD_ENTER_KEY ||
+    (e as KeyboardEvent).code === KEYBOARD_NUMPAD_ENTER_KEY;
 
 export const Paddings = {
     NONE: 'none',
@@ -61,7 +71,7 @@ export interface ITooltipProps {
     /** Обработчик на открытие */
     onOpen?: (e: MouseEvent) => void;
     /** Обработчик на закрытие */
-    onClose?: (e: MouseEvent) => void;
+    onClose?: (e: MouseEvent | FocusEvent) => void;
 }
 
 const cn = cnCreate('mfui-beta-tooltip');
@@ -137,7 +147,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const [isTouchDevice, setIsTouchDevice] = useState(false);
     useEffect(() => setIsTouchDevice(detectTouch()), [detectTouch, setIsTouchDevice]);
 
-    const clickEvent = useMemo(() => (isTouchDevice ? 'touchstart' : 'mousedown'), [isTouchDevice]);
+    const clickEvent = useMemo(() => (isTouchDevice ? TOUCH_KEY : MOUSE_KEY), [isTouchDevice]);
     const triggerEventName: TriggerEventType = useMemo(
         () => (isTouchDevice ? 'click' : triggerEvent),
         [isTouchDevice, triggerEvent],
@@ -155,6 +165,10 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
     const handleClick = useCallback(
         (e: MouseEvent): void => {
+            if (!checkEventIsClickOrEnterPress(e)) {
+                return;
+            }
+
             setIsOpen(open => !open);
             if (!isOpen) {
                 onOpen && onOpen(e);
@@ -179,18 +193,34 @@ const Tooltip: React.FC<ITooltipProps> = ({
         [onClose, currentTrigger, popperElement, setIsOpen],
     );
 
+    const handleBlurEvent = useCallback(
+        (e: FocusEvent): void => {
+            setIsOpen(false);
+            onClose && onClose(e);
+        },
+        [onClose, setIsOpen],
+    );
+
     useEffect(() => {
         if (triggerEventName === TriggerEvent.HOVER) {
-            currentTrigger && currentTrigger.addEventListener('mouseenter', handleMouseEnter);
+            if (currentTrigger) {
+                currentTrigger.addEventListener('mouseenter', handleMouseEnter);
+                currentTrigger.addEventListener('focus', handleMouseEnter);
+            }
 
             if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
+                currentTrigger && currentTrigger.addEventListener('blur', handleBlurEvent);
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
+                currentTrigger && currentTrigger.removeEventListener('blur', handleBlurEvent);
             }
 
             return () => {
-                currentTrigger && currentTrigger.removeEventListener('mouseenter', handleMouseEnter);
+                if (currentTrigger) {
+                    currentTrigger.removeEventListener('mouseenter', handleMouseEnter);
+                    currentTrigger.removeEventListener('focus', handleMouseEnter);
+                }
                 document.removeEventListener('mouseover', handleOutsideEvent);
             };
         }
@@ -200,7 +230,11 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
     useEffect(() => {
         if (triggerEventName === TriggerEvent.CLICK) {
-            currentTrigger && currentTrigger.addEventListener(clickEvent, handleClick);
+            if (currentTrigger) {
+                currentTrigger.addEventListener(clickEvent, handleClick);
+                currentTrigger.addEventListener('keydown', handleClick);
+            }
+
             if (isOpen) {
                 document.addEventListener(clickEvent, handleOutsideEvent);
             } else {
@@ -208,7 +242,10 @@ const Tooltip: React.FC<ITooltipProps> = ({
             }
 
             return () => {
-                currentTrigger && currentTrigger.removeEventListener(clickEvent, handleClick);
+                if (currentTrigger) {
+                    currentTrigger.removeEventListener(clickEvent, handleClick);
+                    currentTrigger.removeEventListener('keydown', handleClick);
+                }
                 document.removeEventListener(clickEvent, handleOutsideEvent);
             };
         }
