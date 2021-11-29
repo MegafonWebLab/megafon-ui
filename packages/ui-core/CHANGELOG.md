@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.169](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.168...@megafon/ui-core@2.0.0-beta.169) (2021-11-29)
+
+
+### Bug Fixes
+
+* **carousel:** slides carousel to focusable slide ([f31c806](https://github.com/MegafonWebLab/megafon-ui/commit/f31c806387e3cef6cc1d4c98e2af2d65015eef3c))
+* **search:** fix items container position ([178eeed](https://github.com/MegafonWebLab/megafon-ui/commit/178eeed58c79f30ddfcca4c33c394f7333e2cc7a))
+* **select:** remove arrow and arrows wrap classes ([2811796](https://github.com/MegafonWebLab/megafon-ui/commit/28117968f55430ce92198559a8b55174d9791368))
+* **select:** update keyboard focus ([59999df](https://github.com/MegafonWebLab/megafon-ui/commit/59999dfac0aee425a0a445ed5e93702e78f11a21))
+* **textlink:** fix double underline for dashed and border style ([da41c55](https://github.com/MegafonWebLab/megafon-ui/commit/da41c55f23e3953efdca24e576633a0d07269c3d))
+* **tooltip:** add keyboard accessibility for tooltip open ([f4c97b8](https://github.com/MegafonWebLab/megafon-ui/commit/f4c97b8a8d9a29669e475bda670550d72a3b49e4))
+
+
+### Features
+
+* **search:** add disabled prop ([bc32588](https://github.com/MegafonWebLab/megafon-ui/commit/bc32588f1964ecd93f1f8a2aec1479959ef9d131))
+
+
+### BREAKING CHANGES
+
+* **select:** arrow display by pseudo element now, props and element removed from component
+
+
+
+
+
 # [2.0.0-beta.168](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.167...@megafon/ui-core@2.0.0-beta.168) (2021-11-23)
 
 

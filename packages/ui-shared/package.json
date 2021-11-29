@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-shared",
-  "version": "2.0.0-beta.240",
+  "version": "2.0.0-beta.241",
   "files": [
     "dist"
   ],
@@ -80,7 +80,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "@megafon/ui-core": "^2.0.0-beta.168",
+    "@megafon/ui-core": "^2.0.0-beta.169",
     "@megafon/ui-helpers": "^1.0.0-beta.2",
     "core-js": "^3.6.4",
     "htmr": "^0.9.2",

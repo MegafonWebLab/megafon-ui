@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.241](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.240...@megafon/ui-shared@2.0.0-beta.241) (2021-11-29)
+
+
+### Bug Fixes
+
+* **ui-shared:** enable more eslint rules and fix problems ([063b874](https://github.com/MegafonWebLab/megafon-ui/commit/063b8747e2dfd3f883f07a04e177cbceef4cca2e))
+* **ui-shared:** enable more eslint rules and fix problems ([4bde8f9](https://github.com/MegafonWebLab/megafon-ui/commit/4bde8f93be7a13efe912f22d659371a3e380e6f3))
+* **ui-shared:** enable some eslint rules and fix problems ([73ea828](https://github.com/MegafonWebLab/megafon-ui/commit/73ea828ea060d5cfecb18fdd5d1498efa1e93fbd))
+* **ui-shared:** fix children type ([0f04517](https://github.com/MegafonWebLab/megafon-ui/commit/0f04517deaa60ff05fd05eeb478d66e0a116b999))
+* **ui-shared:** fixes after rebase ([c326ee8](https://github.com/MegafonWebLab/megafon-ui/commit/c326ee8c3ca2f47c6b3202d78c91e08b0e42914e))
+* **ui-shared:** remove alt content; rename interface ([316e04a](https://github.com/MegafonWebLab/megafon-ui/commit/316e04a1a594ce61c7d198113f1fb6612cc7d913))
+
+
+
+
+
 # [2.0.0-beta.240](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0-beta.239...@megafon/ui-shared@2.0.0-beta.240) (2021-11-23)
 
 
