@@ -192,7 +192,16 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 ))}
             </ul>
         ),
-        [desktopItemTitle, getArticleCustomClasses, instructionItems, slideIndex, handleArticleClick, text],
+        [
+            desktopInstructionItem,
+            desktopItemTitle,
+            getActiveCustomClass,
+            handleArticleClick,
+            instructionItem,
+            instructionItems,
+            slideIndex,
+            text,
+        ],
     );
 
     const renderMobileArticles = React.useCallback(
@@ -225,7 +234,16 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 </ul>
             </div>
         ),
-        [instructionItems, getArticleCustomClasses, mobileItemTitle, slideIndex, handleArticleClick, text],
+        [
+            getActiveCustomClass,
+            handleArticleClick,
+            instructionItem,
+            instructionItems,
+            mobileInstructionItem,
+            mobileItemTitle,
+            slideIndex,
+            text,
+        ],
     );
 
     return (

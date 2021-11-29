@@ -106,7 +106,7 @@ const VideoBlock: React.FC<Props> = ({
                 </Button>
             </div>
         ),
-        [classes.button],
+        [classes.button, classes.description],
     );
 
     const renderGridColumns = React.useCallback(() => {
