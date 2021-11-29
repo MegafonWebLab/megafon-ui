@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const DemoSlide = ({ children }: { children: any }): React.ReactNode => (
+export const DemoSlide = ({ children }: { children: React.ReactNode }): React.ReactNode => (
     <div
         style={{
             height: '100%',
