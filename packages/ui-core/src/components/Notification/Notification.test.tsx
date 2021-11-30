@@ -30,7 +30,7 @@ describe('<Notification />', () => {
     it('it calls onLinkClick handler', () => {
         const onClick = jest.fn();
         const wrapper = shallow(<Notification {...props} link="link" onLinkClick={onClick} />);
-        const link = wrapper.find('.mfui-beta-notification__link');
+        const link = wrapper.find('.mfui-notification__link');
         link.simulate('click');
         expect(onClick).toBeCalled();
     });
@@ -38,7 +38,7 @@ describe('<Notification />', () => {
     it('it calls onClick handler', () => {
         const onClose = jest.fn();
         const wrapper = shallow(<Notification {...props} hasCloseButton onClose={onClose} />);
-        const closeButton = wrapper.find('.mfui-beta-notification__close');
+        const closeButton = wrapper.find('.mfui-notification__close');
         closeButton.simulate('click');
         expect(onClose).toBeCalled();
     });

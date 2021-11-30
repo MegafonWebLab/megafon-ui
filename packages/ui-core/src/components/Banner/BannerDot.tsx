@@ -12,7 +12,7 @@ export interface IBannerDotProps {
     onClick: (index: number) => void;
 }
 
-const cn = cnCreate('mfui-beta-banner-dot');
+const cn = cnCreate('mfui-banner-dot');
 const BannerDot: React.FC<IBannerDotProps> = ({ className, index, isActive, showTimer, timerDelay, onClick }) => {
     const handleDotClick = React.useCallback(() => {
         onClick(index);

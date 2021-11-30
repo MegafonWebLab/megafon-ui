@@ -85,7 +85,7 @@ describe('StoreBanner', () => {
         const onClickApple = jest.fn();
         const wrapper = shallow(<StoreBanner {...props} onClickApple={onClickApple} />);
 
-        const link = wrapper.find('.mfui-beta-store-banner__store-link_app-store');
+        const link = wrapper.find('.mfui-store-banner__store-link_app-store');
         link.simulate('click');
 
         expect(onClickApple).toHaveBeenCalled();
@@ -95,7 +95,7 @@ describe('StoreBanner', () => {
         const onClickGoogle = jest.fn();
         const wrapper = shallow(<StoreBanner {...props} onClickGoogle={onClickGoogle} />);
 
-        const link = wrapper.find('.mfui-beta-store-banner__store-link_google-play');
+        const link = wrapper.find('.mfui-store-banner__store-link_google-play');
         link.simulate('click');
 
         expect(onClickGoogle).toHaveBeenCalled();

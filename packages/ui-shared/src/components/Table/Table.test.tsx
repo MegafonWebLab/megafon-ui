@@ -5,7 +5,7 @@ import Table, { ITable } from './Table';
 import TableCell from './TableCell';
 import TableRow from './TableRow';
 
-const cn = cnCreate('mfui-beta-table');
+const cn = cnCreate('mfui-table');
 
 const props = {
     className: 'custom-class',

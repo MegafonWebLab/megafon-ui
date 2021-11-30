@@ -35,7 +35,7 @@ const props = {
     onChange: jest.fn(),
 } as ICarouselProps;
 
-const cnCarousel = cnCreate('.mfui-beta-carousel');
+const cnCarousel = cnCreate('.mfui-carousel');
 
 describe('<Carousel />', () => {
     afterEach(() => {

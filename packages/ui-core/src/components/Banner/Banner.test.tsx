@@ -20,8 +20,8 @@ const props = {
     onChange: jest.fn(),
 } as IBannerProps;
 
-const cnBanner = cnCreate('.mfui-beta-banner');
-const cnBannerDot = cnCreate('.mfui-beta-banner-dot');
+const cnBanner = cnCreate('.mfui-banner');
+const cnBannerDot = cnCreate('.mfui-banner-dot');
 
 describe('<Banner />', () => {
     afterEach(() => {

@@ -35,7 +35,7 @@ export interface IPreloaderProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-beta-preloader');
+const cn = cnCreate('mfui-preloader');
 const Preloader: React.FC<IPreloaderProps> = ({
     color = 'default',
     sizeAll = 'medium',

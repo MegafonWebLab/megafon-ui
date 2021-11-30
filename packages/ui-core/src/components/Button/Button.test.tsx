@@ -26,7 +26,7 @@ const props: IButtonProps = {
     actionType: 'reset',
     sizeAll: 'large',
 };
-const cn = '.mfui-beta-button';
+const cn = '.mfui-button';
 
 describe('<Button />', () => {
     afterAll(() => jest.restoreAllMocks());

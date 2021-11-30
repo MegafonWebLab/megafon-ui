@@ -50,7 +50,7 @@ const getAutoPlayConfig = (delay: number) => ({
     stopOnLastSlide: true,
 });
 
-const cn = cnCreate('mfui-beta-banner');
+const cn = cnCreate('mfui-banner');
 const Banner: React.FC<IBannerProps> = ({
     className,
     classes = {},

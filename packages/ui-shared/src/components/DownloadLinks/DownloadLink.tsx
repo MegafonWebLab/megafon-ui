@@ -27,7 +27,7 @@ export interface IDownloadLink {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-beta-download-link');
+const cn = cnCreate('mfui-download-link');
 const DownloadLink: React.FC<IDownloadLink> = ({
     href,
     text,

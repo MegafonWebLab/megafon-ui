@@ -41,7 +41,7 @@ describe('<Switcher />', () => {
             const wrapper = shallow(<Switcher onChange={handleChange} />);
 
             const event = { target: {} };
-            wrapper.find('.mfui-beta-switcher').simulate('click', event);
+            wrapper.find('.mfui-switcher').simulate('click', event);
             expect(handleChange).toHaveBeenCalledWith(event);
         });
 
@@ -49,7 +49,7 @@ describe('<Switcher />', () => {
             const handleChange = jest.fn();
             const wrapper = shallow(<Switcher disabled onChange={handleChange} />);
 
-            wrapper.find('.mfui-beta-switcher').simulate('click');
+            wrapper.find('.mfui-switcher').simulate('click');
             expect(handleChange).not.toHaveBeenCalled();
         });
     });

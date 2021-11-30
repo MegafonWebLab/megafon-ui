@@ -17,7 +17,7 @@ export interface ITextBoxProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-beta-text-box');
+const cn = cnCreate('mfui-text-box');
 const TextBox: React.FC<ITextBoxProps> = ({
     textCenter = false,
     centeringWithLimitedWidth = false,

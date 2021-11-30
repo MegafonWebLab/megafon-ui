@@ -2,31 +2,31 @@
 
 exports[`<Notification /> it renders colored Notification with Props 1`] = `
 <Tile
-  className="mfui-beta-notification mfui-beta-notification_type_error mfui-beta-notification_colored notification"
+  className="mfui-notification mfui-notification_type_error mfui-notification_colored notification"
   radius="rounded"
   shadowLevel="hover"
 >
   <div
-    className="mfui-beta-notification__container"
+    className="mfui-notification__container"
   >
     <div
-      className="mfui-beta-notification__icon-container"
+      className="mfui-notification__icon-container"
     >
       <test-file-stub />
     </div>
     <div
-      className="mfui-beta-notification__content"
+      className="mfui-notification__content"
     >
       <Header
         as="h5"
-        className="mfui-beta-notification__title"
+        className="mfui-notification__title"
         color="black"
         hAlign="inherit"
       >
         title
       </Header>
       <p
-        className="mfui-beta-notification__text"
+        className="mfui-notification__text"
       >
         Some test text
       </p>
@@ -37,23 +37,23 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
 
 exports[`<Notification /> renders component 1`] = `
 <Tile
-  className="mfui-beta-notification mfui-beta-notification_type_info mfui-beta-notification_colored"
+  className="mfui-notification mfui-notification_type_info mfui-notification_colored"
   radius="rounded"
   shadowLevel="zero"
 >
   <div
-    className="mfui-beta-notification__container"
+    className="mfui-notification__container"
   >
     <div
-      className="mfui-beta-notification__icon-container"
+      className="mfui-notification__icon-container"
     >
       <test-file-stub />
     </div>
     <div
-      className="mfui-beta-notification__content"
+      className="mfui-notification__content"
     >
       <p
-        className="mfui-beta-notification__text"
+        className="mfui-notification__text"
       >
         Some test text
       </p>

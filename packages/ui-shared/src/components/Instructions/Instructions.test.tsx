@@ -74,7 +74,7 @@ describe('<Instructions />', () => {
         it('active slide will be changed', () => {
             const wrapper = shallow(<Instructions {...props} />);
 
-            wrapper.find('.mfui-beta-instructions__articles-item').at(1).simulate('click');
+            wrapper.find('.mfui-instructions__articles-item').at(1).simulate('click');
 
             expect(wrapper).toMatchSnapshot();
         });

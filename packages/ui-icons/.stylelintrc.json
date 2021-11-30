@@ -72,7 +72,7 @@
     "no-eol-whitespace": true,
     "no-empty-first-line": true,
     "declaration-colon-space-after": "always",
-    "selector-class-pattern": "^mfui-beta-[a-z]+",
+    "selector-class-pattern": "^mfui-[a-z]+",
     "rule-empty-line-before": [
       "always",
       {

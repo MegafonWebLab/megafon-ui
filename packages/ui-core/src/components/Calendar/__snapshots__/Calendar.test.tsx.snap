@@ -11,7 +11,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
   startDate={2020-02-07T00:00:00.000Z}
 >
   <div
-    className="mfui-beta-calendar rootClass"
+    className="mfui-calendar rootClass"
   >
     <Month
       goToNextMonth={[Function]}
@@ -34,73 +34,73 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
       year={2020}
     >
       <div
-        className="mfui-beta-month"
+        className="mfui-month"
       >
         <div
-          className="mfui-beta-month__header"
+          className="mfui-month__header"
         >
           <test-file-stub
-            className="mfui-beta-month__arrow mfui-beta-month__arrow_disabled"
+            className="mfui-month__arrow mfui-month__arrow_disabled"
             onClick={[Function]}
           />
           <span
-            className="mfui-beta-month__title"
+            className="mfui-month__title"
           >
             февраль 2020
           </span>
           <test-file-stub
-            className="mfui-beta-month__arrow mfui-beta-month__arrow_disabled"
+            className="mfui-month__arrow mfui-month__arrow_disabled"
             onClick={[Function]}
           />
         </div>
         <div
-          className="mfui-beta-month__weekday-labels"
+          className="mfui-month__weekday-labels"
         >
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="пн0"
           >
             пн
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="вт1"
           >
             вт
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="ср2"
           >
             ср
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="чт3"
           >
             чт
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="пт4"
           >
             пт
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="сб5"
           >
             сб
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="вс6"
           >
             вс
           </div>
         </div>
         <div
-          className="mfui-beta-month__days"
+          className="mfui-month__days"
         >
           <div
             key="0"
@@ -143,7 +143,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_first"
+              className="mfui-day mfui-day_disabled mfui-day_first"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -152,7 +152,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 1
               </span>
@@ -184,7 +184,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_sunday"
+              className="mfui-day mfui-day_disabled mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -193,7 +193,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 2
               </span>
@@ -225,7 +225,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-day mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -234,7 +234,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 3
               </span>
@@ -266,7 +266,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -275,7 +275,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 4
               </span>
@@ -307,7 +307,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -316,7 +316,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 5
               </span>
@@ -348,7 +348,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -357,7 +357,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 6
               </span>
@@ -389,7 +389,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_active"
+              className="mfui-day mfui-day_active"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -398,7 +398,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 7
               </span>
@@ -430,7 +430,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -439,7 +439,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 8
               </span>
@@ -471,7 +471,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_sunday"
+              className="mfui-day mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -480,7 +480,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 9
               </span>
@@ -512,7 +512,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-day mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -521,7 +521,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 10
               </span>
@@ -553,7 +553,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -562,7 +562,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 11
               </span>
@@ -594,7 +594,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -603,7 +603,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 12
               </span>
@@ -635,7 +635,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -644,7 +644,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 13
               </span>
@@ -676,7 +676,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -685,7 +685,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 14
               </span>
@@ -717,7 +717,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -726,7 +726,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 15
               </span>
@@ -758,7 +758,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_sunday"
+              className="mfui-day mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -767,7 +767,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 16
               </span>
@@ -799,7 +799,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-day mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -808,7 +808,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 17
               </span>
@@ -840,7 +840,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -849,7 +849,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 18
               </span>
@@ -881,7 +881,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -890,7 +890,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 19
               </span>
@@ -922,7 +922,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -931,7 +931,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 20
               </span>
@@ -963,7 +963,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -972,7 +972,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 21
               </span>
@@ -1004,7 +1004,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1013,7 +1013,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 22
               </span>
@@ -1045,7 +1045,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_sunday"
+              className="mfui-day mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1054,7 +1054,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 23
               </span>
@@ -1086,7 +1086,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_monday"
+              className="mfui-day mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1095,7 +1095,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 24
               </span>
@@ -1127,7 +1127,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day"
+              className="mfui-day"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1136,7 +1136,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 25
               </span>
@@ -1168,7 +1168,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1177,7 +1177,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 26
               </span>
@@ -1209,7 +1209,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1218,7 +1218,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 27
               </span>
@@ -1250,7 +1250,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1259,7 +1259,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 28
               </span>
@@ -1291,7 +1291,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_last"
+              className="mfui-day mfui-day_disabled mfui-day_last"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1300,7 +1300,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 29
               </span>
@@ -1323,7 +1323,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
   startDate={2020-02-01T00:00:00.000Z}
 >
   <div
-    className="mfui-beta-calendar rootClass"
+    className="mfui-calendar rootClass"
   >
     <Month
       goToNextMonth={[Function]}
@@ -1346,73 +1346,73 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
       year={2020}
     >
       <div
-        className="mfui-beta-month"
+        className="mfui-month"
       >
         <div
-          className="mfui-beta-month__header"
+          className="mfui-month__header"
         >
           <test-file-stub
-            className="mfui-beta-month__arrow"
+            className="mfui-month__arrow"
             onClick={[Function]}
           />
           <span
-            className="mfui-beta-month__title"
+            className="mfui-month__title"
           >
             декабрь 2020
           </span>
           <test-file-stub
-            className="mfui-beta-month__arrow"
+            className="mfui-month__arrow"
             onClick={[Function]}
           />
         </div>
         <div
-          className="mfui-beta-month__weekday-labels"
+          className="mfui-month__weekday-labels"
         >
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="пн0"
           >
             пн
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="вт1"
           >
             вт
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="ср2"
           >
             ср
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="чт3"
           >
             чт
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="пт4"
           >
             пт
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="сб5"
           >
             сб
           </div>
           <div
-            className="mfui-beta-month__weekday"
+            className="mfui-month__weekday"
             key="вс6"
           >
             вс
           </div>
         </div>
         <div
-          className="mfui-beta-month__days"
+          className="mfui-month__days"
         >
           <div
             key="0"
@@ -1443,7 +1443,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_first"
+              className="mfui-day mfui-day_disabled mfui-day_first"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1452,7 +1452,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 1
               </span>
@@ -1484,7 +1484,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1493,7 +1493,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 2
               </span>
@@ -1525,7 +1525,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1534,7 +1534,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 3
               </span>
@@ -1566,7 +1566,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1575,7 +1575,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 4
               </span>
@@ -1607,7 +1607,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1616,7 +1616,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 5
               </span>
@@ -1648,7 +1648,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_sunday"
+              className="mfui-day mfui-day_disabled mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1657,7 +1657,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 6
               </span>
@@ -1689,7 +1689,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_monday"
+              className="mfui-day mfui-day_disabled mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1698,7 +1698,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 7
               </span>
@@ -1730,7 +1730,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1739,7 +1739,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 8
               </span>
@@ -1771,7 +1771,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1780,7 +1780,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 9
               </span>
@@ -1812,7 +1812,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1821,7 +1821,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 10
               </span>
@@ -1853,7 +1853,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1862,7 +1862,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 11
               </span>
@@ -1894,7 +1894,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1903,7 +1903,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 12
               </span>
@@ -1935,7 +1935,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_sunday"
+              className="mfui-day mfui-day_disabled mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1944,7 +1944,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 13
               </span>
@@ -1976,7 +1976,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_monday"
+              className="mfui-day mfui-day_disabled mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1985,7 +1985,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 14
               </span>
@@ -2017,7 +2017,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2026,7 +2026,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 15
               </span>
@@ -2058,7 +2058,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2067,7 +2067,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 16
               </span>
@@ -2099,7 +2099,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2108,7 +2108,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 17
               </span>
@@ -2140,7 +2140,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2149,7 +2149,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 18
               </span>
@@ -2181,7 +2181,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2190,7 +2190,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 19
               </span>
@@ -2222,7 +2222,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_sunday"
+              className="mfui-day mfui-day_disabled mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2231,7 +2231,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 20
               </span>
@@ -2263,7 +2263,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_monday"
+              className="mfui-day mfui-day_disabled mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2272,7 +2272,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 21
               </span>
@@ -2304,7 +2304,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2313,7 +2313,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 22
               </span>
@@ -2345,7 +2345,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2354,7 +2354,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 23
               </span>
@@ -2386,7 +2386,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2395,7 +2395,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 24
               </span>
@@ -2427,7 +2427,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2436,7 +2436,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 25
               </span>
@@ -2468,7 +2468,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2477,7 +2477,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 26
               </span>
@@ -2509,7 +2509,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_sunday"
+              className="mfui-day mfui-day_disabled mfui-day_sunday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2518,7 +2518,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 27
               </span>
@@ -2550,7 +2550,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_monday"
+              className="mfui-day mfui-day_disabled mfui-day_monday"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2559,7 +2559,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 28
               </span>
@@ -2591,7 +2591,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2600,7 +2600,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 29
               </span>
@@ -2632,7 +2632,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled"
+              className="mfui-day mfui-day_disabled"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2641,7 +2641,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 30
               </span>
@@ -2673,7 +2673,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             onResetDates={[Function]}
           >
             <button
-              className="mfui-beta-day mfui-beta-day_disabled mfui-beta-day_last"
+              className="mfui-day mfui-day_disabled mfui-day_last"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2682,7 +2682,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
               type="button"
             >
               <span
-                className="mfui-beta-day__label"
+                className="mfui-day__label"
               >
                 31
               </span>
@@ -2697,7 +2697,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
 
 exports[`<Calendar /> snapshots renders with all props 1`] = `
 <div
-  className="mfui-beta-calendar rootClass"
+  className="mfui-calendar rootClass"
 >
   <Month
     goToNextMonth={[Function]}

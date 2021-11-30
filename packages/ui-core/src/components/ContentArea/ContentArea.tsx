@@ -42,7 +42,7 @@ export interface IConrentAreaProps {
     };
 }
 
-const cn = cnCreate('mfui-beta-content-area');
+const cn = cnCreate('mfui-content-area');
 const ContentArea: React.FC<IConrentAreaProps> = ({
     outerBackgroundColor,
     innerBackgroundColor,

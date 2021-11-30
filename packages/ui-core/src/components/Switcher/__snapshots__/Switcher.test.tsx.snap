@@ -2,55 +2,55 @@
 
 exports[`<Switcher /> layout should render checked switcher 1`] = `
 <div
-  className="mfui-beta-switcher mfui-beta-switcher_checked mfui-beta-switcher_no-touch"
+  className="mfui-switcher mfui-switcher_checked mfui-switcher_no-touch"
   onClick={[Function]}
 >
   <div
-    className="mfui-beta-switcher__pointer"
+    className="mfui-switcher__pointer"
   />
 </div>
 `;
 
 exports[`<Switcher /> layout should render disabled switcher 1`] = `
 <div
-  className="mfui-beta-switcher mfui-beta-switcher_disabled mfui-beta-switcher_no-touch"
+  className="mfui-switcher mfui-switcher_disabled mfui-switcher_no-touch"
   onClick={[Function]}
 >
   <div
-    className="mfui-beta-switcher__pointer"
+    className="mfui-switcher__pointer"
   />
 </div>
 `;
 
 exports[`<Switcher /> layout should render switcher for mobile devices 1`] = `
 <div
-  className="mfui-beta-switcher"
+  className="mfui-switcher"
   onClick={[Function]}
 >
   <div
-    className="mfui-beta-switcher__pointer"
+    className="mfui-switcher__pointer"
   />
 </div>
 `;
 
 exports[`<Switcher /> layout should render switcher with default props 1`] = `
 <div
-  className="mfui-beta-switcher mfui-beta-switcher_no-touch"
+  className="mfui-switcher mfui-switcher_no-touch"
   onClick={[Function]}
 >
   <div
-    className="mfui-beta-switcher__pointer"
+    className="mfui-switcher__pointer"
   />
 </div>
 `;
 
 exports[`<Switcher /> layout should render switcher with external className 1`] = `
 <div
-  className="mfui-beta-switcher mfui-beta-switcher_no-touch external-class-name"
+  className="mfui-switcher mfui-switcher_no-touch external-class-name"
   onClick={[Function]}
 >
   <div
-    className="mfui-beta-switcher__pointer"
+    className="mfui-switcher__pointer"
   />
 </div>
 `;

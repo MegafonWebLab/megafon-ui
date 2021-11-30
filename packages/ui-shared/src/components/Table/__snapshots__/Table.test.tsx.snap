@@ -2,45 +2,45 @@
 
 exports[`<Table /> should render cells as converted string with nbsp 1`] = `
 <div
-  className="mfui-beta-table mfui-beta-table_min-cell-size_small custom-class"
+  className="mfui-table mfui-table_min-cell-size_small custom-class"
 >
   <div
-    className="mfui-beta-table__scroll"
+    className="mfui-table__scroll"
     onScroll={[Function]}
   >
     <table
-      className="mfui-beta-table__table"
+      className="mfui-table__table"
     >
       <tbody>
         <tr
-          className="mfui-beta-table__row mfui-beta-table__row_head"
+          className="mfui-table__row mfui-table__row_head"
           key=".0"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             Заголовок 1
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             Заголовок 2
           </td>
         </tr>
         <tr
-          className="mfui-beta-table__row"
+          className="mfui-table__row"
           key=".1"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             Текст 1
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             Текст 2
@@ -54,22 +54,22 @@ exports[`<Table /> should render cells as converted string with nbsp 1`] = `
 
 exports[`<Table /> should render cells as react node 1`] = `
 <div
-  className="mfui-beta-table mfui-beta-table_min-cell-size_small custom-class"
+  className="mfui-table mfui-table_min-cell-size_small custom-class"
 >
   <div
-    className="mfui-beta-table__scroll"
+    className="mfui-table__scroll"
     onScroll={[Function]}
   >
     <table
-      className="mfui-beta-table__table"
+      className="mfui-table__table"
     >
       <tbody>
         <tr
-          className="mfui-beta-table__row mfui-beta-table__row_head"
+          className="mfui-table__row mfui-table__row_head"
           key=".0"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             <span>
@@ -77,7 +77,7 @@ exports[`<Table /> should render cells as react node 1`] = `
             </span>
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             <span>
@@ -86,11 +86,11 @@ exports[`<Table /> should render cells as react node 1`] = `
           </td>
         </tr>
         <tr
-          className="mfui-beta-table__row"
+          className="mfui-table__row"
           key=".1"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             <span>
@@ -98,7 +98,7 @@ exports[`<Table /> should render cells as react node 1`] = `
             </span>
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             <span>
@@ -114,45 +114,45 @@ exports[`<Table /> should render cells as react node 1`] = `
 
 exports[`<Table /> should render with default props 1`] = `
 <div
-  className="mfui-beta-table mfui-beta-table_fix-column mfui-beta-table_min-cell-size_large"
+  className="mfui-table mfui-table_fix-column mfui-table_min-cell-size_large"
 >
   <div
-    className="mfui-beta-table__scroll"
+    className="mfui-table__scroll"
     onScroll={[Function]}
   >
     <table
-      className="mfui-beta-table__table"
+      className="mfui-table__table"
     >
       <tbody>
         <tr
-          className="mfui-beta-table__row mfui-beta-table__row_head"
+          className="mfui-table__row mfui-table__row_head"
           key=".0"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             Заголовок 1
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             Заголовок 2
           </td>
         </tr>
         <tr
-          className="mfui-beta-table__row"
+          className="mfui-table__row"
           key=".1"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             Текст 1
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             Текст 2
@@ -166,45 +166,45 @@ exports[`<Table /> should render with default props 1`] = `
 
 exports[`<Table /> should render with props 1`] = `
 <div
-  className="mfui-beta-table mfui-beta-table_min-cell-size_small custom-class"
+  className="mfui-table mfui-table_min-cell-size_small custom-class"
 >
   <div
-    className="mfui-beta-table__scroll"
+    className="mfui-table__scroll"
     onScroll={[Function]}
   >
     <table
-      className="mfui-beta-table__table"
+      className="mfui-table__table"
     >
       <tbody>
         <tr
-          className="mfui-beta-table__row mfui-beta-table__row_head"
+          className="mfui-table__row mfui-table__row_head"
           key=".0"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             Заголовок 1
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             Заголовок 2
           </td>
         </tr>
         <tr
-          className="mfui-beta-table__row"
+          className="mfui-table__row"
           key=".1"
         >
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".0"
           >
             Текст 1
           </td>
           <td
-            className="mfui-beta-table__cell"
+            className="mfui-table__cell"
             key=".1"
           >
             Текст 2

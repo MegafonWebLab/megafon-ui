@@ -9,7 +9,7 @@ import './VideoBanner.less';
 
 type BreadCrumbsItemsType = BreadcrumbsPropsType['items'];
 
-const cn = cnCreate('mfui-beta-video-banner');
+const cn = cnCreate('mfui-video-banner');
 
 export enum ClassName {
     BUTTON = 'button',

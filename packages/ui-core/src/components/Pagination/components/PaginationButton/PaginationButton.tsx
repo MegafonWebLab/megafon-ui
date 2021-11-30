@@ -14,7 +14,7 @@ export interface IPaginationButton {
     value?: ValueType;
 }
 
-const cn = cnCreate('mfui-beta-pagination-button');
+const cn = cnCreate('mfui-pagination-button');
 const PaginationButton: React.FC<IPaginationButton> = ({
     disabled = false,
     isActive = false,

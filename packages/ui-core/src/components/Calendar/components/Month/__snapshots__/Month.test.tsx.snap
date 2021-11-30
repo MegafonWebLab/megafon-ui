@@ -2,43 +2,43 @@
 
 exports[`<Month /> snapshots renders component with props 1`] = `
 <div
-  className="mfui-beta-month"
+  className="mfui-month"
 >
   <div
-    className="mfui-beta-month__header"
+    className="mfui-month__header"
   >
     <test-file-stub
-      className="mfui-beta-month__arrow"
+      className="mfui-month__arrow"
       onClick={[Function]}
     />
     <span
-      className="mfui-beta-month__title"
+      className="mfui-month__title"
     >
       monthLabel 1994
     </span>
     <test-file-stub
-      className="mfui-beta-month__arrow"
+      className="mfui-month__arrow"
       onClick={[Function]}
     />
   </div>
   <div
-    className="mfui-beta-month__weekday-labels"
+    className="mfui-month__weekday-labels"
   >
     <div
-      className="mfui-beta-month__weekday"
+      className="mfui-month__weekday"
       key="label10"
     >
       label1
     </div>
     <div
-      className="mfui-beta-month__weekday"
+      className="mfui-month__weekday"
       key="label21"
     >
       label2
     </div>
   </div>
   <div
-    className="mfui-beta-month__days"
+    className="mfui-month__days"
   >
     <div />
   </div>
@@ -47,43 +47,43 @@ exports[`<Month /> snapshots renders component with props 1`] = `
 
 exports[`<Month /> snapshots renders component with props disabled arrows 1`] = `
 <div
-  className="mfui-beta-month"
+  className="mfui-month"
 >
   <div
-    className="mfui-beta-month__header"
+    className="mfui-month__header"
   >
     <test-file-stub
-      className="mfui-beta-month__arrow mfui-beta-month__arrow_disabled"
+      className="mfui-month__arrow mfui-month__arrow_disabled"
       onClick={[Function]}
     />
     <span
-      className="mfui-beta-month__title"
+      className="mfui-month__title"
     >
       monthLabel 1994
     </span>
     <test-file-stub
-      className="mfui-beta-month__arrow mfui-beta-month__arrow_disabled"
+      className="mfui-month__arrow mfui-month__arrow_disabled"
       onClick={[Function]}
     />
   </div>
   <div
-    className="mfui-beta-month__weekday-labels"
+    className="mfui-month__weekday-labels"
   >
     <div
-      className="mfui-beta-month__weekday"
+      className="mfui-month__weekday"
       key="label10"
     >
       label1
     </div>
     <div
-      className="mfui-beta-month__weekday"
+      className="mfui-month__weekday"
       key="label21"
     >
       label2
     </div>
   </div>
   <div
-    className="mfui-beta-month__days"
+    className="mfui-month__days"
   >
     <div />
   </div>

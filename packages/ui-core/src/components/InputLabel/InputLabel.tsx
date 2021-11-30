@@ -7,7 +7,7 @@ export interface IInputLabelProps {
     htmlFor?: string;
 }
 
-const cn = cnCreate('mfui-beta-input-label');
+const cn = cnCreate('mfui-input-label');
 const InputLabel: React.FC<IInputLabelProps> = ({ htmlFor, children }) => (
     <label htmlFor={htmlFor} className={cn()}>
         {children}

@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme';
 import megafon from './megafon.png';
 import Partners from './Partners';
 
-const cnCarousel = cnCreate('.mfui-beta-carousel');
+const cnCarousel = cnCreate('.mfui-carousel');
 
 const generateItems = (i, href?) =>
     Array.from({ length: i }, () => ({

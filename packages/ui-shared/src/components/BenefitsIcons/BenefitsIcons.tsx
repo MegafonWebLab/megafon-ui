@@ -131,7 +131,7 @@ const getMultiColumnConfig = (iconPosition: IconPosition, count: number, index: 
     }
 };
 
-const cn = cnCreate('mfui-beta-benefits-icons');
+const cn = cnCreate('mfui-benefits-icons');
 const BenefitsIcons: React.FC<IBenefitsIcons> = ({
     rootRef,
     iconPosition = IconPositionEnum.LEFT_TOP,

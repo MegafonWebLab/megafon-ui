@@ -10,7 +10,7 @@ const content = {
     href: '#',
 };
 
-const cn = cnCreate('mfui-beta-video-block');
+const cn = cnCreate('mfui-video-block');
 describe('<VideoBlock />', () => {
     it('it renders VideoBlock with default props', () => {
         const component = shallow(<VideoBlock videoSrc="video.mp4" />);

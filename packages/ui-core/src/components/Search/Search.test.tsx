@@ -3,7 +3,7 @@ import { cnCreate } from '@megafon/ui-helpers';
 import { shallow, mount } from 'enzyme';
 import Search, { SearchItem, ISearchProps } from './Search';
 
-const cn = cnCreate('mfui-beta-search');
+const cn = cnCreate('mfui-search');
 
 const getCustomItems = (): SearchItem[] => {
     const getContent = (index: number) => (

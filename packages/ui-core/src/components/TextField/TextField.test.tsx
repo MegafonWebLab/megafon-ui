@@ -31,7 +31,7 @@ const commonProps = {
     className: 'customClass',
 };
 
-const cn = cnCreate('.mfui-beta-text-field');
+const cn = cnCreate('.mfui-text-field');
 const selectors = {
     iconBox: cn('icon-box'),
     input: 'input',

@@ -43,7 +43,7 @@ export interface IButtonLinkBoxProps {
     onLinkClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-beta-button-link-box');
+const cn = cnCreate('mfui-button-link-box');
 const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     dataAttrs,
     rootRef,

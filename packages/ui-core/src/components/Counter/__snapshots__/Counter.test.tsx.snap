@@ -2,23 +2,23 @@
 
 exports[`<Counter /> layout renders Counter 1`] = `
 <div
-  className="mfui-beta-counter"
+  className="mfui-counter"
 >
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_left"
+    className="mfui-counter__btn mfui-counter__btn_left"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <test-file-stub
-      className="mfui-beta-counter__icon"
+      className="mfui-counter__icon"
     />
   </button>
   <div
-    className="mfui-beta-counter__input-box"
+    className="mfui-counter__input-box"
   >
     <input
-      className="mfui-beta-counter__input"
+      className="mfui-counter__input"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -26,13 +26,13 @@ exports[`<Counter /> layout renders Counter 1`] = `
     />
   </div>
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_right"
+    className="mfui-counter__btn mfui-counter__btn_right"
     disabled={false}
     onClick={[Function]}
     type="button"
   >
     <test-file-stub
-      className="mfui-beta-counter__icon"
+      className="mfui-counter__icon"
     />
   </button>
 </div>
@@ -40,23 +40,23 @@ exports[`<Counter /> layout renders Counter 1`] = `
 
 exports[`<Counter /> layout renders Counter with "isControlled" props 1`] = `
 <div
-  className="mfui-beta-counter mfui-beta-counter_disabled class-name root-class"
+  className="mfui-counter mfui-counter_disabled class-name root-class"
 >
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_left button-minus-class"
+    className="mfui-counter__btn mfui-counter__btn_left button-minus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <test-file-stub
-      className="mfui-beta-counter__icon"
+      className="mfui-counter__icon"
     />
   </button>
   <div
-    className="mfui-beta-counter__input-box"
+    className="mfui-counter__input-box"
   >
     <input
-      className="mfui-beta-counter__input input-class"
+      className="mfui-counter__input input-class"
       disabled={true}
       onBlur={[Function]}
       onChange={[Function]}
@@ -64,13 +64,13 @@ exports[`<Counter /> layout renders Counter with "isControlled" props 1`] = `
     />
   </div>
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_right button-plus-class"
+    className="mfui-counter__btn mfui-counter__btn_right button-plus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <test-file-stub
-      className="mfui-beta-counter__icon"
+      className="mfui-counter__icon"
     />
   </button>
 </div>
@@ -78,23 +78,23 @@ exports[`<Counter /> layout renders Counter with "isControlled" props 1`] = `
 
 exports[`<Counter /> layout renders Counter with props 1`] = `
 <div
-  className="mfui-beta-counter mfui-beta-counter_disabled class-name root-class"
+  className="mfui-counter mfui-counter_disabled class-name root-class"
 >
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_left button-minus-class"
+    className="mfui-counter__btn mfui-counter__btn_left button-minus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <test-file-stub
-      className="mfui-beta-counter__icon"
+      className="mfui-counter__icon"
     />
   </button>
   <div
-    className="mfui-beta-counter__input-box"
+    className="mfui-counter__input-box"
   >
     <input
-      className="mfui-beta-counter__input input-class"
+      className="mfui-counter__input input-class"
       disabled={true}
       onBlur={[Function]}
       onChange={[Function]}
@@ -102,13 +102,13 @@ exports[`<Counter /> layout renders Counter with props 1`] = `
     />
   </div>
   <button
-    className="mfui-beta-counter__btn mfui-beta-counter__btn_right button-plus-class"
+    className="mfui-counter__btn mfui-counter__btn_right button-plus-class"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
     <test-file-stub
-      className="mfui-beta-counter__icon"
+      className="mfui-counter__icon"
     />
   </button>
 </div>

@@ -90,7 +90,7 @@ export interface IButtonProps extends IFilterDataAttrs {
 const getLoaderSize = (size: string): PreloaderSizesType =>
     size === ButtonSizes.SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM;
 
-const cn = cnCreate('mfui-beta-button');
+const cn = cnCreate('mfui-button');
 const Button: React.FC<IButtonProps> = ({
     classes: { root: rootClassName, content: contentClassName, inner: innerClassName } = {},
     className = '',

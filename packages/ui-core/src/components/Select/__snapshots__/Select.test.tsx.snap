@@ -2,53 +2,53 @@
 
 exports[`<Select /> it renders with data attributes 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch"
+  className="mfui-select mfui-select_no-touch"
   data-test="test"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <div
-      className="mfui-beta-select__control"
+      className="mfui-select__control"
       onKeyDown={[Function]}
     >
       <div
-        className="mfui-beta-select__title"
+        className="mfui-select__title"
         onClick={[Function]}
         role="button"
         tabIndex={0}
       >
         <div
-          className="mfui-beta-select__title-inner"
+          className="mfui-select__title-inner"
         />
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-select__list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          className="mfui-select__list-item mfui-select__list-item_active"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-select__item-title"
           >
             test-name-1
           </div>
         </div>
         <div
-          className="mfui-beta-select__list-item"
+          className="mfui-select__list-item"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-select__item-title"
           >
             test-name-2
           </div>
@@ -61,28 +61,28 @@ exports[`<Select /> it renders with data attributes 1`] = `
 
 exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+  className="mfui-select mfui-select_no-touch test-class test-root-class"
   data-test="test"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <InputLabel
       htmlFor="1"
     >
       test-label
       <span
-        className="mfui-beta-select__require-mark"
+        className="mfui-select__require-mark"
       >
         *
       </span>
     </InputLabel>
     <div
-      className="mfui-beta-select__control test-control-class"
+      className="mfui-select__control test-control-class"
       onKeyDown={[Function]}
     >
       <input
-        className="mfui-beta-select__combobox"
+        className="mfui-select__combobox"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -91,19 +91,19 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       />
     </div>
     <div
-      className="mfui-beta-select__list list"
+      className="mfui-select__list list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+          className="mfui-select__list-item mfui-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title list-item-title"
+            className="mfui-select__item-title list-item-title"
           >
             t
             e
@@ -119,13 +119,13 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
           </div>
         </div>
         <div
-          className="mfui-beta-select__list-item list-item"
+          className="mfui-select__list-item list-item"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title list-item-title"
+            className="mfui-select__item-title list-item-title"
           >
             t
             e
@@ -144,7 +144,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
     </div>
   </div>
   <div
-    className="mfui-beta-select__text"
+    className="mfui-select__text"
   >
     test-notice-text
   </div>
@@ -153,28 +153,28 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
 
 exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 2`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+  className="mfui-select mfui-select_no-touch test-class test-root-class"
   data-test="test"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <InputLabel
       htmlFor="1"
     >
       test-label
       <span
-        className="mfui-beta-select__require-mark"
+        className="mfui-select__require-mark"
       >
         *
       </span>
     </InputLabel>
     <div
-      className="mfui-beta-select__control test-control-class"
+      className="mfui-select__control test-control-class"
       onKeyDown={[Function]}
     >
       <input
-        className="mfui-beta-select__combobox"
+        className="mfui-select__combobox"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -183,19 +183,19 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       />
     </div>
     <div
-      className="mfui-beta-select__list list"
+      className="mfui-select__list list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+          className="mfui-select__list-item mfui-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title list-item-title"
+            className="mfui-select__item-title list-item-title"
           >
             t
             e
@@ -211,13 +211,13 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
           </div>
         </div>
         <div
-          className="mfui-beta-select__list-item list-item"
+          className="mfui-select__list-item list-item"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title list-item-title"
+            className="mfui-select__item-title list-item-title"
           >
             t
             e
@@ -236,7 +236,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
     </div>
   </div>
   <div
-    className="mfui-beta-select__text"
+    className="mfui-select__text"
   >
     test-notice-text
   </div>
@@ -245,28 +245,28 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
 
 exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 3`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_open mfui-beta-select_no-touch test-class test-root-class"
+  className="mfui-select mfui-select_open mfui-select_no-touch test-class test-root-class"
   data-test="test"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <InputLabel
       htmlFor="1"
     >
       test-label
       <span
-        className="mfui-beta-select__require-mark"
+        className="mfui-select__require-mark"
       >
         *
       </span>
     </InputLabel>
     <div
-      className="mfui-beta-select__control test-control-class"
+      className="mfui-select__control test-control-class"
       onKeyDown={[Function]}
     >
       <input
-        className="mfui-beta-select__combobox"
+        className="mfui-select__combobox"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -275,22 +275,22 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       />
     </div>
     <div
-      className="mfui-beta-select__list list"
+      className="mfui-select__list list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+          className="mfui-select__list-item mfui-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title list-item-title"
+            className="mfui-select__item-title list-item-title"
           >
             <span
-              className="mfui-beta-select__highlighted-fragment"
+              className="mfui-select__highlighted-fragment"
             >
               test-name-1
             </span>
@@ -300,7 +300,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
     </div>
   </div>
   <div
-    className="mfui-beta-select__text"
+    className="mfui-select__text"
   >
     test-notice-text
   </div>
@@ -309,28 +309,28 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
 
 exports[`<Select /> key typing handlers highlighted text 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+  className="mfui-select mfui-select_no-touch test-class test-root-class"
   data-test="test"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <InputLabel
       htmlFor="1"
     >
       test-label
       <span
-        className="mfui-beta-select__require-mark"
+        className="mfui-select__require-mark"
       >
         *
       </span>
     </InputLabel>
     <div
-      className="mfui-beta-select__control test-control-class"
+      className="mfui-select__control test-control-class"
       onKeyDown={[Function]}
     >
       <input
-        className="mfui-beta-select__combobox"
+        className="mfui-select__combobox"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -339,19 +339,19 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
       />
     </div>
     <div
-      className="mfui-beta-select__list list"
+      className="mfui-select__list list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+          className="mfui-select__list-item mfui-select__list-item_active list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title list-item-title"
+            className="mfui-select__item-title list-item-title"
           >
             t
             e
@@ -367,13 +367,13 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
           </div>
         </div>
         <div
-          className="mfui-beta-select__list-item list-item"
+          className="mfui-select__list-item list-item"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title list-item-title"
+            className="mfui-select__item-title list-item-title"
           >
             t
             e
@@ -392,7 +392,7 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
     </div>
   </div>
   <div
-    className="mfui-beta-select__text"
+    className="mfui-select__text"
   >
     test-notice-text
   </div>
@@ -441,70 +441,70 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
   type="classic"
 >
   <div
-    className="mfui-beta-select mfui-beta-select_open mfui-beta-select_no-touch test-class test-root-class"
+    className="mfui-select mfui-select_open mfui-select_no-touch test-class test-root-class"
     data-test="test"
   >
     <div
-      className="mfui-beta-select__inner"
+      className="mfui-select__inner"
     >
       <InputLabel
         htmlFor="1"
       >
         <label
-          className="mfui-beta-input-label"
+          className="mfui-input-label"
           htmlFor="1"
         >
           test-label
           <span
-            className="mfui-beta-select__require-mark"
+            className="mfui-select__require-mark"
           >
             *
           </span>
         </label>
       </InputLabel>
       <div
-        className="mfui-beta-select__control test-control-class"
+        className="mfui-select__control test-control-class"
         onKeyDown={[Function]}
       >
         <div
-          className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
+          className="mfui-select__title mfui-select__title_placeholder test-title"
           onClick={[Function]}
           role="button"
           tabIndex={0}
         >
           <div
-            className="mfui-beta-select__title-inner test-title-inner"
+            className="mfui-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
         </div>
       </div>
       <div
-        className="mfui-beta-select__list list"
+        className="mfui-select__list list"
       >
         <div
-          className="mfui-beta-select__list-inner"
+          className="mfui-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+            className="mfui-select__list-item mfui-select__list-item_active list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               test-name-1
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item list-item"
+            className="mfui-select__list-item list-item"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               test-name-2
             </div>
@@ -513,7 +513,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
       </div>
     </div>
     <div
-      className="mfui-beta-select__text"
+      className="mfui-select__text"
     >
       test-notice-text
     </div>
@@ -563,70 +563,70 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
   type="classic"
 >
   <div
-    className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+    className="mfui-select mfui-select_no-touch test-class test-root-class"
     data-test="test"
   >
     <div
-      className="mfui-beta-select__inner"
+      className="mfui-select__inner"
     >
       <InputLabel
         htmlFor="1"
       >
         <label
-          className="mfui-beta-input-label"
+          className="mfui-input-label"
           htmlFor="1"
         >
           test-label
           <span
-            className="mfui-beta-select__require-mark"
+            className="mfui-select__require-mark"
           >
             *
           </span>
         </label>
       </InputLabel>
       <div
-        className="mfui-beta-select__control test-control-class"
+        className="mfui-select__control test-control-class"
         onKeyDown={[Function]}
       >
         <div
-          className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
+          className="mfui-select__title mfui-select__title_placeholder test-title"
           onClick={[Function]}
           role="button"
           tabIndex={0}
         >
           <div
-            className="mfui-beta-select__title-inner test-title-inner"
+            className="mfui-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
         </div>
       </div>
       <div
-        className="mfui-beta-select__list list"
+        className="mfui-select__list list"
       >
         <div
-          className="mfui-beta-select__list-inner"
+          className="mfui-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+            className="mfui-select__list-item mfui-select__list-item_active list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               test-name-1
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item list-item"
+            className="mfui-select__list-item list-item"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               test-name-2
             </div>
@@ -635,7 +635,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
       </div>
     </div>
     <div
-      className="mfui-beta-select__text"
+      className="mfui-select__text"
     >
       test-notice-text
     </div>
@@ -645,41 +645,41 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 
 exports[`<Select /> should render items.view as function and type classic 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch"
+  className="mfui-select mfui-select_no-touch"
   data-test="test"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <div
-      className="mfui-beta-select__control"
+      className="mfui-select__control"
       onKeyDown={[Function]}
     >
       <div
-        className="mfui-beta-select__title"
+        className="mfui-select__title"
         onClick={[Function]}
         role="button"
         tabIndex={0}
       >
         <div
-          className="mfui-beta-select__title-inner"
+          className="mfui-select__title-inner"
         />
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-select__list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          className="mfui-select__list-item mfui-select__list-item_active"
           key="0_111"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-select__item-title"
           >
             <div>
               view 
@@ -694,18 +694,18 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
 
 exports[`<Select /> should render items.view as function and type combobox 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch"
+  className="mfui-select mfui-select_no-touch"
   data-test="test"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <div
-      className="mfui-beta-select__control"
+      className="mfui-select__control"
       onKeyDown={[Function]}
     >
       <input
-        className="mfui-beta-select__combobox"
+        className="mfui-select__combobox"
         onChange={[Function]}
         onFocus={[Function]}
         type="text"
@@ -713,19 +713,19 @@ exports[`<Select /> should render items.view as function and type combobox 1`] =
       />
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-select__list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       >
         <div
-          className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+          className="mfui-select__list-item mfui-select__list-item_active"
           key="0_111"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
-            className="mfui-beta-select__item-title"
+            className="mfui-select__item-title"
           >
             <div>
               view 
@@ -781,33 +781,33 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
   type="combobox"
 >
   <div
-    className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+    className="mfui-select mfui-select_no-touch test-class test-root-class"
     data-test="test"
   >
     <div
-      className="mfui-beta-select__inner"
+      className="mfui-select__inner"
     >
       <InputLabel
         htmlFor="1"
       >
         <label
-          className="mfui-beta-input-label"
+          className="mfui-input-label"
           htmlFor="1"
         >
           test-label
           <span
-            className="mfui-beta-select__require-mark"
+            className="mfui-select__require-mark"
           >
             *
           </span>
         </label>
       </InputLabel>
       <div
-        className="mfui-beta-select__control test-control-class"
+        className="mfui-select__control test-control-class"
         onKeyDown={[Function]}
       >
         <input
-          className="mfui-beta-select__combobox"
+          className="mfui-select__combobox"
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="test-placeholder"
@@ -816,19 +816,19 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         />
       </div>
       <div
-        className="mfui-beta-select__list list"
+        className="mfui-select__list list"
       >
         <div
-          className="mfui-beta-select__list-inner"
+          className="mfui-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+            className="mfui-select__list-item mfui-select__list-item_active list-item"
             key="0_111"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               n
               e
@@ -848,13 +848,13 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item list-item"
+            className="mfui-select__list-item list-item"
             key="1_222"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               n
               e
@@ -877,7 +877,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
       </div>
     </div>
     <div
-      className="mfui-beta-select__text"
+      className="mfui-select__text"
     >
       test-notice-text
     </div>
@@ -905,52 +905,52 @@ exports[`<Select /> snapshots renders with default props 1`] = `
   type="classic"
 >
   <div
-    className="mfui-beta-select mfui-beta-select_no-touch"
+    className="mfui-select mfui-select_no-touch"
   >
     <div
-      className="mfui-beta-select__inner"
+      className="mfui-select__inner"
     >
       <div
-        className="mfui-beta-select__control"
+        className="mfui-select__control"
         onKeyDown={[Function]}
       >
         <div
-          className="mfui-beta-select__title"
+          className="mfui-select__title"
           onClick={[Function]}
           role="button"
           tabIndex={0}
         >
           <div
-            className="mfui-beta-select__title-inner"
+            className="mfui-select__title-inner"
           />
         </div>
       </div>
       <div
-        className="mfui-beta-select__list"
+        className="mfui-select__list"
       >
         <div
-          className="mfui-beta-select__list-inner"
+          className="mfui-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active"
+            className="mfui-select__list-item mfui-select__list-item_active"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-select__item-title"
             >
               test-name-1
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item"
+            className="mfui-select__list-item"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title"
+              className="mfui-select__item-title"
             >
               test-name-2
             </div>
@@ -1004,70 +1004,70 @@ exports[`<Select /> snapshots renders with props 1`] = `
   type="classic"
 >
   <div
-    className="mfui-beta-select mfui-beta-select_no-touch test-class test-root-class"
+    className="mfui-select mfui-select_no-touch test-class test-root-class"
     data-test="test"
   >
     <div
-      className="mfui-beta-select__inner"
+      className="mfui-select__inner"
     >
       <InputLabel
         htmlFor="1"
       >
         <label
-          className="mfui-beta-input-label"
+          className="mfui-input-label"
           htmlFor="1"
         >
           test-label
           <span
-            className="mfui-beta-select__require-mark"
+            className="mfui-select__require-mark"
           >
             *
           </span>
         </label>
       </InputLabel>
       <div
-        className="mfui-beta-select__control test-control-class"
+        className="mfui-select__control test-control-class"
         onKeyDown={[Function]}
       >
         <div
-          className="mfui-beta-select__title mfui-beta-select__title_placeholder test-title"
+          className="mfui-select__title mfui-select__title_placeholder test-title"
           onClick={[Function]}
           role="button"
           tabIndex={0}
         >
           <div
-            className="mfui-beta-select__title-inner test-title-inner"
+            className="mfui-select__title-inner test-title-inner"
           >
             test-placeholder
           </div>
         </div>
       </div>
       <div
-        className="mfui-beta-select__list list"
+        className="mfui-select__list list"
       >
         <div
-          className="mfui-beta-select__list-inner"
+          className="mfui-select__list-inner"
         >
           <div
-            className="mfui-beta-select__list-item mfui-beta-select__list-item_active list-item"
+            className="mfui-select__list-item mfui-select__list-item_active list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               test-name-1
             </div>
           </div>
           <div
-            className="mfui-beta-select__list-item list-item"
+            className="mfui-select__list-item list-item"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="mfui-beta-select__item-title list-item-title"
+              className="mfui-select__item-title list-item-title"
             >
               test-name-2
             </div>
@@ -1076,7 +1076,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
       </div>
     </div>
     <div
-      className="mfui-beta-select__text"
+      className="mfui-select__text"
     >
       test-notice-text
     </div>
@@ -1086,31 +1086,31 @@ exports[`<Select /> snapshots renders with props 1`] = `
 
 exports[`<Select /> states of select renders with disabled state 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_disabled mfui-beta-select_no-touch"
+  className="mfui-select mfui-select_disabled mfui-select_no-touch"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <div
-      className="mfui-beta-select__control"
+      className="mfui-select__control"
       onKeyDown={[Function]}
     >
       <div
-        className="mfui-beta-select__title"
+        className="mfui-select__title"
         onClick={[Function]}
         role="button"
         tabIndex={0}
       >
         <div
-          className="mfui-beta-select__title-inner"
+          className="mfui-select__title-inner"
         />
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-select__list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       />
     </div>
   </div>
@@ -1119,36 +1119,36 @@ exports[`<Select /> states of select renders with disabled state 1`] = `
 
 exports[`<Select /> states of select renders with error state 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch mfui-beta-select_error"
+  className="mfui-select mfui-select_no-touch mfui-select_error"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <div
-      className="mfui-beta-select__control"
+      className="mfui-select__control"
       onKeyDown={[Function]}
     >
       <div
-        className="mfui-beta-select__title"
+        className="mfui-select__title"
         onClick={[Function]}
         role="button"
         tabIndex={0}
       >
         <div
-          className="mfui-beta-select__title-inner"
+          className="mfui-select__title-inner"
         />
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-select__list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       />
     </div>
   </div>
   <div
-    className="mfui-beta-select__text mfui-beta-select__text_error"
+    className="mfui-select__text mfui-select__text_error"
   >
     error
   </div>
@@ -1157,36 +1157,36 @@ exports[`<Select /> states of select renders with error state 1`] = `
 
 exports[`<Select /> states of select renders with valid state 1`] = `
 <div
-  className="mfui-beta-select mfui-beta-select_no-touch mfui-beta-select_valid"
+  className="mfui-select mfui-select_no-touch mfui-select_valid"
 >
   <div
-    className="mfui-beta-select__inner"
+    className="mfui-select__inner"
   >
     <div
-      className="mfui-beta-select__control"
+      className="mfui-select__control"
       onKeyDown={[Function]}
     >
       <div
-        className="mfui-beta-select__title"
+        className="mfui-select__title"
         onClick={[Function]}
         role="button"
         tabIndex={0}
       >
         <div
-          className="mfui-beta-select__title-inner"
+          className="mfui-select__title-inner"
         />
       </div>
     </div>
     <div
-      className="mfui-beta-select__list"
+      className="mfui-select__list"
     >
       <div
-        className="mfui-beta-select__list-inner"
+        className="mfui-select__list-inner"
       />
     </div>
   </div>
   <div
-    className="mfui-beta-select__text mfui-beta-select__text_success"
+    className="mfui-select__text mfui-select__text_success"
   >
     success
   </div>

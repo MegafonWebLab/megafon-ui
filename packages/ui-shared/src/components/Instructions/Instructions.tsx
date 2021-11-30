@@ -61,7 +61,7 @@ export interface IInstructionsProps {
     getSwiper?: (instance: SwiperCore) => void;
 }
 
-const cn = cnCreate('mfui-beta-instructions');
+const cn = cnCreate('mfui-instructions');
 const swiperSlideCn = cn('slide');
 const Instructions: React.FC<IInstructionsProps> = ({
     rootRef,

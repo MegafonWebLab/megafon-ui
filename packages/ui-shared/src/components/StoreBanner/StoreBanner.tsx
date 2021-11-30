@@ -71,7 +71,7 @@ export interface IStoreBannerProps {
     dataAttrs?: { [key: string]: string };
 }
 
-const cn = cnCreate('mfui-beta-store-banner');
+const cn = cnCreate('mfui-store-banner');
 const StoreBanner: React.FC<IStoreBannerProps> = ({
     className,
     classes: {

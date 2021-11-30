@@ -2,7 +2,7 @@
 
 exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="large"
@@ -15,16 +15,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -47,16 +47,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -75,7 +75,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
 
 exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="large"
@@ -88,16 +88,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -118,16 +118,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -147,16 +147,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -175,7 +175,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
 
 exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="large"
@@ -188,16 +188,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -220,16 +220,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -249,16 +249,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -281,16 +281,16 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -309,7 +309,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
 
 exports[`<BenefitsPictures /> render with html in title and text 1`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="large"
@@ -322,16 +322,16 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="image.png"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -371,16 +371,16 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="image.png"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -399,7 +399,7 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
 
 exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="medium"
@@ -412,16 +412,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -444,16 +444,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -472,7 +472,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
 
 exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="medium"
@@ -485,16 +485,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -515,16 +515,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -544,16 +544,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -572,7 +572,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
 
 exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="medium"
@@ -585,16 +585,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -617,16 +617,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -646,16 +646,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -678,16 +678,16 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -706,7 +706,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
 
 exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
 <div
-  className="mfui-beta-benefits-pictures class-name root-class"
+  className="mfui-benefits-pictures class-name root-class"
 >
   <Grid
     guttersLeft="large"
@@ -719,16 +719,16 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >
@@ -751,16 +751,16 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
       wide="4"
     >
       <div
-        className="mfui-beta-benefits-pictures__item item-class"
+        className="mfui-benefits-pictures__item item-class"
       >
         <img
           alt=""
-          className="mfui-beta-benefits-pictures__img mfui-beta-benefits-pictures__img_h-align_left"
+          className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
         <Header
           as="h3"
-          className="mfui-beta-benefits-pictures__title"
+          className="mfui-benefits-pictures__title"
           color="black"
           hAlign="left"
         >

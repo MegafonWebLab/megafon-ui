@@ -22,7 +22,7 @@ describe('<PropertyDescription />', () => {
             <PropertyDescription value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка" isCollapsible />,
         );
 
-        wrapper.find('.mfui-beta-property-description__collapse').simulate('click');
+        wrapper.find('.mfui-property-description__collapse').simulate('click');
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -47,7 +47,7 @@ describe('<PropertyDescription />', () => {
             />,
         );
 
-        wrapper.find('.mfui-beta-property-description__collapse').simulate('click');
+        wrapper.find('.mfui-property-description__collapse').simulate('click');
 
         expect(wrapper.getDOMNode().classList.contains('open-custom-class')).toBeTruthy();
     });

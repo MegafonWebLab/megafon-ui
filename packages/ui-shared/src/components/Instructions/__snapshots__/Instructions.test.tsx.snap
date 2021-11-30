@@ -2,7 +2,7 @@
 
 exports[`<Instructions /> desktop resolution active slide will be changed 1`] = `
 <div
-  className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+  className="mfui-instructions mfui-instructions_mask_none"
 >
   <Grid
     hAlign="center"
@@ -12,30 +12,30 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
     >
       <Header
         as="h2"
-        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
         color="black"
         hAlign="inherit"
       >
         Test instruction title
       </Header>
       <div
-        className="mfui-beta-instructions__wrapper"
+        className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
         >
           <Swiper
-            className="mfui-beta-instructions__swiper"
-            noSwipingClass="mfui-beta-instructions__slide"
+            className="mfui-instructions__swiper"
+            noSwipingClass="mfui-instructions__slide"
             onSwiper={[Function]}
           >
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="0ImgUrl1"
             >
               <video
                 autoPlay={true}
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -47,36 +47,36 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
               </video>
             </SwiperSlide>
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="1ImgUrl2"
             >
               <img
                 alt=""
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
             </SwiperSlide>
           </Swiper>
         </div>
         <div
-          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
         >
           <Header
             as="h2"
-            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
             color="black"
             hAlign="inherit"
           >
             Test instruction title
           </Header>
           <div
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
           >
             <div
-              className="mfui-beta-instructions__articles-title-block"
+              className="mfui-instructions__articles-title-block"
             >
               <div
-                className="mfui-beta-instructions__articles-title"
+                className="mfui-instructions__articles-title"
                 data-index={1}
                 key="1"
               >
@@ -84,26 +84,26 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
               </div>
             </div>
             <ul
-              className="mfui-beta-instructions__articles-dots"
+              className="mfui-instructions__articles-dots"
             >
               <div
-                className="mfui-beta-instructions__articles-dot"
+                className="mfui-instructions__articles-dot"
                 key="0"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                 key="1"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   2
                 </span>
@@ -111,46 +111,46 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
             </ul>
           </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item"
+              className="mfui-instructions__articles-item"
               data-index={0}
               key="0"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test1
               </div>
             </li>
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
               data-index={1}
               key="1"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   2
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test2
               </div>
@@ -165,7 +165,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
 
 exports[`<Instructions /> desktop resolution should render with default props 1`] = `
 <div
-  className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+  className="mfui-instructions mfui-instructions_mask_none"
 >
   <Grid
     hAlign="center"
@@ -175,30 +175,30 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
     >
       <Header
         as="h2"
-        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
         color="black"
         hAlign="inherit"
       >
         Test instruction title
       </Header>
       <div
-        className="mfui-beta-instructions__wrapper"
+        className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
         >
           <Swiper
-            className="mfui-beta-instructions__swiper"
-            noSwipingClass="mfui-beta-instructions__slide"
+            className="mfui-instructions__swiper"
+            noSwipingClass="mfui-instructions__slide"
             onSwiper={[Function]}
           >
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="0ImgUrl1"
             >
               <video
                 autoPlay={true}
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -210,36 +210,36 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
               </video>
             </SwiperSlide>
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="1ImgUrl2"
             >
               <img
                 alt=""
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
             </SwiperSlide>
           </Swiper>
         </div>
         <div
-          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
         >
           <Header
             as="h2"
-            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
             color="black"
             hAlign="inherit"
           >
             Test instruction title
           </Header>
           <div
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
           >
             <div
-              className="mfui-beta-instructions__articles-title-block"
+              className="mfui-instructions__articles-title-block"
             >
               <div
-                className="mfui-beta-instructions__articles-title"
+                className="mfui-instructions__articles-title"
                 data-index={0}
                 key="0"
               >
@@ -247,26 +247,26 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
               </div>
             </div>
             <ul
-              className="mfui-beta-instructions__articles-dots"
+              className="mfui-instructions__articles-dots"
             >
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                 key="0"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-dot"
+                className="mfui-instructions__articles-dot"
                 key="1"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   2
                 </span>
@@ -274,46 +274,46 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
             </ul>
           </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
               data-index={0}
               key="0"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test1
               </div>
             </li>
             <li
-              className="mfui-beta-instructions__articles-item"
+              className="mfui-instructions__articles-item"
               data-index={1}
               key="1"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   2
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test2
               </div>
@@ -328,7 +328,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
 
 exports[`<Instructions /> desktop resolution should render with pictureMask 1`] = `
 <div
-  className="mfui-beta-instructions mfui-beta-instructions_mask_black-iphone"
+  className="mfui-instructions mfui-instructions_mask_black-iphone"
 >
   <Grid
     hAlign="center"
@@ -338,36 +338,36 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
     >
       <Header
         as="h2"
-        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
         color="black"
         hAlign="inherit"
       >
         Test instruction title
       </Header>
       <div
-        className="mfui-beta-instructions__wrapper"
+        className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
         >
           <div
-            className="mfui-beta-instructions__img-wrapper"
+            className="mfui-instructions__img-wrapper"
           >
             <div
-              className="mfui-beta-instructions__device-screen"
+              className="mfui-instructions__device-screen"
             />
             <Swiper
-              className="mfui-beta-instructions__swiper"
-              noSwipingClass="mfui-beta-instructions__slide"
+              className="mfui-instructions__swiper"
+              noSwipingClass="mfui-instructions__slide"
               onSwiper={[Function]}
             >
               <SwiperSlide
-                className="mfui-beta-instructions__slide"
+                className="mfui-instructions__slide"
                 key="0ImgUrl1"
               >
                 <video
                   autoPlay={true}
-                  className="mfui-beta-instructions__swiper-img"
+                  className="mfui-instructions__swiper-img"
                   loop={true}
                   muted={true}
                   playsInline={true}
@@ -379,12 +379,12 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
                 </video>
               </SwiperSlide>
               <SwiperSlide
-                className="mfui-beta-instructions__slide"
+                className="mfui-instructions__slide"
                 key="1ImgUrl2"
               >
                 <img
                   alt=""
-                  className="mfui-beta-instructions__swiper-img"
+                  className="mfui-instructions__swiper-img"
                   src="ImgUrl2"
                 />
               </SwiperSlide>
@@ -392,24 +392,24 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
           </div>
         </div>
         <div
-          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
         >
           <Header
             as="h2"
-            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
             color="black"
             hAlign="inherit"
           >
             Test instruction title
           </Header>
           <div
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
           >
             <div
-              className="mfui-beta-instructions__articles-title-block"
+              className="mfui-instructions__articles-title-block"
             >
               <div
-                className="mfui-beta-instructions__articles-title"
+                className="mfui-instructions__articles-title"
                 data-index={0}
                 key="0"
               >
@@ -417,26 +417,26 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
               </div>
             </div>
             <ul
-              className="mfui-beta-instructions__articles-dots"
+              className="mfui-instructions__articles-dots"
             >
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                 key="0"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-dot"
+                className="mfui-instructions__articles-dot"
                 key="1"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   2
                 </span>
@@ -444,46 +444,46 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
             </ul>
           </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
               data-index={0}
               key="0"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test1
               </div>
             </li>
             <li
-              className="mfui-beta-instructions__articles-item"
+              className="mfui-instructions__articles-item"
               data-index={1}
               key="1"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   2
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test2
               </div>
@@ -498,7 +498,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
 
 exports[`<Instructions /> desktop resolution should render with pictureMask Iphone 12 1`] = `
 <div
-  className="mfui-beta-instructions mfui-beta-instructions_mask_iphone-12"
+  className="mfui-instructions mfui-instructions_mask_iphone-12"
 >
   <Grid
     hAlign="center"
@@ -508,36 +508,36 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
     >
       <Header
         as="h2"
-        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
         color="black"
         hAlign="inherit"
       >
         Test instruction title
       </Header>
       <div
-        className="mfui-beta-instructions__wrapper"
+        className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
         >
           <div
-            className="mfui-beta-instructions__img-wrapper"
+            className="mfui-instructions__img-wrapper"
           >
             <div
-              className="mfui-beta-instructions__device-screen"
+              className="mfui-instructions__device-screen"
             />
             <Swiper
-              className="mfui-beta-instructions__swiper"
-              noSwipingClass="mfui-beta-instructions__slide"
+              className="mfui-instructions__swiper"
+              noSwipingClass="mfui-instructions__slide"
               onSwiper={[Function]}
             >
               <SwiperSlide
-                className="mfui-beta-instructions__slide"
+                className="mfui-instructions__slide"
                 key="0ImgUrl1"
               >
                 <video
                   autoPlay={true}
-                  className="mfui-beta-instructions__swiper-img"
+                  className="mfui-instructions__swiper-img"
                   loop={true}
                   muted={true}
                   playsInline={true}
@@ -549,12 +549,12 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
                 </video>
               </SwiperSlide>
               <SwiperSlide
-                className="mfui-beta-instructions__slide"
+                className="mfui-instructions__slide"
                 key="1ImgUrl2"
               >
                 <img
                   alt=""
-                  className="mfui-beta-instructions__swiper-img"
+                  className="mfui-instructions__swiper-img"
                   src="ImgUrl2"
                 />
               </SwiperSlide>
@@ -562,24 +562,24 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
           </div>
         </div>
         <div
-          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
         >
           <Header
             as="h2"
-            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
             color="black"
             hAlign="inherit"
           >
             Test instruction title
           </Header>
           <div
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
           >
             <div
-              className="mfui-beta-instructions__articles-title-block"
+              className="mfui-instructions__articles-title-block"
             >
               <div
-                className="mfui-beta-instructions__articles-title"
+                className="mfui-instructions__articles-title"
                 data-index={0}
                 key="0"
               >
@@ -587,26 +587,26 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
               </div>
             </div>
             <ul
-              className="mfui-beta-instructions__articles-dots"
+              className="mfui-instructions__articles-dots"
             >
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                 key="0"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-dot"
+                className="mfui-instructions__articles-dot"
                 key="1"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   2
                 </span>
@@ -614,46 +614,46 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
             </ul>
           </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
               data-index={0}
               key="0"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test1
               </div>
             </li>
             <li
-              className="mfui-beta-instructions__articles-item"
+              className="mfui-instructions__articles-item"
               data-index={1}
               key="1"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   2
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test2
               </div>
@@ -668,7 +668,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
 
 exports[`<Instructions /> desktop resolution should render with right side picture 1`] = `
 <div
-  className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+  className="mfui-instructions mfui-instructions_mask_none"
 >
   <Grid
     hAlign="center"
@@ -678,30 +678,30 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
     >
       <Header
         as="h2"
-        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
         color="black"
         hAlign="inherit"
       >
         Test instruction title
       </Header>
       <div
-        className="mfui-beta-instructions__wrapper"
+        className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_right"
+          className="mfui-instructions__picture mfui-instructions__picture_align_right"
         >
           <Swiper
-            className="mfui-beta-instructions__swiper"
-            noSwipingClass="mfui-beta-instructions__slide"
+            className="mfui-instructions__swiper"
+            noSwipingClass="mfui-instructions__slide"
             onSwiper={[Function]}
           >
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="0ImgUrl1"
             >
               <video
                 autoPlay={true}
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -713,36 +713,36 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
               </video>
             </SwiperSlide>
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="1ImgUrl2"
             >
               <img
                 alt=""
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
             </SwiperSlide>
           </Swiper>
         </div>
         <div
-          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_right"
+          className="mfui-instructions__articles mfui-instructions__articles_align_right"
         >
           <Header
             as="h2"
-            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
             color="black"
             hAlign="inherit"
           >
             Test instruction title
           </Header>
           <div
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
           >
             <div
-              className="mfui-beta-instructions__articles-title-block"
+              className="mfui-instructions__articles-title-block"
             >
               <div
-                className="mfui-beta-instructions__articles-title"
+                className="mfui-instructions__articles-title"
                 data-index={0}
                 key="0"
               >
@@ -750,26 +750,26 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
               </div>
             </div>
             <ul
-              className="mfui-beta-instructions__articles-dots"
+              className="mfui-instructions__articles-dots"
             >
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                 key="0"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-dot"
+                className="mfui-instructions__articles-dot"
                 key="1"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   2
                 </span>
@@ -777,46 +777,46 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
             </ul>
           </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
               data-index={0}
               key="0"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test1
               </div>
             </li>
             <li
-              className="mfui-beta-instructions__articles-item"
+              className="mfui-instructions__articles-item"
               data-index={1}
               key="1"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   2
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test2
               </div>
@@ -848,74 +848,74 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
   title="Test instruction title"
 >
   <div
-    className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+    className="mfui-instructions mfui-instructions_mask_none"
   >
     <Grid
       hAlign="center"
     >
       <div
-        className="mfui-beta-grid"
+        className="mfui-grid"
       >
         <div
-          className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_h-align_center"
+          className="mfui-grid__container mfui-grid__container_multi-row mfui-grid__container_h-align_center"
         >
           <GridColumn
             all="12"
-            className="mfui-beta-grid__column"
+            className="mfui-grid__column"
             key=".0"
           >
             <div
-              className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column"
+              className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column"
             >
               <Header
                 as="h2"
-                className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+                className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 color="black"
                 hAlign="inherit"
               >
                 <h2
-                  className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h2 mfui-beta-header_h-align_inherit mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+                  className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 >
                   Test instruction title
                 </h2>
               </Header>
               <div
-                className="mfui-beta-instructions__wrapper"
+                className="mfui-instructions__wrapper"
               >
                 <div
-                  className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+                  className="mfui-instructions__picture mfui-instructions__picture_align_left"
                 >
                   <Swiper
-                    className="mfui-beta-instructions__swiper"
-                    noSwipingClass="mfui-beta-instructions__slide"
+                    className="mfui-instructions__swiper"
+                    noSwipingClass="mfui-instructions__slide"
                     onSwiper={[Function]}
                   >
                     <div
-                      className="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                      className="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                     >
                       <div
                         className="swiper-wrapper"
                       >
                         <SwiperSlide
-                          className="mfui-beta-instructions__slide"
+                          className="mfui-instructions__slide"
                           key=".$0ImgUrl1"
                           swiper={
                             Swiper {
                               "$": [Function],
                               "$el": Dom7 [
                                 <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                                 >
                                   <div
                                     class="swiper-wrapper"
                                     style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                   >
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         loop=""
                                         playsinline=""
                                       >
@@ -926,11 +926,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       </video>
                                     </div>
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
                                         alt=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
                                     </div>
@@ -943,11 +943,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -958,11 +958,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -999,18 +999,18 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "ios": false,
                               },
                               "el": <div
-                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                               >
                                 <div
                                   class="swiper-wrapper"
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -1021,11 +1021,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -1103,7 +1103,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "imagesToLoad": Dom7 [
                                 <img
                                   alt=""
-                                  class="mfui-beta-instructions__swiper-img"
+                                  class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
                               ],
@@ -1176,7 +1176,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -1323,7 +1323,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -1452,7 +1452,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
@@ -1583,11 +1583,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                               >
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     loop=""
                                     playsinline=""
                                   >
@@ -1598,11 +1598,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   </video>
                                 </div>
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
                                     alt=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
                                 </div>
@@ -1612,11 +1612,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                           }
                         >
                           <div
-                            className="swiper-slide mfui-beta-instructions__slide"
+                            className="swiper-slide mfui-instructions__slide"
                           >
                             <video
                               autoPlay={true}
-                              className="mfui-beta-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img"
                               loop={true}
                               muted={true}
                               playsInline={true}
@@ -1629,25 +1629,25 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                           </div>
                         </SwiperSlide>
                         <SwiperSlide
-                          className="mfui-beta-instructions__slide"
+                          className="mfui-instructions__slide"
                           key=".$1ImgUrl2"
                           swiper={
                             Swiper {
                               "$": [Function],
                               "$el": Dom7 [
                                 <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                                 >
                                   <div
                                     class="swiper-wrapper"
                                     style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                   >
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         loop=""
                                         playsinline=""
                                       >
@@ -1658,11 +1658,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       </video>
                                     </div>
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
                                         alt=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
                                     </div>
@@ -1675,11 +1675,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -1690,11 +1690,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -1731,18 +1731,18 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "ios": false,
                               },
                               "el": <div
-                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                               >
                                 <div
                                   class="swiper-wrapper"
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -1753,11 +1753,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -1835,7 +1835,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "imagesToLoad": Dom7 [
                                 <img
                                   alt=""
-                                  class="mfui-beta-instructions__swiper-img"
+                                  class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
                               ],
@@ -1908,7 +1908,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -2055,7 +2055,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -2184,7 +2184,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
@@ -2315,11 +2315,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                               >
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     loop=""
                                     playsinline=""
                                   >
@@ -2330,11 +2330,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   </video>
                                 </div>
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
                                     alt=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
                                 </div>
@@ -2344,11 +2344,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                           }
                         >
                           <div
-                            className="swiper-slide mfui-beta-instructions__slide"
+                            className="swiper-slide mfui-instructions__slide"
                           >
                             <img
                               alt=""
-                              className="mfui-beta-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img"
                               src="ImgUrl2"
                             />
                           </div>
@@ -2358,28 +2358,28 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                   </Swiper>
                 </div>
                 <div
-                  className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+                  className="mfui-instructions__articles mfui-instructions__articles_align_left"
                 >
                   <Header
                     as="h2"
-                    className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+                    className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     color="black"
                     hAlign="inherit"
                   >
                     <h2
-                      className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h2 mfui-beta-header_h-align_inherit mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+                      className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     >
                       Test instruction title
                     </h2>
                   </Header>
                   <div
-                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+                    className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
                   >
                     <div
-                      className="mfui-beta-instructions__articles-title-block"
+                      className="mfui-instructions__articles-title-block"
                     >
                       <div
-                        className="mfui-beta-instructions__articles-title"
+                        className="mfui-instructions__articles-title"
                         data-index={0}
                         key="0"
                       >
@@ -2387,26 +2387,26 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                       </div>
                     </div>
                     <ul
-                      className="mfui-beta-instructions__articles-dots"
+                      className="mfui-instructions__articles-dots"
                     >
                       <div
-                        className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                        className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                         key="0"
                         onClick={[Function]}
                       >
                         <span
-                          className="mfui-beta-instructions__articles-dot-number"
+                          className="mfui-instructions__articles-dot-number"
                         >
                           1
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-dot"
+                        className="mfui-instructions__articles-dot"
                         key="1"
                         onClick={[Function]}
                       >
                         <span
-                          className="mfui-beta-instructions__articles-dot-number"
+                          className="mfui-instructions__articles-dot-number"
                         >
                           2
                         </span>
@@ -2414,46 +2414,46 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                     </ul>
                   </div>
                   <ul
-                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+                    className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
                   >
                     <li
-                      className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+                      className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
                       data-index={0}
                       key="0"
                       onClick={[Function]}
                     >
                       <div
-                        className="mfui-beta-instructions__articles-item-dot"
+                        className="mfui-instructions__articles-item-dot"
                       >
                         <span
-                          className="mfui-beta-instructions__articles-item-dot-number"
+                          className="mfui-instructions__articles-item-dot-number"
                         >
                           1
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-item-title"
+                        className="mfui-instructions__articles-item-title"
                       >
                         Test1
                       </div>
                     </li>
                     <li
-                      className="mfui-beta-instructions__articles-item"
+                      className="mfui-instructions__articles-item"
                       data-index={1}
                       key="1"
                       onClick={[Function]}
                     >
                       <div
-                        className="mfui-beta-instructions__articles-item-dot"
+                        className="mfui-instructions__articles-item-dot"
                       >
                         <span
-                          className="mfui-beta-instructions__articles-item-dot-number"
+                          className="mfui-instructions__articles-item-dot-number"
                         >
                           2
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-item-title"
+                        className="mfui-instructions__articles-item-title"
                       >
                         Test2
                       </div>
@@ -2489,74 +2489,74 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
   title="Test instruction title"
 >
   <div
-    className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+    className="mfui-instructions mfui-instructions_mask_none"
   >
     <Grid
       hAlign="center"
     >
       <div
-        className="mfui-beta-grid"
+        className="mfui-grid"
       >
         <div
-          className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_h-align_center"
+          className="mfui-grid__container mfui-grid__container_multi-row mfui-grid__container_h-align_center"
         >
           <GridColumn
             all="12"
-            className="mfui-beta-grid__column"
+            className="mfui-grid__column"
             key=".0"
           >
             <div
-              className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column"
+              className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column"
             >
               <Header
                 as="h2"
-                className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+                className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 color="black"
                 hAlign="inherit"
               >
                 <h2
-                  className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h2 mfui-beta-header_h-align_inherit mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+                  className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 >
                   Test instruction title
                 </h2>
               </Header>
               <div
-                className="mfui-beta-instructions__wrapper"
+                className="mfui-instructions__wrapper"
               >
                 <div
-                  className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+                  className="mfui-instructions__picture mfui-instructions__picture_align_left"
                 >
                   <Swiper
-                    className="mfui-beta-instructions__swiper"
-                    noSwipingClass="mfui-beta-instructions__slide"
+                    className="mfui-instructions__swiper"
+                    noSwipingClass="mfui-instructions__slide"
                     onSwiper={[Function]}
                   >
                     <div
-                      className="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                      className="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                     >
                       <div
                         className="swiper-wrapper"
                       >
                         <SwiperSlide
-                          className="mfui-beta-instructions__slide"
+                          className="mfui-instructions__slide"
                           key=".$0ImgUrl1"
                           swiper={
                             Swiper {
                               "$": [Function],
                               "$el": Dom7 [
                                 <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                                 >
                                   <div
                                     class="swiper-wrapper"
                                     style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                   >
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         loop=""
                                         playsinline=""
                                       >
@@ -2567,11 +2567,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       </video>
                                     </div>
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
                                         alt=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
                                     </div>
@@ -2584,11 +2584,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -2599,11 +2599,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -2640,18 +2640,18 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "ios": false,
                               },
                               "el": <div
-                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                               >
                                 <div
                                   class="swiper-wrapper"
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -2662,11 +2662,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -2744,7 +2744,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "imagesToLoad": Dom7 [
                                 <img
                                   alt=""
-                                  class="mfui-beta-instructions__swiper-img"
+                                  class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
                               ],
@@ -2817,7 +2817,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -2964,7 +2964,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -3093,7 +3093,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
@@ -3224,11 +3224,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                               >
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     loop=""
                                     playsinline=""
                                   >
@@ -3239,11 +3239,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   </video>
                                 </div>
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
                                     alt=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
                                 </div>
@@ -3253,11 +3253,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                           }
                         >
                           <div
-                            className="swiper-slide mfui-beta-instructions__slide"
+                            className="swiper-slide mfui-instructions__slide"
                           >
                             <video
                               autoPlay={true}
-                              className="mfui-beta-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img"
                               loop={true}
                               muted={true}
                               playsInline={true}
@@ -3270,25 +3270,25 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                           </div>
                         </SwiperSlide>
                         <SwiperSlide
-                          className="mfui-beta-instructions__slide"
+                          className="mfui-instructions__slide"
                           key=".$1ImgUrl2"
                           swiper={
                             Swiper {
                               "$": [Function],
                               "$el": Dom7 [
                                 <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                                 >
                                   <div
                                     class="swiper-wrapper"
                                     style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                   >
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         loop=""
                                         playsinline=""
                                       >
@@ -3299,11 +3299,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       </video>
                                     </div>
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
                                         alt=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
                                     </div>
@@ -3316,11 +3316,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -3331,11 +3331,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -3372,18 +3372,18 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "ios": false,
                               },
                               "el": <div
-                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                               >
                                 <div
                                   class="swiper-wrapper"
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -3394,11 +3394,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -3476,7 +3476,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "imagesToLoad": Dom7 [
                                 <img
                                   alt=""
-                                  class="mfui-beta-instructions__swiper-img"
+                                  class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
                               ],
@@ -3549,7 +3549,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -3696,7 +3696,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -3825,7 +3825,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
@@ -3956,11 +3956,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                               >
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     loop=""
                                     playsinline=""
                                   >
@@ -3971,11 +3971,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   </video>
                                 </div>
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
                                     alt=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
                                 </div>
@@ -3985,11 +3985,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                           }
                         >
                           <div
-                            className="swiper-slide mfui-beta-instructions__slide"
+                            className="swiper-slide mfui-instructions__slide"
                           >
                             <img
                               alt=""
-                              className="mfui-beta-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img"
                               src="ImgUrl2"
                             />
                           </div>
@@ -3999,28 +3999,28 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                   </Swiper>
                 </div>
                 <div
-                  className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+                  className="mfui-instructions__articles mfui-instructions__articles_align_left"
                 >
                   <Header
                     as="h2"
-                    className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+                    className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     color="black"
                     hAlign="inherit"
                   >
                     <h2
-                      className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h2 mfui-beta-header_h-align_inherit mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+                      className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     >
                       Test instruction title
                     </h2>
                   </Header>
                   <div
-                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+                    className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
                   >
                     <div
-                      className="mfui-beta-instructions__articles-title-block"
+                      className="mfui-instructions__articles-title-block"
                     >
                       <div
-                        className="mfui-beta-instructions__articles-title"
+                        className="mfui-instructions__articles-title"
                         data-index={0}
                         key="0"
                       >
@@ -4028,26 +4028,26 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                       </div>
                     </div>
                     <ul
-                      className="mfui-beta-instructions__articles-dots"
+                      className="mfui-instructions__articles-dots"
                     >
                       <div
-                        className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                        className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                         key="0"
                         onClick={[Function]}
                       >
                         <span
-                          className="mfui-beta-instructions__articles-dot-number"
+                          className="mfui-instructions__articles-dot-number"
                         >
                           1
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-dot"
+                        className="mfui-instructions__articles-dot"
                         key="1"
                         onClick={[Function]}
                       >
                         <span
-                          className="mfui-beta-instructions__articles-dot-number"
+                          className="mfui-instructions__articles-dot-number"
                         >
                           2
                         </span>
@@ -4055,46 +4055,46 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                     </ul>
                   </div>
                   <ul
-                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+                    className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
                   >
                     <li
-                      className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+                      className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
                       data-index={0}
                       key="0"
                       onClick={[Function]}
                     >
                       <div
-                        className="mfui-beta-instructions__articles-item-dot"
+                        className="mfui-instructions__articles-item-dot"
                       >
                         <span
-                          className="mfui-beta-instructions__articles-item-dot-number"
+                          className="mfui-instructions__articles-item-dot-number"
                         >
                           1
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-item-title"
+                        className="mfui-instructions__articles-item-title"
                       >
                         Test1
                       </div>
                     </li>
                     <li
-                      className="mfui-beta-instructions__articles-item"
+                      className="mfui-instructions__articles-item"
                       data-index={1}
                       key="1"
                       onClick={[Function]}
                     >
                       <div
-                        className="mfui-beta-instructions__articles-item-dot"
+                        className="mfui-instructions__articles-item-dot"
                       >
                         <span
-                          className="mfui-beta-instructions__articles-item-dot-number"
+                          className="mfui-instructions__articles-item-dot-number"
                         >
                           2
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-item-title"
+                        className="mfui-instructions__articles-item-title"
                       >
                         Test2
                       </div>
@@ -4130,74 +4130,74 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
   title="Test instruction title"
 >
   <div
-    className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+    className="mfui-instructions mfui-instructions_mask_none"
   >
     <Grid
       hAlign="center"
     >
       <div
-        className="mfui-beta-grid"
+        className="mfui-grid"
       >
         <div
-          className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_h-align_center"
+          className="mfui-grid__container mfui-grid__container_multi-row mfui-grid__container_h-align_center"
         >
           <GridColumn
             all="12"
-            className="mfui-beta-grid__column"
+            className="mfui-grid__column"
             key=".0"
           >
             <div
-              className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column"
+              className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column"
             >
               <Header
                 as="h2"
-                className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+                className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 color="black"
                 hAlign="inherit"
               >
                 <h2
-                  className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h2 mfui-beta-header_h-align_inherit mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+                  className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 >
                   Test instruction title
                 </h2>
               </Header>
               <div
-                className="mfui-beta-instructions__wrapper"
+                className="mfui-instructions__wrapper"
               >
                 <div
-                  className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+                  className="mfui-instructions__picture mfui-instructions__picture_align_left"
                 >
                   <Swiper
-                    className="mfui-beta-instructions__swiper"
-                    noSwipingClass="mfui-beta-instructions__slide"
+                    className="mfui-instructions__swiper"
+                    noSwipingClass="mfui-instructions__slide"
                     onSwiper={[Function]}
                   >
                     <div
-                      className="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                      className="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                     >
                       <div
                         className="swiper-wrapper"
                       >
                         <SwiperSlide
-                          className="mfui-beta-instructions__slide"
+                          className="mfui-instructions__slide"
                           key=".$0ImgUrl1"
                           swiper={
                             Swiper {
                               "$": [Function],
                               "$el": Dom7 [
                                 <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                                 >
                                   <div
                                     class="swiper-wrapper"
                                     style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                   >
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         loop=""
                                         playsinline=""
                                       >
@@ -4208,11 +4208,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       </video>
                                     </div>
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
                                         alt=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
                                     </div>
@@ -4225,11 +4225,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -4240,11 +4240,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -4281,18 +4281,18 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "ios": false,
                               },
                               "el": <div
-                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                               >
                                 <div
                                   class="swiper-wrapper"
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -4303,11 +4303,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -4385,7 +4385,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "imagesToLoad": Dom7 [
                                 <img
                                   alt=""
-                                  class="mfui-beta-instructions__swiper-img"
+                                  class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
                               ],
@@ -4458,7 +4458,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -4605,7 +4605,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -4734,7 +4734,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
@@ -4865,11 +4865,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                               >
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     loop=""
                                     playsinline=""
                                   >
@@ -4880,11 +4880,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   </video>
                                 </div>
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
                                     alt=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
                                 </div>
@@ -4894,11 +4894,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                           }
                         >
                           <div
-                            className="swiper-slide mfui-beta-instructions__slide"
+                            className="swiper-slide mfui-instructions__slide"
                           >
                             <video
                               autoPlay={true}
-                              className="mfui-beta-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img"
                               loop={true}
                               muted={true}
                               playsInline={true}
@@ -4911,25 +4911,25 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                           </div>
                         </SwiperSlide>
                         <SwiperSlide
-                          className="mfui-beta-instructions__slide"
+                          className="mfui-instructions__slide"
                           key=".$1ImgUrl2"
                           swiper={
                             Swiper {
                               "$": [Function],
                               "$el": Dom7 [
                                 <div
-                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                  class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                                 >
                                   <div
                                     class="swiper-wrapper"
                                     style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                   >
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         loop=""
                                         playsinline=""
                                       >
@@ -4940,11 +4940,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       </video>
                                     </div>
                                     <div
-                                      class="swiper-slide mfui-beta-instructions__slide"
+                                      class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
                                         alt=""
-                                        class="mfui-beta-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
                                     </div>
@@ -4957,11 +4957,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -4972,11 +4972,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -5013,18 +5013,18 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "ios": false,
                               },
                               "el": <div
-                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-beta-instructions__swiper"
+                                class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-instructions__swiper"
                               >
                                 <div
                                   class="swiper-wrapper"
                                   style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                                 >
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       loop=""
                                       playsinline=""
                                     >
@@ -5035,11 +5035,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     </video>
                                   </div>
                                   <div
-                                    class="swiper-slide mfui-beta-instructions__slide"
+                                    class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
                                       alt=""
-                                      class="mfui-beta-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
                                   </div>
@@ -5117,7 +5117,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "imagesToLoad": Dom7 [
                                 <img
                                   alt=""
-                                  class="mfui-beta-instructions__swiper-img"
+                                  class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
                               ],
@@ -5190,7 +5190,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -5337,7 +5337,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "observeParents": false,
@@ -5466,7 +5466,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopedSlides": null,
                                 "nested": false,
                                 "noSwiping": true,
-                                "noSwipingClass": "mfui-beta-instructions__slide",
+                                "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
@@ -5597,11 +5597,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                               >
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     loop=""
                                     playsinline=""
                                   >
@@ -5612,11 +5612,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   </video>
                                 </div>
                                 <div
-                                  class="swiper-slide mfui-beta-instructions__slide"
+                                  class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
                                     alt=""
-                                    class="mfui-beta-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
                                 </div>
@@ -5626,11 +5626,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                           }
                         >
                           <div
-                            className="swiper-slide mfui-beta-instructions__slide"
+                            className="swiper-slide mfui-instructions__slide"
                           >
                             <img
                               alt=""
-                              className="mfui-beta-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img"
                               src="ImgUrl2"
                             />
                           </div>
@@ -5640,28 +5640,28 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                   </Swiper>
                 </div>
                 <div
-                  className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+                  className="mfui-instructions__articles mfui-instructions__articles_align_left"
                 >
                   <Header
                     as="h2"
-                    className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+                    className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     color="black"
                     hAlign="inherit"
                   >
                     <h2
-                      className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h2 mfui-beta-header_h-align_inherit mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+                      className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     >
                       Test instruction title
                     </h2>
                   </Header>
                   <div
-                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+                    className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
                   >
                     <div
-                      className="mfui-beta-instructions__articles-title-block"
+                      className="mfui-instructions__articles-title-block"
                     >
                       <div
-                        className="mfui-beta-instructions__articles-title"
+                        className="mfui-instructions__articles-title"
                         data-index={0}
                         key="0"
                       >
@@ -5669,26 +5669,26 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                       </div>
                     </div>
                     <ul
-                      className="mfui-beta-instructions__articles-dots"
+                      className="mfui-instructions__articles-dots"
                     >
                       <div
-                        className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                        className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                         key="0"
                         onClick={[Function]}
                       >
                         <span
-                          className="mfui-beta-instructions__articles-dot-number"
+                          className="mfui-instructions__articles-dot-number"
                         >
                           1
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-dot"
+                        className="mfui-instructions__articles-dot"
                         key="1"
                         onClick={[Function]}
                       >
                         <span
-                          className="mfui-beta-instructions__articles-dot-number"
+                          className="mfui-instructions__articles-dot-number"
                         >
                           2
                         </span>
@@ -5696,46 +5696,46 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                     </ul>
                   </div>
                   <ul
-                    className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+                    className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
                   >
                     <li
-                      className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+                      className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
                       data-index={0}
                       key="0"
                       onClick={[Function]}
                     >
                       <div
-                        className="mfui-beta-instructions__articles-item-dot"
+                        className="mfui-instructions__articles-item-dot"
                       >
                         <span
-                          className="mfui-beta-instructions__articles-item-dot-number"
+                          className="mfui-instructions__articles-item-dot-number"
                         >
                           1
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-item-title"
+                        className="mfui-instructions__articles-item-title"
                       >
                         Test1
                       </div>
                     </li>
                     <li
-                      className="mfui-beta-instructions__articles-item"
+                      className="mfui-instructions__articles-item"
                       data-index={1}
                       key="1"
                       onClick={[Function]}
                     >
                       <div
-                        className="mfui-beta-instructions__articles-item-dot"
+                        className="mfui-instructions__articles-item-dot"
                       >
                         <span
-                          className="mfui-beta-instructions__articles-item-dot-number"
+                          className="mfui-instructions__articles-item-dot-number"
                         >
                           2
                         </span>
                       </div>
                       <div
-                        className="mfui-beta-instructions__articles-item-title"
+                        className="mfui-instructions__articles-item-title"
                       >
                         Test2
                       </div>
@@ -5754,7 +5754,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
 
 exports[`<Instructions /> should render component with additional text 1`] = `
 <div
-  className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+  className="mfui-instructions mfui-instructions_mask_none"
 >
   <Grid
     hAlign="center"
@@ -5764,30 +5764,30 @@ exports[`<Instructions /> should render component with additional text 1`] = `
     >
       <Header
         as="h2"
-        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
         color="black"
         hAlign="inherit"
       >
         Test instruction title
       </Header>
       <div
-        className="mfui-beta-instructions__wrapper"
+        className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
         >
           <Swiper
-            className="mfui-beta-instructions__swiper"
-            noSwipingClass="mfui-beta-instructions__slide"
+            className="mfui-instructions__swiper"
+            noSwipingClass="mfui-instructions__slide"
             onSwiper={[Function]}
           >
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="0ImgUrl1"
             >
               <video
                 autoPlay={true}
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -5799,36 +5799,36 @@ exports[`<Instructions /> should render component with additional text 1`] = `
               </video>
             </SwiperSlide>
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="1ImgUrl2"
             >
               <img
                 alt=""
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
             </SwiperSlide>
           </Swiper>
         </div>
         <div
-          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
         >
           <Header
             as="h2"
-            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
             color="black"
             hAlign="inherit"
           >
             Test instruction title
           </Header>
           <div
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
           >
             <div
-              className="mfui-beta-instructions__articles-title-block"
+              className="mfui-instructions__articles-title-block"
             >
               <div
-                className="mfui-beta-instructions__articles-title"
+                className="mfui-instructions__articles-title"
                 data-index={0}
                 key="0"
               >
@@ -5836,26 +5836,26 @@ exports[`<Instructions /> should render component with additional text 1`] = `
               </div>
             </div>
             <ul
-              className="mfui-beta-instructions__articles-dots mfui-beta-instructions__articles-dots_text-after"
+              className="mfui-instructions__articles-dots mfui-instructions__articles-dots_text-after"
             >
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active"
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
                 key="0"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-dot"
+                className="mfui-instructions__articles-dot"
                 key="1"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   2
                 </span>
@@ -5863,53 +5863,53 @@ exports[`<Instructions /> should render component with additional text 1`] = `
             </ul>
           </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_text-after mfui-beta-instructions__articles-list_desktop"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_text-after mfui-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active"
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
               data-index={0}
               key="0"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test1
               </div>
             </li>
             <li
-              className="mfui-beta-instructions__articles-item"
+              className="mfui-instructions__articles-item"
               data-index={1}
               key="1"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   2
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title"
+                className="mfui-instructions__articles-item-title"
               >
                 Test2
               </div>
             </li>
           </ul>
           <Paragraph
-            className="mfui-beta-instructions__text"
+            className="mfui-instructions__text"
             hasMargin={false}
           >
             additionalText
@@ -5923,7 +5923,7 @@ exports[`<Instructions /> should render component with additional text 1`] = `
 
 exports[`<Instructions /> should render with classes props 1`] = `
 <div
-  className="mfui-beta-instructions mfui-beta-instructions_mask_none"
+  className="mfui-instructions mfui-instructions_mask_none"
 >
   <Grid
     hAlign="center"
@@ -5933,30 +5933,30 @@ exports[`<Instructions /> should render with classes props 1`] = `
     >
       <Header
         as="h2"
-        className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_mobile"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
         color="black"
         hAlign="inherit"
       >
         Test instruction title
       </Header>
       <div
-        className="mfui-beta-instructions__wrapper"
+        className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-beta-instructions__picture mfui-beta-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
         >
           <Swiper
-            className="mfui-beta-instructions__swiper"
-            noSwipingClass="mfui-beta-instructions__slide"
+            className="mfui-instructions__swiper"
+            noSwipingClass="mfui-instructions__slide"
             onSwiper={[Function]}
           >
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="0ImgUrl1"
             >
               <video
                 autoPlay={true}
-                className="mfui-beta-instructions__swiper-img"
+                className="mfui-instructions__swiper-img"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -5968,36 +5968,36 @@ exports[`<Instructions /> should render with classes props 1`] = `
               </video>
             </SwiperSlide>
             <SwiperSlide
-              className="mfui-beta-instructions__slide"
+              className="mfui-instructions__slide"
               key="1ImgUrl2"
             >
               <img
                 alt=""
-                className="mfui-beta-instructions__swiper-img instructionItemImg"
+                className="mfui-instructions__swiper-img instructionItemImg"
                 src="ImgUrl2"
               />
             </SwiperSlide>
           </Swiper>
         </div>
         <div
-          className="mfui-beta-instructions__articles mfui-beta-instructions__articles_align_left"
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
         >
           <Header
             as="h2"
-            className="mfui-beta-instructions__title mfui-beta-instructions__title_resolution_desktop"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
             color="black"
             hAlign="inherit"
           >
             Test instruction title
           </Header>
           <div
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_mobile"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
           >
             <div
-              className="mfui-beta-instructions__articles-title-block"
+              className="mfui-instructions__articles-title-block"
             >
               <div
-                className="mfui-beta-instructions__articles-title mobileItemTitle"
+                className="mfui-instructions__articles-title mobileItemTitle"
                 data-index={0}
                 key="0"
               >
@@ -6005,26 +6005,26 @@ exports[`<Instructions /> should render with classes props 1`] = `
               </div>
             </div>
             <ul
-              className="mfui-beta-instructions__articles-dots"
+              className="mfui-instructions__articles-dots"
             >
               <div
-                className="mfui-beta-instructions__articles-dot mfui-beta-instructions__articles-dot_active test-class_activeArticleItem test-class_articleItem test-class_mobileInstructionItem"
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active test-class_activeArticleItem test-class_articleItem test-class_mobileInstructionItem"
                 key="0"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-dot test-class_articleItem test-class_mobileInstructionItem"
+                className="mfui-instructions__articles-dot test-class_articleItem test-class_mobileInstructionItem"
                 key="1"
                 onClick={[Function]}
               >
                 <span
-                  className="mfui-beta-instructions__articles-dot-number"
+                  className="mfui-instructions__articles-dot-number"
                 >
                   2
                 </span>
@@ -6032,46 +6032,46 @@ exports[`<Instructions /> should render with classes props 1`] = `
             </ul>
           </div>
           <ul
-            className="mfui-beta-instructions__articles-list mfui-beta-instructions__articles-list_desktop"
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
           >
             <li
-              className="mfui-beta-instructions__articles-item mfui-beta-instructions__articles-item_active test-class_activeArticleItem test-class_articleItem test-class_desktopInstructionItem"
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active test-class_activeArticleItem test-class_articleItem test-class_desktopInstructionItem"
               data-index={0}
               key="0"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   1
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title desktopItemTitle"
+                className="mfui-instructions__articles-item-title desktopItemTitle"
               >
                 Test1
               </div>
             </li>
             <li
-              className="mfui-beta-instructions__articles-item test-class_articleItem test-class_desktopInstructionItem"
+              className="mfui-instructions__articles-item test-class_articleItem test-class_desktopInstructionItem"
               data-index={1}
               key="1"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-instructions__articles-item-dot"
+                className="mfui-instructions__articles-item-dot"
               >
                 <span
-                  className="mfui-beta-instructions__articles-item-dot-number"
+                  className="mfui-instructions__articles-item-dot-number"
                 >
                   2
                 </span>
               </div>
               <div
-                className="mfui-beta-instructions__articles-item-title desktopItemTitle"
+                className="mfui-instructions__articles-item-title desktopItemTitle"
               >
                 Test2
               </div>

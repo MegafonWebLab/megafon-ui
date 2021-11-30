@@ -23,7 +23,7 @@ export interface IMonthProps {
     goToNextMonth: () => void;
 }
 
-const cn = cnCreate('mfui-beta-month');
+const cn = cnCreate('mfui-month');
 const Month: React.FC<IMonthProps> = ({
     isPrevMonthDisabled,
     isNextMonthDisabled,

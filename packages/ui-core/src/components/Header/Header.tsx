@@ -20,7 +20,7 @@ interface IHeaderProps extends IFilterDataAttrs {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-beta-header');
+const cn = cnCreate('mfui-header');
 class Header extends React.Component<IHeaderProps, {}> {
     static propTypes = {
         as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),

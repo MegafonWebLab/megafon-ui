@@ -23,7 +23,7 @@ export type Props = {
     color?: TextColorType;
 };
 
-const cn = cnCreate('mfui-beta-breadcrumbs');
+const cn = cnCreate('mfui-breadcrumbs');
 const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, classes = {} }) => (
     <div className={cn({ color }, className)}>
         {items.map(({ title, href }) => (

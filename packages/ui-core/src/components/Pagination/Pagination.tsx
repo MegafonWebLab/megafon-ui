@@ -17,7 +17,7 @@ interface IPagination {
     onChange: (value: number) => void;
 }
 
-const cn = cnCreate('mfui-beta-pagination');
+const cn = cnCreate('mfui-pagination');
 const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'default', onChange }) => {
     const paginationItems = usePagination(totalPages, activePage);
 

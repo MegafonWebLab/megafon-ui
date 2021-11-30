@@ -29,7 +29,7 @@ type Props = {
     disablePaddingBottom?: boolean;
 };
 
-const cn = cnCreate('mfui-beta-container');
+const cn = cnCreate('mfui-container');
 const Container: React.FC<Props> = ({
     backgroundColor = 'default',
     rootRef,

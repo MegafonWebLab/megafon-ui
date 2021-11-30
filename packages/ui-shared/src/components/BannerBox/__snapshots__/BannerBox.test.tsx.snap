@@ -2,7 +2,7 @@
 
 exports[`<BannerBox /> render BannerBox with default props 1`] = `
 <div
-  className="mfui-beta-banner-box"
+  className="mfui-banner-box"
 >
   <Banner>
     <div>
@@ -14,7 +14,7 @@ exports[`<BannerBox /> render BannerBox with default props 1`] = `
 
 exports[`<BannerBox /> render BannerBox with props 1`] = `
 <div
-  className="mfui-beta-banner-box"
+  className="mfui-banner-box"
 >
   <Banner
     autoPlay={true}

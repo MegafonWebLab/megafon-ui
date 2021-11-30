@@ -2,7 +2,7 @@
 
 exports[`<TabsBox /> should render with props 1`] = `
 <div
-  className="mfui-beta-tabs-box"
+  className="mfui-tabs-box"
 >
   <Tabs
     classes={

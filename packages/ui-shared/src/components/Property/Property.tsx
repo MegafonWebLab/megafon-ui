@@ -36,7 +36,7 @@ export interface IProperty {
     };
 }
 
-const cn = cnCreate('mfui-beta-property');
+const cn = cnCreate('mfui-property');
 const Property: React.FC<IProperty> = ({
     rootRef,
     items,

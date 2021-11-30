@@ -2,30 +2,30 @@
 
 exports[`<PictureWithDescription /> should render with custom classes 1`] = `
 <div
-  className="mfui-beta-picture-with-description class-name root-class"
+  className="mfui-picture-with-description class-name root-class"
 >
   <div
-    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_left"
+    className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
       alt=""
-      className="mfui-beta-picture-with-description__img"
+      className="mfui-picture-with-description__img"
       src="/testUrl"
     />
   </div>
   <div
-    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left"
+    className="mfui-picture-with-description__articles mfui-picture-with-description__articles_align_left"
   >
     <Header
       as="h2"
-      className="mfui-beta-picture-with-description__title title-class"
+      className="mfui-picture-with-description__title title-class"
       color="black"
       hAlign="inherit"
     >
       Заголовок
     </Header>
     <div
-      className="mfui-beta-picture-with-description__content"
+      className="mfui-picture-with-description__content"
     >
       <div />
     </div>
@@ -35,22 +35,22 @@ exports[`<PictureWithDescription /> should render with custom classes 1`] = `
 
 exports[`<PictureWithDescription /> should render with default props 1`] = `
 <div
-  className="mfui-beta-picture-with-description"
+  className="mfui-picture-with-description"
 >
   <div
-    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_left"
+    className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
       alt=""
-      className="mfui-beta-picture-with-description__img"
+      className="mfui-picture-with-description__img"
       src="/testUrl"
     />
   </div>
   <div
-    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left"
+    className="mfui-picture-with-description__articles mfui-picture-with-description__articles_align_left"
   >
     <div
-      className="mfui-beta-picture-with-description__content"
+      className="mfui-picture-with-description__content"
     >
       <div />
     </div>
@@ -60,22 +60,22 @@ exports[`<PictureWithDescription /> should render with default props 1`] = `
 
 exports[`<PictureWithDescription /> should render with right side picture 1`] = `
 <div
-  className="mfui-beta-picture-with-description"
+  className="mfui-picture-with-description"
 >
   <div
-    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_right"
+    className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_right"
   >
     <img
       alt=""
-      className="mfui-beta-picture-with-description__img"
+      className="mfui-picture-with-description__img"
       src="/testUrl"
     />
   </div>
   <div
-    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_right"
+    className="mfui-picture-with-description__articles mfui-picture-with-description__articles_align_right"
   >
     <div
-      className="mfui-beta-picture-with-description__content"
+      className="mfui-picture-with-description__content"
     >
       <div />
     </div>
@@ -85,30 +85,30 @@ exports[`<PictureWithDescription /> should render with right side picture 1`] = 
 
 exports[`<PictureWithDescription /> should render with title 1`] = `
 <div
-  className="mfui-beta-picture-with-description"
+  className="mfui-picture-with-description"
 >
   <div
-    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_left"
+    className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
       alt=""
-      className="mfui-beta-picture-with-description__img"
+      className="mfui-picture-with-description__img"
       src="/testUrl"
     />
   </div>
   <div
-    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left"
+    className="mfui-picture-with-description__articles mfui-picture-with-description__articles_align_left"
   >
     <Header
       as="h2"
-      className="mfui-beta-picture-with-description__title"
+      className="mfui-picture-with-description__title"
       color="black"
       hAlign="inherit"
     >
       Заголовок
     </Header>
     <div
-      className="mfui-beta-picture-with-description__content"
+      className="mfui-picture-with-description__content"
     >
       <div />
     </div>
@@ -118,22 +118,22 @@ exports[`<PictureWithDescription /> should render with title 1`] = `
 
 exports[`<PictureWithDescription /> should render with top align text 1`] = `
 <div
-  className="mfui-beta-picture-with-description"
+  className="mfui-picture-with-description"
 >
   <div
-    className="mfui-beta-picture-with-description__picture mfui-beta-picture-with-description__picture_align_left"
+    className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
       alt=""
-      className="mfui-beta-picture-with-description__img"
+      className="mfui-picture-with-description__img"
       src="/testUrl"
     />
   </div>
   <div
-    className="mfui-beta-picture-with-description__articles mfui-beta-picture-with-description__articles_align_left mfui-beta-picture-with-description__articles_text-top-align"
+    className="mfui-picture-with-description__articles mfui-picture-with-description__articles_align_left mfui-picture-with-description__articles_text-top-align"
   >
     <div
-      className="mfui-beta-picture-with-description__content"
+      className="mfui-picture-with-description__content"
     >
       <div />
     </div>

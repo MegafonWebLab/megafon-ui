@@ -14,7 +14,7 @@ export interface ITextLinkProps extends ILinkProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
-const cn = cnCreate('mfui-beta-text-link');
+const cn = cnCreate('mfui-text-link');
 const TextLink: React.FC<ITextLinkProps> = ({
     underlineVisibility,
     underlineStyle,

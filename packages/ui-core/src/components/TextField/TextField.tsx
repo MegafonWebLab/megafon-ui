@@ -98,7 +98,7 @@ const TEXTAREA_MAX_HEIGHT = 168;
 const ROW_HEIGHT = 24;
 const DEFAULT_ROW_COUNT = 3;
 
-const cn = cnCreate('mfui-beta-text-field');
+const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<TextFieldProps> = ({
     className,
     customIcon,

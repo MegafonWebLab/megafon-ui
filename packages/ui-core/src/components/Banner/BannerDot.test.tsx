@@ -11,7 +11,7 @@ const props = {
     onClick: jest.fn(),
 } as IBannerDotProps;
 
-const cn = cnCreate('.mfui-beta-banner-dot');
+const cn = cnCreate('.mfui-banner-dot');
 
 describe('<BannerDot />', () => {
     afterEach(() => {

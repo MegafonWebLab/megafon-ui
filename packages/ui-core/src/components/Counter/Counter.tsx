@@ -31,7 +31,7 @@ export interface ICounterProps {
     };
 }
 
-const cn = cnCreate('mfui-beta-counter');
+const cn = cnCreate('mfui-counter');
 const Counter: React.FC<ICounterProps> = ({
     isControlled = false,
     value = 0,

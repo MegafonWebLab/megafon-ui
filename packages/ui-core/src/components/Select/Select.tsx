@@ -90,7 +90,7 @@ interface ISelectState<T extends SelectItemValueType> {
     isChoosenItem: boolean;
 }
 
-const cn = cnCreate('mfui-beta-select');
+const cn = cnCreate('mfui-select');
 class Select<T extends SelectItemValueType> extends React.Component<ISelectProps<T>, ISelectState<T>> {
     static propTypes = {
         type: PropTypes.oneOf(Object.values(SelectTypes)),

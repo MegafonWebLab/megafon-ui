@@ -2,20 +2,20 @@
 
 exports[`PaginationNavigation should render component 1`] = `
 <PaginationButton
-  className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_right"
+  className="mfui-pagination-navigation mfui-pagination-navigation_direction_right"
 >
   <test-file-stub
-    className="mfui-beta-pagination-navigation__icon"
+    className="mfui-pagination-navigation__icon"
   />
 </PaginationButton>
 `;
 
 exports[`PaginationNavigation should render with left direction 1`] = `
 <PaginationButton
-  className="mfui-beta-pagination-navigation mfui-beta-pagination-navigation_direction_left"
+  className="mfui-pagination-navigation mfui-pagination-navigation_direction_left"
 >
   <test-file-stub
-    className="mfui-beta-pagination-navigation__icon"
+    className="mfui-pagination-navigation__icon"
   />
 </PaginationButton>
 `;

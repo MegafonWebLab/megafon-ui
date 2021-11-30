@@ -41,7 +41,7 @@ type LocalWindowType = Omit<Window, 'innerWidth'> & {
     innerWidth: number;
 };
 
-const cn = cnCreate('mfui-beta-video-banner');
+const cn = cnCreate('mfui-video-banner');
 describe('<VideoBanner />', () => {
     it('render component with pictures', () => {
         const wrapper = shallow(

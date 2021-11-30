@@ -75,7 +75,7 @@ export interface IGridColumn {
     children: React.ReactNode;
 }
 
-const cn = cnCreate('mfui-beta-grid-column');
+const cn = cnCreate('mfui-grid-column');
 const GridColumn: React.FC<IGridColumn> = ({
     all = '12',
     wide,

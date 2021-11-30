@@ -32,7 +32,7 @@ export interface IAccordionBox {
     onClickAccordion?: (isOpened: boolean, title: string) => void;
 }
 
-const cn = cnCreate('mfui-beta-accordion-box');
+const cn = cnCreate('mfui-accordion-box');
 const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFullWidth = false, ...restProps }) => {
     const renderAccordionWithGrid = React.useCallback(
         () => (

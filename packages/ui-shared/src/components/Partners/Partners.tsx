@@ -49,7 +49,7 @@ const slidesSettings = {
     },
 };
 
-const cn = cnCreate('mfui-beta-partners');
+const cn = cnCreate('mfui-partners');
 const Partners: React.FC<IPartnersProps> = ({
     rootRef,
     classes: { root, itemClass } = {},

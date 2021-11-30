@@ -13,7 +13,7 @@ interface IPaginationButtons {
     onClick: (value?: number | string) => void;
 }
 
-const cn = cnCreate('mfui-beta-pagination-buttons');
+const cn = cnCreate('mfui-pagination-buttons');
 const PaginationButtons: React.FC<IPaginationButtons> = ({ items, theme, onClick, activeButton, hiddenButton }) => (
     <div className={cn()}>
         {items.map((pageNumber, index) => {

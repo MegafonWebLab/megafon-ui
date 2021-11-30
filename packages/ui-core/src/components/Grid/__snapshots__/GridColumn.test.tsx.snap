@@ -2,7 +2,7 @@
 
 exports[`<GridColumn /> it renders GridColumn with props on all screens 1`] = `
 <div
-  className="mfui-beta-grid-column mfui-beta-grid-column_flex mfui-beta-grid-column_grow mfui-beta-grid-column_align_right mfui-beta-grid-column_all_10 mfui-beta-grid-column_wide_8 mfui-beta-grid-column_desktop_4 mfui-beta-grid-column_tablet_3 mfui-beta-grid-column_mobile_1 mfui-beta-grid-column_all-order_2 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid-column_left-offset-all_4 mfui-beta-grid-column_right-offset-all_4"
+  className="mfui-grid-column mfui-grid-column_flex mfui-grid-column_grow mfui-grid-column_align_right mfui-grid-column_all_10 mfui-grid-column_wide_8 mfui-grid-column_desktop_4 mfui-grid-column_tablet_3 mfui-grid-column_mobile_1 mfui-grid-column_all-order_2 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid-column_left-offset-all_4 mfui-grid-column_right-offset-all_4"
 >
   item
 </div>
@@ -10,7 +10,7 @@ exports[`<GridColumn /> it renders GridColumn with props on all screens 1`] = `
 
 exports[`<GridColumn /> it renders GridColumn with props on different screens 1`] = `
 <div
-  className="mfui-beta-grid-column mfui-beta-grid-column_flex mfui-beta-grid-column_grow mfui-beta-grid-column_align_right mfui-beta-grid-column_all_10 mfui-beta-grid-column_wide_8 mfui-beta-grid-column_desktop_4 mfui-beta-grid-column_tablet_3 mfui-beta-grid-column_mobile_1 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_2 mfui-beta-grid-column_desktop-order_1 mfui-beta-grid-column_tablet-order_3 mfui-beta-grid-column_mobile-order_4 mfui-beta-grid-column_left-offset-wide_8 mfui-beta-grid-column_left-offset-desktop_7 mfui-beta-grid-column_left-offset-tablet_6 mfui-beta-grid-column_left-offset-mobile_5 mfui-beta-grid-column_right-offset-wide_1 mfui-beta-grid-column_right-offset-desktop_1 mfui-beta-grid-column_right-offset-tablet_1 mfui-beta-grid-column_right-offset-mobile_1 test-class"
+  className="mfui-grid-column mfui-grid-column_flex mfui-grid-column_grow mfui-grid-column_align_right mfui-grid-column_all_10 mfui-grid-column_wide_8 mfui-grid-column_desktop_4 mfui-grid-column_tablet_3 mfui-grid-column_mobile_1 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_2 mfui-grid-column_desktop-order_1 mfui-grid-column_tablet-order_3 mfui-grid-column_mobile-order_4 mfui-grid-column_left-offset-wide_8 mfui-grid-column_left-offset-desktop_7 mfui-grid-column_left-offset-tablet_6 mfui-grid-column_left-offset-mobile_5 mfui-grid-column_right-offset-wide_1 mfui-grid-column_right-offset-desktop_1 mfui-grid-column_right-offset-tablet_1 mfui-grid-column_right-offset-mobile_1 test-class"
 >
   item
 </div>
@@ -18,7 +18,7 @@ exports[`<GridColumn /> it renders GridColumn with props on different screens 1`
 
 exports[`<GridColumn /> it renders GridColumn without props 1`] = `
 <div
-  className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0"
+  className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0"
 >
   item
 </div>

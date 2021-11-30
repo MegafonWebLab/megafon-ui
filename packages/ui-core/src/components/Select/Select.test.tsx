@@ -3,7 +3,7 @@ import { cnCreate } from '@megafon/ui-helpers';
 import { shallow, mount } from 'enzyme';
 import Select, { ISelectProps, SelectTypes, Verification, ISelectItem } from './Select';
 
-const cn = cnCreate('mfui-beta-select');
+const cn = cnCreate('mfui-select');
 
 const props: ISelectProps<number> = {
     className: 'test-class',

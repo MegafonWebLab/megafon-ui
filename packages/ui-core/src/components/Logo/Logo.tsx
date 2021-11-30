@@ -19,7 +19,7 @@ export interface ILogoProps {
     target?: '_self' | '_blank' | '_parent' | '_top';
 }
 
-const cn = cnCreate('mfui-beta-logo');
+const cn = cnCreate('mfui-logo');
 const Logo: React.FC<ILogoProps> = ({ className, color, view, target, href }) => {
     const images = {
         'green-horizontal': greenHorizontalImg,

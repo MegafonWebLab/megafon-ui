@@ -45,8 +45,8 @@ describe('<Calendar />', () => {
             const wrapper = mount(<Calendar {...restProps} onChange={onChange} />);
             jest.resetAllMocks();
 
-            wrapper.find('.mfui-beta-day_first').at(0).simulate('click');
-            wrapper.find('.mfui-beta-day_last').at(0).simulate('click');
+            wrapper.find('.mfui-day_first').at(0).simulate('click');
+            wrapper.find('.mfui-day_last').at(0).simulate('click');
 
             expect(onChange).toBeCalledTimes(2);
         });
@@ -57,7 +57,7 @@ describe('<Calendar />', () => {
             const wrapper = mount(<Calendar {...props} onChange={onChange} />);
             jest.resetAllMocks();
 
-            wrapper.find('.mfui-beta-day').at(23).simulate('click');
+            wrapper.find('.mfui-day').at(23).simulate('click');
 
             expect(onChange).toBeCalledWith(new Date('2020-02-24T00:00:00.000Z'), null);
         });
@@ -68,7 +68,7 @@ describe('<Calendar />', () => {
             const wrapper = mount(<Calendar {...props} onChange={onChange} />);
             jest.resetAllMocks();
 
-            wrapper.find('.mfui-beta-day').at(18).simulate('click');
+            wrapper.find('.mfui-day').at(18).simulate('click');
 
             expect(onChange).toBeCalledWith(new Date('2020-02-19T00:00:00.000Z'), null);
         });
@@ -79,7 +79,7 @@ describe('<Calendar />', () => {
             const wrapper = mount(<Calendar {...props} onChange={onChange} isSingleDate />);
             jest.resetAllMocks();
 
-            wrapper.find('.mfui-beta-day').at(21).simulate('click');
+            wrapper.find('.mfui-day').at(21).simulate('click');
 
             expect(onChange).toHaveBeenCalledWith(new Date('2020-02-22T00:00:00.000Z'), null);
         });
@@ -90,14 +90,14 @@ describe('<Calendar />', () => {
             const wrapper = mount(<Calendar {...props} onChange={onChange} />);
             jest.resetAllMocks();
 
-            wrapper.find('.mfui-beta-day').at(8).simulate('click');
+            wrapper.find('.mfui-day').at(8).simulate('click');
 
             expect(onChange).toHaveBeenCalledWith(
                 new Date('2020-02-09T00:00:00.000Z'),
                 new Date('2020-02-14T00:00:00.000Z'),
             );
 
-            wrapper.find('.mfui-beta-day').at(12).simulate('click');
+            wrapper.find('.mfui-day').at(12).simulate('click');
 
             expect(onChange).toHaveBeenCalledWith(
                 new Date('2020-02-09T00:00:00.000Z'),
