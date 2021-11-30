@@ -58,7 +58,7 @@ export interface IButtonBannerProps {
 
 const getMediaStyle = (imageUrl: string) => (imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined);
 
-const cn = cnCreate('mfui-beta-button-banner');
+const cn = cnCreate('mfui-button-banner');
 const ButtonBanner: React.FC<IButtonBannerProps> = ({
     dataAttrs,
     className,

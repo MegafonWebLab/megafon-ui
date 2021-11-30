@@ -29,7 +29,7 @@ export interface IAccordionProps extends IFilterDataAttrs {
     onClickAccordion?: (isOpened: boolean, title: string | React.ReactNode | React.ReactNode[]) => void;
 }
 
-const cn = cnCreate('mfui-beta-accordion');
+const cn = cnCreate('mfui-accordion');
 const Accordion: React.FC<IAccordionProps> = ({
     rootRef,
     title,

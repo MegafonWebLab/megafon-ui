@@ -3,7 +3,7 @@
 exports[`CardsBox mobile resolution render with carousel 1`] = `
 <CardsBox>
   <div
-    className="mfui-beta-cards-box"
+    className="mfui-cards-box"
   >
     <CarouselMock
       slidesSettings={
@@ -36,49 +36,49 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
         title="title"
       >
         <div
-          className="mfui-beta-card"
+          className="mfui-card"
         >
           <div
-            className="mfui-beta-card__inner"
+            className="mfui-card__inner"
           >
             <Header
               as="h3"
-              className="mfui-beta-card__title"
+              className="mfui-card__title"
               color="black"
               hAlign="inherit"
             >
               <h3
-                className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-card__title"
+                className="mfui-header mfui-header_color_black mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
               >
                 title
               </h3>
             </Header>
             <div
-              className="mfui-beta-card__text"
+              className="mfui-card__text"
             >
               text
             </div>
             <div
-              className="mfui-beta-card__btns-wrapper"
+              className="mfui-card__btns-wrapper"
             >
               <Button
-                className="mfui-beta-card__button"
+                className="mfui-card__button"
                 href="button-href"
               >
                 <a
-                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text mfui-beta-card__button"
+                  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text mfui-card__button"
                   disabled={false}
                   href="button-href"
                   onClick={[Function]}
                 >
                   <div
-                    className="mfui-beta-button__inner"
+                    className="mfui-button__inner"
                   >
                     <div
-                      className="mfui-beta-button__content"
+                      className="mfui-button__content"
                     >
                       <span
-                        className="mfui-beta-button__text"
+                        className="mfui-button__text"
                       >
                         button-title
                       </span>
@@ -87,18 +87,18 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
                 </a>
               </Button>
               <TextLink
-                className="mfui-beta-card__link"
+                className="mfui-card__link"
                 color="blue"
                 href="href"
                 underlineStyle="solid"
                 underlineVisibility="hover"
               >
                 <Link
-                  className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                  className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
                   href="href"
                 >
                   <a
-                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                    className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
                     href="href"
                   >
                     href-title
@@ -126,49 +126,49 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
         title="title"
       >
         <div
-          className="mfui-beta-card"
+          className="mfui-card"
         >
           <div
-            className="mfui-beta-card__inner"
+            className="mfui-card__inner"
           >
             <Header
               as="h3"
-              className="mfui-beta-card__title"
+              className="mfui-card__title"
               color="black"
               hAlign="inherit"
             >
               <h3
-                className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-card__title"
+                className="mfui-header mfui-header_color_black mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
               >
                 title
               </h3>
             </Header>
             <div
-              className="mfui-beta-card__text"
+              className="mfui-card__text"
             >
               text
             </div>
             <div
-              className="mfui-beta-card__btns-wrapper"
+              className="mfui-card__btns-wrapper"
             >
               <Button
-                className="mfui-beta-card__button"
+                className="mfui-card__button"
                 href="button-href"
               >
                 <a
-                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text mfui-beta-card__button"
+                  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text mfui-card__button"
                   disabled={false}
                   href="button-href"
                   onClick={[Function]}
                 >
                   <div
-                    className="mfui-beta-button__inner"
+                    className="mfui-button__inner"
                   >
                     <div
-                      className="mfui-beta-button__content"
+                      className="mfui-button__content"
                     >
                       <span
-                        className="mfui-beta-button__text"
+                        className="mfui-button__text"
                       >
                         button-title
                       </span>
@@ -177,18 +177,18 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
                 </a>
               </Button>
               <TextLink
-                className="mfui-beta-card__link"
+                className="mfui-card__link"
                 color="blue"
                 href="href"
                 underlineStyle="solid"
                 underlineVisibility="hover"
               >
                 <Link
-                  className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                  className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
                   href="href"
                 >
                   <a
-                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                    className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
                     href="href"
                   >
                     href-title
@@ -216,49 +216,49 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
         title="title"
       >
         <div
-          className="mfui-beta-card"
+          className="mfui-card"
         >
           <div
-            className="mfui-beta-card__inner"
+            className="mfui-card__inner"
           >
             <Header
               as="h3"
-              className="mfui-beta-card__title"
+              className="mfui-card__title"
               color="black"
               hAlign="inherit"
             >
               <h3
-                className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h3 mfui-beta-header_h-align_inherit mfui-beta-card__title"
+                className="mfui-header mfui-header_color_black mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
               >
                 title
               </h3>
             </Header>
             <div
-              className="mfui-beta-card__text"
+              className="mfui-card__text"
             >
               text
             </div>
             <div
-              className="mfui-beta-card__btns-wrapper"
+              className="mfui-card__btns-wrapper"
             >
               <Button
-                className="mfui-beta-card__button"
+                className="mfui-card__button"
                 href="button-href"
               >
                 <a
-                  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text mfui-beta-card__button"
+                  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text mfui-card__button"
                   disabled={false}
                   href="button-href"
                   onClick={[Function]}
                 >
                   <div
-                    className="mfui-beta-button__inner"
+                    className="mfui-button__inner"
                   >
                     <div
-                      className="mfui-beta-button__content"
+                      className="mfui-button__content"
                     >
                       <span
-                        className="mfui-beta-button__text"
+                        className="mfui-button__text"
                       >
                         button-title
                       </span>
@@ -267,18 +267,18 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
                 </a>
               </Button>
               <TextLink
-                className="mfui-beta-card__link"
+                className="mfui-card__link"
                 color="blue"
                 href="href"
                 underlineStyle="solid"
                 underlineVisibility="hover"
               >
                 <Link
-                  className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                  className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
                   href="href"
                 >
                   <a
-                    className="mfui-beta-text-link mfui-beta-text-link_underline-visibility_hover mfui-beta-text-link_underline-style_solid mfui-beta-text-link_color_blue mfui-beta-card__link"
+                    className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
                     href="href"
                   >
                     href-title
@@ -296,7 +296,7 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
 
 exports[`CardsBox render component 1`] = `
 <div
-  className="mfui-beta-cards-box"
+  className="mfui-cards-box"
 >
   <Grid
     guttersBottom="medium"

@@ -12,7 +12,7 @@ interface IStepsItem {
     text: string | React.ReactNode[];
 }
 
-const cn = cnCreate('mfui-beta-steps-item');
+const cn = cnCreate('mfui-steps-item');
 const StepsItem: React.FC<IStepsItem> = ({ index, text }) => (
     <div className={cn()}>
         <span className={cn('step-number')}>{index}</span>

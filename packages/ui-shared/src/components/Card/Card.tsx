@@ -72,7 +72,7 @@ export interface ICard {
     objectFit?: ObjectFitType;
 }
 
-const cn = cnCreate('mfui-beta-card');
+const cn = cnCreate('mfui-card');
 const Card: React.FC<ICard> = ({
     dataAttrs,
     className,

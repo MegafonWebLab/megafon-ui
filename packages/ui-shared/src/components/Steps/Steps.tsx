@@ -11,7 +11,7 @@ export interface ISteps {
     title: string;
 }
 
-const cn = cnCreate('mfui-beta-steps');
+const cn = cnCreate('mfui-steps');
 const Steps: React.FC<ISteps> = ({ title, rootRef, children }) => (
     <div className={cn()} ref={rootRef}>
         <Header as="h2" hAlign="center" className={cn('title')}>

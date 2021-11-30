@@ -14,7 +14,7 @@ interface IPaginationNavigation {
     onClick?: (value?: number | string) => void;
 }
 
-const cn = cnCreate('mfui-beta-pagination-navigation');
+const cn = cnCreate('mfui-pagination-navigation');
 const PaginationNavigation: React.FC<IPaginationNavigation> = ({
     direction = 'right',
     theme,

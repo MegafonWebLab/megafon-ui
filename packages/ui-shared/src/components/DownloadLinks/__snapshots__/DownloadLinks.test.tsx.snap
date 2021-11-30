@@ -2,14 +2,14 @@
 
 exports[`DownloadLinks render component with one column 1`] = `
 <div
-  className="mfui-beta-download-links mfui-beta-download-links_count_1"
+  className="mfui-download-links mfui-download-links_count_1"
 >
   <Grid
     guttersLeft="medium"
   >
     <GridColumn
       all="7"
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       key=".0"
       mobile="12"
     >
@@ -26,10 +26,10 @@ exports[`DownloadLinks render component with one column 1`] = `
 
 exports[`DownloadLinks render component with one column regardless of the quantity 1`] = `
 <div
-  className="mfui-beta-download-links"
+  className="mfui-download-links"
 >
   <div
-    className="mfui-beta-download-links__item"
+    className="mfui-download-links__item"
     key=".0"
   >
     <DownloadLink
@@ -40,7 +40,7 @@ exports[`DownloadLinks render component with one column regardless of the quanti
     />
   </div>
   <div
-    className="mfui-beta-download-links__item"
+    className="mfui-download-links__item"
     key=".1"
   >
     <DownloadLink
@@ -51,7 +51,7 @@ exports[`DownloadLinks render component with one column regardless of the quanti
     />
   </div>
   <div
-    className="mfui-beta-download-links__item"
+    className="mfui-download-links__item"
     key=".2"
   >
     <DownloadLink
@@ -62,7 +62,7 @@ exports[`DownloadLinks render component with one column regardless of the quanti
     />
   </div>
   <div
-    className="mfui-beta-download-links__item"
+    className="mfui-download-links__item"
     key=".3"
   >
     <DownloadLink
@@ -73,7 +73,7 @@ exports[`DownloadLinks render component with one column regardless of the quanti
     />
   </div>
   <div
-    className="mfui-beta-download-links__item"
+    className="mfui-download-links__item"
     key=".4"
   >
     <DownloadLink
@@ -84,7 +84,7 @@ exports[`DownloadLinks render component with one column regardless of the quanti
     />
   </div>
   <div
-    className="mfui-beta-download-links__item"
+    className="mfui-download-links__item"
     key=".5"
   >
     <DownloadLink
@@ -95,7 +95,7 @@ exports[`DownloadLinks render component with one column regardless of the quanti
     />
   </div>
   <div
-    className="mfui-beta-download-links__item"
+    className="mfui-download-links__item"
     key=".6"
   >
     <DownloadLink
@@ -110,13 +110,13 @@ exports[`DownloadLinks render component with one column regardless of the quanti
 
 exports[`DownloadLinks render component with three columns 1`] = `
 <div
-  className="mfui-beta-download-links mfui-beta-download-links_count_5"
+  className="mfui-download-links mfui-download-links_count_5"
 >
   <Grid
     guttersLeft="medium"
   >
     <GridColumn
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       desktop="4"
       key=".0"
       mobile="12"
@@ -131,7 +131,7 @@ exports[`DownloadLinks render component with three columns 1`] = `
       />
     </GridColumn>
     <GridColumn
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       desktop="4"
       key=".1"
       mobile="12"
@@ -146,7 +146,7 @@ exports[`DownloadLinks render component with three columns 1`] = `
       />
     </GridColumn>
     <GridColumn
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       desktop="4"
       key=".2"
       mobile="12"
@@ -161,7 +161,7 @@ exports[`DownloadLinks render component with three columns 1`] = `
       />
     </GridColumn>
     <GridColumn
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       desktop="4"
       key=".3"
       mobile="12"
@@ -176,7 +176,7 @@ exports[`DownloadLinks render component with three columns 1`] = `
       />
     </GridColumn>
     <GridColumn
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       desktop="4"
       key=".4"
       mobile="12"
@@ -196,14 +196,14 @@ exports[`DownloadLinks render component with three columns 1`] = `
 
 exports[`DownloadLinks render component with two columns 1`] = `
 <div
-  className="mfui-beta-download-links mfui-beta-download-links_count_3"
+  className="mfui-download-links mfui-download-links_count_3"
 >
   <Grid
     guttersLeft="medium"
   >
     <GridColumn
       all="6"
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       key=".0"
       mobile="12"
     >
@@ -216,7 +216,7 @@ exports[`DownloadLinks render component with two columns 1`] = `
     </GridColumn>
     <GridColumn
       all="6"
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       key=".1"
       mobile="12"
     >
@@ -229,7 +229,7 @@ exports[`DownloadLinks render component with two columns 1`] = `
     </GridColumn>
     <GridColumn
       all="6"
-      className="mfui-beta-download-links__column"
+      className="mfui-download-links__column"
       key=".2"
       mobile="12"
     >

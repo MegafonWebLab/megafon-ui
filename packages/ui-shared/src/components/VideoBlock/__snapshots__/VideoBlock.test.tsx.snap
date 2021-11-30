@@ -2,10 +2,10 @@
 
 exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -15,11 +15,11 @@ exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper"
+        className="mfui-video-block__video-wrapper"
       >
         <video
           autoPlay={true}
-          className="mfui-beta-video-block__video"
+          className="mfui-video-block__video"
           controls={false}
           loop={true}
           muted={true}
@@ -37,10 +37,10 @@ exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
 <div
-  className="mfui-beta-video-block className rootClass"
+  className="mfui-video-block className rootClass"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -52,23 +52,23 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__content"
+        className="mfui-video-block__content"
       >
         <Header
           as="h2"
-          className="mfui-beta-video-block__header"
+          className="mfui-video-block__header"
           color="black"
           hAlign="inherit"
         >
           Test title
         </Header>
         <div
-          className="mfui-beta-video-block__description descriptionClass"
+          className="mfui-video-block__description descriptionClass"
         >
           Test description
         </div>
         <Button
-          className="mfui-beta-video-block__button buttonClass"
+          className="mfui-video-block__button buttonClass"
           href="#"
         >
           Button title
@@ -82,11 +82,11 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper mfui-beta-video-block__video-wrapper_with-content"
+        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
       >
         <video
           autoPlay={false}
-          className="mfui-beta-video-block__video"
+          className="mfui-video-block__video"
           controls={true}
           loop={true}
           muted={true}
@@ -104,10 +104,10 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -119,23 +119,23 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__content"
+        className="mfui-video-block__content"
       >
         <Header
           as="h2"
-          className="mfui-beta-video-block__header"
+          className="mfui-video-block__header"
           color="black"
           hAlign="inherit"
         >
           Test title
         </Header>
         <div
-          className="mfui-beta-video-block__description"
+          className="mfui-video-block__description"
         >
           Test description
         </div>
         <Button
-          className="mfui-beta-video-block__button"
+          className="mfui-video-block__button"
           href="#"
         >
           Button title
@@ -149,11 +149,11 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper mfui-beta-video-block__video-wrapper_with-content"
+        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
       >
         <video
           autoPlay={false}
-          className="mfui-beta-video-block__video"
+          className="mfui-video-block__video"
           controls={true}
           loop={true}
           muted={true}
@@ -171,10 +171,10 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with content and button download link 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -186,23 +186,23 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__content"
+        className="mfui-video-block__content"
       >
         <Header
           as="h2"
-          className="mfui-beta-video-block__header"
+          className="mfui-video-block__header"
           color="black"
           hAlign="inherit"
         >
           Test title
         </Header>
         <div
-          className="mfui-beta-video-block__description"
+          className="mfui-video-block__description"
         >
           Test description
         </div>
         <Button
-          className="mfui-beta-video-block__button"
+          className="mfui-video-block__button"
           download={true}
           href="#"
         >
@@ -217,11 +217,11 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper mfui-beta-video-block__video-wrapper_with-content"
+        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
       >
         <video
           autoPlay={false}
-          className="mfui-beta-video-block__video"
+          className="mfui-video-block__video"
           controls={true}
           loop={true}
           muted={true}
@@ -239,10 +239,10 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
 
 exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -252,11 +252,11 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper"
+        className="mfui-video-block__video-wrapper"
       >
         <video
           autoPlay={false}
-          className="mfui-beta-video-block__video"
+          className="mfui-video-block__video"
           controls={true}
           loop={true}
           muted={true}
@@ -274,10 +274,10 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -287,11 +287,11 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper"
+        className="mfui-video-block__video-wrapper"
       >
         <video
           autoPlay={false}
-          className="mfui-beta-video-block__video"
+          className="mfui-video-block__video"
           controls={true}
           loop={true}
           muted={false}
@@ -309,10 +309,10 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -322,7 +322,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper"
+        className="mfui-video-block__video-wrapper"
       >
         <iframe
           allow="autoplay"
@@ -340,10 +340,10 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
 
 exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autoplay 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -353,7 +353,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autopl
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper"
+        className="mfui-video-block__video-wrapper"
       >
         <iframe
           allow="autoplay"
@@ -371,10 +371,10 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autopl
 
 exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound turned on 1`] = `
 <div
-  className="mfui-beta-video-block"
+  className="mfui-video-block"
 >
   <Grid
-    className="mfui-beta-video-block__grid"
+    className="mfui-video-block__grid"
     hAlign="center"
   >
     <GridColumn
@@ -384,7 +384,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
       tablet="12"
     >
       <div
-        className="mfui-beta-video-block__video-wrapper"
+        className="mfui-video-block__video-wrapper"
       >
         <iframe
           allow="autoplay"

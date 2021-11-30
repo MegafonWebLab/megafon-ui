@@ -48,7 +48,7 @@ interface IDownloadLinks {
     children: Array<React.ReactElement<IDownloadLink>> | React.ReactElement<IDownloadLink>;
 }
 
-const cn = cnCreate('mfui-beta-download-links');
+const cn = cnCreate('mfui-download-links');
 const DownloadLinks: React.FC<IDownloadLinks> = ({ inOneColumn = false, children }) => {
     if (inOneColumn) {
         return (

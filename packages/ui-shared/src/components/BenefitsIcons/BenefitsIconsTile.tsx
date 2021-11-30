@@ -10,7 +10,7 @@ export interface IBenefitsIconsTile extends IBenefit {
     className?: string;
 }
 
-const cn = cnCreate('mfui-beta-benefits-icons-tile');
+const cn = cnCreate('mfui-benefits-icons-tile');
 const BenefitsIconsTile: React.FC<IBenefitsIconsTile> = ({
     title,
     text,

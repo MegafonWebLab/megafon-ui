@@ -43,7 +43,7 @@ describe('<RadioButton />', () => {
                 </RadioButton>,
             );
 
-            wrapper.find('.mfui-beta-radio-button__input').simulate('change');
+            wrapper.find('.mfui-radio-button__input').simulate('change');
             expect(handleChange).toHaveBeenCalledWith(value);
         });
     });

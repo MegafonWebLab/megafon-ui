@@ -56,7 +56,7 @@ export interface ITabsProps {
     children: Array<React.ReactElement<ITabProps>>;
 }
 
-const cn = cnCreate('mfui-beta-tabs');
+const cn = cnCreate('mfui-tabs');
 const Tabs: React.FC<ITabsProps> = ({
     className,
     classes: { root: rootClass, innerIndents: innerIndentsClass, tab: tabClass, activeTab: activeTabClass } = {},

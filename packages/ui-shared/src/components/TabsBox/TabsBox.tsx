@@ -7,7 +7,7 @@ type TabsPropsType = React.ComponentProps<typeof Tabs> & {
     rootRef?: React.Ref<HTMLDivElement>;
 };
 
-const cn = cnCreate('mfui-beta-tabs-box');
+const cn = cnCreate('mfui-tabs-box');
 const TabsBox: React.FC<TabsPropsType> = ({ rootRef, ...props }) => (
     <div ref={rootRef} className={cn()}>
         <Tabs {...props} />

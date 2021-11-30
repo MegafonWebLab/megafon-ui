@@ -2,21 +2,21 @@
 
 exports[`StoreButton should render with App Store theme 1`] = `
 <Link
-  className="mfui-beta-store-button mfui-beta-store-button_theme_app-store"
+  className="mfui-store-button mfui-store-button_theme_app-store"
   href="href"
 />
 `;
 
 exports[`StoreButton should render with Google Play 1`] = `
 <Link
-  className="mfui-beta-store-button mfui-beta-store-button_theme_google-play"
+  className="mfui-store-button mfui-store-button_theme_google-play"
   href="href"
 />
 `;
 
 exports[`StoreButton should render with custom class name 1`] = `
 <Link
-  className="mfui-beta-store-button mfui-beta-store-button_theme_app-store custom-class-name"
+  className="mfui-store-button mfui-store-button_theme_app-store custom-class-name"
   href="href"
 />
 `;

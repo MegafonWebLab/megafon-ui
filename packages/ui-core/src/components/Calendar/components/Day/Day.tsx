@@ -29,7 +29,7 @@ export type DayType = {
 
 export type IDayProps = IDayPickerProps & DayType;
 
-const cn = cnCreate('mfui-beta-day');
+const cn = cnCreate('mfui-day');
 const Day: React.FC<IDayProps> = ({ isBetween = false, dayLabel, date, onMouseLeave, ...pickerProps }) => {
     const dayRef = React.useRef(null);
 

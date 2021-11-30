@@ -2,11 +2,11 @@
 
 exports[`TextBoxPicture render with big bottom margin 1`] = `
 <div
-  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big-bottom"
+  className="mfui-text-box-picture mfui-text-box-picture_margin_big-bottom"
 >
   <img
     alt=""
-    className="mfui-beta-text-box-picture__img"
+    className="mfui-text-box-picture__img"
     src="#"
   />
 </div>
@@ -14,11 +14,11 @@ exports[`TextBoxPicture render with big bottom margin 1`] = `
 
 exports[`TextBoxPicture render with big top margin 1`] = `
 <div
-  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big-top"
+  className="mfui-text-box-picture mfui-text-box-picture_margin_big-top"
 >
   <img
     alt=""
-    className="mfui-beta-text-box-picture__img"
+    className="mfui-text-box-picture__img"
     src="#"
   />
 </div>
@@ -26,11 +26,11 @@ exports[`TextBoxPicture render with big top margin 1`] = `
 
 exports[`TextBoxPicture render with big vertical margins 1`] = `
 <div
-  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_big-vertical"
+  className="mfui-text-box-picture mfui-text-box-picture_margin_big-vertical"
 >
   <img
     alt=""
-    className="mfui-beta-text-box-picture__img"
+    className="mfui-text-box-picture__img"
     src="#"
   />
 </div>
@@ -38,11 +38,11 @@ exports[`TextBoxPicture render with big vertical margins 1`] = `
 
 exports[`TextBoxPicture render with default props 1`] = `
 <div
-  className="mfui-beta-text-box-picture mfui-beta-text-box-picture_margin_default"
+  className="mfui-text-box-picture mfui-text-box-picture_margin_default"
 >
   <img
     alt=""
-    className="mfui-beta-text-box-picture__img"
+    className="mfui-text-box-picture__img"
     src="#"
   />
 </div>

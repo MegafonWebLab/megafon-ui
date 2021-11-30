@@ -16,7 +16,7 @@ export interface IListProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-beta-list');
+const cn = cnCreate('mfui-list');
 const List: React.FC<IListProps> = ({
     as = 'ul',
     color = 'black',

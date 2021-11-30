@@ -2,11 +2,11 @@
 
 exports[`<Banner /> should render with default props 1`] = `
 <div
-  className="mfui-beta-banner mfui-beta-banner_nav-theme_light"
+  className="mfui-banner mfui-banner_nav-theme_light"
 >
   <Swiper
     autoplay={false}
-    className="mfui-beta-banner__swiper"
+    className="mfui-banner__swiper"
     loop={false}
     onAutoplayStop={[Function]}
     onFromEdge={[Function]}
@@ -17,7 +17,7 @@ exports[`<Banner /> should render with default props 1`] = `
     onTouchEnd={[Function]}
   >
     <SwiperSlide
-      className="mfui-beta-banner__slide"
+      className="mfui-banner__slide"
       key="0/.0"
     >
       <DemoSlide>
@@ -25,7 +25,7 @@ exports[`<Banner /> should render with default props 1`] = `
       </DemoSlide>
     </SwiperSlide>
     <SwiperSlide
-      className="mfui-beta-banner__slide"
+      className="mfui-banner__slide"
       key="1/.1"
     >
       <DemoSlide>
@@ -34,23 +34,23 @@ exports[`<Banner /> should render with default props 1`] = `
     </SwiperSlide>
   </Swiper>
   <NavArrow
-    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_prev"
+    className="mfui-banner__arrow mfui-banner__arrow_prev"
     disabled={true}
     onClick={[Function]}
     theme="purple"
   />
   <NavArrow
-    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_next"
+    className="mfui-banner__arrow mfui-banner__arrow_next"
     disabled={false}
     onClick={[Function]}
     theme="purple"
     view="next"
   />
   <div
-    className="mfui-beta-banner__pagination mfui-beta-banner__pagination_theme_light"
+    className="mfui-banner__pagination mfui-banner__pagination_theme_light"
   >
     <BannerDot
-      className="mfui-beta-banner__dot"
+      className="mfui-banner__dot"
       index={0}
       isActive={true}
       key="0/.0"
@@ -59,7 +59,7 @@ exports[`<Banner /> should render with default props 1`] = `
       timerDelay={5}
     />
     <BannerDot
-      className="mfui-beta-banner__dot"
+      className="mfui-banner__dot"
       index={1}
       isActive={false}
       key="1/.1"
@@ -73,7 +73,7 @@ exports[`<Banner /> should render with default props 1`] = `
 
 exports[`<Banner /> should render with props 1`] = `
 <div
-  className="mfui-beta-banner mfui-beta-banner_nav-theme_dark custom-class"
+  className="mfui-banner mfui-banner_nav-theme_dark custom-class"
 >
   <Swiper
     autoplay={
@@ -84,7 +84,7 @@ exports[`<Banner /> should render with props 1`] = `
         "waitForTransition": false,
       }
     }
-    className="mfui-beta-banner__swiper"
+    className="mfui-banner__swiper"
     loop={true}
     onAutoplayStop={[Function]}
     onFromEdge={[Function]}
@@ -95,7 +95,7 @@ exports[`<Banner /> should render with props 1`] = `
     onTouchEnd={[Function]}
   >
     <SwiperSlide
-      className="mfui-beta-banner__slide slide"
+      className="mfui-banner__slide slide"
       key="0/.0"
     >
       <DemoSlide>
@@ -103,7 +103,7 @@ exports[`<Banner /> should render with props 1`] = `
       </DemoSlide>
     </SwiperSlide>
     <SwiperSlide
-      className="mfui-beta-banner__slide slide"
+      className="mfui-banner__slide slide"
       key="1/.1"
     >
       <DemoSlide>
@@ -112,23 +112,23 @@ exports[`<Banner /> should render with props 1`] = `
     </SwiperSlide>
   </Swiper>
   <NavArrow
-    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_prev arrows"
+    className="mfui-banner__arrow mfui-banner__arrow_prev arrows"
     disabled={false}
     onClick={[Function]}
     theme="dark"
   />
   <NavArrow
-    className="mfui-beta-banner__arrow mfui-beta-banner__arrow_next arrows"
+    className="mfui-banner__arrow mfui-banner__arrow_next arrows"
     disabled={false}
     onClick={[Function]}
     theme="dark"
     view="next"
   />
   <div
-    className="mfui-beta-banner__pagination mfui-beta-banner__pagination_theme_dark"
+    className="mfui-banner__pagination mfui-banner__pagination_theme_dark"
   >
     <BannerDot
-      className="mfui-beta-banner__dot"
+      className="mfui-banner__dot"
       index={0}
       isActive={true}
       key="0/.0"
@@ -137,7 +137,7 @@ exports[`<Banner /> should render with props 1`] = `
       timerDelay={1}
     />
     <BannerDot
-      className="mfui-beta-banner__dot"
+      className="mfui-banner__dot"
       index={1}
       isActive={false}
       key="1/.1"

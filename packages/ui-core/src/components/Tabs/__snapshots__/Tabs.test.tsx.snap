@@ -2,7 +2,7 @@
 
 exports[`<Tabs /> should render with default props 1`] = `
 <div
-  className="mfui-beta-tabs mfui-beta-tabs_size_medium mfui-beta-tabs_h-align_left mfui-beta-tabs_tab-color_white mfui-beta-tabs_indents"
+  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_h-align_left mfui-tabs_tab-color_white mfui-tabs_indents"
 >
   <div
     style={
@@ -12,7 +12,7 @@ exports[`<Tabs /> should render with default props 1`] = `
     }
   >
     <div
-      className="mfui-beta-tabs__swiper-wrapper"
+      className="mfui-tabs__swiper-wrapper"
       style={
         Object {
           "paddingLeft": 0,
@@ -21,7 +21,7 @@ exports[`<Tabs /> should render with default props 1`] = `
       }
     >
       <Swiper
-        className="mfui-beta-tabs__swiper mfui-beta-tabs__swiper_beginning"
+        className="mfui-tabs__swiper mfui-tabs__swiper_beginning"
         initialSlide={0}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
@@ -31,33 +31,33 @@ exports[`<Tabs /> should render with default props 1`] = `
         slidesPerView="auto"
       >
         <SwiperSlide
-          className="mfui-beta-tabs__slide"
+          className="mfui-tabs__slide"
           key=".0"
         >
           <div
-            className="mfui-beta-tabs__tab"
+            className="mfui-tabs__tab"
           >
             <div
-              className="mfui-beta-tabs__tab-inner mfui-beta-tabs__tab-inner_current"
+              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current"
               onClick={[Function]}
             />
           </div>
         </SwiperSlide>
         <SwiperSlide
-          className="mfui-beta-tabs__slide"
+          className="mfui-tabs__slide"
           key=".1"
         >
           <div
-            className="mfui-beta-tabs__tab"
+            className="mfui-tabs__tab"
           >
             <div
-              className="mfui-beta-tabs__tab-inner"
+              className="mfui-tabs__tab-inner"
               onClick={[Function]}
             />
           </div>
         </SwiperSlide>
         <div
-          className="mfui-beta-tabs__underline"
+          className="mfui-tabs__underline"
           slot="wrapper-start"
           style={
             Object {
@@ -68,18 +68,18 @@ exports[`<Tabs /> should render with default props 1`] = `
           }
         />
         <test-file-stub
-          className="mfui-beta-tabs__arrow mfui-beta-tabs__arrow_prev mfui-beta-tabs__arrow_hide"
+          className="mfui-tabs__arrow mfui-tabs__arrow_prev mfui-tabs__arrow_hide"
           onClick={[Function]}
         />
         <test-file-stub
-          className="mfui-beta-tabs__arrow mfui-beta-tabs__arrow_next"
+          className="mfui-tabs__arrow mfui-tabs__arrow_next"
           onClick={[Function]}
         />
       </Swiper>
     </div>
   </div>
   <div
-    className="mfui-beta-tabs__panel mfui-beta-tabs__panel_current"
+    className="mfui-tabs__panel mfui-tabs__panel_current"
     key=".0"
   >
     <Tab>
@@ -87,7 +87,7 @@ exports[`<Tabs /> should render with default props 1`] = `
     </Tab>
   </div>
   <div
-    className="mfui-beta-tabs__panel"
+    className="mfui-tabs__panel"
     key=".1"
   >
     <Tab>
@@ -99,7 +99,7 @@ exports[`<Tabs /> should render with default props 1`] = `
 
 exports[`<Tabs /> should render with props 1`] = `
 <div
-  className="mfui-beta-tabs mfui-beta-tabs_size_small mfui-beta-tabs_h-align_center mfui-beta-tabs_tab-color_green className rootClass"
+  className="mfui-tabs mfui-tabs_size_small mfui-tabs_h-align_center mfui-tabs_tab-color_green className rootClass"
 >
   <div
     style={
@@ -109,7 +109,7 @@ exports[`<Tabs /> should render with props 1`] = `
     }
   >
     <div
-      className="mfui-beta-tabs__swiper-wrapper"
+      className="mfui-tabs__swiper-wrapper"
       style={
         Object {
           "paddingLeft": 0,
@@ -118,7 +118,7 @@ exports[`<Tabs /> should render with props 1`] = `
       }
     >
       <Swiper
-        className="mfui-beta-tabs__swiper mfui-beta-tabs__swiper_beginning innerIndentsClass"
+        className="mfui-tabs__swiper mfui-tabs__swiper_beginning innerIndentsClass"
         initialSlide={1}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
@@ -128,24 +128,24 @@ exports[`<Tabs /> should render with props 1`] = `
         slidesPerView="auto"
       >
         <SwiperSlide
-          className="mfui-beta-tabs__slide"
+          className="mfui-tabs__slide"
           key=".0"
         >
           <div
-            className="mfui-beta-tabs__tab tabClass"
+            className="mfui-tabs__tab tabClass"
           >
             <a
-              className="mfui-beta-tabs__tab-inner"
+              className="mfui-tabs__tab-inner"
               href="www.test.com"
               onClick={[Function]}
             >
               <div
-                className="mfui-beta-tabs__tab-icon"
+                className="mfui-tabs__tab-icon"
               >
                 <test-file-stub />
               </div>
               <div
-                className="mfui-beta-tabs__tab-title"
+                className="mfui-tabs__tab-title"
               >
                 title 1
               </div>
@@ -153,21 +153,21 @@ exports[`<Tabs /> should render with props 1`] = `
           </div>
         </SwiperSlide>
         <SwiperSlide
-          className="mfui-beta-tabs__slide"
+          className="mfui-tabs__slide"
           key=".1"
         >
           <div
-            className="mfui-beta-tabs__tab tabClass activeTabClass"
+            className="mfui-tabs__tab tabClass activeTabClass"
           >
             <div
               className="tab-wrapper"
             >
               <div
-                className="mfui-beta-tabs__tab-inner mfui-beta-tabs__tab-inner_current"
+                className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current"
                 onClick={[Function]}
               >
                 <div
-                  className="mfui-beta-tabs__tab-title"
+                  className="mfui-tabs__tab-title"
                 >
                   title 2
                 </div>
@@ -176,7 +176,7 @@ exports[`<Tabs /> should render with props 1`] = `
           </div>
         </SwiperSlide>
         <div
-          className="mfui-beta-tabs__underline"
+          className="mfui-tabs__underline"
           slot="wrapper-start"
           style={
             Object {
@@ -187,18 +187,18 @@ exports[`<Tabs /> should render with props 1`] = `
           }
         />
         <test-file-stub
-          className="mfui-beta-tabs__arrow mfui-beta-tabs__arrow_prev mfui-beta-tabs__arrow_hide"
+          className="mfui-tabs__arrow mfui-tabs__arrow_prev mfui-tabs__arrow_hide"
           onClick={[Function]}
         />
         <test-file-stub
-          className="mfui-beta-tabs__arrow mfui-beta-tabs__arrow_next"
+          className="mfui-tabs__arrow mfui-tabs__arrow_next"
           onClick={[Function]}
         />
       </Swiper>
     </div>
   </div>
   <div
-    className="mfui-beta-tabs__panel"
+    className="mfui-tabs__panel"
     key=".0"
   >
     <Tab
@@ -210,7 +210,7 @@ exports[`<Tabs /> should render with props 1`] = `
     </Tab>
   </div>
   <div
-    className="mfui-beta-tabs__panel mfui-beta-tabs__panel_current"
+    className="mfui-tabs__panel mfui-tabs__panel_current"
     key=".1"
   >
     <Tab

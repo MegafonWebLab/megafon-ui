@@ -2,10 +2,10 @@
 
 exports[`PaginationButtons should render component 1`] = `
 <div
-  className="mfui-beta-pagination-buttons"
+  className="mfui-pagination-buttons"
 >
   <PaginationButton
-    className="mfui-beta-pagination-buttons__button"
+    className="mfui-pagination-buttons__button"
     isActive={false}
     key="0"
     onClick={[MockFunction]}
@@ -14,14 +14,14 @@ exports[`PaginationButtons should render component 1`] = `
     1
   </PaginationButton>
   <PaginationButton
-    className="mfui-beta-pagination-buttons__button"
+    className="mfui-pagination-buttons__button"
     disabled={true}
     key="1"
   >
     <test-file-stub />
   </PaginationButton>
   <PaginationButton
-    className="mfui-beta-pagination-buttons__button"
+    className="mfui-pagination-buttons__button"
     isActive={true}
     key="2"
     onClick={[MockFunction]}
@@ -30,7 +30,7 @@ exports[`PaginationButtons should render component 1`] = `
     4
   </PaginationButton>
   <PaginationButton
-    className="mfui-beta-pagination-buttons__button"
+    className="mfui-pagination-buttons__button"
     isActive={false}
     key="3"
     onClick={[MockFunction]}

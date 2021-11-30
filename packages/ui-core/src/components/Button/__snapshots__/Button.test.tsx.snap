@@ -2,19 +2,19 @@
 
 exports[`<Button /> layout it renders Button on touch devices 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_content-type_text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </button>
 `;
 
 exports[`<Button /> layout it renders children 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_purple mfui-beta-button_size-all_large mfui-beta-button_no-touch mfui-beta-button_content-type_text class root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch mfui-button_content-type_text class root-class"
   data-test="test"
   disabled={false}
   href="any"
@@ -23,13 +23,13 @@ exports[`<Button /> layout it renders children 1`] = `
   target="_blank"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <div
-      className="mfui-beta-button__content content-class"
+      className="mfui-button__content content-class"
     >
       <span
-        className="mfui-beta-button__text"
+        className="mfui-button__text"
       >
         button
       </span>
@@ -40,19 +40,19 @@ exports[`<Button /> layout it renders children 1`] = `
 
 exports[`<Button /> layout renders Button with default props 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </button>
 `;
 
 exports[`<Button /> layout renders Button with props 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_purple mfui-beta-button_size-all_large mfui-beta-button_no-touch mfui-beta-button_content-type_text class root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch mfui-button_content-type_text class root-class"
   data-test="test"
   disabled={false}
   href="any"
@@ -61,14 +61,14 @@ exports[`<Button /> layout renders Button with props 1`] = `
   target="_blank"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </a>
 `;
 
 exports[`<Button /> layout should render full width button 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_purple mfui-beta-button_size-all_large mfui-beta-button_full-width mfui-beta-button_no-touch mfui-beta-button_content-type_text class root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_full-width mfui-button_no-touch mfui-button_content-type_text class root-class"
   data-test="test"
   disabled={false}
   href="any"
@@ -77,110 +77,110 @@ exports[`<Button /> layout should render full width button 1`] = `
   target="_blank"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </a>
 `;
 
 exports[`<Button /> layout should render tag "a" with download attribute 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   disabled={false}
   download={true}
   href="test"
   onClick={[Function]}
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </a>
 `;
 
 exports[`<Button /> layout should render tag a with disabled state 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_disabled mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_disabled mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   disabled={false}
   href="test"
   onClick={[Function]}
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </a>
 `;
 
 exports[`<Button /> layout should render tag button with disabled state 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_disabled mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_disabled mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   disabled={true}
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </button>
 `;
 
 exports[`<Button /> layout should render tag with target _self and without rel attribute 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   disabled={false}
   href="test"
   onClick={[Function]}
   target="_self"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </a>
 `;
 
 exports[`<Button /> layout should render tag without target and with rel attribute 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   disabled={false}
   href="test"
   onClick={[Function]}
   rel="nofollow"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </a>
 `;
 
 exports[`<Button /> layout should render tag without target, href and rel attribute 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </button>
 `;
 
 exports[`<Button /> layout should render with arrow icon on the right 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <div
-      className="mfui-beta-button__content"
+      className="mfui-button__content"
     >
       <span
-        className="mfui-beta-button__text"
+        className="mfui-button__text"
       >
         arrow
       </span>
       <test-file-stub
-        className="mfui-beta-button__icon-arrow"
+        className="mfui-button__icon-arrow"
       />
     </div>
   </div>
@@ -189,18 +189,18 @@ exports[`<Button /> layout should render with arrow icon on the right 1`] = `
 
 exports[`<Button /> layout should render with custom icon 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_icon"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_icon"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <div
-      className="mfui-beta-button__content"
+      className="mfui-button__content"
     >
       <div
-        className="mfui-beta-button__icon"
+        className="mfui-button__icon"
       >
         <test-file-stub />
       </div>
@@ -211,23 +211,23 @@ exports[`<Button /> layout should render with custom icon 1`] = `
 
 exports[`<Button /> layout should render with custom icon and children 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_no-touch mfui-beta-button_content-type_icon-text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_icon-text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <div
-      className="mfui-beta-button__content"
+      className="mfui-button__content"
     >
       <div
-        className="mfui-beta-button__icon"
+        className="mfui-button__icon"
       >
         <test-file-stub />
       </div>
       <span
-        className="mfui-beta-button__text"
+        className="mfui-button__text"
       >
         left icon
       </span>
@@ -238,7 +238,7 @@ exports[`<Button /> layout should render with custom icon and children 1`] = `
 
 exports[`<Button /> layout should render with different height for resolutions 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_purple mfui-beta-button_size-all_large mfui-beta-button_size-wide_large mfui-beta-button_size-desktop_medium mfui-beta-button_size-tablet_medium mfui-beta-button_size-mobile_small mfui-beta-button_no-touch mfui-beta-button_content-type_text class root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_size-wide_large mfui-button_size-desktop_medium mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_no-touch mfui-button_content-type_text class root-class"
   data-test="test"
   disabled={false}
   href="any"
@@ -247,14 +247,14 @@ exports[`<Button /> layout should render with different height for resolutions 1
   target="_blank"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   />
 </a>
 `;
 
 exports[`<Button /> snapshots with loader it renders loader with white color and medium size on all resolutions 1`] = `
 <a
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_purple mfui-beta-button_size-all_large mfui-beta-button_loading mfui-beta-button_no-touch mfui-beta-button_content-type_text class root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_loading mfui-button_no-touch mfui-button_content-type_text class root-class"
   data-test="test"
   disabled={false}
   href="any"
@@ -263,7 +263,7 @@ exports[`<Button /> snapshots with loader it renders loader with white color and
   target="_blank"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <Preloader
       color="white"
@@ -275,12 +275,12 @@ exports[`<Button /> snapshots with loader it renders loader with white color and
 
 exports[`<Button /> snapshots with loader should render loader with black color 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_outline mfui-beta-button_theme_black mfui-beta-button_size-all_medium mfui-beta-button_loading mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_outline mfui-button_theme_black mfui-button_size-all_medium mfui-button_loading mfui-button_no-touch mfui-button_content-type_text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <Preloader
       color="black"
@@ -292,12 +292,12 @@ exports[`<Button /> snapshots with loader should render loader with black color 
 
 exports[`<Button /> snapshots with loader should render loader with default color 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_outline mfui-beta-button_theme_purple mfui-beta-button_size-all_medium mfui-beta-button_loading mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_outline mfui-button_theme_purple mfui-button_size-all_medium mfui-button_loading mfui-button_no-touch mfui-button_content-type_text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <Preloader
       color="default"
@@ -309,12 +309,12 @@ exports[`<Button /> snapshots with loader should render loader with default colo
 
 exports[`<Button /> snapshots with loader should render loader with small size on mobile resolution and medium size on the rest 1`] = `
 <button
-  className="mfui-beta-button mfui-beta-button_type_primary mfui-beta-button_theme_green mfui-beta-button_size-all_medium mfui-beta-button_size-wide_large mfui-beta-button_size-desktop_large mfui-beta-button_size-tablet_medium mfui-beta-button_size-mobile_small mfui-beta-button_loading mfui-beta-button_no-touch mfui-beta-button_content-type_text"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_size-wide_large mfui-button_size-desktop_large mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_loading mfui-button_no-touch mfui-button_content-type_text"
   onClick={[Function]}
   type="button"
 >
   <div
-    className="mfui-beta-button__inner"
+    className="mfui-button__inner"
   >
     <Preloader
       color="white"

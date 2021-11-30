@@ -20,7 +20,7 @@ export interface IGridProps {
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
 
-const cn = cnCreate('mfui-beta-grid');
+const cn = cnCreate('mfui-grid');
 const Grid: React.FC<IGridProps> = ({
     children,
     guttersLeft,

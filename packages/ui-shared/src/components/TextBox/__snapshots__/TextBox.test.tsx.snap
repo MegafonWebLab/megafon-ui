@@ -2,10 +2,10 @@
 
 exports[`TextBox render with centered text 1`] = `
 <div
-  className="mfui-beta-text-box mfui-beta-text-box_text-center"
+  className="mfui-text-box mfui-text-box_text-center"
 >
   <div
-    className="mfui-beta-text-box__content"
+    className="mfui-text-box__content"
   >
     <p>
       test
@@ -16,10 +16,10 @@ exports[`TextBox render with centered text 1`] = `
 
 exports[`TextBox render with className="test-class-name" 1`] = `
 <div
-  className="mfui-beta-text-box test-class-name"
+  className="mfui-text-box test-class-name"
 >
   <div
-    className="mfui-beta-text-box__content"
+    className="mfui-text-box__content"
   >
     <p>
       test
@@ -30,10 +30,10 @@ exports[`TextBox render with className="test-class-name" 1`] = `
 
 exports[`TextBox render with default props 1`] = `
 <div
-  className="mfui-beta-text-box"
+  className="mfui-text-box"
 >
   <div
-    className="mfui-beta-text-box__content"
+    className="mfui-text-box__content"
   >
     <p>
       test
@@ -44,7 +44,7 @@ exports[`TextBox render with default props 1`] = `
 
 exports[`TextBox render with limited width 1`] = `
 <div
-  className="mfui-beta-text-box"
+  className="mfui-text-box"
 >
   <Grid
     hAlign="left"
@@ -56,7 +56,7 @@ exports[`TextBox render with limited width 1`] = `
       wide="8"
     >
       <div
-        className="mfui-beta-text-box__content"
+        className="mfui-text-box__content"
       >
         <p>
           test
@@ -69,7 +69,7 @@ exports[`TextBox render with limited width 1`] = `
 
 exports[`TextBox render with limited width and centered component 1`] = `
 <div
-  className="mfui-beta-text-box"
+  className="mfui-text-box"
 >
   <Grid
     hAlign="center"
@@ -81,7 +81,7 @@ exports[`TextBox render with limited width and centered component 1`] = `
       wide="8"
     >
       <div
-        className="mfui-beta-text-box__content"
+        className="mfui-text-box__content"
       >
         <p>
           test
@@ -94,7 +94,7 @@ exports[`TextBox render with limited width and centered component 1`] = `
 
 exports[`TextBox render with limited width and centered text 1`] = `
 <div
-  className="mfui-beta-text-box mfui-beta-text-box_text-center"
+  className="mfui-text-box mfui-text-box_text-center"
 >
   <Grid
     hAlign="left"
@@ -106,7 +106,7 @@ exports[`TextBox render with limited width and centered text 1`] = `
       wide="8"
     >
       <div
-        className="mfui-beta-text-box__content"
+        className="mfui-text-box__content"
       >
         <p>
           test
@@ -119,7 +119,7 @@ exports[`TextBox render with limited width and centered text 1`] = `
 
 exports[`TextBox render with limited width, centered component and centered text 1`] = `
 <div
-  className="mfui-beta-text-box mfui-beta-text-box_text-center"
+  className="mfui-text-box mfui-text-box_text-center"
 >
   <Grid
     hAlign="center"
@@ -131,7 +131,7 @@ exports[`TextBox render with limited width, centered component and centered text
       wide="8"
     >
       <div
-        className="mfui-beta-text-box__content"
+        className="mfui-text-box__content"
       >
         <p>
           test

@@ -2,10 +2,10 @@
 
 exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
 <div
-  className="mfui-beta-benefits-icons class-name root-class"
+  className="mfui-benefits-icons class-name root-class"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       className="grid-class"
@@ -70,10 +70,10 @@ exports[`<BenefitsIcons /> renders BenefitsIcons 1`] = `
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 1`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -130,10 +130,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 2`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -212,10 +212,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 3`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -324,10 +324,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned icon on top 4`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -450,10 +450,10 @@ exports[`<BenefitsIcons /> renders center-aligned columns with center-aligned ic
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -512,10 +512,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 1`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -595,10 +595,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 2`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -703,10 +703,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 3`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -831,10 +831,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left side icon 4`] 
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 1`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -894,10 +894,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 2`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -979,10 +979,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 3`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -1087,10 +1087,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
 
 exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon on top 4`] = `
 <div
-  className="mfui-beta-benefits-icons"
+  className="mfui-benefits-icons"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       guttersLeft="medium"
@@ -1218,10 +1218,10 @@ exports[`<BenefitsIcons /> renders left-aligned columns with left-aligned icon o
 
 exports[`<BenefitsIcons /> should render in one column 1`] = `
 <div
-  className="mfui-beta-benefits-icons class-name root-class"
+  className="mfui-benefits-icons class-name root-class"
 >
   <div
-    className="mfui-beta-benefits-icons__inner"
+    className="mfui-benefits-icons__inner"
   >
     <Grid
       className="grid-class"
@@ -1359,10 +1359,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
   }
 >
   <div
-    className="mfui-beta-benefits-icons class-name root-class"
+    className="mfui-benefits-icons class-name root-class"
   >
     <div
-      className="mfui-beta-benefits-icons__inner"
+      className="mfui-benefits-icons__inner"
     >
       <Grid
         className="grid-class"
@@ -1370,20 +1370,20 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
         hAlign="left"
       >
         <div
-          className="mfui-beta-grid grid-class"
+          className="mfui-grid grid-class"
         >
           <div
-            className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_h-align_left mfui-beta-grid__container_gutters-left_medium"
+            className="mfui-grid__container mfui-grid__container_multi-row mfui-grid__container_h-align_left mfui-grid__container_gutters-left_medium"
           >
             <GridColumn
-              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              className="mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               desktop="10"
               key=".$0"
               tablet="10"
               wide="10"
             >
               <div
-                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+                className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_wide_10 mfui-grid-column_desktop_10 mfui-grid-column_tablet_10 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               >
                 <BenefitsIconsTile
                   className="item-class"
@@ -1402,10 +1402,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                   title="Интернет"
                 >
                   <div
-                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-top item-class"
+                    className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-top item-class"
                   >
                     <div
-                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                      className="mfui-benefits-icons-tile__svg-icon"
                     >
                       <test-file-stub
                         style={
@@ -1417,22 +1417,22 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                       />
                     </div>
                     <div
-                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                      className="mfui-benefits-icons-tile__content-wrapper"
                     >
                       <Header
                         as="h5"
-                        className="mfui-beta-benefits-icons-tile__title"
+                        className="mfui-benefits-icons-tile__title"
                         color="black"
                         hAlign="inherit"
                       >
                         <h5
-                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>
                       </Header>
                       <div
-                        className="mfui-beta-benefits-icons-tile__content"
+                        className="mfui-benefits-icons-tile__content"
                       >
                         Подключите, и гигабайты и минуты всегда будут с вами!
                       </div>
@@ -1442,14 +1442,14 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
               </div>
             </GridColumn>
             <GridColumn
-              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              className="mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               desktop="10"
               key=".$1"
               tablet="10"
               wide="10"
             >
               <div
-                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+                className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_wide_10 mfui-grid-column_desktop_10 mfui-grid-column_tablet_10 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               >
                 <BenefitsIconsTile
                   className="item-class"
@@ -1468,10 +1468,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                   title="Интенет"
                 >
                   <div
-                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-top item-class"
+                    className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-top item-class"
                   >
                     <div
-                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                      className="mfui-benefits-icons-tile__svg-icon"
                     >
                       <test-file-stub
                         style={
@@ -1483,22 +1483,22 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                       />
                     </div>
                     <div
-                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                      className="mfui-benefits-icons-tile__content-wrapper"
                     >
                       <Header
                         as="h5"
-                        className="mfui-beta-benefits-icons-tile__title"
+                        className="mfui-benefits-icons-tile__title"
                         color="black"
                         hAlign="inherit"
                       >
                         <h5
-                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
                         >
                           Интенет
                         </h5>
                       </Header>
                       <div
-                        className="mfui-beta-benefits-icons-tile__content"
+                        className="mfui-benefits-icons-tile__content"
                       >
                         Подключите, и гигабайты и минуты всегда будут с вами!
                       </div>
@@ -1508,14 +1508,14 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
               </div>
             </GridColumn>
             <GridColumn
-              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              className="mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               desktop="10"
               key=".$2"
               tablet="10"
               wide="10"
             >
               <div
-                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+                className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_wide_10 mfui-grid-column_desktop_10 mfui-grid-column_tablet_10 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               >
                 <BenefitsIconsTile
                   className="item-class"
@@ -1534,10 +1534,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                   title="Интернет"
                 >
                   <div
-                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-top item-class"
+                    className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-top item-class"
                   >
                     <div
-                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                      className="mfui-benefits-icons-tile__svg-icon"
                     >
                       <test-file-stub
                         style={
@@ -1549,22 +1549,22 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                       />
                     </div>
                     <div
-                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                      className="mfui-benefits-icons-tile__content-wrapper"
                     >
                       <Header
                         as="h5"
-                        className="mfui-beta-benefits-icons-tile__title"
+                        className="mfui-benefits-icons-tile__title"
                         color="black"
                         hAlign="inherit"
                       >
                         <h5
-                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>
                       </Header>
                       <div
-                        className="mfui-beta-benefits-icons-tile__content"
+                        className="mfui-benefits-icons-tile__content"
                       >
                         Подключите, и гигабайты и минуты всегда будут с вами!
                       </div>
@@ -1635,10 +1635,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
   }
 >
   <div
-    className="mfui-beta-benefits-icons class-name root-class"
+    className="mfui-benefits-icons class-name root-class"
   >
     <div
-      className="mfui-beta-benefits-icons__inner"
+      className="mfui-benefits-icons__inner"
     >
       <Grid
         className="grid-class"
@@ -1646,20 +1646,20 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
         hAlign="center"
       >
         <div
-          className="mfui-beta-grid grid-class"
+          className="mfui-grid grid-class"
         >
           <div
-            className="mfui-beta-grid__container mfui-beta-grid__container_multi-row mfui-beta-grid__container_h-align_center mfui-beta-grid__container_gutters-left_medium"
+            className="mfui-grid__container mfui-grid__container_multi-row mfui-grid__container_h-align_center mfui-grid__container_gutters-left_medium"
           >
             <GridColumn
-              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              className="mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               desktop="10"
               key=".$0"
               tablet="10"
               wide="10"
             >
               <div
-                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+                className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_wide_10 mfui-grid-column_desktop_10 mfui-grid-column_tablet_10 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               >
                 <BenefitsIconsTile
                   className="item-class"
@@ -1678,10 +1678,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                   title="Интернет"
                 >
                   <div
-                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_center-top item-class"
+                    className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_center-top item-class"
                   >
                     <div
-                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                      className="mfui-benefits-icons-tile__svg-icon"
                     >
                       <test-file-stub
                         style={
@@ -1693,22 +1693,22 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                       />
                     </div>
                     <div
-                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                      className="mfui-benefits-icons-tile__content-wrapper"
                     >
                       <Header
                         as="h5"
-                        className="mfui-beta-benefits-icons-tile__title"
+                        className="mfui-benefits-icons-tile__title"
                         color="black"
                         hAlign="inherit"
                       >
                         <h5
-                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>
                       </Header>
                       <div
-                        className="mfui-beta-benefits-icons-tile__content"
+                        className="mfui-benefits-icons-tile__content"
                       >
                         Подключите, и гигабайты и минуты всегда будут с вами!
                       </div>
@@ -1718,14 +1718,14 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
               </div>
             </GridColumn>
             <GridColumn
-              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              className="mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               desktop="10"
               key=".$1"
               tablet="10"
               wide="10"
             >
               <div
-                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+                className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_wide_10 mfui-grid-column_desktop_10 mfui-grid-column_tablet_10 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               >
                 <BenefitsIconsTile
                   className="item-class"
@@ -1744,10 +1744,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                   title="Интенет"
                 >
                   <div
-                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_center-top item-class"
+                    className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_center-top item-class"
                   >
                     <div
-                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                      className="mfui-benefits-icons-tile__svg-icon"
                     >
                       <test-file-stub
                         style={
@@ -1759,22 +1759,22 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                       />
                     </div>
                     <div
-                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                      className="mfui-benefits-icons-tile__content-wrapper"
                     >
                       <Header
                         as="h5"
-                        className="mfui-beta-benefits-icons-tile__title"
+                        className="mfui-benefits-icons-tile__title"
                         color="black"
                         hAlign="inherit"
                       >
                         <h5
-                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
                         >
                           Интенет
                         </h5>
                       </Header>
                       <div
-                        className="mfui-beta-benefits-icons-tile__content"
+                        className="mfui-benefits-icons-tile__content"
                       >
                         Подключите, и гигабайты и минуты всегда будут с вами!
                       </div>
@@ -1784,14 +1784,14 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
               </div>
             </GridColumn>
             <GridColumn
-              className="mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+              className="mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               desktop="10"
               key=".$2"
               tablet="10"
               wide="10"
             >
               <div
-                className="mfui-beta-grid-column mfui-beta-grid-column_all_12 mfui-beta-grid-column_wide_10 mfui-beta-grid-column_desktop_10 mfui-beta-grid-column_tablet_10 mfui-beta-grid-column_all-order_0 mfui-beta-grid-column_wide-order_0 mfui-beta-grid-column_desktop-order_0 mfui-beta-grid-column_tablet-order_0 mfui-beta-grid-column_mobile-order_0 mfui-beta-grid__column mfui-beta-grid__column_gutter-left_medium grid-column-class"
+                className="mfui-grid-column mfui-grid-column_all_12 mfui-grid-column_wide_10 mfui-grid-column_desktop_10 mfui-grid-column_tablet_10 mfui-grid-column_all-order_0 mfui-grid-column_wide-order_0 mfui-grid-column_desktop-order_0 mfui-grid-column_tablet-order_0 mfui-grid-column_mobile-order_0 mfui-grid__column mfui-grid__column_gutter-left_medium grid-column-class"
               >
                 <BenefitsIconsTile
                   className="item-class"
@@ -1810,10 +1810,10 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                   title="Интернет"
                 >
                   <div
-                    className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_center-top item-class"
+                    className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_center-top item-class"
                   >
                     <div
-                      className="mfui-beta-benefits-icons-tile__svg-icon"
+                      className="mfui-benefits-icons-tile__svg-icon"
                     >
                       <test-file-stub
                         style={
@@ -1825,22 +1825,22 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                       />
                     </div>
                     <div
-                      className="mfui-beta-benefits-icons-tile__content-wrapper"
+                      className="mfui-benefits-icons-tile__content-wrapper"
                     >
                       <Header
                         as="h5"
-                        className="mfui-beta-benefits-icons-tile__title"
+                        className="mfui-benefits-icons-tile__title"
                         color="black"
                         hAlign="inherit"
                       >
                         <h5
-                          className="mfui-beta-header mfui-beta-header_color_black mfui-beta-header_level_h5 mfui-beta-header_h-align_inherit mfui-beta-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>
                       </Header>
                       <div
-                        className="mfui-beta-benefits-icons-tile__content"
+                        className="mfui-benefits-icons-tile__content"
                       >
                         Подключите, и гигабайты и минуты всегда будут с вами!
                       </div>

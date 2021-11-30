@@ -16,7 +16,7 @@ export interface ITable {
     children: Array<React.ReactElement<ITableRow>>;
 }
 
-const cn = cnCreate('mfui-beta-table');
+const cn = cnCreate('mfui-table');
 const Table: React.FC<ITable> = ({ className, fixColumn = true, minCellSize = 'large', children }) => {
     const scrollRef = React.useRef<HTMLDivElement | null>(null);
 

@@ -2,7 +2,7 @@
 
 exports[`<Day /> snapshots renders Day with all props 1`] = `
 <button
-  className="mfui-beta-day mfui-beta-day_between mfui-beta-day_sunday"
+  className="mfui-day mfui-day_between mfui-day_sunday"
   onClick={[Function]}
   onKeyDown={[Function]}
   onMouseEnter={[Function]}
@@ -11,7 +11,7 @@ exports[`<Day /> snapshots renders Day with all props 1`] = `
   type="button"
 >
   <span
-    className="mfui-beta-day__label"
+    className="mfui-day__label"
   >
     Пн
   </span>
@@ -20,7 +20,7 @@ exports[`<Day /> snapshots renders Day with all props 1`] = `
 
 exports[`<Day /> snapshots renders Day with required props 1`] = `
 <button
-  className="mfui-beta-day mfui-beta-day_sunday"
+  className="mfui-day mfui-day_sunday"
   onClick={[Function]}
   onKeyDown={[Function]}
   onMouseEnter={[Function]}
@@ -29,14 +29,14 @@ exports[`<Day /> snapshots renders Day with required props 1`] = `
   type="button"
 >
   <span
-    className="mfui-beta-day__label"
+    className="mfui-day__label"
   />
 </button>
 `;
 
 exports[`<Day /> snapshots should return empty div if label is not provided 1`] = `
 <button
-  className="mfui-beta-day mfui-beta-day_sunday"
+  className="mfui-day mfui-day_sunday"
   onClick={[Function]}
   onKeyDown={[Function]}
   onMouseEnter={[Function]}
@@ -45,7 +45,7 @@ exports[`<Day /> snapshots should return empty div if label is not provided 1`] 
   type="button"
 >
   <span
-    className="mfui-beta-day__label"
+    className="mfui-day__label"
   />
 </button>
 `;

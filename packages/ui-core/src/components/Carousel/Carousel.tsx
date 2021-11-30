@@ -115,7 +115,7 @@ const defaultSlidesSettings: SlidesSettingsType = {
     },
 };
 
-const cn = cnCreate('mfui-beta-carousel');
+const cn = cnCreate('mfui-carousel');
 const Carousel: React.FC<ICarouselProps> = ({
     rootRef,
     className,

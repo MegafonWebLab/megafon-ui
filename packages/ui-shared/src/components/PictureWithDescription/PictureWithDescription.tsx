@@ -31,7 +31,7 @@ export interface IPictureWithDescriptionProps {
     isTextTopAlign?: boolean;
 }
 
-const cn = cnCreate('mfui-beta-picture-with-description');
+const cn = cnCreate('mfui-picture-with-description');
 const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
     rootRef,
     className,

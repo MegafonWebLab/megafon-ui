@@ -26,7 +26,7 @@ export interface INavArrowProps {
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
-const cn = cnCreate('mfui-beta-nav-arrow');
+const cn = cnCreate('mfui-nav-arrow');
 const NavArrow: React.FC<INavArrowProps> = ({
     className,
     view = View.PREV,

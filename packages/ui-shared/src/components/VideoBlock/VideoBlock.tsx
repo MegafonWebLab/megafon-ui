@@ -51,7 +51,7 @@ export interface IVideoBlockProps {
     isAutoplay?: boolean;
 }
 
-const cn = cnCreate('mfui-beta-video-block');
+const cn = cnCreate('mfui-video-block');
 const VideoBlock: React.FC<IVideoBlockProps> = ({
     dataAttrs,
     className,

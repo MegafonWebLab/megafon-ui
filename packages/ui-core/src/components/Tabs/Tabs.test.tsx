@@ -7,7 +7,7 @@ import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
 
 const renderTabWrapper = (tab: React.ReactNode) => <div className="tab-wrapper">{tab}</div>;
 
-const cn = cnCreate('.mfui-beta-tabs');
+const cn = cnCreate('.mfui-tabs');
 describe('<Tabs />', () => {
     afterAll(() => jest.clearAllMocks());
 

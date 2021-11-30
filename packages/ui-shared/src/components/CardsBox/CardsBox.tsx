@@ -31,7 +31,7 @@ interface ICardsBoxProps {
     children: Array<React.ReactElement<ICard>> | React.ReactElement<ICard>;
 }
 
-const cn = cnCreate('mfui-beta-cards-box');
+const cn = cnCreate('mfui-cards-box');
 const CardsBox: React.FC<ICardsBoxProps> = ({ rootRef, dataAttrs, onChange, children }) => {
     const [isMobile, setIsMobile] = React.useState(false);
     const itemsCount = React.Children.count(children);

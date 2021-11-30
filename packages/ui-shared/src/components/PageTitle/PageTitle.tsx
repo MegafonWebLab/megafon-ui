@@ -24,7 +24,7 @@ type Props = {
     rootRef?: React.RefObject<HTMLDivElement>;
 };
 
-const cn = cnCreate('mfui-beta-page-title');
+const cn = cnCreate('mfui-page-title');
 const PageTitle: React.FC<Props> = ({
     title,
     breadcrumbs,

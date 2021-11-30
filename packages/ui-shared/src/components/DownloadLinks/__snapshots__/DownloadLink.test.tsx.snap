@@ -2,18 +2,18 @@
 
 exports[`DownloadLink render component 1`] = `
 <div
-  className="mfui-beta-download-link"
+  className="mfui-download-link"
 >
   <div
-    className="mfui-beta-download-link__icon"
+    className="mfui-download-link__icon"
   >
     <test-file-stub
-      className="mfui-beta-download-link__icon-svg"
+      className="mfui-download-link__icon-svg"
     />
   </div>
   <div>
     <TextLink
-      className="mfui-beta-download-link__link"
+      className="mfui-download-link__link"
       color="blue"
       download={true}
       href="href"
@@ -23,7 +23,7 @@ exports[`DownloadLink render component 1`] = `
       text
     </TextLink>
     <p
-      className="mfui-beta-download-link__info"
+      className="mfui-download-link__info"
     >
       PDF, 500 MB
     </p>
@@ -33,18 +33,18 @@ exports[`DownloadLink render component 1`] = `
 
 exports[`DownloadLink render with custom classes 1`] = `
 <div
-  className="mfui-beta-download-link custom-classname root-class"
+  className="mfui-download-link custom-classname root-class"
 >
   <div
-    className="mfui-beta-download-link__icon"
+    className="mfui-download-link__icon"
   >
     <test-file-stub
-      className="mfui-beta-download-link__icon-svg"
+      className="mfui-download-link__icon-svg"
     />
   </div>
   <div>
     <TextLink
-      className="mfui-beta-download-link__link link-class"
+      className="mfui-download-link__link link-class"
       color="blue"
       download={true}
       href="href"
@@ -54,7 +54,7 @@ exports[`DownloadLink render with custom classes 1`] = `
       text
     </TextLink>
     <p
-      className="mfui-beta-download-link__info"
+      className="mfui-download-link__info"
     >
       PDF, 500 MB
     </p>

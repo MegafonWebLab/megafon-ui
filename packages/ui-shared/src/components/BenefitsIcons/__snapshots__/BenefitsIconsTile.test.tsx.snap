@@ -2,26 +2,26 @@
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
+  className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
-    className="mfui-beta-benefits-icons-tile__svg-icon"
+    className="mfui-benefits-icons-tile__svg-icon"
   >
     <test-file-stub />
   </div>
   <div
-    className="mfui-beta-benefits-icons-tile__content-wrapper"
+    className="mfui-benefits-icons-tile__content-wrapper"
   >
     <Header
       as="h5"
-      className="mfui-beta-benefits-icons-tile__title"
+      className="mfui-benefits-icons-tile__title"
       color="black"
       hAlign="inherit"
     >
       title
     </Header>
     <div
-      className="mfui-beta-benefits-icons-tile__content"
+      className="mfui-benefits-icons-tile__content"
     >
       text
     </div>
@@ -31,26 +31,26 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with react node in text field 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
+  className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
-    className="mfui-beta-benefits-icons-tile__svg-icon"
+    className="mfui-benefits-icons-tile__svg-icon"
   >
     <test-file-stub />
   </div>
   <div
-    className="mfui-beta-benefits-icons-tile__content-wrapper"
+    className="mfui-benefits-icons-tile__content-wrapper"
   >
     <Header
       as="h5"
-      className="mfui-beta-benefits-icons-tile__title"
+      className="mfui-benefits-icons-tile__title"
       color="black"
       hAlign="inherit"
     >
       title
     </Header>
     <div
-      className="mfui-beta-benefits-icons-tile__content"
+      className="mfui-benefits-icons-tile__content"
     >
       <div
         key="test"
@@ -64,19 +64,19 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with react node in text
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
+  className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
-    className="mfui-beta-benefits-icons-tile__svg-icon"
+    className="mfui-benefits-icons-tile__svg-icon"
   >
     <test-file-stub />
   </div>
   <div
-    className="mfui-beta-benefits-icons-tile__content-wrapper"
+    className="mfui-benefits-icons-tile__content-wrapper"
   >
     <Header
       as="h5"
-      className="mfui-beta-benefits-icons-tile__title"
+      className="mfui-benefits-icons-tile__title"
       color="black"
       hAlign="inherit"
     >
@@ -88,18 +88,18 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
 
 exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without title 1`] = `
 <div
-  className="mfui-beta-benefits-icons-tile mfui-beta-benefits-icons-tile_icon-position_left-side class-name"
+  className="mfui-benefits-icons-tile mfui-benefits-icons-tile_icon-position_left-side class-name"
 >
   <div
-    className="mfui-beta-benefits-icons-tile__svg-icon"
+    className="mfui-benefits-icons-tile__svg-icon"
   >
     <test-file-stub />
   </div>
   <div
-    className="mfui-beta-benefits-icons-tile__content-wrapper"
+    className="mfui-benefits-icons-tile__content-wrapper"
   >
     <div
-      className="mfui-beta-benefits-icons-tile__content"
+      className="mfui-benefits-icons-tile__content"
     >
       text
     </div>

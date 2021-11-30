@@ -2,7 +2,7 @@
 
 exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide is true 1`] = `
 <div
-  className="mfui-beta-accordion-box"
+  className="mfui-accordion-box"
 >
   <Grid
     hAlign="center"
@@ -42,7 +42,7 @@ exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide
 
 exports[`<AccordionBox /> should render with props 1`] = `
 <div
-  className="mfui-beta-accordion-box"
+  className="mfui-accordion-box"
 >
   <Grid
     hAlign="left"

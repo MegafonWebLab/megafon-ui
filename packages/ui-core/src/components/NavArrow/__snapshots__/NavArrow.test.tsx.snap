@@ -2,25 +2,25 @@
 
 exports[`<NavArrow /> should render with default props 1`] = `
 <button
-  className="mfui-beta-nav-arrow mfui-beta-nav-arrow_theme_purple"
+  className="mfui-nav-arrow mfui-nav-arrow_theme_purple"
   disabled={false}
   type="button"
 >
   <test-file-stub
-    className="mfui-beta-nav-arrow__icon"
+    className="mfui-nav-arrow__icon"
   />
 </button>
 `;
 
 exports[`<NavArrow /> should render with props 1`] = `
 <button
-  className="mfui-beta-nav-arrow mfui-beta-nav-arrow_theme_dark class"
+  className="mfui-nav-arrow mfui-nav-arrow_theme_dark class"
   disabled={true}
   onClick={[MockFunction]}
   type="button"
 >
   <test-file-stub
-    className="mfui-beta-nav-arrow__icon"
+    className="mfui-nav-arrow__icon"
   />
 </button>
 `;

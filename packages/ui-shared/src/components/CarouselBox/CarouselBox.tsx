@@ -4,7 +4,7 @@ import { cnCreate } from '@megafon/ui-helpers';
 
 type CarouselPropsTypes = React.ComponentProps<typeof Carousel>;
 
-const cn = cnCreate('mfui-beta-carousel-box');
+const cn = cnCreate('mfui-carousel-box');
 const CarouselBox: React.FC<CarouselPropsTypes> = ({ children, ...props }) => (
     <div className={cn()}>
         <Carousel {...props}>{children}</Carousel>

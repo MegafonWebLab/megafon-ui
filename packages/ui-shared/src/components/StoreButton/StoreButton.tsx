@@ -20,7 +20,7 @@ export type Props = Required<Pick<LinkPropTypes, 'href'>> &
         className?: string;
     };
 
-const cn = cnCreate('mfui-beta-store-button');
+const cn = cnCreate('mfui-store-button');
 const StoreButton: React.FC<Props> = ({ href, onClick, theme, className }) => (
     <Link href={href} onClick={onClick} className={cn({ theme }, className)} />
 );

@@ -43,7 +43,7 @@ export interface ITileProps extends IFilterDataAttrs {
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-const cn = cnCreate('mfui-beta-tile');
+const cn = cnCreate('mfui-tile');
 const Tile: React.FC<ITileProps> = ({
     href,
     children,

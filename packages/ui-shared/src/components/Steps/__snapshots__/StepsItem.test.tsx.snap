@@ -2,15 +2,15 @@
 
 exports[`StepsItem should render component 1`] = `
 <div
-  className="mfui-beta-steps-item"
+  className="mfui-steps-item"
 >
   <span
-    className="mfui-beta-steps-item__step-number"
+    className="mfui-steps-item__step-number"
   >
     1
   </span>
   <div
-    className="mfui-beta-steps-item__text-wrapper"
+    className="mfui-steps-item__text-wrapper"
   >
     <Paragraph
       hasMargin={false}

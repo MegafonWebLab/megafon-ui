@@ -63,7 +63,7 @@ export interface ISearchProps {
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
-const cn = cnCreate('mfui-beta-search');
+const cn = cnCreate('mfui-search');
 const Search: React.FC<ISearchProps> = ({
     value = '',
     label,

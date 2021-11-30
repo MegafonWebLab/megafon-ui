@@ -53,8 +53,8 @@ describe('<Month />', () => {
                 </Month>,
             );
 
-            wrapper.find('.mfui-beta-month__arrow').first().simulate('click');
-            wrapper.find('.mfui-beta-month__arrow').last().simulate('click');
+            wrapper.find('.mfui-month__arrow').first().simulate('click');
+            wrapper.find('.mfui-month__arrow').last().simulate('click');
 
             expect(goToNextMonth).toHaveBeenCalledTimes(0);
             expect(goToPreviousMonth).toHaveBeenCalledTimes(0);
@@ -69,7 +69,7 @@ describe('<Month />', () => {
                 </Month>,
             );
 
-            wrapper.find('.mfui-beta-month__arrow').first().simulate('click');
+            wrapper.find('.mfui-month__arrow').first().simulate('click');
 
             expect(goToPreviousMonth).toHaveBeenCalledTimes(1);
         });
@@ -83,7 +83,7 @@ describe('<Month />', () => {
                 </Month>,
             );
 
-            wrapper.find('.mfui-beta-month__arrow').last().simulate('click');
+            wrapper.find('.mfui-month__arrow').last().simulate('click');
 
             expect(goToNextMonth).toHaveBeenCalledTimes(1);
         });

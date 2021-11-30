@@ -2,7 +2,7 @@
 
 exports[`<Partners /> should render carousel 1`] = `
 <div
-  className="mfui-beta-partners"
+  className="mfui-partners"
 >
   <Carousel
     slidesSettings={
@@ -23,44 +23,44 @@ exports[`<Partners /> should render carousel 1`] = `
     }
   >
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="0test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -68,44 +68,44 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="1test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -113,44 +113,44 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="2test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -158,44 +158,44 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="3test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -203,44 +203,44 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="4test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -248,44 +248,44 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="5test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -298,7 +298,7 @@ exports[`<Partners /> should render carousel 1`] = `
 
 exports[`<Partners /> should render carousel with odd items number 1`] = `
 <div
-  className="mfui-beta-partners"
+  className="mfui-partners"
 >
   <Carousel
     slidesSettings={
@@ -319,44 +319,44 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     }
   >
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="0test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -364,44 +364,44 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="1test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -409,44 +409,44 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="2test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -454,44 +454,44 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="3test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -499,44 +499,44 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="4test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
         </div>
       </Tile>
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -544,24 +544,24 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
     </div>
     <div
-      className="mfui-beta-partners__slide"
+      className="mfui-partners__slide"
       key="5test-file-stub"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -574,7 +574,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
 
 exports[`<Partners /> should render grid 1`] = `
 <div
-  className="mfui-beta-partners custom-class"
+  className="mfui-partners custom-class"
 >
   <Grid
     guttersBottom="medium"
@@ -586,20 +586,20 @@ exports[`<Partners /> should render grid 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -612,20 +612,20 @@ exports[`<Partners /> should render grid 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -638,20 +638,20 @@ exports[`<Partners /> should render grid 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -664,20 +664,20 @@ exports[`<Partners /> should render grid 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -690,7 +690,7 @@ exports[`<Partners /> should render grid 1`] = `
 
 exports[`<Partners /> should render logotypes without href 1`] = `
 <div
-  className="mfui-beta-partners"
+  className="mfui-partners"
 >
   <Grid
     guttersBottom="medium"
@@ -702,19 +702,19 @@ exports[`<Partners /> should render logotypes without href 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         isInteractive={false}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -727,19 +727,19 @@ exports[`<Partners /> should render logotypes without href 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         isInteractive={false}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -752,19 +752,19 @@ exports[`<Partners /> should render logotypes without href 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         isInteractive={false}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -777,19 +777,19 @@ exports[`<Partners /> should render logotypes without href 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         isInteractive={false}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner"
+          className="mfui-partners__tile-inner"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -802,7 +802,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
 
 exports[`<Partners /> should render with classes props 1`] = `
 <div
-  className="mfui-beta-partners test-root-class custom-class"
+  className="mfui-partners test-root-class custom-class"
 >
   <Grid
     guttersBottom="medium"
@@ -814,20 +814,20 @@ exports[`<Partners /> should render with classes props 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner test-item-class"
+          className="mfui-partners__tile-inner test-item-class"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -840,20 +840,20 @@ exports[`<Partners /> should render with classes props 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner test-item-class"
+          className="mfui-partners__tile-inner test-item-class"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -866,20 +866,20 @@ exports[`<Partners /> should render with classes props 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner test-item-class"
+          className="mfui-partners__tile-inner test-item-class"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>
@@ -892,20 +892,20 @@ exports[`<Partners /> should render with classes props 1`] = `
       mobile="6"
     >
       <Tile
-        className="mfui-beta-partners__tile"
+        className="mfui-partners__tile"
         href="#"
         isInteractive={true}
         shadowLevel="low"
       >
         <div
-          className="mfui-beta-partners__tile-inner test-item-class"
+          className="mfui-partners__tile-inner test-item-class"
         >
           <div
-            className="mfui-beta-partners__img-wrapper"
+            className="mfui-partners__img-wrapper"
           >
             <img
               alt="test img"
-              className="mfui-beta-partners__tile-img"
+              className="mfui-partners__tile-img"
               src="test-file-stub"
             />
           </div>

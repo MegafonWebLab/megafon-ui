@@ -30,7 +30,7 @@ export interface IRadioButtonProps {
     inputRef?: React.Ref<HTMLInputElement>;
 }
 
-const cn = cnCreate('mfui-beta-radio-button');
+const cn = cnCreate('mfui-radio-button');
 class RadioButton extends React.Component<IRadioButtonProps> {
     static propTypes = {
         value: PropTypes.string.isRequired,

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './PropertyDescription.less';
 import { Desc } from './types';
 
-const cn = cnCreate('mfui-beta-property-description');
+const cn = cnCreate('mfui-property-description');
 const PropertyDescription: React.FC<Desc> = ({ value, isCollapsible = false, classes = {} }) => {
     const [isOpened, setIsOpened] = React.useState(false);
 

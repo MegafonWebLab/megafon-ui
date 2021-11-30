@@ -8,7 +8,7 @@ export interface IListItemProps {
     className?: string;
 }
 
-const cn = cnCreate('mfui-beta-list-item');
+const cn = cnCreate('mfui-list-item');
 const ListItem: React.FC<IListItemProps> = ({ className, children }) => <li className={cn([className])}>{children}</li>;
 
 ListItem.propTypes = {

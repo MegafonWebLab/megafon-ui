@@ -2,14 +2,14 @@
 
 exports[`StoreBanner should render with Huawei Store 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name"
+  className="mfui-store-banner mfui-store-banner_theme_clearWhite mfui-store-banner_mask_android custom-class-name"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -18,41 +18,41 @@ exports[`StoreBanner should render with Huawei Store 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links mfui-beta-store-banner__links_three"
+              className="mfui-store-banner__links mfui-store-banner__links_three"
             >
               <div
-                className="mfui-beta-store-banner__stores"
+                className="mfui-store-banner__stores"
               >
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_huawei-store"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_huawei-store"
                   href="#huawei"
                   theme="huawei-store"
                 />
@@ -67,14 +67,14 @@ exports[`StoreBanner should render with Huawei Store 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>
@@ -87,14 +87,14 @@ exports[`StoreBanner should render with Huawei Store 1`] = `
 
 exports[`StoreBanner should render with QR-code 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android"
+  className="mfui-store-banner mfui-store-banner_theme_clearWhite mfui-store-banner_mask_android"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -103,41 +103,41 @@ exports[`StoreBanner should render with QR-code 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links"
+              className="mfui-store-banner__links"
             >
               <img
                 alt="QR-код"
-                className="mfui-beta-store-banner__qr-code"
+                className="mfui-store-banner__qr-code"
                 src="qr-code.png"
               />
               <div
-                className="mfui-beta-store-banner__stores"
+                className="mfui-store-banner__stores"
               >
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -152,14 +152,14 @@ exports[`StoreBanner should render with QR-code 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>
@@ -172,14 +172,14 @@ exports[`StoreBanner should render with QR-code 1`] = `
 
 exports[`StoreBanner should render with custom class names 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name root-custom-class-name"
+  className="mfui-store-banner mfui-store-banner_theme_clearWhite mfui-store-banner_mask_android custom-class-name root-custom-class-name"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -188,36 +188,36 @@ exports[`StoreBanner should render with custom class names 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links"
+              className="mfui-store-banner__links"
             >
               <div
-                className="mfui-beta-store-banner__stores"
+                className="mfui-store-banner__stores"
               >
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store app-store-custom-class-name"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store app-store-custom-class-name"
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play google-store-custom-class-name"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play google-store-custom-class-name"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -232,14 +232,14 @@ exports[`StoreBanner should render with custom class names 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>
@@ -252,14 +252,14 @@ exports[`StoreBanner should render with custom class names 1`] = `
 
 exports[`StoreBanner should render with green button 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android custom-class-name"
+  className="mfui-store-banner mfui-store-banner_theme_clearWhite mfui-store-banner_mask_android custom-class-name"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -268,28 +268,28 @@ exports[`StoreBanner should render with green button 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links"
+              className="mfui-store-banner__links"
             >
               <Button
-                className="mfui-beta-store-banner__button"
+                className="mfui-store-banner__button"
                 href="#button"
                 theme="green"
               >
@@ -305,14 +305,14 @@ exports[`StoreBanner should render with green button 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>
@@ -325,14 +325,14 @@ exports[`StoreBanner should render with green button 1`] = `
 
 exports[`StoreBanner should render with green theme 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_green mfui-beta-store-banner_mask_android"
+  className="mfui-store-banner mfui-store-banner_theme_green mfui-store-banner_mask_android"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -341,36 +341,36 @@ exports[`StoreBanner should render with green theme 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links"
+              className="mfui-store-banner__links"
             >
               <div
-                className="mfui-beta-store-banner__stores"
+                className="mfui-store-banner__stores"
               >
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -385,14 +385,14 @@ exports[`StoreBanner should render with green theme 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>
@@ -405,14 +405,14 @@ exports[`StoreBanner should render with green theme 1`] = `
 
 exports[`StoreBanner should render with iphone mask 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_black-iphone"
+  className="mfui-store-banner mfui-store-banner_theme_clearWhite mfui-store-banner_mask_black-iphone"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -421,36 +421,36 @@ exports[`StoreBanner should render with iphone mask 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links"
+              className="mfui-store-banner__links"
             >
               <div
-                className="mfui-beta-store-banner__stores"
+                className="mfui-store-banner__stores"
               >
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -465,14 +465,14 @@ exports[`StoreBanner should render with iphone mask 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>
@@ -485,14 +485,14 @@ exports[`StoreBanner should render with iphone mask 1`] = `
 
 exports[`StoreBanner should render with required props 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_clearWhite mfui-beta-store-banner_mask_android"
+  className="mfui-store-banner mfui-store-banner_theme_clearWhite mfui-store-banner_mask_android"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -501,36 +501,36 @@ exports[`StoreBanner should render with required props 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links"
+              className="mfui-store-banner__links"
             >
               <div
-                className="mfui-beta-store-banner__stores"
+                className="mfui-store-banner__stores"
               >
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_app-store"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
-                  className="mfui-beta-store-banner__store-link mfui-beta-store-banner__store-link_google-play"
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -545,14 +545,14 @@ exports[`StoreBanner should render with required props 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>
@@ -565,14 +565,14 @@ exports[`StoreBanner should render with required props 1`] = `
 
 exports[`StoreBanner should render with violet button 1`] = `
 <div
-  className="mfui-beta-store-banner mfui-beta-store-banner_theme_green mfui-beta-store-banner_mask_android custom-class-name"
+  className="mfui-store-banner mfui-store-banner_theme_green mfui-store-banner_mask_android custom-class-name"
   data-test="value"
 >
   <div
-    className="mfui-beta-store-banner__container"
+    className="mfui-store-banner__container"
   >
     <div
-      className="mfui-beta-store-banner__grid"
+      className="mfui-store-banner__grid"
     >
       <Grid>
         <GridColumn
@@ -581,28 +581,28 @@ exports[`StoreBanner should render with violet button 1`] = `
           rightOffsetWide="1"
         >
           <div
-            className="mfui-beta-store-banner__content"
+            className="mfui-store-banner__content"
           >
             <Header
               as="h2"
-              className="mfui-beta-store-banner__title"
+              className="mfui-store-banner__title"
               color="inherit"
               hAlign="inherit"
             >
               Title
             </Header>
             <Paragraph
-              className="mfui-beta-store-banner__text"
+              className="mfui-store-banner__text"
               color="inherit"
               hasMargin={false}
             >
               Text
             </Paragraph>
             <div
-              className="mfui-beta-store-banner__links"
+              className="mfui-store-banner__links"
             >
               <Button
-                className="mfui-beta-store-banner__button"
+                className="mfui-store-banner__button"
                 href="#button"
                 theme="purple"
               >
@@ -618,14 +618,14 @@ exports[`StoreBanner should render with violet button 1`] = `
           tablet="6"
         >
           <div
-            className="mfui-beta-store-banner__device-wrapper"
+            className="mfui-store-banner__device-wrapper"
           >
             <div
-              className="mfui-beta-store-banner__device-mask"
+              className="mfui-store-banner__device-mask"
             />
             <img
               alt="Изображение приложения на экране телефона"
-              className="mfui-beta-store-banner__screen"
+              className="mfui-store-banner__screen"
               src="image.png"
             />
           </div>

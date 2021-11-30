@@ -125,7 +125,7 @@ const getCenterConfig = (count: number, index: number, gutterSize: string): Grid
     }
 };
 
-const cn = cnCreate('mfui-beta-benefits-pictures');
+const cn = cnCreate('mfui-benefits-pictures');
 const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     items,
     hAlign = 'left',

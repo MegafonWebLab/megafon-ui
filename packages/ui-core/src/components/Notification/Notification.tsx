@@ -59,7 +59,7 @@ export interface INotificationProps {
     onLinkClick?: () => void;
 }
 
-const cn = cnCreate('mfui-beta-notification');
+const cn = cnCreate('mfui-notification');
 const Notification: React.FC<INotificationProps> = ({
     className,
     children,

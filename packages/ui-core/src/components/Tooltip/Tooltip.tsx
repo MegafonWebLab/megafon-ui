@@ -74,7 +74,7 @@ export interface ITooltipProps {
     onClose?: (e: MouseEvent | FocusEvent) => void;
 }
 
-const cn = cnCreate('mfui-beta-tooltip');
+const cn = cnCreate('mfui-tooltip');
 const Tooltip: React.FC<ITooltipProps> = ({
     className,
     placement = 'top',
