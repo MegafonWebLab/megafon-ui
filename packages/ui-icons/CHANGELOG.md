@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.0.2-beta.6...@megafon/ui-icons@0.1.0) (2021-11-30)
+
+
+### Features
+
+* rename prefix mfui-beta to mfui ([41b2ea4](https://github.com/MegafonWebLab/megafon-ui/commit/41b2ea4880ee6dd0e76b862bfc0d2a86031d734c))
+
+
+### BREAKING CHANGES
+
+* 1.x.x version of ui library also has mfui- prefix for components. please, check,
+that you don't have any styles or business logic (e.g. css or js selectors) using mfui- prefix as
+match pattern.
+
+
+
+
+
 ## [0.0.2-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.0.2-beta.5...@megafon/ui-icons@0.0.2-beta.6) (2021-11-15)
 
 

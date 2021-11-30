@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@1.0.0-beta.2...@megafon/ui-helpers@1.0.0) (2021-11-30)
+
+**Note:** Version bump only for package @megafon/ui-helpers
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@1.0.0-beta.1...@megafon/ui-helpers@1.0.0-beta.2) (2021-10-07)
 
 

@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.169...@megafon/ui-core@2.0.0) (2021-11-30)
+
+
+### Bug Fixes
+
+* rename last mfui-beta to mfui ([6bc1d33](https://github.com/MegafonWebLab/megafon-ui/commit/6bc1d33d118862f969b09126dceb4e4462ec5128))
+
+
+### Features
+
+* rename prefix mfui-beta to mfui ([41b2ea4](https://github.com/MegafonWebLab/megafon-ui/commit/41b2ea4880ee6dd0e76b862bfc0d2a86031d734c))
+
+
+### BREAKING CHANGES
+
+* 1.x.x version of ui library also has mfui- prefix for components. please, check,
+that you don't have any styles or business logic (e.g. css or js selectors) using mfui- prefix as
+match pattern.
+
+
+
+
+
 # [2.0.0-beta.169](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.168...@megafon/ui-core@2.0.0-beta.169) (2021-11-29)
 
 
