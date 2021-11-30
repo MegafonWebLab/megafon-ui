@@ -118,13 +118,6 @@ not trigger publishing on merge, `skip release` can be written in commit message
 
 These changes will be released when a new commit without `skip release` in its message is pushed to `master` branch.
 
-## From beta to stable
-
-1. Remove lines with `distTag`, `conventionalPrerelease`, `preid` from `lerna.json`;
-2. Replace those with `conventionalGraduate="*"` in `lerna.json`;
-3. Merge in `master` branch, wait on pipeline and publishing;
-4. Next commit may remove `conventionalGraduate="*"` (it's ignored anyway);
-
 ## Legal Information
 
 When contributing to the project you adopt the `Rules for use of intellectual property in simplified manner` and `Rules for participation in open source projects of MegaFon PJSC` that are available at [https://www.megafon.ru/opensource/](https://www.megafon.ru/opensource/) in Russian and English languages.
