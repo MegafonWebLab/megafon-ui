@@ -1,118 +1,130 @@
 @import '~styles/base.less';
 
-@b: e( '.mfui-day');
+@b: e('.mfui-day');
 
 @{b} {
     position: relative;
-    .smallFont();
+
+    box-sizing: content-box;
     width: 32px;
     height: 32px;
     padding: 0 10px 8px 0;
-    line-height: 24px;
-    color: @freshAsphalt;
     border: none;
-    background-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
-    outline: none;
+
+    color: @freshAsphalt;
+    line-height: 24px;
     text-decoration: none;
-    box-sizing: content-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    background-color: rgba(0, 0, 0, 0);
+    outline: none;
+    cursor: pointer;
+
     appearance: none;
     user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     &:last-child {
-        padding-right: 0px;
-    }
-
-    &_disabled {
-        pointer-events: none;
-        cursor: default;
-        opacity: 0.3;
-    }
-
-    &_active,
-    &:not(:disabled):not(&_active):focus
-    {
-        color: @clearWhite;
+        padding-right: 0;
     }
 
     &:not(:disabled):not(&_active):hover:after,
     &:not(:disabled):not(&_active):focus:after,
-    &_active:after
-    {
+    &_active:after {
         content: '';
         position: absolute;
-        background-color: @spbSky0;
-        color: @freshAsphalt;
-        border-radius: 50% !important;
-        width: 32px;
-        height: 32px;
         top: 0;
         left: 0;
         z-index: 1;
+
+        width: 32px;
+        height: 32px;
+        border-radius: 50% !important;
+
+        color: @freshAsphalt;
+
+        background-color: @spbSky0;
     }
 
-
     &:not(:disabled):not(&_active):hover:after {
-        background-color: @spbSky0;
         color: @freshAsphalt;
+
+        background-color: @spbSky0;
     }
 
     &:not(:disabled):not(&_active):focus:after,
-    &_active:after
-    {
+    &_active:after {
         background-color: @green;
     }
 
+    &_disabled {
+        cursor: default;
+        opacity: 0.3;
+
+        pointer-events: none;
+    }
+
+    &_active,
+    &:not(:disabled):not(&_active):focus {
+        color: @clearWhite;
+    }
+
     &_active + &_active:before,
-    &_between:hover + &:not(&_monday)&_active:before
-    {
+    &_between:hover + &:not(&_monday)&_active:before {
         content: '';
-        display: block;
         position: absolute;
-        background-color: @spbSky1;
-        height: 32px;
-        width: 32px;
         top: 0;
         left: -22px;
         z-index: -1;
+
+        display: block;
+        width: 32px;
+        height: 32px;
+
+        background-color: @spbSky1;
     }
 
     &_between {
         position: relative;
+
         border-radius: 0;
 
         &:before {
             content: '';
-            display: block;
             position: absolute;
-            z-index: -1;
             top: 0;
             left: -22px;
-            padding: 0 20px;
+            z-index: -1;
+
+            display: block;
             height: 32px;
+            padding: 0 20px;
+
             background-color: @spbSky1;
         }
 
         &:after {
             content: '';
-            display: block;
             position: absolute;
-            z-index: -1;
             top: 0;
             right: -16px;
+            z-index: -1;
+
+            display: block;
             width: 40px;
             height: 32px;
+
             background-color: @spbSky1;
         }
     }
 
-    &_sunday, &_last {
+    &_sunday,
+    &_last {
         border-radius: 50%;
 
         &:after {
-            width: 32px;
             right: 10px;
+
+            width: 32px;
             border-radius: 50%;
         }
     }
@@ -121,14 +133,16 @@
         right: 0;
     }
 
-    &_monday, &_first {
+    &_monday,
+    &_first {
         border-radius: 50%;
 
         &:before {
+            left: 0;
+
+            width: 32px;
             padding: 0;
             border-radius: 50%;
-            width: 32px;
-            left: 0px;
         }
     }
 
@@ -140,4 +154,5 @@
         position: relative;
         z-index: 99;
     }
+    .smallFont();
 }

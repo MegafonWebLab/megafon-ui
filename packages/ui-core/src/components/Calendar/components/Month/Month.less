@@ -4,60 +4,68 @@
 
 @{b} {
     position: relative;
-    padding: 28px 0;
-    width: 284px;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 1;
+    width: 284px;
+    padding: 28px 0;
 
     &__header {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         width: 282px;
         margin-bottom: 20px;
-        align-items: center;
+
         text-transform: capitalize;
 
         svg {
             height: 24.5px;
-            fill: @freshAsphalt;
+
             cursor: pointer;
+
             user-select: none;
+            fill: @freshAsphalt;
         }
     }
 
     &__title {
         .h5();
         width: 224px;
+
         text-align: center;
     }
 
     &__weekday-labels {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        column-gap: 22px;
         width: 272px;
         padding-bottom: 13px;
         border-bottom: 1px solid @spbSky1;
+
+        column-gap: 22px;
     }
 
     &__weekday {
         .smallFont();
-        color: @freshAsphalt;
-        font-weight: 600;
-        text-transform: capitalize;
-        text-align: center;
         width: 20px;
         height: 16px;
+
+        color: @freshAsphalt;
+        font-weight: 600;
         line-height: 24px;
+        text-align: center;
+        text-transform: capitalize;
     }
 
     &__days {
         display: grid;
+        grid-template-columns: repeat(7, 1fr);
         width: 284px;
         margin-top: 8px;
-        grid-template-columns: repeat(7, 1fr);
+
         column-gap: 0;
         row-gap: 0;
     }
