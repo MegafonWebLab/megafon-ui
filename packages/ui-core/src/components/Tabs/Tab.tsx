@@ -10,6 +10,8 @@ export interface ITabProps extends IFilterDataAttrs {
     icon?: React.ReactNode;
     /** Ссылка */
     href?: string;
+    /** Дочерние элементы */
+    children?: React.ReactNode;
     /** Функция рендера компонента-обертки для заголовка и иконки */
     renderTabWrapper?: (tab: React.ReactNode) => React.ReactNode;
 }

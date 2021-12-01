@@ -51,6 +51,8 @@ export interface ITabsProps {
     currentIndex?: number;
     /** Индекс активного таба по умолчанию (не работает в режиме управления табами снаружи) */
     defaultIndex?: number;
+    /** Рендер содержимого только для текущего таба */
+    renderOnlyCurrentPanel?: boolean;
     /** Обработчика клика по табам */
     onTabClick?: (index: number) => void;
     children: Array<React.ReactElement<ITabProps>>;
@@ -66,6 +68,7 @@ const Tabs: React.FC<ITabsProps> = ({
     sticky = false,
     defaultIndex = 0,
     currentIndex: outerIndex,
+    renderOnlyCurrentPanel = false,
     children,
     onTabClick,
 }) => {
@@ -197,15 +200,26 @@ const Tabs: React.FC<ITabsProps> = ({
 
     const renderPanels = React.useCallback(
         () =>
-            React.Children.map(children, (child, i) => (
-                <div
-                    className={cn('panel', {
-                        current: currentIndex === i,
-                    })}
-                >
-                    {child}
-                </div>
-            )),
+            React.Children.map(children, (child, i) => {
+                const {
+                    props: { children: panel },
+                } = child;
+                const isCurrentPanel = currentIndex === i;
+
+                if (!panel || (renderOnlyCurrentPanel && !isCurrentPanel)) {
+                    return null;
+                }
+
+                return (
+                    <div
+                        className={cn('panel', {
+                            current: isCurrentPanel,
+                        })}
+                    >
+                        {panel}
+                    </div>
+                );
+            }),
         [children, currentIndex],
     );
 
@@ -369,6 +383,7 @@ Tabs.propTypes = {
     sticky: PropTypes.bool,
     currentIndex: PropTypes.number,
     defaultIndex: PropTypes.number,
+    renderOnlyCurrentPanel: PropTypes.bool,
     onTabClick: PropTypes.func,
 };
 
