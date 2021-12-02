@@ -244,7 +244,7 @@ describe('<TextField />', () => {
         it('should render without no-touch class', () => {
             (detectTouch as jest.Mock).mockReturnValueOnce(true);
 
-            const wrapper = shallow(<TextField {...commonFieldProps} isControlled={false} />);
+            const wrapper = mount(<TextField {...commonFieldProps} isControlled={false} />);
 
             expect(wrapper).toMatchSnapshot();
         });
