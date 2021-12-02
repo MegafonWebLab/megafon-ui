@@ -1,5 +1,3 @@
-@class-prefix: 'mfui';
-
 // Basic Colors
 @green: #00B956;
 @purple: #731982;
@@ -107,12 +105,46 @@
     font-family: Graphik, Arial, sans-serif;
 }
 
+.fontFamily() {
+    font-family: inherit;
+}
+
+.commonFont() {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.smallFont() {
+    font-size: 12px;
+    line-height: 16px;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
     margin: 0;
+}
+
+.h1() {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+
+    @media @mobileB {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    @media @desktop {
+        font-size: 44px;
+        line-height: 48px;
+    }
+    @media @desktopMU {
+        font-size: 52px;
+        line-height: 56px;
+    }
 }
 
 .h2() {
@@ -147,6 +179,12 @@ h5 {
     }
 }
 
+.h4() {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+}
+
 .h5() {
     .commonFont();
     font-weight: 500;
@@ -157,7 +195,7 @@ h5 {
     font-weight: 400;
 }
 
-.p-indents() {
+.pIndents() {
     margin-top: 0;
     margin-bottom: 16px;
 
@@ -166,25 +204,11 @@ h5 {
     }
 }
 
-.default-link() {
+.link() {
     color: @link;
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
     }
-}
-
-.fontFamily() {
-    font-family: inherit;
-}
-
-.commonFont() {
-    font-size: 15px;
-    line-height: 24px;
-}
-
-.smallFont() {
-    font-size: 12px;
-    line-height: 16px;
 }
