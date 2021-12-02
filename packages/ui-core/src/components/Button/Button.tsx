@@ -1,8 +1,8 @@
 import React, { Ref } from 'react';
 import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import Arrow from '@megafon/ui-icons/system-32-arrow_right_32.svg';
-import PropTypes from 'prop-types';
 import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
+import PropTypes from 'prop-types';
 import './Button.less';
 
 export const ButtonTypes = {
@@ -116,7 +116,7 @@ const Button: React.FC<IButtonProps> = ({
     dataAttrs,
     buttonRef,
 }) => {
-    const isTouch = React.useMemo(() => detectTouch(), []);
+    const [isTouch, setTouch] = React.useState(false);
     const ElementType = href ? 'a' : 'button';
 
     const handleClick = React.useCallback(
@@ -213,6 +213,10 @@ const Button: React.FC<IButtonProps> = ({
 
     const classNameValue = Array.isArray(className) ? [...className, rootClassName] : [className, rootClassName];
 
+    React.useEffect(() => {
+        setTouch(detectTouch());
+    }, []);
+
     return (
         <ElementType
             {...filterDataAttrs(dataAttrs)}
@@ -234,7 +238,7 @@ const Button: React.FC<IButtonProps> = ({
                 classNameValue,
             )}
             href={href}
-            download={href && download}
+            download={!!href && download}
             target={href ? target : undefined}
             rel={setRelAttribute()}
             type={href ? undefined : actionType}
