@@ -130,10 +130,10 @@
     &_type_error {
         @{b} {
             &__icon-container {
-                background-color: @warmRedC20;
+                background-color: @error;
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @warmRedC;
+                    fill: @fury;
                 }
             }
         }
@@ -182,13 +182,13 @@
             }
 
             &__close:hover {
-                background-color: @base60;
+                background-color: @base30;
             }
         }
     }
 
     &_colored&_type_error {
-        background-color: @error;
+        background-color: @fury80;
 
         @{b} {
             &__title,
@@ -202,7 +202,7 @@
             }
 
             &__icon-container {
-                background-color: @base20;
+                background-color: @STCWhite20;
 
                 svg { /* stylelint-disable-line max-nesting-depth */
                     fill: @base;
@@ -212,26 +212,14 @@
     }
 
     &_colored&_type_success {
-        background-color: @success;
-
-        @{b}__icon-container svg {
-            fill: @green;
-        }
+        background-color: @green20;
     }
 
     &_colored&_type_warning {
-        background-color: @warning;
-
-        @{b}__icon-container svg {
-            fill: @Pantone137C;
-        }
+        background-color: @Pantone137C20;
     }
 
     &_colored&_type_info {
-        background-color: @info;
-
-        @{b}__icon-container svg {
-            fill: @Pantone311C;
-        }
+        background-color: @Pantone311C20;
     }
 }
