@@ -1,4 +1,27 @@
-export default {
+type ColorType = {
+    name: string;
+    code: string;
+    border?: string;
+    parentColor?: string;
+    gradient?: string;
+};
+
+type ColorsListType = {
+    description: string;
+    colors: ColorType[];
+};
+
+export type ColorsItemType = {
+    title: string;
+    colorsList?: ColorsListType;
+    colorsGroup?: ColorsListType[];
+};
+
+export type ColorsType = {
+    [key: string]: ColorsItemType;
+};
+
+const colors: ColorsType = {
     basic: {
         title: 'Basic',
         colorsGroup: [
@@ -50,7 +73,7 @@ export default {
     },
     secondary: {
         title: 'Secondary',
-        colorsGroup: {
+        colorsList: {
             description: 'Акцентные цвета',
             colors: [
                 {
@@ -74,7 +97,7 @@ export default {
     },
     system: {
         title: 'System',
-        colorsGroup: {
+        colorsList: {
             description: 'Системные цвета, используемые для отображения состояний интерфейсов и ссылок',
             colors: [
                 {
@@ -94,7 +117,7 @@ export default {
     },
     gradientColors: {
         title: 'Gradient',
-        colorsGroup: {
+        colorsList: {
             description: 'Градиентные заливки ',
             colors: [
                 {
@@ -117,7 +140,7 @@ export default {
     },
     staticColors: {
         title: 'Static',
-        colorsGroup: {
+        colorsList: {
             description: 'Цвета не зависящие от темы',
             colors: [
                 {
@@ -134,7 +157,7 @@ export default {
     },
     staticOpacity: {
         title: 'Static Opacity',
-        colorsGroup: {
+        colorsList: {
             description: 'Цвета c прозрачностью не зависящие от темы',
             colors: [
                 {
@@ -177,7 +200,7 @@ export default {
     },
     soft: {
         title: 'Soft',
-        colorsGroup: {
+        colorsList: {
             description:
                 'Дополнительная (вспомогательная) палитра, образованная от Basic, Secondary и System цветов. Каждый цвет из Soft палитры работает в паре с его родительским цветом.',
             colors: [
@@ -255,3 +278,5 @@ export default {
         },
     },
 };
+
+export default colors;

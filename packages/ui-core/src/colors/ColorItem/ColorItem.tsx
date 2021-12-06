@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 
-import './ColorsItem.less';
+import './ColorItem.less';
 
 type Props = {
     colorCode: string;
@@ -12,8 +12,8 @@ type Props = {
     className?: string;
 };
 
-const cn = cnCreate('colors-item');
-const ColorsItem: React.FC<Props> = ({ colorCode, colorName, parentColorCode, gradient, border, className }) => (
+const cn = cnCreate('color-item');
+const ColorItem: React.FC<Props> = ({ colorCode, colorName, parentColorCode, gradient, border, className }) => (
     <div className={cn([className])}>
         <div className={cn('container')}>
             <div
@@ -37,4 +37,4 @@ const ColorsItem: React.FC<Props> = ({ colorCode, colorName, parentColorCode, gr
     </div>
 );
 
-export default ColorsItem;
+export default ColorItem;

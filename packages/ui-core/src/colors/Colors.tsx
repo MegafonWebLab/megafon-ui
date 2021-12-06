@@ -5,8 +5,8 @@ import GridColumn from 'components/Grid/GridColumn';
 import Header from 'components/Header/Header';
 import Paragraph from 'components/Paragraph/Paragraph';
 import Tile from 'components/Tile/Tile';
-import colorsData from './colorsData';
-import ColorsItem from './ColorsItem/ColorsItem';
+import ColorItem from './ColorItem/ColorItem';
+import colorsData, { ColorsItemType } from './colorsData';
 import Diagram from './diagram.svg';
 import './Colors.less';
 
@@ -20,8 +20,8 @@ const Colors = () => {
         </div>
     );
 
-    const renderBasicsColors = (): JSX.Element => {
-        const { title, colorsGroup } = basic;
+    const renderBasicColors = (): JSX.Element => {
+        const { title, colorsGroup = [] } = basic;
 
         return (
             <div className={cn('line')}>
@@ -38,7 +38,7 @@ const Colors = () => {
                         >
                             <div className={cn('list')}>
                                 {colors.map(({ name, code, border = '' }) => (
-                                    <ColorsItem
+                                    <ColorItem
                                         className={cn('item')}
                                         colorName={name}
                                         colorCode={code}
@@ -56,14 +56,14 @@ const Colors = () => {
         );
     };
 
-    const renderColorBlock = (items): JSX.Element => (
+    const renderColorBlock = (items: ColorsItemType): JSX.Element => (
         <div className={cn('line')}>
             <Header as="h2" className={cn('group-title')}>
                 {items.title}
             </Header>
             <div className={cn('list')}>
-                {items.colorsGroup.colors.map(({ name, code, gradient = '', border = '' }) => (
-                    <ColorsItem
+                {items.colorsList?.colors.map(({ name, code, gradient = '', border = '' }) => (
+                    <ColorItem
                         className={cn('item')}
                         colorName={name}
                         colorCode={code}
@@ -74,20 +74,18 @@ const Colors = () => {
                 ))}
             </div>
             {renderUnderline()}
-            <div className={cn('description')}>{items.colorsGroup.description}</div>
+            <div className={cn('description')}>{items.colorsList?.description}</div>
         </div>
     );
 
     const renderSoftColors = (): JSX.Element => {
-        const {
-            colorsGroup: { colors, description },
-        } = soft;
+        const { colorsList: { colors = [], description } = {} } = soft;
 
         return (
             <div className={cn('soft-list')}>
                 <div className={cn('list', { soft: true })}>
                     {colors.map(({ name, code, parentColor = '' }) => (
-                        <ColorsItem
+                        <ColorItem
                             className={cn('item', { soft: true })}
                             colorName={name}
                             colorCode={code}
@@ -103,11 +101,13 @@ const Colors = () => {
 
     return (
         <div className={cn()}>
-            <Header as="h1">Colors</Header>
+            <Header as="h1" className={cn('title')}>
+                Цвета
+            </Header>
             <Paragraph>Палитра цветов, используемая в продуктах МегаФон</Paragraph>
             <div className={cn('inner')}>
                 <div className={cn('container')}>
-                    {renderBasicsColors()}
+                    {renderBasicColors()}
                     <Grid hAlign="between">
                         <GridColumn all="6" mobile="12" tablet="12">
                             {renderColorBlock(secondary)}
