@@ -1,16 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button /> layout it renders Button on touch devices 1`] = `
-<button
-  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
-  download={false}
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="mfui-button__inner"
-  />
-</button>
+<Button>
+  <button
+    className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_content-type_text"
+    download={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="mfui-button__inner"
+    />
+  </button>
+</Button>
 `;
 
 exports[`<Button /> layout it renders children 1`] = `

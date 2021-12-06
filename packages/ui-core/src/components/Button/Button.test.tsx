@@ -45,7 +45,7 @@ describe('<Button />', () => {
         it('it renders Button on touch devices', () => {
             (detectTouch as jest.Mock).mockReturnValueOnce(true);
 
-            const wrapper = shallow(<Button />);
+            const wrapper = mount(<Button />);
 
             expect(wrapper).toMatchSnapshot();
         });
