@@ -217,3 +217,21 @@ const DemoContent = ({ children }) => (
         </Tabs>
     </ContentArea>
 </Playground>
+
+## Рендер содержимого только для текущего таба
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs renderOnlyCurrentPanel>
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1 (размонтируется при переключении на другой таб)</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2 (размонтируется при переключении на другой таб)</DemoContent>
+            </Tab>
+            <Tab title="Таб 3">
+                <DemoContent>Контент 3 (размонтируется при переключении на другой таб)</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
