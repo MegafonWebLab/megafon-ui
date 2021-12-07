@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0...@megafon/ui-core@2.1.0) (2021-12-07)
+
+
+### Bug Fixes
+
+* **button:** fix rendering difference on client and server side ([323287e](https://github.com/MegafonWebLab/megafon-ui/commit/323287ea040716b9200bbaa5112f277427015598))
+* **contentarea:** fix prop type ([3e4114d](https://github.com/MegafonWebLab/megafon-ui/commit/3e4114dbd2d8a446a1247528fbf5464706bb4d4a))
+* **textfield:** fix rendering difference on client and server side ([4d26cac](https://github.com/MegafonWebLab/megafon-ui/commit/4d26cac90002692d7c404f9180310261e9a0e567))
+
+
+### Features
+
+* **tabs:** add renderOnlyCurrentPanel props ([0241f6c](https://github.com/MegafonWebLab/megafon-ui/commit/0241f6c9ed4ebb5132b38204612bcff095302822))
+* **ui-core:** fix mixin ([8e0f401](https://github.com/MegafonWebLab/megafon-ui/commit/8e0f401973d758821ee32ca2af1a714f3bca8b01))
+* **ui-core:** fix some mixins and variables ([be0462e](https://github.com/MegafonWebLab/megafon-ui/commit/be0462ed3bdcbc1e72d83b749723cf7b896f0846))
+
+
+
+
+
 # [2.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0-beta.169...@megafon/ui-core@2.0.0) (2021-11-30)
 
 
