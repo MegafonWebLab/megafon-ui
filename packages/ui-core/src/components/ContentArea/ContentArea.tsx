@@ -13,7 +13,7 @@ const BACKGROUND_COLORS = {
     SPB_SKY_2: 'spbSky2',
     FRESH_ASPHALT: 'freshAsphalt',
     FULL_BLACK: 'fullBlack',
-};
+} as const;
 
 export type BackgroundColorType = typeof BACKGROUND_COLORS[keyof typeof BACKGROUND_COLORS];
 

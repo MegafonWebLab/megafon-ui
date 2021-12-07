@@ -1,15 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button /> layout it renders Button on touch devices 1`] = `
-<button
-  className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_content-type_text"
-  onClick={[Function]}
-  type="button"
->
-  <div
-    className="mfui-button__inner"
-  />
-</button>
+<Button>
+  <button
+    className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_content-type_text"
+    download={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="mfui-button__inner"
+    />
+  </button>
+</Button>
 `;
 
 exports[`<Button /> layout it renders children 1`] = `
@@ -41,6 +44,7 @@ exports[`<Button /> layout it renders children 1`] = `
 exports[`<Button /> layout renders Button with default props 1`] = `
 <button
   className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -113,6 +117,7 @@ exports[`<Button /> layout should render tag button with disabled state 1`] = `
 <button
   className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_disabled mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
   disabled={true}
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -153,6 +158,7 @@ exports[`<Button /> layout should render tag without target and with rel attribu
 exports[`<Button /> layout should render tag without target, href and rel attribute 1`] = `
 <button
   className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -165,6 +171,7 @@ exports[`<Button /> layout should render tag without target, href and rel attrib
 exports[`<Button /> layout should render with arrow icon on the right 1`] = `
 <button
   className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_text"
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -190,6 +197,7 @@ exports[`<Button /> layout should render with arrow icon on the right 1`] = `
 exports[`<Button /> layout should render with custom icon 1`] = `
 <button
   className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_icon"
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -212,6 +220,7 @@ exports[`<Button /> layout should render with custom icon 1`] = `
 exports[`<Button /> layout should render with custom icon and children 1`] = `
 <button
   className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_no-touch mfui-button_content-type_icon-text"
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -276,6 +285,7 @@ exports[`<Button /> snapshots with loader it renders loader with white color and
 exports[`<Button /> snapshots with loader should render loader with black color 1`] = `
 <button
   className="mfui-button mfui-button_type_outline mfui-button_theme_black mfui-button_size-all_medium mfui-button_loading mfui-button_no-touch mfui-button_content-type_text"
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -293,6 +303,7 @@ exports[`<Button /> snapshots with loader should render loader with black color 
 exports[`<Button /> snapshots with loader should render loader with default color 1`] = `
 <button
   className="mfui-button mfui-button_type_outline mfui-button_theme_purple mfui-button_size-all_medium mfui-button_loading mfui-button_no-touch mfui-button_content-type_text"
+  download={false}
   onClick={[Function]}
   type="button"
 >
@@ -310,6 +321,7 @@ exports[`<Button /> snapshots with loader should render loader with default colo
 exports[`<Button /> snapshots with loader should render loader with small size on mobile resolution and medium size on the rest 1`] = `
 <button
   className="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_medium mfui-button_size-wide_large mfui-button_size-desktop_large mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_loading mfui-button_no-touch mfui-button_content-type_text"
+  download={false}
   onClick={[Function]}
   type="button"
 >

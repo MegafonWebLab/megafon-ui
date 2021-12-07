@@ -37,6 +37,7 @@ describe('<Tabs />', () => {
                 tabColorTheme={TabColorTheme.GREEN}
                 sticky
                 defaultIndex={1}
+                renderOnlyCurrentPanel
             >
                 <Tab title="title 1" icon={<Balance />} href="www.test.com">
                     1
@@ -44,6 +45,17 @@ describe('<Tabs />', () => {
                 <Tab title="title 2" renderTabWrapper={renderTabWrapper}>
                     2
                 </Tab>
+            </Tabs>,
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render without panels', () => {
+        const wrapper = shallow(
+            <Tabs>
+                <Tab title="title 1" icon={<Balance />} href="www.test.com" />
+                <Tab title="title 2" renderTabWrapper={renderTabWrapper} />
             </Tabs>,
         );
 

@@ -396,32 +396,45 @@ exports[`<TextField /> input should render without ie placeholder when value is 
 `;
 
 exports[`<TextField /> input should render without no-touch class 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+<TextField
+  disabled={true}
+  id="id"
+  isControlled={false}
+  maxLength={4}
+  name="name"
+  onBlur={[MockFunction]}
+  onFocus={[MockFunction]}
+  onKeyUp={[MockFunction]}
+  placeholder="placeholder"
+  required={true}
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
   >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="text"
-      value=""
+    <div
+      className="mfui-text-field__field-wrapper"
+    >
+      <input
+        className="mfui-text-field__field"
+        disabled={true}
+        id="id"
+        maxLength={4}
+        name="name"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyUp={[MockFunction]}
+        placeholder="placeholder"
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="mfui-text-field__wrap"
     />
   </div>
-  <div
-    className="mfui-text-field__wrap"
-  />
-</div>
+</TextField>
 `;
 
 exports[`<TextField /> should render with common props 1`] = `
