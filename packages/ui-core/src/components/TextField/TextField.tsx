@@ -135,6 +135,7 @@ const TextField: React.FC<TextFieldProps> = ({
     const [initialTextareaHeight, setInitialTextareaHeight] = useState(TEXTAREA_MIN_HEIGHT);
     const [isTextareaResized, setIsTextareaResized] = useState(false);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
+    const [isTouch, setTouch] = useState(false);
     const fieldNode = useRef<HTMLInputElement | HTMLTextAreaElement>();
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
@@ -142,7 +143,6 @@ const TextField: React.FC<TextFieldProps> = ({
         () => isPasswordType && !isPasswordHidden,
         [isPasswordHidden, isPasswordType],
     );
-    const isTouch: boolean = useMemo(() => detectTouch(), []);
 
     const checkSymbolMaxLimit = useCallback(
         (textareaValue: string | number = ''): void => {
@@ -159,6 +159,10 @@ const TextField: React.FC<TextFieldProps> = ({
         !isControlled && setInputValue(value);
         checkSymbolMaxLimit(value);
     }, [value, checkSymbolMaxLimit]);
+
+    useEffect(() => {
+        setTouch(detectTouch());
+    }, []);
 
     const togglePasswordHiding = useCallback(
         () => setPasswordHidden(prevPassState => !prevPassState),

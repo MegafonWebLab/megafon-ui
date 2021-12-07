@@ -116,7 +116,7 @@ const Button: React.FC<IButtonProps> = ({
     dataAttrs,
     buttonRef,
 }) => {
-    const isTouch = React.useMemo(() => detectTouch(), []);
+    const [isTouch, setTouch] = React.useState(false);
     const ElementType = href ? 'a' : 'button';
 
     const handleClick = React.useCallback(
@@ -213,6 +213,10 @@ const Button: React.FC<IButtonProps> = ({
 
     const classNameValue = Array.isArray(className) ? [...className, rootClassName] : [className, rootClassName];
 
+    React.useEffect(() => {
+        setTouch(detectTouch());
+    }, []);
+
     return (
         <ElementType
             {...filterDataAttrs(dataAttrs)}
@@ -234,7 +238,7 @@ const Button: React.FC<IButtonProps> = ({
                 classNameValue,
             )}
             href={href}
-            download={href && download}
+            download={!!href && download}
             target={href ? target : undefined}
             rel={setRelAttribute()}
             type={href ? undefined : actionType}
