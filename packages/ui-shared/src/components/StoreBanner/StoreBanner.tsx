@@ -6,10 +6,11 @@ import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType }
 import './StoreBanner.less';
 
 export const Theme = {
-    CLEAR_WHITE: 'clearWhite',
     BASE: 'base',
     GREEN: 'green',
     SPB_SKY_1: 'spbSky1',
+    /** @deprecated */
+    CLEAR_WHITE: 'clearWhite',
 } as const;
 
 type ThemeType = typeof Theme[keyof typeof Theme];

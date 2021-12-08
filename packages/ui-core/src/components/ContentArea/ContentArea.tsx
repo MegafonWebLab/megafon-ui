@@ -13,10 +13,10 @@ const BACKGROUND_COLORS = {
     SPB_SKY_2: 'spbSky2',
     CONTENT: 'content',
     FULL_BLACK: 'fullBlack',
-   /** @deprecated */
+    /** @deprecated */
     FRESH_ASPHALT: 'freshAsphalt',
 } as const;
- 
+
 export type BackgroundColorType = typeof BACKGROUND_COLORS[keyof typeof BACKGROUND_COLORS];
 
 const DisableIndents = {
