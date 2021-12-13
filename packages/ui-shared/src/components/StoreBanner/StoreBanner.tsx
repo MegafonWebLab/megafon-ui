@@ -6,9 +6,11 @@ import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType }
 import './StoreBanner.less';
 
 export const Theme = {
-    CLEAR_WHITE: 'clearWhite',
+    BASE: 'base',
     GREEN: 'green',
     SPB_SKY_1: 'spbSky1',
+    /** @deprecated */
+    CLEAR_WHITE: 'clearWhite',
 } as const;
 
 type ThemeType = typeof Theme[keyof typeof Theme];
@@ -187,7 +189,6 @@ StoreBanner.propTypes = {
     linkGoogle: PropTypes.string,
     onClickGoogle: PropTypes.func,
     qrCode: PropTypes.string,
-    theme: PropTypes.oneOf(Object.values(Theme)),
     deviceMask: PropTypes.oneOf(Object.values(DeviceMask)).isRequired,
     imageSrc: PropTypes.string.isRequired,
     className: PropTypes.string,
@@ -200,6 +201,22 @@ StoreBanner.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    theme(props, propName, componentName) {
+        const deprecatedValue = Theme.CLEAR_WHITE;
+        const propValue = props[propName];
+
+        if (propValue && !Object.values(Theme).includes(propValue)) {
+            return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
+            expected one of [${Object.values(Theme)}]`);
+        }
+
+        if (propValue && propValue === deprecatedValue) {
+            return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
+            value '${deprecatedValue}' is deprecated, please use value '${Theme.BASE}'`);
+        }
+
+        return null;
+    },
 };
 
 export default StoreBanner;

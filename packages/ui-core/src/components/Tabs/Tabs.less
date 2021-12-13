@@ -28,13 +28,13 @@
         &:before {
             left: 0;
 
-            background: linear-gradient(to right, @clearWhite, rgba(@clearWhite, 0));
+            background: linear-gradient(to right, @base, rgba(@base, 0));
         }
 
         &:after {
             right: 0;
 
-            background: linear-gradient(to left, @clearWhite, rgba(@clearWhite, 0));
+            background: linear-gradient(to left, @base, rgba(@base, 0));
         }
     }
 
@@ -79,13 +79,13 @@
         box-sizing: content-box;
         height: 32px;
 
-        color: @freshAsphalt;
+        color: @content;
         white-space: nowrap;
         text-decoration: none;
 
         cursor: pointer;
 
-        fill: @freshAsphalt;
+        fill: @content;
 
         &:hover {
             color: @green;
@@ -144,11 +144,11 @@
         height: 16px;
         border-radius: 50%;
 
-        background-color: @freshAsphalt;
+        background-color: @content;
         transform: translateY(-50%);
         cursor: pointer;
 
-        fill: @clearWhite;
+        fill: @base;
 
         @media @mobile {
             display: none;
@@ -277,7 +277,7 @@
             left: 0;
             z-index: 100;
 
-            background-color: @clearWhite;
+            background-color: @base;
         }
     }
 
@@ -303,29 +303,29 @@
         }
 
         @{b}__tab-inner {
-            color: @clearWhite50;
+            color: @STCWhite50;
 
-            fill: @clearWhite50;
+            fill: @STCWhite50;
 
             &:hover {
-                color: @clearWhite;
+                color: @base;
 
-                fill: @clearWhite;
+                fill: @base;
             }
         }
 
         @{b}__tab-inner_current {
-            color: @clearWhite;
+            color: @base;
 
-            fill: @clearWhite;
+            fill: @base;
         }
 
         @{b}__underline {
-            background-color: @clearWhite;
+            background-color: @base;
         }
 
         @{b}__arrow {
-            background-color: @clearWhite;
+            background-color: @base;
 
             fill: @green;
         }

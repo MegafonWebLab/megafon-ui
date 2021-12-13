@@ -29,7 +29,7 @@
         }
 
         ::-webkit-scrollbar-corner {
-            background-color: @clearWhite;
+            background-color: @base;
         }
 
         @{b}__scroll {
@@ -92,7 +92,7 @@
         height: @gradientSize;
         margin-top: -@gradientSize;
 
-        background: linear-gradient(to top, @clearWhite 25%, @transparent);
+        background: linear-gradient(to top, @base 25%, @transparent);
     }
 
     &__right-gradient {
@@ -105,7 +105,7 @@
         height: 100%;
         margin-left: -@gradientSize;
 
-        background: linear-gradient(to left, @clearWhite 25%, @transparent);
+        background: linear-gradient(to left, @base 25%, @transparent);
     }
 
     &__table {
@@ -113,14 +113,14 @@
         border-collapse: separate;
         border-spacing: 0;
 
-        background-color: @clearWhite;
+        background-color: @base;
     }
 
     &__cell {
         box-sizing: border-box;
         padding: 24px;
 
-        background-color: @clearWhite;
+        background-color: @base;
 
         @media @mobileSM {
             padding-right: 16px;
@@ -147,7 +147,7 @@
         height: 72px;
         padding-bottom: 12px;
 
-        color: @freshAsphalt50;
+        color: @STCBlack50;
         vertical-align: bottom;
 
         background-color: @spbSky0;

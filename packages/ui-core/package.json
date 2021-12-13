@@ -28,6 +28,7 @@
     "lint": "yarn lint:ts && yarn lint:less",
     "lint:ts": "eslint --ext .js,.jsx,.ts,.tsx src --max-warnings=0",
     "lint:less": "stylelint --syntax less src/**/*.less src/**/**/*.less",
+    "lint:less:fix": "yarn lint:less --fix",
     "test": "yarn test:unit",
     "test:unit": "jest",
     "test:update": "jest --updateSnapshot"
