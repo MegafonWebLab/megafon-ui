@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.0...@megafon/ui-core@2.1.1) (2021-12-13)
+
+
+### Bug Fixes
+
+* **carousel:** add prevendefault mouse event for disable slide click ([2e8f190](https://github.com/MegafonWebLab/megafon-ui/commit/2e8f1904101ffab860b4e74f28b9609f962f1340))
+* **colors:** refactor colors page by new ui colors scheme ([6ff2629](https://github.com/MegafonWebLab/megafon-ui/commit/6ff262953bd87f77e81f906b0bb195b84aecad13))
+* **notification:** update color style by new color scheme ([3b2b625](https://github.com/MegafonWebLab/megafon-ui/commit/3b2b625f082935b2c24123e06197d0bd4fbe6000))
+
+
+
+
+
 # [2.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.0.0...@megafon/ui-core@2.1.0) (2021-12-07)
 
 

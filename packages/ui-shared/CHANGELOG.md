@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.1...@megafon/ui-shared@2.1.0) (2021-12-13)
+
+
+### Features
+
+* **container:** add new indents to child components ([9469e71](https://github.com/MegafonWebLab/megafon-ui/commit/9469e71946371813c0e946f0a71a2b3876f386eb))
+
+
+
+
+
 ## [2.0.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.0.0...@megafon/ui-shared@2.0.1) (2021-12-07)
 
 **Note:** Version bump only for package @megafon/ui-shared
