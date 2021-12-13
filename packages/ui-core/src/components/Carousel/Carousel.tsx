@@ -256,6 +256,10 @@ const Carousel: React.FC<ICarouselProps> = ({
         swiperInstance?.slideTo(index);
     };
 
+    const disableFocusOnSlideClick = (e: React.MouseEvent) => {
+        e.nativeEvent.preventDefault();
+    };
+
     return (
         <div
             {...filterDataAttrs(dataAttrs)}
@@ -300,7 +304,12 @@ const Carousel: React.FC<ICarouselProps> = ({
                 onResize={handleSwiperResize}
             >
                 {React.Children.map(children, (child, i) => (
-                    <SwiperSlide key={i} className={cn('slide', slideClass)} onFocus={handleSlideFocus(i)}>
+                    <SwiperSlide
+                        key={i}
+                        className={cn('slide', slideClass)}
+                        onFocus={handleSlideFocus(i)}
+                        onMouseDown={disableFocusOnSlideClick}
+                    >
                         {child}
                     </SwiperSlide>
                 ))}
