@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import { cnCreate, detectTouch, checkNativeEventIsClickOrEnterPress } from '@megafon/ui-helpers';
+import type { AccessibilityEventTypeNative } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import { usePopper } from 'react-popper';
 import Tile from 'components/Tile/Tile';
@@ -7,8 +8,6 @@ import './Tooltip.less';
 
 const TOOLTIP_PADDING_FOR_FLIP = 14;
 const MOUSE_KEY = 'mousedown';
-const KEYBOARD_ENTER_KEY = 'Enter';
-const KEYBOARD_NUMPAD_ENTER_KEY = 'NumpadEnter';
 const TOUCH_KEY = 'touchstart';
 
 export const Placement = {
@@ -19,12 +18,6 @@ export const Placement = {
 } as const;
 
 type PlacementType = typeof Placement[keyof typeof Placement];
-
-const checkEventIsClickOrEnterPress = (e: MouseEvent | KeyboardEvent): boolean =>
-    e.type === TOUCH_KEY ||
-    e.type === MOUSE_KEY ||
-    (e as KeyboardEvent).code === KEYBOARD_ENTER_KEY ||
-    (e as KeyboardEvent).code === KEYBOARD_NUMPAD_ENTER_KEY;
 
 export const Paddings = {
     NONE: 'none',
@@ -69,9 +62,9 @@ export interface ITooltipProps {
         contentShadow?: string;
     };
     /** Обработчик на открытие */
-    onOpen?: (e: MouseEvent) => void;
+    onOpen?: (e: AccessibilityEventTypeNative) => void;
     /** Обработчик на закрытие */
-    onClose?: (e: MouseEvent | FocusEvent) => void;
+    onClose?: (e: AccessibilityEventTypeNative | FocusEvent) => void;
 }
 
 const cn = cnCreate('mfui-tooltip');
@@ -164,8 +157,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
     );
 
     const handleClick = useCallback(
-        (e: MouseEvent): void => {
-            if (!checkEventIsClickOrEnterPress(e)) {
+        (e: AccessibilityEventTypeNative): void => {
+            if (!checkNativeEventIsClickOrEnterPress(e)) {
                 return;
             }
 
