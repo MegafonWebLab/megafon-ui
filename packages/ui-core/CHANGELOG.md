@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.1...@megafon/ui-core@2.1.2) (2021-12-14)
+
+
+### Bug Fixes
+
+* **paragraph:** rollback deprecated color props clearWhite ([ee4e5a9](https://github.com/MegafonWebLab/megafon-ui/commit/ee4e5a9ce158a4df68e437d316e37ed6e87df664))
+
+
+
+
+
 ## [2.1.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.0...@megafon/ui-core@2.1.1) (2021-12-13)
 
 
