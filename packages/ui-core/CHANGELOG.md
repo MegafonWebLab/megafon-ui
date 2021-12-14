@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.2...@megafon/ui-core@2.1.3) (2021-12-14)
+
+
+### Bug Fixes
+
+* **contentarea:** fix backgroundColor and innerBackgroundColor props values ([d6004a4](https://github.com/MegafonWebLab/megafon-ui/commit/d6004a493b623cced4c453d69b0fd16d3cfbef43))
+
+
+
+
+
 ## [2.1.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.1...@megafon/ui-core@2.1.2) (2021-12-14)
 
 
