@@ -57,14 +57,18 @@ describe('<Checkbox />', () => {
     describe('handleChange', () => {
         it('calls onChange', () => {
             const handleChange = jest.fn();
-            const event = {
-                target: { value: 'test value' },
-            };
+            const changeEvent = {
+                target: { value: 'a1b2c3d4' },
+                type: 'change',
+                nativeEvent: {
+                    type: 'click',
+                },
+            } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
 
             const wrapper = shallow(<Checkbox onChange={handleChange}>Тестовая строка</Checkbox>);
 
-            wrapper.find('input').simulate('change', event);
-            expect(handleChange).toBeCalledWith(event);
+            wrapper.find('input').simulate('change', changeEvent);
+            expect(handleChange).toBeCalledWith(changeEvent);
         });
     });
 });
