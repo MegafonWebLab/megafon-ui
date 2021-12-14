@@ -2,7 +2,7 @@
 
 exports[`<Paragraph /> default render 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_content mfui-paragraph_has-margin"
+  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_freshAsphalt mfui-paragraph_has-margin"
 >
   Test paragraph text
 </p>

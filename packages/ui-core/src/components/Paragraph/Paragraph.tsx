@@ -14,6 +14,8 @@ const COLORS = {
     FULL_BLACK: 'fullBlack',
     INHERIT: 'inherit',
     /** @deprecated */
+    CLEAR_WHITE: 'clearWhite',
+    /** @deprecated */
     FRESH_ASPHALT: 'freshAsphalt',
 };
 
@@ -36,7 +38,7 @@ const cn = cnCreate('mfui-paragraph');
 const Paragraph: React.FC<IParagraphProps> = ({
     size = 'regular',
     align,
-    color = 'content',
+    color = 'freshAsphalt',
     className,
     hasMargin = true,
     children,
@@ -61,7 +63,8 @@ Paragraph.propTypes = {
     size: PropTypes.oneOf(['regular', 'small']),
     hasMargin: PropTypes.bool,
     color(props, propName, componentName) {
-        const deprecatedValue = COLORS.FRESH_ASPHALT;
+        const deprecatedBlackValue = COLORS.FRESH_ASPHALT;
+        const deprecatedWhiteValue = COLORS.CLEAR_WHITE;
         const propValue = props[propName];
 
         if (propValue && !Object.values(COLORS).includes(propValue)) {
@@ -69,9 +72,14 @@ Paragraph.propTypes = {
             expected one of [${Object.values(COLORS)}]`);
         }
 
-        if (propValue && props[propName] === COLORS.FRESH_ASPHALT) {
+        if (propValue && props[propName] === deprecatedBlackValue) {
             return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
-            value '${deprecatedValue}' is deprecated, please use value '${COLORS.CONTENT}'`);
+            value '${deprecatedBlackValue}' is deprecated, please use value '${COLORS.CONTENT}'`);
+        }
+
+        if (propValue && props[propName] === deprecatedWhiteValue) {
+            return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
+            value '${deprecatedWhiteValue}' is deprecated, please use value '${COLORS.BASE}'`);
         }
 
         return null;
