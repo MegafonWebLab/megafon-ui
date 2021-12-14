@@ -1,8 +1,17 @@
 import * as React from 'react';
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import {
+    AccessibilityEventType,
+    checkEventIsClickOrEnterPress,
+    cnCreate,
+    detectTouch,
+    filterDataAttrs,
+    IFilterDataAttrs,
+} from '@megafon/ui-helpers';
 import CheckedIcon from '@megafon/ui-icons/system-16-checked_16.svg';
 import * as PropTypes from 'prop-types';
 import './Checkbox.less';
+
+const CHANGE_KEY = 'change';
 
 export interface ICheckboxProps extends IFilterDataAttrs {
     /** Цвет чекбокса */
@@ -30,7 +39,7 @@ export interface ICheckboxProps extends IFilterDataAttrs {
     extraContent?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
     /** Обработчик изменения значения */
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement> | AccessibilityEventType) => void;
 }
 
 const cn = cnCreate('mfui-checkbox');
@@ -58,9 +67,11 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
 
     isTouch: boolean = detectTouch();
 
-    handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        const { onChange } = this.props;
-        onChange && onChange(e);
+    handleChange = (e: React.ChangeEvent<HTMLInputElement> | AccessibilityEventType): void => {
+        if (checkEventIsClickOrEnterPress(e) || e.type === CHANGE_KEY) {
+            const { onChange } = this.props;
+            onChange && onChange(e);
+        }
     };
 
     render() {
@@ -100,13 +111,20 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
                         <input
                             className={cn('input')}
                             type="checkbox"
+                            tabIndex={-1}
                             name={name}
                             value={value}
                             checked={checked}
                             onChange={this.handleChange}
                             disabled={disabled}
                         />
-                        <div className={cn('custom-input', [classes?.icon])}>
+                        <div
+                            tabIndex={0}
+                            role="checkbox"
+                            aria-checked={checked}
+                            className={cn('custom-input', [classes?.icon])}
+                            onKeyDown={this.handleChange}
+                        >
                             <CheckedIcon className={cn('icon')} />
                         </div>
                         {children}

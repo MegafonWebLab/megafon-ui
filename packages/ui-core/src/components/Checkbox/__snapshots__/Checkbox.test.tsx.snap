@@ -14,10 +14,15 @@ exports[`<Checkbox /> layout renders Checkbox 1`] = `
         checked={false}
         className="mfui-checkbox__input"
         onChange={[Function]}
+        tabIndex={-1}
         type="checkbox"
       />
       <div
+        aria-checked={false}
         className="mfui-checkbox__custom-input"
+        onKeyDown={[Function]}
+        role="checkbox"
+        tabIndex={0}
       >
         <test-file-stub
           className="mfui-checkbox__icon"
@@ -43,10 +48,15 @@ exports[`<Checkbox /> layout renders Checkbox on mobile resolution 1`] = `
         checked={false}
         className="mfui-checkbox__input"
         onChange={[Function]}
+        tabIndex={-1}
         type="checkbox"
       />
       <div
+        aria-checked={false}
         className="mfui-checkbox__custom-input"
+        onKeyDown={[Function]}
+        role="checkbox"
+        tabIndex={0}
       >
         <test-file-stub
           className="mfui-checkbox__icon"
@@ -74,11 +84,16 @@ exports[`<Checkbox /> layout renders Checkbox with props 1`] = `
         disabled={true}
         name="testInputName"
         onChange={[Function]}
+        tabIndex={-1}
         type="checkbox"
         value="testInputValue"
       />
       <div
+        aria-checked={true}
         className="mfui-checkbox__custom-input"
+        onKeyDown={[Function]}
+        role="checkbox"
+        tabIndex={0}
       >
         <test-file-stub
           className="mfui-checkbox__icon"
@@ -109,10 +124,15 @@ exports[`<Checkbox /> layout renders with classes 1`] = `
         checked={false}
         className="mfui-checkbox__input"
         onChange={[Function]}
+        tabIndex={-1}
         type="checkbox"
       />
       <div
+        aria-checked={false}
         className="mfui-checkbox__custom-input custom-icon"
+        onKeyDown={[Function]}
+        role="checkbox"
+        tabIndex={0}
       >
         <test-file-stub
           className="mfui-checkbox__icon"
@@ -138,10 +158,15 @@ exports[`<Checkbox /> layout renders with data attrs 1`] = `
         checked={false}
         className="mfui-checkbox__input"
         onChange={[Function]}
+        tabIndex={-1}
         type="checkbox"
       />
       <div
+        aria-checked={false}
         className="mfui-checkbox__custom-input"
+        onKeyDown={[Function]}
+        role="checkbox"
+        tabIndex={0}
       >
         <test-file-stub
           className="mfui-checkbox__icon"
