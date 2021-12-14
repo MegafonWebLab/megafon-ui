@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, IFilterDataAttrs, checkEventIsClickOrEnterPress } from '@megafon/ui-helpers';
+import type { AccessibilityEventType } from '@megafon/ui-helpers';
 import ArrowDown from '@megafon/ui-icons/system-24-arrow_down_24.svg';
 import ArrowUp from '@megafon/ui-icons/system-24-arrow_up_24.svg';
 import * as PropTypes from 'prop-types';
@@ -15,7 +16,6 @@ export interface IAccordionProps extends IFilterDataAttrs {
     /** Состояние открытости */
     isOpened?: boolean;
     /** Вертикальные отступы */
-    /** @deprecated */
     hasVerticalPaddings?: boolean;
     /** Дополнительный класс для корневого элемента */
     className?: string;
@@ -53,10 +53,12 @@ const Accordion: React.FC<IAccordionProps> = ({
         setIsOpenedState(isOpened);
     }, [isOpened]);
 
-    const handleClickTitle = (): void => {
-        onClickAccordion?.(!isOpenedState, title);
+    const handleClickTitle = (e: AccessibilityEventType): void => {
+        if (checkEventIsClickOrEnterPress(e)) {
+            onClickAccordion?.(!isOpenedState, title);
 
-        setIsOpenedState(!isOpenedState);
+            setIsOpenedState(!isOpenedState);
+        }
     };
 
     const openedClassName = isOpenedState ? openedClass : undefined;
@@ -67,9 +69,13 @@ const Accordion: React.FC<IAccordionProps> = ({
             ref={rootRef}
             className={cn({ open: isOpenedState }, [className, rootPropsClasses, openedClassName])}
         >
-            <div className={cn('title-wrap', [titleWrapPropsClasses])} onClick={handleClickTitle}>
+            <div
+                className={cn('title-wrap', [titleWrapPropsClasses])}
+                onClick={handleClickTitle}
+                onKeyDown={handleClickTitle}
+            >
                 <Header as="h5">{title}</Header>
-                <div className={cn('icon-box', { open: isOpenedState })}>
+                <div tabIndex={0} role="button" className={cn('icon-box', { open: isOpenedState })}>
                     {isOpenedState ? <ArrowUp /> : <ArrowDown />}
                 </div>
             </div>
@@ -91,8 +97,7 @@ Accordion.propTypes = {
     ]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     isOpened: PropTypes.bool,
-    hasVerticalPaddings: (props, propName) =>
-        props[propName] && new Error('Failed prop type: Prop "hasVerticalPaddings" is deprecated'),
+    hasVerticalPaddings: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         openedClass: PropTypes.string,
