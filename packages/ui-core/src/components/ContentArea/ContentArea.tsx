@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 
 const BACKGROUND_COLORS = {
-    WHITE: 'white',
+    BASE: 'base',
     TRANSPARENT: 'transparent',
     GREEN: 'green',
     PURPLE: 'purple',
@@ -13,6 +13,8 @@ const BACKGROUND_COLORS = {
     SPB_SKY_2: 'spbSky2',
     CONTENT: 'content',
     FULL_BLACK: 'fullBlack',
+    /** @deprecated */
+    WHITE: 'white',
     /** @deprecated */
     FRESH_ASPHALT: 'freshAsphalt',
 } as const;
@@ -70,17 +72,23 @@ const ContentArea: React.FC<IConrentAreaProps> = ({
 );
 
 const colorsCustomPropTypes = (props, propName, componentName): Error | null => {
-    const deprecatedValue = BACKGROUND_COLORS.FRESH_ASPHALT;
+    const deprecatedBlackValue = BACKGROUND_COLORS.FRESH_ASPHALT;
+    const deprecatedWhiteValue = BACKGROUND_COLORS.WHITE;
     const propValue = props[propName];
 
     if (propValue && !Object.values(BACKGROUND_COLORS).includes(propValue)) {
-        return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}', 
+        return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
         expected one of [${Object.values(BACKGROUND_COLORS)}]`);
     }
 
-    if (propValue && propValue === BACKGROUND_COLORS.FRESH_ASPHALT) {
+    if (propValue && propValue === deprecatedBlackValue) {
         return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
-        value '${deprecatedValue}' is deprecated, please use value '${BACKGROUND_COLORS.CONTENT}'`);
+        value '${deprecatedBlackValue}' is deprecated, please use value '${BACKGROUND_COLORS.CONTENT}'`);
+    }
+
+    if (propValue && propValue === deprecatedWhiteValue) {
+        return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
+        value '${deprecatedWhiteValue}' is deprecated, please use value '${BACKGROUND_COLORS.BASE}'`);
     }
 
     return null;
