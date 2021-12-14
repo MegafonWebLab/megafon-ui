@@ -49,15 +49,55 @@ describe('<Accordion />', () => {
     });
 
     it('it handle click title', () => {
-        const { onClickAccordion, title, isOpened } = props;
+        const onClickAccordion = jest.fn();
+        const { title, isOpened } = props;
         const wrapper = mount(
-            <Accordion {...props}>
+            <Accordion {...props} onClickAccordion={onClickAccordion}>
                 <div />
             </Accordion>,
         );
 
         wrapper.find('.mfui-accordion__title-wrap').simulate('click');
         expect(onClickAccordion).toBeCalledWith(!isOpened, title);
+    });
+
+    it('should open accordion after title click, if event code enter', () => {
+        const onClickAccordion = jest.fn();
+        const event = {
+            type: 'keydown',
+            nativeEvent: {
+                code: 'Enter',
+            },
+        } as React.KeyboardEvent;
+
+        const { title, isOpened } = props;
+        const wrapper = mount(
+            <Accordion {...props} onClickAccordion={onClickAccordion}>
+                <div />
+            </Accordion>,
+        );
+
+        wrapper.find('.mfui-accordion__title-wrap').simulate('keydown', event);
+        expect(onClickAccordion).toBeCalledWith(!isOpened, title);
+    });
+
+    it('shouldn`t open accordion after title click, if event code not enter', () => {
+        const onClickAccordion = jest.fn();
+        const event = {
+            type: 'keydown',
+            nativeEvent: {
+                code: 'Escape',
+            },
+        } as React.KeyboardEvent;
+
+        const wrapper = mount(
+            <Accordion {...props} onClickAccordion={onClickAccordion}>
+                <div />
+            </Accordion>,
+        );
+
+        wrapper.find('.mfui-accordion__title-wrap').simulate('keydown', event);
+        expect(onClickAccordion).not.toBeCalled();
     });
 
     it('checking the opening/closing of the accordion on click', () => {

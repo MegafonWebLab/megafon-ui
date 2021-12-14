@@ -19,6 +19,7 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
     <div
       className="mfui-accordion__title-wrap"
       onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <Header
         as="h5"
@@ -33,6 +34,8 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
       </Header>
       <div
         className="mfui-accordion__icon-box mfui-accordion__icon-box_open"
+        role="button"
+        tabIndex={0}
       >
         <test-file-stub />
       </div>
@@ -82,6 +85,7 @@ exports[`<Accordion /> it render Accordion with vertical inner paddings 1`] = `
     <div
       className="mfui-accordion__title-wrap"
       onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <Header
         as="h5"
@@ -96,6 +100,8 @@ exports[`<Accordion /> it render Accordion with vertical inner paddings 1`] = `
       </Header>
       <div
         className="mfui-accordion__icon-box"
+        role="button"
+        tabIndex={0}
       >
         <test-file-stub />
       </div>
@@ -145,6 +151,7 @@ exports[`<Accordion /> it renders Accordion 1`] = `
     <div
       className="mfui-accordion__title-wrap"
       onClick={[Function]}
+      onKeyDown={[Function]}
     >
       <Header
         as="h5"
@@ -159,6 +166,8 @@ exports[`<Accordion /> it renders Accordion 1`] = `
       </Header>
       <div
         className="mfui-accordion__icon-box"
+        role="button"
+        tabIndex={0}
       >
         <test-file-stub />
       </div>
