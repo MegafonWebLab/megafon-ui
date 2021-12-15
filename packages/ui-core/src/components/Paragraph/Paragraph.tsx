@@ -11,7 +11,6 @@ const COLORS = {
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
     CONTENT: 'content',
-    FULL_BLACK: 'fullBlack',
     INHERIT: 'inherit',
     /** @deprecated */
     CLEAR_WHITE: 'clearWhite',
@@ -68,7 +67,7 @@ Paragraph.propTypes = {
         const propValue = props[propName];
 
         if (propValue && !Object.values(COLORS).includes(propValue)) {
-            return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}', 
+            return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
             expected one of [${Object.values(COLORS)}]`);
         }
 

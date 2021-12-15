@@ -79,11 +79,3 @@ exports[`<Paragraph /> testing color props 6`] = `
   Test paragraph text
 </p>
 `;
-
-exports[`<Paragraph /> testing color props 7`] = `
-<p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_fullBlack test"
->
-  Test paragraph text
-</p>
-`;

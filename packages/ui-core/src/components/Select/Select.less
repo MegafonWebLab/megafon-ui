@@ -10,7 +10,7 @@
 
     min-height: 40px;
 
-    color: @content;
+    color: var(--content);
 
     &__inner {
         position: relative;
@@ -23,9 +23,9 @@
         box-sizing: border-box;
         width: 100%;
         height: 48px;
-        border: 1px solid @spbSky2;
+        border: 1px solid var(--spbSky2);
 
-        background-color: @base;
+        background-color: var(--base);
         outline: none;
         cursor: pointer;
     }
@@ -44,7 +44,7 @@
         border-bottom: none;
         border-left: 5px solid transparent;
 
-        color: @content;
+        color: var(--content);
 
         transform: translateY(-50%);
         cursor: pointer;
@@ -64,6 +64,8 @@
         border-radius: 0;
         overflow: auto;
 
+        color: var(--content);
+
         background-color: transparent;
         outline: none;
         box-shadow: none;
@@ -74,7 +76,7 @@
     }
 
     &_no-touch &__control:hover {
-        border-color: @content;
+        border-color: var(--content);
     }
 
     &__title {
@@ -90,7 +92,7 @@
     }
 
     &__title_placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     &__title-inner {
@@ -114,32 +116,32 @@
 
             width: 40px;
 
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), @base);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--base));
         }
     }
 
     &__require-mark {
         margin-left: 1px;
 
-        color: @fury;
+        color: var(--fury);
         font-size: 20px;
         line-height: 0;
     }
 
     input::-webkit-input-placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     input::-moz-placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     input:-moz-placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     input:-ms-input-placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     &__list {
@@ -151,7 +153,7 @@
 
         display: none;
 
-        background-color: @base;
+        background-color: var(--base);
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
 
@@ -166,11 +168,11 @@
         .fontFamily();
         padding: 8px 32px;
 
-        background-color: @base;
+        background-color: var(--base);
         cursor: pointer;
 
         &_active {
-            background-color: @spbSky0;
+            background-color: var(--spbSky0);
         }
     }
 
@@ -193,13 +195,13 @@
 
             width: 40px;
 
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), @base);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--base));
         }
     }
 
     &__list-item_active &__item-title {
         &:after {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky0);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--spbSky0));
         }
     }
 
@@ -233,39 +235,39 @@
 
     &_open &__list {
         display: block;
-        border-color: @content;
+        border-color: var(--content);
     }
 
     &_open &__control {
-        border-color: @content;
+        border-color: var(--content);
     }
 
     // mod: valid
 
     &_valid &__control {
-        border-color: @green !important;
+        border-color: var(--green) !important;
     }
 
     &_valid &__text {
-        color: @green;
+        color: var(--green);
     }
 
     // mod: error
 
     &_error &__control {
-        border-color: @fury !important;
+        border-color: var(--fury) !important;
     }
 
     &_error &__text {
-        color: @fury;
+        color: var(--fury);
     }
 
     // mod: disabled
 
     &_disabled &__control {
-        border-color: @spbSky1;
+        border-color: var(--spbSky1);
 
-        background-color: @spbSky1;
+        background-color: var(--spbSky1);
 
         user-select: none;
         pointer-events: none;

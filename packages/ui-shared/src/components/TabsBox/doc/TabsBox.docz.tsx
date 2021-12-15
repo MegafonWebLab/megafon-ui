@@ -9,7 +9,7 @@ export const DemoContent = ({ children }: { children: React.ReactNode }): React.
         <div
             style={{
                 padding: '80px 0',
-                background: '#f1f1f1',
+                background: 'rgba(0, 0, 0, 0.05)',
                 fontSize: '20px',
                 textAlign: 'center',
             }}

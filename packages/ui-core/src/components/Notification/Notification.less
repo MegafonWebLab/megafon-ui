@@ -7,6 +7,8 @@
 
     padding: 16px 12px;
 
+    background-color: var(--background);
+
     @media @mobileBU {
         padding: 20px 28px;
     }
@@ -21,6 +23,8 @@
     &__title {
         margin-bottom: 8px;
 
+        color: var(--content);
+
         @media @desktopMU {
             margin-bottom: 4px;
         }
@@ -34,6 +38,8 @@
         .commonFont();
         max-width: 100%;
         margin: 0;
+
+        color: var(--content);
     }
 
     &__text_close-padding {
@@ -94,7 +100,7 @@
         height: 20px;
         margin-top: 4px;
 
-        fill: @systemBlue;
+        fill: var(--systemBlue);
     }
 
     &__close {
@@ -112,14 +118,14 @@
     }
 
     &__close:hover {
-        background-color: @spbSky160;
+        background-color: var(--stcBlack5);
     }
 
     &__close-icon {
         width: 20px;
         height: 20px;
 
-        fill: @content;
+        fill: var(--content);
 
         @media @mobileBU {
             width: 32px;
@@ -130,10 +136,10 @@
     &_type_error {
         @{b} {
             &__icon-container {
-                background-color: @error;
+                background-color: var(--fury20);
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @fury;
+                    fill: var(--fury);
                 }
             }
         }
@@ -142,10 +148,10 @@
     &_type_success {
         @{b} {
             &__icon-container {
-                background-color: @green20;
+                background-color: var(--green20);
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @green;
+                    fill: var(--green);
                 }
             }
         }
@@ -154,10 +160,10 @@
     &_type_warning {
         @{b} {
             &__icon-container {
-                background-color: @Pantone137C20;
+                background-color: var(--137C20);
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @Pantone137C;
+                    fill: var(--137C);
                 }
             }
         }
@@ -166,10 +172,10 @@
     &_type_info {
         @{b} {
             &__icon-container {
-                background-color: @Pantone311C20;
+                background-color: var(--311C20);
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @Pantone311C;
+                    fill: var(--311C);
                 }
             }
         }
@@ -178,48 +184,62 @@
     &_colored {
         @{b} {
             &__icon-container {
-                background-color: @base;
+                background-color: var(--stcWhite);
             }
 
             &__close:hover {
-                background-color: @base30;
+                background-color: var(--stcWhite);
             }
         }
     }
 
+    &_colored&_type_success,
     &_colored&_type_error {
-        background-color: @fury80;
-
         @{b} {
             &__title,
             &__text,
             &__link {
-                color: @base;
+                color: var(--stcWhite);
             }
 
             &__right-arrow {
-                fill: @base;
+                fill: var(--stcWhite);
             }
 
             &__icon-container {
-                background-color: @STCWhite20;
+                background-color: var(--stcWhite20);
 
                 svg { /* stylelint-disable-line max-nesting-depth */
-                    fill: @base;
+                    fill: var(--stcWhite);
                 }
             }
         }
     }
 
     &_colored&_type_success {
-        background-color: @green20;
+        background-color: var(--green);
     }
 
+    &_colored&_type_error {
+        background-color: var(--fury80);
+    }
+
+    &_colored&_type_info,
     &_colored&_type_warning {
-        background-color: @Pantone137C20;
+        @{b} {
+            &__title,
+            &__text,
+            &__link {
+                color: var(--stcBlack);
+            }
+        }
     }
 
     &_colored&_type_info {
-        background-color: @Pantone311C20;
+        background-color: var(--311C20);
+    }
+
+    &_colored&_type_warning {
+        background-color: var(--137C20);
     }
 }

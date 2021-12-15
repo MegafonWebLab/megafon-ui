@@ -13,17 +13,7 @@ const props: Partial<IConrentAreaProps> = {
     },
 };
 
-const backgroundColors = [
-    'white',
-    'transparent',
-    'green',
-    'purple',
-    'spbSky0',
-    'spbSky1',
-    'spbSky2',
-    'content',
-    'fullBlack',
-];
+const backgroundColors = ['white', 'transparent', 'green', 'purple', 'spbSky0', 'spbSky1', 'spbSky2', 'content'];
 
 describe('<ContentArea />', () => {
     const getWrapper = (additionalProps?: Partial<IConrentAreaProps>) =>

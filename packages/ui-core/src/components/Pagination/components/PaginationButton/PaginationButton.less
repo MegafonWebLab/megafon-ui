@@ -24,39 +24,39 @@
     }
 
     &_active {
-        border-color: @green;
+        border-color: var(--green);
         pointer-events: none;
     }
 
     &_theme_default {
-        color: @content;
+        color: var(--content);
 
         svg {
-            fill: @content;
+            fill: var(--content);
         }
 
         &:hover {
-            background-color: @spbSky0;
+            background-color: var(--spbSky0);
         }
     }
 
     &_theme_default&_active {
-        border-color: @green;
+        border-color: var(--green);
     }
 
     &_theme_light {
-        color: @base;
+        color: var(--stcWhite);
 
         svg {
-            fill: @base;
+            fill: var(--stcWhite);
         }
 
         &:hover {
-            background-color: rgba(@base, 0.25);
+            background-color: var(--stcWhite20);
         }
     }
 
     &_theme_light&_active {
-        border-color: @base;
+        border-color: var(--stcWhite);
     }
 }

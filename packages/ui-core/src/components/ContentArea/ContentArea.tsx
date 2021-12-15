@@ -12,7 +12,6 @@ const BACKGROUND_COLORS = {
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
     CONTENT: 'content',
-    FULL_BLACK: 'fullBlack',
     /** @deprecated */
     WHITE: 'white',
     /** @deprecated */

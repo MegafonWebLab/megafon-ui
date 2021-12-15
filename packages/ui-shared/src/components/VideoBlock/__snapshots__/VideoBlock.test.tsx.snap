@@ -57,7 +57,7 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
         <Header
           as="h2"
           className="mfui-video-block__header"
-          color="black"
+          color="default"
           hAlign="inherit"
         >
           Test title
@@ -124,7 +124,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
         <Header
           as="h2"
           className="mfui-video-block__header"
-          color="black"
+          color="default"
           hAlign="inherit"
         >
           Test title
@@ -191,7 +191,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
         <Header
           as="h2"
           className="mfui-video-block__header"
-          color="black"
+          color="default"
           hAlign="inherit"
         >
           Test title

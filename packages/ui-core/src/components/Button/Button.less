@@ -1,5 +1,16 @@
 @import '~styles/base.less';
 
+:root {
+    --green7: rgba(0, 185, 86, 0.07);
+    --green14: rgba(0, 185, 86, 0.14);
+    --purple7: rgba(115, 25, 130, 0.07);
+    --purple14: rgba(115, 25, 130, 0.14);
+    --content7: rgba(51, 51, 51, 0.07);
+    --content14: rgba(51, 51, 51, 0.14);
+    --base7: rgba(255, 255, 255, 0.07);
+    --base14: rgba(255, 255, 255, 0.14);
+}
+
 @b: e('.mfui-button');
 
 @{b} {
@@ -12,7 +23,7 @@
     border: none;
     border-radius: 30px;
 
-    color: @base;
+    color: var(--stcWhite);
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -93,24 +104,24 @@
     // theme = green
 
     &_type_primary&_theme_green {
-        color: @base;
+        color: var(--stcWhite);
 
-        background-color: @green;
+        background-color: var(--green);
 
         svg {
-            fill: @base;
+            fill: var(--stcWhite);
         }
     }
 
     &_no-touch&_type_primary&_theme_green {
         &:not(@{b}_loading):hover {
-            background-color: @buttonHoverGreen;
-            box-shadow: inset 0 0 0 1px @buttonHoverGreen;
+            background-color: var(--buttonHoverGreen);
+            box-shadow: inset 0 0 0 1px var(--buttonHoverGreen);
         }
 
         &:not(@{b}_loading):active {
-            background-color: @buttonDown;
-            box-shadow: inset 0 0 0 1px @buttonDown;
+            background-color: var(--buttonDown);
+            box-shadow: inset 0 0 0 1px var(--buttonDown);
         }
     }
 
@@ -118,24 +129,24 @@
     // theme = purple
 
     &_type_primary&_theme_purple {
-        color: @base;
+        color: var(--stcWhite);
 
-        background-color: @purple;
+        background-color: var(--purple);
 
         svg {
-            fill: @base;
+            fill: var(--stcWhite);
         }
     }
 
     &_no-touch&_type_primary&_theme_purple {
         &:not(@{b}_loading):hover {
-            background-color: @buttonhoverPurple;
-            box-shadow: inset 0 0 0 1px @buttonhoverPurple;
+            background-color: var(--buttonhoverPurple);
+            box-shadow: inset 0 0 0 1px var(--buttonhoverPurple);
         }
 
         &:not(@{b}_loading):active {
-            background-color: @buttonDown;
-            box-shadow: inset 0 0 0 1px @buttonDown;
+            background-color: var(--buttonDown);
+            box-shadow: inset 0 0 0 1px var(--buttonDown);
         }
     }
 
@@ -143,30 +154,30 @@
     // theme = white
 
     &_type_primary&_theme_white {
-        color: @content;
+        color: var(--stcBlack);
 
-        background-color: @base;
+        background-color: var(--stcWhite);
 
         svg {
-            fill: @content;
+            fill: var(--stcBlack);
         }
     }
 
     &_no-touch&_type_primary&_theme_white {
         &:not(@{b}_loading):hover {
-            color: @base;
+            color: var(--stcBlack);
 
-            background-color: @buttonHoverGreen;
-            box-shadow: inset 0 0 0 1px @buttonHoverGreen;
+            background-color: var(--buttonHoverGreen);
+            box-shadow: inset 0 0 0 1px var(--buttonHoverGreen);
 
             svg {
-                fill: @base;
+                fill: var(--stcBlack);
             }
         }
 
         &:not(@{b}_loading):active {
-            background-color: @buttonDown;
-            box-shadow: inset 0 0 0 1px @buttonDown;
+            background-color: var(--buttonDown);
+            box-shadow: inset 0 0 0 1px var(--buttonDown);
         }
     }
 
@@ -174,23 +185,23 @@
     // theme = green
 
     &_type_outline&_theme_green {
-        color: @green;
+        color: var(--green);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @green;
+        box-shadow: inset 0 0 0 1px var(--green);
 
         svg {
-            fill: @green;
+            fill: var(--green);
         }
     }
 
     &_no-touch&_type_outline&_theme_green {
         &:not(@{b}_loading):hover {
-            background-color: fade(@green, 7);
+            background-color: var(--green7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@green, 14);
+            background-color: var(--green14);
         }
     }
 
@@ -198,23 +209,23 @@
     // theme = purple
 
     &_type_outline&_theme_purple {
-        color: @purple;
+        color: var(--purple);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @purple;
+        box-shadow: inset 0 0 0 1px var(--purple);
 
         svg {
-            fill: @purple;
+            fill: var(--purple);
         }
     }
 
     &_no-touch&_type_outline&_theme_purple {
         &:not(@{b}_loading):hover {
-            background-color: fade(@purple, 7);
+            background-color: var(--purple7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@purple, 14);
+            background-color: var(--purple14);
         }
     }
 
@@ -222,23 +233,23 @@
     // theme = white
 
     &_type_outline&_theme_white {
-        color: @base;
+        color: var(--stcWhite);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @base;
+        box-shadow: inset 0 0 0 1px var(--stcWhite);
 
         svg {
-            fill: @base;
+            fill: var(--stcWhite);
         }
     }
 
     &_no-touch&_type_outline&_theme_white {
         &:not(@{b}_loading):hover {
-            background-color: fade(@base, 7);
+            background-color: var(--base7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@base, 14);
+            background-color: var(--base14);
         }
     }
 
@@ -246,23 +257,23 @@
     // theme = black
 
     &_type_outline&_theme_black {
-        color: @content;
+        color: var(--stcBlack);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @content;
+        box-shadow: inset 0 0 0 1px var(--stcBlack);
 
         svg {
-            fill: @content;
+            fill: var(--stcBlack);
         }
     }
 
     &_no-touch&_type_outline&_theme_black {
         &:not(@{b}_loading):hover {
-            background-color: fade(@content, 7);
+            background-color: var(--content7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: fade(@content, 14);
+            background-color: var(--content14);
         }
     }
 
@@ -279,13 +290,13 @@
     &&_no-touch&_type_primary&_disabled,
     &&_no-touch&_type_primary&_disabled:hover,
     &&_no-touch&_type_primary&_disabled:active {
-        color: @STCBlack50;
+        color: var(--spbSky3);
 
-        background-color: @spbSky1;
-        box-shadow: inset 0 0 0 1px @spbSky2;
+        background-color: var(--spbSky1);
+        box-shadow: inset 0 0 0 1px var(--spbSky3);
 
         svg {
-            fill: @STCBlack50;
+            fill: var(--spbSky3);
         }
     }
 
@@ -293,13 +304,13 @@
     &&_no-touch&_type_outline&_theme_white&_disabled,
     &&_no-touch&_type_outline&_theme_white&_disabled:hover,
     &&_no-touch&_type_outline&_theme_white&_disabled:active {
-        color: @STCWhite50;
+        color: var(--stcWhite50);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @STCWhite50;
+        box-shadow: inset 0 0 0 1px var(--stcWhite50);
 
         svg {
-            fill: @STCWhite50;
+            fill: var(--stcWhite50);
         }
     }
 
@@ -307,13 +318,13 @@
     &&_no-touch&_type_outline&_disabled,
     &&_no-touch&_type_outline&_disabled:hover,
     &&_no-touch&_type_outline&_disabled:active {
-        color: @STCBlack50;
+        color: var(--spbSky3);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px @spbSky2;
+        box-shadow: inset 0 0 0 1px var(--spbSky3);
 
         svg {
-            fill: @STCBlack50;
+            fill: var(--spbSky3);
         }
     }
 }

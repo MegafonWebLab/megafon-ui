@@ -12,18 +12,6 @@ exports[`<ContentArea /> render component when innerBackgroundColor with content
 </div>
 `;
 
-exports[`<ContentArea /> render component when innerBackgroundColor with fullBlack 1`] = `
-<div
-  className="mfui-content-area mfui-content-area_color_transparent"
->
-  <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_fullBlack"
-  >
-    some content
-  </div>
-</div>
-`;
-
 exports[`<ContentArea /> render component when innerBackgroundColor with green 1`] = `
 <div
   className="mfui-content-area mfui-content-area_color_transparent"
@@ -111,18 +99,6 @@ exports[`<ContentArea /> render component when innerBackgroundColor with white 1
 exports[`<ContentArea /> render component when outerBackgroundColor with content 1`] = `
 <div
   className="mfui-content-area mfui-content-area_color_content"
->
-  <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
-  >
-    some content
-  </div>
-</div>
-`;
-
-exports[`<ContentArea /> render component when outerBackgroundColor with fullBlack 1`] = `
-<div
-  className="mfui-content-area mfui-content-area_color_fullBlack"
 >
   <div
     className="mfui-content-area__inner mfui-content-area__inner_color_transparent"

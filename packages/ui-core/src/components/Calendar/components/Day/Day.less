@@ -11,7 +11,7 @@
     padding: 0 10px 8px 0;
     border: none;
 
-    color: @content;
+    color: var(--content);
     line-height: 24px;
     text-decoration: none;
 
@@ -40,20 +40,20 @@
         height: 32px;
         border-radius: 50% !important;
 
-        color: @content;
+        color: var(--content);
 
-        background-color: @spbSky0;
+        background-color: var(--spbSky0);
     }
 
     &:not(:disabled):not(&_active):hover:after {
-        color: @content;
+        color: var(--content);
 
-        background-color: @spbSky0;
+        background-color: var(--spbSky0);
     }
 
     &:not(:disabled):not(&_active):focus:after,
     &_active:after {
-        background-color: @green;
+        background-color: var(--green);
     }
 
     &_disabled {
@@ -65,7 +65,7 @@
 
     &_active,
     &:not(:disabled):not(&_active):focus {
-        color: @base;
+        color: var(--stcWhite);
     }
 
     &_active + &_active:before,
@@ -80,7 +80,7 @@
         width: 32px;
         height: 32px;
 
-        background-color: @spbSky1;
+        background-color: var(--spbSky1);
     }
 
     &_between {
@@ -99,7 +99,7 @@
             height: 32px;
             padding: 0 20px;
 
-            background-color: @spbSky1;
+            background-color: var(--spbSky1);
         }
 
         &:after {
@@ -113,7 +113,7 @@
             width: 40px;
             height: 32px;
 
-            background-color: @spbSky1;
+            background-color: var(--spbSky1);
         }
     }
 

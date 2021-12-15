@@ -20,7 +20,7 @@
         height: 100%;
         border-radius: 50%;
 
-        background-color: @STCWhite50;
+        background-color: var(--stcWhite50);
     }
 
     &_active {
@@ -29,7 +29,7 @@
         cursor: default;
 
         &:before {
-            background-color: @base;
+            background-color: var(--stcWhite);
         }
     }
 
@@ -54,8 +54,8 @@
 
         animation: timer linear;
 
-        fill: @STCWhite50;
-        stroke: @base;
+        fill: var(--stcWhite50);
+        stroke: var(--base);
         stroke-width: 100;
         stroke-dasharray: 1000;
     }

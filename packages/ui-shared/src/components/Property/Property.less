@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         padding: 24px 0;
-        border-top: 1px solid @spbSky2;
+        border-top: 1px solid var(--spbSky2);
 
         @media @desktopMU {
             padding: 26px 0;
@@ -16,7 +16,7 @@
 
     &_border-bottom {
         @{b}__wrapper {
-            border-bottom: 1px solid @spbSky2;
+            border-bottom: 1px solid var(--spbSky2);
         }
     }
 
@@ -43,10 +43,10 @@
         padding: 2px 8px;
         border-radius: 2px;
 
-        color: @base;
+        color: var(--stcWhite);
         font-size: 12px;
 
-        background: @Pantone137C;
+        background: var(--137C);
     }
 
     &__inner {
@@ -80,7 +80,7 @@
 
     &__value-wrapper_merged {
         align-items: center;
-        border-left: 1px solid @spbSky2;
+        border-left: 1px solid var(--spbSky2);
     }
 
     &__desc {

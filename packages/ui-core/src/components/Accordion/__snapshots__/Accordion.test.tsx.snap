@@ -22,11 +22,11 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
     >
       <Header
         as="h5"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         <h5
-          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit"
+          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
         >
           Test
         </h5>
@@ -85,11 +85,11 @@ exports[`<Accordion /> it render Accordion with vertical inner paddings 1`] = `
     >
       <Header
         as="h5"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         <h5
-          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit"
+          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
         >
           Test
         </h5>
@@ -148,11 +148,11 @@ exports[`<Accordion /> it renders Accordion 1`] = `
     >
       <Header
         as="h5"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         <h5
-          className="mfui-header mfui-header_color_black mfui-header_level_h5 mfui-header_h-align_inherit"
+          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
         >
           Test
         </h5>

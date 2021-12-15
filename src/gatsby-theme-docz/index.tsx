@@ -1,15 +1,15 @@
-import React from 'react'
-import './index.less';
-import Layout from './components/Layout';
-import Props from './components/Props';
-import Playground from './components/Playground';
-import { theme, ComponentsProvider } from 'docz';
-import { h1, h2, h3, h5 } from './components/Header'
-import { DoczTabs } from './components/Tabs';
-import CopyToClipboardBox from './components/CopyToClipboardBox';
-import Code from './components/Code';
-import { td, th, table } from './components/Table';
-import loadFonts from './loadFonts';
+import React from "react";
+import "./index.less";
+import { theme, ComponentsProvider } from "docz";
+import Code from "./components/Code";
+import CopyToClipboardBox from "./components/CopyToClipboardBox";
+import { h1, h2, h3, h5 } from "./components/Header";
+import Layout from "./components/Layout";
+import Playground from "./components/Playground";
+import Props from "./components/Props";
+import { td, th, table } from "./components/Table";
+import { DoczTabs } from "./components/Tabs";
+import loadFonts from "./loadFonts";
 
 const map = {
     h1,
@@ -19,26 +19,21 @@ const map = {
     p: ({ children }) => <p style={{ margin: "0 0 24px 0" }}>{children}</p>,
     props: Props,
     code: Code,
-    td: td,
-    th: th,
-    table: table,
+    td,
+    th,
+    table,
     playground: Playground,
     layout: Layout,
-    DoczTabs: DoczTabs,
-    CopyToClipboardBox: CopyToClipboardBox,
+    DoczTabs,
+    CopyToClipboardBox,
 };
 
 const Theme = ({ children }) => {
-
     React.useEffect(() => {
         loadFonts();
     }, []);
 
-    return (
-        <ComponentsProvider components={map}>
-            {children}
-        </ComponentsProvider>
-    );
+    return <ComponentsProvider components={map}>{children}</ComponentsProvider>;
 };
 
 const themeConfig = {};
