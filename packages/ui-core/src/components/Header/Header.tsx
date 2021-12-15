@@ -7,7 +7,7 @@ interface IHeaderProps extends IFilterDataAttrs {
     /** Тег */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Цвет */
-    color?: 'black' | 'white' | 'green' | 'purple' | 'blue' | 'inherit';
+    color?: 'default' | 'black' | 'white' | 'green' | 'purple' | 'blue' | 'inherit';
     /** Включить отступ */
     margin?: boolean;
     /** Дополнительный элемент */
@@ -24,7 +24,7 @@ const cn = cnCreate('mfui-header');
 class Header extends React.Component<IHeaderProps, {}> {
     static propTypes = {
         as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),
-        color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
+        color: PropTypes.oneOf(['default', 'black', 'white', 'green', 'purple', 'blue', 'inherit']),
         margin: PropTypes.bool,
         addition: PropTypes.element,
         hAlign: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
@@ -35,7 +35,7 @@ class Header extends React.Component<IHeaderProps, {}> {
 
     static defaultProps: Partial<IHeaderProps> = {
         as: 'h1',
-        color: 'black',
+        color: 'default',
         hAlign: 'inherit',
     };
 

@@ -21,7 +21,7 @@ exports[`<ButtonBanner /> should render with props 1`] = `
         <Header
           as="h2"
           className="mfui-button-banner__header"
-          color="black"
+          color="default"
           hAlign="inherit"
         >
           Заголовок
@@ -79,7 +79,7 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
         <Header
           as="h2"
           className="mfui-button-banner__header"
-          color="black"
+          color="default"
           hAlign="inherit"
         >
           Заголовок

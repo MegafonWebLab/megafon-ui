@@ -7,7 +7,7 @@ exports[`PageTitle should render component 1`] = `
   <Header
     as="h1"
     className="mfui-page-title__title"
-    color="black"
+    color="default"
     hAlign="inherit"
   >
     title
@@ -53,7 +53,7 @@ exports[`PageTitle should render with limited width 1`] = `
       <Header
         as="h1"
         className="mfui-page-title__title"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         title
@@ -94,7 +94,7 @@ exports[`PageTitle should render with optional props 1`] = `
   <Header
     as="h1"
     className="mfui-page-title__title"
-    color="black"
+    color="default"
     hAlign="inherit"
   >
     title

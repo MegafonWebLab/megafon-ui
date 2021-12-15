@@ -41,24 +41,28 @@
         }
     }
 
-    &_color_white {
-        color: @base;
-    }
-
-    &_color_blue {
-        color: @systemBlue;
-    }
-
-    &_color_green {
-        color: @green;
+    &_color_default {
+        color: var(--content);
     }
 
     &_color_black {
-        color: @content;
+        color: var(--stcBlack);
+    }
+
+    &_color_white {
+        color: var(--stcWhite);
+    }
+
+    &_color_blue {
+        color: var(--systemBlue);
+    }
+
+    &_color_green {
+        color: var(--green);
     }
 
     &_color_gray {
-        color: lighten(@content, 40);
+        color: var(--spbSky3);
     }
 
     &_color_inherit {

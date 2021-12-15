@@ -76,7 +76,7 @@ gulp.task('clean', () => del(['dist', 'styles']));
 gulp.task('clean:index', () => del('src/index.ts'));
 
 gulp.task('less:compile', () => {
-    return gulp.src(['src/**/*.less', `!${baseLessSrc}`])
+    return gulp.src('src/**/*.less')
         .pipe(replaceContent(/\~styles/g, 'styles'))
         .pipe(gulpLess(lessConfig))
         .pipe(dest(esPath))

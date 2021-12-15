@@ -1,10 +1,5 @@
 @b: e('.icons');
 
-@base: #FFFFFF;
-@spbSky0: #F6F6F6;
-@spbSky1: #EDEDED;
-@green: #00B956;
-
 @{b} {
     margin-bottom: 140px;
 
@@ -52,6 +47,7 @@
         background: none;
         outline: none;
         cursor: pointer;
+        color: var(--content);
     }
 
     &__icon-container:hover:before,
@@ -64,7 +60,7 @@
         left: -8px;
         z-index: -1;
         border-radius: 8px;
-        background: @spbSky0;
+        background: var(--spbSky0);
     }
 
     &__icon {
@@ -73,6 +69,7 @@
         min-width: 32px;
         margin-right: 8px;
         transition: all 0.2s ease;
+        fill: var(--content);
     }
 
     &__icon svg {
@@ -91,8 +88,8 @@
         align-items: center;
         justify-content: space-between;
         padding: 16px;
-        border: 1px solid @spbSky1;
-        background: @base;
+        border: 1px solid var(--spbSky1);
+        background: var(--base);
 
         @media screen and (max-width: 759px) {
             padding-bottom: 0;
@@ -110,6 +107,7 @@
         width: 40px;
         height: 40px;
         cursor: pointer;
+        fill: var(--content);
     }
 
     &__info-icons {
@@ -145,7 +143,7 @@
         border-radius: 4px;
         font-size: 12px;
         text-align: left;
-        background: @spbSky1;
+        background: var(--spbSky1);
     }
 
     &__info-copy {
@@ -153,8 +151,9 @@
         height: 32px;
         margin-left: 6px;
         border-radius: 4px;
-        background: @spbSky1;
+        background: var(--spbSky1);
         cursor: pointer;
+        fill: var(--content);
 
         &:active {
             opacity: 0.7;
@@ -173,6 +172,7 @@
         justify-content: center;
         min-width: 100px;
         height: 65px;
+        fill: var(--content);
 
         @media screen and (max-width: 759px) {
             margin-top: 10px;
@@ -209,8 +209,8 @@
 
         &_active {
             border-radius: 50%;
-            color: @base;
-            background: @green;
+            color: var(--stcWhite);
+            background: var(--green);
         }
     }
 }

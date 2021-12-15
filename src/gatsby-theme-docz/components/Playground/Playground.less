@@ -1,7 +1,7 @@
 .docz-playground {
     &__preview {
         margin-bottom: 8px;
-        border: 1px solid #EDEDED;
+        border: 1px solid var(--spbSky1);
         border-radius: 4px;
     }
 
@@ -11,8 +11,10 @@
 
     &__editor {
         position: relative;
-        border: 1px solid #EDEDED;
+
+        border: 1px solid var(--spbSky1);
         border-radius: 4px;
+
         font-size: 15px;
         line-height: 24px;
     }
@@ -26,15 +28,18 @@
         width: 24px;
         height: 24px;
         padding: 0;
-        border:none;
+        border: none;
 
         background: none;
         outline: none;
         cursor: pointer;
+
+        fill: var(--content);
     }
 
     &__icon {
         display: block;
+
         opacity: 0.3;
     }
 }

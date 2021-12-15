@@ -25,7 +25,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -57,7 +57,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -98,7 +98,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -128,7 +128,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -157,7 +157,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -198,7 +198,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -230,7 +230,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -259,7 +259,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -291,7 +291,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -332,7 +332,7 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет 
@@ -381,7 +381,7 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -422,7 +422,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -454,7 +454,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -495,7 +495,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -525,7 +525,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -554,7 +554,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -595,7 +595,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -627,7 +627,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -656,7 +656,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -688,7 +688,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -729,7 +729,7 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет
@@ -761,7 +761,7 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
         <Header
           as="h3"
           className="mfui-benefits-pictures__title"
-          color="black"
+          color="default"
           hAlign="left"
         >
           Интернет

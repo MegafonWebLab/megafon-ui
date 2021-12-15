@@ -6,15 +6,21 @@
     display: flex;
     flex-wrap: wrap;
 
+    &_color_default {
+        @{b}__item:before {
+            color: var(--content);
+        }
+    }
+
     &_color_black {
         @{b}__item:before {
-            color: @content;
+            color: var(--stcBlack);
         }
     }
 
     &_color_white {
         @{b}__item:before {
-            color: @base;
+            color: var(--stcWhite);
         }
     }
 

@@ -49,6 +49,7 @@ const colors: ColorsType = {
                     {
                         name: 'Content',
                         code: '#333333',
+                        border: '1px solid #EDEDED',
                     },
                     {
                         name: 'Spb Sky 0',
@@ -157,12 +158,13 @@ const colors: ColorsType = {
             colors: [
                 {
                     name: 'STC White',
-                    code: '#FFFFFFF',
+                    code: '#FFFFFF',
                     border: '1px solid #EDEDED',
                 },
                 {
                     name: 'STC Black',
                     code: '#333333',
+                    border: '1px solid #EDEDED',
                 },
             ],
         },
@@ -190,22 +192,27 @@ const colors: ColorsType = {
                 {
                     name: 'STC White 50%',
                     code: '#FFFFFF80',
+                    border: '1px solid #EDEDED',
                 },
                 {
                     name: 'STC Black 5%',
                     code: '#3333330D',
+                    border: '1px solid #EDEDED',
                 },
                 {
                     name: 'STC Black 10%',
                     code: '#3333331A',
+                    border: '1px solid #EDEDED',
                 },
                 {
                     name: 'STC Black 20%',
                     code: '#33333333',
+                    border: '1px solid #EDEDED',
                 },
                 {
                     name: 'STC Black 50%',
                     code: '#33333380',
+                    border: '1px solid #EDEDED',
                 },
             ],
         },
