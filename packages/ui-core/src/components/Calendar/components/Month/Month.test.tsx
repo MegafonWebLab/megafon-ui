@@ -2,6 +2,20 @@ import * as React from 'react';
 import { shallow } from 'enzyme';
 import Month, { IMonthProps } from './Month';
 
+const mouseClickEvent = new MouseEvent('click') as unknown as React.MouseEvent;
+const escapeEvent = {
+    type: 'keydown',
+    nativeEvent: {
+        code: 'Escape',
+    },
+} as React.KeyboardEvent;
+const enterEvent = {
+    type: 'keydown',
+    nativeEvent: {
+        code: 'Enter',
+    },
+} as React.KeyboardEvent;
+
 const props: IMonthProps = {
     isNextMonthDisabled: false,
     isPrevMonthDisabled: false,
@@ -37,55 +51,120 @@ describe('<Month />', () => {
     describe('handlers tests', () => {
         afterEach(() => jest.resetAllMocks());
 
-        it('shouldnt call goToPreviousMonths and goToNextMonths on arrows click', () => {
-            const goToNextMonth = jest.fn();
-            const goToPreviousMonth = jest.fn();
+        describe('handleArrowLeftClick tests', () => {
+            it('should call goToPreviousMonths on left arrow click', () => {
+                const goToPreviousMonth = jest.fn();
 
-            const wrapper = shallow(
-                <Month
-                    {...props}
-                    goToNextMonth={goToNextMonth}
-                    goToPreviousMonth={goToPreviousMonth}
-                    isNextMonthDisabled
-                    isPrevMonthDisabled
-                >
-                    <div />
-                </Month>,
-            );
+                const wrapper = shallow(
+                    <Month {...props} goToPreviousMonth={goToPreviousMonth}>
+                        <div />
+                    </Month>,
+                );
 
-            wrapper.find('.mfui-month__arrow').first().simulate('click');
-            wrapper.find('.mfui-month__arrow').last().simulate('click');
+                wrapper.find('.mfui-month__arrow').first().simulate('click', mouseClickEvent);
 
-            expect(goToNextMonth).toHaveBeenCalledTimes(0);
-            expect(goToPreviousMonth).toHaveBeenCalledTimes(0);
+                expect(goToPreviousMonth).toBeCalledTimes(1);
+            });
+
+            it('shouldn`t call goToPreviousMonths on left arrow click, if prev month disabled', () => {
+                const goToPreviousMonth = jest.fn();
+
+                const wrapper = shallow(
+                    <Month {...props} goToPreviousMonth={goToPreviousMonth} isPrevMonthDisabled>
+                        <div />
+                    </Month>,
+                );
+
+                wrapper.find('.mfui-month__arrow').first().simulate('click', mouseClickEvent);
+
+                expect(goToPreviousMonth).not.toBeCalled();
+            });
+
+            it('should call goToPreviousMonths on left arrow keydown, if key code is Enter', () => {
+                const goToPreviousMonth = jest.fn();
+
+                const wrapper = shallow(
+                    <Month {...props} goToPreviousMonth={goToPreviousMonth}>
+                        <div />
+                    </Month>,
+                );
+
+                wrapper.find('.mfui-month__arrow').first().simulate('keydown', enterEvent);
+
+                expect(goToPreviousMonth).toBeCalled();
+            });
+
+            it('shouldn`t call goToPreviousMonths on left arrow keydown, if key code isn`t Enter', () => {
+                const goToPreviousMonth = jest.fn();
+
+                const wrapper = shallow(
+                    <Month {...props} goToPreviousMonth={goToPreviousMonth}>
+                        <div />
+                    </Month>,
+                );
+
+                wrapper.find('.mfui-month__arrow').first().simulate('keydown', escapeEvent);
+
+                expect(goToPreviousMonth).not.toBeCalled();
+            });
         });
 
-        it('should call goToPreviousMonths on left arrow click', () => {
-            const goToPreviousMonth = jest.fn();
+        describe('handleArrowRightClick tests', () => {
+            it('should call goToNextMonth on right arrow click', () => {
+                const goToNextMonth = jest.fn();
 
-            const wrapper = shallow(
-                <Month {...props} goToPreviousMonth={goToPreviousMonth}>
-                    <div />
-                </Month>,
-            );
+                const wrapper = shallow(
+                    <Month {...props} goToNextMonth={goToNextMonth}>
+                        <div />
+                    </Month>,
+                );
 
-            wrapper.find('.mfui-month__arrow').first().simulate('click');
+                wrapper.find('.mfui-month__arrow').last().simulate('click', mouseClickEvent);
 
-            expect(goToPreviousMonth).toHaveBeenCalledTimes(1);
-        });
+                expect(goToNextMonth).toBeCalledTimes(1);
+            });
 
-        it('should call goToNextMonths on right arrow click', () => {
-            const goToNextMonth = jest.fn();
+            it('shouldn`t call goToNextMonth on right arrow click, if next month disabled', () => {
+                const goToNextMonth = jest.fn();
 
-            const wrapper = shallow(
-                <Month {...props} goToNextMonth={goToNextMonth}>
-                    <div />
-                </Month>,
-            );
+                const wrapper = shallow(
+                    <Month {...props} goToNextMonth={goToNextMonth} isNextMonthDisabled>
+                        <div />
+                    </Month>,
+                );
 
-            wrapper.find('.mfui-month__arrow').last().simulate('click');
+                wrapper.find('.mfui-month__arrow').last().simulate('click', mouseClickEvent);
 
-            expect(goToNextMonth).toHaveBeenCalledTimes(1);
+                expect(goToNextMonth).not.toBeCalled();
+            });
+
+            it('should call goToNextMonth on right arrow keydown, if key code is Enter', () => {
+                const goToNextMonth = jest.fn();
+
+                const wrapper = shallow(
+                    <Month {...props} goToNextMonth={goToNextMonth}>
+                        <div />
+                    </Month>,
+                );
+
+                wrapper.find('.mfui-month__arrow').last().simulate('keydown', enterEvent);
+
+                expect(goToNextMonth).toBeCalled();
+            });
+
+            it('shouldn`t call goToNextMonth on right arrow keydown, if key code isn`t Enter', () => {
+                const goToNextMonth = jest.fn();
+
+                const wrapper = shallow(
+                    <Month {...props} goToNextMonth={goToNextMonth}>
+                        <div />
+                    </Month>,
+                );
+
+                wrapper.find('.mfui-month__arrow').last().simulate('keydown', escapeEvent);
+
+                expect(goToNextMonth).not.toBeCalled();
+            });
         });
     });
 });
