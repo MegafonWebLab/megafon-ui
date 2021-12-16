@@ -42,6 +42,9 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <test-file-stub
             className="mfui-month__arrow mfui-month__arrow_disabled"
             onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={-1}
           />
           <span
             className="mfui-month__title"
@@ -51,6 +54,9 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           <test-file-stub
             className="mfui-month__arrow mfui-month__arrow_disabled"
             onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={-1}
           />
         </div>
         <div
@@ -1354,6 +1360,9 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           <test-file-stub
             className="mfui-month__arrow"
             onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
           />
           <span
             className="mfui-month__title"
@@ -1363,6 +1372,9 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           <test-file-stub
             className="mfui-month__arrow"
             onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
           />
         </div>
         <div
