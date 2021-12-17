@@ -112,7 +112,7 @@ const Colors = () => {
                         <GridColumn all="6" mobile="12" tablet="12">
                             {renderColorBlock(secondary)}
                         </GridColumn>
-                        <GridColumn all="5" mobile="12" tablet="12">
+                        <GridColumn all="10" mobile="12" tablet="12">
                             {renderColorBlock(system)}
                         </GridColumn>
                     </Grid>
@@ -122,7 +122,7 @@ const Colors = () => {
                         </GridColumn>
                         <GridColumn
                             all="3"
-                            leftOffsetWide="1"
+                            leftOffsetWide="2"
                             leftOffsetTablet="1"
                             leftOffsetDesktop="1"
                             mobile="12"

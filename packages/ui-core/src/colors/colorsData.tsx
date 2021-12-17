@@ -112,6 +112,18 @@ const colors: ColorsType = {
                     name: 'Background',
                     code: '#FFFFFF',
                 },
+                {
+                    name: 'Button Hov. G.',
+                    code: '#10E272',
+                },
+                {
+                    name: 'Button Hov. P.',
+                    code: '#A500BF',
+                },
+                {
+                    name: 'Button Down',
+                    code: '#404D46',
+                },
             ],
         },
     },
