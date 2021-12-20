@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.3...@megafon/ui-core@2.1.4) (2021-12-20)
+
+
+### Bug Fixes
+
+* **colors:** add hover colors to system group ([634ac03](https://github.com/MegafonWebLab/megafon-ui/commit/634ac034445fdcd08b60ff056f75683025cb6d49))
+* **tabs:** fix active tab underline width ([4499399](https://github.com/MegafonWebLab/megafon-ui/commit/449939942730143712a92930a279a8b6fc17a012))
+
+
+
+
+
 ## [2.1.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.2...@megafon/ui-core@2.1.3) (2021-12-14)
 
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.2...@megafon/ui-shared@2.1.3) (2021-12-20)
+
+
+### Bug Fixes
+
+* **tabs:** fix active tab underline width ([4499399](https://github.com/MegafonWebLab/megafon-ui/commit/449939942730143712a92930a279a8b6fc17a012))
+* **ui-shared:** remove few eslint rules from .eslintrc.json ([de49316](https://github.com/MegafonWebLab/megafon-ui/commit/de49316bf982a7d573a0bdd94f949d6407ce0ff8))
+
+
+
+
+
 ## [2.1.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.1...@megafon/ui-shared@2.1.2) (2021-12-14)
 
 **Note:** Version bump only for package @megafon/ui-shared
