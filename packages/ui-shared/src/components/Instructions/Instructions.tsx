@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Ref } from 'react';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
