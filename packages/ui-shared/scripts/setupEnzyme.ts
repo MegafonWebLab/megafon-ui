@@ -14,3 +14,9 @@ const matchMediaPolyfill = () => (
 );
 
 globalTyped.matchMedia = globalTyped.matchMedia || matchMediaPolyfill;
+
+globalTyped.ResizeObserver = jest.fn().mockImplementation(() => ({
+    disconnect: jest.fn(),
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+}));
