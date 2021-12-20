@@ -83,6 +83,7 @@ const Tabs: React.FC<ITabsProps> = ({
     const [innerIndex, setInnerIndex] = React.useState(defaultIndex);
     const currentIndex = outerIndex === undefined ? innerIndex : outerIndex;
 
+    const [activeTabWidth, setActiveTabWidth] = React.useState(0);
     const [underlineWidth, setUnderlineWidth] = React.useState(0);
     const [underlineTranslate, setUnderlineTranslate] = React.useState(0);
     const [underlineTransition, setUnderlineTransition] = React.useState('none');
@@ -104,17 +105,15 @@ const Tabs: React.FC<ITabsProps> = ({
             return;
         }
 
-        const tabNodeChild = tabsRef.current[currentIndex].firstElementChild;
-        const { clientWidth = 0 } = (tabNodeChild as HTMLDivElement) || {};
         const translate = [...tabsRef.current].splice(0, currentIndex).reduce((accWidth, node) => {
             const { width } = node.getBoundingClientRect();
 
             return accWidth + width;
         }, 0);
 
-        setUnderlineWidth(clientWidth);
+        setUnderlineWidth(activeTabWidth);
         setUnderlineTranslate(translate);
-    }, [currentIndex]);
+    }, [currentIndex, activeTabWidth]);
 
     const calculateSticky = React.useCallback(() => {
         if (!sticky || !rootRef.current || !tabListRef.current) {
@@ -279,11 +278,24 @@ const Tabs: React.FC<ITabsProps> = ({
 
     React.useEffect(() => {
         const handleResize = throttle(() => {
-            calculateUnderline();
             calculateSticky();
         }, 300);
 
+        const activeTabNode = tabsRef.current[currentIndex] as HTMLDivElement;
+
+        const resizeObserver = new ResizeObserver(entries => {
+            if (!entries.length || !entries[0]) {
+                return;
+            }
+
+            const { width } = entries[0].contentRect;
+            setActiveTabWidth(width);
+            calculateUnderline();
+        });
+
         calculateUnderline();
+
+        resizeObserver.observe(activeTabNode);
 
         window.addEventListener('resize', handleResize);
 

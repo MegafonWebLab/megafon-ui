@@ -19,7 +19,8 @@
     "types": [
       "react",
       "node",
-      "jest"
+      "jest",
+      "resize-observer-browser"
     ],
     "typeRoots": [
       "./node_modules/@types",
