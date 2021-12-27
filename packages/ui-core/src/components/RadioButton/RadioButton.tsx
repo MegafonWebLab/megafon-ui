@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './RadioButton.less';
 
-export interface IRadioButtonProps {
+export interface IRadioButtonProps extends IFilterDataAttrs {
     /** Значение */
     value: string;
     /** Имя для тега form */
@@ -51,6 +51,7 @@ class RadioButton extends React.Component<IRadioButtonProps> {
             PropTypes.func,
             PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
         ]),
+        dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     };
 
     static defaultProps: Partial<IRadioButtonProps> = {
@@ -65,13 +66,24 @@ class RadioButton extends React.Component<IRadioButtonProps> {
     };
 
     render() {
-        const { isChecked, disabled, name, value, textSize, children, inputRef, className, classes = {} } = this.props;
+        const {
+            isChecked,
+            disabled,
+            name,
+            value,
+            textSize,
+            children,
+            inputRef,
+            className,
+            classes = {},
+            dataAttrs,
+        } = this.props;
         const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
 
         const rootClassNames = Array.isArray(className) ? [...className, classes.root] : [className, classes.root];
 
         return (
-            <div className={cn(rootClassNames)}>
+            <div className={cn(rootClassNames)} {...filterDataAttrs(dataAttrs)}>
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label
                     className={cn(
