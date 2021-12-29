@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.4...@megafon/ui-core@2.2.0) (2021-12-29)
+
+
+### Features
+
+* **radiobutton:** add dataAttrs prop ([3f8d0b4](https://github.com/MegafonWebLab/megafon-ui/commit/3f8d0b4c4ec4a6ca301ab44feed2842ec8e54f3a))
+
+
+
+
+
 ## [2.1.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.3...@megafon/ui-core@2.1.4) (2021-12-20)
 
 
