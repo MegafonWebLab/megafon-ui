@@ -169,7 +169,7 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
     }, [iconPosition, inOneColumn, resizeHandler]);
 
     return (
-        <div className={cn([className, classes.root])} ref={rootRef}>
+        <div className={cn({ 'one-column': inOneColumn }, [className, classes.root])} ref={rootRef}>
             <div className={cn('inner')}>
                 <Grid className={classes.grid} guttersLeft="medium" hAlign={itemsAlign}>
                     {items.map(({ title, text, icon }, i) => {
@@ -180,7 +180,7 @@ const BenefitsIcons: React.FC<IBenefitsIcons> = ({
                         return (
                             <GridColumn className={classes.gridColumn} key={i} {...columnConfig}>
                                 <BenefitsIconsTile
-                                    className={classes.item}
+                                    className={cn('tile', [classes.item])}
                                     title={title}
                                     text={text}
                                     icon={icon}
