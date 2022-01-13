@@ -1,4 +1,4 @@
-# megafon-ui
+# megafon-ui (beta)
 
 MegaFon React UI components library.
 
@@ -6,40 +6,40 @@ MegaFon React UI components library.
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Documentation can be found [here](https://ui.megafon.ru/EqR2rxoML8).
+Documentation can be found [here](https://beta.ui.megafon.ru/EqR2rxoML8).
 
 ## How to use
 
 MegaFon components library consists of the following npm packages:
 
 - ui-core
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-core/latest?label=%40megafon%2Fui-core)](https://www.npmjs.com/package/@megafon/ui-core/v/latest)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-core/beta?label=%40megafon%2Fui-core)](https://www.npmjs.com/package/@megafon/ui-core/v/beta)
 
 
 - ui-shared
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-shared/latest?label=%40megafon%2Fui-shared)](https://www.npmjs.com/package/@megafon/ui-shared/v/latest)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-shared/beta?label=%40megafon%2Fui-shared)](https://www.npmjs.com/package/@megafon/ui-shared/v/beta)
 
 
 - ui-icons
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-icons/latest?label=%40megafon%2Fui-icons)](https://www.npmjs.com/package/@megafon/ui-icons/v/latest)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-icons/beta?label=%40megafon%2Fui-icons)](https://www.npmjs.com/package/@megafon/ui-icons/v/beta)
 
 
 - ui-helpers
-[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-helpers/latest?label=%40megafon%2Fui-helpers)](https://www.npmjs.com/package/@megafon/ui-helpers/v/latest)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/@megafon/ui-helpers/beta?label=%40megafon%2Fui-helpers)](https://www.npmjs.com/package/@megafon/ui-helpers/v/beta)
 
 Install using commands:
 
 ```bash
-npm install @megafon/ui-core
+npm install @megafon/ui-core@beta
 ```
 ```bash
-npm install @megafon/ui-shared
+npm install @megafon/ui-shared@beta
 ```
 ```bash
-npm install @megafon/ui-icons
+npm install @megafon/ui-icons@beta
 ```
 ```bash
-npm install @megafon/ui-helpers
+npm install @megafon/ui-helpers@beta
 ```
 
 For local development require:
