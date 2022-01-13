@@ -6,7 +6,7 @@ MegaFon React UI components library.
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Documentation can be found [here](https://beta.ui.megafon.ru/EqR2rxoML8).
+Documentation can be found [here](https://docs-beta.ui.megafon.ru/EqR2rxoML8).
 
 ## How to use
 
