@@ -6,7 +6,7 @@
       "createRelease": "github"
     },
     "publish": {
-      "allowBranch": "master",
+      "allowBranch": "beta",
       "conventionalCommits": true,
       "message": "chore(release): release",
       "ignoreChanges": [
