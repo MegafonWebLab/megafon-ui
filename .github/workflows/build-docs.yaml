@@ -2,7 +2,7 @@ name: docs build
 
 on:
   release:
-    types: [released]
+    types: [prereleased]
   workflow_dispatch:
 
 jobs:
@@ -55,10 +55,10 @@ jobs:
       - name: Push documentation
         uses: EndBug/add-and-commit@v7
         with:
-          branch: docs
+          branch: docs-beta
           message: 'docs update'
           add: 'docs --force' # add only docs directory
           remove: "-r -- './*' ':(exclude)docs/'" # remove everything except docs
           pull: 'NO-PULL'
-          push: origin docs --force
+          push: origin docs-beta --force
           branch_mode: create
