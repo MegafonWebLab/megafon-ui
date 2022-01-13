@@ -15,7 +15,8 @@
         "*.txt",
         "*.test.*",
         "*.docz.*"
-      ]
+      ],
+      "preDistTag": "beta"
     }
   }
 }
