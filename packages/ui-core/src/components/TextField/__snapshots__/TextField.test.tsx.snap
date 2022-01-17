@@ -1,5 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<TextField /> input should render with autoComplete 1`] = `
+<div
+  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+>
+  <div
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+  >
+    <input
+      autoComplete="tel"
+      className="mfui-text-field__field"
+      disabled={true}
+      id="id"
+      maxLength={4}
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyUp={[MockFunction]}
+      placeholder="placeholder"
+      required={true}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="mfui-text-field__wrap"
+  />
+</div>
+`;
+
 exports[`<TextField /> input should render with hidden password 1`] = `
 <div
   className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default mfui-text-field_icon mfui-text-field_password"
@@ -80,7 +110,7 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
 </TextField>
 `;
 
-exports[`<TextField /> input should render with inputnode 1`] = `
+exports[`<TextField /> input should render with inputmode 1`] = `
 <div
   className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
 >
