@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.4...@megafon/ui-shared@2.1.5) (2022-01-18)
+
+
+### Bug Fixes
+
+* **benefitsicons:** fix indents of items for inOneColumn mode ([e207c1c](https://github.com/MegafonWebLab/megafon-ui/commit/e207c1c99b42a48454e716094132d9573b3ec3c6))
+
+
+
+
+
 ## [2.1.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.3...@megafon/ui-shared@2.1.4) (2021-12-29)
 
 **Note:** Version bump only for package @megafon/ui-shared
