@@ -27,7 +27,7 @@ export interface IAccordionProps extends IFilterDataAttrs {
         titleWrap?: string;
     };
     /** Обработчик клика */
-    onClickAccordion?: (isOpened: boolean, title: string | React.ReactNode | React.ReactNode[]) => void;
+    onClickAccordion?: (isOpened: boolean) => void;
 }
 
 const cn = cnCreate('mfui-accordion');
@@ -55,7 +55,7 @@ const Accordion: React.FC<IAccordionProps> = ({
 
     const handleClickTitle = (e: AccessibilityEventType): void => {
         if (checkEventIsClickOrEnterPress(e)) {
-            onClickAccordion && onClickAccordion(!isOpenedState, title);
+            onClickAccordion && onClickAccordion(!isOpenedState);
 
             setIsOpenedState(!isOpenedState);
         }
