@@ -50,7 +50,7 @@ describe('<Accordion />', () => {
 
     it('it handle click title', () => {
         const onClickAccordion = jest.fn();
-        const { title, isOpened } = props;
+        const { isOpened } = props;
         const wrapper = mount(
             <Accordion {...props} onClickAccordion={onClickAccordion}>
                 <div />
@@ -58,7 +58,7 @@ describe('<Accordion />', () => {
         );
 
         wrapper.find('.mfui-accordion__title-wrap').simulate('click');
-        expect(onClickAccordion).toBeCalledWith(!isOpened, title);
+        expect(onClickAccordion).toBeCalledWith(!isOpened);
     });
 
     it('should open accordion after title click, if event code enter', () => {
@@ -70,7 +70,7 @@ describe('<Accordion />', () => {
             },
         } as React.KeyboardEvent;
 
-        const { title, isOpened } = props;
+        const { isOpened } = props;
         const wrapper = mount(
             <Accordion {...props} onClickAccordion={onClickAccordion}>
                 <div />
@@ -78,7 +78,7 @@ describe('<Accordion />', () => {
         );
 
         wrapper.find('.mfui-accordion__title-wrap').simulate('keydown', event);
-        expect(onClickAccordion).toBeCalledWith(!isOpened, title);
+        expect(onClickAccordion).toBeCalledWith(!isOpened);
     });
 
     it('shouldn`t open accordion after title click, if event code not enter', () => {
