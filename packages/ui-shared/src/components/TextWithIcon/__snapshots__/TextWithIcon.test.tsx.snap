@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextWithIcon /> should render with all props 1`] = `
+<div
+  className="mfui-text-with-icon test-class"
+>
+  <Grid>
+    <GridColumn
+      desktop="6"
+      mobile="12"
+      tablet="7"
+      wide="6"
+    >
+      <Header
+        as="h5"
+        className="mfui-text-with-icon__header"
+        color="black"
+        hAlign="inherit"
+      >
+        Test title
+      </Header>
+      <div
+        className="mfui-text-with-icon__item"
+        key="0"
+      >
+        <div
+          className="mfui-text-with-icon__svg-icon"
+        >
+          <test-file-stub
+            style={
+              Object {
+                "fill": "#00B956",
+              }
+            }
+          />
+        </div>
+        <div
+          className="mfui-text-with-icon__text"
+        >
+          Привлечение новых клиентов и повышение лояльности действующих
+        </div>
+      </div>
+      <div
+        className="mfui-text-with-icon__item"
+        key="1"
+      >
+        <div
+          className="mfui-text-with-icon__svg-icon"
+        >
+          <test-file-stub
+            style={
+              Object {
+                "fill": "#00B956",
+              }
+            }
+          />
+        </div>
+        <div
+          className="mfui-text-with-icon__text"
+        >
+          Специальные предложения для ваших клиентов
+        </div>
+      </div>
+      <div
+        className="mfui-text-with-icon__item"
+        key="2"
+      >
+        <div
+          className="mfui-text-with-icon__svg-icon"
+        >
+          <test-file-stub
+            style={
+              Object {
+                "fill": "#00B956",
+              }
+            }
+          />
+        </div>
+        <div
+          className="mfui-text-with-icon__text"
+        >
+          Понятная и простая реализация партнерства
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<TextWithIcon /> should render with required props 1`] = `
+<div
+  className="mfui-text-with-icon"
+>
+  <Grid>
+    <GridColumn
+      desktop="6"
+      mobile="12"
+      tablet="7"
+      wide="6"
+    >
+      <div
+        className="mfui-text-with-icon__item"
+        key="0"
+      >
+        <div
+          className="mfui-text-with-icon__svg-icon"
+        >
+          <test-file-stub
+            style={
+              Object {
+                "fill": "#00B956",
+              }
+            }
+          />
+        </div>
+        <div
+          className="mfui-text-with-icon__text"
+        >
+          Привлечение новых клиентов и повышение лояльности действующих
+        </div>
+      </div>
+      <div
+        className="mfui-text-with-icon__item"
+        key="1"
+      >
+        <div
+          className="mfui-text-with-icon__svg-icon"
+        >
+          <test-file-stub
+            style={
+              Object {
+                "fill": "#00B956",
+              }
+            }
+          />
+        </div>
+        <div
+          className="mfui-text-with-icon__text"
+        >
+          Специальные предложения для ваших клиентов
+        </div>
+      </div>
+      <div
+        className="mfui-text-with-icon__item"
+        key="2"
+      >
+        <div
+          className="mfui-text-with-icon__svg-icon"
+        >
+          <test-file-stub
+            style={
+              Object {
+                "fill": "#00B956",
+              }
+            }
+          />
+        </div>
+        <div
+          className="mfui-text-with-icon__text"
+        >
+          Понятная и простая реализация партнерства
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;

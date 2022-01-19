@@ -1,0 +1,32 @@
+import { Playground } from 'docz';
+import { items } from './TextWithIcon.docz.tsx';
+import TextWithIcon from '../TextWithIcon';
+
+```javascript collapse=Демо данные
+export const items = [
+    {
+        text: 'Привлечение новых клиентов и повышение лояльности действующих',
+        icon: <Heart style={{ fill: '#00B956' }} />,
+    },
+    {
+        text: 'Специальные предложения для ваших клиентов',
+        icon: <Star style={{ fill: '#00B956' }} />,
+    },
+    {
+        text: 'Понятная и простая реализация партнерства',
+        icon: <Like style={{ fill: '#00B956' }} />,
+    },
+];
+```
+
+## Использование по умолчанию
+
+<Playground>
+    <TextWithIcon items={items} />
+</Playground>
+
+## С заголовком
+
+<Playground>
+    <TextWithIcon items={items} title="Преимущества" />
+</Playground>
