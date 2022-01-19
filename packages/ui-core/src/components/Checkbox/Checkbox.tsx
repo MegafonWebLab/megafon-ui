@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     AccessibilityEventType,
     checkEventIsClickOrEnterPress,
@@ -39,101 +39,106 @@ export interface ICheckboxProps extends IFilterDataAttrs {
     extraContent?: JSX.Element[] | Element[] | JSX.Element | Element | string;
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
     /** Обработчик изменения значения */
-    onChange?: (e: React.ChangeEvent<HTMLInputElement> | AccessibilityEventType) => void;
+    onChange?: (checked: boolean) => void;
 }
 
 const cn = cnCreate('mfui-checkbox');
-class Checkbox extends React.Component<ICheckboxProps> {
-    static propTypes = {
-        className: PropTypes.string,
-        fontSize: PropTypes.oneOf(['regular', 'small']),
-        color: PropTypes.oneOf(['dark', 'light']),
-        name: PropTypes.string,
-        value: PropTypes.string,
-        checked: PropTypes.bool,
-        disabled: PropTypes.bool,
-        error: PropTypes.bool,
-        children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
-        extraContent: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element, PropTypes.string]),
-        dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
-        onChange: PropTypes.func,
-    };
+const Checkbox: React.FC<ICheckboxProps> = ({
+    className,
+    fontSize = 'regular',
+    name,
+    color = 'dark',
+    value,
+    checked = false,
+    disabled,
+    error,
+    children,
+    extraContent,
+    dataAttrs,
+    classes,
+    onChange,
+}) => {
+    const isTouch: boolean = detectTouch();
 
-    static defaultProps: Partial<ICheckboxProps> = {
-        color: 'dark',
-        fontSize: 'regular',
-        checked: false,
-    };
+    const [isChecked, setIsChecked] = useState(checked);
 
-    isTouch: boolean = detectTouch();
+    useEffect(() => {
+        setIsChecked(isChecked);
+    }, [isChecked]);
 
-    handleChange = (e: React.ChangeEvent<HTMLInputElement> | AccessibilityEventType): void => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement> | AccessibilityEventType): void => {
         if (checkEventIsClickOrEnterPress(e) || e.type === CHANGE_KEY) {
-            const { onChange } = this.props;
-            onChange?.(e);
+            setIsChecked(!isChecked);
+            onChange?.(!isChecked);
         }
     };
 
-    render(): JSX.Element {
-        const {
-            className,
-            fontSize,
-            name,
-            color,
-            value,
-            checked,
-            disabled,
-            error,
-            children,
-            extraContent,
-            dataAttrs,
-            classes,
-        } = this.props;
-
-        return (
-            <div
-                className={cn(
-                    '',
-                    {
-                        'font-size': fontSize,
-                        color,
-                        checked,
-                        disabled,
-                        error,
-                    },
-                    className,
-                )}
-                {...filterDataAttrs(dataAttrs)}
-            >
-                <div className={cn('inner', [classes?.inner])}>
-                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                    <label className={cn('label', { 'no-touch': !this.isTouch })}>
-                        <input
-                            className={cn('input')}
-                            type="checkbox"
-                            tabIndex={-1}
-                            name={name}
-                            value={value}
-                            checked={checked}
-                            onChange={this.handleChange}
-                            disabled={disabled}
-                        />
-                        <div
-                            tabIndex={0}
-                            role="checkbox"
-                            aria-checked={checked}
-                            className={cn('custom-input', [classes?.icon])}
-                            onKeyDown={this.handleChange}
-                        >
-                            <CheckedIcon className={cn('icon')} />
-                        </div>
-                        {children}
-                    </label>
-                    {extraContent && <span className={cn('extra-content')}>{extraContent}</span>}
-                </div>
+    return (
+        <div
+            className={cn(
+                '',
+                {
+                    'font-size': fontSize,
+                    color,
+                    checked: isChecked,
+                    disabled,
+                    error,
+                },
+                className,
+            )}
+            {...filterDataAttrs(dataAttrs)}
+        >
+            <div className={cn('inner', [classes?.inner])}>
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                <label className={cn('label', { 'no-touch': !isTouch })}>
+                    <input
+                        className={cn('input')}
+                        type="checkbox"
+                        tabIndex={-1}
+                        name={name}
+                        value={value}
+                        checked={isChecked}
+                        onChange={handleChange}
+                        disabled={disabled}
+                    />
+                    <div
+                        tabIndex={0}
+                        role="checkbox"
+                        aria-checked={isChecked}
+                        className={cn('custom-input', [classes?.icon])}
+                        onKeyDown={handleChange}
+                    >
+                        <CheckedIcon className={cn('icon')} />
+                    </div>
+                    {children}
+                </label>
+                {extraContent && <span className={cn('extra-content')}>{extraContent}</span>}
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
+
+Checkbox.propTypes = {
+    className: PropTypes.string,
+    fontSize: PropTypes.oneOf(['regular', 'small']),
+    color: PropTypes.oneOf(['dark', 'light']),
+    name: PropTypes.string,
+    value: PropTypes.string,
+    checked: PropTypes.bool,
+    disabled: PropTypes.bool,
+    error: PropTypes.bool,
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element.isRequired),
+        PropTypes.element,
+        PropTypes.string,
+    ]).isRequired,
+    extraContent: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.element.isRequired),
+        PropTypes.element,
+        PropTypes.string,
+    ]),
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    onChange: PropTypes.func,
+};
 
 export default Checkbox;
