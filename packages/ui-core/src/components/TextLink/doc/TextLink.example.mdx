@@ -2,5 +2,28 @@ import { Playground } from 'docz';
 import TextLink from '../TextLink';
 
 <Playground>
-    <TextLink href="https://google.com">Google</TextLink>
+    <div>
+        <TextLink href="#">Синяя (по умолчанию)</TextLink>
+    </div>
+    <div>
+        <TextLink href="#" color="green">Green</TextLink>
+    </div>
+    <div style={{ background: '#333333' }}>
+        <TextLink href="#" color="white">White</TextLink>
+    </div>
+    <div style={{ background: '#ffffff' }}>
+        <TextLink href="#" color="black">Black</TextLink>
+    </div>
+    <div>
+        <TextLink href="#" color="gray">Gray</TextLink>
+    </div>
+    <div style={{ color: 'red' }} >
+        <TextLink href="#" color="inherit">Inherit</TextLink>
+    </div>
+    <div>
+        <TextLink href="#" underlineVisibility="always">Solid underline</TextLink>
+    </div>
+    <div>
+        <TextLink href="#" underlineVisibility="always" underlineStyle="dashed">Dashed underline</TextLink>
+    </div>
 </Playground>

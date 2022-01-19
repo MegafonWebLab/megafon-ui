@@ -5,7 +5,7 @@
 @{b} {
     .fontFamily();
     .commonFont();
-    color: @content;
+    color: var(--content);
 
     &__field {
         .fontFamily();
@@ -44,15 +44,15 @@
     }
 
     input::-webkit-input-placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     input:-moz-placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     input:-ms-input-placeholder {
-        color: @contentLighten50;
+        color: var(--spbSky3);
     }
 
     input::-ms-clear,
@@ -65,7 +65,7 @@
 
         flex: 1 0 100px;
 
-        background: @base;
+        background: var(--base);
     }
 
     &__icon-box {
@@ -82,6 +82,8 @@
         padding-right: 16px;
 
         text-align: center;
+
+        fill: var(--content);
     }
 
     &__icon-box_error,
@@ -108,7 +110,7 @@
     &__require-mark {
         margin-left: 1px;
 
-        color: @fury;
+        color: var(--fury);
         font-size: 20px;
         line-height: 0;
     }
@@ -126,7 +128,7 @@
     }
 
     &__counter_error {
-        color: @fury;
+        color: var(--fury);
 
         opacity: 1;
     }
@@ -135,91 +137,91 @@
 
     &_theme_default & {
         &__field {
-            border: 1px solid @spbSky2;
+            border: 1px solid var(--spbSky2);
 
-            color: @content;
+            color: var(--content);
 
             background-color: transparent;
         }
 
         &__field-wrapper_no-touch:hover @{b}__field,
         &__field:focus {
-            border-color: @content;
+            border-color: var(--content);
         }
     }
 
     &_theme_default&_valid & {
         &__field-wrapper_no-touch:hover @{b}__field,
         &__field {
-            border-color: @green;
+            border-color: var(--green);
         }
 
         &__icon {
-            fill: @green;
+            fill: var(--green);
         }
     }
 
     &_theme_default&_error & {
         &__field-wrapper:hover @{b}__field,
         &__field {
-            border-color: @fury;
+            border-color: var(--fury);
         }
 
         &__icon {
-            fill: @fury;
+            fill: var(--fury);
         }
 
         &__text_error {
-            color: @fury;
+            color: var(--fury);
         }
     }
 
     &_theme_white & {
         &__field {
-            border: 1px solid @base;
+            border: 1px solid var(--base);
 
-            color: @content;
+            color: var(--content);
         }
 
         &__field-wrapper:hover @{b}__field,
         &__field:focus {
-            border-color: @content;
+            border-color: var(--content);
         }
     }
 
     &_theme_white&_error & {
         &__field-wrapper:hover @{b}__field,
         &__field {
-            border-color: @fury;
+            border-color: var(--fury);
         }
 
         &__icon {
-            fill: @fury;
+            fill: var(--fury);
         }
 
         &__text_error {
-            color: @fury;
+            color: var(--fury);
         }
     }
 
     &__text_success {
-        color: @green;
+        color: var(--green);
     }
 
     //mod disabled
 
     &_disabled & {
         &__field-wrapper {
-            background-color: @spbSky1 !important;
+            background-color: var(--spbSky1) !important;
         }
 
         &__field {
-            border-color: @spbSky1 !important;
+            border-color: var(--spbSky1) !important;
 
-            color: @content !important;
+            color: var(--content) !important;
 
             cursor: default !important;
-            -webkit-text-fill-color: @content !important;
+            -webkit-text-fill-color: var(--content) !important;
         }
 
         &__icon-box {

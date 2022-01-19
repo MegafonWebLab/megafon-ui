@@ -45,7 +45,5 @@ describe('<Paragraph />', () => {
         expect(wrapper).toMatchSnapshot();
         wrapper.setProps({ color: 'content' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'fullBlack' });
-        expect(wrapper).toMatchSnapshot();
     });
 });

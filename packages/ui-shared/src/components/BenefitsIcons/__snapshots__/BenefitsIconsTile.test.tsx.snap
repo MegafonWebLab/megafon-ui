@@ -15,7 +15,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile 1`] = `
     <Header
       as="h5"
       className="mfui-benefits-icons-tile__title"
-      color="black"
+      color="default"
       hAlign="inherit"
     >
       title
@@ -44,7 +44,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile with react node in text
     <Header
       as="h5"
       className="mfui-benefits-icons-tile__title"
-      color="black"
+      color="default"
       hAlign="inherit"
     >
       title
@@ -77,7 +77,7 @@ exports[`<BenefitsIconsTile /> renders BenefitsIconsTile without text 1`] = `
     <Header
       as="h5"
       className="mfui-benefits-icons-tile__title"
-      color="black"
+      color="default"
       hAlign="inherit"
     >
       title

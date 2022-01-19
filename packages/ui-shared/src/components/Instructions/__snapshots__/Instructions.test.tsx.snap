@@ -13,7 +13,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
       <Header
         as="h2"
         className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         Test instruction title
@@ -64,7 +64,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
           <Header
             as="h2"
             className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-            color="black"
+            color="default"
             hAlign="inherit"
           >
             Test instruction title
@@ -176,7 +176,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
       <Header
         as="h2"
         className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         Test instruction title
@@ -227,7 +227,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
           <Header
             as="h2"
             className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-            color="black"
+            color="default"
             hAlign="inherit"
           >
             Test instruction title
@@ -339,7 +339,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
       <Header
         as="h2"
         className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         Test instruction title
@@ -397,7 +397,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
           <Header
             as="h2"
             className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-            color="black"
+            color="default"
             hAlign="inherit"
           >
             Test instruction title
@@ -509,7 +509,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
       <Header
         as="h2"
         className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         Test instruction title
@@ -567,7 +567,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
           <Header
             as="h2"
             className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-            color="black"
+            color="default"
             hAlign="inherit"
           >
             Test instruction title
@@ -679,7 +679,7 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
       <Header
         as="h2"
         className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         Test instruction title
@@ -730,7 +730,7 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
           <Header
             as="h2"
             className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-            color="black"
+            color="default"
             hAlign="inherit"
           >
             Test instruction title
@@ -870,11 +870,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
               <Header
                 as="h2"
                 className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-                color="black"
+                color="default"
                 hAlign="inherit"
               >
                 <h2
-                  className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
+                  className="mfui-header mfui-header_color_default mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 >
                   Test instruction title
                 </h2>
@@ -2363,11 +2363,11 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                   <Header
                     as="h2"
                     className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-                    color="black"
+                    color="default"
                     hAlign="inherit"
                   >
                     <h2
-                      className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
+                      className="mfui-header mfui-header_color_default mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     >
                       Test instruction title
                     </h2>
@@ -2511,11 +2511,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
               <Header
                 as="h2"
                 className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-                color="black"
+                color="default"
                 hAlign="inherit"
               >
                 <h2
-                  className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
+                  className="mfui-header mfui-header_color_default mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 >
                   Test instruction title
                 </h2>
@@ -4004,11 +4004,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                   <Header
                     as="h2"
                     className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-                    color="black"
+                    color="default"
                     hAlign="inherit"
                   >
                     <h2
-                      className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
+                      className="mfui-header mfui-header_color_default mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     >
                       Test instruction title
                     </h2>
@@ -4152,11 +4152,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
               <Header
                 as="h2"
                 className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-                color="black"
+                color="default"
                 hAlign="inherit"
               >
                 <h2
-                  className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
+                  className="mfui-header mfui-header_color_default mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_mobile"
                 >
                   Test instruction title
                 </h2>
@@ -5645,11 +5645,11 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                   <Header
                     as="h2"
                     className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-                    color="black"
+                    color="default"
                     hAlign="inherit"
                   >
                     <h2
-                      className="mfui-header mfui-header_color_black mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
+                      className="mfui-header mfui-header_color_default mfui-header_level_h2 mfui-header_h-align_inherit mfui-instructions__title mfui-instructions__title_resolution_desktop"
                     >
                       Test instruction title
                     </h2>
@@ -5765,7 +5765,7 @@ exports[`<Instructions /> should render component with additional text 1`] = `
       <Header
         as="h2"
         className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         Test instruction title
@@ -5816,7 +5816,7 @@ exports[`<Instructions /> should render component with additional text 1`] = `
           <Header
             as="h2"
             className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-            color="black"
+            color="default"
             hAlign="inherit"
           >
             Test instruction title
@@ -5934,7 +5934,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
       <Header
         as="h2"
         className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
-        color="black"
+        color="default"
         hAlign="inherit"
       >
         Test instruction title
@@ -5985,7 +5985,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
           <Header
             as="h2"
             className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
-            color="black"
+            color="default"
             hAlign="inherit"
           >
             Test instruction title

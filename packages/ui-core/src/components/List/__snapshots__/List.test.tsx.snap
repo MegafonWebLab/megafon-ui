@@ -2,7 +2,7 @@
 
 exports[`<List /> it renders List 1`] = `
 <ul
-  className="mfui-list mfui-list_color_black mfui-list_weight_regular mfui-list_type_ul"
+  className="mfui-list mfui-list_color_default mfui-list_weight_regular mfui-list_type_ul"
 >
   <ListItem />
 </ul>
@@ -10,7 +10,7 @@ exports[`<List /> it renders List 1`] = `
 
 exports[`<List /> it renders List with type ol 1`] = `
 <ol
-  className="mfui-list mfui-list_color_black mfui-list_weight_regular mfui-list_type_ol"
+  className="mfui-list mfui-list_color_default mfui-list_weight_regular mfui-list_type_ol"
 >
   <ListItem />
 </ol>
@@ -18,7 +18,7 @@ exports[`<List /> it renders List with type ol 1`] = `
 
 exports[`<List /> it renders List with type ul 1`] = `
 <ul
-  className="mfui-list mfui-list_color_black mfui-list_weight_regular mfui-list_type_ul"
+  className="mfui-list mfui-list_color_default mfui-list_weight_regular mfui-list_type_ul"
 >
   <ListItem />
 </ul>

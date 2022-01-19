@@ -8,7 +8,6 @@
     @firstColumnWidth: 144px;
     @gradientSize: 48px;
     @shadowSize: 6px;
-    @transparent: rgba(255, 255, 255, 0);
     .fontFamily();
     .commonFont();
 
@@ -19,21 +18,21 @@
         }
 
         ::-webkit-scrollbar-track {
-            background-color: @spbSky1;
+            background-color: var(--spbSky1);
         }
 
         ::-webkit-scrollbar-thumb {
             border-radius: 4px;
 
-            background-color: @spbSky2;
+            background-color: var(--spbSky2);
         }
 
         ::-webkit-scrollbar-corner {
-            background-color: @base;
+            background-color: var(--base);
         }
 
         @{b}__scroll {
-            scrollbar-color: @spbSky2 @spbSky1;
+            scrollbar-color: var(--spbSky2) var(--spbSky1);
             scrollbar-width: thin;
         }
     }
@@ -44,7 +43,7 @@
         display: grid;
         grid-template-columns: auto auto auto;
         max-width: 100%;
-        border: 1px solid @spbSky2;
+        border: 1px solid var(--spbSky2);
         overflow: auto;
 
         @media @desktop {
@@ -92,7 +91,7 @@
         height: @gradientSize;
         margin-top: -@gradientSize;
 
-        background: linear-gradient(to top, @base 25%, @transparent);
+        background: linear-gradient(to top, var(--base) 25%, rgba(255, 255, 255, 0));
     }
 
     &__right-gradient {
@@ -105,7 +104,7 @@
         height: 100%;
         margin-left: -@gradientSize;
 
-        background: linear-gradient(to left, @base 25%, @transparent);
+        background: linear-gradient(to left, var(--base) 25%, rgba(255, 255, 255, 0));
     }
 
     &__table {
@@ -113,14 +112,14 @@
         border-collapse: separate;
         border-spacing: 0;
 
-        background-color: @base;
+        background-color: var(--base);
     }
 
     &__cell {
         box-sizing: border-box;
         padding: 24px;
 
-        background-color: @base;
+        background-color: var(--base);
 
         @media @mobileSM {
             padding-right: 16px;
@@ -134,7 +133,7 @@
 
         width: @firstColumnWidth;
         min-width: @firstColumnWidth;
-        border-right: 1px solid @spbSky2;
+        border-right: 1px solid var(--spbSky2);
     }
 
     &__cell:not(:first-child) {
@@ -147,14 +146,14 @@
         height: 72px;
         padding-bottom: 12px;
 
-        color: @STCBlack50;
+        color: var(--stcBlack5);
         vertical-align: bottom;
 
-        background-color: @spbSky0;
+        background-color: var(--spbSky0);
     }
 
     &__row:not(:last-child) &__cell {
-        border-bottom: 1px solid @spbSky2;
+        border-bottom: 1px solid var(--spbSky2);
     }
 
     // mods

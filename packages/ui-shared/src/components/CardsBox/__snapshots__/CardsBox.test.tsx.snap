@@ -44,11 +44,11 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
             <Header
               as="h3"
               className="mfui-card__title"
-              color="black"
+              color="default"
               hAlign="inherit"
             >
               <h3
-                className="mfui-header mfui-header_color_black mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
+                className="mfui-header mfui-header_color_default mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
               >
                 title
               </h3>
@@ -134,11 +134,11 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
             <Header
               as="h3"
               className="mfui-card__title"
-              color="black"
+              color="default"
               hAlign="inherit"
             >
               <h3
-                className="mfui-header mfui-header_color_black mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
+                className="mfui-header mfui-header_color_default mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
               >
                 title
               </h3>
@@ -224,11 +224,11 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
             <Header
               as="h3"
               className="mfui-card__title"
-              color="black"
+              color="default"
               hAlign="inherit"
             >
               <h3
-                className="mfui-header mfui-header_color_black mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
+                className="mfui-header mfui-header_color_default mfui-header_level_h3 mfui-header_h-align_inherit mfui-card__title"
               >
                 title
               </h3>

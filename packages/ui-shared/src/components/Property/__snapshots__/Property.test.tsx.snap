@@ -29,7 +29,7 @@ exports[`<Property /> should render only title 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -83,7 +83,7 @@ exports[`<Property /> should render title and description 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -145,7 +145,7 @@ exports[`<Property /> should render title and hidden description 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -214,7 +214,7 @@ exports[`<Property /> should render title in several row 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -222,7 +222,7 @@ exports[`<Property /> should render title in several row 1`] = `
                 </Header>
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="1"
                 >
@@ -273,7 +273,7 @@ exports[`<Property /> should render with 100% width 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -336,7 +336,7 @@ exports[`<Property /> should render with badge 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -390,7 +390,7 @@ exports[`<Property /> should render with border bottom 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -445,7 +445,7 @@ exports[`<Property /> should render with custom class names 1`] = `
                 <Header
                   as="h5"
                   className="title-custom-class"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -515,7 +515,7 @@ exports[`<Property /> should render with data attribute 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -569,7 +569,7 @@ exports[`<Property /> should render with icon 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >
@@ -635,7 +635,7 @@ exports[`<Property /> should render with several descriptions 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
+                  color="default"
                   hAlign="inherit"
                   key="0"
                 >

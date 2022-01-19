@@ -19,7 +19,7 @@ exports[`<PictureWithDescription /> should render with custom classes 1`] = `
     <Header
       as="h2"
       className="mfui-picture-with-description__title title-class"
-      color="black"
+      color="default"
       hAlign="inherit"
     >
       Заголовок
@@ -102,7 +102,7 @@ exports[`<PictureWithDescription /> should render with title 1`] = `
     <Header
       as="h2"
       className="mfui-picture-with-description__title"
-      color="black"
+      color="default"
       hAlign="inherit"
     >
       Заголовок

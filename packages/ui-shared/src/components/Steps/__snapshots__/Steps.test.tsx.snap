@@ -7,7 +7,7 @@ exports[`Steps should render component 1`] = `
   <Header
     as="h2"
     className="mfui-steps__title"
-    color="black"
+    color="default"
     hAlign="center"
   >
     title

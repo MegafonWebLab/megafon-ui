@@ -3,19 +3,19 @@
 @b: e('.mfui-accordion');
 
 @{b} {
-    border-top: 1px solid @spbSky2;
-    border-bottom: 1px solid @spbSky2;
+    border-top: 1px solid var(--spbSky2);
+    border-bottom: 1px solid var(--spbSky2);
 
     & + & {
         border-top: none;
     }
 
     &:not(&_open) &__title-wrap:hover {
-        background: rgba(237, 237, 237, 0.5);
+        background: var(--spbSky0);
     }
 
     &&_open &__title-wrap {
-        background: @spbSky1;
+        background: var(--spbSky1);
     }
 
     &__title-wrap {
@@ -43,6 +43,8 @@
 
         transform: translateY(-50%);
         opacity: 1;
+
+        fill: var(--content);
     }
 
     &__content-inner {
@@ -65,6 +67,6 @@
     }
 
     &__icon {
-        fill: @fullBlack;
+        fill: var(--content);
     }
 }

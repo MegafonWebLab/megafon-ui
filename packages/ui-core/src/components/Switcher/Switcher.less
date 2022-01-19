@@ -6,55 +6,55 @@
     top: 22px;
     right: 28px;
 
-    width: 48px;
-    height: 28px;
+    width: 40px;
+    height: 24px;
     border-radius: 15.5px;
 
-    background-color: @base;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+    background-color: var(--spbSky1);
     cursor: pointer;
 
     transition: all 0.3s;
 
     &_no-touch:hover {
-        background-color: @spbSky1;
+        background-color: var(--spbSky1);
     }
 
     &__pointer {
         position: relative;
-        top: 1px;
-        left: 0;
+        top: 2px;
+        left: 2px;
 
-        width: 24px;
-        height: 24px;
-        border: 1px solid @spbSky2;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
 
-        background-color: @base;
-        box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 3px 3px 0 rgba(0, 0, 0, 0.05);
+        background-color: var(--base);
 
         transition: all 0.3s;
     }
 
     &_checked {
-        background-color: @green;
+        background-color: var(--green);
 
         @{b}__pointer {
-            left: 22px;
+            left: 18px;
         }
     }
 
     &_checked&_no-touch:hover {
-        background-color: @buttonHoverGreen;
+        background-color: var(--buttonHoverGreen);
     }
 
     &_disabled {
-        background-color: @spbSky1;
+        background-color: var(--spbSky1);
         cursor: default;
     }
 
-    &_checked&_disabled,
-    &_checked&_disabled&_no-touch:hover {
-        background-color: @spbSky2;
+    &_disabled&_checked&_no-touch&:hover {
+        background-color: var(--spbSky1);
+    }
+
+    &_disabled &__pointer {
+        background-color: var(--spbSky2);
     }
 }
