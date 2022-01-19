@@ -22,7 +22,8 @@
 @k19: e('.mfui-button-banner');
 @k20: e('.mfui-steps');
 @k21: e('.mfui-page-title');
-@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19, @k20, @k21;
+@k23: e('.mfui-text-with-icon');
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19, @k20, @k21, @k23;
 
 @color-modificator: e('&_bg-color_');
 @color-default: e('default');
@@ -32,6 +33,7 @@
 @color-purple: e('purple');
 @colors: @color-default, @color-light-gray, @color-gray, @color-green, @color-purple;
 
+@smallest: 24px;
 @small: 32px;
 @medium: 40px;
 @big: 48px;
@@ -344,6 +346,7 @@
 
     .generateComponentsMargins(@large, @k16, 3, 20);
     .generateComponentsMargins(@small, @k16, 14, 15);
+    .generateComponentsMargins(@smallest, @k16, 23, 23);
 
     @media @mobileB {
         .generateComponentsMargins(@big, @k16, 3, 20);
@@ -415,6 +418,23 @@
 
     @{k21} + @{k14} {
         .disableMarginTop();
+    }
+
+    // k23(text-with-icon)
+    .generateComponentsMargins(@medium, @k23, 4, 15);
+    .generateComponentsMargins(@smallest, @k23, 16, 16);
+    .generateComponentsMargins(@medium, @k23, 17, 20);
+
+    @media @mobileB {
+        .generateComponentsMargins(@big, @k23, 4, 15);
+        .generateComponentsMargins(@smallest, @k23, 16, 16);
+        .generateComponentsMargins(@big, @k23, 17, 20);
+    }
+    @media @desktop {
+        .generateComponentsMargins(@large, @k23, 4, 13);
+        .generateComponentsMargins(@big, @k23, 14, 15);
+        .generateComponentsMargins(@smallest, @k23, 16, 16);
+        .generateComponentsMargins(@large, @k23, 17, 20);
     }
 
     &_disable-padding-top {
