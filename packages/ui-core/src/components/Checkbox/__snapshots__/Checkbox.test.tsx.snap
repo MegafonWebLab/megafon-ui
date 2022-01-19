@@ -138,6 +138,7 @@ exports[`<Checkbox /> layout renders with classes 1`] = `
           className="mfui-checkbox__icon"
         />
       </div>
+      Тестовая строка
     </label>
   </div>
 </div>
@@ -172,6 +173,7 @@ exports[`<Checkbox /> layout renders with data attrs 1`] = `
           className="mfui-checkbox__icon"
         />
       </div>
+      Тестовая строка
     </label>
   </div>
 </div>
