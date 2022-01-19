@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-core",
-  "version": "2.2.0",
+  "version": "3.0.0-beta.0",
   "files": [
     "dist",
     "styles"
@@ -53,7 +53,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@megafon/ui-icons": "^0.1.1",
+    "@megafon/ui-icons": "^1.0.0-beta.0",
     "@svgr/core": "^2.4.1",
     "@testing-library/react-hooks": "^7.0.1",
     "@types/enzyme": "^3.10.5",
@@ -85,7 +85,7 @@
   "dependencies": {
     "@babel/runtime": "^7.8.4",
     "@datepicker-react/hooks": "^2.7.0",
-    "@megafon/ui-helpers": "^1.0.0",
+    "@megafon/ui-helpers": "^2.0.0-beta.0",
     "@popperjs/core": "^2.5.3",
     "core-js": "^3.6.4",
     "date-fns": "^2.16.1",

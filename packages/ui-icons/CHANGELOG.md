@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.1.1...@megafon/ui-icons@1.0.0-beta.0) (2022-01-19)
+
+
+### Features
+
+* **colors:** css custom properties and color themes support ([b19a9a5](https://github.com/MegafonWebLab/megafon-ui/commit/b19a9a5112ebc7427d60f6514d606dd9d71ca444))
+
+
+### BREAKING CHANGES
+
+* **colors:** read commit description
+
+
+
+
+
 ## [0.1.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.1.0...@megafon/ui-icons@0.1.1) (2021-12-13)
 
 **Note:** Version bump only for package @megafon/ui-icons
