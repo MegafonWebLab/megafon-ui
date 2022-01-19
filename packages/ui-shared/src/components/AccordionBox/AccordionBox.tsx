@@ -30,7 +30,7 @@ export interface IAccordionBox {
         titleWrap?: string;
     };
     /** Обработчик клика */
-    onClickAccordion?: (isOpened: boolean, title: string) => void;
+    onClickAccordion?: (isOpened: boolean) => void;
 }
 
 const cn = cnCreate('mfui-accordion-box');
