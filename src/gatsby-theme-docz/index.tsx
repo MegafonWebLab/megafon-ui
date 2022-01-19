@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.less";
 import { theme, ComponentsProvider } from "docz";
 import Code from "./components/Code";
 import CopyToClipboardBox from "./components/CopyToClipboardBox";
@@ -10,6 +9,8 @@ import Props from "./components/Props";
 import { td, th, table } from "./components/Table";
 import { DoczTabs } from "./components/Tabs";
 import loadFonts from "./loadFonts";
+import "@megafon/ui-core/styles/base.less";
+import "./index.less";
 
 const map = {
     h1,
