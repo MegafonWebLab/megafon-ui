@@ -42,25 +42,19 @@ npm install @megafon/ui-icons@beta
 npm install @megafon/ui-helpers@beta
 ```
 
-For local development require:
+UI components from `@megafon/ui-core` and `@megafon/ui-shared` packages require CSS custom properties available in
+global scope.
 
-1. External system dependencies — `node 12+` and `yarn`.
-2. Install dependencies.
+Add import of those properties in your project:
 
-```bash
-yarn install
+```ts
+import "@megafon/ui-core/styles/base.css";
 ```
 
-3. Run documentation:
+or
 
-```bash
-yarn run demo
-```
-
-## Build all packages
-
-```bash
-yarn run build
+```ts
+import "@megafon/ui-core/styles/base.less";
 ```
 
 ## Contributing
