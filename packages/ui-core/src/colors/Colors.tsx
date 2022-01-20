@@ -135,12 +135,7 @@ const Colors = () => {
             </Header>
             <Paragraph>Палитра цветов, используемая в продуктах МегаФон</Paragraph>
 
-            <div
-                className={cn('inner', {
-                    light: currentTheme === 'light',
-                    dark: currentTheme === 'dark',
-                })}
-            >
+            <div className={cn('inner')}>
                 <div className={cn('container')}>
                     {renderBasicColors()}
                     <Grid hAlign="between">
