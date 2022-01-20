@@ -20,7 +20,7 @@ const libPath = path.join(dist, 'lib');
 const srcPath = path.join(__dirname, 'src');
 const indexTs = path.join(srcPath, 'index.ts');
 const baseLessSrc = path.join(srcPath, 'styles', 'base.less');
-const baseLessPackagePath = path.join(__dirname, 'styles');
+const basePackagePath = path.join(__dirname, 'styles');
 
 const doczReg = 'src/**/*.docz.{tsx,ts}';
 const testsReg = 'src/**/*.test.{tsx,ts}';
@@ -76,19 +76,20 @@ gulp.task('clean', () => del(['dist', 'styles']));
 gulp.task('clean:index', () => del('src/index.ts'));
 
 gulp.task('less:compile', () => {
-    return gulp.src('src/**/*.less')
+    return gulp.src(['src/**/*.less', `!${baseLessSrc}`])
         .pipe(replaceContent(/\~styles/g, 'styles'))
         .pipe(gulpLess(lessConfig))
         .pipe(dest(esPath))
         .pipe(dest(libPath));
 });
 
-gulp.task('less:copy-base', function() {
-    return gulp.src(baseLessSrc)
-        .pipe(dest(baseLessPackagePath));
-});
+gulp.task('less:process-base', () => gulp.src(baseLessSrc)
+    .pipe(dest(basePackagePath))
+    .pipe(gulpLess(lessConfig))
+    .pipe(dest(basePackagePath)),
+);
 
-gulp.task('less', gulp.series('less:compile', 'less:copy-base'));
+gulp.task('less', gulp.series('less:compile', 'less:process-base'));
 
 gulp.task('ts', () => {
     const result = gulp.src([
