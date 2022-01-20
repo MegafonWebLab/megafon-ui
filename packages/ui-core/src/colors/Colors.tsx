@@ -14,7 +14,7 @@ const { basic, secondary, system, gradientColors, staticColors, staticOpacity, s
 
 const cn = cnCreate('colors');
 const Colors = () => {
-    const [currentTheme, setCurrentTheme] = React.useState<'light' | 'dark'>(
+    const [, setCurrentTheme] = React.useState<'light' | 'dark'>(
         window.localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
     );
 
