@@ -12,11 +12,6 @@ type Props = {
     className?: string;
 };
 
-const getColorValue = colorCode => {
-    console.log(`--${colorCode}`, document.documentElement.style.getPropertyValue(`--${colorCode}`));
-    return document.documentElement.style.getPropertyValue(`--${colorCode}`);
-};
-
 const cn = cnCreate('color-item');
 const ColorItem: React.FC<Props> = ({ colorCode, colorName, parentColorCode, gradient, border, className }) => (
     <div className={cn([className])}>
