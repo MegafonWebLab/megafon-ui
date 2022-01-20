@@ -15,8 +15,6 @@ export interface IAccordionProps {
     title: string | React.ReactNode | React.ReactNode[];
     /** Состояние открытости */
     isOpened?: boolean;
-    /** Вертикальные отступы */
-    hasVerticalPaddings?: boolean;
     /** Дополнительный класс для корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -44,7 +42,6 @@ const Accordion: React.FC<IAccordionProps> = ({
     rootRef,
     title,
     isOpened = false,
-    hasVerticalPaddings = false,
     className,
     classes: {
         openedClass,
@@ -98,7 +95,7 @@ const Accordion: React.FC<IAccordionProps> = ({
             <Collapse
                 {...filterDataAttrs(dataAttrs?.collapse)}
                 className={cn('content', collapsePropsClasses)}
-                classNameContainer={cn('content-inner', { 'v-padding': hasVerticalPaddings })}
+                classNameContainer={cn('content-inner')}
                 isOpened={isOpenedState}
             >
                 {children}
@@ -114,7 +111,6 @@ Accordion.propTypes = {
     ]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     isOpened: PropTypes.bool,
-    hasVerticalPaddings: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         openedClass: PropTypes.string,
