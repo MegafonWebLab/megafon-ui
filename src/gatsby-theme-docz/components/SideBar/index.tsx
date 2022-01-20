@@ -51,7 +51,10 @@ const SideBar: React.FC = () => {
             <div className={cn("menu")}>
                 <Menu />
             </div>
-            <div className={cn("theme-switcher")}>
+            <div
+                className={cn("theme-switcher")}
+                data-current-theme={themeContext.theme}
+            >
                 <LightbulbIcon onClick={toggleTheme} />
             </div>
         </div>

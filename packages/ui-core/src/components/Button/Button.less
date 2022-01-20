@@ -1,15 +1,4 @@
-@import '~styles/base.less';
-
-:root {
-    --green7: rgba(0, 185, 86, 0.07);
-    --green14: rgba(0, 185, 86, 0.14);
-    --purple7: rgba(115, 25, 130, 0.07);
-    --purple14: rgba(115, 25, 130, 0.14);
-    --content7: rgba(51, 51, 51, 0.07);
-    --content14: rgba(51, 51, 51, 0.14);
-    --base7: rgba(255, 255, 255, 0.07);
-    --base14: rgba(255, 255, 255, 0.14);
-}
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-button');
 
@@ -106,7 +95,7 @@
     &_type_primary&_theme_green {
         color: var(--stcWhite);
 
-        background-color: var(--green);
+        background-color: var(--brandGreen);
 
         svg {
             fill: var(--stcWhite);
@@ -131,7 +120,7 @@
     &_type_primary&_theme_purple {
         color: var(--stcWhite);
 
-        background-color: var(--purple);
+        background-color: var(--brandPurple);
 
         svg {
             fill: var(--stcWhite);
@@ -185,23 +174,26 @@
     // theme = green
 
     &_type_outline&_theme_green {
-        color: var(--green);
+        color: var(--brandGreen);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--green);
+        box-shadow: inset 0 0 0 1px var(--brandGreen);
 
         svg {
-            fill: var(--green);
+            fill: var(--brandGreen);
         }
     }
 
     &_no-touch&_type_outline&_theme_green {
+        --brandGreen7: rgba(0, 185, 86, 0.07);
+        --brandGreen14: rgba(0, 185, 86, 0.14);
+
         &:not(@{b}_loading):hover {
-            background-color: var(--green7);
+            background-color: var(--brandGreen7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: var(--green14);
+            background-color: var(--brandGreen14);
         }
     }
 
@@ -209,23 +201,26 @@
     // theme = purple
 
     &_type_outline&_theme_purple {
-        color: var(--purple);
+        color: var(--brandPurple);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--purple);
+        box-shadow: inset 0 0 0 1px var(--brandPurple);
 
         svg {
-            fill: var(--purple);
+            fill: var(--brandPurple);
         }
     }
 
     &_no-touch&_type_outline&_theme_purple {
+        --brandPurple7: rgba(115, 25, 130, 0.07);
+        --brandPurple14: rgba(115, 25, 130, 0.14);
+
         &:not(@{b}_loading):hover {
-            background-color: var(--purple7);
+            background-color: var(--brandPurple7);
         }
 
         &:not(@{b}_loading):active {
-            background-color: var(--purple14);
+            background-color: var(--brandPurple14);
         }
     }
 
@@ -244,6 +239,9 @@
     }
 
     &_no-touch&_type_outline&_theme_white {
+        --base7: rgba(255, 255, 255, 0.07);
+        --base14: rgba(255, 255, 255, 0.14);
+
         &:not(@{b}_loading):hover {
             background-color: var(--base7);
         }
@@ -268,6 +266,9 @@
     }
 
     &_no-touch&_type_outline&_theme_black {
+        --content7: rgba(51, 51, 51, 0.07);
+        --content14: rgba(51, 51, 51, 0.14);
+
         &:not(@{b}_loading):hover {
             background-color: var(--content7);
         }

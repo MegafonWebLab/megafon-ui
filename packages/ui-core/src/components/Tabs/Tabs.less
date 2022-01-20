@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-tabs');
 @swiperWrapper: e('.swiper-wrapper');
@@ -88,16 +88,16 @@
         fill: var(--content);
 
         &:hover {
-            color: var(--green);
+            color: var(--brandGreen);
 
-            fill: var(--green);
+            fill: var(--brandGreen);
         }
     }
 
     &__tab-inner_current {
-        color: var(--green);
+        color: var(--brandGreen);
 
-        fill: var(--green);
+        fill: var(--brandGreen);
     }
 
     &__tab-icon {
@@ -129,7 +129,7 @@
 
         height: 2px;
 
-        background-color: var(--green);
+        background-color: var(--brandGreen);
 
         transition-duration: 0.3s;
     }
@@ -288,13 +288,13 @@
             &:before {
                 left: 0;
 
-                background: linear-gradient(to right, var(--green), transparent);
+                background: linear-gradient(to right, var(--brandGreen), transparent);
             }
 
             &:after {
                 right: 0;
 
-                background: linear-gradient(to left, var(--green), transparent);
+                background: linear-gradient(to left, var(--brandGreen), transparent);
             }
         }
 
@@ -327,7 +327,7 @@
         @{b}__arrow {
             background-color: var(--stcWhite);
 
-            fill: var(--green);
+            fill: var(--brandGreen);
         }
     }
 }

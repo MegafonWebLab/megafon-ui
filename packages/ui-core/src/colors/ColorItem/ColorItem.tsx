@@ -27,7 +27,7 @@ const ColorItem: React.FC<Props> = ({ colorCode, colorName, parentColorCode, gra
                 <div
                     className={cn('parent-color')}
                     style={{
-                        background: parentColorCode,
+                        background: `var(--${parentColorCode})`,
                     }}
                 />
             )}

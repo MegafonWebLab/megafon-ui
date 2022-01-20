@@ -1,8 +1,8 @@
 const COLOR_THEMES = {
     LIGHT: {
         // Basic Colors
-        green: '#00B956',
-        purple: '#731982',
+        brandGreen: '#00B956',
+        brandPurple: '#731982',
         base: '#FFFFFF',
         content: '#333333',
         spbSky0: '#F6F6F6',
@@ -44,10 +44,10 @@ const COLOR_THEMES = {
         stcBlack50: '#33333380',
 
         // Soft (new)
-        green80: '#0CDC78',
-        green20: '#DDFFEC',
-        purple80: '#AA67C1',
-        purple20: '#FFEEFF',
+        brandGreen80: '#0CDC78',
+        brandGreen20: '#DDFFEC',
+        brandPurple80: '#AA67C1',
+        brandPurple20: '#FFEEFF',
         warmRedC80: '#FF765D',
         warmRedC20: '#FFCFC7',
         '137C80': '#FFB945',
@@ -62,8 +62,8 @@ const COLOR_THEMES = {
 
     DARK: {
         // Basic Colors
-        green: '#00B956',
-        purple: '#731982',
+        brandGreen: '#00B956',
+        brandPurple: '#731982',
         base: '#333333',
         content: '#FFFFFF',
         spbSky0: '#3D3D3D',
@@ -105,10 +105,10 @@ const COLOR_THEMES = {
         stcBlack50: '#33333380',
 
         // Soft (new)
-        green80: '#0CDC78',
-        green20: '#DDFFEC',
-        purple80: '#AA67C1',
-        purple20: '#FFEEFF',
+        brandGreen80: '#0CDC78',
+        brandGreen20: '#DDFFEC',
+        brandPurple80: '#AA67C1',
+        brandPurple20: '#FFEEFF',
         warmRedC80: '#FF765D',
         warmRedC20: '#FFCFC7',
         '137C80': '#FFB945',

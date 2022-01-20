@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-preloader');
 
@@ -47,17 +47,17 @@
         }
 
         @{b}__item_first:before {
-            background-color: var(--green);
+            background-color: var(--brandGreen);
         }
 
         @{b}__item_second:before {
-            background-color: var(--green);
+            background-color: var(--brandGreen);
 
             animation-delay: 0.166s;
         }
 
         @{b}__item_third:before {
-            background-color: var(--purple);
+            background-color: var(--brandPurple);
 
             animation-delay: 0.33s;
         }

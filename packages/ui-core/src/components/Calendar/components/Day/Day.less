@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-day');
 
@@ -53,7 +53,7 @@
 
     &:not(:disabled):not(&_active):focus:after,
     &_active:after {
-        background-color: var(--green);
+        background-color: var(--brandGreen);
     }
 
     &_disabled {

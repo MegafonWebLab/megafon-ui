@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-text-field');
 
@@ -153,11 +153,11 @@
     &_theme_default&_valid & {
         &__field-wrapper_no-touch:hover @{b}__field,
         &__field {
-            border-color: var(--green);
+            border-color: var(--brandGreen);
         }
 
         &__icon {
-            fill: var(--green);
+            fill: var(--brandGreen);
         }
     }
 
@@ -205,7 +205,7 @@
     }
 
     &__text_success {
-        color: var(--green);
+        color: var(--brandGreen);
     }
 
     //mod disabled
