@@ -1,15 +1,4 @@
-@import '~styles/base.less';
-
-:root {
-    --green7: rgba(0, 185, 86, 0.07);
-    --green14: rgba(0, 185, 86, 0.14);
-    --purple7: rgba(115, 25, 130, 0.07);
-    --purple14: rgba(115, 25, 130, 0.14);
-    --content7: rgba(51, 51, 51, 0.07);
-    --content14: rgba(51, 51, 51, 0.14);
-    --base7: rgba(255, 255, 255, 0.07);
-    --base14: rgba(255, 255, 255, 0.14);
-}
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-button');
 
@@ -196,6 +185,9 @@
     }
 
     &_no-touch&_type_outline&_theme_green {
+        --green7: rgba(0, 185, 86, 0.07);
+        --green14: rgba(0, 185, 86, 0.14);
+
         &:not(@{b}_loading):hover {
             background-color: var(--green7);
         }
@@ -220,6 +212,9 @@
     }
 
     &_no-touch&_type_outline&_theme_purple {
+        --purple7: rgba(115, 25, 130, 0.07);
+        --purple14: rgba(115, 25, 130, 0.14);
+
         &:not(@{b}_loading):hover {
             background-color: var(--purple7);
         }
@@ -244,6 +239,9 @@
     }
 
     &_no-touch&_type_outline&_theme_white {
+        --base7: rgba(255, 255, 255, 0.07);
+        --base14: rgba(255, 255, 255, 0.14);
+
         &:not(@{b}_loading):hover {
             background-color: var(--base7);
         }
@@ -268,6 +266,9 @@
     }
 
     &_no-touch&_type_outline&_theme_black {
+        --content7: rgba(51, 51, 51, 0.07);
+        --content14: rgba(51, 51, 51, 0.14);
+
         &:not(@{b}_loading):hover {
             background-color: var(--content7);
         }
