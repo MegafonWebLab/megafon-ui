@@ -1,6 +1,6 @@
 import { Playground } from 'docz';
 import VideoBlock from '../VideoBlock';
-import { content, video, youtubeVideoId } from './VideoBlock.docz';
+import { content, contentWithoutButton, video, youtubeVideoId } from './VideoBlock.docz';
 
 ```javascript collapse=Демо данные
 const content: IContent = {
@@ -8,6 +8,12 @@ const content: IContent = {
     description: 'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
     href: '#',
     buttonTitle: 'Подключение',
+};
+
+const contentWithoutButton: IContent = {
+    title: 'Интернет',
+    description:
+        'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
 };
 
 Если в компоненте выбран тип видео 'youtube', то в качество источника необходимо указать id видео:
@@ -27,6 +33,15 @@ const content: IContent = {
 <Playground>
     <VideoBlock
         content={content}
+        videoSrc={video}
+    />
+</Playground>
+
+## Видео с контентом без кнопки
+
+<Playground>
+    <VideoBlock
+        content={contentWithoutButton}
         videoSrc={video}
     />
 </Playground>

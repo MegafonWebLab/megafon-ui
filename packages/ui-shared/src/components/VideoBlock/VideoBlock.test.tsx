@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import { mount, shallow } from 'enzyme';
-import VideoBlock, { VideoTypes } from './VideoBlock';
+import VideoBlock, { VideoTypes, IContent } from './VideoBlock';
 
-const content = {
+const content: IContent = {
     title: 'Test title',
     description: 'Test description',
     buttonTitle: 'Button title',
     href: '#',
+};
+
+const contentWithoutButton: IContent = {
+    title: 'Test title',
+    description: 'Test description',
 };
 
 const cn = cnCreate('mfui-video-block');
@@ -19,6 +24,11 @@ describe('<VideoBlock />', () => {
 
     it('it renders VideoBlock with content', () => {
         const component = shallow(<VideoBlock videoSrc="video.mp4" content={content} />);
+        expect(component).toMatchSnapshot();
+    });
+
+    it('it renders VideoBlock with content but without button', () => {
+        const component = shallow(<VideoBlock videoSrc="video.mp4" content={contentWithoutButton} />);
         expect(component).toMatchSnapshot();
     });
 
