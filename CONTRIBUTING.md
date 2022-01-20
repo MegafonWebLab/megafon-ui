@@ -10,8 +10,26 @@ directory.
 
 # Development
 
+## Basics
+
 To contribute to `megafon-ui` you need to create your own fork of this repository. After making changes, you create pull
 request with appropriate description.
+
+Local development require `node 12+` and `yarn`.
+
+- Install dependencies:
+
+```bash
+yarn install
+```
+
+- Run documentation:
+
+```bash
+yarn run demo
+```
+
+## Add component
 
 For development `typeScript` is used. All components are based on functions. Parameters by default set in
 destructuration in component arguments.
