@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.0-beta.0...@megafon/ui-shared@3.0.0-beta.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* **colors:** renabe green and purple to brandGreen and brandPurple to avoid postcss-colormin bug ([563d97c](https://github.com/MegafonWebLab/megafon-ui/commit/563d97c42900099415a6872f57b500b87aeed647))
+
+
+### BREAKING CHANGES
+
+* **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
+prefix (e.g. brandGreen)
+
+
+
+
+
 # [3.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.5...@megafon/ui-shared@3.0.0-beta.0) (2022-01-19)
 
 

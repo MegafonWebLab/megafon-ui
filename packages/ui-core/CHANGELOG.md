@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.0...@megafon/ui-core@3.0.0-beta.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* **colors:** fix colors component ([3061f7c](https://github.com/MegafonWebLab/megafon-ui/commit/3061f7c7b56d5baa32f109d7ce941bcc7e70c5b9))
+* **colors:** remove unused classname modifiers ([d919cdc](https://github.com/MegafonWebLab/megafon-ui/commit/d919cdcf1fa79d60230fc85811518ded1c0537ad))
+* **colors:** remove unused method ([2970295](https://github.com/MegafonWebLab/megafon-ui/commit/2970295df9053a4f54ed19d3d46deb07994844e0))
+* **colors:** renabe green and purple to brandGreen and brandPurple to avoid postcss-colormin bug ([563d97c](https://github.com/MegafonWebLab/megafon-ui/commit/563d97c42900099415a6872f57b500b87aeed647))
+* **colors:** update color values on colors page when user switches theme ([8552ff6](https://github.com/MegafonWebLab/megafon-ui/commit/8552ff69a66153ef890437ffc4dd2e50c31d6f2e))
+* **less:** import base.less file through reference ([5a13aae](https://github.com/MegafonWebLab/megafon-ui/commit/5a13aaedec3a7fd09f77dcddfe437fda604f60a5))
+
+
+### Features
+
+* **styles:** export css version for base.less ([14aff17](https://github.com/MegafonWebLab/megafon-ui/commit/14aff17f8d3f77ec7beb2e3cb5c8a489ecd77e74))
+
+
+### BREAKING CHANGES
+
+* **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
+prefix (e.g. brandGreen)
+
+
+
+
+
 # [3.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.2.0...@megafon/ui-core@3.0.0-beta.0) (2022-01-19)
 
 
