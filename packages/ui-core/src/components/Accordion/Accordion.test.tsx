@@ -5,7 +5,6 @@ import Accordion, { IAccordionProps } from './Accordion';
 const props: IAccordionProps = {
     title: 'Test',
     isOpened: false,
-    hasVerticalPaddings: false,
     dataAttrs: {
         root: {
             'data-root': 'data-test-value',
@@ -33,19 +32,6 @@ describe('<Accordion />', () => {
     it('it renders Accordion', () => {
         const wrapper = mount(
             <Accordion {...props}>
-                <div />
-            </Accordion>,
-        );
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('it render Accordion with vertical inner paddings', () => {
-        const newProps = {
-            ...props,
-            hasVerticalPaddings: true,
-        };
-        const wrapper = mount(
-            <Accordion {...newProps}>
                 <div />
             </Accordion>,
         );

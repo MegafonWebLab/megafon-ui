@@ -24,7 +24,6 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
       },
     }
   }
-  hasVerticalPaddings={false}
   isOpened={true}
   onClickAccordion={[MockFunction]}
   title="Test"
@@ -86,92 +85,6 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
 </Accordion>
 `;
 
-exports[`<Accordion /> it render Accordion with vertical inner paddings 1`] = `
-<Accordion
-  dataAttrs={
-    Object {
-      "arrowDown": Object {
-        "data-arrow-down": "data-test-value",
-      },
-      "arrowUp": Object {
-        "data-arrow-up": "data-test-value",
-      },
-      "collapse": Object {
-        "data-collapse": "data-test-value",
-      },
-      "header": Object {
-        "data-header": "data-test-value",
-      },
-      "root": Object {
-        "data-root": "data-test-value",
-      },
-      "titleWrap": Object {
-        "data-title-wrap": "data-test-value",
-      },
-    }
-  }
-  hasVerticalPaddings={true}
-  isOpened={false}
-  onClickAccordion={[MockFunction]}
-  title="Test"
->
-  <div
-    className="mfui-accordion"
-    data-root="data-test-value"
-  >
-    <div
-      className="mfui-accordion__title-wrap"
-      data-title-wrap="data-test-value"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-    >
-      <Header
-        as="h5"
-        data-header="data-test-value"
-      >
-        <h5
-          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
-        >
-          Test
-        </h5>
-      </Header>
-      <div
-        className="mfui-accordion__icon-box"
-        role="button"
-        tabIndex={0}
-      >
-        <test-file-stub
-          data-arrow-down="data-test-value"
-        />
-      </div>
-    </div>
-    <Collapse
-      className="mfui-accordion__content"
-      classNameContainer="mfui-accordion__content-inner mfui-accordion__content-inner_v-padding"
-      data-collapse="data-test-value"
-      isOpened={false}
-    >
-      <div
-        className="mfui-accordion__content"
-        style={
-          Object {
-            "height": "0px",
-            "overflow": "hidden",
-            "transition": "height 0.3s",
-          }
-        }
-      >
-        <div
-          className="mfui-accordion__content-inner mfui-accordion__content-inner_v-padding"
-        >
-          <div />
-        </div>
-      </div>
-    </Collapse>
-  </div>
-</Accordion>
-`;
-
 exports[`<Accordion /> it renders Accordion 1`] = `
 <Accordion
   dataAttrs={
@@ -196,7 +109,6 @@ exports[`<Accordion /> it renders Accordion 1`] = `
       },
     }
   }
-  hasVerticalPaddings={false}
   isOpened={false}
   onClickAccordion={[MockFunction]}
   title="Test"
