@@ -82,6 +82,7 @@ export const THEMES = {
     dark: {
         ...darkTheme,
         plain: {
+            ...darkTheme.plain,
             color: "#ffffff",
             backgroundColor: "#3a3a3a",
         },
