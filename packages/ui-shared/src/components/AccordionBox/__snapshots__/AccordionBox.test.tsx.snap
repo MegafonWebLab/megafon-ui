@@ -27,7 +27,6 @@ exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide
             },
           }
         }
-        hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
         rootRef={[MockFunction]}
@@ -69,7 +68,6 @@ exports[`<AccordionBox /> should render with props 1`] = `
             },
           }
         }
-        hasVerticalPaddings={true}
         isOpened={false}
         onClickAccordion={[MockFunction]}
         rootRef={[MockFunction]}
@@ -102,7 +100,6 @@ exports[`<AccordionBox /> should render without grid when isFullWidth is true 1`
       },
     }
   }
-  hasVerticalPaddings={true}
   isOpened={false}
   onClickAccordion={[MockFunction]}
   rootRef={[MockFunction]}
