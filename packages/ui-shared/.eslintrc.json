@@ -1,11 +1,10 @@
 {
   "extends": "../../.eslintrc.json",
   "rules": {
-    "import/no-unresolved": "off",
     "no-magic-numbers": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   },
   "overrides": [
     {
@@ -13,12 +12,6 @@
       "rules": {
         "import/prefer-default-export": "off",
         "react/no-multi-comp": "off"
-      }
-    },
-    {
-      "files": "*.test.tsx",
-      "rules": {
-        "jsx-a11y/anchor-is-valid": "off"
       }
     }
   ]
