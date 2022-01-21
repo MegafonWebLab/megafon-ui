@@ -63,8 +63,8 @@ const Checkbox: React.FC<ICheckboxProps> = ({
     const [isChecked, setIsChecked] = useState(checked);
 
     useEffect(() => {
-        setIsChecked(isChecked);
-    }, [isChecked]);
+        setIsChecked(checked);
+    }, [checked]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | AccessibilityEventType): void => {
         if (checkEventIsClickOrEnterPress(e) || e.type === CHANGE_KEY) {
