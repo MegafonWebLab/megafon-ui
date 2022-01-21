@@ -12,13 +12,29 @@ import './Colors.less';
 
 const { basic, secondary, system, gradientColors, staticColors, staticOpacity, soft } = colorsData;
 
+type Theme = 'light' | 'dark';
+
+// TODO: refactor this
+const getThemeFromLocalStorage = (): Theme => {
+    let theme = 'light' as Theme;
+
+    if (typeof window !== 'undefined') {
+        const localStorageTheme = String(window.localStorage.getItem('theme')) as Theme;
+
+        if (['light', 'dark'].includes(localStorageTheme)) {
+            theme = localStorageTheme;
+        }
+    }
+
+    return theme;
+};
+
 const cn = cnCreate('colors');
 const Colors = () => {
-    const [, setCurrentTheme] = React.useState<'light' | 'dark'>(
-        window.localStorage.getItem('theme') === 'dark' ? 'dark' : 'light',
-    );
+    const [, setCurrentTheme] = React.useState<'light' | 'dark'>(getThemeFromLocalStorage());
 
-    const getCurrentColorValue = (code: string) => document.documentElement.style.getPropertyValue(`--${code}`);
+    const getCurrentColorValue = (code: string) =>
+        typeof document !== 'undefined' ? document.documentElement.style.getPropertyValue(`--${code}`) : '';
 
     React.useEffect(() => {
         // theme switcher from src/gatsby-theme-docz/components/SideBar/index.tsx
