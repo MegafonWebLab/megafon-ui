@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.0-beta.1...@megafon/ui-helpers@2.0.0-beta.2) (2022-01-24)
+
+
+### Features
+
+* **ui-helpers:** add a11y function to check event is click or enter press ([65befe3](https://github.com/MegafonWebLab/megafon-ui/commit/65befe336852eb2a5783af5dd723d369ee265911))
+
+
+
+
+
 # [2.0.0-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.0-beta.0...@megafon/ui-helpers@2.0.0-beta.1) (2022-01-20)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.0-beta.2...@megafon/ui-shared@3.0.0-beta.3) (2022-01-24)
+
+
+### Bug Fixes
+
+* **accordion-box:** change type of onClickAccordion prop ([5d5cef5](https://github.com/MegafonWebLab/megafon-ui/commit/5d5cef5e2dd70efa808a6146e29daf1c882af304))
+
+
+### BREAKING CHANGES
+
+* **accordion-box:** remove parameter 'title' in onClickAccordion prop
+
+
+
+
+
 # [3.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.0-beta.1...@megafon/ui-shared@3.0.0-beta.2) (2022-01-21)
 
 **Note:** Version bump only for package @megafon/ui-shared

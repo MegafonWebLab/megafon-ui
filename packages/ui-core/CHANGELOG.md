@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.2...@megafon/ui-core@3.0.0-beta.3) (2022-01-24)
+
+
+### Bug Fixes
+
+* **accordion:** add focus on arrow after tab press, add open/close accordion after enter press ([9bfa0ac](https://github.com/MegafonWebLab/megafon-ui/commit/9bfa0ac5348ac25c0e37a4df51e26e2dabde02ba))
+* **accordion:** change type of onClickAccordion prop ([9a150c5](https://github.com/MegafonWebLab/megafon-ui/commit/9a150c5de309547763a714b0eb630dfb386a8107))
+* **calendar/month:** add focus on month arrows, add enter press handlers ([63f1e47](https://github.com/MegafonWebLab/megafon-ui/commit/63f1e4761e57ed6d56464b632dce9fd5e77655e1))
+* **checkbox:** add focus on custom checkbox, add enter press handler ([83d111d](https://github.com/MegafonWebLab/megafon-ui/commit/83d111d0e4b41d3915bdd079bed4a7f9715ce7a5))
+* **checkbox:** add isChecked state, change type of onChange prop ([f535caf](https://github.com/MegafonWebLab/megafon-ui/commit/f535caf39a02ab6793d3c63b654a1f1f3e9b2b93))
+* **tooltip:** add check event function from ui-helpers ([a784ab4](https://github.com/MegafonWebLab/megafon-ui/commit/a784ab4f288124eb941fe8f52e46b2efc9aa2f82))
+
+
+### BREAKING CHANGES
+
+* **checkbox:** change type of onChange prop on (checked: boolean) => void
+* **accordion:** remove parameter 'title' in onClickAccordion prop
+* **tooltip:** change onOpen, onClose types; AccessibilityEventTypeNative from @megafon/ui-helpers
+
+
+
+
+
 # [3.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.1...@megafon/ui-core@3.0.0-beta.2) (2022-01-21)
 
 **Note:** Version bump only for package @megafon/ui-core
