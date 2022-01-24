@@ -15,6 +15,7 @@ export interface IAccordionProps extends IFilterDataAttrs {
     /** Состояние открытости */
     isOpened?: boolean;
     /** Вертикальные отступы */
+    /** @deprecated */
     hasVerticalPaddings?: boolean;
     /** Дополнительный класс для корневого элемента */
     className?: string;
@@ -90,7 +91,8 @@ Accordion.propTypes = {
     ]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     isOpened: PropTypes.bool,
-    hasVerticalPaddings: PropTypes.bool,
+    hasVerticalPaddings: (props, propName) =>
+        props[propName] && new Error('Failed prop type: Prop "hasVerticalPaddings" is deprecated'),
     className: PropTypes.string,
     classes: PropTypes.shape({
         openedClass: PropTypes.string,
