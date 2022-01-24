@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import { mount, shallow } from 'enzyme';
-import megafon from './megafon.png';
 import Partners from './Partners';
 
 const cnCarousel = cnCreate('.mfui-carousel');
@@ -9,7 +8,7 @@ const cnCarousel = cnCreate('.mfui-carousel');
 const generateItems = (i, href?) =>
     Array.from({ length: i }, () => ({
         href,
-        src: megafon,
+        src: '/test-src',
         alt: 'test img',
     }));
 
