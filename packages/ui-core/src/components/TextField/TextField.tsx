@@ -75,8 +75,10 @@ export type TextFieldProps = {
     className?: string;
     /** Дополнительные классы элементов */
     classes?: { input?: string };
-    /** Аргумент элемента input */
+    /** Атрибут элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
+    /** Атрибут элемента input. Не работает с textarea=true */
+    autoComplete?: string;
     /** Переводит компонент в контролируемое состояние */
     isControlled?: boolean;
     /** Обработчик изменения значения */
@@ -128,6 +130,7 @@ const TextField: React.FC<TextFieldProps> = ({
     noticeText,
     inputRef,
     inputMode,
+    autoComplete,
     classes: { input } = {},
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
@@ -270,6 +273,7 @@ const TextField: React.FC<TextFieldProps> = ({
         ...commonParams,
         className: cn('field', input),
         type: isVisiblePassword ? 'text' : type,
+        autoComplete,
     };
 
     const inputMaskParams = {
@@ -420,6 +424,8 @@ TextField.propTypes = {
     disabled: PropTypes.bool,
     required: PropTypes.bool,
     type: PropTypes.oneOf(['text', 'password', 'tel', 'email']),
+    inputMode: PropTypes.oneOf(['numeric', 'tel', 'decimal', 'email', 'url', 'search', 'none']),
+    autoComplete: PropTypes.string,
     name: PropTypes.string,
     placeholder: PropTypes.string,
     id: PropTypes.string,

@@ -2,7 +2,6 @@ import * as React from 'react';
 import WiFi from '@megafon/ui-icons/basic-32-wi-fi_32.svg';
 import { mount, shallow } from 'enzyme';
 import Card, { ObjectFit, Target } from './Card';
-import img from './img.png';
 
 const title = 'Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь';
 const text =
@@ -12,20 +11,17 @@ const button = {
     href: '#',
     target: Target.BLANK,
 };
-
 const fakeLink = {
     title: 'Подключить',
 };
-
 const link = {
     ...fakeLink,
     href: '#',
     target: Target.SELF,
 };
-
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
-
 const classes = { root: 'rootClass', button: 'buttonClass', link: 'linkClass', inner: 'innerClass' };
+const imageSrc = '/test-src';
 
 describe('Card', () => {
     it('render component with required props', () => {
@@ -38,7 +34,7 @@ describe('Card', () => {
             <Card
                 title={title}
                 text={text}
-                imageSrc={img}
+                imageSrc={imageSrc}
                 button={button}
                 link={link}
                 classes={classes}
@@ -57,7 +53,7 @@ describe('Card', () => {
 
     it('render component with img, if image source and svg source are specified', () => {
         const wrapper = shallow(
-            <Card title={title} text={text} svgSrc={svg} button={button} link={link} imageSrc={img} />,
+            <Card title={title} text={text} svgSrc={svg} button={button} link={link} imageSrc={imageSrc} />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -78,13 +74,13 @@ describe('Card', () => {
     });
 
     it('left align of the interactive element', () => {
-        const wrapper = shallow(<Card title={title} text={text} imageSrc={img} link={link} isLeftHAlign />);
+        const wrapper = shallow(<Card title={title} text={text} imageSrc={imageSrc} link={link} isLeftHAlign />);
         expect(wrapper).toMatchSnapshot();
     });
 
     it('disable left align if there is a button and link', () => {
         const wrapper = shallow(
-            <Card title={title} text={text} imageSrc={img} button={button} link={link} isLeftHAlign />,
+            <Card title={title} text={text} imageSrc={imageSrc} button={button} link={link} isLeftHAlign />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -105,7 +101,7 @@ describe('Card', () => {
 
     it('render with contain object fit', () => {
         const wrapper = shallow(
-            <Card title={title} text={text} imageSrc={img} button={button} objectFit={ObjectFit.CONTAIN} />,
+            <Card title={title} text={text} imageSrc={imageSrc} button={button} objectFit={ObjectFit.CONTAIN} />,
         );
         expect(wrapper).toMatchSnapshot();
     });

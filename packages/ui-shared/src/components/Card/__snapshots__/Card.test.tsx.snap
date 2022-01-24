@@ -59,7 +59,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
       <img
         alt=""
         className="mfui-card__img"
-        src="test-file-stub"
+        src="/test-src"
       />
     </div>
     <Header
@@ -113,7 +113,7 @@ exports[`Card left align of the interactive element 1`] = `
       <img
         alt=""
         className="mfui-card__img"
-        src="test-file-stub"
+        src="/test-src"
       />
     </div>
     <Header
@@ -217,7 +217,7 @@ exports[`Card render component with img, if image source and svg source are spec
       <img
         alt=""
         className="mfui-card__img"
-        src="test-file-stub"
+        src="/test-src"
       />
     </div>
     <Header
@@ -272,7 +272,7 @@ exports[`Card render component with optional props 1`] = `
       <img
         alt=""
         className="mfui-card__img"
-        src="test-file-stub"
+        src="/test-src"
       />
     </div>
     <Header
@@ -489,7 +489,7 @@ exports[`Card render with contain object fit 1`] = `
       <img
         alt=""
         className="mfui-card__img"
-        src="test-file-stub"
+        src="/test-src"
       />
     </div>
     <Header

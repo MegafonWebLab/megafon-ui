@@ -9,6 +9,12 @@ const content: IContent = {
     buttonTitle: 'Подключение',
 };
 
+const contentWithoutButton: IContent = {
+    title: 'Интернет',
+    description:
+        'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
+};
+
 const youtubeVideoId = '2Sps5MnvlKM';
 
-export { content, video, youtubeVideoId };
+export { content, contentWithoutButton, video, youtubeVideoId };

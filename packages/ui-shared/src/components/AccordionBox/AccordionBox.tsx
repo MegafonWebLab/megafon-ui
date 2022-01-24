@@ -18,6 +18,7 @@ export interface IAccordionBox {
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
     /** Вертикальные отступы */
+    /** @deprecated */
     hasVerticalPaddings?: boolean;
     /** Дополнительный класс для корнеовго элемента */
     className?: string;
@@ -60,7 +61,8 @@ AccordionBox.propTypes = {
     isFullWidth: PropTypes.bool,
     isOpened: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,
-    hasVerticalPaddings: PropTypes.bool,
+    hasVerticalPaddings: (props, propName) =>
+        props[propName] && new Error('Failed prop type: Prop "hasVerticalPaddings" is deprecated'),
     className: PropTypes.string,
     classes: PropTypes.shape({
         openedClass: PropTypes.string,

@@ -237,6 +237,67 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
 </div>
 `;
 
+exports[`<VideoBlock /> it renders VideoBlock with content but without button 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <Grid
+    className="mfui-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="5"
+      key="column-content"
+      mobile="12"
+      orderMobile="2"
+      orderTablet="2"
+      tablet="12"
+    >
+      <div
+        className="mfui-video-block__content"
+      >
+        <Header
+          as="h2"
+          className="mfui-video-block__header"
+          color="black"
+          hAlign="inherit"
+        >
+          Test title
+        </Header>
+        <div
+          className="mfui-video-block__description"
+        >
+          Test description
+        </div>
+      </div>
+    </GridColumn>
+    <GridColumn
+      all="7"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <div
+        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      >
+        <video
+          autoPlay={false}
+          className="mfui-video-block__video"
+          controls={true}
+          loop={true}
+          muted={true}
+        >
+          <source
+            src="video.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 <div
   className="mfui-video-block"

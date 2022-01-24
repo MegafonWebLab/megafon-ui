@@ -24,7 +24,7 @@ exports[`<Partners /> should render carousel 1`] = `
   >
     <div
       className="mfui-partners__slide"
-      key="0test-file-stub"
+      key="0/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -41,7 +41,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -61,7 +61,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -69,7 +69,7 @@ exports[`<Partners /> should render carousel 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="1test-file-stub"
+      key="1/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -86,7 +86,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -106,7 +106,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -114,7 +114,7 @@ exports[`<Partners /> should render carousel 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="2test-file-stub"
+      key="2/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -131,7 +131,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -151,7 +151,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -159,7 +159,7 @@ exports[`<Partners /> should render carousel 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="3test-file-stub"
+      key="3/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -176,7 +176,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -196,7 +196,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -204,7 +204,7 @@ exports[`<Partners /> should render carousel 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="4test-file-stub"
+      key="4/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -221,7 +221,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -241,7 +241,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -249,7 +249,7 @@ exports[`<Partners /> should render carousel 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="5test-file-stub"
+      key="5/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -266,7 +266,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -286,7 +286,7 @@ exports[`<Partners /> should render carousel 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -320,7 +320,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
   >
     <div
       className="mfui-partners__slide"
-      key="0test-file-stub"
+      key="0/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -337,7 +337,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -357,7 +357,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -365,7 +365,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="1test-file-stub"
+      key="1/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -382,7 +382,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -402,7 +402,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -410,7 +410,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="2test-file-stub"
+      key="2/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -427,7 +427,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -447,7 +447,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -455,7 +455,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="3test-file-stub"
+      key="3/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -472,7 +472,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -492,7 +492,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -500,7 +500,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="4test-file-stub"
+      key="4/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -517,7 +517,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -537,7 +537,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -545,7 +545,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     </div>
     <div
       className="mfui-partners__slide"
-      key="5test-file-stub"
+      key="5/test-src"
     >
       <Tile
         className="mfui-partners__tile"
@@ -562,7 +562,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -582,7 +582,7 @@ exports[`<Partners /> should render grid 1`] = `
   >
     <GridColumn
       all="3"
-      key="0test-file-stub"
+      key="0/test-src"
       mobile="6"
     >
       <Tile
@@ -600,7 +600,7 @@ exports[`<Partners /> should render grid 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -608,7 +608,7 @@ exports[`<Partners /> should render grid 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="1test-file-stub"
+      key="1/test-src"
       mobile="6"
     >
       <Tile
@@ -626,7 +626,7 @@ exports[`<Partners /> should render grid 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -634,7 +634,7 @@ exports[`<Partners /> should render grid 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="2test-file-stub"
+      key="2/test-src"
       mobile="6"
     >
       <Tile
@@ -652,7 +652,7 @@ exports[`<Partners /> should render grid 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -660,7 +660,7 @@ exports[`<Partners /> should render grid 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="3test-file-stub"
+      key="3/test-src"
       mobile="6"
     >
       <Tile
@@ -678,7 +678,7 @@ exports[`<Partners /> should render grid 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -698,7 +698,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
   >
     <GridColumn
       all="3"
-      key="0test-file-stub"
+      key="0/test-src"
       mobile="6"
     >
       <Tile
@@ -715,7 +715,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -723,7 +723,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="1test-file-stub"
+      key="1/test-src"
       mobile="6"
     >
       <Tile
@@ -740,7 +740,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -748,7 +748,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="2test-file-stub"
+      key="2/test-src"
       mobile="6"
     >
       <Tile
@@ -765,7 +765,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -773,7 +773,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="3test-file-stub"
+      key="3/test-src"
       mobile="6"
     >
       <Tile
@@ -790,7 +790,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -810,7 +810,7 @@ exports[`<Partners /> should render with classes props 1`] = `
   >
     <GridColumn
       all="3"
-      key="0test-file-stub"
+      key="0/test-src"
       mobile="6"
     >
       <Tile
@@ -828,7 +828,7 @@ exports[`<Partners /> should render with classes props 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -836,7 +836,7 @@ exports[`<Partners /> should render with classes props 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="1test-file-stub"
+      key="1/test-src"
       mobile="6"
     >
       <Tile
@@ -854,7 +854,7 @@ exports[`<Partners /> should render with classes props 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -862,7 +862,7 @@ exports[`<Partners /> should render with classes props 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="2test-file-stub"
+      key="2/test-src"
       mobile="6"
     >
       <Tile
@@ -880,7 +880,7 @@ exports[`<Partners /> should render with classes props 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>
@@ -888,7 +888,7 @@ exports[`<Partners /> should render with classes props 1`] = `
     </GridColumn>
     <GridColumn
       all="3"
-      key="3test-file-stub"
+      key="3/test-src"
       mobile="6"
     >
       <Tile
@@ -906,7 +906,7 @@ exports[`<Partners /> should render with classes props 1`] = `
             <img
               alt="test img"
               className="mfui-partners__tile-img"
-              src="test-file-stub"
+              src="/test-src"
             />
           </div>
         </div>

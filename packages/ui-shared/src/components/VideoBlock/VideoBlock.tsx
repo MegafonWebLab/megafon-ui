@@ -10,7 +10,7 @@ export interface IContent {
     /** Текст-описание */
     description: string | React.ReactNode[] | React.ReactNode;
     /** Текст кнопки */
-    buttonTitle: string;
+    buttonTitle?: string;
     /** Добавляет атрибут download для тега <a> компонента Button */
     buttonDownload?: boolean;
     /** Ссылка на кнопке */
@@ -95,14 +95,16 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                     {title}
                 </Header>
                 <div className={cn('description', [classes.description])}>{description}</div>
-                <Button
-                    className={cn('button', [classes.button])}
-                    href={href}
-                    onClick={onButtonClick}
-                    download={buttonDownload}
-                >
-                    {buttonTitle}
-                </Button>
+                {buttonTitle && (
+                    <Button
+                        className={cn('button', [classes.button])}
+                        href={href}
+                        onClick={onButtonClick}
+                        download={buttonDownload}
+                    >
+                        {buttonTitle}
+                    </Button>
+                )}
             </div>
         ),
         [classes.button, classes.description],
@@ -115,7 +117,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
         if (content) {
             columns.push(
                 <GridColumn all="5" tablet="12" mobile="12" orderTablet="2" orderMobile="2" key="column-content">
-                    {renderContent && renderContent(content)}
+                    {renderContent(content)}
                 </GridColumn>,
             );
         }
@@ -155,7 +157,7 @@ VideoBlock.propTypes = {
         description: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node), PropTypes.node])
             .isRequired,
         href: PropTypes.string,
-        buttonTitle: PropTypes.string.isRequired,
+        buttonTitle: PropTypes.string,
         buttonDownload: PropTypes.bool,
         onButtonClick: PropTypes.func,
     }),

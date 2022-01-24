@@ -223,8 +223,13 @@ describe('<TextField />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should render with inputnode', () => {
+        it('should render with inputmode', () => {
             const wrapper = shallow(<TextField {...commonFieldProps} inputMode="numeric" isControlled={false} />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with autoComplete', () => {
+            const wrapper = shallow(<TextField {...commonFieldProps} autoComplete="tel" isControlled={false} />);
             expect(wrapper).toMatchSnapshot();
         });
 
