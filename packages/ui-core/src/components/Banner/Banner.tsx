@@ -81,6 +81,7 @@ const Banner: React.FC<IBannerProps> = ({
             }
 
             autoplay.stop();
+            // eslint-disable-next-line no-param-reassign
             params.autoplay.delay = autoPlayDelay * 3;
             autoplay.start();
         },
@@ -93,9 +94,9 @@ const Banner: React.FC<IBannerProps> = ({
         }
 
         swiperInstance.slidePrev();
-        onPrevClick && onPrevClick(swiperInstance.realIndex);
+        onPrevClick?.(swiperInstance.realIndex);
         increaseAutoplayDelay(swiperInstance);
-    }, [swiperInstance, onPrevClick]);
+    }, [swiperInstance, onPrevClick, increaseAutoplayDelay]);
 
     const handleNextClick = React.useCallback(() => {
         if (!swiperInstance) {
@@ -103,9 +104,9 @@ const Banner: React.FC<IBannerProps> = ({
         }
 
         swiperInstance.slideNext();
-        onNextClick && onNextClick(swiperInstance.realIndex);
+        onNextClick?.(swiperInstance.realIndex);
         increaseAutoplayDelay(swiperInstance);
-    }, [swiperInstance, onNextClick]);
+    }, [swiperInstance, onNextClick, increaseAutoplayDelay]);
 
     const handleDotClick = React.useCallback(
         (index: number) => {
@@ -119,10 +120,10 @@ const Banner: React.FC<IBannerProps> = ({
                 swiperInstance.slideTo(index);
             }
 
-            onDotClick && onDotClick(swiperInstance.realIndex);
+            onDotClick?.(swiperInstance.realIndex);
             increaseAutoplayDelay(swiperInstance);
         },
-        [swiperInstance, loop, onDotClick],
+        [swiperInstance, loop, onDotClick, increaseAutoplayDelay],
     );
 
     const handleSwiper = React.useCallback((swiper: SwiperCore) => {
@@ -146,10 +147,13 @@ const Banner: React.FC<IBannerProps> = ({
         setEnd(swiper.isEnd);
     }, []);
 
-    const handleSlideChange = React.useCallback(({ realIndex }: SwiperCore) => {
-        setActiveIndex(realIndex);
-        onChange && onChange(realIndex);
-    }, []);
+    const handleSlideChange = React.useCallback(
+        ({ realIndex }: SwiperCore) => {
+            setActiveIndex(realIndex);
+            onChange?.(realIndex);
+        },
+        [onChange],
+    );
 
     const handleAutoplayStop = React.useCallback(() => {
         setAutoPlayning(false);

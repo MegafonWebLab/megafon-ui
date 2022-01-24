@@ -103,7 +103,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
 
     const [isOpen, setIsOpen] = useState(isOpened);
-    useEffect(() => setIsOpen(isOpened), [isOpened, setIsOpen]);
+    useEffect(() => setIsOpen(isOpened), [isOpened]);
 
     const options = useMemo(
         () => ({
@@ -135,17 +135,17 @@ const Tooltip: React.FC<ITooltipProps> = ({
                 },
             ],
         }),
-        [placement, arrowElement, currentBoundary, isOpen],
+        [placement, arrowElement, currentBoundary, isOpen, fallbackPlacements],
     );
 
     const { styles, attributes, update } = usePopper(currentTarget, popperElement, options);
 
     useEffect(() => {
-        update && update();
+        update?.();
     }, [children, update]);
 
     const [isTouchDevice, setIsTouchDevice] = useState(false);
-    useEffect(() => setIsTouchDevice(detectTouch()), [detectTouch, setIsTouchDevice]);
+    useEffect(() => setIsTouchDevice(detectTouch()), []);
 
     const clickEvent = useMemo(() => (isTouchDevice ? TOUCH_KEY : MOUSE_KEY), [isTouchDevice]);
     const triggerEventName: TriggerEventType = useMemo(
@@ -157,10 +157,10 @@ const Tooltip: React.FC<ITooltipProps> = ({
         (e: MouseEvent): void => {
             if (!isOpen) {
                 setIsOpen(true);
-                onOpen && onOpen(e);
+                onOpen?.(e);
             }
         },
-        [isOpen, onOpen, setIsOpen],
+        [isOpen, onOpen],
     );
 
     const handleClick = useCallback(
@@ -171,12 +171,12 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
             setIsOpen(open => !open);
             if (!isOpen) {
-                onOpen && onOpen(e);
+                onOpen?.(e);
             } else {
-                onClose && onClose(e);
+                onClose?.(e);
             }
         },
-        [isOpen, onOpen, onClose, setIsOpen],
+        [isOpen, onOpen, onClose],
     );
 
     const handleOutsideEvent = useCallback(
@@ -187,18 +187,18 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
             if (!isTargetInPopper && !isTargetInTrigger) {
                 setIsOpen(false);
-                onClose && onClose(e);
+                onClose?.(e);
             }
         },
-        [onClose, currentTrigger, popperElement, setIsOpen],
+        [onClose, currentTrigger, popperElement],
     );
 
     const handleBlurEvent = useCallback(
         (e: FocusEvent): void => {
             setIsOpen(false);
-            onClose && onClose(e);
+            onClose?.(e);
         },
-        [onClose, setIsOpen],
+        [onClose],
     );
 
     useEffect(() => {
@@ -210,10 +210,10 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
             if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
-                currentTrigger && currentTrigger.addEventListener('blur', handleBlurEvent);
+                currentTrigger?.addEventListener('blur', handleBlurEvent);
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
-                currentTrigger && currentTrigger.removeEventListener('blur', handleBlurEvent);
+                currentTrigger?.removeEventListener('blur', handleBlurEvent);
             }
 
             return () => {
@@ -226,7 +226,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         }
 
         return undefined;
-    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleMouseEnter]);
+    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleMouseEnter, handleBlurEvent]);
 
     useEffect(() => {
         if (triggerEventName === TriggerEvent.CLICK) {
@@ -251,7 +251,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         }
 
         return undefined;
-    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleClick]);
+    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleClick, clickEvent]);
 
     return (
         <div

@@ -171,7 +171,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         this.itemsNodeList = [];
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         const { currentValue } = this.props;
         const { filteredItems } = this.state;
         const currentIndex = filteredItems.findIndex(elem => elem.value === currentValue);
@@ -185,7 +185,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }
     }
 
-    componentDidUpdate({ items: prevItems }: ISelectProps<T>) {
+    componentDidUpdate({ items: prevItems }: ISelectProps<T>): void {
         const { items } = this.props;
         const { isOpened } = this.state;
 
@@ -203,11 +203,11 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         document.removeEventListener('click', this.handleClickOutside);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount(): void {
         document.removeEventListener('click', this.handleClickOutside);
     }
 
-    isEqualItems = (items: Array<ISelectItem<T>>, prevItems: Array<ISelectItem<T>>) => {
+    isEqualItems = (items: Array<ISelectItem<T>>, prevItems: Array<ISelectItem<T>>): boolean => {
         if (items.length !== prevItems.length) {
             return false;
         }
@@ -220,16 +220,16 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         });
     };
 
-    handleOpened = () => {
+    handleOpened = (): void => {
         const { onOpened } = this.props;
 
-        onOpened && onOpened();
+        onOpened?.();
     };
 
-    handleClosed = () => {
+    handleClosed = (): void => {
         const { onClosed } = this.props;
 
-        onClosed && onClosed();
+        onClosed?.();
     };
 
     handleClickOutside = (e: MouseEvent): void => {
@@ -281,7 +281,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             isChoosenItem: true,
         });
 
-        onSelect && onSelect(e, item);
+        onSelect?.(e, item);
         this.handleClosed();
     };
 
@@ -313,7 +313,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         const filterValue = e.target.value;
 
         if (isChoosenItem) {
-            onSelect && onSelect(null);
+            onSelect?.(null);
         }
 
         this.setState({ inputValue: filterValue, isChoosenItem: false });
@@ -370,7 +370,10 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         return true;
     };
 
-    highlightString = (title: string, view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString)) => {
+    highlightString = (
+        title: string,
+        view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString),
+    ): ElementOrString => {
         const { type } = this.props;
         const { comparableInputValue, inputValue } = this.state;
 
@@ -406,15 +409,17 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         );
     };
 
-    getItemWrapper = node => {
+    getItemWrapper = (node: HTMLDivElement): void => {
         this.itemWrapperNode = node;
     };
 
-    getSelectNode = node => {
+    getSelectNode = (node: HTMLDivElement): void => {
         this.selectNode = node;
     };
 
-    getNodeList = node => this.itemsNodeList.push(node);
+    getNodeList = (node: HTMLDivElement): void => {
+        this.itemsNodeList.push(node);
+    };
 
     scrollList(activeIndex: number): void {
         if (!this.itemsNodeList) {
@@ -443,7 +448,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         }
     }
 
-    renderTitle() {
+    renderTitle(): JSX.Element {
         const { placeholder, items, currentValue, classes } = this.props;
         const item = items.find(elem => elem.value === currentValue);
         let inputTitle: string | JSX.Element | Element | undefined = placeholder;
@@ -470,7 +475,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         );
     }
 
-    renderCombobox() {
+    renderCombobox(): JSX.Element {
         const { placeholder } = this.props;
         const { inputValue } = this.state;
 
@@ -486,7 +491,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         );
     }
 
-    renderChildren() {
+    renderChildren(): JSX.Element {
         const { type, items, notFoundText, classes = {} } = this.props;
         const { filteredItems, activeIndex } = this.state;
         const currentItems = type === SelectTypes.COMBOBOX ? filteredItems : items;
@@ -521,7 +526,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
         );
     }
 
-    render() {
+    render(): JSX.Element {
         const {
             type,
             disabled,

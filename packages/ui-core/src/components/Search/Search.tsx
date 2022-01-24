@@ -98,7 +98,7 @@ const Search: React.FC<ISearchProps> = ({
             setActiveIndex(-1);
 
             if (changeDelay === 0) {
-                onChange && onChange(inputValue);
+                onChange?.(inputValue);
             } else {
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-ignore
@@ -127,7 +127,7 @@ const Search: React.FC<ISearchProps> = ({
 
             const chosenValue = items[index].value;
 
-            onSubmit && onSubmit(chosenValue);
+            onSubmit?.(chosenValue);
         },
         [disabled, items, onSubmit],
     );
@@ -147,7 +147,7 @@ const Search: React.FC<ISearchProps> = ({
         (e: React.FocusEvent<HTMLInputElement>): void => {
             setFocus(false);
 
-            onBlur && onBlur(e);
+            onBlur?.(e);
         },
         [onBlur],
     );
