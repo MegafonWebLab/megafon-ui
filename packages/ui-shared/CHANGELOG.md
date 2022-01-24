@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.5...@megafon/ui-shared@2.2.0) (2022-01-24)
+
+
+### Features
+
+* **accordionbox:** props hasVerticalPaddings marked as deprecated ([7dbb43b](https://github.com/MegafonWebLab/megafon-ui/commit/7dbb43b1178f4055ecd0f4eed5614024da638091))
+* **container:** add rules for TextWithIcon component ([4c692ab](https://github.com/MegafonWebLab/megafon-ui/commit/4c692ab43db115dc7c5aeba39713d6f2ae2daaff))
+* **textwithicon:** add component TextWithIcon ([b772728](https://github.com/MegafonWebLab/megafon-ui/commit/b772728b8739dbbfa550eef1c8eedb56cda620c9))
+* **videoblock:** made button optional ([eef7c17](https://github.com/MegafonWebLab/megafon-ui/commit/eef7c174415b28fe3512d8c28fcd9bb73774dd2e))
+
+
+
+
+
 ## [2.1.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.4...@megafon/ui-shared@2.1.5) (2022-01-18)
 
 

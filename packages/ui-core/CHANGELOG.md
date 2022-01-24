@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.2.0...@megafon/ui-core@2.3.0) (2022-01-24)
+
+
+### Bug Fixes
+
+* **search:** prevents default action when a menu item is selected and the enter button is pressed ([054cbcf](https://github.com/MegafonWebLab/megafon-ui/commit/054cbcf3457ff779443a82b5ae6383fda57f9cc7))
+
+
+### Features
+
+* **accordion:** props hasVerticalPaddings marked as deprecated ([4d6d4cc](https://github.com/MegafonWebLab/megafon-ui/commit/4d6d4cca2cf45a86441827f0bef625a88a2c44f8))
+* **textfield:** add autocomplete prop ([f2cff94](https://github.com/MegafonWebLab/megafon-ui/commit/f2cff9403503de174b785ea02365ce470811369e))
+
+
+
+
+
 # [2.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.1.4...@megafon/ui-core@2.2.0) (2021-12-29)
 
 
