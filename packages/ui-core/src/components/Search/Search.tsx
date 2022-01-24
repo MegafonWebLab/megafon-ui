@@ -168,6 +168,7 @@ const Search: React.FC<ISearchProps> = ({
                 e.preventDefault();
             } else if (e.key === 'Enter' && activeIndex > -1) {
                 handleItemSubmit(activeIndex);
+                e.preventDefault();
             } else if (e.key === 'Enter' && activeIndex === -1) {
                 handleSearchSubmit();
             }
