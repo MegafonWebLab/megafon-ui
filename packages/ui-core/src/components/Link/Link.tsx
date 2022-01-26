@@ -1,7 +1,8 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import React from 'react';
+import { filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
 
-export interface ILinkProps {
+export interface ILinkProps extends IFilterDataAttrs {
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Ссылка */
@@ -17,9 +18,18 @@ export interface ILinkProps {
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
-const Link: React.FC<ILinkProps> = props => (
-    // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a {...props} />
+const Link: React.FC<ILinkProps> = ({ target, href, rel, onClick, className, download, children, dataAttrs }) => (
+    <a
+        className={className}
+        href={href}
+        target={target}
+        rel={rel}
+        onClick={onClick}
+        download={download}
+        {...filterDataAttrs(dataAttrs)}
+    >
+        {children}
+    </a>
 );
 Link.propTypes = {
     href: PropTypes.string,
