@@ -15,6 +15,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
+    "cleanDist": "rm -rf dist",
     "coverage": "yarn coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "typecheck": "tsc --noEmit -p .",
