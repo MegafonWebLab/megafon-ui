@@ -261,6 +261,8 @@ const Tabs: React.FC<ITabsProps> = ({
 
                     if (isIntersecting) {
                         top < 0 ? stickyON(left, right) : stickyOFF();
+                    } else if (!isIntersecting && sticky) {
+                        top < 0 && stickyON(left, right);
                     } else {
                         top < 0 && stickyOFF();
                     }
