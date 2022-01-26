@@ -1,7 +1,7 @@
 :root {
     /*  Basic Colors */
-    --green: #00B956;
-    --purple: #731982;
+    --brandGreen: #00B956;
+    --beandPurple: #731982;
     --base: #FFFFFF;
     --content: #333333;
     --spbSky0: #F6F6F6;
@@ -43,10 +43,10 @@
     --stcBlack50: #33333380;
 
     /*  Soft (new) */
-    --green80: #0CDC78;
-    --green20: #DDFFEC;
-    --purple80: #AA67C1;
-    --purple20: #FFEEFF;
+    --brandGreen80: #0CDC78;
+    --brandGreen20: #DDFFEC;
+    --brandPurple80: #AA67C1;
+    --brandPurple20: #FFEEFF;
     --warmRedC80: #FF765D;
     --warmRedC20: #FFCFC7;
     --137C80: #FFB945;
