@@ -1,6 +1,6 @@
 const COLOR_THEMES = {
     LIGHT: {
-        // Basic Colors
+        // Basic
         brandGreen: '#00B956',
         brandPurple: '#731982',
         base: '#FFFFFF',
@@ -10,13 +10,13 @@ const COLOR_THEMES = {
         spbSky2: '#D8D8D8',
         spbSky3: '#999999',
 
-        // Secondary Colors
+        // Secondary
         warmRedC: '#EB5A40',
         '137C': '#FFA717',
         '311C': '#5BD9E5',
         reflexBlue: '#444189',
 
-        // System Colors
+        // System
         fury: '#F62434',
         systemBlue: '#34AAF2',
         background: '#FFFFFF',
@@ -43,7 +43,7 @@ const COLOR_THEMES = {
         stcBlack20: '#33333333',
         stcBlack50: '#33333380',
 
-        // Soft (new)
+        // Soft
         brandGreen80: '#0CDC78',
         brandGreen20: '#DDFFEC',
         brandPurple80: '#AA67C1',
@@ -61,7 +61,7 @@ const COLOR_THEMES = {
     },
 
     DARK: {
-        // Basic Colors
+        // Basic
         brandGreen: '#00B956',
         brandPurple: '#731982',
         base: '#333333',
@@ -71,13 +71,13 @@ const COLOR_THEMES = {
         spbSky2: '#595959',
         spbSky3: '#999999',
 
-        // Secondary Colors
+        // Secondary
         warmRedC: '#EB5A40',
         '137C': '#FFA717',
         '311C': '#5BD9E5',
         reflexBlue: '#444189',
 
-        // System Colors
+        // System
         fury: '#F62434',
         systemBlue: '#34AAF2',
         background: '#1F1F1F',
@@ -104,7 +104,7 @@ const COLOR_THEMES = {
         stcBlack20: '#33333333',
         stcBlack50: '#33333380',
 
-        // Soft (new)
+        // Soft
         brandGreen80: '#0CDC78',
         brandGreen20: '#DDFFEC',
         brandPurple80: '#AA67C1',

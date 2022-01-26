@@ -1,5 +1,5 @@
 :root {
-    /*  Basic Colors */
+    /* Basic Colors */
     --brandGreen: #00B956;
     --beandPurple: #731982;
     --base: #FFFFFF;
@@ -9,13 +9,13 @@
     --spbSky2: #D8D8D8;
     --spbSky3: #999999;
 
-    /*  Secondary Colors */
+    /* Secondary Colors */
     --warmRedC: #EB5A40;
     --137C: #FFA717;
     --311C: #5BD9E5;
     --reflexBlue: #444189;
 
-    /*  System Colors */
+    /* System Colors */
     --fury: #F62434;
     --systemBlue: #34AAF2;
     --background: #FFFFFF;
@@ -23,16 +23,16 @@
     --buttonhoverPurple: #534455;
     --buttonDown: #404D46;
 
-    /*  Gradients */
+    /* Gradients */
     --gradientBasic: linear-gradient(90deg, #01873F 0%, #00B956 74%, #14CD6A 100%);
     --gradientVIP: linear-gradient(90deg, #5B1168 0%, #731982 74%, #821E93 100%);
     --gradientExclusive: linear-gradient(90deg, #2A2674 0%, #444189 74%, #504D93 100%);
 
-    /*  Static */
+    /* Static */
     --stcWhite: #FFFFFF;
     --stcBlack: #333333;
 
-    /*  Static Opacity */
+    /* Static Opacity */
     --stcWhite5: #FFFFFF0D;
     --stcWhite10: #FFFFFF1A;
     --stcWhite20: #FFFFFF33;
@@ -42,7 +42,7 @@
     --stcBlack20: #33333333;
     --stcBlack50: #33333380;
 
-    /*  Soft (new) */
+    /* Soft (new) */
     --brandGreen80: #0CDC78;
     --brandGreen20: #DDFFEC;
     --brandPurple80: #AA67C1;
