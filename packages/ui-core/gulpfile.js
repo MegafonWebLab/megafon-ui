@@ -89,9 +89,7 @@ gulp.task('less:process-base', () => gulp.src(baseLessSrc)
 );
 
 gulp.task('less:process-colors', () => gulp.src(colorsCssSrc)
-    .pipe(dest(basePackagePath))
-    .pipe(dest(esPath))
-    .pipe(dest(libPath)),
+    .pipe(dest(basePackagePath)),
 );
 
 gulp.task('less', gulp.series('less:compile', 'less:process-base', 'less:process-colors'));

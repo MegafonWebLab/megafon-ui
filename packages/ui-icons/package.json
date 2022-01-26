@@ -12,6 +12,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp build",
+    "cleanDist": "rm *.svg",
     "typecheck": "tsc --noEmit -p .",
     "prettier:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
