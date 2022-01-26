@@ -48,7 +48,7 @@ const TextLink: React.FC<ITextLinkProps> = ({
 );
 
 TextLink.propTypes = {
-    color: PropTypes.oneOf(['default', 'white', 'black', 'gray', 'green', 'inherit']),
+    color: PropTypes.oneOf(['default', 'white', 'black', 'gray', 'green', 'blue', 'inherit']),
     underlineVisibility: PropTypes.oneOf(['hover', 'always']),
     underlineStyle: PropTypes.oneOf(['solid', 'dashed', 'border', 'none']),
     children: PropTypes.oneOfType([
