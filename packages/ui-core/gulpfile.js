@@ -19,7 +19,8 @@ const esPath = path.join(dist, 'es');
 const libPath = path.join(dist, 'lib');
 const srcPath = path.join(__dirname, 'src');
 const indexTs = path.join(srcPath, 'index.ts');
-const baseLessSrc = path.join(srcPath, 'styles', 'base.less');
+const stylesPath = path.join(srcPath, 'styles');
+const baseLessSrc = path.join(stylesPath, 'base.less');
 const basePackagePath = path.join(__dirname, 'styles');
 
 const doczReg = 'src/**/*.docz.{tsx,ts}';
@@ -88,8 +89,8 @@ gulp.task('less:process-base', () => gulp.src(baseLessSrc)
 );
 
 gulp.task('less:process-colors', () => gulp.src([
-    path.join(srcPath, 'styles', 'colors.css'),
-    path.join(srcPath, 'styles', 'colorsDark.css'),
+    path.join(stylesPath, 'colors.css'),
+    path.join(stylesPath, 'colorsDark.css'),
 ])
     .pipe(dest(basePackagePath)),
 );
