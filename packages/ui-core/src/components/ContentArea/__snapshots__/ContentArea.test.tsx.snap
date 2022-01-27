@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<ContentArea /> render component when innerBackgroundColor with base 1`] = `
+<div
+  className="mfui-content-area mfui-content-area_color_transparent"
+>
+  <div
+    className="mfui-content-area__inner mfui-content-area__inner_color_base"
+  >
+    some content
+  </div>
+</div>
+`;
+
 exports[`<ContentArea /> render component when innerBackgroundColor with content 1`] = `
 <div
   className="mfui-content-area mfui-content-area_color_transparent"
@@ -84,12 +96,12 @@ exports[`<ContentArea /> render component when innerBackgroundColor with transpa
 </div>
 `;
 
-exports[`<ContentArea /> render component when innerBackgroundColor with white 1`] = `
+exports[`<ContentArea /> render component when outerBackgroundColor with base 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_color_base"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_white"
+    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
   >
     some content
   </div>
@@ -180,24 +192,12 @@ exports[`<ContentArea /> render component when outerBackgroundColor with transpa
 </div>
 `;
 
-exports[`<ContentArea /> render component when outerBackgroundColor with white 1`] = `
-<div
-  className="mfui-content-area mfui-content-area_color_white"
->
-  <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
-  >
-    some content
-  </div>
-</div>
-`;
-
 exports[`<ContentArea /> renders correctly with custom props 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_white className rootClass"
+  className="mfui-content-area mfui-content-area_color_base className rootClass"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_disable-indents_all mfui-content-area__inner_color_white innerClass"
+    className="mfui-content-area__inner mfui-content-area__inner_disable-indents_all mfui-content-area__inner_color_base innerClass"
   >
     <span>
       child

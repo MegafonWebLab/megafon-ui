@@ -9,8 +9,6 @@ export const Theme = {
     BASE: 'base',
     GREEN: 'green',
     SPB_SKY_1: 'spbSky1',
-    /** @deprecated */
-    CLEAR_WHITE: 'clearWhite',
 } as const;
 
 type ThemeType = typeof Theme[keyof typeof Theme];
@@ -91,7 +89,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     textButton = DEFAULT_TEXT_BUTTON,
     qrCode,
     imageSrc,
-    theme = Theme.CLEAR_WHITE,
+    theme = Theme.BASE,
     deviceMask,
     rootRef,
     dataAttrs,
@@ -201,22 +199,7 @@ StoreBanner.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
-    theme(props, propName, componentName) {
-        const deprecatedValue = Theme.CLEAR_WHITE;
-        const propValue = props[propName];
-
-        if (propValue && !Object.values(Theme).includes(propValue)) {
-            return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
-            expected one of [${Object.values(Theme)}]`);
-        }
-
-        if (propValue && propValue === deprecatedValue) {
-            return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
-            value '${deprecatedValue}' is deprecated, please use value '${Theme.BASE}'`);
-        }
-
-        return null;
-    },
+    theme: PropTypes.oneOf(Object.values(Theme)),
 };
 
 export default StoreBanner;
