@@ -32,6 +32,15 @@ const getThemeFromLocalStorage = (): Theme => {
 const cn = cnCreate('colors');
 const Colors = () => {
     const [, setCurrentTheme] = React.useState<'light' | 'dark'>(getThemeFromLocalStorage());
+    const [, setLoad] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        function load() {
+            setLoad(true);
+            document.removeEventListener('css-var-load', load);
+        }
+        document.addEventListener('css-var-load', load);
+    }, []);
 
     const getCurrentColorValue = (code: string) =>
         typeof document !== 'undefined' ? document.documentElement.style.getPropertyValue(`--${code}`) : '';
