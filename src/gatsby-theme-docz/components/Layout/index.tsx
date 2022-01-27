@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import { cnCreate, applyTheme } from "@megafon/ui-helpers";
 import { useWindowSize } from "docz";
@@ -9,7 +10,8 @@ import "./Layout.less";
 type Theme = "light" | "dark";
 
 const getCurrentTheme = (): Theme =>
-    (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
+    (typeof window !== "undefined" &&
+        (window.localStorage.getItem("theme") as Theme)) ||
     "light";
 
 const cn = cnCreate("docz-layout");
@@ -32,10 +34,13 @@ const Layout: React.FC = ({ children }) => {
         setTheme(currentTheme);
         // apply theme to document
         applyTheme(currentTheme);
+
+        const event = new Event("css-var-load");
+        document.dispatchEvent(event);
     }, []);
 
     const handleClick = () => {
-        setIsOpen(prev => !prev);
+        setIsOpen((prev: boolean) => !prev);
     };
 
     const handleClickOut = () => {
