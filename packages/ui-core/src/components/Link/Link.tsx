@@ -1,8 +1,7 @@
 import React from 'react';
-import { filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 
-export interface ILinkProps extends IFilterDataAttrs {
+export interface ILinkProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Ссылка */
@@ -15,6 +14,10 @@ export interface ILinkProps extends IFilterDataAttrs {
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
     /** Добавление атрибута download */
     download?: boolean;
+    /** Дата атрибуты для элемента */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
@@ -26,7 +29,7 @@ const Link: React.FC<ILinkProps> = ({ target, href, rel, onClick, className, dow
         rel={rel}
         onClick={onClick}
         download={download}
-        {...filterDataAttrs(dataAttrs)}
+        {...dataAttrs?.root}
     >
         {children}
     </a>
