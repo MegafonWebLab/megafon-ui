@@ -23,8 +23,6 @@ exports[`Card button is not rendered if a card has the href property set 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -65,8 +63,6 @@ exports[`Card disable left align if there is a button and link 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -119,8 +115,6 @@ exports[`Card left align of the interactive element 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -169,8 +163,6 @@ exports[`Card render component with icon 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -223,8 +215,6 @@ exports[`Card render component with img, if image source and svg source are spec
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -278,8 +268,6 @@ exports[`Card render component with optional props 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -323,8 +311,6 @@ exports[`Card render component with required props 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -354,8 +340,6 @@ exports[`Card render with a single interactive button element 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -401,8 +385,6 @@ exports[`Card render with a single interactive link element 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -439,8 +421,6 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -495,8 +475,6 @@ exports[`Card render with contain object fit 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -530,8 +508,6 @@ exports[`Card render with fullHeight 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -568,8 +544,6 @@ exports[`Card render with link on the card 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>
@@ -601,8 +575,6 @@ exports[`Card render without img and svg 1`] = `
     <Header
       as="h3"
       className="mfui-card__title"
-      color="default"
-      hAlign="inherit"
     >
       Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
     </Header>

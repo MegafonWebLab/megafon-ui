@@ -24,7 +24,6 @@ exports[`StoreBanner should render with Huawei Store 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
@@ -109,7 +108,6 @@ exports[`StoreBanner should render with QR-code 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
@@ -194,7 +192,6 @@ exports[`StoreBanner should render with custom class names 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
@@ -274,7 +271,6 @@ exports[`StoreBanner should render with green button 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
@@ -347,7 +343,6 @@ exports[`StoreBanner should render with green theme 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
@@ -427,7 +422,6 @@ exports[`StoreBanner should render with iphone mask 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
@@ -507,7 +501,6 @@ exports[`StoreBanner should render with required props 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
@@ -587,7 +580,6 @@ exports[`StoreBanner should render with violet button 1`] = `
               as="h2"
               className="mfui-store-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Title
             </Header>
