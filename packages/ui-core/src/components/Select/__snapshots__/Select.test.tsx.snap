@@ -31,8 +31,7 @@ exports[`<Select /> it renders with data attributes 1`] = `
         className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-item mfui-select__list-item_active"
-          data-list-item="test[1]"
+          className="mfui-select__list-item mfui-select__list-item_hovered"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -111,52 +110,9 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-list-item="test[1]"
-          key="0_1"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          className="mfui-select__not-found"
         >
-          <div
-            className="mfui-select__item-title list-item-title"
-            data-list-item-title="test[1]"
-          >
-            t
-            e
-            s
-            t
-            -
-            n
-            a
-            m
-            e
-            -
-            1
-          </div>
-        </div>
-        <div
-          className="mfui-select__list-item list-item"
-          data-list-item="test[2]"
-          key="1_2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="mfui-select__item-title list-item-title"
-            data-list-item-title="test[2]"
-          >
-            t
-            e
-            s
-            t
-            -
-            n
-            a
-            m
-            e
-            -
-            2
-          </div>
+          Ничего не нашлось
         </div>
       </div>
     </div>
@@ -217,52 +173,9 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-list-item="test[1]"
-          key="0_1"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          className="mfui-select__not-found"
         >
-          <div
-            className="mfui-select__item-title list-item-title"
-            data-list-item-title="test[1]"
-          >
-            t
-            e
-            s
-            t
-            -
-            n
-            a
-            m
-            e
-            -
-            1
-          </div>
-        </div>
-        <div
-          className="mfui-select__list-item list-item"
-          data-list-item="test[2]"
-          key="1_2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="mfui-select__item-title list-item-title"
-            data-list-item-title="test[2]"
-          >
-            t
-            e
-            s
-            t
-            -
-            n
-            a
-            m
-            e
-            -
-            2
-          </div>
+          Ничего не нашлось
         </div>
       </div>
     </div>
@@ -323,8 +236,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-list-item="test[1]"
+          className="mfui-select__list-item mfui-select__list-item_hovered list-item"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -399,52 +311,9 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
         className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-list-item="test[1]"
-          key="0_1"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          className="mfui-select__not-found"
         >
-          <div
-            className="mfui-select__item-title list-item-title"
-            data-list-item-title="test[1]"
-          >
-            t
-            e
-            s
-            t
-            -
-            n
-            a
-            m
-            e
-            -
-            1
-          </div>
-        </div>
-        <div
-          className="mfui-select__list-item list-item"
-          data-list-item="test[2]"
-          key="1_2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="mfui-select__item-title list-item-title"
-            data-list-item-title="test[2]"
-          >
-            t
-            e
-            s
-            t
-            -
-            n
-            a
-            m
-            e
-            -
-            2
-          </div>
+          Ничего не нашлось
         </div>
       </div>
     </div>
@@ -508,7 +377,6 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
       },
     }
   }
-  disabled={false}
   items={
     Array [
       Object {
@@ -523,11 +391,9 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
   }
   label="test-label"
   labelId="1"
-  notFoundText="Ничего не нашлось"
   noticeText="test-notice-text"
   placeholder="test-placeholder"
   required={true}
-  type="classic"
 >
   <div
     className="mfui-select mfui-select_open mfui-select_no-touch test-class test-root-class"
@@ -585,8 +451,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
           className="mfui-select__list-inner"
         >
           <div
-            className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-list-item="test[1]"
+            className="mfui-select__list-item mfui-select__list-item_hovered list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -675,7 +540,6 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
       },
     }
   }
-  disabled={false}
   items={
     Array [
       Object {
@@ -690,11 +554,9 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
   }
   label="test-label"
   labelId="1"
-  notFoundText="Ничего не нашлось"
   noticeText="test-notice-text"
   placeholder="test-placeholder"
   required={true}
-  type="classic"
 >
   <div
     className="mfui-select mfui-select_no-touch test-class test-root-class"
@@ -752,8 +614,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
           className="mfui-select__list-inner"
         >
           <div
-            className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-list-item="test[1]"
+            className="mfui-select__list-item mfui-select__list-item_hovered list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -823,8 +684,7 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
         className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-item mfui-select__list-item_active"
-          data-list-item="test[1]"
+          className="mfui-select__list-item mfui-select__list-item_hovered"
           key="0_111"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -872,21 +732,9 @@ exports[`<Select /> should render items.view as function and type combobox 1`] =
         className="mfui-select__list-inner"
       >
         <div
-          className="mfui-select__list-item mfui-select__list-item_active"
-          data-list-item="test[1]"
-          key="0_111"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+          className="mfui-select__not-found"
         >
-          <div
-            className="mfui-select__item-title"
-            data-list-item-title="test[1]"
-          >
-            <div>
-              view 
-              123
-            </div>
-          </div>
+          Ничего не нашлось
         </div>
       </div>
     </div>
@@ -944,7 +792,6 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
       },
     }
   }
-  disabled={false}
   items={
     Array [
       Object {
@@ -959,7 +806,6 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
   }
   label="test-label"
   labelId="1"
-  notFoundText="Ничего не нашлось"
   noticeText="test-notice-text"
   placeholder="test-placeholder"
   required={true}
@@ -1017,8 +863,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
           className="mfui-select__list-inner"
         >
           <div
-            className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-list-item="test[1]"
+            className="mfui-select__list-item mfui-select__list-item_hovered list-item"
             key="0_111"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1087,7 +932,6 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
 
 exports[`<Select /> snapshots renders with default props 1`] = `
 <Select
-  disabled={false}
   items={
     Array [
       Object {
@@ -1100,9 +944,6 @@ exports[`<Select /> snapshots renders with default props 1`] = `
       },
     ]
   }
-  notFoundText="Ничего не нашлось"
-  required={false}
-  type="classic"
 >
   <div
     className="mfui-select mfui-select_no-touch"
@@ -1132,7 +973,7 @@ exports[`<Select /> snapshots renders with default props 1`] = `
           className="mfui-select__list-inner"
         >
           <div
-            className="mfui-select__list-item mfui-select__list-item_active"
+            className="mfui-select__list-item mfui-select__list-item_hovered"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1212,7 +1053,6 @@ exports[`<Select /> snapshots renders with props 1`] = `
       },
     }
   }
-  disabled={false}
   items={
     Array [
       Object {
@@ -1227,11 +1067,9 @@ exports[`<Select /> snapshots renders with props 1`] = `
   }
   label="test-label"
   labelId="1"
-  notFoundText="Ничего не нашлось"
   noticeText="test-notice-text"
   placeholder="test-placeholder"
   required={true}
-  type="classic"
 >
   <div
     className="mfui-select mfui-select_no-touch test-class test-root-class"
@@ -1289,8 +1127,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
           className="mfui-select__list-inner"
         >
           <div
-            className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-list-item="test[1]"
+            className="mfui-select__list-item mfui-select__list-item_hovered list-item"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
