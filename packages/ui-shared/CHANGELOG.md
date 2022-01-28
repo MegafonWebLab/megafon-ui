@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.0-beta.4...@megafon/ui-shared@3.0.0-beta.5) (2022-01-28)
+
+
+### Features
+
+* **header:** made header as a functional component ([81701ad](https://github.com/MegafonWebLab/megafon-ui/commit/81701ad87b6e9df2fe630bf4e183383264c0bb01))
+
+
+
+
+
 # [3.0.0-beta.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.0-beta.3...@megafon/ui-shared@3.0.0-beta.4) (2022-01-27)
 
 **Note:** Version bump only for package @megafon/ui-shared
