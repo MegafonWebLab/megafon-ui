@@ -21,43 +21,39 @@ interface IHeaderProps extends IFilterDataAttrs {
 }
 
 const cn = cnCreate('mfui-header');
-class Header extends React.Component<IHeaderProps, {}> {
-    static propTypes = {
-        as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),
-        color: PropTypes.oneOf(['default', 'black', 'white', 'green', 'purple', 'blue', 'inherit']),
-        margin: PropTypes.bool,
-        addition: PropTypes.element,
-        hAlign: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
-        dataAttrs: PropTypes.objectOf(PropTypes.string),
-        onClick: PropTypes.func,
-        children: PropTypes.node,
-    };
+const Header: React.FC<IHeaderProps> = ({
+    addition,
+    as: level = 'h1',
+    children,
+    className,
+    color = 'default',
+    dataAttrs,
+    hAlign = 'inherit',
+    margin,
+    onClick,
+}) => {
+    const ElementType = level as React.ElementType;
 
-    static defaultProps: Partial<IHeaderProps> = {
-        as: 'h1',
-        color: 'default',
-        hAlign: 'inherit',
-    };
+    return (
+        <ElementType
+            {...filterDataAttrs(dataAttrs)}
+            className={cn({ color, margin, level, 'h-align': hAlign }, className)}
+            onClick={onClick}
+        >
+            {children}
+            {addition && <div className={cn('addition')}>{addition}</div>}
+        </ElementType>
+    );
+};
 
-    renderAddition() {
-        return <div className={cn('addition')}>{this.props.addition}</div>;
-    }
-
-    render() {
-        const { color, margin, as: level, hAlign, onClick, dataAttrs, className } = this.props;
-        const ElementType = level as React.ElementType;
-
-        return (
-            <ElementType
-                {...filterDataAttrs(dataAttrs)}
-                className={cn({ color, margin, level, 'h-align': hAlign }, className)}
-                onClick={onClick}
-            >
-                {this.props.children}
-                {this.props.addition && this.renderAddition()}
-            </ElementType>
-        );
-    }
-}
+Header.propTypes = {
+    as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),
+    color: PropTypes.oneOf(['default', 'black', 'white', 'green', 'purple', 'blue', 'inherit']),
+    margin: PropTypes.bool,
+    addition: PropTypes.element,
+    hAlign: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
+    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    onClick: PropTypes.func,
+};
 
 export default Header;

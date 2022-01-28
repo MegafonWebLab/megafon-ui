@@ -20,8 +20,6 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
       <Header
         as="h5"
         className="mfui-notification__title"
-        color="default"
-        hAlign="inherit"
       >
         title
       </Header>

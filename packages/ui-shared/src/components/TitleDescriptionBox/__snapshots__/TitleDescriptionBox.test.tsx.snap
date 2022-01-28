@@ -16,7 +16,6 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox 1`] = `
         as="h2"
         className="mfui-title-description-box__item mfui-title-description-box__item_header"
         color="inherit"
-        hAlign="inherit"
       >
         title
       </Header>
@@ -48,7 +47,6 @@ exports[`<TitleDescriptionBox /> renders TitleDescriptionBox without description
         as="h2"
         className="mfui-title-description-box__item mfui-title-description-box__item_header"
         color="inherit"
-        hAlign="inherit"
       >
         title
       </Header>
@@ -97,7 +95,6 @@ exports[`<TitleDescriptionBox /> renders with components in description field 1`
         as="h2"
         className="mfui-title-description-box__item mfui-title-description-box__item_header"
         color="inherit"
-        hAlign="inherit"
       >
         title
       </Header>

@@ -10,8 +10,8 @@ describe('<Header />', () => {
 
     ['h1', 'h2', 'h3', 'h5'].forEach(tag => {
         it(`it renders only with ${tag}`, () => {
-            type AsValuesType = Header['props']['as'];
-            const wrapper = shallow(<Header as={tag as AsValuesType} />);
+            type HeaderPropType = React.ComponentProps<typeof Header>;
+            const wrapper = shallow(<Header as={tag as HeaderPropType['as']} />);
             expect(wrapper.type()).toEqual(tag);
         });
     });
