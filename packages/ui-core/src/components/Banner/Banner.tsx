@@ -27,6 +27,8 @@ export interface IBannerProps {
         slide?: string;
         arrow?: string;
     };
+    /** Предполагается использование с наезжанием на баннер следующего за баннером элемента */
+    withPaginationBottomOffset?: boolean;
     /** Автоматическая прокрутка */
     autoPlay?: boolean;
     /** Задержка автоматической прокрутки */
@@ -54,6 +56,7 @@ const cn = cnCreate('mfui-banner');
 const Banner: React.FC<IBannerProps> = ({
     className,
     classes = {},
+    withPaginationBottomOffset = false,
     autoPlay = false,
     autoPlayDelay = 5000,
     loop = false,
@@ -188,7 +191,7 @@ const Banner: React.FC<IBannerProps> = ({
                 disabled={!loop && isEnd}
                 theme={navArrowTheme}
             />
-            <div className={cn('pagination', { theme: navTheme })}>
+            <div className={cn('pagination', { theme: navTheme, 'bottom-offset': withPaginationBottomOffset })}>
                 {React.Children.map(children, (_, i) => (
                     <BannerDot
                         key={i}
@@ -211,6 +214,7 @@ Banner.propTypes = {
     classes: PropTypes.shape({
         slide: PropTypes.string,
     }),
+    withPaginationBottomOffset: PropTypes.bool,
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
     navTheme: PropTypes.oneOf(Object.values(NavTheme)),
