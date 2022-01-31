@@ -14,6 +14,12 @@ exports[`Link renders with attribute download 1`] = `
 />
 `;
 
+exports[`Link renders with data-attribute 1`] = `
+<a
+  data-attribute="atribute"
+/>
+`;
+
 exports[`Link renders with default props 1`] = `<a />`;
 
 exports[`Link renders with rel 1`] = `

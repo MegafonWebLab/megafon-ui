@@ -1,5 +1,6 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import React from 'react';
+import { filterDataAttrs } from '@megafon/ui-helpers';
+import PropTypes from 'prop-types';
 
 export interface ILinkProps {
     /** Дополнительный класс корневого элемента */
@@ -10,16 +11,29 @@ export interface ILinkProps {
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** rel - аргумент тега <a> */
     rel?: string;
-    /** Обработчик клика */
-    onClick?: (e: React.MouseEvent<EventTarget>) => void;
     /** Добавление атрибута download */
     download?: boolean;
+    /** Дата атрибуты для элемента */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
+    /** Обработчик клика */
+    onClick?: (e: React.MouseEvent<EventTarget>) => void;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
-const Link: React.FC<ILinkProps> = props => (
-    // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a {...props} />
+const Link: React.FC<ILinkProps> = ({ target, href, rel, onClick, className, download, children, dataAttrs }) => (
+    <a
+        className={className}
+        href={href}
+        target={target}
+        rel={rel}
+        download={download}
+        onClick={onClick}
+        {...filterDataAttrs(dataAttrs?.root)}
+    >
+        {children}
+    </a>
 );
 Link.propTypes = {
     href: PropTypes.string,
