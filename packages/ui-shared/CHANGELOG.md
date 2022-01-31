@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.2.0...@megafon/ui-shared@2.2.1) (2022-01-31)
+
+
+### Bug Fixes
+
+* **storebanner:** update qr code image for storebanner examples and fix qr code container styles ([1845222](https://github.com/MegafonWebLab/megafon-ui/commit/1845222e5211e70a8f5aa36ab4a710ecd46e8a14))
+
+
+
+
+
 # [2.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.1.5...@megafon/ui-shared@2.2.0) (2022-01-24)
 
 

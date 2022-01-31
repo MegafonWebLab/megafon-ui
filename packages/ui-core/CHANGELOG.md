@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.3.0...@megafon/ui-core@2.4.0) (2022-01-31)
+
+
+### Bug Fixes
+
+* **link:** new prop dataAttrs ([bde2253](https://github.com/MegafonWebLab/megafon-ui/commit/bde22539ff0db11777be9193adceb6de0f984234))
+
+
+### Features
+
+* **banner:** add props withPaginationBottomOffset ([c1485a0](https://github.com/MegafonWebLab/megafon-ui/commit/c1485a083d63b886419109b03bb31230c5fed890))
+
+
+
+
+
 # [2.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.2.0...@megafon/ui-core@2.3.0) (2022-01-24)
 
 
