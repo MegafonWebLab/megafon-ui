@@ -13,8 +13,8 @@ import './Colors.less';
 const { basic, secondary, system, gradientColors, staticColors, staticOpacity, soft } = colorsData;
 
 const cn = cnCreate('colors');
-const Colors = () => {
-    const renderUnderline = () => (
+const Colors: React.FC = () => {
+    const renderUnderline = (): JSX.Element => (
         <div className={cn('underline')}>
             <span className={cn('pointer')} />
         </div>

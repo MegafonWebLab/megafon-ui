@@ -54,7 +54,7 @@ const Day: React.FC<IDayProps> = ({ isBetween = false, dayLabel, date, onMouseLe
     };
 
     const handleMouseLeave = (): void => {
-        onMouseLeave && onMouseLeave();
+        onMouseLeave?.();
     };
 
     return (

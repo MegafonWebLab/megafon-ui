@@ -21,7 +21,7 @@ interface IHeaderProps extends IFilterDataAttrs {
 }
 
 const cn = cnCreate('mfui-header');
-class Header extends React.Component<IHeaderProps, {}> {
+class Header extends React.Component<IHeaderProps> {
     static propTypes = {
         as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h5']),
         color: PropTypes.oneOf(['black', 'white', 'green', 'purple', 'blue', 'inherit']),
@@ -39,11 +39,11 @@ class Header extends React.Component<IHeaderProps, {}> {
         hAlign: 'inherit',
     };
 
-    renderAddition() {
+    renderAddition(): JSX.Element {
         return <div className={cn('addition')}>{this.props.addition}</div>;
     }
 
-    render() {
+    render(): JSX.Element {
         const { color, margin, as: level, hAlign, onClick, dataAttrs, className } = this.props;
         const ElementType = level as React.ElementType;
 

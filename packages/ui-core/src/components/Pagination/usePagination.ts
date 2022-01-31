@@ -55,7 +55,7 @@ const getItems = ({ totalPages, activePage, maxButtonsCount, neighbourCount }: G
     }
 };
 
-const usePagination = (totalPages: number, activePage: number) => {
+const usePagination = (totalPages: number, activePage: number): (string | number)[] => {
     const [neighbourCount, setNeighbourCount] = React.useState(NeighbourCount.MAIN);
     const maxButtonsCount = 2 * neighbourCount + BUTTON_RATIO;
     const paginationItems = getItems({

@@ -34,8 +34,10 @@ export const Prop = ({ propName, prop }) => {
 
     const type = prop.type.name
         .replace(/ \| undefined/g, '')
+        .replace(/\</g, '&#60;')
         .replace(/\|/g, '<br>| ')
-        .replace(/\"/g, "'");
+        .replace(/\"/g, "'")
+        .replace(/([;])(?=[^;]*$)/, '');
 
     return (
         <tr className={cn('row')}>

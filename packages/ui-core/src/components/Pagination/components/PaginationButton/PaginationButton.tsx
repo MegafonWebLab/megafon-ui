@@ -24,8 +24,8 @@ const PaginationButton: React.FC<IPaginationButton> = ({
     onClick,
     value,
 }) => {
-    const handleClick = () => {
-        onClick && onClick(value);
+    const handleClick = (): void => {
+        onClick?.(value);
     };
 
     return (

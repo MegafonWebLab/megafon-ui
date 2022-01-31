@@ -33,6 +33,10 @@
         z-index: 10;
 
         transform: translateY(-50%);
+
+        @media @mobileSM {
+            display: none;
+        }
     }
 
     &__arrow_prev {
@@ -68,6 +72,23 @@
 
     &__pagination_theme_dark {
         background-color: @fullBlack25;
+    }
+
+    &__pagination_bottom-offset {
+        bottom: 60px;
+
+        @media @mobileB {
+            bottom: 89px;
+        }
+        @media @desktopS {
+            bottom: 90px;
+        }
+        @media @desktopM {
+            bottom: 65px;
+        }
+        @media @desktopBU {
+            bottom: 72px;
+        }
     }
 
     &__dot {

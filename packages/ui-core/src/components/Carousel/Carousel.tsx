@@ -160,6 +160,7 @@ const Carousel: React.FC<ICarouselProps> = ({
             }
 
             autoplay.stop();
+            // eslint-disable-next-line no-param-reassign
             params.autoplay.delay = autoPlayDelay * 3;
             autoplay.start();
         },
@@ -172,7 +173,7 @@ const Carousel: React.FC<ICarouselProps> = ({
         }
 
         swiperInstance.slidePrev();
-        onPrevClick && onPrevClick(swiperInstance.realIndex);
+        onPrevClick?.(swiperInstance.realIndex);
         increaseAutoplayDelay(swiperInstance);
     }, [swiperInstance, onPrevClick, increaseAutoplayDelay]);
 
@@ -182,15 +183,18 @@ const Carousel: React.FC<ICarouselProps> = ({
         }
 
         swiperInstance.slideNext();
-        onNextClick && onNextClick(swiperInstance.realIndex);
+        onNextClick?.(swiperInstance.realIndex);
         increaseAutoplayDelay(swiperInstance);
     }, [swiperInstance, onNextClick, increaseAutoplayDelay]);
 
-    const handleSwiper = React.useCallback((swiper: SwiperCore) => {
-        setSwiperInstance(swiper);
-        setLocked(swiper.isBeginning && swiper.isEnd);
-        getSwiper && getSwiper(swiper);
-    }, []);
+    const handleSwiper = React.useCallback(
+        (swiper: SwiperCore) => {
+            setSwiperInstance(swiper);
+            setLocked(swiper.isBeginning && swiper.isEnd);
+            getSwiper?.(swiper);
+        },
+        [getSwiper],
+    );
 
     const handleReachBeginnig = React.useCallback(() => {
         setBeginning(true);
@@ -211,7 +215,7 @@ const Carousel: React.FC<ICarouselProps> = ({
 
     const handleSlideChange = React.useCallback(
         ({ realIndex, previousIndex, params }: SwiperCore) => {
-            onChange && onChange(realIndex, previousIndex, params.slidesPerView);
+            onChange?.(realIndex, previousIndex, params.slidesPerView);
         },
         [onChange],
     );
@@ -226,7 +230,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     };
 
     // https://github.com/nolimits4web/Swiper/issues/2346
-    const handleSwiperResize = React.useCallback(
+    const handleSwiperResize = React.useCallback(() => {
         throttle((swiper: SwiperCore) => {
             setBeginning(swiper.isBeginning);
             setEnd(swiper.isEnd);
@@ -235,9 +239,8 @@ const Carousel: React.FC<ICarouselProps> = ({
             if (swiper.params.slidesPerView === SlidesPerView.AUTO) {
                 swiper.slides.css('width', '');
             }
-        }, throttleTime.resize),
-        [],
-    );
+        }, throttleTime.resize);
+    }, []);
 
     const handleSlideFocus = (index: number) => (e: React.FocusEvent) => {
         if (loop) {

@@ -127,7 +127,7 @@ const Button: React.FC<IButtonProps> = ({
                 return;
             }
 
-            onClick && onClick(e);
+            onClick?.(e);
         },
         [disabled, onClick],
     );
@@ -192,7 +192,7 @@ const Button: React.FC<IButtonProps> = ({
                 sizeMobile={sizeMobile && getLoaderSize(sizeMobile)}
             />
         ),
-        [sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile],
+        [sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile, loaderColor],
     );
 
     const setRelAttribute = () => {

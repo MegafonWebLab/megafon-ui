@@ -56,7 +56,7 @@ const Tile: React.FC<ITileProps> = ({
     dataAttrs,
 }) => {
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
-        onClick && onClick(e);
+        onClick?.(e);
     };
     const isPointer = !!href || isInteractive;
 
