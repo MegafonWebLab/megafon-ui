@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import Banner, { IBannerProps, NavTheme } from './Banner';
 import { DemoSlide } from './doc/Banner.docz';
 
-const props = {
+const props: IBannerProps = {
     className: 'custom-class',
     classes: {
         slide: 'slide',
@@ -18,7 +18,7 @@ const props = {
     onPrevClick: jest.fn(),
     onDotClick: jest.fn(),
     onChange: jest.fn(),
-} as IBannerProps;
+};
 
 const cnBanner = cnCreate('.mfui-banner');
 const cnBannerDot = cnCreate('.mfui-banner-dot');
@@ -48,6 +48,19 @@ describe('<Banner />', () => {
         );
 
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render with withPaginationBottomOffset props', () => {
+        const wrapper = mount(
+            <Banner {...props} withPaginationBottomOffset>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Banner>,
+        );
+
+        const paginationNode = wrapper.find(cnBanner('pagination')).getDOMNode();
+
+        expect(paginationNode.classList.contains('mfui-banner__pagination_bottom-offset')).toBeTruthy();
     });
 
     it('should call onChange', async () => {

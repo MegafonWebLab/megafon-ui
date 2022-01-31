@@ -1,6 +1,6 @@
 import { Playground } from 'docz';
 import Banner from '../Banner';
-import { DemoSlide } from './Banner.docz';
+import { DemoSlide, OffsetBlock } from './Banner.docz';
 
 ```javascript collapse=Код DemoSlide
 export const DemoSlide = ({ children, background }) => {
@@ -19,6 +19,18 @@ export const DemoSlide = ({ children, background }) => {
         </div>
     );
 }
+
+export const OffsetBlock = () => (
+    <div
+        style={{
+            position: 'relative',
+            width: '80%',
+            height: '50px',
+            background: '#731982',
+            margin: '-36px auto 0',
+        }}
+    />
+);
 ```
 
 ## Цветовая тема навигации - light
@@ -69,4 +81,15 @@ export const DemoSlide = ({ children, background }) => {
         <DemoSlide background="#00a04b">2</DemoSlide>
         <DemoSlide background="#02d263">3</DemoSlide>
     </Banner>
+</Playground>
+
+## С наезжанием на баннер следующего за баннером элемента
+
+<Playground>
+    <Banner withPaginationBottomOffset>
+        <DemoSlide background="#00B956">1</DemoSlide>
+        <DemoSlide background="#00a04b">2</DemoSlide>
+        <DemoSlide background="#02d263">3</DemoSlide>
+    </Banner>
+    <OffsetBlock />
 </Playground>

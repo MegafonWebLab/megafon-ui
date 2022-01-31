@@ -14,3 +14,15 @@ export const DemoSlide = ({ children, background = '#fff' }) => (
         {children}
     </div>
 );
+
+export const OffsetBlock = () => (
+    <div
+        style={{
+            position: 'relative',
+            width: '80%',
+            height: '50px',
+            background: '#731982',
+            margin: '-36px auto 0',
+        }}
+    />
+);
