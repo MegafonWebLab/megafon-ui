@@ -24,7 +24,7 @@ const Switcher: React.FC<ISwitcherProps> = props => {
             return;
         }
 
-        onChange && onChange(e);
+        onChange?.(e);
     };
 
     return (

@@ -54,7 +54,7 @@ const Accordion: React.FC<IAccordionProps> = ({
     }, [isOpened]);
 
     const handleClickTitle = (): void => {
-        onClickAccordion && onClickAccordion(!isOpenedState, title);
+        onClickAccordion?.(!isOpenedState, title);
 
         setIsOpenedState(!isOpenedState);
     };

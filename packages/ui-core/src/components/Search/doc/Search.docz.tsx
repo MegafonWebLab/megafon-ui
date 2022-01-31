@@ -18,16 +18,13 @@ export const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children 
     const [value, setValue] = React.useState<string>('');
     const [items, setItems] = React.useState<SearchItem[]>([]);
 
-    const handleChange = React.useCallback(
-        (query: string) => {
-            if (!query) {
-                return;
-            }
+    const handleChange = React.useCallback((query: string) => {
+        if (!query) {
+            return;
+        }
 
-            setItems(oldItems => [...oldItems, { value: query }]);
-        },
-        [items, setItems],
-    );
+        setItems(oldItems => [...oldItems, { value: query }]);
+    }, []);
 
     return (
         <div>
@@ -61,7 +58,7 @@ export const DemoSearchCustomItemsWrapper: React.FC<IDemoSearchCustomItemsWrappe
                 value: `ИП Баранник Александр Николаевич ${i + 1}`,
                 searchView: getContent(i),
             })),
-        [],
+        [getContent],
     );
 
     return <div>{children({ value, onSubmit: setValue, items })}</div>;

@@ -57,15 +57,15 @@ const Counter: React.FC<ICounterProps> = ({
             }
 
             if (inputValue < min) {
-                onChange && onChange(min);
+                onChange?.(min);
             }
 
             if (inputValue > max) {
-                onChange && onChange(max);
+                onChange?.(max);
             }
 
             if (inputValue >= min && inputValue <= max) {
-                onChange && onChange(inputValue);
+                onChange?.(inputValue);
             }
         },
         [min, max, onChange, isControlled],

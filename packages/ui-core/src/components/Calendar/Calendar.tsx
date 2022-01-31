@@ -107,6 +107,7 @@ const Calendar: React.FC<ICalendarProps> = ({
         setCalendarState(calendarStateFromProps);
 
         propsStartDate && goToDate(propsStartDate);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [calendarStateFromProps]);
 
     const getCalendarState = (date: Date): ICalendarState => {
@@ -166,7 +167,7 @@ const Calendar: React.FC<ICalendarProps> = ({
 
         setCalendarState(nextState);
 
-        onChange && onChange(nextStartDate, nextEndDate);
+        onChange?.(nextStartDate, nextEndDate);
     };
 
     const handleDateHover = (date: Date): void => setHoveredDate(date);
@@ -201,6 +202,7 @@ const Calendar: React.FC<ICalendarProps> = ({
 
     const renderMonths = (): ReactNode =>
         activeMonths.map(({ month, year }) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             const { days, weekdayLabels, monthLabel } = useMonth({
                 year,
                 month,

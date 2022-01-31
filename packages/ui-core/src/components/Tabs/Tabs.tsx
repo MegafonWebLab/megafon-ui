@@ -124,13 +124,13 @@ const Tabs: React.FC<ITabsProps> = ({
         const documentWidth = document.documentElement.clientWidth;
 
         setStickyOffset({ left, right: documentWidth - right });
-    }, [stickyOffset, isSticky]);
+    }, [sticky]);
 
     const handleTabInnerClick = React.useCallback(
         (index: number) => () => {
             setUnderlineTransition('all');
 
-            onTabClick && onTabClick(index);
+            onTabClick?.(index);
             if (outerIndex === undefined) {
                 setInnerIndex(index);
             }
@@ -194,7 +194,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     </SwiperSlide>
                 );
             }),
-        [renderTab, children],
+        [renderTab, children, activeTabClass, currentIndex, setTabRef, tabClass],
     );
 
     const renderPanels = React.useCallback(
@@ -219,7 +219,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     </div>
                 );
             }),
-        [children, currentIndex],
+        [children, currentIndex, renderOnlyCurrentPanel],
     );
 
     const handleReachBeginning = React.useCallback((swiper: SwiperCore) => {
@@ -236,10 +236,12 @@ const Tabs: React.FC<ITabsProps> = ({
     }, []);
 
     React.useEffect(() => {
+        const rootRefNode = rootRef.current;
+
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
-                    if (!sticky || !rootRef.current || !tabListRef.current) {
+                    if (!sticky || !rootRefNode || !tabListRef.current) {
                         return;
                     }
 
@@ -269,12 +271,12 @@ const Tabs: React.FC<ITabsProps> = ({
             { threshold: [0, 1] },
         );
 
-        rootRef.current && observer.observe(rootRef.current);
+        rootRefNode && observer.observe(rootRefNode);
 
         return () => {
-            rootRef.current && observer.unobserve(rootRef.current);
+            rootRefNode && observer.unobserve(rootRefNode);
         };
-    }, [calculateSticky]);
+    }, [calculateSticky, sticky]);
 
     React.useEffect(() => {
         const handleResize = throttle(() => {
@@ -302,7 +304,7 @@ const Tabs: React.FC<ITabsProps> = ({
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [calculateUnderline, calculateSticky]);
+    }, [calculateUnderline, calculateSticky, currentIndex]);
 
     React.useEffect(() => {
         if (!swiperInstance) {

@@ -161,16 +161,13 @@ const TextField: React.FC<TextFieldProps> = ({
     useEffect(() => {
         !isControlled && setInputValue(value);
         checkSymbolMaxLimit(value);
-    }, [value, checkSymbolMaxLimit]);
+    }, [value, checkSymbolMaxLimit, isControlled]);
 
     useEffect(() => {
         setTouch(detectTouch());
     }, []);
 
-    const togglePasswordHiding = useCallback(
-        () => setPasswordHidden(prevPassState => !prevPassState),
-        [isPasswordHidden],
-    );
+    const togglePasswordHiding = useCallback(() => setPasswordHidden(prevPassState => !prevPassState), []);
 
     const setTextareaHeight = (): void => {
         if (!fieldNode?.current) {
@@ -200,7 +197,7 @@ const TextField: React.FC<TextFieldProps> = ({
         !isControlled && setInputValue(e.target.value);
         checkSymbolMaxLimit(e.target.value);
 
-        onChange && onChange(e);
+        onChange?.(e);
     };
 
     const handleTextareaClick = () => {
@@ -222,25 +219,25 @@ const TextField: React.FC<TextFieldProps> = ({
             const { current: field } = fieldNode;
 
             isPasswordType && togglePasswordHiding();
-            onCustomIconClick && onCustomIconClick(e);
+            onCustomIconClick?.(e);
             if (!isControlled && isClearFuncAvailable) {
                 setInputValue('');
-                field && field.focus();
+                field?.focus();
             }
         },
-        [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, setInputValue],
+        [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, customIcon, isControlled],
     );
 
     const handleFocus = useCallback(
         (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-            onFocus && onFocus(e);
+            onFocus?.(e);
         },
         [onFocus],
     );
 
     const handleBlur = useCallback(
         (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-            onBlur && onBlur(e);
+            onBlur?.(e);
         },
         [onBlur],
     );
@@ -300,7 +297,7 @@ const TextField: React.FC<TextFieldProps> = ({
         }
 
         fieldNode.current = node;
-        inputRef && inputRef(node);
+        inputRef?.(node);
     };
 
     const getIcon = (): React.ReactNode | null => {

@@ -59,13 +59,13 @@ class RadioButton extends React.Component<IRadioButtonProps> {
         disabled: false,
     };
 
-    handleChange = () => {
+    handleChange = (): void => {
         const { onChange, value } = this.props;
 
-        onChange && onChange(value);
+        onChange?.(value);
     };
 
-    render() {
+    render(): JSX.Element {
         const {
             isChecked,
             disabled,

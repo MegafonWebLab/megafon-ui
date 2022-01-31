@@ -34,7 +34,7 @@ export interface ICheckboxProps extends IFilterDataAttrs {
 }
 
 const cn = cnCreate('mfui-checkbox');
-class Checkbox extends React.Component<ICheckboxProps, {}> {
+class Checkbox extends React.Component<ICheckboxProps> {
     static propTypes = {
         className: PropTypes.string,
         fontSize: PropTypes.oneOf(['regular', 'small']),
@@ -60,10 +60,10 @@ class Checkbox extends React.Component<ICheckboxProps, {}> {
 
     handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         const { onChange } = this.props;
-        onChange && onChange(e);
+        onChange?.(e);
     };
 
-    render() {
+    render(): JSX.Element {
         const {
             className,
             fontSize,
