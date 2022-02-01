@@ -6,7 +6,7 @@ import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType }
 import './StoreBanner.less';
 
 export const Theme = {
-    BASE: 'base',
+    DEFAULT: 'default',
     GREEN: 'green',
     SPB_SKY_1: 'spbSky1',
 } as const;
@@ -89,7 +89,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     textButton = DEFAULT_TEXT_BUTTON,
     qrCode,
     imageSrc,
-    theme = Theme.BASE,
+    theme = Theme.DEFAULT,
     deviceMask,
     rootRef,
     dataAttrs,

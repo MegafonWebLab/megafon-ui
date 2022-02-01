@@ -35,7 +35,7 @@ describe('<Paragraph />', () => {
 
         wrapper.setProps({ color: 'green' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'base' });
+        wrapper.setProps({ color: 'white' });
         expect(wrapper).toMatchSnapshot();
         wrapper.setProps({ color: 'spbSky0' });
         expect(wrapper).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('<Paragraph />', () => {
         expect(wrapper).toMatchSnapshot();
         wrapper.setProps({ color: 'spbSky2' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'content' });
+        wrapper.setProps({ color: 'default' });
         expect(wrapper).toMatchSnapshot();
     });
 });

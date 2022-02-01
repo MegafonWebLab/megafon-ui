@@ -5,9 +5,12 @@
 @{b} {
     // mod: color
 
-    &_color_base,
+    &_color_default {
+        background-color: var(--content);
+    }
+
     &_color_white {
-        background-color: var(--base);
+        background-color: var(--stcWhite);
     }
 
     &_color_transparent {
@@ -32,10 +35,6 @@
 
     &_color_spbSky2 {
         background-color: var(--spbSky2);
-    }
-
-    &_color_content {
-        background-color: var(--content);
     }
 
     &__inner {
@@ -89,9 +88,12 @@
 
     // mod: color
 
-    &__inner_color_base,
+    &__inner_color_default {
+        background-color: var(--content);
+    }
+
     &__inner_color_white {
-        background-color: var(--base);
+        background-color: var(--stcWhite);
     }
 
     &__inner_color_transparent {
@@ -116,9 +118,5 @@
 
     &__inner_color_spbSky2 {
         background-color: var(--spbSky2);
-    }
-
-    &__inner_color_content {
-        background-color: var(--content);
     }
 }
