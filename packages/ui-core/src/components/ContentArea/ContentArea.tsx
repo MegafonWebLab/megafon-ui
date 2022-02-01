@@ -4,14 +4,14 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 
 const BACKGROUND_COLORS = {
-    BASE: 'base',
+    DEFAULT: 'default',
+    WHITE: 'white',
     TRANSPARENT: 'transparent',
     GREEN: 'green',
     PURPLE: 'purple',
     SPB_SKY_0: 'spbSky0',
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
-    CONTENT: 'content',
 } as const;
 
 export type BackgroundColorType = typeof BACKGROUND_COLORS[keyof typeof BACKGROUND_COLORS];

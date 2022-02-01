@@ -3,8 +3,8 @@ import { shallow } from 'enzyme';
 import ContentArea, { IConrentAreaProps, BackgroundColorType } from './ContentArea';
 
 const props: Partial<IConrentAreaProps> = {
-    outerBackgroundColor: 'base',
-    innerBackgroundColor: 'base',
+    outerBackgroundColor: 'white',
+    innerBackgroundColor: 'white',
     disableIndents: 'all',
     className: 'className',
     classes: {
@@ -13,7 +13,7 @@ const props: Partial<IConrentAreaProps> = {
     },
 };
 
-const backgroundColors = ['base', 'transparent', 'green', 'purple', 'spbSky0', 'spbSky1', 'spbSky2', 'content'];
+const backgroundColors = ['white', 'transparent', 'green', 'purple', 'spbSky0', 'spbSky1', 'spbSky2', 'default'];
 
 describe('<ContentArea />', () => {
     const getWrapper = (additionalProps?: Partial<IConrentAreaProps>) =>

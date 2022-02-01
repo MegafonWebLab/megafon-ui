@@ -4,14 +4,14 @@ import * as PropTypes from 'prop-types';
 import './Paragraph.less';
 
 const COLORS = {
+    INHERIT: 'inherit',
+    DEFAULT: 'default',
+    WHITE: 'white',
     GREEN: 'green',
     PURPLE: 'purple',
-    BASE: 'base',
     SPB_SKY_0: 'spbSky0',
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
-    CONTENT: 'content',
-    INHERIT: 'inherit',
 } as const;
 
 type ColorType = typeof COLORS[keyof typeof COLORS];
@@ -33,7 +33,7 @@ const cn = cnCreate('mfui-paragraph');
 const Paragraph: React.FC<IParagraphProps> = ({
     size = 'regular',
     align,
-    color = 'content',
+    color = COLORS.DEFAULT,
     className,
     hasMargin = true,
     children,
