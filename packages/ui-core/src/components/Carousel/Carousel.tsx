@@ -152,6 +152,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     const [isBeginning, setBeginning] = React.useState(true);
     const [isEnd, setEnd] = React.useState(false);
     const [isLocked, setLocked] = React.useState(false);
+    const isSLideFocusNeeded = React.useRef<boolean>(false);
 
     const increaseAutoplayDelay = React.useCallback(
         ({ params, autoplay }: SwiperCore) => {
@@ -243,6 +244,10 @@ const Carousel: React.FC<ICarouselProps> = ({
     }, []);
 
     const handleSlideFocus = (index: number) => (e: React.FocusEvent) => {
+        if (!isSLideFocusNeeded.current) {
+            return;
+        }
+
         if (loop) {
             // for correctly scroll the looped carousel to the focused element, we need to get its real index in the DOM-collection of slides
             // because swiper does not provide this, only data-swiper-slide-index, whose values are in the range from 0 to children.length - 1,
@@ -259,8 +264,16 @@ const Carousel: React.FC<ICarouselProps> = ({
         swiperInstance?.slideTo(index);
     };
 
-    const disableFocusOnSlideClick = (e: React.MouseEvent) => {
-        e.nativeEvent.preventDefault();
+    const disableSlideOnFocus = () => {
+        if (isSLideFocusNeeded.current) {
+            isSLideFocusNeeded.current = false;
+        }
+    };
+
+    const enableSlideOnFocus = () => {
+        if (!isSLideFocusNeeded.current) {
+            isSLideFocusNeeded.current = true;
+        }
     };
 
     return (
@@ -311,7 +324,8 @@ const Carousel: React.FC<ICarouselProps> = ({
                         key={i}
                         className={cn('slide', slideClass)}
                         onFocus={handleSlideFocus(i)}
-                        onMouseDown={disableFocusOnSlideClick}
+                        onMouseDown={disableSlideOnFocus}
+                        onKeyDown={enableSlideOnFocus}
                     >
                         {child}
                     </SwiperSlide>
