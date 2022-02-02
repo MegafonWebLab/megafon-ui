@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.5...@megafon/ui-core@3.0.0-beta.6) (2022-02-02)
+
+
+### Bug Fixes
+
+* color props values changes ([b279f2b](https://github.com/MegafonWebLab/megafon-ui/commit/b279f2b5af0edae92fe9825bbfa90a207cb8009a))
+* remove deprecated props values ([add76f3](https://github.com/MegafonWebLab/megafon-ui/commit/add76f38a9ebad8b5b6504dfe6aae862746f0dfc))
+* **colors:** rename green and purple to brandGreen and brandPurple ([2266734](https://github.com/MegafonWebLab/megafon-ui/commit/2266734336be1a0faa5f1736fdf39070442837b3))
+* **core:** fix build ui-core ([458c824](https://github.com/MegafonWebLab/megafon-ui/commit/458c824aab639e4802db261d0416b3cee58ac274))
+* **core:** separated colors.css file ([f0a4d72](https://github.com/MegafonWebLab/megafon-ui/commit/f0a4d728e0b30c5caeae5c8d9607e624fb4ea288))
+* **textlink:** fix color prop type ([6edcea0](https://github.com/MegafonWebLab/megafon-ui/commit/6edcea06ce26d137611aaf022d3ee6f7da295366))
+
+
+### BREAKING CHANGES
+
+* ContentArea: prop color change values from 'base' to 'white' and from 'content' to 'default';
+remove depreacted value 'freshAsphalt'
+Paragraph: prop color change values from 'base' to 'white' and from 'contend' to 'default';
+remove deprecared values 'freshAsphalt' and 'clearWhite'
+StoreBanner: prop theme change value from 'black' to 'default'; remove deprecated value 'clearWhite'
+* ContentArea, Paragraph, StoreBanner and Breadcrumbs components from no don't have
+freshAsphalt and clearWhite as values for colorize props
+
+
+
+
+
 # [3.0.0-beta.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.4...@megafon/ui-core@3.0.0-beta.5) (2022-01-28)
 
 
