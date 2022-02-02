@@ -48,13 +48,7 @@ global scope.
 Add import of those properties in your project:
 
 ```ts
-import "@megafon/ui-core/styles/base.css";
-```
-
-or
-
-```ts
-import "@megafon/ui-core/styles/base.less";
+import "@megafon/ui-core/styles/colors.css";
 ```
 
 ## Contributing

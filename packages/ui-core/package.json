@@ -20,6 +20,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp build",
+    "cleanDist": "rm -rf dist styles",
     "coverage": "yarn coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "typecheck": "tsc --noEmit -p .",

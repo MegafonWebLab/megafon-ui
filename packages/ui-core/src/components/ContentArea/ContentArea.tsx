@@ -4,18 +4,14 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 
 const BACKGROUND_COLORS = {
-    BASE: 'base',
+    DEFAULT: 'default',
+    WHITE: 'white',
     TRANSPARENT: 'transparent',
     GREEN: 'green',
     PURPLE: 'purple',
     SPB_SKY_0: 'spbSky0',
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
-    CONTENT: 'content',
-    /** @deprecated */
-    WHITE: 'white',
-    /** @deprecated */
-    FRESH_ASPHALT: 'freshAsphalt',
 } as const;
 
 export type BackgroundColorType = typeof BACKGROUND_COLORS[keyof typeof BACKGROUND_COLORS];
@@ -70,29 +66,6 @@ const ContentArea: React.FC<IConrentAreaProps> = ({
     </div>
 );
 
-const colorsCustomPropTypes = (props, propName, componentName): Error | null => {
-    const deprecatedBlackValue = BACKGROUND_COLORS.FRESH_ASPHALT;
-    const deprecatedWhiteValue = BACKGROUND_COLORS.WHITE;
-    const propValue = props[propName];
-
-    if (propValue && !Object.values(BACKGROUND_COLORS).includes(propValue)) {
-        return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
-        expected one of [${Object.values(BACKGROUND_COLORS)}]`);
-    }
-
-    if (propValue && propValue === deprecatedBlackValue) {
-        return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
-        value '${deprecatedBlackValue}' is deprecated, please use value '${BACKGROUND_COLORS.CONTENT}'`);
-    }
-
-    if (propValue && propValue === deprecatedWhiteValue) {
-        return new Error(`Failed prop type: Invalid prop '${propName}' of value '${propValue}' supplied to '${componentName}',
-        value '${deprecatedWhiteValue}' is deprecated, please use value '${BACKGROUND_COLORS.BASE}'`);
-    }
-
-    return null;
-};
-
 ContentArea.propTypes = {
     disableIndents: PropTypes.oneOf(Object.values(DisableIndents)),
     className: PropTypes.string,
@@ -100,8 +73,8 @@ ContentArea.propTypes = {
         root: PropTypes.string,
         inner: PropTypes.string,
     }),
-    outerBackgroundColor: (props, propName, componentName) => colorsCustomPropTypes(props, propName, componentName),
-    innerBackgroundColor: (props, propName, componentName) => colorsCustomPropTypes(props, propName, componentName),
+    outerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
+    innerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
 };
 
 ContentArea.defaultProps = {

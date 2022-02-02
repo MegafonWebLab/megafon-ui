@@ -2,7 +2,7 @@
 
 exports[`<Paragraph /> default render 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_freshAsphalt mfui-paragraph_has-margin"
+  className="mfui-paragraph mfui-paragraph_size_regular mfui-paragraph_color_default mfui-paragraph_has-margin"
 >
   Test paragraph text
 </p>
@@ -42,7 +42,7 @@ exports[`<Paragraph /> testing color props 1`] = `
 
 exports[`<Paragraph /> testing color props 2`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_base test"
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_white test"
 >
   Test paragraph text
 </p>
@@ -74,7 +74,7 @@ exports[`<Paragraph /> testing color props 5`] = `
 
 exports[`<Paragraph /> testing color props 6`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_content test"
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_default test"
 >
   Test paragraph text
 </p>
