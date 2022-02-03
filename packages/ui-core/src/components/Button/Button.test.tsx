@@ -12,8 +12,18 @@ jest.mock('@megafon/ui-helpers', () => ({
 const props: IButtonProps = {
     className: 'class',
     dataAttrs: {
-        'data-test': 'test',
-        'incorrect-attr': 'test',
+        root: {
+            'data-test': 'test',
+        },
+        content: {
+            'data-test': 'test',
+        },
+        inner: {
+            'data-test': 'test',
+        },
+        loader: {
+            'data-test': 'test',
+        },
     },
     classes: {
         root: 'root-class',

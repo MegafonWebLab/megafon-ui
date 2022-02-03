@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -26,6 +26,16 @@ export interface IBannerProps {
     classes?: {
         slide?: string;
         arrow?: string;
+    };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        swiper?: Record<string, string>;
+        slide?: Record<string, string>;
+        arrowPrev?: Record<string, string>;
+        arrowNext?: Record<string, string>;
+        pagination?: Record<string, string>;
+        dot?: Record<string, string>;
     };
     /** Автоматическая прокрутка */
     autoPlay?: boolean;
@@ -63,6 +73,7 @@ const Banner: React.FC<IBannerProps> = ({
     onPrevClick,
     onDotClick,
     onChange,
+    dataAttrs,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
@@ -156,8 +167,9 @@ const Banner: React.FC<IBannerProps> = ({
     }, []);
 
     return (
-        <div className={cn({ 'nav-theme': navTheme }, className)}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ 'nav-theme': navTheme }, className)}>
             <Swiper
+                {...filterDataAttrs(dataAttrs?.swiper)}
                 className={cn('swiper')}
                 loop={loop}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
@@ -170,27 +182,36 @@ const Banner: React.FC<IBannerProps> = ({
                 onTouchEnd={increaseAutoplayDelay}
             >
                 {React.Children.map(children, (child, i) => (
-                    <SwiperSlide key={i} className={cn('slide', classes?.slide)}>
+                    <SwiperSlide
+                        {...filterDataAttrs(dataAttrs?.slide, i + 1)}
+                        key={i}
+                        className={cn('slide', classes?.slide)}
+                    >
                         {child}
                     </SwiperSlide>
                 ))}
             </Swiper>
             <NavArrow
+                {...filterDataAttrs(dataAttrs?.arrowPrev)}
                 className={cn('arrow', { prev: true }, [classes.arrow])}
                 onClick={handlePrevClick}
                 disabled={!loop && isBeginning}
                 theme={navArrowTheme}
             />
             <NavArrow
+                {...filterDataAttrs(dataAttrs?.arrowNext)}
                 className={cn('arrow', { next: true }, [classes.arrow])}
                 view="next"
                 onClick={handleNextClick}
                 disabled={!loop && isEnd}
                 theme={navArrowTheme}
             />
-            <div className={cn('pagination', { theme: navTheme })}>
+            <div {...filterDataAttrs(dataAttrs?.pagination)} className={cn('pagination', { theme: navTheme })}>
                 {React.Children.map(children, (_, i) => (
                     <BannerDot
+                        dataAttrs={{
+                            root: { ...filterDataAttrs(dataAttrs?.dot, i + 1) },
+                        }}
                         key={i}
                         className={cn('dot')}
                         index={i}
@@ -210,6 +231,15 @@ Banner.propTypes = {
     loop: PropTypes.bool,
     classes: PropTypes.shape({
         slide: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        swiper: PropTypes.objectOf(PropTypes.string.isRequired),
+        slide: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowPrev: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowNext: PropTypes.objectOf(PropTypes.string.isRequired),
+        pagination: PropTypes.objectOf(PropTypes.string.isRequired),
+        dot: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,

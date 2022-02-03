@@ -8,4 +8,3 @@ export { checkEventIsClickOrEnterPress, checkNativeEventIsClickOrEnterPress } fr
 
 export type { AccessibilityEventType, AccessibilityEventTypeNative } from './a11y/a11y';
 export type { ConvertTransformConfig } from './convert';
-export type { IFilterDataAttrs } from './filterDataAttrs';

@@ -14,6 +14,7 @@ exports[`PaginationButton should render active button 1`] = `
 exports[`PaginationButton should render component 1`] = `
 <button
   className="mfui-pagination-button mfui-pagination-button_theme_default"
+  data-test="test"
   disabled={false}
   onClick={[Function]}
   type="button"

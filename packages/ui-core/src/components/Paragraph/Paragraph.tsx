@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './Paragraph.less';
 
@@ -27,6 +27,10 @@ export interface IParagraphProps {
     color?: ColorType;
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
 }
 
 const cn = cnCreate('mfui-paragraph');
@@ -36,9 +40,11 @@ const Paragraph: React.FC<IParagraphProps> = ({
     color = COLORS.DEFAULT,
     className,
     hasMargin = true,
+    dataAttrs,
     children,
 }) => (
     <p
+        {...filterDataAttrs(dataAttrs?.root)}
         className={cn(
             {
                 size,
@@ -54,6 +60,9 @@ const Paragraph: React.FC<IParagraphProps> = ({
 );
 
 Paragraph.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     align: PropTypes.oneOf(['left', 'center', 'right']),
     size: PropTypes.oneOf(['regular', 'small']),
     hasMargin: PropTypes.bool,

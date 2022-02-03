@@ -5,6 +5,12 @@ import Preloader from './Preloader';
 
 const PRELOADER_DELAY = 250;
 
+const dataAttrs = {
+    root: {
+        'data-test-id': 'test',
+    },
+};
+
 describe('<Preloader />', () => {
     beforeAll(() => {
         jest.useFakeTimers();
@@ -18,7 +24,7 @@ describe('<Preloader />', () => {
     };
 
     it('it renders Preloader only after 250ms delay', async () => {
-        const wrapper = mount(<Preloader />);
+        const wrapper = mount(<Preloader dataAttrs={dataAttrs} />);
 
         updatePreloaderTimer(wrapper, PRELOADER_DELAY - 50);
         expect(wrapper).toMatchSnapshot();

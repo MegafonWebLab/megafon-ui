@@ -3,9 +3,27 @@ import { cnCreate } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import { shallow } from 'enzyme';
 import Tab from './Tab';
-import Tabs, { TabSize, TabHAlign, TabColorTheme } from './Tabs';
+import Tabs, { TabSize, TabHAlign, TabColorTheme, ITabsProps } from './Tabs';
 
 const renderTabWrapper = (tab: React.ReactNode) => <div className="tab-wrapper">{tab}</div>;
+
+const dataAttrs: ITabsProps['dataAttrs'] = {
+    root: {
+        'data-test': 'test',
+    },
+    slider: {
+        'data-test': 'test',
+    },
+    panel: {
+        'data-test': 'test',
+    },
+    prev: {
+        'data-test': 'test',
+    },
+    next: {
+        'data-test': 'test',
+    },
+};
 
 const cn = cnCreate('.mfui-tabs');
 describe('<Tabs />', () => {
@@ -32,6 +50,7 @@ describe('<Tabs />', () => {
                     tab: 'tabClass',
                     activeTab: 'activeTabClass',
                 }}
+                dataAttrs={dataAttrs}
                 size={TabSize.SMALL}
                 hAlign={TabHAlign.CENTER}
                 tabColorTheme={TabColorTheme.GREEN}
@@ -39,7 +58,12 @@ describe('<Tabs />', () => {
                 defaultIndex={1}
                 renderOnlyCurrentPanel
             >
-                <Tab title="title 1" icon={<Balance />} href="www.test.com">
+                <Tab
+                    title="title 1"
+                    icon={<Balance />}
+                    href="www.test.com"
+                    dataAttrs={{ root: { 'date-test': 'test' } }}
+                >
                     1
                 </Tab>
                 <Tab title="title 2" renderTabWrapper={renderTabWrapper}>

@@ -3,6 +3,11 @@
 exports[`<Notification /> it renders colored Notification with Props 1`] = `
 <Tile
   className="mfui-notification mfui-notification_type_error mfui-notification_colored notification"
+  dataAttrs={
+    Object {
+      "root": undefined,
+    }
+  }
   radius="rounded"
   shadowLevel="hover"
 >
@@ -20,6 +25,11 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
       <Header
         as="h5"
         className="mfui-notification__title"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
       >
         title
       </Header>
@@ -36,6 +46,11 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
 exports[`<Notification /> renders component 1`] = `
 <Tile
   className="mfui-notification mfui-notification_type_info mfui-notification_colored"
+  dataAttrs={
+    Object {
+      "root": undefined,
+    }
+  }
   radius="rounded"
   shadowLevel="zero"
 >

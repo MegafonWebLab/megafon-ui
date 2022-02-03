@@ -16,7 +16,15 @@ const props: IRadioButtonProps = {
     isChecked: true,
     textSize: 'small',
     dataAttrs: {
-        'data-test': 'data-test-value',
+        root: {
+            'data-test': 'test',
+        },
+        input: {
+            'data-test': 'test',
+        },
+        text: {
+            'data-test': 'test',
+        },
     },
     onChange: jest.fn(),
 };

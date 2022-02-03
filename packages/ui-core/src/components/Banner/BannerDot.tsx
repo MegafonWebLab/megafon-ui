@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './BannerDot.less';
 
@@ -9,17 +9,32 @@ export interface IBannerDotProps {
     isActive: boolean;
     showTimer: boolean;
     timerDelay: number;
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     onClick: (index: number) => void;
 }
 
 const cn = cnCreate('mfui-banner-dot');
-const BannerDot: React.FC<IBannerDotProps> = ({ className, index, isActive, showTimer, timerDelay, onClick }) => {
+const BannerDot: React.FC<IBannerDotProps> = ({
+    className,
+    dataAttrs,
+    index,
+    isActive,
+    showTimer,
+    timerDelay,
+    onClick,
+}) => {
     const handleDotClick = React.useCallback(() => {
         onClick(index);
     }, [onClick, index]);
 
     return (
-        <div className={cn({ active: isActive, timer: showTimer }, className)} onClick={handleDotClick}>
+        <div
+            {...filterDataAttrs(dataAttrs?.root)}
+            className={cn({ active: isActive, timer: showTimer }, className)}
+            onClick={handleDotClick}
+        >
             {showTimer && isActive && (
                 <svg className={cn('timer')} viewBox="0 0 100 100">
                     <circle
@@ -37,6 +52,9 @@ const BannerDot: React.FC<IBannerDotProps> = ({ className, index, isActive, show
 
 BannerDot.propTypes = {
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     index: PropTypes.number.isRequired,
     isActive: PropTypes.bool.isRequired,
     showTimer: PropTypes.bool.isRequired,

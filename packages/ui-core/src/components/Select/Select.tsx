@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
 import InputLabel from 'components/InputLabel/InputLabel';
@@ -35,7 +35,7 @@ export interface ISelectItem<T extends SelectItemValueType> {
     selectedView?: JSX.Element | Element | React.ReactElement;
 }
 
-export interface ISelectProps<T extends SelectItemValueType> extends IFilterDataAttrs {
+export interface ISelectProps<T extends SelectItemValueType> {
     /** Тип компонента */
     type?: SelectTypesType;
     /** Заголовок поля */
@@ -69,6 +69,17 @@ export interface ISelectProps<T extends SelectItemValueType> extends IFilterData
         list?: string;
         listItem?: string;
         listItemTitle?: string;
+    };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        label?: Record<string, string>;
+        title?: Record<string, string>;
+        input?: Record<string, string>;
+        noticeText?: Record<string, string>;
+        listItem?: Record<string, string>;
+        listItemTitle?: Record<string, string>;
+        notFound?: Record<string, string>;
     };
     /** Обработчик выбора элемента селекта */
     onSelect?: (
@@ -113,6 +124,16 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             listItem: PropTypes.string,
             listItemTitle: PropTypes.string,
         }),
+        dataAttrs: PropTypes.shape({
+            root: PropTypes.objectOf(PropTypes.string.isRequired),
+            label: PropTypes.objectOf(PropTypes.string.isRequired),
+            title: PropTypes.objectOf(PropTypes.string.isRequired),
+            input: PropTypes.objectOf(PropTypes.string.isRequired),
+            noticeText: PropTypes.objectOf(PropTypes.string.isRequired),
+            listItem: PropTypes.objectOf(PropTypes.string.isRequired),
+            listItemTitle: PropTypes.objectOf(PropTypes.string.isRequired),
+            notFound: PropTypes.objectOf(PropTypes.string.isRequired),
+        }),
         items: PropTypes.arrayOf(
             PropTypes.exact({
                 view: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
@@ -122,7 +143,6 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             }),
         ).isRequired,
         onSelect: PropTypes.func,
-        dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
         onOpened: PropTypes.func,
         onClosed: PropTypes.func,
     };
@@ -444,7 +464,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     }
 
     renderTitle() {
-        const { placeholder, items, currentValue, classes } = this.props;
+        const { placeholder, items, currentValue, classes, dataAttrs } = this.props;
         const item = items.find(elem => elem.value === currentValue);
         let inputTitle: string | JSX.Element | Element | undefined = placeholder;
 
@@ -454,6 +474,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
         return (
             <div
+                {...filterDataAttrs(dataAttrs?.title)}
                 className={cn(
                     'title',
                     {
@@ -471,11 +492,12 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     }
 
     renderCombobox() {
-        const { placeholder } = this.props;
+        const { placeholder, dataAttrs } = this.props;
         const { inputValue } = this.state;
 
         return (
             <input
+                {...filterDataAttrs(dataAttrs?.input)}
                 className={cn('combobox')}
                 onFocus={this.handleComboboxFocus}
                 onChange={this.handleChangeCombobox}
@@ -487,7 +509,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
     }
 
     renderChildren() {
-        const { type, items, notFoundText, classes = {} } = this.props;
+        const { type, items, notFoundText, classes = {}, dataAttrs } = this.props;
         const { filteredItems, activeIndex } = this.state;
         const currentItems = type === SelectTypes.COMBOBOX ? filteredItems : items;
 
@@ -496,6 +518,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 <div className={cn('list-inner')} ref={this.getItemWrapper}>
                     {currentItems.map(({ title, value, view }, i) => (
                         <div
+                            {...filterDataAttrs(dataAttrs?.listItem, i + 1)}
                             className={cn(
                                 'list-item',
                                 {
@@ -508,13 +531,18 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                             onMouseEnter={this.handleHoverItem(i)}
                             ref={this.getNodeList}
                         >
-                            <div className={cn('item-title', [classes.listItemTitle])}>
+                            <div
+                                {...filterDataAttrs(dataAttrs?.listItemTitle, i + 1)}
+                                className={cn('item-title', [classes.listItemTitle])}
+                            >
                                 {this.highlightString(title, view)}
                             </div>
                         </div>
                     ))}
                     {type === SelectTypes.COMBOBOX && !currentItems.length && (
-                        <div className={cn('not-found')}>{notFoundText}</div>
+                        <div {...filterDataAttrs(dataAttrs?.notFound)} className={cn('not-found')}>
+                            {notFoundText}
+                        </div>
                     )}
                 </div>
             </div>
@@ -538,7 +566,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
 
         return (
             <div
-                {...filterDataAttrs(dataAttrs)}
+                {...filterDataAttrs(dataAttrs?.root)}
                 className={cn(
                     {
                         open: isOpened,
@@ -553,7 +581,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
             >
                 <div className={cn('inner')}>
                     {label && (
-                        <InputLabel htmlFor={labelId}>
+                        <InputLabel dataAttrs={{ root: dataAttrs?.label }} htmlFor={labelId}>
                             {label}
                             {required && <span className={cn('require-mark')}>*</span>}
                         </InputLabel>
@@ -566,6 +594,7 @@ class Select<T extends SelectItemValueType> extends React.Component<ISelectProps
                 </div>
                 {noticeText && (
                     <div
+                        {...filterDataAttrs(dataAttrs?.noticeText)}
                         className={cn('text', {
                             error: verification === Verification.ERROR,
                             success: verification === Verification.VALID,

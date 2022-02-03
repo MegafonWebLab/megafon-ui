@@ -7,7 +7,24 @@ const props: IAccordionProps = {
     isOpened: false,
     hasVerticalPaddings: false,
     dataAttrs: {
-        'data-test': 'data-test-value',
+        root: {
+            'data-test': 'data-test-value',
+        },
+        header: {
+            'data-test': 'data-test-value',
+        },
+        collapse: {
+            'data-test': 'data-test-value',
+        },
+        titleWrap: {
+            'data-test': 'data-test-value',
+        },
+        arrowUp: {
+            'data-test': 'data-test-value',
+        },
+        arrowDown: {
+            'data-test': 'data-test-value',
+        },
     },
     onClickAccordion: jest.fn(),
 };
