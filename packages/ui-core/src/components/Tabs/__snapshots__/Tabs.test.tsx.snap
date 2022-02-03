@@ -96,6 +96,7 @@ exports[`<Tabs /> should render with default props 1`] = `
 exports[`<Tabs /> should render with props 1`] = `
 <div
   className="mfui-tabs mfui-tabs_size_small mfui-tabs_h-align_center mfui-tabs_tab-color_green className rootClass"
+  data-test="test"
 >
   <div
     style={
@@ -115,6 +116,7 @@ exports[`<Tabs /> should render with props 1`] = `
     >
       <Swiper
         className="mfui-tabs__swiper mfui-tabs__swiper_beginning innerIndentsClass"
+        data-test="test"
         initialSlide={1}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
@@ -184,10 +186,12 @@ exports[`<Tabs /> should render with props 1`] = `
         />
         <test-file-stub
           className="mfui-tabs__arrow mfui-tabs__arrow_prev mfui-tabs__arrow_hide"
+          data-test="test"
           onClick={[Function]}
         />
         <test-file-stub
           className="mfui-tabs__arrow mfui-tabs__arrow_next"
+          data-test="test"
           onClick={[Function]}
         />
       </Swiper>
@@ -195,6 +199,7 @@ exports[`<Tabs /> should render with props 1`] = `
   </div>
   <div
     className="mfui-tabs__panel mfui-tabs__panel_current"
+    data-test="test[2]"
     key=".1"
   >
     2

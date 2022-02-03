@@ -3,6 +3,7 @@
 exports[`<BannerDot /> should render timer when isActive is true and showTimer is true 1`] = `
 <div
   className="mfui-banner-dot mfui-banner-dot_active mfui-banner-dot_timer"
+  data-test-id="test-id"
   onClick={[Function]}
 >
   <svg
@@ -27,6 +28,7 @@ exports[`<BannerDot /> should render timer when isActive is true and showTimer i
 exports[`<BannerDot /> should render with className 1`] = `
 <div
   className="mfui-banner-dot class"
+  data-test-id="test-id"
   onClick={[Function]}
 />
 `;
@@ -34,6 +36,7 @@ exports[`<BannerDot /> should render with className 1`] = `
 exports[`<BannerDot /> should render with props 1`] = `
 <div
   className="mfui-banner-dot"
+  data-test-id="test-id"
   onClick={[Function]}
 />
 `;
@@ -41,6 +44,7 @@ exports[`<BannerDot /> should render with props 1`] = `
 exports[`<BannerDot /> should render without timer when isActive is false and showTimer is true 1`] = `
 <div
   className="mfui-banner-dot mfui-banner-dot_timer"
+  data-test-id="test-id"
   onClick={[Function]}
 />
 `;
@@ -48,6 +52,7 @@ exports[`<BannerDot /> should render without timer when isActive is false and sh
 exports[`<BannerDot /> should render without timer when isActive is true and showTimer is false 1`] = `
 <div
   className="mfui-banner-dot mfui-banner-dot_active"
+  data-test-id="test-id"
   onClick={[Function]}
 />
 `;

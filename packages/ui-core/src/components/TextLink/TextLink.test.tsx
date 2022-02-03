@@ -12,6 +12,11 @@ const props: ITextLinkProps = {
     className: 'class',
     children: 'text',
     download: true,
+    dataAttrs: {
+        root: {
+            'data-test': 'test',
+        },
+    },
 };
 
 describe('<TextLink />', () => {

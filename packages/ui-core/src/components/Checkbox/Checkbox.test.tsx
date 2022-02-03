@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Checkbox from './Checkbox';
+import Checkbox, { ICheckboxProps } from './Checkbox';
 
 const props = {
     className: 'testClassName',
@@ -12,9 +12,23 @@ const props = {
     extraContent: 'text',
 };
 
-const dataAttrs = {
-    'data-test': 'test',
-    'incorrect-attr': 'test',
+const dataAttrs: ICheckboxProps['dataAttrs'] = {
+    root: {
+        'data-test': 'test',
+        'incorrect-attr': 'test',
+    },
+    input: {
+        'data-test': 'test',
+        'incorrect-attr': 'test',
+    },
+    customInput: {
+        'data-test': 'test',
+        'incorrect-attr': 'test',
+    },
+    extraContent: {
+        'data-test': 'test',
+        'incorrect-attr': 'test',
+    },
 };
 
 describe('<Checkbox />', () => {

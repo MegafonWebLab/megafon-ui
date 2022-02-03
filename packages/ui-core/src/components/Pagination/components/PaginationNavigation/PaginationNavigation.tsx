@@ -5,25 +5,30 @@ import PropTypes from 'prop-types';
 import PaginationButton from '../PaginationButton/PaginationButton';
 import './PaginationNavigation.less';
 
-interface IPaginationNavigation {
+interface IPaginationNavigationProps {
     direction?: 'left' | 'right';
     theme?: 'default' | 'light';
     disabled?: boolean;
     isActive?: boolean;
     className?: string;
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     onClick?: (value?: number | string) => void;
 }
 
 const cn = cnCreate('mfui-pagination-navigation');
-const PaginationNavigation: React.FC<IPaginationNavigation> = ({
+const PaginationNavigation: React.FC<IPaginationNavigationProps> = ({
     direction = 'right',
     theme,
     disabled,
     isActive,
     onClick,
     className,
+    dataAttrs,
 }) => (
     <PaginationButton
+        dataAttrs={dataAttrs}
         className={cn({ direction }, className)}
         disabled={disabled}
         isActive={isActive}
@@ -40,6 +45,9 @@ PaginationNavigation.propTypes = {
     disabled: PropTypes.bool,
     isActive: PropTypes.bool,
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     onClick: PropTypes.func,
 };
 

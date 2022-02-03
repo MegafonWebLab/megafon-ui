@@ -27,9 +27,11 @@ exports[`<Button /> layout it renders children 1`] = `
 >
   <div
     className="mfui-button__inner"
+    data-test="test"
   >
     <div
       className="mfui-button__content content-class"
+      data-test="test"
     >
       <span
         className="mfui-button__text"
@@ -66,6 +68,7 @@ exports[`<Button /> layout renders Button with props 1`] = `
 >
   <div
     className="mfui-button__inner"
+    data-test="test"
   />
 </a>
 `;
@@ -82,6 +85,7 @@ exports[`<Button /> layout should render full width button 1`] = `
 >
   <div
     className="mfui-button__inner"
+    data-test="test"
   />
 </a>
 `;
@@ -257,6 +261,7 @@ exports[`<Button /> layout should render with different height for resolutions 1
 >
   <div
     className="mfui-button__inner"
+    data-test="test"
   />
 </a>
 `;
@@ -273,9 +278,17 @@ exports[`<Button /> snapshots with loader it renders loader with white color and
 >
   <div
     className="mfui-button__inner"
+    data-test="test"
   >
     <Preloader
       color="white"
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-test": "test",
+          },
+        }
+      }
       sizeAll="medium"
     />
   </div>
@@ -294,6 +307,11 @@ exports[`<Button /> snapshots with loader should render loader with black color 
   >
     <Preloader
       color="black"
+      dataAttrs={
+        Object {
+          "root": Object {},
+        }
+      }
       sizeAll="medium"
     />
   </div>
@@ -312,6 +330,11 @@ exports[`<Button /> snapshots with loader should render loader with default colo
   >
     <Preloader
       color="default"
+      dataAttrs={
+        Object {
+          "root": Object {},
+        }
+      }
       sizeAll="medium"
     />
   </div>
@@ -330,6 +353,11 @@ exports[`<Button /> snapshots with loader should render loader with small size o
   >
     <Preloader
       color="white"
+      dataAttrs={
+        Object {
+          "root": Object {},
+        }
+      }
       sizeAll="medium"
       sizeDesktop="medium"
       sizeMobile="small"

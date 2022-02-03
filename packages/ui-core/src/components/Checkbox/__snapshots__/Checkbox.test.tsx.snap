@@ -158,6 +158,7 @@ exports[`<Checkbox /> layout renders with data attrs 1`] = `
       <input
         checked={false}
         className="mfui-checkbox__input"
+        data-test="test"
         onChange={[Function]}
         tabIndex={-1}
         type="checkbox"
@@ -165,6 +166,7 @@ exports[`<Checkbox /> layout renders with data attrs 1`] = `
       <div
         aria-checked={false}
         className="mfui-checkbox__custom-input"
+        data-test="test"
         onKeyDown={[Function]}
         role="checkbox"
         tabIndex={0}

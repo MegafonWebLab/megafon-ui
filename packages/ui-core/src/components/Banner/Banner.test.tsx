@@ -10,6 +10,29 @@ const props: IBannerProps = {
         slide: 'slide',
         arrow: 'arrows',
     },
+    dataAttrs: {
+        root: {
+            'data-test-id': 'test-id',
+        },
+        swiper: {
+            'data-test-id': 'test-id',
+        },
+        slide: {
+            'data-test-id': 'test-id',
+        },
+        arrowPrev: {
+            'data-test-id': 'test-id',
+        },
+        arrowNext: {
+            'data-test-id': 'test-id',
+        },
+        pagination: {
+            'data-test-id': 'test-id',
+        },
+        dot: {
+            'data-test-id': 'test-id',
+        },
+    },
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,

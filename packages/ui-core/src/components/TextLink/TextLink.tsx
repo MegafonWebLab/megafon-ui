@@ -26,8 +26,10 @@ const TextLink: React.FC<ITextLinkProps> = ({
     onClick,
     children,
     download,
+    dataAttrs,
 }) => (
     <Link
+        dataAttrs={dataAttrs}
         target={target}
         href={href}
         rel={rel}
@@ -51,6 +53,9 @@ TextLink.propTypes = {
     color: PropTypes.oneOf(['default', 'white', 'black', 'gray', 'green', 'blue', 'inherit']),
     underlineVisibility: PropTypes.oneOf(['hover', 'always']),
     underlineStyle: PropTypes.oneOf(['solid', 'dashed', 'border', 'none']),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.element),
         PropTypes.element,

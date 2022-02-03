@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { cnCreate, detectTouch, checkNativeEventIsClickOrEnterPress } from '@megafon/ui-helpers';
+import { cnCreate, detectTouch, checkNativeEventIsClickOrEnterPress, filterDataAttrs } from '@megafon/ui-helpers';
 import type { AccessibilityEventTypeNative } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import { usePopper } from 'react-popper';
@@ -61,6 +61,11 @@ export interface ITooltipProps {
         content?: string;
         contentShadow?: string;
     };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        content?: Record<string, string>;
+    };
     /** Обработчик на открытие */
     onOpen?: (e: AccessibilityEventTypeNative) => void;
     /** Обработчик на закрытие */
@@ -85,6 +90,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         content: contentClassName,
         contentShadow: contentShadowClassName,
     } = {},
+    dataAttrs,
     onOpen,
     onClose,
 }) => {
@@ -248,6 +254,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
     return (
         <div
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ paddings, open: isOpen }, [className, rootClassName])}
             ref={setPopperElement}
             style={styles.popper}
@@ -255,7 +262,9 @@ const Tooltip: React.FC<ITooltipProps> = ({
         >
             <div ref={setArrowElement} className={cn('arrow', [arrowClassName])} style={styles.arrow} />
             <div className={cn('arrow-shadow')} style={styles.arrow} />
-            <Tile className={cn('content', [contentClassName])}>{children}</Tile>
+            <Tile dataAttrs={{ root: dataAttrs?.content }} className={cn('content', [contentClassName])}>
+                {children}
+            </Tile>
             <Tile shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
@@ -299,6 +308,10 @@ Tooltip.propTypes = {
         arrow: PropTypes.string,
         content: PropTypes.string,
         contentShadow: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        content: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     onOpen: PropTypes.func,
     onClose: PropTypes.func,

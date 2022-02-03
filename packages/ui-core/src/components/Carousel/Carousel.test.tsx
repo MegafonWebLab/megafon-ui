@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import Carousel, { ICarouselProps, NavTheme, EffectTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
 
-const props = {
+const props: ICarouselProps = {
     className: 'className',
     classes: {
         root: 'rootClass',
@@ -19,7 +19,21 @@ const props = {
         el: '.some-el',
     },
     dataAttrs: {
-        'data-test-attr': 'dataValue',
+        root: {
+            'data-test': 'test',
+        },
+        slider: {
+            'data-test': 'test',
+        },
+        prev: {
+            'data-test': 'test',
+        },
+        next: {
+            'data-test': 'test',
+        },
+        slide: {
+            'data-test': 'test',
+        },
     },
     loop: true,
     autoPlay: true,
@@ -33,7 +47,7 @@ const props = {
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
     onChange: jest.fn(),
-} as ICarouselProps;
+};
 
 const cnCarousel = cnCreate('.mfui-carousel');
 

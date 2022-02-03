@@ -1,5 +1,5 @@
 import React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
 import RightArrow from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 import WarningIcon from '@megafon/ui-icons/system-24-attention_invert_24.svg';
@@ -53,6 +53,14 @@ export interface INotificationProps {
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** Иконка */
     icon?: JSX.Element;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        title?: Record<string, string>;
+        text?: Record<string, string>;
+        link?: Record<string, string>;
+        close?: Record<string, string>;
+    };
     /** Обработчик на закрытие */
     onClose?: () => void;
     /** Обработчик клика по ссылке */
@@ -73,11 +81,19 @@ const Notification: React.FC<INotificationProps> = ({
     href,
     target,
     icon,
+    dataAttrs,
     onClose,
     onLinkClick,
 }) => {
     const renderLink = (): JSX.Element => (
-        <TextLink className={cn('link')} onClick={onLinkClick} rel={rel} href={href} target={target}>
+        <TextLink
+            dataAttrs={{ root: dataAttrs?.link }}
+            className={cn('link')}
+            onClick={onLinkClick}
+            rel={rel}
+            href={href}
+            target={target}
+        >
             {link}
             <RightArrow className={cn('right-arrow')} />
         </TextLink>
@@ -104,6 +120,7 @@ const Notification: React.FC<INotificationProps> = ({
 
     return (
         <Tile
+            dataAttrs={{ root: dataAttrs?.root }}
             radius="rounded"
             shadowLevel={shadowLevel}
             className={cn(
@@ -119,16 +136,25 @@ const Notification: React.FC<INotificationProps> = ({
 
                 <div className={cn('content')}>
                     {title && (
-                        <Header as="h5" className={cn('title', { 'close-padding': hasCloseButton })}>
+                        <Header
+                            dataAttrs={{ root: dataAttrs?.title }}
+                            as="h5"
+                            className={cn('title', { 'close-padding': hasCloseButton })}
+                        >
                             {title}
                         </Header>
                     )}
-                    <p className={cn('text', { 'close-padding': hasCloseButton && !title })}>{children}</p>
+                    <p
+                        {...filterDataAttrs(dataAttrs?.text)}
+                        className={cn('text', { 'close-padding': hasCloseButton && !title })}
+                    >
+                        {children}
+                    </p>
                     {link && renderLink()}
                 </div>
             </div>
             {hasCloseButton && (
-                <button className={cn('close')} type="button" onClick={onClose}>
+                <button {...filterDataAttrs(dataAttrs?.close)} className={cn('close')} type="button" onClick={onClose}>
                     <CancelIcon className={cn('close-icon')} />
                 </button>
             )}
@@ -148,6 +174,13 @@ Notification.propTypes = {
     href: PropTypes.string,
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
     icon: PropTypes.element,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        title: PropTypes.objectOf(PropTypes.string.isRequired),
+        text: PropTypes.objectOf(PropTypes.string.isRequired),
+        link: PropTypes.objectOf(PropTypes.string.isRequired),
+        close: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     onClose: PropTypes.func,
     onLinkClick: PropTypes.func,
 };

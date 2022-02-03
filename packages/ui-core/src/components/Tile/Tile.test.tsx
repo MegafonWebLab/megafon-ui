@@ -25,7 +25,7 @@ describe('<Tile />', () => {
         });
 
         it('it renders with data attributes', () => {
-            const wrapper = shallow(<Tile dataAttrs={{ 'data-test': 'test', 'incorrect-attr': 'test' }} />);
+            const wrapper = shallow(<Tile dataAttrs={{ root: { 'data-test': 'test', 'incorrect-attr': 'test' } }} />);
             expect(wrapper).toMatchSnapshot();
         });
     });

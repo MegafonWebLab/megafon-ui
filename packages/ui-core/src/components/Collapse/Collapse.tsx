@@ -1,26 +1,39 @@
 import * as React from 'react';
+import { filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 
-type DefaultProps = {
+type CollapseDefaultProps = {
     animation?: boolean;
     animationDuration?: number;
 };
 
-type Props = DefaultProps & {
+type CollapseProps = CollapseDefaultProps & {
     className: string;
     classNameContainer: string;
     isOpened: boolean;
+    dataAttrs?: {
+        root?: Record<string, string>;
+        inner?: Record<string, string>;
+    };
     children: React.ReactNode;
 };
 
 const BROWSER_DELAY = 100;
 
-const Collapse = (props: Props): React.FunctionComponentElement<Props> => {
-    const { className, classNameContainer, animation = true, animationDuration = 300, children, isOpened } = props;
-    const canUpdate = React.useRef(false);
+const Collapse = (props: CollapseProps): React.FunctionComponentElement<CollapseProps> => {
+    const {
+        className,
+        classNameContainer,
+        animation = true,
+        animationDuration = 300,
+        children,
+        isOpened,
+        dataAttrs,
+    } = props;
+    const canUpdate = React.useRef<boolean>(false);
     const timer = React.useRef<number | undefined>(undefined);
     const rootNode = React.useRef<HTMLInputElement>(null);
-    const [height, setHeight] = React.useState('0px');
+    const [height, setHeight] = React.useState<string>('0px');
     const transition: string = animation ? `height ${animationDuration / 1000}s` : 'none';
     const duration: number = animation ? animationDuration : 0;
 
@@ -55,8 +68,15 @@ const Collapse = (props: Props): React.FunctionComponentElement<Props> => {
     }, [isOpened, duration]);
 
     return (
-        <div className={className} style={{ overflow: 'hidden', height, transition }} ref={rootNode}>
-            <div className={classNameContainer}>{children}</div>
+        <div
+            {...filterDataAttrs(dataAttrs?.root)}
+            className={className}
+            style={{ overflow: 'hidden', height, transition }}
+            ref={rootNode}
+        >
+            <div {...filterDataAttrs(dataAttrs?.inner)} className={classNameContainer}>
+                {children}
+            </div>
         </div>
     );
 };
@@ -67,6 +87,10 @@ Collapse.propTypes = {
     isOpened: PropTypes.bool.isRequired,
     animationDuration: PropTypes.number,
     animation: PropTypes.bool,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        inner: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     children: PropTypes.node.isRequired,
 };
 
