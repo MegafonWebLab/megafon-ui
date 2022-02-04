@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-icons",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "files": [
     "*.svg"
   ],
@@ -30,7 +30,7 @@
     ]
   },
   "devDependencies": {
-    "@megafon/ui-helpers": "^2.0.0-beta.3",
+    "@megafon/ui-helpers": "^2.0.0-beta.4",
     "@types/node": "^13.9.1",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",

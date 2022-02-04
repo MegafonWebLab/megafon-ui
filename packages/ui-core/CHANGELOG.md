@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.7](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.6...@megafon/ui-core@3.0.0-beta.7) (2022-02-04)
+
+
+### Bug Fixes
+
+* **components:** change tests for dataAttrs prop ([2a8f306](https://github.com/MegafonWebLab/megafon-ui/commit/2a8f3061a4e89f6877894e5947db7bae2827f86a))
+
+
+### Features
+
+* **components:** add dataAttrs props in new format ([026d868](https://github.com/MegafonWebLab/megafon-ui/commit/026d8681743d55ea8c93d17000a64959093f7a05))
+
+
+
+
+
 # [3.0.0-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.5...@megafon/ui-core@3.0.0-beta.6) (2022-02-02)
 
 
