@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './Preloader.less';
 
@@ -33,6 +33,10 @@ export interface IPreloaderProps {
     sizeMobile?: PreloaderSizesType;
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
 }
 
 const cn = cnCreate('mfui-preloader');
@@ -44,6 +48,7 @@ const Preloader: React.FC<IPreloaderProps> = ({
     sizeTablet,
     sizeMobile,
     className,
+    dataAttrs,
 }) => {
     const [isShowed, setIsShowed] = React.useState(false);
 
@@ -59,6 +64,7 @@ const Preloader: React.FC<IPreloaderProps> = ({
 
     return isShowed ? (
         <div
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn(
                 {
                     color,
@@ -86,6 +92,9 @@ Preloader.propTypes = {
     sizeTablet: PropTypes.oneOf(Object.values(PreloaderSizes)),
     sizeMobile: PropTypes.oneOf(Object.values(PreloaderSizes)),
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
 };
 
 export default Preloader;

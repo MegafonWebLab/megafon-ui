@@ -5,8 +5,10 @@ import * as PropTypes from 'prop-types';
 import './AccordionBox.less';
 
 export interface IAccordionBox {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок аккордеона */
@@ -51,7 +53,9 @@ const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFul
 };
 
 AccordionBox.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),

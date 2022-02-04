@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs, checkEventIsClickOrEnterPress } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, checkEventIsClickOrEnterPress } from '@megafon/ui-helpers';
 import type { AccessibilityEventType } from '@megafon/ui-helpers';
 import ArrowDown from '@megafon/ui-icons/system-24-arrow_down_24.svg';
 import ArrowUp from '@megafon/ui-icons/system-24-arrow_up_24.svg';
@@ -8,7 +8,7 @@ import Collapse from 'components/Collapse/Collapse';
 import Header from 'components/Header/Header';
 import './Accordion.less';
 
-export interface IAccordionProps extends IFilterDataAttrs {
+export interface IAccordionProps {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок */
@@ -21,10 +21,19 @@ export interface IAccordionProps extends IFilterDataAttrs {
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
-        openedClass?: string;
         root?: string;
+        openedClass?: string;
         collapse?: string;
         titleWrap?: string;
+    };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        header?: Record<string, string>;
+        collapse?: Record<string, string>;
+        titleWrap?: Record<string, string>;
+        arrowUp?: Record<string, string>;
+        arrowDown?: Record<string, string>;
     };
     /** Обработчик клика */
     onClickAccordion?: (isOpened: boolean) => void;
@@ -65,21 +74,29 @@ const Accordion: React.FC<IAccordionProps> = ({
 
     return (
         <div
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
             ref={rootRef}
             className={cn({ open: isOpenedState }, [className, rootPropsClasses, openedClassName])}
         >
             <div
+                {...filterDataAttrs(dataAttrs?.titleWrap)}
                 className={cn('title-wrap', [titleWrapPropsClasses])}
                 onClick={handleClickTitle}
                 onKeyDown={handleClickTitle}
             >
-                <Header as="h5">{title}</Header>
+                <Header as="h5" {...filterDataAttrs(dataAttrs?.header)}>
+                    {title}
+                </Header>
                 <div tabIndex={0} role="button" className={cn('icon-box', { open: isOpenedState })}>
-                    {isOpenedState ? <ArrowUp /> : <ArrowDown />}
+                    {isOpenedState ? (
+                        <ArrowUp {...filterDataAttrs(dataAttrs?.arrowUp)} />
+                    ) : (
+                        <ArrowDown {...filterDataAttrs(dataAttrs?.arrowDown)} />
+                    )}
                 </div>
             </div>
             <Collapse
+                {...filterDataAttrs(dataAttrs?.collapse)}
                 className={cn('content', collapsePropsClasses)}
                 classNameContainer={cn('content-inner', { 'v-padding': hasVerticalPaddings })}
                 isOpened={isOpenedState}
@@ -105,7 +122,14 @@ Accordion.propTypes = {
         collapse: PropTypes.string,
         titleWrap: PropTypes.string,
     }),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        header: PropTypes.objectOf(PropTypes.string.isRequired),
+        collapse: PropTypes.objectOf(PropTypes.string.isRequired),
+        titleWrap: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowUp: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowDown: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     onClickAccordion: PropTypes.func,
 };
 

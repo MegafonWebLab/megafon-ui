@@ -5,7 +5,6 @@ import {
     cnCreate,
     detectTouch,
     filterDataAttrs,
-    IFilterDataAttrs,
 } from '@megafon/ui-helpers';
 import CheckedIcon from '@megafon/ui-icons/system-16-checked_16.svg';
 import * as PropTypes from 'prop-types';
@@ -13,7 +12,7 @@ import './Checkbox.less';
 
 const CHANGE_KEY = 'change';
 
-export interface ICheckboxProps extends IFilterDataAttrs {
+export interface ICheckboxProps {
     /** Цвет чекбокса */
     color?: 'dark' | 'light';
     /** Дополнительный класс корневого элемента */
@@ -22,6 +21,13 @@ export interface ICheckboxProps extends IFilterDataAttrs {
     classes?: {
         inner?: string;
         icon?: string;
+    };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        input?: Record<string, string>;
+        customInput?: Record<string, string>;
+        extraContent?: Record<string, string>;
     };
     /** Размер текста */
     fontSize?: 'regular' | 'small';
@@ -86,12 +92,13 @@ const Checkbox: React.FC<ICheckboxProps> = ({
                 },
                 className,
             )}
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
         >
             <div className={cn('inner', [classes?.inner])}>
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label className={cn('label', { 'no-touch': !isTouch })}>
                     <input
+                        {...filterDataAttrs(dataAttrs?.input)}
                         className={cn('input')}
                         type="checkbox"
                         tabIndex={-1}
@@ -102,6 +109,7 @@ const Checkbox: React.FC<ICheckboxProps> = ({
                         disabled={disabled}
                     />
                     <div
+                        {...filterDataAttrs(dataAttrs?.customInput)}
                         tabIndex={0}
                         role="checkbox"
                         aria-checked={isChecked}
@@ -112,7 +120,11 @@ const Checkbox: React.FC<ICheckboxProps> = ({
                     </div>
                     {children}
                 </label>
-                {extraContent && <span className={cn('extra-content')}>{extraContent}</span>}
+                {extraContent && (
+                    <span {...filterDataAttrs(dataAttrs?.extraContent)} className={cn('extra-content')}>
+                        {extraContent}
+                    </span>
+                )}
             </div>
         </div>
     );
@@ -127,6 +139,12 @@ Checkbox.propTypes = {
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
     error: PropTypes.bool,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        input: PropTypes.objectOf(PropTypes.string.isRequired),
+        customInput: PropTypes.objectOf(PropTypes.string.isRequired),
+        extraContent: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.element.isRequired),
         PropTypes.element,
@@ -137,7 +155,6 @@ Checkbox.propTypes = {
         PropTypes.element,
         PropTypes.string,
     ]),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onChange: PropTypes.func,
 };
 

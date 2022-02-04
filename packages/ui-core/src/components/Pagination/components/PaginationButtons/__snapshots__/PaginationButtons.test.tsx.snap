@@ -6,6 +6,13 @@ exports[`PaginationButtons should render component 1`] = `
 >
   <PaginationButton
     className="mfui-pagination-buttons__button"
+    dataAttrs={
+      Object {
+        "root": Object {
+          "data-test": "test[1]",
+        },
+      }
+    }
     isActive={false}
     key="0"
     onClick={[MockFunction]}
@@ -22,6 +29,13 @@ exports[`PaginationButtons should render component 1`] = `
   </PaginationButton>
   <PaginationButton
     className="mfui-pagination-buttons__button"
+    dataAttrs={
+      Object {
+        "root": Object {
+          "data-test": "test[4]",
+        },
+      }
+    }
     isActive={true}
     key="2"
     onClick={[MockFunction]}
@@ -31,6 +45,13 @@ exports[`PaginationButtons should render component 1`] = `
   </PaginationButton>
   <PaginationButton
     className="mfui-pagination-buttons__button"
+    dataAttrs={
+      Object {
+        "root": Object {
+          "data-test": "test[5]",
+        },
+      }
+    }
     isActive={false}
     key="3"
     onClick={[MockFunction]}

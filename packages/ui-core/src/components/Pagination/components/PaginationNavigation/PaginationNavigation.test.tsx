@@ -4,7 +4,7 @@ import PaginationNavigation from './PaginationNavigation';
 
 describe('PaginationNavigation', () => {
     it('should render component', () => {
-        const wrapper = shallow(<PaginationNavigation />);
+        const wrapper = shallow(<PaginationNavigation dataAttrs={{ root: { 'data-test': 'test' } }} />);
 
         expect(wrapper).toMatchSnapshot();
     });

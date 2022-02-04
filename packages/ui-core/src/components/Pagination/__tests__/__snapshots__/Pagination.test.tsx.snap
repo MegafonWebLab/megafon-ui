@@ -11,6 +11,11 @@ exports[`Pagination render on mobile resolution should render component with lef
   >
     <PaginationNavigation
       className="mfui-pagination__button"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       direction="left"
       disabled={false}
       onClick={[Function]}
@@ -18,6 +23,11 @@ exports[`Pagination render on mobile resolution should render component with lef
     >
       <PaginationButton
         className="mfui-pagination-navigation mfui-pagination-navigation_direction_left mfui-pagination__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         disabled={false}
         onClick={[Function]}
         theme="default"
@@ -36,6 +46,11 @@ exports[`Pagination render on mobile resolution should render component with lef
     </PaginationNavigation>
     <PaginationButtons
       activeButton={5}
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       hiddenButton="HIDDEN"
       items={
         Array [
@@ -54,6 +69,11 @@ exports[`Pagination render on mobile resolution should render component with lef
       >
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="0"
           onClick={[Function]}
@@ -86,6 +106,11 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={true}
           key="2"
           onClick={[Function]}
@@ -118,6 +143,11 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="4"
           onClick={[Function]}
@@ -137,12 +167,22 @@ exports[`Pagination render on mobile resolution should render component with lef
     </PaginationButtons>
     <PaginationNavigation
       className="mfui-pagination__button"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-pagination-navigation mfui-pagination-navigation_direction_right mfui-pagination__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         disabled={false}
         onClick={[Function]}
         theme="default"
@@ -174,6 +214,11 @@ exports[`Pagination render on mobile resolution should render component with lef
   >
     <PaginationNavigation
       className="mfui-pagination__button"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       direction="left"
       disabled={false}
       onClick={[Function]}
@@ -181,6 +226,11 @@ exports[`Pagination render on mobile resolution should render component with lef
     >
       <PaginationButton
         className="mfui-pagination-navigation mfui-pagination-navigation_direction_left mfui-pagination__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         disabled={false}
         onClick={[Function]}
         theme="default"
@@ -199,6 +249,11 @@ exports[`Pagination render on mobile resolution should render component with lef
     </PaginationNavigation>
     <PaginationButtons
       activeButton={8}
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       hiddenButton="HIDDEN"
       items={
         Array [
@@ -217,6 +272,11 @@ exports[`Pagination render on mobile resolution should render component with lef
       >
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="0"
           onClick={[Function]}
@@ -249,6 +309,11 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={true}
           key="2"
           onClick={[Function]}
@@ -266,6 +331,11 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="3"
           onClick={[Function]}
@@ -283,6 +353,11 @@ exports[`Pagination render on mobile resolution should render component with lef
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="4"
           onClick={[Function]}
@@ -302,12 +377,22 @@ exports[`Pagination render on mobile resolution should render component with lef
     </PaginationButtons>
     <PaginationNavigation
       className="mfui-pagination__button"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-pagination-navigation mfui-pagination-navigation_direction_right mfui-pagination__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         disabled={false}
         onClick={[Function]}
         theme="default"
@@ -339,6 +424,11 @@ exports[`Pagination render on mobile resolution should render component with rig
   >
     <PaginationNavigation
       className="mfui-pagination__button"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       direction="left"
       disabled={true}
       onClick={[Function]}
@@ -346,6 +436,11 @@ exports[`Pagination render on mobile resolution should render component with rig
     >
       <PaginationButton
         className="mfui-pagination-navigation mfui-pagination-navigation_direction_left mfui-pagination__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         disabled={true}
         onClick={[Function]}
         theme="default"
@@ -364,6 +459,11 @@ exports[`Pagination render on mobile resolution should render component with rig
     </PaginationNavigation>
     <PaginationButtons
       activeButton={1}
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       hiddenButton="HIDDEN"
       items={
         Array [
@@ -382,6 +482,11 @@ exports[`Pagination render on mobile resolution should render component with rig
       >
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={true}
           key="0"
           onClick={[Function]}
@@ -399,6 +504,11 @@ exports[`Pagination render on mobile resolution should render component with rig
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="1"
           onClick={[Function]}
@@ -416,6 +526,11 @@ exports[`Pagination render on mobile resolution should render component with rig
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="2"
           onClick={[Function]}
@@ -448,6 +563,11 @@ exports[`Pagination render on mobile resolution should render component with rig
         </PaginationButton>
         <PaginationButton
           className="mfui-pagination-buttons__button"
+          dataAttrs={
+            Object {
+              "root": Object {},
+            }
+          }
           isActive={false}
           key="4"
           onClick={[Function]}
@@ -467,12 +587,22 @@ exports[`Pagination render on mobile resolution should render component with rig
     </PaginationButtons>
     <PaginationNavigation
       className="mfui-pagination__button"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       disabled={false}
       onClick={[Function]}
       theme="default"
     >
       <PaginationButton
         className="mfui-pagination-navigation mfui-pagination-navigation_direction_right mfui-pagination__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         disabled={false}
         onClick={[Function]}
         theme="default"
@@ -499,6 +629,11 @@ exports[`Pagination should render component with left and right hidden buttons 1
 >
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     direction="left"
     disabled={false}
     onClick={[Function]}
@@ -506,6 +641,11 @@ exports[`Pagination should render component with left and right hidden buttons 1
   />
   <PaginationButtons
     activeButton={5}
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     hiddenButton="HIDDEN"
     items={
       Array [
@@ -523,6 +663,11 @@ exports[`Pagination should render component with left and right hidden buttons 1
   />
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="default"
@@ -536,6 +681,11 @@ exports[`Pagination should render component with left hidden buttons 1`] = `
 >
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     direction="left"
     disabled={false}
     onClick={[Function]}
@@ -543,6 +693,11 @@ exports[`Pagination should render component with left hidden buttons 1`] = `
   />
   <PaginationButtons
     activeButton={8}
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     hiddenButton="HIDDEN"
     items={
       Array [
@@ -560,6 +715,11 @@ exports[`Pagination should render component with left hidden buttons 1`] = `
   />
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="default"
@@ -573,6 +733,11 @@ exports[`Pagination should render component with number of buttons does not exce
 >
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     direction="left"
     disabled={true}
     onClick={[Function]}
@@ -580,6 +745,11 @@ exports[`Pagination should render component with number of buttons does not exce
   />
   <PaginationButtons
     activeButton={1}
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     hiddenButton="HIDDEN"
     items={
       Array [
@@ -593,6 +763,11 @@ exports[`Pagination should render component with number of buttons does not exce
   />
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="default"
@@ -606,6 +781,11 @@ exports[`Pagination should render component with right hidden buttons 1`] = `
 >
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     direction="left"
     disabled={true}
     onClick={[Function]}
@@ -613,6 +793,11 @@ exports[`Pagination should render component with right hidden buttons 1`] = `
   />
   <PaginationButtons
     activeButton={1}
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     hiddenButton="HIDDEN"
     items={
       Array [
@@ -630,6 +815,11 @@ exports[`Pagination should render component with right hidden buttons 1`] = `
   />
   <PaginationNavigation
     className="mfui-pagination__button"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="default"

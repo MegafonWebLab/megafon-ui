@@ -15,7 +15,7 @@ export const getDefaultValue = ({ defaultValue, type, flowType }) => {
         return `${defaultValue.value}`;
     }
 
-    const propType = flowType ? flowType : type;
+    const propType = flowType || type;
     if (propType && propType.name === 'string') {
         return defaultValue.value.replace(/\'/g, '"');
     }
@@ -24,8 +24,8 @@ export const getDefaultValue = ({ defaultValue, type, flowType }) => {
         return defaultValue.value.toString();
     }
 
-    return defaultValue.value
-}
+    return defaultValue.value;
+};
 
 const cn = cnCreate('docz-props');
 
@@ -34,12 +34,17 @@ export const Prop = ({ propName, prop }) => {
 
     const type = prop.type.name
         .replace(/ \| undefined/g, '')
+        .replace(/\</g, '&#60;')
         .replace(/\|/g, '<br>| ')
-        .replace(/\"/g, "'");
+        .replace(/\"/g, "'")
+        .replace(/([;])(?=[^;]*$)/, '');
 
     return (
         <tr className={cn('row')}>
-            <td className={cn('cell', { name: true })}>{propName}{prop.required && '*'}</td>
+            <td className={cn('cell', { name: true })}>
+                {propName}
+                {prop.required && '*'}
+            </td>
             <td className={cn('cell')} dangerouslySetInnerHTML={{ __html: type }} />
             <td className={cn('cell')}>
                 {prop.defaultValue && (
@@ -51,15 +56,14 @@ export const Prop = ({ propName, prop }) => {
             <td className={cn('cell')}>{prop.description}</td>
         </tr>
     );
-}
+};
 
 export const Props = ({ props }) => {
     const entries = Object.entries<any>(props)
-        .sort(([, propA], [, propB]) =>
-            Number(!!propB.required) - Number(!!propA.required)
-        )
-        .sort(([, propA], [, propB]) =>
-            Number(propA.type.name.search('=>') !== -1) - Number(propB.type.name.search('=>') !== -1)
+        .sort(([, propA], [, propB]) => Number(!!propB.required) - Number(!!propA.required))
+        .sort(
+            ([, propA], [, propB]) =>
+                Number(propA.type.name.search('=>') !== -1) - Number(propB.type.name.search('=>') !== -1),
         );
 
     return (
@@ -75,16 +79,12 @@ export const Props = ({ props }) => {
                 </thead>
                 <tbody>
                     {entries.map(([key, prop]) => (
-                        <Prop
-                            key={key}
-                            propName={key}
-                            prop={prop}
-                        />
+                        <Prop key={key} propName={key} prop={prop} />
                     ))}
                 </tbody>
             </table>
         </div>
-    )
-}
+    );
+};
 
 export default Props;

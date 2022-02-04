@@ -10,6 +10,29 @@ const props = {
         slide: 'slide',
         arrow: 'arrows',
     },
+    dataAttrs: {
+        root: {
+            'data-root': 'test-id',
+        },
+        swiper: {
+            'data-swiper': 'test-id',
+        },
+        slide: {
+            'data-slide': 'test-id',
+        },
+        arrowPrev: {
+            'data-arrow-prev': 'test-id',
+        },
+        arrowNext: {
+            'data-arrow-next': 'test-id',
+        },
+        pagination: {
+            'data-pagination': 'test-id',
+        },
+        dot: {
+            'data-dot': 'test-id',
+        },
+    },
     loop: true,
     autoPlay: true,
     autoPlayDelay: 1000,

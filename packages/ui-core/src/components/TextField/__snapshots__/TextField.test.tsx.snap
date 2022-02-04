@@ -442,6 +442,11 @@ exports[`<TextField /> should render with common props 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label
@@ -482,6 +487,11 @@ exports[`<TextField /> should render with custom icon 1`] = `
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_icon customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label
@@ -550,6 +560,11 @@ exports[`<TextField /> should render with error 1`] = `
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error mfui-text-field_icon customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label
@@ -598,6 +613,11 @@ exports[`<TextField /> should render with hidden icon 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label
@@ -638,6 +658,11 @@ exports[`<TextField /> should render with valid 1`] = `
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_valid mfui-text-field_icon customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label
@@ -686,6 +711,11 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label
@@ -731,6 +761,11 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label
@@ -776,6 +811,11 @@ exports[`<TextField /> textarea should render with error because of max limit is
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error customClass"
 >
   <InputLabel
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     htmlFor="id"
   >
     label

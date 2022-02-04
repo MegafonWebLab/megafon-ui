@@ -5,8 +5,10 @@ import * as PropTypes from 'prop-types';
 import './ButtonLinkBox.less';
 
 export interface IButtonLinkBoxProps {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -62,7 +64,11 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     onButtonClick,
     onLinkClick,
 }) => (
-    <div {...filterDataAttrs(dataAttrs)} className={cn({ 'h-align': hAlign }, [className, classes.root])} ref={rootRef}>
+    <div
+        {...filterDataAttrs(dataAttrs?.root)}
+        className={cn({ 'h-align': hAlign }, [className, classes.root])}
+        ref={rootRef}
+    >
         {buttonTitle && (
             <div className={cn('row')}>
                 <Button
@@ -95,7 +101,9 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
 );
 
 ButtonLinkBox.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,

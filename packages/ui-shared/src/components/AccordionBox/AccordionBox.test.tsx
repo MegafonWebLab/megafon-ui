@@ -4,7 +4,9 @@ import AccordionBox, { IAccordionBox } from './AccordionBox';
 
 const props: IAccordionBox = {
     dataAttrs: {
-        'data-test': 'data-test-value',
+        root: {
+            'data-root': 'data-test-value',
+        },
     },
     rootRef: jest.fn(),
     title: 'Test',

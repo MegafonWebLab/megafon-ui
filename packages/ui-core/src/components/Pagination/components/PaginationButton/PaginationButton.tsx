@@ -1,21 +1,24 @@
 import React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './PaginationButton.less';
 
 type ValueType = string | number;
 
-export interface IPaginationButton {
+export interface IPaginationButtonProps {
     disabled?: boolean;
     isActive?: boolean;
     theme?: 'default' | 'light';
-    className?: string;
-    onClick?: (value?: ValueType) => void;
     value?: ValueType;
+    className?: string;
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
+    onClick?: (value?: ValueType) => void;
 }
 
 const cn = cnCreate('mfui-pagination-button');
-const PaginationButton: React.FC<IPaginationButton> = ({
+const PaginationButton: React.FC<IPaginationButtonProps> = ({
     disabled = false,
     isActive = false,
     theme = 'default',
@@ -23,6 +26,7 @@ const PaginationButton: React.FC<IPaginationButton> = ({
     children,
     onClick,
     value,
+    dataAttrs,
 }) => {
     const handleClick = () => {
         onClick && onClick(value);
@@ -30,6 +34,7 @@ const PaginationButton: React.FC<IPaginationButton> = ({
 
     return (
         <button
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ active: isActive, theme }, className)}
             disabled={disabled}
             onClick={handleClick}
@@ -45,8 +50,11 @@ PaginationButton.propTypes = {
     isActive: PropTypes.bool,
     theme: PropTypes.oneOf(['default', 'light']),
     className: PropTypes.string,
-    onClick: PropTypes.func,
     value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
+    onClick: PropTypes.func,
 };
 
 export default PaginationButton;

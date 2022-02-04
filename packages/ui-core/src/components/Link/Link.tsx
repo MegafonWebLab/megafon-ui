@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 
 export interface ILinkProps {
@@ -10,16 +11,20 @@ export interface ILinkProps {
     target?: '_self' | '_blank' | '_parent' | '_top';
     /** rel - аргумент тега <a> */
     rel?: string;
-    /** Обработчик клика */
-    onClick?: (e: React.MouseEvent<EventTarget>) => void;
     /** Добавление атрибута download */
     download?: boolean;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
+    /** Обработчик клика */
+    onClick?: (e: React.MouseEvent<EventTarget>) => void;
 }
 
-const Link: React.FC<ILinkProps> = props => (
+const Link: React.FC<ILinkProps> = ({ dataAttrs, ...props }) => (
     // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a {...props} />
+    <a {...filterDataAttrs(dataAttrs?.root)} {...props} />
 );
 Link.propTypes = {
     href: PropTypes.string,
@@ -31,9 +36,12 @@ Link.propTypes = {
     ]),
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     rel: PropTypes.string,
-    onClick: PropTypes.func,
     download: PropTypes.bool,
+    onClick: PropTypes.func,
 };
 
 export default Link;

@@ -37,3 +37,8 @@ test('Link renders with attribute download', () => {
     const link = shallow(<Link download />);
     expect(link).toMatchSnapshot();
 });
+
+test('Link renders with data attribute', () => {
+    const link = shallow(<Link dataAttrs={{ root: { 'data-test': 'test' } }} />);
+    expect(link).toMatchSnapshot();
+});

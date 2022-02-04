@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './Header.less';
 
-interface IHeaderProps extends IFilterDataAttrs {
+interface IHeaderProps {
     /** Тег */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Цвет */
@@ -14,6 +14,10 @@ interface IHeaderProps extends IFilterDataAttrs {
     addition?: JSX.Element;
     /** Дополнительный класс корневого элемента */
     className?: string | string[];
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Горизонтальное выравнивание */
     hAlign?: 'inherit' | 'left' | 'center' | 'right';
     /** Обработчик клика */
@@ -36,7 +40,7 @@ const Header: React.FC<IHeaderProps> = ({
 
     return (
         <ElementType
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ color, margin, level, 'h-align': hAlign }, className)}
             onClick={onClick}
         >
@@ -52,7 +56,9 @@ Header.propTypes = {
     margin: PropTypes.bool,
     addition: PropTypes.element,
     hAlign: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     onClick: PropTypes.func,
 };
 

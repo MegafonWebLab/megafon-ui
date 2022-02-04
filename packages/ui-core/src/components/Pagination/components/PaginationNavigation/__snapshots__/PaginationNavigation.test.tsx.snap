@@ -3,6 +3,13 @@
 exports[`PaginationNavigation should render component 1`] = `
 <PaginationButton
   className="mfui-pagination-navigation mfui-pagination-navigation_direction_right"
+  dataAttrs={
+    Object {
+      "root": Object {
+        "data-test": "test",
+      },
+    }
+  }
 >
   <test-file-stub
     className="mfui-pagination-navigation__icon"

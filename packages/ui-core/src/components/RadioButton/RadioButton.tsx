@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './RadioButton.less';
 
-export interface IRadioButtonProps extends IFilterDataAttrs {
+export interface IRadioButtonProps {
     /** Значение */
     value: string;
     /** Имя для тега form */
@@ -22,6 +22,12 @@ export interface IRadioButtonProps extends IFilterDataAttrs {
         label?: string;
         customInput?: string;
         labelText?: string;
+    };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        input?: Record<string, string>;
+        text?: Record<string, string>;
     };
     children?: React.ReactNode;
     /** Обработчик изменения значения 'value' */
@@ -50,7 +56,7 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
     const handleChange = (): void => onChange && onChange(value);
 
     return (
-        <div className={cn(rootClassNames)} {...filterDataAttrs(dataAttrs)}>
+        <div className={cn(rootClassNames)} {...filterDataAttrs(dataAttrs?.root)}>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label
                 className={cn(
@@ -63,6 +69,7 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
             >
                 <input
                     {...checkedProp}
+                    {...filterDataAttrs(dataAttrs?.input)}
                     className={cn('input')}
                     type="radio"
                     name={name}
@@ -72,7 +79,14 @@ const RadioButton: React.FC<IRadioButtonProps> = ({
                     ref={inputRef as React.Ref<HTMLInputElement>}
                 />
                 <div className={cn('custom-input', classes.customInput)} />
-                {children && <div className={cn('text', { size: textSize }, classes.labelText)}>{children}</div>}
+                {children && (
+                    <div
+                        {...filterDataAttrs(dataAttrs?.text)}
+                        className={cn('text', { size: textSize }, classes.labelText)}
+                    >
+                        {children}
+                    </div>
+                )}
             </label>
         </div>
     );
@@ -91,13 +105,17 @@ RadioButton.propTypes = {
         customInput: PropTypes.string,
         labelText: PropTypes.string,
     }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        input: PropTypes.objectOf(PropTypes.string.isRequired),
+        text: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     children: PropTypes.node,
     onChange: PropTypes.func,
     inputRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
 };
 
 export default RadioButton;

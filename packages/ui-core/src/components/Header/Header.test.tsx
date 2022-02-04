@@ -56,7 +56,7 @@ describe('<Header />', () => {
     });
 
     it('it renders with data attributes', () => {
-        const wrapper = shallow(<Header dataAttrs={{ 'data-test': 'test', 'incorrect-attr': 'test' }} />);
+        const wrapper = shallow(<Header dataAttrs={{ root: { 'data-test': 'test', 'incorrect-attr': 'test' } }} />);
         expect(wrapper).toMatchSnapshot();
     });
 });
