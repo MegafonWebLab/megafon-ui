@@ -3,7 +3,7 @@
 exports[`<Select /> it renders with data attributes 1`] = `
 <div
   className="mfui-select mfui-select_no-touch"
-  data-test="test"
+  data-root="test"
 >
   <div
     className="mfui-select__inner"
@@ -14,7 +14,7 @@ exports[`<Select /> it renders with data attributes 1`] = `
     >
       <div
         className="mfui-select__title"
-        data-test="test"
+        data-title="test"
         onClick={[Function]}
         role="button"
         tabIndex={0}
@@ -32,28 +32,28 @@ exports[`<Select /> it renders with data attributes 1`] = `
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_active"
-          data-test="test[1]"
+          data-list-item="test[1]"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title"
-            data-test="test[1]"
+            data-list-item-title="test[1]"
           >
             test-name-1
           </div>
         </div>
         <div
           className="mfui-select__list-item"
-          data-test="test[2]"
+          data-list-item="test[2]"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title"
-            data-test="test[2]"
+            data-list-item-title="test[2]"
           >
             test-name-2
           </div>
@@ -67,7 +67,7 @@ exports[`<Select /> it renders with data attributes 1`] = `
 exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 1`] = `
 <div
   className="mfui-select mfui-select_no-touch test-class test-root-class"
-  data-test="test"
+  data-root="test"
 >
   <div
     className="mfui-select__inner"
@@ -76,7 +76,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       dataAttrs={
         Object {
           "root": Object {
-            "data-test": "test",
+            "data-label": "test",
             "incorrect-attr": "test",
           },
         }
@@ -96,7 +96,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
     >
       <input
         className="mfui-select__combobox"
-        data-test="test"
+        data-input="test"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -112,14 +112,14 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-test="test[1]"
+          data-list-item="test[1]"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title list-item-title"
-            data-test="test[1]"
+            data-list-item-title="test[1]"
           >
             t
             e
@@ -136,14 +136,14 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         </div>
         <div
           className="mfui-select__list-item list-item"
-          data-test="test[2]"
+          data-list-item="test[2]"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title list-item-title"
-            data-test="test[2]"
+            data-list-item-title="test[2]"
           >
             t
             e
@@ -163,7 +163,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
   </div>
   <div
     className="mfui-select__text"
-    data-test="test"
+    data-notice-text="test"
   >
     test-notice-text
   </div>
@@ -173,7 +173,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
 exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 2`] = `
 <div
   className="mfui-select mfui-select_no-touch test-class test-root-class"
-  data-test="test"
+  data-root="test"
 >
   <div
     className="mfui-select__inner"
@@ -182,7 +182,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       dataAttrs={
         Object {
           "root": Object {
-            "data-test": "test",
+            "data-label": "test",
             "incorrect-attr": "test",
           },
         }
@@ -202,7 +202,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
     >
       <input
         className="mfui-select__combobox"
-        data-test="test"
+        data-input="test"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -218,14 +218,14 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-test="test[1]"
+          data-list-item="test[1]"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title list-item-title"
-            data-test="test[1]"
+            data-list-item-title="test[1]"
           >
             t
             e
@@ -242,14 +242,14 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
         </div>
         <div
           className="mfui-select__list-item list-item"
-          data-test="test[2]"
+          data-list-item="test[2]"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title list-item-title"
-            data-test="test[2]"
+            data-list-item-title="test[2]"
           >
             t
             e
@@ -269,7 +269,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
   </div>
   <div
     className="mfui-select__text"
-    data-test="test"
+    data-notice-text="test"
   >
     test-notice-text
   </div>
@@ -279,7 +279,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
 exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 3`] = `
 <div
   className="mfui-select mfui-select_open mfui-select_no-touch test-class test-root-class"
-  data-test="test"
+  data-root="test"
 >
   <div
     className="mfui-select__inner"
@@ -288,7 +288,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       dataAttrs={
         Object {
           "root": Object {
-            "data-test": "test",
+            "data-label": "test",
             "incorrect-attr": "test",
           },
         }
@@ -308,7 +308,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
     >
       <input
         className="mfui-select__combobox"
-        data-test="test"
+        data-input="test"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -324,14 +324,14 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-test="test[1]"
+          data-list-item="test[1]"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title list-item-title"
-            data-test="test[1]"
+            data-list-item-title="test[1]"
           >
             <span
               className="mfui-select__highlighted-fragment"
@@ -345,7 +345,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
   </div>
   <div
     className="mfui-select__text"
-    data-test="test"
+    data-notice-text="test"
   >
     test-notice-text
   </div>
@@ -355,7 +355,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
 exports[`<Select /> key typing handlers highlighted text 1`] = `
 <div
   className="mfui-select mfui-select_no-touch test-class test-root-class"
-  data-test="test"
+  data-root="test"
 >
   <div
     className="mfui-select__inner"
@@ -364,7 +364,7 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
       dataAttrs={
         Object {
           "root": Object {
-            "data-test": "test",
+            "data-label": "test",
             "incorrect-attr": "test",
           },
         }
@@ -384,7 +384,7 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
     >
       <input
         className="mfui-select__combobox"
-        data-test="test"
+        data-input="test"
         onChange={[Function]}
         onFocus={[Function]}
         placeholder="test-placeholder"
@@ -400,14 +400,14 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_active list-item"
-          data-test="test[1]"
+          data-list-item="test[1]"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title list-item-title"
-            data-test="test[1]"
+            data-list-item-title="test[1]"
           >
             t
             e
@@ -424,14 +424,14 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
         </div>
         <div
           className="mfui-select__list-item list-item"
-          data-test="test[2]"
+          data-list-item="test[2]"
           key="1_2"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title list-item-title"
-            data-test="test[2]"
+            data-list-item-title="test[2]"
           >
             t
             e
@@ -451,7 +451,7 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
   </div>
   <div
     className="mfui-select__text"
-    data-test="test"
+    data-notice-text="test"
   >
     test-notice-text
   </div>
@@ -475,35 +475,35 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
   dataAttrs={
     Object {
       "input": Object {
-        "data-test": "test",
+        "data-input": "test",
         "incorrect-attr": "test",
       },
       "label": Object {
-        "data-test": "test",
+        "data-label": "test",
         "incorrect-attr": "test",
       },
       "listItem": Object {
-        "data-test": "test",
+        "data-list-item": "test",
         "incorrect-attr": "test",
       },
       "listItemTitle": Object {
-        "data-test": "test",
+        "data-list-item-title": "test",
         "incorrect-attr": "test",
       },
       "notFound": Object {
-        "data-test": "test",
+        "data-not-found": "test",
         "incorrect-attr": "test",
       },
       "noticeText": Object {
-        "data-test": "test",
+        "data-notice-text": "test",
         "incorrect-attr": "test",
       },
       "root": Object {
-        "data-test": "test",
+        "data-root": "test",
         "incorrect-attr": "test",
       },
       "title": Object {
-        "data-test": "test",
+        "data-title": "test",
         "incorrect-attr": "test",
       },
     }
@@ -531,7 +531,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
 >
   <div
     className="mfui-select mfui-select_open mfui-select_no-touch test-class test-root-class"
-    data-test="test"
+    data-root="test"
   >
     <div
       className="mfui-select__inner"
@@ -540,7 +540,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         dataAttrs={
           Object {
             "root": Object {
-              "data-test": "test",
+              "data-label": "test",
               "incorrect-attr": "test",
             },
           }
@@ -549,7 +549,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
       >
         <label
           className="mfui-input-label"
-          data-test="test"
+          data-label="test"
           htmlFor="1"
         >
           test-label
@@ -566,7 +566,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
       >
         <div
           className="mfui-select__title mfui-select__title_placeholder test-title"
-          data-test="test"
+          data-title="test"
           onClick={[Function]}
           role="button"
           tabIndex={0}
@@ -586,28 +586,28 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-test="test[1]"
+            data-list-item="test[1]"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[1]"
+              data-list-item-title="test[1]"
             >
               test-name-1
             </div>
           </div>
           <div
             className="mfui-select__list-item list-item"
-            data-test="test[2]"
+            data-list-item="test[2]"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[2]"
+              data-list-item-title="test[2]"
             >
               test-name-2
             </div>
@@ -617,7 +617,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
     </div>
     <div
       className="mfui-select__text"
-      data-test="test"
+      data-notice-text="test"
     >
       test-notice-text
     </div>
@@ -642,35 +642,35 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
   dataAttrs={
     Object {
       "input": Object {
-        "data-test": "test",
+        "data-input": "test",
         "incorrect-attr": "test",
       },
       "label": Object {
-        "data-test": "test",
+        "data-label": "test",
         "incorrect-attr": "test",
       },
       "listItem": Object {
-        "data-test": "test",
+        "data-list-item": "test",
         "incorrect-attr": "test",
       },
       "listItemTitle": Object {
-        "data-test": "test",
+        "data-list-item-title": "test",
         "incorrect-attr": "test",
       },
       "notFound": Object {
-        "data-test": "test",
+        "data-not-found": "test",
         "incorrect-attr": "test",
       },
       "noticeText": Object {
-        "data-test": "test",
+        "data-notice-text": "test",
         "incorrect-attr": "test",
       },
       "root": Object {
-        "data-test": "test",
+        "data-root": "test",
         "incorrect-attr": "test",
       },
       "title": Object {
-        "data-test": "test",
+        "data-title": "test",
         "incorrect-attr": "test",
       },
     }
@@ -698,7 +698,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 >
   <div
     className="mfui-select mfui-select_no-touch test-class test-root-class"
-    data-test="test"
+    data-root="test"
   >
     <div
       className="mfui-select__inner"
@@ -707,7 +707,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         dataAttrs={
           Object {
             "root": Object {
-              "data-test": "test",
+              "data-label": "test",
               "incorrect-attr": "test",
             },
           }
@@ -716,7 +716,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
       >
         <label
           className="mfui-input-label"
-          data-test="test"
+          data-label="test"
           htmlFor="1"
         >
           test-label
@@ -733,7 +733,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
       >
         <div
           className="mfui-select__title mfui-select__title_placeholder test-title"
-          data-test="test"
+          data-title="test"
           onClick={[Function]}
           role="button"
           tabIndex={0}
@@ -753,28 +753,28 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-test="test[1]"
+            data-list-item="test[1]"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[1]"
+              data-list-item-title="test[1]"
             >
               test-name-1
             </div>
           </div>
           <div
             className="mfui-select__list-item list-item"
-            data-test="test[2]"
+            data-list-item="test[2]"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[2]"
+              data-list-item-title="test[2]"
             >
               test-name-2
             </div>
@@ -784,7 +784,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
     </div>
     <div
       className="mfui-select__text"
-      data-test="test"
+      data-notice-text="test"
     >
       test-notice-text
     </div>
@@ -795,7 +795,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 exports[`<Select /> should render items.view as function and type classic 1`] = `
 <div
   className="mfui-select mfui-select_no-touch"
-  data-test="test"
+  data-root="test"
 >
   <div
     className="mfui-select__inner"
@@ -806,7 +806,7 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
     >
       <div
         className="mfui-select__title"
-        data-test="test"
+        data-title="test"
         onClick={[Function]}
         role="button"
         tabIndex={0}
@@ -824,14 +824,14 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_active"
-          data-test="test[1]"
+          data-list-item="test[1]"
           key="0_111"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title"
-            data-test="test[1]"
+            data-list-item-title="test[1]"
           >
             <div>
               view 
@@ -847,7 +847,7 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
 exports[`<Select /> should render items.view as function and type combobox 1`] = `
 <div
   className="mfui-select mfui-select_no-touch"
-  data-test="test"
+  data-root="test"
 >
   <div
     className="mfui-select__inner"
@@ -858,7 +858,7 @@ exports[`<Select /> should render items.view as function and type combobox 1`] =
     >
       <input
         className="mfui-select__combobox"
-        data-test="test"
+        data-input="test"
         onChange={[Function]}
         onFocus={[Function]}
         type="text"
@@ -873,14 +873,14 @@ exports[`<Select /> should render items.view as function and type combobox 1`] =
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_active"
-          data-test="test[1]"
+          data-list-item="test[1]"
           key="0_111"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           <div
             className="mfui-select__item-title"
-            data-test="test[1]"
+            data-list-item-title="test[1]"
           >
             <div>
               view 
@@ -911,35 +911,35 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
   dataAttrs={
     Object {
       "input": Object {
-        "data-test": "test",
+        "data-input": "test",
         "incorrect-attr": "test",
       },
       "label": Object {
-        "data-test": "test",
+        "data-label": "test",
         "incorrect-attr": "test",
       },
       "listItem": Object {
-        "data-test": "test",
+        "data-list-item": "test",
         "incorrect-attr": "test",
       },
       "listItemTitle": Object {
-        "data-test": "test",
+        "data-list-item-title": "test",
         "incorrect-attr": "test",
       },
       "notFound": Object {
-        "data-test": "test",
+        "data-not-found": "test",
         "incorrect-attr": "test",
       },
       "noticeText": Object {
-        "data-test": "test",
+        "data-notice-text": "test",
         "incorrect-attr": "test",
       },
       "root": Object {
-        "data-test": "test",
+        "data-root": "test",
         "incorrect-attr": "test",
       },
       "title": Object {
-        "data-test": "test",
+        "data-title": "test",
         "incorrect-attr": "test",
       },
     }
@@ -967,7 +967,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
 >
   <div
     className="mfui-select mfui-select_no-touch test-class test-root-class"
-    data-test="test"
+    data-root="test"
   >
     <div
       className="mfui-select__inner"
@@ -976,7 +976,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         dataAttrs={
           Object {
             "root": Object {
-              "data-test": "test",
+              "data-label": "test",
               "incorrect-attr": "test",
             },
           }
@@ -985,7 +985,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
       >
         <label
           className="mfui-input-label"
-          data-test="test"
+          data-label="test"
           htmlFor="1"
         >
           test-label
@@ -1002,7 +1002,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
       >
         <input
           className="mfui-select__combobox"
-          data-test="test"
+          data-input="test"
           onChange={[Function]}
           onFocus={[Function]}
           placeholder="test-placeholder"
@@ -1018,14 +1018,14 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-test="test[1]"
+            data-list-item="test[1]"
             key="0_111"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[1]"
+              data-list-item-title="test[1]"
             >
               n
               e
@@ -1046,14 +1046,14 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
           </div>
           <div
             className="mfui-select__list-item list-item"
-            data-test="test[2]"
+            data-list-item="test[2]"
             key="1_222"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[2]"
+              data-list-item-title="test[2]"
             >
               n
               e
@@ -1077,7 +1077,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
     </div>
     <div
       className="mfui-select__text"
-      data-test="test"
+      data-notice-text="test"
     >
       test-notice-text
     </div>
@@ -1179,35 +1179,35 @@ exports[`<Select /> snapshots renders with props 1`] = `
   dataAttrs={
     Object {
       "input": Object {
-        "data-test": "test",
+        "data-input": "test",
         "incorrect-attr": "test",
       },
       "label": Object {
-        "data-test": "test",
+        "data-label": "test",
         "incorrect-attr": "test",
       },
       "listItem": Object {
-        "data-test": "test",
+        "data-list-item": "test",
         "incorrect-attr": "test",
       },
       "listItemTitle": Object {
-        "data-test": "test",
+        "data-list-item-title": "test",
         "incorrect-attr": "test",
       },
       "notFound": Object {
-        "data-test": "test",
+        "data-not-found": "test",
         "incorrect-attr": "test",
       },
       "noticeText": Object {
-        "data-test": "test",
+        "data-notice-text": "test",
         "incorrect-attr": "test",
       },
       "root": Object {
-        "data-test": "test",
+        "data-root": "test",
         "incorrect-attr": "test",
       },
       "title": Object {
-        "data-test": "test",
+        "data-title": "test",
         "incorrect-attr": "test",
       },
     }
@@ -1235,7 +1235,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
 >
   <div
     className="mfui-select mfui-select_no-touch test-class test-root-class"
-    data-test="test"
+    data-root="test"
   >
     <div
       className="mfui-select__inner"
@@ -1244,7 +1244,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
         dataAttrs={
           Object {
             "root": Object {
-              "data-test": "test",
+              "data-label": "test",
               "incorrect-attr": "test",
             },
           }
@@ -1253,7 +1253,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
       >
         <label
           className="mfui-input-label"
-          data-test="test"
+          data-label="test"
           htmlFor="1"
         >
           test-label
@@ -1270,7 +1270,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
       >
         <div
           className="mfui-select__title mfui-select__title_placeholder test-title"
-          data-test="test"
+          data-title="test"
           onClick={[Function]}
           role="button"
           tabIndex={0}
@@ -1290,28 +1290,28 @@ exports[`<Select /> snapshots renders with props 1`] = `
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_active list-item"
-            data-test="test[1]"
+            data-list-item="test[1]"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[1]"
+              data-list-item-title="test[1]"
             >
               test-name-1
             </div>
           </div>
           <div
             className="mfui-select__list-item list-item"
-            data-test="test[2]"
+            data-list-item="test[2]"
             key="1_2"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
               className="mfui-select__item-title list-item-title"
-              data-test="test[2]"
+              data-list-item-title="test[2]"
             >
               test-name-2
             </div>
@@ -1321,7 +1321,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
     </div>
     <div
       className="mfui-select__text"
-      data-test="test"
+      data-notice-text="test"
     >
       test-notice-text
     </div>

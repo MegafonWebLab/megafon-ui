@@ -17,13 +17,13 @@ const props: IRadioButtonProps = {
     textSize: 'small',
     dataAttrs: {
         root: {
-            'data-test': 'test',
+            'data-root': 'test',
         },
         input: {
-            'data-test': 'test',
+            'data-input': 'test',
         },
         text: {
-            'data-test': 'test',
+            'data-text': 'test',
         },
     },
     onChange: jest.fn(),

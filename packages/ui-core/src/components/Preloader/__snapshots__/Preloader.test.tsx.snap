@@ -5,7 +5,7 @@ exports[`<Preloader /> it renders Preloader only after 250ms delay 1`] = `
   dataAttrs={
     Object {
       "root": Object {
-        "data-test-id": "test",
+        "data-root": "test",
       },
     }
   }
@@ -17,14 +17,14 @@ exports[`<Preloader /> it renders Preloader only after 250ms delay 2`] = `
   dataAttrs={
     Object {
       "root": Object {
-        "data-test-id": "test",
+        "data-root": "test",
       },
     }
   }
 >
   <div
     className="mfui-preloader mfui-preloader_color_default mfui-preloader_size-all_medium"
-    data-test-id="test"
+    data-root="test"
   >
     <div
       className="mfui-preloader__item mfui-preloader__item_first"

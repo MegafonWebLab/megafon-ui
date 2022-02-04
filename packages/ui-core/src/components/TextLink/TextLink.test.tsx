@@ -14,7 +14,7 @@ const props: ITextLinkProps = {
     download: true,
     dataAttrs: {
         root: {
-            'data-test': 'test',
+            'data-root': 'test',
         },
     },
 };

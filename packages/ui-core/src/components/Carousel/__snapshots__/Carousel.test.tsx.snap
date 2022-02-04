@@ -86,7 +86,7 @@ exports[`<Carousel /> should render with default props 1`] = `
 exports[`<Carousel /> should render with props 1`] = `
 <div
   className="mfui-carousel mfui-carousel_nav-theme_green className rootClass"
-  data-test="test"
+  data-root="test"
   onClick={[Function]}
 >
   <Swiper
@@ -110,7 +110,7 @@ exports[`<Carousel /> should render with props 1`] = `
     centeredSlides={true}
     className="mfui-carousel__swiper innerIndentsClass container"
     containerModifierClass="containerModifier"
-    data-test="test"
+    data-slider="test"
     effect="fade"
     fadeEffect={
       Object {
@@ -139,7 +139,7 @@ exports[`<Carousel /> should render with props 1`] = `
   >
     <SwiperSlide
       className="mfui-carousel__slide slide"
-      data-test="test[1]"
+      data-slide="test[1]"
       key="0/.0"
       onFocus={[Function]}
       onMouseDown={[Function]}
@@ -150,7 +150,7 @@ exports[`<Carousel /> should render with props 1`] = `
     </SwiperSlide>
     <SwiperSlide
       className="mfui-carousel__slide slide"
-      data-test="test[2]"
+      data-slide="test[2]"
       key="1/.1"
       onFocus={[Function]}
       onMouseDown={[Function]}
@@ -162,14 +162,14 @@ exports[`<Carousel /> should render with props 1`] = `
   </Swiper>
   <NavArrow
     className="mfui-carousel__arrow mfui-carousel__arrow_prev prev"
-    data-test="test"
+    data-prev="test"
     disabled={false}
     onClick={[Function]}
     theme="purple"
   />
   <NavArrow
     className="mfui-carousel__arrow mfui-carousel__arrow_next next"
-    data-test="test"
+    data-next="test"
     disabled={false}
     onClick={[Function]}
     theme="purple"

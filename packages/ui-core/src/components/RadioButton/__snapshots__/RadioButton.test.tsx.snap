@@ -29,7 +29,7 @@ exports[`<RadioButton /> snapshots renders RadioButton 1`] = `
 exports[`<RadioButton /> snapshots renders RadioButton with props 1`] = `
 <div
   className="mfui-radio-button test-class root-class"
-  data-test="test"
+  data-root="test"
 >
   <label
     className="mfui-radio-button__label mfui-radio-button__label_disabled label-class"
@@ -37,7 +37,7 @@ exports[`<RadioButton /> snapshots renders RadioButton with props 1`] = `
     <input
       checked={true}
       className="mfui-radio-button__input"
-      data-test="test"
+      data-input="test"
       disabled={true}
       name="test-input-name"
       onChange={[Function]}
@@ -49,7 +49,7 @@ exports[`<RadioButton /> snapshots renders RadioButton with props 1`] = `
     />
     <div
       className="mfui-radio-button__text mfui-radio-button__text_size_small label-text-class"
-      data-test="test"
+      data-text="test"
     >
       Тестовая строка
     </div>

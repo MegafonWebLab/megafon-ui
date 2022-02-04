@@ -13,16 +13,16 @@ const props: IButtonProps = {
     className: 'class',
     dataAttrs: {
         root: {
-            'data-test': 'test',
+            'data-root': 'test',
         },
         content: {
-            'data-test': 'test',
+            'data-content': 'test',
         },
         inner: {
-            'data-test': 'test',
+            'data-inner': 'test',
         },
         loader: {
-            'data-test': 'test',
+            'data-loader': 'test',
         },
     },
     classes: {

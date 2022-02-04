@@ -33,35 +33,35 @@ const props: ISelectProps<number> = {
     ],
     dataAttrs: {
         root: {
-            'data-test': 'test',
+            'data-root': 'test',
             'incorrect-attr': 'test',
         },
         label: {
-            'data-test': 'test',
+            'data-label': 'test',
             'incorrect-attr': 'test',
         },
         title: {
-            'data-test': 'test',
+            'data-title': 'test',
             'incorrect-attr': 'test',
         },
         input: {
-            'data-test': 'test',
+            'data-input': 'test',
             'incorrect-attr': 'test',
         },
         noticeText: {
-            'data-test': 'test',
+            'data-notice-text': 'test',
             'incorrect-attr': 'test',
         },
         listItem: {
-            'data-test': 'test',
+            'data-list-item': 'test',
             'incorrect-attr': 'test',
         },
         listItemTitle: {
-            'data-test': 'test',
+            'data-list-item-title': 'test',
             'incorrect-attr': 'test',
         },
         notFound: {
-            'data-test': 'test',
+            'data-not-found': 'test',
             'incorrect-attr': 'test',
         },
     },
