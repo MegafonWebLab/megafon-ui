@@ -5,14 +5,14 @@ export const defaultNameYamlPlugin = function() {
             const clone = [...ast.children];
             ast.children = [{
                 type: 'yaml',
-                value: "name: ",
+                value: 'name: ',
                 position: {
                     start: { line: 1, column: 1, offset: 0 },
                     end: { line: 3, column: 4, offset: 62 },
                     indent: [ 1, 1, 1, 1 ]
                 },
                 data: {
-                    parsedValue: { name: " " },
+                    parsedValue: { name: ' ' },
                 },
             }].concat(clone);
             ast.position.end.line += 3;
@@ -25,8 +25,8 @@ export const defaultNameYamlPlugin = function() {
 export default {
     title: 'MegaFon UI',
     description: 'MegaFon React UI Kit',
-    base: '/EqR2rxoML8',
-    dest: 'docs/EqR2rxoML8',
+    base: '/',
+    dest: 'docs/',
     typescript: true,
     protocol: 'http',
     public: 'src/public',
@@ -48,7 +48,7 @@ export default {
     notUseSpecifiers: true,
     filterComponents: files =>
         files
-        .filter(p => p.search('/src') !== -1)
-        .filter(p => !/.test|.docz/.test(p))
-        .filter(filepath => /[w-]*.(js|jsx|ts|tsx)$/.test(filepath)),
+            .filter(p => p.search('/src') !== -1)
+            .filter(p => !/.test|.docz/.test(p))
+            .filter(filepath => /[w-]*.(js|jsx|ts|tsx)$/.test(filepath)),
 };
