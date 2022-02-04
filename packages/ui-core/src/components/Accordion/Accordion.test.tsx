@@ -8,22 +8,22 @@ const props: IAccordionProps = {
     hasVerticalPaddings: false,
     dataAttrs: {
         root: {
-            'data-test': 'data-test-value',
+            'data-root': 'data-test-value',
         },
         header: {
-            'data-test': 'data-test-value',
+            'data-header': 'data-test-value',
         },
         collapse: {
-            'data-test': 'data-test-value',
+            'data-collapse': 'data-test-value',
         },
         titleWrap: {
-            'data-test': 'data-test-value',
+            'data-title-wrap': 'data-test-value',
         },
         arrowUp: {
-            'data-test': 'data-test-value',
+            'data-arrow-up': 'data-test-value',
         },
         arrowDown: {
-            'data-test': 'data-test-value',
+            'data-arrow-down': 'data-test-value',
         },
     },
     onClickAccordion: jest.fn(),

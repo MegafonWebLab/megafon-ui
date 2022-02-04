@@ -10,7 +10,9 @@ const props: IButtonLinkBoxProps = {
         link: 'link-class',
     },
     dataAttrs: {
-        'data-test': 'value',
+        root: {
+            'data-root': 'value',
+        },
     },
     buttonTitle: 'button title',
     buttonUrl: 'button-url',

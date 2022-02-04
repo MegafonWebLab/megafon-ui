@@ -7,7 +7,7 @@ const PRELOADER_DELAY = 250;
 
 const dataAttrs = {
     root: {
-        'data-test-id': 'test',
+        'data-root': 'test',
     },
 };
 

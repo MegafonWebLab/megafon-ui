@@ -67,8 +67,10 @@ export interface IStoreBannerProps {
     };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
 }
 
 const cn = cnCreate('mfui-store-banner');
@@ -100,7 +102,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     <div
         className={cn({ theme, mask: deviceMask }, [className, rootClassName])}
         ref={rootRef}
-        {...filterDataAttrs(dataAttrs)}
+        {...filterDataAttrs(dataAttrs?.root)}
     >
         <div className={cn('container')}>
             <div className={cn('grid')}>
@@ -198,8 +200,10 @@ StoreBanner.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     theme: PropTypes.oneOf(Object.values(Theme)),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
 };
 
 export default StoreBanner;

@@ -84,7 +84,7 @@ exports[`<Banner /> should render with default props 1`] = `
 exports[`<Banner /> should render with props 1`] = `
 <div
   className="mfui-banner mfui-banner_nav-theme_dark custom-class"
-  data-test-id="test-id"
+  data-root="test-id"
 >
   <Swiper
     autoplay={
@@ -96,7 +96,7 @@ exports[`<Banner /> should render with props 1`] = `
       }
     }
     className="mfui-banner__swiper"
-    data-test-id="test-id"
+    data-swiper="test-id"
     loop={true}
     onAutoplayStop={[Function]}
     onFromEdge={[Function]}
@@ -108,7 +108,7 @@ exports[`<Banner /> should render with props 1`] = `
   >
     <SwiperSlide
       className="mfui-banner__slide slide"
-      data-test-id="test-id[1]"
+      data-slide="test-id[1]"
       key="0/.0"
     >
       <DemoSlide>
@@ -117,7 +117,7 @@ exports[`<Banner /> should render with props 1`] = `
     </SwiperSlide>
     <SwiperSlide
       className="mfui-banner__slide slide"
-      data-test-id="test-id[2]"
+      data-slide="test-id[2]"
       key="1/.1"
     >
       <DemoSlide>
@@ -127,14 +127,14 @@ exports[`<Banner /> should render with props 1`] = `
   </Swiper>
   <NavArrow
     className="mfui-banner__arrow mfui-banner__arrow_prev arrows"
-    data-test-id="test-id"
+    data-arrow-prev="test-id"
     disabled={false}
     onClick={[Function]}
     theme="dark"
   />
   <NavArrow
     className="mfui-banner__arrow mfui-banner__arrow_next arrows"
-    data-test-id="test-id"
+    data-arrow-next="test-id"
     disabled={false}
     onClick={[Function]}
     theme="dark"
@@ -142,14 +142,14 @@ exports[`<Banner /> should render with props 1`] = `
   />
   <div
     className="mfui-banner__pagination mfui-banner__pagination_theme_dark"
-    data-test-id="test-id"
+    data-pagination="test-id"
   >
     <BannerDot
       className="mfui-banner__dot"
       dataAttrs={
         Object {
           "root": Object {
-            "data-test-id": "test-id[1]",
+            "data-dot": "test-id[1]",
           },
         }
       }
@@ -165,7 +165,7 @@ exports[`<Banner /> should render with props 1`] = `
       dataAttrs={
         Object {
           "root": Object {
-            "data-test-id": "test-id[2]",
+            "data-dot": "test-id[2]",
           },
         }
       }

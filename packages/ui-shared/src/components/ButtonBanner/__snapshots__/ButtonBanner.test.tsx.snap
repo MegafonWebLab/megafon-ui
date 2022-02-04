@@ -3,7 +3,7 @@
 exports[`<ButtonBanner /> should render with props 1`] = `
 <div
   className="mfui-button-banner mfui-button-banner_image mfui-button-banner_scaling_contain className rootClass"
-  data-test="value"
+  data-root="value"
 >
   <Grid
     guttersLeft="medium"

@@ -12,25 +12,25 @@ const props = {
     },
     dataAttrs: {
         root: {
-            'data-test-id': 'test-id',
+            'data-root': 'test-id',
         },
         swiper: {
-            'data-test-id': 'test-id',
+            'data-swiper': 'test-id',
         },
         slide: {
-            'data-test-id': 'test-id',
+            'data-slide': 'test-id',
         },
         arrowPrev: {
-            'data-test-id': 'test-id',
+            'data-arrow-prev': 'test-id',
         },
         arrowNext: {
-            'data-test-id': 'test-id',
+            'data-arrow-next': 'test-id',
         },
         pagination: {
-            'data-test-id': 'test-id',
+            'data-pagination': 'test-id',
         },
         dot: {
-            'data-test-id': 'test-id',
+            'data-dot': 'test-id',
         },
     },
     loop: true,

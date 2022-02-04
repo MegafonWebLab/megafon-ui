@@ -20,19 +20,19 @@ const props: ICarouselProps = {
     },
     dataAttrs: {
         root: {
-            'data-test': 'test',
+            'data-root': 'test',
         },
         slider: {
-            'data-test': 'test',
+            'data-slider': 'test',
         },
         prev: {
-            'data-test': 'test',
+            'data-prev': 'test',
         },
         next: {
-            'data-test': 'test',
+            'data-next': 'test',
         },
         slide: {
-            'data-test': 'test',
+            'data-slide': 'test',
         },
     },
     loop: true,

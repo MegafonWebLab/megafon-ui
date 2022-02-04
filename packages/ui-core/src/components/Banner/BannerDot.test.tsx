@@ -7,7 +7,7 @@ const props = {
     index: 3,
     dataAttrs: {
         root: {
-            'data-test-id': 'test-id',
+            'data-root': 'test-id',
         },
     },
     isActive: false,

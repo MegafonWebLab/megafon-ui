@@ -6,7 +6,7 @@ exports[`<TextLink /> it renders TextLink 1`] = `
   dataAttrs={
     Object {
       "root": Object {
-        "data-test": "test",
+        "data-root": "test",
       },
     }
   }
