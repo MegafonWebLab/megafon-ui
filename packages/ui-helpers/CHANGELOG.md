@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.0-beta.3...@megafon/ui-helpers@2.0.0-beta.4) (2022-02-04)
+
+
+### Features
+
+* **components:** add dataAttrs props in new format ([026d868](https://github.com/MegafonWebLab/megafon-ui/commit/026d8681743d55ea8c93d17000a64959093f7a05))
+
+
+
+
+
 # [2.0.0-beta.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.0-beta.2...@megafon/ui-helpers@2.0.0-beta.3) (2022-02-02)
 
 
