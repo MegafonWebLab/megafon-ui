@@ -12,3 +12,18 @@ yarn-error.log
 docs
 index.mdx
 intro.mdx
+
+const renderSubscription = (): JSX.Element | null => {
+    return (!!subscription?.length && !isSelectedConvergetntTariff) ? (
+        <div className={cn('subscription')}>
+            <TariffsSubscriptionWrapper
+                servicePacks={subscription}
+                tariffPrice={productPrice}
+                chosenSubscription={selectedSubscription}
+                priceTooltip={priceTooltip}
+                isHidePrice
+                onSubscriptionSelect={handleSelectSubscription}
+            />
+        </div>
+    ) : null;
+};
