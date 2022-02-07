@@ -106,16 +106,15 @@ export interface ISelectProps<T extends SelectItemValueType> {
 
 // List of cases to check on component change:
 
-// - Should correctly choose value and trigger callbacks with correct arguments on click or touch
-// - Should correctly choose value and trigger callbacks with correct arguments on choose via filtration in combobox
-// - If value chosen should scroll to chosen element (if scroll required), highlight it with bold and set hovered.
-// Separately required to check simple case and combobox via filtration.
-// - While dropdown is opened list should scroll (if required) and highlight next/previous element on arrow up and arrow down presses
-// - Should correctly set value on enter press while some element hovered
-// - If select dropdown is closed and select focused, dropdown should toggle open on Enter press
+// - Should correctly choose value and trigger callbacks with correct arguments on click or touch.
+// - Should correctly choose value and trigger callbacks with correct arguments on choose via filtration in combobox.
+// - Should scroll to chosen element (to make it visible), highlight it with bold and set hovered on dropdown open.
+// - Should scroll (to make hovered element visible) and highlight next/previous element on arrow up and arrow down presses when dropdown is opened.
+// - Should correctly set value on enter press while some element hovered.
+// - If select dropdown is closed and select focused, dropdown should toggle open on Enter press.
 // - Opened dropdown could be closed only via value choose, click outside of select and on TAB press.
 // - Should add event listener for outside of dropdown click on list open and remove it on list close.
-// Its important to check that callback doesn’t call multiple times on outside click if dropdown was opened multiple times.
+// - onClose callback shouldn't fire multiple times on outside click if dropdown was opened multiple times.
 
 const cn = cnCreate('mfui-select');
 const Select = <T extends SelectItemValueType>({
@@ -151,9 +150,7 @@ const Select = <T extends SelectItemValueType>({
     const isTouch: boolean = detectTouch();
     const currentIndex = itemsList.findIndex(elem => elem.value === currentValue);
 
-    const handleOpened = (): void => onOpened?.();
-
-    // Used in various handlers instead useEffect with isOpened dependency because on component render isOpened equalse false
+    // Used in various handlers instead useEffect with isOpened dependency because on initial component render isOpened is false
     // so it triggers onClosed callback call
     const handleClosed = (): void => {
         onClosed?.();
@@ -168,7 +165,7 @@ const Select = <T extends SelectItemValueType>({
             }
 
             handleClosed();
-            changeSelectState({ type: TOGGLE_DROPDOWN });
+            changeSelectState({ type: TOGGLE_DROPDOWN, isOpened: false });
         },
         [isOpened],
     );
@@ -199,15 +196,9 @@ const Select = <T extends SelectItemValueType>({
         }
     };
 
-    useEffect(
-        () => () => {
-            document.removeEventListener('click', handleClickOutside);
-        },
-        [],
-    );
-
     useEffect(() => {
         if (!isOpened) {
+            // Changes hovered item on dropdown close to currently chosen to hover it on dropdown open
             changeSelectState({
                 type: SET_HOVERED_ITEM_INDEX,
                 hoveredItemIndex: currentIndex === -1 ? 0 : currentIndex,
@@ -216,9 +207,13 @@ const Select = <T extends SelectItemValueType>({
             return;
         }
 
-        handleOpened();
+        onOpened?.();
         scrollList(currentIndex);
         document.addEventListener('click', handleClickOutside);
+
+        () => () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
     }, [isOpened, currentIndex]);
 
     useEffect(() => {
@@ -345,13 +340,13 @@ const Select = <T extends SelectItemValueType>({
 
         if (e.key === 'Enter' && !isOpened) {
             changeSelectState({ type: TOGGLE_DROPDOWN, isOpened: true });
-            handleOpened();
+            onOpened?.();
 
             return false;
         }
 
         if (e.key === 'Tab') {
-            changeSelectState({ type: TOGGLE_DROPDOWN });
+            changeSelectState({ type: TOGGLE_DROPDOWN, isOpened: false });
 
             return false;
         }
