@@ -32,6 +32,7 @@ exports[`<Select /> it renders with data attributes 1`] = `
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_hovered"
+          data-list-item="test[1]"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -111,6 +112,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       >
         <div
           className="mfui-select__not-found"
+          data-not-found="test"
         >
           Ничего не нашлось
         </div>
@@ -174,6 +176,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       >
         <div
           className="mfui-select__not-found"
+          data-not-found="test"
         >
           Ничего не нашлось
         </div>
@@ -237,6 +240,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_hovered list-item"
+          data-list-item="test[1]"
           key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -312,6 +316,7 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
       >
         <div
           className="mfui-select__not-found"
+          data-not-found="test"
         >
           Ничего не нашлось
         </div>
@@ -452,6 +457,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
+            data-list-item="test[1]"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -615,6 +621,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
+            data-list-item="test[1]"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -685,6 +692,7 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_hovered"
+          data-list-item="test[1]"
           key="0_111"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -733,6 +741,7 @@ exports[`<Select /> should render items.view as function and type combobox 1`] =
       >
         <div
           className="mfui-select__not-found"
+          data-not-found="test"
         >
           Ничего не нашлось
         </div>
@@ -864,6 +873,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
+            data-list-item="test[1]"
             key="0_111"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -1128,6 +1138,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
+            data-list-item="test[1]"
             key="0_1"
             onClick={[Function]}
             onMouseEnter={[Function]}

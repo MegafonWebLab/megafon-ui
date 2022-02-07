@@ -574,7 +574,6 @@ Select.propTypes = {
         }),
     ).isRequired,
     onSelect: PropTypes.func,
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     onOpened: PropTypes.func,
     onClosed: PropTypes.func,
 };
