@@ -1,5 +1,7 @@
 import { Playground } from 'docz';
-import { Content, ContentForExampleWithPicture } from './TextBox.docz.tsx';
+import { Header, Paragraph } from '@megafon/ui-core'
+import TextWithIcon from '../../TextWithIcon/TextWithIcon';
+import { Content, ContentForExampleWithPicture, textWithIconItems } from './TextBox.docz.tsx';
 import TextBox from '../TextBox';
 import TextBoxPicture from '../TextBoxPicture';
 import Image from './i/small-img.png';
@@ -123,5 +125,27 @@ import Image from './i/small-img.png';
         <ContentForExampleWithPicture />
         <TextBoxPicture url={Image} margin='big-top' />
         <ContentForExampleWithPicture />
+    </TextBox>
+</Playground>
+
+## Использование с компонентом TextWithIcon
+
+<Playground>
+    <TextBox>
+        <Paragraph>
+            Услуга SMS (Short Message Service) позволяет обмениваться с телефона небольшими текстовыми сообщениями. Вы
+            можете отправить SMS-сообщение даже на городской телефон. Услуга «Голосовое SMS» превратит обычное текстовое
+            сообщение в голосовое и зачитает его адресату.
+        </Paragraph>
+        <TextWithIcon items={textWithIconItems} />
+        <Header>Заголовок после компонента TextWithIcon</Header>
+        <Paragraph>
+            Услуга SMS (Short Message Service) позволяет обмениваться с телефона небольшими текстовыми сообщениями. Вы
+            можете отправить SMS-сообщение даже на городской телефон. Услуга «Голосовое SMS» превратит обычное текстовое
+            сообщение в голосовое и зачитает его адресату.
+        </Paragraph>
+        <TextWithIcon items={textWithIconItems} />
+        <TextBoxPicture url={Image} margin='big-top' />
+        <TextWithIcon items={textWithIconItems} title="Заголовок компонента TextWithIcon" />
     </TextBox>
 </Playground>

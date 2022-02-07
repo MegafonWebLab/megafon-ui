@@ -22,8 +22,8 @@
 @k19: e('.mfui-button-banner');
 @k20: e('.mfui-steps');
 @k21: e('.mfui-page-title');
-@k23: e('.mfui-text-with-icon');
-@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19, @k20, @k21, @k23;
+@k22: e('.mfui-text-with-icon');
+@components: @k1, @k2, @k3, @k4, @k5, @k6, @k7, @k8, @k9, @k10, @k11, @k12, @k13, @k14, @k15, @k16, @k17, @k18, @k19, @k20, @k21, @k22;
 
 @color-modificator: e('&_bg-color_');
 @color-default: e('default');
@@ -128,6 +128,7 @@
 
     .generateComponentsMargins(@large, @k2, 3, 17);
     .generateComponentsMargins(@small, @k2, 14, 15);
+    .generateComponentsMargins(@smallest, @k2, 22, 22);
 
     @media @mobileB {
         .generateComponentsMargins(@big, @k2, 3, 17);
@@ -346,7 +347,7 @@
 
     .generateComponentsMargins(@large, @k16, 3, 20);
     .generateComponentsMargins(@small, @k16, 14, 15);
-    .generateComponentsMargins(@smallest, @k16, 23, 23);
+    .generateComponentsMargins(@small, @k16, 22, 22);
 
     @media @mobileB {
         .generateComponentsMargins(@big, @k16, 3, 20);
@@ -420,21 +421,21 @@
         .disableMarginTop();
     }
 
-    // k23(text-with-icon)
-    .generateComponentsMargins(@medium, @k23, 4, 15);
-    .generateComponentsMargins(@smallest, @k23, 16, 16);
-    .generateComponentsMargins(@medium, @k23, 17, 20);
+    // k22(text-with-icon)
+    .generateComponentsMargins(@medium, @k22, 4, 15);
+    .generateComponentsMargins(@small, @k22, 16, 16);
+    .generateComponentsMargins(@medium, @k22, 17, 20);
 
     @media @mobileB {
-        .generateComponentsMargins(@big, @k23, 4, 15);
-        .generateComponentsMargins(@smallest, @k23, 16, 16);
-        .generateComponentsMargins(@big, @k23, 17, 20);
+        .generateComponentsMargins(@big, @k22, 4, 15);
+        .generateComponentsMargins(@small, @k22, 16, 16);
+        .generateComponentsMargins(@big, @k22, 17, 20);
     }
     @media @desktop {
-        .generateComponentsMargins(@large, @k23, 4, 13);
-        .generateComponentsMargins(@big, @k23, 14, 15);
-        .generateComponentsMargins(@smallest, @k23, 16, 16);
-        .generateComponentsMargins(@large, @k23, 17, 20);
+        .generateComponentsMargins(@large, @k22, 4, 13);
+        .generateComponentsMargins(@big, @k22, 14, 15);
+        .generateComponentsMargins(@small, @k22, 16, 16);
+        .generateComponentsMargins(@large, @k22, 17, 20);
     }
 
     &_disable-padding-top {

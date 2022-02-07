@@ -1,4 +1,5 @@
 *.svg
+!src/**/*.svg
 .idea
 node_modules
 

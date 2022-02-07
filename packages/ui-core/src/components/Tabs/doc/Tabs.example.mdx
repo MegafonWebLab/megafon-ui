@@ -1,9 +1,10 @@
 import { Playground } from 'docz';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
-import { DemoContent } from './Tabs.docz';
+import { DemoContent, OuterObserveContainer, increaseSizeComponent } from './Tabs.docz';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import ContentArea from "components/ContentArea/ContentArea";
+import Button from "components/Button/Button";
 
 ## Особенности использования на мобильных разрешениях
 На разрешении меньше 1024 у списка табов при переполнении появляются "уши",
@@ -41,6 +42,46 @@ const DemoContent = ({ children }) => (
         </div>
     </div>
 );
+```
+
+```javascript collapse=Код OuterObserveContainer
+export const OuterObserveContainer = ({ height = '200px', children }) => {
+    const rootRef = React.useRef<HTMLDivElement>(null);
+    const [observeContainer, setObserveContainer] = React.useState<HTMLDivElement | null>(null);
+
+    React.useEffect(() => {
+        setObserveContainer(rootRef.current);
+    }, []);
+
+    return (
+        <div ref={rootRef}>
+            <Tabs sticky outerObserveContainer={observeContainer}>
+                {children}
+            </Tabs>
+            <div style={{ width: '100%', height, background: '#F6F6F6' }} />
+        </div>
+    );
+};
+```
+
+```javascript collapse=Код increaseSizeComponent
+export const increaseSizeComponent = () => {
+    const tabs = document.querySelector('.oversize-height') as HTMLDivElement;
+    const actualHeight = tabs?.style.height;
+    const oversizeHeight = '1500px';
+
+    if (actualHeight === oversizeHeight) {
+        tabs.style.height = 'auto';
+        tabs.style.border = 'unset';
+        tabs.style.marginBottom = '0';
+    } else {
+        tabs.style.height = oversizeHeight;
+        tabs.style.border = '1px solid gray';
+        tabs.style.marginBottom = '20px';
+    }
+
+    window.dispatchEvent(new Event('resize'));
+}
 ```
 
 ## Выравнивание табов по умолчанию
@@ -172,6 +213,54 @@ const DemoContent = ({ children }) => (
                 <DemoContent>Контент 4</DemoContent>
             </Tab>
         </Tabs>
+    </ContentArea>
+</Playground>
+
+## Фиксация табов у верхней границы окна при ресайзе экрана, вследствии которого высота компонента стала больше высоты viewport`а
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs sticky className="oversize-height">
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+            <Tab title="Таб 4">
+                <DemoContent>Контент 4</DemoContent>
+            </Tab>
+        </Tabs>
+        <Button onClick={increaseSizeComponent}>Эмуляция увеличения размера компонента</Button>
+    </ContentArea>
+</Playground>
+
+## Фиксация табов у верхней границы окна при передаче контейнера для отслеживания режима фиксации извне
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <OuterObserveContainer>
+            <Tab title="Таб 1" />
+            <Tab title="Таб 2" />
+            <Tab title="Таб 3" />
+            <Tab title="Таб 4" />
+        </OuterObserveContainer>
+    </ContentArea>
+</Playground>
+
+## Фиксация табов у верхней границы окна при передаче контейнера для отслеживания режима фиксации извне, при высоте контейнера больше высоты viewport`а
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <OuterObserveContainer height={'1500px'}>
+            <Tab title="Таб 1" />
+            <Tab title="Таб 2" />
+            <Tab title="Таб 3" />
+            <Tab title="Таб 4" />
+        </OuterObserveContainer>
     </ContentArea>
 </Playground>
 

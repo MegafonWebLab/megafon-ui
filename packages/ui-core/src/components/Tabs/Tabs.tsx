@@ -53,6 +53,8 @@ export interface ITabsProps {
     defaultIndex?: number;
     /** Рендер содержимого только для текущего таба */
     renderOnlyCurrentPanel?: boolean;
+    /** Внешний контейнер для режима фиксация табов */
+    outerObserveContainer?: HTMLDivElement | null;
     /** Обработчика клика по табам */
     onTabClick?: (index: number) => void;
     children: Array<React.ReactElement<ITabProps>>;
@@ -71,10 +73,12 @@ const Tabs: React.FC<ITabsProps> = ({
     renderOnlyCurrentPanel = false,
     children,
     onTabClick,
+    outerObserveContainer,
 }) => {
     const tabsRef = React.useRef<HTMLDivElement[]>([]);
     const rootRef = React.useRef<HTMLDivElement>(null);
     const tabListRef = React.useRef<HTMLDivElement>(null);
+    const intersectionObserverRef = React.useRef<IntersectionObserver>();
 
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
@@ -126,6 +130,58 @@ const Tabs: React.FC<ITabsProps> = ({
         setStickyOffset({ left, right: documentWidth - right });
     }, [sticky]);
 
+    const stickyON = React.useCallback((leftOffset: number, rightOffset: number) => {
+        const documentWidth = document.documentElement.clientWidth;
+
+        setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
+        setSticky(true);
+    }, []);
+
+    const stickyOFF = React.useCallback(() => {
+        setStickyOffset({ left: 0, right: 0 });
+        setSticky(false);
+    }, []);
+
+    const isContainerNotFitViewport = React.useCallback(() => {
+        const containerHeight = (outerObserveContainer || rootRef.current)?.clientHeight;
+
+        return containerHeight && containerHeight > window.innerHeight;
+    }, [outerObserveContainer]);
+
+    const addIntersectionObserver = React.useCallback(() => {
+        const observerOptions: IntersectionObserverInit = {
+            threshold: [0, 1],
+        };
+
+        if (isContainerNotFitViewport()) {
+            observerOptions.rootMargin = '0px 0px -100%';
+        }
+
+        intersectionObserverRef.current = new IntersectionObserver(entries => {
+            entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
+                if (!tabListRef.current) {
+                    return;
+                }
+
+                const {
+                    height,
+                    left: tabListNodeLeft,
+                    right: tabListNodeRight,
+                } = tabListRef.current.getBoundingClientRect();
+                const leftOffset = outerObserveContainer ? tabListNodeLeft : left;
+                const rightOffset = outerObserveContainer ? tabListNodeRight : right;
+
+                setTabListHeight(height);
+
+                if (isIntersecting) {
+                    top < 0 ? stickyON(leftOffset, rightOffset) : stickyOFF();
+                } else {
+                    stickyOFF();
+                }
+            });
+        }, observerOptions);
+    }, [isContainerNotFitViewport, outerObserveContainer, stickyOFF, stickyON]);
+
     const handleTabInnerClick = React.useCallback(
         (index: number) => () => {
             setUnderlineTransition('all');
@@ -151,6 +207,31 @@ const Tabs: React.FC<ITabsProps> = ({
     const handleNextArrowClick = React.useCallback(() => {
         swiperInstance?.slideNext();
     }, [swiperInstance]);
+
+    const handleReachBeginning = React.useCallback((swiper: SwiperCore) => {
+        setBeginning(swiper.isBeginning);
+    }, []);
+
+    const handleReachEnd = React.useCallback((swiper: SwiperCore) => {
+        setEnd(swiper.isEnd);
+    }, []);
+
+    const handleFromEdge = React.useCallback((swiper: SwiperCore) => {
+        setBeginning(swiper.isBeginning);
+        setEnd(swiper.isEnd);
+    }, []);
+
+    const addObserveEvent = React.useCallback(() => {
+        const rootRefNode = rootRef.current;
+
+        rootRefNode && intersectionObserverRef.current?.observe(outerObserveContainer || rootRefNode);
+    }, [outerObserveContainer]);
+
+    const removeObserveEvent = React.useCallback(() => {
+        const rootRefNode = rootRef.current;
+
+        rootRefNode && intersectionObserverRef.current?.unobserve(outerObserveContainer || rootRefNode);
+    }, [outerObserveContainer]);
 
     const renderTab = React.useCallback(
         (index: number, title?: string, icon?: React.ReactNode, href?: string) => {
@@ -222,65 +303,29 @@ const Tabs: React.FC<ITabsProps> = ({
         [children, currentIndex, renderOnlyCurrentPanel],
     );
 
-    const handleReachBeginning = React.useCallback((swiper: SwiperCore) => {
-        setBeginning(swiper.isBeginning);
-    }, []);
-
-    const handleReachEnd = React.useCallback((swiper: SwiperCore) => {
-        setEnd(swiper.isEnd);
-    }, []);
-
-    const handleFromEdge = React.useCallback((swiper: SwiperCore) => {
-        setBeginning(swiper.isBeginning);
-        setEnd(swiper.isEnd);
-    }, []);
-
     React.useEffect(() => {
-        const rootRefNode = rootRef.current;
+        if (!sticky) {
+            return undefined;
+        }
 
-        const observer = new IntersectionObserver(
-            entries => {
-                entries.forEach(({ isIntersecting, boundingClientRect: { top, left, right } }) => {
-                    if (!sticky || !rootRefNode || !tabListRef.current) {
-                        return;
-                    }
+        addIntersectionObserver();
 
-                    const listHeight = tabListRef.current.clientHeight;
-
-                    setTabListHeight(listHeight);
-
-                    const stickyON = (leftOffset: number, rightOffset: number) => {
-                        const documentWidth = document.documentElement.clientWidth;
-
-                        setStickyOffset({ left: leftOffset, right: documentWidth - rightOffset });
-                        setSticky(true);
-                    };
-
-                    const stickyOFF = () => {
-                        setStickyOffset({ left: 0, right: 0 });
-                        setSticky(false);
-                    };
-
-                    if (isIntersecting) {
-                        top < 0 ? stickyON(left, right) : stickyOFF();
-                    } else {
-                        top < 0 && stickyOFF();
-                    }
-                });
-            },
-            { threshold: [0, 1] },
-        );
-
-        rootRefNode && observer.observe(rootRefNode);
+        addObserveEvent();
 
         return () => {
-            rootRefNode && observer.unobserve(rootRefNode);
+            removeObserveEvent();
         };
-    }, [calculateSticky, sticky]);
+    }, [addIntersectionObserver, sticky, addObserveEvent, removeObserveEvent]);
 
     React.useEffect(() => {
         const handleResize = throttle(() => {
             calculateSticky();
+
+            if (sticky && isContainerNotFitViewport()) {
+                removeObserveEvent();
+                addIntersectionObserver();
+                addObserveEvent();
+            }
         }, 300);
 
         const activeTabNode = tabsRef.current[currentIndex] as HTMLDivElement;
@@ -303,8 +348,18 @@ const Tabs: React.FC<ITabsProps> = ({
 
         return () => {
             window.removeEventListener('resize', handleResize);
+            resizeObserver.unobserve(activeTabNode);
         };
-    }, [calculateUnderline, calculateSticky, currentIndex]);
+    }, [
+        sticky,
+        currentIndex,
+        addObserveEvent,
+        calculateSticky,
+        removeObserveEvent,
+        calculateUnderline,
+        addIntersectionObserver,
+        isContainerNotFitViewport,
+    ]);
 
     React.useEffect(() => {
         if (!swiperInstance) {
@@ -398,6 +453,7 @@ Tabs.propTypes = {
     currentIndex: PropTypes.number,
     defaultIndex: PropTypes.number,
     renderOnlyCurrentPanel: PropTypes.bool,
+    outerObserveContainer: PropTypes.oneOfType([PropTypes.elementType, PropTypes.any]),
     onTabClick: PropTypes.func,
 };
 

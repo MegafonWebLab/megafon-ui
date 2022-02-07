@@ -38,6 +38,7 @@ describe('<Tabs />', () => {
                 sticky
                 defaultIndex={1}
                 renderOnlyCurrentPanel
+                outerObserveContainer={document.createElement('DIV') as HTMLDivElement}
             >
                 <Tab title="title 1" icon={<Balance />} href="www.test.com">
                     1
@@ -62,7 +63,7 @@ describe('<Tabs />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('chould call onTabClick', () => {
+    it('should call onTabClick', () => {
         const mockHandleTabClick = jest.fn();
         const wrapper = shallow(
             <Tabs onTabClick={mockHandleTabClick}>
