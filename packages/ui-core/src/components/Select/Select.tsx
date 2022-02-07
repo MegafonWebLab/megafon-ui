@@ -204,14 +204,14 @@ const Select = <T extends SelectItemValueType>({
                 hoveredItemIndex: currentIndex === -1 ? 0 : currentIndex,
             });
 
-            return;
+            return undefined;
         }
 
         onOpened?.();
         scrollList(currentIndex);
         document.addEventListener('click', handleClickOutside);
 
-        () => () => {
+        return () => {
             document.removeEventListener('click', handleClickOutside);
         };
     }, [isOpened, currentIndex]);
