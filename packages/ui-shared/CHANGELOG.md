@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.2.1...@megafon/ui-shared@2.3.0) (2022-02-07)
+
+
+### Features
+
+* **container:** fix margin rules for component TextWithIcon ([3c2de9d](https://github.com/MegafonWebLab/megafon-ui/commit/3c2de9db5a01bdd246daee22dd5545e21dce55ba))
+* **textbox:** add styles for use TextWithIcon inside component ([c993657](https://github.com/MegafonWebLab/megafon-ui/commit/c993657a2f143f87607a7d1474d44c4596d73558))
+
+
+
+
+
 ## [2.2.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.2.0...@megafon/ui-shared@2.2.1) (2022-01-31)
 
 

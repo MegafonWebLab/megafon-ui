@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.4.0...@megafon/ui-core@2.5.0) (2022-02-07)
+
+
+### Features
+
+* **tabs:** add prop outerObserveContainer for observing sticky mode from outside ([bc20c76](https://github.com/MegafonWebLab/megafon-ui/commit/bc20c76f497d88da19ea03cfc66a0c38a7559698))
+
+
+
+
+
 # [2.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.3.0...@megafon/ui-core@2.4.0) (2022-01-31)
 
 
