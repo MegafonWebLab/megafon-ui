@@ -22,5 +22,8 @@
       },
       "eslint-import-resolver-typescript": true
     }
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off"
   }
 }

@@ -28,10 +28,7 @@ const CopyToClipboardBox: React.FC<IProps> = ({ text }) => {
         <div className={cn()}>
             <code>{text}</code>
             <a title="Скопировать в буфер" className={cn('button')}>
-                <Copy
-                    className={cn('icon')}
-                    onClick={createElToClipboard}
-                />
+                <Copy className={cn('icon')} onClick={createElToClipboard} />
             </a>
         </div>
     );

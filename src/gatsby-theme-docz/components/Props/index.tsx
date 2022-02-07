@@ -1,8 +1,30 @@
+/* eslint-disable react/no-multi-comp */
 import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import './Props.less';
 
-export const getDefaultValue = ({ defaultValue, type, flowType }) => {
+interface IPropProps {
+    propName: string;
+    prop: {
+        required?: boolean;
+        defaultValue?: {
+            value: string | number | boolean | Record<string, string>;
+        };
+        type: {
+            name: string;
+        };
+        flowType?: {
+            name: string;
+        };
+        description?: string;
+    };
+}
+
+interface IPropsProps {
+    props: Record<string, IPropProps['prop']>;
+}
+
+export const getDefaultValue = ({ defaultValue, type, flowType }: IPropProps['prop']): string | number | null => {
     if (!defaultValue || (!defaultValue.value && defaultValue.value !== 0 && typeof defaultValue.value !== 'boolean')) {
         return null;
     }
@@ -16,27 +38,26 @@ export const getDefaultValue = ({ defaultValue, type, flowType }) => {
     }
 
     const propType = flowType || type;
-    if (propType && propType.name === 'string') {
-        return defaultValue.value.replace(/\'/g, '"');
+    if (propType && propType.name === 'string' && typeof defaultValue.value === 'string') {
+        return defaultValue.value.replace(/'/g, '"');
     }
 
     if (typeof defaultValue.value === 'object' && defaultValue.value.toString) {
         return defaultValue.value.toString();
     }
 
-    return defaultValue.value;
+    return defaultValue.value as string;
 };
 
 const cn = cnCreate('docz-props');
-
-export const Prop = ({ propName, prop }) => {
+export const Prop: React.FC<IPropProps> = ({ propName, prop }) => {
     if (!prop.type && !prop.flowType) return null;
 
     const type = prop.type.name
         .replace(/ \| undefined/g, '')
-        .replace(/\</g, '&#60;')
+        .replace(/</g, '&#60;')
         .replace(/\|/g, '<br>| ')
-        .replace(/\"/g, "'")
+        .replace(/"/g, "'")
         .replace(/([;])(?=[^;]*$)/, '');
 
     return (
@@ -58,8 +79,8 @@ export const Prop = ({ propName, prop }) => {
     );
 };
 
-export const Props = ({ props }) => {
-    const entries = Object.entries<any>(props)
+export const Props: React.FC<IPropsProps> = ({ props }) => {
+    const entries = Object.entries<IPropProps['prop']>(props)
         .sort(([, propA], [, propB]) => Number(!!propB.required) - Number(!!propA.required))
         .sort(
             ([, propA], [, propB]) =>

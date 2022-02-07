@@ -5,7 +5,7 @@ const FIRST_CLICK_CLASS = 'interesting-dialog__cat_first-click';
 const SECOND_CLICK_CLASS = 'interesting-dialog__cat_second-click';
 const FINALLY_CLICK_CLASS = 'interesting-dialog__cat_finally';
 
-const handleCatButtonClick = (e) => {
+const handleCatButtonClick = e => {
     e.preventDefault();
 
     if (cat?.classList.contains(FINALLY_CLICK_CLASS)) {

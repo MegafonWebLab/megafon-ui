@@ -4,6 +4,6 @@ import './Table.less';
 
 const cn = cnCreate('docz-table');
 
-export const table = ({ children }) => <table className={cn()}>{children}</table>
-export const th = ({ children }) => <th className={cn('th')}>{children}</th>
-export const td = ({ children }) => <td className={cn('th')}>{children}</td>
+export const table: React.FC = ({ children }) => <table className={cn()}>{children}</table>;
+export const th: React.FC = ({ children }) => <th className={cn('th')}>{children}</th>;
+export const td: React.FC = ({ children }) => <td className={cn('th')}>{children}</td>;
