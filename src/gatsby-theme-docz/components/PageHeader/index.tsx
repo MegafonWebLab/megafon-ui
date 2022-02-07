@@ -1,7 +1,7 @@
-import React from "react";
-import { Logo } from "@megafon/ui-core";
-import { cnCreate } from "@megafon/ui-helpers";
-import "./PageHeader.less";
+import React from 'react';
+import { Logo } from '@megafon/ui-core';
+import { cnCreate } from '@megafon/ui-helpers';
+import './PageHeader.less';
 
 interface IPageHeaderProps {
     isOpen: boolean;
@@ -28,13 +28,13 @@ const closeIcon = (
     </svg>
 );
 
-const cn = cnCreate("docz-page-header");
+const cn = cnCreate('docz-page-header');
 const PageHeader: React.FC<IPageHeaderProps> = ({ onClick, isOpen }) => (
     <div className={cn()}>
-        <button className={cn("hamburger")} onClick={onClick}>
+        <button type="button" className={cn('hamburger')} onClick={onClick}>
             {isOpen ? closeIcon : burger}
         </button>
-        <div className={cn("logo")}>
+        <div className={cn('logo')}>
             <Logo href="/intro" target="_self" />
         </div>
     </div>

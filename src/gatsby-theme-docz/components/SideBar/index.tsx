@@ -1,13 +1,13 @@
-import React from "react";
-import { Logo } from "@megafon/ui-core";
-import { cnCreate, applyTheme } from "@megafon/ui-helpers";
-import LightbulbIcon from "@megafon/ui-icons/basic-16-lightbulb_16.svg";
-import { useCurrentDoc } from "docz";
-import { ThemeContext } from "../../themeContext";
-import Menu from "../Menu";
-import "./SideBar.less";
+import React from 'react';
+import { Logo } from '@megafon/ui-core';
+import { cnCreate, applyTheme } from '@megafon/ui-helpers';
+import LightbulbIcon from '@megafon/ui-icons/basic-16-lightbulb_16.svg';
+import { useCurrentDoc } from 'docz';
+import { ThemeContext } from '../../themeContext';
+import Menu from '../Menu';
+import './SideBar.less';
 
-const cn = cnCreate("docz-sidebar");
+const cn = cnCreate('docz-sidebar');
 
 const SideBar: React.FC = () => {
     const currentDoc = useCurrentDoc();
@@ -30,7 +30,7 @@ const SideBar: React.FC = () => {
     }, [currentDoc.route]);
 
     const toggleTheme = React.useCallback(() => {
-        const newTheme = themeContext.theme === "light" ? "dark" : "light";
+        const newTheme = themeContext.theme === 'light' ? 'dark' : 'light';
 
         // update context
         themeContext.setTheme(newTheme);
@@ -41,16 +41,13 @@ const SideBar: React.FC = () => {
 
     return (
         <div className={cn()}>
-            <div className={cn("logo-wrapper")}>
-                <Logo className={cn("logo")} href="/intro" target="_self" />
+            <div className={cn('logo-wrapper')}>
+                <Logo className={cn('logo')} href="/intro" target="_self" />
             </div>
-            <div className={cn("menu")}>
+            <div className={cn('menu')}>
                 <Menu />
             </div>
-            <div
-                className={cn("theme-switcher")}
-                data-current-theme={themeContext.theme}
-            >
+            <div className={cn('theme-switcher')} data-current-theme={themeContext.theme}>
                 <LightbulbIcon onClick={toggleTheme} />
             </div>
         </div>
