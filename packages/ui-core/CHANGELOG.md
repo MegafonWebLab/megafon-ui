@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.10](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.9...@megafon/ui-core@3.0.0-beta.10) (2022-02-08)
+
+
+### Bug Fixes
+
+* **paragraph:** remove spbSky... values from color prop ([4dfc14e](https://github.com/MegafonWebLab/megafon-ui/commit/4dfc14ec86d446e71a64724f201e1de720690728))
+
+
+### BREAKING CHANGES
+
+* **paragraph:** remove from color prop values: spbSky0, spbSky1, spbSky2
+
+
+
+
+
 # [3.0.0-beta.9](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.8...@megafon/ui-core@3.0.0-beta.9) (2022-02-08)
 
 
