@@ -171,7 +171,7 @@
         background-color: var(--base);
         cursor: pointer;
 
-        &_active {
+        &_hovered {
             background-color: var(--spbSky0);
         }
     }
@@ -197,9 +197,13 @@
 
             background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--base));
         }
+
+        &_active {
+            font-weight: bold;
+        }
     }
 
-    &__list-item_active &__item-title {
+    &__list-item_hovered &__item-title {
         &:after {
             background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--spbSky0));
         }
