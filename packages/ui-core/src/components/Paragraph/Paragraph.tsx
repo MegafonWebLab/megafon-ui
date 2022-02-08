@@ -9,9 +9,6 @@ const COLORS = {
     WHITE: 'white',
     GREEN: 'green',
     PURPLE: 'purple',
-    SPB_SKY_0: 'spbSky0',
-    SPB_SKY_1: 'spbSky1',
-    SPB_SKY_2: 'spbSky2',
 } as const;
 
 type ColorType = typeof COLORS[keyof typeof COLORS];

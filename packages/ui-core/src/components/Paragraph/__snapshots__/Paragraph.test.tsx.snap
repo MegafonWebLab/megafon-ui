@@ -34,7 +34,7 @@ exports[`<Paragraph /> testing align props 2`] = `
 
 exports[`<Paragraph /> testing color props 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_green test"
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_inherit test"
 >
   Test paragraph text
 </p>
@@ -42,7 +42,7 @@ exports[`<Paragraph /> testing color props 1`] = `
 
 exports[`<Paragraph /> testing color props 2`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_white test"
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_default test"
 >
   Test paragraph text
 </p>
@@ -50,7 +50,7 @@ exports[`<Paragraph /> testing color props 2`] = `
 
 exports[`<Paragraph /> testing color props 3`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky0 test"
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_white test"
 >
   Test paragraph text
 </p>
@@ -58,7 +58,7 @@ exports[`<Paragraph /> testing color props 3`] = `
 
 exports[`<Paragraph /> testing color props 4`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky1 test"
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_green test"
 >
   Test paragraph text
 </p>
@@ -66,15 +66,7 @@ exports[`<Paragraph /> testing color props 4`] = `
 
 exports[`<Paragraph /> testing color props 5`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_spbSky2 test"
->
-  Test paragraph text
-</p>
-`;
-
-exports[`<Paragraph /> testing color props 6`] = `
-<p
-  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_default test"
+  className="mfui-paragraph mfui-paragraph_size_small mfui-paragraph_align_right mfui-paragraph_color_purple test"
 >
   Test paragraph text
 </p>
