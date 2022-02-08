@@ -11,7 +11,6 @@ const props: IAccordionBox = {
     rootRef: jest.fn(),
     title: 'Test',
     isOpened: false,
-    hasVerticalPaddings: true,
     className: 'className',
     classes: {
         openedClass: 'isOpenClass',

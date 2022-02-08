@@ -19,8 +19,6 @@ export interface IAccordionBox {
     isFullWidth?: boolean;
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
-    /** Вертикальные отступы */
-    hasVerticalPaddings?: boolean;
     /** Дополнительный класс для корнеовго элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -64,7 +62,6 @@ AccordionBox.propTypes = {
     isFullWidth: PropTypes.bool,
     isOpened: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,
-    hasVerticalPaddings: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         openedClass: PropTypes.string,
