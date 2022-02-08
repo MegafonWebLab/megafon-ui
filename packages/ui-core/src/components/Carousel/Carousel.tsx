@@ -35,9 +35,9 @@ export type SlidesSettingsType = {
     [key: number]: {
         // количество отображаемых слайдов
         slidesPerView: number | SlidesPerViewType;
-        // расстояние между слайдами в px
-        slidesPerGroup?: number;
         // количество переключаемых за 1 раз слайдов
+        slidesPerGroup?: number;
+        // расстояние между слайдами в px
         spaceBetween: number;
     };
 };
