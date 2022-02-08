@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.9](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.8...@megafon/ui-core@3.0.0-beta.9) (2022-02-08)
+
+
+### Features
+
+* **select:** made select as a functional component ([b45e697](https://github.com/MegafonWebLab/megafon-ui/commit/b45e697de696f892a42a8fa5756289183624fed6))
+
+
+
+
+
 # [3.0.0-beta.8](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.7...@megafon/ui-core@3.0.0-beta.8) (2022-02-08)
 
 
