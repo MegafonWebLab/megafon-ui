@@ -34,7 +34,7 @@ type SelectTypesType = typeof SelectTypes[keyof typeof SelectTypes];
 export type SelectItemValueType = number | string | undefined;
 
 type ElementOrString = JSX.Element[] | JSX.Element | Element[] | Element | string;
-type ViewCallbackArguments = { filterValue: string };
+type ViewCallbackArguments = { filterValue: string; isItemActive: boolean };
 
 export interface ISelectItem<T extends SelectItemValueType> {
     /** Заголовок элемента в выпадающем списке  */
@@ -108,6 +108,7 @@ export interface ISelectProps<T extends SelectItemValueType> {
 
 // - Should correctly choose value and trigger callbacks with correct arguments on click or touch.
 // - Should correctly choose value and trigger callbacks with correct arguments on choose via filtration in combobox.
+// - Should highlight chosen item with bold only in cases without view
 // - Should scroll to chosen element (to make it visible), highlight it with bold and set hovered on dropdown open.
 // - Should scroll (to make hovered element visible) and highlight next/previous element on arrow up and arrow down presses when dropdown is opened.
 // - Should correctly set value on enter press while some element hovered.
@@ -356,11 +357,12 @@ const Select = <T extends SelectItemValueType>({
 
     const highlightString = (
         title: string,
+        isItemActive: boolean,
         view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString),
     ) => {
         if (type === SelectTypes.CLASSIC) {
             if (typeof view === 'function' && !React.isValidElement(view)) {
-                return view({ filterValue: inputValue });
+                return view({ filterValue: inputValue, isItemActive });
             }
 
             return view || title;
@@ -368,7 +370,7 @@ const Select = <T extends SelectItemValueType>({
 
         if (type === SelectTypes.COMBOBOX && view) {
             if (typeof view === 'function' && !React.isValidElement(view)) {
-                return view({ filterValue: inputValue });
+                return view({ filterValue: inputValue, isItemActive });
             }
 
             return view;
@@ -469,9 +471,11 @@ const Select = <T extends SelectItemValueType>({
                             >
                                 <div
                                     {...filterDataAttrs(dataAttrs?.listItemTitle, i + 1)}
-                                    className={cn('item-title', { active: isItemActive }, [classes.listItemTitle])}
+                                    className={cn('item-title', { active: isItemActive && !view }, [
+                                        classes.listItemTitle,
+                                    ])}
                                 >
-                                    {highlightString(title, view)}
+                                    {highlightString(title, isItemActive, view)}
                                 </div>
                             </div>
                         );
