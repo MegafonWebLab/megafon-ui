@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.8](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.7...@megafon/ui-core@3.0.0-beta.8) (2022-02-08)
+
+
+### Features
+
+* **accordion:** remove prop hasVerticalPaddings ([4da8d8e](https://github.com/MegafonWebLab/megafon-ui/commit/4da8d8e7ee843be266749c4e4a8e35c678b9dc2e))
+
+
+### BREAKING CHANGES
+
+* **accordion:** remove prop hasVerticalPaddings
+
+
+
+
+
 # [3.0.0-beta.7](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.6...@megafon/ui-core@3.0.0-beta.7) (2022-02-04)
 
 

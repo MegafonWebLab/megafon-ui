@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.8](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.0-beta.7...@megafon/ui-shared@3.0.0-beta.8) (2022-02-08)
+
+
+### Features
+
+* **accordionbox:** remove prop hasVerticalPaddings ([82218ad](https://github.com/MegafonWebLab/megafon-ui/commit/82218ad0307c3f566cf9f582a824733e3523be3d))
+
+
+### BREAKING CHANGES
+
+* **accordionbox:** remove prop hasVerticalPaddings
+
+
+
+
+
 # [3.0.0-beta.7](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.0-beta.6...@megafon/ui-shared@3.0.0-beta.7) (2022-02-04)
 
 
