@@ -79,7 +79,7 @@ convert('<a href="/test" target="_blank">link</a>', config);
 Filters properties using regular expression /^data-/
 
 ```ts
-import { filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { filterDataAttrs } from '@megafon/ui-helpers';
 
 filterDataAttrs({
     'data-attr': 'value',

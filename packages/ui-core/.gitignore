@@ -2,11 +2,10 @@
 *.iml
 node_modules
 
-src/**/*.css
 src/index.ts
 src/components/**/*.d.ts
 dist
-styles
+/styles
 coverage
 .docz
 docs

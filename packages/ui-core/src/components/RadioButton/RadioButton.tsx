@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './RadioButton.less';
 
-export interface IRadioButtonProps extends IFilterDataAttrs {
+export interface IRadioButtonProps {
     /** Значение */
     value: string;
     /** Имя для тега form */
@@ -23,6 +23,12 @@ export interface IRadioButtonProps extends IFilterDataAttrs {
         customInput?: string;
         labelText?: string;
     };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        input?: Record<string, string>;
+        text?: Record<string, string>;
+    };
     children?: React.ReactNode;
     /** Обработчик изменения значения 'value' */
     onChange?: (value: string) => void;
@@ -31,85 +37,85 @@ export interface IRadioButtonProps extends IFilterDataAttrs {
 }
 
 const cn = cnCreate('mfui-radio-button');
-class RadioButton extends React.Component<IRadioButtonProps> {
-    static propTypes = {
-        value: PropTypes.string.isRequired,
-        name: PropTypes.string,
-        textSize: PropTypes.oneOf(['small', 'medium']),
-        disabled: PropTypes.bool,
-        isChecked: PropTypes.bool,
-        className: PropTypes.string,
-        classes: PropTypes.shape({
-            root: PropTypes.string,
-            label: PropTypes.string,
-            customInput: PropTypes.string,
-            labelText: PropTypes.string,
-        }),
-        children: PropTypes.node,
-        onChange: PropTypes.func,
-        inputRef: PropTypes.oneOfType([
-            PropTypes.func,
-            PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
-        ]),
-        dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
-    };
+const RadioButton: React.FC<IRadioButtonProps> = ({
+    isChecked,
+    disabled = false,
+    name,
+    value,
+    textSize = 'medium',
+    children,
+    inputRef,
+    className,
+    classes = {},
+    dataAttrs,
+    onChange,
+}) => {
+    const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
+    const rootClassNames = Array.isArray(className) ? [...className, classes.root] : [className, classes.root];
 
-    static defaultProps: Partial<IRadioButtonProps> = {
-        textSize: 'medium',
-        disabled: false,
-    };
+    const handleChange = (): void => onChange?.(value);
 
-    handleChange = (): void => {
-        const { onChange, value } = this.props;
+    return (
+        <div className={cn(rootClassNames)} {...filterDataAttrs(dataAttrs?.root)}>
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label
+                className={cn(
+                    'label',
+                    {
+                        disabled,
+                    },
+                    classes.label,
+                )}
+            >
+                <input
+                    {...checkedProp}
+                    {...filterDataAttrs(dataAttrs?.input)}
+                    className={cn('input')}
+                    type="radio"
+                    name={name}
+                    value={value}
+                    onChange={handleChange}
+                    disabled={disabled}
+                    ref={inputRef as React.Ref<HTMLInputElement>}
+                />
+                <div className={cn('custom-input', classes.customInput)} />
+                {children && (
+                    <div
+                        {...filterDataAttrs(dataAttrs?.text)}
+                        className={cn('text', { size: textSize }, classes.labelText)}
+                    >
+                        {children}
+                    </div>
+                )}
+            </label>
+        </div>
+    );
+};
 
-        onChange?.(value);
-    };
-
-    render(): JSX.Element {
-        const {
-            isChecked,
-            disabled,
-            name,
-            value,
-            textSize,
-            children,
-            inputRef,
-            className,
-            classes = {},
-            dataAttrs,
-        } = this.props;
-        const checkedProp = isChecked !== undefined ? { checked: isChecked } : {};
-
-        const rootClassNames = Array.isArray(className) ? [...className, classes.root] : [className, classes.root];
-
-        return (
-            <div className={cn(rootClassNames)} {...filterDataAttrs(dataAttrs)}>
-                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                <label
-                    className={cn(
-                        'label',
-                        {
-                            disabled,
-                        },
-                        classes.label,
-                    )}
-                >
-                    <input
-                        {...checkedProp}
-                        className={cn('input')}
-                        type="radio"
-                        name={name}
-                        value={value}
-                        onChange={this.handleChange}
-                        disabled={disabled}
-                        ref={inputRef as React.Ref<HTMLInputElement>}
-                    />
-                    <div className={cn('custom-input', classes.customInput)} />
-                    {children && <div className={cn('text', { size: textSize }, classes.labelText)}>{children}</div>}
-                </label>
-            </div>
-        );
-    }
-}
+RadioButton.propTypes = {
+    value: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    textSize: PropTypes.oneOf(['small', 'medium']),
+    disabled: PropTypes.bool,
+    isChecked: PropTypes.bool,
+    className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        label: PropTypes.string,
+        customInput: PropTypes.string,
+        labelText: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        input: PropTypes.objectOf(PropTypes.string.isRequired),
+        text: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
+    children: PropTypes.node,
+    onChange: PropTypes.func,
+    inputRef: PropTypes.oneOfType([
+        PropTypes.func,
+        PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
+    ]),
+};
 
 export default RadioButton;

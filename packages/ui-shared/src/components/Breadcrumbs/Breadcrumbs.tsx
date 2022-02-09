@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 import './Breadcrumbs.less';
 
 type ItemType = {
-    title: string;
+    component?: React.ReactElement;
+    title?: string;
     href?: string;
 };
 
 export const TextColor = {
+    DEFAULT: 'default',
     BLACK: 'black',
     WHITE: 'white',
 } as const;
@@ -26,11 +28,15 @@ export type Props = {
 const cn = cnCreate('mfui-breadcrumbs');
 const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, classes = {} }) => (
     <div className={cn({ color }, className)}>
-        {items.map(({ title, href }) => (
+        {items.map(({ component, title, href }) => (
             <div className={cn('item', classes.item)} key={title}>
-                <TextLink href={href} color={color}>
-                    {title}
-                </TextLink>
+                {component}
+
+                {!component && (
+                    <TextLink href={href} color={color}>
+                        {component || title}
+                    </TextLink>
+                )}
             </div>
         ))}
     </div>

@@ -5,6 +5,11 @@ import BannerDot, { IBannerDotProps } from './BannerDot';
 
 const props = {
     index: 3,
+    dataAttrs: {
+        root: {
+            'data-root': 'test-id',
+        },
+    },
     isActive: false,
     showTimer: false,
     timerDelay: 0,

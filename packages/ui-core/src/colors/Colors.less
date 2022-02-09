@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.colors');
 
@@ -7,7 +7,7 @@
         margin: 0 -80px;
         padding: 56px 80px 40px;
 
-        background-color: @spbSky0;
+        background-color: var(--spbSky0);
 
         @media screen and (max-width: 1120px) {
             margin: 0 -24px;
@@ -76,7 +76,6 @@
 
         padding-top: 15px;
 
-        color: @STCBlack50;
         font-size: 12px;
         line-height: 18px;
         text-align: center;
@@ -173,7 +172,7 @@
         width: 100%;
         height: 1px;
 
-        background-color: @spbSky2;
+        background-color: var(--spbSky2);
 
         transform: translateY(-50%);
     }
@@ -187,7 +186,7 @@
         width: 1px;
         height: 4px;
 
-        background-color: @spbSky2;
+        background-color: var(--spbSky2);
     }
 
     &__underline:after,

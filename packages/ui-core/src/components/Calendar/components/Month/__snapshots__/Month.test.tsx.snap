@@ -10,6 +10,9 @@ exports[`<Month /> snapshots renders component with props 1`] = `
     <test-file-stub
       className="mfui-month__arrow"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     />
     <span
       className="mfui-month__title"
@@ -19,6 +22,9 @@ exports[`<Month /> snapshots renders component with props 1`] = `
     <test-file-stub
       className="mfui-month__arrow"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     />
   </div>
   <div
@@ -55,6 +61,9 @@ exports[`<Month /> snapshots renders component with props disabled arrows 1`] = 
     <test-file-stub
       className="mfui-month__arrow mfui-month__arrow_disabled"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={-1}
     />
     <span
       className="mfui-month__title"
@@ -64,6 +73,9 @@ exports[`<Month /> snapshots renders component with props disabled arrows 1`] = 
     <test-file-stub
       className="mfui-month__arrow mfui-month__arrow_disabled"
       onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={-1}
     />
   </div>
   <div

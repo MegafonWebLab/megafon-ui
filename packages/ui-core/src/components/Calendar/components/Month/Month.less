@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-month');
 
@@ -26,7 +26,7 @@
             cursor: pointer;
 
             user-select: none;
-            fill: @content;
+            fill: var(--content);
         }
     }
 
@@ -42,7 +42,7 @@
         grid-template-columns: repeat(7, 1fr);
         width: 272px;
         padding-bottom: 13px;
-        border-bottom: 1px solid @spbSky1;
+        border-bottom: 1px solid var(--spbSky1);
 
         column-gap: 22px;
     }
@@ -52,7 +52,7 @@
         width: 20px;
         height: 16px;
 
-        color: @content;
+        color: var(--content);
         font-weight: 600;
         line-height: 24px;
         text-align: center;

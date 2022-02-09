@@ -100,7 +100,7 @@
                 height: 1px;
                 margin: 0 auto;
 
-                background: @spbSky2;
+                background: var(--spbSky2);
             }
         }
     }
@@ -369,7 +369,7 @@
         opacity: 1;
 
         @{b}__articles-item-dot {
-            color: @base;
+            color: var(--stcWhite);
         }
 
         @{b}__articles-item-dot:before {
@@ -378,7 +378,7 @@
             bottom: 0;
             left: 0;
 
-            background: @green;
+            background: var(--brandGreen);
         }
     }
 
@@ -402,7 +402,7 @@
         line-height: 40px;
         text-align: center;
 
-        box-shadow: inset 0 0 0 1px #B2B2B2;
+        box-shadow: inset 0 0 0 1px var(--spbSky3);
         cursor: pointer;
 
         @media @mobileS {
@@ -467,7 +467,7 @@
 
     &__articles-dot:hover,
     &__articles-dot_active {
-        color: @base;
+        color: var(--stcWhite);
 
         &:before {
             top: 0;
@@ -475,7 +475,7 @@
             bottom: 0;
             left: 0;
 
-            background: @green;
+            background: var(--brandGreen);
         }
     }
 

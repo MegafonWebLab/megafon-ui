@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-search');
 
@@ -10,12 +10,12 @@
 
     min-height: 40px;
 
-    color: @content;
+    color: var(--content);
 
     &__require-mark {
         margin-left: 1px;
 
-        color: @fury;
+        color: var(--fury);
         font-size: 20px;
         line-height: 0;
     }
@@ -29,9 +29,9 @@
         width: 100%;
         height: 48px;
         padding: 0 16px 0 20px;
-        border: 1px solid @spbSky2;
+        border: 1px solid var(--spbSky2);
 
-        background-color: @base;
+        background-color: var(--base);
         outline: none;
         cursor: pointer;
 
@@ -39,7 +39,7 @@
     }
 
     &__control_error {
-        border-color: @fury;
+        border-color: var(--fury);
     }
 
     &__search-field {
@@ -54,6 +54,8 @@
         border: none;
         border-radius: 0;
         overflow: auto;
+
+        color: var(--content);
 
         font-family: inherit;
         line-height: 25px;
@@ -79,7 +81,7 @@
 
         display: none;
 
-        background-color: @base;
+        background-color: var(--base);
         box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
 
@@ -89,7 +91,7 @@
         height: 32px;
 
         user-select: none;
-        fill: @content;
+        fill: var(--content);
     }
 
     &__icon-box {
@@ -99,6 +101,8 @@
         height: 100%;
 
         text-align: center;
+
+        fill: var(--content);
     }
 
     &__list-inner {
@@ -112,12 +116,12 @@
         .fontFamily();
         padding: 8px 32px;
 
-        background-color: @base;
+        background-color: var(--base);
         cursor: pointer;
     }
 
     &__list-item_active {
-        background-color: @spbSky0;
+        background-color: var(--spbSky0);
     }
 
     &__item-title {
@@ -137,19 +141,19 @@
 
             width: 40px;
 
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), @base);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--base));
         }
     }
 
     &__list-item_active &__item-title {
         &:after {
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), @spbSky0);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--spbSky0));
         }
     }
 
     &_open &__list {
         display: block;
-        border-color: @content;
+        border-color: var(--content);
     }
 
     &_open {
@@ -157,9 +161,9 @@
     }
 
     &_disabled &__control {
-        border-color: @spbSky1;
+        border-color: var(--spbSky1);
 
-        background-color: @spbSky1;
+        background-color: var(--spbSky1);
         cursor: default;
 
         pointer-events: none;
@@ -181,10 +185,10 @@
     }
 
     &__notice_error {
-        color: @fury;
+        color: var(--fury);
     }
 
     &__notice_success {
-        color: @green;
+        color: var(--brandGreen);
     }
 }

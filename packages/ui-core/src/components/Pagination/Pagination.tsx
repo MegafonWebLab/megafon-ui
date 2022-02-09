@@ -1,12 +1,19 @@
 import React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './Pagination.less';
 import PaginationButtons from './components/PaginationButtons/PaginationButtons';
 import PaginationNavigation from './components/PaginationNavigation/PaginationNavigation';
 import usePagination, { Button } from './usePagination';
 
-interface IPagination {
+interface IPaginationProps {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        prev?: Record<string, string>;
+        next?: Record<string, string>;
+        button?: Record<string, string>;
+    };
     /** Общее количество страниц */
     totalPages: number;
     /** Номер текущей страницы */
@@ -18,8 +25,8 @@ interface IPagination {
 }
 
 const cn = cnCreate('mfui-pagination');
-const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'default', onChange }) => {
-    const paginationItems = usePagination(totalPages, activePage);
+const Pagination: React.FC<IPaginationProps> = ({ totalPages, activePage, dataAttrs, theme = 'default', onChange }) => {
+    const paginationItems: React.ReactText[] = usePagination(totalPages, activePage);
 
     const handleBackClick = React.useCallback(() => {
         onChange(activePage - 1);
@@ -37,8 +44,9 @@ const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'de
     );
 
     return (
-        <div className={cn()}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn()}>
             <PaginationNavigation
+                dataAttrs={{ root: dataAttrs?.prev }}
                 direction="left"
                 disabled={activePage === Button.FIRST}
                 onClick={handleBackClick}
@@ -46,6 +54,7 @@ const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'de
                 theme={theme}
             />
             <PaginationButtons
+                dataAttrs={{ root: dataAttrs?.button }}
                 items={paginationItems}
                 activeButton={activePage}
                 hiddenButton={Button.HIDDEN}
@@ -53,6 +62,7 @@ const Pagination: React.FC<IPagination> = ({ totalPages, activePage, theme = 'de
                 onClick={handlePageButtonClick}
             />
             <PaginationNavigation
+                dataAttrs={{ root: dataAttrs?.next }}
                 disabled={activePage === totalPages}
                 onClick={handleNextClick}
                 className={cn('button')}
@@ -66,6 +76,12 @@ Pagination.propTypes = {
     totalPages: PropTypes.number.isRequired,
     activePage: PropTypes.number.isRequired,
     theme: PropTypes.oneOf(['default', 'light']),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        prev: PropTypes.objectOf(PropTypes.string.isRequired),
+        next: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     onChange: PropTypes.func.isRequired,
 };
 

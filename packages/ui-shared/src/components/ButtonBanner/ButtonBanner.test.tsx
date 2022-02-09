@@ -11,7 +11,9 @@ const requiredProps: IButtonBannerProps = {
 const props: IButtonBannerProps = {
     ...requiredProps,
     dataAttrs: {
-        'data-test': 'value',
+        root: {
+            'data-root': 'value',
+        },
     },
     className: 'className',
     classes: {

@@ -12,9 +12,63 @@ import './Colors.less';
 
 const { basic, secondary, system, gradientColors, staticColors, staticOpacity, soft } = colorsData;
 
+type Theme = 'light' | 'dark';
+
+// TODO: refactor this
+const getThemeFromLocalStorage = (): Theme => {
+    let theme = 'light' as Theme;
+
+    if (typeof window !== 'undefined') {
+        const localStorageTheme = String(window.localStorage.getItem('theme')) as Theme;
+
+        if (['light', 'dark'].includes(localStorageTheme)) {
+            theme = localStorageTheme;
+        }
+    }
+
+    return theme;
+};
+
 const cn = cnCreate('colors');
 const Colors: React.FC = () => {
-    const renderUnderline = (): JSX.Element => (
+    const [, setCurrentTheme] = React.useState<'light' | 'dark'>(getThemeFromLocalStorage());
+    const [, setLoad] = React.useState<boolean>(false);
+
+    React.useEffect(() => {
+        function load() {
+            setLoad(true);
+            document.removeEventListener('css-var-load', load);
+        }
+        document.addEventListener('css-var-load', load);
+    }, []);
+
+    const getCurrentColorValue = (code: string) =>
+        typeof document !== 'undefined' ? document.documentElement.style.getPropertyValue(`--${code}`) : '';
+
+    React.useEffect(() => {
+        // theme switcher from src/gatsby-theme-docz/components/SideBar/index.tsx
+        const themeSwitcher = document.querySelector('[data-current-theme]');
+
+        if (themeSwitcher) {
+            const themeSwitcherObserver = new MutationObserver(mutationsList => {
+                const data = mutationsList[0];
+                setCurrentTheme(data.oldValue === 'light' ? 'dark' : 'light');
+            });
+
+            const config = {
+                attributeOldValue: true,
+                attributeFilter: ['data-current-theme'],
+            };
+
+            themeSwitcherObserver.observe(themeSwitcher, config);
+
+            return () => themeSwitcherObserver.disconnect();
+        }
+
+        return undefined;
+    }, []);
+
+    const renderUnderline = () => (
         <div className={cn('underline')}>
             <span className={cn('pointer')} />
         </div>
@@ -41,7 +95,7 @@ const Colors: React.FC = () => {
                                     <ColorItem
                                         className={cn('item')}
                                         colorName={name}
-                                        colorCode={code}
+                                        colorCode={getCurrentColorValue(code)}
                                         key={name}
                                         border={border}
                                     />
@@ -66,7 +120,7 @@ const Colors: React.FC = () => {
                     <ColorItem
                         className={cn('item')}
                         colorName={name}
-                        colorCode={code}
+                        colorCode={getCurrentColorValue(code)}
                         gradient={gradient}
                         key={name}
                         border={border}
@@ -88,7 +142,7 @@ const Colors: React.FC = () => {
                         <ColorItem
                             className={cn('item', { soft: true })}
                             colorName={name}
-                            colorCode={code}
+                            colorCode={getCurrentColorValue(code)}
                             parentColorCode={parentColor}
                             key={name}
                         />
@@ -105,6 +159,7 @@ const Colors: React.FC = () => {
                 Цвета
             </Header>
             <Paragraph>Палитра цветов, используемая в продуктах МегаФон</Paragraph>
+
             <div className={cn('inner')}>
                 <div className={cn('container')}>
                     {renderBasicColors()}

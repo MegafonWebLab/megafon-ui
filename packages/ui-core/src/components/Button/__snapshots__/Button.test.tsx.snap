@@ -18,7 +18,7 @@ exports[`<Button /> layout it renders Button on touch devices 1`] = `
 exports[`<Button /> layout it renders children 1`] = `
 <a
   className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch mfui-button_content-type_text class root-class"
-  data-test="test"
+  data-root="test"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -27,9 +27,11 @@ exports[`<Button /> layout it renders children 1`] = `
 >
   <div
     className="mfui-button__inner"
+    data-inner="test"
   >
     <div
       className="mfui-button__content content-class"
+      data-content="test"
     >
       <span
         className="mfui-button__text"
@@ -57,7 +59,7 @@ exports[`<Button /> layout renders Button with default props 1`] = `
 exports[`<Button /> layout renders Button with props 1`] = `
 <a
   className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_no-touch mfui-button_content-type_text class root-class"
-  data-test="test"
+  data-root="test"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -66,6 +68,7 @@ exports[`<Button /> layout renders Button with props 1`] = `
 >
   <div
     className="mfui-button__inner"
+    data-inner="test"
   />
 </a>
 `;
@@ -73,7 +76,7 @@ exports[`<Button /> layout renders Button with props 1`] = `
 exports[`<Button /> layout should render full width button 1`] = `
 <a
   className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_full-width mfui-button_no-touch mfui-button_content-type_text class root-class"
-  data-test="test"
+  data-root="test"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -82,6 +85,7 @@ exports[`<Button /> layout should render full width button 1`] = `
 >
   <div
     className="mfui-button__inner"
+    data-inner="test"
   />
 </a>
 `;
@@ -248,7 +252,7 @@ exports[`<Button /> layout should render with custom icon and children 1`] = `
 exports[`<Button /> layout should render with different height for resolutions 1`] = `
 <a
   className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_size-wide_large mfui-button_size-desktop_medium mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_no-touch mfui-button_content-type_text class root-class"
-  data-test="test"
+  data-root="test"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -257,6 +261,7 @@ exports[`<Button /> layout should render with different height for resolutions 1
 >
   <div
     className="mfui-button__inner"
+    data-inner="test"
   />
 </a>
 `;
@@ -264,7 +269,7 @@ exports[`<Button /> layout should render with different height for resolutions 1
 exports[`<Button /> snapshots with loader it renders loader with white color and medium size on all resolutions 1`] = `
 <a
   className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_loading mfui-button_no-touch mfui-button_content-type_text class root-class"
-  data-test="test"
+  data-root="test"
   disabled={false}
   href="any"
   onClick={[Function]}
@@ -273,9 +278,17 @@ exports[`<Button /> snapshots with loader it renders loader with white color and
 >
   <div
     className="mfui-button__inner"
+    data-inner="test"
   >
     <Preloader
       color="white"
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-loader": "test",
+          },
+        }
+      }
       sizeAll="medium"
     />
   </div>
@@ -294,6 +307,11 @@ exports[`<Button /> snapshots with loader should render loader with black color 
   >
     <Preloader
       color="black"
+      dataAttrs={
+        Object {
+          "root": Object {},
+        }
+      }
       sizeAll="medium"
     />
   </div>
@@ -312,6 +330,11 @@ exports[`<Button /> snapshots with loader should render loader with default colo
   >
     <Preloader
       color="default"
+      dataAttrs={
+        Object {
+          "root": Object {},
+        }
+      }
       sizeAll="medium"
     />
   </div>
@@ -330,6 +353,11 @@ exports[`<Button /> snapshots with loader should render loader with small size o
   >
     <Preloader
       color="white"
+      dataAttrs={
+        Object {
+          "root": Object {},
+        }
+      }
       sizeAll="medium"
       sizeDesktop="medium"
       sizeMobile="small"

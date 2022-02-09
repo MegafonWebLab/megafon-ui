@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-header');
 
@@ -87,24 +87,28 @@
         margin: 24px 0 16px 0;
     }
 
+    &_color_default {
+        color: var(--content);
+    }
+
     &_color_black {
-        color: @content;
+        color: var(--stcBlack);
     }
 
     &_color_green {
-        color: @green;
+        color: var(--brandGreen);
     }
 
     &_color_purple {
-        color: @purple;
+        color: var(--brandPurple);
     }
 
     &_color_white {
-        color: @base;
+        color: var(--stcWhite);
     }
 
     &_color_blue {
-        color: @systemBlue;
+        color: var(--systemBlue);
     }
 
     &_color_inherit {

@@ -6,7 +6,7 @@ MegaFon React UI components library.
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-Documentation can be found [here](https://ui.megafon.ru/EqR2rxoML8).
+Documentation can be found [here](https://ui.megafon.ru/intro).
 
 ## How to use
 
@@ -42,25 +42,13 @@ npm install @megafon/ui-icons
 npm install @megafon/ui-helpers
 ```
 
-For local development require:
+UI components from `@megafon/ui-core` and `@megafon/ui-shared` packages require CSS custom properties available in
+global scope.
 
-1. External system dependencies — `node 12+` and `yarn`.
-2. Install dependencies.
+Add import of those properties in your project:
 
-```bash
-yarn install
-```
-
-3. Run documentation:
-
-```bash
-yarn run demo
-```
-
-## Build all packages
-
-```bash
-yarn run build
+```ts
+import "@megafon/ui-core/styles/colors.css";
 ```
 
 ## Contributing

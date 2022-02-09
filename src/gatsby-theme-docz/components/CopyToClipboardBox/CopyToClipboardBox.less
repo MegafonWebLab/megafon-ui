@@ -2,15 +2,18 @@
     display: flex;
     align-items: center;
 
-    &__button:active &__icon {
-        opacity: 0.7;
-    }
-
     &__icon {
         display: block;
         width: 24px;
         height: 24px;
-        cursor: pointer;
         margin-left: 12px;
+
+        cursor: pointer;
+
+        fill: var(--content);
+    }
+
+    &__button:active &__icon {
+        opacity: 0.7;
     }
 }

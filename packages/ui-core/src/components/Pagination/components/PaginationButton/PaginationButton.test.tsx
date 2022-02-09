@@ -4,7 +4,9 @@ import PaginationButton from './PaginationButton';
 
 describe('PaginationButton', () => {
     it('should render component', () => {
-        const wrapper = shallow(<PaginationButton>Click me</PaginationButton>);
+        const wrapper = shallow(
+            <PaginationButton dataAttrs={{ root: { 'data-test': 'test' } }}>Click me</PaginationButton>,
+        );
 
         expect(wrapper).toMatchSnapshot();
     });

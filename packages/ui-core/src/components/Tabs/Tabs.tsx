@@ -39,6 +39,14 @@ export interface ITabsProps {
         tab?: string;
         activeTab?: string;
     };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        slider?: Record<string, string>;
+        panel?: Record<string, string>;
+        prev?: Record<string, string>;
+        next?: Record<string, string>;
+    };
     /** Размер табов */
     size?: TabSizeType;
     /** Горизонтальное выравнивание */
@@ -72,6 +80,7 @@ const Tabs: React.FC<ITabsProps> = ({
     currentIndex: outerIndex,
     renderOnlyCurrentPanel = false,
     children,
+    dataAttrs,
     onTabClick,
     outerObserveContainer,
 }) => {
@@ -257,7 +266,7 @@ const Tabs: React.FC<ITabsProps> = ({
         () =>
             React.Children.map(children, (child, i) => {
                 const {
-                    props: { title, icon, href, renderTabWrapper, dataAttrs },
+                    props: { title, icon, href, renderTabWrapper, dataAttrs: data },
                 } = child;
                 const tab = renderTab(i, title, icon, href);
 
@@ -268,7 +277,7 @@ const Tabs: React.FC<ITabsProps> = ({
                         <div
                             className={cn('tab', [tabClass, activeTabClassName])}
                             ref={setTabRef}
-                            {...filterDataAttrs(dataAttrs)}
+                            {...filterDataAttrs(data?.root, i + 1)}
                         >
                             {renderTabWrapper ? renderTabWrapper(tab) : tab}
                         </div>
@@ -292,6 +301,7 @@ const Tabs: React.FC<ITabsProps> = ({
 
                 return (
                     <div
+                        {...filterDataAttrs(dataAttrs?.panel, i + 1)}
                         className={cn('panel', {
                             current: isCurrentPanel,
                         })}
@@ -300,7 +310,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     </div>
                 );
             }),
-        [children, currentIndex, renderOnlyCurrentPanel],
+        [children, currentIndex, dataAttrs?.panel, renderOnlyCurrentPanel],
     );
 
     React.useEffect(() => {
@@ -372,6 +382,7 @@ const Tabs: React.FC<ITabsProps> = ({
 
     return (
         <div
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn(
                 {
                     size,
@@ -393,6 +404,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     }}
                 >
                     <Swiper
+                        {...filterDataAttrs(dataAttrs?.slider)}
                         simulateTouch={false}
                         className={cn(
                             'swiper',
@@ -420,6 +432,7 @@ const Tabs: React.FC<ITabsProps> = ({
                             }}
                         />
                         <ArrowLeft
+                            {...filterDataAttrs(dataAttrs?.prev)}
                             className={cn('arrow', {
                                 prev: true,
                                 hide: isBeginning,
@@ -427,6 +440,7 @@ const Tabs: React.FC<ITabsProps> = ({
                             onClick={handlePrevArrowClick}
                         />
                         <ArrowRight
+                            {...filterDataAttrs(dataAttrs?.next)}
                             className={cn('arrow', { next: true, hide: isEnd })}
                             onClick={handleNextArrowClick}
                         />
@@ -445,6 +459,13 @@ Tabs.propTypes = {
         innerIndents: PropTypes.string,
         tab: PropTypes.string,
         activeTab: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        slider: PropTypes.objectOf(PropTypes.string.isRequired),
+        panel: PropTypes.objectOf(PropTypes.string.isRequired),
+        prev: PropTypes.objectOf(PropTypes.string.isRequired),
+        next: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     size: PropTypes.oneOf(Object.values(TabSize)),
     hAlign: PropTypes.oneOf(Object.values(TabHAlign)),

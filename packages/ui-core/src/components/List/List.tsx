@@ -11,7 +11,7 @@ export interface IListProps {
     /** Жирность шрифта */
     weight?: 'light' | 'regular' | 'bold';
     /** Цвет */
-    color?: 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
+    color?: 'default' | 'black' | 'white' | 'gray' | 'green' | 'purple' | 'red' | 'inherit';
     /** Дополнительный класс корневого элемента */
     className?: string;
 }
@@ -19,7 +19,7 @@ export interface IListProps {
 const cn = cnCreate('mfui-list');
 const List: React.FC<IListProps> = ({
     as = 'ul',
-    color = 'black',
+    color = 'default',
     weight = 'regular',
     hAlign,
     className,
@@ -48,7 +48,7 @@ List.propTypes = {
     as: PropTypes.oneOf(['ul', 'ol']),
     hAlign: PropTypes.oneOf(['center', 'right']),
     weight: PropTypes.oneOf(['light', 'regular', 'bold']),
-    color: PropTypes.oneOf(['black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
+    color: PropTypes.oneOf(['default', 'black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
     className: PropTypes.string,
 };
 

@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-preloader');
 
@@ -47,17 +47,17 @@
         }
 
         @{b}__item_first:before {
-            background-color: @green;
+            background-color: var(--brandGreen);
         }
 
         @{b}__item_second:before {
-            background-color: @green;
+            background-color: var(--brandGreen);
 
             animation-delay: 0.166s;
         }
 
         @{b}__item_third:before {
-            background-color: @purple;
+            background-color: var(--brandPurple);
 
             animation-delay: 0.33s;
         }
@@ -65,7 +65,7 @@
 
     &_color_black {
         @{b}__item:before {
-            background-color: @fullBlack;
+            background-color: var(--stcBlack);
             opacity: 0.35;
 
             animation: opacityScaling 1s linear infinite;
@@ -82,7 +82,7 @@
 
     &_color_white {
         @{b}__item:before {
-            background-color: @base;
+            background-color: var(--stcWhite);
 
             animation: scaling 1s linear infinite;
         }

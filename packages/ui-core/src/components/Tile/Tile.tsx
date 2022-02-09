@@ -1,5 +1,5 @@
 import React from 'react';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './Tile.less';
 
@@ -26,7 +26,7 @@ export const Shadow = {
 
 type ShadowType = typeof Shadow[keyof typeof Shadow];
 
-export interface ITileProps extends IFilterDataAttrs {
+export interface ITileProps {
     /** Ссылка */
     href?: string;
     /** Тема */
@@ -39,6 +39,10 @@ export interface ITileProps extends IFilterDataAttrs {
     isInteractive?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Обработчик клика */
     onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
@@ -73,7 +77,7 @@ const Tile: React.FC<ITileProps> = ({
                 className,
             )}
             onClick={handleClick}
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
         >
             {href && (
                 <a href={href} className={cn('link')}>

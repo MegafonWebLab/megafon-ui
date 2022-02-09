@@ -3,7 +3,7 @@
 exports[`<ButtonBanner /> should render with props 1`] = `
 <div
   className="mfui-button-banner mfui-button-banner_image mfui-button-banner_scaling_contain className rootClass"
-  data-test="value"
+  data-root="value"
 >
   <Grid
     guttersLeft="medium"
@@ -21,8 +21,6 @@ exports[`<ButtonBanner /> should render with props 1`] = `
         <Header
           as="h2"
           className="mfui-button-banner__header"
-          color="black"
-          hAlign="inherit"
         >
           Заголовок
         </Header>
@@ -79,8 +77,6 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
         <Header
           as="h2"
           className="mfui-button-banner__header"
-          color="black"
-          hAlign="inherit"
         >
           Заголовок
         </Header>
