@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-radio-button');
 
@@ -41,36 +41,36 @@
             box-sizing: border-box;
             width: 20px;
             height: 20px;
-            border: 2px solid @spbSky2;
+            border: 2px solid var(--spbSky2);
             border-radius: 50%;
 
-            background-color: @base;
+            background-color: var(--base);
         }
     }
 
     &__input:checked + &__custom-input {
         &:before {
-            border: 6px solid @green;
+            border: 6px solid var(--brandGreen);
         }
     }
 
     &__label:hover &__custom-input {
         &:before {
-            border-color: @buttonHoverGreen;
+            border-color: var(--buttonHoverGreen);
         }
     }
 
     &__label:active &__custom-input {
         &:before {
-            border-color: @buttonDown;
+            border-color: var(--buttonDown);
         }
     }
 
     &__label_disabled &__custom-input {
         &:before {
-            border-color: @spbSky2 !important;
+            border-color: var(--spbSky2) !important;
 
-            background-color: @spbSky1 !important;
+            background-color: var(--spbSky1) !important;
         }
     }
 

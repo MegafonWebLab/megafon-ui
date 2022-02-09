@@ -11,6 +11,12 @@ exports[`<TextWithIcon /> should render 1`] = `
       tablet="7"
       wide="6"
     >
+      <Header
+        as="h5"
+        className="mfui-text-with-icon__header"
+      >
+        Test title
+      </Header>
       <TextWithIconItem
         icon={
           <test-file-stub

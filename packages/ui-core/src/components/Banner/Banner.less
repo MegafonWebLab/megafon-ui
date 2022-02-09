@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-banner');
 @sw: e('.swiper-wrapper');
@@ -67,11 +67,11 @@
     }
 
     &__pagination_theme_green {
-        background-color: @green;
+        background-color: var(--brandGreen);
     }
 
     &__pagination_theme_dark {
-        background-color: @fullBlack25;
+        background-color: var(--stcBlack20);
     }
 
     &__pagination_bottom-offset {

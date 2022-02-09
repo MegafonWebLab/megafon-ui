@@ -3,7 +3,7 @@
 exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
 <div
   className="mfui-button-link-box mfui-button-link-box_h-align_center custom-class root-class"
-  data-test="value"
+  data-root="value"
 >
   <div
     className="mfui-button-link-box__row"
@@ -37,7 +37,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
 exports[`<ButtonLinkBox /> renders ButtonLinkBox with download links 1`] = `
 <div
   className="mfui-button-link-box mfui-button-link-box_h-align_center custom-class root-class"
-  data-test="value"
+  data-root="value"
 >
   <div
     className="mfui-button-link-box__row"
@@ -73,7 +73,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox with download links 1`] = `
 exports[`<ButtonLinkBox /> renders ButtonLinkBox without button 1`] = `
 <div
   className="mfui-button-link-box mfui-button-link-box_h-align_center custom-class root-class"
-  data-test="value"
+  data-root="value"
 >
   <div
     className="mfui-button-link-box__row"
@@ -95,7 +95,7 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox without button 1`] = `
 exports[`<ButtonLinkBox /> renders ButtonLinkBox without link 1`] = `
 <div
   className="mfui-button-link-box mfui-button-link-box_h-align_center custom-class root-class"
-  data-test="value"
+  data-root="value"
 >
   <div
     className="mfui-button-link-box__row"

@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-tooltip');
 @popperLeft: ~"[data-popper-placement='left']";
@@ -72,7 +72,7 @@
 
         &:before {
             .arrow();
-            background-color: @base;
+            background-color: var(--base);
         }
     }
 

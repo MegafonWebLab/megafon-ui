@@ -3,7 +3,7 @@ import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import { shallow, mount } from 'enzyme';
 import InputMask from 'react-input-mask';
-import TextField, { Verification } from './TextField';
+import TextField, { TextFieldProps, Verification } from './TextField';
 
 jest.mock('@megafon/ui-helpers', () => ({
     ...jest.requireActual('@megafon/ui-helpers'),
@@ -29,6 +29,24 @@ const commonProps = {
     required: true,
     noticeText: 'noticeText',
     className: 'customClass',
+};
+
+const dataAttrs: TextFieldProps['dataAttrs'] = {
+    root: {
+        'data-test': 'test',
+    },
+    label: {
+        'data-test': 'test',
+    },
+    notice: {
+        'data-test': 'test',
+    },
+    input: {
+        'data-test': 'test',
+    },
+    iconBox: {
+        'data-test': 'test',
+    },
 };
 
 const cn = cnCreate('.mfui-text-field');
@@ -179,7 +197,7 @@ describe('<TextField />', () => {
     });
 
     it('should render with common props', () => {
-        const wrapper = shallow(<TextField {...commonProps} value="" />);
+        const wrapper = shallow(<TextField {...dataAttrs} {...commonProps} value="" />);
 
         expect(wrapper).toMatchSnapshot();
     });

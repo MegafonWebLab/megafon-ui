@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-nav-arrow');
 
@@ -27,22 +27,22 @@
         width: 100%;
         height: 100%;
 
-        fill: @base;
+        fill: var(--stcWhite);
     }
 
     &_theme_purple {
-        background-color: @purple;
+        background-color: var(--brandPurple);
 
         &:hover:not(:disabled) {
-            background-color: @buttonhoverPurple;
+            background-color: var(--buttonhoverPurple);
         }
     }
 
     &_theme_dark {
-        background-color: @fullBlack25;
+        background-color: var(--stcBlack20);
 
         &:hover:not(:disabled) {
-            background-color: @fullBlack50;
+            background-color: var(--stcBlack50);
         }
     }
 }

@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-tabs');
 @swiperWrapper: e('.swiper-wrapper');
@@ -28,13 +28,13 @@
         &:before {
             left: 0;
 
-            background: linear-gradient(to right, @base, rgba(@base, 0));
+            background: linear-gradient(to right, var(--base), rgba(255, 255, 255, 0));
         }
 
         &:after {
             right: 0;
 
-            background: linear-gradient(to left, @base, rgba(@base, 0));
+            background: linear-gradient(to left, var(--base), rgba(255, 255, 255, 0));
         }
     }
 
@@ -79,25 +79,25 @@
         box-sizing: content-box;
         height: 32px;
 
-        color: @content;
+        color: var(--content);
         white-space: nowrap;
         text-decoration: none;
 
         cursor: pointer;
 
-        fill: @content;
+        fill: var(--content);
 
         &:hover {
-            color: @green;
+            color: var(--brandGreen);
 
-            fill: @green;
+            fill: var(--brandGreen);
         }
     }
 
     &__tab-inner_current {
-        color: @green;
+        color: var(--brandGreen);
 
-        fill: @green;
+        fill: var(--brandGreen);
     }
 
     &__tab-icon {
@@ -129,7 +129,7 @@
 
         height: 2px;
 
-        background-color: @green;
+        background-color: var(--brandGreen);
 
         transition-duration: 0.3s;
     }
@@ -144,11 +144,11 @@
         height: 16px;
         border-radius: 50%;
 
-        background-color: @content;
+        background-color: var(--content);
         transform: translateY(-50%);
         cursor: pointer;
 
-        fill: @base;
+        fill: var(--base);
 
         @media @mobile {
             display: none;
@@ -230,7 +230,7 @@
         }
 
         @{b}__tab {
-            border-bottom: 1px solid @spbSky2;
+            border-bottom: 1px solid var(--stcWhite);
         }
     }
 
@@ -247,7 +247,7 @@
                 width: 100%;
                 height: 1px;
 
-                background-color: @spbSky2;
+                background-color: var(--spbSky2);
             }
         }
     }
@@ -277,7 +277,7 @@
             left: 0;
             z-index: 100;
 
-            background-color: @base;
+            background-color: var(--base);
         }
     }
 
@@ -288,46 +288,46 @@
             &:before {
                 left: 0;
 
-                background: linear-gradient(to right, @green, transparent);
+                background: linear-gradient(to right, var(--brandGreen), transparent);
             }
 
             &:after {
                 right: 0;
 
-                background: linear-gradient(to left, @green, transparent);
+                background: linear-gradient(to left, var(--brandGreen), transparent);
             }
         }
 
         @{b}__tab {
-            border-color: fade(@spbSky1, 50);
+            border-color: var(--stcBlack5);
         }
 
         @{b}__tab-inner {
-            color: @STCWhite50;
+            color: var(--stcWhite50);
 
-            fill: @STCWhite50;
+            fill: var(--stcWhite50);
 
             &:hover {
-                color: @base;
+                color: var(--stcWhite);
 
-                fill: @base;
+                fill: var(--stcWhite);
             }
         }
 
         @{b}__tab-inner_current {
-            color: @base;
+            color: var(--stcWhite);
 
-            fill: @base;
+            fill: var(--stcWhite);
         }
 
         @{b}__underline {
-            background-color: @base;
+            background-color: var(--stcWhite);
         }
 
         @{b}__arrow {
-            background-color: @base;
+            background-color: var(--stcWhite);
 
-            fill: @green;
+            fill: var(--brandGreen);
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-shared",
-  "version": "2.3.0",
+  "version": "3.0.0-beta.11",
   "files": [
     "dist"
   ],
@@ -19,6 +19,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gulp build",
+    "cleanDist": "rm -rf dist",
     "coverage": "yarn coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "typecheck": "tsc --noEmit -p .",
@@ -51,7 +52,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@megafon/ui-icons": "^0.2.0",
+    "@megafon/ui-icons": "^1.0.0-beta.4",
     "@svgr/core": "^2.4.1",
     "@types/enzyme": "^3.10.5",
     "@types/enzyme-adapter-react-16": "^1.0.6",
@@ -81,8 +82,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "@megafon/ui-core": "^2.5.0",
-    "@megafon/ui-helpers": "^1.0.0",
+    "@megafon/ui-core": "^3.0.0-beta.11",
+    "@megafon/ui-helpers": "^2.0.0-beta.4",
     "core-js": "^3.6.4",
     "htmr": "^0.9.2",
     "lodash.throttle": "^4.1.1",

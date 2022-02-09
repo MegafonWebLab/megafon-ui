@@ -5,8 +5,8 @@
     left: 0;
     z-index: 99;
 
-    background: #FFF;
-    box-shadow: 0 0 16px 0 rgba(0,0,0,.2);
+    background: var(--base);
+    box-shadow: 0 0 16px 0 var(--stcBlack20);
 
     @media screen and (min-width: 768px) {
         display: none;
@@ -17,16 +17,21 @@
         height: 48px;
 
         margin-left: 4px;
+        border: none;
 
         background: none;
-        border: none;
         outline: none;
+
+        svg {
+            fill: var(--content);
+        }
     }
 
     &__logo {
         position: absolute;
-        left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%)
+        left: 50%;
+
+        transform: translate(-50%, -50%);
     }
 }

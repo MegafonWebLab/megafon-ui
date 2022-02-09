@@ -1,5 +1,5 @@
 import React, { Ref } from 'react';
-import { cnCreate, detectTouch, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
 import Arrow from '@megafon/ui-icons/system-32-arrow_right_32.svg';
 import PropTypes from 'prop-types';
 import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
@@ -35,7 +35,7 @@ enum Content {
     ICON_TEXT = 'icon-text',
 }
 
-export interface IButtonProps extends IFilterDataAttrs {
+export interface IButtonProps {
     /** Дополнительный класс корневого элемента */
     className?: string | string[];
     /** Дополнительные классы для внутренних элементов */
@@ -46,6 +46,13 @@ export interface IButtonProps extends IFilterDataAttrs {
         content?: string;
         /** Inner container class */
         inner?: string;
+    };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        content?: Record<string, string>;
+        inner?: Record<string, string>;
+        loader?: Record<string, string>;
     };
     /** Тема компонента */
     theme?: ButtonThemesType;
@@ -162,13 +169,13 @@ const Button: React.FC<IButtonProps> = ({
         }
 
         return (
-            <div className={cn('content', contentClassName)}>
+            <div {...filterDataAttrs(dataAttrs?.content)} className={cn('content', contentClassName)}>
                 {icon && <div className={cn('icon')}>{icon}</div>}
                 {children && <span className={cn('text')}>{children}</span>}
                 {!icon && showArrow && <Arrow className={cn('icon-arrow')} />}
             </div>
         );
-    }, [contentClassName, showArrow, icon, children]);
+    }, [children, icon, dataAttrs?.content, contentClassName, showArrow]);
 
     const contentType = React.useMemo(() => {
         switch (true) {
@@ -184,6 +191,7 @@ const Button: React.FC<IButtonProps> = ({
     const renderedLoader: JSX.Element = React.useMemo(
         () => (
             <Preloader
+                dataAttrs={{ root: filterDataAttrs(dataAttrs?.loader) }}
                 color={loaderColor}
                 sizeAll={getLoaderSize(sizeAll)}
                 sizeWide={sizeWide && getLoaderSize(sizeWide)}
@@ -192,7 +200,7 @@ const Button: React.FC<IButtonProps> = ({
                 sizeMobile={sizeMobile && getLoaderSize(sizeMobile)}
             />
         ),
-        [sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile, loaderColor],
+        [dataAttrs?.loader, loaderColor, sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile],
     );
 
     const setRelAttribute = () => {
@@ -219,7 +227,7 @@ const Button: React.FC<IButtonProps> = ({
 
     return (
         <ElementType
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn(
                 {
                     type,
@@ -246,7 +254,9 @@ const Button: React.FC<IButtonProps> = ({
             disabled={!href && disabled}
             ref={buttonRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
         >
-            <div className={cn('inner', innerClassName)}>{!showLoader ? renderedContent : renderedLoader}</div>
+            <div {...filterDataAttrs(dataAttrs?.inner)} className={cn('inner', innerClassName)}>
+                {!showLoader ? renderedContent : renderedLoader}
+            </div>
         </ElementType>
     );
 };
@@ -256,6 +266,12 @@ Button.propTypes = {
         root: PropTypes.string,
         content: PropTypes.string,
         inner: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        content: PropTypes.objectOf(PropTypes.string.isRequired),
+        inner: PropTypes.objectOf(PropTypes.string.isRequired),
+        loader: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     theme: PropTypes.oneOf(Object.values(ButtonThemes)),
     type: PropTypes.oneOf(Object.values(ButtonTypes)),
@@ -274,7 +290,6 @@ Button.propTypes = {
     showArrow: PropTypes.bool,
     icon: PropTypes.element,
     disabled: PropTypes.bool,
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
     buttonRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),

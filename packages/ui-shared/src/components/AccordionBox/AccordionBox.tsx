@@ -5,8 +5,10 @@ import * as PropTypes from 'prop-types';
 import './AccordionBox.less';
 
 export interface IAccordionBox {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок аккордеона */
@@ -17,9 +19,6 @@ export interface IAccordionBox {
     isFullWidth?: boolean;
     /** Центрирование по горизонтали для расширения 1280+ */
     hCenterAlignWide?: boolean;
-    /** Вертикальные отступы */
-    /** @deprecated */
-    hasVerticalPaddings?: boolean;
     /** Дополнительный класс для корнеовго элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -30,7 +29,7 @@ export interface IAccordionBox {
         titleWrap?: string;
     };
     /** Обработчик клика */
-    onClickAccordion?: (isOpened: boolean, title: string) => void;
+    onClickAccordion?: (isOpened: boolean) => void;
 }
 
 const cn = cnCreate('mfui-accordion-box');
@@ -52,7 +51,9 @@ const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFul
 };
 
 AccordionBox.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
@@ -61,8 +62,6 @@ AccordionBox.propTypes = {
     isFullWidth: PropTypes.bool,
     isOpened: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,
-    hasVerticalPaddings: (props, propName) =>
-        props[propName] && new Error('Failed prop type: Prop "hasVerticalPaddings" is deprecated'),
     className: PropTypes.string,
     classes: PropTypes.shape({
         openedClass: PropTypes.string,

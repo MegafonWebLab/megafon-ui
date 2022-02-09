@@ -13,13 +13,13 @@ export interface ILinkProps {
     rel?: string;
     /** Добавление атрибута download */
     download?: boolean;
-    /** Дата атрибуты для элемента */
+    /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
     };
+    children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
     /** Обработчик клика */
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
-    children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
 const Link: React.FC<ILinkProps> = ({ target, href, rel, onClick, className, download, children, dataAttrs }) => (
@@ -45,9 +45,12 @@ Link.propTypes = {
     ]),
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     rel: PropTypes.string,
-    onClick: PropTypes.func,
     download: PropTypes.bool,
+    onClick: PropTypes.func,
 };
 
 export default Link;

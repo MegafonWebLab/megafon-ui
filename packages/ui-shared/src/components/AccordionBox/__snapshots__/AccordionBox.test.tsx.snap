@@ -22,7 +22,9 @@ exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide
         }
         dataAttrs={
           Object {
-            "data-test": "data-test-value",
+            "root": Object {
+              "data-root": "data-test-value",
+            },
           }
         }
         isOpened={false}
@@ -61,7 +63,9 @@ exports[`<AccordionBox /> should render with props 1`] = `
         }
         dataAttrs={
           Object {
-            "data-test": "data-test-value",
+            "root": Object {
+              "data-root": "data-test-value",
+            },
           }
         }
         isOpened={false}
@@ -91,7 +95,9 @@ exports[`<AccordionBox /> should render without grid when isFullWidth is true 1`
   }
   dataAttrs={
     Object {
-      "data-test": "data-test-value",
+      "root": Object {
+        "data-root": "data-test-value",
+      },
     }
   }
   isOpened={false}

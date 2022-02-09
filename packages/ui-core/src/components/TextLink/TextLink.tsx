@@ -6,7 +6,7 @@ import Link, { ILinkProps } from '../Link/Link';
 
 export interface ITextLinkProps extends ILinkProps {
     /** Цвет */
-    color?: 'white' | 'black' | 'gray' | 'blue' | 'green' | 'inherit';
+    color?: 'default' | 'white' | 'black' | 'gray' | 'green' | 'blue' | 'inherit';
     /** Отображение подчеркивания */
     underlineVisibility?: 'hover' | 'always';
     /** Стиль подчеркивания */
@@ -26,8 +26,10 @@ const TextLink: React.FC<ITextLinkProps> = ({
     onClick,
     children,
     download,
+    dataAttrs,
 }) => (
     <Link
+        dataAttrs={dataAttrs}
         target={target}
         href={href}
         rel={rel}
@@ -48,9 +50,12 @@ const TextLink: React.FC<ITextLinkProps> = ({
 );
 
 TextLink.propTypes = {
-    color: PropTypes.oneOf(['white', 'black', 'gray', 'blue', 'green', 'inherit']),
+    color: PropTypes.oneOf(['default', 'white', 'black', 'gray', 'green', 'blue', 'inherit']),
     underlineVisibility: PropTypes.oneOf(['hover', 'always']),
     underlineStyle: PropTypes.oneOf(['solid', 'dashed', 'border', 'none']),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.element),
         PropTypes.element,

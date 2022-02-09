@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-paragraph');
 
@@ -32,41 +32,23 @@
         margin: 0 0 16px;
     }
 
+    &_color_inherit {
+        color: inherit;
+    }
+
+    &_color_default {
+        color: var(--content);
+    }
+
+    &_color_white {
+        color: var(--stcWhite);
+    }
+
     &_color_green {
-        color: @green;
+        color: var(--brandGreen);
     }
 
     &_color_purple {
-        color: @purple;
-    }
-
-    &_color_base,
-    &_color_clearWhite {
-        color: @base;
-    }
-
-    &_color_spbSky0 {
-        color: @spbSky0;
-    }
-
-    &_color_spbSky1 {
-        color: @spbSky1;
-    }
-
-    &_color_spbSky2 {
-        color: @spbSky2;
-    }
-
-    &_color_content,
-    &_color_freshAsphalt {
-        color: @content;
-    }
-
-    &_color_fullBlack {
-        color: @fullBlack;
-    }
-
-    &_color_inherit {
-        color: inherit;
+        color: var(--brandPurple);
     }
 }

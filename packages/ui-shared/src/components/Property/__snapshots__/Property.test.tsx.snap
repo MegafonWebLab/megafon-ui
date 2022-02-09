@@ -29,8 +29,6 @@ exports[`<Property /> should render only title 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Звонки на все номера России
@@ -83,8 +81,6 @@ exports[`<Property /> should render title and description 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Интернет на все сервисы
@@ -145,8 +141,6 @@ exports[`<Property /> should render title and hidden description 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Музыкальные сервисы
@@ -214,16 +208,12 @@ exports[`<Property /> should render title in several row 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Детализация в салонах МегаФона
                 </Header>
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="1"
                 >
                   Оплачивается каждый день заказанной детализации.
@@ -273,8 +263,6 @@ exports[`<Property /> should render with 100% width 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Звонки на все номера России
@@ -336,8 +324,6 @@ exports[`<Property /> should render with badge 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Звонки на все номера России
@@ -390,8 +376,6 @@ exports[`<Property /> should render with border bottom 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Звонки на все номера России
@@ -445,8 +429,6 @@ exports[`<Property /> should render with custom class names 1`] = `
                 <Header
                   as="h5"
                   className="title-custom-class"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Доп звонки
@@ -515,8 +497,6 @@ exports[`<Property /> should render with data attribute 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Звонки на все номера России
@@ -569,8 +549,6 @@ exports[`<Property /> should render with icon 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   <div
@@ -635,8 +613,6 @@ exports[`<Property /> should render with several descriptions 1`] = `
               >
                 <Header
                   as="h5"
-                  color="black"
-                  hAlign="inherit"
                   key="0"
                 >
                   Доп звонки

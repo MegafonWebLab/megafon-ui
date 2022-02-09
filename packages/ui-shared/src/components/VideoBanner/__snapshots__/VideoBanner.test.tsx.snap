@@ -52,7 +52,6 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -63,7 +62,6 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -143,7 +141,6 @@ exports[`<VideoBanner /> render component with classes 1`] = `
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -154,7 +151,6 @@ exports[`<VideoBanner /> render component with classes 1`] = `
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -234,7 +230,6 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -245,7 +240,6 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -349,7 +343,6 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -360,7 +353,6 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -440,7 +432,6 @@ exports[`<VideoBanner /> render component with pictures and download links conte
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -451,7 +442,6 @@ exports[`<VideoBanner /> render component with pictures and download links conte
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -533,7 +523,6 @@ exports[`<VideoBanner /> render component with pictures and non default content 
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -544,7 +533,6 @@ exports[`<VideoBanner /> render component with pictures and non default content 
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -624,7 +612,6 @@ exports[`<VideoBanner /> render component with the different content text color 
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -635,7 +622,6 @@ exports[`<VideoBanner /> render component with the different content text color 
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -715,7 +701,6 @@ exports[`<VideoBanner /> render component without button 1`] = `
               as="h1"
               className="mfui-video-banner__title"
               color="inherit"
-              hAlign="inherit"
             >
               Текст ≈40 симовлов. Короткие слова
             </Header>
@@ -726,7 +711,6 @@ exports[`<VideoBanner /> render component without button 1`] = `
                 as="h5"
                 className="mfui-video-banner__description"
                 color="inherit"
-                hAlign="inherit"
               >
                 Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
               </Header>
@@ -1074,7 +1058,6 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                           as="h1"
                           className="mfui-video-banner__title"
                           color="inherit"
-                          hAlign="inherit"
                         >
                           <h1
                             className="mfui-header mfui-header_color_inherit mfui-header_level_h1 mfui-header_h-align_inherit mfui-video-banner__title"
@@ -1089,7 +1072,6 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                             as="h5"
                             className="mfui-video-banner__description"
                             color="inherit"
-                            hAlign="inherit"
                           >
                             <h5
                               className="mfui-header mfui-header_color_inherit mfui-header_level_h5 mfui-header_h-align_inherit mfui-video-banner__description"
@@ -1108,7 +1090,6 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                                 as="h3"
                                 className="mfui-video-banner__value"
                                 color="inherit"
-                                hAlign="inherit"
                               >
                                 <h3
                                   className="mfui-header mfui-header_color_inherit mfui-header_level_h3 mfui-header_h-align_inherit mfui-video-banner__value"

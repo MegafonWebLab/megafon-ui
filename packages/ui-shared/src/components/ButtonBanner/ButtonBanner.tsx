@@ -23,8 +23,10 @@ export const ImageScaling = {
 type ImageScalingType = typeof ImageScaling[keyof typeof ImageScaling];
 
 export interface IButtonBannerProps {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Дополнительный css класс для корневого элемента */
     className?: string;
     /** Дополнительный css классы для корневого и внутренних элементов */
@@ -90,7 +92,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
 
     return (
         <div
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ image: !!imageUrl, scaling: imageScaling }, [className, classes.root])}
             ref={rootRef}
         >
@@ -115,7 +117,9 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
 };
 
 ButtonBanner.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,

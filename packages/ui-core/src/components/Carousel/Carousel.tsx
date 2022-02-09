@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { breakpoints, cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import throttle from 'lodash.throttle';
 import * as PropTypes from 'prop-types';
 import SwiperCore, { Autoplay, Pagination, EffectFade } from 'swiper';
@@ -35,14 +35,14 @@ export type SlidesSettingsType = {
     [key: number]: {
         // количество отображаемых слайдов
         slidesPerView: number | SlidesPerViewType;
-        // расстояние между слайдами в px
-        slidesPerGroup?: number;
         // количество переключаемых за 1 раз слайдов
+        slidesPerGroup?: number;
+        // расстояние между слайдами в px
         spaceBetween: number;
     };
 };
 
-export interface ICarouselProps extends IFilterDataAttrs {
+export interface ICarouselProps {
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительные классы для корневого элемента */
@@ -56,6 +56,14 @@ export interface ICarouselProps extends IFilterDataAttrs {
         prev?: string;
         next?: string;
         slide?: string;
+    };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        slider?: Record<string, string>;
+        prev?: Record<string, string>;
+        next?: Record<string, string>;
+        slide?: Record<string, string>;
     };
     /** Настройки слайдов */
     slidesSettings?: SlidesSettingsType;
@@ -265,13 +273,14 @@ const Carousel: React.FC<ICarouselProps> = ({
 
     return (
         <div
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
             ref={rootRef}
             className={cn({ 'nav-theme': navTheme }, [className, rootClass])}
             onClick={handleRootClick}
         >
             <Swiper
                 {...(containerModifier ? { containerModifierClass: containerModifier } : {})}
+                {...filterDataAttrs(dataAttrs?.slider)}
                 className={cn('swiper', { 'default-inner-indents': !innerIndentsClass }, [
                     innerIndentsClass,
                     containerClass,
@@ -308,6 +317,7 @@ const Carousel: React.FC<ICarouselProps> = ({
             >
                 {React.Children.map(children, (child, i) => (
                     <SwiperSlide
+                        {...filterDataAttrs(dataAttrs?.slide, i + 1)}
                         key={i}
                         className={cn('slide', slideClass)}
                         onFocus={handleSlideFocus(i)}
@@ -318,12 +328,14 @@ const Carousel: React.FC<ICarouselProps> = ({
                 ))}
             </Swiper>
             <NavArrow
+                {...filterDataAttrs(dataAttrs?.prev)}
                 className={cn('arrow', { prev: true, locked: isLocked }, [prevClass])}
                 onClick={handlePrevClick}
                 disabled={!loop && isBeginning}
                 theme={ArrowTheme.PURPLE}
             />
             <NavArrow
+                {...filterDataAttrs(dataAttrs?.next)}
                 className={cn('arrow', { next: true, locked: isLocked }, [nextClass])}
                 view="next"
                 onClick={handleNextClick}
@@ -349,7 +361,13 @@ Carousel.propTypes = {
         next: PropTypes.string,
         slide: PropTypes.string,
     }),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        slider: PropTypes.objectOf(PropTypes.string.isRequired),
+        prev: PropTypes.objectOf(PropTypes.string.isRequired),
+        next: PropTypes.objectOf(PropTypes.string.isRequired),
+        slide: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     slidesSettings: PropTypes.objectOf(
         checkBreakpointsPropTypes({
             slidesPerView: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(Object.values(SlidesPerView))])

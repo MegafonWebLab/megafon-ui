@@ -24,3 +24,41 @@ import ListItem from '../ListItem';
         <ListItem>Услуги</ListItem>
     </List>
 </Playground>
+
+## Цвета
+
+<Playground>
+    <div style={{ background: 'var(--stcWhite)' }}>
+        <List color="black">
+            <ListItem>black</ListItem>
+        </List>
+    </div>
+
+    <div style={{ background: 'var(--stcBlack)' }}>
+        <List color="white">
+            <ListItem>white</ListItem>
+        </List>
+    </div>
+
+    <List color="gray">
+        <ListItem>gray</ListItem>
+    </List>
+
+    <List color="purple">
+        <ListItem>purple</ListItem>
+    </List>
+
+    <List color="green">
+        <ListItem>green</ListItem>
+    </List>
+
+    <List color="red">
+        <ListItem>red</ListItem>
+    </List>
+
+    <div style={{ background: 'var(--stcWhite)', color: 'var(--systemBlue)' }}>
+        <List color="inherit">
+            <ListItem>inherit</ListItem>
+        </List>
+    </div>
+</Playground>

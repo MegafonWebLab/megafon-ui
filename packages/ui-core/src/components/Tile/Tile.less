@@ -1,9 +1,11 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-tile');
 
 @{b} {
-    background-color: @base;
+    color: var(--content);
+
+    background-color: var(--background);
 
     &_radius_rounded {
         border-radius: 8px;

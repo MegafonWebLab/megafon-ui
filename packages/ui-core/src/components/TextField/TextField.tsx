@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
 import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
@@ -75,6 +75,14 @@ export type TextFieldProps = {
     className?: string;
     /** Дополнительные классы элементов */
     classes?: { input?: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        label?: Record<string, string>;
+        notice?: Record<string, string>;
+        input?: Record<string, string>;
+        iconBox?: Record<string, string>;
+    };
     /** Атрибут элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
     /** Атрибут элемента input. Не работает с textarea=true */
@@ -132,6 +140,7 @@ const TextField: React.FC<TextFieldProps> = ({
     inputMode,
     autoComplete,
     classes: { input } = {},
+    dataAttrs,
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = useState<string | number | undefined>(value);
@@ -252,6 +261,7 @@ const TextField: React.FC<TextFieldProps> = ({
     const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
 
     const commonParams = {
+        ...filterDataAttrs(dataAttrs?.input),
         disabled,
         id,
         name,
@@ -334,6 +344,7 @@ const TextField: React.FC<TextFieldProps> = ({
         return (
             icon && (
                 <div
+                    {...filterDataAttrs(dataAttrs?.iconBox)}
                     className={cn('icon-box', {
                         error: verification === Verification.ERROR && !customIcon,
                         password: isPasswordType,
@@ -372,6 +383,7 @@ const TextField: React.FC<TextFieldProps> = ({
 
     return (
         <div
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn(
                 {
                     disabled,
@@ -385,7 +397,7 @@ const TextField: React.FC<TextFieldProps> = ({
             )}
         >
             {label && (
-                <InputLabel htmlFor={id}>
+                <InputLabel dataAttrs={{ root: dataAttrs?.label }} htmlFor={id}>
                     {label}
                     {required && <span className={cn('require-mark')}>*</span>}
                 </InputLabel>
@@ -394,6 +406,7 @@ const TextField: React.FC<TextFieldProps> = ({
             <div className={cn('wrap')}>
                 {noticeText && (
                     <div
+                        {...filterDataAttrs(dataAttrs?.notice)}
                         className={cn('text', {
                             error: verification === Verification.ERROR,
                             success: verification === Verification.VALID,
@@ -444,6 +457,13 @@ TextField.propTypes = {
     inputRef: PropTypes.func,
     classes: PropTypes.shape({
         input: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        label: PropTypes.objectOf(PropTypes.string.isRequired),
+        notice: PropTypes.objectOf(PropTypes.string.isRequired),
+        input: PropTypes.objectOf(PropTypes.string.isRequired),
+        iconBox: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
 };
 

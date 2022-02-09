@@ -15,13 +15,27 @@
     }
 
     &__menu {
-        max-height: calc(100vh - 116px);
+        max-height: calc(100vh - 116px - 64px);
+        margin-bottom: 16px;
         overflow: auto;
-        margin-bottom: 24px;
 
         @media screen and (max-width: 768px) {
+            max-height: calc(100vh - 88px - 48px);
             margin-top: 24px;
-            max-height: calc(100vh - 24px - 48px);
         }
+    }
+
+    &__theme-switcher {
+        display: none;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        margin-left: 24px;
+
+        cursor: pointer;
+
+        fill: var(--content);
     }
 }

@@ -27,13 +27,13 @@ const generateIndex = files => {
 };
 
 const createReadmeMdx = () => {
-    const mdxFormatter = '---\nname: Введение\nroute: /\n---\n\n';
+    const mdxFormatter = '---\nname: Введение\nroute: /intro\n---\n\n';
 
     return mdxFormatter + fs.readFileSync('../README.md');
 };
 
 exports.onPreInit = () => {
-    fs.writeFile('../index.mdx', createReadmeMdx(), err => { if (!err) { console.log('index.mdx created'); } });
+    fs.writeFile('../intro.mdx', createReadmeMdx(), err => { if (!err) { console.log('index.mdx created'); } });
 
     const components = glob.sync('../packages/ui-core/src/components/**/*.{tsx,ts}', { ignore: [testsReg, doczReg] });
 

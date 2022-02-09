@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import { cnCreate, detectTouch, checkNativeEventIsClickOrEnterPress, filterDataAttrs } from '@megafon/ui-helpers';
+import type { AccessibilityEventTypeNative } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import { usePopper } from 'react-popper';
 import Tile from 'components/Tile/Tile';
@@ -7,8 +8,6 @@ import './Tooltip.less';
 
 const TOOLTIP_PADDING_FOR_FLIP = 14;
 const MOUSE_KEY = 'mousedown';
-const KEYBOARD_ENTER_KEY = 'Enter';
-const KEYBOARD_NUMPAD_ENTER_KEY = 'NumpadEnter';
 const TOUCH_KEY = 'touchstart';
 
 export const Placement = {
@@ -19,12 +18,6 @@ export const Placement = {
 } as const;
 
 type PlacementType = typeof Placement[keyof typeof Placement];
-
-const checkEventIsClickOrEnterPress = (e: MouseEvent | KeyboardEvent): boolean =>
-    e.type === TOUCH_KEY ||
-    e.type === MOUSE_KEY ||
-    (e as KeyboardEvent).code === KEYBOARD_ENTER_KEY ||
-    (e as KeyboardEvent).code === KEYBOARD_NUMPAD_ENTER_KEY;
 
 export const Paddings = {
     NONE: 'none',
@@ -68,10 +61,15 @@ export interface ITooltipProps {
         content?: string;
         contentShadow?: string;
     };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        content?: Record<string, string>;
+    };
     /** Обработчик на открытие */
-    onOpen?: (e: MouseEvent) => void;
+    onOpen?: (e: AccessibilityEventTypeNative) => void;
     /** Обработчик на закрытие */
-    onClose?: (e: MouseEvent | FocusEvent) => void;
+    onClose?: (e: AccessibilityEventTypeNative | FocusEvent) => void;
 }
 
 const cn = cnCreate('mfui-tooltip');
@@ -92,6 +90,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         content: contentClassName,
         contentShadow: contentShadowClassName,
     } = {},
+    dataAttrs,
     onOpen,
     onClose,
 }) => {
@@ -164,8 +163,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
     );
 
     const handleClick = useCallback(
-        (e: MouseEvent): void => {
-            if (!checkEventIsClickOrEnterPress(e)) {
+        (e: AccessibilityEventTypeNative): void => {
+            if (!checkNativeEventIsClickOrEnterPress(e)) {
                 return;
             }
 
@@ -255,6 +254,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
     return (
         <div
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ paddings, open: isOpen }, [className, rootClassName])}
             ref={setPopperElement}
             style={styles.popper}
@@ -262,7 +262,9 @@ const Tooltip: React.FC<ITooltipProps> = ({
         >
             <div ref={setArrowElement} className={cn('arrow', [arrowClassName])} style={styles.arrow} />
             <div className={cn('arrow-shadow')} style={styles.arrow} />
-            <Tile className={cn('content', [contentClassName])}>{children}</Tile>
+            <Tile dataAttrs={{ root: dataAttrs?.content }} className={cn('content', [contentClassName])}>
+                {children}
+            </Tile>
             <Tile shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
@@ -306,6 +308,10 @@ Tooltip.propTypes = {
         arrow: PropTypes.string,
         content: PropTypes.string,
         contentShadow: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        content: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     onOpen: PropTypes.func,
     onClose: PropTypes.func,

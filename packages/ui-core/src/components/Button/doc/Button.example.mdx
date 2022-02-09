@@ -33,7 +33,7 @@ export const ref = createRef();
 
 ## Белая тема
 
-<Playground style={blockStyle}>
+<Playground style={{...blockStyle, backgroundColor: '#333333', color: '#ffffff'}}>
     <Button theme="white">active</Button>
     <Button theme="white" disabled>disabled</Button>
     <Button theme="white" showLoader>with loader</Button>
@@ -86,7 +86,7 @@ export const ref = createRef();
 
 ## Черная тема с outline
 
-<Playground style={blockStyle}>
+<Playground style={{...blockStyle, backgroundColor: '#F5F5F5'}}>
     <Button type="outline" theme="black">active</Button>
     <Button type="outline" theme="black" disabled>disabled</Button>
     <Button type="outline" theme="black" showLoader>with loader</Button>
@@ -120,7 +120,7 @@ export const ref = createRef();
 
 ## В полную ширину
 
-<Playground style={{...blockStyle, gridTemplateColumns: '1fr'}}>
+<Playground style={{...blockStyle, backgroundColor: 'none', gridTemplateColumns: '1fr'}}>
     <Button fullWidth>Full Width Button</Button>
 </Playground>
 

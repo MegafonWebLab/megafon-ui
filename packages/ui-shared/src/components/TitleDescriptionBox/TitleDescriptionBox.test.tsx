@@ -8,7 +8,7 @@ const props: ITitleDescriptionBoxProps = {
     textColor: 'white',
     hAlign: 'center',
     className: 'custom class',
-    dataAttrs: { 'data-test': 'value' },
+    dataAttrs: { root: { 'data-test': 'value' } },
 };
 
 describe('<TitleDescriptionBox />', () => {

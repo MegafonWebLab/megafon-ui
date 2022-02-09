@@ -4,17 +4,18 @@
     }
 
     &__table {
-        border-collapse: collapse;
         width: 100%;
+        border-collapse: collapse;
     }
 
     &__cell {
         padding: 12px 0;
-        border-bottom: 1px solid #D8D8D8;
-        text-align: left;
+        border-bottom: 1px solid var(--spbSky2);
+
+        color: var(--content);
         font-size: 15px;
         line-height: 24px;
-        color: #333;
+        text-align: left;
         vertical-align: top;
 
         &:not(:first-child) {
@@ -26,14 +27,14 @@
         }
 
         & p {
-            padding: 0 !important;
             margin: 0 !important;
+            padding: 0 !important;
         }
 
         &_title {
+            color: var(--spbSky2);
             font-size: 15px;
             line-height: 24px;
-            color: rgba(51, 51, 51, 0.5);
         }
 
         &_first {
@@ -53,7 +54,7 @@
         }
 
         &_name {
-            color: #34AAF2;
+            color: var(--systemBlue);
         }
     }
 }

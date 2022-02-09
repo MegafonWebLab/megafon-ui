@@ -16,7 +16,8 @@
         "*.test.*",
         "*.docz.*"
       ],
-      "preDistTag": "beta"
+      "preDistTag": "beta",
+      "conventionalGraduate": "*"
     }
   }
 }

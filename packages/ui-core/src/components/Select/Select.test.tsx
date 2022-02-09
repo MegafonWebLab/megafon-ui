@@ -32,8 +32,38 @@ const props: ISelectProps<number> = {
         },
     ],
     dataAttrs: {
-        'data-test': 'test',
-        'incorrect-attr': 'test',
+        root: {
+            'data-root': 'test',
+            'incorrect-attr': 'test',
+        },
+        label: {
+            'data-label': 'test',
+            'incorrect-attr': 'test',
+        },
+        title: {
+            'data-title': 'test',
+            'incorrect-attr': 'test',
+        },
+        input: {
+            'data-input': 'test',
+            'incorrect-attr': 'test',
+        },
+        noticeText: {
+            'data-notice-text': 'test',
+            'incorrect-attr': 'test',
+        },
+        listItem: {
+            'data-list-item': 'test',
+            'incorrect-attr': 'test',
+        },
+        listItemTitle: {
+            'data-list-item-title': 'test',
+            'incorrect-attr': 'test',
+        },
+        notFound: {
+            'data-not-found': 'test',
+            'incorrect-attr': 'test',
+        },
     },
 };
 
@@ -103,32 +133,15 @@ describe('<Select />', () => {
     describe('onSelect', () => {
         it('calls onSelect', () => {
             const handleSelectItem = jest.fn();
-            const wrapper = shallow(<Select {...props} onSelect={handleSelectItem} />);
+            const wrapper = mount(<Select {...props} onSelect={handleSelectItem} />);
             const listItem = `.${cn('list-item')}`;
-            const listItemActive = `${cn('list-item_active')}`;
+            const listItemActive = `${cn('list-item_hovered')}`;
 
             wrapper.find(`.${cn('title')}`).simulate('click');
             wrapper.find(listItem).at(1).simulate('click');
 
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
             expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
-        });
-
-        it('calls onSelect after update with new prop items', () => {
-            const handleSelectItem = jest.fn();
-            const wrapper = shallow(<Select {...props} onSelect={handleSelectItem} />);
-
-            wrapper.setProps({ items: newItems });
-            wrapper.update();
-
-            const title = wrapper.find(`.${cn('title')}`);
-            const lastListItem = wrapper.find(`.${cn('list-item')}`).last();
-
-            title.simulate('click');
-            lastListItem.simulate('mouseenter', { preventDefault: () => undefined });
-            lastListItem.simulate('click', {});
-
-            expect(handleSelectItem).toBeCalledWith({}, newItems[1]);
         });
 
         it('calls onSelect with null when type combobox after chosen item and change value', () => {
@@ -141,9 +154,6 @@ describe('<Select />', () => {
 
             wrapper.find(combobox).simulate('focus');
             wrapper.find(listItem).at(1).simulate('click');
-
-            expect(wrapper.state('isChoosenItem')).toBeTruthy();
-
             wrapper.find(combobox).simulate('change', {
                 target: {
                     value: 'name-1',
@@ -151,7 +161,6 @@ describe('<Select />', () => {
             });
 
             expect(handleSelectItem).toBeCalledWith(null);
-            expect(wrapper.state('isChoosenItem')).toBeFalsy();
         });
     });
 
@@ -159,7 +168,7 @@ describe('<Select />', () => {
         it('calls onOpened and onClosed when click on select', () => {
             const handleOpened = jest.fn();
             const handleClosed = jest.fn();
-            const wrapper = shallow(<Select<number> {...props} onOpened={handleOpened} onClosed={handleClosed} />);
+            const wrapper = mount(<Select<number> {...props} onOpened={handleOpened} onClosed={handleClosed} />);
 
             wrapper.find(`.${cn('title')}`).simulate('click');
             expect(handleOpened).toBeCalled();
@@ -171,13 +180,14 @@ describe('<Select />', () => {
         it('calls onClosed when click on select item', () => {
             const handleSelectItem = jest.fn();
             const handleClosed = jest.fn();
-            const wrapper = shallow(<Select {...props} onSelect={handleSelectItem} onClosed={handleClosed} />);
+            const wrapper = mount(<Select {...props} onSelect={handleSelectItem} onClosed={handleClosed} />);
 
             wrapper.find(`.${cn('title')}`).simulate('click');
             wrapper
                 .find(`.${cn('list-item')}`)
                 .last()
                 .simulate('click');
+
             expect(handleClosed).toBeCalled();
         });
 
@@ -239,7 +249,7 @@ describe('<Select />', () => {
             const title = wrapper.find(`.${cn('title')}`);
             const control = wrapper.find(`.${cn('control')}`);
             const listItem = `.${cn('list-item')}`;
-            const listItemActive = `${cn('list-item_active')}`;
+            const listItemActive = `${cn('list-item_hovered')}`;
 
             title.simulate('click');
             expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
@@ -274,7 +284,7 @@ describe('<Select />', () => {
             title.simulate('focus');
             control.simulate('keyDown', { key: 'Enter', preventDefault: () => undefined });
 
-            expect(wrapper.state('isOpened')).toBeTruthy();
+            expect(wrapper.find(`.${cn()}_open`).exists()).toBeTruthy();
         });
     });
 

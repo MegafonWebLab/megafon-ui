@@ -6,15 +6,20 @@
         align-items: center;
 
         cursor: pointer;
+
+        svg {
+            fill: var(--content);
+        }
     }
 
     &__title {
-        text-decoration: none;
+        margin-right: 4px;
+
+        color: var(--content);
+        font-weight: 500;
         font-size: 15px;
         line-height: 24px;
-        font-weight: 500;
-        color: #333;
-        margin-right: 4px;
+        text-decoration: none;
     }
 
     &__list-wrapper {
@@ -45,13 +50,16 @@
 
     &__search-icon {
         position: absolute;
-        height: 100%;
+
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        height: 100%;
 
         & svg {
             height: 20px;
+
+            fill: var(--content);
         }
     }
 
@@ -59,7 +67,12 @@
         width: 100%;
         padding: 8px 24px;
         border: none;
-        border-bottom: 1px solid #EDEDED;
+        border-bottom: 1px solid var(--spbSky1);
+
+        color: var(--content);
+
+        background: var(--base);
+
         outline: none;
     }
 }

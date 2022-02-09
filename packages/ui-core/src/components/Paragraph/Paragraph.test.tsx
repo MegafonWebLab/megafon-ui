@@ -33,19 +33,15 @@ describe('<Paragraph />', () => {
     it('testing color props', () => {
         const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
 
+        wrapper.setProps({ color: 'inherit' });
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({ color: 'default' });
+        expect(wrapper).toMatchSnapshot();
+        wrapper.setProps({ color: 'white' });
+        expect(wrapper).toMatchSnapshot();
         wrapper.setProps({ color: 'green' });
         expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'base' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'spbSky0' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'spbSky1' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'spbSky2' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'content' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'fullBlack' });
+        wrapper.setProps({ color: 'purple' });
         expect(wrapper).toMatchSnapshot();
     });
 });

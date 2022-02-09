@@ -5,8 +5,10 @@ import * as PropTypes from 'prop-types';
 import './TitleDescriptionBox.less';
 
 export interface ITitleDescriptionBoxProps {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительный класс корневого элемента */
@@ -45,7 +47,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
 
     return (
         <div
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ 'h-align': hAlign, 'text-color': textColor }, className)}
             ref={rootRef}
         >
@@ -64,7 +66,9 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
 };
 
 TitleDescriptionBox.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),

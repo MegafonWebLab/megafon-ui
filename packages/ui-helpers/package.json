@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-helpers",
-  "version": "1.0.0",
+  "version": "2.0.0-beta.4",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
   "typings": "dist/index.d.ts",
@@ -15,6 +15,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
+    "cleanDist": "rm -rf dist",
     "coverage": "yarn coverage:unit",
     "coverage:unit": "jest --ci --collectCoverage --coverageDirectory=coverage",
     "typecheck": "tsc --noEmit -p .",

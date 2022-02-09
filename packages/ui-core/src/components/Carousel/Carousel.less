@@ -1,4 +1,4 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-carousel');
 @swiperWrapper: e('.swiper-wrapper');
@@ -146,13 +146,13 @@
 
     &_nav-theme_green @{swiperBullet} {
         &:before {
-            background-color: @STCWhite50;
+            background-color: var(--stcWhite50);
         }
     }
 
     &_nav-theme_light @{swiperBullet} {
         &:before {
-            background-color: @content25;
+            background-color: var(--spbSky2);
         }
     }
 
@@ -168,7 +168,7 @@
         cursor: default;
 
         &:before {
-            background-color: @base;
+            background-color: var(--base);
         }
     }
 
@@ -178,7 +178,7 @@
         cursor: default;
 
         &:before {
-            background-color: @purple;
+            background-color: var(--brandPurple);
         }
     }
 }

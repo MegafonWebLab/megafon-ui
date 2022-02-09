@@ -1,21 +1,21 @@
-@import '~styles/base.less';
+@import (reference) '~styles/base.less';
 
 @b: e('.mfui-accordion');
 
 @{b} {
-    border-top: 1px solid @spbSky2;
-    border-bottom: 1px solid @spbSky2;
+    border-top: 1px solid var(--spbSky2);
+    border-bottom: 1px solid var(--spbSky2);
 
     & + & {
         border-top: none;
     }
 
     &:not(&_open) &__title-wrap:hover {
-        background: rgba(237, 237, 237, 0.5);
+        background: var(--spbSky0);
     }
 
     &&_open &__title-wrap {
-        background: @spbSky1;
+        background: var(--spbSky1);
     }
 
     &__title-wrap {
@@ -43,28 +43,19 @@
 
         transform: translateY(-50%);
         opacity: 1;
+
+        fill: var(--content);
     }
 
     &__content-inner {
         padding: 24px 16px;
 
-        @media @mobileB {
+        @media @mobileBU {
             padding: 24px;
         }
-        @media @desktopS {
-            padding: 24px 48px;
-        }
-        @media @desktopMU {
-            padding: 24px 40px;
-        }
-    }
-
-    &__content-inner_v-padding {
-        padding-top: 24px;
-        padding-bottom: 24px;
     }
 
     &__icon {
-        fill: @fullBlack;
+        fill: var(--content);
     }
 }

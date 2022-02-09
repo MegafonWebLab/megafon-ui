@@ -1,6 +1,6 @@
 import React from 'react';
 import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
-import { cnCreate } from '@megafon/ui-helpers';
+import { AccessibilityEventType, checkEventIsClickOrEnterPress, cnCreate } from '@megafon/ui-helpers';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow-list_left_16.svg';
 import ArrowRight from '@megafon/ui-icons/system-16-arrow-list_right_16.svg';
 import './Month.less';
@@ -34,21 +34,41 @@ const Month: React.FC<IMonthProps> = ({
     goToNextMonth,
     children,
 }) => {
-    const handleArrowLeftClick = (): void => {
-        !isPrevMonthDisabled && goToPreviousMonth();
+    const handleArrowLeftClick = (e: AccessibilityEventType): void => {
+        if (checkEventIsClickOrEnterPress(e)) {
+            !isPrevMonthDisabled && goToPreviousMonth();
+        }
     };
 
-    const handleArrowRightClick = (): void => {
-        !isNextMonthDisabled && goToNextMonth();
+    const handleArrowRightClick = (e: AccessibilityEventType): void => {
+        if (checkEventIsClickOrEnterPress(e)) {
+            !isNextMonthDisabled && goToNextMonth();
+        }
+    };
+
+    const getTabIndex = (hasFocus: boolean): number => {
+        const tabIndexWithFocus = 0;
+        const tabIndexWithoutFocus = -1;
+
+        return hasFocus ? tabIndexWithFocus : tabIndexWithoutFocus;
     };
 
     return (
         <div className={cn()}>
             <div className={cn('header')}>
-                <ArrowLeft className={cn('arrow', { disabled: isPrevMonthDisabled })} onClick={handleArrowLeftClick} />
+                <ArrowLeft
+                    role="button"
+                    tabIndex={getTabIndex(!isPrevMonthDisabled)}
+                    className={cn('arrow', { disabled: isPrevMonthDisabled })}
+                    onKeyDown={handleArrowLeftClick}
+                    onClick={handleArrowLeftClick}
+                />
                 <span className={cn('title')}>{`${monthLabel} ${year}`}</span>
                 <ArrowRight
+                    role="button"
+                    tabIndex={getTabIndex(!isNextMonthDisabled)}
                     className={cn('arrow', { disabled: isNextMonthDisabled })}
+                    onKeyDown={handleArrowRightClick}
                     onClick={handleArrowRightClick}
                 />
             </div>
