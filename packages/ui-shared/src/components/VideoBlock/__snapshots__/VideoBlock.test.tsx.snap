@@ -253,8 +253,6 @@ exports[`<VideoBlock /> it renders VideoBlock with content but without button 1`
         <Header
           as="h2"
           className="mfui-video-block__header"
-          color="black"
-          hAlign="inherit"
         >
           Test title
         </Header>

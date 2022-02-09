@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Header, Grid, GridColumn } from '@megafon/ui-core';
-import { cnCreate, filterDataAttrs, IFilterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './TextWithIcon.less';
 
@@ -11,20 +11,24 @@ export interface IItem {
     icon: React.ReactNode;
 }
 
-export interface ITextWithIconProps extends IFilterDataAttrs {
+export interface ITextWithIconProps {
     /** Список строк с иконками */
     items: IItem[];
     /** Заголовок */
     title?: string;
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Дополнительный класс для корневого элемента */
     className?: string;
 }
 
 const cn = cnCreate('mfui-text-with-icon');
 const TextWithIcon: React.FC<ITextWithIconProps> = ({ items, title, rootRef, dataAttrs, className }) => (
-    <div className={cn([className])} ref={rootRef} {...filterDataAttrs(dataAttrs)}>
+    <div className={cn([className])} ref={rootRef} {...filterDataAttrs(dataAttrs?.root)}>
         <Grid>
             <GridColumn {...{ mobile: '12', tablet: '7', desktop: '6', wide: '6' }}>
                 {title && (
@@ -55,7 +59,9 @@ TextWithIcon.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
 };
 

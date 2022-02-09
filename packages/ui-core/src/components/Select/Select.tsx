@@ -136,7 +136,7 @@ const Select = <T extends SelectItemValueType>({
     onClosed,
     onOpened,
     onSelect,
-}: ISelectProps<T>) => {
+}: ISelectProps<T>): JSX.Element => {
     const [selectState, changeSelectState] = useReducer<Reducer<ISelectState<T>, ISelectAction<T>>>(
         selectReducer,
         initialState,
@@ -151,24 +151,16 @@ const Select = <T extends SelectItemValueType>({
     const isTouch: boolean = detectTouch();
     const currentIndex = itemsList.findIndex(elem => elem.value === currentValue);
 
-    // Used in various handlers instead useEffect with isOpened dependency because on initial component render isOpened is false
-    // so it triggers onClosed callback call
-    const handleClosed = (): void => {
-        onClosed?.();
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
-        document.removeEventListener('click', handleClickOutside);
-    };
-
     const handleClickOutside = useCallback(
         (e: MouseEvent): void => {
             if ((e.target instanceof Node && selectNode.current?.contains(e.target)) || !isOpened) {
                 return;
             }
 
-            handleClosed();
+            onClosed?.();
             changeSelectState({ type: TOGGLE_DROPDOWN, isOpened: false });
         },
-        [isOpened],
+        [onClosed, isOpened],
     );
 
     const scrollList = (itemIndex: number): void => {
@@ -215,7 +207,7 @@ const Select = <T extends SelectItemValueType>({
         return () => {
             document.removeEventListener('click', handleClickOutside);
         };
-    }, [isOpened, currentIndex]);
+    }, [isOpened, currentIndex, onOpened, handleClickOutside]);
 
     useEffect(() => {
         changeSelectState({ type: UPDATE_ITEMS_LIST, items });
@@ -255,7 +247,7 @@ const Select = <T extends SelectItemValueType>({
         const isCurrentlyOpened = isOpened;
 
         changeSelectState({ type: TOGGLE_DROPDOWN, isOpened: !isCurrentlyOpened });
-        isCurrentlyOpened && handleClosed();
+        isCurrentlyOpened && onClosed?.();
     };
 
     const handleSelectItem = (e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>): void => {
@@ -277,7 +269,7 @@ const Select = <T extends SelectItemValueType>({
         });
 
         onSelect?.(e, item);
-        handleClosed();
+        onClosed?.();
     };
 
     const handleHoverItem =

@@ -14,8 +14,6 @@ exports[`<TextWithIcon /> should render with all props 1`] = `
       <Header
         as="h5"
         className="mfui-text-with-icon__header"
-        color="black"
-        hAlign="inherit"
       >
         Test title
       </Header>

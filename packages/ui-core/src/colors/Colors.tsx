@@ -30,7 +30,7 @@ const getThemeFromLocalStorage = (): Theme => {
 };
 
 const cn = cnCreate('colors');
-const Colors = () => {
+const Colors: React.FC = () => {
     const [, setCurrentTheme] = React.useState<'light' | 'dark'>(getThemeFromLocalStorage());
     const [, setLoad] = React.useState<boolean>(false);
 

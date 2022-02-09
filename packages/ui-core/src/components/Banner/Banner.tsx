@@ -213,7 +213,10 @@ const Banner: React.FC<IBannerProps> = ({
                 disabled={!loop && isEnd}
                 theme={navArrowTheme}
             />
-            <div {...filterDataAttrs(dataAttrs?.pagination)} className={cn('pagination', { theme: navTheme, 'bottom-offset': withPaginationBottomOffset })}>
+            <div
+                {...filterDataAttrs(dataAttrs?.pagination)}
+                className={cn('pagination', { theme: navTheme, 'bottom-offset': withPaginationBottomOffset })}
+            >
                 {React.Children.map(children, (_, i) => (
                     <BannerDot
                         dataAttrs={{

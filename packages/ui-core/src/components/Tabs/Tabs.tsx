@@ -310,7 +310,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     </div>
                 );
             }),
-        [children, currentIndex, renderOnlyCurrentPanel],
+        [children, currentIndex, dataAttrs?.panel, renderOnlyCurrentPanel],
     );
 
     React.useEffect(() => {

@@ -175,7 +175,7 @@ const Button: React.FC<IButtonProps> = ({
                 {!icon && showArrow && <Arrow className={cn('icon-arrow')} />}
             </div>
         );
-    }, [contentClassName, showArrow, icon, children]);
+    }, [children, icon, dataAttrs?.content, contentClassName, showArrow]);
 
     const contentType = React.useMemo(() => {
         switch (true) {
@@ -200,7 +200,7 @@ const Button: React.FC<IButtonProps> = ({
                 sizeMobile={sizeMobile && getLoaderSize(sizeMobile)}
             />
         ),
-        [sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile, loaderColor],
+        [dataAttrs?.loader, loaderColor, sizeAll, sizeWide, sizeDesktop, sizeTablet, sizeMobile],
     );
 
     const setRelAttribute = () => {
