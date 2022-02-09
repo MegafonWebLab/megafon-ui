@@ -3,47 +3,10 @@
 @b: e('.mfui-text-with-icon');
 
 @{b} {
-    &__item {
-        display: flex;
-        align-items: center;
-
-        @media @mobileSM {
-            flex-direction: column;
-        }
-    }
-
-    &__item:not(:first-of-type) {
-        margin-top: 16px;
-
-        @media @mobileSM {
-            margin-top: 24px;
-        }
-    }
-
     &__header {
         margin-bottom: 24px;
 
         @media @mobileSM {
-            text-align: center;
-        }
-    }
-
-    &__svg-icon {
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        min-height: 40px;
-        overflow: hidden;
-
-        @media @mobileBU {
-            margin-right: 16px;
-        }
-    }
-
-    &__text {
-        @media @mobileSM {
-            margin-top: 12px;
-
             text-align: center;
         }
     }
