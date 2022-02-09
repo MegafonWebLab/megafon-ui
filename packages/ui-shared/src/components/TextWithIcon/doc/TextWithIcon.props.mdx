@@ -5,11 +5,19 @@ import TextWithIcon from '../TextWithIcon';
 
 ``` typescript
 
-interface IItem {
+interface ITextWithIconItem {
     /** Текст */
     text: string;
     /** Иконка */
     icon: React.ReactNode;
+    /** Ссылка на корневой элемент */
+    rootRef?: React.Ref<HTMLDivElement>;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
+    /** Дополнительный класс для корневого элемента */
+    className?: string;
 }
 
 ```

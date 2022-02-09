@@ -1,32 +1,26 @@
 import { Playground } from 'docz';
-import { items } from './TextWithIcon.docz.tsx';
 import TextWithIcon from '../TextWithIcon';
-
-```javascript collapse=Демо данные
-export const items = [
-    {
-        text: 'Привлечение новых клиентов и повышение лояльности действующих',
-        icon: <Heart style={{ fill: '#00B956' }} />,
-    },
-    {
-        text: 'Специальные предложения для ваших клиентов',
-        icon: <Star style={{ fill: '#00B956' }} />,
-    },
-    {
-        text: 'Понятная и простая реализация партнерства',
-        icon: <Like style={{ fill: '#00B956' }} />,
-    },
-];
-```
+import TextWithIconItem from '../TextWithIconItem';
+import Like from '@megafon/ui-icons/basic-16-like_16.svg';
+import Star from "@megafon/ui-icons/basic-16-promo_16.svg";
+import Heart from '@megafon/ui-icons/basic-16-heart_16.svg';
 
 ## Использование по умолчанию
 
 <Playground>
-    <TextWithIcon items={items} />
+    <TextWithIcon>
+        <TextWithIconItem text="Привлечение новых клиентов и повышение лояльности действующих" icon={<Heart style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem text="Специальные предложения для ваших клиентов" icon={<Star style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem text="Понятная и простая реализация партнерстваих" icon={<Like style={{ fill: '#00B956' }} />} />
+    </TextWithIcon>
 </Playground>
 
 ## С заголовком
 
 <Playground>
-    <TextWithIcon items={items} title="Преимущества" />
+    <TextWithIcon title="Преимущества">
+        <TextWithIconItem text="Привлечение новых клиентов и повышение лояльности действующих" icon={<Heart style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem text="Специальные предложения для ваших клиентов" icon={<Star style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem text="Понятная и простая реализация партнерстваих" icon={<Like style={{ fill: '#00B956' }} />} />
+    </TextWithIcon>
 </Playground>
