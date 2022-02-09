@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0-beta.11](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.10...@megafon/ui-core@3.0.0-beta.11) (2022-02-09)
+
+
+### Bug Fixes
+
+* **switcher:** fix switcher design ([ea3a6dd](https://github.com/MegafonWebLab/megafon-ui/commit/ea3a6dd602de011e1e5f19e118b9cb565f846fbf))
+
+
+
+
+
 # [3.0.0-beta.10](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0-beta.9...@megafon/ui-core@3.0.0-beta.10) (2022-02-08)
 
 
