@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.2.0...@megafon/ui-icons@1.0.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* **colors:** renabe green and purple to brandGreen and brandPurple to avoid postcss-colormin bug ([089dd42](https://github.com/MegafonWebLab/megafon-ui/commit/089dd42cd18db7fc83e690da45d09b88c636a6f7))
+* **core:** fix build ui-core ([fa9522a](https://github.com/MegafonWebLab/megafon-ui/commit/fa9522ac0931edb7ec772ad040557997db080687))
+
+
+### Features
+
+* **colors:** css custom properties and color themes support ([16df5b7](https://github.com/MegafonWebLab/megafon-ui/commit/16df5b7b2644e15bb6c6e49e7347c0f8e4839e58))
+
+
+### BREAKING CHANGES
+
+* **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
+prefix (e.g. brandGreen)
+* **colors:** read commit description
+
+
+
+
+
 # [0.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@0.1.1...@megafon/ui-icons@0.2.0) (2022-02-07)
 
 

@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.3.0...@megafon/ui-shared@3.0.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* **components:** change tests for dataAttrs prop ([eae8ecb](https://github.com/MegafonWebLab/megafon-ui/commit/eae8ecb5104c050ec0e67357ed5edecdfb042838))
+* color props values changes ([9e3dd31](https://github.com/MegafonWebLab/megafon-ui/commit/9e3dd31a8fd57012482c68c1173aae74028aa3a9))
+* remove deprecated props values ([d09c460](https://github.com/MegafonWebLab/megafon-ui/commit/d09c4606ce6e41f7144e18c2216d039d859288e2))
+* **accordion-box:** change type of onClickAccordion prop ([f464221](https://github.com/MegafonWebLab/megafon-ui/commit/f4642216a3869d7f11005f0162f009225f9661c4))
+* **colors:** renabe green and purple to brandGreen and brandPurple to avoid postcss-colormin bug ([089dd42](https://github.com/MegafonWebLab/megafon-ui/commit/089dd42cd18db7fc83e690da45d09b88c636a6f7))
+* **core:** fix build ui-core ([fa9522a](https://github.com/MegafonWebLab/megafon-ui/commit/fa9522ac0931edb7ec772ad040557997db080687))
+
+
+### Features
+
+* **accordionbox:** remove prop hasVerticalPaddings ([7dfe546](https://github.com/MegafonWebLab/megafon-ui/commit/7dfe546336aa0a94643299309e90fe7e56936e85))
+* **colors:** css custom properties and color themes support ([16df5b7](https://github.com/MegafonWebLab/megafon-ui/commit/16df5b7b2644e15bb6c6e49e7347c0f8e4839e58))
+* **header:** made header as a functional component ([b983934](https://github.com/MegafonWebLab/megafon-ui/commit/b983934ced137ede35f64ce2dfe0c953c1690db0))
+* **textwithicon:** prop items removed, list items are now added by child components ([44ee66c](https://github.com/MegafonWebLab/megafon-ui/commit/44ee66c3964da1111957553c75046407f789e673))
+
+
+### BREAKING CHANGES
+
+* **textwithicon:** prop items removed, list items are now added by child components
+* **accordionbox:** remove prop hasVerticalPaddings
+* ContentArea: prop color change values from 'base' to 'white' and from 'content' to 'default';
+remove depreacted value 'freshAsphalt'
+Paragraph: prop color change values from 'base' to 'white' and from 'contend' to 'default';
+remove deprecared values 'freshAsphalt' and 'clearWhite'
+StoreBanner: prop theme change value from 'black' to 'default'; remove deprecated value 'clearWhite'
+* ContentArea, Paragraph, StoreBanner and Breadcrumbs components from no don't have
+freshAsphalt and clearWhite as values for colorize props
+* **accordion-box:** remove parameter 'title' in onClickAccordion prop
+* **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
+prefix (e.g. brandGreen)
+* **colors:** read commit description
+
+
+
+
+
 # [2.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@2.2.1...@megafon/ui-shared@2.3.0) (2022-02-07)
 
 

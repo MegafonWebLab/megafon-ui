@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@1.0.0...@megafon/ui-helpers@2.0.0) (2022-02-09)
+
+
+### Bug Fixes
+
+* **colors:** renabe green and purple to brandGreen and brandPurple to avoid postcss-colormin bug ([089dd42](https://github.com/MegafonWebLab/megafon-ui/commit/089dd42cd18db7fc83e690da45d09b88c636a6f7))
+* **core:** fix build ui-core ([fa9522a](https://github.com/MegafonWebLab/megafon-ui/commit/fa9522ac0931edb7ec772ad040557997db080687))
+
+
+### Features
+
+* **colors:** css custom properties and color themes support ([16df5b7](https://github.com/MegafonWebLab/megafon-ui/commit/16df5b7b2644e15bb6c6e49e7347c0f8e4839e58))
+* **components:** add dataAttrs props in new format ([e9cf812](https://github.com/MegafonWebLab/megafon-ui/commit/e9cf8122ac47f83a8e744e0695351d60aa711dbd))
+* **ui-helpers:** add a11y function to check event is click or enter press ([8ed8e5e](https://github.com/MegafonWebLab/megafon-ui/commit/8ed8e5ee9fc0be112d40337dbe1a3ac45cf57f6f))
+
+
+### BREAKING CHANGES
+
+* **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
+prefix (e.g. brandGreen)
+* **colors:** read commit description
+
+
+
+
+
 # [2.0.0-beta.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.0-beta.3...@megafon/ui-helpers@2.0.0-beta.4) (2022-02-04)
 
 
