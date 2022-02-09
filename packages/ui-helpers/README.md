@@ -6,12 +6,12 @@ Helpers library
 
 with npm
 ```bash
-npm install --save @megafon/ui-helpers@beta
+npm install --save @megafon/ui-helpers
 ```
 
 or yarn
 ```bash
-yarn add @megafon/ui-helpers@beta
+yarn add @megafon/ui-helpers
 ```
 
 ## Usage

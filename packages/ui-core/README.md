@@ -5,8 +5,8 @@ React UI components library.
 ## Getting started
 
 ```bash
-$ npm install --save @megafon/ui-core@beta
+$ npm install --save @megafon/ui-core
 ```
 ```bash
-$ yarn add @megafon/ui-core@beta
+$ yarn add @megafon/ui-core
 ```
