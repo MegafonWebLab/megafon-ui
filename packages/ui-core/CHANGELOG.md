@@ -13,20 +13,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **calendar/month:** add focus on month arrows, add enter press handlers ([caad017](https://github.com/MegafonWebLab/megafon-ui/commit/caad0176a9d272b19da11ddfac1830d863d090ae))
 * **checkbox:** add focus on custom checkbox, add enter press handler ([136872c](https://github.com/MegafonWebLab/megafon-ui/commit/136872c84c058502a46d5b6db5088bebd71ebdb8))
 * **checkbox:** add isChecked state, change type of onChange prop ([be62e30](https://github.com/MegafonWebLab/megafon-ui/commit/be62e30f43dcee4c43cab5425c4ddc0c6954f3f7))
-* **colors:** fix colors component ([a45d223](https://github.com/MegafonWebLab/megafon-ui/commit/a45d223e8af199df87c7b0a1fb8278093ecd54b9))
-* **colors:** remove unused classname modifiers ([2536f98](https://github.com/MegafonWebLab/megafon-ui/commit/2536f9878456979e1ea56615ca99eaa19b6ab7a3))
-* **colors:** remove unused method ([50ee358](https://github.com/MegafonWebLab/megafon-ui/commit/50ee358233787dd3f855abea071ea11aa9df9785))
-* **colors:** renabe green and purple to brandGreen and brandPurple to avoid postcss-colormin bug ([089dd42](https://github.com/MegafonWebLab/megafon-ui/commit/089dd42cd18db7fc83e690da45d09b88c636a6f7))
-* **colors:** rename green and purple to brandGreen and brandPurple ([e8ec148](https://github.com/MegafonWebLab/megafon-ui/commit/e8ec1488a249748ca6468bfa53eed56e9fcbb5e4))
-* **colors:** update color values on colors page when user switches theme ([8eb66de](https://github.com/MegafonWebLab/megafon-ui/commit/8eb66dec2ef9de5615ad8c921c422b6a9f00893a))
 * **components:** change tests for dataAttrs prop ([eae8ecb](https://github.com/MegafonWebLab/megafon-ui/commit/eae8ecb5104c050ec0e67357ed5edecdfb042838))
 * **core:** fix build ui-core ([fa9522a](https://github.com/MegafonWebLab/megafon-ui/commit/fa9522ac0931edb7ec772ad040557997db080687))
 * **core:** separated colors.css file ([3a0af6b](https://github.com/MegafonWebLab/megafon-ui/commit/3a0af6b31d711016faa92bc7402ce02c6d8710ae))
 * **less:** import base.less file through reference ([20bd43d](https://github.com/MegafonWebLab/megafon-ui/commit/20bd43d60f9cfac102c55ccdf183578702d2eb96))
 * **paragraph:** remove spbSky... values from color prop ([3a74e2b](https://github.com/MegafonWebLab/megafon-ui/commit/3a74e2ba23b41a1982f72cb1a869e0253c903180))
 * **switcher:** fix switcher design ([642d679](https://github.com/MegafonWebLab/megafon-ui/commit/642d679d6c48c4a96093220415a68c9444d8cb53))
-* color props values changes ([9e3dd31](https://github.com/MegafonWebLab/megafon-ui/commit/9e3dd31a8fd57012482c68c1173aae74028aa3a9))
-* remove deprecated props values ([d09c460](https://github.com/MegafonWebLab/megafon-ui/commit/d09c4606ce6e41f7144e18c2216d039d859288e2))
 * **textlink:** fix color prop type ([4e93cce](https://github.com/MegafonWebLab/megafon-ui/commit/4e93ccef6bcbb1a5e670089dfafe308c23fcbe1e))
 * **tooltip:** add check event function from ui-helpers ([18ef333](https://github.com/MegafonWebLab/megafon-ui/commit/18ef333ba78f7804731da2116b124cdc44a8dfcb))
 
@@ -35,30 +27,34 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **accordion:** remove prop hasVerticalPaddings ([c1f0139](https://github.com/MegafonWebLab/megafon-ui/commit/c1f01398154497ed69fb2bb725077e3cc3b5c47e))
 * **colors:** css custom properties and color themes support ([16df5b7](https://github.com/MegafonWebLab/megafon-ui/commit/16df5b7b2644e15bb6c6e49e7347c0f8e4839e58))
+* **colors:** rename green and purple to brandGreen and brandPurple to avoid postcss-colormin bug ([089dd42](https://github.com/MegafonWebLab/megafon-ui/commit/089dd42cd18db7fc83e690da45d09b88c636a6f7))
+* **colors:** update color values on colors page when user switches theme ([8eb66de](https://github.com/MegafonWebLab/megafon-ui/commit/8eb66dec2ef9de5615ad8c921c422b6a9f00893a))
 * **components:** add dataAttrs props in new format ([e9cf812](https://github.com/MegafonWebLab/megafon-ui/commit/e9cf8122ac47f83a8e744e0695351d60aa711dbd))
 * **header:** made header as a functional component ([b983934](https://github.com/MegafonWebLab/megafon-ui/commit/b983934ced137ede35f64ce2dfe0c953c1690db0))
 * **radiobutton:** made radiobutton as a functional component ([b225e1d](https://github.com/MegafonWebLab/megafon-ui/commit/b225e1d5e1964fd1e7010a9051586fb627cc90c3))
 * **select:** made select as a functional component ([fc9cfc2](https://github.com/MegafonWebLab/megafon-ui/commit/fc9cfc25505952080bf90095ab183367915d27e6))
 * **styles:** export css version for base.less ([acdea73](https://github.com/MegafonWebLab/megafon-ui/commit/acdea73462713156dee077fde4c223879e356b4d))
+* remove deprecated props values ([d09c460](https://github.com/MegafonWebLab/megafon-ui/commit/d09c4606ce6e41f7144e18c2216d039d859288e2))
+
 
 
 ### BREAKING CHANGES
 
-* **paragraph:** remove from color prop values: spbSky0, spbSky1, spbSky2
 * **accordion:** remove prop hasVerticalPaddings
-* ContentArea: prop color change values from 'base' to 'white' and from 'content' to 'default';
-remove depreacted value 'freshAsphalt'
-Paragraph: prop color change values from 'base' to 'white' and from 'contend' to 'default';
-remove deprecared values 'freshAsphalt' and 'clearWhite'
-StoreBanner: prop theme change value from 'black' to 'default'; remove deprecated value 'clearWhite'
-* ContentArea, Paragraph, StoreBanner and Breadcrumbs components from no don't have
-freshAsphalt and clearWhite as values for colorize props
-* **checkbox:** change type of onChange prop on (checked: boolean) => void
 * **accordion:** remove parameter 'title' in onClickAccordion prop
-* **tooltip:** change onOpen, onClose types; AccessibilityEventTypeNative from @megafon/ui-helpers
+* **checkbox:** change type of onChange prop on (checked: boolean) => void
 * **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
 prefix (e.g. brandGreen)
-* **colors:** read commit description
+* **contentarea**: prop color change values from 'base' to 'white' and from 'content' to 'default';
+remove depreacted value 'freshAsphalt'
+* **contentarea**, **paragraph**, **storebanner** and **breadcrumbs** components from no don't have
+'freshAsphalt' and 'clearWhite' as values for colorizing props
+* **paragraph:** remove from color prop values: 'spbSky0', 'spbSky1', 'spbSky2'
+* **paragraph**: prop color change values from 'base' to 'white' and from 'contend' to 'default';
+remove deprecared values 'freshAsphalt' and 'clearWhite'
+* **storebanner**: prop theme change value from 'black' to 'default'; remove deprecated value 'clearWhite'
+* **tooltip:** change onOpen, onClose types; AccessibilityEventTypeNative from @megafon/ui-helpers
+* **components:** for the components to work correctly, now it's needed to import colors.css file
 
 
 
