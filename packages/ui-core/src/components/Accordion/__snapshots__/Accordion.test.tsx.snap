@@ -69,9 +69,7 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
         className="mfui-accordion__content"
         style={
           Object {
-            "height": "auto",
             "overflow": "hidden",
-            "transition": "height 0.3s",
           }
         }
       >
@@ -155,9 +153,7 @@ exports[`<Accordion /> it render Accordion with vertical inner paddings 1`] = `
         className="mfui-accordion__content"
         style={
           Object {
-            "height": "0px",
             "overflow": "hidden",
-            "transition": "height 0.3s",
           }
         }
       >
@@ -241,9 +237,7 @@ exports[`<Accordion /> it renders Accordion 1`] = `
         className="mfui-accordion__content"
         style={
           Object {
-            "height": "0px",
             "overflow": "hidden",
-            "transition": "height 0.3s",
           }
         }
       >

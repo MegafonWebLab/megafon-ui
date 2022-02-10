@@ -30,50 +30,67 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
         isOpened,
         dataAttrs,
     } = props;
-    const canUpdate = React.useRef<boolean>(false);
-    const timer = React.useRef<number | undefined>(undefined);
-    const rootNode = React.useRef<HTMLInputElement>(null);
-    const [height, setHeight] = React.useState<string>('0px');
-    const transition: string = animation ? `height ${animationDuration / 1000}s` : 'none';
+
+    let animationStart: null | number = null;
     const duration: number = animation ? animationDuration : 0;
 
-    const animateSlide = (finalHeight: string, delay: number): void => {
+    const canUpdate = React.useRef<boolean>(false);
+    const rootNode = React.useRef<HTMLInputElement>(null);
+
+    const animateSlide = (
+        contentHeight: number,
+        animationTime: number,
+        timePassed: number,
+        isOpenAction = false,
+    ): void => {
         if (!rootNode.current) {
             return;
         }
-        setHeight(`${rootNode.current.scrollHeight}px`);
-        timer.current = window.setTimeout(() => {
-            setHeight(finalHeight);
-        }, delay);
+
+        if (!animationStart) {
+            animationStart = timePassed;
+        }
+
+        const runtime = timePassed - animationStart;
+        const progress = animationTime ? Math.min(runtime / animationTime, 1) : 1;
+
+        const isAnimationInProgress = progress < 1;
+        const nextHeight = isOpenAction ? progress * contentHeight : contentHeight - progress * contentHeight;
+
+        rootNode.current.style.height = `${nextHeight}px`;
+
+        isAnimationInProgress &&
+            window.requestAnimationFrame(time => animateSlide(contentHeight, animationTime, time, isOpenAction));
     };
 
     React.useEffect(() => {
+        if (!rootNode.current) {
+            return;
+        }
+
+        const { scrollHeight = 0 } = rootNode.current;
+
         switch (true) {
             case !canUpdate.current && isOpened:
-                setHeight('auto');
+                rootNode.current.style.height = 'auto';
+
                 break;
             case !canUpdate.current && !isOpened:
-                setHeight('0px');
+                rootNode.current.style.height = '0px';
+
                 break;
             case isOpened:
-                animateSlide('auto', duration);
+                window.requestAnimationFrame(timePassed => animateSlide(scrollHeight, duration, timePassed, true));
                 break;
             default:
-                animateSlide('0px', BROWSER_DELAY);
+                window.requestAnimationFrame(timePassed => animateSlide(scrollHeight, BROWSER_DELAY, timePassed));
         }
 
         canUpdate.current = true;
-
-        return (): void => clearTimeout(timer.current);
     }, [isOpened, duration]);
 
     return (
-        <div
-            {...filterDataAttrs(dataAttrs?.root)}
-            className={className}
-            style={{ overflow: 'hidden', height, transition }}
-            ref={rootNode}
-        >
+        <div {...filterDataAttrs(dataAttrs?.root)} className={className} style={{ overflow: 'hidden' }} ref={rootNode}>
             <div {...filterDataAttrs(dataAttrs?.inner)} className={classNameContainer}>
                 {children}
             </div>
