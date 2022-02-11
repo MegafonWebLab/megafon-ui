@@ -28,18 +28,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * **textwithicon:** prop items removed, list items are now added by child components
 * **accordionbox:** remove prop hasVerticalPaddings
-* ContentArea: prop color change values from 'base' to 'white' and from 'content' to 'default';
-remove depreacted value 'freshAsphalt'
-Paragraph: prop color change values from 'base' to 'white' and from 'contend' to 'default';
-remove deprecared values 'freshAsphalt' and 'clearWhite'
-StoreBanner: prop theme change value from 'black' to 'default'; remove deprecated value 'clearWhite'
-* ContentArea, Paragraph, StoreBanner and Breadcrumbs components from no don't have
-freshAsphalt and clearWhite as values for colorize props
 * **accordion-box:** remove parameter 'title' in onClickAccordion prop
 * **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
 prefix (e.g. brandGreen)
-* **colors:** read commit description
-
+* **contentarea**: prop color change values from 'base' to 'white' and from 'content' to 'default';
+remove depreacted value 'freshAsphalt'
+* **contentarea**, **paragraph**, **storebanner** and **breadcrumbs** components from no don't have
+'freshAsphalt' and 'clearWhite' as values for colorizing props
+* **storebanner**: prop theme change value from 'black' to 'default'; remove deprecated value 'clearWhite'
+* **components:** for the components to work correctly, now it's needed to import colors.css file
 
 
 
