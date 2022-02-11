@@ -105,32 +105,36 @@
 
     &__close {
         position: absolute;
-        top: 12px;
-        right: 12px;
+        top: 8px;
+        right: 8px;
 
         display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 24px;
+        height: 24px;
         padding: 0;
         border: none;
         border-radius: 50%;
 
-        background: transparent;
-        cursor: pointer;
-    }
-
-    &__close:hover {
         background-color: var(--stcBlack5);
-    }
-
-    &__close-icon {
-        width: 20px;
-        height: 20px;
-
-        fill: var(--content);
+        cursor: pointer;
 
         @media @mobileBU {
+            top: 12px;
+            right: 12px;
+
             width: 32px;
             height: 32px;
         }
+    }
+
+    &__close-icon {
+        width: 10px;
+        height: 10px;
+
+        fill: var(--stcBlack50);
     }
 
     &_type_error {
@@ -186,15 +190,32 @@
             &__icon-container {
                 background-color: var(--stcWhite);
             }
+        }
+    }
 
-            &__close:hover {
+    &_colored&_type_success {
+        background-color: var(--brandGreen20);
+
+        @{b} {
+            &__title,
+            &__text,
+            &__link {
+                color: var(--stcBlack);
+            }
+
+            &__right-arrow {
+                fill: var(--stcBlack);
+            }
+
+            &__icon-container {
                 background-color: var(--stcWhite);
             }
         }
     }
 
-    &_colored&_type_success,
     &_colored&_type_error {
+        background-color: var(--fury80);
+
         @{b} {
             &__title,
             &__text,
@@ -214,14 +235,6 @@
                 }
             }
         }
-    }
-
-    &_colored&_type_success {
-        background-color: var(--brandGreen);
-    }
-
-    &_colored&_type_error {
-        background-color: var(--fury80);
     }
 
     &_colored&_type_info,
