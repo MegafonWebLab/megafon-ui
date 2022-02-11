@@ -17,13 +17,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **colors:** css custom properties and color themes support ([16df5b7](https://github.com/MegafonWebLab/megafon-ui/commit/16df5b7b2644e15bb6c6e49e7347c0f8e4839e58))
 
 
-### BREAKING CHANGES
-
-* **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
-prefix (e.g. brandGreen)
-* **colors:** read commit description
-
-
 
 
 

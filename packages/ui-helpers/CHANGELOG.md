@@ -19,13 +19,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **ui-helpers:** add a11y function to check event is click or enter press ([8ed8e5e](https://github.com/MegafonWebLab/megafon-ui/commit/8ed8e5ee9fc0be112d40337dbe1a3ac45cf57f6f))
 
 
-### BREAKING CHANGES
-
-* **colors:** green, green20, green80, purple, purple20 and purple80 colors now have 'brand'
-prefix (e.g. brandGreen)
-* **colors:** read commit description
-
-
 
 
 
