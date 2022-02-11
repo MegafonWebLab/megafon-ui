@@ -3,22 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [4.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0...@megafon/ui-core@4.0.0) (2022-02-11)
-
-
-### Bug Fixes
-
-* **colors:** fix typo in brandPurple color ([86333ca](https://github.com/MegafonWebLab/megafon-ui/commit/86333ca2fd8039b818360d024fc8857527c42690))
-
-
-### BREAKING CHANGES
-
-* **colors:** beandColor typo fixed. brandColor is correct name
-
-
-
-
-
 # [3.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.5.0...@megafon/ui-core@3.0.0) (2022-02-09)
 
 
