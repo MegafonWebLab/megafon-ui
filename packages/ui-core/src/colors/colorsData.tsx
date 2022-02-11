@@ -119,7 +119,7 @@ const colors: ColorsType = {
                 },
                 {
                     name: 'Button Hov. P.',
-                    code: 'buttonhoverPurple',
+                    code: 'buttonHoverPurple',
                 },
                 {
                     name: 'Button Down',

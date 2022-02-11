@@ -21,7 +21,7 @@ const COLOR_THEMES = {
         systemBlue: '#34AAF2',
         background: '#FFFFFF',
         buttonHoverGreen: '#10E272',
-        buttonhoverPurple: '#534455',
+        buttonHoverPurple: '#A500BF',
         buttonDown: '#404D46',
 
         // Gradients
@@ -82,7 +82,7 @@ const COLOR_THEMES = {
         systemBlue: '#34AAF2',
         background: '#1F1F1F',
         buttonHoverGreen: '#10E272',
-        buttonhoverPurple: '#534455',
+        buttonHoverPurple: '#A500BF',
         buttonDown: '#404D46',
 
         // Gradients
