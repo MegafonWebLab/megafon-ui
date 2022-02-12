@@ -189,6 +189,17 @@ const start = async () => {
             }
         } catch (ex) {
             console.log(`Exception while processing #${pr.number} pull request, ex:`, ex);
+
+            if (ex.output) {
+                console.log(ex.output.toString());
+            }
+            if (ex.stdout) {
+                console.log(ex.stdout.toString());
+            }
+            if (ex.stderr) {
+                console.log(ex.stderr.toString());
+            }
+
             hasErrors = true;
         }
     }
