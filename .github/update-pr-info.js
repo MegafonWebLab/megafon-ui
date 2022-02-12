@@ -117,7 +117,7 @@ const composeNewDescription = (oldBody, currentSha, versions, changelogs) => {
 const getPullRequestDescription = (baseBranch, prNumber, body, currentSha) => {
     execSync(`git fetch origin pull/${prNumber}/head:pr/${prNumber}`);
     execSync(`git checkout -b pr/${prNumber}-merge origin/${baseBranch}`);
-    execSync(`git merge pr/${prNumber} --no-verify --no-edit`)
+    execSync(`git merge pr/${prNumber} --no-verify --no-edit --allow-unrelated-histories`)
     execSync(`yarn exec lerna version -- --allow-branch=pr/"${prNumber}-merge" --conventional-commits --no-git-tag-version --no-push --yes`);
 
     const versions = extractVersions();
