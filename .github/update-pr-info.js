@@ -118,9 +118,9 @@ const composeNewDescription = (oldBody, currentSha, versions, changelogs) => {
     }
 
     if (changelogs) {
-        result += `### Change logs:\n${changelogs}`;
+        result += `### Changelogs:\n${changelogs}`;
     } else {
-        result += `### Change logs:\nNo updates detected.\n`;
+        result += `### Changelogs:\nNo updates detected.\n`;
     }
 
     return result;
@@ -134,9 +134,12 @@ const getPullRequestDescription = (baseBranch, prNumber, body, currentSha) => {
     try {
         execSync(`git merge pr/${prNumber} --no-verify --no-edit --allow-unrelated-histories --no-ff`);
     } catch (ex) {
-        if (!ex?.output?.toString?.()?.includes('CONFLICT')) {
+        if (!ex.output?.toString?.()?.includes('CONFLICT')) {
             throw ex;
         }
+
+        console.log('Process output: ');
+        console.log(ex.output.toString());
 
         return composeConflictDescription(body, currentSha);
     }
