@@ -191,12 +191,17 @@ const start = async () => {
             console.log(`Exception while processing #${pr.number} pull request, ex:`, ex);
 
             if (ex.output) {
+                console.log('Process output: ');
                 console.log(ex.output.toString());
             }
+
             if (ex.stdout) {
+                console.log('Process stdout: ');
                 console.log(ex.stdout.toString());
             }
+
             if (ex.stderr) {
+                console.log('Process stderr: ');
                 console.log(ex.stderr.toString());
             }
 
