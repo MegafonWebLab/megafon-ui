@@ -117,7 +117,7 @@ const composeNewDescription = (oldBody, currentSha, versions, changelogs) => {
 const getPullRequestDescription = (baseBranch, prNumber, body, currentSha) => {
     execSync(`git fetch origin pull/${prNumber}/head:pr/${prNumber}`);
     execSync(`git checkout -b pr/${prNumber}-merge origin/${baseBranch}`);
-    execSync(`git merge pr/${prNumber} --no-verify --no-edit --allow-unrelated-histories`)
+    execSync(`git merge pr/${prNumber} --no-verify --no-edit --allow-unrelated-histories --no-ff`)
     execSync(`yarn exec lerna version -- --allow-branch=pr/"${prNumber}-merge" --conventional-commits --no-git-tag-version --no-push --yes`);
 
     const versions = extractVersions();
@@ -193,16 +193,6 @@ const start = async () => {
             if (ex.output) {
                 console.log('Process output: ');
                 console.log(ex.output.toString());
-            }
-
-            if (ex.stdout) {
-                console.log('Process stdout: ');
-                console.log(ex.stdout.toString());
-            }
-
-            if (ex.stderr) {
-                console.log('Process stderr: ');
-                console.log(ex.stderr.toString());
             }
 
             hasErrors = true;
