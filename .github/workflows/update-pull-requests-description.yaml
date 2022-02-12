@@ -27,5 +27,5 @@ jobs:
         env:
           GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
           GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: 'pr-info'
+          BASE_BRANCH: 'master'
         run: node --experimental-fetch ./.github/update-pr-info.js
