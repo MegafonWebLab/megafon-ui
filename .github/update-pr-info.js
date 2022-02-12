@@ -114,10 +114,11 @@ const composeNewDescription = (oldBody, currentSha, versions, changelogs) => {
     return result;
 }
 
-const getPullRequestDescription = (prNumber, body, currentSha) => {
+const getPullRequestDescription = (baseBranch, prNumber, body, currentSha) => {
     execSync(`git fetch origin pull/${prNumber}/head:pr/${prNumber}`);
-    execSync(`git checkout pr/${prNumber}`);
-    execSync(`yarn exec lerna version -- --allow-branch=pr/"${prNumber}" --conventional-commits --no-git-tag-version --no-push --yes`);
+    execSync(`git checkout -b pr/${prNumber}-merge origin/${baseBranch}`);
+    execSync(`git merge pr/${prNumber} --no-verify`);
+    execSync(`yarn exec lerna version -- --allow-branch=pr/"${prNumber}-merge" --conventional-commits --no-git-tag-version --no-push --yes`);
 
     const versions = extractVersions();
     const changelogs = extractChangelogs();
@@ -172,7 +173,7 @@ const start = async () => {
         if (!lastShaExtract || lastShaExtract.length <= 1 || lastShaExtract[1] !== pr.head.sha) {
             console.log(`Updating pull request #${pr.number} description...`);
 
-            const newDescription = getPullRequestDescription(pr.number, pr.body, pr.head.sha);
+            const newDescription = getPullRequestDescription(envs.baseBranch, pr.number, pr.body, pr.head.sha);
 
             await updatePullRequest(envs.user, envs.repo, envs.baseBranch, pr.number, envs.githubPAT, newDescription);
 
