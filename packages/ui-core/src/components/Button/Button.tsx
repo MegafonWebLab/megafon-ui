@@ -73,7 +73,7 @@ export interface IButtonProps extends IFilterDataAttrs {
     sizeMobile?: ButtonSizesType;
     /** Растянуть на полную ширину контейнера */
     fullWidth?: boolean;
-    /** Показать загрузку */
+    /** Показать загрузку test */
     showLoader?: boolean;
     /** Показать стелку */
     showArrow?: boolean;
