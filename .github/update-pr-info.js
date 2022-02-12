@@ -117,7 +117,10 @@ const composeNewDescription = (oldBody, currentSha, versions, changelogs) => {
 const getPullRequestDescription = (baseBranch, prNumber, body, currentSha) => {
     execSync(`git fetch origin pull/${prNumber}/head:pr/${prNumber}`);
     execSync(`git checkout -b pr/${prNumber}-merge origin/${baseBranch}`);
-    execSync(`git merge pr/${prNumber} --no-verify --allow-unrelated-histories`);
+    const mergeResult = execSync(`git merge pr/${prNumber} --no-verify --allow-unrelated-histories`).toString();
+    console.log('============== 1');
+    console.log(mergeResult);
+    console.log('============== 2');
     execSync(`yarn exec lerna version -- --allow-branch=pr/"${prNumber}-merge" --conventional-commits --no-git-tag-version --no-push --yes`);
 
     const versions = extractVersions();
@@ -168,6 +171,8 @@ const start = async () => {
     execSync(`git config --global user.email "temp@temp.temp"`);
     execSync(`git config --global user.name "temp"`);
 
+    let hasErrors = false;
+
     for(const pr of prs) {
         console.log(`Check pull request #${pr.number}`);
 
@@ -187,10 +192,15 @@ const start = async () => {
             }
         } catch (ex) {
             console.log(`Exception while processing #${pr.number} pull request, ex:`, ex);
+            hasErrors = true;
         }
     }
 
     console.log('Check done.');
+
+    if (hasErrors) {
+        process.exit(1);
+    }
 };
 
 
