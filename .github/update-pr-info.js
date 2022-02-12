@@ -165,6 +165,9 @@ const start = async () => {
         console.log(`${prs.length} open pull request(s) found.`);
     }
 
+    execSync(`git config --global user.email "temp@temp.temp"`);
+    execSync(`git config --global user.name "temp"`);
+
     for(const pr of prs) {
         console.log(`Check pull request #${pr.number}`);
 
