@@ -97,7 +97,9 @@ Tile.propTypes = {
     className: PropTypes.string,
     isInteractive: PropTypes.bool,
     onClick: PropTypes.func,
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
 };
 
 export default Tile;
