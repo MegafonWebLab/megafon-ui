@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.1...@megafon/ui-core@3.0.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **tile:** fixed dataAttrs type in tile component ([d380289](https://github.com/MegafonWebLab/megafon-ui/commit/d3802896c57dc112543c73169c04262f58a29f58))
+
+
+
+
+
 ## [3.0.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0...@megafon/ui-core@3.0.1) (2022-02-11)
 
 
