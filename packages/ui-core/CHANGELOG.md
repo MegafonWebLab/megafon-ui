@@ -76,7 +76,7 @@ remove depreacted value 'freshAsphalt'
 * **contentarea**, **paragraph**, **storebanner** and **breadcrumbs** components from no don't have
 'freshAsphalt' and 'clearWhite' as values for colorizing props
 * **paragraph:** remove from color prop values: 'spbSky0', 'spbSky1', 'spbSky2'
-* **paragraph**: prop color change values from 'base' to 'white' and from 'contend' to 'default';
+* **paragraph**: prop color change values from 'base' to 'white' and from 'content' to 'default';
 remove deprecared values 'freshAsphalt' and 'clearWhite'
 * **storebanner**: prop theme change value from 'black' to 'default'; remove deprecated value 'clearWhite'
 * **tooltip:** change onOpen, onClose types; AccessibilityEventTypeNative from @megafon/ui-helpers
