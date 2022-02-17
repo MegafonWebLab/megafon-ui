@@ -15,6 +15,7 @@ exports[`<Banner /> should render with default props 1`] = `
     onSlideChange={[Function]}
     onSwiper={[Function]}
     onTouchEnd={[Function]}
+    watchSlidesVisibility={true}
   >
     <SwiperSlide
       className="mfui-banner__slide"
@@ -105,6 +106,7 @@ exports[`<Banner /> should render with props 1`] = `
     onSlideChange={[Function]}
     onSwiper={[Function]}
     onTouchEnd={[Function]}
+    watchSlidesVisibility={true}
   >
     <SwiperSlide
       className="mfui-banner__slide slide"

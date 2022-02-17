@@ -2,6 +2,7 @@
 
 @b: e('.mfui-banner');
 @sw: e('.swiper-wrapper');
+@swiperSlideVisible: e('.swiper-slide-visible');
 
 @{b} {
     position: relative;
@@ -19,11 +20,25 @@
         @media @mobileB {
             height: 540px;
         }
+        @media @desktop {
+            backface-visibility: hidden; // fix opacity transition bug in Safari 13
+            opacity: 0;
+
+            transition: opacity 0.2s;
+        }
         @media @desktopS {
             height: 420px;
         }
         @media @desktopMU {
             height: 400px;
+        }
+    }
+
+    @{swiperSlideVisible} {
+        @media @desktop {
+            opacity: 1;
+
+            transition: opacity 0.4s;
         }
     }
 
