@@ -299,6 +299,24 @@ describe('<VideoBanner />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('render component with classes for video', () => {
+            localWindow.innerWidth = 1920;
+            const wrapper = mount(
+                <VideoBanner
+                    imageMobile={imageMobile}
+                    imageTablet={imageTablet}
+                    videoType={VideoType.VIDEO}
+                    videoSrc={video}
+                    content={content}
+                    classes={{
+                        video: 'videoClass',
+                    }}
+                />,
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('render video with sounds enabled', () => {
             localWindow.innerWidth = 1920;
             const wrapper = mount(
