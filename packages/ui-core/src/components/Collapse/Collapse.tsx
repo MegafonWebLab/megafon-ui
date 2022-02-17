@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 
@@ -19,7 +19,10 @@ type CollapseProps = CollapseDefaultProps & {
     children: React.ReactNode;
 };
 
-const BROWSER_DELAY = 100;
+const { sin, cos, min, PI } = Math;
+
+const easeOutSine = (progress: number): number => sin((progress * PI) / 2);
+const easeInSine = (progress: number): number => 1 - cos((progress * PI) / 2);
 
 const Collapse = (props: CollapseProps): React.FunctionComponentElement<CollapseProps> => {
     const {
@@ -35,8 +38,13 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
     const duration: number = animation ? animationDuration : 0;
 
     const animationStart = React.useRef<null | number>(null);
+    const animationId = React.useRef<null | number>(null);
     const canUpdate = React.useRef<boolean>(false);
     const rootNode = React.useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        animationId.current && window.cancelAnimationFrame(animationId.current);
+    }, [isOpened]);
 
     const animateSlide = useCallback(
         (contentHeight: number, animationTime: number, timePassed: number, isOpenAction = false): void => {
@@ -49,23 +57,28 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
             }
 
             const runtime = timePassed - animationStart.current;
-            const progress = animationTime ? Math.min(runtime / animationTime, 1) : 1;
+            const progress = animationTime ? min(runtime / animationTime, 1) : 1;
 
             const isAnimationInProgress = progress < 1;
-            const nextHeight = isOpenAction ? progress * contentHeight : contentHeight - progress * contentHeight;
+            const nextHeight = isOpenAction
+                ? easeOutSine(progress) * contentHeight
+                : contentHeight - easeInSine(progress) * contentHeight;
 
             rootNode.current.style.height = `${nextHeight}px`;
 
             if (isAnimationInProgress) {
-                window.requestAnimationFrame(time => animateSlide(contentHeight, animationTime, time, isOpenAction));
+                animationId.current = window.requestAnimationFrame(time =>
+                    animateSlide(contentHeight, animationTime, time, isOpenAction),
+                );
             } else {
                 animationStart.current = null;
+                animationId.current = null;
             }
         },
         [],
     );
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (!rootNode.current) {
             return;
         }
@@ -82,10 +95,15 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
 
                 break;
             case isOpened:
-                window.requestAnimationFrame(timePassed => animateSlide(scrollHeight, duration, timePassed, true));
+                animationId.current = window.requestAnimationFrame(timePassed =>
+                    animateSlide(scrollHeight, duration, timePassed, true),
+                );
+
                 break;
             default:
-                window.requestAnimationFrame(timePassed => animateSlide(scrollHeight, BROWSER_DELAY, timePassed));
+                animationId.current = window.requestAnimationFrame(timePassed =>
+                    animateSlide(scrollHeight, duration, timePassed),
+                );
         }
 
         canUpdate.current = true;
