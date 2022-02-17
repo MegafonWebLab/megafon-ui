@@ -1,0 +1,31 @@
+name: Update pull requests description
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '*/5 * * * *'
+
+jobs:
+  update:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '17.5'
+
+      - name: Install Lerna
+        run: yarn global add lerna@3
+
+      - name: Run update script
+        env:
+          GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
+          GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: 'master'
+        run: node --experimental-fetch ./.github/update-pr-info.js

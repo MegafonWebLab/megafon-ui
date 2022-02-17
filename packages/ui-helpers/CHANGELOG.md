@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.0...@megafon/ui-helpers@2.0.1) (2022-02-11)
+
+
+### Bug Fixes
+
+* **colors:** fix button hover purple color name and value ([c333348](https://github.com/MegafonWebLab/megafon-ui/commit/c3333489826338f49e4ecb1c1beb07ee9044167e))
+
+
+
+
+
 # [2.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@1.0.0...@megafon/ui-helpers@2.0.0) (2022-02-09)
 
 

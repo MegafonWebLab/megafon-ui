@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.1...@megafon/ui-core@3.0.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **tile:** fixed dataAttrs type in tile component ([d380289](https://github.com/MegafonWebLab/megafon-ui/commit/d3802896c57dc112543c73169c04262f58a29f58))
+
+
+
+
+
+## [3.0.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.0...@megafon/ui-core@3.0.1) (2022-02-11)
+
+
+### Bug Fixes
+
+* **colors:** fix button hover purple color name and value ([c333348](https://github.com/MegafonWebLab/megafon-ui/commit/c3333489826338f49e4ecb1c1beb07ee9044167e))
+* **colors:** fix typo in brandPurple color ([f7bdb49](https://github.com/MegafonWebLab/megafon-ui/commit/f7bdb4956247a4bf2112c130e960a98f8cea0696))
+* **logo:** fix green color for vertical logo ([c9aed9d](https://github.com/MegafonWebLab/megafon-ui/commit/c9aed9db957cb9857cc20afa8dd824e241e12114))
+* **notification:** fix styles ([7d93f3e](https://github.com/MegafonWebLab/megafon-ui/commit/7d93f3ea0e61af9647478af03f84e963d5d52e0f))
+* revert mistake version ([cc8668a](https://github.com/MegafonWebLab/megafon-ui/commit/cc8668a9ff2bc5fde6bf93ca806d4406a5944107))
+
+
+
+
+
 # [3.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@2.5.0...@megafon/ui-core@3.0.0) (2022-02-09)
 
 
