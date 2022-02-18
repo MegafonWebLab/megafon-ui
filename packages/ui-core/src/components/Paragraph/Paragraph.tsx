@@ -34,7 +34,7 @@ const cn = cnCreate('mfui-paragraph');
 const Paragraph: React.FC<IParagraphProps> = ({
     size = 'regular',
     align,
-    color = COLORS.DEFAULT,
+    color = 'default',
     className,
     hasMargin = true,
     dataAttrs,

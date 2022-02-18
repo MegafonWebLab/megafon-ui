@@ -20,7 +20,13 @@ export interface ILogoProps {
 }
 
 const cn = cnCreate('mfui-logo');
-const Logo: React.FC<ILogoProps> = ({ className, color, view, target, href }) => {
+const Logo: React.FC<ILogoProps> = ({
+    className,
+    color = 'green',
+    view = 'horizontal',
+    target = '_blank',
+    href = '/',
+}) => {
     const images = {
         'green-horizontal': greenHorizontalImg,
         'green-vertical': greenVerticalImg,
@@ -42,13 +48,6 @@ Logo.propTypes = {
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
     href: PropTypes.string,
     className: PropTypes.string,
-};
-
-Logo.defaultProps = {
-    color: 'green',
-    view: 'horizontal',
-    target: '_blank',
-    href: '/',
 };
 
 export default Logo;

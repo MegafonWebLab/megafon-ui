@@ -20,8 +20,6 @@ export const DeviceMask = {
     WHITE_IPHONE: 'white-iphone',
 } as const;
 
-const DEFAULT_TEXT_BUTTON = 'Установите приложение';
-
 type DeviceMaskType = typeof DeviceMask[keyof typeof DeviceMask];
 
 type LinkHrefType = StoreButtonPropsType['href'];
@@ -88,10 +86,10 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     linkGoogle,
     linkHuawei,
     linkButton,
-    textButton = DEFAULT_TEXT_BUTTON,
+    textButton = 'Установите приложение',
     qrCode,
     imageSrc,
-    theme = Theme.DEFAULT,
+    theme = 'default',
     deviceMask,
     rootRef,
     dataAttrs,
