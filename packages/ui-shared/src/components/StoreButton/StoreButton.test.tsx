@@ -30,6 +30,12 @@ describe('StoreButton', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render with data-attributes', () => {
+        const wrapper = shallow(<StoreButton {...props} dataAttrs={{ root: { 'data-test-id': 'root-test' } }} />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should call click handler', () => {
         const onClick = jest.fn();
         const wrapper = shallow(<StoreButton {...props} onClick={onClick} />);

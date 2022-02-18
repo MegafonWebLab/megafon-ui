@@ -20,3 +20,17 @@ exports[`StoreButton should render with custom class name 1`] = `
   href="href"
 />
 `;
+
+exports[`StoreButton should render with data-attributes 1`] = `
+<Link
+  className="mfui-store-button mfui-store-button_theme_app-store"
+  dataAttrs={
+    Object {
+      "root": Object {
+        "data-test-id": "root-test",
+      },
+    }
+  }
+  href="href"
+/>
+`;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextLink } from '@megafon/ui-core';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './Breadcrumbs.less';
 
@@ -22,6 +22,10 @@ export const TextColor = {
 type TextColorType = typeof TextColor[keyof typeof TextColor];
 
 export type Props = {
+    dataAttrs?: {
+        root?: Record<string, string>;
+        link?: Record<string, string>;
+    };
     className?: string;
     classes?: { item?: string };
     items: ItemType[];
@@ -37,8 +41,8 @@ function isJSXElement(item: ItemType): item is JSX.Element {
 }
 
 const cn = cnCreate('mfui-breadcrumbs');
-const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, classes = {} }) => (
-    <div className={cn({ color }, className)}>
+const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, classes = {}, dataAttrs }) => (
+    <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ color }, className)}>
         {items.map((item: ItemType, i: number): JSX.Element | null => {
             if (isJSXElement(item)) {
                 return (
@@ -52,7 +56,13 @@ const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, class
                 return (
                     <div className={cn('item', classes.item)} key={item.component ? i : item.title}>
                         {item.component || (
-                            <TextLink href={item.href} color={color}>
+                            <TextLink
+                                href={item.href}
+                                color={color}
+                                dataAttrs={{
+                                    root: dataAttrs?.link ? { ...filterDataAttrs(dataAttrs?.link, i + 1) } : undefined,
+                                }}
+                            >
                                 {item.title}
                             </TextLink>
                         )}
@@ -66,6 +76,10 @@ const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, class
 );
 
 Breadcrumbs.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        link: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
     classes: PropTypes.shape({
         item: PropTypes.string,

@@ -1,5 +1,216 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Partners /> checking setting of data attributes 1`] = `
+<div
+  className="mfui-partners"
+  data-testid="root-test"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+  >
+    <GridColumn
+      all="3"
+      key="0/test-src"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "item-test[1]",
+            },
+          }
+        }
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-partners__tile-inner"
+        >
+          <div
+            className="mfui-partners__img-wrapper"
+          >
+            <img
+              alt="test img"
+              className="mfui-partners__tile-img"
+              src="/test-src"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="1/test-src"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "item-test[2]",
+            },
+          }
+        }
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-partners__tile-inner"
+        >
+          <div
+            className="mfui-partners__img-wrapper"
+          >
+            <img
+              alt="test img"
+              className="mfui-partners__tile-img"
+              src="/test-src"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="2/test-src"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "item-test[3]",
+            },
+          }
+        }
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-partners__tile-inner"
+        >
+          <div
+            className="mfui-partners__img-wrapper"
+          >
+            <img
+              alt="test img"
+              className="mfui-partners__tile-img"
+              src="/test-src"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="3/test-src"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "item-test[4]",
+            },
+          }
+        }
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-partners__tile-inner"
+        >
+          <div
+            className="mfui-partners__img-wrapper"
+          >
+            <img
+              alt="test img"
+              className="mfui-partners__tile-img"
+              src="/test-src"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="4/test-src"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "item-test[5]",
+            },
+          }
+        }
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-partners__tile-inner"
+        >
+          <div
+            className="mfui-partners__img-wrapper"
+          >
+            <img
+              alt="test img"
+              className="mfui-partners__tile-img"
+              src="/test-src"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+    <GridColumn
+      all="3"
+      key="5/test-src"
+      mobile="6"
+    >
+      <Tile
+        className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "item-test[6]",
+            },
+          }
+        }
+        href="#"
+        isInteractive={true}
+        shadowLevel="low"
+      >
+        <div
+          className="mfui-partners__tile-inner"
+        >
+          <div
+            className="mfui-partners__img-wrapper"
+          >
+            <img
+              alt="test img"
+              className="mfui-partners__tile-img"
+              src="/test-src"
+            />
+          </div>
+        </div>
+      </Tile>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<Partners /> should render carousel 1`] = `
 <div
   className="mfui-partners"
@@ -28,6 +239,11 @@ exports[`<Partners /> should render carousel 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -48,6 +264,11 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -73,6 +294,11 @@ exports[`<Partners /> should render carousel 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -93,6 +319,11 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -118,6 +349,11 @@ exports[`<Partners /> should render carousel 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -138,6 +374,11 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -163,6 +404,11 @@ exports[`<Partners /> should render carousel 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -183,6 +429,11 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -208,6 +459,11 @@ exports[`<Partners /> should render carousel 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -228,6 +484,11 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -253,6 +514,11 @@ exports[`<Partners /> should render carousel 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -273,6 +539,11 @@ exports[`<Partners /> should render carousel 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -324,6 +595,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -344,6 +620,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -369,6 +650,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -389,6 +675,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -414,6 +705,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -434,6 +730,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -459,6 +760,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -479,6 +785,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -504,6 +815,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -524,6 +840,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
       </Tile>
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -549,6 +870,11 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -587,6 +913,11 @@ exports[`<Partners /> should render grid 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -613,6 +944,11 @@ exports[`<Partners /> should render grid 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -639,6 +975,11 @@ exports[`<Partners /> should render grid 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -665,6 +1006,11 @@ exports[`<Partners /> should render grid 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -703,6 +1049,11 @@ exports[`<Partners /> should render logotypes without href 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         isInteractive={false}
         shadowLevel="low"
       >
@@ -728,6 +1079,11 @@ exports[`<Partners /> should render logotypes without href 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         isInteractive={false}
         shadowLevel="low"
       >
@@ -753,6 +1109,11 @@ exports[`<Partners /> should render logotypes without href 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         isInteractive={false}
         shadowLevel="low"
       >
@@ -778,6 +1139,11 @@ exports[`<Partners /> should render logotypes without href 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         isInteractive={false}
         shadowLevel="low"
       >
@@ -815,6 +1181,11 @@ exports[`<Partners /> should render with classes props 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -841,6 +1212,11 @@ exports[`<Partners /> should render with classes props 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -867,6 +1243,11 @@ exports[`<Partners /> should render with classes props 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"
@@ -893,6 +1274,11 @@ exports[`<Partners /> should render with classes props 1`] = `
     >
       <Tile
         className="mfui-partners__tile"
+        dataAttrs={
+          Object {
+            "root": Object {},
+          }
+        }
         href="#"
         isInteractive={true}
         shadowLevel="low"

@@ -26,6 +26,7 @@ export interface IButtonBannerProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
+        button?: Record<string, string>;
     };
     /** Дополнительный css класс для корневого элемента */
     className?: string;
@@ -79,6 +80,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
 }) => {
     const buttonElem = (
         <Button
+            dataAttrs={{ root: dataAttrs?.button }}
             className={cn('button', [classes.button])}
             href={buttonUrl}
             target={buttonTarget}
@@ -119,6 +121,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
 ButtonBanner.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     className: PropTypes.string,
     classes: PropTypes.shape({

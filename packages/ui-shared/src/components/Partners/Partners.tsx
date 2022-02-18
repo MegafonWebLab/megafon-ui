@@ -11,6 +11,11 @@ export type ItemType = {
 };
 
 export interface IPartnersProps {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        item?: Record<string, string>;
+    };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -18,8 +23,6 @@ export interface IPartnersProps {
         root?: string;
         itemClass?: string;
     };
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Список логотипов */
@@ -61,7 +64,7 @@ const Partners: React.FC<IPartnersProps> = ({
     onPrevClick,
 }) => {
     const renderItem = React.useCallback(
-        (item?: ItemType) => {
+        (item?: ItemType, index = 0) => {
             if (!item) {
                 return null;
             }
@@ -69,7 +72,13 @@ const Partners: React.FC<IPartnersProps> = ({
             const { src, href, alt } = item;
 
             return (
-                <Tile className={cn('tile')} href={href} shadowLevel="low" isInteractive={!!href}>
+                <Tile
+                    href={href}
+                    shadowLevel="low"
+                    isInteractive={!!href}
+                    className={cn('tile')}
+                    dataAttrs={{ root: { ...filterDataAttrs(dataAttrs?.item, index + 1) } }}
+                >
                     <div className={cn('tile-inner', [itemClass])}>
                         <div className={cn('img-wrapper')}>
                             <img src={src} alt={alt} className={cn('tile-img')} />
@@ -78,7 +87,7 @@ const Partners: React.FC<IPartnersProps> = ({
                 </Tile>
             );
         },
-        [itemClass],
+        [itemClass, dataAttrs?.item],
     );
 
     const renderGrid = React.useCallback(
@@ -86,7 +95,7 @@ const Partners: React.FC<IPartnersProps> = ({
             <Grid guttersLeft="medium" guttersBottom="medium">
                 {items.map((item, i) => (
                     <GridColumn key={i + item.src} all="3" mobile="6">
-                        {renderItem(item)}
+                        {renderItem(item, i)}
                     </GridColumn>
                 ))}
             </Grid>
@@ -108,8 +117,8 @@ const Partners: React.FC<IPartnersProps> = ({
             >
                 {topRow.map((item, i) => (
                     <div key={i + item.src} className={cn('slide')}>
-                        {renderItem(item)}
-                        {renderItem(bottomRow[i])}
+                        {renderItem(item, i)}
+                        {renderItem(bottomRow[i], i)}
                     </div>
                 ))}
             </Carousel>
@@ -117,7 +126,7 @@ const Partners: React.FC<IPartnersProps> = ({
     }, [items, onChange, onNextClick, onPrevClick, renderItem]);
 
     return (
-        <div ref={rootRef} className={cn([root, className])} {...filterDataAttrs(dataAttrs)}>
+        <div ref={rootRef} className={cn([root, className])} {...filterDataAttrs(dataAttrs?.root)}>
             {items.length > MAX_GRID_ITEMS_LENGTH ? renderCarousel() : renderGrid()}
         </div>
     );
@@ -132,7 +141,10 @@ Partners.propTypes = {
         root: PropTypes.string,
         itemClass: PropTypes.string,
     }),
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        item: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
     items: PropTypes.arrayOf(
         PropTypes.shape({

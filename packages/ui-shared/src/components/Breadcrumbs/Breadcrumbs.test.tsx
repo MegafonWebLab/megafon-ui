@@ -27,6 +27,7 @@ describe('Breadcrumbs', () => {
     it('should render with optional props', () => {
         const wrapper = shallow(
             <Breadcrumbs
+                dataAttrs={{ root: { 'data-testid': 'root-test' }, link: { 'data-testid': 'link-test' } }}
                 items={items}
                 className="custom-class-name"
                 classes={{ item: 'item-custom-class-name' }}

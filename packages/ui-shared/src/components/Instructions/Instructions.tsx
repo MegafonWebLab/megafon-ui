@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Ref } from 'react';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import convert from 'htmr';
 import PropTypes from 'prop-types';
 import SwiperCore from 'swiper';
@@ -36,6 +36,13 @@ export type InstructionItemType = {
 };
 
 export interface IInstructionsProps {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        item?: Record<string, string>;
+        image?: Record<string, string>;
+        mobileItemText?: Record<string, string>;
+    };
     /** Ссылка на корневой элемент */
     rootRef?: Ref<HTMLDivElement>;
     /** Дополнительные классы для внутренних элементов */
@@ -66,6 +73,7 @@ export interface IInstructionsProps {
 const cn = cnCreate('mfui-instructions');
 const swiperSlideCn = cn('slide');
 const Instructions: React.FC<IInstructionsProps> = ({
+    dataAttrs,
     rootRef,
     classes: {
         instructionItem,
@@ -115,29 +123,41 @@ const Instructions: React.FC<IInstructionsProps> = ({
     );
 
     const renderVideo = React.useCallback(
-        (mediaUrl: string): JSX.Element => (
-            <video className={cn('swiper-img')} autoPlay muted loop playsInline>
+        (mediaUrl: string, index: number): JSX.Element => (
+            <video
+                loop
+                muted
+                autoPlay
+                playsInline
+                className={cn('swiper-img')}
+                {...filterDataAttrs(dataAttrs?.image, index + 1)}
+            >
                 <source src={mediaUrl} type="video/mp4" />
             </video>
         ),
-        [],
+        [dataAttrs?.image],
     );
 
     const renderSlider = React.useCallback(
         (): JSX.Element => (
             <Swiper className={cn('swiper')} onSwiper={getSwiperInstance} noSwipingClass={swiperSlideCn}>
-                {instructionItems.map(({ mediaUrl, isVideo }, ind) => (
-                    <SwiperSlide className={swiperSlideCn} key={ind + mediaUrl}>
+                {instructionItems.map(({ mediaUrl, isVideo }, i) => (
+                    <SwiperSlide className={swiperSlideCn} key={i + mediaUrl}>
                         {isVideo ? (
-                            renderVideo(mediaUrl)
+                            renderVideo(mediaUrl, i)
                         ) : (
-                            <img className={cn('swiper-img', [instructionItemImg])} src={mediaUrl} alt="" />
+                            <img
+                                alt=""
+                                src={mediaUrl}
+                                {...filterDataAttrs(dataAttrs?.image, i + 1)}
+                                className={cn('swiper-img', [instructionItemImg])}
+                            />
                         )}
                     </SwiperSlide>
                 ))}
             </Swiper>
         ),
-        [getSwiperInstance, instructionItemImg, instructionItems, renderVideo],
+        [getSwiperInstance, instructionItemImg, instructionItems, renderVideo, dataAttrs?.image],
     );
 
     const renderTitle = React.useCallback(
@@ -174,20 +194,21 @@ const Instructions: React.FC<IInstructionsProps> = ({
     const renderDesktopArticles = React.useCallback(
         (): JSX.Element => (
             <ul className={cn('articles-list', { 'text-after': !!text, desktop: true })}>
-                {instructionItems.map(({ title: itemTitle }, ind) => (
+                {instructionItems.map(({ title: itemTitle }, i) => (
                     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
                     <li
-                        className={cn('articles-item', { active: slideIndex === ind }, [
-                            getActiveCustomClass(ind, slideIndex),
+                        {...filterDataAttrs(dataAttrs?.item, i + 1)}
+                        className={cn('articles-item', { active: slideIndex === i }, [
+                            getActiveCustomClass(i, slideIndex),
                             instructionItem,
                             desktopInstructionItem,
                         ])}
-                        data-index={ind}
-                        onClick={handleArticleClick(ind)}
-                        key={ind}
+                        data-index={i}
+                        onClick={handleArticleClick(i)}
+                        key={i}
                     >
                         <div className={cn('articles-item-dot')}>
-                            <span className={cn('articles-item-dot-number')}>{ind + 1}</span>
+                            <span className={cn('articles-item-dot-number')}>{i + 1}</span>
                         </div>
                         <div className={cn('articles-item-title', [desktopItemTitle])}>{itemTitle}</div>
                     </li>
@@ -199,6 +220,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
             desktopItemTitle,
             getActiveCustomClass,
             handleArticleClick,
+            dataAttrs?.item,
             instructionItem,
             instructionItems,
             slideIndex,
@@ -211,45 +233,53 @@ const Instructions: React.FC<IInstructionsProps> = ({
             <div className={cn('articles-list', { mobile: true })}>
                 <div className={cn('articles-title-block')}>
                     {instructionItems.map(
-                        ({ title: itemTitle }, ind) =>
-                            slideIndex === ind && (
-                                <div className={cn('articles-title', [mobileItemTitle])} data-index={ind} key={ind}>
+                        ({ title: itemTitle }, i) =>
+                            slideIndex === i && (
+                                <div
+                                    key={i}
+                                    data-index={i}
+                                    {...filterDataAttrs(dataAttrs?.mobileItemText, i + 1)}
+                                    className={cn('articles-title', [mobileItemTitle])}
+                                >
                                     {itemTitle}
                                 </div>
                             ),
                     )}
                 </div>
                 <ul className={cn('articles-dots', { 'text-after': !!text })}>
-                    {instructionItems.map((_item, ind) => (
+                    {instructionItems.map((_item, i) => (
                         <div
-                            key={ind}
-                            className={cn('articles-dot', { active: slideIndex === ind }, [
-                                getActiveCustomClass(ind, slideIndex),
+                            {...filterDataAttrs(dataAttrs?.item, i + 1)}
+                            key={i}
+                            className={cn('articles-dot', { active: slideIndex === i }, [
+                                getActiveCustomClass(i, slideIndex),
                                 instructionItem,
                                 mobileInstructionItem,
                             ])}
-                            onClick={handleArticleClick(ind)}
+                            onClick={handleArticleClick(i)}
                         >
-                            <span className={cn('articles-dot-number')}>{ind + 1}</span>
+                            <span className={cn('articles-dot-number')}>{i + 1}</span>
                         </div>
                     ))}
                 </ul>
             </div>
         ),
         [
+            dataAttrs?.mobileItemText,
             getActiveCustomClass,
             handleArticleClick,
             instructionItem,
             instructionItems,
             mobileInstructionItem,
             mobileItemTitle,
+            dataAttrs?.item,
             slideIndex,
             text,
         ],
     );
 
     return (
-        <div className={cn({ mask: pictureMask })} ref={rootRef}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ mask: pictureMask })} ref={rootRef}>
             <Grid hAlign="center">
                 <GridColumn all="12">
                     {renderTitle('mobile')}
@@ -269,6 +299,12 @@ const Instructions: React.FC<IInstructionsProps> = ({
 };
 
 Instructions.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        item: PropTypes.objectOf(PropTypes.string.isRequired),
+        image: PropTypes.objectOf(PropTypes.string.isRequired),
+        mobileItemText: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),

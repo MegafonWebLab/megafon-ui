@@ -51,4 +51,16 @@ describe('<PropertyDescription />', () => {
 
         expect(wrapper.getDOMNode().classList.contains('open-custom-class')).toBeTruthy();
     });
+
+    it('should render with data attribute', () => {
+        const wrapper = shallow(
+            <PropertyDescription
+                value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
+                isCollapsible
+                dataAttrs={{ moreLink: { 'data-testid': 'moreLink-test' } }}
+            />,
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
