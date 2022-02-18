@@ -25,6 +25,12 @@ const getCustomItems = (): SearchItem[] => {
 };
 
 const props: ISearchProps = {
+    dataAttrs: {
+        root: { 'data-testid': 'root-test' },
+        searchField: { 'data-testid': 'searchField-test' },
+        submit: { 'data-testid': 'submit-test' },
+        item: { 'data-testid': 'item-test' },
+    },
     value: 'initial value',
     placeholder: 'type to search here',
     items: [{ value: 'title' }, { value: 'title2' }, { value: 'title3' }, { value: 'title4' }],

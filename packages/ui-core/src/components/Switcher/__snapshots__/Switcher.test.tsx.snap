@@ -44,9 +44,10 @@ exports[`<Switcher /> layout should render switcher with default props 1`] = `
 </div>
 `;
 
-exports[`<Switcher /> layout should render switcher with external className 1`] = `
+exports[`<Switcher /> layout should render switcher with external className and data-attributes 1`] = `
 <div
   className="mfui-switcher mfui-switcher_no-touch external-class-name"
+  data-testid="root-test"
   onClick={[Function]}
 >
   <div

@@ -1,11 +1,18 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import IconMinus from '@megafon/ui-icons/system-16-minus_16.svg';
 import IconPlus from '@megafon/ui-icons/system-16-plus_16.svg';
 import * as PropTypes from 'prop-types';
 import './Counter.less';
 
 export interface ICounterProps {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        minus?: Record<string, string>;
+        plus?: Record<string, string>;
+        input?: Record<string, string>;
+    };
     /** Переводит компонент в контролируемое состояние */
     isControlled?: boolean;
     /** Внешнее значение для контролируемого компонента */
@@ -33,6 +40,7 @@ export interface ICounterProps {
 
 const cn = cnCreate('mfui-counter');
 const Counter: React.FC<ICounterProps> = ({
+    dataAttrs,
     isControlled = false,
     value = 0,
     initialValue,
@@ -112,8 +120,9 @@ const Counter: React.FC<ICounterProps> = ({
     );
 
     return (
-        <div className={cn({ disabled }, [className, classes.root])}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ disabled }, [className, classes.root])}>
             <button
+                {...filterDataAttrs(dataAttrs?.minus)}
                 className={cn('btn', { left: true }, classes.buttonMinus)}
                 type="button"
                 disabled={disabled || (isControlled ? value : counter) <= min}
@@ -123,6 +132,7 @@ const Counter: React.FC<ICounterProps> = ({
             </button>
             <div className={cn('input-box')}>
                 <input
+                    {...filterDataAttrs(dataAttrs?.input)}
                     className={cn('input', classes.input)}
                     value={isControlled ? value : counter}
                     onChange={handleInputChange}
@@ -131,6 +141,7 @@ const Counter: React.FC<ICounterProps> = ({
                 />
             </div>
             <button
+                {...filterDataAttrs(dataAttrs?.plus)}
                 className={cn('btn', { right: true }, classes.buttonPlus)}
                 type="button"
                 disabled={disabled || counter >= max || value >= max}
@@ -143,6 +154,12 @@ const Counter: React.FC<ICounterProps> = ({
 };
 
 Counter.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        minus: PropTypes.objectOf(PropTypes.string.isRequired),
+        plus: PropTypes.objectOf(PropTypes.string.isRequired),
+        input: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     isControlled: PropTypes.bool,
     value: PropTypes.number,
     initialValue: PropTypes.number,

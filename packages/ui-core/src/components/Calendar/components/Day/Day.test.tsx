@@ -3,6 +3,9 @@ import { shallow } from 'enzyme';
 import Day, { IDayProps } from './Day';
 
 const props: IDayProps = {
+    dataAttrs: {
+        root: { 'data-testid': 'root' },
+    },
     dayLabel: 'Пн',
     date: new Date(1994, 9, 30),
     focusedDate: new Date(1994, 9, 30),

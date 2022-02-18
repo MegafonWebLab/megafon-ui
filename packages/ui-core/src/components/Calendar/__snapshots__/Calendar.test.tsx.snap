@@ -3,6 +3,25 @@
 exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
 <Calendar
   className="rootClass"
+  dataAttrs={
+    Object {
+      "arrowLeft": Object {
+        "data-testid": "arrowLeft-test",
+      },
+      "arrowRight": Object {
+        "data-testid": "arrowRight-test",
+      },
+      "day": Object {
+        "data-testid": "day-test",
+      },
+      "month": Object {
+        "data-testid": "month-test",
+      },
+      "root": Object {
+        "data-testid": "root",
+      },
+    }
+  }
   endDate={2020-02-14T00:00:00.000Z}
   isSingleDate={true}
   maxBookingDate={2020-02-25T00:00:00.000Z}
@@ -12,8 +31,22 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
 >
   <div
     className="mfui-calendar rootClass"
+    data-testid="root"
   >
     <Month
+      dataAttrs={
+        Object {
+          "arrowLeft": Object {
+            "data-testid": "arrowLeft-test",
+          },
+          "arrowRight": Object {
+            "data-testid": "arrowRight-test",
+          },
+          "root": Object {
+            "data-testid": "month-test",
+          },
+        }
+      }
       goToNextMonth={[Function]}
       goToPreviousMonth={[Function]}
       isNextMonthDisabled={true}
@@ -35,12 +68,14 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
     >
       <div
         className="mfui-month"
+        data-testid="month-test"
       >
         <div
           className="mfui-month__header"
         >
           <test-file-stub
             className="mfui-month__arrow mfui-month__arrow_disabled"
+            data-testid="arrowLeft-test"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -53,6 +88,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           </span>
           <test-file-stub
             className="mfui-month__arrow mfui-month__arrow_disabled"
+            data-testid="arrowRight-test"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -124,6 +160,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             key="4"
           />
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[6]",
+                },
+              }
+            }
             date={2020-02-01T00:00:00.000Z}
             dayLabel="1"
             focusedDate={null}
@@ -150,6 +193,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_first"
+              data-testid="day-test[6]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -165,6 +209,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[7]",
+                },
+              }
+            }
             date={2020-02-02T00:00:00.000Z}
             dayLabel="2"
             focusedDate={null}
@@ -191,6 +242,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_sunday"
+              data-testid="day-test[7]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -206,6 +258,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[8]",
+                },
+              }
+            }
             date={2020-02-03T00:00:00.000Z}
             dayLabel="3"
             focusedDate={null}
@@ -232,6 +291,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_monday"
+              data-testid="day-test[8]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -247,6 +307,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[9]",
+                },
+              }
+            }
             date={2020-02-04T00:00:00.000Z}
             dayLabel="4"
             focusedDate={null}
@@ -273,6 +340,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[9]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -288,6 +356,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[10]",
+                },
+              }
+            }
             date={2020-02-05T00:00:00.000Z}
             dayLabel="5"
             focusedDate={null}
@@ -314,6 +389,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[10]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -329,6 +405,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[11]",
+                },
+              }
+            }
             date={2020-02-06T00:00:00.000Z}
             dayLabel="6"
             focusedDate={null}
@@ -355,6 +438,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[11]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -370,6 +454,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[12]",
+                },
+              }
+            }
             date={2020-02-07T00:00:00.000Z}
             dayLabel="7"
             focusedDate={null}
@@ -396,6 +487,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_active"
+              data-testid="day-test[12]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -411,6 +503,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[13]",
+                },
+              }
+            }
             date={2020-02-08T00:00:00.000Z}
             dayLabel="8"
             focusedDate={null}
@@ -437,6 +536,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[13]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -452,6 +552,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[14]",
+                },
+              }
+            }
             date={2020-02-09T00:00:00.000Z}
             dayLabel="9"
             focusedDate={null}
@@ -478,6 +585,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_sunday"
+              data-testid="day-test[14]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -493,6 +601,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[15]",
+                },
+              }
+            }
             date={2020-02-10T00:00:00.000Z}
             dayLabel="10"
             focusedDate={null}
@@ -519,6 +634,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_monday"
+              data-testid="day-test[15]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -534,6 +650,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[16]",
+                },
+              }
+            }
             date={2020-02-11T00:00:00.000Z}
             dayLabel="11"
             focusedDate={null}
@@ -560,6 +683,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[16]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -575,6 +699,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[17]",
+                },
+              }
+            }
             date={2020-02-12T00:00:00.000Z}
             dayLabel="12"
             focusedDate={null}
@@ -601,6 +732,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[17]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -616,6 +748,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[18]",
+                },
+              }
+            }
             date={2020-02-13T00:00:00.000Z}
             dayLabel="13"
             focusedDate={null}
@@ -642,6 +781,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[18]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -657,6 +797,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[19]",
+                },
+              }
+            }
             date={2020-02-14T00:00:00.000Z}
             dayLabel="14"
             focusedDate={null}
@@ -683,6 +830,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[19]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -698,6 +846,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[20]",
+                },
+              }
+            }
             date={2020-02-15T00:00:00.000Z}
             dayLabel="15"
             focusedDate={null}
@@ -724,6 +879,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[20]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -739,6 +895,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[21]",
+                },
+              }
+            }
             date={2020-02-16T00:00:00.000Z}
             dayLabel="16"
             focusedDate={null}
@@ -765,6 +928,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_sunday"
+              data-testid="day-test[21]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -780,6 +944,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[22]",
+                },
+              }
+            }
             date={2020-02-17T00:00:00.000Z}
             dayLabel="17"
             focusedDate={null}
@@ -806,6 +977,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_monday"
+              data-testid="day-test[22]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -821,6 +993,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[23]",
+                },
+              }
+            }
             date={2020-02-18T00:00:00.000Z}
             dayLabel="18"
             focusedDate={null}
@@ -847,6 +1026,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[23]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -862,6 +1042,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[24]",
+                },
+              }
+            }
             date={2020-02-19T00:00:00.000Z}
             dayLabel="19"
             focusedDate={null}
@@ -888,6 +1075,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[24]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -903,6 +1091,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[25]",
+                },
+              }
+            }
             date={2020-02-20T00:00:00.000Z}
             dayLabel="20"
             focusedDate={null}
@@ -929,6 +1124,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[25]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -944,6 +1140,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[26]",
+                },
+              }
+            }
             date={2020-02-21T00:00:00.000Z}
             dayLabel="21"
             focusedDate={null}
@@ -970,6 +1173,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[26]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -985,6 +1189,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[27]",
+                },
+              }
+            }
             date={2020-02-22T00:00:00.000Z}
             dayLabel="22"
             focusedDate={null}
@@ -1011,6 +1222,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[27]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1026,6 +1238,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[28]",
+                },
+              }
+            }
             date={2020-02-23T00:00:00.000Z}
             dayLabel="23"
             focusedDate={null}
@@ -1052,6 +1271,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_sunday"
+              data-testid="day-test[28]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1067,6 +1287,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[29]",
+                },
+              }
+            }
             date={2020-02-24T00:00:00.000Z}
             dayLabel="24"
             focusedDate={null}
@@ -1093,6 +1320,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_monday"
+              data-testid="day-test[29]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1108,6 +1336,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[30]",
+                },
+              }
+            }
             date={2020-02-25T00:00:00.000Z}
             dayLabel="25"
             focusedDate={null}
@@ -1134,6 +1369,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day"
+              data-testid="day-test[30]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1149,6 +1385,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[31]",
+                },
+              }
+            }
             date={2020-02-26T00:00:00.000Z}
             dayLabel="26"
             focusedDate={null}
@@ -1175,6 +1418,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[31]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1190,6 +1434,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[32]",
+                },
+              }
+            }
             date={2020-02-27T00:00:00.000Z}
             dayLabel="27"
             focusedDate={null}
@@ -1216,6 +1467,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[32]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1231,6 +1483,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[33]",
+                },
+              }
+            }
             date={2020-02-28T00:00:00.000Z}
             dayLabel="28"
             focusedDate={null}
@@ -1257,6 +1516,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[33]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1272,6 +1532,13 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[34]",
+                },
+              }
+            }
             date={2020-02-29T00:00:00.000Z}
             dayLabel="29"
             focusedDate={null}
@@ -1298,6 +1565,7 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_last"
+              data-testid="day-test[34]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1322,6 +1590,25 @@ exports[`<Calendar /> snapshots renders calendar with single date 1`] = `
 exports[`<Calendar /> snapshots renders calendar without chosen dates if they are blocked 1`] = `
 <Calendar
   className="rootClass"
+  dataAttrs={
+    Object {
+      "arrowLeft": Object {
+        "data-testid": "arrowLeft-test",
+      },
+      "arrowRight": Object {
+        "data-testid": "arrowRight-test",
+      },
+      "day": Object {
+        "data-testid": "day-test",
+      },
+      "month": Object {
+        "data-testid": "month-test",
+      },
+      "root": Object {
+        "data-testid": "root",
+      },
+    }
+  }
   endDate={2020-02-27T00:00:00.000Z}
   maxBookingDate={2020-02-25T00:00:00.000Z}
   minBookingDate={2020-02-03T00:00:00.000Z}
@@ -1330,8 +1617,22 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
 >
   <div
     className="mfui-calendar rootClass"
+    data-testid="root"
   >
     <Month
+      dataAttrs={
+        Object {
+          "arrowLeft": Object {
+            "data-testid": "arrowLeft-test",
+          },
+          "arrowRight": Object {
+            "data-testid": "arrowRight-test",
+          },
+          "root": Object {
+            "data-testid": "month-test",
+          },
+        }
+      }
       goToNextMonth={[Function]}
       goToPreviousMonth={[Function]}
       isNextMonthDisabled={false}
@@ -1353,12 +1654,14 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
     >
       <div
         className="mfui-month"
+        data-testid="month-test"
       >
         <div
           className="mfui-month__header"
         >
           <test-file-stub
             className="mfui-month__arrow"
+            data-testid="arrowLeft-test"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -1371,6 +1674,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           </span>
           <test-file-stub
             className="mfui-month__arrow"
+            data-testid="arrowRight-test"
             onClick={[Function]}
             onKeyDown={[Function]}
             role="button"
@@ -1430,6 +1734,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             key="0"
           />
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[2]",
+                },
+              }
+            }
             date={2020-12-01T00:00:00.000Z}
             dayLabel="1"
             focusedDate={null}
@@ -1456,6 +1767,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_first"
+              data-testid="day-test[2]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1471,6 +1783,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[3]",
+                },
+              }
+            }
             date={2020-12-02T00:00:00.000Z}
             dayLabel="2"
             focusedDate={null}
@@ -1497,6 +1816,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[3]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1512,6 +1832,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[4]",
+                },
+              }
+            }
             date={2020-12-03T00:00:00.000Z}
             dayLabel="3"
             focusedDate={null}
@@ -1538,6 +1865,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[4]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1553,6 +1881,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[5]",
+                },
+              }
+            }
             date={2020-12-04T00:00:00.000Z}
             dayLabel="4"
             focusedDate={null}
@@ -1579,6 +1914,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[5]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1594,6 +1930,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[6]",
+                },
+              }
+            }
             date={2020-12-05T00:00:00.000Z}
             dayLabel="5"
             focusedDate={null}
@@ -1620,6 +1963,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[6]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1635,6 +1979,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[7]",
+                },
+              }
+            }
             date={2020-12-06T00:00:00.000Z}
             dayLabel="6"
             focusedDate={null}
@@ -1661,6 +2012,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_sunday"
+              data-testid="day-test[7]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1676,6 +2028,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[8]",
+                },
+              }
+            }
             date={2020-12-07T00:00:00.000Z}
             dayLabel="7"
             focusedDate={null}
@@ -1702,6 +2061,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_monday"
+              data-testid="day-test[8]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1717,6 +2077,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[9]",
+                },
+              }
+            }
             date={2020-12-08T00:00:00.000Z}
             dayLabel="8"
             focusedDate={null}
@@ -1743,6 +2110,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[9]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1758,6 +2126,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[10]",
+                },
+              }
+            }
             date={2020-12-09T00:00:00.000Z}
             dayLabel="9"
             focusedDate={null}
@@ -1784,6 +2159,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[10]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1799,6 +2175,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[11]",
+                },
+              }
+            }
             date={2020-12-10T00:00:00.000Z}
             dayLabel="10"
             focusedDate={null}
@@ -1825,6 +2208,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[11]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1840,6 +2224,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[12]",
+                },
+              }
+            }
             date={2020-12-11T00:00:00.000Z}
             dayLabel="11"
             focusedDate={null}
@@ -1866,6 +2257,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[12]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1881,6 +2273,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[13]",
+                },
+              }
+            }
             date={2020-12-12T00:00:00.000Z}
             dayLabel="12"
             focusedDate={null}
@@ -1907,6 +2306,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[13]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1922,6 +2322,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[14]",
+                },
+              }
+            }
             date={2020-12-13T00:00:00.000Z}
             dayLabel="13"
             focusedDate={null}
@@ -1948,6 +2355,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_sunday"
+              data-testid="day-test[14]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -1963,6 +2371,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[15]",
+                },
+              }
+            }
             date={2020-12-14T00:00:00.000Z}
             dayLabel="14"
             focusedDate={null}
@@ -1989,6 +2404,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_monday"
+              data-testid="day-test[15]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2004,6 +2420,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[16]",
+                },
+              }
+            }
             date={2020-12-15T00:00:00.000Z}
             dayLabel="15"
             focusedDate={null}
@@ -2030,6 +2453,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[16]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2045,6 +2469,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[17]",
+                },
+              }
+            }
             date={2020-12-16T00:00:00.000Z}
             dayLabel="16"
             focusedDate={null}
@@ -2071,6 +2502,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[17]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2086,6 +2518,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[18]",
+                },
+              }
+            }
             date={2020-12-17T00:00:00.000Z}
             dayLabel="17"
             focusedDate={null}
@@ -2112,6 +2551,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[18]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2127,6 +2567,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[19]",
+                },
+              }
+            }
             date={2020-12-18T00:00:00.000Z}
             dayLabel="18"
             focusedDate={null}
@@ -2153,6 +2600,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[19]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2168,6 +2616,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[20]",
+                },
+              }
+            }
             date={2020-12-19T00:00:00.000Z}
             dayLabel="19"
             focusedDate={null}
@@ -2194,6 +2649,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[20]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2209,6 +2665,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[21]",
+                },
+              }
+            }
             date={2020-12-20T00:00:00.000Z}
             dayLabel="20"
             focusedDate={null}
@@ -2235,6 +2698,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_sunday"
+              data-testid="day-test[21]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2250,6 +2714,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[22]",
+                },
+              }
+            }
             date={2020-12-21T00:00:00.000Z}
             dayLabel="21"
             focusedDate={null}
@@ -2276,6 +2747,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_monday"
+              data-testid="day-test[22]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2291,6 +2763,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[23]",
+                },
+              }
+            }
             date={2020-12-22T00:00:00.000Z}
             dayLabel="22"
             focusedDate={null}
@@ -2317,6 +2796,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[23]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2332,6 +2812,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[24]",
+                },
+              }
+            }
             date={2020-12-23T00:00:00.000Z}
             dayLabel="23"
             focusedDate={null}
@@ -2358,6 +2845,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[24]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2373,6 +2861,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[25]",
+                },
+              }
+            }
             date={2020-12-24T00:00:00.000Z}
             dayLabel="24"
             focusedDate={null}
@@ -2399,6 +2894,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[25]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2414,6 +2910,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[26]",
+                },
+              }
+            }
             date={2020-12-25T00:00:00.000Z}
             dayLabel="25"
             focusedDate={null}
@@ -2440,6 +2943,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[26]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2455,6 +2959,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[27]",
+                },
+              }
+            }
             date={2020-12-26T00:00:00.000Z}
             dayLabel="26"
             focusedDate={null}
@@ -2481,6 +2992,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[27]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2496,6 +3008,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[28]",
+                },
+              }
+            }
             date={2020-12-27T00:00:00.000Z}
             dayLabel="27"
             focusedDate={null}
@@ -2522,6 +3041,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_sunday"
+              data-testid="day-test[28]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2537,6 +3057,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[29]",
+                },
+              }
+            }
             date={2020-12-28T00:00:00.000Z}
             dayLabel="28"
             focusedDate={null}
@@ -2563,6 +3090,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_monday"
+              data-testid="day-test[29]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2578,6 +3106,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[30]",
+                },
+              }
+            }
             date={2020-12-29T00:00:00.000Z}
             dayLabel="29"
             focusedDate={null}
@@ -2604,6 +3139,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[30]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2619,6 +3155,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[31]",
+                },
+              }
+            }
             date={2020-12-30T00:00:00.000Z}
             dayLabel="30"
             focusedDate={null}
@@ -2645,6 +3188,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled"
+              data-testid="day-test[31]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2660,6 +3204,13 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
             </button>
           </Day>
           <Day
+            dataAttrs={
+              Object {
+                "root": Object {
+                  "data-testid": "day-test[32]",
+                },
+              }
+            }
             date={2020-12-31T00:00:00.000Z}
             dayLabel="31"
             focusedDate={null}
@@ -2686,6 +3237,7 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
           >
             <button
               className="mfui-day mfui-day_disabled mfui-day_last"
+              data-testid="day-test[32]"
               onClick={[Function]}
               onKeyDown={[Function]}
               onMouseEnter={[Function]}
@@ -2710,8 +3262,22 @@ exports[`<Calendar /> snapshots renders calendar without chosen dates if they ar
 exports[`<Calendar /> snapshots renders with all props 1`] = `
 <div
   className="mfui-calendar rootClass"
+  data-testid="root"
 >
   <Month
+    dataAttrs={
+      Object {
+        "arrowLeft": Object {
+          "data-testid": "arrowLeft-test",
+        },
+        "arrowRight": Object {
+          "data-testid": "arrowRight-test",
+        },
+        "root": Object {
+          "data-testid": "month-test",
+        },
+      }
+    }
     goToNextMonth={[Function]}
     goToPreviousMonth={[Function]}
     isNextMonthDisabled={true}
@@ -2747,6 +3313,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       key="4"
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[6]",
+          },
+        }
+      }
       date={2020-02-01T00:00:00.000Z}
       dayLabel="1"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2772,6 +3345,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[7]",
+          },
+        }
+      }
       date={2020-02-02T00:00:00.000Z}
       dayLabel="2"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2797,6 +3377,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[8]",
+          },
+        }
+      }
       date={2020-02-03T00:00:00.000Z}
       dayLabel="3"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2822,6 +3409,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[9]",
+          },
+        }
+      }
       date={2020-02-04T00:00:00.000Z}
       dayLabel="4"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2847,6 +3441,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[10]",
+          },
+        }
+      }
       date={2020-02-05T00:00:00.000Z}
       dayLabel="5"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2872,6 +3473,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[11]",
+          },
+        }
+      }
       date={2020-02-06T00:00:00.000Z}
       dayLabel="6"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2897,6 +3505,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[12]",
+          },
+        }
+      }
       date={2020-02-07T00:00:00.000Z}
       dayLabel="7"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2922,6 +3537,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[13]",
+          },
+        }
+      }
       date={2020-02-08T00:00:00.000Z}
       dayLabel="8"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2947,6 +3569,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[14]",
+          },
+        }
+      }
       date={2020-02-09T00:00:00.000Z}
       dayLabel="9"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2972,6 +3601,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[15]",
+          },
+        }
+      }
       date={2020-02-10T00:00:00.000Z}
       dayLabel="10"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -2997,6 +3633,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[16]",
+          },
+        }
+      }
       date={2020-02-11T00:00:00.000Z}
       dayLabel="11"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3022,6 +3665,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[17]",
+          },
+        }
+      }
       date={2020-02-12T00:00:00.000Z}
       dayLabel="12"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3047,6 +3697,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[18]",
+          },
+        }
+      }
       date={2020-02-13T00:00:00.000Z}
       dayLabel="13"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3072,6 +3729,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[19]",
+          },
+        }
+      }
       date={2020-02-14T00:00:00.000Z}
       dayLabel="14"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3097,6 +3761,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[20]",
+          },
+        }
+      }
       date={2020-02-15T00:00:00.000Z}
       dayLabel="15"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3122,6 +3793,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[21]",
+          },
+        }
+      }
       date={2020-02-16T00:00:00.000Z}
       dayLabel="16"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3147,6 +3825,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[22]",
+          },
+        }
+      }
       date={2020-02-17T00:00:00.000Z}
       dayLabel="17"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3172,6 +3857,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[23]",
+          },
+        }
+      }
       date={2020-02-18T00:00:00.000Z}
       dayLabel="18"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3197,6 +3889,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[24]",
+          },
+        }
+      }
       date={2020-02-19T00:00:00.000Z}
       dayLabel="19"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3222,6 +3921,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[25]",
+          },
+        }
+      }
       date={2020-02-20T00:00:00.000Z}
       dayLabel="20"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3247,6 +3953,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[26]",
+          },
+        }
+      }
       date={2020-02-21T00:00:00.000Z}
       dayLabel="21"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3272,6 +3985,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[27]",
+          },
+        }
+      }
       date={2020-02-22T00:00:00.000Z}
       dayLabel="22"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3297,6 +4017,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[28]",
+          },
+        }
+      }
       date={2020-02-23T00:00:00.000Z}
       dayLabel="23"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3322,6 +4049,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[29]",
+          },
+        }
+      }
       date={2020-02-24T00:00:00.000Z}
       dayLabel="24"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3347,6 +4081,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[30]",
+          },
+        }
+      }
       date={2020-02-25T00:00:00.000Z}
       dayLabel="25"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3372,6 +4113,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[31]",
+          },
+        }
+      }
       date={2020-02-26T00:00:00.000Z}
       dayLabel="26"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3397,6 +4145,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[32]",
+          },
+        }
+      }
       date={2020-02-27T00:00:00.000Z}
       dayLabel="27"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3422,6 +4177,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[33]",
+          },
+        }
+      }
       date={2020-02-28T00:00:00.000Z}
       dayLabel="28"
       focusedDate={2020-02-07T00:00:00.000Z}
@@ -3447,6 +4209,13 @@ exports[`<Calendar /> snapshots renders with all props 1`] = `
       onResetDates={[Function]}
     />
     <Day
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "day-test[34]",
+          },
+        }
+      }
       date={2020-02-29T00:00:00.000Z}
       dayLabel="29"
       focusedDate={2020-02-07T00:00:00.000Z}

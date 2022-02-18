@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDay } from '@datepicker-react/hooks';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import isFirstDayOfMonth from 'date-fns/isFirstDayOfMonth';
 import isLastDayOfMonth from 'date-fns/isLastDayOfMonth';
 import isMonday from 'date-fns/isMonday';
@@ -9,6 +9,9 @@ import PropTypes from 'prop-types';
 import './Day.less';
 
 export interface IDayPickerProps {
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     isDateSelected: (date: Date) => boolean;
     isDateHovered: (date: Date) => boolean;
     isFirstOrLastSelectedDate: (date: Date) => boolean;
@@ -30,7 +33,7 @@ export type DayType = {
 export type IDayProps = IDayPickerProps & DayType;
 
 const cn = cnCreate('mfui-day');
-const Day: React.FC<IDayProps> = ({ isBetween = false, dayLabel, date, onMouseLeave, ...pickerProps }) => {
+const Day: React.FC<IDayProps> = ({ dataAttrs, isBetween = false, dayLabel, date, onMouseLeave, ...pickerProps }) => {
     const dayRef = React.useRef(null);
 
     const {
@@ -59,6 +62,7 @@ const Day: React.FC<IDayProps> = ({ isBetween = false, dayLabel, date, onMouseLe
 
     return (
         <button
+            {...filterDataAttrs(dataAttrs?.root)}
             onClick={onClick}
             onKeyDown={onKeyDown}
             onMouseEnter={onMouseEnter}
@@ -74,6 +78,9 @@ const Day: React.FC<IDayProps> = ({ isBetween = false, dayLabel, date, onMouseLe
 };
 
 Day.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     dayLabel: PropTypes.string,
     date: PropTypes.instanceOf(Date).isRequired,
     focusedDate: PropTypes.instanceOf(Date),

@@ -1,6 +1,6 @@
 import React, { ReactNode, useState, useEffect, useMemo } from 'react';
 import { FocusedInput, START_DATE, END_DATE, useDatepicker, useMonth } from '@datepicker-react/hooks';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import differenceInDays from 'date-fns/differenceInDays';
 import format from 'date-fns/format';
 import isAfter from 'date-fns/isAfter';
@@ -28,6 +28,14 @@ interface ICalendarState {
 }
 
 export interface ICalendarProps {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        day?: Record<string, string>;
+        month?: Record<string, string>;
+        arrowLeft?: Record<string, string>;
+        arrowRight?: Record<string, string>;
+    };
     /** Переключение календаря в режим выбора одной даты вместо периода */
     isSingleDate?: boolean;
     /** Классы для модификации компонента */
@@ -50,6 +58,7 @@ const monthLabelFormat = (date: Date): string => formatDate(date, 'LLLL');
 
 const cn = cnCreate('mfui-calendar');
 const Calendar: React.FC<ICalendarProps> = ({
+    dataAttrs,
     isSingleDate = false,
     startDate = null,
     endDate = null,
@@ -185,6 +194,9 @@ const Calendar: React.FC<ICalendarProps> = ({
 
                 return (
                     <Day
+                        dataAttrs={{
+                            root: { ...filterDataAttrs(dataAttrs?.day, index + 1) },
+                        }}
                         date={date}
                         key={formatDate(date, 'dd-MM-yyyy')}
                         dayLabel={dayLabel}
@@ -217,6 +229,11 @@ const Calendar: React.FC<ICalendarProps> = ({
 
             return (
                 <Month
+                    dataAttrs={{
+                        root: dataAttrs?.month,
+                        arrowLeft: dataAttrs?.arrowLeft,
+                        arrowRight: dataAttrs?.arrowRight,
+                    }}
                     key={`${year}-${month}`}
                     year={year}
                     weekdayLabels={weekdayLabels}
@@ -231,10 +248,21 @@ const Calendar: React.FC<ICalendarProps> = ({
             );
         });
 
-    return <div className={cn([className])}>{renderMonths()}</div>;
+    return (
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className])}>
+            {renderMonths()}
+        </div>
+    );
 };
 
 Calendar.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        day: PropTypes.objectOf(PropTypes.string.isRequired),
+        month: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowLeft: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowRight: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     isSingleDate: PropTypes.bool,
     className: PropTypes.string,
     startDate: PropTypes.instanceOf(Date),

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FirstDayOfWeek, MonthType } from '@datepicker-react/hooks';
-import { AccessibilityEventType, checkEventIsClickOrEnterPress, cnCreate } from '@megafon/ui-helpers';
+import { AccessibilityEventType, checkEventIsClickOrEnterPress, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow-list_left_16.svg';
 import ArrowRight from '@megafon/ui-icons/system-16-arrow-list_right_16.svg';
 import './Month.less';
@@ -14,6 +14,11 @@ export interface IMonthPickerProps {
 }
 
 export interface IMonthProps {
+    dataAttrs?: {
+        root?: Record<string, string>;
+        arrowLeft?: Record<string, string>;
+        arrowRight?: Record<string, string>;
+    };
     isPrevMonthDisabled: boolean;
     isNextMonthDisabled: boolean;
     year: number;
@@ -25,6 +30,7 @@ export interface IMonthProps {
 
 const cn = cnCreate('mfui-month');
 const Month: React.FC<IMonthProps> = ({
+    dataAttrs,
     isPrevMonthDisabled,
     isNextMonthDisabled,
     year,
@@ -54,9 +60,10 @@ const Month: React.FC<IMonthProps> = ({
     };
 
     return (
-        <div className={cn()}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn()}>
             <div className={cn('header')}>
                 <ArrowLeft
+                    {...filterDataAttrs(dataAttrs?.arrowLeft)}
                     role="button"
                     tabIndex={getTabIndex(!isPrevMonthDisabled)}
                     className={cn('arrow', { disabled: isPrevMonthDisabled })}
@@ -65,6 +72,7 @@ const Month: React.FC<IMonthProps> = ({
                 />
                 <span className={cn('title')}>{`${monthLabel} ${year}`}</span>
                 <ArrowRight
+                    {...filterDataAttrs(dataAttrs?.arrowRight)}
                     role="button"
                     tabIndex={getTabIndex(!isNextMonthDisabled)}
                     className={cn('arrow', { disabled: isNextMonthDisabled })}
@@ -85,6 +93,11 @@ const Month: React.FC<IMonthProps> = ({
 };
 
 Month.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowLeft: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrowRight: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     isPrevMonthDisabled: PropTypes.bool.isRequired,
     isNextMonthDisabled: PropTypes.bool.isRequired,
     year: PropTypes.number.isRequired,
