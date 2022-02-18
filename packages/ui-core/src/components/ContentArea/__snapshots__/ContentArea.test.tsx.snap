@@ -2,10 +2,10 @@
 
 exports[`<ContentArea /> render component when innerBackgroundColor with default 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_default"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_default"
   >
     some content
   </div>
@@ -14,10 +14,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with default
 
 exports[`<ContentArea /> render component when innerBackgroundColor with green 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_green"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_green"
   >
     some content
   </div>
@@ -26,10 +26,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with green 1
 
 exports[`<ContentArea /> render component when innerBackgroundColor with purple 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_purple"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_purple"
   >
     some content
   </div>
@@ -38,10 +38,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with purple 
 
 exports[`<ContentArea /> render component when innerBackgroundColor with spbSky0 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_spbSky0"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_spbSky0"
   >
     some content
   </div>
@@ -50,10 +50,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with spbSky0
 
 exports[`<ContentArea /> render component when innerBackgroundColor with spbSky1 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_spbSky1"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_spbSky1"
   >
     some content
   </div>
@@ -62,10 +62,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with spbSky1
 
 exports[`<ContentArea /> render component when innerBackgroundColor with spbSky2 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_spbSky2"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_spbSky2"
   >
     some content
   </div>
@@ -74,10 +74,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with spbSky2
 
 exports[`<ContentArea /> render component when innerBackgroundColor with transparent 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -86,10 +86,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with transpa
 
 exports[`<ContentArea /> render component when innerBackgroundColor with white 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_white"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_white"
   >
     some content
   </div>
@@ -98,10 +98,10 @@ exports[`<ContentArea /> render component when innerBackgroundColor with white 1
 
 exports[`<ContentArea /> render component when outerBackgroundColor with default 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_default"
+  className="mfui-content-area mfui-content-area_background-color_default"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -110,10 +110,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with default
 
 exports[`<ContentArea /> render component when outerBackgroundColor with green 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_green"
+  className="mfui-content-area mfui-content-area_background-color_green"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -122,10 +122,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with green 1
 
 exports[`<ContentArea /> render component when outerBackgroundColor with purple 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_purple"
+  className="mfui-content-area mfui-content-area_background-color_purple"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -134,10 +134,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with purple 
 
 exports[`<ContentArea /> render component when outerBackgroundColor with spbSky0 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_spbSky0"
+  className="mfui-content-area mfui-content-area_background-color_spbSky0"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -146,10 +146,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with spbSky0
 
 exports[`<ContentArea /> render component when outerBackgroundColor with spbSky1 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_spbSky1"
+  className="mfui-content-area mfui-content-area_background-color_spbSky1"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -158,10 +158,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with spbSky1
 
 exports[`<ContentArea /> render component when outerBackgroundColor with spbSky2 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_spbSky2"
+  className="mfui-content-area mfui-content-area_background-color_spbSky2"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -170,10 +170,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with spbSky2
 
 exports[`<ContentArea /> render component when outerBackgroundColor with transparent 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -182,10 +182,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with transpa
 
 exports[`<ContentArea /> render component when outerBackgroundColor with white 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_white"
+  className="mfui-content-area mfui-content-area_background-color_white"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>
@@ -194,10 +194,10 @@ exports[`<ContentArea /> render component when outerBackgroundColor with white 1
 
 exports[`<ContentArea /> renders correctly with custom props 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_white className rootClass"
+  className="mfui-content-area mfui-content-area_background-color_white className rootClass"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_disable-indents_all mfui-content-area__inner_color_white innerClass"
+    className="mfui-content-area__inner mfui-content-area__inner_disable-indents_all mfui-content-area__inner_background-color_white innerClass"
   >
     <span>
       child
@@ -208,10 +208,10 @@ exports[`<ContentArea /> renders correctly with custom props 1`] = `
 
 exports[`<ContentArea /> renders correctly with default props 1`] = `
 <div
-  className="mfui-content-area mfui-content-area_color_transparent"
+  className="mfui-content-area mfui-content-area_background-color_transparent"
 >
   <div
-    className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     <span>
       child
