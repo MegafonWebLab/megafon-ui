@@ -14,11 +14,8 @@ exports[`DownloadLink render component 1`] = `
   <div>
     <TextLink
       className="mfui-download-link__link"
-      color="blue"
       download={true}
       href="href"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       text
     </TextLink>
@@ -45,11 +42,8 @@ exports[`DownloadLink render with custom classes 1`] = `
   <div>
     <TextLink
       className="mfui-download-link__link link-class"
-      color="blue"
       download={true}
       href="href"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       text
     </TextLink>
