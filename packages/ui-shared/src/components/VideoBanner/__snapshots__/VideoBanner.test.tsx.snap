@@ -4,10 +4,7 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -89,10 +86,7 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
               </Button>
               <TextLink
                 className="mfui-video-banner__link"
-                color="blue"
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -117,10 +111,7 @@ exports[`<VideoBanner /> render component with classes 1`] = `
 <div
   className="mfui-video-banner className rootClass"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -178,10 +169,7 @@ exports[`<VideoBanner /> render component with classes 1`] = `
               </Button>
               <TextLink
                 className="mfui-video-banner__link linkClass"
-                color="blue"
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -206,10 +194,7 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -267,10 +252,7 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
               </Button>
               <TextLink
                 className="mfui-video-banner__link"
-                color="blue"
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -295,10 +277,7 @@ exports[`<VideoBanner /> render component with pictures 1`] = `
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -319,10 +298,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -380,10 +356,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
               </Button>
               <TextLink
                 className="mfui-video-banner__link"
-                color="blue"
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -408,10 +381,7 @@ exports[`<VideoBanner /> render component with pictures and download links conte
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -470,11 +440,8 @@ exports[`<VideoBanner /> render component with pictures and download links conte
               </Button>
               <TextLink
                 className="mfui-video-banner__link"
-                color="blue"
                 download={true}
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -499,10 +466,7 @@ exports[`<VideoBanner /> render component with pictures and non default content 
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -560,10 +524,7 @@ exports[`<VideoBanner /> render component with pictures and non default content 
               </Button>
               <TextLink
                 className="mfui-video-banner__link"
-                color="blue"
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -588,10 +549,7 @@ exports[`<VideoBanner /> render component with the different content text color 
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -649,10 +607,7 @@ exports[`<VideoBanner /> render component with the different content text color 
               </Button>
               <TextLink
                 className="mfui-video-banner__link"
-                color="blue"
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -677,10 +632,7 @@ exports[`<VideoBanner /> render component without button 1`] = `
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
@@ -731,10 +683,7 @@ exports[`<VideoBanner /> render component without button 1`] = `
             >
               <TextLink
                 className="mfui-video-banner__link"
-                color="blue"
                 href="#"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 Личный кабинет услуги
               </TextLink>
@@ -765,15 +714,12 @@ exports[`<VideoBanner /> tests with local window render desktop image on relevan
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -804,15 +750,12 @@ exports[`<VideoBanner /> tests with local window render mobile image on relevant
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -843,15 +786,12 @@ exports[`<VideoBanner /> tests with local window render tablet image on relevant
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -883,15 +823,12 @@ exports[`<VideoBanner /> tests with local window render video with sounds enable
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -925,15 +862,12 @@ exports[`<VideoBanner /> tests with local window render wide desktop image on re
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -964,15 +898,12 @@ exports[`<VideoBanner /> tests with local window render with video 1`] = `
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -1017,15 +948,12 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -1132,10 +1060,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                           </Button>
                           <TextLink
                             className="mfui-video-banner__link"
-                            color="blue"
                             href="#"
-                            underlineStyle="solid"
-                            underlineVisibility="hover"
                           >
                             <Link
                               className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-video-banner__link"
@@ -1185,15 +1110,12 @@ exports[`<VideoBanner /> tests with local window render with youtube video 1`] =
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -1226,15 +1148,12 @@ exports[`<VideoBanner /> tests with local window render youtube video with sound
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -1266,15 +1185,12 @@ exports[`<VideoBanner /> tests with local window should not render background im
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -1300,10 +1216,7 @@ exports[`<VideoBanner /> tests with local window should not render video on mobi
 <div
   className="mfui-video-banner"
 >
-  <ContentArea
-    innerBackgroundColor="transparent"
-    outerBackgroundColor="transparent"
-  >
+  <ContentArea>
     <div
       className="mfui-video-banner__wrapper"
     >
