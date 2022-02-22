@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -67,11 +67,12 @@ jobs:
       - name: Tests
         run: yarn test
 
-      - name: Define branch purpose
+      - name: Define release conditions
         id: branch
         run: |
           if
           [ ${{ contains(github.event.head_commit.message, 'skip release') }} = false ] &&
+          [ ${{ github.event_name }} != pull_request ] &&
           [ ${{ github.repository_owner }} = ${{ env.BASE_REPO_OWNER }} ] &&
           [ ${{ github.ref }} = refs/heads/${{ env.BASE_BRANCH }} ];
           then
@@ -101,3 +102,21 @@ jobs:
         run: yarn exec lerna publish -- --yes
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+
+      - name: Generate release info
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          PULL_REQUEST_NUMBER: ${{ github.event.number }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PULL_REQUEST_BODY: ${{ github.event.pull_request.body }}
+        run: node ./.github/get-release-info.js
+
+      - name: Upload release info to artifacts
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: pr-release-info
+          path: ./release-info-${{ github.event.number }}.txt
+          if-no-files-found: ignore
+          retention-days: 1
