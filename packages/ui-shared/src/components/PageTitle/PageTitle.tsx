@@ -1,11 +1,17 @@
 import * as React from 'react';
 import { Header, Grid, GridColumn } from '@megafon/ui-core';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './PageTitle.less';
 import Breadcrumbs, { Props as BreadcrumbsType } from '../Breadcrumbs/Breadcrumbs';
 
 type Props = {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        breadcrumbs?: Record<string, string>;
+        breadcrumbsLink?: Record<string, string>;
+    };
     /** Текст заголовка */
     title: string | React.ReactNode | React.ReactNode[];
     /** Хлебные крошки */
@@ -26,6 +32,7 @@ type Props = {
 
 const cn = cnCreate('mfui-page-title');
 const PageTitle: React.FC<Props> = ({
+    dataAttrs,
     title,
     breadcrumbs,
     badge,
@@ -60,9 +67,13 @@ const PageTitle: React.FC<Props> = ({
     );
 
     return (
-        <div className={cn([className])} ref={rootRef}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className])} ref={rootRef}>
             {breadcrumbs?.length && (
-                <Breadcrumbs items={breadcrumbs} className={cn('breadcrumbs', [classes.breadcrumbs])} />
+                <Breadcrumbs
+                    items={breadcrumbs}
+                    dataAttrs={{ root: dataAttrs?.breadcrumbs, link: dataAttrs?.breadcrumbsLink }}
+                    className={cn('breadcrumbs', [classes.breadcrumbs])}
+                />
             )}
             {isFullWidth ? renderPageTitle() : renderPageTitleWithGrid()}
         </div>
@@ -70,6 +81,11 @@ const PageTitle: React.FC<Props> = ({
 };
 
 PageTitle.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        breadcrumbs: PropTypes.objectOf(PropTypes.string.isRequired),
+        breadcrumbsLink: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     breadcrumbs: PropTypes.arrayOf(
         PropTypes.shape({

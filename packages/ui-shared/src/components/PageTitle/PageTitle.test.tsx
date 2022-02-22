@@ -34,6 +34,11 @@ describe('PageTitle', () => {
                 badge={badge}
                 className="custom-class-name"
                 classes={{ breadcrumbs: 'breadcrumbs-custom-class-name' }}
+                dataAttrs={{
+                    root: { 'data-testid': 'root-test' },
+                    breadcrumbs: { 'data-testid': 'breadcrumbs-test' },
+                    breadcrumbsLink: { 'data-testid': 'breadcrumbsLink-test' },
+                }}
             />,
         );
 

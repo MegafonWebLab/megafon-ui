@@ -1,8 +1,13 @@
 import * as React from 'react';
-import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
+import * as PropTypes from 'prop-types';
 import './Switcher.less';
 
 export interface ISwitcherProps {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Управление состоянием вкл/выкл компонента */
@@ -14,9 +19,7 @@ export interface ISwitcherProps {
 }
 
 const cn = cnCreate('mfui-switcher');
-const Switcher: React.FC<ISwitcherProps> = props => {
-    const { className, checked = false, disabled = false, onChange } = props;
-
+const Switcher: React.FC<ISwitcherProps> = ({ dataAttrs, className, checked = false, disabled = false, onChange }) => {
     const isTouch: boolean = detectTouch();
 
     const handleChange = (e: React.MouseEvent<HTMLDivElement>): void => {
@@ -29,6 +32,7 @@ const Switcher: React.FC<ISwitcherProps> = props => {
 
     return (
         <div
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn(
                 {
                     checked,
@@ -42,6 +46,16 @@ const Switcher: React.FC<ISwitcherProps> = props => {
             <div className={cn('pointer')} />
         </div>
     );
+};
+
+Switcher.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
+    className: PropTypes.string,
+    checked: PropTypes.bool,
+    disabled: PropTypes.bool,
+    onChange: PropTypes.func,
 };
 
 export default Switcher;

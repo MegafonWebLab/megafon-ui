@@ -123,10 +123,20 @@ describe('<VideoBanner />', () => {
 
     it('render component with dataAttrs', () => {
         const wrapper = shallow(
-            <VideoBanner imageMobile={imageMobile} imageTablet={imageTablet} dataAttrs={{ 'data-test': 'value' }} />,
+            <VideoBanner
+                imageMobile={imageMobile}
+                imageTablet={imageTablet}
+                dataAttrs={{
+                    root: { 'data-testid': 'root-test' },
+                    breadcrumbs: { 'data-testid': 'breadcrumbs-test' },
+                    breadcrumbsLink: { 'data-testid': 'breadcrumbsLink-test' },
+                    button: { 'data-testid': 'button-test' },
+                    link: { 'data-testid': 'link-test' },
+                }}
+            />,
         );
 
-        expect(wrapper.first().prop('data-test')).toEqual('value');
+        expect(wrapper).toMatchSnapshot();
     });
 
     it('render component with pictures and non default content text color', () => {

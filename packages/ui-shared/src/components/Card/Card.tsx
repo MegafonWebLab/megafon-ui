@@ -33,8 +33,12 @@ export const ObjectFit = {
 type ObjectFitType = typeof ObjectFit[keyof typeof ObjectFit];
 
 export interface ICard {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        link?: Record<string, string>;
+        button?: Record<string, string>;
+    };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -126,11 +130,17 @@ const Card: React.FC<ICard> = ({
         }
 
         return (
-            <TextLink className={cn('link', [classes.link])} href={linkHref} target={linkTarget} download={download}>
+            <TextLink
+                href={linkHref}
+                download={download}
+                target={linkTarget}
+                dataAttrs={{ root: dataAttrs?.link }}
+                className={cn('link', [classes.link])}
+            >
                 {linkTitle}
             </TextLink>
         );
-    }, [link, isCardLink, classes]);
+    }, [link, isCardLink, classes, dataAttrs?.link]);
 
     const renderBtn = React.useCallback(() => {
         if (!button || isCardLink) {
@@ -141,6 +151,7 @@ const Card: React.FC<ICard> = ({
 
         return (
             <Button
+                dataAttrs={{ root: dataAttrs?.button }}
                 className={cn('button', [classes.button])}
                 href={btnHref}
                 target={btnTarget}
@@ -149,7 +160,7 @@ const Card: React.FC<ICard> = ({
                 {btnTitle}
             </Button>
         );
-    }, [button, isCardLink, classes]);
+    }, [button, isCardLink, classes, dataAttrs?.button]);
 
     const renderBtnsWrapper = React.useCallback(() => {
         const btnElem = renderBtn();
@@ -169,7 +180,7 @@ const Card: React.FC<ICard> = ({
 
     return (
         <div
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
             className={cn(
                 '',
                 {
@@ -196,7 +207,11 @@ const Card: React.FC<ICard> = ({
 };
 
 Card.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        link: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,

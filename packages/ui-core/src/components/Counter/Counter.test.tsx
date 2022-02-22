@@ -3,6 +3,12 @@ import { shallow, mount } from 'enzyme';
 import Counter, { ICounterProps } from './Counter';
 
 const props: ICounterProps = {
+    dataAttrs: {
+        root: { 'data-testid': 'root-test' },
+        minus: { 'data-testid': 'minus-test' },
+        plus: { 'data-testid': 'plus-test' },
+        input: { 'data-testid': 'input-test' },
+    },
     initialValue: 10,
     min: 3,
     max: 33,

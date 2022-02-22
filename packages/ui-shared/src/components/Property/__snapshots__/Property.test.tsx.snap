@@ -96,6 +96,11 @@ exports[`<Property /> should render title and description 1`] = `
                         "toggle": undefined,
                       }
                     }
+                    dataAttrs={
+                      Object {
+                        "moreLink": undefined,
+                      }
+                    }
                     value="Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка"
                   />
                 </div>
@@ -154,6 +159,11 @@ exports[`<Property /> should render title and hidden description 1`] = `
                       Object {
                         "open": undefined,
                         "toggle": undefined,
+                      }
+                    }
+                    dataAttrs={
+                      Object {
+                        "moreLink": undefined,
                       }
                     }
                     isCollapsible={true}
@@ -444,6 +454,11 @@ exports[`<Property /> should render with custom class names 1`] = `
                         "toggle": "toggle-description-custom-class",
                       }
                     }
+                    dataAttrs={
+                      Object {
+                        "moreLink": undefined,
+                      }
+                    }
                     isCollapsible={true}
                     value="Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно."
                   />
@@ -470,7 +485,7 @@ exports[`<Property /> should render with custom class names 1`] = `
 exports[`<Property /> should render with data attribute 1`] = `
 <div
   className="mfui-property"
-  data-test="value"
+  data-testid="root-test"
 >
   <Grid>
     <GridColumn
@@ -628,6 +643,11 @@ exports[`<Property /> should render with several descriptions 1`] = `
                         "toggle": undefined,
                       }
                     }
+                    dataAttrs={
+                      Object {
+                        "moreLink": undefined,
+                      }
+                    }
                     value="После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно."
                   />
                 </div>
@@ -640,6 +660,11 @@ exports[`<Property /> should render with several descriptions 1`] = `
                       Object {
                         "open": undefined,
                         "toggle": undefined,
+                      }
+                    }
+                    dataAttrs={
+                      Object {
+                        "moreLink": undefined,
                       }
                     }
                     isCollapsible={true}

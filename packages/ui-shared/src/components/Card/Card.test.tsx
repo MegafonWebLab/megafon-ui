@@ -21,6 +21,11 @@ const link = {
 };
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 const classes = { root: 'rootClass', button: 'buttonClass', link: 'linkClass', inner: 'innerClass' };
+const dataAttrs = {
+    root: { 'data-testid': 'root-test' },
+    link: { 'data-testid': 'link-test' },
+    button: { 'data-testid': 'button-test' },
+};
 const imageSrc = '/test-src';
 
 describe('Card', () => {
@@ -39,7 +44,7 @@ describe('Card', () => {
                 link={link}
                 classes={classes}
                 className="className"
-                dataAttrs={{ 'data-test': 'value' }}
+                dataAttrs={dataAttrs}
                 isCenteredText
             />,
         );

@@ -87,9 +87,13 @@ describe('<Partners />', () => {
     });
 
     it('checking setting of data attributes', () => {
-        const testAttrValue = 'data-test';
-        const wrapper = shallow(<Partners items={generateItems(12, '#')} dataAttrs={{ 'data-test': testAttrValue }} />);
+        const wrapper = shallow(
+            <Partners
+                items={generateItems(6, '#')}
+                dataAttrs={{ root: { 'data-testid': 'root-test' }, item: { 'data-testid': 'item-test' } }}
+            />,
+        );
 
-        expect(wrapper.prop('data-test')).toEqual(testAttrValue);
+        expect(wrapper).toMatchSnapshot();
     });
 });

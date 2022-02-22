@@ -17,6 +17,11 @@ const enterEvent = {
 } as React.KeyboardEvent;
 
 const props: IMonthProps = {
+    dataAttrs: {
+        root: { 'data-testid': 'root-test' },
+        arrowLeft: { 'data-testid': 'arrowLeft-test' },
+        arrowRight: { 'data-testid': 'arrowRight-test' },
+    },
     isNextMonthDisabled: false,
     isPrevMonthDisabled: false,
     year: 1994,

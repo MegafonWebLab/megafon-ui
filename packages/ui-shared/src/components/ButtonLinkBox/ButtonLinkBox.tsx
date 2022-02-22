@@ -8,6 +8,8 @@ export interface IButtonLinkBoxProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
+        link?: Record<string, string>;
+        button?: Record<string, string>;
     };
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -72,6 +74,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
         {buttonTitle && (
             <div className={cn('row')}>
                 <Button
+                    dataAttrs={{ root: dataAttrs?.button }}
                     className={classes.button}
                     href={buttonUrl}
                     theme={buttonColor}
@@ -86,6 +89,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
         {linkTitle && (
             <div className={cn('row')}>
                 <TextLink
+                    dataAttrs={{ root: dataAttrs?.link }}
                     className={classes.link}
                     href={linkUrl}
                     download={linkDownload}
@@ -103,6 +107,8 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
 ButtonLinkBox.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        link: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     className: PropTypes.string,
     classes: PropTypes.shape({

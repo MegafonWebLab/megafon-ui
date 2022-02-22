@@ -38,6 +38,22 @@ describe('<Instructions />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render with data-attributes', () => {
+            const wrapper = shallow(
+                <Instructions
+                    {...props}
+                    dataAttrs={{
+                        root: { 'data-testid': 'root-test' },
+                        item: { 'data-testid': 'item-test' },
+                        image: { 'data-testid': 'image-test' },
+                        mobileItemText: { 'data-testid': 'mobileItemText-test' },
+                    }}
+                />,
+            );
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should render with right side picture', () => {
             const newProps = {
                 ...props,
@@ -95,6 +111,22 @@ describe('<Instructions />', () => {
 
         it('should render with default props', () => {
             const wrapper = mount(<Instructions {...props} />);
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render with data-attributes', () => {
+            const wrapper = shallow(
+                <Instructions
+                    {...props}
+                    dataAttrs={{
+                        root: { 'data-testid': 'root-test' },
+                        item: { 'data-testid': 'item-test' },
+                        image: { 'data-testid': 'image-test' },
+                        mobileItemText: { 'data-testid': 'mobileItemText-test' },
+                    }}
+                />,
+            );
 
             expect(wrapper).toMatchSnapshot();
         });

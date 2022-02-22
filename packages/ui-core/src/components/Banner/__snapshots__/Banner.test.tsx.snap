@@ -36,12 +36,22 @@ exports[`<Banner /> should render with default props 1`] = `
   </Swiper>
   <NavArrow
     className="mfui-banner__arrow mfui-banner__arrow_prev"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={true}
     onClick={[Function]}
     theme="purple"
   />
   <NavArrow
     className="mfui-banner__arrow mfui-banner__arrow_next"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="purple"
@@ -129,14 +139,26 @@ exports[`<Banner /> should render with props 1`] = `
   </Swiper>
   <NavArrow
     className="mfui-banner__arrow mfui-banner__arrow_prev arrows"
-    data-arrow-prev="test-id"
+    dataAttrs={
+      Object {
+        "root": Object {
+          "data-arrow-prev": "test-id",
+        },
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="dark"
   />
   <NavArrow
     className="mfui-banner__arrow mfui-banner__arrow_next arrows"
-    data-arrow-next="test-id"
+    dataAttrs={
+      Object {
+        "root": Object {
+          "data-arrow-next": "test-id",
+        },
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="dark"

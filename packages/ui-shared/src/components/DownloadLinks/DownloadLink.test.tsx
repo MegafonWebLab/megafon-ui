@@ -15,7 +15,7 @@ describe('DownloadLink', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('render with custom classes', () => {
+    it('render with custom classes and data-attributes', () => {
         const wrapper = shallow(
             <DownloadLink
                 {...props}
@@ -24,6 +24,7 @@ describe('DownloadLink', () => {
                     root: 'root-class',
                     link: 'link-class',
                 }}
+                dataAttrs={{ root: { 'data-testid': 'root-test' }, link: { 'data-testid': 'link-test' } }}
             />,
         );
         expect(wrapper).toMatchSnapshot();

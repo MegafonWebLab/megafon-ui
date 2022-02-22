@@ -3,7 +3,7 @@
 exports[`StoreBanner should render with Huawei Store 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_android custom-class-name"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -42,16 +42,37 @@ exports[`StoreBanner should render with Huawei Store 1`] = `
               >
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkApple-test",
+                      },
+                    }
+                  }
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkGoogle-test",
+                      },
+                    }
+                  }
                   href="Google Play link"
                   theme="google-play"
                 />
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_huawei-store"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkHuawei-test",
+                      },
+                    }
+                  }
                   href="#huawei"
                   theme="huawei-store"
                 />
@@ -87,7 +108,7 @@ exports[`StoreBanner should render with Huawei Store 1`] = `
 exports[`StoreBanner should render with QR-code 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_android"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -131,11 +152,25 @@ exports[`StoreBanner should render with QR-code 1`] = `
               >
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkApple-test",
+                      },
+                    }
+                  }
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkGoogle-test",
+                      },
+                    }
+                  }
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -171,7 +206,7 @@ exports[`StoreBanner should render with QR-code 1`] = `
 exports[`StoreBanner should render with custom class names 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_android custom-class-name root-custom-class-name"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -210,11 +245,25 @@ exports[`StoreBanner should render with custom class names 1`] = `
               >
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store app-store-custom-class-name"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkApple-test",
+                      },
+                    }
+                  }
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play google-store-custom-class-name"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkGoogle-test",
+                      },
+                    }
+                  }
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -250,7 +299,7 @@ exports[`StoreBanner should render with custom class names 1`] = `
 exports[`StoreBanner should render with green button 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_android custom-class-name"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -286,6 +335,13 @@ exports[`StoreBanner should render with green button 1`] = `
             >
               <Button
                 className="mfui-store-banner__button"
+                dataAttrs={
+                  Object {
+                    "root": Object {
+                      "data-test-id": "button-test",
+                    },
+                  }
+                }
                 href="#button"
                 theme="green"
               >
@@ -322,7 +378,7 @@ exports[`StoreBanner should render with green button 1`] = `
 exports[`StoreBanner should render with green theme 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_green mfui-store-banner_mask_android"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -361,11 +417,25 @@ exports[`StoreBanner should render with green theme 1`] = `
               >
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkApple-test",
+                      },
+                    }
+                  }
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkGoogle-test",
+                      },
+                    }
+                  }
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -401,7 +471,7 @@ exports[`StoreBanner should render with green theme 1`] = `
 exports[`StoreBanner should render with iphone mask 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_black-iphone"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -440,11 +510,25 @@ exports[`StoreBanner should render with iphone mask 1`] = `
               >
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkApple-test",
+                      },
+                    }
+                  }
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkGoogle-test",
+                      },
+                    }
+                  }
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -480,7 +564,7 @@ exports[`StoreBanner should render with iphone mask 1`] = `
 exports[`StoreBanner should render with required props 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_android"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -519,11 +603,25 @@ exports[`StoreBanner should render with required props 1`] = `
               >
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkApple-test",
+                      },
+                    }
+                  }
                   href="App Store link"
                   theme="app-store"
                 />
                 <StoreButton
                   className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkGoogle-test",
+                      },
+                    }
+                  }
                   href="Google Play link"
                   theme="google-play"
                 />
@@ -559,7 +657,7 @@ exports[`StoreBanner should render with required props 1`] = `
 exports[`StoreBanner should render with violet button 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_green mfui-store-banner_mask_android custom-class-name"
-  data-root="value"
+  data-test-id="root-test"
 >
   <div
     className="mfui-store-banner__container"
@@ -595,6 +693,13 @@ exports[`StoreBanner should render with violet button 1`] = `
             >
               <Button
                 className="mfui-store-banner__button"
+                dataAttrs={
+                  Object {
+                    "root": Object {
+                      "data-test-id": "button-test",
+                    },
+                  }
+                }
                 href="#button"
                 theme="purple"
               >

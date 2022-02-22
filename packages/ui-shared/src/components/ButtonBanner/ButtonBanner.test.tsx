@@ -12,7 +12,10 @@ const props: IButtonBannerProps = {
     ...requiredProps,
     dataAttrs: {
         root: {
-            'data-root': 'value',
+            'data-testid': 'value',
+        },
+        button: {
+            'data-testid': 'button-test',
         },
     },
     className: 'className',

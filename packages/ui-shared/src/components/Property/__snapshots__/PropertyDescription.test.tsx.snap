@@ -67,3 +67,24 @@ exports[`<PropertyDescription /> should render with custom toggle class 1`] = `
   </Collapse>
 </div>
 `;
+
+exports[`<PropertyDescription /> should render with data attribute 1`] = `
+<div
+  className="mfui-property-description"
+>
+  <span
+    className="mfui-property-description__collapse"
+    data-testid="moreLink-test"
+    onClick={[Function]}
+  >
+    Подробнее
+  </span>
+  <Collapse
+    className="mfui-property-description__content"
+    classNameContainer="mfui-property-description__content-inner"
+    isOpened={false}
+  >
+    Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка
+  </Collapse>
+</div>
+`;

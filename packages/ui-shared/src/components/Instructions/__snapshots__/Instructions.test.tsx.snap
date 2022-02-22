@@ -159,6 +159,173 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
 </div>
 `;
 
+exports[`<Instructions /> desktop resolution should render with data-attributes 1`] = `
+<div
+  className="mfui-instructions mfui-instructions_mask_none"
+  data-testid="root-test"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      all="12"
+    >
+      <Header
+        as="h2"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
+      >
+        Test instruction title
+      </Header>
+      <div
+        className="mfui-instructions__wrapper"
+      >
+        <div
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+        >
+          <Swiper
+            className="mfui-instructions__swiper"
+            noSwipingClass="mfui-instructions__slide"
+            onSwiper={[Function]}
+          >
+            <SwiperSlide
+              className="mfui-instructions__slide"
+              key="0ImgUrl1"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-instructions__swiper-img"
+                data-testid="image-test[1]"
+                loop={true}
+                muted={true}
+                playsInline={true}
+              >
+                <source
+                  src="ImgUrl1"
+                  type="video/mp4"
+                />
+              </video>
+            </SwiperSlide>
+            <SwiperSlide
+              className="mfui-instructions__slide"
+              key="1ImgUrl2"
+            >
+              <img
+                alt=""
+                className="mfui-instructions__swiper-img"
+                data-testid="image-test[2]"
+                src="ImgUrl2"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
+        >
+          <Header
+            as="h2"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
+          >
+            Test instruction title
+          </Header>
+          <div
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-instructions__articles-title"
+                data-index={0}
+                data-testid="mobileItemText-test[1]"
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-instructions__articles-dots"
+            >
+              <div
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
+                data-testid="item-test[1]"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-instructions__articles-dot"
+                data-testid="item-test[2]"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
+          <ul
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
+          >
+            <li
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
+              data-index={0}
+              data-testid="item-test[1]"
+              key="0"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-instructions__articles-item-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-instructions__articles-item-title"
+              >
+                Test1
+              </div>
+            </li>
+            <li
+              className="mfui-instructions__articles-item"
+              data-index={1}
+              data-testid="item-test[2]"
+              key="1"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-instructions__articles-item-dot-number"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                className="mfui-instructions__articles-item-title"
+              >
+                Test2
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<Instructions /> desktop resolution should render with default props 1`] = `
 <div
   className="mfui-instructions mfui-instructions_mask_none"
@@ -783,6 +950,173 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
             <li
               className="mfui-instructions__articles-item"
               data-index={1}
+              key="1"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-instructions__articles-item-dot-number"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                className="mfui-instructions__articles-item-title"
+              >
+                Test2
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<Instructions /> mobile resolution should render with data-attributes 1`] = `
+<div
+  className="mfui-instructions mfui-instructions_mask_none"
+  data-testid="root-test"
+>
+  <Grid
+    hAlign="center"
+  >
+    <GridColumn
+      all="12"
+    >
+      <Header
+        as="h2"
+        className="mfui-instructions__title mfui-instructions__title_resolution_mobile"
+      >
+        Test instruction title
+      </Header>
+      <div
+        className="mfui-instructions__wrapper"
+      >
+        <div
+          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+        >
+          <Swiper
+            className="mfui-instructions__swiper"
+            noSwipingClass="mfui-instructions__slide"
+            onSwiper={[Function]}
+          >
+            <SwiperSlide
+              className="mfui-instructions__slide"
+              key="0ImgUrl1"
+            >
+              <video
+                autoPlay={true}
+                className="mfui-instructions__swiper-img"
+                data-testid="image-test[1]"
+                loop={true}
+                muted={true}
+                playsInline={true}
+              >
+                <source
+                  src="ImgUrl1"
+                  type="video/mp4"
+                />
+              </video>
+            </SwiperSlide>
+            <SwiperSlide
+              className="mfui-instructions__slide"
+              key="1ImgUrl2"
+            >
+              <img
+                alt=""
+                className="mfui-instructions__swiper-img"
+                data-testid="image-test[2]"
+                src="ImgUrl2"
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+        <div
+          className="mfui-instructions__articles mfui-instructions__articles_align_left"
+        >
+          <Header
+            as="h2"
+            className="mfui-instructions__title mfui-instructions__title_resolution_desktop"
+          >
+            Test instruction title
+          </Header>
+          <div
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_mobile"
+          >
+            <div
+              className="mfui-instructions__articles-title-block"
+            >
+              <div
+                className="mfui-instructions__articles-title"
+                data-index={0}
+                data-testid="mobileItemText-test[1]"
+                key="0"
+              >
+                Test1
+              </div>
+            </div>
+            <ul
+              className="mfui-instructions__articles-dots"
+            >
+              <div
+                className="mfui-instructions__articles-dot mfui-instructions__articles-dot_active"
+                data-testid="item-test[1]"
+                key="0"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-instructions__articles-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-instructions__articles-dot"
+                data-testid="item-test[2]"
+                key="1"
+                onClick={[Function]}
+              >
+                <span
+                  className="mfui-instructions__articles-dot-number"
+                >
+                  2
+                </span>
+              </div>
+            </ul>
+          </div>
+          <ul
+            className="mfui-instructions__articles-list mfui-instructions__articles-list_desktop"
+          >
+            <li
+              className="mfui-instructions__articles-item mfui-instructions__articles-item_active"
+              data-index={0}
+              data-testid="item-test[1]"
+              key="0"
+              onClick={[Function]}
+            >
+              <div
+                className="mfui-instructions__articles-item-dot"
+              >
+                <span
+                  className="mfui-instructions__articles-item-dot-number"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                className="mfui-instructions__articles-item-title"
+              >
+                Test1
+              </div>
+            </li>
+            <li
+              className="mfui-instructions__articles-item"
+              data-index={1}
+              data-testid="item-test[2]"
               key="1"
               onClick={[Function]}
             >
