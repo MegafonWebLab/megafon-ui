@@ -180,6 +180,7 @@ const Banner: React.FC<IBannerProps> = ({
                 className={cn('swiper')}
                 loop={loop}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
+                watchSlidesVisibility
                 onSwiper={handleSwiper}
                 onReachBeginning={handleReachBeginning}
                 onReachEnd={handleReachEnd}
