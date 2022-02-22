@@ -89,6 +89,7 @@ interface IVideoBannerProps {
         button?: string;
         link?: string;
         breadcrumbs?: string;
+        video?: string;
     };
     /** Ссылка на корневой элемент */
     rootRef?: Ref<HTMLDivElement>;
@@ -227,7 +228,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
             case VideoType.VIDEO: {
                 return (
                     // eslint-disable-next-line jsx-a11y/media-has-caption
-                    <video className={cn('video')} autoPlay loop muted={isMuted}>
+                    <video className={cn('video', [classes.video])} autoPlay loop muted={isMuted}>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
                 );
@@ -237,7 +238,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 return null;
             }
         }
-    }, [videoType, videoSrc, isMuted]);
+    }, [videoType, videoSrc, isMuted, classes.video]);
 
     React.useEffect(() => {
         const getImageSrc = () => {
