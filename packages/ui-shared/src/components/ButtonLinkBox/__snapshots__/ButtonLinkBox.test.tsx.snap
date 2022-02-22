@@ -22,10 +22,8 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox 1`] = `
   >
     <TextLink
       className="link-class"
-      color="blue"
       href="link-url"
       target="_blank"
-      underlineStyle="solid"
       underlineVisibility="always"
     >
       link title
@@ -57,11 +55,9 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox with download links 1`] = `
   >
     <TextLink
       className="link-class"
-      color="blue"
       download={true}
       href="link-url"
       target="_blank"
-      underlineStyle="solid"
       underlineVisibility="always"
     >
       link title
@@ -80,10 +76,8 @@ exports[`<ButtonLinkBox /> renders ButtonLinkBox without button 1`] = `
   >
     <TextLink
       className="link-class"
-      color="blue"
       href="link-url"
       target="_blank"
-      underlineStyle="solid"
       underlineVisibility="always"
     >
       link title

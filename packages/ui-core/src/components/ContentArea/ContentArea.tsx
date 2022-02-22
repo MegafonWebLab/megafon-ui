@@ -4,14 +4,16 @@ import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 
 const BACKGROUND_COLORS = {
-    DEFAULT: 'default',
-    WHITE: 'white',
     TRANSPARENT: 'transparent',
+    BLACK: 'black',
+    WHITE: 'white',
     GREEN: 'green',
     PURPLE: 'purple',
     SPB_SKY_0: 'spbSky0',
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
+    // @deprecated
+    DEFAULT: 'default',
 } as const;
 
 export type BackgroundColorType = typeof BACKGROUND_COLORS[keyof typeof BACKGROUND_COLORS];
@@ -43,20 +45,20 @@ export interface IConrentAreaProps {
 
 const cn = cnCreate('mfui-content-area');
 const ContentArea: React.FC<IConrentAreaProps> = ({
-    outerBackgroundColor,
-    innerBackgroundColor,
+    outerBackgroundColor = 'transparent',
+    innerBackgroundColor = 'transparent',
     disableIndents,
     children,
     className,
     classes,
 }) => (
-    <div className={cn({ color: outerBackgroundColor }, [className, classes?.root])}>
+    <div className={cn({ 'background-color': outerBackgroundColor }, [className, classes?.root])}>
         <div
             className={cn(
                 'inner',
                 {
                     'disable-indents': disableIndents,
-                    color: innerBackgroundColor,
+                    'background-color': innerBackgroundColor,
                 },
                 classes?.inner,
             )}
@@ -75,11 +77,6 @@ ContentArea.propTypes = {
     }),
     outerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
     innerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
-};
-
-ContentArea.defaultProps = {
-    outerBackgroundColor: 'transparent',
-    innerBackgroundColor: 'transparent',
 };
 
 export default ContentArea;
