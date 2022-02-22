@@ -5,7 +5,7 @@ import './TextWithIconItem.less';
 
 export interface ITextWithIconItem {
     /** Текст */
-    text: string;
+    text: string | string[];
     /** Иконка */
     icon: React.ReactNode;
     /** Ссылка на корневой элемент */
@@ -27,7 +27,7 @@ const TextWithIconItem: React.FC<ITextWithIconItem> = ({ text, icon, rootRef, da
 );
 
 TextWithIconItem.propTypes = {
-    text: PropTypes.string.isRequired,
+    text: PropTypes.oneOfType([PropTypes.string.isRequired, PropTypes.arrayOf(PropTypes.string.isRequired)]).isRequired,
     icon: PropTypes.node.isRequired,
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
