@@ -1,10 +1,26 @@
 import { Playground } from 'docz';
 import Breadcrumbs from '../Breadcrumbs';
 
+## Базовое использование
+
+Каждый элемент содержит свойства `title` и `href`, которые используются для создания ссылки с помощью компонента `TextLink` из `@megafon/ui-core`
+
 <Playground>
     <Breadcrumbs items={[
         { title: 'Главная', href: 'www.megafon.ru' },
         { title: 'Каталог услуг', href: 'www.megafon.ru' },
         { title: 'Тарифы' },
+    ]} />
+</Playground>
+
+## Использование с помощью массива компонентов
+
+Каждый элемент является самостоятельным компонентом
+
+<Playground>
+    <Breadcrumbs items={[
+        <a href="www.megafon.ru">Главная</a>,
+        <a href="www.megafon.ru">Каталог услуг</a>,
+        <span>Тарифы</span>,
     ]} />
 </Playground>
