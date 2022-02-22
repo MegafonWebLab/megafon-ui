@@ -730,15 +730,12 @@ exports[`<VideoBanner /> tests with local window render component with classes f
   <div
     className="mfui-video-banner"
   >
-    <ContentArea
-      innerBackgroundColor="transparent"
-      outerBackgroundColor="transparent"
-    >
+    <ContentArea>
       <div
-        className="mfui-content-area mfui-content-area_color_transparent"
+        className="mfui-content-area mfui-content-area_background-color_transparent"
       >
         <div
-          className="mfui-content-area__inner mfui-content-area__inner_color_transparent"
+          className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
         >
           <div
             className="mfui-video-banner__wrapper"
@@ -845,10 +842,7 @@ exports[`<VideoBanner /> tests with local window render component with classes f
                           </Button>
                           <TextLink
                             className="mfui-video-banner__link"
-                            color="blue"
                             href="#"
-                            underlineStyle="solid"
-                            underlineVisibility="hover"
                           >
                             <Link
                               className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-video-banner__link"
