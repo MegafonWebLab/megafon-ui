@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.3...@megafon/ui-shared@3.1.0) (2022-02-22)
+
+
+### Bug Fixes
+
+* **videobanner:** update snapshots ([77de901](https://github.com/MegafonWebLab/megafon-ui/commit/77de901fa76793cf76dc776b3234b2d792befd9a))
+* fix Breadcrumbs, ButtonLinkBox, Card, CardBox, Container, DownloadLink & VideoBanner snapshots ([e149e2d](https://github.com/MegafonWebLab/megafon-ui/commit/e149e2d40ececff0065ec1d800fb807fabfe8640))
+* **breadcrumbs:** allow to pass items as array of JSX elements ([1ca1583](https://github.com/MegafonWebLab/megafon-ui/commit/1ca158390c7c58b5ff117ae8ad16268b043d5ddb))
+* **colors:** fix colors usage ([f2f59a8](https://github.com/MegafonWebLab/megafon-ui/commit/f2f59a81644c157394817af1531dabb1c0b67b19))
+* **components:** better view of default props values ([1817ed5](https://github.com/MegafonWebLab/megafon-ui/commit/1817ed5cd17fd78a0911a89020138f05d7af9833))
+
+
+### Features
+
+* **textwithiconitem:** add type string[] for text prop ([0df9680](https://github.com/MegafonWebLab/megafon-ui/commit/0df9680e10058ea24783fbc41cbce17e9b2a5594))
+* **ui-shared:** add dataAttrs prop for interactive elements of components that did not have ([6b2fad8](https://github.com/MegafonWebLab/megafon-ui/commit/6b2fad84e72269d1fac0408e0b7e94202866b4aa))
+* **videobanner:** added new classes for video ([d8b84a0](https://github.com/MegafonWebLab/megafon-ui/commit/d8b84a003103cf5f66102d354d2625e30a2c0d2a))
+
+
+
+
+
 ## [3.0.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.0.2...@megafon/ui-shared@3.0.3) (2022-02-15)
 
 **Note:** Version bump only for package @megafon/ui-shared

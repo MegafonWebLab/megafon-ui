@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.2...@megafon/ui-core@3.1.0) (2022-02-22)
+
+
+### Bug Fixes
+
+* **carousel:** add resize listener to nav display ([12abd93](https://github.com/MegafonWebLab/megafon-ui/commit/12abd93d226676d2c4f78968c9d5de032783ec8d))
+* **colors:** fix colors usage ([f2f59a8](https://github.com/MegafonWebLab/megafon-ui/commit/f2f59a81644c157394817af1531dabb1c0b67b19))
+* **components:** better view of default props values ([1817ed5](https://github.com/MegafonWebLab/megafon-ui/commit/1817ed5cd17fd78a0911a89020138f05d7af9833))
+* **contentarea:** add 'black' color prop value; deprecate 'default' color prop value; more examples ([e0b0c72](https://github.com/MegafonWebLab/megafon-ui/commit/e0b0c723a37f0e42ccb1c0d30df8ae36e9c82920))
+
+
+### Features
+
+* **banner:** add opacity for slides ([bb403a1](https://github.com/MegafonWebLab/megafon-ui/commit/bb403a1d38fd0c1efd3e1df3ed72ea4e5c772c40))
+* **collapse:** changed collapse animation via setTimeout to requestAnimationFrame ([06d7b4f](https://github.com/MegafonWebLab/megafon-ui/commit/06d7b4ff0f3cdf3cc22fb1d45e8401e259636cf5))
+* **ui-core:** add dataAttrs prop for interactive elements of components that did not have ([f495833](https://github.com/MegafonWebLab/megafon-ui/commit/f495833b33ac7823ae5992a3f7eb8b7cef82c036))
+
+
+
+
+
 ## [3.0.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.1...@megafon/ui-core@3.0.2) (2022-02-15)
 
 
