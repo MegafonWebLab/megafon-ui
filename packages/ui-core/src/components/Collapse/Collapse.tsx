@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useCallback, useEffect } from 'react';
 import { filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 
@@ -18,7 +19,10 @@ type CollapseProps = CollapseDefaultProps & {
     children: React.ReactNode;
 };
 
-const BROWSER_DELAY = 100;
+const { sin, cos, min, PI } = Math;
+
+const easeOutSine = (progress: number): number => sin((progress * PI) / 2);
+const easeInSine = (progress: number): number => 1 - cos((progress * PI) / 2);
 
 const Collapse = (props: CollapseProps): React.FunctionComponentElement<CollapseProps> => {
     const {
@@ -30,50 +34,83 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
         isOpened,
         dataAttrs,
     } = props;
-    const canUpdate = React.useRef<boolean>(false);
-    const timer = React.useRef<number | undefined>(undefined);
-    const rootNode = React.useRef<HTMLInputElement>(null);
-    const [height, setHeight] = React.useState<string>('0px');
-    const transition: string = animation ? `height ${animationDuration / 1000}s` : 'none';
+
     const duration: number = animation ? animationDuration : 0;
 
-    const animateSlide = (finalHeight: string, delay: number): void => {
+    const animationStart = React.useRef<null | number>(null);
+    const animationId = React.useRef<null | number>(null);
+    const canUpdate = React.useRef<boolean>(false);
+    const rootNode = React.useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        animationId.current && window.cancelAnimationFrame(animationId.current);
+    }, [isOpened]);
+
+    const animateSlide = useCallback(
+        (contentHeight: number, animationTime: number, timePassed: number, isOpenAction = false): void => {
+            if (!rootNode.current) {
+                return;
+            }
+
+            if (!animationStart.current) {
+                animationStart.current = timePassed;
+            }
+
+            const runtime = timePassed - animationStart.current;
+            const progress = animationTime ? min(runtime / animationTime, 1) : 1;
+
+            const isAnimationInProgress = progress < 1;
+            const nextHeight = isOpenAction
+                ? easeOutSine(progress) * contentHeight
+                : contentHeight - easeInSine(progress) * contentHeight;
+
+            rootNode.current.style.height = `${nextHeight}px`;
+
+            if (isAnimationInProgress) {
+                animationId.current = window.requestAnimationFrame(time =>
+                    animateSlide(contentHeight, animationTime, time, isOpenAction),
+                );
+            } else {
+                animationStart.current = null;
+                animationId.current = null;
+            }
+        },
+        [],
+    );
+
+    useEffect(() => {
         if (!rootNode.current) {
             return;
         }
-        setHeight(`${rootNode.current.scrollHeight}px`);
-        timer.current = window.setTimeout(() => {
-            setHeight(finalHeight);
-        }, delay);
-    };
 
-    React.useEffect(() => {
+        const { scrollHeight = 0 } = rootNode.current;
+
         switch (true) {
             case !canUpdate.current && isOpened:
-                setHeight('auto');
+                rootNode.current.style.height = 'auto';
+
                 break;
             case !canUpdate.current && !isOpened:
-                setHeight('0px');
+                rootNode.current.style.height = '0px';
+
                 break;
             case isOpened:
-                animateSlide('auto', duration);
+                animationId.current = window.requestAnimationFrame(timePassed =>
+                    animateSlide(scrollHeight, duration, timePassed, true),
+                );
+
                 break;
             default:
-                animateSlide('0px', BROWSER_DELAY);
+                animationId.current = window.requestAnimationFrame(timePassed =>
+                    animateSlide(scrollHeight, duration, timePassed),
+                );
         }
 
         canUpdate.current = true;
-
-        return (): void => clearTimeout(timer.current);
-    }, [isOpened, duration]);
+    }, [isOpened, duration, animateSlide]);
 
     return (
-        <div
-            {...filterDataAttrs(dataAttrs?.root)}
-            className={className}
-            style={{ overflow: 'hidden', height, transition }}
-            ref={rootNode}
-        >
+        <div {...filterDataAttrs(dataAttrs?.root)} className={className} style={{ overflow: 'hidden' }} ref={rootNode}>
             <div {...filterDataAttrs(dataAttrs?.inner)} className={classNameContainer}>
                 {children}
             </div>
