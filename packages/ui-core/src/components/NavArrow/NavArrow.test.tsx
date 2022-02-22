@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import NavArrow, { INavArrowProps, Theme, View } from './NavArrow';
 
 const props: INavArrowProps = {
+    dataAttrs: { root: { 'data-testid': 'test' } },
     className: 'class',
     theme: Theme.DARK,
     view: View.NEXT,

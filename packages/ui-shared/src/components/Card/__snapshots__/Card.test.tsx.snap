@@ -76,6 +76,11 @@ exports[`Card disable left align if there is a button and link 1`] = `
     >
       <Button
         className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_blank"
       >
@@ -83,11 +88,13 @@ exports[`Card disable left align if there is a button and link 1`] = `
       </Button>
       <TextLink
         className="mfui-card__link"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -128,11 +135,13 @@ exports[`Card left align of the interactive element 1`] = `
     >
       <TextLink
         className="mfui-card__link"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -176,6 +185,11 @@ exports[`Card render component with icon 1`] = `
     >
       <Button
         className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_blank"
       >
@@ -183,11 +197,13 @@ exports[`Card render component with icon 1`] = `
       </Button>
       <TextLink
         className="mfui-card__link"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -228,6 +244,11 @@ exports[`Card render component with img, if image source and svg source are spec
     >
       <Button
         className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_blank"
       >
@@ -235,11 +256,13 @@ exports[`Card render component with img, if image source and svg source are spec
       </Button>
       <TextLink
         className="mfui-card__link"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -251,7 +274,7 @@ exports[`Card render component with img, if image source and svg source are spec
 exports[`Card render component with optional props 1`] = `
 <div
   className="mfui-card mfui-card_centered-text className rootClass"
-  data-test="value"
+  data-testid="root-test"
 >
   <div
     className="mfui-card__inner innerClass"
@@ -281,6 +304,13 @@ exports[`Card render component with optional props 1`] = `
     >
       <Button
         className="mfui-card__button buttonClass"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "button-test",
+            },
+          }
+        }
         href="#"
         target="_blank"
       >
@@ -288,11 +318,15 @@ exports[`Card render component with optional props 1`] = `
       </Button>
       <TextLink
         className="mfui-card__link linkClass"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-testid": "link-test",
+            },
+          }
+        }
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -353,6 +387,11 @@ exports[`Card render with a single interactive button element 1`] = `
     >
       <Button
         className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_blank"
       >
@@ -398,11 +437,13 @@ exports[`Card render with a single interactive link element 1`] = `
     >
       <TextLink
         className="mfui-card__link"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -434,6 +475,11 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
     >
       <Button
         className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         download={true}
         href="#"
         target="_blank"
@@ -442,12 +488,14 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
       </Button>
       <TextLink
         className="mfui-card__link"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         download={true}
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>
@@ -488,6 +536,11 @@ exports[`Card render with contain object fit 1`] = `
     >
       <Button
         className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_blank"
       >
@@ -588,6 +641,11 @@ exports[`Card render without img and svg 1`] = `
     >
       <Button
         className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_blank"
       >
@@ -595,11 +653,13 @@ exports[`Card render without img and svg 1`] = `
       </Button>
       <TextLink
         className="mfui-card__link"
-        color="blue"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
         href="#"
         target="_self"
-        underlineStyle="solid"
-        underlineVisibility="hover"
       >
         Подключить
       </TextLink>

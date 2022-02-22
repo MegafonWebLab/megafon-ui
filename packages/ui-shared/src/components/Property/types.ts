@@ -7,6 +7,9 @@ export type Desc = {
         toggle?: string;
         open?: string;
     };
+    dataAttrs?: {
+        moreLink?: Record<string, string>;
+    };
 };
 
 export type Item = {

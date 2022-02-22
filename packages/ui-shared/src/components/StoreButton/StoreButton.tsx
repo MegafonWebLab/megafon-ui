@@ -13,7 +13,7 @@ export enum Theme {
 type LinkPropTypes = React.ComponentProps<typeof Link>;
 
 export type Props = Required<Pick<LinkPropTypes, 'href'>> &
-    Pick<LinkPropTypes, 'onClick'> & {
+    Pick<LinkPropTypes, 'onClick' | 'dataAttrs'> & {
         /** Тема кнопки */
         theme: Theme;
         /** Дополнительный класс */
@@ -21,8 +21,8 @@ export type Props = Required<Pick<LinkPropTypes, 'href'>> &
     };
 
 const cn = cnCreate('mfui-store-button');
-const StoreButton: React.FC<Props> = ({ href, onClick, theme, className }) => (
-    <Link href={href} onClick={onClick} className={cn({ theme }, className)} />
+const StoreButton: React.FC<Props> = ({ href, onClick, theme, className, ...rest }) => (
+    <Link {...rest} href={href} onClick={onClick} className={cn({ theme }, className)} />
 );
 
 StoreButton.propTypes = {

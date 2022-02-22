@@ -19,6 +19,12 @@ exports[`PageTitle should render with limited width 1`] = `
 >
   <Breadcrumbs
     className="mfui-page-title__breadcrumbs"
+    dataAttrs={
+      Object {
+        "link": undefined,
+        "root": undefined,
+      }
+    }
     items={
       Array [
         Object {
@@ -62,9 +68,20 @@ exports[`PageTitle should render with limited width 1`] = `
 exports[`PageTitle should render with optional props 1`] = `
 <div
   className="mfui-page-title custom-class-name"
+  data-testid="root-test"
 >
   <Breadcrumbs
     className="mfui-page-title__breadcrumbs breadcrumbs-custom-class-name"
+    dataAttrs={
+      Object {
+        "link": Object {
+          "data-testid": "breadcrumbsLink-test",
+        },
+        "root": Object {
+          "data-testid": "breadcrumbs-test",
+        },
+      }
+    }
     items={
       Array [
         Object {

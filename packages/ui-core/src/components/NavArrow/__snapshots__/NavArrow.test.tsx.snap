@@ -15,6 +15,7 @@ exports[`<NavArrow /> should render with default props 1`] = `
 exports[`<NavArrow /> should render with props 1`] = `
 <button
   className="mfui-nav-arrow mfui-nav-arrow_theme_dark class"
+  data-testid="test"
   disabled={true}
   onClick={[MockFunction]}
   type="button"

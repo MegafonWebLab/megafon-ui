@@ -180,6 +180,7 @@ const Banner: React.FC<IBannerProps> = ({
                 className={cn('swiper')}
                 loop={loop}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
+                watchSlidesVisibility
                 onSwiper={handleSwiper}
                 onReachBeginning={handleReachBeginning}
                 onReachEnd={handleReachEnd}
@@ -199,14 +200,14 @@ const Banner: React.FC<IBannerProps> = ({
                 ))}
             </Swiper>
             <NavArrow
-                {...filterDataAttrs(dataAttrs?.arrowPrev)}
+                dataAttrs={{ root: dataAttrs?.arrowPrev }}
                 className={cn('arrow', { prev: true }, [classes.arrow])}
                 onClick={handlePrevClick}
                 disabled={!loop && isBeginning}
                 theme={navArrowTheme}
             />
             <NavArrow
-                {...filterDataAttrs(dataAttrs?.arrowNext)}
+                dataAttrs={{ root: dataAttrs?.arrowNext }}
                 className={cn('arrow', { next: true }, [classes.arrow])}
                 view="next"
                 onClick={handleNextClick}

@@ -3,6 +3,7 @@
 exports[`<Day /> snapshots renders Day with all props 1`] = `
 <button
   className="mfui-day mfui-day_between mfui-day_sunday"
+  data-testid="root"
   onClick={[Function]}
   onKeyDown={[Function]}
   onMouseEnter={[Function]}
@@ -21,6 +22,7 @@ exports[`<Day /> snapshots renders Day with all props 1`] = `
 exports[`<Day /> snapshots renders Day with required props 1`] = `
 <button
   className="mfui-day mfui-day_sunday"
+  data-testid="root"
   onClick={[Function]}
   onKeyDown={[Function]}
   onMouseEnter={[Function]}
@@ -37,6 +39,7 @@ exports[`<Day /> snapshots renders Day with required props 1`] = `
 exports[`<Day /> snapshots should return empty div if label is not provided 1`] = `
 <button
   className="mfui-day mfui-day_sunday"
+  data-testid="root"
   onClick={[Function]}
   onKeyDown={[Function]}
   onMouseEnter={[Function]}

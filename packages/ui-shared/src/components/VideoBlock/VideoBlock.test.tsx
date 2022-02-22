@@ -51,8 +51,17 @@ describe('<VideoBlock />', () => {
     });
 
     it('it renders VideoBlock with dataAttrs', () => {
-        const component = shallow(<VideoBlock videoSrc="video.mp4" dataAttrs={{ 'data-test': 'value' }} />);
-        expect(component.first().prop('data-test')).toEqual('value');
+        const component = shallow(
+            <VideoBlock
+                videoSrc="video.mp4"
+                content={content}
+                dataAttrs={{
+                    root: { 'data-testid': 'root-test' },
+                    button: { 'data-testid': 'button-test' },
+                }}
+            />,
+        );
+        expect(component).toMatchSnapshot();
     });
 
     it('it renders VideoBlock with sound turned on', () => {

@@ -10,9 +10,12 @@ exports[`Breadcrumbs should render component 1`] = `
   >
     <TextLink
       color="black"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       МегаФон
     </TextLink>
@@ -23,9 +26,12 @@ exports[`Breadcrumbs should render component 1`] = `
   >
     <TextLink
       color="black"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Мобильная связь
     </TextLink>
@@ -36,9 +42,12 @@ exports[`Breadcrumbs should render component 1`] = `
   >
     <TextLink
       color="black"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Тарифы
     </TextLink>
@@ -49,6 +58,7 @@ exports[`Breadcrumbs should render component 1`] = `
 exports[`Breadcrumbs should render with optional props 1`] = `
 <div
   className="mfui-breadcrumbs mfui-breadcrumbs_color_white custom-class-name"
+  data-testid="root-test"
 >
   <div
     className="mfui-breadcrumbs__item item-custom-class-name"
@@ -56,9 +66,14 @@ exports[`Breadcrumbs should render with optional props 1`] = `
   >
     <TextLink
       color="white"
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "link-test[1]",
+          },
+        }
+      }
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       МегаФон
     </TextLink>
@@ -69,9 +84,14 @@ exports[`Breadcrumbs should render with optional props 1`] = `
   >
     <TextLink
       color="white"
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "link-test[2]",
+          },
+        }
+      }
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Мобильная связь
     </TextLink>
@@ -82,9 +102,14 @@ exports[`Breadcrumbs should render with optional props 1`] = `
   >
     <TextLink
       color="white"
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-testid": "link-test[3]",
+          },
+        }
+      }
       href="#"
-      underlineStyle="solid"
-      underlineVisibility="hover"
     >
       Тарифы
     </TextLink>

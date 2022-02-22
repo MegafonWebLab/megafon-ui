@@ -79,8 +79,14 @@ export interface IContent {
 }
 
 interface IVideoBannerProps {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        breadcrumbs?: Record<string, string>;
+        breadcrumbsLink?: Record<string, string>;
+        button?: Record<string, string>;
+        link?: Record<string, string>;
+    };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -89,6 +95,7 @@ interface IVideoBannerProps {
         button?: string;
         link?: string;
         breadcrumbs?: string;
+        video?: string;
     };
     /** Ссылка на корневой элемент */
     rootRef?: Ref<HTMLDivElement>;
@@ -169,6 +176,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                         <div className={cn('btns-wrapper')}>
                             {buttonTitle && (
                                 <Button
+                                    dataAttrs={{ root: dataAttrs?.button }}
                                     className={cn(ClassName.BUTTON, [classes.button])}
                                     theme={buttonColor}
                                     href={buttonHref}
@@ -180,6 +188,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                             )}
                             {linkTitle && (
                                 <TextLink
+                                    dataAttrs={{ root: dataAttrs?.link }}
                                     className={cn(ClassName.LINK, [classes.link])}
                                     href={linkUrl}
                                     download={linkDownload}
@@ -193,7 +202,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 </GridColumn>
             </Grid>
         ),
-        [classes.button, classes.link],
+        [classes.button, classes.link, dataAttrs?.button, dataAttrs?.link],
     );
 
     const renderVideo = React.useCallback(() => {
@@ -227,7 +236,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
             case VideoType.VIDEO: {
                 return (
                     // eslint-disable-next-line jsx-a11y/media-has-caption
-                    <video className={cn('video')} autoPlay loop muted={isMuted}>
+                    <video className={cn('video', [classes.video])} autoPlay loop muted={isMuted}>
                         <source src={videoSrc} type="video/mp4" />
                     </video>
                 );
@@ -237,7 +246,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 return null;
             }
         }
-    }, [videoType, videoSrc, isMuted]);
+    }, [videoType, videoSrc, isMuted, classes.video]);
 
     React.useEffect(() => {
         const getImageSrc = () => {
@@ -269,11 +278,12 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     }, [imageDesktop, imageDesktopWide, imageMobile, imageTablet]);
 
     return (
-        <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className, classes.root])} ref={rootRef}>
             <ContentArea>
                 <div className={cn('wrapper')}>
                     {!!breadcrumbs?.length && (
                         <Breadcrumbs
+                            dataAttrs={{ root: dataAttrs?.breadcrumbs, link: dataAttrs?.breadcrumbsLink }}
                             className={cn('breadcrumbs')}
                             items={breadcrumbs}
                             color={content?.textColor}
@@ -292,7 +302,13 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
 };
 
 VideoBanner.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        breadcrumbs: PropTypes.objectOf(PropTypes.string.isRequired),
+        breadcrumbsLink: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
+        link: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,

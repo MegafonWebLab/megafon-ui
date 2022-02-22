@@ -26,8 +26,11 @@ export interface IProperty {
     icon?: React.ReactNode;
     /** Растягивание компонента на всю доступную ширину */
     fullWidth?: boolean;
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        moreLink?: Record<string, string>;
+    };
     /** Дополнительные классы для внутренних элементов */
     classes?: {
         title?: string;
@@ -69,11 +72,12 @@ const Property: React.FC<IProperty> = ({
                     <PropertyDescription
                         value={value}
                         isCollapsible={isCollapsible}
+                        dataAttrs={{ moreLink: dataAttrs?.moreLink }}
                         classes={{ open: classes.openedDescription, toggle: classes.toggleDescription }}
                     />
                 </div>
             )),
-        [classes.openedDescription, classes.toggleDescription],
+        [classes.openedDescription, classes.toggleDescription, dataAttrs?.moreLink],
     );
 
     const getColumnConfig = React.useCallback(
@@ -86,7 +90,7 @@ const Property: React.FC<IProperty> = ({
         <div
             className={cn({ 'border-bottom': borderBottom }, [className])}
             ref={rootRef}
-            {...filterDataAttrs(dataAttrs)}
+            {...filterDataAttrs(dataAttrs?.root)}
         >
             <Grid>
                 <GridColumn {...getColumnConfig()}>
@@ -148,7 +152,10 @@ Property.propTypes = {
     mergedValue: PropTypes.string,
     icon: PropTypes.node,
     fullWidth: PropTypes.bool,
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        moreLink: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     classes: PropTypes.shape({
         title: PropTypes.string,
         openedDescription: PropTypes.string,

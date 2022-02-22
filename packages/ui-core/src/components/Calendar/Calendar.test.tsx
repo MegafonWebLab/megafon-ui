@@ -3,6 +3,13 @@ import { shallow, mount } from 'enzyme';
 import Calendar, { ICalendarProps } from './Calendar';
 
 const props: ICalendarProps = {
+    dataAttrs: {
+        root: { 'data-testid': 'root' },
+        day: { 'data-testid': 'day-test' },
+        month: { 'data-testid': 'month-test' },
+        arrowLeft: { 'data-testid': 'arrowLeft-test' },
+        arrowRight: { 'data-testid': 'arrowRight-test' },
+    },
     className: 'rootClass',
     startDate: new Date(2020, 1, 7),
     endDate: new Date(2020, 1, 14),

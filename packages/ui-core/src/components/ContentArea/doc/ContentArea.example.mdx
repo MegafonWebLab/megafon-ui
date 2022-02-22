@@ -1,6 +1,6 @@
 import { Playground, Props } from 'docz';
 import ContentArea from '../ContentArea';
-import { wrapperStyles } from './ContentArea.docz';
+import { blockStyle, wrapperStyles } from './ContentArea.docz';
 
 ## Использование по умолчанию
 
@@ -15,9 +15,50 @@ import { wrapperStyles } from './ContentArea.docz';
 Фоновый цвет применяется ко всему компоненту
 
 <Playground style={wrapperStyles}>
+    <ContentArea outerBackgroundColor="white">
+        <div style={{ color: '#333333'}}>
+            (white) Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </div>
+    </ContentArea>
+
+    <ContentArea outerBackgroundColor="black">
+        <div style={{ color: '#ffffff'}}>
+            (black) Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </div>
+    </ContentArea>
+
     <ContentArea outerBackgroundColor="green">
-        <div style={{ color: 'white'}}>
-            Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+        <div style={{ color: '#ffffff'}}>
+            (green) Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </div>
+    </ContentArea>
+
+    <ContentArea outerBackgroundColor="purple">
+        <div style={{ color: '#ffffff'}}>
+            (purple) Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </div>
+    </ContentArea>
+
+    <ContentArea outerBackgroundColor="spbSky0">
+        <div style={{ color: '#333333'}}>
+            (spbSky0) Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </div>
+    </ContentArea>
+
+    <ContentArea outerBackgroundColor="spbSky1">
+        <div style={{ color: '#333333'}}>
+            (spbSky1) Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </div>
+    </ContentArea>
+    <ContentArea outerBackgroundColor="spbSky2">
+        <div style={{ color: '#333333'}}>
+            (spbSky2) Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
             Монтажник проведёт все необходимые работы под ключ.
         </div>
     </ContentArea>
@@ -25,11 +66,11 @@ import { wrapperStyles } from './ContentArea.docz';
 
 ## Фоновый цвет внутреннего контейнера
 Фоновый цвет применяется к отцентрированному контейнеру с ограниченной шириной.
-Разница будет видна при ширине компонента больше 1440px
+Разница будет видна при ширине компонента больше 1440px.
 
 <Playground style={wrapperStyles}>
     <ContentArea innerBackgroundColor="purple">
-        <div style={{ color: 'white'}}>
+        <div style={{ color: '#ffffff'}}>
             Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
             Монтажник проведёт все необходимые работы под ключ.
         </div>
@@ -38,27 +79,19 @@ import { wrapperStyles } from './ContentArea.docz';
 
 ## Отключение боковых отступов на всех разрешениях
 
-<Playground style={wrapperStyles}>
-    <ContentArea disableIndents="all" outerBackgroundColor="spbSky2">
-        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+Разница будет видна при изменении ширины окна
+
+<Playground style={blockStyle}>
+    <ContentArea disableIndents="all" outerBackgroundColor="spbSky0">
+        Без отключения отступов. Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
         Монтажник проведёт все необходимые работы под ключ.
     </ContentArea>
-</Playground>
-
-## Отключение боковых оступов на разрешении 0 - 1023
-
-<Playground style={wrapperStyles}>
-    <ContentArea disableIndents="mobile-tablet" outerBackgroundColor="spbSky2">
-        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+    <ContentArea disableIndents="mobile-tablet" outerBackgroundColor="spbSky0">
+        Отключение боковых оступов на разрешении 0–1023px. Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
         Монтажник проведёт все необходимые работы под ключ.
     </ContentArea>
-</Playground>
-
-## Отключение боковых оступов на разрешении 0 - 767
-
-<Playground style={wrapperStyles}>
-    <ContentArea disableIndents="mobile" outerBackgroundColor="spbSky2">
-        Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+    <ContentArea disableIndents="mobile" outerBackgroundColor="spbSky0">
+        Отключение боковых оступов на разрешении 0–767px. Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
         Монтажник проведёт все необходимые работы под ключ.
     </ContentArea>
 </Playground>

@@ -237,12 +237,16 @@ const Carousel: React.FC<ICarouselProps> = ({
         }
     };
 
+    const handleNavDisplay = (swiper: SwiperCore) => {
+        setBeginning(swiper.isBeginning);
+        setEnd(swiper.isEnd);
+        setLocked(swiper.isBeginning && swiper.isEnd);
+    };
+
     // https://github.com/nolimits4web/Swiper/issues/2346
     const handleSwiperResize = React.useCallback(() => {
         throttle((swiper: SwiperCore) => {
-            setBeginning(swiper.isBeginning);
-            setEnd(swiper.isEnd);
-            setLocked(swiper.isBeginning && swiper.isEnd);
+            handleNavDisplay(swiper);
 
             if (swiper.params.slidesPerView === SlidesPerView.AUTO) {
                 swiper.slides.css('width', '');
@@ -270,6 +274,21 @@ const Carousel: React.FC<ICarouselProps> = ({
     const disableFocusOnSlideClick = (e: React.MouseEvent) => {
         e.nativeEvent.preventDefault();
     };
+
+    React.useEffect(() => {
+        if (!swiperInstance) {
+            return undefined;
+        }
+
+        const windowResizeHandler = () => handleNavDisplay(swiperInstance);
+        const windowResizeHandlerThrottled = throttle(windowResizeHandler, throttleTime.resize);
+
+        window.addEventListener('resize', windowResizeHandlerThrottled);
+
+        return () => {
+            window.removeEventListener('resize', windowResizeHandlerThrottled);
+        };
+    }, [swiperInstance]);
 
     return (
         <div

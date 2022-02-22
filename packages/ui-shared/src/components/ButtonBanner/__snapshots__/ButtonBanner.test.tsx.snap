@@ -3,7 +3,7 @@
 exports[`<ButtonBanner /> should render with props 1`] = `
 <div
   className="mfui-button-banner mfui-button-banner_image mfui-button-banner_scaling_contain className rootClass"
-  data-root="value"
+  data-testid="value"
 >
   <Grid
     guttersLeft="medium"
@@ -31,6 +31,13 @@ exports[`<ButtonBanner /> should render with props 1`] = `
         </div>
         <Button
           className="mfui-button-banner__button buttonClass"
+          dataAttrs={
+            Object {
+              "root": Object {
+                "data-testid": "button-test",
+              },
+            }
+          }
           download={true}
           href="#"
           target="_blank"
@@ -96,6 +103,11 @@ exports[`<ButtonBanner /> should render with required props 1`] = `
       >
         <Button
           className="mfui-button-banner__button"
+          dataAttrs={
+            Object {
+              "root": undefined,
+            }
+          }
           target="_self"
           theme="green"
         >

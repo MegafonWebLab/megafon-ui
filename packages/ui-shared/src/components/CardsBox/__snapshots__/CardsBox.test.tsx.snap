@@ -61,6 +61,11 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
             >
               <Button
                 className="mfui-card__button"
+                dataAttrs={
+                  Object {
+                    "root": undefined,
+                  }
+                }
                 href="button-href"
               >
                 <a
@@ -86,13 +91,20 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
               </Button>
               <TextLink
                 className="mfui-card__link"
-                color="blue"
+                dataAttrs={
+                  Object {
+                    "root": undefined,
+                  }
+                }
                 href="href"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 <Link
                   className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
+                  dataAttrs={
+                    Object {
+                      "root": undefined,
+                    }
+                  }
                   href="href"
                 >
                   <a
@@ -149,6 +161,11 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
             >
               <Button
                 className="mfui-card__button"
+                dataAttrs={
+                  Object {
+                    "root": undefined,
+                  }
+                }
                 href="button-href"
               >
                 <a
@@ -174,13 +191,20 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
               </Button>
               <TextLink
                 className="mfui-card__link"
-                color="blue"
+                dataAttrs={
+                  Object {
+                    "root": undefined,
+                  }
+                }
                 href="href"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 <Link
                   className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
+                  dataAttrs={
+                    Object {
+                      "root": undefined,
+                    }
+                  }
                   href="href"
                 >
                   <a
@@ -237,6 +261,11 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
             >
               <Button
                 className="mfui-card__button"
+                dataAttrs={
+                  Object {
+                    "root": undefined,
+                  }
+                }
                 href="button-href"
               >
                 <a
@@ -262,13 +291,20 @@ exports[`CardsBox mobile resolution render with carousel 1`] = `
               </Button>
               <TextLink
                 className="mfui-card__link"
-                color="blue"
+                dataAttrs={
+                  Object {
+                    "root": undefined,
+                  }
+                }
                 href="href"
-                underlineStyle="solid"
-                underlineVisibility="hover"
               >
                 <Link
                   className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-card__link"
+                  dataAttrs={
+                    Object {
+                      "root": undefined,
+                    }
+                  }
                   href="href"
                 >
                   <a

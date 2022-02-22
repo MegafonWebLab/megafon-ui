@@ -1,5 +1,5 @@
 import React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import SearchIcon from '@megafon/ui-icons/basic-24-search_24.svg';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
@@ -27,6 +27,13 @@ export type SearchItem = {
 };
 
 export interface ISearchProps {
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        searchField?: Record<string, string>;
+        submit?: Record<string, string>;
+        item?: Record<string, string>;
+    };
     /** Значение */
     value?: string;
     /** Заголовок поля */
@@ -65,6 +72,7 @@ export interface ISearchProps {
 
 const cn = cnCreate('mfui-search');
 const Search: React.FC<ISearchProps> = ({
+    dataAttrs,
     value = '',
     label,
     placeholder,
@@ -210,7 +218,7 @@ const Search: React.FC<ISearchProps> = ({
     };
 
     return (
-        <div className={cn({ open: isFocused, disabled }, [className])}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ open: isFocused, disabled }, [className])}>
             {label && (
                 <InputLabel>
                     {label}
@@ -219,6 +227,7 @@ const Search: React.FC<ISearchProps> = ({
             )}
             <div className={cn('control', { error: verification === Verification.ERROR }, [classes?.control])}>
                 <input
+                    {...filterDataAttrs(dataAttrs?.searchField)}
                     className={cn('search-field')}
                     placeholder={placeholder}
                     value={searchQuery}
@@ -232,7 +241,11 @@ const Search: React.FC<ISearchProps> = ({
                     autoComplete="off"
                 />
                 {!hideIcon && (
-                    <div className={cn('icon-box')} onClick={handleSearchSubmit}>
+                    <div
+                        {...filterDataAttrs(dataAttrs?.submit)}
+                        className={cn('icon-box')}
+                        onClick={handleSearchSubmit}
+                    >
                         <SearchIcon className={cn('icon', [classes?.icon])} />
                     </div>
                 )}
@@ -242,6 +255,7 @@ const Search: React.FC<ISearchProps> = ({
                         <div className={cn('list-inner')}>
                             {items.map(({ value: itemValue, searchView }: SearchItem, i) => (
                                 <div
+                                    {...filterDataAttrs(dataAttrs?.item, i + 1)}
                                     className={cn('list-item', { active: activeIndex === i })}
                                     onMouseDown={handleSelectSubmit(i)}
                                     onMouseEnter={handleHoverItem(i)}
@@ -272,6 +286,12 @@ const Search: React.FC<ISearchProps> = ({
 };
 
 Search.propTypes = {
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        searchField: PropTypes.objectOf(PropTypes.string.isRequired),
+        submit: PropTypes.objectOf(PropTypes.string.isRequired),
+        item: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     value: PropTypes.string,
     label: PropTypes.string,
     placeholder: PropTypes.string,

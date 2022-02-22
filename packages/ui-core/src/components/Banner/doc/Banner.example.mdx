@@ -3,22 +3,20 @@ import Banner from '../Banner';
 import { DemoSlide, OffsetBlock } from './Banner.docz';
 
 ```javascript collapse=Код DemoSlide
-export const DemoSlide = ({ children, background }) => {
-    return (
-        <div
-            style={{
-                height: "100%",
-                backgroundColor: background,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                fontSize: '30px',
-            }}
-        >
-            {children}
-        </div>
-    );
-}
+export const DemoSlide = ({ children, background = '#fff' }) => (
+    <div
+        style={{
+            height: '100%',
+            backgroundColor: background,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '30px',
+        }}
+    >
+        {children}
+    </div>
+);
 
 export const OffsetBlock = () => (
     <div

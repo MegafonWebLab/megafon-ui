@@ -135,7 +135,10 @@ describe('<Property />', () => {
         const wrapper = shallow(
             <Property
                 items={[{ title: ['Звонки на все номера России'], value: '500 ₽' }]}
-                dataAttrs={{ 'data-test': 'value' }}
+                dataAttrs={{
+                    root: { 'data-testid': 'root-test' },
+                    moreLink: { 'data-testid': 'moreLink-test' },
+                }}
             />,
         );
 

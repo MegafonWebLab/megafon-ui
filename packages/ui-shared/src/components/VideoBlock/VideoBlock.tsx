@@ -27,8 +27,11 @@ export const VideoTypes = {
 type VideoType = typeof VideoTypes[keyof typeof VideoTypes];
 
 export interface IVideoBlockProps {
-    /** Дата атрибуты для корневого элемента */
-    dataAttrs?: { [key: string]: string };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        button?: Record<string, string>;
+    };
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -97,6 +100,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 <div className={cn('description', [classes.description])}>{description}</div>
                 {buttonTitle && (
                     <Button
+                        dataAttrs={{ root: dataAttrs?.button }}
                         className={cn('button', [classes.button])}
                         href={href}
                         onClick={onButtonClick}
@@ -107,7 +111,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 )}
             </div>
         ),
-        [classes.button, classes.description],
+        [classes.button, classes.description, dataAttrs?.button],
     );
 
     const renderGridColumns = React.useCallback(() => {
@@ -132,7 +136,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
     }, [renderContent, renderVideo, content]);
 
     return (
-        <div {...filterDataAttrs(dataAttrs)} className={cn([className, classes.root])} ref={rootRef}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className, classes.root])} ref={rootRef}>
             <Grid hAlign="center" className={cn('grid')}>
                 {renderGridColumns()}
             </Grid>
@@ -141,7 +145,10 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
 };
 
 VideoBlock.propTypes = {
-    dataAttrs: PropTypes.objectOf(PropTypes.string.isRequired),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
