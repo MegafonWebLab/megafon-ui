@@ -69,12 +69,22 @@ exports[`<Carousel /> should render with default props 1`] = `
   </Swiper>
   <NavArrow
     className="mfui-carousel__arrow mfui-carousel__arrow_prev"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={true}
     onClick={[Function]}
     theme="purple"
   />
   <NavArrow
     className="mfui-carousel__arrow mfui-carousel__arrow_next"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="purple"
@@ -162,14 +172,26 @@ exports[`<Carousel /> should render with props 1`] = `
   </Swiper>
   <NavArrow
     className="mfui-carousel__arrow mfui-carousel__arrow_prev prev"
-    data-prev="test"
+    dataAttrs={
+      Object {
+        "root": Object {
+          "data-prev": "test",
+        },
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="purple"
   />
   <NavArrow
     className="mfui-carousel__arrow mfui-carousel__arrow_next next"
-    data-next="test"
+    dataAttrs={
+      Object {
+        "root": Object {
+          "data-next": "test",
+        },
+      }
+    }
     disabled={false}
     onClick={[Function]}
     theme="purple"
