@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.1.0...@megafon/ui-core@3.2.0) (2022-02-28)
+
+
+### Bug Fixes
+
+* **checkbox:** delete outline focus effect ([ecd98e7](https://github.com/MegafonWebLab/megafon-ui/commit/ecd98e7129ddd305ce6e21c1c98cdacc3670ff92))
+* **tile:** delete unnecessary symbol ([1f0ed90](https://github.com/MegafonWebLab/megafon-ui/commit/1f0ed9009ef2cb9e5562f257640a623eceae225e))
+
+
+### Features
+
+* **carousel:** fix data-attribute passing for NavArrow ([af0d26e](https://github.com/MegafonWebLab/megafon-ui/commit/af0d26ef85a19cdb4fd863a45b2c2b2365d9c086))
+* **tile:** add target props for link ([e49d040](https://github.com/MegafonWebLab/megafon-ui/commit/e49d0402725e88b9fd7d80fd418acd81bea321ba))
+
+
+
+
+
 # [3.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.0.2...@megafon/ui-core@3.1.0) (2022-02-22)
 
 
