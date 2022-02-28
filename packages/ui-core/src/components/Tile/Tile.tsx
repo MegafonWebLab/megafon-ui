@@ -103,7 +103,7 @@ Tile.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
-    target: PropTypes.oneOf(['_self', '_blank',]),
+    target: PropTypes.oneOf(['_self', '_blank']),
 };
 
 export default Tile;
