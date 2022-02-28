@@ -10,6 +10,7 @@ const props: ITileProps = {
     shadowLevel: Shadow.HIGH,
     isInteractive: true,
     onClick: jest.fn(),
+    target: '_blank',
 };
 
 describe('<Tile />', () => {

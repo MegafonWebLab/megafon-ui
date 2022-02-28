@@ -29,6 +29,8 @@ type ShadowType = typeof Shadow[keyof typeof Shadow];
 export interface ITileProps {
     /** Ссылка */
     href?: string;
+    /** Атрибут для открытия ссылки */
+    target?: '_self' | '_blank';
     /** Тема */
     theme?: ThemeType;
     /** Радиус границы */
@@ -58,6 +60,7 @@ const Tile: React.FC<ITileProps> = ({
     isInteractive = false,
     onClick,
     dataAttrs,
+    target = '_self',
 }) => {
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
         onClick?.(e);
@@ -80,7 +83,7 @@ const Tile: React.FC<ITileProps> = ({
             {...filterDataAttrs(dataAttrs?.root)}
         >
             {href && (
-                <a href={href} className={cn('link')}>
+                <a href={href} className={cn('link')} target={target}>
                     {children}
                 </a>
             )}
@@ -100,6 +103,7 @@ Tile.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
+    target: PropTypes.oneOf(['_self', '_blank']),
 };
 
 export default Tile;

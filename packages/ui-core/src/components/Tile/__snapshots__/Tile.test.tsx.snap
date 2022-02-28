@@ -25,6 +25,7 @@ exports[`<Tile /> snapshots renders component with props 1`] = `
   <a
     className="mfui-tile__link"
     href="test-link"
+    target="_blank"
   >
     Some test content
   </a>
