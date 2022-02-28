@@ -66,7 +66,10 @@ class Icons extends React.Component<Record<string, unknown>, IIconsState> {
             const pathList = item.split('/').slice(1);
             const [sectionName, svgSize] = pathList;
             const [svgIcon] = pathList.reverse();
-            const svgName = svgIcon.replace('.svg', '').replace(/_[0-9]{2}/, '');
+            const svgName = svgIcon
+                .replace('.svg', '')
+                .replace(/_[0-9]{2}/, '')
+                .toLowerCase();
             const sectionCamelCase = sectionName
                 .split('-')
                 .map(w => w.charAt(0).toUpperCase() + w.slice(1))
@@ -150,7 +153,7 @@ class Icons extends React.Component<Record<string, unknown>, IIconsState> {
                     <div className={cn('icon')}>
                         <Svg />
                     </div>
-                    {name}
+                    {name.replace('_direct_url', '')}
                 </button>
             );
         });
