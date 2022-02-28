@@ -347,14 +347,14 @@ const Carousel: React.FC<ICarouselProps> = ({
                 ))}
             </Swiper>
             <NavArrow
-                {...filterDataAttrs(dataAttrs?.prev)}
+                dataAttrs={{ root: dataAttrs?.prev }}
                 className={cn('arrow', { prev: true, locked: isLocked }, [prevClass])}
                 onClick={handlePrevClick}
                 disabled={!loop && isBeginning}
                 theme={ArrowTheme.PURPLE}
             />
             <NavArrow
-                {...filterDataAttrs(dataAttrs?.next)}
+                dataAttrs={{ root: dataAttrs?.next }}
                 className={cn('arrow', { next: true, locked: isLocked }, [nextClass])}
                 view="next"
                 onClick={handleNextClick}
