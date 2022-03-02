@@ -106,6 +106,23 @@ describe('<Select />', () => {
 
             expect(wrapper).toMatchSnapshot();
         });
+
+        it('it renders with data attributes', () => {
+            const wrapper = shallow(<Select dataAttrs={props.dataAttrs} items={props.items} />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render items.view as function and type combobox', () => {
+            const wrapper = shallow(<Select type="combobox" items={viewItems} dataAttrs={props.dataAttrs} />);
+            wrapper.find(`.${cn('combobox')}`).simulate('change', { target: { value: '123' } });
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render items.view as function and type classic', () => {
+            const wrapper = shallow(<Select items={viewItems} dataAttrs={props.dataAttrs} />);
+            expect(wrapper).toMatchSnapshot();
+        });
     });
 
     describe('states of select', () => {
@@ -286,22 +303,5 @@ describe('<Select />', () => {
 
             expect(wrapper.find(`.${cn()}_open`).exists()).toBeTruthy();
         });
-    });
-
-    it('it renders with data attributes', () => {
-        const wrapper = shallow(<Select dataAttrs={props.dataAttrs} items={props.items} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render items.view as function and type combobox', () => {
-        const wrapper = shallow(<Select type="combobox" items={viewItems} dataAttrs={props.dataAttrs} />);
-        wrapper.find(`.${cn('combobox')}`).simulate('change', { target: { value: 123 } });
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render items.view as function and type classic', () => {
-        const wrapper = shallow(<Select items={viewItems} dataAttrs={props.dataAttrs} />);
-        expect(wrapper).toMatchSnapshot();
     });
 });
