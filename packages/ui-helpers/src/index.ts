@@ -1,5 +1,5 @@
 export { default as cnCreate } from './cnCreate';
-export { default as createTestId } from './createTestId';
+export { default as nestingNameGenerator } from './nestingNameGenerator';
 export { default as convert } from './convert';
 export { default as detectTouch } from './detectTouch';
 export { default as filterDataAttrs } from './filterDataAttrs';
