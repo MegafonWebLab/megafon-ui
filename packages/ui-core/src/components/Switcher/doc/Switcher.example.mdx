@@ -22,7 +22,7 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
 };
 ```
 
-## Доступное взаимодейтвие с компонентом
+## Использование по умолчанию
 
 <Playground>
     <SwitcherWrapper>
@@ -30,7 +30,9 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
     </SwitcherWrapper>
 </Playground>
 
-## Недоступное взаимодействие с компонентом
+## Отключена возможность взаимодействия с переключателем
+
+### Состояние переключателя - "выкл."
 
 <Playground>
     <SwitcherWrapper>
@@ -38,7 +40,7 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
     </SwitcherWrapper>
 </Playground>
 
-## Недоступное взаимодействие с компонентом + состояние checked
+### Состояние переключателя - "вкл."
 
 <Playground>
     <SwitcherWrapper>
