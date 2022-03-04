@@ -12,7 +12,7 @@ export interface ISwitcherProps {
     className?: string;
     /** Управление состоянием вкл/выкл компонента */
     checked?: boolean;
-    /** Управление возможностью взаимодействия с компонентом */
+    /** Отключение переключателя */
     disabled?: boolean;
     /** Обработчик изменения элемента */
     onChange?: (e: React.MouseEvent<HTMLDivElement>) => void;
