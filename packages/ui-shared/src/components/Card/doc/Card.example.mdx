@@ -33,9 +33,8 @@ const img = './img.png';
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 ```
 
-## Наличие изображения в карточке
-
-### Если в карточке заданы изображение и иконка, то иконка будет проигнорирована.
+## Изображение
+Если в карточке заданы изображение и иконка, то иконка будет проигнорирована.
 
 <Playground style={{ marginTop: '-50px' }}>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -54,9 +53,25 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
     </Grid>
 </Playground>
 
-## Наличие кнопок/ссылок
+### Заполнение контейнера
 
-### Если в компонент не добавлены кнопка и ссылка, то в параметрах самой карточки должна быть указана ссылка. В таком случае карточка становится кликабельной и имеет hover состояние. Чтобы обозначить такое поведение карточки в неё можно добавить "ложную ссылку" (надпись синего цвета).
+<Playground style={{ marginTop: '-50px' }}>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="3" mobile="12">
+            <Header as="h2" hAlign="center" margin>Изображение заполняет контейнер по ширине</Header>
+            <Card title={title} text={text} link={link} imageSrc={img} />
+        </GridColumn>
+        <GridColumn all="3" mobile="12">
+            <Header as="h2" hAlign="center" margin>Изображение вписывается в контейнер</Header>
+            <Card title={title} text={text} button={button} imageSrc={imgShort} objectFit="contain"/>
+        </GridColumn>
+    </Grid>
+</Playground>
+
+## Кнопка и ссылка
+Если в компонент не добавлены кнопка и ссылка, то в параметрах самой карточки должна быть указана ссылка. 
+В таком случае карточка становится кликабельной и имеет hover состояние. 
+Чтобы обозначить такое поведение карточки, в неё можно добавить "ложную ссылку" (надпись синего цвета).
 
 <Playground style={{ marginTop: '-50px' }}>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -79,9 +94,9 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
     </Grid>
 </Playground>
 
-## Расположение кнопки и ссылки
-
-### Расположение по левому краю применимо, если в карточке находится либо одна кнопка, либо одна ссылка. Если в карточке находится и кнопка и ссылка, то они располагаются всегда по центру.
+### Позиционирование
+Позиционирование по левому краю применимо, если в карточке находится либо одна кнопка, либо одна ссылка. 
+Если в карточке находится и кнопка, и ссылка, то они располагаются всегда по центру.
 
 <Playground style={{ marginTop: '-50px' }}>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -100,21 +115,6 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
         <GridColumn all="3" mobile="12">
             <Header as="h2" hAlign="center" margin>Перенос элементов</Header>
             <Card title={title} text={text} button={buttonWithLongTitle} link={link} svgSrc={svg} />
-        </GridColumn>
-    </Grid>
-</Playground>
-
-## Позиционирование изображения
-
-<Playground style={{ marginTop: '-50px' }}>
-    <Grid guttersLeft="medium" guttersBottom="medium">
-        <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Изображение заполняет контейнер по ширине</Header>
-            <Card title={title} text={text} link={link} imageSrc={img} />
-        </GridColumn>
-        <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Изображение вписывается в контейнер</Header>
-            <Card title={title} text={text} button={button} imageSrc={imgShort} objectFit="contain"/>
         </GridColumn>
     </Grid>
 </Playground>

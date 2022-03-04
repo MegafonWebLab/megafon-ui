@@ -26,67 +26,70 @@ const items = [
 ]
 ```
 
-## Использование по умолчанию
+## Базовое использование
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={items} />
 </Playground>
 
-## С видео контентом
+## Видео контент
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={itemsWithVideo} />
 </Playground>
 
 ## Изображение справа
+По умолчанию располагается слева
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={items} pictureAlign='right' />
 </Playground>
 
-## С небольшим количеством пунктов
+## Рамка для изображения
 
-<Playground style={wrapperStyles}>
-    <Instructions title="Как подписаться" instructionItems={[items[0], items[1]]} />
-</Playground>
-
-## С рамкой для изображения "черный iPhone"
+### черный iPhone
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={iphoneInstructionItems} pictureMask='black-iphone' />
 </Playground>
 
-## С рамкой для изображения "белый iPhone"
+### белый iPhone
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={iphoneInstructionItems} pictureMask='white-iphone' />
 </Playground>
 
-## С рамкой для изображения "android"
+### android
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={androidInstructionItems} pictureMask='android' />
 </Playground>
 
-## С рамкой для изображения "new iphone"
+### new iphone
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={newIphoneInstructionItems} pictureMask='new-iphone' />
 </Playground>
 
-## С рамкой для изображения "iphone 12"
+### iphone 12
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={iphone12InstructionItems} pictureMask='iphone-12' />
 </Playground>
 
-## С рамкой для изображения "ноутбук"
+### ноутбук
 
 <Playground style={wrapperStyles}>
     <Instructions title="Как подписаться" instructionItems={laptopInstructionItems} pictureMask='laptop' />
 </Playground>
 
-## Использование с дополнительным текстом
+## Небольшое количество пунктов
+
+<Playground style={wrapperStyles}>
+    <Instructions title="Как подписаться" instructionItems={[items[0], items[1]]} />
+</Playground>
+
+## Дополнительный текст
 
 <Playground style={wrapperStyles}>
     <Instructions
