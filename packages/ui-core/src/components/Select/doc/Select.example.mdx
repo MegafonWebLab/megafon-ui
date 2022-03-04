@@ -90,11 +90,14 @@ const items = [
 ];
 ```
 
+## Использование по умолчанию
+
+
 <Playground style={flexStyle}>
     <DemoSelectWrapper>
         {({ onSelect, currentValue }) => (
             <Select
-                label="Тип сlassic (по умолчанию)"
+                label="Заголовок"
                 onSelect={onSelect}
                 placeholder="Choose your step"
                 items={items}
@@ -102,10 +105,15 @@ const items = [
             />
         )}
     </DemoSelectWrapper>
+</Playground>
+
+## С кастомным отображением элементов
+
+<Playground style={flexStyle}>
     <DemoSelectWrapper>
         {({ onSelect, canOpen, currentValue }) => (
             <Select
-                label="Дополнительный компонент у элементов"
+                label="Заголовок"
                 placeholder="Choose your step"
                 items={items.map(item => ({
                     title: item.title,
@@ -128,10 +136,15 @@ const items = [
             />
         )}
     </DemoSelectWrapper>
+</Playground>
+
+## Выключенное состояние
+
+<Playground style={flexStyle}>
     <DemoSelectWrapper>
         {({ onSelect, currentValue }) => (
             <Select
-                label="Выключенное состояние"
+                label="Заголовок"
                 disabled
                 onSelect={onSelect}
                 placeholder="You have no choice"
@@ -181,7 +194,7 @@ const items = [
     <DemoSelectWrapper>
         {({ onSelect, currentValue }) => (
             <Select
-                label="Тип combobox"
+                label="Сombobox"
                 type="combobox"
                 onSelect={onSelect}
                 placeholder="Choose or type your step"

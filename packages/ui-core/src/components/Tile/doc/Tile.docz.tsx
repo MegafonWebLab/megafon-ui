@@ -25,7 +25,6 @@ export const tileInner = {
     padding: '15px',
     height: '100%',
     boxSizing: 'border-box',
-    width: '50px',
     margin: '0 auto',
 };
 

@@ -79,7 +79,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       shadowLevel="high"
       isColored={false}
    >
-      Уведомление типа success с цветным фоном и с типом тени Hover
+      Уведомление типа success с белым фоном
    </Notification>
 
    <Notification
@@ -221,39 +221,62 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 
 ## Уведомления со ссылками
 
+### Цвета ссылок отличаются в зависимости от типа уведомления
+
 <Playground style={wrapperStyle}>
    <Notification
       type="info"
-      title="Cсылка ведет на новую страницу"
+      title="Для всех типов с белым фоном"
+      shadowLevel="high"
+      link="Cсылка синего цвета"
+      target="_blank"
+      href="/"
+      isColored={false}
+   >
+      Текст уведомления
+   </Notification>
+   <Notification
+      type="warning"
+      title="Для типов info, success и warning, имеющих цветной фон"
+      link="Cсылка черного цвета"
+      href="/"
+      target="_blank"
+   >
+      Текст уведомления
+   </Notification>
+   <Notification
+      type="error"
+      title="Для типа error"
+      link="Cсылка белого цвета"
+      href="/"
+      target="_blank"
+   >
+      Текст уведомления
+   </Notification>
+</Playground>
+
+### Переход на другую страницу
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="info"
+      title="Заголовок уведомления"
       shadowLevel="high"
       link="Cсылка на новую страницу"
       target="_blank"
       href="/"
       target="_blank"
       isColored={false}
-   >
-      На персональном счёте недостаточно средств.
-   </Notification>
+   />
+</Playground>
 
+### Кастомный обработчик клика по ссылке
+<Playground style={wrapperStyle}>
    <DemoNotificationWrapper>
       {({ initialClickAmount, onLinkClick }) =>
          <Notification
-            type="warning"
-            title="Cсылка с кастомным обработчиком"
-            shadowLevel="zero"
-            link="Cсылка с обработчиком"
-            onLinkClick={onLinkClick}
-         >
-            {`Количество кликов: ${initialClickAmount}`}
-         </Notification>
-      }
-   </DemoNotificationWrapper>
-
-   <DemoNotificationWrapper>
-      {({ initialClickAmount, onLinkClick }) =>
-         <Notification
-            type="error"
-            title="Cсылка с кастомным обработчиком"
+            type="info"
+            title="Заголовок уведомления"
             shadowLevel="zero"
             link="Cсылка с обработчиком"
             onLinkClick={onLinkClick}
@@ -264,7 +287,33 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    </DemoNotificationWrapper>
 </Playground>
 
-## Наличие кнопки закрытия
+### Частичное заполнение контентом
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="info"
+      shadowLevel="high"
+      isColored={false}
+      link="Cсылка на новую страницу"
+      href="/"
+      target="_blank"
+   >
+      Отсутствует заголовок
+   </Notification>
+
+   <Notification
+      type="info"
+      title="Отсутствует дополнительный текст"
+      shadowLevel="high"
+      isColored={false}
+      link="Cсылка на новую страницу"
+      href="/"
+      target="_blank"
+   />
+</Playground>
+
+
+## Кнопка закрытия
 
 <Playground style={wrapperStyle}>
    <DemoNotificationWrapper>
@@ -284,31 +333,18 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 </Playground>
 
 
-## Заполнение контентом частично
-
-<Playground style={wrapperStyle}>
+## Вертикальное выравнивание
+ 
+<Playground style={{
+   ...wrapperStyle,
+   gridTemplateColumns: '35% 1fr'
+}}>
    <Notification
       type="info"
-      shadowLevel="high"
-      isColored={false}
-      link="Cсылка"
-      href="/"
-      target="_blank"
-   >
-      Ссылка и отсутствие заголовка.
-   </Notification>
-
-   <Notification
-      type="info"
-      title="Кнопка закрытия с обработчиком и ссылка на новую страницу"
-      shadowLevel="high"
+      shadowLevel="zero"
       hasCloseButton
-      isColored={false}
-      link="Cсылка на новую страницу"
-      href="/"
-      target="_blank"
    >
-      Использованы все опциональные элементы
+      Если высота контента больше высоты иконки, то они выравниваются по верхнему краю контентной области.
    </Notification>
 
    <Notification
@@ -316,15 +352,6 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       shadowLevel="zero"
       hasCloseButton
    >
-      Отсутствие заголовка и ссылки.<br />
-      Если высота текста больше высоты иконки, то они выравниваются по верху контентной области.
-   </Notification>
-
-   <Notification
-      type="info"
-      shadowLevel="zero"
-      hasCloseButton
-   >
-     Центрирование по вертикали, при небольшой высоте текста.
+     Если высота контента меньше высоты иконки, то они выравниваются по центру контентной области.
    </Notification>
 </Playground>

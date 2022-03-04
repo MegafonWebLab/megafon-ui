@@ -5,6 +5,8 @@ import {
     DemoCalendarWithDatesChange,
     minBookingDate,
     maxBookingDate,
+    maxBookingDateInCurrentMonth,
+    calendarWrapperStyle,
 } from './Calendar.docz';
 
 ## Особенности использования
@@ -18,7 +20,7 @@ import {
     <Calendar />
 </Playground>
 
-## С возможностью выбора одной даты и стилизованной оберткой
+## Стилизованная обертка
 
 <Playground>
     <div style={{
@@ -27,14 +29,28 @@ import {
         boxShadow: '0 2px 9px rgba(0, 0, 0, 0.15)',
         maxWidth: '320px',
     }}>
-        <Calendar isSingleDate />
+        <Calendar />
     </div>
 </Playground>
 
-## С недоступными датами
+## Выбор одной даты
 
-<Playground style={{margin: 'auto', maxWidth: '320px'}}>
-    <Calendar minBookingDate={minBookingDate} maxBookingDate={maxBookingDate} />
+<Playground style={calendarWrapperStyle}>
+    <Calendar isSingleDate />
+</Playground>
+
+## Определение недоступного диапазона дат
+
+### Недоступен выбор до определенной даты (включительно)
+
+<Playground style={calendarWrapperStyle}>
+    <Calendar minBookingDate={minBookingDate} />
+</Playground>
+
+### Недоступен выбор после определенной даты (включительно)
+
+<Playground style={calendarWrapperStyle}>
+    <Calendar maxBookingDate={maxBookingDateInCurrentMonth} />
 </Playground>
 
 ```javascript collapse=Демо-данные
@@ -43,9 +59,10 @@ const currentMonth = date.getMonth();
 const currentYear = date.getFullYear();
 const minBookingDate = new Date(currentYear, currentMonth, 7);
 const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
+const maxBookingDateInCurrentMonth = new Date(currentYear, currentMonth, 20);
 ```
 
-## С предвыбранным интервалом дат
+## Предвыбранный диапазон дат
 
 <Playground style={{ textAlign: 'center' }}>
     <DemoCalendarWithHandleChange>
@@ -76,7 +93,7 @@ export const DemoCalendarWithHandleChange = ({ children }) => {
 };
 ```
 
-## Изменение дат с помощью получения новых в свойствах
+## Определение выбранных дат вне календаря
 
 <Playground style={{ textAlign: 'center' }}>
     <DemoCalendarWithDatesChange>

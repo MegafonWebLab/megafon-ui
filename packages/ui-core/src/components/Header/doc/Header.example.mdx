@@ -52,18 +52,28 @@ export const tableRowStyle = {
     </div>
 </Playground>
 
-## Наличие отступа
+## Внешние отступы
+### (сверху/снизу)
 
 <Playground>
     <div style={tableRowStyle}>
-        <Header as="h2" margin>MegaFon</Header>
+        <Header as="h1" margin>H1. MegaFon (0/32)</Header>
     </div>
     <div style={tableRowStyle}>
-        <Header as="h2">MegaFon</Header>
+        <Header as="h2" margin>H2. MegaFon (56/24)</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h3" margin>H3. MegaFon (32/24)</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h5" margin>H5. MegaFon (24/16)</Header>
+    </div>
+    <div style={tableRowStyle}>
+        <Header as="h2">Без отступов</Header>
     </div>
 </Playground>
 
-## С дополнительным компонентом
+## Дополнительный компонент
 
 <Playground>
     <div style={tableRowStyle}>
