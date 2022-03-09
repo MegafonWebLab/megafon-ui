@@ -1,0 +1,36 @@
+@import (reference) '~styles/base.less';
+
+@b: e('.mfui-promo-badge');
+
+@{b} {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    width: fit-content;
+
+    border-radius: 8px;
+
+    color: var(--base);
+
+    &_type_hit {
+        background-color: var(--warmRedC);
+    }
+    &_type_new {
+        background-color: var(--systemBlue);
+    }
+
+    &_type_popular {
+        background-color: var(--137C);
+    }
+
+    &_type_user-choice {
+        background-color: var(--reflexBlue);
+    }
+
+    &__text {
+        .fontFamily();
+        .smallFont();
+
+        font-weight: 500;
+    }
+}
