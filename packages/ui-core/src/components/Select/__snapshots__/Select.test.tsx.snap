@@ -1,69 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Select /> it renders with data attributes 1`] = `
-<div
-  className="mfui-select mfui-select_no-touch"
-  data-root="test"
->
-  <div
-    className="mfui-select__inner"
-  >
-    <div
-      className="mfui-select__control"
-      onKeyDown={[Function]}
-    >
-      <div
-        className="mfui-select__title"
-        data-title="test"
-        onClick={[Function]}
-        role="button"
-        tabIndex={0}
-      >
-        <div
-          className="mfui-select__title-inner"
-        />
-      </div>
-    </div>
-    <div
-      className="mfui-select__list"
-    >
-      <div
-        className="mfui-select__list-inner"
-      >
-        <div
-          className="mfui-select__list-item mfui-select__list-item_hovered"
-          data-list-item="test[1]"
-          key="0_1"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="mfui-select__item-title"
-            data-list-item-title="test[1]"
-          >
-            test-name-1
-          </div>
-        </div>
-        <div
-          className="mfui-select__list-item"
-          data-list-item="test[2]"
-          key="1_2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          <div
-            className="mfui-select__item-title"
-            data-list-item-title="test[2]"
-          >
-            test-name-2
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`<Select /> key typing handlers calls onChange while typing in the field with debounce 1`] = `
 <div
   className="mfui-select mfui-select_no-touch test-class test-root-class"
@@ -660,7 +596,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
 </Select>
 `;
 
-exports[`<Select /> should render items.view as function and type classic 1`] = `
+exports[`<Select /> snapshots it renders with data attributes 1`] = `
 <div
   className="mfui-select mfui-select_no-touch"
   data-root="test"
@@ -693,7 +629,7 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
         <div
           className="mfui-select__list-item mfui-select__list-item_hovered"
           data-list-item="test[1]"
-          key="0_111"
+          key="0_1"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
@@ -701,49 +637,22 @@ exports[`<Select /> should render items.view as function and type classic 1`] = 
             className="mfui-select__item-title"
             data-list-item-title="test[1]"
           >
-            <div>
-              view 
-            </div>
+            test-name-1
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Select /> should render items.view as function and type combobox 1`] = `
-<div
-  className="mfui-select mfui-select_no-touch"
-  data-root="test"
->
-  <div
-    className="mfui-select__inner"
-  >
-    <div
-      className="mfui-select__control"
-      onKeyDown={[Function]}
-    >
-      <input
-        className="mfui-select__combobox"
-        data-input="test"
-        onChange={[Function]}
-        onFocus={[Function]}
-        type="text"
-        value={123}
-      />
-    </div>
-    <div
-      className="mfui-select__list"
-    >
-      <div
-        className="mfui-select__list-inner"
-      >
         <div
-          className="mfui-select__not-found"
-          data-not-found="test"
+          className="mfui-select__list-item"
+          data-list-item="test[2]"
+          key="1_2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
-          Ничего не нашлось
+          <div
+            className="mfui-select__item-title"
+            data-list-item-title="test[2]"
+          >
+            test-name-2
+          </div>
         </div>
       </div>
     </div>
@@ -1175,6 +1084,97 @@ exports[`<Select /> snapshots renders with props 1`] = `
     </div>
   </div>
 </Select>
+`;
+
+exports[`<Select /> snapshots should render items.view as function and type classic 1`] = `
+<div
+  className="mfui-select mfui-select_no-touch"
+  data-root="test"
+>
+  <div
+    className="mfui-select__inner"
+  >
+    <div
+      className="mfui-select__control"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="mfui-select__title"
+        data-title="test"
+        onClick={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <div
+          className="mfui-select__title-inner"
+        />
+      </div>
+    </div>
+    <div
+      className="mfui-select__list"
+    >
+      <div
+        className="mfui-select__list-inner"
+      >
+        <div
+          className="mfui-select__list-item mfui-select__list-item_hovered"
+          data-list-item="test[1]"
+          key="0_111"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <div
+            className="mfui-select__item-title"
+            data-list-item-title="test[1]"
+          >
+            <div>
+              view 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Select /> snapshots should render items.view as function and type combobox 1`] = `
+<div
+  className="mfui-select mfui-select_no-touch"
+  data-root="test"
+>
+  <div
+    className="mfui-select__inner"
+  >
+    <div
+      className="mfui-select__control"
+      onKeyDown={[Function]}
+    >
+      <input
+        className="mfui-select__combobox"
+        data-input="test"
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+        value="123"
+      />
+    </div>
+    <div
+      className="mfui-select__list"
+    >
+      <div
+        className="mfui-select__list-inner"
+      >
+        <div
+          className="mfui-select__not-found"
+          data-not-found="test"
+        >
+          Ничего не нашлось
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`<Select /> states of select renders with disabled state 1`] = `
