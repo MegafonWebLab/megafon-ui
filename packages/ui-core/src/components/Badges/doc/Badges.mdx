@@ -6,7 +6,9 @@ route: components/badges
 
 import { Props } from 'docz';
 import PromoBadge from '../components/PromoBadge/PromoBadge';
+import PriceBadge from '../components/PriceBadge/PriceBadge';
 import PromoBadgeExample from '../components/PromoBadge/doc/PromoBadge.example.mdx';
+import PriceBadgeExample from '../components/PriceBadge/doc/PriceBadge.example.mdx';
 
 # PromoBadge
 
@@ -15,4 +17,13 @@ import PromoBadgeExample from '../components/PromoBadge/doc/PromoBadge.example.m
 <DoczTabs>
     <PromoBadgeExample />
     <Props of={PromoBadge} />
+</DoczTabs>
+
+# PriceBadge
+
+<CopyToClipboardBox text="import { PriceBadge } from '@megafon/ui-core';" />
+
+<DoczTabs>
+    <PriceBadgeExample />
+    <Props of={PriceBadge} />
 </DoczTabs>

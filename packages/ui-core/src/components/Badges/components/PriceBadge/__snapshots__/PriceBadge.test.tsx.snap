@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PriceBadge /> snapshots renders with all props 1`] = `
+<div
+  className="mfui-price-badge mfui-price-badge_theme_green mfui-price-badge_adaptive"
+>
+  <test-file-stub
+    className="mfui-price-badge__icon"
+  />
+  <span
+    className="mfui-price-badge__text"
+  >
+    badge text
+  </span>
+</div>
+`;
+
+exports[`<PriceBadge /> snapshots renders with attention icon 1`] = `
+<div
+  className="mfui-price-badge mfui-price-badge_theme_grey"
+>
+  <test-file-stub
+    className="mfui-price-badge__icon"
+  />
+  <span
+    className="mfui-price-badge__text"
+  >
+    badge text
+  </span>
+</div>
+`;
+
+exports[`<PriceBadge /> snapshots renders with check icon 1`] = `
+<div
+  className="mfui-price-badge mfui-price-badge_theme_grey"
+>
+  <test-file-stub
+    className="mfui-price-badge__icon"
+  />
+  <span
+    className="mfui-price-badge__text"
+  >
+    badge text
+  </span>
+</div>
+`;
+
+exports[`<PriceBadge /> snapshots renders with default props 1`] = `
+<div
+  className="mfui-price-badge mfui-price-badge_theme_grey"
+>
+  <test-file-stub
+    className="mfui-price-badge__icon"
+  />
+  <span
+    className="mfui-price-badge__text"
+  >
+    badge text
+  </span>
+</div>
+`;
