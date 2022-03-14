@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.2.0...@megafon/ui-core@3.3.0) (2022-03-14)
+
+
+### Bug Fixes
+
+* **accordion:** remove outline for safari ([787b572](https://github.com/MegafonWebLab/megafon-ui/commit/787b5725ef962637401a0a3a1a8ae7ba0cece031))
+
+
+### Features
+
+* **badges:** add new component PriceBadge ([9214baa](https://github.com/MegafonWebLab/megafon-ui/commit/9214baab003f958b916b728cf07e6f9db15173dd))
+* **badges:** add new component PromoBadge ([6e550a0](https://github.com/MegafonWebLab/megafon-ui/commit/6e550a06fd2d0fb7b3dba488702f4a34f4f6d101))
+
+
+
+
+
 # [3.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.1.0...@megafon/ui-core@3.2.0) (2022-02-28)
 
 

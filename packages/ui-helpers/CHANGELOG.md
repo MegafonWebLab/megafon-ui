@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.1...@megafon/ui-helpers@2.1.0) (2022-03-14)
+
+
+### Features
+
+* **nestingnamegenerator:** added util to form id string for autotest purposes ([4ab5bf1](https://github.com/MegafonWebLab/megafon-ui/commit/4ab5bf1a1da9748e3d783d6140b23376d911b750))
+
+
+
+
+
 ## [2.0.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.0...@megafon/ui-helpers@2.0.1) (2022-02-11)
 
 

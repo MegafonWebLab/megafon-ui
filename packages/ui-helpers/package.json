@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-helpers",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
   "typings": "dist/index.d.ts",
