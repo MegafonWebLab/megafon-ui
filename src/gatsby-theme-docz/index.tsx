@@ -17,7 +17,7 @@ const map = {
     h2,
     h3,
     h5,
-    p: ({ children }) => <p style={{ margin: '0 0 24px 0' }}>{children}</p>,
+    p: ({ children }) => <p style={{ margin: '0 0 24px 0', maxWidth: '1040px' }}>{children}</p>,
     props: Props,
     code: Code,
     td,
