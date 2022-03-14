@@ -35,6 +35,26 @@ describe('nestingNameGenerator', () => {
                 `${blockName}-element[1]-slide-button[3]-link`,
             );
         });
+
+        it('should return correct value if increase index set with two arguments', () => {
+            const testIdWithIncrease = nestingNameGenerator(blockName, { indexIncrease: 1 });
+
+            expect(testIdWithIncrease('element', 1)).toEqual(`${blockName}-element[2]`);
+        });
+
+        it('should return correct value if increase index set with four arguments', () => {
+            const testIdWithIncrease = nestingNameGenerator(blockName, { indexIncrease: 2 });
+
+            expect(testIdWithIncrease('element', 1, 'slide', 2)).toEqual(`${blockName}-element[3]-slide[4]`);
+        });
+
+        it('should return correct value if increase index set with six arguments', () => {
+            const testIdWithIncrease = nestingNameGenerator(blockName, { indexIncrease: 3 });
+
+            expect(testIdWithIncrease('element', 1, 'slide', 2, 'button', 3)).toEqual(
+                `${blockName}-element[4]-slide[5]-button[6]`,
+            );
+        });
     });
 
     describe('console warning tests', () => {
