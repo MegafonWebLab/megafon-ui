@@ -2,8 +2,14 @@
 const DOUBLE_INDEX_CHANGE = 2;
 
 type NestingNameGeneratorReturnType = (...args: (number | string)[]) => string;
+interface IGeneratorOptions {
+    indexIncrease?: number;
+}
 
-const nestingNameGenerator = (blockName: string): NestingNameGeneratorReturnType => {
+const nestingNameGenerator = (
+    blockName: string,
+    { indexIncrease = 0 }: IGeneratorOptions = {},
+): NestingNameGeneratorReturnType => {
     const stringPattern = /^[a-zA-Z]+$/;
 
     if (!stringPattern.test(String(blockName))) {
@@ -40,7 +46,9 @@ const nestingNameGenerator = (blockName: string): NestingNameGeneratorReturnType
                 );
             }
 
-            id = isNextArgumentNumber ? `${id}-${currentArgument}[${nextArgument}]` : `${id}-${currentArgument}`;
+            id = isNextArgumentNumber
+                ? `${id}-${currentArgument}[${Number(nextArgument) + indexIncrease}]`
+                : `${id}-${currentArgument}`;
 
             index += indexChange;
         }
