@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.3.0...@megafon/ui-core@3.3.1) (2022-03-15)
+
+
+### Bug Fixes
+
+* **collapse:** made collapse height 0 or auto on animation end ([c898d1e](https://github.com/MegafonWebLab/megafon-ui/commit/c898d1e84d3c92defa204c24125508655466d5cd))
+
+
+
+
+
 # [3.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.2.0...@megafon/ui-core@3.3.0) (2022-03-14)
 
 
