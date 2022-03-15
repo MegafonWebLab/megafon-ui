@@ -73,6 +73,7 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
             } else {
                 animationStart.current = null;
                 animationId.current = null;
+                rootNode.current.style.height = isOpenAction ? 'auto' : '0px';
             }
         },
         [],
