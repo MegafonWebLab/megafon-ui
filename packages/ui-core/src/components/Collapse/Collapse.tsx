@@ -76,7 +76,7 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
                 rootNode.current.style.height = isOpenAction ? 'auto' : '0px';
             }
         },
-        [isOpened],
+        [],
     );
 
     useEffect(() => {
