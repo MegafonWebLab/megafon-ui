@@ -8,10 +8,10 @@
     display: flex;
     align-items: center;
 
-    padding: 4px;
+    padding: 2px;
     padding-right: 8px;
     width: fit-content;
-    height: 24px;
+    height: fit-content;
 
     border-radius: 8px;
 
@@ -19,8 +19,9 @@
         @media @desktop {
             .commonFont();
 
-            padding: 4px 8px;
-            height: 32px;
+            padding: 4px;
+            padding-right: 8px;
+            min-height: 32px;
 
             border-radius: 12px;
         }
@@ -77,7 +78,11 @@
     &__text {
         .fontFamily();
 
-        margin-left: 4px;
+        margin-left: 2px;
+    }
+
+    &__icon-container {
+        display: flex;
     }
 
     &__icon {
