@@ -34,3 +34,11 @@ exports[`StoreButton should render with data-attributes 1`] = `
   href="href"
 />
 `;
+
+exports[`StoreButton should render with target prop 1`] = `
+<Link
+  className="mfui-store-button mfui-store-button_theme_app-store"
+  href="href"
+  target="_blank"
+/>
+`;

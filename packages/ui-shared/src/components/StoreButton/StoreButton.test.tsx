@@ -44,4 +44,10 @@ describe('StoreButton', () => {
 
         expect(onClick).toHaveBeenCalled();
     });
+
+    it('should render with target prop', () => {
+        const wrapper = shallow(<StoreButton {...props} target="_blank" />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
