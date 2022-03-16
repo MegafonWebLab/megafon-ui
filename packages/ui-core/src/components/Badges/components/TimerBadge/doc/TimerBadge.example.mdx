@@ -1,0 +1,100 @@
+import { Playground } from 'docz';
+import TimerBadge from '../TimerBadge';
+import { 
+    someMonthsBeforeEnd, 
+    someHoursBeforeEnd, 
+    someMinutesBeforeEnd, 
+    someSecondsBeforeEnd, 
+    someHoursAndMinutesBeforeEnd,
+    someDaysAndHoursBeforeEnd,
+    someDaysBeforeEnd,
+} from './TimerBadge.docz';
+
+```javascript collapse=Демо-данные
+import { add } from 'date-fns';
+ 
+const date = new Date();
+ 
+const someDaysBeforeEnd = add(date, { days: 6, hours: 1 });
+const someDaysAndHoursBeforeEnd = add(date, { days: 6, hours: 4 });
+const someHoursAndMinutesBeforeEnd = add(date, { hours: 5, minutes: 25 });
+const someHoursBeforeEnd = add(date, { hours: 5, minutes: 1 });
+const someMinutesBeforeEnd = add(date, { minutes: 40 });
+const someSecondsBeforeEnd = add(date, { seconds: 59 });
+const someMonthsBeforeEnd = add(date, { months: 3 });
+```
+
+## Базовое использование 
+
+### Дата окончания
+
+<Playground>
+    <TimerBadge expirationDate={someMonthsBeforeEnd} />
+</Playground>
+
+### Обратный отсчёт 
+
+<Playground>
+    <TimerBadge expirationDate={someHoursBeforeEnd} />
+</Playground>
+
+## Дополнительный текст
+
+### Дата окончания
+
+<Playground>
+    <TimerBadge expirationDate={someMonthsBeforeEnd} hasPrefix/>  
+</Playground>
+
+### Обратный отсчёт 
+
+<Playground>
+    <TimerBadge expirationDate={someHoursBeforeEnd} hasPrefix/>  
+</Playground>
+
+## Кастомный дополнительный текст 
+
+### Дата окончания
+
+<Playground>
+    <TimerBadge expirationDate={someMonthsBeforeEnd} hasPrefix expirationDateText="Действительно до"/>  
+</Playground>
+
+### Обратный отсчёт 
+
+<Playground>
+    <TimerBadge expirationDate={someHoursBeforeEnd} hasPrefix countdownText="Срок действия истечёт через"/>  
+</Playground>
+
+## Форматы отображения обратного отсчёта
+
+### Меньше часа 
+Когда времени остается меньше часа, у иконки появляется тень.
+
+Через одну минуту после последнего обновления страницы демо не будет соответствовать своему описанию. Для корректного отображения необходимо обновить страницу. 
+
+<Playground style={{ display: 'flex', gap: '20px' }}>
+    <TimerBadge expirationDate={someMinutesBeforeEnd} hasPrefix countdownText="Осталось несколько минут:"/>
+    <TimerBadge expirationDate={someSecondsBeforeEnd} hasPrefix countdownText="Осталось несколько секунд:"/>  
+</Playground>
+
+### Больше часа, меньше дня
+
+<Playground style={{ display: 'flex', gap: '20px' }}>
+    <TimerBadge expirationDate={someHoursBeforeEnd} hasPrefix countdownText="Осталось несколько часов:"/>
+    <TimerBadge expirationDate={someHoursAndMinutesBeforeEnd} hasPrefix countdownText="Осталось меньше суток:"/>  
+</Playground>
+
+### Больше одного дня
+Установлено кастомное время начала обратного отсчёта
+
+<Playground style={{ display: 'flex', gap: '20px' }}>
+    <TimerBadge countdownStart={604800} expirationDate={someDaysBeforeEnd} hasPrefix countdownText="Осталось несколько дней:"/>
+    <TimerBadge countdownStart={604800} expirationDate={someDaysAndHoursBeforeEnd} hasPrefix countdownText="Осталось меньше недели:"/>  
+</Playground>
+
+## Время истекло
+
+<Playground style={{ display: 'flex', gap: '20px' }}>
+    <TimerBadge expirationDate={new Date()}/>
+</Playground>
