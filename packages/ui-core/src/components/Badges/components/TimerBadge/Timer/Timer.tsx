@@ -10,7 +10,7 @@ const SECONDS_IN_MINUTE = 60;
 
 const formatDate = (date: Date, pattern: string) => format(date, pattern, { locale: ruLocale });
 
-export const getCoundownText = (remainingTime = 0): string => {
+export const getCountdownText = (remainingTime = 0): string => {
     const isMoreHourAndLessDay = remainingTime >= SECONDS_IN_HOUR && remainingTime < SECONDS_IN_DAY;
 
     const truncTime = (divider = 1) => Math.trunc(remainingTime / divider);
@@ -69,7 +69,9 @@ const Timer: React.FC<ITimerProps> = ({
 }) => (
     <div className={cn()} {...filterDataAttrs(dataAttrs?.root)}>
         {additionalText && <span>{additionalText} </span>}
-        <span>{showCountdown ? getCoundownText(actualRemainingTime) : formatDate(expirationDate, 'dd MMMM yyyy')}</span>
+        <span>
+            {showCountdown ? getCountdownText(actualRemainingTime) : formatDate(expirationDate, 'dd MMMM yyyy')}
+        </span>
     </div>
 );
 

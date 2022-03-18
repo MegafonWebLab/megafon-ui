@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import TimerIcon from '@megafon/ui-icons/system-16-timer_16.svg';
 import * as PropTypes from 'prop-types';
@@ -17,13 +17,13 @@ const TimerBadgeTheme = {
 export interface ITimerBadgeProps {
     /** Дата окончания таймера */
     expirationDate: Date;
-    /** Время начала обратного отсчёта, в секундах */
+    /** Граница переключения в режим обратного отсчёта, в секундах */
     countdownStart?: number;
     /** Отображение дополнительного текста */
     hasPrefix?: boolean;
-    /** Дополнительный текст для обратного отсчёта */
+    /** Текст перед таймером в режиме обратного отсчета. Появляется при hasPrefix=true. */
     countdownText?: string;
-    /** Дополнительный текст для даты окончания таймера */
+    /** Текст перед таймером в режиме даты. Появляется при hasPrefix=true. */
     expirationDateText?: string;
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -45,15 +45,13 @@ const TimerBadge: React.FC<ITimerBadgeProps> = ({
     className,
     dataAttrs,
 }) => {
-    const countTimeout = useRef<number>(0);
-
-    const remainingTime = (new Date(expirationDate).getTime() - new Date().getTime()) / MS_IN_SECOND;
+    const remainingTime = (expirationDate.getTime() - Date.now()) / MS_IN_SECOND;
 
     const [actualRemainingTime, setActualRemainingTime] = useState(remainingTime);
     const [showCountdown, setShowCountdown] = useState(false);
 
     const isLastHour = actualRemainingTime < SECONDS_IN_HOUR;
-    const isTimeExpired = actualRemainingTime < 1 || new Date(expirationDate) <= new Date();
+    const isTimeExpired = actualRemainingTime < 1;
 
     const theme = showCountdown ? TimerBadgeTheme.RED : TimerBadgeTheme.GREY;
     const additionalText = showCountdown ? countdownText : expirationDateText;
@@ -67,9 +65,9 @@ const TimerBadge: React.FC<ITimerBadgeProps> = ({
             return undefined;
         }
 
-        countTimeout.current = window.setTimeout(() => setActualRemainingTime(actualRemainingTime - 1), TIMEOUT);
+        const timeoutId = window.setTimeout(() => setActualRemainingTime(actualRemainingTime - 1), TIMEOUT);
 
-        return (): void => clearTimeout(countTimeout.current);
+        return (): void => clearTimeout(timeoutId);
     }, [isTimeExpired, showCountdown, actualRemainingTime]);
 
     return (

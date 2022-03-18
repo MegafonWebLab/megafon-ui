@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Timer, { getCoundownText } from './Timer';
+import Timer, { getCountdownText } from './Timer';
 
 const defaultDate = new Date('2022-04-25T14:50:15z');
 
@@ -36,39 +36,39 @@ describe('<Timer />', () => {
     });
 });
 
-describe('getCoundownText tests', () => {
+describe('getCountdownText tests', () => {
     it('should return correct string, if remaining time less than minute', () => {
-        const result = getCoundownText(55);
+        const result = getCountdownText(55);
 
         expect(result).toBe('55 сек');
     });
 
     it('should return correct string, if remaining time less than hour', () => {
-        const result = getCoundownText(3500);
+        const result = getCountdownText(3500);
 
         expect(result).toBe('58 мин');
     });
 
     it('should return correct string, if remaining time more than hour and less than one day', () => {
-        const result = getCoundownText(4000);
+        const result = getCountdownText(4000);
 
         expect(result).toBe('1 ч 6 мин');
     });
 
     it('should return correct string, if remaining time includes days and hours', () => {
-        const result = getCoundownText(94000);
+        const result = getCountdownText(94000);
 
         expect(result).toBe('1 дн 2 ч');
     });
 
     it('should return correct string, if remaining time includes full days', () => {
-        const result = getCoundownText(172800);
+        const result = getCountdownText(172800);
 
         expect(result).toBe('2 дн');
     });
 
     it('should return empty string without remaining time', () => {
-        const result = getCoundownText();
+        const result = getCountdownText();
 
         expect(result).toBe('');
     });

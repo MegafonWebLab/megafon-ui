@@ -2,8 +2,7 @@ import * as React from 'react';
 import { mount } from 'enzyme';
 import TimerBadge from './TimerBadge';
 
-const RealDate = global.Date;
-const date = new Date('2022-03-15T10:50:15z');
+const initialDateNow = Date.now;
 
 const defaultDate = new Date('2022-04-25T14:50:15z');
 
@@ -28,17 +27,11 @@ const defaultAllProps = {
 describe('<TimerBadge />', () => {
     describe('snapshots', () => {
         beforeAll(() => {
-            global.Date = class extends Date {
-                constructor(customDate: string) {
-                    super();
-
-                    return customDate ? new RealDate(customDate) : date;
-                }
-            } as DateConstructor;
+            Date.now = jest.fn().mockReturnValue(1647341415000);
         });
 
         afterAll(() => {
-            global.Date = RealDate;
+            Date.now = initialDateNow;
         });
 
         it('renders with require props', () => {
