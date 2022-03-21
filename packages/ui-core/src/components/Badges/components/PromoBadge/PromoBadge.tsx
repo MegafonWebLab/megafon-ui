@@ -6,6 +6,7 @@ import './PromoBadge.less';
 export const PromoBadgeTypes = {
     HIT: 'hit',
     NEW: 'new',
+    VIP: 'vip',
     POPULAR: 'popular',
     USER_CHOICE: 'user-choice',
 } as const;

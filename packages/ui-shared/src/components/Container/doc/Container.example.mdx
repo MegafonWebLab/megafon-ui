@@ -52,7 +52,9 @@ import ButtonBanner from '../../ButtonBanner/ButtonBanner';
 import Steps from '../../Steps/Steps';
 import StepsItem from '../../Steps/StepsItem';
 
-## Отступ между компонентами 32px
+## Базовое использование
+
+### Отступ между компонентами 32px
 
 <Playground>
     <Container>
@@ -69,10 +71,10 @@ import StepsItem from '../../Steps/StepsItem';
     </Container>
 </Playground>
 
-## Отступ между компонентами 56px и серый цвет фона
+### Отступ между компонентами 56px
 
 <Playground>
-    <Container backgroundColor="gray">
+    <Container >
         <TitleDescriptionBox
             title="Интернет"
             description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
@@ -85,7 +87,7 @@ import StepsItem from '../../Steps/StepsItem';
     </Container>
 </Playground>
 
-## Отступ от табов до содержимого 48px
+### Отступ от табов до содержимого 48px
 
 <Playground>
     <Container>
@@ -116,6 +118,57 @@ import StepsItem from '../../Steps/StepsItem';
     </Container>
 </Playground>
 
+
+## Цвет фона
+
+### Серый
+
+<Playground>
+    <Container backgroundColor="gray">
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+        />
+    </Container>
+</Playground>
+
+### Светло-серый
+
+<Playground>
+    <Container backgroundColor="light-gray">
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+        />
+    </Container>
+</Playground>
+
+### Зеленый
+
+<Playground>
+    <Container backgroundColor="green">
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+        />
+    </Container>
+</Playground>
+
+### Фиолетовый
+
+<Playground>
+    <Container backgroundColor="purple">
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+            textColor="white"
+        />
+    </Container>
+</Playground>
 
 ## Несколько контейнеров с одинаковым цветом фона
 
@@ -161,6 +214,34 @@ import StepsItem from '../../Steps/StepsItem';
         />
     </Container>
     <Container backgroundColor="gray">
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+        />
+        <BenefitsIcons
+            items={benefitsIconsContent}
+            iconPosition="center-top"
+        />
+    </Container>
+</Playground>
+
+## Несколько контейнеров с отключенными отступами у первого контейнера
+
+<Playground>
+    <Container disablePaddingTop={true} disablePaddingBottom={true}>
+        <TitleDescriptionBox
+            title="Интернет"
+            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
+            hAlign="center"
+        />
+        <ButtonLinkBox
+            buttonTitle="Кнопка"
+            buttonUrl="#"
+            hAlign="center"
+        />
+    </Container>
+    <Container>
         <TitleDescriptionBox
             title="Интернет"
             description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
@@ -359,33 +440,5 @@ import StepsItem from '../../Steps/StepsItem';
             <StepsItem index={4} text="Позвоните первому свободному врачу или запишитесь на онлайн-консультацию к конкретному специалисту" />
             <StepsItem index={5} text="Позвоните первому свободному врачу или запишитесь на онлайн-консультацию к конкретному специалисту" />
         </Steps>
-    </Container>
-</Playground>
-
-## Несколько контейнеров с отключенными отступами у первого контейнера
-
-<Playground>
-    <Container disablePaddingTop={true} disablePaddingBottom={true}>
-        <TitleDescriptionBox
-            title="Интернет"
-            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
-            hAlign="center"
-        />
-        <ButtonLinkBox
-            buttonTitle="Кнопка"
-            buttonUrl="#"
-            hAlign="center"
-        />
-    </Container>
-    <Container>
-        <TitleDescriptionBox
-            title="Интернет"
-            description="При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы за месяц и дополнительных услуг, указанных в заявке."
-            hAlign="center"
-        />
-        <BenefitsIcons
-            items={benefitsIconsContent}
-            iconPosition="center-top"
-        />
     </Container>
 </Playground>

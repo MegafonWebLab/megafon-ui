@@ -10,7 +10,7 @@ export interface IRadioButtonProps {
     name?: string;
     /** Размер текста лейбла */
     textSize?: 'small' | 'medium';
-    /** Управление возможностью взаимодействия с компонентом */
+    /** Отключение радио-кнопки */
     disabled?: boolean;
     /** Управление состоянием вкл/выкл компонента */
     isChecked?: boolean;

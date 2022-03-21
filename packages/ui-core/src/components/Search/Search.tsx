@@ -50,7 +50,7 @@ export interface ISearchProps {
     verification?: VerificationType;
     /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
-    /** Управление возможностью взаимодействия с компонентом */
+    /** Отключение поля ввода */
     disabled?: boolean;
     /** Делает поле обязательным */
     required?: boolean;
@@ -68,6 +68,8 @@ export interface ISearchProps {
     onSubmit?: (value: string) => void;
     /** Обработчик выхода из фокуса */
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+    /** Обработчик входа в фокус */
+    onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
 const cn = cnCreate('mfui-search');
@@ -88,6 +90,7 @@ const Search: React.FC<ISearchProps> = ({
     onChange,
     onSubmit,
     onBlur,
+    onFocus,
 }) => {
     const [searchQuery, setSearchQuery] = React.useState<string>(value);
     const [activeIndex, setActiveIndex] = React.useState<number>(-1);
@@ -147,9 +150,14 @@ const Search: React.FC<ISearchProps> = ({
         [handleItemSubmit, activeIndex],
     );
 
-    const handleFocus = React.useCallback((): void => {
-        setFocus(true);
-    }, []);
+    const handleFocus = React.useCallback(
+        (e: React.FocusEvent<HTMLInputElement>): void => {
+            setFocus(true);
+
+            onFocus?.(e);
+        },
+        [onFocus],
+    );
 
     const handleBlur = React.useCallback(
         (e: React.FocusEvent<HTMLInputElement>): void => {
@@ -320,6 +328,7 @@ Search.propTypes = {
     onChange: PropTypes.func,
     onSubmit: PropTypes.func,
     onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
 };
 
 export default Search;

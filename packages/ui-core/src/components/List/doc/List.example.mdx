@@ -3,7 +3,9 @@ import { Playground } from 'docz';
 import List from '../List';
 import ListItem from '../ListItem';
 
-## Выравнивание по умолчанию
+## Выравнивание
+
+### По левому краю (по умолчанию)
 
 <Playground>
     <List>
@@ -14,10 +16,21 @@ import ListItem from '../ListItem';
     </List>
 </Playground>
 
-## Выравнивание по центру
+### По центру
 
 <Playground>
-    <List hAlign="center" as="ol">
+    <List hAlign="center">
+        <ListItem>Тарифы</ListItem>
+        <ListItem>Интернет</ListItem>
+        <ListItem>Связь</ListItem>
+        <ListItem>Услуги</ListItem>
+    </List>
+</Playground>
+
+### По правому краю
+
+<Playground>
+    <List hAlign="right">
         <ListItem>Тарифы</ListItem>
         <ListItem>Интернет</ListItem>
         <ListItem>Связь</ListItem>

@@ -1,29 +1,36 @@
 import { Playground } from 'docz';
 import TextLink from '../TextLink';
 
+## Цвета
+
 <Playground>
     <div>
-        <TextLink href="#">Синяя (по умолчанию)</TextLink>
+        <TextLink href="#">Синий (по умолчанию)</TextLink>
     </div>
     <div>
-        <TextLink href="#" color="green">Green</TextLink>
-    </div>
-    <div style={{ background: '#333333' }}>
-        <TextLink href="#" color="white">White</TextLink>
+        <TextLink href="#" color="green">Зеленый</TextLink>
     </div>
     <div style={{ background: '#ffffff' }}>
-        <TextLink href="#" color="black">Black</TextLink>
+        <TextLink href="#" color="black">Черный</TextLink>
     </div>
     <div>
-        <TextLink href="#" color="gray">Gray</TextLink>
+        <TextLink href="#" color="gray">Серый</TextLink>
     </div>
     <div style={{ color: 'red' }} >
-        <TextLink href="#" color="inherit">Inherit</TextLink>
+        <TextLink href="#" color="inherit">Наследование от родителя</TextLink>
+    </div>
+    <div style={{ background: '#999999' }}>
+        <TextLink href="#" color="white">Белый</TextLink>
+    </div>
+</Playground>
+
+## Подчеркивание
+
+<Playground>
+    <div>
+        <TextLink href="#" underlineVisibility="always">Сплошная линия</TextLink>
     </div>
     <div>
-        <TextLink href="#" underlineVisibility="always">Solid underline</TextLink>
-    </div>
-    <div>
-        <TextLink href="#" underlineVisibility="always" underlineStyle="dashed">Dashed underline</TextLink>
+        <TextLink href="#" underlineVisibility="always" underlineStyle="dashed">Пунктирная линия</TextLink>
     </div>
 </Playground>

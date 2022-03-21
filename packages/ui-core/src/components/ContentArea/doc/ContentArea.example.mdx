@@ -2,7 +2,7 @@ import { Playground, Props } from 'docz';
 import ContentArea from '../ContentArea';
 import { blockStyle, wrapperStyles } from './ContentArea.docz';
 
-## Использование по умолчанию
+## Базовое использование
 
 <Playground style={wrapperStyles}>
     <ContentArea>
@@ -11,8 +11,10 @@ import { blockStyle, wrapperStyles } from './ContentArea.docz';
     </ContentArea>
 </Playground>
 
-## Фоновый цвет внешнего контейнера
-Фоновый цвет применяется ко всему компоненту
+## Фоновый цвет
+
+### Для внешнего контейнера
+Цвет применяется ко всему компоненту
 
 <Playground style={wrapperStyles}>
     <ContentArea outerBackgroundColor="white">
@@ -64,8 +66,8 @@ import { blockStyle, wrapperStyles } from './ContentArea.docz';
     </ContentArea>
 </Playground>
 
-## Фоновый цвет внутреннего контейнера
-Фоновый цвет применяется к отцентрированному контейнеру с ограниченной шириной.
+### Для внутреннего контейнера
+Цвет применяется к отцентрированному контейнеру с ограниченной шириной.
 Разница будет видна при ширине компонента больше 1440px.
 
 <Playground style={wrapperStyles}>

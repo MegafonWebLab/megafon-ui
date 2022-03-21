@@ -162,6 +162,8 @@ describe('<Select />', () => {
         });
 
         it('calls onSelect with null when type combobox after chosen item and change value', () => {
+            jest.useFakeTimers();
+
             const handleSelectItem = jest.fn();
             const wrapper = mount(
                 <Select<number> {...props} type={SelectTypes.COMBOBOX} onSelect={handleSelectItem} />,
@@ -178,6 +180,8 @@ describe('<Select />', () => {
             });
 
             expect(handleSelectItem).toBeCalledWith(null);
+
+            jest.useRealTimers();
         });
     });
 

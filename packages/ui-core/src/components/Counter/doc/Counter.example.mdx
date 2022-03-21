@@ -39,6 +39,9 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({
     );
 };
 ```
+## Состояния счетчика
+
+### Выбрано минимальное значение
 
 <Playground style={flexStyle}>
     <DemoCounterWrapper initialValue={3}>
@@ -51,6 +54,11 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({
             />
         }
     </DemoCounterWrapper>
+</Playground>
+
+### Выбрано среднее значение
+
+<Playground style={flexStyle}>
     <DemoCounterWrapper initialValue={18}>
         {({ onChange, initialValue }) =>
             <Counter
@@ -61,6 +69,11 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({
             />
         }
     </DemoCounterWrapper>
+</Playground>
+
+### Выбрано максимальное значение
+
+<Playground style={flexStyle}>
     <DemoCounterWrapper initialValue={33}>
         {({ onChange, initialValue }) =>
             <Counter
@@ -71,6 +84,12 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({
             />
         }
     </DemoCounterWrapper>
+</Playground>
+
+### Контролируемое состояние
+Компонент контроллируется родителем.
+
+<Playground style={flexStyle}>
     <DemoCounterWrapper isControlled initialValue={5}>
         {({ onChange, value }) =>
             <Counter
@@ -80,6 +99,11 @@ export const DemoCounterWrapper: React.FC<IDemoCounterWrapperProps> = ({
             />
         }
     </DemoCounterWrapper>
+</Playground>
+
+### Выключенное состояние
+
+<Playground style={flexStyle}>
     <DemoCounterWrapper>
         {({ onChange }) =>
             <Counter

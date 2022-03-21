@@ -32,8 +32,60 @@ const tileInner = {
     margin: '0 auto',
 };
 ```
+## Формы
 
-## Округлые и квадратные плитки на светлом фоне
+<Playground>
+    <DemoTileWrapper>
+        <Tile shadowLevel="low">
+            <div style={tileInner}>Квадратная плитка</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="low">
+            <div style={tileInner}>Округлая плитка</div>
+        </Tile>
+    </DemoTileWrapper>
+</Playground>
+
+## Тени 
+
+<Playground>
+    <DemoTileWrapper>
+        <Tile shadowLevel="zero">
+            <div style={tileInner}>Zero</div>
+        </Tile>
+        <Tile shadowLevel="low">
+            <div style={tileInner}>Low</div>
+        </Tile>
+        <Tile shadowLevel="high">
+            <div style={tileInner}>High</div>
+        </Tile>
+        <Tile shadowLevel="hover">
+            <div style={tileInner}>Hover</div>
+        </Tile>
+    </DemoTileWrapper>
+</Playground>
+
+### Тень при наведении
+
+<Playground>
+    <DemoTileWrapper>
+        <Tile isInteractive shadowLevel="zero">
+            <div style={tileInner}>Zero</div>
+        </Tile>
+        <Tile isInteractive shadowLevel="low">
+            <div style={tileInner}>Low</div>
+        </Tile>
+        <Tile isInteractive shadowLevel="high">
+            <div style={tileInner}>High</div>
+        </Tile>
+        <Tile isInteractive shadowLevel="hover">
+            <div style={tileInner}>Hover</div>
+        </Tile>
+    </DemoTileWrapper>
+</Playground>
+
+## Цветовой фон 
+
+### Светлый
 
 <Playground>
     <DemoTileWrapper>
@@ -66,7 +118,8 @@ const tileInner = {
     </DemoTileWrapper>
 </Playground>
 
-## Округлые и квадратные плитки на темном фоне
+### Тёмный
+Тень плитки более прозрачная
 
 <Playground>
     <DemoTileWrapper wrapperTheme="dark">
@@ -99,40 +152,15 @@ const tileInner = {
     </DemoTileWrapper>
 </Playground>
 
-## Ссылки
+
+## Ссылка
 
 <Playground>
     <DemoTileWrapper>
-        <Tile shadowLevel="zero" href="#">
-            <div style={tileInner}>Zero shadow</div>
-        </Tile>
-        <Tile shadowLevel="low" href="#">
-            <div style={tileInner}>Low shadow</div>
-        </Tile>
+    <div style={{ width: '350px' }}>
         <Tile shadowLevel="high" href="#">
-            <div style={tileInner}>High shadow</div>
+            <div style={tileInner}>Ссылка</div>
         </Tile>
-        <Tile shadowLevel="hover" href="#" target="_blank">
-            <div style={tileInner}>Hover shadow</div>
-        </Tile>
-    </DemoTileWrapper>
-</Playground>
-
-## Тень при наведении
-
-<Playground>
-    <DemoTileWrapper>
-        <Tile isInteractive shadowLevel="zero">
-            <div style={tileInner}>Zero shadow</div>
-        </Tile>
-        <Tile isInteractive shadowLevel="low">
-            <div style={tileInner}>Low shadow</div>
-        </Tile>
-        <Tile isInteractive shadowLevel="high">
-            <div style={tileInner}>High shadow</div>
-        </Tile>
-        <Tile isInteractive shadowLevel="hover">
-            <div style={tileInner}>Hover shadow</div>
-        </Tile>
+    </div>
     </DemoTileWrapper>
 </Playground>

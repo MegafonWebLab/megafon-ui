@@ -8,7 +8,7 @@ import {
 } from './TextField.docz';
 import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
 
-## Тип с паролем
+## Поле для ввода пароля
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField name="name" placeholder="password" type="password"/>
@@ -20,43 +20,49 @@ import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
     <TextField name="name" required label="Телефон"/>
 </Playground>
 
-## Маска телефона
+## Поле для ввода телефона
+### Типы масок:
 
-<Playground style={wrapperDefaultWidthStyle}>
-    <TextField
-        placeholder="+7 (999) 999-99-99"
-        mask="+7 (999) 999-99-99"
-        maskchar="_"
-        label="Телефон"
-        id="2"
-        inputMode="numeric"
-        classes={{input: 'parent__inputClass'}}
-    />
-</Playground>
-
-## Маска телефона c автозаполнением
-
-<Playground style={wrapperDefaultWidthStyle}>
-    <TextField
-        mask="+7 (999) 999-99-99"
-        maskchar="_"
-        type="tel"
-        autoComplete="tel"
-        inputMode="tel"
-    />
-</Playground>
-
-## Маска телефона с перехватом вводимого значения
-В данном случае, при вставке телефона в формате +79998887766 выведет его сразу в нужном формате,
-за счет совпадения начальных символов маски и вставляемого значения, в остальных кейсах нужна обработка значения
-внутри коллбека и его возврат оттуда
-
-<Playground style={wrapperDefaultWidthStyle}>
-    <DemoTextFieldWithBeforeMaskChangeValue>
-        {({ handleBeforeMaskChange }) =>
-            <TextField onBeforeMaskChange={handleBeforeMaskChange} mask="+7 (999) 999-99-99" maskchar="_" />
-        }
-    </DemoTextFieldWithBeforeMaskChangeValue>
+<Playground>
+    <div style={{ display: 'grid', gap: '35px' }}>
+        <TextField
+            placeholder="+7 (999) 999-99-99"
+            mask="+7 (999) 999-99-99"
+            maskchar="_"
+            label="Обычная"
+            id="2"
+            inputMode="numeric"
+            classes={{input: 'parent__inputClass'}}
+            style={{ width: '350px' }}
+        />
+        <TextField
+            mask="+7 (999) 999-99-99"
+            maskchar="_"
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
+            label="С автозаполнением"
+            style={{ width: '350px' }}
+        />
+        <div>
+            <DemoTextFieldWithBeforeMaskChangeValue>
+                {({ handleBeforeMaskChange }) =>
+                    <TextField 
+                        onBeforeMaskChange={handleBeforeMaskChange} 
+                        mask="+7 (999) 999-99-99" 
+                        maskchar="_"
+                        label="С перехватом вводимого значения"
+                        style={{ width: '350px' }}
+                    />
+                }
+            </DemoTextFieldWithBeforeMaskChangeValue>
+            <p>
+                В данном случае, при вставке телефона в формате +79998887766 выведет его сразу в нужном формате,
+                за счет совпадения начальных символов маски и вставляемого значения, в остальных кейсах нужна обработка значения
+                внутри коллбека и его возврат оттуда
+            </p>
+        </div>
+    </div>
 </Playground>
 
 ```javascript collapse=Код DemoTextFieldWithBeforeMaskChangeValue
@@ -89,7 +95,7 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
     <TextField verification="valid" noticeText="You can write that field value is correct"/>
 </Playground>
 
-## Иконка и обработчик
+## Иконка с обработчиком клика
 <Playground style={wrapperWideWidthStyle}>
     <TextField
         verification="error"
@@ -103,19 +109,19 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
     />
 </Playground>
 
-## Максимальное количество текста
+## Ограничение длины текста
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField maxLength={10} />
 </Playground>
 
-## Недоступное взаимодействие с компонентом
+## Поле отключено для редактирования
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField disabled={true} />
 </Playground>
 
-## Внешнее состояние
+## Контролируемое состояние
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField value='initial value' isControlled={true} />
@@ -146,9 +152,10 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
 };
 ```
 
-##
 # Textarea
 Пропс textarea, выставленный в значение true, изменяет компонент в textarea.
+
+## Базовое использование
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField name="name" textarea placeholder="placeholder"/>
@@ -211,7 +218,7 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
     <TextField symbolCounter={10} textarea value="Иванов Иван Иванович"/>
 </Playground>
 
-## Запрещенное взаимодействие
+## Поле отключено для редактирования
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField

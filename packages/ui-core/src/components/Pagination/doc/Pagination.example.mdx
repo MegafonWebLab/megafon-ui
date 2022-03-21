@@ -1,64 +1,137 @@
 import { Playground } from 'docz';
 import Pagination from '../Pagination';
-import { DemoWrapper } from './Pagination.docz.tsx';
-import ContentArea from "components/ContentArea/ContentArea";
+import { DemoPaginationWrapper } from './Pagination.docz.tsx';
 
-## Состояния компонента
+```javascript collapse=Код DemoPaginationWrapper
+
+type childrenPropTypes = {
+    totalPages: number;
+    activePage: number;
+    theme?: 'default' | 'light';
+    onChange: (value: number) => void;
+};
+
+interface IDemoPaginationWrapperProps {
+    children: (prop: childrenPropTypes) => JSX.Element;
+    totalPages: number;
+    activePage: number;
+}
+
+export const DemoPaginationWrapper: React.FC<IDemoPaginationWrapperProps> = ({ activePage, children, ...props }) => {
+    const [currentActivePage, setCurrentActivePage] = React.useState(activePage);
+
+    const childrenProps: childrenPropTypes = {
+        ...props,
+        activePage: currentActivePage,
+        onChange: setCurrentActivePage,
+    };
+
+    return children(childrenProps);
+};
+
+```
+
+## Состояния боковых стрелок
+
+### Выбрана первая страница
 
 <Playground>
-    <Pagination totalPages={3} activePage={1} onChange={() => {}} />
+    <DemoPaginationWrapper totalPages={7} activePage={1}>
+        {({ totalPages, activePage, onChange }) =>
+            <Pagination
+                totalPages={totalPages}
+                activePage={activePage}
+                onChange={onChange}
+            />
+        }
+    </DemoPaginationWrapper>
 </Playground>
 
-<Playground>
-    <Pagination totalPages={7} activePage={1} onChange={() => {}} />
-</Playground>
+### Выбрана не крайняя страница
 
 <Playground>
-    <Pagination totalPages={7} activePage={7} onChange={() => {}} />
+    <DemoPaginationWrapper totalPages={7} activePage={4}>
+        {({ totalPages, activePage, onChange }) =>
+            <Pagination
+                totalPages={totalPages}
+                activePage={activePage}
+                onChange={onChange}
+            />
+        }
+    </DemoPaginationWrapper>
 </Playground>
 
-<Playground>
-    <Pagination totalPages={10} activePage={2} onChange={() => {}} />
-</Playground>
+### Выбрана последняя страница
 
 <Playground>
-    <Pagination totalPages={10} activePage={6} onChange={() => {}} />
+    <DemoPaginationWrapper totalPages={7} activePage={7}>
+        {({ totalPages, activePage, onChange }) =>
+            <Pagination
+                totalPages={totalPages}
+                activePage={activePage}
+                onChange={onChange}
+            />
+        }
+    </DemoPaginationWrapper>
 </Playground>
 
-<Playground>
-    <Pagination totalPages={10} activePage={9} onChange={() => {}} />
-</Playground>
+## Частичное скрытие списка страниц
+
+### Выбрана страница в начале списка
 
 <Playground>
-    <Pagination totalPages={300} activePage={200} onChange={() => {}} />
+    <DemoPaginationWrapper totalPages={10} activePage={2}>
+        {({ totalPages, activePage, onChange }) =>
+            <Pagination
+                totalPages={totalPages}
+                activePage={activePage}
+                onChange={onChange}
+            />
+        }
+    </DemoPaginationWrapper>
+</Playground>
+
+### Выбрана страница в середине списка
+
+<Playground>
+    <DemoPaginationWrapper totalPages={10} activePage={6}>
+        {({ totalPages, activePage, onChange }) =>
+            <Pagination
+                totalPages={totalPages}
+                activePage={activePage}
+                onChange={onChange}
+            />
+        }
+    </DemoPaginationWrapper>
+</Playground>
+
+### Выбрана страница в конце списка
+
+<Playground>
+    <DemoPaginationWrapper totalPages={10} activePage={9}>
+        {({ totalPages, activePage, onChange }) =>
+            <Pagination
+                totalPages={totalPages}
+                activePage={activePage}
+                onChange={onChange}
+            />
+        }
+    </DemoPaginationWrapper>
 </Playground>
 
 ## Светлая тема
 
 <Playground>
     <div style={{ padding: '30px 0', backgroundColor: "#00B956" }}>
-        <Pagination totalPages={10} activePage={1} theme="light" onChange={() => {}} />
+        <DemoPaginationWrapper totalPages={10} activePage={1} theme="light">
+            {({ theme, totalPages, activePage, onChange }) =>
+                <Pagination
+                    theme={theme}
+                    totalPages={totalPages}
+                    activePage={activePage}
+                    onChange={onChange}
+                />
+            }
+        </DemoPaginationWrapper>
     </div>
-</Playground>
-
-## Интерактивное демо
-
-```javascript collapse=Код DemoWrapper
-
-const DemoWrapper = ({ totalPages }) => {
-    const [activePage, setActivePage] = React.useState(3);
-
-    return (
-        <Pagination
-            activePage={activePage}
-            totalPages={totalPages}
-            onChange={setActivePage}
-        />
-    );
-};
-
-```
-
-<Playground>
-    <DemoWrapper totalPages={15} />
 </Playground>

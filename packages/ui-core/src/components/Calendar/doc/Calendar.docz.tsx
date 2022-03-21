@@ -3,6 +3,8 @@ import format from 'date-fns/format';
 import ruLocale from 'date-fns/locale/ru';
 import Button from 'components/Button/Button';
 
+export const calendarWrapperStyle = { margin: 'auto', maxWidth: '320px' };
+
 const formatDate = (data: Date, pattern: string, locale = ruLocale) => format(data, pattern, { locale });
 
 const date = new Date();
@@ -12,6 +14,7 @@ const startDate = new Date(2020, 1, 7);
 const endDate = new Date(2020, 1, 19);
 export const minBookingDate = new Date(currentYear, currentMonth, 7);
 export const maxBookingDate = new Date(currentYear, currentMonth + 1, 20);
+export const maxBookingDateInCurrentMonth = new Date(currentYear, currentMonth, 20);
 
 export const DemoCalendarWithHandleChange = ({ children }) => {
     const [from, setFrom] = React.useState<string | null>(formatDate(startDate, 'dd.MM.yyyy'));

@@ -13,7 +13,7 @@ const itemView = {
 };
 ```
 
-## Использование по умолчанию
+## Базовое использование
 
 <Playground>
     <Grid>
@@ -32,7 +32,9 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Средние отступы с разной шириной у колонок на всех разрешениях
+## Вертикальные и горизонтальные отступы между колонками
+
+### Средние
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -44,7 +46,7 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Большие отступы с разной шириной у колонок на всех разрешениях
+### Большие
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large">
@@ -66,7 +68,11 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Использование горизонтального 'between'
+## Горизонтальное выравнивание
+
+### 'between'
+Равномерное распределение всех элементов по горизонтали.
+Боковые элементы прижаты к краям контейнера.
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="between">
@@ -88,7 +94,9 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Использование горизонтального 'around'
+### 'around'
+Равномерное распределение всех элементов по горизонтали.
+Пустое пространство по краям равно половине пространства между двумя соседними элементами.
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="around">
@@ -110,7 +118,7 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Горизонтальное выравнивание по центру
+### По центру
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="center">
@@ -132,7 +140,29 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Горизонтальное выравнивание справа
+### По левому краю
+
+<Playground>
+    <Grid guttersLeft="large" guttersBottom="large" hAlign="left">
+        <GridColumn all="6">
+            <div style={itemView}>Тарифы</div>
+        </GridColumn>
+        <GridColumn all="5">
+            <div style={itemView}>Интернет</div>
+        </GridColumn>
+        <GridColumn all="4">
+            <div style={itemView}>Услуги</div>
+        </GridColumn>
+        <GridColumn all="3">
+            <div style={itemView}>Личный кабинет</div>
+        </GridColumn>
+        <GridColumn all="2">
+            <div style={itemView}>Опции</div>
+        </GridColumn>
+    </Grid>
+</Playground>
+
+### По правому краю
 
 <Playground>
     <Grid guttersLeft="large" guttersBottom="large" hAlign="right">
@@ -154,7 +184,9 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Горизонтальное выравнивание справа
+## Вертикальное выравнивание
+
+### По верхнему краю
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="top">
@@ -177,7 +209,7 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Вертикальное выравнивание сверху
+### По нижнему краю
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="bottom">
@@ -200,7 +232,7 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Вертикальное выравнивание по центру
+### По центру
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="center">
@@ -223,7 +255,7 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Вертикальное выравнивание по основанию
+### По базовой линии элементов
 
 <Playground>
     <Grid guttersLeft="medium" hAlign="between" vAlign="baseline">
@@ -247,6 +279,7 @@ const itemView = {
 </Playground>
 
 ## Отключение нескольких строк
+Колонки не переносятся на новые строки при достижении максимального размера (12), а сжимаются с сохранением процентного соотношения.
 
 <Playground>
     <Grid guttersLeft="medium" multiRow={false}>
@@ -290,7 +323,10 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Изменение порядка колонок на мобильном разрешении
+## Изменение порядка колонок
+Применяется при изменении размеров окна.
+
+### На мобильном разрешении
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -306,7 +342,7 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Изменение порядка колонок на планшетном разрешении
+### На планшетном разрешении
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -322,7 +358,7 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Изменение порядка колонок на разных разрешениях
+### На разных разрешениях
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -338,7 +374,9 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Левое смещение
+## Смещение колонок
+
+### Левое
 
 <Playground>
     <Grid guttersLeft="medium" guttersBottom="medium">
@@ -351,13 +389,15 @@ const itemView = {
     </Grid>
 </Playground>
 
-## Правое смещение
+### Правое
 
 <Playground>
-    <Grid guttersLeft="medium" guttersBottom="medium" hAlign="center">
-        <GridColumn all="3" leftOffsetAll="2"><div style={itemView}>Тарифы</div></GridColumn>
-        <GridColumn all="3" rightOffsetAll="2"><div style={itemView}>Интернет</div></GridColumn>
-        <GridColumn all="3" leftOffsetAll="2"><div style={itemView}>Тарифы</div></GridColumn>
-        <GridColumn all="3" rightOffsetAll="2"><div style={itemView}>Связь</div></GridColumn>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="2" rightOffsetAll="3"><div style={itemView}>Тарифы</div></GridColumn>
+        <GridColumn all="5" rightOffsetAll="1"><div style={itemView}>Интернет</div></GridColumn>
+        <GridColumn all="3" rightOffsetAll="2"><div style={itemView}>Услуги</div></GridColumn>
+        <GridColumn all="4" rightOffsetAll="1"><div style={itemView}>Опции</div></GridColumn>
+        <GridColumn all="4" rightOffsetAll="1"><div style={itemView}>Личный кабинет</div></GridColumn>
+        <GridColumn all="3" rightOffsetAll="1"><div style={itemView}>Связь</div></GridColumn>
     </Grid>
 </Playground>
