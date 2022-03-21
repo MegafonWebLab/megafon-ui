@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.3.1...@megafon/ui-core@3.4.0) (2022-03-21)
+
+
+### Bug Fixes
+
+* **notification:** fix link styles ([9d7e67e](https://github.com/MegafonWebLab/megafon-ui/commit/9d7e67e1f21c9ddb1dc911502a114924c8896a6a))
+* **pricebadge:** fix icon styles ([f5502a0](https://github.com/MegafonWebLab/megafon-ui/commit/f5502a0e28d067694cee4165fe224a38ecf3a15f))
+* **storebutton:** fixed test for Select and update type for StoreButton ([8996754](https://github.com/MegafonWebLab/megafon-ui/commit/8996754482e9cf899fdcb0f488c8a9fa1afddd11))
+
+
+### Features
+
+* **badges:** add new component TimerBadge ([82a900b](https://github.com/MegafonWebLab/megafon-ui/commit/82a900b362ca15db30dfdbffbfe299b637cae5b3))
+* **promobadge:** add vip type (purple background color) ([51ea858](https://github.com/MegafonWebLab/megafon-ui/commit/51ea8582ff750199166c64681fecae636d30ca18))
+* **search:** add onFocus callback ([b6dfdad](https://github.com/MegafonWebLab/megafon-ui/commit/b6dfdadd8dc695d7622bb95443ef6556b4e5d1c6))
+
+
+
+
+
 ## [3.3.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.3.0...@megafon/ui-core@3.3.1) (2022-03-15)
 
 

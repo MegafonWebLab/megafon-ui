@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.1.0...@megafon/ui-helpers@2.1.1) (2022-03-21)
+
+
+### Bug Fixes
+
+* **nestingnamegenerator:** added index incease to element index check ([46085dc](https://github.com/MegafonWebLab/megafon-ui/commit/46085dcd929a5a842206bf57432134f735fd323b))
+
+
+
+
+
 # [2.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.0.1...@megafon/ui-helpers@2.1.0) (2022-03-14)
 
 

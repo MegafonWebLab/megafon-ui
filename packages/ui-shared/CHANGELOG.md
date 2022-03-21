@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.1.3...@megafon/ui-shared@3.1.4) (2022-03-21)
+
+
+### Bug Fixes
+
+* **storebutton:** fixed test for Select and update type for StoreButton ([8996754](https://github.com/MegafonWebLab/megafon-ui/commit/8996754482e9cf899fdcb0f488c8a9fa1afddd11))
+
+
+
+
+
 ## [3.1.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.1.2...@megafon/ui-shared@3.1.3) (2022-03-15)
 
 **Note:** Version bump only for package @megafon/ui-shared
