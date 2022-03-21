@@ -193,22 +193,29 @@
         }
     }
 
+    &_colored&_type_info {
+        background-color: var(--311C20);
+    }
+
+    &_colored&_type_warning {
+        background-color: var(--137C20);
+    }
+
     &_colored&_type_success {
         background-color: var(--brandGreen20);
+    }
 
+    &_colored&_type_info,
+    &_colored&_type_warning,
+    &_colored&_type_success {
         @{b} {
             &__title,
-            &__text,
-            &__link {
+            &__text {
                 color: var(--stcBlack);
             }
 
-            &__right-arrow {
-                fill: var(--stcBlack);
-            }
-
-            &__icon-container {
-                background-color: var(--stcWhite);
+            &__link {
+                color: var(--systemBlue);
             }
         }
     }
@@ -235,24 +242,5 @@
                 }
             }
         }
-    }
-
-    &_colored&_type_info,
-    &_colored&_type_warning {
-        @{b} {
-            &__title,
-            &__text,
-            &__link {
-                color: var(--stcBlack);
-            }
-        }
-    }
-
-    &_colored&_type_info {
-        background-color: var(--311C20);
-    }
-
-    &_colored&_type_warning {
-        background-color: var(--137C20);
     }
 }
