@@ -185,4 +185,13 @@ describe('<Instructions />', () => {
 
         expect(handleSwiper).toHaveBeenCalled();
     });
+    it('should render with children', () => {
+        const wrapper = shallow(
+            <Instructions {...props}>
+                <div className="children">button</div>
+            </Instructions>,
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
