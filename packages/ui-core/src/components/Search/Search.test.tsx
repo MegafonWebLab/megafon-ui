@@ -157,6 +157,15 @@ describe('<Search />', () => {
 
             expect(handleBlur).toBeCalledWith(event);
         });
+        it('calls onFocus', () => {
+            const handleFocus = jest.fn();
+            const event = { target: { value: 'new value' } };
+            const wrapper = shallow(<Search {...props} onFocus={handleFocus} />);
+
+            wrapper.find(`.${cn('search-field')}`).simulate('focus', event);
+
+            expect(handleFocus).toBeCalledWith(event);
+        });
     });
 
     describe('submitting', () => {
