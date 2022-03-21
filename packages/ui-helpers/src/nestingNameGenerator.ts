@@ -30,7 +30,7 @@ const nestingNameGenerator = (
             const isNextArgumentNumber = typeof nextArgument === 'number';
 
             const isElementNameIncorrect = !isCurrentArgumentString || !stringPattern.test(String(currentArgument));
-            const isElementIndexIncorrect = isNextArgumentNumber && nextArgument < 1;
+            const isElementIndexIncorrect = isNextArgumentNumber && Number(nextArgument) + indexIncrease < 1;
 
             const indexChange = isNextArgumentNumber ? DOUBLE_INDEX_CHANGE : 1;
 
