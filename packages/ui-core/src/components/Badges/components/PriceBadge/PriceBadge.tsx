@@ -68,7 +68,9 @@ const PriceBadge: React.FC<IPriceBadgeProps> = ({
 
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ theme, adaptive: isAdaptive }, className)}>
-            <Icon className={cn('icon')} />
+            <div className={cn('icon-container')}>
+                <Icon className={cn('icon')} />
+            </div>
             <span className={cn('text')}>{children}</span>
         </div>
     );

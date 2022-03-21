@@ -4,9 +4,13 @@ exports[`<PriceBadge /> snapshots renders with all props 1`] = `
 <div
   className="mfui-price-badge mfui-price-badge_theme_green mfui-price-badge_adaptive"
 >
-  <test-file-stub
-    className="mfui-price-badge__icon"
-  />
+  <div
+    className="mfui-price-badge__icon-container"
+  >
+    <test-file-stub
+      className="mfui-price-badge__icon"
+    />
+  </div>
   <span
     className="mfui-price-badge__text"
   >
@@ -19,9 +23,13 @@ exports[`<PriceBadge /> snapshots renders with attention icon 1`] = `
 <div
   className="mfui-price-badge mfui-price-badge_theme_grey"
 >
-  <test-file-stub
-    className="mfui-price-badge__icon"
-  />
+  <div
+    className="mfui-price-badge__icon-container"
+  >
+    <test-file-stub
+      className="mfui-price-badge__icon"
+    />
+  </div>
   <span
     className="mfui-price-badge__text"
   >
@@ -34,9 +42,13 @@ exports[`<PriceBadge /> snapshots renders with check icon 1`] = `
 <div
   className="mfui-price-badge mfui-price-badge_theme_grey"
 >
-  <test-file-stub
-    className="mfui-price-badge__icon"
-  />
+  <div
+    className="mfui-price-badge__icon-container"
+  >
+    <test-file-stub
+      className="mfui-price-badge__icon"
+    />
+  </div>
   <span
     className="mfui-price-badge__text"
   >
@@ -49,9 +61,13 @@ exports[`<PriceBadge /> snapshots renders with default props 1`] = `
 <div
   className="mfui-price-badge mfui-price-badge_theme_grey"
 >
-  <test-file-stub
-    className="mfui-price-badge__icon"
-  />
+  <div
+    className="mfui-price-badge__icon-container"
+  >
+    <test-file-stub
+      className="mfui-price-badge__icon"
+    />
+  </div>
   <span
     className="mfui-price-badge__text"
   >
