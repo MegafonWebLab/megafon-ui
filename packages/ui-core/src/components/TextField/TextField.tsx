@@ -46,7 +46,7 @@ export type TextFieldProps = {
     verification?: 'valid' | 'error';
     /** Подпись снизу, меняет цвет в зависимости от аргумента verification */
     noticeText?: string;
-    /** Управление возможностью взаимодействия с компонентом */
+    /** Отключение поля ввода */
     disabled?: boolean;
     /** Показывает обязательность поля  */
     required?: boolean;

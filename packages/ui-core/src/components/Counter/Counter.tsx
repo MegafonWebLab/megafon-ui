@@ -23,7 +23,7 @@ export interface ICounterProps {
     min?: number;
     /** Максимальное доступное значение */
     max?: number;
-    /** Запретить взаимодействие с компонентом */
+    /** Отключение счетчика */
     disabled?: boolean;
     /** Обработчик изменения значения 'value' */
     onChange?: (value: number) => void;

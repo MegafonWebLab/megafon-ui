@@ -86,7 +86,7 @@ export interface IButtonProps {
     showArrow?: boolean;
     /** Иконка */
     icon?: JSX.Element;
-    /** Управление возможностью взаимодействия с компонентом */
+    /** Отключение кнопки */
     disabled?: boolean;
     /** Ссылка на элемент */
     buttonRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;

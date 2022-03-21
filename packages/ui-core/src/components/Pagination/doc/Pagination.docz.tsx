@@ -1,10 +1,26 @@
 import React from 'react';
-import Pagination from '../Pagination';
 
-const DemoWrapper = ({ totalPages }) => {
-    const [activePage, setActivePage] = React.useState(3);
-
-    return <Pagination activePage={activePage} totalPages={totalPages} onChange={setActivePage} />;
+type childrenPropTypes = {
+    totalPages: number;
+    activePage: number;
+    theme?: 'default' | 'light';
+    onChange: (value: number) => void;
 };
 
-export { DemoWrapper };
+interface IDemoPaginationWrapperProps {
+    children: (prop: childrenPropTypes) => JSX.Element;
+    totalPages: number;
+    activePage: number;
+}
+
+export const DemoPaginationWrapper: React.FC<IDemoPaginationWrapperProps> = ({ activePage, children, ...props }) => {
+    const [currentActivePage, setCurrentActivePage] = React.useState(activePage);
+
+    const childrenProps: childrenPropTypes = {
+        ...props,
+        activePage: currentActivePage,
+        onChange: setCurrentActivePage,
+    };
+
+    return children(childrenProps);
+};

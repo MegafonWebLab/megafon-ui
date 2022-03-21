@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { SearchItem } from '../Search';
 
+export const wrapperDefaultStyle = { display: 'grid', gap: '20px' };
+
 interface IDemoSearchWrapperProps {
     children: (prop: {
         onSubmit: (value: string) => void;

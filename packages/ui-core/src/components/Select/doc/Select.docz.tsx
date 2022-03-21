@@ -69,9 +69,8 @@ export const flexStyle = {
 };
 
 const selectWrapperStyle = {
-    height: '200px',
     width: '50%',
-    paddingLeft: '15px',
+    padding: '15px',
     boxSizing: 'border-box' as const,
     minWidth: '300px',
 };

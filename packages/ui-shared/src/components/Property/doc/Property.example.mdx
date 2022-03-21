@@ -38,15 +38,9 @@ const textWithParagraph = convert(
 
 ```
 
-## Только заголовок
+## Заголовок
 
-<Playground>
-    <ContentArea>
-        <Property items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
-    </ContentArea>
-</Playground>
-
-## Заголовок в несколько строк
+### В несколько строк
 
 <Playground>
     <ContentArea>
@@ -54,39 +48,7 @@ const textWithParagraph = convert(
     </ContentArea>
 </Playground>
 
-## Значение в несколько строк
-
-<Playground>
-    <ContentArea>
-        <Property items={[{title: ['Звонки на все номера России'], value: valueInSeveralRow }]} />
-    </ContentArea>
-</Playground>
-
-## Заголовок и описание
-
-<Playground>
-    <ContentArea>
-        <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: 'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка'}]}]}/>
-    </ContentArea>
-</Playground>
-
-## Заголовок и скрытое описание
-
-<Playground>
-    <ContentArea>
-        <Property items={[{title: ['Музыкальные сервисы'], description: [{ value: 'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.', isCollapsible: true }], value: '500 ₽' }]}/>
-    </ContentArea>
-</Playground>
-
-## С бейджом
-
-<Playground>
-    <ContentArea>
-        <Property badge={'Акция'} items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
-    </ContentArea>
-</Playground>
-
-## Заголовок c иконкой
+### C иконкой
 
 <Playground>
     <ContentArea>
@@ -94,15 +56,17 @@ const textWithParagraph = convert(
     </ContentArea>
 </Playground>
 
-## Несколько описаний
+## Значение
+
+### В несколько строк
 
 <Playground>
     <ContentArea>
-        <Property items={[{title: ['Доп звонки'], value: '500 ₽', description: [{ value: 'После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.' }, { value: 'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.', isCollapsible: true }]}]}/>
+        <Property items={[{title: ['Звонки на все номера России'], value: valueInSeveralRow }]} />
     </ContentArea>
 </Playground>
 
-## Одно значение
+### Одно на несколько строк
 
 <Playground>
     <ContentArea>
@@ -110,7 +74,49 @@ const textWithParagraph = convert(
     </ContentArea>
 </Playground>
 
-## Несколько строк
+## Контент
+
+### Только заголовок
+
+<Playground>
+    <ContentArea>
+        <Property items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
+    </ContentArea>
+</Playground>
+
+### Заголовок и описание
+
+<Playground>
+    <ContentArea>
+        <Property items={[{title: ['Интернет не на все сервисы'], description: [{value: 'Boom, Yandex.Музыка, Zvooq, ВКонтакте Музыка'}]}]}/>
+    </ContentArea>
+</Playground>
+
+### Заголовок и скрытое описание
+
+<Playground>
+    <ContentArea>
+        <Property items={[{title: ['Музыкальные сервисы'], description: [{ value: 'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.', isCollapsible: true }], value: '500 ₽' }]}/>
+    </ContentArea>
+</Playground>
+
+### Несколько описаний
+
+<Playground>
+    <ContentArea>
+        <Property items={[{title: ['Доп звонки'], value: '500 ₽', description: [{ value: 'После израсходования пакета минут звонки на номера МегаФона России предоставляются безлимитно.' }, { value: 'Звонки на местные городские номера, когда вы находитесь дома, оплачиваются отдельно.', isCollapsible: true }]}]}/>
+    </ContentArea>
+</Playground>
+
+### Бейдж
+
+<Playground>
+    <ContentArea>
+        <Property badge={'Акция'} items={[{title: ['Звонки на все номера России'], value: '500 ₽' }]}/>
+    </ContentArea>
+</Playground>
+
+### Несколько строк
 
 <Playground>
     <ContentArea>
@@ -118,7 +124,7 @@ const textWithParagraph = convert(
     </ContentArea>
 </Playground>
 
-## С нижней границей
+## Нижняя граница
 
 <Playground>
     <ContentArea>
@@ -126,7 +132,7 @@ const textWithParagraph = convert(
     </ContentArea>
 </Playground>
 
-## Добавление компонентов
+## Кастомные компоненты
 
 В качестве заголовка и описания можно использовать другие компоненты.
 
@@ -136,7 +142,7 @@ const textWithParagraph = convert(
     </ContentArea>
 </Playground>
 
-## Компонент занимает всю доступную ширину
+## Без ограничения по ширине
 
 <Playground>
     <ContentArea>
@@ -144,7 +150,7 @@ const textWithParagraph = convert(
     </ContentArea>
 </Playground>
 
-## Комбинированный вариант
+## Комбинирование
 
 <Playground>
     <Container>

@@ -7,7 +7,7 @@ export const demoWrapperBlockStyles: React.CSSProperties = {
     gap: '24px',
     gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
     justifyContent: 'center',
-    padding: '50px',
+    padding: '100px 50px',
 };
 
 export const DemoTooltipWithTriggerWrapper = ({ children }) => {

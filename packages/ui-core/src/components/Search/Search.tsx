@@ -50,7 +50,7 @@ export interface ISearchProps {
     verification?: VerificationType;
     /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
-    /** Управление возможностью взаимодействия с компонентом */
+    /** Отключение поля ввода */
     disabled?: boolean;
     /** Делает поле обязательным */
     required?: boolean;

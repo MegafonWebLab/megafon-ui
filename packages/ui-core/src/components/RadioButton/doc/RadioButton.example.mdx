@@ -3,7 +3,7 @@ import { Playground, Props } from 'docz';
 import RadioButton from '../RadioButton';
 import { flexStyle, DemoRadioButtonWrapper } from './RadioButton.docz';
 
-## Различные состояния компонента
+## Состояние переключателя
 
 <Playground style={flexStyle}>
     <RadioButton value="not-checked-value" isChecked={false}>Not checked</RadioButton>
@@ -11,7 +11,9 @@ import { flexStyle, DemoRadioButtonWrapper } from './RadioButton.docz';
     <RadioButton value="disabled-value" disabled>Disabled</RadioButton>
 </Playground>
 
-## Пример с переключением
+## Типы переключения
+
+### Контролируемое
 
 <Playground>
     <DemoRadioButtonWrapper>
@@ -46,7 +48,7 @@ export const DemoRadioButtonWrapper = ({ children }) => {
 }
 ```
 
-## Пример с неконтролируемым переключением
+### Неконтролируемое
 
 <Playground>
     <DemoRadioButtonWrapper>
@@ -84,6 +86,6 @@ export const DemoRadioButtonWrapper = ({ children }) => {
 ## Размер лейблов
 
 <Playground>
-    <RadioButton name="group-2" value="value-1" textSize="small">First radio button</RadioButton>
-    <RadioButton name="group-2" value="value-2" textSize="medium">Second radio button</RadioButton>
+    <RadioButton name="group-2" value="value-1" textSize="small">Маленький размер</RadioButton>
+    <RadioButton name="group-2" value="value-2" textSize="medium">Средний размер</RadioButton>
 </Playground>

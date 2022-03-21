@@ -29,7 +29,9 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
-## Разные шаблоны девайсов
+## Шаблоны девайсов
+
+### Новый iphone
 
 <Playground>
     <ContentArea>
@@ -46,6 +48,8 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
+### Белый iphone
+
 <Playground>
     <ContentArea>
         <StoreBanner
@@ -60,6 +64,8 @@ const onClick = () => {};
         />
     </ContentArea>
 </Playground>
+
+### Черный iphone
 
 <Playground>
     <ContentArea>
@@ -76,7 +82,26 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
-## Цветовые схемы
+### Android
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            deviceMask="android"
+        />
+    </ContentArea>
+</Playground>
+
+## Цветовые темы
+
+### Зеленая
 
 <Playground>
     <ContentArea>
@@ -94,6 +119,7 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
+### Серая
 
 <Playground>
     <ContentArea>
@@ -111,7 +137,25 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
-## C QR-кодом
+## QR-код
+
+### 1 стор
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            imageSrc={image}
+            qrCode={qrCode}
+            deviceMask="black-iphone"
+        />
+    </ContentArea>
+</Playground>
+
+### 2 стора
 
 <Playground>
     <ContentArea>
@@ -129,7 +173,7 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
-## C QR-кодом и 3 сторами
+### 3 стора
 
 <Playground>
     <ContentArea>
@@ -149,7 +193,9 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
-## C кнопкой
+## Кнопка
+
+### На белом фоне
 
 <Playground>
     <ContentArea>
@@ -163,7 +209,7 @@ const onClick = () => {};
     </ContentArea>
 </Playground>
 
-## C кнопкой и зеленым фоном
+### На зеленом фоне
 
 <Playground>
     <ContentArea>

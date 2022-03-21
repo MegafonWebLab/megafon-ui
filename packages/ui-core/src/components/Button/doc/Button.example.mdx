@@ -5,7 +5,9 @@ import { blockStyle } from './Button.docz';
 import { createRef } from "react";
 export const ref = createRef();
 
-## Зеленая тема
+## Цветовые темы
+
+### Зеленая
 
 <Playground style={blockStyle}>
     <Button>active</Button>
@@ -18,7 +20,7 @@ export const ref = createRef();
     </div>
 </Playground>
 
-## Фиолетовая тема
+### Фиолетовая
 
 <Playground style={blockStyle}>
     <Button theme="purple">active</Button>
@@ -31,7 +33,7 @@ export const ref = createRef();
     </div>
 </Playground>
 
-## Белая тема
+### Белая
 
 <Playground style={{...blockStyle, backgroundColor: '#333333', color: '#ffffff'}}>
     <Button theme="white">active</Button>
@@ -44,8 +46,9 @@ export const ref = createRef();
     </div>
 </Playground>
 
+## Цветовые темы с outline
 
-## Зеленая тема с outline
+### Зеленая
 
 <Playground style={blockStyle}>
     <Button type="outline">active</Button>
@@ -58,7 +61,7 @@ export const ref = createRef();
     </div>
 </Playground>
 
-## Фиолетовая тема с outline
+### Фиолетовая
 
 <Playground style={blockStyle}>
     <Button type="outline" theme="purple">active</Button>
@@ -71,7 +74,7 @@ export const ref = createRef();
     </div>
 </Playground>
 
-## Белая тема с outline
+### Белая
 
 <Playground style={{...blockStyle, backgroundColor: '#333333', color: '#ffffff'}}>
     <Button type="outline" theme="white">active</Button>
@@ -84,7 +87,7 @@ export const ref = createRef();
     </div>
 </Playground>
 
-## Черная тема с outline
+### Черная
 
 <Playground style={{...blockStyle, backgroundColor: '#F5F5F5'}}>
     <Button type="outline" theme="black">active</Button>
@@ -109,7 +112,8 @@ export const ref = createRef();
     </div>
 </Playground>
 
-## Размер лоадера в зависимости от размера кнопки
+## Размер лоадера
+Зависит от размера кнопки
 
 <Playground style={blockStyle}>
     <Button sizeAll="small" showLoader>Small</Button>
@@ -131,10 +135,4 @@ export const ref = createRef();
     <Button href="#" disabled>Disabled Link</Button>
     <Button href="#" target="_blank">Target Link</Button>
     <Button href="#" download>Download Link</Button>
-</Playground>
-
-## Ссылка на элемент
-
-<Playground style={blockStyle}>
-    <Button buttonRef={ref}>Ref</Button>
 </Playground>

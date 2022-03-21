@@ -60,7 +60,7 @@ export interface ISelectProps<T extends SelectItemValueType> {
     verification?: VerificationType;
     /** Дополнительный текст под полем. Свойство verification влияет на цвет текста. */
     noticeText?: string;
-    /** Управление возможностью взаимодействия с компонентом */
+    /** Отключение селекта */
     disabled?: boolean;
     /** Делает поле обязательным */
     required?: boolean;
