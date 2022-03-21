@@ -13,6 +13,7 @@ export enum Theme {
 type LinkPropTypes = React.ComponentProps<typeof Link>;
 
 export type Props = Required<Pick<LinkPropTypes, 'href'>> &
+    Pick<LinkPropTypes, 'target'> &
     Pick<LinkPropTypes, 'onClick' | 'dataAttrs'> & {
         /** Тема кнопки */
         theme: Theme;
@@ -30,6 +31,7 @@ StoreButton.propTypes = {
     theme: PropTypes.oneOf(Object.values(Theme)).isRequired,
     onClick: PropTypes.func,
     className: PropTypes.string,
+    target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
 };
 
 export default StoreButton;
