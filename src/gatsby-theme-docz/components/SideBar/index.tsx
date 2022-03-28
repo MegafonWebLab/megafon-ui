@@ -1,7 +1,8 @@
 import React from 'react';
 import { Logo } from '@megafon/ui-core';
 import { cnCreate, applyTheme } from '@megafon/ui-helpers';
-import LightbulbIcon from '@megafon/ui-icons/basic-16-lightbulb_16.svg';
+import DarkIcon from './i/dark-icon.svg';
+import LightIcon from './i/light-icon.svg';
 import { useCurrentDoc } from 'docz';
 import { ThemeContext } from '../../themeContext';
 import Menu from '../Menu';
@@ -13,6 +14,7 @@ const SideBar: React.FC = () => {
     const currentDoc = useCurrentDoc();
 
     const themeContext = React.useContext(ThemeContext);
+    const isLightTheme = themeContext.theme === 'light';
 
     React.useEffect(() => {
         const current = document.getElementById(currentDoc.route);
@@ -30,7 +32,7 @@ const SideBar: React.FC = () => {
     }, [currentDoc.route]);
 
     const toggleTheme = React.useCallback(() => {
-        const newTheme = themeContext.theme === 'light' ? 'dark' : 'light';
+        const newTheme = isLightTheme ? 'dark' : 'light';
 
         // update context
         themeContext.setTheme(newTheme);
@@ -43,12 +45,22 @@ const SideBar: React.FC = () => {
         <div className={cn()}>
             <div className={cn('logo-wrapper')}>
                 <Logo className={cn('logo')} href="/intro" target="_self" />
+                <button 
+                    type="button"
+                    className={cn('theme-switcher', { dark: !isLightTheme })}
+                    onClick={toggleTheme}
+                    data-current-theme={themeContext.theme}
+                    >
+                        <span className={cn('switch-icons')}>
+                            <LightIcon className={cn('icon')}/>
+                            <DarkIcon className={cn('icon', {dark: !isLightTheme})}/>
+                        </span>
+                        <span className={cn('switch-dot')} />
+                        <span className={cn('switch-dot', { blue: true})} />
+                </button>
             </div>
             <div className={cn('menu')}>
                 <Menu />
-            </div>
-            <div className={cn('theme-switcher')} data-current-theme={themeContext.theme}>
-                <LightbulbIcon onClick={toggleTheme} />
             </div>
         </div>
     );
