@@ -3,6 +3,8 @@
     height: 100vh;
 
     &__logo-wrapper {
+        display: flex;
+        align-items: center;
         padding: 24px 16px 32px;
 
         @media screen and (max-width: 767px) {
@@ -11,7 +13,7 @@
     }
 
     &__logo {
-        padding: 16px 8px;
+        padding: 16px 16px 16px 8px;
     }
 
     &__menu {
@@ -26,16 +28,105 @@
     }
 
     &__theme-switcher {
-        display: none;
-        flex-shrink: 0;
-        width: 32px;
-        height: 32px;
-        margin-top: 16px;
-        margin-bottom: 16px;
-        margin-left: 24px;
+        position: relative;
+        margin-left: 8px;
 
+        width: 34px;
+        height: 22px;
+        padding: 0;
+        border: none;
+        border-radius: 11px;
+
+        background-color: var(--spbSky1);
         cursor: pointer;
 
-        fill: var(--content);
+        transition: background-color 0.3s;
+    }
+
+    &__theme-switcher:hover,
+    &__theme-switcher_dark {
+        background-color: var(--spbSky2);
+    }
+
+    &__theme-switcher_dark:hover {
+        background-color: var(--spbSky3);
+    }
+
+    &__theme-switcher:disabled {
+        background-color: var(--spbSky1);
+        cursor: auto;
+    }
+
+    &__switch-icons {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        z-index: 1;
+
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+
+        background-color: var(--brandGreen);
+        transform: none;
+
+        transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.3s linear;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 13px;
+        height: 13px;
+
+        transform: translate(-50%, -50%);
+
+        transition: opacity 0.2s;
+    }
+
+    &__switch-dot {
+        position: absolute;
+        top: 50%;
+        right: 4px;
+        z-index: 0;
+
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+
+        background-color: var(--brandGreen);
+        transform: translateY(-50%);
+    }
+
+    &__switch-dot_blue {
+        right: auto;
+        left: 4px;
+
+        background-color: var(--reflexBlue);
+    }
+
+    &__theme-switcher_dark & {
+        &__icon {
+            opacity: 0;
+        }
+
+        &__icon_dark {
+            opacity: 1;
+        }
+
+        &__switch-icons {
+            background-color: var(--reflexBlue);
+            transform: translateX(-12px);
+        }
+    }
+
+    &__theme-switcher:disabled & {
+        &__switch-icons,
+        &__switch-dot {
+            background-color: var(--spbSky2);
+        }
     }
 }
