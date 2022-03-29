@@ -47,3 +47,69 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
         {({ onChange }) => <Switcher checked disabled onChange={onChange} />}
     </SwitcherWrapper>
 </Playground>
+
+## Переключатель в состоянии загрузки
+
+### Состояние - "выкл."
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) =>  <Switcher loaded />}
+    </SwitcherWrapper>
+</Playground>
+
+### Состояние - "вкл."
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher checked loaded />}
+    </SwitcherWrapper>
+</Playground>
+
+### В отключенном состоянии лоадер не отображается
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher disabled loaded />}
+    </SwitcherWrapper>
+</Playground>
+
+## Переключатель c текстом
+
+### Средний размер текста (по умолчанию)
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher>Справа (по умолчанию)</Switcher>}
+    </SwitcherWrapper>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher disabled>Отключен</Switcher>}
+    </SwitcherWrapper>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher textPosition="left">
+            <strong>Контент слева</strong><br />
+            Cвитчер прижимается к правому краю контейнера
+            </Switcher>}
+    </SwitcherWrapper>
+</Playground>
+
+### Маленький размер текста 
+
+<Playground>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher textSize="small">Справа (по умолчанию)</Switcher>}
+    </SwitcherWrapper>
+    <SwitcherWrapper>
+        {({ onChange }) => <Switcher disabled textSize="small">Отключен</Switcher>}
+    </SwitcherWrapper>
+    <SwitcherWrapper>
+        {({ onChange }) => (
+            <Switcher textSize="small" textPosition="left">
+                <strong>Контент слева</strong><br />
+                Cвитчер прижимается к правому краю контейнера
+            </Switcher>
+        )}
+    </SwitcherWrapper>
+</Playground>
+
+

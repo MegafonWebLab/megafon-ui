@@ -26,6 +26,20 @@ describe('<Switcher />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('should render loaded switcher with children', () => {
+            const wrapper = shallow(<Switcher loaded>children</Switcher>);
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render switcher with children with small size by left', () => {
+            const wrapper = shallow(
+                <Switcher loaded textPosition="left" textSize="small">
+                    children
+                </Switcher>,
+            );
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('should render switcher for mobile devices', () => {
             const onTouchStart = window.ontouchstart;
             window.ontouchstart = jest.fn();
@@ -42,8 +56,8 @@ describe('<Switcher />', () => {
             const handleChange = jest.fn();
             const wrapper = shallow(<Switcher onChange={handleChange} />);
 
-            const event = { target: {} };
-            wrapper.find('.mfui-switcher').simulate('click', event);
+            const event = { target: {}, nativeEvent: {}, type: 'click' };
+            wrapper.find('.mfui-switcher__input').simulate('click', event);
             expect(handleChange).toHaveBeenCalledWith(event);
         });
 
@@ -51,7 +65,8 @@ describe('<Switcher />', () => {
             const handleChange = jest.fn();
             const wrapper = shallow(<Switcher disabled onChange={handleChange} />);
 
-            wrapper.find('.mfui-switcher').simulate('click');
+            const event = { target: {}, nativeEvent: {}, type: 'click' };
+            wrapper.find('.mfui-switcher__input').simulate('click', event);
             expect(handleChange).not.toHaveBeenCalled();
         });
     });
