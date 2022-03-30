@@ -45,6 +45,10 @@ const NavGroup: React.FC<NavGroupProps> = ({ item }) => {
         setOpen(o => !o);
     }, []);
 
+    const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    };
+
     const arrow = !open ? <ArrowDown /> : <ArrowUp />;
 
     const renderSearch = () => (
@@ -53,13 +57,15 @@ const NavGroup: React.FC<NavGroupProps> = ({ item }) => {
                 <div className={cn('search-icon')}>
                     <SearchIcon />
                 </div>
-                <input
-                    value={search}
-                    placeholder="Find"
-                    type="text"
-                    className={cn('search-field')}
-                    onChange={handleChangeSearch}
-                />
+                    <form onSubmit={handleSubmitForm}>
+                        <input
+                            value={search}
+                            placeholder="Find"
+                            type="text"
+                            className={cn('search-field')}
+                            onChange={handleChangeSearch}
+                        />
+                    </form>
             </div>
         </div>
     );
