@@ -26,14 +26,14 @@ describe('<Switcher />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should render loaded switcher with children', () => {
-            const wrapper = shallow(<Switcher loaded>children</Switcher>);
+        it('should render showLoader switcher with children', () => {
+            const wrapper = shallow(<Switcher showLoader>children</Switcher>);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should render switcher with children with small size by left', () => {
             const wrapper = shallow(
-                <Switcher loaded textPosition="left" textSize="small">
+                <Switcher showLoader textPosition="left" textSize="small">
                     children
                 </Switcher>,
             );

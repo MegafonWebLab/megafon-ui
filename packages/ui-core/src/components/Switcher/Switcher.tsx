@@ -21,7 +21,7 @@ export interface ISwitcherProps {
     /** Отключение переключателя */
     disabled?: boolean;
     /** Cостояние загрузки */
-    loaded?: boolean;
+    showLoader?: boolean;
     /** Размер текста лейбла */
     textSize?: 'small' | 'medium';
     /** Позиция лейбла относительно свитчера */
@@ -36,7 +36,7 @@ const Switcher: React.FC<ISwitcherProps> = ({
     className,
     checked = false,
     disabled = false,
-    loaded,
+    showLoader = false,
     children,
     textSize = 'medium',
     textPosition = 'right',
@@ -45,8 +45,7 @@ const Switcher: React.FC<ISwitcherProps> = ({
     const isTouch: boolean = detectTouch();
     const isLeftContent = !!children && textPosition === 'left';
     const isRightContent = !!children && textPosition === 'right';
-    const showLoader = loaded && !disabled;
-    const isInteractiveDisabled = loaded || disabled;
+    const isInteractiveDisabled = showLoader || disabled;
 
     const handleChange = React.useCallback(
         (e: AccessibilityEventType): void => {
@@ -60,24 +59,19 @@ const Switcher: React.FC<ISwitcherProps> = ({
     );
 
     return (
-        <div className={cn({ disabled })}>
+        <div className={cn({ disabled }, className)} {...filterDataAttrs(dataAttrs?.root)}>
             {isLeftContent && <div className={cn('content', { size: textSize, left: true })}>{children}</div>}
             <div
-                {...filterDataAttrs(dataAttrs?.root)}
-                className={cn(
-                    'input',
-                    {
-                        checked,
-                        disabled,
-                        'no-touch': !isTouch,
-                    },
-                    className,
-                )}
+                className={cn('input', {
+                    checked,
+                    disabled,
+                    'no-touch': !isTouch,
+                })}
                 onClick={handleChange}
                 onKeyDown={handleChange}
                 tabIndex={isInteractiveDisabled ? undefined : 0}
             >
-                {showLoader && <div className={cn('loader')} />}
+                {showLoader && !disabled && <div className={cn('loader')} />}
                 <div className={cn('pointer')} />
             </div>
             {isRightContent && <div className={cn('content', { size: textSize })}>{children}</div>}
@@ -94,7 +88,7 @@ Switcher.propTypes = {
     textPosition: PropTypes.oneOf(['left', 'right']),
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
-    loaded: PropTypes.bool,
+    showLoader: PropTypes.bool,
     onChange: PropTypes.func,
 };
 
