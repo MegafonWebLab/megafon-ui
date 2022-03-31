@@ -65,6 +65,7 @@ const Switcher: React.FC<ISwitcherProps> = ({
                 className={cn('input', {
                     checked,
                     disabled,
+                    loaded: showLoader,
                     'no-touch': !isTouch,
                 })}
                 onClick={handleChange}

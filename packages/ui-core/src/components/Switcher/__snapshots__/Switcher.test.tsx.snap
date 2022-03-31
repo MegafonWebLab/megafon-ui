@@ -38,7 +38,7 @@ exports[`<Switcher /> layout should render showLoader switcher with children 1`]
   className="mfui-switcher"
 >
   <div
-    className="mfui-switcher__input mfui-switcher__input_no-touch"
+    className="mfui-switcher__input mfui-switcher__input_loaded mfui-switcher__input_no-touch"
     onClick={[Function]}
     onKeyDown={[Function]}
   >
@@ -84,7 +84,7 @@ exports[`<Switcher /> layout should render switcher with children with small siz
     children
   </div>
   <div
-    className="mfui-switcher__input mfui-switcher__input_no-touch"
+    className="mfui-switcher__input mfui-switcher__input_loaded mfui-switcher__input_no-touch"
     onClick={[Function]}
     onKeyDown={[Function]}
   >
