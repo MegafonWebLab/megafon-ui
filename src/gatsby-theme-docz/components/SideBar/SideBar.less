@@ -29,10 +29,10 @@
 
     &__theme-switcher {
         position: relative;
-        margin-left: 8px;
 
         width: 34px;
         height: 22px;
+        margin-left: 8px;
         padding: 0;
         border: none;
         border-radius: 11px;
@@ -73,7 +73,7 @@
         transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), background-color 0.3s linear;
     }
 
-    &__icon {
+    &__switch-icon {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -82,6 +82,7 @@
         height: 13px;
 
         transform: translate(-50%, -50%);
+        opacity: 0;
 
         transition: opacity 0.2s;
     }
@@ -108,12 +109,14 @@
         background-color: var(--reflexBlue);
     }
 
-    &__theme-switcher_dark & {
-        &__icon {
-            opacity: 0;
+    &__theme-switcher_light & {
+        &__switch-icon_light {
+            opacity: 1;
         }
+    }
 
-        &__icon_dark {
+    &__theme-switcher_dark & {
+        &__switch-icon_dark {
             opacity: 1;
         }
 
