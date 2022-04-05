@@ -47,3 +47,57 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
         {({ onChange }) => <Switcher checked disabled onChange={onChange} />}
     </SwitcherWrapper>
 </Playground>
+
+## Переключатель в состоянии загрузки
+
+### Состояние - "выкл."
+
+<Playground>
+    <Switcher showLoader />
+</Playground>
+
+### Состояние - "вкл."
+
+<Playground>
+    <Switcher checked showLoader />
+</Playground>
+
+### В отключенном состоянии лоадер не отображается
+
+<Playground>
+    <Switcher disabled showLoader />
+</Playground>
+
+## Переключатель c текстом
+
+### Положение текста
+
+<Playground>
+    <SwitcherWrapper>
+        {({ checked, onChange }) => <Switcher checked={checked} onChange={onChange}>Справа (по умолчанию)</Switcher>}
+    </SwitcherWrapper>
+    <SwitcherWrapper>
+        {({ checked, onChange }) => <Switcher checked={checked} disabled onChange={onChange}>Отключен</Switcher>}
+    </SwitcherWrapper>
+    <SwitcherWrapper>
+        {({ checked, onChange }) => 
+            <Switcher textPosition="left" onChange={onChange} checked={checked}>
+                <strong>Текст слева</strong><br />
+                Cвитчер прижимается к правому краю контейнера
+            </Switcher>
+        }
+    </SwitcherWrapper>
+</Playground>
+
+### Размер текста 
+
+<Playground>
+    <SwitcherWrapper>
+        {({ checked, onChange }) => <Switcher onChange={onChange} checked={checked}>Размер medium по умолчанию</Switcher>}
+    </SwitcherWrapper>
+    <SwitcherWrapper>
+        {({ checked, onChange }) => <Switcher textSize="small" onChange={onChange} checked={checked}>Размер small</Switcher>}
+    </SwitcherWrapper>
+</Playground>
+
+
