@@ -98,3 +98,23 @@ const items = [
         additionalText="Авторизуйтесь на сайте сервиса special.megafon.ru, перейдите в магазин и добавьте покупки в корзину"
     />
 </Playground>
+
+## Использование с children
+
+<Playground style={wrapperStyles}>
+    <Instructions
+        title="Как подписаться"
+        instructionItems={items}
+    >
+        <strong
+            style={{
+                display: 'block',
+                color: 'red',
+                margin: '32px auto',
+                textAlign: 'center'
+            }}
+        >
+            Важное уведомление
+        </strong>
+    </Instructions>
+</Playground>

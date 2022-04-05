@@ -91,6 +91,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     pictureMask = 'none',
     getSwiper,
     additionalText: text,
+    children,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperClass>();
     const [slideIndex, setSlideIndex] = React.useState(0);
@@ -290,6 +291,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                             {renderMobileArticles()}
                             {renderDesktopArticles()}
                             {text && renderText()}
+                            {children}
                         </div>
                     </div>
                 </GridColumn>
