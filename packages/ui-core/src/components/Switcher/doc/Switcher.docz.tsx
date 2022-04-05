@@ -12,7 +12,7 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
     };
 
     return (
-        <div style={{ padding: '20px 15px' }}>
+        <div style={{ padding: '20px 15px', maxWidth: '30%' }}>
             {props.children({
                 checked,
                 onChange: handleChange,
