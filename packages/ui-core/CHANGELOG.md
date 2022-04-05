@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.4.0...@megafon/ui-core@3.5.0) (2022-04-05)
+
+
+### Bug Fixes
+
+* **logo:** fix img align ([51c81d9](https://github.com/MegafonWebLab/megafon-ui/commit/51c81d9e2edb9cf6b5d245ebb60d8a74f1e8bc1d))
+* **promobadge:** fixed font color for dark theme ([88781d8](https://github.com/MegafonWebLab/megafon-ui/commit/88781d843e25028a5836b030861939cdf019760d))
+
+
+### Features
+
+* **switcher:** new props and colors ([adb5f34](https://github.com/MegafonWebLab/megafon-ui/commit/adb5f34e3e0949109445c75dc188d37171637af9))
+
+
+
+
+
 # [3.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.3.1...@megafon/ui-core@3.4.0) (2022-03-21)
 
 

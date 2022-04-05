@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.1.4...@megafon/ui-shared@3.2.0) (2022-04-05)
+
+
+### Features
+
+* **instructions:** added children for Instruction component ([33b5296](https://github.com/MegafonWebLab/megafon-ui/commit/33b5296e7f1ccede197fed5d8887ec871586f0f8))
+
+
+
+
+
 ## [3.1.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.1.3...@megafon/ui-shared@3.1.4) (2022-03-21)
 
 
