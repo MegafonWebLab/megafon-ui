@@ -8,8 +8,9 @@ export const flexboxStyles = {
 };
 
 export const wrapperStyles = {
-    backgroundColor: '#00B956',
     padding: '20px',
 };
 
-export const DemoPreloaderWrapper: React.FC = ({ children }) => <div style={wrapperStyles}>{children}</div>;
+export const DemoPreloaderWrapper: React.FC<{ bgColor: string }> = ({ children, bgColor }) => (
+    <div style={{ ...wrapperStyles, background: bgColor }}>{children}</div>
+);
