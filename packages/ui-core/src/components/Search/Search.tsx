@@ -98,6 +98,7 @@ const Search: React.FC<ISearchProps> = ({
     const debouncedOnChange = React.useRef<React.MutableRefObject<(string) => void>>(
         debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay),
     );
+    const highlightedItem = React.useRef<HTMLDivElement>(null);
 
     const handleChange = React.useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -206,6 +207,15 @@ const Search: React.FC<ISearchProps> = ({
         }
     }, [disabled, isFocused]);
 
+    React.useEffect(() => {
+        if (activeIndex !== -1) {
+            highlightedItem.current?.scrollIntoView?.({
+                behavior: 'smooth',
+                block: 'nearest',
+            });
+        }
+    }, [activeIndex, items]);
+
     const highlightString = (title: string) => {
         const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
         const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
@@ -264,6 +274,7 @@ const Search: React.FC<ISearchProps> = ({
                             {items.map(({ value: itemValue, searchView }: SearchItem, i) => (
                                 <div
                                     {...filterDataAttrs(dataAttrs?.item, i + 1)}
+                                    ref={activeIndex === i ? highlightedItem : null}
                                     className={cn('list-item', { active: activeIndex === i })}
                                     onMouseDown={handleSelectSubmit(i)}
                                     onMouseEnter={handleHoverItem(i)}
