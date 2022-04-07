@@ -2,14 +2,14 @@
 
 exports[`Breadcrumbs should render component 1`] = `
 <div
-  className="mfui-breadcrumbs mfui-breadcrumbs_color_black"
+  className="mfui-breadcrumbs mfui-breadcrumbs_color_default"
 >
   <div
     className="mfui-breadcrumbs__item"
     key="МегаФон"
   >
     <TextLink
-      color="black"
+      color="default"
       dataAttrs={
         Object {
           "root": undefined,
@@ -25,7 +25,7 @@ exports[`Breadcrumbs should render component 1`] = `
     key="Мобильная связь"
   >
     <TextLink
-      color="black"
+      color="default"
       dataAttrs={
         Object {
           "root": undefined,
@@ -41,7 +41,7 @@ exports[`Breadcrumbs should render component 1`] = `
     key="Тарифы"
   >
     <TextLink
-      color="black"
+      color="default"
       dataAttrs={
         Object {
           "root": undefined,
