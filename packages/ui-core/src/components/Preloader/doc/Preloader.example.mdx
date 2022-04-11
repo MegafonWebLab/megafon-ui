@@ -10,8 +10,10 @@ import {
 
 <Playground style={flexboxStyles}>
     <Preloader color="default" />
-    <Preloader color="black" />
-    <DemoPreloaderWrapper>
+    <DemoPreloaderWrapper bgColor="var(--stcWhite)">
+        <Preloader color="black" />
+    </DemoPreloaderWrapper>
+    <DemoPreloaderWrapper bgColor="var(--brandGreen)">
         <Preloader color="white" />
     </DemoPreloaderWrapper>
 </Playground>

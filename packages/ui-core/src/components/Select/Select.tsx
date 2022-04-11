@@ -164,29 +164,10 @@ const Select = <T extends SelectItemValueType>({
     );
 
     const scrollList = (itemIndex: number): void => {
-        if (!itemsNodeList.current.length) {
-            return;
-        }
-
-        const wrapper = itemWrapperNode.current;
-        const item = itemsNodeList.current[itemIndex];
-
-        if (!item || !wrapper) {
-            return;
-        }
-
-        const wrapperScroll = wrapper?.scrollTop;
-        const wrapperHeight = wrapper?.offsetHeight;
-        const itemOffset = item.offsetTop;
-        const itemHeight = item.offsetHeight;
-
-        if (itemOffset + itemHeight > wrapperScroll + wrapperHeight) {
-            wrapper.scrollTop = itemOffset + itemHeight - wrapperHeight;
-        }
-
-        if (itemOffset < wrapperScroll) {
-            wrapper.scrollTop = itemOffset;
-        }
+        itemsNodeList.current[itemIndex]?.scrollIntoView?.({
+            behavior: 'smooth',
+            block: 'nearest',
+        });
     };
 
     useEffect(() => {
