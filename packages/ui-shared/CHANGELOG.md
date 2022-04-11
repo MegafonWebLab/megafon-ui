@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.2.0...@megafon/ui-shared@3.2.1) (2022-04-11)
+
+
+### Bug Fixes
+
+* **colors:** fix colors usage in components: Notification, Preloader, Tile and Card ([96d0eef](https://github.com/MegafonWebLab/megafon-ui/commit/96d0eef51458b35c5b69c1677ec6f4a22f7f130d))
+
+
+
+
+
 # [3.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.1.4...@megafon/ui-shared@3.2.0) (2022-04-05)
 
 

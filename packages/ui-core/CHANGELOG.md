@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.0...@megafon/ui-core@3.5.1) (2022-04-11)
+
+
+### Bug Fixes
+
+* **colors:** fix colors page; correct values for soft colors in dark theme ([81d1801](https://github.com/MegafonWebLab/megafon-ui/commit/81d18012234fa52ce0fdbff0de8de7dd2d6de8f5))
+* **colors:** fix colors usage in components: Notification, Preloader, Tile and Card ([96d0eef](https://github.com/MegafonWebLab/megafon-ui/commit/96d0eef51458b35c5b69c1677ec6f4a22f7f130d))
+* **search:** scroll highlighted item into users view ([5105863](https://github.com/MegafonWebLab/megafon-ui/commit/51058637a78598773e945b1f21eecbc319d7df78))
+* **select:** scroll highlighted item into users view ([50860e8](https://github.com/MegafonWebLab/megafon-ui/commit/50860e82a557cd6dd2e89448740a13b6e25c8261))
+
+
+
+
+
 # [3.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.4.0...@megafon/ui-core@3.5.0) (2022-04-05)
 
 

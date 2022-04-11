@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.1.1...@megafon/ui-helpers@2.1.2) (2022-04-11)
+
+
+### Bug Fixes
+
+* **colors:** fix colors page; correct values for soft colors in dark theme ([81d1801](https://github.com/MegafonWebLab/megafon-ui/commit/81d18012234fa52ce0fdbff0de8de7dd2d6de8f5))
+
+
+
+
+
 ## [2.1.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.1.0...@megafon/ui-helpers@2.1.1) (2022-03-21)
 
 

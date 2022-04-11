@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.1.1...@megafon/ui-icons@1.2.0) (2022-04-11)
+
+
+### Features
+
+* **ui-icons:** added new basic icons ([fc362dd](https://github.com/MegafonWebLab/megafon-ui/commit/fc362dd7d6bd6ada2d2b61b2217c18d94f0fd568))
+* **ui-icons:** updated service logos ([a1622eb](https://github.com/MegafonWebLab/megafon-ui/commit/a1622eb8103626cfdfa2a9186b8db114d5f9dc0a))
+
+
+
+
+
 ## [1.1.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.1.0...@megafon/ui-icons@1.1.1) (2022-03-21)
 
 **Note:** Version bump only for package @megafon/ui-icons
