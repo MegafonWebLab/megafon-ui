@@ -7,7 +7,8 @@ import Paragraph from 'components/Paragraph/Paragraph';
 import Tile from 'components/Tile/Tile';
 import ColorItem from './ColorItem/ColorItem';
 import colorsData, { ColorsItemType } from './colorsData';
-import Diagram from './diagram.svg';
+import DiagramDark from './img/diagram-dark.svg';
+import DiagramLight from './img/diagram-light.svg';
 import './Colors.less';
 
 const { basic, secondary, system, gradientColors, staticColors, staticOpacity, soft } = colorsData;
@@ -31,7 +32,7 @@ const getThemeFromLocalStorage = (): Theme => {
 
 const cn = cnCreate('colors');
 const Colors: React.FC = () => {
-    const [, setCurrentTheme] = React.useState<'light' | 'dark'>(getThemeFromLocalStorage());
+    const [currentTheme, setCurrentTheme] = React.useState<'light' | 'dark'>(getThemeFromLocalStorage());
     const [, setLoad] = React.useState<boolean>(false);
 
     React.useEffect(() => {
@@ -156,7 +157,7 @@ const Colors: React.FC = () => {
     return (
         <div className={cn()}>
             <Header as="h1" className={cn('title')}>
-                Цвета
+                Colors
             </Header>
             <Paragraph>Палитра цветов, используемая в продуктах МегаФон</Paragraph>
 
@@ -193,7 +194,10 @@ const Colors: React.FC = () => {
                         Soft
                     </Header>
                     <div className={cn('group')}>
-                        <Diagram className={cn('diagram')} />
+                        <div className={cn('diagram')}>
+                            {currentTheme === 'light' && <DiagramLight />}
+                            {currentTheme === 'dark' && <DiagramDark />}
+                        </div>
                         {renderSoftColors()}
                     </div>
                 </Tile>

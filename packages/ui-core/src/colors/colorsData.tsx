@@ -44,21 +44,22 @@ const colors: ColorsType = {
                     {
                         name: 'Base',
                         code: 'base',
-                        border: '1px solid var(--spbSky1)',
+                        border: '1px solid var(--spbSky2)',
                     },
                     {
                         name: 'Content',
                         code: 'content',
-                        border: '1px solid var(--spbSky1)',
+                        border: '1px solid var(--spbSky2)',
                     },
                     {
                         name: 'Spb Sky 0',
                         code: 'spbSky0',
-                        border: '2px solid var(--spbSky1)',
+                        border: '1px solid var(--spbSky2)',
                     },
                     {
                         name: 'Spb Sky 1',
                         code: 'spbSky1',
+                        border: '1px solid var(--spbSky2)',
                     },
                     {
                         name: 'Spb Sky 2',
@@ -112,6 +113,7 @@ const colors: ColorsType = {
                 {
                     name: 'Background',
                     code: 'background',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'Button Hov. G.',
@@ -159,12 +161,12 @@ const colors: ColorsType = {
                 {
                     name: 'STC White',
                     code: 'stcWhite',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC Black',
                     code: 'stcBlack',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
             ],
         },
@@ -177,42 +179,42 @@ const colors: ColorsType = {
                 {
                     name: 'STC White 5%',
                     code: 'stcWhite5',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC White 10%',
                     code: 'stcWhite10',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC White 20%',
                     code: 'stcWhite20',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC White 50%',
                     code: 'stcWhite50',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC Black 5%',
                     code: 'stcBlack5',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC Black 10%',
                     code: 'stcBlack10',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC Black 20%',
                     code: 'stcBlack20',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
                 {
                     name: 'STC Black 50%',
                     code: 'stcBlack50',
-                    border: '1px solid var(--spbSky1)',
+                    border: '1px solid var(--spbSky2)',
                 },
             ],
         },
@@ -226,12 +228,12 @@ const colors: ColorsType = {
                 {
                     name: 'Brand Green 80',
                     code: 'brandGreen80',
-                    parentColor: 'green',
+                    parentColor: 'brandGreen',
                 },
                 {
                     name: 'Brand Purple 80',
                     code: 'brandPurple80',
-                    parentColor: 'purple',
+                    parentColor: 'brandPurple',
                 },
                 {
                     name: 'Warm Red C 80',
@@ -261,12 +263,12 @@ const colors: ColorsType = {
                 {
                     name: 'Brand Green 20',
                     code: 'brandGreen20',
-                    parentColor: 'green',
+                    parentColor: 'brandGreen',
                 },
                 {
                     name: 'Brand Purple 20',
                     code: 'brandPurple20',
-                    parentColor: 'purple',
+                    parentColor: 'brandPurple',
                 },
                 {
                     name: 'Warm Red C 20',
