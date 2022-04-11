@@ -159,8 +159,7 @@ const Colors: React.FC = () => {
             <Header as="h1" className={cn('title')}>
                 Colors
             </Header>
-            <Paragraph>Палитра цветов, используемая в продуктах МегаФон</Paragraph>
-
+            <Paragraph className={cn('title-note')}>Палитра цветов, используемая в продуктах МегаФон</Paragraph>
             <div className={cn('inner')}>
                 <div className={cn('container')}>
                     {renderBasicColors()}

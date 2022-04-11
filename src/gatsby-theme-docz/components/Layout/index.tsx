@@ -24,6 +24,14 @@ const Layout: React.FC = ({ children }) => {
         [setTheme],
     );
 
+    const initialContextValue = { theme, setTheme: handleSetTheme };
+
+    const [contextValue, setContextValue] = React.useState(initialContextValue);
+
+    React.useEffect(() => {
+        setContextValue({...initialContextValue, theme});
+    }, [theme]);
+
     React.useEffect(() => {
         const currentTheme = getCurrentTheme();
         setTheme(currentTheme);
@@ -43,7 +51,7 @@ const Layout: React.FC = ({ children }) => {
     };
 
     return (
-        <ThemeContext.Provider value={{ theme, setTheme: handleSetTheme }}>
+        <ThemeContext.Provider value={contextValue}>
             <div className={cn()}>
                 <PageHeader onClick={handleClick} isOpen={isOpen} />
                 <div className={cn('side-bar', { open: isOpen })}>
