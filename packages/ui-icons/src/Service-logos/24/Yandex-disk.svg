@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
-    <title>logo/24/yandex-disc</title>
-    <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="35.276%" y1="12.669%" x2="50%" y2="68.332%" id="linearGradient-1">
             <stop stop-color="#FFFFFF" offset="0%"></stop>
             <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
         </linearGradient>
     </defs>
-    <g id="logo/24/yandex-disc" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="logo/24/yandex-disk" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="XpKALBy718TbzrhYiZ9T1iAmYn4" transform="translate(8.000000, 10.500000)">
             <path d="M11.1217778,0.834545455 C10.4650667,0.823636364 10.0224,0.629454545 9.48977778,0.457818182 C8.32106667,0.0796363636 6.87431111,0.101454545 5.54915556,0.736 C4.40355556,1.28436364 3.55271111,2.19418182 3.05315556,3.17490909 C2.69653333,3.87527273 2.3936,4.68763636 1.94666667,5.18509091 L1.88088889,5.25527273 L1.87911111,5.25709091 L1.87128889,5.26509091 C0.404977778,6.83818182 -0.253155556,8.45418182 0.232177778,9.48509091 C1.30062222,11.7552727 16.6993778,4.37818182 15.6312889,2.10909091 C15.2131556,1.22109091 13.4161778,0.677090909 11.1228444,0.834545455 L11.1217778,0.834545455 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
             <path d="M9.67964444,9.41381818 C13.9491556,7.36836364 16.4977778,3.77090909 15.8044444,2.29963636 C15.1121778,0.828363636 10.9504,1.09163636 6.68088889,3.13745455 C2.41066667,5.18290909 -0.349511111,8.23563636 0.342755556,9.70654545 C1.03537778,11.1778182 5.40942222,11.4592727 9.67964444,9.41381818 Z" id="Shape" fill="#0077FF" fill-rule="nonzero"></path>
