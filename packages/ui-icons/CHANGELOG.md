@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.2.0...@megafon/ui-icons@1.2.1) (2022-04-13)
+
+
+### Bug Fixes
+
+* **icons:** update view for emotion and googleplay ([79db6d7](https://github.com/MegafonWebLab/megafon-ui/commit/79db6d7c0fee455dd83c7ff7b5478c6e674f9bd8))
+
+
+
+
+
 # [1.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.1.1...@megafon/ui-icons@1.2.0) (2022-04-11)
 
 
