@@ -4,12 +4,12 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - beta
 
 jobs:
   main:
     env:
-      BASE_BRANCH: master
+      BASE_BRANCH: beta
       BASE_REPO_OWNER: MegafonWebLab
 
     runs-on: ubuntu-latest
