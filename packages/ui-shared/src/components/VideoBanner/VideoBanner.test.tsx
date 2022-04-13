@@ -357,7 +357,7 @@ describe('<VideoBanner />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
-        it('should not render video on mobile resolution', () => {
+        it('should not render video on mobile resolution by default', () => {
             localWindow.innerWidth = 320;
             const wrapper = shallow(
                 <VideoBanner
@@ -369,6 +369,21 @@ describe('<VideoBanner />', () => {
             );
 
             expect(wrapper).toMatchSnapshot();
+        });
+
+        it('turn on video on mobile resolution by special property', () => {
+            localWindow.innerWidth = 320;
+            const wrapper = shallow(
+                <VideoBanner
+                    imageMobile={imageMobile}
+                    imageTablet={imageDesktop}
+                    videoType={VideoType.VIDEO}
+                    videoSrc={video}
+                    videoMobile
+                />,
+            );
+
+            expect(wrapper.find('video')).toHaveLength(1);
         });
 
         it('should not render background image on desktop resolution with video', () => {
