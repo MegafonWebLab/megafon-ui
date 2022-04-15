@@ -416,7 +416,7 @@ const TextField: React.FC<TextFieldProps> = ({
                     </div>
                 )}
                 {symbolCounter && (
-                    <Paragraph size="small" hasMargin={false} className={cn('counter', { error: isMaxLimitExceeded })}>
+                    <Paragraph hasMargin={false} className={cn('counter', { error: isMaxLimitExceeded })}>
                         {`${currentSymbolCount}/${symbolCounter}`}
                     </Paragraph>
                 )}
