@@ -885,7 +885,6 @@ exports[`<TextField /> textarea should render with error because of max limit is
     <Paragraph
       className="mfui-text-field__counter mfui-text-field__counter_error"
       hasMargin={false}
-      size="small"
     >
       6/4
     </Paragraph>

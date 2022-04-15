@@ -33,7 +33,9 @@ export const Content = (): JSX.Element => (
             <ListItem>Связь</ListItem>
             <ListItem>Услуги</ListItem>
         </List>
-        <Paragraph size="small">Доступно для: WhatsApp, Viber, eMotion, Facebook Messenger, Telegram, ТамТам</Paragraph>
+        <Paragraph space="tight">
+            Доступно для: WhatsApp, Viber, eMotion, Facebook Messenger, Telegram, ТамТам
+        </Paragraph>
     </>
 );
 

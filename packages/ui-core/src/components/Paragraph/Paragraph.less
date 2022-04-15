@@ -4,6 +4,8 @@
 
 @{b} {
     .fontFamily();
+    .commonFont();
+
     margin: 0;
 
     font-weight: 400;
@@ -20,12 +22,12 @@
         text-align: right;
     }
 
-    &_size_regular {
-        .commonFont();
+    &_space_wide {
+        line-height: 24px;
     }
 
-    &_size_small {
-        .smallFont();
+    &_space_tight {
+        line-height: 18px;
     }
 
     &_has-margin {
@@ -38,6 +40,10 @@
 
     &_color_default {
         color: var(--content);
+    }
+
+    &_color_gray {
+        color: var(--spbSky3);
     }
 
     &_color_white {
