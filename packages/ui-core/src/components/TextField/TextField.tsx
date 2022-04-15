@@ -7,8 +7,8 @@ import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
 import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import * as PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
+import Caption from '../Caption/Caption';
 import InputLabel from '../InputLabel/InputLabel';
-import Paragraph from '../Paragraph/Paragraph';
 import './TextField.less';
 
 export const Verification = {
@@ -416,9 +416,9 @@ const TextField: React.FC<TextFieldProps> = ({
                     </div>
                 )}
                 {symbolCounter && (
-                    <Paragraph hasMargin={false} className={cn('counter', { error: isMaxLimitExceeded })}>
+                    <Caption hasMargin={false} className={cn('counter', { error: isMaxLimitExceeded })}>
                         {`${currentSymbolCount}/${symbolCounter}`}
-                    </Paragraph>
+                    </Caption>
                 )}
             </div>
         </div>
