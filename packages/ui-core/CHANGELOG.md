@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.2...@megafon/ui-core@3.5.3) (2022-04-18)
+
+
+### Bug Fixes
+
+* **switcher:** fix safari bugs ([65274bc](https://github.com/MegafonWebLab/megafon-ui/commit/65274bc3c5e7385109afff94a8ff3f712c9af097))
+
+
+
+
+
 ## [3.5.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.1...@megafon/ui-core@3.5.2) (2022-04-13)
 
 **Note:** Version bump only for package @megafon/ui-core

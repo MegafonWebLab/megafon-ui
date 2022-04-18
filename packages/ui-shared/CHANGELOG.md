@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.2.2...@megafon/ui-shared@3.3.0) (2022-04-18)
+
+
+### Features
+
+* **videobanner:** add proprety for mobile video, use picture for background image ([c21c927](https://github.com/MegafonWebLab/megafon-ui/commit/c21c9278d2ff1e192195a5113d43d50753fd02c5))
+
+
+
+
+
 ## [3.2.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.2.1...@megafon/ui-shared@3.2.2) (2022-04-13)
 
 **Note:** Version bump only for package @megafon/ui-shared
