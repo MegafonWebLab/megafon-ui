@@ -105,6 +105,8 @@ interface IVideoBannerProps {
     videoSrc?: string;
     /** Тип видео */
     videoType?: VideoType;
+    /** Разрешить проигрывать видео на мобильном разрешении */
+    videoMobile?: boolean;
     /** Наличие звука в видео */
     isMuted?: boolean;
     /** Изображение для мобильного разрешения */
@@ -133,11 +135,11 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     content,
     isMuted = true,
     breadcrumbs,
+    videoMobile = false,
 }) => {
     const [isMobile, setIsMobile] = React.useState(true);
-    const [imageSrc, setImageSrc] = React.useState(imageMobile);
     const isVideoData = !!videoSrc && !!videoType;
-    const isRenderVideo = !isMobile && isVideoData;
+    const isRenderVideo = (!isMobile || videoMobile) && isVideoData;
 
     const renderContent = React.useCallback(
         ({
@@ -249,23 +251,8 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     }, [videoType, videoSrc, isMuted, classes.video]);
 
     React.useEffect(() => {
-        const getImageSrc = () => {
-            const windowWidth = window.innerWidth;
-
-            switch (true) {
-                case windowWidth >= breakpoints.DESKTOP_MIDDLE_START:
-                    return imageDesktopWide;
-                case windowWidth >= breakpoints.DESKTOP_SMALL_START && windowWidth <= breakpoints.DESKTOP_SMALL_END:
-                    return imageDesktop;
-                case windowWidth >= breakpoints.MOBILE_BIG_START && windowWidth <= breakpoints.MOBILE_BIG_END:
-                    return imageTablet;
-                default:
-                    return imageMobile;
-            }
-        };
         const resizeHandler = () => {
             setIsMobile(window.innerWidth < breakpoints.DESKTOP_SMALL_START);
-            setImageSrc(getImageSrc());
         };
         const resizeHandlerThrottled = throttle(resizeHandler, throttleTime.resize);
 
@@ -275,7 +262,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
         return () => {
             window.removeEventListener('resize', resizeHandlerThrottled);
         };
-    }, [imageDesktop, imageDesktopWide, imageMobile, imageTablet]);
+    }, [setIsMobile]);
 
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className, classes.root])} ref={rootRef}>
@@ -293,7 +280,16 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                     {content && renderContent(content)}
                     {isRenderVideo && renderVideo()}
                     {!isRenderVideo && (
-                        <div style={{ backgroundImage: `url(${imageSrc})` }} className={cn('background-image')} />
+                        <picture>
+                            <source
+                                media={`(min-width: ${breakpoints.DESKTOP_MIDDLE_START}px)`}
+                                srcSet={imageDesktopWide}
+                            />
+                            <source media={`(min-width: ${breakpoints.DESKTOP_SMALL_START}px)`} srcSet={imageDesktop} />
+                            <source media={`(min-width: ${breakpoints.MOBILE_BIG_START}px)`} srcSet={imageTablet} />
+
+                            <img className={cn('background-image')} src={imageMobile} alt="" />
+                        </picture>
                     )}
                 </div>
             </ContentArea>
@@ -322,6 +318,7 @@ VideoBanner.propTypes = {
     ]),
     videoSrc: PropTypes.string,
     videoType: PropTypes.oneOf(Object.values(VideoType)),
+    videoMobile: PropTypes.bool,
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,

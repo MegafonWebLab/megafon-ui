@@ -110,14 +110,25 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -203,14 +214,25 @@ exports[`<VideoBanner /> render component with classes 1`] = `
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet=""
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet=""
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -225,14 +247,25 @@ exports[`<VideoBanner /> render component with dataAttrs 1`] = `
     <div
       className="mfui-video-banner__wrapper"
     >
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet=""
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet=""
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -318,14 +351,25 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -339,14 +383,25 @@ exports[`<VideoBanner /> render component with pictures 1`] = `
     <div
       className="mfui-video-banner__wrapper"
     >
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -432,14 +487,25 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -527,14 +593,25 @@ exports[`<VideoBanner /> render component with pictures and download links conte
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -620,14 +697,25 @@ exports[`<VideoBanner /> render component with pictures and non default content 
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -713,14 +801,25 @@ exports[`<VideoBanner /> render component with the different content text color 
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -794,14 +893,25 @@ exports[`<VideoBanner /> render component without button 1`] = `
           </div>
         </GridColumn>
       </Grid>
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet="imageDesktopWide"
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet="imageDesktop"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageTablet"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>
@@ -1020,14 +1130,25 @@ exports[`<VideoBanner /> tests with local window render desktop image on relevan
           <div
             className="mfui-video-banner__wrapper"
           >
-            <div
-              className="mfui-video-banner__background-image"
-              style={
-                Object {
-                  "backgroundImage": "url(imageDesktop)",
-                }
-              }
-            />
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcSet="imageDesktopWide"
+              />
+              <source
+                media="(min-width: 1024px)"
+                srcSet="imageDesktop"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet="imageTablet"
+              />
+              <img
+                alt=""
+                className="mfui-video-banner__background-image"
+                src="imageMobile"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -1056,14 +1177,25 @@ exports[`<VideoBanner /> tests with local window render mobile image on relevant
           <div
             className="mfui-video-banner__wrapper"
           >
-            <div
-              className="mfui-video-banner__background-image"
-              style={
-                Object {
-                  "backgroundImage": "url(imageMobile)",
-                }
-              }
-            />
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcSet="imageDesktopWide"
+              />
+              <source
+                media="(min-width: 1024px)"
+                srcSet="imageDesktop"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet="imageTablet"
+              />
+              <img
+                alt=""
+                className="mfui-video-banner__background-image"
+                src="imageMobile"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -1092,14 +1224,25 @@ exports[`<VideoBanner /> tests with local window render tablet image on relevant
           <div
             className="mfui-video-banner__wrapper"
           >
-            <div
-              className="mfui-video-banner__background-image"
-              style={
-                Object {
-                  "backgroundImage": "url(imageTablet)",
-                }
-              }
-            />
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcSet="imageDesktopWide"
+              />
+              <source
+                media="(min-width: 1024px)"
+                srcSet="imageDesktop"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet="imageTablet"
+              />
+              <img
+                alt=""
+                className="mfui-video-banner__background-image"
+                src="imageMobile"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -1168,14 +1311,25 @@ exports[`<VideoBanner /> tests with local window render wide desktop image on re
           <div
             className="mfui-video-banner__wrapper"
           >
-            <div
-              className="mfui-video-banner__background-image"
-              style={
-                Object {
-                  "backgroundImage": "url(imageDesktopWide)",
-                }
-              }
-            />
+            <picture>
+              <source
+                media="(min-width: 1280px)"
+                srcSet="imageDesktopWide"
+              />
+              <source
+                media="(min-width: 1024px)"
+                srcSet="imageDesktop"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcSet="imageTablet"
+              />
+              <img
+                alt=""
+                className="mfui-video-banner__background-image"
+                src="imageMobile"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -1523,7 +1677,7 @@ exports[`<VideoBanner /> tests with local window should not render background im
 </VideoBanner>
 `;
 
-exports[`<VideoBanner /> tests with local window should not render video on mobile resolution 1`] = `
+exports[`<VideoBanner /> tests with local window should not render video on mobile resolution by default 1`] = `
 <div
   className="mfui-video-banner"
 >
@@ -1531,14 +1685,25 @@ exports[`<VideoBanner /> tests with local window should not render video on mobi
     <div
       className="mfui-video-banner__wrapper"
     >
-      <div
-        className="mfui-video-banner__background-image"
-        style={
-          Object {
-            "backgroundImage": "url(imageMobile)",
-          }
-        }
-      />
+      <picture>
+        <source
+          media="(min-width: 1280px)"
+          srcSet=""
+        />
+        <source
+          media="(min-width: 1024px)"
+          srcSet=""
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="imageDesktop"
+        />
+        <img
+          alt=""
+          className="mfui-video-banner__background-image"
+          src="imageMobile"
+        />
+      </picture>
     </div>
   </ContentArea>
 </div>

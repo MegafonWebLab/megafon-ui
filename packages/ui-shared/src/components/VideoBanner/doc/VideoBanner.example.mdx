@@ -95,7 +95,7 @@ const breadcrumbs = [
 <Playground>
     <ContentArea>
         <VideoBanner imageMobile={imageMobile} imageTablet={imageMobile} imageDesktop={imageDesktop} imageDesktopWide={imageDesktop} content={content} breadcrumbs={breadcrumbs} />
-        </ContentArea>
+    </ContentArea>
 </Playground>
 
 ## Видео с youtube
@@ -105,6 +105,15 @@ const breadcrumbs = [
         <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} imageMobile={imageMobile} imageTablet={imageMobile} />
     </ContentArea>
 </Playground>
+
+## Проигрывание видео на мобильном разрешении
+
+<Playground>
+    <ContentArea>
+        <VideoBanner videoType="youtube" videoSrc={youtubeVideoId} videoMobile imageMobile={imageMobile} imageTablet={imageMobile} />
+    </ContentArea>
+</Playground>
+
 
 ## Определение цвета текста
 
