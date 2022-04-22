@@ -17,9 +17,9 @@ type ColorType = typeof COLORS[keyof typeof COLORS];
 export interface ICaptionProps {
     /** Выравнивание по горизонтали */
     align?: 'left' | 'center' | 'right';
-    /** Встраивание в широкий или узкий контейнер */
+    /** Поведение текста при встраивании в широкий или узкий контейнер */
     space?: 'wide' | 'tight';
-    /** Начертания шрифта: обычный или полужирный */
+    /** Начертание шрифта: обычный или полужирный */
     variant?: 'normal' | 'medium';
     /** Вертикальный отступ */
     hasMargin?: boolean;
