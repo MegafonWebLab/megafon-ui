@@ -17,7 +17,7 @@ type ColorType = typeof COLORS[keyof typeof COLORS];
 export interface IParagraphProps {
     /** Выравнивание по горизонтали */
     align?: 'left' | 'center' | 'right';
-    /** Встраивание в широкий или узкий контейнер */
+    /** Поведение текста при встраивании в широкий или узкий контейнер */
     space?: 'wide' | 'tight';
     /** Вертикальный отступ */
     hasMargin?: boolean;
