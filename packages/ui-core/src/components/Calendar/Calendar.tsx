@@ -56,9 +56,16 @@ const weekdayLabelFormat = (date: Date): string => formatDate(date, 'EEEEEE');
 const dayLabelFormat = (date: Date): string => formatDate(date, 'd');
 const monthLabelFormat = (date: Date): string => formatDate(date, 'LLLL');
 
-// List of cases to check on component change:
+/* List of cases to check on component change:
 
-// - Should correctly choose value and trigger callbacks with correct arguments on dates choose.
+- Should correctly choose value and trigger callbacks with correct arguments on dates choose.
+- Should set 1 day period if start and end date is equal
+- Should correctly increase period if choose earlier start date
+- Should correctly change start date of selected period if chosen date in period closer to current start date
+- Should correctly change end date of selected period if chosen date in period closer to current end date
+- Should correctly highlights period if start date chosen and hover on possible end date
+
+*/
 
 const cn = cnCreate('mfui-calendar');
 const Calendar: React.FC<ICalendarProps> = ({
@@ -117,9 +124,7 @@ const Calendar: React.FC<ICalendarProps> = ({
     });
 
     useEffect(() => {
-        if (isUserChoice.current) {
-            isUserChoice.current = false;
-        }
+        isUserChoice.current = false;
     }, [startDate]);
 
     useEffect(() => {

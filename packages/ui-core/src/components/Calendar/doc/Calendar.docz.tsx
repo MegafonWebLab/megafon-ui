@@ -49,7 +49,7 @@ export const DemoCalendarWithDatesChange = ({ children }) => {
                 <div style={{ display: 'inline-block', marginRight: '12px' }}>
                     <Button onClick={onChange(new Date(2020, 0, 1), new Date(2020, 0, 31))}>Январь</Button>
                 </div>
-                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>Ферваль</Button>
+                <Button onClick={onChange(new Date(2020, 1, 1), new Date(2020, 1, 29))}>Февраль</Button>
             </div>
         </>
     );
