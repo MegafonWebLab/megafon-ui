@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.3...@megafon/ui-core@3.6.0) (2022-04-25)
+
+
+### Bug Fixes
+
+* **calendar:** fix go to start day after user choice ([8bbce10](https://github.com/MegafonWebLab/megafon-ui/commit/8bbce102d204f7ea7706158f3e6540c86ed3aada))
+
+
+### Features
+
+* **tooltip:** added prop isPortal for tooltip ([e6f6d17](https://github.com/MegafonWebLab/megafon-ui/commit/e6f6d1749cd99f065c50bac4eb6a9b3592653f8d))
+
+
+
+
+
 ## [3.5.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.2...@megafon/ui-core@3.5.3) (2022-04-18)
 
 
