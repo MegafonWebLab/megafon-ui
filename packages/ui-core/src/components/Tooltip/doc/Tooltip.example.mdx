@@ -210,7 +210,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                         Сверху
                     </Button>
                 </span>
-                <Tooltip 
+                <Tooltip
                     triggerElement={triggerElement}
                     isOpened={true}
                     triggerEvent="controlled"
@@ -377,9 +377,9 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                 <span ref={triggerElement}>
                     <Button fullWidth>Относительно триггер-элемента</Button>
                 </span>
-                <Tooltip 
-                    triggerElement={triggerElement} 
-                    placement="bottom" 
+                <Tooltip
+                    triggerElement={triggerElement}
+                    placement="bottom"
                     paddings="small"
                 >
                     Выравнивание стрелки по умолчанию
@@ -428,13 +428,13 @@ export const DemoTooltipWithTriggerWrapper = ({ children }) => {
         {({ triggerElement, boundaryElement }) => (
             <>
                 <Paragraph hasMargin={false}>
-                    <span 
+                    <span
                         ref={boundaryElement}
                         style={{
                             outline: '1px solid rgba(0,0,0,0.1)',
                             padding: '12px'
                         }}
-                    >Тултип выровнен по границе этого 
+                    >Тултип выровнен по границе этого
                         <span ref={triggerElement}>
                             <TextLink>текста.</TextLink>
                         </span>
@@ -700,6 +700,25 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                         </Tooltip>
                     )}
                 </DemoControlledTooltipWrapper>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+### С использованием порталов
+
+<Playground style={{
+    ...demoWrapperBlockStyles,
+}}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Навести</Button>
+                </span>
+                <Tooltip isPortal triggerElement={triggerElement}>
+                    Tooltip добавляется в конец document.body
+                </Tooltip>
             </>
         )}
     </DemoTooltipWithTriggerWrapper>

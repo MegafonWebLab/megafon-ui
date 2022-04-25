@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { cnCreate, detectTouch, checkNativeEventIsClickOrEnterPress, filterDataAttrs } from '@megafon/ui-helpers';
 import type { AccessibilityEventTypeNative } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 import { usePopper } from 'react-popper';
 import Tile from 'components/Tile/Tile';
 import './Tooltip.less';
@@ -52,6 +53,8 @@ export interface ITooltipProps {
     targetElement?: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
+    /** Отрендерить компонент в корневой элементе страницы body */
+    isPortal?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -83,6 +86,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     triggerElement,
     targetElement,
     isOpened = false,
+    isPortal = false,
     children,
     classes: {
         root: rootClassName,
@@ -97,6 +101,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const currentTrigger = triggerElement.current;
     const currentTarget = targetElement?.current || currentTrigger;
     const currentBoundary = boundaryElement?.current;
+    const portalElem = React.useRef<HTMLDivElement | null>(null);
 
     const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
     const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
@@ -252,7 +257,17 @@ const Tooltip: React.FC<ITooltipProps> = ({
         return undefined;
     }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleClick, clickEvent]);
 
-    return (
+    useEffect(
+        () => () => {
+            if (portalElem.current) {
+                document.body.removeChild(portalElem.current);
+            }
+            portalElem.current = null;
+        },
+        [],
+    );
+
+    const template = (
         <div
             {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ paddings, open: isOpen }, [className, rootClassName])}
@@ -268,6 +283,18 @@ const Tooltip: React.FC<ITooltipProps> = ({
             <Tile shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
+
+    /* Не в эффекте, чтобы не создавать лишний перерендер компонента. Из-за синхронности кода в return уже будет элемент */
+    if (isPortal && !portalElem.current && typeof window !== 'undefined') {
+        portalElem.current = document.createElement('div');
+        document.body.appendChild(portalElem.current);
+    }
+
+    if (isPortal && portalElem.current) {
+        return portalElem.current ? ReactDOM.createPortal(template, portalElem.current) : null;
+    }
+
+    return template;
 };
 
 Tooltip.propTypes = {
@@ -302,6 +329,7 @@ Tooltip.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     isOpened: PropTypes.bool,
+    isPortal: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
