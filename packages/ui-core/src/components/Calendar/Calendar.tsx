@@ -1,4 +1,4 @@
-import React, { ReactNode, useState, useEffect, useMemo } from 'react';
+import React, { ReactNode, useState, useEffect, useMemo, useRef } from 'react';
 import { FocusedInput, START_DATE, END_DATE, useDatepicker, useMonth } from '@datepicker-react/hooks';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import differenceInDays from 'date-fns/differenceInDays';
@@ -56,6 +56,17 @@ const weekdayLabelFormat = (date: Date): string => formatDate(date, 'EEEEEE');
 const dayLabelFormat = (date: Date): string => formatDate(date, 'd');
 const monthLabelFormat = (date: Date): string => formatDate(date, 'LLLL');
 
+/* List of cases to check on component change:
+
+- Should correctly choose value and trigger callbacks with correct arguments on dates choose.
+- Should set 1 day period if start and end date is equal
+- Should correctly increase period if choose earlier start date
+- Should correctly change start date of selected period if chosen date in period closer to current start date
+- Should correctly change end date of selected period if chosen date in period closer to current end date
+- Should correctly highlights period if start date chosen and hover on possible end date
+
+*/
+
 const cn = cnCreate('mfui-calendar');
 const Calendar: React.FC<ICalendarProps> = ({
     dataAttrs,
@@ -92,6 +103,8 @@ const Calendar: React.FC<ICalendarProps> = ({
     const [calendarState, setCalendarState] = useState<ICalendarState>(calendarStateFromProps);
     const [hoveredDate, setHoveredDate] = useState<Date | undefined>(undefined);
 
+    const isUserChoice = useRef(false);
+
     const { startDate: stateStartDate, endDate: stateEndDate, focusedInput: stateFocusedInput } = calendarState;
 
     const {
@@ -111,11 +124,15 @@ const Calendar: React.FC<ICalendarProps> = ({
     });
 
     useEffect(() => {
+        isUserChoice.current = false;
+    }, [startDate]);
+
+    useEffect(() => {
         const { startDate: propsStartDate } = calendarStateFromProps;
 
         setCalendarState(calendarStateFromProps);
 
-        propsStartDate && goToDate(propsStartDate);
+        !isUserChoice.current && propsStartDate && goToDate(propsStartDate);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [calendarStateFromProps]);
 
@@ -175,6 +192,7 @@ const Calendar: React.FC<ICalendarProps> = ({
         const { startDate: nextStartDate, endDate: nextEndDate } = nextState;
 
         setCalendarState(nextState);
+        isUserChoice.current = true;
 
         onChange?.(nextStartDate, nextEndDate);
     };
