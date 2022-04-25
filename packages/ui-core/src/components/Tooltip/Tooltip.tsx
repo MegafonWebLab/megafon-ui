@@ -256,11 +256,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         return undefined;
     }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleClick, clickEvent]);
 
-    if (isPortal && triggerElement.current && popperElement) {
-        return ReactDOM.createPortal(popperElement, triggerElement.current);
-    }
-
-    return (
+    const template = (
         <div
             {...filterDataAttrs(dataAttrs?.root)}
             className={cn({ paddings, open: isOpen }, [className, rootClassName])}
@@ -276,6 +272,12 @@ const Tooltip: React.FC<ITooltipProps> = ({
             <Tile shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
+
+    if (isPortal) {
+        return ReactDOM.createPortal(template, document.body);
+    }
+
+    return template;
 };
 
 Tooltip.propTypes = {
@@ -310,6 +312,7 @@ Tooltip.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     isOpened: PropTypes.bool,
+    isPortal: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
