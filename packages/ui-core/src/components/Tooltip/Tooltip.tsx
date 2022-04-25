@@ -53,7 +53,7 @@ export interface ITooltipProps {
     targetElement?: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
-    /** Портал */
+    /** Отрендерить компонент в корневой элементе страницы body */
     isPortal?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -273,8 +273,23 @@ const Tooltip: React.FC<ITooltipProps> = ({
         </div>
     );
 
-    if (isPortal) {
-        return ReactDOM.createPortal(template, document.body);
+    const portalElem = React.useRef(null) as React.MutableRefObject<null | HTMLElement>;
+
+    useEffect(
+        () => () => {
+            if (portalElem.current) {
+                document.body.removeChild(portalElem.current);
+            }
+            portalElem.current = null;
+        },
+        [],
+    );
+
+    if (isPortal && !portalElem.current) {
+        portalElem.current = document.createElement('div');
+        document.body.appendChild(portalElem.current);
+
+        return ReactDOM.createPortal(template, portalElem.current);
     }
 
     return template;

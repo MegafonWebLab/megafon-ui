@@ -1,8 +1,6 @@
-import * as React from 'react';
-import { RefObject } from 'react';
-import { mount, shallow } from 'enzyme';
-import { act } from 'react-dom/test-utils';
-import Button from '../Button/Button';
+import React from 'react';
+import type { RefObject } from 'react';
+import { shallow } from 'enzyme';
 import Tooltip, { ITooltipProps } from './Tooltip';
 
 const props: Partial<ITooltipProps> = {
