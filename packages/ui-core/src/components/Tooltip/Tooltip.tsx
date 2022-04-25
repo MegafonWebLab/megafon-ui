@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { cnCreate, detectTouch, checkNativeEventIsClickOrEnterPress, filterDataAttrs } from '@megafon/ui-helpers';
 import type { AccessibilityEventTypeNative } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
 import { usePopper } from 'react-popper';
 import Tile from 'components/Tile/Tile';
 import './Tooltip.less';
@@ -52,6 +53,8 @@ export interface ITooltipProps {
     targetElement?: React.RefObject<HTMLElement>;
     /** Управление состоянием. Компонент поддерживает контроллируемое и неконтроллируемое состояние. */
     isOpened?: boolean;
+    /** Портал */
+    isPortal?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -83,6 +86,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     triggerElement,
     targetElement,
     isOpened = false,
+    isPortal = false,
     children,
     classes: {
         root: rootClassName,
@@ -251,6 +255,10 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
         return undefined;
     }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleClick, clickEvent]);
+
+    if (isPortal && triggerElement.current && popperElement) {
+        return ReactDOM.createPortal(popperElement, triggerElement.current);
+    }
 
     return (
         <div
