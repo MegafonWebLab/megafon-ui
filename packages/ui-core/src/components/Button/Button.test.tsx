@@ -67,7 +67,7 @@ describe('<Button />', () => {
 
         it('should render with different height for resolutions', () => {
             const wrapper = shallow(
-                <Button {...props} sizeWide="large" sizeDesktop="medium" sizeTablet="medium" sizeMobile="small" />,
+                <Button {...props} sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" />,
             );
             expect(wrapper).toMatchSnapshot();
         });
