@@ -28,11 +28,12 @@
     }
 
     &__theme-switcher {
-        position: relative;
+        position: absolute;
 
         width: 34px;
         height: 22px;
-        margin-left: 8px;
+        margin-left: 180px;
+        margin-top: 42px;
         padding: 0;
         border: none;
         border-radius: 11px;
@@ -41,6 +42,10 @@
         cursor: pointer;
 
         transition: background-color 0.3s;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 0px;
+        }
     }
 
     &__theme-switcher:hover,
