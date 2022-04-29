@@ -17,6 +17,8 @@
         transform: translateX(-240px);
 
         transition: transform 0.5s;
+        transition-property: background, color;
+        transition-duration: 0.3s;
 
         @media screen and (min-width: 768px) {
             top: 0;
@@ -89,6 +91,8 @@
         color: var(--content);
 
         background: var(--base);
+        transition-property: background, color;
+        transition-duration: 0.3s;
 
         @media screen and (max-width: 1120px) {
             padding: 24px;
