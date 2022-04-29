@@ -43,24 +43,24 @@ const SideBar: React.FC = () => {
 
     return (
         <div className={cn()}>
+            <button
+                type="button"
+                className={cn('theme-switcher', {
+                    light: isLightTheme,
+                    dark: !isLightTheme,
+                })}
+                onClick={toggleTheme}
+                data-current-theme={themeContext.theme}
+            >
+                <span className={cn('switch-icons')}>
+                    <LightIcon className={cn('switch-icon', { light: true })} />
+                    <DarkIcon className={cn('switch-icon', { dark: true })} />
+                </span>
+                <span className={cn('switch-dot')} />
+                <span className={cn('switch-dot', { blue: true })} />
+            </button>
             <div className={cn('logo-wrapper')}>
                 <Logo className={cn('logo')} href="/intro" target="_self" />
-                <button
-                    type="button"
-                    className={cn('theme-switcher', {
-                        light: isLightTheme,
-                        dark: !isLightTheme,
-                    })}
-                    onClick={toggleTheme}
-                    data-current-theme={themeContext.theme}
-                >
-                    <span className={cn('switch-icons')}>
-                        <LightIcon className={cn('switch-icon', { light: true })} />
-                        <DarkIcon className={cn('switch-icon', { dark: true })} />
-                    </span>
-                    <span className={cn('switch-dot')} />
-                    <span className={cn('switch-dot', { blue: true })} />
-                </button>
             </div>
             <div className={cn('menu')}>
                 <Menu />
