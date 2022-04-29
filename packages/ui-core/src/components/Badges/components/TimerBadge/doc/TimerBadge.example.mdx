@@ -81,14 +81,14 @@ const someMonthsBeforeEnd = add(date, { months: 3 });
 
 Через одну минуту после последнего обновления страницы демо не будет соответствовать своему описанию. Для корректного отображения необходимо обновить страницу. 
 
-<Playground style={{ display: 'flex', gap: '20px' }}>
+<Playground style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
     <TimerBadge expirationDate={someMinutesBeforeEnd} hasPrefix countdownText="Осталось несколько минут:"/>
     <TimerBadge expirationDate={someSecondsBeforeEnd} hasPrefix countdownText="Осталось несколько секунд:"/>  
 </Playground>
 
 ### Больше часа, меньше дня
 
-<Playground style={{ display: 'flex', gap: '20px' }}>
+<Playground style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
     <TimerBadge expirationDate={someHoursBeforeEnd} hasPrefix countdownText="Осталось несколько часов:"/>
     <TimerBadge expirationDate={someHoursAndMinutesBeforeEnd} hasPrefix countdownText="Осталось меньше суток:"/>  
 </Playground>
@@ -96,13 +96,13 @@ const someMonthsBeforeEnd = add(date, { months: 3 });
 ### Больше одного дня
 Установлено кастомное время начала обратного отсчёта
 
-<Playground style={{ display: 'flex', gap: '20px' }}>
+<Playground style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
     <TimerBadge countdownStart={604800} expirationDate={someDaysBeforeEnd} hasPrefix countdownText="Осталось несколько дней:"/>
     <TimerBadge countdownStart={604800} expirationDate={someDaysAndHoursBeforeEnd} hasPrefix countdownText="Осталось меньше недели:"/>  
 </Playground>
 
 ## Время истекло
 
-<Playground style={{ display: 'flex', gap: '20px' }}>
+<Playground style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
     <TimerBadge expirationDate={new Date()}/>
 </Playground>
