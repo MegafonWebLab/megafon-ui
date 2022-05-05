@@ -22,6 +22,7 @@ export const ButtonThemes = {
 type ButtonThemesType = typeof ButtonThemes[keyof typeof ButtonThemes];
 
 export const ButtonSizes = {
+    EXTRA_SMALL: 'extra-small',
     SMALL: 'small',
     MEDIUM: 'medium',
     LARGE: 'large',
@@ -95,7 +96,7 @@ export interface IButtonProps {
 }
 
 const getLoaderSize = (size: string): PreloaderSizesType =>
-    size === ButtonSizes.SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM;
+    size === ButtonSizes.SMALL || size === ButtonSizes.EXTRA_SMALL ? ButtonSizes.SMALL : ButtonSizes.MEDIUM;
 
 const cn = cnCreate('mfui-button');
 const Button: React.FC<IButtonProps> = ({

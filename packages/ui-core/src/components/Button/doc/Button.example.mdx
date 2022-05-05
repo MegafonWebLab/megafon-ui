@@ -103,12 +103,13 @@ export const ref = createRef();
 ## Размер кнопки
 
 <Playground style={blockStyle}>
+    <Button sizeAll="extra-small" showArrow>Extra small</Button>
     <Button sizeAll="small" showArrow>Small</Button>
     <Button sizeAll="medium" icon={<Balance />}>Medium</Button>
     <Button sizeAll="large">Large</Button>
-    <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showArrow>Adaptive</Button>
+    <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" showArrow>Adaptive</Button>
     <div>
-        <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" icon={<Balance />} />
+        <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" icon={<Balance />} />
     </div>
 </Playground>
 
@@ -116,6 +117,7 @@ export const ref = createRef();
 Зависит от размера кнопки
 
 <Playground style={blockStyle}>
+    <Button sizeAll="extra-small" showLoader>Extra small</Button>
     <Button sizeAll="small" showLoader>Small</Button>
     <Button sizeAll="medium" showLoader>Medium</Button>
     <Button sizeAll="large" showLoader>Large</Button>
