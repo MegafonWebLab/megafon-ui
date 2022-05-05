@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.6.0...@megafon/ui-core@3.7.0) (2022-05-05)
+
+
+### Bug Fixes
+
+* **logo:** fix horizontal logo svg ([76655eb](https://github.com/MegafonWebLab/megafon-ui/commit/76655ebb82650cc2617750af0b2b2726d3ebcbf3))
+
+
+### Features
+
+* **button:** added extra small size ([a26da46](https://github.com/MegafonWebLab/megafon-ui/commit/a26da4601de7e7c81c40eabf9a87ccdbf18cb790))
+
+
+
+
+
 # [3.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.3...@megafon/ui-core@3.6.0) (2022-04-25)
 
 
