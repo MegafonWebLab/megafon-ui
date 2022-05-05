@@ -251,7 +251,7 @@ exports[`<Button /> layout should render with custom icon and children 1`] = `
 
 exports[`<Button /> layout should render with different height for resolutions 1`] = `
 <a
-  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_size-wide_large mfui-button_size-desktop_medium mfui-button_size-tablet_medium mfui-button_size-mobile_small mfui-button_no-touch mfui-button_content-type_text class root-class"
+  className="mfui-button mfui-button_type_primary mfui-button_theme_purple mfui-button_size-all_large mfui-button_size-wide_large mfui-button_size-desktop_medium mfui-button_size-tablet_small mfui-button_size-mobile_extra-small mfui-button_no-touch mfui-button_content-type_text class root-class"
   data-root="test"
   disabled={false}
   href="any"

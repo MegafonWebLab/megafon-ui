@@ -331,6 +331,11 @@
 }
 
 .generateSize(@resolution) {
+    &_size-@{resolution}_extra-small &__inner {
+        min-width: 26px;
+        height: 26px;
+    }
+
     &_size-@{resolution}_small &__inner {
         min-width: 32px;
         height: 32px;
@@ -344,6 +349,11 @@
     &_size-@{resolution}_large &__inner {
         min-width: 60px;
         height: 60px;
+    }
+
+    &_size-@{resolution}_extra-small &__icon {
+        width: 18px;
+        height: 18px;
     }
 
     &_size-@{resolution}_small &__icon {
