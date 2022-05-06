@@ -50,7 +50,7 @@ export const Playground: React.FC<PlaygroundProps & { useScoping?: boolean; show
                                 <button type="button" className={cn('copy')} onClick={copyCode}>
                                     <Copy className={cn('icon')} />
                                 </button>
-                                <LiveEditor data-testid="live-editor" />
+                                <LiveEditor data-testid="live-editor" className={cn('live-editor')} />
                             </div>
                         </Wrapper>
                     )}
