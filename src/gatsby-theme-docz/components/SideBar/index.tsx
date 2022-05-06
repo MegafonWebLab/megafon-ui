@@ -45,13 +45,17 @@ const SideBar: React.FC = () => {
         <div className={cn()}>
             <div className={cn('logo-wrapper')}>
                 <Logo className={cn('logo')} href="/intro" target="_self" />
+            </div>
+            <div className={cn('menu')}>
+                <Menu />
+            </div>
+            <div className={cn('theme-switcher-wrapper')} onClick={toggleTheme}>
                 <button
                     type="button"
                     className={cn('theme-switcher', {
                         light: isLightTheme,
                         dark: !isLightTheme,
                     })}
-                    onClick={toggleTheme}
                     data-current-theme={themeContext.theme}
                 >
                     <span className={cn('switch-icons')}>
@@ -61,9 +65,6 @@ const SideBar: React.FC = () => {
                     <span className={cn('switch-dot')} />
                     <span className={cn('switch-dot', { blue: true })} />
                 </button>
-            </div>
-            <div className={cn('menu')}>
-                <Menu />
             </div>
         </div>
     );

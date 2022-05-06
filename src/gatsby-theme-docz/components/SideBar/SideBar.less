@@ -18,7 +18,6 @@
 
     &__menu {
         max-height: calc(100vh - 116px - 64px);
-        margin-bottom: 16px;
         overflow: auto;
 
         @media screen and (max-width: 768px) {
@@ -26,14 +25,19 @@
             margin-top: 24px;
         }
     }
-
+    &__theme-switcher-wrapper{
+        display: inline-block;
+        width: 56px;
+        height: 40px;
+        margin-left: 24px;
+        padding: 8px 10px 14px 8px;
+        cursor: pointer;
+    }
     &__theme-switcher {
         position: relative;
-
         width: 34px;
         height: 22px;
-        margin-left: 8px;
-        padding: 0;
+        padding-top: 12px;
         border: none;
         border-radius: 11px;
 
@@ -41,6 +45,10 @@
         cursor: pointer;
 
         transition: background-color 0.3s;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 0px;
+        }
     }
 
     &__theme-switcher:hover,

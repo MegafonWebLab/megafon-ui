@@ -3,6 +3,7 @@
         margin: 15px 0 8px;
         
         border: 1px solid var(--spbSky1);
+        transition: border-left-color 0.3s, border-bottom-color 0.3s, border-right-color 0.3s, border-top-color 0.3s;
         border-radius: 4px;
     }
 
@@ -16,10 +17,14 @@
         margin-bottom: 50px;
 
         border: 1px solid var(--spbSky1);
+        transition: border-left-color 0.3s, border-bottom-color 0.3s, border-right-color 0.3s, border-top-color 0.3s;
         border-radius: 4px;
-
         font-size: 15px;
         line-height: 24px;
+    }
+
+    &__live-editor {
+        transition: background-color 0.3s, color 0.3s;
     }
 
     &__copy {
@@ -38,6 +43,7 @@
         cursor: pointer;
 
         fill: var(--content);
+        transition: fill 0.3s;
     }
 
     &__icon {
