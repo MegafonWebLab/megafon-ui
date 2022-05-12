@@ -165,8 +165,12 @@ class Icons extends React.Component<Record<string, unknown>, IIconsState> {
 
         return (
             <div className={cn('info-icon-wrapper')} key={svg.path}>
+                <div className={cn('info-icon-id')}>
+                    Icon ID <code className={cn('info-code-style')}>{svg.importPath}</code>
+                </div>
+
                 <div className={cn('info-import')}>
-                    Svg <code className={cn('info-code-style')}>{`${importStr}.svg';`}</code>
+                    SVG <code className={cn('info-code-style')}>{`${importStr}.svg';`}</code>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a title="Скопировать в буфер">
                         <Copy
