@@ -33,6 +33,12 @@ type ShadowType = typeof ShadowTypes[keyof typeof ShadowTypes];
 export interface INotificationProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные классы для корневого и внутренних элементов */
+    classes?: {
+        root?: string;
+        container?: string;
+        content?: string;
+    };
     /** Тип отображения */
     type?: NotificationType;
     /** Уровень тени */
@@ -70,6 +76,7 @@ export interface INotificationProps {
 const cn = cnCreate('mfui-notification');
 const Notification: React.FC<INotificationProps> = ({
     className,
+    classes: { root: rootClass, container: containerClass, content: contentClass } = {},
     children,
     type = 'info',
     shadowLevel = 'zero',
@@ -128,13 +135,13 @@ const Notification: React.FC<INotificationProps> = ({
                     type,
                     colored: isColored,
                 },
-                className,
+                [className, rootClass],
             )}
         >
-            <div className={cn('container')}>
+            <div className={cn('container', [containerClass])}>
                 <div className={cn('icon-container')}>{renderIcon()}</div>
 
-                <div className={cn('content')}>
+                <div className={cn('content', [contentClass])}>
                     {title && (
                         <Header
                             dataAttrs={{ root: dataAttrs?.title }}
@@ -165,6 +172,11 @@ const Notification: React.FC<INotificationProps> = ({
 Notification.propTypes = {
     type: PropTypes.oneOf(Object.values(NotificationTypes)),
     className: PropTypes.string,
+    classes: PropTypes.shape({
+        root: PropTypes.string,
+        container: PropTypes.string,
+        content: PropTypes.string,
+    }),
     shadowLevel: PropTypes.oneOf(Object.values(ShadowTypes)),
     isColored: PropTypes.bool,
     hasCloseButton: PropTypes.bool,
