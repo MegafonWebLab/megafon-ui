@@ -1,6 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" xml:space="preserve">
-    <path id="Cancel_x5F_24" class="st0" d="M16,14.5L11.5,10L10,11.5l4.5,4.5L10,20.5l1.5,1.5l4.5-4.5l4.5,4.5l1.5-1.5L17.5,16l4.5-4.5
-  	L20.5,10L16,14.5z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" xml:space="preserve"><path class="st0" d="M16 14.5 11.5 10 10 11.5l4.5 4.5-4.5 4.5 1.5 1.5 4.5-4.5 4.5 4.5 1.5-1.5-4.5-4.5 4.5-4.5-1.5-1.5-4.5 4.5z"/></svg>
