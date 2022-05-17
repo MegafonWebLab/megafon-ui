@@ -5,6 +5,11 @@ import Notification, { INotificationProps, NotificationTypes, ShadowTypes } from
 
 const props: INotificationProps = {
     className: 'notification',
+    classes: {
+        root: 'rootClass',
+        container: 'containerClass',
+        content: 'contentClass',
+    },
     type: NotificationTypes.ERROR,
     shadowLevel: ShadowTypes.HOVER,
     href: 'href',

@@ -2,7 +2,7 @@
 
 exports[`<Notification /> it renders colored Notification with Props 1`] = `
 <Tile
-  className="mfui-notification mfui-notification_type_error mfui-notification_colored notification"
+  className="mfui-notification mfui-notification_type_error mfui-notification_colored notification rootClass"
   dataAttrs={
     Object {
       "root": undefined,
@@ -12,7 +12,7 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
   shadowLevel="hover"
 >
   <div
-    className="mfui-notification__container"
+    className="mfui-notification__container containerClass"
   >
     <div
       className="mfui-notification__icon-container"
@@ -20,7 +20,7 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
       <test-file-stub />
     </div>
     <div
-      className="mfui-notification__content"
+      className="mfui-notification__content contentClass"
     >
       <Header
         as="h5"
