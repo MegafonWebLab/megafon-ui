@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.7.0...@megafon/ui-core@3.8.0) (2022-05-17)
+
+
+### Features
+
+* **notification:** add props classes to notification component ([608a424](https://github.com/MegafonWebLab/megafon-ui/commit/608a4246eb99af354fb7cf8ab98c2ed513d87b66))
+
+
+
+
+
 # [3.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.6.0...@megafon/ui-core@3.7.0) (2022-05-05)
 
 
