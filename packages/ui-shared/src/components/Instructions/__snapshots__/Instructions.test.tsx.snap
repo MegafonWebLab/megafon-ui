@@ -33,7 +33,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -193,7 +193,7 @@ exports[`<Instructions /> desktop resolution should render with data-attributes 
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 data-testid="image-test[1]"
                 loop={true}
                 muted={true}
@@ -359,7 +359,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -524,7 +524,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
               >
                 <video
                   autoPlay={true}
-                  className="mfui-instructions__swiper-img"
+                  className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                   loop={true}
                   muted={true}
                   playsInline={true}
@@ -690,7 +690,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
               >
                 <video
                   autoPlay={true}
-                  className="mfui-instructions__swiper-img"
+                  className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                   loop={true}
                   muted={true}
                   playsInline={true}
@@ -850,7 +850,7 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -1010,7 +1010,7 @@ exports[`<Instructions /> mobile resolution should render with data-attributes 1
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 data-testid="image-test[1]"
                 loop={true}
                 muted={true}
@@ -1227,7 +1227,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                         loop=""
                                         playsinline=""
                                       >
@@ -1259,7 +1259,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -1322,7 +1322,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -1899,7 +1899,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                     loop=""
                                     playsinline=""
                                   >
@@ -1928,7 +1928,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                           >
                             <video
                               autoPlay={true}
-                              className="mfui-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                               loop={true}
                               muted={true}
                               playsInline={true}
@@ -1959,7 +1959,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                         loop=""
                                         playsinline=""
                                       >
@@ -1991,7 +1991,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -2054,7 +2054,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -2631,7 +2631,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                     loop=""
                                     playsinline=""
                                   >
@@ -2864,7 +2864,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                         loop=""
                                         playsinline=""
                                       >
@@ -2896,7 +2896,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -2959,7 +2959,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -3536,7 +3536,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                     loop=""
                                     playsinline=""
                                   >
@@ -3565,7 +3565,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                           >
                             <video
                               autoPlay={true}
-                              className="mfui-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                               loop={true}
                               muted={true}
                               playsInline={true}
@@ -3596,7 +3596,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                         loop=""
                                         playsinline=""
                                       >
@@ -3628,7 +3628,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -3691,7 +3691,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -4268,7 +4268,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                     loop=""
                                     playsinline=""
                                   >
@@ -4501,7 +4501,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                         loop=""
                                         playsinline=""
                                       >
@@ -4533,7 +4533,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -4596,7 +4596,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -5173,7 +5173,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                     loop=""
                                     playsinline=""
                                   >
@@ -5202,7 +5202,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                           >
                             <video
                               autoPlay={true}
-                              className="mfui-instructions__swiper-img"
+                              className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                               loop={true}
                               muted={true}
                               playsInline={true}
@@ -5233,7 +5233,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     >
                                       <video
                                         autoplay=""
-                                        class="mfui-instructions__swiper-img"
+                                        class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                         loop=""
                                         playsinline=""
                                       >
@@ -5265,7 +5265,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -5328,7 +5328,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   >
                                     <video
                                       autoplay=""
-                                      class="mfui-instructions__swiper-img"
+                                      class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                       loop=""
                                       playsinline=""
                                     >
@@ -5905,7 +5905,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 >
                                   <video
                                     autoplay=""
-                                    class="mfui-instructions__swiper-img"
+                                    class="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                                     loop=""
                                     playsinline=""
                                   >
@@ -6087,7 +6087,7 @@ exports[`<Instructions /> should render component with additional text 1`] = `
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -6252,7 +6252,7 @@ exports[`<Instructions /> should render with children 1`] = `
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 loop={true}
                 muted={true}
                 playsInline={true}
@@ -6416,7 +6416,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
             >
               <video
                 autoPlay={true}
-                className="mfui-instructions__swiper-img"
+                className="mfui-instructions__swiper-img mfui-instructions__swiper-img_video"
                 loop={true}
                 muted={true}
                 playsInline={true}
