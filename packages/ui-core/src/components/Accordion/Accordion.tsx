@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { cnCreate, filterDataAttrs, checkEventIsClickOrEnterPress } from '@megafon/ui-helpers';
 import type { AccessibilityEventType } from '@megafon/ui-helpers';
-import ArrowDown from '@megafon/ui-icons/system-24-arrow_down_24.svg';
-import ArrowUp from '@megafon/ui-icons/system-24-arrow_up_24.svg';
+import ArrowDown from '@megafon/ui-icons/system-24-arrow-list_down_24.svg';
 import * as PropTypes from 'prop-types';
 import Collapse from 'components/Collapse/Collapse';
 import Header from 'components/Header/Header';
@@ -68,28 +67,27 @@ const Accordion: React.FC<IAccordionProps> = ({
     };
 
     const openedClassName = isOpenedState ? openedClass : undefined;
+    const arrowDataAttrs = isOpenedState ? dataAttrs?.arrowUp : dataAttrs?.arrowDown;
 
     return (
         <div
             {...filterDataAttrs(dataAttrs?.root)}
             ref={rootRef}
-            className={cn({ open: isOpenedState }, [className, rootPropsClasses, openedClassName])}
+            className={cn({ opened: isOpenedState }, [className, rootPropsClasses, openedClassName])}
         >
             <div
                 {...filterDataAttrs(dataAttrs?.titleWrap)}
                 className={cn('title-wrap', [titleWrapPropsClasses])}
                 onClick={handleClickTitle}
                 onKeyDown={handleClickTitle}
+                tabIndex={0}
+                role="button"
             >
                 <Header as="h5" {...filterDataAttrs(dataAttrs?.header)}>
                     {title}
                 </Header>
-                <div tabIndex={0} role="button" className={cn('icon-box', { open: isOpenedState })}>
-                    {isOpenedState ? (
-                        <ArrowUp {...filterDataAttrs(dataAttrs?.arrowUp)} />
-                    ) : (
-                        <ArrowDown {...filterDataAttrs(dataAttrs?.arrowDown)} />
-                    )}
+                <div className={cn('icon-box')}>
+                    <ArrowDown className={cn('icon')} {...filterDataAttrs(arrowDataAttrs)} />
                 </div>
             </div>
             <Collapse
