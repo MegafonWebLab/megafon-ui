@@ -5,15 +5,14 @@
 @{b} {
     position: relative;
 
-    padding: 16px 12px;
+    padding: 20px 12px 20px 32px;
+
+    border-radius: 12px;
 
     background-color: var(--base);
 
-    @media @mobileBU {
-        padding: 20px 28px;
-    }
-    @media @desktop {
-        padding: 20px 32px;
+    @media @mobileSM {
+        padding: 16px 12px;
     }
 
     &__container {
@@ -25,6 +24,9 @@
 
         color: var(--content);
 
+        @media @mobileS {
+            line-height: 18px;
+        }
         @media @desktopMU {
             margin-bottom: 4px;
         }
@@ -51,19 +53,11 @@
         flex-direction: column;
         align-items: flex-start;
         align-self: center;
+
         width: 100%;
-        max-width: 212px;
         margin-left: 12px;
 
-        @media @mobileBU {
-            max-width: 540px;
-        }
-        @media @desktop {
-            max-width: 640px;
-        }
-        @media @desktopMU {
-            max-width: 840px;
-        }
+        overflow: hidden;
     }
 
     &__icon-container {
@@ -72,9 +66,11 @@
         align-items: center;
         align-self: flex-start;
         justify-content: center;
+
         width: 40px;
         min-width: 40px;
         height: 40px;
+
         border-radius: 50%;
     }
 
@@ -85,22 +81,119 @@
         height: 32px;
     }
 
-    &__link {
-        .h5();
-        display: inline-flex;
-        align-items: center;
-        margin-top: 8px;
+    &__text-container {
+        max-width: fit-content;
 
-        cursor: pointer;
+        @media @mobileBU {
+            max-width: 540px;
+            margin-right: 160px;
+        }
+        @media @desktop {
+            max-width: 640px;
+        }
+        @media @desktopMU {
+            max-width: 840px;
+        }
     }
 
-    &__right-arrow {
+    &__bottom {
+        display: flex;
+        gap: 16px;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        width: 100%;
+        margin-top: 8px;
+
+        font-size: 12px;
+        line-height: 18px;
+
+        @media @mobileBU {
+            .h5();
+
+            gap: 20px;
+        }
+    }
+
+    &__bottom-block {
+        display: flex;
+        gap: 16px;
+
+        overflow: hidden;
+    }
+
+    &__bottom_has-button {
+        margin-top: 12px;
+    }
+
+    &__button {
+        font-weight: 500;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+
+        cursor: pointer;
+
+        @media @mobileS {
+            line-height: 14px;
+        }
+    }
+
+    &__link-arrow,
+    &__collapse-arrow {
         width: 20px;
         min-width: 20px;
         height: 20px;
-        margin-top: 4px;
 
         fill: var(--systemBlue);
+    }
+
+    &__link-arrow {
+        margin-bottom: -2px;
+
+        @media @mobileBU {
+            margin-bottom: -4px;
+        }
+    }
+
+    &__collapse-arrow {
+        @media @mobileBU {
+            margin-top: 3px;
+        }
+    }
+
+    &__collapse-arrow_close {
+        @media @mobileBU {
+            margin-top: 2px;
+        }
+    }
+
+    &__collapse-button {
+        display: flex;
+
+        height: fit-content;
+        padding: 0;
+
+        border: none;
+
+        color: var(--systemBlue);
+
+        font-size: 12px;
+        line-height: 18px;
+
+        background-color: transparent;
+
+        cursor: pointer;
+
+        @media @mobileBU {
+            .h5();
+        }
+    }
+
+    &__collapse_hidden {
+        visibility: hidden;
     }
 
     &__close {
@@ -115,10 +208,12 @@
         width: 24px;
         height: 24px;
         padding: 0;
+
         border: none;
         border-radius: 50%;
 
-        background-color: var(--stcBlack5);
+        background-color: var(--spbSky0);
+
         cursor: pointer;
 
         @media @mobileBU {
@@ -130,11 +225,21 @@
         }
     }
 
+    &__close:hover {
+        background-color: var(--spbSky1);
+    }
+
+    &__close:active {
+        background-color: var(--spbSky2);
+    }
+
     &__close-icon {
         width: 10px;
         height: 10px;
 
-        fill: var(--stcBlack50);
+        opacity: 0.5;
+
+        fill: var(--content);
     }
 
     &_type_error {
@@ -230,7 +335,7 @@
                 color: var(--stcWhite);
             }
 
-            &__right-arrow {
+            &__link-arrow {
                 fill: var(--stcWhite);
             }
 
