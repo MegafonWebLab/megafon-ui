@@ -130,7 +130,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 muted
                 autoPlay
                 playsInline
-                className={cn('swiper-img')}
+                className={cn('swiper-img', { video: true })}
                 {...filterDataAttrs(dataAttrs?.image, index + 1)}
             >
                 <source src={mediaUrl} type="video/mp4" />
