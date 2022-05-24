@@ -41,7 +41,7 @@ function isJSXElement(item: ItemType): item is JSX.Element {
 }
 
 const cn = cnCreate('mfui-breadcrumbs');
-const Breadcrumbs: React.FC<Props> = ({ items, color = 'black', className, classes = {}, dataAttrs }) => (
+const Breadcrumbs: React.FC<Props> = ({ items, color = 'default', className, classes = {}, dataAttrs }) => (
     <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ color }, className)}>
         {items.map((item: ItemType, i: number): JSX.Element | null => {
             if (isJSXElement(item)) {
