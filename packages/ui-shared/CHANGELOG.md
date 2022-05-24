@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.2.3-beta.1...@megafon/ui-shared@4.0.0-beta.0) (2022-05-24)
+
+
+### Bug Fixes
+
+* **breadcrumbs:** change default color prop value from black to default ([9c2c0fc](https://github.com/MegafonWebLab/megafon-ui/commit/9c2c0fca7d559a67d3d167b2a8a3c30b420ab7da))
+
+
+### Features
+
+* **paragraph:** remove prop size; add new prop; add 'pale' option to colors ([ef15841](https://github.com/MegafonWebLab/megafon-ui/commit/ef15841474473739d3ac88da7a8737e183ff288a))
+
+
+### BREAKING CHANGES
+
+* **paragraph:** prop 'size' is no longer exists.
+use component Caption instead of Paragraph size="small"
+* **breadcrumbs:** color is now depends on current theme. by default it matches content text color.
+for keep black color on light background use 'black' value for prop 'color'.
+
+
+
+
+
 ## [3.2.3-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.2.3-beta.0...@megafon/ui-shared@3.2.3-beta.1) (2022-05-06)
 
 **Note:** Version bump only for package @megafon/ui-shared

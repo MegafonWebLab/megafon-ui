@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.3-beta.1...@megafon/ui-core@4.0.0-beta.0) (2022-05-24)
+
+
+### Features
+
+* **caption:** add new Caption component; update .smallFont() less mixin ([603bed3](https://github.com/MegafonWebLab/megafon-ui/commit/603bed3ce782676b22381e3d4df5dae141fb015c))
+* **paragraph:** remove prop size; add new prop; add 'pale' option to colors ([ef15841](https://github.com/MegafonWebLab/megafon-ui/commit/ef15841474473739d3ac88da7a8737e183ff288a))
+
+
+### BREAKING CHANGES
+
+* **caption:** .smallFont() less mixin line-height rule now set to 18px instead of 16px
+either accept new rules or manually add line-height: 16px in your components
+* **paragraph:** prop 'size' is no longer exists.
+use component Caption instead of Paragraph size="small"
+
+
+
+
+
 ## [3.5.3-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.3-beta.0...@megafon/ui-core@3.5.3-beta.1) (2022-05-06)
 
 **Note:** Version bump only for package @megafon/ui-core
