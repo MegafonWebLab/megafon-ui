@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.3.3...@megafon/ui-shared@3.3.4) (2022-05-24)
+
+
+### Bug Fixes
+
+* **instructions:** remove css prorerty filter for image ([d4ee221](https://github.com/MegafonWebLab/megafon-ui/commit/d4ee22123565b82ec777c1526093a94251e59809))
+* **picturewithdescription:** fix clearing indents for first and last element ([d9263e3](https://github.com/MegafonWebLab/megafon-ui/commit/d9263e3670b2d493ec4bf194a2cdd6440d1ea86f))
+
+
+
+
+
 ## [3.3.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.3.2...@megafon/ui-shared@3.3.3) (2022-05-17)
 
 **Note:** Version bump only for package @megafon/ui-shared
