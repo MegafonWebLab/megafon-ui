@@ -1,14 +1,28 @@
 @import (reference) '~styles/base.less';
 
-@b: e('.mfui-paragraph');
+@b: e('.mfui-caption');
 
 @{b} {
     .fontFamily();
-    .commonFont();
+    .smallFont();
 
     margin: 0;
 
-    font-weight: 400;
+    &_variant_normal {
+        font-weight: 400;
+    }
+
+    &_variant_medium {
+        font-weight: 600;
+    }
+
+    &_space_wide {
+        line-height: 18px;
+    }
+
+    &_space_tight {
+        line-height: 14px;
+    }
 
     &_align_left {
         text-align: left;
@@ -20,14 +34,6 @@
 
     &_align_right {
         text-align: right;
-    }
-
-    &_space_wide {
-        line-height: 24px;
-    }
-
-    &_space_tight {
-        line-height: 18px;
     }
 
     &_has-margin {

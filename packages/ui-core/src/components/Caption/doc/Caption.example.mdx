@@ -1,34 +1,34 @@
 
 import { Playground } from 'docz';
-import { DemoBackgroundWrapper } from './Paragraph.docz';
-import Paragraph from '../Paragraph';
+import { DemoBackgroundWrapper } from './Caption.docz';
+import Caption from '../Caption';
 
 ## Базовое использование
 
 <Playground>
-    <Paragraph>
+    <Caption>
         При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 
-    <div style={{ width: '12em' }}>
-        <Paragraph space="tight">
-            Параграф в узком контейнере
-        </Paragraph>
+    <div style={{ width: '10em' }}>
+        <Caption space="tight">
+            Кэпшн в узком контейнере
+        </Caption>
     </div>
 </Playground>
 
 ## Без отступа снизу
 
 <Playground>
-    <Paragraph hasMargin={false}>
+    <Caption hasMargin={false}>
         При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
-    <Paragraph hasMargin={false}>
+    </Caption>
+    <Caption hasMargin={false}>
         При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 </Playground>
 
 ## Выравнивание
@@ -36,64 +36,64 @@ import Paragraph from '../Paragraph';
 ### По левому краю
 
 <Playground>
-    <Paragraph align="left">
+    <Caption align="left">
         При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 </Playground>
 
 ### По центру
 
 <Playground>
-    <Paragraph align="center">
+    <Caption align="center">
         При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 </Playground>
 
 ### По правому краю
 
 <Playground>
-    <Paragraph align="right">
+    <Caption align="right">
         При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 </Playground>
 
 ## Цвета
 
 <Playground>
-    <Paragraph color="default">
+    <Caption color="default">
         'content' - При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 
-    <Paragraph color="gray">
+    <Caption color="gray">
         'gray' - При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 
     <DemoBackgroundWrapper>
-        <Paragraph color="white">
+        <Caption color="white">
             'white' - При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-        </Paragraph>
+        </Caption>
     </DemoBackgroundWrapper>
 
-    <Paragraph color="green">
+    <Caption color="green">
         'green' - При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 
-    <Paragraph color="purple">
+    <Caption color="purple">
         'purple' - При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 
-    <Paragraph color="inherit">
+    <Caption color="inherit">
         'inherit' - При подключении тарифа на вашем счёте должна быть сумма, достаточная для списания абонентской платы
         за месяц и дополнительных услуг, указанных в заявке.
-    </Paragraph>
+    </Caption>
 </Playground>
 
 ```javascript collapse=Код DemoBackgroundWrapper

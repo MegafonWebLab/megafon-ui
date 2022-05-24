@@ -4,44 +4,20 @@ import Paragraph, { IParagraphProps } from './Paragraph';
 
 const props: IParagraphProps = {
     align: 'right',
-    size: 'small',
+    space: 'wide',
     hasMargin: false,
     color: 'purple',
     className: 'test',
 };
 
 describe('<Paragraph />', () => {
-    it('default render', () => {
+    it('render Paragraph with defalut props', () => {
         const wrapper = shallow(<Paragraph>Test paragraph text</Paragraph>);
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('it renders Paragraph with props', () => {
+    it('render Paragraph with passed props', () => {
         const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('testing align props', () => {
-        const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
-
-        wrapper.setProps({ align: 'center' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ align: 'right' });
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('testing color props', () => {
-        const wrapper = shallow(<Paragraph {...props}>Test paragraph text</Paragraph>);
-
-        wrapper.setProps({ color: 'inherit' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'default' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'white' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'green' });
-        expect(wrapper).toMatchSnapshot();
-        wrapper.setProps({ color: 'purple' });
         expect(wrapper).toMatchSnapshot();
     });
 });

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
-import './Paragraph.less';
+import './Caption.less';
 
 const COLORS = {
     INHERIT: 'inherit',
@@ -14,11 +14,13 @@ const COLORS = {
 
 type ColorType = typeof COLORS[keyof typeof COLORS];
 
-export interface IParagraphProps {
+export interface ICaptionProps {
     /** Выравнивание по горизонтали */
     align?: 'left' | 'center' | 'right';
     /** Поведение текста при встраивании в широкий или узкий контейнер */
     space?: 'wide' | 'tight';
+    /** Начертание шрифта: обычный или полужирный */
+    variant?: 'normal' | 'medium';
     /** Вертикальный отступ */
     hasMargin?: boolean;
     /** Цвет текста */
@@ -31,11 +33,12 @@ export interface IParagraphProps {
     };
 }
 
-const cn = cnCreate('mfui-paragraph');
-const Paragraph: React.FC<IParagraphProps> = ({
+const cn = cnCreate('mfui-caption');
+const Caption: React.FC<ICaptionProps> = ({
     align,
     color = 'default',
     space = 'wide',
+    variant = 'normal',
     className,
     hasMargin = true,
     dataAttrs,
@@ -48,6 +51,7 @@ const Paragraph: React.FC<IParagraphProps> = ({
                 align,
                 color,
                 space,
+                variant,
                 'has-margin': hasMargin,
             },
             className,
@@ -57,14 +61,15 @@ const Paragraph: React.FC<IParagraphProps> = ({
     </p>
 );
 
-Paragraph.propTypes = {
+Caption.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     align: PropTypes.oneOf(['left', 'center', 'right']),
     space: PropTypes.oneOf(['wide', 'tight']),
+    variant: PropTypes.oneOf(['normal', 'medium']),
     hasMargin: PropTypes.bool,
     color: PropTypes.oneOf(Object.values(COLORS)),
 };
 
-export default Paragraph;
+export default Caption;

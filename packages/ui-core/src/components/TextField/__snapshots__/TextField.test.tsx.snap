@@ -882,13 +882,12 @@ exports[`<TextField /> textarea should render with error because of max limit is
     >
       noticeText
     </div>
-    <Paragraph
+    <Caption
       className="mfui-text-field__counter mfui-text-field__counter_error"
       hasMargin={false}
-      size="small"
     >
       6/4
-    </Paragraph>
+    </Caption>
   </div>
 </div>
 `;
