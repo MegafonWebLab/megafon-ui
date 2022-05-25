@@ -23,6 +23,17 @@ exports[`<TextField /> input should render with autoComplete 1`] = `
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -52,6 +63,17 @@ exports[`<TextField /> input should render with hidden password 1`] = `
       type="password"
       value="value"
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
     <div
       className="mfui-text-field__icon-box mfui-text-field__icon-box_password"
       onClick={[Function]}
@@ -102,6 +124,17 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
         type="text"
         value=""
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -133,6 +166,17 @@ exports[`<TextField /> input should render with inputmode 1`] = `
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -165,6 +209,17 @@ exports[`<TextField /> input should render with mask 1`] = `
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -194,6 +249,25 @@ exports[`<TextField /> input should render with number value 1`] = `
       type="text"
       value={1234}
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
+    <div
+      className="mfui-text-field__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-text-field__icon mfui-text-field__icon_clear"
+      />
+    </div>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -223,6 +297,25 @@ exports[`<TextField /> input should render with string value 1`] = `
       type="text"
       value="value"
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
+    <div
+      className="mfui-text-field__icon-box"
+      onClick={[Function]}
+    >
+      <test-file-stub
+        className="mfui-text-field__icon mfui-text-field__icon_clear"
+      />
+    </div>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -252,6 +345,17 @@ exports[`<TextField /> input should render with type 1`] = `
       type="tel"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -294,6 +398,25 @@ exports[`<TextField /> input should render with value after updating number prop
         type="text"
         value={1234}
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        className="mfui-text-field__icon-box"
+        onClick={[Function]}
+      >
+        <test-file-stub
+          className="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -337,6 +460,25 @@ exports[`<TextField /> input should render with value after updating string prop
         type="text"
         value="value"
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        className="mfui-text-field__icon-box"
+        onClick={[Function]}
+      >
+        <test-file-stub
+          className="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -367,6 +509,17 @@ exports[`<TextField /> input should render with visible password 1`] = `
       type="text"
       value="value"
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
     <div
       className="mfui-text-field__icon-box mfui-text-field__icon-box_password"
       onClick={[Function]}
@@ -417,6 +570,25 @@ exports[`<TextField /> input should render without ie placeholder when value is 
         type="text"
         value="value"
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        className="mfui-text-field__icon-box"
+        onClick={[Function]}
+      >
+        <test-file-stub
+          className="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -459,6 +631,17 @@ exports[`<TextField /> input should render without no-touch class 1`] = `
         type="text"
         value=""
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -471,21 +654,6 @@ exports[`<TextField /> should render with common props 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
@@ -495,10 +663,22 @@ exports[`<TextField /> should render with common props 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -516,21 +696,6 @@ exports[`<TextField /> should render with custom icon 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_icon customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
@@ -540,10 +705,22 @@ exports[`<TextField /> should render with custom icon 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
     <div
       className="mfui-text-field__icon-box"
       onClick={[Function]}
@@ -575,9 +752,15 @@ exports[`<TextField /> should render with default props 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+    >
+      Текст
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -589,21 +772,6 @@ exports[`<TextField /> should render with error 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error mfui-text-field_icon customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
@@ -613,10 +781,22 @@ exports[`<TextField /> should render with error 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
     <div
       className="mfui-text-field__icon-box mfui-text-field__icon-box_error"
       onClick={[Function]}
@@ -642,21 +822,6 @@ exports[`<TextField /> should render with hidden icon 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
@@ -666,10 +831,22 @@ exports[`<TextField /> should render with hidden icon 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -687,21 +864,6 @@ exports[`<TextField /> should render with valid 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_valid mfui-text-field_icon customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
@@ -711,10 +873,22 @@ exports[`<TextField /> should render with valid 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       type="text"
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
     <div
       className="mfui-text-field__icon-box"
       onClick={[Function]}
@@ -740,31 +914,17 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed"
+      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       style={
         Object {
@@ -773,6 +933,17 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
       }
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -790,31 +961,17 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_flexible"
+      className="mfui-text-field__field mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       style={
         Object {
@@ -823,6 +980,17 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
       }
       value=""
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -840,31 +1008,17 @@ exports[`<TextField /> textarea should render with error because of max limit is
 <div
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error customClass"
 >
-  <InputLabel
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    htmlFor="id"
-  >
-    label
-    <span
-      className="mfui-text-field__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed"
+      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      placeholder="Текст"
       required={true}
       style={
         Object {
@@ -873,6 +1027,17 @@ exports[`<TextField /> textarea should render with error because of max limit is
       }
       value="123456"
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -882,12 +1047,11 @@ exports[`<TextField /> textarea should render with error because of max limit is
     >
       noticeText
     </div>
-    <Caption
+    <span
       className="mfui-text-field__counter mfui-text-field__counter_error"
-      hasMargin={false}
     >
       6/4
-    </Caption>
+    </span>
   </div>
 </div>
 `;
@@ -913,7 +1077,7 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
       className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed"
+        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
         disabled={true}
         id="id"
         maxLength={4}
@@ -932,6 +1096,17 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
         }
         value=""
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -948,7 +1123,7 @@ exports[`<TextField /> textarea should render with number value 1`] = `
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed"
+      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
       disabled={true}
       id="id"
       maxLength={4}
@@ -967,6 +1142,17 @@ exports[`<TextField /> textarea should render with number value 1`] = `
       }
       value={1234}
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -982,7 +1168,7 @@ exports[`<TextField /> textarea should render with string value 1`] = `
     className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed"
+      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
       disabled={true}
       id="id"
       maxLength={4}
@@ -1001,6 +1187,17 @@ exports[`<TextField /> textarea should render with string value 1`] = `
       }
       value="value"
     />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
   </div>
   <div
     className="mfui-text-field__wrap"
@@ -1029,7 +1226,7 @@ exports[`<TextField /> textarea should render with value after updating number p
       className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed"
+        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
         disabled={true}
         id="id"
         maxLength={4}
@@ -1048,6 +1245,17 @@ exports[`<TextField /> textarea should render with value after updating number p
         }
         value={1234}
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -1077,7 +1285,7 @@ exports[`<TextField /> textarea should render with value after updating string p
       className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed"
+        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
         disabled={true}
         id="id"
         maxLength={4}
@@ -1096,6 +1304,17 @@ exports[`<TextField /> textarea should render with value after updating string p
         }
         value="value"
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
     </div>
     <div
       className="mfui-text-field__wrap"
@@ -1125,7 +1344,7 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
       className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed"
+        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
         disabled={true}
         id="id"
         maxLength={4}
@@ -1144,6 +1363,17 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
         }
         value="value"
       />
+      <label
+        className="mfui-text-field__label"
+        htmlFor="id"
+      >
+        placeholder
+        <span
+          className="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
     </div>
     <div
       className="mfui-text-field__wrap"
