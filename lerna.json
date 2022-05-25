@@ -14,7 +14,8 @@
         "*.mdx",
         "*.txt",
         "*.test.*",
-        "*.docz.*"
+        "*.docz.*",
+        "ui-core/src/colors/**"
       ],
       "preDistTag": "beta"
     }
