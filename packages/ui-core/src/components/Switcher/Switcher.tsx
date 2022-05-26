@@ -13,6 +13,7 @@ export interface ISwitcherProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
+        input?: Record<string, string>;
     };
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -62,6 +63,7 @@ const Switcher: React.FC<ISwitcherProps> = ({
         <div className={cn({ disabled }, className)} {...filterDataAttrs(dataAttrs?.root)}>
             {isLeftContent && <div className={cn('content', { size: textSize, left: true })}>{children}</div>}
             <div
+                {...filterDataAttrs(dataAttrs?.input)}
                 className={cn('input', {
                     checked,
                     disabled,
@@ -83,6 +85,7 @@ const Switcher: React.FC<ISwitcherProps> = ({
 Switcher.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        input: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     className: PropTypes.string,
     textSize: PropTypes.oneOf(['small', 'medium']),
