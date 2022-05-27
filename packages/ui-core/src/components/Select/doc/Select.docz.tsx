@@ -3,8 +3,12 @@ import { ISelectItem, SelectItemValueType } from '../Select';
 
 export const items = [
     {
-        value: 1,
+        value: 0,
         title: 'Авиамоторная',
+    },
+    {
+        value: 1,
+        title: 'Автозаводская',
     },
     {
         value: 2,

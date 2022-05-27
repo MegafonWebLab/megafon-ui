@@ -716,7 +716,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                 <span ref={triggerElement}>
                     <Button fullWidth>Навести</Button>
                 </span>
-                <Tooltip isPortal triggerElement={triggerElement}>
+                <Tooltip isPortal portalSelector="body" triggerElement={triggerElement}>
                     Tooltip добавляется в конец document.body
                 </Tooltip>
             </>

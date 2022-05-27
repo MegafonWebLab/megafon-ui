@@ -55,6 +55,8 @@ export interface ITooltipProps {
     isOpened?: boolean;
     /** Отрендерить компонент в корневой элементе страницы body */
     isPortal?: boolean;
+    /** Рендеринг компонента в указанном селекторе */
+    portalSelector?: string;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -87,6 +89,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
     targetElement,
     isOpened = false,
     isPortal = false,
+    portalSelector,
     children,
     classes: {
         root: rootClassName,
@@ -260,10 +263,12 @@ const Tooltip: React.FC<ITooltipProps> = ({
     useEffect(
         () => () => {
             if (portalElem.current) {
-                document.body.removeChild(portalElem.current);
+                const parent = portalSelector ? document.querySelector(portalSelector) : document.body;
+                parent?.removeChild(portalElem.current);
             }
             portalElem.current = null;
         },
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [],
     );
 
@@ -287,7 +292,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
     /* Не в эффекте, чтобы не создавать лишний перерендер компонента. Из-за синхронности кода в return уже будет элемент */
     if (isPortal && !portalElem.current && typeof window !== 'undefined') {
         portalElem.current = document.createElement('div');
-        document.body.appendChild(portalElem.current);
+        const parent = portalSelector ? document.querySelector(portalSelector) : document.body;
+        parent?.appendChild(portalElem.current);
     }
 
     if (isPortal && portalElem.current) {
@@ -330,6 +336,7 @@ Tooltip.propTypes = {
     ]),
     isOpened: PropTypes.bool,
     isPortal: PropTypes.bool,
+    portalSelector: PropTypes.string,
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,

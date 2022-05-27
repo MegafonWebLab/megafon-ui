@@ -122,6 +122,7 @@ exports[`<Switcher /> layout should render switcher with external className and 
 >
   <div
     className="mfui-switcher__input mfui-switcher__input_no-touch"
+    data-testid="input-test"
     onClick={[Function]}
     onKeyDown={[Function]}
     tabIndex={0}
