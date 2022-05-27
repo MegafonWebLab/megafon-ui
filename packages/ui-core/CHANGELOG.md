@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.0...@megafon/ui-core@4.0.0-beta.1) (2022-05-27)
+
+
+### Features
+
+* **accordion:** update by new design ([331f8dc](https://github.com/MegafonWebLab/megafon-ui/commit/331f8dcb55d3577c086eb0e6beb00fd82f064943))
+
+
+### BREAKING CHANGES
+
+* **accordion:** change next-sibling accordion styles
+
+
+
+
+
 # [4.0.0-beta.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.5.3-beta.1...@megafon/ui-core@4.0.0-beta.0) (2022-05-24)
 
 
