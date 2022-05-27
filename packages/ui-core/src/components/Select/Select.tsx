@@ -393,7 +393,7 @@ const Select = <T extends SelectItemValueType>({
                 className={cn(
                     'title',
                     {
-                        placeholder: !!placeholder && !currentValue,
+                        placeholder: !!placeholder && currentValue === undefined,
                     },
                     [classes?.title],
                 )}
