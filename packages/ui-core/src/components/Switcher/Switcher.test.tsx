@@ -11,7 +11,10 @@ describe('<Switcher />', () => {
 
         it('should render switcher with external className and data-attributes', () => {
             const wrapper = shallow(
-                <Switcher className="external-class-name" dataAttrs={{ root: { 'data-testid': 'root-test' } }} />,
+                <Switcher
+                    className="external-class-name"
+                    dataAttrs={{ root: { 'data-testid': 'root-test' }, input: { 'data-testid': 'input-test' } }}
+                />,
             );
             expect(wrapper).toMatchSnapshot();
         });
