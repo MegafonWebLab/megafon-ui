@@ -6,10 +6,6 @@
     display: flex;
     align-items: center;
 
-    @media @mobileSM {
-        flex-direction: column;
-    }
-
     &:not(:first-of-type) {
         margin-top: 16px;
 
@@ -23,18 +19,7 @@
         min-width: 40px;
         height: 40px;
         min-height: 40px;
+        margin-right: 16px;
         overflow: hidden;
-
-        @media @mobileBU {
-            margin-right: 16px;
-        }
-    }
-
-    &__text {
-        @media @mobileSM {
-            margin-top: 12px;
-
-            text-align: center;
-        }
     }
 }
