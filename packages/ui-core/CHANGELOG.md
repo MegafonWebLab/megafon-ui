@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.8.0...@megafon/ui-core@3.9.0) (2022-05-27)
+
+
+### Bug Fixes
+
+* **select:** fix selected item color when value is zero ([9847095](https://github.com/MegafonWebLab/megafon-ui/commit/98470955ef813504d4bfa4cd4d3aba77b5458446))
+
+
+### Features
+
+* **switcher:** add data-attribute for inner element ([793a022](https://github.com/MegafonWebLab/megafon-ui/commit/793a0224ab957b938e67dd1b4d16c2389a9fb6f8))
+* **tooltip:** add portal selector props ([6188832](https://github.com/MegafonWebLab/megafon-ui/commit/6188832e9ba212e7a8182333aba06d77c3e979d6))
+
+
+
+
+
 # [3.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.7.0...@megafon/ui-core@3.8.0) (2022-05-17)
 
 
