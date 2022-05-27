@@ -2,7 +2,7 @@
 
 exports[`<TextWithIconItem /> should render 1`] = `
 <div
-  className="mfui-text-with-icon-item test-class"
+  className="mfui-text-with-icon-item mfui-text-with-icon-item_centering-on-mobile test-class"
 >
   <div
     className="mfui-text-with-icon-item__svg-icon"
