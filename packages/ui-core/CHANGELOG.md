@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.9.0...@megafon/ui-core@3.10.0) (2022-05-30)
+
+
+### Features
+
+* **banner:** add new prop 'pauseOnHover' ([ac654c3](https://github.com/MegafonWebLab/megafon-ui/commit/ac654c3c23821a5d29ffd5cd91ff7337b3d087c1))
+
+
+
+
+
 # [3.9.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.8.0...@megafon/ui-core@3.9.0) (2022-05-27)
 
 

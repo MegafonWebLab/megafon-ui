@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.3.5...@megafon/ui-shared@3.4.0) (2022-05-30)
+
+
+### Features
+
+* **instructions:** add swipe to picture ([eb9eb09](https://github.com/MegafonWebLab/megafon-ui/commit/eb9eb0991444e113baf95d2d014d1c690cd1e99a))
+* **textwithicon:** add isFullWidth and centeringOnMobile props ([b86ad8b](https://github.com/MegafonWebLab/megafon-ui/commit/b86ad8b1ad5e41c87e83ebadeb3a0a157bc41a2c))
+
+
+
+
+
 ## [3.3.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.3.4...@megafon/ui-shared@3.3.5) (2022-05-27)
 
 **Note:** Version bump only for package @megafon/ui-shared
