@@ -43,6 +43,8 @@ export interface IBannerProps {
     autoPlay?: boolean;
     /** Задержка автоматической прокрутки */
     autoPlayDelay?: number;
+    /** Пауза автоматической прокрутки при наведении курсора на компонент */
+    pauseOnHover?: boolean;
     /** Цветовая тема навигации */
     navTheme?: NavThemeType;
     /** Обработчик клика по стрелке "вперед" (должен быть обернут в useCallback) */
@@ -54,7 +56,6 @@ export interface IBannerProps {
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
     onChange?: (index: number) => void;
 }
-
 const getAutoPlayConfig = (delay: number) => ({
     delay,
     waitForTransition: false,
@@ -77,29 +78,36 @@ const Banner: React.FC<IBannerProps> = ({
     onDotClick,
     onChange,
     dataAttrs,
+    pauseOnHover = false,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
     const [isEnd, setEnd] = React.useState(false);
-    const [isAutoPlaying, setAutoPlayning] = React.useState(autoPlay);
+    const [isAutoPlaying, setAutoPlaying] = React.useState(autoPlay);
     const [activeIndex, setActiveIndex] = React.useState(0);
+    const [delay, setDelay] = React.useState(autoPlayDelay);
+    const [isIncreasedDelay, setIsIncreasedDelay] = React.useState(false);
 
     const showDotTimer = loop ? isAutoPlaying : isAutoPlaying && !isEnd;
-    const dotTimerDelay = autoPlayDelay / 1000;
+    const dotTimerDelay = delay / 1000;
     const navArrowTheme = navTheme === NavTheme.DARK ? ArrowTheme.DARK : ArrowTheme.PURPLE;
+
+    const rootRef = React.useRef<HTMLDivElement>(null);
 
     const increaseAutoplayDelay = React.useCallback(
         ({ params, autoplay }: SwiperCore) => {
-            if (typeof params.autoplay !== 'object' || !autoplay.running) {
+            if (typeof params.autoplay !== 'object' || !autoPlay) {
                 return;
             }
 
             autoplay.stop();
             // eslint-disable-next-line no-param-reassign
             params.autoplay.delay = autoPlayDelay * 3;
+            setDelay(autoPlayDelay * 3);
+            setIsIncreasedDelay(true);
             autoplay.start();
         },
-        [autoPlayDelay],
+        [autoPlay, autoPlayDelay],
     );
 
     const handlePrevClick = React.useCallback(() => {
@@ -109,8 +117,8 @@ const Banner: React.FC<IBannerProps> = ({
 
         swiperInstance.slidePrev();
         onPrevClick?.(swiperInstance.realIndex);
-        increaseAutoplayDelay(swiperInstance);
-    }, [swiperInstance, onPrevClick, increaseAutoplayDelay]);
+        !isIncreasedDelay && increaseAutoplayDelay(swiperInstance);
+    }, [swiperInstance, onPrevClick, isIncreasedDelay, increaseAutoplayDelay]);
 
     const handleNextClick = React.useCallback(() => {
         if (!swiperInstance) {
@@ -119,8 +127,8 @@ const Banner: React.FC<IBannerProps> = ({
 
         swiperInstance.slideNext();
         onNextClick?.(swiperInstance.realIndex);
-        increaseAutoplayDelay(swiperInstance);
-    }, [swiperInstance, onNextClick, increaseAutoplayDelay]);
+        !isIncreasedDelay && increaseAutoplayDelay(swiperInstance);
+    }, [swiperInstance, onNextClick, isIncreasedDelay, increaseAutoplayDelay]);
 
     const handleDotClick = React.useCallback(
         (index: number) => {
@@ -135,14 +143,10 @@ const Banner: React.FC<IBannerProps> = ({
             }
 
             onDotClick?.(swiperInstance.realIndex);
-            increaseAutoplayDelay(swiperInstance);
+            !isIncreasedDelay && increaseAutoplayDelay(swiperInstance);
         },
-        [swiperInstance, loop, onDotClick, increaseAutoplayDelay],
+        [swiperInstance, loop, onDotClick, isIncreasedDelay, increaseAutoplayDelay],
     );
-
-    const handleSwiper = React.useCallback((swiper: SwiperCore) => {
-        setSwiperInstance(swiper);
-    }, []);
 
     const handleReachBeginning = React.useCallback(() => {
         setBeginning(true);
@@ -170,23 +174,44 @@ const Banner: React.FC<IBannerProps> = ({
     );
 
     const handleAutoplayStop = React.useCallback(() => {
-        setAutoPlayning(false);
+        setAutoPlaying(false);
     }, []);
 
+    const handleAutoPlayStart = React.useCallback(() => {
+        setAutoPlaying(true);
+    }, []);
+
+    React.useEffect(() => {
+        const { current: rootElement } = rootRef;
+
+        if (!pauseOnHover || !autoPlay) {
+            return;
+        }
+
+        rootElement?.addEventListener('mouseenter', () => {
+            swiperInstance?.autoplay.stop();
+        });
+
+        rootElement?.addEventListener('mouseleave', () => {
+            swiperInstance?.autoplay.start();
+        });
+    }, [autoPlay, pauseOnHover, swiperInstance?.autoplay]);
+
     return (
-        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ 'nav-theme': navTheme }, className)}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ 'nav-theme': navTheme }, className)} ref={rootRef}>
             <Swiper
                 {...filterDataAttrs(dataAttrs?.swiper)}
                 className={cn('swiper')}
                 loop={loop}
                 autoplay={autoPlay ? getAutoPlayConfig(autoPlayDelay) : false}
                 watchSlidesVisibility
-                onSwiper={handleSwiper}
+                onSwiper={setSwiperInstance}
                 onReachBeginning={handleReachBeginning}
                 onReachEnd={handleReachEnd}
                 onFromEdge={handleFromEdge}
                 onSlideChange={handleSlideChange}
                 onAutoplayStop={handleAutoplayStop}
+                onAutoplayStart={handleAutoPlayStart}
                 onTouchEnd={increaseAutoplayDelay}
             >
                 {React.Children.map(children, (child, i) => (
@@ -255,6 +280,7 @@ Banner.propTypes = {
     }),
     autoPlay: PropTypes.bool,
     autoPlayDelay: PropTypes.number,
+    pauseOnHover: PropTypes.bool,
     navTheme: PropTypes.oneOf(Object.values(NavTheme)),
     onNextClick: PropTypes.func,
     onPrevClick: PropTypes.func,
