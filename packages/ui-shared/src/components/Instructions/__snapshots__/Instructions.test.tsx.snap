@@ -24,7 +24,9 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide
@@ -184,7 +186,9 @@ exports[`<Instructions /> desktop resolution should render with data-attributes 
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide
@@ -350,7 +354,9 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide
@@ -515,7 +521,9 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
             />
             <Swiper
               className="mfui-instructions__swiper"
+              noSwiping={false}
               noSwipingClass="mfui-instructions__slide"
+              onSlideChange={[Function]}
               onSwiper={[Function]}
             >
               <SwiperSlide
@@ -681,7 +689,9 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
             />
             <Swiper
               className="mfui-instructions__swiper"
+              noSwiping={false}
               noSwipingClass="mfui-instructions__slide"
+              onSlideChange={[Function]}
               onSwiper={[Function]}
             >
               <SwiperSlide
@@ -841,7 +851,9 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide
@@ -1001,7 +1013,9 @@ exports[`<Instructions /> mobile resolution should render with data-attributes 1
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide
@@ -1199,7 +1213,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                 >
                   <Swiper
                     className="mfui-instructions__swiper"
+                    noSwiping={false}
                     noSwipingClass="mfui-instructions__slide"
+                    onSlideChange={[Function]}
                     onSwiper={[Function]}
                   >
                     <div
@@ -1391,6 +1407,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "setTranslate": Array [
                                   [Function],
                                 ],
+                                "slideChange": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -1487,7 +1506,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -1496,6 +1515,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -1634,7 +1654,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -1643,6 +1663,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -1763,12 +1784,13 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -2123,6 +2145,9 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "setTranslate": Array [
                                   [Function],
                                 ],
+                                "slideChange": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -2219,7 +2244,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -2228,6 +2253,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -2366,7 +2392,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -2375,6 +2401,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -2495,12 +2522,13 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -2836,7 +2864,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                 >
                   <Swiper
                     className="mfui-instructions__swiper"
+                    noSwiping={false}
                     noSwipingClass="mfui-instructions__slide"
+                    onSlideChange={[Function]}
                     onSwiper={[Function]}
                   >
                     <div
@@ -3028,6 +3058,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "setTranslate": Array [
                                   [Function],
                                 ],
+                                "slideChange": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -3124,7 +3157,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -3133,6 +3166,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -3271,7 +3305,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -3280,6 +3314,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -3400,12 +3435,13 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -3760,6 +3796,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "setTranslate": Array [
                                   [Function],
                                 ],
+                                "slideChange": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -3856,7 +3895,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -3865,6 +3904,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -4003,7 +4043,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -4012,6 +4052,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -4132,12 +4173,13 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -4473,7 +4515,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                 >
                   <Swiper
                     className="mfui-instructions__swiper"
+                    noSwiping={false}
                     noSwipingClass="mfui-instructions__slide"
+                    onSlideChange={[Function]}
                     onSwiper={[Function]}
                   >
                     <div
@@ -4665,6 +4709,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "setTranslate": Array [
                                   [Function],
                                 ],
+                                "slideChange": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -4761,7 +4808,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -4770,6 +4817,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -4908,7 +4956,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -4917,6 +4965,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -5037,12 +5086,13 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -5397,6 +5447,9 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "setTranslate": Array [
                                   [Function],
                                 ],
+                                "slideChange": Array [
+                                  [Function],
+                                ],
                                 "sliderFirstMove": Array [
                                   [Function],
                                 ],
@@ -5493,7 +5546,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -5502,6 +5555,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -5640,7 +5694,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
@@ -5649,6 +5703,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "observer": false,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "pagination": Object {
                                   "bulletActiveClass": "swiper-pagination-bullet-active",
@@ -5769,12 +5824,13 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                 "loopPreventsSlide": true,
                                 "loopedSlides": null,
                                 "nested": false,
-                                "noSwiping": true,
+                                "noSwiping": false,
                                 "noSwipingClass": "mfui-instructions__slide",
                                 "noSwipingSelector": null,
                                 "normalizeSlideIndex": true,
                                 "on": Object {
                                   "_containerClasses": [Function],
+                                  "slideChange": [Function],
                                 },
                                 "passiveListeners": true,
                                 "preloadImages": true,
@@ -6078,7 +6134,9 @@ exports[`<Instructions /> should render component with additional text 1`] = `
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide
@@ -6243,7 +6301,9 @@ exports[`<Instructions /> should render with children 1`] = `
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide
@@ -6407,7 +6467,9 @@ exports[`<Instructions /> should render with classes props 1`] = `
         >
           <Swiper
             className="mfui-instructions__swiper"
+            noSwiping={false}
             noSwipingClass="mfui-instructions__slide"
+            onSlideChange={[Function]}
             onSwiper={[Function]}
           >
             <SwiperSlide

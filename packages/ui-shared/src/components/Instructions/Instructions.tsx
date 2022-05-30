@@ -123,6 +123,10 @@ const Instructions: React.FC<IInstructionsProps> = ({
         [swiperInstance],
     );
 
+    const handleSlideChange = React.useCallback(({ activeIndex }: SwiperClass) => {
+        setSlideIndex(activeIndex);
+    }, []);
+
     const renderVideo = React.useCallback(
         (mediaUrl: string, index: number): JSX.Element => (
             <video
@@ -141,7 +145,13 @@ const Instructions: React.FC<IInstructionsProps> = ({
 
     const renderSlider = React.useCallback(
         (): JSX.Element => (
-            <Swiper className={cn('swiper')} onSwiper={getSwiperInstance} noSwipingClass={swiperSlideCn}>
+            <Swiper
+                noSwiping={false}
+                onSwiper={getSwiperInstance}
+                noSwipingClass={swiperSlideCn}
+                onSlideChange={handleSlideChange}
+                className={cn('swiper')}
+            >
                 {instructionItems.map(({ mediaUrl, isVideo }, i) => (
                     <SwiperSlide className={swiperSlideCn} key={i + mediaUrl}>
                         {isVideo ? (
@@ -158,7 +168,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 ))}
             </Swiper>
         ),
-        [getSwiperInstance, instructionItemImg, instructionItems, renderVideo, dataAttrs?.image],
+        [getSwiperInstance, instructionItemImg, instructionItems, renderVideo, dataAttrs?.image, handleSlideChange],
     );
 
     const renderTitle = React.useCallback(
