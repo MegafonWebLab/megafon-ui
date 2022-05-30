@@ -184,9 +184,7 @@ const Banner: React.FC<IBannerProps> = ({
     React.useEffect(() => {
         const { current: rootElement } = rootRef;
 
-        const isNeedAddListeners = pauseOnHover && autoPlay;
-
-        if (!isNeedAddListeners) {
+        if (!pauseOnHover || !autoPlay) {
             return;
         }
 
