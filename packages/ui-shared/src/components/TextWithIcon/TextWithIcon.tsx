@@ -16,25 +16,51 @@ export interface ITextWithIconProps {
     };
     /** Дополнительный класс для корневого элемента */
     className?: string;
+    /** Включить растягивание на всю ширину контейнера */
+    isFullWidth?: boolean;
+    /* @deprecated */
+    /** Выравнивание по центру на мобильных */
+    centeringOnMobile?: boolean;
     /** Допустимый дочерний компонент */
     children: React.ReactElement<ITextWithIconItem>[] | React.ReactElement<ITextWithIconItem>;
 }
 
 const cn = cnCreate('mfui-text-with-icon');
-const TextWithIcon: React.FC<ITextWithIconProps> = ({ title, rootRef, dataAttrs, className, children }) => (
-    <div className={cn([className])} ref={rootRef} {...filterDataAttrs(dataAttrs?.root)}>
+const TextWithIcon: React.FC<ITextWithIconProps> = ({
+    title,
+    rootRef,
+    dataAttrs,
+    className,
+    isFullWidth = false,
+    centeringOnMobile = true,
+    children,
+}) => {
+    const renderContent = () => (
+        <>
+            {title && (
+                <Header className={cn('header')} as="h5">
+                    {title}
+                </Header>
+            )}
+            {children}
+        </>
+    );
+    const renderContentWithGrid = () => (
         <Grid>
-            <GridColumn {...{ mobile: '12', tablet: '7', desktop: '6', wide: '6' }}>
-                {title && (
-                    <Header className={cn('header')} as="h5">
-                        {title}
-                    </Header>
-                )}
-                {children}
-            </GridColumn>
+            <GridColumn {...{ mobile: '12', tablet: '7', desktop: '6', wide: '6' }}>{renderContent()}</GridColumn>
         </Grid>
-    </div>
-);
+    );
+
+    return (
+        <div
+            className={cn({ 'centering-on-mobile': centeringOnMobile }, [className])}
+            ref={rootRef}
+            {...filterDataAttrs(dataAttrs?.root)}
+        >
+            {isFullWidth ? renderContent() : renderContentWithGrid()}
+        </div>
+    );
+};
 
 TextWithIcon.propTypes = {
     title: PropTypes.string,
@@ -47,6 +73,8 @@ TextWithIcon.propTypes = {
     }),
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element.isRequired])
         .isRequired,
+    isFullWidth: PropTypes.bool,
+    centeringOnMobile: PropTypes.bool,
     className: PropTypes.string,
 };
 

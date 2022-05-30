@@ -14,13 +14,27 @@ export interface ITextWithIconItem {
     dataAttrs?: {
         root?: Record<string, string>;
     };
+    /* @deprecated */
+    /** Выравнивание по центру на мобильных */
+    centeringOnMobile?: boolean;
     /** Дополнительный класс для корневого элемента */
     className?: string;
 }
 
 const cn = cnCreate('mfui-text-with-icon-item');
-const TextWithIconItem: React.FC<ITextWithIconItem> = ({ text, icon, rootRef, dataAttrs, className }) => (
-    <div className={cn([className])} ref={rootRef} {...filterDataAttrs(dataAttrs?.root)}>
+const TextWithIconItem: React.FC<ITextWithIconItem> = ({
+    text,
+    icon,
+    rootRef,
+    dataAttrs,
+    centeringOnMobile = true,
+    className,
+}) => (
+    <div
+        className={cn({ 'centering-on-mobile': centeringOnMobile }, [className])}
+        ref={rootRef}
+        {...filterDataAttrs(dataAttrs?.root)}
+    >
         <div className={cn('svg-icon')}>{icon}</div>
         <div className={cn('text')}>{text}</div>
     </div>
@@ -36,6 +50,7 @@ TextWithIconItem.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
+    centeringOnMobile: PropTypes.bool,
     className: PropTypes.string,
 };
 

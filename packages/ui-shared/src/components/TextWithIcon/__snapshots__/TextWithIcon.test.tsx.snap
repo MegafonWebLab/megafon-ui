@@ -2,7 +2,7 @@
 
 exports[`<TextWithIcon /> should render 1`] = `
 <div
-  className="mfui-text-with-icon"
+  className="mfui-text-with-icon mfui-text-with-icon_centering-on-mobile"
 >
   <Grid>
     <GridColumn
@@ -46,46 +46,37 @@ exports[`<TextWithIcon /> should render with props 1`] = `
 <div
   className="mfui-text-with-icon test-class"
 >
-  <Grid>
-    <GridColumn
-      desktop="6"
-      mobile="12"
-      tablet="7"
-      wide="6"
-    >
-      <Header
-        as="h5"
-        className="mfui-text-with-icon__header"
-      >
-        Test title
-      </Header>
-      <TextWithIconItem
-        icon={
-          <test-file-stub
-            style={
-              Object {
-                "fill": "#00B956",
-              }
-            }
-          />
+  <Header
+    as="h5"
+    className="mfui-text-with-icon__header"
+  >
+    Test title
+  </Header>
+  <TextWithIconItem
+    icon={
+      <test-file-stub
+        style={
+          Object {
+            "fill": "#00B956",
+          }
         }
-        key="1"
-        text="First item"
       />
-      <TextWithIconItem
-        icon={
-          <test-file-stub
-            style={
-              Object {
-                "fill": "#00B956",
-              }
-            }
-          />
+    }
+    key="1"
+    text="First item"
+  />
+  <TextWithIconItem
+    icon={
+      <test-file-stub
+        style={
+          Object {
+            "fill": "#00B956",
+          }
         }
-        key="2"
-        text="Second item"
       />
-    </GridColumn>
-  </Grid>
+    }
+    key="2"
+    text="Second item"
+  />
 </div>
 `;

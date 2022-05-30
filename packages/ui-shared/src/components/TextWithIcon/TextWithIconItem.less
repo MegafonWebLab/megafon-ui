@@ -6,10 +6,6 @@
     display: flex;
     align-items: center;
 
-    @media @mobileSM {
-        flex-direction: column;
-    }
-
     &:not(:first-of-type) {
         margin-top: 16px;
 
@@ -23,18 +19,28 @@
         min-width: 40px;
         height: 40px;
         min-height: 40px;
-        overflow: hidden;
 
-        @media @mobileBU {
-            margin-right: 16px;
+        margin-right: 16px;
+        overflow: hidden;
+    }
+
+    &_centering-on-mobile {
+        @media @mobileSM {
+            flex-direction: column;
         }
     }
 
-    &__text {
+    &_centering-on-mobile &__text {
         @media @mobileSM {
             margin-top: 12px;
 
             text-align: center;
+        }
+    }
+
+    &_centering-on-mobile &__svg-icon {
+        @media @mobileSM {
+            margin-right: 0;
         }
     }
 }

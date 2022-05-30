@@ -24,3 +24,23 @@ import Heart from '@megafon/ui-icons/basic-16-heart_16.svg';
         <TextWithIconItem text="Понятная и простая реализация партнерстваих" icon={<Like style={{ fill: '#00B956' }} />} />
     </TextWithIcon>
 </Playground>
+
+## Без ограничения по ширине
+
+<Playground>
+    <TextWithIcon title="Преимущества" isFullWidth>
+        <TextWithIconItem text="Привлечение новых клиентов и повышение лояльности действующих" icon={<Heart style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem text="Специальные предложения для ваших клиентов" icon={<Star style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem text="Понятная и простая реализация партнерстваих" icon={<Like style={{ fill: '#00B956' }} />} />
+    </TextWithIcon>
+</Playground>
+
+## Без центрирования на мобильных разрешениях
+
+<Playground>
+    <TextWithIcon title="Преимущества" centeringOnMobile={false}>
+        <TextWithIconItem centeringOnMobile={false} text="Привлечение новых клиентов и повышение лояльности действующих" icon={<Heart style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem centeringOnMobile={false} text="Специальные предложения для ваших клиентов" icon={<Star style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem centeringOnMobile={false} text="Понятная и простая реализация партнерстваих" icon={<Like style={{ fill: '#00B956' }} />} />
+    </TextWithIcon>
+</Playground>
