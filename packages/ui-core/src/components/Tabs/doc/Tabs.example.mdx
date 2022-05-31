@@ -86,7 +86,7 @@ export const increaseSizeComponent = () => {
 
 ## Горизонтальное выравнивание табов
 
-### Слева (по умолчанию)
+### Табы растягиваются на всю ширину контейнера (по умолчанию)
 
 <Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
     <ContentArea>
@@ -107,11 +107,32 @@ export const increaseSizeComponent = () => {
     </ContentArea>
 </Playground>
 
-### По центру
+### Табы ужимаются под размер содержимого (выравнивание слева по умолчанию)
 
 <Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
     <ContentArea>
-        <Tabs hAlign="center">
+        <Tabs autoWidth>
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+            <Tab title="Таб 4">
+                <DemoContent>Контент 4</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+### Табы ужимаются под размер содержимого, выравнивание по центру
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs hAlign="center" autoWidth>
             <Tab title="Таб 1">
                 <DemoContent>Контент 1</DemoContent>
             </Tab>
@@ -126,24 +147,6 @@ export const increaseSizeComponent = () => {
 </Playground>
 
 ## Размер табов
-
-### Маленький
-
-<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
-    <ContentArea>
-        <Tabs size="small">
-            <Tab title="Таб 1">
-                <DemoContent>Контент 1</DemoContent>
-            </Tab>
-            <Tab title="Таб 2">
-                <DemoContent>Контент 2</DemoContent>
-            </Tab>
-            <Tab title="Таб 3" icon={<Balance />}>
-                <DemoContent>Контент 3</DemoContent>
-            </Tab>
-        </Tabs>
-    </ContentArea>
-</Playground>
 
 ### Средний
 
