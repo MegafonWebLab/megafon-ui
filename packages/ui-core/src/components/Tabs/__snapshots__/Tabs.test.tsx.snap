@@ -2,7 +2,7 @@
 
 exports[`<Tabs /> should render with default props 1`] = `
 <div
-  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_h-align_left mfui-tabs_tab-color_white mfui-tabs_indents"
+  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
 >
   <div
     style={
@@ -95,7 +95,7 @@ exports[`<Tabs /> should render with default props 1`] = `
 
 exports[`<Tabs /> should render with props 1`] = `
 <div
-  className="mfui-tabs mfui-tabs_size_small mfui-tabs_h-align_center mfui-tabs_tab-color_green className rootClass"
+  className="mfui-tabs mfui-tabs_size_large mfui-tabs_tab-color_green mfui-tabs_h-align_center mfui-tabs_auto-width className rootClass"
   data-test="test"
 >
   <div
@@ -134,7 +134,7 @@ exports[`<Tabs /> should render with props 1`] = `
             data-testid="root[1]"
           >
             <a
-              className="mfui-tabs__tab-inner"
+              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_with-icon"
               data-testid="inner[1]"
               href="www.test.com"
               onClick={[Function]}
@@ -211,7 +211,7 @@ exports[`<Tabs /> should render with props 1`] = `
 
 exports[`<Tabs /> should render without panels 1`] = `
 <div
-  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_h-align_left mfui-tabs_tab-color_white mfui-tabs_indents"
+  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
 >
   <div
     style={
@@ -247,7 +247,7 @@ exports[`<Tabs /> should render without panels 1`] = `
             className="mfui-tabs__tab"
           >
             <a
-              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current"
+              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current mfui-tabs__tab-inner_with-icon"
               href="www.test.com"
               onClick={[Function]}
             >
