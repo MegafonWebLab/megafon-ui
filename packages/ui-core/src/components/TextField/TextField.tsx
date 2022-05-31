@@ -9,6 +9,13 @@ import * as PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import './TextField.less';
 
+const DEFAULT_PLACEHOLDERS = {
+    email: 'E-mail',
+    tel: 'Номер телефона',
+    password: 'Пароль',
+    text: 'Текст',
+};
+
 export const Verification = {
     VALID: 'valid',
     ERROR: 'error',
@@ -158,6 +165,7 @@ const TextField: React.FC<TextFieldProps> = ({
     const isValidVerification = verification === Verification.VALID;
     const isErrorVerification = verification === Verification.ERROR;
     const hasClearIcon = (hasValue && !isPasswordType && !customIcon) || isErrorVerification;
+    const actualPlaceholder = placeholder || DEFAULT_PLACEHOLDERS[type];
 
     const checkSymbolMaxLimit = useCallback(
         (textareaValue: string | number = ''): void => {
@@ -198,23 +206,6 @@ const TextField: React.FC<TextFieldProps> = ({
                     : TEXTAREA_MAX_HEIGHT;
 
             setInitialTextareaHeight(newHeight);
-        }
-    };
-
-    const getPlaceholder = (): string => {
-        if (placeholder) {
-            return placeholder;
-        }
-
-        switch (type) {
-            case 'email':
-                return 'E-mail';
-            case 'tel':
-                return 'Номер телефона';
-            case 'password':
-                return 'Пароль';
-            default:
-                return 'Текст';
         }
     };
 
@@ -290,7 +281,7 @@ const TextField: React.FC<TextFieldProps> = ({
         onFocus: handleFocus,
         onKeyUp,
         maxLength,
-        placeholder: getPlaceholder(),
+        placeholder: actualPlaceholder,
         required,
         inputMode,
     };
@@ -348,7 +339,7 @@ const TextField: React.FC<TextFieldProps> = ({
     };
 
     const renderLabel = (): JSX.Element => {
-        const currentLabel = label || getPlaceholder();
+        const currentLabel = label || actualPlaceholder;
 
         return (
             <label {...filterDataAttrs(dataAttrs?.label)} htmlFor={id} className={cn('label')}>
