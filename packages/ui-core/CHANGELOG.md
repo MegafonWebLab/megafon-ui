@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.1...@megafon/ui-core@4.0.0-beta.2) (2022-06-01)
+
+
+### Features
+
+* **textfield:** update by new design ([8d11972](https://github.com/MegafonWebLab/megafon-ui/commit/8d11972c73374df0d0a66d4607eb87bb4190e92e))
+
+
+### BREAKING CHANGES
+
+* **textfield:** add placeholders text by default
+ label element positon changed
+ if label prop not setted, label element has text from placeholder (default or in props)
+
+
+
+
+
 # [4.0.0-beta.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.0...@megafon/ui-core@4.0.0-beta.1) (2022-05-27)
 
 
