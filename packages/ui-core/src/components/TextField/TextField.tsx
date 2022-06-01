@@ -3,13 +3,18 @@ import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
 import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
-import ErrorIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
+import ClearIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
 import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import * as PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
-import Caption from '../Caption/Caption';
-import InputLabel from '../InputLabel/InputLabel';
 import './TextField.less';
+
+const DEFAULT_PLACEHOLDERS = {
+    email: 'E-mail',
+    tel: 'Номер телефона',
+    password: 'Пароль',
+    text: 'Текст',
+};
 
 export const Verification = {
     VALID: 'valid',
@@ -156,6 +161,12 @@ const TextField: React.FC<TextFieldProps> = ({
         [isPasswordHidden, isPasswordType],
     );
 
+    const hasValue = isControlled ? !!value : !!inputValue;
+    const isValidVerification = verification === Verification.VALID;
+    const isErrorVerification = verification === Verification.ERROR;
+    const hasClearIcon = (hasValue && !isPasswordType && !customIcon) || isErrorVerification;
+    const actualPlaceholder = placeholder || DEFAULT_PLACEHOLDERS[type];
+
     const checkSymbolMaxLimit = useCallback(
         (textareaValue: string | number = ''): void => {
             if (!symbolCounter) {
@@ -223,8 +234,7 @@ const TextField: React.FC<TextFieldProps> = ({
 
     const handleIconClick = useCallback(
         e => {
-            const { ERROR } = Verification;
-            const isClearFuncAvailable = !customIcon && !onCustomIconClick && verification === ERROR;
+            const isClearFuncAvailable = !customIcon && !onCustomIconClick && hasClearIcon;
             const { current: field } = fieldNode;
 
             isPasswordType && togglePasswordHiding();
@@ -234,7 +244,7 @@ const TextField: React.FC<TextFieldProps> = ({
                 field?.focus();
             }
         },
-        [isPasswordType, togglePasswordHiding, onCustomIconClick, verification, customIcon, isControlled],
+        [isPasswordType, togglePasswordHiding, onCustomIconClick, customIcon, isControlled, hasClearIcon],
     );
 
     const handleFocus = useCallback(
@@ -271,7 +281,7 @@ const TextField: React.FC<TextFieldProps> = ({
         onFocus: handleFocus,
         onKeyUp,
         maxLength,
-        placeholder,
+        placeholder: actualPlaceholder,
         required,
         inputMode,
     };
@@ -295,6 +305,7 @@ const TextField: React.FC<TextFieldProps> = ({
             'field',
             {
                 type: textareaType,
+                textarea,
                 scrolling: hasScrolling,
             },
             input,
@@ -310,24 +321,35 @@ const TextField: React.FC<TextFieldProps> = ({
         inputRef?.(node);
     };
 
-    const getIcon = (): React.ReactNode | null => {
+    const getIcon = (): JSX.Element | undefined => {
         switch (true) {
             case !!customIcon:
                 return customIcon;
-            case verification === Verification.ERROR:
-                return <ErrorIcon className={cn('icon')} />;
-            case verification === Verification.VALID:
-                return <CheckedIcon className={cn('icon')} />;
             case isPasswordType && isPasswordHidden:
                 return <Hide className={cn('icon')} />;
             case isPasswordType && !isPasswordHidden:
                 return <Show className={cn('icon')} />;
+            case isValidVerification:
+                return <CheckedIcon className={cn('icon')} />;
+            case hasClearIcon:
+                return <ClearIcon className={cn('icon', { clear: !isErrorVerification })} />;
             default:
-                return null;
+                return undefined;
         }
     };
 
-    const renderTextarea = (): React.ReactNode => (
+    const renderLabel = (): JSX.Element => {
+        const currentLabel = label || actualPlaceholder;
+
+        return (
+            <label {...filterDataAttrs(dataAttrs?.label)} htmlFor={id} className={cn('label')}>
+                {currentLabel}
+                {required && <span className={cn('require-mark')}>*</span>}
+            </label>
+        );
+    };
+
+    const renderTextarea = (): JSX.Element => (
         <>
             <textarea
                 {...textareaParams}
@@ -335,36 +357,40 @@ const TextField: React.FC<TextFieldProps> = ({
                 style={{ height: `${initialTextareaHeight}px` }}
                 ref={getFieldNode}
             />
+            {renderLabel()}
         </>
     );
 
-    const renderIconBlock = () => {
+    const renderIconBlock = (): JSX.Element | undefined => {
         const icon: React.ReactNode | null = getIcon();
 
+        if (!icon) {
+            return undefined;
+        }
+
         return (
-            icon && (
-                <div
-                    {...filterDataAttrs(dataAttrs?.iconBox)}
-                    className={cn('icon-box', {
-                        error: verification === Verification.ERROR && !customIcon,
-                        password: isPasswordType,
-                        'custom-handler': !!onCustomIconClick,
-                    })}
-                    onClick={handleIconClick}
-                >
-                    {icon}
-                </div>
-            )
+            <div
+                {...filterDataAttrs(dataAttrs?.iconBox)}
+                className={cn('icon-box', {
+                    error: isErrorVerification && !customIcon,
+                    password: isPasswordType,
+                    'custom-handler': !!onCustomIconClick,
+                })}
+                onClick={handleIconClick}
+            >
+                {icon}
+            </div>
         );
     };
 
-    const renderInput = (): React.ReactNode => (
+    const renderInput = (): JSX.Element => (
         <>
             {mask ? (
                 <InputMask {...inputParams} {...inputMaskParams} inputRef={getFieldNode} />
             ) : (
                 <input {...inputParams} ref={getFieldNode} />
             )}
+            {renderLabel()}
             {!hideIcon && renderIconBlock()}
         </>
     );
@@ -388,37 +414,31 @@ const TextField: React.FC<TextFieldProps> = ({
                 {
                     disabled,
                     theme,
-                    valid: verification === Verification.VALID,
-                    error: verification === Verification.ERROR || isMaxLimitExceeded,
+                    valid: isValidVerification,
+                    error: isErrorVerification || isMaxLimitExceeded,
                     icon: !hideIcon && (!!verification || !!customIcon || type === 'password') && !textarea,
                     password: isPlaceholderShowed,
                 },
                 className,
             )}
         >
-            {label && (
-                <InputLabel dataAttrs={{ root: dataAttrs?.label }} htmlFor={id}>
-                    {label}
-                    {required && <span className={cn('require-mark')}>*</span>}
-                </InputLabel>
-            )}
             <div className={cn('field-wrapper', { 'no-touch': !isTouch })}>{renderField()}</div>
             <div className={cn('wrap')}>
                 {noticeText && (
                     <div
                         {...filterDataAttrs(dataAttrs?.notice)}
                         className={cn('text', {
-                            error: verification === Verification.ERROR,
-                            success: verification === Verification.VALID,
+                            error: isErrorVerification,
+                            success: isValidVerification,
                         })}
                     >
                         {noticeText}
                     </div>
                 )}
                 {symbolCounter && (
-                    <Caption hasMargin={false} className={cn('counter', { error: isMaxLimitExceeded })}>
+                    <span className={cn('counter', { error: isMaxLimitExceeded })}>
                         {`${currentSymbolCount}/${symbolCounter}`}
-                    </Caption>
+                    </span>
                 )}
             </div>
         </div>
