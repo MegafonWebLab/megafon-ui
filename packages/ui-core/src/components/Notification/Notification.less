@@ -1,5 +1,26 @@
 @import '~styles/base';
 
+.fadeIn() {
+    position: static;
+
+    visibility: visible;
+
+    opacity: 1;
+
+    transition: opacity 200ms;
+}
+
+.fadeOut() {
+    position: absolute;
+    top: 0;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition: opacity 300ms, visibility 300ms;
+}
+
 @b: e('.mfui-notification');
 
 @{b} {
@@ -38,14 +59,28 @@
 
     &__text {
         .commonFont();
+
+        position: relative;
+
         max-width: 100%;
         margin: 0;
 
         color: var(--content);
+
+        transition: height 300ms;
     }
 
-    &__text_close-padding {
-        padding-right: 20px;
+    &__short-text {
+        .fadeIn();
+    }
+
+    &__short-text_hidden,
+    &__full-text {
+        .fadeOut();
+    }
+
+    &__full-text_show {
+        .fadeIn();
     }
 
     &__content {
@@ -82,17 +117,11 @@
     }
 
     &__text-container {
-        max-width: fit-content;
+        width: 85%;
+        margin-right: 56px;
 
         @media @mobileBU {
-            max-width: 540px;
-            margin-right: 160px;
-        }
-        @media @desktop {
-            max-width: 640px;
-        }
-        @media @desktopMU {
-            max-width: 840px;
+            margin-right: 72px;
         }
     }
 

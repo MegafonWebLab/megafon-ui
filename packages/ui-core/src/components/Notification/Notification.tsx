@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
 import ArrowDown from '@megafon/ui-icons/system-16-arrow-list_down_16.svg';
@@ -9,12 +9,13 @@ import SuccessIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import InfoIcon from '@megafon/ui-icons/system-24-info_invert_24.svg';
 import * as PropTypes from 'prop-types';
 import Button from 'components/Button/Button';
-import Collapse from 'components/Collapse/Collapse';
 import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';
 import Tile from 'components/Tile/Tile';
 import CancelIcon from './close-icon.svg';
 import './Notification.less';
+
+const TIMEOUT_DELAY = 300;
 
 export const NotificationTypes = {
     SUCCESS: 'success',
@@ -125,6 +126,10 @@ const Notification: React.FC<INotificationProps> = ({
     onButtonClick,
     onCollapseButtonClick,
 }) => {
+    const shortTextRef = useRef<HTMLDivElement>(null);
+    const fullTextRef = useRef<HTMLDivElement>(null);
+    const textWrapRef = useRef<HTMLDivElement>(null);
+
     const [showFullText, setShowFullText] = useState(isCollapseOpened);
 
     const hasBottom = shortText || buttonText || link;
@@ -133,6 +138,30 @@ const Notification: React.FC<INotificationProps> = ({
     useEffect(() => {
         setShowFullText(isCollapseOpened);
     }, [isCollapseOpened]);
+
+    useEffect(() => {
+        const fullTextElem = fullTextRef.current;
+        const shortTextElem = shortTextRef.current;
+        const wrapTextElem = textWrapRef.current;
+
+        if (!shortTextElem || !fullTextElem || !wrapTextElem) {
+            return undefined;
+        }
+
+        const element = showFullText ? fullTextElem : shortTextElem;
+
+        const { height } = element.getBoundingClientRect();
+
+        wrapTextElem.style.height = `${height}px`;
+
+        const timeoutId = setTimeout(() => {
+            wrapTextElem.style.height = `auto`;
+        }, TIMEOUT_DELAY);
+
+        return (): void => {
+            clearTimeout(timeoutId);
+        };
+    }, [showFullText]);
 
     const handleCollapseButtonClick = (): void => {
         setShowFullText(!showFullText);
@@ -220,27 +249,22 @@ const Notification: React.FC<INotificationProps> = ({
                 <div className={cn('content', [contentClass])}>
                     <div className={cn('text-container')}>
                         {title && (
-                            <Header
-                                dataAttrs={{ root: dataAttrs?.title }}
-                                as="h5"
-                                className={cn('title', { 'close-padding': hasCloseButton })}
-                            >
+                            <Header dataAttrs={{ root: dataAttrs?.title }} as="h5" className={cn('title')}>
                                 {title}
                             </Header>
                         )}
                         <p
+                            ref={textWrapRef}
                             {...filterDataAttrs(dataAttrs?.text)}
                             className={cn('text', { 'close-padding': hasCloseButton && !title })}
                         >
-                            {!showFullText && (shortText || children)}
+                            <div ref={shortTextRef} className={cn('short-text', { hidden: shortText && showFullText })}>
+                                {shortText || children}
+                            </div>
                             {shortText && (
-                                <Collapse
-                                    className={cn('collapse', { hidden: !showFullText })}
-                                    classNameContainer={cn('collapse-inner')}
-                                    isOpened={showFullText}
-                                >
+                                <div ref={fullTextRef} className={cn('full-text', { show: showFullText })}>
                                     {children}
-                                </Collapse>
+                                </div>
                             )}
                         </p>
                     </div>

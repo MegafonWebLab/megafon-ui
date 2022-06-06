@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Attention from '@megafon/ui-icons/system-16-attention_16.svg';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Notification, { INotificationProps, NotificationTypes, ShadowTypes } from './Notification';
 
 const props: INotificationProps = {
@@ -12,6 +12,7 @@ const props: INotificationProps = {
     },
     type: NotificationTypes.ERROR,
     shadowLevel: ShadowTypes.HOVER,
+    link: 'Ссылка',
     href: 'href',
     hasCloseButton: false,
     rel: 'noopener',
@@ -64,6 +65,29 @@ describe('<Notification />', () => {
                 Длинный текст
             </Notification>,
         );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders Notification without link, when component has collapse', () => {
+        const wrapper = shallow(
+            <Notification {...props} shortText="Короткий текст">
+                Длинный текст
+            </Notification>,
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('it renders Notification with close collpse after change isCollapseOpened', () => {
+        const wrapper = mount(
+            <Notification {...props} shortText="Короткий текст" isCollapseOpened>
+                Длинный текст
+            </Notification>,
+        );
+
+        wrapper.setProps({ isCollapseOpened: false });
+        wrapper.update();
 
         expect(wrapper).toMatchSnapshot();
     });

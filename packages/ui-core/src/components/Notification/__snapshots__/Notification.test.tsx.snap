@@ -28,14 +28,16 @@ exports[`<Notification /> it renders Notification with close collapse 1`] = `
         <p
           className="mfui-notification__text"
         >
-          Короткий текст
-          <Collapse
-            className="mfui-notification__collapse mfui-notification__collapse_hidden"
-            classNameContainer="mfui-notification__collapse-inner"
-            isOpened={false}
+          <div
+            className="mfui-notification__short-text"
+          >
+            Короткий текст
+          </div>
+          <div
+            className="mfui-notification__full-text"
           >
             Длинный текст
-          </Collapse>
+          </div>
         </p>
       </div>
       <div
@@ -87,14 +89,16 @@ exports[`<Notification /> it renders Notification with custom close collapse tit
         <p
           className="mfui-notification__text"
         >
-          Короткий текст
-          <Collapse
-            className="mfui-notification__collapse mfui-notification__collapse_hidden"
-            classNameContainer="mfui-notification__collapse-inner"
-            isOpened={false}
+          <div
+            className="mfui-notification__short-text"
+          >
+            Короткий текст
+          </div>
+          <div
+            className="mfui-notification__full-text"
           >
             Длинный текст
-          </Collapse>
+          </div>
         </p>
       </div>
       <div
@@ -146,13 +150,16 @@ exports[`<Notification /> it renders Notification with custom open collapse titl
         <p
           className="mfui-notification__text"
         >
-          <Collapse
-            className="mfui-notification__collapse"
-            classNameContainer="mfui-notification__collapse-inner"
-            isOpened={true}
+          <div
+            className="mfui-notification__short-text mfui-notification__short-text_hidden"
+          >
+            Короткий текст
+          </div>
+          <div
+            className="mfui-notification__full-text mfui-notification__full-text_show"
           >
             Длинный текст
-          </Collapse>
+          </div>
         </p>
       </div>
       <div
@@ -204,13 +211,16 @@ exports[`<Notification /> it renders Notification with open collapse 1`] = `
         <p
           className="mfui-notification__text"
         >
-          <Collapse
-            className="mfui-notification__collapse"
-            classNameContainer="mfui-notification__collapse-inner"
-            isOpened={true}
+          <div
+            className="mfui-notification__short-text mfui-notification__short-text_hidden"
+          >
+            Короткий текст
+          </div>
+          <div
+            className="mfui-notification__full-text mfui-notification__full-text_show"
           >
             Длинный текст
-          </Collapse>
+          </div>
         </p>
       </div>
       <div
@@ -224,6 +234,243 @@ exports[`<Notification /> it renders Notification with open collapse 1`] = `
           Свернуть
           <div
             className="mfui-notification__collapse-arrow mfui-notification__collapse-arrow_close"
+          >
+            <test-file-stub />
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</Tile>
+`;
+
+exports[`<Notification /> it renders Notification without close collpse after change isCollapseOpened 1`] = `
+<Notification
+  buttonText="Кнопка"
+  className="notification"
+  classes={
+    Object {
+      "container": "containerClass",
+      "content": "contentClass",
+      "root": "rootClass",
+    }
+  }
+  hasCloseButton={false}
+  href="href"
+  icon={<test-file-stub />}
+  isCollapseOpened={false}
+  isColored={true}
+  link="Ссылка"
+  rel="noopener"
+  shadowLevel="hover"
+  shortText="Короткий текст"
+  target="_blank"
+  title="title"
+  type="error"
+>
+  <Tile
+    className="mfui-notification mfui-notification_type_error mfui-notification_colored notification rootClass"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
+    radius="rounded"
+    shadowLevel="hover"
+  >
+    <div
+      className="mfui-tile mfui-tile_theme_light mfui-tile_radius_rounded mfui-tile_shadow_hover mfui-notification mfui-notification_type_error mfui-notification_colored notification rootClass"
+      onClick={[Function]}
+    >
+      <div
+        className="mfui-notification__container containerClass"
+      >
+        <div
+          className="mfui-notification__icon-container"
+        >
+          <test-file-stub />
+        </div>
+        <div
+          className="mfui-notification__content contentClass"
+        >
+          <div
+            className="mfui-notification__text-container"
+          >
+            <Header
+              as="h5"
+              className="mfui-notification__title"
+              dataAttrs={
+                Object {
+                  "root": undefined,
+                }
+              }
+            >
+              <h5
+                className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-notification__title"
+              >
+                title
+              </h5>
+            </Header>
+            <p
+              className="mfui-notification__text"
+            >
+              <div
+                className="mfui-notification__short-text"
+              >
+                Короткий текст
+              </div>
+              <div
+                className="mfui-notification__full-text"
+              >
+                Длинный текст
+              </div>
+            </p>
+          </div>
+          <div
+            className="mfui-notification__bottom mfui-notification__bottom_has-button"
+          >
+            <div
+              className="mfui-notification__bottom-block"
+            >
+              <Button
+                className="mfui-notification__button"
+                dataAttrs={
+                  Object {
+                    "root": undefined,
+                  }
+                }
+                disabled={false}
+                ellipsis={true}
+                showLoader={false}
+                sizeAll="small"
+                sizeMobile="extra-small"
+                theme="white"
+              >
+                <button
+                  className="mfui-button mfui-button_type_primary mfui-button_theme_white mfui-button_size-all_small mfui-button_size-mobile_extra-small mfui-button_no-touch mfui-button_content-type_text mfui-notification__button"
+                  disabled={false}
+                  download={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <div
+                    className="mfui-button__inner"
+                  >
+                    <div
+                      className="mfui-button__content mfui-button__content_ellipsis"
+                    >
+                      <span
+                        className="mfui-button__text mfui-button__text_ellipsis"
+                      >
+                        Кнопка
+                      </span>
+                    </div>
+                  </div>
+                </button>
+              </Button>
+            </div>
+            <button
+              className="mfui-notification__collapse-button"
+              onClick={[Function]}
+              type="button"
+            >
+              Подробнее
+              <div
+                className="mfui-notification__collapse-arrow"
+              >
+                <test-file-stub />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Tile>
+</Notification>
+`;
+
+exports[`<Notification /> it renders Notification without link, when component has collapse 1`] = `
+<Tile
+  className="mfui-notification mfui-notification_type_error mfui-notification_colored notification rootClass"
+  dataAttrs={
+    Object {
+      "root": undefined,
+    }
+  }
+  radius="rounded"
+  shadowLevel="hover"
+>
+  <div
+    className="mfui-notification__container containerClass"
+  >
+    <div
+      className="mfui-notification__icon-container"
+    >
+      <test-file-stub />
+    </div>
+    <div
+      className="mfui-notification__content contentClass"
+    >
+      <div
+        className="mfui-notification__text-container"
+      >
+        <Header
+          as="h5"
+          className="mfui-notification__title"
+          dataAttrs={
+            Object {
+              "root": undefined,
+            }
+          }
+        >
+          title
+        </Header>
+        <p
+          className="mfui-notification__text"
+        >
+          <div
+            className="mfui-notification__short-text"
+          >
+            Короткий текст
+          </div>
+          <div
+            className="mfui-notification__full-text"
+          >
+            Длинный текст
+          </div>
+        </p>
+      </div>
+      <div
+        className="mfui-notification__bottom mfui-notification__bottom_has-button"
+      >
+        <div
+          className="mfui-notification__bottom-block"
+        >
+          <Button
+            className="mfui-notification__button"
+            dataAttrs={
+              Object {
+                "root": undefined,
+              }
+            }
+            disabled={false}
+            ellipsis={true}
+            showLoader={false}
+            sizeAll="small"
+            sizeMobile="extra-small"
+            theme="white"
+          >
+            Кнопка
+          </Button>
+        </div>
+        <button
+          className="mfui-notification__collapse-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Подробнее
+          <div
+            className="mfui-notification__collapse-arrow"
           >
             <test-file-stub />
           </div>
@@ -273,7 +520,11 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
         <p
           className="mfui-notification__text"
         >
-          Some test text
+          <div
+            className="mfui-notification__short-text"
+          >
+            Some test text
+          </div>
         </p>
       </div>
       <div
@@ -298,6 +549,22 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
           >
             Кнопка
           </Button>
+          <TextLink
+            className="mfui-notification__link"
+            dataAttrs={
+              Object {
+                "root": undefined,
+              }
+            }
+            href="href"
+            rel="noopener"
+            target="_blank"
+          >
+            Ссылка
+            <test-file-stub
+              className="mfui-notification__link-arrow"
+            />
+          </TextLink>
         </div>
       </div>
     </div>
@@ -333,7 +600,11 @@ exports[`<Notification /> renders component 1`] = `
         <p
           className="mfui-notification__text"
         >
-          Some test text
+          <div
+            className="mfui-notification__short-text"
+          >
+            Some test text
+          </div>
         </p>
       </div>
     </div>
