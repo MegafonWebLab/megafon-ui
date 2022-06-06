@@ -38,6 +38,31 @@ export const OuterObserveContainer = ({ height = '200px', children }) => {
     );
 };
 
+export const OuterControlContentContainer = ({ children }) => {
+    const [currentIndex, setCurrentIndex] = React.useState<number>(1);
+
+    const handleTabClick = (index: number): void => {
+        setCurrentIndex(index + 1);
+    };
+
+    return (
+        <div>
+            <Tabs onTabClick={handleTabClick}>{children}</Tabs>
+            <div
+                style={{
+                    width: '100%',
+                    background: '#F6F6F6',
+                    textAlign: 'center',
+                    padding: '50px',
+                    fontSize: '32px',
+                }}
+            >
+                {currentIndex}
+            </div>
+        </div>
+    );
+};
+
 export const increaseSizeComponent = () => {
     const tabs = document.querySelector('.oversize-height') as HTMLDivElement;
     const actualHeight = tabs?.style.height;
