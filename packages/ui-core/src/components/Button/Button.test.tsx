@@ -139,6 +139,13 @@ describe('<Button />', () => {
             const wrapper = shallow(<Button type="primary" theme="black" />);
             expect(wrapper.exists(`${cn}_theme_green`)).toBeTruthy();
         });
+
+        it('should set classes with ellipsis', () => {
+            const wrapper = shallow(<Button ellipsis>Button text</Button>);
+
+            expect(wrapper.exists(`${cn}__content_ellipsis`)).toBeTruthy();
+            expect(wrapper.exists(`${cn}__text_ellipsis`)).toBeTruthy();
+        });
     });
 
     describe('snapshots with loader', () => {
