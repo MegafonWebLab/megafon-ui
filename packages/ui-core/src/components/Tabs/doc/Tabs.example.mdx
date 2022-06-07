@@ -48,8 +48,8 @@ const DemoContent = ({ children }) => (
 
 ```javascript collapse=Код OuterObserveContainer
 export const OuterObserveContainer = ({ height = '200px', children }) => {
-    const rootRef = React.useRef < HTMLDivElement > null;
-    const [observeContainer, setObserveContainer] = (React.useState < HTMLDivElement) | (null > null);
+    const rootRef = React.useRef<HTMLDivElement>(null);
+    const [observeContainer, setObserveContainer] = React.useState<HTMLDivElement | null>(null);
 
     React.useEffect(() => {
         setObserveContainer(rootRef.current);
@@ -66,9 +66,9 @@ export const OuterObserveContainer = ({ height = '200px', children }) => {
 };
 ```
 
-```javascript collapse=Код OuterObserveContainer
+```javascript collapse=Код OuterControlContentContainer
 export const OuterControlContentContainer = ({ height = '200px', children }) => {
-    const [currentIndex, setCurrentIndex] = React.useState < number > 1;
+    const [currentIndex, setCurrentIndex] = React.useState<number>(1);
 
     const handleTabClick = (index: number): void => {
         setCurrentIndex(index + 1);
