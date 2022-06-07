@@ -173,14 +173,6 @@ const Banner: React.FC<IBannerProps> = ({
         [onChange],
     );
 
-    const handleAutoplayStop = React.useCallback(() => {
-        setAutoPlaying(false);
-    }, []);
-
-    const handleAutoPlayStart = React.useCallback(() => {
-        setAutoPlaying(true);
-    }, []);
-
     React.useEffect(() => {
         const { current: rootElement } = rootRef;
 
@@ -190,10 +182,12 @@ const Banner: React.FC<IBannerProps> = ({
 
         rootElement?.addEventListener('mouseenter', () => {
             swiperInstance?.autoplay.stop();
+            setAutoPlaying(false);
         });
 
         rootElement?.addEventListener('mouseleave', () => {
             swiperInstance?.autoplay.start();
+            setAutoPlaying(true);
         });
     }, [autoPlay, pauseOnHover, swiperInstance?.autoplay]);
 
@@ -210,8 +204,6 @@ const Banner: React.FC<IBannerProps> = ({
                 onReachEnd={handleReachEnd}
                 onFromEdge={handleFromEdge}
                 onSlideChange={handleSlideChange}
-                onAutoplayStop={handleAutoplayStop}
-                onAutoplayStart={handleAutoPlayStart}
                 onTouchEnd={increaseAutoplayDelay}
             >
                 {React.Children.map(children, (child, i) => (
