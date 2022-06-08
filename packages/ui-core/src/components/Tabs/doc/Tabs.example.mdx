@@ -1,12 +1,13 @@
 import { Playground } from 'docz';
 import Tabs from '../Tabs';
 import Tab from '../Tab';
-import { DemoContent, OuterObserveContainer, increaseSizeComponent } from './Tabs.docz';
+import { DemoContent, OuterControlContentContainer, increaseSizeComponent, OuterContentContainer } from './Tabs.docz';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
-import ContentArea from "components/ContentArea/ContentArea";
-import Button from "components/Button/Button";
+import ContentArea from 'components/ContentArea/ContentArea';
+import Button from 'components/Button/Button';
 
 ## Особенности использования на мобильных разрешениях
+
 На разрешении меньше 1024 у списка табов при переполнении появляются "уши",
 для корректного отображения которых необходимо предоставить табам возможность растянуться на всю страницу.
 
@@ -14,7 +15,8 @@ import Button from "components/Button/Button";
 которые затем компенсируются с помощью padding для выравнивания основных видимых табов по ширине контента.
 
 Если на странице используются не гайдовые отступы для контента, то необходимо переопределить дефолтные оступы табов с помощью дополнительного класса, переданного в свойство `innerIndentsClass`
-``` css
+
+```css
 .custom-indents-class {
     padding-left: 22px;
     padding-right: 22px;
@@ -64,6 +66,33 @@ export const OuterObserveContainer = ({ height = '200px', children }) => {
 };
 ```
 
+```javascript collapse=Код OuterControlContentContainer
+export const OuterControlContentContainer = ({ height = '200px', children }) => {
+    const [currentIndex, setCurrentIndex] = React.useState<number>(1);
+
+    const handleTabClick = (index: number): void => {
+        setCurrentIndex(index + 1);
+    };
+
+    return (
+        <div>
+            <Tabs onTabClick={handleTabClick}>{children}</Tabs>
+            <div
+                style={{
+                    width: '100%',
+                    background: '#F6F6F6',
+                    textAlign: 'center',
+                    padding: '50px',
+                    fontSize: '32px',
+                }}
+            >
+                {currentIndex}
+            </div>
+        </div>
+    );
+};
+```
+
 ```javascript collapse=Код increaseSizeComponent
 export const increaseSizeComponent = () => {
     const tabs = document.querySelector('.oversize-height') as HTMLDivElement;
@@ -86,7 +115,7 @@ export const increaseSizeComponent = () => {
 
 ## Горизонтальное выравнивание табов
 
-### Слева (по умолчанию)
+### Табы растягиваются на всю ширину контейнера (по умолчанию)
 
 <Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
     <ContentArea>
@@ -107,11 +136,32 @@ export const increaseSizeComponent = () => {
     </ContentArea>
 </Playground>
 
-### По центру
+### Табы ужимаются под размер содержимого (выравнивание слева по умолчанию)
 
 <Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
     <ContentArea>
-        <Tabs hAlign="center">
+        <Tabs autoWidth>
+            <Tab title="Таб 1">
+                <DemoContent>Контент 1</DemoContent>
+            </Tab>
+            <Tab title="Таб 2">
+                <DemoContent>Контент 2</DemoContent>
+            </Tab>
+            <Tab title="Таб 3">
+                <DemoContent>Контент 3</DemoContent>
+            </Tab>
+            <Tab title="Таб 4">
+                <DemoContent>Контент 4</DemoContent>
+            </Tab>
+        </Tabs>
+    </ContentArea>
+</Playground>
+
+### Табы ужимаются под размер содержимого, выравнивание по центру
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <Tabs hAlign="center" autoWidth>
             <Tab title="Таб 1">
                 <DemoContent>Контент 1</DemoContent>
             </Tab>
@@ -126,24 +176,6 @@ export const increaseSizeComponent = () => {
 </Playground>
 
 ## Размер табов
-
-### Маленький
-
-<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
-    <ContentArea>
-        <Tabs size="small">
-            <Tab title="Таб 1">
-                <DemoContent>Контент 1</DemoContent>
-            </Tab>
-            <Tab title="Таб 2">
-                <DemoContent>Контент 2</DemoContent>
-            </Tab>
-            <Tab title="Таб 3" icon={<Balance />}>
-                <DemoContent>Контент 3</DemoContent>
-            </Tab>
-        </Tabs>
-    </ContentArea>
-</Playground>
 
 ### Средний
 
@@ -302,7 +334,7 @@ export const increaseSizeComponent = () => {
             <Tab
                 title="Таб 1"
                 icon={<Balance />}
-                renderTabWrapper={tab => <div style={{ background: '#f1f1f1'}}>{tab}</div>}
+                renderTabWrapper={tab => <div style={{ background: '#f1f1f1' }}>{tab}</div>}
             >
                 <DemoContent>Контент 1</DemoContent>
             </Tab>
@@ -328,5 +360,18 @@ export const increaseSizeComponent = () => {
                 <DemoContent>Контент 3 (размонтируется при переключении на другой таб)</DemoContent>
             </Tab>
         </Tabs>
+    </ContentArea>
+</Playground>
+
+## Переключение внешнего контента
+
+<Playground style={{ paddingRight: '0', paddingLeft: '0' }}>
+    <ContentArea>
+        <OuterControlContentContainer>
+            <Tab title="Таб 1" />
+            <Tab title="Таб 2" />
+            <Tab title="Таб 3" />
+            <Tab title="Таб 4" />
+        </OuterControlContentContainer>
     </ContentArea>
 </Playground>
