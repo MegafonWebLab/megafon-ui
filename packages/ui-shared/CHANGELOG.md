@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.0.0-beta.2...@megafon/ui-shared@4.0.0-beta.3) (2022-06-08)
+
+
+### Features
+
+* **tabs:** update by new design ([0a8a175](https://github.com/MegafonWebLab/megafon-ui/commit/0a8a175aa5e30758742c1c663da8a406e30dc3dd))
+
+
+### BREAKING CHANGES
+
+* **tabs:** new prop autoWidth added
+size prop small vallue removed
+new sizes
+
+
+
+
+
 # [4.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.0.0-beta.1...@megafon/ui-shared@4.0.0-beta.2) (2022-06-01)
 
 **Note:** Version bump only for package @megafon/ui-shared
