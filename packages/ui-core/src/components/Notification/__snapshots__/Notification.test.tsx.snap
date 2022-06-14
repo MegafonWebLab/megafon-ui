@@ -301,7 +301,7 @@ exports[`<Notification /> it renders Notification with custom open collapse titl
             Короткий текст
           </div>
           <div
-            className="mfui-notification__full-text mfui-notification__full-text_show"
+            className="mfui-notification__full-text mfui-notification__full-text_visible"
           >
             Длинный текст
           </div>
@@ -362,7 +362,7 @@ exports[`<Notification /> it renders Notification with open collapse 1`] = `
             Короткий текст
           </div>
           <div
-            className="mfui-notification__full-text mfui-notification__full-text_show"
+            className="mfui-notification__full-text mfui-notification__full-text_visible"
           >
             Длинный текст
           </div>

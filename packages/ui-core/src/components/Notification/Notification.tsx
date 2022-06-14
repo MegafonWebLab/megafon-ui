@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
 import ArrowDown from '@megafon/ui-icons/system-16-arrow-list_down_16.svg';
@@ -15,7 +15,7 @@ import Tile from 'components/Tile/Tile';
 import CancelIcon from './close-icon.svg';
 import './Notification.less';
 
-const TIMEOUT_DELAY = 300;
+const TIMEOUT_DELAY = 400;
 
 export const NotificationTypes = {
     SUCCESS: 'success',
@@ -35,6 +35,11 @@ export const ShadowTypes = {
 
 type ShadowType = typeof ShadowTypes[keyof typeof ShadowTypes];
 
+type RefsType = {
+    fullText?: HTMLDivElement | null;
+    shortText?: HTMLDivElement | null;
+    textWrap?: HTMLDivElement | null;
+};
 export interface INotificationProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -128,9 +133,18 @@ const Notification: React.FC<INotificationProps> = ({
 }) => {
     const shortTextRef = useRef<HTMLDivElement>(null);
     const fullTextRef = useRef<HTMLDivElement>(null);
-    const textWrapRef = useRef<HTMLDivElement>(null);
+    const wrapTextRef = useRef<HTMLDivElement>(null);
 
     const [showFullText, setShowFullText] = useState(isCollapseOpened);
+    const [updateTextHeight, setUpdateTextHeight] = useState(false);
+    const [refs, setRefs] = useState<RefsType>({});
+
+    const initialTextClasses = {
+        short: { hidden: shortText && showFullText },
+        full: { visible: showFullText },
+    };
+
+    const [textClasses, setTextClass] = useState(initialTextClasses);
 
     const hasBottom = shortText || buttonText || link;
     const isErrorType = type === NotificationTypes.ERROR;
@@ -139,29 +153,55 @@ const Notification: React.FC<INotificationProps> = ({
         setShowFullText(isCollapseOpened);
     }, [isCollapseOpened]);
 
-    useEffect(() => {
-        const fullTextElem = fullTextRef.current;
-        const shortTextElem = shortTextRef.current;
-        const wrapTextElem = textWrapRef.current;
+    useLayoutEffect(() => {
+        setRefs({
+            fullText: fullTextRef.current,
+            shortText: shortTextRef.current,
+            textWrap: wrapTextRef.current,
+        });
+    }, []);
 
-        if (!shortTextElem || !fullTextElem || !wrapTextElem) {
+    useEffect((): void => {
+        if (!refs.fullText || !refs.shortText || !refs.textWrap) {
             return undefined;
         }
 
-        const element = showFullText ? fullTextElem : shortTextElem;
+        const visibleElement = showFullText ? refs.shortText : refs.fullText;
 
-        const { height } = element.getBoundingClientRect();
+        const { height } = visibleElement.getBoundingClientRect();
 
-        wrapTextElem.style.height = `${height}px`;
+        refs.textWrap.style.height = `${height}px`;
+
+        return setUpdateTextHeight(!updateTextHeight);
+        // не должен запускаться при изменении флага updateTextHeight;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [showFullText, refs]);
+
+    useEffect(() => {
+        if (!refs.fullText || !refs.shortText || !refs.textWrap) {
+            return undefined;
+        }
+
+        const hiddenElement = showFullText ? refs.fullText : refs.shortText;
+
+        const { height } = hiddenElement.getBoundingClientRect();
+
+        refs.textWrap.style.height = `${height}px`;
+        setTextClass(initialTextClasses);
 
         const timeoutId = setTimeout(() => {
-            wrapTextElem.style.height = `auto`;
+            if (refs.textWrap) {
+                refs.textWrap.style.height = 'auto';
+            }
         }, TIMEOUT_DELAY);
 
         return (): void => {
             clearTimeout(timeoutId);
         };
-    }, [showFullText]);
+        // не должен запускаться при изменении флага showFullText;
+        // запускается по флагу updateTextHeight, который изменяется в предыдущем эффекте.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [updateTextHeight]);
 
     const handleCollapseButtonClick = (): void => {
         setShowFullText(!showFullText);
@@ -254,15 +294,15 @@ const Notification: React.FC<INotificationProps> = ({
                             </Header>
                         )}
                         <p
-                            ref={textWrapRef}
+                            ref={wrapTextRef}
                             {...filterDataAttrs(dataAttrs?.text)}
                             className={cn('text', { 'close-padding': hasCloseButton && !title })}
                         >
-                            <div ref={shortTextRef} className={cn('short-text', { hidden: shortText && showFullText })}>
+                            <div ref={shortTextRef} className={cn('short-text', textClasses.short)}>
                                 {shortText || children}
                             </div>
                             {shortText && (
-                                <div ref={fullTextRef} className={cn('full-text', { show: showFullText })}>
+                                <div ref={fullTextRef} className={cn('full-text', textClasses.full)}>
                                     {children}
                                 </div>
                             )}
