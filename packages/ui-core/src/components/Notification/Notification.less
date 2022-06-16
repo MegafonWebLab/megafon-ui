@@ -55,7 +55,7 @@
     }
 
     &__text {
-        .commonFont();
+        .smallFont();
 
         position: relative;
 
@@ -65,6 +65,10 @@
         color: var(--content);
 
         transition: height 300ms;
+
+        @media @mobileBU {
+            .commonFont();
+        }
     }
 
     &__short-text {
