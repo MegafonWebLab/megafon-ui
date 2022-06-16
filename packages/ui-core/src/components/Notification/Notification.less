@@ -183,23 +183,10 @@
         }
     }
 
-    &__collapse-arrow {
-        margin-top: -1px;
-
-        @media @mobileBU {
-            margin-top: 3px;
-        }
-    }
-
-    &__collapse-arrow_close {
-        @media @mobileBU {
-            margin-top: 2px;
-        }
-    }
-
     &__collapse-button {
         .h5();
         display: flex;
+        align-items: center;
 
         height: fit-content;
         padding: 0;
@@ -207,6 +194,7 @@
         border: none;
 
         color: var(--systemBlue);
+        text-align: right;
 
         background-color: transparent;
 

@@ -293,7 +293,7 @@ const Notification: React.FC<INotificationProps> = ({
                                 {title}
                             </Header>
                         )}
-                        <p
+                        <div
                             ref={wrapTextRef}
                             {...filterDataAttrs(dataAttrs?.text)}
                             className={cn('text', { 'close-padding': hasCloseButton && !title })}
@@ -306,7 +306,7 @@ const Notification: React.FC<INotificationProps> = ({
                                     {children}
                                 </div>
                             )}
-                        </p>
+                        </div>
                     </div>
                     {hasBottom && (
                         <div className={cn('bottom', { 'has-button': !!buttonText })}>
