@@ -23,7 +23,7 @@
     &__field {
         display: block;
         width: 100%;
-        padding: 25px 56px 8px 16px;
+        padding: 25px 56px 9px 16px;
 
         border: 1px solid var(--spbSky2);
         border-radius: 12px;
@@ -81,6 +81,20 @@
         opacity: 1;
     }
 
+    &__field::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &__field::-webkit-scrollbar-thumb {
+        border-right: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-radius: 4px;
+
+        background-color: var(--spbSky2);
+
+        background-clip: content-box;
+    }
+
     &__field:focus:-moz-placeholder {
         opacity: 1;
     }
@@ -104,17 +118,39 @@
         .commonFont();
     }
 
+    &__field_textarea ~ &__label {
+        top: 16px;
+    }
+
     &__field:focus ~ &__label,
     &__field:not(:placeholder-shown) ~ &__label {
-        transform: scale(0.8) translate(-11%, -60%);
+        transform: scale(0.8) translate(-11%, -75%);
 
         transition-duration: 0.2s;
+    }
+
+    &__field_textarea:focus ~ &__label,
+    &__field_textarea:not(:placeholder-shown) ~ &__label {
+        transform: scale(0.8) translate(-11%, -50%);
     }
 
     &__field-wrapper {
         position: relative;
 
         display: flex;
+    }
+
+    &__field-wrapper_textarea_fixed:before {
+        content: '';
+        position: absolute;
+        top: 1.55%;
+        right: 50px;
+        left: 16px;
+
+        display: block;
+        height: 28px;
+
+        background: var(--base);
     }
 
     &__icon-box {
@@ -206,13 +242,17 @@
         &__icon-box {
             cursor: default !important;
         }
+
+        &__field-wrapper_textarea_fixed:before {
+            background-color: var(--spbSky0);
+        }
     }
 
     //mod theme:
 
-    &_theme_default(&_error) {
+    &_theme_default&_error & {
         &__counter_error,
-        &__text_error {
+        &__wrap {
             color: var(--fury);
         }
     }
