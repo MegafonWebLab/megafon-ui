@@ -683,9 +683,7 @@ exports[`<TextField /> should render with common props 1`] = `
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text"
-    >
+    <div>
       noticeText
     </div>
   </div>
@@ -731,9 +729,7 @@ exports[`<TextField /> should render with custom icon 1`] = `
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text"
-    >
+    <div>
       noticeText
     </div>
   </div>
@@ -809,9 +805,7 @@ exports[`<TextField /> should render with error 1`] = `
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text mfui-text-field__text_error"
-    >
+    <div>
       noticeText
     </div>
   </div>
@@ -851,9 +845,7 @@ exports[`<TextField /> should render with hidden icon 1`] = `
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text"
-    >
+    <div>
       noticeText
     </div>
   </div>
@@ -901,9 +893,7 @@ exports[`<TextField /> should render with valid 1`] = `
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text mfui-text-field__text_success"
-    >
+    <div>
       noticeText
     </div>
   </div>
@@ -915,7 +905,7 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
   >
     <textarea
       className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
@@ -948,9 +938,7 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text"
-    >
+    <div>
       noticeText
     </div>
   </div>
@@ -962,7 +950,7 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_flexible"
   >
     <textarea
       className="mfui-text-field__field mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible"
@@ -995,9 +983,7 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text"
-    >
+    <div>
       noticeText
     </div>
   </div>
@@ -1009,7 +995,7 @@ exports[`<TextField /> textarea should render with error because of max limit is
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
   >
     <textarea
       className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
@@ -1042,9 +1028,7 @@ exports[`<TextField /> textarea should render with error because of max limit is
   <div
     className="mfui-text-field__wrap"
   >
-    <div
-      className="mfui-text-field__text"
-    >
+    <div>
       noticeText
     </div>
     <span
@@ -1074,7 +1058,7 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
     className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
         className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
@@ -1120,7 +1104,7 @@ exports[`<TextField /> textarea should render with number value 1`] = `
   className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
   >
     <textarea
       className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
@@ -1165,7 +1149,7 @@ exports[`<TextField /> textarea should render with string value 1`] = `
   className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
   >
     <textarea
       className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
@@ -1223,7 +1207,7 @@ exports[`<TextField /> textarea should render with value after updating number p
     className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
         className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
@@ -1282,7 +1266,7 @@ exports[`<TextField /> textarea should render with value after updating string p
     className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
         className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
@@ -1341,7 +1325,7 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
     className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch"
+      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_no-touch mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
         className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"

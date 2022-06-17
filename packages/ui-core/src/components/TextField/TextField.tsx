@@ -422,19 +422,16 @@ const TextField: React.FC<TextFieldProps> = ({
                 className,
             )}
         >
-            <div className={cn('field-wrapper', { 'no-touch': !isTouch })}>{renderField()}</div>
+            <div
+                className={cn('field-wrapper', {
+                    'no-touch': !isTouch,
+                    textarea: textarea && textareaType,
+                })}
+            >
+                {renderField()}
+            </div>
             <div className={cn('wrap')}>
-                {noticeText && (
-                    <div
-                        {...filterDataAttrs(dataAttrs?.notice)}
-                        className={cn('text', {
-                            error: isErrorVerification,
-                            success: isValidVerification,
-                        })}
-                    >
-                        {noticeText}
-                    </div>
-                )}
+                {noticeText && <div {...filterDataAttrs(dataAttrs?.notice)}>{noticeText}</div>}
                 {symbolCounter && (
                     <span className={cn('counter', { error: isMaxLimitExceeded })}>
                         {`${currentSymbolCount}/${symbolCounter}`}
