@@ -10,8 +10,17 @@ export const wrapperStyle = {
 };
 
 interface IDemoNotificationWrapperProps {
-    children: (prop: { onClose?: () => void; onLinkClick?: () => void; initialClickAmount: number }) => JSX.Element;
-    initialClickAmount: number;
+    children: (prop: {
+        onClose: () => void;
+        onLinkClick: () => void;
+        onButtonClick: () => void;
+        onWrapperButtonClick: () => void;
+        onCollapseButtonClick: (value: boolean) => void;
+        initialClickAmount: number;
+        isCollapseOpen: boolean;
+    }) => JSX.Element;
+    initialClickAmount?: number;
+    initialButtonClickAmount?: number;
 }
 
 export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ({
@@ -19,10 +28,15 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
     children,
 }) => {
     const [clickAmount, setClickAmount] = useState(initialClickAmount);
+    const [isCollapseOpen, setIsCollapseOpen] = useState(true);
 
     return children({
+        onCollapseButtonClick: (value: boolean) => setIsCollapseOpen(value),
+        onWrapperButtonClick: () => setIsCollapseOpen(!isCollapseOpen),
+        onButtonClick: () => setClickAmount(clickAmount + 1),
         onLinkClick: () => setClickAmount(clickAmount + 1),
         onClose: () => setClickAmount(clickAmount + 1),
         initialClickAmount: clickAmount,
+        isCollapseOpen,
     });
 };

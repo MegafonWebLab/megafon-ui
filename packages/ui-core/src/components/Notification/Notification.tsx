@@ -1,16 +1,21 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
+import ArrowDown from '@megafon/ui-icons/system-16-arrow-list_down_16.svg';
+import ArrowUp from '@megafon/ui-icons/system-16-arrow-list_up_16.svg';
 import RightArrow from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 import WarningIcon from '@megafon/ui-icons/system-24-attention_invert_24.svg';
 import SuccessIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import InfoIcon from '@megafon/ui-icons/system-24-info_invert_24.svg';
 import * as PropTypes from 'prop-types';
+import Button from 'components/Button/Button';
 import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';
 import Tile from 'components/Tile/Tile';
 import CancelIcon from './close-icon.svg';
 import './Notification.less';
+
+const TIMEOUT_DELAY = 400;
 
 export const NotificationTypes = {
     SUCCESS: 'success',
@@ -30,6 +35,11 @@ export const ShadowTypes = {
 
 type ShadowType = typeof ShadowTypes[keyof typeof ShadowTypes];
 
+type RefsType = {
+    fullText?: HTMLDivElement | null;
+    shortText?: HTMLDivElement | null;
+    textWrap?: HTMLDivElement | null;
+};
 export interface INotificationProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -49,6 +59,20 @@ export interface INotificationProps {
     hasCloseButton?: boolean;
     /** Заголовок */
     title?: string;
+    /** Короткий текст, отображаемый при закрытом расхлопе */
+    shortText?: string;
+    /** заголовок закрытого расхлопа */
+    closeCollapseTitle?: string;
+    /** заголовок открытого расхлопа */
+    openCollapseTitle?: string;
+    /** Управление состоянием открыт/закрыт расхлопа "Подробнее" */
+    isCollapseOpened?: boolean;
+    /** Текст кнопки */
+    buttonText?: string;
+    /** Лоадер кнопки */
+    buttonLoader?: boolean;
+    /** Заблокировать кнопку */
+    buttonDisable?: boolean;
     /** Текст ссылки внизу уведомления */
     link?: string;
     /** rel - аргумент тега <a> для ссылки */
@@ -66,11 +90,17 @@ export interface INotificationProps {
         text?: Record<string, string>;
         link?: Record<string, string>;
         close?: Record<string, string>;
+        button?: Record<string, string>;
+        collapseButton?: Record<string, string>;
     };
     /** Обработчик на закрытие */
     onClose?: () => void;
     /** Обработчик клика по ссылке */
     onLinkClick?: () => void;
+    /** Обработчик клика по кнопке */
+    onButtonClick?: () => void;
+    /** Обработчик клика по кнопке расхлопа */
+    onCollapseButtonClick?: (value: boolean) => void;
 }
 
 const cn = cnCreate('mfui-notification');
@@ -83,6 +113,13 @@ const Notification: React.FC<INotificationProps> = ({
     isColored = true,
     hasCloseButton,
     title,
+    shortText,
+    closeCollapseTitle = 'Подробнее',
+    openCollapseTitle = 'Свернуть',
+    isCollapseOpened = false,
+    buttonText,
+    buttonLoader = false,
+    buttonDisable = false,
     link,
     rel,
     href,
@@ -91,7 +128,86 @@ const Notification: React.FC<INotificationProps> = ({
     dataAttrs,
     onClose,
     onLinkClick,
+    onButtonClick,
+    onCollapseButtonClick,
 }) => {
+    const shortTextRef = useRef<HTMLDivElement>(null);
+    const fullTextRef = useRef<HTMLDivElement>(null);
+    const wrapTextRef = useRef<HTMLDivElement>(null);
+
+    const [showFullText, setShowFullText] = useState(isCollapseOpened);
+    const [updateTextHeight, setUpdateTextHeight] = useState(false);
+    const [refs, setRefs] = useState<RefsType>({});
+
+    const initialTextClasses = {
+        short: { hidden: shortText && showFullText },
+        full: { visible: showFullText },
+    };
+
+    const [textClasses, setTextClass] = useState(initialTextClasses);
+
+    const hasBottom = shortText || buttonText || link;
+    const isErrorType = type === NotificationTypes.ERROR;
+
+    useEffect(() => {
+        setShowFullText(isCollapseOpened);
+    }, [isCollapseOpened]);
+
+    useLayoutEffect(() => {
+        setRefs({
+            fullText: fullTextRef.current,
+            shortText: shortTextRef.current,
+            textWrap: wrapTextRef.current,
+        });
+    }, []);
+
+    useEffect((): void => {
+        if (!refs.fullText || !refs.shortText || !refs.textWrap) {
+            return undefined;
+        }
+
+        const visibleElement = showFullText ? refs.shortText : refs.fullText;
+
+        const { height } = visibleElement.getBoundingClientRect();
+
+        refs.textWrap.style.height = `${height}px`;
+
+        return setUpdateTextHeight(!updateTextHeight);
+        // не должен запускаться при изменении флага updateTextHeight;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [showFullText, refs]);
+
+    useEffect(() => {
+        if (!refs.fullText || !refs.shortText || !refs.textWrap) {
+            return undefined;
+        }
+
+        const hiddenElement = showFullText ? refs.fullText : refs.shortText;
+
+        const { height } = hiddenElement.getBoundingClientRect();
+
+        refs.textWrap.style.height = `${height}px`;
+        setTextClass(initialTextClasses);
+
+        const timeoutId = setTimeout(() => {
+            if (refs.textWrap) {
+                refs.textWrap.style.height = 'auto';
+            }
+        }, TIMEOUT_DELAY);
+
+        return (): void => {
+            clearTimeout(timeoutId);
+        };
+        // не должен запускаться при изменении флага showFullText;
+        // запускается по флагу updateTextHeight, который изменяется в предыдущем эффекте.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [updateTextHeight]);
+
+    const handleCollapseButtonClick = (): void => {
+        setShowFullText(!showFullText);
+        onCollapseButtonClick?.(!showFullText);
+    };
+
     const renderLink = (): JSX.Element => (
         <TextLink
             dataAttrs={{ root: dataAttrs?.link }}
@@ -102,8 +218,38 @@ const Notification: React.FC<INotificationProps> = ({
             target={target}
         >
             {link}
-            <RightArrow className={cn('right-arrow')} />
+            <RightArrow className={cn('link-arrow')} />
         </TextLink>
+    );
+
+    const renderButton = (): JSX.Element => (
+        <Button
+            className={cn('button')}
+            dataAttrs={{ root: dataAttrs?.button }}
+            sizeAll="small"
+            sizeMobile="extra-small"
+            theme={isErrorType && isColored ? 'white' : 'green'}
+            showLoader={buttonLoader}
+            disabled={buttonDisable}
+            ellipsis={!buttonLoader}
+            onClick={onButtonClick}
+        >
+            {buttonText}
+        </Button>
+    );
+
+    const renderCollapseButton = (): JSX.Element => (
+        <button
+            {...filterDataAttrs(dataAttrs?.collapseButton)}
+            type="button"
+            className={cn('collapse-button')}
+            onClick={handleCollapseButtonClick}
+        >
+            {showFullText ? openCollapseTitle : closeCollapseTitle}
+            <div className={cn('collapse-arrow', { close: showFullText })}>
+                {showFullText ? <ArrowUp /> : <ArrowDown />}
+            </div>
+        </button>
     );
 
     const renderIcon = (): JSX.Element => {
@@ -140,24 +286,39 @@ const Notification: React.FC<INotificationProps> = ({
         >
             <div className={cn('container', [containerClass])}>
                 <div className={cn('icon-container')}>{renderIcon()}</div>
-
                 <div className={cn('content', [contentClass])}>
-                    {title && (
-                        <Header
-                            dataAttrs={{ root: dataAttrs?.title }}
-                            as="h5"
-                            className={cn('title', { 'close-padding': hasCloseButton })}
+                    <div className={cn('text-container')}>
+                        {title && (
+                            <Header dataAttrs={{ root: dataAttrs?.title }} as="h5" className={cn('title')}>
+                                {title}
+                            </Header>
+                        )}
+                        <div
+                            ref={wrapTextRef}
+                            {...filterDataAttrs(dataAttrs?.text)}
+                            className={cn('text', { 'close-padding': hasCloseButton && !title })}
                         >
-                            {title}
-                        </Header>
+                            <div ref={shortTextRef} className={cn('short-text', textClasses.short)}>
+                                {shortText || children}
+                            </div>
+                            {shortText && (
+                                <div ref={fullTextRef} className={cn('full-text', textClasses.full)}>
+                                    {children}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    {hasBottom && (
+                        <div className={cn('bottom', { 'has-button': !!buttonText })}>
+                            {(buttonText || link) && (
+                                <div className={cn('bottom-block')}>
+                                    {buttonText && renderButton()}
+                                    {link && !shortText && renderLink()}
+                                </div>
+                            )}
+                            {shortText && renderCollapseButton()}
+                        </div>
                     )}
-                    <p
-                        {...filterDataAttrs(dataAttrs?.text)}
-                        className={cn('text', { 'close-padding': hasCloseButton && !title })}
-                    >
-                        {children}
-                    </p>
-                    {link && renderLink()}
                 </div>
             </div>
             {hasCloseButton && (
@@ -181,6 +342,13 @@ Notification.propTypes = {
     isColored: PropTypes.bool,
     hasCloseButton: PropTypes.bool,
     title: PropTypes.string,
+    shortText: PropTypes.string,
+    closeCollapseTitle: PropTypes.string,
+    openCollapseTitle: PropTypes.string,
+    isCollapseOpened: PropTypes.bool,
+    buttonText: PropTypes.string,
+    buttonLoader: PropTypes.bool,
+    buttonDisable: PropTypes.bool,
     link: PropTypes.string,
     rel: PropTypes.string,
     href: PropTypes.string,
@@ -192,8 +360,12 @@ Notification.propTypes = {
         text: PropTypes.objectOf(PropTypes.string.isRequired),
         link: PropTypes.objectOf(PropTypes.string.isRequired),
         close: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
+        collapseButton: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     onClose: PropTypes.func,
     onLinkClick: PropTypes.func,
+    onButtonClick: PropTypes.func,
+    onCollapseButtonClick: PropTypes.func,
 };
 export default Notification;

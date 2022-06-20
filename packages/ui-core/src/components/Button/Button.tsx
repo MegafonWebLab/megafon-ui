@@ -91,6 +91,8 @@ export interface IButtonProps {
     disabled?: boolean;
     /** Ссылка на элемент */
     buttonRef?: Ref<HTMLButtonElement | HTMLAnchorElement>;
+    /** Обрезать текст при недостаточной ширине и добавлять многоточие */
+    ellipsis?: boolean;
     /** Обработчик клика по кнопке */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -120,6 +122,7 @@ const Button: React.FC<IButtonProps> = ({
     icon,
     disabled,
     children,
+    ellipsis = false,
     onClick,
     dataAttrs,
     buttonRef,
@@ -170,13 +173,13 @@ const Button: React.FC<IButtonProps> = ({
         }
 
         return (
-            <div {...filterDataAttrs(dataAttrs?.content)} className={cn('content', contentClassName)}>
+            <div {...filterDataAttrs(dataAttrs?.content)} className={cn('content', { ellipsis }, contentClassName)}>
                 {icon && <div className={cn('icon')}>{icon}</div>}
-                {children && <span className={cn('text')}>{children}</span>}
+                {children && <span className={cn('text', { ellipsis })}>{children}</span>}
                 {!icon && showArrow && <Arrow className={cn('icon-arrow')} />}
             </div>
         );
-    }, [children, icon, dataAttrs?.content, contentClassName, showArrow]);
+    }, [children, icon, dataAttrs?.content, contentClassName, showArrow, ellipsis]);
 
     const contentType = React.useMemo(() => {
         switch (true) {
@@ -295,6 +298,7 @@ Button.propTypes = {
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
+    ellipsis: PropTypes.bool,
     onClick: PropTypes.func,
 };
 

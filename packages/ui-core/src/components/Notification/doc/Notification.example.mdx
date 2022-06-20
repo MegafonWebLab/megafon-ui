@@ -1,27 +1,29 @@
 import { Playground, Props } from 'docz';
 import Notification from '../Notification';
 import { DemoNotificationWrapper, wrapperStyle } from './Notification.docz';
+import Button from 'components/Button/Button';
 import Rating1 from '@megafon/ui-icons/system-24-rating_1_24.svg';
 import Sended from '@megafon/ui-icons/system-16-sended_16.svg';
 import Cancel from '@megafon/ui-icons/system-16-cancel_16.svg';
 import Send from '@megafon/ui-icons/system-24-send_24.svg';
 
 ```javascript collapse=Код DemoNotificationWrapper
-export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ( {
-    initialClickAmount = 0,
-    children,
-} ) => {
-    const [cliickAmount, setClickAmount] = useState(initialClickAmount);
+export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ({
+   initialClickAmount = 0,
+   children,
+}) => {
+   const [clickAmount, setClickAmount] = useState(initialClickAmount);
+   const [isCollapseOpen, setIsCollapseOpen] = useState(true);
 
-    return (
-        <div>
-            {children({
-                onLinkClick: () => setClickAmount(cliickAmount + 1),
-                onClose: () => setClickAmount(cliickAmount + 1),
-                initialClickAmount: cliickAmount,
-            })}
-        </div>
-    );
+   return children({
+      onCollapseButtonClick: (value: boolean) => setIsCollapseOpen(value),
+      onWrapperButtonClick: () => setIsCollapseOpen(!isCollapseOpen),
+      onButtonClick: () => setClickAmount(clickAmount + 1),
+      onLinkClick: () => setClickAmount(clickAmount + 1),
+      onClose: () => setClickAmount(clickAmount + 1),
+      initialClickAmount: clickAmount,
+      isCollapseOpen,
+   });
 };
 ```
 
@@ -226,7 +228,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 <Playground style={wrapperStyle}>
    <Notification
       type="info"
-      title="Для всех типов с белым фоном"
+      title="Для всех типов, кроме error с цветным фоном"
       shadowLevel="high"
       link="Cсылка синего цвета"
       target="_blank"
@@ -235,18 +237,10 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    >
       Текст уведомления
    </Notification>
-   <Notification
-      type="warning"
-      title="Для типов info, success и warning, имеющих цветной фон"
-      link="Cсылка синего цвета"
-      href="/"
-      target="_blank"
-   >
-      Текст уведомления
-   </Notification>
+
    <Notification
       type="error"
-      title="Для типа error"
+      title="Для типа error с цветным фоном"
       link="Cсылка белого цвета"
       href="/"
       target="_blank"
@@ -312,6 +306,146 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    />
 </Playground>
 
+## Уведомления с кнопками
+
+### Цвет кнопки меняется в зависимости от типа уведомления
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="info"
+      title="Для всех типов, кроме error с цветным фоном"
+      shadowLevel="high"
+      buttonText="Зеленая кнопка"
+      isColored={false}
+   >
+      Текст уведомления
+   </Notification>
+
+   <Notification
+      type="error"
+      title="Для типа error с цветным фоном"
+      buttonText="Белая кнопка"
+   >
+      Текст уведомления
+   </Notification>
+</Playground>
+
+### Комбинирование кнопки с расхлопом и ссылкой
+При недостаточной ширине элементы не переносятся в столбик, а всегда идут в одну строку. Текст на кнопке сокращается путем добавления в конце многоточия.
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="info"
+      title="Кнопка + ссылка"
+      shadowLevel="high"
+      buttonText="Кнопка"
+      link="Ссылка"
+      target="_blank"
+      href="/"
+      onButtonClick={() => {}}
+   >
+      Выравниваются по левому краю контента.
+   </Notification>
+
+   <Notification
+      type="warning"
+      title="Кнопка + расхлоп"
+      shadowLevel="high"
+      buttonText="Подключить"
+      shortText="Короткий текст уведомления"
+      isCollapseOpened
+      onButtonClick={() => {}}
+   >
+      Кнопка выравнивается по левому краю, расхлоп - по правому краю. 
+   </Notification>
+</Playground>
+
+### Кастомный обработчик клика по кнопке
+
+<Playground style={wrapperStyle}>
+   <DemoNotificationWrapper>
+      {({ initialClickAmount, onButtonClick }) =>
+         <Notification
+            type="info"
+            title="Заголовок уведомления"
+            shadowLevel="zero"
+            buttonText="Кнопка с обработчиком"
+            onButtonClick={onButtonClick}
+         >
+            {`Количество кликов: ${initialClickAmount}`}
+         </Notification>
+      }
+   </DemoNotificationWrapper>
+</Playground>
+
+## Уведомления с расхлопом
+   Расхлоп может комбинироваться с кнопкой, но не со ссылкой
+
+### По умолчанию
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="info"
+      title="По умолчанию расхлоп изначально закрыт"
+      shadowLevel="high"
+      buttonText="Подключить"
+      shortText="Здание было красивым и странным: оно напоминало жилище эльфов"
+   >
+      Здание было красивым и странным: оно напоминало не то жилище эльфов, не то замок рыцарей-монахов. Белые шпили, стрельчатые окна, легкие мраморные беседки
+   </Notification>
+</Playground>
+
+### Кастомные заголовки расхлопа
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="success"
+      title="По умолчанию расхлоп изначально закрыт"
+      shadowLevel="high"
+      buttonText="Подключить"
+      shortText="Здание было красивым и странным: оно напоминало жилище эльфов"
+      closeCollapseTitle="Показать весь текст"
+      openCollapseTitle=" Скрыть часть текста"
+   >
+      Здание было красивым и странным: оно напоминало не то жилище эльфов, не то замок рыцарей-монахов. Белые шпили, стрельчатые окна, легкие мраморные беседки
+   </Notification>
+</Playground>
+
+### Управление состоянием расхлопа
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="info"
+      title="Изначально открыт"
+      shadowLevel="high"
+      isColored={false}
+      isCollapseOpened
+      shortText="Устанавливает только начальное состояние расхлопа"
+   >
+      Устанавливает только начальное состояние расхлопа. Управляется только по кнопке расхлопа.
+   </Notification>
+
+   <DemoNotificationWrapper>
+      {({ isCollapseOpen, onWrapperButtonClick, onCollapseButtonClick }) =>
+         <div>
+            <Notification
+               type="info"
+               title="Изначально открыт"
+               shadowLevel="high"
+               isColored={false}
+               isCollapseOpened={isCollapseOpen}
+               shortText="Есть управление состоянием расхлопа извне"
+               onCollapseButtonClick={onCollapseButtonClick}
+            >
+               Есть управление состоянием расхлопа извне. Управлять состоянием расхлопа можно по внешней кнопке, либо по основной кнопке расхлопа.
+            </Notification>
+            <div style={{ marginTop: '15px' }}>
+               <Button onClick={onWrapperButtonClick}>Внешнее управление</Button>
+            </div>
+         </div>
+      }
+   </DemoNotificationWrapper>
+</Playground>
 
 ## Кнопка закрытия
 
@@ -352,6 +486,6 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       shadowLevel="zero"
       hasCloseButton
    >
-     Если высота контента меньше высоты иконки, то они выравниваются по центру контентной области.
+     Центрирование по вертикали при небольшой высоте текста.
    </Notification>
 </Playground>
