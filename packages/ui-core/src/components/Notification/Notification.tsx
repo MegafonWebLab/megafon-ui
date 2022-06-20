@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
 import ArrowDown from '@megafon/ui-icons/system-16-arrow-list_down_16.svg';
@@ -35,11 +35,6 @@ export const ShadowTypes = {
 
 type ShadowType = typeof ShadowTypes[keyof typeof ShadowTypes];
 
-type RefsType = {
-    fullText?: HTMLDivElement | null;
-    shortText?: HTMLDivElement | null;
-    textWrap?: HTMLDivElement | null;
-};
 export interface INotificationProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -137,7 +132,6 @@ const Notification: React.FC<INotificationProps> = ({
 
     const [showFullText, setShowFullText] = useState(isCollapseOpened);
     const [updateTextHeight, setUpdateTextHeight] = useState(false);
-    const [refs, setRefs] = useState<RefsType>({});
 
     const initialTextClasses = {
         short: { hidden: shortText && showFullText },
@@ -153,45 +147,37 @@ const Notification: React.FC<INotificationProps> = ({
         setShowFullText(isCollapseOpened);
     }, [isCollapseOpened]);
 
-    useLayoutEffect(() => {
-        setRefs({
-            fullText: fullTextRef.current,
-            shortText: shortTextRef.current,
-            textWrap: wrapTextRef.current,
-        });
-    }, []);
-
     useEffect((): void => {
-        if (!refs.fullText || !refs.shortText || !refs.textWrap) {
+        if (!fullTextRef.current || !shortTextRef.current || !wrapTextRef.current) {
             return undefined;
         }
 
-        const visibleElement = showFullText ? refs.shortText : refs.fullText;
+        const visibleElement = showFullText ? shortTextRef.current : fullTextRef.current;
 
         const { height } = visibleElement.getBoundingClientRect();
 
-        refs.textWrap.style.height = `${height}px`;
+        wrapTextRef.current.style.height = `${height}px`;
 
         return setUpdateTextHeight(!updateTextHeight);
         // не должен запускаться при изменении флага updateTextHeight;
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [showFullText, refs]);
+    }, [showFullText]);
 
     useEffect(() => {
-        if (!refs.fullText || !refs.shortText || !refs.textWrap) {
+        if (!fullTextRef.current || !shortTextRef.current || !wrapTextRef.current) {
             return undefined;
         }
 
-        const hiddenElement = showFullText ? refs.fullText : refs.shortText;
+        const hiddenElement = showFullText ? fullTextRef.current : shortTextRef.current;
 
         const { height } = hiddenElement.getBoundingClientRect();
 
-        refs.textWrap.style.height = `${height}px`;
+        wrapTextRef.current.style.height = `${height}px`;
         setTextClass(initialTextClasses);
 
         const timeoutId = setTimeout(() => {
-            if (refs.textWrap) {
-                refs.textWrap.style.height = 'auto';
+            if (wrapTextRef.current) {
+                wrapTextRef.current.style.height = 'auto';
             }
         }, TIMEOUT_DELAY);
 
