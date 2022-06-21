@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.10.1...@megafon/ui-core@3.11.0) (2022-06-21)
+
+
+### Bug Fixes
+
+* **button:** fix font styles for extra small size ([f475b05](https://github.com/MegafonWebLab/megafon-ui/commit/f475b05ab9d62aa56645fb90ccdef88996e72a70))
+
+
+### Features
+
+* **button:** add prop ellipsis ([1978277](https://github.com/MegafonWebLab/megafon-ui/commit/1978277a918cb680e32259042c1a7e3c58056b1b))
+* **notification:** add ability to display button and collapse ([a5fe2f0](https://github.com/MegafonWebLab/megafon-ui/commit/a5fe2f0730b71469c2fb06a148b0e4574adb2d7b))
+
+
+
+
+
 ## [3.10.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.10.0...@megafon/ui-core@3.10.1) (2022-06-07)
 
 
