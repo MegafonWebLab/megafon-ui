@@ -45,6 +45,8 @@
 
     &__field_textarea {
         padding-top: 28px;
+
+        resize: none;
     }
 
     &__field_type_fixed {
@@ -54,7 +56,27 @@
     &__field_type_flexible {
         overflow: hidden;
 
-        resize: vertical;
+        transition: height 0.1s;
+
+        resize: none;
+        will-change: height;
+    }
+
+    &__resizer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: content-box;
+
+        width: 12px;
+        height: 12px;
+        padding: 4px;
+
+        cursor: ns-resize;
     }
 
     &__field_scrolling {
@@ -82,17 +104,15 @@
     }
 
     &__field::-webkit-scrollbar {
-        width: 8px;
+        width: 16px;
     }
 
     &__field::-webkit-scrollbar-thumb {
-        border-right: 2px solid transparent;
-        border-left: 2px solid transparent;
-        border-radius: 4px;
+        border: 6px solid transparent;
+        border-radius: 16px;
 
-        background-color: var(--spbSky2);
-
-        background-clip: content-box;
+        background-color: rgba(#333333, 0.2);
+        background-clip: padding-box;
     }
 
     &__field:focus:-moz-placeholder {
@@ -109,9 +129,12 @@
         left: 16px;
         z-index: 1;
 
+        display: block;
+        overflow: auto;
+
         color: var(--spbSky3);
 
-        transition: transform 0.5s;
+        transition: transform 0.5s, top 0.5s;
 
         pointer-events: none;
         .fontFamily();
@@ -126,7 +149,7 @@
     &__field:not(:placeholder-shown) ~ &__label {
         transform: scale(0.8) translate(-11%, -75%);
 
-        transition-duration: 0.2s;
+        transition-duration: 0.2s, 0.01s;
     }
 
     &__field_textarea:focus ~ &__label,
@@ -138,19 +161,22 @@
         position: relative;
 
         display: flex;
+        overflow: hidden;
     }
 
-    &__field-wrapper_textarea_fixed:before {
-        content: '';
-        position: absolute;
-        top: 1.55%;
-        right: 50px;
-        left: 16px;
+    &__notice-text {
+        height: 0;
 
-        display: block;
-        height: 28px;
+        opacity: 0;
 
-        background: var(--base);
+        transition: height, opacity;
+        transition-duration: @defaulTransitionTiming;
+    }
+
+    &__notice-text_active {
+        height: 18px;
+
+        opacity: 1;
     }
 
     &__icon-box {
@@ -188,7 +214,13 @@
     }
 
     &__icon_clear {
+        transition: fill @defaulTransitionTiming;
+
         fill: var(--spbSky3);
+    }
+
+    &__icon_clear:hover {
+        fill: var(--stcBlack);
     }
 
     &__require-mark {
@@ -198,6 +230,7 @@
     &__wrap {
         display: flex;
         margin-top: 8px;
+        overflow: hidden;
 
         color: var(--spbSky3);
         .smallFont();
@@ -225,6 +258,10 @@
         &__icon {
             fill: var(--fury);
         }
+
+        &__icon_clear:hover {
+            fill: var(--fury80);
+        }
     }
 
     //mod disabled
@@ -241,10 +278,6 @@
 
         &__icon-box {
             cursor: default !important;
-        }
-
-        &__field-wrapper_textarea_fixed:before {
-            background-color: var(--spbSky0);
         }
     }
 
