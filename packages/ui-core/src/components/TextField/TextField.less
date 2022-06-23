@@ -15,6 +15,7 @@
 
     &:not(&_disabled):not(&_error):not(&_valid) & {
         &__field:hover,
+        &__field_resized,
         &__field:focus {
             border-color: var(--content);
         }
@@ -35,7 +36,7 @@
         box-shadow: none;
         opacity: 1;
 
-        transition: border-color @defaulTransitionTiming;
+        transition: border-color @defaultTransitionTiming;
 
         appearance: none;
         caret-color: var(--brandGreen);
@@ -43,22 +44,19 @@
         .commonFont();
     }
 
-    &__field_textarea {
-        padding-top: 28px;
-
-        resize: none;
-    }
-
-    &__field_type_fixed {
-        resize: none;
-    }
-
+    &__field_textarea,
     &__field_type_flexible {
-        overflow: hidden;
+        box-sizing: content-box;
+        padding-top: 28px;
+        overflow-x: hidden;
+        overflow-y: auto;
 
+        resize: none;
+    }
+
+    &__field_resized {
         transition: height 0.1s;
 
-        resize: none;
         will-change: height;
     }
 
@@ -79,8 +77,15 @@
         cursor: ns-resize;
     }
 
-    &__field_scrolling {
-        overflow: auto;
+    &__resizer svg {
+        transition: stroke @defaultTransitionTiming;
+
+        stroke: var(--spbSky2);
+    }
+
+    &__resizer:hover svg,
+    &__resizer:active svg {
+        stroke: var(--spbSky3);
     }
 
     &__field::-webkit-input-placeholder {
@@ -111,8 +116,12 @@
         border: 6px solid transparent;
         border-radius: 16px;
 
-        background-color: rgba(#333333, 0.2);
+        background-color: #D8D8D8;
         background-clip: padding-box;
+    }
+
+    &__field::-webkit-scrollbar-thumb:hover {
+        background-color: #999999;
     }
 
     &__field:focus:-moz-placeholder {
@@ -170,7 +179,7 @@
         opacity: 0;
 
         transition: height, opacity;
-        transition-duration: @defaulTransitionTiming;
+        transition-duration: @defaultTransitionTiming;
     }
 
     &__notice-text_active {
@@ -214,7 +223,7 @@
     }
 
     &__icon_clear {
-        transition: fill @defaulTransitionTiming;
+        transition: fill @defaultTransitionTiming;
 
         fill: var(--spbSky3);
     }
@@ -298,6 +307,23 @@
         &__wrap,
         &__counter {
             color: var(--stcWhite);
+        }
+
+        &__field::-webkit-scrollbar-thumb {
+            background-color: rgba(#333333, 0.2);
+        }
+
+        &__field::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(#333333, 0.5);
+        }
+
+        &__resizer svg {
+            stroke: var(--stcWhite20);
+        }
+
+        &__resizer:hover svg,
+        &__resizer:active svg {
+            stroke: var(--stcWhite50);
         }
     }
 

@@ -963,7 +963,7 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
       required={true}
       style={
         Object {
-          "height": "96px",
+          "height": "72px",
         }
       }
       value=""
@@ -1011,7 +1011,7 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
       required={true}
       style={
         Object {
-          "height": "96px",
+          "height": "72px",
         }
       }
       value=""
@@ -1064,7 +1064,7 @@ exports[`<TextField /> textarea should render with error because of max limit is
       required={true}
       style={
         Object {
-          "height": "96px",
+          "height": "72px",
         }
       }
       value="123456"
@@ -1134,7 +1134,7 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
         required={true}
         style={
           Object {
-            "height": "96px",
+            "height": "72px",
           }
         }
         value=""
@@ -1185,7 +1185,7 @@ exports[`<TextField /> textarea should render with number value 1`] = `
       required={true}
       style={
         Object {
-          "height": "96px",
+          "height": "72px",
         }
       }
       value={1234}
@@ -1235,7 +1235,7 @@ exports[`<TextField /> textarea should render with string value 1`] = `
       required={true}
       style={
         Object {
-          "height": "96px",
+          "height": "72px",
         }
       }
       value="value"
@@ -1298,7 +1298,7 @@ exports[`<TextField /> textarea should render with value after updating number p
         required={true}
         style={
           Object {
-            "height": "96px",
+            "height": "72px",
           }
         }
         value={1234}
@@ -1362,7 +1362,7 @@ exports[`<TextField /> textarea should render with value after updating string p
         required={true}
         style={
           Object {
-            "height": "96px",
+            "height": "72px",
           }
         }
         value="value"
@@ -1426,7 +1426,7 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
         required={true}
         style={
           Object {
-            "height": "96px",
+            "height": "72px",
           }
         }
         value="value"
