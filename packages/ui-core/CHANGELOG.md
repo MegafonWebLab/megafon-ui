@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.3...@megafon/ui-core@4.0.0-beta.4) (2022-06-23)
+
+
+### Bug Fixes
+
+* **textfield:** fix textarea design bugs ([50cd9c6](https://github.com/MegafonWebLab/megafon-ui/commit/50cd9c6f402318c9e1a45d7da6abd6753aec875f))
+* **textfield:** update textarea scroll and resize ([a789d00](https://github.com/MegafonWebLab/megafon-ui/commit/a789d007cbee6e666c6d9e6148aeb267d0f4e5e1))
+
+
+### BREAKING CHANGES
+
+* **textfield:** add defaultTransitionTiming in less global variables
+
+
+
+
+
 # [4.0.0-beta.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.2...@megafon/ui-core@4.0.0-beta.3) (2022-06-08)
 
 
