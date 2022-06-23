@@ -279,6 +279,7 @@ describe('<TextField />', () => {
                     value="value"
                     verification={Verification.ERROR}
                     isControlled={false}
+                    disabled={false}
                 />,
             );
 
