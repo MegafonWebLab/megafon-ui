@@ -227,3 +227,23 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
         value='disabled'
     />
 </Playground>
+
+## Цветовые схемы
+
+<Playground>
+    <div style={{ display: 'flex', gap: '35px' }}>
+        <div style={{ flex: 1, padding: '10px' }}>
+            <TextField 
+                verification="valid"
+                noticeText="Тема для светлого фона (по умолчанию)"
+            />
+        </div>
+        <div style={{ flex: 1, padding: '10px', backgroundColor: '#00B956' }}>
+            <TextField
+                verification="valid"
+                noticeText="Светлая тема для цветного фона"
+                theme="white"
+            />
+        </div>
+    </div>
+</Playground>

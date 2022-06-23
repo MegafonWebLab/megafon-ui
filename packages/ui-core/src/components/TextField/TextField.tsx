@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
 import ClearIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
 import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
+import throttle from 'lodash.throttle';
 import * as PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
+import throttleTime from 'constants/throttleTime';
+import ResizeIcon from './i/textarea-resizer.svg';
 import './TextField.less';
 
 const DEFAULT_PLACEHOLDERS = {
@@ -108,10 +111,11 @@ export type TextFieldProps = {
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 };
 
-const TEXTAREA_MIN_HEIGHT = 96;
-const TEXTAREA_MAX_HEIGHT = 168;
-const ROW_HEIGHT = 24;
+const TEXTAREA_MIN_HEIGHT = 48;
+const TEXTAREA_MAX_HEIGHT = 144;
+const DEFAULT_LABEL_TOP_POSITION = 16;
 const DEFAULT_ROW_COUNT = 3;
+const ROW_HEIGHT = 24;
 
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<TextFieldProps> = ({
@@ -140,7 +144,7 @@ const TextField: React.FC<TextFieldProps> = ({
     type = 'text',
     value = '',
     verification,
-    noticeText,
+    noticeText = '',
     inputRef,
     inputMode,
     autoComplete,
@@ -149,11 +153,15 @@ const TextField: React.FC<TextFieldProps> = ({
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = useState<string | number | undefined>(value);
-    const [initialTextareaHeight, setInitialTextareaHeight] = useState(TEXTAREA_MIN_HEIGHT);
-    const [isTextareaResized, setIsTextareaResized] = useState(false);
+    const [initialTextareaHeight, setInitialTextareaHeight] = useState(ROW_HEIGHT * DEFAULT_ROW_COUNT);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
-    const [isTouch, setTouch] = useState(false);
+    const [displayedNoticeText, setDisplayedNoticeText] = useState(noticeText);
+    const [isTextareaResizeFocused, setIsTextareaResizeFocused] = useState(false);
+    const [isTextareaResized, setIsTextareaResized] = useState(false);
+
     const fieldNode = useRef<HTMLInputElement | HTMLTextAreaElement>();
+    const labelRef = useRef<HTMLLabelElement>(null);
+    const resizerRef = useRef<HTMLDivElement>(null);
 
     const isPasswordType: boolean = useMemo(() => type === 'password', [type]);
     const isVisiblePassword: boolean = useMemo(
@@ -164,7 +172,8 @@ const TextField: React.FC<TextFieldProps> = ({
     const hasValue = isControlled ? !!value : !!inputValue;
     const isValidVerification = verification === Verification.VALID;
     const isErrorVerification = verification === Verification.ERROR;
-    const hasClearIcon = (hasValue && !isPasswordType && !customIcon) || isErrorVerification;
+    const hasValueForClear = hasValue && !isPasswordType && !customIcon && !isValidVerification;
+    const hasClearIcon = !disabled && (hasValueForClear || isErrorVerification);
     const actualPlaceholder = placeholder || DEFAULT_PLACEHOLDERS[type];
 
     const checkSymbolMaxLimit = useCallback(
@@ -184,13 +193,64 @@ const TextField: React.FC<TextFieldProps> = ({
     }, [value, checkSymbolMaxLimit, isControlled]);
 
     useEffect(() => {
-        setTouch(detectTouch());
-    }, []);
+        noticeText && setDisplayedNoticeText(noticeText);
+    }, [noticeText]);
+
+    useEffect(() => {
+        if (!resizerRef.current || textarea !== TextareaTypes.FLEXIBLE) {
+            return;
+        }
+
+        const handleStartResize = (downEvent: MouseEvent | TouchEvent): void => {
+            if (!fieldNode.current) {
+                return;
+            }
+
+            setIsTextareaResizeFocused(true);
+
+            downEvent.preventDefault();
+
+            const originalHeight = parseFloat(
+                getComputedStyle(fieldNode.current).getPropertyValue('height').replace('px', ''),
+            );
+            const originalCoordinateY =
+                (downEvent as MouseEvent).clientY || (downEvent as TouchEvent).touches[0].clientY;
+
+            const handleResize = throttle((moveEvent: MouseEvent | TouchEvent): void => {
+                const currentCoordinateY =
+                    (moveEvent as MouseEvent).clientY || (moveEvent as TouchEvent).touches[0].clientY;
+                const resizeHeight = originalHeight + (currentCoordinateY - originalCoordinateY);
+
+                const updatedHeight = resizeHeight < TEXTAREA_MIN_HEIGHT ? TEXTAREA_MIN_HEIGHT : resizeHeight;
+
+                setInitialTextareaHeight(updatedHeight);
+                setIsTextareaResized(true);
+            }, throttleTime.resizeTextarea);
+
+            const handleResizeCancel = (): void => {
+                setIsTextareaResizeFocused(false);
+                window.removeEventListener('mousemove', handleResize);
+                window.removeEventListener('touchmove', handleResize);
+
+                window.removeEventListener('mouseup', handleResizeCancel);
+                window.removeEventListener('touchend', handleResizeCancel);
+            };
+
+            window.addEventListener('mousemove', handleResize);
+            window.addEventListener('touchmove', handleResize);
+
+            window.addEventListener('mouseup', handleResizeCancel);
+            window.addEventListener('touchend', handleResizeCancel);
+        };
+
+        resizerRef.current.addEventListener('mousedown', handleStartResize);
+        resizerRef.current.addEventListener('touchstart', handleStartResize);
+    }, [textarea]);
 
     const togglePasswordHiding = useCallback(() => setPasswordHidden(prevPassState => !prevPassState), []);
 
     const setTextareaHeight = (): void => {
-        if (!fieldNode?.current) {
+        if (!fieldNode?.current || isTextareaResized) {
             return;
         }
 
@@ -198,15 +258,11 @@ const TextField: React.FC<TextFieldProps> = ({
             current: { scrollHeight },
         } = fieldNode;
 
-        if (!isTextareaResized) {
-            const extraRowCount = Math.round((scrollHeight - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
-            const newHeight =
-                extraRowCount <= DEFAULT_ROW_COUNT
-                    ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount
-                    : TEXTAREA_MAX_HEIGHT;
+        const extraRowCount = Math.round((scrollHeight - 28 - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
+        const newHeight =
+            extraRowCount <= DEFAULT_ROW_COUNT ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount : TEXTAREA_MAX_HEIGHT;
 
-            setInitialTextareaHeight(newHeight);
-        }
+        setInitialTextareaHeight(newHeight);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
@@ -220,16 +276,26 @@ const TextField: React.FC<TextFieldProps> = ({
         onChange?.(e);
     };
 
-    const handleTextareaClick = () => {
-        if (!fieldNode?.current) {
+    const handleNoticeTransitionEnd = useCallback(() => {
+        !noticeText && setDisplayedNoticeText(noticeText);
+    }, [noticeText]);
+
+    const handleTextareaScroll = () => {
+        if (!fieldNode?.current || !labelRef?.current) {
             return;
         }
 
         const {
-            current: { offsetHeight: textAreaHeight },
+            current: { scrollTop },
         } = fieldNode;
 
-        setIsTextareaResized(textAreaHeight < initialTextareaHeight);
+        if (!scrollTop) {
+            labelRef.current.style.top = '';
+
+            return;
+        }
+
+        labelRef.current.style.top = `${DEFAULT_LABEL_TOP_POSITION - scrollTop}px`;
     };
 
     const handleIconClick = useCallback(
@@ -268,7 +334,6 @@ const TextField: React.FC<TextFieldProps> = ({
     );
 
     const textareaType = textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED;
-    const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT || isTextareaResized;
 
     const commonParams = {
         ...filterDataAttrs(dataAttrs?.input),
@@ -306,7 +371,7 @@ const TextField: React.FC<TextFieldProps> = ({
             {
                 type: textareaType,
                 textarea,
-                scrolling: hasScrolling,
+                resized: isTextareaResizeFocused,
             },
             input,
         ),
@@ -332,7 +397,7 @@ const TextField: React.FC<TextFieldProps> = ({
             case isValidVerification:
                 return <CheckedIcon className={cn('icon')} />;
             case hasClearIcon:
-                return <ClearIcon className={cn('icon', { clear: !isErrorVerification })} />;
+                return <ClearIcon className={cn('icon', { clear: true })} />;
             default:
                 return undefined;
         }
@@ -342,7 +407,7 @@ const TextField: React.FC<TextFieldProps> = ({
         const currentLabel = label || actualPlaceholder;
 
         return (
-            <label {...filterDataAttrs(dataAttrs?.label)} htmlFor={id} className={cn('label')}>
+            <label {...filterDataAttrs(dataAttrs?.label)} htmlFor={id} className={cn('label')} ref={labelRef}>
                 {currentLabel}
                 {required && <span className={cn('require-mark')}>*</span>}
             </label>
@@ -353,7 +418,7 @@ const TextField: React.FC<TextFieldProps> = ({
         <>
             <textarea
                 {...textareaParams}
-                onClick={handleTextareaClick}
+                onScroll={handleTextareaScroll}
                 style={{ height: `${initialTextareaHeight}px` }}
                 ref={getFieldNode}
             />
@@ -422,19 +487,22 @@ const TextField: React.FC<TextFieldProps> = ({
                 className,
             )}
         >
-            <div className={cn('field-wrapper', { 'no-touch': !isTouch })}>{renderField()}</div>
-            <div className={cn('wrap')}>
-                {noticeText && (
-                    <div
-                        {...filterDataAttrs(dataAttrs?.notice)}
-                        className={cn('text', {
-                            error: isErrorVerification,
-                            success: isValidVerification,
-                        })}
-                    >
-                        {noticeText}
+            <div className={cn('field-wrapper', { textarea: textarea && textareaType })}>
+                {renderField()}
+                {textareaType === TextareaTypes.FLEXIBLE && (
+                    <div className={cn('resizer')} ref={resizerRef}>
+                        <ResizeIcon />
                     </div>
                 )}
+            </div>
+            <div className={cn('wrap')}>
+                <div
+                    className={cn('notice-text', { active: !!noticeText })}
+                    onTransitionEnd={handleNoticeTransitionEnd}
+                    {...filterDataAttrs(dataAttrs?.notice)}
+                >
+                    {displayedNoticeText}
+                </div>
                 {symbolCounter && (
                     <span className={cn('counter', { error: isMaxLimitExceeded })}>
                         {`${currentSymbolCount}/${symbolCounter}`}
