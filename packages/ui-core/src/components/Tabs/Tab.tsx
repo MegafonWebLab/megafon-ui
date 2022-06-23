@@ -12,6 +12,7 @@ export interface ITabProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
+        inner?: Record<string, string>;
     };
     /** Дочерние элементы */
     children?: React.ReactNode;
@@ -24,6 +25,7 @@ const Tab: React.FC<ITabProps> = ({ children }) => <>{children}</>;
 Tab.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        inner: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     title: PropTypes.string,
     icon: PropTypes.node,
