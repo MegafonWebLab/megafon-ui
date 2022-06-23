@@ -111,9 +111,11 @@ export type TextFieldProps = {
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 };
 
-const TEXTAREA_MIN_HEIGHT = 96;
-const TEXTAREA_MAX_HEIGHT = 168;
+const TEXTAREA_MIN_HEIGHT = 48;
+const TEXTAREA_MAX_HEIGHT = 144;
 const DEFAULT_LABEL_TOP_POSITION = 16;
+const DEFAULT_ROW_COUNT = 3;
+const ROW_HEIGHT = 24;
 
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<TextFieldProps> = ({
@@ -151,9 +153,11 @@ const TextField: React.FC<TextFieldProps> = ({
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = useState<string | number | undefined>(value);
-    const [initialTextareaHeight, setInitialTextareaHeight] = useState(TEXTAREA_MIN_HEIGHT);
+    const [initialTextareaHeight, setInitialTextareaHeight] = useState(ROW_HEIGHT * DEFAULT_ROW_COUNT);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
     const [displayedNoticeText, setDisplayedNoticeText] = useState(noticeText);
+    const [isTextareaResizeFocused, setIsTextareaResizeFocused] = useState(false);
+    const [isTextareaResized, setIsTextareaResized] = useState(false);
 
     const fieldNode = useRef<HTMLInputElement | HTMLTextAreaElement>();
     const labelRef = useRef<HTMLLabelElement>(null);
@@ -168,7 +172,8 @@ const TextField: React.FC<TextFieldProps> = ({
     const hasValue = isControlled ? !!value : !!inputValue;
     const isValidVerification = verification === Verification.VALID;
     const isErrorVerification = verification === Verification.ERROR;
-    const hasClearIcon = (!disabled && hasValue && !isPasswordType && !customIcon) || isErrorVerification;
+    const hasValueForClear = hasValue && !isPasswordType && !customIcon && !isValidVerification;
+    const hasClearIcon = !disabled && (hasValueForClear || isErrorVerification);
     const actualPlaceholder = placeholder || DEFAULT_PLACEHOLDERS[type];
 
     const checkSymbolMaxLimit = useCallback(
@@ -201,6 +206,8 @@ const TextField: React.FC<TextFieldProps> = ({
                 return;
             }
 
+            setIsTextareaResizeFocused(true);
+
             downEvent.preventDefault();
 
             const originalHeight = parseFloat(
@@ -217,9 +224,11 @@ const TextField: React.FC<TextFieldProps> = ({
                 const updatedHeight = resizeHeight < TEXTAREA_MIN_HEIGHT ? TEXTAREA_MIN_HEIGHT : resizeHeight;
 
                 setInitialTextareaHeight(updatedHeight);
+                setIsTextareaResized(true);
             }, throttleTime.resizeTextarea);
 
             const handleResizeCancel = (): void => {
+                setIsTextareaResizeFocused(false);
                 window.removeEventListener('mousemove', handleResize);
                 window.removeEventListener('touchmove', handleResize);
 
@@ -240,7 +249,27 @@ const TextField: React.FC<TextFieldProps> = ({
 
     const togglePasswordHiding = useCallback(() => setPasswordHidden(prevPassState => !prevPassState), []);
 
+    const setTextareaHeight = (): void => {
+        if (!fieldNode?.current || isTextareaResized) {
+            return;
+        }
+
+        const {
+            current: { scrollHeight },
+        } = fieldNode;
+
+        const extraRowCount = Math.round((scrollHeight - 28 - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
+        const newHeight =
+            extraRowCount <= DEFAULT_ROW_COUNT ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount : TEXTAREA_MAX_HEIGHT;
+
+        setInitialTextareaHeight(newHeight);
+    };
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+        if (textarea === TextareaTypes.FLEXIBLE) {
+            setTextareaHeight();
+        }
+
         !isControlled && setInputValue(e.target.value);
         checkSymbolMaxLimit(e.target.value);
 
@@ -252,7 +281,7 @@ const TextField: React.FC<TextFieldProps> = ({
     }, [noticeText]);
 
     const handleTextareaScroll = () => {
-        if (!fieldNode?.current || !labelRef.current) {
+        if (!fieldNode?.current || !labelRef?.current) {
             return;
         }
 
@@ -305,7 +334,6 @@ const TextField: React.FC<TextFieldProps> = ({
     );
 
     const textareaType = textarea === TextareaTypes.FLEXIBLE ? TextareaTypes.FLEXIBLE : TextareaTypes.FIXED;
-    const hasScrolling = initialTextareaHeight >= TEXTAREA_MAX_HEIGHT;
 
     const commonParams = {
         ...filterDataAttrs(dataAttrs?.input),
@@ -343,7 +371,7 @@ const TextField: React.FC<TextFieldProps> = ({
             {
                 type: textareaType,
                 textarea,
-                scrolling: hasScrolling,
+                resized: isTextareaResizeFocused,
             },
             input,
         ),
