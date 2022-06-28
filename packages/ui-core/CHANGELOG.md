@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.11.0...@megafon/ui-core@3.12.0) (2022-06-28)
+
+
+### Features
+
+* **tab:** add data-attribute for inner element ([43e58e1](https://github.com/MegafonWebLab/megafon-ui/commit/43e58e12b8da661020f4b48f55245492c21ad376))
+
+
+
+
+
 # [3.11.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.10.1...@megafon/ui-core@3.11.0) (2022-06-21)
 
 
