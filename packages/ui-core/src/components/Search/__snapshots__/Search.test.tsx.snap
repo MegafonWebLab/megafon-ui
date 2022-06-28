@@ -8,19 +8,23 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
   <div
     className="mfui-search__control"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="initial value"
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="initial value"
+      />
+    </label>
     <div
       className="mfui-search__icon-box"
       data-testid="submit-test"
@@ -102,19 +106,23 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
   <div
     className="mfui-search__control control-outer"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="initial value"
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="initial value"
+      />
+    </label>
     <div
       className="mfui-search__icon-box"
       data-testid="submit-test"
@@ -196,19 +204,23 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
   <div
     className="mfui-search__control"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="initial value"
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="initial value"
+      />
+    </label>
     <div
       className="mfui-search__list"
     >
@@ -280,17 +292,21 @@ exports[`<Search /> snapshots renders Search without props correctly 1`] = `
   <div
     className="mfui-search__control"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      type="text"
-      value=""
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
     <div
       className="mfui-search__icon-box"
       onClick={[Function]}
@@ -311,19 +327,23 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
   <div
     className="mfui-search__control"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="initial value"
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="initial value"
+      />
+    </label>
     <div
       className="mfui-search__icon-box"
       data-testid="submit-test"
@@ -490,30 +510,36 @@ exports[`<Search /> snapshots renders with label and required props 1`] = `
   className="mfui-search test"
   data-testid="root-test"
 >
-  <InputLabel>
-    test label
-    <span
-      className="mfui-search__require-mark"
-    >
-      *
-    </span>
-  </InputLabel>
   <div
     className="mfui-search__control"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="initial value"
-    />
+    <label
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_labeled"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="initial value"
+      />
+      <div
+        className="mfui-search__label"
+      >
+        test label
+        <span
+          className="mfui-search__require-mark"
+        >
+          *
+        </span>
+      </div>
+    </label>
     <div
       className="mfui-search__icon-box"
       data-testid="submit-test"
@@ -595,19 +621,23 @@ exports[`<Search /> snapshots renders with noticeText and verification="error" 1
   <div
     className="mfui-search__control mfui-search__control_error"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="initial value"
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="initial value"
+      />
+    </label>
     <div
       className="mfui-search__icon-box"
       data-testid="submit-test"
@@ -694,19 +724,23 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
   <div
     className="mfui-search__control"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="initial value"
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="initial value"
+      />
+    </label>
     <div
       className="mfui-search__icon-box"
       data-testid="submit-test"
@@ -793,19 +827,23 @@ exports[`<Search /> typing highlighted text 1`] = `
   <div
     className="mfui-search__control"
   >
-    <input
-      autoComplete="off"
-      className="mfui-search__search-field"
-      data-testid="searchField-test"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      placeholder="type to search here"
-      type="text"
-      value="title2"
-    />
+    <label
+      className="mfui-search__search-wrapper"
+    >
+      <input
+        autoComplete="off"
+        className="mfui-search__search-field mfui-search__search-field_filled"
+        data-testid="searchField-test"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        placeholder="type to search here"
+        type="text"
+        value="title2"
+      />
+    </label>
     <div
       className="mfui-search__icon-box"
       data-testid="submit-test"
