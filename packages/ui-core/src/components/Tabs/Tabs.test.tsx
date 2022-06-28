@@ -63,7 +63,7 @@ describe('<Tabs />', () => {
                     title="title 1"
                     icon={<Balance />}
                     href="www.test.com"
-                    dataAttrs={{ root: { 'date-test': 'test' } }}
+                    dataAttrs={{ root: { 'data-testid': 'root' }, inner: { 'data-testid': 'inner' } }}
                 >
                     1
                 </Tab>

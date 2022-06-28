@@ -243,7 +243,7 @@ const Tabs: React.FC<ITabsProps> = ({
     }, [outerObserveContainer]);
 
     const renderTab = React.useCallback(
-        (index: number, title?: string, icon?: React.ReactNode, href?: string) => {
+        (index: number, title?: string, icon?: React.ReactNode, href?: string, attr?: Record<string, string>) => {
             const ElementType = href ? 'a' : 'div';
 
             return (
@@ -253,6 +253,7 @@ const Tabs: React.FC<ITabsProps> = ({
                         current: currentIndex === index,
                     })}
                     onClick={handleTabInnerClick(index)}
+                    {...filterDataAttrs(attr, index + 1)}
                 >
                     {!!icon && <div className={cn('tab-icon')}>{icon}</div>}
                     {!!title && <div className={cn('tab-title')}>{title}</div>}
@@ -268,7 +269,7 @@ const Tabs: React.FC<ITabsProps> = ({
                 const {
                     props: { title, icon, href, renderTabWrapper, dataAttrs: data },
                 } = child;
-                const tab = renderTab(i, title, icon, href);
+                const tab = renderTab(i, title, icon, href, data?.inner);
 
                 const activeTabClassName = currentIndex === i ? activeTabClass : undefined;
 

@@ -131,9 +131,11 @@ exports[`<Tabs /> should render with props 1`] = `
         >
           <div
             className="mfui-tabs__tab tabClass"
+            data-testid="root[1]"
           >
             <a
               className="mfui-tabs__tab-inner"
+              data-testid="inner[1]"
               href="www.test.com"
               onClick={[Function]}
             >
