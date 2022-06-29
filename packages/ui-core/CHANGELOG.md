@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.12.0...@megafon/ui-core@4.0.0-beta.5) (2022-06-29)
+
+
+### Bug Fixes
+
+* **textfield:** fix textarea design bugs ([287d426](https://github.com/MegafonWebLab/megafon-ui/commit/287d42644b24ca0e1a3824d5907d8af78293d0e3))
+* **textfield:** update textarea scroll and resize ([9dbce52](https://github.com/MegafonWebLab/megafon-ui/commit/9dbce52d6bc3a71076ffdf2365715204231da774))
+
+
+### Features
+
+* **accordion:** update by new design ([92dab3a](https://github.com/MegafonWebLab/megafon-ui/commit/92dab3a367544d8507526e7a57a0a9a4015e3acf))
+* **caption:** add new Caption component; update .smallFont() less mixin ([b02a3f7](https://github.com/MegafonWebLab/megafon-ui/commit/b02a3f73ed8d5390d8427ab0a6bc62210710ba40))
+* **paragraph:** remove prop size; add new prop; add 'pale' option to colors ([ffb6bc7](https://github.com/MegafonWebLab/megafon-ui/commit/ffb6bc709a4ef91536e359d5f9edc5501caf0c2c))
+* **tabs:** update by new design ([20ae2cc](https://github.com/MegafonWebLab/megafon-ui/commit/20ae2cc695e1245b9cd06fe37a9e4e3bb0c7eaae))
+* **textfield:** update by new design ([24ec769](https://github.com/MegafonWebLab/megafon-ui/commit/24ec769aeddac9a198941727aaca02ad0fb816f1))
+
+
+### BREAKING CHANGES
+
+* **textfield:** add defaultTransitionTiming in less global variables
+* **tabs:** new prop autoWidth added
+size prop small vallue removed
+new sizes
+* **textfield:** add placeholders text by default
+ label element positon changed
+ if label prop not setted, label element has text from placeholder (default or in props)
+* **accordion:** change next-sibling accordion styles
+* **caption:** .smallFont() less mixin line-height rule now set to 18px instead of 16px
+either accept new rules or manually add line-height: 16px in your components
+* **paragraph:** prop 'size' is no longer exists.
+use component Caption instead of Paragraph size="small"
+
+
+
+
+
 # [3.12.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.11.0...@megafon/ui-core@3.12.0) (2022-06-28)
 
 

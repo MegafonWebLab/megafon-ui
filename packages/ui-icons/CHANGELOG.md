@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-beta.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.2.2...@megafon/ui-icons@2.0.0-beta.2) (2022-06-29)
+
+
+### Bug Fixes
+
+* **ui-icons:** fixed service icon names ([60d813a](https://github.com/MegafonWebLab/megafon-ui/commit/60d813a1da72f37bf60107743f169635fda1ba32))
+
+
+### BREAKING CHANGES
+
+* **ui-icons:** renamed import paths for yandex-disc and yandex-naviator icons (fixed icon names)
+
+
+
+
+
 ## [1.2.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.2.1...@megafon/ui-icons@1.2.2) (2022-05-17)
 
 **Note:** Version bump only for package @megafon/ui-icons
