@@ -3,7 +3,6 @@ import { Fragment, Reducer, useEffect, useReducer, useCallback } from 'react';
 import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
-import InputLabel from 'components/InputLabel/InputLabel';
 import './Select.less';
 import selectReducer, { initialState, ISelectAction, ISelectState, SelectActions } from './reducer/selectReducer';
 
@@ -379,6 +378,13 @@ const Select = <T extends SelectItemValueType>({
         [filterValue],
     );
 
+    const renderLabel = (): JSX.Element => (
+        <label {...filterDataAttrs(dataAttrs?.label)} htmlFor={labelId} className={cn('label')}>
+            {label}
+            {required && <span className={cn('require-mark')}>*</span>}
+        </label>
+    );
+
     const renderTitle = (): JSX.Element => {
         const item = items.find(elem => elem.value === currentValue);
         let inputTitle: string | JSX.Element | Element | undefined = placeholder;
@@ -390,32 +396,32 @@ const Select = <T extends SelectItemValueType>({
         return (
             <div
                 {...filterDataAttrs(dataAttrs?.title)}
-                className={cn(
-                    'title',
-                    {
-                        placeholder: !!placeholder && currentValue === undefined,
-                    },
-                    [classes?.title],
-                )}
+                className={cn('title', [classes?.title])}
                 role="button"
                 tabIndex={0}
                 onClick={handleSelectClick}
             >
-                <div className={cn('title-inner', [classes?.titleInner])}>{inputTitle}</div>
+                <div className={cn('title-inner', { placeholder: !currentValue }, [classes?.titleInner])}>
+                    <div className={cn('title-value')}>{inputTitle}</div>
+                    {label && renderLabel()}
+                </div>
             </div>
         );
     };
 
     const renderCombobox = (): JSX.Element => (
-        <input
-            {...filterDataAttrs(dataAttrs?.input)}
-            className={cn('combobox')}
-            onFocus={handleComboboxFocus}
-            onChange={handleChangeCombobox}
-            type="text"
-            value={inputValue}
-            placeholder={placeholder}
-        />
+        <>
+            <input
+                {...filterDataAttrs(dataAttrs?.input)}
+                className={cn('combobox', { placeholder: !inputValue })}
+                onFocus={handleComboboxFocus}
+                onChange={handleChangeCombobox}
+                type="text"
+                value={inputValue}
+                placeholder={placeholder}
+            />
+            {label && renderLabel()}
+        </>
     );
 
     const renderChildren = (): JSX.Element => {
@@ -479,13 +485,7 @@ const Select = <T extends SelectItemValueType>({
             ref={selectNode}
         >
             <div className={cn('inner')}>
-                {label && (
-                    <InputLabel dataAttrs={{ root: dataAttrs?.label }} htmlFor={labelId}>
-                        {label}
-                        {required && <span className={cn('require-mark')}>*</span>}
-                    </InputLabel>
-                )}
-                <div className={cn('control', classes.control)} onKeyDown={handleKeyDown}>
+                <div className={cn('control', { labeled: !!label }, classes.control)} onKeyDown={handleKeyDown}>
                     {type === SelectTypes.COMBOBOX && renderCombobox()}
                     {type === SelectTypes.CLASSIC && renderTitle()}
                 </div>
