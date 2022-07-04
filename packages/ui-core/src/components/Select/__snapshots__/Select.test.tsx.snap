@@ -13,7 +13,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       onKeyDown={[Function]}
     >
       <input
-        className="mfui-select__combobox mfui-select__combobox_placeholder"
+        className="mfui-select__combobox"
         data-input="test"
         onChange={[Function]}
         onFocus={[Function]}
@@ -705,7 +705,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         onKeyDown={[Function]}
       >
         <input
-          className="mfui-select__combobox mfui-select__combobox_placeholder"
+          className="mfui-select__combobox"
           data-input="test"
           onChange={[Function]}
           onFocus={[Function]}
