@@ -27,13 +27,13 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
 ## Без иконки
 
 <Playground>
-    <Search hideIcon />
+    <Search hideIcon searchId="1" />
 </Playground>
 
 ## Установлен заголовок
 
 <Playground>
-    <Search label="Заголовок поля" required />
+    <Search label="Заголовок поля" searchId="2" required />
 </Playground>
 
 ## Выключенное состояние
@@ -41,6 +41,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
 <Playground>
     <Search
         placeholder="This field is disabled"
+        searchId="3"
         disabled
     />
 </Playground>
@@ -51,6 +52,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     <Search
         placeholder="Type here for search"
         value="Previous request"
+        searchId="4"
     />
 </Playground>
 
@@ -63,6 +65,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
                 placeholder="Type here for search"
                 onSubmit={onSubmit}
                 label='Обработчик onSubmit'
+                searchId="5"
             />
         }
     </DemoSearchWrapper>
@@ -73,6 +76,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
                 onChange={onSubmit}
                 changeDelay={50}
                 label='Обработчик onChange'
+                searchId="6"
             />
         }
     </DemoSearchWrapper>
@@ -87,6 +91,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
                 value={chosenValue}
                 items={items}
                 placeholder="Type and wait for results"
+                searchId="7"
                 onChange={onChange}
                 onSubmit={onSubmit}
             />
@@ -97,20 +102,20 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
 ## Обязательное поле 
 
 <Playground>
-    <Search label="Заголовок поля" required />
+    <Search label="Заголовок поля" searchId="8" required />
 </Playground>
 
 ## Дополнительный текст снизу
 
 <Playground>
-    <Search noticeText="Текст под полем" />
+    <Search noticeText="Текст под полем" searchId="9" />
 </Playground>
 
 ## Валидация
 
 <Playground style={wrapperDefaultStyle}>
-    <Search noticeText="Успешная валидация" verification="valid" />
-    <Search noticeText="Ошибка валидации" verification="error" />
+    <Search noticeText="Успешная валидация" verification="valid" searchId="10" />
+    <Search noticeText="Ошибка валидации" verification="error" searchId="11" />
 </Playground>
 
 ## Кастомизированный список результатов поиска
@@ -149,6 +154,7 @@ const DemoSearchCustomItemsWrapper: React.FC<IDemoSearchCustomItemsWrapper> = ({
                 onSubmit={onSubmit}
                 items={items}
                 placeholder="Type and wait for results"
+                searchId="12"
             />
         )}
     </DemoSearchCustomItemsWrapper>

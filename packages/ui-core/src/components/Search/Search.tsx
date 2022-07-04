@@ -37,6 +37,8 @@ export interface ISearchProps {
     value?: string;
     /** Заголовок поля */
     label?: string;
+    /** HTML идентификатор поля поиска */
+    searchId?: string;
     /** Текст внутри поля по умолчанию */
     placeholder?: string;
     /** Запрещает отрисовку иконки */
@@ -76,6 +78,7 @@ const Search: React.FC<ISearchProps> = ({
     dataAttrs,
     value = '',
     label,
+    searchId = 'mfuiSearchId',
     placeholder,
     hideIcon,
     items = [],
@@ -237,10 +240,10 @@ const Search: React.FC<ISearchProps> = ({
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ open: isFocused, disabled }, [className])}>
             <div className={cn('control', { error: verification === Verification.ERROR }, [classes?.control])}>
-                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                <label className={cn('search-wrapper', { labeled: !!label })}>
+                <label className={cn('search-wrapper', { labeled: !!label })} htmlFor={searchId}>
                     <input
                         {...filterDataAttrs(dataAttrs?.searchField)}
+                        id={searchId}
                         className={cn('search-field', { filled: !!searchQuery })}
                         placeholder={placeholder}
                         value={searchQuery}
@@ -315,6 +318,7 @@ Search.propTypes = {
     }),
     value: PropTypes.string,
     label: PropTypes.string,
+    searchId: PropTypes.string,
     placeholder: PropTypes.string,
     hideIcon: PropTypes.bool,
     items: PropTypes.arrayOf(
