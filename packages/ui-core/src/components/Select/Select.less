@@ -58,7 +58,7 @@
         content: '';
 
         position: absolute;
-        top: 50%;
+        top: 53%;
         right: 27px;
 
         display: block;
@@ -263,7 +263,7 @@
 
     &__label {
         position: absolute;
-        top: 18px;
+        top: 17px;
         z-index: 1;
 
         display: block;
@@ -371,10 +371,6 @@
         border-color: var(--brandGreen) !important;
     }
 
-    &_valid &__text {
-        color: var(--brandGreen);
-    }
-
     // mod: error
 
     &_error &__control {
@@ -402,5 +398,7 @@
 
     &_disabled &__control:after {
         color: var(--content);
+
+        opacity: 0.5;
     }
 }
