@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.5...@megafon/ui-core@4.0.0-beta.6) (2022-07-05)
+
+
+### Features
+
+* **inputlabel:** component removed ([1f236ac](https://github.com/MegafonWebLab/megafon-ui/commit/1f236ace90acfd7ea1917422677fa24c1c5abdf4))
+* **search:** component redesign ([d6f11eb](https://github.com/MegafonWebLab/megafon-ui/commit/d6f11eb7ee810b835879c7a31e5e01c426060ea1))
+* **select:** component redesign ([aeeda00](https://github.com/MegafonWebLab/megafon-ui/commit/aeeda00dfc1db70421a495a686954e19eecf815d))
+
+
+### BREAKING CHANGES
+
+* **inputlabel:** inputLabel component removed due to non-use
+
+
+
+
+
 # [4.0.0-beta.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.12.0...@megafon/ui-core@4.0.0-beta.5) (2022-06-29)
 
 
