@@ -3,7 +3,6 @@ import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import SearchIcon from '@megafon/ui-icons/basic-24-search_24.svg';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
-import InputLabel from '../InputLabel/InputLabel';
 import './Search.less';
 
 type HandleSearchSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
@@ -38,6 +37,8 @@ export interface ISearchProps {
     value?: string;
     /** Заголовок поля */
     label?: string;
+    /** HTML идентификатор поля поиска */
+    searchId?: string;
     /** Текст внутри поля по умолчанию */
     placeholder?: string;
     /** Запрещает отрисовку иконки */
@@ -77,6 +78,7 @@ const Search: React.FC<ISearchProps> = ({
     dataAttrs,
     value = '',
     label,
+    searchId = 'mfuiSearchId',
     placeholder,
     hideIcon,
     items = [],
@@ -237,27 +239,30 @@ const Search: React.FC<ISearchProps> = ({
 
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ open: isFocused, disabled }, [className])}>
-            {label && (
-                <InputLabel>
-                    {label}
-                    {required && <span className={cn('require-mark')}>*</span>}
-                </InputLabel>
-            )}
             <div className={cn('control', { error: verification === Verification.ERROR }, [classes?.control])}>
-                <input
-                    {...filterDataAttrs(dataAttrs?.searchField)}
-                    className={cn('search-field')}
-                    placeholder={placeholder}
-                    value={searchQuery}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    onKeyDown={handleKeyDown}
-                    onClick={handleClick}
-                    disabled={disabled}
-                    type="text"
-                    autoComplete="off"
-                />
+                <label className={cn('search-wrapper', { labeled: !!label })} htmlFor={searchId}>
+                    <input
+                        {...filterDataAttrs(dataAttrs?.searchField)}
+                        id={searchId}
+                        className={cn('search-field', { filled: !!searchQuery })}
+                        placeholder={placeholder}
+                        value={searchQuery}
+                        onChange={handleChange}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                        onKeyDown={handleKeyDown}
+                        onClick={handleClick}
+                        disabled={disabled}
+                        type="text"
+                        autoComplete="off"
+                    />
+                    {label && (
+                        <div className={cn('label')}>
+                            {label}
+                            {required && <span className={cn('require-mark')}>*</span>}
+                        </div>
+                    )}
+                </label>
                 {!hideIcon && (
                     <div
                         {...filterDataAttrs(dataAttrs?.submit)}
@@ -313,6 +318,7 @@ Search.propTypes = {
     }),
     value: PropTypes.string,
     label: PropTypes.string,
+    searchId: PropTypes.string,
     placeholder: PropTypes.string,
     hideIcon: PropTypes.bool,
     items: PropTypes.arrayOf(
