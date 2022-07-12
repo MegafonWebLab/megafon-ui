@@ -18,7 +18,7 @@
     &__title-wrap {
         position: relative;
 
-        padding: 20px 20px 20px 16px;
+        padding: 20px 20px 44px 16px;
         border-radius: 12px;
 
         cursor: pointer;
@@ -26,12 +26,16 @@
         transition: background-color @defaultTransitionTiming;
 
         @media @mobileBU {
-            padding: 20px 24px;
+            padding: 20px 56px 20px 24px;
         }
     }
 
     &__title-wrap:hover {
-        background: var(--spbSky1);
+        background-color: var(--spbSky1);
+    }
+
+    &__title-wrap:focus {
+        background-color: inherit;
     }
 
     &__icon-box {
@@ -47,7 +51,7 @@
         height: 24px;
         border-radius: 50%;
 
-        background-color: var(--base);
+        background-color: var(--stcWhite);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
         transform: translateY(-50%);
