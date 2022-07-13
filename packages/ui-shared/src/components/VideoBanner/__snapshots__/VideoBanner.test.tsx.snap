@@ -997,7 +997,7 @@ exports[`<VideoBanner /> tests with local window render component with classes f
                             color="inherit"
                           >
                             <h5
-                              className="mfui-header mfui-header_color_inherit mfui-header_level_h5 mfui-header_h-align_inherit mfui-video-banner__description"
+                              className="mfui-header mfui-header_color_inherit mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-video-banner__description"
                             >
                               Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
                             </h5>
@@ -1452,7 +1452,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                             color="inherit"
                           >
                             <h5
-                              className="mfui-header mfui-header_color_inherit mfui-header_level_h5 mfui-header_h-align_inherit mfui-video-banner__description"
+                              className="mfui-header mfui-header_color_inherit mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-video-banner__description"
                             >
                               Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.
                             </h5>
