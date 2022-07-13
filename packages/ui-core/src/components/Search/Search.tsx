@@ -239,7 +239,13 @@ const Search: React.FC<ISearchProps> = ({
 
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ open: isFocused, disabled }, [className])}>
-            <div className={cn('control', { error: verification === Verification.ERROR }, [classes?.control])}>
+            <div
+                className={cn(
+                    'control',
+                    { error: verification === Verification.ERROR, success: verification === Verification.VALID },
+                    [classes?.control],
+                )}
+            >
                 <label className={cn('search-wrapper', { labeled: !!label })} htmlFor={searchId}>
                     <input
                         {...filterDataAttrs(dataAttrs?.searchField)}

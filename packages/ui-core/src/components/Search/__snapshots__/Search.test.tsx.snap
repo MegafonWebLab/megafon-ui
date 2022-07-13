@@ -736,7 +736,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
   data-testid="root-test"
 >
   <div
-    className="mfui-search__control"
+    className="mfui-search__control mfui-search__control_success"
   >
     <label
       className="mfui-search__search-wrapper"
