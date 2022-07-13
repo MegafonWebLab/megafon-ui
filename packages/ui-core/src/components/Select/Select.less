@@ -10,14 +10,12 @@
 
 @keyframes listAppear {
     from {
+        transform: translateY(-25px);
         opacity: 0;
     }
 
-    99% {
-        opacity: 0.99;
-    }
-
     to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -170,7 +168,7 @@
         border-radius: 12px;
 
         background-color: var(--base);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
     }
 
     &__list-inner {
@@ -232,7 +230,7 @@
         }
 
         &_active {
-            font-weight: bold;
+            font-weight: 600;
         }
     }
 
@@ -350,11 +348,11 @@
 
     &_open &__list {
         display: block;
-        border-color: var(--content);
 
         animation-name: listAppear;
 
         animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
     }
 
     &_open &__control {

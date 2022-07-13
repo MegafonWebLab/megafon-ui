@@ -10,14 +10,12 @@
 
 @keyframes listAppear {
     from {
+        transform: translateY(-25px);
         opacity: 0;
     }
 
-    99% {
-        opacity: 0.99;
-    }
-
     to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -58,7 +56,17 @@
         outline: none;
         cursor: pointer;
 
+        transition: border-color @defaultTransitionTiming;
+
         user-select: none;
+    }
+
+    &__control:not(&__control_success):not(&__control_error):hover {
+        border-color: var(--content);
+    }
+
+    &__control_success {
+        border-color: var(--brandGreen);
     }
 
     &__control_error {
@@ -175,7 +183,7 @@
         border-radius: 12px;
 
         background-color: var(--base);
-        box-shadow: 0 1px 16px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     &__icon {
@@ -201,7 +209,7 @@
     &__list-inner {
         box-sizing: border-box;
         max-height: 368px;
-        padding: 12px 0;
+        padding: 16px;
         overflow-y: auto;
     }
 
@@ -247,11 +255,11 @@
 
     &_open &__list {
         display: block;
-        border-color: var(--content);
 
         animation-name: listAppear;
 
         animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
     }
 
     &_open {
