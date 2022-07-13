@@ -13,7 +13,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+### BREAKING CHANGES
 
+* **inputlabel:** inputLabel component removed due to non-use
 
 # [3.13.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.12.1...@megafon/ui-core@3.13.0) (2022-08-11)
 
