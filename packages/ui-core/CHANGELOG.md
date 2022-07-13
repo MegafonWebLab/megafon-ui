@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.7](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.6...@megafon/ui-core@4.0.0-beta.7) (2022-07-13)
+
+
+### Bug Fixes
+
+* **select:** fix styles ([3e79c68](https://github.com/MegafonWebLab/megafon-ui/commit/3e79c68fecde72e515b7ef52d38d9188e51680f6))
+
+
+
+
+
 # [4.0.0-beta.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.5...@megafon/ui-core@4.0.0-beta.6) (2022-07-05)
 
 
