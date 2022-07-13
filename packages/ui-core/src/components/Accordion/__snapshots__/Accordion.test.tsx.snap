@@ -45,7 +45,7 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
         data-header="data-test-value"
       >
         <h5
-          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
+          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
         >
           Test
         </h5>
@@ -129,7 +129,7 @@ exports[`<Accordion /> it renders Accordion 1`] = `
         data-header="data-test-value"
       >
         <h5
-          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
+          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
         >
           Test
         </h5>
