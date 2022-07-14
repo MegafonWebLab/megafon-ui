@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.8](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.7...@megafon/ui-core@4.0.0-beta.8) (2022-07-14)
+
+
+### Bug Fixes
+
+* **accordion:** change focus and dark theme styles ([d3e07ea](https://github.com/MegafonWebLab/megafon-ui/commit/d3e07ea6fee0c131e25db1bb558d8b205d201e0c))
+* **notification:** change title typography ([f91a60e](https://github.com/MegafonWebLab/megafon-ui/commit/f91a60ee1562626494358ef529321f072ba70890))
+* **tabs:** change dark theme and indents styles ([272dfcb](https://github.com/MegafonWebLab/megafon-ui/commit/272dfcbeef750f2f7ae097b46f7d98405cf53a88))
+
+
+### Features
+
+* **header:** add new prop space ([e5bef7c](https://github.com/MegafonWebLab/megafon-ui/commit/e5bef7c8e13c57e477a4c25f07a4a4a6dbb8b6bd))
+
+
+
+
+
 # [4.0.0-beta.7](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.6...@megafon/ui-core@4.0.0-beta.7) (2022-07-13)
 
 

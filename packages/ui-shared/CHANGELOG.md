@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.9](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.0.0-beta.8...@megafon/ui-shared@4.0.0-beta.9) (2022-07-14)
+
+
+### Features
+
+* **header:** add new prop space ([e5bef7c](https://github.com/MegafonWebLab/megafon-ui/commit/e5bef7c8e13c57e477a4c25f07a4a4a6dbb8b6bd))
+
+
+
+
+
 # [4.0.0-beta.8](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.0.0-beta.7...@megafon/ui-shared@4.0.0-beta.8) (2022-07-13)
 
 **Note:** Version bump only for package @megafon/ui-shared
