@@ -113,21 +113,11 @@ exports[`<Notification /> it renders Notification with close collpse after chang
           <div
             className="mfui-notification__text-container"
           >
-            <Header
-              as="h5"
+            <span
               className="mfui-notification__title"
-              dataAttrs={
-                Object {
-                  "root": undefined,
-                }
-              }
             >
-              <h5
-                className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-notification__title"
-              >
-                title
-              </h5>
-            </Header>
+              title
+            </span>
             <div
               className="mfui-notification__text"
             >
@@ -414,17 +404,11 @@ exports[`<Notification /> it renders Notification without link, when component h
       <div
         className="mfui-notification__text-container"
       >
-        <Header
-          as="h5"
+        <span
           className="mfui-notification__title"
-          dataAttrs={
-            Object {
-              "root": undefined,
-            }
-          }
         >
           title
-        </Header>
+        </span>
         <div
           className="mfui-notification__text"
         >
@@ -506,17 +490,11 @@ exports[`<Notification /> it renders colored Notification with Props 1`] = `
       <div
         className="mfui-notification__text-container"
       >
-        <Header
-          as="h5"
+        <span
           className="mfui-notification__title"
-          dataAttrs={
-            Object {
-              "root": undefined,
-            }
-          }
         >
           title
-        </Header>
+        </span>
         <div
           className="mfui-notification__text"
         >

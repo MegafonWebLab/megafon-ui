@@ -166,6 +166,20 @@
 
         fill: var(--spbSky3);
 
+        &:focus {
+            color: var(--spbSky3);
+
+            fill: var(--spbSky3);
+        }
+
+        &:active {
+            color: var(--buttonDown);
+
+            fill: var(--buttonDown);
+        }
+    }
+
+    &__tab-inner:not(&__tab-inner_current) {
         &:hover {
             color: var(--content);
 
@@ -185,6 +199,8 @@
 
     &__tab-inner_current {
         color: var(--stcBlack);
+
+        cursor: auto;
 
         fill: var(--stcBlack);
     }
@@ -256,7 +272,7 @@
     // mod indents
 
     &_indents & {
-        &__swiper {
+        &__swiper-wrapper {
             @media @mobileB {
                 margin: 0 -@contentHorizontalIndentMobileB;
                 padding: 0 @contentHorizontalIndentMobileB;
