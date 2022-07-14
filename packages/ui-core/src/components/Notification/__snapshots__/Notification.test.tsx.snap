@@ -123,7 +123,7 @@ exports[`<Notification /> it renders Notification with close collpse after chang
               }
             >
               <h5
-                className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-notification__title"
+                className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-notification__title"
               >
                 title
               </h5>
