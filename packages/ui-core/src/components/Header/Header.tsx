@@ -46,7 +46,7 @@ const Header: React.FC<IHeaderProps> = ({
     return (
         <ElementType
             {...filterDataAttrs(dataAttrs?.root)}
-            className={cn({ color, margin, level, 'h-align': hAlign, space: spaceLevel  }, className)}
+            className={cn({ color, margin, level, 'h-align': hAlign, space: spaceLevel }, className)}
             onClick={onClick}
         >
             {children}

@@ -9,7 +9,6 @@ import SuccessIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import InfoIcon from '@megafon/ui-icons/system-24-info_invert_24.svg';
 import * as PropTypes from 'prop-types';
 import Button from 'components/Button/Button';
-import Header from 'components/Header/Header';
 import TextLink from 'components/TextLink/TextLink';
 import Tile from 'components/Tile/Tile';
 import CancelIcon from './close-icon.svg';
@@ -275,9 +274,9 @@ const Notification: React.FC<INotificationProps> = ({
                 <div className={cn('content', [contentClass])}>
                     <div className={cn('text-container')}>
                         {title && (
-                            <Header dataAttrs={{ root: dataAttrs?.title }} as="h5" className={cn('title')}>
+                            <span {...filterDataAttrs(dataAttrs?.title)} className={cn('title')}>
                                 {title}
-                            </Header>
+                            </span>
                         )}
                         <div
                             ref={wrapTextRef}
