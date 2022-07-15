@@ -18,7 +18,7 @@
     &__title-wrap {
         position: relative;
 
-        padding: 20px 20px 44px 16px;
+        padding: 20px 44px 20px 16px;
         border-radius: 12px;
 
         cursor: pointer;
@@ -35,7 +35,9 @@
     }
 
     &__title-wrap:focus {
-        background-color: inherit;
+        @media @mobile {
+            background-color: inherit;
+        }
     }
 
     &__icon-box {
