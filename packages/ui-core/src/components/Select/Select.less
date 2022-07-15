@@ -23,14 +23,16 @@
 @b: e('.mfui-select');
 
 @{b} {
-    .fontFamily();
-    .p();
     position: relative;
     z-index: 1;
+
+    box-sizing: border-box;
 
     min-height: 40px;
 
     color: var(--content);
+    .fontFamily();
+    .p();
 
     &__inner {
         position: relative;
@@ -115,7 +117,7 @@
 
     &__title-value {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
     }
 
     &__title-inner_placeholder &__title-value {

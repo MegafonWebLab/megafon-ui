@@ -23,14 +23,17 @@
 @b: e('.mfui-search');
 
 @{b} {
-    .fontFamily();
-    .commonFont();
     position: relative;
     z-index: auto;
+
+    box-sizing: border-box;
 
     min-height: 40px;
 
     color: var(--content);
+
+    .fontFamily();
+    .commonFont();
 
     &__require-mark {
         margin-left: 1px;
