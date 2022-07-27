@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.11](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.10...@megafon/ui-core@4.0.0-beta.11) (2022-07-27)
+
+
+### Features
+
+* **search:** changed dropdown list item height ([25ceb63](https://github.com/MegafonWebLab/megafon-ui/commit/25ceb633cdc9922e2a93af919c742b1db82f2f57))
+* **select:** fixed label position with empty string value and minor style changes ([f436d5c](https://github.com/MegafonWebLab/megafon-ui/commit/f436d5c65f0aa874d12cd8d1540698644d57a3db))
+
+
+
+
+
 # [4.0.0-beta.10](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.9...@megafon/ui-core@4.0.0-beta.10) (2022-07-15)
 
 
