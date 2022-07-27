@@ -401,7 +401,7 @@ const Select = <T extends SelectItemValueType>({
                 tabIndex={0}
                 onClick={handleSelectClick}
             >
-                <div className={cn('title-inner', { placeholder: currentValue === undefined }, [classes?.titleInner])}>
+                <div className={cn('title-inner', { 'hide-value': !currentValue }, [classes?.titleInner])}>
                     <div className={cn('title-value')}>{inputTitle}</div>
                     {label && renderLabel()}
                 </div>
@@ -413,7 +413,7 @@ const Select = <T extends SelectItemValueType>({
         <>
             <input
                 {...filterDataAttrs(dataAttrs?.input)}
-                className={cn('combobox', { placeholder: inputValue === undefined })}
+                className={cn('combobox', { 'hide-value': !inputValue })}
                 onFocus={handleComboboxFocus}
                 onChange={handleChangeCombobox}
                 type="text"
