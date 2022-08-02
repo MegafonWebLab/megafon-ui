@@ -272,7 +272,9 @@ const Carousel: React.FC<ICarouselProps> = ({
     };
 
     const disableFocusOnSlideClick = (e: React.MouseEvent) => {
-        e.nativeEvent.preventDefault();
+        if ((e.nativeEvent.target as HTMLElement).closest(`.${cn()}`)) {
+            e.nativeEvent.preventDefault();
+        }
     };
 
     React.useEffect(() => {
