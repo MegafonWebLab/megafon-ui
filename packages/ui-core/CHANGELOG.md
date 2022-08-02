@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.12.0...@megafon/ui-core@3.12.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* **carousel:** popup input focus ([b1c117a](https://github.com/MegafonWebLab/megafon-ui/commit/b1c117ac1ed560182e61133393ec65f14527958f))
+
+
+
+
+
 # [3.12.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.11.0...@megafon/ui-core@3.12.0) (2022-06-28)
 
 
