@@ -115,6 +115,7 @@ export interface ISelectProps<T extends SelectItemValueType> {
 // - Opened dropdown could be closed only via value choose, click outside of select and on TAB press.
 // - Should add event listener for outside of dropdown click on list open and remove it on list close.
 // - onClose callback shouldn't fire multiple times on outside click if dropdown was opened multiple times.
+// - In the absence of a currentValue, you must explicitly pass "undefined", because 0 and '' are also considered a given value
 
 const cn = cnCreate('mfui-select');
 const Select = <T extends SelectItemValueType>({
@@ -401,7 +402,7 @@ const Select = <T extends SelectItemValueType>({
                 tabIndex={0}
                 onClick={handleSelectClick}
             >
-                <div className={cn('title-inner', { 'hide-value': !currentValue }, [classes?.titleInner])}>
+                <div className={cn('title-inner', { 'hide-value': currentValue === undefined }, [classes?.titleInner])}>
                     <div className={cn('title-value')}>{inputTitle}</div>
                     {label && renderLabel()}
                 </div>
