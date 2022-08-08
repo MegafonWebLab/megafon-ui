@@ -82,7 +82,10 @@ export type TextFieldProps = {
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы элементов */
-    classes?: { input?: string };
+    classes?: {
+        input?: string;
+        fieldWrapper?: string;
+    };
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
@@ -148,7 +151,7 @@ const TextField: React.FC<TextFieldProps> = ({
     inputRef,
     inputMode,
     autoComplete,
-    classes: { input } = {},
+    classes: { input, fieldWrapper } = {},
     dataAttrs,
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
@@ -487,7 +490,7 @@ const TextField: React.FC<TextFieldProps> = ({
                 className,
             )}
         >
-            <div className={cn('field-wrapper', { textarea: textarea && textareaType })}>
+            <div className={cn('field-wrapper', { textarea: textarea && textareaType }, fieldWrapper)}>
                 {renderField()}
                 {textareaType === TextareaTypes.FLEXIBLE && (
                     <div className={cn('resizer')} ref={resizerRef}>
@@ -545,6 +548,7 @@ TextField.propTypes = {
     inputRef: PropTypes.func,
     classes: PropTypes.shape({
         input: PropTypes.string,
+        fieldWrapper: PropTypes.string,
     }),
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
