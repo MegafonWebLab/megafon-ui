@@ -30,7 +30,6 @@ const commonProps = {
     noticeText: 'noticeText',
     classes: {
         input: 'inputClass',
-        fieldWrapper: 'fieldWrapperClass',
     },
     className: 'customClass',
 };
