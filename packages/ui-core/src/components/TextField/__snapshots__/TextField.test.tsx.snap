@@ -680,10 +680,10 @@ exports[`<TextField /> should render with common props 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper fieldWrapperClass"
   >
     <input
-      className="mfui-text-field__field"
+      className="mfui-text-field__field inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -723,10 +723,10 @@ exports[`<TextField /> should render with custom icon 1`] = `
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_icon customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper fieldWrapperClass"
   >
     <input
-      className="mfui-text-field__field"
+      className="mfui-text-field__field inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -805,10 +805,10 @@ exports[`<TextField /> should render with error 1`] = `
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error mfui-text-field_icon customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper fieldWrapperClass"
   >
     <input
-      className="mfui-text-field__field"
+      className="mfui-text-field__field inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -856,10 +856,10 @@ exports[`<TextField /> should render with hidden icon 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper fieldWrapperClass"
   >
     <input
-      className="mfui-text-field__field"
+      className="mfui-text-field__field inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -899,10 +899,10 @@ exports[`<TextField /> should render with valid 1`] = `
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_valid mfui-text-field_icon customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper"
+    className="mfui-text-field__field-wrapper fieldWrapperClass"
   >
     <input
-      className="mfui-text-field__field"
+      className="mfui-text-field__field inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -950,10 +950,10 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed fieldWrapperClass"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -998,10 +998,10 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
   className="mfui-text-field mfui-text-field_theme_white customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_flexible"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_flexible fieldWrapperClass"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible"
+      className="mfui-text-field__field mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
@@ -1051,10 +1051,10 @@ exports[`<TextField /> textarea should render with error because of max limit is
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error customClass"
 >
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed fieldWrapperClass"
   >
     <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}
