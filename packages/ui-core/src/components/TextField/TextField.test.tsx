@@ -28,6 +28,10 @@ const commonProps = {
     id: 'id',
     required: true,
     noticeText: 'noticeText',
+    classes: {
+        input: 'inputClass',
+        fieldWrapper: 'fieldWrapperClass',
+    },
     className: 'customClass',
 };
 
