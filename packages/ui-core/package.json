@@ -43,7 +43,7 @@
     ]
   },
   "peerDependencies": {
-    "@megafon/ui-icons": "^0.0.2-beta.2",
+    "@megafon/ui-icons": "^1.0.0",
     "react": ">=16.13.0",
     "react-dom": ">=16.13.0"
   },

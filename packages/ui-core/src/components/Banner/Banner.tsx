@@ -47,6 +47,8 @@ export interface IBannerProps {
     pauseOnHover?: boolean;
     /** Цветовая тема навигации */
     navTheme?: NavThemeType;
+    /** Автоматическая высота слайдов */
+    autoHeight?: boolean;
     /** Обработчик клика по стрелке "вперед" (должен быть обернут в useCallback) */
     onNextClick?: (index: number) => void;
     /** Обработчик клика по стрелке "назад" (должен быть обернут в useCallback) */
@@ -72,6 +74,7 @@ const Banner: React.FC<IBannerProps> = ({
     autoPlayDelay = 5000,
     loop = false,
     navTheme = 'light',
+    autoHeight = false,
     children = [],
     onNextClick,
     onPrevClick,
@@ -192,7 +195,11 @@ const Banner: React.FC<IBannerProps> = ({
     }, [autoPlay, pauseOnHover, swiperInstance?.autoplay]);
 
     return (
-        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ 'nav-theme': navTheme }, className)} ref={rootRef}>
+        <div
+            {...filterDataAttrs(dataAttrs?.root)}
+            className={cn({ 'nav-theme': navTheme, 'auto-height': autoHeight }, className)}
+            ref={rootRef}
+        >
             <Swiper
                 {...filterDataAttrs(dataAttrs?.swiper)}
                 className={cn('swiper')}
@@ -274,6 +281,7 @@ Banner.propTypes = {
     autoPlayDelay: PropTypes.number,
     pauseOnHover: PropTypes.bool,
     navTheme: PropTypes.oneOf(Object.values(NavTheme)),
+    autoHeight: PropTypes.bool,
     onNextClick: PropTypes.func,
     onPrevClick: PropTypes.func,
     onDotClick: PropTypes.func,
