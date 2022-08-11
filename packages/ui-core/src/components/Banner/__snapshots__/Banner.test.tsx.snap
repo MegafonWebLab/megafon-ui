@@ -93,7 +93,7 @@ exports[`<Banner /> should render with default props 1`] = `
 
 exports[`<Banner /> should render with props 1`] = `
 <div
-  className="mfui-banner mfui-banner_nav-theme_dark custom-class"
+  className="mfui-banner mfui-banner_nav-theme_dark mfui-banner_auto-height custom-class"
   data-root="test-id"
 >
   <Swiper
