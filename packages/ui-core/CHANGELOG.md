@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.12.1...@megafon/ui-core@3.13.0) (2022-08-11)
+
+
+### Features
+
+* **banner:** add auto height ([c7658fa](https://github.com/MegafonWebLab/megafon-ui/commit/c7658faf335bc26f0a1b816e29b9cca114944691))
+
+
+
+
+
 ## [3.12.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.12.0...@megafon/ui-core@3.12.1) (2022-08-02)
 
 
