@@ -37,6 +37,7 @@ const props: IBannerProps = {
     autoPlay: true,
     autoPlayDelay: 1000,
     navTheme: NavTheme.DARK,
+    autoHeight: true,
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
     onDotClick: jest.fn(),
