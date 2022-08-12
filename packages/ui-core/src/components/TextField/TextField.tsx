@@ -62,6 +62,8 @@ export type TextFieldProps = {
     inputRef?: (node: HTMLInputElement | HTMLTextAreaElement) => void;
     /** Имя поля */
     name?: string;
+    /** Запрещает отображение плейсхолдера */
+    hidePlaceholder?: boolean;
     /** Отображаемый текст при отсутствии значения */
     placeholder?: string;
     /** Атрибут корневого DOM элемента компонента */
@@ -133,6 +135,7 @@ const TextField: React.FC<TextFieldProps> = ({
     symbolCounter,
     textarea = false,
     name,
+    hidePlaceholder = false,
     placeholder,
     required,
     isControlled = false,
@@ -348,7 +351,7 @@ const TextField: React.FC<TextFieldProps> = ({
         onFocus: handleFocus,
         onKeyUp,
         maxLength,
-        placeholder: actualPlaceholder,
+        placeholder: hidePlaceholder ? ' ' : actualPlaceholder,
         required,
         inputMode,
     };
@@ -527,6 +530,7 @@ TextField.propTypes = {
     inputMode: PropTypes.oneOf(['numeric', 'tel', 'decimal', 'email', 'url', 'search', 'none']),
     autoComplete: PropTypes.string,
     name: PropTypes.string,
+    hidePlaceholder: PropTypes.bool,
     placeholder: PropTypes.string,
     id: PropTypes.string,
     isControlled: PropTypes.bool,
