@@ -675,6 +675,51 @@ exports[`<TextField /> input should render without no-touch class 1`] = `
 </TextField>
 `;
 
+exports[`<TextField /> input should render without placeholder with hidePlaceholder prop 1`] = `
+<div
+  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+>
+  <div
+    className="mfui-text-field__field-wrapper"
+  >
+    <input
+      className="mfui-text-field__field"
+      disabled={true}
+      id="id"
+      maxLength={4}
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyUp={[MockFunction]}
+      placeholder=" "
+      required={true}
+      type="text"
+      value=""
+    />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
+  </div>
+  <div
+    className="mfui-text-field__wrap"
+  >
+    <div
+      className="mfui-text-field__notice-text"
+      onTransitionEnd={[Function]}
+    />
+  </div>
+</div>
+`;
+
 exports[`<TextField /> should render with common props 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white customClass"
@@ -1453,4 +1498,54 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
     </div>
   </div>
 </TextField>
+`;
+
+exports[`<TextField /> textarea should render without placeholder with hidePlaceholder prop 1`] = `
+<div
+  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+>
+  <div
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+  >
+    <textarea
+      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+      disabled={true}
+      id="id"
+      maxLength={4}
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyUp={[MockFunction]}
+      onScroll={[Function]}
+      placeholder=" "
+      required={true}
+      style={
+        Object {
+          "height": "72px",
+        }
+      }
+      value=""
+    />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      placeholder
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
+  </div>
+  <div
+    className="mfui-text-field__wrap"
+  >
+    <div
+      className="mfui-text-field__notice-text"
+      onTransitionEnd={[Function]}
+    />
+  </div>
+</div>
 `;
