@@ -106,6 +106,12 @@ const testCommonCases = (selector: string, textarea = false) => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render without placeholder with hidePlaceholder prop', () => {
+        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} hidePlaceholder />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should call inputRef with node', () => {
         const inputRefMock = jest.fn();
         const wrapper = mount(
