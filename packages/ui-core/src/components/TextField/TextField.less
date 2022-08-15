@@ -155,7 +155,8 @@
     }
 
     &__field:focus ~ &__label,
-    &__field:not(:placeholder-shown) ~ &__label {
+    &__field:not(:placeholder-shown) ~ &__label,
+    &__field:-webkit-autofill ~ &__label {
         transform: scale(0.8) translate(-11%, -75%);
 
         transition-duration: 0.2s, 0.01s;
