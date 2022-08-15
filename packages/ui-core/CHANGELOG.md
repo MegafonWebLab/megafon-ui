@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.15](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.14...@megafon/ui-core@4.0.0-beta.15) (2022-08-15)
+
+
+### Bug Fixes
+
+* **textfield:** fix label styles ([080f8fa](https://github.com/MegafonWebLab/megafon-ui/commit/080f8faa3ef8ec954704466dc5b56d0313487787))
+
+
+### Features
+
+* **textfield:** add prop hidePlaceholder ([1c0176e](https://github.com/MegafonWebLab/megafon-ui/commit/1c0176ebdae47d11ac972ada200303500618caf1))
+
+
+
+
+
 # [4.0.0-beta.14](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.13...@megafon/ui-core@4.0.0-beta.14) (2022-08-08)
 
 **Note:** Version bump only for package @megafon/ui-core
