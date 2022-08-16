@@ -44,6 +44,7 @@ const props: ICarouselProps = {
     navTheme: NavTheme.GREEN,
     effectTheme: EffectTheme.FADE,
     noSwipingSelector: 'button',
+    slideToClickedSlide: true,
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
     onChange: jest.fn(),

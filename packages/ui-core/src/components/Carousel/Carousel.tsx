@@ -91,6 +91,8 @@ export interface ICarouselProps {
     effectTheme?: EffectThemeType;
     /** Css селектор элемента, при перетаскивании которого не будет происходить смена слайдов */
     noSwipingSelector?: string;
+    /** Свайп к слайду по которому произведен клик */
+    slideToClickedSlide?: boolean;
     /** Ref на swiper */
     getSwiper?: (instance: SwiperCore) => void;
     /** Обработчик клика по стрелке вперед (должен быть обернут в useCallback) */
@@ -155,6 +157,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     onNextClick,
     onPrevClick,
     onChange,
+    slideToClickedSlide = false,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
@@ -318,6 +321,7 @@ const Carousel: React.FC<ICarouselProps> = ({
                 allowTouchMove={!disableTouchMove}
                 centeredSlides={centeredSlides}
                 effect={effectTheme}
+                slideToClickedSlide={slideToClickedSlide}
                 fadeEffect={
                     effectTheme === EffectTheme.FADE
                         ? {
