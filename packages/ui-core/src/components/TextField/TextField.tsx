@@ -476,6 +476,7 @@ const TextField: React.FC<TextFieldProps> = ({
     const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
     const valueHasSymbols = inputValue !== null && inputValue !== undefined;
     const currentSymbolCount = (valueHasSymbols && String(inputValue).length) || 0;
+    const showAdditionalBlock = displayedNoticeText || symbolCounter;
 
     return (
         <div
@@ -500,20 +501,24 @@ const TextField: React.FC<TextFieldProps> = ({
                     </div>
                 )}
             </div>
-            <div className={cn('wrap')}>
-                <div
-                    className={cn('notice-text', { active: !!noticeText })}
-                    onTransitionEnd={handleNoticeTransitionEnd}
-                    {...filterDataAttrs(dataAttrs?.notice)}
-                >
-                    {displayedNoticeText}
+            {showAdditionalBlock && (
+                <div className={cn('field-bottom-wrapper')}>
+                    {displayedNoticeText && (
+                        <div
+                            className={cn('notice-text', { active: !!noticeText })}
+                            onTransitionEnd={handleNoticeTransitionEnd}
+                            {...filterDataAttrs(dataAttrs?.notice)}
+                        >
+                            {displayedNoticeText}
+                        </div>
+                    )}
+                    {symbolCounter && (
+                        <span className={cn('counter', { error: isMaxLimitExceeded })}>
+                            {`${currentSymbolCount}/${symbolCounter}`}
+                        </span>
+                    )}
                 </div>
-                {symbolCounter && (
-                    <span className={cn('counter', { error: isMaxLimitExceeded })}>
-                        {`${currentSymbolCount}/${symbolCounter}`}
-                    </span>
-                )}
-            </div>
+            )}
         </div>
     );
 };
