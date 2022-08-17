@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.16](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.15...@megafon/ui-core@4.0.0-beta.16) (2022-08-17)
+
+
+### Bug Fixes
+
+* **textfield:** fixes permanently visible block after the field ([9cc5184](https://github.com/MegafonWebLab/megafon-ui/commit/9cc5184f7b60a7f7dcfe3f9f49cc3199787a77d7))
+
+
+
+
+
 # [4.0.0-beta.15](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.14...@megafon/ui-core@4.0.0-beta.15) (2022-08-15)
 
 
