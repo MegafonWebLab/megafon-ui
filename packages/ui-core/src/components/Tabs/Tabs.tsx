@@ -399,7 +399,7 @@ const Tabs: React.FC<ITabsProps> = ({
             )}
             ref={rootRef}
         >
-            <div ref={tabListRef} style={{ height: tabListHeight }}>
+            <div className={cn('wrapper')} ref={tabListRef} style={{ height: tabListHeight }}>
                 <div
                     className={cn('swiper-wrapper')}
                     style={{

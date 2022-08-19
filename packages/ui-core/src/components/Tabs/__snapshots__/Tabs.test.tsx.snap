@@ -5,6 +5,7 @@ exports[`<Tabs /> should render with default props 1`] = `
   className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
 >
   <div
+    className="mfui-tabs__wrapper"
     style={
       Object {
         "height": "auto",
@@ -99,6 +100,7 @@ exports[`<Tabs /> should render with props 1`] = `
   data-test="test"
 >
   <div
+    className="mfui-tabs__wrapper"
     style={
       Object {
         "height": "auto",
@@ -214,6 +216,7 @@ exports[`<Tabs /> should render without panels 1`] = `
   className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
 >
   <div
+    className="mfui-tabs__wrapper"
     style={
       Object {
         "height": "auto",
