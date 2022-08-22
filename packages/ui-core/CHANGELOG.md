@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.18](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.17...@megafon/ui-core@4.0.0-beta.18) (2022-08-22)
+
+
+### Bug Fixes
+
+* **tabs:** fix swiper overflow and box-sizing ([bbfb09d](https://github.com/MegafonWebLab/megafon-ui/commit/bbfb09d86223c3dc1f70aaa2a03d108256c3a37d))
+
+
+
+
+
 # [4.0.0-beta.17](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.16...@megafon/ui-core@4.0.0-beta.17) (2022-08-22)
 
 
