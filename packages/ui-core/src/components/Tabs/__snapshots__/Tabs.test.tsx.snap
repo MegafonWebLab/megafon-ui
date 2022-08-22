@@ -30,6 +30,7 @@ exports[`<Tabs /> should render with default props 1`] = `
         onSwiper={[Function]}
         simulateTouch={false}
         slidesPerView="auto"
+        watchOverflow={true}
       >
         <SwiperSlide
           className="mfui-tabs__slide"
@@ -126,6 +127,7 @@ exports[`<Tabs /> should render with props 1`] = `
         onSwiper={[Function]}
         simulateTouch={false}
         slidesPerView="auto"
+        watchOverflow={true}
       >
         <SwiperSlide
           className="mfui-tabs__slide"
@@ -241,6 +243,7 @@ exports[`<Tabs /> should render without panels 1`] = `
         onSwiper={[Function]}
         simulateTouch={false}
         slidesPerView="auto"
+        watchOverflow={true}
       >
         <SwiperSlide
           className="mfui-tabs__slide"

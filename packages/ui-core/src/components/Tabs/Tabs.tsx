@@ -418,6 +418,7 @@ const Tabs: React.FC<ITabsProps> = ({
                             },
                             [innerIndentsClass],
                         )}
+                        watchOverflow
                         slidesPerView="auto"
                         initialSlide={currentIndex}
                         onSwiper={handleSwiper}
