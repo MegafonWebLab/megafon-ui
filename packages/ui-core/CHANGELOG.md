@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.17](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.16...@megafon/ui-core@4.0.0-beta.17) (2022-08-22)
+
+
+### Bug Fixes
+
+* **select:** fix items overflow ([6c795a3](https://github.com/MegafonWebLab/megafon-ui/commit/6c795a35ae27e8100edd6d6ec7456962b8f62a41))
+* **tabs:** fix container alignment ([2bd4f31](https://github.com/MegafonWebLab/megafon-ui/commit/2bd4f31fba455a817e9597103c25ca97fe33d2d8))
+
+
+
+
+
 # [4.0.0-beta.16](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.15...@megafon/ui-core@4.0.0-beta.16) (2022-08-17)
 
 
