@@ -62,6 +62,7 @@
         position: absolute;
         top: 50%;
         right: 27px;
+        z-index: 1;
 
         display: block;
 
@@ -122,6 +123,7 @@
     &__title-value {
         display: flex;
         align-items: center;
+        overflow: hidden;
     }
 
     &__title-inner_hide-value &__title-value {
@@ -146,7 +148,7 @@
             content: '';
             position: absolute;
             top: 0;
-            right: 0;
+            right: 40px;
             bottom: 0;
 
             width: 40px;
@@ -220,21 +222,6 @@
         display: flex;
         flex-grow: 1;
         align-items: center;
-        overflow: hidden;
-
-        white-space: nowrap;
-
-        &:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-
-            width: 40px;
-
-            background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--base));
-        }
 
         &_active {
             font-weight: 600;
