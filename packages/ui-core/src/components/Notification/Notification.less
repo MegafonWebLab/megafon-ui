@@ -134,21 +134,15 @@
         z-index: 1;
 
         display: flex;
-        gap: 16px;
         align-items: flex-end;
         justify-content: space-between;
 
         width: 100%;
         margin-top: 8px;
-
-        @media @mobileBU {
-            gap: 20px;
-        }
     }
 
     &__bottom-block {
         display: flex;
-        gap: 16px;
 
         overflow: hidden;
     }
@@ -162,6 +156,7 @@
 
         display: inline-flex;
         align-items: center;
+        margin-left: 16px;
 
         cursor: pointer;
 
@@ -193,6 +188,7 @@
         align-items: center;
 
         height: fit-content;
+        margin-left: 20px;
         padding: 0;
 
         border: none;
@@ -206,6 +202,7 @@
 
         @media @mobileSM {
             .smallFont();
+            margin-left: 16px;
         }
     }
 
