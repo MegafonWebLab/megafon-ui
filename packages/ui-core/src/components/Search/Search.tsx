@@ -18,11 +18,18 @@ type VerificationType = typeof Verification[keyof typeof Verification];
 
 type ElementOrString = JSX.Element[] | JSX.Element | Element[] | Element;
 
+export const SearchItemsPaddings = {
+    SMALL: 'small',
+    LARGE: 'large',
+} as const;
+
 export type SearchItem = {
     /** Значение value элемента */
     value: string;
     /** Настраиваемое отображение элементов в выпадающем списке */
     searchView?: ElementOrString;
+    /** Размер горизонтальных отступов элемента */
+    paddings?: typeof SearchItemsPaddings[keyof typeof SearchItemsPaddings];
 };
 
 export interface ISearchProps {
@@ -282,20 +289,25 @@ const Search: React.FC<ISearchProps> = ({
                 {!!items.length && (
                     <div className={cn('list')}>
                         <div className={cn('list-inner')}>
-                            {items.map(({ value: itemValue, searchView }: SearchItem, i) => (
-                                <div
-                                    {...filterDataAttrs(dataAttrs?.item, i + 1)}
-                                    ref={activeIndex === i ? highlightedItem : null}
-                                    className={cn('list-item', { active: activeIndex === i })}
-                                    onMouseDown={handleSelectSubmit(i)}
-                                    onMouseEnter={handleHoverItem(i)}
-                                    key={i}
-                                >
-                                    <div className={cn('item-title', [classes?.listItemTitle])}>
-                                        {searchView || highlightString(itemValue)}
+                            {items.map(
+                                (
+                                    { value: itemValue, searchView, paddings = SearchItemsPaddings.LARGE }: SearchItem,
+                                    i,
+                                ) => (
+                                    <div
+                                        {...filterDataAttrs(dataAttrs?.item, i + 1)}
+                                        ref={activeIndex === i ? highlightedItem : null}
+                                        className={cn('list-item', { active: activeIndex === i, paddings })}
+                                        onMouseDown={handleSelectSubmit(i)}
+                                        onMouseEnter={handleHoverItem(i)}
+                                        key={i}
+                                    >
+                                        <div className={cn('item-title', [classes?.listItemTitle])}>
+                                            {searchView || highlightString(itemValue)}
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ),
+                            )}
                         </div>
                     </div>
                 )}
@@ -335,6 +347,7 @@ Search.propTypes = {
                 PropTypes.element,
                 PropTypes.arrayOf(PropTypes.element),
             ]),
+            paddings: PropTypes.oneOf(Object.values(SearchItemsPaddings)),
         }).isRequired,
     ),
     changeDelay: PropTypes.number,

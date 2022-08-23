@@ -16,7 +16,7 @@ const {
     SET_HOVERED_ITEM_INDEX,
 } = SelectActions;
 
-export const Paddings = {
+export const SelectItemsPaddings = {
     SMALL: 'small',
     LARGE: 'large',
 } as const;
@@ -50,7 +50,7 @@ export interface ISelectItem<T extends SelectItemValueType> {
     /** Настраиваемое отображение выбранного элемента в поле селекта  */
     selectedView?: JSX.Element | Element | React.ReactElement;
     /** Размер горизонтальных отступов элемента */
-    paddings?: typeof Paddings[keyof typeof Paddings];
+    paddings?: typeof SelectItemsPaddings[keyof typeof SelectItemsPaddings];
 }
 
 export interface ISelectProps<T extends SelectItemValueType> {
@@ -438,7 +438,7 @@ const Select = <T extends SelectItemValueType>({
         return (
             <div className={cn('list', [classes.list])}>
                 <div className={cn('list-inner')} ref={itemWrapperNode}>
-                    {currentItems.map(({ title, value, view, paddings = Paddings.LARGE }, i) => {
+                    {currentItems.map(({ title, value, view, paddings = SelectItemsPaddings.LARGE }, i) => {
                         const isItemActive = currentValue === value;
 
                         return (
@@ -552,7 +552,7 @@ Select.propTypes = {
             selectedView: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
             title: PropTypes.string.isRequired,
             value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-            paddings: PropTypes.oneOf(Object.values(Paddings)),
+            paddings: PropTypes.oneOf(Object.values(SelectItemsPaddings)),
         }),
     ).isRequired,
     onSelect: PropTypes.func,
