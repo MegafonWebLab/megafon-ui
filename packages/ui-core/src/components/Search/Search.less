@@ -218,11 +218,22 @@
 
     &__list-item {
         .fontFamily();
-        padding: 12px 32px;
+        padding-top: 12px;
+        padding-bottom: 12px;
         border-radius: 16px;
 
         background-color: var(--base);
         cursor: pointer;
+    }
+
+    &__list-item_paddings_large {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+
+    &__list-item_paddings_small {
+        padding-right: 12px;
+        padding-left: 12px;
     }
 
     &__list-item_active {
