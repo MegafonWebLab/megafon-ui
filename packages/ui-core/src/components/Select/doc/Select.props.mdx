@@ -13,6 +13,8 @@ export interface ISelectItem {
     view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString);
     // Настраиваемое отображение выбранного элемента в поле селекта
     selectedView?: JSX.Element | Element | React.ReactElement;
+    /** Размер горизонтальных отступов элемента */
+    paddings?: typeof Paddings[keyof typeof Paddings];
 }
 
 interface ISelectClasses {
