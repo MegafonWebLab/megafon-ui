@@ -16,6 +16,11 @@ const {
     SET_HOVERED_ITEM_INDEX,
 } = SelectActions;
 
+export const Paddings = {
+    SMALL: 'small',
+    LARGE: 'large',
+} as const;
+
 export const Verification = {
     VALID: 'valid',
     ERROR: 'error',
@@ -44,6 +49,8 @@ export interface ISelectItem<T extends SelectItemValueType> {
     view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString);
     /** Настраиваемое отображение выбранного элемента в поле селекта  */
     selectedView?: JSX.Element | Element | React.ReactElement;
+    /** Размер горизонтальных отступов элемента */
+    paddings?: typeof Paddings[keyof typeof Paddings];
 }
 
 export interface ISelectProps<T extends SelectItemValueType> {
@@ -431,7 +438,7 @@ const Select = <T extends SelectItemValueType>({
         return (
             <div className={cn('list', [classes.list])}>
                 <div className={cn('list-inner')} ref={itemWrapperNode}>
-                    {currentItems.map(({ title, value, view }, i) => {
+                    {currentItems.map(({ title, value, view, paddings = Paddings.LARGE }, i) => {
                         const isItemActive = currentValue === value;
 
                         return (
@@ -441,6 +448,7 @@ const Select = <T extends SelectItemValueType>({
                                     'list-item',
                                     {
                                         hovered: hoveredItemIndex === i,
+                                        paddings,
                                     },
                                     [classes.listItem],
                                 )}
@@ -544,6 +552,7 @@ Select.propTypes = {
             selectedView: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
             title: PropTypes.string.isRequired,
             value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            paddings: PropTypes.oneOf(Object.values(Paddings)),
         }),
     ).isRequired,
     onSelect: PropTypes.func,
