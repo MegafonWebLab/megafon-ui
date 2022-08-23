@@ -43,7 +43,7 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -56,7 +56,7 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -69,7 +69,7 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -82,7 +82,7 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
@@ -143,7 +143,7 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -156,7 +156,7 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -169,7 +169,7 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -182,7 +182,7 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
@@ -234,7 +234,7 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -247,7 +247,7 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -260,7 +260,7 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -273,7 +273,7 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
@@ -370,7 +370,7 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -398,7 +398,7 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -426,7 +426,7 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -454,7 +454,7 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
@@ -482,7 +482,7 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[5]"
           key="4"
           onMouseDown={[Function]}
@@ -568,7 +568,7 @@ exports[`<Search /> snapshots renders with label and required props 1`] = `
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -581,7 +581,7 @@ exports[`<Search /> snapshots renders with label and required props 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -594,7 +594,7 @@ exports[`<Search /> snapshots renders with label and required props 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -607,7 +607,7 @@ exports[`<Search /> snapshots renders with label and required props 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
@@ -668,7 +668,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="error" 1
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -681,7 +681,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="error" 1
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -694,7 +694,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="error" 1
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -707,7 +707,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="error" 1
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
@@ -773,7 +773,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -786,7 +786,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -799,7 +799,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -812,7 +812,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
@@ -878,7 +878,7 @@ exports[`<Search /> typing highlighted text 1`] = `
         className="mfui-search__list-inner"
       >
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[1]"
           key="0"
           onMouseDown={[Function]}
@@ -891,7 +891,7 @@ exports[`<Search /> typing highlighted text 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[2]"
           key="1"
           onMouseDown={[Function]}
@@ -908,7 +908,7 @@ exports[`<Search /> typing highlighted text 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[3]"
           key="2"
           onMouseDown={[Function]}
@@ -921,7 +921,7 @@ exports[`<Search /> typing highlighted text 1`] = `
           </div>
         </div>
         <div
-          className="mfui-search__list-item"
+          className="mfui-search__list-item mfui-search__list-item_paddings_large"
           data-testid="item-test[4]"
           key="3"
           onMouseDown={[Function]}
