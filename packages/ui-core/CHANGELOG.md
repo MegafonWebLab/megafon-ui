@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.19](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.18...@megafon/ui-core@4.0.0-beta.19) (2022-08-23)
+
+
+### Bug Fixes
+
+* **notification:** fix bottom gaps ([1427080](https://github.com/MegafonWebLab/megafon-ui/commit/14270809ec97d18dbdf19183111b9034114d9437))
+* **search:** add modifier for item paddings ([9df5792](https://github.com/MegafonWebLab/megafon-ui/commit/9df5792d6828f852bed9c1c4e64404667e8d2cd7))
+* **select:** add modifier for item paddings ([e5f9735](https://github.com/MegafonWebLab/megafon-ui/commit/e5f97353c9686fba070aad48d3816ec0ce12d5d9))
+
+
+
+
+
 # [4.0.0-beta.18](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.17...@megafon/ui-core@4.0.0-beta.18) (2022-08-22)
 
 
