@@ -156,13 +156,16 @@
 
         display: inline-flex;
         align-items: center;
-        margin-left: 16px;
 
         cursor: pointer;
 
         @media @mobileSM {
             .smallFont();
         }
+    }
+
+    &__button + &__link {
+        margin-left: 16px;
     }
 
     &__link-arrow,
@@ -188,7 +191,6 @@
         align-items: center;
 
         height: fit-content;
-        margin-left: 20px;
         padding: 0;
 
         border: none;
@@ -202,6 +204,14 @@
 
         @media @mobileSM {
             .smallFont();
+            margin-left: 16px;
+        }
+    }
+
+    &__bottom-block + &__collapse-button {
+        margin-left: 20px;
+
+        @media @mobileSM {
             margin-left: 16px;
         }
     }
