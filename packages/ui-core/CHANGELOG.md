@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.20](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.19...@megafon/ui-core@4.0.0-beta.20) (2022-08-24)
+
+
+### Bug Fixes
+
+* **textfield:** returned correct color to notice text ([d6ef976](https://github.com/MegafonWebLab/megafon-ui/commit/d6ef976f755e1fb55d7fd2e462095459d96b74c9))
+
+
+
+
+
 # [4.0.0-beta.19](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.18...@megafon/ui-core@4.0.0-beta.19) (2022-08-23)
 
 
