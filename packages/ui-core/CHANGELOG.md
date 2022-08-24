@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.21](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.20...@megafon/ui-core@4.0.0-beta.21) (2022-08-24)
+
+
+### Bug Fixes
+
+* **notification:** fix margin for bottom block ([38d768c](https://github.com/MegafonWebLab/megafon-ui/commit/38d768cb48baf167863b6a143e84909217eff462))
+
+
+
+
+
 # [4.0.0-beta.20](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.19...@megafon/ui-core@4.0.0-beta.20) (2022-08-24)
 
 
