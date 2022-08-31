@@ -87,7 +87,6 @@ exports[`<TextField /> input should render with ie placeholder 1`] = `
 <TextField
   disabled={true}
   id="id"
-  isControlled={false}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -525,7 +524,6 @@ exports[`<TextField /> input should render without no-touch class 1`] = `
 <TextField
   disabled={true}
   id="id"
-  isControlled={false}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}
@@ -604,6 +602,94 @@ exports[`<TextField /> input should render without placeholder with hidePlacehol
         *
       </span>
     </label>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> should render disabled field with error 1`] = `
+<div
+  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_white mfui-text-field_icon customClass"
+>
+  <div
+    className="mfui-text-field__field-wrapper"
+  >
+    <input
+      className="mfui-text-field__field inputClass"
+      disabled={true}
+      id="id"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Текст"
+      required={true}
+      type="text"
+      value=""
+    />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
+  </div>
+  <div
+    className="mfui-text-field__field-bottom-wrapper"
+  >
+    <div
+      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+      onTransitionEnd={[Function]}
+    >
+      noticeText
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> should render disabled field with valid 1`] = `
+<div
+  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_white mfui-text-field_icon customClass"
+>
+  <div
+    className="mfui-text-field__field-wrapper"
+  >
+    <input
+      className="mfui-text-field__field inputClass"
+      disabled={true}
+      id="id"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="Текст"
+      required={true}
+      type="text"
+      value=""
+    />
+    <label
+      className="mfui-text-field__label"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
+  </div>
+  <div
+    className="mfui-text-field__field-bottom-wrapper"
+  >
+    <div
+      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+      onTransitionEnd={[Function]}
+    >
+      noticeText
+    </div>
   </div>
 </div>
 `;
@@ -1028,7 +1114,6 @@ exports[`<TextField /> textarea should render with ie placeholder 1`] = `
 <TextField
   disabled={true}
   id="id"
-  isControlled={false}
   maxLength={4}
   name="name"
   onBlur={[MockFunction]}

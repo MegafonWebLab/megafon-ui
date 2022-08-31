@@ -93,7 +93,7 @@ const testCommonCases = (selector: string, textarea = false) => {
     it('should render with ie placeholder', () => {
         mockUserAgentAsTrident();
 
-        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} isControlled={false} />);
+        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -114,9 +114,7 @@ const testCommonCases = (selector: string, textarea = false) => {
 
     it('should call inputRef with node', () => {
         const inputRefMock = jest.fn();
-        const wrapper = mount(
-            <TextField {...commonFieldProps} textarea={textarea} inputRef={inputRefMock} isControlled={false} />,
-        );
+        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} inputRef={inputRefMock} />);
         const field = wrapper.find(selector).getDOMNode();
 
         expect(inputRefMock).toBeCalledWith(field);
@@ -126,9 +124,7 @@ const testCommonCases = (selector: string, textarea = false) => {
         const onChangeMock = jest.fn();
         const value = 'newValue';
         const event = { target: { value } };
-        const wrapper = shallow(
-            <TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} isControlled={false} />,
-        );
+        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} />);
 
         wrapper.find(selector).simulate('change', event);
 
@@ -140,9 +136,7 @@ const testCommonCases = (selector: string, textarea = false) => {
         const onBlurMock = jest.fn();
         const value = 'newValue';
         const event = { target: { value } };
-        const wrapper = shallow(
-            <TextField {...commonFieldProps} textarea={textarea} onBlur={onBlurMock} isControlled={false} />,
-        );
+        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onBlur={onBlurMock} />);
 
         wrapper.find(selector).simulate('blur', event);
 
@@ -153,9 +147,7 @@ const testCommonCases = (selector: string, textarea = false) => {
         const onFocusMock = jest.fn();
         const value = 'newValue';
         const event = { target: { value } };
-        const wrapper = shallow(
-            <TextField {...commonFieldProps} textarea={textarea} onFocus={onFocusMock} isControlled={false} />,
-        );
+        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onFocus={onFocusMock} />);
 
         wrapper.find(selector).simulate('focus', event);
 
@@ -165,9 +157,7 @@ const testCommonCases = (selector: string, textarea = false) => {
     it('should call onKeyUp', () => {
         const onKeyUpMock = jest.fn();
         const event = { target: {} };
-        const wrapper = shallow(
-            <TextField {...commonFieldProps} textarea={textarea} onKeyUp={onKeyUpMock} isControlled={false} />,
-        );
+        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onKeyUp={onKeyUpMock} />);
 
         wrapper.find(selector).simulate('keyup', event);
 
@@ -212,25 +202,37 @@ describe('<TextField />', () => {
     });
 
     it('should render with valid', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.VALID} isControlled={false} />);
+        const wrapper = shallow(<TextField {...commonProps} verification={Verification.VALID} />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render disabled field with valid', () => {
+        const wrapper = shallow(<TextField {...commonProps} verification={Verification.VALID} disabled />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with error', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.ERROR} isControlled={false} />);
+        const wrapper = shallow(<TextField {...commonProps} verification={Verification.ERROR} />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should render disabled field with error', () => {
+        const wrapper = shallow(<TextField {...commonProps} verification={Verification.ERROR} disabled />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with custom icon', () => {
-        const wrapper = shallow(<TextField {...commonProps} customIcon={<Balance />} isControlled={false} />);
+        const wrapper = shallow(<TextField {...commonProps} customIcon={<Balance />} />);
 
         expect(wrapper).toMatchSnapshot();
     });
 
     it('should render with hidden icon', () => {
-        const wrapper = shallow(<TextField {...commonProps} hideIcon customIcon={<Balance />} isControlled={false} />);
+        const wrapper = shallow(<TextField {...commonProps} hideIcon customIcon={<Balance />} />);
 
         expect(wrapper).toMatchSnapshot();
     });
@@ -239,24 +241,22 @@ describe('<TextField />', () => {
         testCommonCases(selectors.input);
 
         it('should render with mask', () => {
-            const wrapper = shallow(
-                <TextField {...commonFieldProps} mask="+7 (999) 999-99-99" maskChar="_" isControlled={false} />,
-            );
+            const wrapper = shallow(<TextField {...commonFieldProps} mask="+7 (999) 999-99-99" maskChar="_" />);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should render with type', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} type="tel" isControlled={false} />);
+            const wrapper = shallow(<TextField {...commonFieldProps} type="tel" />);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should render with inputmode', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} inputMode="numeric" isControlled={false} />);
+            const wrapper = shallow(<TextField {...commonFieldProps} inputMode="numeric" />);
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should render with autoComplete', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} autoComplete="tel" isControlled={false} />);
+            const wrapper = shallow(<TextField {...commonFieldProps} autoComplete="tel" />);
             expect(wrapper).toMatchSnapshot();
         });
 
@@ -276,20 +276,14 @@ describe('<TextField />', () => {
         it('should render without no-touch class', () => {
             (detectTouch as jest.Mock).mockReturnValueOnce(true);
 
-            const wrapper = mount(<TextField {...commonFieldProps} isControlled={false} />);
+            const wrapper = mount(<TextField {...commonFieldProps} />);
 
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should clear input after icon click', () => {
             const wrapper = shallow(
-                <TextField
-                    {...commonFieldProps}
-                    value="value"
-                    verification={Verification.ERROR}
-                    isControlled={false}
-                    disabled={false}
-                />,
+                <TextField {...commonFieldProps} value="value" verification={Verification.ERROR} disabled={false} />,
             );
 
             wrapper.find(selectors.iconBox).simulate('click');
@@ -342,7 +336,6 @@ describe('<TextField />', () => {
                     mask="+7 (999) 999-99-99"
                     maskChar="_"
                     onBeforeMaskChange={onBeforeMaskChange}
-                    isControlled={false}
                 />,
             );
 
@@ -358,13 +351,13 @@ describe('<TextField />', () => {
         testCommonCases(selectors.textarea, true);
 
         it('should render fixed textarea', () => {
-            const wrapper = shallow(<TextField {...commonProps} textarea isControlled={false} />);
+            const wrapper = shallow(<TextField {...commonProps} textarea />);
 
             expect(wrapper).toMatchSnapshot();
         });
 
         it('should render flexible textarea', () => {
-            const wrapper = shallow(<TextField {...commonProps} textarea="flexible" isControlled={false} />);
+            const wrapper = shallow(<TextField {...commonProps} textarea="flexible" />);
 
             expect(wrapper).toMatchSnapshot();
         });
@@ -372,7 +365,7 @@ describe('<TextField />', () => {
         it('should render with error because of max limit is exceeded', () => {
             const value = '123456';
             const event = { target: { value } };
-            const wrapper = shallow(<TextField {...commonProps} textarea symbolCounter={4} isControlled={false} />);
+            const wrapper = shallow(<TextField {...commonProps} textarea symbolCounter={4} />);
 
             wrapper.find('textarea').simulate('change', event);
             wrapper.update();
