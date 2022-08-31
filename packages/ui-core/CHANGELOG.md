@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.22](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.21...@megafon/ui-core@4.0.0-beta.22) (2022-08-31)
+
+
+### Bug Fixes
+
+* **tabs:** fix swiper arrows ([cac401d](https://github.com/MegafonWebLab/megafon-ui/commit/cac401ddc6ecfde58353827f3a362d8d941d4db8))
+* **textfield:** hide verification icon for disabled field ([c950d3c](https://github.com/MegafonWebLab/megafon-ui/commit/c950d3c64f13412e166c5d358b59638bc3c255ae))
+
+
+
+
+
 # [4.0.0-beta.21](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.20...@megafon/ui-core@4.0.0-beta.21) (2022-08-24)
 
 
