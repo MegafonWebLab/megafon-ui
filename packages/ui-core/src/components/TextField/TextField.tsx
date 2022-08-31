@@ -175,8 +175,8 @@ const TextField: React.FC<TextFieldProps> = ({
     );
 
     const hasValue = isControlled ? !!value : !!inputValue;
-    const isValidVerification = verification === Verification.VALID;
-    const isErrorVerification = verification === Verification.ERROR;
+    const isValidVerification = verification === Verification.VALID && !disabled;
+    const isErrorVerification = verification === Verification.ERROR && !disabled;
     const hasValueForClear = hasValue && !isPasswordType && !customIcon && !isValidVerification;
     const hasClearIcon = !disabled && (hasValueForClear || isErrorVerification);
     const actualPlaceholder = placeholder || DEFAULT_PLACEHOLDERS[type];
