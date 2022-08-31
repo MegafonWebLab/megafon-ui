@@ -92,7 +92,7 @@ const Tabs: React.FC<ITabsProps> = ({
 
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
-    const [isEnd, setEnd] = React.useState(false);
+    const [isEnd, setEnd] = React.useState(true);
 
     const [innerIndex, setInnerIndex] = React.useState(defaultIndex);
     const currentIndex = outerIndex === undefined ? innerIndex : outerIndex;
