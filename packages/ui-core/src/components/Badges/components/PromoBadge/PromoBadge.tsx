@@ -9,6 +9,7 @@ export const PromoBadgeTypes = {
     VIP: 'vip',
     POPULAR: 'popular',
     USER_CHOICE: 'user-choice',
+    INTERESTS: 'interests',
 } as const;
 
 type PromoBadgeTypesType = typeof PromoBadgeTypes[keyof typeof PromoBadgeTypes];
