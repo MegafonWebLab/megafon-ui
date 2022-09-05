@@ -91,7 +91,7 @@ export interface ICarouselProps {
     effectTheme?: EffectThemeType;
     /** Css селектор элемента, при перетаскивании которого не будет происходить смена слайдов */
     noSwipingSelector?: string;
-    /** Свайп к слайду по которому произведен клик */
+    /** Свайп к слайду, по которому произведен клик */
     slideToClickedSlide?: boolean;
     /** Ref на swiper */
     getSwiper?: (instance: SwiperCore) => void;
