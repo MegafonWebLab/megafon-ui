@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.2.2...@megafon/ui-icons@1.3.0) (2022-09-06)
+
+
+### Features
+
+* **icons:** add Rocket_24 and Refresh_24 icons ([9cdd8f8](https://github.com/MegafonWebLab/megafon-ui/commit/9cdd8f84784be9f6e3f2384ddcb9644e27652fc7))
+
+
+
+
+
 ## [1.2.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@1.2.1...@megafon/ui-icons@1.2.2) (2022-05-17)
 
 **Note:** Version bump only for package @megafon/ui-icons

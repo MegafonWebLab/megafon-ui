@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.14.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.13.0...@megafon/ui-core@3.14.0) (2022-09-06)
+
+
+### Features
+
+* **badge:** add new promo badge type ([8cbe525](https://github.com/MegafonWebLab/megafon-ui/commit/8cbe5253b9d08c19c9343b42cb3920ac259c8844))
+* **carousel:** add new prop slideToClickedSlide ([8a43432](https://github.com/MegafonWebLab/megafon-ui/commit/8a4343290f943475c8522adaa3ad2b564c551d83))
+
+
+
+
+
 # [3.13.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.12.1...@megafon/ui-core@3.13.0) (2022-08-11)
 
 
