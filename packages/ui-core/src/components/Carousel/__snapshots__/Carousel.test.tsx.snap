@@ -42,6 +42,7 @@ exports[`<Carousel /> should render with default props 1`] = `
         "clickable": true,
       }
     }
+    slideToClickedSlide={false}
     speed={300}
     watchOverflow={true}
     watchSlidesVisibility={true}
@@ -143,6 +144,7 @@ exports[`<Carousel /> should render with props 1`] = `
         "el": ".some-el",
       }
     }
+    slideToClickedSlide={true}
     speed={1000}
     watchOverflow={true}
     watchSlidesVisibility={true}
