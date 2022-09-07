@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import { shallow, mount } from 'enzyme';
-import VideoBanner, { VideoType, ButtonColor, ClassName, TextColor } from './VideoBanner';
+import VideoBanner, { VideoType, ButtonColor, ClassName, TextColor, IContent } from './VideoBanner';
 
 const imageMobile = 'imageMobile';
 const imageTablet = 'imageTablet';
@@ -11,14 +11,16 @@ const imageDesktopWide = 'imageDesktopWide';
 const video = 'video.mp4';
 const youtubeVideoId = '2Sps5MnvlKM';
 
-const content = {
+const content: IContent = {
     title: 'Текст ≈40 симовлов. Короткие слова',
     description:
         'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     buttonHref: '#',
+    buttonTarget: '_blank',
     buttonTitle: 'Текст в кнопке',
     linkTitle: 'Личный кабинет услуги',
     linkUrl: '#',
+    linkTarget: '_blank',
     cost: 'oт <b>1000 ₽</b> за сообщение',
 };
 

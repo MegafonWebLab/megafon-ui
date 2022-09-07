@@ -56,6 +56,8 @@ export interface IContent {
     buttonTitle?: string;
     /** Ссылка на кнопке */
     buttonHref?: string;
+    /** Target свойство кнопки */
+    buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Добавляет атрибут download для тега <a> компонента Button */
     buttonDownload?: boolean;
     /** Цвет кнопки */
@@ -72,6 +74,8 @@ export interface IContent {
     linkTitle?: string;
     /** Адрес ссылки */
     linkUrl?: string;
+    /** Target свойство ссылки */
+    linkTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Добавляет атрибут download для тега <a> компонента TextLink */
     linkDownload?: boolean;
     /** Строка со стоимостью услуги */
@@ -147,6 +151,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
             description,
             buttonTitle,
             buttonHref,
+            buttonTarget,
             buttonDownload,
             buttonColor = ButtonColor.GREEN,
             onButtonClick,
@@ -155,9 +160,10 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
             textColorMobile,
             linkTitle,
             linkUrl,
+            linkTarget,
             linkDownload,
             cost,
-        }) => (
+        }: IContent) => (
             <Grid className={cn('grid')} guttersLeft="medium">
                 <GridColumn mobile="12" tablet="7" desktop="7" wide="6">
                     <div
@@ -182,6 +188,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                                     className={cn(ClassName.BUTTON, [classes.button])}
                                     theme={buttonColor}
                                     href={buttonHref}
+                                    target={buttonTarget}
                                     onClick={onButtonClick}
                                     download={buttonDownload}
                                 >
@@ -194,6 +201,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                                     className={cn(ClassName.LINK, [classes.link])}
                                     href={linkUrl}
                                     download={linkDownload}
+                                    target={linkTarget}
                                     onClick={onLinkClick}
                                 >
                                     {linkTitle}
