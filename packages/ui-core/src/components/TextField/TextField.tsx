@@ -160,7 +160,7 @@ const TextField: React.FC<TextFieldProps> = ({
     const [inputValue, setInputValue] = useState<string | number | undefined>(value);
     const [initialTextareaHeight, setInitialTextareaHeight] = useState(ROW_HEIGHT * DEFAULT_ROW_COUNT);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
-    const [displayedNoticeText, setDisplayedNoticeText] = useState(noticeText);
+    const [currentNoticeText, setCurrentNoticeText] = useState(noticeText);
     const [isTextareaResizeFocused, setIsTextareaResizeFocused] = useState(false);
     const [isTextareaResized, setIsTextareaResized] = useState(false);
 
@@ -198,7 +198,7 @@ const TextField: React.FC<TextFieldProps> = ({
     }, [value, checkSymbolMaxLimit, isControlled]);
 
     useEffect(() => {
-        noticeText && setDisplayedNoticeText(noticeText);
+        noticeText && setCurrentNoticeText(noticeText);
     }, [noticeText]);
 
     useEffect(() => {
@@ -282,7 +282,7 @@ const TextField: React.FC<TextFieldProps> = ({
     };
 
     const handleNoticeTransitionEnd = useCallback(() => {
-        !noticeText && setDisplayedNoticeText(noticeText);
+        !noticeText && setCurrentNoticeText(noticeText);
     }, [noticeText]);
 
     const handleTextareaScroll = () => {
@@ -476,7 +476,6 @@ const TextField: React.FC<TextFieldProps> = ({
     const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
     const valueHasSymbols = inputValue !== null && inputValue !== undefined;
     const currentSymbolCount = (valueHasSymbols && String(inputValue).length) || 0;
-    const showAdditionalBlock = displayedNoticeText || symbolCounter;
 
     return (
         <div
@@ -501,24 +500,20 @@ const TextField: React.FC<TextFieldProps> = ({
                     </div>
                 )}
             </div>
-            {showAdditionalBlock && (
-                <div className={cn('field-bottom-wrapper')}>
-                    {displayedNoticeText && (
-                        <div
-                            className={cn('notice-text', { active: !!noticeText })}
-                            onTransitionEnd={handleNoticeTransitionEnd}
-                            {...filterDataAttrs(dataAttrs?.notice)}
-                        >
-                            {displayedNoticeText}
-                        </div>
-                    )}
-                    {symbolCounter && (
-                        <span className={cn('counter', { error: isMaxLimitExceeded })}>
-                            {`${currentSymbolCount}/${symbolCounter}`}
-                        </span>
-                    )}
+            <div className={cn('field-bottom-wrapper', { filled: !!currentNoticeText || !!symbolCounter })}>
+                <div
+                    className={cn('notice-text', { active: !!noticeText })}
+                    onTransitionEnd={handleNoticeTransitionEnd}
+                    {...filterDataAttrs(dataAttrs?.notice)}
+                >
+                    {currentNoticeText}
                 </div>
-            )}
+                {symbolCounter && (
+                    <span className={cn('counter', { error: isMaxLimitExceeded })}>
+                        {`${currentSymbolCount}/${symbolCounter}`}
+                    </span>
+                )}
+            </div>
         </div>
     );
 };
