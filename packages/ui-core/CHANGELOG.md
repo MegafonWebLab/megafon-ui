@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0-beta.23](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.22...@megafon/ui-core@4.0.0-beta.23) (2022-09-08)
+
+
+### Bug Fixes
+
+* **accordion:** fixes top and bottom padding for title wrap ([ee61836](https://github.com/MegafonWebLab/megafon-ui/commit/ee61836618f6689b87b17f1e13378442a5a7caee))
+* **notification:** fixes passive close icon color for colored error type ([6233e9f](https://github.com/MegafonWebLab/megafon-ui/commit/6233e9f16b0a45ff168323fc241f05634e663fd0))
+* **search:** fixes hidden placeholder on focus for firefox ([eab12c3](https://github.com/MegafonWebLab/megafon-ui/commit/eab12c34e25236015bffe072ffdbea31535d4d99))
+* **select:** fixes hidden placeholder on focus for firefox ([2e5366d](https://github.com/MegafonWebLab/megafon-ui/commit/2e5366d5842754d8a26a4798f2e678dfe4d44372))
+* **textfield:** fixes notice text transition ([c435aa9](https://github.com/MegafonWebLab/megafon-ui/commit/c435aa9223f5f0a4d10254b677b6bd9075fdaf07))
+
+
+
+
+
 # [4.0.0-beta.22](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0-beta.21...@megafon/ui-core@4.0.0-beta.22) (2022-08-31)
 
 
