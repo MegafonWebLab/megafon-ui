@@ -1,6 +1,7 @@
 import React from 'react';
 import { Logo } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
+import ThemeSwitcher from '../ThemeSwitcher';
 import './PageHeader.less';
 
 interface IPageHeaderProps {
@@ -36,6 +37,9 @@ const PageHeader: React.FC<IPageHeaderProps> = ({ onClick, isOpen }) => (
         </button>
         <div className={cn('logo')}>
             <Logo href="/intro" target="_self" />
+        </div>
+        <div className={cn('theme-switcher-container')}>
+            <ThemeSwitcher />
         </div>
     </div>
 );

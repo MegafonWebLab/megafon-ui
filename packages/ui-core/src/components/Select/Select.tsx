@@ -3,7 +3,6 @@ import { Fragment, Reducer, useEffect, useReducer, useCallback } from 'react';
 import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
-import InputLabel from 'components/InputLabel/InputLabel';
 import './Select.less';
 import selectReducer, { initialState, ISelectAction, ISelectState, SelectActions } from './reducer/selectReducer';
 
@@ -16,6 +15,11 @@ const {
     UPDATE_SELECT_VALUE,
     SET_HOVERED_ITEM_INDEX,
 } = SelectActions;
+
+export const SelectItemsPaddings = {
+    SMALL: 'small',
+    LARGE: 'large',
+} as const;
 
 export const Verification = {
     VALID: 'valid',
@@ -45,6 +49,8 @@ export interface ISelectItem<T extends SelectItemValueType> {
     view?: ElementOrString | ((data: ViewCallbackArguments) => ElementOrString);
     /** Настраиваемое отображение выбранного элемента в поле селекта  */
     selectedView?: JSX.Element | Element | React.ReactElement;
+    /** Размер горизонтальных отступов элемента */
+    paddings?: typeof SelectItemsPaddings[keyof typeof SelectItemsPaddings];
 }
 
 export interface ISelectProps<T extends SelectItemValueType> {
@@ -116,6 +122,7 @@ export interface ISelectProps<T extends SelectItemValueType> {
 // - Opened dropdown could be closed only via value choose, click outside of select and on TAB press.
 // - Should add event listener for outside of dropdown click on list open and remove it on list close.
 // - onClose callback shouldn't fire multiple times on outside click if dropdown was opened multiple times.
+// - If item with currentValue is not found in items, input value will not be displayed
 
 const cn = cnCreate('mfui-select');
 const Select = <T extends SelectItemValueType>({
@@ -379,6 +386,13 @@ const Select = <T extends SelectItemValueType>({
         [filterValue],
     );
 
+    const renderLabel = (): JSX.Element => (
+        <label {...filterDataAttrs(dataAttrs?.label)} htmlFor={labelId} className={cn('label')}>
+            {label}
+            {required && <span className={cn('require-mark')}>*</span>}
+        </label>
+    );
+
     const renderTitle = (): JSX.Element => {
         const item = items.find(elem => elem.value === currentValue);
         let inputTitle: string | JSX.Element | Element | undefined = placeholder;
@@ -390,32 +404,32 @@ const Select = <T extends SelectItemValueType>({
         return (
             <div
                 {...filterDataAttrs(dataAttrs?.title)}
-                className={cn(
-                    'title',
-                    {
-                        placeholder: !!placeholder && currentValue === undefined,
-                    },
-                    [classes?.title],
-                )}
+                className={cn('title', [classes?.title])}
                 role="button"
                 tabIndex={0}
                 onClick={handleSelectClick}
             >
-                <div className={cn('title-inner', [classes?.titleInner])}>{inputTitle}</div>
+                <div className={cn('title-inner', { 'hide-value': !item }, [classes?.titleInner])}>
+                    <div className={cn('title-value')}>{inputTitle}</div>
+                    {label && renderLabel()}
+                </div>
             </div>
         );
     };
 
     const renderCombobox = (): JSX.Element => (
-        <input
-            {...filterDataAttrs(dataAttrs?.input)}
-            className={cn('combobox')}
-            onFocus={handleComboboxFocus}
-            onChange={handleChangeCombobox}
-            type="text"
-            value={inputValue}
-            placeholder={placeholder}
-        />
+        <>
+            <input
+                {...filterDataAttrs(dataAttrs?.input)}
+                className={cn('combobox', { 'hide-value': !inputValue })}
+                onFocus={handleComboboxFocus}
+                onChange={handleChangeCombobox}
+                type="text"
+                value={inputValue}
+                placeholder={placeholder}
+            />
+            {label && renderLabel()}
+        </>
     );
 
     const renderChildren = (): JSX.Element => {
@@ -424,7 +438,7 @@ const Select = <T extends SelectItemValueType>({
         return (
             <div className={cn('list', [classes.list])}>
                 <div className={cn('list-inner')} ref={itemWrapperNode}>
-                    {currentItems.map(({ title, value, view }, i) => {
+                    {currentItems.map(({ title, value, view, paddings = SelectItemsPaddings.LARGE }, i) => {
                         const isItemActive = currentValue === value;
 
                         return (
@@ -434,6 +448,7 @@ const Select = <T extends SelectItemValueType>({
                                     'list-item',
                                     {
                                         hovered: hoveredItemIndex === i,
+                                        paddings,
                                     },
                                     [classes.listItem],
                                 )}
@@ -479,13 +494,7 @@ const Select = <T extends SelectItemValueType>({
             ref={selectNode}
         >
             <div className={cn('inner')}>
-                {label && (
-                    <InputLabel dataAttrs={{ root: dataAttrs?.label }} htmlFor={labelId}>
-                        {label}
-                        {required && <span className={cn('require-mark')}>*</span>}
-                    </InputLabel>
-                )}
-                <div className={cn('control', classes.control)} onKeyDown={handleKeyDown}>
+                <div className={cn('control', { labeled: !!label }, classes.control)} onKeyDown={handleKeyDown}>
                     {type === SelectTypes.COMBOBOX && renderCombobox()}
                     {type === SelectTypes.CLASSIC && renderTitle()}
                 </div>
@@ -543,6 +552,7 @@ Select.propTypes = {
             selectedView: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.func]),
             title: PropTypes.string.isRequired,
             value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            paddings: PropTypes.oneOf(Object.values(SelectItemsPaddings)),
         }),
     ).isRequired,
     onSelect: PropTypes.func,

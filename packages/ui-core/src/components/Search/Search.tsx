@@ -3,7 +3,6 @@ import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import SearchIcon from '@megafon/ui-icons/basic-24-search_24.svg';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
-import InputLabel from '../InputLabel/InputLabel';
 import './Search.less';
 
 type HandleSearchSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
@@ -19,11 +18,18 @@ type VerificationType = typeof Verification[keyof typeof Verification];
 
 type ElementOrString = JSX.Element[] | JSX.Element | Element[] | Element;
 
+export const SearchItemsPaddings = {
+    SMALL: 'small',
+    LARGE: 'large',
+} as const;
+
 export type SearchItem = {
     /** Значение value элемента */
     value: string;
     /** Настраиваемое отображение элементов в выпадающем списке */
     searchView?: ElementOrString;
+    /** Размер горизонтальных отступов элемента */
+    paddings?: typeof SearchItemsPaddings[keyof typeof SearchItemsPaddings];
 };
 
 export interface ISearchProps {
@@ -38,6 +44,8 @@ export interface ISearchProps {
     value?: string;
     /** Заголовок поля */
     label?: string;
+    /** HTML идентификатор поля поиска */
+    searchId?: string;
     /** Текст внутри поля по умолчанию */
     placeholder?: string;
     /** Запрещает отрисовку иконки */
@@ -77,6 +85,7 @@ const Search: React.FC<ISearchProps> = ({
     dataAttrs,
     value = '',
     label,
+    searchId = 'mfuiSearchId',
     placeholder,
     hideIcon,
     items = [],
@@ -237,27 +246,36 @@ const Search: React.FC<ISearchProps> = ({
 
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ open: isFocused, disabled }, [className])}>
-            {label && (
-                <InputLabel>
-                    {label}
-                    {required && <span className={cn('require-mark')}>*</span>}
-                </InputLabel>
-            )}
-            <div className={cn('control', { error: verification === Verification.ERROR }, [classes?.control])}>
-                <input
-                    {...filterDataAttrs(dataAttrs?.searchField)}
-                    className={cn('search-field')}
-                    placeholder={placeholder}
-                    value={searchQuery}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    onKeyDown={handleKeyDown}
-                    onClick={handleClick}
-                    disabled={disabled}
-                    type="text"
-                    autoComplete="off"
-                />
+            <div
+                className={cn(
+                    'control',
+                    { error: verification === Verification.ERROR, success: verification === Verification.VALID },
+                    [classes?.control],
+                )}
+            >
+                <label className={cn('search-wrapper', { labeled: !!label })} htmlFor={searchId}>
+                    <input
+                        {...filterDataAttrs(dataAttrs?.searchField)}
+                        id={searchId}
+                        className={cn('search-field', { filled: !!searchQuery })}
+                        placeholder={placeholder}
+                        value={searchQuery}
+                        onChange={handleChange}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                        onKeyDown={handleKeyDown}
+                        onClick={handleClick}
+                        disabled={disabled}
+                        type="text"
+                        autoComplete="off"
+                    />
+                    {label && (
+                        <div className={cn('label')}>
+                            {label}
+                            {required && <span className={cn('require-mark')}>*</span>}
+                        </div>
+                    )}
+                </label>
                 {!hideIcon && (
                     <div
                         {...filterDataAttrs(dataAttrs?.submit)}
@@ -271,20 +289,25 @@ const Search: React.FC<ISearchProps> = ({
                 {!!items.length && (
                     <div className={cn('list')}>
                         <div className={cn('list-inner')}>
-                            {items.map(({ value: itemValue, searchView }: SearchItem, i) => (
-                                <div
-                                    {...filterDataAttrs(dataAttrs?.item, i + 1)}
-                                    ref={activeIndex === i ? highlightedItem : null}
-                                    className={cn('list-item', { active: activeIndex === i })}
-                                    onMouseDown={handleSelectSubmit(i)}
-                                    onMouseEnter={handleHoverItem(i)}
-                                    key={i}
-                                >
-                                    <div className={cn('item-title', [classes?.listItemTitle])}>
-                                        {searchView || highlightString(itemValue)}
+                            {items.map(
+                                (
+                                    { value: itemValue, searchView, paddings = SearchItemsPaddings.LARGE }: SearchItem,
+                                    i,
+                                ) => (
+                                    <div
+                                        {...filterDataAttrs(dataAttrs?.item, i + 1)}
+                                        ref={activeIndex === i ? highlightedItem : null}
+                                        className={cn('list-item', { active: activeIndex === i, paddings })}
+                                        onMouseDown={handleSelectSubmit(i)}
+                                        onMouseEnter={handleHoverItem(i)}
+                                        key={i}
+                                    >
+                                        <div className={cn('item-title', [classes?.listItemTitle])}>
+                                            {searchView || highlightString(itemValue)}
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ),
+                            )}
                         </div>
                     </div>
                 )}
@@ -313,6 +336,7 @@ Search.propTypes = {
     }),
     value: PropTypes.string,
     label: PropTypes.string,
+    searchId: PropTypes.string,
     placeholder: PropTypes.string,
     hideIcon: PropTypes.bool,
     items: PropTypes.arrayOf(
@@ -323,6 +347,7 @@ Search.propTypes = {
                 PropTypes.element,
                 PropTypes.arrayOf(PropTypes.element),
             ]),
+            paddings: PropTypes.oneOf(Object.values(SearchItemsPaddings)),
         }).isRequired,
     ),
     changeDelay: PropTypes.number,

@@ -29,7 +29,7 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
   title="Test"
 >
   <div
-    className="mfui-accordion mfui-accordion_open"
+    className="mfui-accordion mfui-accordion_opened"
     data-root="data-test-value"
   >
     <div
@@ -37,23 +37,24 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
       data-title-wrap="data-test-value"
       onClick={[Function]}
       onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <Header
         as="h5"
         data-header="data-test-value"
       >
         <h5
-          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
+          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
         >
           Test
         </h5>
       </Header>
       <div
-        className="mfui-accordion__icon-box mfui-accordion__icon-box_open"
-        role="button"
-        tabIndex={0}
+        className="mfui-accordion__icon-box"
       >
         <test-file-stub
+          className="mfui-accordion__icon"
           data-arrow-up="data-test-value"
         />
       </div>
@@ -120,23 +121,24 @@ exports[`<Accordion /> it renders Accordion 1`] = `
       data-title-wrap="data-test-value"
       onClick={[Function]}
       onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
     >
       <Header
         as="h5"
         data-header="data-test-value"
       >
         <h5
-          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit"
+          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
         >
           Test
         </h5>
       </Header>
       <div
         className="mfui-accordion__icon-box"
-        role="button"
-        tabIndex={0}
       >
         <test-file-stub
+          className="mfui-accordion__icon"
           data-arrow-down="data-test-value"
         />
       </div>

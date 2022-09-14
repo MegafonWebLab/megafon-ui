@@ -5,6 +5,7 @@ exports[`<TabsBox /> should render with props 1`] = `
   className="mfui-tabs-box"
 >
   <Tabs
+    autoWidth={true}
     classes={
       Object {
         "innerIndents": "innerIndentsClass",
@@ -14,7 +15,7 @@ exports[`<TabsBox /> should render with props 1`] = `
     currentIndex={1}
     defaultIndex={1}
     hAlign="center"
-    size="small"
+    size="large"
     sticky={true}
     tabColorTheme="green"
   >

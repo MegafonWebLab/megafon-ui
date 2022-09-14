@@ -32,6 +32,7 @@ const props: ISearchProps = {
         item: { 'data-testid': 'item-test' },
     },
     value: 'initial value',
+    searchId: 'searchId',
     placeholder: 'type to search here',
     items: [{ value: 'title' }, { value: 'title2' }, { value: 'title3' }, { value: 'title4' }],
     className: 'test',

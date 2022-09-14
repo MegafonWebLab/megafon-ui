@@ -2,9 +2,10 @@
 
 exports[`<Tabs /> should render with default props 1`] = `
 <div
-  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_h-align_left mfui-tabs_tab-color_white mfui-tabs_indents"
+  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
 >
   <div
+    className="mfui-tabs__wrapper"
     style={
       Object {
         "height": "auto",
@@ -21,7 +22,7 @@ exports[`<Tabs /> should render with default props 1`] = `
       }
     >
       <Swiper
-        className="mfui-tabs__swiper mfui-tabs__swiper_beginning"
+        className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end"
         initialSlide={0}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
@@ -29,6 +30,7 @@ exports[`<Tabs /> should render with default props 1`] = `
         onSwiper={[Function]}
         simulateTouch={false}
         slidesPerView="auto"
+        watchOverflow={true}
       >
         <SwiperSlide
           className="mfui-tabs__slide"
@@ -72,7 +74,7 @@ exports[`<Tabs /> should render with default props 1`] = `
           onClick={[Function]}
         />
         <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_next"
+          className="mfui-tabs__arrow mfui-tabs__arrow_next mfui-tabs__arrow_hide"
           onClick={[Function]}
         />
       </Swiper>
@@ -95,10 +97,11 @@ exports[`<Tabs /> should render with default props 1`] = `
 
 exports[`<Tabs /> should render with props 1`] = `
 <div
-  className="mfui-tabs mfui-tabs_size_small mfui-tabs_h-align_center mfui-tabs_tab-color_green className rootClass"
+  className="mfui-tabs mfui-tabs_size_large mfui-tabs_tab-color_green mfui-tabs_h-align_center mfui-tabs_auto-width className rootClass"
   data-test="test"
 >
   <div
+    className="mfui-tabs__wrapper"
     style={
       Object {
         "height": "auto",
@@ -115,7 +118,7 @@ exports[`<Tabs /> should render with props 1`] = `
       }
     >
       <Swiper
-        className="mfui-tabs__swiper mfui-tabs__swiper_beginning innerIndentsClass"
+        className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end innerIndentsClass"
         data-test="test"
         initialSlide={1}
         onFromEdge={[Function]}
@@ -124,6 +127,7 @@ exports[`<Tabs /> should render with props 1`] = `
         onSwiper={[Function]}
         simulateTouch={false}
         slidesPerView="auto"
+        watchOverflow={true}
       >
         <SwiperSlide
           className="mfui-tabs__slide"
@@ -134,7 +138,7 @@ exports[`<Tabs /> should render with props 1`] = `
             data-testid="root[1]"
           >
             <a
-              className="mfui-tabs__tab-inner"
+              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_with-icon"
               data-testid="inner[1]"
               href="www.test.com"
               onClick={[Function]}
@@ -192,7 +196,7 @@ exports[`<Tabs /> should render with props 1`] = `
           onClick={[Function]}
         />
         <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_next"
+          className="mfui-tabs__arrow mfui-tabs__arrow_next mfui-tabs__arrow_hide"
           data-test="test"
           onClick={[Function]}
         />
@@ -211,9 +215,10 @@ exports[`<Tabs /> should render with props 1`] = `
 
 exports[`<Tabs /> should render without panels 1`] = `
 <div
-  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_h-align_left mfui-tabs_tab-color_white mfui-tabs_indents"
+  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
 >
   <div
+    className="mfui-tabs__wrapper"
     style={
       Object {
         "height": "auto",
@@ -230,7 +235,7 @@ exports[`<Tabs /> should render without panels 1`] = `
       }
     >
       <Swiper
-        className="mfui-tabs__swiper mfui-tabs__swiper_beginning"
+        className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end"
         initialSlide={0}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
@@ -238,6 +243,7 @@ exports[`<Tabs /> should render without panels 1`] = `
         onSwiper={[Function]}
         simulateTouch={false}
         slidesPerView="auto"
+        watchOverflow={true}
       >
         <SwiperSlide
           className="mfui-tabs__slide"
@@ -247,7 +253,7 @@ exports[`<Tabs /> should render without panels 1`] = `
             className="mfui-tabs__tab"
           >
             <a
-              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current"
+              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current mfui-tabs__tab-inner_with-icon"
               href="www.test.com"
               onClick={[Function]}
             >
@@ -303,7 +309,7 @@ exports[`<Tabs /> should render without panels 1`] = `
           onClick={[Function]}
         />
         <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_next"
+          className="mfui-tabs__arrow mfui-tabs__arrow_next mfui-tabs__arrow_hide"
           onClick={[Function]}
         />
       </Swiper>

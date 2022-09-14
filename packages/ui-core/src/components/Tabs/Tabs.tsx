@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import ArrowLeft from '@megafon/ui-icons/system-16-arrow_left_16.svg';
-import ArrowRight from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 import throttle from 'lodash.throttle';
 import PropTypes from 'prop-types';
 import SwiperCore from 'swiper';
@@ -9,15 +8,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './Tabs.less';
 import { ITabProps } from './Tab';
 
-export const TabSize = {
-    SMALL: 'small',
-    MEDIUM: 'medium',
-    LARGE: 'large',
-} as const;
-
 export const TabHAlign = {
     LEFT: 'left',
     CENTER: 'center',
+} as const;
+
+export const TabSize = {
+    MEDIUM: 'medium',
+    LARGE: 'large',
 } as const;
 
 export const TabColorTheme = {
@@ -26,8 +24,8 @@ export const TabColorTheme = {
 } as const;
 
 type TabSizeType = typeof TabSize[keyof typeof TabSize];
-type TabHAlignType = typeof TabHAlign[keyof typeof TabHAlign];
 type TabColorThemeType = typeof TabColorTheme[keyof typeof TabColorTheme];
+type TabHAlignType = typeof TabHAlign[keyof typeof TabHAlign];
 
 export interface ITabsProps {
     /** Дополнительный класс для корневого элемента */
@@ -49,10 +47,12 @@ export interface ITabsProps {
     };
     /** Размер табов */
     size?: TabSizeType;
-    /** Горизонтальное выравнивание */
-    hAlign?: TabHAlignType;
     /** Цветовая тема табов для определенных фонов */
     tabColorTheme?: TabColorThemeType;
+    /** Ширина табов по размеру содержимого */
+    autoWidth?: boolean;
+    /** Горизонтальное выравнивание (только для autoWidth = true) */
+    hAlign?: TabHAlignType;
     /** Фиксация табов у верхней границы окна */
     sticky?: boolean;
     /** Индекс активного таба (включает режим управления табами снаружи) */
@@ -73,12 +73,13 @@ const Tabs: React.FC<ITabsProps> = ({
     className,
     classes: { root: rootClass, innerIndents: innerIndentsClass, tab: tabClass, activeTab: activeTabClass } = {},
     size = 'medium',
-    hAlign = 'left',
     tabColorTheme = 'white',
     sticky = false,
+    hAlign = 'left',
     defaultIndex = 0,
     currentIndex: outerIndex,
     renderOnlyCurrentPanel = false,
+    autoWidth = false,
     children,
     dataAttrs,
     onTabClick,
@@ -91,7 +92,7 @@ const Tabs: React.FC<ITabsProps> = ({
 
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
-    const [isEnd, setEnd] = React.useState(false);
+    const [isEnd, setEnd] = React.useState(true);
 
     const [innerIndex, setInnerIndex] = React.useState(defaultIndex);
     const currentIndex = outerIndex === undefined ? innerIndex : outerIndex;
@@ -251,6 +252,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     href={href}
                     className={cn('tab-inner', {
                         current: currentIndex === index,
+                        'with-icon': !!icon,
                     })}
                     onClick={handleTabInnerClick(index)}
                     {...filterDataAttrs(attr, index + 1)}
@@ -387,16 +389,17 @@ const Tabs: React.FC<ITabsProps> = ({
             className={cn(
                 {
                     size,
-                    'h-align': hAlign,
                     'tab-color': tabColorTheme,
+                    'h-align': hAlign,
                     indents: !innerIndentsClass,
                     sticky: isSticky,
+                    'auto-width': autoWidth,
                 },
                 [className, rootClass],
             )}
             ref={rootRef}
         >
-            <div ref={tabListRef} style={{ height: tabListHeight }}>
+            <div className={cn('wrapper')} ref={tabListRef} style={{ height: tabListHeight }}>
                 <div
                     className={cn('swiper-wrapper')}
                     style={{
@@ -415,6 +418,7 @@ const Tabs: React.FC<ITabsProps> = ({
                             },
                             [innerIndentsClass],
                         )}
+                        watchOverflow
                         slidesPerView="auto"
                         initialSlide={currentIndex}
                         onSwiper={handleSwiper}
@@ -440,7 +444,7 @@ const Tabs: React.FC<ITabsProps> = ({
                             })}
                             onClick={handlePrevArrowClick}
                         />
-                        <ArrowRight
+                        <ArrowLeft
                             {...filterDataAttrs(dataAttrs?.next)}
                             className={cn('arrow', { next: true, hide: isEnd })}
                             onClick={handleNextArrowClick}
@@ -470,6 +474,7 @@ Tabs.propTypes = {
     }),
     size: PropTypes.oneOf(Object.values(TabSize)),
     hAlign: PropTypes.oneOf(Object.values(TabHAlign)),
+    autoWidth: PropTypes.bool,
     tabColorTheme: PropTypes.oneOf(Object.values(TabColorTheme)),
     sticky: PropTypes.bool,
     currentIndex: PropTypes.number,

@@ -41,12 +41,16 @@
     }
 
     &__title {
-        margin-bottom: 8px;
+        display: block;
+        margin-bottom: 4px;
 
         color: var(--content);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
 
         @media @desktopMU {
-            margin-bottom: 4px;
+            line-height: 24px;
         }
     }
 
@@ -130,21 +134,15 @@
         z-index: 1;
 
         display: flex;
-        gap: 16px;
         align-items: flex-end;
         justify-content: space-between;
 
         width: 100%;
         margin-top: 8px;
-
-        @media @mobileBU {
-            gap: 20px;
-        }
     }
 
     &__bottom-block {
         display: flex;
-        gap: 16px;
 
         overflow: hidden;
     }
@@ -164,6 +162,10 @@
         @media @mobileSM {
             .smallFont();
         }
+    }
+
+    &__button + &__link {
+        margin-left: 16px;
     }
 
     &__link-arrow,
@@ -202,6 +204,15 @@
 
         @media @mobileSM {
             .smallFont();
+            margin-left: 16px;
+        }
+    }
+
+    &__bottom-block + &__collapse-button {
+        margin-left: 20px;
+
+        @media @mobileSM {
+            margin-left: 16px;
         }
     }
 
@@ -356,6 +367,16 @@
                 background-color: var(--stcWhite20);
 
                 svg { /* stylelint-disable-line max-nesting-depth */
+                    fill: var(--stcWhite);
+                }
+            }
+
+            &__close:not(:hover) {
+                background-color: var(--stcWhite20);
+
+                @{b}__close-icon { /* stylelint-disable-line max-nesting-depth */
+                    opacity: 1;
+
                     fill: var(--stcWhite);
                 }
             }

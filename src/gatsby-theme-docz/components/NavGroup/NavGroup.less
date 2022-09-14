@@ -9,6 +9,7 @@
 
         svg {
             fill: var(--content);
+            transition: fill 0.3s;
         }
     }
 
@@ -16,6 +17,7 @@
         margin-right: 4px;
 
         color: var(--content);
+        transition: color 0.3s;
         font-weight: 500;
         font-size: 15px;
         line-height: 24px;
@@ -60,6 +62,7 @@
             height: 20px;
 
             fill: var(--content);
+            transition: fill 0.3s;
         }
     }
 
@@ -72,6 +75,8 @@
         color: var(--content);
 
         background: var(--base);
+        transition-property: background, color, border-bottom-color;
+        transition-duration: 0.3s;
 
         outline: none;
     }

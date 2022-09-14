@@ -4,13 +4,36 @@
 @swiperWrapper: e('.swiper-wrapper');
 
 @{b} {
+    @{swiperWrapper} {
+        position: relative;
+        z-index: 0;
+
+        display: flex;
+        width: 100%;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__swiper-wrapper {
+        display: flex;
+        width: 100%;
+    }
+
     &__swiper {
         .fontFamily();
         .h5();
         position: relative;
 
-        display: flex;
+        display: inline-block;
+        width: 100%;
+        padding: 4px;
+        border-radius: 12px;
         overflow: hidden;
+
+        background-color: var(--spbSky0);
 
         &:before,
         &:after {
@@ -22,19 +45,19 @@
 
             width: 64px;
 
+            background: linear-gradient(270deg, var(--stcBlack5) 0%, transparent 64%);
+
             pointer-events: none;
         }
 
         &:before {
             left: 0;
 
-            background: linear-gradient(to right, var(--base), rgba(255, 255, 255, 0));
+            transform: matrix(-1, 0, 0, 1, 0, 0);
         }
 
         &:after {
             right: 0;
-
-            background: linear-gradient(to left, var(--base), rgba(255, 255, 255, 0));
         }
     }
 
@@ -50,68 +73,10 @@
         }
     }
 
-    @{swiperWrapper} {
-        position: relative;
-        z-index: 0;
-
-        display: flex;
-        max-width: 100%;
-
-        @media @mobileSM {
-            width: 100%;
-        }
-    }
-
     &__slide {
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-        flex-shrink: 0;
-
-        @media @mobileSM {
-            flex-grow: 1;
-        }
-    }
-
-    &__tab-inner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: content-box;
-        height: 32px;
-
-        color: var(--content);
-        white-space: nowrap;
-        text-decoration: none;
-
-        cursor: pointer;
-
-        fill: var(--content);
-
-        &:hover {
-            color: var(--brandGreen);
-
-            fill: var(--brandGreen);
-        }
-    }
-
-    &__tab-inner_current {
-        color: var(--brandGreen);
-
-        fill: var(--brandGreen);
-    }
-
-    &__tab-icon {
-        width: 32px;
-        height: 32px;
-
-        &:not(:last-child) {
-            margin-right: 8px;
-        }
-
-        svg {
-            width: 100%;
-            height: 100%;
-        }
+        flex: 1;
     }
 
     &__panel {
@@ -124,14 +89,17 @@
 
     &__underline {
         position: absolute;
+        top: 0;
         bottom: 0;
-        left: 0;
+        left: auto;
+        z-index: 0;
 
-        height: 2px;
+        border-radius: 8px;
 
-        background-color: var(--brandGreen);
+        background-color: var(--stcWhite);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-        transition-duration: 0.3s;
+        transition-duration: @defaultTransitionTiming;
     }
 
     &__arrow {
@@ -144,118 +112,168 @@
         height: 16px;
         border-radius: 50%;
 
-        background-color: var(--stcBlack);
+        background-color: var(--content);
         transform: translateY(-50%);
         cursor: pointer;
+        opacity: 1;
+
+        transition-duration: @defaultTransitionTiming;
+        transition-property: background-color , opacity;
 
         fill: var(--base);
 
         @media @mobile {
             display: none;
         }
+
+        &:hover {
+            background-color: var(--spbSky3);
+        }
+
+        &:active {
+            background-color: var(--buttonDown);
+        }
     }
 
     &__arrow_prev {
-        left: 0;
+        left: 14px;
     }
 
     &__arrow_next {
-        right: 0;
+        right: 14px;
+
+        transform: translateY(-50%) rotate(180deg);
     }
 
     &__arrow_hide {
-        display: none;
+        opacity: 0;
+
+        pointer-events: none;
     }
 
-    // mod size small
+    &__tab-inner {
+        .h5();
+        position: relative;
 
-    &_size_small {
-        @{b}__slide:not(:last-child) @{b}__tab {
-            padding-right: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        height: 36px;
+        padding: 2px 12px;
 
-            @media @mobileSM {
-                padding-right: 32px;
-            }
-        }
+        color: var(--spbSky3);
+        white-space: nowrap;
+        text-align: center;
+        text-decoration: none;
 
-        @{b}__tab-inner {
-            justify-content: start;
-            height: 24px;
-            padding: 7px 0;
+        cursor: pointer;
 
-            @media @mobileSM {
-                padding: 3px 0;
-            }
-        }
+        transition: color @defaultTransitionTiming;
 
-        @{b}__tab-icon {
-            width: 24px;
-            height: 24px;
+        fill: var(--spbSky3);
+
+        &:focus {
+            color: var(--spbSky3);
+
+            fill: var(--spbSky3);
         }
     }
 
-    // mod size medium
+    &__tab-inner:not(&__tab-inner_current) {
+        &:hover {
+            color: var(--content);
 
-    &_size_medium {
-        @{b}__tab-inner {
-            padding: 7px 24px;
+            fill: var(--content);
+        }
 
-            @media @mobileSM {
-                padding: 3px 16px;
-            }
+        &:active {
+            color: var(--buttonDown);
+
+            fill: var(--buttonDown);
+        }
+    }
+
+    &__tab-inner_with-icon {
+        padding-left: 8px;
+    }
+
+    &__tab-inner_current {
+        color: var(--stcBlack);
+
+        cursor: auto;
+
+        fill: var(--stcBlack);
+    }
+
+    &__tab-icon {
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
+
+        svg {
+            width: 100%;
+            height: 100%;
         }
     }
 
     // mod size large
 
-    &_size_large {
-        @{b}__swiper {
-            .h3();
+    &_size_large & {
+        &__swiper {
+            padding: 6px;
+
+            @media @mobileBU {
+                padding: 8px;
+            }
         }
 
-        @{b}__tab-inner {
-            padding: 11px 24px;
+        &__tab-inner {
+            height: 48px;
+            padding: 8px 24px;
 
-            @media @mobileSM {
-                padding: 7px 16px;
+            @media @mobileBU {
+                height: 56px;
+                padding: 12px 40px;
             }
+        }
+
+        &__tab-inner_with-icon {
+            padding-left: 20px;
+
+            @media @mobileBU {
+                padding-left: 28px;
+            }
+        }
+
+        &__tab-icon {
+            margin-right: 6px;
         }
     }
 
-    // mod hAlign center
+    // mod auto width
 
-    &_h-align_center {
-        @{b}__swiper {
+    &_auto-width & {
+        &__swiper {
+            width: auto;
+            max-width: 100%;
+        }
+
+        &__slide {
+            flex: 0 0 auto;
+        }
+    }
+
+    &_auto-width&_h-align_center & {
+        &__swiper-wrapper {
             justify-content: center;
-        }
-
-        @{b}__tab {
-            border-bottom: 1px solid var(--stcWhite);
-        }
-    }
-
-    &_h-align_left {
-        @{b}__swiper-wrapper {
-            position: relative;
-
-            &:before {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-
-                width: 100%;
-                height: 1px;
-
-                background-color: var(--spbSky2);
-            }
         }
     }
 
     // mod indents
 
-    &_indents {
-        @{b}__swiper {
+    &_indents & {
+        &__swiper-wrapper {
             @media @mobileB {
                 margin: 0 -@contentHorizontalIndentMobileB;
                 padding: 0 @contentHorizontalIndentMobileB;
@@ -269,8 +287,8 @@
 
     // mod sticky
 
-    &_sticky {
-        @{b}__swiper-wrapper {
+    &_sticky & {
+        &__swiper-wrapper {
             position: fixed;
             top: 0;
             right: 0;
@@ -283,26 +301,12 @@
 
     // mod color green
 
-    &_tab-color_green:not(&_sticky) {
-        @{b}__swiper {
-            &:before {
-                left: 0;
-
-                background: linear-gradient(to right, var(--brandGreen), transparent);
-            }
-
-            &:after {
-                right: 0;
-
-                background: linear-gradient(to left, var(--brandGreen), transparent);
-            }
+    &_tab-color_green:not(&_sticky) & {
+        &__swiper {
+            background-color: var(--stcBlack50);
         }
 
-        @{b}__tab {
-            border-color: var(--stcBlack5);
-        }
-
-        @{b}__tab-inner {
+        &__tab-inner:not(&__tab-inner_current) {
             color: var(--stcWhite50);
 
             fill: var(--stcWhite50);
@@ -314,20 +318,28 @@
             }
         }
 
-        @{b}__tab-inner_current {
-            color: var(--stcWhite);
+        &__tab-inner_current {
+            color: var(--stcBlack);
 
-            fill: var(--stcWhite);
+            fill: var(--stcBlack);
         }
 
-        @{b}__underline {
+        &__underline {
             background-color: var(--stcWhite);
         }
 
-        @{b}__arrow {
+        &__arrow {
             background-color: var(--stcWhite);
 
-            fill: var(--brandGreen);
+            fill: var(--stcBlack);
+
+            &:hover {
+                background-color: var(--stcWhite50);
+            }
+
+            &:active {
+                background-color: var(--stcBlack0);
+            }
         }
     }
 }

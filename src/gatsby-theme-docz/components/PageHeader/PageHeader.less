@@ -5,8 +5,14 @@
     left: 0;
     z-index: 99;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     background: var(--base);
     box-shadow: 0 0 16px 0 var(--stcBlack20);
+    transition-property: background;
+    transition-duration: 0.3s;
 
     @media screen and (min-width: 768px) {
         display: none;
@@ -27,11 +33,7 @@
         }
     }
 
-    &__logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        transform: translate(-50%, -50%);
+    &__theme-switcher-container {
+        width: 48px;
     }
 }

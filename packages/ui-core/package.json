@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-core",
-  "version": "3.14.0",
+  "version": "4.0.0-beta.23",
   "files": [
     "dist",
     "styles"
@@ -43,7 +43,7 @@
     ]
   },
   "peerDependencies": {
-    "@megafon/ui-icons": "^1.0.0",
+    "@megafon/ui-icons": "^0.0.2-beta.2",
     "react": ">=16.13.0",
     "react-dom": ">=16.13.0"
   },
@@ -54,7 +54,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@megafon/ui-icons": "^1.3.0",
+    "@megafon/ui-icons": "^2.0.0-beta.2",
     "@svgr/core": "^2.4.1",
     "@testing-library/react-hooks": "^7.0.1",
     "@types/enzyme": "^3.10.5",

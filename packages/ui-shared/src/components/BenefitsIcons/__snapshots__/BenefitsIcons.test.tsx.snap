@@ -1466,7 +1466,7 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                         className="mfui-benefits-icons-tile__title"
                       >
                         <h5
-                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>
@@ -1530,7 +1530,7 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                         className="mfui-benefits-icons-tile__title"
                       >
                         <h5
-                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-benefits-icons-tile__title"
                         >
                           Интенет
                         </h5>
@@ -1594,7 +1594,7 @@ exports[`<BenefitsIcons /> should render in one column on mobile 1`] = `
                         className="mfui-benefits-icons-tile__title"
                       >
                         <h5
-                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>
@@ -1736,7 +1736,7 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                         className="mfui-benefits-icons-tile__title"
                       >
                         <h5
-                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>
@@ -1800,7 +1800,7 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                         className="mfui-benefits-icons-tile__title"
                       >
                         <h5
-                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-benefits-icons-tile__title"
                         >
                           Интенет
                         </h5>
@@ -1864,7 +1864,7 @@ exports[`<BenefitsIcons /> should render in one column on mobile 2`] = `
                         className="mfui-benefits-icons-tile__title"
                       >
                         <h5
-                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-benefits-icons-tile__title"
+                          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide mfui-benefits-icons-tile__title"
                         >
                           Интернет
                         </h5>

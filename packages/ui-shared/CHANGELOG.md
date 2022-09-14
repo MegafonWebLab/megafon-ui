@@ -8,31 +8,21 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **videobanner:** add buttonTarget and linkTarget props ([96dcfbc](https://github.com/MegafonWebLab/megafon-ui/commit/96dcfbc4ecffeb9fca9e9e15d2a5434e1b978481))
+* **paragraph:** remove prop size; add new prop; add 'pale' option to colors ([ffb6bc7](https://github.com/MegafonWebLab/megafon-ui/commit/ffb6bc709a4ef91536e359d5f9edc5501caf0c2c))
+* **tabs:** update by new design ([20ae2cc](https://github.com/MegafonWebLab/megafon-ui/commit/20ae2cc695e1245b9cd06fe37a9e4e3bb0c7eaae))
+* **text-with-icon:** delete centering in mobile resolution ([c68f98f](https://github.com/MegafonWebLab/megafon-ui/commit/c68f98f0b69cbe0e416de4d526c70c009213647e))
 
 
+### BREAKING CHANGES
 
-
-
-## [3.4.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.4.5...@megafon/ui-shared@3.4.6) (2022-09-06)
-
-**Note:** Version bump only for package @megafon/ui-shared
-
-
-
-
-
-## [3.4.5](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.4.4...@megafon/ui-shared@3.4.5) (2022-08-11)
-
-**Note:** Version bump only for package @megafon/ui-shared
-
-
-
-
-
-## [3.4.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.4.3...@megafon/ui-shared@3.4.4) (2022-08-02)
-
-**Note:** Version bump only for package @megafon/ui-shared
+* **text-with-icon:** centering in mobile resolution was removed according guides
+* **tabs:** new prop autoWidth added
+size prop small vallue removed
+new sizes
+* **breadcrumbs:** color is now depends on current theme. by default it matches content text color.
+for keep black color on light background use 'black' value for prop 'color'.
+* **paragraph:** prop 'size' is no longer exists.
+use component Caption instead of Paragraph size="small"
 
 
 

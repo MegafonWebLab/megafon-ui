@@ -11,13 +11,20 @@ import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
 ## Поле для ввода пароля
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField name="name" placeholder="password" type="password"/>
+    <TextField name="name" type="password"/>
 </Playground>
 
 ## Обязательное поле
 
 <Playground style={wrapperDefaultWidthStyle}>
     <TextField name="name" required label="Телефон"/>
+</Playground>
+
+## Отключено отображение плейсхолдера
+При установке фокуса на поле - плейсхолдер не отображается
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField hidePlaceholder label="Введите текст" />
 </Playground>
 
 ## Поле для ввода телефона
@@ -226,4 +233,24 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
         textarea
         value='disabled'
     />
+</Playground>
+
+## Цветовые схемы
+
+<Playground>
+    <div style={{ display: 'flex', gap: '35px' }}>
+        <div style={{ flex: 1, padding: '10px' }}>
+            <TextField 
+                verification="valid"
+                noticeText="Тема для светлого фона (по умолчанию)"
+            />
+        </div>
+        <div style={{ flex: 1, padding: '10px', backgroundColor: '#00B956' }}>
+            <TextField
+                verification="valid"
+                noticeText="Светлая тема для цветного фона"
+                theme="white"
+            />
+        </div>
+    </div>
 </Playground>

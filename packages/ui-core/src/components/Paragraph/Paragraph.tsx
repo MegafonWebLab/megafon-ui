@@ -6,6 +6,7 @@ import './Paragraph.less';
 const COLORS = {
     INHERIT: 'inherit',
     DEFAULT: 'default',
+    GRAY: 'gray',
     WHITE: 'white',
     GREEN: 'green',
     PURPLE: 'purple',
@@ -16,9 +17,9 @@ type ColorType = typeof COLORS[keyof typeof COLORS];
 export interface IParagraphProps {
     /** Выравнивание по горизонтали */
     align?: 'left' | 'center' | 'right';
-    /** Размер шрифта */
-    size?: 'regular' | 'small';
-    /** Вертикальный отступ (включен по умолчанию) */
+    /** Поведение текста при встраивании в широкий или узкий контейнер */
+    space?: 'wide' | 'tight';
+    /** Вертикальный отступ */
     hasMargin?: boolean;
     /** Цвет текста */
     color?: ColorType;
@@ -32,9 +33,9 @@ export interface IParagraphProps {
 
 const cn = cnCreate('mfui-paragraph');
 const Paragraph: React.FC<IParagraphProps> = ({
-    size = 'regular',
     align,
     color = 'default',
+    space = 'wide',
     className,
     hasMargin = true,
     dataAttrs,
@@ -44,9 +45,9 @@ const Paragraph: React.FC<IParagraphProps> = ({
         {...filterDataAttrs(dataAttrs?.root)}
         className={cn(
             {
-                size,
                 align,
                 color,
+                space,
                 'has-margin': hasMargin,
             },
             className,
@@ -61,7 +62,7 @@ Paragraph.propTypes = {
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     align: PropTypes.oneOf(['left', 'center', 'right']),
-    size: PropTypes.oneOf(['regular', 'small']),
+    space: PropTypes.oneOf(['wide', 'tight']),
     hasMargin: PropTypes.bool,
     color: PropTypes.oneOf(Object.values(COLORS)),
 };
