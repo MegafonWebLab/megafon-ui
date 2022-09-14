@@ -14,18 +14,28 @@ interface IContent {
     buttonTitle?: string;
     /** Ссылка на кнопке */
     buttonHref?: string;
+    /** Target свойство кнопки */
+    buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
+    /** Добавляет атрибут download для тега <a> компонента Button */
+    buttonDownload?: boolean;
     /** Цвет кнопки */
-    buttonColor?: 'green' | 'purple';
+    buttonColor?: ButtonColorType;
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
+    /** Обработчик клика по ссылке */
+    onLinkClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Цвет текста */
-    textColor?: 'black' | 'white';
+    textColor?: TextColorType;
     /** Цвет текста на мобильном разрешении */
-    textColorMobile?: 'black' | 'white';
+    textColorMobile?: TextColorType;
     /** Текст ссылки */
     linkTitle?: string;
     /** Адрес ссылки */
     linkUrl?: string;
+    /** Target свойство ссылки */
+    linkTarget?: '_self' | '_blank' | '_parent' | '_top';
+    /** Добавляет атрибут download для тега <a> компонента TextLink */
+    linkDownload?: boolean;
     /** Строка со стоимостью услуги */
     cost?: string;
 }
