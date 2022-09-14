@@ -3,7 +3,7 @@ import { cnCreate } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import { shallow } from 'enzyme';
 import Tab from './Tab';
-import Tabs, { TabSize, TabColorTheme, ITabsProps, TabHAlign } from './Tabs';
+import Tabs, { TabSize, TabColorTheme, ITabsProps, TabAlign } from './Tabs';
 
 const renderTabWrapper = (tab: React.ReactNode) => <div className="tab-wrapper">{tab}</div>;
 
@@ -53,7 +53,7 @@ describe('<Tabs />', () => {
                 dataAttrs={dataAttrs}
                 size={TabSize.LARGE}
                 autoWidth
-                hAlign={TabHAlign.CENTER}
+                align={TabAlign.CENTER}
                 tabColorTheme={TabColorTheme.GREEN}
                 sticky
                 defaultIndex={1}

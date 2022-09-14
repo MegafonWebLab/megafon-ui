@@ -25,7 +25,7 @@ const props: IButtonLinkBoxProps = {
     buttonColor: 'purple',
     linkTitle: 'link title',
     linkUrl: 'link-url',
-    hAlign: 'center',
+    align: 'center',
     linkTarget: '_blank',
     buttonTarget: '_self',
 };

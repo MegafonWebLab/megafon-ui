@@ -6,7 +6,7 @@ const props: ITitleDescriptionBoxProps = {
     title: 'title',
     description: 'description',
     textColor: 'white',
-    hAlign: 'center',
+    align: 'center',
     className: 'custom class',
     dataAttrs: { root: { 'data-test': 'value' } },
 };

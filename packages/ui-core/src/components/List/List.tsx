@@ -7,7 +7,7 @@ export interface IListProps {
     /** Тип списка */
     as?: 'ul' | 'ol';
     /** Выравнивание по горизонтали */
-    hAlign?: 'center' | 'right';
+    align?: 'center' | 'right';
     /** Жирность шрифта */
     weight?: 'light' | 'regular' | 'bold';
     /** Цвет */
@@ -21,7 +21,7 @@ const List: React.FC<IListProps> = ({
     as = 'ul',
     color = 'default',
     weight = 'regular',
-    hAlign,
+    align,
     className,
     children,
 }) => {
@@ -31,7 +31,7 @@ const List: React.FC<IListProps> = ({
         <ElementType
             className={cn(
                 {
-                    'h-align': hAlign,
+                    'h-align': align,
                     color,
                     weight,
                     type: as,
@@ -46,7 +46,7 @@ const List: React.FC<IListProps> = ({
 
 List.propTypes = {
     as: PropTypes.oneOf(['ul', 'ol']),
-    hAlign: PropTypes.oneOf(['center', 'right']),
+    align: PropTypes.oneOf(['center', 'right']),
     weight: PropTypes.oneOf(['light', 'regular', 'bold']),
     color: PropTypes.oneOf(['default', 'black', 'white', 'gray', 'green', 'purple', 'red', 'inherit']),
     className: PropTypes.string,

@@ -15,7 +15,7 @@ describe('<TabsBox />', () => {
                     innerIndents: 'innerIndentsClass',
                 }}
                 size="large"
-                hAlign="center"
+                align="center"
                 autoWidth
                 tabColorTheme="green"
                 sticky

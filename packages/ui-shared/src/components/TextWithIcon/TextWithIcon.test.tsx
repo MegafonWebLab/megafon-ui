@@ -18,7 +18,7 @@ describe('<TextWithIcon />', () => {
 
     it('should render with props', () => {
         const wrapper = shallow(
-            <TextWithIcon title="Test title" className="test-class" isFullWidth centeringOnMobile={false}>
+            <TextWithIcon title="Test title" className="test-class" isFullWidth>
                 {children}
             </TextWithIcon>,
         );

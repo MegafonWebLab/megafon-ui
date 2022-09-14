@@ -23,7 +23,7 @@ export interface IBenefitsPicturesProps {
     /** Данные для бенефитов */
     items: IBenefit[];
     /** Горизонтальное выравнивание */
-    hAlign?: 'left' | 'center';
+    align?: 'left' | 'center';
     /** Расстояние между бенефитами */
     gridGap?: GridGutterSize;
     /** Дополнительный css класс для корневого элемента */
@@ -128,14 +128,14 @@ const getCenterConfig = (count: number, index: number, gutterSize: string): Grid
 const cn = cnCreate('mfui-benefits-pictures');
 const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     items,
-    hAlign = 'left',
+    align = 'left',
     gridGap = 'large',
     rootRef,
     className,
     classes = {},
 }) => {
     const isLargeGutter = gridGap === 'large';
-    const isGridCenterAlign = hAlign === 'center' && items.length !== ONLY_LEFT_ALIGN_ITEMS_COUNT;
+    const isGridCenterAlign = align === 'center' && items.length !== ONLY_LEFT_ALIGN_ITEMS_COUNT;
     const [currentGutter, setCurrentGutter] = React.useState(gridGap);
 
     const resizeHandler = useCallback(() => {
@@ -164,17 +164,17 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
             <Grid guttersLeft={currentGutter} hAlign={isGridCenterAlign ? 'center' : 'left'}>
                 {items.map(({ img, title, text }, index) => (
                     <GridColumn
-                        {...(hAlign === 'left'
+                        {...(align === 'left'
                             ? getLeftConfig(items.length, index)
                             : getCenterConfig(items.length, index, gridGap))}
                         key={index}
                     >
                         <div className={cn('item', [classes.item])}>
-                            <img className={cn('img', { 'h-align': hAlign })} src={img} alt="" />
-                            <Header className={cn('title')} hAlign={hAlign} as="h3">
+                            <img className={cn('img', { 'h-align': align })} src={img} alt="" />
+                            <Header className={cn('title')} align={align} as="h3">
                                 {convert(title)}
                             </Header>
-                            <Paragraph align={hAlign}>{convert(text)}</Paragraph>
+                            <Paragraph align={align}>{convert(text)}</Paragraph>
                         </div>
                     </GridColumn>
                 ))}
@@ -195,7 +195,7 @@ BenefitsPictures.propTypes = {
             img: PropTypes.string.isRequired,
         }).isRequired,
     ).isRequired,
-    hAlign: PropTypes.oneOf(['left', 'center']),
+    align: PropTypes.oneOf(['left', 'center']),
     gridGap: PropTypes.oneOf(['medium', 'large']),
     className: PropTypes.string,
     classes: PropTypes.shape({
