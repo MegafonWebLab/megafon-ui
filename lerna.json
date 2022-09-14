@@ -17,8 +17,7 @@
         "*.docz.*",
         "ui-core/src/colors/**"
       ],
-      "preDistTag": "beta",
-      "conventionalGraduate": "*"
+      "preDistTag": "beta"
     }
   }
 }
