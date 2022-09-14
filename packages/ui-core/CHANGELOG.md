@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.1...@megafon/ui-core@4.0.2) (2022-09-14)
+
+
+### Bug Fixes
+
+* change ui-icons peer dependecy ([4936d3f](https://github.com/MegafonWebLab/megafon-ui/commit/4936d3f7d4b04d1dd8fde870c4b251f8ff36c958))
+
+
+
+
+
 ## [4.0.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.0...@megafon/ui-core@4.0.1) (2022-09-14)
 
 
