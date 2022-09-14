@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.5.0...@megafon/ui-shared@4.0.0) (2022-09-14)
+
+
+### Bug Fixes
+
+* **breadcrumbs:** change default color prop value from black to default ([fd0c9b6](https://github.com/MegafonWebLab/megafon-ui/commit/fd0c9b645d41523f34b198e3f9310d27ea7e34f3))
+
+
+### Features
+
+* **header:** add new prop space ([7a9479e](https://github.com/MegafonWebLab/megafon-ui/commit/7a9479e85c1f5c19b7f2bae2e6a4d234712f2d7c))
+* **paragraph:** remove prop size; add new prop; add 'pale' option to colors ([32b0c54](https://github.com/MegafonWebLab/megafon-ui/commit/32b0c54eaf82ceb1f24d5fc90a9aa81d3e427ee3))
+* **tabs:** update by new design ([08d76f0](https://github.com/MegafonWebLab/megafon-ui/commit/08d76f0e15b8b7a54a18d7f115db4744b12e8ac2))
+* **text-with-icon:** delete centering in mobile resolution ([0bf1236](https://github.com/MegafonWebLab/megafon-ui/commit/0bf1236c216a327bf574c5dc0e2009e98479390a))
+
+
+### BREAKING CHANGES
+
+* **text-with-icon:** centering in mobile resolution was removed according guides
+* **tabs:** new prop autoWidth added
+size prop small vallue removed
+new sizes
+* **breadcrumbs:** color is now depends on current theme. by default it matches content text color.
+for keep black color on light background use 'black' value for prop 'color'.
+* **paragraph:** prop 'size' is no longer exists.
+use component Caption instead of Paragraph size="small"
+
+
+
+
+
 # [3.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.4.6...@megafon/ui-shared@3.5.0) (2022-09-14)
 
 

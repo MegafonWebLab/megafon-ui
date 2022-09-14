@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.14.0...@megafon/ui-core@4.0.0) (2022-09-14)
+
+
+### Bug Fixes
+
+* **accordion:** change focus and dark theme styles ([52b9b80](https://github.com/MegafonWebLab/megafon-ui/commit/52b9b80131013178edb52a9b64f681ede3ca44ae))
+* **accordion:** fixes top and bottom padding for title wrap ([ea078f4](https://github.com/MegafonWebLab/megafon-ui/commit/ea078f47aa61f1f0f3ab531b6189e035cc2f9a50))
+* **accordion:** update mobile styles ([ec039a1](https://github.com/MegafonWebLab/megafon-ui/commit/ec039a12cd27a2dba7646a516c9375dbe454203a))
+* **notification:** change title typography ([74edb02](https://github.com/MegafonWebLab/megafon-ui/commit/74edb0254e77d05cc15630d699d98400b00ee158))
+* **notification:** fix bottom gaps ([8bdf732](https://github.com/MegafonWebLab/megafon-ui/commit/8bdf7320dd57d91c6693dfa2b6d0c2d4860dccef))
+* **notification:** fix margin for bottom block ([2a62d08](https://github.com/MegafonWebLab/megafon-ui/commit/2a62d0826f8fc7d92cc5ab5bc11489478a4f711f))
+* **notification:** fixes passive close icon color for colored error type ([4bb3db7](https://github.com/MegafonWebLab/megafon-ui/commit/4bb3db72374c44fd2e6128fac06eae33418bebbd))
+* **search:** add modifier for item paddings ([cea9ad0](https://github.com/MegafonWebLab/megafon-ui/commit/cea9ad05c3d9fc31e883eb4cccdb714499fae5b8))
+* **search:** fixes hidden placeholder on focus for firefox ([c3177f4](https://github.com/MegafonWebLab/megafon-ui/commit/c3177f4da6358da851c0795e64f4025d9456390d))
+* **select:** add modifier for item paddings ([e363aa2](https://github.com/MegafonWebLab/megafon-ui/commit/e363aa270ac3e0d65c34919e87756687082b2894))
+* **select:** fix items overflow ([2d4a861](https://github.com/MegafonWebLab/megafon-ui/commit/2d4a86151d8575e82a9957366f7d515333543e6c))
+* **select:** fix styles ([f92079c](https://github.com/MegafonWebLab/megafon-ui/commit/f92079c21330baec2aa5eb333dbe2c631fa74939))
+* **select:** fixes hidden placeholder on focus for firefox ([1a965f7](https://github.com/MegafonWebLab/megafon-ui/commit/1a965f71e0876e05fbc8dfdfe4ddc25e3eb67bb2))
+* **select:** update styles ([878d579](https://github.com/MegafonWebLab/megafon-ui/commit/878d579f9ca21e20996e9e3bea4c083fe736e322))
+* **select:** update value check for undefined ([40fe547](https://github.com/MegafonWebLab/megafon-ui/commit/40fe54706093aeab25ab3162e48f523fd25495bf))
+* **tabs:** change dark theme and indents styles ([4cd4c1b](https://github.com/MegafonWebLab/megafon-ui/commit/4cd4c1bda7cae3c501f6c275a959df3097ca7b6d))
+* **tabs:** fix container alignment ([188ae36](https://github.com/MegafonWebLab/megafon-ui/commit/188ae36ebd677982d5be35efae6e94ab5442b308))
+* **tabs:** fix swiper arrows ([ca5d5d7](https://github.com/MegafonWebLab/megafon-ui/commit/ca5d5d7a83df6ed7dea0530bdaec25a123643185))
+* **tabs:** fix swiper overflow and box-sizing ([ff71fb3](https://github.com/MegafonWebLab/megafon-ui/commit/ff71fb3f5e24663d59a2661427f187d600f397a9))
+* **textfield:** fix label styles ([bf6eeee](https://github.com/MegafonWebLab/megafon-ui/commit/bf6eeeeca96cb8dacafe2e33247bacaaca04adc9))
+* **textfield:** fix textarea design bugs ([d903435](https://github.com/MegafonWebLab/megafon-ui/commit/d9034354d5239cd00472fa19c472b6cde7566335))
+* **textfield:** fixes notice text transition ([0585505](https://github.com/MegafonWebLab/megafon-ui/commit/05855055cf5c76a419471ac130587060431af0fd))
+* **textfield:** fixes permanently visible block after the field ([b7355ef](https://github.com/MegafonWebLab/megafon-ui/commit/b7355ef4595922978a208356a5a64f9ded9cae8d))
+* **textfield:** hide verification icon for disabled field ([37de2a2](https://github.com/MegafonWebLab/megafon-ui/commit/37de2a26bb4e61f9b10102d652a2c42a6fd220a5))
+* **textfield:** returned correct color to notice text ([2448a84](https://github.com/MegafonWebLab/megafon-ui/commit/2448a841942af7765da84e403d4c644af38be6ac))
+* **textfield:** update textarea scroll and resize ([af85c70](https://github.com/MegafonWebLab/megafon-ui/commit/af85c70fbb1b598f733bbc92ed3f5cc4f499f6c4))
+
+
+### Features
+
+* **accordion:** update by new design ([b11ead5](https://github.com/MegafonWebLab/megafon-ui/commit/b11ead5db95675f25354634930f5c3fffb207dbf))
+* **caption:** add new Caption component; update .smallFont() less mixin ([31156ff](https://github.com/MegafonWebLab/megafon-ui/commit/31156ff6ff4d47713be7e44f7e1d31508ad75288))
+* **header:** add new prop space ([7a9479e](https://github.com/MegafonWebLab/megafon-ui/commit/7a9479e85c1f5c19b7f2bae2e6a4d234712f2d7c))
+* **inputlabel:** component removed ([418fd61](https://github.com/MegafonWebLab/megafon-ui/commit/418fd618095da254bbfd0825b24a668c15d70d64))
+* **paragraph:** remove prop size; add new prop; add 'pale' option to colors ([32b0c54](https://github.com/MegafonWebLab/megafon-ui/commit/32b0c54eaf82ceb1f24d5fc90a9aa81d3e427ee3))
+* **search:** changed dropdown list item height ([c2932fe](https://github.com/MegafonWebLab/megafon-ui/commit/c2932fefafa67a6a69353c9edc49ccfc86a42dcf))
+* **search:** component redesign ([fe62aff](https://github.com/MegafonWebLab/megafon-ui/commit/fe62aff90aee0109072514ef230d1d8689ef10ba))
+* **select:** component redesign ([b7d552f](https://github.com/MegafonWebLab/megafon-ui/commit/b7d552fe1ba0bae93fe1cbf864b469f9ed4bc9ce))
+* **select:** fixed label position with empty string value and minor style changes ([eeaa6bb](https://github.com/MegafonWebLab/megafon-ui/commit/eeaa6bbd18740acdc450843465525ab0d2e2983b))
+* **tabs:** update by new design ([08d76f0](https://github.com/MegafonWebLab/megafon-ui/commit/08d76f0e15b8b7a54a18d7f115db4744b12e8ac2))
+* **textfield:** add prop hidePlaceholder ([609b4db](https://github.com/MegafonWebLab/megafon-ui/commit/609b4dbfc028897e0f47b07246b0e2d8b066871b))
+* **textfield:** update by new design ([f922fed](https://github.com/MegafonWebLab/megafon-ui/commit/f922fedc186bbe02fb2cf6a554edbd3a208ad60c))
+
+
+### BREAKING CHANGES
+
+* **inputlabel:** inputLabel component removed due to non-use
+* **textfield:** add defaultTransitionTiming in less global variables
+* **tabs:** new prop autoWidth added
+size prop small vallue removed
+new sizes
+* **textfield:** add placeholders text by default
+ label element positon changed
+ if label prop not setted, label element has text from placeholder (default or in props)
+* **accordion:** change next-sibling accordion styles
+* **caption:** .smallFont() less mixin line-height rule now set to 18px instead of 16px
+either accept new rules or manually add line-height: 16px in your components
+* **paragraph:** prop 'size' is no longer exists.
+use component Caption instead of Paragraph size="small"
+
+
+
+
+
 # [3.14.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.13.0...@megafon/ui-core@3.14.0) (2022-09-06)
 
 
