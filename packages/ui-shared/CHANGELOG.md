@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.4.6...@megafon/ui-shared@3.5.0) (2022-09-14)
+
+
+### Features
+
+* **videobanner:** add buttonTarget and linkTarget props ([96dcfbc](https://github.com/MegafonWebLab/megafon-ui/commit/96dcfbc4ecffeb9fca9e9e15d2a5434e1b978481))
+
+
+
+
+
 ## [3.4.6](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.4.5...@megafon/ui-shared@3.4.6) (2022-09-06)
 
 **Note:** Version bump only for package @megafon/ui-shared
