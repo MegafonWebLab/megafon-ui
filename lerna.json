@@ -6,7 +6,7 @@
       "createRelease": "github"
     },
     "publish": {
-      "allowBranch": "beta",
+      "allowBranch": "master",
       "conventionalCommits": true,
       "message": "chore(release): release",
       "ignoreChanges": [
@@ -17,9 +17,7 @@
         "*.docz.*",
         "ui-core/src/colors/**"
       ],
-      "preDistTag": "beta",
-      "preid": "beta",
-      "conventionalPrerelease": "*"
+      "preDistTag": "beta"
     }
   }
 }
