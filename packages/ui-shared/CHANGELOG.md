@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.0.0...@megafon/ui-shared@4.0.1) (2022-09-14)
+
+
+### Bug Fixes
+
+* remove forgotten deprecated props ([3acaf97](https://github.com/MegafonWebLab/megafon-ui/commit/3acaf9731780f89c7087a8b6f9af943a62f7a185))
+
+
+
+
+
 # [4.0.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.5.0...@megafon/ui-shared@4.0.0) (2022-09-14)
 
 
