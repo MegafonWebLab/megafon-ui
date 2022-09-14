@@ -40,7 +40,7 @@ export interface IButtonLinkBoxProps {
     /** Добавляет атрибут download к свойству тега <a> */
     linkDownload?: boolean;
     /** Горизонтальное выравнивание */
-    hAlign?: 'center' | 'left';
+    align?: 'center' | 'left';
     /** Обработчик клика по кнопке */
     onButtonClick?: (e: React.SyntheticEvent<EventTarget>) => void;
     /** Обработчик клика по ссылке */
@@ -58,7 +58,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     linkTitle,
     linkUrl,
     linkDownload,
-    hAlign,
+    align,
     className,
     buttonTarget,
     linkTarget,
@@ -68,7 +68,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
 }) => (
     <div
         {...filterDataAttrs(dataAttrs?.root)}
-        className={cn({ 'h-align': hAlign }, [className, classes.root])}
+        className={cn({ 'h-align': align }, [className, classes.root])}
         ref={rootRef}
     >
         {buttonTitle && (
@@ -127,7 +127,7 @@ ButtonLinkBox.propTypes = {
     linkTitle: PropTypes.string,
     linkUrl: PropTypes.string,
     linkDownload: PropTypes.bool,
-    hAlign: PropTypes.oneOf(['center']),
+    align: PropTypes.oneOf(['center']),
     onButtonClick: PropTypes.func,
     onLinkClick: PropTypes.func,
 };

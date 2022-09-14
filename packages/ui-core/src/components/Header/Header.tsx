@@ -21,7 +21,7 @@ interface IHeaderProps {
         root?: Record<string, string>;
     };
     /** Горизонтальное выравнивание */
-    hAlign?: 'inherit' | 'left' | 'center' | 'right';
+    align?: 'inherit' | 'left' | 'center' | 'right';
     /** Обработчик клика */
     onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
@@ -35,7 +35,7 @@ const Header: React.FC<IHeaderProps> = ({
     className,
     color = 'default',
     dataAttrs,
-    hAlign = 'inherit',
+    align = 'inherit',
     margin,
     onClick,
 }) => {
@@ -46,7 +46,7 @@ const Header: React.FC<IHeaderProps> = ({
     return (
         <ElementType
             {...filterDataAttrs(dataAttrs?.root)}
-            className={cn({ color, margin, level, 'h-align': hAlign, space: spaceLevel }, className)}
+            className={cn({ color, margin, level, 'h-align': align, space: spaceLevel }, className)}
             onClick={onClick}
         >
             {children}
@@ -61,7 +61,7 @@ Header.propTypes = {
     space: PropTypes.oneOf(['wide', 'tight']),
     margin: PropTypes.bool,
     addition: PropTypes.element,
-    hAlign: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
+    align: PropTypes.oneOf(['inherit', 'left', 'center', 'right']),
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),

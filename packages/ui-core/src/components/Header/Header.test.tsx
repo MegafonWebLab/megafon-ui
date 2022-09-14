@@ -41,7 +41,7 @@ describe('<Header />', () => {
     });
 
     it('it renders with text align center', () => {
-        const wrapper = shallow(<Header hAlign="center" />);
+        const wrapper = shallow(<Header align="center" />);
         expect(wrapper).toMatchSnapshot();
     });
 

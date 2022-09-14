@@ -23,9 +23,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -54,9 +54,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -94,9 +94,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -123,9 +123,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -151,9 +151,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -191,9 +191,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -222,9 +222,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -250,9 +250,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -281,9 +281,9 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -321,9 +321,9 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
           src="image.png"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет 
           <span
@@ -369,9 +369,9 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
           src="image.png"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -409,9 +409,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -440,9 +440,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -480,9 +480,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -509,9 +509,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -537,9 +537,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -577,9 +577,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -608,9 +608,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -636,9 +636,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -667,9 +667,9 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -707,9 +707,9 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>
@@ -738,9 +738,9 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
           src="test-file-stub"
         />
         <Header
+          align="left"
           as="h3"
           className="mfui-benefits-pictures__title"
-          hAlign="left"
         >
           Интернет
         </Header>

@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ContentArea /> render component when innerBackgroundColor with default 1`] = `
-<div
-  className="mfui-content-area mfui-content-area_background-color_transparent"
->
-  <div
-    className="mfui-content-area__inner mfui-content-area__inner_background-color_default"
-  >
-    some content
-  </div>
-</div>
-`;
-
 exports[`<ContentArea /> render component when innerBackgroundColor with green 1`] = `
 <div
   className="mfui-content-area mfui-content-area_background-color_transparent"
@@ -90,18 +78,6 @@ exports[`<ContentArea /> render component when innerBackgroundColor with white 1
 >
   <div
     className="mfui-content-area__inner mfui-content-area__inner_background-color_white"
-  >
-    some content
-  </div>
-</div>
-`;
-
-exports[`<ContentArea /> render component when outerBackgroundColor with default 1`] = `
-<div
-  className="mfui-content-area mfui-content-area_background-color_default"
->
-  <div
-    className="mfui-content-area__inner mfui-content-area__inner_background-color_transparent"
   >
     some content
   </div>

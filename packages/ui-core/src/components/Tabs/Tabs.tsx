@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './Tabs.less';
 import { ITabProps } from './Tab';
 
-export const TabHAlign = {
+export const TabAlign = {
     LEFT: 'left',
     CENTER: 'center',
 } as const;
@@ -25,7 +25,7 @@ export const TabColorTheme = {
 
 type TabSizeType = typeof TabSize[keyof typeof TabSize];
 type TabColorThemeType = typeof TabColorTheme[keyof typeof TabColorTheme];
-type TabHAlignType = typeof TabHAlign[keyof typeof TabHAlign];
+type TabAlignType = typeof TabAlign[keyof typeof TabAlign];
 
 export interface ITabsProps {
     /** Дополнительный класс для корневого элемента */
@@ -52,7 +52,7 @@ export interface ITabsProps {
     /** Ширина табов по размеру содержимого */
     autoWidth?: boolean;
     /** Горизонтальное выравнивание (только для autoWidth = true) */
-    hAlign?: TabHAlignType;
+    align?: TabAlignType;
     /** Фиксация табов у верхней границы окна */
     sticky?: boolean;
     /** Индекс активного таба (включает режим управления табами снаружи) */
@@ -75,7 +75,7 @@ const Tabs: React.FC<ITabsProps> = ({
     size = 'medium',
     tabColorTheme = 'white',
     sticky = false,
-    hAlign = 'left',
+    align = 'left',
     defaultIndex = 0,
     currentIndex: outerIndex,
     renderOnlyCurrentPanel = false,
@@ -390,7 +390,7 @@ const Tabs: React.FC<ITabsProps> = ({
                 {
                     size,
                     'tab-color': tabColorTheme,
-                    'h-align': hAlign,
+                    'h-align': align,
                     indents: !innerIndentsClass,
                     sticky: isSticky,
                     'auto-width': autoWidth,
@@ -473,7 +473,7 @@ Tabs.propTypes = {
         next: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     size: PropTypes.oneOf(Object.values(TabSize)),
-    hAlign: PropTypes.oneOf(Object.values(TabHAlign)),
+    align: PropTypes.oneOf(Object.values(TabAlign)),
     autoWidth: PropTypes.bool,
     tabColorTheme: PropTypes.oneOf(Object.values(TabColorTheme)),
     sticky: PropTypes.bool,

@@ -5,9 +5,9 @@ exports[`Steps should render component 1`] = `
   className="mfui-steps"
 >
   <Header
+    align="center"
     as="h2"
     className="mfui-steps__title"
-    hAlign="center"
   >
     title
   </Header>

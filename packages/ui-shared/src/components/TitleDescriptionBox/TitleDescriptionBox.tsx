@@ -20,7 +20,7 @@ export interface ITitleDescriptionBoxProps {
     /** Цвет текста */
     textColor?: 'white';
     /** Горизонтальное выравнивание */
-    hAlign?: 'center';
+    align?: 'center';
 }
 
 const cn = cnCreate('mfui-title-description-box');
@@ -29,7 +29,7 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     title,
     description,
     textColor,
-    hAlign,
+    align,
     rootRef,
     className,
 }) => {
@@ -48,10 +48,10 @@ const TitleDescriptionBox: React.FC<ITitleDescriptionBoxProps> = ({
     return (
         <div
             {...filterDataAttrs(dataAttrs?.root)}
-            className={cn({ 'h-align': hAlign, 'text-color': textColor }, className)}
+            className={cn({ 'h-align': align, 'text-color': textColor }, className)}
             ref={rootRef}
         >
-            <Grid hAlign={hAlign}>
+            <Grid hAlign={align}>
                 <GridColumn wide="8" desktop="10">
                     {title && (
                         <Header className={cn('item', { header: true })} as="h2" color="inherit">
@@ -76,7 +76,7 @@ TitleDescriptionBox.propTypes = {
     className: PropTypes.string,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
     description: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node)]),
-    hAlign: PropTypes.oneOf(['center']),
+    align: PropTypes.oneOf(['center']),
     textColor: PropTypes.oneOf(['white']),
 };
 

@@ -2,7 +2,7 @@
 
 exports[`<TextWithIcon /> should render 1`] = `
 <div
-  className="mfui-text-with-icon mfui-text-with-icon_centering-on-mobile"
+  className="mfui-text-with-icon"
 >
   <Grid>
     <GridColumn

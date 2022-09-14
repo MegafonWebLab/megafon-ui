@@ -18,9 +18,6 @@ export interface ITextWithIconProps {
     className?: string;
     /** Включить растягивание на всю ширину контейнера */
     isFullWidth?: boolean;
-    /* @deprecated */
-    /** Выравнивание по центру на мобильных */
-    centeringOnMobile?: boolean;
     /** Допустимый дочерний компонент */
     children: React.ReactElement<ITextWithIconItem>[] | React.ReactElement<ITextWithIconItem>;
 }
@@ -32,7 +29,6 @@ const TextWithIcon: React.FC<ITextWithIconProps> = ({
     dataAttrs,
     className,
     isFullWidth = false,
-    centeringOnMobile = true,
     children,
 }) => {
     const renderContent = () => (
@@ -52,11 +48,7 @@ const TextWithIcon: React.FC<ITextWithIconProps> = ({
     );
 
     return (
-        <div
-            className={cn({ 'centering-on-mobile': centeringOnMobile }, [className])}
-            ref={rootRef}
-            {...filterDataAttrs(dataAttrs?.root)}
-        >
+        <div className={cn([className])} ref={rootRef} {...filterDataAttrs(dataAttrs?.root)}>
             {isFullWidth ? renderContent() : renderContentWithGrid()}
         </div>
     );
@@ -74,7 +66,6 @@ TextWithIcon.propTypes = {
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element.isRequired])
         .isRequired,
     isFullWidth: PropTypes.bool,
-    centeringOnMobile: PropTypes.bool,
     className: PropTypes.string,
 };
 

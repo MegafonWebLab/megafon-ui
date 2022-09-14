@@ -5,7 +5,7 @@ import { fourItems, threeItems, twoItems } from './doc/BenefitsPictures.docz';
 
 const props: IBenefitsPicturesProps = {
     items: twoItems,
-    hAlign: 'left',
+    align: 'left',
     gridGap: 'large',
     className: 'class-name',
     classes: {
@@ -24,7 +24,7 @@ describe('<BenefitsPictures />', () => {
 
     it('render with center horizontal align', () => {
         itemsSet.forEach(items => {
-            const wrapper = shallow(<BenefitsPictures {...props} items={items} hAlign="left" />);
+            const wrapper = shallow(<BenefitsPictures {...props} items={items} align="left" />);
             expect(wrapper).toMatchSnapshot();
         });
     });

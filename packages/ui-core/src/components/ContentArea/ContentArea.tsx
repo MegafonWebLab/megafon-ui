@@ -12,8 +12,6 @@ const BACKGROUND_COLORS = {
     SPB_SKY_0: 'spbSky0',
     SPB_SKY_1: 'spbSky1',
     SPB_SKY_2: 'spbSky2',
-    // @deprecated
-    DEFAULT: 'default',
 } as const;
 
 export type BackgroundColorType = typeof BACKGROUND_COLORS[keyof typeof BACKGROUND_COLORS];

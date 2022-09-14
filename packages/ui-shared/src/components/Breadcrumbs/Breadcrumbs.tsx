@@ -7,8 +7,6 @@ import './Breadcrumbs.less';
 type ItemObjectType = {
     title?: string;
     href?: string;
-    /* @deprecated */
-    component?: React.ReactElement;
 };
 
 type ItemType = JSX.Element | ItemObjectType;
@@ -54,18 +52,16 @@ const Breadcrumbs: React.FC<Props> = ({ items, color = 'default', className, cla
 
             if (isObjectElement(item)) {
                 return (
-                    <div className={cn('item', classes.item)} key={item.component ? i : item.title}>
-                        {item.component || (
-                            <TextLink
-                                href={item.href}
-                                color={color}
-                                dataAttrs={{
-                                    root: dataAttrs?.link ? { ...filterDataAttrs(dataAttrs?.link, i + 1) } : undefined,
-                                }}
-                            >
-                                {item.title}
-                            </TextLink>
-                        )}
+                    <div className={cn('item', classes.item)} key={item.title}>
+                        <TextLink
+                            href={item.href}
+                            color={color}
+                            dataAttrs={{
+                                root: dataAttrs?.link ? { ...filterDataAttrs(dataAttrs?.link, i + 1) } : undefined,
+                            }}
+                        >
+                            {item.title}
+                        </TextLink>
                     </div>
                 );
             }
@@ -90,8 +86,6 @@ Breadcrumbs.propTypes = {
             PropTypes.shape({
                 title: PropTypes.string,
                 href: PropTypes.string,
-                /* @deprecated */
-                component: PropTypes.element,
             }).isRequired,
         ),
     ]).isRequired,
