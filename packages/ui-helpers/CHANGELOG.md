@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.1.2...@megafon/ui-helpers@2.2.0) (2022-09-16)
+
+
+### Features
+
+* **color:** added grey button hover color ([b291e83](https://github.com/MegafonWebLab/megafon-ui/commit/b291e831bb9e35144cdf83895b43df4856a364cf))
+
+
+
+
+
 ## [2.1.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.1.1...@megafon/ui-helpers@2.1.2) (2022-04-11)
 
 

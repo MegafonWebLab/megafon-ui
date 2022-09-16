@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.2...@megafon/ui-core@4.1.0) (2022-09-16)
+
+
+### Features
+
+* **button:** changed white themed primary typed button hover color ([a6e6c98](https://github.com/MegafonWebLab/megafon-ui/commit/a6e6c98eb9716f3ba33d651f71dcb9e4298ad0a0))
+* **color:** added grey button hover color ([b291e83](https://github.com/MegafonWebLab/megafon-ui/commit/b291e831bb9e35144cdf83895b43df4856a364cf))
+
+
+
+
+
 ## [4.0.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.1...@megafon/ui-core@4.0.2) (2022-09-14)
 
 
