@@ -116,12 +116,16 @@ const colors: ColorsType = {
                     border: '1px solid var(--spbSky2)',
                 },
                 {
-                    name: 'Button Hov. G.',
+                    name: 'Button Hov. Green',
                     code: 'buttonHoverGreen',
                 },
                 {
-                    name: 'Button Hov. P.',
+                    name: 'Button Hov. Purple',
                     code: 'buttonHoverPurple',
+                },
+                {
+                    name: 'Button Hov. Grey',
+                    code: 'buttonHoverGrey',
                 },
                 {
                     name: 'Button Down',
