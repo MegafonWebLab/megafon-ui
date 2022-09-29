@@ -44,7 +44,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       className="mfui-select__list list"
     >
       <div
-        className="mfui-select__list-inner"
+        className="mfui-select__list-inner list-inner"
       >
         <div
           className="mfui-select__not-found"
@@ -108,7 +108,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       className="mfui-select__list list"
     >
       <div
-        className="mfui-select__list-inner"
+        className="mfui-select__list-inner list-inner"
       >
         <div
           className="mfui-select__not-found"
@@ -172,7 +172,7 @@ exports[`<Select /> key typing handlers calls onChange while typing in the field
       className="mfui-select__list list"
     >
       <div
-        className="mfui-select__list-inner"
+        className="mfui-select__list-inner list-inner"
       >
         <div
           className="mfui-select__list-item mfui-select__list-item_hovered list-item"
@@ -248,7 +248,7 @@ exports[`<Select /> key typing handlers highlighted text 1`] = `
       className="mfui-select__list list"
     >
       <div
-        className="mfui-select__list-inner"
+        className="mfui-select__list-inner list-inner"
       >
         <div
           className="mfui-select__not-found"
@@ -275,6 +275,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
     Object {
       "control": "test-control-class",
       "list": "list",
+      "listInner": "list-inner",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
@@ -389,7 +390,7 @@ exports[`<Select /> keyboard actions handles Tab 1`] = `
         className="mfui-select__list list"
       >
         <div
-          className="mfui-select__list-inner"
+          className="mfui-select__list-inner list-inner"
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
@@ -439,6 +440,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
     Object {
       "control": "test-control-class",
       "list": "list",
+      "listInner": "list-inner",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
@@ -553,7 +555,7 @@ exports[`<Select /> keyboard actions handles Tab 2`] = `
         className="mfui-select__list list"
       >
         <div
-          className="mfui-select__list-inner"
+          className="mfui-select__list-inner list-inner"
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
@@ -667,6 +669,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
     Object {
       "control": "test-control-class",
       "list": "list",
+      "listInner": "list-inner",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
@@ -778,7 +781,7 @@ exports[`<Select /> snapshots renders combobox after update with new prop items 
         className="mfui-select__list list"
       >
         <div
-          className="mfui-select__list-inner"
+          className="mfui-select__list-inner list-inner"
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
@@ -929,6 +932,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
     Object {
       "control": "test-control-class",
       "list": "list",
+      "listInner": "list-inner",
       "listItem": "list-item",
       "listItemTitle": "list-item-title",
       "root": "test-root-class",
@@ -1043,7 +1047,7 @@ exports[`<Select /> snapshots renders with props 1`] = `
         className="mfui-select__list list"
       >
         <div
-          className="mfui-select__list-inner"
+          className="mfui-select__list-inner list-inner"
         >
           <div
             className="mfui-select__list-item mfui-select__list-item_hovered list-item"
