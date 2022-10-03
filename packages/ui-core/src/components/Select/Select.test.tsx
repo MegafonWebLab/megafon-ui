@@ -18,6 +18,7 @@ const props: ISelectProps<number> = {
         title: 'test-title',
         titleInner: 'test-title-inner',
         list: 'list',
+        listInner: 'list-inner',
         listItem: 'list-item',
         listItemTitle: 'list-item-title',
     },
