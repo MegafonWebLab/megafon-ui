@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.15.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.14.0...@megafon/ui-core@3.15.0) (2022-10-03)
+
+
+### Features
+
+* **select:** add class to list-inner element ([44a366c](https://github.com/MegafonWebLab/megafon-ui/commit/44a366ce6b79222f3ef68532c719f5ee13d3d6bf))
+
+
+
+
+
 # [3.14.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.13.0...@megafon/ui-core@3.14.0) (2022-09-06)
 
 
