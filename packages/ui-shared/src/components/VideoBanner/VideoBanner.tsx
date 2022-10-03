@@ -26,6 +26,24 @@ const typographyConfig = {
     },
 };
 
+const textConfig = {
+    ...typographyConfig,
+    br: {
+        component: () => (<br />) as JSX.Element,
+    },
+    '&nbsp': {
+        component: () => (<>String.fromCharCode(160)</>) as JSX.Element,
+    },
+    a: {
+        component: ({ href, children }) => <a href={href}>{children}</a>,
+        props: ['href'],
+    },
+    font: {
+        component: ({ color, children }) => <span style={{ color }}>{children}</span>,
+        props: ['color'],
+    },
+};
+
 export const VideoType = {
     YOUTUBE: 'youtube',
     VIDEO: 'video',
@@ -165,11 +183,11 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                         })}
                     >
                         <Header className={cn('title')} as="h1" color="inherit">
-                            {title}
+                            {convert(title, textConfig)}
                         </Header>
                         <div className={cn('text')}>
                             <Header as="h5" color="inherit" className={cn('description')}>
-                                {description}
+                                {convert(description, textConfig)}
                             </Header>
                             {cost && <div className={cn('cost')}>{convert(cost, typographyConfig)}</div>}
                         </div>
