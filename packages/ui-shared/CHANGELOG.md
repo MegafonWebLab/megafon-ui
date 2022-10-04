@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.0.3...@megafon/ui-shared@4.1.0) (2022-10-04)
+
+
+### Features
+
+* **videobanner:** allow using html tag: br, &nbsp, b, font color, a href in title and description ([31cf562](https://github.com/MegafonWebLab/megafon-ui/commit/31cf562b34f9d6eb30a43fccd1123fdc67393935))
+
+
+
+
+
 ## [4.0.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.0.2...@megafon/ui-shared@4.0.3) (2022-09-16)
 
 **Note:** Version bump only for package @megafon/ui-shared

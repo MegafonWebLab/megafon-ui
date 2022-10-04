@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.1.0...@megafon/ui-core@4.2.0) (2022-10-04)
+
+
+### Bug Fixes
+
+* **counter:** fixes background color that falls outside the element ([7359504](https://github.com/MegafonWebLab/megafon-ui/commit/73595047533cd7bddf75220624e7afcebb2fc94f))
+
+
+### Features
+
+* **select:** add class to list-inner element ([3e16e59](https://github.com/MegafonWebLab/megafon-ui/commit/3e16e590687043b8582f33271d2b7dcc7cd7a2c3))
+
+
+
+
+
 # [4.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.0.2...@megafon/ui-core@4.1.0) (2022-09-16)
 
 
