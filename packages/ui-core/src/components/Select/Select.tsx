@@ -85,6 +85,7 @@ export interface ISelectProps<T extends SelectItemValueType> {
         title?: string;
         titleInner?: string;
         list?: string;
+        listInner?: string;
         listItem?: string;
         listItemTitle?: string;
     };
@@ -437,7 +438,7 @@ const Select = <T extends SelectItemValueType>({
 
         return (
             <div className={cn('list', [classes.list])}>
-                <div className={cn('list-inner')} ref={itemWrapperNode}>
+                <div className={cn('list-inner', [classes.listInner])} ref={itemWrapperNode}>
                     {currentItems.map(({ title, value, view, paddings = SelectItemsPaddings.LARGE }, i) => {
                         const isItemActive = currentValue === value;
 
@@ -533,6 +534,7 @@ Select.propTypes = {
         title: PropTypes.string,
         titleInner: PropTypes.string,
         list: PropTypes.string,
+        listInner: PropTypes.string,
         listItem: PropTypes.string,
         listItemTitle: PropTypes.string,
     }),

@@ -60,12 +60,12 @@ export const DemoSlide = ({ children, background }) => {
     <ContentArea outerBackgroundColor="green">
         <div style={blockStyle}>
             <Carousel navTheme="green">
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-                <DemoSlide>3</DemoSlide>
-                <DemoSlide>4</DemoSlide>
-                <DemoSlide>5</DemoSlide>
-                <DemoSlide>6</DemoSlide>
+                <DemoSlide onColoredBackground>1</DemoSlide>
+                <DemoSlide onColoredBackground>2</DemoSlide>
+                <DemoSlide onColoredBackground>3</DemoSlide>
+                <DemoSlide onColoredBackground>4</DemoSlide>
+                <DemoSlide onColoredBackground>5</DemoSlide>
+                <DemoSlide onColoredBackground>6</DemoSlide>
             </Carousel>
         </div>
     </ContentArea>
@@ -169,7 +169,7 @@ const blockStyle = { padding: '20px 0' };
 ## Настройки слайдов
 
 ### Ширина слайдов по ширине их контента
-Задано расстояние между слайдами в px, количество видимых слайдов рассчитывается автоматически. 
+Задано расстояние между слайдами в px, количество видимых слайдов рассчитывается автоматически.
 
 <Playground style={blockStyle}>
     <ContentArea>

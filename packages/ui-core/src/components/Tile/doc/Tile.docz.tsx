@@ -28,8 +28,19 @@ export const tileInner = {
     margin: '0 auto',
 };
 
+export const tileInnerWhite = {
+    ...tileInner,
+    backgroundColor: '#FFFFFF',
+    color: '#333333',
+};
+
+export const tileInnerWhiteRounded = {
+    ...tileInnerWhite,
+    borderRadius: 8,
+};
+
 export const DemoTileWrapper = (props: {
-    wrapperTheme: 'light' | 'dark';
+    wrapperTheme?: 'light' | 'dark';
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
 }) => {
     const { wrapperTheme = 'light', children } = props;

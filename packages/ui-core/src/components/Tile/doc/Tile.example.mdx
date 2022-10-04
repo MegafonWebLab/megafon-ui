@@ -1,6 +1,6 @@
 import { Playground } from 'docz';
 import Tile from '../Tile';
-import { DemoTileWrapper, tileInner } from './Tile.docz';
+import { DemoTileWrapper, tileInner, tileInnerWhite, tileInnerWhiteRounded } from './Tile.docz';
 
 ```javascript collapse=Код DemoTileWrapper
 export const DemoTileWrapper = (
@@ -45,7 +45,7 @@ const tileInner = {
     </DemoTileWrapper>
 </Playground>
 
-## Тени 
+## Тени
 
 <Playground>
     <DemoTileWrapper>
@@ -83,7 +83,7 @@ const tileInner = {
     </DemoTileWrapper>
 </Playground>
 
-## Цветовой фон 
+## Цветовой фон
 
 ### Светлый
 
@@ -124,30 +124,30 @@ const tileInner = {
 <Playground>
     <DemoTileWrapper wrapperTheme="dark">
         <Tile shadowLevel="zero" theme="dark">
-            <div style={tileInner}>Zero shadow</div>
+            <div style={tileInnerWhite}>Zero shadow</div>
         </Tile>
         <Tile shadowLevel="low" theme="dark">
-            <div style={tileInner}>Low shadow</div>
+            <div style={tileInnerWhite}>Low shadow</div>
         </Tile>
         <Tile shadowLevel="high" theme="dark">
-            <div style={tileInner}>High shadow</div>
+            <div style={tileInnerWhite}>High shadow</div>
         </Tile>
         <Tile shadowLevel="hover" theme="dark">
-            <div style={tileInner}>Hover shadow</div>
+            <div style={tileInnerWhite}>Hover shadow</div>
         </Tile>
     </DemoTileWrapper>
     <DemoTileWrapper wrapperTheme="dark">
         <Tile radius="rounded" shadowLevel="zero">
-            <div theme="dark" style={tileInner}>Zero shadow</div>
+            <div style={tileInnerWhiteRounded}>Zero shadow</div>
         </Tile>
         <Tile radius="rounded" shadowLevel="low">
-            <div theme="dark"style={tileInner}>Low shadow</div>
+            <div style={tileInnerWhiteRounded}>Low shadow</div>
         </Tile>
         <Tile radius="rounded" shadowLevel="high">
-            <div theme="dark"style={tileInner}>High shadow</div>
+            <div style={tileInnerWhiteRounded}>High shadow</div>
         </Tile>
         <Tile radius="rounded" shadowLevel="hover">
-            <div theme="dark"style={tileInner}>Hover shadow</div>
+            <div style={tileInnerWhiteRounded}>Hover shadow</div>
         </Tile>
     </DemoTileWrapper>
 </Playground>
