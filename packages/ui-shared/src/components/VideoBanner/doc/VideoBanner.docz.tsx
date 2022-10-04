@@ -10,7 +10,7 @@ const youtubeVideoId = '2Sps5MnvlKM';
 const contentWithDefaultTextColor: IContent = {
     title: 'Текст ≈40 символов. Короткие слова',
     description:
-        'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+        'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#CCCCCC">примерно</font> не более <b>130 символов</b>.<br>Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
     buttonHref: '#',
     buttonTitle: 'Текст в кнопке',
     linkTitle: 'Личный кабинет услуги',
