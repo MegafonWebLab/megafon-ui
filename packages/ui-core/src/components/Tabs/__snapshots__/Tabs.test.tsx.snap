@@ -101,7 +101,7 @@ exports[`<Tabs /> should render with props 1`] = `
   data-test="test"
 >
   <div
-    className="mfui-tabs__wrapper"
+    className="mfui-tabs__wrapper wrapperClass"
     style={
       Object {
         "height": "auto",
@@ -109,7 +109,7 @@ exports[`<Tabs /> should render with props 1`] = `
     }
   >
     <div
-      className="mfui-tabs__swiper-wrapper"
+      className="mfui-tabs__swiper-wrapper swiperWrapperClass"
       style={
         Object {
           "paddingLeft": 0,

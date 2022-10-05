@@ -46,6 +46,8 @@ describe('<Tabs />', () => {
                 className="className"
                 classes={{
                     root: 'rootClass',
+                    wrapper: 'wrapperClass',
+                    swiperWrapper: 'swiperWrapperClass',
                     innerIndents: 'innerIndentsClass',
                     tab: 'tabClass',
                     activeTab: 'activeTabClass',

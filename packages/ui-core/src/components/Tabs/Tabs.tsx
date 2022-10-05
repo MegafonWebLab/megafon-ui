@@ -33,6 +33,8 @@ export interface ITabsProps {
     /** Дополнительные классы для корневого и внутренних элементов */
     classes?: {
         root?: string;
+        wrapper?: string;
+        swiperWrapper?: string;
         innerIndents?: string;
         tab?: string;
         activeTab?: string;
@@ -71,7 +73,7 @@ export interface ITabsProps {
 const cn = cnCreate('mfui-tabs');
 const Tabs: React.FC<ITabsProps> = ({
     className,
-    classes: { root: rootClass, innerIndents: innerIndentsClass, tab: tabClass, activeTab: activeTabClass } = {},
+    classes = {},
     size = 'medium',
     tabColorTheme = 'white',
     sticky = false,
@@ -273,12 +275,12 @@ const Tabs: React.FC<ITabsProps> = ({
                 } = child;
                 const tab = renderTab(i, title, icon, href, data?.inner);
 
-                const activeTabClassName = currentIndex === i ? activeTabClass : undefined;
+                const activeTabClassName = currentIndex === i ? classes?.activeTab : undefined;
 
                 return (
                     <SwiperSlide className={cn('slide')}>
                         <div
-                            className={cn('tab', [tabClass, activeTabClassName])}
+                            className={cn('tab', [classes?.tab, activeTabClassName])}
                             ref={setTabRef}
                             {...filterDataAttrs(data?.root, i + 1)}
                         >
@@ -287,7 +289,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     </SwiperSlide>
                 );
             }),
-        [renderTab, children, activeTabClass, currentIndex, setTabRef, tabClass],
+        [renderTab, children, classes?.activeTab, currentIndex, setTabRef, classes?.tab],
     );
 
     const renderPanels = React.useCallback(
@@ -391,17 +393,17 @@ const Tabs: React.FC<ITabsProps> = ({
                     size,
                     'tab-color': tabColorTheme,
                     'h-align': align,
-                    indents: !innerIndentsClass,
+                    indents: !classes?.innerIndents,
                     sticky: isSticky,
                     'auto-width': autoWidth,
                 },
-                [className, rootClass],
+                [className, classes.root],
             )}
             ref={rootRef}
         >
-            <div className={cn('wrapper')} ref={tabListRef} style={{ height: tabListHeight }}>
+            <div className={cn('wrapper', [classes?.wrapper])} ref={tabListRef} style={{ height: tabListHeight }}>
                 <div
-                    className={cn('swiper-wrapper')}
+                    className={cn('swiper-wrapper', [classes?.swiperWrapper])}
                     style={{
                         paddingLeft: stickyOffset.left,
                         paddingRight: stickyOffset.right,
@@ -416,7 +418,7 @@ const Tabs: React.FC<ITabsProps> = ({
                                 beginning: isBeginning,
                                 end: isEnd,
                             },
-                            [innerIndentsClass],
+                            [classes?.innerIndents],
                         )}
                         watchOverflow
                         slidesPerView="auto"
@@ -461,6 +463,8 @@ Tabs.propTypes = {
     className: PropTypes.string,
     classes: PropTypes.shape({
         root: PropTypes.string,
+        wrapper: PropTypes.string,
+        swiperWrapper: PropTypes.string,
         innerIndents: PropTypes.string,
         tab: PropTypes.string,
         activeTab: PropTypes.string,
