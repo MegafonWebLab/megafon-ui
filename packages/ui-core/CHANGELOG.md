@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.2.0...@megafon/ui-core@4.3.0) (2022-10-05)
+
+
+### Features
+
+* **tabs:** update prop classes with new keys wrapper and swiperWrapper ([1832aac](https://github.com/MegafonWebLab/megafon-ui/commit/1832aac3a0cdba03c9e74fd4e570be72c4156387))
+* **textfield:** update pros classes with new key label ([db2a10d](https://github.com/MegafonWebLab/megafon-ui/commit/db2a10dd23e0ac6634510207202ba86886ae6d61))
+
+
+
+
+
 # [4.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.1.0...@megafon/ui-core@4.2.0) (2022-10-04)
 
 
