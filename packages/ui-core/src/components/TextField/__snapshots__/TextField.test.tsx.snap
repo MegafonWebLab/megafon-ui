@@ -738,7 +738,7 @@ exports[`<TextField /> should render disabled field with error 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -782,7 +782,7 @@ exports[`<TextField /> should render disabled field with valid 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -825,7 +825,7 @@ exports[`<TextField /> should render with common props 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -868,7 +868,7 @@ exports[`<TextField /> should render with custom icon 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -950,7 +950,7 @@ exports[`<TextField /> should render with error 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -1001,7 +1001,7 @@ exports[`<TextField /> should render with hidden icon 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -1044,7 +1044,7 @@ exports[`<TextField /> should render with valid 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -1100,7 +1100,7 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -1148,7 +1148,7 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
       value=""
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label
@@ -1201,7 +1201,7 @@ exports[`<TextField /> textarea should render with error because of max limit is
       value="123456"
     />
     <label
-      className="mfui-text-field__label"
+      className="mfui-text-field__label labelClass"
       htmlFor="id"
     >
       label

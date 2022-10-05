@@ -85,6 +85,7 @@ export type TextFieldProps = {
     className?: string;
     /** Дополнительные классы элементов */
     classes?: {
+        label?: string;
         input?: string;
     };
     /** Дополнительные data атрибуты к внутренним элементам */
@@ -153,7 +154,7 @@ const TextField: React.FC<TextFieldProps> = ({
     inputRef,
     inputMode,
     autoComplete,
-    classes: { input } = {},
+    classes = {},
     dataAttrs,
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
@@ -358,7 +359,7 @@ const TextField: React.FC<TextFieldProps> = ({
 
     const inputParams = {
         ...commonParams,
-        className: cn('field', input),
+        className: cn('field', classes?.input),
         type: isVisiblePassword ? 'text' : type,
         autoComplete,
     };
@@ -378,7 +379,7 @@ const TextField: React.FC<TextFieldProps> = ({
                 textarea,
                 resized: isTextareaResizeFocused,
             },
-            input,
+            classes?.input,
         ),
     };
 
@@ -412,7 +413,12 @@ const TextField: React.FC<TextFieldProps> = ({
         const currentLabel = label || actualPlaceholder;
 
         return (
-            <label {...filterDataAttrs(dataAttrs?.label)} htmlFor={id} className={cn('label')} ref={labelRef}>
+            <label
+                {...filterDataAttrs(dataAttrs?.label)}
+                htmlFor={id}
+                className={cn('label', [classes?.label])}
+                ref={labelRef}
+            >
                 {currentLabel}
                 {required && <span className={cn('require-mark')}>*</span>}
             </label>
@@ -550,6 +556,7 @@ TextField.propTypes = {
     onCustomIconClick: PropTypes.func,
     inputRef: PropTypes.func,
     classes: PropTypes.shape({
+        label: PropTypes.string,
         input: PropTypes.string,
     }),
     dataAttrs: PropTypes.shape({
