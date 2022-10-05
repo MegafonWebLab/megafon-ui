@@ -29,6 +29,7 @@ const commonProps = {
     required: true,
     noticeText: 'noticeText',
     classes: {
+        label: 'labelClass',
         input: 'inputClass',
     },
     className: 'customClass',
