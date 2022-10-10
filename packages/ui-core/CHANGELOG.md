@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.3.0...@megafon/ui-core@4.4.0) (2022-10-10)
+
+
+### Bug Fixes
+
+* **textfield:** fix input height in Safari ([b60e1ac](https://github.com/MegafonWebLab/megafon-ui/commit/b60e1acd76dc80b4609b55dc8256eb94e8e8ec0c))
+* **tooltip:** fix touch device controlled trigger ([e983ca8](https://github.com/MegafonWebLab/megafon-ui/commit/e983ca88636990e467b43483b0cf0df06dff8553))
+
+
+### Features
+
+* **select:** add new props useShortListItems ([31d1172](https://github.com/MegafonWebLab/megafon-ui/commit/31d1172484ca4c07060ff64eb7f3be692f5dbdec))
+
+
+
+
+
 # [4.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.2.0...@megafon/ui-core@4.3.0) (2022-10-05)
 
 
