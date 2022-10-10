@@ -155,10 +155,13 @@ const Tooltip: React.FC<ITooltipProps> = ({
     useEffect(() => setIsTouchDevice(detectTouch()), []);
 
     const clickEvent = useMemo(() => (isTouchDevice ? TOUCH_KEY : MOUSE_KEY), [isTouchDevice]);
-    const triggerEventName: TriggerEventType = useMemo(
-        () => (isTouchDevice ? 'click' : triggerEvent),
-        [isTouchDevice, triggerEvent],
-    );
+    const triggerEventName: TriggerEventType = useMemo(() => {
+        if (triggerEvent === TriggerEvent.CONTROLLED || !isTouchDevice) {
+            return triggerEvent;
+        }
+
+        return TriggerEvent.CLICK;
+    }, [isTouchDevice, triggerEvent]);
 
     const handleMouseEnter = useCallback(
         (e: MouseEvent): void => {
