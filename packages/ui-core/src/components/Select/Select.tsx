@@ -76,6 +76,8 @@ export interface ISelectProps<T extends SelectItemValueType> {
     notFoundText?: string;
     /** Массив элементов селекта */
     items: Array<ISelectItem<T>>;
+    /** Отображать короткий выпадающий список */
+    shortList?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -141,6 +143,7 @@ const Select = <T extends SelectItemValueType>({
     items,
     placeholder,
     currentValue,
+    shortList = false,
     onClosed,
     onOpened,
     onSelect,
@@ -438,7 +441,7 @@ const Select = <T extends SelectItemValueType>({
 
         return (
             <div className={cn('list', [classes.list])}>
-                <div className={cn('list-inner', [classes.listInner])} ref={itemWrapperNode}>
+                <div className={cn('list-inner', { short: shortList }, [classes.listInner])} ref={itemWrapperNode}>
                     {currentItems.map(({ title, value, view, paddings = SelectItemsPaddings.LARGE }, i) => {
                         const isItemActive = currentValue === value;
 
@@ -557,6 +560,7 @@ Select.propTypes = {
             paddings: PropTypes.oneOf(Object.values(SelectItemsPaddings)),
         }),
     ).isRequired,
+    shortList: PropTypes.bool,
     onSelect: PropTypes.func,
     onOpened: PropTypes.func,
     onClosed: PropTypes.func,

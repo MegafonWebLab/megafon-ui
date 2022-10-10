@@ -99,6 +99,11 @@ describe('<Select />', () => {
             expect(wrapper).toMatchSnapshot();
         });
 
+        it('renders with short list items', () => {
+            const wrapper = mount(<Select<number> {...props} shortList />);
+            expect(wrapper).toMatchSnapshot();
+        });
+
         it('renders combobox after update with new prop items', () => {
             const wrapper = mount(<Select<number> {...props} type="combobox" />);
 
