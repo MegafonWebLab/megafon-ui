@@ -1090,6 +1090,172 @@ exports[`<Select /> snapshots renders with props 1`] = `
 </Select>
 `;
 
+exports[`<Select /> snapshots renders with short list items 1`] = `
+<Select
+  className="test-class"
+  classes={
+    Object {
+      "control": "test-control-class",
+      "list": "list",
+      "listInner": "list-inner",
+      "listItem": "list-item",
+      "listItemTitle": "list-item-title",
+      "root": "test-root-class",
+      "title": "test-title",
+      "titleInner": "test-title-inner",
+    }
+  }
+  dataAttrs={
+    Object {
+      "input": Object {
+        "data-input": "test",
+        "incorrect-attr": "test",
+      },
+      "label": Object {
+        "data-label": "test",
+        "incorrect-attr": "test",
+      },
+      "listItem": Object {
+        "data-list-item": "test",
+        "incorrect-attr": "test",
+      },
+      "listItemTitle": Object {
+        "data-list-item-title": "test",
+        "incorrect-attr": "test",
+      },
+      "notFound": Object {
+        "data-not-found": "test",
+        "incorrect-attr": "test",
+      },
+      "noticeText": Object {
+        "data-notice-text": "test",
+        "incorrect-attr": "test",
+      },
+      "root": Object {
+        "data-root": "test",
+        "incorrect-attr": "test",
+      },
+      "title": Object {
+        "data-title": "test",
+        "incorrect-attr": "test",
+      },
+    }
+  }
+  items={
+    Array [
+      Object {
+        "title": "test-name-1",
+        "value": 1,
+      },
+      Object {
+        "title": "test-name-2",
+        "value": 2,
+      },
+    ]
+  }
+  label="test-label"
+  labelId="1"
+  noticeText="test-notice-text"
+  placeholder="test-placeholder"
+  required={true}
+  shortList={true}
+>
+  <div
+    className="mfui-select mfui-select_no-touch test-class test-root-class"
+    data-root="test"
+  >
+    <div
+      className="mfui-select__inner"
+    >
+      <InputLabel
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-label": "test",
+              "incorrect-attr": "test",
+            },
+          }
+        }
+        htmlFor="1"
+      >
+        <label
+          className="mfui-input-label"
+          data-label="test"
+          htmlFor="1"
+        >
+          test-label
+          <span
+            className="mfui-select__require-mark"
+          >
+            *
+          </span>
+        </label>
+      </InputLabel>
+      <div
+        className="mfui-select__control test-control-class"
+        onKeyDown={[Function]}
+      >
+        <div
+          className="mfui-select__title mfui-select__title_placeholder test-title"
+          data-title="test"
+          onClick={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <div
+            className="mfui-select__title-inner test-title-inner"
+          >
+            test-placeholder
+          </div>
+        </div>
+      </div>
+      <div
+        className="mfui-select__list list"
+      >
+        <div
+          className="mfui-select__list-inner mfui-select__list-inner_short list-inner"
+        >
+          <div
+            className="mfui-select__list-item mfui-select__list-item_hovered list-item"
+            data-list-item="test[1]"
+            key="0_1"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-select__item-title list-item-title"
+              data-list-item-title="test[1]"
+            >
+              test-name-1
+            </div>
+          </div>
+          <div
+            className="mfui-select__list-item list-item"
+            data-list-item="test[2]"
+            key="1_2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            <div
+              className="mfui-select__item-title list-item-title"
+              data-list-item-title="test[2]"
+            >
+              test-name-2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="mfui-select__text"
+      data-notice-text="test"
+    >
+      test-notice-text
+    </div>
+  </div>
+</Select>
+`;
+
 exports[`<Select /> snapshots should render items.view as function and type classic 1`] = `
 <div
   className="mfui-select mfui-select_no-touch"
