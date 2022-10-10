@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.15.0...@megafon/ui-core@3.16.0) (2022-10-10)
+
+
+### Features
+
+* **select:** add new props useShortListItems ([cd3ee88](https://github.com/MegafonWebLab/megafon-ui/commit/cd3ee88462e36cf725ab9867f5635c3b89d61511))
+
+
+
+
+
 # [3.15.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.14.0...@megafon/ui-core@3.15.0) (2022-10-03)
 
 
