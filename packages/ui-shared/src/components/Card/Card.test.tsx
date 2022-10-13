@@ -51,6 +51,30 @@ describe('Card', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('render component with onClick for button', () => {
+        const wrapper = shallow(
+            <Card title={title} text={text} button={{ title: 'Click me', onClick: () => undefined }} />,
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    it('calls button onClick', () => {
+        const onClick = jest.fn();
+        const wrapper = mount(
+            <Card
+                title={title}
+                text={text}
+                button={{
+                    title: 'Click me',
+                    onClick,
+                }}
+            />,
+        );
+
+        wrapper.find('button').simulate('click');
+        expect(onClick).toBeCalled();
+    });
+
     it('render component with icon', () => {
         const wrapper = shallow(<Card title={title} text={text} svgSrc={svg} button={button} link={link} />);
         expect(wrapper).toMatchSnapshot();

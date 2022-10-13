@@ -271,6 +271,43 @@ exports[`Card render component with img, if image source and svg source are spec
 </div>
 `;
 
+exports[`Card render component with onClick for button 1`] = `
+<div
+  className="mfui-card"
+>
+  <div
+    className="mfui-card__inner"
+  >
+    <Header
+      as="h3"
+      className="mfui-card__title"
+    >
+      Смартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь
+    </Header>
+    <div
+      className="mfui-card__text"
+    >
+      Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.
+    </div>
+    <div
+      className="mfui-card__btns-wrapper"
+    >
+      <Button
+        className="mfui-card__button"
+        dataAttrs={
+          Object {
+            "root": undefined,
+          }
+        }
+        onClick={[Function]}
+      >
+        Click me
+      </Button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Card render component with optional props 1`] = `
 <div
   className="mfui-card mfui-card_centered-text className rootClass"

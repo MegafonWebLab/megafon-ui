@@ -152,8 +152,8 @@ const Card: React.FC<ICard> = ({
             href: btnHref,
             title: btnTitle,
             target: btnTarget,
-            download: buttonDownload,
-            onClick: buttonOnClick,
+            download: btnDownload,
+            onClick: btnOnClick,
         } = button;
 
         return (
@@ -162,8 +162,8 @@ const Card: React.FC<ICard> = ({
                 className={cn('button', [classes.button])}
                 href={btnHref}
                 target={btnTarget}
-                download={buttonDownload}
-                onClick={buttonOnClick}
+                download={btnDownload}
+                onClick={btnOnClick}
             >
                 {btnTitle}
             </Button>
@@ -237,9 +237,10 @@ Card.propTypes = {
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     button: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        href: PropTypes.string.isRequired,
+        href: PropTypes.string,
         target: PropTypes.oneOf(Object.values(Target)),
         download: PropTypes.bool,
+        onClick: PropTypes.func,
     }),
     link: PropTypes.shape({
         title: PropTypes.string.isRequired,
