@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.1.2...@megafon/ui-shared@4.2.0) (2022-10-13)
+
+
+### Bug Fixes
+
+* **card:** add tests for button onClick; fix propTypes; ([148ca04](https://github.com/MegafonWebLab/megafon-ui/commit/148ca04afb9194eff52421ca228dd4de5e094323))
+
+
+### Features
+
+* **card:** add button onClick property ([766c66f](https://github.com/MegafonWebLab/megafon-ui/commit/766c66f609ee5a20b86322acd5a40dfc14cee223))
+
+
+
+
+
 ## [4.1.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.1.1...@megafon/ui-shared@4.1.2) (2022-10-10)
 
 **Note:** Version bump only for package @megafon/ui-shared
