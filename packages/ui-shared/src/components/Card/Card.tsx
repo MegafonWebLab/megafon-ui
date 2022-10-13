@@ -13,9 +13,10 @@ type TargetType = typeof Target[keyof typeof Target];
 
 interface IButton {
     title: string;
-    href: string;
+    href?: string;
     target?: TargetType;
     download?: boolean;
+    onClick?: () => void;
 }
 
 interface ILink {
@@ -147,7 +148,13 @@ const Card: React.FC<ICard> = ({
             return null;
         }
 
-        const { href: btnHref, title: btnTitle, target: btnTarget, download: buttonDownload } = button;
+        const {
+            href: btnHref,
+            title: btnTitle,
+            target: btnTarget,
+            download: buttonDownload,
+            onClick: buttonOnClick,
+        } = button;
 
         return (
             <Button
@@ -156,6 +163,7 @@ const Card: React.FC<ICard> = ({
                 href={btnHref}
                 target={btnTarget}
                 download={buttonDownload}
+                onClick={buttonOnClick}
             >
                 {btnTitle}
             </Button>
