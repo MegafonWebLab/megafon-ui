@@ -17,6 +17,8 @@ interface IButton {
     href: string;
     /** Target свойство, аналогично свойству 'target' тега 'a' */
     target: TargetType;
+    /** Обработчик клика по кнопке */
+    onClick: () => void;
 }
 
 interface ILink {

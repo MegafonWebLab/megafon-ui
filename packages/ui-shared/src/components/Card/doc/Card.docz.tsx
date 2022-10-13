@@ -13,6 +13,12 @@ const button = {
     target: '_self',
 };
 
+const buttonWithClick = {
+    title: 'Подключить',
+    // eslint-disable-next-line no-alert
+    onClick: (): void => alert('Выполнено действие при клике на кнопку'),
+};
+
 const buttonWithLongTitle = {
     title: 'Очень длинный заголовок',
     href: '#',
@@ -30,4 +36,4 @@ const link = {
 
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 
-export { title, text, button, link, fakeLink, img, imgShort, svg, buttonWithLongTitle };
+export { title, text, button, link, fakeLink, img, imgShort, svg, buttonWithClick, buttonWithLongTitle };
