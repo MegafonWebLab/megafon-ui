@@ -20,7 +20,8 @@
       "react",
       "node",
       "jest",
-      "resize-observer-browser"
+      "resize-observer-browser",
+      "@testing-library/jest-dom"
     ],
     "typeRoots": [
       "./node_modules/@types",
