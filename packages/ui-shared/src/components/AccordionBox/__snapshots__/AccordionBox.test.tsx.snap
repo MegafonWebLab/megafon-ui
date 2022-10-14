@@ -8,6 +8,9 @@ exports[`<AccordionBox /> should render with centered grid when hCenterAlignWide
     hAlign="center"
   >
     <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
       wide="8"
     >
       <Accordion
@@ -49,6 +52,9 @@ exports[`<AccordionBox /> should render with props 1`] = `
     hAlign="left"
   >
     <GridColumn
+      desktop="10"
+      mobile="12"
+      tablet="12"
       wide="8"
     >
       <Accordion
@@ -83,30 +89,42 @@ exports[`<AccordionBox /> should render with props 1`] = `
 `;
 
 exports[`<AccordionBox /> should render without grid when isFullWidth is true 1`] = `
-<Accordion
-  className="className"
-  classes={
-    Object {
-      "collapse": "collapseClass",
-      "openedClass": "isOpenClass",
-      "root": "rootClass",
-      "titleWrap": "titleWrapClass",
-    }
-  }
-  dataAttrs={
-    Object {
-      "root": Object {
-        "data-root": "data-test-value",
-      },
-    }
-  }
-  isOpened={false}
-  onClickAccordion={[MockFunction]}
-  rootRef={[MockFunction]}
-  title="Test"
+<div
+  className="mfui-accordion-box"
 >
-  <div>
-    test
-  </div>
-</Accordion>
+  <Grid
+    hAlign="left"
+  >
+    <GridColumn
+      all="12"
+    >
+      <Accordion
+        className="className"
+        classes={
+          Object {
+            "collapse": "collapseClass",
+            "openedClass": "isOpenClass",
+            "root": "rootClass",
+            "titleWrap": "titleWrapClass",
+          }
+        }
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-root": "data-test-value",
+            },
+          }
+        }
+        isOpened={false}
+        onClickAccordion={[MockFunction]}
+        rootRef={[MockFunction]}
+        title="Test"
+      >
+        <div>
+          test
+        </div>
+      </Accordion>
+    </GridColumn>
+  </Grid>
+</div>
 `;
