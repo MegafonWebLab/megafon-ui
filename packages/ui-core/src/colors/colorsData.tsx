@@ -178,7 +178,7 @@ const colors: ColorsType = {
     staticOpacity: {
         title: 'Static Opacity',
         colorsList: {
-            description: 'Цвета c прозрачностью не зависящие от темы',
+            description: 'Цвета с прозрачностью не зависящие от темы',
             colors: [
                 {
                     name: 'STC White 5%',
