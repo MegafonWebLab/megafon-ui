@@ -33,6 +33,7 @@ const commonProps = {
         input: 'inputClass',
     },
     className: 'customClass',
+    minTextareaHeight: 24 as const,
 };
 
 const dataAttrs: TextFieldProps['dataAttrs'] = {
@@ -359,6 +360,12 @@ describe('<TextField />', () => {
 
         it('should render flexible textarea', () => {
             const wrapper = shallow(<TextField {...commonProps} textarea="flexible" />);
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render flexible textarea without resize button', () => {
+            const wrapper = shallow(<TextField {...commonProps} textarea="flexible" hideResizeButton />);
 
             expect(wrapper).toMatchSnapshot();
         });
