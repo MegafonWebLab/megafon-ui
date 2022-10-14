@@ -34,6 +34,13 @@ export const TextareaTypes = {
     FLEXIBLE: 'flexible',
 } as const;
 
+export const MinTextareaHeight = {
+    ONE_ROW: ROW_HEIGHT,
+    THREE_ROWS: ROW_HEIGHT * 3,
+} as const;
+
+type MinTextareaHeightType = typeof MinTextareaHeight[keyof typeof MinTextareaHeight];
+
 interface IMaskSelection {
     start: number;
     end: number;
@@ -108,7 +115,7 @@ export type TextFieldProps = {
     /** Переводит компонент в контролируемое состояние */
     isControlled?: boolean;
     /** Минимальная высота textarea, px */
-    minTextareaHeight?: 24 | 72;
+    minTextareaHeight?: MinTextareaHeightType;
     /** Скрывает кнопку ресайза для textarea="flexible" */
     hideResizeButton?: boolean;
     /** Обработчик изменения значения */
@@ -143,7 +150,7 @@ const TextField: React.FC<TextFieldProps> = ({
     placeholder,
     required,
     isControlled = false,
-    minTextareaHeight = 72,
+    minTextareaHeight = MinTextareaHeight.THREE_ROWS,
     hideResizeButton = false,
     onBlur,
     onChange,
