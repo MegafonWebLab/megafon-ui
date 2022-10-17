@@ -1094,7 +1094,7 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
       required={true}
       style={
         Object {
-          "height": "72px",
+          "height": "24px",
         }
       }
       value=""
@@ -1142,7 +1142,7 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
       required={true}
       style={
         Object {
-          "height": "72px",
+          "height": "24px",
         }
       }
       value=""
@@ -1177,6 +1177,54 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
 </div>
 `;
 
+exports[`<TextField /> textarea should render flexible textarea without resize button 1`] = `
+<div
+  className="mfui-text-field mfui-text-field_theme_white customClass"
+>
+  <div
+    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_flexible"
+  >
+    <textarea
+      className="mfui-text-field__field mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible inputClass"
+      id="id"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onScroll={[Function]}
+      placeholder="Текст"
+      required={true}
+      style={
+        Object {
+          "height": "24px",
+        }
+      }
+      value=""
+    />
+    <label
+      className="mfui-text-field__label labelClass"
+      htmlFor="id"
+    >
+      label
+      <span
+        className="mfui-text-field__require-mark"
+      >
+        *
+      </span>
+    </label>
+  </div>
+  <div
+    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+  >
+    <div
+      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+      onTransitionEnd={[Function]}
+    >
+      noticeText
+    </div>
+  </div>
+</div>
+`;
+
 exports[`<TextField /> textarea should render with error because of max limit is exceeded 1`] = `
 <div
   className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error customClass"
@@ -1195,7 +1243,7 @@ exports[`<TextField /> textarea should render with error because of max limit is
       required={true}
       style={
         Object {
-          "height": "72px",
+          "height": "24px",
         }
       }
       value="123456"

@@ -3,11 +3,9 @@ import { Header, Grid, GridColumn } from '@megafon/ui-core';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './Property.less';
+import { getColumnConfig } from '../../helpers/getColumnConfig';
 import PropertyDescription from './PropertyDescription';
 import { Item } from './types';
-
-type GridColumnPropsType = React.ComponentProps<typeof GridColumn>;
-type GridColumnConfigType = Pick<GridColumnPropsType, 'all' | 'wide' | 'desktop' | 'tablet' | 'mobile'>;
 
 export interface IProperty {
     /** Ссылка на корневой элемент */
@@ -80,12 +78,6 @@ const Property: React.FC<IProperty> = ({
         [classes.openedDescription, classes.toggleDescription, dataAttrs?.moreLink],
     );
 
-    const getColumnConfig = React.useCallback(
-        (): GridColumnConfigType =>
-            fullWidth ? { all: '12' } : { wide: '8', desktop: '10', tablet: '12', mobile: '12' },
-        [fullWidth],
-    );
-
     return (
         <div
             className={cn({ 'border-bottom': borderBottom }, [className])}
@@ -93,7 +85,7 @@ const Property: React.FC<IProperty> = ({
             {...filterDataAttrs(dataAttrs?.root)}
         >
             <Grid>
-                <GridColumn {...getColumnConfig()}>
+                <GridColumn {...getColumnConfig(fullWidth)}>
                     <div className={cn('wrapper')}>
                         {badge && (
                             <div className={cn('badge-wrapper')}>

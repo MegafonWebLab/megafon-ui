@@ -66,6 +66,8 @@ export interface ISearchProps {
     className?: string;
     /** Дополнительные классы для внутренних элементов */
     classes?: {
+        label?: string;
+        input?: string;
         listItemTitle?: string;
         control?: string;
         icon?: string;
@@ -257,7 +259,7 @@ const Search: React.FC<ISearchProps> = ({
                     <input
                         {...filterDataAttrs(dataAttrs?.searchField)}
                         id={searchId}
-                        className={cn('search-field', { filled: !!searchQuery })}
+                        className={cn('search-field', { filled: !!searchQuery }, [classes?.input])}
                         placeholder={placeholder}
                         value={searchQuery}
                         onChange={handleChange}
@@ -270,7 +272,7 @@ const Search: React.FC<ISearchProps> = ({
                         autoComplete="off"
                     />
                     {label && (
-                        <div className={cn('label')}>
+                        <div className={cn('label', [classes?.label])}>
                             {label}
                             {required && <span className={cn('require-mark')}>*</span>}
                         </div>
@@ -357,6 +359,8 @@ Search.propTypes = {
     required: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
+        label: PropTypes.string,
+        input: PropTypes.string,
         listItemTitle: PropTypes.string,
         control: PropTypes.string,
         icon: PropTypes.string,

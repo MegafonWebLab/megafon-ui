@@ -3,7 +3,7 @@ import { cnCreate, detectTouch } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import { shallow, mount } from 'enzyme';
 import InputMask from 'react-input-mask';
-import TextField, { TextFieldProps, Verification } from './TextField';
+import TextField, { MinTextareaHeight, TextFieldProps, Verification } from './TextField';
 
 jest.mock('@megafon/ui-helpers', () => ({
     ...jest.requireActual('@megafon/ui-helpers'),
@@ -33,6 +33,7 @@ const commonProps = {
         input: 'inputClass',
     },
     className: 'customClass',
+    minTextareaHeight: MinTextareaHeight.ONE_ROW,
 };
 
 const dataAttrs: TextFieldProps['dataAttrs'] = {
@@ -359,6 +360,12 @@ describe('<TextField />', () => {
 
         it('should render flexible textarea', () => {
             const wrapper = shallow(<TextField {...commonProps} textarea="flexible" />);
+
+            expect(wrapper).toMatchSnapshot();
+        });
+
+        it('should render flexible textarea without resize button', () => {
+            const wrapper = shallow(<TextField {...commonProps} textarea="flexible" hideResizeButton />);
 
             expect(wrapper).toMatchSnapshot();
         });

@@ -68,7 +68,7 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
     <Switcher disabled showLoader />
 </Playground>
 
-## Переключатель c текстом
+## Переключатель с текстом
 
 ### Положение текста
 
@@ -80,7 +80,7 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
         {({ checked, onChange }) => <Switcher checked={checked} disabled onChange={onChange}>Отключен</Switcher>}
     </SwitcherWrapper>
     <SwitcherWrapper>
-        {({ checked, onChange }) => 
+        {({ checked, onChange }) =>
             <Switcher textPosition="left" onChange={onChange} checked={checked}>
                 <strong>Текст слева</strong><br />
                 Cвитчер прижимается к правому краю контейнера
@@ -89,7 +89,7 @@ export const SwitcherWrapper: React.FC<ISwitcherWrapperProps> = props => {
     </SwitcherWrapper>
 </Playground>
 
-### Размер текста 
+### Размер текста
 
 <Playground>
     <SwitcherWrapper>
