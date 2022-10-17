@@ -3,6 +3,7 @@ import { Grid, GridColumn, Accordion } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './AccordionBox.less';
+import { getColumnConfig } from '../../helpers/getColumnConfig';
 
 export interface IAccordionBox {
     /** Дополнительные data атрибуты к внутренним элементам */
@@ -38,22 +39,15 @@ export interface IAccordionBox {
 }
 
 const cn = cnCreate('mfui-accordion-box');
-const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFullWidth = false, ...restProps }) => {
-    const renderAccordionWithGrid = React.useCallback(
-        () => (
-            <div className={cn()}>
-                <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
-                    <GridColumn wide="8">
-                        <Accordion {...restProps} />
-                    </GridColumn>
-                </Grid>
-            </div>
-        ),
-        [restProps, hCenterAlignWide],
-    );
-
-    return isFullWidth ? <Accordion {...restProps} /> : renderAccordionWithGrid();
-};
+const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFullWidth = false, ...restProps }) => (
+    <div className={cn()}>
+        <Grid hAlign={hCenterAlignWide ? 'center' : 'left'}>
+            <GridColumn {...getColumnConfig(isFullWidth)}>
+                <Accordion {...restProps} />
+            </GridColumn>
+        </Grid>
+    </div>
+);
 
 AccordionBox.propTypes = {
     dataAttrs: PropTypes.shape({
