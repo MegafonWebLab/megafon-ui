@@ -63,7 +63,14 @@ describe('<Search />', () => {
             const wrapper = shallow(
                 <Search
                     {...props}
-                    classes={{ listItemTitle: 'wrap-text-test', control: 'control-outer', icon: 'icon-outer' }}
+                    label="label"
+                    classes={{
+                        label: 'labelClass',
+                        input: 'inputClass',
+                        listItemTitle: 'wrap-text-test',
+                        control: 'control-outer',
+                        icon: 'icon-outer',
+                    }}
                 />,
             );
             expect(wrapper).toMatchSnapshot();

@@ -109,12 +109,12 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
     className="mfui-search__control control-outer"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_labeled"
       htmlFor="searchId"
     >
       <input
         autoComplete="off"
-        className="mfui-search__search-field mfui-search__search-field_filled"
+        className="mfui-search__search-field mfui-search__search-field_filled inputClass"
         data-testid="searchField-test"
         id="searchId"
         onBlur={[Function]}
@@ -126,6 +126,11 @@ exports[`<Search /> snapshots renders Search with classes 1`] = `
         type="text"
         value="initial value"
       />
+      <div
+        className="mfui-search__label labelClass"
+      >
+        label
+      </div>
     </label>
     <div
       className="mfui-search__icon-box"
