@@ -12,6 +12,11 @@ import throttleTime from 'constants/throttleTime';
 import ResizeIcon from './i/textarea-resizer.svg';
 import './TextField.less';
 
+const TEXTAREA_MAX_HEIGHT = 144;
+const DEFAULT_LABEL_TOP_POSITION = 16;
+const DEFAULT_ROW_COUNT = 3;
+const ROW_HEIGHT = 24;
+
 const DEFAULT_PLACEHOLDERS = {
     email: 'E-mail',
     tel: 'Номер телефона',
@@ -28,6 +33,13 @@ export const TextareaTypes = {
     FIXED: 'fixed',
     FLEXIBLE: 'flexible',
 } as const;
+
+export const MinTextareaHeight = {
+    ONE_ROW: ROW_HEIGHT,
+    THREE_ROWS: ROW_HEIGHT * 3,
+} as const;
+
+type MinTextareaHeightType = typeof MinTextareaHeight[keyof typeof MinTextareaHeight];
 
 interface IMaskSelection {
     start: number;
@@ -102,6 +114,10 @@ export type TextFieldProps = {
     autoComplete?: string;
     /** Переводит компонент в контролируемое состояние */
     isControlled?: boolean;
+    /** Минимальная высота textarea, px */
+    minTextareaHeight?: MinTextareaHeightType;
+    /** Скрывает кнопку ресайза для textarea="flexible" */
+    hideResizeButton?: boolean;
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Обработчик изменения значения маскированного инпута до обработки маской */
@@ -115,12 +131,6 @@ export type TextFieldProps = {
     /** Обработчик клика добавленной иконки */
     onCustomIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 };
-
-const TEXTAREA_MIN_HEIGHT = 48;
-const TEXTAREA_MAX_HEIGHT = 144;
-const DEFAULT_LABEL_TOP_POSITION = 16;
-const DEFAULT_ROW_COUNT = 3;
-const ROW_HEIGHT = 24;
 
 const cn = cnCreate('mfui-text-field');
 const TextField: React.FC<TextFieldProps> = ({
@@ -140,6 +150,8 @@ const TextField: React.FC<TextFieldProps> = ({
     placeholder,
     required,
     isControlled = false,
+    minTextareaHeight = MinTextareaHeight.THREE_ROWS,
+    hideResizeButton = false,
     onBlur,
     onChange,
     onBeforeMaskChange,
@@ -159,7 +171,7 @@ const TextField: React.FC<TextFieldProps> = ({
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = useState<string | number | undefined>(value);
-    const [initialTextareaHeight, setInitialTextareaHeight] = useState(ROW_HEIGHT * DEFAULT_ROW_COUNT);
+    const [initialTextareaHeight, setInitialTextareaHeight] = useState<number>(minTextareaHeight);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
     const [currentNoticeText, setCurrentNoticeText] = useState(noticeText);
     const [isTextareaResizeFocused, setIsTextareaResizeFocused] = useState(false);
@@ -227,7 +239,7 @@ const TextField: React.FC<TextFieldProps> = ({
                     (moveEvent as MouseEvent).clientY || (moveEvent as TouchEvent).touches[0].clientY;
                 const resizeHeight = originalHeight + (currentCoordinateY - originalCoordinateY);
 
-                const updatedHeight = resizeHeight < TEXTAREA_MIN_HEIGHT ? TEXTAREA_MIN_HEIGHT : resizeHeight;
+                const updatedHeight = resizeHeight < minTextareaHeight ? minTextareaHeight : resizeHeight;
 
                 setInitialTextareaHeight(updatedHeight);
                 setIsTextareaResized(true);
@@ -251,7 +263,7 @@ const TextField: React.FC<TextFieldProps> = ({
 
         resizerRef.current.addEventListener('mousedown', handleStartResize);
         resizerRef.current.addEventListener('touchstart', handleStartResize);
-    }, [textarea]);
+    }, [textarea, minTextareaHeight]);
 
     const togglePasswordHiding = useCallback(() => setPasswordHidden(prevPassState => !prevPassState), []);
 
@@ -264,9 +276,9 @@ const TextField: React.FC<TextFieldProps> = ({
             current: { scrollHeight },
         } = fieldNode;
 
-        const extraRowCount = Math.round((scrollHeight - 28 - TEXTAREA_MIN_HEIGHT) / ROW_HEIGHT);
+        const extraRowCount = Math.round((scrollHeight - 28 - minTextareaHeight) / ROW_HEIGHT);
         const newHeight =
-            extraRowCount <= DEFAULT_ROW_COUNT ? TEXTAREA_MIN_HEIGHT + ROW_HEIGHT * extraRowCount : TEXTAREA_MAX_HEIGHT;
+            extraRowCount <= DEFAULT_ROW_COUNT ? minTextareaHeight + ROW_HEIGHT * extraRowCount : TEXTAREA_MAX_HEIGHT;
 
         setInitialTextareaHeight(newHeight);
     };
@@ -500,7 +512,7 @@ const TextField: React.FC<TextFieldProps> = ({
         >
             <div className={cn('field-wrapper', { textarea: textarea && textareaType })}>
                 {renderField()}
-                {textareaType === TextareaTypes.FLEXIBLE && (
+                {textareaType === TextareaTypes.FLEXIBLE && !hideResizeButton && (
                     <div className={cn('resizer')} ref={resizerRef}>
                         <ResizeIcon />
                     </div>
@@ -548,6 +560,8 @@ TextField.propTypes = {
     maskChar: PropTypes.string,
     noticeText: PropTypes.string,
     className: PropTypes.string,
+    minTextareaHeight: PropTypes.oneOf([24, 72]),
+    hideResizeButton: PropTypes.bool,
     onChange: PropTypes.func,
     onBeforeMaskChange: PropTypes.func,
     onBlur: PropTypes.func,
