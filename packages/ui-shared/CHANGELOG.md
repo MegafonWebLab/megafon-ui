@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.5.2...@megafon/ui-shared@3.5.3) (2022-10-17)
+
+**Note:** Version bump only for package @megafon/ui-shared
+
+
+
+
+
 ## [3.5.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@3.5.1...@megafon/ui-shared@3.5.2) (2022-10-10)
 
 **Note:** Version bump only for package @megafon/ui-shared
