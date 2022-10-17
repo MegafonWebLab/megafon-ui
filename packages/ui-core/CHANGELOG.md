@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.4.0...@megafon/ui-core@4.5.0) (2022-10-17)
+
+
+### Features
+
+* **search:** add new keys for prop classes ([552741b](https://github.com/MegafonWebLab/megafon-ui/commit/552741be627cce59b4ba221645b569ce57e72bd2))
+* **textfield:** add minTextareaHeight and hideResizeButton props for textarea ([088d219](https://github.com/MegafonWebLab/megafon-ui/commit/088d21971b69233522bb5cf7d642cffbc2571ca4))
+
+
+
+
+
 # [4.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.3.0...@megafon/ui-core@4.4.0) (2022-10-10)
 
 
