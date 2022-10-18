@@ -1,1636 +1,1607 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextField /> input should render with autoComplete 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      autoComplete="tel"
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        autocomplete="tel"
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> input should render with disabled input 1`] = `
+<div>
+  <div
+    class="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    data-test="test"
+  >
+    <div
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        disabled=""
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render with hidden password 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default mfui-text-field_icon mfui-text-field_password"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default mfui-text-field_icon mfui-text-field_password"
+    data-test="test"
   >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="password"
-      value="value"
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
     <div
-      className="mfui-text-field__icon-box mfui-text-field__icon-box_password"
-      onClick={[Function]}
+      class="mfui-text-field__field-wrapper"
     >
-      <test-file-stub
-        className="mfui-text-field__icon"
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="password"
+        value="value"
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box mfui-text-field__icon-box_password"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon"
+        />
+      </div>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
-  >
-    <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render with ie placeholder 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={false}
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper"
+      class="mfui-text-field__field-wrapper"
     >
       <input
-        className="mfui-text-field__field"
-        disabled={true}
+        class="mfui-text-field__field"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
         placeholder="placeholder"
-        required={true}
+        required=""
         type="text"
         value=""
       />
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> input should render with inputmode 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      inputMode="numeric"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        inputmode="numeric"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render with mask 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <InputElement
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      inputRef={[Function]}
-      mask="+7 (999) 999-99-99"
-      maskChar="_"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="text"
+        value="+7 (___) ___-__-__"
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render with number value 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="text"
-      value={1234}
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="text"
+        value="1234"
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render with string value 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="text"
-      value="value"
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="text"
+        value="value"
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render with type 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="tel"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        type="tel"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render with value after updating number prop 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={false}
-  value={5678}
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper"
+      class="mfui-text-field__field-wrapper"
     >
       <input
-        className="mfui-text-field__field"
-        disabled={true}
+        class="mfui-text-field__field"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
         placeholder="placeholder"
-        required={true}
+        required=""
         type="text"
-        value={1234}
+        value="5678"
       />
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> input should render with value after updating string prop 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={false}
-  value="newValue"
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper"
+      class="mfui-text-field__field-wrapper"
     >
       <input
-        className="mfui-text-field__field"
-        disabled={true}
+        class="mfui-text-field__field"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
         placeholder="placeholder"
-        required={true}
+        required=""
+        type="text"
+        value="newValue"
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> input should render with visible password 1`] = `
+<div>
+  <div
+    class="mfui-text-field mfui-text-field_theme_default mfui-text-field_icon"
+    data-test="test"
+  >
+    <div
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
         type="text"
         value="value"
       />
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
+      <div
+        class="mfui-text-field__icon-box mfui-text-field__icon-box_password"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon"
+        />
+      </div>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
-  </div>
-</TextField>
-`;
-
-exports[`<TextField /> input should render with visible password 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default mfui-text-field_icon"
->
-  <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder="placeholder"
-      required={true}
-      type="text"
-      value="value"
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-    <div
-      className="mfui-text-field__icon-box mfui-text-field__icon-box_password"
-      onClick={[Function]}
-    >
-      <test-file-stub
-        className="mfui-text-field__icon"
-      />
-    </div>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
-  >
-    <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
   </div>
 </div>
 `;
 
 exports[`<TextField /> input should render without ie placeholder when value is passed 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={false}
-  value="value"
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper"
+      class="mfui-text-field__field-wrapper"
     >
       <input
-        className="mfui-text-field__field"
-        disabled={true}
+        class="mfui-text-field__field"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
         placeholder="placeholder"
-        required={true}
+        required=""
         type="text"
         value="value"
       />
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> input should render without no-touch class 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper"
+      class="mfui-text-field__field-wrapper"
     >
       <input
-        className="mfui-text-field__field"
-        disabled={true}
+        class="mfui-text-field__field"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
         placeholder="placeholder"
-        required={true}
+        required=""
         type="text"
         value=""
       />
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> input should render without placeholder with hidePlaceholder prop 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      placeholder=" "
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder=" "
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render disabled field with error 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_white mfui-text-field_icon customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field inputClass"
-      disabled={true}
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    class="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_white mfui-text-field_icon customClass"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-wrapper"
     >
-      noticeText
+      <input
+        class="mfui-text-field__field inputClass"
+        data-testid="input"
+        disabled=""
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    >
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render disabled field with valid 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_white mfui-text-field_icon customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field inputClass"
-      disabled={true}
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    class="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_white mfui-text-field_icon customClass"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-wrapper"
     >
-      noticeText
+      <input
+        class="mfui-text-field__field inputClass"
+        data-testid="input"
+        disabled=""
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    >
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render with common props 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    class="mfui-text-field mfui-text-field_theme_white customClass"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-wrapper"
     >
-      noticeText
+      <input
+        class="mfui-text-field__field inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    >
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render with custom icon 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white mfui-text-field_icon customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
+    class="mfui-text-field mfui-text-field_theme_white mfui-text-field_icon customClass"
+    data-test="test"
   >
-    <input
-      className="mfui-text-field__field inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
+    <div
+      class="mfui-text-field__field-wrapper"
     >
-      label
-      <span
-        className="mfui-text-field__require-mark"
+      <input
+        class="mfui-text-field__field inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
       >
-        *
-      </span>
-    </label>
-    <div
-      className="mfui-text-field__icon-box"
-      onClick={[Function]}
-    >
-      <test-file-stub />
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub />
+      </div>
     </div>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
-  >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
     >
-      noticeText
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render with default props 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label"
-    >
-      Текст
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper"
+    >
+      <input
+        class="mfui-text-field__field"
+        placeholder="Текст"
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label"
+      >
+        Текст
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render with error 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error mfui-text-field_icon customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
+    class="mfui-text-field mfui-text-field_theme_white mfui-text-field_error mfui-text-field_icon customClass"
+    data-test="test"
   >
-    <input
-      className="mfui-text-field__field inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
     <div
-      className="mfui-text-field__icon-box mfui-text-field__icon-box_error"
-      onClick={[Function]}
+      class="mfui-text-field__field-wrapper"
     >
-      <test-file-stub
-        className="mfui-text-field__icon mfui-text-field__icon_clear"
+      <input
+        class="mfui-text-field__field inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        type="text"
+        value=""
       />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box mfui-text-field__icon-box_error"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon mfui-text-field__icon_clear"
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
-  >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
     >
-      noticeText
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render with hidden icon 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
-  >
-    <input
-      className="mfui-text-field__field inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    class="mfui-text-field mfui-text-field_theme_white customClass"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-wrapper"
     >
-      noticeText
+      <input
+        class="mfui-text-field__field inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        type="text"
+        value=""
+      />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    >
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> should render with valid 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white mfui-text-field_valid mfui-text-field_icon customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper"
+    class="mfui-text-field mfui-text-field_theme_white mfui-text-field_valid mfui-text-field_icon customClass"
+    data-test="test"
   >
-    <input
-      className="mfui-text-field__field inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      placeholder="Текст"
-      required={true}
-      type="text"
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
     <div
-      className="mfui-text-field__icon-box"
-      onClick={[Function]}
+      class="mfui-text-field__field-wrapper"
     >
-      <test-file-stub
-        className="mfui-text-field__icon"
+      <input
+        class="mfui-text-field__field inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        type="text"
+        value=""
       />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__icon-box"
+        data-testid="icon-box"
+      >
+        <test-file-stub
+          classname="mfui-text-field__icon"
+        />
+      </div>
     </div>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
-  >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
     >
-      noticeText
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> textarea should render fixed textarea 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
-  >
-    <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onScroll={[Function]}
-      placeholder="Текст"
-      required={true}
-      style={
-        Object {
-          "height": "72px",
-        }
-      }
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    class="mfui-text-field mfui-text-field_theme_white customClass"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
     >
-      noticeText
+      <textarea
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        style="height: 72px;"
+      />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    >
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> textarea should render flexible textarea 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_flexible"
+    class="mfui-text-field mfui-text-field_theme_white customClass"
+    data-test="test"
   >
-    <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onScroll={[Function]}
-      placeholder="Текст"
-      required={true}
-      style={
-        Object {
-          "height": "72px",
-        }
-      }
-      value=""
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
     <div
-      className="mfui-text-field__resizer"
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_flexible"
     >
-      <test-file-stub />
+      <textarea
+        class="mfui-text-field__field mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        style="height: 72px;"
+      />
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+      <div
+        class="mfui-text-field__resizer"
+      >
+        <test-file-stub />
+      </div>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    >
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`<TextField /> textarea should render with disabled input 1`] = `
+<div>
   <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    class="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
     >
-      noticeText
+      <textarea
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
+        disabled=""
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        style="height: 72px;"
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
     </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> textarea should render with error because of max limit is exceeded 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_theme_white mfui-text-field_error customClass"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
-  >
-    <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
-      id="id"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onScroll={[Function]}
-      placeholder="Текст"
-      required={true}
-      style={
-        Object {
-          "height": "72px",
-        }
-      }
-      value="123456"
-    />
-    <label
-      className="mfui-text-field__label labelClass"
-      htmlFor="id"
-    >
-      label
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+    class="mfui-text-field mfui-text-field_theme_white mfui-text-field_error customClass"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text mfui-text-field__notice-text_active"
-      onTransitionEnd={[Function]}
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
     >
-      noticeText
+      <textarea
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
+        data-testid="input"
+        id="id"
+        maxlength="4"
+        placeholder="Текст"
+        required=""
+        style="height: 72px;"
+      >
+        123456
+      </textarea>
+      <label
+        class="mfui-text-field__label labelClass"
+        data-test="test"
+        for="id"
+      >
+        label
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
     </div>
-    <span
-      className="mfui-text-field__counter mfui-text-field__counter_error"
+    <div
+      class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
     >
-      6/4
-    </span>
+      <div
+        class="mfui-text-field__notice-text mfui-text-field__notice-text_active"
+        data-test="test"
+      >
+        noticeText
+      </div>
+      <span
+        class="mfui-text-field__counter mfui-text-field__counter_error"
+      >
+        6/4
+      </span>
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> textarea should render with ie placeholder 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={true}
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
-        disabled={true}
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
-        onScroll={[Function]}
         placeholder="placeholder"
-        required={true}
-        style={
-          Object {
-            "height": "72px",
-          }
-        }
-        value=""
+        required=""
+        style="height: 72px;"
       />
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> textarea should render with number value 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
-  >
-    <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      onScroll={[Function]}
-      placeholder="placeholder"
-      required={true}
-      style={
-        Object {
-          "height": "72px",
-        }
-      }
-      value={1234}
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+    >
+      <textarea
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        style="height: 72px;"
+      >
+        1234
+      </textarea>
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> textarea should render with string value 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
-  >
-    <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      onScroll={[Function]}
-      placeholder="placeholder"
-      required={true}
-      style={
-        Object {
-          "height": "72px",
-        }
-      }
-      value="value"
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+    >
+      <textarea
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder="placeholder"
+        required=""
+        style="height: 72px;"
+      >
+        value
+      </textarea>
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;
 
 exports[`<TextField /> textarea should render with value after updating number prop 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={true}
-  value={5678}
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
-        disabled={true}
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
-        onScroll={[Function]}
         placeholder="placeholder"
-        required={true}
-        style={
-          Object {
-            "height": "72px",
-          }
-        }
-        value={1234}
-      />
+        required=""
+        style="height: 72px;"
+      >
+        5678
+      </textarea>
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> textarea should render with value after updating string prop 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={true}
-  value="newValue"
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
-        disabled={true}
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
-        onScroll={[Function]}
         placeholder="placeholder"
-        required={true}
-        style={
-          Object {
-            "height": "72px",
-          }
-        }
-        value="value"
-      />
+        required=""
+        style="height: 72px;"
+      >
+        newValue
+      </textarea>
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> textarea should render without ie placeholder when value is passed 1`] = `
-<TextField
-  disabled={true}
-  id="id"
-  maxLength={4}
-  name="name"
-  onBlur={[MockFunction]}
-  onFocus={[MockFunction]}
-  onKeyUp={[MockFunction]}
-  placeholder="placeholder"
-  required={true}
-  textarea={true}
-  value="value"
->
+<div>
   <div
-    className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
     >
       <textarea
-        className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
-        disabled={true}
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
         id="id"
-        maxLength={4}
         name="name"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        onKeyUp={[MockFunction]}
-        onScroll={[Function]}
         placeholder="placeholder"
-        required={true}
-        style={
-          Object {
-            "height": "72px",
-          }
-        }
-        value="value"
-      />
+        required=""
+        style="height: 72px;"
+      >
+        value
+      </textarea>
       <label
-        className="mfui-text-field__label"
-        htmlFor="id"
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
       >
         placeholder
         <span
-          className="mfui-text-field__require-mark"
+          class="mfui-text-field__require-mark"
         >
           *
         </span>
       </label>
     </div>
     <div
-      className="mfui-text-field__field-bottom-wrapper"
+      class="mfui-text-field__field-bottom-wrapper"
     >
       <div
-        className="mfui-text-field__notice-text"
-        onTransitionEnd={[Function]}
+        class="mfui-text-field__notice-text"
+        data-test="test"
       />
     </div>
   </div>
-</TextField>
+</div>
 `;
 
 exports[`<TextField /> textarea should render without placeholder with hidePlaceholder prop 1`] = `
-<div
-  className="mfui-text-field mfui-text-field_disabled mfui-text-field_theme_default"
->
+<div>
   <div
-    className="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
-  >
-    <textarea
-      className="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
-      disabled={true}
-      id="id"
-      maxLength={4}
-      name="name"
-      onBlur={[Function]}
-      onChange={[Function]}
-      onFocus={[Function]}
-      onKeyUp={[MockFunction]}
-      onScroll={[Function]}
-      placeholder=" "
-      required={true}
-      style={
-        Object {
-          "height": "72px",
-        }
-      }
-      value=""
-    />
-    <label
-      className="mfui-text-field__label"
-      htmlFor="id"
-    >
-      placeholder
-      <span
-        className="mfui-text-field__require-mark"
-      >
-        *
-      </span>
-    </label>
-  </div>
-  <div
-    className="mfui-text-field__field-bottom-wrapper"
+    class="mfui-text-field mfui-text-field_theme_default"
+    data-test="test"
   >
     <div
-      className="mfui-text-field__notice-text"
-      onTransitionEnd={[Function]}
-    />
+      class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+    >
+      <textarea
+        class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea"
+        data-testid="input"
+        id="id"
+        name="name"
+        placeholder=" "
+        required=""
+        style="height: 72px;"
+      />
+      <label
+        class="mfui-text-field__label"
+        data-test="test"
+        for="id"
+      >
+        placeholder
+        <span
+          class="mfui-text-field__require-mark"
+        >
+          *
+        </span>
+      </label>
+    </div>
+    <div
+      class="mfui-text-field__field-bottom-wrapper"
+    >
+      <div
+        class="mfui-text-field__notice-text"
+        data-test="test"
+      />
+    </div>
   </div>
 </div>
 `;

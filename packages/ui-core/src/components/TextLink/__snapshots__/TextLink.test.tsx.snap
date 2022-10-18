@@ -1,20 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextLink /> it renders TextLink 1`] = `
-<Link
-  className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_white class"
-  dataAttrs={
-    Object {
-      "root": Object {
-        "data-root": "test",
-      },
-    }
-  }
-  download={true}
-  href="href"
-  rel="noopener"
-  target="_self"
->
-  text
-</Link>
+<div>
+  <a
+    class="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_white class"
+    data-root="test"
+    download=""
+    href="href"
+    rel="noopener"
+    target="_self"
+  >
+    text
+  </a>
+</div>
 `;

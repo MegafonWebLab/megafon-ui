@@ -1,71 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tooltip/> renders component with default props 1`] = `
-<div
-  className="mfui-tooltip mfui-tooltip_paddings_medium"
-  style={
-    Object {
-      "left": "0",
-      "position": "absolute",
-      "top": "0",
-    }
-  }
->
+<div>
   <div
-    className="mfui-tooltip__arrow"
-  />
-  <div
-    className="mfui-tooltip__arrow-shadow"
-  />
-  <Tile
-    className="mfui-tooltip__content"
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
+    class="mfui-tooltip mfui-tooltip_paddings_medium"
+    style="position: absolute; left: 0px; top: 0px;"
   >
-    Some test content
-  </Tile>
-  <Tile
-    className="mfui-tooltip__content-shadow"
-    shadowLevel="high"
-  />
+    <div
+      class="mfui-tooltip__arrow"
+    />
+    <div
+      class="mfui-tooltip__arrow-shadow"
+    />
+    <div
+      class="mfui-tile mfui-tile_theme_light mfui-tile_radius_default mfui-tile_shadow_zero mfui-tooltip__content"
+    >
+      Some test content
+    </div>
+    <div
+      class="mfui-tile mfui-tile_theme_light mfui-tile_radius_default mfui-tile_shadow_high mfui-tooltip__content-shadow"
+    />
+  </div>
 </div>
 `;
 
 exports[`<Tooltip/> renders with props 1`] = `
-<div
-  className="mfui-tooltip mfui-tooltip_paddings_none className rootClass"
-  data-root="test"
-  style={
-    Object {
-      "left": "0",
-      "position": "absolute",
-      "top": "0",
-    }
-  }
->
+<div>
   <div
-    className="mfui-tooltip__arrow arrow"
-  />
-  <div
-    className="mfui-tooltip__arrow-shadow"
-  />
-  <Tile
-    className="mfui-tooltip__content content"
-    dataAttrs={
-      Object {
-        "root": Object {
-          "data-content": "test",
-          "incorrect-attr": "test",
-        },
-      }
-    }
-  />
-  <Tile
-    className="mfui-tooltip__content-shadow content-shadow"
-    shadowLevel="high"
-  />
+    class="mfui-tooltip mfui-tooltip_paddings_none className rootClass"
+    data-root="test"
+    style="position: absolute; left: 0px; top: 0px;"
+  >
+    <div
+      class="mfui-tooltip__arrow arrow"
+    />
+    <div
+      class="mfui-tooltip__arrow-shadow"
+    />
+    <div
+      class="mfui-tile mfui-tile_theme_light mfui-tile_radius_default mfui-tile_shadow_zero mfui-tooltip__content content"
+      data-content="test"
+    />
+    <div
+      class="mfui-tile mfui-tile_theme_light mfui-tile_radius_default mfui-tile_shadow_high mfui-tooltip__content-shadow content-shadow"
+    />
+  </div>
 </div>
 `;

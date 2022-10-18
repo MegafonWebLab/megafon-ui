@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import TextLink, { ITextLinkProps } from './TextLink';
 
 const props: ITextLinkProps = {
@@ -21,14 +21,17 @@ const props: ITextLinkProps = {
 
 describe('<TextLink />', () => {
     it('it renders TextLink', () => {
-        const wrapper = shallow(<TextLink {...props} />);
-        expect(wrapper).toMatchSnapshot();
+        const { container } = render(<TextLink {...props} />);
+
+        expect(container).toMatchSnapshot();
     });
 
     it('it calls onClick handler', () => {
         const onClick = jest.fn();
-        const wrapper = shallow(<TextLink onClick={onClick} />);
-        wrapper.simulate('click');
+        const { container } = render(<TextLink onClick={onClick} />);
+
+        fireEvent.click(container.firstElementChild as Element);
+
         expect(onClick.mock.calls).toHaveLength(1);
     });
 });

@@ -1,39 +1,14 @@
 import * as React from 'react';
-import { cnCreate, detectTouch } from '@megafon/ui-helpers';
+import { detectTouch } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
-import { shallow, mount } from 'enzyme';
-import InputMask from 'react-input-mask';
+import { render, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import TextField, { TextFieldProps, Verification } from './TextField';
 
 jest.mock('@megafon/ui-helpers', () => ({
     ...jest.requireActual('@megafon/ui-helpers'),
     detectTouch: jest.fn().mockReturnValue(false),
 }));
-
-const commonFieldProps = {
-    disabled: true,
-    id: 'id',
-    name: 'name',
-    placeholder: 'placeholder',
-    required: true,
-    maxLength: 4,
-    onBlur: jest.fn(),
-    onFocus: jest.fn(),
-    onKeyUp: jest.fn(),
-};
-
-const commonProps = {
-    theme: 'white' as const,
-    label: 'label',
-    id: 'id',
-    required: true,
-    noticeText: 'noticeText',
-    classes: {
-        label: 'labelClass',
-        input: 'inputClass',
-    },
-    className: 'customClass',
-};
 
 const dataAttrs: TextFieldProps['dataAttrs'] = {
     root: {
@@ -46,77 +21,110 @@ const dataAttrs: TextFieldProps['dataAttrs'] = {
         'data-test': 'test',
     },
     input: {
-        'data-test': 'test',
+        'data-testid': 'input',
     },
     iconBox: {
-        'data-test': 'test',
+        'data-testid': 'icon-box',
     },
 };
 
-const cn = cnCreate('.mfui-text-field');
+const commonFieldProps = {
+    disabled: false,
+    id: 'id',
+    name: 'name',
+    placeholder: 'placeholder',
+    required: true,
+    dataAttrs,
+    onBlur: jest.fn(),
+    onFocus: jest.fn(),
+    onKeyUp: jest.fn(),
+};
+
+const commonProps = {
+    theme: 'white' as const,
+    label: 'label',
+    id: 'id',
+    required: true,
+    maxLength: 4,
+    noticeText: 'noticeText',
+    classes: {
+        label: 'labelClass',
+        input: 'inputClass',
+    },
+    className: 'customClass',
+    dataAttrs,
+};
+
 const selectors = {
-    iconBox: cn('icon-box'),
+    iconBox: 'icon-box',
     input: 'input',
-    textarea: 'textarea',
 };
 
 const mockUserAgentAsTrident = () => {
     jest.spyOn(window.navigator, 'userAgent', 'get').mockReturnValue('trident/');
 };
 
-const testCommonCases = (selector: string, textarea = false) => {
+const testCommonCases = (textarea = false) => {
     it('should render with string value', () => {
-        const wrapper = shallow(<TextField {...commonFieldProps} value="value" textarea={textarea} />);
-        expect(wrapper).toMatchSnapshot();
+        const { container } = render(<TextField {...commonFieldProps} value="value" textarea={textarea} />);
+
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with number value', () => {
-        const wrapper = shallow(<TextField {...commonFieldProps} value={1234} textarea={textarea} />);
-        expect(wrapper).toMatchSnapshot();
+        const { container } = render(<TextField {...commonFieldProps} value={1234} textarea={textarea} />);
+
+        expect(container).toMatchSnapshot();
+    });
+
+    it('should render with disabled input', () => {
+        const { container } = render(<TextField {...commonFieldProps} disabled textarea={textarea} />);
+
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with value after updating string prop', () => {
-        const wrapper = mount(<TextField {...commonFieldProps} value="value" textarea={textarea} />);
+        const { container, rerender } = render(<TextField {...commonFieldProps} value="value" textarea={textarea} />);
 
-        wrapper.setProps({ value: 'newValue' });
+        rerender(<TextField {...commonFieldProps} value="newValue" textarea={textarea} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with value after updating number prop', () => {
-        const wrapper = mount(<TextField {...commonFieldProps} value={1234} textarea={textarea} />);
+        const { container, rerender } = render(<TextField {...commonFieldProps} value={1234} textarea={textarea} />);
 
-        wrapper.setProps({ value: 5678 });
+        rerender(<TextField {...commonFieldProps} value={5678} textarea={textarea} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with ie placeholder', () => {
         mockUserAgentAsTrident();
 
-        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} />);
+        const { container } = render(<TextField {...commonFieldProps} textarea={textarea} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render without ie placeholder when value is passed', () => {
         mockUserAgentAsTrident();
 
-        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} value="value" />);
+        const { container } = render(<TextField {...commonFieldProps} textarea={textarea} value="value" />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render without placeholder with hidePlaceholder prop', () => {
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} hidePlaceholder />);
+        const { container } = render(<TextField {...commonFieldProps} textarea={textarea} hidePlaceholder />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should call inputRef with node', () => {
         const inputRefMock = jest.fn();
-        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} inputRef={inputRefMock} />);
-        const field = wrapper.find(selector).getDOMNode();
+        const { getByTestId } = render(<TextField {...commonFieldProps} textarea={textarea} inputRef={inputRefMock} />);
+        const field = getByTestId(selectors.input);
 
         expect(inputRefMock).toBeCalledWith(field);
     });
@@ -125,62 +133,65 @@ const testCommonCases = (selector: string, textarea = false) => {
         const onChangeMock = jest.fn();
         const value = 'newValue';
         const event = { target: { value } };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} />);
+        const { getByTestId } = render(<TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} />);
+        const field = getByTestId(selectors.input) as HTMLInputElement;
 
-        wrapper.find(selector).simulate('change', event);
+        fireEvent.change(field, event);
 
-        expect(onChangeMock).toBeCalledWith(event);
-        expect(wrapper.find(selector).prop('value')).toEqual(value);
+        expect(onChangeMock).toBeCalled();
+        expect(field.value).toEqual(value);
     });
 
     it('should call onBlur', () => {
         const onBlurMock = jest.fn();
-        const value = 'newValue';
-        const event = { target: { value } };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onBlur={onBlurMock} />);
+        const { getByTestId } = render(<TextField {...commonFieldProps} textarea={textarea} onBlur={onBlurMock} />);
 
-        wrapper.find(selector).simulate('blur', event);
+        fireEvent.blur(getByTestId(selectors.input));
 
-        expect(onBlurMock).toBeCalledWith(event);
+        expect(onBlurMock).toBeCalled();
     });
 
     it('should call onFocus', () => {
         const onFocusMock = jest.fn();
-        const value = 'newValue';
-        const event = { target: { value } };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onFocus={onFocusMock} />);
+        const { getByTestId } = render(<TextField {...commonFieldProps} textarea={textarea} onFocus={onFocusMock} />);
 
-        wrapper.find(selector).simulate('focus', event);
+        fireEvent.focus(getByTestId(selectors.input));
 
-        expect(onFocusMock).toBeCalledWith(event);
+        expect(onFocusMock).toBeCalled();
     });
 
     it('should call onKeyUp', () => {
         const onKeyUpMock = jest.fn();
-        const event = { target: {} };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onKeyUp={onKeyUpMock} />);
+        const { getByTestId } = render(<TextField {...commonFieldProps} textarea={textarea} onKeyUp={onKeyUpMock} />);
 
-        wrapper.find(selector).simulate('keyup', event);
+        fireEvent.keyUp(getByTestId(selectors.input));
 
-        expect(onKeyUpMock).toBeCalledWith(event);
+        expect(onKeyUpMock).toBeCalled();
     });
 
     it("shouldn't change component inputValue state via input change when controlled", () => {
         const target = { target: { value: 'something' } };
-        const wrapper = shallow(<TextField {...commonFieldProps} value="value" textarea={textarea} isControlled />);
+        const { getByTestId } = render(
+            <TextField {...commonFieldProps} value="value" textarea={textarea} isControlled />,
+        );
+        const field = getByTestId(selectors.input) as HTMLInputElement;
 
-        wrapper.find(selector).simulate('change', target);
+        fireEvent.change(field, target);
 
-        expect(wrapper.find(selector).prop('value')).toEqual('value');
+        expect(field.value).toEqual('value');
     });
 
     it('should change component inputValue state via value prop update when controlled', () => {
-        const wrapper = mount(<TextField {...commonFieldProps} value="value" textarea={textarea} isControlled />);
+        const { getByTestId, rerender } = render(
+            <TextField {...commonFieldProps} value="value" textarea={textarea} isControlled />,
+        );
+        const field = getByTestId(selectors.input) as HTMLInputElement;
 
-        wrapper.setProps({ value: 'something' });
-        wrapper.update();
+        expect(field.value).toEqual('value');
 
-        expect(wrapper.find(selector).prop('value')).toEqual('something');
+        rerender(<TextField {...commonFieldProps} value="something" textarea={textarea} isControlled />);
+
+        expect(field.value).toEqual('something');
     });
 };
 
@@ -191,111 +202,122 @@ describe('<TextField />', () => {
     });
 
     it('should render with default props', () => {
-        const wrapper = shallow(<TextField value="" />);
+        const { container } = render(<TextField value="" />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with common props', () => {
-        const wrapper = shallow(<TextField {...dataAttrs} {...commonProps} value="" />);
+        const { container } = render(<TextField {...commonProps} value="" />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with valid', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.VALID} />);
+        const { container } = render(<TextField {...commonProps} verification={Verification.VALID} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render disabled field with valid', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.VALID} disabled />);
+        const { container } = render(<TextField {...commonProps} verification={Verification.VALID} disabled />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with error', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.ERROR} />);
+        const { container } = render(<TextField {...commonProps} verification={Verification.ERROR} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render disabled field with error', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.ERROR} disabled />);
+        const { container } = render(<TextField {...commonProps} verification={Verification.ERROR} disabled />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with custom icon', () => {
-        const wrapper = shallow(<TextField {...commonProps} customIcon={<Balance />} />);
+        const { container } = render(<TextField {...commonProps} customIcon={<Balance />} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with hidden icon', () => {
-        const wrapper = shallow(<TextField {...commonProps} hideIcon customIcon={<Balance />} />);
+        const { container } = render(<TextField {...commonProps} hideIcon customIcon={<Balance />} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     describe('input', () => {
-        testCommonCases(selectors.input);
+        testCommonCases();
 
         it('should render with mask', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} mask="+7 (999) 999-99-99" maskChar="_" />);
-            expect(wrapper).toMatchSnapshot();
+            const { container, getByTestId } = render(
+                <TextField {...commonFieldProps} mask="+7 (999) 999-99-99" maskChar="_" />,
+            );
+
+            fireEvent.change(getByTestId(selectors.input), { target: { value: '1234567890' } });
+
+            expect(container).toMatchSnapshot();
         });
 
         it('should render with type', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} type="tel" />);
-            expect(wrapper).toMatchSnapshot();
+            const { container } = render(<TextField {...commonFieldProps} type="tel" />);
+
+            expect(container).toMatchSnapshot();
         });
 
         it('should render with inputmode', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} inputMode="numeric" />);
-            expect(wrapper).toMatchSnapshot();
+            const { container } = render(<TextField {...commonFieldProps} inputMode="numeric" />);
+
+            expect(container).toMatchSnapshot();
         });
 
         it('should render with autoComplete', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} autoComplete="tel" />);
-            expect(wrapper).toMatchSnapshot();
+            const { container } = render(<TextField {...commonFieldProps} autoComplete="tel" />);
+
+            expect(container).toMatchSnapshot();
         });
 
         it('should render with hidden password', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} value="value" type="password" />);
-            expect(wrapper).toMatchSnapshot();
+            const { container } = render(<TextField {...commonFieldProps} value="value" type="password" />);
+
+            expect(container).toMatchSnapshot();
         });
 
         it('should render with visible password', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} value="value" type="password" />);
+            const { container, getByTestId } = render(
+                <TextField {...commonFieldProps} value="value" type="password" />,
+            );
 
-            wrapper.find(selectors.iconBox).simulate('click');
+            fireEvent.click(getByTestId(selectors.iconBox));
 
-            expect(wrapper).toMatchSnapshot();
+            expect(container).toMatchSnapshot();
         });
 
         it('should render without no-touch class', () => {
             (detectTouch as jest.Mock).mockReturnValueOnce(true);
 
-            const wrapper = mount(<TextField {...commonFieldProps} />);
+            const { container } = render(<TextField {...commonFieldProps} />);
 
-            expect(wrapper).toMatchSnapshot();
+            expect(container).toMatchSnapshot();
         });
 
         it('should clear input after icon click', () => {
-            const wrapper = shallow(
+            const { getByTestId } = render(
                 <TextField {...commonFieldProps} value="value" verification={Verification.ERROR} disabled={false} />,
             );
+            const field = getByTestId(selectors.input) as HTMLInputElement;
 
-            wrapper.find(selectors.iconBox).simulate('click');
+            fireEvent.click(getByTestId(selectors.iconBox));
 
-            expect(wrapper.find(selectors.input).prop('value')).toEqual('');
+            expect(field.value).toEqual('');
         });
 
         it('should call onCustomIconClick after icon click', () => {
             const onCustomIconClickMock = jest.fn();
-            const target = { target: {} };
-            const wrapper = shallow(
+            const { getByTestId } = render(
                 <TextField
                     {...commonFieldProps}
                     value="value"
@@ -304,13 +326,13 @@ describe('<TextField />', () => {
                 />,
             );
 
-            wrapper.find(selectors.iconBox).simulate('click', target);
+            fireEvent.click(getByTestId(selectors.iconBox));
 
-            expect(onCustomIconClickMock).toBeCalledWith(target);
+            expect(onCustomIconClickMock).toBeCalled();
         });
 
         it("shouldn't clear inputValue state via custom icon click when controlled", () => {
-            const wrapper = shallow(
+            const { getByTestId } = render(
                 <TextField
                     {...commonFieldProps}
                     value="value"
@@ -319,19 +341,17 @@ describe('<TextField />', () => {
                     onCustomIconClick={jest.fn()}
                 />,
             );
+            const field = getByTestId(selectors.input) as HTMLInputElement;
 
-            wrapper.find(selectors.iconBox).simulate('click');
+            fireEvent.click(getByTestId(selectors.iconBox));
 
-            expect(wrapper.find('input').prop('value')).toEqual('value');
+            expect(field.value).toEqual('value');
         });
 
-        it('should call onBeforeMaskChange callback on masked input change with correct args', () => {
-            const onBeforeMaskChange = jest.fn();
+        it('should call onBeforeMaskChange callback on masked input change with correct args', async () => {
+            const onBeforeMaskChange = jest.fn().mockImplementation((_, newState) => ({ ...newState }));
 
-            const nextState = { value: 'some_value', selection: { start: 3, end: 4 } };
-            const prevState = { value: 'some_new_value', selection: { start: 3, end: 6 } };
-
-            const wrapper = shallow(
+            const { getByTestId } = render(
                 <TextField
                     {...commonFieldProps}
                     mask="+7 (999) 999-99-99"
@@ -340,38 +360,56 @@ describe('<TextField />', () => {
                 />,
             );
 
-            const inputElementProps = wrapper.find('InputElement').props() as React.ComponentProps<typeof InputMask>;
-            inputElementProps.beforeMaskedValueChange &&
-                inputElementProps.beforeMaskedValueChange(nextState, prevState, 'h');
+            userEvent.type(getByTestId(selectors.input), '2');
 
-            expect(onBeforeMaskChange).toBeCalledWith('h', nextState, prevState);
+            expect(onBeforeMaskChange.mock.calls).toEqual([
+                [
+                    null,
+                    { selection: { end: 4, start: 4 }, value: '+7 (___) ___-__-__' },
+                    { selection: null, value: '' },
+                ],
+                [
+                    null,
+                    { selection: { end: 4, start: 4 }, value: '+7 (___) ___-__-__' },
+                    { selection: { end: 4, length: 0, start: 4 }, value: '+7 (___) ___-__-__' },
+                ],
+                [
+                    '2',
+                    { selection: { end: 5, start: 5 }, value: '+7 (2__) ___-__-__' },
+                    { selection: { end: 4, length: 0, start: 4 }, value: '+7 (___) ___-__-__' },
+                ],
+                [
+                    null,
+                    { selection: { end: 5, start: 5 }, value: '+7 (2__) ___-__-__' },
+                    { selection: { end: 5, length: 0, start: 5 }, value: '+7 (2__) ___-__-__' },
+                ],
+            ]);
         });
     });
 
     describe('textarea', () => {
-        testCommonCases(selectors.textarea, true);
+        testCommonCases(true);
 
         it('should render fixed textarea', () => {
-            const wrapper = shallow(<TextField {...commonProps} textarea />);
+            const { container } = render(<TextField {...commonProps} textarea />);
 
-            expect(wrapper).toMatchSnapshot();
+            expect(container).toMatchSnapshot();
         });
 
         it('should render flexible textarea', () => {
-            const wrapper = shallow(<TextField {...commonProps} textarea="flexible" />);
+            const { container } = render(<TextField {...commonProps} textarea="flexible" />);
 
-            expect(wrapper).toMatchSnapshot();
+            expect(container).toMatchSnapshot();
         });
 
         it('should render with error because of max limit is exceeded', () => {
             const value = '123456';
             const event = { target: { value } };
-            const wrapper = shallow(<TextField {...commonProps} textarea symbolCounter={4} />);
+            const { container, getByTestId } = render(<TextField {...commonProps} textarea symbolCounter={4} />);
 
-            wrapper.find('textarea').simulate('change', event);
-            wrapper.update();
+            fireEvent.change(getByTestId(selectors.input), event);
 
-            expect(wrapper).toMatchSnapshot();
+            expect(container).toMatchSnapshot();
         });
     });
 });

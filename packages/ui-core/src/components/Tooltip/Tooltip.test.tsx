@@ -1,6 +1,6 @@
 import React from 'react';
 import type { RefObject } from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Tooltip, { ITooltipProps } from './Tooltip';
 
 const props: ITooltipProps = {
@@ -37,12 +37,14 @@ const props: ITooltipProps = {
 describe('<Tooltip/>', () => {
     it('renders component with default props', () => {
         const triggerElement: RefObject<HTMLElement> = React.createRef();
-        const wrapper = shallow(<Tooltip triggerElement={triggerElement}>Some test content</Tooltip>);
-        expect(wrapper).toMatchSnapshot();
+        const { container } = render(<Tooltip triggerElement={triggerElement}>Some test content</Tooltip>);
+
+        expect(container).toMatchSnapshot();
     });
     it('renders with props', () => {
         const triggerElement: RefObject<HTMLElement> = React.createRef();
-        const wrapper = shallow(<Tooltip triggerElement={triggerElement} {...props} />);
-        expect(wrapper).toMatchSnapshot();
+        const { container } = render(<Tooltip {...props} triggerElement={triggerElement} />);
+
+        expect(container).toMatchSnapshot();
     });
 });
