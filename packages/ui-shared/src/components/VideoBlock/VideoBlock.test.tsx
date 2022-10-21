@@ -27,6 +27,11 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with contentPositionRight', () => {
+        const component = shallow(<VideoBlock videoSrc="video.mp4" content={content} contentPositionRight />);
+        expect(component).toMatchSnapshot();
+    });
+
     it('it renders VideoBlock with content but without button', () => {
         const component = shallow(<VideoBlock videoSrc="video.mp4" content={contentWithoutButton} />);
         expect(component).toMatchSnapshot();

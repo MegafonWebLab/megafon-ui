@@ -10,6 +10,7 @@ exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
   >
     <GridColumn
       all="10"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -45,6 +46,7 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
   >
     <GridColumn
       all="5"
+      className="mfui-video-block__content-column"
       key="column-content"
       mobile="12"
       orderMobile="2"
@@ -80,6 +82,7 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
     </GridColumn>
     <GridColumn
       all="7"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -115,6 +118,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
   >
     <GridColumn
       all="5"
+      className="mfui-video-block__content-column"
       key="column-content"
       mobile="12"
       orderMobile="2"
@@ -150,6 +154,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
     </GridColumn>
     <GridColumn
       all="7"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -185,6 +190,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
   >
     <GridColumn
       all="5"
+      className="mfui-video-block__content-column"
       key="column-content"
       mobile="12"
       orderMobile="2"
@@ -221,6 +227,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
     </GridColumn>
     <GridColumn
       all="7"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -256,6 +263,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content but without button 1`
   >
     <GridColumn
       all="5"
+      className="mfui-video-block__content-column"
       key="column-content"
       mobile="12"
       orderMobile="2"
@@ -280,6 +288,79 @@ exports[`<VideoBlock /> it renders VideoBlock with content but without button 1`
     </GridColumn>
     <GridColumn
       all="7"
+      className="mfui-video-block__video-column"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <div
+        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      >
+        <video
+          autoPlay={false}
+          className="mfui-video-block__video"
+          controls={true}
+          loop={true}
+          muted={true}
+        >
+          <source
+            src="video.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with contentPositionRight 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <Grid
+    className="mfui-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="5"
+      className="mfui-video-block__content-column mfui-video-block__content-column_position-right"
+      key="column-content"
+      mobile="12"
+      orderMobile="2"
+      orderTablet="2"
+      tablet="12"
+    >
+      <div
+        className="mfui-video-block__content mfui-video-block__content_position-right"
+      >
+        <Header
+          as="h2"
+          className="mfui-video-block__header"
+        >
+          Test title
+        </Header>
+        <div
+          className="mfui-video-block__description"
+        >
+          Test description
+        </div>
+        <Button
+          className="mfui-video-block__button"
+          dataAttrs={
+            Object {
+              "root": undefined,
+            }
+          }
+          href="#"
+        >
+          Button title
+        </Button>
+      </div>
+    </GridColumn>
+    <GridColumn
+      all="7"
+      className="mfui-video-block__video-column mfui-video-block__video-column_position-left"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -316,6 +397,7 @@ exports[`<VideoBlock /> it renders VideoBlock with dataAttrs 1`] = `
   >
     <GridColumn
       all="5"
+      className="mfui-video-block__content-column"
       key="column-content"
       mobile="12"
       orderMobile="2"
@@ -353,6 +435,7 @@ exports[`<VideoBlock /> it renders VideoBlock with dataAttrs 1`] = `
     </GridColumn>
     <GridColumn
       all="7"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -388,6 +471,7 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
   >
     <GridColumn
       all="10"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -423,6 +507,7 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
   >
     <GridColumn
       all="10"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -458,6 +543,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
   >
     <GridColumn
       all="10"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -489,6 +575,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autopl
   >
     <GridColumn
       all="10"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"
@@ -520,6 +607,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
   >
     <GridColumn
       all="10"
+      className="mfui-video-block__video-column"
       key="column-video"
       mobile="12"
       tablet="12"

@@ -52,6 +52,8 @@ export interface IVideoBlockProps {
     isMuted?: boolean;
     /** Автоматическое проигрывание видео */
     isAutoplay?: boolean;
+    /** Расположение контента справа от видео. Только для десктопа */
+    contentPositionRight?: boolean;
 }
 
 const cn = cnCreate('mfui-video-block');
@@ -65,6 +67,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
     videoSrc,
     isMuted = true,
     isAutoplay = false,
+    contentPositionRight = false,
 }) => {
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
@@ -93,7 +96,11 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
 
     const renderContent = React.useCallback(
         ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
-            <div className={cn('content')}>
+            <div
+                className={cn('content', {
+                    'position-right': contentPositionRight,
+                })}
+            >
                 <Header as="h2" className={cn('header')}>
                     {title}
                 </Header>
@@ -111,7 +118,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 )}
             </div>
         ),
-        [classes.button, classes.description, dataAttrs?.button],
+        [classes.button, classes.description, dataAttrs?.button, contentPositionRight],
     );
 
     const renderGridColumns = React.useCallback(() => {
@@ -120,20 +127,38 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
 
         if (content) {
             columns.push(
-                <GridColumn all="5" tablet="12" mobile="12" orderTablet="2" orderMobile="2" key="column-content">
+                <GridColumn
+                    all="5"
+                    tablet="12"
+                    mobile="12"
+                    orderTablet="2"
+                    orderMobile="2"
+                    key="column-content"
+                    className={cn('content-column', {
+                        'position-right': contentPositionRight,
+                    })}
+                >
                     {renderContent(content)}
                 </GridColumn>,
             );
         }
 
         columns.push(
-            <GridColumn all={columnWidth} tablet="12" mobile="12" key="column-video">
+            <GridColumn
+                all={columnWidth}
+                tablet="12"
+                mobile="12"
+                key="column-video"
+                className={cn('video-column', {
+                    'position-left': contentPositionRight,
+                })}
+            >
                 <div className={cn('video-wrapper', { 'with-content': !!content })}>{renderVideo()}</div>
             </GridColumn>,
         );
 
         return columns;
-    }, [renderContent, renderVideo, content]);
+    }, [renderContent, renderVideo, content, contentPositionRight]);
 
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className, classes.root])} ref={rootRef}>
@@ -172,6 +197,7 @@ VideoBlock.propTypes = {
     videoSrc: PropTypes.string.isRequired,
     isMuted: PropTypes.bool,
     isAutoplay: PropTypes.bool,
+    contentPositionRight: PropTypes.bool,
 };
 
 export default VideoBlock;
