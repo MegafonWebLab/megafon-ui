@@ -5,7 +5,12 @@ import image from './img/screen.png';
 const title = 'Скачивайте мобильное приложение МегаФон';
 const text = 'Скачай и получи максимум';
 
+const htmlTitle =
+    'Скачивайте&nbspмобильное приложение <font color="#731982">МегаФон</font><br>по <a href="https://moscow.megafon.ru">ссылке</a>';
+const htmlText =
+    '<a href="https://moscow.megafon.ru">Скачай</a>&nbspи<br><font color="#731982">получи</font> <b>максимум</b>';
+
 const link = '#';
 const onClick = (): undefined => undefined;
 
-export { title, text, image, qrCode, newIphoneImage, link, onClick };
+export { title, text, htmlTitle, htmlText, image, qrCode, newIphoneImage, link, onClick };
