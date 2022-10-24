@@ -9,6 +9,7 @@ import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import throttleTime from 'constants/throttleTime';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import './Carousel.less';
+import usePrevious from './usePrevious';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
 
@@ -163,6 +164,9 @@ const Carousel: React.FC<ICarouselProps> = ({
     const [isBeginning, setBeginning] = React.useState(true);
     const [isEnd, setEnd] = React.useState(false);
     const [isLocked, setLocked] = React.useState(false);
+    const childrenLen: number = Array.isArray(children) ? children.length : 0;
+    const prevChildrenLen: number = usePrevious(childrenLen) || 0;
+    const isChildrenLenDiff = childrenLen !== prevChildrenLen;
 
     const increaseAutoplayDelay = React.useCallback(
         ({ params, autoplay }: SwiperCore) => {
@@ -294,6 +298,12 @@ const Carousel: React.FC<ICarouselProps> = ({
             window.removeEventListener('resize', windowResizeHandlerThrottled);
         };
     }, [swiperInstance]);
+
+    React.useEffect(() => {
+        if (swiperInstance && isChildrenLenDiff) {
+            handleNavDisplay(swiperInstance);
+        }
+    }, [isChildrenLenDiff, swiperInstance]);
 
     return (
         <div
