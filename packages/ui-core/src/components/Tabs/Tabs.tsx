@@ -87,7 +87,7 @@ const Tabs: React.FC<ITabsProps> = ({
     onTabClick,
     outerObserveContainer,
 }) => {
-    const tabsRef = React.useRef<HTMLDivElement[]>([]);
+    const tabsRef = React.useRef<Record<number, HTMLDivElement>>({});
     const rootRef = React.useRef<HTMLDivElement>(null);
     const tabListRef = React.useRef<HTMLDivElement>(null);
     const intersectionObserverRef = React.useRef<IntersectionObserver>();
@@ -112,16 +112,22 @@ const Tabs: React.FC<ITabsProps> = ({
         right: 0,
     });
 
-    const setTabRef = React.useCallback((tab: HTMLDivElement) => {
-        tab && tabsRef.current.push(tab);
-    }, []);
+    const setTabRef = React.useCallback(
+        i => (tab: HTMLDivElement) => {
+            if (tab) {
+                tabsRef.current[i] = tab;
+            }
+        },
+        [],
+    );
 
     const calculateUnderline = React.useCallback(() => {
-        if (!tabsRef.current.length) {
+        const tabs = Object.values(tabsRef.current);
+        if (!tabs.length) {
             return;
         }
 
-        const translate = [...tabsRef.current].splice(0, currentIndex).reduce((accWidth, node) => {
+        const translate = [...tabs].splice(0, currentIndex).reduce((accWidth, node) => {
             const { width } = node.getBoundingClientRect();
 
             return accWidth + width;
@@ -281,7 +287,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     <SwiperSlide className={cn('slide')}>
                         <div
                             className={cn('tab', [classes?.tab, activeTabClassName])}
-                            ref={setTabRef}
+                            ref={setTabRef(i)}
                             {...filterDataAttrs(data?.root, i + 1)}
                         >
                             {renderTabWrapper ? renderTabWrapper(tab) : tab}
