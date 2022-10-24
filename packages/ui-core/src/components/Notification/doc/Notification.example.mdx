@@ -1,6 +1,6 @@
 import { Playground, Props } from 'docz';
 import Notification from '../Notification';
-import { DemoNotificationWrapper, wrapperStyle } from './Notification.docz';
+import { DemoNotificationWrapper, wrapperStyle, fontText, hrefText } from './Notification.docz';
 import Button from 'components/Button/Button';
 import Rating1 from '@megafon/ui-icons/system-24-rating_1_24.svg';
 import Sended from '@megafon/ui-icons/system-16-sended_16.svg';
@@ -356,7 +356,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       isCollapseOpened
       onButtonClick={() => {}}
    >
-      Кнопка выравнивается по левому краю, расхлоп - по правому краю. 
+      Кнопка выравнивается по левому краю, расхлоп - по правому краю.
    </Notification>
 </Playground>
 
@@ -487,5 +487,64 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       hasCloseButton
    >
      Центрирование по вертикали при небольшой высоте текста.
+   </Notification>
+</Playground>
+
+## HTML-теги и спецсимволы
+
+```javascript
+
+В свойствах title и shortText поддерживаются некоторые HTML-теги:
+- для title: "<br>, <font color>, <a href>";
+- для shortText: "<br>, <font color>, <a href>, <b>".
+
+Также в обоих свойствах поддерживается спецсимвол &nbsp.
+
+```
+
+```javascript collapse=Демо данные
+const fontTitle = 'Текст с <font color="#731982">изменённым цветом</font> текста';
+const hrefTitle = '<a href="https://moscow.megafon.ru">Ссылка</a>';
+```
+
+<Playground style={wrapperStyle}>
+   <Notification
+      type="info"
+      shadowLevel="zero"
+      title="Переход на<br>новую строку"
+      shortText="Переход на<br>новую строку"
+   >
+   </Notification>
+
+   <Notification
+      type="info"
+      shadowLevel="zero"
+      title="Текст"
+      shortText="Текст с <b>жирным</b> начертаниием"
+   >
+   </Notification>
+
+   <Notification
+      type="info"
+      shadowLevel="zero"
+      title={fontText}
+      shortText={fontText}
+   >
+   </Notification>
+
+   <Notification
+      type="info"
+      shadowLevel="zero"
+      title={hrefText}
+      shortText={hrefText}
+   >
+   </Notification>
+
+   <Notification
+      type="info"
+      shadowLevel="zero"
+      title="Неразрывный&nbspпробел"
+      shortText="Неразрывный&nbspпробел"
+   >
    </Notification>
 </Playground>

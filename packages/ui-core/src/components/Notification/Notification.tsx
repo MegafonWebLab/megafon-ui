@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, convert, titleConvertConfig, textConvertConfig } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
 import ArrowDown from '@megafon/ui-icons/system-16-arrow-list_down_16.svg';
 import ArrowUp from '@megafon/ui-icons/system-16-arrow-list_up_16.svg';
@@ -275,7 +275,7 @@ const Notification: React.FC<INotificationProps> = ({
                     <div className={cn('text-container')}>
                         {title && (
                             <span {...filterDataAttrs(dataAttrs?.title)} className={cn('title')}>
-                                {title}
+                                {convert(title, titleConvertConfig)}
                             </span>
                         )}
                         <div
@@ -284,7 +284,7 @@ const Notification: React.FC<INotificationProps> = ({
                             className={cn('text', { 'close-padding': hasCloseButton && !title })}
                         >
                             <div ref={shortTextRef} className={cn('short-text', textClasses.short)}>
-                                {shortText || children}
+                                {(shortText && convert(shortText, textConvertConfig)) || children}
                             </div>
                             {shortText && (
                                 <div ref={fullTextRef} className={cn('full-text', textClasses.full)}>
