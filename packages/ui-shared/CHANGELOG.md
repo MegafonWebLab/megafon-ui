@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.2.1...@megafon/ui-shared@4.3.0) (2022-10-24)
+
+
+### Features
+
+* **videoblock:** add prop contentPositionRight ([6f1e603](https://github.com/MegafonWebLab/megafon-ui/commit/6f1e603c1cd3489a18a9ccf5da5e1e0785c4f0cf))
+
+
+
+
+
 ## [4.2.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.2.0...@megafon/ui-shared@4.2.1) (2022-10-17)
 
 **Note:** Version bump only for package @megafon/ui-shared

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.5.0...@megafon/ui-core@4.5.1) (2022-10-24)
+
+
+### Bug Fixes
+
+* **carousel:** change navigation view after change slides count ([7b300eb](https://github.com/MegafonWebLab/megafon-ui/commit/7b300eb9c6f805c3b425104a17f437b3b8a520c5))
+* **search:** fix input field font-size for all browsers ([739f3b0](https://github.com/MegafonWebLab/megafon-ui/commit/739f3b02a2dbf8abc6ad430e43272a5bae4d9cf9))
+* **tabs:** change tabs list structure for correct underline width ([ab87ab2](https://github.com/MegafonWebLab/megafon-ui/commit/ab87ab2e23b3db7620ea0fd83c58bdc8f51ab0ae))
+
+
+
+
+
 # [4.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.4.0...@megafon/ui-core@4.5.0) (2022-10-17)
 
 

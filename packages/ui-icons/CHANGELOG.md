@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.1.0...@megafon/ui-icons@2.2.0) (2022-10-24)
+
+
+### Features
+
+* **icons:** add new icons ([e39211b](https://github.com/MegafonWebLab/megafon-ui/commit/e39211beb761fbaf5e4970033bc369d5cce637ca))
+
+
+
+
+
 # [2.1.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.0.1...@megafon/ui-icons@2.1.0) (2022-10-04)
 
 
