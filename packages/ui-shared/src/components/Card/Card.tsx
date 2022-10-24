@@ -1,7 +1,7 @@
 import React, { Ref } from 'react';
 import './Card.less';
 import { Header, Button, TextLink, Link } from '@megafon/ui-core';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, convert, titleConvertConfig, textConvertConfig } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 
 export const Target = {
@@ -204,9 +204,13 @@ const Card: React.FC<ICard> = ({
                 <>
                     {renderImage()}
                     <Header as="h3" className={cn('title')}>
-                        {title}
+                        {typeof title === 'string' ? convert(title, titleConvertConfig) : title}
                     </Header>
-                    {!!text && <div className={cn('text')}>{text}</div>}
+                    {!!text && (
+                        <div className={cn('text')}>
+                            {typeof text === 'string' ? convert(text, textConvertConfig) : text}
+                        </div>
+                    )}
                     {renderBtnsWrapper()}
                 </>
             </Element>

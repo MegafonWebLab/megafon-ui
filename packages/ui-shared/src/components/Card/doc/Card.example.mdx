@@ -1,7 +1,7 @@
 import { Playground } from 'docz';
 import Card from '../Card';
 import { Grid, GridColumn, Header } from '@megafon/ui-core';
-import { title, text, button, link, fakeLink, img, imgShort, svg, buttonWithLongTitle, buttonWithClick } from './Card.docz.tsx';
+import { title, text, htmlTitle, htmlText, button, link, fakeLink, img, imgShort, svg, buttonWithLongTitle, buttonWithClick } from './Card.docz.tsx';
 
 ```javascript collapse=Демо данные
 const title = 'Cмартфоны Huawei с дополнительной скидкой до 3000 ₽ и подарок — до 1000 ₽ на связь';
@@ -175,6 +175,33 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
         </GridColumn>
         <GridColumn all="3" mobile="12">
             <Card isCenteredText={true} title={title} text={text} href="#" target="_blank" isFullHeight />
+        </GridColumn>
+    </Grid>
+</Playground>
+
+## HTML-теги и спецсимволы
+
+```javascript
+
+В свойствах title и text поддерживаются некоторые HTML-теги:
+- для title: "<br>, <font color>, <a href>";
+- для text: "<br>, <font color>, <a href>, <b>".
+
+Также в обоих свойствах поддерживается спецсимвол &nbsp.
+
+```
+
+```javascript collapse=Демо данные
+const htmlTitle = 'Скачивайте&nbspмобильное приложение <font color="#731982">МегаФон</font><br>по <a href="https://moscow.megafon.ru">ссылке</a>';
+const htmlText = 'Сдайте старое<br>оборудование в <font color="#731982">трейд‑ин</font> и получите <b>дополнительную</b> скидку до 3000&nbsp₽ на <a href="https://moscow.megafon.ru">смартфоны Huawei</a> и до 1000 ₽ на связь в подарок.';
+
+
+```
+
+<Playground>
+    <Grid guttersLeft="medium" guttersBottom="medium">
+        <GridColumn all="12" mobile="12">
+            <Card isCenteredText={false} title={htmlTitle} text={htmlText} href="#" target="_self" isFullHeight />
         </GridColumn>
     </Grid>
 </Playground>
