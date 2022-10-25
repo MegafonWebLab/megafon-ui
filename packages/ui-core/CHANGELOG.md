@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.16.0...@megafon/ui-core@3.16.1) (2022-10-25)
+
+
+### Bug Fixes
+
+* **search:** fix input field font-size for all browsers ([f57a17a](https://github.com/MegafonWebLab/megafon-ui/commit/f57a17a7ecb009c6fdb66cd00a6ba43d7d5c567b))
+
+
+
+
+
 # [3.16.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@3.15.0...@megafon/ui-core@3.16.0) (2022-10-10)
 
 
