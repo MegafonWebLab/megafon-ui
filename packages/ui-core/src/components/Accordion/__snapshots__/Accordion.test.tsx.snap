@@ -1,219 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Accordion /> it render Accordion with controlled state 1`] = `
-<Accordion
-  dataAttrs={
-    Object {
-      "arrowDown": Object {
-        "data-arrow-down": "data-test-value",
-      },
-      "arrowUp": Object {
-        "data-arrow-up": "data-test-value",
-      },
-      "collapse": Object {
-        "inner": Object {
-          "data-collapse-inner": "data-test-value",
-        },
-        "root": Object {
-          "data-collapse-root": "data-test-value",
-        },
-      },
-      "header": Object {
-        "root": Object {
-          "data-header": "data-test-value",
-        },
-      },
-      "root": Object {
-        "data-root": "data-test-value",
-      },
-      "titleWrap": Object {
-        "data-title-wrap": "data-test-value",
-      },
-    }
-  }
-  isOpened={true}
-  onClickAccordion={[MockFunction]}
-  title="Test"
->
+exports[`<Accordion /> should render Accordion 1`] = `
+<div>
   <div
-    className="mfui-accordion mfui-accordion_opened"
-    data-root="data-test-value"
+    class="mfui-accordion"
   >
     <div
-      className="mfui-accordion__title-wrap"
-      data-title-wrap="data-test-value"
-      onClick={[Function]}
-      onKeyDown={[Function]}
+      class="mfui-accordion__title-wrap"
       role="button"
-      tabIndex={0}
+      tabindex="0"
     >
-      <Header
-        as="h5"
-        dataAttrs={
-          Object {
-            "root": Object {
-              "data-header": "data-test-value",
-            },
-          }
-        }
+      <h5
+        class="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
       >
-        <h5
-          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
-          data-header="data-test-value"
-        >
-          Test
-        </h5>
-      </Header>
+        Title
+      </h5>
       <div
-        className="mfui-accordion__icon-box"
+        class="mfui-accordion__icon-box"
       >
         <test-file-stub
-          className="mfui-accordion__icon"
-          data-arrow-up="data-test-value"
+          classname="mfui-accordion__icon"
         />
       </div>
     </div>
-    <Collapse
-      className="mfui-accordion__content"
-      classNameContainer="mfui-accordion__content-inner"
-      dataAttrs={
-        Object {
-          "inner": Object {
-            "data-collapse-inner": "data-test-value",
-          },
-          "root": Object {
-            "data-collapse-root": "data-test-value",
-          },
-        }
-      }
-      isOpened={true}
-    >
-      <div
-        className="mfui-accordion__content"
-        data-collapse-root="data-test-value"
-        style={
-          Object {
-            "overflow": "hidden",
-          }
-        }
-      >
-        <div
-          className="mfui-accordion__content-inner"
-          data-collapse-inner="data-test-value"
-        >
-          <div />
-        </div>
-      </div>
-    </Collapse>
-  </div>
-</Accordion>
-`;
-
-exports[`<Accordion /> it renders Accordion 1`] = `
-<Accordion
-  dataAttrs={
-    Object {
-      "arrowDown": Object {
-        "data-arrow-down": "data-test-value",
-      },
-      "arrowUp": Object {
-        "data-arrow-up": "data-test-value",
-      },
-      "collapse": Object {
-        "inner": Object {
-          "data-collapse-inner": "data-test-value",
-        },
-        "root": Object {
-          "data-collapse-root": "data-test-value",
-        },
-      },
-      "header": Object {
-        "root": Object {
-          "data-header": "data-test-value",
-        },
-      },
-      "root": Object {
-        "data-root": "data-test-value",
-      },
-      "titleWrap": Object {
-        "data-title-wrap": "data-test-value",
-      },
-    }
-  }
-  isOpened={false}
-  onClickAccordion={[MockFunction]}
-  title="Test"
->
-  <div
-    className="mfui-accordion"
-    data-root="data-test-value"
-  >
     <div
-      className="mfui-accordion__title-wrap"
-      data-title-wrap="data-test-value"
-      onClick={[Function]}
-      onKeyDown={[Function]}
-      role="button"
-      tabIndex={0}
+      class="mfui-accordion__content"
+      style="overflow: hidden; height: 0px;"
     >
-      <Header
-        as="h5"
-        dataAttrs={
-          Object {
-            "root": Object {
-              "data-header": "data-test-value",
-            },
-          }
-        }
-      >
-        <h5
-          className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
-          data-header="data-test-value"
-        >
-          Test
-        </h5>
-      </Header>
       <div
-        className="mfui-accordion__icon-box"
+        class="mfui-accordion__content-inner"
       >
-        <test-file-stub
-          className="mfui-accordion__icon"
-          data-arrow-down="data-test-value"
-        />
+        content
       </div>
     </div>
-    <Collapse
-      className="mfui-accordion__content"
-      classNameContainer="mfui-accordion__content-inner"
-      dataAttrs={
-        Object {
-          "inner": Object {
-            "data-collapse-inner": "data-test-value",
-          },
-          "root": Object {
-            "data-collapse-root": "data-test-value",
-          },
-        }
-      }
-      isOpened={false}
-    >
-      <div
-        className="mfui-accordion__content"
-        data-collapse-root="data-test-value"
-        style={
-          Object {
-            "overflow": "hidden",
-          }
-        }
-      >
-        <div
-          className="mfui-accordion__content-inner"
-          data-collapse-inner="data-test-value"
-        >
-          <div />
-        </div>
-      </div>
-    </Collapse>
   </div>
-</Accordion>
+</div>
 `;
