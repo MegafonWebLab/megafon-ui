@@ -10,10 +10,17 @@ const props: IAccordionProps = {
             'data-root': 'data-test-value',
         },
         header: {
-            'data-header': 'data-test-value',
+            root: {
+                'data-header': 'data-test-value',
+            },
         },
         collapse: {
-            'data-collapse': 'data-test-value',
+            root: {
+                'data-collapse-root': 'data-test-value',
+            },
+            inner: {
+                'data-collapse-inner': 'data-test-value',
+            },
         },
         titleWrap: {
             'data-title-wrap': 'data-test-value',

@@ -11,10 +11,17 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
         "data-arrow-up": "data-test-value",
       },
       "collapse": Object {
-        "data-collapse": "data-test-value",
+        "inner": Object {
+          "data-collapse-inner": "data-test-value",
+        },
+        "root": Object {
+          "data-collapse-root": "data-test-value",
+        },
       },
       "header": Object {
-        "data-header": "data-test-value",
+        "root": Object {
+          "data-header": "data-test-value",
+        },
       },
       "root": Object {
         "data-root": "data-test-value",
@@ -42,10 +49,17 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
     >
       <Header
         as="h5"
-        data-header="data-test-value"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-header": "data-test-value",
+            },
+          }
+        }
       >
         <h5
           className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
+          data-header="data-test-value"
         >
           Test
         </h5>
@@ -62,11 +76,21 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
     <Collapse
       className="mfui-accordion__content"
       classNameContainer="mfui-accordion__content-inner"
-      data-collapse="data-test-value"
+      dataAttrs={
+        Object {
+          "inner": Object {
+            "data-collapse-inner": "data-test-value",
+          },
+          "root": Object {
+            "data-collapse-root": "data-test-value",
+          },
+        }
+      }
       isOpened={true}
     >
       <div
         className="mfui-accordion__content"
+        data-collapse-root="data-test-value"
         style={
           Object {
             "overflow": "hidden",
@@ -75,6 +99,7 @@ exports[`<Accordion /> it render Accordion with controlled state 1`] = `
       >
         <div
           className="mfui-accordion__content-inner"
+          data-collapse-inner="data-test-value"
         >
           <div />
         </div>
@@ -95,10 +120,17 @@ exports[`<Accordion /> it renders Accordion 1`] = `
         "data-arrow-up": "data-test-value",
       },
       "collapse": Object {
-        "data-collapse": "data-test-value",
+        "inner": Object {
+          "data-collapse-inner": "data-test-value",
+        },
+        "root": Object {
+          "data-collapse-root": "data-test-value",
+        },
       },
       "header": Object {
-        "data-header": "data-test-value",
+        "root": Object {
+          "data-header": "data-test-value",
+        },
       },
       "root": Object {
         "data-root": "data-test-value",
@@ -126,10 +158,17 @@ exports[`<Accordion /> it renders Accordion 1`] = `
     >
       <Header
         as="h5"
-        data-header="data-test-value"
+        dataAttrs={
+          Object {
+            "root": Object {
+              "data-header": "data-test-value",
+            },
+          }
+        }
       >
         <h5
           className="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
+          data-header="data-test-value"
         >
           Test
         </h5>
@@ -146,11 +185,21 @@ exports[`<Accordion /> it renders Accordion 1`] = `
     <Collapse
       className="mfui-accordion__content"
       classNameContainer="mfui-accordion__content-inner"
-      data-collapse="data-test-value"
+      dataAttrs={
+        Object {
+          "inner": Object {
+            "data-collapse-inner": "data-test-value",
+          },
+          "root": Object {
+            "data-collapse-root": "data-test-value",
+          },
+        }
+      }
       isOpened={false}
     >
       <div
         className="mfui-accordion__content"
+        data-collapse-root="data-test-value"
         style={
           Object {
             "overflow": "hidden",
@@ -159,6 +208,7 @@ exports[`<Accordion /> it renders Accordion 1`] = `
       >
         <div
           className="mfui-accordion__content-inner"
+          data-collapse-inner="data-test-value"
         >
           <div />
         </div>
