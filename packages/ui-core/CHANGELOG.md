@@ -171,6 +171,10 @@ new sizes
 either accept new rules or manually add line-height: 16px in your components
 * **paragraph:** prop 'size' is no longer exists.
 use component Caption instead of Paragraph size="small"
+* **header:** rename prop 'hAlign' to 'align'
+* **list:** rename prop 'hAlign' to 'align'
+* **contentarea:** remove value 'DEFAULT' from 'innerBackgroundColor' and 'outerBackgroundColor' props
+* **tabs:** rename prop 'hAlign' to 'align'
 
 
 
