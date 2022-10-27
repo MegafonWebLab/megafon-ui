@@ -116,8 +116,13 @@ size prop small vallue removed
 new sizes
 * **breadcrumbs:** color is now depends on current theme. by default it matches content text color.
 for keep black color on light background use 'black' value for prop 'color'.
+* **breadcrumbs:** remove prop 'component'
 * **paragraph:** prop 'size' is no longer exists.
 use component Caption instead of Paragraph size="small"
+* **benefitpictures:** rename prop 'hAlign' to 'align'
+* **buttonlinkbox:** rename prop 'hAlign' to 'align'
+* **tiledescriptionbox:** rename prop 'hAlign' to 'align'
+* **textwithicon:** remove prop 'centeringOnMobile'
 
 
 
