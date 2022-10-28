@@ -9,8 +9,13 @@ export interface IAccordionBox {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
-        header?: Record<string, string>;
-        collapse?: Record<string, string>;
+        header?: {
+            root: Record<string, string>;
+        };
+        collapse?: {
+            root?: Record<string, string>;
+            inner?: Record<string, string>;
+        };
         titleWrap?: Record<string, string>;
         arrowUp?: Record<string, string>;
         arrowDown?: Record<string, string>;
@@ -52,8 +57,13 @@ const AccordionBox: React.FC<IAccordionBox> = ({ hCenterAlignWide = false, isFul
 AccordionBox.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
-        header: PropTypes.objectOf(PropTypes.string.isRequired),
-        collapse: PropTypes.objectOf(PropTypes.string.isRequired),
+        header: PropTypes.shape({
+            root: PropTypes.objectOf(PropTypes.string.isRequired),
+        }),
+        collapse: PropTypes.shape({
+            root: PropTypes.objectOf(PropTypes.string.isRequired),
+            inner: PropTypes.objectOf(PropTypes.string.isRequired),
+        }),
         titleWrap: PropTypes.objectOf(PropTypes.string.isRequired),
         arrowUp: PropTypes.objectOf(PropTypes.string.isRequired),
         arrowDown: PropTypes.objectOf(PropTypes.string.isRequired),
