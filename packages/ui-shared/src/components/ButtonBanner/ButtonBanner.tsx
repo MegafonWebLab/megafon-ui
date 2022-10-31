@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import { Button, Grid, GridColumn, Header } from '@megafon/ui-core';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, convert, titleConvertConfig, textConvertConfig } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './ButtonBanner.less';
 
@@ -102,9 +102,11 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
                 <GridColumn all="6" mobile="12" leftOffsetTablet="1" leftOffsetDesktop="1" leftOffsetWide="1">
                     <div className={cn('content')}>
                         <Header className={cn('header')} as="h2">
-                            {title}
+                            {convert(title, titleConvertConfig)}
                         </Header>
-                        <div className={cn('text')}>{text}</div>
+                        <div className={cn('text')}>
+                            {typeof text === 'string' ? convert(text, textConvertConfig) : text}
+                        </div>
                         {!!imageUrl && buttonElem}
                     </div>
                 </GridColumn>

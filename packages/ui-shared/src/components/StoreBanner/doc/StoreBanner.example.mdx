@@ -1,6 +1,6 @@
 import { Playground } from 'docz';
 import StoreBanner from '../StoreBanner';
-import { title, text, image, qrCode, newIphoneImage, link, onClick } from './StoreBanner.docz.tsx';
+import { title, text, htmlTitle, htmlText, image, qrCode, newIphoneImage, link, onClick } from './StoreBanner.docz.tsx';
 import { ContentArea } from '@megafon/ui-core';
 
 ```javascript collapse=Демо данные
@@ -220,6 +220,39 @@ const onClick = () => {};
             imageSrc={image}
             deviceMask="black-iphone"
             theme="green"
+        />
+    </ContentArea>
+</Playground>
+
+## HTML-теги и спецсимволы
+
+```javascript
+
+В свойствах title и text поддерживаются некоторые HTML-теги:
+- для title: "<br>, <font color>, <a href>";
+- для text: "<br>, <font color>, <a href>, <b>".
+Также в обоих свойствах поддерживается спецсимвол &nbsp.
+
+```
+
+```javascript collapse=Демо данные
+
+const htmlTitle ='Скачивайте&nbspмобильное приложение <font color="#731982">МегаФон</font><br>по <a href="https://moscow.megafon.ru">ссылке</a>';
+const htmlText = '<a href="https://moscow.megafon.ru">Скачай</a>&nbspи<br><font color="#731982">получи</font> <b>максимум</b>';
+
+```
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={htmlTitle}
+            text={htmlText}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            deviceMask="android"
         />
     </ContentArea>
 </Playground>
