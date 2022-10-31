@@ -1,21 +1,43 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import PromoBadge from './PromoBadge';
+import { render } from '@testing-library/react';
+import PromoBadge, { IPromoBadgeProps } from './PromoBadge';
 
-const defaultChildren = 'badge text';
+const dataAttrs: IPromoBadgeProps['dataAttrs'] = {
+    root: {
+        'data-testid': 'root',
+    },
+};
 
 describe('<PromoBadge />', () => {
-    describe('snapshots', () => {
-        it('renders with default props', () => {
-            const wrapper = shallow(<PromoBadge>{defaultChildren}</PromoBadge>);
+    it('should render PromoBadge', () => {
+        const { container } = render(<PromoBadge>text</PromoBadge>);
 
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(container).toMatchSnapshot();
+    });
 
-        it('renders with type prop', () => {
-            const wrapper = shallow(<PromoBadge type="popular">{defaultChildren}</PromoBadge>);
+    it('should render with className', () => {
+        const { getByTestId } = render(
+            <PromoBadge className="custom-class" dataAttrs={dataAttrs}>
+                text
+            </PromoBadge>,
+        );
 
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(getByTestId('root')).toHaveClass('custom-class');
+    });
+
+    it('should render with dataAttrs', () => {
+        const { queryByTestId } = render(<PromoBadge dataAttrs={dataAttrs}>text</PromoBadge>);
+
+        expect(queryByTestId('root')).toBeTruthy();
+    });
+
+    it('should render with type different from default', () => {
+        const { queryByTestId } = render(
+            <PromoBadge dataAttrs={dataAttrs} type="vip">
+                text
+            </PromoBadge>,
+        );
+
+        expect(queryByTestId('root')).toHaveClass('mfui-promo-badge_type_vip');
     });
 });
