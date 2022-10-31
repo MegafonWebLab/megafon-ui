@@ -26,8 +26,13 @@ export interface IAccordionProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
-        header?: Record<string, string>;
-        collapse?: Record<string, string>;
+        header?: {
+            root: Record<string, string>;
+        };
+        collapse?: {
+            root?: Record<string, string>;
+            inner?: Record<string, string>;
+        };
         titleWrap?: Record<string, string>;
         arrowUp?: Record<string, string>;
         arrowDown?: Record<string, string>;
@@ -83,7 +88,7 @@ const Accordion: React.FC<IAccordionProps> = ({
                 tabIndex={0}
                 role="button"
             >
-                <Header as="h5" {...filterDataAttrs(dataAttrs?.header)}>
+                <Header as="h5" dataAttrs={dataAttrs?.header}>
                     {title}
                 </Header>
                 <div className={cn('icon-box')}>
@@ -91,7 +96,7 @@ const Accordion: React.FC<IAccordionProps> = ({
                 </div>
             </div>
             <Collapse
-                {...filterDataAttrs(dataAttrs?.collapse)}
+                dataAttrs={dataAttrs?.collapse}
                 className={cn('content', collapsePropsClasses)}
                 classNameContainer={cn('content-inner')}
                 isOpened={isOpenedState}
@@ -118,8 +123,13 @@ Accordion.propTypes = {
     }),
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
-        header: PropTypes.objectOf(PropTypes.string.isRequired),
-        collapse: PropTypes.objectOf(PropTypes.string.isRequired),
+        header: PropTypes.shape({
+            root: PropTypes.objectOf(PropTypes.string.isRequired),
+        }),
+        collapse: PropTypes.shape({
+            root: PropTypes.objectOf(PropTypes.string.isRequired),
+            inner: PropTypes.objectOf(PropTypes.string.isRequired),
+        }),
         titleWrap: PropTypes.objectOf(PropTypes.string.isRequired),
         arrowUp: PropTypes.objectOf(PropTypes.string.isRequired),
         arrowDown: PropTypes.objectOf(PropTypes.string.isRequired),
