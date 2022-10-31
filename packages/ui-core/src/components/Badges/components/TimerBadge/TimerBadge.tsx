@@ -7,7 +7,7 @@ import './TimerBadge.less';
 
 const SECONDS_IN_HOUR = 3600;
 const MS_IN_SECOND = 1000;
-const TIMEOUT = 1000;
+export const TIMEOUT = 1000;
 
 const TimerBadgeTheme = {
     RED: 'red',
@@ -32,6 +32,7 @@ export interface ITimerBadgeProps {
         root?: Record<string, string>;
         text?: Record<string, string>;
         timer?: Record<string, string>;
+        iconContainer?: Record<string, string>;
     };
 }
 
@@ -72,7 +73,10 @@ const TimerBadge: React.FC<ITimerBadgeProps> = ({
 
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ theme }, className)}>
-            <div className={cn('icon-container', { shadow: isLastHour && showCountdown })}>
+            <div
+                {...filterDataAttrs(dataAttrs?.iconContainer)}
+                className={cn('icon-container', { shadow: isLastHour && showCountdown })}
+            >
                 <TimerIcon className={cn('icon')} />
             </div>
             <div {...filterDataAttrs(dataAttrs?.text)} className={cn('text')}>
@@ -103,6 +107,7 @@ TimerBadge.propTypes = {
         root: PropTypes.objectOf(PropTypes.string.isRequired),
         text: PropTypes.objectOf(PropTypes.string.isRequired),
         timer: PropTypes.objectOf(PropTypes.string.isRequired),
+        iconContainer: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
 };
 

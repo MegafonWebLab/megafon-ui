@@ -10,7 +10,7 @@ const youtubeVideoId = '2Sps5MnvlKM';
 const contentWithDefaultTextColor: IContent = {
     title: 'Текст ≈40 символов. Короткие слова',
     description:
-        'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#CCCCCC">примерно</font> не более <b>130 символов</b>.<br>Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+        'Описание должно быть примерно не более 130 символов. Пишите содержательно, кратко и не будет проблем с текстовым контентом.',
     buttonHref: '#',
     buttonTitle: 'Текст в кнопке',
     linkTitle: 'Личный кабинет услуги',
@@ -32,6 +32,13 @@ const content: IContent = {
 const contentWithPurpleButton: IContent = {
     ...content,
     buttonColor: ButtonColor.PURPLE,
+};
+
+const contentWithHtml: IContent = {
+    ...content,
+    title: '<a href="https://moscow.megafon.ru">Текст</a><br><font color="#731982">≈40</font> символов.&nbspКороткие слова',
+    description:
+        'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#731982">примерно</font> не более 130 символов.<br>Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -65,6 +72,7 @@ export {
     contentWithDifferentTextColor,
     contentWithPurpleButton,
     contentWithoutButton,
+    contentWithHtml,
     video,
     youtubeVideoId,
     imageMobile,

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, convert, titleConvertConfig, textConvertConfig } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import StoreButton, { Theme as StoreButtonTheme, Props as StoreButtonPropsType } from '../StoreButton/StoreButton';
 import './StoreBanner.less';
@@ -112,10 +112,10 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                     <GridColumn all="6" mobile="12" rightOffsetWide="1">
                         <div className={cn('content')}>
                             <Header as="h2" className={cn('title')} color="inherit">
-                                {title}
+                                {convert(title, titleConvertConfig)}
                             </Header>
                             <Paragraph className={cn('text')} hasMargin={false} color="inherit">
-                                {text}
+                                {convert(text, textConvertConfig)}
                             </Paragraph>
                             <div className={cn('links', { three: !!linkApple && !!linkGoogle && !!linkHuawei })}>
                                 {!linkButton && qrCode && <img src={qrCode} className={cn('qr-code')} alt="QR-код" />}

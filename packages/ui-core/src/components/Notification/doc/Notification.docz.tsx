@@ -40,3 +40,6 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
         isCollapseOpen,
     });
 };
+
+export const fontText = 'Текст с <font color="#731982">изменённым цветом</font> текста';
+export const hrefText = '<a href="https://moscow.megafon.ru">Ссылка</a>';

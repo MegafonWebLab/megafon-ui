@@ -1,38 +1,42 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import Timer, { getCountdownText } from './Timer';
 
-const defaultDate = new Date('2022-04-25T14:50:15z');
-
-const defaultProps = {
-    expirationDate: defaultDate,
+const requiredProps = {
+    expirationDate: new Date('2022-04-25T14:50:15z'),
     actualRemainingTime: 1000,
     showCountdown: false,
 };
 
-const defaultAllProps = {
-    dataAttrs: {
-        root: { 'data-testid': 'root' },
-    },
-    additionalText: 'Действительно до',
-    expirationDate: defaultDate,
-    actualRemainingTime: 2000,
-    showCountdown: true,
-};
-
 describe('<Timer />', () => {
-    describe('snapshots', () => {
-        it('renders with require props', () => {
-            const wrapper = shallow(<Timer {...defaultProps} />);
+    it('should render with Timer', () => {
+        const { container } = render(<Timer {...requiredProps} />);
 
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(container).toMatchSnapshot();
+    });
 
-        it('renders with all props', () => {
-            const wrapper = shallow(<Timer {...defaultAllProps} />);
+    it('should render with additional text', () => {
+        const { queryByText } = render(<Timer {...requiredProps} additionalText="Действительно до" />);
 
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(queryByText('Действительно до')).toBeInTheDocument();
+    });
+
+    it('should render with date', () => {
+        const { queryByText } = render(<Timer {...requiredProps} />);
+
+        expect(queryByText('25 апреля 2022')).toBeTruthy();
+    });
+
+    it('should render with countdown', () => {
+        const { queryByText } = render(<Timer {...requiredProps} showCountdown />);
+
+        expect(queryByText('16 мин')).toBeTruthy();
+    });
+
+    it('should render with dataAttrs', () => {
+        const { queryByTestId } = render(<Timer {...requiredProps} dataAttrs={{ root: { 'data-testid': 'root' } }} />);
+
+        expect(queryByTestId('root')).toBeTruthy();
     });
 });
 

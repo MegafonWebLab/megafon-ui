@@ -7,6 +7,11 @@ const title = 'Смартфоны Huawei с дополнительной ски�
 const text =
     'Сдайте старое оборудование в трейд‑ин и получите дополнительную скидку до 3000 ₽ на смартфоны Huawei и до 1000 ₽ на связь в подарок.';
 
+const htmlTitle =
+    'Скачивайте&nbspмобильное приложение <font color="#731982">МегаФон</font><br>по <a href="https://moscow.megafon.ru">ссылке</a>';
+const htmlText =
+    'Сдайте старое<br>оборудование в <font color="#731982">трейд‑ин</font> и получите <b>дополнительную</b> скидку до 3000&nbsp₽ на <a href="https://moscow.megafon.ru">смартфоны Huawei</a> и до 1000 ₽ на связь в подарок.';
+
 const button = {
     title: 'Подробнее',
     href: '#',
@@ -36,4 +41,17 @@ const link = {
 
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 
-export { title, text, button, link, fakeLink, img, imgShort, svg, buttonWithClick, buttonWithLongTitle };
+export {
+    title,
+    text,
+    htmlTitle,
+    htmlText,
+    button,
+    link,
+    fakeLink,
+    img,
+    imgShort,
+    svg,
+    buttonWithClick,
+    buttonWithLongTitle,
+};

@@ -1,6 +1,7 @@
 import { Playground } from 'docz';
 import ButtonBanner from '../ButtonBanner';
 import image from './i/image.png';
+import { htmlText, htmlTitle} from './ButtonBanner.docz.tsx';
 
 ## Базовое использование
 
@@ -76,5 +77,32 @@ import image from './i/image.png';
         buttonText="Выбрать тариф"
         imageScaling="contain"
         imageUrl={image}
+    />
+</Playground>
+
+## HTML-теги и спецсимволы
+
+```javascript
+
+В свойствах title и text поддерживаются некоторые HTML-теги:
+- для title: "<br>, <font color>, <a href>";
+- для text: "<br>, <font color>, <a href>, <b>".
+
+Также в обоих свойствах поддерживается спецсимвол &nbsp.
+
+```
+
+```javascript collapse=Демо данные
+const htmlTitle = 'Скачивайте&nbspмобильное приложение <font color="#731982">МегаФон</font><br>по <a href="https://moscow.megafon.ru">ссылке</a>';
+const htmlText = '<b>Текстовое</b> <font color="#731982">описание</font> не<br>должно <a href="https://moscow.megafon.ru">превышать</a> 150&nbspсимволов.';
+
+
+```
+
+<Playground>
+    <ButtonBanner
+        title={htmlTitle}
+        text={htmlText}
+        buttonText="Выбрать тариф"
     />
 </Playground>

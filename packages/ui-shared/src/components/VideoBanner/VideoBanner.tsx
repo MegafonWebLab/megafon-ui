@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import { Button, Header, ContentArea, TextLink, Grid, GridColumn } from '@megafon/ui-core';
-import { breakpoints, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
+import { breakpoints, cnCreate, filterDataAttrs, convert, titleConvertConfig } from '@megafon/ui-helpers';
 import throttle from 'lodash.throttle';
 import * as PropTypes from 'prop-types';
 import throttleTime from 'constants/throttleTime';
@@ -23,24 +23,6 @@ const typographyConfig = {
                 {children}
             </Header>
         ),
-    },
-};
-
-const textConfig = {
-    ...typographyConfig,
-    br: {
-        component: () => (<br />) as JSX.Element,
-    },
-    '&nbsp': {
-        component: () => (<>String.fromCharCode(160)</>) as JSX.Element,
-    },
-    a: {
-        component: ({ href, children }) => <a href={href}>{children}</a>,
-        props: ['href'],
-    },
-    font: {
-        component: ({ color, children }) => <span style={{ color }}>{children}</span>,
-        props: ['color'],
     },
 };
 
@@ -191,11 +173,11 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                         })}
                     >
                         <Header className={cn('title')} as="h1" color="inherit">
-                            {convert(title, textConfig)}
+                            {convert(title, titleConvertConfig)}
                         </Header>
                         <div className={cn('text')}>
                             <Header as="h5" color="inherit" className={cn('description')}>
-                                {convert(description, textConfig)}
+                                {convert(description, titleConvertConfig)}
                             </Header>
                             {cost && <div className={cn('cost')}>{convert(cost, typographyConfig)}</div>}
                         </div>
