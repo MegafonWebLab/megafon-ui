@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.5.1...@megafon/ui-core@4.6.0) (2022-10-31)
+
+
+### Bug Fixes
+
+* **accordion:** fix dataAttrs props ([bb6e71c](https://github.com/MegafonWebLab/megafon-ui/commit/bb6e71cf36687fdcfb41a9ee40a27e0fdb21940b))
+
+
+### Features
+
+* **notification:** allow using html: br, &nbsp, font color, a href in title plus b in text ([1661b7b](https://github.com/MegafonWebLab/megafon-ui/commit/1661b7b602532594ed4d1398d9f70870b1e4d852))
+* **timerbadge:** add iconContainer to dataAttrs prop ([fa9b094](https://github.com/MegafonWebLab/megafon-ui/commit/fa9b094b209705c448de63fe0cfbfe52764e6709))
+
+
+
+
+
 ## [4.5.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.5.0...@megafon/ui-core@4.5.1) (2022-10-24)
 
 

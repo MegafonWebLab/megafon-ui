@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.3.0...@megafon/ui-shared@4.4.0) (2022-10-31)
+
+
+### Bug Fixes
+
+* **accordionbox:** fix dataAttrs props ([46e0b05](https://github.com/MegafonWebLab/megafon-ui/commit/46e0b05c3a18d9a730c360a59f4dfef78013827d))
+
+
+### Features
+
+* **buttonbunner:** allow using html: br, &nbsp, font color, a href in title plus b in text ([8efa64c](https://github.com/MegafonWebLab/megafon-ui/commit/8efa64c871efb55b7b3a5da21cf70daaed5ac005))
+* **card:** allow using html: br, &nbsp, font color, a href in title plus b in text ([897a264](https://github.com/MegafonWebLab/megafon-ui/commit/897a264d6eaac5c34731dd4f2a6d0a7cd3a1a3f7))
+* **storebanner:** allow using html: br, &nbsp, font color, a href in title plus b in text ([2e44056](https://github.com/MegafonWebLab/megafon-ui/commit/2e440569bb3538c09ce3331138119ca1334a7861))
+* **videobanner:** change convert info source from local to common ([5bcff34](https://github.com/MegafonWebLab/megafon-ui/commit/5bcff34de8eb00dcddf38e53e3c8fa4a4cb86cab))
+
+
+
+
+
 # [4.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.2.1...@megafon/ui-shared@4.3.0) (2022-10-24)
 
 

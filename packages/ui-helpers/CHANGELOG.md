@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.2.0...@megafon/ui-helpers@2.3.0) (2022-10-31)
+
+
+### Features
+
+* **config:** add common config for convert function ([92e2661](https://github.com/MegafonWebLab/megafon-ui/commit/92e266156c3fcae31827c9e67f7bc6f440ca498e))
+
+
+
+
+
 # [2.2.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.1.2...@megafon/ui-helpers@2.2.0) (2022-09-16)
 
 
