@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Tile } from '@megafon/ui-core';
 
 export const DemoSlide = ({ children }: { children: React.ReactNode }): React.ReactNode => (
-    <Tile isInteractive shadowLevel="high" radius="rounded">
+    <Tile isInteractive shadowLevel="pressed" radius="rounded">
         <div
             style={{
                 height: '200px',
