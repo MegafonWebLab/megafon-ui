@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import throttleTime from 'constants/throttleTime';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
@@ -9,6 +8,7 @@ import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import throttle from 'lodash.throttle';
 import * as PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
+import throttleTime from '../../constants/throttleTime';
 import ResizeIcon from './i/textarea-resizer.svg';
 import './TextField.less';
 
