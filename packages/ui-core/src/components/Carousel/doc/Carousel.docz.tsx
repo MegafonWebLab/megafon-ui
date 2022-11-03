@@ -19,7 +19,7 @@ const whiteStyles = {
 };
 
 export const DemoSlide: React.FC<{ onColoredBackground?: boolean }> = ({ children, onColoredBackground }) => (
-    <Tile isInteractive shadowLevel="high" radius="rounded">
+    <Tile isInteractive shadowLevel="default" radius="rounded">
         <div style={onColoredBackground ? whiteStyles : defaultStyles}>{children}</div>
     </Tile>
 );

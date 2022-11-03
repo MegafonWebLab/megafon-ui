@@ -96,7 +96,7 @@ exports[`<Notification /> it renders Notification with close collpse after chang
     shadowLevel="hover"
   >
     <div
-      className="mfui-tile mfui-tile_theme_light mfui-tile_radius_rounded mfui-tile_shadow_hover mfui-notification mfui-notification_type_error mfui-notification_colored notification rootClass"
+      className="mfui-tile mfui-tile_shadow-color_light mfui-tile_radius_rounded mfui-tile_shadow_hover mfui-notification mfui-notification_type_error mfui-notification_colored notification rootClass"
       onClick={[Function]}
     >
       <div

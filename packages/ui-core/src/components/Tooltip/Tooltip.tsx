@@ -288,7 +288,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
             <Tile dataAttrs={{ root: dataAttrs?.content }} className={cn('content', [contentClassName])}>
                 {children}
             </Tile>
-            <Tile shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
+            <Tile shadowLevel="default" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
 

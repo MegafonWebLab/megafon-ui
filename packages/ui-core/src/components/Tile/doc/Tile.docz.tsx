@@ -40,11 +40,11 @@ export const tileInnerWhiteRounded = {
 };
 
 export const DemoTileWrapper = (props: {
-    wrapperTheme?: 'light' | 'dark';
+    wrapperShadowColor?: 'light' | 'dark';
     children: JSX.Element[] | Element[] | JSX.Element | Element | string;
 }) => {
-    const { wrapperTheme = 'light', children } = props;
-    const theme = wrapperTheme === 'dark' ? darkWrapperStyle : lightWrapperStyle;
+    const { wrapperShadowColor = 'light', children } = props;
+    const theme = wrapperShadowColor === 'dark' ? darkWrapperStyle : lightWrapperStyle;
 
     return <div style={theme}>{children}</div>;
 };

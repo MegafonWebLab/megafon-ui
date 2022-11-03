@@ -3,12 +3,12 @@ import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './Tile.less';
 
-export const Theme = {
+export const ShadowColor = {
     LIGHT: 'light',
     DARK: 'dark',
 } as const;
 
-type ThemeType = typeof Theme[keyof typeof Theme];
+type ShadowColorType = typeof ShadowColor[keyof typeof ShadowColor];
 
 export const Radius = {
     DEFAULT: 'default',
@@ -17,14 +17,18 @@ export const Radius = {
 
 type RadiusType = typeof Radius[keyof typeof Radius];
 
-export const Shadow = {
+export const ShadowLevel = {
     ZERO: 'zero',
-    LOW: 'low',
-    HIGH: 'high',
+    DEFAULT: 'default',
     HOVER: 'hover',
+    PRESSED: 'pressed',
+    /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
+    HIGH: 'high',
+    /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
+    LOW: 'low',
 } as const;
 
-type ShadowType = typeof Shadow[keyof typeof Shadow];
+type ShadowLevelType = typeof ShadowLevel[keyof typeof ShadowLevel];
 
 export interface ITileProps {
     /** Ссылка */
@@ -32,11 +36,12 @@ export interface ITileProps {
     /** Атрибут для открытия ссылки */
     target?: '_self' | '_blank';
     /** Тема */
-    theme?: ThemeType;
+    // TODO: переименовать в shadowColor
+    theme?: ShadowColorType;
     /** Радиус границы */
     radius?: RadiusType;
     /** Уровень тени */
-    shadowLevel?: ShadowType;
+    shadowLevel?: ShadowLevelType;
     /** Включить тень при наведении */
     isInteractive?: boolean;
     /** Дополнительный класс корневого элемента */
@@ -71,7 +76,7 @@ const Tile: React.FC<ITileProps> = ({
         <div
             className={cn(
                 {
-                    theme,
+                    'shadow-color': theme,
                     radius,
                     shadow: shadowLevel,
                     pointer: isPointer,
@@ -94,9 +99,9 @@ const Tile: React.FC<ITileProps> = ({
 
 Tile.propTypes = {
     href: PropTypes.string,
-    theme: PropTypes.oneOf(Object.values(Theme)),
+    theme: PropTypes.oneOf(Object.values(ShadowColor)),
     radius: PropTypes.oneOf(Object.values(Radius)),
-    shadowLevel: PropTypes.oneOf(Object.values(Shadow)),
+    shadowLevel: PropTypes.oneOf(Object.values(ShadowLevel)),
     className: PropTypes.string,
     isInteractive: PropTypes.bool,
     onClick: PropTypes.func,
