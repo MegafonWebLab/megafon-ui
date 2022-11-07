@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
-import { shallow, mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import Banner, { IBannerProps, NavTheme } from './Banner';
 import { DemoSlide } from './doc/Banner.docz';
 
@@ -12,25 +11,25 @@ const props: IBannerProps = {
     },
     dataAttrs: {
         root: {
-            'data-root': 'test-id',
+            'data-testid': 'root',
         },
         swiper: {
-            'data-swiper': 'test-id',
+            'data-testid': 'swiper',
         },
         slide: {
-            'data-slide': 'test-id',
+            'data-testid': 'slide',
         },
         arrowPrev: {
-            'data-arrow-prev': 'test-id',
+            'data-testid': 'arrowPrev',
         },
         arrowNext: {
-            'data-arrow-next': 'test-id',
+            'data-testid': 'arrowNext',
         },
         pagination: {
-            'data-pagination': 'test-id',
+            'data-testid': 'pagination',
         },
         dot: {
-            'data-dot': 'test-id',
+            'data-testid': 'dot',
         },
     },
     loop: true,
@@ -38,103 +37,173 @@ const props: IBannerProps = {
     autoPlayDelay: 1000,
     navTheme: NavTheme.DARK,
     autoHeight: true,
+    withPaginationBottomOffset: true,
     onNextClick: jest.fn(),
     onPrevClick: jest.fn(),
     onDotClick: jest.fn(),
     onChange: jest.fn(),
 };
 
-const cnBanner = cnCreate('.mfui-banner');
-const cnBannerDot = cnCreate('.mfui-banner-dot');
-
 describe('<Banner />', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
 
-    it('should render with default props', () => {
-        const wrapper = shallow(
-            <Banner>
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Banner>,
-        );
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with props', () => {
-        const wrapper = shallow(
+    it('should render Banner', () => {
+        const { container } = render(
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Banner>,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
-    it('should render with withPaginationBottomOffset props', () => {
-        const wrapper = mount(
-            <Banner {...props} withPaginationBottomOffset>
+    it('should render with classes', () => {
+        const { queryByTestId } = render(
+            <Banner {...props} loop={false}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Banner>,
         );
 
-        const paginationNode = wrapper.find(cnBanner('pagination')).getDOMNode();
-
-        expect(paginationNode.classList.contains('mfui-banner__pagination_bottom-offset')).toBeTruthy();
+        expect(queryByTestId('slide[1]')).toHaveClass('slide');
+        expect(queryByTestId('arrowPrev')).toHaveClass('arrows');
+        expect(queryByTestId('arrowNext')).toHaveClass('arrows');
+        expect(queryByTestId('root')).toHaveClass('custom-class');
     });
 
-    it('should call onChange', async () => {
-        const wrapper = mount(
+    it('should render with dataAttrs', () => {
+        const { queryByTestId } = render(
+            <Banner {...props} loop={false}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Banner>,
+        );
+
+        expect(queryByTestId('root')).toBeTruthy();
+        expect(queryByTestId('swiper')).toBeTruthy();
+        expect(queryByTestId('slide[1]')).toBeTruthy();
+        expect(queryByTestId('arrowNext')).toBeTruthy();
+        expect(queryByTestId('arrowPrev')).toBeTruthy();
+        expect(queryByTestId('pagination')).toBeTruthy();
+        expect(queryByTestId('dot[1]')).toBeTruthy();
+    });
+
+    it('should render when withPaginationBottomOffset is true', () => {
+        const { getByTestId } = render(
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Banner>,
         );
 
-        wrapper.find(cnBanner('arrow')).last().simulate('click');
-
-        expect(props.onChange).toBeCalled();
+        expect(getByTestId('pagination')).toHaveClass('mfui-banner__pagination_bottom-offset');
     });
 
-    it('should call onNextClick', async () => {
-        const wrapper = mount(
+    it('should render when autoHeight is true', () => {
+        const { getByTestId } = render(
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Banner>,
         );
 
-        wrapper.find(cnBanner('arrow')).last().simulate('click');
+        expect(getByTestId('root')).toHaveClass('mfui-banner_auto-height');
+    });
+
+    it('should render when navTheme is dark', () => {
+        const { getByTestId } = render(
+            <Banner {...props} navTheme="dark">
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Banner>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-banner_nav-theme_dark');
+        expect(getByTestId('pagination')).toHaveClass('mfui-banner__pagination_theme_dark');
+        expect(getByTestId('arrowNext')).toHaveClass('mfui-nav-arrow_theme_dark');
+        expect(getByTestId('arrowPrev')).toHaveClass('mfui-nav-arrow_theme_dark');
+    });
+
+    it('should render when navTheme is light', () => {
+        const { getByTestId } = render(
+            <Banner {...props} navTheme="light">
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Banner>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-banner_nav-theme_light');
+        expect(getByTestId('pagination')).toHaveClass('mfui-banner__pagination_theme_light');
+        expect(getByTestId('arrowNext')).toHaveClass('mfui-nav-arrow_theme_purple');
+        expect(getByTestId('arrowPrev')).toHaveClass('mfui-nav-arrow_theme_purple');
+    });
+
+    it('should render when navTheme is green', () => {
+        const { getByTestId } = render(
+            <Banner {...props} navTheme="green">
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Banner>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-banner_nav-theme_green');
+        expect(getByTestId('pagination')).toHaveClass('mfui-banner__pagination_theme_green');
+        expect(getByTestId('arrowNext')).toHaveClass('mfui-nav-arrow_theme_purple');
+        expect(getByTestId('arrowPrev')).toHaveClass('mfui-nav-arrow_theme_purple');
+    });
+
+    it('should call onChange', () => {
+        const { getByTestId } = render(
+            <Banner {...props} loop={false} autoPlay={false}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Banner>,
+        );
+
+        fireEvent.click(getByTestId('arrowNext'));
+
+        expect(props.onChange).toBeCalledWith(1);
+    });
+
+    it('should call onNextClick', () => {
+        const { getByTestId } = render(
+            <Banner {...props}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Banner>,
+        );
+
+        fireEvent.click(getByTestId('arrowNext'));
 
         expect(props.onNextClick).toBeCalled();
     });
 
-    it('should call onPrevClick', async () => {
-        const wrapper = mount(
+    it('should call onPrevClick', () => {
+        const { getByTestId } = render(
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
+                <DemoSlide>3</DemoSlide>
             </Banner>,
         );
 
-        wrapper.find(cnBanner('arrow')).first().simulate('click');
+        fireEvent.click(getByTestId('arrowPrev'));
 
         expect(props.onPrevClick).toBeCalled();
     });
 
     it('should call onDotClick', async () => {
-        const wrapper = mount(
+        const { getByTestId } = render(
             <Banner {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Banner>,
         );
 
-        wrapper.find(cnBannerDot()).last().simulate('click');
+        fireEvent.click(getByTestId('dot[2]'));
 
         expect(props.onDotClick).toBeCalled();
     });

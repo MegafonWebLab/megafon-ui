@@ -11,6 +11,8 @@ export interface IBannerDotProps {
     timerDelay: number;
     dataAttrs?: {
         root?: Record<string, string>;
+        svg?: Record<string, string>;
+        circle?: Record<string, string>;
     };
     onClick: (index: number) => void;
 }
@@ -36,8 +38,9 @@ const BannerDot: React.FC<IBannerDotProps> = ({
             onClick={handleDotClick}
         >
             {showTimer && isActive && (
-                <svg className={cn('timer')} viewBox="0 0 100 100">
+                <svg className={cn('timer')} viewBox="0 0 100 100" {...filterDataAttrs(dataAttrs?.svg)}>
                     <circle
+                        {...filterDataAttrs(dataAttrs?.circle)}
                         className={cn('timer-circle')}
                         style={{ animationDuration: `${timerDelay}s` }}
                         cx="50"
@@ -54,6 +57,8 @@ BannerDot.propTypes = {
     className: PropTypes.string,
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        svg: PropTypes.objectOf(PropTypes.string.isRequired),
+        circle: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     index: PropTypes.number.isRequired,
     isActive: PropTypes.bool.isRequired,

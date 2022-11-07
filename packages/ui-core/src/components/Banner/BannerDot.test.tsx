@@ -1,63 +1,90 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
-import { shallow } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import BannerDot, { IBannerDotProps } from './BannerDot';
 
-const props = {
+const props: IBannerDotProps = {
+    className: 'custom-class',
     index: 3,
     dataAttrs: {
         root: {
-            'data-root': 'test-id',
+            'data-testid': 'root',
+        },
+        svg: {
+            'data-testid': 'svg',
+        },
+        circle: {
+            'data-testid': 'circle',
         },
     },
-    isActive: false,
-    showTimer: false,
-    timerDelay: 0,
+    isActive: true,
+    showTimer: true,
+    timerDelay: 100,
     onClick: jest.fn(),
-} as IBannerDotProps;
-
-const cn = cnCreate('.mfui-banner-dot');
+};
 
 describe('<BannerDot />', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
 
-    it('should render with props', () => {
-        const wrapper = shallow(<BannerDot {...props} />);
+    it('should render BannerDot', () => {
+        const { container } = render(<BannerDot {...props} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with className', () => {
-        const wrapper = shallow(<BannerDot {...props} className="class" />);
+        const { getByTestId } = render(<BannerDot {...props} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveClass('custom-class');
     });
 
-    it('should render without timer when isActive is true and showTimer is false', () => {
-        const wrapper = shallow(<BannerDot {...props} isActive />);
+    it('should render with dataAttrs', () => {
+        const { queryByTestId } = render(<BannerDot {...props} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(queryByTestId('root')).toBeTruthy();
+        expect(queryByTestId('svg')).toBeTruthy();
+        expect(queryByTestId('circle')).toBeTruthy();
     });
 
-    it('should render without timer when isActive is false and showTimer is true', () => {
-        const wrapper = shallow(<BannerDot {...props} showTimer />);
+    it('should render when showTimer and isActive are true', () => {
+        const { queryByTestId, getByTestId } = render(<BannerDot {...props} />);
+        const rootNode = getByTestId('root');
 
-        expect(wrapper).toMatchSnapshot();
+        expect(rootNode).toHaveClass('mfui-banner-dot_active');
+        expect(rootNode).toHaveClass('mfui-banner-dot_timer');
+        expect(queryByTestId('svg')).toBeInTheDocument();
     });
 
-    it('should render timer when isActive is true and showTimer is true', () => {
-        const wrapper = shallow(<BannerDot {...props} showTimer isActive />);
+    it('should render when isActive is false', () => {
+        const { queryByTestId } = render(<BannerDot {...props} isActive={false} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(queryByTestId('svg')).not.toBeInTheDocument();
+    });
+
+    it('should render when showTimer is false', () => {
+        const { queryByTestId } = render(<BannerDot {...props} showTimer={false} />);
+
+        expect(queryByTestId('svg')).not.toBeInTheDocument();
+    });
+
+    it('should render when isActive and showTimer are false', () => {
+        const { queryByTestId } = render(<BannerDot {...props} isActive={false} showTimer={false} />);
+
+        expect(queryByTestId('svg')).not.toBeInTheDocument();
+    });
+
+    it('should render with timerDelay', () => {
+        const { getByTestId } = render(<BannerDot {...props} />);
+
+        expect(getByTestId('circle')).toHaveAttribute('style', 'animation-duration: 100s;');
     });
 
     it('should call onClick', () => {
-        const wrapper = shallow(<BannerDot {...props} showTimer isActive />);
+        const { getByTestId } = render(<BannerDot {...props} />);
 
-        wrapper.find(cn()).simulate('click');
+        fireEvent.click(getByTestId('root'));
 
-        expect(props.onClick).toBeCalledWith(props.index);
+        expect(props.onClick).toBeCalledWith(3);
     });
 });

@@ -1,58 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<BannerDot /> should render timer when isActive is true and showTimer is true 1`] = `
-<div
-  className="mfui-banner-dot mfui-banner-dot_active mfui-banner-dot_timer"
-  data-root="test-id"
-  onClick={[Function]}
->
-  <svg
-    className="mfui-banner-dot__timer"
-    viewBox="0 0 100 100"
+exports[`<BannerDot /> should render BannerDot 1`] = `
+<div>
+  <div
+    class="mfui-banner-dot mfui-banner-dot_active mfui-banner-dot_timer custom-class"
+    data-testid="root"
   >
-    <circle
-      className="mfui-banner-dot__timer-circle"
-      cx="50"
-      cy="50"
-      r="50"
-      style={
-        Object {
-          "animationDuration": "0s",
-        }
-      }
-    />
-  </svg>
+    <svg
+      class="mfui-banner-dot__timer"
+      data-testid="svg"
+      viewBox="0 0 100 100"
+    >
+      <circle
+        class="mfui-banner-dot__timer-circle"
+        cx="50"
+        cy="50"
+        data-testid="circle"
+        r="50"
+        style="animation-duration: 100s;"
+      />
+    </svg>
+  </div>
 </div>
-`;
-
-exports[`<BannerDot /> should render with className 1`] = `
-<div
-  className="mfui-banner-dot class"
-  data-root="test-id"
-  onClick={[Function]}
-/>
-`;
-
-exports[`<BannerDot /> should render with props 1`] = `
-<div
-  className="mfui-banner-dot"
-  data-root="test-id"
-  onClick={[Function]}
-/>
-`;
-
-exports[`<BannerDot /> should render without timer when isActive is false and showTimer is true 1`] = `
-<div
-  className="mfui-banner-dot mfui-banner-dot_timer"
-  data-root="test-id"
-  onClick={[Function]}
-/>
-`;
-
-exports[`<BannerDot /> should render without timer when isActive is true and showTimer is false 1`] = `
-<div
-  className="mfui-banner-dot mfui-banner-dot_active"
-  data-root="test-id"
-  onClick={[Function]}
-/>
 `;
