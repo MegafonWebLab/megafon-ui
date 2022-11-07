@@ -1,203 +1,109 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Banner /> should render with default props 1`] = `
-<div
-  className="mfui-banner mfui-banner_nav-theme_light"
->
-  <Swiper
-    autoplay={false}
-    className="mfui-banner__swiper"
-    loop={false}
-    onFromEdge={[Function]}
-    onReachBeginning={[Function]}
-    onReachEnd={[Function]}
-    onSlideChange={[Function]}
-    onSwiper={[Function]}
-    onTouchEnd={[Function]}
-    watchSlidesVisibility={true}
-  >
-    <SwiperSlide
-      className="mfui-banner__slide"
-      key="0/.0"
-    >
-      <DemoSlide>
-        1
-      </DemoSlide>
-    </SwiperSlide>
-    <SwiperSlide
-      className="mfui-banner__slide"
-      key="1/.1"
-    >
-      <DemoSlide>
-        2
-      </DemoSlide>
-    </SwiperSlide>
-  </Swiper>
-  <NavArrow
-    className="mfui-banner__arrow mfui-banner__arrow_prev"
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    disabled={true}
-    onClick={[Function]}
-    theme="purple"
-  />
-  <NavArrow
-    className="mfui-banner__arrow mfui-banner__arrow_next"
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    disabled={false}
-    onClick={[Function]}
-    theme="purple"
-    view="next"
-  />
+exports[`<Banner /> should render Banner 1`] = `
+<div>
   <div
-    className="mfui-banner__pagination mfui-banner__pagination_theme_light"
+    class="mfui-banner mfui-banner_nav-theme_dark mfui-banner_auto-height custom-class"
+    data-testid="root"
   >
-    <BannerDot
-      className="mfui-banner__dot"
-      dataAttrs={
-        Object {
-          "root": Object {},
-        }
-      }
-      index={0}
-      isActive={true}
-      key="0/.0"
-      onClick={[Function]}
-      showTimer={false}
-      timerDelay={5}
-    />
-    <BannerDot
-      className="mfui-banner__dot"
-      dataAttrs={
-        Object {
-          "root": Object {},
-        }
-      }
-      index={1}
-      isActive={false}
-      key="1/.1"
-      onClick={[Function]}
-      showTimer={false}
-      timerDelay={5}
-    />
-  </div>
-</div>
-`;
-
-exports[`<Banner /> should render with props 1`] = `
-<div
-  className="mfui-banner mfui-banner_nav-theme_dark mfui-banner_auto-height custom-class"
-  data-root="test-id"
->
-  <Swiper
-    autoplay={
-      Object {
-        "delay": 1000,
-        "disableOnInteraction": false,
-        "stopOnLastSlide": true,
-        "waitForTransition": false,
-      }
-    }
-    className="mfui-banner__swiper"
-    data-swiper="test-id"
-    loop={true}
-    onFromEdge={[Function]}
-    onReachBeginning={[Function]}
-    onReachEnd={[Function]}
-    onSlideChange={[Function]}
-    onSwiper={[Function]}
-    onTouchEnd={[Function]}
-    watchSlidesVisibility={true}
-  >
-    <SwiperSlide
-      className="mfui-banner__slide slide"
-      data-slide="test-id[1]"
-      key="0/.0"
+    <div
+      class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-banner__swiper"
+      data-testid="swiper"
     >
-      <DemoSlide>
-        1
-      </DemoSlide>
-    </SwiperSlide>
-    <SwiperSlide
-      className="mfui-banner__slide slide"
-      data-slide="test-id[2]"
-      key="1/.1"
+      <div
+        class="swiper-wrapper"
+        style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+      >
+        <div
+          class="swiper-slide swiper-slide-duplicate mfui-banner__slide slide"
+          data-swiper-slide-index="1"
+          data-testid="slide[2]"
+        >
+          <div
+            style="height: 100%; background-color: rgb(255, 255, 255); display: flex; justify-content: center; align-items: center; font-size: 30px;"
+          >
+            2
+          </div>
+        </div>
+        <div
+          class="swiper-slide mfui-banner__slide slide"
+          data-swiper-slide-index="0"
+          data-testid="slide[1]"
+        >
+          <div
+            style="height: 100%; background-color: rgb(255, 255, 255); display: flex; justify-content: center; align-items: center; font-size: 30px;"
+          >
+            1
+          </div>
+        </div>
+        <div
+          class="swiper-slide mfui-banner__slide slide"
+          data-swiper-slide-index="1"
+          data-testid="slide[2]"
+        >
+          <div
+            style="height: 100%; background-color: rgb(255, 255, 255); display: flex; justify-content: center; align-items: center; font-size: 30px;"
+          >
+            2
+          </div>
+        </div>
+        <div
+          class="swiper-slide swiper-slide-duplicate mfui-banner__slide slide"
+          data-swiper-slide-index="0"
+          data-testid="slide[1]"
+        >
+          <div
+            style="height: 100%; background-color: rgb(255, 255, 255); display: flex; justify-content: center; align-items: center; font-size: 30px;"
+          >
+            1
+          </div>
+        </div>
+      </div>
+    </div>
+    <button
+      class="mfui-nav-arrow mfui-nav-arrow_theme_dark mfui-banner__arrow mfui-banner__arrow_prev arrows"
+      data-testid="arrowPrev"
+      type="button"
     >
-      <DemoSlide>
-        2
-      </DemoSlide>
-    </SwiperSlide>
-  </Swiper>
-  <NavArrow
-    className="mfui-banner__arrow mfui-banner__arrow_prev arrows"
-    dataAttrs={
-      Object {
-        "root": Object {
-          "data-arrow-prev": "test-id",
-        },
-      }
-    }
-    disabled={false}
-    onClick={[Function]}
-    theme="dark"
-  />
-  <NavArrow
-    className="mfui-banner__arrow mfui-banner__arrow_next arrows"
-    dataAttrs={
-      Object {
-        "root": Object {
-          "data-arrow-next": "test-id",
-        },
-      }
-    }
-    disabled={false}
-    onClick={[Function]}
-    theme="dark"
-    view="next"
-  />
-  <div
-    className="mfui-banner__pagination mfui-banner__pagination_theme_dark"
-    data-pagination="test-id"
-  >
-    <BannerDot
-      className="mfui-banner__dot"
-      dataAttrs={
-        Object {
-          "root": Object {
-            "data-dot": "test-id[1]",
-          },
-        }
-      }
-      index={0}
-      isActive={true}
-      key="0/.0"
-      onClick={[Function]}
-      showTimer={true}
-      timerDelay={1}
-    />
-    <BannerDot
-      className="mfui-banner__dot"
-      dataAttrs={
-        Object {
-          "root": Object {
-            "data-dot": "test-id[2]",
-          },
-        }
-      }
-      index={1}
-      isActive={false}
-      key="1/.1"
-      onClick={[Function]}
-      showTimer={true}
-      timerDelay={1}
-    />
+      <test-file-stub
+        classname="mfui-nav-arrow__icon"
+      />
+    </button>
+    <button
+      class="mfui-nav-arrow mfui-nav-arrow_theme_dark mfui-banner__arrow mfui-banner__arrow_next arrows"
+      data-testid="arrowNext"
+      type="button"
+    >
+      <test-file-stub
+        classname="mfui-nav-arrow__icon"
+      />
+    </button>
+    <div
+      class="mfui-banner__pagination mfui-banner__pagination_theme_dark mfui-banner__pagination_bottom-offset"
+      data-testid="pagination"
+    >
+      <div
+        class="mfui-banner-dot mfui-banner-dot_timer mfui-banner__dot"
+        data-testid="dot[1]"
+      />
+      <div
+        class="mfui-banner-dot mfui-banner-dot_active mfui-banner-dot_timer mfui-banner__dot"
+        data-testid="dot[2]"
+      >
+        <svg
+          class="mfui-banner-dot__timer"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            class="mfui-banner-dot__timer-circle"
+            cx="50"
+            cy="50"
+            r="50"
+            style="animation-duration: 1s;"
+          />
+        </svg>
+      </div>
+    </div>
   </div>
 </div>
 `;

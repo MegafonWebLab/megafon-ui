@@ -990,7 +990,7 @@ exports[`<TextField /> should render with hidden icon 1`] = `
     className="mfui-text-field__field-wrapper"
   >
     <input
-      className="mfui-text-field__field inputClass"
+      className="mfui-text-field__field mfui-text-field__field_no-icon inputClass"
       id="id"
       onBlur={[Function]}
       onChange={[Function]}

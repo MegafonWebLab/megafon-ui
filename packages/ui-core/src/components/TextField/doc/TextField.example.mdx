@@ -11,13 +11,23 @@ import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
 ## Поле для ввода пароля
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField name="name" type="password"/>
+    <TextField name="password" type="password"/>
 </Playground>
 
 ## Обязательное поле
 
 <Playground style={wrapperDefaultWidthStyle}>
-    <TextField name="name" required label="Телефон"/>
+    <TextField name="phone" required label="Телефон"/>
+</Playground>
+
+## C иконкой очистки значения и без неё
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField name="name" label="Имя" value="Константин"/>
+</Playground>
+
+<Playground style={wrapperDefaultWidthStyle}>
+    <TextField name="name" label="Имя" value="Константин" hideIcon/>
 </Playground>
 
 ## Отключено отображение плейсхолдера
@@ -54,9 +64,9 @@ import CustomIcon from '@megafon/ui-icons/system-24-rating_5_24.svg';
         <div>
             <DemoTextFieldWithBeforeMaskChangeValue>
                 {({ handleBeforeMaskChange }) =>
-                    <TextField 
-                        onBeforeMaskChange={handleBeforeMaskChange} 
-                        mask="+7 (999) 999-99-99" 
+                    <TextField
+                        onBeforeMaskChange={handleBeforeMaskChange}
+                        mask="+7 (999) 999-99-99"
                         maskchar="_"
                         label="С перехватом вводимого значения"
                         style={{ width: '350px' }}
@@ -150,7 +160,7 @@ export const DemoTextFieldWithBeforeMaskChangeValue = ({ children }) => {
 <Playground>
     <div style={{ display: 'flex', gap: '35px' }}>
         <div style={{ flex: 1, padding: '10px' }}>
-            <TextField 
+            <TextField
                 verification="valid"
                 noticeText="Тема для светлого фона (по умолчанию)"
             />

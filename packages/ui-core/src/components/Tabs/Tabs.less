@@ -4,6 +4,8 @@
 @swiperWrapper: e('.swiper-wrapper');
 
 @{b} {
+    @white70: #ffffffb2;
+
     @{swiperWrapper} {
         position: relative;
         z-index: 0;
@@ -169,7 +171,7 @@
 
         cursor: pointer;
 
-        transition: color @defaultTransitionTiming;
+        transition: color @defaultTransitionTiming, fill @defaultTransitionTiming;
 
         fill: var(--spbSky3);
 
@@ -299,17 +301,25 @@
         }
     }
 
+    // mod color gray
+
+    &_tab-color_gray & {
+        &__swiper {
+            background-color: var(--spbSky1);
+        }
+    }
+
     // mod color green
 
     &_tab-color_green:not(&_sticky) & {
         &__swiper {
-            background-color: var(--stcBlack50);
+            background-color: var(--stcBlack20);
         }
 
         &__tab-inner:not(&__tab-inner_current) {
-            color: var(--stcWhite50);
+            color: @white70;
 
-            fill: var(--stcWhite50);
+            fill: @white70;
 
             &:hover {
                 color: var(--stcWhite);

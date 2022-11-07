@@ -8,7 +8,7 @@ import CheckedIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import throttle from 'lodash.throttle';
 import * as PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
-import throttleTime from 'constants/throttleTime';
+import throttleTime from '../../constants/throttleTime';
 import ResizeIcon from './i/textarea-resizer.svg';
 import './TextField.less';
 
@@ -371,7 +371,13 @@ const TextField: React.FC<TextFieldProps> = ({
 
     const inputParams = {
         ...commonParams,
-        className: cn('field', classes?.input),
+        className: cn(
+            'field',
+            {
+                'no-icon': hideIcon,
+            },
+            classes?.input,
+        ),
         type: isVisiblePassword ? 'text' : type,
         autoComplete,
     };
