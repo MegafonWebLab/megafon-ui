@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.4.0...@megafon/ui-shared@4.4.1) (2022-11-07)
+
+
+### Bug Fixes
+
+* **accordionbox:** add missing margin for group of components ([e20da93](https://github.com/MegafonWebLab/megafon-ui/commit/e20da9336f664b526671e5950d319e8ef4dbd946))
+
+
+
+
+
 # [4.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.3.0...@megafon/ui-shared@4.4.0) (2022-10-31)
 
 

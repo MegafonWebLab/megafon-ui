@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.6.0...@megafon/ui-core@4.7.0) (2022-11-07)
+
+
+### Bug Fixes
+
+* **textfield:** fix right padding with hideIcon prop ([c2aeffd](https://github.com/MegafonWebLab/megafon-ui/commit/c2aeffd1e4c94c97aac23128b9f1ccff4ead9a81))
+
+
+### Features
+
+* **tabs:** add gray color to tabColorTheme prop ([9d01119](https://github.com/MegafonWebLab/megafon-ui/commit/9d01119aef6ee6ef26e02c7b22efd17cb8a1147a))
+
+
+
+
+
 # [4.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.5.1...@megafon/ui-core@4.6.0) (2022-10-31)
 
 
