@@ -21,6 +21,7 @@ export const TabSize = {
 export const TabColorTheme = {
     WHITE: 'white',
     GREEN: 'green',
+    GRAY: 'gray',
 } as const;
 
 type TabSizeType = typeof TabSize[keyof typeof TabSize];
