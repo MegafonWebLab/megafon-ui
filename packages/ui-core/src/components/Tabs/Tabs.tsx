@@ -433,6 +433,7 @@ const Tabs: React.FC<ITabsProps> = ({
                         onReachBeginning={handleReachBeginning}
                         onReachEnd={handleReachEnd}
                         onFromEdge={handleFromEdge}
+                        observer
                     >
                         {renderTabs()}
                         <div

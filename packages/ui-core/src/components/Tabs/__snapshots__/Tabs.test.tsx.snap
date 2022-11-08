@@ -24,6 +24,7 @@ exports[`<Tabs /> should render with default props 1`] = `
       <Swiper
         className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end"
         initialSlide={0}
+        observer={true}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
         onReachEnd={[Function]}
@@ -121,6 +122,7 @@ exports[`<Tabs /> should render with props 1`] = `
         className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end innerIndentsClass"
         data-test="test"
         initialSlide={1}
+        observer={true}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
         onReachEnd={[Function]}
@@ -237,6 +239,7 @@ exports[`<Tabs /> should render without panels 1`] = `
       <Swiper
         className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end"
         initialSlide={0}
+        observer={true}
         onFromEdge={[Function]}
         onReachBeginning={[Function]}
         onReachEnd={[Function]}
