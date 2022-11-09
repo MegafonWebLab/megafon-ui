@@ -57,15 +57,15 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 <Playground style={{ marginTop: '-50px' }}>
     <Grid guttersLeft="medium" guttersBottom="medium">
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>С картинкой</Header>
+            <Header as="h2" align="center" margin>С картинкой</Header>
             <Card title={title} text={text} button={button} link={link} imageSrc={img} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>С иконкой</Header>
+            <Header as="h2" align="center" margin>С иконкой</Header>
             <Card title={title} text={text} button={button} link={link} svgSrc={svg} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Без изображения</Header>
+            <Header as="h2" align="center" margin>Без изображения</Header>
             <Card title={title} text={text} button={button} link={link}/>
         </GridColumn>
     </Grid>
@@ -76,11 +76,11 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 <Playground style={{ marginTop: '-50px' }}>
     <Grid guttersLeft="medium" guttersBottom="medium">
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Изображение заполняет контейнер по ширине</Header>
+            <Header as="h2" align="center" margin>Изображение заполняет контейнер по ширине</Header>
             <Card title={title} text={text} link={link} imageSrc={img} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Изображение вписывается в контейнер</Header>
+            <Header as="h2" align="center" margin>Изображение вписывается в контейнер</Header>
             <Card title={title} text={text} button={button} imageSrc={imgShort} objectFit="contain"/>
         </GridColumn>
     </Grid>
@@ -94,19 +94,19 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 <Playground style={{ marginTop: '-50px' }}>
     <Grid guttersLeft="medium" guttersBottom="medium">
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Кнопка и ссылка</Header>
+            <Header as="h2" align="center" margin>Кнопка и ссылка</Header>
             <Card title={title} text={text} button={button} link={link} svgSrc={svg} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Только кнопка </Header>
+            <Header as="h2" align="center" margin>Только кнопка </Header>
             <Card title={title} text={text} button={button} svgSrc={svg} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Только ссылка</Header>
+            <Header as="h2" align="center" margin>Только ссылка</Header>
             <Card title={title} text={text}  link={link} svgSrc={svg} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>С "ложной ссылкой"</Header>
+            <Header as="h2" align="center" margin>С "ложной ссылкой"</Header>
             <Card title={title} text={text} link={fakeLink} svgSrc={svg} href="#"/>
         </GridColumn>
     </Grid>
@@ -119,19 +119,19 @@ const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 <Playground style={{ marginTop: '-50px' }}>
     <Grid guttersLeft="medium" guttersBottom="medium">
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>По левому краю</Header>
+            <Header as="h2" align="center" margin>По левому краю</Header>
             <Card title={title} text={text} button={button} svgSrc={svg} isLeftHAlign />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>По центру</Header>
+            <Header as="h2" align="center" margin>По центру</Header>
             <Card title={title} text={text} button={button} svgSrc={svg} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Всегда по центру</Header>
+            <Header as="h2" align="center" margin>Всегда по центру</Header>
             <Card title={title} text={text} button={button} link={link} svgSrc={svg} />
         </GridColumn>
         <GridColumn all="3" mobile="12">
-            <Header as="h2" hAlign="center" margin>Перенос элементов</Header>
+            <Header as="h2" align="center" margin>Перенос элементов</Header>
             <Card title={title} text={text} button={buttonWithLongTitle} link={link} svgSrc={svg} />
         </GridColumn>
     </Grid>
