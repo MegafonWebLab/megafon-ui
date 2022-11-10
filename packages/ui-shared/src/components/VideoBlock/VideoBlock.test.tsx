@@ -94,6 +94,18 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('render component with html tags', () => {
+        const localContent = {
+            ...content,
+            title: '<a href="https://moscow.megafon.ru">Текст</a><br><font color="#731982">≈40</font> символов.&nbspКороткие слова',
+            description:
+                'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#731982">примерно</font> не более 130 символов.<br>Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+        };
+        const wrapper = shallow(<VideoBlock content={localContent} videoSrc="video" />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
 
