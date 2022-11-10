@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import { Header, Button, Grid, GridColumn } from '@megafon/ui-core';
-import { cnCreate, filterDataAttrs, convert, titleConvertConfig } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, convert, titleConvertConfig, textConvertConfig } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './VideoBlock.less';
 
@@ -8,7 +8,7 @@ export interface IContent {
     /** Заголовок */
     title: string;
     /** Текст-описание */
-    description: string;
+    description: string | React.ReactNode[] | React.ReactNode;
     /** Текст кнопки */
     buttonTitle?: string;
     /** Добавляет атрибут download для тега <a> компонента Button */
@@ -105,7 +105,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                     {convert(title, titleConvertConfig)}
                 </Header>
                 <div className={cn('description', [classes.description])}>
-                    {convert(description, titleConvertConfig)}
+                    {convert(String(description), textConvertConfig)}
                 </div>
                 {buttonTitle && (
                     <Button
@@ -188,7 +188,8 @@ VideoBlock.propTypes = {
     ]),
     content: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
+        description: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+            .isRequired,
         href: PropTypes.string,
         buttonTitle: PropTypes.string,
         buttonDownload: PropTypes.bool,
