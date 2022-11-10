@@ -105,7 +105,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                     {convert(title, titleConvertConfig)}
                 </Header>
                 <div className={cn('description', [classes.description])}>
-                    {convert(String(description), textConvertConfig)}
+                    {typeof description === 'string' ? convert(description, textConvertConfig) : description}
                 </div>
                 {buttonTitle && (
                     <Button

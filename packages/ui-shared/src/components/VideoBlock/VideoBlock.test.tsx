@@ -99,7 +99,7 @@ describe('<VideoBlock />', () => {
             ...content,
             title: '<a href="https://moscow.megafon.ru">Текст</a><br><font color="#731982">≈40</font> символов.&nbspКороткие слова',
             description:
-                'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#731982">примерно</font> не более 130 символов.<br>Пишите содержательно, кратно и не будет проблем с текстовым контентом.',
+                'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#731982">примерно</font> не более 130 символов.<br>Пишите <b>содержательно</b>, кратно и не будет проблем с текстовым контентом.',
         };
         const wrapper = shallow(<VideoBlock content={localContent} videoSrc="video" />);
 

@@ -691,7 +691,13 @@ exports[`<VideoBlock /> render component with html tags 1`] = `
           <component
             key="5"
           />
-          Пишите содержательно, кратно и не будет проблем с текстовым контентом.
+          Пишите 
+          <component
+            key="7"
+          >
+            содержательно
+          </component>
+          , кратно и не будет проблем с текстовым контентом.
         </div>
         <Button
           className="mfui-video-block__button"
