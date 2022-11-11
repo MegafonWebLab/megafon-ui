@@ -3,9 +3,14 @@ import Tooltip, { Placement, TriggerEvent } from '../Tooltip';
 import Paragraph from 'components/Paragraph/Paragraph';
 import TextField from 'components/TextField/TextField';
 import TextLink from 'components/TextLink/TextLink';
+import Tile from 'components/Tile/Tile';
 import Button from 'components/Button/Button';
 import Select from 'components/Select/Select';
+import List from 'components/List/List';
+import ListItem from 'components/List/ListItem';
 import {
+    demoWrapperWithScroll,
+    demoWrapperWithScrollBig,
     demoWrapperBlockStyles,
     DemoTooltipWithTriggerWrapper,
     DemoSelectTriggerWrapper,
@@ -91,6 +96,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                 </span>
                 <Tooltip
                     triggerEvent="click"
+                    colorTheme='blue' 
                     triggerElement={triggerElement}
                 >
                     Эмуляция при клике
@@ -243,6 +249,190 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
     </DemoTooltipWithTriggerWrapper>
 </Playground>
 
+## Перестроение при скролле
+Расположение тултипа меняется при соприкосновении с границей контейнера. 
+
+
+
+## Варианты содержимого тултипа
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Все варианты</Button>
+                </span>
+                <Tooltip
+                    colorTheme='red'
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    title="Заголовок"
+                    text="Оказание услуг связи приостановлено. Пожалуйста, проверьте ваш баланс."
+                    hasCloseButton
+                    buttonText="Кнопка"
+                >
+                  Дополнительное содержимое тултипа  
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Только заголовок</Button>
+                </span>
+                <Tooltip
+                    colorTheme='red'
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    title="Заголовок"
+                />
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Только текст</Button>
+                </span>
+                <Tooltip
+                    colorTheme='red'
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    text="Оказание услуг связи приостановлено. Пожалуйста, проверьте ваш баланс."
+                />
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Только кнопка</Button>
+                </span>
+                <Tooltip
+                    colorTheme='red'
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    buttonText="Кнопка"
+                />
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Только доп. содержание</Button>
+                </span>
+                <Tooltip
+                    colorTheme='red'
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                >
+                  <List>
+                    <ListItem>Пункт 1</ListItem>
+                    <ListItem>Пункт 2</ListItem>
+                  </List>
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+## Цветовая тема
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Открыть красный тултип</Button>
+                </span>
+                <Tooltip
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    colorTheme="red"
+                    title="Заголовок"
+                    text="Красная тема"
+                    hasCloseButton
+                    buttonText="Кнопка"
+                >
+                  Дополнительное содержимое тултипа  
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Открыть синий тултип</Button>
+                </span>
+                <Tooltip
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    colorTheme="blue"
+                    title="Заголовок"
+                    text="Синяя тема"
+                    hasCloseButton
+                    buttonText="Кнопка"
+                >
+                    Дополнительное содержимое тултипа
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
+## Размер тултипа
+Для размера small отображается только контент, переданный через пропс text. 
+
+<Playground style={demoWrapperBlockStyles}>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Открыть большой тултип</Button>
+                </span>
+                <Tooltip
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    title="Заголовок"
+                    text="Большой размер"
+                    hasCloseButton
+                    buttonText="Кнопка"
+                >
+                  Дополнительное содержимое тултипа  
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
+                    <Button fullWidth>Открыть маленький тултип</Button>
+                </span>
+                <Tooltip
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    size="small"
+                    title="Не отобразится"
+                    text="Маленький размер"
+                    hasCloseButton
+                    buttonText="Не отобразится"
+                >
+                    Не отобразится
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+</Playground>
+
 ##  Размер отступов от контента
 
 <Playground style={demoWrapperBlockStyles}>
@@ -378,6 +568,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                     <Button fullWidth>Относительно триггер-элемента</Button>
                 </span>
                 <Tooltip
+                triggerEvent='click'
                     triggerElement={triggerElement}
                     placement="bottom"
                     paddings="small"
@@ -397,6 +588,7 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                     </Button>
                 </span>
                 <Tooltip
+                    triggerEvent='click'
                     triggerElement={triggerElement}
                     targetElement={targetElement}
                     placement="bottom"

@@ -4,14 +4,27 @@ import { shallow } from 'enzyme';
 import Tooltip, { ITooltipProps } from './Tooltip';
 
 const props: ITooltipProps = {
+    colorTheme: 'red',
+    size: 'big',
+    title: 'Заголовок',
+    buttonText: 'Кнопка',
+    text: 'Текст',
+    hasCloseButton: true,
     placement: 'left',
-    fallbackPlacements: ['left'],
+    fallbackPlacements: ['left', 'bottom'],
     paddings: 'none',
     triggerEvent: 'click',
-    isOpened: false,
+    isOpened: true,
     isPortal: false,
+    portalSelector: 'portalSelector',
     className: 'className',
     triggerElement: {
+        current: {} as HTMLElement,
+    },
+    boundaryElement: {
+        current: {} as HTMLElement,
+    },
+    targetElement: {
         current: {} as HTMLElement,
     },
     classes: {
@@ -21,17 +34,14 @@ const props: ITooltipProps = {
         contentShadow: 'content-shadow',
     },
     dataAttrs: {
-        root: {
-            'data-root': 'test',
-            'incorrect-attr': 'test',
-        },
-        content: {
-            'data-content': 'test',
-            'incorrect-attr': 'test',
-        },
+        root: { 'data-root': 'test' },
+        close: { 'data-close': 'test' },
+        content: { 'data-content': 'test' },
     },
     onOpen: jest.fn(),
     onClose: jest.fn(),
+    onClick: jest.fn(),
+    onCloseButtonClick: jest.fn(),
 };
 
 describe('<Tooltip/>', () => {
@@ -40,9 +50,8 @@ describe('<Tooltip/>', () => {
         const wrapper = shallow(<Tooltip triggerElement={triggerElement}>Some test content</Tooltip>);
         expect(wrapper).toMatchSnapshot();
     });
-    it('renders with props', () => {
-        const triggerElement: RefObject<HTMLElement> = React.createRef();
-        const wrapper = shallow(<Tooltip triggerElement={triggerElement} {...props} />);
+    it('renders component with all props', () => {
+        const wrapper = shallow(<Tooltip {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
 });

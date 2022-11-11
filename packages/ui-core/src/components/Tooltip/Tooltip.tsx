@@ -1,10 +1,20 @@
 import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { cnCreate, detectTouch, checkNativeEventIsClickOrEnterPress, filterDataAttrs } from '@megafon/ui-helpers';
+import {
+    cnCreate,
+    detectTouch,
+    checkNativeEventIsClickOrEnterPress,
+    filterDataAttrs,
+    AccessibilityEventType,
+} from '@megafon/ui-helpers';
 import type { AccessibilityEventTypeNative } from '@megafon/ui-helpers';
+import RightArrow from '@megafon/ui-icons/system-16-arrow_right_16.svg';
+import CancelIcon from '@megafon/ui-icons/system-16-cancel_16.svg';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import { usePopper } from 'react-popper';
+import Header from 'components/Header/Header';
 import Tile from 'components/Tile/Tile';
+import Arrow from './arrow.svg';
 import './Tooltip.less';
 
 const TOOLTIP_PADDING_FOR_FLIP = 14;
@@ -13,9 +23,17 @@ const TOUCH_KEY = 'touchstart';
 
 export const Placement = {
     LEFT: 'left',
+    LEFT_START: 'left-start',
+    LEFT_END: 'left-end',
     TOP: 'top',
+    TOP_START: 'top-start',
+    TOP_END: 'top-end',
     RIGHT: 'right',
+    RIGHT_START: 'right-start',
+    RIGHT_END: 'right-start',
     BOTTOM: 'bottom',
+    BOTTOM_START: 'bottom-start',
+    BOTTOM_END: 'bottom-start',
 } as const;
 
 type PlacementType = typeof Placement[keyof typeof Placement];
@@ -36,7 +54,34 @@ export const TriggerEvent = {
 
 type TriggerEventType = typeof TriggerEvent[keyof typeof TriggerEvent];
 
+export const ColorTheme = {
+    WHITE: 'white',
+    BLUE: 'blue',
+    RED: 'red',
+} as const;
+
+type ColorThemeType = typeof ColorTheme[keyof typeof ColorTheme];
+
+export const Size = {
+    SMALL: 'small',
+    BIG: 'big',
+} as const;
+
+type SizeType = typeof Size[keyof typeof Size];
+
 export interface ITooltipProps {
+    /** Цветовая тема */
+    colorTheme?: ColorThemeType;
+    /** Размер тултипа */
+    size?: SizeType;
+    /** Заголовок */
+    title?: string;
+    /** Текст кнопки */
+    buttonText?: string;
+    /** Текст */
+    text?: string;
+    /** Наличие кнопки-крестика "Закрыть" */
+    hasCloseButton?: boolean;
     /** Позиционирование относительно триггер-элемента */
     placement?: PlacementType;
     /** Направления перестроения тултипа при переполнении */
@@ -69,20 +114,32 @@ export interface ITooltipProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
+        close?: Record<string, string>;
+        button?: Record<string, string>;
         content?: Record<string, string>;
     };
     /** Обработчик на открытие */
     onOpen?: (e: AccessibilityEventTypeNative) => void;
     /** Обработчик на закрытие */
     onClose?: (e: AccessibilityEventTypeNative | FocusEvent) => void;
+    /** Обработчик на клик по кнопке закрытия */
+    onCloseButtonClick?: (e: AccessibilityEventType) => void;
+    /** Обработчик клика по кнопке */
+    onClick?: (e: React.SyntheticEvent<EventTarget>) => void;
 }
 
 const cn = cnCreate('mfui-tooltip');
 const Tooltip: React.FC<ITooltipProps> = ({
     className,
+    title,
+    text,
+    size = 'big',
+    buttonText,
+    hasCloseButton,
+    colorTheme: theme = 'white',
     placement = 'top',
     fallbackPlacements = ['left', 'right', 'top', 'bottom'],
-    paddings = 'medium',
+    paddings = 'small',
     triggerEvent = 'hover',
     boundaryElement,
     triggerElement,
@@ -100,17 +157,30 @@ const Tooltip: React.FC<ITooltipProps> = ({
     dataAttrs,
     onOpen,
     onClose,
+    onClick,
+    onCloseButtonClick,
 }) => {
+    const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
+    const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
+    const [isOpen, setIsOpen] = useState(isOpened);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
     const currentTrigger = triggerElement.current;
     const currentTarget = targetElement?.current || currentTrigger;
     const currentBoundary = boundaryElement?.current;
     const portalElem = React.useRef<HTMLDivElement | null>(null);
 
-    const [popperElement, setPopperElement] = useState<HTMLElement | null>(null);
-    const [arrowElement, setArrowElement] = useState<HTMLElement | null>(null);
+    const isBigSize = size === Size.BIG;
 
-    const [isOpen, setIsOpen] = useState(isOpened);
-    useEffect(() => setIsOpen(isOpened), [isOpened]);
+    const clickEvent = useMemo(() => (isTouchDevice ? TOUCH_KEY : MOUSE_KEY), [isTouchDevice]);
+
+    const triggerEventName: TriggerEventType = useMemo(() => {
+        if (triggerEvent === TriggerEvent.CONTROLLED || !isTouchDevice) {
+            return triggerEvent;
+        }
+
+        return TriggerEvent.CLICK;
+    }, [isTouchDevice, triggerEvent]);
 
     const options = useMemo(
         () => ({
@@ -118,7 +188,15 @@ const Tooltip: React.FC<ITooltipProps> = ({
             modifiers: [
                 {
                     name: 'arrow',
-                    options: { element: arrowElement },
+                    options: {
+                        element: arrowElement,
+                        padding: {
+                            top: 17,
+                            right: 1,
+                            bottom: 17,
+                            left: 1,
+                        },
+                    },
                 },
                 {
                     name: 'flip',
@@ -140,6 +218,12 @@ const Tooltip: React.FC<ITooltipProps> = ({
                         boundary: currentBoundary,
                     },
                 },
+                {
+                    name: 'offset',
+                    options: {
+                        offset: [0, 12],
+                    },
+                },
             ],
         }),
         [placement, arrowElement, currentBoundary, isOpen, fallbackPlacements],
@@ -147,21 +231,29 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
     const { styles, attributes, update } = usePopper(currentTarget, popperElement, options);
 
+    useEffect(() => setIsOpen(isOpened), [isOpened]);
+
     useEffect(() => {
         update?.();
     }, [children, update]);
 
-    const [isTouchDevice, setIsTouchDevice] = useState(false);
     useEffect(() => setIsTouchDevice(detectTouch()), []);
 
-    const clickEvent = useMemo(() => (isTouchDevice ? TOUCH_KEY : MOUSE_KEY), [isTouchDevice]);
-    const triggerEventName: TriggerEventType = useMemo(() => {
-        if (triggerEvent === TriggerEvent.CONTROLLED || !isTouchDevice) {
-            return triggerEvent;
-        }
+    const closeTooltip = useCallback(
+        (e: AccessibilityEventTypeNative | FocusEvent): void => {
+            setIsOpen(false);
+            onClose?.(e);
+        },
+        [onClose],
+    );
 
-        return TriggerEvent.CLICK;
-    }, [isTouchDevice, triggerEvent]);
+    const handleCloseButtonClick = useCallback(
+        (e: AccessibilityEventType): void => {
+            setIsOpen(false);
+            onCloseButtonClick?.(e);
+        },
+        [onCloseButtonClick],
+    );
 
     const handleMouseEnter = useCallback(
         (e: MouseEvent): void => {
@@ -195,20 +287,9 @@ const Tooltip: React.FC<ITooltipProps> = ({
             const isTargetInTrigger =
                 e.target instanceof Element && currentTrigger && currentTrigger.contains(e.target);
 
-            if (!isTargetInPopper && !isTargetInTrigger) {
-                setIsOpen(false);
-                onClose?.(e);
-            }
+            !isTargetInPopper && !isTargetInTrigger && closeTooltip(e);
         },
-        [onClose, currentTrigger, popperElement],
-    );
-
-    const handleBlurEvent = useCallback(
-        (e: FocusEvent): void => {
-            setIsOpen(false);
-            onClose?.(e);
-        },
-        [onClose],
+        [closeTooltip, currentTrigger, popperElement],
     );
 
     useEffect(() => {
@@ -220,10 +301,10 @@ const Tooltip: React.FC<ITooltipProps> = ({
 
             if (isOpen) {
                 document.addEventListener('mouseover', handleOutsideEvent);
-                currentTrigger?.addEventListener('blur', handleBlurEvent);
+                currentTrigger?.addEventListener('blur', closeTooltip);
             } else {
                 document.removeEventListener('mouseover', handleOutsideEvent);
-                currentTrigger?.removeEventListener('blur', handleBlurEvent);
+                currentTrigger?.removeEventListener('blur', closeTooltip);
             }
 
             return () => {
@@ -236,7 +317,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         }
 
         return undefined;
-    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleMouseEnter, handleBlurEvent]);
+    }, [triggerEventName, isOpen, currentTrigger, handleOutsideEvent, handleMouseEnter, closeTooltip]);
 
     useEffect(() => {
         if (triggerEventName === TriggerEvent.CLICK) {
@@ -275,20 +356,75 @@ const Tooltip: React.FC<ITooltipProps> = ({
         [],
     );
 
+    const renderText = useCallback((): JSX.Element => <div className={cn('text')}>{text}</div>, [text]);
+
+    const renderFullContent = useCallback(
+        (): JSX.Element => (
+            <>
+                {!!title && (
+                    <Header className={cn('title')} as="h5" space="tight">
+                        {title}
+                    </Header>
+                )}
+                {!!text && renderText()}
+                {!!buttonText && (
+                    <button
+                        type="button"
+                        className={cn('button')}
+                        {...filterDataAttrs(dataAttrs?.button)}
+                        onClick={onClick}
+                    >
+                        {buttonText}
+                        <RightArrow className={cn('button-arrow')} />
+                    </button>
+                )}
+                {!!children && <div className={cn('addititonal-content')}>{children}</div>}
+            </>
+        ),
+        [title, text, buttonText, children, dataAttrs, renderText, onClick],
+    );
+
     const template = (
         <div
             {...filterDataAttrs(dataAttrs?.root)}
-            className={cn({ paddings, open: isOpen }, [className, rootClassName])}
+            className={cn(
+                {
+                    theme,
+                    paddings,
+                    open: isOpen,
+                    small: !isBigSize,
+                    'has-escape': !targetElement,
+                },
+                [className, rootClassName],
+            )}
             ref={setPopperElement}
             style={styles.popper}
             {...attributes.popper}
         >
-            <div ref={setArrowElement} className={cn('arrow', [arrowClassName])} style={styles.arrow} />
-            <div className={cn('arrow-shadow')} style={styles.arrow} />
-            <Tile dataAttrs={{ root: dataAttrs?.content }} className={cn('content', [contentClassName])}>
-                {children}
+            <div className={cn('arrow-wrap')} ref={setArrowElement} style={styles.arrow}>
+                <div className={cn('arrow', [arrowClassName])}>
+                    <Arrow className={cn('arrow-inner')} />
+                </div>
+            </div>
+            <Tile
+                radius="rounded"
+                dataAttrs={{ root: dataAttrs?.content }}
+                className={cn('content', [contentClassName])}
+            >
+                {isBigSize && renderFullContent()}
+                {!isBigSize && !!text && renderText()}
+                {hasCloseButton && (
+                    <button
+                        {...filterDataAttrs(dataAttrs?.close)}
+                        className={cn('close-button')}
+                        type="button"
+                        onClick={handleCloseButtonClick}
+                    >
+                        <CancelIcon className={cn('close-icon')} />
+                    </button>
+                )}
             </Tile>
-            <Tile shadowLevel="default" className={cn('content-shadow', [contentShadowClassName])} />
+            <Tile radius="rounded" shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
         </div>
     );
 
@@ -307,6 +443,12 @@ const Tooltip: React.FC<ITooltipProps> = ({
 };
 
 Tooltip.propTypes = {
+    colorTheme: PropTypes.oneOf(Object.values(ColorTheme)),
+    size: PropTypes.oneOf(Object.values(Size)),
+    title: PropTypes.string,
+    buttonText: PropTypes.string,
+    text: PropTypes.string,
+    hasCloseButton: PropTypes.bool,
     placement: PropTypes.oneOf(Object.values(Placement)),
     fallbackPlacements: PropTypes.arrayOf(PropTypes.oneOf(Object.values(Placement)).isRequired),
     paddings: PropTypes.oneOf(Object.values(Paddings)),
@@ -349,10 +491,14 @@ Tooltip.propTypes = {
     }),
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        close: PropTypes.objectOf(PropTypes.string.isRequired),
+        button: PropTypes.objectOf(PropTypes.string.isRequired),
         content: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
+    onClick: PropTypes.func,
+    onCloseButtonClick: PropTypes.func,
 };
 
 export default Tooltip;
