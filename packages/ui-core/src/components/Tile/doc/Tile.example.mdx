@@ -3,20 +3,14 @@ import Tile from '../Tile';
 import { DemoTileWrapper, tileInner, tileInnerWhite, tileInnerWhiteRounded } from './Tile.docz';
 
 ```javascript collapse=Код DemoTileWrapper
-export const DemoTileWrapper = (
-    props: {
-        wrapperTheme: 'light' | 'dark';
-        children: JSX.Element[] | Element[] | JSX.Element | Element | string;
-    }
-) => {
+export const DemoTileWrapper = (props: {
+    wrapperTheme: 'light' | 'dark',
+    children: JSX.Element[] | Element[] | JSX.Element | Element | string,
+}) => {
     const { wrapperTheme = 'light', children } = props;
     const theme = wrapperTheme === 'dark' ? darkWrapperStyle : lightWrapperStyle;
 
-    return (
-        <div style={theme}>
-            {children}
-        </div>
-    );
+    return <div style={theme}>{children}</div>;
 };
 ```
 
@@ -32,14 +26,15 @@ const tileInner = {
     margin: '0 auto',
 };
 ```
+
 ## Формы
 
 <Playground>
     <DemoTileWrapper>
-        <Tile shadowLevel="low">
+        <Tile shadowLevel="default">
             <div style={tileInner}>Квадратная плитка</div>
         </Tile>
-        <Tile radius="rounded" shadowLevel="low">
+        <Tile radius="rounded" shadowLevel="default">
             <div style={tileInner}>Округлая плитка</div>
         </Tile>
     </DemoTileWrapper>
@@ -52,14 +47,14 @@ const tileInner = {
         <Tile shadowLevel="zero">
             <div style={tileInner}>Zero</div>
         </Tile>
-        <Tile shadowLevel="low">
-            <div style={tileInner}>Low</div>
-        </Tile>
-        <Tile shadowLevel="high">
-            <div style={tileInner}>High</div>
+        <Tile shadowLevel="default">
+            <div style={tileInner}>Default</div>
         </Tile>
         <Tile shadowLevel="hover">
             <div style={tileInner}>Hover</div>
+        </Tile>
+        <Tile shadowLevel="pressed">
+            <div style={tileInner}>Pressed</div>
         </Tile>
     </DemoTileWrapper>
 </Playground>
@@ -71,14 +66,14 @@ const tileInner = {
         <Tile isInteractive shadowLevel="zero">
             <div style={tileInner}>Zero</div>
         </Tile>
-        <Tile isInteractive shadowLevel="low">
-            <div style={tileInner}>Low</div>
-        </Tile>
-        <Tile isInteractive shadowLevel="high">
-            <div style={tileInner}>High</div>
+        <Tile isInteractive shadowLevel="default">
+            <div style={tileInner}>Default</div>
         </Tile>
         <Tile isInteractive shadowLevel="hover">
             <div style={tileInner}>Hover</div>
+        </Tile>
+        <Tile isInteractive shadowLevel="pressed">
+            <div style={tileInner}>Pressed</div>
         </Tile>
     </DemoTileWrapper>
 </Playground>
@@ -92,33 +87,34 @@ const tileInner = {
         <Tile shadowLevel="zero" theme="light">
             <div style={tileInner}>Zero shadow</div>
         </Tile>
-        <Tile shadowLevel="low" theme="light">
-            <div style={tileInner}>Low shadow</div>
-        </Tile>
-        <Tile shadowLevel="high" theme="light">
-            <div style={tileInner}>High shadow</div>
+        <Tile shadowLevel="default" theme="light">
+            <div style={tileInner}>Default shadow</div>
         </Tile>
         <Tile shadowLevel="hover" theme="light">
             <div style={tileInner}>Hover shadow</div>
+        </Tile>
+        <Tile shadowLevel="pressed" theme="light">
+            <div style={tileInner}>Pressed shadow</div>
         </Tile>
     </DemoTileWrapper>
     <DemoTileWrapper>
         <Tile radius="rounded" shadowLevel="zero" theme="light">
             <div style={tileInner}>Zero shadow</div>
         </Tile>
-        <Tile radius="rounded" shadowLevel="low" theme="light">
-            <div style={tileInner}>Low shadow</div>
-        </Tile>
-        <Tile radius="rounded" shadowLevel="high" theme="light">
-            <div style={tileInner}>High shadow</div>
+        <Tile radius="rounded" shadowLevel="default" theme="light">
+            <div style={tileInner}>Default shadow</div>
         </Tile>
         <Tile radius="rounded" shadowLevel="hover" theme="light">
             <div style={tileInner}>Hover shadow</div>
+        </Tile>
+        <Tile radius="rounded" shadowLevel="pressed" theme="light">
+            <div style={tileInner}>Pressed shadow</div>
         </Tile>
     </DemoTileWrapper>
 </Playground>
 
 ### Тёмный
+
 Тень плитки более прозрачная
 
 <Playground>
@@ -126,41 +122,40 @@ const tileInner = {
         <Tile shadowLevel="zero" theme="dark">
             <div style={tileInnerWhite}>Zero shadow</div>
         </Tile>
-        <Tile shadowLevel="low" theme="dark">
-            <div style={tileInnerWhite}>Low shadow</div>
-        </Tile>
-        <Tile shadowLevel="high" theme="dark">
-            <div style={tileInnerWhite}>High shadow</div>
+        <Tile shadowLevel="default" theme="dark">
+            <div style={tileInnerWhite}>Default shadow</div>
         </Tile>
         <Tile shadowLevel="hover" theme="dark">
             <div style={tileInnerWhite}>Hover shadow</div>
+        </Tile>
+        <Tile shadowLevel="pressed" theme="dark">
+            <div style={tileInnerWhite}>Pressed shadow</div>
         </Tile>
     </DemoTileWrapper>
     <DemoTileWrapper wrapperTheme="dark">
         <Tile radius="rounded" shadowLevel="zero">
             <div style={tileInnerWhiteRounded}>Zero shadow</div>
         </Tile>
-        <Tile radius="rounded" shadowLevel="low">
-            <div style={tileInnerWhiteRounded}>Low shadow</div>
-        </Tile>
-        <Tile radius="rounded" shadowLevel="high">
-            <div style={tileInnerWhiteRounded}>High shadow</div>
+        <Tile radius="rounded" shadowLevel="default">
+            <div style={tileInnerWhiteRounded}>Default shadow</div>
         </Tile>
         <Tile radius="rounded" shadowLevel="hover">
             <div style={tileInnerWhiteRounded}>Hover shadow</div>
         </Tile>
+        <Tile radius="rounded" shadowLevel="pressed">
+            <div style={tileInnerWhiteRounded}>Pressed shadow</div>
+        </Tile>
     </DemoTileWrapper>
 </Playground>
-
 
 ## Ссылка
 
 <Playground>
     <DemoTileWrapper>
-    <div style={{ width: '350px' }}>
-        <Tile shadowLevel="high" href="#">
-            <div style={tileInner}>Ссылка</div>
-        </Tile>
-    </div>
+        <div style={{ width: '350px' }}>
+            <Tile shadowLevel="pressed" href="#">
+                <div style={tileInner}>Ссылка</div>
+            </Tile>
+        </div>
     </DemoTileWrapper>
 </Playground>

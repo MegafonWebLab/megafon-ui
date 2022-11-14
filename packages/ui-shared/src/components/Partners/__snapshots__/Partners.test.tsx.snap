@@ -25,7 +25,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -58,7 +58,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -91,7 +91,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -124,7 +124,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -157,7 +157,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -190,7 +190,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -246,7 +246,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -271,7 +271,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -301,7 +301,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -326,7 +326,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -356,7 +356,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -381,7 +381,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -411,7 +411,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -436,7 +436,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -466,7 +466,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -491,7 +491,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -521,7 +521,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -546,7 +546,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -602,7 +602,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -627,7 +627,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -657,7 +657,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -682,7 +682,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -712,7 +712,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -737,7 +737,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -767,7 +767,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -792,7 +792,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -822,7 +822,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -847,7 +847,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -877,7 +877,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -920,7 +920,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -951,7 +951,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -982,7 +982,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -1013,7 +1013,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -1055,7 +1055,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -1085,7 +1085,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -1115,7 +1115,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -1145,7 +1145,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner"
@@ -1188,7 +1188,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner test-item-class"
@@ -1219,7 +1219,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner test-item-class"
@@ -1250,7 +1250,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner test-item-class"
@@ -1281,7 +1281,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
-        shadowLevel="low"
+        shadowLevel="default"
       >
         <div
           className="mfui-partners__tile-inner test-item-class"
