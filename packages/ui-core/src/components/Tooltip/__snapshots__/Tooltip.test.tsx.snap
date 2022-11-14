@@ -13,14 +13,18 @@ exports[`<Tooltip/> renders component with all props 1`] = `
   }
 >
   <div
-    className="mfui-tooltip__arrow-wrap"
+    className="mfui-tooltip__arrow-container"
   >
     <div
-      className="mfui-tooltip__arrow arrow"
+      className="mfui-tooltip__arrow-wrap"
     >
-      <test-file-stub
-        className="mfui-tooltip__arrow-inner"
-      />
+      <div
+        className="mfui-tooltip__arrow arrow"
+      >
+        <test-file-stub
+          className="mfui-tooltip__arrow-inner"
+        />
+      </div>
     </div>
   </div>
   <Tile
@@ -87,14 +91,18 @@ exports[`<Tooltip/> renders component with default props 1`] = `
   }
 >
   <div
-    className="mfui-tooltip__arrow-wrap"
+    className="mfui-tooltip__arrow-container"
   >
     <div
-      className="mfui-tooltip__arrow"
+      className="mfui-tooltip__arrow-wrap"
     >
-      <test-file-stub
-        className="mfui-tooltip__arrow-inner"
-      />
+      <div
+        className="mfui-tooltip__arrow"
+      >
+        <test-file-stub
+          className="mfui-tooltip__arrow-inner"
+        />
+      </div>
     </div>
   </div>
   <Tile

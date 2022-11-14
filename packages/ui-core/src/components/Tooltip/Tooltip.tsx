@@ -356,9 +356,9 @@ const Tooltip: React.FC<ITooltipProps> = ({
         [],
     );
 
-    const renderText = useCallback((): JSX.Element => <div className={cn('text')}>{text}</div>, [text]);
+    const renderedText = useMemo((): JSX.Element => <div className={cn('text')}>{text}</div>, [text]);
 
-    const renderFullContent = useCallback(
+    const renderedFullContent = useMemo(
         (): JSX.Element => (
             <>
                 {!!title && (
@@ -366,7 +366,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
                         {title}
                     </Header>
                 )}
-                {!!text && renderText()}
+                {!!text && renderedText}
                 {!!buttonText && (
                     <button
                         type="button"
@@ -381,7 +381,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
                 {!!children && <div className={cn('addititonal-content')}>{children}</div>}
             </>
         ),
-        [title, text, buttonText, children, dataAttrs, renderText, onClick],
+        [title, text, buttonText, children, dataAttrs, renderedText, onClick],
     );
 
     const template = (
@@ -401,9 +401,13 @@ const Tooltip: React.FC<ITooltipProps> = ({
             style={styles.popper}
             {...attributes.popper}
         >
-            <div className={cn('arrow-wrap')} ref={setArrowElement} style={styles.arrow}>
-                <div className={cn('arrow', [arrowClassName])}>
-                    <Arrow className={cn('arrow-inner')} />
+            {/* arrow-container необходим для того, чтобы, если triggerEvent === "hover", 
+            тултип не пропадал при наведении курсора на область между родителем и тултипом */}
+            <div className={cn('arrow-container')}>
+                <div className={cn('arrow-wrap')} ref={setArrowElement} style={styles.arrow}>
+                    <div className={cn('arrow', [arrowClassName])}>
+                        <Arrow className={cn('arrow-inner')} />
+                    </div>
                 </div>
             </div>
             <Tile
@@ -411,8 +415,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
                 dataAttrs={{ root: dataAttrs?.content }}
                 className={cn('content', [contentClassName])}
             >
-                {isBigSize && renderFullContent()}
-                {!isBigSize && !!text && renderText()}
+                {isBigSize && renderedFullContent}
+                {!isBigSize && !!text && renderedText}
                 {hasCloseButton && (
                     <button
                         {...filterDataAttrs(dataAttrs?.close)}

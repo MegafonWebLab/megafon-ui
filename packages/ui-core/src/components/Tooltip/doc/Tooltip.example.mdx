@@ -350,6 +350,26 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
         {({ triggerElement }) => (
             <>
                 <span ref={triggerElement}>
+                    <Button fullWidth>Открыть белый тултип</Button>
+                </span>
+                <Tooltip
+                    triggerEvent="click"
+                    triggerElement={triggerElement}
+                    colorTheme="white"
+                    title="Заголовок"
+                    text="Белая тема (по умолчанию)"
+                    hasCloseButton
+                    buttonText="Кнопка"
+                >
+                  Дополнительное содержимое тултипа  
+                </Tooltip>
+            </>
+        )}
+    </DemoTooltipWithTriggerWrapper>
+    <DemoTooltipWithTriggerWrapper>
+        {({ triggerElement }) => (
+            <>
+                <span ref={triggerElement}>
                     <Button fullWidth>Открыть красный тултип</Button>
                 </span>
                 <Tooltip
