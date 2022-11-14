@@ -3,12 +3,12 @@ import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './Tile.less';
 
-export const ShadowColor = {
+export const Theme = {
     LIGHT: 'light',
     DARK: 'dark',
 } as const;
 
-type ShadowColorType = typeof ShadowColor[keyof typeof ShadowColor];
+type ThemeType = typeof Theme[keyof typeof Theme];
 
 export const Radius = {
     DEFAULT: 'default',
@@ -37,7 +37,7 @@ export interface ITileProps {
     target?: '_self' | '_blank';
     /** Тема */
     // TODO: переименовать в shadowColor
-    theme?: ShadowColorType;
+    theme?: ThemeType;
     /** Радиус границы */
     radius?: RadiusType;
     /** Уровень тени */
@@ -59,6 +59,7 @@ const Tile: React.FC<ITileProps> = ({
     href,
     children,
     className,
+    // TODO: переименовать в shadowColor
     theme = 'light',
     shadowLevel = 'zero',
     radius = 'default',
@@ -76,7 +77,8 @@ const Tile: React.FC<ITileProps> = ({
         <div
             className={cn(
                 {
-                    'shadow-color': theme,
+                    // TODO: переименовать в shadowColor
+                    theme,
                     radius,
                     shadow: shadowLevel,
                     pointer: isPointer,
@@ -99,7 +101,7 @@ const Tile: React.FC<ITileProps> = ({
 
 Tile.propTypes = {
     href: PropTypes.string,
-    theme: PropTypes.oneOf(Object.values(ShadowColor)),
+    theme: PropTypes.oneOf(Object.values(Theme)),
     radius: PropTypes.oneOf(Object.values(Radius)),
     shadowLevel: PropTypes.oneOf(Object.values(ShadowLevel)),
     className: PropTypes.string,

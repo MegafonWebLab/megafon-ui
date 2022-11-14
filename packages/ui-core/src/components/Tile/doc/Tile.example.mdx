@@ -4,11 +4,11 @@ import { DemoTileWrapper, tileInner, tileInnerWhite, tileInnerWhiteRounded } fro
 
 ```javascript collapse=Код DemoTileWrapper
 export const DemoTileWrapper = (props: {
-    wrapperShadowColor: 'light' | 'dark',
+    wrapperTheme: 'light' | 'dark',
     children: JSX.Element[] | Element[] | JSX.Element | Element | string,
 }) => {
-    const { wrapperShadowColor = 'light', children } = props;
-    const theme = wrapperShadowColor === 'dark' ? darkWrapperStyle : lightWrapperStyle;
+    const { wrapperTheme = 'light', children } = props;
+    const theme = wrapperTheme === 'dark' ? darkWrapperStyle : lightWrapperStyle;
 
     return <div style={theme}>{children}</div>;
 };
@@ -84,30 +84,30 @@ const tileInner = {
 
 <Playground>
     <DemoTileWrapper>
-        <Tile shadowLevel="zero" shadowColor="light">
+        <Tile shadowLevel="zero" theme="light">
             <div style={tileInner}>Zero shadow</div>
         </Tile>
-        <Tile shadowLevel="default" shadowColor="light">
+        <Tile shadowLevel="default" theme="light">
             <div style={tileInner}>Default shadow</div>
         </Tile>
-        <Tile shadowLevel="hover" shadowColor="light">
+        <Tile shadowLevel="hover" theme="light">
             <div style={tileInner}>Hover shadow</div>
         </Tile>
-        <Tile shadowLevel="pressed" shadowColor="light">
+        <Tile shadowLevel="pressed" theme="light">
             <div style={tileInner}>Pressed shadow</div>
         </Tile>
     </DemoTileWrapper>
     <DemoTileWrapper>
-        <Tile radius="rounded" shadowLevel="zero" shadowColor="light">
+        <Tile radius="rounded" shadowLevel="zero" theme="light">
             <div style={tileInner}>Zero shadow</div>
         </Tile>
-        <Tile radius="rounded" shadowLevel="default" shadowColor="light">
+        <Tile radius="rounded" shadowLevel="default" theme="light">
             <div style={tileInner}>Default shadow</div>
         </Tile>
-        <Tile radius="rounded" shadowLevel="hover" shadowColor="light">
+        <Tile radius="rounded" shadowLevel="hover" theme="light">
             <div style={tileInner}>Hover shadow</div>
         </Tile>
-        <Tile radius="rounded" shadowLevel="pressed" shadowColor="light">
+        <Tile radius="rounded" shadowLevel="pressed" theme="light">
             <div style={tileInner}>Pressed shadow</div>
         </Tile>
     </DemoTileWrapper>
@@ -118,21 +118,21 @@ const tileInner = {
 Тень плитки более прозрачная
 
 <Playground>
-    <DemoTileWrapper wrapperShadowColor="dark">
-        <Tile shadowLevel="zero" shadowColor="dark">
+    <DemoTileWrapper wrapperTheme="dark">
+        <Tile shadowLevel="zero" theme="dark">
             <div style={tileInnerWhite}>Zero shadow</div>
         </Tile>
-        <Tile shadowLevel="default" shadowColor="dark">
+        <Tile shadowLevel="default" theme="dark">
             <div style={tileInnerWhite}>Default shadow</div>
         </Tile>
-        <Tile shadowLevel="hover" shadowColor="dark">
+        <Tile shadowLevel="hover" theme="dark">
             <div style={tileInnerWhite}>Hover shadow</div>
         </Tile>
-        <Tile shadowLevel="pressed" shadowColor="dark">
+        <Tile shadowLevel="pressed" theme="dark">
             <div style={tileInnerWhite}>Pressed shadow</div>
         </Tile>
     </DemoTileWrapper>
-    <DemoTileWrapper wrapperShadowColor="dark">
+    <DemoTileWrapper wrapperTheme="dark">
         <Tile radius="rounded" shadowLevel="zero">
             <div style={tileInnerWhiteRounded}>Zero shadow</div>
         </Tile>

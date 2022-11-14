@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import Tile, { ITileProps, ShadowColor, Radius, ShadowLevel } from './Tile';
+import Tile, { ITileProps, Theme, Radius, ShadowLevel } from './Tile';
 
 const props: ITileProps = {
     className: 'test-class',
     href: 'test-link',
-    theme: ShadowColor.DARK,
+    theme: Theme.DARK,
     radius: Radius.ROUNDED,
     shadowLevel: ShadowLevel.PRESSED,
     isInteractive: true,

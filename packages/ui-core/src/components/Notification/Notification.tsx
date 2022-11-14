@@ -27,10 +27,10 @@ type NotificationType = typeof NotificationTypes[keyof typeof NotificationTypes]
 
 export const ShadowTypes = {
     ZERO: 'zero',
+    /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
     LOW: 'low',
     /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
     HIGH: 'high',
-    /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
     HOVER: 'hover',
     PRESSED: 'pressed',
     DEFAULT: 'default',
