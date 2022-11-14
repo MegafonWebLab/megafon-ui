@@ -7,10 +7,10 @@ import RightArrow from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 import WarningIcon from '@megafon/ui-icons/system-24-attention_invert_24.svg';
 import SuccessIcon from '@megafon/ui-icons/system-24-checked_24.svg';
 import InfoIcon from '@megafon/ui-icons/system-24-info_invert_24.svg';
+import * as PropTypes from 'prop-types';
 import Button from 'components/Button/Button';
 import TextLink from 'components/TextLink/TextLink';
 import Tile from 'components/Tile/Tile';
-import * as PropTypes from 'prop-types';
 import CancelIcon from './close-icon.svg';
 import './Notification.less';
 
