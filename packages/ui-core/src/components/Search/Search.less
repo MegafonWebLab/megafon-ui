@@ -219,6 +219,24 @@
         max-height: 368px;
         padding: 16px;
         overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--spbSky2) transparent;
+    }
+
+    &__list-inner::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    &__list-inner::-webkit-scrollbar-thumb {
+        border: 6px solid transparent;
+        border-radius: 16px;
+
+        background-color: #D8D8D8;
+        background-clip: padding-box;
+    }
+
+    &__list-inner::-webkit-scrollbar-thumb:hover {
+        background-color: #999999;
     }
 
     &__list-item {
