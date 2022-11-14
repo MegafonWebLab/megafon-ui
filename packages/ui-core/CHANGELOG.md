@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.7.0...@megafon/ui-core@4.8.0) (2022-11-14)
+
+
+### Bug Fixes
+
+* **search:** fix scrollbar styles ([c8df5df](https://github.com/MegafonWebLab/megafon-ui/commit/c8df5df9787984a5eb9556b786ab8a6bee75dcb7))
+* **select:** fix scrollbar styles ([15fdd41](https://github.com/MegafonWebLab/megafon-ui/commit/15fdd4170b600b8dad5f6144dadb86ae1d1e7cc0))
+* **tabs:** update resize ([710895f](https://github.com/MegafonWebLab/megafon-ui/commit/710895f4c2f0899fb41ac08e7dde7b1636c24ed9))
+* **textfield:** fix scrollbar styles ([8205a34](https://github.com/MegafonWebLab/megafon-ui/commit/8205a345dfe254a8f46fe4b1023f18761a5a9d29))
+
+
+### Features
+
+* **tooltip:** add props and update design ([3bb935a](https://github.com/MegafonWebLab/megafon-ui/commit/3bb935ae0b8f302f4dd9a9ef58496e9f19e3cd2f))
+
+
+
+
+
 # [4.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.6.0...@megafon/ui-core@4.7.0) (2022-11-07)
 
 

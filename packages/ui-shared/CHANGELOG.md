@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.4.1...@megafon/ui-shared@4.5.0) (2022-11-14)
+
+
+### Features
+
+* **videoblock:** added for title and description render html tags ([d0d2255](https://github.com/MegafonWebLab/megafon-ui/commit/d0d2255abb80e73058151967721a447c8ebc4028))
+* **videoblock:** fixed and ddded tag b for description ([6e7de85](https://github.com/MegafonWebLab/megafon-ui/commit/6e7de853b8ff920f4b0de2ecfd3cdb8538bc727a))
+* **videoblock:** return types and change config for description ([75f18e1](https://github.com/MegafonWebLab/megafon-ui/commit/75f18e10e6cb22779cceaf90f8a6e0e258a92612))
+
+
+
+
+
 ## [4.4.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.4.0...@megafon/ui-shared@4.4.1) (2022-11-07)
 
 
