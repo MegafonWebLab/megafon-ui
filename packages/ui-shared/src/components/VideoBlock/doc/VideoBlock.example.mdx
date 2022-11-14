@@ -74,3 +74,33 @@ const contentWithoutButton: IContent = {
         videoType="youtube"
     />
 </Playground>
+
+## HTML-теги и спецсимволы
+
+```javascript
+
+В свойстве content в свойствах title и description поддерживаются некоторые HTML-теги: "<br>, <font color>, <a href>".
+
+Также в обоих свойствах поддерживается спецсимвол &nbsp.
+
+```
+
+```javascript collapse=Демо данные
+const htmlTitle: '<a href="https://moscow.megafon.ru">Текст</a><br><font color="#731982">≈40</font> символов.&nbspКороткие слова',
+const htmlDescription = 'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#731982">примерно</font> не более 130 символов.<br>Пишите содержательно, кратно и не будет проблем с текстовым контентом.';
+
+
+```
+
+<Playground>
+    <VideoBlock
+        content={{
+            title: '<a href="https://moscow.megafon.ru">Текст</a><br><font color="#731982">≈40</font> символов.&nbspКороткие слова',
+            description: 'Описание&nbspдолжно <a href="https://moscow.megafon.ru">быть</a> <font color="#731982">примерно</font> не более 130 символов.<br>Пишите <b>содержательно</b>, кратно и не будет проблем с текстовым контентом.',
+            href: '#',
+            buttonTitle: 'Подключение',
+        }}
+        videoSrc={youtubeVideoId}
+        videoType="youtube"
+    />
+</Playground>

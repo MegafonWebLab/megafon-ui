@@ -1,182 +1,516 @@
 import React, { createRef } from 'react';
 import { detectTouch } from '@megafon/ui-helpers';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
-import { mount, shallow } from 'enzyme';
-import Button, { IButtonProps } from './Button';
+import { act, fireEvent, render } from '@testing-library/react';
+import Button from './Button';
 
 jest.mock('@megafon/ui-helpers', () => ({
     ...jest.requireActual('@megafon/ui-helpers'),
     detectTouch: jest.fn().mockReturnValue(false),
 }));
 
-const props: IButtonProps = {
-    className: 'class',
-    dataAttrs: {
-        root: {
-            'data-root': 'test',
-        },
-        content: {
-            'data-content': 'test',
-        },
-        inner: {
-            'data-inner': 'test',
-        },
-        loader: {
-            'data-loader': 'test',
-        },
+const dataAttrs = {
+    root: {
+        'data-testid': 'root',
     },
-    classes: {
-        root: 'root-class',
-        content: 'content-class',
+    content: {
+        'data-testid': 'content',
     },
-    theme: 'purple',
-    type: 'primary',
-    href: 'any',
-    target: '_blank',
-    actionType: 'reset',
-    sizeAll: 'large',
+    inner: {
+        'data-testid': 'inner',
+    },
+    loader: {
+        'data-testid': 'loader',
+    },
+    text: {
+        'data-testid': 'text',
+    },
+    arrow: {
+        'data-testid': 'arrow',
+    },
 };
-const cn = '.mfui-button';
 
 describe('<Button />', () => {
     afterAll(() => jest.restoreAllMocks());
 
-    describe('layout', () => {
-        it('renders Button with default props', () => {
-            const wrapper = shallow(<Button />);
-            expect(wrapper).toMatchSnapshot();
+    it('should render Button', () => {
+        const { container } = render(<Button icon={<Balance />}>Title</Button>);
+
+        expect(container).toMatchSnapshot();
+    });
+
+    it('should render with classes', () => {
+        const { getByTestId } = render(
+            <Button
+                className="custom-class"
+                classes={{ root: 'root-class', content: 'content-class', inner: 'inner-class' }}
+                dataAttrs={dataAttrs}
+            >
+                Title
+            </Button>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('root-class');
+        expect(getByTestId('content')).toHaveClass('content-class');
+        expect(getByTestId('inner')).toHaveClass('inner-class');
+    });
+
+    it('should render with dataAttrs', () => {
+        const { queryByTestId } = render(
+            <Button showArrow dataAttrs={dataAttrs}>
+                Title
+            </Button>,
+        );
+
+        expect(queryByTestId('root')).toBeTruthy();
+        expect(queryByTestId('content')).toBeTruthy();
+        expect(queryByTestId('inner')).toBeTruthy();
+        expect(queryByTestId('text')).toBeTruthy();
+        expect(queryByTestId('arrow')).toBeTruthy();
+    });
+
+    it('should render with loader dataAttrs', () => {
+        jest.useFakeTimers();
+
+        const { queryByTestId } = render(
+            <Button showLoader dataAttrs={dataAttrs}>
+                Title
+            </Button>,
+        );
+
+        act(() => {
+            jest.runAllTimers();
         });
 
-        it('renders Button with props', () => {
-            const wrapper = shallow(<Button {...props} />);
-            expect(wrapper).toMatchSnapshot();
+        expect(queryByTestId('loader')).toBeTruthy();
+
+        jest.clearAllTimers();
+    });
+
+    it('should render with sizes', () => {
+        const { getByTestId } = render(
+            <Button
+                sizeAll="large"
+                sizeWide="large"
+                sizeDesktop="large"
+                sizeTablet="large"
+                sizeMobile="large"
+                dataAttrs={dataAttrs}
+            >
+                Title
+            </Button>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-button_size-all_large');
+        expect(getByTestId('root')).toHaveClass('mfui-button_size-wide_large');
+        expect(getByTestId('root')).toHaveClass('mfui-button_size-desktop_large');
+        expect(getByTestId('root')).toHaveClass('mfui-button_size-tablet_large');
+        expect(getByTestId('root')).toHaveClass('mfui-button_size-mobile_large');
+    });
+
+    it('should render when fullWidth is true', () => {
+        const { getByTestId } = render(
+            <Button fullWidth dataAttrs={dataAttrs}>
+                Title
+            </Button>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-button_full-width');
+    });
+
+    it('should render when showLoader is true', () => {
+        jest.useFakeTimers();
+
+        const { queryByTestId } = render(
+            <Button showLoader dataAttrs={dataAttrs}>
+                Title
+            </Button>,
+        );
+
+        act(() => {
+            jest.runAllTimers();
         });
 
-        it('it renders Button on touch devices', () => {
-            (detectTouch as jest.Mock).mockReturnValueOnce(true);
+        expect(queryByTestId('loader')).toBeInTheDocument();
 
-            const wrapper = mount(<Button />);
+        jest.useRealTimers();
+    });
 
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render when showArrow is true and icon is missing', () => {
+        const { queryByTestId } = render(
+            <Button showArrow dataAttrs={dataAttrs}>
+                Title
+            </Button>,
+        );
 
-        it('it renders children', () => {
-            const wrapper = shallow(<Button {...props}>button</Button>);
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(queryByTestId('arrow')).toBeInTheDocument();
+    });
 
-        it('should render with different height for resolutions', () => {
-            const wrapper = shallow(
-                <Button {...props} sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" />,
-            );
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render when showArrow is true and icon is passed', () => {
+        const { queryByTestId } = render(
+            <Button showArrow icon={<Balance data-testid="icon" />} dataAttrs={dataAttrs}>
+                Title
+            </Button>,
+        );
 
-        it('should render full width button', () => {
-            const wrapper = shallow(<Button {...props} fullWidth />);
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(queryByTestId('arrow')).not.toBeInTheDocument();
+        expect(queryByTestId('icon')).toBeInTheDocument();
+    });
 
-        it('should render with arrow icon on the right', () => {
-            const wrapper = shallow(<Button showArrow>arrow</Button>);
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render when ellipsis is true', () => {
+        const { queryByTestId } = render(
+            <Button ellipsis dataAttrs={dataAttrs}>
+                Title
+            </Button>,
+        );
 
-        it('should render with custom icon', () => {
-            const wrapper = shallow(<Button icon={<Balance />} />);
+        expect(queryByTestId('content')).toHaveClass('mfui-button__content_ellipsis');
+        expect(queryByTestId('text')).toHaveClass('mfui-button__text_ellipsis');
+    });
 
-            expect(wrapper.exists(`${cn}_content-type_icon`)).toBeTruthy();
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render on desktop devices', () => {
+        (detectTouch as jest.Mock).mockReturnValueOnce(false);
 
-        it('should render with custom icon and children', () => {
-            const wrapper = shallow(<Button icon={<Balance />}>left icon</Button>);
+        const { getByTestId } = render(<Button dataAttrs={dataAttrs}>Title</Button>);
 
-            expect(wrapper.exists(`${cn}_content-type_icon-text`)).toBeTruthy();
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(getByTestId('root')).toHaveClass('mfui-button_no-touch');
+    });
 
-        it('should render with custom icon and without arrow icon on the right', () => {
-            const wrapper = shallow(
-                <Button showArrow icon={<Balance />}>
-                    left icon
+    it('should render on mobile devices', () => {
+        (detectTouch as jest.Mock).mockReturnValueOnce(true);
+
+        const { getByTestId } = render(<Button dataAttrs={dataAttrs}>Title</Button>);
+
+        expect(getByTestId('root')).not.toHaveClass('mfui-button_no-touch');
+    });
+
+    describe('theme and type', () => {
+        it('should render with black theme and primary type', () => {
+            jest.useFakeTimers();
+
+            const { getByTestId } = render(
+                <Button theme="black" type="primary" showLoader dataAttrs={dataAttrs}>
+                    Title
                 </Button>,
             );
-            expect(wrapper.exists(`${cn}__icon-arrow`)).toBeFalsy();
+
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_primary');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_green');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_default');
+
+            jest.useRealTimers();
         });
 
-        it('should render tag button with disabled state', () => {
-            const wrapper = shallow(<Button disabled href={undefined} />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with white theme and primary type', () => {
+            jest.useFakeTimers();
+
+            const { getByTestId } = render(
+                <Button theme="white" type="primary" showLoader dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_primary');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_white');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_default');
+
+            jest.useRealTimers();
         });
 
-        it('should render tag a with disabled state', () => {
-            const wrapper = shallow(<Button disabled href="test" />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with green theme and primary type', () => {
+            jest.useFakeTimers();
+
+            const { getByTestId } = render(
+                <Button theme="green" type="primary" showLoader dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_primary');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_green');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_white');
+
+            jest.useRealTimers();
         });
 
-        it('should render tag with target _self and without rel attribute', () => {
-            const wrapper = shallow(<Button href="test" target="_self" />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with purple theme and primary type', () => {
+            jest.useFakeTimers();
+
+            const { getByTestId } = render(
+                <Button theme="purple" type="primary" showLoader dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_primary');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_purple');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_white');
+
+            jest.useRealTimers();
         });
 
-        it('should render tag without target, href and rel attribute', () => {
-            const wrapper = shallow(<Button rel="nofollow" />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with black theme and outline type', () => {
+            jest.useFakeTimers();
+
+            const { getByTestId } = render(
+                <Button theme="black" type="outline" showLoader dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_outline');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_black');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_black');
+
+            jest.useRealTimers();
         });
 
-        it('should render tag without target and with rel attribute', () => {
-            const wrapper = shallow(<Button href="test" rel="nofollow" />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with white theme and outline type', () => {
+            jest.useFakeTimers();
+
+            const { getByTestId } = render(
+                <Button theme="white" type="outline" showLoader dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_outline');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_white');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_white');
+
+            jest.useRealTimers();
         });
 
-        it('should render tag "a" with download attribute', () => {
-            const wrapper = shallow(<Button href="test" download />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with green theme and outline type', () => {
+            jest.useFakeTimers();
+
+            const { getByTestId } = render(
+                <Button theme="green" type="outline" showLoader dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_outline');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_green');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_default');
+
+            jest.useRealTimers();
         });
 
-        it('should render green theme when type is "primary" and theme is "black"', () => {
-            const wrapper = shallow(<Button type="primary" theme="black" />);
-            expect(wrapper.exists(`${cn}_theme_green`)).toBeTruthy();
-        });
+        it('should render with purple theme and outline type', () => {
+            jest.useFakeTimers();
 
-        it('should set classes with ellipsis', () => {
-            const wrapper = shallow(<Button ellipsis>Button text</Button>);
+            const { getByTestId } = render(
+                <Button theme="purple" type="outline" showLoader dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
 
-            expect(wrapper.exists(`${cn}__content_ellipsis`)).toBeTruthy();
-            expect(wrapper.exists(`${cn}__text_ellipsis`)).toBeTruthy();
+            act(() => {
+                jest.runAllTimers();
+            });
+
+            expect(getByTestId('root')).toHaveClass('mfui-button_type_outline');
+            expect(getByTestId('root')).toHaveClass('mfui-button_theme_purple');
+            expect(getByTestId('loader')).toHaveClass('mfui-preloader_color_default');
+
+            jest.useRealTimers();
         });
     });
 
-    describe('snapshots with loader', () => {
-        it('it renders loader with white color and medium size on all resolutions', () => {
-            const wrapper = shallow(<Button {...props} showLoader />);
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render loader with default color', () => {
-            const wrapper = shallow(<Button type="outline" theme="purple" showLoader />);
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render loader with black color', () => {
-            const wrapper = shallow(<Button type="outline" theme="black" showLoader />);
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render loader with small size on mobile resolution and medium size on the rest', () => {
-            const wrapper = shallow(
-                <Button sizeWide="large" sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showLoader />,
+    describe('href', () => {
+        it('should render with href', () => {
+            const { getByTestId } = render(
+                <Button href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
             );
-            expect(wrapper).toMatchSnapshot();
+
+            expect(getByTestId('root').nodeName).toBe('A');
+            expect(getByTestId('root')).toHaveAttribute('href', 'test.com');
+        });
+
+        it('should render without href', () => {
+            const { getByTestId } = render(<Button dataAttrs={dataAttrs}>Title</Button>);
+
+            expect(getByTestId('root').nodeName).toBe('BUTTON');
+            expect(getByTestId('root')).not.toHaveAttribute('href');
+        });
+    });
+
+    describe('download', () => {
+        it('should render when download is true and href is passed', () => {
+            const { getByTestId } = render(
+                <Button download href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).toHaveAttribute('download');
+        });
+
+        it('should render when download is false and href is passed', () => {
+            const { getByTestId } = render(
+                <Button download={false} href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).not.toHaveAttribute('download');
+        });
+
+        it('should render when download is true and href is missing', () => {
+            const { getByTestId } = render(
+                <Button download dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).not.toHaveAttribute('download');
+        });
+    });
+
+    describe('disabled', () => {
+        it('should render when disabled is true and href is passed', () => {
+            const { getByTestId } = render(
+                <Button disabled href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).not.toHaveAttribute('disabled');
+        });
+
+        it('should render when download is false and href is passed', () => {
+            const { getByTestId } = render(
+                <Button disabled={false} href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).not.toHaveAttribute('download');
+        });
+
+        it('should render when disabled is true and href is missing', () => {
+            const { getByTestId } = render(
+                <Button disabled dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).toHaveAttribute('disabled');
+        });
+    });
+
+    describe('target', () => {
+        it('should render when target and href is passed', () => {
+            const { getByTestId } = render(
+                <Button target="_blank" href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).toHaveAttribute('target', '_blank');
+        });
+
+        it('should render when target is passed and href is missing', () => {
+            const { getByTestId } = render(
+                <Button target="_blank" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).not.toHaveAttribute('target');
+        });
+    });
+
+    describe('rel', () => {
+        it('should render when rel is passed and href is missing', () => {
+            const { getByTestId } = render(
+                <Button rel="contact" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).not.toHaveAttribute('rel');
+        });
+
+        it('should render when rel and href are passed', () => {
+            const { getByTestId } = render(
+                <Button rel="contact" href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).toHaveAttribute('rel', 'contact');
+        });
+
+        it('should render when rel is missing and target is different from _self', () => {
+            const { getByTestId } = render(
+                <Button target="_blank" href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).toHaveAttribute('rel', 'noreferrer noopener');
+        });
+    });
+
+    describe('actionType', () => {
+        it('should render when actionType and href are passed', () => {
+            const { getByTestId } = render(
+                <Button actionType="submit" href="test.com" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).not.toHaveAttribute('type');
+        });
+
+        it('should render when actionType is passed and href is missing', () => {
+            const { getByTestId } = render(
+                <Button actionType="submit" dataAttrs={dataAttrs}>
+                    Title
+                </Button>,
+            );
+
+            expect(getByTestId('root')).toHaveAttribute('type', 'submit');
         });
     });
 
     it('should call onClick props', () => {
         const onClick = jest.fn();
-        const wrapper = shallow(<Button onClick={onClick} />);
+        const { getByTestId } = render(<Button onClick={onClick} dataAttrs={dataAttrs} />);
 
-        wrapper.simulate('click');
+        fireEvent.click(getByTestId('root'));
 
         expect(onClick).toBeCalled();
     });
@@ -184,7 +518,7 @@ describe('<Button />', () => {
     it('should return a reference to the element', () => {
         const ref: React.RefObject<HTMLButtonElement> = createRef();
 
-        mount(<Button buttonRef={ref} />);
+        render(<Button buttonRef={ref} />);
 
         if (ref.current === null) {
             throw new Error('No ref');

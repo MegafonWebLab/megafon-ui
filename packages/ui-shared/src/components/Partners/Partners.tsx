@@ -74,7 +74,7 @@ const Partners: React.FC<IPartnersProps> = ({
             return (
                 <Tile
                     href={href}
-                    shadowLevel="low"
+                    shadowLevel="default"
                     isInteractive={!!href}
                     className={cn('tile')}
                     dataAttrs={{ root: { ...filterDataAttrs(dataAttrs?.item, index + 1) } }}

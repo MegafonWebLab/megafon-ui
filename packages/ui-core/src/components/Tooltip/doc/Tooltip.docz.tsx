@@ -5,9 +5,41 @@ import { TriggerEvent } from '../Tooltip';
 export const demoWrapperBlockStyles: React.CSSProperties = {
     display: 'grid',
     gap: '24px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 450px))',
     justifyContent: 'center',
     padding: '100px 50px',
+};
+
+export const demoWrapperWithScroll: React.CSSProperties = {
+    position: 'relative',
+    width: '400px',
+    height: '200px',
+    borderRadius: '10px',
+    overflow: 'scroll',
+    padding: '15px',
+    overscrollBehavior: 'contain',
+    backgroundColor: '#333333',
+    color: 'grey',
+};
+
+export const demoWrapperWithScrollBig: React.CSSProperties = {
+    ...demoWrapperWithScroll,
+    width: '880px',
+    height: '400px',
+};
+
+export const demoButtonContainer: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '15px',
+    width: '300px',
+    height: '300px',
+    margin: '280px 700px',
+    padding: '20px',
+    textAlign: 'center',
+    border: '1px dashed grey',
 };
 
 export const DemoTooltipWithTriggerWrapper = ({ children }) => {

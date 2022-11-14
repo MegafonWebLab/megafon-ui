@@ -2,18 +2,22 @@
 
 @b: e('.mfui-tooltip');
 @popperLeft: ~"[data-popper-placement='left']";
+@popperLeftStart: ~"[data-popper-placement='left-start']";
+@popperLeftEnd: ~"[data-popper-placement='left-end']";
 @popperRight: ~"[data-popper-placement='right']";
+@popperRightStart: ~"[data-popper-placement='right-start']";
+@popperRightEnd: ~"[data-popper-placement='right-end']";
 @popperTop: ~"[data-popper-placement='top']";
+@popperTopStart: ~"[data-popper-placement='top-start']";
+@popperTopEnd: ~"[data-popper-placement='top-end']";
 @popperBottom: ~"[data-popper-placement='bottom']";
+@popperBottomStart: ~"[data-popper-placement='bottom-start']";
+@popperBottomEnd: ~"[data-popper-placement='bottom-end']";
 @popperEscaped: ~"[data-popper-escaped='true']";
-@popperOffset: 14px;
-@arrowSize: 12px;
-@arrowOffset: @popperOffset + @arrowSize / 2;
-@arrowPosition: calc(~'100% - @{arrowOffset}');
 
 .arrowSize() {
-    width: @arrowSize;
-    height: @arrowSize;
+    width: 42px;
+    height: 12px;
 }
 
 .arrow() {
@@ -22,8 +26,6 @@
     position: absolute;
     top: 0;
     left: 0;
-
-    transform: rotate(45deg);
 }
 
 @{b} {
@@ -34,6 +36,8 @@
 
     transition-duration: @defaultTransitionTiming;
     transition-property: opacity, visibility;
+
+    .smallFont();
 
     pointer-events: none;
 
@@ -46,7 +50,7 @@
 
     &_paddings_small {
         @{b}__content {
-            padding: 8px 16px;
+            padding: 16px;
         }
     }
 
@@ -59,115 +63,304 @@
     &__content {
         position: relative;
         z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     &__content-shadow {
         position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         z-index: -1;
+    }
+
+    &__arrow-container {
+        position: absolute;
+    }
+
+    &__arrow-wrap {
+        .arrowSize();
     }
 
     &__arrow {
         .arrowSize();
         position: absolute;
+    }
 
-        &:before {
-            .arrow();
-            background-color: var(--base);
+    &__arrow-inner {
+        filter: drop-shadow(0 2px 9px rgba(0, 0, 0, 0.15));
+
+        fill: var(--base);
+    }
+
+    &__text {
+        .smallFont();
+    }
+
+    &__button,
+    &__close-button {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0;
+
+        border: none;
+
+        cursor: pointer;
+    }
+
+    &__button {
+        .fontFamily();
+
+        color: var(--brandGreen);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+
+        background-color: transparent;
+
+        transition: 300ms;
+    }
+
+    &__button:hover {
+        color: var(--buttonHoverGreen);
+
+        @{b}__button-arrow {
+            fill: var(--buttonHoverGreen);
         }
     }
 
-    &__arrow-shadow {
-        .arrowSize();
+    &__button:active {
+        color: var(--buttonDown);
+
+        @{b}__button-arrow {
+            fill: var(--buttonDown);
+        }
+    }
+
+    &__close-button {
         position: absolute;
-        z-index: -1;
+        top: 10px;
+        right: 10px;
 
-        &:before {
-            .arrow();
-            box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.15);
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+
+        margin-left: 24px;
+
+        border-radius: 12px;
+
+        background-color: var(--spbSky0);
+
+        transition: 300ms;
+    }
+
+    &__close-button:hover {
+        background-color: var(--spbSky1);
+    }
+
+    &__close-button:active {
+        background-color: var(--spbSky2);
+    }
+
+    &__close-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        opacity: 0.5;
+
+        fill: var(--content);
+    }
+
+    &__button-arrow {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+
+        margin-bottom: -2px;
+
+        transition: 300ms;
+
+        fill: var(--brandGreen);
+    }
+
+    &_small {
+        @{b}__content {
+            display: flex;
+            flex-direction: row;
+            gap: 18px;
+            align-items: center;
+        }
+
+        @{b}__text {
+            font-weight: 500;
+        }
+
+        @{b}__close-button {
+            position: static;
+
+            margin-left: 0;
         }
     }
 
-    &@{popperRight} {
+    &_theme_red,
+    &_theme_blue {
+        @{b}__content,
+        @{b}__arrow:before,
+        @{b}__title,
+        @{b}__button {
+            color: var(--stcWhite);
+        }
+
+        @{b}__button-arrow {
+            fill: var(--stcWhite);
+        }
+
+        @{b}__button:hover {
+            color: var(--buttonHoverGrey);
+
+            @{b}__button-arrow {
+                fill: var(--buttonHoverGrey);
+            }
+        }
+
+        @{b}__button:active {
+            color: var(--buttonDown);
+
+            @{b}__button-arrow {
+                fill: var(--buttonDown);
+            }
+        }
+
+        @{b}__close-button {
+            background-color: var(--stcWhite10);
+        }
+
+        @{b}__close-button:hover {
+            background-color: var(--stcWhite20);
+        }
+
+        @{b}__close-button:active {
+            background-color: var(--stcWhite50);
+        }
+
+        @{b}__close-icon {
+            opacity: 1;
+
+            fill: var(--stcWhite);
+        }
+    }
+
+    &_theme_red {
+        @{b}__content,
+        @{b}__content-shadow,
+        @{b}__arrow:before {
+            background-color: var(--fury80);
+        }
+
+        @{b}__arrow-inner {
+            fill: var(--fury80);
+        }
+    }
+
+    &_theme_blue {
+        @{b}__content,
+        @{b}__content-shadow,
+        @{b}__arrow:before {
+            background-color: var(--reflexBlue80);
+        }
+
+        @{b}__arrow-inner {
+            fill: var(--reflexBlue80);
+        }
+    }
+
+    &@{popperRight},
+    &@{popperRightStart},
+    &@{popperRightEnd} {
         @{b} {
+            &__arrow-container {
+                left: -12px;
+
+                width: 12px;
+                height: 100%;
+            }
+
+            &__arrow-wrap {
+                left: -15px;
+            }
+
             &__arrow,
             &__arrow-shadow {
-                right: @arrowPosition;
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    &@{popperLeft},
+    &@{popperLeftStart},
+    &@{popperLeftEnd} {
+        @{b} {
+            &__arrow-container {
+                right: -12px;
+
+                width: 12px;
+                height: 100%;
             }
 
-            &__content {
-                transform: translateX(@popperOffset);
+            &__arrow-wrap {
+                right: -15px;
             }
 
-            &__content-shadow {
+            &__arrow,
+            &__arrow-shadow {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &@{popperTop},
+    &@{popperTopStart},
+    &@{popperTopEnd} {
+        @{b} {
+            &__arrow-container {
+                bottom: -12px;
+
+                width: 100%;
+                height: 12px;
+            }
+
+            &__arrow-wrap {
                 top: 0;
-                right: -@popperOffset;
-                bottom: 0;
-                left: @popperOffset;
             }
-        }
-    }
 
-    &@{popperLeft} {
-        @{b} {
             &__arrow,
             &__arrow-shadow {
-                left: @arrowPosition;
-            }
-
-            &__content {
-                transform: translateX(-@popperOffset);
-            }
-
-            &__content-shadow {
-                top: 0;
-                right: @popperOffset;
-                bottom: 0;
-                left: -@popperOffset;
+                transform: rotate(180deg);
             }
         }
     }
 
-    &@{popperTop} {
+    &@{popperBottom},
+    &@{popperBottomStart},
+    &@{popperBottomEnd} {
         @{b} {
-            &__arrow,
-            &__arrow-shadow {
-                top: @arrowPosition;
-            }
+            &__arrow-container {
+                top: -12px;
 
-            &__content {
-                transform: translateY(-@popperOffset);
-            }
-
-            &__content-shadow {
-                top: -@popperOffset;
-                right: 0;
-                bottom: @popperOffset;
-                left: 0;
+                width: 100%;
+                height: 12px;
             }
         }
     }
 
-    &@{popperBottom} {
-        @{b} {
-            &__arrow,
-            &__arrow-shadow {
-                bottom: @arrowPosition;
-            }
-
-            &__content {
-                transform: translateY(@popperOffset);
-            }
-
-            &__content-shadow {
-                top: @popperOffset;
-                right: 0;
-                bottom: -@popperOffset;
-                left: 0;
-            }
-        }
-    }
-
-    &@{popperEscaped} {
+    &@{popperEscaped}&_has-escape {
         visibility: hidden;
 
         pointer-events: none;

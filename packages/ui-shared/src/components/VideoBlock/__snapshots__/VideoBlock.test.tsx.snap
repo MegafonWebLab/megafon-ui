@@ -628,3 +628,114 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
   </Grid>
 </div>
 `;
+
+exports[`<VideoBlock /> render component with html tags 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <Grid
+    className="mfui-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="5"
+      className="mfui-video-block__content-column"
+      key="column-content"
+      mobile="12"
+      orderMobile="2"
+      orderTablet="2"
+      tablet="12"
+    >
+      <div
+        className="mfui-video-block__content"
+      >
+        <Header
+          as="h2"
+          className="mfui-video-block__header"
+        >
+          <component
+            href="https://moscow.megafon.ru"
+            key="0"
+          >
+            Текст
+          </component>
+          <component
+            key="1"
+          />
+          <component
+            color="#731982"
+            key="2"
+          >
+            ≈40
+          </component>
+           символов. Короткие слова
+        </Header>
+        <div
+          className="mfui-video-block__description"
+        >
+          Описание должно 
+          <component
+            href="https://moscow.megafon.ru"
+            key="1"
+          >
+            быть
+          </component>
+           
+          <component
+            color="#731982"
+            key="3"
+          >
+            примерно
+          </component>
+           не более 130 символов.
+          <component
+            key="5"
+          />
+          Пишите 
+          <component
+            key="7"
+          >
+            содержательно
+          </component>
+          , кратно и не будет проблем с текстовым контентом.
+        </div>
+        <Button
+          className="mfui-video-block__button"
+          dataAttrs={
+            Object {
+              "root": undefined,
+            }
+          }
+          href="#"
+        >
+          Button title
+        </Button>
+      </div>
+    </GridColumn>
+    <GridColumn
+      all="7"
+      className="mfui-video-block__video-column"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <div
+        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      >
+        <video
+          autoPlay={false}
+          className="mfui-video-block__video"
+          controls={true}
+          loop={true}
+          muted={true}
+        >
+          <source
+            src="video"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;

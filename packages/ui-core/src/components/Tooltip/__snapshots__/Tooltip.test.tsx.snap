@@ -1,42 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Tooltip/> renders component with default props 1`] = `
+exports[`<Tooltip/> renders component with all props 1`] = `
 <div
-  className="mfui-tooltip mfui-tooltip_paddings_medium"
-  style={
-    Object {
-      "left": "0",
-      "position": "absolute",
-      "top": "0",
-    }
-  }
->
-  <div
-    className="mfui-tooltip__arrow"
-  />
-  <div
-    className="mfui-tooltip__arrow-shadow"
-  />
-  <Tile
-    className="mfui-tooltip__content"
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-  >
-    Some test content
-  </Tile>
-  <Tile
-    className="mfui-tooltip__content-shadow"
-    shadowLevel="high"
-  />
-</div>
-`;
-
-exports[`<Tooltip/> renders with props 1`] = `
-<div
-  className="mfui-tooltip mfui-tooltip_paddings_none className rootClass"
+  className="mfui-tooltip mfui-tooltip_theme_red mfui-tooltip_paddings_none mfui-tooltip_open className rootClass"
   data-root="test"
   style={
     Object {
@@ -47,24 +13,116 @@ exports[`<Tooltip/> renders with props 1`] = `
   }
 >
   <div
-    className="mfui-tooltip__arrow arrow"
-  />
-  <div
-    className="mfui-tooltip__arrow-shadow"
-  />
+    className="mfui-tooltip__arrow-container"
+  >
+    <div
+      className="mfui-tooltip__arrow-wrap"
+    >
+      <div
+        className="mfui-tooltip__arrow arrow"
+      >
+        <test-file-stub
+          className="mfui-tooltip__arrow-inner"
+        />
+      </div>
+    </div>
+  </div>
   <Tile
     className="mfui-tooltip__content content"
     dataAttrs={
       Object {
         "root": Object {
           "data-content": "test",
-          "incorrect-attr": "test",
         },
       }
     }
-  />
+    radius="rounded"
+  >
+    <Header
+      as="h5"
+      className="mfui-tooltip__title"
+      space="tight"
+    >
+      Заголовок
+    </Header>
+    <div
+      className="mfui-tooltip__text"
+    >
+      Текст
+    </div>
+    <button
+      className="mfui-tooltip__button"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Кнопка
+      <test-file-stub
+        className="mfui-tooltip__button-arrow"
+      />
+    </button>
+    <button
+      className="mfui-tooltip__close-button"
+      data-close="test"
+      onClick={[Function]}
+      type="button"
+    >
+      <test-file-stub
+        className="mfui-tooltip__close-icon"
+      />
+    </button>
+  </Tile>
   <Tile
     className="mfui-tooltip__content-shadow content-shadow"
+    radius="rounded"
+    shadowLevel="high"
+  />
+</div>
+`;
+
+exports[`<Tooltip/> renders component with default props 1`] = `
+<div
+  className="mfui-tooltip mfui-tooltip_theme_white mfui-tooltip_paddings_small mfui-tooltip_has-escape"
+  style={
+    Object {
+      "left": "0",
+      "position": "absolute",
+      "top": "0",
+    }
+  }
+>
+  <div
+    className="mfui-tooltip__arrow-container"
+  >
+    <div
+      className="mfui-tooltip__arrow-wrap"
+    >
+      <div
+        className="mfui-tooltip__arrow"
+      >
+        <test-file-stub
+          className="mfui-tooltip__arrow-inner"
+        />
+      </div>
+    </div>
+  </div>
+  <Tile
+    className="mfui-tooltip__content"
+    dataAttrs={
+      Object {
+        "root": undefined,
+      }
+    }
+    radius="rounded"
+  >
+    <div
+      className="mfui-tooltip__addititonal-content"
+    >
+      Some test content
+    </div>
+  </Tile>
+  <Tile
+    className="mfui-tooltip__content-shadow"
+    radius="rounded"
     shadowLevel="high"
   />
 </div>

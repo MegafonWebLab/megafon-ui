@@ -17,14 +17,18 @@ export const Radius = {
 
 type RadiusType = typeof Radius[keyof typeof Radius];
 
-export const Shadow = {
+export const ShadowLevel = {
     ZERO: 'zero',
-    LOW: 'low',
-    HIGH: 'high',
+    DEFAULT: 'default',
     HOVER: 'hover',
+    PRESSED: 'pressed',
+    /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
+    HIGH: 'high',
+    /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
+    LOW: 'low',
 } as const;
 
-type ShadowType = typeof Shadow[keyof typeof Shadow];
+type ShadowLevelType = typeof ShadowLevel[keyof typeof ShadowLevel];
 
 export interface ITileProps {
     /** Ссылка */
@@ -32,11 +36,12 @@ export interface ITileProps {
     /** Атрибут для открытия ссылки */
     target?: '_self' | '_blank';
     /** Тема */
+    // TODO: переименовать в shadowColor
     theme?: ThemeType;
     /** Радиус границы */
     radius?: RadiusType;
     /** Уровень тени */
-    shadowLevel?: ShadowType;
+    shadowLevel?: ShadowLevelType;
     /** Включить тень при наведении */
     isInteractive?: boolean;
     /** Дополнительный класс корневого элемента */
@@ -54,6 +59,7 @@ const Tile: React.FC<ITileProps> = ({
     href,
     children,
     className,
+    // TODO: переименовать в shadowColor
     theme = 'light',
     shadowLevel = 'zero',
     radius = 'default',
@@ -71,6 +77,7 @@ const Tile: React.FC<ITileProps> = ({
         <div
             className={cn(
                 {
+                    // TODO: переименовать в shadowColor
                     theme,
                     radius,
                     shadow: shadowLevel,
@@ -96,7 +103,7 @@ Tile.propTypes = {
     href: PropTypes.string,
     theme: PropTypes.oneOf(Object.values(Theme)),
     radius: PropTypes.oneOf(Object.values(Radius)),
-    shadowLevel: PropTypes.oneOf(Object.values(Shadow)),
+    shadowLevel: PropTypes.oneOf(Object.values(ShadowLevel)),
     className: PropTypes.string,
     isInteractive: PropTypes.bool,
     onClick: PropTypes.func,

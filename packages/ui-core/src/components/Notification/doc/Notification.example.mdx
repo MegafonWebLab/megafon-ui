@@ -9,21 +9,21 @@ import Send from '@megafon/ui-icons/system-24-send_24.svg';
 
 ```javascript collapse=Код DemoNotificationWrapper
 export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = ({
-   initialClickAmount = 0,
-   children,
+    initialClickAmount = 0,
+    children,
 }) => {
-   const [clickAmount, setClickAmount] = useState(initialClickAmount);
-   const [isCollapseOpen, setIsCollapseOpen] = useState(true);
+    const [clickAmount, setClickAmount] = useState(initialClickAmount);
+    const [isCollapseOpen, setIsCollapseOpen] = useState(true);
 
-   return children({
-      onCollapseButtonClick: (value: boolean) => setIsCollapseOpen(value),
-      onWrapperButtonClick: () => setIsCollapseOpen(!isCollapseOpen),
-      onButtonClick: () => setClickAmount(clickAmount + 1),
-      onLinkClick: () => setClickAmount(clickAmount + 1),
-      onClose: () => setClickAmount(clickAmount + 1),
-      initialClickAmount: clickAmount,
-      isCollapseOpen,
-   });
+    return children({
+        onCollapseButtonClick: (value: boolean) => setIsCollapseOpen(value),
+        onWrapperButtonClick: () => setIsCollapseOpen(!isCollapseOpen),
+        onButtonClick: () => setClickAmount(clickAmount + 1),
+        onLinkClick: () => setClickAmount(clickAmount + 1),
+        onClose: () => setClickAmount(clickAmount + 1),
+        initialClickAmount: clickAmount,
+        isCollapseOpen,
+    });
 };
 ```
 
@@ -38,21 +38,13 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уведомление типа info
    </Notification>
 
-   <Notification
-      type="success"
-      title="Success"
-      shadowLevel="zero"
-   >
-      Уведомление типа success
-   </Notification>
+<Notification type="success" title="Success" shadowLevel="zero">
+    Уведомление типа success
+</Notification>
 
-   <Notification
-      type="warning"
-      title="Warning"
-      shadowLevel="zero"
-   >
-      Уведомление типа warning
-   </Notification>
+<Notification type="warning" title="Warning" shadowLevel="zero">
+    Уведомление типа warning
+</Notification>
 
    <Notification
       type="error"
@@ -69,34 +61,24 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    <Notification
       type="info"
       title="Info"
-      shadowLevel="high"
+      shadowLevel="default"
       isColored={false}
    >
       Уведомление типа info с белым фоном
    </Notification>
 
-   <Notification
-      type="success"
-      title="Success"
-      shadowLevel="high"
-      isColored={false}
-   >
-      Уведомление типа success с белым фоном
-   </Notification>
+<Notification type="success" title="Success" shadowLevel="default" isColored={false}>
+    Уведомление типа success с белым фоном
+</Notification>
 
-   <Notification
-      type="warning"
-      title="Warning"
-      shadowLevel="high"
-      isColored={false}
-   >
-      Уведомление типа warning с белым фоном
-   </Notification>
+<Notification type="warning" title="Warning" shadowLevel="default" isColored={false}>
+    Уведомление типа warning с белым фоном
+</Notification>
 
    <Notification
       type="error"
       title="Error"
-      shadowLevel="high"
+      shadowLevel="default"
       isColored={false}
    >
       Уведомление типа error с белым фоном
@@ -114,31 +96,18 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Уровень тени zero
    </Notification>
 
-   <Notification
-      type="info"
-      title="shadowLevel=low"
-      shadowLevel="low"
-      isColored={false}
-   >
-      Уровень тени low
-   </Notification>
+<Notification type="info" title="shadowLevel=default" shadowLevel="default" isColored={false}>
+    Уровень тени default
+</Notification>
 
-   <Notification
-      type="info"
-      title="shadowLevel=high"
-      shadowLevel="high"
-      isColored={false}
-   >
-      Уровень тени high
-   </Notification>
+<Notification type="info" title="shadowLevel=hover" shadowLevel="hover">
+    Уровень тени hover
+</Notification>
 
-   <Notification
-      type="info"
-      title="shadowLevel=hover"
-      shadowLevel="hover"
-   >
-      Уровень тени hover
-   </Notification>
+<Notification type="info" title="shadowLevel=pressed" shadowLevel="pressed" isColored={false}>
+    Уровень тени pressed
+</Notification>
+
 </Playground>
 
 ## Кастомные иконки
@@ -153,67 +122,34 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
       Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
    </Notification>
 
-   <Notification
-      type="info"
-      title="Info"
-      shadowLevel="high"
-      isColored={false}
-      icon={<Send />}
-   >
-      Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
-   </Notification>
+<Notification type="info" title="Info" shadowLevel="default" isColored={false} icon={<Send />}>
+    Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
+</Notification>
 
-   <Notification
-      type="success"
-      title="Success"
-      shadowLevel="zero"
-      icon={<Sended />}
-   >
-      Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
-   </Notification>
+<Notification type="success" title="Success" shadowLevel="zero" icon={<Sended />}>
+    Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
+</Notification>
 
-   <Notification
-      type="success"
-      title="Success"
-      shadowLevel="high"
-      isColored={false}
-      icon={<Sended />}
-   >
-      Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
-   </Notification>
+<Notification type="success" title="Success" shadowLevel="default" isColored={false} icon={<Sended />}>
+    Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
+</Notification>
 
-   <Notification
-      type="warning"
-      title="Warning"
-      shadowLevel="zero"
-      icon={<Rating1 />}
-   >
-      Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
-   </Notification>
+<Notification type="warning" title="Warning" shadowLevel="zero" icon={<Rating1 />}>
+    Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
+</Notification>
 
-   <Notification
-      type="warning"
-      title="Warning"
-      shadowLevel="high"
-      isColored={false}
-      icon={<Rating1 />}
-   >
-      Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
-   </Notification>
+<Notification type="warning" title="Warning" shadowLevel="default" isColored={false} icon={<Rating1 />}>
+    Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
+</Notification>
+
+<Notification type="error" title="Error" shadowLevel="zero" icon={<Cancel />}>
+    Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
+</Notification>
 
    <Notification
       type="error"
       title="Error"
-      shadowLevel="zero"
-      icon={<Cancel />}
-   >
-      Фоновый цвет и заливка иконок меняется в зависимости от типа и фонового цвета уведомления
-   </Notification>
-
-   <Notification
-      type="error"
-      title="Error"
-      shadowLevel="high"
+      shadowLevel="default"
       isColored={false}
       icon={<Cancel />}
    >
@@ -229,7 +165,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    <Notification
       type="info"
       title="Для всех типов, кроме error с цветным фоном"
-      shadowLevel="high"
+      shadowLevel="default"
       link="Cсылка синего цвета"
       target="_blank"
       href="/"
@@ -252,33 +188,34 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ### Переход на другую страницу
 
 <Playground style={wrapperStyle}>
-   <Notification
-      type="info"
-      title="Заголовок уведомления"
-      shadowLevel="high"
-      link="Cсылка на новую страницу"
-      target="_blank"
-      href="/"
-      target="_blank"
-      isColored={false}
-   />
+    <Notification
+        type="info"
+        title="Заголовок уведомления"
+        shadowLevel="default"
+        link="Cсылка на новую страницу"
+        target="_blank"
+        href="/"
+        target="_blank"
+        isColored={false}
+    />
 </Playground>
 
 ### Кастомный обработчик клика по ссылке
+
 <Playground style={wrapperStyle}>
-   <DemoNotificationWrapper>
-      {({ initialClickAmount, onLinkClick }) =>
-         <Notification
-            type="info"
-            title="Заголовок уведомления"
-            shadowLevel="zero"
-            link="Cсылка с обработчиком"
-            onLinkClick={onLinkClick}
-         >
-            {`Количество кликов: ${initialClickAmount}`}
-         </Notification>
-      }
-   </DemoNotificationWrapper>
+    <DemoNotificationWrapper>
+        {({ initialClickAmount, onLinkClick }) => (
+            <Notification
+                type="info"
+                title="Заголовок уведомления"
+                shadowLevel="zero"
+                link="Cсылка с обработчиком"
+                onLinkClick={onLinkClick}
+            >
+                {`Количество кликов: ${initialClickAmount}`}
+            </Notification>
+        )}
+    </DemoNotificationWrapper>
 </Playground>
 
 ### Частичное заполнение контентом
@@ -286,7 +223,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 <Playground style={wrapperStyle}>
    <Notification
       type="info"
-      shadowLevel="high"
+      shadowLevel="default"
       isColored={false}
       link="Cсылка на новую страницу"
       href="/"
@@ -298,7 +235,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    <Notification
       type="info"
       title="Отсутствует дополнительный текст"
-      shadowLevel="high"
+      shadowLevel="default"
       isColored={false}
       link="Cсылка на новую страницу"
       href="/"
@@ -314,7 +251,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    <Notification
       type="info"
       title="Для всех типов, кроме error с цветным фоном"
-      shadowLevel="high"
+      shadowLevel="default"
       buttonText="Зеленая кнопка"
       isColored={false}
    >
@@ -331,13 +268,14 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 </Playground>
 
 ### Комбинирование кнопки с расхлопом и ссылкой
+
 При недостаточной ширине элементы не переносятся в столбик, а всегда идут в одну строку. Текст на кнопке сокращается путем добавления в конце многоточия.
 
 <Playground style={wrapperStyle}>
    <Notification
       type="info"
       title="Кнопка + ссылка"
-      shadowLevel="high"
+      shadowLevel="default"
       buttonText="Кнопка"
       link="Ссылка"
       target="_blank"
@@ -350,7 +288,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    <Notification
       type="warning"
       title="Кнопка + расхлоп"
-      shadowLevel="high"
+      shadowLevel="default"
       buttonText="Подключить"
       shortText="Короткий текст уведомления"
       isCollapseOpened
@@ -363,52 +301,55 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ### Кастомный обработчик клика по кнопке
 
 <Playground style={wrapperStyle}>
-   <DemoNotificationWrapper>
-      {({ initialClickAmount, onButtonClick }) =>
-         <Notification
-            type="info"
-            title="Заголовок уведомления"
-            shadowLevel="zero"
-            buttonText="Кнопка с обработчиком"
-            onButtonClick={onButtonClick}
-         >
-            {`Количество кликов: ${initialClickAmount}`}
-         </Notification>
-      }
-   </DemoNotificationWrapper>
+    <DemoNotificationWrapper>
+        {({ initialClickAmount, onButtonClick }) => (
+            <Notification
+                type="info"
+                title="Заголовок уведомления"
+                shadowLevel="zero"
+                buttonText="Кнопка с обработчиком"
+                onButtonClick={onButtonClick}
+            >
+                {`Количество кликов: ${initialClickAmount}`}
+            </Notification>
+        )}
+    </DemoNotificationWrapper>
 </Playground>
 
 ## Уведомления с расхлопом
-   Расхлоп может комбинироваться с кнопкой, но не со ссылкой
+
+Расхлоп может комбинироваться с кнопкой, но не со ссылкой
 
 ### По умолчанию
 
 <Playground style={wrapperStyle}>
-   <Notification
-      type="info"
-      title="По умолчанию расхлоп изначально закрыт"
-      shadowLevel="high"
-      buttonText="Подключить"
-      shortText="Здание было красивым и странным: оно напоминало жилище эльфов"
-   >
-      Здание было красивым и странным: оно напоминало не то жилище эльфов, не то замок рыцарей-монахов. Белые шпили, стрельчатые окна, легкие мраморные беседки
-   </Notification>
+    <Notification
+        type="info"
+        title="По умолчанию расхлоп изначально закрыт"
+        shadowLevel="default"
+        buttonText="Подключить"
+        shortText="Здание было красивым и странным: оно напоминало жилище эльфов"
+    >
+        Здание было красивым и странным: оно напоминало не то жилище эльфов, не то замок рыцарей-монахов. Белые шпили,
+        стрельчатые окна, легкие мраморные беседки
+    </Notification>
 </Playground>
 
 ### Кастомные заголовки расхлопа
 
 <Playground style={wrapperStyle}>
-   <Notification
-      type="success"
-      title="По умолчанию расхлоп изначально закрыт"
-      shadowLevel="high"
-      buttonText="Подключить"
-      shortText="Здание было красивым и странным: оно напоминало жилище эльфов"
-      closeCollapseTitle="Показать весь текст"
-      openCollapseTitle=" Скрыть часть текста"
-   >
-      Здание было красивым и странным: оно напоминало не то жилище эльфов, не то замок рыцарей-монахов. Белые шпили, стрельчатые окна, легкие мраморные беседки
-   </Notification>
+    <Notification
+        type="success"
+        title="По умолчанию расхлоп изначально закрыт"
+        shadowLevel="default"
+        buttonText="Подключить"
+        shortText="Здание было красивым и странным: оно напоминало жилище эльфов"
+        closeCollapseTitle="Показать весь текст"
+        openCollapseTitle=" Скрыть часть текста"
+    >
+        Здание было красивым и странным: оно напоминало не то жилище эльфов, не то замок рыцарей-монахов. Белые шпили,
+        стрельчатые окна, легкие мраморные беседки
+    </Notification>
 </Playground>
 
 ### Управление состоянием расхлопа
@@ -417,7 +358,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
    <Notification
       type="info"
       title="Изначально открыт"
-      shadowLevel="high"
+      shadowLevel="default"
       isColored={false}
       isCollapseOpened
       shortText="Устанавливает только начальное состояние расхлопа"
@@ -431,7 +372,7 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
             <Notification
                type="info"
                title="Изначально открыт"
-               shadowLevel="high"
+               shadowLevel="default"
                isColored={false}
                isCollapseOpened={isCollapseOpen}
                shortText="Есть управление состоянием расхлопа извне"
@@ -450,22 +391,21 @@ export const DemoNotificationWrapper: React.FC<IDemoNotificationWrapperProps> = 
 ## Кнопка закрытия
 
 <Playground style={wrapperStyle}>
-   <DemoNotificationWrapper>
-      {({ initialClickAmount, onClose }) =>
-         <Notification
-            type="error"
-            title="Кнопка закрытия с обработчиком"
-            shadowLevel="high"
-            hasCloseButton
-            isColored={false}
-            onClose={onClose}
-         >
-            {`Количество кликов: ${initialClickAmount}`}
-         </Notification>
-      }
-   </DemoNotificationWrapper>
+    <DemoNotificationWrapper>
+        {({ initialClickAmount, onClose }) => (
+            <Notification
+                type="error"
+                title="Кнопка закрытия с обработчиком"
+                shadowLevel="default"
+                hasCloseButton
+                isColored={false}
+                onClose={onClose}
+            >
+                {`Количество кликов: ${initialClickAmount}`}
+            </Notification>
+        )}
+    </DemoNotificationWrapper>
 </Playground>
-
 
 ## Вертикальное выравнивание
 
@@ -516,29 +456,16 @@ const hrefTitle = '<a href="https://moscow.megafon.ru">Ссылка</a>';
    >
    </Notification>
 
-   <Notification
-      type="info"
-      shadowLevel="zero"
-      title="Текст"
-      shortText="Текст с <b>жирным</b> начертаниием"
-   >
-   </Notification>
+<Notification
+    type="info"
+    shadowLevel="zero"
+    title="Текст"
+    shortText="Текст с <b>жирным</b> начертаниием"
+></Notification>
 
-   <Notification
-      type="info"
-      shadowLevel="zero"
-      title={fontText}
-      shortText={fontText}
-   >
-   </Notification>
+<Notification type="info" shadowLevel="zero" title={fontText} shortText={fontText}></Notification>
 
-   <Notification
-      type="info"
-      shadowLevel="zero"
-      title={hrefText}
-      shortText={hrefText}
-   >
-   </Notification>
+<Notification type="info" shadowLevel="zero" title={hrefText} shortText={hrefText}></Notification>
 
    <Notification
       type="info"
