@@ -1,6 +1,6 @@
 import React, { Ref } from 'react';
 import { Header, Button, Grid, GridColumn } from '@megafon/ui-core';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs, convert, titleConvertConfig, textConvertConfig } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './VideoBlock.less';
 
@@ -102,9 +102,11 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 })}
             >
                 <Header as="h2" className={cn('header')}>
-                    {title}
+                    {convert(title, titleConvertConfig)}
                 </Header>
-                <div className={cn('description', [classes.description])}>{description}</div>
+                <div className={cn('description', [classes.description])}>
+                    {typeof description === 'string' ? convert(description, textConvertConfig) : description}
+                </div>
                 {buttonTitle && (
                     <Button
                         dataAttrs={{ root: dataAttrs?.button }}
