@@ -12,6 +12,7 @@ import {
     demoWrapperWithScroll,
     demoWrapperWithScrollBig,
     demoWrapperBlockStyles,
+    demoButtonContainer,
     DemoTooltipWithTriggerWrapper,
     DemoSelectTriggerWrapper,
     DemoControlledTooltipWrapper,
@@ -137,6 +138,9 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                 </span>
                 <Tooltip
                     placement="right"
+                    text="text"
+                    buttonText="button"
+                    title="title"
                     triggerElement={triggerElement}
                 >
                     Положение справа
@@ -155,6 +159,9 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                 <Tooltip
                     placement="left"
                     triggerElement={triggerElement}
+                    text="text"
+                    buttonText="button"
+                    title="title"
                 >
                     Положение слева
                 </Tooltip>
@@ -172,6 +179,9 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
                 <Tooltip
                     placement="bottom"
                     triggerElement={triggerElement}
+                    text="text"
+                    buttonText="button"
+                    title="title"
                 >
                     Положение снизу
                 </Tooltip>
@@ -252,7 +262,90 @@ export const DemoControlledTooltipWrapper = ({ children, isOpen = false }) => {
 ## Перестроение при скролле
 Расположение тултипа меняется при соприкосновении с границей контейнера. 
 
-
+<Playground style={demoWrapperBlockStyles}>
+    <div style={demoWrapperWithScroll}>
+        <div style={{ width: '1000px' }}>
+            <DemoTooltipWithTriggerWrapper>
+                {({ triggerElement }) => (
+                    <>
+                        <div ref={triggerElement} style={{ marginTop: '50px', marginLeft: '50px', width: 'fit-content' }}>
+                            <Button>Длинная зеленая кнопка</Button>
+                        </div>
+                        <Tooltip
+                            colorTheme='red'
+                            triggerEvent="click"
+                            triggerElement={triggerElement}
+                            text="Горизонтальное перестроение"
+                            placement="top-start"
+                            fallbackPlacements={[]}
+                        />
+                    </>
+                )}
+            </DemoTooltipWithTriggerWrapper>
+        </div>
+    </div>
+    <div style={demoWrapperWithScroll}>
+        <div style={{ height: '1000px' }}>
+            <DemoTooltipWithTriggerWrapper>
+                {({ triggerElement }) => (
+                    <>
+                        <div ref={triggerElement} style={{ marginTop: '50px', width: 'fit-content'}}>
+                            <Button sizeAll="large">Кнопка</Button>
+                        </div>
+                        <Tooltip
+                            colorTheme='red'
+                            triggerEvent="click"
+                            triggerElement={triggerElement}
+                            text="Вертикальное перестроение"
+                            placement="right-end"
+                            fallbackPlacements={[]}
+                        >
+                            Доп. текст
+                        </Tooltip>
+                    </>
+                )}
+            </DemoTooltipWithTriggerWrapper>
+        </div>
+    </div>
+    <div style={demoWrapperWithScrollBig}>
+        <div style={{ width: '3000px', height: '3000px' }}>
+            <DemoTooltipWithTriggerWrapper>
+                {({ triggerElement }) => (
+                    <>
+                            <span>Проскрольте немного демо в нижний правый угол, чтобы нажать кнопку для показа тултипа</span>
+                        <div ref={triggerElement} style={demoButtonContainer}>
+                            <Button sizeAll="large">Кнопка</Button>
+                            Демонстрация перестроения тултипа по всем доступным положениям. 
+                        </div>
+                        <Tooltip
+                            colorTheme='red'
+                            triggerEvent="click"
+                            triggerElement={triggerElement}
+                            text="Маленький тултип"
+                            placement="top-start"
+                            fallbackPlacements={[
+                                'top-start',
+                                'top',
+                                'top-end',
+                                'right-start',
+                                'right',
+                                'right-end',
+                                'bottom-end',
+                                'bottom',
+                                'bottom-start',
+                                'left-end',
+                                'left',
+                                'left-start',
+                            ]}
+                        >
+                            Доп. текст
+                        </Tooltip>
+                    </>
+                )}
+            </DemoTooltipWithTriggerWrapper>
+        </div>
+    </div>
+</Playground>
 
 ## Варианты содержимого тултипа
 

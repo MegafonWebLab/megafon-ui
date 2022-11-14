@@ -19,12 +19,27 @@ export const demoWrapperWithScroll: React.CSSProperties = {
     padding: '15px',
     overscrollBehavior: 'contain',
     backgroundColor: '#333333',
+    color: 'grey',
 };
 
 export const demoWrapperWithScrollBig: React.CSSProperties = {
     ...demoWrapperWithScroll,
     width: '880px',
     height: '400px',
+};
+
+export const demoButtonContainer: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '15px',
+    width: '300px',
+    height: '300px',
+    margin: '280px 700px',
+    padding: '20px',
+    textAlign: 'center',
+    border: '1px dashed grey',
 };
 
 export const DemoTooltipWithTriggerWrapper = ({ children }) => {
