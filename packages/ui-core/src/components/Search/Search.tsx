@@ -255,7 +255,7 @@ const Search: React.FC<ISearchProps> = ({
                     [classes?.control],
                 )}
             >
-                <label className={cn('search-wrapper', { labeled: !!label })} htmlFor={searchId}>
+                <label className={cn('search-wrapper', { labeled: !!label, 'no-label': !label })} htmlFor={searchId}>
                     <input
                         {...filterDataAttrs(dataAttrs?.searchField)}
                         id={searchId}

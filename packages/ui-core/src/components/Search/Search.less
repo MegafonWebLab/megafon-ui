@@ -110,6 +110,10 @@
         .placeholder();
     }
 
+    &__search-field::-moz-placeholder {
+        .placeholder();
+    }
+
     &__search-field:-moz-placeholder {
         .placeholder();
     }
@@ -122,22 +126,44 @@
         .placeholder();
     }
 
-    &__search-wrapper_labeled & {
-        &__search-field:focus::-webkit-input-placeholder {
-            opacity: 1;
-        }
+    &__search-field:focus::-webkit-input-placeholder {
+        opacity: 1;
+    }
 
-        &__search-field:focus:-moz-placeholder {
-            opacity: 1;
-        }
+    &__search-field:focus::-moz-placeholder {
+        opacity: 1;
+    }
 
-        &__search-field:focus:-ms-input-placeholder {
-            opacity: 1;
-        }
+    &__search-field:focus:-moz-placeholder {
+        opacity: 1;
+    }
 
-        &__search-field:focus::placeholder {
-            opacity: 1;
-        }
+    &__search-field:focus:-ms-input-placeholder {
+        opacity: 1;
+    }
+
+    &__search-field:focus::placeholder {
+        opacity: 1;
+    }
+
+    &__search-wrapper_no-label &__search-field::-webkit-input-placeholder {
+        opacity: 1;
+    }
+
+    &__search-wrapper_no-label &__search-field::-moz-placeholder {
+        opacity: 1;
+    }
+
+    &__search-wrapper_no-label &__search-field:-moz-placeholder {
+        opacity: 1;
+    }
+
+    &__search-wrapper_no-label &__search-field:-ms-input-placeholder {
+        opacity: 1;
+    }
+
+    &__search-wrapper_no-label &__search-field::placeholder {
+        opacity: 1;
     }
 
     &__search-field_filled + &__label,
@@ -219,24 +245,6 @@
         max-height: 368px;
         padding: 16px;
         overflow-y: auto;
-        scrollbar-width: thin;
-        scrollbar-color: var(--spbSky2) transparent;
-    }
-
-    &__list-inner::-webkit-scrollbar {
-        width: 16px;
-    }
-
-    &__list-inner::-webkit-scrollbar-thumb {
-        border: 6px solid transparent;
-        border-radius: 16px;
-
-        background-color: #D8D8D8;
-        background-clip: padding-box;
-    }
-
-    &__list-inner::-webkit-scrollbar-thumb:hover {
-        background-color: #999999;
     }
 
     &__list-item {
