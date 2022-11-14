@@ -30,10 +30,10 @@ export const Placement = {
     TOP_END: 'top-end',
     RIGHT: 'right',
     RIGHT_START: 'right-start',
-    RIGHT_END: 'right-start',
+    RIGHT_END: 'right-end',
     BOTTOM: 'bottom',
     BOTTOM_START: 'bottom-start',
-    BOTTOM_END: 'bottom-start',
+    BOTTOM_END: 'bottom-end',
 } as const;
 
 type PlacementType = typeof Placement[keyof typeof Placement];
