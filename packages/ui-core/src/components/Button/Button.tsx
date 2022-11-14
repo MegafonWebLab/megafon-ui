@@ -54,6 +54,8 @@ export interface IButtonProps {
         content?: Record<string, string>;
         inner?: Record<string, string>;
         loader?: Record<string, string>;
+        text?: Record<string, string>;
+        arrow?: Record<string, string>;
     };
     /** Тема компонента */
     theme?: ButtonThemesType;
@@ -175,11 +177,15 @@ const Button: React.FC<IButtonProps> = ({
         return (
             <div {...filterDataAttrs(dataAttrs?.content)} className={cn('content', { ellipsis }, contentClassName)}>
                 {icon && <div className={cn('icon')}>{icon}</div>}
-                {children && <span className={cn('text', { ellipsis })}>{children}</span>}
-                {!icon && showArrow && <Arrow className={cn('icon-arrow')} />}
+                {children && (
+                    <span className={cn('text', { ellipsis })} {...filterDataAttrs(dataAttrs?.text)}>
+                        {children}
+                    </span>
+                )}
+                {!icon && showArrow && <Arrow className={cn('icon-arrow')} {...filterDataAttrs(dataAttrs?.arrow)} />}
             </div>
         );
-    }, [children, icon, dataAttrs?.content, contentClassName, showArrow, ellipsis]);
+    }, [children, icon, dataAttrs?.content, dataAttrs?.text, dataAttrs?.arrow, ellipsis, contentClassName, showArrow]);
 
     const contentType = React.useMemo(() => {
         switch (true) {
@@ -276,6 +282,8 @@ Button.propTypes = {
         content: PropTypes.objectOf(PropTypes.string.isRequired),
         inner: PropTypes.objectOf(PropTypes.string.isRequired),
         loader: PropTypes.objectOf(PropTypes.string.isRequired),
+        text: PropTypes.objectOf(PropTypes.string.isRequired),
+        arrow: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     theme: PropTypes.oneOf(Object.values(ButtonThemes)),
     type: PropTypes.oneOf(Object.values(ButtonTypes)),
