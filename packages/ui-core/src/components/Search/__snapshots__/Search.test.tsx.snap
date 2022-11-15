@@ -9,7 +9,7 @@ exports[`<Search /> snapshots renders Search with all props correctly 1`] = `
     className="mfui-search__control"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
       htmlFor="searchId"
     >
       <input
@@ -214,7 +214,7 @@ exports[`<Search /> snapshots renders Search without icon 1`] = `
     className="mfui-search__control"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
       htmlFor="searchId"
     >
       <input
@@ -304,7 +304,7 @@ exports[`<Search /> snapshots renders Search without props correctly 1`] = `
     className="mfui-search__control"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
       htmlFor="mfuiSearchId"
     >
       <input
@@ -341,7 +341,7 @@ exports[`<Search /> snapshots renders with customItemsProps 1`] = `
     className="mfui-search__control"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
       htmlFor="searchId"
     >
       <input
@@ -639,7 +639,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="error" 1
     className="mfui-search__control mfui-search__control_error"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
       htmlFor="searchId"
     >
       <input
@@ -744,7 +744,7 @@ exports[`<Search /> snapshots renders with noticeText and verification="valid" 1
     className="mfui-search__control mfui-search__control_success"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
       htmlFor="searchId"
     >
       <input
@@ -849,7 +849,7 @@ exports[`<Search /> typing highlighted text 1`] = `
     className="mfui-search__control"
   >
     <label
-      className="mfui-search__search-wrapper"
+      className="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
       htmlFor="searchId"
     >
       <input

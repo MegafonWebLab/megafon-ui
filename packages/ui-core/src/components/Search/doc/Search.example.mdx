@@ -30,10 +30,23 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     <Search hideIcon searchId="1" />
 </Playground>
 
-## Установлен заголовок
+## Заголовок и подсказка
+
+### Установлен только label
+<Playground>
+    <Search label="Заголовок поля" searchId="2" />
+</Playground>
+
+### Установлен только placeholder
 
 <Playground>
-    <Search label="Заголовок поля" searchId="2" required />
+    <Search searchId="3" placeholder="Введите что-нибудь" />
+</Playground>
+
+### Установлены и label, и placeholder
+
+<Playground>
+    <Search label="Заголовок поля" placeholder="Введите что-нибудь" searchId="4" />
 </Playground>
 
 ## Выключенное состояние
@@ -41,7 +54,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
 <Playground>
     <Search
         placeholder="This field is disabled"
-        searchId="3"
+        searchId="5"
         disabled
     />
 </Playground>
@@ -52,7 +65,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     <Search
         placeholder="Type here for search"
         value="Previous request"
-        searchId="4"
+        searchId="6"
     />
 </Playground>
 
@@ -65,7 +78,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
                 placeholder="Type here for search"
                 onSubmit={onSubmit}
                 label='Обработчик onSubmit'
-                searchId="5"
+                searchId="7"
             />
         }
     </DemoSearchWrapper>
@@ -76,7 +89,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
                 onChange={onSubmit}
                 changeDelay={50}
                 label='Обработчик onChange'
-                searchId="6"
+                searchId="8"
             />
         }
     </DemoSearchWrapper>
@@ -99,7 +112,7 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
     </DemoSearchWrapper>
 </Playground>
 
-## Обязательное поле 
+## Обязательное поле
 
 <Playground>
     <Search label="Заголовок поля" searchId="8" required />
