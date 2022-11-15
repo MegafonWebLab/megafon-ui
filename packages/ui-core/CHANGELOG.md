@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.8.0...@megafon/ui-core@4.8.1) (2022-11-15)
+
+
+### Bug Fixes
+
+* **search:** show placeholder without label ([b059216](https://github.com/MegafonWebLab/megafon-ui/commit/b05921619514787698e82d27644702d231829c50))
+
+
+
+
+
 # [4.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.7.0...@megafon/ui-core@4.8.0) (2022-11-14)
 
 
