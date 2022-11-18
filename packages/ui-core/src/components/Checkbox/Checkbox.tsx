@@ -25,6 +25,7 @@ export interface ICheckboxProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
+        inner?: Record<string, string>;
         input?: Record<string, string>;
         customInput?: Record<string, string>;
         extraContent?: Record<string, string>;
@@ -94,7 +95,7 @@ const Checkbox: React.FC<ICheckboxProps> = ({
             )}
             {...filterDataAttrs(dataAttrs?.root)}
         >
-            <div className={cn('inner', [classes?.inner])}>
+            <div className={cn('inner', [classes?.inner])} {...filterDataAttrs(dataAttrs?.inner)}>
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label className={cn('label', { 'no-touch': !isTouch })}>
                     <input
@@ -141,6 +142,7 @@ Checkbox.propTypes = {
     error: PropTypes.bool,
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        inner: PropTypes.objectOf(PropTypes.string.isRequired),
         input: PropTypes.objectOf(PropTypes.string.isRequired),
         customInput: PropTypes.objectOf(PropTypes.string.isRequired),
         extraContent: PropTypes.objectOf(PropTypes.string.isRequired),

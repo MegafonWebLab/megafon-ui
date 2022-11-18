@@ -1,131 +1,205 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render, fireEvent } from '@testing-library/react';
 import Checkbox, { ICheckboxProps } from './Checkbox';
-
-const props = {
-    className: 'testClassName',
-    name: 'testInputName',
-    value: 'testInputValue',
-    checked: true,
-    disabled: true,
-    error: true,
-    extraContent: 'text',
-};
 
 const dataAttrs: ICheckboxProps['dataAttrs'] = {
     root: {
-        'data-test': 'test',
-        'incorrect-attr': 'test',
+        'data-testid': 'root',
+    },
+    inner: {
+        'data-testid': 'inner',
     },
     input: {
-        'data-test': 'test',
-        'incorrect-attr': 'test',
+        'data-testid': 'input',
     },
     customInput: {
-        'data-test': 'test',
-        'incorrect-attr': 'test',
+        'data-testid': 'customInput',
     },
     extraContent: {
-        'data-test': 'test',
-        'incorrect-attr': 'test',
+        'data-testid': 'extraContent',
     },
 };
 
 describe('<Checkbox />', () => {
-    describe('layout', () => {
-        it('renders Checkbox', () => {
-            const wrapper = shallow(<Checkbox>Тестовая строка</Checkbox>);
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render Checkbox', () => {
+        const { container } = render(<Checkbox extraContent="Extra content">Тестовая строка</Checkbox>);
 
-        it('renders Checkbox with props', () => {
-            const wrapper = shallow(
-                <Checkbox {...props} fontSize="small" color="light" onChange={jest.fn()}>
-                    Тестовая строка
-                </Checkbox>,
-            );
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(container).toMatchSnapshot();
+    });
 
-        it('renders Checkbox on mobile resolution', () => {
-            const onTouchStart = window.ontouchstart;
-            window.ontouchstart = jest.fn();
+    it('should render with classes', () => {
+        const { getByTestId } = render(
+            <Checkbox
+                className="custom-class"
+                classes={{ inner: 'inner-class', icon: 'icon-class' }}
+                dataAttrs={dataAttrs}
+            >
+                Тестовая строка
+            </Checkbox>,
+        );
 
-            const wrapper = shallow(<Checkbox>Тестовая строка на мобильном разрешении</Checkbox>);
-            expect(wrapper).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveClass('custom-class');
+        expect(getByTestId('inner')).toHaveClass('inner-class');
+        expect(getByTestId('customInput')).toHaveClass('icon-class');
+    });
 
-            window.ontouchstart = onTouchStart;
-        });
+    it('should render with dataAttrs', () => {
+        const { queryByTestId } = render(
+            <Checkbox extraContent="extra" dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
 
-        it('renders with data attrs', () => {
-            const wrapper = shallow(<Checkbox dataAttrs={dataAttrs}>Тестовая строка</Checkbox>);
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(queryByTestId('root')).toBeTruthy();
+        expect(queryByTestId('inner')).toBeTruthy();
+        expect(queryByTestId('input')).toBeTruthy();
+        expect(queryByTestId('customInput')).toBeTruthy();
+        expect(queryByTestId('extraContent')).toBeTruthy();
+    });
 
-        it('renders with classes', () => {
-            const wrapper = shallow(
-                <Checkbox classes={{ icon: 'custom-icon', inner: 'custom-inner' }}>Тестовая строка</Checkbox>,
-            );
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render with color', () => {
+        const { getByTestId } = render(
+            <Checkbox color="light" dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-checkbox_color_light');
+    });
+
+    it('should render with fontSize', () => {
+        const { getByTestId } = render(
+            <Checkbox fontSize="small" dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-checkbox_font-size_small');
+    });
+
+    it('should render with name', () => {
+        const { getByTestId } = render(
+            <Checkbox name="testName" dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+
+        expect(getByTestId('input')).toHaveAttribute('name', 'testName');
+    });
+
+    it('should render with value', () => {
+        const { getByTestId } = render(
+            <Checkbox value="testValue" dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+
+        expect(getByTestId('input')).toHaveAttribute('value', 'testValue');
+    });
+
+    it('should render checked component after first render', () => {
+        const { getByTestId } = render(
+            <Checkbox checked dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+        const input = getByTestId('input') as HTMLInputElement;
+
+        expect(getByTestId('root')).toHaveClass('mfui-checkbox_checked');
+        expect(input.checked).toBeTruthy();
+        expect(getByTestId('customInput')).toHaveAttribute('aria-checked', 'true');
+    });
+
+    it('should render checked component after change', () => {
+        const { getByTestId } = render(<Checkbox dataAttrs={dataAttrs}>Тестовая строка</Checkbox>);
+        const root = getByTestId('root');
+        const input = getByTestId('input') as HTMLInputElement;
+        const customInput = getByTestId('customInput');
+
+        expect(root).not.toHaveClass('mfui-checkbox_checked');
+        expect(input.checked).toBeFalsy();
+        expect(customInput).toHaveAttribute('aria-checked', 'false');
+
+        fireEvent.click(getByTestId('input'));
+
+        expect(root).toHaveClass('mfui-checkbox_checked');
+        expect(input.checked).toBeTruthy();
+        expect(customInput).toHaveAttribute('aria-checked', 'true');
+    });
+
+    it('should render when disagled is true', () => {
+        const { getByTestId } = render(
+            <Checkbox disabled dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-checkbox_disabled');
+        expect(getByTestId('input')).toHaveAttribute('disabled');
+    });
+
+    it('should render when error is true', () => {
+        const { getByTestId } = render(
+            <Checkbox error dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-checkbox_error');
+    });
+
+    it('should render with extraContent', () => {
+        const { queryByText } = render(
+            <Checkbox extraContent="Extra content" dataAttrs={dataAttrs}>
+                Тестовая строка
+            </Checkbox>,
+        );
+
+        expect(queryByText('Extra content')).toBeInTheDocument();
     });
 
     describe('handleChange', () => {
         it('calls onChange on change input', () => {
-            const event = {
-                type: 'change',
-                nativeEvent: {},
-            } as React.ChangeEvent;
             const checked = false;
             const handleChange = jest.fn();
 
-            const wrapper = shallow(
-                <Checkbox onChange={handleChange} checked={checked}>
+            const { getByTestId } = render(
+                <Checkbox onChange={handleChange} checked={checked} dataAttrs={dataAttrs}>
                     Тестовая строка
                 </Checkbox>,
             );
 
-            wrapper.find('input').simulate('change', event);
+            fireEvent.click(getByTestId('input'));
+
             expect(handleChange).toBeCalledWith(!checked);
         });
 
         it('calls onChange on Enter click', () => {
-            const event = {
-                type: 'keydown',
-                nativeEvent: {
-                    code: 'Enter',
-                },
-            } as React.KeyboardEvent;
             const checked = false;
             const handleChange = jest.fn();
 
-            const wrapper = shallow(
-                <Checkbox onChange={handleChange} checked={checked}>
+            const { getByTestId } = render(
+                <Checkbox onChange={handleChange} checked={checked} dataAttrs={dataAttrs}>
                     Тестовая строка
                 </Checkbox>,
             );
 
-            wrapper.find('div[role="checkbox"]').simulate('keydown', event);
+            fireEvent.keyDown(getByTestId('customInput'), { code: 'Enter' });
+
             expect(handleChange).toBeCalledWith(!checked);
         });
 
         it('not calls onChange on keydown, if keyboard code is not Enter', () => {
-            const event = {
-                type: 'keydown',
-                nativeEvent: {
-                    code: 'Tab',
-                },
-            } as React.KeyboardEvent;
-            const checked = false;
             const handleChange = jest.fn();
 
-            const wrapper = shallow(
-                <Checkbox onChange={handleChange} checked={checked}>
+            const { getByTestId } = render(
+                <Checkbox onChange={handleChange} checked={false} dataAttrs={dataAttrs}>
                     Тестовая строка
                 </Checkbox>,
             );
 
-            wrapper.find('div[role="checkbox"]').simulate('keydown', event);
+            fireEvent.keyDown(getByTestId('customInput'), { code: 'Tab' });
+
             expect(handleChange).not.toBeCalled();
         });
     });
