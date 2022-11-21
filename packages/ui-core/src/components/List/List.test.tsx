@@ -1,33 +1,26 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import List from './List';
 import ListItem from './ListItem';
 
 describe('<List />', () => {
     it('it renders List', () => {
-        const wrapper = shallow(
+        const { container } = render(
             <List>
                 <ListItem />
             </List>,
         );
-        expect(wrapper).toMatchSnapshot();
+
+        expect(container).toMatchSnapshot();
     });
 
     it('it renders List with type ol', () => {
-        const wrapper = shallow(
+        const { container } = render(
             <List as="ol">
                 <ListItem />
             </List>,
         );
-        expect(wrapper).toMatchSnapshot();
-    });
 
-    it('it renders List with type ul', () => {
-        const wrapper = shallow(
-            <List as="ul">
-                <ListItem />
-            </List>,
-        );
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 });

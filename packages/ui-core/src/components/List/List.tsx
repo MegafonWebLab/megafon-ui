@@ -28,19 +28,24 @@ const List: React.FC<IListProps> = ({
     const ElementType = as as React.ElementType;
 
     return (
-        <ElementType
+        <div
             className={cn(
                 {
                     'h-align': align,
                     color,
                     weight,
-                    type: as,
                 },
                 className,
             )}
         >
-            {children}
-        </ElementType>
+            <ElementType
+                className={cn('inner', {
+                    type: as,
+                })}
+            >
+                {children}
+            </ElementType>
+        </div>
     );
 };
 
