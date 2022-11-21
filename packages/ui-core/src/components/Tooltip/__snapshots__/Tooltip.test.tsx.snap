@@ -38,28 +38,36 @@ exports[`<Tooltip/> renders component with all props 1`] = `
     }
     radius="rounded"
   >
-    <Header
-      as="h5"
-      className="mfui-tooltip__title"
-      space="tight"
-    >
-      Заголовок
-    </Header>
     <div
-      className="mfui-tooltip__text"
+      className="mfui-tooltip__top"
     >
-      Текст
+      <div
+        className="mfui-tooltip__main-content"
+      >
+        <Header
+          as="h5"
+          className="mfui-tooltip__title"
+          space="tight"
+        >
+          Заголовок
+        </Header>
+        <div
+          className="mfui-tooltip__text"
+        >
+          Текст
+        </div>
+      </div>
+      <button
+        className="mfui-tooltip__button"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Кнопка
+        <test-file-stub
+          className="mfui-tooltip__button-arrow"
+        />
+      </button>
     </div>
-    <button
-      className="mfui-tooltip__button"
-      onClick={[MockFunction]}
-      type="button"
-    >
-      Кнопка
-      <test-file-stub
-        className="mfui-tooltip__button-arrow"
-      />
-    </button>
     <button
       className="mfui-tooltip__close-button"
       data-close="test"
