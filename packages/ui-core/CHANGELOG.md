@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.8.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.8.1...@megafon/ui-core@4.8.2) (2022-11-21)
+
+
+### Bug Fixes
+
+* **tabs:** remove tab underline on hover ([1c6cfbd](https://github.com/MegafonWebLab/megafon-ui/commit/1c6cfbde1c66c71c99c42ae4a586f048688f3afb))
+
+
+
+
+
 ## [4.8.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.8.0...@megafon/ui-core@4.8.1) (2022-11-15)
 
 

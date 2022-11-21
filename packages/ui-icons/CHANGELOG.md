@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.3.0...@megafon/ui-icons@2.4.0) (2022-11-21)
+
+
+### Features
+
+* **icons:** add new ([5762a89](https://github.com/MegafonWebLab/megafon-ui/commit/5762a89e9814d8394c0557383a36ba44213e8fcf))
+* **icons:** add Sbp icon ([d47aa07](https://github.com/MegafonWebLab/megafon-ui/commit/d47aa07addbc365f6c80061f3e31d6fbf534a213))
+
+
+
+
+
 # [2.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.2.0...@megafon/ui-icons@2.3.0) (2022-10-31)
 
 
