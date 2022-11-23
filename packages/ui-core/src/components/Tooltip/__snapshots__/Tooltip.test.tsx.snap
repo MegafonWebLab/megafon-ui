@@ -13,77 +13,77 @@ exports[`<Tooltip/> renders component with all props 1`] = `
   }
 >
   <div
-    className="mfui-tooltip__arrow-container"
+    className="mfui-tooltip__arrow-wrap"
   >
     <div
-      className="mfui-tooltip__arrow-wrap"
-    >
-      <div
-        className="mfui-tooltip__arrow arrow"
-      >
-        <test-file-stub
-          className="mfui-tooltip__arrow-inner"
-        />
-      </div>
-    </div>
-  </div>
-  <Tile
-    className="mfui-tooltip__content content"
-    dataAttrs={
-      Object {
-        "root": Object {
-          "data-content": "test",
-        },
-      }
-    }
-    radius="rounded"
-  >
-    <div
-      className="mfui-tooltip__top"
-    >
-      <div
-        className="mfui-tooltip__main-content"
-      >
-        <Header
-          as="h5"
-          className="mfui-tooltip__title"
-          space="tight"
-        >
-          Заголовок
-        </Header>
-        <div
-          className="mfui-tooltip__text"
-        >
-          Текст
-        </div>
-      </div>
-      <button
-        className="mfui-tooltip__button"
-        onClick={[MockFunction]}
-        type="button"
-      >
-        Кнопка
-        <test-file-stub
-          className="mfui-tooltip__button-arrow"
-        />
-      </button>
-    </div>
-    <button
-      className="mfui-tooltip__close-button"
-      data-close="test"
-      onClick={[Function]}
-      type="button"
+      className="mfui-tooltip__arrow arrow"
     >
       <test-file-stub
-        className="mfui-tooltip__close-icon"
+        className="mfui-tooltip__arrow-inner"
       />
-    </button>
-  </Tile>
-  <Tile
-    className="mfui-tooltip__content-shadow content-shadow"
-    radius="rounded"
-    shadowLevel="high"
-  />
+    </div>
+  </div>
+  <div
+    className="mfui-tooltip__content-wrap"
+  >
+    <Tile
+      className="mfui-tooltip__content content"
+      dataAttrs={
+        Object {
+          "root": Object {
+            "data-content": "test",
+          },
+        }
+      }
+      radius="rounded"
+    >
+      <button
+        className="mfui-tooltip__close-button"
+        data-close="test"
+        onClick={[Function]}
+        type="button"
+      >
+        <test-file-stub
+          className="mfui-tooltip__close-icon"
+        />
+      </button>
+      <div
+        className="mfui-tooltip__top"
+      >
+        <div
+          className="mfui-tooltip__main-content"
+        >
+          <Header
+            as="h5"
+            className="mfui-tooltip__title"
+            space="tight"
+          >
+            Заголовок
+          </Header>
+          <div
+            className="mfui-tooltip__text"
+          >
+            Текст
+          </div>
+        </div>
+        <button
+          className="mfui-tooltip__button"
+          onClick={[MockFunction]}
+          type="button"
+        >
+          Кнопка
+          <test-file-stub
+            className="mfui-tooltip__button-arrow"
+          />
+        </button>
+      </div>
+    </Tile>
+    <Tile
+      className="mfui-tooltip__content-shadow content-shadow"
+      radius="rounded"
+      shadowLevel="high"
+    />
+  </div>
 </div>
 `;
 
@@ -99,39 +99,39 @@ exports[`<Tooltip/> renders component with default props 1`] = `
   }
 >
   <div
-    className="mfui-tooltip__arrow-container"
+    className="mfui-tooltip__arrow-wrap"
   >
     <div
-      className="mfui-tooltip__arrow-wrap"
+      className="mfui-tooltip__arrow"
     >
-      <div
-        className="mfui-tooltip__arrow"
-      >
-        <test-file-stub
-          className="mfui-tooltip__arrow-inner"
-        />
-      </div>
+      <test-file-stub
+        className="mfui-tooltip__arrow-inner"
+      />
     </div>
   </div>
-  <Tile
-    className="mfui-tooltip__content"
-    dataAttrs={
-      Object {
-        "root": undefined,
-      }
-    }
-    radius="rounded"
+  <div
+    className="mfui-tooltip__content-wrap"
   >
-    <div
-      className="mfui-tooltip__addititonal-content"
+    <Tile
+      className="mfui-tooltip__content"
+      dataAttrs={
+        Object {
+          "root": undefined,
+        }
+      }
+      radius="rounded"
     >
-      Some test content
-    </div>
-  </Tile>
-  <Tile
-    className="mfui-tooltip__content-shadow"
-    radius="rounded"
-    shadowLevel="high"
-  />
+      <div
+        className="mfui-tooltip__addititonal-content"
+      >
+        Some test content
+      </div>
+    </Tile>
+    <Tile
+      className="mfui-tooltip__content-shadow"
+      radius="rounded"
+      shadowLevel="high"
+    />
+  </div>
 </div>
 `;

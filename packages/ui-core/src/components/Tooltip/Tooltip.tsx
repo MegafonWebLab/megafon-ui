@@ -220,12 +220,6 @@ const Tooltip: React.FC<ITooltipProps> = ({
                         boundary: currentBoundary,
                     },
                 },
-                {
-                    name: 'offset',
-                    options: {
-                        offset: [0, 24],
-                    },
-                },
             ],
         }),
         [placement, arrowElement, currentBoundary, isOpen, fallbackPlacements],
@@ -364,7 +358,7 @@ const Tooltip: React.FC<ITooltipProps> = ({
         (): JSX.Element => (
             <>
                 {hasTopContent && (
-                    <div className={cn('top')}>
+                    <div className={cn('top', { margin: !!children })}>
                         {hasMainContent && (
                             <div className={cn('main-content')}>
                                 {!!title && (
@@ -411,34 +405,32 @@ const Tooltip: React.FC<ITooltipProps> = ({
             style={styles.popper}
             {...attributes.popper}
         >
-            {/* arrow-container необходим для того, чтобы, если triggerEvent === "hover", 
-            тултип не пропадал при наведении курсора на область между родителем и тултипом */}
-            <div className={cn('arrow-container')}>
-                <div className={cn('arrow-wrap')} ref={setArrowElement} style={styles.arrow}>
-                    <div className={cn('arrow', [arrowClassName])}>
-                        <Arrow className={cn('arrow-inner')} />
-                    </div>
+            <div className={cn('arrow-wrap')} ref={setArrowElement} style={styles.arrow}>
+                <div className={cn('arrow', [arrowClassName])}>
+                    <Arrow className={cn('arrow-inner')} />
                 </div>
             </div>
-            <Tile
-                radius="rounded"
-                dataAttrs={{ root: dataAttrs?.content }}
-                className={cn('content', [contentClassName])}
-            >
-                {isBigSize && renderedFullContent}
-                {!isBigSize && !!text && renderedText}
-                {hasCloseButton && (
-                    <button
-                        {...filterDataAttrs(dataAttrs?.close)}
-                        className={cn('close-button')}
-                        type="button"
-                        onClick={handleCloseButtonClick}
-                    >
-                        <CancelIcon className={cn('close-icon')} />
-                    </button>
-                )}
-            </Tile>
-            <Tile radius="rounded" shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
+            <div className={cn('content-wrap')}>
+                <Tile
+                    radius="rounded"
+                    dataAttrs={{ root: dataAttrs?.content }}
+                    className={cn('content', [contentClassName])}
+                >
+                    {hasCloseButton && (
+                        <button
+                            {...filterDataAttrs(dataAttrs?.close)}
+                            className={cn('close-button')}
+                            type="button"
+                            onClick={handleCloseButtonClick}
+                        >
+                            <CancelIcon className={cn('close-icon')} />
+                        </button>
+                    )}
+                    {isBigSize && renderedFullContent}
+                    {!isBigSize && !!text && renderedText}
+                </Tile>
+                <Tile radius="rounded" shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
+            </div>
         </div>
     );
 

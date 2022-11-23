@@ -62,10 +62,6 @@
         position: relative;
         z-index: 1;
 
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-
         overflow: hidden;
     }
 
@@ -91,6 +87,10 @@
         }
     }
 
+    &__top_margin {
+        margin-bottom: 16px;
+    }
+
     &__arrow-container {
         position: absolute;
     }
@@ -105,8 +105,6 @@
 
         display: flex;
         justify-content: center;
-
-        overflow: hidden;
 
         svg {
             position: absolute;
@@ -181,15 +179,15 @@
     }
 
     &__close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
+        position: relative;
+        top: -6px;
+        right: -6px;
 
         justify-content: center;
+
+        float: right;
         width: 24px;
         height: 24px;
-
-        margin-left: 24px;
 
         border-radius: 12px;
 
@@ -231,7 +229,7 @@
     &_small {
         @{b}__content {
             display: flex;
-            flex-direction: row;
+            flex-direction: row-reverse;
             gap: 18px;
             align-items: center;
         }
@@ -241,9 +239,7 @@
         }
 
         @{b}__close-button {
-            position: static;
-
-            margin-left: 0;
+            top: auto;
         }
     }
 
@@ -323,11 +319,9 @@
     &@{popperRightStart},
     &@{popperRightEnd} {
         @{b} {
-            &__arrow-container {
-                left: -24px;
-
-                width: 24px;
-                height: 100%;
+            &__content,
+            &__content-shadow {
+                transform: translateX(24px);
             }
 
             &__arrow-wrap {
@@ -345,11 +339,9 @@
     &@{popperLeftStart},
     &@{popperLeftEnd} {
         @{b} {
-            &__arrow-container {
-                right: -24px;
-
-                width: 24px;
-                height: 100%;
+            &__content,
+            &__content-shadow {
+                transform: translateX(-24px);
             }
 
             &__arrow-wrap {
@@ -367,15 +359,13 @@
     &@{popperTopStart},
     &@{popperTopEnd} {
         @{b} {
-            &__arrow-container {
-                bottom: -24px;
-
-                width: 100%;
-                height: 24px;
+            &__content,
+            &__content-shadow {
+                transform: translateY(-24px);
             }
 
-            &__arrow {
-                top: -2px;
+            &__arrow-wrap {
+                bottom: 13px;
             }
 
             &__arrow,
@@ -389,15 +379,13 @@
     &@{popperBottomStart},
     &@{popperBottomEnd} {
         @{b} {
-            &__arrow-container {
-                top: -24px;
-
-                width: 100%;
-                height: 24px;
+            &__content,
+            &__content-shadow {
+                transform: translateY(24px);
             }
 
             &__arrow-wrap {
-                bottom: -2px;
+                top: 13px;
             }
         }
     }
