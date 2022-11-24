@@ -1,6 +1,7 @@
+/* eslint-disable react/no-multi-comp */
 import * as React from 'react';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import { checkEventIsClickOrEnterPress, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { checkEventIsClickOrEnterPress, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
 import ClearIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
@@ -24,6 +25,12 @@ const DEFAULT_PLACEHOLDERS = {
     text: 'Текст',
 };
 
+const converConfig = {
+    br: {
+        component: () => React.createElement('br'),
+    },
+};
+
 export const Verification = {
     VALID: 'valid',
     ERROR: 'error',
@@ -36,7 +43,7 @@ export const TextareaTypes = {
 
 export const MinTextareaHeight = {
     ONE_ROW: ROW_HEIGHT,
-    THREE_ROWS: ROW_HEIGHT * 3,
+    THREE_ROWS: ROW_HEIGHT * DEFAULT_ROW_COUNT,
 } as const;
 
 type MinTextareaHeightType = typeof MinTextareaHeight[keyof typeof MinTextareaHeight];
@@ -174,13 +181,14 @@ const TextField: React.FC<TextFieldProps> = ({
 }) => {
     const [isPasswordHidden, setPasswordHidden] = useState<boolean>(true);
     const [inputValue, setInputValue] = useState<string | number | undefined>(value);
-    const [initialTextareaHeight, setInitialTextareaHeight] = useState<number>(minTextareaHeight);
+    const [textareaHeight, setTextareaHeight] = useState<number>(minTextareaHeight);
     const [isMaxLimitExceeded, setIsMaxLimitExceeded] = useState(false);
     const [currentNoticeText, setCurrentNoticeText] = useState(noticeText);
     const [isTextareaResizeFocused, setIsTextareaResizeFocused] = useState(false);
     const [isTextareaResized, setIsTextareaResized] = useState(false);
 
     const fieldNode = useRef<HTMLInputElement | HTMLTextAreaElement>();
+    const hiddenElement = useRef<HTMLDivElement>(null);
     const labelRef = useRef<HTMLLabelElement>(null);
     const resizerRef = useRef<HTMLDivElement>(null);
 
@@ -207,6 +215,18 @@ const TextField: React.FC<TextFieldProps> = ({
         },
         [symbolCounter],
     );
+
+    useEffect(() => {
+        if (!hiddenElement.current) {
+            return;
+        }
+
+        const hiddenElementHeight = hiddenElement.current.scrollHeight;
+        const isHiddenHeightCorrect =
+            hiddenElementHeight >= minTextareaHeight && hiddenElementHeight <= TEXTAREA_MAX_HEIGHT;
+
+        !isTextareaResized && setTextareaHeight(isHiddenHeightCorrect ? hiddenElementHeight : minTextareaHeight);
+    }, [hiddenElement, isTextareaResized, minTextareaHeight, inputValue]);
 
     useEffect(() => {
         !isControlled && setInputValue(value);
@@ -244,7 +264,7 @@ const TextField: React.FC<TextFieldProps> = ({
 
                 const updatedHeight = resizeHeight < minTextareaHeight ? minTextareaHeight : resizeHeight;
 
-                setInitialTextareaHeight(updatedHeight);
+                setTextareaHeight(updatedHeight);
                 setIsTextareaResized(true);
             }, throttleTime.resizeTextarea);
 
@@ -270,30 +290,9 @@ const TextField: React.FC<TextFieldProps> = ({
 
     const togglePasswordHiding = useCallback(() => setPasswordHidden(prevPassState => !prevPassState), []);
 
-    const setTextareaHeight = (): void => {
-        if (!fieldNode?.current || isTextareaResized) {
-            return;
-        }
-
-        const {
-            current: { scrollHeight },
-        } = fieldNode;
-
-        const extraRowCount = Math.round((scrollHeight - 28 - minTextareaHeight) / ROW_HEIGHT);
-        const newHeight =
-            extraRowCount <= DEFAULT_ROW_COUNT ? minTextareaHeight + ROW_HEIGHT * extraRowCount : TEXTAREA_MAX_HEIGHT;
-
-        setInitialTextareaHeight(newHeight);
-    };
-
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-        if (textarea === TextareaTypes.FLEXIBLE) {
-            setTextareaHeight();
-        }
-
         !isControlled && setInputValue(e.target.value);
         checkSymbolMaxLimit(e.target.value);
-
         onChange?.(e);
     };
 
@@ -450,18 +449,31 @@ const TextField: React.FC<TextFieldProps> = ({
         );
     };
 
-    const renderTextarea = (): JSX.Element => (
-        <>
-            <textarea
-                {...textareaParams}
-                style={{ height: `${initialTextareaHeight}px` }}
-                ref={getFieldNode}
-                onKeyDown={disableEnterLineBreak ? handleTextareaKeyDown : undefined}
-                onScroll={handleTextareaScroll}
-            />
-            {renderLabel()}
-        </>
-    );
+    const renderTextarea = (): JSX.Element => {
+        const hiddenValue = inputValue?.toString().replace(/[\r\n]/g, '<br/>');
+
+        return (
+            <>
+                <textarea
+                    {...textareaParams}
+                    style={{ height: `${textareaHeight}px` }}
+                    ref={getFieldNode}
+                    onKeyDown={disableEnterLineBreak ? handleTextareaKeyDown : undefined}
+                    onScroll={handleTextareaScroll}
+                />
+                {!!hiddenValue && (
+                    <div
+                        className={cn('hidden-textarea')}
+                        ref={hiddenElement}
+                        style={{ width: fieldNode.current?.scrollWidth }}
+                    >
+                        {convert(hiddenValue, converConfig)}.
+                    </div>
+                )}
+                {renderLabel()}
+            </>
+        );
+    };
 
     const renderIconBlock = (): JSX.Element | undefined => {
         const icon: React.ReactNode | null = getIcon();
