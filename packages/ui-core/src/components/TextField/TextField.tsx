@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { checkEventIsClickOrEnterPress, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
 import ClearIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
@@ -118,6 +118,8 @@ export type TextFieldProps = {
     minTextareaHeight?: MinTextareaHeightType;
     /** Скрывает кнопку ресайза для textarea="flexible" */
     hideResizeButton?: boolean;
+    /** Отключает перевод строки по Enter */
+    disableEnterLineBreak?: boolean;
     /** Обработчик изменения значения */
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     /** Обработчик изменения значения маскированного инпута до обработки маской */
@@ -151,6 +153,7 @@ const TextField: React.FC<TextFieldProps> = ({
     required,
     isControlled = false,
     minTextareaHeight = MinTextareaHeight.THREE_ROWS,
+    disableEnterLineBreak = false,
     hideResizeButton = false,
     onBlur,
     onChange,
@@ -316,6 +319,10 @@ const TextField: React.FC<TextFieldProps> = ({
         labelRef.current.style.top = `${DEFAULT_LABEL_TOP_POSITION - scrollTop}px`;
     };
 
+    const handleTextareaKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+        checkEventIsClickOrEnterPress(e) && !e.shiftKey && e.preventDefault();
+    };
+
     const handleIconClick = useCallback(
         e => {
             const isClearFuncAvailable = !customIcon && !onCustomIconClick && hasClearIcon;
@@ -447,9 +454,10 @@ const TextField: React.FC<TextFieldProps> = ({
         <>
             <textarea
                 {...textareaParams}
-                onScroll={handleTextareaScroll}
                 style={{ height: `${initialTextareaHeight}px` }}
                 ref={getFieldNode}
+                onKeyDown={disableEnterLineBreak ? handleTextareaKeyDown : undefined}
+                onScroll={handleTextareaScroll}
             />
             {renderLabel()}
         </>
@@ -568,6 +576,7 @@ TextField.propTypes = {
     className: PropTypes.string,
     minTextareaHeight: PropTypes.oneOf([24, 72]),
     hideResizeButton: PropTypes.bool,
+    disableEnterLineBreak: PropTypes.bool,
     onChange: PropTypes.func,
     onBeforeMaskChange: PropTypes.func,
     onBlur: PropTypes.func,

@@ -278,6 +278,22 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
     />
 </Playground>
 
+## Отключение перевода строки по нажатию Enter
+Остается доступен перевод строки по нажатию комбинации Shift + Enter и автоматический
+
+<Playground style={wrapperWideWidthStyle}>
+    <TextField
+        textarea
+        label="fixed"
+        disableEnterLineBreak
+    />
+    <TextField
+        textarea="flexible"
+        label="flexible"
+        disableEnterLineBreak
+    />
+</Playground>
+
 ## Поле отключено для редактирования
 
 <Playground style={wrapperDefaultWidthStyle}>
