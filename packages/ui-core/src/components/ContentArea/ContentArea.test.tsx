@@ -64,16 +64,6 @@ describe('<ContentArea />', () => {
         expect(getByTestId('inner')).toHaveClass('mfui-content-area__inner_background-color_spbSky1');
     });
 
-    it('should render with innerBackgroundColor', () => {
-        const { getByTestId } = render(
-            <ContentArea dataAttrs={dataAttrs} innerBackgroundColor="spbSky1">
-                children
-            </ContentArea>,
-        );
-
-        expect(getByTestId('inner')).toHaveClass('mfui-content-area__inner_background-color_spbSky1');
-    });
-
     it('should render with disableIndents', () => {
         const { getByTestId } = render(
             <ContentArea dataAttrs={dataAttrs} disableIndents="mobile-tablet">

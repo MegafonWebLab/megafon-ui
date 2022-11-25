@@ -9,13 +9,13 @@ const dataAttrs: IGridColumn['dataAttrs'] = {
 };
 
 describe('<GridColumn />', () => {
-    it('shoud render GridColumn', () => {
+    it('should render GridColumn', () => {
         const { container } = render(<GridColumn>item</GridColumn>);
 
         expect(container).toMatchSnapshot();
     });
 
-    it('shoud render with className', () => {
+    it('should render with className', () => {
         const { getByTestId } = render(
             <GridColumn className="custom-class" dataAttrs={dataAttrs}>
                 item
@@ -25,13 +25,13 @@ describe('<GridColumn />', () => {
         expect(getByTestId('root')).toHaveClass('custom-class');
     });
 
-    it('shoud render with dataAttrs', () => {
+    it('should render with dataAttrs', () => {
         const { queryByTestId } = render(<GridColumn dataAttrs={dataAttrs}>item</GridColumn>);
 
         expect(queryByTestId('root')).toBeTruthy();
     });
 
-    it('shoud render with size', () => {
+    it('should render with size', () => {
         const { getByTestId } = render(
             <GridColumn all="5" wide="1" desktop="2" tablet="3" mobile="4" dataAttrs={dataAttrs}>
                 item
@@ -47,7 +47,7 @@ describe('<GridColumn />', () => {
         expect(rootNode).toHaveClass('mfui-grid-column_mobile_4');
     });
 
-    it('shoud render with order', () => {
+    it('should render with order', () => {
         const { getByTestId } = render(
             <GridColumn
                 orderAll="5"
@@ -69,7 +69,7 @@ describe('<GridColumn />', () => {
         expect(rootNode).toHaveClass('mfui-grid-column_mobile-order_4');
     });
 
-    it('shoud render with leftOffset', () => {
+    it('should render with leftOffset', () => {
         const { getByTestId } = render(
             <GridColumn
                 leftOffsetAll="5"
@@ -91,7 +91,7 @@ describe('<GridColumn />', () => {
         expect(rootNode).toHaveClass('mfui-grid-column_left-offset-mobile_4');
     });
 
-    it('shoud render with rightOffset', () => {
+    it('should render with rightOffset', () => {
         const { getByTestId } = render(
             <GridColumn
                 rightOffsetAll="5"
@@ -113,7 +113,7 @@ describe('<GridColumn />', () => {
         expect(rootNode).toHaveClass('mfui-grid-column_right-offset-mobile_4');
     });
 
-    it('shoud render with align', () => {
+    it('should render with align', () => {
         const { getByTestId } = render(
             <GridColumn align="center" dataAttrs={dataAttrs}>
                 item
@@ -123,7 +123,7 @@ describe('<GridColumn />', () => {
         expect(getByTestId('root')).toHaveClass('mfui-grid-column_align_center');
     });
 
-    it('shoud render with grow', () => {
+    it('should render with grow', () => {
         const { getByTestId } = render(
             <GridColumn grow dataAttrs={dataAttrs}>
                 item
@@ -133,7 +133,7 @@ describe('<GridColumn />', () => {
         expect(getByTestId('root')).toHaveClass('mfui-grid-column_grow');
     });
 
-    it('shoud render with flex', () => {
+    it('should render with flex', () => {
         const { getByTestId } = render(
             <GridColumn flex dataAttrs={dataAttrs}>
                 item
