@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './ContentArea.less';
 
@@ -39,6 +39,11 @@ export interface IConrentAreaProps {
         root?: string;
         inner?: string;
     };
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        inner?: Record<string, string>;
+    };
 }
 
 const cn = cnCreate('mfui-content-area');
@@ -49,9 +54,14 @@ const ContentArea: React.FC<IConrentAreaProps> = ({
     children,
     className,
     classes,
+    dataAttrs,
 }) => (
-    <div className={cn({ 'background-color': outerBackgroundColor }, [className, classes?.root])}>
+    <div
+        {...filterDataAttrs(dataAttrs?.root)}
+        className={cn({ 'background-color': outerBackgroundColor }, [className, classes?.root])}
+    >
         <div
+            {...filterDataAttrs(dataAttrs?.inner)}
             className={cn(
                 'inner',
                 {
@@ -72,6 +82,10 @@ ContentArea.propTypes = {
     classes: PropTypes.shape({
         root: PropTypes.string,
         inner: PropTypes.string,
+    }),
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        inner: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     outerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
     innerBackgroundColor: PropTypes.oneOf(Object.values(BACKGROUND_COLORS)),
