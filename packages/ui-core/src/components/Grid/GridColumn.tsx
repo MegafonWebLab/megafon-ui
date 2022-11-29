@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './GridColumn.less';
 
@@ -72,6 +72,10 @@ export interface IGridColumn {
     flex?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
     children: React.ReactNode;
 }
 
@@ -101,9 +105,11 @@ const GridColumn: React.FC<IGridColumn> = ({
     flex = false,
     grow = false,
     align,
+    dataAttrs,
     children,
 }) => (
     <div
+        {...filterDataAttrs(dataAttrs?.root)}
         className={cn(
             {
                 flex,
@@ -160,6 +166,9 @@ GridColumn.propTypes = {
     grow: PropTypes.bool,
     flex: PropTypes.bool,
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     children: PropTypes.node.isRequired,
 };
 

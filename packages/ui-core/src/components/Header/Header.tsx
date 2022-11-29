@@ -3,7 +3,7 @@ import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './Header.less';
 
-interface IHeaderProps {
+export interface IHeaderProps {
     /** Тег */
     as?: 'h1' | 'h2' | 'h3' | 'h5';
     /** Поведение текста при встраивании в широкий или узкий контейнер (только для h5) */
