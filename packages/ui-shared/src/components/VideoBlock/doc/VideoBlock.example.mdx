@@ -1,6 +1,6 @@
 import { Playground } from 'docz';
 import VideoBlock from '../VideoBlock';
-import { content, contentWithoutButton, video, youtubeVideoId } from './VideoBlock.docz';
+import { content, contentWithoutButton, video, poster, youtubeVideoId } from './VideoBlock.docz';
 
 ```javascript collapse=Демо данные
 const content: IContent = {
@@ -25,6 +25,15 @@ const contentWithoutButton: IContent = {
 <Playground>
     <VideoBlock
         videoSrc={video}
+    />
+</Playground>
+
+## С превью
+
+<Playground>
+    <VideoBlock
+        videoSrc={video}
+        poster={poster}
     />
 </Playground>
 
@@ -62,6 +71,7 @@ const contentWithoutButton: IContent = {
     <VideoBlock
         videoSrc={youtubeVideoId}
         videoType="youtube"
+        isAutoplay
     />
 </Playground>
 

@@ -52,6 +52,8 @@ export interface IVideoBlockProps {
     isMuted?: boolean;
     /** Автоматическое проигрывание видео */
     isAutoplay?: boolean;
+    /** Ссылка на изображение для превью к HTML5 видео */
+    poster?: string;
     /** Расположение контента справа от видео. Только для десктопа */
     contentPositionRight?: boolean;
 }
@@ -68,21 +70,49 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
     isMuted = true,
     isAutoplay = false,
     contentPositionRight = false,
+    poster,
 }) => {
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
             case VideoTypes.YOUTUBE: {
-                const src = `https://www.youtube.com/embed/${videoSrc}?&autoplay=${isAutoplay ? 1 : 0}&mute=${
-                    isMuted ? 1 : 0
-                }&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=${videoSrc}`;
+                const url = `https://www.youtube.com/embed/${videoSrc}?`;
+                const autoplay = `&autoplay=${isAutoplay ? 1 : 0}`;
+                const mute = `&mute=${isMuted ? 1 : 0}`;
+                const loop = `&loop=1`;
+                const rel = `&rel=0`;
+                const controls = `&controls=${isAutoplay ? 0 : 1}`;
+                const showinfo = `&showinfo=0`;
+                const ivLoadPolicy = `&iv_load_policy=3`;
+                const playlist = `&playlist=${videoSrc}`;
+                const src = `${url}${autoplay}${mute}${loop}${rel}${controls}${showinfo}${ivLoadPolicy}${playlist}`;
 
-                return <iframe src={src} width="100%" height="100%" frameBorder="0" allow="autoplay" title="iframe" />;
+                return (
+                    <div className={cn('youtube')}>
+                        <iframe
+                            className={cn('iframe')}
+                            src={src}
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            allow="autoplay"
+                            title="iframe"
+                            allowFullScreen
+                        />
+                    </div>
+                );
             }
 
             case VideoTypes.VIDEO: {
                 return (
                     // eslint-disable-next-line jsx-a11y/media-has-caption
-                    <video className={cn('video')} autoPlay={isAutoplay} muted={isMuted} controls={!isAutoplay} loop>
+                    <video
+                        className={cn('video')}
+                        autoPlay={isAutoplay}
+                        muted={isMuted}
+                        controls={!isAutoplay}
+                        loop
+                        poster={poster}
+                    >
                         <source src={videoSrc} type="video/mp4" />
                     </video>
                 );
@@ -92,7 +122,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 return null;
             }
         }
-    }, [isAutoplay, isMuted, videoType, videoSrc]);
+    }, [videoType, videoSrc, isAutoplay, isMuted, poster]);
 
     const renderContent = React.useCallback(
         ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
@@ -155,7 +185,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                     'position-left': contentPositionRight,
                 })}
             >
-                <div className={cn('video-wrapper', { 'with-content': !!content })}>{renderVideo()}</div>
+                {renderVideo()}
             </GridColumn>,
         );
 
@@ -199,6 +229,7 @@ VideoBlock.propTypes = {
     videoSrc: PropTypes.string.isRequired,
     isMuted: PropTypes.bool,
     isAutoplay: PropTypes.bool,
+    poster: PropTypes.string,
     contentPositionRight: PropTypes.bool,
 };
 

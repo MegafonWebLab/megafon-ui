@@ -1,4 +1,5 @@
 import { IContent } from '../VideoBlock';
+import poster from './poster.png';
 import video from './video.mp4';
 
 const content: IContent = {
@@ -17,4 +18,4 @@ const contentWithoutButton: IContent = {
 
 const youtubeVideoId = '2Sps5MnvlKM';
 
-export { content, contentWithoutButton, video, youtubeVideoId };
+export { content, contentWithoutButton, video, youtubeVideoId, poster };
