@@ -1,62 +1,96 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import Header from './Header';
+import { fireEvent, render } from '@testing-library/react';
+import Header, { IHeaderProps } from './Header';
+
+const dataAttrs: IHeaderProps['dataAttrs'] = {
+    root: {
+        'data-testid': 'root',
+    },
+};
 
 describe('<Header />', () => {
-    it('it renders with default h1 tag', () => {
-        const wrapper = shallow(<Header />);
-        expect(wrapper.type()).toEqual('h1');
+    it('should render Header', () => {
+        const { container } = render(<Header addition={<div>addition</div>}>Title</Header>);
+
+        expect(container).toMatchSnapshot();
     });
 
-    ['h1', 'h2', 'h3', 'h5'].forEach(tag => {
-        it(`it renders only with ${tag}`, () => {
-            type HeaderPropType = React.ComponentProps<typeof Header>;
-            const wrapper = shallow(<Header as={tag as HeaderPropType['as']} />);
-            expect(wrapper.type()).toEqual(tag);
-        });
-    });
-
-    it('it renders with white color class', () => {
-        const wrapper = shallow(<Header color="white" />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('it renders without class margin', () => {
-        const wrapper = shallow(<Header margin={false} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('it renders with addition', () => {
-        const wrapper = shallow(<Header addition={<div />} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('it renders with children', () => {
-        const wrapper = shallow(
-            <Header>
-                <section />
+    it('should render with as', () => {
+        const { getByTestId } = render(
+            <Header as="h3" dataAttrs={dataAttrs}>
+                Title
             </Header>,
         );
-        expect(wrapper).toMatchSnapshot();
+
+        expect(getByTestId('root').tagName).toBe('H3');
     });
 
-    it('it renders with text align center', () => {
-        const wrapper = shallow(<Header align="center" />);
-        expect(wrapper).toMatchSnapshot();
+    it('should render with space when as is h5', () => {
+        const { getByTestId } = render(
+            <Header space="tight" as="h5" dataAttrs={dataAttrs}>
+                Title
+            </Header>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-header_space_tight');
     });
 
-    it('it renders with className', () => {
-        const wrapper = shallow(<Header className="class" />);
-        expect(wrapper).toMatchSnapshot();
+    it('should render without space when as is not h5', () => {
+        const { getByTestId } = render(
+            <Header space="tight" as="h3" dataAttrs={dataAttrs}>
+                Title
+            </Header>,
+        );
+
+        expect(getByTestId('root')).not.toHaveClass('mfui-header_space_tight');
     });
 
-    it('it renders with classNames array', () => {
-        const wrapper = shallow(<Header className={['class1', 'class2']} />);
-        expect(wrapper).toMatchSnapshot();
+    it('should render with color', () => {
+        const { getByTestId } = render(
+            <Header color="green" dataAttrs={dataAttrs}>
+                Title
+            </Header>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-header_color_green');
     });
 
-    it('it renders with data attributes', () => {
-        const wrapper = shallow(<Header dataAttrs={{ root: { 'data-test': 'test', 'incorrect-attr': 'test' } }} />);
-        expect(wrapper).toMatchSnapshot();
+    it('should render with margin', () => {
+        const { getByTestId } = render(
+            <Header margin dataAttrs={dataAttrs}>
+                Title
+            </Header>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-header_margin');
+    });
+
+    it('should render with align', () => {
+        const { getByTestId } = render(
+            <Header align="center" dataAttrs={dataAttrs}>
+                Title
+            </Header>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-header_h-align_center');
+    });
+
+    it('should render with addition', () => {
+        const { getByTestId } = render(<Header addition={<div data-testid="addition" />}>Title</Header>);
+
+        expect(getByTestId('addition')).toBeInTheDocument();
+    });
+
+    it('should call onClick', () => {
+        const onClickMock = jest.fn();
+        const { getByTestId } = render(
+            <Header onClick={onClickMock} dataAttrs={dataAttrs}>
+                Title
+            </Header>,
+        );
+
+        fireEvent.click(getByTestId('root'));
+
+        expect(onClickMock).toBeCalled();
     });
 });

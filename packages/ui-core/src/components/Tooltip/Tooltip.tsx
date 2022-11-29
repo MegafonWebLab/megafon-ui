@@ -171,6 +171,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const portalElem = React.useRef<HTMLDivElement | null>(null);
 
     const isBigSize = size === Size.BIG;
+    const hasMainContent = !!title || !!text;
+    const hasTopContent = hasMainContent || !!buttonText;
 
     const clickEvent = useMemo(() => (isTouchDevice ? TOUCH_KEY : MOUSE_KEY), [isTouchDevice]);
 
@@ -191,10 +193,10 @@ const Tooltip: React.FC<ITooltipProps> = ({
                     options: {
                         element: arrowElement,
                         padding: {
-                            top: 17,
-                            right: 1,
-                            bottom: 17,
-                            left: 1,
+                            top: 18,
+                            right: 8,
+                            bottom: 18,
+                            left: 8,
                         },
                     },
                 },
@@ -216,12 +218,6 @@ const Tooltip: React.FC<ITooltipProps> = ({
                     name: 'preventOverflow',
                     options: {
                         boundary: currentBoundary,
-                    },
-                },
-                {
-                    name: 'offset',
-                    options: {
-                        offset: [0, 12],
                     },
                 },
             ],
@@ -361,27 +357,35 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const renderedFullContent = useMemo(
         (): JSX.Element => (
             <>
-                {!!title && (
-                    <Header className={cn('title')} as="h5" space="tight">
-                        {title}
-                    </Header>
-                )}
-                {!!text && renderedText}
-                {!!buttonText && (
-                    <button
-                        type="button"
-                        className={cn('button')}
-                        {...filterDataAttrs(dataAttrs?.button)}
-                        onClick={onClick}
-                    >
-                        {buttonText}
-                        <RightArrow className={cn('button-arrow')} />
-                    </button>
+                {hasTopContent && (
+                    <div className={cn('top', { margin: !!children })}>
+                        {hasMainContent && (
+                            <div className={cn('main-content')}>
+                                {!!title && (
+                                    <Header className={cn('title')} as="h5" space="tight">
+                                        {title}
+                                    </Header>
+                                )}
+                                {!!text && renderedText}
+                            </div>
+                        )}
+                        {!!buttonText && (
+                            <button
+                                type="button"
+                                className={cn('button')}
+                                {...filterDataAttrs(dataAttrs?.button)}
+                                onClick={onClick}
+                            >
+                                {buttonText}
+                                <RightArrow className={cn('button-arrow')} />
+                            </button>
+                        )}
+                    </div>
                 )}
                 {!!children && <div className={cn('addititonal-content')}>{children}</div>}
             </>
         ),
-        [title, text, buttonText, children, dataAttrs, renderedText, onClick],
+        [title, text, buttonText, children, dataAttrs, hasTopContent, hasMainContent, renderedText, onClick],
     );
 
     const template = (
@@ -401,34 +405,32 @@ const Tooltip: React.FC<ITooltipProps> = ({
             style={styles.popper}
             {...attributes.popper}
         >
-            {/* arrow-container необходим для того, чтобы, если triggerEvent === "hover", 
-            тултип не пропадал при наведении курсора на область между родителем и тултипом */}
-            <div className={cn('arrow-container')}>
-                <div className={cn('arrow-wrap')} ref={setArrowElement} style={styles.arrow}>
-                    <div className={cn('arrow', [arrowClassName])}>
-                        <Arrow className={cn('arrow-inner')} />
-                    </div>
+            <div className={cn('arrow-wrap')} ref={setArrowElement} style={styles.arrow}>
+                <div className={cn('arrow', [arrowClassName])}>
+                    <Arrow className={cn('arrow-inner')} />
                 </div>
             </div>
-            <Tile
-                radius="rounded"
-                dataAttrs={{ root: dataAttrs?.content }}
-                className={cn('content', [contentClassName])}
-            >
-                {isBigSize && renderedFullContent}
-                {!isBigSize && !!text && renderedText}
-                {hasCloseButton && (
-                    <button
-                        {...filterDataAttrs(dataAttrs?.close)}
-                        className={cn('close-button')}
-                        type="button"
-                        onClick={handleCloseButtonClick}
-                    >
-                        <CancelIcon className={cn('close-icon')} />
-                    </button>
-                )}
-            </Tile>
-            <Tile radius="rounded" shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
+            <div className={cn('content-wrap')}>
+                <Tile
+                    radius="rounded"
+                    dataAttrs={{ root: dataAttrs?.content }}
+                    className={cn('content', [contentClassName])}
+                >
+                    {hasCloseButton && (
+                        <button
+                            {...filterDataAttrs(dataAttrs?.close)}
+                            className={cn('close-button')}
+                            type="button"
+                            onClick={handleCloseButtonClick}
+                        >
+                            <CancelIcon className={cn('close-icon')} />
+                        </button>
+                    )}
+                    {isBigSize && renderedFullContent}
+                    {!isBigSize && !!text && renderedText}
+                </Tile>
+                <Tile radius="rounded" shadowLevel="high" className={cn('content-shadow', [contentShadowClassName])} />
+            </div>
         </div>
     );
 

@@ -33,6 +33,7 @@ const commonProps = {
         input: 'inputClass',
     },
     className: 'customClass',
+    disableEnterLineBreak: true,
     minTextareaHeight: MinTextareaHeight.ONE_ROW,
 };
 

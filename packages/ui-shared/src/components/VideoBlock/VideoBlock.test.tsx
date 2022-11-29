@@ -79,6 +79,11 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with poster', () => {
+        const component = shallow(<VideoBlock videoSrc="video" poster="site.com/poster.png" />);
+        expect(component).toMatchSnapshot();
+    });
+
     it('it renders VideoBlock with youtube media type', () => {
         const component = shallow(<VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} />);
         expect(component).toMatchSnapshot();

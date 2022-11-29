@@ -1,53 +1,76 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import ContentArea, { IConrentAreaProps, BackgroundColorType } from './ContentArea';
+import { render } from '@testing-library/react';
+import ContentArea, { IConrentAreaProps } from './ContentArea';
 
-const props: Partial<IConrentAreaProps> = {
-    outerBackgroundColor: 'white',
-    innerBackgroundColor: 'white',
-    disableIndents: 'all',
-    className: 'className',
-    classes: {
-        root: 'rootClass',
-        inner: 'innerClass',
+const dataAttrs: IConrentAreaProps['dataAttrs'] = {
+    root: {
+        'data-testid': 'root',
+    },
+    inner: {
+        'data-testid': 'inner',
     },
 };
 
-const backgroundColors = ['white', 'transparent', 'green', 'purple', 'spbSky0', 'spbSky1', 'spbSky2'];
-
 describe('<ContentArea />', () => {
-    const getWrapper = (additionalProps?: Partial<IConrentAreaProps>) =>
-        shallow(
-            <ContentArea {...additionalProps}>
-                <span>child</span>
+    it('should render ContentArea', () => {
+        const { container } = render(<ContentArea>children</ContentArea>);
+
+        expect(container).toMatchSnapshot();
+    });
+
+    it('should render with classes', () => {
+        const { getByTestId } = render(
+            <ContentArea
+                className="custom-class"
+                classes={{
+                    root: 'root-class',
+                    inner: 'inner-class',
+                }}
+                dataAttrs={dataAttrs}
+            >
+                children
             </ContentArea>,
         );
 
-    it('renders correctly with default props', () => {
-        const wrapper = getWrapper();
-        expect(wrapper).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveClass('custom-class');
+        expect(getByTestId('root')).toHaveClass('root-class');
+        expect(getByTestId('inner')).toHaveClass('inner-class');
     });
 
-    it('renders correctly with custom props', () => {
-        const wrapper = getWrapper(props);
-        expect(wrapper).toMatchSnapshot();
+    it('should render with dataAttrs', () => {
+        const { queryByTestId } = render(<ContentArea dataAttrs={dataAttrs}>children</ContentArea>);
+
+        expect(queryByTestId('root')).toBeTruthy();
+        expect(queryByTestId('inner')).toBeTruthy();
     });
 
-    backgroundColors.forEach(color => {
-        it(`render component when outerBackgroundColor with ${color}`, () => {
-            const wrapper = shallow(
-                <ContentArea outerBackgroundColor={color as BackgroundColorType}>some content</ContentArea>,
-            );
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render with outerBackgroundColor', () => {
+        const { getByTestId } = render(
+            <ContentArea dataAttrs={dataAttrs} outerBackgroundColor="spbSky1">
+                children
+            </ContentArea>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-content-area_background-color_spbSky1');
     });
 
-    backgroundColors.forEach(color => {
-        it(`render component when innerBackgroundColor with ${color}`, () => {
-            const wrapper = shallow(
-                <ContentArea innerBackgroundColor={color as BackgroundColorType}>some content</ContentArea>,
-            );
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render with innerBackgroundColor', () => {
+        const { getByTestId } = render(
+            <ContentArea dataAttrs={dataAttrs} innerBackgroundColor="spbSky1">
+                children
+            </ContentArea>,
+        );
+
+        expect(getByTestId('inner')).toHaveClass('mfui-content-area__inner_background-color_spbSky1');
+    });
+
+    it('should render with disableIndents', () => {
+        const { getByTestId } = render(
+            <ContentArea dataAttrs={dataAttrs} disableIndents="mobile-tablet">
+                children
+            </ContentArea>,
+        );
+
+        expect(getByTestId('inner')).toHaveClass('mfui-content-area__inner_disable-indents_mobile-tablet');
     });
 });

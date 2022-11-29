@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import { IGridColumn } from './GridColumn';
 import './Grid.less';
@@ -17,6 +17,11 @@ export interface IGridProps {
     multiRow?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+        container?: Record<string, string>;
+    };
     children: Array<React.ReactElement<IGridColumn>> | React.ReactElement<IGridColumn>;
 }
 
@@ -29,9 +34,11 @@ const Grid: React.FC<IGridProps> = ({
     hAlign,
     vAlign,
     className,
+    dataAttrs,
 }) => (
-    <div className={cn([className])}>
+    <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className])}>
         <div
+            {...filterDataAttrs(dataAttrs?.container)}
             className={cn('container', {
                 'multi-row': multiRow,
                 'h-align': hAlign,
@@ -63,6 +70,10 @@ Grid.propTypes = {
     guttersBottom: PropTypes.oneOf(['large', 'medium']),
     multiRow: PropTypes.bool,
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+        container: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
     children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element.isRequired), PropTypes.element.isRequired])
         .isRequired,
 };

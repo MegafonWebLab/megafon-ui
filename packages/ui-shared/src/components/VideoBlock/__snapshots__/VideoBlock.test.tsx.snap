@@ -15,22 +15,18 @@ exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper"
+      <video
+        autoPlay={true}
+        className="mfui-video-block__video"
+        controls={false}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={true}
-          className="mfui-video-block__video"
-          controls={false}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -87,22 +83,18 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -159,22 +151,18 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -232,22 +220,18 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -293,22 +277,18 @@ exports[`<VideoBlock /> it renders VideoBlock with content but without button 1`
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -365,22 +345,18 @@ exports[`<VideoBlock /> it renders VideoBlock with contentPositionRight 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -440,22 +416,18 @@ exports[`<VideoBlock /> it renders VideoBlock with dataAttrs 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -476,22 +448,51 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with poster 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <Grid
+    className="mfui-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="10"
+      className="mfui-video-block__video-column"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
+        poster="site.com/poster.png"
+      >
+        <source
+          src="video"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -512,22 +513,18 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={false}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={false}
-        >
-          <source
-            src="video"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
@@ -549,13 +546,15 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
       tablet="12"
     >
       <div
-        className="mfui-video-block__video-wrapper"
+        className="mfui-video-block__youtube"
       >
         <iframe
           allow="autoplay"
+          allowFullScreen={true}
+          className="mfui-video-block__iframe"
           frameBorder="0"
           height="100%"
-          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=1&loop=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&playlist=youtube"
           title="iframe"
           width="100%"
         />
@@ -581,13 +580,15 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autopl
       tablet="12"
     >
       <div
-        className="mfui-video-block__video-wrapper"
+        className="mfui-video-block__youtube"
       >
         <iframe
           allow="autoplay"
+          allowFullScreen={true}
+          className="mfui-video-block__iframe"
           frameBorder="0"
           height="100%"
-          src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&playlist=youtube"
           title="iframe"
           width="100%"
         />
@@ -613,13 +614,15 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
       tablet="12"
     >
       <div
-        className="mfui-video-block__video-wrapper"
+        className="mfui-video-block__youtube"
       >
         <iframe
           allow="autoplay"
+          allowFullScreen={true}
+          className="mfui-video-block__iframe"
           frameBorder="0"
           height="100%"
-          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=0&loop=1&rel=0&controls=0&showinfo=0e&iv_load_policy=3&playlist=youtube"
+          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=0&loop=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&playlist=youtube"
           title="iframe"
           width="100%"
         />
@@ -719,22 +722,18 @@ exports[`<VideoBlock /> render component with html tags 1`] = `
       mobile="12"
       tablet="12"
     >
-      <div
-        className="mfui-video-block__video-wrapper mfui-video-block__video-wrapper_with-content"
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
       >
-        <video
-          autoPlay={false}
-          className="mfui-video-block__video"
-          controls={true}
-          loop={true}
-          muted={true}
-        >
-          <source
-            src="video"
-            type="video/mp4"
-          />
-        </video>
-      </div>
+        <source
+          src="video"
+          type="video/mp4"
+        />
+      </video>
     </GridColumn>
   </Grid>
 </div>
