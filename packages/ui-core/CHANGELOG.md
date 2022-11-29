@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.8.2...@megafon/ui-core@4.9.0) (2022-11-29)
+
+
+### Bug Fixes
+
+* **textarea:** fix auto resize ([de31a72](https://github.com/MegafonWebLab/megafon-ui/commit/de31a723f68e24f12623ca872f8281ca60b599c4))
+* **tooltip:** fix close button margin and arrow position ([db99274](https://github.com/MegafonWebLab/megafon-ui/commit/db99274ab17fe58621aaaf1ba7d85bba6afc5e05))
+
+
+### Features
+
+* **textarea:** add disableEnterLineBreak prop ([3fba0a0](https://github.com/MegafonWebLab/megafon-ui/commit/3fba0a08a4bca66575388c9156103335d68b287b))
+
+
+
+
+
 ## [4.8.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.8.1...@megafon/ui-core@4.8.2) (2022-11-21)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.5.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.5.2...@megafon/ui-shared@4.5.3) (2022-11-29)
+
+
+### Bug Fixes
+
+* **videoblock:** fix defects ([697f450](https://github.com/MegafonWebLab/megafon-ui/commit/697f450187f01fa99639b8ebcd487c85b32b0568))
+
+
+
+
+
 ## [4.5.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.5.1...@megafon/ui-shared@4.5.2) (2022-11-21)
 
 **Note:** Version bump only for package @megafon/ui-shared

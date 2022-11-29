@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-core",
-  "version": "4.8.2",
+  "version": "4.9.0",
   "files": [
     "dist",
     "styles"
