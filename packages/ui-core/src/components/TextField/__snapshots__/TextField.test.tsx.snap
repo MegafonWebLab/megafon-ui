@@ -1089,6 +1089,7 @@ exports[`<TextField /> textarea should render fixed textarea 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onScroll={[Function]}
       placeholder="Текст"
       required={true}
@@ -1137,6 +1138,7 @@ exports[`<TextField /> textarea should render flexible textarea 1`] = `
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onScroll={[Function]}
       placeholder="Текст"
       required={true}
@@ -1190,6 +1192,7 @@ exports[`<TextField /> textarea should render flexible textarea without resize b
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onScroll={[Function]}
       placeholder="Текст"
       required={true}
@@ -1238,6 +1241,7 @@ exports[`<TextField /> textarea should render with error because of max limit is
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onScroll={[Function]}
       placeholder="Текст"
       required={true}
@@ -1248,6 +1252,17 @@ exports[`<TextField /> textarea should render with error because of max limit is
       }
       value="123456"
     />
+    <div
+      className="mfui-text-field__hidden-textarea"
+      style={
+        Object {
+          "width": undefined,
+        }
+      }
+    >
+      123456
+      .
+    </div>
     <label
       className="mfui-text-field__label labelClass"
       htmlFor="id"
@@ -1368,6 +1383,17 @@ exports[`<TextField /> textarea should render with number value 1`] = `
       }
       value={1234}
     />
+    <div
+      className="mfui-text-field__hidden-textarea"
+      style={
+        Object {
+          "width": undefined,
+        }
+      }
+    >
+      1234
+      .
+    </div>
     <label
       className="mfui-text-field__label"
       htmlFor="id"
@@ -1418,6 +1444,17 @@ exports[`<TextField /> textarea should render with string value 1`] = `
       }
       value="value"
     />
+    <div
+      className="mfui-text-field__hidden-textarea"
+      style={
+        Object {
+          "width": undefined,
+        }
+      }
+    >
+      value
+      .
+    </div>
     <label
       className="mfui-text-field__label"
       htmlFor="id"
@@ -1481,6 +1518,17 @@ exports[`<TextField /> textarea should render with value after updating number p
         }
         value={1234}
       />
+      <div
+        className="mfui-text-field__hidden-textarea"
+        style={
+          Object {
+            "width": 0,
+          }
+        }
+      >
+        1234
+        .
+      </div>
       <label
         className="mfui-text-field__label"
         htmlFor="id"
@@ -1545,6 +1593,17 @@ exports[`<TextField /> textarea should render with value after updating string p
         }
         value="value"
       />
+      <div
+        className="mfui-text-field__hidden-textarea"
+        style={
+          Object {
+            "width": 0,
+          }
+        }
+      >
+        value
+        .
+      </div>
       <label
         className="mfui-text-field__label"
         htmlFor="id"
@@ -1609,6 +1668,17 @@ exports[`<TextField /> textarea should render without ie placeholder when value 
         }
         value="value"
       />
+      <div
+        className="mfui-text-field__hidden-textarea"
+        style={
+          Object {
+            "width": undefined,
+          }
+        }
+      >
+        value
+        .
+      </div>
       <label
         className="mfui-text-field__label"
         htmlFor="id"
