@@ -16,8 +16,8 @@
 @popperEscaped: ~"[data-popper-escaped='true']";
 
 .arrowSize() {
-    width: 42px;
-    height: 12px;
+    width: 33px;
+    height: 13px;
 }
 
 .arrow() {
@@ -36,8 +36,6 @@
 
     transition-duration: @defaultTransitionTiming;
     transition-property: opacity, visibility;
-
-    .smallFont();
 
     pointer-events: none;
 
@@ -64,9 +62,7 @@
         position: relative;
         z-index: 1;
 
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        overflow: hidden;
     }
 
     &__content-shadow {
@@ -76,6 +72,23 @@
         bottom: 0;
         left: 0;
         z-index: -1;
+    }
+
+    &__top,
+    &__main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__top {
+        @media @mobileBU {
+            gap: 12px;
+        }
+    }
+
+    &__top_margin {
+        margin-bottom: 16px;
     }
 
     &__arrow-container {
@@ -89,6 +102,13 @@
     &__arrow {
         .arrowSize();
         position: absolute;
+
+        display: flex;
+        justify-content: center;
+
+        svg {
+            position: absolute;
+        }
     }
 
     &__arrow-inner {
@@ -98,7 +118,17 @@
     }
 
     &__text {
-        .smallFont();
+        .commonFont();
+
+        @media @mobileSM {
+            .smallFont();
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     &__button,
@@ -117,13 +147,19 @@
         .fontFamily();
 
         color: var(--brandGreen);
+
         font-weight: 500;
-        font-size: 12px;
-        line-height: 14px;
+        font-size: 15px;
+        line-height: 18px;
 
         background-color: transparent;
 
         transition: 300ms;
+
+        @media @mobileSM {
+            font-size: 12px;
+            line-height: 14px;
+        }
     }
 
     &__button:hover {
@@ -143,15 +179,15 @@
     }
 
     &__close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
+        position: relative;
+        top: -6px;
+        right: -6px;
 
         justify-content: center;
+
+        float: right;
         width: 24px;
         height: 24px;
-
-        margin-left: 24px;
 
         border-radius: 12px;
 
@@ -193,7 +229,7 @@
     &_small {
         @{b}__content {
             display: flex;
-            flex-direction: row;
+            flex-direction: row-reverse;
             gap: 18px;
             align-items: center;
         }
@@ -203,9 +239,7 @@
         }
 
         @{b}__close-button {
-            position: static;
-
-            margin-left: 0;
+            top: auto;
         }
     }
 
@@ -285,15 +319,13 @@
     &@{popperRightStart},
     &@{popperRightEnd} {
         @{b} {
-            &__arrow-container {
-                left: -12px;
-
-                width: 12px;
-                height: 100%;
+            &__content,
+            &__content-shadow {
+                transform: translateX(24px);
             }
 
             &__arrow-wrap {
-                left: -15px;
+                left: 3px;
             }
 
             &__arrow,
@@ -307,15 +339,13 @@
     &@{popperLeftStart},
     &@{popperLeftEnd} {
         @{b} {
-            &__arrow-container {
-                right: -12px;
-
-                width: 12px;
-                height: 100%;
+            &__content,
+            &__content-shadow {
+                transform: translateX(-24px);
             }
 
             &__arrow-wrap {
-                right: -15px;
+                right: 3px;
             }
 
             &__arrow,
@@ -329,15 +359,13 @@
     &@{popperTopStart},
     &@{popperTopEnd} {
         @{b} {
-            &__arrow-container {
-                bottom: -12px;
-
-                width: 100%;
-                height: 12px;
+            &__content,
+            &__content-shadow {
+                transform: translateY(-24px);
             }
 
             &__arrow-wrap {
-                top: 0;
+                bottom: 13px;
             }
 
             &__arrow,
@@ -351,11 +379,13 @@
     &@{popperBottomStart},
     &@{popperBottomEnd} {
         @{b} {
-            &__arrow-container {
-                top: -12px;
+            &__content,
+            &__content-shadow {
+                transform: translateY(24px);
+            }
 
-                width: 100%;
-                height: 12px;
+            &__arrow-wrap {
+                top: 13px;
             }
         }
     }
