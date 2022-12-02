@@ -1,20 +1,23 @@
 import React, { Ref } from 'react';
 import { cnCreate, detectTouch, filterDataAttrs } from '@megafon/ui-helpers';
 import Arrow from '@megafon/ui-icons/system-32-arrow_right_32.svg';
-import PropTypes from 'prop-types';
 import Preloader, { PreloaderColorsType, PreloaderSizesType, PreloaderColors } from 'components/Preloader/Preloader';
+import PropTypes from 'prop-types';
 import './Button.less';
 
 export const ButtonTypes = {
     PRIMARY: 'primary',
     OUTLINE: 'outline',
+    TEXT: 'text',
 } as const;
 
 type ButtonTypesType = typeof ButtonTypes[keyof typeof ButtonTypes];
 
 export const ButtonThemes = {
     GREEN: 'green',
+    GREEN_SOFT: 'green-soft',
     PURPLE: 'purple',
+    PURPLE_SOFT: 'purple-soft',
     WHITE: 'white',
     BLACK: 'black',
 } as const;
@@ -154,7 +157,8 @@ const Button: React.FC<IButtonProps> = ({
         () =>
             (type === ButtonTypes.PRIMARY && theme === ButtonThemes.GREEN) ||
             (type === ButtonTypes.PRIMARY && theme === ButtonThemes.PURPLE) ||
-            (type === ButtonTypes.OUTLINE && theme === ButtonThemes.WHITE),
+            (type === ButtonTypes.OUTLINE && theme === ButtonThemes.WHITE) ||
+            (type === ButtonTypes.TEXT && theme === ButtonThemes.WHITE),
         [type, theme],
     );
 
@@ -175,7 +179,10 @@ const Button: React.FC<IButtonProps> = ({
         }
 
         return (
-            <div {...filterDataAttrs(dataAttrs?.content)} className={cn('content', { ellipsis }, contentClassName)}>
+            <div
+                {...filterDataAttrs(dataAttrs?.content)}
+                className={cn('content', { ellipsis, 'show-loader': showLoader }, contentClassName)}
+            >
                 {icon && <div className={cn('icon')}>{icon}</div>}
                 {children && (
                     <span className={cn('text', { ellipsis })} {...filterDataAttrs(dataAttrs?.text)}>
@@ -185,7 +192,17 @@ const Button: React.FC<IButtonProps> = ({
                 {!icon && showArrow && <Arrow className={cn('icon-arrow')} {...filterDataAttrs(dataAttrs?.arrow)} />}
             </div>
         );
-    }, [children, icon, dataAttrs?.content, dataAttrs?.text, dataAttrs?.arrow, ellipsis, contentClassName, showArrow]);
+    }, [
+        children,
+        icon,
+        dataAttrs?.content,
+        dataAttrs?.text,
+        dataAttrs?.arrow,
+        ellipsis,
+        showLoader,
+        contentClassName,
+        showArrow,
+    ]);
 
     const contentType = React.useMemo(() => {
         switch (true) {
@@ -201,6 +218,7 @@ const Button: React.FC<IButtonProps> = ({
     const renderedLoader: JSX.Element = React.useMemo(
         () => (
             <Preloader
+                className={cn('preloader')}
                 dataAttrs={{ root: filterDataAttrs(dataAttrs?.loader) }}
                 color={loaderColor}
                 sizeAll={getLoaderSize(sizeAll)}
@@ -265,7 +283,8 @@ const Button: React.FC<IButtonProps> = ({
             ref={buttonRef as Ref<HTMLButtonElement & HTMLAnchorElement>}
         >
             <div {...filterDataAttrs(dataAttrs?.inner)} className={cn('inner', innerClassName)}>
-                {!showLoader ? renderedContent : renderedLoader}
+                {renderedContent}
+                {showLoader && renderedLoader}
             </div>
         </ElementType>
     );
