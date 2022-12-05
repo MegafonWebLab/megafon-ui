@@ -99,6 +99,16 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with video media type and playsinline', () => {
+        const component = shallow(<VideoBlock videoSrc="youtube" videoType={VideoTypes.VIDEO} playsinline />);
+        expect(component).toMatchSnapshot();
+    });
+
+    it('it renders VideoBlock with youtube media type and playsinline', () => {
+        const component = shallow(<VideoBlock videoSrc="youtube" videoType={VideoTypes.YOUTUBE} playsinline />);
+        expect(component).toMatchSnapshot();
+    });
+
     it('render component with html tags', () => {
         const localContent = {
             ...content,

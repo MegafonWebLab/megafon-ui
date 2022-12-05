@@ -56,6 +56,8 @@ export interface IVideoBlockProps {
     poster?: string;
     /** Расположение контента справа от видео. Только для десктопа */
     contentPositionRight?: boolean;
+    /** Воспроизводит видео на iOS устройствах без перехода в полноэкранный режим */
+    playsinline?: boolean;
 }
 
 const cn = cnCreate('mfui-video-block');
@@ -71,6 +73,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
     isAutoplay = false,
     contentPositionRight = false,
     poster,
+    playsinline = false,
 }) => {
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
@@ -84,7 +87,8 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 const showinfo = `&showinfo=0`;
                 const ivLoadPolicy = `&iv_load_policy=3`;
                 const playlist = `&playlist=${videoSrc}`;
-                const src = `${url}${autoplay}${mute}${loop}${rel}${controls}${showinfo}${ivLoadPolicy}${playlist}`;
+                const playsinlineProp = `&playsinline=${playsinline ? 1 : 0}`;
+                const src = `${url}${autoplay}${mute}${loop}${rel}${controls}${showinfo}${ivLoadPolicy}${playlist}${playsinlineProp}`;
 
                 return (
                     <div className={cn('youtube')}>
@@ -112,6 +116,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                         controls={!isAutoplay}
                         loop
                         poster={poster}
+                        playsInline={playsinline}
                     >
                         <source src={videoSrc} type="video/mp4" />
                     </video>
@@ -122,7 +127,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 return null;
             }
         }
-    }, [videoType, videoSrc, isAutoplay, isMuted, poster]);
+    }, [videoType, videoSrc, isAutoplay, isMuted, poster, playsinline]);
 
     const renderContent = React.useCallback(
         ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
@@ -230,6 +235,7 @@ VideoBlock.propTypes = {
     isMuted: PropTypes.bool,
     isAutoplay: PropTypes.bool,
     poster: PropTypes.string,
+    playsinline: PropTypes.bool,
     contentPositionRight: PropTypes.bool,
 };
 
