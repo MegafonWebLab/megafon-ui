@@ -1,35 +1,53 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import NavArrow, { INavArrowProps, Theme, View } from './NavArrow';
+import { render } from '@testing-library/react';
+import NavArrow, { INavArrowProps } from './NavArrow';
 
-const props: INavArrowProps = {
-    dataAttrs: { root: { 'data-testid': 'test' } },
-    className: 'class',
-    theme: Theme.DARK,
-    view: View.NEXT,
-    disabled: true,
-    onClick: jest.fn(),
+const dataAttrs: INavArrowProps['dataAttrs'] = {
+    root: {
+        'data-testid': 'root',
+    },
+    prevArrow: {
+        'data-testid': 'prevArrow',
+    },
+    nextArrow: {
+        'data-testid': 'nextArrow',
+    },
 };
 
 describe('<NavArrow />', () => {
-    it('should render with default props', () => {
-        const wrapper = shallow(<NavArrow />);
+    it('should render NavArrow', () => {
+        const { container } = render(<NavArrow />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
-    it('should render with props', () => {
-        const wrapper = shallow(<NavArrow {...props} />);
+    it('should render with className', () => {
+        const { getByTestId } = render(<NavArrow className="custom-class" dataAttrs={dataAttrs} />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveClass('custom-class');
     });
 
-    it('should call onClick', () => {
-        const onClickMock = jest.fn();
-        const wrapper = shallow(<NavArrow onClick={onClickMock} />);
+    it('should render when view is prev', () => {
+        const { getByTestId } = render(<NavArrow view="prev" dataAttrs={dataAttrs} />);
 
-        wrapper.find('button').simulate('click');
+        expect(getByTestId('prevArrow')).toBeInTheDocument();
+    });
 
-        expect(onClickMock).toBeCalled();
+    it('should render when view is next', () => {
+        const { getByTestId } = render(<NavArrow view="next" dataAttrs={dataAttrs} />);
+
+        expect(getByTestId('nextArrow')).toBeInTheDocument();
+    });
+
+    it('should render with theme', () => {
+        const { getByTestId } = render(<NavArrow theme="dark" dataAttrs={dataAttrs} />);
+
+        expect(getByTestId('root')).toHaveClass('mfui-nav-arrow_theme_dark');
+    });
+
+    it('should render when disabled is true', () => {
+        const { getByTestId } = render(<NavArrow disabled dataAttrs={dataAttrs} />);
+
+        expect(getByTestId('root')).toHaveAttribute('disabled');
     });
 });
