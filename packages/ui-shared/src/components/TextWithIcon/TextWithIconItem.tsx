@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 import './TextWithIconItem.less';
 
 export interface ITextWithIconItem {
-    /** Дополнительные классы для корневого и внутренних элементов */
+    /** Дополнительные классы для внутренних элементов */
     classes?: {
         icon?: string;
         text?: string;
