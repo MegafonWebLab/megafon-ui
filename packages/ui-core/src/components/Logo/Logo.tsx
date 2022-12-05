@@ -10,13 +10,17 @@ export interface ILogoProps {
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Цвет */
-    color?: string;
+    color?: 'green';
     /** Отображение */
     view?: 'horizontal' | 'vertical';
     /** Ссылка */
     href?: string;
     /** target - аргумент тега <a> */
     target?: '_self' | '_blank' | '_parent' | '_top';
+    /** Дополнительные data атрибуты к внутренним элементам */
+    dataAttrs?: {
+        root?: Record<string, string>;
+    };
 }
 
 const cn = cnCreate('mfui-logo');
@@ -26,6 +30,7 @@ const Logo: React.FC<ILogoProps> = ({
     view = 'horizontal',
     target = '_blank',
     href = '/',
+    dataAttrs,
 }) => {
     const images = {
         'green-horizontal': greenHorizontalImg,
@@ -34,7 +39,7 @@ const Logo: React.FC<ILogoProps> = ({
     const BackgroundImage = images[`${color}-${view}`];
 
     return (
-        <Link href={href} target={target} className={cn('', { view }, className)}>
+        <Link dataAttrs={dataAttrs} href={href} target={target} className={cn('', { view }, className)}>
             <div className={cn('img')}>
                 <BackgroundImage className={cn('svg')} />
             </div>
@@ -43,11 +48,14 @@ const Logo: React.FC<ILogoProps> = ({
 };
 
 Logo.propTypes = {
-    color: PropTypes.string,
+    color: PropTypes.oneOf(['green']),
     view: PropTypes.oneOf(['horizontal', 'vertical']),
     target: PropTypes.oneOf(['_self', '_blank', '_parent', '_top']),
     href: PropTypes.string,
     className: PropTypes.string,
+    dataAttrs: PropTypes.shape({
+        root: PropTypes.objectOf(PropTypes.string.isRequired),
+    }),
 };
 
 export default Logo;
