@@ -1,44 +1,90 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
-import Link from './Link';
+import { fireEvent, render } from '@testing-library/react';
+import Link, { ILinkProps } from './Link';
 
-test('Link renders with default props', () => {
-    const link = shallow(<Link />);
-    expect(link).toMatchSnapshot();
-});
+const dataAttrs: ILinkProps['dataAttrs'] = {
+    root: {
+        'data-testid': 'root',
+    },
+};
 
-test('Link renders children', () => {
-    const link = shallow(
-        <Link>
-            <h3>some text</h3>
-        </Link>,
-    );
-    expect(link).toMatchSnapshot();
-});
+describe('<Link />', () => {
+    it('should render Link', () => {
+        const { container } = render(<Link>Link</Link>);
 
-test('Link renders with rel', () => {
-    const link = shallow(
-        <Link rel="noopener">
-            <h3>No opener</h3>
-        </Link>,
-    );
-    expect(link).toMatchSnapshot();
-});
+        expect(container).toMatchSnapshot();
+    });
 
-test('Link calls onClick handler', () => {
-    const fn = jest.fn();
-    const link = shallow(<Link onClick={fn}>some text</Link>);
+    it('should render with className', () => {
+        const { getByTestId } = render(
+            <Link className="custom-class" dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
 
-    link.simulate('click');
-    expect(fn).toHaveBeenCalledTimes(1);
-});
+        expect(getByTestId('root')).toHaveClass('custom-class');
+    });
 
-test('Link renders with attribute download', () => {
-    const link = shallow(<Link download />);
-    expect(link).toMatchSnapshot();
-});
+    it('should render with href', () => {
+        const { getByTestId } = render(
+            <Link href="test.com" dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
 
-test('Link renders with data-attribute', () => {
-    const link = shallow(<Link dataAttrs={{ root: { 'data-attribute': 'atribute' } }} />);
-    expect(link).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveAttribute('href', 'test.com');
+    });
+
+    it('should render with target', () => {
+        const { getByTestId } = render(
+            <Link target="_blank" dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
+
+        expect(getByTestId('root')).toHaveAttribute('target', '_blank');
+    });
+
+    it('should render with rel', () => {
+        const { getByTestId } = render(
+            <Link rel="contact" dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
+
+        expect(getByTestId('root')).toHaveAttribute('rel', 'contact');
+    });
+
+    it('should render with download', () => {
+        const { getByTestId } = render(
+            <Link download dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
+
+        expect(getByTestId('root')).toHaveAttribute('download');
+    });
+
+    it('should render with children', () => {
+        const { queryByText } = render(
+            <Link download dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
+
+        expect(queryByText('Link')).toBeInTheDocument();
+    });
+
+    it('should call onClick', () => {
+        const onClickMock = jest.fn();
+        const { getByTestId } = render(
+            <Link onClick={onClickMock} dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
+
+        fireEvent.click(getByTestId('root'));
+
+        expect(onClickMock).toBeCalled();
+    });
 });
