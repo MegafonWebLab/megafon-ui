@@ -1,17 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Paragraph /> render Paragraph with defalut props 1`] = `
-<p
-  className="mfui-paragraph mfui-paragraph_color_default mfui-paragraph_space_wide mfui-paragraph_has-margin"
->
-  Test paragraph text
-</p>
+exports[`<Paragraph /> should render Paragraph 1`] = `
+<div>
+  <p
+    class="mfui-paragraph mfui-paragraph_color_default mfui-paragraph_space_wide mfui-paragraph_has-margin"
+  >
+    Text
+  </p>
+</div>
 `;
 
-exports[`<Paragraph /> render Paragraph with passed props 1`] = `
+exports[`<Paragraph /> should render with className 1`] = `
 <p
-  className="mfui-paragraph mfui-paragraph_align_right mfui-paragraph_color_purple mfui-paragraph_space_wide test"
+  class="mfui-paragraph mfui-paragraph_color_default mfui-paragraph_space_wide mfui-paragraph_has-margin custom-calss"
+  data-testid="root"
 >
-  Test paragraph text
+  Text
 </p>
 `;

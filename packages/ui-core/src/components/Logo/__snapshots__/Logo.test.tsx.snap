@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Logo renders with default props 1`] = `
-<Link
-  className="mfui-logo mfui-logo_view_horizontal"
-  href="/"
-  target="_blank"
->
-  <div
-    className="mfui-logo__img"
+exports[`<Logo /> should render Logo 1`] = `
+<div>
+  <a
+    class="mfui-logo mfui-logo_view_horizontal"
+    href="/"
+    target="_blank"
   >
-    <test-file-stub
-      className="mfui-logo__svg"
-    />
-  </div>
-</Link>
+    <div
+      class="mfui-logo__img"
+    >
+      <test-file-stub
+        classname="mfui-logo__svg"
+      />
+    </div>
+  </a>
+</div>
 `;
