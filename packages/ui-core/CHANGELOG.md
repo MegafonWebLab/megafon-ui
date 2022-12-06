@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.9.0...@megafon/ui-core@4.9.1) (2022-12-06)
+
+**Note:** Version bump only for package @megafon/ui-core
+
+
+
+
+
 # [4.9.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.8.2...@megafon/ui-core@4.9.0) (2022-11-29)
 
 

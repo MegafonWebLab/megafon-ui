@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.5.3...@megafon/ui-shared@4.6.0) (2022-12-06)
+
+
+### Features
+
+* **textwithicon:** fix playground ([44c4b6a](https://github.com/MegafonWebLab/megafon-ui/commit/44c4b6ad323a88f48d3b79191e3be4c44fa2ac14))
+* **textwithiconitem:** add example and fix text ([3db8692](https://github.com/MegafonWebLab/megafon-ui/commit/3db869242615caacf1101e4fcff1877ee43c9c95))
+* **textwithiconitem:** add render html and classes ([74e21bc](https://github.com/MegafonWebLab/megafon-ui/commit/74e21bcb78e3f4764ceb58d8fa102b6b000c5ae2))
+* **videoblock:** add playsinline prop ([c383928](https://github.com/MegafonWebLab/megafon-ui/commit/c383928473596bb962e68a15125fa9574bce4a64))
+
+
+
+
+
 ## [4.5.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.5.2...@megafon/ui-shared@4.5.3) (2022-11-29)
 
 
