@@ -44,3 +44,19 @@ import Heart from '@megafon/ui-icons/basic-16-heart_16.svg';
         <TextWithIconItem centeringOnMobile={false} text="Понятная и простая реализация партнерстваих" icon={<Like style={{ fill: '#00B956' }} />} />
     </TextWithIcon>
 </Playground>
+
+## HTML-теги и спецсимволы
+
+```javascript
+
+В свойстве text поддерживаются некоторые HTML-теги: "<br>, <b>, <font color>, <a href>" и спецсимвол &nbsp.
+
+```
+
+<Playground>
+    <TextWithIcon centeringOnMobile={false}>
+        <TextWithIconItem centeringOnMobile={false} text="Описание&nbspдолжно <a href='https://moscow.megafon.ru'>быть</a> <font color='#731982'>примерно</font> не более <b>130</b> символов.<br>Пишите содержательно, кратко и не будет проблем с текстовым контентом." icon={<Heart style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem centeringOnMobile={false} text="Специальные предложения для ваших клиентов" icon={<Star style={{ fill: '#00B956' }} />} />
+        <TextWithIconItem centeringOnMobile={false} text="Понятная и простая реализация партнерстваих" icon={<Like style={{ fill: '#00B956' }} />} />
+    </TextWithIcon>
+</Playground>
