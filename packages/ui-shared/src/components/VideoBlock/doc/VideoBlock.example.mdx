@@ -28,6 +28,15 @@ const contentWithoutButton: IContent = {
     />
 </Playground>
 
+### Базовое использование (без перехода в полноэкранный режим на iOS)
+
+<Playground>
+    <VideoBlock
+        videoSrc={video}
+        playsinline
+    />
+</Playground>
+
 ## С превью
 
 <Playground>
@@ -82,6 +91,17 @@ const contentWithoutButton: IContent = {
         content={content}
         videoSrc={youtubeVideoId}
         videoType="youtube"
+    />
+</Playground>
+
+### Видео с Youtube (без перехода в полноэкранный режим на iOS)
+
+<Playground>
+    <VideoBlock
+        videoSrc={youtubeVideoId}
+        videoType="youtube"
+        isAutoplay
+        playsinline
     />
 </Playground>
 
