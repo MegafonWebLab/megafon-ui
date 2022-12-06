@@ -21,6 +21,8 @@ type ViewType = typeof View[keyof typeof View];
 export interface INavArrowProps {
     dataAttrs?: {
         root?: Record<string, string>;
+        prevArrow?: Record<string, string>;
+        nextArrow?: Record<string, string>;
     };
     className?: string;
     theme?: ThemeType;
@@ -41,12 +43,12 @@ const NavArrow: React.FC<INavArrowProps> = ({
     const renderIcon = React.useCallback((): React.ReactNode => {
         switch (view) {
             case View.PREV:
-                return <ArrowLeft className={cn('icon')} />;
+                return <ArrowLeft {...filterDataAttrs(dataAttrs?.prevArrow)} className={cn('icon')} />;
 
             default:
-                return <ArrowRight className={cn('icon')} />;
+                return <ArrowRight {...filterDataAttrs(dataAttrs?.nextArrow)} className={cn('icon')} />;
         }
-    }, [view]);
+    }, [dataAttrs?.prevArrow, dataAttrs?.nextArrow, view]);
 
     return (
         <button
@@ -64,6 +66,8 @@ const NavArrow: React.FC<INavArrowProps> = ({
 NavArrow.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        prevArrow: PropTypes.objectOf(PropTypes.string.isRequired),
+        nextArrow: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     className: PropTypes.string,
     theme: PropTypes.oneOf(Object.values(Theme)),

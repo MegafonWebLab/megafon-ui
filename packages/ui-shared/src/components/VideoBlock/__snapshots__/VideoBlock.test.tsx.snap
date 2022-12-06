@@ -21,6 +21,7 @@ exports[`<VideoBlock /> it renders VideoBlock with autoplay 1`] = `
         controls={false}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video"
@@ -89,6 +90,7 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video.mp4"
@@ -157,6 +159,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video.mp4"
@@ -226,6 +229,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video.mp4"
@@ -283,6 +287,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content but without button 1`
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video.mp4"
@@ -351,6 +356,7 @@ exports[`<VideoBlock /> it renders VideoBlock with contentPositionRight 1`] = `
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video.mp4"
@@ -422,6 +428,7 @@ exports[`<VideoBlock /> it renders VideoBlock with dataAttrs 1`] = `
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video.mp4"
@@ -454,6 +461,7 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video.mp4"
@@ -486,6 +494,7 @@ exports[`<VideoBlock /> it renders VideoBlock with poster 1`] = `
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
         poster="site.com/poster.png"
       >
         <source
@@ -519,9 +528,43 @@ exports[`<VideoBlock /> it renders VideoBlock with sound turned on 1`] = `
         controls={true}
         loop={true}
         muted={false}
+        playsInline={false}
       >
         <source
           src="video"
+          type="video/mp4"
+        />
+      </video>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with video media type and playsinline 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <Grid
+    className="mfui-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="10"
+      className="mfui-video-block__video-column"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video"
+        controls={true}
+        loop={true}
+        muted={true}
+        playsInline={true}
+      >
+        <source
+          src="youtube"
           type="video/mp4"
         />
       </video>
@@ -554,7 +597,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type 1`] = `
           className="mfui-video-block__iframe"
           frameBorder="0"
           height="100%"
-          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=1&loop=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&playlist=youtube"
+          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=1&loop=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&playlist=youtube&playsinline=0"
           title="iframe"
           width="100%"
         />
@@ -588,7 +631,41 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and autopl
           className="mfui-video-block__iframe"
           frameBorder="0"
           height="100%"
-          src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&playlist=youtube"
+          src="https://www.youtube.com/embed/youtube?&autoplay=1&mute=1&loop=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&playlist=youtube&playsinline=0"
+          title="iframe"
+          width="100%"
+        />
+      </div>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
+exports[`<VideoBlock /> it renders VideoBlock with youtube media type and playsinline 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <Grid
+    className="mfui-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="10"
+      className="mfui-video-block__video-column"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <div
+        className="mfui-video-block__youtube"
+      >
+        <iframe
+          allow="autoplay"
+          allowFullScreen={true}
+          className="mfui-video-block__iframe"
+          frameBorder="0"
+          height="100%"
+          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=1&loop=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&playlist=youtube&playsinline=1"
           title="iframe"
           width="100%"
         />
@@ -622,7 +699,7 @@ exports[`<VideoBlock /> it renders VideoBlock with youtube media type and sound 
           className="mfui-video-block__iframe"
           frameBorder="0"
           height="100%"
-          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=0&loop=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&playlist=youtube"
+          src="https://www.youtube.com/embed/youtube?&autoplay=0&mute=0&loop=1&rel=0&controls=1&showinfo=0&iv_load_policy=3&playlist=youtube&playsinline=0"
           title="iframe"
           width="100%"
         />
@@ -728,6 +805,7 @@ exports[`<VideoBlock /> render component with html tags 1`] = `
         controls={true}
         loop={true}
         muted={true}
+        playsInline={false}
       >
         <source
           src="video"

@@ -42,7 +42,7 @@ const cn = cnCreate('mfui-counter');
 const Counter: React.FC<ICounterProps> = ({
     dataAttrs,
     isControlled = false,
-    value = 0,
+    value: outerValue = 0,
     initialValue,
     max = 999999,
     min = 0,
@@ -52,16 +52,17 @@ const Counter: React.FC<ICounterProps> = ({
     classes = {},
 }) => {
     const currentInitialValue = initialValue || min;
-    const [counter, setCounter] = React.useState(currentInitialValue);
+    const [innerValue, setInnerValue] = React.useState(currentInitialValue);
+    const currentValue = isControlled ? outerValue : innerValue;
 
     React.useEffect(() => {
-        setCounter(currentInitialValue);
+        setInnerValue(currentInitialValue);
     }, [currentInitialValue]);
 
     const handleValueChange = React.useCallback(
         (inputValue: number) => {
             if (!isControlled) {
-                setCounter(inputValue);
+                setInnerValue(inputValue);
             }
 
             if (inputValue < min) {
@@ -80,12 +81,12 @@ const Counter: React.FC<ICounterProps> = ({
     );
 
     const handleMinusClick = React.useCallback((): void => {
-        handleValueChange(isControlled ? value - 1 : counter - 1);
-    }, [handleValueChange, counter, isControlled, value]);
+        handleValueChange(currentValue - 1);
+    }, [handleValueChange, currentValue]);
 
     const handlePlusClick = React.useCallback((): void => {
-        handleValueChange(isControlled ? value + 1 : counter + 1);
-    }, [handleValueChange, counter, isControlled, value]);
+        handleValueChange(currentValue + 1);
+    }, [handleValueChange, currentValue]);
 
     const handleInputChange = React.useCallback(
         (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -125,7 +126,7 @@ const Counter: React.FC<ICounterProps> = ({
                 {...filterDataAttrs(dataAttrs?.minus)}
                 className={cn('btn', { left: true }, classes.buttonMinus)}
                 type="button"
-                disabled={disabled || (isControlled ? value : counter) <= min}
+                disabled={disabled || currentValue <= min}
                 onClick={handleMinusClick}
             >
                 <IconMinus className={cn('icon')} />
@@ -134,7 +135,7 @@ const Counter: React.FC<ICounterProps> = ({
                 <input
                     {...filterDataAttrs(dataAttrs?.input)}
                     className={cn('input', classes.input)}
-                    value={isControlled ? value : counter}
+                    value={currentValue}
                     onChange={handleInputChange}
                     onBlur={handleInputBlur}
                     disabled={disabled}
@@ -144,7 +145,7 @@ const Counter: React.FC<ICounterProps> = ({
                 {...filterDataAttrs(dataAttrs?.plus)}
                 className={cn('btn', { right: true }, classes.buttonPlus)}
                 type="button"
-                disabled={disabled || counter >= max || value >= max}
+                disabled={disabled || currentValue >= max}
                 onClick={handlePlusClick}
             >
                 <IconPlus className={cn('icon')} />

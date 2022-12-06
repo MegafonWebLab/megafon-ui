@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, convert, filterDataAttrs, textConvertConfig } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
 import './TextWithIconItem.less';
 
 export interface ITextWithIconItem {
+    /** Дополнительные классы для внутренних элементов */
+    classes?: {
+        icon?: string;
+        text?: string;
+    };
     /** Текст */
     text: string | string[];
     /** Иконка */
@@ -23,22 +28,33 @@ export interface ITextWithIconItem {
 
 const cn = cnCreate('mfui-text-with-icon-item');
 const TextWithIconItem: React.FC<ITextWithIconItem> = ({
+    className,
+    classes = {},
     text,
     icon,
     rootRef,
     dataAttrs,
     centeringOnMobile = true,
-    className,
-}) => (
-    <div
-        className={cn({ 'centering-on-mobile': centeringOnMobile }, [className])}
-        ref={rootRef}
-        {...filterDataAttrs(dataAttrs?.root)}
-    >
-        <div className={cn('svg-icon')}>{icon}</div>
-        <div className={cn('text')}>{text}</div>
-    </div>
-);
+}) => {
+    const renderText = React.useMemo(() => {
+        if (Array.isArray(text)) {
+            return text.map(item => convert(item, textConvertConfig));
+        }
+
+        return convert(text, textConvertConfig);
+    }, [text]);
+
+    return (
+        <div
+            className={cn({ 'centering-on-mobile': centeringOnMobile }, [className])}
+            ref={rootRef}
+            {...filterDataAttrs(dataAttrs?.root)}
+        >
+            <div className={cn('svg-icon', [classes.icon])}>{icon}</div>
+            <div className={cn('text', [classes.text])}>{renderText}</div>
+        </div>
+    );
+};
 
 TextWithIconItem.propTypes = {
     text: PropTypes.oneOfType([PropTypes.string.isRequired, PropTypes.arrayOf(PropTypes.string.isRequired)]).isRequired,

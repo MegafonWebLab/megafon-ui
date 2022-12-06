@@ -11,6 +11,18 @@ describe('<TextWithIconItem />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render with HTML and classes', () => {
+        const wrapper = shallow(
+            <TextWithIconItem
+                text="First item <b>with strong text</b>"
+                icon={<Star style={{ fill: '#00B956' }} />}
+                className="test-class"
+                classes={{ icon: 'icon-class', text: 'text-class' }}
+            />,
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
         mount(<TextWithIconItem text="First item" icon={<Star style={{ fill: '#00B956' }} />} rootRef={ref} />);
