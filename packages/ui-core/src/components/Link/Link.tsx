@@ -17,18 +17,31 @@ export interface ILinkProps {
     dataAttrs?: {
         root?: Record<string, string>;
     };
+    /** Атрибут itemprop для микроразметки */
+    itemProp?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
     /** Обработчик клика */
     onClick?: (e: React.MouseEvent<EventTarget>) => void;
 }
 
-const Link: React.FC<ILinkProps> = ({ target, href, rel, onClick, className, download, children, dataAttrs }) => (
+const Link: React.FC<ILinkProps> = ({
+    target,
+    href,
+    rel,
+    onClick,
+    className,
+    download,
+    itemProp,
+    children,
+    dataAttrs,
+}) => (
     <a
         className={className}
         href={href}
         target={target}
         rel={rel}
         download={download}
+        itemProp={itemProp}
         onClick={onClick}
         {...filterDataAttrs(dataAttrs?.root)}
     >
@@ -50,6 +63,7 @@ Link.propTypes = {
     }),
     rel: PropTypes.string,
     download: PropTypes.bool,
+    itemProp: PropTypes.string,
     onClick: PropTypes.func,
 };
 
