@@ -131,6 +131,10 @@ const colors: ColorsType = {
                     name: 'Button Down',
                     code: 'buttonDown',
                 },
+                {
+                    name: 'Overlay',
+                    code: 'overlay',
+                },
             ],
         },
     },
