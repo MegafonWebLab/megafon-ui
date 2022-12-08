@@ -26,6 +26,8 @@ export interface IAccordionBox {
     title: string;
     /** Состояние аккордеона, заданное извне */
     isOpened?: boolean;
+    /** Включить микроразметку */
+    hasMicrodata?: boolean;
     /** Отключить ограничение ширины */
     isFullWidth?: boolean;
     /** Центрирование по горизонтали для расширения 1280+ */
@@ -75,6 +77,7 @@ AccordionBox.propTypes = {
     title: PropTypes.string.isRequired,
     isFullWidth: PropTypes.bool,
     isOpened: PropTypes.bool,
+    hasMicrodata: PropTypes.bool,
     hCenterAlignWide: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
