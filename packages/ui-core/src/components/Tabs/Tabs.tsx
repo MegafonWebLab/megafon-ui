@@ -5,6 +5,7 @@ import throttle from 'lodash.throttle';
 import PropTypes from 'prop-types';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import usePrevious from '../../hooks/usePrevious';
 import './Tabs.less';
 import { ITabProps } from './Tab';
 
@@ -92,6 +93,10 @@ const Tabs: React.FC<ITabsProps> = ({
     const rootRef = React.useRef<HTMLDivElement>(null);
     const tabListRef = React.useRef<HTMLDivElement>(null);
     const intersectionObserverRef = React.useRef<IntersectionObserver>();
+
+    const childrenLength: number = Array.isArray(children) ? children.length : 0;
+    const prevChildrenLength: number = usePrevious(childrenLength) || 0;
+    const isChildrenLengthDiff = childrenLength !== prevChildrenLength;
 
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
@@ -388,9 +393,14 @@ const Tabs: React.FC<ITabsProps> = ({
             return;
         }
 
-        setBeginning(swiperInstance.isBeginning);
-        setEnd(swiperInstance.isEnd);
-    }, [swiperInstance]);
+        if (isChildrenLengthDiff) {
+            handleFromEdge(swiperInstance);
+
+            return;
+        }
+
+        handleFromEdge(swiperInstance);
+    }, [swiperInstance, isChildrenLengthDiff, handleFromEdge]);
 
     return (
         <div
