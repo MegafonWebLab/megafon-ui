@@ -11,6 +11,7 @@ const props: ITileProps = {
     isInteractive: true,
     onClick: jest.fn(),
     target: '_blank',
+    rel: 'noopener noreferrer',
 };
 
 describe('<Tile />', () => {
