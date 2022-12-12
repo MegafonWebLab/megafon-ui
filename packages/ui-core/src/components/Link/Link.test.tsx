@@ -65,6 +65,16 @@ describe('<Link />', () => {
         expect(getByTestId('root')).toHaveAttribute('download');
     });
 
+    it('should render with itemProp', () => {
+        const { getByTestId } = render(
+            <Link itemProp="item" dataAttrs={dataAttrs}>
+                Link
+            </Link>,
+        );
+
+        expect(getByTestId('root')).toHaveAttribute('itemprop', 'item');
+    });
+
     it('should render with children', () => {
         const { queryByText } = render(
             <Link download dataAttrs={dataAttrs}>

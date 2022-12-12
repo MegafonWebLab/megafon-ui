@@ -12,6 +12,7 @@ exports[`<TextLink /> it renders TextLink 1`] = `
   }
   download={true}
   href="href"
+  itemProp="item"
   rel="noopener"
   target="_self"
 >

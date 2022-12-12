@@ -14,6 +14,8 @@ export interface IAccordionProps {
     title: string | React.ReactNode | React.ReactNode[];
     /** Состояние открытости */
     isOpened?: boolean;
+    /** Включить микроразметку */
+    hasMicrodata?: boolean;
     /** Дополнительный класс для корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -46,6 +48,7 @@ const Accordion: React.FC<IAccordionProps> = ({
     rootRef,
     title,
     isOpened = false,
+    hasMicrodata = false,
     className,
     classes: {
         openedClass,
@@ -74,11 +77,24 @@ const Accordion: React.FC<IAccordionProps> = ({
     const openedClassName = isOpenedState ? openedClass : undefined;
     const arrowDataAttrs = isOpenedState ? dataAttrs?.arrowUp : dataAttrs?.arrowDown;
 
+    const renderContent = () => {
+        if (hasMicrodata) {
+            return (
+                <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                    <div itemProp="text">{children}</div>
+                </div>
+            );
+        }
+
+        return children;
+    };
+
     return (
         <div
             {...filterDataAttrs(dataAttrs?.root)}
             ref={rootRef}
             className={cn({ opened: isOpenedState }, [className, rootPropsClasses, openedClassName])}
+            {...(hasMicrodata && { itemScope: true, itemProp: 'mainEntity', itemType: 'https://schema.org/Question' })}
         >
             <div
                 {...filterDataAttrs(dataAttrs?.titleWrap)}
@@ -87,6 +103,7 @@ const Accordion: React.FC<IAccordionProps> = ({
                 onKeyDown={handleClickTitle}
                 tabIndex={0}
                 role="button"
+                {...(hasMicrodata && { itemProp: 'name' })}
             >
                 <Header as="h5" dataAttrs={dataAttrs?.header}>
                     {title}
@@ -101,7 +118,7 @@ const Accordion: React.FC<IAccordionProps> = ({
                 classNameContainer={cn('content-inner')}
                 isOpened={isOpenedState}
             >
-                {children}
+                {renderContent()}
             </Collapse>
         </div>
     );
@@ -114,6 +131,7 @@ Accordion.propTypes = {
     ]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     isOpened: PropTypes.bool,
+    hasMicrodata: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         openedClass: PropTypes.string,

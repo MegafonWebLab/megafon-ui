@@ -50,3 +50,57 @@ import Paragraph from 'components/Paragraph/Paragraph';
         </Paragraph>
     </Accordion>
 </Playground>
+
+## С микроразметкой
+
+<Playground>
+    <Accordion hasMicrodata title="Подключение к интернету">
+        <Paragraph hasMargin={false}>
+            Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.
+            Монтажник проведёт все необходимые работы под ключ.
+        </Paragraph>
+    </Accordion>
+</Playground>
+
+```HTML collapse=Итоговая верстка
+<div
+  class="mfui-accordion"
+  itemscope=""
+  itemprop="mainEntity"
+  itemtype="https://schema.org/Question"
+>
+  <div
+    class="mfui-accordion__title-wrap"
+    tabindex="0"
+    role="button"
+    itemprop="name"
+  >
+    <h5
+      class="mfui-header mfui-header_color_default mfui-header_level_h5 mfui-header_h-align_inherit mfui-header_space_wide"
+    >
+      Подключение к интернету
+    </h5>
+    <div class="mfui-accordion__icon-box">
+    </div>
+  </div>
+  <div class="mfui-accordion__content" style="overflow: hidden; height: 0px">
+    <div class="mfui-accordion__content-inner">
+      <div
+        itemscope=""
+        itemprop="acceptedAnswer"
+        itemtype="https://schema.org/Answer"
+      >
+        <div itemprop="text">
+          <p
+            class="mfui-paragraph mfui-paragraph_color_default mfui-paragraph_space_wide"
+          >
+            Подключение к домашнему интернету осуществляется в удобное для вас
+            время по технологиям Ethernet, Docsis. Монтажник проведёт все
+            необходимые работы под ключ.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```

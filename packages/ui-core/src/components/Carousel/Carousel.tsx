@@ -7,9 +7,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { PaginationOptions } from 'swiper/types/components/pagination';
 import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import throttleTime from 'constants/throttleTime';
+import usePrevious from '../../hooks/usePrevious';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
 import './Carousel.less';
-import usePrevious from './usePrevious';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
 

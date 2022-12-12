@@ -40,7 +40,10 @@
         width: 20px;
         height: 20px;
         border: 2px solid;
-        border-radius: 2px;
+        border-radius: 4px;
+
+        transition: border-color, background-color;
+        transition-duration: 0.3s;
 
         &:focus {
             outline: none;
@@ -86,7 +89,7 @@
 
         @{b} {
             &__inner {
-                padding: 4px 15px 4px 35px;
+                padding: 4px 15px 4px 33px;
             }
 
             &__custom-input {
@@ -101,7 +104,7 @@
 
         @{b} {
             &__inner {
-                padding: 1px 15px 4px 35px;
+                padding: 1px 15px 4px 33px;
             }
 
             &__custom-input {
@@ -120,12 +123,6 @@
                 border-color: var(--buttonHoverGreen);
             }
 
-            &__label:active @{b}__custom-input {
-                border-color: var(--buttonDown) !important;
-
-                background-color: var(--buttonDown);
-            }
-
             &__icon {
                 fill: var(--stcWhite);
             }
@@ -137,51 +134,11 @@
             &__custom-input {
                 border-color: var(--brandGreen);
 
-                color: var(--stcWhite);
-
                 background-color: var(--brandGreen);
             }
 
             &__label_no-touch:hover @{b}__custom-input {
                 background-color: var(--buttonHoverGreen);
-            }
-
-            &__label:active @{b}__custom-input {
-                background-color: var(--buttonDown) !important;
-            }
-        }
-    }
-
-    &_color_dark&_checked&_disabled {
-        @{b} {
-            &__custom-input,
-            &__label:active @{b}__custom-input {
-                background-color: var(--spbSky2);
-            }
-        }
-    }
-
-    &_color_dark&_disabled {
-        @{b} {
-            &__label {
-                cursor: default;
-
-                pointer-events: none;
-            }
-
-            &__custom-input,
-            &__label:active @{b}__custom-input {
-                border-color: var(--spbSky2) !important;
-
-                background-color: var(--spbSky1);
-            }
-        }
-    }
-
-    &_color_dark&_error {
-        @{b} {
-            &__custom-input {
-                border-color: var(--fury);
             }
         }
     }
@@ -193,9 +150,84 @@
             &__custom-input {
                 border-color: var(--stcWhite);
 
-                color: var(--brandGreen);
-
                 background-color: var(--stcWhite);
+            }
+
+            &__label_no-touch:hover @{b}__custom-input {
+                border-color: var(--buttonHoverGrey);
+
+                background-color: var(--buttonHoverGrey);
+            }
+        }
+    }
+
+    &_color_light&_checked {
+        @{b} {
+            &__custom-input {
+                border-color: var(--brandGreen);
+
+                color: var(--stcWhite);
+
+                background-color: var(--brandGreen);
+            }
+        }
+    }
+
+    &_disabled {
+        @{b} {
+            &__label {
+                color: var(--spbSky3);
+
+                cursor: default;
+
+                pointer-events: none;
+            }
+
+            &__custom-input {
+                border-color: var(--spbSky2);
+
+                background-color: var(--spbSky1);
+            }
+
+            &__icon {
+                fill: var(--stcWhite);
+            }
+        }
+    }
+
+    &_disabled&_color_light {
+        @{b} {
+            &__label {
+                color: var(--stcWhite50);
+            }
+        }
+    }
+
+    &_checked&_disabled {
+        @{b} {
+            &__custom-input {
+                background-color: var(--spbSky2);
+            }
+        }
+    }
+
+    &_error {
+        @{b} {
+            &__custom-input {
+                border-color: var(--fury);
+            }
+        }
+    }
+
+    &_color_dark,
+    &_color_dark&_checked,
+    &_color_light,
+    &_color_light&_checked {
+        @{b} {
+            &__label:active @{b}__custom-input {
+                border-color: var(--buttonDown);
+
+                background-color: var(--buttonDown);
             }
         }
     }
