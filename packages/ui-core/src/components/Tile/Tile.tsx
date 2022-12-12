@@ -35,6 +35,8 @@ export interface ITileProps {
     href?: string;
     /** Атрибут для открытия ссылки */
     target?: '_self' | '_blank';
+    /** rel - аргумент тега <a> */
+    rel?: string;
     /** Тема */
     // TODO: переименовать в shadowColor
     theme?: ThemeType;
@@ -67,6 +69,7 @@ const Tile: React.FC<ITileProps> = ({
     onClick,
     dataAttrs,
     target = '_self',
+    rel,
 }) => {
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
         onClick?.(e);
@@ -90,7 +93,7 @@ const Tile: React.FC<ITileProps> = ({
             {...filterDataAttrs(dataAttrs?.root)}
         >
             {href && (
-                <a href={href} className={cn('link')} target={target}>
+                <a href={href} className={cn('link')} target={target} rel={rel}>
                     {children}
                 </a>
             )}
@@ -111,6 +114,7 @@ Tile.propTypes = {
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     target: PropTypes.oneOf(['_self', '_blank']),
+    rel: PropTypes.string,
 };
 
 export default Tile;
