@@ -24,3 +24,61 @@ import Breadcrumbs from '../Breadcrumbs';
         <span>Тарифы</span>,
     ]} />
 </Playground>
+
+### C микроразметкой
+
+<Playground>
+    <Breadcrumbs hasMicrodata items={[
+        { title: 'Главная', href: 'www.megafon.ru' },
+        { title: 'Каталог услуг', href: 'www.megafon.ru' },
+        { title: 'Тарифы' },
+    ]} />
+</Playground>
+
+```HTML collapse=Итоговая верстка
+<div
+  class="mfui-breadcrumbs mfui-breadcrumbs_color_default"
+  itemscope=""
+  itemtype="https://schema.org/BreadcrumbList"
+>
+  <div class="mfui-breadcrumbs__item">
+    <div
+      class="mfui-breadcrumbs-item"
+      itemscope=""
+      itemprop="itemListElement"
+      itemtype="https://schema.org/ListItem"
+    >
+      <a
+        class="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_default"
+        href="www.megafon.ru"
+        itemprop="item"
+      >
+        <span itemprop="name">Главная</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </div>
+  </div>
+  <div class="mfui-breadcrumbs__item">
+    <div
+      class="mfui-breadcrumbs-item"
+      itemscope=""
+      itemprop="itemListElement"
+      itemtype="https://schema.org/ListItem"
+    >
+      <a
+        class="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_default"
+        href="www.megafon.ru"
+        itemprop="item"
+        >
+          <span itemprop="name">Каталог услуг</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </div>
+  </div>
+  <div class="mfui-breadcrumbs__item">
+    <div class="mfui-breadcrumbs-item mfui-breadcrumbs-item_color_default">
+      <span>Тарифы</span>
+    </div>
+  </div>
+</div>
+```

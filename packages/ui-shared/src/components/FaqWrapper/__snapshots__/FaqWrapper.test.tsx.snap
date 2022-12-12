@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FaqWrapper /> should render FaqWrapper 1`] = `
+<div>
+  <div
+    itemscope=""
+    itemtype="http://schema.org/FAQPage"
+  >
+    children
+  </div>
+</div>
+`;

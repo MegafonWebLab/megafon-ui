@@ -11,6 +11,8 @@ export interface ITextLinkProps extends ILinkProps {
     underlineVisibility?: 'hover' | 'always';
     /** Стиль подчеркивания */
     underlineStyle?: 'solid' | 'dashed' | 'border' | 'none';
+    /** Атрибут itemprop для микроразметки */
+    itemProp?: string;
     children?: JSX.Element[] | Element[] | JSX.Element | string | Element | React.ReactNode;
 }
 
@@ -27,12 +29,14 @@ const TextLink: React.FC<ITextLinkProps> = ({
     children,
     download,
     dataAttrs,
+    itemProp,
 }) => (
     <Link
         dataAttrs={dataAttrs}
         target={target}
         href={href}
         rel={rel}
+        itemProp={itemProp}
         onClick={onClick}
         className={cn(
             '',
@@ -56,6 +60,7 @@ TextLink.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
+    itemProp: PropTypes.string,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.element),
         PropTypes.element,

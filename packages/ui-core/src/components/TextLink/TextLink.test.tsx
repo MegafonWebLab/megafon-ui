@@ -12,6 +12,7 @@ const props: ITextLinkProps = {
     className: 'class',
     children: 'text',
     download: true,
+    itemProp: 'item',
     dataAttrs: {
         root: {
             'data-root': 'test',

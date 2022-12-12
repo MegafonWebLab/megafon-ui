@@ -81,6 +81,7 @@ describe('<VideoBanner />', () => {
                 imageDesktopWide={imageDesktopWide}
                 content={content}
                 breadcrumbs={breadcrumbs}
+                hasBreadcrumbsMicrodata
                 classes={{ breadcrumbs: 'breadcrumbs-item-custom-class-name' }}
             />,
         );

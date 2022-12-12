@@ -33,6 +33,7 @@ describe('PageTitle', () => {
                 breadcrumbs={breadcrumbs}
                 badge={badge}
                 className="custom-class-name"
+                hasBreadcrumbsMicrodata
                 classes={{ breadcrumbs: 'breadcrumbs-custom-class-name' }}
                 dataAttrs={{
                     root: { 'data-testid': 'root-test' },

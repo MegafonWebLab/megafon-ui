@@ -1,118 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs should render component 1`] = `
-<div
-  className="mfui-breadcrumbs mfui-breadcrumbs_color_default"
->
+exports[`<Breadcrumbs /> should render Breadcrumbs 1`] = `
+<div>
   <div
-    className="mfui-breadcrumbs__item"
-    key="МегаФон"
+    class="mfui-breadcrumbs mfui-breadcrumbs_color_default"
   >
-    <TextLink
-      color="default"
-      dataAttrs={
-        Object {
-          "root": undefined,
-        }
-      }
-      href="#"
+    <div
+      class="mfui-breadcrumbs__item"
     >
-      МегаФон
-    </TextLink>
-  </div>
-  <div
-    className="mfui-breadcrumbs__item"
-    key="Мобильная связь"
-  >
-    <TextLink
-      color="default"
-      dataAttrs={
-        Object {
-          "root": undefined,
-        }
-      }
-      href="#"
+      <div
+        class="mfui-breadcrumbs-item"
+      >
+        <a
+          class="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_default"
+          href="#"
+        >
+          <span>
+            МегаФон
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="mfui-breadcrumbs__item"
     >
-      Мобильная связь
-    </TextLink>
-  </div>
-  <div
-    className="mfui-breadcrumbs__item"
-    key="Тарифы"
-  >
-    <TextLink
-      color="default"
-      dataAttrs={
-        Object {
-          "root": undefined,
-        }
-      }
-      href="#"
+      <div
+        class="mfui-breadcrumbs-item"
+      >
+        <a
+          class="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_default"
+          href="#"
+        >
+          <span>
+            Мобильная связь
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="mfui-breadcrumbs__item"
     >
-      Тарифы
-    </TextLink>
+      <div
+        class="mfui-breadcrumbs-item mfui-breadcrumbs-item_color_default"
+      >
+        <span>
+          Тарифы
+        </span>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
-exports[`Breadcrumbs should render with optional props 1`] = `
-<div
-  className="mfui-breadcrumbs mfui-breadcrumbs_color_white custom-class-name"
-  data-testid="root-test"
->
+exports[`<Breadcrumbs /> should render Breadcrumbs with custom items 1`] = `
+<div>
   <div
-    className="mfui-breadcrumbs__item item-custom-class-name"
-    key="МегаФон"
+    class="mfui-breadcrumbs mfui-breadcrumbs_color_default"
   >
-    <TextLink
-      color="white"
-      dataAttrs={
-        Object {
-          "root": Object {
-            "data-testid": "link-test[1]",
-          },
-        }
-      }
-      href="#"
+    <div
+      class="mfui-breadcrumbs__item"
     >
-      МегаФон
-    </TextLink>
-  </div>
-  <div
-    className="mfui-breadcrumbs__item item-custom-class-name"
-    key="Мобильная связь"
-  >
-    <TextLink
-      color="white"
-      dataAttrs={
-        Object {
-          "root": Object {
-            "data-testid": "link-test[2]",
-          },
-        }
-      }
-      href="#"
+      <a
+        href="test1.com"
+      >
+        Item 1
+      </a>
+    </div>
+    <div
+      class="mfui-breadcrumbs__item"
     >
-      Мобильная связь
-    </TextLink>
-  </div>
-  <div
-    className="mfui-breadcrumbs__item item-custom-class-name"
-    key="Тарифы"
-  >
-    <TextLink
-      color="white"
-      dataAttrs={
-        Object {
-          "root": Object {
-            "data-testid": "link-test[3]",
-          },
-        }
-      }
-      href="#"
+      <a
+        href="test2.com"
+      >
+        Item 2
+      </a>
+    </div>
+    <div
+      class="mfui-breadcrumbs__item"
     >
-      Тарифы
-    </TextLink>
+      <span>
+        Item 3
+      </span>
+    </div>
   </div>
 </div>
 `;

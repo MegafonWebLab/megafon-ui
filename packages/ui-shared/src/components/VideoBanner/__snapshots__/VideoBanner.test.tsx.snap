@@ -21,6 +21,7 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
             "root": undefined,
           }
         }
+        hasMicrodata={true}
         items={
           Array [
             Object {

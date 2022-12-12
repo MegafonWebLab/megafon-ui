@@ -72,6 +72,46 @@ describe('<Accordion />', () => {
         expect(rootNode).toHaveClass('openedClass');
     });
 
+    it('should render Accordion when hasMicrodata is true', () => {
+        const { getByTestId, getByText } = render(
+            <Accordion {...props} hasMicrodata>
+                content
+            </Accordion>,
+        );
+        const root = getByTestId('root');
+        const content = getByText('content');
+        const contentParent = content.parentElement;
+
+        expect(root).toHaveAttribute('itemscope');
+        expect(root).toHaveAttribute('itemProp', 'mainEntity');
+        expect(root).toHaveAttribute('itemType', 'https://schema.org/Question');
+        expect(getByTestId('title-wrap')).toHaveAttribute('itemProp', 'name');
+        expect(contentParent).toHaveAttribute('itemScope');
+        expect(contentParent).toHaveAttribute('itemProp', 'acceptedAnswer');
+        expect(contentParent).toHaveAttribute('itemType', 'https://schema.org/Answer');
+        expect(content).toHaveAttribute('itemProp', 'text');
+    });
+
+    it('should render Accordion when hasMicrodata is false', () => {
+        const { getByTestId, getByText } = render(
+            <Accordion {...props} hasMicrodata={false}>
+                content
+            </Accordion>,
+        );
+        const root = getByTestId('root');
+        const content = getByText('content');
+        const contentParent = content.parentElement;
+
+        expect(root).not.toHaveAttribute('itemscope');
+        expect(root).not.toHaveAttribute('itemProp');
+        expect(root).not.toHaveAttribute('itemType');
+        expect(getByTestId('title-wrap')).not.toHaveAttribute('itemProp');
+        expect(contentParent).not.toHaveAttribute('itemScope');
+        expect(contentParent).not.toHaveAttribute('itemProp');
+        expect(contentParent).not.toHaveAttribute('itemType');
+        expect(content).not.toHaveAttribute('itemProp');
+    });
+
     it('should render closed Accordion when isOpened is false', () => {
         const { getByTestId, queryByTestId } = render(
             <Accordion {...props} isOpened={false}>

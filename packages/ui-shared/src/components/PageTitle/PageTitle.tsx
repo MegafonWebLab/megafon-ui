@@ -20,6 +20,8 @@ type Props = {
     badge?: string;
     /** Растягивание компонента на всю доступную ширину */
     isFullWidth?: boolean;
+    /** Включить микроразметку для хлебных крошек */
+    hasBreadcrumbsMicrodata?: boolean;
     /** Класс для корневого элемента */
     className?: string;
     /** Дополнительные классы для внутренних элементов */
@@ -37,6 +39,7 @@ const PageTitle: React.FC<Props> = ({
     breadcrumbs,
     badge,
     isFullWidth = true,
+    hasBreadcrumbsMicrodata = false,
     className,
     classes = {},
     rootRef,
@@ -70,6 +73,7 @@ const PageTitle: React.FC<Props> = ({
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className])} ref={rootRef}>
             {breadcrumbs?.length && (
                 <Breadcrumbs
+                    hasMicrodata={hasBreadcrumbsMicrodata}
                     items={breadcrumbs}
                     dataAttrs={{ root: dataAttrs?.breadcrumbs, link: dataAttrs?.breadcrumbsLink }}
                     className={cn('breadcrumbs', [classes.breadcrumbs])}
@@ -95,6 +99,7 @@ PageTitle.propTypes = {
     ),
     badge: PropTypes.string,
     isFullWidth: PropTypes.bool,
+    hasBreadcrumbsMicrodata: PropTypes.bool,
     className: PropTypes.string,
     classes: PropTypes.shape({
         breadcrumbs: PropTypes.string,

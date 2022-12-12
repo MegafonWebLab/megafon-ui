@@ -25,6 +25,7 @@ exports[`PageTitle should render with limited width 1`] = `
         "root": undefined,
       }
     }
+    hasMicrodata={false}
     items={
       Array [
         Object {
@@ -82,6 +83,7 @@ exports[`PageTitle should render with optional props 1`] = `
         },
       }
     }
+    hasMicrodata={true}
     items={
       Array [
         Object {
