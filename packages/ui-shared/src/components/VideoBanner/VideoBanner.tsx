@@ -123,6 +123,8 @@ interface IVideoBannerProps {
     imageDesktopWide?: string;
     /** Хлебные крошки */
     breadcrumbs?: BreadCrumbsItemsType;
+    /** Включить микроразметку хлебных крошек */
+    hasBreadcrumbsMicrodata?: boolean;
 }
 
 const VideoBanner: React.FC<IVideoBannerProps> = ({
@@ -140,6 +142,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     isMuted = true,
     breadcrumbs,
     videoMobile = false,
+    hasBreadcrumbsMicrodata = false,
 }) => {
     const [isMobile, setIsMobile] = React.useState(true);
     const isVideoData = !!videoSrc && !!videoType;
@@ -278,6 +281,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                 <div className={cn('wrapper')}>
                     {!!breadcrumbs?.length && (
                         <Breadcrumbs
+                            hasMicrodata={hasBreadcrumbsMicrodata}
                             dataAttrs={{ root: dataAttrs?.breadcrumbs, link: dataAttrs?.breadcrumbsLink }}
                             className={cn('breadcrumbs')}
                             items={breadcrumbs}
@@ -354,6 +358,7 @@ VideoBanner.propTypes = {
             href: PropTypes.string,
         }).isRequired,
     ),
+    hasBreadcrumbsMicrodata: PropTypes.bool,
 };
 
 export default VideoBanner;
