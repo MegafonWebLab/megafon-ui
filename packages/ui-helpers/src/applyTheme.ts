@@ -24,6 +24,7 @@ const COLOR_THEMES = {
         buttonHoverPurple: '#A500BF',
         buttonHoverGrey: '#D6D6D6',
         buttonDown: '#404D46',
+        overlay: '#000000CC',
 
         // Gradients
         gradientBasic: 'linear-gradient(90deg, #01873F 0%, #00B956 74%, #14CD6A 100%)',
@@ -86,6 +87,7 @@ const COLOR_THEMES = {
         buttonHoverPurple: '#A500BF',
         buttonHoverGrey: '#D6D6D6',
         buttonDown: '#404D46',
+        overlay: '#000000CC',
 
         // Gradients
         gradientBasic: 'linear-gradient(90deg, #01873F 0%, #00B956 74%, #14CD6A 100%)',
