@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.6.0...@megafon/ui-shared@4.7.0) (2022-12-12)
+
+
+### Features
+
+* **accordionbox:** add isMicrodata prop ([07cce83](https://github.com/MegafonWebLab/megafon-ui/commit/07cce8335c062687c4d1dc33b3569c89d6388181))
+* **breadcrumbs:** add optional microdata attributes ([e1a30e8](https://github.com/MegafonWebLab/megafon-ui/commit/e1a30e8b3bd20479b7fc8c15cf86fc0fb9431571))
+* **faqwrapper:** add new component FaqWrapper ([694e564](https://github.com/MegafonWebLab/megafon-ui/commit/694e56421bbae73566f0b18812f6206b3a065030))
+* **pagetitle:** add hasBreadcrumbsMicrodata prop ([30c3ca5](https://github.com/MegafonWebLab/megafon-ui/commit/30c3ca51f7c9b0ef6095ca649e557e74dffa0875))
+* **videobanner:** add hasBreadcrumbsMicrodata prop ([819996d](https://github.com/MegafonWebLab/megafon-ui/commit/819996d5600e2c32c22da9d9dfa30c64c4062f63))
+
+
+
+
+
 # [4.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.5.3...@megafon/ui-shared@4.6.0) (2022-12-06)
 
 

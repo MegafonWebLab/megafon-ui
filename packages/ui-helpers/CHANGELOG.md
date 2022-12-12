@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.3.0...@megafon/ui-helpers@2.3.1) (2022-12-12)
+
+
+### Bug Fixes
+
+* **colors:** add overlay color ([168671b](https://github.com/MegafonWebLab/megafon-ui/commit/168671bea17784e9e3f448138e8dab27bfc46a50))
+
+
+
+
+
 # [2.3.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.2.0...@megafon/ui-helpers@2.3.0) (2022-10-31)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-shared",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "files": [
     "dist"
   ],
@@ -52,7 +52,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@megafon/ui-icons": "^2.4.0",
+    "@megafon/ui-icons": "^2.4.1",
     "@svgr/core": "^2.4.1",
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "12.1.2",
@@ -85,8 +85,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.4",
-    "@megafon/ui-core": "^4.9.1",
-    "@megafon/ui-helpers": "^2.3.0",
+    "@megafon/ui-core": "^4.10.0",
+    "@megafon/ui-helpers": "^2.3.1",
     "core-js": "^3.6.4",
     "htmr": "^0.9.2",
     "lodash.throttle": "^4.1.1",

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.10.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.9.1...@megafon/ui-core@4.10.0) (2022-12-12)
+
+
+### Bug Fixes
+
+* **checkbox:** update styles ([91c2c01](https://github.com/MegafonWebLab/megafon-ui/commit/91c2c01871ca3bae54f4c7204f5953341a7e80cc))
+* **colors:** add overlay color ([168671b](https://github.com/MegafonWebLab/megafon-ui/commit/168671bea17784e9e3f448138e8dab27bfc46a50))
+* **tabs:** change navigation view after change slides count ([67109aa](https://github.com/MegafonWebLab/megafon-ui/commit/67109aafe2c87a8ed7e95f506e892487ad597a8e))
+
+
+### Features
+
+* **accordion:** add optional microdata attributes ([a67df13](https://github.com/MegafonWebLab/megafon-ui/commit/a67df131fe8a47ac4b8574784135765e4e3659bc))
+* **link:** add itemprop attribute ([1243b6a](https://github.com/MegafonWebLab/megafon-ui/commit/1243b6a2b65dc157dff82d9943ee08f8f148c688))
+* **textlink:** add itemprop attribute ([77a5294](https://github.com/MegafonWebLab/megafon-ui/commit/77a529437cb73cb927381d62f88f48b2b4cc5f0c))
+* **tile:** added rel property ([8b2c8bf](https://github.com/MegafonWebLab/megafon-ui/commit/8b2c8bf8a3ddcba83b085f028460fdc1d14559d3))
+
+
+
+
+
 ## [4.9.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.9.0...@megafon/ui-core@4.9.1) (2022-12-06)
 
 **Note:** Version bump only for package @megafon/ui-core
