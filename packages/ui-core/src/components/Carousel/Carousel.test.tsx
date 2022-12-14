@@ -1,41 +1,40 @@
 import * as React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
-import { shallow, mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import Carousel, { ICarouselProps, NavTheme, EffectTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
 
 const props: ICarouselProps = {
-    className: 'className',
+    className: 'custom-class',
     classes: {
-        root: 'rootClass',
-        innerIndents: 'innerIndentsClass',
-        container: 'container',
-        containerModifier: 'containerModifier',
-        prev: 'prev',
-        next: 'next',
-        slide: 'slide',
+        root: 'root-class',
+        innerIndents: 'inner-indents-class',
+        container: 'container-class',
+        containerModifier: 'container-modifier-class-',
+        prev: 'prev-class',
+        next: 'next-class',
+        slide: 'slide-class',
     },
     pagination: {
         el: '.some-el',
     },
     dataAttrs: {
         root: {
-            'data-root': 'test',
+            'data-testid': 'root',
         },
         slider: {
-            'data-slider': 'test',
+            'data-testid': 'slider',
         },
         prev: {
-            'data-prev': 'test',
+            'data-testid': 'prev',
         },
         next: {
-            'data-next': 'test',
+            'data-testid': 'next',
         },
         slide: {
-            'data-slide': 'test',
+            'data-testid': 'slide',
         },
     },
-    loop: true,
+    loop: false,
     autoPlay: true,
     autoPlayDelay: 1000,
     transitionSpeed: 1000,
@@ -50,82 +49,96 @@ const props: ICarouselProps = {
     onChange: jest.fn(),
 };
 
-const cnCarousel = cnCreate('.mfui-carousel');
-
 describe('<Carousel />', () => {
     afterEach(() => {
         jest.clearAllMocks();
     });
 
-    it('should render with default props', () => {
-        const wrapper = shallow(
-            <Carousel>
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Carousel>,
-        );
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with props', () => {
-        const wrapper = shallow(
-            <Carousel
-                {...props}
-                slidesSettings={{
-                    768: { slidesPerView: 'auto', spaceBetween: 2 },
-                }}
-            >
-                <DemoSlide>1</DemoSlide>
-                <DemoSlide>2</DemoSlide>
-            </Carousel>,
-        );
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should call onNextClick', () => {
-        const wrapper = mount(
+    it('should render Carousel', () => {
+        const { container } = render(
             <Carousel {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Carousel>,
         );
 
-        wrapper.find(cnCarousel('arrow')).last().simulate('click');
+        expect(container).toMatchSnapshot();
+    });
+
+    it('should render with classes', () => {
+        const { getByTestId } = render(
+            <Carousel {...props}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('custom-class', 'root-class');
+        expect(getByTestId('slider')).toHaveClass(
+            'container-class',
+            'inner-indents-class',
+            'container-modifier-class-initialized',
+            'container-modifier-class-fade',
+            'container-modifier-class-horizontal',
+        );
+        expect(getByTestId('slide[1]')).toHaveClass('slide-class');
+        expect(getByTestId('next')).toHaveClass('next-class');
+        expect(getByTestId('prev')).toHaveClass('prev-class');
+    });
+
+    it('should render with navTheme', () => {
+        const { getByTestId } = render(
+            <Carousel {...props} navTheme="green">
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-carousel_nav-theme_green');
+    });
+
+    it('should call onNextClick', () => {
+        const { getByTestId } = render(
+            <Carousel {...props}>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+            </Carousel>,
+        );
+
+        fireEvent.click(getByTestId('next'));
 
         expect(props.onNextClick).toBeCalled();
     });
 
     it('should call onPrevClick', () => {
-        const wrapper = mount(
+        const { getByTestId } = render(
             <Carousel {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Carousel>,
         );
 
-        wrapper.find(cnCarousel('arrow')).first().simulate('click');
+        fireEvent.click(getByTestId('prev'));
 
         expect(props.onPrevClick).toBeCalled();
     });
 
     it('should call onChange', () => {
-        const wrapper = mount(
+        const { getByTestId } = render(
             <Carousel {...props}>
                 <DemoSlide>1</DemoSlide>
                 <DemoSlide>2</DemoSlide>
             </Carousel>,
         );
 
-        wrapper.find(cnCarousel('arrow')).last().simulate('click');
+        fireEvent.click(getByTestId('next'));
 
         expect(props.onChange).toBeCalled();
     });
 
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
-        mount(
+        render(
             <Carousel {...props} rootRef={ref}>
                 <DemoSlide>1</DemoSlide>
             </Carousel>,
