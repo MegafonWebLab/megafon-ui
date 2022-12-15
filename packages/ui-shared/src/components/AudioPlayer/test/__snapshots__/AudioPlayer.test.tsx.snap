@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AudioPlayer /> snapshots should render component 1`] = `
+<div
+  className="mfui-audio-player mfui-audio-player_position_center"
+>
+  <div
+    className="mfui-audio-player__player"
+  >
+    <audio
+      className="mfui-audio-player__audio"
+      controls={false}
+    >
+      <source
+        src="test audioSrc"
+        type="audio/mpeg"
+      />
+    </audio>
+    <div
+      className="mfui-audio-player__playing-controls"
+    >
+      <Button
+        className="mfui-audio-player__button"
+        icon={<test-file-stub />}
+        onClick={[Function]}
+        sizeAll="small"
+      />
+    </div>
+    <AudioProgress
+      audioRef={
+        Object {
+          "current": null,
+        }
+      }
+      audioTitle="test audioTitle"
+      isPause={false}
+      isPlaying={false}
+      onChangeAudioCurrentTime={[Function]}
+      onPLay={[Function]}
+      onSetIsPlaying={[MockFunction]}
+    />
+    <AudioVolume
+      onChangeAudioVolume={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`<AudioPlayer /> snapshots should render component when isPlaying 1`] = `
+<div
+  className="mfui-audio-player mfui-audio-player_position_center"
+>
+  <div
+    className="mfui-audio-player__player"
+  >
+    <audio
+      className="mfui-audio-player__audio"
+      controls={false}
+    >
+      <source
+        src="test audioSrc"
+        type="audio/mpeg"
+      />
+    </audio>
+    <div
+      className="mfui-audio-player__playing-controls"
+    >
+      <Button
+        className="mfui-audio-player__button"
+        icon={<test-file-stub />}
+        onClick={[Function]}
+        sizeAll="small"
+      />
+    </div>
+    <AudioProgress
+      audioRef={
+        Object {
+          "current": null,
+        }
+      }
+      audioTitle="test audioTitle"
+      isPause={false}
+      isPlaying={true}
+      onChangeAudioCurrentTime={[Function]}
+      onPLay={[Function]}
+      onSetIsPlaying={[MockFunction]}
+    />
+    <AudioVolume
+      onChangeAudioVolume={[Function]}
+    />
+  </div>
+</div>
+`;

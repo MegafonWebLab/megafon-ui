@@ -1,0 +1,62 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-audio-player');
+
+@{b} {
+    margin-top: 32px;
+
+    &__player {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 16px;
+        border-radius: 12px;
+
+        background: var(--spbSky0);
+
+        @media @mobileB {
+            max-width: 530px;
+        }
+        @media @desktop {
+            max-width: 550px;
+        }
+    }
+
+    &__playing-controls {
+        margin-right: 16px;
+    }
+}
+
+// mods position
+
+@{b}_position_center {
+    @{b}__player {
+        margin: 0 auto;
+    }
+}
+
+@{b}_position_left {
+    @{b}__player {
+        margin-right: auto;
+    }
+}
+
+@{b}_position_right {
+    @{b}__player {
+        margin-left: auto;
+    }
+}
+
+// mods fullWidth
+
+@{b}_full-width {
+    @{b}__player {
+        @media @mobileB {
+            max-width: 100%;
+        }
+        @media @desktop {
+            max-width: 100%;
+        }
+    }
+}
