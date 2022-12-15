@@ -1,7 +1,7 @@
 /* eslint-disable react/no-multi-comp */
 import * as React from 'react';
 import { useCallback, useEffect, useState, useRef, useMemo } from 'react';
-import { checkEventIsClickOrEnterPress, cnCreate, filterDataAttrs, convert } from '@megafon/ui-helpers';
+import { checkEventIsClickOrEnterPress, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import Hide from '@megafon/ui-icons/basic-24-hide_24.svg';
 import Show from '@megafon/ui-icons/basic-24-show_24.svg';
 import ClearIcon from '@megafon/ui-icons/system-24-cancel_24.svg';
@@ -23,12 +23,6 @@ const DEFAULT_PLACEHOLDERS = {
     tel: 'Номер телефона',
     password: 'Пароль',
     text: 'Текст',
-};
-
-const converConfig = {
-    br: {
-        component: () => React.createElement('br'),
-    },
 };
 
 export const Verification = {
@@ -188,7 +182,6 @@ const TextField: React.FC<TextFieldProps> = ({
     const [isTextareaResized, setIsTextareaResized] = useState(false);
 
     const fieldNode = useRef<HTMLInputElement | HTMLTextAreaElement>();
-    const hiddenElement = useRef<HTMLDivElement>(null);
     const labelRef = useRef<HTMLLabelElement>(null);
     const resizerRef = useRef<HTMLDivElement>(null);
 
@@ -217,16 +210,22 @@ const TextField: React.FC<TextFieldProps> = ({
     );
 
     useEffect(() => {
-        if (!hiddenElement.current) {
+        if (!textarea || !fieldNode.current || isTextareaResized) {
             return;
         }
 
-        const hiddenElementHeight = hiddenElement.current.scrollHeight;
-        const isHiddenHeightCorrect =
-            hiddenElementHeight >= minTextareaHeight && hiddenElementHeight <= TEXTAREA_MAX_HEIGHT;
+        fieldNode.current.style.height = `${minTextareaHeight}px`;
 
-        !isTextareaResized && setTextareaHeight(isHiddenHeightCorrect ? hiddenElementHeight : minTextareaHeight);
-    }, [hiddenElement, isTextareaResized, minTextareaHeight, inputValue]);
+        const { scrollHeight } = fieldNode.current;
+        const { paddingTop, paddingBottom } = window.getComputedStyle(fieldNode.current);
+        const innerHeight = scrollHeight - parseFloat(paddingTop) - parseFloat(paddingBottom);
+
+        if (innerHeight >= TEXTAREA_MAX_HEIGHT) {
+            fieldNode.current.style.height = `${TEXTAREA_MAX_HEIGHT}px`;
+        } else {
+            fieldNode.current.style.height = `${innerHeight}px`;
+        }
+    }, [isTextareaResized, minTextareaHeight, inputValue, textarea]);
 
     useEffect(() => {
         !isControlled && setInputValue(value);
@@ -449,31 +448,18 @@ const TextField: React.FC<TextFieldProps> = ({
         );
     };
 
-    const renderTextarea = (): JSX.Element => {
-        const hiddenValue = inputValue?.toString().replace(/[\r\n]/g, '<br/>');
-
-        return (
-            <>
-                <textarea
-                    {...textareaParams}
-                    style={{ height: `${textareaHeight}px` }}
-                    ref={getFieldNode}
-                    onKeyDown={disableEnterLineBreak ? handleTextareaKeyDown : undefined}
-                    onScroll={handleTextareaScroll}
-                />
-                {!!hiddenValue && (
-                    <div
-                        className={cn('hidden-textarea')}
-                        ref={hiddenElement}
-                        style={{ width: fieldNode.current?.scrollWidth }}
-                    >
-                        {convert(hiddenValue, converConfig)}.
-                    </div>
-                )}
-                {renderLabel()}
-            </>
-        );
-    };
+    const renderTextarea = (): JSX.Element => (
+        <>
+            <textarea
+                {...textareaParams}
+                style={{ height: `${textareaHeight}px` }}
+                ref={getFieldNode}
+                onKeyDown={disableEnterLineBreak ? handleTextareaKeyDown : undefined}
+                onScroll={handleTextareaScroll}
+            />
+            {renderLabel()}
+        </>
+    );
 
     const renderIconBlock = (): JSX.Element | undefined => {
         const icon: React.ReactNode | null = getIcon();
