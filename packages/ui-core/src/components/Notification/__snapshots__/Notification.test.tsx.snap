@@ -49,11 +49,9 @@ exports[`<Notification /> it renders Notification with close collapse 1`] = `
           type="button"
         >
           Подробнее
-          <div
+          <test-file-stub
             className="mfui-notification__collapse-arrow"
-          >
-            <test-file-stub />
-          </div>
+          />
         </button>
       </div>
     </div>
@@ -182,11 +180,9 @@ exports[`<Notification /> it renders Notification with close collpse after chang
               type="button"
             >
               Подробнее
-              <div
+              <test-file-stub
                 className="mfui-notification__collapse-arrow"
-              >
-                <test-file-stub />
-              </div>
+              />
             </button>
           </div>
         </div>
@@ -245,11 +241,9 @@ exports[`<Notification /> it renders Notification with custom close collapse tit
           type="button"
         >
           Показать весь текст
-          <div
+          <test-file-stub
             className="mfui-notification__collapse-arrow"
-          >
-            <test-file-stub />
-          </div>
+          />
         </button>
       </div>
     </div>
@@ -306,11 +300,9 @@ exports[`<Notification /> it renders Notification with custom open collapse titl
           type="button"
         >
           Скрыть часть текста
-          <div
+          <test-file-stub
             className="mfui-notification__collapse-arrow mfui-notification__collapse-arrow_close"
-          >
-            <test-file-stub />
-          </div>
+          />
         </button>
       </div>
     </div>
@@ -367,11 +359,9 @@ exports[`<Notification /> it renders Notification with open collapse 1`] = `
           type="button"
         >
           Свернуть
-          <div
+          <test-file-stub
             className="mfui-notification__collapse-arrow mfui-notification__collapse-arrow_close"
-          >
-            <test-file-stub />
-          </div>
+          />
         </button>
       </div>
     </div>
@@ -453,11 +443,9 @@ exports[`<Notification /> it renders Notification without link, when component h
           type="button"
         >
           Подробнее
-          <div
+          <test-file-stub
             className="mfui-notification__collapse-arrow"
-          >
-            <test-file-stub />
-          </div>
+          />
         </button>
       </div>
     </div>

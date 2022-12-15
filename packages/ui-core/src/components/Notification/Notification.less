@@ -152,12 +152,13 @@
     }
 
     &__link {
-        .h5();
-
         display: inline-flex;
         align-items: center;
 
+        color: var(--brandGreen);
+
         cursor: pointer;
+        .h5();
 
         @media @mobileSM {
             .smallFont();
@@ -174,7 +175,11 @@
         min-width: 20px;
         height: 20px;
 
-        fill: var(--systemBlue);
+        fill: var(--brandGreen);
+    }
+
+    &__collapse-arrow_close {
+        transform: rotate(180deg);
     }
 
     &__link-arrow {
@@ -195,7 +200,7 @@
 
         border: none;
 
-        color: var(--systemBlue);
+        color: var(--brandGreen);
         text-align: right;
 
         background-color: transparent;
@@ -342,10 +347,6 @@
             &__text {
                 color: var(--content);
             }
-
-            &__link {
-                color: var(--systemBlue);
-            }
         }
     }
 
@@ -355,11 +356,13 @@
         @{b} {
             &__title,
             &__text,
-            &__link {
+            &__link,
+            &__collapse-button {
                 color: var(--stcWhite);
             }
 
-            &__link-arrow {
+            &__link-arrow,
+            &__collapse-arrow {
                 fill: var(--stcWhite);
             }
 
