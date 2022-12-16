@@ -1,11 +1,11 @@
 import React from 'react';
+import { Button } from '@megafon/ui-core';
 import { cnCreate } from '@megafon/ui-helpers';
 import AudioProgress from './AudioProgress';
 import AudioVolume from './AudioVolume';
 import IconPause from './i/pause.svg';
 import IconPlay from './i/play.svg';
 import './style/AudioPlayer.less';
-import { Button } from '@megafon/ui-core';
 
 export interface IAudioPlayerProps {
     audioSrc: string;

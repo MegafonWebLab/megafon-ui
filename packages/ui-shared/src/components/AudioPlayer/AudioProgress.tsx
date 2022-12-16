@@ -1,7 +1,7 @@
 import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import AudioRange from './AudioRange';
-import { timerFormat } from './utils';
+import timerFormat from './timerFormatUtil';
 import './style/AudioProgress.less';
 
 export const INTERVAL_DELAY = 1000;

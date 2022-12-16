@@ -19,9 +19,11 @@ const getSeconds = (sec: number): string => {
     return `${sec}`;
 };
 
-export const timerFormat = (sec: number): string => {
+const timerFormat = (sec: number): string => {
     const min = getMinutes(sec);
     const seconds = getSeconds(sec % 60);
 
     return `${min}:${seconds}`;
 };
+
+export default timerFormat;
