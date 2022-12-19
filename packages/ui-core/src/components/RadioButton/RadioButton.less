@@ -21,10 +21,6 @@
         cursor: pointer;
     }
 
-    &__label_disabled {
-        cursor: default;
-    }
-
     &__custom-input {
         display: flex;
         flex-shrink: 0;
@@ -32,45 +28,49 @@
         justify-content: center;
         width: 32px;
         height: 32px;
-        margin-right: 8px;
+        margin-right: 6px;
 
         &:before {
             content: '';
 
             display: block;
             box-sizing: border-box;
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             border: 2px solid var(--spbSky2);
             border-radius: 50%;
 
             background-color: var(--base);
+
+            transition: background-color, border-color;
+            transition-duration: @defaultTransitionTiming;
         }
     }
 
-    &__input:checked + &__custom-input {
-        &:before {
-            border: 6px solid var(--brandGreen);
-        }
+    &__input:checked + &__custom-input:before {
+        border: 7px solid var(--brandGreen);
     }
 
-    &__label:hover &__custom-input {
-        &:before {
-            border-color: var(--buttonHoverGreen);
-        }
+    &__label:not(&__label_disabled):hover &__custom-input:before {
+        border-color: var(--buttonHoverGreen);
     }
 
-    &__label:active &__custom-input {
-        &:before {
-            border-color: var(--buttonDown);
-        }
+    &__label:not(&__label_disabled):active &__custom-input:before {
+        border-color: var(--buttonDown);
     }
 
-    &__label_disabled &__custom-input {
-        &:before {
-            border-color: var(--spbSky2) !important;
+    &__label_disabled {
+        color: var(--spbSky3);
 
-            background-color: var(--spbSky1) !important;
+        cursor: default;
+
+        @{b} {
+            &__custom-input:before ,
+            &__input:checked + @{b}__custom-input:before {
+                border-color: var(--spbSky2);
+
+                background-color: var(--spbSky1);
+            }
         }
     }
 
