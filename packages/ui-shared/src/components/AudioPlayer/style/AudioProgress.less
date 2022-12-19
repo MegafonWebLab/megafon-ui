@@ -1,0 +1,30 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-audio-progress');
+
+@{b} {
+    width: 100%;
+    margin-right: 16px;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__value {
+        color: var(-spbSky3);
+
+        .smallFont();
+    }
+
+    &__range-wrapper {
+        margin-top: -2px;
+    }
+
+    &__title {
+        color: var(--stcBlack);
+
+        .smallFont();
+    }
+}

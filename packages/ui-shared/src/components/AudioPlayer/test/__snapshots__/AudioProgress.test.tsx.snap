@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AudioProgress /> snapshots should render component 1`] = `
+<div
+  className="mfui-audio-progress"
+>
+  <div
+    className="mfui-audio-progress__info"
+  >
+    <span
+      className="mfui-audio-progress__title"
+    >
+      test audioTitle
+    </span>
+    <span
+      className="mfui-audio-progress__value"
+    >
+      00:00
+    </span>
+  </div>
+  <div
+    className="mfui-audio-progress__range-wrapper"
+  >
+    <AudioRange
+      className="mfui-audio-progress__range"
+      colorPercent={0}
+      maxValue={0}
+      onChange={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      step="1"
+      value={0}
+    />
+  </div>
+</div>
+`;

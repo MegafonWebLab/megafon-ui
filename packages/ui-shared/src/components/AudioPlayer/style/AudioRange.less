@@ -1,0 +1,65 @@
+@import '~@megafon/ui-core/styles/base.less';
+
+@b: e('.mfui-audio-range');
+
+.thumb() {
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+
+    background: var(--stcWhite);
+    box-shadow: 0 2px 9px fade(#000000, 15%);
+
+    -webkit-appearance: none;
+}
+
+.track() {
+    border: none;
+
+    background: transparent;
+    box-shadow: none;
+
+    -webkit-appearance: none;
+}
+
+@{b} {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+
+    background: var(--spbSky2);
+    background-image: linear-gradient(#00B956, #00B956);
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::-webkit-slider-thumb {
+        .thumb();
+    }
+
+    &::-moz-range-thumb {
+        .thumb();
+    }
+
+    &::-ms-thumb {
+        .thumb();
+    }
+
+    &::-webkit-slider-runnable-track {
+        .track();
+    }
+
+    &::-moz-range-track {
+        .track();
+    }
+
+    &::-ms-track {
+        .track();
+    }
+}
