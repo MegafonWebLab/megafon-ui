@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { cnCreate, filterDataAttrs, convert, titleConvertConfig, textConvertConfig } from '@megafon/ui-helpers';
 import ErrorIcon from '@megafon/ui-icons/basic-24-block_24.svg';
 import ArrowDown from '@megafon/ui-icons/system-16-arrow-list_down_16.svg';
-import ArrowUp from '@megafon/ui-icons/system-16-arrow-list_up_16.svg';
 import RightArrow from '@megafon/ui-icons/system-16-arrow_right_16.svg';
 import WarningIcon from '@megafon/ui-icons/system-24-attention_invert_24.svg';
 import SuccessIcon from '@megafon/ui-icons/system-24-checked_24.svg';
@@ -235,9 +234,7 @@ const Notification: React.FC<INotificationProps> = ({
             onClick={handleCollapseButtonClick}
         >
             {showFullText ? openCollapseTitle : closeCollapseTitle}
-            <div className={cn('collapse-arrow', { close: showFullText })}>
-                {showFullText ? <ArrowUp /> : <ArrowDown />}
-            </div>
+            <ArrowDown className={cn('collapse-arrow', { close: showFullText })} />
         </button>
     );
 

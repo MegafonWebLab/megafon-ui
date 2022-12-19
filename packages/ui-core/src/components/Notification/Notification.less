@@ -152,20 +152,50 @@
     }
 
     &__link {
-        .h5();
-
         display: inline-flex;
         align-items: center;
 
-        cursor: pointer;
+        color: var(--brandGreen);
 
-        @media @mobileSM {
-            .smallFont();
-        }
+        cursor: pointer;
     }
 
     &__button + &__link {
         margin-left: 16px;
+    }
+
+    &__link,
+    &__collapse-button {
+        font-weight: 500;
+        font-size: 15px;
+
+        font-family: inherit;
+        line-height: 18px;
+
+        @media @mobileSM {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    &__collapse-button {
+        display: flex;
+        align-items: flex-start;
+        height: fit-content;
+        padding: 0;
+
+        border: none;
+
+        color: var(--brandGreen);
+        text-align: right;
+
+        background-color: transparent;
+
+        cursor: pointer;
+
+        @media @mobileSM {
+            align-items: center;
+        }
     }
 
     &__link-arrow,
@@ -174,7 +204,11 @@
         min-width: 20px;
         height: 20px;
 
-        fill: var(--systemBlue);
+        fill: var(--brandGreen);
+    }
+
+    &__collapse-arrow_close {
+        transform: rotate(180deg);
     }
 
     &__link-arrow {
@@ -182,29 +216,6 @@
 
         @media @mobileBU {
             margin-bottom: -4px;
-        }
-    }
-
-    &__collapse-button {
-        .h5();
-        display: flex;
-        align-items: center;
-
-        height: fit-content;
-        padding: 0;
-
-        border: none;
-
-        color: var(--systemBlue);
-        text-align: right;
-
-        background-color: transparent;
-
-        cursor: pointer;
-
-        @media @mobileSM {
-            .smallFont();
-            margin-left: 16px;
         }
     }
 
@@ -342,10 +353,6 @@
             &__text {
                 color: var(--content);
             }
-
-            &__link {
-                color: var(--systemBlue);
-            }
         }
     }
 
@@ -355,11 +362,13 @@
         @{b} {
             &__title,
             &__text,
-            &__link {
+            &__link,
+            &__collapse-button {
                 color: var(--stcWhite);
             }
 
-            &__link-arrow {
+            &__link-arrow,
+            &__collapse-arrow {
                 fill: var(--stcWhite);
             }
 

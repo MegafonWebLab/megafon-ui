@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ListItem /> it renders ListItem 1`] = `
-<li
-  className="mfui-list-item"
->
-  item
-</li>
+exports[`<ListItem /> should render ListItem 1`] = `
+<div>
+  <li
+    class="mfui-list-item"
+  >
+    item
+  </li>
+</div>
 `;
