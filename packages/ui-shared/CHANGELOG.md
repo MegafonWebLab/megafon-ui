@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.7.0...@megafon/ui-shared@4.8.0) (2022-12-19)
+
+
+### Features
+
+* **audioplayer:** add new component ([43f3159](https://github.com/MegafonWebLab/megafon-ui/commit/43f3159279568538638397e311ce4756f3727d05))
+
+
+
+
+
 # [4.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.6.0...@megafon/ui-shared@4.7.0) (2022-12-12)
 
 
