@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
+import { render } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import Preloader from './Preloader';
 
@@ -7,7 +7,7 @@ const PRELOADER_DELAY = 250;
 
 const dataAttrs = {
     root: {
-        'data-root': 'test',
+        'data-testid': 'root',
     },
 };
 
@@ -16,48 +16,56 @@ describe('<Preloader />', () => {
         jest.useFakeTimers();
     });
 
-    const updatePreloaderTimer = (wrapper: ReactWrapper, adjustMs: number) => {
+    const updatePreloaderTimer = (adjustMs = PRELOADER_DELAY) => {
         act(() => {
             jest.advanceTimersByTime(adjustMs);
-            wrapper.update();
         });
     };
 
-    it('it renders Preloader only after 250ms delay', async () => {
-        const wrapper = mount(<Preloader dataAttrs={dataAttrs} />);
+    it('should render Preloader', async () => {
+        const { container } = render(<Preloader />);
 
-        updatePreloaderTimer(wrapper, PRELOADER_DELAY - 50);
-        expect(wrapper).toMatchSnapshot();
+        updatePreloaderTimer();
 
-        updatePreloaderTimer(wrapper, PRELOADER_DELAY + 50);
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
-    it('it renders Preloader with small size', () => {
-        const wrapper = mount(
-            <Preloader sizeAll="small" sizeMobile="small" sizeTablet="small" sizeDesktop="small" sizeWide="small" />,
+    it('should not render Preloader until 250ms passed', async () => {
+        const { queryByTestId } = render(<Preloader dataAttrs={dataAttrs} />);
+
+        updatePreloaderTimer(PRELOADER_DELAY - 50);
+
+        expect(queryByTestId('root')).not.toBeInTheDocument();
+    });
+
+    it('should render with sizes', () => {
+        const { getByTestId } = render(
+            <Preloader
+                sizeAll="small"
+                sizeMobile="small"
+                sizeTablet="small"
+                sizeDesktop="small"
+                sizeWide="small"
+                dataAttrs={dataAttrs}
+            />,
         );
 
-        updatePreloaderTimer(wrapper, PRELOADER_DELAY);
+        updatePreloaderTimer();
 
-        expect(wrapper).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveClass(
+            'mfui-preloader_size-all_small',
+            'mfui-preloader_size-wide_small',
+            'mfui-preloader_size-desktop_small',
+            'mfui-preloader_size-tablet_small',
+            'mfui-preloader_size-mobile_small',
+        );
     });
 
-    it('it renders Preloader with black color', () => {
-        const wrapper = mount(<Preloader color="black" />);
-        updatePreloaderTimer(wrapper, PRELOADER_DELAY);
-        expect(wrapper).toMatchSnapshot();
-    });
+    it('should render with color', () => {
+        const { getByTestId } = render(<Preloader color="black" dataAttrs={dataAttrs} />);
 
-    it('it renders Preloader with white color', () => {
-        const wrapper = mount(<Preloader color="white" />);
-        updatePreloaderTimer(wrapper, PRELOADER_DELAY);
-        expect(wrapper).toMatchSnapshot();
-    });
+        updatePreloaderTimer();
 
-    it('it renders Preloader with custom className', () => {
-        const wrapper = mount(<Preloader className="test-class" />);
-        updatePreloaderTimer(wrapper, PRELOADER_DELAY);
-        expect(wrapper).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveClass('mfui-preloader_color_black');
     });
 });
