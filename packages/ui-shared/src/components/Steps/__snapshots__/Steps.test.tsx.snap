@@ -2,7 +2,7 @@
 
 exports[`Steps should render component 1`] = `
 <div
-  className="mfui-steps"
+  className="mfui-steps test-class"
 >
   <Header
     align="center"
