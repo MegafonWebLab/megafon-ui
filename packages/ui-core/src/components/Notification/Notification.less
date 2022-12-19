@@ -158,15 +158,44 @@
         color: var(--brandGreen);
 
         cursor: pointer;
-        .h5();
-
-        @media @mobileSM {
-            .smallFont();
-        }
     }
 
     &__button + &__link {
         margin-left: 16px;
+    }
+
+    &__link,
+    &__collapse-button {
+        font-weight: 500;
+        font-size: 15px;
+
+        font-family: inherit;
+        line-height: 18px;
+
+        @media @mobileSM {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    &__collapse-button {
+        display: flex;
+        align-items: flex-start;
+        height: fit-content;
+        padding: 0;
+
+        border: none;
+
+        color: var(--brandGreen);
+        text-align: right;
+
+        background-color: transparent;
+
+        cursor: pointer;
+
+        @media @mobileSM {
+            align-items: center;
+        }
     }
 
     &__link-arrow,
@@ -187,29 +216,6 @@
 
         @media @mobileBU {
             margin-bottom: -4px;
-        }
-    }
-
-    &__collapse-button {
-        .h5();
-        display: flex;
-        align-items: center;
-
-        height: fit-content;
-        padding: 0;
-
-        border: none;
-
-        color: var(--brandGreen);
-        text-align: right;
-
-        background-color: transparent;
-
-        cursor: pointer;
-
-        @media @mobileSM {
-            .smallFont();
-            margin-left: 16px;
         }
     }
 
