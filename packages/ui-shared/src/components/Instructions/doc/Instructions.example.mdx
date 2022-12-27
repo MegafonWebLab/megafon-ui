@@ -118,3 +118,31 @@ const items = [
         </strong>
     </Instructions>
 </Playground>
+
+## HTML-теги и спецсимволы
+
+```javascript
+В свойствах title и text поддерживаются некоторые HTML-теги:
+- для title: "<br>, <font color>, <a href>";
+- для text: "<br>, <font color>, <a href>, <b>".
+Также в обоих свойствах поддерживается спецсимвол &nbsp.
+```
+
+<Playground style={wrapperStyles}>
+    <Instructions
+        title='Скачивайте&nbspмобильное приложение <font color="#731982">МегаФон</font><br>по <a href="https://moscow.megafon.ru">ссылке</a>'
+        instructionItems={items}
+        additionalText='<b>Текстовое</b> <font color="#731982">описание</font> не<br>должно <a href="https://moscow.megafon.ru">превышать</a> 150&nbspсимволов.'
+    >
+        <strong
+            style={{
+                display: 'block',
+                color: 'red',
+                margin: '32px auto',
+                textAlign: 'center'
+            }}
+        >
+            Важное уведомление
+        </strong>
+    </Instructions>
+</Playground>

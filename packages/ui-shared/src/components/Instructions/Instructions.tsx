@@ -2,8 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { Ref } from 'react';
 import { Grid, GridColumn, Header, Paragraph } from '@megafon/ui-core';
-import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
-import convert from 'htmr';
+import { cnCreate, filterDataAttrs, titleConvertConfig, convert, textConvertConfig } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -174,7 +173,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     const renderTitle = React.useCallback(
         (resolution: string): JSX.Element => (
             <Header className={cn('title', { resolution })} as="h2">
-                {title}
+                {convert(title, titleConvertConfig)}
             </Header>
         ),
         [title],
@@ -183,7 +182,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     const renderText = React.useCallback(
         (): JSX.Element => (
             <Paragraph className={cn('text', [additionalText])} hasMargin={false}>
-                {convert(text as string)}
+                {convert(text as string, textConvertConfig)}
             </Paragraph>
         ),
         [text, additionalText],
