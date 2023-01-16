@@ -1,6 +1,6 @@
 import React from 'react';
 import { Paragraph } from '@megafon/ui-core';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, convert, textConvertConfig } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 
 import './StepsItem.less';
@@ -17,7 +17,9 @@ const StepsItem: React.FC<IStepsItem> = ({ index, text }) => (
     <div className={cn()}>
         <span className={cn('step-number')}>{index}</span>
         <div className={cn('text-wrapper')}>
-            <Paragraph hasMargin={false}>{text}</Paragraph>
+            <Paragraph hasMargin={false}>
+                {typeof text === 'string' ? convert(text, textConvertConfig) : text}
+            </Paragraph>
         </div>
     </div>
 );

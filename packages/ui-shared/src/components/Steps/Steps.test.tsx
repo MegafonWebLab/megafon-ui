@@ -6,7 +6,7 @@ import StepsItem from './StepsItem';
 describe('Steps', () => {
     it('should render component', () => {
         const wrapper = shallow(
-            <Steps title="title">
+            <Steps title="title" className="test-class">
                 <StepsItem index={1} text="text" />
             </Steps>,
         );

@@ -2,7 +2,7 @@ import { Playground } from 'docz';
 import Button from '../Button';
 import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
 import { blockStyle } from './Button.docz';
-import { createRef } from "react";
+import { createRef } from 'react';
 export const ref = createRef();
 
 ## Цветовые темы
@@ -20,27 +20,85 @@ export const ref = createRef();
     </div>
 </Playground>
 
+### Зеленая Soft
+
+<Playground style={blockStyle}>
+    <Button theme="green-soft">active</Button>
+    <Button theme="green-soft" disabled>
+        disabled
+    </Button>
+    <Button theme="green-soft" showLoader>
+        with loader
+    </Button>
+    <Button theme="green-soft" showArrow>
+        with arrow
+    </Button>
+    <Button theme="green-soft" icon={<Balance />}>
+        with icon
+    </Button>
+    <div>
+        <Button theme="green-soft" icon={<Balance />} />
+    </div>
+</Playground>
+
 ### Фиолетовая
 
 <Playground style={blockStyle}>
     <Button theme="purple">active</Button>
-    <Button theme="purple" disabled>disabled</Button>
-    <Button theme="purple" showLoader>with loader</Button>
-    <Button theme="purple" showArrow>with arrow</Button>
-    <Button theme="purple" icon={<Balance />}>with icon</Button>
+    <Button theme="purple" disabled>
+        disabled
+    </Button>
+    <Button theme="purple" showLoader>
+        with loader
+    </Button>
+    <Button theme="purple" showArrow>
+        with arrow
+    </Button>
+    <Button theme="purple" icon={<Balance />}>
+        with icon
+    </Button>
     <div>
         <Button theme="purple" icon={<Balance />} />
     </div>
 </Playground>
 
+### Фиолетовая soft
+
+<Playground style={blockStyle}>
+    <Button theme="purple-soft">active</Button>
+    <Button theme="purple-soft" disabled>
+        disabled
+    </Button>
+    <Button theme="purple-soft" showLoader>
+        with loader
+    </Button>
+    <Button theme="purple-soft" showArrow>
+        with arrow
+    </Button>
+    <Button theme="purple-soft" icon={<Balance />}>
+        with icon
+    </Button>
+    <div>
+        <Button theme="purple-soft" icon={<Balance />} />
+    </div>
+</Playground>
+
 ### Белая
 
-<Playground style={{...blockStyle, backgroundColor: '#333333', color: '#ffffff'}}>
+<Playground style={{ ...blockStyle, backgroundColor: '#333333', color: '#ffffff' }}>
     <Button theme="white">active</Button>
-    <Button theme="white" disabled>disabled</Button>
-    <Button theme="white" showLoader>with loader</Button>
-    <Button theme="white" showArrow>with arrow</Button>
-    <Button theme="white" icon={<Balance />}>with icon</Button>
+    <Button theme="white" disabled>
+        disabled
+    </Button>
+    <Button theme="white" showLoader>
+        with loader
+    </Button>
+    <Button theme="white" showArrow>
+        with arrow
+    </Button>
+    <Button theme="white" icon={<Balance />}>
+        with icon
+    </Button>
     <div>
         <Button theme="white" icon={<Balance />} />
     </div>
@@ -52,10 +110,18 @@ export const ref = createRef();
 
 <Playground style={blockStyle}>
     <Button type="outline">active</Button>
-    <Button type="outline" disabled>disabled</Button>
-    <Button type="outline" showLoader>with loader</Button>
-    <Button type="outline" showArrow>with arrow</Button>
-    <Button type="outline" icon={<Balance />}>with icon</Button>
+    <Button type="outline" disabled>
+        disabled
+    </Button>
+    <Button type="outline" showLoader>
+        with loader
+    </Button>
+    <Button type="outline" showArrow>
+        with arrow
+    </Button>
+    <Button type="outline" icon={<Balance />}>
+        with icon
+    </Button>
     <div>
         <Button type="outline" icon={<Balance />} />
     </div>
@@ -64,11 +130,21 @@ export const ref = createRef();
 ### Фиолетовая
 
 <Playground style={blockStyle}>
-    <Button type="outline" theme="purple">active</Button>
-    <Button type="outline" theme="purple" disabled>disabled</Button>
-    <Button type="outline" theme="purple" showLoader>with loader</Button>
-    <Button type="outline" theme="purple" showArrow>with arrow</Button>
-    <Button type="outline" theme="purple" icon={<Balance />}>with icon</Button>
+    <Button type="outline" theme="purple">
+        active
+    </Button>
+    <Button type="outline" theme="purple" disabled>
+        disabled
+    </Button>
+    <Button type="outline" theme="purple" showLoader>
+        with loader
+    </Button>
+    <Button type="outline" theme="purple" showArrow>
+        with arrow
+    </Button>
+    <Button type="outline" theme="purple" icon={<Balance />}>
+        with icon
+    </Button>
     <div>
         <Button type="outline" theme="purple" icon={<Balance />} />
     </div>
@@ -76,12 +152,22 @@ export const ref = createRef();
 
 ### Белая
 
-<Playground style={{...blockStyle, backgroundColor: '#333333', color: '#ffffff'}}>
-    <Button type="outline" theme="white">active</Button>
-    <Button type="outline" theme="white" disabled>disabled</Button>
-    <Button type="outline" theme="white" showLoader>with loader</Button>
-    <Button type="outline" theme="white" showArrow>with arrow</Button>
-    <Button type="outline" theme="white" icon={<Balance />}>with icon</Button>
+<Playground style={{ ...blockStyle, backgroundColor: '#333333', color: '#ffffff' }}>
+    <Button type="outline" theme="white">
+        active
+    </Button>
+    <Button type="outline" theme="white" disabled>
+        disabled
+    </Button>
+    <Button type="outline" theme="white" showLoader>
+        with loader
+    </Button>
+    <Button type="outline" theme="white" showArrow>
+        with arrow
+    </Button>
+    <Button type="outline" theme="white" icon={<Balance />}>
+        with icon
+    </Button>
     <div>
         <Button type="outline" theme="white" icon={<Balance />} />
     </div>
@@ -89,48 +175,172 @@ export const ref = createRef();
 
 ### Черная
 
-<Playground style={{...blockStyle, backgroundColor: '#F5F5F5'}}>
-    <Button type="outline" theme="black">active</Button>
-    <Button type="outline" theme="black" disabled>disabled</Button>
-    <Button type="outline" theme="black" showLoader>with loader</Button>
-    <Button type="outline" theme="black" showArrow>with arrow</Button>
-    <Button type="outline" theme="black" icon={<Balance />}>with icon</Button>
+<Playground style={{ ...blockStyle, backgroundColor: '#F5F5F5' }}>
+    <Button type="outline" theme="black">
+        active
+    </Button>
+    <Button type="outline" theme="black" disabled>
+        disabled
+    </Button>
+    <Button type="outline" theme="black" showLoader>
+        with loader
+    </Button>
+    <Button type="outline" theme="black" showArrow>
+        with arrow
+    </Button>
+    <Button type="outline" theme="black" icon={<Balance />}>
+        with icon
+    </Button>
     <div>
         <Button type="outline" theme="black" icon={<Balance />} />
+    </div>
+</Playground>
+
+## Цветовые темы с типом text
+
+### Зеленая
+
+<Playground style={blockStyle}>
+    <Button theme="green" type="text">
+        active
+    </Button>
+    <Button theme="green" type="text" disabled>
+        disabled
+    </Button>
+    <Button theme="green" type="text" showLoader>
+        with loader
+    </Button>
+    <Button theme="green" type="text" showArrow>
+        with arrow
+    </Button>
+    <Button theme="green" type="text" icon={<Balance />}>
+        with icon
+    </Button>
+    <div>
+        <Button theme="green" type="text" icon={<Balance />} />
+    </div>
+</Playground>
+
+### Фиолетовая
+
+<Playground style={blockStyle}>
+    <Button theme="purple" type="text">
+        active
+    </Button>
+    <Button theme="purple" type="text" disabled>
+        disabled
+    </Button>
+    <Button theme="purple" type="text" showLoader>
+        with loader
+    </Button>
+    <Button theme="purple" type="text" showArrow>
+        with arrow
+    </Button>
+    <Button theme="purple" type="text" icon={<Balance />}>
+        with icon
+    </Button>
+    <div>
+        <Button theme="purple" type="text" icon={<Balance />} />
+    </div>
+</Playground>
+
+### Белая
+
+<Playground style={{ ...blockStyle, backgroundColor: '#333333', color: '#ffffff' }}>
+    <Button type="text" theme="white">
+        active
+    </Button>
+    <Button type="text" theme="white" disabled>
+        disabled
+    </Button>
+    <Button type="text" theme="white" showLoader>
+        with loader
+    </Button>
+    <Button type="text" theme="white" showArrow>
+        with arrow
+    </Button>
+    <Button type="text" theme="white" icon={<Balance />}>
+        with icon
+    </Button>
+    <div>
+        <Button type="text" theme="white" icon={<Balance />} />
+    </div>
+</Playground>
+
+### Черная
+
+<Playground style={{ ...blockStyle, backgroundColor: '#F5F5F5' }}>
+    <Button type="text" theme="black">
+        active
+    </Button>
+    <Button type="text" theme="black" disabled>
+        disabled
+    </Button>
+    <Button type="text" theme="black" showLoader>
+        with loader
+    </Button>
+    <Button type="text" theme="black" showArrow>
+        with arrow
+    </Button>
+    <Button type="text" theme="black" icon={<Balance />}>
+        with icon
+    </Button>
+    <div>
+        <Button type="text" theme="black" icon={<Balance />} />
     </div>
 </Playground>
 
 ## Размер кнопки
 
 <Playground style={blockStyle}>
-    <Button sizeAll="extra-small" showArrow>Extra small</Button>
-    <Button sizeAll="small" showArrow>Small</Button>
-    <Button sizeAll="medium" icon={<Balance />}>Medium</Button>
+    <Button sizeAll="extra-small" showArrow>
+        Extra small
+    </Button>
+    <Button sizeAll="small" showArrow>
+        Small
+    </Button>
+    <Button sizeAll="medium" icon={<Balance />}>
+        Medium
+    </Button>
     <Button sizeAll="large">Large</Button>
-    <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" showArrow>Adaptive</Button>
+    <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" showArrow>
+        Adaptive
+    </Button>
     <div>
         <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" icon={<Balance />} />
     </div>
 </Playground>
 
 ## Размер лоадера
+
 Зависит от размера кнопки
 
 <Playground style={blockStyle}>
-    <Button sizeAll="extra-small" showLoader>Extra small</Button>
-    <Button sizeAll="small" showLoader>Small</Button>
-    <Button sizeAll="medium" showLoader>Medium</Button>
-    <Button sizeAll="large" showLoader>Large</Button>
-    <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showLoader>Adaptive</Button>
+    <Button sizeAll="extra-small" showLoader>
+        Extra small
+    </Button>
+    <Button sizeAll="small" showLoader>
+        Small
+    </Button>
+    <Button sizeAll="medium" showLoader>
+        Medium
+    </Button>
+    <Button sizeAll="large" showLoader>
+        Large
+    </Button>
+    <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showLoader>
+        Adaptive
+    </Button>
 </Playground>
 
 ## В полную ширину
 
-<Playground style={{...blockStyle, backgroundColor: 'none', gridTemplateColumns: '1fr'}}>
+<Playground style={{ ...blockStyle, backgroundColor: 'none', gridTemplateColumns: '1fr' }}>
     <Button fullWidth>Full Width Button</Button>
 </Playground>
 
 ## Сокращение текста при недостаточной ширине
+
 Преобразование окончания текста в многоточие будет видно при ресайзе
 
 <Playground style={blockStyle}>
@@ -141,7 +351,13 @@ export const ref = createRef();
 
 <Playground style={blockStyle}>
     <Button href="#">Link</Button>
-    <Button href="#" disabled>Disabled Link</Button>
-    <Button href="#" target="_blank">Target Link</Button>
-    <Button href="#" download>Download Link</Button>
+    <Button href="#" disabled>
+        Disabled Link
+    </Button>
+    <Button href="#" target="_blank">
+        Target Link
+    </Button>
+    <Button href="#" download>
+        Download Link
+    </Button>
 </Playground>

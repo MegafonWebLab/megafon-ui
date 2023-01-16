@@ -24,9 +24,16 @@
     outline: none;
     cursor: pointer;
 
+    transition: background-color 0.3s, color 0.3s;
+
     appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
+    svg {
+        display: block;
+
+        transition: fill 0.3s;
+    }
     .generateSize(all);
 
     @media @desktopMU {
@@ -44,6 +51,12 @@
 
     &:hover {
         text-decoration: none;
+
+        transition: background-color 0.3s, color 0.3s;
+
+        svg {
+            transition: fill 0.3s;
+        }
     }
 
     &_disabled {
@@ -81,6 +94,14 @@
         max-width: fit-content;
     }
 
+    &__content_show-loader {
+        visibility: hidden;
+    }
+
+    &__preloader {
+        position: absolute;
+    }
+
     &__icon-arrow {
         width: 32px;
         height: 32px;
@@ -103,6 +124,141 @@
         display: none;
     }
 
+    // type = text
+    // theme = green
+
+    &_type_text&_theme_green {
+        width: fit-content;
+
+        color: var(--brandGreen);
+
+        background-color: transparent;
+        block-size: fit-content;
+
+        svg {
+            fill: var(--brandGreen);
+        }
+    }
+
+    &_no-touch&_type_text&_theme_green {
+        &:not(@{b}_loading):hover {
+            color: var(--buttonHoverGreen);
+
+            svg {
+                fill: var(--buttonHoverGreen);
+            }
+        }
+
+        &:not(@{b}_loading):active {
+            color: var(--buttonDown);
+
+            svg {
+                fill: var(--buttonDown);
+            }
+        }
+    }
+
+    // type = text
+    // theme = purple
+
+    &_type_text&_theme_purple {
+        width: fit-content;
+
+        color: var(--brandPurple);
+
+        background-color: transparent;
+        block-size: fit-content;
+
+        svg {
+            fill: var(--brandPurple);
+        }
+    }
+
+    &_no-touch&_type_text&_theme_purple {
+        &:not(@{b}_loading):hover {
+            color: var(--buttonHoverPurple);
+
+            svg {
+                fill: var(--buttonHoverPurple);
+            }
+        }
+
+        &:not(@{b}_loading):active {
+            color: var(--buttonDown);
+
+            svg {
+                fill: var(--buttonDown);
+            }
+        }
+    }
+
+    // type = text
+    // theme = white
+
+    &_type_text&_theme_white {
+        width: fit-content;
+
+        color: var(--stcWhite);
+
+        background-color: transparent;
+        block-size: fit-content;
+
+        svg {
+            fill: var(--stcWhite);
+        }
+    }
+
+    &_no-touch&_type_text&_theme_white {
+        &:not(@{b}_loading):hover {
+            color: var(--buttonHoverGrey);
+
+            svg {
+                fill: var(--buttonHoverGrey);
+            }
+        }
+
+        &:not(@{b}_loading):active {
+            color: var(--buttonDown);
+
+            svg {
+                fill: var(--buttonDown);
+            }
+        }
+    }
+
+    // type = text
+    // theme = black
+
+    &_type_text&_theme_black {
+        color: var(--stcBlack);
+
+        background-color: transparent;
+
+        svg {
+            fill: var(--stcBlack);
+        }
+    }
+
+    &_no-touch&_type_text&_theme_black {
+        --stcBlack7: #818181;
+
+        &:not(@{b}_loading):hover {
+            color: var(--stcBlack7);
+
+            svg {
+                fill: var(--stcBlack7);
+            }
+        }
+
+        &:not(@{b}_loading):active {
+            color: var(--buttonDown);
+
+            svg {
+                fill: var(--buttonDown);
+            }
+        }
+    }
+
     // type = primary
     // theme = green
 
@@ -119,12 +275,41 @@
     &_no-touch&_type_primary&_theme_green {
         &:not(@{b}_loading):hover {
             background-color: var(--buttonHoverGreen);
-            box-shadow: inset 0 0 0 1px var(--buttonHoverGreen);
         }
 
         &:not(@{b}_loading):active {
             background-color: var(--buttonDown);
-            box-shadow: inset 0 0 0 1px var(--buttonDown);
+        }
+    }
+
+    // type = primary
+    // theme = green-soft
+
+    &_type_primary&_theme_green-soft {
+        border: 1px solid rgba(0, 185, 86, 0.2);
+
+        color: var(--brandGreen);
+
+        background-color: var(--brandGreen20);
+
+        svg {
+            fill: var(--brandGreen);
+        }
+    }
+
+    &_no-touch&_type_primary&_theme_green-soft {
+        &:not(@{b}_loading):hover {
+            background-color: var(--buttonHoverGreenSoft);
+        }
+
+        &:not(@{b}_loading):active {
+            color: var(--stcWhite);
+
+            background-color: var(--buttonDown);
+
+            svg {
+                fill: var(--stcWhite);
+            }
         }
     }
 
@@ -144,15 +329,43 @@
     &_no-touch&_type_primary&_theme_purple {
         &:not(@{b}_loading):hover {
             background-color: var(--buttonHoverPurple);
-            box-shadow: inset 0 0 0 1px var(--buttonHoverPurple);
         }
 
         &:not(@{b}_loading):active {
             background-color: var(--buttonDown);
-            box-shadow: inset 0 0 0 1px var(--buttonDown);
         }
     }
 
+    // type = primary
+    // theme = purple-soft
+
+    &_type_primary&_theme_purple-soft {
+        border: 1px solid rgba(115, 25, 130, 0.2);
+
+        color: var(--brandPurple);
+
+        background-color: var(--brandPurple20);
+
+        svg {
+            fill: var(--brandPurple);
+        }
+    }
+
+    &_no-touch&_type_primary&_theme_purple-soft {
+        &:not(@{b}_loading):hover {
+            background-color: var(--buttonHoverPurpleSoft);
+        }
+
+        &:not(@{b}_loading):active {
+            color: var(--stcWhite);
+
+            background-color: var(--buttonDown);
+
+            svg {
+                fill: var(--stcWhite);
+            }
+        }
+    }
     // type = primary
     // theme = white
 
@@ -171,7 +384,6 @@
             color: var(--stcBlack);
 
             background-color: var(--buttonHoverGrey);
-            box-shadow: inset 0 0 0 1px var(--buttonHoverGrey);
 
             svg {
                 fill: var(--stcBlack);
@@ -179,8 +391,13 @@
         }
 
         &:not(@{b}_loading):active {
+            color: var(--stcWhite);
+
             background-color: var(--buttonDown);
-            box-shadow: inset 0 0 0 1px var(--buttonDown);
+
+            svg {
+                fill: var(--stcWhite);
+            }
         }
     }
 
@@ -188,10 +405,11 @@
     // theme = green
 
     &_type_outline&_theme_green {
+        border: 1px solid var(--brandGreen);
+
         color: var(--brandGreen);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--brandGreen);
 
         svg {
             fill: var(--brandGreen);
@@ -212,13 +430,40 @@
     }
 
     // type = outline
+    // theme = green-soft
+
+    &_type_outline&_theme_green-soft {
+        color: var(--brandGreen);
+
+        background-color: transparent;
+
+        svg {
+            fill: var(--brandGreen);
+        }
+    }
+
+    &_no-touch&_type_outline&_theme_green-soft {
+        --brandGreen7: rgba(0, 185, 86, 0.07);
+        --brandGreen14: rgba(0, 185, 86, 0.14);
+
+        &:not(@{b}_loading):hover {
+            background-color: var(--brandGreen7);
+        }
+
+        &:not(@{b}_loading):active {
+            background-color: var(--brandGreen14);
+        }
+    }
+
+    // type = outline
     // theme = purple
 
     &_type_outline&_theme_purple {
+        border: 1px solid  var(--brandPurple);
+
         color: var(--brandPurple);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--brandPurple);
 
         svg {
             fill: var(--brandPurple);
@@ -242,10 +487,11 @@
     // theme = white
 
     &_type_outline&_theme_white {
+        border: 1px solid var(--stcWhite);
+
         color: var(--stcWhite);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--stcWhite);
 
         svg {
             fill: var(--stcWhite);
@@ -269,10 +515,11 @@
     // theme = black
 
     &_type_outline&_theme_black {
+        border: 1px solid var(--stcBlack);
+
         color: var(--stcBlack);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--stcBlack);
 
         svg {
             fill: var(--stcBlack);
@@ -297,18 +544,15 @@
         width: 100%;
     }
 
-    svg {
-        display: block;
-    }
-
     &&_type_primary&_disabled,
     &&_no-touch&_type_primary&_disabled,
     &&_no-touch&_type_primary&_disabled:hover,
     &&_no-touch&_type_primary&_disabled:active {
+        border: 1px solid var(--spbSky2);
+
         color: var(--spbSky3);
 
         background-color: var(--spbSky1);
-        box-shadow: inset 0 0 0 1px var(--spbSky3);
 
         svg {
             fill: var(--spbSky3);
@@ -319,10 +563,11 @@
     &&_no-touch&_type_outline&_theme_white&_disabled,
     &&_no-touch&_type_outline&_theme_white&_disabled:hover,
     &&_no-touch&_type_outline&_theme_white&_disabled:active {
+        border: 1px solid var(--stcWhite);
+
         color: var(--stcWhite50);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--stcWhite50);
 
         svg {
             fill: var(--stcWhite50);
@@ -333,13 +578,38 @@
     &&_no-touch&_type_outline&_disabled,
     &&_no-touch&_type_outline&_disabled:hover,
     &&_no-touch&_type_outline&_disabled:active {
+        border: 1px solid var(--spbSky2);
+
         color: var(--spbSky3);
 
         background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--spbSky3);
 
         svg {
             fill: var(--spbSky3);
+        }
+    }
+
+    &&_type_text&_disabled,
+    &&_no-touch&_type_text&_disabled,
+    &&_no-touch&_type_text&_disabled:hover,
+    &&_no-touch&_type_text&_disabled:active {
+        color: var(--spbSky3);
+
+        svg {
+            fill: var(--spbSky3);
+        }
+    }
+
+    &&_type_text&_theme_white&_disabled,
+    &&_no-touch&_type_text&_theme_white&_disabled,
+    &&_no-touch&_type_text&_theme_white&_disabled:hover,
+    &&_no-touch&_type_text&_theme_white&_disabled:active {
+        color: var(--stcWhite);
+
+        background-color: transparent;
+
+        svg {
+            fill: var(--stcWhite);
         }
     }
 }
@@ -357,13 +627,13 @@
     }
 
     &_size-@{resolution}_small &__inner {
-        min-width: 32px;
-        height: 32px;
+        min-width: 40px;
+        height: 40px;
     }
 
     &_size-@{resolution}_medium &__inner {
-        min-width: 48px;
-        height: 48px;
+        min-width: 52px;
+        height: 52px;
     }
 
     &_size-@{resolution}_large &__inner {
@@ -377,13 +647,13 @@
     }
 
     &_size-@{resolution}_small &__icon {
-        width: 24px;
-        height: 24px;
+        width: 16px;
+        height: 16px;
     }
 
     &_size-@{resolution}_medium &__icon {
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
     }
 
     &_size-@{resolution}_large &__icon {
