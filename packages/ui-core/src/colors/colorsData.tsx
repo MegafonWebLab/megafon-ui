@@ -120,8 +120,16 @@ const colors: ColorsType = {
                     code: 'buttonHoverGreen',
                 },
                 {
+                    name: 'Button Hov. Green Soft',
+                    code: 'buttonHoverGreenSoft',
+                },
+                {
                     name: 'Button Hov. Purple',
                     code: 'buttonHoverPurple',
+                },
+                {
+                    name: 'Button Hov. Purple Soft',
+                    code: 'buttonHoverPurpleSoft',
                 },
                 {
                     name: 'Button Hov. Grey',
