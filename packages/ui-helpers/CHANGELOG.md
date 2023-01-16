@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.3.1...@megafon/ui-helpers@2.4.0) (2023-01-16)
+
+
+### Features
+
+* **button:** add soft green and soft purple button ([5f3be76](https://github.com/MegafonWebLab/megafon-ui/commit/5f3be76ecbb8e4549ac742aa9994d7f4e4b66ac7))
+
+
+
+
+
 ## [2.3.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-helpers@2.3.0...@megafon/ui-helpers@2.3.1) (2022-12-12)
 
 

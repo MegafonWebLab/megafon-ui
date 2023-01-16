@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.8.0...@megafon/ui-shared@4.9.0) (2023-01-16)
+
+
+### Features
+
+* **instructions:** added convert to html for title and text ([81d43b2](https://github.com/MegafonWebLab/megafon-ui/commit/81d43b2b3d3b14f0caaba287b26392a55936bc6c))
+* **step:** added className and render html ([d6eceda](https://github.com/MegafonWebLab/megafon-ui/commit/d6eceda42f9d20fe4adf948f900f77bfeaa951d9))
+
+
+
+
+
 # [4.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.7.0...@megafon/ui-shared@4.8.0) (2022-12-19)
 
 
