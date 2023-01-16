@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Header } from '@megafon/ui-core';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, convert, titleConvertConfig } from '@megafon/ui-helpers';
 import PropTypes from 'prop-types';
 import './Steps.less';
 
 export interface ISteps {
+    /** Дополнительный класс корневого элемента */
+    className?: string;
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Заголовок */
@@ -12,10 +14,10 @@ export interface ISteps {
 }
 
 const cn = cnCreate('mfui-steps');
-const Steps: React.FC<ISteps> = ({ title, rootRef, children }) => (
-    <div className={cn()} ref={rootRef}>
+const Steps: React.FC<ISteps> = ({ className, title, rootRef, children }) => (
+    <div className={cn([className])} ref={rootRef}>
         <Header as="h2" align="center" className={cn('title')}>
-            {title}
+            {convert(title, titleConvertConfig)}
         </Header>
         <ul className={cn('list')}>
             {React.Children.map(children, child => (
@@ -26,6 +28,7 @@ const Steps: React.FC<ISteps> = ({ title, rootRef, children }) => (
 );
 
 Steps.propTypes = {
+    className: PropTypes.string,
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
