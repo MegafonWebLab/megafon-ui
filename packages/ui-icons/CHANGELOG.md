@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.4.2...@megafon/ui-icons@2.5.0) (2023-01-17)
+
+
+### Features
+
+* **icons:** add Heart-full_24 and Broken-heart-full_24 icons ([9c304b3](https://github.com/MegafonWebLab/megafon-ui/commit/9c304b33255dbf42769f2e26b7d70c85d1fdf787))
+
+
+
+
+
 ## [2.4.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.4.1...@megafon/ui-icons@2.4.2) (2023-01-16)
 
 **Note:** Version bump only for package @megafon/ui-icons
