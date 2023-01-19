@@ -171,8 +171,8 @@ const Tooltip: React.FC<ITooltipProps> = ({
     const portalElem = React.useRef<HTMLDivElement | null>(null);
 
     const isBigSize = size === Size.BIG;
-    const hasMainContent = !!title || !!text;
-    const hasTopContent = hasMainContent || !!buttonText;
+
+    const hasTextMargin = !!title && isBigSize;
 
     const clickEvent = useMemo(() => (isTouchDevice ? TOUCH_KEY : MOUSE_KEY), [isTouchDevice]);
 
@@ -352,41 +352,40 @@ const Tooltip: React.FC<ITooltipProps> = ({
         [],
     );
 
-    const renderedText = useMemo((): JSX.Element => <div className={cn('text')}>{text}</div>, [text]);
-
-    const renderedFullContent = useMemo(
-        (): JSX.Element => (
-            <>
-                {hasTopContent && (
-                    <div className={cn('top', { margin: !!children })}>
-                        {hasMainContent && (
-                            <div className={cn('main-content')}>
-                                {!!title && (
-                                    <Header className={cn('title')} as="h5" space="tight">
-                                        {title}
-                                    </Header>
-                                )}
-                                {!!text && renderedText}
-                            </div>
-                        )}
-                        {!!buttonText && (
-                            <button
-                                type="button"
-                                className={cn('button')}
-                                {...filterDataAttrs(dataAttrs?.button)}
-                                onClick={onClick}
-                            >
-                                {buttonText}
-                                <RightArrow className={cn('button-arrow')} />
-                            </button>
-                        )}
-                    </div>
-                )}
-                {!!children && <div className={cn('addititonal-content')}>{children}</div>}
-            </>
-        ),
-        [title, text, buttonText, children, dataAttrs, hasTopContent, hasMainContent, renderedText, onClick],
+    const renderedText = useMemo(
+        (): JSX.Element => <div className={cn('text', { margin: hasTextMargin })}>{text}</div>,
+        [text, hasTextMargin],
     );
+
+    const renderedFullContent = useMemo((): JSX.Element => {
+        const hasButtonMargin = !!title || !!text;
+        const hasChildrenMargin = hasButtonMargin || !!buttonText;
+
+        return (
+            <>
+                {!!title && (
+                    <Header className={cn('title')} as="h5" space="tight">
+                        {title}
+                    </Header>
+                )}
+                {!!text && renderedText}
+                {!!buttonText && (
+                    <button
+                        type="button"
+                        className={cn('button', { margin: hasButtonMargin })}
+                        {...filterDataAttrs(dataAttrs?.button)}
+                        onClick={onClick}
+                    >
+                        {buttonText}
+                        <RightArrow className={cn('button-arrow')} />
+                    </button>
+                )}
+                {!!children && (
+                    <div className={cn('addititonal-content', { margin: hasChildrenMargin })}>{children}</div>
+                )}
+            </>
+        );
+    }, [title, text, buttonText, children, dataAttrs, renderedText, onClick]);
 
     const template = (
         <div
