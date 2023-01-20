@@ -7,3 +7,10 @@ export const blockStyle: React.CSSProperties = {
     alignItems: 'center',
     width: '100%',
 };
+
+export const sizeDemoBlockStyle: React.CSSProperties = {
+    display: 'inline-flex',
+    flexWrap: 'wrap',
+    gap: '20px',
+    alignItems: 'center',
+};
