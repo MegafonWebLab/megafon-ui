@@ -47,36 +47,28 @@ exports[`<Tooltip/> renders component with all props 1`] = `
           className="mfui-tooltip__close-icon"
         />
       </button>
-      <div
-        className="mfui-tooltip__top"
+      <Header
+        as="h5"
+        className="mfui-tooltip__title"
+        space="tight"
       >
-        <div
-          className="mfui-tooltip__main-content"
-        >
-          <Header
-            as="h5"
-            className="mfui-tooltip__title"
-            space="tight"
-          >
-            Заголовок
-          </Header>
-          <div
-            className="mfui-tooltip__text"
-          >
-            Текст
-          </div>
-        </div>
-        <button
-          className="mfui-tooltip__button"
-          onClick={[MockFunction]}
-          type="button"
-        >
-          Кнопка
-          <test-file-stub
-            className="mfui-tooltip__button-arrow"
-          />
-        </button>
+        Заголовок
+      </Header>
+      <div
+        className="mfui-tooltip__text mfui-tooltip__text_margin"
+      >
+        Текст
       </div>
+      <button
+        className="mfui-tooltip__button mfui-tooltip__button_margin"
+        onClick={[MockFunction]}
+        type="button"
+      >
+        Кнопка
+        <test-file-stub
+          className="mfui-tooltip__button-arrow"
+        />
+      </button>
     </Tile>
     <Tile
       className="mfui-tooltip__content-shadow content-shadow"

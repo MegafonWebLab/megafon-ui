@@ -74,23 +74,6 @@
         z-index: -1;
     }
 
-    &__top,
-    &__main-content {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    &__top {
-        @media @mobileBU {
-            gap: 12px;
-        }
-    }
-
-    &__top_margin {
-        margin-bottom: 16px;
-    }
-
     &__arrow-container {
         position: absolute;
     }
@@ -125,10 +108,8 @@
         }
     }
 
-    &__bottom {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
+    &__text_margin {
+        margin-top: 8px;
     }
 
     &__button,
@@ -160,6 +141,10 @@
             font-size: 12px;
             line-height: 14px;
         }
+    }
+
+    &__button_margin {
+        margin-top: 8px;
     }
 
     &__button:hover {
@@ -224,6 +209,14 @@
         transition: 300ms;
 
         fill: var(--brandGreen);
+    }
+
+    &__addititonal-content_margin {
+        margin-top: 16px;
+
+        @media @mobileSM {
+            margin-top: 12px;
+        }
     }
 
     &_small {
