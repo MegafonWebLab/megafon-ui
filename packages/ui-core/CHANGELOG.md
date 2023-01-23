@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.11.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.11.1...@megafon/ui-core@4.11.2) (2023-01-23)
+
+
+### Bug Fixes
+
+* **button:** fixed styles ([1fc2ad3](https://github.com/MegafonWebLab/megafon-ui/commit/1fc2ad37f0b8b57e992f764802f11316b95539d3))
+* **tooltip:** fix margins ([5572397](https://github.com/MegafonWebLab/megafon-ui/commit/55723976459d58ecf131e9fe5aee570c9871b1d2))
+
+
+
+
+
 ## [4.11.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.11.0...@megafon/ui-core@4.11.1) (2023-01-17)
 
 **Note:** Version bump only for package @megafon/ui-core

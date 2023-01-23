@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.10.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.9.1...@megafon/ui-shared@4.10.0) (2023-01-23)
+
+
+### Features
+
+* **videoblock:** add props fixWhiteVideoBackground ([0bd622a](https://github.com/MegafonWebLab/megafon-ui/commit/0bd622af335fff8f6ee43fb53cdc9d162ef906c6))
+
+
+
+
+
 ## [4.9.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.9.0...@megafon/ui-shared@4.9.1) (2023-01-17)
 
 **Note:** Version bump only for package @megafon/ui-shared
