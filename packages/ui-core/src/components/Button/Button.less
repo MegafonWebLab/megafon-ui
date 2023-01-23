@@ -8,6 +8,7 @@
 
     display: inline-block;
     box-sizing: border-box;
+    min-width: fit-content;
     padding: 0 32px;
     border: none;
     border-radius: 30px;
@@ -69,6 +70,7 @@
         justify-content: center;
         box-sizing: border-box;
         width: 100%;
+        height: inherit;
 
         vertical-align: top;
     }
@@ -105,7 +107,6 @@
     &__icon-arrow {
         width: 32px;
         height: 32px;
-        margin-right: -8px;
         margin-left: 4px;
     }
 
@@ -114,13 +115,13 @@
     }
 
     &_content-type_icon-text &__icon {
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        margin-left: -8px;
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
     }
 
-    &_content-type_icon-text&_size-all_small &__icon {
+    &_content-type_icon-text&_size-all_small &__icon,
+    &_content-type_icon-text&_size-all_extra-small &__icon {
         display: none;
     }
 
@@ -133,7 +134,6 @@
         color: var(--brandGreen);
 
         background-color: transparent;
-        block-size: fit-content;
 
         svg {
             fill: var(--brandGreen);
@@ -167,7 +167,6 @@
         color: var(--brandPurple);
 
         background-color: transparent;
-        block-size: fit-content;
 
         svg {
             fill: var(--brandPurple);
@@ -201,7 +200,6 @@
         color: var(--stcWhite);
 
         background-color: transparent;
-        block-size: fit-content;
 
         svg {
             fill: var(--stcWhite);
@@ -230,6 +228,8 @@
     // theme = black
 
     &_type_text&_theme_black {
+        width: fit-content;
+
         color: var(--stcBlack);
 
         background-color: transparent;
@@ -615,49 +615,87 @@
 }
 
 .generateSize(@resolution) {
+
+    // size = extra-small
+
     &_size-@{resolution}_extra-small {
+        min-width: 24px;
+        height: 24px;
+
         padding: 0 16px;
+
+        font-size: 12px;
+        line-height: 14px;
     }
 
-    &_size-@{resolution}_extra-small &__inner {
-        .smallFont();
-
-        min-width: 26px;
-        height: 26px;
+    &_size-@{resolution}_extra-small &__icon,
+    &_size-@{resolution}_extra-small &__icon-arrow {
+        width: 20px;
+        height: 20px;
     }
 
-    &_size-@{resolution}_small &__inner {
+    // size = small
+
+    &_size-@{resolution}_small {
         min-width: 40px;
         height: 40px;
+        padding: 0 24px;
     }
 
-    &_size-@{resolution}_medium &__inner {
+    &_size-@{resolution}_small &__icon,
+    &_size-@{resolution}_small &__icon-arrow {
+        width: 20px;
+        height: 20px;
+    }
+
+    // size = medium
+
+    &_size-@{resolution}_medium {
         min-width: 52px;
         height: 52px;
     }
 
-    &_size-@{resolution}_large &__inner {
+    &_size-@{resolution}_medium &__icon,
+    &_size-@{resolution}_medium &__icon-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    // size = large
+
+    &_size-@{resolution}_large {
         min-width: 60px;
         height: 60px;
     }
 
-    &_size-@{resolution}_extra-small &__icon {
-        width: 18px;
-        height: 18px;
+    &_size-@{resolution}_large &__icon,
+    &_size-@{resolution}_large &__icon-arrow {
+        width: 32px;
+        height: 32px;
     }
 
-    &_size-@{resolution}_small &__icon {
-        width: 16px;
-        height: 16px;
+    // showArrow = true && icon = undefined
+
+    &_size-@{resolution}_extra-small&has-arrow {
+        padding: 0 8px;
     }
 
-    &_size-@{resolution}_medium &__icon {
-        width: 24px;
-        height: 24px;
+    &_size-@{resolution}_extra-small&has-arrow &__content {
+        padding-left: 12px;
     }
 
-    &_size-@{resolution}_large &__icon {
-        width: 40px;
-        height: 40px;
+    &_size-@{resolution}_medium&has-arrow,
+    &_size-@{resolution}_large&has-arrow {
+        padding: 0 24px;
+    }
+
+    &_size-@{resolution}_small&has-arrow &__content,
+    &_size-@{resolution}_medium&has-arrow &__content,
+    &_size-@{resolution}_large&has-arrow &__content {
+        padding-left: 16px;
+    }
+
+    &_type_text {
+        padding: 0;
     }
 }
