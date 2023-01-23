@@ -135,6 +135,8 @@ const Button: React.FC<IButtonProps> = ({
     const [isTouch, setTouch] = React.useState(false);
     const ElementType = href ? 'a' : 'button';
 
+    const displayArrow = showArrow && !icon;
+
     const handleClick = React.useCallback(
         (e: React.SyntheticEvent<EventTarget>): void => {
             if (disabled) {
@@ -189,7 +191,7 @@ const Button: React.FC<IButtonProps> = ({
                         {children}
                     </span>
                 )}
-                {!icon && showArrow && <Arrow className={cn('icon-arrow')} {...filterDataAttrs(dataAttrs?.arrow)} />}
+                {displayArrow && <Arrow className={cn('icon-arrow')} {...filterDataAttrs(dataAttrs?.arrow)} />}
             </div>
         );
     }, [
@@ -201,7 +203,7 @@ const Button: React.FC<IButtonProps> = ({
         ellipsis,
         showLoader,
         contentClassName,
-        showArrow,
+        displayArrow,
     ]);
 
     const contentType = React.useMemo(() => {
@@ -270,6 +272,7 @@ const Button: React.FC<IButtonProps> = ({
                     loading: showLoader,
                     'no-touch': !isTouch,
                     'content-type': contentType,
+                    'has-arrow': displayArrow,
                 },
                 classNameValue,
             )}

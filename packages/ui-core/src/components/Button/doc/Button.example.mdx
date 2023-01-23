@@ -1,7 +1,8 @@
 import { Playground } from 'docz';
 import Button from '../Button';
-import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
-import { blockStyle } from './Button.docz';
+import Balance24 from '@megafon/ui-icons/basic-24-balance_24.svg';
+import Balance16 from '@megafon/ui-icons/basic-16-balance_16.svg';
+import { blockStyle, sizeDemoBlockStyle } from './Button.docz';
 import { createRef } from 'react';
 export const ref = createRef();
 
@@ -14,9 +15,9 @@ export const ref = createRef();
     <Button disabled>disabled</Button>
     <Button showLoader>with loader</Button>
     <Button showArrow>with arrow</Button>
-    <Button icon={<Balance />}>with icon</Button>
+    <Button icon={<Balance24 />}>with icon</Button>
     <div>
-        <Button icon={<Balance />} />
+        <Button icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -33,11 +34,11 @@ export const ref = createRef();
     <Button theme="green-soft" showArrow>
         with arrow
     </Button>
-    <Button theme="green-soft" icon={<Balance />}>
+    <Button theme="green-soft" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button theme="green-soft" icon={<Balance />} />
+        <Button theme="green-soft" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -54,11 +55,11 @@ export const ref = createRef();
     <Button theme="purple" showArrow>
         with arrow
     </Button>
-    <Button theme="purple" icon={<Balance />}>
+    <Button theme="purple" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button theme="purple" icon={<Balance />} />
+        <Button theme="purple" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -75,11 +76,11 @@ export const ref = createRef();
     <Button theme="purple-soft" showArrow>
         with arrow
     </Button>
-    <Button theme="purple-soft" icon={<Balance />}>
+    <Button theme="purple-soft" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button theme="purple-soft" icon={<Balance />} />
+        <Button theme="purple-soft" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -96,11 +97,11 @@ export const ref = createRef();
     <Button theme="white" showArrow>
         with arrow
     </Button>
-    <Button theme="white" icon={<Balance />}>
+    <Button theme="white" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button theme="white" icon={<Balance />} />
+        <Button theme="white" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -119,11 +120,11 @@ export const ref = createRef();
     <Button type="outline" showArrow>
         with arrow
     </Button>
-    <Button type="outline" icon={<Balance />}>
+    <Button type="outline" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button type="outline" icon={<Balance />} />
+        <Button type="outline" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -142,11 +143,11 @@ export const ref = createRef();
     <Button type="outline" theme="purple" showArrow>
         with arrow
     </Button>
-    <Button type="outline" theme="purple" icon={<Balance />}>
+    <Button type="outline" theme="purple" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button type="outline" theme="purple" icon={<Balance />} />
+        <Button type="outline" theme="purple" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -165,11 +166,11 @@ export const ref = createRef();
     <Button type="outline" theme="white" showArrow>
         with arrow
     </Button>
-    <Button type="outline" theme="white" icon={<Balance />}>
+    <Button type="outline" theme="white" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button type="outline" theme="white" icon={<Balance />} />
+        <Button type="outline" theme="white" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -188,11 +189,11 @@ export const ref = createRef();
     <Button type="outline" theme="black" showArrow>
         with arrow
     </Button>
-    <Button type="outline" theme="black" icon={<Balance />}>
+    <Button type="outline" theme="black" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button type="outline" theme="black" icon={<Balance />} />
+        <Button type="outline" theme="black" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -213,11 +214,11 @@ export const ref = createRef();
     <Button theme="green" type="text" showArrow>
         with arrow
     </Button>
-    <Button theme="green" type="text" icon={<Balance />}>
+    <Button theme="green" type="text" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button theme="green" type="text" icon={<Balance />} />
+        <Button theme="green" type="text" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -236,11 +237,11 @@ export const ref = createRef();
     <Button theme="purple" type="text" showArrow>
         with arrow
     </Button>
-    <Button theme="purple" type="text" icon={<Balance />}>
+    <Button theme="purple" type="text" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button theme="purple" type="text" icon={<Balance />} />
+        <Button theme="purple" type="text" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -259,11 +260,11 @@ export const ref = createRef();
     <Button type="text" theme="white" showArrow>
         with arrow
     </Button>
-    <Button type="text" theme="white" icon={<Balance />}>
+    <Button type="text" theme="white" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button type="text" theme="white" icon={<Balance />} />
+        <Button type="text" theme="white" icon={<Balance24 />} />
     </div>
 </Playground>
 
@@ -282,40 +283,83 @@ export const ref = createRef();
     <Button type="text" theme="black" showArrow>
         with arrow
     </Button>
-    <Button type="text" theme="black" icon={<Balance />}>
+    <Button type="text" theme="black" icon={<Balance24 />}>
         with icon
     </Button>
     <div>
-        <Button type="text" theme="black" icon={<Balance />} />
+        <Button type="text" theme="black" icon={<Balance24 />} />
     </div>
 </Playground>
 
-## Размер кнопки
+## Размеры
+Все размеры содержимого кнопки зависят от размера самой кнопки. 
 
-<Playground style={blockStyle}>
+### Просто кнопка
+<Playground style={sizeDemoBlockStyle}>
+    <Button sizeAll="extra-small">
+        Extra small
+    </Button>
+    <Button sizeAll="small">
+        Small
+    </Button>
+    <Button sizeAll="medium">
+        Medium
+    </Button>
+    <Button sizeAll="large">
+        Large
+    </Button>
+    <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small">
+        Adaptive
+    </Button>
+</Playground>
+
+### Стрелочка 
+
+<Playground style={sizeDemoBlockStyle}>
     <Button sizeAll="extra-small" showArrow>
         Extra small
     </Button>
     <Button sizeAll="small" showArrow>
         Small
     </Button>
-    <Button sizeAll="medium" icon={<Balance />}>
+    <Button sizeAll="medium" showArrow>
         Medium
     </Button>
-    <Button sizeAll="large">Large</Button>
-    <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" showArrow>
-        Adaptive
+    <Button sizeAll="large" showArrow>Large</Button>
+</Playground>
+
+### Кастомная иконка с текстом
+Доступна только для размеров medium и large
+
+<Playground style={sizeDemoBlockStyle}>
+    <Button sizeAll="medium" icon={<Balance24 />}>
+        Medium
     </Button>
+    <Button sizeAll="large" icon={<Balance24 />}>
+        Large
+    </Button>
+</Playground>
+
+### Кастомная иконка без текста
+
+<Playground style={sizeDemoBlockStyle}>
     <div>
-        <Button sizeWide="large" sizeDesktop="medium" sizeTablet="small" sizeMobile="extra-small" icon={<Balance />} />
+        <Button sizeAll="extra-small" icon={<Balance16 />} />
+    </div>
+    <div>
+        <Button sizeAll="small" icon={<Balance24 />} />
+    </div>
+    <div>
+        <Button sizeAll="medium" icon={<Balance24 />} />
+    </div>
+    <div>
+        <Button sizeAll="large" icon={<Balance24 />} />
     </div>
 </Playground>
 
-## Размер лоадера
+### Лоадер
 
-Зависит от размера кнопки
-
-<Playground style={blockStyle}>
+<Playground style={sizeDemoBlockStyle}>
     <Button sizeAll="extra-small" showLoader>
         Extra small
     </Button>
@@ -327,9 +371,6 @@ export const ref = createRef();
     </Button>
     <Button sizeAll="large" showLoader>
         Large
-    </Button>
-    <Button sizeDesktop="large" sizeTablet="medium" sizeMobile="small" showLoader>
-        Adaptive
     </Button>
 </Playground>
 
