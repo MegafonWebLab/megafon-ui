@@ -473,6 +473,39 @@ exports[`<VideoBlock /> it renders VideoBlock with default props 1`] = `
 </div>
 `;
 
+exports[`<VideoBlock /> it renders VideoBlock with fixWhiteVideoBackground 1`] = `
+<div
+  className="mfui-video-block"
+>
+  <Grid
+    className="mfui-video-block__grid"
+    hAlign="center"
+  >
+    <GridColumn
+      all="10"
+      className="mfui-video-block__video-column"
+      key="column-video"
+      mobile="12"
+      tablet="12"
+    >
+      <video
+        autoPlay={false}
+        className="mfui-video-block__video mfui-video-block__video_fix-background"
+        controls={true}
+        loop={true}
+        muted={true}
+        playsInline={false}
+      >
+        <source
+          src="video.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </GridColumn>
+  </Grid>
+</div>
+`;
+
 exports[`<VideoBlock /> it renders VideoBlock with poster 1`] = `
 <div
   className="mfui-video-block"

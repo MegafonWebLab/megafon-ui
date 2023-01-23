@@ -58,6 +58,8 @@ export interface IVideoBlockProps {
     contentPositionRight?: boolean;
     /** Воспроизводит видео на iOS устройствах без перехода в полноэкранный режим */
     playsinline?: boolean;
+    /** Фикс для белого фона */
+    fixWhiteVideoBackground?: boolean;
 }
 
 const cn = cnCreate('mfui-video-block');
@@ -74,6 +76,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
     contentPositionRight = false,
     poster,
     playsinline = false,
+    fixWhiteVideoBackground = false,
 }) => {
     const renderVideo = React.useCallback(() => {
         switch (videoType) {
@@ -110,7 +113,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 return (
                     // eslint-disable-next-line jsx-a11y/media-has-caption
                     <video
-                        className={cn('video')}
+                        className={cn('video', { 'fix-background': fixWhiteVideoBackground })}
                         autoPlay={isAutoplay}
                         muted={isMuted}
                         controls={!isAutoplay}
@@ -127,7 +130,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                 return null;
             }
         }
-    }, [videoType, videoSrc, isAutoplay, isMuted, poster, playsinline]);
+    }, [videoType, videoSrc, isAutoplay, isMuted, poster, playsinline, fixWhiteVideoBackground]);
 
     const renderContent = React.useCallback(
         ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
@@ -237,6 +240,7 @@ VideoBlock.propTypes = {
     poster: PropTypes.string,
     playsinline: PropTypes.bool,
     contentPositionRight: PropTypes.bool,
+    fixWhiteVideoBackground: PropTypes.bool,
 };
 
 export default VideoBlock;

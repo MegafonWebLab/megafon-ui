@@ -109,6 +109,11 @@ describe('<VideoBlock />', () => {
         expect(component).toMatchSnapshot();
     });
 
+    it('it renders VideoBlock with fixWhiteVideoBackground', () => {
+        const component = shallow(<VideoBlock videoSrc="video.mp4" fixWhiteVideoBackground />);
+        expect(component).toMatchSnapshot();
+    });
+
     it('render component with html tags', () => {
         const localContent = {
             ...content,
