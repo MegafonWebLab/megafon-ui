@@ -17,6 +17,50 @@ import { title, text, button, link, img } from '../../Card/doc/Card.docz.tsx';
     </ContentArea>
 </Playground>
 
+### Выравнивание карточек по правому краю
+
+<Playground>
+    <ContentArea>
+        <CardsBox gridHAlign="right">
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+        </CardsBox>
+    </ContentArea>
+</Playground>
+
+### Выравнивание карточек по центру
+
+<Playground>
+    <ContentArea>
+        <CardsBox gridHAlign="center">
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+        </CardsBox>
+    </ContentArea>
+</Playground>
+
+### Равномерное распределение всех элементов по горизонтали. Боковые элементы прижаты к краям контейнера.
+
+<Playground>
+    <ContentArea>
+        <CardsBox gridHAlign="between">
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+        </CardsBox>
+    </ContentArea>
+</Playground>
+
+Равномерное распределение всех элементов по горизонтали. Пустое пространство по краям равно половине пространства между двумя соседними элементами.
+
+<Playground>
+    <ContentArea>
+        <CardsBox gridHAlign="around">
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+            <Card title={title} text={text} button={button} link={link} imageSrc={img} />
+        </CardsBox>
+    </ContentArea>
+</Playground>
+
 ### Слайдер
 Если карточек больше двух, то на мобильном разрешении используется слайдер.
 

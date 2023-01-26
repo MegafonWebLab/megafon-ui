@@ -41,6 +41,16 @@ describe('CardsBox', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('render component with center alignment cards', () => {
+        const wrapper = shallow(
+            <CardsBox gridHAlign="center">
+                <Card {...cardProps} />
+                <Card {...cardProps} />
+            </CardsBox>,
+        );
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should return reference to root element', () => {
         const ref: React.RefObject<HTMLDivElement> = React.createRef();
         mount(

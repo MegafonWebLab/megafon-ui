@@ -22,6 +22,8 @@ const SlidesSettings: SlidesSettingsType = {
 };
 
 interface ICardsBoxProps {
+    /** Выравнивание всех колонок компонента Grid по горизонтали */
+    gridHAlign?: 'left' | 'right' | 'center' | 'between' | 'around';
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
     /** Дата атрибуты для корневого элемента */
@@ -32,14 +34,14 @@ interface ICardsBoxProps {
 }
 
 const cn = cnCreate('mfui-cards-box');
-const CardsBox: React.FC<ICardsBoxProps> = ({ rootRef, dataAttrs, onChange, children }) => {
+const CardsBox: React.FC<ICardsBoxProps> = ({ gridHAlign, rootRef, dataAttrs, onChange, children }) => {
     const [isMobile, setIsMobile] = React.useState(false);
     const itemsCount = React.Children.count(children);
     const isRenderCarousel = isMobile && itemsCount > MAX_CARDS_COUNT_IN_GRID_ON_MOBILE;
 
     const renderGrid = React.useCallback(
         () => (
-            <Grid guttersBottom="medium" guttersLeft="medium">
+            <Grid guttersBottom="medium" guttersLeft="medium" hAlign={gridHAlign}>
                 {React.Children.map(children, child => (
                     <GridColumn all="4" mobile="12">
                         {child}
@@ -47,7 +49,7 @@ const CardsBox: React.FC<ICardsBoxProps> = ({ rootRef, dataAttrs, onChange, chil
                 ))}
             </Grid>
         ),
-        [children],
+        [children, gridHAlign],
     );
 
     const renderCarousel = React.useCallback(
@@ -80,6 +82,7 @@ const CardsBox: React.FC<ICardsBoxProps> = ({ rootRef, dataAttrs, onChange, chil
 };
 
 CardsBox.propTypes = {
+    gridHAlign: PropTypes.oneOf(['left', 'right', 'center', 'between', 'around']),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
