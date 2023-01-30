@@ -1,17 +1,26 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import PaginationNavigation from './PaginationNavigation';
 
 describe('PaginationNavigation', () => {
     it('should render component', () => {
-        const wrapper = shallow(<PaginationNavigation dataAttrs={{ root: { 'data-test': 'test' } }} />);
+        const { container } = render(<PaginationNavigation />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render with left direction', () => {
-        const wrapper = shallow(<PaginationNavigation direction="left" />);
+        const { getByRole } = render(<PaginationNavigation direction="left" />);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(getByRole('button')).toHaveClass('mfui-pagination-navigation_direction_left');
+    });
+
+    it('should call onClick', () => {
+        const onClickMock = jest.fn();
+        const { getByRole } = render(<PaginationNavigation direction="left" onClick={onClickMock} />);
+
+        fireEvent.click(getByRole('button'));
+
+        expect(onClickMock).toBeCalled();
     });
 });

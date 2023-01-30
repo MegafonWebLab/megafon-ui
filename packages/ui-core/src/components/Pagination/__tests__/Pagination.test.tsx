@@ -1,44 +1,66 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import Pagination from '../Pagination';
 
 describe('Pagination', () => {
-    it('should render component with number of buttons does not exceed the limit', () => {
-        const wrapper = shallow(<Pagination totalPages={3} activePage={1} onChange={jest.fn()} />);
+    it('should render', () => {
+        const { container } = render(<Pagination totalPages={3} activePage={2} onChange={jest.fn()} />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render component with right hidden buttons', () => {
-        const wrapper = shallow(<Pagination totalPages={10} activePage={1} onChange={jest.fn()} />);
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render component with left hidden buttons', () => {
-        const wrapper = shallow(<Pagination totalPages={10} activePage={8} onChange={jest.fn()} />);
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render component with left and right hidden buttons', () => {
-        const wrapper = shallow(<Pagination totalPages={10} activePage={5} onChange={jest.fn()} />);
-
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should disable left navigation button if first page button is active', () => {
-        const wrapper = shallow(<Pagination totalPages={3} activePage={1} onChange={jest.fn()} />);
-        const button = wrapper.find('PaginationNavigation').first();
+        const { getByTestId } = render(
+            <Pagination
+                totalPages={3}
+                activePage={1}
+                onChange={jest.fn()}
+                dataAttrs={{ prev: { 'data-testid': 'prev' } }}
+            />,
+        );
 
-        expect(button.prop('disabled')).toBeTruthy();
+        expect(getByTestId('prev')).toBeDisabled();
     });
 
     it('should disable right navigation button if last page button is active', () => {
-        const wrapper = shallow(<Pagination totalPages={3} activePage={3} onChange={jest.fn()} />);
-        const button = wrapper.find('PaginationNavigation').last();
+        const { getByTestId } = render(
+            <Pagination
+                totalPages={3}
+                activePage={3}
+                onChange={jest.fn()}
+                dataAttrs={{ next: { 'data-testid': 'next' } }}
+            />,
+        );
 
-        expect(button.prop('disabled')).toBeTruthy();
+        expect(getByTestId('next')).toBeDisabled();
+    });
+
+    it('should render component with one hidden buttons of left side', () => {
+        const { getAllByTestId } = render(<Pagination totalPages={10} activePage={1} onChange={jest.fn()} />);
+
+        const hiddenButtons = getAllByTestId('hiddenButton');
+
+        expect(hiddenButtons.length).toEqual(1);
+        expect(hiddenButtons[0]).toBeDisabled();
+    });
+
+    it('should render component with one hidden buttons of right side', () => {
+        const { getAllByTestId } = render(<Pagination totalPages={10} activePage={8} onChange={jest.fn()} />);
+
+        const hiddenButtons = getAllByTestId('hiddenButton');
+
+        expect(hiddenButtons.length).toEqual(1);
+        expect(hiddenButtons[0]).toBeDisabled();
+    });
+
+    it('should render component with two hidden buttons', () => {
+        const { getAllByTestId } = render(<Pagination totalPages={10} activePage={5} onChange={jest.fn()} />);
+
+        const hiddenButtons = getAllByTestId('hiddenButton');
+
+        expect(hiddenButtons.length).toEqual(2);
+        expect(hiddenButtons[0]).toBeDisabled();
+        expect(hiddenButtons[1]).toBeDisabled();
     });
 
     describe('render on mobile resolution', () => {
@@ -58,26 +80,36 @@ describe('Pagination', () => {
         });
 
         it('should render component with right hidden buttons', () => {
-            const wrapper = mount(<Pagination totalPages={10} activePage={1} onChange={jest.fn()} />);
+            const { getAllByTestId } = render(<Pagination totalPages={10} activePage={1} onChange={jest.fn()} />);
 
-            expect(wrapper).toMatchSnapshot();
+            const hiddenButtons = getAllByTestId('hiddenButton');
+
+            expect(hiddenButtons.length).toEqual(1);
+            expect(hiddenButtons[0]).toBeDisabled();
         });
 
         it('should render component with left hidden buttons', () => {
-            const wrapper = mount(<Pagination totalPages={10} activePage={8} onChange={jest.fn()} />);
+            const { getAllByTestId } = render(<Pagination totalPages={10} activePage={8} onChange={jest.fn()} />);
 
-            expect(wrapper).toMatchSnapshot();
+            const hiddenButtons = getAllByTestId('hiddenButton');
+
+            expect(hiddenButtons.length).toEqual(1);
+            expect(hiddenButtons[0]).toBeDisabled();
         });
 
         it('should render component with left and right hidden buttons', () => {
-            const wrapper = mount(<Pagination totalPages={10} activePage={5} onChange={jest.fn()} />);
+            const { getAllByTestId } = render(<Pagination totalPages={10} activePage={5} onChange={jest.fn()} />);
 
-            expect(wrapper).toMatchSnapshot();
+            const hiddenButtons = getAllByTestId('hiddenButton');
+
+            expect(hiddenButtons.length).toEqual(2);
+            expect(hiddenButtons[0]).toBeDisabled();
+            expect(hiddenButtons[1]).toBeDisabled();
         });
     });
 
-    describe('should call change handler with valid arguments', () => {
-        const handleChange = jest.fn();
+    describe('should call onChange', () => {
+        const onChangeMock = jest.fn();
 
         afterEach(() => {
             jest.clearAllMocks();
@@ -85,32 +117,48 @@ describe('Pagination', () => {
 
         it('after click on back button', () => {
             const activePage = 2;
-            const wrapper = shallow(<Pagination totalPages={3} activePage={activePage} onChange={handleChange} />);
-            const button = wrapper.find('PaginationNavigation').first();
+            const { getByTestId } = render(
+                <Pagination
+                    totalPages={3}
+                    activePage={activePage}
+                    onChange={onChangeMock}
+                    dataAttrs={{ prev: { 'data-testid': 'prev' } }}
+                />,
+            );
 
-            button.simulate('click');
+            fireEvent.click(getByTestId('prev'));
 
-            expect(handleChange).toHaveBeenCalledWith(activePage - 1);
+            expect(onChangeMock).toHaveBeenCalledWith(activePage - 1);
         });
 
         it('after click on next button', () => {
             const activePage = 2;
-            const wrapper = shallow(<Pagination totalPages={3} activePage={activePage} onChange={handleChange} />);
-            const button = wrapper.find('PaginationNavigation').last();
+            const { getByTestId } = render(
+                <Pagination
+                    totalPages={3}
+                    activePage={activePage}
+                    onChange={onChangeMock}
+                    dataAttrs={{ next: { 'data-testid': 'next' } }}
+                />,
+            );
 
-            button.simulate('click');
+            fireEvent.click(getByTestId('next'));
 
-            expect(handleChange).toHaveBeenCalledWith(activePage + 1);
+            expect(onChangeMock).toHaveBeenCalledWith(activePage + 1);
         });
 
         it('after click on page button', () => {
-            const wrapper = mount(<Pagination totalPages={3} activePage={1} onChange={handleChange} />);
-            const button = wrapper.find('PaginationButton').at(1);
-            const value = button.prop('value');
+            const { getByTestId } = render(
+                <Pagination
+                    totalPages={3}
+                    activePage={1}
+                    onChange={onChangeMock}
+                    dataAttrs={{ button: { 'data-testid': 'button' } }}
+                />,
+            );
 
-            button.simulate('click');
-
-            expect(handleChange).toHaveBeenCalledWith(value);
+            fireEvent.click(getByTestId('button[1]'));
+            expect(onChangeMock).toHaveBeenCalledWith(1);
         });
     });
 });

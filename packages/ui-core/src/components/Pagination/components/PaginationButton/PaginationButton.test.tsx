@@ -1,68 +1,66 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import PaginationButton from './PaginationButton';
 
 describe('PaginationButton', () => {
     it('should render component', () => {
-        const wrapper = shallow(
-            <PaginationButton dataAttrs={{ root: { 'data-test': 'test' } }}>Click me</PaginationButton>,
-        );
+        const { container } = render(<PaginationButton>Click me</PaginationButton>);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should render disabled button', () => {
-        const wrapper = shallow(<PaginationButton disabled>Click me</PaginationButton>);
+        const { getByRole } = render(<PaginationButton disabled>Click me</PaginationButton>);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(getByRole('button')).toBeDisabled();
     });
 
     it('should render active button', () => {
-        const wrapper = shallow(<PaginationButton isActive>Click me</PaginationButton>);
+        const { getByRole } = render(<PaginationButton isActive>Click me</PaginationButton>);
 
-        expect(wrapper).toMatchSnapshot();
+        expect(getByRole('button')).toHaveClass('mfui-pagination-button_active');
     });
 
-    it('should render with optional props', () => {
-        const wrapper = shallow(
-            <PaginationButton theme="light" className="custom-class-name" value={1} onClick={jest.fn()}>
+    it('should render with light theme', () => {
+        const { getByRole } = render(<PaginationButton theme="light">Click me</PaginationButton>);
+
+        expect(getByRole('button')).toHaveClass('mfui-pagination-button_theme_light');
+    });
+
+    it('should render with className props', () => {
+        const { getByRole } = render(<PaginationButton className="testClass">Click me</PaginationButton>);
+
+        expect(getByRole('button')).toHaveClass('testClass');
+    });
+
+    it('should render with dataAttrs props', () => {
+        const { getByRole } = render(
+            <PaginationButton dataAttrs={{ root: { 'data-testid': 'test' } }}>Click me</PaginationButton>,
+        );
+
+        expect(getByRole('button')).toHaveAttribute('data-testid', 'test');
+    });
+
+    it('should call onClick with value props', () => {
+        const value = 1;
+        const onClickMock = jest.fn();
+        const { getByRole } = render(
+            <PaginationButton value={value} onClick={onClickMock}>
                 Click me
             </PaginationButton>,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        fireEvent.click(getByRole('button'));
+
+        expect(onClickMock).toBeCalledWith(value);
     });
 
-    describe('click handler', () => {
-        const clickHandler = jest.fn();
+    it('should call onClick without value', () => {
+        const onClickMock = jest.fn();
+        const { getByRole } = render(<PaginationButton onClick={onClickMock}>Click me</PaginationButton>);
 
-        afterEach(() => {
-            jest.clearAllMocks();
-        });
+        fireEvent.click(getByRole('button'));
 
-        it('should call click handler with valid arguments', () => {
-            const value = 1;
-            const wrapper = shallow(
-                <PaginationButton value={value} onClick={clickHandler}>
-                    Click me
-                </PaginationButton>,
-            );
-
-            wrapper.simulate('click');
-
-            expect(clickHandler).toHaveBeenCalledWith(value);
-        });
-
-        it('should not call click handler on disabled button', () => {
-            const wrapper = mount(
-                <PaginationButton onClick={clickHandler} disabled>
-                    Click me
-                </PaginationButton>,
-            );
-
-            wrapper.simulate('click');
-
-            expect(clickHandler).not.toHaveBeenCalled();
-        });
+        expect(onClickMock).toBeCalledWith(undefined);
     });
 });
