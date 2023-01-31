@@ -1,35 +1,32 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import PaginationButtons from './PaginationButtons';
 
 const hiddenButton = 'hidden';
-const items = [1, hiddenButton, 4, 5];
+const items = [1, hiddenButton, 3];
 
 describe('PaginationButtons', () => {
     it('should render component', () => {
-        const wrapper = shallow(
+        const { container } = render(
             <PaginationButtons
                 dataAttrs={{ root: { 'data-test': 'test' } }}
                 items={items}
                 onClick={jest.fn()}
-                activeButton={4}
+                activeButton={3}
                 hiddenButton={hiddenButton}
             />,
         );
 
-        expect(wrapper).toMatchSnapshot();
+        expect(container).toMatchSnapshot();
     });
 
     it('should call click handler', () => {
         const clickHandler = jest.fn();
-
-        const wrapper = shallow(
-            <PaginationButtons items={items} onClick={clickHandler} activeButton={4} hiddenButton={hiddenButton} />,
+        const { getAllByRole } = render(
+            <PaginationButtons items={items} onClick={clickHandler} activeButton={3} hiddenButton={hiddenButton} />,
         );
-        const button = wrapper.find('PaginationButton').first();
 
-        button.simulate('click');
-
+        fireEvent.click(getAllByRole('button')[0]);
         expect(clickHandler).toHaveBeenCalled();
     });
 });

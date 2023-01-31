@@ -32,7 +32,13 @@ const PaginationButtons: React.FC<IPaginationButtonsProps> = ({
 
             if (isHiddenButton) {
                 return (
-                    <PaginationButton className={cn('button')} disabled key={index} theme={theme}>
+                    <PaginationButton
+                        disabled
+                        key={index}
+                        theme={theme}
+                        className={cn('button')}
+                        dataAttrs={{ root: { 'data-testid': 'hiddenButton' } }}
+                    >
                         <NothingIcon />
                     </PaginationButton>
                 );
