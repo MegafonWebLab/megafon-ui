@@ -15,7 +15,7 @@ import './Notification.less';
 
 const TIMEOUT_DELAY = 400;
 
-export const NotificationTypes = {
+const NotificationTypes = {
     SUCCESS: 'success',
     WARNING: 'warning',
     ERROR: 'error',
@@ -24,7 +24,7 @@ export const NotificationTypes = {
 
 type NotificationType = typeof NotificationTypes[keyof typeof NotificationTypes];
 
-export const ShadowTypes = {
+const ShadowTypes = {
     ZERO: 'zero',
     /**  @deprecated TODO: нужно удалить значение при выпуске мажорной версии */
     LOW: 'low',
@@ -100,6 +100,7 @@ export interface INotificationProps {
     onCollapseButtonClick?: (value: boolean) => void;
 }
 
+export const testIdPrefix = 'Notification';
 const cn = cnCreate('mfui-notification');
 const Notification: React.FC<INotificationProps> = ({
     className,
@@ -270,9 +271,9 @@ const Notification: React.FC<INotificationProps> = ({
                 [className, rootClass],
             )}
         >
-            <div className={cn('container', [containerClass])}>
+            <div data-testid={`${testIdPrefix}-container`} className={cn('container', [containerClass])}>
                 <div className={cn('icon-container')}>{renderIcon()}</div>
-                <div className={cn('content', [contentClass])}>
+                <div data-testid={`${testIdPrefix}-content`} className={cn('content', [contentClass])}>
                     <div className={cn('text-container')}>
                         {title && (
                             <span {...filterDataAttrs(dataAttrs?.title)} className={cn('title')}>
@@ -295,7 +296,10 @@ const Notification: React.FC<INotificationProps> = ({
                         </div>
                     </div>
                     {hasBottom && (
-                        <div className={cn('bottom', { 'has-button': !!buttonText })}>
+                        <div
+                            data-testid={`${testIdPrefix}-bottom`}
+                            className={cn('bottom', { 'has-button': !!buttonText })}
+                        >
                             {(buttonText || link) && (
                                 <div className={cn('bottom-block')}>
                                     {buttonText && renderButton()}

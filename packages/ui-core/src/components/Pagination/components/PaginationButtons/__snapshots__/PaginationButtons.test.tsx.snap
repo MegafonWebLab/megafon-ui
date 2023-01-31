@@ -1,63 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PaginationButtons should render component 1`] = `
-<div
-  className="mfui-pagination-buttons"
->
-  <PaginationButton
-    className="mfui-pagination-buttons__button"
-    dataAttrs={
-      Object {
-        "root": Object {
-          "data-test": "test[1]",
-        },
-      }
-    }
-    isActive={false}
-    key="0"
-    onClick={[MockFunction]}
-    value={1}
+<div>
+  <div
+    class="mfui-pagination-buttons"
   >
-    1
-  </PaginationButton>
-  <PaginationButton
-    className="mfui-pagination-buttons__button"
-    disabled={true}
-    key="1"
-  >
-    <test-file-stub />
-  </PaginationButton>
-  <PaginationButton
-    className="mfui-pagination-buttons__button"
-    dataAttrs={
-      Object {
-        "root": Object {
-          "data-test": "test[4]",
-        },
-      }
-    }
-    isActive={true}
-    key="2"
-    onClick={[MockFunction]}
-    value={4}
-  >
-    4
-  </PaginationButton>
-  <PaginationButton
-    className="mfui-pagination-buttons__button"
-    dataAttrs={
-      Object {
-        "root": Object {
-          "data-test": "test[5]",
-        },
-      }
-    }
-    isActive={false}
-    key="3"
-    onClick={[MockFunction]}
-    value={5}
-  >
-    5
-  </PaginationButton>
+    <button
+      class="mfui-pagination-button mfui-pagination-button_theme_default mfui-pagination-buttons__button"
+      data-test="test[1]"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="mfui-pagination-button mfui-pagination-button_theme_default mfui-pagination-buttons__button"
+      data-testid="hiddenButton"
+      disabled=""
+      type="button"
+    >
+      <test-file-stub />
+    </button>
+    <button
+      class="mfui-pagination-button mfui-pagination-button_active mfui-pagination-button_theme_default mfui-pagination-buttons__button"
+      data-test="test[3]"
+      type="button"
+    >
+      3
+    </button>
+  </div>
 </div>
 `;

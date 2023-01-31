@@ -357,3 +357,60 @@ exports[`CardsBox render component 1`] = `
   </Grid>
 </div>
 `;
+
+exports[`CardsBox render component with center alignment cards 1`] = `
+<div
+  className="mfui-cards-box"
+>
+  <Grid
+    guttersBottom="medium"
+    guttersLeft="medium"
+    hAlign="center"
+  >
+    <GridColumn
+      all="4"
+      key=".0"
+      mobile="12"
+    >
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      />
+    </GridColumn>
+    <GridColumn
+      all="4"
+      key=".1"
+      mobile="12"
+    >
+      <Card
+        button={
+          Object {
+            "href": "button-href",
+            "title": "button-title",
+          }
+        }
+        link={
+          Object {
+            "href": "href",
+            "title": "href-title",
+          }
+        }
+        text="text"
+        title="title"
+      />
+    </GridColumn>
+  </Grid>
+</div>
+`;
