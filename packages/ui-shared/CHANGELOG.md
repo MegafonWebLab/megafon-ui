@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.11.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.10.0...@megafon/ui-shared@4.11.0) (2023-01-31)
+
+
+### Features
+
+* **cardsbox:** add prop hGridAlign ([883d12b](https://github.com/MegafonWebLab/megafon-ui/commit/883d12b3447659787d8aa3f61e734e8cb1b03656))
+
+
+
+
+
 # [4.10.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.9.1...@megafon/ui-shared@4.10.0) (2023-01-23)
 
 
