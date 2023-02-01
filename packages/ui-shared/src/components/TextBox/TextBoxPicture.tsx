@@ -17,12 +17,14 @@ export interface ITextBoxPictureProps {
     url: string;
     /** Значение вертикальных отступов */
     margin?: PictureMarginTypesType;
+    /** Текст для изображения */
+    alt?: string;
 }
 
 const cn = cnCreate('mfui-text-box-picture');
-const TextBoxPicture: React.FC<ITextBoxPictureProps> = ({ url, margin = pictureMarginTypes.DEFAULT }) => (
+const TextBoxPicture: React.FC<ITextBoxPictureProps> = ({ url, margin = pictureMarginTypes.DEFAULT, alt }) => (
     <div className={cn({ margin })}>
-        <img className={cn('img')} src={url} alt="" />
+        <img className={cn('img')} src={url} alt={alt} />
     </div>
 );
 
@@ -34,6 +36,7 @@ TextBoxPicture.propTypes = {
         pictureMarginTypes.BIG_BOTTOM,
         pictureMarginTypes.BIG_VERTICAL,
     ]),
+    alt: PropTypes.string,
 };
 
 export default TextBoxPicture;

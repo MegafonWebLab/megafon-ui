@@ -26,4 +26,10 @@ describe('TextBoxPicture', () => {
         const wrapper = shallow(<TextBoxPicture {...props} margin={pictureMarginTypes.BIG_TOP} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('render with alt text', () => {
+        const wrapper = shallow(<TextBoxPicture {...props} alt="alt text" />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
 });
