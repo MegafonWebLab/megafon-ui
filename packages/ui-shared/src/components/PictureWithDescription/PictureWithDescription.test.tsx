@@ -4,6 +4,7 @@ import PictureWithDescription, { pictureAlignTypes, IPictureWithDescriptionProps
 
 const props: IPictureWithDescriptionProps = {
     pictureUrl: '/testUrl',
+    pictureAlt: 'alt text',
 };
 
 describe('<PictureWithDescription />', () => {

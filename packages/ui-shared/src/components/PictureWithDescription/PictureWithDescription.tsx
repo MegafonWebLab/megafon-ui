@@ -27,6 +27,8 @@ export interface IPictureWithDescriptionProps {
     pictureUrl: string;
     /** Расположение изображения */
     pictureAlign?: PictureAlignTypesType;
+    /** Текст для изображения */
+    pictureAlt?: string;
     /** Выравнивание текста по верхнему краю */
     isTextTopAlign?: boolean;
 }
@@ -39,12 +41,13 @@ const PictureWithDescription: React.FC<IPictureWithDescriptionProps> = ({
     title,
     pictureUrl,
     pictureAlign = 'left',
+    pictureAlt,
     isTextTopAlign,
     children,
 }) => (
     <div className={cn([className, classes.root])} ref={rootRef}>
         <div className={cn('picture', { align: pictureAlign })}>
-            <img className={cn('img')} src={pictureUrl} alt="" />
+            <img className={cn('img')} src={pictureUrl} alt={pictureAlt} />
         </div>
         <div className={cn('articles', { align: pictureAlign, 'text-top-align': isTextTopAlign })}>
             {!!title && (
@@ -70,6 +73,7 @@ PictureWithDescription.propTypes = {
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     pictureUrl: PropTypes.string.isRequired,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),
+    pictureAlt: PropTypes.string,
     isTextTopAlign: PropTypes.bool,
 };
 
