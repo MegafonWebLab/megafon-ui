@@ -32,6 +32,7 @@ export type InstructionItemType = {
     title: string | React.ReactNode | React.ReactNode[];
     mediaUrl: string;
     isVideo: boolean;
+    imageAlt?: string;
 };
 
 export interface IInstructionsProps {
@@ -151,13 +152,13 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 onSlideChange={handleSlideChange}
                 className={cn('swiper')}
             >
-                {instructionItems.map(({ mediaUrl, isVideo }, i) => (
+                {instructionItems.map(({ mediaUrl, isVideo, imageAlt }, i) => (
                     <SwiperSlide className={swiperSlideCn} key={i + mediaUrl}>
                         {isVideo ? (
                             renderVideo(mediaUrl, i)
                         ) : (
                             <img
-                                alt=""
+                                alt={imageAlt}
                                 src={mediaUrl}
                                 {...filterDataAttrs(dataAttrs?.image, i + 1)}
                                 className={cn('swiper-img', [instructionItemImg])}
@@ -337,6 +338,7 @@ Instructions.propTypes = {
                 .isRequired,
             mediaUrl: PropTypes.string.isRequired,
             isVideo: PropTypes.bool.isRequired,
+            imageAlt: PropTypes.string,
         }).isRequired,
     ).isRequired,
     pictureAlign: PropTypes.oneOf([pictureAlignTypes.LEFT, pictureAlignTypes.RIGHT]),

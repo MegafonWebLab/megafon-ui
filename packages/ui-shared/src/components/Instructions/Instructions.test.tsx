@@ -17,11 +17,13 @@ const items: InstructionItemType[] = [
         title: 'Test1',
         mediaUrl: 'ImgUrl1',
         isVideo: true,
+        imageAlt: 'alt1',
     },
     {
         title: 'Test2',
         mediaUrl: 'ImgUrl2',
         isVideo: false,
+        imageAlt: 'alt2',
     },
 ];
 
