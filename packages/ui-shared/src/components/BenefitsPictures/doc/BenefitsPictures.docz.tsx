@@ -5,6 +5,7 @@ const getItems = (i, image) =>
         title: 'Интернет',
         text: 'Подключение к домашнему интернету осуществляется в удобное для вас время по технологиям Ethernet, Docsis.',
         img: image,
+        alt: 'alt',
     }));
 
 export const twoItems = getItems(2, img);
