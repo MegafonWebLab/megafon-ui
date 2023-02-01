@@ -55,7 +55,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
       className="mfui-card__pic-wrapper mfui-card__pic-wrapper_object-fit_fill"
     >
       <img
-        alt=""
+        alt="image alt"
         className="mfui-card__img"
         src="/test-src"
       />
@@ -114,7 +114,7 @@ exports[`Card left align of the interactive element 1`] = `
       className="mfui-card__pic-wrapper mfui-card__pic-wrapper_object-fit_fill"
     >
       <img
-        alt=""
+        alt="image alt"
         className="mfui-card__img"
         src="/test-src"
       />
@@ -223,7 +223,7 @@ exports[`Card render component with img, if image source and svg source are spec
       className="mfui-card__pic-wrapper mfui-card__pic-wrapper_object-fit_fill"
     >
       <img
-        alt=""
+        alt="image alt"
         className="mfui-card__img"
         src="/test-src"
       />
@@ -320,7 +320,7 @@ exports[`Card render component with optional props 1`] = `
       className="mfui-card__pic-wrapper mfui-card__pic-wrapper_object-fit_fill"
     >
       <img
-        alt=""
+        alt="image alt"
         className="mfui-card__img"
         src="/test-src"
       />
@@ -552,7 +552,7 @@ exports[`Card render with contain object fit 1`] = `
       className="mfui-card__pic-wrapper mfui-card__pic-wrapper_object-fit_contain"
     >
       <img
-        alt=""
+        alt="image alt"
         className="mfui-card__img"
         src="/test-src"
       />

@@ -53,6 +53,8 @@ export interface ICard {
     rootRef?: Ref<HTMLDivElement>;
     /** Изображение в карточке */
     imageSrc?: string;
+    /** Текст для изображения */
+    imageAlt?: string;
     /** Иконка в карточке */
     svgSrc?: React.ReactNode;
     /** Заголовок карточки */
@@ -84,6 +86,7 @@ const Card: React.FC<ICard> = ({
     classes = {},
     rootRef,
     imageSrc,
+    imageAlt,
     svgSrc,
     title,
     text,
@@ -105,7 +108,7 @@ const Card: React.FC<ICard> = ({
             case !!imageSrc: {
                 return (
                     <div className={cn('pic-wrapper', { 'object-fit': objectFit })}>
-                        <img className={cn('img')} src={imageSrc} alt="" />
+                        <img className={cn('img')} src={imageSrc} alt={imageAlt} />
                     </div>
                 );
             }
@@ -117,7 +120,7 @@ const Card: React.FC<ICard> = ({
             default:
                 return null;
         }
-    }, [imageSrc, svgSrc, objectFit]);
+    }, [imageSrc, svgSrc, objectFit, imageAlt]);
 
     const renderLink = React.useCallback(() => {
         if (!link) {
@@ -236,6 +239,7 @@ Card.propTypes = {
         PropTypes.oneOfType([PropTypes.shape({ current: PropTypes.elementType }), PropTypes.any]),
     ]),
     imageSrc: PropTypes.string,
+    imageAlt: PropTypes.string,
     svgSrc: PropTypes.node,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
