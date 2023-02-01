@@ -127,7 +127,6 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -233,7 +232,6 @@ exports[`<VideoBanner /> render component with classes 1`] = `
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -266,7 +264,6 @@ exports[`<VideoBanner /> render component with dataAttrs 1`] = `
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -372,7 +369,6 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -404,7 +400,7 @@ exports[`<VideoBanner /> render component with pictures 1`] = `
           srcSet="imageTablet"
         />
         <img
-          alt=""
+          alt="alt text"
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -510,7 +506,6 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -618,7 +613,6 @@ exports[`<VideoBanner /> render component with pictures and download links conte
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -724,7 +718,6 @@ exports[`<VideoBanner /> render component with pictures and non default content 
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -830,7 +823,6 @@ exports[`<VideoBanner /> render component with the different content text color 
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -923,7 +915,6 @@ exports[`<VideoBanner /> render component without button 1`] = `
           srcSet="imageTablet"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
@@ -1168,7 +1159,6 @@ exports[`<VideoBanner /> tests with local window render desktop image on relevan
                 srcSet="imageTablet"
               />
               <img
-                alt=""
                 className="mfui-video-banner__background-image"
                 src="imageMobile"
               />
@@ -1215,7 +1205,6 @@ exports[`<VideoBanner /> tests with local window render mobile image on relevant
                 srcSet="imageTablet"
               />
               <img
-                alt=""
                 className="mfui-video-banner__background-image"
                 src="imageMobile"
               />
@@ -1262,7 +1251,6 @@ exports[`<VideoBanner /> tests with local window render tablet image on relevant
                 srcSet="imageTablet"
               />
               <img
-                alt=""
                 className="mfui-video-banner__background-image"
                 src="imageMobile"
               />
@@ -1349,7 +1337,6 @@ exports[`<VideoBanner /> tests with local window render wide desktop image on re
                 srcSet="imageTablet"
               />
               <img
-                alt=""
                 className="mfui-video-banner__background-image"
                 src="imageMobile"
               />
@@ -1731,7 +1718,6 @@ exports[`<VideoBanner /> tests with local window should not render video on mobi
           srcSet="imageDesktop"
         />
         <img
-          alt=""
           className="mfui-video-banner__background-image"
           src="imageMobile"
         />
