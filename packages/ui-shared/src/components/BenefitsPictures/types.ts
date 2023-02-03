@@ -5,7 +5,7 @@ export interface IBenefit {
     text: string;
     /** Изображение */
     img: string;
-    /** Текст для изображения */
+    /** Значение тега alt для изображения */
     alt?: string;
 }
 

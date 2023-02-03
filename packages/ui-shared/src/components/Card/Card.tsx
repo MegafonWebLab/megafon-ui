@@ -53,7 +53,7 @@ export interface ICard {
     rootRef?: Ref<HTMLDivElement>;
     /** Изображение в карточке */
     imageSrc?: string;
-    /** Текст для изображения */
+    /** Значение тега alt для изображения */
     imageAlt?: string;
     /** Иконка в карточке */
     svgSrc?: React.ReactNode;

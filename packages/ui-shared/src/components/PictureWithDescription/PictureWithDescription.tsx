@@ -27,7 +27,7 @@ export interface IPictureWithDescriptionProps {
     pictureUrl: string;
     /** Расположение изображения */
     pictureAlign?: PictureAlignTypesType;
-    /** Текст для изображения */
+    /** Значение тега alt для изображения */
     pictureAlt?: string;
     /** Выравнивание текста по верхнему краю */
     isTextTopAlign?: boolean;

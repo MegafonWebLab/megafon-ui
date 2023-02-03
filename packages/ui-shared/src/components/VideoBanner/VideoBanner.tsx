@@ -121,7 +121,7 @@ interface IVideoBannerProps {
     imageDesktop?: string;
     /** Изображение для большого компьютерного разрешения */
     imageDesktopWide?: string;
-    /** Текст для изображения */
+    /** Значение тега alt для изображения */
     imageAlt?: string;
     /** Хлебные крошки */
     breadcrumbs?: BreadCrumbsItemsType;

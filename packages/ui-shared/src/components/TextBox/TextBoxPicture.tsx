@@ -17,7 +17,7 @@ export interface ITextBoxPictureProps {
     url: string;
     /** Значение вертикальных отступов */
     margin?: PictureMarginTypesType;
-    /** Текст для изображения */
+    /** Значение тега alt для изображения */
     alt?: string;
 }
 
