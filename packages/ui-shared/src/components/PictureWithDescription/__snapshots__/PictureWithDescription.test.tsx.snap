@@ -8,7 +8,7 @@ exports[`<PictureWithDescription /> should render with custom classes 1`] = `
     className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
-      alt=""
+      alt="alt text"
       className="mfui-picture-with-description__img"
       src="/testUrl"
     />
@@ -39,7 +39,7 @@ exports[`<PictureWithDescription /> should render with default props 1`] = `
     className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
-      alt=""
+      alt="alt text"
       className="mfui-picture-with-description__img"
       src="/testUrl"
     />
@@ -64,7 +64,7 @@ exports[`<PictureWithDescription /> should render with right side picture 1`] = 
     className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_right"
   >
     <img
-      alt=""
+      alt="alt text"
       className="mfui-picture-with-description__img"
       src="/testUrl"
     />
@@ -89,7 +89,7 @@ exports[`<PictureWithDescription /> should render with title 1`] = `
     className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
-      alt=""
+      alt="alt text"
       className="mfui-picture-with-description__img"
       src="/testUrl"
     />
@@ -120,7 +120,7 @@ exports[`<PictureWithDescription /> should render with top align text 1`] = `
     className="mfui-picture-with-description__picture mfui-picture-with-description__picture_align_left"
   >
     <img
-      alt=""
+      alt="alt text"
       className="mfui-picture-with-description__img"
       src="/testUrl"
     />

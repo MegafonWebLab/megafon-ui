@@ -52,6 +52,7 @@ describe('<VideoBanner />', () => {
                 imageTablet={imageTablet}
                 imageDesktop={imageDesktop}
                 imageDesktopWide={imageDesktopWide}
+                imageAlt="alt text"
             />,
         );
 

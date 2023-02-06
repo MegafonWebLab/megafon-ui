@@ -27,6 +27,7 @@ const dataAttrs = {
     button: { 'data-testid': 'button-test' },
 };
 const imageSrc = '/test-src';
+const imageAlt = 'image alt';
 
 describe('Card', () => {
     it('render component with required props', () => {
@@ -40,6 +41,7 @@ describe('Card', () => {
                 title={title}
                 text={text}
                 imageSrc={imageSrc}
+                imageAlt={imageAlt}
                 button={button}
                 link={link}
                 classes={classes}
@@ -82,7 +84,15 @@ describe('Card', () => {
 
     it('render component with img, if image source and svg source are specified', () => {
         const wrapper = shallow(
-            <Card title={title} text={text} svgSrc={svg} button={button} link={link} imageSrc={imageSrc} />,
+            <Card
+                title={title}
+                text={text}
+                svgSrc={svg}
+                button={button}
+                link={link}
+                imageSrc={imageSrc}
+                imageAlt={imageAlt}
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -103,13 +113,23 @@ describe('Card', () => {
     });
 
     it('left align of the interactive element', () => {
-        const wrapper = shallow(<Card title={title} text={text} imageSrc={imageSrc} link={link} isLeftHAlign />);
+        const wrapper = shallow(
+            <Card title={title} text={text} imageSrc={imageSrc} imageAlt={imageAlt} link={link} isLeftHAlign />,
+        );
         expect(wrapper).toMatchSnapshot();
     });
 
     it('disable left align if there is a button and link', () => {
         const wrapper = shallow(
-            <Card title={title} text={text} imageSrc={imageSrc} button={button} link={link} isLeftHAlign />,
+            <Card
+                title={title}
+                text={text}
+                imageSrc={imageSrc}
+                imageAlt={imageAlt}
+                button={button}
+                link={link}
+                isLeftHAlign
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });
@@ -130,7 +150,14 @@ describe('Card', () => {
 
     it('render with contain object fit', () => {
         const wrapper = shallow(
-            <Card title={title} text={text} imageSrc={imageSrc} button={button} objectFit={ObjectFit.CONTAIN} />,
+            <Card
+                title={title}
+                text={text}
+                imageSrc={imageSrc}
+                imageAlt={imageAlt}
+                button={button}
+                objectFit={ObjectFit.CONTAIN}
+            />,
         );
         expect(wrapper).toMatchSnapshot();
     });

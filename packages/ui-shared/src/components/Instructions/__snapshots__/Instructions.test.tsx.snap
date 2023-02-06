@@ -51,7 +51,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
@@ -214,7 +214,7 @@ exports[`<Instructions /> desktop resolution should render with data-attributes 
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img"
                 data-testid="image-test[2]"
                 src="ImgUrl2"
@@ -381,7 +381,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
@@ -548,7 +548,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
                 key="1ImgUrl2"
               >
                 <img
-                  alt=""
+                  alt="alt2"
                   className="mfui-instructions__swiper-img"
                   src="ImgUrl2"
                 />
@@ -716,7 +716,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
                 key="1ImgUrl2"
               >
                 <img
-                  alt=""
+                  alt="alt2"
                   className="mfui-instructions__swiper-img"
                   src="ImgUrl2"
                 />
@@ -878,7 +878,7 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
@@ -1041,7 +1041,7 @@ exports[`<Instructions /> mobile resolution should render with data-attributes 1
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img"
                 data-testid="image-test[2]"
                 src="ImgUrl2"
@@ -1162,11 +1162,13 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
   instructionItems={
     Array [
       Object {
+        "imageAlt": "alt1",
         "isVideo": true,
         "mediaUrl": "ImgUrl1",
         "title": "Test1",
       },
       Object {
+        "imageAlt": "alt2",
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
         "title": "Test2",
@@ -1257,7 +1259,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
-                                        alt=""
+                                        alt="alt2"
                                         class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
@@ -1289,7 +1291,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -1352,7 +1354,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -1433,7 +1435,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
                                 <img
-                                  alt=""
+                                  alt="alt2"
                                   class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
@@ -1935,7 +1937,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
-                                    alt=""
+                                    alt="alt2"
                                     class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
@@ -1995,7 +1997,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                       class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
-                                        alt=""
+                                        alt="alt2"
                                         class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
@@ -2027,7 +2029,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -2090,7 +2092,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -2171,7 +2173,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
                                 <img
-                                  alt=""
+                                  alt="alt2"
                                   class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
@@ -2673,7 +2675,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                                   class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
-                                    alt=""
+                                    alt="alt2"
                                     class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
@@ -2687,7 +2689,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                             className="swiper-slide mfui-instructions__slide"
                           >
                             <img
-                              alt=""
+                              alt="alt2"
                               className="mfui-instructions__swiper-img"
                               src="ImgUrl2"
                             />
@@ -2813,11 +2815,13 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
   instructionItems={
     Array [
       Object {
+        "imageAlt": "alt1",
         "isVideo": true,
         "mediaUrl": "ImgUrl1",
         "title": "Test1",
       },
       Object {
+        "imageAlt": "alt2",
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
         "title": "Test2",
@@ -2908,7 +2912,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
-                                        alt=""
+                                        alt="alt2"
                                         class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
@@ -2940,7 +2944,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -3003,7 +3007,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -3084,7 +3088,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
                                 <img
-                                  alt=""
+                                  alt="alt2"
                                   class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
@@ -3586,7 +3590,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
-                                    alt=""
+                                    alt="alt2"
                                     class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
@@ -3646,7 +3650,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                       class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
-                                        alt=""
+                                        alt="alt2"
                                         class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
@@ -3678,7 +3682,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -3741,7 +3745,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -3822,7 +3826,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
                                 <img
-                                  alt=""
+                                  alt="alt2"
                                   class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
@@ -4324,7 +4328,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                                   class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
-                                    alt=""
+                                    alt="alt2"
                                     class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
@@ -4338,7 +4342,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                             className="swiper-slide mfui-instructions__slide"
                           >
                             <img
-                              alt=""
+                              alt="alt2"
                               className="mfui-instructions__swiper-img"
                               src="ImgUrl2"
                             />
@@ -4464,11 +4468,13 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
   instructionItems={
     Array [
       Object {
+        "imageAlt": "alt1",
         "isVideo": true,
         "mediaUrl": "ImgUrl1",
         "title": "Test1",
       },
       Object {
+        "imageAlt": "alt2",
         "isVideo": false,
         "mediaUrl": "ImgUrl2",
         "title": "Test2",
@@ -4559,7 +4565,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
-                                        alt=""
+                                        alt="alt2"
                                         class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
@@ -4591,7 +4597,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -4654,7 +4660,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -4735,7 +4741,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
                                 <img
-                                  alt=""
+                                  alt="alt2"
                                   class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
@@ -5237,7 +5243,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
-                                    alt=""
+                                    alt="alt2"
                                     class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
@@ -5297,7 +5303,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                       class="swiper-slide mfui-instructions__slide"
                                     >
                                       <img
-                                        alt=""
+                                        alt="alt2"
                                         class="mfui-instructions__swiper-img"
                                         src="ImgUrl2"
                                       />
@@ -5329,7 +5335,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -5392,7 +5398,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                     class="swiper-slide mfui-instructions__slide"
                                   >
                                     <img
-                                      alt=""
+                                      alt="alt2"
                                       class="mfui-instructions__swiper-img"
                                       src="ImgUrl2"
                                     />
@@ -5473,7 +5479,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                               "imagesLoaded": 0,
                               "imagesToLoad": Dom7 [
                                 <img
-                                  alt=""
+                                  alt="alt2"
                                   class="mfui-instructions__swiper-img"
                                   src="ImgUrl2"
                                 />,
@@ -5975,7 +5981,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                                   class="swiper-slide mfui-instructions__slide"
                                 >
                                   <img
-                                    alt=""
+                                    alt="alt2"
                                     class="mfui-instructions__swiper-img"
                                     src="ImgUrl2"
                                   />
@@ -5989,7 +5995,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                             className="swiper-slide mfui-instructions__slide"
                           >
                             <img
-                              alt=""
+                              alt="alt2"
                               className="mfui-instructions__swiper-img"
                               src="ImgUrl2"
                             />
@@ -6161,7 +6167,7 @@ exports[`<Instructions /> should render component with additional text 1`] = `
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
@@ -6328,7 +6334,7 @@ exports[`<Instructions /> should render with children 1`] = `
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img"
                 src="ImgUrl2"
               />
@@ -6494,7 +6500,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
               key="1ImgUrl2"
             >
               <img
-                alt=""
+                alt="alt2"
                 className="mfui-instructions__swiper-img instructionItemImg"
                 src="ImgUrl2"
               />

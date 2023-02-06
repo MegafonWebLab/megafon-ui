@@ -162,7 +162,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
     return (
         <div className={cn([className, classes.root])} ref={rootRef}>
             <Grid guttersLeft={currentGutter} hAlign={isGridCenterAlign ? 'center' : 'left'}>
-                {items.map(({ img, title, text }, index) => (
+                {items.map(({ img, title, text, alt }, index) => (
                     <GridColumn
                         {...(align === 'left'
                             ? getLeftConfig(items.length, index)
@@ -170,7 +170,7 @@ const BenefitsPictures: React.FC<IBenefitsPicturesProps> = ({
                         key={index}
                     >
                         <div className={cn('item', [classes.item])}>
-                            <img className={cn('img', { 'h-align': align })} src={img} alt="" />
+                            <img className={cn('img', { 'h-align': align })} src={img} alt={alt} />
                             <Header className={cn('title')} align={align} as="h3">
                                 {convert(title)}
                             </Header>
@@ -193,6 +193,7 @@ BenefitsPictures.propTypes = {
             title: PropTypes.string.isRequired,
             text: PropTypes.string.isRequired,
             img: PropTypes.string.isRequired,
+            alt: PropTypes.string,
         }).isRequired,
     ).isRequired,
     align: PropTypes.oneOf(['left', 'center']),
