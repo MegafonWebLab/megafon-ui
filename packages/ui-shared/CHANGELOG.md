@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.12.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.11.0...@megafon/ui-shared@4.12.0) (2023-02-06)
+
+
+### Features
+
+* **benefitpictures:** add alt prop for images ([3fd19e7](https://github.com/MegafonWebLab/megafon-ui/commit/3fd19e718068db8d418adccbb1812e4e8dd6e090))
+* **card:** add alt prop for image ([a56a159](https://github.com/MegafonWebLab/megafon-ui/commit/a56a1595b1114e63aa80d9f8976bfb8d54b871db))
+* **instructions:** add alt prop for images ([94d4750](https://github.com/MegafonWebLab/megafon-ui/commit/94d4750a51a4d3e848c319ed98a31b3fd241e733))
+* **picturewithdescription:** add alt prop for image ([0ed9e19](https://github.com/MegafonWebLab/megafon-ui/commit/0ed9e195b00c41a2a736de741af82b3808eb1677))
+* **textboxpicture:** add alt prop for image ([6df38e2](https://github.com/MegafonWebLab/megafon-ui/commit/6df38e23d9a42fbb8833c0f4968fd6f6ff4f28b7))
+* **videobanner:** add alt prop for image ([3ec8c6c](https://github.com/MegafonWebLab/megafon-ui/commit/3ec8c6cda08b42fe8f36b9bee029ad0c3ad18d5f))
+
+
+
+
+
 # [4.11.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.10.0...@megafon/ui-shared@4.11.0) (2023-01-31)
 
 

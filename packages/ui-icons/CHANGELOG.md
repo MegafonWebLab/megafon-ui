@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.5.0...@megafon/ui-icons@2.6.0) (2023-02-06)
+
+
+### Features
+
+* **icons:** add barCode_24 system icon ([957e4cc](https://github.com/MegafonWebLab/megafon-ui/commit/957e4ccb11eb671d3df93a93b91b8615e71e98e2))
+
+
+
+
+
 # [2.5.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.4.2...@megafon/ui-icons@2.5.0) (2023-01-17)
 
 
