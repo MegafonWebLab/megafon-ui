@@ -121,6 +121,8 @@ interface IVideoBannerProps {
     imageDesktop?: string;
     /** Изображение для большого компьютерного разрешения */
     imageDesktopWide?: string;
+    /** Значение тега alt для изображения */
+    imageAlt?: string;
     /** Хлебные крошки */
     breadcrumbs?: BreadCrumbsItemsType;
     /** Включить микроразметку хлебных крошек */
@@ -138,6 +140,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
     imageTablet,
     imageDesktop = '',
     imageDesktopWide = '',
+    imageAlt,
     content,
     isMuted = true,
     breadcrumbs,
@@ -300,7 +303,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                             <source media={`(min-width: ${breakpoints.DESKTOP_SMALL_START}px)`} srcSet={imageDesktop} />
                             <source media={`(min-width: ${breakpoints.MOBILE_BIG_START}px)`} srcSet={imageTablet} />
 
-                            <img className={cn('background-image')} src={imageMobile} alt="" />
+                            <img className={cn('background-image')} src={imageMobile} alt={imageAlt} />
                         </picture>
                     )}
                 </div>
@@ -352,6 +355,7 @@ VideoBanner.propTypes = {
     imageTablet: PropTypes.string.isRequired,
     imageDesktop: PropTypes.string,
     imageDesktopWide: PropTypes.string,
+    imageAlt: PropTypes.string,
     breadcrumbs: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,

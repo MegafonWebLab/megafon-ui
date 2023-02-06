@@ -1,68 +1,117 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import RadioButton, { IRadioButtonProps } from './RadioButton';
+import { fireEvent, render } from '@testing-library/react';
+import RadioButton from './RadioButton';
 
-const props: IRadioButtonProps = {
-    className: 'test-class',
-    classes: {
-        root: 'root-class',
-        label: 'label-class',
-        customInput: 'custom-input-class',
-        labelText: 'label-text-class',
+const dataAttrs = {
+    root: {
+        'data-testid': 'root',
     },
-    name: 'test-input-name',
-    value: 'test-input-value',
-    disabled: true,
-    isChecked: true,
-    textSize: 'small',
-    dataAttrs: {
-        root: {
-            'data-root': 'test',
-        },
-        input: {
-            'data-input': 'test',
-        },
-        text: {
-            'data-text': 'test',
-        },
+    input: {
+        'data-testid': 'input',
     },
-    onChange: jest.fn(),
+    text: {
+        'data-testid': 'text',
+    },
 };
 
-describe('<RadioButton />', () => {
-    describe('snapshots', () => {
-        it('renders RadioButton', () => {
-            const wrapper = shallow(<RadioButton value="value-text">Тестовая строка</RadioButton>);
-            expect(wrapper).toMatchSnapshot();
-        });
+const value = 'value1';
 
-        it('renders RadioButton with props', () => {
-            const wrapper = shallow(<RadioButton {...props}>Тестовая строка</RadioButton>);
-            expect(wrapper).toMatchSnapshot();
-        });
+describe('<RadioButton />', () => {
+    it('should render', () => {
+        const { container } = render(<RadioButton value="value1">Тестовая строка</RadioButton>);
+
+        expect(container).toMatchSnapshot();
     });
 
-    describe('handlers', () => {
-        it('calls onChange', () => {
-            const handleChange = jest.fn(buttonValue => buttonValue);
+    it('should render with name', () => {
+        const name = 'inputName';
+        const { getByTestId } = render(
+            <RadioButton value={value} name={name} dataAttrs={dataAttrs}>
+                Тестовая строка
+            </RadioButton>,
+        );
 
-            const value = 'value-text';
+        expect(getByTestId('input')).toHaveAttribute('name', name);
+    });
 
-            const wrapper = shallow(
-                <RadioButton name="group" value={value} onChange={handleChange}>
-                    Тестовая строка
-                </RadioButton>,
-            );
+    it('should render with textSize="small"', () => {
+        const { getByTestId } = render(
+            <RadioButton value={value} textSize="small" dataAttrs={dataAttrs}>
+                Тестовая строка
+            </RadioButton>,
+        );
 
-            wrapper.find('.mfui-radio-button__input').simulate('change');
-            expect(handleChange).toHaveBeenCalledWith(value);
-        });
+        expect(getByTestId('text')).toHaveClass('mfui-radio-button__text_size_small');
+    });
+
+    it('should render with disabled', () => {
+        const { getByTestId, getByText } = render(
+            <RadioButton value={value} disabled dataAttrs={dataAttrs}>
+                Тестовая строка
+            </RadioButton>,
+        );
+
+        expect(getByTestId('input')).toBeDisabled();
+        expect(getByText('Тестовая строка').closest('label')).toHaveClass('mfui-radio-button__label_disabled');
+    });
+
+    it('should render with isChecked', () => {
+        const { getByTestId } = render(
+            <RadioButton value={value} isChecked dataAttrs={dataAttrs}>
+                Тестовая строка
+            </RadioButton>,
+        );
+
+        expect(getByTestId('input')).toBeChecked();
+    });
+
+    it('should render with className', () => {
+        const className = 'testClass';
+        const { getByTestId } = render(
+            <RadioButton value={value} className={className} dataAttrs={dataAttrs}>
+                Тестовая строка
+            </RadioButton>,
+        );
+
+        expect(getByTestId('root')).toHaveClass(className);
+    });
+
+    it('should render with classes', () => {
+        const classes = {
+            root: 'rootClass',
+            label: 'labelClass',
+            customInput: 'customInputClass',
+            labelText: 'labelTextClass',
+        };
+        const { getByTestId, getByText, container } = render(
+            <RadioButton value={value} classes={classes} dataAttrs={dataAttrs}>
+                Тестовая строка
+            </RadioButton>,
+        );
+
+        expect(getByTestId('root')).toHaveClass(classes.root);
+        expect(getByTestId('text')).toHaveClass(classes.labelText);
+        expect(getByText('Тестовая строка').closest('label')).toHaveClass(classes.label);
+        expect(container.getElementsByClassName(classes.customInput)).toMatchSnapshot();
+    });
+
+    it('should call onChange', () => {
+        const handleChange = jest.fn(buttonValue => buttonValue);
+
+        const { getByTestId } = render(
+            <RadioButton value={value} onChange={handleChange} dataAttrs={dataAttrs}>
+                Тестовая строка
+            </RadioButton>,
+        );
+
+        fireEvent.click(getByTestId('input'));
+        expect(handleChange).toHaveBeenCalledWith(value);
     });
 
     it('should return a reference to the element', () => {
         const ref: React.Ref<HTMLInputElement> = React.createRef();
 
-        mount(<RadioButton inputRef={ref} value="" />);
+        render(<RadioButton inputRef={ref} value="" />);
 
         if (ref.current === null) {
             throw new Error('No ref');

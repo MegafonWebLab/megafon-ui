@@ -18,7 +18,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -49,7 +49,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -89,7 +89,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -118,7 +118,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -146,7 +146,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 2`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -186,7 +186,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -217,7 +217,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -245,7 +245,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -276,7 +276,7 @@ exports[`<BenefitsPictures /> render with center horizontal align 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -316,7 +316,6 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="image.png"
         />
@@ -364,7 +363,6 @@ exports[`<BenefitsPictures /> render with html in title and text 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="image.png"
         />
@@ -404,7 +402,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -435,7 +433,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -475,7 +473,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -504,7 +502,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -532,7 +530,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 2`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -572,7 +570,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -603,7 +601,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -631,7 +629,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -662,7 +660,7 @@ exports[`<BenefitsPictures /> render with medium grid gap 3`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -702,7 +700,7 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
@@ -733,7 +731,7 @@ exports[`<BenefitsPictures /> renders BenefitsPictures 1`] = `
         className="mfui-benefits-pictures__item item-class"
       >
         <img
-          alt=""
+          alt="alt"
           className="mfui-benefits-pictures__img mfui-benefits-pictures__img_h-align_left"
           src="test-file-stub"
         />
