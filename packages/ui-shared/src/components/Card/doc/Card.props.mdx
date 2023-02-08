@@ -15,8 +15,10 @@ interface IButton {
     title: string;
     /** Ссылка в кнопке */
     href: string;
-    /** Target свойство, аналогично свойству 'target' тега 'a' */
+    /** Target - атрибут тега <a> */
     target: TargetType;
+    /** Rel - атрибут тега <a> */
+    rel?: string;
     /** Обработчик клика по кнопке */
     onClick: () => void;
 }
@@ -26,8 +28,10 @@ interface ILink {
     title: string;
     /** Адрес ссылки */
     href?: string;
-    /** Target свойство, аналогично свойству 'target' тега 'a' */
+    /** Target - атрибут тега <a> */
     target: TargetType;
+    /** Rel - атрибут тега <a> */
+    rel?: string;
 }
 
 ```

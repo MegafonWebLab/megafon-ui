@@ -16,6 +16,7 @@ interface IButton {
     href?: string;
     target?: TargetType;
     download?: boolean;
+    rel?: string;
     onClick?: () => void;
 }
 
@@ -24,6 +25,7 @@ interface ILink {
     href?: string;
     target?: TargetType;
     download?: boolean;
+    rel?: string;
 }
 
 export const ObjectFit = {
@@ -127,7 +129,7 @@ const Card: React.FC<ICard> = ({
             return null;
         }
 
-        const { href: linkHref, title: linkTitle, target: linkTarget, download } = link;
+        const { href: linkHref, title: linkTitle, target: linkTarget, download, rel: linkRel } = link;
 
         if (!linkHref || isCardLink) {
             return <span className={cn('fake-link')}>{linkTitle}</span>;
@@ -138,6 +140,7 @@ const Card: React.FC<ICard> = ({
                 href={linkHref}
                 download={download}
                 target={linkTarget}
+                rel={linkRel}
                 dataAttrs={{ root: dataAttrs?.link }}
                 className={cn('link', [classes.link])}
             >
@@ -156,6 +159,7 @@ const Card: React.FC<ICard> = ({
             title: btnTitle,
             target: btnTarget,
             download: btnDownload,
+            rel: btnRel,
             onClick: btnOnClick,
         } = button;
 
@@ -166,6 +170,7 @@ const Card: React.FC<ICard> = ({
                 href={btnHref}
                 target={btnTarget}
                 download={btnDownload}
+                rel={btnRel}
                 onClick={btnOnClick}
             >
                 {btnTitle}
@@ -248,6 +253,7 @@ Card.propTypes = {
         href: PropTypes.string,
         target: PropTypes.oneOf(Object.values(Target)),
         download: PropTypes.bool,
+        rel: PropTypes.string,
         onClick: PropTypes.func,
     }),
     link: PropTypes.shape({
@@ -255,6 +261,7 @@ Card.propTypes = {
         href: PropTypes.string,
         target: PropTypes.oneOf(Object.values(Target)),
         download: PropTypes.bool,
+        rel: PropTypes.string,
     }),
     isCenteredText: PropTypes.bool,
     isLeftHAlign: PropTypes.bool,
