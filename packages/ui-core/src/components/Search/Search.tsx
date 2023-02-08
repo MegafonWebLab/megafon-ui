@@ -36,9 +36,12 @@ export interface ISearchProps {
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
+        control?: Record<string, string>;
         searchField?: Record<string, string>;
         submit?: Record<string, string>;
         item?: Record<string, string>;
+        itemTitle?: Record<string, string>;
+        notice?: Record<string, string>;
     };
     /** Значение */
     value?: string;
@@ -249,6 +252,7 @@ const Search: React.FC<ISearchProps> = ({
     return (
         <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ open: isFocused, disabled }, [className])}>
             <div
+                {...filterDataAttrs(dataAttrs?.control)}
                 className={cn(
                     'control',
                     { error: verification === Verification.ERROR, success: verification === Verification.VALID },
@@ -304,7 +308,10 @@ const Search: React.FC<ISearchProps> = ({
                                         onMouseEnter={handleHoverItem(i)}
                                         key={i}
                                     >
-                                        <div className={cn('item-title', [classes?.listItemTitle])}>
+                                        <div
+                                            {...filterDataAttrs(dataAttrs?.itemTitle, i + 1)}
+                                            className={cn('item-title', [classes?.listItemTitle])}
+                                        >
                                             {searchView || highlightString(itemValue)}
                                         </div>
                                     </div>
@@ -317,6 +324,7 @@ const Search: React.FC<ISearchProps> = ({
 
             {noticeText && (
                 <div
+                    {...filterDataAttrs(dataAttrs?.notice)}
                     className={cn('notice', {
                         error: verification === Verification.ERROR,
                         success: verification === Verification.VALID,
@@ -332,9 +340,12 @@ const Search: React.FC<ISearchProps> = ({
 Search.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
+        control: PropTypes.objectOf(PropTypes.string.isRequired),
         searchField: PropTypes.objectOf(PropTypes.string.isRequired),
         submit: PropTypes.objectOf(PropTypes.string.isRequired),
         item: PropTypes.objectOf(PropTypes.string.isRequired),
+        itemTitle: PropTypes.objectOf(PropTypes.string.isRequired),
+        notice: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     value: PropTypes.string,
     label: PropTypes.string,
