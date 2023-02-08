@@ -1,22 +1,22 @@
 import * as React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
-import { shallow, mount } from 'enzyme';
-import Select, { ISelectProps, SelectTypes, Verification, ISelectItem } from './Select';
+import { act, fireEvent, render, within } from '@testing-library/react';
+import Select, { ISelectProps, ISelectItem } from './Select';
 
 const cn = cnCreate('mfui-select');
 
 const props: ISelectProps<number> = {
-    className: 'test-class',
+    className: 'custom-class',
     label: 'test-label',
     labelId: '1',
     noticeText: 'test-notice-text',
     required: true,
     placeholder: 'test-placeholder',
     classes: {
-        root: 'test-root-class',
-        control: 'test-control-class',
-        title: 'test-title',
-        titleInner: 'test-title-inner',
+        root: 'root',
+        control: 'control',
+        title: 'title',
+        titleInner: 'title-inner',
         list: 'list',
         listInner: 'list-inner',
         listItem: 'list-item',
@@ -25,293 +25,463 @@ const props: ISelectProps<number> = {
     items: [
         {
             value: 1,
-            title: 'test-name-1',
+            title: 'first item title',
         },
         {
             value: 2,
-            title: 'test-name-2',
+            title: 'second item title',
         },
     ],
     dataAttrs: {
         root: {
-            'data-root': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'root',
         },
         label: {
-            'data-label': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'label',
+        },
+        control: {
+            'data-testid': 'control',
         },
         title: {
-            'data-title': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'title',
+        },
+        titleInner: {
+            'data-testid': 'title-inner',
         },
         input: {
-            'data-input': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'input',
         },
         noticeText: {
-            'data-notice-text': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'notice-text',
+        },
+        list: {
+            'data-testid': 'list',
+        },
+        listInner: {
+            'data-testid': 'list-inner',
         },
         listItem: {
-            'data-list-item': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'list-item',
         },
         listItemTitle: {
-            'data-list-item-title': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'list-item-title',
         },
         notFound: {
-            'data-not-found': 'test',
-            'incorrect-attr': 'test',
+            'data-testid': 'not-found',
         },
     },
 };
 
-const newItems = [
-    {
-        value: 111,
-        title: 'new-test-name-1',
-    },
-    {
-        value: 222,
-        title: 'new-test-name-2',
-    },
-];
-
-const viewItems: Array<ISelectItem<number>> = [
-    {
-        value: 111,
-        title: '111',
-        view: ({ filterValue }) => <div>view {filterValue}</div>,
-    },
-];
-
 describe('<Select />', () => {
-    describe('snapshots', () => {
-        it('renders with default props', () => {
-            const wrapper = mount(<Select items={props.items} />);
-            expect(wrapper).toMatchSnapshot();
+    describe('classic', () => {
+        it('should render after initialization', () => {
+            const { container } = render(<Select {...props} type="classic" />);
+
+            expect(container).toMatchSnapshot();
         });
 
-        it('renders with props', () => {
-            const wrapper = mount(<Select<number> {...props} />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render after select item', () => {
+            const { container, getByTestId, rerender } = render(<Select {...props} type="classic" />);
+            const firstItem = getByTestId('list-item[1]');
+
+            fireEvent.mouseEnter(firstItem);
+            fireEvent.click(firstItem);
+
+            rerender(<Select {...props} type="classic" currentValue={1} />);
+
+            expect(container).toMatchSnapshot();
         });
 
-        it('renders with short list items', () => {
-            const wrapper = mount(<Select<number> {...props} shortList />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with dataAttrs', () => {
+            const { getByTestId } = render(<Select {...props} />);
+
+            expect(getByTestId('title')).toBeTruthy();
+            expect(getByTestId('title-inner')).toBeTruthy();
         });
 
-        it('renders combobox after update with new prop items', () => {
-            const wrapper = mount(<Select<number> {...props} type="combobox" />);
+        it('should render with classes', () => {
+            const { getByTestId } = render(<Select {...props} />);
 
-            wrapper.setProps({ items: newItems });
-            wrapper.update();
-
-            expect(wrapper).toMatchSnapshot();
+            expect(getByTestId('title')).toHaveClass('title');
+            expect(getByTestId('title-inner')).toHaveClass('title-inner');
         });
 
-        it('it renders with data attributes', () => {
-            const wrapper = shallow(<Select dataAttrs={props.dataAttrs} items={props.items} />);
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render items.view as function and type combobox', () => {
-            const wrapper = shallow(<Select type="combobox" items={viewItems} dataAttrs={props.dataAttrs} />);
-            wrapper.find(`.${cn('combobox')}`).simulate('change', { target: { value: '123' } });
-
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render items.view as function and type classic', () => {
-            const wrapper = shallow(<Select items={viewItems} dataAttrs={props.dataAttrs} />);
-            expect(wrapper).toMatchSnapshot();
-        });
-    });
-
-    describe('states of select', () => {
-        it('renders with disabled state', () => {
-            const handleClick = jest.fn();
-            const wrapper = shallow(<Select onSelect={handleClick} items={[]} disabled />);
-
-            wrapper.find(`.${cn('control')}`).simulate('click');
-
-            expect(handleClick).not.toHaveBeenCalled();
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('renders with valid state', () => {
-            const wrapper = shallow(<Select items={[]} verification={Verification.VALID} noticeText="success" />);
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('renders with error state', () => {
-            const wrapper = shallow(<Select items={[]} verification={Verification.ERROR} noticeText="error" />);
-            expect(wrapper).toMatchSnapshot();
-        });
-    });
-
-    describe('onSelect', () => {
-        it('calls onSelect', () => {
-            const handleSelectItem = jest.fn();
-            const wrapper = mount(<Select {...props} onSelect={handleSelectItem} />);
-            const listItem = `.${cn('list-item')}`;
-            const listItemActive = `${cn('list-item_hovered')}`;
-
-            wrapper.find(`.${cn('title')}`).simulate('click');
-            wrapper.find(listItem).at(1).simulate('click');
-
-            expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
-            expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
-        });
-
-        it('calls onSelect with null when type combobox after chosen item and change value', () => {
-            jest.useFakeTimers();
-
-            const handleSelectItem = jest.fn();
-            const wrapper = mount(
-                <Select<number> {...props} type={SelectTypes.COMBOBOX} onSelect={handleSelectItem} />,
-            );
-            const combobox = `.${cn('combobox')}`;
-            const listItem = `.${cn('list-item')}`;
-
-            wrapper.find(combobox).simulate('focus');
-            wrapper.find(listItem).at(1).simulate('click');
-            wrapper.find(combobox).simulate('change', {
-                target: {
-                    value: 'name-1',
+        it('should render when view is function', () => {
+            const viewItems: Array<ISelectItem<number>> = [
+                {
+                    value: 111,
+                    title: '111',
+                    view: ({ filterValue, isItemActive }) => (
+                        <div>
+                            view {filterValue} {isItemActive && 'active'}
+                        </div>
+                    ),
                 },
+            ];
+            const { queryByText } = render(<Select {...props} currentValue={111} type="classic" items={viewItems} />);
+
+            expect(queryByText('view 111 active')).toBeInTheDocument();
+        });
+
+        it('should render when view is element', () => {
+            const viewItems = [
+                {
+                    value: 111,
+                    title: 'new-test-name-1',
+                    view: <div>item 1</div>,
+                },
+            ];
+            const { queryByText } = render(<Select {...props} type="classic" items={viewItems} />);
+
+            expect(queryByText('item 1')).toBeInTheDocument();
+        });
+
+        it('should render when view is missing', () => {
+            const { queryByText } = render(<Select {...props} type="classic" />);
+
+            expect(queryByText('first item title')).toBeInTheDocument();
+        });
+
+        it('should render with placeholder', () => {
+            const { queryByText } = render(<Select {...props} />);
+
+            expect(queryByText('test-placeholder')).toBeInTheDocument();
+        });
+
+        it('should call onSelect', () => {
+            const handleSelectItem = jest.fn();
+            const { getByTestId } = render(<Select {...props} onSelect={handleSelectItem} />);
+
+            fireEvent.mouseEnter(getByTestId('list-item[1]'));
+            fireEvent.click(getByTestId('list-item[1]'));
+
+            expect(handleSelectItem).toBeCalledWith(expect.any(Object), { title: 'first item title', value: 1 });
+        });
+
+        it('should call onOpened and onClosed when click on select', () => {
+            const handleOpened = jest.fn();
+            const handleClosed = jest.fn();
+            const { getByTestId } = render(
+                <Select<number> {...props} onOpened={handleOpened} onClosed={handleClosed} />,
+            );
+
+            fireEvent.click(getByTestId('title'));
+            expect(handleOpened).toBeCalled();
+
+            fireEvent.click(getByTestId('title'));
+            expect(handleClosed).toBeCalled();
+        });
+
+        it('should call onOpened when keyDown Enter with focus', () => {
+            const handleOpened = jest.fn();
+            const { getByTestId } = render(<Select<number> {...props} onOpened={handleOpened} />);
+
+            fireEvent.focus(getByTestId('title'));
+            fireEvent.keyDown(getByTestId('control'), { key: 'Enter' });
+
+            expect(handleOpened).toBeCalled();
+        });
+    });
+
+    describe('combobox', () => {
+        it('should render after initialization', () => {
+            const { container } = render(<Select {...props} type="combobox" />);
+
+            expect(container).toMatchSnapshot();
+        });
+
+        it('should render after changing input', async () => {
+            const { container, getByTestId } = render(<Select {...props} type="combobox" />);
+
+            fireEvent.change(getByTestId('input'), { target: { value: 'first' } });
+
+            await act(async () => {
+                await new Promise(r => setTimeout(r, 250));
             });
+
+            expect(container).toMatchSnapshot();
+        });
+
+        it('should render after select item', async () => {
+            const { container, getByTestId, rerender } = render(<Select {...props} type="combobox" />);
+
+            fireEvent.change(getByTestId('input'), { target: { value: 'first' } });
+
+            await act(async () => {
+                await new Promise(r => setTimeout(r, 250));
+            });
+
+            const firstItem = getByTestId('list-item[1]');
+
+            fireEvent.mouseEnter(firstItem);
+            fireEvent.click(firstItem);
+
+            rerender(<Select {...props} type="combobox" currentValue={1} />);
+
+            expect(container).toMatchSnapshot();
+        });
+
+        it('should render with dataAttrs', () => {
+            const { getByTestId } = render(<Select {...props} type="combobox" items={[]} />);
+
+            expect(getByTestId('input')).toBeTruthy();
+            expect(getByTestId('not-found')).toBeTruthy();
+        });
+
+        it('should render when view is function', () => {
+            const viewItems: Array<ISelectItem<number>> = [
+                {
+                    value: 111,
+                    title: '111',
+                    view: ({ filterValue, isItemActive }) => (
+                        <div>
+                            view {filterValue} {isItemActive && 'active'}
+                        </div>
+                    ),
+                },
+            ];
+            const { queryByText } = render(<Select {...props} currentValue={111} type="combobox" items={viewItems} />);
+
+            expect(queryByText('view 111 active')).toBeInTheDocument();
+        });
+
+        it('should render when view is element', () => {
+            const viewItems = [
+                {
+                    value: 111,
+                    title: 'new-test-name-1',
+                    view: <div>item 1</div>,
+                },
+            ];
+            const { queryByText } = render(<Select {...props} type="combobox" items={viewItems} />);
+
+            expect(queryByText('item 1')).toBeInTheDocument();
+        });
+
+        it('should render when view is missing', async () => {
+            const { getByTestId } = render(<Select {...props} type="combobox" />);
+            const input = getByTestId('input');
+
+            fireEvent.change(input, { target: { value: 'first' } });
+
+            await act(async () => {
+                await new Promise(r => setTimeout(r, 250));
+            });
+
+            const firstItem = getByTestId('list-item-title[1]');
+            const fragment = firstItem.firstElementChild;
+
+            expect(firstItem.textContent).toEqual('first item title');
+            expect(fragment?.textContent).toEqual('first');
+        });
+
+        it('should render with default notFoundText', () => {
+            const { queryByText } = render(<Select {...props} type="combobox" items={[]} />);
+
+            expect(queryByText('Ничего не нашлось')).toBeInTheDocument();
+        });
+
+        it('should render with custom notFoundText', () => {
+            const { queryByText } = render(
+                <Select {...props} type="combobox" items={[]} notFoundText="Not found text" />,
+            );
+
+            expect(queryByText('Not found text')).toBeInTheDocument();
+        });
+
+        it('should render without notFoundText when items are not empty array', () => {
+            const { queryByText } = render(<Select {...props} type="combobox" notFoundText="Not found text" />);
+
+            expect(queryByText('Not found text')).not.toBeInTheDocument();
+        });
+
+        it('should render with placeholder', () => {
+            const { getByTestId } = render(<Select {...props} type="combobox" />);
+
+            expect(getByTestId('input')).toHaveAttribute('placeholder', 'test-placeholder');
+        });
+
+        it('should call onSelect', () => {
+            const handleSelectItem = jest.fn();
+            const { getByTestId } = render(<Select<number> {...props} type="combobox" onSelect={handleSelectItem} />);
+            const input = getByTestId('input');
+
+            fireEvent.change(input, { target: { value: 'test' } });
 
             expect(handleSelectItem).toBeCalledWith(null);
-
-            jest.useRealTimers();
         });
-    });
 
-    describe('onOpened and onClosed', () => {
-        it('calls onOpened and onClosed when click on select', () => {
+        it('should call onOpened when focus in input', () => {
             const handleOpened = jest.fn();
-            const handleClosed = jest.fn();
-            const wrapper = mount(<Select<number> {...props} onOpened={handleOpened} onClosed={handleClosed} />);
+            const { getByTestId } = render(<Select<number> {...props} type="combobox" onOpened={handleOpened} />);
 
-            wrapper.find(`.${cn('title')}`).simulate('click');
-            expect(handleOpened).toBeCalled();
+            fireEvent.focus(getByTestId('input'));
 
-            wrapper.find(`.${cn('title')}`).simulate('click');
-            expect(handleClosed).toBeCalled();
-        });
-
-        it('calls onClosed when click on select item', () => {
-            const handleSelectItem = jest.fn();
-            const handleClosed = jest.fn();
-            const wrapper = mount(<Select {...props} onSelect={handleSelectItem} onClosed={handleClosed} />);
-
-            wrapper.find(`.${cn('title')}`).simulate('click');
-            wrapper
-                .find(`.${cn('list-item')}`)
-                .last()
-                .simulate('click');
-
-            expect(handleClosed).toBeCalled();
-        });
-
-        it('calls onOpened when focus in input', () => {
-            const handleOpened = jest.fn();
-            const wrapper = mount(<Select<number> {...props} type={SelectTypes.COMBOBOX} onOpened={handleOpened} />);
-
-            wrapper.find(`.${cn('combobox')}`).simulate('focus');
-            expect(handleOpened).toBeCalled();
-        });
-
-        it('calls onOpened when keyDown Enter with focus', () => {
-            const handleOpened = jest.fn();
-            const wrapper = mount(<Select<number> {...props} onOpened={handleOpened} />);
-
-            wrapper.find(`.${cn('title')}`).simulate('focus');
-            wrapper.find(`.${cn('control')}`).simulate('keyDown', { key: 'Enter', preventDefault: () => undefined });
             expect(handleOpened).toBeCalled();
         });
     });
 
-    describe('key typing handlers', () => {
-        it('calls onChange while typing in the field with debounce', async () => {
-            const wrapper = shallow(<Select<number> {...props} type={SelectTypes.COMBOBOX} />);
+    it('should render with classes', () => {
+        const { getByTestId } = render(<Select {...props} />);
 
-            expect(wrapper).toMatchSnapshot();
+        expect(getByTestId('root')).toHaveClass('root');
+        expect(getByTestId('root')).toHaveClass('custom-class');
+        expect(getByTestId('control')).toHaveClass('control');
+        expect(getByTestId('list')).toHaveClass('list');
+        expect(getByTestId('list-inner')).toHaveClass('list-inner');
+        expect(getByTestId('list-item[1]')).toHaveClass('list-item');
+        expect(getByTestId('list-item-title[1]')).toHaveClass('list-item-title');
+    });
 
-            wrapper.find(`.${cn('combobox')}`).simulate('change', {
-                target: {
-                    value: 'test-name-1',
-                },
-            });
+    it('should render with dataAttrs', () => {
+        const { getByTestId } = render(<Select {...props} />);
 
-            await new Promise(r => setTimeout(r, 150));
+        expect(getByTestId('root')).toBeTruthy();
+        expect(getByTestId('label')).toBeTruthy();
+        expect(getByTestId('control')).toBeTruthy();
+        expect(getByTestId('list')).toBeTruthy();
+        expect(getByTestId('list-inner')).toBeTruthy();
+        expect(getByTestId('list-item[1]')).toBeTruthy();
+        expect(getByTestId('list-item-title[1]')).toBeTruthy();
+    });
 
-            expect(wrapper).toMatchSnapshot();
+    it('should render when disabled is true', () => {
+        const { getByTestId } = render(<Select {...props} disabled />);
 
-            await new Promise(r => setTimeout(r, 100));
+        expect(getByTestId('root')).toHaveClass(cn({ disabled: true }));
+    });
 
-            expect(wrapper).toMatchSnapshot();
-        });
+    it('should render when verification is valid', () => {
+        const { getByTestId } = render(<Select {...props} items={[]} verification="valid" />);
 
-        it('highlighted text', () => {
-            const wrapper = shallow(<Select<number> {...props} type={SelectTypes.COMBOBOX} />);
+        expect(getByTestId('root')).toHaveClass(cn({ valid: true }));
+        expect(getByTestId('notice-text')).toHaveClass(cn('text_success'));
+    });
 
-            wrapper.find(`.${cn('combobox')}`).simulate('change', {
-                target: {
-                    value: 'name-1',
-                },
-            });
+    it('should render when verification is error', () => {
+        const { getByTestId } = render(<Select {...props} items={[]} verification="error" />);
 
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(getByTestId('root')).toHaveClass(cn({ error: true }));
+        expect(getByTestId('notice-text')).toHaveClass(cn('text_error'));
+    });
+
+    it('should render with noticeText', () => {
+        const { queryByText } = render(<Select {...props} />);
+
+        expect(queryByText('test-notice-text')).toBeInTheDocument();
+    });
+
+    it('should render with label', () => {
+        const { queryByText } = render(<Select {...props} />);
+
+        expect(queryByText('test-label')).toBeInTheDocument();
+    });
+
+    it('should render with labelId', () => {
+        const { getByTestId } = render(<Select {...props} />);
+
+        expect(getByTestId('label')).toHaveAttribute('for', '1');
+    });
+
+    it('should render when required is true', () => {
+        const { getByTestId } = render(<Select {...props} />);
+        const marker = within(getByTestId('label')).queryByText('*');
+
+        expect(marker).toBeInTheDocument();
+    });
+
+    it('should render when required is false', () => {
+        const { getByTestId } = render(<Select {...props} required={false} />);
+        const marker = within(getByTestId('label')).queryByText('*');
+
+        expect(marker).not.toBeInTheDocument();
+    });
+
+    it('should render with shortList', () => {
+        const { getByTestId } = render(<Select {...props} shortList />);
+
+        expect(getByTestId('list-inner')).toHaveClass(cn('list-inner_short'));
+    });
+
+    it('should render after update with new prop items', () => {
+        const newItems = [
+            {
+                value: 111,
+                title: 'new-test-name-1',
+            },
+            {
+                value: 222,
+                title: 'new-test-name-2',
+            },
+        ];
+        const { queryByText, rerender } = render(<Select {...props} />);
+
+        rerender(<Select {...props} items={newItems} />);
+
+        expect(queryByText('new-test-name-1')).toBeInTheDocument();
+        expect(queryByText('new-test-name-2')).toBeInTheDocument();
+    });
+
+    it('should call onClosed when click on select item', () => {
+        const handleClosed = jest.fn();
+        const { getByTestId } = render(<Select {...props} onClosed={handleClosed} />);
+
+        fireEvent.click(getByTestId('title'));
+        fireEvent.click(getByTestId('list-item[1]'));
+
+        expect(handleClosed).toBeCalled();
     });
 
     describe('keyboard actions', () => {
-        it('handles ArrowUp and ArrowDown', () => {
-            const wrapper = mount(<Select<number> {...props} />);
-            const title = wrapper.find(`.${cn('title')}`);
-            const control = wrapper.find(`.${cn('control')}`);
-            const listItem = `.${cn('list-item')}`;
-            const listItemActive = `${cn('list-item_hovered')}`;
+        it('should handle ArrowUp and ArrowDown', () => {
+            const { getByTestId } = render(<Select<number> {...props} />);
+            const title = getByTestId('title');
+            const control = getByTestId('control');
+            const firstListItem = getByTestId('list-item[1]');
+            const secondListItem = getByTestId('list-item[2]');
+            const activeListItemClass = cn('list-item_hovered');
 
-            title.simulate('click');
-            expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
+            fireEvent.click(title);
 
-            control.simulate('keyDown', { key: 'ArrowDown', preventDefault: () => undefined });
-            expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(false);
-            expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(true);
+            expect(firstListItem).toHaveClass(activeListItemClass);
 
-            control.simulate('keyDown', { key: 'ArrowUp', preventDefault: () => undefined });
-            expect(wrapper.find(listItem).at(0).hasClass(listItemActive)).toEqual(true);
-            expect(wrapper.find(listItem).at(1).hasClass(listItemActive)).toEqual(false);
+            fireEvent.keyDown(control, { key: 'ArrowDown' });
+
+            expect(firstListItem).not.toHaveClass(activeListItemClass);
+            expect(secondListItem).toHaveClass(activeListItemClass);
+
+            fireEvent.keyDown(control, { key: 'ArrowUp' });
+
+            expect(firstListItem).toHaveClass(activeListItemClass);
+            expect(secondListItem).not.toHaveClass(activeListItemClass);
         });
 
-        it('handles Tab', () => {
-            const wrapper = mount(<Select<number> {...props} />);
-            const title = wrapper.find(`.${cn('title')}`);
-            const control = wrapper.find(`.${cn('control')}`);
+        it('should handle Tab', () => {
+            const { getByTestId } = render(<Select<number> {...props} />);
+            const root = getByTestId('root');
+            const title = getByTestId('title');
+            const control = getByTestId('control');
+            const rootOpenClass = cn({ open: true });
 
-            title.simulate('click');
-            expect(wrapper).toMatchSnapshot();
+            fireEvent.click(title);
 
-            control.simulate('keyDown', { key: 'Tab', preventDefault: () => undefined });
-            expect(wrapper).toMatchSnapshot();
+            expect(root).toHaveClass(rootOpenClass);
+
+            fireEvent.keyDown(control, { key: 'Tab' });
+
+            expect(root).not.toHaveClass(rootOpenClass);
         });
 
-        it('handles Enter with focus to open items list', () => {
-            const handleSelectItem = jest.fn();
-            const wrapper = mount(<Select {...props} onSelect={handleSelectItem} />);
-            const control = wrapper.find(`.${cn('control')}`);
-            const title = wrapper.find(`.${cn('title')}`);
+        it('should handle Enter with focus to open items list', () => {
+            const { getByTestId } = render(<Select {...props} />);
+            const root = getByTestId('root');
+            const title = getByTestId('title');
+            const control = getByTestId('control');
 
-            title.simulate('focus');
-            control.simulate('keyDown', { key: 'Enter', preventDefault: () => undefined });
+            fireEvent.focus(title);
+            fireEvent.keyDown(control, { key: 'Enter' });
 
-            expect(wrapper.find(`.${cn()}_open`).exists()).toBeTruthy();
+            expect(root).toHaveClass(cn({ open: true }));
         });
     });
 });
