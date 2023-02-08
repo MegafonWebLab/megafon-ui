@@ -14,6 +14,7 @@ export interface ISwitcherProps {
     dataAttrs?: {
         root?: Record<string, string>;
         input?: Record<string, string>;
+        loader?: Record<string, string>;
     };
     /** Дополнительный класс корневого элемента */
     className?: string;
@@ -21,7 +22,7 @@ export interface ISwitcherProps {
     checked?: boolean;
     /** Отключение переключателя */
     disabled?: boolean;
-    /** Cостояние загрузки */
+    /** Состояние загрузки */
     showLoader?: boolean;
     /** Размер текста лейбла */
     textSize?: 'small' | 'medium';
@@ -74,7 +75,7 @@ const Switcher: React.FC<ISwitcherProps> = ({
                 onKeyDown={handleChange}
                 tabIndex={isInteractiveDisabled ? undefined : 0}
             >
-                {showLoader && !disabled && <div className={cn('loader')} />}
+                {showLoader && !disabled && <div className={cn('loader')} {...filterDataAttrs(dataAttrs?.loader)} />}
                 <div className={cn('pointer')} />
             </div>
             {isRightContent && <div className={cn('content', { size: textSize })}>{children}</div>}
@@ -86,6 +87,7 @@ Switcher.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
         input: PropTypes.objectOf(PropTypes.string.isRequired),
+        loader: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     className: PropTypes.string,
     textSize: PropTypes.oneOf(['small', 'medium']),
