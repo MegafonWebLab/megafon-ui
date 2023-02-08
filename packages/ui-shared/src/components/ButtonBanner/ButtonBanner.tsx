@@ -53,6 +53,8 @@ export interface IButtonBannerProps {
     buttonTarget?: ButtonTargetType;
     /** Цвет кнопки */
     buttonColor?: ButtonColorType;
+    /** Rel - атрибут тега <a> */
+    buttonRel?: string;
     /** Масштабирование изображения */
     imageScaling?: ImageScalingType;
     /** Обработчик клика по кнопке */
@@ -75,6 +77,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
     buttonDownload,
     buttonTarget = '_self',
     buttonColor = 'green',
+    buttonRel,
     imageScaling = 'cover',
     onButtonClick,
 }) => {
@@ -83,6 +86,7 @@ const ButtonBanner: React.FC<IButtonBannerProps> = ({
             dataAttrs={{ root: dataAttrs?.button }}
             className={cn('button', [classes.button])}
             href={buttonUrl}
+            rel={buttonRel}
             target={buttonTarget}
             theme={buttonColor}
             onClick={onButtonClick}
@@ -142,6 +146,7 @@ ButtonBanner.propTypes = {
     buttonDownload: PropTypes.bool,
     buttonTarget: PropTypes.oneOf(Object.values(ButtonTarget)),
     buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
+    buttonRel: PropTypes.string,
     onButtonClick: PropTypes.func,
 };
 
