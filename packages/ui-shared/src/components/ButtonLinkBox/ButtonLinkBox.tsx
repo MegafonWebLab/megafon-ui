@@ -31,12 +31,16 @@ export interface IButtonLinkBoxProps {
     buttonColor?: 'green' | 'purple';
     /** Target свойство кнопки */
     buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
+    /** Rel - атрибут тега <a> для кнопки */
+    buttonRel?: string;
     /** Заголовок ссылки */
     linkTitle?: string;
     /** Добавляет атрибут download для тега <a> компонента Button */
     linkUrl?: string;
     /** Target свойство ссылки */
     linkTarget?: '_self' | '_blank' | '_parent' | '_top';
+    /** Rel - атрибут тега <a> для ссылки */
+    linkRel?: string;
     /** Добавляет атрибут download к свойству тега <a> */
     linkDownload?: boolean;
     /** Горизонтальное выравнивание */
@@ -55,9 +59,11 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
     buttonUrl,
     buttonDownload,
     buttonColor = 'green',
+    buttonRel,
     linkTitle,
     linkUrl,
     linkDownload,
+    linkRel,
     align,
     className,
     buttonTarget,
@@ -81,6 +87,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
                     onClick={onButtonClick}
                     target={buttonTarget}
                     download={buttonDownload}
+                    rel={buttonRel}
                 >
                     {buttonTitle}
                 </Button>
@@ -95,6 +102,7 @@ const ButtonLinkBox: React.FC<IButtonLinkBoxProps> = ({
                     download={linkDownload}
                     underlineVisibility="always"
                     target={linkTarget}
+                    rel={linkRel}
                     onClick={onLinkClick}
                 >
                     {linkTitle}
@@ -124,9 +132,11 @@ ButtonLinkBox.propTypes = {
     buttonUrl: PropTypes.string,
     buttonDownload: PropTypes.bool,
     buttonColor: PropTypes.oneOf(['green', 'purple']),
+    buttonRel: PropTypes.string,
     linkTitle: PropTypes.string,
     linkUrl: PropTypes.string,
     linkDownload: PropTypes.bool,
+    linkRel: PropTypes.string,
     align: PropTypes.oneOf(['center']),
     onButtonClick: PropTypes.func,
     onLinkClick: PropTypes.func,
