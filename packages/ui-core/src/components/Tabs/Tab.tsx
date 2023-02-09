@@ -9,6 +9,8 @@ export interface ITabProps {
     icon?: React.ReactNode;
     /** Ссылка */
     href?: string;
+    /** Rel - атрибут тега <a> */
+    rel?: string;
     /** Дополнительные data атрибуты к внутренним элементам */
     dataAttrs?: {
         root?: Record<string, string>;
@@ -30,6 +32,7 @@ Tab.propTypes = {
     title: PropTypes.string,
     icon: PropTypes.node,
     href: PropTypes.string,
+    rel: PropTypes.string,
     renderTabWrapper: PropTypes.func,
 };
 
