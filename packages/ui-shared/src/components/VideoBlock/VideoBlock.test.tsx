@@ -7,6 +7,7 @@ const content: IContent = {
     title: 'Test title',
     description: 'Test description',
     buttonTitle: 'Button title',
+    buttonRel: 'nofollow',
     href: '#',
 };
 
