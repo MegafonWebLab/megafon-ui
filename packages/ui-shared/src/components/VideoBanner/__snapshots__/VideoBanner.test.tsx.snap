@@ -92,6 +92,7 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
                 theme="green"
               >
@@ -105,6 +106,7 @@ exports[`<VideoBanner /> render component with breadcrumbs 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -197,6 +199,7 @@ exports[`<VideoBanner /> render component with classes 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
                 theme="green"
               >
@@ -210,6 +213,7 @@ exports[`<VideoBanner /> render component with classes 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -334,6 +338,7 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
                 theme="purple"
               >
@@ -347,6 +352,7 @@ exports[`<VideoBanner /> render component with non default buttonColor 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -471,6 +477,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
                 theme="green"
               >
@@ -484,6 +491,7 @@ exports[`<VideoBanner /> render component with pictures and content 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -577,6 +585,7 @@ exports[`<VideoBanner /> render component with pictures and download links conte
                 }
                 download={true}
                 href="#"
+                rel="nofollow"
                 target="_blank"
                 theme="green"
               >
@@ -591,6 +600,7 @@ exports[`<VideoBanner /> render component with pictures and download links conte
                 }
                 download={true}
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -683,6 +693,7 @@ exports[`<VideoBanner /> render component with pictures and non default content 
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
                 theme="green"
               >
@@ -696,6 +707,7 @@ exports[`<VideoBanner /> render component with pictures and non default content 
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -788,6 +800,7 @@ exports[`<VideoBanner /> render component with the different content text color 
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
                 theme="green"
               >
@@ -801,6 +814,7 @@ exports[`<VideoBanner /> render component with the different content text color 
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -893,6 +907,7 @@ exports[`<VideoBanner /> render component without button 1`] = `
                   }
                 }
                 href="#"
+                rel="nofollow"
                 target="_blank"
               >
                 Личный кабинет услуги
@@ -934,10 +949,12 @@ exports[`<VideoBanner /> tests with local window render component with classes f
   content={
     Object {
       "buttonHref": "#",
+      "buttonRel": "nofollow",
       "buttonTarget": "_blank",
       "buttonTitle": "Текст в кнопке",
       "cost": "oт <b>1000 ₽</b> за сообщение",
       "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
+      "linkRel": "nofollow",
       "linkTarget": "_blank",
       "linkTitle": "Личный кабинет услуги",
       "linkUrl": "#",
@@ -1044,6 +1061,7 @@ exports[`<VideoBanner /> tests with local window render component with classes f
                               }
                             }
                             href="#"
+                            rel="nofollow"
                             target="_blank"
                             theme="green"
                           >
@@ -1052,7 +1070,7 @@ exports[`<VideoBanner /> tests with local window render component with classes f
                               disabled={false}
                               href="#"
                               onClick={[Function]}
-                              rel="noreferrer noopener"
+                              rel="nofollow"
                               target="_blank"
                             >
                               <div
@@ -1078,6 +1096,7 @@ exports[`<VideoBanner /> tests with local window render component with classes f
                               }
                             }
                             href="#"
+                            rel="nofollow"
                             target="_blank"
                           >
                             <Link
@@ -1088,11 +1107,13 @@ exports[`<VideoBanner /> tests with local window render component with classes f
                                 }
                               }
                               href="#"
+                              rel="nofollow"
                               target="_blank"
                             >
                               <a
                                 className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-video-banner__link"
                                 href="#"
+                                rel="nofollow"
                                 target="_blank"
                               >
                                 Личный кабинет услуги
@@ -1393,10 +1414,12 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
   content={
     Object {
       "buttonHref": "#",
+      "buttonRel": "nofollow",
       "buttonTarget": "_blank",
       "buttonTitle": "Текст в кнопке",
       "cost": "oт <b>1000 ₽</b> за сообщение",
       "description": "Описание должно быть примерно не более 130 символов. Пишите содержательно, кратно и не будет проблем с текстовым контентом.",
+      "linkRel": "nofollow",
       "linkTarget": "_blank",
       "linkTitle": "Личный кабинет услуги",
       "linkUrl": "#",
@@ -1503,6 +1526,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                               }
                             }
                             href="#"
+                            rel="nofollow"
                             target="_blank"
                             theme="green"
                           >
@@ -1511,7 +1535,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                               disabled={false}
                               href="#"
                               onClick={[Function]}
-                              rel="noreferrer noopener"
+                              rel="nofollow"
                               target="_blank"
                             >
                               <div
@@ -1537,6 +1561,7 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                               }
                             }
                             href="#"
+                            rel="nofollow"
                             target="_blank"
                           >
                             <Link
@@ -1547,11 +1572,13 @@ exports[`<VideoBanner /> tests with local window render with video and content 1
                                 }
                               }
                               href="#"
+                              rel="nofollow"
                               target="_blank"
                             >
                               <a
                                 className="mfui-text-link mfui-text-link_underline-visibility_hover mfui-text-link_underline-style_solid mfui-text-link_color_blue mfui-video-banner__link"
                                 href="#"
+                                rel="nofollow"
                                 target="_blank"
                               >
                                 Личный кабинет услуги

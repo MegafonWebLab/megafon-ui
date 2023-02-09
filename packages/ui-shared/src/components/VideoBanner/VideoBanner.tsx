@@ -60,6 +60,8 @@ export interface IContent {
     buttonTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Добавляет атрибут download для тега <a> компонента Button */
     buttonDownload?: boolean;
+    /** Добавляет атрибут rel для тега <a> компонента Button */
+    buttonRel?: string;
     /** Цвет кнопки */
     buttonColor?: ButtonColorType;
     /** Обработчик клика по кнопке */
@@ -78,6 +80,8 @@ export interface IContent {
     linkTarget?: '_self' | '_blank' | '_parent' | '_top';
     /** Добавляет атрибут download для тега <a> компонента TextLink */
     linkDownload?: boolean;
+    /** Добавляет атрибут rel для тега <a> компонента TextLink */
+    linkRel?: string;
     /** Строка со стоимостью услуги */
     cost?: string;
 }
@@ -160,6 +164,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
             buttonTarget,
             buttonDownload,
             buttonColor = ButtonColor.GREEN,
+            buttonRel,
             onButtonClick,
             onLinkClick,
             textColor = TextColor.BLACK,
@@ -168,6 +173,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
             linkUrl,
             linkTarget,
             linkDownload,
+            linkRel,
             cost,
         }: IContent) => (
             <Grid className={cn('grid')} guttersLeft="medium">
@@ -197,6 +203,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                                     target={buttonTarget}
                                     onClick={onButtonClick}
                                     download={buttonDownload}
+                                    rel={buttonRel}
                                 >
                                     {buttonTitle}
                                 </Button>
@@ -209,6 +216,7 @@ const VideoBanner: React.FC<IVideoBannerProps> = ({
                                     download={linkDownload}
                                     target={linkTarget}
                                     onClick={onLinkClick}
+                                    rel={linkRel}
                                 >
                                     {linkTitle}
                                 </TextLink>
@@ -341,6 +349,7 @@ VideoBanner.propTypes = {
         buttonHref: PropTypes.string,
         buttonDownload: PropTypes.bool,
         buttonColor: PropTypes.oneOf(Object.values(ButtonColor)),
+        buttonRel: PropTypes.string,
         onButtonClick: PropTypes.func,
         onLinkClick: PropTypes.func,
         textColor: PropTypes.oneOf(Object.values(TextColor)),
@@ -348,6 +357,7 @@ VideoBanner.propTypes = {
         linkTitle: PropTypes.string,
         linkUrl: PropTypes.string,
         linkDownload: PropTypes.bool,
+        linkRel: PropTypes.string,
         cost: PropTypes.string,
     }),
     isMuted: PropTypes.bool,
