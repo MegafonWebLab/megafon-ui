@@ -8,6 +8,7 @@ const cnCarousel = cnCreate('.mfui-carousel');
 const generateItems = (i, href?) =>
     Array.from({ length: i }, () => ({
         href,
+        rel: 'nofollow',
         src: '/test-src',
         alt: 'test img',
     }));

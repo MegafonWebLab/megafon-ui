@@ -8,6 +8,7 @@ export type ItemType = {
     src: string;
     href?: string;
     alt: string;
+    rel?: string;
 };
 
 export interface IPartnersProps {
@@ -69,11 +70,12 @@ const Partners: React.FC<IPartnersProps> = ({
                 return null;
             }
 
-            const { src, href, alt } = item;
+            const { src, href, alt, rel } = item;
 
             return (
                 <Tile
                     href={href}
+                    rel={rel}
                     shadowLevel="default"
                     isInteractive={!!href}
                     className={cn('tile')}
@@ -149,6 +151,7 @@ Partners.propTypes = {
     items: PropTypes.arrayOf(
         PropTypes.shape({
             href: PropTypes.string,
+            rel: PropTypes.string,
             src: PropTypes.string.isRequired,
             alt: PropTypes.string.isRequired,
         }).isRequired,

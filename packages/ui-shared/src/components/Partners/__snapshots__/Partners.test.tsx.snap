@@ -25,6 +25,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -58,6 +59,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -91,6 +93,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -124,6 +127,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -157,6 +161,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -190,6 +195,7 @@ exports[`<Partners /> checking setting of data attributes 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -246,6 +252,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -271,6 +278,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -301,6 +309,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -326,6 +335,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -356,6 +366,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -381,6 +392,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -411,6 +423,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -436,6 +449,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -466,6 +480,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -491,6 +506,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -521,6 +537,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -546,6 +563,7 @@ exports[`<Partners /> should render carousel 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -602,6 +620,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -627,6 +646,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -657,6 +677,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -682,6 +703,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -712,6 +734,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -737,6 +760,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -767,6 +791,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -792,6 +817,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -822,6 +848,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -847,6 +874,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -877,6 +905,7 @@ exports[`<Partners /> should render carousel with odd items number 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -920,6 +949,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -951,6 +981,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -982,6 +1013,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1013,6 +1045,7 @@ exports[`<Partners /> should render grid 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1055,6 +1088,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1085,6 +1119,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1115,6 +1150,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1145,6 +1181,7 @@ exports[`<Partners /> should render logotypes without href 1`] = `
           }
         }
         isInteractive={false}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1188,6 +1225,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1219,6 +1257,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1250,6 +1289,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
@@ -1281,6 +1321,7 @@ exports[`<Partners /> should render with classes props 1`] = `
         }
         href="#"
         isInteractive={true}
+        rel="nofollow"
         shadowLevel="default"
       >
         <div
