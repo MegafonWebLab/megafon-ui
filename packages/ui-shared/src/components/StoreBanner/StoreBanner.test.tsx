@@ -7,6 +7,7 @@ const props: IStoreBannerProps = {
     text: 'Text',
     linkApple: 'App Store link',
     linkGoogle: 'Google Play link',
+    rel: 'nofollow',
     deviceMask: DeviceMask.ANDROID,
     imageSrc: 'image.png',
     dataAttrs: {

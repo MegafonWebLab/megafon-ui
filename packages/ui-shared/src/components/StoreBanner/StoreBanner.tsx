@@ -46,6 +46,8 @@ export interface IStoreBannerProps {
     textButton?: string;
     /**  Ссылка для  кнопки */
     linkButton?: string;
+    /**  Rel - атрибут тега <a> для всех кнопок баннера */
+    rel?: string;
     /** Ссылка на картинку с QR-кодом */
     qrCode?: string;
     /** Цветовая тема компонента */
@@ -91,6 +93,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     linkHuawei,
     linkButton,
     textButton = 'Установите приложение',
+    rel,
     qrCode,
     imageSrc,
     theme = 'default',
@@ -126,6 +129,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                                 dataAttrs={{ root: dataAttrs?.linkApple }}
                                                 theme={StoreButtonTheme.APP_STORE}
                                                 href={linkApple}
+                                                rel={rel}
                                                 onClick={onClickApple}
                                                 className={cn('store-link', { 'app-store': true }, appleLinkClassName)}
                                             />
@@ -135,6 +139,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                                 dataAttrs={{ root: dataAttrs?.linkGoogle }}
                                                 theme={StoreButtonTheme.GOOGLE_PLAY}
                                                 href={linkGoogle}
+                                                rel={rel}
                                                 className={cn(
                                                     'store-link',
                                                     { 'google-play': true },
@@ -148,6 +153,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                                 dataAttrs={{ root: dataAttrs?.linkHuawei }}
                                                 theme={StoreButtonTheme.HUAWEI_STORE}
                                                 href={linkHuawei}
+                                                rel={rel}
                                                 className={cn(
                                                     'store-link',
                                                     { 'huawei-store': true },
@@ -163,6 +169,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                         dataAttrs={{ root: dataAttrs?.button }}
                                         className={cn('button')}
                                         href={linkButton}
+                                        rel={rel}
                                         theme={theme === 'green' ? 'purple' : 'green'}
                                     >
                                         {textButton}
@@ -194,6 +201,11 @@ StoreBanner.propTypes = {
     onClickApple: PropTypes.func,
     linkGoogle: PropTypes.string,
     onClickGoogle: PropTypes.func,
+    linkHuawei: PropTypes.string,
+    onClickHuawei: PropTypes.func,
+    textButton: PropTypes.string,
+    linkButton: PropTypes.string,
+    rel: PropTypes.string,
     qrCode: PropTypes.string,
     deviceMask: PropTypes.oneOf(Object.values(DeviceMask)).isRequired,
     imageSrc: PropTypes.string.isRequired,
