@@ -4,6 +4,7 @@ import StoreButton, { Props, Theme } from './StoreButton';
 
 const props: Props = {
     href: 'href',
+    rel: 'nofollow',
     theme: Theme.APP_STORE,
 };
 
