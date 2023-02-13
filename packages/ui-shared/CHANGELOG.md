@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.13.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.12.0...@megafon/ui-shared@4.13.0) (2023-02-13)
+
+
+### Features
+
+* **buttonbanner:** add buttonRel prop ([df2f8cd](https://github.com/MegafonWebLab/megafon-ui/commit/df2f8cd7341596114df4bd9d408fced9430d2e7e))
+* **buttonlinkbox:** add buttonRel and linkRel props ([95135a1](https://github.com/MegafonWebLab/megafon-ui/commit/95135a163db6ef84dcedd56fa8a24ec2769d40b5))
+* **card:** add rel prop ([e4f89a3](https://github.com/MegafonWebLab/megafon-ui/commit/e4f89a3990c29763acb7b53863a9ac8d199cc0fe))
+* **partners:** add rel prop ([796d76c](https://github.com/MegafonWebLab/megafon-ui/commit/796d76c5a62e7b010c4ab5a7da19c4d1b0c72deb))
+* **storebanner:** add rel prop ([3f44d31](https://github.com/MegafonWebLab/megafon-ui/commit/3f44d31c9de9844803304cd116a3be226e70d731))
+* **storebutton:** add rel prop ([087b02f](https://github.com/MegafonWebLab/megafon-ui/commit/087b02fa1f3c90a1a35dd7ac0776c021adc12204))
+* **videblock:** add buttonRel prop ([cfbab88](https://github.com/MegafonWebLab/megafon-ui/commit/cfbab88366be66f5a2457a76627ac70d40a76967))
+* **videobanner:** add linkRel and buttonRel props ([2a7269a](https://github.com/MegafonWebLab/megafon-ui/commit/2a7269ae4c28ae6d60deefdedb9aa9474a7fb2cf))
+
+
+
+
+
 # [4.12.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.11.0...@megafon/ui-shared@4.12.0) (2023-02-06)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.12.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.11.4...@megafon/ui-core@4.12.0) (2023-02-13)
+
+
+### Features
+
+* **tabs:** add rel prop ([7a4a2de](https://github.com/MegafonWebLab/megafon-ui/commit/7a4a2ded26083cc466de10c362700a6c98a38dfd))
+
+
+
+
+
 ## [4.11.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.11.3...@megafon/ui-core@4.11.4) (2023-02-06)
 
 **Note:** Version bump only for package @megafon/ui-core

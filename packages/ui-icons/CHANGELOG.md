@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.6.0...@megafon/ui-icons@2.7.0) (2023-02-13)
+
+
+### Features
+
+* **icons:** add Sber icon ([ec96954](https://github.com/MegafonWebLab/megafon-ui/commit/ec969549b76477cab793d81f4ad38aedfb6ab197))
+
+
+
+
+
 # [2.6.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.5.0...@megafon/ui-icons@2.6.0) (2023-02-06)
 
 
