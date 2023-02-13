@@ -95,9 +95,13 @@ export interface ISelectProps<T extends SelectItemValueType> {
     dataAttrs?: {
         root?: Record<string, string>;
         label?: Record<string, string>;
+        control?: Record<string, string>;
         title?: Record<string, string>;
+        titleInner?: Record<string, string>;
         input?: Record<string, string>;
         noticeText?: Record<string, string>;
+        list?: Record<string, string>;
+        listInner?: Record<string, string>;
         listItem?: Record<string, string>;
         listItemTitle?: Record<string, string>;
         notFound?: Record<string, string>;
@@ -260,6 +264,7 @@ const Select = <T extends SelectItemValueType>({
             items,
         });
 
+        e.persist();
         onSelect?.(e, item);
         onClosed?.();
     };
@@ -413,7 +418,10 @@ const Select = <T extends SelectItemValueType>({
                 tabIndex={0}
                 onClick={handleSelectClick}
             >
-                <div className={cn('title-inner', { 'hide-value': !item }, [classes?.titleInner])}>
+                <div
+                    {...filterDataAttrs(dataAttrs?.titleInner)}
+                    className={cn('title-inner', { 'hide-value': !item }, [classes?.titleInner])}
+                >
                     <div className={cn('title-value')}>{inputTitle}</div>
                     {label && renderLabel()}
                 </div>
@@ -440,8 +448,12 @@ const Select = <T extends SelectItemValueType>({
         const currentItems = type === SelectTypes.COMBOBOX ? itemsList : items;
 
         return (
-            <div className={cn('list', [classes.list])}>
-                <div className={cn('list-inner', { short: shortList }, [classes.listInner])} ref={itemWrapperNode}>
+            <div {...filterDataAttrs(dataAttrs?.list)} className={cn('list', [classes.list])}>
+                <div
+                    {...filterDataAttrs(dataAttrs?.listInner)}
+                    className={cn('list-inner', { short: shortList }, [classes.listInner])}
+                    ref={itemWrapperNode}
+                >
                     {currentItems.map(({ title, value, view, paddings = SelectItemsPaddings.LARGE }, i) => {
                         const isItemActive = currentValue === value;
 
@@ -498,7 +510,11 @@ const Select = <T extends SelectItemValueType>({
             ref={selectNode}
         >
             <div className={cn('inner')}>
-                <div className={cn('control', { labeled: !!label }, classes.control)} onKeyDown={handleKeyDown}>
+                <div
+                    {...filterDataAttrs(dataAttrs?.control)}
+                    className={cn('control', { labeled: !!label }, classes.control)}
+                    onKeyDown={handleKeyDown}
+                >
                     {type === SelectTypes.COMBOBOX && renderCombobox()}
                     {type === SelectTypes.CLASSIC && renderTitle()}
                 </div>
@@ -544,9 +560,13 @@ Select.propTypes = {
     dataAttrs: PropTypes.shape({
         root: PropTypes.objectOf(PropTypes.string.isRequired),
         label: PropTypes.objectOf(PropTypes.string.isRequired),
+        control: PropTypes.objectOf(PropTypes.string.isRequired),
         title: PropTypes.objectOf(PropTypes.string.isRequired),
+        titleInner: PropTypes.objectOf(PropTypes.string.isRequired),
         input: PropTypes.objectOf(PropTypes.string.isRequired),
         noticeText: PropTypes.objectOf(PropTypes.string.isRequired),
+        list: PropTypes.objectOf(PropTypes.string.isRequired),
+        listInner: PropTypes.objectOf(PropTypes.string.isRequired),
         listItem: PropTypes.objectOf(PropTypes.string.isRequired),
         listItemTitle: PropTypes.objectOf(PropTypes.string.isRequired),
         notFound: PropTypes.objectOf(PropTypes.string.isRequired),
