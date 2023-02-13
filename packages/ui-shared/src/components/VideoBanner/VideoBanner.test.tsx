@@ -18,9 +18,11 @@ const content: IContent = {
     buttonHref: '#',
     buttonTarget: '_blank',
     buttonTitle: 'Текст в кнопке',
+    buttonRel: 'nofollow',
     linkTitle: 'Личный кабинет услуги',
     linkUrl: '#',
     linkTarget: '_blank',
+    linkRel: 'nofollow',
     cost: 'oт <b>1000 ₽</b> за сообщение',
 };
 

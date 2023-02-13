@@ -40,6 +40,7 @@ exports[`<ButtonBanner /> should render with props 1`] = `
           }
           download={true}
           href="#"
+          rel="nofollow"
           target="_blank"
           theme="purple"
         >

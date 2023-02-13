@@ -72,6 +72,7 @@ exports[`<VideoBlock /> it renders VideoBlock with classes 1`] = `
             }
           }
           href="#"
+          rel="nofollow"
         >
           Button title
         </Button>
@@ -141,6 +142,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content 1`] = `
             }
           }
           href="#"
+          rel="nofollow"
         >
           Button title
         </Button>
@@ -211,6 +213,7 @@ exports[`<VideoBlock /> it renders VideoBlock with content and button download l
           }
           download={true}
           href="#"
+          rel="nofollow"
         >
           Button title
         </Button>
@@ -338,6 +341,7 @@ exports[`<VideoBlock /> it renders VideoBlock with contentPositionRight 1`] = `
             }
           }
           href="#"
+          rel="nofollow"
         >
           Button title
         </Button>
@@ -410,6 +414,7 @@ exports[`<VideoBlock /> it renders VideoBlock with dataAttrs 1`] = `
             }
           }
           href="#"
+          rel="nofollow"
         >
           Button title
         </Button>
@@ -820,6 +825,7 @@ exports[`<VideoBlock /> render component with html tags 1`] = `
             }
           }
           href="#"
+          rel="nofollow"
         >
           Button title
         </Button>

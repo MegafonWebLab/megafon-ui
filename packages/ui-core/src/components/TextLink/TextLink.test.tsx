@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { shallow } from 'enzyme';
+import { fireEvent, render } from '@testing-library/react';
 import TextLink, { ITextLinkProps } from './TextLink';
 
 const props: ITextLinkProps = {
@@ -15,21 +15,39 @@ const props: ITextLinkProps = {
     itemProp: 'item',
     dataAttrs: {
         root: {
-            'data-root': 'test',
+            'data-testid': 'root',
         },
     },
 };
 
 describe('<TextLink />', () => {
-    it('it renders TextLink', () => {
-        const wrapper = shallow(<TextLink {...props} />);
-        expect(wrapper).toMatchSnapshot();
+    it('should render', () => {
+        const { container } = render(<TextLink />);
+
+        expect(container).toMatchSnapshot();
     });
 
-    it('it calls onClick handler', () => {
-        const onClick = jest.fn();
-        const wrapper = shallow(<TextLink onClick={onClick} />);
-        wrapper.simulate('click');
-        expect(onClick.mock.calls).toHaveLength(1);
+    it('should render with props', () => {
+        const { getByTestId } = render(<TextLink {...props} />);
+        const link = getByTestId('root');
+
+        expect(link).toHaveAttribute('download');
+        expect(link).toHaveClass(props.className as string);
+        expect(link).toHaveAttribute('rel', props.rel);
+        expect(link).toContainHTML(props.children as string);
+        expect(link).toHaveAttribute('href', props.href);
+        expect(link).toHaveClass('mfui-text-link_color_white');
+        expect(link).toHaveAttribute('target', props.target);
+        expect(link).toHaveAttribute('itemProp', props.itemProp);
+        expect(link).toHaveClass('mfui-text-link_underline-style_solid');
+        expect(link).toHaveClass('mfui-text-link_underline-visibility_hover');
+    });
+
+    it('should call onClick', () => {
+        const mockOnClick = jest.fn();
+        const { getByText } = render(<TextLink onClick={mockOnClick}>Link</TextLink>);
+
+        fireEvent.click(getByText('Link'));
+        expect(mockOnClick).toBeCalled();
     });
 });
