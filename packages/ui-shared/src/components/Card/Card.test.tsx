@@ -10,6 +10,7 @@ const button = {
     title: 'Подробнее',
     href: '#',
     target: Target.BLANK,
+    rel: 'nofollow',
 };
 const fakeLink = {
     title: 'Подключить',
@@ -18,6 +19,7 @@ const link = {
     ...fakeLink,
     href: '#',
     target: Target.SELF,
+    rel: 'nofollow',
 };
 const svg = <WiFi style={{ display: 'block', fill: '#00B956' }} />;
 const classes = { root: 'rootClass', button: 'buttonClass', link: 'linkClass', inner: 'innerClass' };

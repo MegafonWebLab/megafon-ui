@@ -28,6 +28,10 @@ export const TabColorTheme = {
 type TabSizeType = typeof TabSize[keyof typeof TabSize];
 type TabColorThemeType = typeof TabColorTheme[keyof typeof TabColorTheme];
 type TabAlignType = typeof TabAlign[keyof typeof TabAlign];
+type RenderTabType = (
+    params: Pick<ITabProps, 'title' | 'icon' | 'href' | 'rel'> & { attr?: Record<string, string> },
+    index: number,
+) => JSX.Element;
 
 export interface ITabsProps {
     /** Дополнительный класс для корневого элемента */
@@ -257,13 +261,14 @@ const Tabs: React.FC<ITabsProps> = ({
         rootRefNode && intersectionObserverRef.current?.unobserve(outerObserveContainer || rootRefNode);
     }, [outerObserveContainer]);
 
-    const renderTab = React.useCallback(
-        (index: number, title?: string, icon?: React.ReactNode, href?: string, attr?: Record<string, string>) => {
+    const renderTab: RenderTabType = React.useCallback(
+        ({ title, icon, href, rel, attr }, index) => {
             const ElementType = href ? 'a' : 'div';
 
             return (
                 <ElementType
                     href={href}
+                    rel={rel}
                     className={cn('tab-inner', {
                         current: currentIndex === index,
                         'with-icon': !!icon,
@@ -283,9 +288,9 @@ const Tabs: React.FC<ITabsProps> = ({
         () =>
             React.Children.map(children, (child, i) => {
                 const {
-                    props: { title, icon, href, renderTabWrapper, dataAttrs: data },
+                    props: { title, icon, href, rel, renderTabWrapper, dataAttrs: data },
                 } = child;
-                const tab = renderTab(i, title, icon, href, data?.inner);
+                const tab = renderTab({ title, icon, href, rel, attr: data?.inner }, i);
 
                 const activeTabClassName = currentIndex === i ? classes?.activeTab : undefined;
 

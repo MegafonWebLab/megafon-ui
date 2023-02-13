@@ -82,6 +82,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -94,6 +95,7 @@ exports[`Card disable left align if there is a button and link 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить
@@ -141,6 +143,7 @@ exports[`Card left align of the interactive element 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить
@@ -191,6 +194,7 @@ exports[`Card render component with icon 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -203,6 +207,7 @@ exports[`Card render component with icon 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить
@@ -250,6 +255,7 @@ exports[`Card render component with img, if image source and svg source are spec
           }
         }
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -262,6 +268,7 @@ exports[`Card render component with img, if image source and svg source are spec
           }
         }
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить
@@ -349,6 +356,7 @@ exports[`Card render component with optional props 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -363,6 +371,7 @@ exports[`Card render component with optional props 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить
@@ -430,6 +439,7 @@ exports[`Card render with a single interactive button element 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -480,6 +490,7 @@ exports[`Card render with a single interactive link element 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить
@@ -519,6 +530,7 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
         }
         download={true}
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -532,6 +544,7 @@ exports[`Card render with attribute "download" for <Button> and <Textlink> 1`] =
         }
         download={true}
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить
@@ -579,6 +592,7 @@ exports[`Card render with contain object fit 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -684,6 +698,7 @@ exports[`Card render without img and svg 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_blank"
       >
         Подробнее
@@ -696,6 +711,7 @@ exports[`Card render without img and svg 1`] = `
           }
         }
         href="#"
+        rel="nofollow"
         target="_self"
       >
         Подключить

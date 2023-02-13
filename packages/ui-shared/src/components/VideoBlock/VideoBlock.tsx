@@ -13,6 +13,8 @@ export interface IContent {
     buttonTitle?: string;
     /** Добавляет атрибут download для тега <a> компонента Button */
     buttonDownload?: boolean;
+    /** Добавляет атрибут rel для тега <a> компонента Button */
+    buttonRel?: string;
     /** Ссылка на кнопке */
     href?: string;
     /** Обработчик клика по кнопке */
@@ -133,7 +135,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
     }, [videoType, videoSrc, isAutoplay, isMuted, poster, playsinline, fixWhiteVideoBackground]);
 
     const renderContent = React.useCallback(
-        ({ title, description, href, buttonDownload, buttonTitle, onButtonClick }: IContent) => (
+        ({ title, description, href, buttonDownload, buttonTitle, buttonRel, onButtonClick }: IContent) => (
             <div
                 className={cn('content', {
                     'position-right': contentPositionRight,
@@ -152,6 +154,7 @@ const VideoBlock: React.FC<IVideoBlockProps> = ({
                         href={href}
                         onClick={onButtonClick}
                         download={buttonDownload}
+                        rel={buttonRel}
                     >
                         {buttonTitle}
                     </Button>
@@ -231,6 +234,7 @@ VideoBlock.propTypes = {
         href: PropTypes.string,
         buttonTitle: PropTypes.string,
         buttonDownload: PropTypes.bool,
+        buttonRel: PropTypes.string,
         onButtonClick: PropTypes.func,
     }),
     videoType: PropTypes.oneOf(Object.values(VideoTypes)),

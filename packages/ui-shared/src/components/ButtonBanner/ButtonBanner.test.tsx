@@ -28,6 +28,7 @@ const props: IButtonBannerProps = {
     buttonDownload: true,
     buttonTarget: ButtonTarget.BLANK,
     buttonColor: ButtonColor.PURPLE,
+    buttonRel: 'nofollow',
     imageScaling: ImageScaling.CONTAIN,
 };
 

@@ -66,6 +66,7 @@ describe('<Tabs />', () => {
                     title="title 1"
                     icon={<Balance />}
                     href="www.test.com"
+                    rel="nofollow"
                     dataAttrs={{ root: { 'data-testid': 'root' }, inner: { 'data-testid': 'inner' } }}
                 >
                     1

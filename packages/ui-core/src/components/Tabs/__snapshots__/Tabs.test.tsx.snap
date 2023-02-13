@@ -144,6 +144,7 @@ exports[`<Tabs /> should render with props 1`] = `
               data-testid="inner[1]"
               href="www.test.com"
               onClick={[Function]}
+              rel="nofollow"
             >
               <div
                 className="mfui-tabs__tab-icon"
