@@ -1,385 +1,499 @@
 import * as React from 'react';
-import { cnCreate, detectTouch } from '@megafon/ui-helpers';
-import Balance from '@megafon/ui-icons/basic-24-balance_24.svg';
-import { shallow, mount } from 'enzyme';
-import InputMask from 'react-input-mask';
-import TextField, { MinTextareaHeight, TextFieldProps, Verification } from './TextField';
+import { act, fireEvent, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import TextField, { TextareaTypes } from './TextField';
 
-jest.mock('@megafon/ui-helpers', () => ({
-    ...jest.requireActual('@megafon/ui-helpers'),
-    detectTouch: jest.fn().mockReturnValue(false),
-}));
-
-const commonFieldProps = {
-    disabled: true,
-    id: 'id',
-    name: 'name',
-    placeholder: 'placeholder',
-    required: true,
-    maxLength: 4,
-    onBlur: jest.fn(),
-    onFocus: jest.fn(),
-    onKeyUp: jest.fn(),
-};
-
-const commonProps = {
-    theme: 'white' as const,
-    label: 'label',
-    id: 'id',
-    required: true,
-    noticeText: 'noticeText',
+const props = {
+    className: 'test-class',
+    dataAttrs: {
+        root: { 'data-testid': 'root' },
+        input: { 'data-testid': 'input' },
+        label: { 'data-testid': 'label' },
+        notice: { 'data-testid': 'notice' },
+        iconBox: { 'data-testid': 'iconBox' },
+        resizer: { 'data-testid': 'resizer' },
+    },
     classes: {
         label: 'labelClass',
         input: 'inputClass',
     },
-    className: 'customClass',
-    disableEnterLineBreak: true,
-    minTextareaHeight: MinTextareaHeight.ONE_ROW,
-};
-
-const dataAttrs: TextFieldProps['dataAttrs'] = {
-    root: {
-        'data-test': 'test',
-    },
-    label: {
-        'data-test': 'test',
-    },
-    notice: {
-        'data-test': 'test',
-    },
-    input: {
-        'data-test': 'test',
-    },
-    iconBox: {
-        'data-test': 'test',
-    },
-};
-
-const cn = cnCreate('.mfui-text-field');
-const selectors = {
-    iconBox: cn('icon-box'),
-    input: 'input',
-    textarea: 'textarea',
-};
-
-const mockUserAgentAsTrident = () => {
-    jest.spyOn(window.navigator, 'userAgent', 'get').mockReturnValue('trident/');
-};
-
-const testCommonCases = (selector: string, textarea = false) => {
-    it('should render with string value', () => {
-        const wrapper = shallow(<TextField {...commonFieldProps} value="value" textarea={textarea} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with number value', () => {
-        const wrapper = shallow(<TextField {...commonFieldProps} value={1234} textarea={textarea} />);
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with value after updating string prop', () => {
-        const wrapper = mount(<TextField {...commonFieldProps} value="value" textarea={textarea} />);
-
-        wrapper.setProps({ value: 'newValue' });
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with value after updating number prop', () => {
-        const wrapper = mount(<TextField {...commonFieldProps} value={1234} textarea={textarea} />);
-
-        wrapper.setProps({ value: 5678 });
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render with ie placeholder', () => {
-        mockUserAgentAsTrident();
-
-        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} />);
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render without ie placeholder when value is passed', () => {
-        mockUserAgentAsTrident();
-
-        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} value="value" />);
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should render without placeholder with hidePlaceholder prop', () => {
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} hidePlaceholder />);
-
-        expect(wrapper).toMatchSnapshot();
-    });
-
-    it('should call inputRef with node', () => {
-        const inputRefMock = jest.fn();
-        const wrapper = mount(<TextField {...commonFieldProps} textarea={textarea} inputRef={inputRefMock} />);
-        const field = wrapper.find(selector).getDOMNode();
-
-        expect(inputRefMock).toBeCalledWith(field);
-    });
-
-    it('should call value change handler', () => {
-        const onChangeMock = jest.fn();
-        const value = 'newValue';
-        const event = { target: { value } };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onChange={onChangeMock} />);
-
-        wrapper.find(selector).simulate('change', event);
-
-        expect(onChangeMock).toBeCalledWith(event);
-        expect(wrapper.find(selector).prop('value')).toEqual(value);
-    });
-
-    it('should call onBlur', () => {
-        const onBlurMock = jest.fn();
-        const value = 'newValue';
-        const event = { target: { value } };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onBlur={onBlurMock} />);
-
-        wrapper.find(selector).simulate('blur', event);
-
-        expect(onBlurMock).toBeCalledWith(event);
-    });
-
-    it('should call onFocus', () => {
-        const onFocusMock = jest.fn();
-        const value = 'newValue';
-        const event = { target: { value } };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onFocus={onFocusMock} />);
-
-        wrapper.find(selector).simulate('focus', event);
-
-        expect(onFocusMock).toBeCalledWith(event);
-    });
-
-    it('should call onKeyUp', () => {
-        const onKeyUpMock = jest.fn();
-        const event = { target: {} };
-        const wrapper = shallow(<TextField {...commonFieldProps} textarea={textarea} onKeyUp={onKeyUpMock} />);
-
-        wrapper.find(selector).simulate('keyup', event);
-
-        expect(onKeyUpMock).toBeCalledWith(event);
-    });
-
-    it("shouldn't change component inputValue state via input change when controlled", () => {
-        const target = { target: { value: 'something' } };
-        const wrapper = shallow(<TextField {...commonFieldProps} value="value" textarea={textarea} isControlled />);
-
-        wrapper.find(selector).simulate('change', target);
-
-        expect(wrapper.find(selector).prop('value')).toEqual('value');
-    });
-
-    it('should change component inputValue state via value prop update when controlled', () => {
-        const wrapper = mount(<TextField {...commonFieldProps} value="value" textarea={textarea} isControlled />);
-
-        wrapper.setProps({ value: 'something' });
-        wrapper.update();
-
-        expect(wrapper.find(selector).prop('value')).toEqual('something');
-    });
+    id: 'id',
+    name: 'name',
+    placeholder: 'placeholder',
+    value: 'value',
+    maxLength: 5,
 };
 
 describe('<TextField />', () => {
-    afterEach(() => {
-        jest.resetAllMocks();
-        jest.restoreAllMocks();
+    describe('props that are not related to the display of fields and work the same regardless of field mode:', () => {
+        describe('label', () => {
+            it('should render with label', () => {
+                const { getByTestId } = render(<TextField {...props} label="label" />);
+                const label = getByTestId('label');
+
+                expect(label).toMatchSnapshot();
+                expect(label).toHaveAttribute('for', props.id);
+            });
+
+            it('should render with value of default placeholder for field with type="text"', () => {
+                const { getByTestId } = render(<TextField {...props} placeholder={undefined} />);
+
+                expect(getByTestId('label').innerHTML).toEqual('Текст');
+            });
+
+            it('should render with value of placeholder prop', () => {
+                const { getByTestId } = render(<TextField {...props} placeholder={props.placeholder} />);
+
+                expect(getByTestId('label').innerHTML).toEqual(props.placeholder);
+            });
+
+            it('should render label of required field', () => {
+                const { getByTestId } = render(<TextField {...props} label="label" required />);
+
+                expect(getByTestId('label')).toMatchSnapshot();
+            });
+
+            it('should render with class from classes', () => {
+                const { getByTestId } = render(<TextField {...props} label="label" />);
+
+                expect(getByTestId('label')).toHaveClass(props.classes.label);
+            });
+        });
+
+        describe('noticeText', () => {
+            it('should render with noticeText', () => {
+                const { getByTestId } = render(<TextField {...props} noticeText="noticeText" />);
+                const noticeNode = getByTestId('notice');
+
+                expect(noticeNode).toMatchSnapshot();
+                expect(noticeNode).toHaveClass('mfui-text-field__notice-text_active');
+                expect(getByTestId('root').lastElementChild).toHaveClass(
+                    'mfui-text-field__field-bottom-wrapper_filled',
+                );
+            });
+
+            it('should rewrite noticeText after rerender', () => {
+                const noticeText = 'noticeText';
+                const newNoticeText = 'newNoticeText';
+                const { queryByText, rerender } = render(<TextField {...props} noticeText={noticeText} />);
+
+                expect(queryByText(noticeText)).toBeInTheDocument();
+
+                rerender(<TextField {...props} noticeText={newNoticeText} />);
+
+                expect(queryByText(noticeText)).not.toBeInTheDocument();
+                expect(queryByText(newNoticeText)).toBeInTheDocument();
+            });
+        });
+
+        describe('verification', () => {
+            it('should render with valid verification', () => {
+                const { getByTestId } = render(<TextField {...props} verification="valid" />);
+
+                expect(getByTestId('root')).toHaveClass('mfui-text-field_valid');
+            });
+
+            it('should render with valid verification and disabled', () => {
+                const { getByTestId } = render(<TextField {...props} verification="valid" disabled />);
+
+                expect(getByTestId('root')).not.toHaveClass('mfui-text-field_valid');
+            });
+
+            it('should render with error verification', () => {
+                const { getByTestId } = render(<TextField {...props} verification="error" />);
+
+                expect(getByTestId('root')).toHaveClass('mfui-text-field_error');
+            });
+
+            it('should render with error verification and disabled', () => {
+                const { getByTestId } = render(<TextField {...props} verification="error" disabled />);
+
+                expect(getByTestId('root')).not.toHaveClass('mfui-text-field_error');
+            });
+        });
+
+        it('should render with theme', () => {
+            const { getByTestId } = render(<TextField {...props} theme="white" />);
+
+            expect(getByTestId('root')).toHaveClass('mfui-text-field_theme_white');
+        });
+
+        it('should render with className', () => {
+            const { getByTestId } = render(<TextField {...props} />);
+
+            expect(getByTestId('root')).toHaveClass(props.className);
+        });
+
+        it('should render with dataAttrs', () => {
+            const { getByTestId } = render(<TextField {...props} label="label" noticeText="text" />);
+
+            expect(getByTestId('root')).toBeInTheDocument();
+            expect(getByTestId('input')).toBeInTheDocument();
+            expect(getByTestId('label')).toBeInTheDocument();
+            expect(getByTestId('notice')).toBeInTheDocument();
+        });
     });
 
-    it('should render with default props', () => {
-        const wrapper = shallow(<TextField value="" />);
+    describe('common props for all input modes', () => {
+        it('should render disabled field', () => {
+            const { getByTestId } = render(<TextField {...props} disabled />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
+            expect(getByTestId('root')).toHaveClass('mfui-text-field_disabled');
+            expect(getByTestId('input')).toHaveAttribute('disabled');
+        });
 
-    it('should render with common props', () => {
-        const wrapper = shallow(<TextField {...dataAttrs} {...commonProps} value="" />);
+        it('should render required field', () => {
+            const { getByTestId } = render(<TextField {...props} required />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
+            expect(getByTestId('input')).toHaveAttribute('required');
+        });
 
-    it('should render with valid', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.VALID} />);
+        it('should render with name', () => {
+            const { getByTestId } = render(<TextField {...props} name={props.name} />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
+            expect(getByTestId('input')).toHaveAttribute('name', props.name);
+        });
 
-    it('should render disabled field with valid', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.VALID} disabled />);
+        it('should render with hidePlaceholder props', () => {
+            const { getByTestId } = render(<TextField {...props} placeholder={props.placeholder} hidePlaceholder />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
+            expect(getByTestId('input')).toHaveAttribute('placeholder', ' ');
+        });
 
-    it('should render with error', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.ERROR} />);
+        it('should render with placeholder', () => {
+            const { getByTestId } = render(<TextField {...props} placeholder={props.placeholder} />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
+            expect(getByTestId('input')).toHaveAttribute('placeholder', props.placeholder);
+        });
 
-    it('should render disabled field with error', () => {
-        const wrapper = shallow(<TextField {...commonProps} verification={Verification.ERROR} disabled />);
+        it('should render with id', () => {
+            const { getByTestId } = render(<TextField {...props} id={props.id} />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
+            expect(getByTestId('input')).toHaveAttribute('id', props.id);
+        });
 
-    it('should render with custom icon', () => {
-        const wrapper = shallow(<TextField {...commonProps} customIcon={<Balance />} />);
+        it('should render with maxLength prop', () => {
+            const { getByTestId } = render(<TextField {...props} maxLength={props.maxLength} />);
 
-        expect(wrapper).toMatchSnapshot();
-    });
+            expect(getByTestId('input')).toHaveAttribute('maxLength', String(props.maxLength));
+        });
 
-    it('should render with hidden icon', () => {
-        const wrapper = shallow(<TextField {...commonProps} hideIcon customIcon={<Balance />} />);
+        it('should render with inputMode prop', () => {
+            const { getByTestId } = render(<TextField {...props} inputMode="tel" />);
 
-        expect(wrapper).toMatchSnapshot();
+            expect(getByTestId('input')).toHaveAttribute('inputmode', 'tel');
+        });
+
+        describe('value', () => {
+            it('should render with value', () => {
+                const { getByTestId } = render(<TextField {...props} value={props.value} />);
+
+                expect(getByTestId('input')).toHaveAttribute('value', props.value);
+            });
+
+            it('should update value after rerender', () => {
+                const newValue = 'newValue';
+                const { getByTestId, rerender } = render(<TextField {...props} value={props.value} />);
+                const input = getByTestId('input');
+
+                expect(input).toHaveAttribute('value', props.value);
+
+                rerender(<TextField {...props} value={newValue} />);
+
+                expect(input).toHaveAttribute('value', newValue);
+            });
+
+            it('should change value', () => {
+                const newValue = 'newValue';
+                const { getByTestId } = render(<TextField {...props} value={props.value} />);
+                const input = getByTestId('input');
+
+                expect(input).toHaveAttribute('value', props.value);
+
+                fireEvent.change(input, { target: { value: newValue } });
+
+                expect(input).toHaveAttribute('value', newValue);
+            });
+
+            it('should render with value and isControlled props', () => {
+                const { getByTestId } = render(<TextField {...props} isControlled value={props.value} />);
+
+                expect(getByTestId('input')).toHaveAttribute('value', props.value);
+            });
+
+            it('should not change value', () => {
+                const newValue = 'newValue';
+                const { getByTestId } = render(<TextField {...props} isControlled value={props.value} />);
+                const input = getByTestId('input');
+
+                expect(input).toHaveAttribute('value', props.value);
+
+                fireEvent.change(input, { target: { value: newValue } });
+
+                expect(input).toHaveAttribute('value', props.value);
+            });
+        });
+
+        describe('handlers', () => {
+            it('should call onChange', () => {
+                const mockOnChange = jest.fn();
+                const { getByTestId } = render(<TextField {...props} onChange={mockOnChange} />);
+
+                fireEvent.change(getByTestId('input'), { target: { value: 'newValue' } });
+                expect(mockOnChange).toBeCalledWith(expect.any(Object));
+            });
+
+            it('should call onBlur', () => {
+                const mockOnBlur = jest.fn();
+                const { getByTestId } = render(<TextField {...props} onBlur={mockOnBlur} />);
+
+                fireEvent.blur(getByTestId('input'));
+                expect(mockOnBlur).toBeCalledWith(expect.any(Object));
+            });
+
+            it('should call onFocus', () => {
+                const mockOnFocus = jest.fn();
+                const { getByTestId } = render(<TextField {...props} onFocus={mockOnFocus} />);
+
+                fireEvent.focus(getByTestId('input'));
+                expect(mockOnFocus).toBeCalledWith(expect.any(Object));
+            });
+
+            it('should call onKeyUp', () => {
+                const mockOnKeyUp = jest.fn();
+                const { getByTestId } = render(<TextField {...props} onKeyUp={mockOnKeyUp} />);
+
+                fireEvent.keyUp(getByTestId('input'));
+                expect(mockOnKeyUp).toBeCalledWith(expect.any(Object));
+            });
+        });
     });
 
     describe('input', () => {
-        testCommonCases(selectors.input);
+        it('should render input', () => {
+            const { container } = render(<TextField />);
+
+            expect(container).toMatchSnapshot();
+        });
+
+        it('should render with not default type props', () => {
+            const { getByTestId } = render(<TextField {...props} type="email" />);
+
+            expect(getByTestId('input')).toHaveAttribute('type', 'email');
+        });
+
+        it('should render with type="password"', () => {
+            const { getByTestId } = render(<TextField {...props} type="password" />);
+
+            expect(getByTestId('root')).toHaveClass('mfui-text-field_icon mfui-text-field_password');
+            expect(getByTestId('iconBox')).toHaveClass('mfui-text-field__icon-box_password');
+        });
+
+        it('should render with type="password" and change visibility password', () => {
+            const { getByTestId } = render(<TextField {...props} type="password" />);
+            const input = getByTestId('input');
+
+            expect(input).toHaveAttribute('type', 'password');
+
+            fireEvent.click(getByTestId('iconBox'));
+
+            expect(input).toHaveAttribute('type', 'text');
+        });
+
+        it('should render with hideIcon', () => {
+            const { getByTestId, queryByTestId } = render(<TextField {...props} hideIcon />);
+
+            expect(queryByTestId('iconBox')).not.toBeInTheDocument();
+            expect(getByTestId('input')).toHaveClass('mfui-text-field__field_no-icon');
+            expect(getByTestId('root')).not.toHaveClass('mfui-text-field_icon');
+        });
+
+        it('should render with error verification', () => {
+            const { getByTestId } = render(<TextField {...props} verification="error" />);
+
+            expect(getByTestId('iconBox')).toHaveClass('mfui-text-field__icon-box_error');
+        });
+
+        it('should render with customIcon', () => {
+            const { getByTestId } = render(<TextField {...props} customIcon={<div className="icon" />} />);
+
+            expect(getByTestId('iconBox')).toMatchSnapshot();
+            expect(getByTestId('root')).toHaveClass('mfui-text-field_icon');
+        });
 
         it('should render with mask', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} mask="+7 (999) 999-99-99" maskChar="_" />);
-            expect(wrapper).toMatchSnapshot();
+            const { getByTestId } = render(<TextField {...props} maxLength={undefined} mask="+7 (999) 999-99-99" />);
+
+            expect(getByTestId('input')).toMatchSnapshot();
         });
 
-        it('should render with type', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} type="tel" />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with maskChar', () => {
+            const { getByTestId } = render(
+                <TextField {...props} maxLength={undefined} mask="+7 (999) 999-99-99" maskChar="-" />,
+            );
+
+            expect(getByTestId('input')).toMatchSnapshot();
         });
 
-        it('should render with inputmode', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} inputMode="numeric" />);
-            expect(wrapper).toMatchSnapshot();
+        it('should render with class from classes', () => {
+            const { getByTestId } = render(<TextField {...props} />);
+
+            expect(getByTestId('input')).toHaveClass(props.classes.input);
+        });
+
+        it('should render with data-testid', () => {
+            const { getByTestId } = render(<TextField {...props} />);
+
+            expect(getByTestId('iconBox')).toBeInTheDocument();
         });
 
         it('should render with autoComplete', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} autoComplete="tel" />);
-            expect(wrapper).toMatchSnapshot();
+            const autoComplete = 'autoComplete';
+            const { getByTestId } = render(<TextField autoComplete={autoComplete} {...props} />);
+
+            expect(getByTestId('input')).toHaveAttribute('autocomplete', autoComplete);
         });
 
-        it('should render with hidden password', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} value="value" type="password" />);
-            expect(wrapper).toMatchSnapshot();
-        });
+        describe('handlers', () => {
+            it('should call onCustomIconClick', () => {
+                const mockOnCustomIconClick = jest.fn();
+                const { getByTestId } = render(<TextField {...props} onCustomIconClick={mockOnCustomIconClick} />);
+                const iconBox = getByTestId('iconBox');
 
-        it('should render with visible password', () => {
-            const wrapper = shallow(<TextField {...commonFieldProps} value="value" type="password" />);
+                fireEvent.click(iconBox);
+                expect(mockOnCustomIconClick).toHaveBeenCalled();
+                expect(iconBox).toHaveClass('mfui-text-field__icon-box_custom-handler');
+            });
 
-            wrapper.find(selectors.iconBox).simulate('click');
+            it('should call onBeforeMaskChange', () => {
+                const mockOnBeforeMaskChange = jest.fn((value, newState) => {
+                    const { value: newMaskedValue } = newState;
+                    const isValuePasted = value && value.length > 1;
 
-            expect(wrapper).toMatchSnapshot();
-        });
+                    return { ...newState, value: isValuePasted ? value : newMaskedValue };
+                });
+                const { getByTestId } = render(
+                    <TextField
+                        dataAttrs={props.dataAttrs}
+                        mask="+7 (999) 999-99-99"
+                        onBeforeMaskChange={mockOnBeforeMaskChange}
+                    />,
+                );
 
-        it('should render without no-touch class', () => {
-            (detectTouch as jest.Mock).mockReturnValueOnce(true);
+                act(() => {
+                    userEvent.type(getByTestId('input'), '3');
+                });
 
-            const wrapper = mount(<TextField {...commonFieldProps} />);
-
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should clear input after icon click', () => {
-            const wrapper = shallow(
-                <TextField {...commonFieldProps} value="value" verification={Verification.ERROR} disabled={false} />,
-            );
-
-            wrapper.find(selectors.iconBox).simulate('click');
-
-            expect(wrapper.find(selectors.input).prop('value')).toEqual('');
-        });
-
-        it('should call onCustomIconClick after icon click', () => {
-            const onCustomIconClickMock = jest.fn();
-            const target = { target: {} };
-            const wrapper = shallow(
-                <TextField
-                    {...commonFieldProps}
-                    value="value"
-                    customIcon={<Balance />}
-                    onCustomIconClick={onCustomIconClickMock}
-                />,
-            );
-
-            wrapper.find(selectors.iconBox).simulate('click', target);
-
-            expect(onCustomIconClickMock).toBeCalledWith(target);
-        });
-
-        it("shouldn't clear inputValue state via custom icon click when controlled", () => {
-            const wrapper = shallow(
-                <TextField
-                    {...commonFieldProps}
-                    value="value"
-                    customIcon={<Balance />}
-                    verification={Verification.ERROR}
-                    onCustomIconClick={jest.fn()}
-                />,
-            );
-
-            wrapper.find(selectors.iconBox).simulate('click');
-
-            expect(wrapper.find('input').prop('value')).toEqual('value');
-        });
-
-        it('should call onBeforeMaskChange callback on masked input change with correct args', () => {
-            const onBeforeMaskChange = jest.fn();
-
-            const nextState = { value: 'some_value', selection: { start: 3, end: 4 } };
-            const prevState = { value: 'some_new_value', selection: { start: 3, end: 6 } };
-
-            const wrapper = shallow(
-                <TextField
-                    {...commonFieldProps}
-                    mask="+7 (999) 999-99-99"
-                    maskChar="_"
-                    onBeforeMaskChange={onBeforeMaskChange}
-                />,
-            );
-
-            const inputElementProps = wrapper.find('InputElement').props() as React.ComponentProps<typeof InputMask>;
-            inputElementProps.beforeMaskedValueChange &&
-                inputElementProps.beforeMaskedValueChange(nextState, prevState, 'h');
-
-            expect(onBeforeMaskChange).toBeCalledWith('h', nextState, prevState);
+                expect(mockOnBeforeMaskChange).toBeCalledWith(
+                    null,
+                    { selection: { end: 4, start: 4 }, value: '+7 (___) ___-__-__' },
+                    { selection: null, value: '' },
+                );
+                expect(mockOnBeforeMaskChange).toBeCalledWith(
+                    '3',
+                    { selection: { end: 5, start: 5 }, value: '+7 (3__) ___-__-__' },
+                    { selection: { end: 4, length: 0, start: 4 }, value: '+7 (___) ___-__-__' },
+                );
+                expect(mockOnBeforeMaskChange).toBeCalledWith(
+                    null,
+                    { selection: { end: 5, start: 5 }, value: '+7 (3__) ___-__-__' },
+                    { selection: { end: 5, length: 0, start: 5 }, value: '+7 (3__) ___-__-__' },
+                );
+            });
         });
     });
 
     describe('textarea', () => {
-        testCommonCases(selectors.textarea, true);
+        it('should render default textarea', () => {
+            const { getByTestId } = render(<TextField {...props} textarea />);
+            const textarea = getByTestId('input');
 
-        it('should render fixed textarea', () => {
-            const wrapper = shallow(<TextField {...commonProps} textarea />);
-
-            expect(wrapper).toMatchSnapshot();
+            expect(textarea).toMatchSnapshot();
         });
 
         it('should render flexible textarea', () => {
-            const wrapper = shallow(<TextField {...commonProps} textarea="flexible" />);
+            const { getByTestId } = render(<TextField {...props} textarea="flexible" />);
+            const textarea = getByTestId('input');
 
-            expect(wrapper).toMatchSnapshot();
+            expect(textarea).toHaveClass(
+                'mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible',
+            );
         });
 
-        it('should render flexible textarea without resize button', () => {
-            const wrapper = shallow(<TextField {...commonProps} textarea="flexible" hideResizeButton />);
+        it('should render flexible textarea with "resized" modifier', () => {
+            const { getByTestId } = render(<TextField {...props} textarea="flexible" />);
 
-            expect(wrapper).toMatchSnapshot();
+            fireEvent.mouseDown(getByTestId('resizer'), { clientY: 100 });
+            expect(getByTestId('input')).toHaveClass(
+                'mfui-text-field__field_type_flexible mfui-text-field__field_textarea_flexible mfui-text-field__field_resized',
+            );
         });
 
-        it('should render with error because of max limit is exceeded', () => {
-            const value = '123456';
-            const event = { target: { value } };
-            const wrapper = shallow(<TextField {...commonProps} textarea symbolCounter={4} />);
+        it('should render with class from classes', () => {
+            const { getByTestId } = render(<TextField textarea {...props} />);
 
-            wrapper.find('textarea').simulate('change', event);
-            wrapper.update();
+            expect(getByTestId('input')).toHaveClass(props.classes.input);
+        });
 
-            expect(wrapper).toMatchSnapshot();
+        describe('hideResizeButton', () => {
+            it('should render with resize button', () => {
+                const { getByTestId } = render(<TextField textarea={TextareaTypes.FLEXIBLE} {...props} />);
+
+                expect(getByTestId('input').closest('div')?.lastElementChild).toMatchSnapshot();
+            });
+
+            it('should render without resize button', () => {
+                const { getByTestId } = render(
+                    <TextField textarea={TextareaTypes.FLEXIBLE} hideResizeButton {...props} />,
+                );
+
+                expect(getByTestId('input').closest('div')?.lastElementChild).toMatchSnapshot();
+            });
+        });
+
+        describe('symbolCounter', () => {
+            it('should render with no limit without symbolCounter', () => {
+                const { getByTestId } = render(<TextField {...props} textarea />);
+
+                fireEvent.change(getByTestId('input'), { target: { value: 'anyLineSize' } });
+
+                expect(getByTestId('root')?.lastElementChild).not.toHaveClass(
+                    'mfui-text-field__field-bottom-wrapper_filled',
+                );
+            });
+
+            it('should render with symbolCounter and no over limit', () => {
+                const symbolCounter = 10;
+                const { getByTestId } = render(<TextField {...props} textarea symbolCounter={symbolCounter} />);
+                const rootNode = getByTestId('root');
+                const symbolCounterNode = rootNode.lastElementChild?.lastElementChild;
+
+                expect(symbolCounterNode).toMatchSnapshot();
+                expect(rootNode.lastElementChild).toHaveClass('mfui-text-field__field-bottom-wrapper_filled');
+                expect(symbolCounterNode?.innerHTML).toEqual(`${props.value.length}/${symbolCounter}`);
+            });
+
+            it('should render with symbolCounter and limit exceeded by render', () => {
+                const symbolCounter = 3;
+                const { getByTestId } = render(<TextField {...props} textarea symbolCounter={symbolCounter} />);
+                const rootNode = getByTestId('root');
+                const symbolCounterNode = rootNode.lastElementChild?.lastElementChild;
+
+                expect(rootNode).toHaveClass('mfui-text-field_error');
+                expect(symbolCounterNode).toHaveClass('mfui-text-field__counter_error');
+            });
+
+            it('should render with symbolCounter and limit exceeded by change', () => {
+                const symbolCounter = 10;
+                const { getByTestId } = render(<TextField {...props} textarea symbolCounter={symbolCounter} />);
+                const rootNode = getByTestId('root');
+                const symbolCounterNode = rootNode.lastElementChild?.lastElementChild;
+
+                fireEvent.change(getByTestId('input'), { target: { value: 'moreThanTenCharacters' } });
+
+                expect(rootNode).toHaveClass('mfui-text-field_error');
+                expect(symbolCounterNode).toHaveClass('mfui-text-field__counter_error');
+            });
         });
     });
 });
