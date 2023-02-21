@@ -235,3 +235,48 @@ const blockStyle = { padding: '20px 0' };
         </Carousel>
     </ContentArea>
 </Playground>
+
+## Наличие градиента по краям контейнера
+
+<Playground>
+    <ContentArea>
+        <Carousel
+            slidesSettings={{
+                0: { slidesPerView: 1, spaceBetween: 16 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1280: { slidesPerView: 3, spaceBetween: 20 }
+            }}
+            gradient={{ enable: true }}
+        >
+            <DemoSlide>1</DemoSlide>
+            <DemoSlide>2</DemoSlide>
+            <DemoSlide>3</DemoSlide>
+            <DemoSlide>4</DemoSlide>
+            <DemoSlide>5</DemoSlide>
+            <DemoSlide>6</DemoSlide>
+            <DemoSlide>7</DemoSlide>
+            <DemoSlide>8</DemoSlide>
+            <DemoSlide>9</DemoSlide>
+            <DemoSlide>10</DemoSlide>
+            <DemoSlide>11</DemoSlide>
+            <DemoSlide>12</DemoSlide>
+        </Carousel>
+    </ContentArea>
+</Playground>
+
+### Цвет фона должен совпадать с цветом градиента
+
+<Playground>
+    <ContentArea outerBackgroundColor="green">
+        <div style={blockStyle}>
+            <Carousel navTheme="green" gradientColor="#00B956" gradient={{ enable: true, color: "#00B956"}}>
+                <DemoSlide onColoredBackground>1</DemoSlide>
+                <DemoSlide onColoredBackground>2</DemoSlide>
+                <DemoSlide onColoredBackground>3</DemoSlide>
+                <DemoSlide onColoredBackground>4</DemoSlide>
+                <DemoSlide onColoredBackground>5</DemoSlide>
+                <DemoSlide onColoredBackground>6</DemoSlide>
+            </Carousel>
+        </div>
+    </ContentArea>
+</Playground>

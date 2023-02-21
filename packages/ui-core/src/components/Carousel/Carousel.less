@@ -53,6 +53,35 @@
         }
     }
 
+    &__swiper_gradient {
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            z-index: 5;
+
+            width: var(--gap);
+            height: 85%;
+
+            @media @mobile {
+                display: none;
+            }
+        }
+
+        &:before {
+            left: 0;
+
+            background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, var(--gradientColor) 100%);
+        }
+
+        &:after {
+            right: 0;
+
+            background: linear-gradient(270deg, var(--gradientColor) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+    }
+
     @{swiperWrapper} {
         z-index: 1;
 

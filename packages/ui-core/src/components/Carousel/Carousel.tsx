@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { breakpoints, cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import throttle from 'lodash.throttle';
 import * as PropTypes from 'prop-types';
@@ -9,6 +9,7 @@ import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import throttleTime from 'constants/throttleTime';
 import usePrevious from '../../hooks/usePrevious';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
+import useGradient from './useGradient';
 import './Carousel.less';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
@@ -102,6 +103,8 @@ export interface ICarouselProps {
     onPrevClick?: (index: number) => void;
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
     onChange?: (currentIndex: number, previousIndex: number, slidesPerView?: number | 'auto') => void;
+    /** Наличие градиента по краям контейнера. Цвет должен задаваться в HEX формате */
+    gradient?: { enable: boolean; color?: string };
 }
 
 const getAutoPlayConfig = (delay: number) => ({
@@ -159,6 +162,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     onPrevClick,
     onChange,
     slideToClickedSlide = false,
+    gradient = { enable: false },
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
@@ -167,6 +171,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     const childrenLen: number = Array.isArray(children) ? children.length : 0;
     const prevChildrenLen: number = usePrevious(childrenLen) || 0;
     const isChildrenLenDiff = childrenLen !== prevChildrenLen;
+    const gradientStyles = useGradient(gradient, { instance: swiperInstance, slidesSettings, isLocked });
 
     const increaseAutoplayDelay = React.useCallback(
         ({ params, autoplay }: SwiperCore) => {
@@ -297,7 +302,7 @@ const Carousel: React.FC<ICarouselProps> = ({
         return () => {
             window.removeEventListener('resize', windowResizeHandlerThrottled);
         };
-    }, [swiperInstance]);
+    }, [slidesSettings, swiperInstance]);
 
     React.useEffect(() => {
         if (swiperInstance && isChildrenLenDiff) {
@@ -311,11 +316,12 @@ const Carousel: React.FC<ICarouselProps> = ({
             ref={rootRef}
             className={cn({ 'nav-theme': navTheme }, [className, rootClass])}
             onClick={handleRootClick}
+            style={gradientStyles}
         >
             <Swiper
                 {...(containerModifier ? { containerModifierClass: containerModifier } : {})}
                 {...filterDataAttrs(dataAttrs?.slider)}
-                className={cn('swiper', { 'default-inner-indents': !innerIndentsClass }, [
+                className={cn('swiper', { 'default-inner-indents': !innerIndentsClass, gradient: gradient.enable }, [
                     innerIndentsClass,
                     containerClass,
                 ])}
@@ -435,6 +441,7 @@ Carousel.propTypes = {
     onNextClick: PropTypes.func,
     onPrevClick: PropTypes.func,
     onChange: PropTypes.func,
+    gradient: PropTypes.shape({ enable: PropTypes.bool.isRequired, color: PropTypes.string }),
 };
 
 export default Carousel;

@@ -146,4 +146,30 @@ describe('<Carousel />', () => {
 
         expect(ref.current).not.toBeNull();
     });
+
+    describe('should render with gradient', () => {
+        it('and default color', () => {
+            const { getByTestId } = render(<Carousel {...props} gradient={{ enable: true }} />);
+
+            const rootEl = getByTestId('root');
+            const gap = window.getComputedStyle(rootEl).getPropertyValue('--gap');
+            const color = window.getComputedStyle(rootEl).getPropertyValue('--gradientColor');
+
+            expect(getByTestId('slider')).toHaveClass('mfui-carousel__swiper_gradient');
+            expect(gap).toBe('20px');
+            expect(color).toBe('#fff');
+        });
+
+        it('and custom color', () => {
+            const { getByTestId } = render(<Carousel {...props} gradient={{ enable: true, color: '#000' }} />);
+
+            const rootEl = getByTestId('root');
+            const gap = window.getComputedStyle(rootEl).getPropertyValue('--gap');
+            const color = window.getComputedStyle(rootEl).getPropertyValue('--gradientColor');
+
+            expect(getByTestId('slider')).toHaveClass('mfui-carousel__swiper_gradient');
+            expect(gap).toBe('20px');
+            expect(color).toBe('#000');
+        });
+    });
 });
