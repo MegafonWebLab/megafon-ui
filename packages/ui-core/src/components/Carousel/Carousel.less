@@ -53,6 +53,59 @@
         }
     }
 
+    &__swiper_gradient {
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            z-index: 5;
+
+            width: var(--gap);
+            height: 85%;
+
+            @media @mobile {
+                display: none;
+            }
+        }
+
+        &:before {
+            left: 0;
+
+            background: linear-gradient(270deg, transparent 0%, var(--gradientColor) 100%);
+        }
+
+        &:after {
+            right: 0;
+
+            background: linear-gradient(270deg, var(--gradientColor) 0%, transparent 100%);
+        }
+    }
+
+    &__swiper_gradient-color_default {
+        --gradientColor: var(--base);
+    }
+
+    &__swiper_gradient-color_green {
+        --gradientColor: var(--brandGreen);
+    }
+
+    &__swiper_gradient-color_black {
+        --gradientColor: var(--stcBlack);
+    }
+
+    &__swiper_gradient-color_spbSky0 {
+        --gradientColor: var(--spbSky0);
+    }
+
+    &__swiper_gradient-color_spbSky1 {
+        --gradientColor: var(--spbSky1);
+    }
+
+    &__swiper_gradient-color_spbSky2 {
+        --gradientColor: var(--spbSky2);
+    }
+
     @{swiperWrapper} {
         z-index: 1;
 
@@ -104,6 +157,7 @@
 
     @{swiperPagination} {
         display: flex;
+        gap: 12px;
         align-items: center;
         justify-content: center;
         justify-self: center;
@@ -125,10 +179,11 @@
         box-sizing: border-box;
         width: @bulletSize;
         height: @bulletSize;
-        padding: 1px;
         border-radius: 50%;
 
         cursor: pointer;
+
+        transition: width 0.5s, background-color 0.3s;
 
         &:before {
             content: '';
@@ -137,10 +192,8 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-        }
 
-        &:not(:last-child) {
-            margin-right: 8px;
+            transition: border-radius 0.5s;
         }
     }
 
@@ -157,28 +210,24 @@
     }
 
     @{swiperBulletActive} {
-        padding: 0;
+        width: 20px;
 
         cursor: default;
+
+        &:before {
+            border-radius: 4px;
+        }
     }
 
     &_nav-theme_green @{swiperBulletActive} {
-        padding: 0;
-
-        cursor: default;
-
         &:before {
             background-color: var(--base);
         }
     }
 
     &_nav-theme_light @{swiperBulletActive} {
-        padding: 0;
-
-        cursor: default;
-
         &:before {
-            background-color: var(--brandPurple);
+            background-color: var(--brandGreen);
         }
     }
 }

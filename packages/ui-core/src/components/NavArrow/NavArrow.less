@@ -14,12 +14,16 @@
     outline: none;
     cursor: pointer;
 
+    transition: background-color 0.3s, opacity 0.3s;
+
     appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
     &:disabled {
         cursor: default;
         opacity: 0.3;
+
+        pointer-events: none;
     }
 
     &__icon {
@@ -33,16 +37,24 @@
     &_theme_purple {
         background-color: var(--brandPurple);
 
-        &:hover:not(:disabled) {
+        &:hover {
             background-color: var(--buttonHoverPurple);
+        }
+
+        &:active {
+            background-color: var(--buttonDown);
         }
     }
 
     &_theme_dark {
         background-color: var(--stcBlack20);
 
-        &:hover:not(:disabled) {
+        &:hover {
             background-color: var(--stcBlack50);
+        }
+
+        &:active {
+            background-color: var(--buttonDown);
         }
     }
 }
