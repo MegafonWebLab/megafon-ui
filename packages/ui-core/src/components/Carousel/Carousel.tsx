@@ -103,9 +103,9 @@ export interface ICarouselProps {
     onPrevClick?: (index: number) => void;
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
     onChange?: (currentIndex: number, previousIndex: number, slidesPerView?: number | 'auto') => void;
-    /** Наличие градиента по краям контейнера. */
+    /** Наличие градиента по краям контейнера */
     gradient?: boolean;
-    /** Цвет градиента. */
+    /** Цвет градиента */
     gradientColor?: GradientTheme;
 }
 
