@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import Carousel, { ICarouselProps, NavTheme, EffectTheme } from './Carousel';
+import Carousel, { EffectTheme, ICarouselProps, NavTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
+import { GradientTheme } from './useGradient';
 
 const props: ICarouselProps = {
     className: 'custom-class',
@@ -145,5 +146,27 @@ describe('<Carousel />', () => {
         );
 
         expect(ref.current).not.toBeNull();
+    });
+
+    describe('should render with gradient', () => {
+        it('and default color', () => {
+            const { getByTestId } = render(<Carousel {...props} gradient />);
+
+            const gap = window.getComputedStyle(getByTestId('root')).getPropertyValue('--gap');
+
+            expect(getByTestId('slider')).toHaveClass('mfui-carousel__swiper_gradient');
+            expect(getByTestId('slider')).toHaveClass('mfui-carousel__swiper_gradient-color_default');
+            expect(gap).toBe('20px');
+        });
+
+        it('and custom color', () => {
+            const { getByTestId } = render(<Carousel {...props} gradient gradientColor={GradientTheme.GREEN} />);
+
+            const gap = window.getComputedStyle(getByTestId('root')).getPropertyValue('--gap');
+
+            expect(getByTestId('slider')).toHaveClass('mfui-carousel__swiper_gradient');
+            expect(getByTestId('slider')).toHaveClass('mfui-carousel__swiper_gradient-color_green');
+            expect(gap).toBe('20px');
+        });
     });
 });
