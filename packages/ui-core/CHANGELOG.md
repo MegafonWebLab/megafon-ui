@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.13.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.12.0...@megafon/ui-core@4.13.0) (2023-02-22)
+
+
+### Features
+
+* **carousel:** add property for gradient ([9900586](https://github.com/MegafonWebLab/megafon-ui/commit/99005866bc54d60f3447742f129f036391fb3a68))
+
+
+
+
+
 # [4.12.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.11.4...@megafon/ui-core@4.12.0) (2023-02-13)
 
 
