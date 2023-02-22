@@ -108,6 +108,7 @@ export type TextFieldProps = {
         notice?: Record<string, string>;
         input?: Record<string, string>;
         iconBox?: Record<string, string>;
+        resizer?: Record<string, string>;
     };
     /** Атрибут элемента input */
     inputMode?: 'numeric' | 'tel' | 'decimal' | 'email' | 'url' | 'search' | 'none';
@@ -525,7 +526,7 @@ const TextField: React.FC<TextFieldProps> = ({
             <div className={cn('field-wrapper', { textarea: textarea && textareaType })}>
                 {renderField()}
                 {textareaType === TextareaTypes.FLEXIBLE && !hideResizeButton && (
-                    <div className={cn('resizer')} ref={resizerRef}>
+                    <div className={cn('resizer')} ref={resizerRef} {...filterDataAttrs(dataAttrs?.resizer)}>
                         <ResizeIcon />
                     </div>
                 )}
@@ -592,6 +593,7 @@ TextField.propTypes = {
         notice: PropTypes.objectOf(PropTypes.string.isRequired),
         input: PropTypes.objectOf(PropTypes.string.isRequired),
         iconBox: PropTypes.objectOf(PropTypes.string.isRequired),
+        resizer: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
 };
 
