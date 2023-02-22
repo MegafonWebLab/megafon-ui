@@ -9,7 +9,7 @@ import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import throttleTime from 'constants/throttleTime';
 import usePrevious from '../../hooks/usePrevious';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
-import useGradient from './useGradient';
+import useGradient, { GradientTheme } from './useGradient';
 import './Carousel.less';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
@@ -103,8 +103,10 @@ export interface ICarouselProps {
     onPrevClick?: (index: number) => void;
     /** Обработчик смены слайда (должен быть обернут в useCallback) */
     onChange?: (currentIndex: number, previousIndex: number, slidesPerView?: number | 'auto') => void;
-    /** Наличие градиента по краям контейнера. Цвет должен задаваться в HEX формате */
-    gradient?: { enable: boolean; color?: string };
+    /** Наличие градиента по краям контейнера. */
+    gradient?: boolean;
+    /** Цвет градиента. */
+    gradientColor?: GradientTheme;
 }
 
 const getAutoPlayConfig = (delay: number) => ({
@@ -162,7 +164,8 @@ const Carousel: React.FC<ICarouselProps> = ({
     onPrevClick,
     onChange,
     slideToClickedSlide = false,
-    gradient = { enable: false },
+    gradient = false,
+    gradientColor = GradientTheme.DEFAULT,
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);
@@ -321,10 +324,15 @@ const Carousel: React.FC<ICarouselProps> = ({
             <Swiper
                 {...(containerModifier ? { containerModifierClass: containerModifier } : {})}
                 {...filterDataAttrs(dataAttrs?.slider)}
-                className={cn('swiper', { 'default-inner-indents': !innerIndentsClass, gradient: gradient.enable }, [
-                    innerIndentsClass,
-                    containerClass,
-                ])}
+                className={cn(
+                    'swiper',
+                    {
+                        'default-inner-indents': !innerIndentsClass,
+                        gradient,
+                        'gradient-color': gradient && gradientColor,
+                    },
+                    [innerIndentsClass, containerClass],
+                )}
                 breakpoints={slidesSettings}
                 watchSlidesVisibility
                 watchOverflow
@@ -441,7 +449,8 @@ Carousel.propTypes = {
     onNextClick: PropTypes.func,
     onPrevClick: PropTypes.func,
     onChange: PropTypes.func,
-    gradient: PropTypes.shape({ enable: PropTypes.bool.isRequired, color: PropTypes.string }),
+    gradient: PropTypes.oneOfType([PropTypes.bool]),
+    gradientColor: PropTypes.oneOf(Object.values(GradientTheme)),
 };
 
 export default Carousel;

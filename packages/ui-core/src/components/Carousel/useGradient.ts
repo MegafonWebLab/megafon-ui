@@ -5,26 +5,27 @@ import SwiperCore from 'swiper';
 import throttleTime from 'constants/throttleTime';
 import { SlidesSettingsType } from './Carousel';
 
-type GradientConfig = {
-    enable: boolean;
-    color?: string;
-};
-
 type SwiperConfig = {
     instance: SwiperCore | undefined;
     slidesSettings: SlidesSettingsType;
     isLocked: boolean;
 };
 
-const DEFAULT_GRADIENT_COLOR = '#fff';
+export enum GradientTheme {
+    DEFAULT = 'default',
+    GREEN = 'green',
+    BLACK = 'black',
+    SPB_SKY_0 = 'spbSky0',
+    SPB_SKY_1 = 'spbSky1',
+    SPB_SKY_2 = 'spbSky2',
+}
 
-export default (gradient: GradientConfig, swiper: SwiperConfig): CSSProperties => {
+export default (gradient: boolean, swiper: SwiperConfig): CSSProperties => {
     const [slidesGap, setSlidesGap] = useState(0);
 
-    const { enable, color } = gradient;
     const { instance: swiperInstance, slidesSettings, isLocked } = swiper;
 
-    const isGradientEnable = enable && !isLocked;
+    const isGradientEnable = gradient && !isLocked;
 
     useEffect(() => {
         const isTouch = window.innerWidth < breakpoints.DESKTOP_SMALL_START;
@@ -50,11 +51,10 @@ export default (gradient: GradientConfig, swiper: SwiperConfig): CSSProperties =
         return () => {
             window.removeEventListener('resize', throttledHandler);
         };
-    }, [enable, slidesSettings, swiperInstance, isLocked, isGradientEnable]);
+    }, [gradient, slidesSettings, swiperInstance, isLocked, isGradientEnable]);
 
     const gradientStyles = {
         '--gap': `${slidesGap}px`,
-        '--gradientColor': color || DEFAULT_GRADIENT_COLOR,
     } as CSSProperties;
 
     return isGradientEnable ? gradientStyles : {};

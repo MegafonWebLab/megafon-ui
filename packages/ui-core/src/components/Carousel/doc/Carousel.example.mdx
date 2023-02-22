@@ -246,7 +246,7 @@ const blockStyle = { padding: '20px 0' };
                 768: { slidesPerView: 2, spaceBetween: 20 },
                 1280: { slidesPerView: 3, spaceBetween: 20 }
             }}
-            gradient={{ enable: true }}
+            gradient
         >
             <DemoSlide>1</DemoSlide>
             <DemoSlide>2</DemoSlide>
@@ -269,7 +269,7 @@ const blockStyle = { padding: '20px 0' };
 <Playground>
     <ContentArea outerBackgroundColor="green">
         <div style={blockStyle}>
-            <Carousel navTheme="green" gradientColor="#00B956" gradient={{ enable: true, color: "#00B956"}}>
+            <Carousel navTheme="green" gradient gradientColor="green">
                 <DemoSlide onColoredBackground>1</DemoSlide>
                 <DemoSlide onColoredBackground>2</DemoSlide>
                 <DemoSlide onColoredBackground>3</DemoSlide>

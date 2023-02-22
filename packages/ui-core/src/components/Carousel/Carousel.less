@@ -72,14 +72,38 @@
         &:before {
             left: 0;
 
-            background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, var(--gradientColor) 100%);
+            background: linear-gradient(270deg, transparent 0%, var(--gradientColor) 100%);
         }
 
         &:after {
             right: 0;
 
-            background: linear-gradient(270deg, var(--gradientColor) 0%, rgba(255, 255, 255, 0) 100%);
+            background: linear-gradient(270deg, var(--gradientColor) 0%, transparent 100%);
         }
+    }
+
+    &__swiper_gradient-color_default {
+        --gradientColor: var(--base);
+    }
+
+    &__swiper_gradient-color_green {
+        --gradientColor: var(--brandGreen);
+    }
+
+    &__swiper_gradient-color_black {
+        --gradientColor: var(--stcBlack);
+    }
+
+    &__swiper_gradient-color_spbSky0 {
+        --gradientColor: var(--spbSky0);
+    }
+
+    &__swiper_gradient-color_spbSky1 {
+        --gradientColor: var(--spbSky1);
+    }
+
+    &__swiper_gradient-color_spbSky2 {
+        --gradientColor: var(--spbSky2);
     }
 
     @{swiperWrapper} {
