@@ -19,6 +19,8 @@ export const PreloaderSizes = {
 export type PreloaderSizesType = typeof PreloaderSizes[keyof typeof PreloaderSizes];
 
 export interface IPreloaderProps {
+    /** Задержка отрисовки  */
+    delay?: boolean;
     /** Цветовая тема */
     color?: PreloaderColorsType;
     /** Размер на всех разрешениях экрана */
@@ -43,6 +45,7 @@ const cn = cnCreate('mfui-preloader');
 const Preloader: React.FC<IPreloaderProps> = ({
     color = 'default',
     sizeAll = 'medium',
+    delay = true,
     sizeWide,
     sizeDesktop,
     sizeTablet,
@@ -50,9 +53,13 @@ const Preloader: React.FC<IPreloaderProps> = ({
     className,
     dataAttrs,
 }) => {
-    const [isShowed, setIsShowed] = React.useState(false);
+    const [isShowed, setIsShowed] = React.useState(!delay);
 
-    React.useEffect((): (() => void) => {
+    React.useEffect((): (() => void) | undefined => {
+        if (isShowed) {
+            return undefined;
+        }
+
         const timerId = setTimeout(() => {
             setIsShowed(true);
         }, 250);
@@ -60,7 +67,7 @@ const Preloader: React.FC<IPreloaderProps> = ({
         return (): void => {
             clearTimeout(timerId);
         };
-    }, []);
+    }, [isShowed]);
 
     return isShowed ? (
         <div
