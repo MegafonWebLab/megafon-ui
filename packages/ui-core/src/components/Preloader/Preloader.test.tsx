@@ -39,7 +39,7 @@ describe('<Preloader />', () => {
     });
 
     it('should render Preloader until 250ms passed if delay disabled', async () => {
-        const { queryByTestId } = render(<Preloader dataAttrs={dataAttrs} hasDelay={false} />);
+        const { queryByTestId } = render(<Preloader dataAttrs={dataAttrs} delay={false} />);
 
         updatePreloaderTimer(PRELOADER_DELAY - 50);
 

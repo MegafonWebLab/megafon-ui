@@ -220,7 +220,7 @@ const Button: React.FC<IButtonProps> = ({
     const renderedLoader: JSX.Element = React.useMemo(
         () => (
             <Preloader
-                hasDelay={false}
+                delay={false}
                 className={cn('preloader')}
                 dataAttrs={{ root: filterDataAttrs(dataAttrs?.loader) }}
                 color={loaderColor}
