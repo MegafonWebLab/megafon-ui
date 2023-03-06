@@ -38,6 +38,14 @@ describe('<Preloader />', () => {
         expect(queryByTestId('root')).not.toBeInTheDocument();
     });
 
+    it('should render Preloader until 250ms passed if delay disabled', async () => {
+        const { queryByTestId } = render(<Preloader dataAttrs={dataAttrs} hasDelay={false} />);
+
+        updatePreloaderTimer(PRELOADER_DELAY - 50);
+
+        expect(queryByTestId('root')).toBeInTheDocument();
+    });
+
     it('should render with sizes', () => {
         const { getByTestId } = render(
             <Preloader
