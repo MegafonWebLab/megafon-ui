@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.14.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.13.0...@megafon/ui-core@4.14.0) (2023-03-07)
+
+
+### Bug Fixes
+
+* **button:** disable delay for loader ([a19c599](https://github.com/MegafonWebLab/megafon-ui/commit/a19c599f884d5dc9d485c56c6c7914e76d1c3fb6))
+
+
+### Features
+
+* **carousel:** fix z-index of naw arrow ([b6b1ae1](https://github.com/MegafonWebLab/megafon-ui/commit/b6b1ae18e8641d8168bc97598df62a1ce0eac1f4))
+* **preloader:** add new prop hasDelay ([356305d](https://github.com/MegafonWebLab/megafon-ui/commit/356305d70451d38e91e638970eb9b597cac86ea7))
+
+
+
+
+
 # [4.13.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.12.0...@megafon/ui-core@4.13.0) (2023-02-22)
 
 
