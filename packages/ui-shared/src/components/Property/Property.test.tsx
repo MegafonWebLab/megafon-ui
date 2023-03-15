@@ -101,7 +101,7 @@ describe('<Property />', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should render with border bottom', () => {
+    it('should render with border bottom and without border top', () => {
         const wrapper = shallow(
             <Property
                 items={[
@@ -111,6 +111,7 @@ describe('<Property />', () => {
                     },
                 ]}
                 borderBottom
+                disableBorderTop
             />,
         );
         expect(wrapper).toMatchSnapshot();

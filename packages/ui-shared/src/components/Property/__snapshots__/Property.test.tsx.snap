@@ -2,7 +2,7 @@
 
 exports[`<Property /> should render only title 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -54,7 +54,7 @@ exports[`<Property /> should render only title 1`] = `
 
 exports[`<Property /> should render title and description 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -119,7 +119,7 @@ exports[`<Property /> should render title and description 1`] = `
 
 exports[`<Property /> should render title and hidden description 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -191,7 +191,7 @@ exports[`<Property /> should render title and hidden description 1`] = `
 
 exports[`<Property /> should render title in several row 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -249,7 +249,7 @@ exports[`<Property /> should render title in several row 1`] = `
 
 exports[`<Property /> should render with 100% width 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -298,7 +298,7 @@ exports[`<Property /> should render with 100% width 1`] = `
 
 exports[`<Property /> should render with badge 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -357,7 +357,7 @@ exports[`<Property /> should render with badge 1`] = `
 </div>
 `;
 
-exports[`<Property /> should render with border bottom 1`] = `
+exports[`<Property /> should render with border bottom and without border top 1`] = `
 <div
   className="mfui-property mfui-property_border-bottom"
 >
@@ -411,7 +411,7 @@ exports[`<Property /> should render with border bottom 1`] = `
 
 exports[`<Property /> should render with custom class names 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -484,7 +484,7 @@ exports[`<Property /> should render with custom class names 1`] = `
 
 exports[`<Property /> should render with data attribute 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
   data-testid="root-test"
 >
   <Grid>
@@ -537,7 +537,7 @@ exports[`<Property /> should render with data attribute 1`] = `
 
 exports[`<Property /> should render with icon 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
@@ -601,7 +601,7 @@ exports[`<Property /> should render with icon 1`] = `
 
 exports[`<Property /> should render with several descriptions 1`] = `
 <div
-  className="mfui-property"
+  className="mfui-property mfui-property_border-top"
 >
   <Grid>
     <GridColumn
