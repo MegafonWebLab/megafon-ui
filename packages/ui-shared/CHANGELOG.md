@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.14.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.13.2...@megafon/ui-shared@4.14.0) (2023-03-15)
+
+
+### Features
+
+* **property:** add prop disableBorderTop ([dd74ac7](https://github.com/MegafonWebLab/megafon-ui/commit/dd74ac7e4391cbaf947b05b409ca82b068c1a490))
+
+
+
+
+
 ## [4.13.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.13.1...@megafon/ui-shared@4.13.2) (2023-03-07)
 
 **Note:** Version bump only for package @megafon/ui-shared

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.7.0...@megafon/ui-icons@2.8.0) (2023-03-15)
+
+
+### Bug Fixes
+
+* **icons:** update several service logos and add new ([e3021d5](https://github.com/MegafonWebLab/megafon-ui/commit/e3021d5846e95a5e0cc2c455a961df6e9ca5b6cc))
+
+
+### Features
+
+* **ui-icons:** add Drag_24.svg icon to System set ([d1a07d8](https://github.com/MegafonWebLab/megafon-ui/commit/d1a07d88edb8c5fae27f3e5c7ff46939870f93d5))
+
+
+
+
+
 # [2.7.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.6.0...@megafon/ui-icons@2.7.0) (2023-02-13)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@megafon/ui-core",
-  "version": "4.14.0",
+  "version": "4.14.1",
   "files": [
     "dist",
     "styles"
@@ -54,7 +54,7 @@
     "@babel/preset-env": "^7.8.6",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@megafon/ui-icons": "^2.7.0",
+    "@megafon/ui-icons": "^2.8.0",
     "@svgr/core": "^2.4.1",
     "@testing-library/jest-dom": "5.16.2",
     "@testing-library/react": "12.1.2",
