@@ -16,6 +16,8 @@ export interface IProperty {
     className?: string;
     /** Текст для бейджа */
     badge?: string;
+    /** Отключить верхнюю границу */
+    disableBorderTop?: boolean;
     /** Наличие нижней границы */
     borderBottom?: boolean;
     /** Единое значение для всей строки */
@@ -44,6 +46,7 @@ const Property: React.FC<IProperty> = ({
     className,
     badge = '',
     icon,
+    disableBorderTop = false,
     borderBottom = false,
     mergedValue = '',
     fullWidth = false,
@@ -80,7 +83,7 @@ const Property: React.FC<IProperty> = ({
 
     return (
         <div
-            className={cn({ 'border-bottom': borderBottom }, [className])}
+            className={cn({ 'border-top': !disableBorderTop, 'border-bottom': borderBottom }, [className])}
             ref={rootRef}
             {...filterDataAttrs(dataAttrs?.root)}
         >
@@ -140,6 +143,7 @@ Property.propTypes = {
     ).isRequired,
     className: PropTypes.string,
     badge: PropTypes.string,
+    disableBorderTop: PropTypes.bool,
     borderBottom: PropTypes.bool,
     mergedValue: PropTypes.string,
     icon: PropTypes.node,
