@@ -10,10 +10,10 @@ type CollapseDefaultProps = {
 };
 
 type CollapseProps = CollapseDefaultProps & {
-    className: string;
-    classNameContainer: string;
     isOpened: boolean;
     children: React.ReactNode;
+    className?: string;
+    classNameContainer?: string;
     openedClassName?: string;
     dataAttrs?: {
         root?: Record<string, string>;
@@ -125,8 +125,8 @@ const Collapse: React.FC<CollapseProps> = ({
 };
 
 Collapse.propTypes = {
-    className: PropTypes.string.isRequired,
-    classNameContainer: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    classNameContainer: PropTypes.string,
     openedClassName: PropTypes.string,
     isOpened: PropTypes.bool.isRequired,
     animationDuration: PropTypes.number,
