@@ -24,7 +24,21 @@ const DemoSearchWrapper: React.FC<IDemoSearchWrapperProps> = ({ children }) => {
 };
 ```
 
-## Без иконки
+## Тип отображения
+
+### Визуальное отображение аналгично компоненту TextField (по умолчанию)
+<Playground>
+    <Search label="Заголовок поля" searchId="2" />
+</Playground>
+
+### Компактное отображение
+иконка поиска расположена слева, добавлена возможность очистить поле по клику на крестик
+
+<Playground>
+    <Search value="очистить поле по клику на крестик" placeholder="Введите что-нибудь" type="compact" />
+</Playground>
+
+## Без иконки (только для type=textfield)
 
 <Playground>
     <Search hideIcon searchId="1" />
@@ -171,4 +185,11 @@ const DemoSearchCustomItemsWrapper: React.FC<IDemoSearchCustomItemsWrapper> = ({
             />
         )}
     </DemoSearchCustomItemsWrapper>
+</Playground>
+
+## Индикатор загрузки
+
+<Playground style={wrapperDefaultStyle}>
+    <Search label="Заголовок поля" searchId="2" showLoader />
+    <Search label="Заголовок поля"  type="compact" showLoader />
 </Playground>
