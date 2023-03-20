@@ -72,20 +72,13 @@ describe('<Search />', () => {
         const { getByTestId } = render(<Search dataAttrs={props.dataAttrs} value={props.value} />);
 
         expect(getByTestId('searchField')).toHaveAttribute('value', props.value);
-        expect(getByTestId('searchField')).toHaveClass('mfui-search__search-field_filled');
-    });
-
-    it('should render without label', () => {
-        const { getByTestId } = render(<Search dataAttrs={props.dataAttrs} />);
-
-        expect(getByTestId('searchField').closest('label')).toHaveClass('mfui-search__search-wrapper_no-label');
+        expect(getByTestId('searchField')).toHaveClass('mfui-search__field_filled');
     });
 
     it('should render with label', () => {
         const { getByTestId, getByText } = render(<Search dataAttrs={props.dataAttrs} label={props.label} />);
 
-        expect(getByTestId('searchField').closest('label')).toHaveClass('mfui-search__search-wrapper_labeled');
-        expect(getByTestId('searchField').closest('label')).not.toHaveClass('mfui-search__search-wrapper_no-label');
+        expect(getByTestId('searchField')).toHaveClass('mfui-search__field_labeled');
         expect(getByText(props.label as string)).toMatchSnapshot();
     });
 
@@ -120,8 +113,7 @@ describe('<Search />', () => {
         );
         const noticeTextNode = getByTestId('notice');
 
-        expect(getByTestId('control')).toHaveClass('mfui-search__control_success');
-        expect(noticeTextNode).toHaveClass('mfui-search__notice_success');
+        expect(getByTestId('root')).toHaveClass('mfui-search_success');
         expect(noticeTextNode).toMatchSnapshot();
     });
 
@@ -129,10 +121,7 @@ describe('<Search />', () => {
         const { getByTestId } = render(
             <Search dataAttrs={props.dataAttrs} noticeText={props.noticeText} verification="error" />,
         );
-        const noticeTextNode = getByTestId('notice');
-
-        expect(getByTestId('control')).toHaveClass('mfui-search__control_error');
-        expect(noticeTextNode).toHaveClass('mfui-search__notice_error');
+        expect(getByTestId('root')).toHaveClass('mfui-search_error');
     });
 
     it('should render disabled', () => {
@@ -168,7 +157,7 @@ describe('<Search />', () => {
         expect(getByText(props.label as string)).toHaveClass(props.classes?.label as string);
         expect(getByTestId('submit').firstChild).toHaveAttribute(
             'classname',
-            `mfui-search__icon ${props.classes?.icon as string}`,
+            `mfui-search__submit-icon ${props.classes?.icon as string}`,
         );
         expect(getByTestId('control')).toHaveClass(props.classes?.control as string);
         expect(getByTestId('itemTitle[1]')).toHaveClass(props.classes?.listItemTitle as string);
