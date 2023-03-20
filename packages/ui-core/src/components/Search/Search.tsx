@@ -8,6 +8,8 @@ import * as PropTypes from 'prop-types';
 import './Search.less';
 import Preloader from 'components/Preloader/Preloader';
 
+const SEARCH_QUERY_REGEX = /[^A-Z-a-zА-ЯЁа-яё0-9]/g;
+
 type HandleSearchSubmit = (e?: React.MouseEvent<HTMLButtonElement>) => void;
 type HandleSelectSubmit = (i: number) => (e: React.MouseEvent) => void;
 type HandleItemSubmit = (index: number) => void;
@@ -224,25 +226,6 @@ const Search: React.FC<ISearchProps> = ({
         [activeIndex, items, handleItemSubmit, handleSearchSubmit],
     );
 
-    const highlightString = (title: string) => {
-        const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
-        const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
-
-        return (
-            <>
-                {stringFragments.map((fragment, i) => (
-                    <React.Fragment key={i}>
-                        {fragment.toLowerCase() === searchQuery.toLowerCase() ? (
-                            <span className={cn('highlighted-fragment')}>{fragment}</span>
-                        ) : (
-                            fragment
-                        )}
-                    </React.Fragment>
-                ))}
-            </>
-        );
-    };
-
     const handleClearClick = (): void => {
         onChange?.('');
         setSearchQuery('');
@@ -269,6 +252,25 @@ const Search: React.FC<ISearchProps> = ({
             });
         }
     }, [activeIndex, items]);
+
+    const highlightString = (title: string): JSX.Element => {
+        const query = searchQuery.replace(SEARCH_QUERY_REGEX, w => `\\${w}`);
+        const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
+
+        return (
+            <>
+                {stringFragments.map((fragment, i) => (
+                    <React.Fragment key={i}>
+                        {fragment.toLowerCase() === searchQuery.toLowerCase() ? (
+                            <span className={cn('highlighted-fragment')}>{fragment}</span>
+                        ) : (
+                            fragment
+                        )}
+                    </React.Fragment>
+                ))}
+            </>
+        );
+    };
 
     const renderSubmitButton = (): JSX.Element => {
         const Icon = isCompact ? SearchIcon16 : SearchIcon;
