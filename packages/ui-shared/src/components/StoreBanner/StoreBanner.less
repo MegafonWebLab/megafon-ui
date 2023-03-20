@@ -19,6 +19,8 @@
 
     &_theme_green {
         @{b}__grid {
+            border-color: transparent;
+
             background-color: var(--brandGreen);
         }
 
@@ -29,7 +31,21 @@
 
     &_theme_spbSky1 {
         @{b}__grid {
+            border-color: transparent;
+
             background-color: var(--spbSky1);
+        }
+
+        @{b}__content {
+            color: var(--content);
+        }
+    }
+
+    &_theme_spbSky0 {
+        @{b}__grid {
+            border-color: transparent;
+
+            background-color: var(--spbSky0);
         }
 
         @{b}__content {
@@ -117,7 +133,7 @@
         padding-top: @gridVerticalPadding;
         padding-bottom: @gridVerticalPadding;
         border: @gridBorderWidth solid var(--spbSky2);
-        border-radius: 8px;
+        border-radius: 12px;
 
         @media @mobileSM {
             padding-top: 24px;
