@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { useCallback, useEffect } from 'react';
-import { filterDataAttrs } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import * as PropTypes from 'prop-types';
+import './Collapse.less';
 
 type CollapseDefaultProps = {
     animation?: boolean;
@@ -9,14 +10,15 @@ type CollapseDefaultProps = {
 };
 
 type CollapseProps = CollapseDefaultProps & {
-    className: string;
-    classNameContainer: string;
     isOpened: boolean;
+    children: React.ReactNode;
+    className?: string;
+    classNameContainer?: string;
+    openedClassName?: string;
     dataAttrs?: {
         root?: Record<string, string>;
         inner?: Record<string, string>;
     };
-    children: React.ReactNode;
 };
 
 const { sin, cos, min, PI } = Math;
@@ -24,17 +26,17 @@ const { sin, cos, min, PI } = Math;
 const easeOutSine = (progress: number): number => sin((progress * PI) / 2);
 const easeInSine = (progress: number): number => 1 - cos((progress * PI) / 2);
 
-const Collapse = (props: CollapseProps): React.FunctionComponentElement<CollapseProps> => {
-    const {
-        className,
-        classNameContainer,
-        animation = true,
-        animationDuration = 300,
-        children,
-        isOpened,
-        dataAttrs,
-    } = props;
-
+const cn = cnCreate('mfui-collapse');
+const Collapse: React.FC<CollapseProps> = ({
+    className,
+    classNameContainer,
+    animation = true,
+    animationDuration = 300,
+    children,
+    isOpened,
+    dataAttrs,
+    openedClassName,
+}) => {
     const duration: number = animation ? animationDuration : 0;
 
     const animationStart = React.useRef<null | number>(null);
@@ -51,6 +53,8 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
             if (!rootNode.current) {
                 return;
             }
+
+            openedClassName && rootNode.current.classList.remove(openedClassName);
 
             if (!animationStart.current) {
                 animationStart.current = timePassed;
@@ -74,9 +78,10 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
                 animationStart.current = null;
                 animationId.current = null;
                 rootNode.current.style.height = isOpenAction ? 'auto' : '0px';
+                isOpenAction && !!openedClassName && rootNode.current.classList.add(openedClassName);
             }
         },
-        [],
+        [openedClassName],
     );
 
     useEffect(() => {
@@ -111,7 +116,7 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
     }, [isOpened, duration, animateSlide]);
 
     return (
-        <div {...filterDataAttrs(dataAttrs?.root)} className={className} style={{ overflow: 'hidden' }} ref={rootNode}>
+        <div {...filterDataAttrs(dataAttrs?.root)} className={cn([className])} ref={rootNode}>
             <div {...filterDataAttrs(dataAttrs?.inner)} className={classNameContainer}>
                 {children}
             </div>
@@ -122,6 +127,7 @@ const Collapse = (props: CollapseProps): React.FunctionComponentElement<Collapse
 Collapse.propTypes = {
     className: PropTypes.string,
     classNameContainer: PropTypes.string,
+    openedClassName: PropTypes.string,
     isOpened: PropTypes.bool.isRequired,
     animationDuration: PropTypes.number,
     animation: PropTypes.bool,
