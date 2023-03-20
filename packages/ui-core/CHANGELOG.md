@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.14.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.14.1...@megafon/ui-core@4.14.2) (2023-03-20)
+
+
+### Bug Fixes
+
+* **collapse:** new prop openedClassName ([c7fa687](https://github.com/MegafonWebLab/megafon-ui/commit/c7fa6876221ab02fff892e9e11772343d78c7444))
+* **search:** new props showLoader and type ([1bd81df](https://github.com/MegafonWebLab/megafon-ui/commit/1bd81dfd1beae622ee33a0e6dac3cb95b7454c41))
+
+
+
+
+
 ## [4.14.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.14.0...@megafon/ui-core@4.14.1) (2023-03-15)
 
 **Note:** Version bump only for package @megafon/ui-core

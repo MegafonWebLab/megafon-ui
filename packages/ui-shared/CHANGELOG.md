@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.14.0...@megafon/ui-shared@4.15.0) (2023-03-20)
+
+
+### Features
+
+* **storebanner:** add new theme ([908aa58](https://github.com/MegafonWebLab/megafon-ui/commit/908aa588067c8e450ef17b10a9c9025bfae9d3c1))
+
+
+
+
+
 # [4.14.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.13.2...@megafon/ui-shared@4.14.0) (2023-03-15)
 
 
