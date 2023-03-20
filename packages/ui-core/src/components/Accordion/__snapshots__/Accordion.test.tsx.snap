@@ -24,8 +24,8 @@ exports[`<Accordion /> should render Accordion 1`] = `
       </div>
     </div>
     <div
-      class="mfui-accordion__content"
-      style="overflow: hidden; height: 0px;"
+      class="mfui-collapse mfui-accordion__content"
+      style="height: 0px;"
     >
       <div
         class="mfui-accordion__content-inner"

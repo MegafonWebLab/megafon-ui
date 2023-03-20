@@ -3,29 +3,29 @@
 exports[`<Search /> should render 1`] = `
 <div>
   <div
-    class="mfui-search"
+    class="mfui-search mfui-search_type_textfield"
   >
     <div
       class="mfui-search__control"
     >
-      <label
-        class="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
-        for="mfuiSearchId"
-      >
-        <input
-          autocomplete="off"
-          class="mfui-search__search-field"
-          id="mfuiSearchId"
-          type="text"
-          value=""
-        />
-      </label>
+      <input
+        autocomplete="off"
+        class="mfui-search__field"
+        id="mfuiSearchId"
+        type="text"
+        value=""
+      />
       <div
-        class="mfui-search__icon-box"
+        class="mfui-search__icons"
       >
-        <test-file-stub
-          classname="mfui-search__icon"
-        />
+        <button
+          class="mfui-search__submit-button"
+          type="button"
+        >
+          <test-file-stub
+            classname="mfui-search__submit-icon"
+          />
+        </button>
       </div>
     </div>
   </div>
@@ -35,33 +35,33 @@ exports[`<Search /> should render 1`] = `
 exports[`<Search /> should render with items 1`] = `
 <div>
   <div
-    class="mfui-search"
+    class="mfui-search mfui-search_type_textfield"
     data-testid="root"
   >
     <div
       class="mfui-search__control"
       data-testid="control"
     >
-      <label
-        class="mfui-search__search-wrapper mfui-search__search-wrapper_no-label"
-        for="mfuiSearchId"
-      >
-        <input
-          autocomplete="off"
-          class="mfui-search__search-field"
-          data-testid="searchField"
-          id="mfuiSearchId"
-          type="text"
-          value=""
-        />
-      </label>
+      <input
+        autocomplete="off"
+        class="mfui-search__field"
+        data-testid="searchField"
+        id="mfuiSearchId"
+        type="text"
+        value=""
+      />
       <div
-        class="mfui-search__icon-box"
-        data-testid="submit"
+        class="mfui-search__icons"
       >
-        <test-file-stub
-          classname="mfui-search__icon"
-        />
+        <button
+          class="mfui-search__submit-button"
+          data-testid="submit"
+          type="button"
+        >
+          <test-file-stub
+            classname="mfui-search__submit-icon"
+          />
+        </button>
       </div>
       <div
         class="mfui-search__list"
@@ -129,11 +129,12 @@ exports[`<Search /> should render with items 1`] = `
 `;
 
 exports[`<Search /> should render with label 1`] = `
-<div
+<label
   class="mfui-search__label"
+  for="mfuiSearchId"
 >
   label
-</div>
+</label>
 `;
 
 exports[`<Search /> should render with noticeText and verification="valid" 1`] = `
@@ -146,8 +147,9 @@ exports[`<Search /> should render with noticeText and verification="valid" 1`] =
 `;
 
 exports[`<Search /> should render with required 1`] = `
-<div
+<label
   class="mfui-search__label"
+  for="mfuiSearchId"
 >
   label
   <span
@@ -155,5 +157,5 @@ exports[`<Search /> should render with required 1`] = `
   >
     *
   </span>
-</div>
+</label>
 `;

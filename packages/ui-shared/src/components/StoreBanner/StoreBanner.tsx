@@ -9,6 +9,7 @@ export const Theme = {
     DEFAULT: 'default',
     GREEN: 'green',
     SPB_SKY_1: 'spbSky1',
+    SPB_SKY_0: 'spbSky0',
 } as const;
 
 type ThemeType = typeof Theme[keyof typeof Theme];

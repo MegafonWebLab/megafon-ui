@@ -1,11 +1,16 @@
 import React from 'react';
 import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
+import SearchIcon16 from '@megafon/ui-icons/basic-16-search_16.svg';
 import SearchIcon from '@megafon/ui-icons/basic-24-search_24.svg';
+import ClearIcon from '@megafon/ui-icons/system-16-cancel_16.svg';
 import debounce from 'lodash.debounce';
 import * as PropTypes from 'prop-types';
 import './Search.less';
+import Preloader from 'components/Preloader/Preloader';
 
-type HandleSearchSubmit = (e?: React.MouseEvent<HTMLDivElement>) => void;
+const SEARCH_QUERY_REGEX = /[^A-Z-a-zА-ЯЁа-яё0-9]/g;
+
+type HandleSearchSubmit = (e?: React.MouseEvent<HTMLButtonElement>) => void;
 type HandleSelectSubmit = (i: number) => (e: React.MouseEvent) => void;
 type HandleItemSubmit = (index: number) => void;
 
@@ -45,6 +50,8 @@ export interface ISearchProps {
     };
     /** Значение */
     value?: string;
+    /** Вид отображения */
+    type?: 'textfield' | 'compact';
     /** Заголовок поля */
     label?: string;
     /** HTML идентификатор поля поиска */
@@ -75,6 +82,8 @@ export interface ISearchProps {
         control?: string;
         icon?: string;
     };
+    /** Отображение загрузки */
+    showLoader?: boolean;
     /** Обработчик изменения поля */
     onChange?: (value: string) => void;
     /** Обработчик нажатия на enter */
@@ -101,6 +110,8 @@ const Search: React.FC<ISearchProps> = ({
     noticeText,
     className,
     classes,
+    type = 'textfield',
+    showLoader,
     onChange,
     onSubmit,
     onBlur,
@@ -113,6 +124,12 @@ const Search: React.FC<ISearchProps> = ({
         debounce((inputValue: string) => onChange && onChange(inputValue), changeDelay),
     );
     const highlightedItem = React.useRef<HTMLDivElement>(null);
+    const fieldNode = React.useRef<HTMLInputElement>(null);
+
+    const isCompact = type === 'compact';
+    const showClearIcon = isCompact && !!searchQuery;
+    const showTextFieldSubmit = !hideIcon && !isCompact && !showLoader;
+    const showAdditionalElement = !hideIcon || showLoader || showClearIcon;
 
     const handleChange = React.useCallback(
         (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -209,6 +226,12 @@ const Search: React.FC<ISearchProps> = ({
         [activeIndex, items, handleItemSubmit, handleSearchSubmit],
     );
 
+    const handleClearClick = (): void => {
+        onChange?.('');
+        setSearchQuery('');
+        fieldNode?.current?.focus();
+    };
+
     React.useEffect(() => setSearchQuery(value), [value]);
 
     React.useEffect(() => {
@@ -230,8 +253,8 @@ const Search: React.FC<ISearchProps> = ({
         }
     }, [activeIndex, items]);
 
-    const highlightString = (title: string) => {
-        const query = searchQuery.replace(/[^A-Z-a-zА-ЯЁа-яё0-9]/g, w => `\\${w}`);
+    const highlightString = (title: string): JSX.Element => {
+        const query = searchQuery.replace(SEARCH_QUERY_REGEX, w => `\\${w}`);
         const stringFragments = title.split(RegExp(`(${query})`, 'ig'));
 
         return (
@@ -249,77 +272,97 @@ const Search: React.FC<ISearchProps> = ({
         );
     };
 
-    return (
-        <div {...filterDataAttrs(dataAttrs?.root)} className={cn({ open: isFocused, disabled }, [className])}>
-            <div
-                {...filterDataAttrs(dataAttrs?.control)}
-                className={cn(
-                    'control',
-                    { error: verification === Verification.ERROR, success: verification === Verification.VALID },
-                    [classes?.control],
-                )}
-            >
-                <label className={cn('search-wrapper', { labeled: !!label, 'no-label': !label })} htmlFor={searchId}>
-                    <input
-                        {...filterDataAttrs(dataAttrs?.searchField)}
-                        id={searchId}
-                        className={cn('search-field', { filled: !!searchQuery }, [classes?.input])}
-                        placeholder={placeholder}
-                        value={searchQuery}
-                        onChange={handleChange}
-                        onFocus={handleFocus}
-                        onBlur={handleBlur}
-                        onKeyDown={handleKeyDown}
-                        onClick={handleClick}
-                        disabled={disabled}
-                        type="text"
-                        autoComplete="off"
-                    />
-                    {label && (
-                        <div className={cn('label', [classes?.label])}>
-                            {label}
-                            {required && <span className={cn('require-mark')}>*</span>}
-                        </div>
-                    )}
-                </label>
-                {!hideIcon && (
-                    <div
-                        {...filterDataAttrs(dataAttrs?.submit)}
-                        className={cn('icon-box')}
-                        onClick={handleSearchSubmit}
-                    >
-                        <SearchIcon className={cn('icon', [classes?.icon])} />
-                    </div>
-                )}
+    const renderSubmitButton = (): JSX.Element => {
+        const Icon = isCompact ? SearchIcon16 : SearchIcon;
 
-                {!!items.length && (
-                    <div className={cn('list')}>
-                        <div className={cn('list-inner')}>
-                            {items.map(
-                                (
-                                    { value: itemValue, searchView, paddings = SearchItemsPaddings.LARGE }: SearchItem,
-                                    i,
-                                ) => (
-                                    <div
-                                        {...filterDataAttrs(dataAttrs?.item, i + 1)}
-                                        ref={activeIndex === i ? highlightedItem : null}
-                                        className={cn('list-item', { active: activeIndex === i, paddings })}
-                                        onMouseDown={handleSelectSubmit(i)}
-                                        onMouseEnter={handleHoverItem(i)}
-                                        key={i}
-                                    >
-                                        <div
-                                            {...filterDataAttrs(dataAttrs?.itemTitle, i + 1)}
-                                            className={cn('item-title', [classes?.listItemTitle])}
-                                        >
-                                            {searchView || highlightString(itemValue)}
-                                        </div>
-                                    </div>
-                                ),
-                            )}
+        return (
+            <button
+                {...filterDataAttrs(dataAttrs?.submit)}
+                className={cn('submit-button')}
+                onClick={handleSearchSubmit}
+                type="button"
+            >
+                <Icon className={cn('submit-icon', [classes?.icon])} />
+            </button>
+        );
+    };
+
+    const renderClearButton = (): JSX.Element => (
+        <button onClick={handleClearClick} type="button" className={cn('clear')}>
+            <ClearIcon className={cn('clear-icon')} />
+        </button>
+    );
+
+    const renderList = (): JSX.Element => (
+        <div className={cn('list')}>
+            <div className={cn('list-inner')}>
+                {items.map(({ value: itemValue, searchView, paddings = SearchItemsPaddings.LARGE }: SearchItem, i) => (
+                    <div
+                        {...filterDataAttrs(dataAttrs?.item, i + 1)}
+                        ref={activeIndex === i ? highlightedItem : null}
+                        className={cn('list-item', { active: activeIndex === i, paddings })}
+                        onMouseDown={handleSelectSubmit(i)}
+                        onMouseEnter={handleHoverItem(i)}
+                        key={i}
+                    >
+                        <div
+                            {...filterDataAttrs(dataAttrs?.itemTitle, i + 1)}
+                            className={cn('item-title', [classes?.listItemTitle])}
+                        >
+                            {searchView || highlightString(itemValue)}
                         </div>
                     </div>
+                ))}
+            </div>
+        </div>
+    );
+
+    return (
+        <div
+            {...filterDataAttrs(dataAttrs?.root)}
+            className={cn(
+                {
+                    open: isFocused,
+                    disabled,
+                    type,
+                    error: verification === Verification.ERROR,
+                    success: verification === Verification.VALID,
+                },
+                [className],
+            )}
+        >
+            <div {...filterDataAttrs(dataAttrs?.control)} className={cn('control', [classes?.control])}>
+                {isCompact && renderSubmitButton()}
+                <input
+                    {...filterDataAttrs(dataAttrs?.searchField)}
+                    id={searchId}
+                    className={cn('field', { filled: !!searchQuery, labeled: !!label }, [classes?.input])}
+                    placeholder={placeholder}
+                    value={searchQuery}
+                    onChange={handleChange}
+                    onFocus={handleFocus}
+                    onBlur={handleBlur}
+                    onKeyDown={handleKeyDown}
+                    onClick={handleClick}
+                    disabled={disabled}
+                    type="text"
+                    autoComplete="off"
+                    ref={fieldNode}
+                />
+                {label && (
+                    <label className={cn('label', [classes?.label])} htmlFor={searchId}>
+                        {label}
+                        {required && <span className={cn('require-mark')}>*</span>}
+                    </label>
                 )}
+                {showAdditionalElement && (
+                    <div className={cn('icons')}>
+                        {showTextFieldSubmit && renderSubmitButton()}
+                        {showLoader && <Preloader delay={false} className={cn('loader')} sizeAll="small" />}
+                        {showClearIcon && renderClearButton()}
+                    </div>
+                )}
+                {!!items.length && renderList()}
             </div>
 
             {noticeText && (
