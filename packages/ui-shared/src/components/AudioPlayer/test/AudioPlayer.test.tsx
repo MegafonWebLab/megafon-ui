@@ -1,128 +1,77 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { fireEvent, render, screen } from '@testing-library/react';
 import AudioPlayer, { IAudioPlayerProps } from '../AudioPlayer';
-import type { IAudioProgressProps } from '../AudioProgress';
-import type { IAudioVolumeProps } from '../AudioVolume';
 
 const requiredProps: IAudioPlayerProps = {
     audioSrc: 'test audioSrc',
     audioTitle: 'test audioTitle',
 };
 
-const audioMock = {
-    currentTime: 10,
-    duration: 100,
-    volume: 0.3,
-    ended: false,
-    muted: false,
-    play: jest.fn(),
-    pause: jest.fn(),
-};
+const playMock = jest.fn();
+const pauseMock = jest.fn();
 
-const setIsPlaying = jest.fn();
-const setIsPause = jest.fn();
+window.HTMLMediaElement.prototype.play = playMock;
+window.HTMLMediaElement.prototype.pause = pauseMock;
 
-const setMockedState = ({ isPlaying = false, isPause = false } = {}): void => {
-    jest.spyOn(React, 'useState').mockImplementationOnce(() => [isPlaying, setIsPlaying]);
-    jest.spyOn(React, 'useState').mockImplementationOnce(() => [isPause, setIsPause]);
-};
+jest.mock('@megafon/ui-core/dist/lib/components/Tooltip/Tooltip', () => ({ children }) => (
+    <div data-name="Tooltip">{children}</div>
+));
 
-const getWrapper = (additionalProps?: Partial<IAudioPlayerProps>): ShallowWrapper =>
-    shallow(<AudioPlayer {...requiredProps} {...additionalProps} />);
-
-describe('<AudioPlayer />', () => {
-    const mockUseRef = (): void => {
-        jest.spyOn(React, 'useRef').mockImplementationOnce(() => ({ current: audioMock }));
-    };
-
+describe('AudioPlayer', () => {
     afterEach(() => jest.clearAllMocks());
     afterAll(() => jest.restoreAllMocks());
 
-    describe('snapshots', () => {
-        it('should render component', () => {
-            setMockedState();
+    it('should render component', () => {
+        const { container } = render(<AudioPlayer {...requiredProps} />);
 
-            const wrapper = getWrapper();
-            expect(wrapper).toMatchSnapshot();
-        });
-
-        it('should render component when isPlaying', () => {
-            setMockedState({ isPlaying: true });
-
-            const wrapper = getWrapper();
-            expect(wrapper).toMatchSnapshot();
-        });
+        expect(container).toMatchSnapshot();
     });
 
-    describe('handlePLay', () => {
-        it('should update state: isPlaying to true and isPause to false and call audio play', () => {
-            mockUseRef();
-            setMockedState({ isPause: true });
+    it('should render with left position', () => {
+        render(<AudioPlayer {...requiredProps} position="left" />);
 
-            const wrapper = getWrapper();
-            wrapper.find('.mfui-audio-player__button').simulate('click');
+        const rootEl = screen.getByTestId('AudioPlayer');
 
-            expect(setIsPlaying).toBeCalledWith(true);
-            expect(setIsPause).toBeCalledWith(false);
-            expect(audioMock.play).toBeCalled();
-        });
+        expect(rootEl).toHaveClass('mfui-audio-player_position_left');
     });
 
-    describe('handlePause', () => {
-        it('should update state: isPlaying to false and isPause to true and call audio pause', () => {
-            mockUseRef();
-            setMockedState({ isPlaying: true });
+    it('should render with full width property', () => {
+        render(<AudioPlayer {...requiredProps} isFullWidth />);
 
-            const wrapper = getWrapper();
-            wrapper.find('.mfui-audio-player__button').simulate('click');
+        const rootEl = screen.getByTestId('AudioPlayer');
 
-            expect(setIsPlaying).toBeCalledWith(false);
-            expect(setIsPause).toBeCalledWith(true);
-            expect(audioMock.pause).toBeCalled();
-        });
+        expect(rootEl).toHaveClass('mfui-audio-player_full-width');
     });
 
-    describe('handleChangeAudioCurrentTime', () => {
-        it('should update audio currentTime', () => {
-            const currentTime = 40;
+    it('should play and pause audio after click on control button', () => {
+        render(<AudioPlayer {...requiredProps} />);
 
-            mockUseRef();
-            setMockedState();
+        const btn = screen.getByTestId('AudioPlayer-btn');
 
-            const wrapper = getWrapper();
-            const AudioProgressProps = wrapper.find('AudioProgress').props() as IAudioProgressProps;
-            AudioProgressProps.onChangeAudioCurrentTime(currentTime);
+        fireEvent.click(btn);
+        expect(playMock).toBeCalled();
 
-            expect(audioMock.currentTime).toBe(currentTime);
-        });
+        fireEvent.click(btn);
+        expect(pauseMock).toBeCalled();
     });
 
-    describe('handleChangeAudioVolume', () => {
-        it('should update audio volume and audio muted to false', () => {
-            const volume = 0.8;
+    it('should change audio current time', () => {
+        render(<AudioPlayer {...requiredProps} />);
 
-            mockUseRef();
-            setMockedState();
+        const audioProgress = screen.getByTestId('AudioTimeRange');
+        fireEvent.change(audioProgress, { target: { value: 50 } });
 
-            const wrapper = getWrapper();
-            const AudioVolumeProps = wrapper.find('AudioVolume').props() as IAudioVolumeProps;
-            AudioVolumeProps.onChangeAudioVolume(volume);
+        const audio: HTMLMediaElement = screen.getByTestId('AudioPlayer-audio');
+        expect(audio.currentTime).toBe(50);
+    });
 
-            expect(audioMock.volume).toBe(volume);
-            expect(audioMock.muted).toBe(false);
-        });
+    it('should change audio volume', () => {
+        render(<AudioPlayer {...requiredProps} />);
 
-        it('should audio muted to true', () => {
-            const volume = 0;
+        const audioVolumeRange = screen.getByTestId('AudioVolumeRange');
+        fireEvent.change(audioVolumeRange, { target: { value: 0.5 } });
 
-            mockUseRef();
-            setMockedState();
-
-            const wrapper = getWrapper();
-            const AudioVolumeProps = wrapper.find('AudioVolume').props() as IAudioVolumeProps;
-            AudioVolumeProps.onChangeAudioVolume(volume);
-
-            expect(audioMock.muted).toBe(true);
-        });
+        const audio: HTMLMediaElement = screen.getByTestId('AudioPlayer-audio');
+        expect(audio.volume).toBe(0.5);
     });
 });

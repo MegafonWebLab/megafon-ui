@@ -12,9 +12,9 @@ export interface IAudioProgressProps {
     audioTitle: string;
     isPlaying: boolean;
     isPause: boolean;
-    onChangeAudioCurrentTime: (currentTime: number) => void;
-    onPLay: () => void;
-    onSetIsPlaying: (value: boolean) => void;
+    onChangeAudioCurrentTime?: (currentTime: number) => void;
+    onPlay?: () => void;
+    onSetIsPlaying?: (value: boolean) => void;
 }
 
 const cn = cnCreate('mfui-audio-progress');
@@ -24,7 +24,7 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
     isPlaying,
     isPause,
     onChangeAudioCurrentTime,
-    onPLay,
+    onPlay,
     onSetIsPlaying,
 }) => {
     const intervalId = React.useRef<NodeJS.Timeout | null>(null);
@@ -36,6 +36,7 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
         () => (trackProgress / trackDuration) * 100,
         [trackDuration, trackProgress],
     );
+
     const progressValue: number = React.useMemo(
         () => (isPlaying || isPause ? trackProgress : trackDuration),
         [isPause, isPlaying, trackDuration, trackProgress],
@@ -46,7 +47,7 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
 
         intervalId.current = setInterval(() => {
             if (audioRef.current?.ended) {
-                onSetIsPlaying(false);
+                onSetIsPlaying?.(false);
                 setTrackProgress(Math.floor(audioRef.current?.duration || 0));
 
                 return;
@@ -60,12 +61,12 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
         const currentTime = Number(e.target.value);
 
         setTrackProgress(currentTime);
-        onChangeAudioCurrentTime(currentTime);
+        onChangeAudioCurrentTime?.(currentTime);
     };
 
     const handleScrubEndProgress = () => {
         if (!isPlaying) {
-            onPLay();
+            onPlay?.();
         }
 
         handleStartTimer();
@@ -108,6 +109,7 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
                     onChange={handleScrubProgress}
                     onMouseUp={handleScrubEndProgress}
                     onTouchEnd={handleScrubEndProgress}
+                    dataAttrs={{ 'data-testid': 'AudioTimeRange' }}
                 />
             </div>
         </div>
