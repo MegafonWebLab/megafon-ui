@@ -39,9 +39,6 @@
     }
 
     &__control {
-        position: relative;
-        z-index: 11;
-
         box-sizing: border-box;
         width: 100%;
         height: 60px;
@@ -54,28 +51,6 @@
         cursor: pointer;
 
         transition: border-color @defaultTransitionTiming;
-    }
-
-    &__control:after {
-        content: '';
-
-        position: absolute;
-        top: 50%;
-        right: 27px;
-        z-index: 1;
-
-        display: block;
-
-        border-top: 6px solid;
-        border-right: 5px solid transparent;
-        border-bottom: none;
-        border-left: 5px solid transparent;
-
-        color: var(--brandGreen);
-
-        cursor: pointer;
-
-        transition: transform 0.6s;
     }
 
     &__combobox {
@@ -118,6 +93,28 @@
         height: 100%;
 
         outline: none;
+    }
+
+    &__title:after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        right: 27px;
+        z-index: 1;
+
+        display: block;
+
+        border-top: 6px solid;
+        border-right: 5px solid transparent;
+        border-bottom: none;
+        border-left: 5px solid transparent;
+
+        color: var(--brandGreen);
+
+        cursor: pointer;
+
+        transition: transform 0.6s;
     }
 
     &__title-value {
@@ -356,7 +353,7 @@
         z-index: 100;
     }
 
-    &_open &__control:after {
+    &_open &__title:after {
         transform: rotate(-180deg);
     }
 
@@ -408,7 +405,7 @@
         display: none;
     }
 
-    &_disabled &__control:after {
+    &_disabled &__title:after {
         color: var(--content);
 
         opacity: 0.5;
