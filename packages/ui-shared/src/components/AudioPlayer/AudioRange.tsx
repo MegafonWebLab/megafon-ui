@@ -1,5 +1,5 @@
 import React from 'react';
-import { cnCreate } from '@megafon/ui-helpers';
+import { cnCreate, filterDataAttrs } from '@megafon/ui-helpers';
 import './style/AudioRange.less';
 
 export interface IAudioRangeProps {
@@ -8,9 +8,10 @@ export interface IAudioRangeProps {
     value: number;
     step: string;
     colorPercent: number;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onMouseUp?: () => void;
     onTouchEnd?: () => void;
+    dataAttrs?: Record<string, string>;
 }
 
 const cn = cnCreate('mfui-audio-range');
@@ -23,6 +24,7 @@ const AudioRange: React.FC<IAudioRangeProps> = ({
     onChange,
     onMouseUp,
     onTouchEnd,
+    dataAttrs,
 }) => (
     <input
         className={cn([className])}
@@ -37,6 +39,7 @@ const AudioRange: React.FC<IAudioRangeProps> = ({
         onChange={onChange}
         onMouseUp={onMouseUp}
         onTouchEnd={onTouchEnd}
+        {...filterDataAttrs(dataAttrs)}
     />
 );
 

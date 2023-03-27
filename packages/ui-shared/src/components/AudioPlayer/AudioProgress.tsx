@@ -1,6 +1,7 @@
 import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import AudioRange from './AudioRange';
+import useTrackDuration from './hooks/useTrackDuration';
 import timerFormat from './timerFormatUtil';
 import './style/AudioProgress.less';
 
@@ -11,9 +12,9 @@ export interface IAudioProgressProps {
     audioTitle: string;
     isPlaying: boolean;
     isPause: boolean;
-    onChangeAudioCurrentTime: (currentTime: number) => void;
-    onPLay: () => void;
-    onSetIsPlaying: (value: boolean) => void;
+    onChangeAudioCurrentTime?: (currentTime: number) => void;
+    onPlay?: () => void;
+    onSetIsPlaying?: (value: boolean) => void;
 }
 
 const cn = cnCreate('mfui-audio-progress');
@@ -23,18 +24,19 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
     isPlaying,
     isPause,
     onChangeAudioCurrentTime,
-    onPLay,
+    onPlay,
     onSetIsPlaying,
 }) => {
     const intervalId = React.useRef<NodeJS.Timeout | null>(null);
 
-    const [trackDuration, setTrackDuration] = React.useState<number>(0);
     const [trackProgress, setTrackProgress] = React.useState<number>(0);
+    const trackDuration = useTrackDuration(audioRef);
 
     const progressColorPercent: number = React.useMemo(
         () => (trackProgress / trackDuration) * 100,
         [trackDuration, trackProgress],
     );
+
     const progressValue: number = React.useMemo(
         () => (isPlaying || isPause ? trackProgress : trackDuration),
         [isPause, isPlaying, trackDuration, trackProgress],
@@ -45,7 +47,7 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
 
         intervalId.current = setInterval(() => {
             if (audioRef.current?.ended) {
-                onSetIsPlaying(false);
+                onSetIsPlaying?.(false);
                 setTrackProgress(Math.floor(audioRef.current?.duration || 0));
 
                 return;
@@ -59,12 +61,12 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
         const currentTime = Number(e.target.value);
 
         setTrackProgress(currentTime);
-        onChangeAudioCurrentTime(currentTime);
+        onChangeAudioCurrentTime?.(currentTime);
     };
 
     const handleScrubEndProgress = () => {
         if (!isPlaying) {
-            onPLay();
+            onPlay?.();
         }
 
         handleStartTimer();
@@ -72,16 +74,6 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
 
     React.useEffect(() => {
         setTrackProgress(Math.floor(audioRef?.current?.currentTime || 0));
-    }, [audioRef]);
-
-    React.useEffect(() => {
-        const audioNode = audioRef.current;
-
-        if (audioNode) {
-            audioNode.onloadedmetadata = () => {
-                setTrackDuration(Math.round(audioNode.duration));
-            };
-        }
     }, [audioRef]);
 
     React.useEffect(() => {
@@ -117,6 +109,7 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
                     onChange={handleScrubProgress}
                     onMouseUp={handleScrubEndProgress}
                     onTouchEnd={handleScrubEndProgress}
+                    dataAttrs={{ 'data-testid': 'AudioTimeRange' }}
                 />
             </div>
         </div>

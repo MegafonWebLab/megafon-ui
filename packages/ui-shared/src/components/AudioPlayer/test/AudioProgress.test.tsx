@@ -1,163 +1,143 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import AudioProgress, { IAudioProgressProps } from '../AudioProgress';
-import type { IAudioRangeProps } from '../AudioRange';
+import { fireEvent, render, screen, act } from '@testing-library/react';
+import AudioProgress, { INTERVAL_DELAY } from '../AudioProgress';
 
 jest.useFakeTimers();
 
-const audioRefMock = {
-    current: {
-        currentTime: 10,
-        duration: 100,
-        ended: false,
-    },
-} as React.MutableRefObject<HTMLAudioElement>;
-
-const props: IAudioProgressProps = {
-    audioRef: audioRefMock,
+const props = {
     audioTitle: 'test audioTitle',
     isPlaying: false,
     isPause: false,
-    onChangeAudioCurrentTime: jest.fn(),
-    onPLay: jest.fn(),
-    onSetIsPlaying: jest.fn(),
 };
-
-const setTrackDuration = jest.fn();
-const setTrackProgress = jest.fn();
-
-const setMockedState = ({ trackDuration = 0, trackProgress = 0 } = {}): void => {
-    jest.spyOn(React, 'useState').mockImplementationOnce(() => [trackDuration, setTrackDuration]);
-    jest.spyOn(React, 'useState').mockImplementationOnce(() => [trackProgress, setTrackProgress]);
-};
-
-const getWrapper = (additionalProps?: Partial<IAudioProgressProps>): ShallowWrapper =>
-    shallow(<AudioProgress {...props} {...additionalProps} />);
 
 describe('<AudioProgress />', () => {
-    const mockUseEffect = (): void => {
-        jest.spyOn(React, 'useEffect').mockImplementationOnce(f => f());
-    };
-
-    const mockUseRef = (intervalId: number): void => {
-        jest.spyOn(React, 'useRef').mockImplementationOnce(() => ({ current: intervalId }));
-    };
-
     afterEach(() => jest.clearAllMocks());
     afterAll(() => jest.restoreAllMocks());
 
-    describe('snapshots', () => {
-        it('should render component', () => {
-            setMockedState();
-
-            const wrapper = getWrapper();
-            expect(wrapper).toMatchSnapshot();
+    it('should render component with default state', () => {
+        const el = document.createElement('audio');
+        Object.defineProperties(el, {
+            duration: {
+                writable: true,
+                value: 100,
+            },
+            currentTime: {
+                writable: true,
+                value: 0,
+            },
         });
+
+        const { container } = render(<AudioProgress {...props} audioRef={{ current: el }} />);
+        fireEvent.loadedMetadata(el);
+
+        expect(container).toMatchSnapshot();
     });
 
-    describe('handleScrubProgress', () => {
-        it('should update state: trackProgress to new value and call onChangeAudioCurrentTime', () => {
-            const trackProgressValue = 35;
-            const event = { target: { value: `${trackProgressValue}` } } as React.ChangeEvent<HTMLInputElement>;
-
-            setMockedState();
-
-            const wrapper = getWrapper();
-            const AudioRangeProps = wrapper.find('AudioRange').props() as IAudioRangeProps;
-            AudioRangeProps.onChange(event);
-
-            expect(setTrackProgress).toBeCalledWith(trackProgressValue);
-            expect(props.onChangeAudioCurrentTime).toBeCalledWith(trackProgressValue);
+    it('should render with playing state', () => {
+        const el = document.createElement('audio');
+        Object.defineProperties(el, {
+            duration: {
+                writable: true,
+                value: 100,
+            },
+            currentTime: {
+                writable: true,
+                value: 10,
+            },
         });
+
+        const { container } = render(
+            <AudioProgress audioRef={{ current: el }} isPlaying audioTitle="test audioTitle" isPause={false} />,
+        );
+        fireEvent.loadedMetadata(el);
+
+        expect(container).toMatchSnapshot();
     });
 
-    describe('handleScrubEndProgress', () => {
-        it('should call handleStartTimer and call onPLay when isPlaying to false', () => {
-            setMockedState();
-
-            const wrapper = getWrapper();
-            jest.runOnlyPendingTimers();
-            const AudioRangeProps = wrapper.find('AudioRange').props() as IAudioRangeProps;
-            AudioRangeProps.onMouseUp && AudioRangeProps.onMouseUp();
-
-            expect(setInterval).toBeCalledWith(expect.any(Function), 1000);
-            expect(props.onPLay).toBeCalled();
+    it('should call callbacks after click on time range', () => {
+        const handlePlayMock = jest.fn();
+        const handleChangeMock = jest.fn();
+        const el = document.createElement('audio');
+        Object.defineProperties(el, {
+            duration: {
+                writable: true,
+                value: 100,
+            },
         });
 
-        it('should call clearInterval and not call handlePLay', () => {
-            const intervalId = 1234;
+        render(
+            <AudioProgress
+                audioRef={{ current: el }}
+                isPlaying={false}
+                audioTitle="test audioTitle"
+                isPause
+                onPlay={handlePlayMock}
+                onChangeAudioCurrentTime={handleChangeMock}
+            />,
+        );
+        fireEvent.loadedMetadata(el);
 
-            mockUseRef(intervalId);
-            setMockedState();
+        const timeRange = screen.getByTestId('AudioTimeRange');
+        fireEvent.change(timeRange, { target: { value: 10 } });
+        fireEvent.mouseUp(timeRange);
 
-            const wrapper = getWrapper({ isPlaying: true });
-            const AudioRangeProps = wrapper.find('AudioRange').props() as IAudioRangeProps;
-            AudioRangeProps.onMouseUp && AudioRangeProps.onMouseUp();
-
-            expect(clearInterval).toBeCalledWith(intervalId);
-            expect(props.onPLay).not.toBeCalled();
-        });
+        expect(handlePlayMock).toHaveBeenCalled();
+        expect(handleChangeMock).toHaveBeenCalledWith(10);
     });
 
-    describe('useEffect', () => {
-        beforeEach(() => {
-            mockUseEffect();
-            mockUseEffect();
-            mockUseEffect();
+    it('should call callback after the end of the audio', () => {
+        const handleSetIsPlayingMock = jest.fn();
+        const el = document.createElement('audio');
+        Object.defineProperties(el, {
+            duration: {
+                writable: true,
+                value: 100,
+            },
+            ended: {
+                writable: true,
+                value: true,
+            },
         });
 
-        it('should call setTrackProgress', () => {
-            setMockedState();
-
-            getWrapper();
-
-            expect(setTrackProgress).toBeCalledWith(audioRefMock.current.currentTime);
+        render(
+            <AudioProgress
+                audioRef={{ current: el }}
+                isPlaying
+                audioTitle="test audioTitle"
+                isPause={false}
+                onSetIsPlaying={handleSetIsPlayingMock}
+            />,
+        );
+        fireEvent.loadedMetadata(el);
+        act(() => {
+            jest.runTimersToTime(INTERVAL_DELAY);
         });
 
-        it('should call handleStartTimer when isPlaying to true', () => {
-            setMockedState();
-
-            getWrapper({ isPlaying: true });
-            jest.runOnlyPendingTimers();
-
-            expect(setInterval).toBeCalledWith(expect.any(Function), 1000);
-        });
-
-        it('should call clearInterval when isPause to true', () => {
-            const intervalId = 1234;
-
-            mockUseRef(intervalId);
-            setMockedState();
-
-            getWrapper({ isPause: true });
-
-            expect(clearInterval).toBeCalledWith(intervalId);
-        });
+        expect(handleSetIsPlayingMock).toHaveBeenCalledWith(false);
     });
 
-    describe('useEffectCallback', () => {
-        let cleanupFunc: ReturnType<React.EffectCallback>;
-
-        beforeEach(() => {
-            jest.spyOn(React, 'useEffect').mockImplementationOnce(f => f());
-            jest.spyOn(React, 'useEffect').mockImplementationOnce(f => f());
-            jest.spyOn(React, 'useEffect').mockImplementation(func => {
-                cleanupFunc = func();
-            });
+    it('should set progress during audio playback', () => {
+        const el = document.createElement('audio');
+        Object.defineProperties(el, {
+            duration: {
+                writable: true,
+                value: 100,
+            },
+            currentTime: {
+                writable: true,
+                value: 20,
+            },
         });
 
-        it('should call clearInterval', () => {
-            const intervalId = 1234;
-
-            mockUseRef(intervalId);
-            setMockedState();
-
-            const wrapper = getWrapper();
-
-            cleanupFunc && cleanupFunc();
-            wrapper.unmount();
-
-            expect(clearInterval).toBeCalledWith(intervalId);
+        render(<AudioProgress audioRef={{ current: el }} isPlaying audioTitle="test audioTitle" isPause={false} />);
+        fireEvent.loadedMetadata(el);
+        act(() => {
+            jest.runTimersToTime(INTERVAL_DELAY);
         });
+
+        const timeRange: HTMLInputElement = screen.getByTestId('AudioTimeRange');
+
+        expect(timeRange.value).toBe('20');
+        expect(timeRange).toHaveStyle('background-size: 20% 100%;');
     });
 });

@@ -1,322 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Tabs /> should render first tab as link and with optional props 1`] = `
+<div
+  class="mfui-tabs__tab"
+  data-testid="root[1]"
+>
+  <a
+    class="mfui-tabs__tab-inner mfui-tabs__tab-inner_current mfui-tabs__tab-inner_with-icon"
+    data-testid="inner[1]"
+    href="/test"
+    rel="nofollow"
+  >
+    <div
+      class="mfui-tabs__tab-icon"
+    >
+      <test-file-stub />
+    </div>
+    <div
+      class="mfui-tabs__tab-title"
+    >
+      title 1
+    </div>
+  </a>
+</div>
+`;
+
 exports[`<Tabs /> should render with default props 1`] = `
-<div
-  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
->
+<div>
   <div
-    className="mfui-tabs__wrapper"
-    style={
-      Object {
-        "height": "auto",
-      }
-    }
+    class="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
   >
     <div
-      className="mfui-tabs__swiper-wrapper"
-      style={
-        Object {
-          "paddingLeft": 0,
-          "paddingRight": 0,
-        }
-      }
+      class="mfui-tabs__wrapper"
+      style="height: auto;"
     >
-      <Swiper
-        className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end"
-        initialSlide={0}
-        observer={true}
-        onFromEdge={[Function]}
-        onReachBeginning={[Function]}
-        onReachEnd={[Function]}
-        onSwiper={[Function]}
-        simulateTouch={false}
-        slidesPerView="auto"
-        watchOverflow={true}
+      <div
+        class="mfui-tabs__swiper-wrapper"
+        style="padding-left: 0px; padding-right: 0px;"
       >
-        <SwiperSlide
-          className="mfui-tabs__slide"
-          key=".0"
-        >
-          <div
-            className="mfui-tabs__tab"
-          >
-            <div
-              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current"
-              onClick={[Function]}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          className="mfui-tabs__slide"
-          key=".1"
-        >
-          <div
-            className="mfui-tabs__tab"
-          >
-            <div
-              className="mfui-tabs__tab-inner"
-              onClick={[Function]}
-            />
-          </div>
-        </SwiperSlide>
         <div
-          className="mfui-tabs__underline"
-          slot="wrapper-start"
-          style={
-            Object {
-              "transform": "translateX(0px)",
-              "transitionProperty": "none",
-              "width": "0px",
-            }
-          }
-        />
-        <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_prev mfui-tabs__arrow_hide"
-          onClick={[Function]}
-        />
-        <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_next mfui-tabs__arrow_hide"
-          onClick={[Function]}
-        />
-      </Swiper>
-    </div>
-  </div>
-  <div
-    className="mfui-tabs__panel mfui-tabs__panel_current"
-    key=".0"
-  >
-    1
-  </div>
-  <div
-    className="mfui-tabs__panel"
-    key=".1"
-  >
-    2
-  </div>
-</div>
-`;
-
-exports[`<Tabs /> should render with props 1`] = `
-<div
-  className="mfui-tabs mfui-tabs_size_large mfui-tabs_tab-color_green mfui-tabs_h-align_center mfui-tabs_auto-width className rootClass"
-  data-test="test"
->
-  <div
-    className="mfui-tabs__wrapper wrapperClass"
-    style={
-      Object {
-        "height": "auto",
-      }
-    }
-  >
-    <div
-      className="mfui-tabs__swiper-wrapper swiperWrapperClass"
-      style={
-        Object {
-          "paddingLeft": 0,
-          "paddingRight": 0,
-        }
-      }
-    >
-      <Swiper
-        className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end innerIndentsClass"
-        data-test="test"
-        initialSlide={1}
-        observer={true}
-        onFromEdge={[Function]}
-        onReachBeginning={[Function]}
-        onReachEnd={[Function]}
-        onSwiper={[Function]}
-        simulateTouch={false}
-        slidesPerView="auto"
-        watchOverflow={true}
-      >
-        <SwiperSlide
-          className="mfui-tabs__slide"
-          key=".0"
+          class="swiper-container swiper-container-initialized swiper-container-horizontal mfui-tabs__swiper"
         >
           <div
-            className="mfui-tabs__tab tabClass"
-            data-testid="root[1]"
-          >
-            <a
-              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_with-icon"
-              data-testid="inner[1]"
-              href="www.test.com"
-              onClick={[Function]}
-              rel="nofollow"
-            >
-              <div
-                className="mfui-tabs__tab-icon"
-              >
-                <test-file-stub />
-              </div>
-              <div
-                className="mfui-tabs__tab-title"
-              >
-                title 1
-              </div>
-            </a>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          className="mfui-tabs__slide"
-          key=".1"
-        >
-          <div
-            className="mfui-tabs__tab tabClass activeTabClass"
+            class="swiper-wrapper"
+            style="transition-duration: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
           >
             <div
-              className="tab-wrapper"
+              class="mfui-tabs__underline"
+              slot="wrapper-start"
+              style="width: 0px; transform: translateX(0px); transition-property: none;"
+            />
+            <div
+              class="swiper-slide mfui-tabs__slide"
             >
               <div
-                className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current"
-                onClick={[Function]}
+                class="mfui-tabs__tab"
               >
                 <div
-                  className="mfui-tabs__tab-title"
-                >
-                  title 2
-                </div>
+                  class="mfui-tabs__tab-inner mfui-tabs__tab-inner_current"
+                />
+              </div>
+            </div>
+            <div
+              class="swiper-slide mfui-tabs__slide"
+            >
+              <div
+                class="mfui-tabs__tab"
+              >
+                <div
+                  class="mfui-tabs__tab-inner"
+                />
               </div>
             </div>
           </div>
-        </SwiperSlide>
-        <div
-          className="mfui-tabs__underline"
-          slot="wrapper-start"
-          style={
-            Object {
-              "transform": "translateX(0px)",
-              "transitionProperty": "none",
-              "width": "0px",
-            }
-          }
-        />
-        <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_prev mfui-tabs__arrow_hide"
-          data-test="test"
-          onClick={[Function]}
-        />
-        <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_next mfui-tabs__arrow_hide"
-          data-test="test"
-          onClick={[Function]}
-        />
-      </Swiper>
+          <test-file-stub
+            classname="mfui-tabs__arrow mfui-tabs__arrow_prev"
+          />
+          <test-file-stub
+            classname="mfui-tabs__arrow mfui-tabs__arrow_next"
+          />
+        </div>
+      </div>
     </div>
-  </div>
-  <div
-    className="mfui-tabs__panel mfui-tabs__panel_current"
-    data-test="test[2]"
-    key=".1"
-  >
-    2
-  </div>
-</div>
-`;
-
-exports[`<Tabs /> should render without panels 1`] = `
-<div
-  className="mfui-tabs mfui-tabs_size_medium mfui-tabs_tab-color_white mfui-tabs_h-align_left mfui-tabs_indents"
->
-  <div
-    className="mfui-tabs__wrapper"
-    style={
-      Object {
-        "height": "auto",
-      }
-    }
-  >
     <div
-      className="mfui-tabs__swiper-wrapper"
-      style={
-        Object {
-          "paddingLeft": 0,
-          "paddingRight": 0,
-        }
-      }
+      class="mfui-tabs__panel mfui-tabs__panel_current"
     >
-      <Swiper
-        className="mfui-tabs__swiper mfui-tabs__swiper_beginning mfui-tabs__swiper_end"
-        initialSlide={0}
-        observer={true}
-        onFromEdge={[Function]}
-        onReachBeginning={[Function]}
-        onReachEnd={[Function]}
-        onSwiper={[Function]}
-        simulateTouch={false}
-        slidesPerView="auto"
-        watchOverflow={true}
-      >
-        <SwiperSlide
-          className="mfui-tabs__slide"
-          key=".0"
-        >
-          <div
-            className="mfui-tabs__tab"
-          >
-            <a
-              className="mfui-tabs__tab-inner mfui-tabs__tab-inner_current mfui-tabs__tab-inner_with-icon"
-              href="www.test.com"
-              onClick={[Function]}
-            >
-              <div
-                className="mfui-tabs__tab-icon"
-              >
-                <test-file-stub />
-              </div>
-              <div
-                className="mfui-tabs__tab-title"
-              >
-                title 1
-              </div>
-            </a>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide
-          className="mfui-tabs__slide"
-          key=".1"
-        >
-          <div
-            className="mfui-tabs__tab"
-          >
-            <div
-              className="tab-wrapper"
-            >
-              <div
-                className="mfui-tabs__tab-inner"
-                onClick={[Function]}
-              >
-                <div
-                  className="mfui-tabs__tab-title"
-                >
-                  title 2
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <div
-          className="mfui-tabs__underline"
-          slot="wrapper-start"
-          style={
-            Object {
-              "transform": "translateX(0px)",
-              "transitionProperty": "none",
-              "width": "0px",
-            }
-          }
-        />
-        <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_prev mfui-tabs__arrow_hide"
-          onClick={[Function]}
-        />
-        <test-file-stub
-          className="mfui-tabs__arrow mfui-tabs__arrow_next mfui-tabs__arrow_hide"
-          onClick={[Function]}
-        />
-      </Swiper>
+      1
+    </div>
+    <div
+      class="mfui-tabs__panel"
+    >
+      2
     </div>
   </div>
 </div>

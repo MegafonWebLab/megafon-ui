@@ -52,6 +52,8 @@ export interface ITabsProps {
         panel?: Record<string, string>;
         prev?: Record<string, string>;
         next?: Record<string, string>;
+        wrapper?: Record<string, string>;
+        swiperWrapper?: Record<string, string>;
     };
     /** Размер табов */
     size?: TabSizeType;
@@ -423,13 +425,19 @@ const Tabs: React.FC<ITabsProps> = ({
             )}
             ref={rootRef}
         >
-            <div className={cn('wrapper', [classes?.wrapper])} ref={tabListRef} style={{ height: tabListHeight }}>
+            <div
+                ref={tabListRef}
+                style={{ height: tabListHeight }}
+                {...filterDataAttrs(dataAttrs?.wrapper)}
+                className={cn('wrapper', [classes?.wrapper])}
+            >
                 <div
                     className={cn('swiper-wrapper', [classes?.swiperWrapper])}
                     style={{
                         paddingLeft: stickyOffset.left,
                         paddingRight: stickyOffset.right,
                     }}
+                    {...filterDataAttrs(dataAttrs?.swiperWrapper)}
                 >
                     <Swiper
                         {...filterDataAttrs(dataAttrs?.slider)}
@@ -498,6 +506,8 @@ Tabs.propTypes = {
         panel: PropTypes.objectOf(PropTypes.string.isRequired),
         prev: PropTypes.objectOf(PropTypes.string.isRequired),
         next: PropTypes.objectOf(PropTypes.string.isRequired),
+        wrapper: PropTypes.objectOf(PropTypes.string.isRequired),
+        swiperWrapper: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
     size: PropTypes.oneOf(Object.values(TabSize)),
     align: PropTypes.oneOf(Object.values(TabAlign)),

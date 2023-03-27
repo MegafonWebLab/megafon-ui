@@ -7,7 +7,7 @@ import VolumeIcon from './i/volume.svg';
 import './style/AudioVolume.less';
 
 export interface IAudioVolumeProps {
-    onChangeAudioVolume: (volume: number) => void;
+    onChangeAudioVolume?: (volume: number) => void;
 }
 
 const cn = cnCreate('mfui-audio-volume');
@@ -22,7 +22,7 @@ const AudioVolume: React.FC<IAudioVolumeProps> = ({ onChangeAudioVolume }) => {
         const currentVolume = Number(e.target.value);
 
         setTrackVolume(currentVolume);
-        onChangeAudioVolume(currentVolume);
+        onChangeAudioVolume?.(currentVolume);
     };
 
     return (
@@ -48,6 +48,7 @@ const AudioVolume: React.FC<IAudioVolumeProps> = ({ onChangeAudioVolume }) => {
                     step="0.01"
                     colorPercent={volumeColorPercent || 0}
                     onChange={handleScrubVolume}
+                    dataAttrs={{ 'data-testid': 'AudioVolumeRange' }}
                 />
             </Tooltip>
         </div>

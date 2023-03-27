@@ -1,93 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AudioPlayer /> snapshots should render component 1`] = `
-<div
-  className="mfui-audio-player mfui-audio-player_position_center"
->
+exports[`AudioPlayer should render component 1`] = `
+<div>
   <div
-    className="mfui-audio-player__player"
+    class="mfui-audio-player mfui-audio-player_position_center"
+    data-testid="AudioPlayer"
   >
-    <audio
-      className="mfui-audio-player__audio"
-      controls={false}
-    >
-      <source
-        src="test audioSrc"
-        type="audio/mpeg"
-      />
-    </audio>
     <div
-      className="mfui-audio-player__playing-controls"
+      class="mfui-audio-player__player"
     >
-      <Button
-        className="mfui-audio-player__button"
-        icon={<test-file-stub />}
-        onClick={[Function]}
-        sizeAll="small"
-      />
+      <audio
+        class="mfui-audio-player__audio"
+        data-testid="AudioPlayer-audio"
+      >
+        <source
+          src="test audioSrc"
+          type="audio/mpeg"
+        />
+      </audio>
+      <div
+        class="mfui-audio-player__playing-controls"
+      >
+        <button
+          class="mfui-button mfui-button_type_primary mfui-button_theme_green mfui-button_size-all_small mfui-button_no-touch mfui-button_content-type_icon mfui-audio-player__button"
+          data-testid="AudioPlayer-btn"
+          type="button"
+        >
+          <div
+            class="mfui-button__inner"
+          >
+            <div
+              class="mfui-button__content"
+            >
+              <div
+                class="mfui-button__icon"
+              >
+                <test-file-stub />
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="mfui-audio-progress"
+      >
+        <div
+          class="mfui-audio-progress__info"
+        >
+          <span
+            class="mfui-audio-progress__title"
+          >
+            test audioTitle
+          </span>
+          <span
+            class="mfui-audio-progress__value"
+          >
+            00:00
+          </span>
+        </div>
+        <div
+          class="mfui-audio-progress__range-wrapper"
+        >
+          <input
+            class="mfui-audio-range mfui-audio-progress__range"
+            data-testid="AudioTimeRange"
+            max="0"
+            min="0"
+            step="1"
+            style="background-size: 0% 100%;"
+            type="range"
+            value="0"
+          />
+        </div>
+      </div>
+      <div
+        class="mfui-audio-volume"
+      >
+        <div
+          class="mfui-audio-volume__icon-area"
+        >
+          <test-file-stub
+            classname="mfui-audio-volume__icon mfui-audio-volume__icon_visible"
+          />
+          <test-file-stub
+            classname="mfui-audio-volume__icon"
+          />
+        </div>
+        <div
+          data-name="Tooltip"
+        >
+          <input
+            class="mfui-audio-range mfui-audio-volume__range"
+            data-testid="AudioVolumeRange"
+            max="1"
+            min="0"
+            step="0.01"
+            style="background-size: 30% 100%;"
+            type="range"
+            value="0.3"
+          />
+        </div>
+      </div>
     </div>
-    <AudioProgress
-      audioRef={
-        Object {
-          "current": null,
-        }
-      }
-      audioTitle="test audioTitle"
-      isPause={false}
-      isPlaying={false}
-      onChangeAudioCurrentTime={[Function]}
-      onPLay={[Function]}
-      onSetIsPlaying={[MockFunction]}
-    />
-    <AudioVolume
-      onChangeAudioVolume={[Function]}
-    />
-  </div>
-</div>
-`;
-
-exports[`<AudioPlayer /> snapshots should render component when isPlaying 1`] = `
-<div
-  className="mfui-audio-player mfui-audio-player_position_center"
->
-  <div
-    className="mfui-audio-player__player"
-  >
-    <audio
-      className="mfui-audio-player__audio"
-      controls={false}
-    >
-      <source
-        src="test audioSrc"
-        type="audio/mpeg"
-      />
-    </audio>
-    <div
-      className="mfui-audio-player__playing-controls"
-    >
-      <Button
-        className="mfui-audio-player__button"
-        icon={<test-file-stub />}
-        onClick={[Function]}
-        sizeAll="small"
-      />
-    </div>
-    <AudioProgress
-      audioRef={
-        Object {
-          "current": null,
-        }
-      }
-      audioTitle="test audioTitle"
-      isPause={false}
-      isPlaying={true}
-      onChangeAudioCurrentTime={[Function]}
-      onPLay={[Function]}
-      onSetIsPlaying={[MockFunction]}
-    />
-    <AudioVolume
-      onChangeAudioVolume={[Function]}
-    />
   </div>
 </div>
 `;

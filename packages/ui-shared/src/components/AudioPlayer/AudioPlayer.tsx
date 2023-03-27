@@ -55,10 +55,10 @@ const AudioPlayer: React.FC<IAudioPlayerProps> = ({ audioSrc, audioTitle, positi
     const playingIconHandleClick: () => void = React.useMemo(() => (isPlaying ? handlePause : handlePLay), [isPlaying]);
 
     return (
-        <div className={cn({ 'full-width': isFullWidth, position })}>
+        <div className={cn({ 'full-width': isFullWidth, position })} data-testid="AudioPlayer">
             <div className={cn('player')}>
                 {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                <audio className={cn('audio')} ref={audioRef} controls={false}>
+                <audio className={cn('audio')} ref={audioRef} controls={false} data-testid="AudioPlayer-audio">
                     <source src={audioSrc} type="audio/mpeg" />
                 </audio>
                 <div className={cn('playing-controls')}>
@@ -67,6 +67,7 @@ const AudioPlayer: React.FC<IAudioPlayerProps> = ({ audioSrc, audioTitle, positi
                         onClick={playingIconHandleClick}
                         sizeAll="small"
                         className={cn('button')}
+                        dataAttrs={{ root: { 'data-testid': 'AudioPlayer-btn' } }}
                     />
                 </div>
                 <AudioProgress
@@ -75,7 +76,7 @@ const AudioPlayer: React.FC<IAudioPlayerProps> = ({ audioSrc, audioTitle, positi
                     isPlaying={isPlaying}
                     isPause={isPause}
                     onChangeAudioCurrentTime={handleChangeAudioCurrentTime}
-                    onPLay={handlePLay}
+                    onPlay={handlePLay}
                     onSetIsPlaying={setIsPlaying}
                 />
                 <AudioVolume onChangeAudioVolume={handleChangeAudioVolume} />
