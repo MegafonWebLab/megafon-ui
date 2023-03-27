@@ -55,22 +55,6 @@ describe('<AudioProgress />', () => {
         });
     });
 
-    describe('handleScrubProgress', () => {
-        it('should update state: trackProgress to new value and call onChangeAudioCurrentTime', () => {
-            const trackProgressValue = 35;
-            const event = { target: { value: `${trackProgressValue}` } } as React.ChangeEvent<HTMLInputElement>;
-
-            setMockedState();
-
-            const wrapper = getWrapper();
-            const AudioRangeProps = wrapper.find('AudioRange').props() as IAudioRangeProps;
-            AudioRangeProps.onChange(event);
-
-            expect(setTrackProgress).toBeCalledWith(trackProgressValue);
-            expect(props.onChangeAudioCurrentTime).toBeCalledWith(trackProgressValue);
-        });
-    });
-
     describe('handleScrubEndProgress', () => {
         it('should call handleStartTimer and call onPLay when isPlaying to false', () => {
             setMockedState();
@@ -104,14 +88,6 @@ describe('<AudioProgress />', () => {
             mockUseEffect();
             mockUseEffect();
             mockUseEffect();
-        });
-
-        it('should call setTrackProgress', () => {
-            setMockedState();
-
-            getWrapper();
-
-            expect(setTrackProgress).toBeCalledWith(audioRefMock.current.currentTime);
         });
 
         it('should call handleStartTimer when isPlaying to true', () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { cnCreate } from '@megafon/ui-helpers';
 import AudioRange from './AudioRange';
+import useTrackDuration from './hooks/useTrackDuration';
 import timerFormat from './timerFormatUtil';
 import './style/AudioProgress.less';
 
@@ -28,8 +29,8 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
 }) => {
     const intervalId = React.useRef<NodeJS.Timeout | null>(null);
 
-    const [trackDuration, setTrackDuration] = React.useState<number>(0);
     const [trackProgress, setTrackProgress] = React.useState<number>(0);
+    const trackDuration = useTrackDuration(audioRef);
 
     const progressColorPercent: number = React.useMemo(
         () => (trackProgress / trackDuration) * 100,
@@ -72,16 +73,6 @@ const AudioProgress: React.FC<IAudioProgressProps> = ({
 
     React.useEffect(() => {
         setTrackProgress(Math.floor(audioRef?.current?.currentTime || 0));
-    }, [audioRef]);
-
-    React.useEffect(() => {
-        const audioNode = audioRef.current;
-
-        if (audioNode) {
-            audioNode.onloadedmetadata = () => {
-                setTrackDuration(Math.round(audioNode.duration));
-            };
-        }
     }, [audioRef]);
 
     React.useEffect(() => {
