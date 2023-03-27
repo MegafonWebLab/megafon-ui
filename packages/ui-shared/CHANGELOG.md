@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.15.0...@megafon/ui-shared@4.15.1) (2023-03-27)
+
+
+### Bug Fixes
+
+* **audioplayer:** fix loading of audio metadata ([d3a496d](https://github.com/MegafonWebLab/megafon-ui/commit/d3a496d6b3be86627f41d001376f6e20df0275b5))
+
+
+
+
+
 # [4.15.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.14.0...@megafon/ui-shared@4.15.0) (2023-03-20)
 
 

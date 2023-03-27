@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.14.2...@megafon/ui-core@4.15.0) (2023-03-27)
+
+
+### Bug Fixes
+
+* **select:** reduce opened z index ([eb95b6b](https://github.com/MegafonWebLab/megafon-ui/commit/eb95b6b5ff4d18c0e782a571428fdb4680e11474))
+
+
+### Features
+
+* **select:** fix pseudo element position, fix z-index of drop-down list ([8d74450](https://github.com/MegafonWebLab/megafon-ui/commit/8d744504b0829323a94727a49823ec4d6a6e0d0d))
+
+
+
+
+
 ## [4.14.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.14.1...@megafon/ui-core@4.14.2) (2023-03-20)
 
 

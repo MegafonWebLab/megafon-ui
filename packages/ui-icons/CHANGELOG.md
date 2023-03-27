@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.8.0...@megafon/ui-icons@2.8.1) (2023-03-27)
+
+
+### Bug Fixes
+
+* **icons:** add payment systems logos: mir, mastercard, maestro & visa ([c589d41](https://github.com/MegafonWebLab/megafon-ui/commit/c589d419174fcf5284a2617d59741e85a32df423))
+* **icons:** replace Apple-map.svg icon for fix missing <mask /> issue after SVGO ([90a4a87](https://github.com/MegafonWebLab/megafon-ui/commit/90a4a87d27cdd565d50295956165c26b4739b40f))
+
+
+
+
+
 # [2.8.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.7.0...@megafon/ui-icons@2.8.0) (2023-03-15)
 
 
