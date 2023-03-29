@@ -88,6 +88,12 @@ describe('StoreBanner', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
+    it('should render when isContentLeftMobile is true', () => {
+        const wrapper = shallow(<StoreBanner {...props} isContentLeftMobile />);
+
+        expect(wrapper).toMatchSnapshot();
+    });
+
     it('should call click handler on app store link', () => {
         const onClickApple = jest.fn();
         const wrapper = shallow(<StoreBanner {...props} onClickApple={onClickApple} />);

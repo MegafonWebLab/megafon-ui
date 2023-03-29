@@ -123,6 +123,52 @@
         }
     }
 
+    &_mask_iphone-12 {
+        @{b}__device-mask {
+            position: relative;
+            z-index: 2;
+
+            background-image: url('./img/iphone12.png');
+        }
+
+        @{b}__screen {
+            top: 16px;
+            z-index: 1;
+
+            width: 87%;
+
+            @media @desktopS {
+                top: 18px;
+            }
+            @media @mobileB {
+                top: 13px;
+            }
+            @media @mobileSM {
+                top: 35px;
+            }
+        }
+    }
+
+    &_content-left-mobile {
+        @{b}__content {
+            @media @mobileSM {
+                text-align: left;
+            }
+        }
+
+        @{b}__stores {
+            @media @mobileSM {
+                justify-content: flex-start;
+            }
+        }
+
+        @{b}__button {
+            @media @mobileSM {
+                margin: 0;
+            }
+        }
+    }
+
     &__container {
         @media @desktop {
             padding-top: @containerVerticalPadding;
