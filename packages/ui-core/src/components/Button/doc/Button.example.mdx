@@ -291,6 +291,29 @@ export const ref = createRef();
     </div>
 </Playground>
 
+### Красная
+
+<Playground style={{ ...blockStyle, backgroundColor: '#F5F5F5' }}>
+    <Button type="text" theme="danger">
+        active
+    </Button>
+    <Button type="text" theme="danger" disabled>
+        disabled
+    </Button>
+    <Button type="text" theme="danger" showLoader>
+        with loader
+    </Button>
+    <Button type="text" theme="danger" showArrow>
+        with arrow
+    </Button>
+    <Button type="text" theme="danger" icon={<Balance24 />}>
+        with icon
+    </Button>
+    <div>
+        <Button type="text" theme="danger" icon={<Balance24 />} />
+    </div>
+</Playground>
+
 ## Размеры
 Все размеры содержимого кнопки зависят от размера самой кнопки. 
 
