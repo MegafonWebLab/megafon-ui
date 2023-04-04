@@ -1,3 +1,4 @@
+import iphone12Screen from './img/iphone12Screen.png';
 import newIphoneImage from './img/new-iphone-screen.png';
 import qrCode from './img/qr-code.png';
 import image from './img/screen.png';
@@ -13,4 +14,4 @@ const htmlText =
 const link = '#';
 const onClick = (): undefined => undefined;
 
-export { title, text, htmlTitle, htmlText, image, qrCode, newIphoneImage, link, onClick };
+export { title, text, htmlTitle, htmlText, image, qrCode, newIphoneImage, iphone12Screen, link, onClick };

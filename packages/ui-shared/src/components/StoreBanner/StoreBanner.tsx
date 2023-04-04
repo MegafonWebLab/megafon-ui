@@ -19,6 +19,7 @@ export const DeviceMask = {
     NEW_IPHONE: 'new-iphone',
     BLACK_IPHONE: 'black-iphone',
     WHITE_IPHONE: 'white-iphone',
+    IPHONE_12: 'iphone-12',
 } as const;
 
 type DeviceMaskType = typeof DeviceMask[keyof typeof DeviceMask];
@@ -57,6 +58,8 @@ export interface IStoreBannerProps {
     deviceMask: DeviceMaskType;
     /** Изображение на дисплее телефона */
     imageSrc: string;
+    /** Выравнивание контента слева на мобильном разрешении */
+    isContentLeftMobile?: boolean;
     /** Дополнительный класс корневого элемента */
     className?: string;
     /** Дополнительные классы для корневого и внутренних элементов */
@@ -99,6 +102,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     imageSrc,
     theme = 'default',
     deviceMask,
+    isContentLeftMobile,
     rootRef,
     dataAttrs,
     onClickApple,
@@ -106,7 +110,10 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     onClickHuawei,
 }) => (
     <div
-        className={cn({ theme, mask: deviceMask }, [className, rootClassName])}
+        className={cn({ theme, mask: deviceMask, 'content-left-mobile': isContentLeftMobile }, [
+            className,
+            rootClassName,
+        ])}
         ref={rootRef}
         {...filterDataAttrs(dataAttrs?.root)}
     >

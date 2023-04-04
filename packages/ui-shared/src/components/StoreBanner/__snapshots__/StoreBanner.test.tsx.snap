@@ -1,5 +1,100 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`StoreBanner should render when isContentLeftMobile is true 1`] = `
+<div
+  className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_android mfui-store-banner_content-left-mobile"
+  data-test-id="root-test"
+>
+  <div
+    className="mfui-store-banner__container"
+  >
+    <div
+      className="mfui-store-banner__grid"
+    >
+      <Grid>
+        <GridColumn
+          all="6"
+          mobile="12"
+          rightOffsetWide="1"
+        >
+          <div
+            className="mfui-store-banner__content"
+          >
+            <Header
+              as="h2"
+              className="mfui-store-banner__title"
+              color="inherit"
+            >
+              Title
+            </Header>
+            <Paragraph
+              className="mfui-store-banner__text"
+              color="inherit"
+              hasMargin={false}
+            >
+              Text
+            </Paragraph>
+            <div
+              className="mfui-store-banner__links"
+            >
+              <div
+                className="mfui-store-banner__stores"
+              >
+                <StoreButton
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_app-store"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkApple-test",
+                      },
+                    }
+                  }
+                  href="App Store link"
+                  rel="nofollow"
+                  theme="app-store"
+                />
+                <StoreButton
+                  className="mfui-store-banner__store-link mfui-store-banner__store-link_google-play"
+                  dataAttrs={
+                    Object {
+                      "root": Object {
+                        "data-test-id": "linkGoogle-test",
+                      },
+                    }
+                  }
+                  href="Google Play link"
+                  rel="nofollow"
+                  theme="google-play"
+                />
+              </div>
+            </div>
+          </div>
+        </GridColumn>
+        <GridColumn
+          all="4"
+          desktop="6"
+          mobile="12"
+          tablet="6"
+        >
+          <div
+            className="mfui-store-banner__device-wrapper"
+          >
+            <div
+              className="mfui-store-banner__device-mask"
+            />
+            <img
+              alt="Изображение приложения на экране телефона"
+              className="mfui-store-banner__screen"
+              src="image.png"
+            />
+          </div>
+        </GridColumn>
+      </Grid>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`StoreBanner should render with Huawei Store 1`] = `
 <div
   className="mfui-store-banner mfui-store-banner_theme_default mfui-store-banner_mask_android custom-class-name"
