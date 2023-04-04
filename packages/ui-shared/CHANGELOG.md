@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.16.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.15.1...@megafon/ui-shared@4.16.0) (2023-04-04)
+
+
+### Features
+
+* **storebanner:** add new mask for iphone 12 and content left on mobile ([8702938](https://github.com/MegafonWebLab/megafon-ui/commit/8702938d1bf9c0b1bbdc80f045e2bc329da1c99d))
+
+
+
+
+
 ## [4.15.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.15.0...@megafon/ui-shared@4.15.1) (2023-03-27)
 
 

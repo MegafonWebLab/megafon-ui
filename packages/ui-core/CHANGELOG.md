@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.15.0...@megafon/ui-core@4.15.1) (2023-04-04)
+
+
+### Bug Fixes
+
+* **color:** new danger color for text type button ([7f53fd8](https://github.com/MegafonWebLab/megafon-ui/commit/7f53fd8d369f664e678c8cb2a437ef4fa5c801fc))
+* **pricebadge:** new props size and subtitle ([5f40360](https://github.com/MegafonWebLab/megafon-ui/commit/5f40360509e703a8fab2f4936aa109a9b63bafcd))
+
+
+
+
+
 # [4.15.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.14.2...@megafon/ui-core@4.15.0) (2023-03-27)
 
 
