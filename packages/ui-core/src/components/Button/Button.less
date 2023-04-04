@@ -259,6 +259,39 @@
         }
     }
 
+    // type = text
+    // theme = danger
+
+    &_type_text&_theme_danger {
+        width: fit-content;
+
+        color: var(--fury);
+
+        background-color: transparent;
+
+        svg {
+            fill: var(--fury);
+        }
+    }
+
+    &_no-touch&_type_text&_theme_danger {
+        &:not(@{b}_loading):hover {
+            color: var(--warmRedC);
+
+            svg {
+                fill: var(--warmRedC);
+            }
+        }
+
+        &:not(@{b}_loading):active {
+            color: var(--buttonDown);
+
+            svg {
+                fill: var(--buttonDown);
+            }
+        }
+    }
+
     // type = primary
     // theme = green
 
