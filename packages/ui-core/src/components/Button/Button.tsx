@@ -20,6 +20,7 @@ export const ButtonThemes = {
     PURPLE_SOFT: 'purple-soft',
     WHITE: 'white',
     BLACK: 'black',
+    DANGER: 'danger',
 } as const;
 
 type ButtonThemesType = typeof ButtonThemes[keyof typeof ButtonThemes];

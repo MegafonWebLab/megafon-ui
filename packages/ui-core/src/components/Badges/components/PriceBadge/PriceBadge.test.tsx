@@ -50,4 +50,25 @@ describe('<PriceBadge />', () => {
 
         expect(getByTestId('root')).toHaveClass('mfui-price-badge_adaptive');
     });
+
+    it('should render big size badge with subTitle', () => {
+        const { getByTestId, getByText } = render(
+            <PriceBadge dataAttrs={dataAttrs} size="big" subTitle="subTitle">
+                text
+            </PriceBadge>,
+        );
+
+        expect(getByTestId('root')).toHaveClass('mfui-price-badge_size_big');
+        expect(getByText('subTitle')).toBeInTheDocument();
+    });
+
+    it('should render small size without subTitle', () => {
+        const { queryByText } = render(
+            <PriceBadge dataAttrs={dataAttrs} size="small" subTitle="subTitle">
+                text
+            </PriceBadge>,
+        );
+
+        expect(queryByText('subTitle')).toBeNull();
+    });
 });

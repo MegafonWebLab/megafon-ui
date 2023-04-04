@@ -1,6 +1,6 @@
 import { Playground } from 'docz';
 import StoreBanner from '../StoreBanner';
-import { title, text, htmlTitle, htmlText, image, qrCode, newIphoneImage, link, onClick } from './StoreBanner.docz.tsx';
+import { title, text, htmlTitle, htmlText, image, qrCode, newIphoneImage, iphone12Screen, link, onClick } from './StoreBanner.docz.tsx';
 import { ContentArea } from '@megafon/ui-core';
 
 ```javascript collapse=Демо данные
@@ -30,6 +30,23 @@ const onClick = () => {};
 </Playground>
 
 ## Шаблоны девайсов
+
+### Iphone 12
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={iphone12Screen}
+            deviceMask="iphone-12"
+        />
+    </ContentArea>
+</Playground>
 
 ### Новый iphone
 
@@ -271,6 +288,24 @@ const htmlText = '<a href="https://moscow.megafon.ru">Скачай</a>&nbspи<br
             onClickGoogle={onClick}
             imageSrc={image}
             deviceMask="android"
+        />
+    </ContentArea>
+</Playground>
+
+## Выравнивание контента слева на мобильном разрешении
+
+<Playground>
+    <ContentArea>
+        <StoreBanner
+            title={title}
+            text={text}
+            linkApple={link}
+            onClickApple={onClick}
+            linkGoogle={link}
+            onClickGoogle={onClick}
+            imageSrc={image}
+            deviceMask="black-iphone"
+            isContentLeftMobile
         />
     </ContentArea>
 </Playground>
