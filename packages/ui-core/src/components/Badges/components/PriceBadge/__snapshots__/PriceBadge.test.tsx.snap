@@ -3,7 +3,7 @@
 exports[`<PriceBadge /> should render PriceBadge 1`] = `
 <div>
   <div
-    class="mfui-price-badge mfui-price-badge_theme_grey"
+    class="mfui-price-badge mfui-price-badge_theme_grey mfui-price-badge_size_small"
   >
     <div
       class="mfui-price-badge__icon-container"
@@ -12,11 +12,13 @@ exports[`<PriceBadge /> should render PriceBadge 1`] = `
         classname="mfui-price-badge__icon"
       />
     </div>
-    <span
+    <div
       class="mfui-price-badge__text"
     >
-      text
-    </span>
+      <div>
+        text
+      </div>
+    </div>
   </div>
 </div>
 `;

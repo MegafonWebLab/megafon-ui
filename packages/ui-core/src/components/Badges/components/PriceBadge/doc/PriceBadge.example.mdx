@@ -4,7 +4,21 @@ import PriceBadge from '../PriceBadge';
 ## Базовое использование
 
 <Playground>
-    <PriceBadge>Базовый бейдж</PriceBadge>   
+    <PriceBadge>Базовый бейдж</PriceBadge>
+</Playground>
+
+## Размеры бейджа
+
+<Playground style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <PriceBadge size="big"><div style={{ width: "350px"}}>Большой бейдж</div></PriceBadge>
+    <PriceBadge size="small" subTitle="с дополнительным текстом">Маленький бейдж (по умолчанию)</PriceBadge>
+</Playground>
+
+## Дополнительный текст
+
+<Playground style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <PriceBadge size="big" subTitle="с дополнительным текстом">Большой бейдж</PriceBadge>
+    <PriceBadge subTitle="Дополнительный текст">Маленький бейдж доп. текст не выводит</PriceBadge>
 </Playground>
 
 ## Цветовые темы
