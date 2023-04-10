@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import './StoreButton.less';
 
 export enum Theme {
-    GOOGLE_PLAY = 'google-play',
     APP_STORE = 'app-store',
+    GOOGLE_PLAY = 'google-play',
     HUAWEI_STORE = 'huawei-store',
+    MI_STORE = 'mi-store',
+    RU_STORE = 'ru-store',
 }
 
 type LinkPropTypes = React.ComponentProps<typeof Link>;
