@@ -11,15 +11,6 @@ type SwiperConfig = {
     isLocked: boolean;
 };
 
-export enum GradientTheme {
-    DEFAULT = 'default',
-    GREEN = 'green',
-    BLACK = 'black',
-    SPB_SKY_0 = 'spbSky0',
-    SPB_SKY_1 = 'spbSky1',
-    SPB_SKY_2 = 'spbSky2',
-}
-
 export default (gradient: boolean, swiper: SwiperConfig): CSSProperties => {
     const [slidesGap, setSlidesGap] = useState(0);
 
