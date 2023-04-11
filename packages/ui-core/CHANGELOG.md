@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.15.1...@megafon/ui-core@4.15.2) (2023-04-11)
+
+
+### Bug Fixes
+
+* **carousel:** fix gradientColor type and gradient height ([2d7eea0](https://github.com/MegafonWebLab/megafon-ui/commit/2d7eea0f215433912542a5a6eb99f48c7331a6d2))
+
+
+
+
+
 ## [4.15.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.15.0...@megafon/ui-core@4.15.1) (2023-04-04)
 
 

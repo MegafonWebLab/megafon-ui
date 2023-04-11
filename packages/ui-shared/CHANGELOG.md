@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.17.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.16.0...@megafon/ui-shared@4.17.0) (2023-04-11)
+
+
+### Features
+
+* **storebanner:** add RuStore and MiStore buttons ([9ed93d1](https://github.com/MegafonWebLab/megafon-ui/commit/9ed93d1e972276d18e8f955d42b665cf18aa8af4))
+
+
+
+
+
 # [4.16.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.15.1...@megafon/ui-shared@4.16.0) (2023-04-04)
 
 

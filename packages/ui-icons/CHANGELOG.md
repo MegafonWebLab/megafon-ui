@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.8.1...@megafon/ui-icons@2.9.0) (2023-04-11)
+
+
+### Features
+
+* **icons:** add asana, raiffeisen, slack and trello logos ([7c73321](https://github.com/MegafonWebLab/megafon-ui/commit/7c73321c1c8b2957a0a2ea5e7cd5ea60706d476c))
+
+
+
+
+
 ## [2.8.1](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-icons@2.8.0...@megafon/ui-icons@2.8.1) (2023-03-27)
 
 
