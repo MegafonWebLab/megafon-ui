@@ -6,6 +6,7 @@ import './StoreButton.less';
 
 export enum Theme {
     APP_STORE = 'app-store',
+    GALAXY_STORE = 'galaxy-store',
     GOOGLE_PLAY = 'google-play',
     HUAWEI_STORE = 'huawei-store',
     MI_STORE = 'mi-store',
