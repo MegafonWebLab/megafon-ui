@@ -261,6 +261,14 @@ export const DemoTextFieldWithControlledValue = ({ children }) => {
     <TextField symbolCounter={10} textarea value="Иванов Иван Иванович"/>
 </Playground>
 
+## Счетчик введенных графем
+При превышении переданного количества поле становится невалидным.
+
+<Playground style={wrapperWideWidthStyle}>
+    <TextField symbolCounter={10} textarea graphemesCounter value="😀👩‍💻"/>
+    <TextField symbolCounter={10} textarea graphemesCounter value="⏏️ ▶️ ⏸ ⏯ ⏹"/>
+</Playground>
+
 ## Минимальная высота textarea равна одной строке
 По умолчанию минимальная высота равна трем строкам
 
