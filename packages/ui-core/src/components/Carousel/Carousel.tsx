@@ -9,7 +9,7 @@ import NavArrow, { Theme as ArrowTheme } from 'components/NavArrow/NavArrow';
 import throttleTime from 'constants/throttleTime';
 import usePrevious from '../../hooks/usePrevious';
 import checkBreakpointsPropTypes from './checkBreakpointsPropTypes';
-import useGradient, { GradientTheme } from './useGradient';
+import useGradient from './useGradient';
 import './Carousel.less';
 
 SwiperCore.use([Autoplay, Pagination, EffectFade]);
@@ -28,10 +28,19 @@ const SlidesPerView = {
     AUTO: 'auto',
 } as const;
 
-type SlidesPerViewType = typeof SlidesPerView[keyof typeof SlidesPerView];
+const GradientTheme = {
+    DEFAULT: 'default',
+    GREEN: 'green',
+    BLACK: 'black',
+    SPB_SKY_0: 'spbSky0',
+    SPB_SKY_1: 'spbSky1',
+    SPB_SKY_2: 'spbSky2',
+} as const;
 
+type SlidesPerViewType = typeof SlidesPerView[keyof typeof SlidesPerView];
 type NavThemeType = typeof NavTheme[keyof typeof NavTheme];
 type EffectThemeType = typeof EffectTheme[keyof typeof EffectTheme];
+type GradientThemeType = typeof GradientTheme[keyof typeof GradientTheme];
 
 export type SlidesSettingsType = {
     [key: number]: {
@@ -106,7 +115,7 @@ export interface ICarouselProps {
     /** Наличие градиента по краям контейнера */
     gradient?: boolean;
     /** Цвет градиента */
-    gradientColor?: GradientTheme;
+    gradientColor?: GradientThemeType;
 }
 
 const getAutoPlayConfig = (delay: number) => ({
@@ -165,7 +174,7 @@ const Carousel: React.FC<ICarouselProps> = ({
     onChange,
     slideToClickedSlide = false,
     gradient = false,
-    gradientColor = GradientTheme.DEFAULT,
+    gradientColor = 'default',
 }) => {
     const [swiperInstance, setSwiperInstance] = React.useState<SwiperCore>();
     const [isBeginning, setBeginning] = React.useState(true);

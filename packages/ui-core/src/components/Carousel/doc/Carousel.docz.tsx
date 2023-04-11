@@ -25,5 +25,5 @@ export const DemoSlide: React.FC<{ onColoredBackground?: boolean }> = ({ childre
 );
 
 export const blockStyle: React.CSSProperties = {
-    padding: '20px 0',
+    padding: '20px 0 25px',
 };

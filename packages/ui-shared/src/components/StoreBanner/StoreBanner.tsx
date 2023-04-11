@@ -40,10 +40,18 @@ export interface IStoreBannerProps {
     linkGoogle?: LinkHrefType;
     /** Обработчик клика по ссылке в Google Play */
     onClickGoogle?: LinkOnClickType;
-    /** Ссылка на скачивание приложения в Huawei Store */
+    /** Ссылка на скачивание приложения в Huawei App Gallery */
     linkHuawei?: LinkHrefType;
-    /** Обработчик клика по ссылке в Huawei Store */
+    /** Обработчик клика по ссылке в Huawei App Gallery */
     onClickHuawei?: LinkOnClickType;
+    /** Ссылка на скачивание приложения в RuStore */
+    linkRuStore?: LinkHrefType;
+    /** Обработчик клика по ссылке в RuStore */
+    onClickRuStore?: LinkOnClickType;
+    /** Ссылка на скачивание приложения в Mi App Store */
+    linkMiStore?: LinkHrefType;
+    /** Обработчик клика по ссылке в Mi App Store */
+    onClickMiStore?: LinkOnClickType;
     /**  Текст кнопки */
     textButton?: string;
     /**  Ссылка для  кнопки */
@@ -68,6 +76,8 @@ export interface IStoreBannerProps {
         appleLink?: string;
         googleLink?: string;
         huaweiLink?: string;
+        miStoreLink?: string;
+        ruStoreLink?: string;
     };
     /** Ссылка на корневой элемент */
     rootRef?: React.Ref<HTMLDivElement>;
@@ -78,6 +88,8 @@ export interface IStoreBannerProps {
         linkApple?: Record<string, string>;
         linkGoogle?: Record<string, string>;
         linkHuawei?: Record<string, string>;
+        linkMiStore?: Record<string, string>;
+        linkRuStore?: Record<string, string>;
     };
 }
 
@@ -89,12 +101,16 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
         appleLink: appleLinkClassName,
         googleLink: googleLinkClassName,
         huaweiLink: huaweiLinkClassName,
+        miStoreLink: miStoreLinkClassName,
+        ruStoreLink: ruStoreLinkClassName,
     } = {},
     title,
     text,
     linkApple,
     linkGoogle,
     linkHuawei,
+    linkMiStore,
+    linkRuStore,
     linkButton,
     textButton = 'Установите приложение',
     rel,
@@ -108,6 +124,8 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     onClickApple,
     onClickGoogle,
     onClickHuawei,
+    onClickMiStore,
+    onClickRuStore,
 }) => (
     <div
         className={cn({ theme, mask: deviceMask, 'content-left-mobile': isContentLeftMobile }, [
@@ -156,6 +174,16 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                                 onClick={onClickGoogle}
                                             />
                                         )}
+                                        {linkRuStore && (
+                                            <StoreButton
+                                                dataAttrs={{ root: dataAttrs?.linkRuStore }}
+                                                theme={StoreButtonTheme.RU_STORE}
+                                                href={linkRuStore}
+                                                rel={rel}
+                                                className={cn('store-link', { 'ru-store': true }, ruStoreLinkClassName)}
+                                                onClick={onClickRuStore}
+                                            />
+                                        )}
                                         {linkHuawei && (
                                             <StoreButton
                                                 dataAttrs={{ root: dataAttrs?.linkHuawei }}
@@ -168,6 +196,16 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                                     huaweiLinkClassName,
                                                 )}
                                                 onClick={onClickHuawei}
+                                            />
+                                        )}
+                                        {linkMiStore && (
+                                            <StoreButton
+                                                dataAttrs={{ root: dataAttrs?.linkMiStore }}
+                                                theme={StoreButtonTheme.MI_STORE}
+                                                href={linkMiStore}
+                                                rel={rel}
+                                                className={cn('store-link', { 'mi-store': true }, miStoreLinkClassName)}
+                                                onClick={onClickMiStore}
                                             />
                                         )}
                                     </div>
@@ -211,6 +249,10 @@ StoreBanner.propTypes = {
     onClickGoogle: PropTypes.func,
     linkHuawei: PropTypes.string,
     onClickHuawei: PropTypes.func,
+    linkMiStore: PropTypes.string,
+    onClickMiStore: PropTypes.func,
+    linkRuStore: PropTypes.string,
+    onClickRuStore: PropTypes.func,
     textButton: PropTypes.string,
     linkButton: PropTypes.string,
     rel: PropTypes.string,
@@ -221,6 +263,9 @@ StoreBanner.propTypes = {
     classes: PropTypes.shape({
         appleLink: PropTypes.string,
         googleLink: PropTypes.string,
+        huaweiLink: PropTypes.string,
+        miStoreLink: PropTypes.string,
+        ruStoreLink: PropTypes.string,
     }),
     rootRef: PropTypes.oneOfType([
         PropTypes.func,
@@ -233,6 +278,8 @@ StoreBanner.propTypes = {
         linkApple: PropTypes.objectOf(PropTypes.string.isRequired),
         linkGoogle: PropTypes.objectOf(PropTypes.string.isRequired),
         linkHuawei: PropTypes.objectOf(PropTypes.string.isRequired),
+        linkMiStore: PropTypes.objectOf(PropTypes.string.isRequired),
+        linkRuStore: PropTypes.objectOf(PropTypes.string.isRequired),
     }),
 };
 

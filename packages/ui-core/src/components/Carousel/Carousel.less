@@ -24,17 +24,15 @@
         flex-grow: 1;
         flex-shrink: 1;
         flex-wrap: wrap;
-        margin: -20px 0 -25px;
-        padding: 20px 0 25px;
+        margin: -20px 0 -25px; // to avoid clipping slide shadow vertically
+        padding: 20px 0 25px; // to avoid clipping slide shadow vertically
         overflow: hidden;
 
-        // to avoid clipping slide shadow
-
         @media @desktop {
-            margin-right: -20px !important;
-            margin-left: -20px !important;
-            padding-right: 20px !important;
-            padding-left: 20px !important;
+            margin-right: -20px !important; // to avoid clipping slide shadow horizontally
+            margin-left: -20px !important; // to avoid clipping slide shadow horizontally
+            padding-right: 20px !important; // to avoid clipping slide shadow horizontally
+            padding-left: 20px !important; // to avoid clipping slide shadow horizontally
         }
     }
 
@@ -59,10 +57,10 @@
             content: '';
             position: absolute;
             top: 0;
+            bottom: 0;
             z-index: 5;
 
             width: var(--gap);
-            height: 85%;
 
             @media @mobile {
                 display: none;

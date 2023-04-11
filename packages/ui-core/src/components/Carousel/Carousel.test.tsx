@@ -2,7 +2,6 @@ import * as React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import Carousel, { EffectTheme, ICarouselProps, NavTheme } from './Carousel';
 import { DemoSlide } from './doc/Carousel.docz';
-import { GradientTheme } from './useGradient';
 
 const props: ICarouselProps = {
     className: 'custom-class',
@@ -160,7 +159,7 @@ describe('<Carousel />', () => {
         });
 
         it('and custom color', () => {
-            const { getByTestId } = render(<Carousel {...props} gradient gradientColor={GradientTheme.GREEN} />);
+            const { getByTestId } = render(<Carousel {...props} gradient gradientColor="green" />);
 
             const gap = window.getComputedStyle(getByTestId('root')).getPropertyValue('--gap');
 

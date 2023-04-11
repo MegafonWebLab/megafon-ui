@@ -4,13 +4,15 @@ import { DemoSlide, blockStyle } from './Carousel.docz';
 import ContentArea from 'components/ContentArea/ContentArea';
 
 ## Особенности использования на мобильных разрешениях
+
 На разрешении меньше 1024 отключаются стрелки и появляются "уши",
 для корректного отображения которых необходимо предоставить компоненту возможность растянуться на всю страницу.
 По умолчанию компонент растягивается на всю страницу за счет отрицательных margin на величину гайдовых контентных отступов (32px на 320-767 и 48px на 768-1023)
 и компенсируется с помощью padding, чтобы основные видимые слайды выравнивались по контенту страницы.
 Если на площадке используются негайдовые контентные отступы, то нужно их переопределить с помощью дополнительного класса,
 который передается через свойство innerIndentsClass.
-``` css
+
+```css
 .custom-indents-class {
     padding-left: 50px;
     padding-right: 50px;
@@ -24,19 +26,19 @@ export const DemoSlide = ({ children, background }) => {
     return (
         <div
             style={{
-                    height: '200px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    fontSize: '30px',
-                    padding: '10px',
-                }}
+                height: '200px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                fontSize: '30px',
+                padding: '10px',
+            }}
         >
             {children}
         </div>
     );
-}
+};
 ```
 
 ## Базовое использование
@@ -153,6 +155,7 @@ const blockStyle = { padding: '20px 0' };
 </Playground>
 
 ### Без прокрутки
+
 Отсутствует навигация и функционал прокручивания при недостаточном количестве слайдов.
 
 <Playground style={blockStyle}>
@@ -169,14 +172,17 @@ const blockStyle = { padding: '20px 0' };
 ## Настройки слайдов
 
 ### Ширина слайдов по ширине их контента
+
 Задано расстояние между слайдами в px, количество видимых слайдов рассчитывается автоматически.
 
 <Playground style={blockStyle}>
     <ContentArea>
-        <Carousel slidesSettings={{
-            0: { slidesPerView: 'auto', spaceBetween: 16 },
-            768: { slidesPerView: 'auto', spaceBetween: 20 },
-        }}>
+        <Carousel
+            slidesSettings={{
+                0: { slidesPerView: 'auto', spaceBetween: 16 },
+                768: { slidesPerView: 'auto', spaceBetween: 20 },
+            }}
+        >
             <DemoSlide>111111</DemoSlide>
             <DemoSlide>22222222</DemoSlide>
             <DemoSlide>33333333333</DemoSlide>
@@ -191,15 +197,18 @@ const blockStyle = { padding: '20px 0' };
 </Playground>
 
 ### Переопределение количества видимых слайдов
+
 Количество видимых слайдов меняется в зависимости от расширения экрана.
 
 <Playground style={blockStyle}>
     <ContentArea>
-        <Carousel slidesSettings={{
-            0: { slidesPerView: 1, spaceBetween: 16 },
-            768: { slidesPerView: 2, spaceBetween: 20 },
-            1280: { slidesPerView: 5, spaceBetween: 20 }
-        }}>
+        <Carousel
+            slidesSettings={{
+                0: { slidesPerView: 1, spaceBetween: 16 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1280: { slidesPerView: 5, spaceBetween: 20 },
+            }}
+        >
             <DemoSlide>1</DemoSlide>
             <DemoSlide>2</DemoSlide>
             <DemoSlide>3</DemoSlide>
@@ -211,15 +220,18 @@ const blockStyle = { padding: '20px 0' };
 </Playground>
 
 ### Переопределение количества прокручеваемых слайдов
+
 Количество переключаемых за 1 раз слайдов меняется в зависимости от расширения экрана.
 
 <Playground style={blockStyle}>
     <ContentArea>
-        <Carousel slidesSettings={{
-            0: { slidesPerView: 1, spaceBetween: 16 },
-            768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 20 },
-            1280: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 }
-        }}>
+        <Carousel
+            slidesSettings={{
+                0: { slidesPerView: 1, spaceBetween: 16 },
+                768: { slidesPerView: 2, slidesPerGroup: 2, spaceBetween: 20 },
+                1280: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
+            }}
+        >
             <DemoSlide>1</DemoSlide>
             <DemoSlide>2</DemoSlide>
             <DemoSlide>3</DemoSlide>
@@ -240,14 +252,16 @@ const blockStyle = { padding: '20px 0' };
 
 <Playground>
     <ContentArea>
-        <Carousel gradient centeredSlides loop>
-            <DemoSlide>1</DemoSlide>
-            <DemoSlide>2</DemoSlide>
-            <DemoSlide>3</DemoSlide>
-            <DemoSlide>4</DemoSlide>
-            <DemoSlide>5</DemoSlide>
-            <DemoSlide>6</DemoSlide>
-        </Carousel>
+        <div style={blockStyle}>
+            <Carousel gradient centeredSlides loop>
+                <DemoSlide>1</DemoSlide>
+                <DemoSlide>2</DemoSlide>
+                <DemoSlide>3</DemoSlide>
+                <DemoSlide>4</DemoSlide>
+                <DemoSlide>5</DemoSlide>
+                <DemoSlide>6</DemoSlide>
+            </Carousel>
+        </div>
     </ContentArea>
 </Playground>
 
