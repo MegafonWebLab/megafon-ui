@@ -1,5 +1,11 @@
 import React from 'react';
 
+type ConvertLinkPropsType = {
+    href: any;
+    target?: any;
+    children: any;
+}
+
 export const titleConvertConfig = {
     br: {
         component: (): JSX.Element => <br />,
@@ -8,8 +14,8 @@ export const titleConvertConfig = {
         component: (): JSX.Element => (<>String.fromCharCode(160)</>) as JSX.Element,
     },
     a: {
-        component: ({ href, children }): JSX.Element => <a href={href}>{children}</a>,
-        props: ['href'],
+        component: ({ href, target, children }: ConvertLinkPropsType): JSX.Element => <a href={href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined}>{children}</a>,
+        props: ['href', 'target'],
     },
     font: {
         component: ({ color, children }): JSX.Element => <span style={{ color }}>{children}</span>,
