@@ -494,6 +494,44 @@ describe('<TextField />', () => {
                 expect(rootNode).toHaveClass('mfui-text-field_error');
                 expect(symbolCounterNode).toHaveClass('mfui-text-field__counter_error');
             });
+
+            it('should render with symbolCounter and graphemesCounter no over limit and allow input symbols', () => {
+                const symbolCounter = 10;
+                const { getByTestId } = render(
+                    <TextField
+                        {...props}
+                        textarea
+                        symbolCounter={symbolCounter}
+                        maxLength={symbolCounter}
+                        graphemesCounter
+                        value="👩‍💻😀👩‍💻😀👩‍💻"
+                    />,
+                );
+                const rootNode = getByTestId('root');
+                expect(rootNode).toMatchSnapshot();
+
+                const textareaNode: Partial<HTMLTextAreaElement> = getByTestId('input');
+                expect(textareaNode.maxLength).toBe(-1);
+            });
+
+            it('should render with symbolCounter and graphemesCounter max limit and disallow input symbols', () => {
+                const symbolCounter = 10;
+                const { getByTestId } = render(
+                    <TextField
+                        {...props}
+                        textarea
+                        symbolCounter={symbolCounter}
+                        maxLength={symbolCounter}
+                        graphemesCounter
+                        value="👩‍💻😀👩‍💻😀👩‍💻👩‍💻😀👩‍💻😀👩‍💻"
+                    />,
+                );
+                const rootNode = getByTestId('root');
+                expect(rootNode).toMatchSnapshot();
+
+                const textareaNode: Partial<HTMLTextAreaElement> = getByTestId('input');
+                expect(textareaNode.maxLength).toBe(10);
+            });
         });
     });
 });

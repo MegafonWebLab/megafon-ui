@@ -133,6 +133,92 @@ exports[`<TextField /> textarea should render default textarea 1`] = `
 </textarea>
 `;
 
+exports[`<TextField /> textarea symbolCounter should render with symbolCounter and graphemesCounter max limit and disallow input symbols 1`] = `
+<div
+  class="mfui-text-field mfui-text-field_theme_default test-class"
+  data-testid="root"
+>
+  <div
+    class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+  >
+    <textarea
+      class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
+      data-testid="input"
+      id="id"
+      maxlength="10"
+      name="name"
+      placeholder="placeholder"
+      style="height: -4px;"
+    >
+      👩‍💻😀👩‍💻😀👩‍💻👩‍💻😀👩‍💻😀👩‍💻
+    </textarea>
+    <label
+      class="mfui-text-field__label labelClass"
+      data-testid="label"
+      for="id"
+    >
+      placeholder
+    </label>
+  </div>
+  <div
+    class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+  >
+    <div
+      class="mfui-text-field__notice-text"
+      data-testid="notice"
+    />
+    <span
+      class="mfui-text-field__counter"
+    >
+      10/10
+    </span>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> textarea symbolCounter should render with symbolCounter and graphemesCounter no over limit and allow input symbols 1`] = `
+<div
+  class="mfui-text-field mfui-text-field_theme_default test-class"
+  data-testid="root"
+>
+  <div
+    class="mfui-text-field__field-wrapper mfui-text-field__field-wrapper_textarea_fixed"
+  >
+    <textarea
+      class="mfui-text-field__field mfui-text-field__field_type_fixed mfui-text-field__field_textarea inputClass"
+      data-testid="input"
+      id="id"
+      maxlength="-1"
+      name="name"
+      placeholder="placeholder"
+      style="height: -4px;"
+    >
+      👩‍💻😀👩‍💻😀👩‍💻
+    </textarea>
+    <label
+      class="mfui-text-field__label labelClass"
+      data-testid="label"
+      for="id"
+    >
+      placeholder
+    </label>
+  </div>
+  <div
+    class="mfui-text-field__field-bottom-wrapper mfui-text-field__field-bottom-wrapper_filled"
+  >
+    <div
+      class="mfui-text-field__notice-text"
+      data-testid="notice"
+    />
+    <span
+      class="mfui-text-field__counter"
+    >
+      5/10
+    </span>
+  </div>
+</div>
+`;
+
 exports[`<TextField /> textarea symbolCounter should render with symbolCounter and no over limit 1`] = `
 <span
   class="mfui-text-field__counter"
