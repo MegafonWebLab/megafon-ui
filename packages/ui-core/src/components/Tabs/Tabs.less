@@ -187,10 +187,12 @@
     }
 
     &__tab-inner:not(&__tab-inner_current) {
-        &:hover {
-            color: var(--content);
+        @media @desktop {
+            &:hover {
+                color: var(--content);
 
-            fill: var(--content);
+                fill: var(--content);
+            }
         }
 
         &:active {
