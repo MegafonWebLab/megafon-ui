@@ -11,6 +11,7 @@ import * as PropTypes from 'prop-types';
 import InputMask from 'react-input-mask';
 import throttleTime from '../../constants/throttleTime';
 import ResizeIcon from './i/textarea-resizer.svg';
+import countGraphemes from './utils/countGraphemes';
 import './TextField.less';
 
 const TEXTAREA_MAX_HEIGHT = 144;
@@ -87,6 +88,14 @@ export type TextFieldProps = {
     maxLength?: number;
     /** Показывает счетчик с подсчетом введенных символов. Только для textarea. */
     symbolCounter?: number;
+    /** Включает подсчет введенных [графем](https://ru.wikipedia.org/wiki/%D0%93%D1%80%D0%B0%D1%84%D0%B5%D0%BC%D0%B0) и символов при `symbolCounter=true`
+     *
+     *  **Пример**: эмоджи 👩‍💻 - это одна графема, состоящая из 5 символов.
+     *
+     * - для `true` Количество символов в строке "hello world👩‍💻" = 12
+     * - для `false` Количество символов в строке "hello world👩‍💻" = 16
+     */
+    graphemesCounter?: boolean;
     /** Иконка */
     customIcon?: JSX.Element;
     /** Маска для поля. Не работает с textarea=true. */
@@ -147,6 +156,7 @@ const TextField: React.FC<TextFieldProps> = ({
     mask,
     maskChar,
     maxLength,
+    graphemesCounter,
     symbolCounter,
     textarea = false,
     name,
@@ -205,9 +215,11 @@ const TextField: React.FC<TextFieldProps> = ({
                 return;
             }
 
-            setIsMaxLimitExceeded(symbolCounter < String(textareaValue).length);
+            const countValue = graphemesCounter ? countGraphemes(String(textareaValue)) : String(textareaValue).length;
+
+            setIsMaxLimitExceeded(symbolCounter < countValue);
         },
-        [symbolCounter],
+        [graphemesCounter, symbolCounter],
     );
 
     useEffect(() => {
@@ -369,7 +381,9 @@ const TextField: React.FC<TextFieldProps> = ({
         onBlur: handleBlur,
         onFocus: handleFocus,
         onKeyUp,
-        maxLength,
+        maxLength:
+            (graphemesCounter && maxLength && countGraphemes(String(inputValue)) < maxLength ? -1 : maxLength) ||
+            maxLength,
         placeholder: hidePlaceholder ? ' ' : actualPlaceholder,
         required,
         inputMode,
@@ -506,7 +520,9 @@ const TextField: React.FC<TextFieldProps> = ({
 
     const isPlaceholderShowed = isPasswordType && isPasswordHidden && !!inputValue;
     const valueHasSymbols = inputValue !== null && inputValue !== undefined;
-    const currentSymbolCount = (valueHasSymbols && String(inputValue).length) || 0;
+    const currentSymbolCount =
+        (valueHasSymbols && ((graphemesCounter && countGraphemes(String(inputValue))) || String(inputValue).length)) ||
+        0;
 
     return (
         <div
@@ -568,6 +584,7 @@ TextField.propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     maxLength: PropTypes.number,
     symbolCounter: PropTypes.number,
+    graphemesCounter: PropTypes.bool,
     customIcon: PropTypes.element,
     mask: PropTypes.string,
     maskChar: PropTypes.string,

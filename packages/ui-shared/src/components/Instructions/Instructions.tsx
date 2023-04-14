@@ -14,6 +14,11 @@ export const pictureAlignTypes = {
     RIGHT: 'right',
 } as const;
 
+export const pictureVerticalAlignTypes = {
+    CENTER: 'center',
+    TOP: 'top',
+};
+
 export const pictureMaskTypes = {
     ANDROID: 'android',
     NEW_IPHONE: 'new-iphone',
@@ -25,6 +30,8 @@ export const pictureMaskTypes = {
 } as const;
 
 type PictureAlignTypesType = typeof pictureAlignTypes[keyof typeof pictureAlignTypes];
+
+type PictureVerticalAlignTypesType = typeof pictureVerticalAlignTypes[keyof typeof pictureVerticalAlignTypes];
 
 type PictureMaskTypesType = typeof pictureMaskTypes[keyof typeof pictureMaskTypes];
 
@@ -62,8 +69,10 @@ export interface IInstructionsProps {
     instructionItems: InstructionItemType[];
     /** Описание после инструкции */
     additionalText?: string;
-    /** Расположение изображения */
+    /** Расположение изображения по горизонтали */
     pictureAlign?: PictureAlignTypesType;
+    /** Расположение изображения по вертикали */
+    pictureVerticalAlign?: PictureVerticalAlignTypesType;
     /** Маска изображения */
     pictureMask?: PictureMaskTypesType;
     /** Ref на swiper */
@@ -88,6 +97,7 @@ const Instructions: React.FC<IInstructionsProps> = ({
     title,
     instructionItems,
     pictureAlign = 'left',
+    pictureVerticalAlign = 'center',
     pictureMask = 'none',
     getSwiper,
     additionalText: text,
@@ -295,7 +305,9 @@ const Instructions: React.FC<IInstructionsProps> = ({
                 <GridColumn all="12">
                     {renderTitle('mobile')}
                     <div className={cn('wrapper')}>
-                        <div className={cn('picture', { align: pictureAlign })}>{renderPicture()}</div>
+                        <div className={cn('picture', { align: pictureAlign, 'vertical-align': pictureVerticalAlign })}>
+                            {renderPicture()}
+                        </div>
                         <div className={cn('articles', { align: pictureAlign })}>
                             {renderTitle('desktop')}
                             {renderMobileArticles()}

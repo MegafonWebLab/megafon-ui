@@ -20,7 +20,7 @@ exports[`<Instructions /> desktop resolution active slide will be changed 1`] = 
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"
@@ -182,7 +182,7 @@ exports[`<Instructions /> desktop resolution should render with data-attributes 
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"
@@ -350,7 +350,7 @@ exports[`<Instructions /> desktop resolution should render with default props 1`
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"
@@ -511,7 +511,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask 1`] 
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <div
             className="mfui-instructions__img-wrapper"
@@ -679,7 +679,7 @@ exports[`<Instructions /> desktop resolution should render with pictureMask Ipho
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <div
             className="mfui-instructions__img-wrapper"
@@ -847,7 +847,7 @@ exports[`<Instructions /> desktop resolution should render with right side pictu
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_right"
+          className="mfui-instructions__picture mfui-instructions__picture_align_right mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"
@@ -1009,7 +1009,7 @@ exports[`<Instructions /> mobile resolution should render with data-attributes 1
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"
@@ -1211,7 +1211,7 @@ exports[`<Instructions /> mobile resolution should render with default props 1`]
                 className="mfui-instructions__wrapper"
               >
                 <div
-                  className="mfui-instructions__picture mfui-instructions__picture_align_left"
+                  className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
                 >
                   <Swiper
                     className="mfui-instructions__swiper"
@@ -2864,7 +2864,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 1
                 className="mfui-instructions__wrapper"
               >
                 <div
-                  className="mfui-instructions__picture mfui-instructions__picture_align_left"
+                  className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
                 >
                   <Swiper
                     className="mfui-instructions__swiper"
@@ -4517,7 +4517,7 @@ exports[`<Instructions /> mobile resolution should rerender when window resize 2
                 className="mfui-instructions__wrapper"
               >
                 <div
-                  className="mfui-instructions__picture mfui-instructions__picture_align_left"
+                  className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
                 >
                   <Swiper
                     className="mfui-instructions__swiper"
@@ -6136,7 +6136,7 @@ exports[`<Instructions /> should render component with additional text 1`] = `
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"
@@ -6303,7 +6303,7 @@ exports[`<Instructions /> should render with children 1`] = `
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"
@@ -6469,7 +6469,7 @@ exports[`<Instructions /> should render with classes props 1`] = `
         className="mfui-instructions__wrapper"
       >
         <div
-          className="mfui-instructions__picture mfui-instructions__picture_align_left"
+          className="mfui-instructions__picture mfui-instructions__picture_align_left mfui-instructions__picture_vertical-align_center"
         >
           <Swiper
             className="mfui-instructions__swiper"

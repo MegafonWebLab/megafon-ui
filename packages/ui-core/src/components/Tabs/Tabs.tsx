@@ -238,18 +238,35 @@ const Tabs: React.FC<ITabsProps> = ({
         swiperInstance?.slideNext();
     }, [swiperInstance]);
 
-    const handleReachBeginning = React.useCallback((swiper: SwiperCore) => {
-        setBeginning(swiper.isBeginning);
-    }, []);
+    const handleReachBeginning = React.useCallback(
+        (swiper: SwiperCore) => {
+            if (isBeginning === swiper.isBeginning) {
+                return;
+            }
 
-    const handleReachEnd = React.useCallback((swiper: SwiperCore) => {
-        setEnd(swiper.isEnd);
-    }, []);
+            setBeginning(swiper.isBeginning);
+        },
+        [isBeginning],
+    );
 
-    const handleFromEdge = React.useCallback((swiper: SwiperCore) => {
-        setBeginning(swiper.isBeginning);
-        setEnd(swiper.isEnd);
-    }, []);
+    const handleReachEnd = React.useCallback(
+        (swiper: SwiperCore) => {
+            if (isEnd === swiper.isEnd) {
+                return;
+            }
+
+            setEnd(swiper.isEnd);
+        },
+        [isEnd],
+    );
+
+    const handleFromEdge = React.useCallback(
+        (swiper: SwiperCore) => {
+            isBeginning !== swiper.isBeginning && setBeginning(swiper.isBeginning);
+            isEnd !== swiper.isEnd && setEnd(swiper.isEnd);
+        },
+        [isBeginning, isEnd],
+    );
 
     const addObserveEvent = React.useCallback(() => {
         const rootRefNode = rootRef.current;
@@ -308,7 +325,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     </SwiperSlide>
                 );
             }),
-        [renderTab, children, classes?.activeTab, currentIndex, setTabRef, classes?.tab],
+        [children, renderTab, currentIndex, classes?.activeTab, classes?.tab, setTabRef],
     );
 
     const renderPanels = React.useCallback(

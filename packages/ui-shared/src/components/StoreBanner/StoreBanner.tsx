@@ -40,9 +40,13 @@ export interface IStoreBannerProps {
     linkGoogle?: LinkHrefType;
     /** Обработчик клика по ссылке в Google Play */
     onClickGoogle?: LinkOnClickType;
-    /** Ссылка на скачивание приложения в Huawei App Gallery */
+    /** Ссылка на скачивание приложения в Samsung Galaxy Store */
+    linkGalaxyStore?: LinkHrefType;
+    /** Обработчик клика по ссылке в Samsung Galaxy Store */
+    onClickGalaxyStore?: LinkOnClickType;
+    /** Ссылка на скачивание приложения в Huawei AppGallery */
     linkHuawei?: LinkHrefType;
-    /** Обработчик клика по ссылке в Huawei App Gallery */
+    /** Обработчик клика по ссылке в Huawei AppGallery */
     onClickHuawei?: LinkOnClickType;
     /** Ссылка на скачивание приложения в RuStore */
     linkRuStore?: LinkHrefType;
@@ -74,6 +78,7 @@ export interface IStoreBannerProps {
     classes?: {
         root?: string;
         appleLink?: string;
+        galaxyStoreLink?: string;
         googleLink?: string;
         huaweiLink?: string;
         miStoreLink?: string;
@@ -86,6 +91,7 @@ export interface IStoreBannerProps {
         root?: Record<string, string>;
         button?: Record<string, string>;
         linkApple?: Record<string, string>;
+        linkGalaxyStore?: Record<string, string>;
         linkGoogle?: Record<string, string>;
         linkHuawei?: Record<string, string>;
         linkMiStore?: Record<string, string>;
@@ -99,6 +105,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     classes: {
         root: rootClassName,
         appleLink: appleLinkClassName,
+        galaxyStoreLink: galaxyStoreLinkClassName,
         googleLink: googleLinkClassName,
         huaweiLink: huaweiLinkClassName,
         miStoreLink: miStoreLinkClassName,
@@ -107,6 +114,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     title,
     text,
     linkApple,
+    linkGalaxyStore,
     linkGoogle,
     linkHuawei,
     linkMiStore,
@@ -122,6 +130,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
     rootRef,
     dataAttrs,
     onClickApple,
+    onClickGalaxyStore,
     onClickGoogle,
     onClickHuawei,
     onClickMiStore,
@@ -182,6 +191,20 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                                 rel={rel}
                                                 className={cn('store-link', { 'ru-store': true }, ruStoreLinkClassName)}
                                                 onClick={onClickRuStore}
+                                            />
+                                        )}
+                                        {linkGalaxyStore && (
+                                            <StoreButton
+                                                dataAttrs={{ root: dataAttrs?.linkGalaxyStore }}
+                                                theme={StoreButtonTheme.GALAXY_STORE}
+                                                href={linkGalaxyStore}
+                                                rel={rel}
+                                                className={cn(
+                                                    'store-link',
+                                                    { 'galaxy-store': true },
+                                                    galaxyStoreLinkClassName,
+                                                )}
+                                                onClick={onClickGalaxyStore}
                                             />
                                         )}
                                         {linkHuawei && (
@@ -245,6 +268,8 @@ StoreBanner.propTypes = {
     text: PropTypes.string.isRequired,
     linkApple: PropTypes.string,
     onClickApple: PropTypes.func,
+    linkGalaxyStore: PropTypes.string,
+    onClickGalaxyStore: PropTypes.func,
     linkGoogle: PropTypes.string,
     onClickGoogle: PropTypes.func,
     linkHuawei: PropTypes.string,
@@ -262,6 +287,7 @@ StoreBanner.propTypes = {
     className: PropTypes.string,
     classes: PropTypes.shape({
         appleLink: PropTypes.string,
+        galaxyStoreLink: PropTypes.string,
         googleLink: PropTypes.string,
         huaweiLink: PropTypes.string,
         miStoreLink: PropTypes.string,
@@ -276,6 +302,7 @@ StoreBanner.propTypes = {
         root: PropTypes.objectOf(PropTypes.string.isRequired),
         button: PropTypes.objectOf(PropTypes.string.isRequired),
         linkApple: PropTypes.objectOf(PropTypes.string.isRequired),
+        linkGalaxyStore: PropTypes.objectOf(PropTypes.string.isRequired),
         linkGoogle: PropTypes.objectOf(PropTypes.string.isRequired),
         linkHuawei: PropTypes.objectOf(PropTypes.string.isRequired),
         linkMiStore: PropTypes.objectOf(PropTypes.string.isRequired),
