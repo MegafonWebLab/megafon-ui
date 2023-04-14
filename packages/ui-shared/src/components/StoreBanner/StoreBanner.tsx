@@ -201,7 +201,7 @@ const StoreBanner: React.FC<IStoreBannerProps> = ({
                                                 rel={rel}
                                                 className={cn(
                                                     'store-link',
-                                                    { 'mi-store': true },
+                                                    { 'galaxy-store': true },
                                                     galaxyStoreLinkClassName,
                                                 )}
                                                 onClick={onClickGalaxyStore}
