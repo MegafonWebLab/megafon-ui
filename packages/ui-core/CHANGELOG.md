@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.15.2...@megafon/ui-core@4.15.3) (2023-04-14)
+
+
+### Bug Fixes
+
+* **tabs:** fixed tabs scroll on mobile resolution, set hover for desktop ([f18da75](https://github.com/MegafonWebLab/megafon-ui/commit/f18da7552911bca92ea1b1229c70ecad810d30ae))
+* **textfield:** add a correct count of the graphemes entered ([8e51585](https://github.com/MegafonWebLab/megafon-ui/commit/8e515856193eefa8a63fd17cab3faab7737ad41d))
+
+
+
+
+
 ## [4.15.2](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.15.1...@megafon/ui-core@4.15.2) (2023-04-11)
 
 

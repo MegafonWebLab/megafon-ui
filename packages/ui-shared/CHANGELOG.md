@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.18.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.17.0...@megafon/ui-shared@4.18.0) (2023-04-14)
+
+
+### Bug Fixes
+
+* **instructions:** fixed screen scroll for iphone devices ([fae9838](https://github.com/MegafonWebLab/megafon-ui/commit/fae98383271ed7a291665cbb7f9011d17ec0bc93))
+* **storebanner:** fix cn for galaxy store ([02f484b](https://github.com/MegafonWebLab/megafon-ui/commit/02f484bee25550f5091a85b1d08a8252a6f361ee))
+* **storebutton:** compress png buttons ([3e0a2a0](https://github.com/MegafonWebLab/megafon-ui/commit/3e0a2a006dd7d102478164acfcda75816d07b7a9))
+
+
+### Features
+
+* **instructions:** add prop pictureVerticalAlign ([e380224](https://github.com/MegafonWebLab/megafon-ui/commit/e38022435ce3a5eaf2864bf6ed5a0028e81c9ec1))
+* **storebanner:** add Samsung Galaxy Store button ([ed28f42](https://github.com/MegafonWebLab/megafon-ui/commit/ed28f4270033c91acf23cbe113158f1051c6eff7))
+
+
+
+
+
 # [4.17.0](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-shared@4.16.0...@megafon/ui-shared@4.17.0) (2023-04-11)
 
 
