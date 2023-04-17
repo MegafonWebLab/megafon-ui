@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Link /> should render Link 1`] = `
-<div>
-  <a>
-    Link
-  </a>
-</div>
-`;
