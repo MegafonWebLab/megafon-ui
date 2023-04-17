@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.15.4](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.15.3...@megafon/ui-core@4.15.4) (2023-04-17)
+
+
+### Bug Fixes
+
+* **tabs:** fixed gradient on swiper edges ([650e9be](https://github.com/MegafonWebLab/megafon-ui/commit/650e9beea8318ccf7bf564b4473a9d3487457694))
+
+
+
+
+
 ## [4.15.3](https://github.com/MegafonWebLab/megafon-ui/compare/@megafon/ui-core@4.15.2...@megafon/ui-core@4.15.3) (2023-04-14)
 
 
