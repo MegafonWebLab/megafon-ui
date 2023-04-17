@@ -238,35 +238,18 @@ const Tabs: React.FC<ITabsProps> = ({
         swiperInstance?.slideNext();
     }, [swiperInstance]);
 
-    const handleReachBeginning = React.useCallback(
-        (swiper: SwiperCore) => {
-            if (isBeginning === swiper.isBeginning) {
-                return;
-            }
+    const handleReachBeginning = React.useCallback(() => {
+        setBeginning(true);
+    }, []);
 
-            setBeginning(swiper.isBeginning);
-        },
-        [isBeginning],
-    );
+    const handleReachEnd = React.useCallback(() => {
+        setEnd(true);
+    }, []);
 
-    const handleReachEnd = React.useCallback(
-        (swiper: SwiperCore) => {
-            if (isEnd === swiper.isEnd) {
-                return;
-            }
-
-            setEnd(swiper.isEnd);
-        },
-        [isEnd],
-    );
-
-    const handleFromEdge = React.useCallback(
-        (swiper: SwiperCore) => {
-            isBeginning !== swiper.isBeginning && setBeginning(swiper.isBeginning);
-            isEnd !== swiper.isEnd && setEnd(swiper.isEnd);
-        },
-        [isBeginning, isEnd],
-    );
+    const handleFromEdge = React.useCallback((swiper: SwiperCore) => {
+        setBeginning(swiper.isBeginning);
+        setEnd(swiper.isEnd);
+    }, []);
 
     const addObserveEvent = React.useCallback(() => {
         const rootRefNode = rootRef.current;
@@ -449,7 +432,14 @@ const Tabs: React.FC<ITabsProps> = ({
                 className={cn('wrapper', [classes?.wrapper])}
             >
                 <div
-                    className={cn('swiper-wrapper', [classes?.swiperWrapper])}
+                    className={cn(
+                        'swiper-wrapper',
+                        {
+                            beginning: isBeginning,
+                            end: isEnd,
+                        },
+                        [classes?.swiperWrapper],
+                    )}
                     style={{
                         paddingLeft: stickyOffset.left,
                         paddingRight: stickyOffset.right,
@@ -459,14 +449,7 @@ const Tabs: React.FC<ITabsProps> = ({
                     <Swiper
                         {...filterDataAttrs(dataAttrs?.slider)}
                         simulateTouch={false}
-                        className={cn(
-                            'swiper',
-                            {
-                                beginning: isBeginning,
-                                end: isEnd,
-                            },
-                            [classes?.innerIndents],
-                        )}
+                        className={cn('swiper', [classes?.innerIndents])}
                         watchOverflow
                         slidesPerView="auto"
                         initialSlide={currentIndex}
