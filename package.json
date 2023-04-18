@@ -16,7 +16,7 @@
         "coverage": "lerna run coverage",
         "pre-commit": "lerna run typecheck && lerna run lint-staged && lerna run lint:less && lerna run test",
         "release": "lerna version && yarn install --frozen-lockfile",
-        "demo": "docz dev",
+        "demo": "NODE_OPTIONS=--openssl-legacy-provider docz dev",
         "demo:copy-stub": "cp -a ./src/in-development/. ./docs",
         "demo:build": "docz build && yarn demo:copy-stub"
     },
